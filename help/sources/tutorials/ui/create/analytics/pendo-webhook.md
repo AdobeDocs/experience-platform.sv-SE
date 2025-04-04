@@ -3,9 +3,9 @@ title: Skapa en Pendo Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Pendo-källanslutning med Adobe Experience Platform-gränssnittet.
 badge: Beta
 exl-id: defdec30-42af-43c8-b2eb-7ce98f7871e3
-source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1160'
 ht-degree: 0%
 
 ---
@@ -51,25 +51,25 @@ Innan du skapar en [!DNL Pendo]-källanslutning måste du ange ett källschema. 
 
 Mer information finns i [[!DNL Pendo] handboken på webbhooks](https://support.pendo.io/hc/en-us/articles/360032285012-Webhooks).
 
-### Skapa ett plattformsschema för [!DNL Pendo] {#create-platform-schema}
+### Skapa ett Experience Platform-schema för [!DNL Pendo] {#create-platform-schema}
 
-Du måste också se till att du först skapar ett plattformsschema som kan användas för källan. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
+Du måste också se till att du först skapar ett Experience Platform-schema som du kan använda för källan. I självstudiekursen [Skapa ett Experience Platform-schema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
 
-![Plattformsgränssnittet visar ett exempelschema för Pendo.](../../../../images/tutorials/create/analytics-pendo-webhook/schema.png)
+![Experience Platform-gränssnitt visar ett exempelschema för Pendo.](../../../../images/tutorials/create/analytics-pendo-webhook/schema.png)
 
 ## Anslut ditt [!DNL Pendo]-konto {#connect-account}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
 
 Använd menyn *[!UICONTROL Categories]* för att filtrera källor efter kategori. Du kan också ange ett källnamn i sökfältet för att hitta en viss källa från katalogen.
 
 Gå till kategorin [!UICONTROL Analytics] om du vill se källkortet [!DNL Pendo]. Börja genom att välja **[!UICONTROL Add data]**.
 
-![Plattformsgränssnittets källkatalog med Pendo-kortet.](../../../../images/tutorials/create/analytics-pendo-webhook/catalog.png)
+![Experience Platform UI-källkatalogen med Pendo-kortet.](../../../../images/tutorials/create/analytics-pendo-webhook/catalog.png)
 
 ## Markera data {#select-data}
 
-**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till plattformen.
+**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till Experience Platform.
 
 * Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.
@@ -96,7 +96,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 Mappningarna som anges nedan är obligatoriska och bör konfigureras innan du fortsätter till [!UICONTROL Review]-steget.
 
@@ -121,7 +121,7 @@ När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och tillåt 
 
 ## Hämta din URL för direktuppspelningsslutpunkt {#get-streaming-endpoint-url}
 
-När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform.
+När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten kommer att användas för att prenumerera på din webkrok så att strömningskällan kan kommunicera med Experience Platform.
 
 För att kunna skapa den URL som används för att konfigurera webkroken på [!DNL Pendo] måste du hämta följande:
 
@@ -144,11 +144,11 @@ När webbkroken har skapats går du till inställningssidan för [!DNL Pendo]-we
 
 >[!TIP]
 >
->Du kan prenumerera på en mängd olika händelsekategorier för att avgöra vilken typ av händelser du vill skicka från din [!DNL Pendo]-instans till plattformen. Mer information om de olika händelserna finns i [[!DNL Pendo] dokumentationen](https://support.pendo.io/hc/en-us/articles/360032285012-Webhooks#create-a-webhook-0-4).
+>Du kan prenumerera på en mängd olika händelsekategorier för att avgöra vilken typ av händelser du vill skicka från din [!DNL Pendo]-instans till Experience Platform. Mer information om de olika händelserna finns i [[!DNL Pendo] dokumentationen](https://support.pendo.io/hc/en-us/articles/360032285012-Webhooks#create-a-webhook-0-4).
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du konfigurerat ett dataflöde för direktuppspelning så att dina [!DNL Pendo]-data kommer till Experience Platform. Om du vill övervaka data som importeras läser du i guiden [Övervaka direktuppspelade dataflöden med hjälp av plattformsgränssnittet](../../monitor-streaming.md).
+Genom att följa den här självstudiekursen har du konfigurerat ett dataflöde för direktuppspelning för att överföra dina [!DNL Pendo]-data till Experience Platform. Om du vill övervaka data som importeras läser du i guiden [Övervaka dataflöden för direktuppspelning med Experience Platform-gränssnittet](../../monitor-streaming.md).
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -162,15 +162,15 @@ Följ stegen nedan för att verifiera att du har konfigurerat källan och att [!
 
 ![Pendo UI-skärmbild som visar chatthistorik](../../../../images/tutorials/create/analytics-pendo-webhook/pendo-events.png)
 
-* I plattformsgränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL Pendo] i källkatalogen. Välj sedan **[!UICONTROL Preview dataset]** för att verifiera de data som har importerats för de webbböcker som du har konfigurerat i [!DNL Pendo].
+* I Experience Platform-gränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL Pendo] i källkatalogen. Välj sedan **[!UICONTROL Preview dataset]** för att verifiera de data som har importerats för de webbböcker som du har konfigurerat i [!DNL Pendo].
 
-![Skärmbild för plattformsgränssnitt som visar kapslade händelser](../../../../images/tutorials/create/analytics-pendo-webhook/platform-dataset.png)
+![Experience Platform-användargränssnitt, skärmbild som visar kapslade händelser](../../../../images/tutorials/create/analytics-pendo-webhook/platform-dataset.png)
 
 ### Fel och felsökning {#errors-and-troubleshooting}
 
 När du kontrollerar ett dataflöde kan följande felmeddelande visas: `The message can't be validated ... uniqueID:expected minLength:1, actual 0].`
 
-![Skärmbild för plattformsgränssnitt visar ett fel.](../../../../images/tutorials/create/analytics-pendo-webhook/error.png)
+![Experience Platform UI-skärmbild visar ett fel.](../../../../images/tutorials/create/analytics-pendo-webhook/error.png)
 
 För att åtgärda det här felet måste du verifiera att mappningen *uniqueID* har konfigurerats. Mer information finns i avsnittet [Mpping](#mapping).
 

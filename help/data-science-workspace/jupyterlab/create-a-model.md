@@ -5,9 +5,9 @@ title: Skapa en modell med JupyterLab Notebooks
 type: Tutorial
 description: I den här självstudiekursen får du hjälp med att skapa ett recept med mallen för receptbyggaren för JupyterLab-anteckningsböcker.
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2077'
+source-wordcount: '2079'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ I den här självstudiekursen får du hjälp med att skapa en modell med hjälp 
 
 ## Nya koncept:
 
-- **Mottagare:** Ett recept är en AdobeTerm för en modellspecifikation och är en behållare på den översta nivån som representerar en specifik maskininlärning, AI-algoritm eller ensemble för algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en utbildad modell.
+- **Mottagare:** Ett recept är en Adobe-term för en modellspecifikation och är en behållare på den översta nivån som representerar en specifik maskininlärning, AI-algoritm eller ensemble för algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en utbildad modell.
 - **Modell:** En modell är en instans av ett maskininlärningsrecept som har tränats med historiska data och konfigurationer för att lösa ett affärsärende.
 - **Utbildning:** Utbildning är processen att lära sig mönster och insikter från märkta data.
 - **Poäng:** Poäng är processen att generera insikter från data med hjälp av en tränad modell.
@@ -116,25 +116,25 @@ Som standard ställs följande konfigurationsparametrar in åt dig när du utbil
 
 Syftet med inläsaren av utbildningsdata är att instansiera data som används för att skapa maskininlärningsmodellen. Vanligtvis finns det två åtgärder som inläsaren av utbildningsdata utför:
 
-- Läser in data från [!DNL Platform]
+- Läser in data från [!DNL Experience Platform]
 - Datagenerering och -teknik
 
 I följande två avsnitt går det längre att läsa in data och förbereda data.
 
 ### Läser in data {#loading-data}
 
-I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). Data kan läsas in från filer i [!DNL Adobe Experience Platform] med [!DNL Platform] SDK (`platform_sdk`) eller från externa källor med pandas `read_csv()`- eller `read_json()`-funktioner.
+I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). Data kan läsas in från filer i [!DNL Adobe Experience Platform] med [!DNL Experience Platform] SDK (`platform_sdk`) eller från externa källor med pandas `read_csv()`- eller `read_json()`-funktioner.
 
-- [[!DNL Platform SDK]](#platform-sdk)
+- [[!DNL Experience Platform SDK]](#platform-sdk)
 - [Externa källor](#external-sources)
 
 >[!NOTE]
 >
 >I Recipe Builder-anteckningsboken läses data in via datainläsaren `platform_sdk`.
 
-### [!DNL Platform] SDK {#platform-sdk}
+### [!DNL Experience Platform] SDK {#platform-sdk}
 
-En ingående självstudiekurs om hur du använder datainläsaren `platform_sdk` finns i [Plattforms-SDK-guiden](../authoring/platform-sdk.md). Den här självstudiekursen innehåller information om autentisering av bygge, grundläggande läsning av data och grundläggande skrivande av data.
+En ingående självstudiekurs om hur du använder datainläsaren `platform_sdk` finns i [Experience Platform SDK-handboken](../authoring/platform-sdk.md). Den här självstudiekursen innehåller information om autentisering av bygge, grundläggande läsning av data och grundläggande skrivande av data.
 
 ### Externa källor {#external-sources}
 
@@ -158,7 +158,7 @@ Nu finns dina data i dataframe-objektet och kan analyseras och ändras i [nästa
 
 ## Inläsningsfil för utbildningsdata
 
-I det här exemplet läses data in med Platform SDK. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
+I det här exemplet läses data in med Experience Platform SDK. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
 
 `from platform_sdk.dataset_reader import DatasetReader`
 
@@ -177,7 +177,7 @@ def load(config_properties):
 
 >[!NOTE]
 >
->Som nämndes i avsnittet [Konfigurationsfil](#configuration-files) ställs följande konfigurationsparametrar in åt dig när du använder `client_context = get_client_context(config_properties)` för att komma åt data från Experience Platform:
+>Som vi nämnt i avsnittet [Konfigurationsfil](#configuration-files) ställs följande konfigurationsparametrar in åt dig när du använder `client_context = get_client_context(config_properties)` för att få åtkomst till data från Experience Platform:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`
@@ -269,7 +269,7 @@ När du är klar med redigeringen av recept och nöjd med utbildnings-/poängutd
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
-När du har valt **[!UICONTROL Create Recipe]** uppmanas du att ange ett receptnamn. Det här namnet representerar det faktiska receptet som skapades på [!DNL Platform].
+När du har valt **[!UICONTROL Create Recipe]** uppmanas du att ange ett receptnamn. Det här namnet representerar det faktiska receptet som skapades på [!DNL Experience Platform].
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 

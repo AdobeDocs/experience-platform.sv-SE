@@ -4,9 +4,9 @@ description: Lär dig hur du exporterar granskningshändelser i Experience Platf
 role: Developer
 feature: Audits, API
 exl-id: 76c5de76-e391-4258-afd8-ddb2c8a9443f
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '158'
+source-wordcount: '159'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ GET /audit/export
 | `status` | Åtgärdens status. En status kan vara något av följande: </li><li>`Allow` </li><li>`Deny` </li><li>`Failure` </li><li>`Success` </li></ul><br/>Exempel: `?property=status==Deny`. |
 | `action` | Den typ av åtgärd som spelades in för händelsen. En åtgärd kan vara något av följande: <ul><li>`Add` </li><li>`Create` </li><li>`Dataset activate` </li><li>`Dataset remove` </li><li>`Delete` </li><li>`Disable for profile` </li><li>`Enable` </li><li>`Enable for profile` </li><li>`Profile activate` </li><li>`Profile remove` </li><li>`Remove` </li><li>`Reset` </li><li>`Segment Activate` </li><li>`Segment remove` </li><li>`Update` </li></ul> Exempel: `?property=action==Create`. |
 | `user` | Den användare som utförde händelsen. |
-| `assetType` | Typen av plattformsresurs som åtgärden utfördes på. <br/>Exempel: `?property=assetType==<an asset type>`. |
+| `assetType` | Den typ av Experience Platform-resurs som åtgärden utfördes på. <br/>Exempel: `?property=assetType==<an asset type>`. |
 
 **Begäran**
 

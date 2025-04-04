@@ -2,14 +2,14 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformationen för Adobe Experience Platform från april 2023.
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2011'
+source-wordcount: '2013'
 ht-degree: 28%
 
 ---
 
-# Versionsinformation om Adobe Experience Platform
+# Versionsinformation för Adobe Experience Platform
 
 >[!IMPORTANT]
 >
@@ -52,7 +52,7 @@ Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och 
 | Funktion | Beskrivning |
 | --- | --- |
 | Uppdateringar av bakåtfyllnadsperiod för Adobe Analytics i icke-produktionssandlådor | Förifyllningsperioden för Adobe Analytics i icke-produktionssandlådor har reducerats till tre månader. Backfill för produktionssandlådor är desamma vid 13 månader. Den här ändringen gäller endast för nya flöden och påverkar inte befintliga flöden. Mer information finns i [Adobe Analytics-översikten](../../sources/connectors/adobe-applications/analytics.md). |
-| Ny mappningsfunktion som konverterar FPID-strängar till ECID | Använd funktionen `fpid_to_ecid` för att konvertera FPID-strängar till ECID för användning i Experience Platform och Experience Cloud. Mer information finns i handboken [Dataförberedelser ](../../data-prep/functions.md). |
+| Ny mappningsfunktion som konverterar FPID-strängar till ECID | Använd funktionen `fpid_to_ecid` för att konvertera FPID-strängar till ECID för användning i Experience Platform- och Experience Cloud-program. Mer information finns i handboken [Dataförberedelser ](../../data-prep/functions.md). |
 
 {style="table-layout:auto"}
 
@@ -67,8 +67,8 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 | Funktion | Beskrivning |
 | --- | --- |
 | IP-adressofuscation för datastreams | Nu kan du definiera IP-obfusionsalternativ på partiell eller fullständig datastream-nivå i [datastream-konfigurationens gränssnitt](../../datastreams/configure.md). <br><br>Inställningen för IP-obfusacering på datastream-nivå har företräde framför IP-ofuscation som har konfigurerats i Adobe Target och Audience Manager. <br><br>Data som skickas till Adobe Analytics påverkas inte av inställningen [!UICONTROL IP Obfuscation] på datastream-nivå. Adobe Analytics får för närvarande oantastade IP-adresser. För att Analytics ska kunna ta emot dolda IP-adresser måste du konfigurera IP-förfalskning separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner.<br><br> Mer information om IP-förfalskning och instruktioner om hur du konfigurerar det finns i [dokumentationen för datastream-konfigurationen](../../datastreams/configure.md#advanced-options). |
-| [Åsidosättningar av dataströmskonfiguration](../../datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Åsidosättning av datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av datastream-konfigurationen på [datastreams konfigurationssida](../../datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK-taggtillägget [1.](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)</li></ol> |
-| OAuth JWT Secret | Med [OAuth JWT-hemlighet](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html) kan kunder använda Adobe- och Google-tjänsttoken för att stödja server-till-server-interaktioner i händelsevidarebefordran. |
+| [Åsidosättningar av dataströmskonfiguration](../../datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Åsidosättning av datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av datastream-konfigurationen på [datastreams konfigurationssida](../../datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller med hjälp av Web SDK [taggtillägg](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).</li></ol> |
+| OAuth JWT Secret | Med [OAuth JWT-hemlighet](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html) kan kunder använda Adobe- och Google Service-tokens för att ge stöd för server-till-server-interaktioner vid händelsevidarebefordran. |
 | [!DNL Pinterest Conversions API]-tillägg | Med tillägget [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) för vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL Pinterest] i form av händelser på serversidan med hjälp av [!DNL Pinterest Conversions API]. |
 
 {style="table-layout:auto"}
@@ -139,7 +139,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Plattform för kunddata i realtid
 
@@ -150,7 +150,7 @@ Plattformen för kunddata i realtid ([!DNL Real-Time CDP]) bygger på Experience
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Förbättrad startsida för Real-Time CDP | [Real-Time CDP hemsida](https://experience.adobe.com) har förbättrats med en uppdaterad look och förbättrade prestanda. Hemsidan är nu behörighetsmedveten och visar widgetar som är relevanta för de funktioner du har tillgång till. Mer information finns i översikten [Real-Time CDP hemsidespanel](../../rtcdp/home-page-dashboards.md). |
-| Självidentifieringsundersökning | Självidentifieringsundersökningen är ett kort frågeformulär som presenteras på Adobe Experience Platform användargränssnittets hemsida. Använd självidentifieringsundersökningen för att bygga upp din personliga profil för Experience Platform och få anpassade riktlinjer baserade på dina val. Mer information finns i [översikten över självidentifieringsundersökningen](../../landing/self-identification.md). |
+| Självidentifieringsundersökning | Självidentifieringsundersökningen är ett kort frågeformulär som presenteras på Adobe Experience Platform användargränssnittets hemsida. Använd självidentifieringsundersökningen för att bygga upp din Experience Platform personliga profil och få anpassade riktlinjer baserade på dina val. Mer information finns i [översikten över självidentifieringsundersökningen](../../landing/self-identification.md). |
 
 Mer information om [!DNL Real-Time CDP] finns i [[!DNL Real-Time CDP] översikten](../../rtcdp/overview.md).
 
@@ -174,7 +174,7 @@ Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Segmentmedlemskapskarta | Som en uppföljning till det föregående meddelandet i februari, 15 maj 2023, kommer statusen `Existing` att tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de profiler som är diskvalificerade fortsätter att representeras som `Exited`.<br/><br/> Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Om så är fallet för dig, se över integreringarna i senare led. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Mer information får du av Adobe. |
+| Segmentmedlemskapskarta | Som en uppföljning till det föregående meddelandet i februari, 15 maj 2023, kommer statusen `Existing` att tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de profiler som är diskvalificerade fortsätter att representeras som `Exited`.<br/><br/> Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Om så är fallet för dig, se över integreringarna i senare led. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Kontakta Adobe om du vill ha mer information. |
 
 {style="table-layout:auto"}
 
@@ -182,7 +182,7 @@ Mer information om [!DNL Segmentation Service] finns i [segmenteringsöversikten
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
@@ -193,7 +193,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | API-stöd för filtrering av radnivådata för Salesforce CRM-källan. | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för Salesforce CRM-källan. Mer information finns i guiden [om att filtrera data för en källa med API](../../sources/tutorials/api/filter.md). |
 | Beta tillgänglighet för Shopify Streaming | [Källan för punktuppspelning](../../sources/connectors/ecommerce/shopify-streaming.md) är nu tillgänglig i betaversionen. Använd Shopify Streaming-källan för att strömma data från ditt Shopify-partnerkonto till Experience Platform. |
 | Allmän tillgänglighet för OneTrust-integrering | [OneTrust Integration-källan](../../sources/connectors/consent-and-preferences/onetrust.md) är nu GA. Använd OneTrust Integration-källan för att skicka data om samtycke och inställningar från OneTrust Integration-kontot till Experience Platform. |
-| Allmän tillgänglighet för Oracle Service Cloud | [Oracle Service Cloud-källan](../../sources/connectors/customer-success/oracle-service-cloud.md) är nu GA. Använd Oraclets Service Cloud-källa för att skicka Oracle Service Cloud-data till Experience Platform. |
+| Allmän tillgänglighet för Oracle Service Cloud | [Oracle Service Cloud-källan](../../sources/connectors/customer-success/oracle-service-cloud.md) är nu GA. Använd Oracle Service Cloud-källan för att överföra dina Oracle Service Cloud-data till Experience Platform. |
 
 {style="table-layout:auto"}
 

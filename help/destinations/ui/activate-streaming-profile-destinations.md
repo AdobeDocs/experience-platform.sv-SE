@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '718'
 ht-degree: 0%
 
 ---
@@ -57,8 +57,8 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-* **[!UICONTROL Segmentation Service]**: Publiker som genererats i Experience Platform av segmenteringstjänsten. Mer information finns i dokumentationen för [målportalen](../../segmentation/ui/audience-portal.md).
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
+* **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i dokumentationen för [målportalen](../../segmentation/ui/audience-portal.md).
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
 * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
 ![Bild som markerar kryssrutorna i steget Välj målgrupper i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/select-audiences.png)

@@ -1,16 +1,16 @@
 ---
-title: Använda Offer Decisioning med Platform Web SDK
+title: Använda Offer Decisioning med Experience Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer Decisioning. Du kan skapa erbjudanden och andra relaterade objekt med Offer Decisioning gränssnitt eller API.
-keywords: offertbeslut;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
+keywords: offertbeslut;beslut;Web SDK;Experience Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: b2c3b1160782a81ea66f42e21e494e0a7d90e037
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
 
-# Använda Offer Decisioning med Platform Web SDK
+# Använda Offer Decisioning med Experience Platform Web SDK
 
 Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer Decisioning. Du kan skapa erbjudanden och andra relaterade objekt med Offer Decisioning användargränssnitt (UI) eller API:er.
 
@@ -49,7 +49,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer Dec
 
 * **Datastreams:** Mer information finns i dokumentationen för [datastreams](/help/datastreams/overview.md).
 
-* **Identitet**: Mer information finns i den här dokumentationen som beskriver hur [Platform Web SDK använder identitetstjänsten](../../identity/overview.md).
+* **Identitet**: Mer information finns i den här dokumentationen som beskriver hur [Experience Platform Web SDK använder identitetstjänsten](../../identity/overview.md).
 
 ## Aktivera Offer Decisioning
 
@@ -82,13 +82,13 @@ Så här aktiverar du Offer Decisioning:
 
       1. [Skapa en taggegenskap](/help/tags/ui/administration/companies-and-properties.md)
       1. [Lägg till inbäddningskoden](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      1. Installera och konfigurera Platform Web SDK-tillägget med den dataström du skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](/help/tags/ui/managing-resources/extensions/overview.md).
+      1. Installera och konfigurera Experience Platform Web SDK-tillägget med den dataström du skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](/help/tags/ui/managing-resources/extensions/overview.md).
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
 
-      1. Skapa nödvändiga [dataelement](/help/tags/ui/managing-resources/data-elements.md). Minimikravet är att du skapar en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
+      1. Skapa nödvändiga [dataelement](/help/tags/ui/managing-resources/data-elements.md). Du måste skapa en Experience Platform Web SDK Identity Map och ett Experience Platform Web SDK XDM Object-dataelement.
 
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
@@ -96,7 +96,7 @@ Så här aktiverar du Offer Decisioning:
 
       1. Skapa dina [regler](/help/tags/ui/managing-resources/rules.md).
 
-         * Lägg till en Skicka-händelse för SDK för plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
+         * Lägg till en Skicka-händelse för Experience Platform Web SDK och lägg till relevant `decisionScopes` i åtgärdens konfiguration
 
          ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
 

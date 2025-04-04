@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1555'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Läs följande tabell för att få en sammanfattning av nyckeltermerna innan du 
 
 ## Vad är identitetstjänsten?
 
-![Häftning av identitet på plattform](./images/identity-service-stitching.png)
+![Knipning av identiteter på Experience Platform](./images/identity-service-stitching.png)
 
 I B2C-sammanhang (Business-To-Customer) interagerar kunderna med ert företag och skapar en relation med ert varumärke. En typisk kund kan vara aktiv i valfritt antal system i organisationens datainfrastruktur. Alla kunder kan vara aktiva i e-handels-, lojalitets- och helpdesk-systemen. Samma kund kan även anlita både anonymt eller via autentiserade medier på ett antal olika enheter.
 
@@ -109,9 +109,9 @@ Identitetstjänsten spelar en viktig roll inom Experience Platform. Några av de
 
 * [Scheman](../xdm/home.md): Inom ett givet schema gör de schemafält som har markerats som identitetsdiagram att identitetsdiagram kan skapas.
 * [Datauppsättningar](../catalog/datasets/overview.md): När en datauppsättning aktiveras för inmatning i kundprofilen i realtid, genereras identitetsdiagram från datauppsättningen, eftersom datauppsättningen har minst två fält som är markerade som identitet.
-* [Web SDK](../web-sdk/home.md): Web SDK skickar upplevelsehändelser till Adobe Experience Platform och Identity Service genererar ett diagram när det finns två eller flera identiteter i händelsen.
+* [Web SDK](../web-sdk/home.md): Web SDK skickar upplevelsehändelser till Adobe Experience Platform, och identitetstjänsten genererar ett diagram när det finns två eller flera identiteter i händelsen.
 * [Kundprofil i realtid](../profile/home.md): Innan attribut och händelser för en viss profil sammanfogas kan kundprofilen i realtid referera till identitetsdiagrammet. Mer information finns i guiden om [att förstå relationen mellan identitetstjänsten och kundprofilen i realtid](./identity-and-profile.md).
 * [Destinationer](../destinations/home.md): Destinationer kan skicka profilinformation till andra system baserat på ett identitetsnamnutrymme, t.ex. hashad e-post.
 * [Segmentmatchning](../segmentation/ui/segment-match/overview.md): Segmentmatchning matchar två profiler i två olika sandlådor som har samma ID-namnutrymme och identitetsvärde.
-* [Privacy Service](../privacy-service/home.md): Om borttagningsbegäran innehåller `identity` kan den angivna kombinationen av namnområde och identitetsvärde tas bort från identitetstjänsten med hjälp av funktionen för behandling av sekretessförfrågningar i Privacy Servicen.
+* [Privacy Service](../privacy-service/home.md): Om borttagningsbegäran innehåller `identity` kan den angivna kombinationen av namnutrymme och identitetsvärde tas bort från identitetstjänsten med hjälp av funktionen för bearbetning av sekretessförfrågningar i Privacy Service.
 

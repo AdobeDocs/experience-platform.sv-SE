@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om datainmatning
 user-guide-description: Samla data i Experience Platform via batch- eller strömningsinmatning.
 feature: Data Ingestion
 role: Developer
-source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 17%
+source-wordcount: '143'
+ht-degree: 20%
 
 ---
 
@@ -26,7 +26,7 @@ ht-degree: 17%
    - [Utvecklarhandbok för API](batch-ingestion/api-overview.md)
    - [Partiellt batchintag](batch-ingestion/partial.md)
    - [Felsökning](batch-ingestion/troubleshooting.md)
-- Tutorials {#tutorials}
+- Självstudiekurser {#tutorials}
    - Mappa en CSV-fil till XDM {#map-csv}
       - [Översikt](./tutorials/map-csv/overview.md)
       - [Mappa en CSV-fil till ett befintligt schema](./tutorials/map-csv/existing-schema.md)
@@ -48,4 +48,4 @@ ht-degree: 17%
 - [Source-anslutningar](source-connectors.md)
 - [API-referens för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
 - [API-referens för direktuppspelad inmatning](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

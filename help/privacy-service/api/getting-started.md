@@ -1,28 +1,28 @@
 ---
-title: Autentisera och få åtkomst till Privacy Services-API
-description: Lär dig hur du autentiserar till Privacy Service-API:t och hur du tolkar exempel-API-anrop i dokumentationen.
+title: Autentisera och få tillgång till Privacy Service API
+description: Lär dig hur du autentiserar till Privacy Service API och hur du tolkar exempel-API-anrop i dokumentationen.
 role: Developer
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
 
-# Autentisera och få åtkomst till Privacy Services-API
+# Autentisera och få tillgång till Privacy Service API
 
 Den här guiden ger en introduktion till de centrala koncept du måste känna till innan du försöker ringa anrop till Adobe Experience Platform Privacy Service API.
 
 ## Förhandskrav {#prerequisites}
 
-Den här handboken kräver en fungerande förståelse av [Privacy Service](../home.md) och hur den gör det möjligt att hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
+Den här handboken kräver en fungerande förståelse av [Privacy Service](../home.md) och hur den gör att du kan hantera förfrågningar från dina registrerade (kunder) i olika Adobe Experience Cloud-program.
 
-För att kunna skapa åtkomstautentiseringsuppgifter för API:t måste en administratör i organisationen tidigare ha konfigurerat produktprofiler för Privacy Service inom Adobe Admin Console. Den produktprofil som du tilldelar en API-integrering avgör vilka behörigheter som integreringen har för att komma åt Privacy Servicens funktioner. Mer information finns i guiden om att [hantera behörigheter för Privacy Service](../permissions.md).
+För att kunna skapa åtkomstautentiseringsuppgifter för API:t måste en administratör i din organisation tidigare ha konfigurerat produktprofiler för Privacy Service i Adobe Admin Console. Den produktprofil som du tilldelar till en API-integrering avgör vilka behörigheter som integreringen har för åtkomst till Privacy Service-funktioner. Mer information finns i handboken om [hantering av Privacy Service-behörigheter](../permissions.md).
 
 ## Samla in värden för obligatoriska rubriker {#gather-values-required-headers}
 
-För att kunna anropa Privacy Service-API:t måste du först samla in dina inloggningsuppgifter och använda dem i obligatoriska rubriker:
+För att kunna ringa anrop till Privacy Service API måste du först samla in dina inloggningsuppgifter och använda dem i obligatoriska rubriker:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -40,21 +40,21 @@ När du har skapat ett nytt projekt väljer du **[!UICONTROL Add to Project]** o
 
 ![Det API-alternativ som väljs i listrutan [!UICONTROL Add to Project] från sidan med projektinformation i Developer Console](../images/api/getting-started/add-api-button.png)
 
-#### Markera Privacy Service-API:t {#select-privacy-service-api}
+#### Välj Privacy Service API {#select-privacy-service-api}
 
 Skärmen **[!UICONTROL Add an API]** visas. Välj **[!UICONTROL Experience Cloud]** om du vill begränsa listan över tillgängliga API:er och markera sedan kortet för **[!UICONTROL Privacy Service API]** innan du väljer **[!UICONTROL Next]**.
 
-![Privacy Service-API-kortet som väljs i listan över tillgängliga API:er](../images/api/getting-started/add-privacy-service-api.png)
+![Privacy Service API-kortet som väljs i listan över tillgängliga API:er](../images/api/getting-started/add-privacy-service-api.png)
 
 >[!TIP]
 >
->Välj alternativet **[!UICONTROL View docs]** om du vill navigera i ett separat webbläsarfönster till den fullständiga [Privacy Service-API-referensdokumentationen](https://developer.adobe.com/experience-platform-apis/references/privacy-service/).
+>Välj alternativet **[!UICONTROL View docs]** om du vill navigera i ett separat webbläsarfönster till den fullständiga [Privacy Service API-referensdokumentationen](https://developer.adobe.com/experience-platform-apis/references/privacy-service/).
 
-Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst till Privacy Service-API:t.
+Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst till Privacy Service API.
 
 >[!IMPORTANT]
 >
->Välj metoden **[!UICONTROL OAuth Server-to-Server]** eftersom det här är den enda metod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** är föråldrad. Även om integreringar med JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025 rekommenderar Adobe starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Skapa en JSON-webbtoken (JWT)](/help/landing/api-authentication.md#jwt).
+>Välj metoden **[!UICONTROL OAuth Server-to-Server]** eftersom det här är den enda metod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** är föråldrad. Integreringar som använder JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025, men Adobe rekommenderar starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Skapa en JSON-webbtoken (JWT)](/help/landing/api-authentication.md#jwt).
 
 ![Välj autentiseringsmetoden OAuth Server-to-Server.](/help/privacy-service/images/api/getting-started/select-oauth-authentication.png)
 
@@ -64,13 +64,13 @@ Det sista konfigurationssteget är att välja de produktprofiler som den här in
 
 >[!NOTE]
 >
-Produktprofiler och de detaljerade behörigheter de ger skapas och hanteras av administratörer via Adobe Admin Console. Mer information finns i handboken om [behörighet för Privacy Service](../permissions.md).
+Produktprofiler och de detaljerade behörigheter de ger skapas och hanteras av administratörer via Adobe Admin Console. Mer information finns i handboken om [Privacy Service permissions](../permissions.md).
 
 När du är klar väljer du **[!UICONTROL Save configured API]**.
 
 ![En enskild produktprofil väljs från listan innan konfigurationen sparas](../images/api/getting-started/select-product-profiles.png)
 
-När API:t har lagts till i projektet visar **[!UICONTROL Privacy Service API]**-sidan för projektet följande autentiseringsuppgifter som krävs i alla anrop till Privacy Services-API:er:
+När API:t har lagts till i projektet visar **[!UICONTROL Privacy Service API]**-sidan för projektet följande autentiseringsuppgifter som krävs i alla anrop till Privacy Service API:er:
 
 * `{API_KEY}` ([!UICONTROL Client ID])
 * `{ORG_ID}` ([!UICONTROL Organization ID])
@@ -100,11 +100,11 @@ Du kan också använda en Postman-miljö och en samling för att generera åtkom
 
 ## Läser exempel-API-anrop {#read-sample-api-calls}
 
-Varje slutpunktshandbok innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/api-guide.md#sample-api) i Komma igång-guiden för Platform API:er.
+Varje slutpunktshandbok innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/api-guide.md#sample-api) i Komma igång-guiden för Experience Platform API:er.
 
 ## Nästa steg {#next-steps}
 
-Nu när du förstår vilka rubriker du ska använda kan du börja ringa anrop till Privacy Service-API:t. Välj någon av slutpunktsguiderna för att komma igång:
+Nu när du förstår vilka rubriker du ska använda kan du börja ringa anrop till Privacy Service API. Välj någon av slutpunktsguiderna för att komma igång:
 
 * [Sekretessjobb](./privacy-jobs.md)
 * [Godkännande](./consent.md)

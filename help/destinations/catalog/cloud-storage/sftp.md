@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1042'
+source-wordcount: '1046'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Destinationsändringslogg {#changelog}
 
-I juli 2023-Experience Platform-versionen innehåller SFTP-målet nya funktioner enligt nedan:
+I juli 2023-versionen av Experience Platform har SFTP-målet nya funktioner enligt nedan:
 
 * [Exportstöd för datauppsättningar](/help/destinations/ui/export-datasets.md).
 * Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
@@ -30,7 +30,7 @@ Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exporte
 
 ## Ansluta till SFTP via API eller gränssnitt {#connect-api-or-ui}
 
-* Läs avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan om du vill ansluta till din SFTP-lagringsplats via användargränssnittet för plattformen.
+* Läs avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan om du vill ansluta till din SFTP-lagringsplats med Experience Platform-användargränssnittet.
 * Om du vill ansluta till din SFTP-lagringsplats programmatiskt läser du [Aktivera målgrupper till filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
 
 ## Målgrupper {#supported-audiences}
@@ -39,7 +39,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -61,14 +61,14 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
-* Så här [exporterar du datauppsättningar med användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här [exporterar du datauppsättningar med Experience Platform användargränssnitt](/help/destinations/ui/export-datasets.md).
 * Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service ](/help/destinations/api/export-datasets.md).
 
 ## Filformat för exporterade data {#file-format}
 
-När du exporterar *målgruppsdata* skapar Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
+När du exporterar *målgruppsdata* skapar Experience Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
 
-När du exporterar *datauppsättningar* skapar Platform en `.parquet` - eller `.json` -fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
+När du exporterar *datauppsättningar* skapar Experience Platform en `.parquet`- eller `.json`-fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
 ## Anslut till målet {#connect}
 
@@ -121,7 +121,7 @@ När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du fö
 
 ![Målinformationsfält för SFTP-målet.](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
 
-* **[!UICONTROL Name]**: Ange ett namn som hjälper dig att identifiera det här målet i användargränssnittet i Experience Platform;
+* **[!UICONTROL Name]**: Ange ett namn som hjälper dig att identifiera det här målet i Experience Platform användargränssnitt;
 * **[!UICONTROL Description]**: Ange en beskrivning för det här målet;
 * **[!UICONTROL Folder path]**: Ange sökvägen till mappen på din SFTP-plats där filerna ska exporteras.
 * **[!UICONTROL File type]**: Välj det format som Experience Platform ska använda för de exporterade filerna. När du väljer alternativet [!UICONTROL CSV] kan du även [konfigurera filformateringsalternativen](../../ui/batch-destinations-file-formatting-options.md).
@@ -148,4 +148,4 @@ Kontrollera SFTP-lagringen och se till att de exporterade filerna innehåller de
 
 ## IP-adress tillåtelselista {#ip-address-allow-list}
 
-Läs artikeln [IP-adressen tillåtelselista ](ip-address-allow-list.md) om du behöver lägga till IP-adresser i Adobe i en tillåtelselista.
+Läs artikeln [IP-adressen tillåtelselista](ip-address-allow-list.md) om du behöver lägga till Adobe IP-adresser i en tillåtelselista.

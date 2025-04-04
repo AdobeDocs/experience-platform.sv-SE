@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;utvecklarguide;SDK;Modellframställning;Data Science Workspace;populära ämnen;testning
 solution: Experience Platform
-title: SDK för modellredigering
-description: Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförbereds som kan användas i Adobe Experience Platform Data Science Workspace, som innehåller implementerbara mallar i PySpark och Spark (Scala).
+title: Model Authoring SDK
+description: Med Model Authoring SDK kan du utveckla anpassade maskininlärningsrecept och funktionsförbereds som kan användas i Adobe Experience Platform Data Science Workspace, som innehåller implementerbara mallar i PySpark och Spark (Scala).
 exl-id: c7577f93-a64f-49b7-a76d-71f21d619052
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1004'
 ht-degree: 1%
 
 ---
 
-# SDK för modellredigering
+# Model Authoring SDK
 
 >[!NOTE]
 >
@@ -19,9 +19,9 @@ ht-degree: 1%
 >
 >Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
-Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförlopp som kan användas i [!DNL Adobe Experience Platform] Data Science Workspace, som innehåller implementerbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
+Med hjälp av SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförlopp som kan användas i [!DNL Adobe Experience Platform] Data Science Workspace, som innehåller implementerbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
 
-Det här dokumentet innehåller information om de olika klasser som finns i SDK för modellredigering.
+Det här dokumentet innehåller information om de olika klasser som finns i Model Authoring SDK.
 
 ## DataLoader {#dataloader}
 
@@ -42,7 +42,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
         <tr>
             <td>
                 <p><code>load(self, configProperties, spark)</code></p>
-                <p>Ladda och returnera plattformsdata som en Pandas DataFrame</p>
+                <p>Läsa in och returnera Experience Platform-data som en Pandas DataFrame</p>
             </td>
             <td>
                 <ul>
@@ -70,7 +70,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Loa
         <tr>
             <td>
                 <p><code>load(configProperties, sparkSession)</code></p>
-                <p>Läs in och returnera plattformsdata som en DataFrame</p>
+                <p>Läsa in och returnera Experience Platform-data som en DataFrame</p>
             </td>
             <td>
                 <ul>
@@ -82,9 +82,9 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Loa
     </tbody>
 </table>
 
-### Läs in data från en [!DNL Platform]-datauppsättning {#load-data-from-a-platform-dataset}
+### Läs in data från en [!DNL Experience Platform]-datauppsättning {#load-data-from-a-platform-dataset}
 
-Följande exempel hämtar [!DNL Platform]-data efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
+Följande exempel hämtar [!DNL Experience Platform]-data efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
 
 **PySpark**
 
@@ -216,7 +216,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Data S
         <tr>
             <td>
                 <p><code>save(self, configProperties, dataframe)</code></p>
-                <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
+                <p>Ta emot utdata som en DataFrame och lagra dem i en Experience Platform-datauppsättning</p>
             </td>
             <td>
                 <ul>
@@ -244,7 +244,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Sav
         <tr>
             <td>
                 <p><code>save(configProperties, dataFrame)</code></p>
-                <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
+                <p>Ta emot utdata som en DataFrame och lagra dem i en Experience Platform-datauppsättning</p>
             </td>
             <td>
                 <ul>
@@ -256,14 +256,14 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Sav
     </tbody>
 </table>
 
-### Spara data i en [!DNL Platform]-datauppsättning {#save-data-to-a-platform-dataset}
+### Spara data i en [!DNL Experience Platform]-datauppsättning {#save-data-to-a-platform-dataset}
 
-För att kunna lagra data i en [!DNL Platform]-datauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
+För att kunna lagra data i en [!DNL Experience Platform]-datauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
 
-- Ett giltigt [!DNL Platform]-datauppsättnings-ID som data ska lagras på
+- Ett giltigt [!DNL Experience Platform]-datauppsättnings-ID som data ska lagras på
 - Klient-ID som tillhör din organisation
 
-I följande exempel lagras data (`prediction`) i en [!DNL Platform]-datauppsättning, där datauppsättnings-ID (`datasetId`) och klient-ID (`tenantId`) definieras i konfigurationsfilen.
+I följande exempel lagras data (`prediction`) i en [!DNL Experience Platform]-datauppsättning, där datauppsättnings-ID (`datasetId`) och klient-ID (`tenantId`) definieras i konfigurationsfilen.
 
 
 **PySpark**
@@ -279,7 +279,7 @@ from .helper import *
 
 class MyDataSaver(DataSaver):
     """
-    Implementation of DataSaver which stores a DataFrame to a Platform dataset
+    Implementation of DataSaver which stores a DataFrame to an Experience Platform dataset
     """
 
     def save(self, config_properties, prediction):
@@ -347,7 +347,7 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.TimestampType
 
 /**
- * Implementation of DataSaver which stores a DataFrame to a Platform dataset
+ * Implementation of DataSaver which stores a DataFrame to an Experience Platform dataset
  */
 
 class ScoringDataSaver extends DataSaver {
@@ -460,7 +460,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark]-datamän
 
 ## FeaturePipelineFactory {#featurepipelinefactory}
 
-Klassen FeaturePipelineFactory innehåller extraheringsalgoritmer för funktioner och definierar stadierna för en funktionsförloppsindikator från början till slut.
+Klassen FeaturePipelineFactory innehåller funktionsextraheringsalgoritmer och definierar faserna i en funktionspipeline från början till slut.
 
 **PySpark**
 
@@ -686,8 +686,8 @@ I följande tabell beskrivs klassmetoderna för en PySpark MLEvaluator:
             <td>
                 <ul>
                     <li><code>self</code>: Självreferens</li>
-                    <li><code>dataframe</code>: En DataFrame bestående av utbildnings- och testdata</li>
-                    <li><code>model</code>: En utbildad modell</li>
+                    <li><code>dataframe</code>: En DataFrame som består av utbildnings- och testdata</li>
+                    <li><code>model</code>: En tränad modell</li>
                     <li><code>configProperties</code>: Konfigurationsegenskaper</li>
                 </ul>
             </td>

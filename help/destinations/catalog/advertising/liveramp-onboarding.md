@@ -1,18 +1,18 @@
 ---
 title: LiveRamp - Onboarding-anslutning
-description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
+description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-Time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1846'
+source-wordcount: '1853'
 ht-degree: 0%
 
 ---
 
 # [!DNL LiveRamp - Onboarding]-anslutning {#liveramp-onboarding}
 
-Använd anslutningen [!DNL LiveRamp - Onboarding] för att inkludera målgrupper från Adobe Real-time Customer Data Platform i [!DNL LiveRamp Connect].
+Använd anslutningen [!DNL LiveRamp - Onboarding] för att inkludera målgrupper från Adobe Real-Time Customer Data Platform i [!DNL LiveRamp Connect].
 
 ## Användningsfall {#use-cases}
 
@@ -38,7 +38,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -104,7 +104,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Plattformsgränssnitt, bild som visar hur du fyller i information för ditt mål](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-destination-details.png)
+![Experience Platform UI, bild som visar hur du fyller i information för ditt mål](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -135,13 +135,13 @@ I steget [!UICONTROL Scheduling] skapar du ett exportschema för varje målgrupp
 * **[!UICONTROL Frequency]**: [!UICONTROL Daily]
 * **[!UICONTROL Date]**: Välj start- och sluttider för exporten.
 
-![Skärmbild för plattformsgränssnitt som visar steg för målgruppsplanering.](../../assets/catalog/advertising/liveramp-onboarding/liveramp_scheduling_screenshot.png)
+![Experience Platform UI-skärmbild som visar steg för målgruppsplanering.](../../assets/catalog/advertising/liveramp-onboarding/liveramp_scheduling_screenshot.png)
 
 Det går inte att konfigurera det exporterade filnamnet för tillfället. Alla filer som exporteras till målet [!DNL LiveRamp - Onboarding] får automatiskt namn baserat på följande mall:
 
 `%ORGANIZATION_NAME%_%DESTINATION%_%DESTINATION_INSTANCE_ID%_%DATETIME%`
 
-![Plattformsanvändargränssnittet visar den exporterade filnamnsmallen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-file-name.png)
+![Experience Platform UI-skärmbild som visar den exporterade filnamnsmallen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-file-name.png)
 
 Namnet på en exporterad fil för en organisation med namnet [!DNL Luma] kan till exempel se ut ungefär så här:
 
@@ -165,19 +165,19 @@ I steget **[!UICONTROL Mapping]** definierar mappningen **[!UICONTROL Target fie
 
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
 
-   ![Skärmsläckaren för användargränssnittet i Experience Platform visar mappningsskärmen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-add-new-mapping.png)
+   ![Skärmbilden i Experience Platform UI visar skärmen Mappning.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-add-new-mapping.png)
 
 2. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera det XDM-attribut som du vill mappa, eller välj kategorin **[!UICONTROL Select identity namespace]** och välj en identitet som du vill mappa till målet.
 
-   ![Experience Platform-gränssnittsskärmbild med källmappningsskärmen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-source-mapping.png)
+   ![Experience Platform-användargränssnitt med skärmen för källmappning.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-source-mapping.png)
 
 3. I fönstret **[!UICONTROL Select target field]** anger du det attributnamn som du vill mappa det markerade källfältet till. Attributnamnet som definieras här återspeglas i den exporterade CSV-filen som en kolumnrubrik.
 
-   ![Skärmsläckaren för användargränssnittet i Experience Platform visar målmappningsskärmen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-mapping.png)
+   ![Skärmsläckaren Experience Platform UI visar målmappningsskärmen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-mapping.png)
 
    Du kan också ange attributnamnet genom att skriva det direkt i **[!UICONTROL Target field]**.
 
-   ![Skärmsläckaren för användargränssnittet i Experience Platform visar målmappningsskärmen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-field.png)
+   ![Skärmsläckaren Experience Platform UI visar målmappningsskärmen.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-target-field.png)
 
 När du har lagt till alla dina önskade mappningar väljer du **[!UICONTROL Next]** och slutför aktiveringsarbetsflödet.
 
@@ -187,7 +187,7 @@ Dina data exporteras till lagringsplatsen [!DNL LiveRamp - Onboarding] som du ko
 
 Exporterade filer har en maxstorlek på 10 miljoner rader. Experience Platform genererar flera filer per leverans om de valda målgrupperna överstiger 10 miljoner rader. Om du förväntar dig att överskrida gränsen för en enda fil kontaktar du [!DNL LiveRamp]-representanten och ber dem konfigurera gruppintagning åt dig.
 
-När du exporterar filer till målet [!DNL LiveRamp - Onboarding] genererar Plattform en CSV-fil för varje [ID för sammanfogningsprincip](../../../profile/merge-policies/overview.md).
+När du exporterar filer till målet [!DNL LiveRamp - Onboarding] genererar Experience Platform en CSV-fil för varje [sammanfogningsprincip-ID](../../../profile/merge-policies/overview.md) .
 
 Låt oss titta på följande målgrupper:
 
@@ -196,7 +196,7 @@ Låt oss titta på följande målgrupper:
 * Målgrupp C (sammanfogningspolicy 1)
 * Målgrupp D (sammanfogningspolicy 1)
 
-Plattformen exporterar två CSV-filer till [!DNL LiveRamp - Onboarding]:
+Experience Platform exporterar två CSV-filer till [!DNL LiveRamp - Onboarding]:
 
 * En CSV-fil som innehåller målgrupperna A, C och D.
 * En CSV-fil som innehåller målgrupp B.
@@ -211,7 +211,7 @@ Profilerna som ingår i de exporterade filerna kan matcha ett av följande kvali
 * `Expired`: Profilen är inte längre kvalificerad för målgruppen, men har tidigare kvalificerats.
 * `""`(tom sträng): Profilen har aldrig kvalificerats för målgruppen.
 
-En exporterad CSV-fil med till exempel ett `email`-attribut, två målgrupper som kommer från Experience Platform [segmenteringstjänsten](../../../segmentation/home.md) och en [importerad](../../../segmentation/ui/audience-portal.md#import-audience) extern målgrupp kan se ut så här:
+En exporterad CSV-fil med till exempel ett `email`-attribut, två målgrupper som kommer från Experience Platform [segmenteringstjänst](../../../segmentation/home.md) och en [importerad](../../../segmentation/ui/audience-portal.md#import-audience) extern målgrupp kan se ut så här:
 
 ```csv
 email,ups_aa2e3d98-974b-4f8b-9507-59f65b6442df,ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e
@@ -223,9 +223,9 @@ abc107@testemailabc.com,active,expired,active
 abc101@testemailabc.com,active,active,
 ```
 
-I exemplet ovan beskriver avsnitten `ups_aa2e3d98-974b-4f8b-9507-59f65b6442df` och `ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` målgrupper som härrör från segmenteringstjänsten, medan `CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e` beskriver en målgrupp som importerats till Platform som en [anpassad överföring](../../../segmentation/ui/audience-portal.md#import-audience).
+I exemplet ovan beskriver avsnitten `ups_aa2e3d98-974b-4f8b-9507-59f65b6442df` och `ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` målgrupper som kommer från segmenteringstjänsten, medan `CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e` beskriver en målgrupp som importeras till Experience Platform som en [anpassad överföring](../../../segmentation/ui/audience-portal.md#import-audience).
 
-Eftersom Platform genererar en CSV-fil för varje [ID för sammanfogningsprincip](../../../profile/merge-policies/overview.md) genereras även en separat dataflödeskörning för varje ID för sammanfogningsprincip.
+Eftersom Experience Platform genererar en CSV-fil för varje [ID för sammanfogningsprincip](../../../profile/merge-policies/overview.md) genereras även en separat dataflödeskörning för varje ID för sammanfogningsprincip.
 
 Det innebär att **[!UICONTROL Identities activated]**- och **[!UICONTROL Profiles received]**-måtten på [dataflödet körs](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)-sidan aggregeras för varje grupp av målgrupper som använder samma sammanfogningsprincip, i stället för att visas för varje målgrupp.
 

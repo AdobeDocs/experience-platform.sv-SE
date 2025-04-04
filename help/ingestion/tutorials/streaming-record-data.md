@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelning;intag;postdata;dataströmspostdata;
+keywords: Experience Platform;hem;populära ämnen;strömmande ingång;ingång;spela in data;strömma in data;
 solution: Experience Platform
 title: Direktuppspela postdata med API:er för direktuppspelning
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1032'
+source-wordcount: '1036'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ Den här självstudiekursen hjälper dig att börja använda API:er för direktu
 
 Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar upplevelsedata med.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar upplevelsedata med.
    - [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md): En omfattande guide som beskriver alla tillgängliga slutpunkter i [!DNL Schema Registry] API:t och hur du anropar dem. Detta inkluderar att du känner till din `{TENANT_ID}`, som visas i samtal under den här självstudiekursen, samt att du vet hur du skapar scheman, som används för att skapa en datauppsättning för förtäring.
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../landing/api-guide.md).
 
 ## Skapa ett schema baserat på klassen [!DNL XDM Individual Profile]
 
@@ -247,7 +247,7 @@ Mer information om hur du skapar en direktuppspelningsanslutning finns i självs
 
 ## Infoga postdata till direktuppspelningsanslutningen {#ingest-data}
 
-När datauppsättningen och direktuppspelningsanslutningen är på plats kan du importera XDM-formaterade JSON-poster för att importera postdata till [!DNL Platform].
+När datauppsättningen och direktuppspelningsanslutningen är på plats kan du importera XDM-formaterade JSON-poster för att importera postdata till [!DNL Experience Platform].
 
 **API-format**
 
@@ -264,7 +264,7 @@ POST /collection/{CONNECTION_ID}?syncValidation=true
 
 Inmatning av postdata till en direktuppspelningsanslutning kan göras antingen med eller utan källnamnet.
 
-Exempelbegäran nedan importerar en post med ett saknat källnamn till plattformen. Om en post saknar källnamnet läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
+I exempelbegäran nedan importeras en post med ett saknat källnamn till Experience Platform. Om en post saknar källnamnet läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
 
 >[!NOTE]
 >
@@ -374,7 +374,7 @@ GET /access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.c
 
 **Begäran**
 
-Du kan granska tidigare inmatade postdata med följande GET-förfrågan.
+Du kan granska tidigare inmatade postdata med följande GET-begäran.
 
 ```shell
 curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.com&entityIdNS=email'\
@@ -435,6 +435,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de begärda entite
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet förstår du nu hur du kan importera postdata till [!DNL Platform] med hjälp av direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via användargränssnittet för [!DNL Platform]. Mer information finns i guiden [Övervaka datainhämtning](../quality/monitor-data-ingestion.md).
+Genom att läsa det här dokumentet förstår du nu hur du kan importera postdata till [!DNL Experience Platform] med hjälp av direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via användargränssnittet för [!DNL Experience Platform]. Mer information finns i guiden [Övervaka datainhämtning](../quality/monitor-data-ingestion.md).
 
 Mer information om direktuppspelningsinmatning i allmänhet finns i [översikten över direktuppspelning](../streaming-ingestion/overview.md).

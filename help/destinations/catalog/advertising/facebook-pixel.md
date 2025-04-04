@@ -1,11 +1,11 @@
 ---
-keywords: facebook pixeltillägg;facebook pixeltillägg;facebook pixelmål;facebook pixel
-title: Facebook Pixel-tillägg
-description: Tillägget Facebook Pixel är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+keywords: pixeltillägg för Facebook;tillägg för Facebook-pixlar;mål för Facebook-pixlar;Facebook-pixel
+title: Pixeltillägg för Facebook
+description: Facebook Pixel-tillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 6a2c661f-1ad0-4d96-b1bb-bf8c158c8521
-source-git-commit: b4e869f9bc29122db4fc66ccda752a50c7db729f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '435'
 ht-degree: 0%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 0%
 
 [!DNL Facebook Pixel] är ett analysverktyg som gör att du kan mäta effekten av din annonsering genom att förstå vilka åtgärder andra personer vidtar på din webbplats.
 
-[!DNL Facebook Pixel] är ett annonstillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på webbplatsen [Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel/).
+[!DNL Facebook Pixel] är ett annonstillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på [Facebook Pixel-webbplatsen](https://developers.facebook.com/docs/facebook-pixel/).
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![Facebook Pixel-tillägg](../../assets/catalog/advertising/facebook-pixel/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Experience Platform.
 
 Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget [!DNL Facebook Pixel]:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
@@ -57,6 +57,6 @@ Du kan konfigurera, uppgradera och ta bort tillägg i användargränssnittet fö
 
 >[!TIP]
 >
->Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
+>Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** för tillägget i Experience Platform-gränssnittet. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
 
 Information om hur du uppgraderar ditt tillägg finns i handboken om uppgraderingsprocessen för [tillägget](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) i taggdokumentationen.

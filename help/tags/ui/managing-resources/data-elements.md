@@ -2,10 +2,10 @@
 title: Dataelement
 description: Dataelement är byggstenarna för dataordlistan (eller datamappningen). Använd dataelement för att samla in, ordna och leverera data över marknadsförings- och annonseringsteknologier.
 exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
-source-git-commit: 0956a28a8ff6eacb3a55f7c333293ed5b6c81cce
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1593'
-ht-degree: 0%
+source-wordcount: '1594'
+ht-degree: 3%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Dataelement är byggstenarna för dataordlistan (eller datamappningen). Använd dataelement för att samla in, ordna och leverera data över marknadsförings- och annonseringsteknologier.
 
@@ -238,7 +238,7 @@ Sessionslagring liknar lokal lagring, förutom att data tas bort efter att sessi
 
 ### Beteende för besökare
 
-På liknande sätt som i Sidinformation använder det här dataelementet vanliga beteendetyper för att utöka logiken i regler eller andra plattformslösningar.
+På liknande sätt som Sidinformation använder det här dataelementet vanliga beteendetyper för att utöka logiken i regler eller andra Experience Platform-lösningar.
 
 Välj ett av följande attribut för besökarbeteende:
 

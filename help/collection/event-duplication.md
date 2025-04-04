@@ -2,9 +2,9 @@
 title: Hantering av händelseduplicering i Experience Platform
 description: Läs om hur Adobe Experience Platform hanterar händelseduplicering
 exl-id: ac8c3ee8-52cf-459c-b283-16ed32d2976d
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '442'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 Adobe Experience Platform är ett distribuerat system som utformats för att maximera tillförlitligheten och samtidigt skalas till allt större datavolymer.
 
-För datainsamling i realtid samlas [Experience Events](../xdm/classes/experienceevent.md) in via [Edge Network](../web-sdk/home.md#edge-network) från källor på klientsidan, till exempel [Web SDK](../web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/), och levereras till Experience Platform-bearbetnings- och lagringslager. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
+För datainsamling i realtid samlas [Experience Events](../xdm/classes/experienceevent.md) in via [Edge Network](../web-sdk/home.md#edge-network) från källor på klientsidan, till exempel [Web SDK](../web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/), och levereras till Experience Platform bearbetnings- och lagringslager. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
 
 För att minimera Experience Event-förluster förväntar sig SDK:er på klientsidan och den interna Experience Platform-leveranstjänsten en bekräftelse på att en händelse har samlats in.
 
-Om den bekräftelsen inte tas emot utlöser SDK:n på klientsidan eller den interna plattformsleveranstjänsten ett nytt försök och Experience Event skickas igen.
+Om bekräftelsen inte tas emot utlöser SDK:n på klientsidan eller den interna Experience Platform-leveranstjänsten ett nytt försök och Experience Event skickas igen.
 
 Detta är en bra metod för hantering av tillfälliga fel. Biverkningen är möjligheten att införa dubbletthändelser.
 
@@ -27,7 +27,7 @@ Mer information om hur du hanterar tillfälliga fel finns i den här artikeln om
 
 Händelseduplicering kan inträffa i olika scenarier, till exempel, men inte begränsat till:
 
-* Nätverksrelaterade problem mellan SDK:er på klientsidan och [!DNL Edge Network]. Dessa problem kan bero på fel från Internet-tjänsteleverantören, förlust av mobilsignaler eller andra nätverksfel, eftersom anslutningen mellan kunden och Edge Network sker via det offentliga Internet.
+* Nätverksrelaterade problem mellan SDK:er på klientsidan och [!DNL Edge Network]. Dessa problem kan bero på fel i Internet-leverantören, förlust av mobilsignaler eller andra nätverksfel, eftersom anslutningen mellan kunden och Edge Network sker via det offentliga Internet.
 * Interna Experience Platform-händelser för autoskalning. Data kan ibland balanseras på nytt på grund av molninfrastrukturens instabilitet.
 
 Adobe Experience Platform datainsamlingslager har utformats för att stödja &quot;minst en gång&quot;-bearbetning. Följaktligen kan duplicering av händelser inträffa i begränsade, sällsynta situationer.
@@ -44,4 +44,4 @@ För affärsscenarier som är känsliga för duplicerade händelser använder Ex
 
 >[!NOTE]
 >
->Om du stöter på problem med händelseduplicering utanför de användningsfall som beskrivs ovan, kontakta din Adobe-representant och lämna detaljerad information om ditt användningsfall.
+>Om du stöter på problem med duplicering av händelser utanför de användningsfall som beskrivs ovan, kontakta din Adobe-representant och lämna detaljerad information om ditt användningsfall.

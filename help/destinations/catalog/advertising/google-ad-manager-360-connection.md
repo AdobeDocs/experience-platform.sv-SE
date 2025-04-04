@@ -2,9 +2,9 @@
 title: (Beta) [!DNL Google Ad Manager 360] anslutning
 description: Google Ad Manager 360 är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 21b76877e8b36d6b844d9c0726a2347b1fab170e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1160'
+source-wordcount: '1164'
 ht-degree: 3%
 
 ---
@@ -74,7 +74,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ### Tillåt listning {#allow-listing}
 
-Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Ad Manager 360]-mål i plattformen. Se till att du slutför processen för att tillåta listning som beskrivs nedan innan du skapar ditt mål.
+Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Ad Manager 360]-mål i Experience Platform. Se till att du slutför processen för att tillåta listning som beskrivs nedan innan du skapar ditt mål.
 
 >[!NOTE]
 >
@@ -96,8 +96,8 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
-* **[!UICONTROL Access key ID]**: En alfanumerisk sträng på 61 tecken som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen.
-* **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen.
+* **[!UICONTROL Access key ID]**: En alfanumerisk sträng på 61 tecken som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Experience Platform.
+* **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Experience Platform.
 
 Mer information om dessa värden finns i handboken [Google Cloud Storage HMAC keys](https://cloud.google.com/storage/docs/authentication/hmackeys#overview). Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] källöversikten](/help/sources/connectors/cloud-storage/google-cloud-storage.md).
 
@@ -139,7 +139,7 @@ I steget för identitetsmappning ser du följande förifyllda mappningar:
 
 | Mappning i förväg | Beskrivning |
 |---------|----------|
-| `ECID` -> `ppid` | Detta är den enda användaranpassade förifyllda mappningen. Du kan välja attribut eller identitetsnamnutrymmen från plattformen och mappa dem till `ppid`. |
+| `ECID` -> `ppid` | Detta är den enda användaranpassade förifyllda mappningen. Du kan välja attribut eller identitetsnamnutrymmen från Experience Platform och mappa dem till `ppid`. |
 | `metadata.segment.alias` -> `list_id` | Mappar Experience Platform målgruppsnamn till målgrupps-ID:n på Google-plattformen. |
 | `iif(${segmentMembership.ups.seg_id.status}=="exited", "1","0")` -> `delete` | Anger Google när diskvalificerade användare ska tas bort från segment. |
 

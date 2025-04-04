@@ -1,21 +1,21 @@
 ---
-title: Konfigurera kundhanterade nycklar för Azure med hjälp av plattformsgränssnittet
+title: Konfigurera kundhanterade nycklar för Azure med hjälp av Experience Platform-gränssnittet
 description: Lär dig hur du konfigurerar din CMK-app med din Azure-klient och skickar ditt krypteringsnyckel-ID till Adobe Experience Platform.
 role: Developer
 feature: Privacy
 exl-id: 5f38997a-66f3-4f9d-9c2f-fb70266ec0a6
-source-git-commit: 58bc7a650ff58f877550fa8838c6f8e2908f0090
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1051'
+source-wordcount: '1059'
 ht-degree: 0%
 
 ---
 
-# Konfigurera kundhanterade nycklar för Azure med hjälp av plattformsgränssnittet
+# Konfigurera kundhanterade nycklar för Azure med hjälp av Experience Platform-gränssnittet
 
-Det här dokumentet innehåller de Azure-specifika instruktionerna för att aktivera funktionen Customer Managed Keys (CMK) i Platform med användargränssnittet. Instruktioner som är specifika för AWS finns i [AWS installationsguide](../aws/ui-set-up.md).
+Det här dokumentet innehåller de Azure-specifika instruktionerna för att aktivera funktionen Customer Managed Keys (CMK) i Experience Platform med användargränssnittet. Instruktioner som är specifika för AWS finns i [AWS installationsguide](../aws/ui-set-up.md).
 
-Instruktioner om hur du slutför den här processen för Azure-värdbaserade plattformsinstanser med API finns i [API CMK-konfigurationsdokumentet](./api-set-up.md).
+Instruktioner om hur du slutför den här processen för Azure-värdbaserade Experience Platform-instanser med API:t finns i [API CMK-konfigurationsdokumentet](./api-set-up.md).
 
 ## Förhandskrav
 
@@ -50,13 +50,13 @@ Välj kopieringsikonen (![Kopieringsikonen.](../../../../images/icons/copy.png))
 
 ![Vyn [!UICONTROL Customer Managed Keys configuration] med URL:en för programautentisering är markerad.](../../../images/governance-privacy-security/customer-managed-keys/application-authentication-url.png)
 
-Kopiera och klistra in [!UICONTROL Application authentication url] i en webbläsare för att öppna en autentiseringsdialogruta. Välj **[!DNL Accept]** om du vill lägga till CMK-programtjänstens huvudnamn i din [!DNL Azure]-innehavare. Bekräftelse av autentiseringen omdirigerar dig till landningssidan för Experience Cloud.
+Kopiera och klistra in [!UICONTROL Application authentication url] i en webbläsare för att öppna en autentiseringsdialogruta. Välj **[!DNL Accept]** om du vill lägga till CMK-programtjänstens huvudnamn i din [!DNL Azure]-innehavare. Bekräftelse av autentiseringen omdirigerar dig till Experience Cloud landningssida.
 
 ![En dialogruta för Microsoft-behörighetsbegäran med [!UICONTROL Accept] markerad.](../../../images/governance-privacy-security/customer-managed-keys/app-permission.png)
 
 >[!IMPORTANT]
 >
->Om du har flera [!DNL Microsoft Azure]-prenumerationer kan du ansluta din Platform-instans till fel nyckelvalv. I det här fallet måste du byta ut `common`-avsnittet i URL:en för programautentisering för CMK-katalog-ID:t.<br>Kopiera CMK-katalog-ID från sidan Portal settings, Directories, and Subscriptions (Portal-inställningar, Kataloger och Prenumerationer) i [!DNL Microsoft Azure] programmet<br>![Sidan [!DNL Microsoft Azure] Application Portal settings, Directories and Subscriptions (Programportalinställningar, kataloger och prenumerationer) med katalog-ID markerat.](../../../images/governance-privacy-security/customer-managed-keys/directory-id.png)<br>Klistra sedan in den i webbläsarens adressfält.<br>![En webbläsarsida i Google med avsnittet &quot;common&quot; i URL:en för programautentisering markerad.](../../../images/governance-privacy-security/customer-managed-keys/common-url-section.png)
+>Om du har flera [!DNL Microsoft Azure]-prenumerationer kan du ansluta din Experience Platform-instans till fel nyckelvalv. I det här fallet måste du byta ut `common`-avsnittet i URL:en för programautentisering för CMK-katalog-ID:t.<br>Kopiera CMK-katalog-ID från sidan Portal settings, Directories, and Subscriptions (Portal-inställningar, Kataloger och Prenumerationer) i [!DNL Microsoft Azure] programmet<br>![Sidan [!DNL Microsoft Azure] Application Portal settings, Directories and Subscriptions (Programportalinställningar, kataloger och prenumerationer) med katalog-ID markerat.](../../../images/governance-privacy-security/customer-managed-keys/directory-id.png)<br>Klistra sedan in den i webbläsarens adressfält.<br>![En webbläsarsida i Google med avsnittet &quot;common&quot; i URL:en för programautentisering markerad.](../../../images/governance-privacy-security/customer-managed-keys/common-url-section.png)
 
 ### Tilldela CMK-appen till en roll {#assign-to-role}
 
@@ -82,11 +82,11 @@ Du kan verifiera programmet genom att jämföra [!UICONTROL Application ID] som 
 
 ![Vyn [!UICONTROL Customer Managed Keys configuration] med [!UICONTROL Application ID] markerad.](../../../images/governance-privacy-security/customer-managed-keys/application-id.png)
 
-All information som krävs för att verifiera Azure-verktygen ingår i plattformens användargränssnitt. Den här detaljnivån tillhandahålls så många användare som vill använda andra Azure-verktyg för att förbättra sina möjligheter att övervaka och logga dessa program åtkomst till deras nyckelvalv. Att förstå dessa identifierare är avgörande för det ändamålet och för att hjälpa Adobes tjänster att komma åt nyckeln.
+All information som krävs för att verifiera Azure-verktygen finns i Experience Platform-gränssnittet. Den här detaljnivån tillhandahålls så många användare som vill använda andra Azure-verktyg för att förbättra sina möjligheter att övervaka och logga dessa program åtkomst till deras nyckelvalv. Att förstå dessa identifierare är avgörande för det ändamålet och för att hjälpa Adobes tjänster att komma åt nyckeln.
 
 ## Aktivera krypteringsnyckelkonfigurationen i Experience Platform {#send-to-adobe}
 
-När du har installerat CMK-appen på [!DNL Azure] kan du skicka krypteringsnyckelns identifierare till Adobe. Välj **[!DNL Keys]** i den vänstra navigeringen, följt av namnet på nyckeln som du vill skicka.
+När du har installerat CMK-appen på [!DNL Azure] kan du skicka din krypteringsnyckel till Adobe. Välj **[!DNL Keys]** i den vänstra navigeringen, följt av namnet på nyckeln som du vill skicka.
 
 ![Microsoft Azure-instrumentpanelen med objektet [!DNL Keys] och nyckelnamnet markerat.](../../../images/governance-privacy-security/customer-managed-keys/select-key.png)
 
@@ -110,11 +110,11 @@ Du återgår till [!UICONTROL Encryption configurations dashboard]. Status för 
 
 ## Verifiera konfigurationens status {#check-status}
 
-Bearbetningen kan ta lång tid. Om du vill kontrollera statusen för konfigurationen går du tillbaka till vyn [!UICONTROL Customer Managed Keys configuration] och rullar ned till [!UICONTROL Configuration status]. Förloppsindikatorn har avancerat till steg ett av tre och förklarar att systemet validerar att plattformen har åtkomst till nyckel- och nyckelvalvet.
+Bearbetningen kan ta lång tid. Om du vill kontrollera statusen för konfigurationen går du tillbaka till vyn [!UICONTROL Customer Managed Keys configuration] och rullar ned till [!UICONTROL Configuration status]. Förloppsindikatorn har avancerat till steg ett av tre och förklarar att systemet validerar att Experience Platform har åtkomst till nyckel- och nyckelvalvet.
 
 Det finns fyra möjliga statusvärden för CMK-konfigurationen. De är följande:
 
-* Steg 1: Verifierar att plattformen har åtkomst till nyckel- och nyckelvalvet.
+* Steg 1: Verifierar att Experience Platform har åtkomst till nyckelvalvet och nyckelvalvet.
 * Steg 2: Nyckelvalvet och nyckelnamnet läggs till i alla datalager i organisationen.
 * Steg 3: Nyckelvalvet och nyckelnamnet har lagts till i datalagret.
 * `FAILED`: Ett problem har uppstått, huvudsakligen relaterat till nyckeln, nyckelvalvet eller konfigurationen av multi-tenant-appar.

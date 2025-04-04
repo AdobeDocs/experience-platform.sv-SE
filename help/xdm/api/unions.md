@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;data model;data model;schema register;schema Registry;union;union;union;union;segment;segmentMembership;timeSeriesEvents;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;upplevelsedatamodell;Experience data model;data model;datamodell;schemaregister;schemaregister;union;union;fackföreningar;segmentMembership;timeSeriesEvents;
 solution: Experience Platform
 title: Unisions API-slutpunkt
 description: Med slutpunkten /union i API:t för schemaregister kan du programmässigt hantera XDM-föreningsscheman i ditt upplevelseprogram.
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: 3da2e8f66f08a7bb9533795f7854ad583734911c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '900'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Arrayen `timeSeriesEvents` är en lista över händelser i tidsserier som relate
 
 ### Segmentmedlemskapskarta
 
-Kartan `segmentMembership` lagrar resultaten av utvärderingen av en segmentdefinition. När segmentjobb körs med [Segmenterings-API](https://www.adobe.io/experience-platform-apis/references/segmentation/) uppdateras kartan. `segmentMembership` lagrar även alla förutvärderade målgrupper som är inkapslade i Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager. Mer information finns i självstudiekursen [Skapa målgrupper med API:er](../../segmentation/tutorials/create-a-segment.md).
+Kartan `segmentMembership` lagrar resultaten av utvärderingen av en segmentdefinition. När segmentjobb körs med [Segmenterings-API](https://www.adobe.io/experience-platform-apis/references/segmentation/) uppdateras kartan. `segmentMembership` lagrar även alla förutvärderade målgrupper som är inkapslade i Experience Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager. Mer information finns i självstudiekursen [Skapa målgrupper med API:er](../../segmentation/tutorials/create-a-segment.md).
 
 ## Hämta en lista över föreningar {#list}
 
@@ -91,7 +91,7 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och en `results`-matris i svarst
 
 ## Slå upp en union {#lookup}
 
-Du kan visa en specifik union genom att utföra en GET-förfrågan som innehåller `$id` och, beroende på accepteringshuvudet, vissa eller alla detaljer om unionen.
+Du kan visa en specifik union genom att utföra en GET-begäran som innehåller `$id` och, beroende på accepteringshuvudet, vissa eller alla detaljer om unionen.
 
 >[!NOTE]
 >
@@ -184,7 +184,7 @@ För att ett schema ska kunna inkluderas i unionen för sin klass måste en `uni
 
 ## Visa scheman i en union {#list-schemas}
 
-Om du vill se vilka scheman som ingår i en specifik union kan du utföra en GET-förfrågan till slutpunkten `/tenant/schemas`. Med frågeparametern `property` kan du konfigurera svaret så att det bara returnerar scheman som innehåller ett `meta:immutableTags`-fält och en `meta:class` som är lika med den klass vars union du använder.
+För att se vilka scheman som ingår i en specifik union kan du utföra en GET-begäran till slutpunkten `/tenant/schemas`. Med frågeparametern `property` kan du konfigurera svaret så att det bara returnerar scheman som innehåller ett `meta:immutableTags`-fält och en `meta:class` som är lika med den klass vars union du använder.
 
 **API-format**
 

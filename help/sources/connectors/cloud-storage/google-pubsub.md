@@ -3,9 +3,9 @@ title: Google PubSub Source Overview
 description: Lär dig hur du ansluter Google PubSub till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '825'
+source-wordcount: '829'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 0%
 >
 >Källan [!DNL Google PubSub] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 
-Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som [!DNL AWS], [!DNL Google Cloud Platform] och [!DNL Azure], vilket gör att du kan överföra data från dessa system till plattformen för användning i underordnade tjänster och mål.
+Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som [!DNL AWS], [!DNL Google Cloud Platform] och [!DNL Azure], vilket gör att du kan överföra data från dessa system till Experience Platform för användning i underordnade tjänster och destinationer.
 
-Lagringskällor i molnet kan hämta dina data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i källarbetsflödet. Med plattformen kan du hämta data från [!DNL Google PubSub] i realtid.
+Lagringskällor i molnet kan överföra dina data till Experience Platform utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i källarbetsflödet. Med Experience Platform kan du hämta in data från [!DNL Google PubSub] i realtid.
 
 ## Förhandskrav {#prerequisites}
 
@@ -83,7 +83,7 @@ Du måste **ange att kvarhållningstiden för prenumerationsmeddelanden ska vara
 
 ## Anslut [!DNL Google PubSub] till Experience Platform
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google PubSub] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google PubSub] till Experience Platform med API:er eller användargränssnittet:
 
 ### Använda API:er
 

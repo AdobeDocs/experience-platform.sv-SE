@@ -3,9 +3,9 @@ title: (API) Oracle Eloqua-anslutning
 description: (API) Oracle Eloqua-destinationen gör att du kan exportera dina kontodata och aktivera dem i Oracle Eloqua för dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1956'
+source-wordcount: '1967'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Se Experience Platform-dokumentationen för schemafältgruppen [Information om m
 
 ### Krav för [!DNL Oracle Eloqua] {#prerequisites-destination}
 
-Du måste ha ett [!DNL Oracle Eloqua]-konto för att kunna exportera data från Platform till ditt [!DNL Oracle Eloqua]-konto.
+Om du vill exportera data från Experience Platform till ditt [!DNL Oracle Eloqua]-konto måste du ha ett [!DNL Oracle Eloqua]-konto.
 
 Dessutom behöver du minst *&quot;Avancerade användare - marknadsföringsbehörigheter&quot;* för din [!DNL Oracle Eloqua]-instans. Mer information finns i avsnittet *&quot;Säkerhetsgrupper&quot;* på sidan [Skyddad användaråtkomst](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm) . Målet kräver åtkomst för att [avgöra din bas-URL](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html) programmatiskt när [!DNL Oracle Eloqua]-API:t anropas.
 
@@ -57,7 +57,7 @@ Mer information finns i [Logga in på [!DNL Oracle Eloqua]](https://docs.oracle.
 >* [!DNL Oracle Eloqua] anpassade kontaktfält skapas automatiskt med namnen på de målgrupper som valts under **[!UICONTROL Select segments]** -steget.
 
 * [!DNL Oracle Eloqua] har en maxgräns på 250 anpassade kontaktfält.
-* Innan du exporterar nya målgrupper ser du till att antalet plattformsmålgrupper och antalet befintliga målgrupper inom [!DNL Oracle Eloqua] inte överskrider denna gräns.
+* Innan du exporterar nya målgrupper ser du till att antalet Experience Platform-målgrupper och antalet befintliga målgrupper inom [!DNL Oracle Eloqua] inte överskrider denna gräns.
 * Om den här gränsen överskrids uppstår ett fel i Experience Platform. Detta beror på att [!DNL Oracle Eloqua]-API:t inte kan validera begäran och svarar med ett - *400: Det fanns ett valideringsfel* - felmeddelande som beskriver problemet.
 * Om du har nått gränsen ovan måste du ta bort befintliga mappningar från målet och ta bort motsvarande anpassade kontaktfält i ditt [!DNL Oracle Eloqua]-konto innan du kan exportera fler segment.
 
@@ -77,7 +77,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Platform uppdateras motsvarande [!DNL Oracle Eloqua]-segmentstatus med målgruppsstatus från Platform.</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Experience Platform uppdateras motsvarande [!DNL Oracle Eloqua]-segmentstatus med målgruppsstatus från Experience Platform.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
@@ -104,7 +104,7 @@ Fyll i de obligatoriska fälten nedan. Mer information finns i avsnittet [Samla 
 * **[!UICONTROL Username]**: En sammanfogad sträng som består av ditt [!DNL Oracle Eloqua] företagsnamn och [!DNL Oracle Eloqua] användarnamn.<br>Det sammanfogade värdet har formen `{COMPANY_NAME}\{USERNAME}`.<br> Obs! Använd inte klammerparenteser eller mellanslag och bevara `\`. <br>Om ditt [!DNL Oracle Eloqua] företagsnamn till exempel är `MyCompany` och [!DNL Oracle Eloqua] användarnamn är `Username` är det sammanfogade värde som du kommer att använda i fältet **[!UICONTROL Username]** `MyCompany\Username`.
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
-![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar.](../../assets/catalog/email-marketing/oracle-eloqua-api/authenticate-destination.png)
+![Experience Platform UI, bild som visar hur du autentiserar.](../../assets/catalog/email-marketing/oracle-eloqua-api/authenticate-destination.png)
 
 Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]** med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
@@ -118,7 +118,7 @@ Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]*
 <!-- >additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle Knowledge base - find out your Pod number" -->
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
-![Skärmbild för plattformsgränssnitt som visar målinformationen.](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
+![Experience Platform UI-skärmbild med målinformation.](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -141,7 +141,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Oracle Eloqua] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Oracle Eloqua] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet.
 
 Följ de här stegen för att mappa dina XDM-fält till [!DNL Oracle Eloqua]-målfälten:
 
@@ -165,7 +165,7 @@ Följ de här stegen för att mappa dina XDM-fält till [!DNL Oracle Eloqua]-må
      | `xdm: workAddress.city` | `Attribute: city` | |
 
    * Ett exempel med mappningarna ovan visas nedan:
-     ![Exempel på skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
+     ![Exempel på skärmbild i Experience Platform UI med attributmappningar.](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
 >[!IMPORTANT]
 >
@@ -201,10 +201,10 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. Välj **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och navigera till listan med mål.
 1. Välj sedan målet, växla till fliken **[!UICONTROL Activation data]** och välj sedan ett målgruppsnamn.
-   ![Exempel på skärmbild för användargränssnittet för plattformen som visar aktiveringsdata för destinationer.](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar aktiveringsdata för destinationer.](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
 
 1. Övervaka målgruppssammanfattningen och kontrollera att antalet profiler motsvarar antalet inom segmentet.
-   ![Exempel på skärmbild för plattformsgränssnitt som visar segment.](../../assets/catalog/email-marketing/oracle-eloqua-api/segment.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar segment.](../../assets/catalog/email-marketing/oracle-eloqua-api/segment.png)
 
 1. Logga in på webbplatsen [!DNL Oracle Eloqua] och navigera sedan till sidan **[!UICONTROL Contacts Overview]** för att kontrollera om profilerna från målgruppen har lagts till. Om du vill visa målgruppens status går du ned till en **[!UICONTROL Contact Detail]**-sida och kontrollerar om kontaktfältet med det valda målgruppsnamnet som prefix har skapats.
 
@@ -217,7 +217,7 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 ## Fel och felsökning {#errors-and-troubleshooting}
 
 När du skapar målet kanske du får något av följande felmeddelanden: `400: There was a validation error` eller `400 BAD_REQUEST`. Detta inträffar när du överskrider gränsen på 250 anpassade kontaktfält, vilket beskrivs i avsnittet [skyddsutkast](#guardrails). Kontrollera att du inte överskrider gränsen för anpassade kontaktfält i [!DNL Oracle Eloqua] för att åtgärda det här felet.
-![Skärmbild för plattformsgränssnitt visar ett fel.](../../assets/catalog/email-marketing/oracle-eloqua-api/error.png)
+![Experience Platform UI-skärmbild visar ett fel.](../../assets/catalog/email-marketing/oracle-eloqua-api/error.png)
 
 På sidorna [[!DNL Oracle Eloqua] HTTP-statuskoder](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/APIRequests_HTTPStatusCodes.html) och [[!DNL Oracle Eloqua] Valideringsfel](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/APIRequests_HTTPValidationErrors.html) finns en omfattande lista med status- och felkoder med förklaringar.
 

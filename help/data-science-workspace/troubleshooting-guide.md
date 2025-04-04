@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Data Science Workspace Troubleshooting Guide
 description: Här hittar du svar på vanliga frågor om Adobe Experience Platform Data Science Workspace.
 exl-id: fbc5efdc-f166-4000-bde2-4aa4b0318b38
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1495'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 >Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Data Science Workspace]. Mer information och felsökning om [!DNL Platform] API:er i allmänhet finns i [felsökningsguiden för Adobe Experience Platform API](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Data Science Workspace]. Mer information och felsökning om [!DNL Experience Platform] API:er i allmänhet finns i [felsökningsguiden för Adobe Experience Platform API](../landing/troubleshooting.md).
 
 ## JupyterLab-frågans status för anteckningsbok fastsatt i körningstillståndet
 
@@ -107,7 +107,7 @@ En fullständig lista över förinstallerade [!DNL Python]-bibliotek finns i avs
 
 ## Kan jag installera egna PySpark-bibliotek?
 
-Tyvärr kan du inte installera fler bibliotek för PySpark-kärnan. Du kan dock kontakta kundtjänstrepresentanten på Adobe om du vill ha anpassade PySpark-bibliotek installerade.
+Tyvärr kan du inte installera fler bibliotek för PySpark-kärnan. Du kan dock kontakta Adobe kundtjänstrepresentant för att få anpassade PySpark-bibliotek installerade åt dig.
 
 En lista över förinstallerade PySpark-bibliotek finns i avsnittet [appendix i användarhandboken för JupyterLab](./jupyterlab/overview.md#supported-libraries).
 

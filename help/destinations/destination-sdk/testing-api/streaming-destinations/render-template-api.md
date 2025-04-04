@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att validera utdata till ditt direktuppspelningsmål, baserat på din meddelandeomvandlingsmall.
 title: Validera exporterad profilstruktur
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '794'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-star
 
 ## Återge exporterade profiler baserat på mallen för meddelandeomformning {#render-exported-data}
 
-Du kan återge exporterade profiler genom att göra en POST-förfrågan till `authoring/testing/template/render`-slutpunkten och ange mål-ID:t för målkonfigurationen och den mall som du skapade med [exempelmallens API-slutpunkt](sample-template-api.md).
+Du kan återge exporterade profiler genom att göra en POST-begäran till `authoring/testing/template/render`-slutpunkten och ange mål-ID:t för målkonfigurationen och mallen som du skapade med [exempelmallens API-slutpunkt](sample-template-api.md).
 
 Du kan börja med en enkel mall som exporterar dina Raw-profiler utan att använda några omformningar och sedan gå vidare till en mer komplex mall som tillämpar omformningar på profiler. Syntaxen för den enkla mallen är: <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
 
@@ -43,7 +43,7 @@ POST authoring/testing/template/render
 | -------- | ----------- |
 | `destinationId` | ID:t för målkonfigurationen som du återger exporterade profiler för. |
 | `template` | Den teckenescape-version av mallen som du återger exporterade profiler utifrån. |
-| `profiles` | *Valfritt*. Du kan lägga till profiler i begärandetexten. Om du inte lägger till några profiler genereras och läggs profiler till i begäran automatiskt i Experience Platform. <br> Om du vill lägga till profiler i anropets brödtext kan du generera några med hjälp av [API:t för generering av exempelprofiler](sample-profile-generation-api.md). |
+| `profiles` | *Valfritt*. Du kan lägga till profiler i begärandetexten. Om du inte lägger till några profiler genereras och läggs profiler till automatiskt i begäran. <br> Om du vill lägga till profiler i anropets brödtext kan du generera några med hjälp av [API:t för generering av exempelprofiler](sample-profile-generation-api.md). |
 
 {style="table-layout:auto"}
 
@@ -1066,8 +1066,8 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du använder meddelandeomformningsmallen för att generera exporterade profiler som matchar målets förväntade dataformat. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.
+När du har läst det här dokumentet vet du nu hur du använder meddelandeomformningsmallen för att generera exporterade profiler som matchar målets förväntade dataformat. Läs [hur du använder Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) och få en förståelse för var det här steget passar in i processen att konfigurera ditt mål.

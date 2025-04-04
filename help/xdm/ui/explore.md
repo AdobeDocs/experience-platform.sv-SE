@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience data model;data model;data model;explore;class;field group;data type;schema;
+keywords: Experience Platform;home;populära topics;ui;UI;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;explore;class;field group;data type;schema;
 solution: Experience Platform
 title: Utforska schemaresurser i användargränssnittet
-description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
+description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 5f9fdc9eff4d8bba049c03058d24e80e9b89e953
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1292'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
 
 # Utforska schemaresurser i användargränssnittet
 
-I Adobe Experience Platform lagras alla XDM-schemaresurser (Experience Data Model) i [!DNL Schema Library], inklusive standardresurser från Adobe och anpassade resurser som definierats av din organisation. I användargränssnittet i Experience Platform kan du visa strukturen och fälten för befintliga scheman, klasser, fältgrupper eller datatyper i [!DNL Schema Library]. Detta är särskilt användbart när du planerar och förbereder för dataöverföring, eftersom användargränssnittet ger information om de förväntade datatyperna och användningsexemplen för varje fält som tillhandahålls av dessa XDM-resurser.
+I Adobe Experience Platform lagras alla XDM-schemaresurser (Experience Data Model) i [!DNL Schema Library], inklusive standardresurser från Adobe och anpassade resurser som definierats av din organisation. I Experience Platform-gränssnittet kan du visa strukturen och fälten för befintliga scheman, klasser, fältgrupper eller datatyper i [!DNL Schema Library]. Detta är särskilt användbart när du planerar och förbereder för dataöverföring, eftersom användargränssnittet ger information om de förväntade datatyperna och användningsexemplen för varje fält som tillhandahålls av dessa XDM-resurser.
 
-Den här självstudiekursen beskriver stegen för att utforska befintliga scheman, klasser, fältgrupper och datatyper i användargränssnittet för Experience Platform.
+Den här självstudiekursen beskriver stegen för att utforska befintliga scheman, klasser, fältgrupper och datatyper i Experience Platform användargränssnitt.
 
 ## Söka efter en schemaresurs {#lookup}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. På arbetsytan [!UICONTROL Schemas] finns en **[!UICONTROL Browse]**-flik som du kan använda för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]**, **[!UICONTROL Data types]** och **[!UICONTROL Relationships]**.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen. På arbetsytan [!UICONTROL Schemas] finns en **[!UICONTROL Browse]**-flik som du kan använda för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]**, **[!UICONTROL Data types]** och **[!UICONTROL Relationships]**.
 
 ![Arbetsytan Scheman med flera flikar markerade.](../images/ui/explore/tabs.png)
 
@@ -63,7 +63,7 @@ Alla objekttypsfält som innehåller underegenskaper komprimeras som standard n�
 
 ### Standardklass och fältgruppsindikator {#standard-class-and-field-group-indicator}
 
-I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+I Schemaredigeraren visas standardklasser (Adobe-genererade) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
 
 ![Schemaredigeraren med hänglåsikonen markerad](../images/ui/explore/schema-editor-padlock-icon.png)
 
@@ -73,7 +73,7 @@ Mer information finns i [Lägg till anpassade fält i standardfältgrupper](./re
 
 Vissa fältnamn har ett understreck som `_repo` och `_id`. Dessa representerar platshållare för fält som systemet automatiskt genererar och tilldelar när data hämtas.
 
-Därför bör de flesta av dessa fält uteslutas från datastrukturen när de hämtas till Platform. Det huvudsakliga undantaget för den här regeln är fältet [`_{TENANT_ID}` ](../api/getting-started.md#know-your-tenant_id), som alla XDM-fält som skapats under din organisation måste namnges under.
+Därför bör de flesta av dessa fält uteslutas från datastrukturen vid import till Experience Platform. Det huvudsakliga undantaget för den här regeln är fältet [`_{TENANT_ID}` ](../api/getting-started.md#know-your-tenant_id), som alla XDM-fält som skapats under din organisation måste namnges under.
 
 ### Datatyper {#data-types}
 
@@ -107,7 +107,7 @@ Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtry
 
 >[!NOTE]
 >
->Mer information om identitetsfält och deras relation med underordnade plattformstjänster finns i guiden [Definiera identitetsfält](./fields/identity.md).
+>Mer information om identitetsfält och deras relation med underordnade Experience Platform-tjänster finns i guiden [Definiera identitetsfält](./fields/identity.md).
 
 ### Relationsfält {#relationship}
 
@@ -123,4 +123,4 @@ Mer information om hur du använder relationer i XDM-scheman finns i självstudi
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du utforskar befintliga XDM-resurser i användargränssnittet i Experience Platform. Mer information om de olika funktionerna på arbetsytan [!UICONTROL Schemas] och [!DNL Schema Editor] finns i [[!UICONTROL Schemas]-arbetsytans översikt](./overview.md).
+I det här dokumentet beskrivs hur du utforskar befintliga XDM-resurser i Experience Platform användargränssnitt. Mer information om de olika funktionerna på arbetsytan [!UICONTROL Schemas] och [!DNL Schema Editor] finns i [[!UICONTROL Schemas]-arbetsytans översikt](./overview.md).

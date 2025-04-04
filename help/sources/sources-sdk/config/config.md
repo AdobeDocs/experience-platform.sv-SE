@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Konfigurationsalternativ i självbetjäningskällor (batch-SDK)
+title: Konfigurationsalternativ i självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: a41b3b80-599a-47ed-a391-419721be5aa2
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
 
-# Konfigurationsalternativ i självbetjäningskällor (batch-SDK)
+# Konfigurationsalternativ i självbetjäningskällor (Batch SDK)
 
 Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 
@@ -20,7 +20,7 @@ Anslutningsspecifikationerna returnerar en källas kopplingsegenskaper. De inneh
 
 | Specifikationer | Beskrivning |
 | --- | --- |
-| `authSpec` | Arrayen `authSpec` innehåller information om de autentiseringsparametrar som krävs för att ansluta en källa till plattformen. Alla angivna källor har stöd för flera olika typer av autentisering. |
+| `authSpec` | Arrayen `authSpec` innehåller information om de autentiseringsparametrar som krävs för att ansluta en källa till Experience Platform. Alla angivna källor har stöd för flera olika typer av autentisering. |
 | `sourceSpec` | Arrayen `sourceSpec` innehåller allmän information om en källa, inklusive information om attribut som krävs för att presentera källan i gränssnittet, dokumentationslänk och parametrar för sidnumrering, rubrik, brödtext och schemaläggning. Dessutom beskriver `sourceSpec` schemat för de parametrar som krävs för att skapa en källanslutning från en basanslutning och som är nödvändiga för att skapa en källanslutning. |
 | `exploreSpec` | Arrayen `exploreSpec` definierar de parametrar som krävs för att utforska och inspektera objekt som finns i källan. `exploreSpec` definierar också svarsformatet som returneras när objekt utforskas och inspekteras. |
 

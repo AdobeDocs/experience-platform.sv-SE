@@ -3,9 +3,9 @@ title: TikTok
 description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med Adobe realtidsintegrering med TikTok Ads Manager.
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 9a80a9b49b1983e8e488d11b114c02130b045686
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1048'
+source-wordcount: '1050'
 ht-degree: 1%
 
 ---
@@ -42,8 +42,8 @@ TikTok stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
-| Telefonnummer | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform och måste vara i E.164-format. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| E-post | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| Telefonnummer | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform och måste vara i E.164-format. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| E-post | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 
 {style="table-layout:auto"}
 
@@ -55,7 +55,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 |---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
-| [!DNL Federated Audience Composition] | ✓ | Publiker som importerats till Experience Platform via [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/audiences). |
+| [!DNL Federated Audience Composition] | ✓ | Publiker som importerats till Experience Platform via [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/audiences). |
 
 {style="table-layout:auto"}
 
@@ -88,7 +88,7 @@ Om du vill autentisera till målet omdirigeras du till ditt [!DNL TikTok Ads Man
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Information om målanslutning](/help/destinations/assets/catalog/social/tiktok/tiktok-configure-destination-details.png "Bild av plattformsgränssnittet, med information om målanslutning som ska fyllas i")
+![Information om målanslutning](/help/destinations/assets/catalog/social/tiktok/tiktok-configure-destination-details.png "Bild av Experience Platform-gränssnittet, med information om målanslutning som ska fyllas i")
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -123,7 +123,7 @@ Markera målfält:
 
 * Välj e-postnamnområdet som målidentitet.
 
-![Identitetsmappning](/help/destinations/assets/catalog/social/tiktok/tiktok-map-identity.png "Bild av plattformsgränssnittet, mappning av identiteter")
+![Identitetsmappning](/help/destinations/assets/catalog/social/tiktok/tiktok-map-identity.png "Bild av Experience Platform-gränssnittet, mappning av identiteter")
 
 ## Exporterade data {#exported-data}
 

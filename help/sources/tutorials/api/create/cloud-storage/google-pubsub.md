@@ -3,9 +3,9 @@ title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: fcac805e151d6142886eb8e05da0eb1babad2f69
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1153'
 ht-degree: 0%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Google PubSub] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Google PubSub] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-I den här självstudiekursen får du hjälp med att ansluta [!DNL Google PubSub] (kallas nedan [!DNL PubSub]) till Experience Platform med hjälp av [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
+I den här självstudiekursen får du hjälp med att ansluta [!DNL Google PubSub] (kallas nedan [!DNL PubSub]) till Experience Platform med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL PubSub] till plattformen med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL PubSub] till Experience Platform med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -58,9 +58,9 @@ Mer information om dessa värden finns i det här [[!DNL PubSub] autentiseringsd
 >
 >Om du använder kontobaserad autentisering för tjänster måste du se till att du har beviljat tillräcklig användaråtkomst till ditt tjänstkonto och att det inte finns några extra tomrum i JSON när du kopierar och klistrar in dina autentiseringsuppgifter.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
@@ -70,7 +70,7 @@ Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma ig�
 
 Det första steget i att skapa en källanslutning är att autentisera [!DNL PubSub]-källan och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL PubSub] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL PubSub]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 Med [!DNL PubSub]-källan kan du ange vilken typ av åtkomst du vill tillåta under autentiseringen. Du kan konfigurera ditt konto så att det har rotåtkomst eller begränsa åtkomsten till ett visst [!DNL PubSub]-ämne och en viss prenumeration.
 
@@ -88,7 +88,7 @@ POST /connections
 
 >[!TAB Projektbaserad autentisering]
 
-Om du vill skapa en basanslutning med projektbaserad autentisering skickar du en POST till `/connections`-slutpunkten och anger `projectId` och `credentials` i begärandetexten.
+Om du vill skapa en basanslutning med projektbaserad autentisering gör du en POST-begäran till `/connections`-slutpunkten och anger `projectId` och `credentials` i begärandetexten.
 
 +++Begäran
 
@@ -140,7 +140,7 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 >[!TAB Ämnesbaserad och prenumerationsbaserad autentisering]
 
-Om du vill skapa en basanslutning med ämne- och prenumerationsbaserad autentisering gör du en POST-förfrågan till `/connections`-slutpunkten och anger `credentials`, `topicName` och `subscriptionName` i begärandetexten.
+Om du vill skapa en basanslutning med ämne- och prenumerationsbaserad autentisering gör du en POST-begäran till `/connections`-slutpunkten och anger `credentials`, `topicName` och `subscriptionName` i begärandetexten.
 
 +++Begäran
 
@@ -199,7 +199,7 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
+Om du vill skapa en källanslutning skickar du en POST-begäran till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
 
 **API-format**
 

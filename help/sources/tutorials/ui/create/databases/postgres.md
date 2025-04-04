@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;[!DNL PostgreSQL];[!DNL PostgreSQL];PostgreSQL
+keywords: Experience Platform;home;populära topics;[!DNL PostgreSQL];[!DNL PostgreSQL];PostgreSQL
 solution: Experience Platform
 title: Skapa en PostgreSQL Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en PostgreSQL-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: e556d867-a1eb-4900-b8a9-189666a4f3f1
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '481'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL PostgreSQL]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL PostgreSQL]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL PostgreSQL]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Om du redan har en giltig [!DNL PostgreSQL]-anslutning kan du hoppa över resten
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL PostgreSQL]-konto på [!DNL Platform] måste du ange följande värde:
+För att få åtkomst till ditt [!DNL PostgreSQL]-konto på [!DNL Experience Platform] måste du ange följande värde:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -50,7 +50,7 @@ Följande är ett exempel på en [!DNL PostgreSQL]-anslutningssträng med SSL-kr
 
 ## Anslut ditt [!DNL PostgreSQL]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL PostgreSQL]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL PostgreSQL]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -76,4 +76,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL PostgreSQL]-konto 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL PostgreSQL]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL PostgreSQL]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

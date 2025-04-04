@@ -1,25 +1,25 @@
 ---
-title: Integrera stödet för IAB TCF 2.0 med hjälp av taggar och Platform Web SDK Extension
+title: Integrera stödet för IAB TCF 2.0 med taggar och Experience Platform Web SDK Extension
 description: Lär dig hur du ställer in IAB TCF 2.0-godkännande med taggar och Adobe Experience Platform Web SDK-tillägget.
 exl-id: dc0e6b68-8257-4862-9fc4-50b370ef204f
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '831'
 ht-degree: 0%
 
 ---
 
-# Integrera stödet för IAB TCF 2.0 med hjälp av taggar och Platform Web SDK-tillägget
+# Integrera stödet för IAB TCF 2.0 med taggar och Experience Platform Web SDK-tillägget
 
-Adobe Experience Platform Web SDK stöder Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). I den här handboken visas hur du ställer in en taggegenskap för att skicka IAB TCF 2.0-medgivandeinformation till Adobe med hjälp av taggtillägget Adobe Experience Platform Web SDK.
+Adobe Experience Platform Web SDK stöder Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). Den här guiden visar hur du ställer in en taggegenskap för att skicka IAB TCF 2.0-medgivandeinformation till Adobe med taggtillägget Adobe Experience Platform Web SDK.
 
 Om du inte vill använda taggar läser du i guiden för [att använda IAB TCF 2.0 utan taggar](./without-tags.md).
 
 ## Komma igång
 
-Om du vill använda IAB TCF 2.0 med taggar och Platform Web SDK-tillägget måste du ha ett XDM-schema och en XDM-datauppsättning tillgänglig.
+Om du vill använda IAB TCF 2.0 med taggar och Experience Platform Web SDK-tillägget måste du ha ett XDM-schema och en datauppsättning tillgänglig.
 
-Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs [Adobe Experience Platform Web SDK-översikten](../../home.md) och [Vanliga frågor](../../faq.md) om du vill få en snabb uppdatering.
+Dessutom krävs det att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs [Adobe Experience Platform Web SDK overview](../../home.md) och [Vanliga frågor och svar](../../faq.md) om du vill få en snabb uppdatering.
 
 ## Ange standardsamtycke
 
@@ -113,7 +113,7 @@ addEventListener();
 
 Den här koden är identisk med den tidigare anpassade koden, förutom att både `useractioncomplete`- och `tcloaded`-händelser hanteras. Den [föregående anpassade koden](#consent-code-1) utlöses bara när kunden väljer sina inställningar för första gången. Den här koden utlöses också när kunden redan har valt sina inställningar. På den andra sidan läses till exempel in.
 
-Lägg till en&quot;Skicka händelse&quot;-åtgärd från plattformens SDK-tillägg. I XDM-fältet väljer du XDM-dataelementet som du skapade i föregående avsnitt.
+Lägg till en&quot;Skicka händelse&quot;-åtgärd från tillägget Experience Platform Web SDK. I XDM-fältet väljer du XDM-dataelementet som du skapade i föregående avsnitt.
 
 ## Skicka andra händelser med IAB TCF 2.0-medgivandeinformation
 
@@ -121,4 +121,4 @@ När händelser utlöses efter den första Experience Event-händelsen definiera
 
 ## Nästa steg
 
-Nu när du har lärt dig att använda IAB TCF 2.0 med Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller Adobe Real-time Customer Data Platform. Mer information finns i [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md).
+Nu när du har lärt dig att använda IAB TCF 2.0 med Experience Platform Web SDK kan du även integrera med andra Adobe-lösningar som Adobe Analytics och Adobe Real-Time Customer Data Platform. Mer information finns i [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md).

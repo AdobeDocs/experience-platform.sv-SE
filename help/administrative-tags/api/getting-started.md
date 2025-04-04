@@ -4,9 +4,9 @@ title: Komma igång med Unified Tags API
 description: Följande dokumentation innehåller ytterligare information som du behöver känna till för att kunna arbeta med API:t för enhetliga taggar.
 role: Developer
 exl-id: 8f33707f-b46d-4054-802c-9e42ecabd9ba
-source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '261'
+source-wordcount: '262'
 ht-degree: 0%
 
 ---
@@ -23,13 +23,13 @@ API-dokumentationen för enhetliga taggar innehåller exempel på API-anrop som 
 
 ## Obligatoriska rubriker
 
-API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa plattformsslutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Experience Platform API-anrop, vilket visas nedan:
+API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa Experience Platform-slutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Experience Platform API-anrop, vilket visas nedan:
 
 - Behörighet: `Bearer {ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver ett huvud som anger namnet på den sandlåda där åtgärden ska utföras:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver ett huvud som anger namnet på den sandlåda där åtgärden ska utföras:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 

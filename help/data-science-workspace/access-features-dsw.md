@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Data Science Workspace Access and Features
 description: I följande dokument beskrivs behörigheter och åtkomst till funktioner i Data Science Workspace.
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
-source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '715'
+source-wordcount: '717'
 ht-degree: 0%
 
 ---
@@ -25,11 +25,11 @@ I följande dokument beskrivs behörigheter och åtkomst till funktioner i Data 
 
 - **Anteckningsböcker:** Tillhandahåller en interaktiv utvecklingsmiljö ([JupyterLab](./jupyterlab/overview.md)) för att utforska, analysera och modellera data på Experience Platform.
 - **Modeller:** innehåller verktyg som används för att skapa, publicera och lagra avancerade maskininlärningsrecept och modeller. Mer information finns i självstudiekursen [Skapa och publicera en maskininlärningsmodell](./models-recipes/create-publish-model.md).
-- **Tjänster:** Innehåller både Adobe-tjänster som [AI/ML-tjänster](../intelligent-services/home.md) och alla anpassade tjänster som du har skapat med Data Science Workspace.
+- **Tjänster:** Innehåller både Adobe-tjänster som [AI/ML-tjänster](../intelligent-services/home.md) och anpassade tjänster som du har skapat med Data Science Workspace.
 
 Varför visas bara fliken Tjänster?
 
-- Din organisation kan endast ha rätt till Adobe Real-time Customer Data Platform (Real-Time CDP) som innehåller AI/ML-tjänsten.
+- Din organisation kan endast ha rätt till Adobe Real-Time Customer Data Platform (Real-Time CDP) som innehåller AI/ML-tjänsten.
 
 Om du inte kan se någon av flikarna **Datavetenskap** och vill använda Workspace-funktioner för datavetenskap kontaktar du företagsadministratören för att kontrollera om du har en Adobe Experience Platform Intelligence-licens.
 
@@ -64,11 +64,11 @@ För att kunna använda Data Science Workspace måste behörigheten&quot;Manage 
 
 | Behörighet | Aktiverad | Handikappade |
 |---|---|---|
-| Hantera datavetenskap Workspace | Ger tillgång till alla tjänster i Data Science Workspace. | API- och gränssnittsåtkomst till alla tjänster i Data Science Workspace är inaktiverat. När det är inaktiverat går det inte att välja sidorna **Anteckningsböcker**, **Modeller** och **Tjänster**. <li>Åtkomst till **tjänster** kan fortfarande vara tillgänglig via Adobe Real-time Customer Data Platform (Real-Time CDP).</li> |
+| Hantera datavetenskap Workspace | Ger tillgång till alla tjänster i Data Science Workspace. | API- och gränssnittsåtkomst till alla tjänster i Data Science Workspace är inaktiverat. När det är inaktiverat går det inte att välja sidorna **Anteckningsböcker**, **Modeller** och **Tjänster**. <li>Åtkomst till **tjänster** kan fortfarande vara tillgänglig via Adobe Real-Time Customer Data Platform (Real-Time CDP).</li> |
 
 ## Stöd för sandlådor
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje Plattformsinstans har stöd för flera produktions- och icke-produktionssandlådor, och varje instans har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka dina produktionssandlådor. Mer information om sandlådor finns i översikten över [sandlådor](../sandboxes/home.md).
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje instans av Experience Platform har stöd för flera produktions- och icke-produktionssandlådor, och alla har sina egna bibliotek med Experience Platform-resurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka dina produktionssandlådor. Mer information om sandlådor finns i översikten över [sandlådor](../sandboxes/home.md).
 
 För närvarande har Data Science Workspace följande sandlådebegränsning:
 

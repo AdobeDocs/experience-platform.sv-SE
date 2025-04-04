@@ -5,9 +5,9 @@ title: Skapa ett kundattribut för Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning i användargränssnittet för att överföra kundattributprofildata till Adobe Experience Platform.
 exl-id: 66bdab8f-c00e-4ebe-8b8e-f9e12cf86bbe
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '590'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ I den här självstudiekursen beskrivs hur du skapar en källanslutning i använ
 >
 >Om du redan har upprättat en källanslutning för kundattributprofildata inaktiveras alternativet att ansluta till källan.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa en anslutning till.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa en anslutning till.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
@@ -42,7 +42,7 @@ Skärmen [!UICONTROL Add data] visar alla tillgängliga datakällor för kundatt
 >
 >Fältgrupper, scheman och datauppsättningar skapas som en del av flödesetableringen. De förblir oförändrade och du måste ta bort dem manuellt om det behövs.
 
-Schemautveckling stöds inte av kundattributskällan. Om schemaindata för en kundattributdatakälla ändras blir den inte kompatibel med Platform. Som en tillfällig lösning kan du ta bort ett befintligt kundattributdataflöde, tillsammans med tillhörande datauppsättning, schema och fältgrupp, och sedan skapa ett nytt med det uppdaterade schemat och datakällan.
+Schemautveckling stöds inte av kundattributskällan. Om schemaindata för en kundattributdatakälla ändras blir den inte kompatibel med Experience Platform. Som en tillfällig lösning kan du ta bort ett befintligt kundattributdataflöde, tillsammans med tillhörande datauppsättning, schema och fältgrupp, och sedan skapa ett nytt med det uppdaterade schemat och datakällan.
 
 >[!IMPORTANT]
 >
@@ -75,7 +75,7 @@ Steg [!UICONTROL Review] visas, så att du kan granska det nya dataflödet innan
 
 ## Nästa steg
 
-När anslutningen har skapats skapas ett målschema och en datauppsättning automatiskt som innehåller inkommande data. När det inledande intaget är slutfört kan kundattributprofildata användas av plattformstjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile] och [!DNL Segmentation Service]. Mer information finns i följande dokument:
+När anslutningen har skapats skapas ett målschema och en datauppsättning automatiskt som innehåller inkommande data. När det inledande intaget är slutfört kan kundattributprofildata användas av Experience Platform-tjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Segmentation Service]. Mer information finns i följande dokument:
 
 * [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] översikt](../../../../../segmentation/home.md)

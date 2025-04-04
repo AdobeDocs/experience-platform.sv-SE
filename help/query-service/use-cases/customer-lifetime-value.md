@@ -1,17 +1,17 @@
 ---
 title: Spåra datasignaler för att generera kundens livstidsvärde
-description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
+description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-Time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1266'
 ht-degree: 0%
 
 ---
 
 # Spåra datasignaler för att generera kundens livstidsvärde
 
-Med Real-time Customer Data Platform kan ni spåra kundens livstidsvärde (CLV) och visualisera mätvärdet med användardefinierade dashboards. Genom att använda Data Distiller och användardefinierade dashboards kan ni mäta hur värdefull en kund är för ert företag i hela er relation. Att känna till CLV kan hjälpa er att utveckla era affärsstrategier för att förvärva nya kunder samtidigt som ni behåller de befintliga och behåller vinstmarginalerna.
+Med Real-Time Customer Data Platform kan ni spåra kundens livstidsvärde (CLV) och visualisera mätvärdet med användardefinierade dashboards. Genom att använda Data Distiller och användardefinierade dashboards kan ni mäta hur värdefull en kund är för ert företag i hela er relation. Att känna till CLV kan hjälpa er att utveckla era affärsstrategier för att förvärva nya kunder samtidigt som ni behåller de befintliga och behåller vinstmarginalerna.
 
 Följande grafik visar den cykel med datainsamling, hantering, analys och aktivering som genererar högpresterande data för att förbättra era marknadsföringskampanjer.
 
@@ -56,7 +56,7 @@ Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datam
 * Skapa dimensionstabeller för att utöka er modell för rapportinsikter.
 * Fråga om datamodell för utökad accelererad butiksrapportering
 
-Läs dokumentationen för Real-time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall ](../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
+Läs dokumentationen för Real-Time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall ](../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
 
 Se till att du ställer in ett schema för att uppdatera din anpassade datamodell med en vanlig stängsel. Detta garanterar att data kommer in igen som en del av din inmatningsprocess efter behov och fyller i dina användardefinierade instrumentpaneler. Se guiden [Schemafrågor](../ui/query-schedules.md#create-schedule) för att lära dig hur du ställer in ditt schema.
 
@@ -73,7 +73,7 @@ Exempel på anpassade CLV-widgetar som använder decimalluckor visas nedan.
 
 ## Skapa och aktivera högpresterande målgrupper {#create-and-activate-audiences}
 
-Nästa steg är att skapa en segmentdefinition och generera målgrupper utifrån kundprofildata i realtid. Se användargränssnittsguiden för segmentbyggaren för att lära dig hur du [skapar och aktiverar målgrupper i plattformen](../../segmentation/ui/segment-builder.md). Handboken innehåller avsnitt om hur du:
+Nästa steg är att skapa en segmentdefinition och generera målgrupper utifrån kundprofildata i realtid. Se användargränssnittsguiden för segmentbyggaren för att lära dig hur du [skapar och aktiverar målgrupper i Experience Platform](../../segmentation/ui/segment-builder.md). Handboken innehåller avsnitt om hur du:
 
 * Skapa segmentdefinitioner med en kombination av attribut, händelser och befintliga målgrupper som byggstenar.
 * Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmenteringsreglerna ska köras.
@@ -85,7 +85,7 @@ Det finns också en videosjälvstudiekurs [för segmentbyggaren](https://experie
 
 ## Aktivera er målgrupp för en e-postkampanj {#activate-audience-for-campaign}
 
-När ni har byggt er målgrupp är ni redo att aktivera den till ett mål. Plattformen har stöd för en rad e-postleverantörer (ESP) som gör att du kan hantera dina e-postmarknadsföringsaktiviteter, till exempel skicka e-postkampanjer med reklam.
+När ni har byggt er målgrupp är ni redo att aktivera den till ett mål. Experience Platform har stöd för ett antal e-postleverantörer (ESP) som gör att du kan hantera dina e-postmarknadsföringsaktiviteter, till exempel skicka e-postkampanjer med reklam.
 
 Kontrollera översikten över [e-postmarknadsföringsmål](../../destinations/catalog/email-marketing/overview.md#connect-destination) för en lista över de mål som stöds och som du vill exportera data till (till exempel sidan [Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)).
 
@@ -107,11 +107,11 @@ Dessa insikter kan i sin tur hjälpa er att utveckla era affärsstrategier för 
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du få en bättre förståelse för hur du kan använda Real-time Customer Data Platform för att spåra och visualisera kundens livstidsvärde (CLV). Om du vill veta mer om de många användningsfall som hanteras via frågetjänsten och Experience Platform rekommenderar vi att du läser följande dokument:
+Genom att läsa det här dokumentet bör du få en bättre förståelse för hur du kan använda Real-Time Customer Data Platform för att spåra och visualisera kundens livstidsvärde (CLV). Om du vill veta mer om de många användningsfall som hanteras via Query Service och Experience Platform rekommenderar vi att du läser följande dokument:
 
 * [Ett heltäckande exempel på ett övergivet webbläsaranvändningsfall som demonstrerar mångsidigheten och fördelarna med Query Service.](./abandoned-browse.md)
 * [Hur man använder frågetjänsten och maskininlärning för att avgöra och filtrera startaktiviteten från besökstrafiken på en äkta webbplats](./bot-filtering.md)
-* [Så här utför du en matchning av plattformsdata som kombinerar resultat från flera datauppsättningar genom att i princip matcha en valfri sträng.](./fuzzy-match.md)
+* [Hur ni ska matcha era Experience Platform-data som kombinerar resultat från flera datauppsättningar genom att i princip matcha en valfri sträng.](./fuzzy-match.md)
 
 <!-- "Data signals are actions taken by consumers while online that offer clues about intent that can be acted upon. This includes anything from visiting a website to filling out a change of address or clicking an ad."  -->
 

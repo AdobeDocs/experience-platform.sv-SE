@@ -2,9 +2,9 @@
 title: Inmatning on demand för källdataflöden i användargränssnittet
 description: Lär dig hur du skapar dataflöden on demand för dina källanslutningar med Experience Platform användargränssnitt.
 exl-id: e5a70044-2484-416a-8098-48e6d99c2d98
-source-git-commit: 7a287c8de3c3fd0670cbdf29cd58558b30982122
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ Flödeskörningar är en instans av körning av dataflöde. Om ett dataflöde ti
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Dataflöden](../../../dataflows/home.md): Ett dataflöde är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källkopplingar till måldatauppsättningar, till identitetstjänsten och kundprofilen i realtid samt till destinationer.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Dataflöden](../../../dataflows/home.md): Ett dataflöde är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källkopplingar till måldatauppsättningar, till identitetstjänsten och kundprofilen i realtid samt till destinationer.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Skapa ett dataflöde on demand {#create-a-dataflow-on-demand}
 

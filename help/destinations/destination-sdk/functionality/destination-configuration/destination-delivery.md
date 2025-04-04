@@ -1,17 +1,17 @@
 ---
-description: Lär dig hur du konfigurerar destinationsleveransinställningarna för mål som skapats med Destination SDK, för att ange var exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas.
+description: Lär dig hur du konfigurerar leveransinställningar för mål som skapats med Destination SDK för att ange var exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas.
 title: Destinationsleverans
 exl-id: ade77b6b-4b62-4b17-a155-ef90a723a4ad
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
 
 # Destinationsleverans
 
-Om du vill ha större kontroll över var data som exporteras till destinationen hamnar kan du med Destination SDK ange inställningar för destinationsleverans.
+Om du vill ha större kontroll över var data som exporteras till destinationen hamnar, kan du ange inställningar för destinationsleverans i Destination SDK.
 
 Målleveransavsnittet anger var exporterade data skickas och vilken autentiseringsregel som används på den plats där data kommer att landas.
 
@@ -19,7 +19,7 @@ Målleveransavsnittet anger var exporterade data skickas och vilken autentiserin
 
 Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
-* [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-destination-configuration)
+* [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
 Du kan konfigurera inställningar för destinationsleverans via slutpunkten `/authoring/destinations`. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
@@ -31,7 +31,7 @@ I den här artikeln beskrivs alla målleveransalternativ som stöds och som du k
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -48,7 +48,7 @@ När du konfigurerar inställningarna för destinationsleverans kan du använda 
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `authenticationRule` | Sträng | Anger hur [!DNL Platform] ska ansluta till ditt mål. Värden som stöds:<ul><li>`CUSTOMER_AUTHENTICATION`: Använd det här alternativet om plattformskunder loggar in på ditt system via någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`: Använd det här alternativet om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och om [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av [API:t för autentiseringsuppgifter](../../credentials-api/create-credential-configuration.md)-konfigurationen. </li><li>`NONE`: Använd det här alternativet om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
+| `authenticationRule` | Sträng | Anger hur [!DNL Experience Platform] ska ansluta till ditt mål. Värden som stöds:<ul><li>`CUSTOMER_AUTHENTICATION`: Använd det här alternativet om Experience Platform-kunder loggar in på ditt system med någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`: Använd det här alternativet om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och kunden [!DNL Experience Platform] inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av [API:t för autentiseringsuppgifter](../../credentials-api/create-credential-configuration.md)-konfigurationen. </li><li>`NONE`: Använd det här alternativet om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `destinationServerId` | Sträng | `instanceId` för den [målserver](../../authoring-api/destination-server/create-destination-server.md) som du vill exportera data till. |
 | `deliveryMatchers.type` | Sträng | <ul><li>När målleverans konfigureras för filbaserade mål ska du alltid ange det här till `SOURCE`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål krävs inte avsnittet `deliveryMatchers`.</li></ul> |
 | `deliveryMatchers.value` | Sträng | <ul><li>När målleverans konfigureras för filbaserade mål ska du alltid ange det här till `batch`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål krävs inte avsnittet `deliveryMatchers`.</li></ul> |

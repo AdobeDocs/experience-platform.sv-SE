@@ -4,9 +4,9 @@ title: API-guide för kundprofil i realtid
 description: Med Real-Time Customer Profile API kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: cb276c55c010aa7ccc936947ad87bf74239d6e99
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '862'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Du kan skapa, visa, redigera och ta bort beräknade attribut med slutpunkten `ca
 
 ## Enheter ([!DNL Profile] åtkomst) {#entities}
 
-Via Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]-data med RESTful API:er eller användargränssnittet. Följ stegen som beskrivs i [enheternas slutpunktshandbok](entities.md) för att lära dig hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot; med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet för [!DNL Platform] finns i [användarhandboken för profilen](../ui/user-guide.md).
+Via Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]-data med RESTful API:er eller användargränssnittet. Följ stegen som beskrivs i [enheternas slutpunktshandbok](entities.md) för att lära dig hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot; med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet för [!DNL Experience Platform] finns i [användarhandboken för profilen](../ui/user-guide.md).
 
 ## Exportera jobb ([!DNL Profile] export) {#profile-export}
 
@@ -39,17 +39,17 @@ Via Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]
 
 ## Sammanfoga profiler {#merge-policies}
 
-När data från flera källor samlas i [!DNL Experience Platform] är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Med API:t [!DNL Real-Time Customer Profile] kan du skapa nya sammanfogningsprinciper, hantera befintliga principer och ange en standardsammanfogningsprincip för organisationen. Om du vill arbeta med sammanslagningsprinciper med API:t går du till [slutpunktshandboken för sammanslagningsprinciper](merge-policies.md).
+När data från flera källor samlas i [!DNL Experience Platform] är sammanfogningsprinciper de regler som [!DNL Experience Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Med API:t [!DNL Real-Time Customer Profile] kan du skapa nya sammanfogningsprinciper, hantera befintliga principer och ange en standardsammanfogningsprincip för organisationen. Om du vill arbeta med sammanslagningsprinciper med API:t går du till [slutpunktshandboken för sammanslagningsprinciper](merge-policies.md).
 
-Om du vill veta mer om sammanfogningsprinciper och deras roll inom plattformen börjar du med att läsa översikten [för sammanfogningsprinciper](../merge-policies/overview.md).
+Om du vill veta mer om sammanfogningsprinciper och deras roll i Experience Platform kan du börja med att läsa översikten [för sammanfogningsprinciper](../merge-policies/overview.md).
 
 ## Förhandsgranska exempelstatus ([!DNL Profile] förhandsgranskning) {#profile-preview}
 
-När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid. Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus`, som ingår i kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnutrymmet, samt för att generera flera rapporter för att få synlighet i kompositionen för organisationens profilarkiv.  Om du vill komma igång med att använda slutpunkten `/profilepreviewstatus` kan du läsa [guiden för förhandsgranskningsexempelstatus](preview-sample-status.md).
+När data hämtas till Experience Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid. Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus`, som ingår i kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnutrymmet, samt för att generera flera rapporter för att få synlighet i kompositionen för organisationens profilarkiv.  Om du vill komma igång med att använda slutpunkten `/profilepreviewstatus` kan du läsa [guiden för förhandsgranskningsexempelstatus](preview-sample-status.md).
 
 ## Profilsystemjobb {#profile-system-jobs}
 
-Profilaktiverade data som är inkapslade i [!DNL Platform] lagras i både datalagret [!DNL Data Lake] och datalagret [!DNL Real-Time Customer Profile]. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att API används för att skapa en [!DNL Profile System Job], även kallad [!DNL delete request], som kan ändras, övervakas eller tas bort om det behövs. Om du vill lära dig hur du arbetar med borttagningsbegäranden med hjälp av `/system/jobs`-slutpunkten i [!DNL Real-Time Customer Profile] API:t följer du stegen som beskrivs i [slutpunktshandboken för profilsystemjobb](profile-system-jobs.md).
+Profilaktiverade data som är inkapslade i [!DNL Experience Platform] lagras i både datalagret [!DNL Data Lake] och datalagret [!DNL Real-Time Customer Profile]. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att API används för att skapa en [!DNL Profile System Job], även kallad [!DNL delete request], som kan ändras, övervakas eller tas bort om det behövs. Om du vill lära dig hur du arbetar med borttagningsbegäranden med hjälp av `/system/jobs`-slutpunkten i [!DNL Real-Time Customer Profile] API:t följer du stegen som beskrivs i [slutpunktshandboken för profilsystemjobb](profile-system-jobs.md).
 
 ## Uppdatera profilattribut {#update-profile}
 

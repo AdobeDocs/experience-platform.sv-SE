@@ -3,10 +3,10 @@ keywords: Google ad manager;google ad;dubbelklickning;DoubleClick AdX;DoubleClic
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1077'
-ht-degree: 0%
+source-wordcount: '1079'
+ht-degree: 3%
 
 ---
 
@@ -16,9 +16,9 @@ ht-degree: 0%
 >
 > Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([EU User Consent Policy](https://www.google.com/about/company/user-consent-policy/)). Tvingande av dessa ändringar av medgivandekraven gäller från och med den 6 mars 2024.
 ><br/>
->För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe de verktyg som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
+>För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
 ><br/>
->Kunder som har köpt Adobe sekretess- och säkerhetssköld och konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
 ><br/>
 >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
@@ -30,7 +30,7 @@ ht-degree: 0%
 Observera följande information som är specifik för [!DNL Google Ad Manager] mål:
 
 * Aktiverade målgrupper skapas programmatiskt i plattformen [!DNL Google].
-* [!DNL Platform] innehåller för närvarande inte något mätvärde för att validera aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
+* [!DNL Experience Platform] innehåller för närvarande inte något mätvärde för att validera aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
 * När en målgrupp har mappats till ett [!DNL Google Ad Manager]-mål visas målgruppsnamnet omedelbart i användargränssnittet i [!DNL Google Ad Manager].
 * Segmentpopulationen behöver 24-48 timmar för att visas i [!DNL Google Ad Manager]. Dessutom måste målgrupperna ha en målgruppsstorlek på minst 50 profiler för att kunna visas i [!DNL Google Ad Manager]. Publiker som är mindre än 50 profiler fylls inte i i [!DNL Google Ad Manager].
 
@@ -56,7 +56,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -74,11 +74,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## Förhandskrav {#prerequisites}
 
-Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och inte har aktiverat [ID-synkroniseringsfunktionen](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Audience Manager eller andra program) ber du Adobe Consulting eller kundtjänst att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Google]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Platform.
+Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Google]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ### Tillåt listning {#allow-listing}
 
-Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Ad Manager]-mål i plattformen. Se till att du slutför processen för att tillåta listning som beskrivs nedan innan du skapar ditt mål.
+Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Ad Manager]-mål i Experience Platform. Se till att du slutför processen för att tillåta listning som beskrivs nedan innan du skapar ditt mål.
 
 1. Följ stegen som beskrivs i [Google Ad Manager-dokumentationen](https://support.google.com/admanager/answer/3289669?hl=en) för att lägga till Adobe som en länkad datahanteringsplattform (DMP).
 2. I gränssnittet [!DNL Google Ad Manager] går du till **[!UICONTROL Admin]** > **[!UICONTROL Global Settings]** > **[!UICONTROL Network Settings]** och aktiverar skjutreglaget **[!UICONTROL API Access]**.
@@ -110,7 +110,7 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 
 >[!NOTE]
 >
->När du konfigurerar ett [!DNL Google Ad Manager]-mål bör du samarbeta med din [!DNL Google Account Manager]- eller Adobe-representant för att förstå vilken kontotyp du har.
+>När du konfigurerar ett [!DNL Google Ad Manager]-mål bör du samarbeta med din [!DNL Google Account Manager]- eller Adobe-representant för att ta reda på vilken kontotyp du har.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -132,9 +132,9 @@ Kontrollera ditt [!DNL Google Ad Manager]-konto om du vill verifiera om data har
 
 ## Felsökning {#troubleshooting}
 
-Om du råkar ut för några fel när du använder det här målet och behöver kontakta antingen Adobe eller Google, ska du ha följande ID:n till hands.
+Om du råkar ut för några fel när du använder det här målet och behöver kontakta Adobe eller Google, ska du ha följande ID:n till hands.
 
-Följande är Adobe Google konto-ID:
+Detta är Adobe Google konto-ID:
 
 * **[!UICONTROL Account ID]**: 87933855
 * **[!UICONTROL Customer ID]**: 89690775

@@ -3,9 +3,9 @@ keywords: Experience Platform;home;populära topics;access control;attribute-bas
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 37131ce16b70bfaa737ee1cd896d0042e06bab15
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1860'
+source-wordcount: '1874'
 ht-degree: 9%
 
 ---
@@ -18,9 +18,9 @@ Använd den här funktionen för att etikettera XDM-schemafält (Experience Data
 
 >[!IMPORTANT]
 >
->Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen som har tillgång till dem. Mer information finns i [översikten över datastyrning](../../data-governance/home.md).
+>Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i Experience Platform i stället för vilka användare i organisationen som har tillgång till dem. Mer information finns i [översikten över datastyrning](../../data-governance/home.md).
 
-Med attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och anpassad typ av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och anpassade typer av data i alla Experience Platform arbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 Följande video är avsedd att ge stöd för din förståelse av attributbaserad åtkomstkontroll och visar hur du konfigurerar roller, resurser och principer.
 
@@ -32,13 +32,13 @@ Attributbaserad åtkomstkontroll omfattar följande komponenter:
 
 | Terminologi | Definition |
 | --- | --- |
-| Attribut | Attribut är de identifierare som anger korrelationen mellan en användare och de plattformsresurser som de har åtkomst till. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst. |
-| Etiketter | Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata så snart de har importerats till Platform, eller så snart data blir tillgängliga för användning i Platform. |
-| Behörigheter | Behörigheter omfattar möjligheten att visa och/eller använda plattformsfunktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar. |
+| Attribut | Attribut är de identifierare som anger korrelationen mellan en användare och de Experience Platform-resurser som de har tillgång till. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst. |
+| Etiketter | Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. De bästa sätten är att uppmuntra märkningsdata så snart de har importerats till Experience Platform, eller så snart data finns tillgängliga för användning i Experience Platform. |
+| Behörigheter | Behörigheter omfattar möjligheten att visa och/eller använda Experience Platform-funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar. |
 | Behörighetsuppsättningar | Behörighetsuppsättningar representerar en grupp behörigheter som en administratör kan tillämpa på en roll. En administratör kan tilldela behörighetsgrupper till en roll i stället för att tilldela enskilda behörigheter. Detta gör att du kan skapa anpassade roller från en fördefinierad roll som innehåller en grupp behörigheter. |
 | Policyer | Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. |
 | Resurs | En resurs är den resurs eller det objekt som ett ämne kan eller inte kan komma åt. Resurser kan vara segment eller schemafält. |
-| Roller | Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. I en rollbaserad miljö för åtkomstkontroll är etableringen av användaråtkomst grupperad genom vanliga ansvarsområden och behov. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver. |
+| Roller | Roller är sätt att kategorisera de typer av användare som interagerar med din Experience Platform-instans och är byggstenar för åtkomstkontrollprinciper. I en rollbaserad miljö för åtkomstkontroll är etableringen av användaråtkomst grupperad genom vanliga ansvarsområden och behov. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver. |
 | Ämne | Ett ämne är den användare som begär åtkomst till en resurs för att utföra en åtgärd. |
 | Användargrupper | Användargrupper är flera användare som har grupperats tillsammans och har tillgång till samma funktioner. |
 
@@ -54,15 +54,15 @@ Genom Behörigheter kan du skapa och hantera roller samt tilldela önskade resur
 
 ## Attributbaserad API för åtkomstkontroll
 
-Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller, principer och produkter inom plattformen med API:er. Mer information finns i guiden om [att använda API:t för att hantera attributbaserade åtkomstkontrollskonfigurationer](api/overview.md).
+Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller, principer och produkter i Experience Platform med API:er. Mer information finns i guiden om [att använda API:t för att hantera attributbaserade åtkomstkontrollskonfigurationer](api/overview.md).
 
 ## Attributbaserad åtkomstkontroll i Adobe Experience Platform
 
-I följande avsnitt finns information om hur attributbaserad åtkomstkontroll är integrerad med andra plattformskomponenter:
+Följande avsnitt innehåller information om hur attributbaserad åtkomstkontroll är integrerad med andra komponenter i Experience Platform:
 
 ### Åtkomstkontroll
 
-Plattformen använder [Adobe Admin Console](https://adminconsole.adobe.com)-roller för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration. När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för roller i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
+Experience Platform utnyttjar [Adobe Admin Console](https://adminconsole.adobe.com)-roller för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd olika Experience Platform-funktioner, inklusive datamodellering, profilhantering och sandlådeadministration. När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för roller i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
 
 Det finns begränsad tillgång till attributbaserad åtkomstkontroll för kunder som köper hälso- och sjukvård och/eller sekretessrutiner. Funktionerna är följande:
 
@@ -80,7 +80,7 @@ Mer information om åtkomstkontroll finns i [åtkomstkontrollsöversikten](../ho
 
 ### Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från plattformen. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -109,7 +109,7 @@ Mer information om [!DNL Identity Service] finns i [[!DNL Identity Service] öve
 
 ### Kundprofil i realtid
 
-Plattformen gör att ni kan skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med hjälp av en profil kan ni sammanställa olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med hjälp av en profil kan ni sammanställa olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -133,7 +133,7 @@ Mer information om [!DNL Segmentation Service] finns i [[!DNL Segmentation Servi
 
 ### XML
 
-Experience Data Model (XDM) är en öppen källkodsspecifikation som är utformad för att förbättra kraften i digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på plattformen. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
+Experience Data Model (XDM) är en öppen källkodsspecifikation som är utformad för att förbättra kraften i digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 Med attributbaserad åtkomstkontroll kan du:
 

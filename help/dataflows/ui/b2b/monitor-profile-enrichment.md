@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka profilanrikningsjobb
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '693'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 Använd kontrollpanelen [!UICONTROL Profile Enrichment] för att förstå om profilberikande jobb kördes och slutfördes samt för att visa grundläggande mått för att mäta effektiviteten av berikningarna.
 
-I [Plattformsgränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen för att komma åt [!UICONTROL Monitoring]-instrumentpanelen. I visningsväljaren väljer du **B2B-flöde** för att visa instrumentpanelselementen som är specifika för [Real-Time CDP B2B](/help/rtcdp/b2b-overview.md).  Kontrollpanelen [!UICONTROL Monitoring] innehåller grundläggande mått från den senaste lyckade körningen och jobbstatus upp till 90 dagar tidigare.
+I [Experience Platform-gränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen för att komma åt [!UICONTROL Monitoring]-instrumentpanelen. I visningsväljaren väljer du **B2B-flöde** för att visa instrumentpanelselementen som är specifika för [Real-Time CDP B2B](/help/rtcdp/b2b-overview.md).  Kontrollpanelen [!UICONTROL Monitoring] innehåller grundläggande mått från den senaste lyckade körningen och jobbstatus upp till 90 dagar tidigare.
 
 ## Profilberikning för relaterade konton {#related-accounts}
 
 Kontrollpanelen [!UICONTROL Related accounts] visar grundläggande mått och status för det dagliga jobbet som är specifikt för profilanrikningen [Relaterade konton](/help/rtcdp/b2b-ai-ml-services/related-accounts.md).
 
-![Visuell indikation på hur du kommer till övervakningsskärmen för profilberikande jobb i användargränssnittet för Experience Platform.](/help/dataflows/assets/ui/b2b/monitoring-profile-enrichment-jobs.png)
+![Visuell indikation på hur du kommer till övervakningsskärmen för profilberikande jobb i Experience Platform-gränssnittet.](/help/dataflows/assets/ui/b2b/monitoring-profile-enrichment-jobs.png)
 
 Data på kortet **[!UICONTROL Metrics]** innehåller grundläggande mått från den senaste lyckade körningen av jobbet Relaterade konton.
 

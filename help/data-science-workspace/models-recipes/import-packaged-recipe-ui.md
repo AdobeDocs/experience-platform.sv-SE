@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;import packaged recept;Data Science Workspace;populära topics;recipes;ui;create engine
+keywords: Experience Platform;importera paketerat recept;Data Science Workspace;populära topics;recipes;ui;create engine
 solution: Experience Platform
 title: Importera en paketerad mottagare i användargränssnittet för datavetenskapen (Workspace)
 type: Tutorial
 description: I den här självstudiekursen får du information om hur du konfigurerar och importerar ett paketerat recept med hjälp av det angivna exemplet på detaljhandelsförsäljning. I slutet av kursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform Data Science Workspace.
 exl-id: 2556e1f0-3f9c-4884-a699-06c041d5c4d1
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1760'
 ht-degree: 0%
@@ -128,7 +128,7 @@ I den här självstudiekursen kan du lämna standardkonfigurationsfilerna för b
 
 ### Importera Docker-baserat recept - [!DNL Python] {#python}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Experience Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
@@ -162,7 +162,7 @@ Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en
 
 ### Importera Docker-baserat recept - R {#r}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Experience Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
@@ -196,7 +196,7 @@ Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en
 
 ### Importera Docker-baserat recept - PySpark {#pyspark}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Experience Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
@@ -232,7 +232,7 @@ Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en
 
 ### Importera Docker-baserat recept - Scala {#scala}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** som finns i det övre vänstra hörnet i användargränssnittet i [!DNL Experience Platform]. Välj sedan **Importera recept** och välj **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 

@@ -2,11 +2,11 @@
 keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
 feature: Attribution AI
 title: Analyserar attribueringsresultat med hjälp av frågetjänsten
-description: Lär dig hur du använder Adobe Experience Platform Query Service för att analysera Attribution AI.
+description: Lär dig hur du använder Adobe Experience Platform Query Service för att analysera AI-poäng för attribuering.
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Varje rad i data representerar en konvertering där information för relaterade 
 | ---------------------- | ------ |
 | Kontaktpunktsnamn | `touchpointsDetail. touchpointName` |
 | Pekpunktskanal | `touchpointsDetail.touchPoint.mediaChannel` |
-| Algoritmisk poängsättning för Attribution AI vid beröringspunkt | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
+| AI-algoritmisk poäng för Touchpoint-attribuering | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
 
 ## Söka efter datasökvägar
 
-I Adobe Experience Platform-gränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. Sidan **[!UICONTROL Datasets]** visas. Välj sedan fliken **[!UICONTROL Browse]** och sök efter utdata för dina Attribution AI.
+I Adobe Experience Platform-gränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. Sidan **[!UICONTROL Datasets]** visas. Välj sedan fliken **[!UICONTROL Browse]** och leta reda på utdatamängden för dina AI-poäng för attribuering.
 
 ![Åtkomst till din modell](./images/aai-query/datasets_browse.png)
 
@@ -45,7 +45,7 @@ Med hjälp av poängschemat kan du välja eller söka efter ett värde. När du 
 
 ## Access Query Service
 
-Om du vill få åtkomst till frågetjänsten inifrån plattformsgränssnittet börjar du med att välja **[!UICONTROL Queries]** i den vänstra navigeringen och sedan väljer du fliken **[!UICONTROL Browse]**. En lista över tidigare sparade frågor läses in.
+Om du vill få åtkomst till frågetjänsten inifrån Experience Platform UI börjar du med att välja **[!UICONTROL Queries]** i den vänstra navigeringen och sedan väljer du fliken **[!UICONTROL Browse]**. En lista över tidigare sparade frågor läses in.
 
 ![frågetjänsten bläddrar](./images/aai-query/query_tab.png)
 
@@ -305,7 +305,7 @@ Den här frågan förenklar strukturkolumnen i flera enskilda kolumner och utlö
 
 >[!TIP]
 >
-> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. Variabeln `COLUMN_NAME` kan hämta värden för valfria genomströmningskolumner (rapportkolumner) som lades till när din Attribution AI konfigurerades. Granska ditt resultatschema för att hitta de `{COLUMN_NAME}`-värden som behövs för att slutföra den här frågan.
+> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. Variabeln `COLUMN_NAME` kan hämta värden för valfria pass genom kolumnnamn (rapportkolumner) som lades till under konfigureringen av din Attribution AI-modell. Granska ditt resultatschema för att hitta de `{COLUMN_NAME}`-värden som behövs för att slutföra den här frågan.
 
 ```sql
 SELECT 

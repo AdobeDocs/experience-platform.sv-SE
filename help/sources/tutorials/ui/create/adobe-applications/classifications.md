@@ -2,9 +2,9 @@
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra klassificeringsdata till Adobe Experience Platform.
 title: Skapa en Adobe Analytics Source-anslutning för klassificeringsdata i användargränssnittet
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: 02b5c5f963c21247adbb1d13114f92b22f8758de
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
@@ -23,13 +23,13 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Sandboxes]](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Källkopplingen för Analytics-klassificeringar kräver att dina data har migrerats till den nya klassificeringsinfrastrukturen i Adobe Analytics innan de används. Kontakta Adobe-kontoteamet om du vill bekräfta migreringsstatusen för dina data.
 
 ## Välj klassificeringar
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *Adobe-program* väljer du **[!UICONTROL Adobe Analytics]** och sedan **[!UICONTROL Set up]**.
 
@@ -37,11 +37,11 @@ Under kategorin *Adobe-program* väljer du **[!UICONTROL Adobe Analytics]** och 
 >
 >Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** om det inte finns något autentiserat konto. När ett konto autentiseras ändras alternativet till **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform med Adobe Analytics-källan markerad.](../../../../images/tutorials/create/classifications/catalog.png)
+![Källkatalogen i Experience Platform-gränssnittet med Adobe Analytics-källan markerad.](../../../../images/tutorials/create/classifications/catalog.png)
 
 Välj sedan [!UICONTROL Classifications] och sedan de klassificeringsdatauppsättningar som du vill importera till Experience Platform.
 
-Du kan välja upp till 30 olika klassificeringsdatamängder att hämta till Experience Platform. Alla datauppsättningar som du väljer visas i den högra listen. När du är klar väljer du [!UICONTROL Next] för att fortsätta.
+Du kan välja upp till 30 olika klassificeringsdatauppsättningar att hämta till Experience Platform. Alla datauppsättningar som du väljer visas i den högra listen. När du är klar väljer du [!UICONTROL Next] för att fortsätta.
 
 ![Klassificeringssidan med flera markerade klassificeringsdatamängder.](../../../../images/tutorials/create/classifications/select.png)
 

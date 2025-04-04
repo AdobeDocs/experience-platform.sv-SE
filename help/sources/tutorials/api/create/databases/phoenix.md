@@ -2,9 +2,9 @@
 title: Skapa en Phoenix-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter en Phoenix-databas till Adobe Experience Platform med API:t för Flow Service.
 exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '563'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ I den här självstudiekursen beskrivs hur du skapar en basanslutning och anslut
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform-tjänster.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Phoenix] med API:t [!DNL Flow Service].
@@ -44,15 +44,15 @@ Du måste ange följande autentiseringsuppgifter för att kunna ansluta ditt [!D
 
 Mer information om hur du kommer igång finns i [det här Phoenix-dokumentet](https://python-phoenixdb.readthedocs.io/en/latest/api.html).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa en basanslutning skickar du en POST till slutpunkten `/connections` samtidigt som du anger autentiseringsuppgifterna för [!DNL Phoenix] i begärandetexten.
+Om du vill skapa en basanslutning skickar du en POST-begäran till slutpunkten `/connections` och anger dina [!DNL Phoenix] autentiseringsuppgifter i begärandetexten.
 
 **API-format**
 
@@ -119,4 +119,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 Genom att följa den här självstudiekursen har du skapat en [!DNL Phoenix]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att hämta databasdata till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/database-nosql.md)
+* [Skapa ett dataflöde för att hämta databasdata till Experience Platform med  [!DNL Flow Service] API](../../collect/database-nosql.md)

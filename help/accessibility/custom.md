@@ -4,22 +4,22 @@ title: Custom Accessibility Solutions for Experience Platform
 type: Documentation
 description: Läs mer om tillgänglighetslösningarna i Adobe Experience Platform användargränssnitt.
 exl-id: cb5ad99e-8a95-4c9e-aae6-1d0036ecf052
-source-git-commit: 2cf28acb5b0ddb4965b2d5120333659e0ac460bf
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1649'
+source-wordcount: '1650'
 ht-degree: 0%
 
 ---
 
 # Anpassade tillgänglighetslösningar för Experience Platform
 
-Adobe Experience Platform har ständigt förbättrats för att tillgodose behoven hos alla typer av användare och följer världsstandarden som omfattar personer med nedsatt syn, hörsel, mobilitet eller andra funktionshinder. I det här dokumentet finns skräddarsydda tillgänglighetslösningar för Experience Platform i användargränssnittet.
+Adobe Experience Platform har ständigt förbättrats för att tillgodose behoven hos alla typer av användare och följer världsstandarden som omfattar personer med nedsatt syn, hörsel, mobilitet eller andra funktionshinder. I det här dokumentet beskrivs anpassade tillgänglighetslösningar i Experience Platform användargränssnitt.
 
 ## Översikt över startsidan och användargränssnittet
 
-Användargränssnittet i Experience Platform uppfyller de kontrastförhållanden som krävs för normal text, bilder och gränssnittskomponenter. Färgerna i användargränssnittet har också valts för att ge stöd åt tillgänglighet för alla användare, även för dem med visuella funktionshinder.
+Experience Platform gränssnitt uppfyller de kontrastförhållanden som krävs för normal text, grafik och gränssnittskomponenter. Färgerna i användargränssnittet har också valts för att ge stöd åt tillgänglighet för alla användare, även för dem med visuella funktionshinder.
 
-I Platform kan även gränssnittselement som är klickbara eller kan användas med en pekare aktiveras med ett tangentbord. Detta inkluderar vänster navigering, videospelare, tabeller med mera.
+I kan även gränssnittselement som är klickbara eller kan användas med en pekare aktiveras med ett tangentbord. Detta inkluderar vänster navigering, videospelare, tabeller med mera.
 
 Experience Platform strävar efter att följa internationella tillgänglighetsstandarder, inklusive Web Content Accessibility Guidelines 2.1 Level A och Level AA samt Web Accessibility Initiative - Accessible Rich Internet Applications (WAI-ARIA).
 
@@ -27,27 +27,27 @@ Experience Platform strävar efter att följa internationella tillgänglighetsst
 
 ## Vänster navigering
 
-Den vänstra navigeringen i användargränssnittet för Experience Platform är tangentbordsanpassad och ger färgkontrast i normalt läge, hovring- och markeringsläge som uppfyller tillgänglighetsstandarder.
+Den vänstra navigeringen i Experience Platform-användargränssnittet går att komma åt via tangentbordet och ger färgkontrast vid normal, hovring och markering som uppfyller tillgänglighetsstandarder.
 
 På hemskärmen kan användarna tabba in i den vänstra navigeringen. Om du väljer **Skift+Tabb** återgår användaren till hemskärmen.
 
-![Navigeringen till vänster i Experience Platform.](images/left-navigation-select.png)
+![Experience Platform har lämnat navigeringen.](images/left-navigation-select.png)
 
 Med den vänstra navigeringen i fokus tar **Tabb** användare till interaktionen för att expandera och komprimera. Möjligheten att utöka eller komprimera den vänstra navigeringen aktiveras med **Enter (Retur)**.
 
-![Navigeringen till vänster i Experience Platform har komprimerats.](images/left-navigation-collapse.png)
+![Navigeringen för vänster Experience Platform har komprimerats.](images/left-navigation-collapse.png)
 
 Med den vänstra navigeringen i fokus navigerar upp- och nedpilarna till varje objekt i navigeringen och bläddrar kontinuerligt (med andra ord flyttas inte fokus förrän användaren tabbar bort från den vänstra navigeringen). Fokus visas för navigeringsobjekt när de är markerade. Den aktuella markeringen visas med en högdager och fet text. När du väljer ett vänstra navigeringsobjekt öppnar **Enter (Retur)** det valda gränssnittsobjektet i den högra panelen, men fokus ligger kvar i den vänstra navigeringen tills användaren tabbar bort.
 
-![Navigeringen Experience Platform till vänster med Källor markerad.](images/left-navigation-sources.png)
+![Experience Platform lämnade navigeringen med Källor markerat.](images/left-navigation-sources.png)
 
-Vissa funktioner på plattformen är inte aktiverade för alla användare. Dessa objekt visas i navigeringen men kan inte markeras. När du navigerar med ett tangentbord hoppas dessa objekt över vid pilnavigering och kan inte markeras med **Enter (Retur)**.
+Vissa funktioner i Experience Platform är inte aktiverade för alla användare. Dessa objekt visas i navigeringen men kan inte markeras. När du navigerar med ett tangentbord hoppas dessa objekt över vid pilnavigering och kan inte markeras med **Enter (Retur)**.
 
-![Avsnitt i den vänstra navigeringen i Experience Platform som inte är aktiverade för användaren kan inte markeras.](images/left-navigation-sections-disabled.png)
+![Delar av den vänstra navigeringen i Experience Platform som inte är aktiverade för användaren kan inte markeras.](images/left-navigation-sections-disabled.png)
 
 ## Dialogrutan Inbäddad video
 
-Videor kan visas i Experience Platform med tangentbordsnavigering för att markera och välja en tillgänglig videolänk. Då öppnas en inbäddad videodialogruta i användargränssnittet för plattformen.
+Videor kan visas i Experience Platform med tangentbordsnavigering för att markera och välja en tillgänglig videolänk. Då öppnas en inbäddad videodialogruta i Experience Platform-gränssnittet.
 
 ![En blå kantlinje visas runt ett markerat element som anger att fokus har använts.](images/profile-overview-tab.png)
 
@@ -74,7 +74,7 @@ Du kan även navigera i den inbäddade videodialogrutan med hjälp av tangentbor
 
 ## Dra och släpp filer
 
-I Experience Platform går det att komma åt alla dra och släpp-zoner för filmarkering via tangentbordet. Om du använder **Tabb** för att markera **[!UICONTROL Choose files]** och **Enter eller blanksteg** för att markera den anropas operativsystemets filvalsgränssnitt.
+I Experience Platform går det att komma åt alla dra och släpp-zoner för filval via tangentbordet. Om du använder **Tabb** för att markera **[!UICONTROL Choose files]** och **Enter eller blanksteg** för att markera den anropas operativsystemets filvalsgränssnitt.
 
 När en fil har överförts kan du ta bort den markerade filen med en borttagningsikon och överföra en ny. Användare kan använda **Tabb** för att fokusera på borttagningsikonen och **Enter eller blanksteg** för att markera den. När filen har tagits bort är **[!UICONTROL Choose files]** automatiskt i fokus och kan markeras.
 
@@ -88,7 +88,7 @@ Om du använder en mus för att markera dra och släpp-zonen anropas även grän
 
 ## Bläddra i tabeller
 
-Alla tabeller i användargränssnittet i Experience Platform går att komma åt via tangentbordet. Det går att bläddra och interagera med tabellrader och kolumner via en serie kortkommandon:
+Alla tabeller i Experience Platform användargränssnitt kan öppnas via tangentbordet. Det går att bläddra och interagera med tabellrader och kolumner via en serie kortkommandon:
 
 * Använd **nedpilen** i tabellhuvudet för att bläddra i tabellen. Tabellrubriker kan markeras vid navigering via **Tabb**, och du kan ändra sorteringsordningen med **blanksteg**.
 * **Upp- och nedpilarna** flyttas uppåt och nedåt genom raderna i tabellen.
@@ -126,7 +126,7 @@ Gränssnittet för schemaredigeraren är tillgängligt med följande funktioner:
 
 ## Segmentbyggargränssnitt
 
-När du använder användargränssnittet i Segment Builder för att skapa, redigera och interagera med segment i Experience Platform förbättras tillgängligheten med följande funktioner:
+När du använder användargränssnittet i Segment Builder för att skapa, redigera och interagera med segment i Experience Platform förbättras tillgängligheten av följande funktioner:
 
 * Gränssnittet för segmentbyggaren är tillgängligt via tangentbordsnavigering.
 * Skärmläsare bör känna igen märkord för rubriker och kan meddela rubriken tillsammans med nivån.

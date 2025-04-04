@@ -1,13 +1,13 @@
 ---
-title: Skapa en källanslutning och ett dataflöde för Oracle NetSuite-entiteter med API:t för Flow Service
+title: Skapa en källanslutning och ett dataflöde för Oracle NetSuite-enheter med API:t för Flow Service
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att skicka Oracle NetSuite-kontakter och kunddata till Experience Platform med API:t för Flow Service.
 hide: true
 hidefromtoc: true
 badge: Beta
 exl-id: ddbb413e-a6ca-49df-b68d-37c9d2aab61b
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2163'
+source-wordcount: '2177'
 ht-degree: 0%
 
 ---
@@ -24,8 +24,8 @@ Läs följande självstudiekurs om du vill veta mer om hur du kan ta med kontakt
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Oracle NetSuite Entities] med API:t [!DNL Flow Service].
 
@@ -33,19 +33,19 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 Läs [[!DNL Oracle NetSuite] översikten](../../../../connectors/marketing-automation/oracle-netsuite.md) om du vill ha mer information om hur du hämtar autentiseringsuppgifter.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
-## Anslut [!DNL Oracle NetSuite Entities] till plattformen med API:t [!DNL Flow Service]
+## Anslut [!DNL Oracle NetSuite Entities] till Experience Platform med API:t [!DNL Flow Service]
 
 Följande beskriver de steg som du måste utföra för att autentisera din [!DNL Oracle NetSuite Entities]-källa, skapa en källanslutning och skapa ett dataflöde för att skicka dina kund- och kontaktdata till Experience Platform.
 
 ### Skapa en basanslutning {#base-connection}
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL Oracle NetSuite Entities] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Oracle NetSuite Entities]-autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -89,7 +89,7 @@ curl -X POST \
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via API:t [!DNL Flow Service]. |
-| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
+| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till Experience Platform. |
 | `auth.params.clientId` | Klient-ID-värdet när du skapar integreringsposten. Processen för att skapa en interaktionspost finns [här](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157771733782.html#procedure_157838925981). Värdet är en sträng med 64 tecken som liknar `7fce.....b42f`. |
 | `auth.params.clientSecret` | Klient-ID-värdet när du skapar integreringsposten. Processen för att skapa en interaktionspost finns [här](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157771733782.html#procedure_157838925981). Värdet är en sträng med 64 tecken som liknar `5c98.....1b46`. |
 | `auth.params.accessTokenUrl` | Åtkomsttoken-URL:en [!DNL NetSuite], som liknar `https://{ACCOUNT_ID}.suitetalk.api.netsuite.com/services/rest/auth/oauth2/v1/token`, där du ersätter ACCOUNT_ID med ditt [!DNL NetSuite] konto-ID. |
@@ -108,7 +108,7 @@ Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutni
 
 ### Utforska din källa {#explore}
 
-När du har ditt basanslutnings-ID kan du nu utforska innehållet och strukturen i dina källdata genom att utföra en GET-förfrågan till `/connections`-slutpunkten och samtidigt ange ditt grundläggande anslutnings-ID som en frågeparameter.
+När du har ditt basanslutnings-ID kan du nu utforska innehållet och strukturen i dina källdata genom att utföra en GET-begäran till `/connections`-slutpunkten och samtidigt ange ditt basanslutnings-ID som en frågeparameter.
 
 **API-format**
 
@@ -118,16 +118,16 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fi
 
 **Begäran**
 
-När du gör en GET-förfrågan om att utforska källans filstruktur och innehåll måste du inkludera frågeparametrarna som listas i tabellen nedan:
+När du utför GET-förfrågningar om källans filstruktur och innehåll måste du inkludera de frågeparametrar som anges i tabellen nedan:
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | Det grundläggande anslutnings-ID som genererades i föregående steg. |
 | `objectType=rest` | Den typ av objekt som du vill utforska. För närvarande är det här värdet alltid inställt på `rest`. |
 | `{OBJECT}` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. För den här källan är värdet `json`. |
-| `fileType=json` | Filtypen för filen som du vill hämta till plattformen. För närvarande är `json` den enda filtypen som stöds. |
+| `fileType=json` | Filtypen för filen som du vill hämta till Experience Platform. För närvarande är `json` den enda filtypen som stöds. |
 | `{PREVIEW}` | Ett booleskt värde som definierar om innehållet i anslutningen stöder förhandsvisning. |
-| `{SOURCE_PARAMS}` | Definierar parametrar för källfilen som du vill hämta till plattformen. Om du vill hämta den godkända formattypen för `{SOURCE_PARAMS}` måste du koda hela strängen i base64. <br> [!DNL Oracle NetSuite Entities] har stöd för både kund- och kontaktdatahämtning. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`customer` : Hämta specifika kunddata, inklusive information som kundnamn, adresser och nyckelidentifierare.</li><li>`contact` : Hämta kontaktnamn, e-post, telefonnummer och anpassade kontaktrelaterade fält som är kopplade till kunder.</li></ul> |
+| `{SOURCE_PARAMS}` | Definierar parametrar för källfilen som du vill hämta till Experience Platform. Om du vill hämta den godkända formattypen för `{SOURCE_PARAMS}` måste du koda hela strängen i base64. <br> [!DNL Oracle NetSuite Entities] har stöd för både kund- och kontaktdatahämtning. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`customer` : Hämta specifika kunddata, inklusive information som kundnamn, adresser och nyckelidentifierare.</li><li>`contact` : Hämta kontaktnamn, e-post, telefonnummer och anpassade kontaktrelaterade fält som är kopplade till kunder.</li></ul> |
 
 >[!BEGINTABS]
 
@@ -651,7 +651,7 @@ Ett lyckat svar returnerar en struktur enligt nedan.
 
 ### Skapa en källanslutning {#source-connection}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till `/sourceConnections`-slutpunkten i [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-begäran till `/sourceConnections`-slutpunkten i [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 **API-format**
 
@@ -747,15 +747,15 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ### Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md#create-a-schema).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/) utförs, med ID:t för målschemat i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 
@@ -824,7 +824,7 @@ Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta 
 
 ### Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en POST-begäran till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -905,13 +905,13 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ### Skapa ett flöde {#flow}
 
-Det sista steget mot att överföra data från [!DNL Oracle NetSuite Entities] till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra data från [!DNL Oracle NetSuite Entities] till Experience Platform är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 * [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
 **API-format**
 
@@ -965,7 +965,7 @@ curl -X POST \
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
 | `sourceConnectionIds` | [källanslutnings-ID](#source-connection) genererades i ett tidigare steg. |
 | `targetConnectionIds` | [målanslutnings-ID](#target-connection) genererades i ett tidigare steg. |
-| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
+| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till Experience Platform. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
@@ -994,7 +994,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ### Uppdatera ditt dataflöde
 
-Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten i [!DNL Flow Service]-API:t, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i guiden om att [uppdatera källkodsdataflöden med API:t](../../update-dataflows.md).
+Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i guiden om att [uppdatera källkodsdataflöden med API:t](../../update-dataflows.md).
 
 ### Uppdatera ditt konto
 

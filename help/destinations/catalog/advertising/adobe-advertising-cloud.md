@@ -1,11 +1,11 @@
 ---
-keywords: Advertising Cloud;advertising cloud extension; advertising cloud destination
+keywords: Advertising Cloud;advertising cloud extension; advertising cloud cloud destination
 title: Adobe Advertising Cloud-tillägg
-description: Adobe Advertising Cloud-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Adobe Advertising Cloud-tillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '434'
 ht-degree: 0%
 
 ---
@@ -14,25 +14,25 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Det här är tillägget [!DNL Advertising Cloud] för implementering av konverterings- och målgruppstaggar för både DSP och sökning (DCO stöds inte för närvarande).[!DNL Advertising Cloud]
+Det här är tillägget [!DNL Advertising Cloud] för implementering av konverterings- och målgruppstaggar för både DSP och Search (DCO stöds inte för närvarande).[!DNL Advertising Cloud]
 
-Adobe Advertising Cloud är ett reklamtillägg i Adobe Experience Platform.
+Adobe Advertising Cloud är ett annonstillägg i Adobe Experience Platform.
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![Adobe Advertising Cloud-tillägg](../../assets/catalog/advertising/adobe-advertising-cloud/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Experience Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till datainsamlingsfunktioner i användargränssnittet och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till datainsamlingsfunktioner i användargränssnittet och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
 Så här installerar du Adobe Advertising Cloud-tillägget:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 

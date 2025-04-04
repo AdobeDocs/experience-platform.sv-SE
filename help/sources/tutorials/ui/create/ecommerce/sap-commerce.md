@@ -3,9 +3,9 @@ title: Skapa en källanslutning för SAP Commerce i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en SAP Commerce med hjälp av Adobe Experience Platform användargränssnitt.
 badge: Beta
 exl-id: 6484e51c-77cd-4dbd-9c68-0a4e3372da33
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '944'
+source-wordcount: '955'
 ht-degree: 0%
 
 ---
@@ -42,9 +42,9 @@ För att kunna ansluta [!DNL SAP Commerce] till Experience Platform måste du an
 
 Mer information finns i [[!DNL SAP Commerce] dokumentationen](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
 
-### Skapa ett plattformsschema {#create-platform-schema}
+### Skapa ett Experience Platform-schema {#create-platform-schema}
 
-Innan du skapar en [!DNL SAP Commerce]-källanslutning måste du också se till att du först skapar ett Experience Platform-schema som kan användas för källan. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
+Innan du skapar en [!DNL SAP Commerce]-källanslutning måste du också se till att du först skapar ett Experience Platform-schema som kan användas för källan. I självstudiekursen [Skapa ett Experience Platform-schema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
 
 Expandera följande avsnitt för att visa ett exempelschema.
 
@@ -143,13 +143,13 @@ Expandera följande avsnitt för att visa ett exempelschema.
 
 ## Anslut ditt [!DNL SAP Commerce]-konto {#connect-account}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *eCommerce* väljer du **[!UICONTROL SAP Commerce]** och sedan **[!UICONTROL Add data]**.
 
-![Plattformsgränssnitt, bild för katalog med SAP Commerce-kort](../../../../images/tutorials/create/ecommerce/sap-commerce/catalog-card.png)
+![Experience Platform UI, skärmbild för katalog med SAP Commerce-kort](../../../../images/tutorials/create/ecommerce/sap-commerce/catalog-card.png)
 
 Sidan **[!UICONTROL Connect SAP Commerce account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -157,17 +157,17 @@ Sidan **[!UICONTROL Connect SAP Commerce account]** visas. På den här sidan ka
 
 Om du vill använda ett befintligt konto väljer du det [!DNL SAP Commerce]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Skärmbild för användargränssnitt för plattformen som används för att ansluta SAP Commerce-kontot till ett befintligt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
+![Experience Platform UI-skärmbild för att ansluta SAP Commerce-konto till ett befintligt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
 
 ### Nytt konto {#new-account}
 
 Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Skärmbild för användargränssnittet för plattformen som används för att ansluta SAP Commerce-kontot till ett nytt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/new.png)
+![Experience Platform UI-skärmbild för att ansluta SAP Commerce-konto till ett nytt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/new.png)
 
 ### Markera data {#select-data}
 
-Slutligen måste du välja den objekttyp som du vill importera till plattformen.
+Slutligen måste du välja den objekttyp som du vill importera till Experience Platform.
 
 | Objekttyp | Beskrivning |
 | --- | --- |
@@ -180,19 +180,19 @@ Slutligen måste du välja den objekttyp som du vill importera till plattformen.
 
 Om du vill importera kunddata väljer du **[!UICONTROL Customers]** som objekttyp och sedan **[!UICONTROL Next]**.
 
-![Skärmbild för användargränssnittet för SAP Commerce som visar konfigurationen med alternativet Kunder valt](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-customers.png)
+![Experience Platform UI, skärmbild för SAP Commerce, visar konfigurationen med alternativet Kunder valt](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-customers.png)
 
 >[!TAB Kontakter]
 
 Om du vill importera kontaktdata väljer du **[!UICONTROL Contacts]** som objekttyp och sedan **[!UICONTROL Next]**.
 
-![Skärmbild för användargränssnitt för plattformen för SAP Commerce som visar konfigurationen med alternativet Kontakter markerat](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-contacts.png)
+![Experience Platform UI, skärmbild för SAP Commerce, visar konfigurationen med alternativet Kontakter markerat](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-contacts.png)
 
 >[!ENDTABS]
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SAP Commerce]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/ecommerce.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SAP Commerce]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/ecommerce.md).
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -200,7 +200,7 @@ Avsnitten nedan innehåller ytterligare resurser som du kan referera till när d
 
 ### Mappning {#mapping}
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 Mappningskonfigurationerna för dataflödet varierar beroende på schemat och vilken objekttyp du väljer att importera.
 

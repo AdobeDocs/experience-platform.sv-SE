@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida
 description: Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR).
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgrän
 
 >[!TIP]
 >
->Följande dokument från Adobe medverkande kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
 
 ## Konfigurera GitHub-miljön
 
@@ -45,7 +45,7 @@ En mapp med befintliga CRM-källor visas. Om du vill lägga till dokumentation f
 
 ![create-new-file](../assets/create-new-file.png)
 
-Ge källfilen namnet `YOURSOURCE.md` där YOURSOURCE är namnet på källan i Platform. Om ditt företag till exempel är ACME CRM ska ditt filnamn vara `acme-crm.md`.
+Ge källfilen namnet `YOURSOURCE.md` där YOURSOURCE är namnet på källan i Experience Platform. Om ditt företag till exempel är ACME CRM ska ditt filnamn vara `acme-crm.md`.
 
 ![git-interface](../assets/git-interface.png)
 
@@ -63,15 +63,15 @@ När du är klar implementerar du filen i din gren.
 
 ## Skicka in din dokumentation för granskning
 
-När filen har implementerats kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med huvudgrenen i dokumentationsdatabasen för Adobe. Kontrollera att grenen du har arbetat med är markerad och välj sedan **Jämför och dra in-begäran**.
+När filen har implementerats kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med huvudgrenen i Adobe dokumentationsdatabas. Kontrollera att grenen du har arbetat med är markerad och välj sedan **Jämför och dra in-begäran**.
 
 ![compare-pr](../assets/compare-pr.png)
 
-Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR, som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR för att sammanfoga arbetsgrenen i ditt arbete med huvudgrenen i Adobe-databasen.
+Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR, som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR som sammanfogar arbetsgrenen i ditt arbete med huvudgrenen i Adobe-databasen.
 
 >[!TIP]
 >
->Låt kryssrutan **Tillåt redigeringar av underhållare** vara markerad så att dokumentationsteamet i Adobe kan göra ändringar i PR-dokumentet.
+>Låt kryssrutan **Tillåt redigeringar av underhållare** vara markerad för att se till att Adobe dokumentationsteam kan göra ändringar i PR-dokumentet.
 
 ![create-pr](../assets/create-pr.png)
 

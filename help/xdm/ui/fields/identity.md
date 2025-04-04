@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;identity;field;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;identity;field;
 solution: Experience Platform
 title: Definiera identitetsfält i användargränssnittet
-description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
+description: Lär dig hur du definierar ett identitetsfält i Experience Platform användargränssnitt.
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 0d16bbbaf81b2057c6b3518a5b8a8698920c36f7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '644'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ I Experience Data Model (XDM) representerar ett identitetsfält ett fält som ka
 
 ## Förhandskrav
 
-Identitetsfält är en viktig komponent i hur kundidentitetsdiagram skapas i Platform, som i slutändan påverkar hur kundprofilen i realtid sammanfogar olika datablad för att få en fullständig bild av kunden. Innan du definierar identitetsfält i dina scheman ska du läsa följande dokumentation för att lära dig mer om de viktigaste tjänsterna och begreppen som rör identitetsfält:
+Identitetsfält är en viktig komponent i hur kundidentitetsdiagram skapas i Experience Platform, vilket i slutänden påverkar hur kundprofilen i realtid sammanfogar olika datafragment för att få en fullständig bild av kunden. Innan du definierar identitetsfält i dina scheman ska du läsa följande dokumentation för att lära dig mer om de viktigaste tjänsterna och begreppen som rör identitetsfält:
 
 * [Adobe Experience Platform Identity Service](../../../identity-service/home.md): Förena identiteter mellan enheter och system genom att länka samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
    * [Identitetsnamnutrymmen](../../../identity-service/features/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relatera till en enskild person och är en obligatorisk komponent för varje identitetsfält.

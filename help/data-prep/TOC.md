@@ -4,10 +4,10 @@ user-guide-title: Användarhandbok om dataförberedelse
 user-guide-description: Förbered dina data för inmatning i Adobe Experience Platform och lär dig hur du med Data Prep kan mappa, omvandla och validera data idag.
 feature: Data Prep
 role: Developer
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '61'
-ht-degree: 50%
+source-wordcount: '62'
+ht-degree: 56%
 
 ---
 
@@ -27,4 +27,4 @@ ht-degree: 50%
 - [Mappningsuppsättningar](mapping-set.md)
 - [Direktuppspelningar](upserts.md)
 - [Felsökningsguide](troubleshooting-guide.md)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

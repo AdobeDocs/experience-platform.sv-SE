@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;enum;field;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;enum;field;
 solution: Experience Platform
 title: Definiera uppräkningsfält och föreslagna värden i användargränssnittet
-description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
+description: Lär dig hur du definierar enum och föreslagna värden för strängfält i Experience Platform användargränssnitt.
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1221'
+source-wordcount: '1222'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ See the [section below](#evolution) for more information on the rules for updati
 
 ## Utvecklingsregler för enum och föreslagna värden {#evolution}
 
-När ett schema med ett uppräkningsfält har använts för att importera data till plattformen, måste alla ytterligare ändringar som görs i schemadefinitionen överensstämma med de data som redan finns i systemet. I allmänhet kan ändringar som görs i ett befintligt fält bara göra fältet **mindre** begränsat. Ett fält kan inte göras mer restriktivt än det redan är.
+När ett schema med ett uppräkningsfält har använts för att importera data till Experience Platform, måste alla ytterligare ändringar som görs i schemadefinitionen överensstämma med de data som redan finns i systemet. I allmänhet kan ändringar som görs i ett befintligt fält bara göra fältet **mindre** begränsat. Ett fält kan inte göras mer restriktivt än det redan är.
 
 När det gäller enum och föreslagna värden gäller följande regler för postinmatning:
 

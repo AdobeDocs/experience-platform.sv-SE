@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Maria DB;maria db
+keywords: Experience Platform;home;populära topics;Maria DB;maria db
 solution: Experience Platform
 title: Skapa en MariaDB Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Maria DB-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 259ca112-01f1-414a-bf9f-d94caf4c69df
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '394'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL MariaDB]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Maria DB-källkoppling med användargränssnittet [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Maria DB-källkoppling med användargränssnittet [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Om du redan har en [!DNL MariaDB]-anslutning kan du hoppa över resten av det h�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL MariaDB]-konto på [!DNL Platform] måste du ange följande värde:
+För att få åtkomst till ditt [!DNL MariaDB]-konto på [!DNL Experience Platform] måste du ange följande värde:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -39,7 +39,7 @@ Mer information om hur du kommer igång finns i det här [[!DNL MariaDB] dokumen
 
 ## Anslut ditt [!DNL Maria DB]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Maria DB]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Maria DB]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -63,4 +63,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL MariaDB]-konto du 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL MariaDB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL MariaDB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

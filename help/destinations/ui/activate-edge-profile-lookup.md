@@ -3,9 +3,9 @@ title: Söka efter kantprofilattribut i realtid
 description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1832'
+source-wordcount: '1835'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ På den här sidan beskrivs de steg som du måste följa för att söka efter ed
 
 ## Terminologi och förutsättningar {#prerequisites}
 
-När du konfigurerar det användningsfall som beskrivs på den här sidan använder du följande plattformskomponenter:
+När du konfigurerar det användningsfall som beskrivs på den här sidan använder du följande Experience Platform-komponenter:
 
 * [Datastreams](../../datastreams/overview.md): En datastream tar emot inkommande händelsedata från Web SDK och svarar med edge-profildata.
 * [Sammanslagningsprinciper](../../segmentation/ui/segment-builder.md#merge-policies): Du skapar en [!UICONTROL Active-On-Edge] sammanfogningsprincip för att se till att kantprofilerna använder rätt profildata.
@@ -54,7 +54,7 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
     >
     >Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. -->
 
-  ![Plattformens gränssnittsbild visar konfigurationsskärmen för dataströmmen.](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
+  ![Experience Platform-gränssnittsbild som visar konfigurationsskärmen för dataströmmen.](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
 
 
 ## Steg 2: Konfigurera era målgrupper för edge-utvärdering {#audience-edge-evaluation}
@@ -110,7 +110,7 @@ När du har skapat en **[!UICONTROL Custom Personalization With Attributes]**-an
    Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
    * **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
-   * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/overview.md#import-audience).
+   * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/overview.md#import-audience).
    * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
      ![Välj målgruppssteg i aktiveringsarbetsflödet med flera målgrupper markerade.](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)

@@ -2,24 +2,24 @@
 title: Fältbaserade arbetsflöden i Schemaredigeraren
 description: Lär dig hur du lägger till fält från befintliga fältgrupper individuellt i XDM-scheman (Experience Data Model).
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1269'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
 
 # Fältbaserade arbetsflöden i Schemaredigeraren
 
-Adobe Experience Platform tillhandahåller en robust uppsättning standardiserade [fältgrupper](../schema/composition.md#field-group) som kan användas i XDM-scheman (Experience Data Model). Strukturen och semantiken bakom dessa fältgrupper är noga anpassade för att uppfylla ett stort antal användningsfall för segmentering och andra applikationer längre fram i kedjan av plattformar. Du kan också definiera egna fältgrupper för att tillgodose unika affärsbehov.
+Adobe Experience Platform tillhandahåller en robust uppsättning standardiserade [fältgrupper](../schema/composition.md#field-group) som kan användas i XDM-scheman (Experience Data Model). Strukturen och semantiken bakom dessa fältgrupper är noga anpassade för att uppfylla ett stort antal användningsfall för segmentering och andra tillämpningar i senare led i Experience Platform. Du kan också definiera egna fältgrupper för att tillgodose unika affärsbehov.
 
 När du lägger till en fältgrupp i ett schema, ärver schemat alla fält i gruppen. Du kan nu lägga till enskilda fält i schemat utan att behöva ta med andra fält från den associerade fältgruppen som du kanske inte använder.
 
-Den här guiden beskriver olika metoder för att lägga till enskilda fält i ett schema i plattformsgränssnittet.
+Den här guiden beskriver olika metoder för att lägga till enskilda fält i ett schema i Experience Platform-gränssnittet.
 
 ## Förhandskrav
 
-I den här självstudien förutsätts att du är bekant med [kompositionen för XDM-scheman](../schema/composition.md) och hur du använder Schemaredigeraren i plattformsgränssnittet. Om du vill följa med i utvecklingen bör du påbörja processen med att [skapa ett nytt schema](./resources/schemas.md) och tilldela det till en standardklass innan du fortsätter med den här guiden.
+I den här självstudien förutsätts att du är bekant med [kompositionen för XDM-scheman](../schema/composition.md) och hur du använder Schemaredigeraren i Experience Platform användargränssnitt. Om du vill följa med i utvecklingen bör du påbörja processen med att [skapa ett nytt schema](./resources/schemas.md) och tilldela det till en standardklass innan du fortsätter med den här guiden.
 
 ## Ta bort fält som lagts till från standardfältgrupper {#remove-field-group}
 
@@ -111,4 +111,4 @@ Mer information om hur du lägger till anpassade fält finns i [Skapa och redige
 
 ## Nästa steg
 
-I den här guiden beskrivs de nya fältbaserade arbetsflödena för Schemaredigeraren i plattformsgränssnittet. Mer information om hur du hanterar scheman i användargränssnittet finns i [användargränssnittsöversikt](./overview.md).
+I den här guiden beskrivs de nya fältbaserade arbetsflödena för Schemaredigeraren i Experience Platform användargränssnitt. Mer information om hur du hanterar scheman i användargränssnittet finns i [användargränssnittsöversikt](./overview.md).

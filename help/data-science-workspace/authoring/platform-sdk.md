@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;utvecklarguide;SDK;Data Access SDK;Data Science Workspace;populära ämnen
 solution: Experience Platform
-title: Modellredigering med Adobe Experience Platform Platform SDK
+title: Modellredigering med Adobe Experience Platform SDK
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '506'
 ht-degree: 0%
 
 ---
 
-# Skapa modeller med Adobe Experience Platform [!DNL Platform] SDK
+# Skapa modeller med Adobe [!DNL Experience Platform] SDK
 
 >[!NOTE]
 >
@@ -74,7 +74,7 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 
 ## Grundläggande läsning av data {#basic-reading-of-data}
 
-Med nya [!DNL Platform] SDK är den maximala lässtorleken 32 GB, med en maximal lästid på 10 minuter.
+Med nya [!DNL Experience Platform] SDK är den maximala lässtorleken 32 GB, med en maximal lästid på 10 minuter.
 
 Om lästiden är för lång kan du försöka med att använda något av följande filtreringsalternativ:
 
@@ -151,7 +151,7 @@ df2 <- dataset_reader$where(
 df2
 ```
 
-Den nya SDK:n [!DNL Platform] stöder följande åtgärder:
+Nya [!DNL Experience Platform] SDK har stöd för följande åtgärder:
 
 | Åtgärd | Funktion |
 | --------- | -------- |

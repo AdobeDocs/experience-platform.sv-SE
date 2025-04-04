@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;dataförberedelse;api guide;scheman;
+keywords: Experience Platform;home;populära topics;data prep;api guide;schemas;
 solution: Experience Platform
 title: API-slutpunkt för scheman
-description: Du kan använda ändpunkten "/schemas" i Adobe Experience Platform API för att hämta, skapa och uppdatera scheman för användning med Mapper in Platform.
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+description: Du kan använda ändpunkten "/schemas" i Adobe Experience Platform API för att hämta, skapa och uppdatera scheman för användning med Mapper i Experience Platform.
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Schemas slutpunkt
 
-Scheman kan användas med Mapper för att säkerställa att data som du har inhämtat till Adobe Experience Platform matchar det du vill importera. Du kan använda slutpunkten `/schemas` för att skapa, lista och hämta anpassade scheman för användning med Mapper in Platform.
+Scheman kan användas med Mapper för att säkerställa att data som du har inhämtat till Adobe Experience Platform matchar det du vill importera. Du kan använda slutpunkten `/schemas` för att skapa, lista och hämta anpassade scheman för användning med Mapper i Experience Platform.
 
 >[!NOTE]
 >
->Scheman som skapas med den här slutpunkten används exklusivt med mappar- och mappningsuppsättningar. Om du vill skapa scheman som är tillgängliga för andra plattformstjänster läser du [utvecklarhandboken för schemaregister](../../xdm/api/schemas.md).
+>Scheman som skapas med den här slutpunkten används exklusivt med mappar- och mappningsuppsättningar. Om du vill skapa scheman som är tillgängliga för andra Experience Platform-tjänster läser du [utvecklarhandboken för schemaregister](../../xdm/api/schemas.md).
 
 ## Hämta alla scheman
 
-Du kan hämta en lista över alla tillgängliga mappningsscheman för din organisation genom att göra en GET-förfrågan till slutpunkten `/schemas`.
+Du kan hämta en lista över alla tillgängliga mappningsscheman för din organisation genom att göra en GET-begäran till slutpunkten `/schemas`.
 
 **API-format**
 
@@ -132,7 +132,7 @@ Följande svar returnerar HTTP-status 200 med en lista över begärda scheman.
 
 ## Skapa ett schema
 
-Du kan skapa ett schema att validera mot genom att göra en POST-förfrågan till slutpunkten `/schemas`. Det finns tre sätt att skapa ett schema: skicka ett [JSON-schema](https://json-schema.org/), använda exempeldata eller referera till ett befintligt XDM-schema.
+Du kan skapa ett schema att validera mot genom att göra en POST-begäran till slutpunkten `/schemas`. Det finns tre sätt att skapa ett schema: skicka ett [JSON-schema](https://json-schema.org/), använda exempeldata eller referera till ett befintligt XDM-schema.
 
 ```http
 POST /schemas
@@ -334,7 +334,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt schema
 
-Du kan hämta information om ett specifikt schema genom att göra en GET-begäran till `/schemas`-slutpunkten och ange ID:t för det schema som du vill hämta i begärandesökvägen.
+Du kan hämta information om ett specifikt schema genom att göra en GET-begäran till slutpunkten `/schemas` och ange det schema som du vill hämta i sökvägen till begäran.
 
 **API-format**
 

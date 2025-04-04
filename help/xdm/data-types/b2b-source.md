@@ -2,9 +2,9 @@
 title: B2B Source datatyp
 description: Läs mer om datatypen B2B Source Experience Data Model (XDM).
 exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '231'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Om du endast använder strängbaserade identifierare kan det finnas överlappningar mellan ID:n i flera system (en möjlighet kan till exempel ges ett sträng-ID i ett CRM-system, men samma ID kan referera till en helt annan möjlighet). Detta kan orsaka datakonflikter när data sammanfogas i [Kundprofil i realtid](../../profile/home.md).
 
-Datatypen [!UICONTROL B2B Source] gör att du kan använda det ursprungliga sträng-ID:t för en entitet och kombinera det med källspecifik sammanhangsberoende information för att se till att den förblir helt unik i plattformssystemet oavsett vilken källa den kommer från.
+Datatypen [!UICONTROL B2B Source] gör att du kan använda det ursprungliga sträng-ID:t för en entitet och kombinera det med källspecifik sammanhangsberoende information för att se till att den förblir helt unik i Experience Platform-systemet oavsett vilken källa den kommer från.
 
 ![B2B Source-struktur](../images/data-types/b2b-source.png)
 

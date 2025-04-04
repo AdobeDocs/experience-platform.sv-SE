@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;xdm;Experience data model;namespace;namespaces;compatibility mode;xed;
+keywords: Experience Platform;home;populära topics;schema;schema;xdm;experience data model;namespace;namespaces;compatibility mode;xed;
 solution: Experience Platform
 title: Namnavstånd i Experience Data Model (XDM)
 description: Lär dig hur namnavstånd i Experience Data Model (XDM) gör att du kan utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs.
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
-source-git-commit: d26a0586a992948e1b278bae91a985fe3d9f1ee8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '666'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undan
 
 ### Kompatibilitetsläge {#compatibility}
 
-I Adobe Experience Platform representeras XDM-scheman i syntaxen [Kompatibilitetsläge](../api/appendix.md#compatibility) , som inte använder JSON-LD-syntaxen för att representera namnutrymmen. I stället konverterar Platform namnutrymmet till ett överordnat fält (med början med ett understreck) och kapslar fälten under det.
+I Adobe Experience Platform representeras XDM-scheman i syntaxen [Kompatibilitetsläge](../api/appendix.md#compatibility) , som inte använder JSON-LD-syntaxen för att representera namnutrymmen. I stället konverterar Experience Platform namnutrymmet till ett överordnat fält (med början med ett understreck) och kapslar fälten under det.
 
 Standard-XDM `repo:createdDate` konverteras till `_repo.createdDate` och visas under följande struktur i kompatibilitetsläge:
 

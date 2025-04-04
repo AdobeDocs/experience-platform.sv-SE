@@ -3,9 +3,9 @@ keywords: Experience Platform;frågetjänst;frågetjänst;fråga
 title: Exempel på användningsfall för Adobe Experience Platform Query Service
 description: Ett heltäckande exempel som demonstrerar mångsidigheten och fördelarna med Adobe Experience Platform Query Service.
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,9 @@ Den här arbetsflödesdemonstrationen bygger på flera Adobe Experience Platform
 * Så här [skapar du datauppsättningar och importerar data](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)
 * Så här [importerar du data med Adobe Analytics-källanslutningen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html)
 * [Segmentering](../../segmentation/home.md)
-* [Mål ](../../destinations/home.md)
+* [Mål](../../destinations/home.md)
 
-Exemplet på bläddringsavhopp fokuserar på att använda data från Adobe [!DNL Analytics] för att skapa en viss åtgärdbar målgrupp. Målgruppen är att inkludera alla kunder som har besökt webbplatsen de senaste fyra dagarna men inte har gjort något inköp. Varje profil i målgruppen målgruppsanpassas sedan med den mest prisvärda SKU som följer av kundens beteendemönster.
+Exemplet på bläddringsavhopp fokuserar på att använda Adobe [!DNL Analytics]-data för att skapa en viss åtgärdbar målgrupp. Målgruppen är att inkludera alla kunder som har besökt webbplatsen de senaste fyra dagarna men inte har gjort något inköp. Varje profil i målgruppen målgruppsanpassas sedan med den mest prisvärda SKU som följer av kundens beteendemönster.
 
 Själva frågan är mycket preskriptiv och innehåller bara data som uppfyller användningsfallskriterierna för segmentdefinitionen. Detta förbättrar prestanda genom att minimera mängden [!DNL Analytics] data som bearbetas. Den beställer också data efter pris från högsta till lägsta och väljer den SKU som användaren valde till det högsta priset.
 
@@ -57,7 +57,7 @@ order by price desc)D;
 
 ## [!DNL Query Service] exempel på bläddring efter övergivna med hjälp av Adobe Analytics {#video-example}
 
-Videopresentationen nedan innehåller ett helhetsbaserat exempel på hur data i din Experience Platform används för att analysera [!DNL Query Service] och Adobe.
+Videopresentationen nedan ger ett helhetsbaserat exempel på hur dina Experience Platform-data kan användas i verkligheten med fokus på [!DNL Query Service]- och Adobe-analyser-integreringar.
 
 >[!VIDEO](https://video.tv.adobe.com/v/342533?quality=12&learn=on)
 
@@ -69,7 +69,7 @@ Med [!DNL Query Service] kan du inkludera begränsningar i dina frågor för att
 
 Genom att ta med logik i frågan som uppfyller alla återkommande eller statiska villkor, extraherar [!DNL Query Service] även bördan av avancerad segmentering.
 
-Adobe Experience Platform tillhandahåller ett datalager och de verktyg som krävs för att aktivera data på ett effektivt och tillförlitligt sätt. Genom att lagra data i Platform kan ni härleda attribut samtidigt som ni kör andra processer och eliminerar behovet av att exportera data till verktyg från tredje part för manipulering och bearbetning. Sådana allmänna omkostnader kan i hög grad påverka en projekttidslinje när man arbetar med hundratals attribut eller kampanjer. Detta ger marknadsförarna en enda plats där de kan få tillgång till sina data och bygga ut kampanjer samt ett mycket dynamiskt sätt att segmentera och personalisera sina meddelanden.
+Adobe Experience Platform tillhandahåller ett datalager och de verktyg som krävs för att aktivera data på ett effektivt och tillförlitligt sätt. Genom att lagra data i Experience Platform kan ni härleda attribut samtidigt som ni kör andra processer och eliminerar behovet av att exportera data till verktyg från tredje part för manipulering och bearbetning. Sådana allmänna omkostnader kan i hög grad påverka en projekttidslinje när man arbetar med hundratals attribut eller kampanjer. Detta ger marknadsförarna en enda plats där de kan få tillgång till sina data och bygga ut kampanjer samt ett mycket dynamiskt sätt att segmentera och personalisera sina meddelanden.
 
 ## Nästa steg
 

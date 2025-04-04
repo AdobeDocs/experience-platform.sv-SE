@@ -3,9 +3,9 @@ title: Ansluta AWS Redshift till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter ett AWS Redshift-konto till Experience Platform med hjälp av källgränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4faf3200-673b-4a20-8f94-d049e800444b
-source-git-commit: 8533aa3527bfb74a77f5b15dacf9ecfe622477d5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '700'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Om du redan har en giltig [!DNL AWS Redshift]-anslutning kan du hoppa över rest
 
 ## Navigera i källkatalogen
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Välj **[!DNL AWS Redshift]** under kategorin *[!UICONTROL Databases]* och välj sedan **[!UICONTROL Set up]**.
 

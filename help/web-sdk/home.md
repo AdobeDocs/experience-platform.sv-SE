@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform Web Software Development Kit (SDK) - översikt
-description: Lär dig hur du använder Adobe Experience Platform Web SDK för att integrera plattformsfunktioner på din webbplats.
+description: Läs om hur du använder Adobe Experience Platform Web SDK för att integrera Experience Platform-funktioner på din webbplats.
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 2bf9c7ada9fd223df92b5cc9b1415f20705c2042
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '601'
 ht-degree: 1%
 
 ---
@@ -15,18 +15,18 @@ Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan s
 
 Du kan implementera Web SDK på två sätt:
 
-* [Web SDK-taggtillägget](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Se självstudiekursen om hur du [implementerar Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) för mer information.
+* [Webbtaggtillägget för SDK](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Se självstudiekursen om hur du [implementerar Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) för mer information.
 * Manuell implementering med [Web SDK JavaScript-biblioteket](install/library.md).
 
-Den här guiden innehåller anvisningar om hur du interagerar med Experience Cloud lösningar med både Web SDK JavaScript-biblioteket och taggtillägget.
+Den här guiden innehåller anvisningar för hur du interagerar med Experience Cloud lösningar med både Web SDK JavaScript-biblioteket och taggtillägget.
 
 ## Experience Platform Edge Network {#edge-network}
 
 
 
-Experience Platform Web SDK är en del av Adobe Experience Platform Edge Network, som innefattar:
+Experience Platform Web SDK ingår i Adobe Experience Platform Edge Network, som innehåller
 
-* **[Experience Platform Web SDK](#overview)**: Ett JavaScript-bibliotek och taggtillägg som underlättar distributionen av Adobe-teknik.
+* **[Experience Platform Web SDK](#overview)**: Ett JavaScript-bibliotek och taggtillägg som underlättar driftsättningen av Adobe-teknik.
 * **[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/)**: Ett tillägg till v5 Mobile SDK för den nya distributionsmetoden.
 * **[Edge Network API](../server-api/overview.md)**: Ett serversides-API för datainsamling, personalisering, reklam och marknadsföring. Du kan använda den på servrar, IoT-enheter, digitalboxar och andra enheter.
 
@@ -39,7 +39,7 @@ På serversidan förenklar en enhetlig edge-gateway och ett gemensamt plattforms
 * Förbättra prestanda jämfört med de gamla biblioteken.
 * Minskade driftskostnader.
 * Ökad innovationshastighet.
-* Skapa hållbara konkurrensfördelar för Adobe-kunder.
+* Skapa konkurrensfördelar för Adobe-kunder.
 
 Med ett konsoliderat edge-system kan ni hantera annonserings-, marknadsförings- och personaliseringskampanjer i alla kanaler. Det minskar den totala ägandekostnaden och stöder olika datatyper, vilket gör att du kan mappa din datamodell för användning med flera Experience Cloud-produkter.
 
@@ -51,9 +51,9 @@ I videon nedan visas en översikt över Adobe Experience Platform [!DNL Web SDK]
 
 ## Bibliotek som ersätts av Web SDK {#sdks}
 
-Web SDK är ett nytt bibliotek med öppen källkod som skapats från grunden för att integrera funktioner i befintliga bibliotek. Den åtgärdar problem med taggaktiveringsordning, inkonsekvenser i versionerna och beroendehantering, och erbjuder ett nytt [open source](https://github.com/adobe/alloy)-sätt att implementera [!DNL Experience Cloud].
+Web SDK är ett nytt bibliotek med öppen källkod som byggts från grunden och som integrerar funktioner i befintliga bibliotek. Den åtgärdar problem med taggaktiveringsordning, inkonsekvenser i versionerna och beroendehantering, och erbjuder ett nytt [open source](https://github.com/adobe/alloy)-sätt att implementera [!DNL Experience Cloud].
 
-Web SDK ersätter:
+SDK ersätter
 
 * `Visitor.js`
 * `AppMeasurement.js`
@@ -72,7 +72,7 @@ Adobe erbjuder en smidig uppgradering för att förenkla din migrering från nå
 
 ### Migrering av `AT.js` till Web SDK-överväganden {#considerations}
 
-Innan du migrerar sidor med `AT.js` till Web SDK måste du aktivera följande konfigurationsalternativ för Web SDK för att säkerställa att besökarprofilen upprätthålls vid navigering mellan sidor.
+Innan du migrerar sidor med `AT.js` till Web SDK måste du aktivera följande konfigurationsalternativ för Web SDK för att se till att besökarprofilen upprätthålls vid navigering mellan sidor.
 
 * [`idMigrationEnabled`](/help/web-sdk/commands/configure/idmigrationenabled.md)
 * [`targetMigrationEnabled`](/help/web-sdk/commands/configure/targetmigrationenabled.md)

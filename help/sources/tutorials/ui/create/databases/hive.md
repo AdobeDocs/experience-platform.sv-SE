@@ -5,7 +5,7 @@ title: Skapa en Apache Hive på Azure HDInsights Source Connection i användargr
 type: Tutorial
 description: Lär dig hur du skapar en Apache Hive på Azure HDInsights-källanslutningen med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 3eb3cb02-9867-451a-b847-ab895310eedf
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 > [!DNL Apache Hive] på [!DNL Azure HDInsights]-anslutningen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källöversikt](../../../../home.md#terms-and-conditions).
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Apache Hive] på [!DNL Azure HDInsights]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Apache Hive] på [!DNL Azure HDInsights]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -33,7 +33,7 @@ Om du redan har en giltig [!DNL Hive]-anslutning kan du hoppa över resten av de
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Hive]-konto på [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till ditt [!DNL Hive]-konto på [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -45,7 +45,7 @@ Mer information om hur du kommer igång finns i [det här [!DNL Hive] dokumentet
 
 ## Anslut ditt [!DNL Hive]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Hive]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Hive]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -71,4 +71,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Hive]-konto du vil
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Hive]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Hive]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

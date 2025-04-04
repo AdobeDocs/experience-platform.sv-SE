@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;komma igång;kundinformation;populära ämnen;kunddata;kunddata;data requirements
+keywords: Experience Platform;komma igång;kundinformation;populära ämnen;kundindata;kunddata;datakrav
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Datakrav för kund-AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som Kundens AI använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 63bdb48936070d23d1801d8e6143db3aefad5f6e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2532'
+source-wordcount: '2538'
 ht-degree: 0%
 
 ---
@@ -62,8 +62,8 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 
 | Villkor | Definition |
 | --- | --- |
-| [Experience Data Model (XDM)](../../xdm/home.md) | XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Adobe Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Platform använder XDM System för att organisera data på ett visst sätt som gör det enklare att använda för plattformstjänster. |
-| [XDM-schema](../../xdm/schema/composition.md) | Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en XDM-basklass och noll eller flera schemafältgrupper. |
+| [Experience Data Model (XDM)](../../xdm/home.md) | XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Adobe Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Experience Platform använder XDM System för att organisera data på ett visst sätt som gör det enklare att använda för Experience Platform tjänster. |
+| [XDM-schema](../../xdm/schema/composition.md) | Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Innan data kan hämtas in till Experience Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en XDM-basklass och noll eller flera schemafältgrupper. |
 | [XDM-klass](../../xdm/schema/field-constraints.md) | Alla XDM-scheman beskriver data som kan kategoriseras som `Experience Event`. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende. |
 | [Fältgrupper](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend`-attribut. |
 | [Datatyp](../../xdm/schema/composition.md) | En komponent som också kan tillhandahålla ett eller flera fält för ett schema. Till skillnad från fältgrupper är datatyperna dock inte begränsade till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser. Datatyperna som beskrivs i det här dokumentet stöds av både CEE- och Adobe Analytics-scheman. |
@@ -73,9 +73,9 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 
 För indatauppsättningar, som Adobe Analytics och Adobe Audience Manager, mappas händelser direkt i de här standardfältgrupperna (Commerce, Web, Application och Search) som standard under anslutningsprocessen. Tabellen nedan visar händelsefälten i standardfältgrupperna för kund-AI.
 
-Mer information om mappning av Adobe Analytics-data eller Audience Manager-data finns i Analytics-fältmappningar eller i [handboken för fältmappningar från Audience Manager ](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
+Mer information om mappning av Adobe Analytics-data eller Audience Manager-data finns i Analytics-fältmappningar eller i Audience Manager [handbok för fältmappningar](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
 
-Du kan använda Experience Event- eller Consumer Experience Event XDM-scheman för indatamängder som inte fylls i via någon av de ovanstående anslutningarna. Ytterligare XDM-fältgrupper kan läggas till när schemat skapas. Fältgrupperna kan tillhandahållas av Adobe som standardfältgrupperna eller en anpassad fältgrupp, som matchar datarepresentationen i plattformen.
+Du kan använda Experience Event- eller Consumer Experience Event XDM-scheman för indatamängder som inte fylls i via någon av de ovanstående anslutningarna. Ytterligare XDM-fältgrupper kan läggas till när schemat skapas. Fältgrupperna kan tillhandahållas av Adobe, t.ex. standardfältgrupperna eller en anpassad fältgrupp, som matchar datarepresentationen i Experience Platform.
 
 >[!IMPORTANT]
 >
@@ -91,7 +91,7 @@ Experience Events används för att fastställa olika kundbeteenden. Beroende p�
 
 Kund-AI använder händelserna i dessa fyra standardfältgrupper som standard: Commerce, Web, Application och Search. Det är inte nödvändigt att ha data för varje händelse i de standardfältgrupper som anges nedan, men vissa händelser krävs för vissa scenarier. Om du har några händelser i standardfältgrupperna tillgängliga rekommenderar vi att du inkluderar dem i ditt schema. Om du till exempel vill skapa en AI-modell för kunder för att förutsäga köphändelser, kan det vara bra att ha data från fältgrupperna för Commerce och webbsidesinformation.
 
-Om du vill visa en fältgrupp i plattformsgränssnittet väljer du fliken **[!UICONTROL Schemas]** till vänster och sedan fliken **[!UICONTROL Field groups]**.
+Om du vill visa en fältgrupp i Experience Platform-gränssnittet väljer du fliken **[!UICONTROL Schemas]** till vänster och sedan fliken **[!UICONTROL Field groups]**.
 
 | Fältgrupp | Händelsetyp | Sökväg till XDM-fält |
 | --- | --- | --- |
@@ -211,7 +211,7 @@ Så här avgör du den minsta tid som krävs för data som finns i systemet:
 
 Kund-AI genererar flera attribut för enskilda profiler som anses berättigade. Det finns två sätt att förbruka poängen (utdata) baserat på vad du har etablerat. Om du har en kundprofilaktiverad datauppsättning i realtid kan du ta del av insikter från kundprofilen i realtid i [segmentbyggaren](../../segmentation/ui/segment-builder.md). Om du inte har någon profilaktiverad datauppsättning kan du [hämta kundens AI-datauppsättning](./user-guide/download-scores.md) som finns tillgänglig i datasjön.
 
-Du kan hitta utdatauppsättningen på arbetsytan för **datauppsättningar** för plattformen. Alla AI-utdatauppsättningar för kunder börjar med namnet **AI-poäng för kund - NAME_OF_APP**. På samma sätt börjar alla kundens AI-utdatascheman med namnet **kundens AI-schema - appens_namn**.
+Du kan hitta utdatauppsättningen på arbetsytan för Experience Platform **datauppsättningar**. Alla AI-utdatauppsättningar för kunder börjar med namnet **AI-poäng för kund - NAME_OF_APP**. På samma sätt börjar alla kundens AI-utdatascheman med namnet **kundens AI-schema - appens_namn**.
 
 ![Namn på utdatauppsättningar i kund-AI](./images/user-guide/cai-schema-name-of-app.png)
 

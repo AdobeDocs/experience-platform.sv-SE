@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;import packaged recept;Data Science Workspace;populära topics;recipes;api;sensei machine learning;create engine
+keywords: Experience Platform;importera paketerat recept;Data Science Workspace;populära topics;recipes;api;sensei machine learning;skapa motor
 solution: Experience Platform
 title: Importera en paketerad mottagare med Sensei Machine Learning API
 type: Tutorial
 description: I den här självstudien används API:t för inlärning i Sensei Machine för att skapa en motor, som också kallas Recept i användargränssnittet.
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Den här självstudien kräver en paketerad mottagarfil i form av en Docker-URL.
 
 - `{DOCKER_URL}`: En URL-adress till en Docker-bild av en intelligent tjänst.
 
-Den här självstudien kräver att du har slutfört [autentiseringen av Adobe Experience Platform-självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Platform] API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+Den här självstudien kräver att du har slutfört [autentiseringen av Adobe Experience Platform-självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Experience Platform] API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.
 - `{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.
@@ -49,7 +49,7 @@ Den här självstudien kräver att du har slutfört [autentiseringen av Adobe Ex
 
 ## Skapa en motor
 
-Du kan skapa motorer genom att göra en POST-förfrågan till slutpunkten /engines. Den skapade motorn konfigureras baserat på den paketerade mottagarfilen som måste inkluderas som en del av API-begäran.
+Du kan skapa motorer genom att göra en POST-begäran till slutpunkten /engines. Den skapade motorn konfigureras baserat på den paketerade mottagarfilen som måste inkluderas som en del av API-begäran.
 
 ### Skapa en motor med en Docker URL {#create-an-engine-with-a-docker-url}
 
@@ -176,7 +176,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`). Följande exempelsvar är för en [!DNL Python]-motor. Nycklarna `executionType` och `type` ändras baserat på den angivna POSTEN.
+Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`). Följande exempelsvar är för en [!DNL Python]-motor. Nycklarna `executionType` och `type` ändras baserat på den angivna POST.
 
 ```json
 {

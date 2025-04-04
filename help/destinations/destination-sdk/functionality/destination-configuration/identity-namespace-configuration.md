@@ -1,17 +1,17 @@
 ---
-description: Lär dig hur du konfigurerar målidentiteter som stöds för mål som skapats med Destination SDK.
+description: Lär dig hur du konfigurerar de målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: 606685c1f0b607ca586e477cb9825ec551d537cc
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '920'
 ht-degree: 0%
 
 ---
 
 # Konfiguration av namnutrymme för identitet
 
-Experience Platform använder ID-namnutrymmen för att beskriva typen av specifika identiteter. Ett ID-namnområde med namnet `Email` identifierar till exempel ett värde som `name@email.com` som en e-postadress.
+I Experience Platform används identitetsnamnutrymmen för att beskriva typen av specifika identiteter. Ett ID-namnområde med namnet `Email` identifierar till exempel ett värde som `name@email.com` som en e-postadress.
 
 Beroende på vilken typ av mål du skapar (direktuppspelning eller filbaserad) bör du tänka på följande krav för identitetsnamnutrymme:
 
@@ -21,7 +21,7 @@ Beroende på vilken typ av mål du skapar (direktuppspelning eller filbaserad) b
   >
   >När målgrupper aktiveras för direktuppspelningsmål måste användarna även mappa _minst en målidentitet_, förutom målprofilsattribut. Annars aktiveras inte målgrupperna till målplattformen.
 
-* När du skapar filbaserade mål via Destination SDK är konfigurationen för identitetsnamnutrymmen _valfri_.
+* När du skapar filbaserade mål via Destination SDK är konfigurationen av identitetsnamnutrymmen _valfri_.
 
 Mer information om identitetsnamnutrymmen i Experience Platform finns i [dokumentationen om identitetsnamnutrymmen](../../../../identity-service/features/namespaces.md).
 
@@ -38,11 +38,11 @@ Du kan konfigurera identitetsnamnutrymmen som stöds via slutpunkten `/authoring
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-I den här artikeln beskrivs alla konfigurationsalternativ för identitetsnamn som stöds och som du kan använda för ditt mål. Dessutom visas vad kunderna kommer att se i plattformsgränssnittet.
+I den här artikeln beskrivs alla konfigurationsalternativ för identitetsnamn som stöds och som du kan använda för ditt mål. Dessutom visas vad som visas för kunder i användargränssnittet i Experience Platform.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -62,7 +62,7 @@ När du definierar de målidentiteter som målet stöder kan du använda paramet
 | `acceptsAttributes` | Boolean | Valfritt | Anger om kunder kan mappa standardprofilattribut till identiteten som du konfigurerar. |
 | `acceptsCustomNamespaces` | Boolean | Valfritt | Anger om kunderna kan mappa anpassade ID-namnutrymmen till det ID-namnutrymme som du konfigurerar. |
 | `acceptedGlobalNamespaces` | – | Valfritt | Anger vilka [standardidentitetsnamnutrymmen](../../../../identity-service/features/namespaces.md#standard) (till exempel [!UICONTROL IDFA]) som kunder kan mappa till identiteten som du konfigurerar. |
-| `transformation` | Sträng | Valfritt | Visar kryssrutan [[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) i plattformsgränssnittet när källfältet är antingen ett XDM-attribut eller ett anpassat identitetsnamnområde. Använd det här alternativet om du vill att användare ska kunna hash-koda källattribut vid export. Om du vill aktivera det här alternativet anger du värdet till `sha256(lower($))`. |
+| `transformation` | Sträng | Valfritt | Visar kryssrutan [[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) i Experience Platform-gränssnittet när källfältet är antingen ett XDM-attribut eller ett anpassat ID-namnområde. Använd det här alternativet om du vill att användare ska kunna hash-koda källattribut vid export. Om du vill aktivera det här alternativet anger du värdet till `sha256(lower($))`. |
 | `requiredTransformation` | Sträng | Valfritt | När kunderna väljer det här namnområdet för källidentiteten används kryssrutan [[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) automatiskt på mappningen och kunderna kan inte inaktivera den. Om du vill aktivera det här alternativet anger du värdet till `sha256(lower($))`. |
 
 {style="table-layout:auto"}
@@ -85,22 +85,22 @@ När du definierar de målidentiteter som målet stöder kan du använda paramet
    }
 ```
 
-Du måste ange vilka [!DNL Platform] identiteter som kunderna kan exportera till ditt mål. Några exempel är [!DNL Experience Cloud ID], hashad e-post, enhets-ID ([!DNL IDFA], [!DNL GAID]). Dessa värden är [!DNL Platform] ID-namnutrymmen som kunderna kan mappa till identitetsnamnutrymmen från ditt mål.
+Du måste ange vilka [!DNL Experience Platform] identiteter som kunderna kan exportera till ditt mål. Några exempel är [!DNL Experience Cloud ID], hashad e-post, enhets-ID ([!DNL IDFA], [!DNL GAID]). Dessa värden är [!DNL Experience Platform] ID-namnutrymmen som kunderna kan mappa till identitetsnamnutrymmen från ditt mål.
 
-Identitetsnamnutrymmen kräver ingen 1-till-1-korrespondens mellan [!DNL Platform] och ditt mål.
-Kunder kan till exempel mappa ett [!DNL Platform] [!DNL IDFA]-namnutrymme till ett [!DNL IDFA]-namnutrymme från målet, eller så kan de mappa samma [!DNL Platform] [!DNL IDFA]-namnutrymme till ett [!DNL Customer ID]-namnutrymme i målet.
+Identitetsnamnutrymmen kräver ingen 1-till-1-korrespondens mellan [!DNL Experience Platform] och ditt mål.
+Kunder kan till exempel mappa ett [!DNL Experience Platform] [!DNL IDFA]-namnutrymme till ett [!DNL IDFA]-namnutrymme från målet, eller så kan de mappa samma [!DNL Experience Platform] [!DNL IDFA]-namnutrymme till ett [!DNL Customer ID]-namnutrymme i målet.
 
 Läs mer om identiteter i översikten över [identitetsnamnområdet](../../../../identity-service/features/namespaces.md).
 
 ## Mappningsöverväganden
 
-Om kunderna väljer ett namnutrymme för källidentiteten och inte väljer någon målmappning, fyller Platform automatiskt i målmappningen med ett attribut med samma namn.
+Om kunderna väljer ett namnutrymme för källidentiteten och inte väljer någon målmappning, fylls målmappningen automatiskt i med ett attribut med samma namn.
 
 ## Konfigurera hash för valfritt källfält
 
-Experience Platform-kunder kan välja att importera data till plattformen i hash-format eller i vanlig text. Om målplattformen godkänner både hash-kodade och ohashade data kan du ge kunderna möjlighet att välja om Platform ska hash-koda källfältets värden när de exporteras till destinationen.
+Experience Platform-kunder kan välja att importera data till Experience Platform i hash-format eller i vanlig text. Om målplattformen godkänner både hash-kodade och ohashade data kan du ge kunderna möjlighet att välja om Experience Platform ska hash-koda källfältets värden när de exporteras till destinationen.
 
-Med konfigurationen nedan aktiveras det valfria alternativet [Använd omvandling](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) i plattformsgränssnittet i mappningssteget.
+Med konfigurationen nedan aktiveras det valfria alternativet [Använd omformning](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) i Experience Platform-gränssnittet i mappningssteget.
 
 ```json {line-numbers="true" highlight="5"}
 "identityNamespaces":{
@@ -124,7 +124,7 @@ När du mappar ohash-kodade källattribut till målattribut som målet förvänt
 
 ## Konfigurera hash för obligatoriskt källfält
 
-Om målet bara godtar hash-kodade data kan du konfigurera de exporterade attributen så att de hashas automatiskt av Platform. Konfigurationen nedan kontrollerar automatiskt alternativet **Använd omformning** när identiteterna `Email` och `Phone` mappas.
+Om målet bara godtar hash-kodade data kan du konfigurera de exporterade attributen så att de hashas av Experience Platform automatiskt. Konfigurationen nedan kontrollerar automatiskt alternativet **Använd omformning** när identiteterna `Email` och `Phone` mappas.
 
 ```json {line-numbers="true" highlight="8,11"}
 "identityNamespaces":{
@@ -146,7 +146,7 @@ Om målet bara godtar hash-kodade data kan du konfigurera de exporterade attribu
 
 ## Nästa steg {#next-steps}
 
-När du har läst den här artikeln bör du ha en bättre förståelse för hur du konfigurerar identitetsnamnutrymmen för mål som skapats med Destination SDK.
+När du har läst den här artikeln bör du få en bättre förståelse för hur du konfigurerar dina identitetsnamnutrymmen för mål som skapats med Destination SDK.
 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 

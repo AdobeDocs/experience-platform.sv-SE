@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;startsida;populära ämnen;bildskärmskonton;bildskärmsdataflöden;dataflöden
+keywords: Experience Platform;hem;populära ämnen;bildskärmskonton;bildskärmsdataflöden;dataflöden
 description: Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du övervakar direktuppspelade dataflöden från arbetsytan Källor.
 title: Övervaka dataflöden för strömningskällor i användargränssnittet
 exl-id: b080e398-e71f-40bd-aea1-7ea3ce86b55d
-source-git-commit: 647f2780798dcf55a68e156af3318924c352a442
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '986'
+source-wordcount: '990'
 ht-degree: 0%
 
 ---
@@ -18,14 +18,14 @@ I den här självstudien beskrivs stegen för att övervaka dataflöden för dir
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Dataflöden](../../../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
+* [Dataflöden](../../../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
    * [Dataflöden körs](../../notifications.md): Dataflöden är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Övervaka dataflöden för strömningskällor
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Om du vill visa befintliga dataflöden för direktuppspelningskällor väljer du **[!UICONTROL Dataflows]** i den övre rubriken.
 

@@ -1,11 +1,11 @@
 ---
-title: Web SDK-tillägg - översikt
-description: Läs mer om Web SDK-taggtillägget i Adobe Experience Platform.
+title: SDK Extension - översikt
+description: Läs mer om SDK-taggtillägget för webben i Adobe Experience Platform.
 exl-id: 2bc738b9-5939-47a6-a829-429937e4c673
-source-git-commit: 2772660936444e39124a75deda6f78d97f7793f2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '127'
-ht-degree: 0%
+source-wordcount: '129'
+ht-degree: 34%
 
 ---
 
@@ -13,8 +13,8 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Adobe Experience Platform Web SDK-tillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Tillägget Platform Web SDK gör det möjligt att strömma data till plattformen, synkronisera identiteter, anmäla sig och automatiskt samla in kontextdata.
+Adobe Experience Platform Web SDK-tillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Med Experience Platform Web SDK-tillägget kan du strömma data till olika plattformar, synkronisera identiteter, anmäla dig och automatiskt samla in kontextdata.
 
-Mer information om hur du konfigurerar Platform Web SDK-tillägget finns i [Konfigurera Web SDK-taggtillägget](web-sdk-extension-configuration.md).
+Mer information om hur du konfigurerar tillägget Experience Platform Web SDK finns i [Konfigurera taggtillägget för Web SDK](web-sdk-extension-configuration.md).

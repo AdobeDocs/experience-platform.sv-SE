@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;mappare;mappningsuppsättning;mappning;
+keywords: Experience Platform;home;mapper;mappningsuppsättning;mappning;
 solution: Experience Platform
 title: Översikt över mappningsuppsättningar
 description: Lär dig använda mappningsuppsättningar med Adobe Experience Platform Data Prep.
 exl-id: b45545b7-3ae7-400d-b6fd-b2cb76061093
-source-git-commit: 660948b7a43ed3c18feb74cccf8f9c607470759c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '960'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ En mappningsuppsättning är en uppsättning mappningar som transformerar data f
 Den här översikten kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 - [Data Prep](./home.md): Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
-- [Dataflöden](../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
+- [Dataflöden](../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
 - [[!DNL Adobe Experience Platform Data Ingestion]](../ingestion/home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
 - [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 

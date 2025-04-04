@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Ta bort dataflöden i användargränssnittet
 type: Tutorial
 exl-id: aa224467-7733-40de-aab7-0ff1c557abf2
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '358'
 ht-degree: 0%
@@ -22,12 +22,12 @@ I den här självstudien beskrivs hur du tar bort dataflöden med arbetsytan [!U
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-- [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+- [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+- [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ## Ta bort dataflöden
 
-I [Experience Platform-gränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och sedan **[!UICONTROL Dataflows]** i den övre rubriken.
+I [Experience Platform-gränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och väljer sedan **[!UICONTROL Dataflows]** i det övre sidhuvudet.
 
 ![katalog](../../images/tutorials/delete/catalog.png)
 

@@ -5,9 +5,9 @@ title: Skapa en allmän REST API-basanslutning med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du ansluter allmänt REST API till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 6b414868-503e-49d5-8f4a-5b2fc003dab0
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '947'
+source-wordcount: '955'
 ht-degree: 0%
 
 ---
@@ -26,10 +26,10 @@ I den här självstudien får du hjälp med att skapa en basanslutning för [!DN
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -61,13 +61,13 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Generic REST API] mås
 
 ## Skapa en basanslutning
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
 [!DNL Generic REST API] har stöd för både grundläggande autentisering och OAuth 2-uppdateringskod. I följande exempel finns vägledning om hur du autentiserar med någon av autentiseringstyperna.
 
 ### Skapa en [!DNL Generic REST API]-basanslutning med OAuth 2-uppdateringskod
 
-Om du vill skapa ett basanslutnings-ID med OAuth 2-uppdateringskod gör du en POST-förfrågan till `/connections`-slutpunkten och anger dina OAuth 2-autentiseringsuppgifter.
+Om du vill skapa ett basanslutnings-ID med OAuth 2-uppdateringskod gör du en POST-begäran till `/connections`-slutpunkten och anger dina OAuth 2-autentiseringsuppgifter.
 
 **API-format**
 
@@ -109,7 +109,7 @@ curl -X POST \
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som är associerat med [!DNL Generic REST API]. Detta fasta ID är: `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
-| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
+| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till Experience Platform. |
 | `auth.params.host` | Den rot-URL som används för att ansluta till din [!DNL Generic REST API]-källa. |
 | `auth.params.accessToken` | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
@@ -126,7 +126,7 @@ Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslu
 
 ### Skapa en [!DNL Generic REST API]-basanslutning med grundläggande autentisering
 
-Om du vill skapa en [!DNL Generic REST API]-basanslutning med grundläggande autentisering kan du göra en POST-förfrågan till `/connections`-slutpunkten för [!DNL Flow Service]-API:t och samtidigt ange dina grundläggande autentiseringsuppgifter.
+Om du vill skapa en [!DNL Generic REST API]-basanslutning med grundläggande autentisering, gör du en POST-begäran till `/connections`-slutpunkten för [!DNL Flow Service] API samtidigt som du anger dina grundläggande autentiseringsuppgifter.
 
 **API-format**
 
@@ -169,7 +169,7 @@ curl -X POST \
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som är associerat med [!DNL Generic REST API]. Detta fasta ID är: `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
-| `auth.specName` | Autentiseringstypen som du använder för att ansluta källan till plattformen. |
+| `auth.specName` | Autentiseringstypen som du använder för att ansluta källan till Experience Platform. |
 | `auth.params.host` | Den rot-URL som används för att ansluta till din [!DNL Generic REST API]-källa. |
 | `auth.params.username` | Användarnamnet som motsvarar källan [!DNL Generic REST API]. Detta krävs för grundläggande autentisering. |
 | `auth.params.password` | Lösenordet som motsvarar din [!DNL Generic REST API]-källa. Detta krävs för grundläggande autentisering. |
@@ -190,4 +190,4 @@ Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutni
 Genom att följa den här självstudiekursen har du skapat en [!DNL Generic REST API]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att hämta protokolldata till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/protocols.md)
+* [Skapa ett dataflöde för att hämta protokolldata till Experience Platform med  [!DNL Flow Service] API](../../collect/protocols.md)

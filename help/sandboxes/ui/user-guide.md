@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för sandlådan
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: b9b00f41f146b34a1326c4c2ac104c022a416dc9
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1086'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ I Experience Platform-gränssnittet väljer du **[!UICONTROL Sandboxes]** i den 
 
 ## Växla mellan sandlådor
 
-Sandlådeindikatorn finns i det övre huvudet i plattformsgränssnittet och visar titeln på den sandlåda som du för närvarande befinner dig i, dess region och dess typ.
+Sandlådeindikatorn finns i det övre huvudet i Experience Platform-gränssnittet och visar titeln på den sandlåda du befinner dig i, dess region och dess typ.
 
 ![Kontrollpanelen för sandlådor med indikatorn för sandlådan markerad.](../images/ui/sandbox-indicator.png)
 

@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ontrust;OneTrust
+keywords: Experience Platform;home;populära topics;ontrust;OneTrust
 solution: Experience Platform
 title: Skapa en OneTrust Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en OneTrust-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 6af0604d-cbb6-4c8e-b017-3eb82ec6ee1c
-source-git-commit: 35095ec8c22106ba0a8f11e0a970ed7989a7f06c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Källan [!DNL OneTrust Integration] stöder endast inmatning av medgivanden och inställningsdata, inte cookies.
 
-I den här självstudiekursen beskrivs hur du skapar en [[!DNL OneTrust Integration]](https://my.onetrust.com/s/contactsupport?language=en_US)-källanslutning för att kunna importera både historiska och schemalagda medgivandedata till Adobe Experience Platform med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [[!DNL OneTrust Integration]](https://my.onetrust.com/s/contactsupport?language=en_US)-källanslutning för att kunna importera både historiska och schemalagda medgivandedata till Adobe Experience Platform med Experience Platform användargränssnitt.
 
 ## Förhandskrav
 
@@ -26,13 +26,13 @@ I den här självstudiekursen beskrivs hur du skapar en [[!DNL OneTrust Integrat
 >
 >[!DNL OneTrust Integration]-källkopplingen och dokumentationen skapades av [!DNL OneTrust Integration]-teamet. Kontakta [[!DNL OneTrust] teamet](https://my.onetrust.com/s/contactsupport?language=en_US) direkt om du har frågor eller uppdateringsförfrågningar.
 
-Innan du kan ansluta [!DNL OneTrust Integration] till plattformen måste du hämta din åtkomsttoken. Detaljerade instruktioner om hur du hittar din åtkomsttoken finns i [[!DNL OneTrust Integration] OAuth 2-guiden](https://developer.onetrust.com/docs/api-docs-v3/b3A6MjI4OTUyOTc-generate-access-token).
+Innan du kan ansluta [!DNL OneTrust Integration] till Experience Platform måste du hämta din åtkomsttoken. Detaljerade instruktioner om hur du hittar din åtkomsttoken finns i [[!DNL OneTrust Integration] OAuth 2-guiden](https://developer.onetrust.com/docs/api-docs-v3/b3A6MjI4OTUyOTc-generate-access-token).
 
 Åtkomsttoken uppdateras inte automatiskt när den har upphört att gälla eftersom uppdateringstoken för system-till-system inte stöds av [!DNL OneTrust]. Det är därför nödvändigt att se till att din åtkomsttoken uppdateras i anslutningen innan den upphör att gälla. Den maximala konfigurerbara livslängden för en åtkomsttoken är ett år. Mer information om hur du uppdaterar din åtkomsttoken finns i [[!DNL OneTrust] dokumentet om att hantera dina OAuth 2.0-klientautentiseringsuppgifter](https://developer.onetrust.com/docs/documentation/ZG9jOjIyODk1MTUw-managing-o-auth-2-0-client-credentials).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL OneTrust Integration] till plattformen måste du ange värden för följande autentiseringsuppgifter:
+För att kunna ansluta [!DNL OneTrust Integration] till Experience Platform måste du ange värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ Mer information om dessa autentiseringsuppgifter finns i [[!DNL OneTrust Integra
 >
 >API-specifikationerna för [!DNL OneTrust Integration] delas med Adobe för datainhämtning.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] för en katalog med källor som är tillgängliga i Experience Platform.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] för en katalog med källor som är tillgängliga i Experience Platform.
 
 Använd menyn *[!UICONTROL Categories]* för att filtrera källor efter kategori. Du kan också ange ett källnamn i sökfältet för att hitta en viss källa från katalogen.
 
@@ -72,4 +72,4 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL OneTrust Integration]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data om samtycke till plattformen](../../dataflow/consent-and-preferences.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL OneTrust Integration]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data om samtycke till Experience Platform](../../dataflow/consent-and-preferences.md).

@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;Attributbaserad åtkomstkontroll;attributbaserad åtkomstkontroll
+keywords: Experience Platform;home;populära topics;api;Attributbaserad åtkomstkontroll;attributbaserad åtkomstkontroll
 solution: Experience Platform
 title: Roller API-slutpunkt
 description: Med slutpunkten /roles i det attributbaserade åtkomstkontrolls-API:t kan du programmässigt hantera roller i Adobe Experience Platform.
 role: Developer
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1670'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ API-slutpunkten som används i den här guiden är en del av det attributbaserad
 
 ## Hämta en lista med roller {#list}
 
-Du kan lista alla befintliga roller som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/roles`.
+Du kan lista alla befintliga roller som tillhör din organisation genom att göra en GET-begäran till slutpunkten `/roles`.
 
 **API-format**
 
@@ -108,12 +108,12 @@ Ett godkänt svar returnerar en lista med roller i organisationen, inklusive inf
 | `roleType` | Den angivna typen av roll. Möjliga värden för rolltypen är: `user-defined` och `system-defined`. |
 | `permissionSets` | Behörighetsuppsättningar representerar en grupp behörigheter som en administratör kan tillämpa på en roll. En administratör kan tilldela behörighetsgrupper till en roll i stället för att tilldela enskilda behörigheter. Detta gör att du kan skapa anpassade roller från en fördefinierad roll som innehåller en grupp behörigheter. |
 | `sandboxes` | Den här egenskapen visar de sandlådor i organisationen som har etablerats för en viss roll. |
-| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de plattformsresurser som de har tillgång till. |
+| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de Experience Platform-resurser som de har tillgång till. |
 | `subjectAttributes.labels` | Visar dataanvändningsetiketter som används för den efterfrågade rollen. |
 
 ## Söka efter en roll {#lookup}
 
-Du kan söka efter en enskild roll genom att göra en GET-förfrågan som innehåller motsvarande `roleId` i sökvägen för begäran.
+Du kan söka efter en enskild roll genom att göra en GET-begäran som innehåller motsvarande `roleId` i sökvägen för begäran.
 
 **API-format**
 
@@ -175,12 +175,12 @@ Ett godkänt svar returnerar information om det efterfrågade roll-ID:t, inklusi
 | `roleType` | Den angivna typen av roll. Möjliga värden för rolltypen är: `user-defined` och `system-defined`. |
 | `permissionSets` | Behörighetsuppsättningar representerar en grupp behörigheter som en administratör kan tillämpa på en roll. En administratör kan tilldela behörighetsgrupper till en roll i stället för att tilldela enskilda behörigheter. Detta gör att du kan skapa anpassade roller från en fördefinierad roll som innehåller en grupp behörigheter. |
 | `sandboxes` | Den här egenskapen visar de sandlådor i organisationen som har etablerats för en viss roll. |
-| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de plattformsresurser som de har tillgång till. |
+| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de Experience Platform-resurser som de har tillgång till. |
 | `subjectAttributes.labels` | Visar dataanvändningsetiketter som används för den efterfrågade rollen. |
 
 ## Söka efter ämnen efter roll-ID
 
-Du kan även hämta ämnen genom att göra en GET-förfrågan till slutpunkten `/roles` och ange en {ROLE_ID}.
+Du kan även hämta ämnen genom att göra en GET-begäran till `/roles`-slutpunkten samtidigt som du anger en {ROLE_ID}.
 
 **API-format**
 
@@ -256,7 +256,7 @@ Ett lyckat svar returnerar de ämnen som är associerade med det efterfrågade r
 
 ## Skapa en roll {#create}
 
-Om du vill skapa en ny roll skickar du en POST till slutpunkten `/roles` och anger värden för rollens namn, beskrivning och rolltyp.
+Om du vill skapa en ny roll skickar du en POST-begäran till slutpunkten `/roles` och anger värden för rollens namn, beskrivning och rolltyp.
 
 **API-format**
 
@@ -323,7 +323,7 @@ Ett svar returnerar din nya roll, med dess motsvarande roll-ID, samt information
 | `roleType` | Den angivna typen av roll. Möjliga värden för rolltypen är: `user-defined` och `system-defined`. |
 | `permissionSets` | Behörighetsuppsättningar representerar en grupp behörigheter som en administratör kan tillämpa på en roll. En administratör kan tilldela behörighetsgrupper till en roll i stället för att tilldela enskilda behörigheter. Detta gör att du kan skapa anpassade roller från en fördefinierad roll som innehåller en grupp behörigheter. |
 | `sandboxes` | Den här egenskapen visar de sandlådor i organisationen som har etablerats för en viss roll. |
-| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de plattformsresurser som de har tillgång till. |
+| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de Experience Platform-resurser som de har tillgång till. |
 | `subjectAttributes.labels` | Visar dataanvändningsetiketter som används för den efterfrågade rollen. |
 
 ## Uppdatera en roll {#patch}
@@ -403,7 +403,7 @@ Ett lyckat svar returnerar den uppdaterade rollen, inklusive nya värden för de
 | `roleType` | Den angivna typen av roll. Möjliga värden för rolltypen är: `user-defined` och `system-defined`. |
 | `permissionSets` | Behörighetsuppsättningar representerar en grupp behörigheter som en administratör kan tillämpa på en roll. En administratör kan tilldela behörighetsgrupper till en roll i stället för att tilldela enskilda behörigheter. Detta gör att du kan skapa anpassade roller från en fördefinierad roll som innehåller en grupp behörigheter. |
 | `sandboxes` | Den här egenskapen visar de sandlådor i organisationen som har etablerats för en viss roll. |
-| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de plattformsresurser som de har tillgång till. |
+| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de Experience Platform-resurser som de har tillgång till. |
 | `subjectAttributes.labels` | Visar dataanvändningsetiketter som används för den efterfrågade rollen. |
 
 ## Uppdatera en roll efter roll-ID {#put}
@@ -477,12 +477,12 @@ Ett godkänt svar returnerar din uppdaterade roll, inklusive nya värden för na
 | `roleType` | Den angivna typen av roll. Möjliga värden för rolltypen är: `user-defined` och `system-defined`. |
 | `permissionSets` | Behörighetsuppsättningar representerar en grupp behörigheter som en administratör kan tillämpa på en roll. En administratör kan tilldela behörighetsgrupper till en roll i stället för att tilldela enskilda behörigheter. Detta gör att du kan skapa anpassade roller från en fördefinierad roll som innehåller en grupp behörigheter. |
 | `sandboxes` | Den här egenskapen visar de sandlådor i organisationen som har etablerats för en viss roll. |
-| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de plattformsresurser som de har tillgång till. |
+| `subjectAttributes` | De attribut som anger korrelationen mellan ett ämne och de Experience Platform-resurser som de har tillgång till. |
 | `subjectAttributes.labels` | Visar dataanvändningsetiketter som används för den efterfrågade rollen. |
 
 ## Uppdatera ämne efter roll-ID
 
-Om du vill uppdatera de ämnen som är associerade med en roll gör du en PATCH-förfrågan till slutpunkten `/roles` samtidigt som du anger roll-ID för de ämnen som du vill uppdatera.
+Om du vill uppdatera de ämnen som är associerade med en roll gör du en PATCH-förfrågan till slutpunkten `/roles` och anger roll-ID för de ämnen som du vill uppdatera.
 
 **API-format**
 
@@ -580,7 +580,7 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) till rollen. Du får HTTP-statusen 404 (Hittades inte) eftersom rollen har tagits bort från administrationen.
+Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET)-begäran till rollen. Du får HTTP-statusen 404 (Hittades inte) eftersom rollen har tagits bort från administrationen.
 
 ## Lägg till API-autentiseringsuppgifter {#apicredential}
 

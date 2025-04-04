@@ -1,10 +1,10 @@
 ---
-title: Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererade Recommendations
+title: Mappa en CSV-fil till ett XDM-schema med AI-genererade rekommendationer
 description: I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer.
 exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
-source-git-commit: cbebee894d68f60f82e1154f41dcecc76c706a3b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1106'
+source-wordcount: '1113'
 ht-degree: 0%
 
 ---
@@ -13,24 +13,24 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Mer information om allmänt tillgängliga CSV-mappningsfunktioner i Platform finns i dokumentet om [mappning av en CSV-fil till ett befintligt schema](./existing-schema.md).
+>Mer information om allmänt tillgängliga CSV-mappningsfunktioner i Experience Platform finns i dokumentet om [mappning av en CSV-fil till ett befintligt schema](./existing-schema.md).
 
-För att kunna importera CSV-data till [!DNL Adobe Experience Platform] måste data mappas till ett [!DNL Experience Data Model] (XDM)-schema. Du kan mappa till [ett befintligt schema](./existing-schema.md), men om du inte vet exakt vilket schema som ska användas eller hur det ska struktureras kan du i stället använda dynamiska rekommendationer baserade på ML-modeller (Machine Learning) i plattformsgränssnittet.
+För att kunna importera CSV-data till [!DNL Adobe Experience Platform] måste data mappas till ett [!DNL Experience Data Model] (XDM)-schema. Du kan mappa till [ett befintligt schema](./existing-schema.md), men om du inte vet exakt vilket schema som ska användas eller hur det ska struktureras kan du i stället använda dynamiska rekommendationer baserade på ML-modeller (Machine Learning) i Experience Platform-gränssnittet.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Platform]:
+Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Experience Platform]:
 
-* [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    * Du måste åtminstone förstå begreppet [beteenden i XDM](../../../xdm/home.md#data-behaviors), så att du kan bestämma om du ska mappa dina data till en [!UICONTROL Profile]-klass (postbeteende) eller [!UICONTROL ExperienceEvent]-klass (tidsseriebeteende).
-* [Gruppinmatning](../../batch-ingestion/overview.md): Den metod som [!DNL Platform] använder för att importera data från användartillhandahållna datafiler.
+* [Gruppinmatning](../../batch-ingestion/overview.md): Den metod som [!DNL Experience Platform] använder för att importera data från användartillhandahållna datafiler.
 * [Adobe Experience Platform Data Prep](../../batch-ingestion/overview.md): En serie funktioner som gör att du kan mappa och omvandla inlästa data så att de överensstämmer med XDM-scheman. Dokumentationen för [dataprep-funktioner](../../../data-prep/functions.md) är särskilt relevant för schemamappning.
 
 ## Ange information om dataflöde
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sources]** i den vänstra navigeringen. Navigera till kategorin **[!UICONTROL Local system]** i vyn **[!UICONTROL Catalog]**. Välj **[!UICONTROL Add data]** under **[!UICONTROL Local file upload]**.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen. Navigera till kategorin **[!UICONTROL Local system]** i vyn **[!UICONTROL Catalog]**. Välj **[!UICONTROL Add data]** under **[!UICONTROL Local file upload]**.
 
-![Katalogen [!UICONTROL Sources] i plattformsgränssnittet med [!UICONTROL Add data] under [!UICONTROL Local file upload] markerad.](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
+![Katalogen [!UICONTROL Sources] i Experience Platform-gränssnittet med [!UICONTROL Add data] under [!UICONTROL Local file upload] markerad.](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
 
 Arbetsflödet **[!UICONTROL Map CSV XDM schema]** visas med början i steget **[!UICONTROL Dataflow detail]**.
 
@@ -47,7 +47,7 @@ Du kan även konfigurera följande ytterligare funktioner för dataflödet innan
 | [!UICONTROL Description] | En beskrivning av dataflödet. |
 | [!UICONTROL Error diagnostics] | När det här alternativet är aktiverat genereras felmeddelanden för nyligen kapslade batchar, som kan visas när motsvarande batch hämtas i [API](../../batch-ingestion/api-overview.md) . |
 | [!UICONTROL Partial ingestion] | När det här alternativet är aktiverat importeras giltiga poster för nya batchdata inom ett angivet feltröskelvärde. Med det här tröskelvärdet kan du konfigurera procentandelen godtagbara fel innan hela batchen misslyckas. |
-| [!UICONTROL Dataflow details] | Ange ett namn och en valfri beskrivning av dataflödet som hämtar CSV-data till plattformen. Dataflödet tilldelas automatiskt ett standardnamn när arbetsflödet startas. Det är valfritt att ändra namnet. |
+| [!UICONTROL Dataflow details] | Ange ett namn och en valfri beskrivning av dataflödet som hämtar CSV-data till Experience Platform. Dataflödet tilldelas automatiskt ett standardnamn när arbetsflödet startas. Det är valfritt att ändra namnet. |
 | [!UICONTROL Alerts] | Välj i en lista över [varningar i produkten](../../../observability/alerts/overview.md) som du vill ta emot om dataflödets status när det har initierats. |
 
 {style="table-layout:auto"}
@@ -76,7 +76,7 @@ ML-modellerna körs för att generera ett nytt schema baserat på dataflödeskon
 >
 >Du kan filtrera alla fält i schemat baserat på en rad olika villkor under arbetsflödet för att mappa fält från källa till mål. Standardbeteendet är att alla mappade fält visas. Om du vill ändra de fält som visas markerar du filterikonen bredvid sökinmatningsfältet och väljer ett alternativ i listrutan.<br> ![Mappningssteget för arbetsflödet för att skapa CSV-schema till XDM-schema med filterikonen och listrutemenyn markerade.](../../images/tutorials/map-csv-recommendations/source-field-to-target-mapping-filter.png "Mappningssteget för arbetsflödet för CSV-till-XDM-schemat med filterikonen och listrutan markerad."){width="100" zoomable="yes"}
 
-Härifrån kan du [redigera fältmappningarna](#edit-mappings) eller [ändra de fältgrupper som de är kopplade till](#edit-schema) efter dina behov. När du är nöjd väljer du **[!UICONTROL Finish]** för att slutföra mappningen och initiera dataflödet som du konfigurerade tidigare. CSV-data hämtas in till systemet och fyller i en datauppsättning som baseras på den genererade schemastrukturen, klar att användas av plattformstjänster längre fram i kedjan.
+Härifrån kan du [redigera fältmappningarna](#edit-mappings) eller [ändra de fältgrupper som de är kopplade till](#edit-schema) efter dina behov. När du är nöjd väljer du **[!UICONTROL Finish]** för att slutföra mappningen och initiera dataflödet som du konfigurerade tidigare. CSV-data hämtas in till systemet och fyller i en datauppsättning som baseras på den genererade schemastrukturen, klar att användas av Experience Platform-tjänster längre fram i kedjan.
 
 ![Knappen [!UICONTROL Finish] markeras och CSV-mappningsprocessen slutförs.](../../images/tutorials/map-csv-recommendations/finish-mapping.png)
 
@@ -98,8 +98,8 @@ När du är klar med justeringen av schemarekommendationerna för dina källfäl
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer, så att du kan överföra data till plattformen genom batchingång.
+I den här guiden beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer, så att du kan överföra data till Experience Platform via batchingång.
 
-Anvisningar om hur du mappar en CSV-fil till ett befintligt schema finns i det [befintliga arbetsflödet för schemamappning](./existing-schema.md). Mer information om direktuppspelning av data till plattformen i realtid via färdiga källanslutningar finns i [källans översikt](../../../sources/home.md).
+Anvisningar om hur du mappar en CSV-fil till ett befintligt schema finns i det [befintliga arbetsflödet för schemamappning](./existing-schema.md). Mer information om direktuppspelning av data till Experience Platform i realtid via färdiga källanslutningar finns i [Källöversikt](../../../sources/home.md).
 
 Du kan också använda HTML-algoritmer (Machine Learning) för att **generera ett schema från CSV-exempeldata**. Det här arbetsflödet skapar automatiskt ett nytt schema baserat på CSV-filens struktur och innehåll. Det nya schemat matchar dataformatet så att du sparar tid och får större exakthet när du definierar struktur, fält och datatyper för stora komplexa datauppsättningar. Mer information om det här arbetsflödet finns i guiden [Skapa ML-stödda scheman](../../../xdm/ui/ml-assisted-schema-creation.md).

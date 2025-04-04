@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 71932d6f743d8cf767ce4e088231e61e9c2160e0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2550'
+source-wordcount: '2554'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källans
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [XDM-system (Experience Data Model)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata med.
 * [Kundprofil i realtid](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Nyckelterminologi
 
@@ -39,7 +39,7 @@ Det är viktigt att förstå följande nyckeltermer som används i hela det här
 >* Ett dataflöde som gör en 13-månaders efterfyllning av historiska rapportsvitdata till datasjön. Det här dataflödet avslutas när bakgrundsfyllningen är slutförd.
 >* Ett dataflöde som skickar livedata till datavjön och till [!DNL Real-Time Customer Profile]. Det här dataflödet körs kontinuerligt.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet för att begränsa vilka källor som visas.
 
@@ -57,7 +57,7 @@ Steget **[!UICONTROL Analytics source add data]** ger dig en lista över [!DNL A
 
 En rapportsvit är en behållare med data som utgör grunden för [!DNL Analytics]-rapportering. En organisation kan ha många rapportsviter, som alla innehåller olika datauppsättningar.
 
-Du kan importera rapportsviter från alla regioner (USA, Storbritannien och Singapore) så länge de mappas till samma organisation som den Experience Platform sandlådeinstans i vilken källanslutningen skapas. En rapportsvit kan bara importeras med ett enda aktivt dataflöde. En rapportsvit som inte kan markeras har redan importerats, antingen i sandlådan som du använder eller i en annan sandlåda.
+Du kan importera rapportsviter från valfri region (USA, Storbritannien eller Singapore) så länge de mappas till samma organisation som den Experience Platform-sandlådeinstans i vilken källanslutningen skapas. En rapportsvit kan bara importeras med ett enda aktivt dataflöde. En rapportsvit som inte kan markeras har redan importerats, antingen i sandlådan som du använder eller i en annan sandlåda.
 
 Flera ingående anslutningar kan göras för att överföra flera rapportsviter till samma sandlåda. Om rapportsviterna har olika scheman för variabler (t.ex. eVars eller events), bör de mappas till specifika fält i de anpassade fältgrupperna och datakonflikter undviks med [Dataprep](../../../../../data-prep/ui/mapping.md). Rapportsviter kan bara läggas till i en enda sandlåda.
 
@@ -115,7 +115,7 @@ Sidan [!UICONTROL Adobe Analytics ExperienceEvent Template Schema Field Group] i
 
 ![field-group-preview](../../../../images/tutorials/create/analytics/field-group-preview.png)
 
-Plattformen identifierar automatiskt dina mappningsuppsättningar för eventuella egna namnkonflikter. Om det inte finns några konflikter med dina mappningsuppsättningar väljer du **[!UICONTROL Next]** för att fortsätta.
+Experience Platform identifierar automatiskt dina mappningsuppsättningar för eventuella egna namnkonflikter. Om det inte finns några konflikter med dina mappningsuppsättningar väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ![mappning](../../../../images/tutorials/create/analytics/mapping.png)
 
@@ -322,7 +322,7 @@ Om du vill ta bort Analytics-dataflödet väljer du **[!UICONTROL Dataflows]** i
 
 ## Nästa steg och ytterligare resurser
 
-När anslutningen har skapats skapas dataflödet automatiskt för att innehålla inkommande data och fylla i en datauppsättning med det valda schemat. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det inledande intaget är slutfört, [!DNL Analytics] data och ska användas av plattformstjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile] och segmenteringstjänsten. Mer information finns i följande dokument:
+När anslutningen har skapats skapas dataflödet automatiskt för att innehålla inkommande data och fylla i en datauppsättning med det valda schemat. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det inledande intaget är slutfört, [!DNL Analytics] data och ska användas av Experience Platform-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile] och segmenteringstjänsten. Mer information finns i följande dokument:
 
 * [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] översikt](../../../../../segmentation/home.md)
@@ -333,6 +333,6 @@ Följande video är tänkt att ge stöd för din förståelse av datainhämtning
 
 >[!WARNING]
 >
-> Användargränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+> Användargränssnittet [!DNL Experience Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)

@@ -2,16 +2,16 @@
 title: Felmeddelanden för flödestjänst
 description: Lär dig mer om de felmeddelanden du kan stöta på när du använder Flow Service för källor.
 exl-id: af79c547-25d0-459a-8de7-eb14206a8694
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1667'
+source-wordcount: '1668'
 ht-degree: 0%
 
 ---
 
 # Felmeddelanden för Flow Service
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
+Flow Service används för att samla in och centralisera kunddata från olika källor inom Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
 
 Det här dokumentet innehåller en katalog med felmeddelanden, beskrivningar och förslag på lösningar för Flow Service.
 
@@ -71,7 +71,7 @@ I följande tabell visas felen när det gäller intern validering i Flow Service
 | `1442-400` | Ogiltig begäran | Aggregering tillåts inte för fält-ID. |
 | `1443-400` | Ogiltig begäran | Operatorn &#39;&lt;=&#39; tillåts inte för flera värden. |
 | `1444-400` | Ogiltig begäran | Flödet 3f4ae131-b384-4e73 är inte i det förväntade tillståndet som väntar. |
-| `1445-400` | Ogiltig begäran | Anslutningsfunktionen PATCH är inte aktiverad. |
+| `1445-400` | Ogiltig begäran | PATCH Connection Feature not enabled. |
 | `1446-400` | Ogiltig begäran | Flödes-ID:t får inte vara null eller tomt. Uppdatera flödes-ID och försök igen. |
 | `1447-400` | Ogiltig begäran | Aktiva flöden med ID a6a206f-f233-4c2d hittades. |
 | `1448-400` | Ogiltig begäran | Operator >= stöds inte för fält-ID. |

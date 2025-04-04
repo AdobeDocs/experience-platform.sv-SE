@@ -3,9 +3,9 @@ title: Infoga betalningsdata från ditt [!DNL Stripe] konto till Experience Plat
 description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service
 badge: Beta
 exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2020'
+source-wordcount: '2028'
 ht-degree: 0%
 
 ---
@@ -22,16 +22,16 @@ Läs följande självstudiekurs om du vill lära dig hur du importerar dina beta
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Autentisering
 
 Läs [[!DNL Stripe] översikten](../../../../connectors/payments/stripe.md) om du vill ha mer information om hur du hämtar autentiseringsuppgifter.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Anslut [!DNL Stripe] till Experience Platform
 
@@ -39,9 +39,9 @@ Följ guiden nedan för att lära dig hur du autentiserar din [!DNL Stripe]-käl
 
 ### Skapa en basanslutning {#base-connection}
 
-En basanslutning bevarar information mellan källan och Experience Platform, inklusive källans autentiseringsuppgifter, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Du kan utforska och navigera filer inifrån källan med hjälp av det grundläggande anslutnings-ID:t. Dessutom kan du identifiera de specifika objekt som du vill importera, inklusive information om datatyper och format för dessa objekt.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Du kan utforska och navigera filer inifrån källan med hjälp av det grundläggande anslutnings-ID:t. Dessutom kan du identifiera de specifika objekt som du vill importera, inklusive information om datatyper och format för dessa objekt.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL Stripe] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Stripe]-autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -82,7 +82,7 @@ curl -X POST \
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din basanslutning. |
 | `connectionSpec.id` | Källans anslutningsspec-ID. Anslutningens spec-ID för [!DNL Stripe] är `cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3` och det här ID:t är åtgärdat. |
-| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan för Experience Platform. |
+| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till Experience Platform. |
 | `auth.params.accessToken` | Åtkomsttoken för ditt [!DNL Stripe]-konto. Läs [[!DNL Stripe] autentiseringsguiden](../../../../connectors/payments/stripe.md#prerequisites) för steg om hur du hämtar din åtkomsttoken. |
 
 **Svar**
@@ -98,7 +98,7 @@ Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutni
 
 ### Utforska din källa {#explore}
 
-När du har ditt grundläggande anslutnings-ID kan du nu utforska innehållet och strukturen i dina källdata genom att utföra en GET-förfrågan till `/connections`-slutpunkten och samtidigt ange ditt grundläggande anslutnings-ID som en frågeparameter.
+När du har ditt basanslutnings-ID kan du nu utforska innehållet och strukturen för dina källdata genom att utföra en GET-begäran till `/connections`-slutpunkten och samtidigt ange ditt basanslutnings-ID som en frågeparameter.
 
 **API-format**
 
@@ -108,14 +108,14 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fi
 
 **Begäran**
 
-När du gör en GET-förfrågan om att utforska källans filstruktur och innehåll måste du inkludera frågeparametrarna som listas i tabellen nedan:
+När du utför GET-förfrågningar om källans filstruktur och innehåll måste du inkludera de frågeparametrar som anges i tabellen nedan:
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | Det grundläggande anslutnings-ID som genererades i föregående steg. |
 | `objectType=rest` | Vilken typ av objekt du vill utforska. Värdet är alltid inställt på `rest`. |
 | `{OBJECT}` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. För den här källan är värdet `json`. |
-| `fileType=json` | Filtypen för filen som du vill hämta till plattformen. För närvarande är `json` den enda filtypen som stöds. |
+| `fileType=json` | Filtypen för filen som du vill hämta till Experience Platform. För närvarande är `json` den enda filtypen som stöds. |
 | `{PREVIEW}` | Ett booleskt värde som definierar om innehållet i anslutningen stöder förhandsvisning. |
 | `{SOURCE_PARAMS}` | En [!DNL Base64-]kodad sträng som pekar på den resurssökväg som du vill utforska. Resurssökvägen måste kodas i [!DNL Base64] för att du ska få det godkända formatet för `{SOURCE_PARAMS}`. `{"resourcePath":"charges"}` är till exempel kodad som `eyJyZXNvdXJjZVBhdGgiOiJjaGFyZ2VzIn0%3D`. Listan över tillgängliga resurssökvägar innehåller: <ul><li>`charges`</li><li>`subscriptions`</li><li>`refunds`</li><li>`balance_transactions`</li><li>`customers`</li><li>`prices`</li></ul> |
 
@@ -407,7 +407,7 @@ Ett lyckat svar returnerar en JSON-struktur som följande:
 
 ### Skapa en källanslutning {#source-connection}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till `/sourceConnections`-slutpunkten i [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-begäran till `/sourceConnections`-slutpunkten i [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 **API-format**
 
@@ -463,15 +463,15 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ### Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md#create-a-schema).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/) utförs, med ID:t för målschemat i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 
@@ -540,7 +540,7 @@ Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta 
 
 ### Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en POST-begäran till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -814,13 +814,13 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ### Skapa ett flöde {#flow}
 
-Det sista steget mot att överföra data från [!DNL Stripe] till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra data från [!DNL Stripe] till Experience Platform är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 * [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
 **API-format**
 

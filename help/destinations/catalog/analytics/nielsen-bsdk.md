@@ -1,11 +1,11 @@
 ---
 keywords: Nielsen BSDK;nielsen bsdk;nielsen BSDK
 title: Nielsen BSDK-tillägg
-description: Tillägget Nielsen BSDK är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Nielsen BSDK är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: e1c10673-e3f4-474d-98d7-960124b2bfc7
-source-git-commit: b4e869f9bc29122db4fc66ccda752a50c7db729f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,13 @@ DTVR: Detta är ett konto för linjär TV-visning på datorer och mobila enheter
 
 [!DNL Nielsen BSDK] är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101361.html).
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![Nielsen BSDK-tillägg](../../assets/catalog/analytics/nielsen-bsdk/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Experience Platform.
 
 Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
@@ -36,7 +36,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget [!DNL Nielsen BSDK]:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
@@ -46,7 +46,7 @@ Välj den egenskap i vilken du vill installera tillägget. Du kan också skapa e
 
 Arbetsflödet vägleder dig genom de olika stegen för att slutföra installationen.
 
-Mer information om alternativ för tilläggskonfiguration och installationsstöd finns på [Nielsen BSDK-sidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101361.html).
+Information om alternativ för tilläggskonfiguration och installationsstöd finns på [Nielsen BSDK-sidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101361.html).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) i taggdokumentationen.
 
@@ -62,6 +62,6 @@ Du kan konfigurera, uppgradera och ta bort tillägg i användargränssnittet fö
 
 >[!TIP]
 >
->Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
+>Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** för tillägget i Experience Platform-gränssnittet. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
 
 Information om hur du uppgraderar ditt tillägg finns i handboken om uppgraderingsprocessen för [tillägget](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) i taggdokumentationen.

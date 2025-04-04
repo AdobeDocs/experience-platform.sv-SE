@@ -3,9 +3,9 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 916c56cf8fa25c40c061b3bddc57ba2fa59cbbb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '743'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -62,7 +62,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat [ID-synkroniseringsfunktionen](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Platform.
+>Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ## Anslut till målet {#connect}
 
@@ -104,7 +104,7 @@ Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../
 
 I steget [Målgruppsschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa dina målgrupper till deras motsvarande ID eller egna namn på målplattformen.
 
-När du kartlägger målgrupper rekommenderar Adobe att du för enkelhets skull använder namnet på plattformens målgrupp eller en kortare form av det. Målets målgrupps-ID eller namn behöver dock inte matcha det i ditt plattformskonto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
+När du kartlägger målgrupper rekommenderar Adobe att du använder Experience Platform målgruppsnamn eller en kortare form av det för att underlätta användningen. Men målgrupps-ID:t eller målnamnet behöver inte matcha det i ditt Experience Platform-konto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
 
 Om du använder flera enhetsmappningar (cookie-ID:n, [!DNL IDFA], [!DNL GAID]) måste du använda samma mappningsvärde för alla tre mappningarna. [!DNL The Trade Desk] samlar alla i ett enda segment, med en uppdelning på enhetsnivå.
 

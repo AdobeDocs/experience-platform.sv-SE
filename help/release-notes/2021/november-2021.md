@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation om Adobe Experience Platform november 2021
-description: Versionsinformation november 2021 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform – november 2021
+description: Versionsinformationen för Adobe Experience Platform från november 2021.
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '776'
-ht-degree: 9%
+source-wordcount: '781'
+ht-degree: 13%
 
 ---
 
@@ -31,9 +31,9 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 **Releasedatum: 12 november 2021**
 
-Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time CDP) och är särskilt framtagen för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
+Real-Time CDP B2B edition bygger på Real-Time Customer Data Platform (Real-Time CDP) och är utformat för marknadsförare som arbetar i en affärs-till-affärstjänstmodell. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 
-Det finns förbättringar i en rad olika Adobe Experience Platform-funktioner som skiljer Real-Time CDP B2B Edition från B2C-motsvarigheten. De innehåller förbättringar av Experience Data Model (XDM) för B2B-användningsfall, uppgraderingar av identitetsupplösning och profilsegmentering samt en anpassad anslutning och destination för Marketo Engage. Tack vare Marketo Connector kan B2B-varumärken koppla sina branschledande B2B-interaktionsdata till beteendeinformation för att vårda leads och förbättra kontobaserade marknadsföringsaktiviteter.
+Det finns förbättringar i en rad olika Adobe Experience Platform-funktioner som skiljer Real-Time CDP B2B edition från B2C-motsvarigheten. De innehåller förbättringar av Experience Data Model (XDM) för B2B-användningsfall, uppgraderingar av identitetsupplösning och profilsegmentering samt en anpassad anslutning och destination för Marketo Engage. Tack vare Marketo Connector kan B2B-varumärken koppla sina branschledande B2B-interaktionsdata till beteendeinformation för att vårda leads och förbättra kontobaserade marknadsföringsaktiviteter.
 
 -[Nya B2B- och B2P-utgåvor](#editions)
 -[Nya Marketo-datakällor och målanslutningar](#marketo)
@@ -41,28 +41,28 @@ Det finns förbättringar i en rad olika Adobe Experience Platform-funktioner so
 
 ### Nya utgåvor av B2B och B2P {#editions}
 
-Nya B2B- och B2P-utgåvor som ger både Real-Time CDP och Platform Activation-produkter B2B-data och -funktionalitet finns att köpa.
+Nya B2B- och B2P-utgåvor som ger både Real-Time CDP och Experience Platform Activation-produkter B2B-data och -funktionalitet finns att köpa.
 
-Mer information om Real-Time CDP B2B Edition finns i [översikten](../../rtcdp/overview.md).
+Mer information om Real-Time CDP B2B edition finns i [översikten](../../rtcdp/overview.md).
 
 ### Nya Marketo datakällor och målanslutningar {#marketo}
 
-Nya Marketo datakällor- och målanslutningar strömmar Marketo-data till målgrupper på olika plattformar tillbaka till Marketo. Tillgängligt för alla plattformsanvändare.
+Nya Marketo datakällor- och målanslutningar strömmar Marketo-data till Experience Platform- och Experience Platform-målgrupper tillbaka till Marketo. Tillgängligt för alla Experience Platform-användare.
 
 | Funktion | Beskrivning |
 |----------|-------------|
-| Marketo Engage-källanslutning | Med [Marketo Engage-källkopplingen](../../sources/connectors/adobe-applications/marketo/marketo.md) kan marknadsförare smidigt importera data från en eller flera Marketo-instanser till sin Adobe Experience Platform-instans och erbjuda en komplett lösning för lead-hantering och B2B-marknadsförare. |
-| Marketo Engage destination | Med [Marketo-målet](../../destinations/catalog/adobe/marketo-engage.md) kan marknadsförare skicka segment som skapats i Adobe Experience Platform till Marketo där de visas som statiska listor. |
+| Marketo Engage källanslutning | Med [Marketo Engage-källkopplingen](../../sources/connectors/adobe-applications/marketo/marketo.md) kan marknadsförare smidigt importera data från en eller flera Marketo-instanser till sin Adobe Experience Platform-instans och erbjuda en komplett lösning för lead-hantering och B2B-marknadsförare. |
+| Marketo Engage Destination | Med [Marketo-målet](../../destinations/catalog/adobe/marketo-engage.md) kan marknadsförare skicka segment som skapats i Adobe Experience Platform till Marketo där de visas som statiska listor. |
 
 ### Standard B2B XDM {#XDM}
 
-Standardklasser, fältgrupper och datatyper i B2B XDM är tillgängliga för alla plattformsanvändare.
+Standardklasser, fältgrupper och datatyper i B2B XDM är tillgängliga för alla Experience Platform-användare.
 
 | Funktion | Beskrivning |
 |-----------|--------------|
-| Standardklasser för B2B XDM | Real-time Customer Data Platform B2B Edition innehåller flera standard-XDM som samlar in information om viktiga B2B-datatabeller, som konton, möjligheter, kampanjer med mera. |
+| Standardklasser för B2B XDM | Real-Time Customer Data Platform B2B edition tillhandahåller flera XDM-standardprogram som samlar in information om viktiga B2B-datatjänster, som konton, möjligheter, kampanjer med mera. |
 
-Läs [Scheman i dokumentationen för Real-time Customer Data Platform B2B Edition](../../rtcdp/schemas/b2b.md) om du vill veta mer om hur du hämtar B2B-datatabeller.
+Mer information om hur du hämtar B2B-datatabeller finns i dokumentationen för [Scheman i Real-Time Customer Data Platform B2B edition](../../rtcdp/schemas/b2b.md) .
 
 ### (Beta) Aktivera målgruppssegment för batchdestinationer via API:t för ad hoc-aktivering {#ad-hoc-activation}
 
@@ -75,13 +75,13 @@ Attribution AI används för att attribuera krediter till kontaktpunkter som led
 | Funktion | Beskrivning |
 |-----------|---------------|
 | Stöd för flera datauppsättningar | Attribution AI kan nu enkelt importera flera datauppsättningar direkt i användargränssnittet utan att behöva mappa och sätta ihop varje datauppsättning. Denna nya tidsbesparande funktion ger kraftfullare och exaktare resultat med data från flera datauppsättningar. |
-| Mappning av mediekanal och kampanjfält | Attribution AI har nu stöd för mappning av mediekanal- och kampanjfält. Mediekanalmappning mellan datauppsättningar förbättrar insikterna från Attribution AI och ger tydligare resultat som är enkla att tolka. |
+| Mappning av mediekanal och kampanjfält | Attribution AI har nu stöd för mappning av mediekanal- och kampanjfält. Mediekanalmappning mellan datauppsättningar förbättrar insikterna som härleds från Attribution AI och ger tydligare resultat som är enkla att tolka. |
 
 Mer information om Attribution AI finns i [Attribution AI-dokumentationen](../../intelligent-services/attribution-ai/overview.md).
 
 ### Kund-AI {#customer-ai}
 
-Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
+Customer AI available in Real-Time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 
 **Uppdaterade funktioner**
 

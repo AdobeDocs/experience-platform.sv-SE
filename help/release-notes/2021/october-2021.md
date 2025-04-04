@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2021
 description: Versionsinformationen för Adobe Experience Platform i oktober 2021.
 exl-id: 8f8bcb24-6478-4281-9362-9559158384af
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '457'
-ht-degree: 4%
+source-wordcount: '463'
+ht-degree: 17%
 
 ---
 
@@ -23,11 +23,11 @@ Användargränssnittet har uppdaterats med följande ändringar:
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Mörkt tema | Använd den mörka temagränsen för att växla mellan ljusa och mörka teman i plattformsgränssnittet. Växeln finns i användarprofilen under användarnamnet och e-postadressen. |
-| Växla vänster navigering | Använd det förbättrade navigeringsreglaget högst upp i programhuvudet för att visa eller dölja menyn som visar Experience Platform-funktionerna. Systemet kommer ihåg ditt senaste val och visar bara de funktioner du har tillgång till. |
+| Mörkt tema | Använd den mörka temagränsen för att växla mellan ljusa och mörka teman i Experience Platform gränssnitt. Växeln finns i användarprofilen under användarnamnet och e-postadressen. |
+| Växla vänster navigering | Använd det förbättrade navigeringsreglaget längst upp i programhuvudet för att visa eller dölja menyn som visar dina Experience Platform-funktioner. Systemet kommer ihåg ditt senaste val och visar bara de funktioner du har tillgång till. |
 | Åtkomstsynlighet | I det vänstra navigeringsfältet visas bara de funktioner som du har tillgång till. I tidigare versioner av Adobe Experience Platform var otillgängliga objekt synliga, även om du inte kunde komma åt dem. |
 
-Mer information finns i [användargränssnittshandboken för plattformen](../../landing/ui-guide.md).
+Mer information finns i [Experience Platform användargränssnittshandbok](../../landing/ui-guide.md).
 
 ## Uppdateringar av befintliga funktioner
 
@@ -51,14 +51,14 @@ Mer information om den här tjänsten finns i [[!DNL Data Prep] översikten](../
 
 ### Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL Amazon S3] källförbättringar | Du kan nu använda parametern `s3SessionToken` för att ansluta ditt [!DNL Amazon S3]-konto till plattformen med temporära säkerhetsuppgifter. Med den här variabeln kan du ge kortvarig, tillfällig åtkomst till dina [!DNL Amazon S3]-resurser för användare i miljöer som inte är betrodda. Mer information finns i [[!DNL Amazon S3] dokumentationen](../../sources/connectors/cloud-storage/s3.md#prerequisites). |
-| [!DNL Generic REST API] (Beta) | Du kan nu skapa en [!DNL Generic REST API]-källanslutning med [[!DNL Flow Service]  API](../../sources/tutorials/api/create/protocols/generic-rest.md) för att hämta data från ett generiskt REST-program till plattformen. Mer information finns i [[!DNL Generic REST API] översikten](../../sources/connectors/protocols/generic-rest.md). |
-| [!DNL Zoho CRM] (Beta) | Du kan nu skapa en [!DNL Zoho CRM]-källanslutning med [[!DNL Flow Service]  API ](../../sources/tutorials/api/create/crm/zoho.md) eller [användargränssnittet](../../sources/tutorials/ui/create/crm/zoho.md) för att hämta data från ditt [!DNL Zoho CRM]-konto till plattformen. Mer information finns i [[!DNL Zoho CRM] översikten](../../sources/connectors/crm/zoho.md). |
+| [!DNL Amazon S3] källförbättringar | Du kan nu använda parametern `s3SessionToken` för att ansluta ditt [!DNL Amazon S3]-konto till Experience Platform med temporära säkerhetsuppgifter. Med den här variabeln kan du ge kortvarig, tillfällig åtkomst till dina [!DNL Amazon S3]-resurser för användare i miljöer som inte är betrodda. Mer information finns i [[!DNL Amazon S3] dokumentationen](../../sources/connectors/cloud-storage/s3.md#prerequisites). |
+| [!DNL Generic REST API] (Beta) | Du kan nu skapa en [!DNL Generic REST API]-källanslutning med [[!DNL Flow Service]  API](../../sources/tutorials/api/create/protocols/generic-rest.md) för att hämta data från ett generiskt REST-program till Experience Platform. Mer information finns i [[!DNL Generic REST API] översikten](../../sources/connectors/protocols/generic-rest.md). |
+| [!DNL Zoho CRM] (Beta) | Du kan nu skapa en [!DNL Zoho CRM]-källanslutning med [[!DNL Flow Service]  API](../../sources/tutorials/api/create/crm/zoho.md) eller [användargränssnittet](../../sources/tutorials/ui/create/crm/zoho.md) för att hämta data från ditt [!DNL Zoho CRM]-konto till Experience Platform. Mer information finns i [[!DNL Zoho CRM] översikten](../../sources/connectors/crm/zoho.md). |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).

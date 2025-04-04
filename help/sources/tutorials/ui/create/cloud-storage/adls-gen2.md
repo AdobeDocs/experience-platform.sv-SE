@@ -5,7 +5,7 @@ title: Skapa en Azure Data Lake Storage Gen2 Source Connection i användargräns
 type: Tutorial
 description: Lär dig hur du skapar en Azure Data Lake Storage Gen2-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: d81b7593-08a3-43f8-a8bc-f5547a6cd55a
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL Azure Data Lake Storage Gen2]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudien beskrivs hur du autentiserar en [!DNL Azure Data Lake Storage Gen2]-källkoppling (kallas nedan [!DNL ADLS Gen2]) med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudien beskrivs hur du autentiserar en [!DNL Azure Data Lake Storage Gen2]-källkoppling (kallas nedan [!DNL ADLS Gen2]) med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -42,7 +42,7 @@ Mer information om dessa värden finns i [det här [!DNL ADLS Gen2] dokumentet](
 
 ## Anslut ditt [!DNL ADLS Gen2]-konto
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL ADLS Gen2]-konto till [!DNL Platform].
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL ADLS Gen2]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -68,4 +68,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL ADLS Gen2]-konto d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL ADLS Gen2]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till  [!DNL Platform]](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL ADLS Gen2]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till  [!DNL Experience Platform]](../../dataflow/batch/cloud-storage.md).

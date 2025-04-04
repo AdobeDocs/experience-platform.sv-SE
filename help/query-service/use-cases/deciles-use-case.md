@@ -2,16 +2,16 @@
 title: Handläggningsbaserad härledd datauppsättning - användningsfall
 description: Den här guiden visar de steg som krävs för att använda frågetjänsten för att skapa decimalbaserade härledda datauppsättningar som kan användas med dina profildata.
 exl-id: 0ec6b511-b9fd-4447-b63d-85aa1f235436
-source-git-commit: 2ffb8724b2aca54019820335fb21038ec7e69a7f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1511'
+source-wordcount: '1512'
 ht-degree: 0%
 
 ---
 
 # Handläggningsbaserade härledda datauppsättningar - användningsfall
 
-Härledda datauppsättningar underlättar komplicerade användningsfall för att analysera data från datasjön som kan användas tillsammans med andra plattformstjänster längre fram i kedjan eller publiceras i kundprofildata i realtid.
+Härledda datauppsättningar underlättar komplicerade användningsfall för att analysera data från datasjön som kan användas med andra Experience Platform-tjänster längre fram i kedjan eller publiceras i kundprofildata i realtid.
 
 I det här exemplet visas hur du skapar decimalbaserade härledda datauppsättningar som kan användas med dina kundprofildata i realtid. Om du använder ett lojalitetsscenario för ett flygbolag som exempel får du information i den här guiden om hur du skapar en datauppsättning som använder kategoriserade deciler för att segmentera och skapa målgrupper baserat på rankade attribut.
 

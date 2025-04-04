@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;skriva frågor;skriva fråga;
+keywords: Experience Platform;home;populära topics;query service;Query service;writing queries;writing query;
 solution: Experience Platform
 title: Allmänna riktlinjer för frågekörning i frågetjänsten
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1089'
 ht-degree: 2%
 
 ---
@@ -201,7 +201,7 @@ Bakåtcitattecken behövs **inte** om du använder hakparenteser.
 
 ## Visa tabellinformation
 
-När du har anslutit till frågetjänsten kan du se alla tillgängliga tabeller på plattformen med hjälp av kommandona `\d` eller `SHOW TABLES`.
+När du har anslutit till frågetjänsten kan du visa alla tillgängliga tabeller på Experience Platform med hjälp av kommandona `\d` eller `SHOW TABLES`.
 
 ### Standardtabellvy
 

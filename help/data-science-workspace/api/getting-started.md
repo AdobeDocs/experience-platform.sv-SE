@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära ämnen;datavetenskapen;datavetenskap
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära ämnen;datavetenskapens arbetsyta;datavetenskap
 solution: Experience Platform
 title: API-guide för Sensei Machine Learning
 description: Med Sensei Machine Learning API kan utvecklare utföra CRUD-åtgärder på olika Data Science Workspace-resurser. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: d51d0eb2-b1e9-4cc1-889a-9487395703b0
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '255'
 ht-degree: 5%
@@ -32,13 +32,13 @@ Du måste ha slutfört självstudiekursen [authentication](https://www.adobe.com
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 * Content-Type: application/json
 

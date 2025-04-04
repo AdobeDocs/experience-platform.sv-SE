@@ -3,7 +3,7 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 47d0e2a7fae973edfda035d046f66c88d34bf8b2
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1226'
 ht-degree: 0%
@@ -18,7 +18,7 @@ I Adobe Experience Platform användargränssnitt kan du visa och övervaka attri
 
 >[!NOTE]
 >
->Målinformationssidan är en del av arbetsytan [!UICONTROL Destinations] i [!DNL Platform] [!DNL UI]. Mer information finns i [[!UICONTROL Destinations]-arbetsytans översikt](./destinations-workspace.md).
+>Målinformationssidan är en del av arbetsytan [!UICONTROL Destinations] i [!DNL Experience Platform] [!DNL UI]. Mer information finns i [[!UICONTROL Destinations]-arbetsytans översikt](./destinations-workspace.md).
 
 ## Visa målinformation {#view-details}
 
@@ -82,8 +82,8 @@ Fliken [!UICONTROL Dataflow runs] innehåller mätdata om dataflödet som körs 
 
 >[!NOTE]
 >
->* Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* målgrupperna [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) och [Experience Cloud ](/help/destinations/catalog/adobe/experience-cloud-audiences.md).
->* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [ Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [HTTP API](/help/destinations/catalog/streaming/http-destination.md) uppskattas mätvärdena för utelämnade, misslyckade och aktiverade identiteter. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
+>* Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) och [Experience Cloud-målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md).
+>* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [ Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [HTTP API](/help/destinations/catalog/streaming/http-destination.md) uppskattas de mått som är relaterade till identiteter som har uteslutits, misslyckats och aktiverats. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
 
 ![Dataflödet kör vy](../assets/ui/details-page/dataflow-runs.png)
 
@@ -93,7 +93,7 @@ Det finns en skillnad i hur länge dataflödet visas mellan direktuppspelning oc
 
 ### Strömmande mål {#streaming}
 
-Även om **[!UICONTROL Processing duration]** som anges för det flesta direktuppspelade dataflöde körs i cirka fyra timmar, vilket visas i bilden nedan, är den faktiska bearbetningstiden för dataflödeskörningar mycket kortare. Dataflödeskörningsfönstren är öppna längre om Experience Platform behöver göra nya anrop till målet och även se till att det inte missar några senare data för samma tidsfönster.
+Även om **[!UICONTROL Processing duration]** som anges för det flesta direktuppspelade dataflöde körs i cirka fyra timmar, vilket visas i bilden nedan, är den faktiska bearbetningstiden för dataflödeskörningar mycket kortare. Dataflödets körningsfönster är fortfarande öppna längre om Experience Platform behöver göra nya anrop till målet och se även till att det inte missar några senare data för samma tidsfönster.
 
 ![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett direktuppspelningsmål.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-streaming.png)
 

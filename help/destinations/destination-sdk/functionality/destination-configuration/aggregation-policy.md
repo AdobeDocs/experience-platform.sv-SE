@@ -2,9 +2,9 @@
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: 3ff20e51458cb9cccafb6da92414def9eeaaf821
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 För att vara så effektiv som möjligt när du exporterar data till API-slutpunkten kan du använda olika inställningar för att samla exporterade profiler i större eller mindre grupper, gruppera dem efter identitet och andra användningsfall. På så sätt kan du skräddarsy dataexport till eventuella efterföljande begränsningar för API-slutpunkten (hastighetsbegränsning, antal identiteter per API-anrop osv.).
 
-Använd konfigurerbar aggregering för att fördjupa dig i inställningarna som tillhandahålls av Destinationen SDK eller använd bästa möjliga ansträngningsaggregering för att ange för Destinationen SDK att batchköra API-anropen så mycket som möjligt.
+Använd konfigurerbar aggregering för att fördjupa dig i inställningarna från Destination SDK eller använd aggregering av bästa möjliga ansträngning för att instruera Destination SDK att batchköra API-anropen så mycket som möjligt.
 
 När du skapar ett mål för direktuppspelning i realtid med Destination SDK kan du konfigurera hur de exporterade profilerna ska kombineras i den resulterande exporten. Det här beteendet avgörs av inställningarna för aggregeringsprincipen.
 
@@ -30,7 +30,7 @@ När du har läst igenom det här dokumentet kan du läsa dokumentationen för [
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -60,7 +60,7 @@ I exempelkonfigurationen nedan visas en aggregeringskonfiguration för bästa in
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `aggregationType` | Sträng | Anger vilken typ av aggregeringsprincip som ditt mål ska använda. Aggregeringstyper som stöds: <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
-| `bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. <br><br>Det här värdet anger det maximala antalet profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br><br> Om servern inte accepterar flera användare per begäran anger du det här värdet till `1`. |
+| `bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. <br><br>Det här värdet anger det maximala antalet profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Experience Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br><br> Om servern inte accepterar flera användare per begäran anger du det här värdet till `1`. |
 | `bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet ID-namnområde. |
 
 {style="table-layout:auto"}

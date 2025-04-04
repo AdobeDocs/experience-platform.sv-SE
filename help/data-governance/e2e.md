@@ -2,9 +2,9 @@
 title: Handbok för hela datastyrningen
 description: Följ hela processen för att tillämpa begränsningar för användning av data för fält och datauppsättningar i Adobe Experience Platform.
 exl-id: f18ae032-027a-4c97-868b-e04753237c81
-source-git-commit: 9f3fa696ed60ce85fa93515e39716d89ec80f1ec
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1811'
+source-wordcount: '1814'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ För att kunna styra vilka marknadsföringsåtgärder som kan utföras på vissa
 
 När du är klar med konfigureringen av etiketter, styrningsprinciper och marknadsföringsåtgärder kan du [testa din policytillämpning](#test) för att kontrollera att den fungerar som förväntat.
 
-Den här guiden går igenom hela processen med att konfigurera och verkställa en datastyrningspolicy i användargränssnittet för plattformen. Mer detaljerad information om funktionerna som används i den här handboken finns i översiktsdokumentationen för följande ämnen:
+Den här guiden går igenom hela processen med att konfigurera och verkställa en datastyrningspolicy i Experience Platform användargränssnitt. Mer detaljerad information om funktionerna som används i den här handboken finns i översiktsdokumentationen för följande ämnen:
 
 * [Adobe Experience Platform datastyrning](./home.md)
 * [Dataanvändningsetiketter](./labels/overview.md)
@@ -28,13 +28,13 @@ Den här guiden går igenom hela processen med att konfigurera och verkställa e
 
 >[!NOTE]
 >
->Den här guiden fokuserar på hur du ställer in och tillämpar regler för hur data används eller aktiveras i Experience Platform. Om du försöker begränsa **åtkomsten** till själva data för vissa plattformsanvändare inom organisationen läser du i handboken från början till slut om [attributbaserad åtkomstkontroll](../access-control/abac/end-to-end-guide.md) i stället. Attributbaserad åtkomstkontroll använder också etiketter och principer, men för ett annat användningssätt än för datastyrning.
+>Den här guiden fokuserar på hur du ställer in och tillämpar regler för hur data används eller aktiveras i Experience Platform. Om du försöker begränsa **åtkomsten** till själva data för vissa Experience Platform-användare i din organisation läser du i handboken från början till slut om [attributbaserad åtkomstkontroll](../access-control/abac/end-to-end-guide.md) i stället. Attributbaserad åtkomstkontroll använder också etiketter och principer, men för ett annat användningssätt än för datastyrning.
 
 ## Använd etiketter {#labels}
 
 >[!IMPORTANT]
 >
->Etiketter kan inte längre användas på enskilda fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Du kan dock fortfarande märka en hel datauppsättning med etiketter. Etiketter som tidigare använts på enskilda datauppsättningsfält stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Mer information om hur du gör detta finns i avsnittet [migrera tidigare använda etiketter](#migrate-labels).
+>Etiketter kan inte längre användas på enskilda fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Du kan dock fortfarande märka en hel datauppsättning med etiketter. Etiketter som tidigare använts på enskilda datauppsättningsfält stöds fortfarande i Experience Platform-gränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Mer information om hur du gör detta finns i avsnittet [migrera tidigare använda etiketter](#migrate-labels).
 
 Du kan [använda etiketter i ett schema](#schema-labels) så att alla datauppsättningar som är baserade på det schemat ärver samma etiketter. På så sätt kan ni hantera etiketterna för datastyrning, samtycke och åtkomstkontroll på ett och samma ställe. Genom att tillämpa begränsningar för dataanvändning på schemanivå sprids effekten nedåt till alla datauppsättningar som baseras på det schemat. Etiketter som används på schemafältnivå stöder användningsfall för datastyrning och kan identifieras på arbetsytan för datauppsättningar [!UICONTROL Data Governance] under kolumnen [!UICONTROL Field Name] som skrivskyddade etiketter.
 
@@ -109,7 +109,7 @@ När du har migrerat de nödvändiga etiketterna kontrollerar du att rätt [data
 
 När du har använt etiketter på dina scheman och/eller datauppsättningar kan du skapa regler för datastyrning som begränsar de marknadsföringsåtgärder som vissa etiketter kan användas för.
 
-Välj **[!UICONTROL Policies]** i den vänstra navigeringen om du vill visa en lista över principer som definieras av Adobe samt eventuella egna profiler som tidigare skapats av din organisation.
+Välj **[!UICONTROL Policies]** i den vänstra navigeringen om du vill visa en lista över kärnprinciper som har definierats av Adobe samt eventuella egna principer som tidigare har skapats av din organisation.
 
 Varje etikett har en tillhörande grundprincip som, när den är aktiverad, tillämpar lämpliga aktiveringsbegränsningar på alla data som innehåller etiketten. Om du vill aktivera en huvudprincip markerar du den i listan och väljer sedan **[!UICONTROL Policy status]** till **[!UICONTROL Enabled]**.
 

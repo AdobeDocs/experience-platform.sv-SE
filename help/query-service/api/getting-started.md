@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;frågetjänst;Fråga
+keywords: Experience Platform;home;populära topics;query service;Query service;query
 solution: Experience Platform
 title: API-guide för frågetjänst
 description: Med API:t för frågetjänsten kan utvecklare fråga sina Adobe Experience Platform-data med hjälp av standard-SQL. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: 2f4a156b-5623-419a-a9b2-72310f755708
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '396'
 ht-degree: 3%
@@ -22,7 +22,7 @@ Den här guiden kräver en fungerande förståelse av de olika Adobe Experience 
 
 - [[!DNL Query Service]](../home.md): Ger möjlighet att fråga datauppsättningar och hämta de resulterande frågorna som nya datauppsättningar i [!DNL Experience Platform].
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
-- [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+- [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna använda [!DNL Query Service] med API:t.
 
@@ -32,13 +32,13 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: `Bearer {ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver ett huvud som anger namnet på den sandlåda där åtgärden ska utföras:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver ett huvud som anger namnet på den sandlåda där åtgärden ska utföras:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 

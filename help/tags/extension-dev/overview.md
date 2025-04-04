@@ -2,10 +2,10 @@
 title: Översikt över tilläggsutveckling
 description: Lär dig om de primära komponenterna för olika taggtilläggstyper och tilläggsutvecklingsprocessen i Adobe Experience Platform.
 exl-id: b72df3df-f206-488d-a690-0f086973c5b6
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '935'
-ht-degree: 2%
+source-wordcount: '938'
+ht-degree: 7%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Ett av de främsta målen med taggar i Adobe Experience Platform är att skapa ett öppet ekosystem där ingenjörer utanför Adobe kan visa ytterligare funktioner på sina webbplatser och i mobilapplikationer. Detta uppnås genom taggtillägg. När ett tillägg har installerats på en taggegenskap blir det tilläggets funktioner tillgängliga för alla användare av egenskapen.
+Ett av de främsta målen med taggar i Adobe Experience Platform är att skapa ett öppet ekosystem där ingenjörer utanför Adobe kan visa ytterligare funktioner på sina webbplatser och i mobilappar. Detta uppnås genom taggtillägg. När ett tillägg har installerats på en taggegenskap blir det tilläggets funktioner tillgängliga för alla användare av egenskapen.
 
 I det här dokumentet beskrivs de primära komponenterna i ett tillägg och det finns länkar till ytterligare dokumentation som kan hjälpa dig i utvecklingsprocessen för tillägget.
 
@@ -37,13 +37,13 @@ Du kan placera biblioteksmodulfiler var du vill i tilläggskatalogen, förutsatt
 
 ### Vyer
 
-En vy är en HTML-fil som kan läsas in i ett [`iframe`-element ](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) i taggprogrammet, särskilt via användargränssnittet för plattformen och användargränssnittet för datainsamling. Vyn måste innehålla ett skript från tillägget och följa ett litet API för att kunna kommunicera med programmet.
+En vy är en HTML-fil som kan läsas in i ett [`iframe`-element ](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) i taggprogrammet, särskilt via Experience Platform användargränssnitt och användargränssnittet för datainsamling. Vyn måste innehålla ett skript från tillägget och följa ett litet API för att kunna kommunicera med programmet.
 
 Den viktigaste visningsfilen för alla tillägg är dess konfiguration. Mer information finns i avsnittet [tilläggskonfigurationer](#configuration).
 
 Det finns inga begränsningar för vilka bibliotek som används i vyerna. Du kan med andra ord använda jQuery, Understreck, React, Angular, Bootstrap eller andra. Vi rekommenderar dock fortfarande att du gör så att tillägget ser likadant ut som gränssnittet.
 
-Vi rekommenderar att du placerar alla visningsrelaterade filer (HTML, CSS, JavaScript) i en enda underkatalog som är isolerad från biblioteksmodulfilerna. I `extension.json` kan du beskriva var den här underkatalogen för vyn finns. Plattformen hanterar sedan den här underkatalogen (och endast den här underkatalogen) från sina webbservrar.
+Vi rekommenderar att du placerar alla vyrelaterade filer (HTML, CSS, JavaScript) i en enda underkatalog som är isolerad från biblioteksmodulfilerna. I `extension.json` kan du beskriva var den här underkatalogen för vyn finns. Experience Platform skickar sedan underkatalogen (och endast den här underkatalogen) från sina webbservrar.
 
 ## Bibliotekskomponenter {#components}
 
@@ -93,4 +93,4 @@ Mer information finns i guiden om [tilläggskonfigurationer](./configuration.md)
 
 ## Skicka tillägg
 
-När du är klar med att skapa tillägget kan du skicka in det så att det visas i tilläggskatalogen i Platform. Mer information finns i översikten över överföringsprocessen för [tillägg](./submit/overview.md).
+När du har skapat tillägget kan du skicka det för att visas i tilläggskatalogen i Experience Platform. Mer information finns i översikten över överföringsprocessen för [tillägg](./submit/overview.md).

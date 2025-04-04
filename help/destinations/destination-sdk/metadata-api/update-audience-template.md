@@ -1,10 +1,10 @@
 ---
-description: Den här sidan är ett exempel på det API-anrop som används för att uppdatera en målgruppsmall via Adobe Experience Platform Destination SDK.
+description: Den här sidan är ett exempel på API-anropet som används för att uppdatera en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målgruppsmall
 exl-id: 8185a015-256d-46a7-af33-8475832fb6c1
-source-git-commit: 1784dd955c959fe8cd7b6241ed79943786db4f98
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '320'
+source-wordcount: '321'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
@@ -270,8 +270,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade m�
 
 ## API-felhantering
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu när du ska använda målgruppsmallar och hur du uppdaterar en målgruppsmall med API-slutpunkten `/authoring/audience-templates`. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.
+När du har läst det här dokumentet vet du nu när du ska använda målgruppsmallar och hur du uppdaterar en målgruppsmall med API-slutpunkten `/authoring/audience-templates`. Läs [hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och få en förståelse för var det här steget passar in i processen att konfigurera ditt mål.

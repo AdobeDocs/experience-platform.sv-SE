@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelningsuppläsning;förtäring;direktuppspelning av flera meddelanden;flera meddelanden;
+keywords: Experience Platform;hem;populära ämnen;strömmande ingång;intag;strömning av flera meddelanden;flera meddelanden;
 solution: Experience Platform
 title: Skicka flera meddelanden i en enda HTTP-begäran
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till Adobe Experience Platform inom en enda HTTP-begäran med direktuppspelningsinmatning.
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: 3ad5c06db07b360df255d3afb1c177cc5de613bb
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1482'
-ht-degree: 0%
+source-wordcount: '1484'
+ht-degree: 1%
 
 ---
 
@@ -25,11 +25,11 @@ Den här självstudien kräver en fungerande förståelse för Adobe Experience 
 - [Översikt över datainmatning](../home.md): Täcker kärnbegreppen för [!DNL Experience Platform Data Ingestion], inklusive inmatningsmetoder och dataanslutningar.
 - [Översikt över direktuppspelningsuppläsning](../streaming-ingestion/overview.md): Arbetsflödet och byggstenarna för direktuppspelningsuppläsning, till exempel direktuppspelningsanslutningar, datauppsättningar, [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent].
 
-Den här självstudien kräver också att du har slutfört självstudiekursen [Autentisering till Adobe Experience Platform](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Platform] API:er. När du slutför självstudiekursen för autentisering får du det värde för auktoriseringshuvud som krävs för alla API-anrop i den här självstudiekursen. Rubriken visas i exempelanrop enligt följande:
+Den här självstudien kräver också att du har slutfört självstudiekursen [Autentisering till Adobe Experience Platform](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Experience Platform] API:er. När du slutför självstudiekursen för autentisering får du det värde för auktoriseringshuvud som krävs för alla API-anrop i den här självstudiekursen. Rubriken visas i exempelanrop enligt följande:
 
 - Behörighet: Bärare `{ACCESS_TOKEN}`
 
-Alla begäranden om POSTER kräver ytterligare en rubrik:
+Alla POST-begäranden kräver ytterligare en rubrik:
 
 - Content-Type: application/json
 
@@ -37,13 +37,13 @@ Alla begäranden om POSTER kräver ytterligare en rubrik:
 
 Du måste först skapa en direktuppspelningsanslutning innan du kan starta direktuppspelningsdata till [!DNL Experience Platform]. Läs guiden [Skapa en direktuppspelningsanslutning](./create-streaming-connection.md) om du vill veta hur du skapar en direktuppspelningsanslutning.
 
-När du har registrerat en direktuppspelningsanslutning får du som DataProducer en unik URL som kan användas för att strömma data till Platform.
+När du har registrerat en direktuppspelningsanslutning får du som DataProducer en unik URL som kan användas för att strömma data till Experience Platform.
 
 ## Strömma till en datauppsättning
 
 I följande exempel visas hur du skickar flera meddelanden till en viss datauppsättning i en enda HTTP-begäran. Infoga datauppsättnings-ID:t i meddelanderubriken om du vill att meddelandet ska infogas direkt i det.
 
-Du kan hämta ID:t för en befintlig datauppsättning med användargränssnittet för [!DNL Platform] eller med en liståtgärd i API:t. Datauppsättnings-ID:t finns på [Experience Platform](https://platform.adobe.com) genom att gå till fliken **[!UICONTROL Datasets]**, klicka på den datauppsättning som du vill ha ID:t för och kopiera strängen från datauppsättnings-ID:t på fliken **[!UICONTROL Info]**. Mer information om hur du hämtar datauppsättningar med API:t finns i [Katalogtjänstöversikt](../../catalog/home.md).
+Du kan hämta ID:t för en befintlig datauppsättning med användargränssnittet för [!DNL Experience Platform] eller med en liståtgärd i API:t. Du hittar datauppsättnings-ID:t på [Experience Platform](https://platform.adobe.com) genom att gå till fliken **[!UICONTROL Datasets]**, klicka på den datauppsättning som du vill ha ID:t för och kopiera strängen från datauppsättnings-ID:t på fliken **[!UICONTROL Info]**. Mer information om hur du hämtar datauppsättningar med API:t finns i [Katalogtjänstöversikt](../../catalog/home.md).
 
 I stället för att använda en befintlig datauppsättning kan du skapa en ny datauppsättning. Läs självstudiekursen [Skapa en datauppsättning med API:er](../../catalog/api/create-dataset.md) om du vill ha mer information om hur du skapar en datauppsättning med API:er.
 
@@ -220,8 +220,8 @@ I följande exempel visas vad som händer när gruppen innehåller giltiga och o
 
 Nyttolasten för begäran är en array med JSON-objekt som representerar händelsen i XDM-schemat. Observera att följande villkor måste vara uppfyllda för att meddelandet ska kunna valideras:
 - Fältet `imsOrgId` i meddelanderubriken måste matcha inletsdefinitionen. Om nyttolasten för begäran inte innehåller något `imsOrgId`-fält, kommer [!DNL Data Collection Core Service] (DCCS) att lägga till fältet automatiskt.
-- Meddelandets huvud ska referera till ett befintligt XDM-schema som skapats i användargränssnittet för [!DNL Platform].
-- Fältet `datasetId` måste referera till en befintlig datauppsättning i [!DNL Platform], och dess schema måste matcha schemat som anges i objektet `header` i varje meddelande som ingår i begärandetexten.
+- Meddelandets huvud ska referera till ett befintligt XDM-schema som skapats i användargränssnittet för [!DNL Experience Platform].
+- Fältet `datasetId` måste referera till en befintlig datauppsättning i [!DNL Experience Platform], och dess schema måste matcha schemat som anges i objektet `header` i varje meddelande som ingår i begärandetexten.
 
 **API-format**
 
@@ -489,7 +489,7 @@ Svarsnyttolasten innehåller en status för varje meddelande tillsammans med ett
 
 Exemplet ovan visar felmeddelanden för föregående begäran. Genom att jämföra det här svaret med det föregående giltiga svaret kan du observera att begäran resulterade i en partiell framgång, där ett meddelande kunde hämtas och tre meddelanden resulterade i fel. Observera att båda svaren returnerar statuskoden 207. Mer information om statuskoder finns i tabellen [svarskoder](#response-codes) i bilagan till den här självstudien.
 
-Det första meddelandet har skickats till [!DNL Platform] och påverkas inte av resultaten från de andra meddelandena. Därför behöver du inte ta med det här meddelandet igen när du försöker skicka om de misslyckade meddelandena.
+Det första meddelandet har skickats till [!DNL Experience Platform] och påverkas inte av resultaten från de andra meddelandena. Därför behöver du inte ta med det här meddelandet igen när du försöker skicka om de misslyckade meddelandena.
 
 Det andra meddelandet misslyckades eftersom det saknade meddelandetext. Samlingsbegäran förväntar sig att meddelandeelement har giltiga huvud- och brödavsnitt. Om du lägger till följande kod efter rubriken i det andra meddelandet rättas begäran till, vilket gör att det andra meddelandet godkänns i valideringen:
 
@@ -510,9 +510,9 @@ Det andra meddelandet misslyckades eftersom det saknade meddelandetext. Samlings
 
 Det tredje meddelandet misslyckades på grund av att ett ogiltigt organisations-ID användes i huvudet. Organisationen måste matcha den {CONNECTION_ID} som du försöker publicera till. Om du vill ta reda på vilket organisations-ID som matchar den direktuppspelningsanslutning du använder kan du utföra en `GET inlet`-begäran med [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/). Se [hämta en direktuppspelningsanslutning](./create-streaming-connection.md#get-data-collection-url) för ett exempel på hur du hämtar tidigare skapade direktuppspelningsanslutningar.
 
-Det fjärde meddelandet misslyckades eftersom det inte följde det förväntade XDM-schemat. `xdmSchema` som ingår i begärans huvud och innehåll matchar inte XDM-schemat för `{DATASET_ID}`. Om du korrigerar schemat i meddelandehuvudet och meddelandetexten kan det godkännas för DCCS-validering och skickas till [!DNL Platform]. Meddelandetexten måste också uppdateras för att matcha XDM-schemat för `{DATASET_ID}` för att den ska kunna godkännas för direktuppspelningsvalidering på [!DNL Platform]. Mer information om vad som händer med meddelanden som kan direktuppspelas på plattformen finns i avsnittet [Bekräfta inkapslade meddelanden](#confirm-messages-ingested) i den här självstudien.
+Det fjärde meddelandet misslyckades eftersom det inte följde det förväntade XDM-schemat. `xdmSchema` som ingår i begärans huvud och innehåll matchar inte XDM-schemat för `{DATASET_ID}`. Om du korrigerar schemat i meddelandehuvudet och meddelandetexten kan det godkännas för DCCS-validering och skickas till [!DNL Experience Platform]. Meddelandetexten måste också uppdateras för att matcha XDM-schemat för `{DATASET_ID}` för att den ska kunna godkännas för direktuppspelningsvalidering på [!DNL Experience Platform]. Mer information om vad som händer med meddelanden som kan direktuppspelas till Experience Platform finns i avsnittet [Bekräfta inkapslade meddelanden](#confirm-messages-ingested) i den här självstudien.
 
-### Hämta misslyckade meddelanden från [!DNL Platform]
+### Hämta misslyckade meddelanden från [!DNL Experience Platform]
 
 Misslyckade meddelanden identifieras av en felstatuskod i svarsmatrisen.
 De ogiltiga meddelandena samlas in och lagras i en felbatch i datauppsättningen som anges av `{DATASET_ID}`.
@@ -521,15 +521,15 @@ Läs guiden [Hämta misslyckade batchar](../quality/retrieve-failed-batches.md) 
 
 ## Bekräfta inkapslade meddelanden
 
-Meddelanden som godkänns vid DCCS-validering direktuppspelas till [!DNL Platform]. På [!DNL Platform] testas batchmeddelandena genom direktuppspelningsvalidering innan de hämtas till [!DNL Data Lake]. Statusen för batchar, vare sig de lyckades eller inte, visas i datauppsättningen som anges av `{DATASET_ID}`.
+Meddelanden som godkänns vid DCCS-validering direktuppspelas till [!DNL Experience Platform]. På [!DNL Experience Platform] testas batchmeddelandena genom direktuppspelningsvalidering innan de hämtas till [!DNL Data Lake]. Statusen för batchar, vare sig de lyckades eller inte, visas i datauppsättningen som anges av `{DATASET_ID}`.
 
-Du kan visa status för gruppmeddelanden som har direktuppspelats till [!DNL Platform] med [Experience Platform-gränssnittet](https://platform.adobe.com) genom att gå till fliken **[!UICONTROL Datasets]**, klicka på den datauppsättning som du direktuppspelar till och kontrollera fliken **[!UICONTROL Dataset Activity]**.
+Du kan visa status för gruppmeddelanden som har direktuppspelats till [!DNL Experience Platform] med hjälp av [Experience Platform-gränssnittet](https://platform.adobe.com) genom att gå till fliken **[!UICONTROL Datasets]**, klicka på den datauppsättning som du direktuppspelar till och kontrollera fliken **[!UICONTROL Dataset Activity]**.
 
-Batchmeddelanden som godkänns vid direktuppspelningsvalidering på [!DNL Platform] hämtas till [!DNL Data Lake]. Meddelandena är sedan tillgängliga för analys eller export.
+Batchmeddelanden som godkänns vid direktuppspelningsvalidering på [!DNL Experience Platform] hämtas till [!DNL Data Lake]. Meddelandena är sedan tillgängliga för analys eller export.
 
 ## Nästa steg
 
-Nu när du vet hur du skickar flera meddelanden i en enda begäran och verifierar när meddelanden har importerats till måldatauppsättningen, kan du börja direktuppspela dina egna data till [!DNL Platform]. En översikt över hur du frågar och hämtar inkapslade data från [!DNL Platform] finns i guiden för [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md).
+Nu när du vet hur du skickar flera meddelanden i en enda begäran och verifierar när meddelanden har importerats till måldatauppsättningen, kan du börja direktuppspela dina egna data till [!DNL Experience Platform]. En översikt över hur du frågar och hämtar inkapslade data från [!DNL Experience Platform] finns i guiden för [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md).
 
 ## Bilaga
 
@@ -547,5 +547,5 @@ I följande tabell visas statuskoder som returnerats av slutförda och misslycka
 | 403 | Obehörig: Den angivna auktoriseringstoken är ogiltig eller har gått ut. Detta returneras endast för inmatningar som har autentisering aktiverat. |
 | 413 | Nyttolasten är för stor - utlöses när den totala nyttolastbegäran är större än 1 MB. |
 | 429 | För många begäranden inom angiven tidsperiod. |
-| 500 | Fel vid bearbetning av nyttolast. I svarstexten finns ett mer specifikt felmeddelande (till exempel har inte meddelandenyttolastschemat angetts eller matchar inte XDM-definitionen i [!DNL Platform]). |
+| 500 | Fel vid bearbetning av nyttolast. I svarstexten finns ett mer specifikt felmeddelande (till exempel har inte meddelandenyttolastschemat angetts eller matchar inte XDM-definitionen i [!DNL Experience Platform]). |
 | 503 | Tjänsten är inte tillgänglig för tillfället. Kunderna bör försöka igen minst tre gånger med en exponentiell strategi för bakåtjustering. |

@@ -3,9 +3,9 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1739'
+source-wordcount: '1740'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,7 @@ Läs [Aktivera målgrupper för att anpassa målgrupper](../../ui/activate-edge-
 
 Det krävs extra steg för att ta bort en målgrupp från en befintlig Adobe Target-anslutning när målgruppen redan används i en Adobe Target [aktivitet](https://experienceleague.adobe.com/en/docs/target/using/activities/activities). Om du försöker ta bort en målgrupp från en Adobe Target-anslutning uppstår ett fel om målgruppen används av en Adobe Target-aktivitet.
 
-![En gränssnittsbild för plattformen visar ett fel som orsakats av ett försök att ta bort en målgrupp som används av en Target-aktivitet.](../../assets/catalog/personalization/adobe-target-connection/remove-audience-error.png)
+![Experience Platform-gränssnittsbild visar ett fel som orsakats av ett försök att ta bort en målgrupp som används av en Target-aktivitet.](../../assets/catalog/personalization/adobe-target-connection/remove-audience-error.png)
 
 Om du vill ta bort en målgrupp från ett målmål när målgruppen används i en aktivitet måste du först ta bort målgruppen från den målaktivitet som använder den, eller ta bort aktiviteten helt och hållet. Sedan kan du ta bort målgruppen från din Target-anslutning.
 

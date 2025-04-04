@@ -1,11 +1,11 @@
 ---
-title: Skapa en Azure synapse Analytics-basanslutning med API:t för Flow Service
-description: Lär dig hur du ansluter Azure synapse Analytics till Adobe Experience Platform med API:t för Flow Service.
+title: Skapa en Azure Synapse Analytics-basanslutning med API:t för flödestjänsten
+description: Lär dig hur du ansluter Azure Synapse Analytics till Adobe Experience Platform med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 8944ac3f-366d-49c8-882f-11cd0ea766e4
-source-git-commit: a7c2c5e4add5c80e0622d5aeb766cec950d79dbb
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Azure Synapse Analytics] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Azure Synapse Analytics] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
@@ -24,8 +24,8 @@ I den här självstudiekursen får du hjälp med att skapa en basanslutning för
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Synapse] med API:t [!DNL Flow Service].
 
@@ -40,15 +40,15 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Synapse] måste du ang
 
 Mer information om hur du hämtar en anslutningssträng finns i [det här synkroniseringsdokumentet](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication-configure?toc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Ftoc.json&amp;bc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Fbreadcrumb%2Ftoc.json&amp;tabs=azure-powershell).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Synapse] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Synapse]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -105,4 +105,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 Genom att följa den här självstudiekursen har du skapat en [!DNL Synapse]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att hämta databasdata till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/database-nosql.md)
+* [Skapa ett dataflöde för att hämta databasdata till Experience Platform med  [!DNL Flow Service] API](../../collect/database-nosql.md)

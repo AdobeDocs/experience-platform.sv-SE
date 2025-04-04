@@ -4,28 +4,28 @@ description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som 
 role: Developer
 feature: Privacy
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: c1a28a4b1ce066a87bb7b34b2524800f9d8f1ca0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1089'
+source-wordcount: '1102'
 ht-degree: 0%
 
 ---
 
 # Kundhanterade nycklar i Adobe Experience Platform
 
-Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av systemnivånycklar. Om du använder ett program som är byggt på plattformen kan du välja att använda dina egna krypteringsnycklar istället, vilket ger dig större kontroll över datasäkerheten.
+Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av systemnivånycklar. Om du använder ett program som är byggt på Experience Platform kan du välja att använda dina egna krypteringsnycklar istället, vilket ger dig större kontroll över datasäkerheten.
 
 >[!AVAILABILITY]
 >
->Adobe Experience Platform stöder Customer Managed Keys (CMK) för både Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Om implementeringen körs på AWS kan du välja att använda nyckelhanteringstjänsten (KMS) för plattformsdatakryptering. Mer information om den infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
+>Adobe Experience Platform stöder Customer Managed Keys (CMK) för både Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Om implementeringen körs på AWS kan du välja att använda nyckelhanteringstjänsten (KMS) för Experience Platform-datakryptering. Mer information om den infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 >
 >Mer information om hur du skapar och hanterar krypteringsnycklar i AWS KMS finns i [AWS KMS-krypteringsguiden](./aws/configure-kms.md). Information om Azure-implementeringar finns i [konfigurationsguiden för Azure Key Vault](./azure/azure-key-vault-config.md).
 
 >[!NOTE]
 >
->För [!DNL Azure] värdbaserade plattformsinstanser krypteras kundprofildata som lagras i plattformens [!DNL Azure Data Lake] och profilarkivet [!DNL Azure Cosmos DB] exklusivt med CMK när de har aktiverats. Nyckelåterkallning i primära datalager kan ta mellan **några minuter och 24 timmar** och **upp till 7 dagar** för tillfälliga eller sekundära datalager. Mer information finns i [konsekvenserna av att återkalla nyckelåtkomstavsnittet](#revoke-access).
+>För [!DNL Azure] värdbaserade Experience Platform-instanser krypteras kundprofildata som lagras i Experience Platform [!DNL Azure Data Lake] och profilarkivet [!DNL Azure Cosmos DB] exklusivt med CMK när de har aktiverats. Nyckelåterkallning i primära datalager kan ta mellan **några minuter och 24 timmar** och **upp till 7 dagar** för tillfälliga eller sekundära datalager. Mer information finns i [konsekvenserna av att återkalla nyckelåtkomstavsnittet](#revoke-access).
 
-Det här dokumentet innehåller en översikt på hög nivå över processen för att aktivera funktionen för kundhanterade nycklar (CMK) i plattformen för [!DNL Azure] och AWS, tillsammans med den information som krävs för att slutföra de här stegen.
+Det här dokumentet innehåller en översikt på hög nivå över processen för att aktivera funktionen för kundhanterade nycklar (CMK) i Experience Platform i hela [!DNL Azure] och AWS, tillsammans med den information som krävs för att slutföra dessa steg.
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ För implementeringar som hanteras av AWS konfigurerar du din AWS-miljö enligt 
 
 ## Processsammanfattning {#process-summary}
 
-Customer Managed Keys (CMK) erbjuds genom Adobe Healthcare Shield och skölden för skydd av privatlivet och säkerhet. På Azure stöds CMK för både hälso- och sjukvårdssköld och sköld för skydd av privatlivet och säkerheten. På AWS stöds CMK endast för skölden för skydd av privatlivet och säkerheten och är inte tillgängligt för hälso- och sjukvårdsskölden. När organisationen har köpt en licens för något av dessa alternativ kan du påbörja engångskonfigurationsprocessen för att aktivera CMK.
+Customer Managed Keys (CMK) erbjuds genom Adobe Healthcare Shield och Privacy and Security Shield. På Azure stöds CMK för både hälso- och sjukvårdssköld och sköld för skydd av privatlivet och säkerheten. På AWS stöds CMK endast för skölden för skydd av privatlivet och säkerheten och är inte tillgängligt för hälso- och sjukvårdsskölden. När organisationen har köpt en licens för något av dessa alternativ kan du påbörja engångskonfigurationsprocessen för att aktivera CMK.
 
 >[!WARNING]
 >
@@ -73,23 +73,23 @@ Processen är följande:
 1. Skicka ditt krypteringsnyckel-ID till Adobe och starta aktiveringsprocessen för funktionen, antingen [ i användargränssnittet](./azure/ui-set-up.md#send-to-adobe) eller med ett [API-anrop](./azure/api-set-up.md#send-to-adobe).
 1. Kontrollera konfigurationsstatusen för att verifiera om CMK har aktiverats, antingen [ i användargränssnittet ](./azure/ui-set-up.md#check-status) eller med ett [API-anrop](./azure/api-set-up.md#check-status).
 
-När installationsprocessen är klar för Azure-värdbaserade plattformsinstanser krypteras alla data som är inbundna i Platform i alla sandlådor med hjälp av nyckelkonfigurationen för [!DNL Azure]. Om du vill använda CMK använder du [!DNL Microsoft Azure]-funktioner som kan ingå i deras [allmänna förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
+När installationsprocessen är klar för Azure-värdbaserade Experience Platform-instanser krypteras alla data som är inskrivna i Experience Platform över alla sandlådor med hjälp av nyckelkonfigurationen för [!DNL Azure]. Om du vill använda CMK använder du [!DNL Microsoft Azure]-funktioner som kan ingå i deras [allmänna förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
 
 ### För AWS {#aws-process-summary}
 
 1. [Konfigurera AWS KMS](./aws/configure-kms.md) genom att konfigurera en krypteringsnyckel som ska delas med Adobe.
 2. Följ de AWS-specifika instruktionerna i [installationsguiden för användargränssnittet](./aws/ui-set-up.md).
-3. Verifiera konfigurationen för att bekräfta att plattformsdata har krypterats med AWS värdnyckel.
+3. Verifiera konfigurationen för att bekräfta att Experience Platform-data är krypterade med AWS värdnyckel.
 
 <!--  Pending: or [API setup guide]() -->
 
-När konfigurationsprocessen är klar för instanser av AWS-värdbaserade plattformar krypteras alla data som är inskrivna i plattformen i alla sandlådor med hjälp av din AWS Key Management Service-konfiguration (KMS). Om du vill använda CMK på AWS använder du AWS nyckelhanteringstjänst för att skapa och hantera dina krypteringsnycklar i enlighet med organisationens säkerhetskrav.
+När installationsprocessen är klar för Experience Platform-instanser som ligger på AWS krypteras alla data som är inskrivna i Experience Platform över alla sandlådor med hjälp av konfigurationen för AWS Key Management Service (KMS). Om du vill använda CMK på AWS använder du AWS nyckelhanteringstjänst för att skapa och hantera dina krypteringsnycklar i enlighet med organisationens säkerhetskrav.
 
 ## Konsekvenser av återkallande av nyckelåtkomst {#revoke-access}
 
-Om du återkallar eller inaktiverar åtkomsten till Key Vault-, key- eller CMK-appen i Azure eller krypteringsnyckeln i AWS kan det leda till allvarliga störningar, bland annat att plattformens åtgärder inte fungerar som de ska. När nycklarna har inaktiverats kan data i plattformen bli oåtkomliga, och alla åtgärder längre fram i kedjan som är beroende av dessa data kommer inte att fungera. Det är viktigt att förstå effekterna i efterföljande led till fullo innan du gör några ändringar i dina nyckelkonfigurationer.
+Om du återkallar eller inaktiverar åtkomsten till Key Vault-, key- eller CMK-appen i Azure eller krypteringsnyckeln i AWS kan det leda till allvarliga störningar, som bland annat kan leda till att dina Experience Platform-åtgärder inte fungerar som de ska. När tangenterna har inaktiverats kan data i Experience Platform bli oåtkomliga, och alla åtgärder längre fram i kedjan som är beroende av dessa data kommer inte att fungera. Det är viktigt att förstå effekterna i efterföljande led till fullo innan du gör några ändringar i dina nyckelkonfigurationer.
 
-Om du vill återkalla plattformsåtkomst till dina data i [!DNL Azure] tar du bort den användarroll som är associerad med programmet från nyckelvalvet. För AWS kan du inaktivera nyckeln eller uppdatera policyn. Detaljerade instruktioner om AWS-processen finns i avsnittet [om nyckelspärr](./aws/ui-set-up.md#key-revocation).
+Om du vill återkalla Experience Platform-åtkomst till dina data i [!DNL Azure] tar du bort den användarroll som är associerad med programmet från nyckelvalvet. För AWS kan du inaktivera nyckeln eller uppdatera policyn. Detaljerade instruktioner om AWS-processen finns i avsnittet [om nyckelspärr](./aws/ui-set-up.md#key-revocation).
 
 
 ### Spridningstidslinjer {#propagation-timelines}
@@ -115,5 +115,5 @@ Profilkontrollpanelen fortsätter till exempel att visa data från sin cache i u
 
 Så här startar du processen:
 
-- För Azure: Börja med [att konfigurera ett  [!DNL Azure] nyckelvalv](./azure/azure-key-vault-config.md) och [generera en krypteringsnyckel](./azure/azure-key-vault-config.md#generate-a-key) som du kan dela med Adobe.
+- För Azure: Börja med [att konfigurera ett  [!DNL Azure] nyckelvalv](./azure/azure-key-vault-config.md) och [generera en krypteringsnyckel](./azure/azure-key-vault-config.md#generate-a-key) som ska delas med Adobe.
 - För AWS: [Konfigurera AWS KMS](./aws/configure-kms.md) och kontrollera att IAM- och KMS-konfigurationerna är korrekta innan du fortsätter till installationsguiderna för användargränssnittet eller API.

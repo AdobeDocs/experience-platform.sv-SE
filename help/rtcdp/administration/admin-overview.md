@@ -1,17 +1,17 @@
 ---
 keywords: rtcdp-administration, översikt;administration, översikt
-title: Real-time Customer Data Platform Administration - översikt
-description: Dokumentet innehåller en översikt över administrationsfunktionerna i Adobe Real-time Customer Data Platform, som drivs av Adobe Experience Platform.
+title: Real-Time Customer Data Platform Administration - översikt
+description: Dokumentet innehåller en översikt över administrationsfunktionerna i Adobe Real-Time Customer Data Platform, som drivs av Adobe Experience Platform.
 feature: Access Control, Get Started, Sandboxes
 exl-id: c5bdeac6-345a-4ef1-bc5a-a993f565b9d6
-source-git-commit: a8c9543bb003a99dcd85712d202482511c0a5608
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '316'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform - översikt
+# Real-Time Customer Data Platform - översikt
 
 Det här dokumentet innehåller en översikt över administrationsfunktionerna i [!DNL Adobe Real-Time Customer Data Platform], som drivs av Adobe Experience Platform.
 
@@ -33,6 +33,6 @@ Mer information om åtkomstkontroll finns i [attributbaserad åtkomstkontroll ](
 
 Adobe Experience Platform (och Real-Time CDP som tillägg) är byggt för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav.
 
-För att tillgodose detta behov tillhandahåller Adobe Experience Platform *sandlådor*, vilket gör att du kan partitionera en enskild [!DNL Platform]-instans i separata virtuella miljöer som kan användas för att utveckla och utveckla program för digitala upplevelser. Du kan använda sandlådeverktygen för att förbättra konfigurationsnoggrannheten över sandlådor och sömlöst exportera och importera sandlådekonfigurationer mellan sandlådor. Följ stegen som anges i användargränssnittsguiden för [sandlådan](../../sandboxes/ui/sandbox-tooling.md).
+För att tillgodose detta behov tillhandahåller Adobe Experience Platform *sandlådor*, vilket gör att du kan partitionera en enskild [!DNL Experience Platform]-instans i separata virtuella miljöer som kan användas för att utveckla och utveckla program för digitala upplevelser. Du kan använda sandlådeverktygen för att förbättra konfigurationsnoggrannheten över sandlådor och sömlöst exportera och importera sandlådekonfigurationer mellan sandlådor. Följ stegen som anges i användargränssnittsguiden för [sandlådan](../../sandboxes/ui/sandbox-tooling.md).
 
 Mer information om sandlådor finns i [översikten över sandlådor](../../sandboxes/home.md) i [!DNL Experience Platform]-dokumentationen.

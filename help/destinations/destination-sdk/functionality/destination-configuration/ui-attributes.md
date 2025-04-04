@@ -1,10 +1,10 @@
 ---
-description: Lär dig hur du konfigurerar gränssnittsattribut, t.ex. dokumentationslänken, målkortskategorin och målanslutningstypen och målfrekvensen, för mål som skapats med Destination SDK.
+description: Lär dig hur du konfigurerar gränssnittsattribut, t.ex. dokumentationslänken, målkortskategorin och typ av målanslutning och frekvens, för mål som skapats med Destination SDK.
 title: Gränssnittsattribut
 exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
-source-git-commit: 995e464ca43e0738c16dd4e0ec928d27e5a8b029
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ Gränssnittsattribut definierar de visuella element som Adobe ska visa för ditt
 
 Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
-* [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-destination-configuration)
+* [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-När [skapar ett mål](../../authoring-api/destination-configuration/create-destination-configuration.md) via Destination SDK, definierar avsnittet `uiAttributes` följande visuella egenskaper för målkortet:
+När [skapar ett mål](../../authoring-api/destination-configuration/create-destination-configuration.md) via Destination SDK definierar avsnittet `uiAttributes` följande visuella egenskaper för målkortet:
 
 * URL-adressen till måldokumentationssidan i [målkatalogen](../../../catalog/overview.md).
-* Den kategori som ditt mål ska visas under i plattformsgränssnittet.
+* Den kategori där ditt mål visas i Experience Platform-gränssnittet.
 * Dataexportfrekvensen för destinationen.
 * Målanslutningstypen, t.ex. Amazon S3, Azure Blob.
 * Den URL där du var värd för ikonen som ska visas på målkatalogkortet.
@@ -31,13 +31,13 @@ Du kan konfigurera gränssnittsattribut via slutpunkten `/authoring/destinations
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-I den här artikeln beskrivs alla gränssnittsattribut som stöds och som du kan använda för ditt mål. Här visas vad kunderna kommer att se i användargränssnittet för Experience Platform.
+I den här artikeln beskrivs alla gränssnittsattribut som stöds och som du kan använda för ditt mål. Här visas vad kunderna kommer att se i Experience Platform användargränssnitt.
 
 ![Skärmbild av användargränssnittet som visar gränssnittsattributen i Experience Platform-gränssnittet](../../assets/functionality/destination-configuration/ui-attributes.png)
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -72,7 +72,7 @@ Användarna kan se och besöka din dokumentationslänk från målkatalogsidan i 
 
 >[!NOTE]
 >
->Länken fungerar bara när Adobe har aktiverat destinationen och dokumentationen har publicerats.
+>Länken fungerar bara när Adobe har publicerat destinationen och dokumentationen.
 
 ### `category` {#category}
 
@@ -100,7 +100,7 @@ Användare kan se frekvenstypen på sidan **[!UICONTROL Dataflow runs]** för va
 
 ### `isBeta` {#isbeta}
 
-Om det mål som du skapar med Destination SDK är tillgängligt för ett begränsat antal kunder kan du markera målkortet från målkatalogen som beta.
+Om det mål som du skapar med Destination SDK kommer att vara tillgängligt för ett begränsat antal kunder kan du markera målkortet från målkatalogen som beta.
 
 För att göra detta kan du använda parametern `isBeta: "true"` i avsnittet Gränssnittsattribut i målkonfigurationen för att markera målkortet korrekt.
 
@@ -116,7 +116,7 @@ Om du vill lägga till en logotyp på målkortet måste du dela den önskade bil
 
 ## Nästa steg {#next-steps}
 
-När du har läst den här artikeln bör du få en bättre förståelse för vilka gränssnittsattribut du kan konfigurera för ditt mål och var användarna ser dem i plattformsgränssnittet.
+När du har läst den här artikeln bör du få en bättre förståelse för vilka gränssnittsattribut du kan konfigurera för ditt mål och var användarna ser dem i Experience Platform-gränssnittet.
 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 

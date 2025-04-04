@@ -2,10 +2,10 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '5435'
-ht-degree: 0%
+source-wordcount: '5437'
+ht-degree: 1%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Core-taggtillägget är standardtillägget som släpps med Adobe Experience Platform.
 
@@ -106,7 +106,7 @@ Om elementet är en ankartagg (`<a>`) för länkat innehåll kan du även ange o
 >
 >Detta alternativ bör användas med extrem försiktighet på grund av de potentiella negativa konsekvenser det kan få för användarupplevelsen om det används felaktigt.
 
-När du använder fördröjning av länkar förhindrar Plattform faktiskt webbläsaren från att navigera utanför sidan. Därefter omdirigeras JavaScript till det ursprungliga målet efter den angivna tidsgränsen. Detta är särskilt farligt när sidmarkeringen har `<a>` -taggar där den avsedda funktionen inte navigerar användaren från sidan. Om du inte kan lösa problemet på något annat sätt bör du vara mycket exakt med väljardefinitionen så att den här händelsen utlöses exakt där du behöver den och inte någon annanstans.
+När du använder länkfördröjning förhindrar Experience Platform faktiskt webbläsaren från att navigera utanför sidan. Därefter omdirigeras JavaScript till det ursprungliga målet efter den angivna tidsgränsen. Detta är särskilt farligt när sidmarkeringen har `<a>` -taggar där den avsedda funktionen inte navigerar användaren från sidan. Om du inte kan lösa problemet på något annat sätt bör du vara mycket exakt med väljardefinitionen så att den här händelsen utlöses exakt där du behöver den och inte någon annanstans.
 
 Standardvärdet för fördröjning av länkar är 100 millisekunder. Observera att taggar alltid väntar på den angivna tiden och inte är kopplade till körningen av regelns åtgärder på något sätt. Det är möjligt att fördröjningen tvingar användaren att vänta längre än nödvändigt och även att fördröjningen inte är tillräckligt lång för att alla regelåtgärder ska kunna slutföras. Längre fördröjningar ger mer tid för regelkörning men försämrar även användarupplevelsen.
 
@@ -588,7 +588,7 @@ Valideraren som används i kodredigeraren för taggar är utformad för att iden
 
 #### Åtgärdssekvenser
 
-När alternativet Kör regelkomponenter i sekvens från egenskapsinställningarna är aktiverat kan efterföljande regelkomponenter vänta medan åtgärden utför en asynkron åtgärd.  Detta fungerar annorlunda för JavaScript och HTML.
+När alternativet Kör regelkomponenter i sekvens från egenskapsinställningarna är aktiverat kan efterföljande regelkomponenter vänta medan åtgärden utför en asynkron åtgärd.  Detta fungerar annorlunda för JavaScript och HTML anpassade kod.
 
 *JavaScript*
 
@@ -614,9 +614,9 @@ return new Promise(function(resolve, reject) {
 
 *HTML*
 
-När du skapar en anpassad kodsåtgärd för HTML kan du använda funktionen `onCustomCodeSuccess()` i din anpassade kod. Du kan anropa den här funktionen för att ange att din egen kod har slutförts och att taggarna kan fortsätta att köra efterföljande åtgärder. Om din anpassade kod däremot misslyckades på något sätt kan du anropa `onCustomCodeFailure()`. Detta informerar taggar om att inte köra efterföljande åtgärder från den regeln.
+När du skapar en anpassad HTML-kodsåtgärd kommer en funktion med namnet `onCustomCodeSuccess()` att vara tillgänglig att använda i din anpassade kod. Du kan anropa den här funktionen för att ange att din egen kod har slutförts och att taggarna kan fortsätta att köra efterföljande åtgärder. Om din anpassade kod däremot misslyckades på något sätt kan du anropa `onCustomCodeFailure()`. Detta informerar taggar om att inte köra efterföljande åtgärder från den regeln.
 
-Ett exempel på en anpassad kodåtgärd för HTML som använder de nya återanropen:
+Ett exempel på en anpassad HTML-kodsåtgärd som använder de nya återanropen:
 
 ```html
 <script>
@@ -838,7 +838,7 @@ Sessionslagring liknar lokal lagring, förutom att data tas bort efter att sessi
 
 ### Beteende för besökare
 
-På liknande sätt som i Sidinformation använder det här dataelementet vanliga beteendetyper för att utöka logiken i regler och andra plattformslösningar.
+På liknande sätt som i Sidinformation använder det här dataelementet vanliga beteendetyper för att utöka logiken i regler och andra Experience Platform-lösningar.
 
 Välj ett av följande attribut för besökarbeteende:
 

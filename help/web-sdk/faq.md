@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK FAQ
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: c26abeed890e06dce4e77133502b7031443bb4fa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2080'
+source-wordcount: '2082'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ För närvarande måste du distribuera olika JavaScript-bibliotek baserat på va
 * Inget av dessa bibliotek har tagits fram för att fungera tillsammans.
 * Samlingslösningar och Adobe Experience Platform-fall kräver att dessa olika bibliotek är beroende av varandra, vilket ger rörelsefrihet vid driftsättningen.
 
-Även om taggar i Platform gör det så enkelt att driftsätta och hantera dessa bibliotek finns det fortfarande problem med:
+Även om taggar i Experience Platform gör det så enkelt att driftsätta och hantera dessa bibliotek finns det fortfarande problem med:
 
 * Biblioteksstorlek (för mycket Adobe-kod på en sida)
 * Prestanda (det tar för lång tid att läsa in webbplatser)
@@ -124,7 +124,7 @@ Det innebär att om du bestämmer dig för att använda Adobe Experience Platfor
 
 ## Kan jag migrera ECID:n när jag börjar använda Web SDK så att webbplatsens besökare inte börjar visas som nya besökare?
 
-Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna för ID-migrering i [identitetshandboken för SDK på plattformen](/help/web-sdk/identity/overview.md#id-migration) om du vill ha mer information.
+Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna för ID-migrering i [identitetshandboken för Experience Platform Web SDK](/help/web-sdk/identity/overview.md#id-migration) om du vill ha mer information.
 
 ## Hur skiljer sig Web SDK från taggar?
 

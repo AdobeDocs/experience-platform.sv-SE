@@ -3,9 +3,9 @@ title: SAP Commerce-anslutning
 description: Använd SAP Commerce-målkopplingen för att uppdatera kundposter i SAP-kontot.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2155'
+source-wordcount: '2177'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,13 @@ Instruktioner för autentisering till din [!DNL SAP Commerce]-instans finns län
 
 För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL SAP Commerce] finns det ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
-[!DNL SAP Commerce]-kunder lagrar information om personer eller organisationsenheter som interagerar med ditt företag. Ditt team använder de kunder som finns i [!DNL SAP Commerce] för att skapa målgrupper i Experience Platform. När dessa målgrupper har skickats till [!DNL SAP Commerce] uppdateras deras information och varje kund tilldelas en egenskap med dess värde som målgruppsnamn som anger vilken målgrupp kunden tillhör.
+[!DNL SAP Commerce]-kunder lagrar information om personer eller organisationsenheter som interagerar med ditt företag. Ditt team använder de kunder som finns i [!DNL SAP Commerce] för att skapa Experience Platform-målgrupper. När dessa målgrupper har skickats till [!DNL SAP Commerce] uppdateras deras information och varje kund tilldelas en egenskap med dess värde som målgruppsnamn som anger vilken målgrupp kunden tillhör.
 
 ## Förhandskrav {#prerequisites}
 
-I avsnitten nedan finns information om alla krav som du måste konfigurera i Experience Platform och [!DNL SAP Commerce]. Här finns även information som du måste samla in innan du kan arbeta med målet [!DNL SAP Commerce].
+I avsnitten nedan finns information om alla krav som du måste konfigurera i Experience Platform och [!DNL SAP Commerce]. Här finns också information som du måste samla in innan du kan arbeta med målet [!DNL SAP Commerce].
 
-### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
+### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
 Innan du aktiverar data till målet [!DNL SAP Commerce] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
@@ -36,15 +36,15 @@ Se Experience Platform-dokumentationen för schemafältgruppen [Information om m
 
 ### Krav för målet [!DNL SAP Commerce] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Platform till ditt [!DNL SAP Commerce]-konto:
+Observera följande krav för att kunna exportera data från Experience Platform till ditt [!DNL SAP Commerce]-konto:
 
 #### Du måste ha ett [!DNL SAP Subscription Billing]-konto {#prerequisites-account}
 
-Du måste ha ett [!DNL SAP Subscription Billing]-konto för att kunna exportera data från Platform till ditt [!DNL SAP Commerce]-konto. Om du inte har ett giltigt faktureringskonto kontaktar du kontohanteraren för [!DNL SAP]. Mer information finns i dokumentet [[!DNL SAP] Plattformskonfiguration](https://help.sap.com/doc/5fd179965d5145fbbe7f2a7aa1272338/latest/en-US/PlatformConfiguration.pdf).
+Om du vill exportera data från Experience Platform till ditt [!DNL SAP Commerce]-konto måste du ha ett [!DNL SAP Subscription Billing]-konto. Om du inte har ett giltigt faktureringskonto kontaktar du kontohanteraren för [!DNL SAP]. Mer information finns i dokumentet [[!DNL SAP] Plattformskonfiguration](https://help.sap.com/doc/5fd179965d5145fbbe7f2a7aa1272338/latest/en-US/PlatformConfiguration.pdf).
 
 #### Generera en tjänstnyckel {#prerequisites-service-key}
 
-* Med tjänstnyckeln [!DNL SAP Commerce] kan du komma åt API:t för [!DNL SAP Subscription Billing] via Experience Platform. Se [!DNL SAP Commerce] [skapa en tjänstnyckel med klient-ID och klienthemlighet](https://help.sap.com/docs/CLOUD_TO_CASH_OD/1216e7b79c984675b0a6f0005e351c74/87c11a0f5dc3494eaf3baa355925c030.html#create-a-service-key-with-client-id-and-client-secret) för att skapa en tjänstnyckel. [!DNL SAP Commerce] kräver följande:
+* Tjänstnyckeln [!DNL SAP Commerce] ger dig åtkomst till API:t för [!DNL SAP Subscription Billing] via Experience Platform. Se [!DNL SAP Commerce] [skapa en tjänstnyckel med klient-ID och klienthemlighet](https://help.sap.com/docs/CLOUD_TO_CASH_OD/1216e7b79c984675b0a6f0005e351c74/87c11a0f5dc3494eaf3baa355925c030.html#create-a-service-key-with-client-id-and-client-secret) för att skapa en tjänstnyckel. [!DNL SAP Commerce] kräver följande:
    * Klient-ID
    * Klienthemlighet
    * URL. URL-mönstret är följande: `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. Det här värdet används senare för att hämta värden för `Region` och `Endpoint`.
@@ -79,9 +79,9 @@ Du måste ha ett [!DNL SAP Subscription Billing]-konto för att kunna exportera 
 
 #### Skapa anpassade referenser i [!DNL SAP Subscription Billing] {#prerequisites-custom-reference}
 
-Om du vill uppdatera Experience Platform-målgruppsstatusen i [!DNL SAP Subscription Billing] behöver du ett anpassat referensfält för varje målgrupp som valts i Platform.
+Om du vill uppdatera Experience Platform målgruppsstatus i [!DNL SAP Subscription Billing] behöver du ett anpassat referensfält för varje målgrupp som valts i Experience Platform.
 
-Om du vill skapa anpassade referenser loggar du in på ditt [!DNL SAP Subscription Billing]-konto och navigerar till sidan **[Huvuddata och konfiguration]** > **[Anpassade referenser]**. Välj sedan **[!UICONTROL Create]** för att lägga till en ny referens för varje publik som valts i Platform. Du behöver dessa referensfältnamn i efterföljande [schemaläggning av målgruppsexport och exempel](#schedule-segment-export-example) -steg.
+Om du vill skapa anpassade referenser loggar du in på ditt [!DNL SAP Subscription Billing]-konto och navigerar till sidan **[Huvuddata och konfiguration]** > **[Anpassade referenser]**. Välj sedan **[!UICONTROL Create]** för att lägga till en ny referens för varje målgrupp som valts i Experience Platform. Du behöver dessa referensfältnamn i efterföljande [schemaläggning av målgruppsexport och exempel](#schedule-segment-export-example) -steg.
 
 Ett exempel på hur du skapar en anpassad **[!UICONTROL Reference Type]** i [!DNL SAP Subscription Billing] visas nedan:
 ![Bild som visar var en anpassad referens ska skapas i SAP-prenumerationsfakturering.](../../assets/catalog/ecommerce/sap-commerce/create-custom-reference.png)
@@ -115,13 +115,13 @@ API-begäranden till [!DNL SAP Cloud Management service] omfattas av [hastighets
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
-Det här målet stöder aktivering av alla målgrupper som genereras via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md).
+Det här målet stöder aktivering av alla målgrupper som genereras via Experience Platform [segmenteringstjänst](../../../segmentation/home.md).
 
 Detta mål stöder även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Stöds | Beskrivning |
 | ------------- | --------- | ----------- |
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -132,8 +132,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Platform uppdateras motsvarande ytterligare [!DNL SAP Commerce]-attribut med målgruppsstatus från Platform.</li></ul> |
-| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutaren uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Experience Platform uppdateras motsvarande ytterligare [!DNL SAP Commerce]-attribut med målgruppsstatus från Experience Platform.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -159,14 +159,14 @@ Fyll i de obligatoriska fälten nedan. Mer information finns i avsnittet [Skapa 
 | **[!UICONTROL Region]** | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om till exempel `url` är `https://eu10.revenue.cloud.sap/api` behöver du `eu10`. |
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
-![Bild från plattformsgränssnitt som visar hur du autentiserar till målet.](../../assets/catalog/ecommerce/sap-commerce/authenticate-destination.png)
+![Bild från Experience Platform-gränssnittet som visar hur du autentiserar till målet.](../../assets/catalog/ecommerce/sap-commerce/authenticate-destination.png)
 
 Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]** med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
 ### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
-![Bild från plattformsgränssnitt som visar målinformationen som ska fyllas efter autentiseringen.](../../assets/catalog/ecommerce/sap-commerce/destination-details.png)
+![Bild från Experience Platform-användargränssnitt som visar målinformationen som ska fyllas efter autentiseringen.](../../assets/catalog/ecommerce/sap-commerce/destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -189,36 +189,36 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa attribut och identiteter {#map}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL SAP Commerce] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL SAP Commerce]:
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL SAP Commerce] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet. Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL SAP Commerce]:
 
 #### Mappa `customerNumberSAP`-identiteten
 
 Identiteten `customerNumberSAP` är en obligatorisk mappning för det här målet. Följ stegen nedan för att mappa den:
 
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. Nu kan du se en ny mappningsrad på skärmen.
-   ![Skärmbild för plattformsgränssnitt med knappen för att lägga till ny mappning markerad.](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
+   ![Experience Platform UI, skärmbild med knappen Lägg till ny mappning markerad.](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. I fönstret **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select identity namespace]** och sedan `customerNumberSAP`.
-   ![Plattformsgränssnitt, skärmbild som väljer e-post som ett källattribut att mappa som identitet.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-identity.png)
+   ![Experience Platform UI, skärmbild där e-post väljs som ett källattribut att mappa som identitet.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-identity.png)
 1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och sedan `customerNumber`-identiteten.
-   ![Plattformsgränssnitt, skärmbild som väljer e-post som målattribut att mappa som identitet.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-identity.png)
+   ![Experience Platform UI, skärmbild som markerar e-post som ett målattribut att mappa som identitet.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-identity.png)
 
 | Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `IdentityMap: customerNumberSAP` | `Identity: customerNumber` | Ja |
 
 Ett exempel med identitetsmappning visas nedan:
-![Bild från plattformsgränssnitt som visar ett exempel på identitetsmappning för customerNumber.](../../assets/catalog/ecommerce/sap-commerce/mapping-identities.png)
+![Bild från Experience Platform UI som visar ett exempel på identitetsmappning för customerNumber.](../../assets/catalog/ecommerce/sap-commerce/mapping-identities.png)
 
 #### Mappningsattribut
 
 Om du vill lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL SAP Subscription Billing]-konto upprepar du stegen nedan:
 
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. Nu kan du se en ny mappningsrad på skärmen.
-   ![Skärmbild för plattformsgränssnitt med knappen för att lägga till ny mappning markerad.](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
+   ![Experience Platform UI, skärmbild med knappen Lägg till ny mappning markerad.](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. I fönstret **[!UICONTROL Select source field]** väljer du kategorin **[!UICONTROL Select attributes]** och väljer XDM-attributet.
-   ![Plattformens användargränssnitt väljer efternamn som källattribut.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-attribute.png)
+   ![Experience Platform UI, skärmbild där efternamn väljs som källattribut.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-attribute.png)
 1. I fönstret **[!UICONTROL Select target field]** väljer du kategorin **[!UICONTROL Select custom attributes]** och skriver namnet på attributet [!DNL SAP Subscription Billing] i listan med kundens [schema](https://api.sap.com/api/BusinessPartner_APIs/schema)-attribut.
-   ![Skärmbild för plattformsgränssnitt där lastName definieras som målattribut.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-attribute.png)
+   ![Experience Platform UI, skärmbild där lastName definieras som målattribut.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-attribute.png)
 
 >[!IMPORTANT]
 >
@@ -261,7 +261,7 @@ Du kan sedan lägga till ytterligare mappningar mellan XDM-profilschemat och [!D
 | `xdm: workAddress.city` | `Attribute: city` | Nej |
 
 Ett exempel med både obligatoriska och valfria attributmappningar där kunden är en individ visas nedan:
-![Bild från plattformsgränssnitt som visar ett exempel med både obligatoriska och valfria attributmappningar där kunden är en individ.](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-individual.png)
+![Bild från Experience Platform-gränssnitt som visar ett exempel med både obligatoriska och valfria attributmappningar där kunden är en individ.](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-individual.png)
 
 >[!TAB Företagskund]
 
@@ -271,7 +271,7 @@ Ett exempel med både obligatoriska och valfria attributmappningar där kunden �
 | `xdm: workAddress.city` | `Attribute: city` | Nej |
 
 Ett exempel med både obligatoriska och valfria attributmappningar där kunden är ett företag visas nedan:
-![Bild från plattformsgränssnitt som visar ett exempel med både obligatoriska och valfria attributmappningar där kunden är ett företag.](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-corporate.png)
+![Bild från Experience Platform-gränssnitt som visar ett exempel med både obligatoriska och valfria attributmappningar där kunden är ett företag.](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-corporate.png)
 
 >[!ENDTABS]
 
@@ -279,10 +279,10 @@ Välj **[!UICONTROL Next]** när du är klar med mappningarna för målanslutnin
 
 ### Schemalägg målgruppsexport och exempel {#schedule-segment-export-example}
 
-När du utför steget [Schemalägg målgruppsexport](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa plattformsmålgrupper till [attributen](#prerequisites-attribute) i [!DNL SAP Subscription Billing].
+När du utför steget [Schemalägg målgruppsexport](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa Experience Platform-målgrupper till [attributen](#prerequisites-attribute) i [!DNL SAP Subscription Billing].
 
 Ett exempel på exportsteget för schemalagda målgrupper, med platsen för [!DNL SAP Commerce] **[!UICONTROL Mapping ID]** markerad, visas nedan:
-![Bild från plattform som visar schemalagd målgruppsexport med mappnings-ID:n ifyllda.](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export.png)
+![Bild från Experience Platform som visar schemalagd målgruppsexport med mappnings-ID:n ifyllda.](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export.png)
 
 Det gör du genom att markera varje segment och sedan ange namnet på den anpassade referensen från [!DNL SAP Subscription Billing] i fältet [!DNL SAP Commerce] **[!UICONTROL Mapping ID]** för målkoppling. Mer information om hur du skapar anpassade referenser finns i avsnittet [Skapa anpassade referenser i [!DNL SAP Subscription Billing]](#prerequisites-custom-reference).
 
@@ -297,11 +297,11 @@ Ett exempel **[!UICONTROL Reference Type]** från [!DNL SAP Subscription Billing
 ![Bild som visar var en anpassad referens ska skapas i SAP-prenumerationsfakturering.](../../assets/catalog/ecommerce/sap-commerce/create-custom-reference.png)
 
 Ett exempel på exportsteget för schemalagda målgrupper, med en vald målgrupp och motsvarande [!DNL SAP Commerce] **[!UICONTROL Mapping ID]** markerat, visas nedan:
-![Bild från plattform som visar schemalagd målgruppsexport med mappnings-ID:n ifyllda.](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export-example.png)
+![Bild från Experience Platform som visar schemalagd målgruppsexport med mappnings-ID:n ifyllda.](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export-example.png)
 
 Som du kan se ska värdet i fältet **[!UICONTROL Mapping ID]** exakt matcha värdet [!DNL SAP Subscription Billing] **[!UICONTROL Reference Type]** .
 
-Upprepa det här avsnittet för varje aktiverad publik på plattformen.
+Upprepa det här avsnittet för varje aktiverad Experience Platform-publik.
 
 Baserat på bilden ovan där du har valt två målgrupper är mappningen följande:
 

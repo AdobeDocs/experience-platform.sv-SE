@@ -2,9 +2,9 @@
 title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 8d57694ffe0ac962b988ebcf9f35fbb7bf816c04
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1287'
+source-wordcount: '1296'
 ht-degree: 3%
 
 ---
@@ -24,11 +24,11 @@ ht-degree: 3%
 
 ## Destinationer och källor {#destinations-and-sources}
 
-En av de viktigaste funktionerna i Platform är att inhämta era egna data och aktivera dem för era affärsbehov. Använd [källor](../sources/home.md) för att importera data till plattformen och destinationer för att exportera data från plattformen.
+En av de viktigaste funktionerna i Experience Platform är att inhämta era egna data och aktivera dem för era affärsbehov. Använd [källor](../sources/home.md) för att importera data till Experience Platform och mål för att exportera data från Experience Platform.
 
 ## Destinationssteg {#steps}
 
-* Välj från en [självbetjäningskatalog](./catalog/overview.md) för alla mål som är tillgängliga i plattformen.
+* Välj från en [självbetjäningskatalog](./catalog/overview.md) för alla mål som är tillgängliga i Experience Platform.
 * Använd destinationer för att skicka målgrupper eller datauppsättningar till automatiserade marknadsföringsplattformar, digitala annonsnätverk med mera.
 * Schemalägg dataexport till dina önskade destinationer vid regelbundna tidpunkter.
 
@@ -38,7 +38,7 @@ Med kontrollerna på [målarbetsytan](./ui/destinations-workspace.md) kan du:
 
 * Bläddra i katalogen med destinationsplattformar där du kan aktivera dina data;
 * Skapa, redigera, aktivera och inaktivera dataflöden till destinationerna i katalogen,
-* Skapa ett konto på en lagringsplats eller länkplattform till kontot på målplattformen.
+* Skapa ett konto på en lagringsplats eller länka Experience Platform till kontot på målplattformen.
 * Välj vilka målgrupper eller datamängder som ska aktiveras för destinationer,
 * Välj vilka [XDM-fält (Experience Data Model)](../xdm/home.md) som ska exporteras när målgrupper aktiveras till vissa mål, som e-postmarknadsföringsmål, CRM-plattformar, molnlagringsplatser och mycket mer.
 * Aktivera olika typer av profiler och målgrupper för destinationer - personer, konton och potentiella kunder.
@@ -55,7 +55,7 @@ För partnerskapade och underhållna anslutningar innebär detta att problem med
 
 ## Destinationer och åtkomstkontroller {#access-controls}
 
-Målfunktionerna i Platform fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Om du vill ha information om de enskilda behörigheterna går du till [åtkomstkontrollen i Adobe Experience Platform](../access-control/home.md) och rullar ned till tabellen längst ned på sidan.
+Målfunktionerna i Experience Platform fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Om du vill ha information om de enskilda behörigheterna går du till [åtkomstkontrollen i Adobe Experience Platform](../access-control/home.md) och rullar ned till tabellen längst ned på sidan.
 
 Följande tabell visar vilka behörigheter och behörighetskombinationer som krävs för att utföra vissa åtgärder på mål.
 
@@ -102,14 +102,14 @@ Du kan också validera om data kommer fram till målet. De flesta måldokumentat
 
 ## Begränsningar för datastyrning när data aktiveras till destinationer {#data-governance}
 
-Datastyrningen används för plattformsdestinationer genom:
+Datastyrning tillämpas för Experience Platform-destinationer genom:
 
 * *Marknadsföringsåtgärder* som du kan välja i arbetsflödet för att skapa mål;
 * *Dataanvändningsprinciper* som begränsar data som innehåller vissa användningsetiketter från att aktiveras till mål med vissa marknadsföringsåtgärder.
 
-Mer information om [marknadsföringsåtgärder](../data-governance/policies/overview.md) och [att lösa datapolicyöverträdelser](../data-governance/enforcement/auto-enforcement.md) finns i dokumentationen om datastyrning i plattformsdokumentation.
+Mer information om [marknadsföringsåtgärder](../data-governance/policies/overview.md) och [att lösa datapolicyöverträdelser](../data-governance/enforcement/auto-enforcement.md) finns i Datastyrning i Experience Platform-dokumentationen.
 
-Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i Platform:
+Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i Experience Platform:
 
 * [Advertising-destinationer - Google Ad Manager](./catalog/advertising/google-ad-manager.md)
 * [Advertising-destinationer - Google Ads](./catalog/advertising/google-ads-destination.md)

@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Självbetjänade källor (Batch SDK) API-guide
 description: Det här dokumentet innehåller en översikt över processen att skapa en ny källa, inklusive steg för hur du hämtar, skriver och skickar en ny anslutningsspecifikation med API:t för Flow Service.
 exl-id: 7e827989-207b-41e2-84d6-5ecb754bebb6
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller en översikt över processen att skapa en ny källa, inklusive steg för hur du skriver och skickar en ny anslutningsspecifikation med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom plattformen. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
 
 API:t [!DNL Flow Service] innehåller flera slutpunkter som gör att du programmässigt kan hantera anslutnings- och flödesspecifikationerna för en ny källa som du integrerar via självbetjäningskällor (Batch SDK).
 
@@ -36,7 +36,7 @@ Detaljerade instruktioner finns i guiden om [uppdatering av flödesspecifikation
 
 ## Uppdatera anslutningsspecifikationen
 
-Du kan uppdatera din anslutningsspecifikation genom att göra en PUT-begäran till [!DNL Flow Service]-API:t. Mer information finns i guiden om [att uppdatera anslutningsspecifikationerna](./update-connection-specs.md).
+Du kan uppdatera anslutningsspecifikationen genom att göra en PUT-begäran till API:t [!DNL Flow Service]. Mer information finns i guiden om [att uppdatera anslutningsspecifikationerna](./update-connection-specs.md).
 
 ## Skicka din källa
 
@@ -44,4 +44,4 @@ Om du vill skicka källan för integrering till Experience Platform måste du f�
 
 ## Nästa steg
 
-Om du vill börja använda API:t [!DNL Flow Service] och skapa en ny källa via självbetjäningskällor (Batch SDK) läser du [ komma igång-guiden](./getting-started.md) och väljer sedan en av slutpunktshandböckerna för att lära dig hur du använder specifika slutpunkter.
+Om du vill börja använda API:t [!DNL Flow Service] och skapa en ny källa via självbetjäningskällor (Batch SDK) läser du [Komma igång-guiden](./getting-started.md) och väljer sedan en av slutpunktshandböckerna för att lära dig hur du använder specifika slutpunkter.

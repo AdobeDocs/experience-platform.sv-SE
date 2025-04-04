@@ -1,10 +1,10 @@
 ---
 title: Frågemallar
-description: Frågemallar är återanvändbara sparade SQL-frågor som kan återanvändas av andra användare för att spara tid och arbete. De kan skapas med Frågeredigeraren eller API:t för frågetjänsten och är tillgängliga för användning på alla Experience Platform-datauppsättningar.
+description: Frågemallar är återanvändbara sparade SQL-frågor som kan återanvändas av andra användare för att spara tid och arbete. De kan skapas med Frågeredigeraren eller API:t för frågetjänster och är tillgängliga för användning på alla Experience Platform-datauppsättningar.
 exl-id: e74d058f-bb89-45ed-83cc-2e3a33401270
-source-git-commit: 1a44be939a4678078b414658199472e07dee153b
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
@@ -17,11 +17,11 @@ Det här dokumentet innehåller den information som behövs för att skapa fråg
 
 ## Förhandskrav
 
-Du måste ha behörigheten [!UICONTROL Manage queries] aktiverad för att få åtkomst till Frågeredigeraren och visa frågeinstrumentpanelen i plattformsgränssnittet. Behörigheten aktiveras via Adobe [Admin Console](https://adminconsole.adobe.com/). Kontakta organisationens administratör om du inte har administratörsbehörighet för att aktivera den här behörigheten. I åtkomstkontrollsdokumentationen finns [fullständiga instruktioner om hur du lägger till behörigheter via Admin Console](../../access-control/home.md).
+Du måste ha behörigheten [!UICONTROL Manage queries] aktiverad för att få åtkomst till Frågeredigeraren och visa frågeinstrumentpanelen i Experience Platform användargränssnitt. Behörigheten aktiveras via Adobe [Admin Console](https://adminconsole.adobe.com/). Kontakta organisationens administratör om du inte har administratörsbehörighet för att aktivera den här behörigheten. I åtkomstkontrollsdokumentationen finns [fullständiga instruktioner om hur du lägger till behörigheter via Admin Console](../../access-control/home.md).
 
 ## Skapa en frågemall
 
-Du kan skapa frågemallar på två sätt, antingen genom att göra en POST-förfrågan till frågetjänstens API `query-templates`-slutpunkt eller genom att skriva, namnge och spara en fråga med Frågeredigeraren.
+Du kan skapa frågemallar med två metoder, antingen genom att göra en POST-begäran till frågetjänstens API `query-templates`-slutpunkt eller genom att skriva, namnge och spara en fråga med Frågeredigeraren.
 
 ### Använda Frågeredigeraren för att redigera och spara en fråga som en mall
 
@@ -33,7 +33,7 @@ I dokumentationen finns instruktioner om hur du använder Frågeredigeraren för
 
 ## Bläddra bland frågemallar {#browse}
 
-Välj **[!UICONTROL Templates]** på arbetsytan Frågor i plattformsgränssnittet för att visa listan över tillgängliga sparade frågor.
+På arbetsytan Frågor i Experience Platform-gränssnittet väljer du **[!UICONTROL Templates]** för att visa listan över tillgängliga sparade frågor.
 
 ![Arbetsytan för frågor med fliken Mallar markerad.](../images/ui/query-templates/query-templates.png)
 
@@ -55,7 +55,7 @@ I dokumentationen finns instruktioner om [hur du skapar en frågemall](../api/qu
 
 >[!NOTE]
 >
->Mallar som skapas med API:t visas också på fliken Mallar för plattformsgränssnittstjänst.
+>Mallar som skapas med API:t visas också på fliken Mallar för Experience Platform UI-frågetjänst.
 
 ## Nästa steg
 

@@ -2,9 +2,9 @@
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1045'
+source-wordcount: '1049'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Destinationsändringslogg {#changelog}
 
-I Experience Platform från juli 2023 har målet [!DNL Azure Blob] nya funktioner enligt nedan:
+Med Experience Platform från juli 2023 har målet [!DNL Azure Blob] nya funktioner enligt nedan:
 
 * [Exportstöd för datauppsättningar](/help/destinations/ui/export-datasets.md).
 * Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
@@ -22,11 +22,11 @@ I Experience Platform från juli 2023 har målet [!DNL Azure Blob] nya funktione
 
 ## Översikt {#overview}
 
-[!DNL Azure Blob] (kallas nedan [!DNL Blob]) är en Microsoft objektlagringslösning för molnet. I den här självstudiekursen beskrivs hur du skapar ett [!DNL Blob]-mål med användargränssnittet i [!DNL Platform].
+[!DNL Azure Blob] (kallas nedan [!DNL Blob]) är en Microsoft objektlagringslösning för molnet. I den här självstudiekursen beskrivs hur du skapar ett [!DNL Blob]-mål med användargränssnittet i [!DNL Experience Platform].
 
 ## Anslut till ditt [!UICONTROL Azure Blob]-lagringsutrymme via API eller användargränssnittet {#connect-api-or-ui}
 
-* Läs avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan om du vill ansluta till lagringsplatsen [!UICONTROL Azure Blob] med hjälp av användargränssnittet för plattformen.
+* Om du vill ansluta till lagringsplatsen [!UICONTROL Azure Blob] med Experience Platform användargränssnitt läser du avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
 * Om du vill ansluta till din [!UICONTROL Azure Blob]-lagringsplats programmatiskt läser du [Aktivera målgrupper till filbaserade mål med hjälp av API-självstudiekursen för Flow-tjänsten](../../api/activate-segments-file-based-destinations.md).
 
 ## Komma igång
@@ -46,7 +46,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -66,14 +66,14 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
-* Så här [exporterar du datauppsättningar med användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här [exporterar du datauppsättningar med Experience Platform användargränssnitt](/help/destinations/ui/export-datasets.md).
 * Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service ](/help/destinations/api/export-datasets.md).
 
 ## Filformat för exporterade data {#file-format}
 
-När du exporterar *målgruppsdata* skapar Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
+När du exporterar *målgruppsdata* skapar Experience Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
 
-När du exporterar *datauppsättningar* skapar Platform en `.parquet` - eller `.json` -fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
+När du exporterar *datauppsättningar* skapar Experience Platform en `.parquet`- eller `.json`-fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
 ## Anslut till målet {#connect}
 

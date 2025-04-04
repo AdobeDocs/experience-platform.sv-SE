@@ -1,13 +1,13 @@
 ---
 title: Skapa en  [!DNL Oracle NetSuite Entities] källanslutning i användargränssnittet
-description: Lär dig hur du skapar en källanslutning för NetSuite Entities i Oraclet med Adobe Experience Platform-gränssnittet.
+description: Lär dig hur du skapar en källanslutning för Oracle NetSuite Entities med Adobe Experience Platform-gränssnittet.
 hide: true
 hidefromtoc: true
 badge: Beta
 exl-id: ce0ea37f-16e0-4aef-9809-72c0b11e0440
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '690'
 ht-degree: 1%
 
 ---
@@ -37,11 +37,11 @@ Om du redan har ett giltigt [!DNL Oracle NetSuite]-konto kan du hoppa över rest
 
 ## Anslut ditt [!DNL Oracle NetSuite Activities]-konto {#connect-account}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *Marknadsföringsautomatisering* väljer du **[!DNL Oracle NetSuite Entities]** och sedan **[!UICONTROL Add data]**.
 
-![Skärmbild för plattformsgränssnitt för katalog med Oracle NetSuite-enhetskort](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/catalog-card.png)
+![Experience Platform UI, skärmbild för katalog med Oracle NetSuite Entities-kort](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/catalog-card.png)
 
 Sidan **[!UICONTROL Connect Oracle NetSuite Entities account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -53,17 +53,17 @@ Sidan **[!UICONTROL Connect Oracle NetSuite Entities account]** visas. På den h
 
 Om du vill använda ett befintligt konto väljer du det [!DNL Oracle NetSuite Entities]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Skärmbild för plattformsgränssnitt för att ansluta Oracle NetSuite-entiteter till ett befintligt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/existing.png)
+![Experience Platform UI-skärmbild för att ansluta Oracle NetSuite-entiteter till ett befintligt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/existing.png)
 
 ### Nytt konto {#new-account}
 
 Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Skärmbild för plattformsgränssnitt för att ansluta Oracle NetSuite-entiteter till ett nytt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/new.png)
+![Experience Platform UI-skärmbild för att ansluta Oracle NetSuite Entities-kontot till ett nytt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/new.png)
 
 ### Markera data
 
-Markera sedan den objekttyp som du vill importera till Experience Platform.
+Välj sedan den objekttyp som du vill importera till Experience Platform.
 
 | Enhetstyp | Beskrivning |
 | --- | --- |
@@ -74,17 +74,17 @@ Markera sedan den objekttyp som du vill importera till Experience Platform.
 
 >[!TAB Kontakt]
 
-![Skärmbild för plattformsgränssnitt för Oracle Netsuite-entiteter som visar konfigurationen med kontaktalternativet markerat](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/select-data-contact.png)
+![Skärmbild för Experience Platform-gränssnitt för Oracle Netsuite-enheter som visar konfigurationen med alternativet Kontakt markerat](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/select-data-contact.png)
 
 >[!TAB Kund]
 
-![Skärmbild för plattformsgränssnitt för Oracle Netsuite-enheter som visar konfigurationen med kundalternativet markerat](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/select-data-customer.png)
+![Skärmbild för Experience Platform-gränssnitt för Oracle Netsuite-enheter som visar konfigurationen med alternativet Kund valt](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-entities/select-data-customer.png)
 
 >[!ENDTABS]
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle NetSuite Entities]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att få in data för automatiserad marknadsföring i plattformen](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle NetSuite Entities]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta marknadsföringsdata till Experience Platform](../../dataflow/marketing-automation.md).
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -92,7 +92,7 @@ Avsnitten nedan innehåller ytterligare resurser som du kan referera till när d
 
 ### Mappning {#mapping}
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 >[!NOTE]
 >

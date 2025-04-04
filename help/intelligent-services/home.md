@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Intelligent Services - översikt
 description: Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskap. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
 exl-id: db080c83-2a45-4fd5-8502-d9cae2a063be
-source-git-commit: d6a4b149b911cd6e7dbbd6c1289fce64be76b506
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '506'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskap. Dessutom kan marknadsförare aktivera prognoser i [!DNL Adobe Experience Cloud]-, [!DNL Adobe Experience Platform]- och tredjepartsprogram.
 
-Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI- och kunds-AI.
+Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI och Customer AI.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32654?learn=on&quality=12)
 
@@ -30,7 +30,7 @@ Intelligenta tjänster, som bygger på [!DNL Adobe Experience Platform], ger mar
 
 ### Kostnadseffektiv snabbhet på marknaden
 
-Adobe har AI/ML-expertis i kombination med djupgående CXM-upplevelser, och Intelligent Services har utformats särskilt för marknadsförare så att de omedelbart kan få AI/ML på plats för vanliga fall av marknadsföring utan att behöva anställa kompetenta och dyra datavetare, vilket snabbar upp time to market och åtgärdbarhet.
+Adobe har AI/ML-expertis i kombination med djupgående CXM-upplevelser, och Intelligent Services har utformats särskilt för marknadsförare så att de omedelbart kan få AI/ML i bruk för vanliga fall av marknadsföring utan att behöva anställa kompetenta och dyra datavetare, vilket snabbar upp time to market och åtgärdbarhet.
 
 ### Exaktare prediktiva insikter
 
@@ -52,7 +52,7 @@ Marknadsföringsanalytikern konfigurerar önskade prognoser genom att specificer
 
 ### Förutspå
 
-När modellerna har avslutat utbildningen och poängsättningen skrivs poängen tillbaka till Platform.
+Efter att modellerna har avslutat kursen och poängsättningen skrivs poängen tillbaka till Experience Platform.
 
 ### Vidta åtgärder
 
@@ -60,4 +60,4 @@ Slutligen kan du bestämma vilka åtgärder som ska vidtas med prognoserna, till
 
 ## Nästa steg
 
-För närvarande erbjuder Intelligent Services Attribution AI och AI. Med Attribution AI kan marknadsförarna på ett intelligent sätt effektivisera marknadsföringen i olika kanaler och kampanjer. Mer information om Attribution AI finns i [Attribution AI overview](./attribution-ai/overview.md). Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om AI för kunder finns i [Översikt över AI för kunder](./customer-ai/overview.md).
+För närvarande erbjuder Intelligent Services attribuerings-AI och kundens AI. Med AI för attribuering kan marknadsförarna på ett intelligent sätt öka marknadsföringens effektivitet i alla kanaler och kampanjer. Om du vill veta mer om Attribution AI går du till [AI-översikten för Attribution](./attribution-ai/overview.md). Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om AI för kunder finns i [Översikt över AI för kunder](./customer-ai/overview.md).

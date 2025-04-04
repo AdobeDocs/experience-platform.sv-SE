@@ -2,26 +2,26 @@
 keywords: Experience Platform;profil;kundprofil i realtid;enhetlig profil;Enhetlig profil;Enhetlig;Profil;rtcp;aktivera profil;Aktivera profil;Unionsschema;UNIONSPROFIL;Unionsprofil
 title: Användargränssnittshandbok för unionsschema
 type: Documentation
-description: I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket unionsschema som helst i organisationen och förhandsgranska fält, identiteter, relationer och bidragande scheman för en viss klass. Den här guiden ger detaljerad information om hur du visar och utforskar unionens scheman med hjälp av plattformsgränssnittet.
+description: I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket unionsschema som helst i organisationen och förhandsgranska fält, identiteter, relationer och bidragande scheman för en viss klass. Den här guiden innehåller detaljerad information om hur du visar och utforskar fackliga scheman med hjälp av Experience Platform användargränssnitt.
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1183'
+source-wordcount: '1188'
 ht-degree: 0%
 
 ---
 
 # Användargränssnittshandbok för [!UICONTROL Union schema]
 
-I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket unionsschema som helst i organisationen och förhandsgranska fält, identiteter, relationer och bidragande scheman för en viss klass. Den här guiden ger detaljerad information om hur du visar och utforskar unionens scheman med hjälp av plattformsgränssnittet.
+I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket unionsschema som helst i organisationen och förhandsgranska fält, identiteter, relationer och bidragande scheman för en viss klass. Den här guiden innehåller detaljerad information om hur du visar och utforskar fackliga scheman med hjälp av Experience Platform användargränssnitt.
 
 ## Komma igång
 
 Den här gränssnittshandboken kräver förståelse av de olika [!DNL Experience Platform]-tjänsterna som används för att hantera kundprofildata i realtid. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
 
 * [[!DNL Real-Time Customer Profile]](../home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor när de hämtas till [!DNL Platform].
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor när de hämtas till [!DNL Experience Platform].
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
 ## Förstå fackscheman
 
@@ -33,7 +33,7 @@ Att arbeta med fackliga scheman kräver en djupgående förståelse av XDM-schem
 
 ## Visa unionskartor
 
-Om du vill navigera till unionsscheman i plattformsgränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Union Schema]**. Fliken [!UICONTROL Union Schema] öppnas och visar unionsschemat för den valda klassen.
+Om du vill navigera till unionsscheman i Experience Platform-användargränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Union Schema]**. Fliken [!UICONTROL Union Schema] öppnas och visar unionsschemat för den valda klassen.
 
 ![Sidan Unionens schema visas med fliken Profil och Unionsschema markerad.](../images/union-schema/landing.png)
 
@@ -63,7 +63,7 @@ Mer information om datauppsättningar, inklusive hur du visar datauppsättningsa
 
 ## Visa bidragande scheman
 
-Du kan också visa vilka specifika scheman som bidrar till unionsschemat genom att välja **[!UICONTROL All contributing schemas]** för att expandera listan med scheman. Beroende på vilken klass du har valt och hur många scheman din organisation har skapat inom Platform kan det vara en kort lista som innehåller ett enda schema eller en lång lista med många scheman.
+Du kan också visa vilka specifika scheman som bidrar till unionsschemat genom att välja **[!UICONTROL All contributing schemas]** för att expandera listan med scheman. Beroende på vilken klass du har valt och hur många scheman din organisation har skapat inom Experience Platform kan det vara en kort lista som innehåller ett enda schema eller en lång lista med många scheman.
 
 ![Listan med scheman som bidrar till unionsschemat är markerad.](../images/union-schema/contributing-schemas.png)
 
@@ -99,4 +99,4 @@ Om du väljer ett relationsfält från listan uppdateras det visade schemat efte
 
 ## Nästa steg
 
-Genom att läsa den här guiden kan du nu visa och navigera i unionsscheman med hjälp av användargränssnittet för [!DNL Experience Platform]. Mer information om scheman, inklusive hur de används i hela plattformen, får du genom att läsa [XDM-systemöversikten](../../xdm/home.md).
+Genom att läsa den här guiden kan du nu visa och navigera i unionsscheman med hjälp av användargränssnittet för [!DNL Experience Platform]. Mer information om scheman, inklusive hur de används i hela Experience Platform, får du genom att läsa [XDM-systemöversikten](../../xdm/home.md).

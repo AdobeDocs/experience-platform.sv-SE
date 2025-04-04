@@ -2,9 +2,9 @@
 title: Taggkonsekvens - testreferens
 description: Lär dig hur granskaren testar taggens enhetlighet i Adobe Experience Platform Debugger.
 exl-id: 642b0c49-a7c7-4142-8189-67f00ed50015
-source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '119'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ Den här referensen innehåller mer information om hur revisionsfunktionen i Ado
 
 >[!NOTE]
 >
->Mer information om granskartester i Platform Debugger finns i [översikten över funktionen ](./overview.md) hos revisorn.
+>Mer information om granskartester i Experience Platform Debugger finns i [funktionsöversikten för granskare](./overview.md).
 
 Konsekvenskontroll av taggar söker efter inkonsekvenser på alla skannade sidor. Detta är värden eller konfigurationer som ska vara desamma på alla sidor på webbplatsen för att säkerställa korrekt datainsamling.
 

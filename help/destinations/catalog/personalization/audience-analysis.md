@@ -3,7 +3,7 @@ title: Målgruppsanalys
 description: Se vilka målgrupper kunderna är berättigade till i Customer Journey Analytics.
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Informative"
 exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 0%
@@ -12,18 +12,18 @@ ht-degree: 0%
 
 # Målgruppsanalys
 
-Med [!UICONTROL Audience Analysis]-målet kan du utöka Adobe Experience Platform målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html) -rapportering.
+Med målet [!UICONTROL Audience Analysis] kan du berika Adobe Experience Platform målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html) -rapportering.
 
 >[!AVAILABILITY]
 >
->Den här destinationen är i en begränsad testfas. Om du är intresserad av att använda det här målet kontaktar du kontoteamet på Adobe.
+>Den här destinationen är i en begränsad testfas. Om du är intresserad av att använda den här destinationen kontaktar du ditt Adobe-kontoteam.
 
 ## Förhandskrav
 
 Du måste ange följande innan du kan använda det här målet:
 
 * Du måste etableras för att kunna använda målplatsen för målgruppsanalys. Om du ännu inte har etablerat dig för att använda det här målet kontaktar du ditt Adobe-kontoteam.
-* Du måste ha etablerats för att kunna använda Customer Journey Analytics.
+* Du måste vara etablerad för att kunna använda Customer Journey Analytics.
 * Du måste ha minst en målgrupp som skapats i Adobe Experience Platform.
 
 ## Identiteter som stöds
@@ -35,8 +35,8 @@ Målgruppsanalys stöder aktivering av identiteter som beskrivs i tabellen nedan
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Mer information finns i följande dokument på [ECID](/help/identity-service/features/ecid.md). |
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
 {style="table-layout:auto"}
@@ -47,7 +47,7 @@ Följande typer av målgrupper stöds när du använder det här målet:
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -59,7 +59,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i målplatsen för målgruppsanalys. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutaren uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -80,7 +80,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Datastream ID]**: Det dataström-ID som du vill utöka med kvalificerade målgrupper. Du kan hämta detta ID i [Datastreams-hanteraren](/help/datastreams/overview.md).
 * **[!UICONTROL Integration alias]**: Integreringsalias.
 
-### Larm
+### Aviseringar
 
 Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 

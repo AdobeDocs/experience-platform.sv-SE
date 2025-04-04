@@ -3,9 +3,9 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: e9f98e1f94aa6ae2ecf29940912d296813611d4c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '849'
+source-wordcount: '855'
 ht-degree: 7%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 7%
 
 >[!NOTE]
 >
->Vidarebefordran är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
+>Vidarebefordran är en betalfunktion som ingår i Adobe Real-Time Customer Data Platform Connections, Prime eller Ultimate.
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste 
 * [Server-API för Edge Network](/help/server-api/overview.md)
 
 >[!NOTE]
->Platform Web SDK och Platform Mobile SDK kräver inte distribution via taggar i Adobe Experience Platform. Vi rekommenderar dock att du använder taggar för att distribuera dessa SDK:er.
+>Experience Platform Web SDK och Experience Platform Mobile SDK kräver inte distribution via taggar i Adobe Experience Platform. Vi rekommenderar dock att du använder taggar för att distribuera dessa SDK:er.
 
 När du har skickat data till Edge nätverk kan du aktivera Adobe-lösningar för att skicka data dit. Om du vill skicka data till en icke-Adobe-lösning anger du den i händelsevidarebefordran.
 
@@ -84,7 +84,7 @@ Beskrivningen hjälper till att identifiera konfigurationer i en lista med flera
 
 ## Aktivera vidarebefordran av händelser {#enable-event-forwarding}
 
-Konfigurera sedan Edge Network att skicka data till händelsevidarebefordran och till andra Adobe-produkter.
+Konfigurera sedan Edge Network att skicka data till vidarebefordran av händelser och till andra Adobe-produkter.
 
 1. Markera den egenskap du skapade på arbetsytan **[!UICONTROL Datastreams]**.
 
@@ -100,17 +100,17 @@ Konfigurera sedan Edge Network att skicka data till händelsevidarebefordran och
 
 Observera miljö-ID:n för den nya egenskapen när du har konfigurerat den.
 
-## Konfigurera Platform Web SDK-tillägget för att skicka data till den dataström som skapats tidigare
+## Konfigurera Experience Platform Web SDK-tillägget för att skicka data till den dataström som skapats tidigare
 
 Skapa din egenskap på arbetsytan **[!UICONTROL Tags]**, navigera sedan till **[!UICONTROL Extensions]** och välj Experience Platform Web SDK-tillägget i katalogen för att konfigurera och installera det.
 
 Mer information om konfigurationsalternativ finns i [dokumentationen för Web SDK-tillägget](../../extensions/client/web-sdk/overview.md).
 
-## Skapa en taggregel för att skicka data till Platform Web SDK
+## Skapa en taggregel för att skicka data till Experience Platform Web SDK
 
 När ovanstående är på plats kan du skapa datadefinitioner, regler och så vidare, som använder händelsevidarebefordran och taggar, men som bara behöver en enda begäran från sidan.
 
-Skapa en sidinläsningsregel med tillägget Platform Web SDK och åtgärdstypen&quot;Skicka händelse&quot;:
+Skapa en sidinläsningsregel med Experience Platform Web SDK-tillägget och åtgärdstypen&quot;Skicka händelse&quot;:
 
 1. Öppna fliken **[!UICONTROL Rules]** och välj sedan **[!UICONTROL Create New Rule]**.
 
@@ -120,7 +120,7 @@ Skapa en sidinläsningsregel med tillägget Platform Web SDK och åtgärdstypen&
 
 1. Lägg till en händelse genom att välja ett tillägg och en av de händelsetyper som är tillgängliga för tillägget och konfigurera sedan inställningarna för händelsen. Välj till exempel **[!UICONTROL Core - Window Loaded]**.
 
-1. Lägg till en åtgärd med Platform Web SDK-tillägget. Välj **[!UICONTROL Send Event]** i listan **[!UICONTROL Action Type]**, markera önskad instans (Alloy-instans konfigurerad tidigare) och markera sedan ett dataelement som ska läggas till i XDM-datablocket i Alloy-träffen.
+1. Lägg till en åtgärd med Experience Platform Web SDK-tillägget. Välj **[!UICONTROL Send Event]** i listan **[!UICONTROL Action Type]**, markera önskad instans (Alloy-instans konfigurerad tidigare) och markera sedan ett dataelement som ska läggas till i XDM-datablocket i Alloy-träffen.
 
 1. Lämna resten av inställningarna som standard för det här exemplet och välj **[!UICONTROL Save]**.
 

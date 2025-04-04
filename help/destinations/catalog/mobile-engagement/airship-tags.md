@@ -1,11 +1,11 @@
 ---
 keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
-description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
+description: Skicka enkelt Adobe Audience Data till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '936'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -60,7 +60,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## Tagggrupper
 
-Målgrupper i Adobe Experience Platform liknar [taggar](https://docs.airship.com/guides/audience/tags/) i Airship, men implementeringen skiljer sig något. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment ](../../../xdm/field-groups/profile/segmentation.md) till om en [!DNL Airship]-tagg finns eller inte. I en publik på plattformen där `xdm:status` ändras till `realized` läggs taggen till i [!DNL Airship]-kanalen eller namngivna användare som profilen mappas till. Om `xdm:status` ändras till `exited` tas taggen bort.
+Målgrupper i Adobe Experience Platform liknar [taggar](https://docs.airship.com/guides/audience/tags/) i Airship, men implementeringen skiljer sig något. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment](../../../xdm/field-groups/profile/segmentation.md) till om en [!DNL Airship]-tagg finns eller inte. I en Experience Platform-publik där `xdm:status` ändras till `realized` läggs taggen till i [!DNL Airship]-kanalen eller namngivna användare som profilen mappas till. Om `xdm:status` ändras till `exited` tas taggen bort.
 
 Om du vill aktivera den här integreringen skapar du en *tagggrupp* i [!DNL Airship] med namnet `adobe-segments`.
 
@@ -92,7 +92,7 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 Trigga personliga meddelanden i realtid när användare faller in i eller ut från en viss målgrupp inom Adobe Experience Platform.
 
-En återförsäljare skapar t.ex. en jeans varumärkesspecifik publik i Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sin jeans för ett visst varumärke.
+En återförsäljare skapar t.ex. en varumärkesspecifik jeans-publik i Experience Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sin jeans för ett visst varumärke.
 
 ## Anslut till målet {#connect}
 

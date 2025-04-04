@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;produktprofil
+keywords: Experience Platform;home;populära topics;product profile
 solution: Experience Platform
 title: Skapa en ny produktprofil i Adobe Admin Console
 description: Det här dokumentet innehåller de steg som krävs för att skapa en ny produktprofil i Adobe Admin Console. Om du vill börja skapa en ny profil går du till fliken Produktprofiler och klickar på Ny profil.
 exl-id: 47558f03-c3f7-4ead-affb-fcbfd7f1e918
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 ![create-new-product-profile](../images/create-new-product-profile.png)
 
-Nästa skärm uppmanar dig att välja vilka plattformstjänster som ska ingå i profilen. Markera växlingsknappen bredvid en tjänst för att inaktivera den. Om en tjänst är inaktiverad är inte alla funktioner som är kopplade till den tjänsten tillgängliga för användare som är tilldelade den här produktprofilen. När du är klar väljer du **[!UICONTROL Save]**.
+Nästa skärm uppmanar dig att välja vilka Experience Platform-tjänster som ska ingå i profilen. Markera växlingsknappen bredvid en tjänst för att inaktivera den. Om en tjänst är inaktiverad är inte alla funktioner som är kopplade till den tjänsten tillgängliga för användare som är tilldelade den här produktprofilen. När du är klar väljer du **[!UICONTROL Save]**.
 
 ![enable-services](../images/enable-services.png)
 

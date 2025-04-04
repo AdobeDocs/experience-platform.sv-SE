@@ -4,9 +4,9 @@ solution: Experience Platform
 title: IAB TCF 2.0-godkännandefältgrupp för profilscheman
 description: Lär dig mer om schemafältgruppen IAB TCF 2.0 Consent för klassen XDM Individual Profile.
 exl-id: 52a4fee8-d7f4-4f27-8e26-0c132985eb84
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '308'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ Som exemplet visar motsvarar varje rotnivånyckel på `xdm:identityPrivacyInfo` 
 
 För varje identitetsvärde måste en `identityIABConsent`-egenskap anges, som tillhandahåller TCF-medgivandevärdet för identiteten. Värdet för den här egenskapen måste överensstämma med datatypen [[!UICONTROL Consent String] ](../../data-types/consent-string.md).
 
-Mer information om hur den här fältgruppen används finns i guiden [IAB TCF 2.0-stöd i Platform](../../../landing/governance-privacy-security/consent/iab/overview.md) . Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
+Mer information om hur den här fältgruppen används finns i guiden [IAB TCF 2.0-stöd i Experience Platform](../../../landing/governance-privacy-security/consent/iab/overview.md). Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.schema.json)

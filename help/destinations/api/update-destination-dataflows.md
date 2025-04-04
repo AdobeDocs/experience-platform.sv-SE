@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;uppdatera måldataflöden
+keywords: Experience Platform;home;populära topics;flow service;update destination data flows
 solution: Experience Platform
 title: Uppdatera måldataflöden med API:t för Flow Service
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort målgrupper och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: c1d4a0586111d9cd8a66f4239f67f2f7e6ac8633
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2404'
-ht-degree: 0%
+source-wordcount: '2410'
+ht-degree: 1%
 
 ---
 
 # Uppdatera måldataflöden med API:t för Flow Service
 
-I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar dess grundläggande information eller lägger till och tar bort målgrupper och attribut med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). Mer information om hur du redigerar måldataflöden med användargränssnittet i Experience Platform finns i [Redigera aktiveringsflöden](/help/destinations/ui/edit-activation.md).
+I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar dess grundläggande information eller lägger till och tar bort målgrupper och attribut med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). Mer information om hur du redigerar måldataflöden med Experience Platform-gränssnittet finns i [Redigera aktiveringsflöden](/help/destinations/ui/edit-activation.md).
 
 ## Komma igång {#get-started}
 
@@ -26,8 +26,8 @@ Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du int
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera dataflödet med API:t [!DNL Flow Service].
 
@@ -37,13 +37,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Experience Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -51,13 +51,13 @@ Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Servic
 >
 >Om rubriken `x-sandbox-name` inte anges löses förfrågningar under sandlådan `prod`.
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * `Content-Type: application/json`
 
 ## Söka efter dataflödesdetaljer {#look-up-dataflow-details}
 
-Det första steget för att uppdatera måldataflödet är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-förfrågan till slutpunkten `/flows`.
+Det första steget för att uppdatera måldataflödet är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-begäran till slutpunkten `/flows`.
 
 **API-format**
 
@@ -349,7 +349,7 @@ Om du vill uppdatera dataflödets namn och beskrivning utför du en PATCH-begär
 
 >[!IMPORTANT]
 >
->Rubriken `If-Match` krävs när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde.
+>Huvudet `If-Match` krävs när en PATCH-begäran görs. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde.
 
 **API-format**
 
@@ -391,7 +391,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -404,7 +404,7 @@ Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifi
 
 När det här alternativet är aktiverat exporteras profiler till målet med ett dataflöde. Dataflöden är aktiverade som standard, men kan inaktiveras för att pausa profilexporter.
 
-Du kan aktivera eller inaktivera ett befintligt måldataflöde genom att göra en POST-förfrågan till [!DNL Flow Service]-API:t och ange att du vill uppdatera flödet till.
+Du kan aktivera eller inaktivera ett befintligt måldataflöde genom att göra en POST-begäran till [!DNL Flow Service]-API:t och ange att du vill uppdatera flödet till.
 
 **API-format**
 
@@ -438,7 +438,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -449,7 +449,7 @@ Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifi
 
 ## Lägga till en målgrupp i ett dataflöde {#add-segment}
 
-Om du vill lägga till en målgrupp i måldataflödet ska du utföra en PATCH-begäran till [!DNL Flow Service]-API:t och samtidigt ange ditt flödes-ID, version och den målgrupp du vill lägga till.
+Om du vill lägga till en målgrupp i måldataflödet utför du en PATCH-begäran till [!DNL Flow Service]-API:t och anger ditt flödes-ID, din version och den målgrupp du vill lägga till.
 
 **API-format**
 
@@ -499,17 +499,17 @@ curl -X PATCH \
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
 | `name` | **(Valfritt)**. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
-| `filenameTemplate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: **(Valfritt)**. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: **(Valfritt)**. Välj något av dessa två alternativ för filerna så att de innehåller den tid då de genereras av Experience Platform.</li><li>`custom-text`: **(Valfritt)**. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
+| `filenameTemplate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: **(Valfritt)**. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: **(Valfritt)**. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: **(Valfritt)**. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
 | `exportMode` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. |
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
 | `frequency` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE` eller `DAILY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
-| `triggerType` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du väljer läget `"DAILY_FULL_EXPORT"` i `frequency`-väljaren. <br> obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` om du vill att aktiveringsjobbet ska köras direkt när det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du också lägga till en `startTime` för att ange vid vilken tidpunkt i UTC som den dagliga exporten ska ske.</li></ul> |
+| `triggerType` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du väljer läget `"DAILY_FULL_EXPORT"` i `frequency`-väljaren. <br> obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` om du vill att aktiveringsjobbet ska köras omedelbart efter att Experience Platform batchsegmenteringsjobb har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Detta garanterar att Experience Platform-profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du också lägga till en `startTime` för att ange vid vilken tidpunkt i UTC som den dagliga exporten ska ske.</li></ul> |
 | `endDate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Gäller inte vid val av `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
 | `startTime` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -570,7 +570,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -581,7 +581,7 @@ Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifi
 
 ## Uppdatera komponenter för en målgrupp i ett dataflöde {#update-segment}
 
-Du kan uppdatera komponenter för en målgrupp i ett befintligt måldataflöde. Du kan till exempel ändra exportfrekvensen eller redigera filnamnsmallen. Gör detta genom att utföra en PATCH-begäran till [!DNL Flow Service]-API:t och samtidigt ange ditt flödes-ID, version och indexväljaren för den målgrupp som du vill uppdatera. Indexeringen börjar vid `0`. Begäran nedan uppdaterar till exempel den nionde målgruppen i ett dataflöde.
+Du kan uppdatera komponenter för en målgrupp i ett befintligt måldataflöde. Du kan till exempel ändra exportfrekvensen eller redigera filnamnsmallen. Gör detta genom att utföra en PATCH-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID, version och indexväljare för den målgrupp som du vill uppdatera. Indexeringen börjar vid `0`. Begäran nedan uppdaterar till exempel den nionde målgruppen i ett dataflöde.
 
 **API-format**
 
@@ -631,7 +631,7 @@ Beskrivningar av egenskaperna i nyttolasten finns i avsnittet [Lägga till en m�
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -644,7 +644,7 @@ Se exemplen nedan för fler exempel på målgruppskomponenter som du kan uppdate
 
 ## Uppdatera exportläget för en målgrupp från schemalagd till efter målgruppsutvärdering {#update-export-mode}
 
-+++ Klicka här om du vill se ett exempel där en målgruppsexport uppdateras från att aktiveras varje dag vid en viss tidpunkt till att aktiveras varje dag när plattformsbatchsegmenteringsjobbet har slutförts.
++++ Klicka för att se ett exempel där en målgruppsexport uppdateras från att aktiveras varje dag vid en viss tidpunkt till att aktiveras varje dag när Experience Platform batchsegmenteringsjobb har slutförts.
 
 Publiken exporteras varje dag kl. 16.00 UTC.
 
@@ -720,7 +720,7 @@ De exporterade filerna innehåller målnamn och målgrupps-ID för Experience Pl
 }
 ```
 
-De exporterade filerna innehåller målnamn, målgrupps-ID för Experience Platform, datum och tid då filen skapades av Experience Platform och egen text i slutet av filerna.
+De exporterade filerna innehåller målnamn, målgrupps-ID för Experience Platform, datum och tid då filen skapades av Experience Platform och egen text som läggs till i slutet av filerna.
 
 
 ```json
@@ -790,7 +790,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -844,7 +844,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -855,7 +855,7 @@ Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifi
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 

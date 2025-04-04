@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;katalogtjänst;katalog;katalogtjänst;katalog
+keywords: Experience Platform;hem;populära ämnen;katalogtjänst;katalog;katalogtjänst;Katalog
 solution: Experience Platform
 title: API-guide för katalogtjänst
 description: Med Catalog Service API kan utvecklare hantera datauppsättningsmetadata i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 812fcdae-ed0e-4f2b-84d7-26f2f79e71b9
-source-git-commit: 07451b8ab4bcb7ca43ad0c8a821478b2c9682894
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '588'
 ht-degree: 2%
@@ -21,7 +21,7 @@ Den här utvecklarhandboken innehåller steg som hjälper dig att börja använd
 
 [!DNL Catalog] spårar metadata för flera typer av resurser och åtgärder inom [!DNL Experience Platform]. Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform]-tjänster som används för att skapa och hantera de här resurserna:
 
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 * [Gruppinmatning](../../ingestion/batch-ingestion/overview.md): Hur [!DNL Experience Platform] importerar och lagrar data från datafiler, till exempel CSV och Parquet.
 * [Direktuppspelningsuppläsning](../../ingestion/streaming-ingestion/overview.md): Hur [!DNL Experience Platform] importerar och lagrar data från klient- och serverenheter i realtid.
 
@@ -33,21 +33,21 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ## Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 * Content-Type: application/json
 

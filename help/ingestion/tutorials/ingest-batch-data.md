@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;matning;ingest batch data;självstudiekurs;batchmatning;självstudiekurs;ui guide;
+keywords: Experience Platform;home;populära topics;ingfaktiskt;ingest batch data;tutorial;batch ingfaktiskt;tutorial;ui guide;
 solution: Experience Platform
-title: Infoga data i Experience Platform
+title: Importera data till Experience Platform
 type: Tutorial
 description: Med Adobe Experience Platform kan du enkelt importera data som gruppfiler i form av Parquet-filer eller data som följer ett känt Experience Data Model-schema (XDM).
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: 8351f6907a0dc4a4bba01c7f6e9dec7c376c8575
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1261'
 ht-degree: 0%
 
 ---
 
 # Importera data till Adobe Experience Platform
 
-Med Adobe Experience Platform kan du enkelt importera data till [!DNL Platform] som gruppfiler. Exempel på data som ska importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt [!DNL Experience Data Model]-schema (XDM) i schemaregistret.
+Med Adobe Experience Platform kan du enkelt importera data till [!DNL Experience Platform] som gruppfiler. Exempel på data som ska importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt [!DNL Experience Data Model]-schema (XDM) i schemaregistret.
 
 ## Komma igång
 
@@ -80,7 +80,7 @@ På fliken Info finns också en **[!UICONTROL Profile]**-växel som används fö
 
 ## Aktivera datauppsättning för [!DNL Real-Time Customer Profile]
 
-Datauppsättningar används för inmatning av data till [!DNL Experience Platform], och dessa data används i slutändan för att identifiera enskilda personer och sammanfoga information som kommer från flera källor. Den sammanfogade informationen kallas [!DNL Real-Time Customer Profile]. För att [!DNL Platform] ska veta vilken information som ska inkluderas i [!DNL Real-Time Profile] kan datamängder markeras för inkludering med hjälp av växlingsknappen **[!UICONTROL Profile]**.
+Datauppsättningar används för inmatning av data till [!DNL Experience Platform], och dessa data används i slutändan för att identifiera enskilda personer och sammanfoga information som kommer från flera källor. Den sammanfogade informationen kallas [!DNL Real-Time Customer Profile]. För att [!DNL Experience Platform] ska veta vilken information som ska inkluderas i [!DNL Real-Time Profile] kan datamängder markeras för inkludering med hjälp av växlingsknappen **[!UICONTROL Profile]**.
 
 Den här växlingen är som standard inaktiverad. Om du väljer att växla på [!DNL Profile] kommer alla data som hämtas in till datauppsättningen att användas för att identifiera en individ och sammanfoga deras [!DNL Real-Time Profile].
 
@@ -106,13 +106,13 @@ Klicka på fliken **[!UICONTROL Add Data]** för att börja lägga till data i d
 
 >[!NOTE]
 >
->Plattformen har stöd för två filtyper för dataöverföring, Parquet eller JSON. Du kan lägga till upp till fem filer i taget, där den maximala filstorleken för varje fil är 1 GB.
+>Experience Platform har stöd för två filtyper för dataöverföring, Parquet eller JSON. Du kan lägga till upp till fem filer i taget, där den maximala filstorleken för varje fil är 1 GB.
 
 ![Fliken Lägg till data](../images/tutorials/ingest-batch-data/drag-and-drop.png)
 
 ## Överföra en fil {#upload-file}
 
-När du drar och släpper (eller bläddrar och väljer) en Parquet- eller JSON-fil som du vill överföra, börjar [!DNL Platform] omedelbart bearbeta filen och en **[!UICONTROL Uploading]**-dialogruta visas på fliken **[!UICONTROL Add Data]** med förloppet för filöverföringen.
+När du drar och släpper (eller bläddrar och väljer) en Parquet- eller JSON-fil som du vill överföra, börjar [!DNL Experience Platform] omedelbart bearbeta filen och en **[!UICONTROL Uploading]**-dialogruta visas på fliken **[!UICONTROL Add Data]** med förloppet för filöverföringen.
 
 ![Överför dialogruta](../images/tutorials/ingest-batch-data/uploading-file.png)
 
@@ -150,6 +150,6 @@ Om du vill veta mer om gruppinmatning kan du läsa översikten [Gruppinmatning](
 
 >[!WARNING]
 >
->Användargränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+>Användargränssnittet [!DNL Experience Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)

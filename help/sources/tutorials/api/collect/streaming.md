@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;molnlagringsdata;strömmande data;strömning
+keywords: Experience Platform;home;populära topics;cloud storage data;streaming data;streaming data
 solution: Experience Platform
 title: Skapa ett direktuppspelat dataflöde för rådata med API:t för flödestjänsten
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
+description: I den här självstudiekursen beskrivs hur du hämtar direktuppspelningsdata och överför dem till Experience Platform med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1180'
 ht-degree: 0%
 
 ---
 
 # Skapa ett direktuppspelat dataflöde för rådata med API:t [!DNL Flow Service]
 
-I den här självstudiekursen beskrivs stegen för att hämta rådata från en direktuppspelningskälla och överföra dem till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen beskrivs stegen för att hämta rådata från en direktuppspelad källanslutning och överföra dem till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
@@ -23,13 +23,13 @@ Den här självstudiekursen kräver att du har en fungerande förståelse för f
 - [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
    - [Utvecklarhandbok för schemaregister](../../../../xdm/api/getting-started.md): Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar din `{TENANT_ID}`, konceptet med behållare och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på huvudet Godkänn och dess möjliga värden).
-- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är ett postsystem för dataplatser och -länkar inom Experience Platform.
-- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md): Direktuppspelningsuppläsning för Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
-- [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är arkivsystemet för dataplatser och -länkar inom Experience Platform.
+- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md): Direktuppspelningsuppläsning för Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
+- [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../landing/api-guide.md).
 
 ### Skapa en källanslutning {#source}
 
@@ -41,9 +41,9 @@ Den här självstudien kräver även att du har ett giltigt källanslutnings-ID 
 
 ## Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns. Det här mål-XDM-schemat utökar även klassen XDM [!DNL Individual Profile].
+För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns. Det här mål-XDM-schemat utökar även klassen XDM [!DNL Individual Profile].
 
-Om du vill skapa ett mål-XDM-schema gör du en POST-förfrågan till `/schemas`-slutpunkten för [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+Om du vill skapa ett mål-XDM-schema gör du en POST-begäran till `/schemas`-slutpunkten för [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 **API-format**
 
@@ -151,7 +151,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-När ett mål-XDM-schema har skapats och dess unika `$id` kan du nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatamängd skickar du en POST till `dataSets`-slutpunkten för [-katalogtjänstens API ](https://www.adobe.io/experience-platform-apis/references/catalog/) samtidigt som du anger målschemats ID i nyttolasten.
+När ett mål-XDM-schema har skapats och dess unika `$id` kan du nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatamängd skapar du en POST-begäran till `dataSets`-slutpunkten för [-katalogtjänstens API ](https://www.adobe.io/experience-platform-apis/references/catalog/) samtidigt som du anger målschemats ID i nyttolasten.
 
 **API-format**
 
@@ -204,9 +204,9 @@ Ett lyckat svar returnerar en matris som innehåller ID:t för den nya datamäng
 
 ## Skapa en målanslutning {#target-connection}
 
-Målanslutningar skapar och hanterar en målanslutning till plattformen eller någon plats där de överförda data landas. Målanslutningar innehåller information om datamål, dataformat och det anslutnings-ID som krävs för att skapa ett dataflöde. Målanslutningens instanser är specifika för en klientorganisation och organisation.
+Målanslutningar skapar och hanterar en målanslutning till Experience Platform eller en plats där de överförda data landas. Målanslutningar innehåller information om datamål, dataformat och det anslutnings-ID som krävs för att skapa ett dataflöde. Målanslutningens instanser är specifika för en klientorganisation och organisation.
 
-Om du vill skapa en målanslutning skickar du en POST till `/targetConnections`-slutpunkten för [!DNL Flow Service]-API:t. Som en del av begäran måste du ange dataformatet, `dataSetId` som hämtades i föregående steg och det fasta ID för anslutningsspecifikationen som är knutet till [!DNL Data Lake]. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+Om du vill skapa en målanslutning skickar du en POST-begäran till `/targetConnections`-slutpunkten för [!DNL Flow Service] API:t. Som en del av begäran måste du ange dataformatet, `dataSetId` som hämtades i föregående steg och det fasta ID för anslutningsspecifikationen som är knutet till [!DNL Data Lake]. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 **API-format**
 
@@ -265,7 +265,7 @@ Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta 
 
 För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer.
 
-Om du vill skapa en mappningsuppsättning skickar du en POST till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://developer.adobe.com/experience-platform-apis/references/data-prep/) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
+Om du vill skapa en mappningsuppsättning skickar du en POST-begäran till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://developer.adobe.com/experience-platform-apis/references/data-prep/) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
 
 **API-format**
 
@@ -325,7 +325,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ## Hämta en lista med dataflödesspecifikationer {#specs}
 
-Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. Om du vill skapa ett dataflöde måste du först hämta dataflödesspecifikationerna genom att utföra en GET-begäran till [!DNL Flow Service]-API:t.
+Ett dataflöde används för att samla in data från källor och föra in dem i Experience Platform. Om du vill skapa ett dataflöde måste du först hämta dataflödesspecifikationerna genom att utföra en GET-begäran till [!DNL Flow Service] API.
 
 **API-format**
 
@@ -422,7 +422,7 @@ Det sista steget mot att samla in strömmande data är att skapa ett dataflöde.
 - [Mappnings-ID](#mapping)
 - [ID för dataflödesspecifikation](#specs)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
 **API-format**
 
@@ -566,7 +566,7 @@ Följande exempel gäller för alla:
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att samla in strömmande data från din strömningskontakt. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att samla in strömmande data från din strömningskontakt. Inkommande data kan nu användas av Experience Platform-tjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Data Science Workspace - översikt](../../../../data-science-workspace/home.md)

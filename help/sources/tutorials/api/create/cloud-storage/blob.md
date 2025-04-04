@@ -2,9 +2,9 @@
 title: Skapa en Azure Blob Base-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Azure Blob med API:t för Flow Service.
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ I den här självstudien beskrivs steg för att skapa en basanslutning för [!DN
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Blob]-källanslutning med API:t [!DNL Flow Service].
 
@@ -48,9 +48,9 @@ För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Blob]-lagringsutr
 
 >[!ENDTABS]
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
@@ -58,13 +58,13 @@ Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma ig�
 >
 >När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Blob]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
 Källan [!DNL Blob] stöder både anslutningssträng och autentisering med delad åtkomstsignatur (SAS). En SAS-URI (Shared Access Signature) möjliggör säker delegerad auktorisering till ditt [!DNL Blob]-konto. Du kan använda SAS för att skapa autentiseringsuppgifter med olika grad av åtkomst, eftersom en SAS-baserad autentisering gör att du kan ange behörigheter, start- och förfallodatum samt villkor för specifika resurser.
 
 Under det här steget kan du även ange vilka undermappar ditt konto ska ha åtkomst till genom att definiera namnet på behållaren och sökvägen till undermappen.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Blob] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Blob]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -130,7 +130,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 >[!TAB SAS URI-autentisering]
 
-Om du vill skapa en [!DNL Blob]-anslutning med hjälp av en URI för delad åtkomstsignatur gör du en POST-förfrågan till [!DNL Flow Service]-API:t och anger värden för [!DNL Blob] `sasUri`.
+Om du vill skapa en [!DNL Blob]-anslutning med signatur-URI för delad åtkomst gör du en POST-begäran till [!DNL Flow Service]-API:t och anger värden för [!DNL Blob] `sasUri`.
 
 +++Begäran
 

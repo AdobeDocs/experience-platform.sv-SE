@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2022
 description: Versionsinformationen för Adobe Experience Platform i mars 2022.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1171'
-ht-degree: 2%
+source-wordcount: '1181'
+ht-degree: 10%
 
 ---
 
@@ -16,11 +16,11 @@ ht-degree: 2%
 Nya funktioner i Adobe Experience Platform:
 
 - [Granskningsloggar](#audit-logs)
-- [Relaterade konton i Real-Time CDP B2B Edition](#related-accounts)
+- [Relaterade konton i Real-Time CDP B2B edition](#related-accounts)
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Larm](#alerts)
+- [Aviseringar](#alerts)
 - [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
 - [[!DNL Query Service]](#query-service)
@@ -39,27 +39,27 @@ Med Experience Platform kan du granska användaraktivitet för olika tjänster o
 
 {style="table-layout:auto"}
 
-Mer information om granskningsloggar i Platform finns i [Översikt över granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md).
+Mer information om granskningsloggar i Experience Platform finns i [Översikt över granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md).
 
-## Relaterade konton i Real-Time CDP B2B Edition {#related-accounts}
+## Relaterade konton i Real-Time CDP B2B edition {#related-accounts}
 
 >[!NOTE]
 >
->Funktionen för relaterade konton är endast tillgänglig för kunder som har Real-Time CDP B2B Edition.
+>Funktionen för relaterade konton är endast tillgänglig för kunder som har Real-Time CDP B2B edition.
 
 B2B-företag har ofta sin kundinformation lagrad i flera system, där alla bara innehåller partiella eller till och med motstridiga data för samma verkliga affärsenhet. Detta skapar en stor utmaning i att få en korrekt bild av kunderna och minskar därmed effektiviteten och effektiviteten i B2B-marknadsförings- och säljsatsningarna. I och med att relaterade konton har släppts visar [!DNL Real-Time CDP B2B] nu en lista över konton som liknar det konto du bläddrar i. Du kan inkludera de relaterade kontona i dina segmentdefinitioner för att bredda din räckvidd eller tillämpa fler kriterier i dina segment.
 
 Läs mer om funktionen på följande dokumentationssidor:
 
-- [Samhörande konton i Real-Time CDP B2B Edition - översikt](../../rtcdp/b2b-ai-ml-services/related-accounts.md)
+- [Relaterade konton i Real-Time CDP B2B edition - översikt](../../rtcdp/b2b-ai-ml-services/related-accounts.md)
 - [Fliken Relaterade konton i gränssnittsguiden för kontoprofiler](../../rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)
 - [Så här använder du relaterade konton i segmentdefinitioner](../../rtcdp/segmentation/b2b.md#related-accounts)
 
-Mer information om Real-Time CDP B2B Edition finns i [översikten](../../rtcdp/overview.md).
+Mer information om Real-Time CDP B2B edition finns i [översikten](../../rtcdp/overview.md).
 
-## Larm {#alerts}
+## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i användargränssnittet för plattformen och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i Experience Platform användargränssnitt och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Uppdaterade funktioner**
 
@@ -69,7 +69,7 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 
 {style="table-layout:auto"}
 
-Mer information om aviseringar i Platform finns i [varningsöversikten](../../observability/alerts/overview.md).
+Mer information om varningar i Experience Platform finns i [varningsöversikten](../../observability/alerts/overview.md).
 
 ## Kontrollpaneler {#dashboards}
 
@@ -77,7 +77,7 @@ Adobe Experience Platform tillhandahåller flera [!DNL dashboards] som du kan an
 
 ### Profilinstrumentpaneler
 
-På kontrollpanelen Profiler visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform.
+På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform.
 
 **Uppdaterade funktioner**
 
@@ -94,7 +94,7 @@ Mer information om profilpaneler finns i [Översikt över profilpaneler](../../d
 
 ### Destinationspaneler
 
-På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer som din organisation har aktiverat i Experience Platform.
+På kontrollpanelen Destinationer visas en ögonblicksbild av de mål som din organisation har aktiverat i Experience Platform.
 
 **Uppdaterade funktioner**
 
@@ -104,24 +104,24 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer s
 
 {style="table-layout:auto"}
 
-Mer information om instrumentpaneler för destinationer i plattformen finns i [Översikt över instrumentpaneler för destinationer](../../dashboards/guides/destinations.md).
+Mer information om paneler för destinationer i Experience Platform finns i [Översikt över kontrollpaneler för destinationer](../../dashboards/guides/destinations.md).
 
 ## Datainsamling {#data-collection}
 
-Platform innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till destinationer som Adobe eller inte är Adobe.
+Experience Platform har en programsvit som gör det möjligt att samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
 | Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geografisk plats, cookie för första parts-ID och synkronisering med tredje parts-ID. Mer information finns i avsnittet [Konfigurera en datastream](../../datastreams/overview.md#create) i gränssnittsguiden för datastreams. |
-| [Edge Network Server-API](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt för att driva en mängd olika fall av datainsamling, personalisering, reklam och marknadsföring. |
+| [Edge Network Server-API](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt för att driva en rad olika fall av datainsamling, personalisering, reklam och marknadsföring. |
 
-Mer information om datainsamling i Platform finns i [datainsamlingsöversikten](../../collection/home.md).
+Mer information om datainsamling i Experience Platform finns i [datainsamlingsöversikten](../../collection/home.md).
 
 ## Frågetjänst {#query-service}
 
-[!DNL Query Service] låter dig använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan ansluta till alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datamängd som kan användas för rapportering, Data Science Workspace eller för förtäring i kundprofilen i realtid.
+[!DNL Query Service] låter dig använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla samman alla datauppsättningar från [!DNL Data Lake] och samla in sökresultaten som en ny datauppsättning för användning i rapportering, arbetsytan för datavetenskap eller för inmatning i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
@@ -135,16 +135,16 @@ Mer information om tillgängliga funktioner finns i [Översikt över frågetjän
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera datainmatning genom hela processen.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera datainmatning genom hela processen.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nu finns nya källor för B2B-användning | Du kan nu använda alla tillgängliga källor på plattformen för B2B-användning. En fullständig lista över tillgängliga källor finns i [källkatalogen](../../sources/home.md). |
-| Allmän tillgänglighet för den nya [!DNL Oracle Eloqua]-källan | Du kan nu använda källan [!DNL Oracle Eloqua] för att importera data från din [!DNL Oracle Eloqua]-instans (konto, kampanj, kontakter) till plattformen. Mer information finns i dokumentationen för [att skapa en [!DNL Oracle Eloqua] källanslutning](../../sources/connectors/marketing-automation/oracle-eloqua.md). |
+| Nu finns nya källor för B2B-användning | Du kan nu använda alla tillgängliga källor på Experience Platform för B2B-användning. En fullständig lista över tillgängliga källor finns i [källkatalogen](../../sources/home.md). |
+| Allmän tillgänglighet för den nya [!DNL Oracle Eloqua]-källan | Du kan nu använda källan [!DNL Oracle Eloqua] för att importera data från din [!DNL Oracle Eloqua]-instans (konto, kampanj, kontakter) till Experience Platform. Mer information finns i dokumentationen för [att skapa en [!DNL Oracle Eloqua] källanslutning](../../sources/connectors/marketing-automation/oracle-eloqua.md). |
 | API-förbättringar för [!DNL Data Landing Zone] | [!DNL Data Landing Zone]-källan stöder nu automatisk identifiering av filegenskaper när API:t [!DNL Flow Service] används. Mer information finns i dokumentationen om [att skapa en [!DNL Data Landing Zone] källanslutning](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md). |
 
 {style="table-layout:auto"}

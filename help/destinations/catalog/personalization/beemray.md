@@ -1,11 +1,11 @@
 ---
 keywords: beemray,beemray-tillägg
 title: Beemray-tillägg
-description: Beemray-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Beemray-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 5bb639f5-42b5-48ae-a3e9-7585595ab925
-source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[!DNL Beemray] hjälper dig att snabba upp din produkt med situationssammanhang. Gör det möjligt för er att få insikter, skapa nya upplevelser, skapa interaktioner och engagera i ögonblick som verkligen betyder något. Beemray automatiserar kontextuell intelligens med maskininlärning. Beemray är knutet till Adobe Experience Cloud och övriga av era tekniska partners. Allt äger rum i realtid. Det här tillägget installerar [!DNL Beemray] SDK på din plats.
+[!DNL Beemray] hjälper dig att snabba upp din produkt med situationssammanhang. Gör det möjligt för er att få insikter, skapa nya upplevelser, skapa interaktioner och engagera i ögonblick som verkligen betyder något. Beemray automatiserar kontextuell intelligens med maskininlärning. Beemray är knutet till Adobe Experience Cloud och övriga av era tekniska partners. Allt äger rum i realtid. Det här tillägget installerar [!DNL Beemray] SDK på din webbplats.
 
 Beemray är ett personaliseringstillägg i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html).
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![Beemray-tillägg](../../assets/catalog/personalization/beemray/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Experience Platform.
 
 Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget [!DNL Beemray]:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
@@ -42,7 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Mer information om alternativ för tilläggskonfiguration och installationsstöd finns på sidan [Beemray på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html).
+Information om alternativ för tilläggskonfiguration och installationsstöd finns på [Beemray-sidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i guiden om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension).
 

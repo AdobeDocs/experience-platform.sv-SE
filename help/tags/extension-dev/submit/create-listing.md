@@ -2,9 +2,9 @@
 title: Skapa en Exchange-lista för ett tillägg
 description: Lär dig hur du lägger till tillägget i den offentliga katalogen i Adobe Experience Platform.
 exl-id: 0395fc99-5e2b-46d6-a067-f8f167733e02
-source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1193'
+source-wordcount: '1194'
 ht-degree: 3%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform har en enda enhetlig katalog där användarna kan visa
 
 Publika tillägg skiljer sig från tilläggen i produktkatalogen och det finns även listor i [Experience Cloud Exchange App Marketplace](https://exchange.adobe.com/apps/browse/ec).
 
-Med dessa listor kan tilläggsutvecklare publicera funktionsbeskrivningar, tillhandahålla länkar till ytterligare support och dokumentation samt marknadstillägg till potentiella användare som kanske inte känner till ditt företag eller funktionaliteten i ditt tillägg. På den här marknadsplatsen kommer tillägget att ha en offentlig lista som kan visas utan att användaren autentiseras för Platform. För offentliga tillägg är det ett obligatoriskt steg att skapa den här Exchange-listan.
+Med dessa listor kan tilläggsutvecklare publicera funktionsbeskrivningar, tillhandahålla länkar till ytterligare support och dokumentation samt marknadstillägg till potentiella användare som kanske inte känner till ditt företag eller funktionaliteten i ditt tillägg. På den här marknadsplatsen har tillägget en offentlig lista som kan visas utan att användaren autentiseras för Experience Platform. För offentliga tillägg är det ett obligatoriskt steg att skapa den här Exchange-listan.
 
 >[!TIP]
 >

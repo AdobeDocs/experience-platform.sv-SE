@@ -4,16 +4,16 @@ title: Felsökningsguide för kundprofiler i realtid
 type: Documentation
 description: Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel när du arbetar med profildata med Adobe Experience Platform.
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '964'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för kundprofiler i realtid
 
-Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [Experience Platform felsökningsguide](../landing/troubleshooting.md).
 
 Med [!DNL Real-Time Customer Profile] kan du se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Detta gör att marknadsförarna kan skapa samordnade, enhetliga och relevanta kundupplevelser i flera kanaler.
 
@@ -25,15 +25,15 @@ Nedan följer en lista med svar på vanliga frågor om kundprofilen i realtid.
 
 Profilen godkänner både **post**- och **tidsserie**-data, förutsatt att data i fråga innehåller minst ett identitetsvärde som associerar data med en unik individ.
 
-Precis som alla plattformstjänster kräver Profile att data i profilen ska vara semantiskt strukturerade under ett XDM-schema (Experience Data Model). Schemat måste i sin tur ha en **primär identitet** definierad och vara aktiverat för användning i profilen.
+Precis som alla Experience Platform-tjänster kräver Profile att data i den ska vara semantiskt strukturerade under ett XDM-schema (Experience Data Model). Schemat måste i sin tur ha en **primär identitet** definierad och vara aktiverat för användning i profilen.
 
 Om du inte känner till XDM kan du börja med [XDM-översikten](../xdm/home.md) och lära dig mer. Gå sedan till användarhandboken för XDM för steg om hur du [anger identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) och [aktiverar ett schema för profil](../xdm/tutorials/create-schema-ui.md#profile).
 
 ### Var lagras profildata?
 
-Kundprofilen i realtid underhåller ett eget datalager (kallas&quot;profilarkiv&quot;) som är skilt från datasjön som innehåller andra inkapslade plattformsdata.
+Kundprofilen i realtid underhåller ett eget datalager (kallas&quot;profilarkiv&quot;) som är skilt från datasjön som innehåller andra inkapslade Experience Platform-data.
 
-### Om jag redan har inhämtat data till Platform, kan jag göra dem tillgängliga i profilbutiken?
+### Om jag redan har inhämtat data till Experience Platform, kan jag då göra dem tillgängliga i profilbutiken?
 
 Om data har importerats till en datauppsättning som inte är en profildatauppsättning måste du importera dessa data på nytt till en profilaktiverad datauppsättning för att kunna göra dem tillgängliga i profilarkivet. Det går att aktivera en befintlig datauppsättning för profilen, men alla data som har importerats före den konfigurationen visas fortfarande inte i profilarkivet.
 
@@ -51,13 +51,13 @@ Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst
 
 #### Använda gränssnittet
 
-På fliken **[!UICONTROL Browse]** i arbetsytan **[!UICONTROL Profiles]** i användargränssnittet i Experience Platform kan du visa det totala antalet profiler och söka efter enskilda profiler utifrån deras identitetsvärde. Mer information finns i [Användarhandboken för profilen](./ui/user-guide.md).
+I Experience Platform-gränssnittet kan du visa det totala antalet profiler och söka efter enskilda profiler med hjälp av deras ID-värde på fliken **[!UICONTROL Browse]** på arbetsytan **[!UICONTROL Profiles]**. Mer information finns i [Användarhandboken för profilen](./ui/user-guide.md).
 
 Du kan även visa en lista över dina målgrupper på fliken **[!UICONTROL Browse]** på arbetsytan i **[!UICONTROL Audiences]**. När du har valt en målgrupp visas ett exempel på profiler som är kvalificerade för den målgruppen. Du kan sedan välja någon av profilerna i listan för att visa deras information. Mer information finns i [Översikt över segmenteringsgränssnittet](../segmentation/ui/overview.md).
 
 ## Felkoder
 
-Nedan följer en lista över felmeddelanden som du kan stöta på när du arbetar med kundprofils-API:t i realtid. Om felet som du stöter på inte listas här kan du hitta det i den allmänna [felsökningsguiden för plattformen](../landing/troubleshooting.md) i stället.
+Nedan följer en lista över felmeddelanden som du kan stöta på när du arbetar med kundprofils-API:t i realtid. Om felet som du stöter på inte finns med här kan du hitta det i den allmänna [felsökningsguiden](../landing/troubleshooting.md) för Experience Platform istället.
 
 ### Det gick inte att hitta schemat för det beräknade attributet för den angivna sökvägen
 

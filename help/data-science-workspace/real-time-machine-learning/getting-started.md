@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med maskininlärning i realtid
 description: I följande dokument beskrivs de steg som krävs för att skapa en Machine Learning-modell i realtid i Adobe Experience Platform.
 exl-id: 90a1c580-f6e7-4517-aa1e-da5092fbc4a2
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '462'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Handböckerna för maskininlärning i realtid kräver en fungerande förståelse
 
 ## Datauppsättningar i Adobe Experience Platform
 
-Om du vill börja använda maskininlärning i realtid måste du ha tillgång till en datauppsättning. Du kan använda en extern datauppsättning och överföra den till din [!DNL JupyterLab]-miljö eller skapa en ny datauppsättning inom plattformen om du inte redan har gjort det.
+Om du vill börja använda maskininlärning i realtid måste du ha tillgång till en datauppsättning. Du kan använda en extern datauppsättning och överföra den till din [!DNL JupyterLab]-miljö eller skapa en ny datauppsättning i Experience Platform om du inte redan har gjort det.
 
 >[!NOTE]
 >
@@ -48,7 +48,7 @@ Om du vill veta mer om hur du använder en extern datauppsättning, till exempel
 
 ### Skapa en ny datauppsättning
 
-Om du vill skapa en ny datauppsättning för användning i maskininlärning i realtid behöver du ett dataschema för din datauppsättning. Därefter måste du importera data med det schema du skapade. Använd följande självstudier för att skapa och fylla i en datauppsättning för [!DNL Platform]:
+Om du vill skapa en ny datauppsättning för användning i maskininlärning i realtid behöver du ett dataschema för din datauppsättning. Därefter måste du importera data med det schema du skapade. Använd följande självstudier för att skapa och fylla i en datauppsättning för [!DNL Experience Platform]:
 
 - [Skapa och fylla i en datauppsättning i API:t](../../catalog/datasets/create.md)
 - [Skapa och fylla i en datauppsättning i användargränssnittet](../../ingestion/tutorials/ingest-batch-data.md)

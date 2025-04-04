@@ -2,9 +2,9 @@
 title: Adobe Content Analytics Extension - översikt
 description: Läs mer om Adobe Content Analytics-taggtillägg i Adobe Experience Platform.
 exl-id: fcc46c86-e765-4bc7-bfdf-b8b10e8afacc
-source-git-commit: 5f852b69b0eb0a5e6a9119f14eb9e1f51c8a2e33
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Med taggtillägget [!DNL Adobe Content Analytics] kan du spåra innehållsrelaterade händelser på en webbplats. Tillägget skickar innehållsdata (upplevelser och resurser) till ett dataram i Adobe Experience Cloud från webbegenskaper via Experience Platform Edge Network.
 
-Med tillägget kan ni strömma specifika innehållsrelaterade händelsedata till plattformen så att ni kan använda dessa data i era innehållsanalysrapporter i Customer Journey Analytics.
+Med tillägget kan du strömma specifika innehållsrelaterade händelsedata till Experience Platform så att du kan använda dessa data i dina innehållsanalysrapporter i Customer Journey Analytics.
 
 I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggränssnittet.
 

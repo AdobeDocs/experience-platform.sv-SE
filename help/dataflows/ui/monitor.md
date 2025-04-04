@@ -2,9 +2,9 @@
 title: Översikt över kontrollpanelen för övervakning
 description: Lär dig hur du använder kontrollpanelen för övervakning i användargränssnittet i Adobe Experience Platform
 exl-id: 06ea5380-d66e-45ae-aa02-c8060667da4e
-source-git-commit: 710fa6930b27f95d34539a18881c0f9d23e1debd
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '995'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Använd kontrollpanelen i Adobe Experience Platform-användargränssnittet för 
 
 Kontrollpanelen har stöd för vyn av flera olika datatyper:
 
-* **Kund och konto**: Kunddata refererar till de data som används i [Real-time Customer Data Platform](../../rtcdp/home.md), medan kontodata refererar till [kontoprofildata](../../rtcdp/accounts/account-profile-overview.md) som är tillgängliga när du prenumererar på [Real-Time CDP, B2B Edition](../../rtcdp/b2b-overview.md). Om din Real-Time CDP-licens inte innehåller Real-Time CDP, B2B Edition, kan du bara använda kontrollpanelen för att övervaka kunddata.
-* **Prospekt**: [Prospekteringsprofiler](../../profile/ui/prospect-profile.md) används för att representera personer som ännu inte har engagerat ditt företag men som du vill kontakta. Med profiler för potentiella kunder kan ni komplettera era kundprofiler med attribut från betrodda tredjepartspartners. Du måste ha licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate för att kunna se datatypen för den potentiella kunden.
-* **Berikning av kontoprofiler**: Med kontoprofiler kan du sammanställa kontoinformation från flera källor. Du måste ha licens för Real-Time CDP, B2B Edition för att kunna övervaka kontoprofilens anrikningsdata.
+* **Kund och konto**: Kunddata refererar till de data som används i [Real-Time Customer Data Platform](../../rtcdp/home.md), medan kontodata refererar till [kontoprofildata](../../rtcdp/accounts/account-profile-overview.md) som är tillgängliga när du prenumererar på [Real-Time CDP, B2B edition](../../rtcdp/b2b-overview.md). Om din Real-Time CDP-licens inte innehåller Real-Time CDP, B2B edition, kan du bara använda kontrollpanelen för att övervaka kunddata.
+* **Prospekt**: [Prospekteringsprofiler](../../profile/ui/prospect-profile.md) används för att representera personer som ännu inte har engagerat ditt företag men som du vill kontakta. Med profiler för potentiella kunder kan ni komplettera era kundprofiler med attribut från betrodda tredjepartspartners. Du måste ha licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate för att kunna se datatypen för den potentiella kunden.
+* **Berikning av kontoprofiler**: Med kontoprofiler kan du sammanställa kontoinformation från flera källor. Du måste ha licens för Real-Time CDP, B2B edition för att kunna övervaka kontouppgifter.
 
-Läs det här dokumentet för att lära dig hur du använder kontrollpanelen för att övervaka hur data överförs mellan olika Experience Platform-tjänster.
+Läs det här dokumentet för att lära dig hur du använder kontrollpanelen för att övervaka hur dina data överförs mellan olika Experience Platform-tjänster.
 
 ## Kom igång
 
@@ -34,13 +34,13 @@ Dokumentet kräver en fungerande förståelse av följande komponenter i Experie
 * [Identitetstjänst](../../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
 * [Kundprofil i realtid](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Segmentering](../../segmentation/home.md): Använd segmenteringstjänsten för att skapa segment och målgrupper utifrån kundprofildata i realtid.
-* [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga program som möjliggör smidig aktivering av data från Platform för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+* [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga program som möjliggör smidig aktivering av data från Experience Platform för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
 ## Övervaka instrumentpanelsguide
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Monitoring]** under [!UICONTROL Data Management] i den vänstra navigeringen.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Monitoring]** under [!UICONTROL Data Management] i den vänstra navigeringen.
 
-![Kontrollpanelen i användargränssnittet för Experience Platform.](../assets/ui/monitor-overview/monitoring.png)
+![Kontrollpanelen i Experience Platform-gränssnittet.](../assets/ui/monitor-overview/monitoring.png)
 
 Välj **[!UICONTROL Data Type]** och använd sedan listrutan för att välja vilken typ av data du vill visa. Datatyperna definieras av XDM-schemaklasser (Experience Data Model) för att säkerställa att deras data följer ett standardformat när de hämtas till Experience Platform. Mer information finns i följande dokumentation:
 
@@ -65,7 +65,7 @@ Välj **[!UICONTROL Customer & Account]** om du vill uppdatera instrumentpanelen
 
 >[!TAB Prospekt]
 
-Välj **[!UICONTROL Prospect]** om du vill uppdatera din instrumentpanel och visa statistik om prospekteringsdata som har importerats till Experience Platform under en viss period. **Obs!**: Du kan bara visa datatypsaktiviteter för potentiella kunder om du är [berättigad till data för potentiella kunder](../../rtcdp/partner-data/prospecting.md).
+Välj **[!UICONTROL Prospect]** om du vill uppdatera instrumentpanelen och visa statistik om prospekteringsdata som har importerats till Experience Platform under en viss period. **Obs!**: Du kan bara visa datatypsaktiviteter för potentiella kunder om du är [berättigad till data för potentiella kunder](../../rtcdp/partner-data/prospecting.md).
 
 ![Övervakningens datatyp har angetts till Prospect.](../assets/ui/monitor-overview/prospect.png)
 

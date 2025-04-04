@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Anslut Aqua Data Studio till Query Service
 description: Det här dokumentet går igenom stegen för att ansluta Aqua Data Studio med Adobe Experience Platform Query Service.
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här guiden kräver att du redan har tillgång till [!DNL Aqua Data Studio] 
 >
 >Det finns [!DNL Windows] och [!DNL macOS] versioner av [!DNL Aqua Data Studio]. Skärmbilder i den här guiden har tagits med skrivbordsappen [!DNL macOS]. Det kan finnas små skillnader i användargränssnittet mellan versionerna.
 
-Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL Aqua Data Studio] till Experience Platform måste du ha tillgång till arbetsytan [!UICONTROL Queries] i plattformsgränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan [!UICONTROL Queries].
+Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL Aqua Data Studio] till Experience Platform måste du ha tillgång till arbetsytan [!UICONTROL Queries] i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan [!UICONTROL Queries].
 
 ## Registrera servern {#register-server}
 
@@ -32,14 +32,14 @@ När du har installerat [!DNL Aqua Data Studio] måste du först registrera serv
 När dialogrutan **[!DNL Register Server]** visas för en PostgresSQL-server anger du följande information för serverinställningarna.
 
 - **[!DNL Name]**: Namnet på anslutningen. Du bör ange ett eget namn för att känna igen anslutningen.
-- **[!DNL Login Name]**: Inloggningsnamnet är ditt organisations-ID för plattformen. Det har formen `ORG_ID@AdobeOrg`.
+- **[!DNL Login Name]**: Inloggningsnamnet är ditt företags-ID för Experience Platform. Det har formen `ORG_ID@AdobeOrg`.
 - **[!DNL Password]**: Det här är en alfanumerisk sträng som finns på instrumentpanelen för autentiseringsuppgifter i [!DNL Query Service].
 - **[!DNL Host and Port]**: Värdslutpunkten och dess port för [!DNL Query Service]. Du måste använda port 80 för att ansluta till [!DNL Query Service].
-- **[!DNL Database]:** Databasen som ska användas. Använd värdet för plattformsgränssnittets autentiseringsuppgifter `dbname`: `prod:all`.
+- **[!DNL Database]:** Databasen som ska användas. Använd värdet för Experience Platform-användargränssnittets autentiseringsuppgifter `dbname`: `prod:all`.
 
 ### [!DNL Query Service] autentiseringsuppgifter
 
-Om du vill hitta dina autentiseringsuppgifter loggar du in på [!DNL Platform]-gränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Fullständiga anvisningar om hur du hittar inloggningsuppgifter, värd, port och databasnamn finns i handboken [för inloggningsuppgifter](../ui/credentials.md).
+Om du vill hitta dina autentiseringsuppgifter loggar du in på [!DNL Experience Platform]-gränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Fullständiga anvisningar om hur du hittar inloggningsuppgifter, värd, port och databasnamn finns i handboken [för inloggningsuppgifter](../ui/credentials.md).
 
 [!DNL Query Service] erbjuder även autentiseringsuppgifter som inte upphör att gälla så att det går att konfigurera en gång med tredjepartsklienter. I dokumentationen finns [fullständiga instruktioner om hur du genererar och använder inloggningsuppgifter som inte upphör att gälla](../ui/credentials.md#non-expiring-credentials).
 

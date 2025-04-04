@@ -4,13 +4,13 @@ description: Exportera data till ditt Snowflake-konto med privata listor.
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 2893356e36fde4759ffe76e01296fcb8811ab8e7
+exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '644'
+source-wordcount: '645'
 ht-degree: 3%
 
 ---
-
 
 # Snowflake {#snowflake-destination}
 
@@ -99,7 +99,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 Snowflake-målet stöder mappning av profilattribut till anpassade attribut.
 
-![Bilden på användargränssnittet för plattformen visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake/mapping.png)
+![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake/mapping.png)
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 

@@ -4,9 +4,9 @@ title: Real-Time Customer Data Platform hemsida och Dashboards
 description: Förstå olika instrumentpaneler, startsidan och förstagångsupplevelsen för användare av Adobe Real-Time CDP.
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '889'
+source-wordcount: '895'
 ht-degree: 4%
 
 ---
@@ -19,18 +19,18 @@ Real-Time CDP hemsida innehåller en widget för att komma igång som gör att d
 
 Det här dokumentet innehåller en översikt över Real-Time CDP hemsida och instrumentpanel för mätvärden.
 
-![Plattformsgränssnittets startsida.](assets/platform-home/home.png)
+![Experience Platform-gränssnittets startsida.](assets/platform-home/home.png)
 
 ## Komma igång-widget
 
 Widgeten [!UICONTROL Getting started with Real-Time Customer Profile] är uppdelad i fyra avsnitt:
 
-* **Infoga data i plattformen**: Den här widgeten dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Välj **[Konfigurera källor]** för att navigera till källkatalogen. Mer information finns i [översikten över källor](../sources/home.md).
+* **Infoga data i Experience Platform**: Den här widgeten dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Välj **[Konfigurera källor]** för att navigera till källkatalogen. Mer information finns i [översikten över källor](../sources/home.md).
 * **Modelldatastrukturer**: Den här widgeten dirigerar dig till översikten över scheman. Använd översikten för att bläddra efter befintliga scheman eller skapa en plan som beskriver datastrukturen. Välj **[!UICONTROL Create schema]** om du vill navigera till gränssnittet för att skapa scheman. Mer information finns i översikten [scheman](../xdm/home.md).
 * **Skapa målgrupper**: Den här widgeten dirigerar dig till segmentbyggaren i användargränssnittet. Använd Segment Builder för att interagera med profildataelement och definiera villkoren för segmentdefinitionen. Välj **[!UICONTROL Create audience]** om du vill navigera till segmentbyggaren. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 * **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka målgrupper till. Välj **[!UICONTROL Set up destinations]** för att navigera till målkatalogen. Mer information finns i [översikten över destinationer](../destinations/home.md).
 
-![Plattformsgränssnittets startsida med widgeten Komma igång](assets/platform-home/getting-started-widget.png)
+![Experience Platform-gränssnittets startsida med widgeten Komma igång](assets/platform-home/getting-started-widget.png)
 
 ## Kontrollpanel för mått {#metrics-dashboard}
 
@@ -46,7 +46,7 @@ Kontrollpanelen för mätvärden visar aktuell information om dina Experience Pl
 
 På resultatlistan visas det aktuella totala antalet scheman, datamängder, profiler och målgrupper i organisationen samt deras senaste uppdateringsdatum.
 
-![Ledningsdelen på startsidan för plattformsgränssnittet.](assets/platform-home/leaderboard.png)
+![Ledningsdelen på Experience Platform användargränssnittets startsida.](assets/platform-home/leaderboard.png)
 
 * **Totalt antal scheman**: Räknaren **Totalt antal scheman** visar antalet scheman i systemet. Räknaren uppdateras när ett schema skapas. Mer information finns i översikten [scheman](../xdm/home.md).
 * **Totalt antal datauppsättningar**: Räknaren **Totalt antal datauppsättningar** visar antalet datauppsättningar i systemet och datamängden i Experience Platform. Den här räknaren uppdateras när en datauppsättning skapas. Mer information om datauppsättningar finns i [översikten över datauppsättningar](../catalog/datasets/overview.md).
@@ -57,7 +57,7 @@ På resultatlistan visas det aktuella totala antalet scheman, datamängder, prof
 
 Senaste objekt listar de senaste ändringarna i organisationen. I exemplet nedan gäller de senaste ändringarna datamängder, källor, målgrupper och destinationer.
 
-![Avsnittet med senaste objekt på startsidan för plattformsgränssnittet.](assets/platform-home/recent-items.png)
+![Avsnittet med senaste objekt på Experience Platform användargränssnittets startsida.](assets/platform-home/recent-items.png)
 
 * **Senaste datauppsättningar**: Kortet **[!UICONTROL Recent datasets]** visar de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas. Välj en datauppsättning om du vill visa information om objektet eller välj **[!UICONTROL View all]** om du vill visa en lista över datauppsättningar. Därifrån kan du välja en specifik källa för information. Mer information om datauppsättningar finns i [översikten över datauppsättningar](../catalog/datasets/overview.md).
 * **Senaste källor**: Måttkortet **[!UICONTROL Recent sources]** visar de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas. Välj en källa om du vill visa information om objektet eller välj **[!UICONTROL View all]** om du vill se en lista över källor. Därifrån kan du välja en specifik källa för information. Mer information om källor finns i [Översikt över källor](../sources/home.md).
@@ -68,7 +68,7 @@ Senaste objekt listar de senaste ändringarna i organisationen. I exemplet nedan
 
 Resurswidgeten innehåller ytterligare dokumentationsresurser som du kan referera till. Bland dessa finns:
 
-![Resursavsnittet på startsidan för plattformsgränssnittet.](assets/platform-home/resources.png)
+![Resursavsnittet på Experience Platform användargränssnittets startsida.](assets/platform-home/resources.png)
 
 * [Scheman](../xdm/schema/composition.md)
 * [Koppla samman källor](../sources/home.md)

@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: f652faac7d771b590b30f591616b53d0cd2ff1eb
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '592'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Exper
 
 ## Terminologi {#terminology}
 
-I den här handboken används plattformsspecifika begrepp, som organisation och sandlådor. I [Experience Platform-ordlistan](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) finns definitioner av dessa termer. I [Destinationens SDK ordlista](/help/destinations/destination-sdk/glossary.md) finns termer som är direkt relaterade till den här funktionen.
+I den här handboken används Experience Platform-specifika begrepp, som organisation och sandlådor. I [Experience Platform-ordlistan](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) finns definitioner av dessa termer. Läs [Destination SDK-ordlistan](/help/destinations/destination-sdk/glossary.md) för termer som är direkt relaterade till den här funktionen.
 
 ## Hämta nödvändiga autentiseringsuppgifter {#obtain-authentication-credentials}
 
-Destinationen SDK använder gatewayen [Adobe I/O](https://www.adobe.io/) för autentisering. Om du vill göra API-anrop till Destinationens SDK slutpunkter måste du ange vissa rubriker i dina API-anrop. Arbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](https://developer.adobe.com/console).
+Destination SDK använder [Adobe I/O](https://www.adobe.io/)-gatewayen för autentisering. Om du vill göra API-anrop till Destination SDK-slutpunkter måste du ange vissa rubriker i dina API-anrop. Arbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](https://developer.adobe.com/console).
 
-Följ självstudiekursen [Experience Platform för autentisering](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html) för att anropa Destination SDK API-slutpunkter. Starta självstudiekursen från steget [Skapa en API-nyckel, ett organisations-ID och en klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret). Adobe Exchange-teamet kommer att hantera de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK-API-anrop, vilket visas nedan:
+Följ [Experience Platform-självstudiekursen](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html) för att anropa Destination SDK API-slutpunkter. Starta självstudiekursen från steget [Skapa en API-nyckel, ett organisations-ID och en klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret). Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK API-anrop, vilket visas nedan:
 
 * `x-api-key: {API_KEY}`, även kallat klient-ID
 * `x-gw-ims-org-id: {ORG_ID}`, även kallat organisations-ID
@@ -52,15 +52,15 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-Adobe Exchange-teamet ger dig ditt sandlådenamn, som du måste använda i anrop till Destination SDK API-slutpunkter.
+Adobe Exchange-teamet förser dig med ditt sandlådenamn, som du måste använda för anrop till Destination SDK API-slutpunkter.
 
 ## Rollbaserad åtkomstkontroll (RBAC) {#rbac}
 
-Om du vill använda Destination SDK-API-slutpunkterna som beskrivs i [referensdokumentationen](functionality/configuration-options.md) måste du ha åtkomstkontrollsbehörigheten **[!UICONTROL Destination Authoring]** . Arbeta med Adobe Exchange-teamet för att få den här behörigheten tilldelad dig i [Adobe Admin Console](https://adminconsole.adobe.com/).
+Om du vill använda Destination SDK API-slutpunkterna som beskrivs i [referensdokumentationen](functionality/configuration-options.md) måste du ha **[!UICONTROL Destination Authoring]** åtkomstkontrollbehörighet. Arbeta med Adobe Exchange-teamet för att få den här behörigheten tilldelad dig i [Adobe Admin Console](https://adminconsole.adobe.com/).
 
 ![Målredigeringsbehörighet](./assets/destination-authoring-permission.png)
 
-Mer information finns i följande dokument för Experience Platform Access Control:
+Mer information finns i följande Experience Platform Access Control-dokument:
 
 * [Hantera behörigheter för en produktprofil](/help/access-control/ui/permissions.md)
 * [Tillgängliga behörigheter för Experience Platform](/help/access-control/home.md#permissions)
@@ -77,8 +77,8 @@ Genom att följa stegen i den här artikeln fick du inloggningsuppgifter för Ad
 
 * Läs följande konfigurationsguider, beroende på måltyp:
 
-   * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](guides/configure-destination-instructions.md)
+   * [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](guides/configure-destination-instructions.md)
    * [Använd Destination SDK för att konfigurera ett filbaserat mål](guides/configure-file-based-destination-instructions.md)
 
 * Mer information om alla åtgärder finns i [API-dokumentationen för målredigering](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
-* Använd [API-samlingen för målredigering](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera ditt mål med Destination SDK-API-slutpunkterna. Om du vill komma igång med Postman går du till [stegen för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och en [videoguide för att skapa Postman-miljön](https://video.tv.adobe.com/v/28832).
+* Använd [API-samlingen för målredigering](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera ditt mål med Destination SDK API-slutpunkterna. Om du vill komma igång med Postman går du till [stegen för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och en [videoguide för att skapa Postman-miljön](https://video.tv.adobe.com/v/28832).

@@ -1,11 +1,11 @@
 ---
-keywords: LinkedIn;linkedin;Linkedin;LinkedIn Insight Tag;insight tag;Insight Tag
-title: LinkedIn Insight Tag Extension
-description: Tillägget LinkedIn Insight Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+keywords: LinkedIn;linkedin;Linkedin;LinkedIn Insight-tagg;insight-tagg;Insight-tagg
+title: Tillägget LinkedIn Insight-tagg
+description: Tillägget LinkedIn Insight Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: f3475621-79df-4208-a47a-e0cfd8acec7f
-source-git-commit: b4e869f9bc29122db4fc66ccda752a50c7db729f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '438'
 ht-degree: 0%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 0%
 
 Installera [!DNL LinkedIn Insight Tag] om du vill använda funktioner för konverteringsspårning, omdirigering och demografi av webbplatser.
 
-[!DNL LinkedIn Insight Tag] är ett annonstillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns i [LinkedIn Insight Tag](https://business.linkedin.com/marketing-solutions/insight-tag).
+[!DNL LinkedIn Insight Tag] är ett annonstillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns i [LinkedIn Insight-tagg](https://business.linkedin.com/marketing-solutions/insight-tag).
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![LinkedIn Insight-taggtillägg](../../assets/catalog/advertising/linkedin/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Experience Platform.
 
 Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget [!DNL LinkedIn Insight Tag]:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
@@ -42,7 +42,7 @@ Välj den egenskap i vilken du vill installera tillägget. Du kan också skapa e
 
 Arbetsflödet vägleder dig genom de olika stegen för att slutföra installationen.
 
-Mer information om alternativ för tilläggskonfiguration och installationsstöd finns i [LinkedIn Insight Tag](https://business.linkedin.com/marketing-solutions/insight-tag).
+Mer information om alternativ för tilläggskonfigurering och installationsstöd finns i [LinkedIn Insight-tagg](https://business.linkedin.com/marketing-solutions/insight-tag).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) i taggdokumentationen.
 
@@ -58,6 +58,6 @@ Du kan konfigurera, uppgradera och ta bort tillägg i användargränssnittet fö
 
 >[!TIP]
 >
->Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
+>Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** för tillägget i Experience Platform-gränssnittet. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
 
 Information om hur du uppgraderar ditt tillägg finns i handboken om uppgraderingsprocessen för [tillägget](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) i taggdokumentationen.

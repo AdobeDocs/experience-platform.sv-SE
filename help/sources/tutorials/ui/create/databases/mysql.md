@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;mysql;MySQL
+keywords: Experience Platform;home;populära topics;mysql;MySQL
 solution: Experience Platform
 title: Skapa en MySQL Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en MySQL-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75e74bde-6199-4970-93d2-f95ec3a59aa5
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '396'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -29,7 +29,7 @@ Om du redan har en [!DNL MySQL]-anslutning kan du hoppa över resten av det här
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL MySQL]-konto på [!DNL Platform] måste du ange följande värde:
+För att få åtkomst till ditt [!DNL MySQL]-konto på [!DNL Experience Platform] måste du ange följande värde:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -37,7 +37,7 @@ För att få åtkomst till ditt [!DNL MySQL]-konto på [!DNL Platform] måste du
 
 ## Anslut ditt [!DNL MySQL]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL MySQL]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL MySQL]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -61,4 +61,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL MySQL]-konto du vi
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt MySQL-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt MySQL-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

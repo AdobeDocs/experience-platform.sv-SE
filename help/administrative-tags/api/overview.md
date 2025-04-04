@@ -3,16 +3,16 @@ title: Översikt över API för enhetliga taggar
 description: Lär dig använda API:t för enhetliga taggar för att hantera enhetliga taggar och mappar i Adobe Experience Platform.
 role: Developer
 exl-id: f4da5850-d5b0-4746-9f28-88ce836db800
-source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
 
 # API-översikt för enhetliga taggar
 
-Med API:t för enhetliga taggar kan du kategorisera och hantera dina affärsobjekt i Adobe Experience Platform. Du kan skapa både mappar och taggar som kan användas för att bättre organisera plattformsobjekt som målgrupper och datauppsättningar genom att använda slutpunkter i det här API:t.
+Med API:t för enhetliga taggar kan du kategorisera och hantera dina affärsobjekt i Adobe Experience Platform. Du kan skapa både mappar och taggar som kan användas för att bättre organisera Experience Platform-objekt som målgrupper eller datauppsättningar genom att använda slutpunkter i det här API:t.
 
 Innan du läser de enskilda slutpunktsguiderna bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information om nödvändiga huvuden, läsning av exempel-API-anrop med mera.
 

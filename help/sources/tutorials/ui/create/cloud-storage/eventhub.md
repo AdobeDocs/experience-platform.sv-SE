@@ -3,9 +3,9 @@ title: Skapa en Azure Event Hubs Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Azure Event Hubs-källanslutning med Adobe Experience Platform-gränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
-source-git-commit: 1256f0c76b29edad4808fc4be1d61399bfbae8fa
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1016'
+source-wordcount: '1017'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
 I den här självstudiekursen får du lära dig hur du skapar ett [!DNL Azure Event Hubs]-konto med Adobe Experience Platform användargränssnitt.
 
@@ -81,7 +81,7 @@ När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stege
 
 ## Anslut ditt [!DNL Event Hubs]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 

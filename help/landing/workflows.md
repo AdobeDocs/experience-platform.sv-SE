@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;populära topics;Adobe Experience Platform;user guide;ui guide;workflows ui guide;workflows;workflows;user guide;
+keywords: Experience Platform;home;populära topics;Adobe Experience Platform;user guide;ui guide;workflows ui guide;workflows;workflows user guide;
 solution: Experience Platform
 title: Användargränssnittshandbok för arbetsflöden
 description: Lär dig följa flerstegsarbetsflöden för att utföra vanliga åtgärder i Adobe Experience Platform användargränssnitt.
 exl-id: f1a3ea83-09c9-48df-9493-62f03b403a95
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '278'
+source-wordcount: '280'
 ht-degree: 0%
 
 ---
 
 # Användargränssnittshandbok för [!UICONTROL Workflows]
 
-Avsnittet **[!UICONTROL Workflows]** i Adobe Experience Platform-användargränssnittet innehåller en lista med flerstegsarbetsflöden för att utföra åtgärder inom plattformen. Dessa arbetsflöden omfattar områden som datainhämtning och datavetenskap.
+Avsnittet **[!UICONTROL Workflows]** i Adobe Experience Platform användargränssnitt innehåller en lista med flerstegsarbetsflöden för att utföra åtgärder i Experience Platform. Dessa arbetsflöden omfattar områden som datainhämtning och datavetenskap.
 
 ![arbetsflöden](./images/workflows/workflows.png)
 
@@ -35,4 +35,4 @@ Med arbetsflödet **[!UICONTROL Publish a model as a service]** kan du publicera
 
 ## Nästa steg
 
-Genom att läsa den här guiden har du introducerats till [!UICONTROL Workflows] som finns i användargränssnittet i Experience Platform. Mer information om plattformsgränssnittets funktioner finns i [Adobe Experience Platform användargränssnittshandbok](ui-guide.md).
+Genom att läsa den här guiden har du introducerats till [!UICONTROL Workflows] som är tillgänglig i Experience Platform användargränssnitt. Mer information om Experience Platform användargränssnittsfunktioner finns i [Adobe Experience Platform användargränssnittshandbok](ui-guide.md).

@@ -2,9 +2,9 @@
 title: Känslig och personlig information i XDM
 description: Läs om viktiga aspekter av känslig personlig information (SPI) och personligt identifierbar information (PII) i Experience Data Model (XDM).
 exl-id: 92a8b6ad-3c45-4772-8178-60f857ab13e2
-source-git-commit: 302dca9a9f834dba1fd3fdac15284ea4e2fba282
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '568'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Kontakta ditt juridiska team för att få reda på hur känsliga och personliga 
 
 XDM har en mängd standardfältgrupper och datatyper som beskriver relevanta, ofta använda datastrukturer som stärker kundupplevelserna. Om en rekommenderad standardresurs innehåller begränsade fält som du inte vill inkludera i dina scheman behöver du dock inte använda den resursen.
 
-Med Platform kan ni definiera egna fältgrupper och datatyper, vilket ger er full kontroll över hur data är strukturerade om några tillgängliga standardresurser inte uppfyller era behov. Mer information om hur du definierar anpassade resurser finns i följande dokumentation:
+Med Experience Platform kan ni definiera egna fältgrupper och datatyper, vilket ger er full kontroll över hur data är strukturerade om några tillgängliga standardresurser inte uppfyller era behov. Mer information om hur du definierar anpassade resurser finns i följande dokumentation:
 
 * [Skapa en anpassad fältgrupp](../ui/resources/field-groups.md#create)
 * [Skapa en anpassad datatyp](../ui/resources/data-types.md#create)
@@ -54,4 +54,4 @@ Med Platform kan ni definiera egna fältgrupper och datatyper, vilket ger er ful
 
 Det här dokumentet innehöll viktiga överväganden om känsliga och personuppgifter i XDM. Mer information om hur du modellerar dina scheman så att de bäst passar dina affärssituationer finns i guiden [Bästa praxis för datamodellering](./best-practices.md).
 
-Mer information om datastyrning och sekretesskapacitet i Experience Platform finns i översikten över [styrning, sekretess och säkerhet](../../landing/governance-privacy-security/overview.md).
+Mer information om datastyrning och sekretessfunktioner i Experience Platform finns i översikten om [styrning, sekretess och säkerhet](../../landing/governance-privacy-security/overview.md).

@@ -2,9 +2,9 @@
 title: Datatypen Media Reporting Details
 description: Läs mer om datatypen XDM (Media Reporting Details Experience Data Model).
 exl-id: e8bf20a9-9ac0-4339-8200-5d6d9328ce3b
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '453'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->De fält som anges nedan används inte direkt för att skapa begäranden. I stället sammanställs fältsamlingen som skickas till Adobe Experience Platform eller Adobe Analytics från dina data och mätvärden infogas eller bearbetas sedan av serverinfrastrukturen. Plattformen samlar in olika typer av användarhändelser, men rapporterna returnerar till dig fokuserar på specifika händelser, som `media.sessionStart`, `media.adStart` och `media.sessionComplete`. Det innebär att även om du överför 12 typer av händelser under samlingen, kommer dina rapporter endast att innehålla uppdelningar baserade på de fem händelser som listas nedan.
+>De fält som anges nedan används inte direkt för att skapa begäranden. I stället sammanställs fältsamlingen som skickas till Adobe Experience Platform eller Adobe Analytics från dina data och mätvärden infogas eller bearbetas sedan av serverinfrastrukturen. Experience Platform samlar in olika typer av användarhändelser, men rapporterna returnerar till dig fokuserar på specifika händelser, som `media.sessionStart`, `media.adStart` och `media.sessionComplete`. Det innebär att även om du överför 12 typer av händelser under samlingen, kommer dina rapporter endast att innehålla uppdelningar baserade på de fem händelser som listas nedan.
 
 +++Välj om du vill visa ett diagram med datatypen [!UICONTROL Media Reporting Details].
 ![Ett diagram över datatypen [!UICONTROL Media Reporting Details].](../images/data-types/media-reporting-details.png)

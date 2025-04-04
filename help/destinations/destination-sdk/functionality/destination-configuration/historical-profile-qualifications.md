@@ -1,8 +1,8 @@
 ---
-description: Lär dig mer om de historiska profilkvalifikationer som stöds av mål som skapats med Destination SDK.
+description: Läs om de historiska profilkvalifikationer som stöds av mål som skapats med Destination SDK.
 title: Krav på historisk profil
 exl-id: 8880cff9-865b-4d45-a24d-a78e77419670
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 0%
@@ -33,14 +33,14 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 <!-- 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when audiences are activated to the destination. <br> <ul><li> `true`: [!DNL Platform] sends the historical user profiles that qualified for the audience before the audience is activated. </li><li> `false`: [!DNL Platform] only includes user profiles that qualify for the audience after the audience is activated. </li></ul> |
+|`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when audiences are activated to the destination. <br> <ul><li> `true`: [!DNL Experience Platform] sends the historical user profiles that qualified for the audience before the audience is activated. </li><li> `false`: [!DNL Experience Platform] only includes user profiles that qualify for the audience after the audience is activated. </li></ul> |
 
 {style="table-layout:auto"} -->
 
 
 ## Nästa steg {#next-steps}
 
-När du har läst den här artikeln bör du känna till att Experience Platform automatiskt exporterar en historik över alla profiler som någonsin kvalificerats för en aktiverad målgrupp när målgruppen först exporteras till målet. Det här alternativet kan inte konfigureras i Destination SDK eller i användargränssnittet för Experience Platform.
+När du har läst den här artikeln bör du känna till att Experience Platform automatiskt exporterar en historik över alla profiler som någonsin kvalificerats för en aktiverad målgrupp när målgruppen först exporteras till målet. Det här alternativet kan inte konfigureras i Destination SDK eller Experience Platform-gränssnittet.
 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 

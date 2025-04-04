@@ -3,7 +3,7 @@ keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;des
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 78168493d712d2ec0974b811d288902fd94f3e40
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1117'
 ht-degree: 0%
@@ -30,13 +30,13 @@ Fliken **[!UICONTROL Overview]** visar kontrollpanelen [!UICONTROL Destinations]
 
 ## [!UICONTROL Catalog] {#catalog}
 
-Fliken **[!UICONTROL Catalog]** visar en lista över alla mål som är tillgängliga i [!DNL Platform] och som du kan skicka data till.
+Fliken **[!UICONTROL Catalog]** visar en lista över alla mål som är tillgängliga i [!DNL Experience Platform] och som du kan skicka data till.
 
-Användargränssnittet [!DNL Platform] innehåller flera sök- och filteralternativ på målkatalogsidan:
+Användargränssnittet [!DNL Experience Platform] innehåller flera sök- och filteralternativ på målkatalogsidan:
 
 * Använd sökfunktionen på sidan för att hitta ett specifikt mål.
 * Filtrera mål med kontrollen [!UICONTROL Categories].
-* Växla mellan [!UICONTROL All destinations] och [!UICONTROL My destinations]. När du väljer **[!UICONTROL All destinations]** visas alla tillgängliga [!DNL Platform]-mål. När du väljer **[!UICONTROL My destinations]** kan du bara se de mål som du har upprättat en anslutning med.
+* Växla mellan [!UICONTROL All destinations] och [!UICONTROL My destinations]. När du väljer **[!UICONTROL All destinations]** visas alla tillgängliga [!DNL Experience Platform]-mål. När du väljer **[!UICONTROL My destinations]** kan du bara se de mål som du har upprättat en anslutning med.
 * Välj detta om du vill visa typerna **[!UICONTROL Connections]** och/eller **[!UICONTROL Extensions]**. Läs [Måltyper och kategorier](../destination-types.md) om du vill veta skillnaden mellan de två kategorierna.
 
 ![Målkatalogen visar några annonser och molnlagringsmål.](../assets/ui/workspace/catalog.png)

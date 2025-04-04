@@ -4,7 +4,7 @@ title: Lägg till data i kundprofilen i realtid
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Du kan aktivera ett schema för användning i [!DNL Real-Time Customer Profile] 
 
 ## Lägg till data med batchinmatning
 
-Alla data som har överförts till [!DNL Platform] med batchöverföring överförs till enskilda datauppsättningar. Innan dessa data kan användas av [!DNL Real-Time Customer Profile] måste den aktuella datauppsättningen konfigureras specifikt. Fullständiga anvisningar finns i självstudiekursen [Konfigurera en datauppsättning för profil- och identitetstjänsten](dataset-configuration.md).
+Alla data som har överförts till [!DNL Experience Platform] med batchöverföring överförs till enskilda datauppsättningar. Innan dessa data kan användas av [!DNL Real-Time Customer Profile] måste den aktuella datauppsättningen konfigureras specifikt. Fullständiga anvisningar finns i självstudiekursen [Konfigurera en datauppsättning för profil- och identitetstjänsten](dataset-configuration.md).
 
 När datauppsättningen har konfigurerats kan du börja inhämta data i den. Mer information om hur du överför filer i olika format finns i [Utvecklarhandbok för gruppimport](../../ingestion/batch-ingestion/api-overview.md).
 

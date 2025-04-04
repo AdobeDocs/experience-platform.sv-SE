@@ -3,9 +3,9 @@ title: Skapa en källanslutning och ett dataflöde för Customer.io med API:t f�
 description: Lär dig hur du ansluter Adobe Experience Platform till Customer.io med API:t för Flow Service.
 badge: Beta
 exl-id: 1c84d818-428f-4097-9f6f-ef0cf1a04785
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1389'
+source-wordcount: '1395'
 ht-degree: 0%
 
 ---
@@ -22,16 +22,16 @@ I följande självstudiekurs får du hjälp med att skapa en [!DNL Customer.io]-
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Anslut [!DNL Customer.io] till plattformen med API:t [!DNL Flow Service] {#connect-platform-to-flow-api}
+## Anslut [!DNL Customer.io] till Experience Platform med API:t [!DNL Flow Service] {#connect-platform-to-flow-api}
 
-Följande beskriver de steg som du måste utföra för att skapa en källanslutning och ett dataflöde för att kunna skicka [!DNL Customer.io]-händelsedata till Experience Platform.
+Följande beskriver de steg du måste utföra för att skapa en källanslutning och ett dataflöde för att kunna överföra [!DNL Customer.io]-händelsedata till Experience Platform.
 
 ### Skapa en källanslutning {#source-connection}
 
-Skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service]-API:t och ange källans anslutningsspec-ID, information som namn och beskrivning samt dataformatet.
+Skapa en källanslutning genom att göra en POST-begäran till API:t [!DNL Flow Service], och ange källans anslutningsspec-ID, information som namn och beskrivning samt dataformatet.
 
 **API-format**
 
@@ -85,15 +85,15 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ### Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/) utförs, med ID:t för målschemat i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
@@ -162,7 +162,7 @@ Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta 
 
 ### Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en POST-begäran till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -252,13 +252,13 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ### Skapa ett flöde {#flow}
 
-Det sista steget mot att överföra data från [!DNL Customer.io] till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra data från [!DNL Customer.io] till Experience Platform är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 * [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
 **API-format**
 
@@ -308,7 +308,7 @@ curl -X POST \
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
 | `sourceConnectionIds` | [källanslutnings-ID](#source-connection) genererades i ett tidigare steg. |
 | `targetConnectionIds` | [målanslutnings-ID](#target-connection) genererades i ett tidigare steg. |
-| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
+| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till Experience Platform. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
@@ -326,9 +326,9 @@ Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet. Du kan an
 
 ### Hämta din URL för direktuppspelningsslutpunkt {#get-streaming-endpoint-url}
 
-När dataflödet har skapats kan du nu hämta URL:en för direktuppspelningsslutpunkten. Du använder den här slutpunkts-URL:en för att prenumerera källan på en webkrok, vilket gör att källan kan kommunicera med Experience Platform.
+När dataflödet har skapats kan du nu hämta URL:en för direktuppspelningsslutpunkten. Du kommer att använda den här slutpunkts-URL:en för att prenumerera på en webkrok så att källan kan kommunicera med Experience Platform.
 
-Om du vill hämta URL:en för direktuppspelningsslutpunkten gör du en GET-förfrågan till `/flows`-slutpunkten och anger ID:t för dataflödet.
+Om du vill hämta URL:en för direktuppspelningsslutpunkten gör du en GET-begäran till slutpunkten `/flows` och anger ID:t för dataflödet.
 
 **API-format**
 
@@ -437,7 +437,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ### Uppdatera ditt dataflöde {#update-dataflow}
 
-Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten i [!DNL Flow Service]-API:t, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i handboken om att [uppdatera källkodsdataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
+Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i handboken om att [uppdatera källkodsdataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
 
 ### Uppdatera ditt konto {#update-account}
 

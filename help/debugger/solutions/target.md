@@ -2,34 +2,34 @@
 title: Testa en Adobe Target-implementering med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Adobe Experience Platform Debugger för att testa och felsöka en webbplats som är aktiverad med Adobe Target.
 exl-id: f99548ff-c6f2-4e99-920b-eb981679de2d
-source-git-commit: bc6069f2cfa4459860fe98588b293ffeed7fb1f1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1035'
+source-wordcount: '1047'
 ht-degree: 0%
 
 ---
 
 # Testa en Adobe Target-implementering med Adobe Experience Platform Debugger
 
-Adobe Experience Platform Debugger har en uppsättning användbara verktyg för att testa och felsöka en webbplats som har verktygats med en Adobe Target-implementering. Den här guiden innehåller några vanliga arbetsflöden och metodtips för att använda Platform Debugger på en målaktiverad webbplats.
+Adobe Experience Platform Debugger innehåller en serie användbara verktyg för att testa och felsöka en webbplats som har verktygats med en Adobe Target-implementering. Den här guiden innehåller några vanliga arbetsflöden och metodtips för hur du använder Experience Platform Debugger på en målaktiverad webbplats.
 
 ## Förhandskrav
 
-Om du vill använda Platform Debugger för Target måste webbplatsen använda biblioteket [at.js](https://developer.adobe.com/target/implement/client-side/atjs/how-atjs-works/) version 1.x eller senare. Tidigare versioner stöds inte.
+Om du vill använda Experience Platform Debugger för Target måste webbplatsen använda biblioteket [at.js](https://developer.adobe.com/target/implement/client-side/atjs/how-atjs-works/) version 1.x eller senare. Tidigare versioner stöds inte.
 
-## Initierar plattformsfelsökning
+## Initierar Experience Platform Debugger
 
-Öppna webbplatsen som du vill testa i en webbläsare och öppna sedan plattformsfelsökningstillägget.
+Öppna webbplatsen som du vill testa i en webbläsare och öppna sedan Experience Platform Debugger-tillägget.
 
-Välj **[!DNL Target]** i den vänstra navigeringen. Om plattformsfelsökaren upptäcker att en kompatibel version av at.js körs på webbplatsen visas Adobe Target implementeringsinformation.
+Välj **[!DNL Target]** i den vänstra navigeringen. Om Experience Platform Debugger upptäcker att en kompatibel version av at.js körs på webbplatsen visas information om Adobe Target implementering.
 
-![Målvyn är markerad i plattformsfelsökaren, vilket anger att Adobe Target är aktivt på den webbläsarsida som visas](../images/solutions/target/target-initialized.png)
+![Målvyn är markerad i Experience Platform Debugger, vilket anger att Adobe Target är aktivt på den webbläsarsida som visas](../images/solutions/target/target-initialized.png)
 
 ## Global konfigurationsinformation
 
-Information om implementeringens globala konfiguration visas högst upp i målvyn i Platform Debugger.
+Information om implementeringens globala konfiguration visas högst upp i målvyn i Experience Platform Debugger.
 
-![Global konfigurationsinformation för Target markeras i plattformsfelsökaren](../images/solutions/target/global-config.png)
+![Global konfigurationsinformation för Target markeras i Experience Platform Debugger](../images/solutions/target/global-config.png)
 
 | Namn | Beskrivning |
 | --- | --- |
@@ -44,11 +44,11 @@ Information om implementeringens globala konfiguration visas högst upp i målvy
 
 Välj **[!DNL Network Requests]** om du vill visa sammanfattningsinformation för varje nätverksbegäran som har gjorts på sidan.
 
-![Avsnittet [!DNL Network Requests] för Target har valts i plattformsfelsökaren](../images/solutions/target/network-requests.png)
+![Avsnittet [!DNL Network Requests] för Target är markerat i Experience Platform Debugger](../images/solutions/target/network-requests.png)
 
 När du utför åtgärder på sidan (inklusive läser in sidan igen) läggs nya kolumner automatiskt till i tabellen, så att du kan visa åtgärdssekvensen och hur värdena ändras mellan varje begäran.
 
-![Avsnittet [!DNL Network Requests] för Target har valts i plattformsfelsökaren](../images/solutions/target/new-request.png)
+![Avsnittet [!DNL Network Requests] för Target är markerat i Experience Platform Debugger](../images/solutions/target/new-request.png)
 
 Följande värden hämtas:
 
@@ -68,8 +68,8 @@ Följande värden hämtas:
 | [!DNL Initiator] | Initieraren av begäran. Med andra ord, vem gjorde förfrågan? |
 | [!DNL clientCode] | Identifieraren för organisationens konto som identifieras av Target. |
 | [!DNL requestType] | Det API som användes för begäran. Om at.js 1.x används är värdet `/json`. Om at.js 2.x används är värdet `delivery`. |
-| [!DNL Audience Manager Blob] | Tillhandahåller information om krypterade Audience Manager-metadata som kallas&quot;blob&quot;. |
-| [!DNL Audience Location Hint] | Datainsamlingens region-ID. Detta är en numerisk identifierare för den geografiska platsen för ett visst ID-tjänstdatacenter. Mer information finns i Audience Manager-dokumentationen om [DCS-region-ID:n, platser och värdnamn](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html) och i handboken om Experience Cloud-identitetstjänsten på [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html#reference-a761030ff06c4439946bb56febf42d4c). |
+| [!DNL Audience Manager Blob] | Innehåller information om krypterade Audience Manager-metadata som kallas&quot;blob&quot;. |
+| [!DNL Audience Location Hint] | Datainsamlingens region-ID. Detta är en numerisk identifierare för den geografiska platsen för ett visst ID-tjänstdatacenter. Mer information finns i Audience Manager-dokumentationen om [DCS-region-ID:n, platser och värdnamn](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html) och i handboken om Experience Cloud identitetstjänst på [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html#reference-a761030ff06c4439946bb56febf42d4c). |
 | [!DNL Browser Height] | Webbläsarens höjd i pixlar. |
 | [!DNL Browser Time Offset] | Webbläsarens tidsförskjutning som är associerad med dess tidszon. |
 | [!DNL Browser Width] | Webbläsarens bredd i pixlar. |
@@ -91,20 +91,20 @@ Följande värden hämtas:
 | [!DNL Screen Height] | Skärmens höjd i pixlar. |
 | [!DNL Screen Width] | Skärmens bredd i pixlar. |
 | [!DNL Supplemental Data ID] | Ett systemgenererat ID som används för att matcha besökare med motsvarande Adobe Target- och Adobe Analytics-samtal. Mer information finns i [A4T-felsökningsguiden](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/troubleshoot-a4t/a4t-troubleshooting.html?#section_75002584FA63456D8D9086172925DD8D). |
-| [!DNL vst] | API-konfigurationen för [Experience Cloud-identitetstjänsten](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/configurations/function-vars.html). |
+| [!DNL vst] | [Experience Cloud Identity Service API-konfiguration](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/configurations/function-vars.html). |
 | [!DNL webGLRenderer] | Anger information om WebGL-renderaren som används på sidan, om tillämpligt. |
 
 {style="table-layout:auto"}
 
 Om du vill visa information om en parameter för en viss nätverkshändelse markerar du tabellcellen i fråga. En pover med mer information om parametern visas, inklusive en beskrivning och dess värde. Om värdet är ett JSON-objekt innehåller dialogrutan en fullt navigerbar vy av objektets struktur.
 
-![Avsnittet [!DNL Network Requests] för Target har valts i plattformsfelsökaren](../images/solutions/target/request-param-details.png)
+![Avsnittet [!DNL Network Requests] för Target är markerat i Experience Platform Debugger](../images/solutions/target/request-param-details.png)
 
 ## [!DNL Configuration]
 
 Välj **[!DNL Configuration]** om du vill aktivera eller inaktivera ett urval av ytterligare felsökningsverktyg för Target.
 
-![Avsnittet [!DNL Configuration Requests] för Target har valts i plattformsfelsökaren](../images/solutions/target/configuration.png)
+![Avsnittet [!DNL Configuration Requests] för Target är markerat i Experience Platform Debugger](../images/solutions/target/configuration.png)
 
 | Felsökningsverktyg | Beskrivning |
 | --- | --- |

@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;dataplats;dataplats;datahantering;datahantering;rad;rad;datatyp;datatyp;datatyper;datatyp
+keywords: Experience Platform;hem;populära ämnen;dataplats;dataplats;datahantering;datahantering;linje;rad;datatyp;datatyper;datatyper;datatyp
 solution: Experience Platform
 title: Datauppsättningar - översikt
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
-user-guide-description: Få en översikt över datauppsättningar på hög nivå i Experience Platform med den här guiden. Lär dig hur du skapar dem, tillämpar begränsningar för data och importerar data till datauppsättningar här.
+user-guide-description: Få en översikt över datauppsättningar i Experience Platform med den här guiden. Lär dig hur du skapar dem, tillämpar begränsningar för data och importerar data till datauppsättningar här.
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '872'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ Mer information finns i [Katalogtjänstöversikt](../home.md).
 
 ## Tvingande begränsningar för datauppsättningsdata
 
-[!DNL Experience Data Model] (XDM) är det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata med. Alla data som är inkapslade i [!DNL Platform] måste överensstämma med ett fördefinierat XDM-schema innan de kan sparas i [!DNL Data Lake] som en datauppsättning.
+[!DNL Experience Data Model] (XDM) är det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med. Alla data som är inkapslade i [!DNL Experience Platform] måste överensstämma med ett fördefinierat XDM-schema innan de kan sparas i [!DNL Data Lake] som en datauppsättning.
 
 Alla datauppsättningar innehåller en referens till XDM-schemat som begränsar formatet och strukturen för de data som kan lagras. Om du försöker överföra data till en datauppsättning som inte är kompatibel med datauppsättningens XDM-schema kommer det att leda till att importen misslyckas.
 
@@ -34,7 +34,7 @@ Mer information om XDM finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Samla in data i datauppsättningar
 
-Adobe Experience Platform datainmatning representerar de olika metoder som [!DNL Platform] använder för att importera data från olika källor. Oavsett vilken metod som används konverteras alla importerade data till gruppfiler. Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. Dessa gruppfiler läggs sedan till i dedikerade datamängder och sparas i [!DNL Data Lake].
+Adobe Experience Platform datainmatning representerar de olika metoder som [!DNL Experience Platform] använder för att importera data från olika källor. Oavsett vilken metod som används konverteras alla importerade data till gruppfiler. Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. Dessa gruppfiler läggs sedan till i dedikerade datamängder och sparas i [!DNL Data Lake].
 
 Mer information finns i [Översikt över datainmatning](../../ingestion/home.md).
 
@@ -44,16 +44,16 @@ Med Adobe Experience Platform Data Governance kan ni hantera kunddata för att s
 
 >[!IMPORTANT]
 >
->Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Mer information om hur du gör detta finns i avsnittet [migrera tidigare använda etiketter](../../data-governance/e2e.md#migrate-labels).
+>Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i Experience Platform-gränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Mer information om hur du gör detta finns i avsnittet [migrera tidigare använda etiketter](../../data-governance/e2e.md#migrate-labels).
 
-Mer information om tjänsten finns i [Datastyrningsöversikten](../../data-governance/home.md). Anvisningar om hur du arbetar med användningsetiketter i [!DNL Platform] finns i följande guider:
+Mer information om tjänsten finns i [Datastyrningsöversikten](../../data-governance/home.md). Anvisningar om hur du arbetar med användningsetiketter i [!DNL Experience Platform] finns i följande guider:
 
 * [Hantera etiketter i användargränssnittet](../../data-governance/labels/user-guide.md)
 * [Hantera datauppsättningsrubriker i API](../../data-governance/labels/dataset-api.md)
 
-## Datauppsättningar i underordnade [!DNL Platform]-tjänster
+## Datauppsättningar i underordnade [!DNL Experience Platform]-tjänster
 
-När datauppsättningar har använts för att lagra inkapslade data används dessa datauppsättningar av [!DNL Platform]-tjänster längre fram i kedjan för att uppdatera kundprofiler, få insikter via maskininlärning och mycket annat.
+När datauppsättningar har använts för att lagra inkapslade data används dessa datauppsättningar av [!DNL Experience Platform]-tjänster längre fram i kedjan för att uppdatera kundprofiler, få insikter via maskininlärning och mycket annat.
 
 Nedan följer en lista över tjänster längre fram i kedjan som använder datauppsättningar för olika åtgärder. Mer information finns i dokumentationen för respektive tjänst.
 
@@ -67,6 +67,6 @@ Nedan följer en lista över tjänster längre fram i kedjan som använder datau
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du introducerats till de viktigaste användningsområdena för datauppsättningar i [!DNL Experience Platform], samt till de olika [!DNL Platform]-tjänster som använder datauppsättningar. Mer information om de många sätt som datauppsättningar används på i [!DNL Platform] finns i servicedokumentationen som är länkad i den här översikten.
+Genom att läsa det här dokumentet har du introducerats till de viktigaste användningsområdena för datauppsättningar i [!DNL Experience Platform], samt till de olika [!DNL Experience Platform]-tjänster som använder datauppsättningar. Mer information om de många sätt som datauppsättningar används på i [!DNL Experience Platform] finns i servicedokumentationen som är länkad i den här översikten.
 
 Anvisningar om hur du interagerar med datauppsättningar i användargränssnittet för [!DNL Experience Platform] finns i användarhandboken för [datauppsättningar](user-guide.md).

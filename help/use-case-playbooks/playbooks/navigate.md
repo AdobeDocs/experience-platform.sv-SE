@@ -4,16 +4,16 @@ title: Navigera till Använd fallspelningsböcker
 description: Lär dig navigera i ett galleri med spelböcker och komma igång med en inspirerande sandlåda.
 role: User
 exl-id: 1f5dae75-1136-4be3-9132-01d36a4066ca
-source-git-commit: 703c84e61af105bc3933e4750a3cb27df8ac19fe
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '705'
+source-wordcount: '706'
 ht-degree: 0%
 
 ---
 
 # Navigera till Använd fallspelningsböcker
 
-Använd fallspelsböcker är tillgängliga utan extra kostnad för alla Adobe Experience Platform-kunder. Om du vill få tillgång till ett omfattande galleri med fallspelningsböcker i användargränssnittet i Experience Platform väljer du **[!UICONTROL Playbooks]** i den vänstra navigeringen.
+Använd fallspelsböcker är tillgängliga utan extra kostnad för alla Adobe Experience Platform-kunder. Om du vill få tillgång till ett omfattande galleri med fallspelningsböcker i Experience Platform-gränssnittet väljer du **[!UICONTROL Playbooks]** i den vänstra navigeringen.
 
 ![Använd galleri för fallspelningsböcker.](/help/use-case-playbooks/assets/playbooks/discover/playbooks-gallery.png)
 
@@ -67,8 +67,8 @@ Konfigurera även kanaler för spelböcker som innehåller transaktionsmeddeland
 
 ### Tryck kanalyta
 
-Bekräfta att kanalkonfigurationerna har konfigurerats från Experience Platform eller datainsamlingsgränssnittet. Så här ser kanalkonfigurationer ut i datainsamlingsmiljön.
+Bekräfta att kanalkonfigurationerna har konfigurerats antingen från Experience Platform eller datainsamlingsgränssnittet. Så här ser kanalkonfigurationer ut i datainsamlingsmiljön.
 
 ## Nästa steg {#next-steps}
 
-Nu när du har läst det här dokumentet bör du veta hur du konfigurerar en inspirerande sandlåda och känna till olika sätt att komma åt fallspelsböcker inom Platform. Som ett nästa steg kan du läsa om hur du [väljer](/help/use-case-playbooks/playbooks/choose.md) rätt spelbok.
+Nu när du har läst det här dokumentet bör du känna till hur du konfigurerar en inspirerande sandlåda och känna till olika sätt att få tillgång till fallspelsböcker i Experience Platform. Som ett nästa steg kan du läsa om hur du [väljer](/help/use-case-playbooks/playbooks/choose.md) rätt spelbok.

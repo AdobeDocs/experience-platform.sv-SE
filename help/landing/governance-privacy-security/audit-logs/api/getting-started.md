@@ -4,9 +4,9 @@ description: Med API:t för granskningsfråga kan du hämta mätdata för olika 
 role: Developer
 feature: Audits, API
 exl-id: 20eab0a8-98f7-4fee-8f91-88324e54ab18
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '385'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Med API:t för granskningsfråga kan du granska användaraktivitet för olika tj
 
 ## Förhandskrav
 
-För att kunna hantera granskningshändelser måste du ha åtkomstkontrollsbehörigheten **[!UICONTROL View User Activity Log]** (finns under kategorin [!UICONTROL Data Governance]). Mer information om hur du hanterar individuella behörigheter för plattformsfunktioner finns i [åtkomstkontrollsdokumentationen](../../../../access-control/home.md).
+För att kunna hantera granskningshändelser måste du ha åtkomstkontrollsbehörigheten **[!UICONTROL View User Activity Log]** (finns under kategorin [!UICONTROL Data Governance]). Mer information om hur du hanterar enskilda behörigheter för Experience Platform-funktioner finns i [åtkomstkontrollsdokumentationen](../../../../access-control/home.md).
 
 ### Läser exempel-API-anrop
 
@@ -27,17 +27,17 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa Experience Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../../../sandboxes/home.md).
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../../../sandboxes/home.md).
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare ett huvud:
 
 * Content-Type: application/json
 

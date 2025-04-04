@@ -2,9 +2,9 @@
 title: Metodtips för dataresursorganisation i frågetjänsten
 description: I det här dokumentet beskrivs ett logiskt sätt att ordna data så att de blir lätta att använda med frågetjänsten.
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '786'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller riktlinjer för de effektivaste strategierna för att organisera datatillgångar, inklusive datauppsättningar, vyer och tillfälliga tabeller för användning med Adobe Experience Platform Query Service. Det handlar om hur du strukturerar dina data samt om hur du får tillgång till, uppdaterar och tar bort informationen.
 
-Det är viktigt att organisera dina dataresurser logiskt i plattformen [!DNL Data Lake] när de växer. Med frågetjänsten utökas SQL-konstruktioner som gör att du logiskt kan gruppera dataresurser i en sandlåda. Med den här organisationsmetoden kan du dela datatillgångar mellan scheman utan att behöva flytta dem fysiskt.
+Det är viktigt att organisera dina dataresurser logiskt i Experience Platform [!DNL Data Lake] när de växer. Med frågetjänsten utökas SQL-konstruktioner som gör att du logiskt kan gruppera dataresurser i en sandlåda. Med den här organisationsmetoden kan du dela datatillgångar mellan scheman utan att behöva flytta dem fysiskt.
 
 ## Komma igång
 

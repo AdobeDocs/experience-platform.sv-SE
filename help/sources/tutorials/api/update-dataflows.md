@@ -2,9 +2,9 @@
 title: Uppdatera dataflöden med API:t för Flow Service
 description: Lär dig hur du skapar ett dataflöde, inklusive dess namn, beskrivning och schema, med API:t för Flow Service.
 exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
-source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '661'
 ht-degree: 0%
 
 ---
@@ -23,16 +23,16 @@ Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du int
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ## Söka efter dataflödesdetaljer
 
-Det första steget i att uppdatera dataflödet är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-förfrågan till slutpunkten `/flows`.
+Det första steget i att uppdatera dataflödet är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-begäran till slutpunkten `/flows`.
 
 **API-format**
 
@@ -177,7 +177,7 @@ Om du vill uppdatera ditt dataflödes körningsschema, namn och beskrivning utf�
 
 >[!IMPORTANT]
 >
->Rubriken `If-Match` krävs när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde.
+>Huvudet `If-Match` krävs när en PATCH-begäran görs. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde.
 
 **API-format**
 
@@ -224,7 +224,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {
@@ -280,7 +280,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
 
 ```json
 {

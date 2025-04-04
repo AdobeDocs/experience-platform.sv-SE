@@ -1,28 +1,28 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;övervaka identiteter;övervaka dataflöden;dataflöden;identiteter;
-description: Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden med identiteter med hjälp av användargränssnittet i Experience Platform.
+keywords: Experience Platform;home;populära topics;monitor identities;monitor data aflows;data aflows;identities;
+description: Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden med identiteter med hjälp av Experience Platform användargränssnitt.
 title: Övervaka dataflöden för identiteter i användargränssnittet
 type: Tutorial
 exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1071'
-ht-degree: 0%
+source-wordcount: '1075'
+ht-degree: 3%
 
 ---
 
 # Övervaka dataflöden för identiteter i användargränssnittet
 
-Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Adobe Experience Platforms identitetstjänst ger dig en heltäckande bild av dina kunder och deras beteende genom att koppla samman identiteter mellan enheter och system så att du kan leverera effektiva, personliga digitala upplevelser i realtid.
 
-Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom identiteter, inklusive status för dina datas identiteter. I den här självstudiekursen finns anvisningar om hur du kan använda kontrollpanelen för att övervaka dina data med hjälp av användargränssnittet i Experience Platform, så att du kan spåra status för identitetsbearbetning.
+Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom identiteter, inklusive status för dina datas identiteter. I den här självstudiekursen finns anvisningar om hur du kan använda kontrollpanelen för att övervaka dina data med hjälp av Experience Platform användargränssnitt, så att du kan spåra status för identitetsbearbetning.
 
 ## Komma igång {#getting-started}
 
-- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
+- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
    - [Dataflöden körs](../../sources/notifications.md): Dataflöden är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
 - [Identitetstjänst](../../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ## Kontrollpanel för identiteter {#identity-metrics}
 
@@ -54,7 +54,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | Identitetsmått | Beskrivning |
 | ---------------- | ----------- |
 | **[!UICONTROL Records received]** | Antalet poster som tagits emot från datasjön. |
-| **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till plattformen på grund av datafel. |
+| **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till Experience Platform på grund av datafel. |
 | **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte till [!DNL Identity Service], eftersom det bara fanns en identifierare i postraden. |
 | **[!UICONTROL Records ingested]** | Antalet poster som har importerats till [!DNL Identity Service]. |
 | **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som har lagts till i [!DNL Identity Service]. |
@@ -78,7 +78,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Dataset]** | Namnet på datauppsättningen som dataflödet infogas i. |
 | **[!UICONTROL Source name]** | Namnet på källan som dataflödet tillhör. |
 | **[!UICONTROL Records received]** | Antalet poster som tagits emot från datasjön. |
-| **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till plattformen på grund av datafel. |
+| **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till Experience Platform på grund av datafel. |
 | **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte till [!DNL Identity Service], eftersom det bara fanns en identifierare i postraden. |
 | **[!UICONTROL Records ingested]** | Antalet poster som har importerats till [!DNL Identity Service]. |
 | **[!UICONTROL Total records]** | Totalt antal poster, inklusive poster som misslyckats, poster som hoppats över, identiteter som lagts till och dubblerade poster. |
@@ -100,7 +100,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | Mått | Beskrivning |
 | -------| ----------- |
 | **[!UICONTROL Records received]** | Antalet poster som tagits emot från datasjön. |
-| **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till plattformen på grund av datafel. |
+| **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till Experience Platform på grund av datafel. |
 | **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte till [!DNL Identity Service], eftersom det bara fanns en identifierare i postraden. |
 | **[!UICONTROL Records ingested]** | Antalet poster som har importerats till [!DNL Identity Service]. |
 | **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som har lagts till i [!DNL Identity Service]. |

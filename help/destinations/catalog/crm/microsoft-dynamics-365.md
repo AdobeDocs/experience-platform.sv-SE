@@ -1,12 +1,12 @@
 ---
 keywords: crm;CRM;crm destination;Microsoft Dynamics 365;Microsoft Dynamics 365 crm destination
 title: Microsoft Dynamics 365-anslutning
-description: Med Microsoft Dynamics 365-destinationen kan du exportera dina kontodata och aktivera dem i Microsoft Dynamics 365 efter dina affärsbehov.
+description: Med Microsoft Dynamics 365-destinationen kan du exportera dina kontouppgifter och aktivera dem i Microsoft Dynamics 365 efter behov.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1959'
 ht-degree: 0%
 
 ---
@@ -27,15 +27,15 @@ Som marknadsförare kan ni leverera personaliserade upplevelser till era använd
 
 ## Förhandskrav {#prerequisites}
 
-### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
+### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
 Innan du aktiverar data till målet [!DNL Dynamics 365] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
-Se Adobe-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
+Se Adobe dokumentation för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
 ### Krav för [!DNL Microsoft Dynamics 365] {#prerequisites-destination}
 
-Observera följande krav i [!DNL Dynamics 365] för att kunna exportera data från Platform till ditt [!DNL Dynamics 365]-konto:
+Observera följande krav i [!DNL Dynamics 365] för att kunna exportera data från Experience Platform till ditt [!DNL Dynamics 365]-konto:
 
 #### Du måste ha ett [!DNL Microsoft Dynamics 365]-konto {#prerequisites-account}
 
@@ -43,7 +43,7 @@ Gå till sidan [!DNL Dynamics 365] [utvärderingsversion](https://dynamics.micro
 
 #### Skapa fält i [!DNL Dynamics 365] {#prerequisites-custom-field}
 
-Skapa det anpassade fältet av typen `Simple` med fältdatatypen `Single Line of Text` som Experience Platform ska använda för att uppdatera målgruppsstatusen i [!DNL Dynamics 365].
+Skapa det anpassade fältet av typen `Simple` med fältdatatypen `Single Line of Text` som Experience Platform använder för att uppdatera målgruppsstatusen i [!DNL Dynamics 365].
 
 Mer information finns i dokumentationen för [!DNL Dynamics 365] [Skapa eller redigera ett fält (attribut)](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/create-edit-fields?view=op-9-1) om du behöver ytterligare hjälp.
 
@@ -94,7 +94,7 @@ Sidan [Begäranden om gränser och allokeringar](https://docs.microsoft.com/en-u
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
-Det här målet stöder aktivering av alla målgrupper som genereras via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md).
+Det här målet stöder aktivering av alla målgrupper som genereras via Experience Platform [segmenteringstjänst](../../../segmentation/home.md).
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -102,7 +102,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje målgruppsstatus i [!DNL Dynamics 365] uppdateras med motsvarande målgruppsstatus från Platform, baserat på värdet **[!UICONTROL Mapping ID]** som tillhandahölls under steget [målgruppsplanering](#schedule-audience-export-example).</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje målgruppsstatus i [!DNL Dynamics 365] uppdateras med motsvarande målgruppsstatus från Experience Platform, baserat på det **[!UICONTROL Mapping ID]**-värde som angavs under [målgruppsplaneringssteget](#schedule-audience-export-example).</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
@@ -120,7 +120,7 @@ I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL
 ### Autentisera till mål {#authenticate}
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
-![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar.](../../assets/catalog/crm/microsoft-dynamics-365/authenticate-destination.png)
+![Experience Platform UI, bild som visar hur du autentiserar.](../../assets/catalog/crm/microsoft-dynamics-365/authenticate-destination.png)
 
 Fyll i de obligatoriska fälten nedan. Mer information finns i avsnittet [Samla in Dynamics 365-autentiseringsuppgifter](#gather-credentials).
 * **[!UICONTROL Client ID]**: Klient-ID:t [!DNL Dynamics 365] för ditt [!DNL Azure Active Directory]-program.
@@ -134,7 +134,7 @@ Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]*
 ### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
-![Skärmbild för plattformsgränssnitt som visar målinformationen.](../../assets/catalog/crm/microsoft-dynamics-365/destination-details.png)
+![Experience Platform UI-skärmbild med målinformation.](../../assets/catalog/crm/microsoft-dynamics-365/destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -157,17 +157,17 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Dynamics 365] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Dynamics 365]:
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Dynamics 365] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Dynamics 365]:
 
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
-   ![Exempel på skärmbild för användargränssnittet för plattformen för Lägg till ny mappning.](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
+   ![Experience Platform UI, skärmbild för Lägg till ny mappning.](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
 
 1. I fönstret **[!UICONTROL Select source field]** väljer du kategorin **[!UICONTROL Select identity namespace]** och sedan `contactid`.
-   ![Exempel på skärmbild för användargränssnittet för plattformen för Source-mappning.](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
+   ![Exempel på skärmbild i Experience Platform för Source-mappning.](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
 
 1. I fönstret **[!UICONTROL Select target field]** väljer du den typ av målfält som du vill mappa källfältet till.
    * **[!UICONTROL Select identity namespace]**: välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
-     ![Skärmbild för plattformsgränssnitt som visar målmappning för kontaktperson.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
+     ![Experience Platform UI-skärmbild som visar målmappning för kontaktperson.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
    * Lägg till följande mappning mellan ditt XDM-profilschema och din [!DNL Dynamics 365]-instans:
 
@@ -176,7 +176,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      | `contactid` | `contactid` | Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet **[!UICONTROL Attribute name]**. I [[!DNL Dynamics 365] dokumentationen](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) finns en omfattande lista över attribut som stöds.
-     ![Skärmbild för plattformsgränssnitt med målmappning för e-post.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
+     ![Experience Platform UI-skärmbild som visar målmappning för e-post.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]
      >
@@ -193,11 +193,11 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
 
-   ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
 
 ### Schemalägg målgruppsexport och exempel {#schedule-audience-export-example}
 
-I steget [[!UICONTROL Schedule audience export]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) i aktiveringsarbetsflödet måste du manuellt mappa plattformsmålgrupper till det anpassade fältattributet i [!DNL Dynamics 365].
+I steget [[!UICONTROL Schedule audience export]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) i aktiveringsarbetsflödet måste du manuellt mappa Experience Platform-målgrupper till det anpassade fältattributet i [!DNL Dynamics 365].
 
 Det gör du genom att markera varje målgrupp och sedan ange motsvarande anpassade fältattribut från [!DNL Dynamics 365] i fältet **[!UICONTROL Mapping ID]**.
 
@@ -206,25 +206,25 @@ Det gör du genom att markera varje målgrupp och sedan ange motsvarande anpassa
 >Värdet som används för **[!UICONTROL Mapping ID]** ska exakt matcha namnet på det anpassade fältattributet som skapats i [!DNL Dynamics 365]. Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/create-edit-fields?view=op-9-1) om du behöver hjälp med att hitta anpassade fältattribut.
 
 Ett exempel visas nedan:
-![Exempel på skärmbild för plattformsgränssnitt som visar export av schemalagda målgrupper.](../../assets/catalog/crm/microsoft-dynamics-365/schedule-segment-export.png)
+![Exempel på skärmbild i Experience Platform som visar export av schemalagda målgrupper.](../../assets/catalog/crm/microsoft-dynamics-365/schedule-segment-export.png)
 
 ## Validera dataexport {#exported-data}
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. Välj **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** för att navigera till listan över mål.
-   ![Skärmbild för plattformsgränssnitt med bläddringsmål.](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
+   ![Experience Platform UI, skärmbild med Sök mål.](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
 
 1. Markera målet och validera att statusen är **[!UICONTROL enabled]**.
-   ![Skärmbild för plattformsgränssnitt med körning av måldataflöde.](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
+   ![Experience Platform UI, skärmbild med körning av måldataflöde.](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
 
 1. Växla till fliken **[!DNL Activation data]** och välj sedan ett publiknamn.
-   ![Exempel på skärmbild för användargränssnittet för plattformen som visar aktiveringsdata för destinationer.](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar aktiveringsdata för destinationer.](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
 
 1. Övervaka målgruppssammanfattningen och se till att antalet profiler motsvarar antalet som skapas inom målgruppen.
-   ![Exempel på skärmbild för plattformsgränssnitt som visar målgrupp.](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar målgrupp.](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
 
-1. Logga in på webbplatsen [!DNL Dynamics 365], gå till sidan [!DNL Customers] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Dynamics 365] har uppdaterats med motsvarande målgruppsstatus från Platform, baserat på det **[!UICONTROL Mapping ID]** -värde som tillhandahölls under steget [målgruppsplanering](#schedule-audience-export-example).
+1. Logga in på webbplatsen [!DNL Dynamics 365], gå till sidan [!DNL Customers] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Dynamics 365] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet **[!UICONTROL Mapping ID]** som angavs under steget [målgruppsplanering](#schedule-audience-export-example).
    ![Skärmbilden Dynamics 365 UI som visar sidan Kontakter med uppdaterade målgruppsstatusar.](../../assets/catalog/crm/microsoft-dynamics-365/contacts.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
@@ -237,9 +237,9 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 Om du får följande felmeddelande när du kontrollerar ett dataflöde: `Bad request reported while pushing events to the destination. Please contact the administrator and try again.`
 
-![Skärmbild för plattformsgränssnitt som visar ett fel med felaktig begäran.](../../assets/catalog/crm/microsoft-dynamics-365/error.png)
+![Experience Platform UI-skärmbild visar ett fel med felaktig begäran.](../../assets/catalog/crm/microsoft-dynamics-365/error.png)
 
-Om du vill åtgärda det här felet kontrollerar du att **[!UICONTROL Mapping ID]** som du angav i [!DNL Dynamics 365] för din plattformspublik är giltig och finns i [!DNL Dynamics 365].
+Om du vill åtgärda det här felet kontrollerar du att **[!UICONTROL Mapping ID]** som du angav i [!DNL Dynamics 365] för din Experience Platform-målgrupp är giltig och finns i [!DNL Dynamics 365].
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -255,7 +255,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| Oktober 2023 | Dokumentation - uppdatering | Uppdaterad vägledning för att indikera alla målattributnamn ska vara i gemener i steget [Mappning och example](#mapping-considerations-example). |
+| Oktober 2023 | Uppdatering av dokumentation | Uppdaterad vägledning för att indikera alla målattributnamn ska vara i gemener i steget [Mappning och example](#mapping-considerations-example). |
 | Augusti 2023 | Funktioner och dokumentation | Stöd har lagts till för [!DNL Dynamics 365] anpassade fältprefix för anpassade fält som inte skapades i standardlösningen i [!DNL Dynamics 365]. Ett nytt inmatningsfält, **[!UICONTROL Customization Prefix]**, har lagts till i steget [Fyll i målinformation](#destination-details). (PLATIR-31602). |
 | Nov 2022 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
 

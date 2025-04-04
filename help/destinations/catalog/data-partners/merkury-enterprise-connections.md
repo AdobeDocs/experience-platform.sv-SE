@@ -3,7 +3,7 @@ title: Merkury Enterprise Connections Destination
 description: Lär dig hur du skapar en Merkury Enterprise Connections-målanslutning med Adobe Experience Platform-gränssnittet.
 last-substantial-update: 2024-07-20T00:00:00Z
 exl-id: dffc6f4d-b756-4c13-96f3-b1cc57caacdb
-source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1371'
 ht-degree: 2%
@@ -28,7 +28,7 @@ Följ stegen på den här dokumentationssidan för att skapa en [!DNL Merkury Co
 >
 >Om du vill aktivera målgrupper till mediemål med ditt [!DNL Merkury Connect]-konto ska du använda [!DNL Merkury Connections]-målet i stället.
 
-![Målkortet för Merkury Enterprise Conections är markerat i Experience Platform-målkatalogen.](../../assets/catalog/data-partners/merkury-connections/media/image2.png)
+![Målkortet för Merkury Enterprise Conections är markerat i Experience Platform målkatalog.](../../assets/catalog/data-partners/merkury-connections/media/image2.png)
 
 ## Användningsfall
 
@@ -49,8 +49,8 @@ Följ stegen på den här dokumentationssidan för att skapa en [!DNL Merkury Co
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Mer information finns i följande dokument på [ECID](/help/identity-service/features/ecid.md). |
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
 {style="table-layout:auto"}

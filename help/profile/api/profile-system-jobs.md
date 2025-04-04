@@ -5,9 +5,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 16778d0edbad4539a4ff5084a2f22ca5f08e83ec
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2020'
+source-wordcount: '2022'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Följande slutpunkter kan skilja sig åt mellan implementeringar av Adobe Experience Platform som körs på Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
+>Följande slutpunkter kan skilja sig åt mellan implementeringar av Adobe Experience Platform som körs på Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som inhämtas till [!DNL Platform] lagras i [!DNL Data Lake], och om datauppsättningarna har aktiverats för profilen lagras även dessa data i datalagret [!DNL Real-Time Customer Profile]. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att [!DNL Real-Time Customer Profile]-API:t används för att skapa ett [!DNL Profile]-systemjobb eller en&quot;borttagningsbegäran&quot;.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som inhämtas till [!DNL Experience Platform] lagras i [!DNL Data Lake], och om datauppsättningarna har aktiverats för profilen lagras även dessa data i datalagret [!DNL Real-Time Customer Profile]. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att [!DNL Real-Time Customer Profile]-API:t används för att skapa ett [!DNL Profile]-systemjobb eller en&quot;borttagningsbegäran&quot;.
 
 >[!NOTE]
 >
@@ -30,7 +30,7 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Real-Time Custome
 
 ## Visa borttagningsbegäranden {#view}
 
-En borttagningsbegäran är en långvarig, asynkron process, vilket innebär att din organisation kan köra flera borttagningsbegäranden samtidigt. Om du vill visa alla borttagningsbegäranden som din organisation för närvarande kör kan du utföra en GET-förfrågan till slutpunkten `/system/jobs`.
+En borttagningsbegäran är en långvarig, asynkron process, vilket innebär att din organisation kan köra flera borttagningsbegäranden samtidigt. Om du vill visa alla borttagningsbegäranden som din organisation för närvarande kör kan du utföra en GET-begäran till slutpunkten `/system/jobs`.
 
 Du kan också använda valfria frågeparametrar för att filtrera listan med borttagningsbegäranden som returneras i svaret. Om du vill använda flera parametrar avgränsar du varje parameter med ett et-tecken (`&`).
 
@@ -38,7 +38,7 @@ Du kan också använda valfria frågeparametrar för att filtrera listan med bor
 
 >[!AVAILABILITY]
 >
->Följande frågeparametrar är **endast** tillgängliga när du använder Platform på Microsoft Azure.
+>Följande frågeparametrar är **endast** tillgängliga när du använder Experience Platform på Microsoft Azure.
 >
 >När du använder den här slutpunkten på AWS returneras de första 100 systemjobben i fallande ordning, baserat på när de skapades.
 
@@ -208,11 +208,11 @@ Ett lyckat svar returnerar en array som innehåller ett objekt för varje system
 
 ## Skapa en borttagningsbegäran {#create-a-delete-request}
 
-Initieringen av en ny borttagningsbegäran görs via en begäran om POST till slutpunkten `/systems/jobs`, där ID:t för den datauppsättning eller batch som ska tas bort anges i förfrågningens innehåll.
+Initieringen av en ny borttagningsbegäran görs via en POST-begäran till `/systems/jobs`-slutpunkten, där ID:t för datauppsättningen eller batchen som ska tas bort anges i förfrågningens innehåll.
 
 ### Ta bort en datauppsättning och associerade profildata
 
-Om du vill ta bort en datauppsättning och alla profildata som är associerade med datauppsättningen från profilarkivet måste datauppsättnings-ID:t inkluderas i POSTENS innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. Med [!DNL Experience Platform] kan du ta bort datauppsättningar baserat på scheman för både post- och tidsserier.
+Om du vill ta bort en datauppsättning och alla profildata som är associerade med datauppsättningen från profilarkivet måste datauppsättnings-ID:t inkluderas i POST-begärans innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. Med [!DNL Experience Platform] kan du ta bort datauppsättningar baserat på scheman för både post- och tidsserier.
 
 **API-format**
 
@@ -309,7 +309,7 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
-| `dataSetId` | Datauppsättningens ID, enligt POSTENS begäran. |
+| `dataSetId` | Datamängdens ID, enligt POST-begäran. |
 
 +++
 
@@ -351,7 +351,7 @@ Ett lyckat svar returnerar information om den nyligen skapade systembegäran.
 
 ### Ta bort en grupp
 
-Om du vill ta bort en batch måste batch-ID:t inkluderas i POSTENS innehåll. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast batchar för datauppsättningar som baseras på tidsseriescheman kan tas bort.
+Om du vill ta bort en batch måste batch-ID:t inkluderas i BOKFÖR-begäran. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast batchar för datauppsättningar som baseras på tidsseriescheman kan tas bort.
 
 >[!NOTE]
 >
@@ -460,7 +460,7 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 | -------- | ----------- |
 | `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
 | `datasetId` | ID för den angivna datauppsättningen. |
-| `batchId` | Batchens ID, som anges i begäran om POST. |
+| `batchId` | Batchens ID, enligt POST-begäran. |
 
 +++
 
@@ -502,7 +502,7 @@ Ett lyckat svar returnerar information om den nyligen skapade systembegäran.
 
 >[!AVAILABILITY]
 >
->Följande funktion är **endast** tillgänglig när du använder Platform på Microsoft Azure.
+>Följande funktion är **endast** tillgänglig när du använder Experience Platform på Microsoft Azure.
 
 Om du försöker initiera en borttagningsbegäran för en postdatauppsättningsbatch kommer du att få ett 400-nivåfel, som följande:
 
@@ -680,7 +680,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-4
 
 **Svar**
 
-En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att begäran har tagits bort genom att utföra en GET-begäran för att visa borttagningsbegäran med dess ID. Detta bör returnera HTTP-status 404 (Hittades inte), vilket anger att borttagningsbegäran togs bort.
+En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att begäran togs bort genom att utföra en GET-begäran för att visa borttagningsbegäran med dess ID. Detta bör returnera HTTP-status 404 (Hittades inte), vilket anger att borttagningsbegäran togs bort.
 
 ## Nästa steg
 

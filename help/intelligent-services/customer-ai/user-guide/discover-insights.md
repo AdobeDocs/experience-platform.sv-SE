@@ -5,9 +5,9 @@ feature: Customer AI
 title: Identifiera insikter med kundens AI
 description: Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2035'
+source-wordcount: '2036'
 ht-degree: 1%
 
 ---
@@ -164,7 +164,7 @@ Segmentverktyget används för att definiera ett segment. När du väljer **[!UI
 
 ![Segmentfyllning i](../images/insights/segment-saving.png)
 
-Om du vill visa det nya segmentet i plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan **[!UICONTROL Browse]** visas och visar alla tillgängliga segment.
+Om du vill visa det nya segmentet i Experience Platform-gränssnittet väljer du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan **[!UICONTROL Browse]** visas och visar alla tillgängliga segment.
 
 ![Alla dina segment](../images/insights/Segments-dashboard.png)
 
@@ -225,7 +225,7 @@ AUC återspeglar styrkan i relationen mellan rangordningen efter poäng och för
 
 ## Nästa steg
 
-I det här dokumentet beskrevs de insikter som en kundens AI-tjänstinstans har gett. Du kan nu fortsätta med självstudiekursen om att [hämta poäng i kundens AI](./download-scores.md) eller gå till de andra [Adobe Intelligent Services](../../home.md)-guiderna som erbjuds.
+I det här dokumentet beskrevs de insikter som en kundens AI-tjänstinstans har gett. Du kan nu fortsätta med självstudiekursen om [nedladdning av bakgrundsmusik i Customer AI](./download-scores.md) eller gå till de andra [Adobe Intelligent Services](../../home.md)-guiderna som erbjuds.
 
 ## Ytterligare resurser
 

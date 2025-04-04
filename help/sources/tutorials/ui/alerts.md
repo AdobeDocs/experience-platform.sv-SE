@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen; larm
+keywords: Experience Platform;hemmabruk;populära ämnen; varningar
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på varningar i sitt sammanhang i användargränssnittet
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
-source-git-commit: 0165aa60ca865c6d1cf269b16068dffa9349214c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '803'
+source-wordcount: '809'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på varningsm
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Observabilitet](../../../observability/home.md): [!DNL Observability Insights] gör att du kan övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
-   * [Varningar](../../../observability/alerts/overview.md): När en viss uppsättning villkor har nåtts i plattformsåtgärderna (t.ex. ett potentiellt problem när systemet överskrider ett tröskelvärde) kan Plattform leverera varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Observabilitet](../../../observability/home.md): [!DNL Observability Insights] gör att du kan övervaka Experience Platform-aktiviteter med hjälp av statistik och händelsemeddelanden.
+   * [Varningar](../../../observability/alerts/overview.md): När en viss uppsättning villkor har nåtts i Experience Platform-åtgärderna (t.ex. ett eventuellt problem när systemet överskrider ett tröskelvärde) kan Experience Platform skicka varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
 
 ## Prenumerera på aviseringar i användargränssnittet {#subscribe-sources-alerts}
 
@@ -36,7 +36,7 @@ Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe E
 
 >[!IMPORTANT]
 >
->Du måste aktivera snabbmeddelanden om e-post för ditt plattformskonto för att kunna ta emot e-postbaserade varningsmeddelanden för dina dataflöden.
+>Du måste aktivera snabbmeddelanden om e-post för ditt Experience Platform-konto för att kunna ta emot e-postbaserade varningsmeddelanden för dina dataflöden.
 
 Du kan aktivera aviseringar för dina dataflöden under [!UICONTROL Dataflow detail]-steget i källarbetsflödet på källarbetsytan.
 
@@ -51,7 +51,7 @@ De tillgängliga aviseringarna för källdataflöden är:
 | Aviseringar | Beskrivning |
 | --- | --- |
 | Kör källflöde | Den här varningen skickar ett meddelande när källdataflödet har startats. |
-| Källflöde har körts | Den här varningen skickar ett meddelande när data från källan har importerats till plattformen. |
+| Källflöde har körts | Den här varningen skickar ett meddelande när data från källan har importerats till Experience Platform. |
 | Körningsfel för källflöde | Den här varningen skickar ett meddelande till dig om ett fel inträffar i dataflödet. |
 
 Välj de aviseringar som du vill prenumerera på och välj sedan **[!UICONTROL Next]** för att granska och slutföra dataflödet.
@@ -76,7 +76,7 @@ När dataflödet har körts kan du få aviseringar via användargränssnittet el
 
 ### I användargränssnittet
 
-Varningar representeras i användargränssnittet av en meddelandeikon i det övre huvudet i användargränssnittet för plattformen. Välj meddelandeikonen om du vill visa specifika varningsmeddelanden om dina dataflöden.
+Varningar representeras i användargränssnittet av en meddelandeikon i det övre huvudet i användargränssnittet i Experience Platform. Välj meddelandeikonen om du vill visa specifika varningsmeddelanden om dina dataflöden.
 
 ![meddelande](../../images/tutorials/alerts/notification.png)
 

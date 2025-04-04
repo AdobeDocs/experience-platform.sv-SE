@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;strömning;upsert;strömning upsert
+keywords: Experience Platform;home;populära topics;data prep;data prep;streaming;upsert;streaming upsert
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: d62a61f44b27c0be882b5f29bfad5e423af7a1ca
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1360'
+source-wordcount: '1361'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 Använd direktuppspelande upserts i [!DNL Data Prep] för att skicka uppdateringar (del av rad) till [!DNL Real-Time Customer Profile]-data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran.
 
-Genom att direktuppspela uppspelningar kan du behålla dataformatet samtidigt som data översätts till [!DNL Real-Time Customer Profile] PATCH-begäranden under importen. Baserat på de indata du anger kan du i [!DNL Data Prep] skicka en enda API-nyttolast och översätta data till både [!DNL Real-Time Customer Profile] PATCH och [!DNL Identity Service] CREATE-begäranden.
+Genom att direktuppspela uppladdningar kan du behålla dataformatet samtidigt som du översätter dessa data till [!DNL Real-Time Customer Profile] PATCH-förfrågningar under importen. Baserat på de indata du anger kan du i [!DNL Data Prep] skicka en enda API-nyttolast och översätta data till både [!DNL Real-Time Customer Profile] PATCH- och [!DNL Identity Service] CREATE-begäranden.
 
 [!DNL Data Prep] använder rubrikparametrar för att skilja mellan infogningar och infogningar. Alla rader som använder upserts måste ha en rubrik. Du kan använda upserts med eller utan identitetsbeskrivare. Om du använder överföringar med identiteter måste du följa de konfigurationssteg som beskrivs i avsnittet [Konfigurera identitetsdatauppsättningen](#configure-the-identity-dataset). Om du använder överföringar utan identiteter behöver du inte ange några identitetskonfigurationer i din begäran. Läs avsnittet om [direktuppspelande överföringar utan identiteter](#payload-without-identity-configuration) om du vill ha mer information.
 
@@ -39,7 +39,7 @@ Den här översikten kräver en fungerande förståelse av följande komponenter
 * [[!DNL Data Prep]](./home.md): [!DNL Data Prep] tillåter datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 * [[!DNL Identity Service]](../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
 * [Kundprofil i realtid](../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-* [Källor](../sources/home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../sources/home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 
 ## Använd direktuppspelande upserts i [!DNL Data Prep] {#streaming-upserts-in-data-prep}
 

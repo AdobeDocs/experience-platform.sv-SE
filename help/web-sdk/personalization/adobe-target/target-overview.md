@@ -1,10 +1,10 @@
 ---
 title: Använd Adobe Target med Web SDK för personalisering
-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
+description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK med Adobe Target
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 116db0808835c548c21635148b81b3e884b5cebd
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1357'
+source-wordcount: '1361'
 ht-degree: 1%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Lär dig hur du migrerar målinsimplementeringen till Platform Web SDK med självstudiekursen [Migrate Target från at.js 2.x till Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html).
+>Lär dig hur du migrerar din Target-implementering till Experience Platform Web SDK med självstudiekursen [Migrate Target från at.js 2.x till Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html).
 >
->Lär dig hur du implementerar Target för första gången med självstudiekursen [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html). Mer information om Target finns i självstudieavsnittet [Konfigurera mål med plattformens webb-SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+>Lär dig hur du implementerar Target för första gången med självstudiekursen [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html). Mer information om Target finns i självstudieavsnittet [Konfigurera mål med Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
 
 
 Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
@@ -27,7 +27,7 @@ Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 * [Automated Personalization-aktiviteter](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [Aktiviteter för målinriktning](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [Multivariata tester (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
-* [Recommendations-aktiviteter](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
+* [Rekommendationsaktiviteter](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
 * [Inbyggt målinställnings- och konverteringsrapportering](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
 * [VEC-support](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
 
@@ -35,17 +35,17 @@ Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
 Följande diagram hjälper dig att förstå arbetsflödet för [!DNL Target]- och [!DNL Web SDK]-kantbeslut.
 
-![Diagram över Adobe Target edge-beslut med Platform Web SDK](assets/target-platform-web-sdk-new.png)
+![Diagram över Adobe Target edge-beslut med Experience Platform Web SDK](assets/target-platform-web-sdk-new.png)
 
 | Utlysning | Information |
 | --- | --- |
-| 1 | Enheten läser in [!DNL Web SDK]. [!DNL Web SDK] skickar en begäran till Edge Network med XDM-data, datastreams Environment ID, inskickade parametrar och kundens ID (valfritt). Sidan (eller behållarna) är fördold. |
+| 1 | Enheten läser in [!DNL Web SDK]. [!DNL Web SDK] skickar en begäran till Edge Network med XDM-data, ID:t för dataströmmens miljö, inskickade parametrar och Kund-ID:t (valfritt). Sidan (eller behållarna) är fördold. |
 | 2 | Edge Network skickar begäran till edge services för att berika den med besökar-ID, samtycke och annan kontextinformation för besökare, som geopositionering och enhetsvänliga namn. |
-| 3 | Edge Network skickar den berikade personaliseringsbegäran till kanten [!DNL Target] med besökar-ID:t och skickade parametrar. |
+| 3 | Edge Network skickar den fördjupade personaliseringsbegäran till kanten [!DNL Target] med besökar-ID och skickade parametrar. |
 | 4 | Profilskript körs och matas sedan in i [!DNL Target]-profillagring. Profillagring hämtar segment från [!UICONTROL Audience Library] (till exempel segment som delas från [!DNL Adobe Analytics], [!DNL Adobe Audience Manager], [!DNL Adobe Experience Platform]). |
-| 5 | Baserat på parametrar för URL-begäran och profildata avgör [!DNL Target] vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka den här till Edge Network. |
-| 6 | a. Edge Network skickar personaliseringssvaret tillbaka till sidan, eventuellt med profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyerna aktiveras. <br>c. Edge Network skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll och personalisering. |
-| 7 | Web SDK skickar meddelandet från enheten till Edge Network. |
+| 5 | Baserat på parametrar för URL-begäran och profildata avgör [!DNL Target] vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka detta till Edge Network. |
+| 6 | a. Edge Network skickar personaliseringssvaret tillbaka till sidan, eventuellt med profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett SPA-program (Single Page Application) cachas så att det kan tillämpas direkt utan ett extra serveranrop när vyerna aktiveras. <br>c. Edge Network skickar besökar-ID:t och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll och personalisering. |
+| 7 | SDK på webben skickar meddelandet från enheten till Edge Network. |
 | 8 | Edge Network vidarebefordrar information om [!UICONTROL Analytics for Target] (A4T) (aktivitet, upplevelse och konverteringsmetadata) till kanten [!DNL Analytics]. |
 
 ## Aktiverar [!DNL Adobe Target]
@@ -181,7 +181,7 @@ Om du vill uppdatera en [!DNL Target]-profil kontrollerar du att profildata skic
 | --- | --- | --- |
 | `renderDecisions` | Boolean | Anger om personaliseringskomponenten ska tolka DOM-åtgärder |
 | `decisionScopes` | Matris `<String>` | En lista över omfattningar som kan hämta beslut för |
-| `xdm` | Objekt | Data som är formaterade i XDM och som markeras i Web SDK som en upplevelsehändelse |
+| `xdm` | Objekt | Data som formaterats i XDM och som markeras i Web SDK som en upplevelsehändelse |
 | `data` | Objekt | Godtyckliga nyckel-/värdepar skickade till [!DNL Target] lösningar under målklassen. |
 
 <!--Typical [!DNL Web SDK] code using this command looks like the following:-->
@@ -223,7 +223,7 @@ I följande tabell visas [!DNL Recommendations] attribut och om vart och ett st�
 
 | Kategori | Attribut | Supportstatus |
 | --- | --- | --- |
-| Recommendations - Standardenhetsattribut | entity.id | Stöds |
+| Rekommendationer - Standardenhetsattribut | entity.id | Stöds |
 |  | entity.name | Stöds |
 |  | entity.categoryId | Stöds |
 |  | entity.pageUrl | Stöds |
@@ -234,13 +234,13 @@ I följande tabell visas [!DNL Recommendations] attribut och om vart och ett st�
 |  | entity.brand | Stöds |
 |  | entity.margin | Stöds |
 |  | entity.event.detailsOnly | Stöds |
-| Recommendations - Anpassade entitetsattribut | entity.yourCustomAttributeName | Stöds |
-| Recommendations - Reserverade mbox-/page-parametrar | excludeIds | Stöds |
+| Rekommendationer - anpassade entitetsattribut | entity.yourCustomAttributeName | Stöds |
+| Rekommendationer - Reserverade mbox/page-parametrar | excludeIds | Stöds |
 |  | cartIds | Stöds |
 |  | productPurchasedId | Stöds |
 | Sida eller artikelkategori för kategoritillhörighet | user.categoryId | Stöds |
 
-**Så här skickar du Recommendations-attribut till Adobe Target:**
+**Så här skickar du rekommendationsattribut till Adobe Target:**
 
 ```js
 alloy("sendEvent", {

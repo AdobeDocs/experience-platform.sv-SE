@@ -1,12 +1,12 @@
 ---
 keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
-description: Adobe Experience Platform kan leverera dina målgrupper som datafiler till dina lagringsplatser i Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP.
+description: Adobe Experience Platform kan leverera dina målgrupper som datafiler till dina Amazon S3-, AWS Kinesis-, Azure Event Hubs- eller SFTP-molnlagringsplatser.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 2e21e62de624c5e7e9fac4d36dbf41b46198062a
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '463'
-ht-degree: 0%
+source-wordcount: '464'
+ht-degree: 1%
 
 ---
 
@@ -33,7 +33,7 @@ Adobe Experience Platform stöder dataexport till följande molnlagringsmål:
 
 ## Ansluta till ett nytt molnlagringsmål {#connect-destination}
 
-För att kunna skicka målgrupper till molnlagringsmål för era kampanjer måste plattformen först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
+För att kunna skicka målgrupper till molnlagringsdestinationer för era kampanjer måste Experience Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
 
 
 ## Använd makron för att skapa en mapp på lagringsplatsen {#use-macros}
@@ -74,7 +74,7 @@ På samma sätt som i exemplen ovan kan du använda ytterligare makron för att 
 
 Molnlagringsdestinationer har stöd för följande exporttyper:
 * **Profilbaserad export**. Det innebär att du exporterar information om personerna i målgruppen. Dessa uppgifter behövs för personalisering och kan omfatta attribut, event, medlemskap för målgrupper med mera.
-* **Datauppsättningsexport**. Med den här funktionen kan du exportera hela datauppsättningar till molnlagringsmål. [Läs mer](/help/destinations/ui/export-datasets.md) om funktionerna.
+* **Datauppsättningsexport**. Med den här funktionen kan du exportera hela datauppsättningar till molnlagringsmål. [Läs mer](/help/destinations/ui/export-datasets.md) om funktionaliteten.
 
 ## Nästa steg {#next-steps}
 

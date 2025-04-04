@@ -3,9 +3,9 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Vanliga frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1672'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform destinationer. För frågor och felsökning som rör andra [!DNL Platform]-tjänster, inklusive de som har påträffats i alla [!DNL Platform] API:er, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform destinationer. För frågor och felsökning som rör andra [!DNL Experience Platform]-tjänster, inklusive de som har påträffats i alla [!DNL Experience Platform] API:er, se [Experience Platform felsökningsguide](../landing/troubleshooting.md).
 
 ## Vanliga frågor om destinationer {#general}
 
-### Varför visas olika antal profiler i användargränssnittet i Experience Platform och i de exporterade CSV-filerna?
+### Varför visas olika profilantal i Experience Platform-gränssnittet och i de exporterade CSV-filerna?
 
 +++Svar
 Detta är ett normalt beteende på grund av hur Experience Platform utför segmentering.
@@ -54,7 +54,7 @@ För att vara säker på att alla profiler skickas till ditt mål måste du skap
 
 +++Svar
 
-Nej, det finns inget beroende mellan Experience Platform-målet och kundinstansen i målsystemet. På den mottagande sidan är det enda som tyder på att målsystemet skulle se att det slutade ta emot målgruppsdata.
+Nej, det finns inget beroende mellan Experience Platform-destinationen och kundinstansen av målsystemet. På den mottagande sidan är det enda som tyder på att målsystemet skulle se att det slutade ta emot målgruppsdata.
 
 +++
 
@@ -93,7 +93,7 @@ See the table below for a feature comparison between the Experience Cloud Audien
 Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
 * Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för annonskontot som du tänker använda.
-* Affärskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
+* Affärskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
 
   >[!IMPORTANT]
   >
@@ -110,21 +110,21 @@ Nej. Eftersom detta inte är en pixelbaserad integrering behöver du inte lägga
 ### Hur lång tid tar det för Facebook att bearbeta information från Adobe Experience Platform?
 
 +++Svar
-Från om med mars 2021 behöver [!DNL Facebook Custom Audiences] upp till en timme på sig att bearbeta information som tagits emot från [!DNL Platform].
+Från om med mars 2021 behöver [!DNL Facebook Custom Audiences] upp till en timme på sig att bearbeta information som tagits emot från [!DNL Experience Platform].
 +++
 
 ### Kan jag använda [!DNL Facebook Custom Audiences] för målgruppsanpassning i andra [!DNL Facebook]-appar, som [!DNL Instagram]?
 
 +++Amswer
-Du kan använda målet [!DNL Facebook Custom Audiences] för målgrupper i alla Facebook-appar som stöds av [!DNL Facebook Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network] och [!DNL Messenger]. Markeringen av appen som annonsörer vill köra kampanjer på anges på placeringsnivån i [!DNL Facebook Ads Manager].
+Du kan använda målet [!DNL Facebook Custom Audiences] för målgrupper över Facebooks familj med appar som stöds av [!DNL Facebook Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network] och [!DNL Messenger]. Markeringen av appen som annonsörer vill köra kampanjer på anges på placeringsnivån i [!DNL Facebook Ads Manager].
 +++
 
 ### Vad är skillnaden mellan anslutningen [!DNL Facebook Custom Audiences] och tillägget [!DNL Facebook Pixel]?
 
 +++Svar
-[!DNL Facebook Custom Audiences]-anslutningen använder [!DNL Platform] identiteter när målgrupper skickas till [!DNL Facebook], medan [[!DNL Facebook Pixel] anslutningen](../destinations/catalog/advertising/facebook-pixel.md) använder den [!DNL Facebook]-pixel som är integrerad i en webbplats.
+[!DNL Facebook Custom Audiences]-anslutningen använder [!DNL Experience Platform] identiteter när målgrupper skickas till [!DNL Facebook], medan [[!DNL Facebook Pixel] anslutningen](../destinations/catalog/advertising/facebook-pixel.md) använder den [!DNL Facebook]-pixel som är integrerad i en webbplats.
 
-Dessa två integreringar kompletterar varandra, och ni kan använda båda för att få bättre täckning. Du kan till exempel använda tillägget [!DNL Facebook Pixel] för att söka efter webbplatsbesökare som inte har skapat något konto, medan [!DNL Facebook Custom Audiences] kan hjälpa dig att rikta in dig på befintliga kunder baserat på [!DNL Platform]-identiteter.
+Dessa två integreringar kompletterar varandra, och ni kan använda båda för att få bättre täckning. Du kan till exempel använda tillägget [!DNL Facebook Pixel] för att söka efter webbplatsbesökare som inte har skapat något konto, medan [!DNL Facebook Custom Audiences] kan hjälpa dig att rikta in dig på befintliga kunder baserat på [!DNL Experience Platform]-identiteter.
 +++
 
 ### Stöder Adobe Experience Platform-integreringen med [!DNL Facebook Custom Audiences] diskvalificering av användare från en målgrupp när de inte längre är kvalificerade för det?**
@@ -147,10 +147,10 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 [!DNL Facebook Custom Audiences] har stöd för aktivering av följande identiteter: hash-kodade e-postmeddelanden, hashade telefonnummer, [!DNL GAID], [!DNL IDFA] och anpassade externa ID:n.
 +++
 
-### Kan jag skapa flera Facebook-mål i plattformsgränssnittet för separata Facebook-konton?
+### Kan jag skapa flera Facebook-mål i Experience Platform-gränssnittet för separata Facebook-konton?
 
 +++Svar
-Ja. En Facebook-destination i Experience Platform är 1:1 till ett annonskonto i Facebook. Du kan skapa ett separat Facebook-mål för varje Facebook-annonskonto i ditt företag. Följ självstudiekursen [för målanslutning](/help/destinations/ui/connect-destination.md) och anslut till ett separat Facebook-konto för varje nytt Facebook-mål i plattformsgränssnittet. Det finns ingen gräns för hur många Facebook-annonskonton du kan ansluta till.
+Ja. Ett Facebook-mål i Experience Platform är 1:1 till ett annonskonto i Facebook. Du kan skapa en separat Facebook-destination för varje Facebook-annonskonto i ditt företag. Följ självstudiekursen [för målanslutning](/help/destinations/ui/connect-destination.md) och anslut till ett separat Facebook-konto för varje nytt Facebook-mål i Experience Platform-gränssnittet. Det finns ingen gräns för hur många Facebook-annonskonton du kan ansluta till.
 +++
 
 ## Google kundmatchning {#google-customer-match}
@@ -161,7 +161,7 @@ Ja. En Facebook-destination i Experience Platform är 1:1 till ett annonskonto i
 Google kräver att publiknamnen är unika. Siffrorna som du ser är [UNIX-tidsstämplar](https://www.unixtimestamp.com/) och de läggs till för att publiknamnen ska vara unika, om du har mappat samma målgrupp till flera Google-mål.
 +++
 
-## LinkedIn Matched Auditions {#linkedin}
+## LinkedIn-matchade målgrupper {#linkedin}
 
 ### Behöver jag lägga till några appar eller pixlar i mitt [!DNL LinkedIn]-annonserarkonto?
 
@@ -174,7 +174,7 @@ Nej. Eftersom detta inte är en pixelbaserad integrering behöver du inte lägga
 +++Svar
 Innan du kan använda målet [!UICONTROL LinkedIn Matched Audience] måste du kontrollera att ditt [!DNL LinkedIn Campaign Manager]-konto har behörighetsnivån [!DNL Creative Manager] eller högre.
 
-Mer information om hur du redigerar användarbehörigheter för [!DNL LinkedIn Campaign Manager] finns i [Lägg till, redigera och ta bort användarbehörigheter för Advertising-konton](https://www.linkedin.com/help/lms/answer/5753) i LinkedIn-dokumentationen.
+Mer information om hur du redigerar användarbehörigheter för [!DNL LinkedIn Campaign Manager] finns i [Lägg till, redigera och ta bort användarbehörigheter för Advertising-konton](https://www.linkedin.com/help/lms/answer/5753) i dokumentationen för LinkedIn.
 +++
 
 ### Hur ska jag hash-koda målgruppsdata innan jag skickar dem till [!DNL LinkedIn]?
@@ -201,10 +201,10 @@ Nej, [Web SDK](../web-sdk/home.md) krävs inte för att aktivera målgrupper fö
 
 Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
 
-För [anpassning av hela och nästa sida](ui/activate-edge-personalization-destinations.md) måste du antingen använda [Web SDK](../web-sdk/home.md) eller [Edge Network Server API](../server-api/overview.md). Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
+För [anpassning av hela och nästa sida](ui/activate-edge-personalization-destinations.md) måste du antingen använda [Web SDK](../web-sdk/home.md) eller [Edge Network Server-API](../server-api/overview.md). Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
 +++
 
-### Finns det någon gräns för hur många attribut jag kan skicka från Real-time Customer Data Platform till Adobe Target eller ett anpassat Personalization-mål?
+### Finns det någon gräns för hur många attribut jag kan skicka från kunddataplattformen i realtid till Adobe Target eller en anpassad Personalization-destination?
 
 +++Svar
 Ja, personalisering på samma sida och nästa sida stöder maximalt 30 attribut per sandlåda när målgrupper aktiveras för Adobe Target eller anpassade Personalization-destinationer. Mer information om aktiveringsskydd finns i [skyddsdokumentationen](guardrails.md#edge-destinations-activation).
@@ -220,7 +220,7 @@ För närvarande stöds bara statiska attribut med ett värde, till exempel `per
 
 Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more information on activation guardrails, see the [default guardrails for activation](guardrails.md#edge-destinations-activation). -->
 
-### När jag har skapat en målgrupp i Experience Platform, hur lång tid tar det för den målgruppen att bli tillgänglig för kantsegmentering?
+### När jag har skapat en målgrupp i Experience Platform, hur lång tid tar det för den målgruppen att bli tillgänglig för användning av kantsegmentering?
 
 +++Svar
 Målgruppsdefinitioner sprids till [Edge Network](../web-sdk/home.md) på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som är kvalificerade för målgruppen missas.
@@ -247,7 +247,7 @@ När du tar bort ett mål tas alla målgrupper och attribut som är mappade unde
 ### Fungerar integreringen med Edge Network Server API?
 
 +++Svar
-Ja, Edge Network Server-API:t fungerar med det anpassade Personalization-målet. Eftersom profilattribut kan innehålla känsliga data krävs det att du använder API:t för Edge Network Server för datainsamling för att skydda dessa data. Dessutom måste alla API-anrop göras i en [autentiserad kontext](../server-api/authentication.md).
+Ja, Edge Network Server-API:t fungerar med det anpassade Personalization-målet. Eftersom profilattribut kan innehålla känsliga data krävs det att du använder Edge Network Server API för datainsamling för att skydda dessa data. Dessutom måste alla API-anrop göras i en [autentiserad kontext](../server-api/authentication.md).
 +++
 
 ### Jag kan bara ha en kopplingsregel som är aktiv i farten. Kan jag bygga målgrupper som använder en annan sammanslagningspolicy och ändå skicka dem till Adobe Target som direktuppspelade målgrupper?
@@ -271,7 +271,7 @@ För användningsfall där hantering av medgivandeprinciper måste tillämpas i 
 
 Den här tjänsten innehåller kundhanterade nycklar och förhöjda tröskelvärden för hantering av kundens datalängd.
 
-Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med etiketterna för dataanvändning i [Experience Platform](../data-governance/labels/overview.md) och [efterlevnadstjänsten för profiler för samtycke](../data-governance/enforcement/overview.md). De här funktionerna är tillgängliga för alla kunder.
+Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten ](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
 
 
 

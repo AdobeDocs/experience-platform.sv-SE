@@ -2,16 +2,16 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: 6c4a2f9f6b338ec03b99ee1d7e91f7d9c0347b08
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1308'
-ht-degree: 0%
+source-wordcount: '1309'
+ht-degree: 2%
 
 ---
 
 # Hantering av målgruppsmetadata
 
-Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat konfigurationen används den av Adobe för att strukturera API-anropen till ditt mål.
+Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in konfigurationen används den av Adobe för att strukturera API-anropen till ditt mål.
 
 Du kan konfigurera de funktioner som beskrivs i det här dokumentet med API-slutpunkten `/authoring/audience-templates`. Läs [skapa en metadatamall](../metadata-api/create-audience-template.md) för en fullständig lista över åtgärder som du kan utföra på slutpunkten.
 
@@ -23,13 +23,13 @@ Beroende på din API-konfiguration kan du behöva använda slutpunkten för hant
 
 ## Användningsfall som stöds av hantering av målgruppsmetadata {#use-cases}
 
-Med stöd för målgruppsmetadata i Destination SDK kan du, när du konfigurerar Experience Platform, ge plattformsanvändare ett av flera alternativ när de mappar och aktiverar målgrupper till ditt mål. Du kan styra vilka alternativ som är tillgängliga för användaren via parametrarna i avsnittet [konfiguration av målmetadata](../functionality/destination-configuration/audience-metadata-configuration.md) i målkonfigurationen.
+Med stöd för målgruppsmetadata i Destination SDK kan du när du konfigurerar ditt Experience Platform-mål ge Experience Platform-användare ett av flera alternativ när de mappar och aktiverar målgrupper till ditt mål. Du kan styra vilka alternativ som är tillgängliga för användaren via parametrarna i avsnittet [konfiguration av målmetadata](../functionality/destination-configuration/audience-metadata-configuration.md) i målkonfigurationen.
 
 ### Använd fall 1 - Du har ett API från tredje part och användarna behöver inte ange ID för indatamappning
 
-Om du har en API-slutpunkt för att skapa/uppdatera/ta bort målgrupper eller målgrupper kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att den matchar specifikationerna för målgruppen när du skapar/uppdaterar/tar bort slutpunkter. Experience Platform kan programmatiskt skapa/uppdatera/ta bort målgrupper och synkronisera metadata tillbaka till Experience Platform.
+Om du har en API-slutpunkt för att skapa/uppdatera/ta bort målgrupper eller målgrupper kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att det matchar specifikationerna för målgruppen när du skapar/uppdaterar/tar bort slutpunkter. Experience Platform kan programmatiskt skapa/uppdatera/ta bort målgrupper och synkronisera metadata tillbaka till Experience Platform.
 
-När man aktiverar målgrupper på Experience Platform i användargränssnittet behöver man inte fylla i fält för målgruppsmappning i aktiveringsarbetsflödet manuellt.
+När du aktiverar målgrupper till ditt mål i Experience Platform användargränssnitt behöver användarna inte fylla i ett fält för målgruppsmappning i aktiveringsarbetsflödet manuellt.
 
 ### Användningsfall 2 - Användarna måste skapa en målgrupp i ditt mål först och måste ange ett manuellt ID för inmatningsmappning
 
@@ -37,9 +37,9 @@ Om målgrupper och andra metadata måste skapas manuellt av partners eller anvä
 
 ![ID för indatamappning](../assets/functionality/input-mapping-id.png)
 
-### Använd fall 3 - Målet godkänner målgrupps-ID för Experience Platform, användarna behöver inte ange något ID för manuell inmatning
+### Använd fall 3 - Målet godkänner Experience Platform målgrupps-ID, användarna behöver inte ange något manuellt ID för inmatningsmappning
 
-Om målgrupps-ID:t accepteras i målgruppssystemet kan du konfigurera det i din målgruppsmetadatamall. Användarna behöver inte fylla i ett målgruppsmappnings-ID när de aktiverar ett segment.
+Om målsystemet godkänner Experience Platform målgrupps-ID kan du konfigurera detta i din målgruppsmetadatamall. Användarna behöver inte fylla i ett målgruppsmappnings-ID när de aktiverar ett segment.
 
 ## Allmän och utbyggbar målgruppsmall {#generic-and-extensible}
 
@@ -47,11 +47,11 @@ För att stödja de användningsfall som listas ovan tillhandahåller Adobe en a
 
 Du kan använda den generiska mallen för att [skapa en ny målgruppsmall](../metadata-api/create-audience-template.md) om ditt API har stöd för:
 
-* HTTP-metoderna: POST, GET, PUT, DELETE, PATCH
+* HTTP-metoderna POST, GET, PUT, DELETE, PATCH
 * Autentiseringstyperna: OAuth 1, OAuth 2 med uppdateringstoken, OAuth 2 med bearer-token
 * Funktionerna: skapa en målgrupp, uppdatera en målgrupp, hämta en målgrupp, ta bort en målgrupp, validera inloggningsuppgifterna
 
-Teknikteamet på Adobe kan samarbeta med dig för att utöka den generiska mallen med anpassade fält om det behövs för dina användningsfall.
+Adobe tekniker kan samarbeta med dig för att utöka den generiska mallen med anpassade fält om det behövs.
 
 
 ## Mallhändelser som stöds {#supported-events}
@@ -546,20 +546,20 @@ För att skicka information som målgrupps-ID:n, åtkomsttoken, felmeddelanden m
 
 | Makro | Beskrivning |
 |--- |--- |
-| `{{segment.alias}}` | Gör att du kan komma åt målgruppsalias i Experience Platform. |
-| `{{segment.name}}` | Gör att du kan komma åt målgruppsnamnet i Experience Platform. |
-| `{{segment.id}}` | Gör att du kan komma åt målgrupps-ID i Experience Platform. |
+| `{{segment.alias}}` | Ger åtkomst till målgruppsalias i Experience Platform. |
+| `{{segment.name}}` | Gör att du kan komma åt målgruppens namn i Experience Platform. |
+| `{{segment.id}}` | Ger åtkomst till målgrupps-ID i Experience Platform. |
 | `{{customerData.accountId}}` | Gör att du kan komma åt det konto-ID-fält som du har konfigurerat i målkonfigurationen. |
 | `{{oauth2ServiceAccessToken}}` | Gör att du dynamiskt kan generera en åtkomsttoken baserat på din OAuth 2-konfiguration. |
-| `{{authData.accessToken}}` | Gör att du kan skicka åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda token som inte upphör att gälla för att ansluta till ditt mål, annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |
+| `{{authData.accessToken}}` | Gör att du kan skicka åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda token som inte upphör att gälla för att ansluta till ditt mål. Annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |
 | `{{body.segments[0].segment.id}}` | Returnerar den unika identifieraren för den skapade målgruppen som värdet för nyckeln `externalAudienceId`. |
-| `{{error.message}}` | Returnerar ett felmeddelande som kommer att visas för användare i användargränssnittet i Experience Platform. |
-| `{{{segmentEnrichmentAttributes}}}` | Gör att du kan komma åt alla anrikningsattribut för en viss målgrupp.  Det här makrot stöds av händelserna `create`, `update` och `delete`. Anrikningsattribut är bara tillgängliga för [anpassade överförda målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{error.message}}` | Returnerar ett felmeddelande som kommer att visas för användare i Experience Platform-gränssnittet. |
+| `{{{segmentEnrichmentAttributes}}}` | Gör att du kan komma åt alla anrikningsattribut för en viss målgrupp.  Det här makrot stöds av händelserna `create`, `update` och `delete`. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
 | `{{destination.name}}` | Returnerar namnet på målet. |
 | `{{destination.sandboxName}}` | Returnerar namnet på den Experience Platform-sandlåda där målet är konfigurerat. |
 | `{{destination.id}}` | Returnerar ID:t för målkonfigurationen. |
 | `{{destination.imsOrgId}}` | Returnerar det IMS-Org-ID där målet är konfigurerat. |
-| `{{destination.enrichmentAttributes}}` | Gör att du kan komma åt alla anrikningsattribut för alla målgrupper som mappas till ett mål. Det här makrot stöds av händelserna `createDestination`, `updateDestination` och `deleteDestination`. Anrikningsattribut är bara tillgängliga för [anpassade överförda målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
-| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | Gör att du kan komma åt anrikningsattribut för specifika externa målgrupper mappade till ett mål. Anrikningsattribut är bara tillgängliga för [anpassade överförda målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{destination.enrichmentAttributes}}` | Gör att du kan komma åt alla anrikningsattribut för alla målgrupper som mappas till ett mål. Det här makrot stöds av händelserna `createDestination`, `updateDestination` och `deleteDestination`. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | Gör att du kan komma åt anrikningsattribut för specifika externa målgrupper mappade till ett mål. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
 
 {style="table-layout:auto"}

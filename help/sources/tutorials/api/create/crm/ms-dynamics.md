@@ -1,10 +1,10 @@
 ---
 title: Skapa en Microsoft Dynamics-basanslutning med API:t för flödestjänsten
-description: Lär dig hur du ansluter en plattform till ett Microsoft Dynamics-konto med API:t för Flow Service.
+description: Lär dig hur du ansluter Experience Platform till ett Microsoft Dynamics-konto med API:t för Flow Service.
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
-source-git-commit: 4e119056c0ab89cfc79eeb46e6f870c89356dc7d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1338'
 ht-degree: 0%
 
 ---
@@ -17,14 +17,14 @@ Läs den här vägledningen när du vill veta hur du kan ansluta din [!DNL Micro
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta plattformen till ett Dynamics-konto med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta Experience Platform till ett Dynamics-konto med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -693,4 +693,4 @@ Ett lyckat svar returnerar det nyligen genererade källanslutnings-ID:t och dess
 Genom att följa den här självstudiekursen har du skapat en [!DNL Microsoft Dynamics]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att hämta CRM-data till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/crm.md)
+* [Skapa ett dataflöde för att hämta CRM-data till Experience Platform med  [!DNL Flow Service] API](../../collect/crm.md)

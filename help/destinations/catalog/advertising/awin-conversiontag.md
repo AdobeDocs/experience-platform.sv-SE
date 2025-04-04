@@ -1,11 +1,11 @@
 ---
 keywords: Awin Advertiser Conversion Tag extension;conversion tag;Awin;awin;AWIN
 title: Tillägget Awin Advertiser Conversion Tag
-description: Tillägget Awin Advertiser Conversion Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Awin Advertiser Conversion Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 99feb169-acf3-4e68-8785-3f4cf565e5a9
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -18,21 +18,21 @@ Conversion Tag är deklarationen för JavaScript-objektet AWIN.Tracking.Sale, so
 
 Awin Advertiser Conversion Tag är ett reklamtillägg i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103240.awin-conversion-tag.html).
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![Awin Advertiser Conversiontag-tillägg i gränssnittet](../../assets/catalog/advertising/awin-conversion-tag/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Experience Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till datainsamlingsfunktioner i användargränssnittet och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till datainsamlingsfunktioner i användargränssnittet och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
 Så här installerar du tillägget [!DNL Awin Advertiser Conversion Tag]:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
@@ -42,7 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Mer information om alternativ för tilläggskonfiguration och installationsstöd finns i [Konverteringstagg för Awin Advertiser på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103240.awin-conversion-tag.html).
+Information om alternativ för tilläggskonfiguration och installationsstöd finns på [sidan Konverteringstagg för Awin Advertiser i Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103240.awin-conversion-tag.html).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i guiden om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension).
 

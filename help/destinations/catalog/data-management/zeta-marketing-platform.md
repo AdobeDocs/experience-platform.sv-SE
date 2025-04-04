@@ -4,9 +4,9 @@ description: Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälp
 hide: true
 hidefromtoc: true
 exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
-source-git-commit: 0c3c192105146dd949e9b11f8925bf4f9d7c15c0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1328'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälper er att anskaffa, utöka och behålla kunder på ett effektivare sätt, med hjälp av intelligens (egna data och AI). Mer information finns i [Zeta Global](https://zetaglobal.com/).
 
-Med Zeta Marketing Platform Connector som finns i Adobe Experience Platform kan ni smidigt synkronisera era målgrupper från Experience Platform till ZMP.
+Med Zeta Marketing Platform-kontakten i Adobe Experience Platform kan ni smidigt synkronisera era målgrupper från Experience Platform till ZMP.
 
 >[!IMPORTANT]
 >
@@ -31,14 +31,14 @@ En marknadsförare vill skapa unika målgruppsprofiler, identifiera sina mest v�
 
 ### Rikta användare med annonser {#use-case-target-users}
 
-En annonsör siktar på att nå ut till användare inom specifika målgrupper via Zeta Demand Side Platform (DSP), eftersom dessa användare interagerar med sina varumärken. Klicka [här](https://knowledgebase.zetaglobal.com/pug/) om du vill ha mer information om Zeta-DSP.
+En annonsör vill rikta sig till användare inom specifika målgrupper via Zeta Demand Side Platform (DSP), eftersom dessa användare interagerar med sina varumärken. Klicka [här](https://knowledgebase.zetaglobal.com/pug/) om du vill ha mer information om Zeta DSP.
 
 ## Förhandskrav {#prerequisites}
 
 ### Krav för Zeta Marketing Platform
 
 * Innan du skapar en ny anslutning till Zeta Marketing Platform-målet måste du skapa en tom kundlista i ditt Zeta Marketing Platform-konto. Du måste välja en av dessa kundlistor som mål för att få den Adobe Experience Platform-publik som du tänker skicka. Du kan skapa en tom kundlista i ZMP genom att följa instruktionerna [här](https://knowledgebase.zetaglobal.com/kb/creating-audiences#CreatingAudiences-CreatingaCustomerList).
-* Även om Adobe Experience Platform tillåter aktivering av flera målgrupper till en viss ZMP-destinationsinstans är det obligatoriskt att varje ZMP-destinationsinstans endast tar emot en Experience Platform-målinstans. Om du vill hantera flera målgrupper från Experience Platform skapar du ytterligare ZMP-målinstanser för varje målgrupp och väljer en annan kundlista i listrutan. Detta säkerställer att målgrupperna inte skrivs över. Mer information finns i [Fyll i målinformation](#destination-details).
+* Även om Adobe Experience Platform tillåter aktivering av flera målgrupper till en viss ZMP-destinationsinstans, är det obligatoriskt att varje ZMP-destinationsinstans endast tar emot en Experience Platform-målinstans. Om du vill hantera flera målgrupper från Experience Platform skapar du ytterligare ZMP-målinstanser för varje målgrupp och väljer en annan kundlista i listrutan. Detta säkerställer att målgrupperna inte skrivs över. Mer information finns i [Fyll i målinformation](#destination-details).
 * Använd följande autentiseringsuppgifter för att konfigurera målet:
    * Användarnamn: **api**
    * Lösenord: Din ZMP REST API-nyckel. Du hittar din REST API-nyckel genom att logga in på ditt ZMP-konto och navigera till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns i [ZMP-dokumentationen](https://knowledgebase.zetaglobal.com/kb/integrations).
@@ -53,7 +53,7 @@ En annonsör siktar på att nå ut till användare inom specifika målgrupper vi
 | Målidentitet | Beskrivning | Överväganden | Anteckningar |
 ---------|----------|----------|----------|
 | uid | Unikt ID som ZMP använder för att differentiera kundprofiler | Obligatoriskt | Välj standardnamnområdet för identiteter `Email` om du vill identifiera unika profiler med deras e-postadresser. Du kan också välja att mappa ditt anpassade namnområde till `uid` om kundprofilerna inte har något e-postmeddelande. |
-| email_md5_id | E-post MD5 som representerar varje kundprofil | Valfritt | Välj den här målidentiteten när du vill identifiera kundprofiler unikt med e-post-MD5-värden. Det är viktigt att e-postadresserna redan är i MD5-format i Experience Platform eftersom plattformen inte konverterar oformaterad text till MD5. I det här scenariot anger du `uid` (obligatoriskt) till antingen samma MD5-värden för e-post eller till ett annat lämpligt ID-namnområde. |
+| email_md5_id | E-post MD5 som representerar varje kundprofil | Valfritt | Välj den här målidentiteten när du vill identifiera kundprofiler unikt med e-post-MD5-värden. Det är viktigt att e-postadresser redan är i MD5-format inom Experience Platform eftersom Experience Platform inte konverterar oformaterad text till MD5. I det här scenariot anger du `uid` (obligatoriskt) till antingen samma MD5-värden för e-post eller till ett annat lämpligt ID-namnområde. |
 
 {style="table-layout:auto"}
 
@@ -63,13 +63,13 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | X | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
-> När enskilda medlemmar läggs till eller tas bort från målgruppen för plattformen skickas uppdateringar till ZMP för att säkerställa att målkundslistan synkroniseras i enlighet med detta.
+> När enskilda medlemmar läggs till eller tas bort från Experience Platform-målgruppen skickas uppdateringar till ZMP för att säkerställa att målkundslistan synkroniseras i enlighet med detta.
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -77,7 +77,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -104,7 +104,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL ZMP Account Site Id]**: Ditt ZMP **Site ID** där du vill skicka dina målgrupper. Du kan visa ditt webbplats-ID genom att gå till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns [här](https://knowledgebase.zetaglobal.com/kb/integrations).
-* **[!UICONTROL ZMP Segment]**: Kundlistsegmentet i ditt ZMP-webbplats-ID-konto som du vill ska uppdateras med plattformens målgrupp.
+* **[!UICONTROL ZMP Segment]**: Kundlistsegmentet i ditt ZMP-webbplats-ID-konto som du vill ska uppdateras med Experience Platform-målgruppen.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -131,14 +131,14 @@ Välja källfält:
 
 Markera målfält:
 * (Obligatoriskt) Välj `uid` som den målidentitet som du mappar ett källidentitetsnamnområde till.
-* (Valfritt) Välj `email_md5_id` som mål-ID som du mappade källidentitetsnamnområdet som representerar e-post-ID5-värden till. Det är viktigt att e-postadresserna redan är i MD5-format i Experience Platform eftersom plattformen inte konverterar oformaterad text till MD5
+* (Valfritt) Välj `email_md5_id` som mål-ID som du mappade källidentitetsnamnområdet som representerar e-post-ID5-värden till. Det är viktigt att e-postadresserna redan är i MD5-format i Experience Platform eftersom Experience Platform inte konverterar oformaterad text till MD5
 * Välj eventuella ytterligare målmappningar.
 
 ![Identitetsmappning](../../assets/catalog/data-management-platform/zeta-marketing-platform/zeta-mapping-example.png)
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-En lyckad målgruppsaktivering från Experience Platform till Zeta Marketing Platform uppdaterar målkundslistan i ZMP. Antalet och exempelprofilerna i målkundlistan är lika med antalet identiteter som har aktiverats.
+En lyckad målgruppsaktivering från Experience Platform till Zeta Marketing Platform uppdaterar kundlistan i ZMP. Antalet och exempelprofilerna i målkundlistan är lika med antalet identiteter som har aktiverats.
 
 ![Kundlista i ZMP](../../assets/catalog/data-management-platform/zeta-marketing-platform/zeta-customer-list-in-zmp.png)
 

@@ -4,9 +4,9 @@ title: Salesforce Marketing Cloud Source - översikt
 description: Lär dig hur du ansluter Salesforce Marketing Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
 last-substantial-update: 2023-05-25T00:00:00Z
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '339'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 0%
 >
 >[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av juni 2025.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform stöder inmatning av data från externa automatiseringssystem. Stöd för leverantörer av automatiserad marknadsföring inkluderar [!DNL Salesforce Marketing Cloud].
+Experience Platform har stöd för inmatning av data från externa automatiseringssystem. Stöd för leverantörer av automatiserad marknadsföring inkluderar [!DNL Salesforce Marketing Cloud].
 
 ## Förhandskrav
 
-Innan du kan ansluta [!DNL Salesforce Marketing Cloud]-källan till plattformen måste du se till att följande **behörighetsområden** har tilldelats din kombination av [!DNL Salesforce Marketing Cloud] klient-ID och klienthemlighet:
+Innan du kan ansluta din [!DNL Salesforce Marketing Cloud]-källa till Experience Platform måste du se till att följande **behörighetsomfattningar** har tilldelats din [!DNL Salesforce Marketing Cloud]-klient-ID och kombination av klienthemlighet:
 
 * `campaign_read`
 * `list_and_subscribers_read`
@@ -40,17 +40,17 @@ Mer information om omfattningar inklusive en lista över deras relaterade behör
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-## Anslut [!DNL Salesforce Marketing Cloud] till plattformen med API:er
+## Anslut [!DNL Salesforce Marketing Cloud] till Experience Platform med API:er
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce Marketing Cloud] till plattformen med API:er:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce Marketing Cloud] till Experience Platform med API:er:
 
-* [Skapa en Salesforce Marketing Cloud base-anslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
+* [Skapa en Salesforce Marketing Cloud-basanslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
 * [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 * [Skapa ett dataflöde för en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/collect/marketing-automation.md)
 
-## Anslut [!DNL Salesforce Marketing Cloud] till plattformen med användargränssnittet
+## Anslut [!DNL Salesforce Marketing Cloud] till Experience Platform med användargränssnittet
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce Marketing Cloud] till plattformen med användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce Marketing Cloud] till Experience Platform med användargränssnittet:
 
-* [Skapa en Salesforce Marketing Cloud-källanslutning i användargränssnittet](../../tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
+* [Skapa en källanslutning till Salesforce Marketing Cloud i användargränssnittet](../../tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
 * [Skapa ett dataflöde för en källanslutning för automatiserad marknadsföring i användargränssnittet](../../tutorials/ui/dataflow/marketing-automation.md)

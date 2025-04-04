@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig målserverkonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målserverkonfiguration
 exl-id: 579d2cc1-5110-4fba-9dcc-ff4b8d259827
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1101'
+source-wordcount: '1103'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ Den här sidan innehåller exempel på API-begäran och nyttolast som du kan anv
 
 >[!TIP]
 >
->Alla uppdateringsåtgärder på producerade/publika mål visas först när du har använt [publicerings-API](../../publishing-api/create-publishing-request.md) och skickat uppdateringen för granskning i Adobe.
+>Alla uppdateringsåtgärder på produkterade/publika mål visas först när du har använt [publicerings-API](../../publishing-api/create-publishing-request.md) och skickat uppdateringen för Adobe granskning.
 
 En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i följande artiklar:
 
@@ -26,7 +26,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
@@ -92,13 +92,13 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 | Parameter | Typ | Beskrivning |
 | -------- | ----------- | ----------- |
-| `name` | Sträng | *Krävs.* Representerar ett eget namn för servern, som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
+| `name` | Sträng | *Krävs.* Representerar ett eget namn på servern, som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
 | `destinationServerType` | Sträng | *Krävs.* Ange som `URL_BASED` för mål för realtidsströmning. |
-| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omformning behövs på Adobe, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
+| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omvandling behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
 | `urlBasedDestination.url.value` | Sträng | *Krävs.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
-| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe ska använda i anrop till servern. Alternativen är `GET`, `PUT`, `PUT`, `DELETE`, `PATCH`. |
+| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe använder i anrop till servern. Alternativen är `GET`, `PUT`, `PUT`, `DELETE`, `PATCH`. |
 | `httpTemplate.requestBody.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
-| `httpTemplate.requestBody.value` | Sträng | *Krävs.* Den här strängen är den teckenescape-version som omformar data för plattformskunder till det format som tjänsten förväntar sig. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i omformningen [Profilattribut](../../functionality/destination-server/message-format.md#attributes). </li></ul> |
+| `httpTemplate.requestBody.value` | Sträng | *Krävs.* Den här strängen är den teckenescape-version som omformar data från Experience Platform-kunder till det format som tjänsten förväntar sig. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i omformningen [Profilattribut](../../functionality/destination-server/message-format.md#attributes). </li></ul> |
 | `httpTemplate.contentType` | Sträng | *Krävs.* Innehållstypen som servern accepterar. Det här värdet är troligen `application/json`. |
 
 {style="table-layout:auto"}
@@ -752,11 +752,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade m�
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du uppdaterar en målserverkonfiguration via API-slutpunkten för Destinationen SDK `/authoring/destination-servers`.
+När du har läst det här dokumentet vet du nu hur du uppdaterar en målserverkonfiguration via API-slutpunkten för Destination SDK `/authoring/destination-servers`.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 

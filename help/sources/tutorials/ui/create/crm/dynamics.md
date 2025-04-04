@@ -3,11 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;Microsoft Dynamics;microsoft 
 solution: Experience Platform
 title: Skapa en Microsoft Dynamics Source-anslutning i användargränssnittet
 type: Tutorial
-description: Lär dig hur du skapar en Microsoft Dynamics-källanslutning med Adobe Experience Platform-gränssnittet.
+description: Lär dig hur du skapar en källanslutning till Microsoft Dynamics med Adobe Experience Platform användargränssnitt.
 exl-id: 1a7a66de-dc57-4a72-8fdd-5fd80175db69
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '580'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ Mer information om hur du kommer igång finns i [det här [!DNL Dynamics] dokume
 
 ## Anslut ditt [!DNL Dynamics]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -86,7 +86,7 @@ Du kan antingen använda grundläggande autentisering eller tjänstens huvudnamn
 
 >[!TAB Grundläggande autentisering]
 
-Om du vill skapa ett [!DNL Dynamics]-konto med grundläggande autentisering väljer du [!UICONTROL Basic authentication] och anger sedan värden för [!UICONTROL Service URI], [!UICONTROL Username] och [!UICONTROL Password]. **Obs!**: Grundläggande autentisering i [!DNL Dynamics] kan blockeras av tvåfaktorautentisering, vilket för närvarande inte stöds av plattformen. I det här fallet rekommenderas du att använda nyckelbaserad autentisering för att skapa en källkoppling med [!DNL Dynamics].
+Om du vill skapa ett [!DNL Dynamics]-konto med grundläggande autentisering väljer du [!UICONTROL Basic authentication] och anger sedan värden för [!UICONTROL Service URI], [!UICONTROL Username] och [!UICONTROL Password]. **Obs!**: Grundläggande autentisering i [!DNL Dynamics] kan blockeras av tvåfaktorautentisering, vilket för närvarande inte stöds av Experience Platform. I det här fallet rekommenderas du att använda nyckelbaserad autentisering för att skapa en källkoppling med [!DNL Dynamics].
 
 När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta det nya kontot.
 
@@ -104,4 +104,4 @@ När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Dynamics]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Dynamics]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/crm.md).

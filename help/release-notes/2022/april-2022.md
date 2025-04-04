@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformationen för Adobe Experience Platform från april 2022.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2547'
-ht-degree: 4%
+source-wordcount: '2556'
+ht-degree: 13%
 
 ---
 
@@ -19,16 +19,16 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Dashboards]](#dashboards)
 - [Dataflöden](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Real-Time Customer Data Platform B2B-utgåva](#B2B)
 - [Källor](#sources)
 
 ## [!DNL Dashboards] {#dashboards}
 
-Plattformen har flera instrumentpaneler där du kan visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+Experience Platform tillhandahåller flera kontrollpaneler där du kan visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 
-Instrumentpaneler tillhandahåller förkonfigurerade rapportalternativ för organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering.
+Kontrollpanelerna tillhandahåller förkonfigurerade rapportalternativ för organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet i Experience Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering.
 
 Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive instrumentpaneler. Mer information om [hur du lägger till widgetar via widgetbiblioteket](../../dashboards/customize/widget-library.md) finns i dokumentationen.
 
@@ -41,9 +41,9 @@ Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive 
 | [!UICONTROL Audiences size] | Profiler | Den här widgeten innehåller en tabell med två kolumner som visar upp till 20 segment och det totala antalet målgrupper i varje segment. Listan är beroende av vilken sammanfogningspolicy som tillämpas och ordnas från hög till låg enligt det totala antalet målgrupper. |
 | [!UICONTROL Profile count trend] | Profiler | Den här widgeten använder ett linjediagram för att illustrera trenden i det totala antalet profiler som finns i systemet över tiden. Data kan visualiseras under 30 dagar, 90 dagar och 12 månader. |
 | [!UICONTROL Single identity profiles by identity] | Profiler | Den här widgeten använder ett stapeldiagram för att illustrera det totala antalet profiler som identifieras med endast en unik identifierare. Widgeten stöder upp till fem av de vanligaste identiteterna. |
-| [!UICONTROL Destination status] | Mål  | Den här widgeten visar det totala antalet aktiverade destinationer som ett enda mått och använder ett ringdiagram för att illustrera den proportionella skillnaden mellan aktiverade och inaktiverade destinationer. |
-| [!UICONTROL Active destinations by destination platform] | Mål  | Den här widgeten använder en tabell med två kolumner för att visa en lista över aktiva målplattformar och det totala antalet aktiva destinationer för varje målplattform. |
-| [!UICONTROL Activated audiences across all destinations] | Mål  | Den här widgeten visar totalt antal målgrupper som har aktiverats för alla destinationer i ett enda mätresultat. |
+| [!UICONTROL Destination status] | Mål | Den här widgeten visar det totala antalet aktiverade destinationer som ett enda mått och använder ett ringdiagram för att illustrera den proportionella skillnaden mellan aktiverade och inaktiverade destinationer. |
+| [!UICONTROL Active destinations by destination platform] | Mål | Den här widgeten använder en tabell med två kolumner för att visa en lista över aktiva målplattformar och det totala antalet aktiva destinationer för varje målplattform. |
+| [!UICONTROL Activated audiences across all destinations] | Mål | Den här widgeten visar totalt antal målgrupper som har aktiverats för alla destinationer i ett enda mätresultat. |
 | [!UICONTROL Audience activation order] | Segment | Den här widgeten innehåller en tabell med tre kolumner som visar målnamnet, plattformen och aktiveringsdatumet för målgruppen. |
 | [!UICONTROL Audience size trend] | Segment | Den här widgeten innehåller en illustration av ett linjediagram för det totala antalet profiler som uppfyller villkoren för en segmentdefinition under 30 dagar, 90 dagar och 12-månadersperioder. |
 | [!UICONTROL Audience size change trend] | Segment | Den här widgeten innehåller ett linjediagram som illustrerar skillnaden i det totala antalet profiler som är kvalificerade för ett visst segment mellan de senaste ögonblicksbilderna. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. |
@@ -61,9 +61,9 @@ Mer information om [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DN
 
 ## Dataflöden {#dataflows}
 
-I Platform hämtas data från många olika källor, analyseras i systemet och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
+I Experience Platform hämtas data från många olika källor, analyseras i systemet och aktiveras till en mängd olika destinationer. Experience Platform gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
 
-Dataflöden är en representation av jobb som flyttar data över plattformen. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av identitetstjänsten och kundprofilen i realtid innan de aktiveras för destinationerna.
+Dataflöden är en representation av jobb som flyttar data mellan Experience Platform. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av identitetstjänsten och kundprofilen i realtid innan de aktiveras för destinationerna.
 
 **Nya funktioner**
 
@@ -88,14 +88,14 @@ Mer information om [!DNL Data Prep] finns i [[!DNL Data Prep] översikten](../..
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
 | Avancerade målanslutningar för företag | Tre målanslutningar för företag är nu allmänt tillgängliga: [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md) och [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> Den allmänna tillgängligheten för Enterprise-målanslutningar omfattar alla funktioner som tidigare fanns i Beta-fasen och mycket mer: <ul><li>Nya autentiseringsfunktioner, inklusive [signatur för delad åtkomst i Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) och fler [autentiseringstyper](../../destinations/catalog/streaming/http-destination.md#authentication-information) (innehavartoken, OAuth2) i HTTP API-målet;</li><li>[Bakgrundsfyllning av tidigare profildata](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) (skickar historiska profiler som är kvalificerade för segmentet när det aktiveras första gången);</li><li>Data Flow Run-mätvärden stöds nu för dessa destinationer.</li><li>[Ytterligare segmentmetadata](../../destinations/catalog/streaming/http-destination.md#destination-details) ingår i datanyttolasten, inklusive segmentnamn och segmenttidsstämplar;</li><li>Stöd för [statiska IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) för kunder som behöver tillåtslista Experience Platform.</li></ul> |
-| Aviseringar i sitt sammanhang för måldataflöden | Du kan nu [prenumerera på aviseringar](../../destinations/ui/alerts.md) när du skapar ett måldataflöde och få varningsmeddelanden om status, slutförande eller fel i dataflödet. Du kan välja att få aviseringar i användargränssnittet för Experience Platform eller via e-post. |
+| Aviseringar i sitt sammanhang för måldataflöden | Du kan nu [prenumerera på aviseringar](../../destinations/ui/alerts.md) när du skapar ett måldataflöde och få varningsmeddelanden om status, slutförande eller fel i dataflödet. Du kan välja att få aviseringar i Experience Platform-gränssnittet eller via e-post. |
 
 ### Frisläppningsprocess för avancerade målanslutningar för företag {#release-process-enterprise-destinations}
 
@@ -105,7 +105,7 @@ Observera följande om du har använt dessa destinationer under Beta fas:
 
 - Om du tidigare har varit i Beta med någon av de tre destinationerna behövs ingen åtgärd. Alla dataflöden som installeras som en del av Beta kommer att fortsätta att fungera och kommer att migreras till GA-versionen.
 - Om du vill konfigurera dessa destinationer från och med den 27 april, gör det med den nya GA-versionen av destinationerna.
-- Betakorten som markerats som inaktuella tas bort när releaseversionen är klar, vilket beräknas inträffa till slutet av fredagen den 29 april. Teknikteamet på Experience Platform bevakar noggrant inför en lyckad release-operation.
+- Betakorten som markerats som inaktuella tas bort när releaseversionen är klar, vilket beräknas inträffa till slutet av fredagen den 29 april. Experience Platform tekniska team håller på att övervaka en lyckad lanseringsåtgärd.
 
 **Nya mål**
 
@@ -118,7 +118,7 @@ Mer allmän information om destinationer finns i [målöversikten](../../destina
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya funktioner**
 
@@ -169,7 +169,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai/ml-services}
 
@@ -183,13 +183,13 @@ Attribution AI används för att attribuera krediter till kontaktpunkter som led
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Attribution AI stöder följande scheman: Adobe Analytics, Experience Event och Consumer Experience Event. Mer information om stöd för flera datauppsättningar i Attribution AI finns i användarhandboken för [Attribution AI](../../intelligent-services/attribution-ai/user-guide.md). |
+| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Attribution AI har stöd för följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event. Mer information om stöd för flera datauppsättningar i Attribution AI finns i användarhandboken för [Attribution AI](../../intelligent-services/attribution-ai/user-guide.md). |
 
 Mer information om [!DNL Intelligent Services] finns i [[!DNL Intelligent Services] översikten](../../intelligent-services/home.md).
 
 ### Kund-AI
 
-Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
+Customer AI available in Real-Time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 
 **Uppdaterade funktioner**
 
@@ -202,7 +202,7 @@ Mer information om [!DNL Intelligent Services] finns i [[!DNL Intelligent Servic
 
 ## Real-Time Customer Data Platform B2B-utgåva {#B2B}
 
-Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time CDP) och är särskilt framtagen för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
+Real-Time CDP B2B edition bygger på Real-Time Customer Data Platform (Real-Time CDP) och är utformat för marknadsförare som arbetar i en affärs-till-affärstjänstmodell. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 
 **Uppdaterade funktioner**
 
@@ -210,20 +210,20 @@ Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time
 | --- | --- |
 | Stöd för funktionen `isDeleted` | Alla [!DNL Marketo]-datauppsättningar utom `Activities` har nu stöd för mappningen `isDeleted`. Den nya mappningen läggs automatiskt till i dina befintliga B2B-dataflöden. Du kan använda mappningen `isDeleted` för att filtrera bort poster som har tagits bort så att dina data i [!DNL Data Lake] är konsekventa med dina källdata. Mer information om `isDeleted` finns i guiden [[!DNL Marketo] för mappningsfält](../../sources/connectors/adobe-applications/mapping/marketo.md). |
 
-Mer information om Real-time Customer Data Platform B2B Edition finns i [B2B-översikten](../../rtcdp/b2b-overview.md).
+Mer information om Real-Time Customer Data Platform B2B edition finns i [B2B-översikten](../../rtcdp/b2b-overview.md).
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för [!DNL OneTrust Integration] | Du kan nu använda källan [!DNL OneTrust Integration] för att importera medgivanden och inställningsdata från ditt [!DNL OneTrust]-konto till plattformen. Mer information finns i dokumentationen om [att skapa en [!DNL OneTrust Integration] källanslutning](../../sources/connectors/consent-and-preferences/onetrust.md). |
-| Stöd för [!DNL Square] | Du kan nu använda källan [!DNL Square] för att importera betalningsdata från ditt [!DNL Square]-konto till plattformen. |
+| Stöd för [!DNL OneTrust Integration] | Du kan nu använda källan [!DNL OneTrust Integration] för att importera medgivanden och inställningsdata från ditt [!DNL OneTrust]-konto till Experience Platform. Mer information finns i dokumentationen om [att skapa en [!DNL OneTrust Integration] källanslutning](../../sources/connectors/consent-and-preferences/onetrust.md). |
+| Stöd för [!DNL Square] | Du kan nu använda källan [!DNL Square] för att importera betalningsdata från ditt [!DNL Square]-konto till Experience Platform. |
 | Stöd för att ta bort kundattributsdataflöden | Nu kan du ta bort dataflöden som har skapats med källkopplingen för kundattribut. |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).

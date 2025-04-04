@@ -1,10 +1,10 @@
 ---
-description: På den här sidan beskrivs hur du använder API-slutpunkten /sample-profiles från Destinationen SDK för att generera exempelprofiler baserat på ett källschema. Du kan använda de här exempelprofilerna för att testa din filbaserade målkonfiguration.
+description: På den här sidan beskrivs hur du använder API-slutpunkten /sample-profiles från Destination SDK för att generera exempelprofiler baserat på ett källschema. Du kan använda de här exempelprofilerna för att testa din filbaserade målkonfiguration.
 title: Generera exempelprofiler baserat på ett källschema
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -24,15 +24,15 @@ Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-star
 
 Innan du kan använda slutpunkten `/sample-profiles` måste du kontrollera att följande villkor uppfylls:
 
-* Du har ett befintligt filbaserat mål som skapats via Destinationen SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
-* Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform. Slutpunkten `/sample-profiles` skapar profilerna baserat på det källschema som du definierade i ditt aktiveringsflöde. Se självstudiekursen [aktivering](../../../ui/activate-batch-profile-destinations.md) om du vill veta mer om hur du skapar ett aktiveringsflöde.
-* För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i plattformsgränssnittet.
+* Du har ett befintligt filbaserat mål som skapats via Destination SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
+* Du har skapat minst ett aktiveringsflöde för destinationen i Experience Platform-gränssnittet. Slutpunkten `/sample-profiles` skapar profilerna baserat på det källschema som du definierade i ditt aktiveringsflöde. Se självstudiekursen [aktivering](../../../ui/activate-batch-profile-destinations.md) om du vill veta mer om hur du skapar ett aktiveringsflöde.
+* För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i Experience Platform-gränssnittet.
 
   ![Gränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
 
 ## Generera exempelprofiler för måltestning {#generate-sample-profiles}
 
-Du kan generera exempelprofiler baserat på ditt källschema genom att göra en GET-förfrågan till `/sample-profiles`-slutpunkten med målförekomstens ID för det mål som du vill testa.
+Du kan generera exempelprofiler baserat på ditt källschema genom att göra en GET-begäran till `/sample-profiles`-slutpunkten med destinationsinstansens ID för det mål som du vill testa.
 
 **API-format**
 
@@ -114,7 +114,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg
 

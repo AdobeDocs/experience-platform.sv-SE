@@ -5,14 +5,14 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 exl-id: 7f503046-a3b4-4fdb-833c-4205b6e9fa04
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '531'
 ht-degree: 6%
 
 ---
 
-# Versionsinformation om Adobe Experience Platform
+# Versionsinformation för Adobe Experience Platform
 
 **Releasedatum: 10 september 2019**
 
@@ -24,7 +24,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## [!DNL Data Ingestion] {#ingestion}
 
-Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] innehåller flera alternativ för inmatning av data, bland annat API:er för gruppbearbetning, API:er för direktuppspelning, Adobe-anslutningar, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
+Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] innehåller flera alternativ för inmatning av data, bland annat API:er för gruppbearbetning, API:er för direktuppspelning, inbyggda Adobe-anslutningar, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
 
 **Nya funktioner**
 
@@ -36,13 +36,13 @@ Mer information finns i [dokumentationen för datainmatning](../../ingestion/hom
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst i [!DNL Experience Platform] som gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll mellan Adobe-lösningar och tredjepartssystem genom att skapa och använda maskininlärningsmodeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller för att automatiskt berika [!DNL Real-Time Customer Profile] med maskininlärningsinsikter.
+Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst i [!DNL Experience Platform] som gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i Adobe-lösningar och tredjepartssystem genom att skapa och använda maskininlärningsmodeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Experience Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller för att automatiskt berika [!DNL Real-Time Customer Profile] med maskininlärningsinsikter.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | -----------| ---------- |
-| Schemaläggning av tjänster via användargränssnittet | Integrerat med [!DNL Platform] Orchestration Service för att automatisera modellutbildning och poängsättning med användardefinierade scheman med hjälp av användargränssnittet. |
+| Schemaläggning av tjänster via användargränssnittet | Integrerat med [!DNL Experience Platform] Orchestration Service för att automatisera modellutbildning och poängsättning med användardefinierade scheman med hjälp av användargränssnittet. |
 | [!DNL Service Gallery] | Bläddra bland, övervaka och få tillgång till maskininlärningstjänster med möjlighet att schemalägga automatiska utbildnings- och poängsättningsjobb, allt inom den omdesignade [!DNL Service Gallery]. |
 | [!DNL JupyterLab] 5.0.0 | [!DNL JupyterLab] förbättringar av användargränssnittet. |
 

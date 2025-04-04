@@ -1,23 +1,23 @@
 ---
 title: Adobe Media Analytics for Audio and Video Extension - översikt
-description: Läs mer om taggtillägget Adobe Media Analytics for Audio och Video i Adobe Experience Platform.
+description: Läs om taggtillägget Adobe Media Analytics för ljud och video i Adobe Experience Platform.
 exl-id: 426cfd08-aead-4b35-824c-45494bca2fc8
-source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '936'
-ht-degree: 0%
+source-wordcount: '937'
+ht-degree: 5%
 
 ---
 
-# Adobe Media Analytics för ljud- och videotillägg - översikt
+# Adobe Media Analytics for Audio and Video extension overview
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Använd den här dokumentationen om du vill ha information om hur du installerar, konfigurerar och implementerar tillägget Adobe Media Analytics för ljud och video (tillägget Media Analytics). Här finns alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel, tillsammans med exempel och länkar till exempel.
+Använd den här dokumentationen för information om hur du installerar, konfigurerar och implementerar Adobe Media Analytics för ljud- och videotillägg (tillägget Media Analytics). Här finns alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel, tillsammans med exempel och länkar till exempel.
 
-Tillägget Media Analytics (MA) lägger till JavaScript Media SDK (Media 2.x SDK). Det här tillägget innehåller funktioner för att lägga till spårningsinstansen `MediaHeartbeat` till en taggplats eller ett -projekt. MA-tillägget kräver ytterligare två tillägg:
+Media Analytics-tillägget (MA) lägger till JavaScript Media SDK (Media 2.x SDK). Det här tillägget innehåller funktioner för att lägga till spårningsinstansen `MediaHeartbeat` till en taggplats eller ett -projekt. MA-tillägget kräver ytterligare två tillägg:
 
 * [Analystillägg](../analytics/overview.md)
 * [Experience Cloud ID-tillägg](../id-service/overview.md)
@@ -72,7 +72,7 @@ MA-tillägget exporterar MediaHeartbeat-API:er i det globala fönsterobjektet ge
    | Metod |  Beskrivning   |
    | :--- | :--- |
    | `getQoSObject()` | Returnerar `theMediaObject`-instans som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
-   | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från mediaobjektets början. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
+   | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från början av medieobjektet. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
 
    **Returvärde:** Ett löfte som antingen löses med en `MediaHeartbeat`-instans eller avvisas med ett felmeddelande.
 
@@ -124,7 +124,7 @@ MA-tillägget visar de delade modulerna `get-instance` och `media-heartbeat` fö
      | Metod |  Beskrivning   |
      | :--- | :--- |
      | `getQoSObject()` | Returnerar instansen `MediaObject` som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
-     | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från mediaobjektets början. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
+     | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från början av medieobjektet. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
 
    * Ett valfritt config-objekt som visar dessa egenskaper:
 
@@ -174,11 +174,11 @@ MA-tillägget visar de delade modulerna `get-instance` och `media-heartbeat` fö
    ...
    ```
 
-1. Använd Media Heartbeat-instansen och följ [dokumentationen för Media SDK JS ](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html) och [JS API ](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
+1. Använd Media Heartbeat-instansen och följ [dokumentationen för SDK JS ](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html) och [JS API ](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
 
 >[!NOTE]
 >
->**Testar:** Om du vill testa tillägget i den här versionen måste du överföra det till [plattformen](../../../extension-dev/submit/upload-and-test.md), där du har tillgång till alla beroende tillägg.
+>**Testar:** Om du vill testa tillägget i den här versionen måste du överföra det till [Experience Platform](../../../extension-dev/submit/upload-and-test.md), där du har tillgång till alla beroende tillägg.
 
 
 <!--

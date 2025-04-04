@@ -3,9 +3,9 @@ title: Anslut ditt Snowflake Streaming-konto till Adobe Experience Platform
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake Streaming med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3fc225a4-746c-4a91-aa77-bbeb091ec364
-source-git-commit: 34b1676ebb5405d73cf37cd786d1e6c26cb8fdaa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '845'
+source-wordcount: '852'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >
-> Direktuppspelningskällan [!DNL Snowflake] är tillgänglig i API:t för användare som har köpt Real-time Customer Data Platform Ultimate.
+> Direktuppspelningskällan [!DNL Snowflake] är tillgänglig i API:t för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
 I den här självstudien beskrivs hur du ansluter och direktuppspelar data från ditt [!DNL Snowflake]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>) .
 
@@ -23,20 +23,20 @@ I den här självstudien beskrivs hur du ansluter och direktuppspelar data från
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 För nödvändig konfiguration och information om strömningskällan [!DNL Snowflake]. Läs översikten över den [[!DNL Snowflake] strömmande källan](../../../../connectors/databases/snowflake-streaming.md).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning {#create-a-base-connection}
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL Snowflake] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Snowflake]-autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -86,7 +86,7 @@ curl -X POST \
 | --- | --- |
 | `auth.params.account` | Namnet på ditt [!DNL Snowflake]-direktuppspelningskonto. |
 | `auth.params.database` | Namnet på din [!DNL Snowflake]-databas från vilken data hämtas. |
-| `auth.params.warehouse` | Namnet på ditt [!DNL Snowflake]-lagerställe. Lagerstället [!DNL Snowflake] hanterar frågekörningsprocessen för programmet. Varje lagerställe är oberoende av varandra och måste nås individuellt när data skickas till plattformen. |
+| `auth.params.warehouse` | Namnet på ditt [!DNL Snowflake]-lagerställe. Lagerstället [!DNL Snowflake] hanterar frågekörningsprocessen för programmet. Varje lagerställe är oberoende av varandra och måste nås individuellt när data skickas till Experience Platform. |
 | `auth.params.username` | Användarnamnet för ditt [!DNL Snowflake]-direktuppspelningskonto. |
 | `auth.params.schema` | (Valfritt) Databasschemat som är associerat med ditt [!DNL Snowflake]-direktuppspelningskonto. |
 | `auth.params.password` | Lösenordet för ditt [!DNL Snowflake]-direktuppspelningskonto. |
@@ -106,7 +106,7 @@ Ett lyckat svar returnerar den nyskapade basanslutningen och dess motsvarande ta
 
 ## Utforska era datatabeller {#explore-your-data-tables}
 
-Använd sedan basanslutnings-ID:t för att utforska och navigera genom källans datatabeller genom att göra en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}/explore?objectType=root`-slutpunkten och ange ditt grundläggande anslutnings-ID som en parameter.
+Använd sedan basanslutnings-ID:t för att utforska och navigera genom källans datatabeller genom att göra en GET-begäran till `/connections/{BASE_CONNECTION_ID}/explore?objectType=root`-slutpunkten och ange ditt basanslutnings-ID som en parameter.
 
 **API-format**
 
@@ -156,7 +156,7 @@ Ett lyckat svar returnerar strukturen och innehållet i källans data på rotniv
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
+Om du vill skapa en källanslutning skickar du en POST-begäran till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
 
 **API-format**
 
@@ -195,7 +195,7 @@ curl -X POST \
 | --- | --- |
 | `baseConnectionId` | Det autentiserade basanslutnings-ID:t för strömningskällan [!DNL Snowflake]. Detta ID genererades i ett tidigare steg. |
 | `connectionSpec.id` | Anslutningens spec-ID för strömningskällan [!DNL Snowflake]. |
-| `params.tableName` | Namnet på tabellen i din [!DNL Snowflake]-databas som du vill hämta till plattformen. |
+| `params.tableName` | Namnet på tabellen i din [!DNL Snowflake]-databas som du vill hämta till Experience Platform. |
 | `params.timestampColumn` | Namnet på den tidsstämpelkolumn som ska användas för att hämta inkrementella värden. |
 | `params.backfill` | En boolesk flagga som avgör om data hämtas från början (0 epok-tid) eller från den tidpunkt då källan initieras. Mer information om det här värdet finns i [[!DNL Snowflake] översikten över den direktuppspelade källan](../../../../connectors/databases/snowflake-streaming.md). |
 | `params.timezoneValue` | Tidszonsvärdet anger vilken tidszonens aktuella tid som ska hämtas när [!DNL Snowflake]-databasen efterfrågas. Den här parametern ska anges om tidsstämpelkolumnen i konfigurationen är inställd på `TIMESTAMP_NTZ`. Om det inte anges används UTC som standard `timezoneValue`. |
@@ -213,7 +213,7 @@ Ett lyckat svar returnerar ditt källanslutnings-ID och dess motsvarande tagg. K
 
 ## Skapa ett dataflöde
 
-Om du vill skapa ett dataflöde för att strömma data från rundtur [!DNL Snowflake]-konto till plattformen måste du göra en POST-förfrågan till slutpunkten `/flows` och samtidigt ange följande värden:
+Om du vill skapa ett dataflöde för att direktuppspela data från rundtur [!DNL Snowflake]-konto till Experience Platform, måste du göra en POST-begäran till slutpunkten `/flows` samtidigt som du anger följande värden:
 
 >[!TIP]
 >

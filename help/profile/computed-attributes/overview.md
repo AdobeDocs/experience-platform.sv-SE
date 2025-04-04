@@ -2,9 +2,9 @@
 title: Översikt över beräknade attribut
 description: Beräknade attribut är funktioner för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 exl-id: 13878363-589d-4a3c-811c-21d014a5f3c2
-source-git-commit: 03f1dfab768e98ef4959d605cc3ead25bb5eb238
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1154'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Personalization baserat på användarbeteende är ett viktigt krav för marknads
 
 Beräknade attribut hjälper dig att snabbt konvertera profilbeteendedata till aggregerade värden på profilnivå utan att vara beroende av tekniska resurser för:
 
-- Möjliggör riktad personalisering från en till en eller flera gånger med aktivering av beteendeaggregat till Real-time Customer Data Platform destinationer och användning i Adobe Journey Optimizer
+- Möjliggör riktad personalisering från en till en eller flera gånger med aktivering av beteendeaggregat till Real-Time Customer Data Platform destinationer och användning i Adobe Journey Optimizer
 - Förenklad målgruppssegmentering med lagring av beteendeaggregat som profilattribut
 - Standardisering av aggregerade profilbeteendedata för användning över olika plattformar och appar
 - Bättre datahantering med konsolidering av data från gamla profithändelser till meningsfulla beteendeinsikter
@@ -32,13 +32,13 @@ Exempel:
 - Komprimera flera händelsebaserade målgrupper till en mer komprimerad grupp med beräknade attribut
 - Oautentiserade användare kan återanvända sina partner-ID:n från händelser
 
-Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut har inom plattformen, förutom att förklara grunderna för beräknade attribut.
+Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut har i Experience Platform, förutom att förklara grunderna för beräknade attribut.
 
 ## Förstå beräknade attribut
 
 Med Adobe Experience Platform kan du enkelt importera och sammanfoga data från flera källor för att generera [!DNL Real-Time Customer Profiles]. Varje profil innehåller viktig information om en individ, t.ex. kontaktinformation, inställningar och inköpshistorik, vilket ger en helhetsbild av kunden.
 
-En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;total livslängd&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du med [!DNL Platform] skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnera värdet i rätt fält.
+En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;total livslängd&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du med [!DNL Experience Platform] skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnera värdet i rätt fält.
 
 Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut. Uttryck kan definieras på flera olika sätt, så att du kan ange vilka händelser som ska aggregeras på, sammanställningsfunktioner eller svarstider.
 

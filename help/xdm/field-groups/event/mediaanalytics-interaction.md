@@ -2,9 +2,9 @@
 title: Schemafältgrupp för MediaAnalytics-interaktionsinformation
 description: Läs mer om schemafältgruppen MediaAnalytics Interaction Details.
 exl-id: 1096d28a-5796-49cc-bd45-b3f5188f699e
-source-git-commit: b81afb8f6c4eaedb19a58b6fe3896286f1486804
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '200'
+source-wordcount: '201'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->Du kan dölja fält som inte används av Media Edge API. Om du döljer dessa fält blir schemat enklare att läsa och förstå, men det är inte nödvändigt. Dessa fält refererar endast till fälten i fältgruppen [!UICONTROL MediaAnalytics Interaction Details]. Följ instruktionerna i [Media Analytics-dokumentationen om hur du döljer oanvända fält](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/implementation-edge.html#set-up-the-schema-in-adobe-experience-platform) för att förbättra läsbarheten i plattformsgränssnittet.
+>Du kan dölja fält som inte används av Media Edge API. Om du döljer dessa fält blir schemat enklare att läsa och förstå, men det är inte nödvändigt. Dessa fält refererar endast till fälten i fältgruppen [!UICONTROL MediaAnalytics Interaction Details]. Om du vill förbättra läsbarheten i användargränssnittet för Experience Platform följer du instruktionerna i [dokumentationen för Media Analytics om hur du döljer oanvända fält](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/implementation-edge.html#set-up-the-schema-in-adobe-experience-platform).
 
 <!-- 
 >[!NOTE]

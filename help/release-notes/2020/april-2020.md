@@ -6,10 +6,10 @@ last-update: April 13, 2020
 author: ens71067
 keywords: Versionsinformation.
 exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '985'
-ht-degree: 2%
+ht-degree: 25%
 
 ---
 
@@ -22,7 +22,7 @@ Nya funktioner i Adobe Experience Platform:
 
 Uppdateringar av befintliga funktioner:
 * [[!DNL Experience Data Model (XDM)]](#xdm)
-* [Datastyrning](#governance)
+* [Dataförvaltning](#governance)
 * [[!DNL Destinations]](#destinations)
 * [[!DNL Privacy Service]](#privacy)
 * [[!DNL Sources]](#sources)
@@ -48,7 +48,7 @@ Mer information om [!DNL Intelligent Services] och vad den har att erbjuda finns
 
 Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
-XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya funktioner**
 
@@ -66,9 +66,9 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 * Känd
 
-## Datastyrning {#governance}
+## Dataförvaltning {#governance}
 
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Den spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, bland annat katalog, datalinje, etikettering av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
+Dataförvaltning i Adobe Experience Platform är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Den spelar en viktig roll inom [!DNL Experience Platform] på olika nivåer, bland annat katalogföring, datahärkomst, märkning av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
 
 För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
 
@@ -87,9 +87,9 @@ Datastyrningsramverket förenklar och effektiviserar processen att kategorisera 
 Mer information finns i [Översikt över datastyrning](../../data-governance/home.md).
 
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-I [Real-time Customer Data Platform](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partner på ett smidigt sätt.
+I [Real-Time Customer Data Platform](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partner på ett smidigt sätt.
 
 **Nya mål**
 
@@ -104,27 +104,27 @@ Mer information finns i [Målöversikt](../../destinations/home.md).
 
 ## [!DNL Privacy Service] {#privacy}
 
-Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful API och användargränssnitt som hjälper dig att hantera dessa dataförfrågningar från dina kunder. Med [!DNL Privacy Service] kan du skicka förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
+Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful API och användargränssnitt som hjälper dig att hantera dessa dataförfrågningar från dina kunder. Med [!DNL Privacy Service] kan du skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-applikationer, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för PDPA | Begäran om skydd av personuppgifter kan nu skapas och spåras i Thailand enligt lagen om skydd av personuppgifter (PDPA). När sekretessbegäranden görs i API:t godkänner arrayen `regulation` värdet &quot;pdpa_tha&quot;. |
-| Namnområdestyper i användargränssnittet | Du kan nu ange olika namnområdestyper i Request Builder i användargränssnittet för [!DNL Privacy Service]. Mer information finns i [användarhandboken](../../privacy-service/ui/user-guide.md). |
-| Tidigare borttagning av slutpunkt | Den gamla API-slutpunkten (`data/privacy/gdpr`) har tagits bort. |
+| Stöd för PDPA | Begäran om skydd av personuppgifter kan nu skapas och spåras i Thailand enligt lagen om skydd av personuppgifter (PDPA). När du gör sekretessförfrågningar i API:et accepterar `regulation`-matrisen värdet ”pdpa_tha”. |
+| Namnområdestyper i användargränssnittet | Du kan nu ange olika namnrymdstyper i Request Builder i användargränssnittet för [!DNL Privacy Service]. Mer information finns i [användarhandboken](../../privacy-service/ui/user-guide.md). |
+| Borttagning av gammal slutpunkt | Den gamla API-slutpunkten (`data/privacy/gdpr`) har tagits bort. |
 
 Kända fel
 
 * Ingen
 
-Om du vill ha mer information om [!DNL Privacy Service] börjar du med att läsa översikten [Privacy Service](../../privacy-service/home.md).
+Mer information om [!DNL Privacy Service] får du genom att läsa [Privacy Service-översikten](../../privacy-service/home.md).
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor samtidigt som du kan strukturera, etikettera och förbättra data med hjälp av [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor samtidigt som du kan strukturera, etikettera och förbättra data med hjälp av [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-[!DNL Experience Platform] innehåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+[!DNL Experience Platform] innehåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Nya funktioner**
 

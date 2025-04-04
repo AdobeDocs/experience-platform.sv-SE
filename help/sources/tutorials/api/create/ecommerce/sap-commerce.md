@@ -3,9 +3,9 @@ title: Skapa en källanslutning och ett dataflöde för SAP Commerce med API:t f
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att överföra SAP Commerce-data till Experience Platform med API:t för Flow Service.
 badge: Beta
 exl-id: 580731b9-0c04-4f83-a475-c1890ac5b7cd
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2314'
+source-wordcount: '2325'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ I följande självstudiekurs får du hjälp med att skapa en [!DNL SAP Commerce]
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL SAP Commerce] med API:t [!DNL Flow Service].
 
@@ -40,15 +40,15 @@ För att kunna ansluta [!DNL SAP Commerce] till Experience Platform måste du an
 
 Mer information om dessa autentiseringsuppgifter finns i [[!DNL SAP Commerce] dokumentationen](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
 
-## Anslut [!DNL SAP Commerce] till plattformen med API:t [!DNL Flow Service]
+## Anslut [!DNL SAP Commerce] till Experience Platform med API:t [!DNL Flow Service]
 
 Följande beskriver de steg som du måste utföra för att autentisera din [!DNL SAP Commerce]-källa, skapa en källanslutning och skapa ett dataflöde för att överföra dina konton och kontaktdata till Experience Platform.
 
 ### Skapa en basanslutning {#base-connection}
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL SAP Commerce] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL SAP Commerce]-autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -92,7 +92,7 @@ curl -X POST \
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via API:t [!DNL Flow Service]. |
-| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
+| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till Experience Platform. |
 | `auth.params.region` | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om `url` till exempel är `https://subscriptionbilling.authentication.eu10.hana.ondemand.com` behöver du `eu10`. |
 | `auth.params.clientId` | Värdet `clientId` från tjänstnyckeln. |
 | `auth.params.clientSecret` | Värdet `clientSecret` från tjänstnyckeln. |
@@ -111,7 +111,7 @@ Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutni
 
 ### Utforska din källa {#explore}
 
-När du har ditt basanslutnings-ID kan du nu utforska innehållet och strukturen i dina källdata genom att utföra en GET-förfrågan till `/connections`-slutpunkten och samtidigt ange ditt grundläggande anslutnings-ID som en frågeparameter.
+När du har ditt basanslutnings-ID kan du nu utforska innehållet och strukturen i dina källdata genom att utföra en GET-begäran till `/connections`-slutpunkten och samtidigt ange ditt basanslutnings-ID som en frågeparameter.
 
 **API-format**
 
@@ -119,16 +119,16 @@ När du har ditt basanslutnings-ID kan du nu utforska innehållet och strukturen
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fileType={FILE_TYPE}&preview={PREVIEW}&sourceParams={SOURCE_PARAMS}
 ```
 
-När du gör en GET-förfrågan om att utforska källans filstruktur och innehåll måste du inkludera frågeparametrarna som listas i tabellen nedan:
+När du utför GET-förfrågningar om källans filstruktur och innehåll måste du inkludera de frågeparametrar som anges i tabellen nedan:
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | Det grundläggande anslutnings-ID som genererades i föregående steg. |
 | `objectType=rest` | Den typ av objekt som du vill utforska. För närvarande är det här värdet alltid inställt på `rest`. |
 | `{OBJECT}` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. För den här källan är värdet `json`. |
-| `fileType=json` | Filtypen för filen som du vill hämta till plattformen. För närvarande är `json` den enda filtypen som stöds. |
+| `fileType=json` | Filtypen för filen som du vill hämta till Experience Platform. För närvarande är `json` den enda filtypen som stöds. |
 | `{PREVIEW}` | Ett booleskt värde som definierar om innehållet i anslutningen stöder förhandsvisning. |
-| `{SOURCE_PARAMS}` | Definierar parametrar för källfilen som du vill hämta till plattformen. Om du vill hämta den godkända formattypen för `{SOURCE_PARAMS}` måste du koda hela strängen i base64. <br> [!DNL SAP Commerce] har stöd för flera API:er. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`customers`</li><li>`contacts`</li></ul> |
+| `{SOURCE_PARAMS}` | Definierar parametrar för källfilen som du vill hämta till Experience Platform. Om du vill hämta den godkända formattypen för `{SOURCE_PARAMS}` måste du koda hela strängen i base64. <br> [!DNL SAP Commerce] har stöd för flera API:er. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`customers`</li><li>`contacts`</li></ul> |
 
 [!DNL SAP Commerce]-källan stöder flera API:er. Beroende på vilken objekttyp du utnyttjar den begäran som ska skickas anges nedan:
 
@@ -556,7 +556,7 @@ Ett lyckat svar returnerar en JSON-struktur som följande:
 
 ### Skapa en källanslutning {#source-connection}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till `/sourceConnections`-slutpunkten i [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-begäran till `/sourceConnections`-slutpunkten i [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 **API-format**
 
@@ -684,15 +684,15 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ### Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md#create-a-schema).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/) utförs, med ID:t för målschemat i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 
@@ -761,7 +761,7 @@ Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta 
 
 ### Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en POST-begäran till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -986,13 +986,13 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ### Skapa ett flöde {#flow}
 
-Det sista steget mot att överföra data från [!DNL SAP Commerce] till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra data från [!DNL SAP Commerce] till Experience Platform är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 * [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
 **API-format**
 
@@ -1046,7 +1046,7 @@ curl -X POST \
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
 | `sourceConnectionIds` | [källanslutnings-ID](#source-connection) genererades i ett tidigare steg. |
 | `targetConnectionIds` | [målanslutnings-ID](#target-connection) genererades i ett tidigare steg. |
-| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
+| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till Experience Platform. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
@@ -1075,7 +1075,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ### Uppdatera ditt dataflöde
 
-Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten i [!DNL Flow Service]-API:t, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i guiden om att [uppdatera källkodsdataflöden med API:t](../../update-dataflows.md).
+Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i guiden om att [uppdatera källkodsdataflöden med API:t](../../update-dataflows.md).
 
 ### Uppdatera ditt konto
 

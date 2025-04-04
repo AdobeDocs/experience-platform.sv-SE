@@ -2,9 +2,9 @@
 title: Ange primära identiteter i en ad hoc-datauppsättning
 description: Med Adobe Experience Platform Query Service kan du ange en identitet eller en primär identitet för ad hoc-schemadatasfält direkt via SQL ALTER TABLE-kommandot. Dokumentet förklarar hur du använder kommandot ALTER TABLE för att ange en primär identitet eller sekundär identitet.
 exl-id: b8e6b87e-c6e5-4688-a936-a3a1510a3c5b
-source-git-commit: d9c3ccdf0c0e191af1ab18e894688f301378156d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '447'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Om du anger att datamängdskolumner ska vara primära eller sekundära identitet
 
 ## Lägg till begränsningar {#add-constraints}
 
-Med kommandot `ALTER TABLE` kan du etikettera en datauppsättningskolumn som en persons identitet och sedan använda den etiketten som primär identitet genom att uppdatera associerade metadata med SQL. Detta är särskilt användbart när datauppsättningar skapas via SQL i stället för direkt från ett schema via plattformsgränssnittet. Kommandot kan användas för att säkerställa att dataåtgärderna inom plattformen är kompatibla med dataanvändningsprinciper.
+Med kommandot `ALTER TABLE` kan du etikettera en datauppsättningskolumn som en persons identitet och sedan använda den etiketten som primär identitet genom att uppdatera associerade metadata med SQL. Detta är särskilt användbart när datauppsättningar skapas via SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. Kommandot kan användas för att säkerställa att dataåtgärderna i Experience Platform är kompatibla med dataanvändningsprinciper.
 
 **Exempel**
 

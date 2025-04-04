@@ -1,9 +1,10 @@
 ---
 title: Konfigurera AWS KMS för kundhanterade nycklar
 description: Lär dig hur du konfigurerar Amazon Web Services nyckelhanteringstjänst (KMS) för användning med kundhanterade nycklar i Adobe Experience Platform.
-source-git-commit: 90b8a3253e8298a634c0deaf82ac8be05f478622
+exl-id: 0cf0deab-dc30-412f-b511-dee5504c3953
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1564'
+source-wordcount: '1568'
 ht-degree: 0%
 
 ---
@@ -12,13 +13,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Detta dokument gäller för implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
+>Det här dokumentet gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 >
 >[Kundhanterade nycklar](../overview.md) (CMK) på AWS stöds för sköld för skydd av privatlivet och säkerheten, men är inte tillgängliga för hälso- och sjukvårdsskölden. CMK på Azure stöds både för Privacy och Security Shield samt för Healthcare Shield.
 
 Använd den här guiden för att skydda dina data med Amazon Web Services (AWS) Key Management Service (KMS) genom att skapa, hantera och styra krypteringsnycklar för Adobe Experience Platform. Integrationen förenklar regelefterlevnaden, effektiviserar verksamheten genom automatisering och eliminerar behovet av att underhålla en egen nyckelhanteringsinfrastruktur.
 
-Instruktioner för Customer Journey Analytics finns i [Customer Journey Analytics CMK-dokumentationen](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-privacy/cmk)
+Specifika Customer Journey Analytics-anvisningar finns i [Customer Journey Analytics CMK-dokumentationen](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-privacy/cmk)
 
 >[!IMPORTANT]
 >
@@ -36,7 +37,7 @@ Innan du fortsätter med det här dokumentet bör du ha god förståelse för f�
    - Ange vilka åtgärder som användare tillåts eller nekas att utföra.
    - Implementera detaljerad åtkomstkontroll genom att tilldela behörigheter med IAM-principer.
 Mer information finns i [IAM-reglerna för den officiella dokumentationen för AWS KMS](https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html).
-- **Datasäkerhet i Experience Platform**: Upptäck hur Platform säkerställer datasäkerhet och integrerar med externa tjänster som AWS KMS för kryptering. Plattformen skyddar data med HTTPS TLS v1.2 för överföring, molnkryptering i vila, isolerad lagring samt anpassningsbara autentiserings- och krypteringsalternativ. Mer information om hur dina data skyddas finns i [styrnings-, sekretess- och säkerhetsöversikten](../overview.md) eller i dokumentet om [datakryptering i plattformen](../../encryption.md).
+- **Datasäkerhet i Experience Platform**: Upptäck hur Experience Platform säkerställer datasäkerhet och integrerar med externa tjänster som AWS KMS för kryptering. Experience Platform skyddar data med HTTPS TLS v1.2 för överföring, molnkryptering i vila, isolerad lagring samt anpassningsbara autentiserings- och krypteringsalternativ. Mer information om hur dina data skyddas finns i [styrnings-, sekretess- och säkerhetsöversikten](../overview.md) eller i dokumentet om [datakryptering i Experience Platform](../../encryption.md).
 - **AWS Management Console**: Ett centralt nav där du kan komma åt och hantera alla dina AWS-tjänster från ett webbaserat program. Använd sökfältet för att snabbt hitta verktyg, kontrollera meddelanden, hantera ditt konto och din fakturering samt anpassa inställningarna. Mer information finns i den [officiella dokumentationen för AWS-hanteringskonsolen](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/what-is.html).
 
 ## Kom igång {#get-started}
@@ -73,7 +74,7 @@ Om du vill börja konfigurera och hantera krypteringsnyckeln loggar du in på di
 
 >[!IMPORTANT]
 >
->Säkerställ säker lagring, åtkomst och tillgänglighet för krypteringsnycklarna. Du ansvarar för att hantera dina nycklar och förhindra avbrott i plattformsåtgärder.
+>Säkerställ säker lagring, åtkomst och tillgänglighet för krypteringsnycklarna. Du ansvarar för att hantera dina nycklar och förhindra störningar i Experience Platform verksamhet.
 
 Välj **[!DNL Create a key]** på arbetsytan [!DNL Key Management Service (KMS)].
 
@@ -95,7 +96,7 @@ Välj sedan inställningen [!DNL Regionality] som anger nyckelns regionomfång. 
 
 >[!IMPORTANT]
 >
->AWS tillämpar regionsbegränsningar för KMS-nycklar. Den här regionbegränsningen innebär att nyckeln måste finnas i samma region som ditt Adobe-konto. Adobe har bara åtkomst till KMS-nycklar som finns i kontots region. Kontrollera att det område du väljer matchar regionen för ditt single-tenant-konto i Adobe.
+>AWS tillämpar regionsbegränsningar för KMS-nycklar. Den här regionsbegränsningen innebär att nyckeln måste finnas i samma region som ditt Adobe-konto. Adobe har bara åtkomst till KMS-nycklar som finns i kontoregionen. Kontrollera att den region du väljer matchar regionen för ditt Adobe single-tenant-konto.
 
 ![Stega ett av de avancerade alternativen i Konfigurera nyckelarbetsflöde med AWS-regionen, KMS och Enstaka region markerade.](../../../images/governance-privacy-security/key-management-service/configure-key-advanced-options.png)
 
@@ -103,7 +104,7 @@ Välj sedan inställningen [!DNL Regionality] som anger nyckelns regionomfång. 
 
 Den andra [!DNL Add labels]-fasen av arbetsflödet visas. Här konfigurerar du fälten [!DNL Alias] och [!DNL Tags] så att du kan hantera och hitta din krypteringsnyckel från AWS KMS-konsolen.
 
-Ange en beskrivande etikett för nyckeln i indatafältet **[!DNL Alias]**. Aliaset fungerar som en användarvänlig identifierare som snabbt hittar nyckeln med sökfältet i AWS KMS-konsolen. För att undvika missförstånd väljer du ett beskrivande namn som återspeglar syftet med nyckeln, till exempel&quot;Adobe-Platform-Key&quot; eller&quot;Customer-Encryption-Key&quot;. Du kan även inkludera en beskrivning av nyckeln om nyckelaliaset inte räcker till för att beskriva dess syfte.
+Ange en beskrivande etikett för nyckeln i indatafältet **[!DNL Alias]**. Aliaset fungerar som en användarvänlig identifierare som snabbt hittar nyckeln med sökfältet i AWS KMS-konsolen. För att undvika missförstånd väljer du ett beskrivande namn som återspeglar nyckelns syfte, till exempel&quot;Adobe-Experience-Platform-Key&quot; eller&quot;Customer-Encryption-Key&quot;. Du kan även inkludera en beskrivning av nyckeln om nyckelaliaset inte räcker till för att beskriva dess syfte.
 
 Tilldela slutligen metadata till nyckeln genom att lägga till nyckelvärdepar i avsnittet [!DNL Tags]. Det här steget är valfritt, men du bör lägga till taggar för att kategorisera och filtrera AWS-resurser för enklare hantering. Om din organisation till exempel använder flera Adobe-relaterade resurser kan du tagga dem med&quot;Adobe&quot; eller&quot;Experience-Platform&quot;. Det här extra steget gör det enkelt att söka efter och hantera alla associerade resurser i AWS Management Console. Välj **[!DNL Add tag]** för att påbörja processen.
 
@@ -131,7 +132,7 @@ Välj **[!DNL Next]** om du vill fortsätta med arbetsflödet.
 
 I steg fyra av arbetsflödet kan du [!DNL Define key usage permissions]. I listan **[!DNL Key users]** markerar du kryssrutorna för alla IAM-användare och roller som du vill ha behörighet att använda den här nyckeln.
 
-Från den här vyn kan du även [!DNL Add another AWS account], men du bör inte lägga till andra AWS-konton. Om du lägger till ett annat konto kan det medföra risker och komplicera behörighetshanteringen för krypterings- och dekrypteringsåtgärder. Genom att behålla nyckeln som är kopplad till ett enda AWS-konto kan Adobe säkerställa säker integrering med AWS KMS, minimera riskerna och säkerställa tillförlitlig drift.
+Från den här vyn kan du även [!DNL Add another AWS account], men du bör inte lägga till andra AWS-konton. Om du lägger till ett annat konto kan det medföra risker och komplicera behörighetshanteringen för krypterings- och dekrypteringsåtgärder. Genom att behålla nyckeln som är kopplad till ett enda AWS-konto säkerställer Adobe säker integrering med AWS KMS, minimerar riskerna och säkerställer tillförlitlig drift.
 
 Välj **[!DNL Next]** om du vill fortsätta med arbetsflödet.
 

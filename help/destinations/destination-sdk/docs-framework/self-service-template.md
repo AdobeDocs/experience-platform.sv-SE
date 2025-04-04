@@ -2,7 +2,7 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 10521602a5871419c0c49d54c8ed250af39a78a4
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1609'
 ht-degree: 0%
@@ -66,8 +66,8 @@ För att du bättre ska förstå hur och när du ska använda *YourDestination* 
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Läs följande dokument på [ECID](/help/identity-service/features/ecid.md) om du vill ha mer information. |
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
 {style="table-layout:auto"}
@@ -80,7 +80,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | X | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -111,7 +111,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 ### Autentisera till mål {#authenticate}
 
-*Lägg till de fält som kunderna måste fylla i när de autentiserar till ditt mål. De här fälten är målspecifika och beror på hur Destinationen SDK konfigureras. Målets fält kanske inte är samma som de som anges nedan. Ta även med en skärmbild som liknar den exempelbild som visas nedan.*
+*Lägg till de fält som kunderna måste fylla i när de autentiserar till ditt mål. Dessa fält är målspecifika och beror på din konfiguration i Destination SDK. Målets fält kanske inte är samma som de som anges nedan. Ta även med en skärmbild som liknar den exempelbild som visas nedan.*
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
@@ -121,7 +121,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 ### Fyll i målinformation {#destination-details}
 
-*Lägg till de fält som kunderna måste fylla i när de konfigurerar ett nytt mål. De här fälten är målspecifika och beror på hur Destinationen SDK konfigureras. Målets fält kanske inte är samma som de som anges nedan. Ta även med en skärmbild som liknar den exempelbild som visas nedan.*
+*Lägg till de fält som kunderna måste fylla i när de konfigurerar ett nytt mål. Dessa fält är målspecifika och beror på din konfiguration i Destination SDK. Målets fält kanske inte är samma som de som anges nedan. Ta även med en skärmbild som liknar den exempelbild som visas nedan.*
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 

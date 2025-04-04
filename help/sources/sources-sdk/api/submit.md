@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 title: Skicka in din Source
-description: I följande dokument beskrivs hur du testar och verifierar en ny källa med hjälp av API:t för Flow Service och integrerar en ny källa med självbetjäningskällor (Batch SDK).
+description: I följande dokument beskrivs hur du testar och verifierar en ny källa med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor (Batch SDK).
 exl-id: 9e945ba1-51b6-40a9-b92f-e0a52b3f92fa
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '829'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ Följande dokument innehåller steg om hur du testar och felsöker källan med [
 
 ## Komma igång
 
-* Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
-* Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md).
-* Information om hur du konfigurerar [!DNL Postman] för plattforms-API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../landing/postman.md).
+* Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
+* Mer information om hur du genererar autentiseringsuppgifter för Experience Platform API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md).
+* Information om hur du konfigurerar [!DNL Postman] för Experience Platform API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../landing/postman.md).
 * Om du vill ha hjälp med testnings- och felsökningsprocessen kan du hämta verifieringssamlingen och miljön för [självbetjänade källor här](../assets/sdk-verification.zip) och följa stegen som beskrivs nedan.
 
 ## Testa källan
@@ -59,10 +59,10 @@ När du har angett parametrarna för autentisering och källspecifikation kan du
 
 | Parameter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `x-api-key` | En unik identifierare som används för att autentisera anrop till API:er för Experience Platform. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md) finns mer information om hur du hämtar din `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `x-api-key` | En unik identifierare som används för att autentisera anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md) finns mer information om hur du hämtar din `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
 | `x-gw-ims-org-id` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen [Konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md) för instruktioner om hur du hämtar din `x-gw-ims-org-id`-information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `authorizationToken` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md) finns mer information om hur du hämtar din `authorizationToken`. | `Bearer authorizationToken` |
-| `schemaId` | För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../xdm/api/schemas.md). | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
+| `schemaId` | För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../xdm/api/schemas.md). | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `schemaVersion` | Den unika version som motsvarar ditt schema. | `application/vnd.adobe.xed-full-notext+json; version=1` |
 | `schemaAltId` | `meta:altId` som returneras tillsammans med `schemaId` när ett nytt schema skapas. | `_{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `dataSetId` | Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../catalog/api/create-dataset.md). | `5f3c3cedb2805c194ff0b69a` |
@@ -82,10 +82,10 @@ Gränssnittet [!DNL Runner] visas så att du kan konfigurera körningsordningen 
 
 >[!NOTE]
 >
->Du kan inaktivera **Ta bort flöde** från checklistan för körningsordning om du föredrar att använda kontrollpanelen för källövervakning i plattformsgränssnittet. När du är klar med testningen måste du dock se till att testflödena tas bort.
+>Du kan inaktivera **Ta bort flöde** från checklistan för körningsordning om du föredrar att använda kontrollpanelen för källövervakning i Experience Platform-gränssnittet. När du är klar med testningen måste du dock se till att testflödena tas bort.
 
 ![run-collection](../assets/run-collection.png)
 
 ## Skicka din källa
 
-När källan är klar med hela arbetsflödet kan du kontakta Adobe och skicka in källan för integrering.
+När källan är klar med hela arbetsflödet kan du fortsätta att kontakta Adobe-representanten och skicka in källan för integrering.

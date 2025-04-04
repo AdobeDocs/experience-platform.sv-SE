@@ -3,9 +3,9 @@ title: Azure Event Hubs Source Connector - översikt
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -16,39 +16,39 @@ ht-degree: 0%
 >
 >* Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 >
->* Du kan nu använda källan [!DNL Azure Event Hubs] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
+>* Du kan nu använda källan [!DNL Azure Event Hubs] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
 
-Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Ni kan överföra data från dessa system till plattformen.
+Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Ni kan överföra data från dessa system till Experience Platform.
 
-Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med plattformen kan du hämta data från [!DNL Event Hubs] i realtid.
+Lagringskällor i molnet kan överföra dina egna data till Experience Platform utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med Experience Platform kan du hämta in data från [!DNL Event Hubs] i realtid.
 
 ## Skalar med [!DNL Event Hubs]
 
-Skalningsfaktorn för [!DNL Event Hubs]-instansen måste ökas om du behöver få in stora datavolymer, öka parallelismen eller öka hastigheten för intag-plattformen.
+Skalningsfaktorn för [!DNL Event Hubs]-instansen måste ökas om du behöver få in stora datavolymer, öka parallellismen eller öka hastigheten för intaget på Experience Platform.
 
 ### Högre volymdata
 
-För närvarande är den maximala datavolymen som du kan hämta från ditt [!DNL Event Hubs]-konto till plattformen 2 000 poster per sekund. Om du vill skala upp och importera data i större volymer kontaktar du Adobe.
+För närvarande är den maximala datavolymen som du kan hämta från ditt [!DNL Event Hubs]-konto till Experience Platform 2 000 poster per sekund. Om du vill skala upp och importera data i större volymer kontaktar du Adobe.
 
-### Öka parallellismen på [!DNL Event Hubs] och plattformen
+### Öka parallellismen på [!DNL Event Hubs] och Experience Platform
 
 Parallellitet avser samtidig körning av samma uppgifter på flera bearbetningsenheter för att öka hastighet och prestanda. Du kan öka parallelliteten på [!DNL Event Hubs]-sidan genom att öka partitionen eller genom att köpa fler bearbetningsenheter för ditt [!DNL Event Hubs]-konto. Mer information finns i det här [[!DNL Event Hubs] dokumentet om skalning](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability).
 
-Om du vill öka hastigheten för inmatning på plattformssidan måste Platform öka antalet aktiviteter i källkopplingen som ska läsas från dina [!DNL Event Hubs]-partitioner. När du har ökat parallellismen på [!DNL Event Hubs]-sidan kontaktar du Adobe-representanten för att skala plattformsuppgifter baserat på den nya partitionen. Den här processen är för närvarande inte automatiserad.
+Om du vill öka hastigheten för intag på Experience Platform-sidan måste Experience Platform öka antalet aktiviteter i källkopplingen som ska läsas från dina [!DNL Event Hubs]-partitioner. När du har ökat parallelliteten på [!DNL Event Hubs]-sidan kontaktar du Adobe-representanten för att skala Experience Platform-aktiviteter baserat på den nya partitionen. Den här processen är för närvarande inte automatiserad.
 
-## Använd ett virtuellt nätverk för att ansluta till [!DNL Event Hubs] till plattformen
+## Använd ett virtuellt nätverk för att ansluta till [!DNL Event Hubs] till Experience Platform
 
-Du kan konfigurera ett virtuellt nätverk för att ansluta [!DNL Event Hubs] till plattformen samtidigt som brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till det här [[!DNL Event Hubs] uppsättningsdokumentet för nätverksregler](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) och följer stegen nedan:
+Du kan konfigurera ett virtuellt nätverk för att ansluta [!DNL Event Hubs] till Experience Platform medan brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till det här [[!DNL Event Hubs] uppsättningsdokumentet för nätverksregler](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) och följer stegen nedan:
 
 * Välj **Prova** på REST API-panelen;
 * Autentisera ditt [!DNL Azure]-konto med dina autentiseringsuppgifter i samma webbläsare;
-* Markera namnområdet [!DNL Event Hubs], resursgruppen och prenumerationen som du vill hämta till plattformen och välj sedan **KÖR**;
-* I JSON-brödtexten som visas lägger du till följande Platform-undernät under `virtualNetworkRules` i `properties`:
+* Markera namnområdet [!DNL Event Hubs], resursgruppen och prenumerationen som du vill hämta till Experience Platform och välj sedan **KÖR**;
+* I JSON-brödtexten som visas lägger du till följande Experience Platform-undernät under `virtualNetworkRules` i `properties`:
 
 
 >[!IMPORTANT]
 >
->Du måste skapa en säkerhetskopia av det JSON-innehåll som du får innan du uppdaterar `virtualNetworkRules` med Platform-undernätet eftersom det innehåller dina befintliga IP-filtreringsregler. Annars tas reglerna bort efter anropet.
+>Du måste skapa en säkerhetskopia av det JSON-innehåll som du får innan du uppdaterar `virtualNetworkRules` med Experience Platform-undernätet eftersom det innehåller dina befintliga IP-filtreringsregler. Annars tas reglerna bort efter anropet.
 
 
 ```json
@@ -60,7 +60,7 @@ Du kan konfigurera ett virtuellt nätverk för att ansluta [!DNL Event Hubs] til
 }
 ```
 
-Se listan nedan för olika regioner av plattformsundernät:
+Se listan nedan för olika områden i Experience Platform undernät:
 
 ### VA7: Nordamerika
 
@@ -121,9 +121,9 @@ Se listan nedan för olika regioner av plattformsundernät:
 
 Mer information om uppsättningar nätverksregler finns i följande [[!DNL Event Hubs] dokument](https://learn.microsoft.com/en-us/azure/event-hubs/network-security).
 
-## Anslut [!DNL Event Hubs] till plattformen
+## Anslut [!DNL Event Hubs] till Experience Platform
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Event Hubs] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Event Hubs] till Experience Platform med API:er eller användargränssnittet:
 
 ### Använda API:er
 

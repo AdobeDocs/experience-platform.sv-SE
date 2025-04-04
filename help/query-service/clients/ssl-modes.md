@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;ansluta;ansluta till frågetjänst;SSL;ssl;sslmode;
+keywords: Experience Platform;home;populära topics;Query service;query service;connect;connect to query service;SSL;ssl;sslmode;
 title: SSL-alternativ för frågetjänst
 description: Lär dig mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter i SSL-läge för verifiering.
 exl-id: 41b0a71f-165e-49a2-8a7d-d809f5f683ae
-source-git-commit: 37c30fc1a040efbce0c221c10b36e105d5b1a962
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1008'
+source-wordcount: '1011'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,11 @@ För ökad säkerhet tillhandahåller Adobe Experience Platform [!DNL Query Serv
 
 ## Förhandskrav
 
-Det här dokumentet förutsätter att du redan har laddat ned ett klientprogram från tredje part för användning med plattformsdata. Specifika anvisningar om hur SSL-säkerhet ska infogas vid anslutning till en tredjepartsklient finns i respektive anslutningsguide. En lista över alla [!DNL Query Service]-klienter som stöds finns i [Översikt över klientanslutningar](./overview.md).
+Det här dokumentet förutsätter att du redan har laddat ned ett klientprogram från tredje part för användning med dina Experience Platform-data. Specifika anvisningar om hur SSL-säkerhet ska infogas vid anslutning till en tredjepartsklient finns i respektive anslutningsguide. En lista över alla [!DNL Query Service]-klienter som stöds finns i [Översikt över klientanslutningar](./overview.md).
 
 ## Tillgängliga SSL-alternativ {#available-ssl-options}
 
-Plattformen har stöd för olika SSL-alternativ som passar dina datasäkerhetsbehov och som balanserar bearbetningskostnaderna för kryptering och nyckelutbyte.
+Experience Platform har stöd för olika SSL-alternativ som passar dina datasäkerhetsbehov och som balanserar bearbetningskostnaderna för kryptering och nyckelutbyte.
 
 De olika `sslmode`-parametervärdena ger olika skyddsnivåer. Genom att kryptera dina data i rörelse med SSL-certifikat hjälper det till att förhindra MITM-attacker (man-in-the-middle), tjuvlyssning och personifiering. Tabellen nedan innehåller en beskrivning av de olika SSL-lägena som är tillgängliga och den skyddsnivå de erbjuder.
 
@@ -40,13 +40,13 @@ De olika `sslmode`-parametervärdena ger olika skyddsnivåer. Genom att kryptera
 >
 >Skillnaden mellan `verify-ca` och `verify-full` beror på principen för rotcertifikatutfärdaren (CA). Om du har skapat en egen lokal certifikatutfärdare för att utfärda privata certifikat för dina program ger `verify-ca` ofta tillräckligt skydd. Om du använder en offentlig certifikatutfärdare tillåter `verify-ca` anslutningar till en server som någon annan kan ha registrerat hos certifikatutfärdaren. `verify-full` ska alltid användas med en offentlig rotcertifikatutfärdare.
 
-När du upprättar en tredjepartsanslutning till en plattformsdatabas bör du använda `sslmode=require` som ett minimum för att säkerställa en säker anslutning för dina data i rörelse. SSL-läget `verify-full` rekommenderas för de flesta säkerhetskänsliga miljöer.
+När du upprättar en tredjepartsanslutning till en Experience Platform-databas bör du använda `sslmode=require` som minimum för att säkerställa en säker anslutning för dina data i rörelse. SSL-läget `verify-full` rekommenderas för de flesta säkerhetskänsliga miljöer.
 
 ## Konfigurera ett rotcertifikat för serververifiering {#root-certificate}
 
 >[!IMPORTANT]
 >
->TLS/SSL-certifikaten i produktionsmiljöer för API:t för frågetjänsten Interactive Postgres uppdaterades onsdagen den 24 januari 2024.<br>Även om detta är ett årligt krav har rotcertifikatet i kedjan även ändrats eftersom Adobe TLS/SSL-certifikatprovidern har uppdaterat sin certifikathierarki. Detta kan påverka vissa Postgres-klienter om deras lista över certifikatutfärdare saknar rotcertifikatet. En PSQL CLI-klient kan till exempel behöva lägga till rotcertifikaten i en explicit fil `~/postgresql/root.crt`, annars kan det leda till ett fel. Exempel: `psql: error: SSL error: certificate verify failed`. Mer information om det här problemet finns i den [officiella PostgreSQL-dokumentationen](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES).<br>Rotcertifikatet som ska läggas till kan hämtas från [https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
+>TLS/SSL-certifikaten i produktionsmiljöer för API:t för frågetjänsten Interactive Postgres uppdaterades onsdagen den 24 januari 2024.<br>Även om detta är ett årligt krav har rotcertifikatet i kedjan också ändrats eftersom Adobe TLS/SSL-certifikatleverantör har uppdaterat sin certifikathierarki. Detta kan påverka vissa Postgres-klienter om deras lista över certifikatutfärdare saknar rotcertifikatet. En PSQL CLI-klient kan till exempel behöva lägga till rotcertifikaten i en explicit fil `~/postgresql/root.crt`, annars kan det leda till ett fel. Exempel: `psql: error: SSL error: certificate verify failed`. Mer information om det här problemet finns i den [officiella PostgreSQL-dokumentationen](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES).<br>Rotcertifikatet som ska läggas till kan hämtas från [https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
 
 För att säkerställa en säker anslutning måste SSL-användningen konfigureras på både klienten och servern innan anslutningen görs. Om SSL bara är konfigurerat på servern kan klienten skicka känslig information, till exempel lösenord, innan det etableras att servern kräver hög säkerhet.
 

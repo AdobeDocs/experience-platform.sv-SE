@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ordlista för dataanvändningsetiketter
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 6f3f08203242843ce703de5e4546a537dff82270
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2254'
+source-wordcount: '2257'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Den här etiketten används för att styra användningen av data om potentiella 
 
 | Etikett | Definition |
 | --- | --- |
-| **Tredje part** | Tredjepartsdata är data som tillhandahålls av en tredjepartsleverantör. En tredjepartsleverantör av data är en enhet som har ingått ett avtal med din organisation som tillåter dig att få tillgång till, använda, visa och överföra den tredje partens data i samarbete med plattformen. |
+| **Tredje part** | Tredjepartsdata är data som tillhandahålls av en tredjepartsleverantör. En tredjepartsleverantör av data är en enhet som har ingått ett avtal med din organisation som tillåter dig att få tillgång till, använda, visa och överföra den tredje partens data i samverkan med Experience Platform. |
 | **Tredjepartsberikning** | Uppgifter som samlats in av en tredjepartsorganisation och som inte är direkt relaterade till den registrerade. Etiketten ska användas på tredjepartsdata som används för att berika förstahandsprofiler. |
 | **Prospektering från tredje part** | Uppgifter som samlats in av en tredjepartsorganisation och som inte är direkt relaterade till den registrerade. Etiketten bör tillämpas på data från tredje part som används som ett led i trattprospekteringen till nya nettokunder. |
 
@@ -150,8 +150,8 @@ Vissa datastyrningsprinciper begränsar användningen av sammanfogade identitets
 
 #### C11 {#c11}
 
-Med Adobe Experience Platform Segment Match kan ni matcha plattformsgenererade målgrupper med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match]-processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
+Med Adobe Experience Platform Segment Match kan ni matcha Experience Platform-genererade målgrupper med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match]-processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
 
 #### C12 {#c12}
 
-Data med den här etiketten kan inte exporteras från Platform på något sätt. C12-märkta fält undantas från CSV-nedladdning, API-förbrukning och aktiveringsarbetsflöden.
+Data med den här etiketten kan inte exporteras från Experience Platform på något sätt. C12-märkta fält undantas från CSV-nedladdning, API-förbrukning och aktiveringsarbetsflöden.

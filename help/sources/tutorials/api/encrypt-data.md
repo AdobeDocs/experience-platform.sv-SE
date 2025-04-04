@@ -2,9 +2,9 @@
 title: Krypterad datainmatning
 description: Lär dig hur du importerar krypterade filer via molnlagringsbatchkällor med API:t.
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: 9a5599473f874d86e2b3c8449d1f4d0cf54b672c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1806'
+source-wordcount: '1816'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Du kan importera krypterade datafiler till Adobe Experience Platform med hjälp 
 
 Processen för krypterad datainmatning är följande:
 
-1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln, tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv. **Obs!** Den offentliga nyckeln i svaret är Base64-kodad och måste avkodas innan den används.
+1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln, tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen lagras den privata nyckeln av Experience Platform i ett säkert valv. **Obs!** Den offentliga nyckeln i svaret är Base64-kodad och måste avkodas innan den används.
 2. Använd den offentliga nyckeln för att kryptera den datafil som du vill importera.
 3. Placera den krypterade filen i molnlagringen.
 4. När den krypterade filen är klar skapar [en källanslutning och ett dataflöde för molnlagringskällan](#create-a-dataflow-for-encrypted-data). När du skapar flödet måste du ange en `encryption`-parameter och inkludera ditt offentliga nyckel-ID.
@@ -31,13 +31,13 @@ Det här dokumentet innehåller anvisningar om hur du genererar ett krypteringsn
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
    * [Molnlagringskällor](../api/collect/cloud-storage.md): Skapa ett dataflöde för att hämta batchdata från molnlagringskällan till Experience Platform.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ### Filtillägg som stöds för krypterade filer {#supported-file-extensions-for-encrypted-files}
 
@@ -68,7 +68,7 @@ Listan över filtillägg som stöds för krypterade filer är:
 >
 >Krypteringsnycklar är specifika för en viss sandlåda. Därför måste du skapa nya krypteringsnycklar om du vill importera krypterade data i en annan sandlåda inom organisationen.
 
-Det första steget när du ska hämta krypterade data till Experience Platform är att skapa ditt krypteringsnyckelpar genom att göra en POST-förfrågan till `/encryption/keys`-slutpunkten för [!DNL Connectors] API.
+Det första steget när du ska hämta krypterade data till Experience Platform är att skapa ditt krypteringsnyckelpar genom att göra en POST-begäran till `/encryption/keys`-slutpunkten för [!DNL Connectors] API.
 
 **API-format**
 
@@ -123,15 +123,15 @@ Ett lyckat svar returnerar din Base64-kodade offentliga nyckel, ditt offentliga 
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `publicKey` | Den offentliga nyckeln används för att kryptera data i ditt molnlagringsutrymme. Den här nyckeln motsvarar den privata nyckel som skapades under det här steget. Men den privata nyckeln går omedelbart till Experience Platform. |
-| `publicKeyId` | Det offentliga nyckel-ID:t används för att skapa ett dataflöde och importera dina krypterade molnlagringsdata till Experience Platform. |
+| `publicKey` | Den offentliga nyckeln används för att kryptera data i ditt molnlagringsutrymme. Den här nyckeln motsvarar den privata nyckel som skapades under det här steget. Den privata nyckeln skickas dock omedelbart till Experience Platform. |
+| `publicKeyId` | ID:t för den offentliga nyckeln används för att skapa ett dataflöde och importera dina krypterade molnlagringsdata till Experience Platform. |
 | `expiryTime` | Utgångsdatumet anger förfallodatumet för ditt krypteringsnyckelpar. Det här datumet anges automatiskt till 180 dagar efter datumet för nyckelgenereringen och visas i ett enhetligt tidsstämpelformat. |
 
 +++
 
 ### Hämta krypteringsnycklar {#retrieve-encryption-keys}
 
-Om du vill hämta alla krypteringsnycklar i organisationen gör du en GET-förfrågan till `/encryption/keys` endpoit=not.
+Om du vill hämta alla krypteringsnycklar i organisationen gör du en GET-begäran till `/encryption/keys` endpoit=not.
 
 **API-format**
 
@@ -176,7 +176,7 @@ Ett lyckat svar returnerar din krypteringsalgoritm, namn, offentlig nyckel, ID f
 
 ### Hämta krypteringsnycklar med ID {#retrieve-encryption-keys-by-id}
 
-Om du vill hämta en viss uppsättning krypteringsnycklar skickar du en GET-förfrågan till `/encryption/keys`-slutpunkten och anger ditt offentliga nyckel-ID som rubrikparameter.
+Om du vill hämta en viss uppsättning krypteringsnycklar skickar du en GET-begäran till `/encryption/keys`-slutpunkten och anger ditt offentliga nyckel-ID som rubrikparameter.
 
 **API-format**
 
@@ -221,11 +221,11 @@ Ett lyckat svar returnerar din krypteringsalgoritm, namn, offentlig nyckel, ID f
 
 Du kan också skapa ett nyckelpar för signaturverifiering för att signera och importera dina krypterade data.
 
-Under den här fasen måste du generera en egen kombination av privat nyckel och offentlig nyckel och sedan använda din privata nyckel för att signera dina krypterade data. Därefter måste du koda din offentliga nyckel i Base64 och sedan dela den till Experience Platform för att Platform ska kunna verifiera din signatur.
+Under den här fasen måste du generera en egen kombination av privat nyckel och offentlig nyckel och sedan använda din privata nyckel för att signera dina krypterade data. Därefter måste du koda din offentliga nyckel i Base64 och sedan dela den till Experience Platform för att Experience Platform ska kunna verifiera din signatur.
 
-### Dela din offentliga nyckel med Experience Platform
+### Dela din offentliga nyckel till Experience Platform
 
-Om du vill dela din offentliga nyckel skickar du en POST till slutpunkten `/customer-keys` samtidigt som du anger din krypteringsalgoritm och den Base64-kodade offentliga nyckeln.
+Om du vill dela din offentliga nyckel skickar du en POST-begäran till `/customer-keys`-slutpunkten samtidigt som du anger din krypteringsalgoritm och den Base64-kodade offentliga nyckeln.
 
 **API-format**
 
@@ -280,7 +280,7 @@ curl -X POST \
 
 ### Hämta kundhanterade nyckelpar
 
-Om du vill hämta kundhanterade nycklar skickar du en GET-förfrågan till slutpunkten `/customer-keys`.
+Om du vill hämta kundhanterade nycklar skickar du en GET-begäran till slutpunkten `/customer-keys`.
 
 **API-format**
 
@@ -322,9 +322,9 @@ curl -X GET \
 
 ## Anslut molnlagringskällan till Experience Platform med API:t [!DNL Flow Service]
 
-När du har hämtat ditt krypteringsnyckelpar kan du nu fortsätta och skapa en källanslutning för din molnlagringskälla och överföra dina krypterade data till plattformen.
+När du har hämtat ditt krypteringsnyckelpar kan du nu fortsätta och skapa en källanslutning för din molnlagringskälla och överföra dina krypterade data till Experience Platform.
 
-Först måste du skapa en basanslutning för att autentisera källan mot plattformen. Om du vill skapa en basanslutning och autentisera källan väljer du den källa du vill använda i listan nedan:
+Först måste du skapa en basanslutning för att autentisera källan mot Experience Platform. Om du vill skapa en basanslutning och autentisera källan väljer du den källa du vill använda i listan nedan:
 
 * [Amazon S3](../api/create/cloud-storage/s3.md)
 * [[!DNL Apache HDFS]](../api/create/cloud-storage/hdfs.md)
@@ -350,7 +350,7 @@ När du har skapat en basanslutning måste du sedan följa de steg som beskrivs 
 >* [Målanslutnings-ID](../api/collect/cloud-storage.md#target)
 >* [Mappnings-ID](../api/collect/cloud-storage.md#mapping)
 
-Om du vill skapa ett dataflöde skickar du en POST till `/flows`-slutpunkten för [!DNL Flow Service]-API:t. Om du vill importera krypterade data måste du lägga till ett `encryption`-avsnitt i egenskapen `transformations` och inkludera `publicKeyId` som skapades i ett tidigare steg.
+Om du vill skapa ett dataflöde skickar du en POST-begäran till `/flows`-slutpunkten för [!DNL Flow Service]-API:t. Om du vill importera krypterade data måste du lägga till ett `encryption`-avsnitt i egenskapen `transformations` och inkludera `publicKeyId` som skapades i ett tidigare steg.
 
 **API-format**
 
@@ -413,8 +413,8 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `flowSpec.id` | Flödesspecifikation-ID som motsvarar molnlagringskällor. |
-| `sourceConnectionIds` | Källanslutnings-ID. Detta ID representerar överföringen av data från källan till plattformen. |
-| `targetConnectionIds` | Målanslutnings-ID. Detta ID representerar var data kommer att sparas när de väl kommer till plattformen. |
+| `sourceConnectionIds` | Källanslutnings-ID. Detta ID representerar överföringen av data från källan till Experience Platform. |
+| `targetConnectionIds` | Målanslutnings-ID. Detta ID representerar var data kommer in när de väl har överförts till Experience Platform. |
 | `transformations[x].params.mappingId` | Mappnings-ID. |
 | `transformations.name` | När du importerar krypterade filer måste du ange `Encryption` som en extra omvandlingsparameter för dataflödet. |
 | `transformations[x].params.publicKeyId` | Det offentliga nyckel-ID som du skapade. Detta ID är hälften av krypteringsnyckelparet som används för att kryptera molnlagringsdata. |
@@ -541,7 +541,7 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtex
 
 ### Validera krypteringsnycklar {#validate-encryption-keys}
 
-Om du vill validera dina krypteringsnycklar skickar du en GET-förfrågan till `/encryption/keys/validate/`-slutpunkten och anger det offentliga nyckel-ID som du vill validera som rubrikparameter.
+Om du vill validera dina krypteringsnycklar skickar du en GET-begäran till slutpunkten `/encryption/keys/validate/` och anger det offentliga nyckel-ID som du vill validera som rubrikparameter.
 
 ```http
 GET /data/foundation/connectors/encryption/keys/validate/{PUBLIC_KEY_ID}
@@ -598,7 +598,7 @@ Krypterad datainmatning stöder inte inmatning av återkommande mappar eller map
 
 Följande är ett exempel på en mappstruktur som stöds, där källsökvägen är `/ACME-customers/*.csv.gpg`.
 
-I det här scenariot kapslas filerna i fet stil in i Experience Platform.
+I det här scenariot importeras fetstilta filer till Experience Platform.
 
 * ACME-kunder
    * **File1.csv.gpg**

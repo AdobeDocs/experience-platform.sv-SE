@@ -2,9 +2,9 @@
 title: Attributbaserad åtkomstkontroll har stöd för ad hoc-scheman
 description: En guide som begränsar åtkomsten till datafält i ad hoc-scheman som genererats via Adobe Experience Platform Query Service.
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1001'
+source-wordcount: '1008'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 Alla data som hämtas in till Adobe Experience Platform kapslas in av XDM-scheman (Experience Data Model) och kan vara föremål för användarbegränsningar som definieras av din organisation eller av juridiska bestämmelser.
 
-Genom att köra en CTAS-fråga via frågetjänsten när inget schema anges, genereras ett ad hoc-schema automatiskt. Det är ofta nödvändigt att begränsa användningen av vissa fält, eller datauppsättningar, i ad hoc-scheman för att kontrollera tillgången till både känsliga personuppgifter och personligt identifierbar information. Adobe Experience Platform underlättar den här åtkomstkontrollen genom att göra det möjligt att etikettera schemafält via plattformsgränssnittet med hjälp av den attributbaserade åtkomstkontrollen.
+Genom att köra en CTAS-fråga via frågetjänsten när inget schema anges, genereras ett ad hoc-schema automatiskt. Det är ofta nödvändigt att begränsa användningen av vissa fält, eller datauppsättningar, i ad hoc-scheman för att kontrollera tillgången till både känsliga personuppgifter och personligt identifierbar information. Adobe Experience Platform underlättar den här åtkomstkontrollen genom att göra det möjligt att etikettera schemafält via Experience Platform-gränssnittet med hjälp av den attributbaserade åtkomstkontrollen.
 
-Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Även om det är bäst att märka data så snart de har importerats till plattformen, eller så snart dessa data blir tillgängliga för användning i plattformen.
+Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Även om det är bäst att märka data så snart de har importerats till Experience Platform, eller så snart dessa data blir tillgängliga för användning i Experience Platform.
 
 Schemabaserad märkning är en viktig komponent i den attributbaserade åtkomstkontrollen för att bättre hantera åtkomsten för användare eller grupper av användare. Med Adobe Experience Platform kan du begränsa åtkomsten till alla fält i ett ad hoc-schema genom att skapa och använda etiketter.
 
@@ -25,8 +25,8 @@ Det här dokumentet innehåller en självstudiekurs för att hantera åtkomst ti
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [XDM-system (Experience Data Model)](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   * [[!DNL Schema Editor]](../../xdm/ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
+* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata med.
+   * [[!DNL Schema Editor]](../../xdm/ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i Experience Platform-gränssnittet.
 * [[!DNL Data Governance]](../../data-governance/home.md): Lär dig hur [!DNL Data Governance] gör att du kan hantera kunddata och säkerställa efterlevnad av regler, begränsningar och principer som gäller för dataanvändning.
 * [Attributbaserad åtkomstkontroll](../../access-control/abac/overview.md): Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett ad hoc- eller reguljärt schemafält. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
 
@@ -34,15 +34,15 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 När frågan har körts och resultaten har genererats genereras ett ad hoc-schema automatiskt och läggs till i schemalagret.
 
-Om du vill lägga till en dataetikett går du till [!UICONTROL Schemas]-fliken för instrumentpanelsbläddring genom att välja [!UICONTROL Schemas] i den vänstra listen i plattformsgränssnittet. Schemalagret visas.
+Om du vill lägga till en dataetikett går du till [!UICONTROL Schemas]-fliken för instrumentpanelsbläddring genom att välja [!UICONTROL Schemas] i den vänstra listen i Experience Platform-gränssnittet. Schemalagret visas.
 
 >[!NOTE]
 >
 >Ad hoc-scheman visas inte som standard i schemalagret.
 
-## Upptäck ad hoc-scheman i schemalagret för plattformsgränssnittet {#discover-ad-hoc-schemas}
+## Upptäck ad hoc-scheman i schemalagret för Experience Platform UI {#discover-ad-hoc-schemas}
 
-Om du vill aktivera visning av ad hoc-scheman i plattformsgränssnittet väljer du filterikonen (![En filterikon.](/help/images/icons/filter.png)) till vänster om sökfältet och välj sedan **[!UICONTROL Show adhoc schemas] i den vänstra listen som visas.
+Om du vill aktivera visning av ad hoc-scheman i Experience Platform-gränssnittet väljer du filterikonen (![En filterikon.](/help/images/icons/filter.png)) till vänster om sökfältet och välj sedan **[!UICONTROL Show adhoc schemas] i den vänstra listen som visas.
 
 ![Filteralternativen för kontrollpanelen Schema har en vänsterkant med växeln Visa ad hoc-schema aktiverad.](../images/data-governance/adhoc-schema-toggle.png)
 
@@ -94,4 +94,4 @@ Om en identitet eller primär identitet anges i ad hoc-schema, uppfyller systeme
 När du har läst det här dokumentet får du en bättre förståelse för hur du lägger till dataanvändningsetiketter i ad hoc-scheman som skapats med Query Service CTAS-frågor. Om du inte redan har gjort det kan följande dokument vara användbara för att förbättra din förståelse för datastyrning i frågetjänsten:
 
 * [Ad hoc-schematidentiteter](./ad-hoc-schema-identities.md)
-* [Datastyrning](../../data-governance/home.md)
+* [Dataförvaltning](../../data-governance/home.md)

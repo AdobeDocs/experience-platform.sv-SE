@@ -2,10 +2,10 @@
 title: Översikt över publicering
 description: Lär dig hur du publicerar ändringar i kodbibliotek för tagghantering i Adobe Experience Platform.
 exl-id: 32eaad87-d7dc-4812-b546-a136511512fe
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '609'
-ht-degree: 0%
+source-wordcount: '610'
+ht-degree: 7%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Med Adobe Experience Platform kan du kapsla in ändringar i tagghanteringskoden i enskilda bibliotek. Eftersom flera bibliotek nu kan utvecklas parallellt av olika team måste dessa bibliotek följa en avsiktlig, tillåten process för att sammanfoga ändringar innan de överförs till produktionsmiljön.
 
@@ -33,7 +33,7 @@ Förutom publiceringsflödet finns det flera komponenter och relationer som är 
 | --- | --- |
 | Bibliotek | Ett bibliotek är en uppsättning instruktioner för hur tillägg, dataelement och regler ska samverka med varandra och med din webbplats. När ett bibliotek kompileras för att distribueras till en miljö blir det biblioteket ett bygge.<br><br>Mer information om hur du skapar, hanterar och aktiverar bibliotek i användargränssnittet finns i översikten för [bibliotek](./libraries.md). |
 | Bygger | Ett bygge är ett kompilerat bibliotek. När det distribueras i en miljö innehåller ett bygge den faktiska uppsättningen filer som innehåller koden som skickas till varje användares webbläsare när de visar din plats.<br><br>Mer information om byggens innehåll och format finns i översikten för [byggen](./builds.md). |
-| Miljöer | En taggmiljö är en uppsättning driftsättningsanvisningar som anger vilket format du vill att ditt bygge ska ha och var du vill att det ska levereras.<br><br>Mer information om olika typer av miljöer, hur du installerar och konfigurerar befintliga miljöer och hur du skapar nya miljöer finns i översikten för [miljöer](./environments.md). |
+| Miljöer | En taggmiljö är en uppsättning driftsättningsanvisningar som talar om för Experience Platform vilket format du vill att ditt bygge ska ha och var du vill att det ska levereras.<br><br>Mer information om olika typer av miljöer, hur du installerar och konfigurerar befintliga miljöer och hur du skapar nya miljöer finns i översikten för [miljöer](./environments.md). |
 | Värdar | En värd representerar anslutningsinformationen för en miljö som ska leverera en bygge till din webbplats. Du kan välja att låta Adobe hantera värdtjänsten för ditt bygge eller så kan du ange information för dina egna värdservrar i stället.<br><br>Se översikten på [värdar](./hosts/hosts-overview.md) för mer information om alla värdalternativ. |
 | Kod på klientsidan | Koden på klientsidan är den uppsättning skript som du placerar i källkoden för platsen eller programmet och som anger för varje klientenhet var bygget ska hämtas. Koden är kopplad till en miljö och kan ändras när du ändrar din miljökonfiguration.<br><br>Mer information finns i avsnittet [Bädda in koder](./environments.md#embed-code) i miljööversikten. |
 

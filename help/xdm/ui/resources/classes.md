@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;class;classes;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;class;classes;
 solution: Experience Platform
 title: Skapa och redigera klasser i användargränssnittet
-description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
+description: Lär dig skapa och redigera klasser i Experience Platform användargränssnitt.
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 02b709c01347c1d03f870132dff437b97f239a9c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1563'
 ht-degree: 0%
 
 ---
@@ -22,17 +22,17 @@ I Adobe Experience Platform definierar en schemaklass beteendeaspekterna för de
 
 Adobe tillhandahåller flera standardklasser (&quot;core&quot;) för Experience Data Model (XDM), inklusive [XDM Individual Profile](../../classes/individual-profile.md) och [XDM ExperienceEvent](../../classes/experienceevent.md). Förutom dessa huvudklasser kan du även skapa egna anpassade klasser som beskriver mer specifika användningsfall för organisationen.
 
-Det här dokumentet innehåller en översikt över hur du skapar, redigerar och hanterar anpassade klasser i användargränssnittet i Experience Platform.
+Det här dokumentet innehåller en översikt över hur du skapar, redigerar och hanterar anpassade klasser i Experience Platform-gränssnittet.
 
 ## Förhandskrav {#prerequisites}
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser bidrar till XDM-scheman.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser bidrar till XDM-scheman.
 
 Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen om att [komponera ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i Schemaredigeraren.
 
 ## Komma igång {#getting-started}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i [!UICONTROL Schemas] och sedan fliken **[!UICONTROL Classes]**. En lista över tillgängliga klasser visas.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i [!UICONTROL Schemas] och sedan fliken **[!UICONTROL Classes]**. En lista över tillgängliga klasser visas.
 
 ![Antalet klasser på fliken [!UICONTROL Classes] i arbetsytan [!UICONTROL Schemas] [!UICONTROL Classes] och [!UICONTROL Schemas] är markerade.](../../images/ui/resources/classes/available-classes.png)
 
@@ -48,7 +48,7 @@ Listan med klasser filtreras automatiskt baserat på hur de skapades. Standardin
 
 ## Skapa en ny klass {#create}
 
-Det finns två metoder för att skapa en klass i plattformsgränssnittet, till och med **[!UICONTROL Create class]** eller **[!UICONTROL Create schema]**.
+Det finns två metoder för att skapa en klass i Experience Platform-gränssnittet, till och med **[!UICONTROL Create class]** eller **[!UICONTROL Create schema]**.
 
 ### Skapa klass
 
@@ -124,7 +124,7 @@ Om du tidigare har skapat scheman som använder den här klassen visas de nya f�
 
 >[!NOTE]
 >
->Endast anpassade klasser som definierats av din organisation kan redigeras och anpassas helt. För huvudklasser som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom kontexten för enskilda scheman. Mer information finns i avsnittet [Redigera visningsnamn för schemafält](./schemas.md#display-names).
+>Endast anpassade klasser som definierats av din organisation kan redigeras och anpassas helt. För huvudklasser som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom ramen för enskilda scheman. Mer information finns i avsnittet [Redigera visningsnamn för schemafält](./schemas.md#display-names).
 >
 >När en anpassad klass har sparats och använts vid dataanvändningen kan endast additiva ändringar göras i den därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 
@@ -156,6 +156,6 @@ Mer information finns i guiden om [att skapa och redigera scheman](./schemas.md#
 
 ## Nästa steg {#next-steps}
 
-I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet för plattformen. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
+I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Om du vill lära dig hur du hanterar klasser med API:t för schemaregister läser du [klassernas slutpunktshandbok](../../api/classes.md).

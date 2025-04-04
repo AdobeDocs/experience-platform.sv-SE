@@ -2,22 +2,22 @@
 title: Granska loggintegrering för frågetjänsten
 description: Granskningsloggar för frågetjänsten bevarar poster för olika användaråtgärder för att skapa en åtkomsthistorik för felsökningsproblem eller följa företagets policyer för datahantering och lagstadgade krav. Den här självstudiekursen ger en översikt över granskningsloggsfunktioner som är specifika för frågetjänsten.
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '875'
 ht-degree: 0%
 
 ---
 
 # Integrering av granskningslogg för [!DNL Query Service]
 
-Granskningsloggsintegrationen i Adobe Experience Platform [!DNL Query Service] innehåller poster för frågerelaterade användaråtgärder. Granskningsloggar är ett viktigt verktyg för felsökning och för att följa företagets policyer för datahantering och krav på regelefterlevnad. Med den här funktionen kan du returnera en åtgärdslogg för många händelsetyper och filtrera och exportera posterna. Loggarna kan nås antingen via plattformsgränssnittet eller [API:t för granskningsfråga](https://www.adobe.io/experience-platform-apis/references/audit-query/) och hämtas i filformaten CSV eller JSON.
+Granskningsloggsintegrationen i Adobe Experience Platform [!DNL Query Service] innehåller poster för frågerelaterade användaråtgärder. Granskningsloggar är ett viktigt verktyg för felsökning och för att följa företagets policyer för datahantering och krav på regelefterlevnad. Med den här funktionen kan du returnera en åtgärdslogg för många händelsetyper och filtrera och exportera posterna. Loggarna kan nås antingen via Experience Platform-gränssnittet eller [API:t för granskningsfråga](https://www.adobe.io/experience-platform-apis/references/audit-query/) och hämtas i filformaten CSV eller JSON.
 
-Mer information om användargränssnittet för granskningsloggar finns i [översiktsdokumentet för granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md). Mer information om hur du anropar plattforms-API:er finns i [API-handboken för granskningsloggar](../../landing/api-guide.md).
+Mer information om användargränssnittet för granskningsloggar finns i [översiktsdokumentet för granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md). Mer information om hur du anropar Experience Platform API:er finns i [API-handboken för granskningsloggar](../../landing/api-guide.md).
 
 ## Förhandskrav
 
-Du måste ha behörigheten [!DNL Data Governance] [!UICONTROL View User Activity Log] aktiverad för att kunna visa kontrollloggens kontrollpanel i plattformens användargränssnitt. Behörigheten aktiveras via Adobe [Admin Console](https://adminconsole.adobe.com/). Kontakta organisationens administratör om du inte har administratörsbehörighet för att aktivera den här behörigheten. I åtkomstkontrollsdokumentationen finns [fullständiga instruktioner om hur du lägger till behörigheter via Admin Console](../../access-control/home.md).
+Du måste ha behörigheten [!DNL Data Governance] [!UICONTROL View User Activity Log] aktiverad för att kunna visa kontrollloggens kontrollpanel i Experience Platform UI. Behörigheten aktiveras via Adobe [Admin Console](https://adminconsole.adobe.com/). Kontakta organisationens administratör om du inte har administratörsbehörighet för att aktivera den här behörigheten. I åtkomstkontrollsdokumentationen finns [fullständiga instruktioner om hur du lägger till behörigheter via Admin Console](../../access-control/home.md).
 
 ## [!DNL Query Service] granskningsloggskategorier {#audit-log-categories}
 
@@ -33,9 +33,9 @@ Granskningsloggkategorierna som tillhandahålls av [!DNL Query Service] är föl
 
 Om du vill utföra en granskning för [!DNL Query Service] aktiviteter väljer du **[!UICONTROL Audits]** i den vänstra navigeringen, följt av panelikonen (![En filterikon.](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
 
-![Kontrollpanelen för Plattformsgränssnittets granskningslogg med Granskningar i den vänstra navigeringen och filterkontrollerna markerade.](../images/audit-log/filter-controls.png)
+![Kontrollpanelen för Experience Platform UI-granskningsloggen med Granskningar i den vänstra navigeringen och filterkontrollerna markerade.](../images/audit-log/filter-controls.png)
 
-På fliken [!UICONTROL Audits] dashboard [!UICONTROL Activity log] kan du filtrera alla inspelade plattformsåtgärder efter någon av [!DNL Query Service]-kategorierna. Loggresultaten kan filtreras ytterligare baserat på den tidsperiod som de kördes, vilken åtgärd/funktion som utfördes eller vilken användare som tog emot frågan. I granskningsloggens dokumentation finns [fullständiga anvisningar om hur du filtrerar loggarna baserat på kategori, åtgärd, användare och status](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui).
+På fliken [!UICONTROL Audits] dashboard [!UICONTROL Activity log] kan du filtrera alla inspelade Experience Platform-åtgärder efter någon av [!DNL Query Service]-kategorierna. Loggresultaten kan filtreras ytterligare baserat på den tidsperiod som de kördes, vilken åtgärd/funktion som utfördes eller vilken användare som tog emot frågan. I granskningsloggens dokumentation finns [fullständiga anvisningar om hur du filtrerar loggarna baserat på kategori, åtgärd, användare och status](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui).
 
 Returnerade granskningsloggdata innehåller följande information om alla frågor som uppfyller de valda filtervillkoren.
 

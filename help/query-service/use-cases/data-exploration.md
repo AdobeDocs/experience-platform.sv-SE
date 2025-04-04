@@ -2,9 +2,9 @@
 title: Utforska, felsöka och verifiera batchmatning med SQL
 description: Lär dig förstå och hantera dataöverföringsprocessen i Adobe Experience Platform. I det här dokumentet finns information om hur du verifierar batchar och frågar efter inlästa data.
 exl-id: 8f49680c-42ec-488e-8586-50182d50e900
-source-git-commit: 692a061e3b2facbfafc65f966832230187f5244d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1156'
 ht-degree: 0%
 
 ---
@@ -24,10 +24,10 @@ I det här dokumentet förklaras hur du verifierar och validerar poster i kapsla
 
 För att du ska få en bättre förståelse för de begrepp som beskrivs i det här dokumentet bör du ha kunskap om följande ämnen:
 
-- **Inläsning av data**: Se [översikten över datafrågor](../../ingestion/home.md) om du vill veta grunderna för hur data importeras till plattformen, inklusive de olika metoder och processer som används.
-- **Gruppinmatning**: Se [API-översikt för gruppinmatning](../../ingestion/batch-ingestion/overview.md) om du vill veta mer om grundläggande begrepp för gruppinmatning. Närmare bestämt vad en&quot;batch&quot; är och hur den fungerar i plattformens dataöverföringsprocess.
+- **Inläsning av data**: Se [översikten över datafrågor](../../ingestion/home.md) om du vill veta grunderna för hur data importeras till Experience Platform, inklusive de olika metoder och processer som används.
+- **Gruppinmatning**: Se [API-översikt för gruppinmatning](../../ingestion/batch-ingestion/overview.md) om du vill veta mer om grundläggande begrepp för gruppinmatning. Närmare bestämt vad en&quot;batch&quot; är och hur den fungerar i Experience Platform dataöverföringsprocess.
 - **Systemmetadata i datauppsättningar**: Se [Katalogtjänstöversikt](../../catalog/home.md) om du vill veta hur systemmetadatafält används för att spåra och fråga efter inlästa data.
-- **Experience Data Model (XDM)**: Läs [schemas användargränssnittsöversikt](../../xdm/ui/overview.md) och [&#39;basics of schema composition&#39;](../../xdm/schema/composition.md) om du vill veta mer om XDM-scheman och hur de representerar och validerar strukturen och formatet för data som hämtas till plattformen.
+- **Experience Data Model (XDM)**: Läs [schemas användargränssnittsöversikt](../../xdm/ui/overview.md) och [&#39;basics of schema composition&#39;](../../xdm/schema/composition.md) om du vill veta mer om XDM-scheman och hur de representerar och validerar strukturen och formatet för data som hämtas till Experience Platform.
 
 ## Få tillgång till data och batchmetadata {#access-dataset-batch-metadata}
 
@@ -37,7 +37,7 @@ Om du sedan vill visa systemfälten för datauppsättningen kör du en SELECT al
 
 ![Gränssnittet för DBVisualizer med tabellen movie_data och dess metadatakolumner visade och markerade.](../images/use-cases/movie_data-table-with-metadata-columns.png)
 
-När data hämtas till plattformen tilldelas den en logisk partition baserad på inkommande data. Denna logiska partition representeras av `_acp_system_metadata.sourceBatchId`. Detta ID hjälper till att gruppera och identifiera datagrupperna logiskt innan de bearbetas och lagras.
+När data importeras till Experience Platform tilldelas den en logisk partition baserat på inkommande data. Denna logiska partition representeras av `_acp_system_metadata.sourceBatchId`. Detta ID hjälper till att gruppera och identifiera datagrupperna logiskt innan de bearbetas och lagras.
 
 När data har bearbetats och importerats till datasjön tilldelas den en fysisk partition som representeras av `_ACP_BATCHID`. Detta ID återspeglar den faktiska lagringspartitionen i datavjön där inmatade data finns.
 
@@ -56,7 +56,7 @@ Resultatet av den här frågan visas i bilden nedan.
 
 Dessa resultat visar att antalet indatabatchar inte nödvändigtvis matchar antalet utdatabatchar eftersom systemet avgör det mest effektiva sättet att gruppera och lagra data i datasjön.
 
-I det här exemplet antas du ha kapslat en CSV-fil till Platform och skapat en datauppsättning med namnet `drug_checkout_data`.
+I det här exemplet antas att du har infogat en CSV-fil i Experience Platform och skapat en datauppsättning med namnet `drug_checkout_data`.
 
 Filen `drug_checkout_data` är en djupt kapslad uppsättning med 35 000 poster. Använd SQL-satsen `SELECT * FROM drug_orders;` för att förhandsgranska den första uppsättningen poster i den JSON-baserade `drug_orders`-datauppsättningen.
 
@@ -92,19 +92,19 @@ Validera och verifiera sedan de poster som har importerats till datauppsättning
 
 >[!TIP]
 >
->Om du vill hämta batch-ID:t och frågeposterna som är kopplade till det batch-ID:t måste du först skapa en batch inom plattformen. Om du vill testa processen själv kan du importera CSV-data till Platform. Läs guiden om hur du [mappar en CSV-fil till ett befintligt XDM-schema med hjälp av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md).
+>Om du vill hämta batch-ID:t och frågeposterna som är kopplade till det batch-ID:t måste du först skapa en batch i Experience Platform. Om du vill testa processen själv kan du importera CSV-data till Experience Platform. Läs guiden om hur du [mappar en CSV-fil till ett befintligt XDM-schema med hjälp av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md).
 
 När du har infogat en grupp måste du navigera till [!UICONTROL Datasets activity tab] för den datauppsättning som du har infogat data i.
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna kontrollpanelen [!UICONTROL Datasets]. Välj sedan namnet på datauppsättningen på fliken [!UICONTROL Browse] för att komma åt skärmen [!UICONTROL Dataset activity].
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna kontrollpanelen [!UICONTROL Datasets]. Välj sedan namnet på datauppsättningen på fliken [!UICONTROL Browse] för att komma åt skärmen [!UICONTROL Dataset activity].
 
-![Kontrollpanelen för användargränssnittsdatauppsättningar för plattformen med datauppsättningar markerade i den vänstra navigeringen.](../images/use-cases/datasets-workspace.png)
+![Kontrollpanelen Experience Platform UI-datauppsättningar med datauppsättningar markerade i den vänstra navigeringen.](../images/use-cases/datasets-workspace.png)
 
 Vyn [!UICONTROL Dataset activity] visas. Den här vyn innehåller information om den valda datauppsättningen. Den innehåller alla kapslade batchar som visas i ett tabellformat.
 
 Välj en batch i listan över tillgängliga batchar och kopiera [!UICONTROL Batch ID] från informationspanelen till höger.
 
-![Användargränssnittet för datauppsättningar i Experience Platform visar de kapslade posterna med ett batch-ID markerat.](../images/use-cases/batch-id.png)
+![Användargränssnittet för Experience Platform-datauppsättningar visar de inkapslade posterna med ett batch-ID markerat.](../images/use-cases/batch-id.png)
 
 Använd sedan följande fråga för att hämta alla poster som inkluderades i datauppsättningen som en del av den gruppen:
 
@@ -124,8 +124,8 @@ När du kör frågan i Frågeredigeraren kortas resultatet av till 100 rader. Fr
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa det här dokumentet lärde du dig att verifiera och validera poster i importerade batchar som en del av dataöverföringsprocessen. Du fick också insikt i hur du får åtkomst till data batch-metadata, hur du förstår logiska och fysiska partitioner och hur du får frågor om specifika grupper med hjälp av SQL-kommandon. Denna kunskap kan hjälpa er att säkerställa dataintegriteten och optimera er datalagring på plattformen.
+Genom att läsa det här dokumentet lärde du dig att verifiera och validera poster i importerade batchar som en del av dataöverföringsprocessen. Du fick också insikt i hur du får åtkomst till data batch-metadata, hur du förstår logiska och fysiska partitioner och hur du får frågor om specifika grupper med hjälp av SQL-kommandon. Denna kunskap kan hjälpa er att säkerställa dataintegriteten och optimera er datalagring på Experience Platform.
 
-Därefter bör du öva på datainhämtning för att tillämpa de inlärda begreppen. Infoga en exempeldatauppsättning i Platform med antingen de medföljande exempelfilerna eller dina egna data. Om du inte redan har gjort det läser du självstudiekursen om hur du [importerar data till Adobe Experience Platform](../../ingestion/tutorials/ingest-batch-data.md).
+Därefter bör du öva på datainhämtning för att tillämpa de inlärda begreppen. Infoga en exempeldatauppsättning i Experience Platform med antingen de medföljande exempelfilerna eller dina egna data. Om du inte redan har gjort det läser du självstudiekursen om hur du [importerar data till Adobe Experience Platform](../../ingestion/tutorials/ingest-batch-data.md).
 
 Du kan också lära dig hur du [ansluter och verifierar frågetjänsten med ett antal klientprogram](../clients/overview.md) för att förbättra dina dataanalysfunktioner.

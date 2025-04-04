@@ -3,9 +3,9 @@ keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: cbc626dbb12f69114c48a0920bf56ec2aabe13de
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '279'
+source-wordcount: '280'
 ht-degree: 0%
 
 ---
@@ -66,4 +66,4 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 
 ## Anslut till ett nytt annonsmål {#connect-destination}
 
-För att kunna skicka målgrupper till reklamdestinationer för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
+För att kunna skicka målgrupper till reklamdestinationer för era kampanjer måste Experience Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.

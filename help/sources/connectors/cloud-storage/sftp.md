@@ -2,16 +2,16 @@
 title: SFTP Source Connector - översikt
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1221'
+source-wordcount: '1226'
 ht-degree: 0%
 
 ---
 
 # SFTP-anslutning
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Läs det här dokumentet om du behöver utföra nödvändiga steg för att kunna ansluta ditt [!DNL SFTP]-konto till Experience Platform.
 
@@ -40,7 +40,7 @@ Nedan följer en lista över begränsningar som du måste ta hänsyn till när d
 
 ### Konfigurera en Base64-kodad privat OpenSSH-nyckel för [!DNL SFTP]
 
-Källan [!DNL SFTP] stöder autentisering med [!DNL Base64]-kodad privat nyckel för OpenSSH. Se stegen nedan för mer information om hur du skapar den Base64-kodade privata OpenSSH-nyckeln och ansluter [!DNL SFTP] till plattformen.
+Källan [!DNL SFTP] stöder autentisering med [!DNL Base64]-kodad privat nyckel för OpenSSH. Se stegen nedan för information om hur du skapar den Base64-kodade privata OpenSSH-nyckeln och ansluter [!DNL SFTP] till Experience Platform.
 
 >[!BEGINTABS]
 
@@ -96,7 +96,7 @@ Kör sedan följande kommando när du anger sökvägen till den privata nyckeln 
 C:\Users\lucy> [convert]::ToBase64String((Get-Content -path "C:\Users\lucy\.ssh\id_rsa" -Encoding byte)) > C:\Users\lucy\.ssh\id_rsa_base64
 ```
 
-Ovanstående kommando sparar den [!DNL Base64]-kodade privata nyckeln i den sökväg du angav. Du kan sedan använda den privata nyckeln för att autentisera till [!DNL SFTP] och ansluta till plattformen.
+Ovanstående kommando sparar den [!DNL Base64]-kodade privata nyckeln i den sökväg du angav. Du kan sedan använda den privata nyckeln för att autentisera till [!DNL SFTP] och ansluta till Experience Platform.
 
 >[!TAB Mac]
 
@@ -168,7 +168,7 @@ Ange lämpliga värden för följande autentiseringsuppgifter för att autentise
 | `port` | Serverporten [!DNL SFTP] som du ansluter till. Om det inte anges används standardvärdet `22`. |
 | `username` | Användarnamnet med åtkomst till din [!DNL SFTP]-server. |
 | `password` | Lösenordet för din [!DNL SFTP]-server. |
-| `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för hur många samtidiga anslutningar som plattformen skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Obs!** När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
+| `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för antalet samtidiga anslutningar som Experience Platform skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Obs!** När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
 | `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. [!DNL SFTP]-källan kan du ange mappsökvägen för att ange användaråtkomst till den undermapp som du väljer. |
 | `disableChunking` | Under datainmatningen kan källan [!DNL SFTP] hämta fillängden först, dela upp filen i flera delar och sedan läsa dem parallellt. Du kan aktivera eller inaktivera det här värdet för att ange om [!DNL SFTP]-servern kan hämta fillängder eller läsa data från en viss förskjutning. |
 | `connectionSpec.id` | (Endast API) Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL SFTP] är: `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
@@ -185,7 +185,7 @@ Ange lämpliga värden för följande autentiseringsuppgifter för att autentise
 | `password` | Lösenordet för din [!DNL SFTP]-server. |
 | `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
-| `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för hur många samtidiga anslutningar som plattformen skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Obs!** När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
+| `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för antalet samtidiga anslutningar som Experience Platform skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Obs!** När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
 | `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. [!DNL SFTP]-källan kan du ange mappsökvägen för att ange användaråtkomst till den undermapp som du väljer. |
 | `disableChunking` | Under datainmatningen kan källan [!DNL SFTP] hämta fillängden först, dela upp filen i flera delar och sedan läsa dem parallellt. Du kan aktivera eller inaktivera det här värdet för att ange om [!DNL SFTP]-servern kan hämta fillängder eller läsa data från en viss förskjutning. |
 | `connectionSpec.id` | (Endast API) Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL SFTP] är: `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |

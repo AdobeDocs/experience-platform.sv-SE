@@ -2,9 +2,9 @@
 title: Uppdatera konton med API:t för Flow Service
 description: I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för ett konto med API:t för Flow Service.
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
-source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
@@ -25,16 +25,16 @@ Den här självstudien kräver att du har en befintlig anslutning och ett giltig
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ## Sök anslutningsinformation
 
-Det första steget när du uppdaterar anslutningen är att hämta information om anslutningen med ditt anslutnings-ID. Om du vill hämta din anslutnings aktuella information skickar du en GET-förfrågan till [!DNL Flow Service]-API:t samtidigt som du anger anslutnings-ID:t för anslutningen som du vill uppdatera.
+Det första steget när du uppdaterar anslutningen är att hämta information om anslutningen med ditt anslutnings-ID. Om du vill hämta den aktuella informationen för anslutningen gör du en GET-begäran till [!DNL Flow Service]-API:t och anger anslutnings-ID:t för anslutningen som du vill uppdatera.
 
 **API-format**
 
@@ -103,7 +103,7 @@ Om du vill uppdatera anslutningsens namn, beskrivning och autentiseringsuppgifte
 
 >[!IMPORTANT]
 >
->Rubriken `If-Match` krävs när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera.
+>Huvudet `If-Match` krävs när en PATCH-begäran görs. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera.
 
 **API-format**
 
@@ -158,7 +158,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service]-API:t och samtidigt ange ditt anslutnings-ID.
+Ett lyckat svar returnerar ditt anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt anslutnings-ID.
 
 ```json
 {

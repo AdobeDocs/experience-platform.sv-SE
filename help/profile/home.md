@@ -2,9 +2,9 @@
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: fc53d1b32eb3fc0251f307d5b2f076b1153a2931
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1821'
+source-wordcount: '1826'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ Förhållandet mellan kundprofilen i realtid och andra tjänster inom Experience
 
 ## Förstå profiler
 
-[!DNL Real-Time Customer Profile] sammanfogar data från olika affärssystem och ger sedan åtkomst till dessa data i form av kundprofiler med relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler. I följande avsnitt beskrivs några av de grundläggande begrepp som du måste förstå för att effektivt kunna skapa och underhålla profiler inom plattformen.
+[!DNL Real-Time Customer Profile] sammanfogar data från olika affärssystem och ger sedan åtkomst till dessa data i form av kundprofiler med relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler. I följande avsnitt beskrivs några av de grundläggande begrepp som du måste förstå för att effektivt kunna skapa och underhålla profiler inom Experience Platform.
 
 ### Profilens enhetskomposition
 
@@ -45,7 +45,7 @@ Dimensionella enheter och B2B-enheter länkas till den primära entiteten via **
 
 Även om [!DNL Real-Time Customer Profile] bearbetar inkapslade data och använder Adobe Experience Platform [!DNL Identity Service] för att sammanfoga relaterade data via identitetsmappning, behåller den egna data i datalagret [!DNL Profile]. [!DNL Profile]-arkivet är skilt från katalogdata i datasjön och [!DNL Identity Service] data i identitetsdiagrammet.
 
-Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Platform Data Lake använder Microsoft Azure Data Lake-lagring.
+Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Experience Platform Data Lake använder Microsoft Azure Data Lake-lagring.
 
 ### Profilskyddsutkast
 
@@ -57,15 +57,15 @@ Experience Platform användargränssnitt innehåller en kontrollpanel där du ka
 
 ### Profilfragment jämfört med sammanslagna profiler {#profile-fragments-vs-merged-profiles}
 
-Varje enskild kundprofil består av flera profilfragment som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden.
+Varje enskild kundprofil består av flera profilfragment som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Experience Platform sammanfogas de för att skapa en enda profil för kunden.
 
 Profilfragment representerar med andra ord en unik primär identitet och motsvarande [post](#record-data) - eller [händelse](#time-series-events)-data för det ID:t inom en given datauppsättning.
 
-När data från flera datauppsättningar står i konflikt (t.ex. ett fragment listar kunden som&quot;enskild&quot; medan den andra listar kunden som&quot;gift&quot;) avgör [sammanfogningsprincipen](#merge-policies) vilken information som ska prioriteras och inkluderas i profilen för den enskilda personen. Det totala antalet profilfragment inom Platform är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil vanligtvis består av flera fragment från flera datauppsättningar.
+När data från flera datauppsättningar står i konflikt (t.ex. ett fragment listar kunden som&quot;enskild&quot; medan den andra listar kunden som&quot;gift&quot;) avgör [sammanfogningsprincipen](#merge-policies) vilken information som ska prioriteras och inkluderas i profilen för den enskilda personen. Det totala antalet profilfragment inom Experience Platform är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil vanligtvis består av flera fragment från flera datauppsättningar.
 
 ### Registrera data {#record-data}
 
-En profil är en representation av ett ämne, en organisation eller en individ, som består av många attribut (kallas även postdata). Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. Med [!DNL Experience Platform] kan du anpassa profiler så att de använder specifika data som är relevanta för ditt företag. Standardklassen [!DNL Experience Data Model] (XDM), [!DNL XDM Individual Profile], är den klass som helst för att skapa ett schema när kundpostdata beskrivs, och tillhandahåller dataintegriteten för många interaktioner mellan plattformstjänster. Mer information om hur du arbetar med scheman i [!DNL Experience Platform] får du genom att läsa [XDM-systemöversikten](../xdm/home.md).
+En profil är en representation av ett ämne, en organisation eller en individ, som består av många attribut (kallas även postdata). Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. Med [!DNL Experience Platform] kan du anpassa profiler så att de använder specifika data som är relevanta för ditt företag. Standardklassen [!DNL Experience Data Model] (XDM), [!DNL XDM Individual Profile], är den klass som helst för att skapa ett schema när kundpostdata beskrivs, och tillhandahåller dataintegralen till många interaktioner mellan Experience Platform tjänster. Mer information om hur du arbetar med scheman i [!DNL Experience Platform] får du genom att läsa [XDM-systemöversikten](../xdm/home.md).
 
 ### Tidsseriehändelser {#time-series-events}
 
@@ -77,7 +77,7 @@ Alla företag vill kommunicera med sina kunder på ett sätt som känns personli
 
 ### Sammanfoga profiler
 
-När du sammanfogar datafragment från flera källor och kombinerar dem för att få en fullständig bild av varje enskild kund, är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska användas för att skapa kundprofilen.
+När du sammanfogar datafragment från flera källor och kombinerar dem för att få en fullständig bild av varje enskild kund, är sammanfogningsprinciper de regler som [!DNL Experience Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska användas för att skapa kundprofilen.
 
 När det finns data som är i konflikt med varandra från flera datauppsättningar avgör kopplingsregeln hur data ska behandlas och vilket värde som ska användas. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen.
 
@@ -107,7 +107,7 @@ Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. Nä
 
 ## Hämtar data till [!DNL Profile]
 
-[!DNL Platform] kan konfigureras för att skicka post- och tidsseriedata till [!DNL Profile], med stöd för direktuppspelning i realtid och batchinmatning. Mer information finns i självstudiekursen om hur du [lägger till data i kundprofilen i realtid](tutorials/add-profile-data.md).
+[!DNL Experience Platform] kan konfigureras för att skicka post- och tidsseriedata till [!DNL Profile], med stöd för direktuppspelning i realtid och batchinmatning. Mer information finns i självstudiekursen om hur du [lägger till data i kundprofilen i realtid](tutorials/add-profile-data.md).
 
 >[!NOTE]
 >
@@ -115,7 +115,7 @@ Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. Nä
 
 ### Profilätvärden
 
-Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Experience Platform]-användningsstatistik och prestandaindikatorer för olika [!DNL Platform]-funktioner finns det specifika profilrelaterade mått som gör att du kan få insikt i inkommande begärandefrekvenser, lyckade intagsfrekvenser, inkapslade poststorlekar och mycket annat. Om du vill veta mer kan du börja med att läsa översikten för API:t [Observability Insights](../observability/api/overview.md) och en fullständig lista över kundprofilsmått i realtid finns i dokumentationen om [tillgängliga mätvärden](../observability/api/metrics.md#available-metrics).
+Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Experience Platform]-användningsstatistik och prestandaindikatorer för olika [!DNL Experience Platform]-funktioner finns det specifika profilrelaterade mått som gör att du kan få insikt i inkommande begärandefrekvenser, lyckade intagsfrekvenser, inkapslade poststorlekar och mycket annat. Om du vill veta mer kan du börja med att läsa översikten för API:t [Observability Insights](../observability/api/overview.md) och en fullständig lista över kundprofilsmått i realtid finns i dokumentationen om [tillgängliga mätvärden](../observability/api/metrics.md#available-metrics).
 
 ## Uppdatera data i profilarkivet
 
@@ -131,7 +131,7 @@ När det gäller åtkomst av data spelar datastyrning en nyckelroll inom [!DNL E
 - Dataåtkomstprinciper
 - Åtkomstkontroll över data för marknadsföringsåtgärder
 
-Datastyrning hanteras vid flera tillfällen. Det kan vara att bestämma vilka data som ska importeras till [!DNL Platform] och vilka data som är tillgängliga efter att de har importerats för en viss marknadsföringsåtgärd. Om du vill ha mer information börjar du med att läsa översikten över [datastyrning](../data-governance/home.md).
+Datastyrning hanteras vid flera tillfällen. Det kan vara att bestämma vilka data som ska importeras till [!DNL Experience Platform] och vilka data som är tillgängliga efter att de har importerats för en viss marknadsföringsåtgärd. Om du vill ha mer information börjar du med att läsa översikten över [datastyrning](../data-governance/home.md).
 
 ### Hantera avanmälan och förfrågningar om datasekretess
 

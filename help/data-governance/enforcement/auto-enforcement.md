@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Automatisk policytillämpning
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när målgrupper aktiveras till mål i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: f9072a0fc287c8061a3d28972096577317a0a2c9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2094'
+source-wordcount: '2104'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Dataanvändningsetiketter och -profiler är tillgängliga för alla Adobe Experience Platform-användare. Definiera dataanvändningspolicyer och använd etiketter för dataanvändning för att säkerställa att känsliga, identifierbara eller avtalsbaserade data hanteras korrekt. Dessa åtgärder hjälper er att tillämpa organisationens regler för datastyrning på hur data kan nås, bearbetas, lagras och delas.
 
-För att skydda organisationen från potentiella risker och förpliktelser tillämpar Platform automatiskt användarprofiler om något brott inträffar när målgrupper aktiveras till destinationer.
+För att skydda er organisation mot potentiella risker och förpliktelser tillämpar Experience Platform automatiskt användarprofiler om det inträffar överträdelser när målgrupper aktiveras till destinationer.
 
 >[!IMPORTANT]
 >
@@ -25,12 +25,12 @@ I det här dokumentet fokuseras på att genomföra regler för datastyrning och 
 
 ## Förhandskrav
 
-Den här handboken kräver en fungerande förståelse av de plattformstjänster som används i automatisk tillämpning. Läs följande dokumentation om du vill veta mer innan du fortsätter med den här guiden:
+Den här handboken kräver en fungerande förståelse av de Experience Platform-tjänster som används vid automatisk tillämpning. Läs följande dokumentation om du vill veta mer innan du fortsätter med den här guiden:
 
-* [Adobe Experience Platform datastyrning](../home.md): Det ramverk som plattformen använder för att framtvinga efterlevnad av dataanvändning genom användning av etiketter och principer.
+* [Adobe Experience Platform datastyrning](../home.md): Ramverket som Experience Platform använder för att framtvinga efterlevnad av dataanvändning genom användning av etiketter och principer.
 * [Kundprofil i realtid](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Segmenteringsmotorn i [!DNL Platform] som används för att skapa målgrupper utifrån dina kundprofiler baserat på kundbeteenden och attribut.
-* [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga program som möjliggör smidig aktivering av data från Platform för flerkanaliga marknadsföringskampanjer, e-postkampanjer, riktad reklam med mera.
+* [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Segmenteringsmotorn i [!DNL Experience Platform] som används för att skapa målgrupper utifrån dina kundprofiler baserat på kundbeteenden och attribut.
+* [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga program som möjliggör smidig aktivering av data från Experience Platform för flerkanaliga marknadsföringskampanjer, e-postkampanjer, riktad reklam och mycket annat.
 
 ## Tvingande flöde {#flow}
 
@@ -53,13 +53,13 @@ När en målgrupp aktiveras första gången söker [!DNL Policy Service] efter t
 
 ## Datalinje {#lineage}
 
-Datalindelningen spelar en viktig roll när det gäller hur policyer tillämpas i plattformen. I allmänhet avser datalinjen ursprunget för en datauppsättning och vad som händer med den (eller där den flyttas) över tiden.
+Datalindelningen spelar en viktig roll i hur policyer tillämpas i Experience Platform. I allmänhet avser datalinjen ursprunget för en datauppsättning och vad som händer med den (eller där den flyttas) över tiden.
 
-När det gäller datastyrning gör länkning det möjligt för dataanvändningsetiketter att sprida information från scheman till tjänster i senare led som förbrukar deras data, som kundprofil i realtid och destinationer. Detta gör det möjligt att utvärdera och tillämpa principer vid flera viktiga punkter i dataöverföringen via Platform och ger kontext till datakonsumenterna om varför en policyöverträdelse inträffade.
+När det gäller datastyrning gör länkning det möjligt för dataanvändningsetiketter att sprida information från scheman till tjänster i senare led som förbrukar deras data, som kundprofil i realtid och destinationer. Detta gör det möjligt att utvärdera och tillämpa principer vid flera viktiga punkter i dataöverföringen via Experience Platform, och ger datakonsumenter kontext om varför en policyöverträdelse inträffade.
 
 I Experience Platform gäller följande:
 
-1. Data hämtas till plattformen och lagras i **datamängder**.
+1. Data hämtas till Experience Platform och lagras i **datamängder**.
 1. Kundprofiler identifieras och konstrueras utifrån dessa datauppsättningar genom att sammanfoga datafragment enligt **sammanfogningsprincipen**.
 1. Grupper med profiler delas in i **målgrupper** baserat på gemensamma attribut.
 1. Publiker aktiveras till **mål** längre fram i kedjan.
@@ -69,7 +69,7 @@ Varje steg i ovanstående tidslinje representerar en enhet som kan bidra till po
 | Datalindelningsfas | Roll vid policytillämpning |
 | --- | --- |
 | Datauppsättning | Datauppsättningar innehåller dataanvändningsetiketter (som används på schemafältnivå eller på hela datauppsättningsnivå) som definierar vilka användningsfall som hela datauppsättningen eller specifika fält kan användas för. Policyöverträdelser inträffar om en datauppsättning eller ett fält som innehåller vissa etiketter används i ett syfte som en princip begränsar.<br><br>Alla medgivandeattribut som samlas in från dina kunder lagras också i datauppsättningar. Om du har tillgång till policyer för samtycke, kommer profiler som inte uppfyller kraven för attributet för samtycke i dina policyer att uteslutas från målgrupper som är aktiverade till en destination. |
-| Kopplingsprincip | Sammanslagningsprinciper är de regler som används i Platform för att avgöra hur data ska prioriteras när fragment från flera datauppsättningar sammanfogas. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Mer information finns i översikten [Sammanslagningsprinciper](../../profile/merge-policies/overview.md). |
+| Kopplingsprincip | Sammanslagningsprinciper är de regler som Experience Platform använder för att avgöra hur data ska prioriteras när fragment från flera datauppsättningar sammanfogas. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Mer information finns i översikten [Sammanslagningsprinciper](../../profile/merge-policies/overview.md). |
 | Målgrupp | Segmenteringsregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver målgruppen användningsetiketter som används för dessa fält. Policyöverträdelser inträffar om du försöker aktivera en målgrupp vars ärvda etiketter begränsas av målmålets tillämpliga policyer, baserat på dess användningsfall för marknadsföring. |
 | Mål | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en policy. Det innebär att den marknadsföringsåtgärd som du definierar för ett mål avgör vilka dataanvändningsprinciper och profiler för samtycke som gäller för det målet.<br><br>Policyöverträdelser för dataanvändning inträffar om du försöker aktivera en målgrupp vars användningsetiketter är begränsade för målmålets marknadsföringsåtgärd.<br><br>(Beta) När en målgrupp aktiveras exkluderas alla profiler som inte innehåller de obligatoriska medgivandeattributen för marknadsföringsåtgärden (enligt din medgivandepolicy) från den aktiverade målgruppen. |
 
@@ -83,7 +83,7 @@ När policyöverträdelser inträffar ger de resulterande meddelandena som visas
 
 ## Policytvingande meddelanden {#enforcement}
 
-Avsnitten nedan beskriver olika policyefterlevnadsmeddelanden som visas i plattformsgränssnittet:
+Avsnitten nedan beskriver olika policyefterlevnadsmeddelanden som visas i användargränssnittet i Experience Platform:
 
 * [Policyöverträdelse för dataanvändning](#data-usage-violation)
 * [Principutvärdering av samtycke](#consent-policy-evaluation)
@@ -146,7 +146,7 @@ Välj **[!UICONTROL View applied policies]** när du kommer till steget **[!UICO
 
 En dialogruta för policykontroll visas som visar en förhandsgranskning av hur dina medgivandeprinciper påverkar den godkända målgruppen för de målgrupper som ska aktiveras.
 
-![Dialogrutan för kontroll av godkännandeprincip i plattformsgränssnittet](../images/enforcement/consent-policy-check.png)
+![Dialogrutan för kontroll av godkännandeprincip i Experience Platform-gränssnittet](../images/enforcement/consent-policy-check.png)
 
 Dialogrutan visar den godkända publiken för en målgrupp i taget. Om du vill visa principutvärderingen för en annan målgrupp använder du listrutan ovanför diagrammet och väljer en i listan.
 

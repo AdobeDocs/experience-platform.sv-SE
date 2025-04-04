@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en datauppsättning med API:er
 description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
-source-git-commit: e2f16f532b98e6948ffd7f331e630137b3972f0f
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1302'
 ht-degree: 0%
@@ -21,9 +21,9 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 * [Gruppinmatning](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] gör att du kan importera data som gruppfiler.
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för [!DNL Platform].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
@@ -31,21 +31,21 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett `Content-Type: application/json`-huvud. För JSON+PATCH-begäranden ska `Content-Type` vara `application/json-patch+json`.
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik för `Content-Type: application/json`. För JSON+PATCH-begäranden ska `Content-Type` vara `application/json-patch+json`.
 
 ## Självstudiekurs
 
@@ -466,7 +466,7 @@ Detaljerade steg för hur du arbetar med API:t för dataåtkomst finns i [Utveck
 
 ## Uppdatera datauppsättningsschemat
 
-Du kan lägga till fält och lägga in ytterligare data i datauppsättningar som du har skapat. För att göra detta måste du först uppdatera schemat genom att lägga till ytterligare egenskaper som definierar nya data. Detta kan göras med åtgärderna PATCH och/eller PUT för att uppdatera det befintliga schemat.
+Du kan lägga till fält och lägga in ytterligare data i datauppsättningar som du har skapat. För att göra detta måste du först uppdatera schemat genom att lägga till ytterligare egenskaper som definierar nya data. Detta kan göras med PATCH- och/eller PUT-åtgärder för att uppdatera det befintliga schemat.
 
 Mer information om hur du uppdaterar scheman finns i [API-utvecklarhandboken för schematabeller](../../xdm/api/getting-started.md).
 

@@ -2,7 +2,7 @@
 title: Adobe Campaign Managed Cloud Services
 description: Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring.
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: 299868e5ca1b8fde667c4c0ec9a7435634a1717d
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1571'
 ht-degree: 0%
@@ -47,7 +47,7 @@ För att du bättre ska kunna förstå hur och när du ska använda Adobe Campai
 
 * Adobe Experience Platform skapar en kundprofil som innehåller information som identitetsdiagram, beteendedata från analyser, sammanfogar offline- och onlinedata osv. Med den här integreringen kan ni utöka de segmenteringsfunktioner som redan finns i Adobe Campaign med de målgrupper som drivs av Adobe Experience Platform, och ni kan därför aktivera dessa data i Campaign.
 
-  Ett sportklädföretag vill till exempel utnyttja de målgrupper som Adobe Experience Platform har och aktivera dem med Adobe Campaign för att nå ut till sina kunder via de olika kanaler som Adobe Campaign stöder. När meddelandena har skickats vill de förbättra kundprofilen på Adobe Experience-plattformen med upplevelsedata från Adobe Campaign, till exempel skicka, öppna och klicka.
+  Ett sportklädföretag vill till exempel utnyttja de målgrupper som Adobe Experience Platform har och aktivera dem med Adobe Campaign för att nå ut till sina kunder via de olika kanaler som Adobe Campaign stöder. När meddelandena har skickats vill de förbättra kundprofilen i Adobe Experience-plattformen med upplevelsedata från Adobe Campaign, till exempel skicka, öppna och klicka.
 
   Resultatet är flerkanalskampanjer som är mer enhetliga över hela Adobe Experience Cloud-ekosystemet och en rik kundprofil som snabbt anpassar sig och lär sig.
 
@@ -70,8 +70,8 @@ För att du bättre ska kunna förstå hur och när du ska använda Adobe Campai
 |---|---|---|
 | external_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. Vi rekommenderar att du använder den här identiteten och mappar den till det ID i Campaign-instansen som representerar kund (loyalty_ID, account_ID, customer_ID..) |
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Mer information finns i följande dokument på [ECID](/help/identity-service/features/ecid.md). |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 

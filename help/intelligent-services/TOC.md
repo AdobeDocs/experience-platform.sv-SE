@@ -5,10 +5,10 @@ user-guide-title: Hjälp med intelligenta tjänster
 breadcrumb-title: Användarhandbok om Intelligent Services
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, upptäcka insikter och skapa segment utifrån data över marknadsföringshändelser.
 role: User
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '136'
-ht-degree: 20%
+source-wordcount: '137'
+ht-degree: 26%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 20%
       - [Åtkomstkontroller](attribution-ai/aai-data-governance/access-controls.md)
       - [Granskningsloggar](attribution-ai/aai-data-governance/audit-logs.md)
       - [Kundhanterade nycklar](attribution-ai/aai-data-governance/customer-managed-keys.md)
-      - [Datastyrning](attribution-ai/aai-data-governance/data-governance.md)
+      - [Dataförvaltning](attribution-ai/aai-data-governance/data-governance.md)
       - [Styrningspolitik](attribution-ai/aai-data-governance/governance-policies.md)
    - [Analysera poäng med hjälp av frågetjänsten](attribution-ai/aai-query-service.md)
    - [Fel vid felsökning](attribution-ai/troubleshooting.md)
@@ -53,6 +53,6 @@ ht-degree: 20%
       - [Åtkomstkontroller](customer-ai/cai-data-governance/access-controls.md)
       - [Granskningsloggar](customer-ai/cai-data-governance/audit-logs.md)
       - [Kundhanterade nycklar](customer-ai/cai-data-governance/customer-managed-keys.md)
-      - [Datastyrning](customer-ai/cai-data-governance/data-governance.md)
+      - [Dataförvaltning](customer-ai/cai-data-governance/data-governance.md)
       - [Styrningspolitik](customer-ai/cai-data-governance/governance-policies.md)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

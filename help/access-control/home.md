@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 50d768eeb0dc8fa85af113db7790ad3e3258ea64
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '3222'
+source-wordcount: '3224'
 ht-degree: 0%
 
 ---
@@ -202,7 +202,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Data Governance] | [!UICONTROL Manage Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |
 | [!DNL Data Governance] | [!UICONTROL Manage Data Usage Policies] | Åtkomst att läsa, skapa, redigera och ta bort dataanvändningsprinciper. |
 | [!DNL Data Governance] | [!UICONTROL View Data Usage Policies] | Skrivskyddad åtkomst till dataanvändningsprinciper som tillhör din organisation. |
-| [!DNL Data Governance] | [!UICONTROL View User Activity Log] | Skrivskyddad åtkomst för att visa inspelade [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md) för plattformsaktiviteter. |
+| [!DNL Data Governance] | [!UICONTROL View User Activity Log] | Skrivskyddad åtkomst för att visa inspelade [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md) för Experience Platform-aktiviteter. |
 | [!DNL Data Governance] | [!UICONTROL View Privacy Console] | Skrivskyddad åtkomst till sekretesskonsoler. |
 | [!DNL Data Ingestion] | [!UICONTROL Manage Sources] | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
 | [!DNL Data Ingestion] | [!UICONTROL View Sources] | Skrivskyddad åtkomst till tillgängliga källor på fliken **[!UICONTROL Catalog]** och autentiserade källor på fliken **[!UICONTROL Browse]**. |
@@ -281,7 +281,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Profile Management] | [!UICONTROL Manage Profile Settings] | Åtkomst för att läsa och redigera alla profilinställningar. |
 | [!DNL Prospects] | [!UICONTROL View Prospects] | Skrivskyddad åtkomst till scheman, profiler, målgrupper och dragspelspanelen för potentiella kunder. |
 | [!DNL Prospects] | [!UICONTROL Manage Prospects] | Möjlighet att skapa och hantera scheman, profiler och målgrupper för potentiella kunder. Skrivskyddad åtkomst till den potentiella kundens dragspelspanel. |
-| [!DNL Query Service] | [!UICONTROL Manage Queries] | Åtkomst att läsa, skapa, redigera och ta bort strukturerade SQL-frågor för plattformsdata. |
+| [!DNL Query Service] | [!UICONTROL Manage Queries] | Åtkomst att läsa, skapa, redigera och ta bort strukturerade SQL-frågor för Experience Platform-data. |
 | [!DNL Query Service] | [!UICONTROL Manage Query Service Integration] | Åtkomst för att skapa, uppdatera och ta bort ej förfallande autentiseringsuppgifter för åtkomst till frågetjänsten. |
 | [!DNL Query Service] | [!UICONTROL Manage Query Sessions] | Möjlighet att avlägsna befintliga sessioner. |
 | [!DNL Query Service] | [!UICONTROL Manage Allow List] | Möjlighet att hantera IP-begränsningar för din organisation. |

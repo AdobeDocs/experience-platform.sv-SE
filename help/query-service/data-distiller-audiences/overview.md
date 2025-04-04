@@ -2,9 +2,9 @@
 title: Bygg målgrupper med SQL
 description: Lär dig hur du använder SQL-målgruppstillägget i Adobe Experience Platform Data Distiller för att skapa, hantera och publicera målgrupper med hjälp av SQL-kommandon. Den här guiden täcker alla aspekter av målgruppens livscykel, inklusive skapande, uppdatering och borttagning av profiler samt användning av datadrivna målgruppsdefinitioner för filbaserade mål.
 exl-id: c35757c1-898e-4d65-aeca-4f7113173473
-source-git-commit: c66a7cf779c1b6e55ace86916985087dfaa3363b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1483'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Använd SQL-målgruppstillägget för att bygga målgrupper med data från datas
 
 Om du använder det här SQL-tillägget förbättras möjligheten att skapa målgrupper eftersom du inte behöver rådata i dina profiler när du definierar målgruppssegment. Publiker som skapas med den här metoden registreras automatiskt på arbetsytan för målgrupper, där du kan rikta dem ytterligare mot filbaserade mål.
 
-![Infografik som visar arbetsflödet för SQL-målgruppstillägg. Stegen omfattar: skapa målgrupper med frågetjänsten med hjälp av SQL-kommandon, hantera dem i plattformsgränssnittet, för att aktivera dem i filbaserade mål.](../images/data-distiller/sql-audiences/sql-audience-extension-workflow.png)
+![Infografik som visar arbetsflödet för SQL-målgruppstillägg. Stegen omfattar: skapa målgrupper med frågetjänsten med hjälp av SQL-kommandon, hantera dem i Experience Platform-gränssnittet, för att aktivera dem i filbaserade mål.](../images/data-distiller/sql-audiences/sql-audience-extension-workflow.png)
 
 Det här dokumentet beskriver hur du använder SQL-målgruppstillägget i Adobe Experience Platform Data Distiller för att skapa, hantera och publicera målgrupper med hjälp av SQL-kommandon.
 
@@ -203,7 +203,7 @@ DROP AUDIENCE IF EXISTS aud_test;
 
 ### Automatisk registrering och tillgänglighet {#registration-and-availability}
 
-Publiker som skapas med SQL-tillägget registreras automatiskt under Data Distiller [!UICONTROL Origin] på målarbetsytan. När de väl har registrerats är dessa målgrupper tillgängliga för målgruppsanpassning på filbaserade destinationer, vilket förbättrar segmenterings- och målinriktningsstrategier. Denna process kräver ingen ytterligare konfiguration, vilket effektiviserar målgruppshanteringen. Mer information om hur du visar, hanterar och skapar målgrupper i plattformsgränssnittet finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md).
+Publiker som skapas med SQL-tillägget registreras automatiskt under Data Distiller [!UICONTROL Origin] på målarbetsytan. När de väl har registrerats är dessa målgrupper tillgängliga för målgruppsanpassning på filbaserade destinationer, vilket förbättrar segmenterings- och målinriktningsstrategier. Denna process kräver ingen ytterligare konfiguration, vilket effektiviserar målgruppshanteringen. Mer information om hur du visar, hanterar och skapar målgrupper i användargränssnittet i Experience Platform finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md).
 
 <!-- Q) Do you know how long it takes for the audience to register? This info would help manage user expectations. -->
 
@@ -289,9 +289,9 @@ Ja, Distiller målgrupper tas bort var 30:e dag eftersom de är externa målgrup
 
 När du har läst det här dokumentet har du lärt dig att använda SQL-målgruppstillägget i Data Distiller för att skapa, hantera och publicera målgrupper effektivt med hjälp av SQL-kommandon. Nu kan ni anpassa målgruppsdefinitioner baserat på era unika affärskrav och aktivera dem på olika destinationer, optimera era era marknadsföringsstrategier och datadrivna beslut.
 
-Därefter kan du läsa följande dokumentation för att vidareutveckla och optimera era era strategier för målgruppshantering för plattformar:
+Därefter kan du läsa följande dokumentation för att vidareutveckla och optimera dina Experience Platform strategier för målgruppshantering:
 
-- **Utforska målgruppsutvärdering**: Lär dig mer om [målgruppsutvärderingsmetoderna i Adobe Experience Platform](../../segmentation/home.md#evaluate-segments): direktuppspelningssegmentering för realtidsuppdateringar, batchsegmentering för schemalagd eller on demand-bearbetning samt kantsegmentering för direktutvärdering på Edge Network.
-- **Integrera med mål**: Läs guiden om hur du [exporterar filer på begäran till gruppmål](../../destinations/ui/export-file-now.md) med hjälp av användargränssnittet för plattformsmål.
+- **Utforska målgruppsutvärdering**: Lär dig mer om [målgruppsutvärderingsmetoderna i Adobe Experience Platform](../../segmentation/home.md#evaluate-segments): direktuppspelningssegmentering för realtidsuppdateringar, batchsegmentering för schemalagd bearbetning eller behovsbaserad bearbetning och kantsegmentering för direktutvärdering i Edge Network.
+- **Integrera med mål**: Läs guiden om hur du [exporterar filer på begäran till gruppmål](../../destinations/ui/export-file-now.md) med hjälp av användargränssnittet för Experience Platform-destinationer.
 - **Granska målgruppsprestanda**: Analysera hur dina SQL-definierade målgrupper fungerar i olika kanaler. Använd datainsikter för att justera och förbättra era målgruppsdefinitioner och målinriktningsstrategier. Läs dokumentet om [målgruppsinsikter](../../dashboards/insights/audiences.md) om du vill veta hur du får tillgång till och kan anpassa SQL-frågor för målgruppsinsikter i Adobe Real-Time CDP. Sedan kan ni skapa egna insikter och omvandla rådata till användbar information genom att anpassa Publikkontrollpanelen för att effektivt visualisera och använda dessa insikter för bättre beslutsfattande.
 

@@ -2,9 +2,9 @@
 title: Autentisera och få åtkomst till Reactor API
 description: Lär dig hur du kommer igång med Reaktors-API, inklusive steg för att generera nödvändiga inloggningsuppgifter.
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: 2c8ac35e9bf72c91743714da1591c3414db5c5e9
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '894'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Den här guiden beskriver hur du använder Adobe Developer Console för att saml
 
 ## Få utvecklare tillgång till Adobe Experience Platform {#gain-developer-access}
 
-Innan du kan generera autentiseringsvärden för Reactor API måste du ha utvecklaråtkomst till Experience Platform. Om du vill få utvecklaråtkomst följer du de inledande stegen i självstudiekursen [Experience Platform ](/help/landing/api-authentication.md). När du har slutfört steget [Få tillgång till användare](/help/landing/api-authentication.md#gain-user-access) går du tillbaka till den här självstudiekursen för att generera de specifika autentiseringsuppgifterna för Reactor API.
+Innan du kan generera autentiseringsvärden för Reactor API måste du ha utvecklaråtkomst till Experience Platform. Följ de inledande stegen i [Experience Platform-självstudiekursen](/help/landing/api-authentication.md) för att få utvecklaråtkomst. När du har slutfört steget [Få tillgång till användare](/help/landing/api-authentication.md#gain-user-access) går du tillbaka till den här självstudiekursen för att generera de specifika autentiseringsuppgifterna för Reactor API.
 
 ## Generera autentiseringsuppgifter {#generate-access-credentials}
 
@@ -43,15 +43,15 @@ När du har skapat ett projekt väljer du **Lägg till API** på skärmen **Proj
 
 ![](../images/api/getting-started/add-api-button.png)
 
-Skärmen **Lägg till ett API** visas. Välj **Experience Platform Launch API** i listan över tillgängliga API:er innan du väljer **Nästa**.
+Skärmen **Lägg till ett API** visas. Välj **API:t för start av Experience Platform** i listan med tillgängliga API:er innan du väljer **Nästa**.
 
 ![](../images/api/getting-started/add-launch-api.png)
 
-Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst till Experience Platform-API:t.
+Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst till Experience Platform API.
 
 >[!IMPORTANT]
 >
->Välj metoden **[!UICONTROL OAuth Server-to-Server]** eftersom det här är den enda metod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** är föråldrad. Även om integreringar med JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025 rekommenderar Adobe starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Skapa en JSON-webbtoken (JWT)](/help/landing/api-authentication.md#jwt) i självstudiekursen om autentisering av plattforms-API.
+>Välj metoden **[!UICONTROL OAuth Server-to-Server]** eftersom det här är den enda metod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** är föråldrad. Integreringar som använder JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025, men Adobe rekommenderar starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Generera en JSON-webbtoken (JWT)](/help/landing/api-authentication.md#jwt) i självstudiekursen för autentisering av Experience Platform API.
 
 Välj **Nästa** för att fortsätta.
 
@@ -69,7 +69,7 @@ Välj önskade produktprofiler i listan och välj sedan **Spara konfigurerad API
 
 ### Samla in inloggningsuppgifter {#gather-credentials}
 
-När API:t har lagts till i projektet visar **[!UICONTROL Experience Platform API]**-sidan för projektet följande autentiseringsuppgifter som krävs i alla anrop till API:er för Experience Platform:
+När API:t har lagts till i projektet visar **[!UICONTROL Experience Platform API]**-sidan för projektet följande autentiseringsuppgifter som krävs i alla anrop till Experience Platform API:er:
 
 * `{API_KEY}` ([!UICONTROL Client ID])
 * `{ORG_ID}` ([!UICONTROL Organization ID])
@@ -78,7 +78,7 @@ När API:t har lagts till i projektet visar **[!UICONTROL Experience Platform AP
 
 ### Generera en åtkomsttoken {#generate-access-token}
 
-Nästa steg är att generera en `{ACCESS_TOKEN}`-autentiseringsuppgift som kan användas i API-anrop för plattformar. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}` måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda plattforms-API:er.
+Nästa steg är att generera en `{ACCESS_TOKEN}`-autentiseringsuppgift som kan användas i Experience Platform API-anrop. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}` måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda Experience Platform API:er.
 
 >[!TIP]
 >
@@ -115,7 +115,7 @@ När du har bekräftat att dina inloggningsuppgifter fungerar kan du fortsätta 
 
 ## Läser exempel-API-anrop {#read-sample-api-calls}
 
-Varje slutpunktshandbok innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/api-guide.md#sample-api) i Komma igång-guiden för Platform API:er.
+Varje slutpunktshandbok innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/api-guide.md#sample-api) i Komma igång-guiden för Experience Platform API:er.
 
 ## Nästa steg {#next-steps}
 

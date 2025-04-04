@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hemmabas;populära ämnen;övervakningsprofiler;övervaka dataflöden;dataflöden;profil;kundprofil i realtid;
-description: Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. I den här självstudiekursen får du anvisningar om hur du kan övervaka dataflöden med profiler med hjälp av användargränssnittet i Experience Platform.
+keywords: Experience Platform;hem;populära ämnen;bildskärmsprofiler;övervaka dataflöden;dataflöden;profil;kundprofil i realtid;
+description: Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden med profiler med hjälp av Experience Platform användargränssnitt.
 title: Övervaka dataflöden för profiler i användargränssnittet
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1000'
 ht-degree: 0%
 
 ---
@@ -15,16 +15,16 @@ ht-degree: 0%
 
 Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
-Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom profilen, inklusive status för dataprofilerna. I den här självstudiekursen finns anvisningar om hur du kan använda kontrollpanelen för att övervaka dataprofiler med användargränssnittet i Experience Platform, så att du kan spåra status för profilbearbetning.
+Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom profilen, inklusive status för dataprofilerna. I den här självstudiekursen finns anvisningar om hur du kan använda kontrollpanelen för att övervaka dataprofiler med hjälp av Experience Platform användargränssnitt, så att du kan spåra status för profilbearbetning.
 
 ## Komma igång {#getting-started}
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
+- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
    - [Dataflöden körs](../../sources/notifications.md): Dataflöden är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
 - [Kundprofil i realtid](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ## Kontrollpanel för övervakningsprofiler {#profile-metrics}
 

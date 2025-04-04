@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1064'
 ht-degree: 6%
 
 ---
@@ -401,4 +401,4 @@ ht-degree: 6%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

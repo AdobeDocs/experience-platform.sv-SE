@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Marketo Engage;markering för att engagera;Marketo;mappning
+keywords: Experience Platform;home;populära topics;Marketo Engage;marketo engage;Marketo;mapping
 solution: Experience Platform
 title: Mappningsfält för Marketo Engage Source
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 3084ed50f3665c7b33863f3a1aab4236c182c503
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 
 ## Aktiviteter {#activities}
 
-[!DNL Marketo]-källan har nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med det [automatiska schemagenereringsverktyget](../marketo/marketo-namespaces.md) eftersom mappningsmallarna misslyckas om du skapar ett nytt `activities`-dataflöde utan att uppdatera schemat eftersom de nya målfälten inte finns i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att kapslas in i Platform.
+[!DNL Marketo]-källan har nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med det [automatiska schemagenereringsverktyget](../marketo/marketo-namespaces.md) eftersom mappningsmallarna misslyckas om du skapar ett nytt `activities`-dataflöde utan att uppdatera schemat eftersom de nya målfälten inte finns i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att hämtas till Experience Platform.
 
 Läs dokumentationen om [XDM Experience Event-klassen](../../../../xdm/classes/experienceevent.md) om du vill ha mer information om XDM-klassen och XDM-fältgrupper.
 
 >[!NOTE]
 >
->Källfältet `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` är ett beräkningsfält som måste läggas till med alternativet **[!UICONTROL Add calculated field]** i användargränssnittet för Experience Platform. Läs självstudiekursen om att [lägga till beräknade fält](../../../../data-prep/ui/mapping.md#calculated-fields) om du vill ha mer information.
+>Källfältet `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` är ett beräkningsfält som måste läggas till med alternativet **[!UICONTROL Add calculated field]** i Experience Platform-gränssnittet. Läs självstudiekursen om att [lägga till beräknade fält](../../../../data-prep/ui/mapping.md#calculated-fields) om du vill ha mer information.
 
 | Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |

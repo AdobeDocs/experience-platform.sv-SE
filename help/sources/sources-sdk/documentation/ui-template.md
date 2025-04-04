@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Självbetjäningsdokumentationsmall för användargränssnittet
 description: Lär dig hur du skapar en källanslutning till YOURSOURCE med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 6471c0a2-22e8-4133-a76f-ee3c5c669ef8
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '706'
+source-wordcount: '711'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 *Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Please ignore all instances of UICONTROL on this page. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat den.*
 
-I den här självstudiekursen beskrivs hur du skapar en *YOURCE*-källkoppling med hjälp av användargränssnittet för plattformen.
+I den här självstudien beskrivs hur du skapar en *YOURSOURCE* -källkoppling med Experience Platform-användargränssnittet.
 
 ## Översikt
 
@@ -37,7 +37,7 @@ I den här självstudiekursen beskrivs hur du skapar en *YOURCE*-källkoppling m
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta *YOURSOURCE* till plattformen måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta *YOURSOURCE* till Experience Platform måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -49,7 +49,7 @@ Mer information om de här autentiseringsuppgifterna finns i *YOURSOURCE* -auten
 
 ## Anslut ditt *DITT*-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -57,7 +57,7 @@ Under kategorin *KATEGORI* FÖR DIN KÄLLA *KÄLLA* väljer du **[!UICONTROL Add
 
 >[!TIP]
 >
->Skärmbilderna som används nedan är exempel. När du skapar din dokumentation ska du ersätta bilderna med skärmbilder av den faktiska källan. Du kan använda samma markeringsmönster och -färg, liksom samma filnamn. Kontrollera att skärmbilden fångar hela skärmen i användargränssnittet för plattformen. Mer information om hur du överför skärmbilder finns i guiden om att [skicka din dokumentation för granskning](./github.md).
+>Skärmbilderna som används nedan är exempel. När du skapar din dokumentation ska du ersätta bilderna med skärmbilder av den faktiska källan. Du kan använda samma markeringsmönster och -färg, liksom samma filnamn. Se till att skärmbilden fångar hela Experience Platform användargränssnittsskärm. Mer information om hur du överför skärmbilder finns i guiden om att [skicka din dokumentation för granskning](./github.md).
 
 ![katalog](../assets/ui/catalog.png)
 
@@ -79,7 +79,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 
 *Arbetsflöden för de återstående stegen för att skapa ett dataflöde är modulariserade. Om det finns några specifika utlysningar som du vill göra gällande din källa kan du läsa avsnittet med ytterligare resurser nedan.*
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt *YOURCE*-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt *YOURCE*-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
 
 ## Ytterligare resurser
 

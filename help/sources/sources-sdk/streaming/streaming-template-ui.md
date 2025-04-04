@@ -1,11 +1,11 @@
 ---
-title: Självbetjäningsmall för direktuppspelning av SDK-gränssnitt
+title: Självbetjäningsmall för direktuppspelning av SDK UI
 description: Lär dig hur du hämtar strömmande data från en källa till Adobe Experience Platform med användargränssnittet.
 exl-id: 82254be0-fa31-4114-a0ec-179a990e0904
 badge: Beta
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1158'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 *Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Please ignore all instances of UICONTROL on this page. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat den.*
 
-I den här självstudiekursen beskrivs hur du skapar en *YOURCE*-källkoppling med hjälp av användargränssnittet för plattformen.
+I den här självstudien beskrivs hur du skapar en *YOURSOURCE* -källkoppling med Experience Platform-användargränssnittet.
 
 ## Översikt
 
@@ -37,7 +37,7 @@ I den här självstudiekursen beskrivs hur du skapar en *YOURCE*-källkoppling m
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta *YOURSOURCE* till plattformen måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta *YOURSOURCE* till Experience Platform måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -49,11 +49,11 @@ Mer information om de här autentiseringsuppgifterna finns i *YOURSOURCE* -auten
 
 ### Integrera *DIN KÄLLA* med din webkrok
 
-*SDK för direktuppspelning kräver att din källa har stöd för webhooks för att kunna kommunicera med Experience Platform. I det här avsnittet måste du ange de steg som användarna måste följa för att kunna integrera YOURSOURCE med en webkrok.*
+*Direktuppspelning av SDK kräver att din källa har stöd för webbböcker för att kunna kommunicera med Experience Platform. I det här avsnittet måste du ange de steg som användarna måste följa för att kunna integrera YOURSOURCE med en webkrok.*
 
 ## Anslut ditt *DITT*-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -61,13 +61,13 @@ Under kategorin **Direktuppspelning** väljer du *DIN KÄLLA* och sedan **[!UICO
 
 >[!TIP]
 >
->Skärmbilderna som används nedan är exempel. När du skapar din dokumentation ska du ersätta bilderna med skärmbilder av den faktiska källan. Du kan använda samma markeringsmönster och -färg, liksom samma filnamn. Kontrollera att skärmbilden fångar hela skärmen i användargränssnittet för plattformen. Mer information om hur du överför skärmbilder finns i guiden om att [skicka din dokumentation för granskning](../documentation/github.md).
+>Skärmbilderna som används nedan är exempel. När du skapar din dokumentation ska du ersätta bilderna med skärmbilder av den faktiska källan. Du kan använda samma markeringsmönster och -färg, liksom samma filnamn. Se till att skärmbilden fångar hela Experience Platform användargränssnittsskärm. Mer information om hur du överför skärmbilder finns i guiden om att [skicka din dokumentation för granskning](../documentation/github.md).
 
-![Katalogen för Experience Platform-källor](../assets/streaming/catalog.png)
+![Källkatalogen i Experience Platform](../assets/streaming/catalog.png)
 
 ## Markera data
 
-**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till plattformen.
+**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till Experience Platform.
 
 * Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.
@@ -94,7 +94,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -113,7 +113,7 @@ När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** och till
 
 ## Hämta din URL för direktuppspelningsslutpunkt
 
-När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform.
+När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten kommer att användas för att prenumerera på din webkrok så att strömningskällan kan kommunicera med Experience Platform.
 
 Om du vill hämta strömningsslutpunkten går du till sidan [!UICONTROL Dataflow activity] i det dataflöde som du just skapade och kopierar slutpunkten längst ned på panelen [!UICONTROL Properties].
 
@@ -123,7 +123,7 @@ Om du vill hämta strömningsslutpunkten går du till sidan [!UICONTROL Dataflow
 
 *Arbetsflöden för de återstående stegen för att skapa ett dataflöde är modulariserade. Om det finns några specifika utlysningar som du vill göra gällande din källa kan du läsa avsnittet med ytterligare resurser nedan.*
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt *YOURCE*-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt *YOURCE*-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
 
 ## Ytterligare resurser
 

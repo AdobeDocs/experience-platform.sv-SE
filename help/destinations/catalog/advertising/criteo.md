@@ -1,12 +1,12 @@
 ---
 keywords: Reklam; villkor.
 title: Kriterieanslutning
-description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons, vid rätt tidpunkt.
+description: Criteo ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personanpassade för att nå kunder med rätt annons, vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: e594e473ac78663203c9254623fe8e324985fa39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '998'
-ht-degree: 1%
+source-wordcount: '999'
+ht-degree: 10%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 1%
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av Criteo. Om du har frågor eller uppdateringsfrågor kontaktar du Villkor direkt [här](mailto:criteoTechnicalPartnerships@criteo.com).
 
-Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons, vid rätt tidpunkt.
+Criteo ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personanpassade för att nå kunder med rätt annons, vid rätt tidpunkt.
 
 ## Förhandskrav {#prerequisites}
 
@@ -39,7 +39,7 @@ Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs 
 
 | Målidentitet | Beskrivning | Överväganden |
 | --- | --- | --- |
-| `email_sha256` | E-postadresser som hashas med SHA-256-algoritmen | Både oformaterad text och SHA-256-hashed-e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut ska du markera alternativet [!UICONTROL Apply transformation] så att Platform automatiskt hash-kodar data vid aktiveringen. |
+| `email_sha256` | E-postadresser som hashas med SHA-256-algoritmen | Både oformaterad text och SHA-256-hashed-e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut ska du markera alternativet [!UICONTROL Apply transformation] så att Experience Platform automatiskt hash-kodar data vid aktiveringen. |
 | `gum_id` | Identifierare för cookie-filen [!DNL GUM] | [!DNL GUM IDs] tillåter klienter att upprätthålla en korrespondens mellan användaridentifieringssystemet och Criteos användaridentifiering ([!DNL UID]). Om identifierartypen är `gum_id` måste även ytterligare en parameter, [!DNL GUM Caller ID], tas med. Kontakta ditt kundkontoteam för att få information om rätt [!DNL GUM Caller ID] eller om du vill ha mer information om den här [!DNL GUM ID]-synkroniseringen, om det behövs. |
 
 ## Exportera typ och frekvens {#export-type-frequency}

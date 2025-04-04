@@ -2,10 +2,10 @@
 title: Edge Extension Flow
 description: Lär dig hur komponenterna i ett kanttillägg i Adobe Experience Platform interagerar med varandra vid körning.
 exl-id: 99058e22-3e14-4ec6-858e-bb1c1fafdb7c
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '277'
-ht-degree: 0%
+source-wordcount: '280'
+ht-degree: 16%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 I edge-tillägg har varje villkor, åtgärd och dataelementtyp både en vy som gör att användare kan ändra inställningar och en biblioteksmodul kan agera utifrån de användardefinierade inställningarna.
 
-Som framgår av följande högnivådiagram visas tilläggets åtgärdstypvy inuti en iframe i programmet som är integrerat med Adobe Experience Platform. Vyn används sedan för att ändra inställningar som sedan sparas inom plattformen. När taggens körtidsbibliotek skapas inkluderas både tilläggets åtgärdstypbiblioteksmodul och de användardefinierade inställningarna i körningsbiblioteket som distribueras till edge-noden. Användardefinierade inställningar från Platform matas in i biblioteksmodulen vid körning.
+Som framgår av följande högnivådiagram visas tilläggets åtgärdstypvy inuti en iframe i programmet som är integrerat med Adobe Experience Platform. Vyn används sedan för att ändra inställningar som sedan sparas i Experience Platform. När taggens körtidsbibliotek skapas inkluderas både tilläggets åtgärdstypbiblioteksmodul och de användardefinierade inställningarna i körningsbiblioteket som distribueras till edge-noden. Användardefinierade inställningar från Experience Platform injiceras i biblioteksmodulen vid körning.
 
 ![tilläggsflödesdiagram](../images/flow/edge/event-processing-flow.png)
 
@@ -29,6 +29,6 @@ Regelbearbetningsflödet innehåller följande faser:
 
 1. Metoden `settings` och `trigger` tillhandahålls till händelsebiblioteksmodulen vid start.
 1. När händelsebiblioteksmodulen fastställer att händelsen har inträffat anropar händelsbiblioteket `trigger`.
-1. Plattformen skickar `settings` till regelns biblioteksmoduler av typen condition där villkoren sedan utvärderas.
+1. Experience Platform skickar `settings` till regelns biblioteksmoduler av typen condition där villkoren sedan utvärderas.
 1. Varje villkorstyp returnerar om ett villkor utvärderas till true.
 1. Om alla villkor godkänns körs regelns åtgärder.

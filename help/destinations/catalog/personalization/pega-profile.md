@@ -3,9 +3,9 @@ title: Pega Profile Connector
 description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofil-Designer för att importera profildata regelbundet från Amazon S3-lagring.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1085'
 ht-degree: 0%
 
 ---
@@ -39,8 +39,8 @@ En marknadsförare vill ha aktuella profildata från Adobe Experience Platform i
 Innan du kan använda det här målet för att exportera data från Adobe Experience Platform och importera profiler till [!DNL Pega Customer Decision Hub] måste du uppfylla följande krav:
 
 * Konfigurera [!DNL Amazon S3]-bucket och mappsökvägen som ska användas för export och import av datafiler.
-* Konfigurera åtkomstnyckeln [!DNL Amazon S3] och den hemliga nyckeln [!DNL Amazon S3]: Generera ett `access key - secret access key`-par i [!DNL Amazon S3] för att ge plattformsåtkomst till ditt [!DNL Amazon S3]-konto.
-* Om du vill ansluta och exportera data till din [!DNL Amazon S3]-lagringsplats skapar du en IAM-användare (Identity and Access Management) för [!DNL Platform] i [!DNL Amazon S3] och tilldelar behörigheter som `s3:DeleteObject`, `s3:GetBucketLocation`, `s3:GetObject`, `s3:ListBucket`, `s3:PutObject`, `s3:ListMultipartUploadParts`
+* Konfigurera åtkomstnyckeln [!DNL Amazon S3] och den hemliga nyckeln [!DNL Amazon S3]: Generera ett `access key - secret access key`-par i [!DNL Amazon S3] för att ge Experience Platform åtkomst till ditt [!DNL Amazon S3]-konto.
+* Om du vill ansluta och exportera data till din [!DNL Amazon S3]-lagringsplats skapar du en IAM-användare (Identity and Access Management) för [!DNL Experience Platform] i [!DNL Amazon S3] och tilldelar behörigheter som `s3:DeleteObject`, `s3:GetBucketLocation`, `s3:GetObject`, `s3:ListBucket`, `s3:PutObject`, `s3:ListMultipartUploadParts`
 * Kontrollera att din [!DNL Pega Customer Decision Hub]-instans har uppgraderats till version 8.8 eller senare.
 
 ## Identiteter som stöds {#supported-identities}
@@ -117,10 +117,10 @@ I steget **[!UICONTROL Mapping]** kan du välja vilka attribut- och identitetsf�
 
 ## Validera dataexport {#exported-data}
 
-För [!DNL Pega Profile Connector] mål skapar [!DNL Platform] en `.csv`-fil på den Amazon S3-lagringsplats som du har angett. Mer information om filerna finns i [Aktivera målgruppsdata till exportmål för gruppprofiler](../../ui/activate-batch-profile-destinations.md) i självstudiekursen om målgruppsaktivering.
+För [!DNL Pega Profile Connector] mål skapar [!DNL Experience Platform] en `.csv`-fil på den Amazon S3-lagringsplats som du har angett. Mer information om filerna finns i [Aktivera målgruppsdata till exportmål för gruppprofiler](../../ui/activate-batch-profile-destinations.md) i självstudiekursen om målgruppsaktivering.
 
 En import av profildata från S3 infogar data i [!DNL Pega Customer]-profildatalagret. Importerade kundprofildata kan valideras i [!DNL Pega Customer Profile Designer], vilket visas i följande bild.
-![Bild av gränssnittsskärmen där du kan validera Adobe profildata i Designer för kundprofil](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)
+![Bild av gränssnittsskärmen där du kan validera Adobe-profildata i Designer för kundprofil](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)
 
 I [!DNL Pega Customer Decision Hub] kan dataadministratörer konfigurera datajobb i [!DNL Customer Profile Designer] så att profildata importeras periodiskt från S3 enligt följande bild. Mer information om hur du konfigurerar datajobb att importera profildata från [!DNL Amazon S3] finns i [ytterligare resurser](#additional-resources).
 ![Bild av gränssnittsskärmen för att konfigurera datajobb i kundprofilen Designer](../../assets/catalog/personalization/pega-profile/pega-profile-screen-image1.png)

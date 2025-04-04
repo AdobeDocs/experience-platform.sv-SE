@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
+keywords: Experience Platform;hem;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;funktion;region
 solution: Experience Platform
 title: Översikt över Adobe Experience Platform
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: ca38a2d72681e4a69304cc765ab6b95d3527d336
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '432'
 ht-degree: 1%
 
 ---
@@ -28,13 +28,13 @@ Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet 
 
 ## Dokumentation för [!DNL Experience Platform]
 
-[!DNL Experience Platform]-dokumentation tillhandahålls i flera format för en rad olika funktioner och program. Mer information om vilka typer av dokumentation som är tillgängliga finns i [översikten över plattformsdokumentation](documentation/overview.md).
+[!DNL Experience Platform]-dokumentation tillhandahålls i flera format för en rad olika funktioner och program. Mer information om vilka typer av dokumentation som är tillgängliga finns i [Experience Platform dokumentationsöversikt](documentation/overview.md).
 
-Om du vill lära dig mer om en viss [!DNL Platform]-tjänst går du tillbaka till [dokumentationslandningssidan](https://experienceleague.adobe.com/docs/experience-platform.html) och väljer lämplig guide.
+Om du vill lära dig mer om en viss [!DNL Experience Platform]-tjänst går du tillbaka till [dokumentationslandningssidan](https://experienceleague.adobe.com/docs/experience-platform.html) och väljer lämplig guide.
 
 ### Dokumentation för program som bygger på [!DNL Experience Platform]
 
-Adobe har byggt flera applikationer ovanpå Experience Platform. Dokumentation till dessa program finns i deras egna handböcker, som är länkade nedan:
+Adobe har byggt flera program på Experience Platform. Dokumentation till dessa program finns i deras egna handböcker, som är länkade nedan:
 
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](../rtcdp/overview.md)
 * [[!DNL Real-Time Customer Data Platform (Real-Time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
@@ -49,14 +49,14 @@ I videon nedan beskrivs användningsexemplen för varje program som är byggt p�
 
 ## Självstudiekurser om [!DNL Experience Platform]
 
-Du kan komma igång med [!DNL Platform] snabbt och enkelt genom att följa med stegvisa självstudiekurser som täcker allt från att förbereda dina data för konsumtion till avancerade algoritmer för maskininlärning. De här självstudiekurserna har utformats för att komplettera informationen som finns i [!DNL Experience Platform]-dokumentationen, så du får bäst resultat om du sparar dokumentationen när du slutför självstudiekurserna.
+Du kan komma igång med [!DNL Experience Platform] snabbt och enkelt genom att följa med stegvisa självstudiekurser som täcker allt från att förbereda dina data för konsumtion till avancerade algoritmer för maskininlärning. De här självstudiekurserna har utformats för att komplettera informationen som finns i [!DNL Experience Platform]-dokumentationen, så du får bäst resultat om du sparar dokumentationen när du slutför självstudiekurserna.
 
-Gå till [landningssidan för självstudiekurser](https://www.adobe.com/go/platform-tutorials-home-en) för Experience Platform för att komma igång.
+Gå till landningssidan för [Experience Platform-självstudiekurser](https://www.adobe.com/go/platform-tutorials-home-en) för att komma igång.
 
 ## Referensdokument och resurser
 
 * [**Grundläggande om API**](api-fundamentals.md)\
-  Lär dig grunderna i att arbeta med [!DNL Platform] API:er.
+  Lär dig grunderna i att arbeta med [!DNL Experience Platform] API:er.
 
 * [**API-referensdokument**](https://www.adobe.com/go/platform-api-reference-en)\
   Identifiera [!DNL Experience Platform] API:er, inklusive rubriker, parametrar, exempelbegäranden och svar.<br/>*Dessa dokument lagras på Adobe I/O.*

@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3045'
+source-wordcount: '3048'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations aktiva mål, som den tagits under en ögonblicksbild. I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för mål i användargränssnittet, och den innehåller mer information om mätvärdena som visas på kontrollpanelen.
 
-En översikt över destinationer och en katalog över alla tillgängliga destinationer i Experience Platform finns i [måldokumentationen](../../destinations/home.md).
+En översikt över destinationer och en katalog över alla tillgängliga destinationer inom Experience Platform finns i [måldokumentationen](../../destinations/home.md).
 
 ## [!UICONTROL Destinations] instrumentpanelsdata {#destinations-dashboard-data}
 
-På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer som din organisation har aktiverat i Experience Platform. Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för destinationer uppdateras inte i realtid.
+På kontrollpanelen Destinationer visas en ögonblicksbild av de mål som din organisation har aktiverat i Experience Platform. Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för destinationer uppdateras inte i realtid.
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer s
 
 ## Utforska instrumentpanelen [!UICONTROL Destinations] {#explore}
 
-Om du vill navigera till målkontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Destinations]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
+Om du vill navigera till målkontrollpanelen i Experience Platform-gränssnittet väljer du **[!UICONTROL Destinations]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
 Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL Overview] bredvid mållistrutan. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. Den finns inte i tidszonen för den enskilda användaren eller organisationen.
 
@@ -35,7 +35,7 @@ Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL 
 >
 >Om din organisation är ny för Experience Platform och ännu inte har aktiva mål visas inte kontrollpanelen Destinationer och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [!UICONTROL Catalog]. Mer information om fliken [!UICONTROL Catalog] finns i handboken om [[!UICONTROL Destinations]-arbetsytan ](../../destinations/ui/destinations-workspace.md).
 
-![Plattformsgränssnittets målöversikt med den senaste ögonblicksbilden markerad.](../images/destinations/snapshot-timestamp.png)
+![Översikt över destinationer för Experience Platform-gränssnittet med den senaste ögonblicksbilden markerad.](../images/destinations/snapshot-timestamp.png)
 
 ### Ändra kontrollpanelen [!UICONTROL Destinations] {#modify}
 
@@ -53,7 +53,7 @@ I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade wi
 
 ### Visa SQL {#view-sql}
 
-Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på arbetsytan för [!UICONTROL Overview]. Ni kan få inspiration från SQL:s av era befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. Mer information om den här funktionen finns i [Visa gränssnittshandboken för SQL](../view-sql.md).
+Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på arbetsytan för [!UICONTROL Overview]. Ni kan hämta inspiration från SQL:s befintliga insikter för att skapa nya frågor som bygger på unika insikter från Experience Platform-data utifrån era affärsbehov. Mer information om den här funktionen finns i [Visa gränssnittshandboken för SQL](../view-sql.md).
 
 ## Standardwidgetar {#default-widgets}
 

@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;samtycke;samtycke;inställningar;Inställningar;sekretessOptOuts;marketingPreferences;optOutType;baseOfProcessing;medgivande;medgivande
+keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;medgivande;samtycke;inställningar;Inställningar;sekretessOptOuts;marketingPreferences;optOutType;baseOfProcessing;medgivande;medgivande
 title: Datatypen Innehåll och inställningar
 description: Datatypen Godkänn för sekretess, Personalization och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 7a2b6c1033ad9e78b049857b9b4e6fc3708ed36c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2289'
+source-wordcount: '2291'
 ht-degree: 0%
 
 ---
@@ -38,13 +38,13 @@ En preferens är ett alternativ som gör det möjligt för kunden att specificer
 * **Personalization-inställningar**: Inställningar för hur varumärket ska personalisera upplevelser som levereras till en kund.
 * **Marknadsföringsinställningar**: Inställningar för om ett varumärke får kontakta en kund via olika kanaler eller inte.
 
-I följande skärmbild visas hur strukturen för datatypen visas i användargränssnittet för plattformen:
+I följande skärmbild visas hur datatypens struktur visas i användargränssnittet i Experience Platform:
 
 ![](../images/data-types/consents.png)
 
 >[!TIP]
 >
->I guiden om [att utforska XDM-resurser](../ui/explore.md) finns anvisningar om hur du söker efter en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
+>I guiden om [att utforska XDM-resurser](../ui/explore.md) finns anvisningar om hur du söker efter en XDM-resurs och inspekterar dess struktur i Experience Platform användargränssnitt.
 
 I följande JSON visas ett exempel på vilken typ av data som datatypen [!UICONTROL Consents and Preferences] kan bearbeta. Information om hur dessa fält används finns i de avsnitt som följer.
 
@@ -86,7 +86,7 @@ I följande JSON visas ett exempel på vilken typ av data som datatypen [!UICONT
 
 >[!TIP]
 >
->Du kan generera JSON-exempeldata för alla XDM-scheman som du definierar i Experience Platform för att visualisera hur kundens samtycke och inställningsdata ska mappas. Mer information finns i följande dokumentation:
+>Du kan generera exempel på JSON-data för alla XDM-scheman som du definierar i Experience Platform för att visualisera hur kundens samtycke och inställningsdata ska mappas. Mer information finns i följande dokumentation:
 >
 >* [Generera exempeldata i användargränssnittet](../ui/sample.md)
 >* [Generera exempeldata i API](../api/sample-data.md)

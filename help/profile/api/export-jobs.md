@@ -5,7 +5,7 @@ type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 role: Developer
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: fd5042bee9b09182ac643bcc69482a0a2b3f8faa
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1512'
 ht-degree: 0%
@@ -38,7 +38,7 @@ När du exporterar [!DNL Profile] data måste du först skapa en måldatauppsät
 
 Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). För att kunna exportera profildata måste datauppsättningen baseras på [!DNL XDM Individual Profile]-unionsschemat (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass. I det här fallet är det klassen [!DNL XDM Individual Profile]. Mer information om unionsvyscheman finns i avsnittet [union i grunderna för schemakompositionsguiden](../../xdm/schema/composition.md#union).
 
-Stegen som följer i den här självstudien visar hur du skapar en datauppsättning som refererar till unionsschemat [!DNL XDM Individual Profile] med API:t [!DNL Catalog]. Du kan också använda användargränssnittet [!DNL Platform] för att skapa en datauppsättning som refererar till unionsschemat. Steg för att använda användargränssnittet beskrivs i [den här självstudiekursen för användargränssnitt för att exportera målgrupper](../../segmentation/tutorials/create-dataset-export-segment.md), men kan även användas här. När du är klar kan du gå tillbaka till den här självstudiekursen och fortsätta med stegen för [att starta ett nytt exportjobb](#initiate).
+Stegen som följer i den här självstudien visar hur du skapar en datauppsättning som refererar till unionsschemat [!DNL XDM Individual Profile] med API:t [!DNL Catalog]. Du kan också använda användargränssnittet [!DNL Experience Platform] för att skapa en datauppsättning som refererar till unionsschemat. Steg för att använda användargränssnittet beskrivs i [den här självstudiekursen för användargränssnitt för att exportera målgrupper](../../segmentation/tutorials/create-dataset-export-segment.md), men kan även användas här. När du är klar kan du gå tillbaka till den här självstudiekursen och fortsätta med stegen för [att starta ett nytt exportjobb](#initiate).
 
 Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för [att starta ett nytt exportjobb](#initiate).
 
@@ -85,7 +85,7 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Initiera exportjobb {#initiate}
 
-När du har en unionskonstanterad datauppsättning kan du skapa ett exportjobb som behåller profildata till datauppsättningen genom att göra en POST till `/export/jobs`-slutpunkten i Real-Time Customer Profile API och tillhandahålla information om de data som du vill exportera i huvuddelen av begäran.
+När du har en unionskonstanterad datauppsättning kan du skapa ett exportjobb som behåller profildata till datauppsättningen genom att göra en POST-begäran till `/export/jobs`-slutpunkten i Real-Time Customer Profile API och tillhandahålla information om de data du vill exportera i huvuddelen av begäran.
 
 **API-format**
 
@@ -179,7 +179,7 @@ Ett lyckat svar returnerar en datauppsättning ifylld med profildata som anges i
 
 ## Visa alla exportjobb
 
-Du kan returnera en lista över alla exportjobb för en viss organisation genom att utföra en GET-förfrågan till slutpunkten `export/jobs`. Begäran stöder också frågeparametrarna `limit` och `offset`, vilket visas nedan.
+Du kan returnera en lista över alla exportjobb för en viss organisation genom att utföra en GET-begäran till slutpunkten `export/jobs`. Begäran stöder också frågeparametrarna `limit` och `offset`, vilket visas nedan.
 
 **API-format**
 
@@ -324,7 +324,7 @@ Svaret innehåller ett `records`-objekt som innehåller de exportjobb som har sk
 
 ## Övervaka exportförlopp
 
-Om du vill visa information om ett specifikt exportjobb, eller övervaka statusen när det bearbetas, kan du göra en GET-förfrågan till slutpunkten `/export/jobs` och inkludera `id` för exportjobbet i sökvägen. Exportjobbet slutförs när fältet `status` returnerar värdet &quot;SUCCEEDED&quot;.
+Om du vill visa information om ett specifikt exportjobb, eller övervaka statusen när det bearbetas, kan du göra en GET-begäran till slutpunkten `/export/jobs` och inkludera `id` för exportjobbet i sökvägen. Exportjobbet slutförs när fältet `status` returnerar värdet &quot;SUCCEEDED&quot;.
 
 **API-format**
 
@@ -400,7 +400,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/24115 \
 
 ## Avbryt ett exportjobb
 
-Med Experience Platform kan du avbryta ett befintligt exportjobb, vilket kan vara användbart av flera skäl, bland annat om exportjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill avbryta ett exportjobb kan du utföra en DELETE-begäran till slutpunkten `/export/jobs` och inkludera `id` för det exportjobb som du vill avbryta till sökvägen för begäran.
+Med Experience Platform kan du avbryta ett befintligt exportjobb, vilket kan vara användbart av flera anledningar, bland annat om exportjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill avbryta ett exportjobb kan du utföra en DELETE-begäran till slutpunkten `/export/jobs` och inkludera `id` för det exportjobb som du vill avbryta till sökvägen för begäran.
 
 **API-format**
 

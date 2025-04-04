@@ -3,7 +3,7 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '843'
 ht-degree: 0%
@@ -24,7 +24,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 | ---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -44,7 +44,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall i tillåtelselista.
 
-Se [IP-adressen tillåtelselista för SFTP-mål](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser i Adobe i tillåtelselista.
+Se [IP-adressen tillåtelselista för SFTP-mål](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till Adobe IP-adresser i tillåtelselista.
 
 ## Anslut till målet {#connect}
 
@@ -74,8 +74,8 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 * Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under avsnittet **[!UICONTROL Key]**. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 * **[!UICONTROL Name]**: Välj ett relevant namn för målet.
 * **[!UICONTROL Description]**: Ange en beskrivning för målet.
-* **[!UICONTROL Bucket Name]**: *För S3-anslutningar*. Ange platsen för din S3-bucket där [!DNL Platform] ska placera dina exportdata som CSV-filer.
-* **[!UICONTROL Folder Path]**: Ange sökvägen på lagringsplatsen där [!DNL Platform] ska placera dina exportdata som CSV-filer.
+* **[!UICONTROL Bucket Name]**: *För S3-anslutningar*. Ange platsen för din S3-bucket där [!DNL Experience Platform] ska placera dina exportdata som CSV-filer.
+* **[!UICONTROL Folder Path]**: Ange sökvägen på lagringsplatsen där [!DNL Experience Platform] ska placera dina exportdata som CSV-filer.
 * **[!UICONTROL Container]**: *För blobanslutningar*. Behållaren som innehåller blobben som mappsökvägen finns i.
 * **[!UICONTROL File Format]**: Välj **CSV** om du vill exportera CSV-filer till lagringsplatsen.
 
@@ -101,7 +101,7 @@ När du aktiverar målgrupper till det här målet rekommenderar Adobe att du v�
 
 ## Exporterade data {#exported-data}
 
-För [!DNL Adobe Campaign] mål skapar [!DNL Platform] en `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Verifiera målgruppsaktivering](../../ui/activate-batch-profile-destinations.md#verify) i självstudiekursen om målgruppsaktivering.
+För [!DNL Adobe Campaign] mål skapar [!DNL Experience Platform] en `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Verifiera målgruppsaktivering](../../ui/activate-batch-profile-destinations.md#verify) i självstudiekursen om målgruppsaktivering.
 
 ## Konfigurera dataimport till Adobe Campaign {#import-data-into-campaign}
 
@@ -111,6 +111,6 @@ För [!DNL Adobe Campaign] mål skapar [!DNL Platform] en `.csv`-fil på den ang
 >* Du måste schemalägga, importera och mappa dina exporterade segment i Adobe Campaign med [!DNL Campaign] arbetsflöden. Se [Konfigurera en återkommande import](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html) i Adobe Campaign Classic-dokumentationen och [Om datahanteringsaktiviteter](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html) i Adobe Campaign Standard-dokumentationen.
 >* Den metod som rekommenderas för att skicka data till Adobe Campaign är via [!DNL Amazon S3] eller [!DNL Azure Blob].
 
-När du har anslutit [!DNL Platform] till ditt [!DNL Amazon S3]- eller [!DNL Azure Blob]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till Adobe Campaign. Mer information om hur du gör detta finns i följande Adobe Campaign-dokumentationssidor:
+När du har anslutit [!DNL Experience Platform] till ditt [!DNL Amazon S3]- eller [!DNL Azure Blob]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till Adobe Campaign. Mer information om hur du gör detta finns i följande Adobe Campaign-dokumentationssidor:
 * [Kom igång med import och export av data](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html) och [Inläsning av data (fil)](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html) i Adobe Campaign Classic-dokumentationen.
 * [Kom igång med processer och datahantering](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html) och [Läs in fil](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html) i Adobe Campaign Standard-dokumentationen.

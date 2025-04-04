@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;Sökare;sökare;ansluta till frågetjänst;
+keywords: Experience Platform;home;populära topics;Query service;query service;Looker;looker;connect to query service;
 solution: Experience Platform
 title: Anslut sökare till frågetjänst
 description: Det här dokumentet går igenom stegen för att ansluta Looker till Adobe Experience Platform Query Service.
 exl-id: 806e9077-533a-4546-b5ca-8124751957f5
-source-git-commit: b059a0191fbf2c3e5d2dfceb9802e2aaa429f7ed
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '404'
 ht-degree: 0%
 
 ---
@@ -32,9 +32,9 @@ Här anger du information om de anslutningsinställningar som anges nedan. I den
 - **[!DNL Username and Password]:** De inloggningsuppgifter som ska användas. Användarnamnet kommer att ha formatet `ORG_ID@AdobeOrg`.
 - **SSL**: Aktivera SSL för att säkerställa en säker anslutning över nätverket.
 
-Om du vill hitta de autentiseringsuppgifter som krävs för att ansluta Looker med Query Service loggar du in på plattformsgränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar autentiseringsuppgifterna **host**, **port**, **database**, **username** och **password** finns i handboken för [autentiseringsuppgifter](../ui/credentials.md).
+Om du vill hitta de autentiseringsuppgifter som krävs för att ansluta Looker med Query Service loggar du in på Experience Platform-gränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar autentiseringsuppgifterna **host**, **port**, **database**, **username** och **password** finns i handboken för [autentiseringsuppgifter](../ui/credentials.md).
 
-![Sidan Autentiseringsuppgifter på arbetsytan för Experience Platform-frågor med autentiseringsuppgifter och Utgående autentiseringsuppgifter markerade.](../images/clients/looker/query-service-credentials-page.png)
+![Sidan Autentiseringsuppgifter på arbetsytan Experience Platform Queries med Autentiseringsuppgifter och Utgångsuppgifter markerade.](../images/clients/looker/query-service-credentials-page.png)
 
 >[!IMPORTANT]
 >

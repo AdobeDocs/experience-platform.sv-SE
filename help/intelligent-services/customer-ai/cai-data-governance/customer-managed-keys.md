@@ -3,9 +3,9 @@ keywords: insikter;kundinformation;kundinsikter;AAI-frågetjänst;kundinformatio
 title: Kundhanterade nycklar i kundens AI.
 description: Lär dig hur du ställer in kundhanterade nycklar för kundens AI.
 exl-id: 12746c5c-094a-4d49-8d3a-7641fe0ec02a
-source-git-commit: 1a7babf104b2146bad4a336b9e0abd5a32c88999
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '163'
+source-wordcount: '164'
 ht-degree: 0%
 
 ---
@@ -20,4 +20,4 @@ Du kan läsa dokumentationen om [Kundhanterade nycklar i Adobe Experience Platfo
 >
 >[!DNL Customer Managed Keys] är för närvarande bara tillgängligt för organisationer som har köpt tilläggserbjudandet [!DNL Healthcare Shield or Privacy & Security Shield].
 
-Alla data som används av Platform krypteras under överföring och i vila för att skydda data, med eller utan CMK. Mer information om Adobe Experience Platform-kryptering finns i dokumentationen om [datakryptering](../../../landing/governance-privacy-security/encryption.md).
+Alla data som används av Experience Platform krypteras under överföring och i vila för att skydda dina data, med eller utan CMK. Mer information om Adobe Experience Platform-kryptering finns i dokumentationen om [datakryptering](../../../landing/governance-privacy-security/encryption.md).

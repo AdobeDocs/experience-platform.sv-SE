@@ -1,11 +1,11 @@
 ---
-title: Anslut ditt RainFocus-konto till Experience Platform med hjälp av användargränssnittet
-description: Lär dig hur du ansluter ditt RainFocus-konto till Experience Platform med hjälp av användargränssnittet.
+title: Anslut ditt RainFocus-konto till Experience Platform med användargränssnittet
+description: Lär dig hur du ansluter ditt RainFocus-konto till Experience Platform med användargränssnittet.
 badge: Beta
 exl-id: a349e37e-9f2c-47ff-8360-ccbe578dce27
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '973'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
@@ -41,19 +41,19 @@ Innan du kan ansluta ditt [!DNL RainFocus]-konto till Experience Platform måste
 
 När du har slutfört kravkonfigurationen kan du gå vidare till stegen som beskrivs nedan.
 
-## Anslut ditt RainFocus-konto till Experience Platform
+## Koppla ditt RainFocus-konto till Experience Platform
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt källarbetsytan. På skärmen *[!UICONTROL Catalog]* visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt källarbetsytan. På skärmen *[!UICONTROL Catalog]* visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *[!UICONTROL Analytics]* väljer du **[!UICONTROL RainFocus Experience]** och sedan **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform med RainFocus-källan markerad.](/help/sources/images/tutorials/create/rainfocus/rainfocus_sources-rf.png)
+![Källkatalogen i Experience Platform UI med RainFocus-källan markerad.](/help/sources/images/tutorials/create/rainfocus/rainfocus_sources-rf.png)
 
 ## Markera data
 
-Steget Välj data visas med ett gränssnitt där du kan välja de data du vill hämta till Experience Platform.
+Steget Välj data visas med ett gränssnitt där du kan välja vilka data du vill hämta till Experience Platform.
 
 * Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.
@@ -101,7 +101,7 @@ När du har granskat dataflödet väljer du **Slutför** och anger en tid innan 
 
 ## Hämta din URL för direktuppspelningsslutpunkt {#get-your-streaming-endpoint-url}
 
-När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform.
+När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten kommer att användas för att prenumerera på din webkrok så att strömningskällan kan kommunicera med Experience Platform.
 
 Om du vill hämta strömningsslutpunkten går du till sidan *[!UICONTROL Dataflow activity]* i det dataflöde som du just skapade och kopierar slutpunkten längst ned på panelen *[!UICONTROL Properties]*.
 
@@ -113,7 +113,7 @@ När dataflödet är klart och du har hämtat din URL för direktuppspelningsslu
 
 * Logga in på [[!DNL RainFocus] plattformen](https://app.rainfocus.com). I den primära navigeringen väljer du **[!DNL Libraries]** och **[!DNL Integration Profiles]**
 * Öppna [!DNL Integration Profile] som du skapade tidigare som en del av [kravtiderna](../../../../connectors/analytics/rainfocus.md#create-an-integration-profile-in-rainfocus).
-* Klistra in **dataflödes-ID** och **slutpunkt för direktuppspelning** som kopierats från dataflödet i Experience Platform och välj **Spara**
+* Klistra in **dataflödes-ID** och **slutpunkten för direktuppspelning** som kopierats från dataflödet i Experience Platform och välj **Spara**
 
 ## Nästa steg
 

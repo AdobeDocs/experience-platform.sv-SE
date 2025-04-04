@@ -2,25 +2,25 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkt för sammanslagningsprinciper
 type: Documentation
-description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
+description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som Experience Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 role: Developer
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2465'
+source-wordcount: '2468'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för sammanslagningsprinciper
 
-Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
+Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Experience Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 
-Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt (t.ex. ett fragment listar kunden som&quot;enkel&quot; medan det andra listar kunden som&quot;gift&quot;) avgör sammanfogningspolicyn vilken information som ska inkluderas i profilen för den enskilda personen.
+Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Experience Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt (t.ex. ett fragment listar kunden som&quot;enkel&quot; medan det andra listar kunden som&quot;gift&quot;) avgör sammanfogningspolicyn vilken information som ska inkluderas i profilen för den enskilda personen.
 
 Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Den här handboken innehåller steg för hur du arbetar med sammanfogningsprinciper med API:t.
 
-Information om hur du arbetar med sammanfogningsprinciper med hjälp av användargränssnittet finns i [användargränssnittshandboken för sammanfogningsprinciper](../merge-policies/ui-guide.md). Om du vill veta mer om sammanfogningsprinciper i allmänhet och deras roll i Experience Platform börjar du med att läsa översikten [för sammanfogningsprinciper](../merge-policies/overview.md).
+Information om hur du arbetar med sammanfogningsprinciper med hjälp av användargränssnittet finns i [användargränssnittshandboken för sammanfogningsprinciper](../merge-policies/ui-guide.md). Om du vill veta mer om sammanfogningsprinciper i allmänhet och deras roll i Experience Platform kan du börja med att läsa översikten [för sammanfogningsprinciper](../merge-policies/overview.md).
 
 ## Komma igång
 
@@ -28,7 +28,7 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Real-Time Custome
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
-Sammanslagningsprinciper är privata för din organisation, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på de specifika sätt som du behöver. Alla API:er som har åtkomst till [!DNL Profile]-data kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Platform] innehåller en standardsammanfogningsprincip för organisationer, eller så kan du skapa en sammanfogningsprincip för en specifik XDM-schemaklass (Experience Data Model) och markera den som standard för din organisation.
+Sammanslagningsprinciper är privata för din organisation, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på de specifika sätt som du behöver. Alla API:er som har åtkomst till [!DNL Profile]-data kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Experience Platform] innehåller en standardsammanfogningsprincip för organisationer, eller så kan du skapa en sammanfogningsprincip för en specifik XDM-schemaklass (Experience Data Model) och markera den som standard för din organisation.
 
 Även om varje organisation kan ha flera sammanfogningsprinciper per per schemaklass, kan varje klass bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används om namnet på schemaklassen anges och en sammanfogningsprincip krävs men inte anges.
 
@@ -73,7 +73,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 | `name` | Eget namn som sammanfogningsprincipen kan identifieras med i listvyer. |
 | `imsOrgId` | Organisations-ID som den här sammanfogningsprincipen tillhör |
 | `schema.name` | Som en del av objektet [`schema`](#schema) innehåller fältet `name` XDM-schemaklassen som sammanfogningsprincipen relaterar till. Mer information om scheman och klasser finns i [XDM-dokumentationen](../../xdm/home.md). |
-| `version` | [!DNL Platform] bevarade versionen av sammanfogningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
+| `version` | [!DNL Experience Platform] bevarade versionen av sammanfogningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
 | `identityGraph` | [Identitetsdiagramobjekt](#identity-graph) som anger identitetsdiagrammet som relaterade identiteter ska hämtas från. Profilfragment som hittas för alla relaterade identiteter sammanfogas. |
 | `attributeMerge` | [Attributsammanslagningsobjekt](#attribute-merge) anger hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. |
 | `isActiveOnEdge` | Booleskt värde som anger om sammanfogningsprincipen kan användas på kanten. Standardvärdet är `false`. |
@@ -198,7 +198,7 @@ Med API:t [!DNL Real-Time Customer Profile] kan du med slutpunkten `/config/merg
 
 ### Åtkomst till en sammanfogningsprincip via ID
 
-Du kan få åtkomst till en enskild sammanfogningsprincip via dess ID genom att göra en GET-begäran till `/config/mergePolicies`-slutpunkten och inkludera `mergePolicyId` i begärandesökvägen.
+Du kan få åtkomst till en enskild sammanfogningsprincip via dess ID genom att göra en GET-begäran till `/config/mergePolicies`-slutpunkten och inkludera `mergePolicyId` i sökvägen för begäran.
 
 **API-format**
 
@@ -249,7 +249,7 @@ I avsnittet [komponenter för sammanfogningsprinciper](#components-of-merge-poli
 
 ### Hämta flera sammanfogningsprinciper efter deras ID:n
 
-Du kan hämta flera sammanfogningsprinciper genom att göra en POST-förfrågan till slutpunkten `/config/mergePolicies/bulk-get` och inkludera ID:n för de sammanfogningsprinciper som du vill hämta i begärandetexten.
+Du kan hämta flera sammanfogningsprinciper genom att göra en POST-begäran till `/config/mergePolicies/bulk-get`-slutpunkten och inkludera ID:n för de sammanfogningsprinciper som du vill hämta i begärandetexten.
 
 **API-format**
 
@@ -283,7 +283,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 2007 (Multi-Status) och information om de sammanfogningsprinciper vars ID:n angavs i begäran om POST.
+Ett lyckat svar returnerar HTTP-status 207 (Multi-Status) och information om de sammanfogningsprinciper vars ID:n angavs i POST-begäran.
 
 ```json
 { 
@@ -348,7 +348,7 @@ I avsnittet [komponenter för sammanfogningsprinciper](#components-of-merge-poli
 
 ### Lista flera sammanfogningsprinciper efter villkor
 
-Du kan lista flera sammanfogningsprinciper inom organisationen genom att skicka en GET-förfrågan till slutpunkten `/config/mergePolicies` och använda valfria frågeparametrar för att filtrera, ordna och numrera svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (&amp;). Om du anropar den här slutpunkten utan parametrar hämtas alla kopplingsprofiler som är tillgängliga för organisationen.
+Du kan lista flera sammanfogningsprinciper inom organisationen genom att skicka en GET-begäran till slutpunkten `/config/mergePolicies` och använda valfria frågeparametrar för att filtrera, ordna och numrera svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (&amp;). Om du anropar den här slutpunkten utan parametrar hämtas alla kopplingsprofiler som är tillgängliga för organisationen.
 
 **API-format**
 
@@ -462,7 +462,7 @@ Ett lyckat svar returnerar en numrerad lista med sammanfogningsprinciper som upp
 
 ## Skapa en sammanfogningsprincip
 
-Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra en POST-förfrågan till slutpunkten `/config/mergePolicies`.
+Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra en POST-begäran till slutpunkten `/config/mergePolicies`.
 
 **API-format**
 
@@ -588,7 +588,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `op` | Anger vilken åtgärd som ska utföras. Exempel på andra PATCH-åtgärder finns i [JSON-patchdokumentationen](https://datatracker.ietf.org/doc/html/rfc6902) |
+| `op` | Anger vilken åtgärd som ska utföras. Exempel på andra PATCH-åtgärder finns i [JSON Patch-dokumentationen](https://datatracker.ietf.org/doc/html/rfc6902) |
 | `path` | Sökvägen till det fält som ska uppdateras. Godkända värden är: &quot;/name&quot;, &quot;/identityGraph.type&quot;, &quot;/attributeMerge.type&quot;, &quot;/schema.name&quot;, &quot;/version&quot;, &quot;/default&quot;, &quot;/isActiveOnEdge&quot; |
 | `value` | Värdet som det angivna fältet ska anges till. |
 
@@ -758,10 +758,10 @@ curl -X DELETE \
 
 **Svar**
 
-En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att borttagningen lyckades genom att utföra en GET-förfrågan och visa sammanfogningsprincipen efter dess ID. Om sammanfogningsprincipen togs bort får du ett HTTP-statusfel 404 (Hittades inte).
+En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att borttagningen lyckades genom att utföra en GET-begäran och visa sammanfogningsprincipen med dess ID. Om sammanfogningsprincipen togs bort får du ett HTTP-statusfel 404 (Hittades inte).
 
 ## Nästa steg
 
-Nu när du vet hur du skapar och konfigurerar sammanfogningsprinciper för din organisation kan du använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgrupper utifrån dina [!DNL Real-Time Customer Profile]-data.
+Nu när du vet hur du skapar och konfigurerar sammanfogningsprinciper för din organisation kan du använda dem för att justera visningen av kundprofiler i Experience Platform och för att skapa målgrupper utifrån dina [!DNL Real-Time Customer Profile]-data.
 
 Se [dokumentationen för Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md) för att börja definiera och arbeta med målgrupper.

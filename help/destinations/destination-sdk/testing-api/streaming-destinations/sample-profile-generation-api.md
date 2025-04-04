@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att generera exempelprofiler för ditt mål för direktuppspelning, som du kan använda i måltestning.
 title: Generera exempelprofiler baserat på ett källschema
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '980'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med
 >* generera profiler som ska användas när [skapar och testar en meddelandetransformeringsmall](create-template.md) - genom att använda *mål-ID* som en frågeparameter.
 >* generera profiler som ska användas vid anrop till [testning om målet är korrekt konfigurerat](streaming-destination-testing-overview.md) - genom att använda *målinstans-ID* som en frågeparameter.
 
-Du kan generera exempelprofiler baserat på antingen Adobe XDM-källschemat (som används när du testar ditt mål) eller det målschema som stöds av ditt mål (som används när du skapar mallen). Om du vill förstå skillnaden mellan Adobe XDM-källschemat och målschemat läser du översiktsavsnittet i artikeln [Meddelandeformat](../../functionality/destination-server/message-format.md).
+Du kan generera exempelprofiler baserade på Adobe XDM-källschemat (som används när du testar ditt mål) eller det målschema som stöds av ditt mål (som du använder när du skapar mallen). Om du vill förstå skillnaden mellan Adobe XDM-källschemat och målschemat läser du översiktsavsnittet i artikeln [Meddelandeformat](../../functionality/destination-server/message-format.md).
 
 Observera att de syften för vilka exempelprofilerna kan användas inte är utbytbara. Profiler som genereras baserat på *mål-ID* kan bara användas för att skapa meddelandeomformningsmallar och profiler som genereras baserat på *målinstans-ID* kan bara användas för att testa målslutpunkten.
 
@@ -40,13 +40,13 @@ Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-star
 >
 >Lägg till exempelprofilerna som genereras här i HTTP-anrop när [du testar ditt mål](streaming-destination-testing-overview.md).
 
-Du kan generera exempelprofiler baserat på källschemat genom att göra en GET-förfrågan till `authoring/sample-profiles/`-slutpunkten och ange ID:t för en målinstans som du har skapat baserat på den målkonfiguration som du vill testa.
+Du kan generera exempelprofiler baserat på källschemat genom att göra en GET-begäran till `authoring/sample-profiles/`-slutpunkten och ange ID:t för en målinstans som du har skapat baserat på målkonfigurationen som du vill testa.
 
-Om du vill hämta ID:t för en målinstans måste du först skapa en anslutning i användargränssnittet i Experience Platform till målet innan du försöker testa målet. Läs [Aktivera målsjälvstudiekursen](../../../ui/activation-overview.md) och se tipset nedan för hur du får destinationsinstansens ID att använda för detta API.
+Om du vill hämta ID:t för en målinstans måste du först skapa en anslutning i Experience Platform-gränssnittet till målet innan du försöker testa målet. Läs [Aktivera målsjälvstudiekursen](../../../ui/activation-overview.md) och se tipset nedan för hur du får destinationsinstansens ID att använda för detta API.
 
 >[!IMPORTANT]
 >
->* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [anslut till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html) om du vill ha mer information.
+>* Om du vill använda detta API måste du ha en befintlig anslutning till målet i Experience Platform-gränssnittet. Läs [anslut till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html) om du vill ha mer information.
 > * När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när du [bläddrar i en anslutning till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html).
 >![Användargränssnittsbild för att hämta målinstans-ID ](../../assets/testing-api/get-destination-instance-id.png)
 
@@ -193,7 +193,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 >
 >Använd exempelprofilerna som genereras här när du skapar mallen i [återgivningsmallsteget](render-template-api.md#multiple-profiles-with-body).
 
-Du kan generera exempelprofiler baserat på målschemat och göra en GET-förfrågan till `authoring/sample-profiles/`-slutpunkten och ange mål-ID:t för målkonfigurationen baserat på vilken du skapar mallen.
+Du kan generera exempelprofiler baserat på målschemat och göra en GET-begäran till `authoring/sample-profiles/`-slutpunkten och ange mål-ID:t för målkonfigurationen som du skapar mallen utifrån.
 
 >[!TIP]
 >
@@ -373,7 +373,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg
 

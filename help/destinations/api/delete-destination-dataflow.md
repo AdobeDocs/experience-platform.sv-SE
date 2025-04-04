@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;API;api;delete;ta bort måldata
+keywords: Experience Platform;hem;populära ämnen;flödestjänst;API;api;delete;delete destinationsdataflöden
 solution: Experience Platform
 title: Ta bort ett måldataflöde med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort dataflöden till batchmål och direktuppspelningsmål med API:t för Flow Service.
 exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
-source-git-commit: c35a29d4e9791b566d9633b651aecd2c16f88507
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '567'
-ht-degree: 0%
+source-wordcount: '568'
+ht-degree: 4%
 
 ---
 
@@ -24,8 +24,8 @@ Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du int
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ta bort ett dataflöde med API:t [!DNL Flow Service].
 
@@ -35,13 +35,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -49,7 +49,7 @@ Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow
 >
 >Om rubriken `x-sandbox-name` inte anges löses förfrågningar under sandlådan `prod`.
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * `Content-Type: application/json`
 
@@ -80,11 +80,11 @@ curl -X DELETE \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 202 (inget innehåll) och en tom brödtext. Du kan bekräfta borttagningen genom att försöka utföra en sökbegäran (GET) i dataflödet. API returnerar ett HTTP 404-fel (Hittades inte) som anger att dataflödet har tagits bort.
+Ett lyckat svar returnerar HTTP-status 202 (inget innehåll) och en tom brödtext. Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET)-begäran i dataflödet. API returnerar ett HTTP 404-fel (Hittades inte) som anger att dataflödet har tagits bort.
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 

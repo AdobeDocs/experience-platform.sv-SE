@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;enum;primär identitet;primär identitet;enskild XDM-profil;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;schema design;best practices
+keywords: Experience Platform;home;populära topics;schema;schema;enum;primär identitet;primär identitet;individuell XDM-profil;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;schema design;best practices
 solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: b144a93374fc627f9001b80695cad3f17e28a6fe
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3201'
+source-wordcount: '3211'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Eftersom XDM är extremt mångsidigt och anpassningsbart efter design är det vi
 
 ## Komma igång
 
-Innan du läser den här handboken bör du gå igenom [XDM-systemöversikten](../home.md) för att få en introduktion på hög nivå till XDM och dess roll i Experience Platform.
+Innan du läser den här guiden bör du läsa [XDM-systemöversikt](../home.md) för att få en introduktion till XDM och dess roll i Experience Platform.
 
 Eftersom den här guiden enbart fokuserar på viktiga överväganden när det gäller schemadesign, rekommenderar vi att du läser [grunderna i schemakomposition](./composition.md) för detaljerade förklaringar av de enskilda schemaelementen som nämns i den här guiden.
 
@@ -28,24 +28,24 @@ Eftersom den här guiden enbart fokuserar på viktiga överväganden när det g�
 Den rekommenderade metoden för att utforma din datamodell för användning i Experience Platform kan sammanfattas på följande sätt:
 
 1. Förstå användningsexemplen för era data.
-1. Identifiera de primära datakällor som ska hämtas till Platform för att hantera dessa användningsfall.
-1. Identifiera eventuella sekundära datakällor som också kan vara av intresse. Om till exempel bara en affärsenhet i organisationen för närvarande är intresserad av att portera sina data till Platform, kan en liknande affärsenhet också vara intresserad av att portera liknande data i framtiden. Med dessa sekundära källor blir datamodellen standardiserad i hela organisationen.
+1. Identifiera de primära datakällor som ska hämtas till Experience Platform för att hantera dessa användningsfall.
+1. Identifiera eventuella sekundära datakällor som också kan vara av intresse. Om till exempel bara en affärsenhet i organisationen för närvarande är intresserad av att portera sina data till Experience Platform, kan en liknande affärsenhet också vara intresserad av att portera liknande data i framtiden. Med dessa sekundära källor blir datamodellen standardiserad i hela organisationen.
 1. Skapa ett högnivådiagram över entitetsrelationer (ERD) för de datakällor som har identifierats.
-1. Konvertera högnivåundervisningen till en plattformscentrerad ERD (inklusive profiler, upplevelsehändelser och sökenheter).
+1. Konvertera högnivåundervisningen till en Experience Platform-centrerad ERD (inklusive profiler, upplevelsehändelser och sökenheter).
 
-Stegen för att identifiera de datakällor som krävs för att du ska kunna använda ditt företag varierar från organisation till organisation. Medan resten av avsnitten i detta dokument fokuserar på de senare stegen för att organisera och konstruera en ERD efter det att datakällorna har identifierats, kan förklaringarna av diagrammets olika komponenter ge er underlag för beslut om vilka datakällor som ska migreras till plattformen.
+Stegen för att identifiera de datakällor som krävs för att du ska kunna använda ditt företag varierar från organisation till organisation. Medan resten av avsnitten i detta dokument fokuserar på de senare stegen för att organisera och konstruera en ERD efter det att datakällorna har identifierats, kan förklaringarna av diagrammets olika komponenter ge er underlag för beslut om vilka av era datakällor som ska migreras till Experience Platform.
 
 ## Skapa en högnivå av ERD {#create-an-erd}
 
-När du har bestämt vilka datakällor du vill ta med i plattformen kan du skapa en högnivåteknisk ERD som hjälper dig att mappa dina data till XDM-scheman.
+När du har bestämt vilka datakällor du vill hämta till Experience Platform kan du skapa en högnivåreferensdatafil som hjälper dig att mappa dina data till XDM-scheman.
 
-Exemplet nedan representerar en förenklad ERD för ett företag som vill hämta data till Platform. Bilden visar de viktigaste enheterna som bör sorteras i XDM-klasser, inklusive kundkonton, hotell och flera vanliga e-handelshändelser.
+Exemplet nedan representerar en förenklad ERD för ett företag som vill hämta in data till Experience Platform. Bilden visar de viktigaste enheterna som bör sorteras i XDM-klasser, inklusive kundkonton, hotell och flera vanliga e-handelshändelser.
 
 ![Ett entitetsrelationsdiagram som markerar viktiga entiteter som ska sorteras i XDM-klasser för datainmatning.](../images/best-practices/erd.png)
 
 ## Sortera entiteter i profil-, uppslags- och händelsekategorier {#sort-entities}
 
-När du har skapat en ERD för att identifiera de enheter du vill ta med i plattformen måste dessa enheter sorteras i profil-, uppslags- och händelsekategorier:
+När du har skapat en ERD för att identifiera de enheter du vill hämta till Experience Platform måste dessa enheter sorteras i kategorierna profil, sökning och händelse:
 
 | Kategori | Beskrivning |
 | --- | --- |
@@ -79,7 +79,7 @@ Om ett företag innehåller attribut som är kopplade till en enskild kund är d
 
 #### Spåra data över tid {#track-data}
 
-Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det troligast en händelsenhet. Om du till exempel lägger till produktartiklar i en kundvagn kan du spåra dem som tilläggshändelser i kundvagnen i Platform:
+Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det troligast en händelsenhet. Om du till exempel lägger till artiklar i en kundvagn kan du spåra dem som tilläggshändelser i kundvagnen i Experience Platform:
 
 | Kund-ID | Typ | Produkt-ID | Kvantitet | Tidsstämpel |
 | --- | --- | --- | --- | --- |
@@ -113,7 +113,7 @@ Ett företag vill till exempel skapa en målgrupp baserat på antalet kundvagnsk
 
 >[!CAUTION]
 >
->Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta är planerat för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till plattformen.
+>Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta är planerat för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till Experience Platform.
 
 #### Kardinalitet {#cardinality}
 
@@ -208,9 +208,9 @@ I Experience Platform används XDM-fält som markerats som identiteter för att 
 
 När du utformar dina scheman är det troligt att eventuella primärnycklar i relationsdatabastabeller passar för primära identiteter. Andra exempel på tillämpliga identitetsfält är kundens e-postadresser, telefonnummer, konto-ID:n och [ECID](../../identity-service/features/ecid.md).
 
-### Schemafältgrupper för Adobe {#adobe-application-schema-field-groups}
+### Adobe programschemafältgrupper {#adobe-application-schema-field-groups}
 
-Experience Platform tillhandahåller flera färdiga XDM-schemafältgrupper för datainhämtning som är relaterade till följande Adobe-program:
+Experience Platform innehåller flera färdiga XDM-schemafältgrupper för datainhämtning i följande Adobe-program:
 
 * Adobe Analytics
 * Adobe Audience Manager
@@ -221,17 +221,17 @@ Du kan till exempel använda fältgruppen [[!UICONTROL Adobe Analytics Experienc
 
 ![Ett schemadiagram över [!UICONTROL Adobe Analytics ExperienceEvent Template].](../images/best-practices/analytics-field-group.png)
 
-Programfältgrupper i Adobe tilldelar automatiskt en primär standardidentitet genom att använda fältet `identityMap`, som är ett systemgenererat, skrivskyddat objekt som mappar standardvärden för identiteter för en enskild kund.
+Adobe programfältgrupper tilldelar automatiskt en primär standardidentitet genom att använda fältet `identityMap`, som är ett systemgenererat, skrivskyddat objekt som mappar standardvärden för identiteter för en enskild kund.
 
 För Adobe Analytics är ECID standardidentitet. Om ett ECID-värde inte anges av en kund blir den primära identiteten i stället AAID.
 
 >[!IMPORTANT]
 >
->När du använder programfältgrupper i Adobe ska inga andra fält markeras som primär identitet. Om det finns ytterligare egenskaper som måste markeras som identiteter måste de här fälten tilldelas som sekundära identiteter i stället.
+>När du använder Adobe-programfältgrupper ska inga andra fält markeras som primär identitet. Om det finns ytterligare egenskaper som måste markeras som identiteter måste de här fälten tilldelas som sekundära identiteter i stället.
 
 ## Datavalideringsfält {#data-validation-fields}
 
-När du importerar data till datavjön framtvingas datavalidering endast för begränsade fält. Om du vill validera ett visst fält under en gruppinmatning måste du markera fältet som begränsat i XDM-schemat. För att förhindra att felaktiga data importeras till Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman.
+När du importerar data till datavjön framtvingas datavalidering endast för begränsade fält. Om du vill validera ett visst fält under en gruppinmatning måste du markera fältet som begränsat i XDM-schemat. För att förhindra att felaktiga data importeras till Experience Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman.
 
 >[!IMPORTANT]
 >
@@ -249,7 +249,7 @@ Följande är en samling förslag som bevarar dataintegriteten när du skapar et
 * **Kontrollera att `_id` inte används som en identitet**: Fältet `_id` i Experience Event-scheman kan inte användas som en identitet eftersom det är avsett för postidentitet.
 * **Ange längdbegränsningar**: Det är bäst att ange minsta och högsta längd för fält som markerats som identiteter. En varning utlöses om du försöker tilldela ett anpassat namnutrymme till ett identitetsfält utan att uppfylla begränsningarna för minsta och högsta längd. Dessa begränsningar bidrar till att upprätthålla enhetlighet och datakvalitet.
 * **Använd mönster för konsekventa värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda inställningen **[!UICONTROL Pattern]** för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.
-* **Begränsa eVars i analysscheman**: Vanligtvis ska ett analysschema endast ha en eVar angiven som en identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.
+* **Begränsa eVars i analysscheman**: Vanligtvis ska ett analysschema endast ha en eVar som är angiven som identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.
 * **Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer. Om du markerar ett icke-unikt fält som en identitet kan det orsaka oönskad profilkomprimering.
 * **Verifiera minsta stränglängd**: Alla strängfält måste vara minst ett tecken långa eftersom strängvärden aldrig får vara tomma. Null-värden för fält som inte är obligatoriska tillåts.
 

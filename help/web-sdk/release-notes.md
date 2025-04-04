@@ -1,11 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
-keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
+keywords: Adobe Experience Platform Web SDK;Experience Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2285'
+source-wordcount: '2288'
 ht-degree: 2%
 
 ---
@@ -294,7 +294,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 - Kommandot [`getIdentity`](/help/web-sdk/commands/getidentity.md) returnerar nu kantområdes-ID:t bredvid identiteten.
 - Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
 - Stöd har lagts till för Adobe Consent 2.0-standarden för kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md).
-- Inställningarna för samtycke, när de tas emot, hashas och lagras i en lokal lagringsplats för optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
+- Inställningarna för godkännande, när de tas emot, hashas och lagras i ett lokalt lager för en optimerad integrering mellan CMP, Experience Platform Web SDK och Experience Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
 - Två [övervakningskopplingar ](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
 - Felkorrigering: Meddelandehändelser för interaktion i Personalization innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig programvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
 - Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.

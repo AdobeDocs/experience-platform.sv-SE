@@ -2,9 +2,9 @@
 title: Försök igen med misslyckade dataflödeskörningar
 description: Lär dig hur du försöker köra misslyckade dataflöden på nytt med API:t för Flow Service.
 exl-id: b9abc737-9a57-47e6-98ab-6d6c44f38d17
-source-git-commit: d4dba26a151619a555a69287e182ff8398cca7b4
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '269'
+source-wordcount: '272'
 ht-degree: 1%
 
 ---
@@ -21,16 +21,16 @@ I den här självstudiekursen beskrivs hur du försöker köra misslyckade dataf
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ## Försök igen med ett misslyckat dataflöde
 
-Om du vill försöka köra ett misslyckat dataflöde igen skickar du en POST till slutpunkten `/runs` samtidigt som du anger ID:t för dataflödet och `re-trigger`-åtgärden som en del av frågeparametrarna.
+Om du vill försöka köra ett misslyckat dataflöde igen gör du en POST-begäran till `/runs`-slutpunkten och anger ID:t för dataflödet och `re-trigger`-åtgärden som en del av frågeparametrarna.
 
 **API-format**
 

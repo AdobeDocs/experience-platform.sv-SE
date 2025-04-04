@@ -1,11 +1,11 @@
 ---
 Keywords: ECID;ecid
-title: Experience Cloud ID-tjänsttillägg
-description: Tillägget Experience Cloud ID-tjänst är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+title: Tjänsttillägg för Experience Cloud ID
+description: Tillägget för Experience Cloud ID-tjänsten är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 4cc49c14-66ec-43e0-a106-70d9c3646d87
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '454'
 ht-degree: 0%
 
 ---
@@ -16,23 +16,23 @@ ht-degree: 0%
 
 Det här tillägget implementerar ID-tjänsten [!DNL Experience Cloud], som identifierar besökare i alla [!DNL Experience Cloud]-lösningar.
 
-[!DNL Experience Cloud] ID-tjänsten är ett personaliseringstillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på [Experience Cloud ID-tjänsttilläggssidan](../../../tags/extensions/client/id-service/overview.md) i taggningsdokumentationen.
+[!DNL Experience Cloud] ID-tjänsten är ett personaliseringstillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på sidan [Experience Cloud ID-tjänsttillägg](../../../tags/extensions/client/id-service/overview.md) i taggningsdokumentationen.
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![Adobe ECID-tillägg](../../assets/catalog/personalization/adobe-ecid/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Experience Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till användargränssnittet för datainsamling och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till användargränssnittet för datainsamling och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
 Så här installerar du tjänsttillägget [!DNL Experience Cloud] ID:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
@@ -42,7 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Mer information om alternativ för tilläggskonfiguration och installationsstöd finns på [Experience Cloud ID-tjänstens tilläggssida](../../../tags/extensions/client/id-service/overview.md) i taggdokumentationen.
+Information om alternativ för tilläggskonfiguration och installationsstöd finns på [tilläggssidan för Experience Cloud ID-tjänsten](../../../tags/extensions/client/id-service/overview.md) i taggdokumentationen.
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i guiden om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension).
 

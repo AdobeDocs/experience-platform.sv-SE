@@ -2,9 +2,9 @@
 title: Skapa och konfigurera datastreams
 description: Lär dig hur du kopplar samman SDK-integreringen på klientsidan med andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2633'
+source-wordcount: '2638'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ Om du vill visa avancerade konfigurationsalternativ väljer du **[!UICONTROL Adv
 | [!UICONTROL Access Type] | Definierar den autentiseringstyp som Edge Network godkänner för datastream. <ul><li>**[!UICONTROL Mixed Authentication]**: När det här alternativet är markerat accepterar Edge Network både autentiserade och oautentiserade begäranden. Välj det här alternativet när du tänker använda Web SDK eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/) tillsammans med [Server-API](../server-api/overview.md). </li><li>**[!UICONTROL Authenticated Only]**: När det här alternativet är markerat accepterar Edge Network endast autentiserade begäranden. Välj det här alternativet när du bara vill använda Server-API:t och vill förhindra att oautentiserade begäranden behandlas av Edge Network.</li></ul> |
 | [!UICONTROL Media Analytics] | Möjliggör bearbetning av spårningsdata för direktuppspelning för Edge Network-integrering via Experience Platform SDK:er eller [Media Edge API](https://developer.adobe.com/cja-apis/docs/endpoints/media-edge/getting-started/). Läs mer om Media Analytics i [dokumentationen](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html). |
 
-Om du konfigurerar datastream för Experience Platform följer du självstudiekursen [Data Prep for Data Collection](./data-prep.md) för att mappa dina data till ett plattformshändelseschema innan du återgår till den här guiden. Annars väljer du **[!UICONTROL Save]** och fortsätter till nästa avsnitt.
+Om du konfigurerar datastream för Experience Platform följer du självstudiekursen [Data Prep for Data Collection](./data-prep.md) för att mappa dina data till ett Experience Platform-händelseschema innan du återgår till den här guiden. Annars väljer du **[!UICONTROL Save]** och fortsätter till nästa avsnitt.
 
 ## Visa information om dataström {#view-details}
 
@@ -160,7 +160,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Mana
 
 >[!IMPORTANT]
 >
->När du aktiverar en datastream för Platform bör du tänka på den plattformssandlåda som du använder just nu, så som den visas på den översta menyfliken i användargränssnittet.
+>När du aktiverar en datastream för Experience Platform bör du tänka på den Experience Platform-sandlåda som du använder, som visas på den övre menyfliken i användargränssnittet.
 >
 >![Markerad sandlåda](assets/configure/platform-sandbox.png)
 >
@@ -172,8 +172,8 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Pl
 
 | Inställning | Beskrivning |
 |---| --- |
-| [!UICONTROL Event Dataset] | **(Obligatoriskt)** Välj den plattformsdatauppsättning som kundhändelsedata ska direktuppspelas till. Det här schemat måste använda [XDM ExperienceEvent-klassen](../xdm/classes/experienceevent.md). Om du vill lägga till fler datauppsättningar väljer du **[!UICONTROL Add Event Dataset]**. |
-| [!UICONTROL Profile Dataset] | Välj den plattformsdatauppsättning som kundattributdata ska skickas till. Schemat måste använda [XDM-klassen för enskild profil](../xdm/classes/individual-profile.md). |
+| [!UICONTROL Event Dataset] | **(Obligatoriskt)** Välj den Experience Platform-datauppsättning som kundhändelsedata ska direktuppspelas till. Det här schemat måste använda [XDM ExperienceEvent-klassen](../xdm/classes/experienceevent.md). Om du vill lägga till fler datauppsättningar väljer du **[!UICONTROL Add Event Dataset]**. |
+| [!UICONTROL Profile Dataset] | Markera den Experience Platform-datauppsättning som kundattributdata ska skickas till. Schemat måste använda [XDM-klassen för enskild profil](../xdm/classes/individual-profile.md). |
 | [!UICONTROL Offer Decisioning] | Aktiverar implementeringar av Offer Decisioning för Web SDK. Mer implementeringsinformation finns i guiden om [att använda Offer Decisioning med Web SDK](../web-sdk/personalization/offer-decisioning/offer-decisioning-overview.md).<br><br>Mer information om Offer Decisioning-funktioner finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/get-started-decision/starting-offer-decisioning.html). |
 | [!UICONTROL Edge Segmentation] | Aktiverar [kantsegmentering](../segmentation/methods/edge-segmentation.md) för det här datastream. När [SDK](../web-sdk/home.md) eller [Edge Network Server API](../server-api/overview.md) skickar data via en datastam med kantsegmentering aktiverat, skickas alla uppdaterade målgruppsmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Du kan använda det här alternativet i kombination med **[!UICONTROL Personalization Destinations]** för personalisering av samma sida och nästa sida genom [kantmål](../destinations/ui/activate-edge-personalization-destinations.md) eller [!DNL Offer Decisioning]. |
 | [!UICONTROL Personalization Destinations] | När du aktiverar det här alternativet efter att du har aktiverat kryssrutan [!UICONTROL Edge Segmentation] kan datastream ansluta till personaliseringsmål, till exempel [Anpassad Personalization](../destinations/catalog/personalization/custom-personalization.md).<br><br>Mer information om hur du konfigurerar anpassningsmål ](../destinations/ui/activate-edge-personalization-destinations.md) finns i dokumentationen för destinationer. [Anpassa destinationer. |

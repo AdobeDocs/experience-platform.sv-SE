@@ -2,9 +2,9 @@
 title: Quickstart Guide
 description: Lär dig hur du snabbt kommer igång med taggar i Adobe Experience Platform.
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 8c881d99554a8694da79bdc29ad30ebbc870db20
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1518'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 >
 >Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Taggar är Adobe Experience Platform nästa generation av tagghanteringsteknik. Den är uppbyggd från grunden för att stödja ett öppet och hållbart ekosystem där alla kan bygga egna integreringar som Adobe-kunder kan driftsätta på sina sajter. Det är ett API-program först, så allt du kan göra via användargränssnittet kan du också göra programmatiskt via ett API.
+Taggar är Adobe Experience Platform nästa generation av tagghanteringsteknik. Den är uppbyggd från grunden för att stödja ett öppet och hållbart ekosystem där alla kan bygga egna integreringar som Adobe-kunder kan driftsätta på sina webbplatser. Det är ett API-program först, så allt du kan göra via användargränssnittet kan du också göra programmatiskt via ett API.
 
 Grundläggande arbetsflöde för taggar:
 
@@ -29,7 +29,7 @@ Grundläggande arbetsflöde för taggar:
 
 ## 1. Konfigurera grupper och användare
 
-Taggar är helt integrerade med din Adobe ID. Användarbehörigheter hanteras via Admin Console med andra Adobe-produkter och lösningar från [!DNL Creative Cloud], [!DNL Document Cloud] och Experience Cloud.
+Taggar är helt integrerade med din Adobe ID. Användarbehörigheter hanteras via Admin Console med andra Adobe-produkter och -lösningar från [!DNL Creative Cloud], [!DNL Document Cloud] och Experience Cloud.
 
 Taggar har ett rättighetsbaserat användarhanteringssystem. Detta innebär att individuella rättigheter måste beviljas uttryckligen. Dessa rättigheter tilldelas grupper och sedan läggs användarna till i rätt grupper för att få åtkomst. Även om din organisation har tillgång till datainsamling kan enskilda användare inte göra något förrän en administratör uttryckligen ger dem vissa rättigheter.
 
@@ -37,7 +37,7 @@ Detaljerade instruktioner om hur du skapar grupper och lägger till användare f
 
 ## 2. Logga in
 
-När taggrättigheter har lagts till i Adobe ID måste du logga in i användargränssnittet för Experience Platform eller datainsamlingen. Du kan göra detta genom att navigera direkt till inloggningsskärmen [Experience Cloud](https://experience.adobe.com/) och välja antingen **[!UICONTROL Data Collection]** eller **[!UICONTROL Experience Platform]**.
+När taggrättigheter har lagts till i din Adobe ID måste du logga in i Experience Platform användargränssnitt eller användargränssnittet för datainsamling. Du kan göra detta genom att navigera direkt till inloggningsskärmen för [Experience Cloud](https://experience.adobe.com/) och välja antingen **[!UICONTROL Data Collection]** eller **[!UICONTROL Experience Platform]**.
 
 >[!NOTE]
 >
@@ -51,11 +51,11 @@ Mer information om hur du skapar egenskaper finns i [Skapa en egenskap](../ui/ad
 
 ## 4. Installera tillägg
 
-Ett tillägg är en integrering som byggts av Adobe eller en Adobe-partner som lägger till nya och oändliga alternativ för taggarna som du kan distribuera till dina webbplatser. Om du tänker på en tagg som ett operativsystem är tillägg de program som du installerar för att göra det du behöver.
+Ett tillägg är en integrering som byggts av Adobe eller en Adobe-partner och som lägger till nya och oändliga alternativ för de taggar som du kan distribuera på dina webbplatser. Om du tänker på en tagg som ett operativsystem är tillägg de program som du installerar för att göra det du behöver.
 
-Alla nya egenskaper levereras med [Core-tillägget](../extensions/client/core/overview.md) installerat. Mobila egenskaper har ytterligare tillägg. Core-tillägget har byggts av Adobe för att ge en robust standarduppsättning med dataelementtyper för datalagret och händelsetyperna för dina regler. De flesta åtgärder som du vill utföra (hämta ett ECID, skicka [!DNL Adobe Analytics] beacons, läsa in den globala mbox-filen [!DNL Target] osv) kommer från tillägg som du installerar från katalogen.
+Alla nya egenskaper levereras med [Core-tillägget](../extensions/client/core/overview.md) installerat. Mobila egenskaper har ytterligare tillägg. Tillägget Core byggs av Adobe för att tillhandahålla en robust standarduppsättning med dataelementtyper för datalagret och händelsetyperna för era regler. De flesta åtgärder som du vill utföra (hämta ett ECID, skicka [!DNL Adobe Analytics] beacons, läsa in den globala mbox-filen [!DNL Target] osv) kommer från tillägg som du installerar från katalogen.
 
-Det som gör taggar i Platform verkligt unika är att dessa tillägg kan byggas av alla. Behöver ni släppa en Facebook-pixel för återmarknadsföring på er webbplats? Ta en titt på det tillägg som Facebook har byggt. Vill du ha samma sak för Twitter och länkad till? Använd dessa tillägg. Behöver du göra en undersökning? Titta på Query Pro eller Foresee. Behöver du hantera sekretess och samtycke från dina slutanvändare för att få hjälp med [!DNL GDPR]? Titta på Evidon och Trust Arc. Vill du se detaljerad information om hur enskilda användare på din webbplats beter sig? Ta en titt på Clicktale. Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
+Det som gör taggar i Experience Platform verkligt unika är att dessa tillägg kan byggas av alla. Behöver du släppa en Facebook-pixel för återmarknadsföring på din webbplats? Ta en titt på det tillägg som Facebook har byggt. Vill du ha samma sak för Twitter eller Linked In? Använd dessa tillägg. Behöver du göra en undersökning? Titta på Query Pro eller Foresee. Behöver du hantera sekretess och samtycke från dina slutanvändare för att få hjälp med [!DNL GDPR]? Titta på Evidon och Trust Arc. Vill du se detaljerad information om hur enskilda användare på din webbplats beter sig? Ta en titt på Clicktale. Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
 
 ## 5. Skapa dataelement och regler
 
@@ -83,7 +83,7 @@ Det är viktigt att förstå relationen mellan din webbsida, din värdplats och 
 
    Varje miljö har en relation med en värd, och värden tillhandahåller en slutpunkt som anger var bygget ska levereras. Värden kan bara tillhöra en egenskap, men en egenskap kan ha många värdar.
 
-2. En inbäddningskod anges i taggen `<script>` som finns i `<head>`-avsnitten på webbplatsen HTML.
+2. En inbäddningskod anges i taggen `<script>` som finns i `<head>`-avsnitten på din webbplats HTML.
 
    När du skapar en miljö och bifogar en värd genererar miljön automatiskt en unik inbäddningskod som gör att du kan integrera dess tilldelade bygge på din plats. Koden `<script>` används för att distribuera biblioteksbygget vid körning.
 
@@ -106,7 +106,7 @@ Varje bibliotek skapas i en miljö. En miljö definierar hur du vill att ditt by
 
 När du har sparat miljön genereras den inbäddade koden som du kan kopiera och klistra in på webbplatsen. Observera att inbäddningskoden inte fungerar förrän du har skapat ett bibliotek och skapat ett bygge. Mer information finns i [Miljö](../ui/publishing/environments.md).
 
-### Publish a build to Dev
+### Publicera en version till Dev
 
 Publiceringsprocessen beskrivs i stegen nedan.
 
@@ -124,7 +124,7 @@ Att främja ett bibliotek hela vägen fram till produktionen kräver vanligtvis 
 
 * En utvecklare (någon med rättigheten Framkalla) skickar biblioteket, vilket flyttar biblioteket till skickat läge.
 * En godkännare (någon med behörigheten Godkänn) kan skapa biblioteket till scenmiljön och godkänna det efter testning. Detta flyttar biblioteket till godkänt läge. Endast ett bibliotek kan skickas och godkännas åt gången.
-* En utgivare (någon med Publish-behörighet) kan skapa biblioteket i produktionsmiljön.
+* En utgivare (någon med behörigheten Publicera) kan skapa biblioteket i produktionsmiljön.
 
 Du kan tilldela alla dessa rättigheter till en person.
 
@@ -136,4 +136,4 @@ Mer information om taggar finns i följande resurser:
 
 * **[Samhälle för datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**: Ställ frågor och svar, skicka idéer, rösta på andras idéer. Logga in med din Adobe ID.
 * **[Utvecklardokumentation](../api/overview.md)**: Bygg tillägg eller använd tagg-API:er genom att engagera utvecklarcommunityn för taggar
-* **[Översikt över Tutorials](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**: I de här dokumenten introduceras taggar som händelsevidarebefordran och Mobile SDK i Android-appar.
+* **[Översikt över självstudiekurser](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**: I de här dokumenten introduceras taggar som händelsevidarebefordran och Mobile SDK i Android-appar.

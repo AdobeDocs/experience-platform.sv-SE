@@ -2,9 +2,9 @@
 title: Standardinstrumentpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1553'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ## Skapa en anpassad kontrollpanel
 
-Om du vill skapa en anpassad kontrollpanel navigerar du först till instrumentpanelens lager. Välj **[!UICONTROL Dashboards]** i den vänstra navigeringen i plattformsgränssnittet följt av **[!UICONTROL Create dashboard]**.
+Om du vill skapa en anpassad kontrollpanel navigerar du först till instrumentpanelens lager. Välj **[!UICONTROL Dashboards]** i den vänstra navigeringen i Experience Platform-gränssnittet följt av **[!UICONTROL Create dashboard]**.
 
 ![Kontrollpanelens lager med instrumentpaneler i den vänstra navigeringen och&quot;Skapa instrumentpanel&quot; markerat.](./images/standard-dashboards/create-dashboard.png)
 
@@ -64,7 +64,7 @@ Arbetsytan för widgetens disposition visas. Välj sedan **[!UICONTROL Select da
 
 #### Välj datamodell {#select-data-model}
 
-Dialogrutan [!UICONTROL Select data model] visas. Välj en datamodell i den vänstra kolumnen om du vill visa en förhandsvisningslista över alla tillgängliga tabeller. Den förkonfigurerade datamodellen för Real-time Customer Data Platform har namnet [!UICONTROL CDPInsights].
+Dialogrutan [!UICONTROL Select data model] visas. Välj en datamodell i den vänstra kolumnen om du vill visa en förhandsvisningslista över alla tillgängliga tabeller. Den förkonfigurerade datamodellen för Real-Time Customer Data Platform har namnet [!UICONTROL CDPInsights].
 
 >[!TIP]
 >
@@ -152,7 +152,7 @@ Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj
 
 ![Den användardefinierade kontrollpanelen med en anpassad widget och knappen Spara markerad.](./images/standard-dashboards/user-defined-dashboard.png)
 
-För att säkerställa att varje fråga för en Adobe Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
+För att säkerställa att varje fråga för en Adobe Real-Time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
 
 ### Redigera, duplicera eller ta bort en widget {#duplicate}
 
@@ -180,6 +180,6 @@ Genom att läsa det här dokumentet får du en bättre förståelse för hur du 
 
 Om du vill identifiera tillgängliga förkonfigurerade mått och visualiseringar för kontrollpanelerna [profiler](./guides/profiles.md#standard-widgets), [segment](./guides/audiences.md#standard-widgets) och [mål](./guides/destinations.md#standard-widgets) kan du läsa listan med standardwidgetar i deras respektive dokumentation.
 
-Titta på följande video för att få en bättre förståelse för instrumentpaneler i Experience Platform:
+Titta på följande video för att få en bättre förståelse för kontrollpaneler i Experience Platform:
 
 >[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

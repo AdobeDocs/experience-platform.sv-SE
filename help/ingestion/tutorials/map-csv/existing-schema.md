@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;
+keywords: Experience Platform;home;populära topics;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;
 solution: Experience Platform
 title: Mappa en CSV-fil till ett befintligt XDM-schema
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du mappar en CSV-fil till ett befintligt XDM-schema med Adobe Experience Platform användargränssnitt.
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '964'
 ht-degree: 0%
@@ -18,14 +18,14 @@ ht-degree: 0%
 >
 >Det här dokumentet beskriver hur du mappar en CSV-fil till ett befintligt XDM-schema. Information om hur du använder det AI-genererade rekommendationsverktyget för schema (för närvarande i betaversion) finns i dokumentet om att [mappa en CSV-fil med hjälp av maskininlärningsrekommendationer](./recommendations.md).
 
-För att kunna importera CSV-data till [!DNL Adobe Experience Platform] måste data mappas till ett [!DNL Experience Data Model] (XDM)-schema. I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med användargränssnittet [!DNL Platform].
+För att kunna importera CSV-data till [!DNL Adobe Experience Platform] måste data mappas till ett [!DNL Experience Data Model] (XDM)-schema. I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med användargränssnittet [!DNL Experience Platform].
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Platform]:
+Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Experience Platform]:
 
-- [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
-- [Gruppinmatning](../../batch-ingestion/overview.md): Den metod som [!DNL Platform] använder för att importera data från användartillhandahållna datafiler.
+- [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+- [Gruppinmatning](../../batch-ingestion/overview.md): Den metod som [!DNL Experience Platform] använder för att importera data från användartillhandahållna datafiler.
 - [Adobe Experience Platform Data Prep](../../batch-ingestion/overview.md): En serie funktioner som gör att du kan mappa och omvandla inlästa data så att de överensstämmer med XDM-scheman. Dokumentationen för [dataprep-funktioner](../../../data-prep/functions.md) är särskilt relevant för schemamappning.
 
 Den här självstudien kräver också att du redan har skapat en datauppsättning att importera dina CSV-data till. Anvisningar om hur du skapar en datauppsättning i användargränssnittet finns i självstudiekursen [om dataimport](../ingest-batch-data.md).
@@ -64,7 +64,7 @@ Avsnittet **[!UICONTROL Sample data]** visas när filen har överförts och visa
 
 **[!UICONTROL Mapping]**-steget visas. Kolumnerna i CSV-filen listas under **[!UICONTROL Source Field]**, med motsvarande XDM-schemafält listade under **[!UICONTROL Target Field]**.
 
-[!DNL Platform] ger automatiskt intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
+[!DNL Experience Platform] ger automatiskt intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
 ![](../../images/tutorials/map-a-csv-file/mapping-with-suggestions.png)
 
@@ -120,7 +120,7 @@ När CSV-filen har mappats och skapats kan du övervaka de data som hämtas geno
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i [!DNL Platform]. Dessa data kan nu användas av [!DNL Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile]. Mer information finns i översikten för [[!DNL Real-Time Customer Profile]](../../../profile/home.md).
+Genom att följa den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i [!DNL Experience Platform]. Dessa data kan nu användas av [!DNL Experience Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile]. Mer information finns i översikten för [[!DNL Real-Time Customer Profile]](../../../profile/home.md).
 
 >[!TIP]
 >

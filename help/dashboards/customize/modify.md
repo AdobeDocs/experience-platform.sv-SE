@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler;instrumentpanel;profiler;segment;mål;licensanvändning
-title: Ändra plattformsinstrumentpaneler i användargränssnittet
+keywords: Experience Platform;användargränssnitt;användargränssnitt;gränssnitt;instrumentpaneler;instrumentpanel;profiler;segment;mål;licensanvändning
+title: Ändra Experience Platform Dashboards i användargränssnittet
 description: Den här guiden innehåller stegvisa instruktioner för hur du anpassar hur organisationens Adobe Experience Platform-data visas på kontrollpaneler.
 exl-id: 75e4aea7-b521-434d-9cd5-32a00d00550d
-source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '472'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ I Adobe Experience Platform användargränssnitt kan du visa och interagera med 
 >
 >Alla uppdateringar som görs på kontrollpanelerna görs per organisation och per sandlåda.
 
-Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur instrumentpanelsdata visas på kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Segments] och [!UICONTROL Destinations] i plattformsgränssnittet.
+Den här handboken innehåller stegvisa anvisningar för hur du anpassar hur instrumentpanelsdata visas på kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Segments] och [!UICONTROL Destinations] i Experience Platform-gränssnittet.
 
 ## Komma igång
 

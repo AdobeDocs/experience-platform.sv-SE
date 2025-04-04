@@ -1,10 +1,10 @@
 ---
 title: Datastyrning i frågetjänst
-description: Den här översikten täcker de viktigaste elementen i datastyrningen i Experience Platform Query Service.
+description: Den här översikten täcker de viktigaste elementen i datahanteringen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3118'
+source-wordcount: '3131'
 ht-degree: 0%
 
 ---
@@ -25,16 +25,16 @@ Följande kategorier är avgörande när det gäller att följa regler för data
 1. Sekretess
 1. Datahygien
 
-I det här dokumentet behandlas de olika styrområdena och det visas hur du kan underlätta datakompatibiliteten när du använder frågetjänsten. Mer information om hur Experience Platform kan hantera kunddata och säkerställa regelefterlevnad finns i översikten [Styrning, sekretess och säkerhet](../../landing/governance-privacy-security/overview.md).
+I det här dokumentet behandlas de olika styrområdena och det visas hur du kan underlätta datakompatibiliteten när du använder frågetjänsten. Mer information om hur Experience Platform gör det möjligt att hantera kunddata och säkerställa regelefterlevnad finns i översikten [Styrning, sekretess och säkerhet](../../landing/governance-privacy-security/overview.md).
 
 ## Säkerhet {#security}
 
-Datasäkerhet är processen att skydda data från obehörig åtkomst och säkerställa säker åtkomst under hela dess livscykel. Säker åtkomst upprätthålls i Experience Platform genom användning av roller och behörigheter, med funktioner som rollbaserad åtkomstkontroll och attributbaserad åtkomstkontroll. Autentiseringsuppgifter, SSL och datakryptering används också för att skydda data på olika plattformar.
+Datasäkerhet är processen att skydda data från obehörig åtkomst och säkerställa säker åtkomst under hela dess livscykel. Säker åtkomst upprätthålls i Experience Platform genom användning av roller och behörigheter med funktioner som rollbaserad åtkomstkontroll och attributbaserad åtkomstkontroll. Autentiseringsuppgifter, SSL och datakryptering används också för att säkerställa dataskydd i hela Experience Platform.
 
 Säkerheten med avseende på frågetjänsten är indelad i följande kategorier:
 
 * [Åtkomstkontroll](#access-control): Åtkomsten styrs via roller och behörigheter, inklusive datauppsättnings- och kolumnnivåbehörigheter.
-* Skydda data via [anslutning](#connectivity): Data skyddas via plattformsklienter och externa klienter genom att en begränsad anslutning skapas med utgångsdatum eller icke-utgångsgiltiga autentiseringsuppgifter.
+* Skydda data via [anslutning](#connectivity): Data skyddas via Experience Platform och externa klienter genom att en begränsad anslutning skapas med utgångsdatum eller icke-utgångsgiltiga autentiseringsuppgifter.
 * Skydda data med [kryptering och kundhanterade nycklar (CMK)](#encryption-and-customer-managed-keys): Åtkomst styrd genom kryptering när data ligger kvar.
 
 ### Åtkomstkontroll {#access-control}
@@ -103,7 +103,7 @@ Användaråtkomst till enskilda kolumner kan sedan styras av de bifogade dataanv
 
 ### Anslutningar {#connectivity}
 
-Frågetjänsten kan nås via plattformsgränssnittet eller genom att en anslutning skapas med externa kompatibla klienter. Åtkomsten till alla tillgängliga fronter styrs av en uppsättning autentiseringsuppgifter.
+Frågetjänsten kan nås via Experience Platform-gränssnittet eller genom att en anslutning skapas med externa kompatibla klienter. Åtkomsten till alla tillgängliga fronter styrs av en uppsättning autentiseringsuppgifter.
 
 #### Anslutning via externa klienter
 
@@ -127,7 +127,7 @@ När det nödvändiga arbetsflödet har slutförts kan behöriga användare nu [
 
 #### SSL-datakryptering
 
-För ökad säkerhet tillhandahåller Query Service inbyggt stöd för SSL-anslutningar för kryptering av kommunikationen mellan klient och server. Plattformen har stöd för olika SSL-alternativ som passar dina datasäkerhetsbehov och som balanserar bearbetningskostnaderna för kryptering och nyckelutbyte.
+För ökad säkerhet tillhandahåller Query Service inbyggt stöd för SSL-anslutningar för kryptering av kommunikationen mellan klient och server. Experience Platform har stöd för olika SSL-alternativ som passar dina datasäkerhetsbehov och som balanserar bearbetningskostnaderna för kryptering och nyckelutbyte.
 
 Mer information finns i guiden om tillgängliga [SSL-alternativ för klientanslutningar från tredje part till frågetjänsten](../clients/ssl-modes.md), inklusive hur du ansluter med SSL-parametervärdet `verify-full`.
 
@@ -144,13 +144,13 @@ Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data 
 
 Frågetjänsten registrerar användaraktivitet och kategoriserar aktiviteten i olika loggtyper. Loggar ger information om **vem** utförde **vad**-åtgärden och **när**. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen.
 
-Alla loggkategorier kan begäras av en plattformsanvändare. I det här avsnittet finns information om vilken typ av information som har hämtats för frågetjänsten och var informationen finns.
+Alla loggkategorier kan efterfrågas av en Experience Platform-användare. I det här avsnittet finns information om vilken typ av information som har hämtats för frågetjänsten och var informationen finns.
 
 ### Frågeloggar {#query-logs}
 
 Med frågeloggarnas användargränssnitt kan du övervaka och granska körningsinformation för alla frågor som har körts antingen via Frågeredigeraren eller API:t för frågetjänsten. Detta ger genomskinlighet till frågetjänstaktiviteter, vilket gör att du kan kontrollera metadata för **alla** frågor som har körts i frågetjänsten. Den innehåller alla typer av frågor, vare sig det är en undersökande, gruppfråga eller en schemalagd fråga.
 
-Du kan komma åt frågeloggar antingen via plattformsgränssnittet på fliken [!UICONTROL Logs] på arbetsytan [!UICONTROL Queries].
+Du kan komma åt frågeloggar antingen via Experience Platform-gränssnittet på fliken [!UICONTROL Logs] på arbetsytan i [!UICONTROL Queries].
 
 ![Fliken Frågogg med informationspanelen markerad.](../images/data-governance/overview/queries-log.png)
 
@@ -158,7 +158,7 @@ Du kan komma åt frågeloggar antingen via plattformsgränssnittet på fliken [!
 
 Granskningsloggarna innehåller mer detaljerad information än frågeloggar och gör det möjligt att filtrera loggar baserat på attribut som användare, datum, typ av fråga osv. Förutom informationen i frågeloggens användargränssnitt lagrar granskningsloggar information om enskilda användare tillsammans med sessionsdata eller anslutning till en tredjepartsklient.
 
-Genom att ge en exakt beskrivning av användaråtgärder kan en verifieringskedja hjälpa till med felsökningsproblem och hjälpa ert företag att effektivt följa företagets policyer för datahantering och lagstadgade krav. Granskningsloggarna innehåller en förteckning över alla plattformsaktiviteter. Med granskningsloggar kan du granska användaråtgärder som rör frågekörning, mallar och schemalagda frågor för att öka genomskinligheten och synligheten för åtgärder som utförs av användare i frågetjänsten.
+Genom att ge en exakt beskrivning av användaråtgärder kan en verifieringskedja hjälpa till med felsökningsproblem och hjälpa ert företag att effektivt följa företagets policyer för datahantering och lagstadgade krav. Granskningsloggarna innehåller information om alla Experience Platform-aktiviteter. Med granskningsloggar kan du granska användaråtgärder som rör frågekörning, mallar och schemalagda frågor för att öka genomskinligheten och synligheten för åtgärder som utförs av användare i frågetjänsten.
 
 Följande tabell visar de frågekategorier som har hämtats av granskningsloggar och de åtgärdstyper som de registrerar:
 
@@ -178,7 +178,7 @@ Mer information om hur granskningsloggar kan hjälpa din organisation att hanter
 
 ## Dataanvändning {#data-usage}
 
-Datastyrningsramverket i Platform erbjuder ett enhetligt sätt att på ett ansvarsfullt sätt använda data på alla Adobe-lösningar, -tjänster och -plattformar. Den koordinerar systemmetoden för att hämta in, kommunicera och använda metadata i hela Adobe Experience Cloud. Detta hjälper i sin tur de registeransvariga att märka data i enlighet med de marknadsföringsåtgärder som behövs och de begränsningar som gäller för dessa data från de planerade marknadsföringsåtgärderna. Mer information om hur datastyrning gör det möjligt att använda dataanvändningsetiketter på datauppsättningar och fält finns i översikten för [dataanvändningsetiketter](../../data-governance/labels/overview.md).
+Datastyrningsramverket i Experience Platform erbjuder ett enhetligt sätt att använda data på alla Adobe lösningar, tjänster och plattformar på ett ansvarsfullt sätt. Den koordinerar systemmetoden för att hämta in, kommunicera och använda metadata i hela Adobe Experience Cloud. Detta hjälper i sin tur de registeransvariga att märka data i enlighet med de marknadsföringsåtgärder som behövs och de begränsningar som gäller för dessa data från de planerade marknadsföringsåtgärderna. Mer information om hur datastyrning gör det möjligt att använda dataanvändningsetiketter på datauppsättningar och fält finns i översikten för [dataanvändningsetiketter](../../data-governance/labels/overview.md).
 
 Det är bästa sättet att arbeta för att uppfylla alla data i varje skede av dataresan. Därför bör härledda datauppsättningar som använder ad hoc-scheman märkas på lämpligt sätt som en del av ramverket för datastyrning. Det finns två typer av härledda datauppsättningar som har skapats av Query Service: datauppsättningar som använder ett standardschema och datauppsättningar som använder ett ad hoc-schema.
 
@@ -186,27 +186,27 @@ Det är bästa sättet att arbeta för att uppfylla alla data i varje skede av d
 >
 >Datauppsättningar som skapas med frågetjänsten kallas för härledda datauppsättningar.
 
-När ad hoc-scheman skapas av en enskild användare för ett specifikt ändamål namnges XDM-schemafälten för den aktuella datamängden och är inte avsedda att användas i olika datamängder. Därför visas inte ad hoc-scheman som standard i användargränssnittet för Experience Platform. Även om det inte finns någon skillnad i hur dataanvändningsetiketter används mellan både standard- och ad hoc-scheman, måste man först göra ad hoc-scheman som skapats av Query Service för etikettering synliga i plattformens användargränssnitt. Mer information finns i guiden [Identifiera ad hoc-scheman i plattformsgränssnittet](./ad-hoc-schema-labels.md#discover-ad-hoc-schemas).
+När ad hoc-scheman skapas av en enskild användare för ett specifikt ändamål namnges XDM-schemafälten för den aktuella datamängden och är inte avsedda att användas i olika datamängder. Därför visas inte ad hoc-scheman som standard i Experience Platform-gränssnittet. Även om det inte finns någon skillnad i hur dataanvändningsetiketter används mellan både standard- och ad hoc-scheman, måste man först göra ad hoc-scheman som skapats av Query Service för etikettering synliga i Experience Platform-gränssnittet. Mer information finns i guiden [Identifiera ad hoc-scheman i Experience Platform-gränssnittet](./ad-hoc-schema-labels.md#discover-ad-hoc-schemas).
 
 När du har öppnat schemat kan du [använda etiketter i enskilda fält](../../xdm/tutorials/labels.md). När ett schema har etiketterats ärver alla datauppsättningar som härleds från det schemat dessa etiketter. Härifrån kan du ange dataanvändningsprinciper som kan begränsa dataanvändning med vissa etiketter från att aktiveras till vissa mål. Mer information finns i översikten över [dataanvändningsprinciper](../../data-governance/policies/overview.md).
 
 ## Sekretess {#privacy}
 
-[Privacy Service](../../privacy-service/home.md) hjälper dig att hantera kundförfrågningar för att få tillgång till och ta bort deras data i enlighet med juridiska sekretessbestämmelser. Det gör man genom att söka efter befintliga identifierare i data och antingen få åtkomst till eller ta bort dessa data beroende på vilket sekretessjobb som begärts. Data måste vara korrekt märkta för att tjänsten ska kunna avgöra vilka fält som ska användas eller tas bort under sekretessjobb. Uppgifter som omfattas av sekretessförfrågningar måste innehålla kundidentitetsinformation för att kunna koppla de olika uppgifterna till den person som sekretessförfrågningen gäller för. Frågetjänsten kan berika de data som används med en unik identifierare för att uppfylla sekretessjobb.
+[Privacy Service](../../privacy-service/home.md) hjälper dig att hantera kundförfrågningar för att få åtkomst till och ta bort deras data i enlighet med juridiska sekretessbestämmelser. Det gör man genom att söka efter befintliga identifierare i data och antingen få åtkomst till eller ta bort dessa data beroende på vilket sekretessjobb som begärts. Data måste vara korrekt märkta för att tjänsten ska kunna avgöra vilka fält som ska användas eller tas bort under sekretessjobb. Uppgifter som omfattas av sekretessförfrågningar måste innehålla kundidentitetsinformation för att kunna koppla de olika uppgifterna till den person som sekretessförfrågningen gäller för. Frågetjänsten kan berika de data som används med en unik identifierare för att uppfylla sekretessjobb.
 
 Sekretessförfrågningar kan skickas till datasjön eller profildatalagret. Poster som tas bort från datasjön leder inte till att profiler som har gjorts från dessa poster tas bort. Ett sekretessjobb som tar bort personuppgifter från datasjön tar inte bort deras profil, så all information (som innehåller det profil-ID:t) som har infogats efter slutförandet av sekretessjobbet uppdaterar den profilen som vanligt. Detta bekräftar behovet av att korrekt identifiera data som används i särskilda scheman.
 
-Mer information om [identitetsdata för sekretessförfrågningar](../../privacy-service/identity-data.md) finns i dokumentationen för Privacy Servicen och om hur du konfigurerar dataåtgärder och använder Adobe-tekniker för att effektivt hämta lämplig identitetsinformation för kundsekretessförfrågningar.
+Mer information om [identitetsdata för sekretessförfrågningar](../../privacy-service/identity-data.md) finns i Privacy Service-dokumentationen, och om hur du konfigurerar dataåtgärder och använder Adobe-tekniker för att effektivt hämta lämplig identitetsinformation för kundsekretessförfrågningar.
 
 Frågetjänstfunktioner för datastyrning förenklar och effektiviserar processen för kategorisering av data och efterlevnad av regler för dataanvändning. När data har identifierats kan du med Query Service tilldela den primära identiteten till alla utdatamängder. Du **måste** lägga till identiteter i datauppsättningen för att underlätta förfrågningar om datasekretess och arbeta mot datakompatibilitet.
 
-Schemadatafält kan anges som ett identitetsfält via plattformens gränssnitt och frågetjänst. Du kan även [markera de primära identiteterna med SQL-kommandot ALTER TABLE ](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via plattformsgränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
+Schemadatafält kan anges som ett identitetsfält via Experience Platform UI och Query Service. Du kan också [markera de primära identiteterna med SQL-kommandot ALTER TABLE ](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
 
 ## Datahygien {#data-hygiene}
 
-&quot;Datahygien&quot; avser processen att reparera eller ta bort data som kan vara inaktuella, felaktiga, felaktigt formaterade, duplicerade eller ofullständiga. Dessa processer ser till att datauppsättningarna är korrekta och konsekventa i alla system. Det är viktigt att säkerställa god datahygien under varje steg av dataresan och även från den ursprungliga platsen för datalagring. I Experience Platform Query Service är det här antingen datasjön eller det accelererade arkivet.
+&quot;Datahygien&quot; avser processen att reparera eller ta bort data som kan vara inaktuella, felaktiga, felaktigt formaterade, duplicerade eller ofullständiga. Dessa processer ser till att datauppsättningarna är korrekta och konsekventa i alla system. Det är viktigt att säkerställa god datahygien under varje steg av dataresan och även från den ursprungliga platsen för datalagring. I Experience Platform Query Service är detta antingen datasjön eller det accelererade arkivet.
 
-Du kan tilldela en identitet till en härledd datauppsättning för att tillåta datahantering efter plattformens centraliserade datahygien.
+Du kan tilldela en identitet till en härledd datauppsättning för att tillåta datahantering efter Experience Platform centraliserade datahygien.
 
 Omvänt kan aggregerade data inte användas för att härleda ursprungliga data när du skapar en aggregerad datauppsättning på det accelererade arkivet. Som ett resultat av denna sammanställning av data elimineras behovet av att höja förfrågningar om datahygien.
 

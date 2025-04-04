@@ -1,11 +1,11 @@
 ---
 title: Borttagningar i identitetstjänsten
-description: I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform och för att skapa klarhet om hur identitetsdiagram kan påverkas.
+description: I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform, och för att skapa klarhet om hur identitetsdiagram kan påverkas.
 exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1194'
-ht-degree: 0%
+source-wordcount: '1197'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +15,7 @@ Adobe Experience Platform Identity Service genererar identitetsdiagram genom att
 
 Identitetsdiagram utnyttjas av kundprofilen i realtid för att skapa en heltäckande och unik bild av era kundattribut och -beteenden, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid till människor, och inte till enheter.
 
-I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform och för att skapa klarhet om hur identitetsdiagram kan påverkas.
+I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform, och för att skapa klarhet om hur identitetsdiagram kan påverkas.
 
 ## Komma igång
 
@@ -35,17 +35,17 @@ Med en begäran om borttagning av en identitet kan du ta bort en identitet i ett
 
 I avsnitten nedan beskrivs de mekanismer som du kan använda för att ta bort enstaka identiteter i Experience Platform.
 
-### Ta bort en identitet i Privacy Servicen
+### Ta bort en identitet i Privacy Service
 
-Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Med Privacy Service kan du skicka jobbbegäranden med API:t eller användargränssnittet. När Experience Platform tar emot en begäran om borttagning från Privacy Servicen skickar Platform en bekräftelse till Privacy Servicen om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Borttagningen av den enskilda identiteten baseras på det angivna namnutrymmet och/eller ID-värdet. Dessutom tas alla sandlådor som är kopplade till en viss organisation bort. Mer information finns i handboken om [bearbetning av sekretessförfrågningar i identitetstjänsten](../privacy.md).
+Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Med Privacy Service kan du skicka jobbbegäranden med API:t eller användargränssnittet. När Experience Platform tar emot en borttagningsbegäran från Privacy Service, skickar Experience Platform en bekräftelse till Privacy Service om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Borttagningen av den enskilda identiteten baseras på det angivna namnutrymmet och/eller ID-värdet. Dessutom tas alla sandlådor som är kopplade till en viss organisation bort. Mer information finns i handboken om [bearbetning av sekretessförfrågningar i identitetstjänsten](../privacy.md).
 
-Tabellen nedan innehåller en beskrivning av borttagningen av enstaka identiteter i Privacy Servicen:
+Tabellen nedan innehåller en beskrivning av borttagningen av enstaka identiteter i Privacy Service:
 
 | Ta bort en identitet | Integritetstjänst |
 | --- | --- |
 | Godkända användningsfall | Endast förfrågningar om dataintegritet (GDPR, CCPA). |
 | Beräknad fördröjning | Dagar till veckor |
-| Tjänster som påverkas | Genom att ta bort en identitet i Privacy Service kan du välja om data ska tas bort från identitetstjänsten, kundprofilen i realtid eller datavjön. |
+| Tjänster som påverkas | Om du tar bort en identitet i Privacy Service kan du välja om data ska tas bort från identitetstjänsten, kundprofilen i realtid eller datasjön. |
 | Borttagningsmönster | Ta bort en identitet från identitetstjänsten. |
 
 {style="table-layout:auto"}
@@ -56,7 +56,7 @@ I följande avsnitt beskrivs de mekanismer som kan användas för att ta bort da
 
 ### Borttagning av datauppsättning i katalogtjänsten
 
-Du kan använda katalogtjänsten för att skicka begäranden om borttagning av datauppsättningar. Mer information om hur du tar bort datauppsättningar med katalogtjänsten finns i guiden om att [ta bort objekt med hjälp av katalogtjänstens API](../../catalog/api/delete-object.md). Du kan också använda användargränssnittet för plattformen för att skicka begäranden om borttagning av datauppsättningar. Mer information finns i användarhandboken för [datauppsättningar](../../catalog/datasets/user-guide.md#delete-a-dataset).
+Du kan använda katalogtjänsten för att skicka begäranden om borttagning av datauppsättningar. Mer information om hur du tar bort datauppsättningar med katalogtjänsten finns i guiden om att [ta bort objekt med hjälp av katalogtjänstens API](../../catalog/api/delete-object.md). Du kan också använda användargränssnittet i Experience Platform för att skicka begäranden om borttagning av datauppsättningar. Mer information finns i användarhandboken för [datauppsättningar](../../catalog/datasets/user-guide.md#delete-a-dataset).
 
 ### Utgångsdatum för datauppsättning i Datahygien
 
@@ -66,7 +66,7 @@ Tabellen nedan innehåller en beskrivning av skillnaderna mellan borttagning av 
 
 | Borttagning av datauppsättning | Katalogtjänst | Datahygien |
 | --- | --- | --- |
-| Godkända användningsfall | Ta bort fullständiga datauppsättningar och tillhörande identitetsinformation i Platform. | Hantering av data som lagras i Experience Platform. |
+| Godkända användningsfall | Ta bort fullständiga datauppsättningar och tillhörande identitetsinformation i Experience Platform. | Hantering av data som lagras i Experience Platform. |
 | Beräknad fördröjning | Dagar | Dagar |
 | Tjänster som påverkas | Borttagning av datauppsättningar via katalogtjänsten tar bort data från identitetstjänsten, kundprofilen i realtid och datasjön. | Borttagning av datauppsättningar via datahygien tar bort data från identitetstjänsten, kundprofilen i realtid och datasjön. |
 | Borttagningsmönster | Ta bort länkade identiteter från identitetstjänsten som upprättats av en viss datauppsättning. | Ta bort länkade identiteter från identitetstjänsten som upprättats av en viss datauppsättning, baserat på förfalloschema. |
@@ -89,7 +89,7 @@ Nedan visas en översikt över de potentiella konsekvenser som borttagningar kan
 
 ## Nästa steg
 
-Det här dokumentet innehåller de olika mekanismer som du kan använda för att ta bort identiteter och datauppsättningar på Experience Platform. I det här dokumentet beskrivs också hur identitets- och datauppsättningsborttagningar kan påverka identitetsdiagram. Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../home.md).
+Det här dokumentet innehåller de olika mekanismer som du kan använda för att ta bort identiteter och datauppsättningar på Experience Platform. I det här dokumentet beskrivs också hur identitets- och datauppsättningsborttagningar kan påverka identitetsdiagram. Mer information om identitetstjänsten finns i [översikten över identitetstjänsten](../home.md).
 
 <!--
 
@@ -97,7 +97,7 @@ You can use [Data hygiene](../hygiene/home.md) for data cleansing, removing anon
 
 ### Single identity deletion in the [!UICONTROL Data Hygiene] workspace
 
-The [[!UICONTROL Data Hygiene] workspace](../hygiene/ui/overview.md) in the Platform UI allows you to delete consumer records that are participating in Identity Service and Real-Time Customer Profile. For a comprehensive guide on using the [!UICONTROL Data Hygiene] workspace, see the tutorial on [deleting consumer records](../hygiene/ui/record-delete.md).
+The [[!UICONTROL Data Hygiene] workspace](../hygiene/ui/overview.md) in the Experience Platform UI allows you to delete consumer records that are participating in Identity Service and Real-Time Customer Profile. For a comprehensive guide on using the [!UICONTROL Data Hygiene] workspace, see the tutorial on [deleting consumer records](../hygiene/ui/record-delete.md).
 
 The table below provides a breakdown of differences between single identity deletion in Privacy Service and Data hygiene:
 

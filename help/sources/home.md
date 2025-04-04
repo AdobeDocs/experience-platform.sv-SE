@@ -2,20 +2,20 @@
 keywords: Experience Platform;hem;populära ämnen;källanslutningar;källanslutning;källor;datakällor;datakälla;datakällanslutning
 solution: Experience Platform
 title: Source Connectors Overview
-description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1522'
+source-wordcount: '1527'
 ht-degree: 0%
 
 ---
 
 # Source Connectors overview
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserade lager, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserade lager, databaser och många andra.
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom plattformen. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
 
 Med Experience Platform kan ni centralisera data som ni samlar in från olika källor och använda de insikter ni får för att göra mer.
 
@@ -84,7 +84,7 @@ Experience Platform har stöd för inmatning av data från en analysplattform fr
 
 ### molnlagring {#cloud-storage}
 
-Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
+Lagringskällor i molnet kan överföra dina egna data till Experience Platform utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) [!BADGE Gruppera]{type=Informative}
@@ -228,7 +228,7 @@ Med attributbaserad åtkomstkontroll kan du tillämpa mappningskonfigurationer p
 
 >[!TIP]
 >
->Attributbaserad åtkomstkontroll fungerar så här: **roller** skapas för att kategorisera de typer av användare som interagerar med din plattformsinstans. **Etiketter** används på **roller** för att ange åtkomst för den angivna rollen. **Etiketter** används också för resurser som schemafält och segment. För att en användare ska ha åtkomst till vissa schemafält och segment måste de läggas till i *en roll med samma etikett som tilldelats den efterfrågade resursen*. Mer information finns i [attributbaserad åtkomstkontroll från början till slut](../access-control/abac/end-to-end-guide.md).
+>Attributbaserad åtkomstkontroll fungerar så här: **roller** skapas för att kategorisera de typer av användare som interagerar med din Experience Platform-instans. **Etiketter** används på **roller** för att ange åtkomst för den angivna rollen. **Etiketter** används också för resurser som schemafält och segment. För att en användare ska ha åtkomst till vissa schemafält och segment måste de läggas till i *en roll med samma etikett som tilldelats den efterfrågade resursen*. Mer information finns i [attributbaserad åtkomstkontroll från början till slut](../access-control/abac/end-to-end-guide.md).
 
 - Använd etiketter på schemafält för att definiera åtkomst till specifika schemafält i organisationen. När åtkomsten till specifika schemafält har upprättats kan användare bara skapa mappningar för de fält som de har åtkomst till.
 - Användare utan rätt roller kan inte skapa eller uppdatera dataflöden med mappningar som innehåller otillgängliga schemafält. Dessutom kan obehöriga användare inte uppdatera, ta bort, aktivera eller inaktivera befintliga dataflöden med otillgängliga schemafält.

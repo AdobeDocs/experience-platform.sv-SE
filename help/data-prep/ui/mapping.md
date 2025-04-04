@@ -3,9 +3,9 @@ keywords: Experience Platform;home;populära topics;map csv;map csv file;map csv
 title: Användargränssnittshandbok för dataprep
 description: Lär dig hur du använder förinställningsfunktioner för data i Experience Platform-gränssnittet för att mappa CSV-filer till ett XDM-schema.
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: 06aa84aaccf3aeb45bfe19f8741b6bca96258d89
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1371'
+source-wordcount: '1374'
 ht-degree: 0%
 
 ---
@@ -16,14 +16,14 @@ Läs den här vägledningen när du vill lära dig hur du använder [dataprep](.
 
 ## Kom igång
 
-Den här självstudien kräver en fungerande förståelse av följande plattformskomponenter:
+Den här självstudiekursen kräver en fungerande förståelse av följande Experience Platform-komponenter:
 
-* [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
    * [Schemaredigeraren, självstudiekurs](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Identitetstjänst](../../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Källor](../../sources/home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../sources/home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 
 ## Få åtkomst till mappningsgränssnittet i användargränssnittet
 

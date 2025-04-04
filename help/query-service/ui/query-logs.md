@@ -2,9 +2,9 @@
 title: Frågeloggar
 description: Frågeloggar genereras automatiskt varje gång en fråga körs och är tillgängliga via användargränssnittet som hjälp vid felsökning. I det här dokumentet beskrivs hur du använder och navigerar i avsnittet Loggar för frågetjänst i användargränssnittet.
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '902'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Om du vill kontrollera frågeloggarna väljer du [!UICONTROL Queries] för att n
 >
 >Både systemfrågor och kontrollpanelfrågor är exkluderade som standard. I avsnittet [filters](#filter-logs) finns mer information om hur du förfinar de visade loggarna baserat på dina inställningar.
 
-![Plattformsgränssnittet med frågor och logg markerat.](../images/ui/query-log/logs.png)
+![Användargränssnittet för Experience Platform med frågor och logg markerat.](../images/ui/query-log/logs.png)
 
 ## Anpassa och söka {#customize-and-search}
 

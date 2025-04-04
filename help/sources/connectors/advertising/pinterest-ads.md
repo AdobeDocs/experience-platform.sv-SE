@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;Pinterest Ads;
+keywords: Experience Platform;home;populära topics;Pinterest Ads;
 title: Pinterest Ads Source - översikt
 description: Lär dig hur du ansluter Pinterest Ads till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badge: Beta
 hide: true
 hidefromtoc: true
 exl-id: 8edbcb26-0a18-47f1-8012-ca209d99d7a6
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '946'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ ht-degree: 0%
 >
 >Källan [!DNL Pinterest Ads] är i betaversion. Läs [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform stöder inmatning av data från ett annonssystem från tredje part. Stöd för annonsleverantörer inkluderar [!DNL Pinterest Ads].
 
-[[!DNL Pinterest]](https://www.pinterest.com) är en motor för visuell identifiering som används för att hitta recept, heminredning, stilinspiration och andra idéer på webben. Dessa visas i liten skala med bilder, animerad GIF och videor i pinboard-format. Med [[!DNL Pinterest Ads]](https://ads.pinterest.com/) kan du utöka din verksamhet och nå 400 miljoner personer med [!DNL Pinterest].
+[[!DNL Pinterest]](https://www.pinterest.com) är en motor för visuell identifiering som används för att hitta recept, heminredning, stilinspiration och andra idéer på webben. Dessa presenteras i liten skala med bilder, animerade GIF-bilder och videor i pinboard-format. Med [[!DNL Pinterest Ads]](https://ads.pinterest.com/) kan du utöka din verksamhet och nå 400 miljoner personer med [!DNL Pinterest].
 
 Med [!DNL Pinterest Ads] kan du nå användare via riktade annonser för att identifiera och köpa dina produkter. Pins från [!DNL Pinterest Ads] sponsras för att få extra exponering i relevanta sökresultat. Användare som prenumererar på [!DNL Pinterest Business] kan välja att befordra befintliga nålar med bästa prestanda, skapa en ny bild eller video eller till och med befordra en bild som har fästs från en webbplats. [!DNL Pinterest Ads] erbjuder flera annonsformat som hjälper dig att uppnå dina specifika kampanjmål.
 
@@ -51,7 +51,7 @@ Läs [!DNL Pinterest]-handböckerna om hur du konfigurerar din app](https://deve
 
 ### Samla in nödvändiga inloggningsuppgifter {#gather-required-credentials}
 
-För att kunna ansluta [!DNL Pinterest Ads] till plattformen måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta [!DNL Pinterest Ads] till Experience Platform måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -95,23 +95,23 @@ API:t [!DNL Pinterest] stöder olika typer av tidsgranularitet för hur data kan
 | **VECKA** | Uppgifterna delas upp på veckobasis. |
 | **MÅNADSVIS** | Uppgifterna delas upp på månadsbasis. |
 
-För Platform är källan [!DNL Pinterest Ads] internt konfigurerad till `Day`, vilket innebär att data samlas in dagligen. Om du t.ex. använder `impressions recorded` som mätvärde, eftersom granulariteten är konfigurerad som `DAY`, får du `xx` avtryck på `day 1`, `yy` avtryck på `day 2` och så vidare.
+För Experience Platform är källan [!DNL Pinterest Ads] internt konfigurerad till `Day`, vilket innebär att data samlas in dagligen. Om du t.ex. använder `impressions recorded` som mätvärde, eftersom granulariteten är konfigurerad som `DAY`, får du `xx` avtryck på `day 1`, `yy` avtryck på `day 2` och så vidare.
 
 >[!IMPORTANT]
 >
 >Pinterest sätter en hastighetsgräns på 1 000 API-anrop dagligen till sitt API för att läsa information från annonser, annonsgrupper eller annonskampanjer. Mer information om vilka tariffgränser som gäller för underliggande API-anrop finns i [[!DNL Pinterest] dokumentationen om tariffgränser](https://developers.pinterest.com/docs/reference/ratelimits/).
 
-## Anslut [!DNL Pinterest Ads] till plattformen {#connect-to-platform}
+## Anslut [!DNL Pinterest Ads] till Experience Platform {#connect-to-platform}
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Pinterest Ads] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Pinterest Ads] till Experience Platform med API:er eller användargränssnittet:
 
-### Anslut [!DNL Pinterest Ads] till plattformen med API:er {#connect-to-platform-using-api}
+### Anslut [!DNL Pinterest Ads] till Experience Platform med API:er {#connect-to-platform-using-api}
 
 * [Skapa en Pinterest-basanslutning med API:t för Flow Service](../../tutorials/api/create/advertising/pinterest-ads.md)
 * [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 * [Skapa ett dataflöde för en annonskälla med API:t för Flow Service](../../tutorials/api/collect/advertising.md)
 
-### Anslut [!DNL Pinterest Ads] till plattformen med användargränssnittet {#connect-to-platform-using-ui}
+### Anslut [!DNL Pinterest Ads] till Experience Platform med användargränssnittet {#connect-to-platform-using-ui}
 
 * [Skapa en Pinterest-källanslutning i användargränssnittet](../../tutorials/ui/create/advertising/pinterest-ads.md)
 * [Skapa ett dataflöde för en anslutning till en annonskälla i användargränssnittet](../../tutorials/ui/dataflow/advertising.md)

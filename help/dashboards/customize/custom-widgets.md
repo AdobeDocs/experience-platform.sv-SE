@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;användargränssnitt;gränssn
 title: Skapa anpassade widgetar för instrumentpaneler
 description: Den här guiden innehåller stegvisa instruktioner för hur du skapar anpassade widgetar som kan användas i Adobe Experience Platform-kontrollpaneler.
 exl-id: 0168ab1e-0b7d-4faf-852e-7208a2b09a04
-source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '954'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du visa och interagera med organisationens data via flera kontrollpaneler. Du kan även uppdatera vissa instrumentpaneler genom att lägga till nya widgetar i instrumentpanelsvyn. Förutom standardwidgetarna från Adobe kan du även skapa anpassade widgetar och dela dem i hela organisationen.
 
-Den här handboken innehåller stegvisa instruktioner för hur du skapar och lägger till anpassade widgetar på kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Segments] och [!UICONTROL Destinations] i plattformsgränssnittet.
+Den här handboken innehåller stegvisa instruktioner för hur du skapar och lägger till anpassade widgetar på kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Segments] och [!UICONTROL Destinations] i Experience Platform användargränssnitt.
 
 >[!NOTE]
 >
@@ -94,7 +94,7 @@ Om du vill visa dolda widgetar väljer du **[!UICONTROL Show hidden widgets]** i
 
 >[!WARNING]
 >
->När du döljer en widget i biblioteket tas inte widgeten bort från enskilda användares instrumentpaneler. Om en widget inte längre ska användas i din organisation måste du informera alla plattformsanvändare om detta eftersom de måste ta bort widgeten från sina instrumentpaneler.
+>När du döljer en widget i biblioteket tas inte widgeten bort från enskilda användares instrumentpaneler. Om en widget inte längre ska användas i din organisation måste du informera alla Experience Platform-användare om detta eftersom de måste ta bort widgeten från sina instrumentpaneler.
 
 ![Fliken Egen på arbetsytan i widgetbiblioteket med menyalternativen i widgeten och Visa dolda widgetar markerade.](../images/customization/hide-widget.png)
 
@@ -108,7 +108,7 @@ I dialogrutan **[!UICONTROL Edit widget]** kan du redigera titeln och beskrivnin
 
 >[!WARNING]
 >
->När du redigerar en widget i biblioteket uppdateras inte widgeten för enskilda användare. Om en widget har uppdaterats ser du till att du kommunicerar detta direkt till alla plattformsanvändare eftersom de måste ta bort den inaktuella widgeten från sina instrumentpaneler och sedan välja och lägga till den uppdaterade widgeten från widgetbiblioteket.
+>När du redigerar en widget i biblioteket uppdateras inte widgeten för enskilda användare. Om en widget har uppdaterats ser du till att du kommunicerar detta direkt till alla Experience Platform-användare eftersom de måste ta bort den inaktuella widgeten från sina instrumentpaneler och sedan markera och lägga till den uppdaterade widgeten från widgetbiblioteket.
 
 ![Dialogrutan Redigera widget.](../images/customization/edit-widget.png)
 

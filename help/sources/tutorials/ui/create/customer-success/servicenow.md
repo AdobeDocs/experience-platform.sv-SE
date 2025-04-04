@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ServiceNow;servicenow
+keywords: Experience Platform;home;populära topics;ServiceNow;servicenow
 solution: Experience Platform
 title: Skapa en ServiceNow Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en ServiceNow-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 66c12f4d-8b0c-4bb2-910d-9e09fa364c94
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '433'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL ServiceNow]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL ServiceNow]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL ServiceNow]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Om du redan har en giltig [!DNL ServiceNow]-anslutning kan du hoppa över resten
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL ServiceNow]-konto på [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till ditt [!DNL ServiceNow]-konto på [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -41,7 +41,7 @@ Mer information om hur du kommer igång finns i [det här [!DNL ServiceNow] doku
 
 ## Anslut ditt [!DNL ServiceNow]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL ServiceNow]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL ServiceNow]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -67,4 +67,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL ServiceNow]-konto 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL ServiceNow]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/customer-success.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL ServiceNow]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/customer-success.md).

@@ -2,10 +2,10 @@
 title: YouTube Video Tracking Extension - översikt
 description: Läs mer om taggtillägget YouTube Video Tracking i Adobe Experience Platform.
 exl-id: 703f7b04-f72f-415f-80d6-45583fa661bc
-source-git-commit: 627835011784ffca8487d446c04c6948dfff059d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '895'
-ht-degree: 1%
+source-wordcount: '897'
+ht-degree: 6%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 **Förhandskrav**
 
@@ -23,7 +23,7 @@ För varje taggegenskap i Adobe Experience Platform krävs att följande tilläg
 * Experience Cloud Visitor ID-tjänst
 * Kärntillägg
 
-Använd [&quot;Bädda in en spelare med ett \&lt;iframe\>-kodfragment&quot;](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds) från Google utvecklardokument HTML på varje webbsida där en videospelare ska återges.
+Använd kodfragmentet [&quot;Bädda in en spelare med en \&lt;iframe\>-tagg&quot;](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds) från Google utvecklardokument i HTML för varje webbsida där en videospelare ska återges.
 
 Det här tillägget, version 2.0.1, stöder inbäddning av en eller flera YouTube-videofilmer på en enda webbsida genom att infoga ett `id`-attribut med ett unikt värde i skripttaggen iframe och lägga till `enablejsapi=1` och `rel=0` i slutet av attributvärdet `src`, om det inte redan finns. Exempel:
 
@@ -98,7 +98,7 @@ Följande videotilläggsobjekt ska inkluderas.
 
 >[!TIP]
 > 
->För implementeringar där flera eVars- eller props för varje videoelement inte kan användas, kan dataelementvärden sammanfogas inom Platform, parsas i klassificeringsrapporter med hjälp av verktyget Klassificeringsregelbyggaren, som förklaras i [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html), och sedan tillämpas som ett segment i Analysis Workspace.
+>För implementeringar där flera eVars eller props för varje videoelement inte kan användas, kan dataelementvärden sammanfogas i Experience Platform, parsas i klassificeringsrapporter med hjälp av verktyget Klassificeringsregelbyggaren, som förklaras i [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html), och sedan tillämpas som ett segment i Analysis Workspace.
 
 Om du vill sammanfoga videoinformationsvärden skapar du ett nytt dataelement som kallas&quot;Videometadata&quot; och programmerar det så att det hämtas in alla videodataelement (som listas ovan) och sammanställer dem. Exempel:
 
@@ -114,4 +114,4 @@ r.push(_satellite.getVar('Extension Version'));
 return r.join('|');
 ```
 
-Mer information om hur du skapar och återanvänder dataelement effektivt i plattformen finns i dokumentationen för [dataelement](../../../ui/managing-resources/data-elements.md).
+Mer information om hur du skapar och återanvänder dataelement effektivt i Experience Platform finns i dokumentationen för [dataelement](../../../ui/managing-resources/data-elements.md).

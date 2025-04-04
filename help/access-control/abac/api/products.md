@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;Attributbaserad åtkomstkontroll;attributbaserad åtkomstkontroll
+keywords: Experience Platform;home;populära topics;api;Attributbaserad åtkomstkontroll;attributbaserad åtkomstkontroll
 solution: Experience Platform
 title: API-slutpunkt för produkter
 description: Med slutpunkten /products i API:t för attributbaserad åtkomstkontroll kan du programmässigt hantera produkter i Adobe Experience Platform.
 role: Developer
 exl-id: 44ee9a9d-7a13-4d59-a1a9-97764dbd3763
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '514'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ API-slutpunkten som används i den här guiden är en del av det attributbaserad
 
 ## Hämta en lista över berättigade produkter {#list}
 
-Du kan hämta en lista över berättigade produkter genom att göra en GET-förfrågan till slutpunkten `/products`.
+Du kan hämta en lista över berättigade produkter genom att göra en GET-begäran till slutpunkten `/products`.
 
 **API-format**
 
@@ -70,7 +70,7 @@ Ett godkänt svar returnerar en lista över berättigade produkter som tillhör 
 
 ## Sök behörighetskategorier efter produkt-ID
 
-Du kan slå upp behörighetskategorier för en viss produkt genom att göra en GET-förfrågan till `/products/{PRODUCT_ID}/categories`-slutpunkten samtidigt som du anger ditt produkt-ID.
+Du kan slå upp behörighetskategorier för en viss produkt genom att göra en GET-begäran till slutpunkten `/products/{PRODUCT_ID}/categories` och ange ditt produkt-ID.
 
 **API-format**
 
@@ -145,7 +145,7 @@ Ett godkänt svar returnerar de behörighetskategorier som är associerade med d
 
 ## Söka efter behörighetsgrupper efter produkt-ID
 
-Du kan söka efter behörighetsgrupper för en viss produkt genom att göra en GET-förfrågan till `/products/{PRODUCT_ID}/permission-sets`-slutpunkten samtidigt som du anger ditt produkt-ID.
+Du kan söka efter behörighetsgrupper för en viss produkt genom att göra en GET-förfrågan till slutpunkten `/products/{PRODUCT_ID}/permission-sets` och ange ditt produkt-ID.
 
 **API-format**
 
@@ -240,6 +240,6 @@ Ett godkänt svar returnerar de behörighetsgrupper som är kopplade till det pr
 | `id` | Motsvarande ID för den efterfrågade behörighetsgruppen. |
 | `name` | Motsvarande namn för den efterfrågade behörighetsgruppen. |
 | `category` | Den tillgängliga behörighetskategorin. |
-| `permissions` | Behörigheter omfattar möjligheten att visa och/eller använda plattformsfunktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar. |
+| `permissions` | Behörigheter omfattar möjligheten att visa och/eller använda Experience Platform-funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar. |
 | `permissions.resource` | Den tillgång eller det objekt som ett ämne kan eller inte kan komma åt. Resurser kan vara filer, program, servrar eller till och med API:er. |
 | `permissions.actions` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `view`, `read`, `create`, `edit` och `delete` |

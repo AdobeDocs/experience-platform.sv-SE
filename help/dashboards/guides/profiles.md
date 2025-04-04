@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4669'
+source-wordcount: '4677'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) tillhandahåller en kontrollpanel där du kan visa viktig information om dina [!DNL Real-Time Customer Profile]-data, som de har fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med profilkontrollpanelen i användargränssnittet, och den innehåller information om de mått som visas på kontrollpanelen.
 
-Se [Användargränssnittsguiden för kundprofil i realtid](../../profile/ui/user-guide.md) för en översikt över profilfunktionerna i användargränssnittet i Experience Platform.
+Se [Användargränssnittsguiden för kundprofil i realtid](../../profile/ui/user-guide.md) för en översikt över profilfunktionerna i Experience Platform användargränssnitt.
 
 ## Data för kontrollpanel för profil
 
-På kontrollpanelen Profiler visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform. Ögonblicksbilden innehåller inga händelsedata (tidsserier).
+På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform. Ögonblicksbilden innehåller inga händelsedata (tidsserier).
 
 Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för profiler uppdateras inte i realtid.
 
@@ -29,13 +29,13 @@ Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika
 
 ## Utforska instrumentpanelen för profiler {#explore-dashboard}
 
-Om du vill navigera till profilkontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa instrumentpanelen.
+Om du vill navigera till profilkontrollpanelen i Experience Platform-gränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
 >[!NOTE]
 >
->Om din organisation inte har använt plattformen tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen för profiler. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med kundprofilen i realtid.
+>Om din organisation inte har använt Experience Platform tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte profilkontrollpanelen. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med kundprofilen i realtid.
 
-![Kontrollpanelen Experience Platform Profiles med profiler och översikt markerad.](../images/profiles/dashboard-overview.png)
+![Kontrollpanelen för Experience Platform-profiler med profiler och översikt markerad.](../images/profiles/dashboard-overview.png)
 
 ### Ändra instrumentpanelen för profiler {#modify-dashboard}
 
@@ -53,7 +53,7 @@ I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade m�
 
 ### Visa SQL {#view-sql}
 
-Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på arbetsytan för [!UICONTROL Overview]. Ni kan få inspiration från SQL:s av era befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. Mer information om den här funktionen finns i [Visa gränssnittshandboken för SQL](../view-sql.md).
+Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på arbetsytan för [!UICONTROL Overview]. Ni kan hämta inspiration från SQL:s befintliga insikter för att skapa nya frågor som bygger på unika insikter från Experience Platform-data utifrån era affärsbehov. Mer information om den här funktionen finns i [Visa gränssnittshandboken för SQL](../view-sql.md).
 
 <!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
@@ -119,8 +119,8 @@ Kundens samtycke och kontaktpreferenser är komplexa ämnen. Om du vill veta hur
 
 * Mer information om schemafältgrupper som krävs för att [samla in medgivandedata enligt Adobe-standarden](../../landing/governance-privacy-security/consent/adobe/overview.md) finns i dokumentationen för dessa profilaktiverade schemafältgrupper.
    * [[!UICONTROL Consent and Preference Details]](../../xdm/field-groups/profile/consents.md)
-   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md) (krävs om du använder Platform Web eller Mobile SDK för att skicka medgivandesignaler)
-* Mer information om hur du bearbetar kundens samtycke och inställningsdata med hjälp av Adobe-standarden finns i översikten över [godkännandebearbetning i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md).
+   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md) (krävs om du använder Experience Platform Web eller Mobile SDK för att skicka godkännandesignaler)
+* Mer information om hur du bearbetar kundens samtycke och inställningsdata med Adobe-standarden finns i översikten om [godkännandebearbetning i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md).
 * En kombinerad policy för datastyrning och samtycke kan användas för att filtrera profiler för segmentering baserat på deras samtycke och dina etablerade organisationsregler. Om du vill veta mer om hur du skapar och använder dessa kombinerade principer läser du i användarhandboken om [hantering av dataanvändningsprinciper](../../data-governance/policies/user-guide.md#combine-policies).
 
 ### Lägg till widgetar {#add-widgets}
@@ -169,7 +169,7 @@ Kontrollpanelen [!UICONTROL Union Schema] visar unionsschemat för en specifik X
 
 Unionsscheman består av flera scheman som delar samma klass och har aktiverats för profilen. Med dem kan du i en enda vy se en sammanslagning av alla fält i varje schema som delar samma klass.
 
-Mer information om hur du [visar unionsscheman i plattformsgränssnittet](../../profile/ui/union-schema.md#view-union-schemas) finns i gränssnittsguiden för unionsscheman.
+Mer information om att [visa unionsscheman i Experience Platform-gränssnittet](../../profile/ui/union-schema.md#view-union-schemas) finns i gränssnittsguiden för unionsscheman.
 
 ## Widgetar och mätvärden
 
@@ -221,7 +221,7 @@ Den AI-modell som avgör graden av benägenhet väljs i listruteväljaren under 
 
 Om du vill navigera till sidan med detaljerad information för den valda kundens AI-modell väljer du **[!UICONTROL View model details]**.
 
-![Kontrollpanelen Experience Platform Publiker med widgeten [!UICONTROL Customer AI distribution of scores] och [!UICONTROL View model details] markerad.](../images/segments/customer-ai-distribution-of-scores.png)
+![Kontrollpanelen Experience Platform Audiences med widgeten [!UICONTROL Customer AI distribution of scores] och [!UICONTROL View model details] markerad.](../images/segments/customer-ai-distribution-of-scores.png)
 
 Sidan med detaljerad modellinformation visas.
 
@@ -248,13 +248,13 @@ I listrutan under widgetens rubrik finns en lista med alla konfigurerade AI-mode
 >
 >Det totala antalet beräknade profiler beror på den valda sammanfogningsprincipen. Om du vill ändra den sammanfogningsprincip som används väljer du listrutan direkt under fliken Översikt. Mer information finns i avsnittet [sammanfogningsprinciper](#merge-policies) om du vill ha en kort beskrivning eller i översikten för [sammanfogningsprincipen](../../profile/merge-policies/overview.md).
 
-![Kontrollpanelen Experience Platform Publiker med widgeten Sammanfattning av kundens AI-poäng markerad.](../images/segments/customer-ai-scoring-summary.png)
+![Kontrollpanelen Experience Platform Audiences med widgeten Customer AI Scoring Summary.](../images/segments/customer-ai-scoring-summary.png)
 
 Om du vill navigera till sidan med detaljerad information för den valda kundens AI-modell väljer du **[!UICONTROL View model details]**. Mer information om kunds-AI finns i [gränssnittsguiden för upptäckt](../../intelligent-services/customer-ai/user-guide/discover-insights.md).
 
 ## Standardwidgetar {#standard-widgets}
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mått som relaterar till dina profildata. Du kan också skapa anpassade widgetar som ska delas med din organisation med [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa översikten för [widgetbiblioteket](../customize/widget-library.md).
+Adobe har flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina profildata. Du kan också skapa anpassade widgetar som ska delas med din organisation med [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa översikten för [widgetbiblioteket](../customize/widget-library.md).
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
@@ -293,7 +293,7 @@ Mer information finns i avsnittet [om sammanfogningsprinciper tidigare i det hä
 >
 >En annan vanlig orsak är att det finns skillnader mellan tidpunkten när instrumentpanelsögonblicksbilden tas och tidpunkten när exempeljobbet körs för fliken [!UICONTROL Browse]. Du kan se när widgeten [!UICONTROL Profile count] senast uppdaterades genom att titta på tidsstämpeln i widgeten. Mer information om hur exempeljobbet utlöses på fliken [!UICONTROL Browse] finns i avsnittet [antal profiler i gränssnittsguiden för kundprofiler i realtid](../../profile/ui/user-guide.md#profile-count).
 
-![Kontrollpanelen för profiler i Experience Platform med widgeten Profilantal markerad.](../images/profiles/profile-count.png)
+![Kontrollpanelen Experience Platform Profiles med widgeten Profilantal markerad.](../images/profiles/profile-count.png)
 
 ### [!UICONTROL Profile count trend] {#profile-count-trend}
 
@@ -314,7 +314,7 @@ Widgeten **[!UICONTROL Profile count change]** visar antalet sammanfogade profil
 >
 >Widgeten [!UICONTROL Profile count change] visar antalet profiler som har lagts till **efter** det första profilintaget och konfigurationen för profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profile count change]-widgeten är inställd på 0. Den här beräkningsmetoden görs för att undvika en spik som är kopplad till det initiala intaget av profiler i systemet. Under de närmaste 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till profilbutiken. När nästa ögonblicksbild har tagits visar widgeten [!UICONTROL Profile count change] totalt 1 000 000 profiler tillagda, medan [!UICONTROL Profile count]-widgeten visar totalt 5 000 000 profiler.
 
-![Kontrollpanelen för användargränssnittsprofiler för plattformen med widgeten för ändring av profilantal markerad.](../images/profiles/profile-count-change.png)
+![Kontrollpanelen för Experience Platform UI-profiler med widgeten för ändring av antal profiler markerad.](../images/profiles/profile-count-change.png)
 
 ### [!UICONTROL Profiles count change trend] {#profiles-count-change-trend}
 
@@ -323,7 +323,7 @@ Widgeten **[!UICONTROL Profile count change]** visar antalet sammanfogade profil
 >title="trender för antal ändringar av profiler"
 >abstract="Den här widgeten visar antalet sammanfogade profiler som har lagts till i profilbutiken dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Talet beror också på vilken sammanfogningsprincip som används för profildata."
 
-Widgeten **[!UICONTROL Profiles count change trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilbutiken dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
+Widgeten **[!UICONTROL Profiles count change trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilbutiken dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du ska importera profiler till Experience Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
 
 Mer information finns i avsnittet [om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies).
 
@@ -514,7 +514,7 @@ Den här widgeten använder ett Venndiagram för att visa överlappningen mellan
 
 När widgeten visar den visuella överlappningen av segmentdefinitioner kan du optimera segmenteringsstrategin genom att studera likheter mellan segmentdefinitionerna.
 
-![Kontrollpanelen för användargränssnittsprofiler för plattformen med listrutan för sammanslagningsprinciper och listrutorna för widgetens målgrupp är markerade.](../images/profiles/audience-overlap-by-merge-policy.png)
+![Kontrollpanelen för Experience Platform UI-profiler med listrutan för sammanslagningsprinciper och listrutorna för widgetens målgrupp är markerade.](../images/profiles/audience-overlap-by-merge-policy.png)
 
 
 <!-- ## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}
@@ -587,4 +587,4 @@ The three levels of completeness are:
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna hitta profilkontrollpanelen och förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med [!DNL Profile]-data i användargränssnittet för Experience Platform finns i [Användargränssnittshandboken för kundprofiler i realtid](../../profile/ui/user-guide.md).
+Genom att följa det här dokumentet bör du nu kunna hitta profilkontrollpanelen och förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med [!DNL Profile]-data i Experience Platform-gränssnittet finns i [Användargränssnittsguiden för kundprofil i realtid](../../profile/ui/user-guide.md).

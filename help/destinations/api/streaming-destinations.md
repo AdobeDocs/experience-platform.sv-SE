@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;populära topics; API tutorials; streaming destination API; Platform
+keywords: Experience Platform;home;populära topics; API tutorials; streaming destination API; Experience Platform
 solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service i Adobe Experience Platform
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2194'
+source-wordcount: '2207'
 ht-degree: 0%
 
 ---
@@ -28,17 +28,17 @@ I den här självstudien används målet [!DNL Amazon Kinesis] i alla exempel, m
 
 ![Översikt - stegen för att skapa ett direktuppspelningsmål och aktivera målgrupper](../assets/api/streaming-destination/overview.png)
 
-Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns mer information i självstudiekurserna [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att direktuppspela målgruppsexport](../ui/activate-segment-streaming-destinations.md).
+Om du föredrar att använda användargränssnittet i Experience Platform för att ansluta till ett mål och aktivera data kan du läsa självstudiekurserna [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att direktuppspela målgruppsexport](../ui/activate-segment-streaming-destinations.md) .
 
 ## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] är ett postsystem för dataplatser och -rader inom Experience Platform.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] är arkivsystemet för dataplatser och datalinje inom Experience Platform.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för direktuppspelningsmål i Platform.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för direktuppspelningsdestinationer i Experience Platform.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -53,13 +53,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till plattforms-API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till Experience Platform API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -67,7 +67,7 @@ Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor.
 >
 >Mer information om sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * Innehållstyp: `application/json`
 
@@ -79,7 +79,7 @@ Du hittar referensdokumentation för alla API-anrop i den här självstudiekurse
 
 ![Översikt över målsteg steg 1](../assets/api/streaming-destination/step1.png)
 
-Som ett första steg bör du bestämma vilket mål för direktuppspelning som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-begäran till slutpunkten `connectionSpecs` för att returnera en lista över tillgängliga mål:
+Som ett första steg bör du bestämma vilket mål för direktuppspelning som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-begäran till slutpunkten `connectionSpecs` om du vill returnera en lista över tillgängliga mål:
 
 **API-format**
 
@@ -119,13 +119,13 @@ Ett lyckat svar innehåller en lista över tillgängliga mål och deras unika id
 }
 ```
 
-## Ansluta till dina Experience Platform-data {#connect-to-your-experience-platform-data}
+## Anslut till dina Experience Platform-data {#connect-to-your-experience-platform-data}
 
 ![Översikt över målsteg 2](../assets/api/streaming-destination/step2.png)
 
-Därefter måste du ansluta till dina Experience Platform-data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
+Därefter måste du ansluta till dina Experience Platform-data, så att du kan exportera profildata och aktivera dem på det sätt du vill. Detta består av två ämnen som beskrivs nedan.
 
-1. Först måste du ringa ett samtal för att ge behörighet till dina data i Experience Platform genom att konfigurera en basanslutning.
+1. Först måste du ringa ett samtal för att auktorisera åtkomst till dina data i Experience Platform genom att konfigurera en basanslutning.
 2. Med basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina Experience Platform-data.
 
 
@@ -169,7 +169,7 @@ Ett svar innehåller basanslutningsens unika identifierare (`id`). Lagra det hä
 }
 ```
 
-### Ansluta till dina Experience Platform-data {#connect-to-platform-data}
+### Anslut till dina Experience Platform-data {#connect-to-platform-data}
 
 **API-format**
 
@@ -272,10 +272,10 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 * `{AUTHENTICATION_CREDENTIALS}`: fyll i namnet på ditt direktuppspelningsmål: `Aws Kinesis authentication credentials` eller `Azure EventHub authentication credentials`.
 * `{ACCESS_ID}`: *För [!DNL Amazon Kinesis] anslutningar.* Ditt åtkomst-ID för din Amazon Kinesis-lagringsplats.
 * `{SECRET_KEY}`: *För [!DNL Amazon Kinesis] anslutningar.* Din hemliga nyckel för din Amazon Kinesis-lagringsplats.
-* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Den region på ditt [!DNL Amazon Kinesis]-konto där Platform kommer att strömma dina data.
+* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Den region på ditt [!DNL Amazon Kinesis]-konto där Experience Platform direktuppspelar dina data.
 * `{SAS_KEY_NAME}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i SAS-nyckelnamnet. Läs om hur du autentiserar till [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * `{SAS_KEY}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i SAS-nyckeln. Läs om hur du autentiserar till [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{EVENT_HUB_NAMESPACE}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i namnutrymmet [!DNL Azure Event Hubs] där Platform direktuppspelar dina data. Mer information finns i [Skapa ett namnutrymme för händelsehubbar](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) i [!DNL Microsoft]-dokumentationen.
+* `{EVENT_HUB_NAMESPACE}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i namnutrymmet [!DNL Azure Event Hubs] där Experience Platform direktuppspelar dina data. Mer information finns i [Skapa ett namnutrymme för händelsehubbar](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) i [!DNL Microsoft]-dokumentationen.
 
 **Svar**
 
@@ -330,9 +330,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{BASE_CONNECTION_ID}`: Använd det grundläggande anslutnings-ID som du fick i steget ovan.
 * `{CONNECTION_SPEC_ID}`: Använd den anslutningsspecifikation du fick i steget [Hämta listan över tillgängliga mål](#get-the-list-of-available-destinations).
-* `{NAME_OF_DATA_STREAM}`: *För [!DNL Amazon Kinesis] anslutningar.* Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis]-konto. Plattformen exporterar data till den här strömmen.
-* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Den region på ditt Amazon Kinesis-konto där Platform direktuppspelar dina data.
-* `{EVENT_HUB_NAME}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i [!DNL Azure Event Hub]-namnet där plattformen ska strömma dina data. Mer information finns i [Skapa ett händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft]-dokumentationen.
+* `{NAME_OF_DATA_STREAM}`: *För [!DNL Amazon Kinesis] anslutningar.* Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis]-konto. Experience Platform exporterar data till den här strömmen.
+* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Den region på ditt Amazon Kinesis-konto där Experience Platform direktuppspelar dina data.
+* `{EVENT_HUB_NAME}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i namnet [!DNL Azure Event Hub] där Experience Platform ska strömma dina data. Mer information finns i [Skapa ett händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft]-dokumentationen.
 
 **Svar**
 
@@ -350,9 +350,9 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina Experience Platform-data och det mål där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar mellan Experience Platform och det önskade målet.
 
-Om du vill skapa ett dataflöde ska du utföra en begäran om POST enligt nedan, med de värden som anges nedan i nyttolasten.
+Om du vill skapa ett dataflöde utför du en POST-begäran enligt nedan och anger värdena som anges nedan i nyttolasten.
 
-Utför följande begäran om POST för att skapa ett dataflöde.
+Utför följande POST-begäran för att skapa ett dataflöde.
 
 **API-format**
 
@@ -404,7 +404,7 @@ curl -X POST \
 ```
 
 * `{FLOW_SPEC_ID}`: Flödesspec-ID för profilbaserade mål är `71471eba-b620-49e4-90fd-23f1fa0174d8`. Använd det här värdet i anropet.
-* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
+* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till din Experience Platform](#connect-to-your-experience-platform-data).
 * `{TARGET_CONNECTION_ID}`: Använd det ID för målanslutning som du fick i steget [Ansluta till mål för direktuppspelning](#connect-to-streaming-destination).
 
 **Svar**
@@ -492,7 +492,7 @@ Håll utkik efter 202 OK-svar. Ingen svarstext returneras. Om du vill verifiera 
 
 Som ett sista steg i självstudiekursen bör du validera att målgrupper och profilattribut verkligen har mappats korrekt till dataflödet.
 
-Gör följande GET-förfrågan för att validera detta:
+Gör följande GET-begäran för att validera detta:
 
 **API-format**
 
@@ -630,11 +630,11 @@ Följ de här stegen för att ansluta till målen med de bifogade [!DNL Postman]
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit plattformen till ett av dina önskade direktuppspelningsmål och konfigurerat ett dataflöde till respektive mål. Utgående data kan nu användas i målet för kundanalys eller andra dataåtgärder som du kanske vill utföra. Mer information finns på följande sidor:
+Genom att följa den här självstudiekursen har du anslutit Experience Platform till ett av dina önskade direktuppspelningsmål och konfigurerat ett dataflöde till respektive mål. Utgående data kan nu användas i målet för kundanalys eller andra dataåtgärder som du kanske vill utföra. Mer information finns på följande sidor:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)

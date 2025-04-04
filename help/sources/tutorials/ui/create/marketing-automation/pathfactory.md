@@ -3,9 +3,9 @@ title: Anslut ditt PathFactory-konto till Experience Platform via användargrän
 description: Lär dig hur du ansluter ditt PathFactory-konto till Experience Platform via användargränssnittet.
 badge: Beta
 exl-id: 859dd0c1-8c4b-43e3-a87b-84c879460bc0
-source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '554'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Om du redan har ett [!DNL PathFactory]-konto kan du hoppa över resten av det h�
 
 ### Samla in nödvändiga autentiseringsuppgifter {#gather-credentials}
 
-För att få åtkomst till ditt PathFactory-konto på plattformen måste du ange följande värden:
+För att få åtkomst till ditt PathFactory-konto på Experience Platform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -42,7 +42,7 @@ Detaljerad vägledning om hur du skyddar och använder dina inloggningsuppgifter
 
 ## Anslut ditt [!DNL PathFactory]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. [!UICONTROL Catalog] visar en mängd olika källor som stöds av Experience Platform.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. [!UICONTROL Catalog] visar en mängd olika källor som stöds av Experience Platform.
 
 Du kan välja lämplig kategori i listan med kategorier. Du kan också använda sökfältet för att filtrera efter en viss källa.
 
@@ -68,4 +68,4 @@ Om du redan har ett befintligt konto väljer du **[!UICONTROL Existing account]*
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning mellan ditt [!DNL PathFactory]-konto och Experience Platform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att få in data för automatiserad marknadsföring i Experience Platform](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning mellan ditt [!DNL PathFactory]-konto och Experience Platform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att överföra dina marknadsföringsdata till Experience Platform](../../dataflow/marketing-automation.md).

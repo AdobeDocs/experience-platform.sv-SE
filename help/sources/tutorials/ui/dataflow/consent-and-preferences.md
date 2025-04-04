@@ -3,18 +3,18 @@ keywords: Experience Platform;hem;populära ämnen;samtycke och inställningar;s
 solution: Experience Platform
 title: Skapa ett dataflöde med Source Consent and Preferences i användargränssnittet
 type: Tutorial
-description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för samtycke och inställningar med hjälp av plattformsgränssnittet.
+description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för samtycke och inställningar med hjälp av Experience Platform användargränssnitt.
 exl-id: 340b5945-baa1-4f79-88fa-2572606f6083
-source-git-commit: d048109141168b33795753c4706dac64cdf29ca5
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1572'
+source-wordcount: '1581'
 ht-degree: 0%
 
 ---
 
 # Skapa ett dataflöde med hjälp av en källa för samtycke och inställningar i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en datauppsättning i Adobe Experience Platform. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för samtycke och inställningar med hjälp av användargränssnittet för plattformen.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en datauppsättning i Adobe Experience Platform. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för samtycke och inställningar med hjälp av Experience Platform användargränssnitt.
 
 >[!NOTE]
 >
@@ -23,9 +23,9 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande plattformskomponenter:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../home.md): Med plattformen kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
+* [Källor](../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Experience Platform]-tjänster.
 * [[!DNL Experience Data Model (XDM)] System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
    * [Schemaredigeraren, självstudiekurs](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
@@ -85,11 +85,11 @@ Välj **[!UICONTROL Next]** när du är klar med informationen om dataflödet.
 
 >[!IMPORTANT]
 >
->Du kan inte mappa några dynamiska nyckelparsvärden som ett objekt från [!DNL OneTrust] till plattformen, och du måste ange dessa nycklar i målschemat för att kunna mappa dina data under importen.
+>Du kan inte mappa några dynamiska nyckelparsvärden som ett objekt från [!DNL OneTrust] till Experience Platform, och du måste ange dessa nycklar i målschemat för att kunna mappa dina data under importen.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../data-prep/ui/mapping.md).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -143,7 +143,7 @@ Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapa
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde som hämtar data från din källa för samtycke och inställningar till Platform. Inkommande data kan nu användas av [!DNL Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde som kan hämta data från din källa för samtycke och inställningar till Experience Platform. Inkommande data kan nu användas av [!DNL Experience Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [[!DNL Real-Time Customer Profile] översikt](../../../../profile/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../data-science-workspace/home.md)
@@ -151,6 +151,6 @@ Genom att följa den här självstudiekursen har du skapat ett dataflöde som h�
 
 >[!WARNING]
 >
-> Det plattformsgränssnitt som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+> Experience Platform-gränssnittet som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 >
 >[!VIDEO](https://video.tv.adobe.com/v/29711?quality=12&learn=on)

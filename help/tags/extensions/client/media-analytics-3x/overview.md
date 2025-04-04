@@ -2,10 +2,10 @@
 title: Adobe Media Analytics (3.x SDK) for Audio and Video Extension Overview
 description: Läs mer om taggtillägget Adobe Media Analytics (3.x SDK) för ljud och video i Adobe Experience Platform.
 exl-id: 7289d57d-7e7f-4832-9469-3b5a62183a32
-source-git-commit: e21ed1e9fd0c2678551cfc664b611076c198a157
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '692'
-ht-degree: 0%
+source-wordcount: '693'
+ht-degree: 6%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Använd den här dokumentationen om du vill ha information om hur du installerar, konfigurerar och implementerar Adobe Media Analytics (3.x SDK) för ljud- och videotillägg (Media Analytics-tillägg). Här finns alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel, tillsammans med exempel och länkar till exempel.
+Använd den här dokumentationen för information om hur du installerar, konfigurerar och implementerar Adobe Media Analytics (3.x SDK) för Audio- och Video-tillägg (Media Analytics-tillägg). Här finns alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel, tillsammans med exempel och länkar till exempel.
 
-Tillägget Media Analytics (MA) lägger till JavaScript Media SDK (Media 3.x SDK). Det här tillägget innehåller funktionalitet för att lägga till spårningsinstansen `Media` till en tagghanterad webbplats eller ett tagghanterat projekt. MA-tillägget kräver ytterligare två tillägg:
+Media Analytics-tillägget (MA) lägger till JavaScript Media SDK (Media 3.x SDK). Det här tillägget innehåller funktionalitet för att lägga till spårningsinstansen `Media` till en tagghanterad webbplats eller ett tagghanterat projekt. MA-tillägget kräver ytterligare två tillägg:
 
 * [Analystillägg](../analytics/overview.md)
 * [Experience Cloud ID-tillägg](../id-service/overview.md)
@@ -43,7 +43,7 @@ När du har inkluderat alla tre av de tillägg som nämns ovan i det tagghantera
 
 | Alternativ | Beskrivning |
 | :--- | :--- |
-| Collection API Server | Definierar Media Collection API Server (kontakta Adobe för att få tag i den här servern) |
+| Collection API Server | Definierar API-servern för mediainsamling (kontakta din Adobe-representant för att få tillgång till den här servern) |
 | Programversion | Versionen av mediespelarappen/SDK |
 | Spelarnamn | Namnet på den mediespelare som används (t.ex. &quot;AVPlayer&quot;, &quot;HTML5 Player&quot;, &quot;My Custom VideoPlayer&quot;) |
 | Kanal | Egenskapen Kanalnamn |
@@ -110,4 +110,4 @@ MA-tillägget visar `media` som en delad modul för andra tillägg. (Mer informa
 
 >[!NOTE]
 >
->**Testar:** Om du vill testa tillägget i den här versionen måste du överföra det till [plattformen](../../../extension-dev/submit/upload-and-test.md), där du har tillgång till alla beroende tillägg.
+>**Testar:** Om du vill testa tillägget i den här versionen måste du överföra det till [Experience Platform](../../../extension-dev/submit/upload-and-test.md), där du har tillgång till alla beroende tillägg.

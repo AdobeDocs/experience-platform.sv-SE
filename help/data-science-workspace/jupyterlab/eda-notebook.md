@@ -5,9 +5,9 @@ title: EDA-anteckningsbok (Exploratory Data Analysis)
 type: Tutorial
 description: Den här guiden fokuserar på hur man använder EDA-anteckningsboken (Exploratory data analysis) för att upptäcka mönster i webbdata, samla in händelser med ett förutsägelsemål, rensa aggregerade data och förstå relationen mellan prediktorer och ett mål.
 exl-id: 48209326-0a07-4b5c-8b49-a2082a78fa47
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2789'
+source-wordcount: '2790'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ pd.set_option('display.max_colwidth', -1)
 
 ### Anslut till Adobe Experience Platform [!DNL Query Service]
 
-Med [!DNL JupyterLab] på plattformen kan du använda SQL i en [!DNL Python]-anteckningsbok för att komma åt data via [frågetjänsten](https://www.adobe.com/go/query-service-home-en). Åtkomst av data via [!DNL Query Service] kan vara användbart för hantering av stora datamängder på grund av dess överlägsna körtider. Observera att en fråga om data som använder [!DNL Query Service] har en bearbetningstid på tio minuter.
+[!DNL JupyterLab] på Experience Platform gör att du kan använda SQL i en [!DNL Python]-anteckningsbok för att komma åt data via [frågetjänsten](https://www.adobe.com/go/query-service-home-en). Åtkomst av data via [!DNL Query Service] kan vara användbart för hantering av stora datamängder på grund av dess överlägsna körtider. Observera att en fråga om data som använder [!DNL Query Service] har en bearbetningstid på tio minuter.
 
 Innan du använder [!DNL Query Service] i [!DNL JupyterLab] måste du ha en fungerande förståelse för [[!DNL Query Service] SQL-syntaxen](https://www.adobe.com/go/query-service-sql-syntax-en).
 

@@ -6,9 +6,9 @@ description: Det här dokumentet innehåller steg för hur du konfigurerar de tv
 role: Developer
 feature: Consent, Schemas, Datasets
 exl-id: 36b2924d-7893-4c55-bc33-2c0234f1120e
-source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1580'
+source-wordcount: '1586'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ Två datauppsättningar krävs för att hämta TCF 2.0-medgivandedata:
 
 >[!IMPORTANT]
 >
->Plattformen använder bara de TCF-strängar som samlats in i datauppsättningen för den enskilda profilen. En ExperienceEvent-datauppsättning krävs fortfarande för att skapa ett datastream som en del av det här arbetsflödet, men du behöver bara importera data till profildatauppsättningen. ExperienceEvent-datauppsättningen kan fortfarande användas om du vill spåra händelser om samtyckesändringar över tiden, men dessa värden används inte i när segmentaktivering används.
+>Experience Platform använder bara de TCF-strängar som samlats in i datauppsättningen Individual Profile. En ExperienceEvent-datauppsättning krävs fortfarande för att skapa ett datastream som en del av det här arbetsflödet, men du behöver bara importera data till profildatauppsättningen. ExperienceEvent-datauppsättningen kan fortfarande användas om du vill spåra händelser om samtyckesändringar över tiden, men dessa värden används inte i när segmentaktivering används.
 
-Det här dokumentet innehåller steg för hur du konfigurerar de här två datauppsättningarna. En översikt över det fullständiga arbetsflödet för att konfigurera plattformsdataåtgärder för TCF 2.0 finns i [IAB TCF 2.0-kompatibilitetsöversikt](./overview.md).
+Det här dokumentet innehåller steg för hur du konfigurerar de här två datauppsättningarna. En översikt över det fullständiga arbetsflödet för att konfigurera Experience Platform-dataåtgärder för TCF 2.0 finns i [IAB TCF 2.0-kompatibilitetsöversikt](./overview.md).
 
 ## Förhandskrav
 
@@ -62,9 +62,9 @@ Se [referenshandboken](../../../../xdm/field-groups/event/iab.md) för den här 
 
 För att kunna skapa datauppsättningar som samlar in medgivandedata måste du först skapa XDM-scheman som baserar dessa datauppsättningar på.
 
-Som nämndes i föregående avsnitt krävs ett schema som använder klassen [!UICONTROL XDM Individual Profile] för att framtvinga samtycke i arbetsflöden för efterföljande plattformar. Du kan också skapa ett separat schema baserat på [!UICONTROL XDM ExperienceEvent] om du vill spåra medgivandeändringar över tiden. Båda scheman måste innehålla ett `identityMap`-fält och en lämplig TCF 2.0-fältgrupp.
+Som nämndes i föregående avsnitt krävs ett schema som använder klassen [!UICONTROL XDM Individual Profile] för att framtvinga samtycke i efterföljande arbetsflöden i Experience Platform. Du kan också skapa ett separat schema baserat på [!UICONTROL XDM ExperienceEvent] om du vill spåra medgivandeändringar över tiden. Båda scheman måste innehålla ett `identityMap`-fält och en lämplig TCF 2.0-fältgrupp.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i [!UICONTROL Schemas]. Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i [!UICONTROL Schemas]. Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
 
 >[!NOTE]
 >
@@ -102,7 +102,7 @@ Om du redigerar ett befintligt schema som redan har aktiverats för användning 
 
 #### Aktivera schemat för användning i [!DNL Real-Time Customer Profile]
 
-För att Platform ska kunna associera de medgivandedata som den får till specifika kundprofiler måste medgivandeschemat aktiveras för användning i [!DNL Real-Time Customer Profile].
+För att Experience Platform ska kunna koppla de medgivandedata som tas emot till specifika kundprofiler måste medgivandeschemat aktiveras för användning i [!DNL Real-Time Customer Profile].
 
 >[!NOTE]
 >
@@ -192,4 +192,4 @@ Genom att följa den här självstudiekursen har du skapat minst en datauppsätt
 * En postbaserad datauppsättning som är aktiverad för användning i kundprofilen i realtid. **(Obligatoriskt)**
 * En tidsseriebaserad datauppsättning som inte har aktiverats för [!DNL Profile]. (Valfritt)
 
-Du kan nu gå tillbaka till översikten [IAB TCF 2.0](./overview.md#merge-policies) för att fortsätta konfigurera plattformen för TCF 2.0-kompatibilitet.
+Du kan nu gå tillbaka till översikten [IAB TCF 2.0](./overview.md#merge-policies) för att fortsätta konfigurera Experience Platform för TCF 2.0-kompatibilitet.

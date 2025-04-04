@@ -5,9 +5,9 @@ title: Tvinga dataanvändningsprinciper med hjälp av API:t för principtjänste
 type: Tutorial
 description: När du har skapat dataanvändningsetiketter för dina data, och har skapat användningsprinciper för marknadsföringsåtgärder mot dessa etiketter, kan du använda principtjänstens API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 exl-id: 093db807-c49d-4086-a676-1426426b43fd
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '998'
+source-wordcount: '999'
 ht-degree: 0%
 
 ---
@@ -26,10 +26,10 @@ Det här dokumentet innehåller steg om hur du använder API:t [!DNL Policy Serv
 
 Den här självstudiekursen kräver en fungerande förståelse av följande viktiga begrepp som används i att implementera dataanvändningspolicyer:
 
-* [Datastyrning](../home.md): Ramverket som [!DNL Platform] använder för att framtvinga efterlevnad av dataanvändning.
+* [Datastyrning](../home.md): Ramverket som [!DNL Experience Platform] använder för att framtvinga efterlevnad av dataanvändning.
    * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används för datauppsättningar (och/eller enskilda fält inom dessa datauppsättningar), vilket anger begränsningar för hur data kan användas.
    * [Dataanvändningsprinciper](../policies/overview.md): Dataanvändningsprinciper är regler som beskriver vilken typ av marknadsföringsåtgärder som tillåts eller begränsas för vissa uppsättningar dataanvändningsetiketter.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Policy Service]-API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
@@ -132,7 +132,7 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, användningse
 
 ## Utvärdera med datauppsättningar
 
-Du kan utvärdera en dataanvändningsprincip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka etiketter kan samlas in. Detta gör du genom att göra en begäran om POST till `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och tillhandahålla datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
+Du kan utvärdera en dataanvändningsprincip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka etiketter kan samlas in. Detta görs genom att en POST-begäran görs till `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och datauppsättnings-ID:n tillhandahålls i begärandetexten, vilket visas i exemplet nedan.
 
 **API-format**
 
@@ -376,4 +376,4 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de användnin
 
 Genom att läsa det här dokumentet har du sökt efter policyöverträdelser när du utför en marknadsföringsåtgärd på en datauppsättning eller en uppsättning dataanvändningsetiketter. Med hjälp av data som returneras i API-svar kan du konfigurera protokoll i ditt upplevelseprogram så att regelöverträdelser verkställs korrekt när de inträffar.
 
-Mer information om hur Platform automatiskt tillämpar principer för aktiverade segment finns i handboken om [automatisk tillämpning](./auto-enforcement.md).
+Mer information om hur Experience Platform automatiskt tillämpar skyddsprofiler för aktiverade segment finns i handboken om [automatisk tillämpning](./auto-enforcement.md).

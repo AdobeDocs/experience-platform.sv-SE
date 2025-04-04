@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;FTP;ftp
+keywords: Experience Platform;home;populära topics;FTP;ftp
 solution: Experience Platform
 title: Skapa en FTP Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en FTP-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 8e505ead-4bae-43fe-830b-75620e8fba28
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '448'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ För att kunna ansluta till FTP måste du ange värden för följande anslutning
 
 ## Anslut till FTP-servern
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt FTP-konto för att ansluta till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt FTP-konto för att ansluta till Experience Platform.
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett inkommande konto för.
 
@@ -69,4 +69,4 @@ Om du vill ansluta ett befintligt konto markerar du det FTP-konto som du vill an
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt FTP-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt FTP-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Experience Platform](../../dataflow/batch/cloud-storage.md).

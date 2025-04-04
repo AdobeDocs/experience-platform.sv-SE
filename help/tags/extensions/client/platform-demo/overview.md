@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Demo Extension - översikt
 description: Läs mer om Adobe Experience Platform Demo i Adobe Experience Platform.
 exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1052'
-ht-degree: 0%
+source-wordcount: '1054'
+ht-degree: 4%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 >[!NOTE]
 >
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Funktionerna i det här tillägget porteras till ett nytt tillägg. Här är en snabb jämförelse av aktuella funktioner.
 
-| Plattformsdemonstrationstillägg | Platform Web SDK |
+| Experience Platform Demo Extension | Webb-SDK för Experience Platform |
 | ------------------ | ----------- |
 | Stöd för anpassade kund-ID:n | Stöd för anpassade användar-ID:n |
 | Användargränssnitt för klientmappning för XDM | Bygg i ECID (No need for visitor.js) |
@@ -91,7 +91,7 @@ Tillägget ger också möjlighet att välja ett målschemafält med hjälp av en
 
 ### Identitetsfält i Adobe Experience Platform
 
-Registrera datamodeller och tidsseriedatcheman kan innehålla ett eller flera identitetsfält. Identitetsfält sammanfogas till en enda identitetsrepresentation av ett ämne och innehåller information som en CRM-identifierare, Experience Cloud-ID (ECID), webbläsarcookie, AdvertisingId eller andra ID:n i olika domäner.
+Registrera datamodeller och tidsseriedatcheman kan innehålla ett eller flera identitetsfält. Identitetsfält sammanfogas till en enda identitetsrepresentation av ett ämne och innehåller information som CRM-identifierare, Experience Cloud-id (ECID), webbläsarcookie, AdvertisingId eller andra ID:n i olika domäner.
 
 Identitetsfält kan definieras på två sätt i schemat:
 

@@ -4,9 +4,9 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer. Lär dig vilka ESP:er som stöds som Experience Platform-mål.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: 4566d5241f287801569e0cfa5b86ea6210fd1638
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '377'
 ht-degree: 1%
 
 ---
@@ -27,15 +27,15 @@ Adobe Experience Platform har stöd för följande e-postmarknadsföringsmål:
 * [Mailchimp-taggar](mailchimp-tags.md)
 * [(API) Oracle Eloqua](oracle-eloqua-api.md)
 * [(API) [!DNL Salesforce Marketing Cloud]](salesforce-marketing-cloud-exact-target.md)
-* [(Filer) Oraclet Eloqua](oracle-eloqua.md)
+* [(Filer) Oracle Eloqua](oracle-eloqua.md)
 * [(Filer) [!DNL Salesforce Marketing Cloud]](salesforce-marketing-cloud.md)
 * [[!DNL Salesforce Marketing Cloud Account Engagement]](salesforce-marketing-cloud-account-engagement.md)
-* [Oraclets svar](oracle-responsys.md)
+* [Oracle Responsys](oracle-responsys.md)
 * [SendGrid](sendgrid.md)
 
 ## Anslut till ett nytt mål för e-postmarknadsföring {#connect-destination}
 
-För att kunna skicka målgrupper till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
+För att kunna skicka målgrupper till e-postmarknadsföringsmål för era kampanjer måste Experience Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
 
 ## Bästa tillvägagångssätt när ni aktiverar målgrupper för e-postmarknadsföring {#best-practices}
 

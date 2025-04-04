@@ -2,9 +2,9 @@
 title: Anslut till Data Distiller från en Jupyter-anteckningsbok
 description: Lär dig hur du ansluter till Data Distiller från en Jupyter-anteckningsbok.
 exl-id: e6238b00-aaeb-40c0-a90f-9aebb1a1c421
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '672'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,9 @@ Den här handboken förutsätter att du känner till de interaktiva [!DNL Python
 
 ### Hämta anslutningsreferenser {#obtain-credentials}
 
-Om du vill ansluta till Data Distiller och andra Adobe Experience Platform-tjänster behöver du en Experience Platform API-autentiseringsuppgift. API-autentiseringsuppgifter kan skapas i [Adobe Developer Console](https://developer.adobe.com/console/home) av någon med Developer-åtkomst till Experience Platform. Du rekommenderas att skapa en Oauth2 API-autentiseringsuppgift specifikt för arbetsflöden för datavetenskap och att ha en Adobe-systemadministratör från din organisation som tilldelar autentiseringsuppgifterna till en roll med lämplig behörighet.
+Om du vill ansluta till Data Distiller och andra Adobe Experience Platform-tjänster behöver du en Experience Platform API-autentiseringsuppgift. API-autentiseringsuppgifter kan skapas i [Adobe Developer Console](https://developer.adobe.com/console/home) av någon med Developer-åtkomst till Experience Platform. Du rekommenderas att skapa en Oauth2 API-autentiseringsuppgift specifikt för arbetsflöden inom datavetenskap och att ha en Adobe-systemadministratör från din organisation som tilldelar autentiseringsuppgifterna till en roll med lämplig behörighet.
 
-Mer information om hur du skapar en API-autentiseringsuppgift och får de behörigheter som krävs finns i [Autentisera och få åtkomst till Experience Platform API:er](../../../landing/api-authentication.md).
+Se [Autentisera och få åtkomst till Experience Platform API:er](../../../landing/api-authentication.md) för detaljerade anvisningar om hur du skapar en API-autentiseringsuppgift och får de behörigheter som krävs.
 
 Rekommenderade tillstånd för datavetenskap är bland annat:
 
@@ -32,11 +32,11 @@ Rekommenderade tillstånd för datavetenskap är bland annat:
 - Destinationer: [!UICONTROL Manage and Activate Dataset Destinations]
 - Frågetjänst: [!UICONTROL Manage Queries]
 
-Som standard blockeras en roll (och API-autentiseringsuppgifter som tilldelats den rollen) från att komma åt alla märkta data. I enlighet med organisationens datahanteringsprinciper kan en systemadministratör ge rollen tillgång till vissa märkta data som anses lämpliga för datavetenskapen. Plattformskunder ansvarar för att hantera åtkomsten till etiketter och policyer på lämpligt sätt för att följa relevanta regler och organisationsprofiler.
+Som standard blockeras en roll (och API-autentiseringsuppgifter som tilldelats den rollen) från att komma åt alla märkta data. I enlighet med organisationens datahanteringsprinciper kan en systemadministratör ge rollen tillgång till vissa märkta data som anses lämpliga för datavetenskapen. Experience Platform-kunder ansvarar för att hantera åtkomsten till och reglerna för etiketterna på lämpligt sätt för att följa gällande regler och organisationsregler.
 
 ### Lagra autentiseringsuppgifter i en separat konfigurationsfil {#store-credentials}
 
-För att skydda dina autentiseringsuppgifter bör du undvika att skriva autentiseringsuppgifter direkt i koden. I stället ska du spara inloggningsuppgifterna i en separat konfigurationsfil och läsa de värden som behövs för att ansluta till Experience Platform och Data Distiller.
+För att skydda dina autentiseringsuppgifter bör du undvika att skriva autentiseringsuppgifter direkt i koden. Istället sparar du inloggningsuppgifterna i en separat konfigurationsfil och läser in de värden som behövs för att ansluta till Experience Platform och Data Distiller.
 
 Du kan till exempel skapa en fil med namnet `config.ini` och inkludera följande information (tillsammans med annan information, som datauppsättnings-ID:n, som kan användas för att spara mellan sessioner):
 
@@ -69,7 +69,7 @@ org_id = config.get('Credential', 'ims_org_id')
 
 ## Installera ett epp Python-bibliotek {#install-python-library}
 
-[aepp](https://github.com/adobe/aepp/tree/main) är ett Adobe-hanterat öppen källkodsbibliotek [!DNL Python] som innehåller funktioner för att ansluta till Data Distiller och skicka frågor, som att göra förfrågningar till andra Experience Platform-tjänster. Biblioteket `aepp` i sin tur är beroende av PostgreSQL-databaskortpaketet `psycopg2` för interaktiva Data Distiller-frågor. Det går att ansluta till Data Distiller och skicka frågor med enbart `psycopg2`, men med `aepp` blir det enklare och mer funktionellt att göra förfrågningar till alla API-tjänster för Experience Platform.
+[aepp](https://github.com/adobe/aepp/tree/main) är ett Adobe-hanterat öppen källkodsbibliotek [!DNL Python] som innehåller funktioner för att ansluta till Data Distiller och skicka frågor, som att göra förfrågningar till andra Experience Platform-tjänster. Biblioteket `aepp` i sin tur är beroende av PostgreSQL-databaskortpaketet `psycopg2` för interaktiva Data Distiller-frågor. Det går att ansluta till Data Distiller och skicka frågor till Experience Platform-datauppsättningar med enbart `psycopg2`, men `aepp` erbjuder större bekvämlighet och ytterligare funktionalitet för att göra förfrågningar till alla Experience Platform API-tjänster.
 
 Om du vill installera eller uppgradera `aepp` och `psycopg2` i din miljö kan du använda det magiska kommandot `%pip` i din anteckningsbok:
 
@@ -137,4 +137,4 @@ dd_cursor = queryservice.InteractiveQuery2(dd_conn)
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att ansluta till Data Distiller från en [!DNL Python]-anteckningsbok i maskininlärningsmiljön. Nästa steg på vägen mot nya rörledningar för funktioner från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [utforska och analysera datamängderna](./exploratory-analysis.md).
+Genom att läsa det här dokumentet har du lärt dig att ansluta till Data Distiller från en [!DNL Python]-anteckningsbok i maskininlärningsmiljön. Nästa steg på vägen mot nya rörledningar från Experience Platform för anpassade modeller i maskininlärningsmiljön är att [utforska och analysera datauppsättningarna](./exploratory-analysis.md).

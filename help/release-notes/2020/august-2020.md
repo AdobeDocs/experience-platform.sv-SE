@@ -1,14 +1,14 @@
 ---
-title: Versionsinformation om Adobe Experience Platform, augusti 2020
-description: Versionsinformation från augusti 2020 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform från augusti 2020
+description: Versionsinformation för augusti 2020 för Adobe Experience Platform.
 doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 exl-id: 9347147f-e830-4487-aa12-f56723abb3c8
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '576'
-ht-degree: 1%
+ht-degree: 22%
 
 ---
 
@@ -25,7 +25,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-[!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att frigöra insikter från dina data. [!DNL Data Science Workspace] är integrerat i Adobe Experience Platform och hjälper dig att göra prognoser med ditt innehåll och dina dataresurser över olika Adobe-lösningar.
+[!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att frigöra insikter från dina data. [!DNL Data Science Workspace] är integrerat i Adobe Experience Platform och hjälper dig att göra förutsägelser med ditt innehåll och dina dataresurser över alla Adobe-lösningar.
 
 **Nya funktioner**
 
@@ -35,9 +35,9 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Mer information om [!DNL JupyterLab] finns i [[!DNL JupyterLab] användarhandboken](../../data-science-workspace/jupyterlab/overview.md).
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-I [Real-time Customer Data Platform](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partner på ett smidigt sätt.
+I [Real-Time Customer Data Platform](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partner på ett smidigt sätt.
 
 **Nya mål**
 
@@ -56,7 +56,7 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 ## [!DNL Real-Time Customer Data Platform] {#rtcdp}
 
-Real-time Customer Data Platform ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. [!DNL Real-Time CDP] kombinerar flera företagsdatakällor för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
+Plattformen för kunddata i realtid ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligenta beslut under hela kundresan. [!DNL Real-Time CDP] kombinerar flera datakällor från företag för att skapa kundprofiler i realtid. Segment som byggs upp utifrån dessa profiler kan sedan skickas till mål i senare led för att ge personliga kundupplevelser i alla kanaler och på alla enheter.
 
 **Nya funktioner**
 
@@ -68,9 +68,9 @@ Mer information om [!DNL Real-Time CDP] finns i [[!DNL Real-Time CDP] översikte
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor samtidigt som du kan strukturera, etikettera och förbättra data med hjälp av [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor samtidigt som du kan strukturera, etikettera och förbättra data med hjälp av [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-[!DNL Experience Platform] innehåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+[!DNL Experience Platform] innehåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Nya funktioner**
 

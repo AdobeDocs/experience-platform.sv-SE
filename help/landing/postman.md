@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;startsida;populära ämnen;Adobe Experience Platform;api guide;platform api guide;introduktion till plattform;utvecklarguide
+keywords: Experience Platform;home;populära topics;Adobe Experience Platform;api guide;platform api guide;introduction to platform;developer guide
 solution: Experience Platform
 title: POSTMAN i ADOBE EXPERIENCE PLATFORM
-description: Det här dokumentet innehåller steg som beskriver hur du konfigurerar en Postman-miljö, importerar Postman-samlingar och en lista över tillgängliga samlingar för varje plattformstjänst.
+description: Det här dokumentet innehåller steg som beskriver hur du konfigurerar en Postman-miljö, importerar Postman-samlingar och en lista över tillgängliga samlingar för varje Experience Platform-tjänst.
 role: Developer
 feature: API
 exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
 
 # POSTMAN i ADOBE EXPERIENCE PLATFORM
 
-Postman är en samarbetsplattform för API-utveckling som gör att du kan konfigurera miljöer med förinställda variabler, dela API-samlingar, effektivisera CRUD-begäranden och mycket annat. De flesta Platform API-tjänster har Postman-samlingar som kan användas för att göra API-anrop.
+Postman är en samarbetsplattform för API-utveckling som gör att du kan konfigurera miljöer med förinställda variabler, dela API-samlingar, effektivisera CRUD-begäranden och mycket annat. De flesta Experience Platform API-tjänster har Postman-samlingar som kan användas för att göra API-anrop.
 
 ## Konfigurera en Postman-miljö för Experience Platform
 
@@ -25,7 +25,7 @@ Följande videoguide visar hur du skapar och konfigurerar din Postman-miljö. En
 
 ## Postman-samlingar {#collections}
 
-En mapp som innehåller alla tillgängliga Postman-samlingar finns på [Experience Platform Postman-exempeldatabasen ](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform). En Postman-samlingslänk kan också hittas i varje enskild swagger-fil i [API-referensdokumentationen](https://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
+Du hittar en mapp som innehåller alla tillgängliga Postman-samlingar genom att gå till [Experience Platform Postman-exempeldatabasen GitHub](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform). En Postman-samlingslänk kan också hittas i varje enskild swagger-fil i [API-referensdokumentationen](https://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
 
 Om du vill hämta en Postman-samling väljer du **[!DNL Raw]** på GitHub-sidan för att läsa in JSON-råfilen på en ny flik. Högerklicka sedan och välj **[!DNL Save as]** för att spara filen på ett lokalt mål som du väljer.
 
@@ -61,4 +61,4 @@ I videon nedan används Postman-samlingen [Identity Management Service (IMS)](ht
 
 ## Nästa steg
 
-I det här dokumentet introducerades Postman-miljöer, samlingar och hur du importerar samlingar. Nu när du är klar med Postman kan du gå till [handboken Komma igång för plattformen](api-guide.md) och få information om vilka sidhuvuden, exempel och en lista över [API-guider](api-guide.md#api-guides) som är tillgängliga för respektive plattformstjänst.
+I det här dokumentet introducerades Postman-miljöer, samlingar och hur du importerar samlingar. Nu när du är klar med Postman kan du gå till [Experience Platform guide ](api-guide.md) för att få information om vilka sidhuvuden, exempel och en lista över [API-guider](api-guide.md#api-guides) som är tillgängliga för respektive Experience Platform-tjänst.

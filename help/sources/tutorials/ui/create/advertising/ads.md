@@ -2,9 +2,9 @@
 title: Koppla Google-annonser till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter ditt Google Ads-konto till Adobe Experience Platform i användargränssnittet.
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: ac90eea69f493bf944a8f9920426a48d62faaa6c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---
@@ -94,4 +94,4 @@ Välj **[!UICONTROL Preview]** om du vill förhandsgranska data och välj sedan 
 
 ## Skapa ett dataflöde för att importera annonsdata
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Google Ads-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta annonsdata till plattformen](../../dataflow/advertising.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Google Ads-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta annonsdata till Experience Platform](../../dataflow/advertising.md).

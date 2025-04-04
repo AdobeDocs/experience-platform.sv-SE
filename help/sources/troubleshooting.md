@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;källor;problem;felsökning;felsökning av källor felsökning;källor faq;faq;source connectors;source connector;source connectors faqs;source connectors troubleshooting;
+keywords: Experience Platform;hemanvändare;populära ämnen;källor;problem;felsökning;felsökning av källor;felsökning av källor;frågor och svar;källanslutningar;källanslutning;fel i källanslutningar;felsökning av källanslutningar;
 solution: Experience Platform
 title: Felsökning av källor
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform källor.
 exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
-source-git-commit: 583eb70235174825dd542b95463784638bdef235
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '749'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för källor
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform källor. Om du har frågor och felsökning som rör andra [!DNL Platform]-tjänster, inklusive de som påträffas i alla [!DNL Platform] API:er, kan du läsa [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform källor. För frågor och felsökning som rör andra [!DNL Experience Platform]-tjänster, inklusive de som påträffas i alla [!DNL Experience Platform] API:er, se [Experience Platform felsökningsguide](../landing/troubleshooting.md).
 
 ## Vanliga frågor och svar
 
@@ -67,7 +67,7 @@ Alla källor för batchförtäring stöder partiellt intag. Källor för direktu
 
 ### När ska jag använda partiellt intag?
 
-Delvis inmatning bör användas om du **inte** har begränsningar, till exempel om hela filen hämtas till Platform. Alternativt kan man använda en del av intaget om man inte har något emot att få in data som kan innehålla fel.
+Delvis intag bör användas om du **inte** har begränsningar, till exempel om hela filen hämtas till Experience Platform. Alternativt kan man använda en del av intaget om man inte har något emot att få in data som kan innehålla fel.
 
 ### Vilket är det typiska feltröskelvärdet för partiellt intag?
 

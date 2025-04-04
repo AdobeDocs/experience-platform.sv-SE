@@ -1,15 +1,15 @@
 ---
 title: Strömma data från Snowflake-databasen till Experience Platform med användargränssnittet
-description: Lär dig hur du direktuppspelar data från en Snwoflake-databas till Experience Platform
+description: Lär dig hur du direktuppspelar data från en Synwoflake-databas till Experience Platform
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: 34b1676ebb5405d73cf37cd786d1e6c26cb8fdaa
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1596'
+source-wordcount: '1597'
 ht-degree: 0%
 
 ---
 
-# Strömma data från din [!DNL Snowflake]-databas till Experience Platform med hjälp av användargränssnittet
+# Strömma data från din [!DNL Snowflake]-databas till Experience Platform med användargränssnittet
 
 Lär dig hur du använder användargränssnittet för att strömma data från din [!DNL Snowflake]-databas till Adobe Experience Platform genom att följa den här guiden.
 
@@ -28,7 +28,7 @@ Läs guiden om [nödvändig konfiguration för [!DNL Snowflake] direktuppspelnin
 
 ## Använd [!DNL Snowflake Streaming]-källan för att strömma [!DNL Snowflake]-data till Experience Platform
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *Databaser* väljer du **[!DNL Snowflake Streaming]** och sedan **[!UICONTROL Add data]**.
 
@@ -36,7 +36,7 @@ Under kategorin *Databaser* väljer du **[!DNL Snowflake Streaming]** och sedan 
 >
 >Källor som inte har något autentiserat konto i källkatalogen visar alternativet **[!UICONTROL Set up]**. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform med källkortet för direktuppspelning i Snowflake markerat.](../../../../images/tutorials/create/snowflake-streaming/catalog.png)
+![Källkatalogen i Experience Platform-gränssnittet med källkortet för Snowflake Streaming markerat.](../../../../images/tutorials/create/snowflake-streaming/catalog.png)
 
 Sidan **[!UICONTROL Connect Snowflake Streaming account]** visas. På den här sidan kan du antingen använda nya eller befintliga autentiseringsuppgifter.
 
@@ -54,7 +54,7 @@ När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan
 | --- | --- |
 | Konto | Namnet på ditt [!DNL Snowflake]-konto. Mer information om konventioner för kontonamn finns i [[!DNL Snowflake Streaming] autentiseringsguiden](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials). |
 | Lagerställe | Namnet på ditt [!DNL Snowflake]-lagerställe. Lagerställen hanterar körningen av frågor i [!DNL Snowflake]. Varje [!DNL Snowflake]-lagerställe är oberoende av varandra och måste nås individuellt för att data ska kunna hämtas till Experience Platform. |
-| Databas | Namnet på din [!DNL Snowflake]-databas. Databasen innehåller de data som du vill ta med till Experience Platform. |
+| Databas | Namnet på din [!DNL Snowflake]-databas. Databasen innehåller de data som du vill hämta till Experience Platform. |
 | Schema | (Valfritt) Databasschemat som är associerat med ditt [!DNL Snowflake]-konto. |
 | Användarnamn | Användarnamnet för ditt [!DNL Snowflake]-konto. |
 | Lösenord | Lösenordet till ditt [!DNL Snowflake]-konto. |
@@ -76,11 +76,11 @@ Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 >[!IMPORTANT]
 >
->* Det måste finnas en tidsstämpelkolumn i källtabellen för att ett direktuppspelat dataflöde ska kunna skapas. Tidsstämpeln krävs för att Experience Platform ska kunna veta när data kommer att importeras och när inkrementella data kommer att direktuppspelas. Du kan lägga till en tidsstämpelkolumn retroaktivt för en befintlig anslutning och skapa ett nytt dataflöde.
+>* Det måste finnas en tidsstämpelkolumn i källtabellen för att ett direktuppspelat dataflöde ska kunna skapas. Tidsstämpeln krävs för att Experience Platform ska veta när data kommer att importeras och när inkrementella data kommer att direktuppspelas. Du kan lägga till en tidsstämpelkolumn retroaktivt för en befintlig anslutning och skapa ett nytt dataflöde.
 >
 >* Se till att datafälten i exempelkälldatafilen är i enlighet med [!DNL Snowflake]s riktlinjer för fallupplösning för identifierare. Mer information finns i [[!DNL Snowflake] dokumentet om ID-casing](https://docs.snowflake.com/en/sql-reference/identifiers-syntax#label-identifier-casing).
 
-[!UICONTROL Select data]-steget visas. I det här steget måste du markera de data som du vill importera till Experience Platform, konfigurera tidsstämplar och tidszoner samt tillhandahålla en exempelkälldatafil för inmatning av rådata.
+[!UICONTROL Select data]-steget visas. I det här steget måste du markera de data som du vill importera till Experience Platform, konfigurera tidsstämplar och tidszoner och tillhandahålla en exempelkälldatafil för inmatning av rådata.
 
 Använd databaskatalogen till vänster på skärmen och markera den tabell som du vill importera till Experience Platform.
 
@@ -106,7 +106,7 @@ Därefter måste du ange information om datauppsättningen och dataflödet.
 
 ### Information om datauppsättning {#dataset-details}
 
-En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har inhämtats till Experience Platform bevaras i sjön som datamängder. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
+En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har inhämtats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
 
 >[!BEGINTABS]
 
@@ -149,13 +149,13 @@ När datauppsättningen har konfigurerats måste du ange information om dataflö
 | --- | --- |
 | Dataflödesnamn | Dataflödets namn.  Som standard används namnet på filen som importeras. |
 | Beskrivning | (Valfritt) En kort beskrivning av dataflödet. |
-| Larm | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ kräver ett öppet dataflöde för att utlösa dem. Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
+| Aviseringar | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ kräver ett öppet dataflöde för att utlösa dem. Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
 
 När du är klar väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ## Mappa fält till ett XDM-schema {#mapping}
 
-[!UICONTROL Mapping]-steget visas. Använd mappningsgränssnittet för att mappa dina källdata till rätt schemafält innan du importerar dessa data till Experience Platform och välj sedan **[!UICONTROL Next]**. En utförlig guide om hur du använder mappningsgränssnittet finns i [Användargränssnittshandboken för dataförberedelser](../../../../../data-prep/ui/mapping.md) för mer information.
+[!UICONTROL Mapping]-steget visas. Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan du importerar dessa data till Experience Platform och välj sedan **[!UICONTROL Next]**. En utförlig guide om hur du använder mappningsgränssnittet finns i [Användargränssnittshandboken för dataförberedelser](../../../../../data-prep/ui/mapping.md) för mer information.
 
 ![Mappningsgränssnittet för källarbetsflödet.](../../../../images/tutorials/create/snowflake-streaming/mapping.png)
 

@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig autentiseringskonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en konfiguration för autentiseringsuppgifter
 exl-id: ebff370c-9189-48df-871f-ed0e1cd535c8
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '589'
 ht-degree: 2%
 
 ---
@@ -25,13 +25,13 @@ Den här sidan innehåller exempel på API-begäran och nyttolast som du kan anv
 > 
 >Läs [Konfiguration för kundautentisering](../functionality/destination-configuration/customer-authentication.md) om du vill ha mer information om vilka autentiseringstyper som stöds.
 
-Använd den här API-slutpunkten om du bara vill skapa en autentiseringskonfiguration om det finns ett globalt autentiseringssystem mellan Adobe och målplattformen, och [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till målet. I det här fallet måste du skapa en autentiseringskonfiguration med API-slutpunkten `/credentials`.
+Använd den här API-slutpunkten om du bara vill skapa en autentiseringskonfiguration om det finns ett globalt autentiseringssystem mellan Adobe och målplattformen, och [!DNL Experience Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till målet. I det här fallet måste du skapa en autentiseringskonfiguration med API-slutpunkten `/credentials`.
 
 När du använder ett globalt autentiseringssystem måste du ange `"authenticationRule":"PLATFORM_AUTHENTICATION"` i konfigurationen för [målleverans](../functionality/destination-configuration/destination-delivery.md) när du [skapar en ny målkonfiguration](../authoring-api/destination-configuration/create-destination-configuration.md).
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
@@ -252,8 +252,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade ko
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du uppdaterar en autentiseringskonfiguration med API-slutpunkten `/authoring/credentials`. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.
+När du har läst det här dokumentet vet du nu hur du uppdaterar en autentiseringskonfiguration med API-slutpunkten `/authoring/credentials`. Läs [hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och få en förståelse för var det här steget passar in i processen att konfigurera ditt mål.

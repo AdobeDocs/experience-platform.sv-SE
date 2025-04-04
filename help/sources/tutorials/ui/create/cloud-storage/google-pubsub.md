@@ -1,11 +1,11 @@
 ---
 title: Skapa en Google PubSub Source-anslutning i användargränssnittet
-description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en Google PubSub-källanslutning med Experience Platform användargränssnitt.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: fcac805e151d6142886eb8e05da0eb1babad2f69
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1061'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -14,22 +14,22 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Google PubSub] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Google PubSub] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Google PubSub] (kallas nedan [!DNL PubSub]) med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Google PubSub] (kallas nedan [!DNL PubSub]) med Experience Platform användargränssnitt.
 
 ## Kom igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Om du redan har en giltig [!DNL PubSub]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Du måste ange värden för anslutningsegenskaperna som beskrivs nedan för att kunna ansluta ditt [!DNL PubSub]-konto till Experience Platform. Mer information om autentisering och nödvändiga inställningar finns i [[!DNL PubSub source] översikten](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
+Du måste ange värden för de anslutningsegenskaper som beskrivs nedan för att kunna ansluta ditt [!DNL PubSub]-konto till Experience Platform. Mer information om autentisering och nödvändiga inställningar finns i [[!DNL PubSub source] översikten](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
 
 
 >[!BEGINTABS]
@@ -57,17 +57,17 @@ Mer information om dessa värden finns i följande [PubSub authentication](https
 >
 >Om du använder kontobaserad autentisering för tjänster måste du se till att du har beviljat tillräcklig användaråtkomst till ditt tjänstkonto och att det inte finns några extra tomrum i JSON när du kopierar och klistrar in dina autentiseringsuppgifter.
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL PubSub]-konto till plattformen.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL PubSub]-konto till Experience Platform.
 
 ## Anslut ditt [!DNL PubSub]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin [!UICONTROL Cloud storage] väljer du **[!UICONTROL Google PubSub]** och sedan **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform.](../../../../images/tutorials/create/google-pubsub/catalog.png)
+![Källkatalogen i Experience Platform UI.](../../../../images/tutorials/create/google-pubsub/catalog.png)
 
 Sidan **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -112,7 +112,7 @@ Om du vill skapa ett konto med begränsad åtkomst endast till ett visst [!DNL P
 
 ## Markera data
 
-En lyckad autentisering tar dig till steget [!UICONTROL Select data], där du kan navigera genom din [!DNL PubSub]-datthierarki och välja de data som du vill hämta till Experience Platform.
+En lyckad autentisering ger dig tillgång till steget [!UICONTROL Select data], där du kan navigera genom din [!DNL PubSub]-datakiarki och välja de data som du vill hämta till Experience Platform.
 
 >[!BEGINTABS]
 
@@ -136,4 +136,4 @@ Om du har autentiserat dig med ett ämne och en prenumerationsbaserad åtkomst k
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en anslutning mellan ditt [!DNL PubSub]-konto och din plattform. Du kan nu fortsätta med nästa självstudie och [konfigurera ett dataflöde för att hämta direktuppspelningsdata från ditt molnlagringsutrymme till plattformen](../../dataflow/streaming/cloud-storage-streaming.md).
+Genom att följa den här självstudiekursen har du skapat en anslutning mellan ditt [!DNL PubSub]-konto och Experience Platform. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta direktuppspelningsdata från ditt molnlagringsutrymme till Experience Platform](../../dataflow/streaming/cloud-storage-streaming.md).

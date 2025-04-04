@@ -1,14 +1,14 @@
 ---
-title: Versionsinformation om Adobe Experience Platform, augusti 2021
-description: Versionsinformation från augusti 2021 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform från augusti 2021
+description: Versionsinformation för augusti 2021 för Adobe Experience Platform.
 doc-type: release notes
 last-update: August 25, 2021
 author: ens28527
 exl-id: 0513b9dc-b16c-43b3-8e17-4be4499308d4
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '715'
-ht-degree: 1%
+source-wordcount: '719'
+ht-degree: 27%
 
 ---
 
@@ -18,14 +18,14 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Insikter om observerbarhet](#observability)
 - [Kundprofil i realtid](#profile)
 - [Källor](#sources)
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya mål**
 
@@ -35,33 +35,33 @@ Destinationer är färdiga integrationer med målplattformar som möjliggör smi
 | [[!DNL Airship Tags]](../../destinations/catalog/mobile-engagement/airship-tags.md) | Målet för Airship Tags, som tidigare fanns i betaversion, är nu allmänt tillgängligt. |
 | [[!DNL Braze]](../../destinations/catalog/mobile-engagement/braze.md) | Braze-målet, som tidigare fanns i betaversionen, är nu allmänt tillgängligt. |
 | [[!DNL Pinterest Customer List]](../../destinations/catalog/advertising/pinterest.md) | Med Pinterest kundlistdestination kan ni skapa målgrupper utifrån era kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest. |
-| [[!DNL Twitter Custom Audiences]](../../destinations/catalog/social/twitter.md) | Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats inom Adobe Experience Platform. |
+| [[!DNL Twitter Custom Audiences]](../../destinations/catalog/social/twitter.md) | Rikta er till era befintliga följare och kunder på Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats inom Adobe Experience Platform. |
 | [[!DNL Verizon Media/Yahoo DataX]](../../destinations/catalog/advertising/datax.md) | DataX är en aggregerad Verizon Media/Yahoo-infrastruktur som är värd för olika komponenter som gör att Verizon Media/Yahoo kan utbyta data med sina externa partner på ett säkert, automatiserat och skalbart sätt. |
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [[!DNL Destination SDK]](../../destinations/destination-sdk/overview.md) | Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar. |
+| [[!DNL Destination SDK]](../../destinations/destination-sdk/overview.md) | Adobe Experience Platform Destination SDK är en serie konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar. |
 | [Användbarhetsförbättringar för mål](../../destinations/ui/activation-overview.md) | Förbättrad användarvänlighet för destinationer gör det möjligt för marknadsförare att smidigt aktivera segment till befintliga destinationer. |
 
-Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
+För mer allmän information om mål, se [översikt över mål](../../destinations/home.md).
 
 ## Insikter om observerbarhet {#observability}
 
-Med observabilitetsinsikter kan ni övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
+Med observationsinsikter kan ni övervaka Experience Platform-aktiviteter med hjälp av statistik och händelsemeddelanden.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Larm | Du kan nu prenumerera på viktiga aviseringar om arbetsflöden som körs på plattformen. När du har prenumererat på specifika varningsregler får du meddelanden och e-postmeddelanden i användargränssnittet när en viktig livscykelhändelse inträffar (t.ex. slutförd datainmatning) eller om det finns problem som kräver din uppmärksamhet (t.ex. ett intag-flöde som misslyckas eller ett segmentjobb som tar längre tid än förväntat). Mer information finns i [varningsöversikten](../../observability/alerts/overview.md). |
+| Aviseringar | Du kan nu prenumerera på viktiga aviseringar om arbetsflöden som körs på Experience Platform. När du har prenumererat på specifika varningsregler får du meddelanden och e-postmeddelanden i användargränssnittet när en viktig livscykelhändelse inträffar (t.ex. slutförd datainmatning) eller om det finns problem som kräver din uppmärksamhet (t.ex. ett intag-flöde som misslyckas eller ett segmentjobb som tar längre tid än förväntat). Mer information finns i [varningsöversikten](../../observability/alerts/overview.md). |
 
 Mer information om tjänsten finns i översikten [Insikter om observabilitet](../../observability/home.md).
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta upplevelser för dina kunder, oavsett var eller när de interagerar med ditt varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med profilen kan du konsolidera kunddata till en enhetlig vy som ger en handlingsbar, tidsstämplad redogörelse för varje kundinteraktion.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
@@ -71,12 +71,12 @@ Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och 
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Källanslutning för lokal filöverföring | Kategorin för filinläsning har bytt namn till det lokala systemet, vilket gör att du kan överföra lokala filer direkt till plattformen med den lokala filöverföringskopplingen. Data som hämtas via den här kopplingen kan övervakas via kontrollpanelen för övervakning. Mer information finns i [Översikt över den lokala filöverföringskällan](../../sources/connectors/local-system/local-file-upload.md). |
+| Källanslutning för lokal filöverföring | Kategorin för filinläsning har bytt namn till det lokala systemet, så att du kan överföra lokala filer direkt till Experience Platform med den lokala filöverföringskopplingen. Data som hämtas via den här kopplingen kan övervakas via kontrollpanelen för övervakning. Mer information finns i [Översikt över den lokala filöverföringskällan](../../sources/connectors/local-system/local-file-upload.md). |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).

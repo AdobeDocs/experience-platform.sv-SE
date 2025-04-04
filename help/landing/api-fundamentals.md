@@ -2,24 +2,24 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Grundläggande om Experience Platform API
-description: I det här dokumentet finns en kort översikt över vissa underliggande tekniker och syntaxer som används för Experience Platform-API:er.
+description: Det här dokumentet ger en kort översikt över vissa underliggande tekniker och syntaxer som ingår i Experience Platform API:er.
 role: Developer
 feature: API
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '508'
 ht-degree: 0%
 
 ---
 
 # Grundläggande om Experience Platform API
 
-Adobe Experience Platform API:er använder flera underliggande tekniker och syntaxer som är viktiga att förstå för att effektivt hantera JSON-baserade [!DNL Platform]-resurser. Dokumentet innehåller en kort översikt över dessa tekniker samt länkar till extern dokumentation för mer information.
+Adobe Experience Platform API:er använder flera underliggande tekniker och syntaxer som är viktiga att förstå för att effektivt hantera JSON-baserade [!DNL Experience Platform]-resurser. Dokumentet innehåller en kort översikt över dessa tekniker samt länkar till extern dokumentation för mer information.
 
 ## JSON-pekare {#json-pointer}
 
-JSON-pekaren är en standardiserad strängsyntax ([RFC 6901](https://tools.ietf.org/html/rfc6901)) för att identifiera specifika värden i JSON-dokument. En JSON-pekare är en sträng med variabler som avgränsas med `/` tecken, som anger antingen objektnycklar eller matrisindex, och tokenerna kan vara en sträng eller ett tal. JSON-pekarsträngar används i många PATCH-åtgärder för [!DNL Platform] API:er, vilket beskrivs senare i det här dokumentet. Mer information om JSON-pekare finns i [översiktsdokumentationen för JSON-pekaren](https://rapidjson.org/md_doc_pointer.html).
+JSON-pekaren är en standardiserad strängsyntax ([RFC 6901](https://tools.ietf.org/html/rfc6901)) för att identifiera specifika värden i JSON-dokument. En JSON-pekare är en sträng med variabler som avgränsas med `/` tecken, som anger antingen objektnycklar eller matrisindex, och tokenerna kan vara en sträng eller ett tal. JSON-pekarsträngar används i många PATCH-åtgärder för [!DNL Experience Platform] API:er, vilket beskrivs senare i det här dokumentet. Mer information om JSON-pekare finns i [översiktsdokumentationen för JSON-pekaren](https://rapidjson.org/md_doc_pointer.html).
 
 ### Exempel på JSON-schemaobjekt
 
@@ -98,7 +98,7 @@ Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras 
 
 ## JSON Patch {#json-patch}
 
-Det finns många PATCH-åtgärder för [!DNL Platform] API:er som accepterar JSON Patch-objekt för deras begärandenyttolaster. JSON Patch är ett standardiserat format ([RFC 6902](https://tools.ietf.org/html/rfc6902)) för att beskriva ändringar i ett JSON-dokument. Det gör att du kan definiera partiella uppdateringar av JSON utan att behöva skicka hela dokumentet i en begärandetext.
+Det finns många PATCH-åtgärder för [!DNL Experience Platform] API:er som accepterar JSON Patch-objekt för deras begärandenyttolaster. JSON Patch är ett standardiserat format ([RFC 6902](https://tools.ietf.org/html/rfc6902)) för att beskriva ändringar i ett JSON-dokument. Det gör att du kan definiera partiella uppdateringar av JSON utan att behöva skicka hela dokumentet i en begärandetext.
 
 ### Exempel på JSON-lagningsobjekt
 
@@ -109,7 +109,7 @@ Det finns många PATCH-åtgärder för [!DNL Platform] API:er som accepterar JSO
 }
 ```
 
-* `op`: Korrigeringsåtgärd av typen. JSON Patch stöder flera olika åtgärdstyper, men inte alla PATCH-åtgärder i [!DNL Platform] API:er är kompatibla med alla åtgärdstyper. Tillgängliga åtgärdstyper är:
+* `op`: Korrigeringsåtgärd av typen. JSON Patch stöder flera olika åtgärdstyper, men inte alla PATCH-åtgärder i [!DNL Experience Platform] API:er är kompatibla med alla åtgärdstyper. Tillgängliga åtgärdstyper är:
    * `add`
    * `remove`
    * `replace`
@@ -126,4 +126,4 @@ JSON-schema är ett format som används för att beskriva och validera JSON-data
 
 ## Nästa steg
 
-I det här dokumentet introducerades några av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Mer information om hur du arbetar med plattforms-API:er finns i [komma igång-guiden](api-guide.md), inklusive bästa praxis. Svar på vanliga frågor finns i [felsökningsguiden för plattformen](troubleshooting.md).
+I det här dokumentet introducerades några av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Mer information om hur du arbetar med Experience Platform API:er finns i [komma igång-guiden](api-guide.md), inklusive bästa praxis. Svar på vanliga frågor finns i [Experience Platform felsökningsguide](troubleshooting.md).

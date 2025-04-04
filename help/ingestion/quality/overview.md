@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Datakvalitet;Kvalitet;Validering;validering som stöds;validering;
+keywords: Experience Platform;home;populära topics;Data quality;quality;Quality;Supported validation;Validation;supported validation;
 solution: Experience Platform
 title: Datakvalitet
 description: Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och direktuppspelning i Adobe Experience Platform.
 exl-id: 7ef40859-235a-4759-9492-c63e5fd80c8e
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '427'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Följande valideringar görs för direktuppspelning:
 | Datauppsättning | Ser till att datauppsättningen anges, aktiveras och inte har tagits bort. |
 | Sidhuvud | Ser till att rubriken är angiven och giltig. |
 
-Mer information om hur [!DNL Platform] övervakar och validerar data finns i [dokumentationen för övervakning av dataflöden](./monitor-data-ingestion.md).
+Mer information om hur [!DNL Experience Platform] övervakar och validerar data finns i [dokumentationen för övervakning av dataflöden](./monitor-data-ingestion.md).
 
 ## Validering av identitetsvärde
 

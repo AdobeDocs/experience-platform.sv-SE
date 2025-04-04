@@ -3,9 +3,9 @@ title: Google Cloud-lagringsanslutning
 description: Lär dig hur du ansluter till Google Cloud Storage och aktiverar målgrupper eller exporterar datauppsättningar.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: f652faac7d771b590b30f591616b53d0cd2ff1eb
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1178'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Skapa en utgående liveanslutning till [!DNL Google Cloud Storage] för att rege
 
 ## Anslut till ditt [!DNL Google Cloud Storage]-lagringsutrymme via API eller användargränssnittet {#connect-api-or-ui}
 
-* Läs avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan om du vill ansluta till lagringsplatsen [!DNL Google Cloud Storage] med hjälp av användargränssnittet för plattformen.
+* Om du vill ansluta till lagringsplatsen [!DNL Google Cloud Storage] med Experience Platform användargränssnitt läser du avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
 * Om du vill ansluta till din [!DNL Google Cloud Storage]-lagringsplats programmatiskt läser du [Aktivera målgrupper till filbaserade mål med hjälp av API-självstudiekursen för Flow-tjänsten](../../api/activate-segments-file-based-destinations.md).
 
 ## Målgrupper {#supported-audiences}
@@ -27,7 +27,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -47,18 +47,18 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
-* Så här [exporterar du datauppsättningar med användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här [exporterar du datauppsättningar med Experience Platform användargränssnitt](/help/destinations/ui/export-datasets.md).
 * Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service ](/help/destinations/api/export-datasets.md).
 
 ## Filformat för exporterade data {#file-format}
 
-När du exporterar *målgruppsdata* skapar Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
+När du exporterar *målgruppsdata* skapar Experience Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
 
-När du exporterar *datauppsättningar* skapar Platform en `.parquet` - eller `.json` -fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
+När du exporterar *datauppsättningar* skapar Experience Platform en `.parquet`- eller `.json`-fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
 ## Förutsättningar för att ansluta ditt [!DNL Google Cloud Storage]-konto {#prerequisites}
 
-Om du vill ansluta plattformen till [!DNL Google Cloud Storage] måste du först aktivera interoperabilitet för ditt [!DNL Google Cloud Storage]-konto. Om du vill komma åt interoperabilitetsinställningen öppnar du [!DNL Google Cloud Platform] och väljer **[!UICONTROL Settings]** i alternativet **[!UICONTROL Cloud Storage]** på navigeringspanelen.
+Om du vill ansluta Experience Platform till [!DNL Google Cloud Storage] måste du först aktivera interoperabilitet för ditt [!DNL Google Cloud Storage]-konto. Om du vill komma åt interoperabilitetsinställningen öppnar du [!DNL Google Cloud Platform] och väljer **[!UICONTROL Settings]** i alternativet **[!UICONTROL Cloud Storage]** på navigeringspanelen.
 
 ![Kontrollpanelen för Google Cloud-plattformen med molnlagring och inställningar markerade.](../../../sources/images/tutorials/create/google-cloud-storage/nav.png)
 
@@ -70,7 +70,7 @@ Sidan **[!UICONTROL Interoperability]** innehåller information om autentisering
 
 ![Skapa en nyckel för en tjänstkontokontroll som är markerad på instrumentpanelen för Google Cloud-plattformen.](../../../sources/images/tutorials/create/google-cloud-storage/interoperability.png)
 
-Du kan använda ditt nyligen genererade åtkomstnyckel-ID och den hemliga åtkomstnyckeln för att ansluta ditt [!DNL Google Cloud Storage]-konto till plattformen.
+Du kan använda ditt nyligen genererade åtkomstnyckel-ID och din hemliga åtkomstnyckel för att ansluta ditt [!DNL Google Cloud Storage]-konto till Experience Platform.
 
 ## Anslut till målet {#connect}
 
@@ -84,8 +84,8 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
-* **[!UICONTROL Access key ID]**: En alfanumerisk sträng på 61 tecken som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen. Mer information om hur du hämtar det här värdet finns i avsnittet [Krav](#prerequisites) ovan.
-* **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen. Mer information om hur du hämtar det här värdet finns i avsnittet [Krav](#prerequisites) ovan.
+* **[!UICONTROL Access key ID]**: En alfanumerisk sträng på 61 tecken som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Experience Platform. Mer information om hur du hämtar det här värdet finns i avsnittet [Krav](#prerequisites) ovan.
+* **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Experience Platform. Mer information om hur du hämtar det här värdet finns i avsnittet [Krav](#prerequisites) ovan.
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
@@ -154,4 +154,4 @@ Kontrollera [!DNL Google Cloud Storage]-pytsen och se till att de exporterade fi
 
 ## IP-adress tillåtelselista {#ip-address-allow-list}
 
-Läs artikeln [IP-adressen tillåtelselista ](ip-address-allow-list.md) om du behöver lägga till IP-adresser i Adobe i en tillåtelselista.
+Läs artikeln [IP-adressen tillåtelselista](ip-address-allow-list.md) om du behöver lägga till Adobe IP-adresser i en tillåtelselista.

@@ -2,9 +2,9 @@
 title: XDM Business Person Components Schemafältgrupp
 description: Läs mer om schemafältgruppen XDM Business Person Components.
 exl-id: 965b89f4-59f5-43f4-8778-3549e15b44d4
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 [!UICONTROL XDM Business Person Components] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som samlar in flera källposter för en person och andra attribut som krävs för personsegmentering.
 
-När en profil skapas för en person via [Kundprofil för realtid](../../../profile/home.md) i B2B-utgåvan av Real-Time CDP kan informationen som används för att skapa den profilen komma från många källposter. Om en person till exempel arbetar för två olika företag skulle många CRM-system skapa en avsiktligt duplicerad kopia av den personen så att den ena kopian är länkad till företag A, medan den andra är länkad till företag B. När du hämtar dessa data till Adobe Experience Platform används den här fältgruppen för att sammanfoga de olika källposterna till en enda representation.
+När en profil skapas för en person via [Kundprofil i realtid](../../../profile/home.md) i B2B edition för Real-Time CDP kan informationen som används för att skapa profilen komma från många källposter. Om en person till exempel arbetar för två olika företag skulle många CRM-system skapa en avsiktligt duplicerad kopia av den personen så att den ena kopian är länkad till företag A, medan den andra är länkad till företag B. När du hämtar dessa data till Adobe Experience Platform används den här fältgruppen för att sammanfoga de olika källposterna till en enda representation.
 
 Fältgruppen innehåller ett `personComponents`-fält på rotnivå, som är en array med objekt. Varje objekt i arrayen representerar en annan källpost.
 
@@ -21,8 +21,8 @@ Fältgruppen innehåller ett `personComponents`-fält på rotnivå, som är en a
 >
 >Du måste följa de intag-mönster som beskrivs i [källdokumentationen](../../../rtcdp/sources/b2b.md). Andra fältmappningsmetoder fungerar inte med säkerhet.
 >
->Till exempel skickas varje objekt i arrayen `personComponents` individuellt under standardintag och läggs sedan till i arrayen per plattform. Om du manuellt lägger till en array med objekt i Business Person-komponenten returneras ett fel.
->Du bör använda verktyget för automatisk generering när du skapar scheman för dina B2B-data. I dokumentationen finns instruktioner om hur du använder [B2B-namnutrymmet och verktyget för automatisk schemagenerering](../../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md). Om du inte använder verktyget för automatisk generering och tänker mappa din datamodell manuellt, ska du läsa dokumentationen för [Adobe Real-time Customer Data Platform B2B Edition XDM-klasserna](../../../rtcdp/schemas/b2b.md) innan du mappar dina data.
+>Till exempel skickas varje objekt i arrayen `personComponents` individuellt under standardintag och läggs sedan till i arrayen av Experience Platform. Om du manuellt lägger till en array med objekt i Business Person-komponenten returneras ett fel.
+>Du bör använda verktyget för automatisk generering när du skapar scheman för dina B2B-data. I dokumentationen finns instruktioner om hur du använder [B2B-namnutrymmet och verktyget för automatisk schemagenerering](../../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md). Om du inte använder verktyget för automatisk generering och tänker mappa din datamodell manuellt, måste du läsa dokumentationen för [Adobe Real-Time Customer Data Platform B2B edition XDM-klasserna](../../../rtcdp/schemas/b2b.md) innan du mappar dina data.
 >
 >I [helhetsjälvstudiekursen](../../../rtcdp/b2b-tutorial.md) finns mer information om rekommenderade arbetsflöden för B2B-data.
 

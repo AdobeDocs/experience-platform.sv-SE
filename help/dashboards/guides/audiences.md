@@ -4,9 +4,9 @@ title: Auditions Dashboard
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om målgrupper som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2951'
+source-wordcount: '2955'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om dina målgrupper, som du har tagit med en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Audiences] i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
-En översikt över alla Adobe Experience Platform segmenteringstjänstfunktioner i användargränssnittet för plattformen finns i [gränssnittshandboken för segmenteringstjänsten](../../segmentation/ui/overview.md).
+En översikt över alla Adobe Experience Platform segmenteringstjänstfunktioner i Experience Platform användargränssnitt finns i [gränssnittshandboken för segmenteringstjänsten](../../segmentation/ui/overview.md).
 
 ## [!UICONTROL Audiences] instrumentpanelsdata
 
@@ -29,11 +29,11 @@ Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika
 
 ## Utforska instrumentpanelen [!UICONTROL Audiences] {#explore}
 
-Om du vill navigera till kontrollpanelen [!UICONTROL Audiences] i plattformsgränssnittet väljer du **[!UICONTROL Audiences]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
+Om du vill navigera till kontrollpanelen [!UICONTROL Audiences] i Experience Platform-gränssnittet väljer du **[!UICONTROL Audiences]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
 >[!NOTE]
 >
->Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen [!UICONTROL Audiences]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med segmentering.
+>Om din organisation inte har använt Experience Platform tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen [!UICONTROL Audiences]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med segmentering.
 
 ![Fliken [!UICONTROL Audiences] Dashboard [!UICONTROL Overview] med [!UICONTROL Audiences] och [!UICONTROL Overview] markerade.](../images/audiences/dashboard-overview.png)
 
@@ -53,7 +53,7 @@ I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade wi
 
 ### Visa SQL {#view-sql}
 
-Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på arbetsytan för [!UICONTROL Overview]. Ni kan få inspiration från SQL:s av era befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. Mer information om den här funktionen finns i [Visa gränssnittshandboken för SQL](../view-sql.md).
+Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på arbetsytan för [!UICONTROL Overview]. Ni kan hämta inspiration från SQL:s befintliga insikter för att skapa nya frågor som bygger på unika insikter från Experience Platform-data utifrån era affärsbehov. Mer information om den här funktionen finns i [Visa gränssnittshandboken för SQL](../view-sql.md).
 
 ## Välj en målgrupp {#select-audience}
 
@@ -119,7 +119,7 @@ Den AI-modell som avgör graden av benägenhet väljs i listruteväljaren under 
 
 Om du vill navigera till sidan med detaljerad information för den valda kundens AI-modell väljer du **[!UICONTROL View model details]**.
 
-![Kontrollpanelen Experience Platform Publiker med widgeten [!UICONTROL Customer AI distribution of scores] och [!UICONTROL View model details] markerad.](../images/segments/customer-ai-distribution-of-scores.png)
+![Kontrollpanelen Experience Platform Audiences med widgeten [!UICONTROL Customer AI distribution of scores] och [!UICONTROL View model details] markerad.](../images/segments/customer-ai-distribution-of-scores.png)
 
 Sidan med detaljerad modellinformation visas.
 
@@ -146,13 +146,13 @@ I listrutan under widgetens rubrik finns en lista med alla konfigurerade AI-mode
 >
 >Det totala antalet beräknade profiler beror på den valda sammanfogningsprincipen. Om du vill ändra den sammanfogningsprincip som används väljer du listrutan direkt under fliken Översikt. Mer information finns i avsnittet [sammanfogningsprinciper](#merge-policies) om du vill ha en kort beskrivning eller i översikten för [sammanfogningsprincipen](../../profile/merge-policies/overview.md).
 
-![Kontrollpanelen Experience Platform Publiker med widgeten Sammanfattning av kundens AI-poäng markerad.](../images/segments/customer-ai-scoring-summary.png)
+![Kontrollpanelen Experience Platform Audiences med widgeten Customer AI Scoring Summary.](../images/segments/customer-ai-scoring-summary.png)
 
 Välj **[!UICONTROL View model details]** om du vill navigera till sidan med detaljerade insikter för den valda kundens AI-modell. Mer information om kunds-AI finns i [gränssnittsguiden för upptäckt](../../intelligent-services/customer-ai/user-guide/discover-insights.md).
 
 ## Standardwidgetar {#standard-widgets}
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina målgrupper. Du kan också skapa anpassade widgetar som ska delas med din organisation med [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa översikten över [widgetbiblioteket](../customize/widget-library.md).
+Adobe har flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina målgrupper. Du kan också skapa anpassade widgetar som ska delas med din organisation med [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa översikten över [widgetbiblioteket](../customize/widget-library.md).
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 

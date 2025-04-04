@@ -2,9 +2,9 @@
 title: Hantera lagring av Experience Event-datauppsättningar i Data Lake med TTL
 description: Lär dig hur du utvärderar, ställer in och hanterar lagring av Experience Event-datauppsättningar i datasjön med hjälp av TTL-konfigurationer (Time-To-Live) med Adobe Experience Platform API:er. Den här guiden förklarar hur TTL-radnivåförfallodatum stöder principer för datalagring, optimerar lagringseffektiviteten och säkerställer effektiv livscykelhantering. Här finns också användningsexempel och metodtips som hjälper dig att effektivt tillämpa TTL.
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 3b5fcc3eec6f2c2e749c86a7baf9995fb88b27d6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2335'
+source-wordcount: '2340'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ TTL är användbart vid hantering av tidskänsliga data som blir mindre relevant
 
 ### Branschexempel {#industry-example}
 
-Som ett exempel kan vi titta på en direktuppspelningstjänst för video som spårar användarinteraktioner, till exempel videovyer, sökningar och rekommendationer. Även om aktuella engagemangsdata är avgörande för personalisering förlorar äldre aktivitetsloggar (till exempel interaktioner från över ett år sedan) relevansen. Genom att använda radnivåförfallodatum tar Platform automatiskt bort inaktuella loggar och ser till att endast aktuella och meningsfulla data används för analyser och rekommendationer.
+Som ett exempel kan vi titta på en direktuppspelningstjänst för video som spårar användarinteraktioner, till exempel videovyer, sökningar och rekommendationer. Även om aktuella engagemangsdata är avgörande för personalisering förlorar äldre aktivitetsloggar (till exempel interaktioner från över ett år sedan) relevansen. Genom att använda radnivåförfallodatum tar Experience Platform automatiskt bort inaktuella loggar och ser till att endast aktuella och meningsfulla data används för analyser och rekommendationer.
 
 ## Utvärdera TTL-lämplighet
 
@@ -76,7 +76,7 @@ Kontrollera först de aktuella TTL-inställningarna för att börja hantera TTL.
 
 >[!TIP]
 >
->Plattformsgatewayens URL och bassökväg för katalogtjänstens API är: `https://platform.adobe.io/data/foundation/catalog`.
+>Experience Platform Gateway-URL och grundsökvägen för katalogtjänstens API är: `https://platform.adobe.io/data/foundation/catalog`.
 
 **API-format**
 
@@ -375,13 +375,13 @@ Du kan tillämpa bevarandeprinciper på datauppsättningar som skapats med klass
 ### Hur snart raderas data från sjödatatjänsterna?
 
 +++Svar
-TTL-värden för datauppsättningar utvärderas och bearbetas varje vecka, och alla poster som har gått ut tas bort. En händelse anses ha upphört att gälla om den skapades för mer än 30 dagar sedan (importdatum > 30 dagar) och dess händelsedatum överskrider den definierade kvarhållningsperioden (TTL).
+TTL-värden för datauppsättningar utvärderas och bearbetas varje vecka, och alla poster som har gått ut tas bort. En händelse anses ha upphört att gälla om den förtärdes i Experience Platform för mer än 30 dagar sedan (importdatum > 30 dagar) och dess händelsedatum överskrider den definierade kvarhållningsperioden (TTL).
 +++
 
 ### Hur snart tar datauppsättningsarkiveringsjobbet bort data från profiltjänster?
 
 +++Svar
-När en kvarhållningsprincip har angetts tas befintliga händelser i plattformen bort omedelbart om deras händelsetidsstämpel överskrider kvarhållningsperioden (TTL). Nya händelser tas bort när deras tidsstämpel överskrider kvarhållningsperioden.
+När en kvarhållningsprincip har angetts tas befintliga händelser i Experience Platform bort omedelbart om deras händelsetidsstämpel överskrider kvarhållningsperioden (TTL). Nya händelser tas bort när deras tidsstämpel överskrider kvarhållningsperioden.
 
 Om du till exempel tillämpar en 30-dagars förfalloprincip den 15 maj inträffar följande:
 
@@ -436,6 +436,6 @@ Mer information finns i [Skapa härledda datauppsättningar med SQL-guiden](../.
 
 Nu när du har lärt dig hur du hanterar TTL-inställningar för förfallodatum på radnivå kan du läsa följande dokumentation för att få en bättre förståelse för hur du hanterar TTL:
 
-- Kvarhållningsjobb: Lär dig att schemalägga och automatisera datauppsättningens förfallodatum i plattformsgränssnittet med [gränssnittsguiden för datalivscykler](../../hygiene/ui/dataset-expiration.md), eller kontrollera konfigurationer för kvarhållande av datauppsättningar och verifiera att utgångna poster tas bort.
+- Kvarhållningsjobb: Lär dig att schemalägga och automatisera datauppsättningens förfallodatum i Experience Platform-gränssnittet med [gränssnittsguiden för datalivscykel](../../hygiene/ui/dataset-expiration.md), eller kontrollera konfigurationer för kvarhållande av datauppsättningar och verifiera att utgångna poster tas bort.
 - [API-slutpunktsguide för förfallodatum för datauppsättning](../../hygiene/api/dataset-expiration.md): Upptäck hur du tar bort hela datauppsättningar i stället för bara rader. Lär dig hur du schemalägger, hanterar och automatiserar utgångsdatum för datauppsättningar med API:t för att säkerställa effektiv datalagring.
 - [Översikt över dataanvändningsprinciper](../../data-governance/policies/overview.md): Lär dig hur du anpassar din datalagringsstrategi till bredare efterlevnadskrav och begränsningar för användning av marknadsföringsmaterial.

@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: f01a044d3d12ef457c6242a0b93acbfeeaf48588
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4282'
+source-wordcount: '4284'
 ht-degree: 1%
 
 ---
@@ -64,7 +64,7 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 * **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience). Om du väljer målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiveras steget [Välj anrikningsattribut](#select-enrichment-attributes) automatiskt.
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience). Om du väljer målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiveras steget [Välj anrikningsattribut](#select-enrichment-attributes) automatiskt.
 * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
 >[!IMPORTANT]
@@ -133,7 +133,7 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
 
 2. Använd växlingsknappen **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller på schemalagd basis vid en angiven tidpunkt. När du väljer alternativet **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tidpunkten på dagen, i formatet [!DNL UTC], när exporten ska ske.
 
-   Använd alternativet **[!UICONTROL After segment evaluation]** om du vill att aktiveringsjobbet ska köras direkt när det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Med det här alternativet exporteras de senaste profilerna till målet när aktiveringsjobbet körs. Detta kan leda till att en målgrupp exporteras flera gånger per dag, baserat på dina åtgärder.
+   Använd alternativet **[!UICONTROL After segment evaluation]** om du vill att aktiveringsjobbet ska köras omedelbart efter att Experience Platform dagliga batchsegmenteringsjobb har slutförts. Med det här alternativet exporteras de senaste profilerna till målet när aktiveringsjobbet körs. Detta kan leda till att en målgrupp exporteras flera gånger per dag, baserat på dina åtgärder.
 
    >[!IMPORTANT]
    >
@@ -293,7 +293,7 @@ I det här steget måste du välja de profilattribut som du vill lägga till i f
 
 Ett obligatoriskt attribut är en användaraktiverad kryssruta som ser till att alla profilposter innehåller det valda attributet. Till exempel innehåller alla exporterade profiler en e-postadress. &#x200B;
 
-Du kan markera attribut som obligatoriska för att se till att [!DNL Platform] bara exporterar de profiler som innehåller det specifika attributet. Det innebär att den kan användas som en extra form av filtrering. Det krävs **inte** för att markera ett attribut som obligatoriskt.
+Du kan markera attribut som obligatoriska för att se till att [!DNL Experience Platform] bara exporterar de profiler som innehåller det specifika attributet. Det innebär att den kan användas som en extra form av filtrering. Det krävs **inte** för att markera ett attribut som obligatoriskt.
 
 Om du inte väljer ett obligatoriskt attribut exporteras alla kvalificerade profiler oavsett deras attribut.
 
@@ -310,7 +310,7 @@ En dedupliceringsnyckel är en användardefinierad primärnyckel som avgör iden
 
 Avdupliceringsnycklar eliminerar möjligheten att ha flera poster med samma profil i en exportfil.
 
-Det finns tre sätt att använda dedupliceringsnycklar i [!DNL Platform]:
+Det finns tre sätt att använda dedupliceringsnycklar i [!DNL Experience Platform]:
 
 * Använda ett enskilt identitetsnamnutrymme som [!UICONTROL deduplication key]
 * Använda ett profilattribut från en [!DNL XDM]-profil som [!UICONTROL deduplication key]

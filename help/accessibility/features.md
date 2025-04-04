@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;enhetlig profil;enhetlig;profil;rtcp;XDM-diagram
-title: Allmänna tillgänglighetsfunktioner i plattformen
+title: Allmänna tillgänglighetsfunktioner i Experience Platform
 type: Documentation
 description: Läs mer om de allmänna tillgänglighetsfunktionerna i Adobe Experience Platform, inklusive tangentbordsnavigering, färgpaletter och kontrast samt stöd för hjälpmedelstekniker.
 exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '483'
 ht-degree: 0%
 
 ---
 
 # Tillgänglighetsfunktioner i Experience Platform
 
-Adobe Experience Platform strävar efter att tillhandahålla hjälpmedelsfunktioner för alla, inklusive användare som arbetar med hjälpmedel som taligenkänningsprogram och skärmläsare. I det här dokumentet beskrivs de allmänna tillgänglighetsfunktionerna som stöds av Platform, inklusive tangentbordsnavigering, semantisk struktur, tillräcklig kontrast mellan förgrundselement och bakgrundselement samt stöd för hjälpmedelstekniker.
+Adobe Experience Platform strävar efter att tillhandahålla hjälpmedelsfunktioner för alla, inklusive användare som arbetar med hjälpmedel som taligenkänningsprogram och skärmläsare. I det här dokumentet beskrivs de allmänna tillgänglighetsfunktionerna som stöds av Experience Platform, inklusive tangentbordsnavigering, semantisk struktur, tillräcklig kontrast mellan förgrundselement och bakgrundselement samt stöd för hjälpmedelstekniker.
 
 ## Hjälpmedel
 
-Användare med funktionshinder förlitar sig ofta på maskinvara och programvara, så kallade hjälpmedelstekniker, för att få tillgång till digitalt innehåll och för att använda programvaruprodukter. Adobe Experience Platform stöder flera typer av hjälpmedelstekniker (AT), som skärmläsare, zoom och program för röstigenkänning, genom att följa bästa hjälpmedelspraxis, som att använda semantisk kod, textmotsvarigheter, etiketter och ARIA där det behövs. Interaktiva element i användargränssnittet i Experience Platform använder motsvarande etiketter, hjälpmedelsnamn och roller som identifierar både deras syfte och deras aktuella tillstånd. Detta garanterar att hjälpmedelstekniker, som skärmläsare, kan läsa upp etiketter och annan information för användarna så att de enkelt kan interagera med programkontrollerna.
+Användare med funktionshinder förlitar sig ofta på maskinvara och programvara, så kallade hjälpmedelstekniker, för att få tillgång till digitalt innehåll och för att använda programvaruprodukter. Adobe Experience Platform stöder flera typer av hjälpmedelstekniker (AT), som skärmläsare, zoom och program för röstigenkänning, genom att följa bästa hjälpmedelspraxis, som att använda semantisk kod, textmotsvarigheter, etiketter och ARIA där det behövs. Interaktiva element i Experience Platform användargränssnitt använder motsvarande etiketter, hjälpmedelsnamn och roller som identifierar både deras syfte och deras aktuella tillstånd. Detta garanterar att hjälpmedelstekniker, som skärmläsare, kan läsa upp etiketter och annan information för användarna så att de enkelt kan interagera med programkontrollerna.
 
 ## Tangentbordstillgänglighet
 
@@ -35,9 +35,9 @@ Följande navigeringselement underlättar tillgängligheten:
 
 ## Färgpaletter och kontrast
 
-Experience Platform strävar efter [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/)-överensstämmelse, inklusive krav på färgkontrast. Användargränssnittet i Experience Platform ger tillräckligt med kontrast i programmet för att du ska få en lättillgänglig visningsupplevelse för användare med nedsatt syn eller färgbrister.
+Experience Platform eftersträvar [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/) -överensstämmelse, inklusive krav på färgkontrast. Experience Platform användargränssnitt ger tillräckligt med kontrast i programmet för att du ska få en lättillgänglig visningsupplevelse för användare med nedsatt syn eller färgbrist.
 
-![Färgpaletten och kontrasten på Experience Platform-gränssnittets hemsida.](images/homepage.png)
+![Färgpaletten och kontrasten finns på Experience Platform hemsida.](images/homepage.png)
 
 ## Obligatorisk fältvalidering
 

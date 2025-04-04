@@ -1,18 +1,18 @@
 ---
 title: Skapa en anslutning och ett dataflöde för att förminska direktuppspelningen i användargränssnittet
-description: Lär dig hur du skapar en Shopify Streaming-källanslutning och ett dataflöde med hjälp av användargränssnittet för plattformen
+description: Lär dig hur du skapar en Shopify Streaming-källanslutning och ett dataflöde med Experience Platform användargränssnitt
 badge: Beta
 exl-id: d53f4ab5-8bdc-4647-83d5-ee898abda0f2
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '761'
 ht-degree: 0%
 
 ---
 
 # Skapa en källanslutning och ett dataflöde för [!DNL Shopify Streaming]-data med användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Shopify Streaming]-källanslutning och ett dataflöde med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Shopify Streaming]-källanslutning och ett dataflöde med Experience Platform-användargränssnittet.
 
 ## Komma igång {#getting-started}
 
@@ -29,17 +29,17 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ## Anslut ditt [!DNL Shopify Streaming]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin **eCommerce** väljer du [!DNL Shopify Streaming] och sedan **[!UICONTROL Add data]**.
 
-![Katalogen för Experience Platform-källor](../../../../images/tutorials/create/shopify-streaming/catalog.png)
+![Källkatalogen i Experience Platform](../../../../images/tutorials/create/shopify-streaming/catalog.png)
 
 ## Markera data
 
-**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till plattformen.
+**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till Experience Platform.
 
 * Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.
@@ -66,7 +66,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du väljer. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du väljer. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -85,7 +85,7 @@ När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och tillåt 
 
 ## Hämta din URL för direktuppspelningsslutpunkt
 
-När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform.
+När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten kommer att användas för att prenumerera på din webkrok så att strömningskällan kan kommunicera med Experience Platform.
 
 Om du vill hämta strömningsslutpunkten går du till sidan [!UICONTROL Dataflow activity] i det dataflöde som du just skapade och kopierar slutpunkten längst ned på panelen [!UICONTROL Properties].
 

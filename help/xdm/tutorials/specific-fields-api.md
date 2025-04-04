@@ -2,16 +2,16 @@
 title: Lägg till specifika fält i ett schema med API:t för schemaregistret
 description: Lär dig hur du lägger till enskilda fält från befintliga fältgrupper i ett XDM-schema (Experience Data Model) med API:t för schemaregistret.
 exl-id: 696cce2b-bbde-416a-9f52-12ab4da9c2c6
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '626'
 ht-degree: 0%
 
 ---
 
 # Lägga till specifika fält i ett schema med API:t för schemaregister
 
-XDM-scheman (Experience Data Model) består av en basklass, där ytterligare fält inkluderas genom användning av standardfältgrupper som definieras av Adobe och anpassade fältgrupper som definieras av organisationen.
+XDM-scheman (Experience Data Model) består av en basklass, där ytterligare fält inkluderas genom användning av standardfältgrupper som definieras av Adobe och anpassade fältgrupper som definieras av din organisation.
 
 När du skapar ett schema kanske du vill använda vissa fält från en viss fältgrupp och utesluta andra från samma grupp som du inte behöver. I den här självstudiekursen visas hur du lägger till enskilda fält från en fältgrupp i ett schema med API:t för schemaregister.
 
@@ -190,7 +190,7 @@ Ett lyckat svar returnerar information om det uppdaterade schemat.
 
 >[!NOTE]
 >
->Mer detaljerad information om schemaförfrågningar från PUT finns i [schemas slutpunktshandbok](../api/schemas.md#put).
+>Mer detaljerad information om PUT-begäranden om scheman finns i [schemas slutpunktshandbok](../api/schemas.md#put).
 
 ## Lägga till fält med en PATCH-åtgärd
 
@@ -281,10 +281,10 @@ Ett lyckat svar returnerar information om det uppdaterade schemat.
 
 >[!NOTE]
 >
->Mer detaljerad information om schemaförfrågningar från PATCH finns i [schemas slutpunktshandbok](../api/schemas.md#patch).
+>Mer detaljerad information om PATCH-begäranden om scheman finns i [schemas slutpunktshandbok](../api/schemas.md#patch).
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du använder API-anrop för att lägga till enskilda fält från en befintlig fältgrupp i ett schema. Mer information om hur du utför liknande fältbaserade åtgärder i plattformsgränssnittet finns i handboken om [fältbaserade arbetsflöden](../ui/field-based-workflows.md).
+I den här guiden beskrivs hur du använder API-anrop för att lägga till enskilda fält från en befintlig fältgrupp i ett schema. Mer information om hur du utför liknande fältbaserade åtgärder i användargränssnittet i Experience Platform finns i handboken om [fältbaserade arbetsflöden](../ui/field-based-workflows.md).
 
 Mer information om funktionerna i API:t för schemaregister finns i [API-översikten](../api/overview.md) för en fullständig lista över slutpunkter och processer.

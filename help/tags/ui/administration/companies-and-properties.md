@@ -2,10 +2,10 @@
 title: Egenskaper
 description: Läs om hur tillägg, miljöer och bibliotek är organiserade och grupperade för din organisation i Adobe Experience Platform.
 exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1153'
-ht-degree: 0%
+source-wordcount: '1155'
+ht-degree: 4%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 ## Webbegenskaper
 
@@ -37,7 +37,7 @@ Tänk på följande när du planerar egenskaper:
 
 ### Kodstruktur
 
-Webbplatserna bygger på HTML, mobilappar på kod.  Om de underliggande HTML-mallarna eller kodebaserna är desamma för flera webbplatser och program kan det vara bra att använda en taggegenskap för att hantera flera webbplatser eller appar.
+Webbplatserna baseras på HTML, mobilappar på kod.  Om de underliggande HTML-mallarna eller kodbaserna är desamma för flera webbplatser och program kan det vara bra att använda en taggegenskap för att hantera flera webbplatser eller appar.
 
 ### Data
 
@@ -51,7 +51,7 @@ Om dina datainsamlingsbehov är unika för varje webbplats eller program kan det
 
 Liknar data, är variablerna som du anger i [!DNL Analytics] och andra tillägg väldigt lika, lite lika eller unika?
 
-Om eVar27 till exempel används för samma källvärde på alla webbplatser och i alla program kan det vara bra att gruppera dessa webbplatser och program tillsammans så att du kan ange de gemensamma variablerna i bara en egenskap.
+Om du till exempel använder eVar27 för samma källvärde på alla webbplatser och i alla program kan det vara bra att gruppera dessa webbplatser och program tillsammans så att du kan ange de gemensamma variablerna i bara en egenskap.
 
 ### Tillägg, taggar och system
 
@@ -67,7 +67,7 @@ Om du till exempel distribuerar [!DNL Adobe Analytics], [!DNL Target] och samma 
 
 Behöver de enskilda, team och organisationer som arbetar i Adobe Experience Platform tillgång till alla era webbplatser och applikationer, några av dem eller bara en?
 
-Med funktionerna för användarhantering kan du tilldela olika roller till olika personer för alla dina egenskaper, eller per egenskap. Om någon har tillräcklig behörighet kan den personen utföra administrativa åtgärder för alla egenskaper i den plattformsorganisationen. Alla andra roller kan tilldelas per egenskap. Du kan även dölja en egenskap för vissa användare (icke-administratörer) genom att inte ge dem någon roll i den egenskapen.
+Med funktionerna för användarhantering kan du tilldela olika roller till olika personer för alla dina egenskaper, eller per egenskap. Om någon har tillräcklig behörighet kan den personen utföra administrativa åtgärder i alla egenskaper i den Experience Platform-organisationen. Alla andra roller kan tilldelas per egenskap. Du kan även dölja en egenskap för vissa användare (icke-administratörer) genom att inte ge dem någon roll i den egenskapen.
 
 ## Egenskapssida
 
@@ -123,7 +123,7 @@ Följ instruktionerna för att skapa en mobil egenskap.
 1. Fyll i fälten:
 
    * **Namn:** Namnet på din egenskap.
-   * **Sekretess:** Som standard är sekretessinställningen Inaktiverad, vilket innebär att du vill att SDK ska samla in och skicka data till lösningar. Om du väljer Avanmäl dig kommer SDK som standard INTE att skicka data till lösningar. Om du väljer Okänd som inställning kräver SDK att programmet först uppmanar användaren att tillåta datainsamling och delning.
+   * **Sekretess:** Som standard är sekretessinställningen Inaktiverad, vilket innebär att du vill att SDK ska samla in och skicka data till lösningar. Om du väljer Avanmäl dig skickas INTE data till lösningar via SDK. Om du väljer Okänd som inställning måste SDK först uppmana användaren att tillåta datainsamling och delning.
 
      >[!NOTE]
      >
@@ -133,7 +133,7 @@ Följ instruktionerna för att skapa en mobil egenskap.
 
 1. Välj **[!UICONTROL Save]**.
 
-När egenskapen har skapats lägger Platform automatiskt till en standardvärd, en uppsättning miljöer (Utveckling, Förproduktion och produktion) samt standardtilläggen.
+När din egenskap har skapats lägger Experience Platform automatiskt till en standardvärd, en uppsättning miljöer (Utveckling, Förproduktion och produktion) samt standardtilläggen.
 
 ## Ta bort en egenskap
 

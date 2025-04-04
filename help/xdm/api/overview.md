@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;data model;schema register;schemaregister;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;
 solution: Experience Platform
 title: API-guide för schemaregister
 description: Med API:t för schemaregister kan utvecklare programmässigt hantera alla scheman och relaterade XDM-resurser (Experience Data Model) inom Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1144'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 [!DNL Schema Registry] används för att komma åt schemabiblioteket i Adobe Experience Platform, med ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
-API:t för schemaregister innehåller flera slutpunkter som gör att du kan hantera alla scheman och relaterade XDM-resurser (Experience Data Model) som är tillgängliga inom plattformen. Detta omfattar de som definieras av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder.
+API:t för schemaregister innehåller flera slutpunkter som gör att du kan hantera alla scheman och relaterade XDM-resurser (Experience Data Model) som är tillgängliga i Experience Platform. Detta omfattar de som definieras av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder.
 
 Dessa slutpunkter beskrivs nedan. Besök de enskilda slutpunktsguiderna för mer information och se [kom igång-guiden](./getting-started.md) för viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 
@@ -27,7 +27,7 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 
 ## Scheman
 
-XDM-scheman representerar och validerar strukturen och formatet för data som hämtas till Platform. Ett schema består av en klass och noll eller flera schemafältgrupper. Du kan skapa, visa, redigera och ta bort scheman med slutpunkten `/schemas`. Mer information om hur du använder den här slutpunkten finns i [schemas slutpunktshandbok](./schemas.md).
+XDM-scheman representerar och validerar strukturen och formatet för data som hämtas in till Experience Platform. Ett schema består av en klass och noll eller flera schemafältgrupper. Du kan skapa, visa, redigera och ta bort scheman med slutpunkten `/schemas`. Mer information om hur du använder den här slutpunkten finns i [schemas slutpunktshandbok](./schemas.md).
 
 En steg-för-steg-guide om hur du skapar ett fullständigt schema manuellt i API:t för schemaregister, inklusive hur du skapar och lägger till fältgrupper och datatyper, finns i [självstudiekursen för att skapa API-schema](../tutorials/create-schema-api.md).
 
@@ -59,7 +59,7 @@ Beskrivare är uppsättningar metadata som tilldelas till specifika fält i ett 
 
 ## Unions
 
-Med Platform kan du skapa scheman för särskilda användningsfall, men du kan också skapa en&quot;union&quot; av scheman som tillhör en viss klass. Ett unionsschema samlar fälten för alla scheman som delar samma klass i en enda representation. Genom att aktivera ett schema för användning med [Kundprofil för realtid](../../profile/home.md), inkluderas det schemat i unionen för sin särskilda klass. Det innebär att det inte går att redigera fackscheman direkt och att de bara kan påverkas om du inkluderar eller utesluter scheman för användning i profilen.
+I Experience Platform kan du skapa scheman för olika användningsområden, men du kan också skapa en &quot;union&quot; av scheman som tillhör en viss klass. Ett unionsschema samlar fälten för alla scheman som delar samma klass i en enda representation. Genom att aktivera ett schema för användning med [Kundprofil för realtid](../../profile/home.md), inkluderas det schemat i unionen för sin särskilda klass. Det innebär att det inte går att redigera fackscheman direkt och att de bara kan påverkas om du inkluderar eller utesluter scheman för användning i profilen.
 
 Mer information om hur du visar föreningar i API:t för schematabellen finns i [slutpunktshandboken för föreningar](./unions.md).
 

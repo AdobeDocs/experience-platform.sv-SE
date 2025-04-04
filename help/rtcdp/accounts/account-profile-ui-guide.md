@@ -1,13 +1,13 @@
 ---
 keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningsprinciper;kundprofil i realtid
 title: Användargränssnittshandbok för kontoprofil
-description: Genom att använda kontoprofiler kan du använda Adobe Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+description: Genom att använda kontoprofiler kan du med Adobe Real-Time Customer Data Platform B2B edition samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 96f29d5c64bb29125d8a63dd3ddb3bdedb5ebd52
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1609'
+source-wordcount: '1610'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Kontoprofiler är bara tillgängliga för Real-time Customer Data Platform B2B Edition-kunder. Om du vill veta mer om Real-Time CDP, inklusive vilka funktioner och funktioner som är tillgängliga för varje licenstyp, börjar du med att läsa [Real-Time CDP-översikten](../overview.md).
+>Kontoprofiler är bara tillgängliga för Real-Time Customer Data Platform B2B edition-kunder. Om du vill veta mer om Real-Time CDP, inklusive vilka funktioner och funktioner som är tillgängliga för varje licenstyp, börjar du med att läsa [Real-Time CDP-översikten](../overview.md).
 
-Med kontoprofiler kan du samla kontoinformation från flera olika källor. Denna enhetliga vy av ett konto sammanför data från alla era marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kundkontoinformation. Det här dokumentet innehåller en guide till interaktion med kontoprofiler med Real-Time CDP, B2B Edition som finns i Adobe Experience Platform användargränssnitt.
+Med kontoprofiler kan du samla kontoinformation från flera olika källor. Denna enhetliga vy av ett konto sammanför data från alla era marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kundkontoinformation. Det här dokumentet innehåller en guide till interaktion med kontoprofiler med Real-Time CDP, B2B edition-funktioner som finns i Adobe Experience Platform användargränssnitt.
 
 Om du vill veta mer om hur kontoprofiler skapas som en del av B2B-arbetsflödet kan du läsa självstudiekursen [från början till slut](../b2b-tutorial.md).
 
@@ -28,7 +28,7 @@ Välj **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navig
 
 ![Fliken Kontoprofiler, översikt, med profiler i den vänstra navigeringen och översikt markerad.](images/b2b-account-profile-overview.png)
 
-Mer information finns i dokumentationen på kontrollpanelen [[!UICONTROL Account Profiles]](../../dashboards/guides/account-profiles.md). Mer information om hur datamodeller för insikter kan användas för att skapa anpassade diagram för dina instrumentpaneler finns i dokumentationen för [Real-time Customer Data Platform Insights-datamodellen B2B Edition](../../dashboards/data-models/cdp-insights-data-model-b2b.md).
+Mer information finns i dokumentationen på kontrollpanelen [[!UICONTROL Account Profiles]](../../dashboards/guides/account-profiles.md). I dokumentationen om datamodellen [Customer Data Platform Insights i realtid, B2B edition](../../dashboards/data-models/cdp-insights-data-model-b2b.md), finns mer information om hur datamodeller för insikter kan användas för att skapa anpassade diagram för dina instrumentpaneler.
 
 ## Konfigurera kontomatchning för lead {#configure-lead-to-account-matching}
 
@@ -88,11 +88,11 @@ När du har valt en källa måste du nu ange en **[!UICONTROL Account ID]** som 
 
 ### Bläddra efter [!UICONTROL Others] {#browse-by-others}
 
-Real-Time CDP, B2B Edition stöder möjligheten att utföra en direktsökning genom att tillåta dig att ange **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för ett konto som du vill visa. Genom att ange källnamnet och instansen direkt anger du det sammanhang som krävs för att Experience Platform ska kunna söka efter och visa korrekta kontoprofildata.
+Real-Time CDP, B2B edition stöder möjligheten att utföra en direkt sökning genom att tillåta dig att ange **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för ett konto som du vill visa. Genom att ange källnamnet och instansen direkt anger du det sammanhang som krävs för att Experience Platform ska kunna söka efter och visa korrekta kontoprofildata.
 
 Möjligheten att utföra en direktsökning är användbar under omständigheter då det inte går att ansluta direkt till data. Om din organisation till exempel har befintliga datastyrningsprinciper som förhindrar direktanslutning till CRM kan du exportera dessa data till ett molnlagringssystem och sedan importera dem till Experience Platform.
 
-Ett annat exempel kan vara att du utför en omvandling av data mellan den tidpunkt då de lämnar ett system och går in på plattformen. Du kan använda direktsökningsfunktionen för att skapa kontext för data (till exempel ange att det är Marketo-data, trots att det kommer från en Amazon S3-bucket) så att systemet vet var de ska sökas och hur de ska återges korrekt.
+Ett annat exempel kan vara att du utför en omformning av data mellan den tidpunkt då de lämnar ett system och går in i Experience Platform. Du kan använda direktsökningsfunktionen för att skapa kontext för data (till exempel ange att det är Marketo-data, trots att det kommer från en Amazon S3-bucket) så att systemet vet var de ska sökas och hur de ska återges korrekt.
 
 Om du vill påbörja en direktsökning väljer du **[!UICONTROL Others]** i listrutan **[!UICONTROL Browse by]** och anger sedan **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för kontot som du vill visa.
 
@@ -122,19 +122,19 @@ Förutom att du kan visa data i en lista kan du använda sökfältet för att s�
 
 ## Fliken Personer {#people-tab}
 
-Fliken **[!UICONTROL People]** innehåller en lista med enskilda personer som är associerade med kontot. Dessa personer kan vara kontakter och leads från olika företagssystem som hanteras av olika team inom organisationen, men i Real-Time CDP, B2B Edition presenteras de tillsammans som en enda lista som gör att du kan få en mer helhetsbild av dina kontokontakter.
+Fliken **[!UICONTROL People]** innehåller en lista med enskilda personer som är associerade med kontot. Dessa personer kan vara kontakter och leads från olika företagssystem som hanteras av olika team inom organisationen, men i Real-Time CDP presenteras de tillsammans som en enda lista som gör att du kan se en mer helhetsbild av dina kontokontakter.
 
 >[!NOTE]
 >
 >Fliken [!UICONTROL People] visar en lista med upp till 25 personer som är associerade med kontot. För konton med fler än 25 associerade personer visas ett slumpmässigt urval på 25 poster.
 
-Förutom att visa dig en ögonblicksbild av information för kontakten, innehåller varje person i listan även en **[!UICONTROL Profile ID]**, som är en klickbar länk som gör att du kan utforska kundprofilen i realtid för den personen. Om du vill veta mer om hur du visar enskilda kundprofiler för dina konton kan du gå till guiden för [bläddringsprofiler i Real-Time CDP, B2B Edition](../profile/profile-browse.md).
+Förutom att visa dig en ögonblicksbild av information för kontakten, innehåller varje person i listan även en **[!UICONTROL Profile ID]**, som är en klickbar länk som gör att du kan utforska kundprofilen i realtid för den personen. Om du vill veta mer om hur du visar enskilda kundprofiler för dina konton kan du gå till guiden för [bläddringsprofiler i Real-Time CDP, B2B edition](../profile/profile-browse.md).
 
 ![Fliken Personer](images/b2b-account-people.png)
 
 ## Fliken Affärsmöjligheter {#opportunities-tab}
 
-Fliken **[!UICONTROL Opportunities]** innehåller information om öppna och stängda affärsmöjligheter som är relaterade till kontot. Dessa möjligheter kan förtäras i Experience Platform från flera olika källor, men Real-Time CDP B2B Edition gör det enkelt för marknadsförarna att se alla dessa möjligheter på ett och samma ställe.
+Fliken **[!UICONTROL Opportunities]** innehåller information om öppna och stängda affärsmöjligheter som är relaterade till kontot. Dessa möjligheter kan förtäras i Experience Platform från flera olika källor, men med Real-Time CDP är det enkelt för marknadsförarna att se alla dessa möjligheter på ett och samma ställe.
 
 >[!NOTE]
 >

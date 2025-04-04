@@ -2,9 +2,9 @@
 title: Skapa en Microsoft SQL Server Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Microsoft SQL Server-källanslutning med Adobe Experience Platform gränssnitt.
 exl-id: aba4e317-1c59-4999-a525-dba15f8d4df9
-source-git-commit: 1828dd76e9ff317f97e9651331df3e49e44efff5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Om du redan har en giltig [!DNL SQL Server]-anslutning kan du hoppa över resten
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta till [!DNL SQL Server] på [!DNL Platform] måste du ange följande anslutningsegenskap:
+För att kunna ansluta till [!DNL SQL Server] på [!DNL Experience Platform] måste du ange följande anslutningsegenskap:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -36,7 +36,7 @@ Mer information om hur du kommer igång finns i [det här [!DNL SQL Server] doku
 
 ## Anslut ditt [!DNL SQL Server]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *Databaser* väljer du **[!DNL Microsoft SQL Server]** och sedan **[!UICONTROL Set up]**.
 
@@ -70,4 +70,4 @@ Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SQL Server]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SQL Server]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

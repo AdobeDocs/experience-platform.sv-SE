@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;API;utforska;flödest
 title: Utforska en Source i tabellformat med API:t för Flow Service
 description: I den här självstudien används API:t för Flow Service för att utforska innehållet och strukturen i en tabellbaserad källa.
 exl-id: 0c7a5b8a-2071-4ac2-b2d1-c5534e7c7d9c
-source-git-commit: 3bdeec8284873b8d9368f833b24e9922ed489019
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '471'
 ht-degree: 1%
 
 ---
@@ -22,16 +22,16 @@ I den här självstudiekursen beskrivs hur du utforskar och förhandsgranskar st
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../landing/api-guide.md).
 
 ## Utforska era datatabeller
 
-Du kan hämta information om strukturen för dina datatabeller genom att göra en GET-förfrågan till [!DNL Flow Service]-API:t och samtidigt ange källans anslutnings-ID.
+Du kan hämta information om strukturen för dina datatabeller genom att göra en GET-begäran till [!DNL Flow Service]-API:t och samtidigt ange källans anslutnings-ID.
 
 **API-format**
 
@@ -56,7 +56,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med tabeller från källan. Hitta tabellen som du vill hämta till Platform och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
+Ett lyckat svar returnerar en array med tabeller från källan. Leta reda på tabellen som du vill hämta till Experience Platform och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
 
 ```json
 [
@@ -77,9 +77,9 @@ Ett lyckat svar returnerar en array med tabeller från källan. Hitta tabellen s
 ]
 ```
 
-## Inspect tabellstrukturen
+## Inspektera strukturen i en tabell
 
-Om du vill inspektera innehållet i datatabellerna utför du en GET-förfrågan till [!DNL Flow Service]-API:t samtidigt som du anger sökvägen till en tabell som en frågeparameter.
+Om du vill inspektera innehållet i datatabellerna utför du en GET-begäran till API:t [!DNL Flow Service] samtidigt som du anger sökvägen till en tabell som en frågeparameter.
 
 **API-format**
 
@@ -188,7 +188,7 @@ Ett godkänt svar returnerar information om innehållet och strukturen i den ang
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du samlat in information om strukturen och innehållet i dina datatabeller. Dessutom har du hämtat sökvägen till tabellen som du vill importera till Platform. Du kan använda den här informationen för att skapa en källanslutning och ett dataflöde för att överföra data till plattformen. I följande självstudiekurser finns mer information om hur du skapar en källanslutning och ett dataflöde med API:t [!DNL Flow Service]:
+Genom att följa den här självstudiekursen har du samlat in information om strukturen och innehållet i dina datatabeller. Dessutom har du hämtat sökvägen till tabellen som du vill importera till Experience Platform. Du kan använda den här informationen för att skapa en källanslutning och ett dataflöde för att överföra data till Experience Platform. I följande självstudiekurser finns mer information om hur du skapar en källanslutning och ett dataflöde med API:t [!DNL Flow Service]:
 
 * [Advertising-källor](../collect/advertising.md)
 * [CRM-källor](../collect/crm.md)

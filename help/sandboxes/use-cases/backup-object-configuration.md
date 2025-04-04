@@ -2,10 +2,10 @@
 title: Säkerhetskopiera objektkonfigurationer med sandlådeverktyg
 description: Om du vill återställa sandlådor säkert och lägga till versionshanteringsstöd säkerhetskopierar du objektkonfigurationer (eller metadata) med verktygspaket för sandlådor. Säkerhetskopieringspaket förhindrar förlust av kritiska konfigurationer som scheman, datauppsättningar och målgrupper, särskilt under utvecklingsiterationer.
 exl-id: cccbaaf1-ee68-4a00-9a44-aa5db4a83a14
-source-git-commit: d4df5606228347b5fb69fdaa24c637c329099895
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1152'
-ht-degree: 0%
+source-wordcount: '1153'
+ht-degree: 2%
 
 ---
 
@@ -30,7 +30,7 @@ När du planerar att skapa ett eget säkerhetskopieringspaket i din organisation
 - Beroende på vilka scopemetadata du vill säkerhetskopiera, kontrollerar du att du förstår hur du manuellt [lägger till objekt i ett paket](../ui/sandbox-tooling.md#add-object-to-a-new-package) eller hur du [exporterar en hel sandlåda](../ui/sandbox-tooling.md#export-an-entire-sandbox).
 - Se till att du har tillgång till sandlådeverktyg i din organisation med rätt behörigheter.
 
-### UI-funktionalitet, plattformskomponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}
+### Gränssnittsfunktioner, Experience Platform-komponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}
 
 För att implementera det här användningsexemplet måste du använda flera områden i Adobe Experience Platform. Kontrollera att du har de [attributbaserade åtkomstkontrollsbehörigheterna](../../access-control/abac/overview.md) som krävs för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
@@ -125,4 +125,4 @@ Nu när du har återställt sandlådan kan du använda det säkerhetskopieringsp
 
 Utforska fler användningsexempel som kan användas via sandlådeverktyg:
 
-- [Skapa ett högklassigt centrum med sandlådeverktyg](./center-of-excellence.md)
+- [Aktivera ett kompetenscentrum med hjälp av sandlådeverktyg](./center-of-excellence.md)

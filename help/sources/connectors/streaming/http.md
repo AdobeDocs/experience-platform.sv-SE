@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;http api
+keywords: Experience Platform;home;populära topics;http api
 solution: Experience Platform
 title: Översikt över HTTP API Source Connector
 description: Lär dig hur du skapar direktuppspelningsanslutningar för att ansluta till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 41e079f3-75b2-4033-8138-73162c31461a
-source-git-commit: ee659ded9701132b12d5b93672b4c958e9720028
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '211'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Du kan nu använda källan [!DNL HTTP API] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
+>Du kan nu använda källan [!DNL HTTP API] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Du kan använda [!DNL HTTP API]-källkopplingen för att strömma dina data till plattformen. [!DNL HTTP API]-källan stöds av [!DNL Data Prep]-funktioner, vilket gör att du kan mappa alla data som inte är XDM-kompatibla till en XDM-kompatibel datauppsättning.
+Du kan använda [!DNL HTTP API]-källanslutningen för att strömma dina data till Experience Platform. [!DNL HTTP API]-källan stöds av [!DNL Data Prep]-funktioner, vilket gör att du kan mappa alla data som inte är XDM-kompatibla till en XDM-kompatibel datauppsättning.
 
-Dokumentationen nedan innehåller information om hur du skapar en HTTP API-direktuppspelningsanslutare som kan ansluta till [!DNL Platform] med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du skapar en HTTP API-direktuppspelningsanslutare som kan ansluta till [!DNL Experience Platform] med API:er eller användargränssnittet:
 
 ## Skapa en HTTP API-direktuppspelningskontakt med API:er
 

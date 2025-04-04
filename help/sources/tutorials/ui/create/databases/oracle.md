@@ -5,7 +5,7 @@ title: Skapa en Oracle DB Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Oracle DB-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 4ca6ecc6-0382-4cee-acc5-1dec7eeb9443
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL Oracle DB]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Oracle DB]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Oracle DB]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,18 +29,18 @@ Om du redan har en giltig [!DNL Oracle DB]-anslutning kan du hoppa över resten 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Oracle DB]-konto på [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till ditt [!DNL Oracle DB]-konto på [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Oracle DB]. Anslutningssträngsmönstret [!DNL Oracle DB] är: `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Oracle DB] är `d6b52d86-f0f8-475f-89d4-ce54c8527328`. |
 
-Mer information om hur du kommer igång finns i [det här Oraclet](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
+Mer information om hur du kommer igång finns i [det här Oracle-dokumentet](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
 
 ## Anslut ditt [!DNL Oracle DB]-konto
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Oracle DB]-konto till [!DNL Platform].
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Oracle DB]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -66,4 +66,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Oracle DB]-konto d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle DB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle DB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

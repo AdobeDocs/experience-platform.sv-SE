@@ -4,9 +4,9 @@ description: Använd Acxiom-datainmatning för att importera Acxiom-data till Re
 last-substantial-update: 2024-03-19T00:00:00Z
 badge: Beta
 exl-id: a0a080ef-4603-437f-8a68-11dbf530ac90
-source-git-commit: d048109141168b33795753c4706dac64cdf29ca5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1790'
+source-wordcount: '1791'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >Källan [!DNL Acxiom Data Ingestion] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
-Använd källan [!DNL Acxiom Data Ingestion] för att importera [!DNL Acxiom]-data till Real-time Customer Data Platform och berika förstapartsprofiler. Sedan kan du använda dina [!DNL Acxiom]-berikade förstahandsprofiler för att förbättra målgrupper och aktivera i alla marknadsföringskanaler.
+Använd källan [!DNL Acxiom Data Ingestion] för att importera [!DNL Acxiom]-data till Real-Time Customer Data Platform och berika förstapartsprofiler. Sedan kan du använda dina [!DNL Acxiom]-berikade förstahandsprofiler för att förbättra målgrupper och aktivera i alla marknadsföringskanaler.
 
 I den här självstudiekursen får du lära dig hur du skapar en [!DNL Acxiom Data Ingestion]-källanslutning och ett dataflöde med Adobe Experience Platform användargränssnitt. Källan [!DNL Acxiom Data Ingestion] används för att hämta och mappa svar från förbättringstjänsten [!DNL Acxiom] med Amazon S3 som släpppunkt.
 
@@ -32,7 +32,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till din bucket på Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
+Om du vill komma åt din bucket på Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -47,7 +47,7 @@ För att få åtkomst till din bucket på Experience Platform måste du ange gil
 
 ## Anslut ditt [!DNL Acxiom]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -105,7 +105,7 @@ Därefter måste du ange information om datauppsättningen och dataflödet.
 
 >[!TAB Använd en ny datauppsättning]
 
-En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har inhämtats till Experience Platform bevaras i sjön som datamängder. Om du vill använda en ny datauppsättning väljer du **[!UICONTROL New dataset]**.
+En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har inhämtats till Experience Platform lagras i datasjön som datauppsättningar. Om du vill använda en ny datauppsättning väljer du **[!UICONTROL New dataset]**.
 
 ![Det nya datauppsättningsgränssnittet.](../../../../images/tutorials/create/acxiom-data-enhancement-import/image-source-new-dataset.png)
 
@@ -144,11 +144,11 @@ När datauppsättningen har konfigurerats måste du ange information om dataflö
 | --- | --- |
 | Dataflödesnamn | Dataflödets namn.  Som standard används namnet på filen som importeras. |
 | Beskrivning | (Valfritt) En kort beskrivning av dataflödet. |
-| Larm | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ är alla ett öppet dataflöde som utlöser dessa.  Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
+| Aviseringar | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ är alla ett öppet dataflöde som utlöser dem.  Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
 
 ## Mappning
 
-Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan data hämtas till Experience Platform.  Mer information finns i [mappningsguiden i användargränssnittet](../../../../../data-prep/ui/mapping.md)
+Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan data importeras till Experience Platform.  Mer information finns i [mappningsguiden i användargränssnittet](../../../../../data-prep/ui/mapping.md)
 
 ![Mappningsgränssnittet.](../../../../images/tutorials/create/acxiom-data-enhancement-import/image-source-mapping.png)
 
@@ -178,7 +178,7 @@ När du har granskat dataflödet klickar du på Slutför och anger en tid innan 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta batchdata från [!DNL Acxiom]-källan till Experience Platform. Ytterligare resurser finns i dokumentationen nedan.
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta batchdata från din [!DNL Acxiom]-källa till Experience Platform. Ytterligare resurser finns i dokumentationen nedan.
 
 ### Övervaka dataflödet
 

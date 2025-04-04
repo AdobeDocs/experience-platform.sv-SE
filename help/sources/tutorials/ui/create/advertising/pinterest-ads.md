@@ -6,9 +6,9 @@ badge: Beta
 hide: true
 hidefromtoc: true
 exl-id: ca7b99c8-f1d9-4120-85d5-720f5b9ad41a
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '797'
 ht-degree: 1%
 
 ---
@@ -40,17 +40,17 @@ För att kunna ansluta [!DNL Pinterest Ads] till Experience Platform måste du a
 
 Mer information om de här anslutningsegenskaperna finns i [[!DNL Pinterest Ads] översikten](../../../../connectors/advertising/pinterest-ads.md#prerequisites).
 
-### Skapa ett plattformsschema {#create-platform-schema}
+### Skapa ett Experience Platform-schema {#create-platform-schema}
 
-Du måste också se till att du först skapar ett plattformsschema som kan användas för din [!DNL Pinterst Ads]-källa. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
+Du måste också se till att du först skapar ett Experience Platform-schema som ska användas för din [!DNL Pinterst Ads]-källa. I självstudiekursen [Skapa ett Experience Platform-schema](../../../../../xdm/schema/composition.md) finns omfattande anvisningar om hur du skapar ett schema.
 
-![Ett exempelplattformsschema för Pinterest Ads](../../../../images/tutorials/create/advertising/pinterest-ads/schema.png)
+![Ett exempel på ett Experience Platform-schema för Pinterest Ads](../../../../images/tutorials/create/advertising/pinterest-ads/schema.png)
 
 En lista över de fält som stöds av kampanj-, annons- och annons-API:erna för [!DNL Pinterest] finns i avsnittet [[!DNL Pinterest] fält](#pinterest-fields) .
 
 ## Anslut ditt [!DNL Pinterest Ads]-konto {#connect-account}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -76,7 +76,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 
 ## Markera data {#select-data}
 
-Steget **[!UICONTROL Select data]** visas och innehåller ett gränssnitt där du kan ange den information som skulle skickas till API:erna för att hämta de data som du vill använda för plattformen.
+Steget **[!UICONTROL Select data]** visas med ett gränssnitt där du kan ange den information som skulle skickas till API:erna för att hämta de data som du vill skicka till Experience Platform.
 
 | Fält | Beskrivning |
 | --- | --- |
@@ -94,7 +94,7 @@ När du har angett värdena väljer du **[!UICONTROL Select]**. Om de angivna v�
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Pinterest Ads]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta annonsdata till plattformen](../../dataflow/advertising.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Pinterest Ads]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta annonsdata till Experience Platform](../../dataflow/advertising.md).
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -119,9 +119,9 @@ När du har angett värden för ditt schema väljer du **[!UICONTROL Next]**.
 
 Följ stegen nedan för att verifiera att du har konfigurerat källan och att [!DNL Pinterest Ads] data importeras korrekt:
 
-I plattformsgränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL Pinterest Ads] på katalogsidan. Du kan sedan välja [!UICONTROL Preview dataset] för att verifiera de data som har importerats.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL Pinterest Ads] på katalogsidan. Du kan sedan välja [!UICONTROL Preview dataset] för att verifiera de data som har importerats.
 
-![Skärmbild för användargränssnittet för Pinterest Ads Preview-datauppsättningen.](../../../../images/tutorials/create/advertising/pinterest-ads/preview-dataset.png)
+![Experience Platform UI, skärmbild för Pinterest Ads Preview-datauppsättningen.](../../../../images/tutorials/create/advertising/pinterest-ads/preview-dataset.png)
 
 Du kan verifiera data mot antalet som visas i användargränssnittet för [!DNL Pinterest]
 

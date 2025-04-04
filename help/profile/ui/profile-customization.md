@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;gränssnitt;anpassning;profilinformation;information
+keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;anpassning;profilinformation;information
 title: Anpassning av profildetaljer i användargränssnittet
 description: Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt.
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: 69ac6d3f98675df11183082ecbbb49d18ddb57af
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1315'
+source-wordcount: '1316'
 ht-degree: 0%
 
 ---
 
 # [!DNL Real-Time Customer Profile]-detaljanpassning {#profile-detail-customization}
 
-I Adobe Experience Platform användargränssnitt kan du visa och interagera med [!DNL Real-Time Customer Profile]-data i form av kundprofiler. Profilinformationen som visas i användargränssnittet har sammanfogats från flera profilfragment till en enda vy över varje enskild kund. Detta inkluderar information som grundläggande attribut, länkade identiteter och kanalinställningar. Standardfälten som visas i profiler kan också ändras på organisationsnivå för att visa önskade [!DNL Profile]-attribut. Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur [!DNL Profile]-data visas i plattformens användargränssnitt.
+I Adobe Experience Platform användargränssnitt kan du visa och interagera med [!DNL Real-Time Customer Profile]-data i form av kundprofiler. Profilinformationen som visas i användargränssnittet har sammanfogats från flera profilfragment till en enda vy över varje enskild kund. Detta inkluderar information som grundläggande attribut, länkade identiteter och kanalinställningar. Standardfälten som visas i profiler kan också ändras på organisationsnivå för att visa önskade [!DNL Profile]-attribut. Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur [!DNL Profile]-data visas i användargränssnittet i Experience Platform.
 
 En fullständig guide till användargränssnittet för profiler finns i [gränssnittsguiden för profiler](user-guide.md).
 
@@ -110,4 +110,4 @@ Om du någon gång bestämmer dig för att du vill återställa standardkort som
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna uppdatera profilvyn för din organisation, inklusive lägga till och ta bort kort, redigera kortinformation och attribut samt ändra ordning på och storlek på kort. Mer information om hur du arbetar med [!DNL Profile]-data i användargränssnittet för Experience Platform finns i [[!DNL Profile] användarhandboken](user-guide.md).
+Genom att följa det här dokumentet bör du nu kunna uppdatera profilvyn för din organisation, inklusive lägga till och ta bort kort, redigera kortinformation och attribut samt ändra ordning på och storlek på kort. Mer information om hur du arbetar med [!DNL Profile]-data i Experience Platform-gränssnittet finns i [[!DNL Profile] användarhandboken](user-guide.md).

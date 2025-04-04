@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '800'
+source-wordcount: '801'
 ht-degree: 0%
 
 ---
@@ -96,7 +96,7 @@ Läs mer om hur du [exporterar datauppsättningar](/help/destinations/ui/export-
 
 ## Tillägg {#extensions}
 
-Plattformen utnyttjar tagghanteringens kraft och flexibilitet, vilket gör att du kan konfigurera taggtillägg i användargränssnittet.
+Experience Platform utnyttjar kraften och flexibiliteten i tagghanteringen, så att du kan konfigurera taggtillägg i användargränssnittet.
 
 >[!TIP]
 >

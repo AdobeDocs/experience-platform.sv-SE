@@ -2,9 +2,9 @@
 title: SQL Insights
 description: Lär dig mer om användningsexempel, grundläggande funktioner och nödvändiga steg för att utveckla en instrumentpanel för SQL-insikter med Data Distiller. Upptäck hur SQL Insights-funktionen i Data Distiller kan förbättra transparensen och få operativa insikter i olika dimensioner, som profiler, målgrupper, kampanjer, resor, berättiganden och samtycke.
 exl-id: f807d0fd-c8ec-42d4-96a0-5ffc5681943b
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '943'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Det här dokumentet innehåller användningsexempel, viktiga funktioner och nöd
 
 ## Förhandskrav
 
-I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/standard-dashboards.md).
+I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i Experience Platform användargränssnitt. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/standard-dashboards.md).
 
 ## Komma igång
 
-Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka Real-Time CDP datamodeller som innehåller data från den nya plattformen. Se dokumentationen för [paketering](../../packaging.md), [skyddsutkast](../../guardrails.md#query-accelerated-store) och [licensiering](../../data-distiller/license-usage.md) som gäller Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka Real-Time CDP datamodeller som innehåller berikade Experience Platform-data. Se dokumentationen för [paketering](../../packaging.md), [skyddsutkast](../../guardrails.md#query-accelerated-store) och [licensiering](../../data-distiller/license-usage.md) som gäller Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentant för mer information.
 
 ## Användningsfall för SQL Insights {#use-cases}
 
@@ -72,7 +72,7 @@ Följ instruktionerna nedan om du vill utveckla en SQL Insights-instrumentpanel 
 1. **Ad hoc-frågeutforskande:** Börja med att köra ad hoc `SELECT` -frågor för att utforska raw-data i datasjön. På så sätt kan man experimentera direkt och experimentera med data och validera data där resultaten av frågorna inte lagras i datasjön.
 1. **Använd batchfråga:** Använd batchfrågor för att [skapa schemalagda jobb](../../api/scheduled-queries.md#create-a-new-scheduled-query) för att generera sammanställda insikter, vilket ger en systematisk och automatiserad databearbetning. Gruppfrågor kör `INSERT TABLE AS SELECT`- och `CREATE TABLE AS SELECT`-frågor för att rensa, forma, manipulera och förbättra data. Resultatet av dessa frågor lagras i datasjön.
 1. **Aggregerade insikter läses in:** Läs in de genererade aggregerade insikterna i det accelererade arkivet och använd SQL för att testa frågor, och se till att data hämtas på ett korrekt och effektivt sätt. Mer information om hur du [ställer tillståndslösa frågor till det accelererade arkivet](../../api/accelerated-queries.md) finns i dokumentationen.
-1. **Åtkomst och integrering:** Få tillgång till insikter som lagras i den accelererade butiken sömlöst genom att integrera med Adobe Experience Platform [användardefinierade Dashboards](../../../dashboards/standard-dashboards.md) eller andra BI-verktyg (Business Intelligence preferred tools). Dessa integreringar med tredjepartsklienter underlättar en sammanhängande och intuitiv upplevelse för användarna.
+1. **Åtkomst och integrering:** Få tillgång till insikter som lagras i den accelererade butiken sömlöst genom att integrera med Adobe Experience Platform [användardefinierade Dashboards](../../../dashboards/standard-dashboards.md) eller andra Business Intelligence (BI)-verktyg. Dessa integreringar med tredjepartsklienter underlättar en sammanhängande och intuitiv upplevelse för användarna.
 
 ![En infografik som illustrerar de fyra stegen till SQL Insights i Data Distiller.](../../images/data-distiller/sql-insights/steps-to-customizable-insights.png)
 

@@ -1,11 +1,11 @@
 ---
 title: Salesforce Marketing Cloud Account Engagement
-description: Lär dig hur du använder Salesforce Marketing Cloud Account Engagement (tidigare Pardot)-målet för att exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud Account Engagement för dina affärsbehov.
+description: Lär dig hur du använder Salesforce Marketing Cloud Account Engagement-målet (tidigare Pardot) för att exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud Account Engagement för dina affärsbehov.
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1482'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Använd målet [[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) *(tidigare kallat [!DNL Pardot])* för att hämta, spåra, poängsätta och betygsätta leads. Ni kan också utforma huvudspår för alla faser av pipeline för riktade målgrupper och kundgrupper via e-postdroppkampanjer och lead-hantering med näring, poängsättning och kampanjsegmentering.
 
-Jämfört med [!DNL Salesforce Marketing Cloud Engagement], som är mer inriktad på **B2C** -marknadsföring, är [!DNL Marketing Cloud Account Engagement] idealiskt för **B2B**-användningsfall där flera avdelningar och beslutsfattare behöver längre försäljnings- och beslutscykler. Dessutom ligger ni närmare och är bättre integrerade med CRM för att fatta lämpliga beslut om försäljning och marknadsföring. *Obs! Experience Platform har även anslutningar för [!DNL Salesforce Marketing Cloud Engagement], du kan kontrollera dem på [[!DNL Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) - och [[!DNL (API) Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)-sidorna.*
+Jämfört med [!DNL Salesforce Marketing Cloud Engagement], som är mer inriktad på **B2C** -marknadsföring, är [!DNL Marketing Cloud Account Engagement] idealiskt för **B2B**-användningsfall där flera avdelningar och beslutsfattare behöver längre försäljnings- och beslutscykler. Dessutom ligger ni närmare och är bättre integrerade med CRM för att fatta lämpliga beslut om försäljning och marknadsföring. *Obs! Experience Platform har även anslutningar för [!DNL Salesforce Marketing Cloud Engagement], du kan kontrollera dem på sidorna [[!DNL Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) och [[!DNL (API) Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md).*
 
 Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Salesforce Account Engagement API > Prospect Upsert by Email]](https://developer.salesforce.com/docs/marketing/pardot/guide/prospect-v5.html#prospect-upsert-by-email)-slutpunkten för att **lägga till eller uppdatera dina leads** efter att de har aktiverats i ett nytt [!DNL Marketing Cloud Account Engagement]-segment.
 
@@ -30,7 +30,7 @@ Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad 
 
 ## Förhandskrav {#prerequisites}
 
-I avsnitten nedan finns information om eventuella krav som du måste ställa in i Experience Platform och [!DNL Salesforce]. Där finns även information som du måste samla in innan du kan arbeta med [!DNL Marketing Cloud Account Engagement]-målet.
+I avsnitten nedan finns information om eventuella krav som du måste konfigurera i Experience Platform och [!DNL Salesforce]. Här finns även information som du måste samla in innan du kan arbeta med målet för [!DNL Marketing Cloud Account Engagement].
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
@@ -38,7 +38,7 @@ Innan du aktiverar data till målet [!DNL Marketing Cloud Account Engagement] m�
 
 ### Förutsättningar i [!DNL Marketing Cloud Account Engagement] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Platform till ditt [!DNL Marketing Cloud Account Engagement]-konto:
+Observera följande krav för att kunna exportera data från Experience Platform till ditt [!DNL Marketing Cloud Account Engagement]-konto:
 
 #### Du måste ha ett [!DNL Marketing Cloud Account Engagement]-konto {#prerequisites-account}
 
@@ -64,11 +64,11 @@ Anteckna objekten nedan innan du autentiserar till målet [!DNL Marketing Cloud 
 
 ### Guardrails {#guardrails}
 
-Referera till [!DNL Marketing Cloud Account Engagement] [hastighetsgränserna](https://developer.salesforce.com/docs/marketing/pardot/guide/overview.html#rate-limits) som anger de gränser som din plan innebär och som även gäller för Experience Platform-körningarna.
+Se [!DNL Marketing Cloud Account Engagement] [hastighetsbegränsningarna](https://developer.salesforce.com/docs/marketing/pardot/guide/overview.html#rate-limits) som anger vilka begränsningar som din plan innebär och som även gäller för Experience Platform-körningarna.
 
 >[!IMPORTANT]
 >
->Om din [!DNL Salesforce]-kontoadministratör har begränsat åtkomsten till betrodda IP-intervall måste du kontakta dem för att få [Experience Platform IP:ns](/help/destinations/catalog/streaming/ip-address-allow-list.md) tillåtslista. Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) om du behöver ytterligare hjälp.
+>Om din [!DNL Salesforce]-kontoadministratör har begränsat åtkomsten till betrodda IP-intervall måste du kontakta dem för att få [tillåtslista Experience Platform IP](/help/destinations/catalog/streaming/ip-address-allow-list.md). Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) om du behöver ytterligare hjälp.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -86,7 +86,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Platform uppdateras motsvarande [!DNL Salesforce Marketing Cloud Account Engagement]-segmentstatus med målgruppsstatus från Platform.</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Experience Platform uppdateras motsvarande [!DNL Salesforce Marketing Cloud Account Engagement]-segmentstatus med målgruppsstatus från Experience Platform.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -105,19 +105,19 @@ Sök efter [!DNL Salesforce Marketing Cloud Account Engagement] inom **[!UICONTR
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**. Du dirigeras till inloggningssidan för [!DNL Salesforce]. Ange autentiseringsuppgifterna för ditt [!DNL Marketing Cloud Account Engagement]-konto och välj [!DNL Log In].
 
-![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar med Marketing Cloud Account Engagement.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/authenticate-destination.png)
+![Experience Platform UI, bild som visar hur du autentiserar till Marketing Cloud Account Engagement.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/authenticate-destination.png)
 
 Välj sedan [!UICONTROL Allow] i det efterföljande fönstret för att ge **Adobe Experience Platform**-appen behörighet att komma åt ditt [!DNL Salesforce Marketing Cloud Account Engagement]-konto. *Du behöver bara göra detta en gång*.
 
-![Salesforce-appens bekräftelsepopup för skärmavbild för att ge Experience Platform-appen behörighet till Marketing Cloud Account Engagement.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/allow-app.png)
+![Bekräftelsepopup för skärmavbild i Salesforce App för att ge Experience Platform-appen åtkomst till Marketing Cloud Account Engagement.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/allow-app.png)
 
-Om den angivna informationen är giltig visas ett meddelande i användargränssnittet: *Du har anslutit till Salesforce Marketing Cloud-kontots*-meddelande och en **[!UICONTROL Connected]**-status med en grön bockmarkering. Du kan sedan fortsätta till nästa steg.
+Om den angivna informationen är giltig visas ett meddelande i användargränssnittet: *Du har anslutit till Salesforce Marketing Cloud Account Engagement-kontot* och en **[!UICONTROL Connected]**-status med en grön bockmarkering kan du fortsätta till nästa steg.
 
 ### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt. Mer information finns i avsnittet [Samla [!DNL Marketing Cloud Account Engagement] inloggningsuppgifter](#gather-credentials).
 
-![Skärmbild för plattformsgränssnitt som visar målinformationen.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/destination-details.png)
+![Experience Platform UI-skärmbild med målinformation.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/destination-details.png)
 
 | Fält | Beskrivning |
 | --- | --- |
@@ -144,7 +144,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Marketing Cloud Account Engagement] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Marketing Cloud Account Engagement] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet.
 
 Följ stegen nedan för att mappa dina XDM-fält till målfälten för [!DNL Marketing Cloud Account Engagement] korrekt.
 
@@ -161,7 +161,7 @@ Följ stegen nedan för att mappa dina XDM-fält till målfälten för [!DNL Mar
      | `xdm: person.name.firstName` | `Attribute: firstName` | |
 
    * Ett exempel med mappningarna ovan visas nedan:
-     ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
+     ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -170,13 +170,13 @@ När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL N
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. Navigera till en av de valda målgrupperna. Klicka på fliken **[!DNL Activation data]**.  Kolumnen **[!UICONTROL Mapping ID]** visar namnet på det anpassade fält som genereras på sidan [!DNL Marketing Cloud Account Engagement Prospects].
-   ![Exempel på skärmbild för plattformsgränssnitt som visar mappnings-ID för ett valt segment.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar mappnings-ID för ett markerat segment.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
 1. Logga in på webbplatsen [[!DNL Salesforce]](https://login.salesforce.com/). Gå sedan till sidan **[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]** och kontrollera om potentiella kunder från målgruppen har lagts till/uppdaterats. Du kan även komma åt [[!DNL Salesforce Pardot]](https://pi.pardot.com/) och få åtkomst till sidan **[!DNL Prospects]**.
-   ![Salesforce-användargränssnitt med sidan Prospects.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
+   ![Salesforce UI, skärmbild som visar sidan Prospects.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
 
-1. Om du vill kontrollera om potentiella kunder har uppdaterats markerar du en potentiell kund och kontrollerar om fältet för anpassad potentiell kund har uppdaterats med Experience Platform-målgruppsstatus.
-   ![Salesforce-användargränssnitt som visar den valda sidan för potentiell kund, det anpassade fältet för potentiell kund uppdateras med målgruppens status.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospect.png)
+1. Om du vill kontrollera om potentiella kunder har uppdaterats väljer du en potentiell kund och kontrollerar om fältet för anpassad potentiell kund har uppdaterats med Experience Platform målgruppsstatus.
+   ![Salesforce UI-skärmbild som visar den valda sidan för potentiell kund, det anpassade fältet för potentiell kund uppdateras med målgruppens status.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospect.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;produktprofil;hantera behörigheter
 solution: Experience Platform
 title: Hantera behörigheter för en produktprofil
-description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med hjälp av Adobe Admin Console. Det här dokumentet är en guide till hur du hanterar behörigheter för en produktprofil för Platform.
+description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika Experience Platform-funktioner med hjälp av Adobe Admin Console. Det här dokumentet är en guide till hur du hanterar behörigheter för en produktprofil för Experience Platform.
 exl-id: ca403bef-6d62-4ca9-bba6-d1280ac63171
-source-git-commit: 1812af74e82f3071963177356b3cd4b23ea567f5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '329'
+source-wordcount: '331'
 ht-degree: 0%
 
 ---

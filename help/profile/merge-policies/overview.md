@@ -2,34 +2,34 @@
 keywords: Experience Platform;profil;kundprofil i realtid;sammanfogningsprinciper;användargränssnitt;tidsstämpelordning;prioritet för datauppsättning
 title: Översikt över kopplingsprofiler
 type: Documentation
-description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en helhetsbild av era enskilda kunder. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
+description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en helhetsbild av era enskilda kunder. När du sammanför dessa data är sammanslagningsprinciper de regler som Experience Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: a8ef527a-cfee-4129-9973-e8a212a3ad1e
-source-git-commit: 5e8bbdf5b7b07c31a36730c86b177fce6041e319
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1270'
+source-wordcount: '1274'
 ht-degree: 0%
 
 ---
 
 # Översikt över kopplingsprofiler
 
-Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
+Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Experience Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 
-Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. I det här dokumentet finns en översikt över sammanfogningsprinciper och vilken roll de spelar i Experience Platform.
+Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Det här dokumentet innehåller en översikt över kopplingsprofiler och vilken roll de spelar i Experience Platform.
 
 ## Komma igång
 
 Den här handboken kräver en fungerande förståelse av flera viktiga [!DNL Experience Platform]-funktioner. Innan du följer den här guiden och arbetar med sammanfogningsprinciper bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil i realtid](../home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Adobe Experience Platform identitetstjänst](../../identity-service/home.md): Aktiverar kundprofil i realtid genom att brygga identiteter från olika datakällor som importeras till [!DNL Platform].
-* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [Adobe Experience Platform identitetstjänst](../../identity-service/home.md): Aktiverar kundprofil i realtid genom att brygga identiteter från olika datakällor som importeras till [!DNL Experience Platform].
+* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
 ## Förstå kopplingsprofiler
 
-Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig, enhetlig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn.
+Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig, enhetlig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som Experience Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn.
 
-Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden.
+Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Experience Platform sammanfogas de för att skapa en enda profil för kunden.
 
 När data från flera källor står i konflikt (t.ex. ett fragment listar kunden som&quot;enkel&quot; medan det andra listar kunden som&quot;gift&quot;) avgör sammanfogningspolicyn vilken information som ska inkluderas i profilen för den enskilda personen.
 
@@ -54,7 +54,7 @@ Om du vill skapa en sammanfogningsprincip med **[!UICONTROL Dataset precedence]*
 
 ### Tidsstämpel beställd {#timestamp-ordered}
 
-När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När **[!UICONTROL Timestamp ordered]** har valts som sammanfogningsmetod för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
+När profilposter importeras till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När **[!UICONTROL Timestamp ordered]** har valts som sammanfogningsmetod för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten importerades till Experience Platform.
 
 ## Identitetssammanfogning {#id-stitching}
 
@@ -79,4 +79,4 @@ Om du skapar en ny sammanfogningsprincip och anger den som standard, uppdateras 
 
 ## Nästa steg
 
-När du har läst den här guiden vet du nu vilken sammanfogningspolicy som är och vilken roll de spelar i Experience Platform. Om du vill börja arbeta med sammanfogningsprinciper i användargränssnittet för Experience Platform går du till [användargränssnittshandboken för sammanfogningsprinciper](ui-guide.md). Om du vill arbeta med sammanslagningsprinciper med API:t går du till [API-slutpunktshandboken för sammanslagningsprinciper](../api/merge-policies.md).
+När du har läst den här guiden vet du nu vilken sammanfogningspolicy som är och vilken roll de spelar inom Experience Platform. Om du vill börja arbeta med sammanfogningsprinciper i Experience Platform-användargränssnittet läser du [användargränssnittshandboken för sammanfogningsprinciper](ui-guide.md). Om du vill arbeta med sammanslagningsprinciper med API:t går du till [API-slutpunktshandboken för sammanslagningsprinciper](../api/merge-policies.md).

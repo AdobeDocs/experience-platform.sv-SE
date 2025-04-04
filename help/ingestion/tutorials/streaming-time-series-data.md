@@ -5,9 +5,9 @@ title: Strömma data i tidsserier med API:er för strömmande inmatning
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: 35ccc39fdfef31ca1f59e2e11f0d3d762e423635
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1214'
 ht-degree: 0%
 
 ---
@@ -20,15 +20,15 @@ Den här självstudiekursen hjälper dig att börja använda API:er för direktu
 
 Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar upplevelsedata med.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar upplevelsedata med.
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md): En omfattande guide som beskriver alla tillgängliga slutpunkter i [!DNL Schema Registry] API:t och hur du anropar dem. Detta inkluderar att du känner till din `{TENANT_ID}`, som visas i samtal under den här självstudiekursen, samt att du vet hur du skapar scheman, som används för att skapa en datauppsättning för förtäring.
 
 Den här självstudien kräver dessutom att du redan har skapat en direktuppspelningsanslutning. Mer information om hur du skapar en direktuppspelningsanslutning finns i självstudiekursen [Skapa en direktuppspelningsanslutning](./create-streaming-connection.md).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../landing/api-guide.md).
 
 ## Skapa ett schema baserat på klassen XDM ExperienceEvent
 
@@ -275,7 +275,7 @@ Mer information om hur du skapar en direktuppspelningsanslutning finns i självs
 
 ## Infoga tidsseriedata i direktuppspelningsanslutningen
 
-När datauppsättningen, direktuppspelningsanslutningen och dataflödet har skapats kan du importera XDM-formaterade JSON-poster för import av tidsseriedata i [!DNL Platform].
+När datauppsättningen, direktuppspelningsanslutningen och dataflödet har skapats kan du importera XDM-formaterade JSON-poster för import av tidsseriedata i [!DNL Experience Platform].
 
 **API-format**
 
@@ -292,7 +292,7 @@ POST /collection/{CONNECTION_ID}?syncValidation=true
 
 Inmatning av tidsseriedata till en direktuppspelningsanslutning kan göras antingen med eller utan källnamnet.
 
-Exemplet nedan anger att tidsseriedata med ett saknat källnamn ska importeras till plattformen. Om källnamnet saknas i data läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
+I exempelbegäran nedan importeras tidsseriedata med ett saknat källnamn till Experience Platform. Om källnamnet saknas i data läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
 
 Både `xdmEntity._id` och `xdmEntity.timestamp` är obligatoriska fält för tidsseriedata. Attributet `xdmEntity._id` representerar en unik identifierare för själva posten, **inte** ett unikt ID för den person eller enhet vars post det är.
 
@@ -407,7 +407,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 
 ## Hämta data för den nyligen inmatade tidsserien
 
-Om du vill validera tidigare inmatade poster kan du använda [[!DNL Profile Access API]](../../profile/api/entities.md) för att hämta tidsseriedata. Detta kan göras med hjälp av en GET-begäran till `/access/entities`-slutpunkten och med valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
+Om du vill validera tidigare inmatade poster kan du använda [[!DNL Profile Access API]](../../profile/api/entities.md) för att hämta tidsseriedata. Detta kan göras med en GET-begäran till slutpunkten `/access/entities` och med valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
 
 >[!NOTE]
 >
@@ -509,6 +509,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de begärda entite
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet förstår du nu hur du kan importera postdata till [!DNL Platform] med hjälp av direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via användargränssnittet för [!DNL Platform]. Mer information finns i guiden [Övervaka datainhämtning](../quality/monitor-data-ingestion.md).
+Genom att läsa det här dokumentet förstår du nu hur du kan importera postdata till [!DNL Experience Platform] med hjälp av direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via användargränssnittet för [!DNL Experience Platform]. Mer information finns i guiden [Övervaka datainhämtning](../quality/monitor-data-ingestion.md).
 
 Mer information om direktuppspelningsinmatning i allmänhet finns i [översikten över direktuppspelning](../streaming-ingestion/overview.md).

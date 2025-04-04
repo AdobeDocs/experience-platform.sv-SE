@@ -1,9 +1,9 @@
 ---
-title: Skapa en Azure synapse Analytics Source Connection i användargränssnittet
-description: Lär dig hur du skapar en källanslutning för Azure synapse Analytics (nedan kallad Synapse) med hjälp av Adobe Experience Platform användargränssnitt.
+title: Skapa en Azure Synapse Analytics Source Connection i användargränssnittet
+description: Lär dig hur du skapar en källanslutning för Azure Synapse Analytics (nedan kallad Synapse) med hjälp av Adobe Experience Platform användargränssnitt.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 1f1ce317-eaaf-4ad2-a5fb-236983220bd7
-source-git-commit: a7c2c5e4add5c80e0622d5aeb766cec950d79dbb
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '425'
 ht-degree: 0%
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Azure Synapse Analytics] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Azure Synapse Analytics] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Synapse Analytics]-källkoppling (kallas nedan [!DNL Synapse]) med användargränssnittet i [!DNL Platform].
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Synapse Analytics]-källkoppling (kallas nedan [!DNL Synapse]) med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -31,7 +31,7 @@ Om du redan har en giltig [!DNL Synapse]-anslutning kan du hoppa över resten av
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Synapse]-konto på [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till ditt [!DNL Synapse]-konto på [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -41,7 +41,7 @@ Mer information om det här värdet finns i [det här [!DNL Synapse] dokumentet]
 
 ## Anslut ditt [!DNL Synapse]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Synapse]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Synapse]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -67,4 +67,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Synapse]-konto du 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Synapse]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Synapse]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

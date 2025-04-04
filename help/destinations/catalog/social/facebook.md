@@ -3,7 +3,7 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '2042'
 ht-degree: 0%
@@ -44,8 +44,8 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
 ## Målgrupper {#supported-audiences}
@@ -98,8 +98,8 @@ Beroende på vilken typ av ID som du importerar till Adobe Experience Platform m
 
 Det finns två metoder för att aktivera telefonnummer i [!DNL Facebook]:
 
-* **Hämtar råtelefonnummer**: du kan importera råa telefonnummer i formatet [!DNL E.164] till [!DNL Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till namnutrymmet `Phone_E.164`.
-* **Inkommande hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du lägger in dem i [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `Phone_SHA256`.
+* **Hämtar råtelefonnummer**: du kan importera råa telefonnummer i formatet [!DNL E.164] till [!DNL Experience Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till namnutrymmet `Phone_E.164`.
+* **Inkommande hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du lägger in dem i [!DNL Experience Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `Phone_SHA256`.
 
 >[!NOTE]
 >
@@ -107,7 +107,7 @@ Det finns två metoder för att aktivera telefonnummer i [!DNL Facebook]:
 
 ## Krav för e-posthashning {#email-hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser som är tydliga i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
+Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser som är tydliga i Experience Platform, och få [!DNL Experience Platform] hash-kodade adresser när de aktiveras.
 
 Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](/help/ingestion/streaming-ingestion/overview.md).
 
@@ -122,8 +122,8 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 >[!NOTE]
 >
->Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
-> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+>Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
+> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
 > Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
 ![Använd omformningskontroll markerat i mappningssteget.](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
@@ -230,9 +230,9 @@ Nedan visas ett exempel på korrekt identitetsmappning när målgruppsdata aktiv
 Välja källfält:
 
 * Välj namnutrymmet `Email` som källidentitet om de e-postadresser du använder inte hashas.
-* Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser vid datahämtning till [!DNL Platform], enligt [!DNL Facebook] [e-posthashkraven](#email-hashing-requirements).
-* Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av telefonnummer som inte är hashas. [!DNL Platform] hash-kodar telefonnumren så att de uppfyller kraven för [!DNL Facebook].
-* Välj namnutrymmet `Phone_SHA256` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Platform], enligt [!DNL Facebook] [krav för telefonnummerhashning](#phone-number-hashing-requirements).
+* Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser vid datahämtning till [!DNL Experience Platform], enligt [!DNL Facebook] [e-posthashkraven](#email-hashing-requirements).
+* Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av telefonnummer som inte är hashas. [!DNL Experience Platform] hash-kodar telefonnumren så att de uppfyller kraven för [!DNL Facebook].
+* Välj namnutrymmet `Phone_SHA256` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Experience Platform], enligt [!DNL Facebook] [krav för telefonnummerhashning](#phone-number-hashing-requirements).
 * Välj namnutrymmet `IDFA` som källidentitet om dina data består av [!DNL Apple] enhets-ID:n.
 * Välj namnutrymmet `GAID` som källidentitet om dina data består av [!DNL Android] enhets-ID:n.
 * Välj namnutrymmet `Custom` som källidentitet om dina data består av andra typer av identifierare.
@@ -246,9 +246,9 @@ Markera målfält:
 
 >[!IMPORTANT]
 >
->Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
+>Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
 > 
->Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+>Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
 
 ![Använd omformningskontroll markerat i mappningssteget.](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 

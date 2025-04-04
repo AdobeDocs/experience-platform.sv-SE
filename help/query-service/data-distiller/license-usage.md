@@ -2,9 +2,9 @@
 title: Övervaka användning av batchfrågelicens
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om hur din organisation använder din Data Distiller-licens.
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
-source-git-commit: d83604b2bf6a8e2f2b5802a5e7f26447fbf7eb2e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '233'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Kontrollpanelen för licensanvändning innehåller detaljerade rapporter om organisationens användning av frågetjänstlicenser och användningsstatistik för varje köpt produkt. Om du vill veta mer om de tillgängliga mätvärdena som visas på kontrollpanelen går du till [handboken för kontrollpanelen för licensanvändning](../../dashboards/guides/license-usage.md#available-metrics).
 
-Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt, konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en viss sandlåda. Den information som visas här fångas in under en daglig ögonblicksbild av din Platform-instans.
+Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt, konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en viss sandlåda. Den information som visas här fångas in vid en daglig ögonblicksbild av din Experience Platform-instans.
 
 >[!NOTE]
 >

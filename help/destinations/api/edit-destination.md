@@ -4,10 +4,10 @@ title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: 2a72f6886f7a100d0a1bf963eedaed8823a7b313
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1597'
-ht-degree: 0%
+source-wordcount: '1601'
+ht-degree: 2%
 
 ---
 
@@ -29,8 +29,8 @@ Den här självstudien kräver att du har ett giltigt dataflödes-ID. Om du inte
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera dataflödet med API:t [!DNL Flow Service].
 
@@ -40,13 +40,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Experience Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -60,7 +60,7 @@ Alla begäranden som innehåller en nyttolast (`POST`, `PUT`, `PATCH`) kräver e
 
 ## Söka efter dataflödesdetaljer {#look-up-dataflow-details}
 
-Det första steget i att redigera målanslutningen är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-förfrågan till slutpunkten `/flows`.
+Det första steget i att redigera målanslutningen är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-begäran till slutpunkten `/flows`.
 
 >[!TIP]
 >
@@ -183,7 +183,7 @@ Om du vill uppdatera komponenter för en målanslutning utför du en `PATCH`-beg
 >
 >Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av målanslutningen som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av taggvärdet ska du utföra en GET-begäran till `/targetConnections/{TARGET_CONNECTION_ID}`-slutpunkten, där `{TARGET_CONNECTION_ID}` är det målanslutnings-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av taggvärdet utför du en GET-begäran till `/targetConnections/{TARGET_CONNECTION_ID}`-slutpunkten, där `{TARGET_CONNECTION_ID}` är det målanslutnings-ID som du vill uppdatera.
 >
 > Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
 
@@ -235,7 +235,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt målanslutnings-ID.
+Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt målanslutnings-ID.
 
 ```json
 {
@@ -275,7 +275,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt målanslutnings-ID.
+Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt målanslutnings-ID.
 
 ```json
 {
@@ -317,7 +317,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt målanslutnings-ID.
+Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt målanslutnings-ID.
 
 ```json
 {
@@ -342,7 +342,7 @@ Kom ihåg att du fick ditt grundläggande anslutnings-ID i ett [föregående ste
 >
 >Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av basanslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av en flödenhet, till exempel dataflöde, basanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av Etag-värdet utför du en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}`-slutpunkten, där `{BASE_CONNECTION_ID}` är det grundläggande anslutnings-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av Etag-värdet utför du en GET-begäran till `/connections/{BASE_CONNECTION_ID}`-slutpunkten, där `{BASE_CONNECTION_ID}` är det grundläggande anslutnings-ID som du vill uppdatera.
 >
 > Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
 
@@ -394,7 +394,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service] och samtidigt ange ditt grundläggande anslutnings-ID.
+Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt grundläggande anslutnings-ID.
 
 ```json
 {
@@ -436,7 +436,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service] och samtidigt ange ditt grundläggande anslutnings-ID.
+Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt grundläggande anslutnings-ID.
 
 ```json
 {
@@ -451,7 +451,7 @@ Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad 
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 

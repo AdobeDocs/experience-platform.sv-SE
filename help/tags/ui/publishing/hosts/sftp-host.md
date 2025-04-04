@@ -2,9 +2,9 @@
 title: SFTP-värdar
 description: Lär dig hur du konfigurerar taggar i Adobe Experience Platform för att leverera biblioteksbyggen till en säker, självvärd SFTP-server.
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 5b362d28eb3be5e2a45464390c694f7ae59f899c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '861'
 ht-degree: 5%
 
 ---
@@ -25,7 +25,7 @@ Med Experience Platform kan du leverera kodbiblioteksbyggen till en säker SFTP-
 
 ## Konfigurera en åtkomstnyckel för servern {#access-key}
 
-Plattformen ansluter till din SFTP-plats med hjälp av en krypterad nyckel. Det finns några steg för att konfigurera detta korrekt:
+Experience Platform ansluter till din SFTP-webbplats med hjälp av en krypterad nyckel. Det finns några steg för att konfigurera detta korrekt:
 
 ### Skapa ett nyckelpar för offentlig/privat nyckel
 
@@ -35,7 +35,7 @@ Du måste ha ett nyckelpar för offentlig/privat nyckel installerat på SFTP-ser
 
 Den privata nyckeln används för att kryptera den offentliga nyckeln. Du måste ange din privata nyckel när du skapar SFTP-värden. Mer information om hur du krypterar offentliga nycklar finns i avsnittet [Kryptera värden](../../../api/guides/encrypting-values.md) i Reaktors API-guide. Använd produktionsmiljöns GPG-nyckel om du inte vet att du behöver en viss. Slutligen kan du kryptera din privata nyckel från vilken dator som helst, så du behöver inte installera GPG på servern för att slutföra det här steget.
 
-### IP-adresser för Tillåtslista-plattformen
+### IP-adresser för Tillåtslista Experience Platform
 
 >[!IMPORTANT]
 >
@@ -53,7 +53,7 @@ Den privata nyckeln används för att kryptera den offentliga nyckeln. Du måste
 > * `44.194.43.191`
 > * `3.215.163.18`
 
-Du kan behöva godkänna en uppsättning IP-adresser som ska användas i företagets brandvägg för att plattformen ska kunna nå din SFTP-server och ansluta till den. Dessa IP-adresser är:
+Du kan behöva godkänna en uppsättning IP-adresser som ska användas i företagets brandvägg för att Experience Platform ska kunna nå din SFTP-server och ansluta till den. Dessa IP-adresser är:
 
 * `184.72.239.68`
 * `23.20.85.113`
@@ -94,7 +94,7 @@ Välj **[!UICONTROL Save]** om du vill skapa värden med den valda konfiguration
 
 ![Bild som visar den SFTP-värd som sparas](../../../images/ui/publishing/sftp-hosts/save-host.png)
 
-När du väljer **[!UICONTROL Save]** testas anslutningen och möjligheten att leverera filerna till SFTP-servern. Plattformen skapar en mapp, skriver en fil i den mappen, kontrollerar att filen finns där och rensar sedan efter sig själv. Om användarkontot på din SFTP-server (det som är kopplat till det säkra certifikat som du har angett för plattformen) inte har de behörigheter som krävs för att utföra den här åtgärden, får värden statusen&quot;Misslyckad&quot;.
+När du väljer **[!UICONTROL Save]** testas anslutningen och möjligheten att leverera filerna till SFTP-servern. Experience Platform skapar en mapp, skriver en fil i den mappen, kontrollerar att filen finns där och rensar sedan efter sig själv. Om användarkontot på din SFTP-server (det som är kopplat till det säkra certifikat som du skickade till Experience Platform) inte har de behörigheter som krävs för att utföra den här åtgärden, får värden statusen&quot;Misslyckad&quot;.
 
 ## Nästa steg
 

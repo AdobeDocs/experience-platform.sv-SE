@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;molnlagring;molnlagring
+keywords: Experience Platform;home;populära topics;cloud storage;Cloud storage
 title: Utforska en molnlagringsmapp med API:t för flödestjänsten
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från tredje part.
 exl-id: ba1a9bff-43a6-44fb-a4e7-e6a45b7eeebd
-source-git-commit: 9b9803b4d2aeb2a86ef980f34ee34909679ea3d9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -22,18 +22,18 @@ I den här självstudiekursen beskrivs hur du utforskar och förhandsgranskar st
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../landing/api-guide.md).
 
 ## Utforska dina molnlagringsmappar
 
-Du kan hämta information om strukturen för dina molnlagringsmappar genom att göra en GET-förfrågan till [!DNL Flow Service]-API:t och samtidigt ange källans anslutnings-ID.
+Du kan hämta information om strukturen för dina molnlagringsmappar genom att göra en GET-begäran till [!DNL Flow Service]-API:t och samtidigt ange källans anslutnings-ID.
 
-När du gör GET-förfrågningar för att utforska ditt molnlagringsutrymme måste du inkludera frågeparametrarna som listas i tabellen nedan:
+När du gör GET-förfrågningar om att utforska ditt molnlagringsutrymme måste du ta med frågeparametrarna som listas i tabellen nedan:
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
@@ -94,11 +94,11 @@ Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfr
 ]
 ```
 
-## Inspect en fils struktur
+## Inspektera strukturen i en fil
 
-Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-förfrågan och anger filens sökväg och typ som en frågeparameter.
+Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-begäran och anger filens sökväg och typ som en frågeparameter.
 
-Du kan inspektera datafilens struktur från molnlagringskällan genom att utföra en GET-begäran och samtidigt ange filens sökväg och typ. Du kan också inspektera olika filtyper, till exempel CSV, TSV eller komprimerad JSON och avgränsade filer, genom att ange deras filtyper som en del av frågeparametrarna.
+Du kan inspektera datafilens struktur från molnlagringskällan genom att utföra en GET-begäran samtidigt som du anger filens sökväg och typ. Du kan också inspektera olika filtyper, till exempel CSV, TSV eller komprimerad JSON och avgränsade filer, genom att ange deras filtyper som en del av frågeparametrarna.
 
 **API-format**
 
@@ -168,4 +168,4 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tab
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem, hittat sökvägen till filen som du vill hämta till [!DNL Platform] och visat dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt molnlagringsutrymme och överföra dem till plattformen](../collect/cloud-storage.md).
+Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem, hittat sökvägen till filen som du vill hämta till [!DNL Experience Platform] och visat dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt molnlagringsutrymme och hämta dem till Experience Platform](../collect/cloud-storage.md).

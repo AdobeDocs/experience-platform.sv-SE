@@ -2,9 +2,9 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 3cedf019cff7ef0aa06da1242798a533196f9b2a
+source-git-commit: 480785dc17ab27df5544524cf08baa9150fe426f
 workflow-type: tm+mt
-source-wordcount: '2318'
+source-wordcount: '2319'
 ht-degree: 0%
 
 ---
@@ -252,7 +252,7 @@ Dialogrutan **[!UICONTROL Import summary]** visar en fördelning av importen med
 
 ![Dialogrutan [!UICONTROL Import details] med en detaljerad beskrivning av importen.](../images/ui/sandbox-tooling/import-details.png)
 
-När importen är klar visas ett meddelande i användargränssnittet för plattformen. Du kommer åt dessa meddelanden via varningsikonen. Du kan navigera till felsökning härifrån om ett jobb misslyckas.
+När importen är klar visas ett meddelande i Experience Platform-gränssnittet. Du kommer åt dessa meddelanden via varningsikonen. Du kan navigera till felsökning härifrån om ett jobb misslyckas.
 
 ## Videosjälvstudiekurs
 

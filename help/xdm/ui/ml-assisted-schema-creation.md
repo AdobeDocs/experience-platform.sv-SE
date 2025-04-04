@@ -1,10 +1,11 @@
 ---
 title: Skapa inlärningsassisterat schema
-description: Lär dig hur du skapar scheman i användargränssnittet i Experience Platform.
+description: Lär dig hur du skapar scheman i Experience Platform användargränssnitt.
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: f1db409a2af34ac66c81d7e5a11ee1bc8e5f4c9c
+exl-id: 6b14caed-a3ad-4834-8fa8-8d67dce6290e
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '925'
 ht-degree: 0%
 
 ---
@@ -31,7 +32,7 @@ I den här guiden beskrivs hur du skapar scheman med hjälp av HTML-algoritmer (
 
 ## Navigera till arbetsflödet Skapa schema {#navigate-to-schema-creation-workflow}
 
-Välj arbetsytan **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. Arbetsytan **[!UICONTROL Schemas]** visas. Välj **[!UICONTROL Create schema]** om du vill lägga till ett nytt schema för att starta ett arbetsflöde för att skapa schema.
+Välj arbetsytan **[!UICONTROL Schemas]** i den vänstra navigeringen i Experience Platform-gränssnittet. Arbetsytan **[!UICONTROL Schemas]** visas. Välj **[!UICONTROL Create schema]** om du vill lägga till ett nytt schema för att starta ett arbetsflöde för att skapa schema.
 
 ![Arbetsytan Scheman med schemat i den vänstra navigeringen och Skapa schema är markerade.](../images/ui/ml-schema-creation/schemas-workspace-create-schema.png)
 

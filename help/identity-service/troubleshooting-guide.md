@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;id namespace;Identity namespace
+keywords: Experience Platform;home;populära topics;identity namespace;Identity namespace
 solution: Experience Platform
 title: Felsökningsguide för identitetstjänst
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2165'
+source-wordcount: '2168'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för identitetstjänst
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Identity Service] samt en felsökningsguide för vanliga fel. Mer information och felsökning om [!DNL Platform] API:er i allmänhet finns i [felsökningsguiden för Adobe Experience Platform API](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Identity Service] samt en felsökningsguide för vanliga fel. Mer information och felsökning om [!DNL Experience Platform] API:er i allmänhet finns i [felsökningsguiden för Adobe Experience Platform API](../landing/troubleshooting.md).
 
 Data som identifierar en enskild kund fragmenteras ofta över olika enheter och system som de använder för att interagera med ert varumärke. [!DNL Identity Service] samlar ihop dessa fragmenterade identiteter och underlättar en fullständig förståelse för kundbeteenden så att ni kan leverera slagkraftiga digitala upplevelser i realtid. Mer information finns i [Översikt över identitetstjänsten](./home.md).
 
@@ -71,7 +71,7 @@ Identitetsfält måste kopplas till ett befintligt ID-namnutrymme när de skapas
 
 Stegvisa instruktioner om hur du definierar ett namnutrymme när du skapar en identitetsbeskrivning med API:t finns i avsnittet [Skapa en beskrivning](../xdm/tutorials/create-schema-ui.md) i utvecklarhandboken för schemaregister. Om du vill markera ett schemafält som en identitet i användargränssnittet följer du stegen i [schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-api.md).
 
-## Vilka är de vanliga ID-namnutrymmena från Experience Platform? {#standard-namespaces}
+## Vilka är Experience Platform standardnamnutrymmen för identiteter? {#standard-namespaces}
 
 Standardnamnutrymmen för identiteter är namnutrymmen som är tillgängliga för alla organisationer. En fullständig lista över tillgängliga standardnamnutrymmen finns i [Översikt över identitetsnamnutrymmen](./features/namespaces.md).
 
@@ -81,7 +81,7 @@ Med hjälp av [identitetstjänstens API](https://www.adobe.io/experience-platfor
 
 ## Hur skapar jag ett anpassat namnutrymme för min organisation?
 
-Med hjälp av [Identitetstjänstens API](https://www.adobe.io/experience-platform-apis/references/identity-service) kan du skapa ett anpassat identitetsnamnutrymme för din organisation genom att göra en POST-förfrågan till `/idnamespace/identities`-slutpunkten. Mer information finns i avsnittet [Skapa ett anpassat namnområde](./api/create-custom-namespace.md) i API-översikten för identitetstjänsten.
+Med [Identitetstjänstens API](https://www.adobe.io/experience-platform-apis/references/identity-service) kan du skapa ett anpassat identitetsnamnutrymme för din organisation genom att göra en POST-begäran till `/idnamespace/identities`-slutpunkten. Mer information finns i avsnittet [Skapa ett anpassat namnområde](./api/create-custom-namespace.md) i API-översikten för identitetstjänsten.
 
 ## Vad är sammansatta identiteter och XID:n?
 
@@ -89,7 +89,7 @@ Identiteter refereras i API-anrop antingen av deras sammansatta identitet eller 
 
 ## Hur hanterar Identity Service personligt identifierbar information (PII)?
 
-Identitetstjänsten har standardnamnutrymmen som stöder inmatning av hash-kodade identitetsvärden för telefonnummer och e-post. Du ansvarar dock för att värden hash-kodas. Mer information om att hash-koda data som är inkapslade i plattformen finns i [[!DNL Data Prep] handboken om mappningsfunktioner](../data-prep/functions.md#hashing).
+Identitetstjänsten har standardnamnutrymmen som stöder inmatning av hash-kodade identitetsvärden för telefonnummer och e-post. Du ansvarar dock för att värden hash-kodas. Mer information om att hash-koda data som har importerats till Experience Platform finns i handboken om [[!DNL Data Prep] mappningsfunktioner](../data-prep/functions.md#hashing).
 
 ## Är det något du bör tänka på när du hash-kodar PII-baserade identiteter?
 
@@ -115,7 +115,7 @@ Internal solutions|Preferred|Common
 
 ## Varför kan jag inte komma åt identitetsdiagramsidan eller API:erna?
 
-Din plattformsadministratör måste tilldela dig behörigheten `view-identity-graph` för att du ska kunna visa data i identitetsdiagram. Utan den här behörigheten får du ett meddelande om nekad behörighet på identitetsdiagramvisningsprogramsidan och när du anropar plattforms-API:er. Mer information om behörigheter finns i [åtkomstkontrollsöversikten](../access-control/home.md).
+Experience Platform-administratören måste ge dig behörigheten `view-identity-graph` för att du ska kunna visa data i identitetsdiagram. Utan den här behörigheten får du ett meddelande om nekad behörighet på visningsprogramsidan för identitetsdiagram och när du anropar Experience Platform API:er. Mer information om behörigheter finns i [åtkomstkontrollsöversikten](../access-control/home.md).
 
 ## Felsökning
 
@@ -216,7 +216,7 @@ Det här felmeddelandet visas när din organisation inte har tilldelats rätt be
 }
 ```
 
-Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API:er. Se självstudiekursen [Autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du skapar nya åtkomsttoken.
+Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Experience Platform] API:er. Se självstudiekursen [Autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du skapar nya åtkomsttoken.
 
 ### Autentiseringstjänsttoken är inte giltig
 
@@ -228,7 +228,7 @@ Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphö
 }
 ```
 
-Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API:er. Se självstudiekursen [Autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du skapar nya åtkomsttoken.
+Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Experience Platform] API:er. Se självstudiekursen [Autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du skapar nya åtkomsttoken.
 
 ### Användartoken har inte en giltig produktkontext
 
@@ -276,11 +276,11 @@ Det här felmeddelandet visas när din organisation inte har tilldelats rätt be
 }
 ```
 
-Det här felet visas när ett oväntat undantag inträffar vid körningen av ett [!DNL Platform]-tjänstanrop. Det bästa sättet är att programmera dina automatiska anrop så att de kan försöka igen några gånger med ett tidsintervall när det här felet tas emot. Kontakta systemadministratören om problemet kvarstår.
+Det här felet visas när ett oväntat undantag inträffar när ett [!DNL Experience Platform]-tjänstanrop körs. Det bästa sättet är att programmera dina automatiska anrop så att de kan försöka igen några gånger med ett tidsintervall när det här felet tas emot. Kontakta systemadministratören om problemet kvarstår.
 
 ## Felkoder för batchinmatning
 
-[!DNL Identity Service] importerar identitetsdata från post- och tidsseriedata som överförs till [!DNL Platform] med hjälp av gruppinmatning. Eftersom gruppinmatning är en asynkron process måste du visa information för en grupp för att kunna se fel. Fel ackumuleras allt eftersom batchen fortskrider tills batchen är klar.
+[!DNL Identity Service] importerar identitetsdata från post- och tidsseriedata som överförs till [!DNL Experience Platform] med hjälp av gruppinmatning. Eftersom gruppinmatning är en asynkron process måste du visa information för en grupp för att kunna se fel. Fel ackumuleras allt eftersom batchen fortskrider tills batchen är klar.
 
 Nedan följer en lista över felmeddelanden som rör [!DNL Identity Service] som du kan stöta på när du använder [API:t för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/).
 

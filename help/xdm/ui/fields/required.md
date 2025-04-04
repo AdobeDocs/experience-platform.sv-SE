@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;required;field;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;required;field;
 title: Definiera obligatoriska fält i användargränssnittet
-description: Lär dig hur du definierar ett obligatoriskt XDM-fält i användargränssnittet för Experience Platform.
+description: Lär dig hur du definierar ett obligatoriskt XDM-fält i Experience Platform användargränssnitt.
 exl-id: 3a5885a0-6f07-42f3-b521-053083d5b556
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '355'
+source-wordcount: '356'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ I Experience Data Model (XDM) anger ett obligatoriskt fält att det måste anges
 
 >[!IMPORTANT]
 >
->Oavsett om ett schemafält krävs eller inte, accepterar inte plattformen `null` eller tomma värden för inkapslade fält. Om det inte finns något värde för ett visst fält i en post eller händelse, ska nyckeln för det fältet uteslutas från inmatningsnyttolasten.
+>Oavsett om ett schemafält krävs eller inte, accepterar inte Experience Platform `null` eller tomma värden för inkapslade fält. Om det inte finns något värde för ett visst fält i en post eller händelse, ska nyckeln för det fältet uteslutas från inmatningsnyttolasten.
 
 När du [definierar ett nytt fält](./overview.md#define) i Adobe Experience Platform-användargränssnittet kan du ange det som ett obligatoriskt fält genom att markera kryssrutan **[!UICONTROL Required]** i den högra listen. Välj **[!UICONTROL Apply]** om du vill tillämpa ändringen på schemat.
 

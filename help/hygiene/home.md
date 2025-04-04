@@ -2,9 +2,9 @@
 title: Översikt över livscykelhantering av avancerade data
 description: Med Advanced Data Lifecycle Management kan ni hantera livscykeln för era data genom att uppdatera eller tömma inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 6ef09957d1eb2c07e5607105c782c36f20344bfa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '817'
+source-wordcount: '821'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
-<!-- Platform's data lifecycle capabilities allow you to manage your stored data through the following:
+<!-- Experience Platform's data lifecycle capabilities allow you to manage your stored data through the following:
 
 * Scheduling automated dataset expirations
 * Deleting individual records from one or all datasets
@@ -26,11 +26,11 @@ Dessa aktiviteter kan utföras med arbetsytan [[!UICONTROL Data Lifecycle] i anv
 
 >[!NOTE]
 >
->Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via [datamängdens slutpunkt](./api/dataset-expiration.md) och ID-borttagningar (radnivådata) med hjälp av primära identiteter via [arbetsorderslutpunkten](./api/workorder.md). Du kan också hantera [förfallodatum för datauppsättningar](./ui/dataset-expiration.md) och [borttagningar av poster](./ui/record-delete.md) via plattformsgränssnittet. Mer information finns i den länkade dokumentationen. Observera att datalifecycle inte stöder batchborttagning.
+>Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via [datamängdens slutpunkt](./api/dataset-expiration.md) och ID-borttagningar (radnivådata) med hjälp av primära identiteter via [arbetsorderslutpunkten](./api/workorder.md). Du kan också hantera [förfallodatum för datauppsättningar](./ui/dataset-expiration.md) och [borttagningar av poster](./ui/record-delete.md) via Experience Platform-gränssnittet. Mer information finns i den länkade dokumentationen. Observera att datalifecycle inte stöder batchborttagning.
 
 ## Arbetsytan i gränssnittet för [!UICONTROL Data Lifecycle] {#ui}
 
-Med arbetsytan [!UICONTROL Data Lifecycle] i plattformsgränssnittet kan du konfigurera och schemalägga datalivscykelåtgärder, vilket säkerställer att dina poster underhålls som förväntat.
+Med arbetsytan [!UICONTROL Data Lifecycle] i Experience Platform UI kan du konfigurera och schemalägga datalivscykelåtgärder, vilket säkerställer att dina poster bevaras som förväntat.
 
 Detaljerade anvisningar om hur du hanterar livscykelaktiviteter för data i användargränssnittet finns i [användargränssnittshandboken för datatillgångar](./ui/overview.md).
 
@@ -58,7 +58,7 @@ Följande inträffar när en [förfallobegäran](./ui/dataset-expiration.md) fö
 
 >[!IMPORTANT]
 >
->Borttagningar av datauppsättningar i Amazon Web Services (AWS) kan fördröjas med ungefär tre timmar innan ändringarna tillämpas helt. Detta inkluderar upp till två timmar innan datauppsättningen flaggas för borttagning, följt av ytterligare en timme innan den tas bort helt från systemet. Borttagningsbegäranden för plattformsinstanser som använder Azure Data Lake resulterar däremot i omedelbara ändringar över affärsfunktionerna.
+>Borttagningar av datauppsättningar i Amazon Web Services (AWS) kan fördröjas med ungefär tre timmar innan ändringarna tillämpas helt. Detta inkluderar upp till två timmar innan datauppsättningen flaggas för borttagning, följt av ytterligare en timme innan den tas bort helt från systemet. Borttagningsbegäranden för Experience Platform-instanser som använder Azure Data Lake resulterar däremot i omedelbara ändringar över affärsfunktionerna.
 >
 >För AWS-användare kan fördröjningen påverka gruppsegmentering, direktuppspelningssegmentering, förhandsvisningar, uppskattningar, export och dataåtkomst. Den här fördröjningen påverkar bara kunder som använder AWS, eftersom Azure Data Lake-användare får omedelbara uppdateringar. För AWS-användare kan det ta upp till tre timmar för raderingsbegäranden att sprida sig fullt ut via alla system som påverkas. Justera dina förväntningar därefter.
 
@@ -80,4 +80,4 @@ The following takes place when a [record delete request](./ui/record-delete.md) 
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över plattformens funktioner för datalivscykel. Om du vill komma igång med att göra datahygienbegäranden i användargränssnittet kan du läsa [användargränssnittshandboken](./ui/overview.md). Mer information om hur du skapar datalifecycle-jobb programmatiskt finns i [API-handboken för datahygien](./api/overview.md)
+I det här dokumentet finns en översikt över Experience Platform funktioner för datalivscykel. Om du vill komma igång med att göra datahygienbegäranden i användargränssnittet kan du läsa [användargränssnittshandboken](./ui/overview.md). Mer information om hur du skapar datalifecycle-jobb programmatiskt finns i [API-handboken för datahygien](./api/overview.md)

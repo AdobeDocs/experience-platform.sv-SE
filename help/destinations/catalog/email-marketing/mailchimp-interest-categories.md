@@ -3,9 +3,9 @@ title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2205'
+source-wordcount: '2218'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 Compared to [!DNL Mailchimp Tags] which you would use for internal classification, [!DNL Mailchimp Interest Categories] is meant to manage subscriptions to topics of interest that your contacts might be interested in. *Note, Experience Platform also has a connection for [!DNL Mailchimp Tags], you can check it out on the [[!DNL Mailchimp Tags]](/help/destinations/catalog/email-marketing/mailchimp-tags.md) page.*
 -->
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) använder [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/)-API:t för att skapa [intressekategorier](https://mailchimp.com/developer/marketing/api/interest-categories/) och lägger sedan till kontakter från var och en av de valda plattformspublikerna i en motsvarande intressekategori. Du kan **lägga till nya kontakter** eller **uppdatera informationen för befintliga [!DNL Mailchimp] kontakter** och sedan **lägga till eller ta bort dem från sina önskade grupper** inom en befintlig [!DNL Mailchimp] målgrupp efter att du har aktiverat dem i ett nytt segment. [!DNL Mailchimp Interest Groups] använder de valda målgruppsnamnen från plattformen som intressekategorier i [!DNL Mailchimp].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) använder [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/)-API:t för att skapa [intressekategorier](https://mailchimp.com/developer/marketing/api/interest-categories/) och lägger sedan till kontakter från var och en av de valda Experience Platform-målgrupperna i en motsvarande intressekategori. Du kan **lägga till nya kontakter** eller **uppdatera informationen för befintliga [!DNL Mailchimp] kontakter** och sedan **lägga till eller ta bort dem från sina önskade grupper** inom en befintlig [!DNL Mailchimp] målgrupp efter att du har aktiverat dem i ett nytt segment. [!DNL Mailchimp Interest Groups] använder de valda målgruppsnamnen från Experience Platform som intressekategorier i [!DNL Mailchimp].
 
 ## Användningsfall {#use-cases}
 
@@ -40,7 +40,7 @@ Innan du aktiverar data till målet [!DNL Mailchimp Interest Categories] måste 
 
 ### Krav för målet [!DNL Mailchimp Interest Categories] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Platform till ditt [!DNL Mailchimp]-konto:
+Observera följande krav för att kunna exportera data från Experience Platform till ditt [!DNL Mailchimp]-konto:
 
 #### Du måste ha ett [!DNL Mailchimp]-konto {#prerequisites-account}
 
@@ -92,8 +92,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Platform uppdateras motsvarande [!DNL Mailchimp Interest Categories]-segmentstatus med målgruppsstatus från Platform.</li></ul> |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutaren uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Experience Platform uppdateras motsvarande [!DNL Mailchimp Interest Categories]-segmentstatus med målgruppsstatus från Experience Platform.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -118,7 +118,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 
 {style="table-layout:auto"}
 
-![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar.](../../assets/catalog/email-marketing/mailchimp-interest-categories/authenticate-destination.png)
+![Experience Platform UI, bild som visar hur du autentiserar.](../../assets/catalog/email-marketing/mailchimp-interest-categories/authenticate-destination.png)
 
 Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]** med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
@@ -126,15 +126,15 @@ Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]*
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Skärmbild för plattformsgränssnitt som visar målinformationen.](../../assets/catalog/email-marketing/mailchimp-interest-categories/destination-details.png)
+![Experience Platform UI-skärmbild med målinformation.](../../assets/catalog/email-marketing/mailchimp-interest-categories/destination-details.png)
 
 | Fält | Beskrivning |
 | --- | --- |
 | **[!UICONTROL Name]** | Ett namn som du känner igen det här målet med i framtiden. |
 | **[!UICONTROL Description]** | En beskrivning som hjälper dig att identifiera det här målet i framtiden. |
 | **[!UICONTROL Data center]** | Ditt [!DNL Mailchimp]-konto `data center`. Mer information finns i avsnittet [Identifiera [!DNL Mailchimp] datacenter](#identify-data-center). |
-| **[!UICONTROL Audience Name (Please select Data center first)]** | När du har valt **[!UICONTROL Data center]** fylls den här listrutan automatiskt i med målgruppsnamnen från ditt [!DNL Mailchimp]-konto. Välj den målgrupp som du vill uppdatera med data från Platform. |
-| **[!UICONTROL Interest Category (Please select Data center and Audience Name first)]** | När du har valt **[!UICONTROL Audience Name]** fylls den här listrutan automatiskt i med intressegruppkategorinamnen från ditt [!DNL Mailchimp]-konto. Välj det kategorinamn som du vill uppdatera med data från plattformen. |
+| **[!UICONTROL Audience Name (Please select Data center first)]** | När du har valt **[!UICONTROL Data center]** fylls den här listrutan automatiskt i med målgruppsnamnen från ditt [!DNL Mailchimp]-konto. Välj den målgrupp som du vill uppdatera med data från Experience Platform. |
+| **[!UICONTROL Interest Category (Please select Data center and Audience Name first)]** | När du har valt **[!UICONTROL Audience Name]** fylls den här listrutan automatiskt i med intressegruppkategorinamnen från ditt [!DNL Mailchimp]-konto. Välj det kategorinamn som du vill uppdatera med data från Experience Platform. |
 
 {style="table-layout:auto"}
 
@@ -159,7 +159,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Mailchimp Interest Categories] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Mailchimp Interest Categories] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet.
 
 Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL Mailchimp Interest Categories]:
 
@@ -192,7 +192,7 @@ Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [
    Du vill till exempel uppdatera värdet för `country` med kontaktens befintliga adressfält `addr1`, `city`, `state` och `zip` som `132, My Street, Kingston`, `New York`, `New York` och `12401`. Om du vill uppdatera `country` måste du skicka de befintliga värdena med ändringarna *(om det finns någon)* och det nya värdet för landet. Värdena i datauppsättningen bör därför vara `132, My Street, Kingston`, `New York`, `New York`, `12401` och `US`. Om du bara skickar `country` och inte anger värden för `addr1`, `city`, `state` och `zip` skrivs de över av `NULL`.
 
    Ett exempel med de slutförda mappningarna visas nedan:
-   ![Exempel på skärmbild för plattformsgränssnitt som visar fältmappningar.](../../assets/catalog/email-marketing/mailchimp-interest-categories/mappings.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar fältkopplingar.](../../assets/catalog/email-marketing/mailchimp-interest-categories/mappings.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -204,7 +204,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 ![Skärmbild för Mailchimp-användargränssnitt som visar sidan Målgrupp.](../../assets/catalog/email-marketing/mailchimp-interest-categories/audience-groups.png)
 
-* Markera gruppen och kontrollera om de valda målgrupperna har skapats som kategorier med målgruppsnamnet från Platform, som kan följas av ett automatiskt genererat suffix.
+* Markera gruppen och kontrollera om de valda målgrupperna har skapats som kategorier med målgruppsnamnet från Experience Platform, som kan följas av ett automatiskt genererat suffix.
    * Det här målet använder de valda segmentens namn för att skapa intressekategorin med hjälp av [[!DNL Mailchimp] API:t för Lägg till intressekategori](https://mailchimp.com/developer/marketing/api/interest-categories/add-interest-category/). Om du skapar ett nytt mål och aktiverar samma målgrupper igen lägger [!DNL Mailchimp] till ett suffix som skiljer mellan det befintliga och det nya segmentet.
 * Kontakter vars e-postmeddelanden inte fanns i gruppen läggs till i kategorin som skapades nyligen.
 * För kontakter som redan finns i gruppen uppdateras attributfältsdata och kontakten läggs till i den nyligen skapade kategorin.
@@ -221,7 +221,7 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 Om API-nyckeln som du angav i fältet **[!UICONTROL Password]** eller värdet **[!UICONTROL Data center]** är felaktig visas ett [!DNL Mailchimp] API-felsvar: *`No options are available. Please verify the values selected for the following dependent fields: dataCenter`* enligt nedan. I det här fallet kan du inte välja ett värde i fältet **[!UICONTROL Audience Name (Please select Data center first)]**.
 
-![Skärmbilden för användargränssnittet för plattformen visar ett fel om API-nyckeln eller datacentrets värden för Mailchimp är felaktiga.](../../assets/catalog/email-marketing/mailchimp-interest-categories/error.png)
+![Experience Platform UI-skärmbild visar ett fel om Mailchimp API-nyckeln eller datacentervärdena är felaktiga.](../../assets/catalog/email-marketing/mailchimp-interest-categories/error.png)
 
 Du måste ange rätt värden för att kunna åtgärda felet och fortsätta till nästa steg. Se [Identifiera [!DNL Mailchimp] datacenter](#identify-data-center) och
 [Samla in  [!DNL Mailchimp] API-nyckelavsnitt](#gather-credentials) om du behöver hjälp.

@@ -5,10 +5,10 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: cbc626dbb12f69114c48a0920bf56ec2aabe13de
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1281'
-ht-degree: 1%
+source-wordcount: '1282'
+ht-degree: 2%
 
 ---
 
@@ -316,4 +316,4 @@ ht-degree: 1%
       * [Självbetjäningsmall för dokumentation](./destination-sdk/docs-framework/self-service-template.md)
       * [Bästa tillvägagångssätt](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [Vanliga frågor och svar](./destinations-faq.md)
-* [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform-ordlista
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '7990'
+source-wordcount: '8003'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## A
 
-**Åtkomstkontroll**: Med rollbaserad åtkomstkontroll kan administratörer tilldela åtkomst och behörigheter till användare i Experience Platform. Behörigheter omfattar möjligheten att visa och/eller använda Experience Platform-funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar.
+**Åtkomstkontroll**: Med rollbaserad åtkomstkontroll kan administratörer tilldela åtkomst och behörigheter till användare av Experience Platform. Behörigheter omfattar möjligheten att visa och/eller använda Experience Platform-funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar.
 
 **Åtkomstnyckel-ID**: Ett åtkomstnyckel-ID är en unik identifierare som är associerad med en [!DNL Amazon] S3-hemlig åtkomstnyckel. Åtkomstnyckel-ID och hemlig åtkomstnyckel används tillsammans för att signera [!DNL Amazon Web Services] (AWS)-begäranden.
 
@@ -27,19 +27,19 @@ ht-degree: 0%
 
 **Administratör**: En eller flera personer i organisationen som kan konfigurera och anpassa behörigheter för Experience Platform i Adobe Admin Console.
 
-**Adobe Admin Console**: Adobe Admin Console tillhandahåller en central plats för hantering av produktberättiganden och åtkomst för Adobe för din organisation. Via konsolen kan administratörer ge grupper av användare åtkomstbehörigheter för olika plattformsfunktioner, t.ex.&quot;Hantera datauppsättningar&quot;,&quot;Visa datauppsättningar&quot; eller&quot;Hantera profiler&quot;.
+**Adobe Admin Console**: Adobe Admin Console tillhandahåller en central plats för hantering av Adobe produktbehörigheter och åtkomst för din organisation. Via konsolen kan administratörer ge användargrupper åtkomstbehörigheter för olika Experience Platform-funktioner, t.ex.&quot;Hantera datauppsättningar&quot;,&quot;Visa datauppsättningar&quot; eller&quot;Hantera profiler&quot;.
 
 **Adobe Experience Platform**: Adobe Experience Platform standardiserar data och innehåll i hela företaget, vilket driver konsumentprofiler i realtid, möjliggör datavetenskap och snabbar upp innehållets hastighet för att driva upplevelsepersonalisering över hela kundresan.
 
-**Adobe Experience Platform Query Service**: Gör det möjligt för dataanalytiker att fråga efter händelser och profiler för användning i analyser och maskininlärning. Med Query Service kan datavetare och analytiker hämta alla sina datauppsättningar som lagras i Experience Platform (inklusive beteendedata och POS (Point-of-Sale), CRM (customer relationship management) med mera) och fråga dessa datauppsättningar för att få svar på specifika frågor om data.
+**Adobe Experience Platform Query Service**: Gör det möjligt för dataanalytiker att fråga efter händelser och profiler för användning i analyser och maskininlärning. Med Query Service kan datavetare och analytiker hämta alla sina datauppsättningar som lagras i Experience Platform (inklusive beteendedata samt POS (Point-of-Sale), CRM (customer relationship management) med mera) och fråga dessa datauppsättningar för att få svar på specifika frågor om data.
 
 **Adobe Experience Platform segmenteringstjänst**: Gör det möjligt att bygga segment och generera målgrupper från kundprofildata i realtid. Dessa målgrupper kan sedan exporteras till sina egna datamängder inom Data Lake.
 
-**Adobe Intelligent Services**: Intelligenta tjänster som Attribution AI och kundens AI är maskininlärningsmodeller som bygger på artificiell intelligens och som är avsedda att användas av Experience Platform.
+**Adobe Intelligent Services**: Intelligenta tjänster som Attribution AI och Customer AI är maskininlärningsmodeller som bygger på artificiell intelligens och som är specialbyggda och kräver att Experience Platform körs och fungerar.
 
-**Adobe I/O**: Adobe I/O är en del av Experience Platform och ger tillgång till allt som utvecklare behöver för att integrera, utöka och anpassa plattformen, inklusive API:er, händelser, utvecklarkonsolen och praktiska verktyg.
+**Adobe I/O**: Adobe I/O är en del av Experience Platform och ger tillgång till allt utvecklare behöver för att integrera, utöka och anpassa Experience Platform, inklusive API:er, händelser, utvecklarkonsolen och praktiska verktyg.
 
-**Adobe Sensei**: Adobe Sensei är intelligensramverket som driver Experience Platform. Det innehåller också en uppsättning AI-tjänster som ger varumärken möjlighet att förbättra sin förmåga att leverera personaliserade kundupplevelser i realtid.
+**Adobe Sensei**: Adobe Sensei är det underrättelseramverk som driver Experience Platform. Det innehåller också en uppsättning AI-tjänster som ger varumärken möjlighet att förbättra sin förmåga att leverera personaliserade kundupplevelser i realtid.
 
 **Amazon S3-bucket**: [!DNL Amazon S3] är grundläggande behållare för data som lagras i ekosystemet [!DNL Amazon]. Bucket innehåller objekt. Varje objekt lagras och hämtas med en unik utvecklartilldelad nyckel.
 
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 **APA**: [[!DNL Australia Privacy Act (Privacy Act)]](https://www.oaic.gov.au/privacy/the-privacy-act) främjar och skyddar enskilda personers integritet och reglerar hur australiska myndigheter och organisationer hanterar personuppgifter. [!DNL Privacy Act] innehåller principer som gäller för organisationer i den privata sektorn. Enskilda personer får till exempel rätt att förstå varför personuppgifterna samlas in och hur de kommer att användas, möjlighet att få tillgång till, radera sina uppgifter och rätta personuppgifter.
 
-**Lägg till sparningsstrategi**: Den sparade strategin&quot;append&quot; är ett alternativ som används när data från tredje part anges som ska importeras via en anslutning och nya data eller rader läggs till i slutet av datauppsättningen. De tidigare infogade raderna förblir orörda och endast rader som skapats sedan den senaste schemalagda körningen importeras till Experience Platform. Eventuella rader som har ändrats i källsystemet ändras inte i Experience Platform.
+**Lägg till sparningsstrategi**: Den sparade strategin&quot;append&quot; är ett alternativ som används när data från tredje part anges som ska importeras via en anslutning och nya data eller rader läggs till i slutet av datauppsättningen. De tidigare infogade raderna ändras inte och endast rader som skapats sedan den senaste schemalagda körningen importeras till Experience Platform. Eventuella rader som har ändrats i källsystemet ändras inte i Experience Platform.
 
 **Array**: Matriser används för ordnade element med samma datatyp.
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 **Attribut**: Attribut är angivna egenskaper som representerar en profil.
 
-**Attributsammanfogning**: När du definierar en sammanfogningsprincip med hjälp av kundprofils-API:t för realtid, anger `attributeMerge`-objektet hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. Det motsvarar att välja en [!UICONTROL Merge method] när du definierar en sammanfogningsprincip i plattformsgränssnittet.
+**Attributsammanfogning**: När du definierar en sammanfogningsprincip med hjälp av kundprofils-API:t för realtid, anger `attributeMerge`-objektet hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. Det motsvarar att välja en [!UICONTROL Merge method] när du definierar en sammanfogningsprincip i Experience Platform-gränssnittet.
 
 **Attribution AI**: [!DNL Attribution AI] är en intelligent tjänst som drivs av Adobe Sensei och som levererar algoritmiska flerkanalsattribueringsfunktioner under hela kundlivscykeln.
 
@@ -89,7 +89,7 @@ ht-degree: 0%
 
 **Katalog**: När det gäller källor och mål är en katalog ett galleri med tillgängliga anslutningar till Adobe-program och tredjepartstekniker. Ska inte blandas ihop med [!DNL Catalog Service].
 
-**[!DNL Catalog Service]**: [!DNL Catalog Service] (kallas ibland [!DNL Catalog]) är ett postsystem för dataplatser och datalinje inom Adobe Experience Platform. Alla data som är inkapslade i Experience Platform lagras i datasjön som filer och kataloger, men [!DNL Catalog] innehåller metadata och beskrivning av dessa filer och kataloger för sökning, övervakning och datastyrning.
+**[!DNL Catalog Service]**: [!DNL Catalog Service] (kallas ibland [!DNL Catalog]) är ett postsystem för dataplatser och datalinje inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i datarjön som filer och kataloger, men [!DNL Catalog] innehåller metadata och beskrivning av dessa filer och kataloger för sökning, övervakning och datastyrning.
 
 **CCPA**: [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) förbättrar sekretessen och konsumentskyddet för personer bosatta i Kalifornien och USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part.
 
@@ -155,7 +155,7 @@ ht-degree: 0%
 
 **Dataelement**: I kontexten för taggar är ett dataelement en pekare som används inom regler och tillägg för att peka på en viss datadel som finns på klientenheten.
 
-**Intag av data**: Inhämtning av data är processen att lägga till data från en källa till Experience Platform. Data kan hämtas in till plattformen på flera olika sätt, inklusive strömning, batchar eller läggas till via källanslutningar.
+**Intag av data**: Inhämtning av data innebär att lägga till data från en källa till Experience Platform. Data kan hämtas in till Experience Platform på flera olika sätt, t.ex. genom strömning, batchar eller läggas till via källanslutningar.
 
 **Datalager**: I taggarnas sammanhang är ett datalager en datastruktur som finns på klientenheten och som innehåller metadata om det sammanhang i vilket en sida eller skärm visas.
 
@@ -165,7 +165,7 @@ ht-degree: 0%
 
 **Datauppsättningsrubriker**: Det går att lägga till dataanvändningsrubriker i datauppsättningar. Alla fält i den datauppsättningen ärver datauppsättningens etiketter.
 
-**Data Science Workspace**: [!DNL Data Science Workspace] på Experience Platform gör det möjligt för kunder att skapa maskininlärningsmodeller som använder data från olika plattformstillämpningar och Adobe-program för att skapa intelligenta segment, generera insikter och förutse, vilket gör att ni kan förbättra slutanvändarnas digitala upplevelser avsevärt.
+**Data Science Workspace**: [!DNL Data Science Workspace] i Experience Platform gör det möjligt för kunder att skapa maskininlärningsmodeller med data från Experience Platform- och Adobe-program för att skapa intelligenta segment, generera insikter och förutse, vilket gör att ni kan förbättra slutanvändarnas digitala upplevelser avsevärt.
 
 **Datakälla**: En datakälla är en användardefinierad utgångspunkt för data. Exempel på en datakälla är en mobilapp, en profil och/eller upplevelsehändelser, webbplatsprofilhändelser eller en CRM.
 
@@ -177,7 +177,7 @@ ht-degree: 0%
 
 **Dataanvändningsetiketter**: Med dataanvändningsetiketter kan du kategorisera data som speglar sekretessrelaterade överväganden och avtalsvillkor så att de överensstämmer med regler och företagspolicyer. Dataanvändningsetiketter som läggs till i en datauppsättning ärvs ned eller används för alla fält i den datauppsättningen. Dataanvändningsetiketter kan också användas direkt i fält.
 
-**Dataflöde**: Ett dataflöde är en virtuell pipeline med data som flödar in i plattformen från en källa och ut till mål.
+**Dataflöde**: Ett dataflöde är en virtuell pipeline med data som flödar in i Experience Platform från en källa och ut till mål.
 
 **Dataflödeskörning**: Ett dataflöde är ett dataflöde som körs i Experience Platform baserat på ett användarspecificerat schema.
 
@@ -191,9 +191,9 @@ ht-degree: 0%
 
 **Deltakolumn**: Med en delta-kolumn kan du välja ett källdatafält som representerar en tidsstämpel för inkrementellt intag.
 
-**Strategi för att spara ändringar**: Strategin för att spara ändringar är ett alternativ för att hämta tredjepartsdata via en källanslutning. Med det här alternativet kan användaren ange att nya eller ändrade rader med källdata hämtas till Experience Platform. Nya rader läggs till i slutet av datauppsättningen och ändrade rader uppdateras i datauppsättningen på Experience Platform.
+**Strategi för att spara ändringar**: Strategin för att spara ändringar är ett alternativ för att hämta tredjepartsdata via en källanslutning. Med det här alternativet kan användaren ange att nya eller ändrade rader med källdata importeras till Experience Platform. Nya rader läggs till i slutet av datauppsättningen och ändrade rader uppdateras i datauppsättningen på Experience Platform.
 
-**Beskrivning**: I Experience Data Model (XDM) är en beskrivning en extra uppsättning schemarelaterade metadata som beskriver ett specifikt beteende för ett fält. Beskrivningar kan användas av Experience Platform för att förstå avsedd schemabeteende, som relationen mellan två scheman.
+**Beskrivning**: I Experience Data Model (XDM) är en beskrivning en extra uppsättning schemarelaterade metadata som beskriver ett specifikt beteende för ett fält. Beskrivningar kan användas av Experience Platform för att förstå avsedd schemafunktion, som relationen mellan två scheman.
 
 **Mål**: Ett mål är en allmän term för alla slutpunkter, till exempel ett Adobe-program, en annonsplattform, molnlagringstjänst eller marknadsföringstjänst, där en målgrupp aktiveras och levereras.
 
@@ -213,7 +213,7 @@ ht-degree: 0%
 
 **Marknadsföringsåtgärd för e-postmarknadsföring**: En marknadsföringsåtgärd som använder data i kampanjer för e-postmarknadsföring.
 
-**Bädda in kod**: I sammanhanget med taggar är inbäddningskoden en skripttagg som placeras i HTML på en plats eller i en miljö. Inbäddningskoden instruerar webbläsaren var bygget ska hämtas.
+**Bädda in kod**: I sammanhanget med taggar är inbäddningskoden en skripttagg som placeras i HTML på en webbplats eller i en miljö. Inbäddningskoden instruerar webbläsaren var bygget ska hämtas.
 
 **Uppräkning**: En uppräkning (uppräkning) är ett XDM-fält som begränsas till en uppsättning fördefinierade värden.
 
@@ -227,7 +227,7 @@ ht-degree: 0%
 
 **Händelser**: Händelser är beteendedata som är associerade med en profil.
 
-**Experience Data Model (XDM)** [!DNL Experience Data Model] (XDM) är ett ramverk med öppen källkod som använder standardscheman för att sammanställa data för användning med Experience Platform och Adobe Experience Cloud-program. XDM standardiserar hur data struktureras och snabbar upp och förenklar processen att få insikter från enorma mängder data.
+**Experience Data Model (XDM)** [!DNL Experience Data Model] (XDM) är ett ramverk med öppen källkod som använder standardscheman för att sammanställa data för användning med Experience Platform- och Adobe Experience Cloud-program. XDM standardiserar hur data struktureras och snabbar upp och förenklar processen att få insikter från enorma mängder data.
 
 **Experiment**: Ett experiment är processen att skapa en tränad modell genom att utbilda instansen med en exempeldel av liveproduktionsdata. Detta skiljer sig från en tränad modell som testas mot en testdatamängd för utelämnande. Detta skiljer sig också från konceptet med ett experiment i vissa maskininlärningsmiljöer där det i själva verket handlar om ett exempelmodelleringsprojekt.
 
@@ -239,7 +239,7 @@ ht-degree: 0%
 
 **Tillägg**: I taggarnas sammanhang är ett tillägg ett paket med funktioner som lagts till i en taggegenskap. Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
 
-**Tilläggspaket**: I taggarkontexten är ett tilläggspaket en ZIP-fil som skapas och överförs av en tilläggsutvecklare som har allt som krävs för att taggar användare ska kunna installera tillägget i sin egenskap. Ett tilläggspaket innehåller ett manifest som anger information om tillägget, HTML/JavaScript som behövs för att slutanvändarna ska kunna konfigurera beteendet för taggtillägget och den körbara JavaScript som levereras till klientmiljön (om det behövs).
+**Tilläggspaket**: I taggarkontexten är ett tilläggspaket en ZIP-fil som skapas och överförs av en tilläggsutvecklare som har allt som krävs för att taggar användare ska kunna installera tillägget i sin egenskap. Ett tilläggspaket innehåller ett manifest som anger information om tillägget, det HTML/JavaScript som behövs för att slutanvändarna ska kunna konfigurera beteendet för taggtillägget och det körbara JavaScript som levereras till klientmiljön (om det behövs).
 
 ## F
 
@@ -259,7 +259,7 @@ ht-degree: 0%
 
 ## G
 
-**Geofence**: En geofence är en virtuell geografisk gräns, definierad av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område.
+**Geofence**: En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område.
 
 **GDPR (General Data Protection Regulation)**: Den allmänna dataskyddsförordningen (GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Den allmänna dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter och omfattar alla företag som hanterar EU-medborgarnas uppgifter.
 
@@ -301,11 +301,11 @@ ht-degree: 0%
 
 **Inmatning**: Se dataöverföring.
 
-**Injektionsschema**: Ett intag-schema ger tidsbaserade alternativ när du importerar från en källa till Experience Platform.
+**Inmatningsschema**: Ett intag-schema ger tidsbaserade alternativ när du importerar från en källa till Experience Platform.
 
 **Indatafunktion**: En indatafunktion har angetts i funktionsmappningen och används av en maskininlärningsmodell för att göra prognoser.
 
-**[!DNL Intelligent Services]**: [!DNL Intelligent Services], till exempel [!DNL Attribution AI] och [!DNL Customer AI], är modeller som bygger på artificiell intelligens och som kräver att Experience Platform (eller program som är byggda ovanpå en plattform som Adobe Real-time Customer Data Platform) körs och fungerar.
+**[!DNL Intelligent Services]**: [!DNL Intelligent Services], till exempel [!DNL Attribution AI] och [!DNL Customer AI], är modeller som bygger på artificiell intelligens och som kräver att Experience Platform (eller program som är byggda ovanpå Experience Platform, till exempel Adobe Real-Time Customer Data Platform) körs och fungerar.
 
 **Intressebaserad målinriktning eller personalisering**: Intressebaserad målinriktning, som också kallas personalisering, inträffar om följande tre villkor uppfylls:
 
@@ -315,9 +315,9 @@ ht-degree: 0%
 
 ## J
 
-**[!DNL JupyterLab]**: Ett webbaserat gränssnitt med öppen källkod för projektet [!DNL Jupyter] som är integrerat i plattformens användargränssnitt.
+**[!DNL JupyterLab]**: Ett webbaserat gränssnitt med öppen källkod för Project [!DNL Jupyter] som är integrerat i Experience Platform-gränssnittet.
 
-**[!DNL Jupyter Notebook]**: Med JupyterLab, Jupyter Notebooks, kan du utföra datarensning och dataomvandling, numerisk simulering, statistisk modellering, datavisualisering, maskininlärning med mera på dina Experience Platform-data på en mängd olika språk som Python, Scala och PySpark.
+**[!DNL Jupyter Notebook]**: Med JupyterLab, Jupyter Notebooks, kan du utföra datarensning och -omvandling, numerisk simulering, statistisk modellering, datavisualisering, maskininlärning med mera på dina Experience Platform-data på en mängd olika språk som Python, Scala och PySpark.
 
 ## K
 
@@ -339,9 +339,9 @@ ht-degree: 0%
 
 **Mappning**: Datamappning är processen att mappa källdatafält till relaterade målfält i ett mål.
 
-**Marknadsföringsåtgärd**: I datastyrningsramverket är en marknadsföringsåtgärd (kallas även för marknadsföringsfall) en åtgärd som en Experience Platform-datakonsument vidtar, och där det finns ett behov av att kontrollera överträdelser av dataanvändningsprinciper.
+**Marknadsföringsåtgärd**: I datastyrningsramverket är en marknadsföringsåtgärd (kallas även marknadsföringsfall) en åtgärd som en Experience Platform-datakonsument vidtar, och där måste man kontrollera om dataanvändningsprinciper har efterlevts.
 
-**Sammanfogningsmetod**: När du definierar en sammanfogningsprincip med hjälp av plattformsgränssnittet anger sammanfogningsmetoden hur datafel ska prioriteras när en konflikt uppstår. När du använder Real-Time Customer Profile API för att definiera en sammanfogningsprincip, bestäms sammanfogningsmetoden med objektet `attributeMerge`.
+**Sammanfogningsmetod**: När du definierar en sammanfogningsprincip med hjälp av Experience Platform-gränssnittet anger sammanfogningsmetoden hur databragment ska prioriteras när en konflikt uppstår. När du använder Real-Time Customer Profile API för att definiera en sammanfogningsprincip, bestäms sammanfogningsmetoden med objektet `attributeMerge`.
 
 **Sammanslagningsprincip**: Sammanslagningsprinciper är regler som Experience Platform använder för att avgöra hur kunddatafragment från flera källor kombineras för att skapa en enskild profil. När en datakonflikt inträffar avgör sammanfogningsprincipen vilka data som ska prioriteras för att inkluderas i profilen.
 
@@ -391,9 +391,9 @@ ht-degree: 0%
 
 **Placeringar**: en placering är den plats och/eller det sammanhang där ett erbjudande visas för en slutanvändare.
 
-**Arbetsytan Principer**: En arbetsyta i användargränssnittet för plattformen som gör att datafördelningar kan visa och hantera dataanvändningsetiketter och principer för din organisation.
+**Arbetsytan Profiler**: En arbetsyta i Experience Platform-gränssnittet som gör att datafördelningar kan visa och hantera dataanvändningsetiketter och profiler för din organisation.
 
-**Princip**: En dataanvändningsprincip är en regel som anger marknadsföringsåtgärder som är begränsade baserat på användningen av användningsetiketter som används på plattformsdata.
+**Princip**: En dataanvändningsprincip är en regel som anger marknadsföringsåtgärder som är begränsade baserat på användningen av användningsetiketter som används på Experience Platform-data.
 
 **Tillämpning av principer**: Gör att du kan tillämpa dataanvändningsprinciper med tillämpade marknadsföringsåtgärder för att förhindra dataåtgärder som utgör policyöverträdelser inom en organisation.
 
@@ -433,11 +433,11 @@ ht-degree: 0%
 
 ## R
 
-**Real-time Customer Data Platform**: Adobe Real-time Customer Data Platform (Real-Time CDP) sammanför kända och okända kunddata för att skapa tillförlitliga kundprofiler med förenklad integrering, intelligent segmentering och realtidsaktivering under hela den digitala kundresan.
+**Real-Time Customer Data Platform**: Adobe Real-Time Customer Data Platform (Real-Time CDP) sammanför kända och okända kunddata för att skapa tillförlitliga kundprofiler med förenklad integrering, intelligent segmentering och realtidsaktivering under hela den digitala kundresan.
 
 **Kundprofil i realtid**: Kundprofil i realtid (kallas ibland profil) ger en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Med en profil kan ni sammanställa kunddata i enskilda profiler som erbjuder åtgärdbara, tidsstämplade konton för varje kundinteraktion.
 
-**Recept**: Ett recept är en AdobeTerm för en modellspecifikation och är en toppnivåbehållare som representerar specifika maskininlärningsprocesser, AI-algoritmer, bearbetningslogik och konfigurationsparametrar som krävs för att skapa och köra en tränad modell och därmed hjälpa till att lösa specifika affärsproblem.
+**Recept**: Ett recept är en Adobe-term för en modellspecifikation och är en toppnivåbehållare som representerar specifika maskininlärningsprocesser, AI-algoritmer, bearbetningslogik och konfigurationsparametrar som krävs för att skapa och köra en tränad modell och därmed hjälpa till att lösa specifika affärsproblem.
 
 **Post**: En post är data som kvarstår som rader i en datauppsättning.
 
@@ -449,7 +449,7 @@ ht-degree: 0%
 
 **Resurs**: I kontexten för taggar är en resurs en allmän term som refererar till alternativ som användaren kan konfigurera i klientmiljön, inklusive tillägg, dataelement och regler.
 
-**Rollbaserad åtkomstkontroll**: Med rollbaserad åtkomstkontroll kan administratörer tilldela åtkomst och behörigheter till användare i Experience Platform. Behörigheter omfattar möjligheten att visa och/eller använda Experience Platform-funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar.
+**Rollbaserad åtkomstkontroll**: Med rollbaserad åtkomstkontroll kan administratörer tilldela åtkomst och behörigheter till användare av Experience Platform. Behörigheter omfattar möjligheten att visa och/eller använda Experience Platform-funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar.
 
 **Regel**: I taggarnas kontext är en regel en samling komponenter som definierar en specifik uppsättning händelser, villkor och åtgärder som ska grupperas logiskt.
 
@@ -461,7 +461,7 @@ ht-degree: 0%
 
 **Exempeldata**: Exempeldata är en förhandsgranskning av en datafil, vanligtvis de första 100 raderna, som ger en datavetare eller tekniker en uppfattning om vilket schema eller vilka data som finns i datafilen.
 
-**Sandbox**: En sandlåda är en virtuell konstruktion som partitionerar en enskild plattformsinstans till en separat virtuell miljö, för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+**Sandbox**: En sandlåda är en virtuell konstruktion som partitionerar en enskild Experience Platform-instans till en separat virtuell miljö, för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 **Sandlådeåterställning**: En sandlådeåterställning tar bort alla data inklusive data, profiler och segment i en sandlåda. Sandlådeåterställning kan påverka data som är anslutna till interna eller externa mål.
 
@@ -475,7 +475,7 @@ ht-degree: 0%
 
 **Schemafältgrupp**: I Experience Data Model (XDM) tillåter en schemafältgrupp användare att utöka återanvändbara fält för att definiera ett eller flera attribut som ska ingå i ett schema.
 
-**Schemabibliotek**: Schemabiblioteket innehåller XDM-resurser som är branschstandard och som gjorts tillgängliga av Adobe samt anpassade resurser som definierats av din organisation.
+**Schemabibliotek**: Schemabiblioteket innehåller XDM-resurser som är branschstandard och som är tillgängliga av Adobe, samt anpassade resurser som definierats av din organisation.
 
 **Schemaregister**: Schemaregistret innehåller ett användargränssnitt och RESTful API som används för att visa och hantera alla schemarelaterade resurser i schemabiblioteket.
 
@@ -483,13 +483,13 @@ ht-degree: 0%
 
 **Segment**: Ett segment är en uppsättning regler som innehåller attribut och händelsedata som kvalificerar ett antal profiler för att bli en målgrupp.
 
-**Segment Builder**: [!DNL Segment Builder] är en visuell utvecklingsmiljö som används för att skapa segmentdefinitioner. Det är en vanlig komponent i alla program som använder segmenteringstjänsten Experience Platform.
+**Segment Builder**: [!DNL Segment Builder] är en visuell utvecklingsmiljö som används för att skapa segmentdefinitioner. Det är en vanlig komponent i alla program som använder Experience Platform Segmentation Service.
 
 **Segmentdefinition**: En segmentdefinition är den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden för en målpublik. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment.
 
 **Utvärderingsmetod för segment**: Det finns två metoder för segmentutvärdering: schemalagd och on-demand. Schemalagd utvärdering möjliggör ett återkommande schema för körning av ett exportjobb vid en viss tidpunkt, medan behovsutvärdering innebär att ett segmentjobb skapas för att skapa målgruppen omedelbart.
 
-**Segmentexport**: Segmentexport är en av två typer av destinationer i Experience Platform. Vid segmentexport kan du skicka de profiler som är kvalificerade och har mappats till målet. Använder segment- och användar-ID:n och pseudonyma data och integreras vanligtvis med sociala nätverk och andra målplattformar för digitala medier.
+**Segmentexport**: Segmentexport är en av de två typerna av destinationer i Experience Platform. Vid segmentexport kan du skicka de profiler som är kvalificerade och har mappats till målet. Använder segment- och användar-ID:n och pseudonyma data och integreras vanligtvis med sociala nätverk och andra målplattformar för digitala medier.
 
 **Segment-ID**: Ett segment-ID är en automatiskt genererad identifierare som är associerad med ett segment.
 
@@ -499,7 +499,7 @@ ht-degree: 0%
 
 **Segmentering**: Segmentering är processen att dela upp en stor grupp kunder, potentiella kunder eller konsumenter i mindre grupper som har liknande attribut och som kommer att svara på liknande marknadsföringsstrategier.
 
-**Sensei ML Framework**: Sensei ML Framework är ett enhetligt maskininlärningsramverk (ML) som utnyttjar data från Experience Platform för att möjliggöra för datavetare att utveckla ML-drivna underrättelsetjänster på ett snabbare, skalbart och återanvändbart sätt.
+**Sensei ML Framework**: Sensei ML Framework är ett enhetligt maskininlärningsramverk (ML) som utnyttjar Experience Platform-data för att möjliggöra för datavetare att utveckla ML-drivna underrättelsetjänster på ett snabbare, skalbart och återanvändbart sätt.
 
 **Känsliga (&quot;S&quot;) etiketter**: Känsliga (&quot;S&quot;) etiketter används för att kategorisera data som anses vara känsliga, till exempel olika typer av beteendedata eller geografiska data som du vill markera som känsliga.
 
@@ -511,19 +511,19 @@ ht-degree: 0%
 
 **Etikett för användning av S2-data**: En `S2`-etikett för dataanvändning används för att klassificera data som kan användas för att fastställa ett brett definierat geofence-område.
 
-**Source**: En källa är en allmän term för alla indataanslutningar i Platform. Se även: Source Connector
+**Source**: En källa är en allmän term för alla indataanslutningar i Experience Platform. Se även: Source Connector
 
 **Source-attribut**: Ett källattribut är ett fält i källdatauppsättningen. Source-attribut mappas till målschemafält.
 
-**Source-katalog**: Källkatalogen är en lista över tillgängliga källanslutningar i Experience Platform.
+**Source-katalog**: Källkatalogen är listan över tillgängliga källanslutningar i Experience Platform.
 
 **Source-kategori**: En källkategori är en gruppering av källor som har liknande egenskaper.
 
-**Source-anslutning**: Source-anslutningar (kallas även källor) hjälper användare att enkelt importera data från flera källor, vilket möjliggör strukturering, märkning och förbättring av data med hjälp av Experience Platform-tjänster. Data kan hämtas från en mängd olika källor som molnbaserad lagring, tredjepartsprogramvara och CRM-system.
+**Source-anslutning**: Source-anslutningar (kallas även källor) hjälper användare att enkelt importera data från flera källor, vilket möjliggör strukturering, märkning och förbättring av data med hjälp av Experience Platform tjänster. Data kan hämtas från en mängd olika källor som molnbaserad lagring, tredjepartsprogramvara och CRM-system.
 
 **Direktuppspelningsanslutning**: En direktuppspelningsanslutning är en unik slutpunkt som tillhandahålls av Adobe och som är knuten till din organisation för att strömma data till Experience Platform.
 
-**Standardnamnområde för identitet**: Standardnamnutrymmen för identiteter är fördefinierade namnutrymmen som tillhandahålls av Adobe, som representerar branschstandardlösningar som ofta används för att identifiera kunder.
+**Standardnamnområde för identitet**: Standardnamnutrymmen för identiteter är fördefinierade namnutrymmen för identiteter som tillhandahålls av Adobe, som representerar branschstandardlösningar som vanligtvis används för att identifiera kunder.
 
 **Direktuppspelningsuppläsning**: Med direktuppspelning kan du skicka data från klient- och serverenheter till Experience Platform i realtid.
 

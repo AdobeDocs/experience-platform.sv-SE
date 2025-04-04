@@ -2,9 +2,9 @@
 title: Komma igång med sandlådeverktygets API
 description: Använd verktygs-API:t i sandlådan för att undersöka artefakter och exportera och importera en ögonblicksbild av sandlådekonfigurationer mellan sandlådor. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 0b34d153-a603-4397-a375-9cc846efe23a
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '311'
+source-wordcount: '312'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ## Samla in värden för obligatoriska rubriker {#headers}
 
-Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa Experience Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -29,7 +29,7 @@ Förutom autentiseringshuvuden kräver alla begäranden en rubrik som anger namn
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare ett huvud:
 
 * `Content-Type: application/json`
 

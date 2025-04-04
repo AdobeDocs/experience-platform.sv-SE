@@ -3,9 +3,9 @@ title: Snowflake Source Connector - översikt
 description: Lär dig hur du ansluter Snowflake till Adobe Experience Platform med API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 8d6baef1549498e137d336ac2c8a42428496dedf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '694'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* Källan [!DNL Snowflake] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>* Källan [!DNL Snowflake] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 >* Som standard tolkar [!DNL Snowflake]-källan `null` som en tom sträng. Kontakta din Adobe-representant för att kontrollera att dina `null`-värden är korrekt skrivna som `null` i Adobe Experience Platform.
 >* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC. Den enda tidsstämpeln som stöds för källan [!DNL Snowflake] är TIMESTAMP_NTZ med UTC-tid.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform har stöd för att importera data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasproviders är [!DNL Snowflake].
+Experience Platform har stöd för inmatning av data från en tredjepartsdatabas. Experience Platform kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasproviders är [!DNL Snowflake].
 
 ## Förhandskrav {#prerequisites}
 
@@ -36,7 +36,7 @@ Så här hämtar du din kontoidentifierare:
 * I den vänstra navigeringen väljer du **[!DNL Accounts]** följt av **[!DNL Active Accounts]** i sidhuvudet.
 * Välj sedan informationsikonen och markera och kopiera domännamnet för den aktuella URL:en.
 
-![Användargränssnittspanelen Snowflake med domännamnet markerat.](../../images/tutorials/create/snowflake/snowflake-dashboard.png)
+![Snowflake UI-instrumentpanel med domännamnet markerat.](../../images/tutorials/create/snowflake/snowflake-dashboard.png)
 
 ### Hämta din privata nyckel {#retrieve-your-private-key}
 
@@ -94,7 +94,7 @@ Så här verifierar du din roll och ditt lager:
 * Navigera till [!DNL Default Role] i fönstret [!DNL Edit user] som visas för att visa rollen som är associerad med den angivna användaren.
 * I samma fönster går du till [!DNL Default Warehouse] för att visa det lagerställe som är associerat med den angivna användaren.
 
-![Användargränssnittet i Snowflake där du kan verifiera din roll och ditt lagerställe.](../../images/tutorials/create/snowflake/snowflake-configs.png)
+![Användargränssnittet i Snowflake där du kan verifiera din roll och ditt lager.](../../images/tutorials/create/snowflake/snowflake-configs.png)
 
 När kodningen är klar kan du sedan använda den [!DNL Base64]-kodade privata nyckeln på Experience Platform för att autentisera ditt [!DNL Snowflake]-konto.
 
@@ -102,15 +102,15 @@ När kodningen är klar kan du sedan använda den [!DNL Base64]-kodade privata n
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Snowflake] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Snowflake] till Experience Platform med API:er eller användargränssnittet:
 
-## Anslut [!DNL Snowflake] till plattformen med API:er
+## Anslut [!DNL Snowflake] till Experience Platform med API:er
 
 * [Skapa en Snowflake-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/snowflake.md)
 * [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 * [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
-## Anslut [!DNL Snowflake] till plattformen med användargränssnittet
+## Anslut [!DNL Snowflake] till Experience Platform med användargränssnittet
 
 * [Skapa en Snowflake-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/snowflake.md)
 * [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)

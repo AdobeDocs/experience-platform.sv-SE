@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i Experience Platform användargränssnitt. Frågeredigeraren stöder utveckling av frågor för analys och datautforskning och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: ae189e2f6d303043e32e6ca658161bcdf4c28dc6
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2600'
+source-wordcount: '2601'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i [!DNL Experience Platform]-användargränssnittet. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande. Du kan även köra interaktiva frågor i utvecklingssyfte och icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
 
-Mer information om begrepp och funktioner i tjänsten Query Service finns i [Översikt över frågetjänsten](../home.md). Mer information om hur du navigerar i användargränssnittet för frågetjänsten på [!DNL Platform] finns i [Översikt över användargränssnittet för frågetjänsten](./overview.md).
+Mer information om begrepp och funktioner i tjänsten Query Service finns i [Översikt över frågetjänsten](../home.md). Mer information om hur du navigerar i användargränssnittet för frågetjänsten på [!DNL Experience Platform] finns i [Översikt över användargränssnittet för frågetjänsten](./overview.md).
 
 ## Komma igång {#getting-started}
 
@@ -97,7 +97,7 @@ Frågeredigeraren har maximalt 50 000 radutdata. Du kan välja hur många rader 
 
 >[!NOTE]
 >
->Eftersom plattformsgränssnittet kan hantera upp till 1 000 rader ignoreras överföring av ett LIMIT-värde över 1 000.
+>Eftersom Experience Platform-gränssnittet kan hantera upp till 1 000 rader ignoreras överföring av ett LIMIT-värde över 1 000.
 
 ![Frågeredigeraren med listrutan Resultatantal markerad.](../images/ui/query-editor/result-count.png)
 
@@ -258,4 +258,4 @@ I följande video visas hur du kör frågor i Adobe Experience Platform-gränssn
 
 ## Nästa steg
 
-Nu när du vet vilka funktioner som är tillgängliga i Frågeredigeraren och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake] finns i guiden om [att köra frågor](../best-practices/writing-queries.md).
+Nu när du vet vilka funktioner som är tillgängliga i Frågeredigeraren och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Experience Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake] finns i guiden om [att köra frågor](../best-practices/writing-queries.md).

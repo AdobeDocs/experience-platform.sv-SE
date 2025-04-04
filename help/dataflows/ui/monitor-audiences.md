@@ -1,32 +1,32 @@
 ---
-description: Lär dig hur du kan övervaka dataflöden under segmentering med användargränssnittet i Experience Platform.
+description: Lär dig hur du kan övervaka dataflöden under segmentering med Experience Platform användargränssnitt.
 title: Övervaka dataflöden för målgrupper i användargränssnittet
 type: Tutorial
 exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1708'
+source-wordcount: '1710'
 ht-degree: 0%
 
 ---
 
 # Övervaka dataflöden för målgrupper i användargränssnittet
 
-Med segmenteringstjänsten kan du skapa målgrupper genom segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Plattformen tillhandahåller dataflöden för att på ett transparent sätt spåra detta dataflöde från källor till destinationer.
+Med segmenteringstjänsten kan du skapa målgrupper genom segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Experience Platform tillhandahåller dataflöden för att på ett transparent sätt spåra detta dataflöde från källor till destinationer.
 
-Använd kontrollpanelen för att se en visuell representation av dataaktiviteten inom en målgrupp, inklusive status för datasegmenteringen. I självstudiekursen finns instruktioner om hur du kan använda kontrollpanelen för att övervaka hur data segmenteras i användargränssnittet i Experience Platform, så att du kan spåra status för målgruppsaktivering, utvärdering och exportjobb.
+Använd kontrollpanelen för att se en visuell representation av dataaktiviteten inom en målgrupp, inklusive status för datasegmenteringen. I självstudiekursen finns instruktioner om hur du kan använda kontrollpanelen för att övervaka datasegmenteringen med Experience Platform användargränssnitt, så att du kan spåra status för målgruppsaktivering, utvärdering och exportjobb.
 
 ## Komma igång {#getting-started}
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
+- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
    - [Dataflöden körs](../../sources/notifications.md): Dataflöden är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
 - [Segmentering](../../segmentation/home.md): Med segmentering kan du skapa målgrupper utifrån kundprofildata i realtid.
    - [Aktiveringsjobb](../../destinations/ui/activation-overview.md): Ett aktiveringsjobb används för att aktivera målgruppen till ett angivet mål.
    - [Utvärderingsjobb](../../segmentation/tutorials/evaluate-a-segment.md#evaluate-a-segment): Ett utvärderingsjobb är en asynkron process som utvärderar målgruppen.
    - [Exportera jobb](../../segmentation/api/export-jobs.md): Ett exportjobb är en asynkron process som används för att behålla målgruppsmedlemmar i datauppsättningar.
-- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ## Övervaka målgruppspanelen {#monitoring-audiences-dashboard}
 

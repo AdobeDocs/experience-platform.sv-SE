@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: d267e816f42d1e0a751b188065f5164a5e2b6be9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2684'
+source-wordcount: '2685'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Taggtillägget [!DNL Web SDK] skickar data till Adobe Experience Cloud från webbegenskaper via Experience Platform Edge Network.
 
-Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
+Tillägget gör att ni kan strömma data till Experience Platform, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
 
 I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggränssnittet.
 

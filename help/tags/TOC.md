@@ -6,10 +6,10 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 5e3f1517b321cab756305cd61ad5f1def93d3de7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '776'
-ht-degree: 15%
+source-wordcount: '777'
+ht-degree: 16%
 
 ---
 
@@ -329,5 +329,5 @@ ht-degree: 15%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 

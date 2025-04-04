@@ -2,9 +2,9 @@
 title: Förfallodatum för automatiserade datauppsättningar
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '835'
+source-wordcount: '837'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,13 @@ Med arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) i Adobe Experience 
 >
 >Om en datauppsättning är inställd på att förfalla måste du manuellt ändra alla dataflöden som kan inhämta data till datauppsättningen så att dina efterföljande arbetsflöden inte påverkas negativt.
 
-Det här dokumentet beskriver hur du schemalägger och automatiserar förfallodatum för datauppsättningar i plattformsgränssnittet.
+I det här dokumentet beskrivs hur du schemalägger och automatiserar förfallodatum för datauppsättningar i Experience Platform användargränssnitt.
 
 >[!NOTE]
 >
 >När datauppsättningen förfaller tas inga data bort från Adobe Experience Platform Edge Network. Det finns dock ingen möjlighet att data stannar kvar i Edge Network när datauppsättningen har satts till att upphöra. Detta beror på att 15-dagars servicelicensavtalet för förfallodatum för datauppsättning överlappar den 14-dagarsperiod då data finns i Edge Network innan de kasseras.
 
-Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via [datamängdens slutpunkt](../api/dataset-expiration.md) och ID-borttagningar (radnivådata) med hjälp av primära identiteter via [arbetsorderslutpunkten](../api/workorder.md). Du kan också hantera datauppsättningens förfallodatum och [postborttagningar](./record-delete.md) via plattformens användargränssnitt. Mer information finns i den länkade dokumentationen.
+Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via [datamängdens slutpunkt](../api/dataset-expiration.md) och ID-borttagningar (radnivådata) med hjälp av primära identiteter via [arbetsorderslutpunkten](../api/workorder.md). Du kan också hantera datauppsättningens förfallodatum och [postborttagningar](./record-delete.md) via Experience Platform-gränssnittet. Mer information finns i den länkade dokumentationen.
 
 >[!NOTE]
 >

@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 243a99748d31cddcb8a550d52f9bb390726644be
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3245'
+source-wordcount: '3250'
 ht-degree: 0%
 
 ---
@@ -132,13 +132,13 @@ ht-degree: 0%
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
-Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage]-kontrollpanelen. Den information som visas här fångas in vid en daglig ögonblicksbild av din Platform-instans.
+Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage]-kontrollpanelen. Den information som visas här fångas in vid en daglig ögonblicksbild av din Experience Platform-instans.
 
 Licensanvändningsrapporter ger en hög grad av granularitet. De flesta mätvärden delas mellan flera produkter och återspeglar den samlade användningen för alla produkter som använder dem, inte för summor per produkt. Kontrollpanelen tillhandahåller konsoliderad användning av dessa mått i alla produktions- eller utvecklingssandlådor samt användningsmått från en viss sandlåda. Följande Experience Platform-program kan spåras med användningsstatistik: Real-Time Customer Data Platform, Adobe Journey Optimizer och Customer Journey Analytics.
 
 I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för licensanvändning i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
-En allmän översikt över användargränssnittet för plattformen finns i [användargränssnittshandboken för Experience Platform](../../landing/ui-guide.md).
+En allmän översikt över användargränssnittet i Experience Platform finns i [användargränssnittshandboken för Experience Platform](../../landing/ui-guide.md).
 
 ## [!UICONTROL License usage] instrumentpanelsdata
 
@@ -148,11 +148,11 @@ Informationen i den här instrumentpanelen visas exakt som den såg ut vid den s
 
 >[!NOTE]
 >
->De flesta mätvärden på kontrollpanelen uppdateras dagligen utifrån en ögonblicksbild av din Platform-instans. [!UICONTROL CJA Rows Available] är ett undantag och uppdateras varje månad. Mätvärden som är märkta med &quot;paket&quot;, som [!UICONTROL Adhoc Query Service Users Packs], [!UICONTROL Profile Richness No of Packs] och [!UICONTROL Streaming Segmentation No of Packs], återspeglar licensberättiganden för tilläggserbjudanden och spårar inte pågående användning. Ändringar som görs efter ögonblicksbilden visas inte förrän nästa ögonblicksbild tas.
+>De flesta mätvärden på kontrollpanelen uppdateras dagligen utifrån en ögonblicksbild av din Experience Platform-instans. [!UICONTROL CJA Rows Available] är ett undantag och uppdateras varje månad. Mätvärden som är märkta med &quot;paket&quot;, som [!UICONTROL Adhoc Query Service Users Packs], [!UICONTROL Profile Richness No of Packs] och [!UICONTROL Streaming Segmentation No of Packs], återspeglar licensberättiganden för tilläggserbjudanden och spårar inte pågående användning. Ändringar som görs efter ögonblicksbilden visas inte förrän nästa ögonblicksbild tas.
 
 ## Utforska kontrollpanelen för licensanvändning {#explore}
 
-Om du vill navigera till kontrollpanelen för licensanvändning i plattformsgränssnittet väljer du **[!UICONTROL License usage]** i den vänstra listen. Kontrollpanelen innehåller två flikar: **[!UICONTROL Metrics]** och **[!UICONTROL Products]**.
+Om du vill navigera till kontrollpanelen för licensanvändning i Experience Platform-användargränssnittet väljer du **[!UICONTROL License usage]** i den vänstra listen. Kontrollpanelen innehåller två flikar: **[!UICONTROL Metrics]** och **[!UICONTROL Products]**.
 
 >[!NOTE]
 >
@@ -338,4 +338,4 @@ Vilka mätvärden som är tillgängliga och vilken definition som finns för var
 
 När du har läst det här dokumentet kan du hitta kontrollpanelen för licensanvändning och visa användningsstatistik för varje köpt produkt, för alla produktions- eller utvecklingssandlådor och för en viss sandlåda. Du kan hitta mer information om tillgängliga mätvärden för din organisation, baserat på vilken licensiering din organisation har köpt.
 
-Mer information om andra funktioner i Experience Platform-gränssnittet finns i [användargränssnittshandboken för plattformen](../../landing/ui-guide.md).
+Om du vill veta mer om andra funktioner som är tillgängliga i användargränssnittet för Experience Platform kan du läsa [användargränssnittshandboken för Experience Platform](../../landing/ui-guide.md).

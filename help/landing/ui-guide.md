@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Adobe Experience Platform;användarhandbok;användarhandbok;användarhandbok för plattformen;introduktion till plattformen;instrumentpanel;
+keywords: Experience Platform;home;populära topics;Adobe Experience Platform;user guide;ui guide;platform ui guide;introduction to platform;dashboard;
 solution: Experience Platform
-title: Experience Platform - översikt
+title: Experience Platform UI - översikt
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1857'
+source-wordcount: '1871'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Den här guiden är en introduktion till hur du använder Adobe Experience Platform användargränssnitt, förklarar vad de olika komponenterna används för och ger länkar till ytterligare dokumentation för mer information.
 
-Mer information om Adobe Experience Platform finns i översikten [Experience Platform](home.md).
+Läs [Experience Platform-översikten](home.md) om du vill veta mer om Adobe Experience Platform.
 
 ## Hemskärm
 
@@ -59,9 +59,9 @@ Avsnittet **[!UICONTROL Recommended learning]** innehåller länkar till använd
 
 ## Övre navigeringsfältet
 
-I det övre navigeringsfältet i plattformsgränssnittet visas den organisation som du är inloggad på och det finns flera viktiga kontroller.
+Det övre navigeringsfältet i Experience Platform-användargränssnittet visar den organisation du är inloggad på och innehåller flera viktiga kontroller.
 
-Till vänster i navigeringsfältet finns Adobe Experience Platform logotyp. När du väljer den här logotypen kommer du tillbaka till startskärmen för användargränssnittet för plattformen.
+Till vänster i navigeringsfältet finns Adobe Experience Platform logotyp. När du väljer den här logotypen kommer du tillbaka till Experience Platform hemsida.
 
 ![](./images/user-guide/homepage-top-nav-bar.png)
 
@@ -75,11 +75,11 @@ När du väljer väljaren öppnas en listruta med organisationer som du har till
 
 ### Byt program
 
-Nästa objekt till höger om den översta navigeringen är **programväljaren**, som representeras av ikonen ![för programväljaren](/help/images/icons/apps.png) . När du väljer den här ikonen kan du växla mellan olika Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics, Assets och andra.
+Nästa objekt till höger om den översta navigeringen är **programväljaren**, som representeras av ikonen ![för programväljaren](/help/images/icons/apps.png) . När du väljer den här ikonen kan du växla mellan Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics, Assets och andra.
 
 ### Hjälp
 
-Till höger om programväljaren finns **hjälp- och supportmenyn** som representeras av ikonen ![frågetecken/hjälp](/help/images/icons/help.png) . När du väljer den här ikonen visas en snabbmeny med flera hjälp- och supportresurser. Fliken **[!UICONTROL Help]** visar en lista med relevant dokumentation för sidan som du för närvarande är på. På fliken **[!UICONTROL Support]** kan du skapa en supportanmälan med Adobe supportteam. På fliken **[!UICONTROL Feedback]** kan du skicka feedback om Platform till Adobe.
+Till höger om programväljaren finns **hjälp- och supportmenyn** som representeras av ikonen ![frågetecken/hjälp](/help/images/icons/help.png) . När du väljer den här ikonen visas en snabbmeny med flera hjälp- och supportresurser. Fliken **[!UICONTROL Help]** visar en lista med relevant dokumentation för sidan som du för närvarande är på. På fliken **[!UICONTROL Support]** kan du skapa en supportanmälan med Adobe supportteam. På fliken **[!UICONTROL Feedback]** kan du skicka feedback om Experience Platform till Adobe.
 
 ![](images/user-guide/homepage-help-clicked.png)
 
@@ -91,17 +91,17 @@ I **meddelandeavsnittet**, som representeras av ikonen ![bell/Notifications and 
 
 Det sista objektet i det övre navigeringsfältet är **användarinställningarna**, som representeras av ikonen ![användarinställningar/användarprofil](images/user-guide/profile-icon.png) . Välj den här ikonen om du vill redigera dina inställningar eller logga ut.
 
-Du kan växla mellan det ljusa och mörka temat för plattformsgränssnittet med växeln som finns precis nedanför ditt namn och din e-postadress. Välj det tema du föredrar.
+Du kan växla mellan det ljusa och mörka temat för Experience Platform-gränssnittet med växeln som finns precis nedanför ditt namn och din e-postadress. Välj det tema du föredrar.
 
 ![](images/theme.png)
 
 ### Sandlådor
 
-Direkt nedanför det övre navigeringsfältet finns sandlådefältet. I det här fältet visas vilken sandlåda du använder för plattformen. Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
+Direkt nedanför det övre navigeringsfältet finns sandlådefältet. I det här fältet visas vilken sandlåda du använder för Experience Platform. Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
 
 ## Vänster navigering {#left-nav}
 
-Navigeringen till vänster på skärmen visar alla olika tjänster som stöds i plattformsgränssnittet.
+Navigeringen till vänster på skärmen visar alla olika tjänster som stöds i Experience Platform-gränssnittet.
 
 Klicka på menyikonen för att visa eller dölja den vänstra navigeringspanelen.
 
@@ -115,15 +115,15 @@ Du kan låsa navigeringen i den öppna positionen genom att klicka igen när pan
 
 ![](images/user-guide/homepage-left.png)
 
-I avsnittet **[!UICONTROL Home]** kan du gå tillbaka till startsidan för plattformsgränssnittet.
+I avsnittet **[!UICONTROL Home]** kan du gå tillbaka till Experience Platform-gränssnittets hemsida.
 
-I avsnittet **[!UICONTROL Workflows]** visas en lista med arbetsflöden i flera steg för att utföra åtgärder inom plattformen. Mer information om arbetsflöden finns i [översikten över arbetsflöden](./workflows.md).
+I avsnittet **[!UICONTROL Workflows]** visas en lista med arbetsflöden i flera steg för att utföra åtgärder i Experience Platform. Mer information om arbetsflöden finns i [översikten över arbetsflöden](./workflows.md).
 
 ### [!UICONTROL Connections]
 
-I avsnittet **[!UICONTROL Sources]** kan du skapa, uppdatera och ta bort källanslutningar så att du kan importera data från externa källor till plattformen. Du hittar mer information om källor i [Källöversikten](../sources/home.md).
+I avsnittet **[!UICONTROL Sources]** kan du skapa, uppdatera och ta bort källanslutningar så att du kan importera data från externa källor till Experience Platform. Du hittar mer information om källor i [Källöversikten](../sources/home.md).
 
-I avsnittet **[!UICONTROL Destinations]** kan du skapa, uppdatera och ta bort mål, så att du kan exportera data från plattformen till många externa mål. Mer information om mål finns i [målöversikten](../destinations/home.md).
+I avsnittet **[!UICONTROL Destinations]** kan du skapa, uppdatera och ta bort mål, så att du kan exportera data från Experience Platform till många externa mål. Mer information om mål finns i [målöversikten](../destinations/home.md).
 
 ### [!UICONTROL Customer]
 
@@ -131,13 +131,13 @@ I avsnittet **[!UICONTROL Profiles]** kan du bläddra bland kundprofiler, visa p
 
 I avsnittet **[!UICONTROL Audiences]** kan du skapa och hantera segmentdefinitioner. Läs [användarhandboken för segmentering](../segmentation/ui/overview.md) om du vill veta mer om hur du använder avsnittet [!UICONTROL Audiences]. Mer information om segmenteringstjänsten finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
-I avsnittet **[!UICONTROL Identities]** kan du skapa och hantera identitetsnamnutrymmen. Mer information om avsnittet [!UICONTROL Identities], inklusive information om identitetsnamnutrymmen och hur du använder identiteter i plattformsgränssnittet, finns i [översikten över identitetsnamnrymden](../identity-service/features/namespaces.md).
+I avsnittet **[!UICONTROL Identities]** kan du skapa och hantera identitetsnamnutrymmen. Mer information om avsnittet [!UICONTROL Identities], inklusive information om identitetsnamnutrymmen och hur du använder identiteter i Experience Platform-gränssnittet, finns i [översikten över identitetsnamnrymden](../identity-service/features/namespaces.md).
 
 ### [!UICONTROL Privacy]
 
 I avsnittet **[!UICONTROL Policies]** kan du skapa och hantera dataanvändningsprinciper. Läs användarhandboken för [dataanvändningsprinciper](../data-governance/policies/user-guide.md) om du vill veta mer om hur du använder avsnittet Profiler. Mer information om dataanvändningsprinciper finns i [översikten över dataanvändningsprinciper](../data-governance/policies/overview.md).
 
-I avsnittet **[!UICONTROL Requests]** kan du skapa och hantera sekretessförfrågningar. Observera att du måste vara tillåtslista för att få tillgång till Privacy Servicens användargränssnitt. Mer information om hur du använder avsnittet med förfrågningar finns i användarhandboken för [Privacy Servicen](../privacy-service/ui/user-guide.md). Mer information om Privacy Service finns i [Privacy Servicen overview](../privacy-service/home.md).
+I avsnittet **[!UICONTROL Requests]** kan du skapa och hantera sekretessförfrågningar. Observera att du måste vara tillåtslista för att få tillgång till Privacy Service användargränssnitt. Läs [Privacy Service användarhandbok](../privacy-service/ui/user-guide.md) om du vill veta mer om hur du använder avsnittet med förfrågningar. Mer information om Privacy Service finns i [Privacy Service-översikten](../privacy-service/home.md).
 
 ### [!UICONTROL Data Science]
 
@@ -168,11 +168,11 @@ I avsnittet **[!UICONTROL Federated databases]** kan du ansluta Adobe Experience
 
 ### [!UICONTROL Decisioning]
 
-Adobe Journey Optimizer är en programtjänst som är byggd ovanpå Experience Platform. Ni kan använda kraftfulla beslutstekniker för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Om du vill veta mer om Journey Optimizer, inklusive hur du arbetar med [!UICONTROL Offers] och [!UICONTROL Activities] kan du gå till [Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer.html).
+Adobe Journey Optimizer är en programtjänst som är byggd på Experience Platform. Ni kan använda kraftfulla beslutstekniker för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Om du vill veta mer om Journey Optimizer, inklusive hur du arbetar med [!UICONTROL Offers] och [!UICONTROL Activities] kan du gå till [Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer.html).
 
 ### [!UICONTROL Administration]
 
-Användargränssnittet för plattformen (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den har hämtats under en ögonblicksbild. Gå till den här instrumentpanelen genom att välja **[!UICONTROL License usage]** i navigeringen. Mer information om kontrollpanelen för licensanvändning finns i handboken [för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md).
+Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den fångats in under en daglig ögonblicksbild. Gå till den här instrumentpanelen genom att välja **[!UICONTROL License usage]** i navigeringen. Mer information om kontrollpanelen för licensanvändning finns i handboken [för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md).
 
 >[!IMPORTANT]
 >
@@ -180,4 +180,4 @@ Användargränssnittet för plattformen (UI) är en kontrollpanel där du kan vi
 
 ## Nästa steg
 
-Genom att läsa den här guiden har du nu introducerats på startsidan och viktiga navigeringselement i användargränssnittet för plattformen. Mer detaljerad information om hur du arbetar i användargränssnittet finns i dokumentationen för respektive plattformstjänst. Länkar till den här dokumentationen finns i det [vänstra navigeringsavsnittet](#left-nav) som hittades tidigare i det här dokumentet.
+Genom att läsa den här guiden har du nu fått en introduktion till startsidan och viktiga navigeringselement i Experience Platform användargränssnitt. Mer information om hur du arbetar i användargränssnittet finns i dokumentationen för respektive Experience Platform-tjänst. Länkar till den här dokumentationen finns i det [vänstra navigeringsavsnittet](#left-nav) som hittades tidigare i det här dokumentet.

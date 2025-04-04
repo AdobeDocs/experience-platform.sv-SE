@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;hämta misslyckade batchar;misslyckade batchar;batchöverföring;Batchhämtning;Misslyckade batchar;Hämta misslyckade batchar;hämta misslyckade batchar;Hämtning misslyckades batchar;hämta misslyckade batchar;
+keywords: Experience Platform;hem;populära ämnen;hämta misslyckade batchar;misslyckade batchar;batchöverföring;Batchhämtning;Misslyckade batchar;Hämta misslyckade batchar;Hämta misslyckade batchar;Hämtning av misslyckade batchar;
 solution: Experience Platform
 title: Hämtning av misslyckade batchar med API:t för dataåtkomst
 type: Tutorial
 description: I den här självstudiekursen beskrivs steg för hur du hämtar information om en misslyckad batch med hjälp av API:er för datainmatning.
 exl-id: 5fb9f28d-091e-4124-8d8e-b8a675938d3a
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '643'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Hämtning av misslyckade batchar med API:t för dataåtkomst
 
-Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga deras data med olika filtyper (till exempel CSV-filer), eller direktuppspelning, vilket gör att du kan infoga deras data i [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
+Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga deras data med olika filtyper (till exempel CSV-filer), eller direktuppspelning, vilket gör att du kan infoga deras data i [!DNL Experience Platform] med direktuppspelningsslutpunkter i realtid.
 
 I den här självstudiekursen beskrivs steg för att hämta information om en misslyckad batch med hjälp av [!DNL Data Ingestion] API:er.
 
@@ -31,21 +31,21 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 - `Content-Type: application/json`
 

@@ -2,22 +2,22 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform datainsamlingsfunktioner.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2534'
+source-wordcount: '2542'
 ht-degree: 0%
 
 ---
 
 # Översikt över datainsamling från början till slut
 
-Adobe Experience Platform samlar in och överför data till andra Adobe-produkter och tredjepartsdestinationer. För att kunna skicka händelsedata från ditt program till Experience Platform är det viktigt att förstå dessa kärntekniker och hur de konfigureras för att leverera data till de destinationer du behöver, när du behöver det.
+Adobe Experience Platform samlar in och överför data till andra Adobe-produkter och tredjepartsdestinationer. För att kunna skicka händelsedata från ditt program till Experience Platform Edge Network är det viktigt att du förstår dessa kärntekniker och hur du konfigurerar dem för att leverera data till de mål du behöver, när du behöver det.
 
-Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar en händelse via Edge Network med hjälp av plattformens datainsamlingsfunktioner. Självstudiekursen går igenom stegen för att installera och konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling (tidigare Adobe Experience Platform Launch).
+Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar en händelse via Edge Network med Experience Platform datainsamlingsfunktioner. Självstudiekursen går igenom hur du installerar och konfigurerar taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling (tidigare Adobe Experience Platform Launch).
 
 >[!NOTE]
 >
->Du kan också välja att installera och konfigurera SDK manuellt om du inte vill använda taggar, men de omgivande stegen måste ändå slutföras enligt nedan.
+>Du kan också välja att installera och konfigurera SDK manuellt om du inte vill använda taggar, men de omgivande stegen måste ändå utföras enligt instruktionerna nedan.
 >
 >Alla steg som omfattar användargränssnittet för datainsamling kan också utföras i användargränssnittet för Experience Platform.
 
@@ -30,14 +30,14 @@ I den här självstudien används användargränssnittet för datainsamling för
 
 Se guiden [Hantera behörigheter för datainsamling](./permissions.md) för att lära dig hur du beviljar åtkomst till egenskaper och egenskapsrättigheter.
 
-Om du vill använda de olika datainsamlingsprodukterna som nämns i den här guiden måste du även ha tillgång till datastreams och möjlighet att skapa och hantera scheman. Om du behöver tillgång till någon av dessa funktioner kontaktar du ditt Adobe-kontoteam för att få den åtkomst du behöver. Observera att om du inte har köpt Adobe Experience Platform ger Adobe dig tillgång till SDK utan extra kostnad.
+Om du vill använda de olika datainsamlingsprodukterna som nämns i den här guiden måste du även ha tillgång till datastreams och möjlighet att skapa och hantera scheman. Om du behöver ha tillgång till någon av dessa funktioner kontaktar du ditt Adobe-kontoteam för att få den åtkomst du behöver. Observera att om du inte har köpt Adobe Experience Platform ger Adobe dig tillgång till SDK utan extra kostnad.
 
-Om du redan har åtkomst till Platform måste du se till att du har aktiverat alla [behörigheter](../access-control/home.md#permissions) under följande kategorier:
+Om du redan har åtkomst till Experience Platform måste du se till att alla [behörigheter](../access-control/home.md#permissions) under följande kategorier är aktiverade:
 
 * Datamodellering
 * Identiteter
 
-Mer information om hur du tilldelar behörigheter för plattformsfunktioner till användare finns i [användargränssnittsöversikten för åtkomstkontroll](../access-control/ui/overview.md).
+Mer information om hur du tilldelar behörigheter för Experience Platform-funktioner till användare finns i [användargränssnittsöversikten för åtkomstkontroll](../access-control/ui/overview.md).
 
 ## Processsammanfattning
 
@@ -45,7 +45,7 @@ Processen med att konfigurera datainsamling för webbplatsen kan sammanfattas p�
 
 1. [Skapa ett schema](#schema) för att bestämma hur dina data ska struktureras när de skickas till Edge Network.
 1. [Skapa en datastream](#datastream) för att konfigurera vilka mål du vill att dina data ska skickas till.
-1. [Installera och konfigurera Web SDK](#sdk) för att skicka data till dataströmmen när vissa händelser inträffar på webbplatsen.
+1. [Installera och konfigurera Web SDK](#sdk) för att skicka data till datastream när vissa händelser inträffar på webbplatsen.
 
 När du kan skicka data till Edge Network kan du även [konfigurera vidarebefordran av händelser](#event-forwarding) om din organisation har en licens för det.
 
@@ -69,7 +69,7 @@ Använd sökfältet för att begränsa listan så att det blir enklare att hitta
 
 ![Arbetsytan Scheman](./images/e2e/add-field-group.png)
 
-Schemaarbetsytan visas med en trädstruktur i XDM-schemat som innehåller fälten från Web SDK-fältgruppen.
+Arbetsytan för schemat visas med en trädstruktur i XDM-schemat, inklusive de fält som tillhandahålls av fältgruppen Web SDK.
 
 ![Schemastruktur](./images/e2e/schema-structure.png)
 
@@ -97,7 +97,7 @@ En datastream är en konfiguration som talar om för Edge Network var du vill at
 
 >[!NOTE]
 >
->Om du vill använda [händelsevidarebefordran](../tags/ui/event-forwarding/overview.md) (förutsatt att din organisation har licens för funktionen) måste du aktivera den för ett datastream på samma sätt som du aktiverar Adobe-produkter. Information om den här processen beskrivs i ett [senare avsnitt](#event-forwarding).
+>Om du vill använda [händelsevidarebefordran](../tags/ui/event-forwarding/overview.md) (förutsatt att din organisation har licens för funktionen) måste du aktivera den för en datastam på samma sätt som du aktiverar Adobe-produkter. Information om den här processen beskrivs i ett [senare avsnitt](#event-forwarding).
 
 Välj **[!UICONTROL Datastreams]** i den vänstra navigeringen. Härifrån kan du välja ett befintligt datastam från listan som ska redigeras, eller så kan du skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
 
@@ -107,7 +107,7 @@ Konfigurationskraven för en datastream beror på vilka produkter och funktioner
 
 ## Installera och konfigurera Web SDK {#install}
 
-När du har skapat ett schema och ett datastream är nästa steg att installera och konfigurera Platform Web SDK för att börja skicka data till Edge Network.
+När du har skapat ett schema och ett datastream är nästa steg att installera och konfigurera Experience Platform Web SDK så att data skickas till Edge Network.
 
 >[!NOTE]
 >
@@ -135,13 +135,13 @@ Om du skapar en ny egenskap anger du ett beskrivande namn och anger [!UICONTROL 
 
 ![Skapa egenskap](./images/e2e/create-property.png)
 
-Översiktssidan för egenskapen visas. Här väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen och sedan **[!UICONTROL Catalog]**. Sök efter listan för Platform Web SDK (eventuellt med sökfältet för att begränsa resultaten) och välj **[!UICONTROL Install]**.
+Översiktssidan för egenskapen visas. Här väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen och sedan **[!UICONTROL Catalog]**. Sök efter listan för Experience Platform Web SDK (om du vill kan du använda sökfältet för att begränsa resultatet) och markera **[!UICONTROL Install]**.
 
-![Installera Web SDK](./images/e2e/install-sdk.png)
+![Installera SDK för webben](./images/e2e/install-sdk.png)
 
 Konfigurationssidan för SDK visas. De flesta obligatoriska värden fylls i automatiskt med standardvärden som du kan ändra om du vill.
 
-![Konfigurera Web SDK](./images/e2e/configure-sdk.png)
+![Konfigurera SDK för webben](./images/e2e/configure-sdk.png)
 
 Innan du kan installera SDK måste du dock välja en datastream så att den vet var data ska skickas till. Under **[!UICONTROL Datastreams]** använder du listrutemenyn för att välja den datastream som du konfigurerade i ett [tidigare steg](#datastream). När du har angett datastream väljer du **[!UICONTROL Save]** för att slutföra installationen av SDK till egenskapen.
 
@@ -159,7 +159,7 @@ På nästa skärm väljer du **[!UICONTROL Adobe Experience Platform Web SDK]** 
 
 ![XDM-objekttyp](./images/e2e/xdm-object.png)
 
-Konfigurationsdialogrutan visas för XDM-objekttypen. Dialogrutan väljer automatiskt din plattformssandlåda, och härifrån kan du se alla scheman som har skapats i den sandlådan. Välj XDM-schemat som du skapade tidigare från listan.
+Konfigurationsdialogrutan visas för XDM-objekttypen. Dialogrutan markerar automatiskt din Experience Platform-sandlåda, och härifrån kan du se alla scheman som har skapats i den sandlådan. Välj XDM-schemat som du skapade tidigare från listan.
 
 ![XDM-objekttyp](./images/e2e/select-schema.png)
 
@@ -179,7 +179,7 @@ När du har mappat dina data till schemat anger du ett namn för dataelementet i
 
 ### Skapa en regel
 
-När du har sparat dataelementet är nästa steg att skapa en regel som skickar den till Edge Network när en viss händelse inträffar på webbplatsen (till exempel när en kund lägger till en produkt i en kundvagn).
+När du har sparat dataelementet är nästa steg att skapa en regel som skickar den till Edge Network varje gång en viss händelse inträffar på webbplatsen (till exempel när en kund lägger till en produkt i en kundvagn).
 
 Du kan ange regler för praktiskt taget alla händelser som kan inträffa på webbplatsen. I det här avsnittet visas hur du skapar en regel som utlöses när en kund skickar in ett formulär. Följande HTML representerar en enkel webbsida med formuläret&quot;Lägg till i kundvagnen&quot;, som kommer att vara regelns ämne:
 
@@ -212,7 +212,7 @@ Händelsekonfigurationssidan visas. Om du vill konfigurera en händelse måste d
 
 >[!NOTE]
 >
->Mer information om de olika händelsetyperna i webbtilläggen för Adobe, inklusive hur du konfigurerar dem, finns i [Adobe-tilläggsreferensen](../tags/extensions/client/overview.md) i taggdokumentationen.
+>Mer information om de olika händelsetyperna i Adobe webbtillägg, bland annat hur du konfigurerar dem, finns i [Adobe-tilläggsreferensen](../tags/extensions/client/overview.md) i taggdokumentationen.
 
 Med formulärsändningshändelsen kan du använda en [CSS-väljare](https://www.w3schools.com/css/css_selectors.asp) för att referera till ett specifikt element som regeln ska starta på. I exemplet nedan används ID:t `add-to-cart-form` så att den här regeln bara aktiveras för formuläret&quot;Lägg till i kundvagnen&quot;. Välj **[!UICONTROL Keep Changes]** om du vill lägga till händelsen i regeln.
 
@@ -224,7 +224,7 @@ I annat fall är nästa steg att lägga till en åtgärd som regeln ska utföra 
 
 ![Lägg till åtgärd](./images/e2e/add-action.png)
 
-Sidan för åtgärdskonfiguration visas. Om du vill hämta regeln för att skicka data till Edge Network väljer du **[!UICONTROL Adobe Experience Platform Web SDK]** som tillägg och **[!UICONTROL Send event]** som åtgärdstyp.
+Sidan för åtgärdskonfiguration visas. Om du vill hämta regeln för att skicka data till Edge Network väljer du **[!UICONTROL Adobe Experience Platform Web SDK]** för tillägget och **[!UICONTROL Send event]** för åtgärdstypen.
 
 ![Åtgärdstyp](./images/e2e/action-type.png)
 
@@ -246,7 +246,7 @@ När regeln har konfigurerats kan du lägga till den i ett taggbibliotek, skapa 
 >
 >Om du inte har konfigurerat någon miljö i användargränssnittet för datainsamling än måste du göra det innan du kan skapa en version. Mer information finns i avsnittet [Konfigurera en miljö för en webbegenskap](../tags/ui/publishing/environments.md#web-configuration) i taggdokumentationen.
 
-Mer information om hur du skapar ett bibliotek, lägger till tillägg och regler i biblioteket och skapar biblioteket i en miljö finns i guiden om [hantering av bibliotek](../tags/ui/publishing/libraries.md) i taggdokumentationen. När du skapar biblioteket måste du ta med tillägget Platform Web SDK och de datainsamlingsregler som du skapade tidigare.
+Mer information om hur du skapar ett bibliotek, lägger till tillägg och regler i biblioteket och skapar biblioteket i en miljö finns i guiden om [hantering av bibliotek](../tags/ui/publishing/libraries.md) i taggdokumentationen. När du skapar biblioteket måste du ta med Experience Platform Web SDK-tillägget och de datainsamlingsregler som du skapade tidigare.
 
 När du har skapat biblioteket och dess bygge har tilldelats en miljö kan du installera den miljön på klientsidan av webbplatsen. Mer information finns i avsnittet [Installera miljöer](../tags/ui/publishing/environments.md#installation).
 
@@ -258,7 +258,7 @@ När du har installerat miljön på webbplatsen kan du [testa implementeringen](
 >
 >Vidarebefordran av händelser är bara tillgängligt för organisationer som har licensierats för det.
 
-När du har konfigurerat SDK för att skicka data till Edge Network kan du konfigurera vidarebefordran av händelser för att tala om för Edge Network var du vill att dessa data ska levereras.
+När du har konfigurerat SDK att skicka data till Edge Network kan du konfigurera vidarebefordran av händelser för att tala om för Edge Network var du vill att dessa data ska levereras.
 
 Om du vill använda händelsevidarebefordran måste du först skapa en egenskap för händelsevidarebefordran. Välj **[!UICONTROL Event Forwarding]** i den vänstra navigeringen och välj sedan **[!UICONTROL New Property]**. Ange ett namn för egenskapen innan du väljer **[!UICONTROL Save]**.
 
@@ -274,4 +274,4 @@ När bygget är klart är det sista steget att uppdatera datastream som du [tidi
 
 ## Nästa steg
 
-Den här guiden ger en heltäckande översikt över hur du skickar data till Edge Network med hjälp av Platform Web SDK. Mer information om de olika komponenterna och tjänsterna finns i dokumentationen som är länkad till i den här handboken.
+Den här guiden ger en heltäckande översikt över hur du skickar data till Edge Network via Experience Platform Web SDK. Mer information om de olika komponenterna och tjänsterna finns i dokumentationen som är länkad till i den här handboken.

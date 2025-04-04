@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1740'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ Det här dokumentet innehåller viktiga begrepp som rör bearbetning av sekretes
 
 >[!NOTE]
 >
->Den här handboken beskriver bara hur du gör sekretessförfrågningar för datalagret Profil i Experience Platform. Om du även planerar att göra sekretessförfrågningar för sjön med plattformsdata kan du läsa handboken [privacy request processing in the data Lake](../catalog/privacy.md) förutom den här självstudiekursen.
+>Den här guiden beskriver bara hur du gör sekretessförfrågningar för datalagret Profil i Experience Platform. Om du även planerar att göra sekretessförfrågningar för Experience Platform datasjön kan du läsa handboken om [bearbetning av sekretessförfrågningar i datasjön](../catalog/privacy.md) förutom den här självstudiekursen.
 >
->Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Servicens dokumentation](../privacy-service/experience-cloud-apps.md).
+>Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service-dokumentationen](../privacy-service/experience-cloud-apps.md).
 
 >[!IMPORTANT]
 >
@@ -30,7 +30,7 @@ Det här dokumentet innehåller viktiga begrepp som rör bearbetning av sekretes
 
 ## Komma igång
 
-Handboken kräver en fungerande förståelse av följande [!DNL Platform]-komponenter:
+Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform]-komponenter:
 
 * [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av deras personuppgifter mellan Adobe Experience Cloud-program.
 * [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan enheter och system.
@@ -38,7 +38,7 @@ Handboken kräver en fungerande förståelse av följande [!DNL Platform]-kompon
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
 
 Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
@@ -46,14 +46,14 @@ Mer information om identitetsnamnutrymmen i [!DNL Experience Platform] finns i [
 
 ## Skicka begäranden {#submit}
 
-Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-Time Customer Profile] med API:t [!DNL Privacy Service] eller gränssnittet. Innan du läser de här avsnitten bör du granska, eller känna till, dokumentationen för [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md). Dessa dokument innehåller fullständiga anvisningar om hur du skickar in ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärda nyttolaster.
+Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-Time Customer Profile] med API:t [!DNL Privacy Service] eller gränssnittet. Innan du läser de här avsnitten bör du granska, eller känna till, dokumentationen för [Privacy Service API](../privacy-service/api/getting-started.md) eller [Privacy Service-gränssnittet](../privacy-service/ui/overview.md). Dessa dokument innehåller fullständiga anvisningar om hur du skickar in ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärda nyttolaster.
 
 >[!IMPORTANT]
 >
->Privacy Servicen kan bara bearbeta [!DNL Profile]-data med en sammanfogningsprincip som inte utför identitetssammanfogning. Mer information finns i avsnittet [begränsningar för sammanslagningsprinciper](#merge-policy-limitations).
+>Privacy Service kan bara bearbeta [!DNL Profile]-data med en sammanfogningsprincip som inte utför identitetssammanfogning. Mer information finns i avsnittet [begränsningar för sammanslagningsprinciper](#merge-policy-limitations).
 >
 >Observera att förfrågningar om sekretess behandlas asynkront i de lagstadgade kraven, och hur lång tid det tar att slutföra kan variera. Om ändringar görs i dina [!DNL Profile]-data medan en begäran fortfarande bearbetas, är det inte säkert att dessa inkommande poster också kommer att bearbetas i den begäran. Det är bara profiler som finns i datasjön eller profilarkivet när sekretessjobbet begärs som kan tas bort. Om du importerar profildata som är relaterade till ämnet för en borttagningsbegäran under borttagningsjobbet är det inte säkert att alla profilfragment tas bort.
->Det är ditt ansvar att vara medveten om inkommande data i plattforms- eller profiltjänsten vid tidpunkten för en borttagningsbegäran, eftersom dessa data kommer att infogas i dina postarkiv. Du måste vara försiktig med att ta in data som har tagits bort eller håller på att tas bort.
+>Det är ditt ansvar att vara medveten om inkommande data i Experience Platform eller profiltjänsten vid tidpunkten för en borttagningsbegäran, eftersom dessa data kommer att infogas i dina postarkiv. Du måste vara försiktig med att ta in data som har tagits bort eller håller på att tas bort.
 
 ### Använda API:et
 
@@ -61,7 +61,7 @@ När du skapar jobbförfrågningar i API:t måste alla ID:n som anges i `userIDs
 
 >[!NOTE]
 >
->Du kan behöva ange mer än ett ID för varje kund, beroende på identitetsdiagrammet och hur dina profilfragment distribueras i plattformsdatauppsättningar. Mer information finns i nästa avsnitt, [profilfragment](#fragments).
+>Du kan behöva ange mer än ett ID för varje kund, beroende på identitetsdiagrammet och hur dina profilfragment distribueras i Experience Platform datamängder. Mer information finns i nästa avsnitt, [profilfragment](#fragments).
 
 Dessutom måste matrisen `include` för nyttolasten för begäran innehålla produktvärden för de olika datalager som begäran görs till. Om du vill ta bort profildata som är associerade med en identitet måste matrisen innehålla värdet `ProfileService`. Om du vill ta bort kundens identitetsdiagramassociationer måste matrisen innehålla värdet `identity`.
 
@@ -114,7 +114,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Plattformen behandlar sekretessförfrågningar i alla [sandlådor](../sandboxes/home.md) som tillhör din organisation. Därför ignoreras alla `x-sandbox-name`-huvuden som ingår i begäran av systemet.
+>Experience Platform behandlar sekretessförfrågningar i alla [sandlådor](../sandboxes/home.md) som tillhör din organisation. Därför ignoreras alla `x-sandbox-name`-huvuden som ingår i begäran av systemet.
 
 **Produktsvar**
 
@@ -190,7 +190,7 @@ För att säkerställa att dina sekretessförfrågningar behandlar alla relevant
 
 ## Ta bort bearbetning av begäran {#delete}
 
-När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], skickar [!DNL Platform] en bekräftelse till [!DNL Privacy Service] om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort när sekretessjobbet har slutförts.
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], skickar [!DNL Experience Platform] en bekräftelse till [!DNL Privacy Service] om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort när sekretessjobbet har slutförts.
 
 >[!IMPORTANT]
 >
@@ -200,10 +200,10 @@ Beroende på om du även inkluderade identitetstjänsten (`identity`) och datasj
 
 | Produkter ingår | Effekter |
 | --- | --- |
-| Endast `ProfileService` | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras. De data som är associerade med profilen finns också kvar i datasjön. |
-| `ProfileService` och `identity` | Profilen och dess associerade identitetsdiagram tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. De data som är associerade med profilen finns kvar i datasjön. |
-| `ProfileService` och `aepDataLake` | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
-| `ProfileService`, `identity` och `aepDataLake` | Profilen och dess associerade identitetsdiagram tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
+| Endast `ProfileService` | Profilen tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras. De data som är associerade med profilen finns också kvar i datasjön. |
+| `ProfileService` och `identity` | Profilen och tillhörande identitetsdiagram tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning togs emot. De data som är associerade med profilen finns kvar i datasjön. |
+| `ProfileService` och `aepDataLake` | Profilen tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Experience Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
+| `ProfileService`, `identity` och `aepDataLake` | Profilen och tillhörande identitetsdiagram tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning togs emot.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Experience Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
 
 Mer information om att spåra jobbstatus finns i [[!DNL Privacy Service] dokumentationen](../privacy-service/home.md#monitor).
 
@@ -217,7 +217,7 @@ Om du vill ta bort profilen och alla identitetsassociationer för en viss kund m
 
 ### Begränsningar för sammanfogningsprincip {#merge-policy-limitations}
 
-Privacy Servicen kan bara bearbeta [!DNL Profile]-data med en sammanfogningsprincip som inte utför identitetssammanfogning. Om du använder användargränssnittet för att bekräfta om dina sekretessförfrågningar behandlas kontrollerar du att du använder en princip med **[!DNL None]** som [!UICONTROL ID stitching]-typ. Du kan med andra ord inte använda en sammanfogningsprincip där [!UICONTROL ID stitching] är inställd på [!UICONTROL Private graph].
+Privacy Service kan bara bearbeta [!DNL Profile]-data med en sammanfogningsprincip som inte utför identitetssammanfogning. Om du använder användargränssnittet för att bekräfta om dina sekretessförfrågningar behandlas kontrollerar du att du använder en princip med **[!DNL None]** som [!UICONTROL ID stitching]-typ. Du kan med andra ord inte använda en sammanfogningsprincip där [!UICONTROL ID stitching] är inställd på [!UICONTROL Private graph].
 
 >![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
 
@@ -225,4 +225,4 @@ Privacy Servicen kan bara bearbeta [!DNL Profile]-data med en sammanfogningsprin
 
 Genom att läsa det här dokumentet har du introducerats till de viktiga begrepp som används för att bearbeta sekretessförfrågningar i [!DNL Experience Platform]. Om du vill få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb kan du fortsätta att läsa dokumentationen som finns i den här handboken.
 
-Mer information om hur du hanterar sekretessbegäranden för [!DNL Platform]-resurser som inte används av [!DNL Profile] finns i dokumentet om [bearbetning av sekretessförfrågningar i datasjön](../catalog/privacy.md).
+Mer information om hur du hanterar sekretessbegäranden för [!DNL Experience Platform]-resurser som inte används av [!DNL Profile] finns i dokumentet om [bearbetning av sekretessförfrågningar i datasjön](../catalog/privacy.md).

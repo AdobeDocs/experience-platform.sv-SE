@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1933'
+source-wordcount: '1934'
 ht-degree: 0%
 
 ---
@@ -113,7 +113,7 @@ Tabellen nedan förklarar vilka frågeartikeltyper som stöds:
 
 >[!NOTE]
 >
->Om du väljer att ställa in en [!UICONTROL Query Run Delay]-avisering måste du ange önskad fördröjningstid i minuter i plattformens användargränssnitt. Ange längden i minuter. Maximal fördröjning är 24 timmar (1 440 minuter).
+>Om du väljer att ställa in en [!UICONTROL Query Run Delay]-varning måste du ange önskad fördröjningstid i minuter i Experience Platform användargränssnitt. Ange längden i minuter. Maximal fördröjning är 24 timmar (1 440 minuter).
 
 En översikt över aviseringar i Adobe Experience Platform, inklusive strukturen för hur varningsregler definieras, finns i [varningsöversikten](../../observability/alerts/overview.md). Mer information om hur du hanterar aviseringar och varningsregler i Adobe Experience Platform-gränssnittet finns i [Användargränssnittsguiden för aviseringar](../../observability/alerts/ui.md).
 

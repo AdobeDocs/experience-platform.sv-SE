@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;startsida;populära ämnen;meddelanden om dataöverföring;meddelanden;prenumerationshändelser;statushändelser;statushändelser;abonnemang;statusmeddelanden;
+keywords: Experience Platform;hemmabruk;populära ämnen;meddelanden om dataöverföring;meddelanden;prenumerationshändelser;statushändelser;statushändelser;abonnemang;statusmeddelanden;
 solution: Experience Platform
 title: Meddelanden om dataöverföring
 description: För att underlätta övervakningen av intagsprocessen kan Adobe Experience Platform prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om status för inmatade data och eventuella fel.
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '642'
 ht-degree: 0%
 
 ---
 
 # Meddelanden om dataöverföring
 
-Processen att samla in data i Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras till [!DNL Platform], börjar importen och varje steg sker i följd tills data antingen har importerats eller misslyckats. Inledningsprocessen kan initieras med [Adobe Experience Platform API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) eller med användargränssnittet [!DNL Experience Platform].
+Processen att samla in data i Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras till [!DNL Experience Platform], börjar importen och varje steg sker i följd tills data antingen har importerats eller misslyckats. Inledningsprocessen kan initieras med [Adobe Experience Platform API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) eller med användargränssnittet [!DNL Experience Platform].
 
-Data som läses in till [!DNL Platform] måste gå igenom flera steg för att nå sitt mål, [!DNL Data Lake] eller datalagret [!DNL Real-Time Customer Profile]. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
+Data som läses in till [!DNL Experience Platform] måste gå igenom flera steg för att nå sitt mål, [!DNL Data Lake] eller datalagret [!DNL Real-Time Customer Profile]. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
 
 För att underlätta övervakningen av inmatningsprocessen kan [!DNL Experience Platform] prenumerera på en uppsättning händelser som publiceras av varje steg i processen och meddela dig om status för inmatade data och eventuella fel.
 
 ## Registrera en webkrok för meddelanden om dataöverföring
 
-För att kunna ta emot meddelanden om dataintrång måste du använda [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) för att registrera en webkrok för Experience Platform-integreringen.
+För att kunna ta emot meddelanden om dataintrång måste du använda [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) för att registrera en webkrok för din Experience Platform-integrering.
 
 Följ självstudiekursen om att [prenumerera på [!DNL Adobe I/O Event] meddelanden](../../observability/alerts/subscribe.md) för mer information om hur du slutför det här.
 
@@ -71,7 +71,7 @@ Om du vill visa det fullständiga schemat för händelsemeddelanden kan du läsa
 
 ## Nästa steg
 
-När du har registrerat [!DNL Platform] meddelanden till ditt projekt kan du visa mottagna händelser från [!UICONTROL Project overview]. Mer information om hur du spårar händelser finns i guiden om [spårning av Adobe I/O-händelser](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md).
+När du har registrerat [!DNL Experience Platform] meddelanden till ditt projekt kan du visa mottagna händelser från [!UICONTROL Project overview]. Mer information om hur du spårar händelser finns i [spårningsguiden för Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md).
 
 ## Bilaga
 
@@ -81,7 +81,7 @@ Följande avsnitt innehåller ytterligare information om hur du tolkar nyttolast
 
 Följande tabell visar vilka statusmeddelanden för dataöverföring som du kan prenumerera på.
 
-| Händelsekod | Plattformstjänst | Status | Händelsebeskrivning |
+| Händelsekod | Experience Platform Service | Status | Händelsebeskrivning |
 | --- | ---------------- | ------ | ----------------- |
 | `ing_load_success` | [!DNL Data Ingestion] | framgång | En batch har importerats till en datauppsättning i [!DNL Data Lake]. |
 | `ing_load_failure` | [!DNL Data Ingestion] | fel | Det gick inte att kapsla en batch i en datauppsättning i [!DNL Data Lake]. |

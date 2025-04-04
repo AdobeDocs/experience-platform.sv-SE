@@ -2,9 +2,9 @@
 title: Skapa en källanslutning till SugarCRM-konton och kontakter i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till SugarCRM-konton och kontakter med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 45840d7e-4c19-4720-8629-be446347862d
-source-git-commit: 0de4b32ac2ddc90dabefd469b6658388a4532e0d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '756'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Om du redan har ett giltigt [!DNL SugarCRM]-konto kan du hoppa över resten av d
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till plattformen måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till Experience Platform måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -34,9 +34,9 @@ För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till plattformen mås
 | `Username` | Användarnamn för ditt SugarCRM-utvecklarkonto. | `abc.def@example.com@sugarmarketdemo000.com` |
 | `Password` | Lösenordet för ditt SugarCRM-utvecklarkonto. | `123456789` |
 
-### Skapa ett plattformsschema
+### Skapa ett Experience Platform-schema
 
-Innan du skapar en [!DNL SugarCRM]-källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
+Innan du skapar en [!DNL SugarCRM]-källanslutning måste du också se till att du först skapar ett Experience Platform-schema som kan användas för källan. I självstudiekursen [Skapa ett Experience Platform-schema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
 
 [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Det innebär att du måste skapa ett separat schema, beroende på vilken objekttyp du använder. Se exemplen nedan för både konton och kontaktkartor:
 
@@ -44,23 +44,23 @@ Innan du skapar en [!DNL SugarCRM]-källanslutning måste du också se till att 
 
 >[!TAB Konton]
 
-![Skärmbild för plattformsgränssnitt som visar ett exempelschema för konton](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarcrm-schema-accounts.png)
+![Experience Platform UI-skärmbild med exempelschema för konton](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarcrm-schema-accounts.png)
 
 >[!TAB Kontakter]
 
-![Skärmbild för plattformsgränssnitt som visar ett exempelschema för kontakter](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarcrm-schema-contacts.png)
+![Experience Platform UI-skärmbild som visar ett exempelschema för Kontakter](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarcrm-schema-contacts.png)
 
 >[!ENDTABS]
 
 ## Anslut ditt [!DNL SugarCRM Accounts & Contacts]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *CRM* väljer du **[!UICONTROL SugarCRM Accounts & Contacts]** och sedan **[!UICONTROL Add data]**.
 
-![Skärmbild för plattformsgränssnitt för katalog med SugarCRM-kort för konton och kontakter](../../../../images/tutorials/create/sugarcrm-accounts-contacts/catalog-sugarcrm-accounts-contacts.png)
+![Experience Platform UI, bild för katalog med SugarCRM-kort för konton och kontakter](../../../../images/tutorials/create/sugarcrm-accounts-contacts/catalog-sugarcrm-accounts-contacts.png)
 
 Sidan **[!UICONTROL Connect SugarCRM Accounts & Contacts account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -68,17 +68,17 @@ Sidan **[!UICONTROL Connect SugarCRM Accounts & Contacts account]** visas. På d
 
 Om du vill använda ett befintligt konto väljer du det [!DNL SugarCRM Accounts & Contacts]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Skärmbild för användargränssnitt för Connect SugarCRM-konton och kontaktkonton med ett befintligt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/existing.png)
+![Experience Platform UI-skärmbild för Connect SugarCRM-konton och kontaktkonton med ett befintligt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/existing.png)
 
 ### Nytt konto
 
 Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Skärmbild för användargränssnittet för Connect SugarCRM-konton och kontaktkonton med ett nytt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/new.png)
+![Experience Platform UI-skärmbild för Connect SugarCRM-konton och kontaktkonton med ett nytt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/new.png)
 
 ### Markera data
 
-Slutligen måste du välja den objekttyp som du vill importera till plattformen.
+Slutligen måste du välja den objekttyp som du vill importera till Experience Platform.
 
 | Objekttyp | Beskrivning |
 | --- | --- |
@@ -89,17 +89,17 @@ Slutligen måste du välja den objekttyp som du vill importera till plattformen.
 
 >[!TAB Konton]
 
-![Skärmbild för användargränssnitt för plattform för konton och kontakter för SugarCRM som visar konfigurationen med alternativet Konto valt](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-accounts.png)
+![Experience Platform UI-skärmbild för SugarCRM-konton och kontakter visar konfigurationen med kontoalternativet valt](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-accounts.png)
 
 >[!TAB Kontakter]
 
-![Skärmbild för användargränssnitt för plattformen för konton och kontakter för SugarCRM som visar konfigurationen med alternativet Kontakter markerat](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-contacts.png)
+![Experience Platform UI-skärmbild för SugarCRM-konton och kontakter som visar konfigurationen med alternativet Kontakter markerat](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-contacts.png)
 
 >[!ENDTABS]
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SugarCRM Accounts & Contacts]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SugarCRM Accounts & Contacts]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/crm.md).
 
 ## Ytterligare resurser
 
@@ -113,7 +113,7 @@ Begränsningsfrekvensen för [!DNL SugarCRM] API är 90 anrop per minut eller 2 
 
 Följ stegen nedan för att verifiera att du har konfigurerat källan och att [!DNL SugarCRM Accounts & Contacts] data importeras korrekt:
 
-* I plattformsgränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL SugarCRM Accounts & Contacts] i källkatalogen. Välj sedan **[!UICONTROL Preview dataset]** för att verifiera de data som har importerats.
+* I Experience Platform-gränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL SugarCRM Accounts & Contacts] i källkatalogen. Välj sedan **[!UICONTROL Preview dataset]** för att verifiera de data som har importerats.
 
 * Beroende på vilken objekttyp du arbetar med kan du verifiera aggregerade data mot antalet som visas på sidorna [!DNL SugarMarket] Konton eller Kontakter nedan:
 

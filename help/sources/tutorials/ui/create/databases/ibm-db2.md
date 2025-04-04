@@ -5,7 +5,7 @@ title: Skapa en IBM DB2 Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en IBM DB2-källanslutning med Adobe Experience Platform användargränssnitt.
 exl-id: 69c99f94-9cb9-43ff-9315-ce166ab35a60
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '510'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 > IBM DB2-anslutningen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källöversikt](../../../../home.md#terms-and-conditions).
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en IBM DB2-källanslutning (nedan kallad DB2) med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en IBM DB2-källanslutning (nedan kallad DB2) med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -46,7 +46,7 @@ Mer information om hur du kommer igång finns i [det här DB2-dokumentet](https:
 
 ## Anslut ditt IBM DB2-konto
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt DB2-konto till [!DNL Platform].
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt DB2-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -72,4 +72,4 @@ Om du vill ansluta ett befintligt konto väljer du det DB2-konto som du vill ans
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt DB2-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt DB2-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

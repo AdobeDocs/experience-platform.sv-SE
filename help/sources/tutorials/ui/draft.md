@@ -2,9 +2,9 @@
 title: Utkastdataflöden i användargränssnittet
 description: Lär dig hur du sparar dataflöden som ett utkast och publicerar dem vid ett senare tillfälle när du använder arbetsytan för källor.
 exl-id: ee00798e-152a-4618-acb3-db40f2f55fae
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '574'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Det här dokumentet innehåller anvisningar om hur du sparar dataflöden när du
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 
 ## Spara ett dataflöde som ett utkast
 
-Du kan när som helst pausa skapandet av dataflödet efter att du har valt de data som ska hämtas till plattformen.
+Du kan när som helst pausa skapandet av dataflödet efter att du har valt de data du vill hämta till Experience Platform.
 
 Om du till exempel vill spara förloppet under informationsflödet väljer du **[!UICONTROL Save as draft]**.
 
@@ -51,7 +51,7 @@ Du kan även komma åt dina utkast via dataflödeskatalogen. Välj **[!UICONTROL
 
 ![En lista med dataflöden för en viss organisation.](../../images/tutorials/draft/catalog-access.png)
 
-## Publish ditt datautkastflöde
+## Publicera ditt utkast till dataflöde
 
 Du återgår till [!UICONTROL Add data]-steget i arbetsflödet för källor, där du kan bekräfta dataformatet igen och fortsätta arbeta med dataflödet.
 

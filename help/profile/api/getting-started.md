@@ -5,9 +5,9 @@ type: Documentation
 description: Komma igång-guiden för profil-API:t visar de nyckelbegrepp och grundläggande funktioner som du behöver känna till för att kunna använda API-slutpunkter för kundprofil i realtid för att utföra grundläggande CRUD-åtgärder mot profildata.
 role: Developer
 exl-id: 7e30610a-a7e7-43ab-a45d-fd84ef6e36ef
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '408'
 ht-degree: 0%
 
 ---
@@ -21,8 +21,8 @@ Om du vill använda utvecklarhandboken måste du ha en fungerande förståelse f
 * [[!DNL Real-Time Customer Profile]](../home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Få en bättre bild av kunden och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
 * [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md): Gör att du kan skapa målgrupper från kundprofildata i realtid.
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API-slutpunkter för [!DNL Profile].
 
@@ -32,19 +32,19 @@ API-dokumentationen för [!DNL Real-Time Customer Profile] innehåller exempel p
 
 ## Obligatoriska rubriker
 
-API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Platform]-slutpunkter. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i [!DNL Experience Platform] API-anrop, vilket visas nedan:
+API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Experience Platform]-slutpunkter. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Begäranden till [!DNL Platform] API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Begäranden till [!DNL Experience Platform] API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden med en nyttolast i begärandetexten (till exempel anropen POST, PUT och PATCH) måste innehålla en `Content-Type`-rubrik. Godkända värden som är specifika för varje anrop finns i anropsparametrarna.
+Alla begäranden med en nyttolast i begärandetexten (som POST-, PUT- och PATCH-anrop) måste innehålla en `Content-Type`-rubrik. Godkända värden som är specifika för varje anrop finns i anropsparametrarna.
 
 ## Nästa steg
 

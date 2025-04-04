@@ -2,18 +2,18 @@
 keywords: Experience Platform;hem;populära ämnen;datainmatning;dataplatse;dataplats;datahantering;datahantering;linje;rad;grupp;inmatad data
 solution: Experience Platform
 title: Översikt över dataöverföring
-description: I det här dokumentet introduceras de tre viktigaste sätten att överföra data till plattformen, med länkar till deras respektive översiktsdokumentation för mer detaljerad information.
+description: I det här dokumentet presenteras de tre viktigaste sätten att överföra data till Experience Platform, med länkar till respektive översiktsdokumentation för mer detaljerad information.
 exl-id: c189dd4a-5c59-4189-a18c-a3e45a9ff01d
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
 
 # Översikt över datainmatning
 
-Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platform datainmatning representerar de olika metoder som används vid inmatning av data från dessa källor hos Experience Platform, samt hur data bevaras i datasjön för användning av Experience Platform-tjänster längre fram i kedjan.
+Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platform datainmatning representerar de olika metoder som Experience Platform använder för att importera data från dessa källor, samt hur data lagras i Data Lake för användning av Experience Platform-tjänster längre fram i kedjan.
 
 I det här dokumentet presenteras de tre viktigaste sätten att överföra data till Experience Platform, med länkar till respektive översiktsdokumentation för mer detaljerad information.
 

@@ -2,9 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för mått
-description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observationsinsikter.
+description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: bd5018a2d867d0483f3f2f0c45e356ea69a01801
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1278'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # Måttslutpunkt
 
-Mätvärden för observerbarhet ger insikt i användningsstatistik, historiska trender och resultatindikatorer för olika funktioner i Adobe Experience Platform. Med slutpunkten `/metrics` i [!DNL Observability Insights API] kan du hämta mätdata för organisationens aktivitet i [!DNL Platform] programmatiskt.
+Mätvärden för observerbarhet ger insikt i användningsstatistik, historiska trender och resultatindikatorer för olika funktioner i Adobe Experience Platform. Med slutpunkten `/metrics` i [!DNL Observability Insights API] kan du hämta mätdata för organisationens aktivitet i [!DNL Experience Platform] programmatiskt.
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Observability Ins
 
 ## Hämta mätvärden för observerbarhet
 
-Du kan hämta mätdata genom att göra en begäran om POST till `/metrics`-slutpunkten och ange de mätvärden som du vill hämta i nyttolasten.
+Du kan hämta mätdata genom att göra en POST-begäran till `/metrics`-slutpunkten och ange de mätvärden som du vill hämta i nyttolasten.
 
 **API-format**
 
@@ -175,7 +175,7 @@ Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och
 | `metric` | Namnet på ett av måtten som anges i begäran. |
 | `filters` | Filterkonfigurationen för det angivna måttet. |
 | `datapoints` | En array vars objekt representerar resultatet av det angivna måttet och filtren. Antalet objekt i arrayen beror på de filteralternativ som anges i begäran. Om inga filter har angetts innehåller arrayen bara ett objekt som representerar alla datauppsättningar. |
-| `groupBy` | Om flera datauppsättningar har angetts i egenskapen `filter` för ett mätresultat och alternativet `groupBy` har angetts till true i begäran, kommer objektet att innehålla ID:t för datauppsättningen som motsvarande `dps` -egenskap gäller för.<br><br>Om det här objektet verkar vara tomt i svaret gäller motsvarande `dps` -egenskap för alla datamängder som finns i `filters` -arrayen (eller alla datamängder i [!DNL Platform] om inga filter har angetts). |
+| `groupBy` | Om flera datauppsättningar har angetts i egenskapen `filter` för ett mätresultat och alternativet `groupBy` har angetts till true i begäran, kommer objektet att innehålla ID:t för datauppsättningen som motsvarande `dps` -egenskap gäller för.<br><br>Om det här objektet verkar vara tomt i svaret gäller motsvarande `dps` -egenskap för alla datamängder som finns i `filters` -arrayen (eller alla datamängder i [!DNL Experience Platform] om inga filter har angetts). |
 | `dps` | Returnerade data för angivet mått, filter och tidsintervall. Varje nyckel i det här objektet representerar en tidsstämpel med ett motsvarande värde för det angivna måttet. Tidsperioden mellan varje datapunkt beror på det `granularity`-värde som anges i begäran. |
 
 {style="table-layout:auto"}
@@ -186,7 +186,7 @@ Följande avsnitt innehåller ytterligare information om hur du arbetar med slut
 
 ### Tillgängliga mått {#available-metrics}
 
-I följande tabeller visas alla mätvärden som visas av [!DNL Observability Insights], uppdelade efter [!DNL Platform]-tjänst. Varje mätvärde innehåller en beskrivning och en godkänd ID-frågeparameter.
+I följande tabeller visas alla mätvärden som visas av [!DNL Observability Insights], uppdelade efter [!DNL Experience Platform]-tjänst. Varje mätvärde innehåller en beskrivning och en godkänd ID-frågeparameter.
 
 >[!NOTE]
 >
@@ -279,8 +279,8 @@ I följande tabell visas de olika felkoderna som kan returneras av API:t:
 | --- | --- | --- |
 | `INSGHT-1000-400` | Ogiltig nyttolast för begäran | Det uppstod ett fel med nyttolasten för begäran. Kontrollera att du matchar nyttolastens formatering exakt så som visas [ovan](#v2). Alla möjliga orsaker kan utlösa det här felet:<ul><li>Obligatoriska fält som `aggregator` saknas</li><li>Ogiltiga mått</li><li>Begäran innehåller en ogiltig aggregator</li><li>Ett startdatum infaller efter ett slutdatum</li></ul> |
 | `INSGHT-1001-400` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av en felaktig begäran eller att själva frågan inte kunde tolkas. Kontrollera att din begäran är korrekt formaterad innan du försöker igen. |
-| `INSGHT-1001-500` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av ett serverfel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
-| `INSGHT-1002-500` | Tjänstfel | Begäran kunde inte behandlas på grund av ett internt fel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
+| `INSGHT-1001-500` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av ett serverfel. Försök igen och kontakta Adobe support om problemet kvarstår. |
+| `INSGHT-1002-500` | Tjänstfel | Begäran kunde inte behandlas på grund av ett internt fel. Försök igen och kontakta Adobe support om problemet kvarstår. |
 | `INSGHT-1003-401` | Valideringsfel för sandlådan | Begäran kunde inte behandlas på grund av ett valideringsfel i sandlådan. Kontrollera att namnet på sandlådan som du angav i rubriken `x-sandbox-name` representerar en giltig, aktiverad sandlåda för din organisation innan du försöker utföra begäran igen. |
 
 {style="table-layout:auto"}

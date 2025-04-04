@@ -4,16 +4,16 @@ title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgrans
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 49196473f304585193e87393f8dc5dc37be7e4d9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2901'
+source-wordcount: '2904'
 ht-degree: 0%
 
 ---
 
 # Förhandsgranska exempelstatusslutpunkt (förhandsgranskning av profil)
 
-Med Adobe Experience Platform kan ni importera kunddata från flera olika källor för att skapa en robust, enhetlig profil för varje enskild kund. När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid.
+Med Adobe Experience Platform kan ni importera kunddata från flera olika källor för att skapa en robust, enhetlig profil för varje enskild kund. När data hämtas till Experience Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid.
 
 Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus`, som ingår i kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnutrymmet, samt för att generera flera rapporter för att få synlighet i kompositionen för organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa dessa mått med API-slutpunkten `/previewsamplestatus`.
 
@@ -31,26 +31,26 @@ Den här guiden refererar till både profilfragment och sammanfogade profiler. D
 
 Varje enskild kundprofil består av flera profilfragment som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med varumärket i flera kanaler har organisationen troligen flera profilfragment som är kopplade till den enskilda kunden i flera datauppsättningar.
 
-När profilfragment hämtas till Platform sammanfogas de (baserat på en sammanfogningspolicy) för att skapa en enda profil för den kunden. Det totala antalet profilfragment är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil består av flera fragment.
+När profilfragment importeras till Experience Platform sammanfogas de (baserat på en sammanfogningspolicy) för att skapa en enda profil för den kunden. Det totala antalet profilfragment är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil består av flera fragment.
 
 Om du vill veta mer om profiler och deras roll i Experience Platform börjar du med att läsa [Översikt över kundprofiler i realtid](../home.md).
 
 ## Hur exempeljobbet utlöses
 
-När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Platform] lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
+När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Experience Platform] lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
 
 * För **direktuppspelningsarbetsflöden** görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller inte. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
 * Om tröskelvärdet på 5 % ökning eller minskning uppnås, kommer ett jobb att köras för att uppdatera antalet för **batchinmatning** inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 
-Profilantal och profiler efter namnområdesmått är också tillgängliga i avsnittet [!UICONTROL Profiles] i användargränssnittet för Experience Platform. Mer information om hur du får åtkomst till profildata via användargränssnittet finns i [[!DNL Profile] gränssnittshandboken](../ui/user-guide.md).
+Profilantal och profiler efter namnområdesmått är också tillgängliga i avsnittet [!UICONTROL Profiles] i Experience Platform-gränssnittet. Mer information om hur du får åtkomst till profildata via användargränssnittet finns i [[!DNL Profile] gränssnittshandboken](../ui/user-guide.md).
 
 ## Visa senaste exempelstatus {#view-last-sample-status}
 
-Du kan utföra en GET-förfrågan till `/previewsamplestatus`-slutpunkten för att visa information om det senaste slutförda samplingsjobbet som kördes för din organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler eller det totala antalet profiler som din organisation har i Experience Platform.
+Du kan utföra en GET-begäran till `/previewsamplestatus`-slutpunkten för att visa information om det senaste slutförda exempeljobbet som kördes för din organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler, eller det totala antalet profiler som din organisation har inom Experience Platform.
 
 Profilantalet genereras efter sammanfogning av profilfragment för att skapa en enda profil för varje enskild kund. När profilfragment sammanfogas returnerar de med andra ord antalet &quot;1&quot;-profiler eftersom de alla är relaterade till samma individ.
 
-Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Exempeljobbet uppdateras regelbundet när profildata importeras för att ge ett aktuellt totalt antal profiler inom plattformen.
+Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Exempeljobbet uppdateras regelbundet när profildata importeras för att ge ett aktuellt totalt antal profiler inom Experience Platform.
 
 **API-format**
 
@@ -114,7 +114,7 @@ Svaret innehåller information om det senaste slutförda exempeljobbet som körd
 
 ## Visa profildistribution efter datauppsättning
 
-Om du vill visa profildistributionen efter datauppsättning kan du utföra en GET-förfrågan till slutpunkten `/previewsamplestatus/report/dataset`.
+Om du vill visa profildistributionen efter datauppsättning kan du utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/dataset`.
 
 **API-format**
 
@@ -207,7 +207,7 @@ Svaret innehåller en `data`-matris som innehåller en lista med datauppsättnin
 
 ## Visa profildistribution efter ID-namnområde
 
-Du kan utföra en GET-förfrågan till slutpunkten `/previewsamplestatus/report/namespace` för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i profilarkivet. Detta omfattar både standardidentiteter från Adobe och anpassade identiteter som definieras av organisationen.
+Du kan utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/namespace` om du vill visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i din profilbutik. Detta omfattar både de standardidentiteter som tillhandahålls av Adobe och de anpassade identiteter som definieras av din organisation.
 
 Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Om du vill veta mer börjar du med att läsa översikten över [identitetsnamnområdet](../../identity-service/features/namespaces.md).
 
@@ -299,14 +299,14 @@ Svaret innehåller en `data`-matris, med enskilda objekt som innehåller informa
 | `fullIDsFragmentCount` | Det totala antalet profilfragment i namnutrymmet. |
 | `fullIDsCount` | Det totala antalet sammanfogade profiler i namnutrymmet. |
 | `fullIDsPercentage` | `fullIDsCount` som en procentandel av det totala sammanslagna profilerna (värdet `totalRows` som returnerades i den [senaste exempelstatusen](#view-last-sample-status)), uttryckt i decimalformat. |
-| `code` | `code` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med hjälp av [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md) och kallas även [!UICONTROL Identity symbol] i användargränssnittet för Experience Platform. Mer information finns i [översikten över identitetsnamnet](../../identity-service/features/namespaces.md). |
+| `code` | `code` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med hjälp av [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md) och kallas även [!UICONTROL Identity symbol] i Experience Platform-gränssnittet. Mer information finns i [översikten över identitetsnamnet](../../identity-service/features/namespaces.md). |
 | `value` | Värdet `id` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med hjälp av [identitetstjänstens API](../../identity-service/api/list-namespaces.md). |
 
 ## Generera överlappningsrapport för datauppsättning
 
 Rapporten om överlappning av datauppsättningar ger synlighet i kompositionen för organisationens profilbutik genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, som att ange förfallodatum för vissa datauppsättningar.
 
-Du kan generera överlappningsrapporten för datauppsättningen genom att utföra en GET-förfrågan till slutpunkten `/previewsamplestatus/report/dataset/overlap`.
+Du kan generera överlappningsrapporten för datauppsättningen genom att utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/dataset/overlap`.
 
 Stegvisa instruktioner om hur du genererar överlappningsrapporten för datauppsättningar med kommandoraden eller användargränssnittet i Postman finns i [generera självstudiekursen om överlappande datauppsättningar](../tutorials/dataset-overlap-report.md).
 
@@ -372,7 +372,7 @@ Den här rapporten innehåller följande information:
 
 ## Generera rapport över namnutrymmesöverlappning {#identity-overlap-report}
 
-Rapporten om överlappning av identitetsnamn ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de identitetsnamnutrymmen som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Detta omfattar både de vanliga identitetsnamnutrymmena från Adobe och de anpassade identitetsnamnutrymmen som definieras av din organisation.
+Rapporten om överlappning av identitetsnamn ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de identitetsnamnutrymmen som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Detta omfattar både de standardnamnutrymmen för identiteter som finns i Adobe och de anpassade namnutrymmen för identiteter som definieras av din organisation.
 
 Du kan generera överlappningsrapporten för identitetsnamnrymden genom att utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/namespace/overlap`.
 
@@ -445,7 +445,7 @@ En lyckad begäran returnerar HTTP-status 200 (OK) och identitetsnamnutrymmets �
 | Egenskap | Beskrivning |
 |---|---|
 | `data` | Objektet `data` innehåller kommaavgränsade listor med unika kombinationer av ID-namnområdeskoder och deras respektive profilantal. |
-| Namnområdeskoder | `code` är ett kort formulär för varje namn på identitetsnamn. En mappning av varje `code` till dess `name` finns med hjälp av [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md). `code` kallas även [!UICONTROL Identity symbol] i användargränssnittet för Experience Platform. Mer information finns i [översikten över identitetsnamnet](../../identity-service/features/namespaces.md). |
+| Namnområdeskoder | `code` är ett kort formulär för varje namn på identitetsnamn. En mappning av varje `code` till dess `name` finns med hjälp av [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md). `code` kallas även [!UICONTROL Identity symbol] i Experience Platform-gränssnittet. Mer information finns i [översikten över identitetsnamnet](../../identity-service/features/namespaces.md). |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran är den returnerade rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
 
 ### Tolka rapporten om namnutrymmesöverlappning
@@ -470,7 +470,7 @@ Den här rapporten innehåller följande information:
 
 Du kan få mer insyn i hur din organisations profilbutik är uppbyggd genom rapporten för icke sammansatta profiler. En &quot;sammanfogad&quot; profil är en profil som bara innehåller ett profilfragment. En okänd profil är en profil som är associerad med pseudonyma identitetsnamnutrymmen som `ECID` och `AAID`. Okända profiler är inaktiva, vilket innebär att de inte har lagt till nya händelser under den angivna tidsperioden. I rapporten för icke sammansatta profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
 
-Du kan generera rapporten för icke sammansatta profiler genom att utföra en GET-förfrågan till slutpunkten `/previewsamplestatus/report/unstitchedProfiles`.
+Du kan generera rapporten för icke sammansatta profiler genom att utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/unstitchedProfiles`.
 
 **API-format**
 

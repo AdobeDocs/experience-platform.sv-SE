@@ -2,10 +2,10 @@
 title: Adobe Experience Cloud Identity Service Extension - översikt
 description: Läs mer om taggtillägget Adobe Experience Cloud Identity Service i Adobe Experience Platform.
 exl-id: 9bfcb666-a3f1-46ad-8678-2c63738da2b2
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '783'
-ht-degree: 0%
+source-wordcount: '784'
+ht-degree: 5%
 
 ---
 
@@ -13,17 +13,17 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Använd den här referensen för information om hur du konfigurerar Adobe Experience Cloud ID-tillägget och de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
-Använd det här tillägget om du vill integrera Experience Cloud Identity Service med din egendom. Med Experience Cloud Identity Service kan ni skapa och lagra unika och beständiga identifierare för era webbplatsbesökare.
+Använd det här tillägget för att integrera Experience Cloud identitetstjänst med din egendom. Med Experience Cloud identitetstjänst kan du skapa och lagra unika och beständiga identifierare för webbplatsens besökare.
 
 ## Konfigurera Experience Cloud ID-tillägget
 
-I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar tillägget Experience Cloud-ID.
+I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar Experience Cloud ID-tillägget.
 
-Om Experience Cloud ID-tillägget inte har installerats än öppnar du egenskapen, väljer **[!UICONTROL Extensions > Catalog]**, hovrar över Experience Cloud ID-tillägget och väljer **[!UICONTROL Install]**.
+Om Experience Cloud ID-tillägget ännu inte är installerat öppnar du din egenskap, väljer **[!UICONTROL Extensions > Catalog]**, hovrar över Experience Cloud ID-tillägget och väljer **[!UICONTROL Install]**.
 
 Om du vill konfigurera tillägget öppnar du fliken Tillägg, håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
 
@@ -31,7 +31,7 @@ Om du vill konfigurera tillägget öppnar du fliken Tillägg, håller pekaren ö
 
 Följande konfigurationsalternativ är tillgängliga:
 
-### Experience Cloud organisation-ID
+### Experience Cloud Organization ID
 
 ID för din Experience Cloud-organisation.
 
@@ -39,7 +39,7 @@ Ditt ID är en alfanumerisk sträng med 24 tecken följt av `@AdobeOrg`. Kontakt
 
 ### Uteslut specifika sökvägar
 
-Experience Cloud-ID:t läses inte in om URL:en matchar någon av de angivna sökvägarna.
+Experience Cloud-id:t läses inte in om URL:en matchar någon av de angivna sökvägarna.
 
 (Valfritt) Aktivera Regex om det här är ett reguljärt uttryck.
 
@@ -49,7 +49,7 @@ Välj **[!UICONTROL Add]** om du vill exkludera en annan sökväg.
 
 Använd alternativen för att välja om du vill att besökarna ska välja Adobe-tjänster på din webbplats, inklusive om de ska skapa cookies som spårar besökarens aktivitet.
 
-Opt In är den centraliserade referenspunkten för alla plattformslösningens klientbibliotek för att avgöra om cookies kan skapas på en användares enhet eller webbläsare när du besöker din webbplats. Anmäl dig till har inte stöd för att samla in eller lagra inställningar för användargodkännande.
+Opt In är den centraliserade referenspunkten för alla Experience Platform-baserade klientbibliotek för att avgöra om cookies kan skapas på en användares enhet eller webbläsare när du besöker din webbplats. Anmäl dig till har inte stöd för att samla in eller lagra inställningar för användargodkännande.
 
 **Aktivera anmälan?**
 
@@ -89,11 +89,11 @@ Definiera vilka kategorier som godkänns eller nekas när ingen inställning har
 
 ### Variabel
 
-Ange namn/värde-par som Experience Cloud ID-instansegenskaper. Använd listrutan för att markera en variabel och skriv eller välj sedan ett värde. Mer information om de olika variabelerna finns i [Experience Cloud-identitetstjänstens dokumentation](https://experiencecloud.adobe.com/resources/help/en_US/mcvid/mcvid-overview.html).
+Ange namn/värde-par som Experience Cloud ID-instansegenskaper. Använd listrutan för att markera en variabel och skriv eller välj sedan ett värde. Mer information om de olika variablerna finns i [dokumentationen för Experience Cloud Identity Service](https://experiencecloud.adobe.com/resources/help/en_US/mcvid/mcvid-overview.html).
 
-## Åtgärdstyper för tillägg till Experience Cloud ID
+## Åtgärdstyper för Experience Cloud ID-tillägg
 
-I det här avsnittet beskrivs de åtgärdstyper som finns i tillägget Experience Cloud ID.
+I det här avsnittet beskrivs de åtgärdstyper som finns i Experience Cloud ID-tillägget.
 
 ### Åtgärdstyper
 

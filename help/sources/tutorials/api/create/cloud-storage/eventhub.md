@@ -3,9 +3,9 @@ title: Skapa en Azure Event Hubs Source Connection med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 1256f0c76b29edad4808fc4be1d61399bfbae8fa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1492'
+source-wordcount: '1496'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
 I den här självstudiekursen får du lära dig hur du ansluter [!DNL Azure Event Hubs] (kallas nedan [!DNL Event Hubs]) till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -22,10 +22,10 @@ I den här självstudiekursen får du lära dig hur du ansluter [!DNL Azure Even
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-- [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+- [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+- [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Event Hubs] till plattformen med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Event Hubs] till Experience Platform med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -79,9 +79,9 @@ Mer information om [!DNL Azure Active Directory] finns i [Azure-guiden om hur du
 
 Mer information om dessa värden finns i [det här händelsehubbsdokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
@@ -91,7 +91,7 @@ Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma ig�
 
 Det första steget i att skapa en källanslutning är att autentisera [!DNL Event Hubs]-källan och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Event Hubs] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Event Hubs]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -103,7 +103,7 @@ POST /connections
 
 >[!TAB Standardautentisering]
 
-Om du vill skapa ett konto med standardautentisering skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `sasKeyName`, `sasKey` och `namespace`.
+Om du vill skapa ett konto med standardautentisering skickar du en POST-begäran till `/connections`-slutpunkten och anger värden för `sasKeyName`, `sasKey` och `namespace`.
 
 +++Begäran
 
@@ -157,7 +157,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 >[!TAB SAS-autentisering]
 
-Om du vill skapa ett konto med SAS-autentisering skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `sasKeyName`, `sasKey`, `namespace` och `eventHubName`.
+Om du vill skapa ett konto med SAS-autentisering gör du en POST-begäran till `/connections`-slutpunkten och anger värden för `sasKeyName`, `sasKey`, `namespace` och `eventHubName`.
 
 +++Begäran
 
@@ -213,7 +213,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 >[!TAB Händelsehubben Azure Active Directory-autentisering]
 
-Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `tenantId`, `clientId`, `clientSecretValue` och `namespace`.
+Om du vill skapa ett konto med Azure Active Directory Auth gör du en POST-begäran till `/connections`-slutpunkten samtidigt som du anger värden för `tenantId`, `clientId`, `clientSecretValue` och `namespace`.
 
 +++Begäran
 
@@ -269,7 +269,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 >[!TAB Händelsehubben har omfattat Azure Active Directory Auth]
 
-Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `tenantId`, `clientId`, `clientSecretValue`, `namespace` och `eventHubName`.
+Om du vill skapa ett konto med Azure Active Directory Auth gör du en POST-begäran till `/connections`-slutpunkten samtidigt som du anger värden för `tenantId`, `clientId`, `clientSecretValue`, `namespace` och `eventHubName`.
 
 +++Begäran
 
@@ -335,7 +335,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
+Om du vill skapa en källanslutning skickar du en POST-begäran till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
 
 **API-format**
 

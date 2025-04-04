@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: Edge Network och navet - jämförelse
+title: Jämförelse mellan Edge Network och Hub
 description: Lär dig mer om de olika bearbetningssökvägarna som är tillgängliga för Adobe Experience Platform.
-source-git-commit: 08a63fb854fe1c2aa83e7a7f74df4c02580e4d4c
+exl-id: 3e9c63d2-c798-44b4-870d-bf1551f29690
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '711'
-ht-degree: 0%
+source-wordcount: '713'
+ht-degree: 2%
 
 ---
 
+# Jämförelse mellan Edge Network och Hub
 
-# Edge Network och navet - jämförelse
-
-Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan ni centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser. Därför har Platform flera sätt att behandla data, så att ni kan utvärdera data på bästa möjliga sätt.
+Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan ni centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser. Därför har Experience Platform flera olika sätt att behandla data, vilket gör att du kan utvärdera dina data på bästa sätt.
 
 ## Servertyper
 
-På Platform kan data bearbetas på två olika sätt: Adobe Experience Platform nav för batch- och direktuppspelningsarbetsflöden och Edge Network för realtidsupplevelser.
+I Experience Platform kan data bearbetas på två olika sätt: Adobe Experience Platform nav för batch- och direktuppspelningsarbetsflöden och Edge Network för realtidsupplevelser.
 
 ### Adobe Experience Platform nav
 

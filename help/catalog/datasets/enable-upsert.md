@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profiluppdateringar med API:er
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder Adobe Experience Platform API:er för att aktivera en datauppsättning med"upsert"-funktioner för att uppdatera kundprofildata i realtid.
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1067'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -21,14 +21,14 @@ Den här självstudiekursen handlar om hur du aktiverar en datauppsättning med&
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Experience Platform-tjänster som arbetar med att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa igenom dokumentationen för de här relaterade [!DNL Platform]-tjänsterna:
+Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Experience Platform-tjänster som arbetar med att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa igenom dokumentationen för de här relaterade [!DNL Experience Platform]-tjänsterna:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful-API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-Time Customer Profile] och [!DNL Identity Service].
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 - [Gruppinmatning](../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Experience Platform API:er.
 
 ### Läser exempel-API-anrop
 
@@ -36,15 +36,15 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett `Content-Type`-huvud. Rätt värde för den här rubriken visas vid behov i exempelbegäranden.
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik för `Content-Type`. Rätt värde för den här rubriken visas vid behov i exempelbegäranden.
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver ett `x-sandbox-name`-huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver ett `x-sandbox-name`-huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 ## Skapa en datauppsättning som är aktiverad för profiluppdateringar
 
@@ -54,7 +54,7 @@ När du skapar en ny datauppsättning kan du aktivera datauppsättningen för pr
 >
 >Om du vill skapa en ny profilaktiverad datauppsättning måste du känna till ID:t för ett befintligt XDM-schema som är aktiverat för profilen. Information om hur du söker efter eller skapar ett profilaktiverat schema finns i självstudiekursen [Skapa ett schema med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md).
 
-Om du vill skapa en datauppsättning som är aktiverad för profil och uppdateringar använder du en POST-förfrågan till slutpunkten `/dataSets`.
+Om du vill skapa en datauppsättning som är aktiverad för profil och uppdateringar använder du en POST-begäran till slutpunkten `/dataSets`.
 
 **API-format**
 
@@ -179,7 +179,7 @@ Under egenskapen `tags` ser du att `unifiedProfile` finns med värdet `enabled:t
 
 ### Inaktivera datauppsättningen för profilen
 
-Om du vill konfigurera en profilaktiverad datauppsättning för uppdateringar måste du först inaktivera taggarna `unifiedProfile` och `unifiedIdentity` och sedan återaktivera dem tillsammans med taggen `isUpsert`. Detta görs med två PATCH-begäranden, en gång för att inaktivera och en för att återaktivera.
+Om du vill konfigurera en profilaktiverad datauppsättning för uppdateringar måste du först inaktivera taggarna `unifiedProfile` och `unifiedIdentity` och sedan återaktivera dem tillsammans med taggen `isUpsert`. Detta görs med två PATCH-förfrågningar, en gång för att inaktivera och en för att återaktivera.
 
 >[!WARNING]
 >
@@ -197,7 +197,7 @@ PATCH /dataSets/{DATASET_ID}
 
 **Begäran**
 
-Den första PATCH-begärandetexten innehåller en `path` till `unifiedProfile` och en `path` till `unifiedIdentity` som ställer in `value` på `enabled:false` för båda sökvägarna för att inaktivera taggarna.
+Den första PATCH-begärandetexten innehåller en `path` till `unifiedProfile` och en `path` till `unifiedIdentity`, vilket ställer in `value` på `enabled:false` för båda sökvägarna för att inaktivera taggarna.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
@@ -222,7 +222,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a2
 
 **Svar**
 
-En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. Taggarna `unifiedProfile` och `unifiedIdentity` har nu inaktiverats.
+En lyckad PATCH-begäran returnerar HTTP Status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickas i PATCH-begäran. Taggarna `unifiedProfile` och `unifiedIdentity` har nu inaktiverats.
 
 ```json
 [
@@ -232,11 +232,11 @@ En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som inneh�
 
 ### Aktivera datauppsättningen för profil och upsert {#enable-the-dataset}
 
-En befintlig datauppsättning kan aktiveras för profiluppdateringar och attributuppdateringar med en enda begäran från PATCH.
+En befintlig datauppsättning kan aktiveras för profiluppdateringar och attributuppdateringar med en enda PATCH-begäran.
 
 >[!IMPORTANT]
 >
->När du aktiverar din datauppsättning för profil kontrollerar du att schemat som datauppsättningen är kopplad till är **även** profilinaktiverat. Om schemat inte är profilaktiverat visas datauppsättningen **inte** som profilaktiverad i plattformsgränssnittet.
+>När du aktiverar din datauppsättning för profil kontrollerar du att schemat som datauppsättningen är kopplad till är **även** profilinaktiverat. Om schemat inte är profilaktiverat visas datauppsättningen **inte** som profilaktiverad i Experience Platform-gränssnittet.
 
 **API-format**
 
@@ -280,7 +280,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a2
 
 **Svar**
 
-En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. Taggen `unifiedProfile` och taggen `unifiedIdentity` har nu aktiverats och konfigurerats för attributuppdateringar.
+En lyckad PATCH-begäran returnerar HTTP Status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickas i PATCH-begäran. Taggen `unifiedProfile` och taggen `unifiedIdentity` har nu aktiverats och konfigurerats för attributuppdateringar.
 
 ```json
 [

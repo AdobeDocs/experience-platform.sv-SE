@@ -2,9 +2,9 @@
 title: Skapa härledda datauppsättningar med SQL
 description: Lär dig hur du använder SQL för att skapa en härledd datauppsättning som är aktiverad för profilen och hur du använder datauppsättningen för kundprofil och segmenteringstjänst i realtid.
 exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
-source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1235'
+source-wordcount: '1238'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Lär dig hur du använder SQL-frågor för att hantera och omvandla data från befintliga datauppsättningar och skapa en härledd datauppsättning som är aktiverad för profilen. Det här arbetsflödet är ett effektivt, alternativt sätt att skapa härledda datauppsättningar för era affärssituationer med kundprofiler i realtid.
 
-I det här dokumentet beskrivs olika praktiska SQL-tillägg som genererar en härledd datauppsättning som kan användas med kundprofilen i realtid. Arbetsflödet förenklar den process som du annars skulle behöva utföra via olika API-anrop eller interaktioner för plattformsgränssnitt.
+I det här dokumentet beskrivs olika praktiska SQL-tillägg som genererar en härledd datauppsättning som kan användas med kundprofilen i realtid. Arbetsflödet förenklar den process som du annars skulle behöva utföra via olika API-anrop eller Experience Platform UI-interaktioner.
 
 Generering och publicering av en härledd datauppsättning för kundprofil i realtid omfattar vanligtvis följande steg:
 
@@ -35,7 +35,7 @@ Med frågetjänsten kan du utföra alla åtgärder som listas ovan med hjälp av
 >
 >SQL-frågan som anges nedan förutsätter att ett befintligt namnutrymme används.
 
-Använd en CTAS-fråga (Create Table as Select) för att skapa en datauppsättning, tilldela datatyper, ange en primär identitet, skapa ett schema och markera den som profilaktiverad. SQL-satsen nedan skapar en datauppsättning och gör den tillgänglig för Real-time Customer Data Platform (Real-Time CDP). SQL-frågan kommer att följa formatet som visas i exemplet nedan:
+Använd en CTAS-fråga (Create Table as Select) för att skapa en datauppsättning, tilldela datatyper, ange en primär identitet, skapa ett schema och markera den som profilaktiverad. SQL-satsen nedan skapar en datauppsättning och gör den tillgänglig för Real-Time Customer Data Platform (Real-Time CDP). SQL-frågan kommer att följa formatet som visas i exemplet nedan:
 
 ```sql
 CREATE TABLE <your_table_name> [IF NOT EXISTS] (fieldname <your_data_type> primary identity namespace <your_namespace>, [field_name2 <your_data_type>]) [WITH(LABEL='PROFILE')];
@@ -51,7 +51,7 @@ MAP <data_type, data_type>
 ARRAY <data_type>
 ```
 
-Datamängder kan också aktiveras för profiler via plattformens användargränssnitt. Mer information om hur du markerar en datauppsättning som aktiverad för profil finns i [aktivera en datauppsättning för dokumentation av kundprofiler i realtid](../../../catalog/datasets/user-guide.md#enable-profile).
+Datamängder kan även aktiveras för profiler via Experience Platform-gränssnittet. Mer information om hur du markerar en datauppsättning som aktiverad för profil finns i [aktivera en datauppsättning för dokumentation av kundprofiler i realtid](../../../catalog/datasets/user-guide.md#enable-profile).
 
 I exempelfrågan nedan skapas datamängden `decile_table` med `id` som primär identitetskolumn och har namnutrymmet `IDFA`. Den har också ett fält med namnet `decile1Month` för mappningsdatatypen. Tabellen som skapades (`decile_table`) är aktiverad för profilen.
 
@@ -178,7 +178,7 @@ I exemplet kan du se att `table_with_a_decile` har aktiverats för profilen och 
 
 ### Skapa en fältgrupp med SQL
 
-Fältgrupper kan nu skapas med hjälp av SQL. Detta är ett alternativ till att använda Schemaredigeraren i plattformsgränssnittet eller göra ett API-anrop till schemaregistret.
+Fältgrupper kan nu skapas med hjälp av SQL. Detta är ett alternativ till att använda Schemaredigeraren i Experience Platform-gränssnittet eller göra ett API-anrop till schemaregistret.
 
 Ett exempel på hur du skapar en fältgrupp visas nedan.
 

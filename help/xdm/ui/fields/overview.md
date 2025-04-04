@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;field;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;field;
 solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
-description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
+description: Lär dig definiera XDM-fält i Experience Platform användargränssnitt.
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 0360d0eb9f4a01e12ce8619e8d2c5bac9301631f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1518'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ Med [!DNL Schema Editor] i Adobe Experience Platform användargränssnitt kan du
 
 ## Förhandskrav
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser och fältgrupper bidrar till fält i XDM-scheman.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser och fältgrupper bidrar till fält i XDM-scheman.
 
 Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen om att [komponera ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 
@@ -102,7 +102,7 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 
 ## Speciella fälttyper {#special}
 
-Den högra listen innehåller flera kryssrutor för att ange speciella roller för det markerade fältet. Användningsexempel för vissa av dessa alternativ inbegriper viktiga överväganden som rör er datamodelleringsstrategi och hur ni tänker använda plattformstjänster längre fram i kedjan.
+Den högra listen innehåller flera kryssrutor för att ange speciella roller för det markerade fältet. Användningsexempel för vissa av dessa alternativ inbegriper viktiga överväganden som rör er datamodelleringsstrategi och hur ni tänker använda Experience Platform-tjänster längre fram i kedjan.
 
 Mer information om dessa specialtyper finns i följande dokumentation:
 

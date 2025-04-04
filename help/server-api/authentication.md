@@ -2,9 +2,9 @@
 title: Autentisering
 description: Lär dig hur du konfigurerar autentisering för Adobe Experience Platform Edge Network Server API.
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '631'
 ht-degree: 1%
 
 ---
@@ -38,13 +38,13 @@ Innan du kan ringa samtal till [!DNL Server API] måste du kontrollera att du up
 
 ## Samla in inloggningsuppgifter {#credentials}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../landing/api-authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../landing/api-authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till plattforms-API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till Experience Platform API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -52,7 +52,7 @@ Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor.
 >
 >Mer information om sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * Innehållstyp: `application/json`
 
@@ -71,6 +71,6 @@ Om du vill konfigurera skrivbehörigheter för datauppsättningar går du till [
 | `EXEG-0501-401` | Ogiltig token för användarauktorisering | Det här felmeddelandet visas i följande situationer: <ul><li>API-anropet saknar det obligatoriska `x-user-token`-huvudet.</li><li>Angiven användartoken har ett ogiltigt format.</li></ul> |
 | `EXEG-0502-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas när den angivna auktoriseringstoken har ett giltigt format (JWT), men signaturen är ogiltig. Gå till självstudiekursen [för autentisering](../landing/api-authentication.md) och lär dig hur du hämtar en giltig JWT-token. |
 | `EXEG-0503-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas när den angivna auktoriseringstoken har upphört att gälla. Gå igenom självstudiekursen [för autentisering](../landing/api-authentication.md) och generera en ny token. |
-| `EXEG-0504-401` | Den obligatoriska produktkontexten saknas | Det här felmeddelandet visas i följande situationer:  <ul><li>Utvecklarkontot har inte åtkomst till Adobe Experience Platform produktkontext.</li><li>Företaget har ännu inte rätt till Adobe Experience Platform.</li></ul> |
+| `EXEG-0504-401` | Den obligatoriska produktkontexten saknas | Det här felmeddelandet visas i följande situationer:  <ul><li>Utvecklarkontot har inte åtkomst till Adobe Experience Platform produktkontext.</li><li>Företaget har ännu inte rätt till Adobe Experience Experience Platform.</li></ul> |
 | `EXEG-0505-401` | Obligatoriskt auktoriseringstokenomfång saknas | Detta fel gäller endast autentisering av tjänstkonto. Felmeddelandet visas när tjänstauktoriseringstoken som ingår i anropet tillhör ett tjänstkonto som inte har åtkomst till IMS-scopet `acp.foundation`. |
-| `EXEG-0506-401` | Sandlådan är inte tillgänglig för skrivning | Det här felmeddelandet visas när utvecklarkontot inte har `WRITE`-åtkomst till sandlådan Experience Platform där datastream definieras. |
+| `EXEG-0506-401` | Sandlådan är inte tillgänglig för skrivning | Det här felmeddelandet visas när utvecklarkontot inte har `WRITE`-åtkomst till Experience Platform-sandlådan där datastream definieras. |

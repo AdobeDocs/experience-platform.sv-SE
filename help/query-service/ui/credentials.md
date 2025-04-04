@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;home;populära topics;query service;Query service;query editor;Query Editor;Query editor;Query editor;
+keywords: Experience Platform;home;populära topics;query service;Query service;query editor;Query Editor;Query editor;
 solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 569f8f96a1039e52ac374e2eb07fd96ad8138edd
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1780'
+source-wordcount: '1782'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Med Adobe Experience Platform Query Service kan du ansluta till externa klienter
 
 >[!NOTE]
 >
->Autentiseringspanelen är inte automatiskt tillgänglig för alla användare. Kontakta ditt Adobe-kontoteam för att begära att fliken [!UICONTROL Credentials] ska ingå i arbetsytan för frågetjänsten om du behöver det. Om så krävs är denna förändring i hela organisationen och genomförs av Adobe ingenjörsteam. Det är inte en inställning som styrs av användare.
+>Autentiseringspanelen är inte automatiskt tillgänglig för alla användare. Kontakta ditt Adobe-kontoteam för att begära att fliken [!UICONTROL Credentials] ska ingå i arbetsytan för frågetjänsten om du behöver det. Om det efterfrågas sker ändringen i hela organisationen och genomförs av Adobe tekniker. Det är inte en inställning som styrs av användare.
 
 ## Utgående autentiseringsuppgifter {#expiring-credentials}
 
@@ -32,7 +32,7 @@ Du kan använda utgångsuppgifter för att snabbt konfigurera en anslutning till
 
 Avsnittet **[!UICONTROL Expiring credentials]** innehåller följande information:
 
-- **[!UICONTROL Host]**: Namnet på värddatorn som klienten ska anslutas till. Det innehåller namnet på din organisation så som det visas på den översta menyfliken i användargränssnittet för plattformen.
+- **[!UICONTROL Host]**: Namnet på värddatorn som klienten ska anslutas till. Det innehåller namnet på din organisation så som det visas på den övre menyfliken i Experience Platform användargränssnitt.
 - **[!UICONTROL Port]**: Portnumret för den värd som ska anslutas.
 - **[!UICONTROL Database]**: Namnet på databasen som en klient ska anslutas till.
 - **[!UICONTROL Username]**: Användarnamnet som används för att ansluta till frågetjänsten.
@@ -44,21 +44,21 @@ Avsnittet **[!UICONTROL Expiring credentials]** innehåller följande informatio
 >
 >Om du vill ändra sessionstiden för din utgående inloggningsanslutning till frågetjänsten går du till [Admin Console](https://adminconsole.adobe.com/) och väljer följande på skärmen: **Inställningar** > **Sekretess och säkerhet** > **Autentiseringsinställningar** > **Avancerade inställningar** > **Maximal sessionstid**.
 >
->![Inställningsfliken för Admin Console med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
+>![Fliken Admin Console-inställningar med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
 >
 >Mer information om de [avancerade inställningarna](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) som Admin Console erbjuder finns i hjälpdokumentationen för Adobe.
 
-### Ansluta data från Customer Journey Analytics i frågesessioner {#connect-to-customer-journey-analytics}
+### Ansluta Customer Journey Analytics-data i frågesessioner {#connect-to-customer-journey-analytics}
 
-Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt [datavyer](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) från Customer Journey Analytics med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integrering av Customer Journey Analytics-data med andra källor i BI-plattformar.
+Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt dina [datavyer](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) från Customer Journey Analytics med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integreringen av Customer Journey Analytics-data med andra källor i BI-plattformar.
 
 Läs dokumentationen för att lära dig hur du [ansluter frågetjänsten till ett antal klientprogram för stationära datorer](../clients/overview.md), till exempel [Power BI](../clients/power-bi.md) eller [Tableau](../clients/tableau.md)
 
 >[!IMPORTANT]
 >
->Ett Customer Journey Analytics-arbetsyteprojekt och en datavy krävs för att den här funktionen ska kunna användas.
+>Det krävs ett Customer Journey Analytics-arbetsyteprojekt och en datavy för att den här funktionen ska kunna användas.
 
-Om du vill få åtkomst till dina Customer Journey Analytics-data i Power BI eller Tableau väljer du listrutan [!UICONTROL Database] och sedan `prod:cja` bland de tillgängliga alternativen. Kopiera sedan dina [!DNL Postgres]-autentiseringsparametrar (Värd, Port, Databas, Användarnamn med flera) för användning i din Power BI- eller Tableau-konfiguration.
+Om du vill få tillgång till dina Customer Journey Analytics-data i antingen Power BI eller Tablet PC väljer du listrutan [!UICONTROL Database] och sedan `prod:cja` bland de tillgängliga alternativen. Kopiera sedan dina [!DNL Postgres]-autentiseringsparametrar (värd, port, databas, användarnamn med flera) för användning i din Power BI- eller Tableau-konfiguration.
 
 ![Fliken med autentiseringsuppgifter för frågetjänsten med listrutan för databas markerad.](../images/ui/credentials/database-dropdown.png)
 
@@ -68,7 +68,7 @@ Om du vill få åtkomst till dina Customer Journey Analytics-data i Power BI ell
 
 Du kan även komma åt dina Customer Journey Analytics-data direkt från Frågeredigeraren eller Postgres CLI. Om du vill göra det refererar du till databasen `cja` när du skriver din fråga. Mer information om hur du skriver, kör och sparar frågor finns i frågeredigeraren [frågeredigeringsguiden](./user-guide.md#query-authoring).
 
-I [BI-tilläggsguiden](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) finns fullständiga anvisningar om hur du får åtkomst till datavyer i Customer Journey Analytics med SQL.
+I [BI-tilläggsguiden](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) finns fullständiga anvisningar om hur du får åtkomst till dina Customer Journey Analytics-datavyer med SQL.
 
 ## Ej förfallande autentiseringsuppgifter {#non-expiring-credentials}
 
@@ -99,7 +99,7 @@ Alla nödvändiga behörigheter har nu konfigurerats i Adobe Developer Console s
 
 ### Generera autentiseringsuppgifter {#generate-credentials}
 
-Om du vill skapa en uppsättning autentiseringsuppgifter som inte upphör att gälla går du tillbaka till användargränssnittet för plattformen och väljer **[!UICONTROL Queries]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Queries]. Välj sedan fliken **[!UICONTROL Credentials]** följt av **[!UICONTROL Generate credentials]**.
+Om du vill skapa en uppsättning med autentiseringsuppgifter som inte upphör att gälla går du tillbaka till användargränssnittet i Experience Platform och väljer **[!UICONTROL Queries]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Queries]. Välj sedan fliken **[!UICONTROL Credentials]** följt av **[!UICONTROL Generate credentials]**.
 
 ![Kontrollpanelen Frågor med fliken Autentiseringsuppgifter och Generera autentiseringsuppgifter markerade.](../images/ui/credentials/generate-credentials.png)
 
@@ -116,7 +116,7 @@ När du har angett all nödvändig information väljer du **[!UICONTROL Generate
 
 >[!IMPORTANT]
 >
->När **[!UICONTROL Generate credentials]** har valts hämtas en konfigurations-JSON-fil till den lokala datorn. Eftersom Adobe **inte** spelar in de genererade inloggningsuppgifterna måste du lagra den hämtade filen på ett säkert sätt och spara inloggningsuppgifterna.
+>När **[!UICONTROL Generate credentials]** har valts hämtas en konfigurations-JSON-fil till den lokala datorn. Eftersom Adobe **inte** spelar in de genererade inloggningsuppgifterna måste du lagra den hämtade filen på ett säkert sätt och registrera inloggningsuppgifterna.
 >
 >Om inloggningsuppgifterna inte används på 90 dagar kommer de dessutom att tas bort.
 

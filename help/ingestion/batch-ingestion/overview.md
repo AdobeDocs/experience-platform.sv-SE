@@ -2,18 +2,18 @@
 keywords: Experience Platform;hem;populära ämnen;dataöverföring;batch;batchvis;aktivera datauppsättning;batchöverföring översikt;översikt;batchöverföring översikt;
 solution: Experience Platform
 title: Översikt över API för gruppinmatning
-description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
+description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 583eb70235174825dd542b95463784638bdef235
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1390'
 ht-degree: 1%
 
 ---
 
 # API-översikt för gruppinmatning
 
-Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som ska importeras kan vara profildata från en platt fil (till exempel en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
+Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Experience Platform som gruppfiler. Data som ska importeras kan vara profildata från en platt fil (till exempel en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
 
 API-referensen [för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) innehåller ytterligare information om dessa API-anrop.
 

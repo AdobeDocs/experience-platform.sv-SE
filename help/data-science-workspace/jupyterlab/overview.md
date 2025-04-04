@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över användargränssnittet i JupyterLab
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1829'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -25,26 +25,26 @@ Det här dokumentet innehåller en översikt över [!DNL JupyterLab] och dess fu
 
 ## [!DNL JupyterLab] på [!DNL Experience Platform]
 
-Integreringen av Experience Platform JupyterLab åtföljs av arkitektoniska förändringar, designöverväganden, anpassade utbyggnadsmoduler för bärbara datorer, förinstallerade bibliotek och ett gränssnitt med Adobe-teman.
+Integreringen med Experience Platform JupyterLab åtföljs av arkitektoniska förändringar, designöverväganden, anpassade tillägg till bärbara datorer, förinstallerade bibliotek och ett Adobe-temat gränssnitt.
 
-I följande lista beskrivs några av funktionerna som är unika för JupyterLab på Platform:
+I följande lista beskrivs några av de funktioner som är unika för JupyterLab på Experience Platform:
 
 | Funktion | Beskrivning |
 | --- | --- |
 | **Kernlar** | På panelerna finns anteckningsbok och andra [!DNL JupyterLab]-gränssnitt med funktioner för att köra och granska kod i olika programmeringsspråk. [!DNL Experience Platform] innehåller ytterligare kernlar som stöder utveckling i [!DNL Python], R, PySpark och [!DNL Spark]. Mer information finns i avsnittet [kernels](#kernels). |
 | **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån [!DNL JupyterLab] med fullt stöd för läs- och skrivfunktioner. |
-| Tjänstintegrering för **[!DNL Platform]** | Inbyggda integreringar gör att du kan använda andra [!DNL Platform]-tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet [Integrering med andra plattformstjänster](#service-integration). |
-| **Autentisering** | Utöver <a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a> krypteras och autentiseras all interaktion mellan ditt program och Experience Platform, inklusive kommunikation mellan plattformstjänster och tjänster, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
+| Tjänstintegrering för **[!DNL Experience Platform]** | Inbyggda integreringar gör att du kan använda andra [!DNL Experience Platform]-tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet [Integrering med andra Experience Platform-tjänster](#service-integration). |
+| **Autentisering** | Utöver <a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a> krypteras och autentiseras all interaktion mellan ditt program och Experience Platform, inklusive Experience Platform kommunikation från tjänst till tjänst, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
 | **Utvecklingsbibliotek** | I [!DNL Experience Platform] innehåller [!DNL JupyterLab] förinstallerade bibliotek för [!DNL Python], R och PySpark. En fullständig lista över bibliotek som stöds finns i [bilagan](#supported-libraries). |
-| **Bibliotekskontrollen** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att bibehålla integriteten för [!DNL Platform] och skydda dina data. Mer information finns i avsnittet [kernels](#kernels). |
+| **Bibliotekskontrollen** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att bibehålla integriteten för [!DNL Experience Platform] och skydda dina data. Mer information finns i avsnittet [kernels](#kernels). |
 
 >[!NOTE]
 >
 >Ytterligare bibliotek är bara tillgängliga för den session där de installerades. Du måste installera om alla ytterligare bibliotek som du behöver när du startar nya sessioner.
 
-## Integrering med andra [!DNL Platform]-tjänster {#service-integration}
+## Integrering med andra [!DNL Experience Platform]-tjänster {#service-integration}
 
-Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. Integreringen av [!DNL JupyterLab] på [!DNL Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Platform]-tjänster, vilket gör att du kan utnyttja [!DNL Platform] fullt ut. Följande [!DNL Platform] tjänster är tillgängliga i [!DNL JupyterLab]:
+Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. Integreringen av [!DNL JupyterLab] på [!DNL Experience Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Experience Platform]-tjänster, vilket gör att du kan utnyttja [!DNL Experience Platform] fullt ut. Följande [!DNL Experience Platform] tjänster är tillgängliga i [!DNL JupyterLab]:
 
 * **[!DNL Catalog Service]:** Få åtkomst till och utforska datauppsättningar med läs- och skrivfunktioner.
 * **[!DNL Query Service]:** Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader vid hantering av stora mängder data.
@@ -53,7 +53,7 @@ Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience
 
 >[!NOTE]
 >
->Vissa [!DNL Platform]-tjänstintegreringar på [!DNL JupyterLab] är begränsade till specifika kärnor. Mer information finns i avsnittet [kernels](#kernels).
+>Vissa [!DNL Experience Platform]-tjänstintegreringar på [!DNL JupyterLab] är begränsade till specifika kärnor. Mer information finns i avsnittet [kernels](#kernels).
 
 ## Viktiga funktioner och vanliga åtgärder
 
@@ -146,11 +146,11 @@ Vanliga cellåtgärder beskrivs nedan:
 
 ### Kernlar {#kernels}
 
-Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Utöver [!DNL Python] har [!DNL JupyterLab] ytterligare språkstöd i R, PySpark och [!DNL Spark] (Scala). När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta mycket processorkraft och minnesresurser i anspråk. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
+Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Utöver [!DNL Python] har [!DNL JupyterLab] ytterligare språkstöd i R, PySpark och [!DNL Spark] (Scala). När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta upp stora CPU- och minnesresurser. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
 
 Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 
-| Kernel | Installationsstöd för bibliotek | [!DNL Platform] integreringar |
+| Kernel | Installationsstöd för bibliotek | [!DNL Experience Platform] integreringar |
 | :----: | :--------------------------: | :-------------------- |
 | **[!DNL Python]** | Ja | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li><li>[!DNL Query Service]</li></ul> |
 | **R** | Ja | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |

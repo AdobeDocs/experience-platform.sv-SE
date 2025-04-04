@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datumintervall
-title: Prenumerera på händelsemeddelanden från Adobe I/O
-description: Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper finns också, tillsammans med länkar till ytterligare dokumentation om hur du tolkar returnerade händelsedata för varje tillämplig [!DNL Platform] tjänst.
+title: Prenumerera på Adobe I/O Event Notifications
+description: Det här dokumentet innehåller anvisningar om hur du prenumererar på Adobe I/O händelsemeddelanden för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper finns också, tillsammans med länkar till ytterligare dokumentation om hur du tolkar returnerade händelsedata för varje tillämplig [!DNL Experience Platform] tjänst.
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 8e6301c5f834465acff99b4cd668017581c1dfa9
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '751'
 ht-degree: 0%
 
 ---
 
-# Prenumerera på händelsemeddelanden i Adobe I/O
+# Prenumerera på Adobe I/O händelsemeddelanden
 
-Med [!DNL Observability Insights] kan du prenumerera på Adobe I/O-händelsemeddelanden om Adobe Experience Platform-aktiviteter. Dessa händelser skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av aktivitetsövervakning.
+Med [!DNL Observability Insights] kan du prenumerera på Adobe I/O-händelsemeddelanden för Adobe Experience Platform-aktiviteter. Dessa händelser skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av aktivitetsövervakning.
 
-Det här dokumentet innehåller anvisningar om hur du kan prenumerera på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur du kan tolka returnerade händelsedata för varje tillämplig [!DNL Platform]-tjänst.
+Det här dokumentet innehåller anvisningar om hur du prenumererar på Adobe I/O händelsemeddelanden för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur du kan tolka returnerade händelsedata för varje tillämplig [!DNL Experience Platform]-tjänst.
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Du kan konfigurera din webkrok med valfri klient. Om du vill ha en temporär web
 
 ![](../images/notifications/webhook-url.png)
 
-Under den inledande valideringsprocessen skickar [!DNL I/O Events] en `challenge`-frågeparameter i en GET-begäran till webkroken. Du måste konfigurera webkroken så att den returnerar värdet för den här parametern i svarsnyttolasten. Om du använder Webhook.site väljer du **[!DNL Edit]** i det övre högra hörnet och anger sedan `$request.query.challenge$` under **[!DNL Response body]** innan du väljer **[!DNL Save]**.
+Under den inledande valideringsprocessen skickar [!DNL I/O Events] en `challenge`-frågeparameter i en GET-begäran till webbkroken. Du måste konfigurera webkroken så att den returnerar värdet för den här parametern i svarsnyttolasten. Om du använder Webhook.site väljer du **[!DNL Edit]** i det övre högra hörnet och anger sedan `$request.query.challenge$` under **[!DNL Response body]** innan du väljer **[!DNL Save]**.
 
 ![](../images/notifications/response-challenge.png)
 
@@ -41,7 +41,7 @@ Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och
 
 >[!NOTE]
 >
->Händelsen för meddelande om dataöverföring har tagits bort i Adobe I/O. I stället bör du använda **Source Flow Run Info** I/O-händelsen.
+>Aviseringshändelsen för dataöverföring har tagits bort i Adobe I/O. I stället bör du använda **Source Flow Run Info** I/O-händelsen.
 
 När du har skapat ett nytt projekt går du till projektets översiktsskärm. Välj **[!UICONTROL Add event]** härifrån.
 

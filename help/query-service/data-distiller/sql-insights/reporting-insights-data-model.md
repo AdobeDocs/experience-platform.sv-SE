@@ -2,9 +2,9 @@
 title: Query Accelerated Store Reporting Insights Guide
 description: Lär dig hur du bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler.
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1037'
 ht-degree: 0%
 
 ---
@@ -13,17 +13,17 @@ ht-degree: 0%
 
 Med det frågeaccelererade arkivet kan du minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Vanligtvis behandlas data med regelbundna intervall (t.ex. varje timme eller dag) där aggregerade vyer skapas och rapporteras. Analysen av dessa rapporter som genereras utifrån aggregerade data ger insikter som är avsedda att förbättra affärsresultatet. Det frågeaccelererade arkivet tillhandahåller en cachetjänst, samtidighet, en interaktiv upplevelse och ett tillståndslöst API. Det förutsätter dock att data är förbearbetade och optimerade för aggregerad fråga och inte för rådatafrågor.
 
-Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka en befintlig Adobe Real-time Customer Data Platform datamodell. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen för Real-time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall ](../../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
+Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka en befintlig Adobe Real-Time Customer Data Platform datamodell. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen för Real-Time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall ](../../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
 
 Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profiler, målgrupper och destinationer och möjliggör Real-Time CDP insiktspaneler. I det här dokumentet får du hjälp med att skapa datamodellen för dina rapportinsikter och hur du kan utöka Real-Time CDP datamodeller efter behov.
 
 ## Förhandskrav
 
-I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/standard-dashboards.md).
+I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i Experience Platform användargränssnitt. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/standard-dashboards.md).
 
 ## Komma igång
 
-Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka Real-Time CDP datamodeller som innehåller data från den nya plattformen. Se dokumentationen för [paketering](../../packaging.md), [skyddsutkast](../../guardrails.md#query-accelerated-store) och [licensiering](../../data-distiller/license-usage.md) som gäller Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka Real-Time CDP datamodeller som innehåller berikade Experience Platform-data. Se dokumentationen för [paketering](../../packaging.md), [skyddsutkast](../../guardrails.md#query-accelerated-store) och [licensiering](../../data-distiller/license-usage.md) som gäller Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentant för mer information.
 
 ## Bygg en datamodell för rapportinsikter
 
@@ -33,7 +33,7 @@ Till att börja med har ni en första datamodell från era källor (eventuellt f
 
 ![Ett entitetsrelationsdiagram (ERD) för användarmodellen för målgruppsinsikter.](../../images/data-distiller/sql-insights/audience-insight-user-model.png)
 
-I det här exemplet baseras tabellen/datamängden `externalaudiencereach` på ett ID och spårar de nedre och övre gränserna för antalet matchningar. Dimensionstabellen/datamängden `externalaudiencemapping` mappar det externa ID:t till ett mål och en målgrupp på plattformen.
+I det här exemplet baseras tabellen/datamängden `externalaudiencereach` på ett ID och spårar de nedre och övre gränserna för antalet matchningar. Dimensionstabellen/datamängden `externalaudiencemapping` mappar det externa ID:t till ett mål och en målgrupp på Experience Platform.
 
 ## Skapa en modell för att rapportera insikter med Data Distiller
 

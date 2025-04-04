@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att generera en omformningsmall för testmeddelanden för ditt mål.
 title: Generera en omformningsmall för exempelmeddelanden
 exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '377'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-star
 
 ## Hämta exempelmall {#generate-sample-template}
 
-Du kan hämta en exempelmall genom att göra en GET-förfrågan till `authoring/testing/template/sample/`-slutpunkten och ange mål-ID:t för målkonfigurationen baserat på vilken du skapar mallen.
+Du kan hämta en exempelmall genom att göra en GET-begäran till `authoring/testing/template/sample/`-slutpunkten och ange mål-ID:t för målkonfigurationen baserat på vilken du skapar mallen.
 
 >[!TIP]
 >
@@ -132,7 +132,7 @@ Om det mål-ID som du anger motsvarar en målservermall med [konfigurerbar aggre
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 

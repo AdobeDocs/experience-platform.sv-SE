@@ -4,9 +4,9 @@ title: Generera överlappningsrapport för datauppsättning
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att generera överlappningsrapporten för datauppsättningen med hjälp av kundprofils-API:t i realtid.
 exl-id: 90894ed3-b09e-435d-a9e3-18fd6dc8e907
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '889'
+source-wordcount: '890'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ I den här självstudien beskrivs de steg som krävs för att generera överlapp
 
 ## Komma igång
 
-Om du vill använda Adobe Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att samla in de värden du behöver för de önskade rubrikerna. Mer information om Experience Platform API:er finns i [kom igång med API:er för plattformar](../../landing/api-guide.md).
+Om du vill använda Adobe Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att samla in de värden du behöver för de önskade rubrikerna. Mer information om Experience Platform API:er finns i [dokumentationen för att komma igång med Experience Platform API:er](../../landing/api-guide.md).
 
 Nödvändiga rubriker för alla API-anrop i den här självstudien är:
 
@@ -132,4 +132,4 @@ Den här rapporten innehåller följande information:
 
 ## Nästa steg
 
-När du är klar med den här självstudiekursen kan du nu generera en överlappande datauppsättningsrapport med hjälp av kundprofils-API:t i realtid. Om du vill veta mer om hur du arbetar med profildata i både API:t och användargränssnittet i Experience Platform börjar du med att läsa [översiktsdokumentationen för profilen](../home.md).
+När du är klar med den här självstudiekursen kan du nu generera en överlappande datauppsättningsrapport med hjälp av kundprofils-API:t i realtid. Om du vill veta mer om hur du arbetar med profildata i både API och Experience Platform-gränssnittet börjar du med att läsa [översiktsdokumentationen för profiler](../home.md).

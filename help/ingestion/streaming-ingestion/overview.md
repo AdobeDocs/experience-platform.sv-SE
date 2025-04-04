@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Direktuppspelning - översikt
 description: Direktuppspelning för Adobe Experience Platform ger användarna en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: 9b2d0c8fad1ed328725129664be94cf1800f6631
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '424'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Följande video är utformad för att hjälpa dig förstå hur man får in strö
 
 ### Direktuppspelningsprofilsposter och [!DNL ExperienceEvents]
 
-Med direktuppspelningsinmatning kan användare direktuppspela profilposter och [!DNL ExperienceEvents] till [!DNL Platform] på några sekunder för att hjälpa till att driva personalisering i realtid. Alla data som skickas till API:er för direktuppspelning sparas automatiskt i [!DNL Data Lake].
+Med direktuppspelningsinmatning kan användare direktuppspela profilposter och [!DNL ExperienceEvents] till [!DNL Experience Platform] på några sekunder för att hjälpa till att driva personalisering i realtid. Alla data som skickas till API:er för direktuppspelning sparas automatiskt i [!DNL Data Lake].
 
 Mer information finns i [Skapa en anslutningsguide för direktuppspelning](../tutorials/create-streaming-connection.md).
 

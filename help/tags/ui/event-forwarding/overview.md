@@ -1,12 +1,12 @@
 ---
 title: Översikt över vidarebefordran av händelser
-description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
+description: Läs om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Experience Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 16f9ee9d14326f857b444c2361b894aca06b04d6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 2%
+source-wordcount: '1181'
+ht-degree: 3%
 
 ---
 
@@ -14,21 +14,21 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Vidarebefordran av händelser är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
+>Vidarebefordran är en betalfunktion som ingår i Adobe Real-Time Customer Data Platform Connections, Prime eller Ultimate.
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Med händelsevidarebefordran i Adobe Experience Platform kan du skicka insamlade händelsedata till ett mål för bearbetning på serversidan. Vidarebefordran av händelser minskar webbsidans och appens vikt genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för vidarebefordran av händelser implementeras på ungefär samma sätt som taggar, men i stället för att skicka dessa data från ett klientprogram som en webbläsare skickas de från Adobe-servrar.
+Med händelsevidarebefordran i Adobe Experience Platform kan du skicka insamlade händelsedata till ett mål för bearbetning på serversidan. Vidarebefordran av händelser minskar webbsidans och appens vikt genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för vidarebefordran av händelser implementeras på liknande sätt som taggar, och kan omvandla och skicka data till nya destinationer, men i stället för att skicka dessa data från ett klientprogram som en webbläsare skickas de från Adobe servrar.
 
-Det här dokumentet innehåller en översikt på hög nivå över vidarebefordran av händelser i Platform.
+Det här dokumentet innehåller en översikt över vidarebefordran av händelser i Experience Platform.
 
 ![Vidarebefordran av händelser i datainsamlingens ekosystem.](../../../collection/images/home/event-forwarding.png)
 
 >[!NOTE]
 >
->Information om hur händelsevidarebefordran passar in i datainsamlingens ekosystem i plattformen finns i [datainsamlingsöversikten](../../../collection/home.md).
+>Information om hur händelsevidarebefordran passar in i datainsamlingens ekosystem i Experience Platform finns i [datainsamlingsöversikten](../../../collection/home.md).
 
 Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/web-sdk/home.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) ger följande fördelar:
 
@@ -46,14 +46,14 @@ Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web S
 
 I fråga om konfiguration används många av de begrepp som används för händelsevidarebefordran, till exempel [regler](../managing-resources/rules.md), [dataelement](../managing-resources/data-elements.md) och [tillägg](../managing-resources/extensions/overview.md). Den största skillnaden mellan de två kan sammanfattas enligt följande:
 
-* Taggar **samlar in** händelsedata från en webbplats eller ett inbyggt mobilprogram och skickar dem till Platform Edge Network.
-* Händelsevidarebefordran **skickar** inkommande händelsedata från Platform Edge Network till en slutpunkt som representerar ett slutligt mål eller en slutpunkt som tillhandahåller data som du vill berika den ursprungliga nyttolasten med.
+* Taggar **samlar in** händelsedata från en webbplats eller ett inbyggt mobilprogram och skickar dem till Experience Platform Edge Network.
+* Händelsevidarebefordring **skickar** inkommande händelsedata från Experience Platform Edge Network till en slutpunkt som representerar ett slutligt mål eller en slutpunkt som tillhandahåller data som du vill utöka den ursprungliga nyttolasten med.
 
-Medan taggar samlar in händelsedata direkt från din webbplats eller från ett mobilprogram som använder plattformens webb- och Mobile SDK:er, kräver händelsevidarebefordran att händelsedata redan skickas via Platform Edge Network för att vidarebefordra dem till destinationer. Med andra ord måste du implementera Platform Web eller Mobile SDK på din digitala egendom (antingen via taggar eller med raw-kod) för att kunna använda händelsevidarebefordran.
+Taggar samlar in händelsedata direkt från er webbplats eller från mobilappar med Experience Platform Web och Mobile SDK, men för händelsevidarebefordran krävs att händelsedata redan skickas via Experience Platform Edge Network för att de ska kunna vidarebefordras till destinationer. Med andra ord måste du implementera Experience Platform Web eller Mobile SDK på din digitala egendom (antingen via taggar eller med råkod) för att kunna använda händelsevidarebefordran.
 
 ### Egenskaper {#properties}
 
-Händelsevidarebefordran upprätthåller ett eget lager med egenskaper som är åtskilda från taggar, som du kan visa i användargränssnittet för Experience Platform eller datainsamlingen genom att välja **[!UICONTROL Event Forwarding]** i den vänstra navigeringen.
+Händelsevidarebefordran upprätthåller ett eget lager med egenskaper som är åtskilda från taggar, som du kan visa i användargränssnittet för Experience Platform eller användargränssnittet för datainsamling genom att välja **[!UICONTROL Event Forwarding]** i den vänstra navigeringen.
 
 >[!TIP]
 >
@@ -61,7 +61,7 @@ Händelsevidarebefordran upprätthåller ett eget lager med egenskaper som är �
 
 ![Egenskaper för vidarebefordran av händelser i användargränssnittet för datainsamling.](../../images/ui/event-forwarding/overview/properties.png)
 
-Alla egenskaper för vidarebefordran av händelser listar **[!UICONTROL Edge]** som sin plattform. De skiljer inte mellan webb och mobiler eftersom de bara bearbetar data som tagits emot från Platform Edge Network, som i sin tur kan ta emot händelsedata från både webb- och mobilplattformar.
+Alla egenskaper för vidarebefordran av händelser listar **[!UICONTROL Edge]** som sin plattform. De skiljer inte mellan webb och mobiler eftersom de bara bearbetar data som tas emot från Experience Platform Edge Network, som i sin tur kan ta emot händelsedata från både webb- och mobilplattformar.
 
 ### Tillägg {#extensions}
 
@@ -75,11 +75,11 @@ Du kan visa ytterligare tillgängliga resurser om du vill veta mer om den här f
 
 De typer av dataelement som är tillgängliga vid händelsevidarebefordran är begränsade till katalogen med kompatibla [tillägg](#extensions) som innehåller dem.
 
-Även om dataelementen själva skapas och konfigureras på samma sätt i händelsevidarebefordran som de är för taggar, finns det vissa viktiga syntaxskillnader när det gäller hur de refererar till data från Platform Edge Network.
+Även om dataelementen själva skapas och konfigureras på samma sätt i händelsevidarebefordran som de är för taggar, finns det viktiga syntaxskillnader när det gäller hur de refererar till data från Experience Platform Edge Network.
 
-#### Referera till data från Platform Edge Network {#data-element-path}
+#### Referera till data från Experience Platform Edge Network {#data-element-path}
 
-Om du vill referera till data från Platform Edge Network måste du skapa ett dataelement som ger en giltig sökväg till dessa data. När du skapar dataelementet i användargränssnittet väljer du **[!UICONTROL Core]** som tillägg och **[!UICONTROL Path]** som typ.
+Om du vill referera till data från Experience Platform Edge Network måste du skapa ett dataelement som ger en giltig sökväg till dessa data. När du skapar dataelementet i användargränssnittet väljer du **[!UICONTROL Core]** som tillägg och **[!UICONTROL Path]** som typ.
 
 Värdet **[!UICONTROL Path]** för dataelementet måste följa mönstret `arc.event.{ELEMENT}` (till exempel: `arc.event.xdm.web.webPageDetails.URL`). Den här sökvägen måste anges korrekt för att data ska kunna skickas.
 

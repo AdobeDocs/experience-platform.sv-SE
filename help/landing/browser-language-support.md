@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: Webbläsare- och språkstöd för användargränssnittet i Experience Platform
+title: Webbläsare och språkstöd för Experience Platform användargränssnitt
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-source-git-commit: 9c46f2eeb563009da52acb629796ee9992136343
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '250'
 ht-degree: 3%
 
 ---
 
-# Webbläsare och språkstöd för användargränssnittet i Experience Platform
+# Webbläsare och språkstöd för Experience Platform användargränssnitt
 
 Adobe Experience Platform användargränssnitt (UI) har stöd för flera webbläsare och språk.
 
 ## Webbläsarstöd
 
-Plattformsgränssnittet är utformat för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
+Experience Platform-gränssnittet är utformat för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
 
 | Operativsystem | Webbläsare som stöds |
 |---|---|
@@ -32,7 +32,7 @@ Följande operativsystem och webbläsare stöds inte:
 
 ## Språkstöd
 
-Plattformsgränssnittet finns för närvarande på följande språk:
+Experience Platform-gränssnittet finns för närvarande på följande språk:
 
 * Engelska
 * Franska

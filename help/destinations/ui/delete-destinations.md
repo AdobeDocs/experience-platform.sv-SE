@@ -4,7 +4,7 @@ title: Ta bort mål
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '399'
 ht-degree: 0%
@@ -19,7 +19,7 @@ I Adobe Experience Platform användargränssnitt kan du ta bort befintliga anslu
 
 Om du tar bort ett mål tas alla befintliga dataflöden till det målet bort. Alla målgrupper som aktiveras för de mål som du tar bort mappas inte innan dataflödet tas bort.
 
-Det finns två sätt att ta bort mål från [!DNL Platform] [!DNL UI]. Du kan:
+Det finns två sätt att ta bort mål från [!DNL Experience Platform] [!DNL UI]. Du kan:
 
 * [Ta bort mål från fliken [!UICONTROL Browse]](#delete-browse-tab)
 * [Ta bort mål från sidan med målinformation](#delete-destination-details-page)
@@ -77,4 +77,4 @@ Följ stegen nedan för att ta bort ett mål från sidan med målinformation.
 
    >[!NOTE]
    >
-   >Beroende på serverinläsningen kan det ta några minuter för [!DNL Platform] att ta bort målet.
+   >Beroende på serverinläsningen kan det ta några minuter för [!DNL Experience Platform] att ta bort målet.

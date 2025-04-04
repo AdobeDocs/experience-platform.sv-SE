@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;modul;DULE
+keywords: Experience Platform;home;populära topics;module;DULE
 solution: Experience Platform
 title: Översikt över dataanvändningsprinciper
 description: Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Adobe Experience Platform.
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: e5d90b24dad7faa9aa31c3b0670f8efa69cf0334
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1205'
+source-wordcount: '1207'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Det finns två typer av principer:
 
 >[!NOTE]
 >
->Dataanvändningsprinciper ska inte blandas ihop med [åtkomstkontrollprinciper](../../access-control/abac/end-to-end-guide.md#policy) som avgör om vissa plattformsanvändare i organisationen kan komma åt vissa datafält, och konfigureras via fliken [!UICONTROL Permissions].
+>Dataanvändningsprinciper ska inte blandas ihop med [åtkomstkontrollprinciper](../../access-control/abac/end-to-end-guide.md#policy), som avgör om vissa Experience Platform-användare i organisationen kan komma åt vissa datafält, och konfigureras via fliken [!UICONTROL Permissions].
 
 Det här dokumentet innehåller en översikt över dataanvändningsprinciper på hög nivå och länkar till ytterligare dokumentation om hur du arbetar med principer i gränssnittet eller API:t.
 
@@ -57,7 +57,7 @@ I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-defin
 
 Experience Platform has the ability to share audiences with Adobe Audience Manager. Any Data Export Controls that have been applied to Audience Manager audiences are translated to equivalent marketing use cases recognized by Experience Platform Data Governance.
 
-For a reference on how specific Data Export Controls map to marketing actions in Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html).
+For a reference on how specific Data Export Controls map to marketing actions in Experience Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html).
 -->
 
 ## Hantera dataanvändningspolicyer {#manage}
@@ -66,11 +66,11 @@ När dataanvändningsetiketter har tillämpats kan datafördelare använda [!DNL
 
 >[!IMPORTANT]
 >
->Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
+>Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
 Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningsprinciper i API:t finns i självstudiekursen [Skapa och utvärdera dataanvändningsprinciper](create.md). Mer information om nyckelåtgärder som tillhandahålls av API:t [!DNL Policy Service] finns i [Utvecklarhandbok för principtjänst](../api/getting-started.md).
 
-Mer information om hur du arbetar med marknadsföringsåtgärder och -principer i användargränssnittet för [!DNL Platform] finns i användarhandboken för [dataanvändningsprincipen](./user-guide.md).
+Mer information om hur du arbetar med marknadsföringsåtgärder och -principer i användargränssnittet för [!DNL Experience Platform] finns i användarhandboken för [dataanvändningsprincipen](./user-guide.md).
 
 ## Nästa steg
 
@@ -94,10 +94,10 @@ Tabellen nedan beskriver de viktigaste marknadsföringsåtgärderna som tillhand
 | Kombinera med direkt identifierbara data | En åtgärd som kombinerar all personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data. |
 | Målgruppsövergripande | En åtgärd som använder data för annonsanpassning mellan webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen. |
 | Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. I vissa avtal ingår uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
-| Dataexport | En åtgärd som exporterar data till en plats eller ett mål utanför produkter och tjänster från Adobe. Du kan till exempel hämta data till din lokala dator, kopiera data från skärmen, schemalägga leverans av data till en plats utanför Adobe, schemalagda projekt i Customer Journey Analytics, hämta rapporter, rapportering-API och så vidare. |
+| Dataexport | En åtgärd som exporterar data till valfri plats eller destination utanför Adobe produkter och tjänster. Du kan till exempel hämta data till din lokala dator, kopiera data från skärmen, schemalägga leverans av data till en plats utanför Adobe, Customer Journey Analytics schemalagda projekt, hämta rapporter, rapportering-API och så vidare. |
 | E-postmarknadsföring | En åtgärd som använder data i e-postriktade kampanjer. |
 | Exportera till tredje part | En åtgärd som exporterar data till processorer och enheter som inte har direkta relationer med kunder. Många dataleverantörer har villkor i avtalen som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. |
 | Advertising på plats | En åtgärd som använder data för annonser på plats, inklusive urval och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser. |
 | Personalization på plats | En åtgärd som använder data för innehållspersonalisering på plats. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser. |
-| Segmentmatchning | En åtgärd som använder data för Adobe Experience Platform Segment Match, som gör att två eller flera plattformsanvändare kan utbyta målgruppsdata. Genom att aktivera profiler som refererar till den här åtgärden kan du begränsa vilka data som används för segmentmatchning. Om huvudprincipen &quot;Begränsa datadelning&quot; till exempel är aktiverad kan inga data med etiketten [C11](../labels/reference.md#c11) användas för segmentmatchning. |
+| Segmentmatchning | En åtgärd som använder data för Adobe Experience Platform Segment Match, som gör att två eller flera Experience Platform-användare kan utbyta målgruppsdata. Genom att aktivera profiler som refererar till den här åtgärden kan du begränsa vilka data som används för segmentmatchning. Om huvudprincipen &quot;Begränsa datadelning&quot; till exempel är aktiverad kan inga data med etiketten [C11](../labels/reference.md#c11) användas för segmentmatchning. |
 | Single Identity Personalization | En åtgärd som kräver att en enda identitet används för personalisering i stället för att sammanfoga identiteter från flera källor. |

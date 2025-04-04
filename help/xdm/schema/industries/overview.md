@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Översikt över branschdatamodeller
 description: Lär dig mer om standardiserade datamodeller för olika vertikala branscher som kan konstrueras med XDM-komponenter (Standard Experience Data Model).
 exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '341'
+source-wordcount: '342'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ För att hjälpa er att vägleda er datamodelleringsstrategi baserat på just er
 
 ## Förhandskrav
 
-För att kunna läsa de referensdokument för elektroniska avhandlingar som det hänvisas till i den här handboken måste du ha en fungerande förståelse för hur XDM-komponenterna interagerar med formulärscheman och hur XDM-scheman fungerar i Experience Platform som helhet. Kontrollera att du har läst följande översiktsdokumentation innan du fortsätter:
+Om du vill läsa de referensdokument för elektroniska avhandlingar som det hänvisas till i den här handboken måste du ha en fungerande förståelse för hur XDM-komponenterna interagerar med formulärscheman och hur XDM-scheman fungerar i Experience Platform som helhet. Kontrollera att du har läst följande översiktsdokumentation innan du fortsätter:
 
-* [Systemöversikt för XDM](../../home.md): Lär dig hur XDM fungerar i plattformens ekosystem.
+* [Systemöversikt för XDM](../../home.md): Lär dig hur XDM fungerar i Experience Platform ekosystem.
 * [Grunderna för schemakomposition](../../schema/composition.md): Lär dig hur XDM-komponenter (till exempel schemafältgrupper, klasser och datatyper) bidrar till strukturen i ett schema samt identitetsfältens roll.
 
 Vi rekommenderar också att du läser [guiden ](../../schema/best-practices.md) om bästa praxis för datamodellering för allmänna riktlinjer om hur du mappar dina data till XDM.

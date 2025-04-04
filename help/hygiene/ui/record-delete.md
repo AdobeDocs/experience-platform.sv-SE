@@ -3,9 +3,9 @@ title: Ta bort poster
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 badgeBeta: label="Beta" type="Informative"
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1500'
+source-wordcount: '1507'
 ht-degree: 0%
 
 ---
@@ -25,17 +25,17 @@ Använd arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) för att ta bor
 
 Att ta bort poster kräver en fungerande förståelse för hur identitetsfält fungerar i Experience Platform. Du måste känna till identitets namnutrymmesvärden för de entiteter vars poster du vill ta bort, beroende på vilken datamängd (eller vilka datamängder) du tar bort dem från.
 
-Mer information om identiteter i Platform finns i följande dokumentation:
+Mer information om identiteter i Experience Platform finns i följande dokumentation:
 
 * [Adobe Experience Platform Identity Service](../../identity-service/home.md): Förena identiteter mellan enheter och system genom att länka samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
 * [Identitetsnamnutrymmen](../../identity-service/features/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relatera till en enskild person och är en obligatorisk komponent för varje identitetsfält.
 * [Kundprofil i realtid](../../profile/home.md): Använder identitetsdiagram för att tillhandahålla enhetliga konsumentprofiler baserade på aggregerade data från flera källor, som uppdateras i nära realtid.
-* [Experience Data Model (XDM)](../../xdm/home.md): Tillhandahåller standarddefinitioner och strukturer för plattformsdata genom användning av scheman. Alla plattformsdatauppsättningar följer ett specifikt XDM-schema, och schemat definierar vilka fält som är identiteter.
+* [Experience Data Model (XDM)](../../xdm/home.md): Tillhandahåller standarddefinitioner och strukturer för Experience Platform-data genom användning av scheman. Alla Experience Platform-datauppsättningar följer ett specifikt XDM-schema, och schemat definierar vilka fält som är identiteter.
 * [Identitetsfält](../../xdm/ui/fields/identity.md): Lär dig hur ett identitetsfält definieras i ett XDM-schema.
 
 ## Skapa en förfrågan {#create-request}
 
-Om du vill starta processen väljer du **[!UICONTROL Data Lifecycle]** i den vänstra navigeringen i plattformsgränssnittet. Arbetsytan [!UICONTROL Data lifecycle requests] visas. Välj sedan **[!UICONTROL Create request]** på huvudsidan på arbetsytan.
+Om du vill starta processen väljer du **[!UICONTROL Data Lifecycle]** i den vänstra navigeringen i användargränssnittet i Experience Platform. Arbetsytan [!UICONTROL Data lifecycle requests] visas. Välj sedan **[!UICONTROL Create request]** på huvudsidan på arbetsytan.
 
 ![Arbetsytan [!UICONTROL Data lifecycle requests] med [!UICONTROL Create request] markerad.](../images/ui/record-delete/create-request-button.png)
 
@@ -75,13 +75,13 @@ Om du vill ta bort poster från alla datauppsättningar väljer du **[!UICONTROL
 >title="Primärt identitetsvärde"
 >abstract="I den här kolumnen måste du ange värdet för postens ID-namnutrymme, som måste motsvara identitetstypen som anges i den vänstra kolumnen. Om identitetsnamnområdestypen är `email` ska värdet vara postens e-postadress. Mer information finns i användargränssnittshandboken för datalängd."
 
-När du tar bort poster måste du ange identitetsinformation så att systemet kan avgöra vilka poster som ska tas bort. För alla datauppsättningar i plattformen tas poster bort baserat på fältet **identity namespace** som definieras av datasetens schema.
+När du tar bort poster måste du ange identitetsinformation så att systemet kan avgöra vilka poster som ska tas bort. För datauppsättningar i Experience Platform tas poster bort baserat på fältet **identity namespace** som definieras av datasetens schema.
 
-Precis som alla identitetsfält i Platform består ett identitetsnamnutrymme av två saker: **type** (kallas ibland för ett identitetsnamnutrymme) och **value**. Identitetstypen ger kontext om hur fältet identifierar en post (till exempel en e-postadress). Värdet representerar en posts specifika identitet för den typen (till exempel `jdoe@example.com` för identitetstypen `email`). Vanliga fält som används som identiteter är kontoinformation, enhets-ID och cookie-ID:n.
+Precis som alla identitetsfält i Experience Platform består ett identitetsnamnutrymme av två saker: **type** (kallas ibland för ett identitetsnamnutrymme) och **value**. Identitetstypen ger kontext om hur fältet identifierar en post (till exempel en e-postadress). Värdet representerar en posts specifika identitet för den typen (till exempel `jdoe@example.com` för identitetstypen `email`). Vanliga fält som används som identiteter är kontoinformation, enhets-ID och cookie-ID:n.
 
 >[!TIP]
 >
->Om du inte känner till identitetsnamnutrymmet för en viss datauppsättning kan du hitta det i plattformsgränssnittet. Välj datauppsättningen i listan på arbetsytan **[!UICONTROL Datasets]**. På informationssidan för datauppsättningen håller du pekaren över namnet på datasetens schema i den högra listen. Identitetsnamnområdet visas tillsammans med schemanamnet och beskrivningen.
+>Om du inte känner till identitetsnamnutrymmet för en viss datauppsättning kan du hitta det i Experience Platform-gränssnittet. Välj datauppsättningen i listan på arbetsytan **[!UICONTROL Datasets]**. På informationssidan för datauppsättningen håller du pekaren över namnet på datasetens schema i den högra listen. Identitetsnamnområdet visas tillsammans med schemanamnet och beskrivningen.
 >
 >![Kontrollpanelen för datauppsättningar med en datauppsättning markerad och en schemadialogruta öppnas från informationspanelen för datauppsättningar. Datauppsättningens primära ID är markerat.](../images/ui/record-delete/dataset-primary-identity.png)
 
@@ -140,7 +140,7 @@ När du har lagt till identiteter i begäran anger du ett namn och en valfri bes
 
 >[!IMPORTANT]
 > 
->Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform eller Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetspostborttagningar varje månad.<br>Du kan skicka 10 000 ID:n åt gången med en enda begäran om radering av en post via gränssnittet. [API-metoden för att ta bort poster](../api/workorder.md#create) tillåter att 100 000 ID:n skickas samtidigt.<br>Det är bäst att skicka så många ID:n som möjligt per begäran, upp till din ID-gräns. Om du tänker ta bort en stor mängd ID:n bör du inte skicka in en låg volym eller ett enda ID per postborttagningsbegäran.
+>Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-Time Customer Data Platform eller Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetspostborttagningar varje månad.<br>Du kan skicka 10 000 ID:n åt gången med en enda begäran om radering av en post via gränssnittet. [API-metoden för att ta bort poster](../api/workorder.md#create) tillåter att 100 000 ID:n skickas samtidigt.<br>Det är bäst att skicka så många ID:n som möjligt per begäran, upp till din ID-gräns. Om du tänker ta bort en stor mängd ID:n bör du inte skicka in en låg volym eller ett enda ID per postborttagningsbegäran.
 
 ![Begärandeinställningens [!UICONTROL Name]- och [!UICONTROL Description]-fält med [!UICONTROL Submit] markerat.](../images/ui/record-delete/submit.png)
 
@@ -158,6 +158,6 @@ När begäran har skickats skapas en arbetsordning och visas på fliken [!UICONT
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du tar bort poster i användargränssnittet för Experience Platform. Mer information om hur du utför andra hanteringsuppgifter för datalängd i användargränssnittet finns i [Översikt över användargränssnittet för datalängd](./overview.md).
+I det här dokumentet beskrivs hur du tar bort poster i användargränssnittet i Experience Platform. Mer information om hur du utför andra hanteringsuppgifter för datalängd i användargränssnittet finns i [Översikt över användargränssnittet för datalängd](./overview.md).
 
 Mer information om hur du tar bort poster med hjälp av API:t för datahygien finns i [slutpunktshandboken för arbetsorder](../api/workorder.md).

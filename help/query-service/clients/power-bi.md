@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;Power BI;power bi;connect to query service;
+keywords: Experience Platform;home;populära topics;query service;Query service;Power BI;power bi;connect to query service;
 solution: Experience Platform
-title: Anslut Power BI till frågetjänst
-description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
+title: Anslut Power BI till frågetjänsten
+description: Det här dokumentet går igenom stegen för att ansluta Power BI till Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 2b76b99d1e22d75faf8d758edd6cf08acdec7c21
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1008'
+source-wordcount: '1011'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här guiden kräver att du redan har tillgång till skrivbordsappen [!DNL Po
 >
 > Skrivbordsprogrammet [!DNL Power BI] är **endast** tillgängligt på Windows-enheter.
 
-Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL Power BI] till Experience Platform måste du ha tillgång till arbetsytan Frågor i plattformsgränssnittet. Kontakta din organisationsadministratör om du inte har åtkomst till arbetsytan för frågor just nu.
+Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL Power BI] till Experience Platform måste du ha tillgång till arbetsytan Frågor i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har åtkomst till arbetsytan för frågor just nu.
 
 ## Anslut [!DNL Power BI] till frågetjänsten {#connect-power-bi}
 
@@ -31,13 +31,13 @@ Om du vill ansluta [!DNL Power BI] till frågetjänsten öppnar du [!DNL Power B
 
 Databasdialogrutan [!DNL PostgreSQL] visas och begär värden för servern och databasen. Ytterligare instruktioner om hur du [ansluter till en PostgreSQL-databas från Power Query Desktop](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-desktop) finns i den officiella [!DNL PowerBI] -dokumentationen.
 
-Dessa obligatoriska värden hämtas från dina Adobe Experience Platform-uppgifter. Om du vill hitta dina autentiseringsuppgifter loggar du in på plattformsgränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [referenshandboken](../ui/credentials.md).
+Dessa obligatoriska värden hämtas från dina Adobe Experience Platform-uppgifter. Om du vill hitta dina autentiseringsuppgifter loggar du in på Experience Platform-gränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [referenshandboken](../ui/credentials.md).
 
 >[!IMPORTANT]
 >
->Som Power BI- eller Tableau-användare kan du ansluta Customer Journey Analytics till dina BI-verktyg från fliken med autentiseringsuppgifter för frågetjänsten. Instruktioner om hur du [ansluter dina BI-verktyg till Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics) finns i dokumentationen för autentiseringsuppgifter.
+>Som Power BI- eller Tableau-användare kan du ansluta Customer Journey Analytics till dina BI-verktyg från inloggningsfliken för frågetjänsten. Instruktioner om hur du [ansluter dina BI-verktyg till Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics) finns i dokumentationen för autentiseringsuppgifter.
 
-![Arbetsytan för frågor i Experience Platform med fliken Autentiseringsuppgifter och inloggningsuppgifterna som förfaller är markerade.](../images/clients/power-bi/query-service-credentials-page.png)
+![Arbetsytan Experience Platform Queries med fliken Autentiseringsuppgifter och inloggningsuppgifterna som förfaller är markerade.](../images/clients/power-bi/query-service-credentials-page.png)
 
 I fältet **[!DNL Server]** i dialogrutan [!DNL PostgreSQL database] anger du värdet för värden som finns i avsnittet för frågetjänsten [!UICONTROL Credentials]. Lägg till port `:80` i slutet av värdsträngen för produktion. Exempel: `made-up.platform-query.adobe.io:80`.
 
@@ -69,13 +69,13 @@ Genom att välja **[!DNL Import]** [!DNL Data Connectivity mode] importeras hela
 >
 >Om du vill se dataändringar som har gjorts sedan den första importen måste du uppdatera data i [!DNL Power BI] genom att importera den fullständiga datauppsättningen igen.
 
-Om du vill importera en tabell anger du server- och databasinformationen [ enligt beskrivningen ovan](#connect-power-bi) och väljer **[!DNL Import]** [!DNL Data Connectivity mode] följt av **[!DNL OK]**. Dialogrutan [!DNL Navigator] visas med en lista över alla tillgängliga tabeller. Markera den tabell som du vill förhandsgranska, följt av **[!DNL Load]**, för att överföra datauppsättningen till Power BI. Tabellen importeras nu till [!DNL Power BI].
+Om du vill importera en tabell anger du server- och databasinformationen [ enligt beskrivningen ovan](#connect-power-bi) och väljer **[!DNL Import]** [!DNL Data Connectivity mode] följt av **[!DNL OK]**. Dialogrutan [!DNL Navigator] visas med en lista över alla tillgängliga tabeller. Markera tabellen som du vill förhandsgranska, följt av **[!DNL Load]**, för att hämta datauppsättningen till Power BI. Tabellen importeras nu till [!DNL Power BI].
 
 [Allmän information om att ansluta till data i PowerBi-datorprogrammet](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-quickstart-connect-to-data#connect-to-data) finns i den officiella dokumentationen.
 
 ### Importera tabeller med anpassad SQL
 
-[!DNL Power BI] och andra verktyg från tredje part, som [!DNL Tableau], tillåter för närvarande inte användare att importera kapslade objekt, som XDM-objekt på plattformen. Om du vill ta hänsyn till detta kan du i [!DNL Power BI] använda anpassad SQL för att komma åt dessa kapslade fält och skapa en förenklad vy av data. [!DNL Power BI] läser sedan in den förenklade vyn av tidigare kapslade data som en normal tabell.
+[!DNL Power BI] och andra tredjepartsverktyg som [!DNL Tableau] tillåter för närvarande inte användare att importera kapslade objekt, som XDM-objekt i Experience Platform. Om du vill ta hänsyn till detta kan du i [!DNL Power BI] använda anpassad SQL för att komma åt dessa kapslade fält och skapa en förenklad vy av data. [!DNL Power BI] läser sedan in den förenklade vyn av tidigare kapslade data som en normal tabell.
 
 I dialogrutan [!DNL PostgreSQL database] väljer du **[!DNL Advanced options]** för att ange en anpassad SQL-fråga i avsnittet **[!DNL SQL statement]**. Den här anpassade frågan bör användas för att förenkla JSON-par med namn och värde till ett tabellformat. Den officiella dokumentationen innehåller även information om hur du [ansluter PowerBI med en SQL-sats i de avancerade alternativen](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-using-advanced-options).
 

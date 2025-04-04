@@ -1,10 +1,10 @@
 ---
 title: Fuzzy Match in Query Service
-description: Lär dig hur du utför en matchning av plattformsdata som kombinerar resultat från flera datauppsättningar genom att i princip matcha en valfri sträng.
+description: Lär dig hur du utför en matchning på dina Experience Platform-data som kombinerar resultat från flera datauppsättningar genom att i princip matcha en valfri sträng.
 exl-id: ec1e2dda-9b80-44a4-9fd5-863c45bc74a7
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '815'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ cur = conn.cursor()
 
 [!DNL Jupyter Notebook]-instansen är nu ansluten till frågetjänsten. Om anslutningen lyckas visas inget meddelande. Om anslutningen misslyckas visas ett fel.
 
-### Draw-data från Luma-datauppsättningen {#luma-dataset}
+### Rita data från Luma-datauppsättningen {#luma-dataset}
 
 Analysdata hämtas från den första datauppsättningen med följande kommandon. I korthet har exemplen begränsats till de första 10 resultaten i kolumnen.
 
@@ -96,7 +96,7 @@ array(['Deluxe King Or Queen Room', 'Kona Tower City / Mountain View',
 
 +++
 
-### Draw data från Acme-datauppsättningen {#acme-dataset}
+### Rita data från Acme-datauppsättningen {#acme-dataset}
 
 Analysdata hämtas nu från den andra datauppsättningen med följande kommandon. Som en fortsättning har exemplen begränsats till de första 10 resultaten i kolumnen.
 
@@ -350,7 +350,7 @@ Välj **Utdata** om du vill se resultatet av den här kopplingen.
 
 +++
 
-### Spara oskarpa matchningsresultat till plattformen {#save-to-platform}
+### Spara oskarpa matchningsresultat till Experience Platform {#save-to-platform}
 
 Slutligen kan resultatet av den oskarpa matchningen sparas som en datauppsättning som kan användas i Adobe Experience Platform med hjälp av SQL.
 

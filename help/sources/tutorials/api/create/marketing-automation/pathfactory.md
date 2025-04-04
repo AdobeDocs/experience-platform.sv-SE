@@ -3,9 +3,9 @@ title: Skapa en PathFactory-basanslutning med API:t för Flow-tjänsten
 description: Lär dig hur du autentiserar ditt PathFactory-konto mot Experience Platform med API:t för Flow Service.
 badge: Beta
 exl-id: 2bdfe38b-d3f7-480f-87c6-0b98b9521be2
-source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '546'
 ht-degree: 1%
 
 ---
@@ -20,18 +20,18 @@ Läs det här dokumentet om du vill veta mer om hur du skapar en basanslutning f
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till [!DNL PathFactory] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga autentiseringsuppgifter {#gather-credentials}
 
-För att få åtkomst till ditt PathFactory-konto på plattformen måste du ange följande värden:
+För att få åtkomst till ditt PathFactory-konto på Experience Platform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -45,9 +45,9 @@ Mer information om hur du skyddar och använder dina autentiseringsuppgifter, oc
 
 ## Skapa en basanslutning
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL PathFactory] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL PathFactory]-autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -107,4 +107,4 @@ Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslu
 Genom att följa den här självstudiekursen har du skapat en [!DNL PathFactory]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att överföra data för automatiserad marknadsföring till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/marketing-automation.md)
+* [Skapa ett dataflöde för att överföra automatiserade marknadsföringsdata till Experience Platform med  [!DNL Flow Service] API](../../collect/marketing-automation.md)

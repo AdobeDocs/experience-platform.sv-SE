@@ -3,9 +3,9 @@ title: Personalisera upplevelser på plats för okända besökare med partnerst�
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2565'
+source-wordcount: '2568'
 ht-degree: 1%
 
 ---
@@ -42,7 +42,7 @@ När du planerar att använda attribut som tillhandahålls av partners för att 
 * I vilken utsträckning kan ni leverera personalisering i olika kanaler och för olika användningsområden baserat på sannolikhetshärledda datauppsättningar, jämfört med deterministiskt bekräftade attribut?
 * Hur ska upplevelsen av en förautentiserad men erkänd besökare förändras när de autentiseras?
 
-### UI-funktionalitet, plattformskomponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}
+### Gränssnittsfunktioner, Experience Platform-komponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}
 
 För att implementera det här användningsexemplet måste du använda flera olika delar av Real-Time Customer Data Platform och andra Experience Cloud-lösningar. Kontrollera att du har de [attributbaserade åtkomstkontrollsbehörigheterna](/help/access-control/abac/overview.md) som krävs för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
@@ -131,7 +131,7 @@ Använd först programväljaren i skärmens övre högra hörn för att navigera
 
 Avsnittet **[!UICONTROL Data Collection]** i gränssnittet ser ut ungefär som bilden nedan.
 
-![Datainsamlingssektionen i plattformsgränssnittet.](/help/rtcdp/assets/partner-data/onsite-personalization/data-collection-home.png)
+![Datainsamlingssektionen i Experience Platform-gränssnittet.](/help/rtcdp/assets/partner-data/onsite-personalization/data-collection-home.png)
 
 #### Skapa datastream
 
@@ -259,7 +259,7 @@ Nu kan ni skapa och aktivera målgrupper för personalisering.
 
 #### Skapa målgrupper och skapa kantsegmentering
 
-I plattformsgränssnittet går du till **[!UICONTROL Customer]** > **[!UICONTROL Audiences]** och skapar en målgrupp som fångar webbplatsens besökare.
+I Experience Platform-gränssnittet går du till **[!UICONTROL Customer]** > **[!UICONTROL Audiences]** och skapar en målgrupp som fångar webbplatsens besökare.
 
 ![Vy över hur du navigerar till målgrupper.](/help/rtcdp/assets/partner-data/onsite-personalization/navigate-to-audiences.png)
 

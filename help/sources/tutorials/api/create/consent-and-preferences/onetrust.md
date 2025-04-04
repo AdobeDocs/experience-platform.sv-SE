@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;OneTrust
+keywords: Experience Platform;home;populära topics;OneTrust
 solution: Experience Platform
 title: Skapa ett dataflöde för en OneTrust-integreringskälla med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till OneTrust Integration med API:t för Flow Service.
 exl-id: e224efe0-4756-4b8a-b446-a3e1066f2050
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1913'
+source-wordcount: '1924'
 ht-degree: 0%
 
 ---
@@ -25,23 +25,23 @@ I följande självstudiekurs får du hjälp med att skapa en källanslutning och
 >
 >[!DNL OneTrust Integration]-källkopplingen och dokumentationen skapades av [!DNL OneTrust Integration]-teamet. Kontakta [[!DNL OneTrust] teamet](https://my.onetrust.com/s/contactsupport?language=en_US) direkt om du har frågor eller uppdateringsförfrågningar.
 
-Innan du kan ansluta [!DNL OneTrust Integration] till plattformen måste du hämta din åtkomsttoken. Detaljerade instruktioner om hur du hittar din åtkomsttoken finns i [[!DNL OneTrust Integration] OAuth 2-guiden](https://developer.onetrust.com/docs/api-docs-v3/b3A6MjI4OTUyOTc-generate-access-token).
+Innan du kan ansluta [!DNL OneTrust Integration] till Experience Platform måste du hämta din åtkomsttoken. Detaljerade instruktioner om hur du hittar din åtkomsttoken finns i [[!DNL OneTrust Integration] OAuth 2-guiden](https://developer.onetrust.com/docs/api-docs-v3/b3A6MjI4OTUyOTc-generate-access-token).
 
 Åtkomsttoken uppdateras inte automatiskt när den har upphört att gälla eftersom uppdateringstoken för system-till-system inte stöds av [!DNL OneTrust]. Det är därför nödvändigt att se till att din åtkomsttoken uppdateras i anslutningen innan den upphör att gälla. Den maximala konfigurerbara livslängden för en åtkomsttoken är ett år. Mer information om hur du uppdaterar din åtkomsttoken finns i [[!DNL OneTrust] dokumentet om att hantera dina OAuth 2.0-klientautentiseringsuppgifter](https://developer.onetrust.com/docs/documentation/ZG9jOjIyODk1MTUw-managing-o-auth-2-0-client-credentials).
 
-## Anslut [!DNL OneTrust Integration] till plattformen med API:t [!DNL Flow Service]
+## Anslut [!DNL OneTrust Integration] till Experience Platform med API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
 >API-specifikationerna för [!DNL OneTrust Integration] delas med Adobe för datainhämtning.
 
-I följande självstudiekurs får du hjälp med att skapa en [!DNL OneTrust Integration]-källanslutning och skapa ett dataflöde för att överföra [!DNL OneTrust Integration]-data till plattformen med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I följande självstudiekurs får du hjälp med att skapa en [!DNL OneTrust Integration]-källanslutning och skapa ett dataflöde för att överföra [!DNL OneTrust Integration]-data till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) .
 
 ### Skapa en basanslutning {#base-connection}
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL OneTrust Integration] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL OneTrust Integration]-autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -63,7 +63,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
       "name": "ONETRUST base connection",
-      "description": "ONETRUST base connection to authenticate to Platform",
+      "description": "ONETRUST base connection to authenticate to Experience Platform",
       "connectionSpec": {
           "id": "cf16d886-c627-4872-9936-fb08d6cba8cc",
           "version": "1.0"
@@ -82,7 +82,7 @@ curl -X POST \
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via API:t [!DNL Flow Service]. |
-| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
+| `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till Experience Platform. |
 | `auth.params.` | Innehåller de autentiseringsuppgifter som krävs för att autentisera källan, inklusive åtkomsttoken för att ansluta till API:t. |
 | `auth.params.accessToken` | Åtkomsttoken som motsvarar ditt [!DNL OneTrust Integration]-konto. |
 
@@ -101,7 +101,7 @@ Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutni
 
 Med det grundläggande anslutnings-ID som du skapade i det föregående steget kan du utforska filer och kataloger genom att utföra GET-begäranden.
 
-Använd följande anrop för att hitta sökvägen till filen som du vill hämta till [!DNL Platform]:
+Använd följande anrop för att hitta sökvägen till filen som du vill hämta till [!DNL Experience Platform]:
 
 **API-format**
 
@@ -109,7 +109,7 @@ Använd följande anrop för att hitta sökvägen till filen som du vill hämta 
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fileType={FILE_TYPE}&preview={PREVIEW}
 ```
 
-När du gör en GET-förfrågan om att utforska källans filstruktur och innehåll måste du inkludera frågeparametrarna som listas i tabellen nedan:
+När du utför GET-förfrågningar om källans filstruktur och innehåll måste du inkludera de frågeparametrar som anges i tabellen nedan:
 
 
 | Parameter | Beskrivning |
@@ -117,7 +117,7 @@ När du gör en GET-förfrågan om att utforska källans filstruktur och innehå
 | `{BASE_CONNECTION_ID}` | Det grundläggande anslutnings-ID som genererades i föregående steg. |
 | `objectType=rest` | Den typ av objekt som du vill utforska. För närvarande är det här värdet alltid inställt på `rest`. |
 | `{OBJECT}` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. |
-| `fileType=json` | Filtypen för filen som du vill hämta till plattformen. För närvarande är `json` den enda filtypen som stöds. |
+| `fileType=json` | Filtypen för filen som du vill hämta till Experience Platform. För närvarande är `json` den enda filtypen som stöds. |
 | `{PREVIEW}` | Ett booleskt värde som definierar om innehållet i anslutningen stöder förhandsvisning. |
 
 **Begäran**
@@ -565,7 +565,7 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen.
 
 ### Skapa en källanslutning {#source-connection}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till API:t [!DNL Flow Service]. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-begäran till API:t [!DNL Flow Service]. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 **API-format**
 
@@ -621,15 +621,15 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ### Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/) utförs, med ID:t för målschemat i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 
@@ -678,7 +678,7 @@ curl -X POST \
 | `name` | Namnet på målanslutningen. Kontrollera att namnet på målanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om målanslutningen. |
 | `description` | Ett valfritt värde som du kan inkludera för att ange mer information om målanslutningen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Lake]. Detta fasta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | Formatet för de [!DNL OneTrust Integration]-data som du vill hämta till plattformen. |
+| `data.format` | Formatet på de [!DNL OneTrust Integration]-data som du vill hämta till Experience Platform. |
 | `params.dataSetId` | Måldatauppsättnings-ID som hämtades i ett tidigare steg. |
 
 
@@ -695,7 +695,7 @@ Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta 
 
 ### Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en POST-begäran till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -786,13 +786,13 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ### Skapa ett flöde {#flow}
 
-Det sista steget mot att överföra data från [!DNL OneTrust Integration] till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra data från [!DNL OneTrust Integration] till Experience Platform är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 * [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
 Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day` eller `week`. Intervallvärdet anger emellertid perioden mellan två på varandra följande frågor, och om du skapar en engångsinmatning behöver du inte ange något intervall. Intervallvärdet måste vara lika med eller större än `15` för alla andra frekvenser.
 
@@ -849,7 +849,7 @@ curl -X POST \
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
 | `sourceConnectionIds` | [källanslutnings-ID](#source-connection) genererades i ett tidigare steg. |
 | `targetConnectionIds` | [målanslutnings-ID](#target-connection) genererades i ett tidigare steg. |
-| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
+| `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till Experience Platform. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
@@ -878,7 +878,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ### Uppdatera ditt dataflöde
 
-Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten i [!DNL Flow Service]-API:t, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i guiden om att [uppdatera källkodsdataflöden med API:t](../../update-dataflows.md).
+Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i guiden om att [uppdatera källkodsdataflöden med API:t](../../update-dataflows.md).
 
 ### Uppdatera ditt konto
 

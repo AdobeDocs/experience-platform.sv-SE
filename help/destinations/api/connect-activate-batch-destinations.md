@@ -5,9 +5,9 @@ title: Anslut till gruppmål och aktivera data med API:t för Flow Service
 description: Stegvisa instruktioner om hur du använder API:t för Flow Service för att skapa ett batchmolnlagringsutrymme eller ett marknadsföringsmål för e-post i Experience Platform och aktivera data
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3396'
+source-wordcount: '3401'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ I den här självstudien används målet [!DNL Adobe Campaign] i alla exempel, m
 
 ![Översikt - stegen för att skapa ett mål och aktivera målgrupper](../assets/api/email-marketing/overview.png)
 
-Om du föredrar att använda användargränssnittet för plattformen för att ansluta till ett mål och aktivera data kan du titta i självstudiekurserna [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att exportera målgrupper](../ui/activate-batch-profile-destinations.md).
+Om du föredrar att använda Experience Platform användargränssnitt för att ansluta till ett mål och aktivera data kan du titta i självstudiekurserna [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att exportera målgrupper](../ui/activate-batch-profile-destinations.md).
 
 ## Komma igång {#get-started}
 
@@ -42,9 +42,9 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] låter dig skapa målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till batchdestinationer i Platform.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till batchdestinationer i Experience Platform.
 
 ### Samla in nödvändiga inloggningsuppgifter {#gather-required-credentials}
 
@@ -65,13 +65,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values-headers}
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Platform] API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Experience Platform] API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -79,7 +79,7 @@ Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sand
 >
 >Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * Innehållstyp: `application/json`
 
@@ -91,7 +91,7 @@ Du hittar referensdokumentation för alla API-åtgärder i den här självstudie
 
 ![Översikt över målsteg steg 1](../assets/api/batch-destination/step1.png)
 
-Som ett första steg bör du bestämma vilket mål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-begäran till slutpunkten `connectionSpecs` för att returnera en lista över tillgängliga mål:
+Som ett första steg bör du bestämma vilket mål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-begäran till slutpunkten `connectionSpecs` om du vill returnera en lista över tillgängliga mål:
 
 **API-format**
 
@@ -175,7 +175,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | --------- | ----------- |
 | `name` | Ange ett namn för basanslutningen till Experience Platform [!DNL Profile store]. |
 | `description` | Du kan också ange en beskrivning för basanslutningen. |
-| `connectionSpec.id` | Använd anslutningsspec-ID för profilarkivet [Experience Platform ](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+| `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 
 {style="table-layout:auto"}
 
@@ -226,7 +226,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | --------- | ----------- |
 | `name` | Ange ett namn för källanslutningen till Experience Platform [!DNL Profile store]. |
 | `description` | Du kan också ange en beskrivning för källanslutningen. |
-| `connectionSpec.id` | Använd anslutningsspec-ID för profilarkivet [Experience Platform ](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+| `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 | `baseConnectionId` | Använd det grundläggande anslutnings-ID som du fick i föregående steg. |
 | `data.format` | `CSV` är för närvarande det enda filexportformat som stöds. |
 
@@ -869,7 +869,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 Med hjälp av flödesspecifikationen, källanslutningen och ID:n för målanslutningen som du fick i föregående steg kan du nu skapa ett dataflöde mellan dina [!DNL Experience Platform]-data och målet där du vill exportera datafiler. Föreställ dig det här steget som att skapa pipeline genom vilken data senare flödar mellan [!DNL Experience Platform] och det önskade målet.
 
-Om du vill skapa ett dataflöde ska du utföra en begäran om POST enligt nedan och samtidigt ange de värden som anges nedan i nyttolasten.
+Om du vill skapa ett dataflöde utför du en POST-begäran enligt nedan, med de värden som anges nedan i nyttolasten.
 
 **API-format**
 
@@ -921,7 +921,7 @@ curl -X POST \
 | --------- | ----------- |
 | `name` | Ange ett namn för dataflödet som du skapar. |
 | `description` | Du kan också ange en beskrivning för dataflödet. |
-| `flowSpec.Id` | Använd flödets spec-ID för det batchmål som du vill ansluta till. Om du vill hämta flödets spec-ID utför du en GET-åtgärd på `flowspecs`-slutpunkten, vilket visas i [API-referensdokumentationen för flödesspecifikationer](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). I svaret söker du efter `upsTo` och kopierar motsvarande ID för batchmålet som du vill ansluta till. För Adobe Campaign söker du till exempel efter `upsToCampaign` och kopierar parametern `id`. |
+| `flowSpec.Id` | Använd flödets spec-ID för det batchmål som du vill ansluta till. Om du vill hämta flödets spec-ID utför du en GET-åtgärd på slutpunkten `flowspecs`, vilket visas i [API-referensdokumentationen för flödesspecifikationer](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). I svaret söker du efter `upsTo` och kopierar motsvarande ID för batchmålet som du vill ansluta till. För Adobe Campaign söker du till exempel efter `upsToCampaign` och kopierar parametern `id`. |
 | `sourceConnectionIds` | Använd det källanslutnings-ID som du fick i steget [Anslut till dina Experience Platform-data](#connect-to-your-experience-platform-data). |
 | `targetConnectionIds` | Använd det målanslutnings-ID som du fick i steget [Anslut till batchmålet](#connect-to-batch-destination). |
 | `transformations` | I nästa steg ska du fylla i det här avsnittet med målgrupper och profilattribut som ska aktiveras. |
@@ -1036,11 +1036,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
 | `name` | *Valfritt*. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
-| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tid då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
+| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
 | `exportMode` | Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. |
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
 | `frequency` | Obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE` eller `DAILY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
-| `triggerType` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du väljer läget `"DAILY_FULL_EXPORT"` i `frequency`-väljaren. <br> obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` om du vill att aktiveringsjobbet ska köras direkt när det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du också lägga till en `startTime` för att ange vid vilken tidpunkt i UTC som den dagliga exporten ska ske.</li></ul> |
+| `triggerType` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du väljer läget `"DAILY_FULL_EXPORT"` i `frequency`-väljaren. <br> obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` om du vill att aktiveringsjobbet ska köras omedelbart efter att Experience Platform batchsegmenteringsjobb har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Detta garanterar att Experience Platform-profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du också lägga till en `startTime` för att ange vid vilken tidpunkt i UTC som den dagliga exporten ska ske.</li></ul> |
 | `endDate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Gäller inte vid val av `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
 | `startTime` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
 
@@ -1060,7 +1060,7 @@ Leta efter ett svar från 2012. Ingen svarstext returneras. Om du vill verifiera
 
 Som ett sista steg i självstudiekursen bör du validera att målgrupper och profilattribut verkligen har mappats korrekt till dataflödet.
 
-Gör följande GET-förfrågan för att validera detta:
+Gör följande GET-begäran för att validera detta:
 
 **API-format**
 
@@ -1240,11 +1240,11 @@ Det returnerade svaret ska i parametern `transformations` inkludera de målgrupp
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit Platform till ett av dina favoritfilbaserade mål för e-postmarknadsföring och konfigurerat ett dataflöde till respektive mål för att exportera datafiler. Utgående data kan nu användas i målet för e-postkampanjer, riktad reklam och många andra användningsfall. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Genom att följa den här självstudiekursen har du anslutit Experience Platform till ett av dina favoritfilbaserade mål för e-postmarknadsföring och konfigurerat ett dataflöde till respektive mål för att exportera datafiler. Utgående data kan nu användas i målet för e-postkampanjer, riktad reklam och många andra användningsfall. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)

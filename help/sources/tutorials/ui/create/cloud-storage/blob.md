@@ -1,17 +1,17 @@
 ---
 title: Skapa en Azure Blob Source Connection i användargränssnittet
-description: Lär dig hur du skapar en Azure Blob-källanslutning med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en Azure Blob-källanslutning med Experience Platform-användargränssnittet.
 exl-id: 0e54569b-7305-4065-981e-951623717648
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Azure Blob]-källanslutning i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Blob]-källanslutning (kallas nedan [!DNL Blob]) med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Blob]-källanslutning (kallas nedan [!DNL Blob]) med Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -26,7 +26,7 @@ Om du redan har en giltig [!DNL Blob]-anslutning kan du hoppa över resten av de
 
 ### Filformat som stöds
 
-Experience Platform stöder följande filformat som kan importeras från externa lagringsplatser:
+Experience Platform har stöd för följande filformat som kan importeras från externa lagringsplatser:
 
 * Avgränsaravgränsade värden (DSV): Du kan använda valfri enskild kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla in platta filer i vilket format som helst.
 * JavaScript Object Notation (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
@@ -58,13 +58,13 @@ När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stege
 
 ## Anslut ditt [!DNL Blob]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
 Under kategorin [!UICONTROL Cloud storage] väljer du **[!UICONTROL Azure Blob Storage]** och sedan **[!UICONTROL Add data]**.
 
-![Katalogen för Experience Platform-källor med Azure Blob Storage-källan vald.](../../../../images/tutorials/create/blob/catalog.png)
+![Experience Platform-källkatalogen med Azure Blob Storage-källan vald.](../../../../images/tutorials/create/blob/catalog.png)
 
 Sidan **[!UICONTROL Connect to Azure Blob Storage]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -108,4 +108,4 @@ Om du vill autentisera med en signatur för delad åtkomst väljer du **[!UICONT
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Blob]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Blob]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Experience Platform](../../dataflow/batch/cloud-storage.md).

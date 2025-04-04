@@ -4,9 +4,9 @@ title: Standardvarningsregler
 description: Det här dokumentet innehåller de fördefinierade varningsreglerna från Experience Platform.
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: 3a800560376973a85f9f77a481ffead3c28a05aa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4277'
+source-wordcount: '4279'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 Adobe Experience Platform innehåller flera fördefinierade varningsregler som du kan aktivera för din organisation. Detta dokument innehåller information om dessa varningsregler som tillhandahålls av Adobe. Mer allmän information om varningar i Experience Platform finns i [varningsöversikten](./overview.md).
 
-När du [visar varningsregler i plattformsgränssnittet](./ui.md) kan du prenumerera på varje regel individuellt. När du prenumererar på aviseringar via [I/O-händelsemeddelanden](./subscribe.md) är dock varningsreglerna ordnade i olika prenumerationspaket. I tabellerna nedan visas varje regel med sitt motsvarande I/O Event-prenumerationsnamn.
+När du [visar varningsregler i Experience Platform-gränssnittet](./ui.md) kan du prenumerera på varje regel separat. När du prenumererar på aviseringar via [I/O-händelsemeddelanden](./subscribe.md) är dock varningsreglerna ordnade i olika prenumerationspaket. I tabellerna nedan visas varje regel med sitt motsvarande I/O Event-prenumerationsnamn.
 
 ## Källor {#sources}
 
@@ -36,7 +36,7 @@ Om du tidigare har prenumererat på följande larmtyp får du inte längre någr
 
 | Prenumeration på I/O-händelse | Varningsregel | Beskrivning |
 | --- | --- | --- |
-| Körningsfördröjningar, fel och fel för Source Flow | Brist på intag | Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform. |
+| Körningsfördröjningar, fel och fel för Source Flow | Brist på intag | Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Experience Platform. |
 
 {style="table-layout:auto"}
 

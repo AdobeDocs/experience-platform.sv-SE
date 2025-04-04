@@ -3,9 +3,9 @@ keywords: sociala medier;sociala mål;Livefyre;facebook;Facebook
 title: Översikt över sociala mål
 description: Med sociala destinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: c5da8dae-c1ff-45a8-b769-037d7bb7947a
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '105'
+source-wordcount: '106'
 ht-degree: 0%
 
 ---
@@ -27,4 +27,4 @@ Adobe Experience Platform har för närvarande stöd för följande sociala mål
 
 ## Anslut till ett nytt socialt mål {#connect-destination}
 
-För att kunna skicka målgrupper till sociala mål för era kampanjer måste Platform först ansluta till målet. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
+För att skicka målgrupper till sociala mål för era kampanjer måste Experience Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.

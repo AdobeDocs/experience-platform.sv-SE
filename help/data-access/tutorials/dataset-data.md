@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;dataåtkomst;dataåtkomst api;frågedataåtkomst
+keywords: Experience Platform;home;populära topics;data access;data access api;query data access
 solution: Experience Platform
 title: Visa datauppsättningsdata med API:t för dataåtkomst
 type: Tutorial
 description: Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. I det här dokumentet introduceras några av de unika funktionerna i API:t för dataåtkomst, som sidindelning och partiella hämtningar.
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: 9144a5f4cce88fc89973a7fea6d69384cc5f4ba1
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1364'
+source-wordcount: '1365'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Använd den här steg-för-steg-självstudiekursen för att lära dig hur du hit
 
 Den här självstudiekursen kräver en fungerande förståelse för hur du skapar och fyller i en datauppsättning. Mer information finns i självstudiekursen [Skapa datauppsättning](../../catalog/datasets/create.md).
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Experience Platform API:er.
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
@@ -28,21 +28,21 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-Om du vill anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../landing/api-authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+Om du vill anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../landing/api-authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bärare `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden utförs i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden utförs i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 - Content-Type: application/json
 
@@ -418,7 +418,7 @@ Ett lyckat svar returnerar filens innehåll.
 
 Om du vill hämta ett specifikt intervall med byte från en fil anger du ett intervallhuvud under en `GET /files/{FILE_ID}`-begäran till [!DNL Data Access] API. Om intervallet inte anges hämtas hela filen som standard av API:t.
 
-Exemplet HEAD i det [föregående avsnittet](#retrieve-the-metadata-of-a-file) ger storleken på en viss fil i byte.
+HEAD-exemplet i det [föregående avsnittet](#retrieve-the-metadata-of-a-file) visar storleken på en viss fil i byte.
 
 **API-format**
 

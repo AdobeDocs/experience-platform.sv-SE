@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;data model;schema register;schemaregister;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;
 solution: Experience Platform
 title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: eb1cf204e95591082b27dc97cd3c709a23b20b08
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1364'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ För att du ska kunna använda utvecklarhandboken måste du ha en fungerande fö
 * [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    * [Grunderna i schemakomposition](../schema/composition.md): Lär dig mer om grundläggande byggstenar i XDM-scheman.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 XDM använder JSON-schemaformatering för att beskriva och validera strukturen för importerade kundupplevelsedata. Vi rekommenderar därför starkt att du läser [JSON-schemats officiella dokumentation](https://json-schema.org/) för att få en bättre förståelse för den underliggande tekniken.
 
@@ -32,29 +32,29 @@ API-dokumentationen för [!DNL Schema Registry] innehåller exempel på API-anro
 
 ## Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [sandlådedokumentationen](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [sandlådedokumentationen](../../sandboxes/home.md).
 
-Alla sökbegäranden (GET) till [!DNL Schema Registry] kräver ytterligare ett `Accept`-huvud, vars värde bestämmer vilket format som informationen returneras av API:t. Mer information finns i avsnittet [Acceptera rubrik](#accept) nedan.
+Alla uppslagsbegäranden (GET) till [!DNL Schema Registry] kräver ytterligare ett `Accept`-huvud, vars värde bestämmer vilket format som informationen returneras av API:t. Mer information finns i avsnittet [Acceptera rubrik](#accept) nedan.
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 * `Content-Type: application/json`
 
 ## Lär känna ditt TENANT_ID {#know-your-tenant_id}
 
-Under hela API-guiderna ser du referenser till en `TENANT_ID`. Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i din organisation. Om du inte känner till ditt ID kan du få åtkomst till det genom att utföra följande GET-förfrågan:
+Under hela API-guiderna ser du referenser till en `TENANT_ID`. Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i din organisation. Om du inte känner till ditt ID kan du få åtkomst till det genom att utföra följande GET-begäran:
 
 **API-format**
 
@@ -197,7 +197,7 @@ Anrop till [!DNL Schema Registry]-API:t stöder antingen den URL-kodade `$id` UR
 
 ## Acceptera rubrik {#accept}
 
-När du utför list- och lookup-åtgärder (GET) i API:t [!DNL Schema Registry] krävs en `Accept`-rubrik för att fastställa formatet för de data som returneras av API:t. När du söker efter specifika resurser måste ett versionsnummer också inkluderas i rubriken `Accept`.
+När du utför list- och uppslagsåtgärder (GET) i API:t [!DNL Schema Registry] krävs en `Accept`-rubrik för att fastställa formatet för de data som returneras av API:t. När du söker efter specifika resurser måste ett versionsnummer också inkluderas i rubriken `Accept`.
 
 I följande tabell visas kompatibla rubrikvärden för `Accept`, inklusive de med versionsnummer, tillsammans med beskrivningar av vad API:t returnerar när de används.
 
@@ -216,13 +216,13 @@ I följande tabell visas kompatibla rubrikvärden för `Accept`, inklusive de me
 
 >[!NOTE]
 >
->Plattformen stöder för närvarande endast en huvudversion för varje schema (`1`). Därför måste värdet för `version` alltid vara `1` när sökförfrågningar utförs för att returnera den senaste delversionen av schemat. Mer information om schemaversion finns i underavsnittet nedan.
+>Experience Platform stöder för närvarande endast en huvudversion för varje schema (`1`). Därför måste värdet för `version` alltid vara `1` när sökförfrågningar utförs för att returnera den senaste delversionen av schemat. Mer information om schemaversion finns i underavsnittet nedan.
 
 ### Schemaversion {#versioning}
 
-Schemaversioner refereras av `Accept` huvuden i API:t för schemaregister och i `schemaRef.contentType` egenskaper i underordnade API-nyttolaster för plattformstjänster.
+Schemaversioner refereras av `Accept` huvuden i API:t för schemaregister och i `schemaRef.contentType` egenskaper i Experience Platform tjänstens API-nyttolaster längre fram.
 
-För närvarande stöder Platform endast en huvudversion (`1`) för varje schema. Enligt [reglerna för schemautveckling](../schema/composition.md#evolution) måste varje uppdatering av ett schema vara icke-förstörande, vilket innebär att nya delversioner av ett schema (`1.2`, `1.3` osv.) är alltid bakåtkompatibla med tidigare mindre versioner. När du anger `version=1` returnerar schemaregistret därför alltid schemats **senaste** huvudversion `1` , vilket innebär att tidigare delversioner inte returneras.
+För närvarande stöder Experience Platform endast en huvudversion (`1`) för varje schema. Enligt [reglerna för schemautveckling](../schema/composition.md#evolution) måste varje uppdatering av ett schema vara icke-förstörande, vilket innebär att nya delversioner av ett schema (`1.2`, `1.3` osv.) alltid är bakåtkompatibla med tidigare delversioner. När du anger `version=1` returnerar schemaregistret därför alltid schemats **senaste** huvudversion `1` , vilket innebär att tidigare delversioner inte returneras.
 
 >[!NOTE]
 >

@@ -2,9 +2,9 @@
 title: B2B-namnutrymmen och scheman
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: ebbed5c6ff7037b138588a79a05e6ef13d1856d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1659'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md) för att dina B2B-scheman ska vara kvalificerade i [kundprofilen i realtid](../../../../profile/home.md).
+>Du måste ha tillgång till [Adobe Real-Time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md) för att dina B2B-scheman ska vara kvalificerade i [kundprofilen i realtid](../../../../profile/home.md).
 
 >[!NOTE]
 >
->Du kan använda mallar i Adobe Experience Platform användargränssnitt för att göra det enklare att skapa resurser för B2B- och B2C-data. Mer information finns i handboken om [användning av mallar i plattformsgränssnittet](../../../tutorials/ui/templates.md).
+>Du kan använda mallar i Adobe Experience Platform användargränssnitt för att göra det enklare att skapa resurser för B2B- och B2C-data. Mer information finns i guiden om att [använda mallar i Experience Platform-användargränssnittet](../../../tutorials/ui/templates.md).
 
 Läs det här dokumentet för information om den underliggande inställningen för de namnutrymmen och scheman som ska användas med B2B-källor. Det här dokumentet innehåller även information om hur du konfigurerar det automatiseringsverktyg för Postman som krävs för att skapa B2B-namnutrymmen och scheman.
 
@@ -30,21 +30,21 @@ Läs det här dokumentet för information om den underliggande inställningen f�
 Läs följande dokumentation om du behöver information om hur du konfigurerar din [!DNL Postman]-miljö så att den stöder automatisk generering av B2B-namnrymd och schema.
 
 - Du kan hämta samlingen och miljön för automatisk generering av namnområde och scheman från den här [GitHub-databasen](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility).
-- Information om hur du använder plattforms-API:er, inklusive information om hur du samlar in värden för obligatoriska huvuden och läser exempel-API-anrop, finns i guiden [Komma igång med plattforms-API:er](../../../../landing/api-guide.md).
-- Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md).
-- Information om hur du konfigurerar [!DNL Postman] för plattforms-API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../../landing/postman.md).
+- Information om hur du använder Experience Platform API:er, inklusive information om hur du samlar in värden för obligatoriska huvuden och läser API-anrop från exempel, finns i guiden [Komma igång med Experience Platform API:er](../../../../landing/api-guide.md).
+- Mer information om hur du genererar autentiseringsuppgifter för Experience Platform API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md).
+- Information om hur du konfigurerar [!DNL Postman] för Experience Platform API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../../landing/postman.md).
 
-Med en plattformsutvecklarkonsol och [!DNL Postman] konfigurerad kan du nu börja använda lämpliga miljövärden i din [!DNL Postman] -miljö.
+Med en Experience Platform-utvecklarkonsol och [!DNL Postman] konfigurerad kan du nu börja använda lämpliga miljövärden i din [!DNL Postman] -miljö.
 
 Följande tabell innehåller exempelvärden samt ytterligare information om hur du fyller i din [!DNL Postman]-miljö:
 
 | Variabel | Beskrivning | Exempel |
 | --- | --- | --- |
 | `CLIENT_SECRET` | En unik identifierare som används för att generera `{ACCESS_TOKEN}`. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{CLIENT_SECRET}`. | `{CLIENT_SECRET}` |
-| `API_KEY` | En unik identifierare som används för att autentisera anrop till API:er för Experience Platform. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{API_KEY}`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `API_KEY` | En unik identifierare som används för att autentisera anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{API_KEY}`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
 | `ACCESS_TOKEN` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{ACCESS_TOKEN}`. | `Bearer {ACCESS_TOKEN}` |
 | `META_SCOPE` | Med avseende på [!DNL Marketo] är det här värdet fast och alltid inställt på: `ent_dataservices_sdk`. | `ent_dataservices_sdk` |
-| `CONTAINER_ID` | Behållaren `global` innehåller alla klasser, schemafältgrupper, datatyper och scheman som tillhandahålls av Adobe och Experience Platform-partner. Med avseende på [!DNL Marketo] är det här värdet fast och ställs alltid in på `global`. | `global` |
+| `CONTAINER_ID` | Behållaren `global` innehåller alla standardklasser som tillhandahålls av Adobe- och Experience Platform-partners, schemafältgrupper, datatyper och scheman. Med avseende på [!DNL Marketo] är det här värdet fast och ställs alltid in på `global`. | `global` |
 | `TECHNICAL_ACCOUNT_ID` | En autentiseringsuppgift som används för att integrera med Adobe I/O. | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
 | `IMS` | Identity Management System (IMS) utgör ramverket för autentisering till Adobes tjänster. Med avseende på [!DNL Marketo] är det här värdet fast och alltid inställt på: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
 | `IMS_ORG` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen [Konfigurera utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md) för instruktioner om hur du hämtar din `{ORG_ID}`-information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
@@ -98,7 +98,7 @@ Följande tabell innehåller information om den underliggande inställningen fö
 
 Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data.
 
-Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera schemafältgrupper.
+Innan data kan hämtas in till Experience Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera schemafältgrupper.
 
 Mer information om schemakompositionsmodellen, inklusive designprinciper och bästa praxis, finns i [Grunderna för schemakomposition](../../../../xdm/schema/composition.md).
 
@@ -125,4 +125,4 @@ Följande tabell innehåller information om de underliggande inställningarna f�
 
 ## Nästa steg
 
-Om du vill lära dig hur du ansluter dina [!DNL Marketo]-data till plattformen kan du läsa självstudiekursen om hur du [skapar en Marketo-källkoppling i användargränssnittet](../../../tutorials/ui/create/adobe-applications/marketo.md).
+Om du vill lära dig hur du ansluter dina [!DNL Marketo]-data till Experience Platform kan du läsa självstudiekursen om hur du [skapar en Marketo-källkoppling i användargränssnittet](../../../tutorials/ui/create/adobe-applications/marketo.md).

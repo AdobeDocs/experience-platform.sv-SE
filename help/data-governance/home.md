@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datastyrning - översikt
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 1a050cfb41a28053606f07931c7c97d15989ac3e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1618'
+source-wordcount: '1619'
 ht-degree: 0%
 
 ---
@@ -20,13 +20,13 @@ ht-degree: 0%
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html" text="Datastyrning - översikt"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html" text="Översikt över etiketter för datastyrning"
 
-En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dina dataåtgärder i [!DNL Platform] är kompatibla med dataanvändningsprinciper.
+En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dina dataåtgärder i [!DNL Experience Platform] är kompatibla med dataanvändningsprinciper.
 
 Hantera kunddata och säkerställ att regler, begränsningar och regler som gäller för dataanvändning följs med Adobe Experience Platform Data Governance. Datastyrning spelar en nyckelroll inom Experience Platform på olika nivåer, inklusive katalogisering, datalinje, etikettering av dataanvändning, policyer för dataanvändning och kontroll av användningen av data för marknadsföringsåtgärder.
 
 >[!NOTE]
 >
->I Experience Platform gäller datastyrning endast hur data används eller aktiveras, oavsett vilken användare som utför åtgärden. Mer information om hur du styr åtkomsten till specifika datafält för vissa plattformsanvändare i organisationen finns i dokumentationen om [attributbaserad åtkomstkontroll](../access-control/abac/overview.md) i stället.
+>I Experience Platform gäller datastyrning endast hur data används eller aktiveras, oavsett vilken användare som utför åtgärden. Mer information om hur du styr åtkomsten till specifika datafält för vissa Experience Platform-användare i din organisation finns i dokumentationen om [attributbaserad åtkomstkontroll](../access-control/abac/overview.md) i stället.
 
 ## Datastyrningsroller {#data-governance-roles}
 
@@ -77,7 +77,7 @@ Ramverket för datastyrning innehåller fördefinierade etiketter för dataanvä
 >
 >I guiden om [dataanvändningsetiketter som stöds](labels/reference.md) finns en fullständig lista över tillgängliga etiketter och definitioner för varje etiketttyp.
 
-Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata när de importeras till Experience Platform, eller så snart data blir tillgängliga i [!DNL Platform].
+Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata när de importeras till Experience Platform, eller så snart data blir tillgängliga i [!DNL Experience Platform].
 
 Mer information om hur dataanvändningsetiketter används för att framtvinga regelefterlevnad för datastyrning finns i översikten för [dataanvändningsetiketter](./labels/overview.md).
 

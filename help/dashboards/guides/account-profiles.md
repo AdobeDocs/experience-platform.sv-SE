@@ -2,9 +2,9 @@
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: a0b762cb89f45313724187ce36b80b2f3d0548eb
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2245'
+source-wordcount: '2249'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller en översikt över funktionerna på kontrollpane
 
 ## Komma igång
 
-Du måste ha behörighet till [Adobe Real-time Customer Data Platform B2B edition](../../rtcdp/b2b-overview.md) för åtkomst till B2B [!UICONTROL Account Profiles]-instrumentpanelen.
+Du måste ha behörighet till [Adobe Real-Time Customer Data Platform B2B edition](../../rtcdp/b2b-overview.md) för åtkomst till B2B [!UICONTROL Account Profiles]-instrumentpanelen.
 
 ## Data för kontoprofiler {#data}
 
@@ -31,9 +31,9 @@ Profildata i ögonblicksbilden visar data exakt som de visas vid den specifika t
 
 ## Utforska instrumentpanelen [!UICONTROL Account Profiles] {#explore}
 
-Om du vill navigera till kontrollpanelen [!UICONTROL Account Profiles] i plattformsgränssnittet väljer du **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringspanelen.
+Om du vill navigera till kontrollpanelen [!UICONTROL Account Profiles] i Experience Platform-gränssnittet väljer du **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringspanelen.
 
-![Plattformsgränssnittet med kontoprofiler i den vänstra navigeringen är markerat och fliken Översikt visas.](../images/account-profiles/account-profiles-dashboard.png)
+![Experience Platform-gränssnittet med kontoprofiler i den vänstra navigeringen är markerat och översiktsfliken visas.](../images/account-profiles/account-profiles-dashboard.png)
 
 Från kontrollpanelen [!UICONTROL Account Profiles] kan du antingen [bläddra bland de kontoprofiler som är inkapslade i din organisation](#browse-account-profiles) eller [visa alla dina kontoprofildata i en översikt med widgetar](#standard-widgets).
 
@@ -61,7 +61,7 @@ Välj [!UICONTROL Profile ID] bland resultaten som visas på fliken [!UICONTROL 
 
 ![Kontoprofilerna bläddrar på fliken med resultat visade och profil-ID markerat.](../images/account-profiles/account-profiles-browse-tab.png)
 
-Kontoprofilinformationen som visas på fliken [!UICONTROL Details] har sammanfogats från flera profilfragment till en enda vy av det enskilda kontot. Läs dokumentationen om [att bläddra bland kontoprofiler i Adobe Real-time Customer Data Platform](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) om du vill veta mer om visningsfunktioner för kontoprofiler i användargränssnittet för plattformen.
+Kontoprofilinformationen som visas på fliken [!UICONTROL Details] har sammanfogats från flera profilfragment till en enda vy av det enskilda kontot. Läs dokumentationen om [att bläddra bland kontoprofiler i Adobe Real-Time Customer Data Platform](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) om du vill veta mer om visningsfunktioner för kontoprofiler i Experience Platform användargränssnitt.
 
 ## Standardwidgetar {#standard-widgets}
 
@@ -70,7 +70,7 @@ Kontoprofilinformationen som visas på fliken [!UICONTROL Details] har sammanfog
 >title="Översikt över kunder per konto"
 >abstract="Denna fördjupningswidget ger insikter i B2B-datastrukturen. Det hjälper dig att identifiera hur många kontoprofiler som inte har några kopplade kundprofiler eller som har en eller flera kundprofiler kopplade till sig.<ul><li>Direktkunder: är kundprofiler som är direkt kopplade till ett konto via vägen `personComponents`.</li><li>Indirekta kunder: är kundprofiler som är länkade till ett konto via vägen `Account-Person`.</li></ul>"
 
-Adobe tillhandahåller standardwidgetar som du kan använda för att visualisera olika mätvärden för dina kontoprofiler.
+Adobe innehåller standardwidgetar som du kan använda för att visualisera olika mått som relaterar till dina kontoprofiler.
 
 >[!IMPORTANT]
 >
@@ -129,7 +129,7 @@ Välj mappikonen (![En mappikon om du vill växla mellan genomgången och kontro
 
 ![Detaljvyn i kontrollpanelen Kontoprofiler med navigeringslistrutan markerad.](../images/account-profiles/navigation-dropdown.png)
 
-Om du vill veta mer om genomgång i plattformsgränssnittet läser du [Detaljguiden](../sql-insights-query-pro-mode/drill-through.md).
+Mer information om genomgång i Experience Platform finns i [Detaljguiden](../sql-insights-query-pro-mode/drill-through.md).
 
 #### [!UICONTROL Customers per account detail] {#customers-per-account-detail}
 
@@ -239,4 +239,4 @@ För att lösa problemet måste du importera B2B-entitetsdata, till exempel *aff
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu veta hur du hittar kontrollpanelen [!UICONTROL Account Profiles] och även förstå de mått som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med kontoprofiler som en del av dina B2B-data i användargränssnittet för Experience Platform finns i [kontoprofilöversikten](../../rtcdp/accounts/account-profile-overview.md) för Adobe Real-Time CDP, B2B edition.
+Genom att följa det här dokumentet bör du nu veta hur du hittar kontrollpanelen [!UICONTROL Account Profiles] och även förstå de mått som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med kontoprofiler som en del av dina B2B-data i Experience Platform-användargränssnittet finns i [kontoprofilöversikten](../../rtcdp/accounts/account-profile-overview.md) för Adobe Real-Time CDP, B2B edition.

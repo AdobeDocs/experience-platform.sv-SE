@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;Utanför;Utanför crm-mål
 title: Utdataanslutning
 description: Med Outreach-destinationen kan du exportera dina kontodata och aktivera dem inom ramarna för ditt företags behov.
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1619'
+source-wordcount: '1639'
 ht-degree: 0%
 
 ---
@@ -26,15 +26,15 @@ Som marknadsförare kan ni leverera personaliserade upplevelser till era presumt
 
 ## Förhandskrav {#prerequisites}
 
-### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
+### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
 Innan du aktiverar data till målet [!DNL Outreach] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
-Se Adobe-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
+Se Adobe dokumentation för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
 ### Förutsättningar {#prerequisites-destination}
 
-Observera följande krav i [!DNL Outreach] för att kunna exportera data från Platform till ditt [!DNL Outreach]-konto:
+Observera följande krav i [!DNL Outreach] för att kunna exportera data från Experience Platform till ditt [!DNL Outreach]-konto:
 
 #### Du måste ha ett Outlook-konto {#prerequisites-account}
 
@@ -83,7 +83,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li> Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Outreach] uppdateras med motsvarande målgruppsstatus från Platform, baserat på värdet [!UICONTROL Mapping ID] som tillhandahölls under steget [målgruppsplanering](#schedule-segment-export-example).</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li> Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Outreach] uppdateras med motsvarande målgruppsstatus från Experience Platform, baserat på det [!UICONTROL Mapping ID]-värde som angavs under [målgruppsplaneringssteget](#schedule-segment-export-example).</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li> Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
@@ -102,7 +102,7 @@ I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
 
-![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar till Outreach.](../../assets/catalog/crm/outreach/authenticate-destination.png)
+![Experience Platform UI, skärmbild som visar hur du autentiserar till Outreach.](../../assets/catalog/crm/outreach/authenticate-destination.png)
 
 Du visas inloggningssidan för [!DNL Outreach]. Ange din e-postadress.
 
@@ -120,7 +120,7 @@ Om den angivna informationen är giltig visas statusen **Ansluten** med en grön
 ### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
-![Skärmbild för användargränssnittet för plattformen som visar hur du fyller i information för målplatsen för utdataenheten.](../../assets/catalog/crm/outreach/destination-details.png)
+![Experience Platform UI-skärmbild som visar hur du fyller i information för målplatsen Utanför.](../../assets/catalog/crm/outreach/destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -142,17 +142,17 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Outreach] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Outreach]:
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Outreach] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Outreach]:
 
 1. Klicka på **[!UICONTROL Add new mapping]** i steget [!UICONTROL Mapping]. En ny mappningsrad visas på skärmen.
-   ![Plattformsgränssnitt, bild som visar hur du lägger till ny mappning](../../assets/catalog/crm/outreach/add-new-mapping.png)
+   ![Experience Platform UI, bild som visar hur du lägger till ny mappning](../../assets/catalog/crm/outreach/add-new-mapping.png)
 
 1. Välj kategorin **[!UICONTROL Select identity namespace]** i fönstret [!UICONTROL Select source field] och lägg till de önskade mappningarna.
-   ![Plattformsgränssnitt, skärmbild som visar Source-mappning](../../assets/catalog/crm/outreach/source-mapping.png)
+   ![Experience Platform UI, skärmbild som visar Source-mappning](../../assets/catalog/crm/outreach/source-mapping.png)
 
 1. I fönstret [!UICONTROL Select target field] väljer du den typ av målfält som du vill mappa källfältet till.
    * **[!UICONTROL Select identity namespace]**: välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
-     ![Skärmbild för plattformsanvändargränssnitt som visar målmappning med OutreachId.](../../assets/catalog/crm/outreach/target-mapping.png)
+     ![Experience Platform UI-skärmbild som visar Target-mappning med OutreachId.](../../assets/catalog/crm/outreach/target-mapping.png)
 
    * Lägg till följande mappning mellan ditt XDM-profilschema och din [!DNL Outreach]-instans:
 
@@ -161,7 +161,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      | `Oid` | `OutreachId` | Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet [!UICONTROL Attribute name]. Se [[!DNL Outreach] dokumentationen för den potentiella kunden](https://api.outreach.io/api/v2/docs#prospect) för en utförlig lista över attribut som stöds.
-     ![Skärmbild för plattformsgränssnitt som visar målmappning med hjälp av LastName.](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
+     ![Experience Platform UI-skärmbild som visar Target-mappning med LastName.](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
 
    * Beroende på vilka värden du vill uppdatera lägger du till följande mappning mellan XDM-profilschemat och [!DNL Outreach]-instansen:
 
@@ -171,11 +171,11 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      | `person.name.lastName` | `lastName` |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
-     ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/crm/outreach/mappings.png)
+     ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/crm/outreach/mappings.png)
 
 ### Schemalägg målgruppsexport och exempel {#schedule-segment-export-example}
 
-* När du utför steget [Schemalägg målgruppsexport](../../ui/activate-segment-streaming-destinations.md) måste du manuellt mappa plattformsmålgrupper till det anpassade fältattributet i [!DNL Outreach].
+* När du utför steget [Schemalägg målgruppsexport](../../ui/activate-segment-streaming-destinations.md) måste du manuellt mappa Experience Platform-målgrupper till det anpassade fältattributet i [!DNL Outreach].
 
 * Det gör du genom att markera varje segment och sedan ange motsvarande numeriska värde som motsvarar fältet *Egen fältetikett `N`* från [!DNL Outreach] i fältet **[!UICONTROL Mapping ID]**.
 
@@ -188,29 +188,29 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
    * Exempel:
 
-     | [!DNL Outreach]-fält | Plattformsmappnings-ID |
+     | [!DNL Outreach]-fält | Experience Platform Mappnings-ID |
      |---|---|
      | Etikett för anpassat fält `4` | `4` |
 
-     ![Skärmbild för plattformsgränssnitt som visar ett exempel på mappnings-ID vid export av schemalagda målgrupper.](../../assets/catalog/crm/outreach/schedule-segment-export.png)
+     ![Experience Platform UI-skärmbild som visar ett exempel på mappnings-ID vid export av schemalagda målgrupper.](../../assets/catalog/crm/outreach/schedule-segment-export.png)
 
 ## Validera dataexport {#exported-data}
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. Välj **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** för att navigera till listan över mål.
-   ![Skärmbild för plattformsgränssnitt med bläddringsmål.](../../assets/catalog/crm/outreach/browse-destinations.png)
+   ![Experience Platform UI, skärmbild med Sök mål.](../../assets/catalog/crm/outreach/browse-destinations.png)
 
 1. Markera målet och validera att statusen är **[!UICONTROL enabled]**.
-   ![Skärmbild för plattformsgränssnitt med körning av måldataflöde för det valda målet.](../../assets/catalog/crm/outreach/destination-dataflow-run.png)
+   ![Experience Platform UI-skärmbild med körning av måldataflöde för det valda målet.](../../assets/catalog/crm/outreach/destination-dataflow-run.png)
 
 1. Växla till fliken **[!DNL Activation data]** och välj sedan ett publiknamn.
-   ![Skärmbild för plattformsgränssnitt som visar data för målaktivering.](../../assets/catalog/crm/outreach/destinations-activation-data.png)
+   ![Experience Platform UI, skärmbild med aktiveringsdata för destinationer.](../../assets/catalog/crm/outreach/destinations-activation-data.png)
 
 1. Övervaka målgruppssammanfattningen och se till att antalet profiler motsvarar antalet som skapas inom segmentet.
-   ![Skärmbild för plattformsgränssnitt med segmentsammanfattning.](../../assets/catalog/crm/outreach/segment.png)
+   ![Experience Platform UI-skärmbild med segmentsammanfattning.](../../assets/catalog/crm/outreach/segment.png)
 
-1. Logga in på webbplatsen [!DNL Outreach], gå till sidan [!DNL Apps] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Outreach] har uppdaterats med motsvarande målgruppsstatus från Platform, baserat på det [!UICONTROL Mapping ID] -värde som tillhandahölls under steget [målgruppsplanering](#schedule-segment-export-example).
+1. Logga in på webbplatsen [!DNL Outreach], gå till sidan [!DNL Apps] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Outreach] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet [!UICONTROL Mapping ID] som angavs under steget [målgruppsplanering](#schedule-segment-export-example).
 
 ![Skärmbild av gränssnittet som visar sidan Utanför potentiell kund med de uppdaterade målgruppsstatusarna visas.](../../assets/catalog/crm/outreach/outreach-prospect.png)
 
@@ -222,9 +222,9 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 När du kontrollerar ett dataflöde kan följande felmeddelande visas: `Bad request reported while pushing events to the destination. Please contact the administrator and try again.`
 
-![Skärmbild för användargränssnittet för plattformen visar felet Felaktig begäran.](../../assets/catalog/crm/outreach/error.png)
+![Experience Platform UI-skärmbild som visar felet Felaktig begäran.](../../assets/catalog/crm/outreach/error.png)
 
-Om du vill åtgärda det här felet kontrollerar du att [!UICONTROL Mapping ID] som du angav i plattformen för din [!DNL Outreach]-målgrupp är giltig och finns i [!DNL Outreach].
+Om du vill åtgärda det här felet kontrollerar du att [!UICONTROL Mapping ID] som du har angett i Experience Platform för din [!DNL Outreach]-målgrupp är giltig och finns i [!DNL Outreach].
 
 ## Ytterligare resurser {#additional-resources}
 

@@ -3,10 +3,10 @@ keywords: Experience Platform;startsida;populära ämnen; larm;destinationer
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på aviseringar om destinationer i sitt sammanhang
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '930'
-ht-degree: 0%
+source-wordcount: '935'
+ht-degree: 3%
 
 ---
 
@@ -22,9 +22,9 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på meddeland
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Destinationer](../home.md): Förbyggda integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-* [Observabilitet](../../observability/home.md): [!DNL Observability Insights] gör att du kan övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
-   * [Varningar](../../observability/alerts/overview.md): När en viss uppsättning villkor har nåtts i plattformsåtgärderna (t.ex. ett potentiellt problem när systemet överskrider ett tröskelvärde) kan Plattform leverera varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
+* [Destinationer](../home.md): Förbyggda integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Observabilitet](../../observability/home.md): [!DNL Observability Insights] gör att du kan övervaka Experience Platform-aktiviteter med hjälp av statistik och händelsemeddelanden.
+   * [Varningar](../../observability/alerts/overview.md): När en viss uppsättning villkor har nåtts i Experience Platform-åtgärderna (t.ex. ett eventuellt problem när systemet överskrider ett tröskelvärde) kan Experience Platform skicka varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
 
 ## Prenumerera på aviseringar i användargränssnittet {#subscribe-destination-alerts}
 
@@ -36,7 +36,7 @@ Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe E
 
 >[!IMPORTANT]
 >
->Du måste aktivera snabbmeddelanden om e-post för ditt plattformskonto för att kunna ta emot e-postbaserade varningsmeddelanden för dina dataflöden.
+>Du måste aktivera snabbmeddelanden om e-post för ditt Experience Platform-konto för att kunna ta emot e-postbaserade varningsmeddelanden för dina dataflöden.
 
 Du kan aktivera aviseringar för dina dataflöden under [!UICONTROL Configure new destination]-steget i arbetsflödet för [målanslutningen](connect-destination.md).
 
@@ -49,9 +49,9 @@ Aviseringar som är tillgängliga för måldataflöden beskrivs i tabellen nedan
 * För direktuppspelningsmål är endast aviseringen [!DNL Activation Skipped Rate Exceeded] tillgänglig.
 * För filbaserade mål är alla aviseringar tillgängliga.
 
-| Larm | Beskrivning |
+| Aviseringar | Beskrivning |
 | --- | --- |
-| Körningsfördröjning för målflöde | Den här varningen meddelar dig när en målflödeskörning tar längre tid än 150 minuter att aktivera en målgrupp. |
+| Körningsfördröjning för destinationsflöde | Den här varningen meddelar dig när en målflödeskörning tar längre tid än 150 minuter att aktivera en målgrupp. |
 | Körningsfel för målflöde | Den här varningen meddelar dig när ett fel inträffar när en målgrupp aktiveras till ett mål. |
 | Målflödet har körts | Den här varningen meddelar dig när en målgrupp har aktiverats på ett mål. |
 | Start för målflödeskörning | Den här varningen meddelar dig när en målflödeskörning börjar aktivera en målgrupp. |
@@ -63,9 +63,9 @@ När måldataflödet körs kan du få aviseringar via användargränssnittet ell
 
 ### Ta emot aviseringar i användargränssnittet {#receiving-alerts-in-ui}
 
-Varningar representeras i användargränssnittet av en meddelandeikon i det övre huvudet i användargränssnittet för plattformen. Välj meddelandeikonen om du vill visa specifika varningsmeddelanden om dina dataflöden.
+Varningar representeras i användargränssnittet av en meddelandeikon i det övre huvudet i användargränssnittet i Experience Platform. Välj meddelandeikonen om du vill visa specifika varningsmeddelanden om dina dataflöden.
 
-![Gränssnittsbild som visar meddelandeikonen i Experience Platform](../assets/ui/alerts/notification.png)
+![Användargränssnittsbild som visar meddelandeikonen i Experience Platform](../assets/ui/alerts/notification.png)
 
 Meddelandepanelen visas med en lista över statusuppdateringar för det dataflöde som du skapade.
 

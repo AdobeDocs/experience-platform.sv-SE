@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hemmabas;populära ämnen;kuchbase;Kuchbase
+keywords: Experience Platform;hem;populära ämnen;soffbas;Kuchbase
 solution: Experience Platform
 title: Kuchbase Source Connector - översikt
 description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 4b1cc352-3b1a-4015-baee-b1d42c15a400
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%
@@ -23,15 +23,15 @@ Adobe Experience Platform erbjuder inbyggd anslutning för databasleverantörer 
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Couchbase] till [!DNL Platform] med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Couchbase] till [!DNL Experience Platform] med API:er eller användargränssnittet:
 
-## Anslut [!DNL Couchbase] till [!DNL Platform] med API:er
+## Anslut [!DNL Couchbase] till [!DNL Experience Platform] med API:er
 
 - [Skapa en Couchbase-anslutning med API:t för Flow Service](../../tutorials/api/create/databases/couchbase.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
-## Anslut [!DNL Couchbase] till [!DNL Platform] med användargränssnittet
+## Anslut [!DNL Couchbase] till [!DNL Experience Platform] med användargränssnittet
 
 - [Skapa en källanslutning till Couchbase i användargränssnittet](../../tutorials/ui/create/databases/couchbase.md)
 - [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)

@@ -3,7 +3,7 @@ keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
 description: Med SendGrid-målet kan du exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1475'
 ht-degree: 0%
@@ -48,7 +48,7 @@ SendGrid stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs m
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| e-post | E-postadress | Observera att både oformaterad text och SHA256-hashade e-postadresser stöds av [!DNL Adobe Experience Platform]. Om källfältet för Experience-plattformen innehåller ohashade attribut ska du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.<br/><br/> Observera att **SendGrid** inte har stöd för hash-kodade e-postadresser. Därför skickas endast oformaterade textdata utan omformning till målet. |
+| e-post | E-postadress | Observera att både oformaterad text och SHA256-hashade e-postadresser stöds av [!DNL Adobe Experience Platform]. Om källfältet för Experience-plattformen innehåller ohashade attribut ska du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.<br/><br/> Observera att **SendGrid** inte har stöd för hash-kodade e-postadresser. Därför skickas endast oformaterade textdata utan omformning till målet. |
 
 {style="table-layout:auto"}
 

@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Azure Data Lake Storage Gen2;Azure Data Lake Storage Storage;Azure
+keywords: Experience Platform;hem;populära ämnen;Azure Data Lake Storage Gen2;Azure Data Lake Storage;Azure
 solution: Experience Platform
 title: Skapa en Azure Data Lake Storage Gen2 Base-anslutning med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Azure Data Lake Storage Gen2 med API:t för Flow Service.
 exl-id: cad5e2a0-e27c-4130-9ad8-888352c92f04
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '507'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ I den här självstudiekursen får du hjälp med att skapa en basanslutning för
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en ADLS Gen2-källanslutning med API:t [!DNL Flow Service].
 
@@ -41,15 +41,15 @@ För att [!DNL Flow Service] ska kunna ansluta till ADLS Gen2 måste du ange vä
 
 Mer information om dessa värden finns i [det här ADLS Gen2-dokumentet](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-data-lake-storage).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för ADLS Gen2 som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till slutpunkten `/connections` och anger dina ADLS Gen2-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 

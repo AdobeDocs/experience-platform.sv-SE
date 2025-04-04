@@ -1,33 +1,33 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;lokalt system;filöverföring;mappa csv;mappa csv-fil;mappa csv-fil till xdm;mappa csv till xdm;ui guide;
+keywords: Experience Platform;home;populära topics;local system;file upload;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;
 solution: Experience Platform
 title: Skapa en lokal filöverföring för Source Connector i användargränssnittet
 type: Tutorial
-description: Lär dig hur du skapar en källanslutning för det lokala systemet för att överföra lokala filer till plattformen
+description: Lär dig hur du skapar en källanslutning för det lokala systemet för att överföra lokala filer till Experience Platform
 exl-id: 9ce15362-c30d-40cc-9d9c-caa650579390
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '732'
 ht-degree: 0%
 
 ---
 
 # Skapa en lokal källanslutning för filöverföring i användargränssnittet
 
-I den här självstudiekursen får du hjälp med att skapa en lokal filöverföringsanslutning för att importera lokala filer till plattformen med hjälp av användargränssnittet.
+I den här självstudiekursen får du hjälp med att skapa en lokal filöverföringsanslutning för att importera lokala filer till Experience Platform med användargränssnittet.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande plattformskomponenter:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-## Överför lokala filer till plattformen
+## Överför lokala filer till Experience Platform
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto för.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto för.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -91,4 +91,4 @@ När CSV-filen har mappats och skapats kan du övervaka de data som importeras v
 
 ## Nästa steg
 
-I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i Platform. Dessa data kan nu användas av [!DNL Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile]. Mer information finns i översikten för [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md).
+I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i Experience Platform. Dessa data kan nu användas av [!DNL Experience Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile]. Mer information finns i översikten för [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md).

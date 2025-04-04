@@ -2,10 +2,10 @@
 title: Bygger
 description: Lär dig mer om byggkoncept och hur de fungerar i Adobe Experience Platform.
 exl-id: af899282-aa2d-4395-8dbd-18d91be3f041
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '784'
-ht-degree: 0%
+source-wordcount: '791'
+ht-degree: 5%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Ett bygge är den uppsättning filer som innehåller all kod som körs på klientenheten.
 
@@ -56,15 +56,15 @@ Om du vill slutföra ett bygge markerar du ett bibliotek och väljer alternative
 
 Minimering minskar bandbreddskostnaderna och förbättrar hastigheten genom att radera data som inte behövs för att köras från en fil.
 
-För att öka prestanda minimerar Platform allt, inklusive:
+För att få bättre prestanda minimerar Experience Platform allt, inklusive:
 
 * Huvudtaggbiblioteket
 * Modulkod från tilläggsutvecklare som en del av ett tillägg
-* Anpassad kod som tillhandahålls av plattformsanvändare
+* Anpassad kod från Experience Platform-användare
 
 >[!NOTE]
 >
->Om modulkoden och den anpassade koden redan är miniatyrbilder miniatyriseras den igen av Platform. Den andra miniatyrversionen ger inga ytterligare fördelar, men den orsakar inga skador och gör plattformen mindre komplex och enklare att underhålla.
+>Om modulkoden och den anpassade koden redan är miniatyrbilder miniatyriserar Experience Platform den igen. Den andra miniatyrversionen ger inga ytterligare fördelar, men den orsakar inga skador och gör Experience Platform mindre komplext och enklare att underhålla.
 
 All kod på klientsidan pekar mot den minifierade versionen av koden. Detta visas i filnamnen som följer standardnamnkonventionen för minifierade filer:
 
@@ -74,7 +74,7 @@ Om du vill se den ominifierade koden tar du bort .min från filnamnet:
 
 `launch-%environment_id%.js`
 
-Om en tilläggsutvecklare tillhandahåller minierad kod med sitt tillägg, tillhandahåller inte Platform icke-minified-kod i den icke-minifierade versionen. På samma sätt gäller att om en plattformsanvändare placerar minierad kod i en anpassad kodruta så är koden fortfarande minifierad i icke-minifierade byggen. Platform tar inte bort någonting från miniatyrerna.
+Om en tilläggsutvecklare tillhandahåller minifierad kod med sitt tillägg, tillhandahåller Experience Platform inte icke-minifierad kod i den icke-minifierade versionen. På samma sätt gäller att om en Experience Platform-användare placerar minierad kod i en anpassad kodruta så är koden fortfarande minifierad i icke-minifierade byggen. Experience Platform tar inte bort någonting.
 
 Mer information om miniatyrbilder finns i [den här artikeln om stackbanor](https://blog.stackpath.com/glossary/minification/).
 

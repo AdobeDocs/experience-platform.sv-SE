@@ -1,18 +1,18 @@
 ---
-title: Använda Adobe Journey Optimizer med Platform Web SDK
-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Journey Optimizer
+title: Använda Adobe Journey Optimizer med Experience Platform Web SDK
+description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK med Adobe Journey Optimizer
 keywords: ajo;ajo web;adobe travel optimizer;renderDecision;surfaces;Decision;propositions;scope;schema
 exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
-source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '383'
 ht-degree: 0%
 
 ---
 
-# Använda [!DNL Adobe Journey Optimizer] med [!DNL Platform Web SDK]
+# Använda [!DNL Adobe Journey Optimizer] med [!DNL Experience Platform Web SDK]
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [Webbkanal](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html), eller ett icke-visuellt gränssnitt, [ kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) för att skapa, aktivera och leverera [!DNL Journey Optimizer Web] -kampanjer och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [webbkanal](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html), eller ett icke-visuellt gränssnitt, den [kodbaserade Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) för att skapa, aktivera och leverera dina [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
@@ -42,7 +42,7 @@ Följ stegen nedan för att börja använda [!DNL Adobe Journey Optimizer].
    })
    ```
 
-3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i alternativet `personalization.surfaces` för kommandot `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] action ](../../../tags/extensions/client/web-sdk/action-types.md#send-event) -konfiguration för Web SDK-tillägget.
+3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i alternativet `personalization.surfaces` för kommandot `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] action ](../../../tags/extensions/client/web-sdk/action-types.md#send-event) -konfiguration för Web SDK Extension.
 
    ```javascript
    alloy("sendEvent", {
@@ -90,7 +90,7 @@ Följ instruktionerna från [webbkampanjen](https://experienceleague.adobe.com/d
 
 Mer information finns i dokumentationen om [återgivning av personaliseringsinnehåll](../rendering-personalization-content.md).
 
-Adobe Journey Optimizer-förslag för webbytor behandlas på ungefär samma sätt som förslagen för beslutsomfattning i `__view__`. Om alternativet `renderDecisions` är inställt på `true` i kommandot `sendEvent` återges dessa automatiskt av Web SDK.
+Adobe Journey Optimizer-förslag för webbytor behandlas på ungefär samma sätt som förslagen för beslutsomfattning i `__view__`. När alternativet `renderDecisions` är inställt på `true` i kommandot `sendEvent` återges dessa automatiskt av Web SDK.
 
 Exempel på Journey Optimizer-innehåll:
 

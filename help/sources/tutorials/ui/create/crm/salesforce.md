@@ -1,17 +1,17 @@
 ---
-title: Anslut ditt Salesforce-konto med användargränssnittet i Experience Platform
-description: Lär dig hur du ansluter ditt Salesforce-konto och överför dina CRM-data till Experience Platform med användargränssnittet.
+title: Anslut ditt Salesforce-konto med Experience Platform användargränssnitt
+description: Lär dig hur du ansluter ditt Salesforce-konto och överför dina CRM-data till Experience Platform via användargränssnittet.
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
 
 # Anslut ditt [!DNL Salesforce]-konto till Experience Platform med användargränssnittet
 
-I den här självstudiekursen beskrivs hur du ansluter ditt [!DNL Salesforce]-konto och överför dina CRM-data till Adobe Experience Platform med användargränssnittet i Experience Platform.
+I den här självstudien beskrivs hur du ansluter ditt [!DNL Salesforce]-konto och överför dina CRM-data till Adobe Experience Platform med Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -40,7 +40,7 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 | Användarnamn | Användarnamnet för användarkontot [!DNL Salesforce]. |
 | Lösenord | Lösenordet för användarkontot [!DNL Salesforce]. |
 | Säkerhetstoken | Säkerhetstoken för användarkontot [!DNL Salesforce]. |
-| API-version | (Valfritt) REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| API-version | (Valfritt) REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 
 Mer information om autentisering finns i [den här [!DNL Salesforce] autentiseringsguiden](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm).
 
@@ -53,7 +53,7 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 | Miljö-URL | URL:en för [!DNL Salesforce]-källinstansen. Formatet för miljö-URL är `https://[domain].my.salesforce.com`. |
 | Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | Klienthemlighet | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
-| API-version | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| API-version | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 
 Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL Salesforce] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
 
@@ -63,7 +63,7 @@ När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stege
 
 ## Anslut ditt [!DNL Salesforce]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Välj **[!DNL Salesforce]** under kategorin *[!UICONTROL CRM]* och välj sedan **[!UICONTROL Add data]**.
 
@@ -71,7 +71,7 @@ Välj **[!DNL Salesforce]** under kategorin *[!UICONTROL CRM]* och välj sedan *
 >
 >Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform med Salesforce-källkortet markerat.](../../../../images/tutorials/create/salesforce/catalog.png)
+![Källkatalogen i Experience Platform-gränssnittet med Salesforce-källkortet markerat.](../../../../images/tutorials/create/salesforce/catalog.png)
 
 Sidan **[!UICONTROL Connect to Salesforce]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -127,4 +127,4 @@ Resten av arbetsflödet förblir detsamma. Den enda skillnaden är att om du hop
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Salesforce]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Salesforce]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/crm.md).

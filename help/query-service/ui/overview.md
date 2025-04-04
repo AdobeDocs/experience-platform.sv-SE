@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;home;populära topics;query service;Query service;query editor;Query Editor;Query editor;Query editor;
+keywords: Experience Platform;home;populära topics;query service;Query service;query editor;Query Editor;Query editor;
 solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: a4fc19599ea6639ee5762ee1542cb08b9ed3b6a8
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2149'
+source-wordcount: '2150'
 ht-degree: 0%
 
 ---
@@ -142,7 +142,7 @@ På fliken **[!UICONTROL Templates]** visas frågor som sparats av användare i 
 | **[!UICONTROL Modified by]** | Den sista användaren som ändrade frågan. Alla användare i organisationen som har tillgång till frågetjänsten kan ändra frågor. |
 | **[!UICONTROL Last modified]** | Datum och tid för den senaste ändringen av frågan, i webbläsarens tidszon. |
 
-Mer information om mallar i plattformsgränssnittet finns i [frågemallarna](./query-templates.md) .
+Mer information om mallar i användargränssnittet för Experience Platform finns i dokumentationen för [frågemallar](./query-templates.md).
 
 ## Logg {#log}
 
@@ -174,4 +174,4 @@ Fliken **[!UICONTROL Credentials]** visar både dina utgångsdatum och ej utgån
 
 ## Nästa steg
 
-Nu när du är bekant med användargränssnittet för frågetjänsten på [!DNL Platform] kan du komma åt Frågeredigeraren och börja skapa egna frågeprojekt som du kan dela med andra användare i organisationen. Mer information om hur du redigerar och kör frågor i Frågeredigeraren finns i [Användarhandboken för Frågeredigeraren](./user-guide.md).
+Nu när du är bekant med användargränssnittet för frågetjänsten på [!DNL Experience Platform] kan du komma åt Frågeredigeraren och börja skapa egna frågeprojekt som du kan dela med andra användare i organisationen. Mer information om hur du redigerar och kör frågor i Frågeredigeraren finns i [Användarhandboken för Frågeredigeraren](./user-guide.md).

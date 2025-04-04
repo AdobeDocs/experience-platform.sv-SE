@@ -2,14 +2,14 @@
 title: Versionsinformation om Adobe Experience Platform september 2023
 description: Versionsinformationen för Adobe Experience Platform från september 2023.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2240'
-ht-degree: 28%
+source-wordcount: '2244'
+ht-degree: 26%
 
 ---
 
-# Versionsinformation om Adobe Experience Platform
+# Versionsinformation för Adobe Experience Platform
 
 **Releasedatum: 28 september 2023**
 
@@ -37,7 +37,7 @@ Beräknade attribut gör det enkelt att sammanfatta händelsedata i profilattrib
 
 ## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i Experience Platform användargränssnitt och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -103,7 +103,7 @@ Experience Platform har en serie funktioner för datthygien som gör att du kan 
 
 {style="table-layout:auto"}
 
-Mer information om plattformens datahygien finns i [översikten över datahygien](../../hygiene/home.md).
+Mer information om Experience Platform datahygien finns i [översikten över datahygien](../../hygiene/home.md).
 
 ## Mål {#destinations}
 
@@ -180,7 +180,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [systemöversikten för XDM](../../xdm/home.md)
+Mer information om XDM i Experience Platform finns i [systemöversikten för XDM](../../xdm/home.md)
 
 ## Identitetstjänst {#identity-service}
 
@@ -214,7 +214,7 @@ Mer information om frågetjänster finns i [översikten över frågetjänster](.
 
 ## Segmenteringstjänst {#segmentation}
 
-Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Experience Platform] och är tillgängliga för alla Adobe-lösningar.
 
 **Nya eller uppdaterade funktioner**
 

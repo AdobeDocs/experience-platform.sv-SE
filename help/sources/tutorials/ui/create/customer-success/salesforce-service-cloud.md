@@ -1,17 +1,17 @@
 ---
-title: Anslut ditt Salesforce-tjänstmolnkonto med användargränssnittet i Experience Platform
-description: Lär dig hur du ansluter ditt Salesforce Service Cloud-konto och överför dina kundframgångsuppgifter till Experience Platform via användargränssnittet.
+title: Anslut ditt Salesforce Service Cloud-konto med Experience Platform användargränssnitt
+description: Lär dig hur du ansluter ditt Salesforce Service Cloud-konto och överför dina kunddata till Experience Platform via användargränssnittet.
 exl-id: 38480a29-7852-46c6-bcea-5dc6bffdbd15
-source-git-commit: 7930a869627130a5db34780e64b809cda0c1e5f4
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
 
 # Anslut ditt [!DNL Salesforce Service Cloud]-konto till Experience Platform med användargränssnittet
 
-I den här självstudiekursen beskrivs hur du ansluter ditt [!DNL Salesforce Service Cloud]-konto och överför dina kunddata till Adobe Experience Platform via användargränssnittet i Experience Platform.
+I den här självstudiekursen beskrivs hur du ansluter ditt [!DNL Salesforce Service Cloud]-konto och överför dina kunddata till Adobe Experience Platform via Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -40,7 +40,7 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 | Användarnamn | Användarnamnet för användarkontot [!DNL Salesforce Service Cloud]. |
 | Lösenord | Lösenordet för användarkontot [!DNL Salesforce Service Cloud]. |
 | Säkerhetstoken | Säkerhetstoken för användarkontot [!DNL Salesforce Service Cloud]. |
-| API-version | (Valfritt) REST API-versionen för den [!DNL Salesforce Service Cloud]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| API-version | (Valfritt) REST API-versionen för den [!DNL Salesforce Service Cloud]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 
 Mer information om autentisering finns i [den här [!DNL Salesforce Service Cloud] autentiseringsguiden](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm).
 
@@ -53,7 +53,7 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 | Miljö-URL | URL:en för [!DNL Salesforce Service Cloud]-källinstansen. |
 | Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce Service Cloud]. |
 | Klienthemlighet | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce Service Cloud]. |
-| API-version | REST API-versionen för den [!DNL Salesforce Service Cloud]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| API-version | REST API-versionen för den [!DNL Salesforce Service Cloud]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 
 Mer information om hur du använder OAuth för [!DNL Salesforce Service Cloud] finns i [[!DNL Salesforce Service Cloud] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
 
@@ -63,7 +63,7 @@ När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stege
 
 ## Anslut ditt [!DNL Salesforce Service Cloud]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Välj **[!DNL Salesforce Service Cloud]** under kategorin *[!UICONTROL Customer success]* och välj sedan **[!UICONTROL Add data]**.
 
@@ -71,7 +71,7 @@ Välj **[!DNL Salesforce Service Cloud]** under kategorin *[!UICONTROL Customer 
 >
 >Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform med källkortet i Salesforce Service Cloud markerat.](../../../../images/tutorials/create/salesforce-service-cloud/catalog.png)
+![Källkatalogen i Experience Platform-gränssnittet med källkortet för Salesforce Service Cloud markerat.](../../../../images/tutorials/create/salesforce-service-cloud/catalog.png)
 
 Sidan **[!UICONTROL Connect to Salesforce Service Cloud]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 

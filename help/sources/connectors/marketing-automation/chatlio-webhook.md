@@ -3,9 +3,9 @@ title: Chatlio Source - översikt
 description: Lär dig hur du ansluter Chatlio till Adobe Experience Platform med hjälp av API:er eller användargränssnittet genom att utnyttja webbhooks
 badge: Beta
 exl-id: 4a71d1dc-e0eb-443e-a956-8caa0e82fa18
-source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '355'
+source-wordcount: '362'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >Källan [!DNL Chatlio] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för inmatning av data från direktuppspelningsprogram. Stöd för direktuppspelningsproviders är [!DNL Chatlio].
 
@@ -41,18 +41,18 @@ Innan du kan skapa en [!DNL Chatlio]-källanslutning måste du se till att du ha
 
 ### Konfigurera webbkrok för [!DNL Chatlio] {#set-up-webhook}
 
-När du har skapat dataflödet måste du konfigurera en webkrok som informerar plattformen om [!DNL Chatlio]-händelser. Webhooks kan meddela dig omedelbart när kundattributen ändras eller när personer öppnar dina meddelanden och skickar informationen till din [!DNL Chatlio]-källa.
+När du har skapat dataflödet måste du konfigurera en webkrok som informerar Experience Platform om [!DNL Chatlio]-händelser. Webhooks kan meddela dig omedelbart när kundattributen ändras eller när personer öppnar dina meddelanden och skickar informationen till din [!DNL Chatlio]-källa.
 
 Mer information finns i självstudiekurserna om hur du [hämtar URL:en för direktuppspelningsslutpunkten](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md#get-streaming-endpoint) och [konfigurerar en [!DNL Chatlio] webkrok](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md#set-up-webhook).
 
-## Anslut [!DNL Chatlio] till plattformen {#connect-to-platform}
+## Anslut [!DNL Chatlio] till Experience Platform {#connect-to-platform}
 
-Dokumentationen nedan innehåller information om hur du skapar en [!DNL Chatlio]-direktuppspelningsanslutare som ska ansluta till [!DNL Platform] med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du skapar en [!DNL Chatlio]-direktuppspelningsanslutare som ska ansluta till [!DNL Experience Platform] med API:er eller användargränssnittet:
 
-### Anslut [!DNL Chatlio] till plattformen med API:er {#connect-to-platform-using-api}
+### Anslut [!DNL Chatlio] till Experience Platform med API:er {#connect-to-platform-using-api}
 
-* [Skapa en källanslutning för att hämta  [!DNL Chatlio] -data till plattformen med API:er.](../../tutorials/api/create/marketing-automation/chatlio-webhook.md)
+* [Skapa en källanslutning för att hämta  [!DNL Chatlio] -data till Experience Platform med API:er.](../../tutorials/api/create/marketing-automation/chatlio-webhook.md)
 
-### Anslut [!DNL Chatlio] till plattformen med användargränssnittet {#connect-to-platform-using-ui}
+### Anslut [!DNL Chatlio] till Experience Platform med användargränssnittet {#connect-to-platform-using-ui}
 
-* [Skapa en källanslutning för att hämta  [!DNL Chatlio] -data till plattformen med användargränssnittet](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md)
+* [Skapa en källanslutning för att hämta  [!DNL Chatlio] -data till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md)

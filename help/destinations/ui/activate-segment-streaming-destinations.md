@@ -3,9 +3,9 @@ title: Aktivera målgruppsdata för direktuppspelningsmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att mappa dem till direktuppspelningsmål.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1099'
 ht-degree: 0%
 
 ---
@@ -51,8 +51,8 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-* **[!UICONTROL Segmentation Service]**: Publiker som genererats i Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
+* **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
 * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
 ![Flera målgrupper är markerade i steget Välj målgrupper.](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
@@ -125,7 +125,7 @@ Om du vill se alla målgrupper som aktiveras till ditt mål använder du filtrer
 
      ![Listrutan för mappnings-ID är markerad.](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
-   * Vissa mål kräver att du manuellt mappar [!DNL Platform] målgrupper till deras motsvarighet i måldestinationen. För att göra detta väljer du varje målgrupp och anger sedan motsvarande målgrupps-ID från målplattformen i fältet **[!UICONTROL Mapping ID]**. Om målet inte innehåller det här fältet hoppar du över det här steget.
+   * Vissa mål kräver att du manuellt mappar [!DNL Experience Platform] målgrupper till deras motsvarighet i måldestinationen. För att göra detta väljer du varje målgrupp och anger sedan motsvarande målgrupps-ID från målplattformen i fältet **[!UICONTROL Mapping ID]**. Om målet inte innehåller det här fältet hoppar du över det här steget.
 
      ![Ursprunget för målgruppslistrutan är markerat.](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 

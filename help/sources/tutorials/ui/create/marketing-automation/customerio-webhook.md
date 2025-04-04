@@ -3,9 +3,9 @@ title: Skapa en Customer.io Source Connection och ett dataflöde i användargrä
 description: Lär dig hur du skapar en Customer.io-källanslutning med Adobe Experience Platform UI.
 badge: Beta
 exl-id: 7655a34c-808a-46e3-94e3-022a433755a4
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1179'
 ht-degree: 0%
 
 ---
@@ -53,25 +53,25 @@ Innan du skapar en [!DNL Customer.io]-källanslutning måste du ange ett källsc
 }
 ```
 
-### Skapa ett plattformsschema för [!DNL Customer.io] {#create-platform-schema}
+### Skapa ett Experience Platform-schema för [!DNL Customer.io] {#create-platform-schema}
 
-Du måste också se till att du skapar ett plattformsschema som kan användas för källan. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
+Du måste också se till att du skapar ett Experience Platform-schema som du kan använda för källan. I självstudiekursen [Skapa ett Experience Platform-schema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
 
-![Skärmbild för plattformsgränssnitt som visar ett exempelschema för Customer.io](../../../../images/tutorials/create/marketing-automation/customerio-webhook/schema.png)
+![Experience Platform UI-skärmbild med exempelschema för Customer.io](../../../../images/tutorials/create/marketing-automation/customerio-webhook/schema.png)
 
 ## Anslut ditt [!DNL Customer.io]-konto {#connect-account}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
 
 Använd menyn *[!UICONTROL Categories]* för att filtrera källor efter kategori. Du kan också ange ett källnamn i sökfältet för att hitta en viss källa från katalogen.
 
 Gå till kategorin [!UICONTROL Marketing automation] om du vill se källkortet [!DNL Customer.io]. Börja genom att välja **[!UICONTROL Add data]**.
 
-![Skärmbild för plattformsgränssnitt för katalog med Customer.io-kortet](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
+![Experience Platform UI, skärmbild för katalog med Customer.io-kortet](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
 
 ## Markera data {#select-data}
 
-**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till plattformen.
+**[!UICONTROL Select data]**-steget visas med ett gränssnitt där du kan välja vilka data du vill hämta till Experience Platform.
 
 * Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.
@@ -98,7 +98,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 Alla mappningar som anges nedan är obligatoriska och bör konfigureras innan du fortsätter till [!UICONTROL Review]-steget.
 
@@ -133,7 +133,7 @@ När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och tillåt 
 
 ## Hämta din URL för direktuppspelningsslutpunkt {#get-streaming-endpoint}
 
-När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform.
+När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten kommer att användas för att prenumerera på din webkrok så att strömningskällan kan kommunicera med Experience Platform.
 
 För att kunna skapa den URL som används för att konfigurera webkroken på [!DNL Customer.io] måste du hämta följande:
 
@@ -156,11 +156,11 @@ I användargränssnittet för [!DNL Customer.io] anger du din [webkrok-URL](#get
 
 >[!TIP]
 >
->Du kan prenumerera på en mängd olika händelser för din rapportwebkrok. Varje händelsemeddelande hämtas till plattformen när ett [!DNL Customer.io]-utlösarvillkor för en åtgärdshändelse uppfylls. Mer information om de olika händelserna finns i [[!DNL Customer.io] händelsedokumentationen](https://customer.io/docs/webhooks/#events).
+>Du kan prenumerera på en mängd olika händelser för din rapportwebkrok. Varje händelsemeddelande hämtas till Experience Platform när ett [!DNL Customer.io]-utlösarvillkor för en åtgärdshändelse uppfylls. Mer information om de olika händelserna finns i [[!DNL Customer.io] händelsedokumentationen](https://customer.io/docs/webhooks/#events).
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du konfigurerat ett dataflöde för direktuppspelning så att dina [!DNL Customer.io]-data kommer till Experience Platform. Om du vill övervaka data som importeras läser du i guiden [Övervaka direktuppspelade dataflöden med hjälp av plattformsgränssnittet](../../monitor-streaming.md).
+Genom att följa den här självstudiekursen har du konfigurerat ett dataflöde för direktuppspelning för att överföra dina [!DNL Customer.io]-data till Experience Platform. Om du vill övervaka data som importeras läser du i guiden [Övervaka dataflöden för direktuppspelning med Experience Platform-gränssnittet](../../monitor-streaming.md).
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -178,6 +178,6 @@ Följ stegen nedan för att verifiera att du har konfigurerat källan och att [!
 
 ![Kund.io Skärmbild av användargränssnittet som visar aktivitetsloggar](../../../../images/tutorials/create/marketing-automation/customerio-webhook/activity-logs.png)
 
-* I plattformsgränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL Customer.io] i källkatalogen. Välj sedan **[!UICONTROL Preview dataset]** för att verifiera data som har importerats för händelser som du har valt i [!DNL Customer.io].
+* I Experience Platform-gränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL Customer.io] i källkatalogen. Välj sedan **[!UICONTROL Preview dataset]** för att verifiera data som har importerats för händelser som du har valt i [!DNL Customer.io].
 
-![Skärmbild för plattformsgränssnitt som visar kapslade händelser](../../../../images/tutorials/create/marketing-automation/customerio-webhook/platform-dataset.png)
+![Experience Platform-användargränssnitt, skärmbild som visar kapslade händelser](../../../../images/tutorials/create/marketing-automation/customerio-webhook/platform-dataset.png)

@@ -3,16 +3,16 @@ title: Översikt över Source Connector med blandpanel
 description: Lär dig hur du ansluter Mixpanel till Adobe Experience Platform med API:er eller användargränssnittet.
 last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: 7eb605f6-8580-40b7-a9b3-96b9c3444f5d
-source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
 
 # [!DNL Mixpanel]
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för inmatning av data från ett analysprogram från tredje part. Stöd för analysleverantörer inkluderar [!DNL Mixpanel].
 
@@ -26,7 +26,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 ## Autentisera ditt [!DNL Mixpanel]-konto
 
-I det här avsnittet beskrivs nödvändiga steg som måste utföras för att autentisera ditt konto och överföra dina [!DNL Mixpanel]-data till plattformen.
+I det här avsnittet beskrivs nödvändiga steg som måste utföras för att autentisera ditt konto och överföra dina [!DNL Mixpanel]-data till Experience Platform.
 
 Om du vill skapa en [!DNL Mixpanel]-källanslutning och ett dataflöde måste du först ha ett giltigt [!DNL Mixpanel]-konto. Om du inte har ett giltigt [!DNL Mixpanel]-konto kan du skapa ditt konto på sidan [Delpanelsregistrering](https://mixpanel.com/register/).
 
@@ -42,17 +42,17 @@ Gå sedan till fliken [!DNL Service Accounts] på sidan [!DNL Project Settings] 
 
 ![Tjänstkonto för blandpanel](../../images/tutorials/create/mixpanel-export-events/mixpanel-service-account.png)
 
-Skapa slutligen ett [schema](../../../xdm/schema/composition.md) för plattformen som krävs för [!DNL Mixpanel Event Export API]. Mer information om vilka mappningar som krävs för ditt schema finns i guiden om att [skapa en [!DNL Mixpanel] källanslutning i användargränssnittet](../../tutorials/ui/create/analytics/mixpanel.md#additional-resources).
+Skapa slutligen ett Experience Platform [schema](../../../xdm/schema/composition.md) som krävs för [!DNL Mixpanel Event Export API]. Mer information om vilka mappningar som krävs för ditt schema finns i guiden om att [skapa en [!DNL Mixpanel] källanslutning i användargränssnittet](../../tutorials/ui/create/analytics/mixpanel.md#additional-resources).
 
 ![Skapa schema](../../images/tutorials/create/mixpanel-export-events/schema.png)
 
-## Anslut [!DNL Mixpanel] till plattformen med API:er
+## Anslut [!DNL Mixpanel] till Experience Platform med API:er
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mixpanel] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mixpanel] till Experience Platform med API:er eller användargränssnittet:
 
 * [Skapa en källanslutning och ett dataflöde för  [!DNL Mixpanel] med API:t för Flow Service](../../tutorials/api/create/analytics/mixpanel.md)
 
-## Anslut [!DNL Mixpanel] till plattformen med användargränssnittet
+## Anslut [!DNL Mixpanel] till Experience Platform med användargränssnittet
 
 * [Skapa en  [!DNL Mixpanel] källanslutning i användargränssnittet](../../tutorials/ui/create/analytics/mixpanel.md)
 * [Skapa ett dataflöde för en källanslutning till en lyckad kund i användargränssnittet](../../tutorials/ui/dataflow/analytics.md)

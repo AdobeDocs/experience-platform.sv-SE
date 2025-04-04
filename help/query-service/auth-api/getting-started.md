@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform; frågetjänst; IP-åtkomstkontroll; auktorisering; API; komma igång
+keywords: Experience Platform; Query Service; IP-åtkomstkontroll; auktorisering; API; komma igång
 title: API-guide för dataauktorisering i Distiller
 description: Lär dig hur du kommer igång med auktorisering och IP-intervallbegränsningar för säker dataåtkomst i Adobe Experience Platform Query Service.
 role: Developer
 exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
-source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '501'
-ht-degree: 1%
+source-wordcount: '504'
+ht-degree: 2%
 
 ---
 
@@ -27,7 +27,7 @@ I följande avsnitt finns information om hur du förbereder nödvändiga auktori
 
 ### Nödvändiga behörigheter {#required-permissions}
 
-Om du vill aktivera säkra dataåtkomstbegränsningar i frågetjänsten måste du ha behörigheten **[!UICONTROL Manage Allowed List]**. Med den här behörigheten kan organisationer definiera specifika IP-intervall (i IPv4- eller IPv6-format) som har behörighet att komma åt data i plattformen via SQL-gränssnittet. Åtkomst hanteras på sandlådenivå, där användare kan konfigurera en lista över godkända IP-adresser eller CIDR-block som begränsar åtkomsten endast till tillåtna nätverk.
+Om du vill aktivera säkra dataåtkomstbegränsningar i frågetjänsten måste du ha behörigheten **[!UICONTROL Manage Allowed List]**. Med den här behörigheten kan organisationer definiera specifika IP-intervall (i IPv4- eller IPv6-format) som har behörighet att komma åt data i Experience Platform via SQL-gränssnittet. Åtkomst hanteras på sandlådenivå, där användare kan konfigurera en lista över godkända IP-adresser eller CIDR-block som begränsar åtkomsten endast till tillåtna nätverk.
 
 >[!NOTE]
 >
@@ -35,13 +35,13 @@ Om du vill aktivera säkra dataåtkomstbegränsningar i frågetjänsten måste d
 
 Följande funktioner är tillgängliga med behörigheten **[!UICONTROL Manage Allowed List]**:
 
-- **Definiera tillåtna IP-intervall**: Endast IP-adresser eller CIDR-block från dessa definierade intervall kan komma åt data i plattformen med SQL via frågetjänsten.
+- **Definiera tillåtna IP-intervall**: Endast IP-adresser eller CIDR-block från dessa definierade intervall kan komma åt data i Experience Platform med hjälp av SQL via frågetjänsten.
 - **Använd kontroller för IP-intervall**: Anslutningar från IP-adresser utanför tillåtna intervall nekas.
 - **Gransknings- och aviseringsfunktioner**: Alla åtkomstförsök, inklusive nekade anslutningar, loggas som granskningshändelser. Dessa händelser är tillgängliga i [Adobe Experience Platform granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md), vilket möjliggör övervakning av potentiella säkerhetsöverträdelser.
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-Om du vill ringa anrop till API:t för dataauktorisering i Distiller måste du slutföra [självstudiekursen för autentisering av plattform-API](../../landing/api-authentication.md), som innehåller värden för obligatoriska huvuden i API-anrop. Inkludera följande rubriker i varje begäran:
+Om du vill ringa anrop till API:t för dataauktorisering i Distiller måste du slutföra [självstudiekursen för autentisering i Experience Platform API](../../landing/api-authentication.md), som innehåller värden för nödvändiga huvuden i API-anrop. Inkludera följande rubriker i varje begäran:
 
 - **Behörighet**: `Bearer {ACCESS_TOKEN}`
 - **x-api-key**: `{API_KEY}`
@@ -52,7 +52,7 @@ Om du vill ringa anrop till API:t för dataauktorisering i Distiller måste du s
 >
 > Mer information om sandlådor finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver också följande rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver också den här rubriken:
 
 - **Innehållstyp**: `application/json`
 

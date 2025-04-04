@@ -5,9 +5,9 @@ audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgrupper utifrån dessa profiler och aktivera dessa målgrupper för tredjepartsdestinationer.
 role: Admin
-source-git-commit: 4c2431148f584f2ffd5de20b8880a6b4a10ff95e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '301'
+source-wordcount: '302'
 ht-degree: 12%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 12%
    * [Kund-AI](segmentation/customer-ai.md)
 * Datauppsättningar {#datasets}
    * [Datauppsättningar](datasets/dataset.md)
-   * [Datakvalitet på plattform](datasets/data-quality.md)
+   * [Datakvalitet på Experience Platform](datasets/data-quality.md)
 * Mål {#destinations}
    * [Översikt över destinationer](destinations/overview.md)
    * [Destinationer i Real-Time CDP B2B edition](destinations/b2b.md)

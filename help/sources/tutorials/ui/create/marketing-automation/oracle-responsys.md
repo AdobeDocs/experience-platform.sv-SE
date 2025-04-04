@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kontakter;oracle;
-title: (Beta) Skapa en Oraclena svarssystemkällanslutning med hjälp av plattformsgränssnittet
-description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Responssys med hjälp av plattformsgränssnittet.
+title: (Beta) Skapa en Oracle Responsys-källanslutning med Experience Platform UI
+description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Responsys med hjälp av Experience Platform användargränssnitt.
 hide: true
 hidefromtoc: true
 exl-id: 9ec5e1c2-3d9e-4729-be81-89a85d5ea782
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '472'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa en [!DNL Oracle Responsys]-källanslutning med hjälp av plattformsgränssnittet
+# (Beta) Skapa en [!DNL Oracle Responsys]-källanslutning med Experience Platform UI
 
 >[!NOTE]
 >
@@ -22,16 +22,16 @@ I den här självstudiekursen får du anvisningar om hur du skapar en [[!DNL Ora
 
 ## Komma igång
 
-Handboken kräver en fungerande förståelse av följande plattformskomponenter:
+Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Med plattformen kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Om du redan har ett autentiserat [!DNL Oracle Responsys]-konto på Platform kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om att [skapa ett dataflöde för att få ut data för automatiserad marknadsföring till Platform](../../dataflow/marketing-automation.md).
+Om du redan har ett autentiserat [!DNL Oracle Responsys]-konto på Experience Platform kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om att [skapa ett dataflöde för att skicka marknadsföringsdata till Experience Platform](../../dataflow/marketing-automation.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL Oracle Responsys] till plattformen måste du ange värden för följande autentiseringsegenskaper:
+För att kunna ansluta [!DNL Oracle Responsys] till Experience Platform måste du ange värden för följande autentiseringsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -41,17 +41,17 @@ För att kunna ansluta [!DNL Oracle Responsys] till plattformen måste du ange v
 
 Mer information om autentiseringsuppgifter för [!DNL Oracle Responsys] finns i [[!DNL Oracle Responsys] handboken om autentisering](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop/API/GetStarted/authentication.htm).
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Oracle Responsys]-konto till plattformen.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Oracle Responsys]-konto till Experience Platform.
 
 ## Anslut ditt [!DNL Oracle Responsys]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin [!UICONTROL Marketing automation] väljer du **[!UICONTROL Oracle Responsys]** och sedan **[!UICONTROL Add data]**.
 
-![Adobe Experience Platform-källkatalogen med Oraclets svarskälla markerad.](../../../../images/tutorials/create/oracle-responsys/catalog.png)
+![Adobe Experience Platform-källkatalogen med Oracle Responsys-källan markerad.](../../../../images/tutorials/create/oracle-responsys/catalog.png)
 
 Sidan **[!UICONTROL Connect Oracle Responsys account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -59,14 +59,14 @@ Sidan **[!UICONTROL Connect Oracle Responsys account]** visas. På den här sida
 
 Om du vill använda ett befintligt konto väljer du det [!DNL Oracle Responsys]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Den befintliga kontoautentiseringsskärmen för Oraclena.](../../../../images/tutorials/create/oracle-responsys/existing.png)
+![Den befintliga kontoautentiseringsskärmen för Oracle-svar.](../../../../images/tutorials/create/oracle-responsys/existing.png)
 
 ### Nytt konto
 
 Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och lämpliga värden för dina [!DNL Oracle Responsys]-autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Den nya kontoautentiseringsskärmen för Oraclena.](../../../../images/tutorials/create/oracle-eloqua/new.png)
+![Den nya kontoautentiseringsskärmen för Oracle-svar.](../../../../images/tutorials/create/oracle-eloqua/new.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du autentiserat och skapat en källanslutning mellan ditt [!DNL Oracle Responsys]-konto och din plattform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att överföra data för automatiserad marknadsföring till plattformen](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du autentiserat och skapat en källanslutning mellan ditt [!DNL Oracle Responsys]-konto och Experience Platform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att skicka automatiserade marknadsföringsdata till Experience Platform](../../dataflow/marketing-automation.md).

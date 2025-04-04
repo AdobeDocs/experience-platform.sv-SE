@@ -5,9 +5,9 @@ title: Ta bort ett dataflöde med API:t för flödestjänsten
 type: Tutorial
 description: Lär dig hur du tar bort batch- och direktuppspelade dataflöden med API:t för Flow Service.
 exl-id: ea9040b1-3a40-493d-86f0-27deef09df07
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '325'
 ht-degree: 0%
 
 ---
@@ -24,12 +24,12 @@ Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du int
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ## Ta bort ett dataflöde
 
@@ -58,7 +58,7 @@ curl -X DELETE \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext. Du kan bekräfta borttagningen genom att försöka utföra en sökbegäran (GET) i dataflödet. API returnerar ett HTTP 404-fel (Hittades inte) som anger att dataflödet har tagits bort.
+Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext. Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET)-begäran i dataflödet. API returnerar ett HTTP 404-fel (Hittades inte) som anger att dataflödet har tagits bort.
 
 ## Nästa steg
 

@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 7f3560eaccecc8f42bbfa7d27b82ad71397df035
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3451'
+source-wordcount: '3457'
 ht-degree: 0%
 
 ---
 
 # Övervaka dataflöden för mål i användargränssnittet
 
-Använd de olika destinationerna i Experience Platform-katalogen för att aktivera data från Platform till ett oändligt antal externa partner. Plattformen gör det enklare att spåra dataflödet till destinationerna genom att tillhandahålla genomskinlighet med dataflöden.
+Använd de olika destinationerna i Experience Platform-katalogen för att aktivera data från Experience Platform för ett oändligt antal externa partner. Experience Platform gör det enklare att spåra dataflödet till destinationerna genom att tillhandahålla genomskinlighet med dataflöden.
 
 Kontrollpanelen ger dig en visuell representation av ett dataflödes resa, inklusive målet som data aktiveras till, vilken typ av data du visar, exporterade data per dataflöde och mycket annat.
 
@@ -23,14 +23,14 @@ I den här självstudiekursen får du anvisningar om hur du antingen kan överva
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
+- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
    - [Dataflöden körs](../../sources/notifications.md): Dataflöden är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
-- [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga program som möjliggör smidig aktivering av data från Platform för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+- [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga program som möjliggör smidig aktivering av data från Experience Platform för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ## Övervaka dataflöden på arbetsytan Destinationer {#monitor-dataflows-in-the-destinations-workspace}
 
-Gå till fliken **[!UICONTROL Browse]** på arbetsytan **[!UICONTROL Destinations]** i plattformsgränssnittet och välj namnet på det mål som du vill visa.
+Gå till fliken **[!UICONTROL Browse]** i arbetsytan **[!UICONTROL Destinations]** i Experience Platform-gränssnittet och markera namnet på det mål som du vill visa.
 
 ![Välj målvy med en målanslutning markerad](../assets/ui/monitor-destinations/select-destination.png)
 
@@ -97,7 +97,7 @@ Varje enskild dataflödeskörning visar följande information:
 
   >[!IMPORTANT]
   >
-  > Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för direktuppspelningsdestinationer. Den här förbättringen ger bättre anpassning mellan rapporteringen i Experience Platform och målplattformarna.
+  > Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsdestinationerna. Den här förbättringen ger bättre anpassning mellan rapporteringen i Experience Platform och målplattformarna.
   >
   > Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
   > 
@@ -349,4 +349,4 @@ När **[!UICONTROL Audiences]** är markerat visas en lista över de målgrupper
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här guiden kan du nu övervaka dataflöden för både batch- och direktuppspelningsmål, inklusive all relevant information som bearbetningstid, aktiveringsfrekvens och status. Mer information om dataflöden i plattformen finns i [dataflödesöversikten](../home.md). Läs [målöversikten](../../destinations/home.md) om du vill veta mer om mål.
+Genom att följa den här guiden kan du nu övervaka dataflöden för både batch- och direktuppspelningsmål, inklusive all relevant information som bearbetningstid, aktiveringsfrekvens och status. Mer information om dataflöden i Experience Platform finns i [dataflödesöversikten](../home.md). Läs [målöversikten](../../destinations/home.md) om du vill veta mer om mål.

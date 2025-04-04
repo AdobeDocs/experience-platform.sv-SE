@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;attributbaserad åtkomstkontroll;Attributbaserad åtkomstkontroll
+keywords: Experience Platform;home;populära topics;api;attributbaserad åtkomstkontroll;Attributbaserad åtkomstkontroll
 solution: Experience Platform
 title: Attributbaserad API-guide för åtkomstkontroll
 description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och åtkomstprinciper i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: 0fc32354-4869-4392-9501-b1dbea1bc55e
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '451'
 ht-degree: 3%
 
 ---
@@ -20,7 +20,7 @@ Det attributbaserade API:t för åtkomstkontroll används för att komma åt rol
 
 >[!IMPORTANT]
 >
->Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen har tillgång till dem. I [API-handboken för principtjänsten](../../../data-governance/api/overview.md) finns anvisningar om hur du använder dessa funktioner programmatiskt.
+>Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i Experience Platform i stället för vilka användare i organisationen som har tillgång till dem. I [API-handboken för principtjänsten](../../../data-governance/api/overview.md) finns anvisningar om hur du använder dessa funktioner programmatiskt.
 
 Dessa slutpunkter beskrivs nedan. Besök de enskilda slutpunktsguiderna för mer information och se [kom igång-guiden](./getting-started.md) för viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 

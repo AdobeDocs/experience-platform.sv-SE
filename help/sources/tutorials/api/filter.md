@@ -2,9 +2,9 @@
 title: Filtrera radnivådata för en Source med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs hur du filtrerar data på källnivå med API:t för Flow Service
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1817'
+source-wordcount: '1820'
 ht-degree: 2%
 
 ---
@@ -27,12 +27,12 @@ Läs den här guiden för steg om hur du filtrerar radnivådata för en källa m
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ## Filtrera källdata {#filter-source-data}
 
@@ -42,7 +42,7 @@ Följande textkonturer används för att filtrera radnivådata för källan.
 
 Det första steget för att filtrera data på radnivå för källan är att hämta källans anslutningsspecifikationer och avgöra vilka operatorer och språk som stöds av källan.
 
-Om du vill hämta en viss källas anslutningsspecifikation gör du en GET-förfrågan till `/connectionSpecs`-slutpunkten för [!DNL Flow Service]-API:t och anger egenskapsnamnet för källan som en del av frågeparametrarna.
+Om du vill hämta en viss källas anslutningsspecifikation gör du en GET-begäran till `/connectionSpecs`-slutpunkten för [!DNL Flow Service]-API:t och anger egenskapsnamnet för källan som en del av frågeparametrarna.
 
 **API-format**
 
@@ -155,7 +155,7 @@ I exemplet nedan används villkor bara för att markera data som är lika med de
 
 ### Förhandsgranska data {#preview-your-data}
 
-Du kan förhandsgranska dina data genom att göra en GET-förfrågan till `/explore`-slutpunkten för [!DNL Flow Service] API:t, samtidigt som du anger `filters` som en del av frågeparametrarna och anger dina PQL-indatavillkor i [!DNL Base64].
+Du kan förhandsgranska dina data genom att göra en GET-begäran till `/explore`-slutpunkten för [!DNL Flow Service] API:t, samtidigt som du anger `filters` som en del av frågeparametrarna och anger dina PQL-indatavillkor i [!DNL Base64].
 
 **API-format**
 
@@ -334,7 +334,7 @@ Ett lyckat svar returnerar innehållet och strukturen för dina data.
 
 ### Skapa en källanslutning för filtrerade data
 
-Om du vill skapa en källanslutning och importera filtrerade data gör du en POST till `/sourceConnections`-slutpunkten och anger filtervillkoren i parametrarna för begärandeinnehållet.
+Om du vill skapa en källanslutning och importera filtrerade data skapar du en POST-begäran till `/sourceConnections`-slutpunkten och anger filtervillkoren i parametrarna för begärandeinnehållet.
 
 **API-format**
 
@@ -460,7 +460,7 @@ Gå till källkatalogen i användargränssnittet och välj sedan **[!UICONTROL D
 
 ### Hämta dataflödesinformation
 
-Därefter måste du hämta dataflödesinformationen, särskilt källanslutnings-ID:t som är kopplat till dataflödet. Om du vill hämta dataflödesinformationen skickar du en GET-förfrågan till slutpunkten `/flows` och anger ditt dataflödes-ID som en sökvägsparameter.
+Därefter måste du hämta dataflödesinformationen, särskilt källanslutnings-ID:t som är kopplat till dataflödet. Om du vill hämta information om dataflödet skickar du en GET-begäran till slutpunkten `/flows` och anger ditt dataflödes-ID som en sökvägsparameter.
 
 **API-format**
 
@@ -591,7 +591,7 @@ Ett lyckat svar returnerar dina dataflödesdetaljer, inklusive information om de
 
 ### Hämta din källanslutningsinformation
 
-Använd sedan ditt källanslutnings-ID och gör en GET-förfrågan till slutpunkten `/sourceConnections` för att hämta källanslutningsinformationen.
+Använd sedan ditt källanslutnings-ID och gör en GET-begäran till slutpunkten `/sourceConnections` för att hämta din källanslutningsinformation.
 
 **API-format**
 
@@ -676,13 +676,13 @@ Ett lyckat svar returnerar information om din källanslutning. Notera versionen 
 
 ### Uppdatera din källanslutning med filtervillkor
 
-Nu när du har ditt källanslutnings-ID och dess motsvarande version kan du nu göra en PATCH-begäran med filtervillkoren som anger dina standardaktivitetstyper.
+Nu när du har ditt källanslutnings-ID och dess motsvarande version kan du göra en PATCH-begäran med filtervillkoren som anger dina standardaktivitetstyper.
 
 Om du vill uppdatera din källanslutning gör du en PATCH-begäran till `/sourceConnections`-slutpunkten och anger ditt källanslutnings-ID som en frågeparameter. Dessutom måste du ange en `If-Match`-huvudparameter med motsvarande version av källanslutningen.
 
 >[!TIP]
 >
->Rubriken `If-Match` krävs när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen/taggen för det dataflöde som du vill uppdatera. Versions-/etag-värdet uppdateras med varje lyckad uppdatering av ett dataflöde.
+>Huvudet `If-Match` krävs när en PATCH-begäran görs. Värdet för den här rubriken är den unika versionen/taggen för det dataflöde som du vill uppdatera. Versions-/etag-värdet uppdateras med varje lyckad uppdatering av ett dataflöde.
 
 **API-format**
 
@@ -747,9 +747,9 @@ Ett lyckat svar returnerar ditt källanslutnings-ID och -tagg (version).
 
 +++
 
-### Publish din källanslutning
+### Publicera din källanslutning
 
-När källanslutningen har uppdaterats med filtervillkoren kan du nu gå vidare från utkastläget och publicera källanslutningen. Om du vill göra det skickar du en POST till slutpunkten `/sourceConnections` och anger ID:t för din utkastkällanslutning samt en åtgärd för publicering.
+När källanslutningen har uppdaterats med filtervillkoren kan du nu gå vidare från utkastläget och publicera källanslutningen. Om du vill göra det skickar du en POST-begäran till `/sourceConnections`-slutpunkten och anger ID:t för din utkastkällanslutning samt en åtgärd för publicering.
 
 **API-format**
 
@@ -791,9 +791,9 @@ Ett lyckat svar returnerar ditt källanslutnings-ID och -tagg (version).
 
 +++
 
-### Publish din målanslutning
+### Publicera målanslutningen
 
-På samma sätt som i föregående steg måste du även publicera målanslutningen för att kunna fortsätta och publicera ditt utkast till dataflöde. Gör en begäran om POST till `/targetConnections`-slutpunkten och ange ID:t för den utkastmålanslutning som du vill publicera samt en åtgärd för publicering.
+På samma sätt som i föregående steg måste du även publicera målanslutningen för att kunna fortsätta och publicera ditt utkast till dataflöde. Gör en POST-begäran till `/targetConnections`-slutpunkten och ange ID:t för den utkastmålanslutning som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -836,9 +836,9 @@ Ett lyckat svar returnerar ID:t och motsvarande tagg för den publicerade målan
 +++
 
 
-### Publish ditt dataflöde
+### Publicera dataflödet
 
-Med både käll- och målanslutningarna publicerade kan du nu fortsätta till det sista steget och publicera ditt dataflöde. Om du vill publicera ditt dataflöde skickar du en POST till `/flows`-slutpunkten och anger ditt dataflödes-ID och en åtgärd för publicering.
+Med både käll- och målanslutningarna publicerade kan du nu fortsätta till det sista steget och publicera ditt dataflöde. Om du vill publicera ditt dataflöde gör du en POST-begäran till `/flows`-slutpunkten och anger ditt dataflödes-ID och en åtgärd för publicering.
 
 **API-format**
 
@@ -880,7 +880,7 @@ Ett lyckat svar returnerar ID:t och motsvarande `etag` i dataflödet.
 
 +++
 
-Du kan använda användargränssnittet för Experience Platform för att verifiera att ditt dataflöde har publicerats. Navigera till dataflödessidan i källkatalogen och referera till **[!UICONTROL Status]** i dataflödet. Om det lyckas bör statusen nu anges till **Aktiverad**.
+Du kan använda användargränssnittet i Experience Platform för att verifiera att dataflödet i utkastet har publicerats. Navigera till dataflödessidan i källkatalogen och referera till **[!UICONTROL Status]** i dataflödet. Om det lyckas bör statusen nu anges till **Aktiverad**.
 
 >[!TIP]
 >

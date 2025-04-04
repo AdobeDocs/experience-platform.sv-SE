@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Politiska åtgärder;API-baserad tillämpning;datastyrning
+keywords: Experience Platform;hemmabruk;populära ämnen;Politik;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: API-slutpunkt för datahanteringsprinciper
-description: Datastyrningsprinciper är regler som organisationen antar som beskriver den typ av marknadsföringsåtgärder som ni tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av datastyrningsprinciper.
+description: Datastyrningsprinciper är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du har rätt att, eller som begränsas från, utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av datastyrningsprinciper.
 role: Developer
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1863'
+source-wordcount: '1864'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Datastyrningsprinciper är regler som beskriver den typ av marknadsföringsåtg�
 
 >[!IMPORTANT]
 >
->Styrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som bestämmer vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Mer information om hur du programmässigt hanterar åtkomstkontrollprinciper finns i `/policies`-slutpunktshandboken för [åtkomstkontrolls-API:t](../../access-control/abac/api/policies.md).
+>Styrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som avgör vilka specifika dataattribut som vissa Experience Platform-användare i organisationen kan komma åt. Mer information om hur du programmässigt hanterar åtkomstkontrollprinciper finns i `/policies`-slutpunktshandboken för [åtkomstkontrolls-API:t](../../access-control/abac/api/policies.md).
 
 ## Komma igång
 
@@ -26,7 +26,7 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Policy Service] A
 
 ## Hämta en lista med profiler {#list}
 
-Du kan visa alla `core`- eller `custom`-principer genom att göra en GET-förfrågan till `/policies/core` respektive `/policies/custom`.
+Du kan visa alla `core`- eller `custom`-profiler genom att göra en GET-begäran till `/policies/core` respektive `/policies/custom`.
 
 **API-format**
 
@@ -274,7 +274,7 @@ För att definiera en princip som förhindrar att en marknadsföringsåtgärd ut
 | `operands` | En array med objekt, där varje objekt representerar antingen en enda etikett eller ytterligare ett par av `operator`- och `operands`-egenskaper. Förekomsten av etiketter och/eller åtgärder i en `operands`-array tolkas som true eller false baserat på värdet för dess jämställda `operator` -egenskap. |
 | `label` | Namnet på en enskild dataanvändningsetikett som gäller för principen. |
 
-Du kan skapa en ny anpassad princip genom att göra en POST-förfrågan till slutpunkten `/policies/custom`.
+Du kan skapa en ny anpassad princip genom att göra en POST-begäran till slutpunkten `/policies/custom`.
 
 **API-format**
 
@@ -378,7 +378,7 @@ Ett lyckat svar returnerar information om den nyligen skapade principen, inklusi
 >
 >Du kan bara uppdatera anpassade profiler. Om du vill aktivera eller inaktivera kärnprinciper läser du avsnittet [Uppdatera listan över aktiverade kärnprinciper](#update-enabled-core).
 
-Du kan uppdatera en befintlig anpassad princip genom att ange dess ID i sökvägen till en PUT-begäran med en nyttolast som innehåller den uppdaterade formen av profilen i sin helhet. Med andra ord skriver PUT i själva verket om policyn.
+Du kan uppdatera en befintlig anpassad princip genom att ange dess ID i sökvägen till en PUT-begäran med en nyttolast som innehåller den uppdaterade formen av profilen i sin helhet. Med andra ord skriver PUT-begäran i stort sett om policyn.
 
 >[!NOTE]
 >
@@ -478,7 +478,7 @@ Ett godkänt svar returnerar information om den uppdaterade principen.
 >
 >Du kan bara uppdatera anpassade profiler. Om du vill aktivera eller inaktivera kärnprinciper läser du avsnittet [Uppdatera listan över aktiverade kärnprinciper](#update-enabled-core).
 
-En viss del av en policy kan uppdateras på PATCH-begäran. Till skillnad från PUT som skriver om principen begär PATCH endast att egenskaperna som anges i begärandetexten ska uppdateras. Detta är särskilt användbart när du vill aktivera eller inaktivera en princip, eftersom du bara behöver ange sökvägen till lämplig egenskap (`/status`) och dess värde (`ENABLED` eller `DISABLED`).
+En viss del av en profil kan uppdateras på begäran av PATCH. Till skillnad från PUT-begäranden som skriver om principen, begär PATCH endast att egenskaperna som anges i begärandetexten ska uppdateras. Detta är särskilt användbart när du vill aktivera eller inaktivera en princip, eftersom du bara behöver ange sökvägen till lämplig egenskap (`/status`) och dess värde (`ENABLED` eller `DISABLED`).
 
 >[!NOTE]
 >
@@ -580,7 +580,7 @@ Du kan ta bort en anpassad princip genom att ta med dess `id` i sökvägen för 
 
 >[!WARNING]
 >
->Policyer kan inte återställas när de har tagits bort. Det är bäst att [utföra en sökningsförfrågan](#lookup) först för att visa principen och bekräfta att det är rätt princip som du vill ta bort.
+>Policyer kan inte återställas när de har tagits bort. Det är bäst att [utföra en sökningsbegäran (GET)](#lookup) först för att visa principen och bekräfta att det är rätt princip som du vill ta bort.
 
 **API-format**
 
@@ -611,7 +611,7 @@ Du kan bekräfta borttagningen genom att försöka söka efter (GET) profilen ig
 
 ## Hämta en lista över aktiverade kärnprinciper {#list-enabled-core}
 
-Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Du kan hämta en lista över kärnprinciper som för närvarande är aktiverade av din organisation genom att göra en GET-förfrågan till slutpunkten `/enabledCorePolicies`.
+Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Du kan hämta en lista över kärnprinciper som för närvarande är aktiverade av din organisation genom att göra en GET-begäran till slutpunkten `/enabledCorePolicies`.
 
 **API-format**
 
@@ -663,7 +663,7 @@ Ett lyckat svar returnerar listan med aktiverade kärnprinciper under en `policy
 
 ## Uppdatera listan över aktiverade kärnprinciper {#update-enabled-core}
 
-Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Genom att göra en PUT-begäran till `/enabledCorePolicies`-slutpunkten kan du uppdatera listan över aktiverade kärnprinciper för din organisation med ett enda anrop.
+Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Genom att göra en PUT-begäran till `/enabledCorePolicies`-slutpunkten kan du uppdatera listan över aktiverade kärnprinciper för din organisation med ett enda samtal.
 
 >[!NOTE]
 >

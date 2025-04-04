@@ -1,24 +1,24 @@
 ---
-description: Lär dig hur du konfigurerar filexportinställningar för mål som skapats med Destination SDK.
+description: Lär dig hur du konfigurerar inställningar för filexport för mål som skapats med Destination SDK.
 title: Batchkonfiguration
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1031'
 ht-degree: 0%
 
 ---
 
 # Batchkonfiguration {#batch-configuration}
 
-Använd alternativen för gruppkonfiguration i Destinationen SDK för att tillåta användare att anpassa de exporterade filnamnen och konfigurera exportschemat efter sina önskemål.
+Använd alternativen för gruppkonfiguration i Destination SDK för att låta användare anpassa namnen på de exporterade filerna och för att konfigurera exportschemat efter sina önskemål.
 
-När du skapar filbaserade mål via Destination SDK kan du konfigurera standardprogram för filnamngivning och -export, eller så kan du ge användarna möjlighet att konfigurera dessa inställningar från plattformsgränssnittet. Du kan till exempel konfigurera beteenden som:
+När du skapar filbaserade mål via Destination SDK kan du konfigurera standardprogram för filnamngivning och -export, eller så kan du ge användarna möjlighet att konfigurera inställningarna från Experience Platform användargränssnitt. Du kan till exempel konfigurera beteenden som:
 
 * Inkludera specifik information i filnamnet, till exempel målgrupps-ID, mål-ID:n eller anpassad information.
-* Användare kan anpassa filnamnsgivningen från plattformens användargränssnitt.
+* Användare kan anpassa filnamnet i Experience Platform-gränssnittet.
 * Konfigurera filexporten så att den sker i angivna tidsintervall.
-* Definiera vilka alternativ för filnamngivning och anpassning av exportschema som användarna kan se i användargränssnittet för plattformen.
+* Definiera vilka alternativ för filnamngivning och anpassning av exportschema som användarna kan se i Experience Platform användargränssnitt.
 
 Batchkonfigurationsinställningarna ingår i målkonfigurationen för filbaserade mål.
 
@@ -29,11 +29,11 @@ Du kan konfigurera inställningarna för filnamngivning och exportschema via slu
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-I den här artikeln beskrivs alla gruppkonfigurationsalternativ som stöds och som du kan använda för ditt mål. Artikeln innehåller även information om vad kunderna kommer att se i användargränssnittet för plattformen.
+I den här artikeln beskrivs alla gruppkonfigurationsalternativ som stöds och som du kan använda för ditt mål. Artikeln innehåller även information om vad kunderna kommer att se i användargränssnittet för Experience Platform.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -95,7 +95,7 @@ Värdena som du anger här visas i steget [Schemalägg målexport](../../../ui/a
 | `allowedScheduleFrequency` | Lista | Definierar den filexportfrekvens som är tillgänglig för kunder. Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
 | `defaultFrequency` | Enum | Definierar standardexportfrekvensen för filer.Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> Standardvärdet är `DAILY`. |
 | `defaultStartTime` | Sträng | Definierar standardstarttiden för filexporten. Använder 24-timmars filformat. Standardvärdet är &quot;00:00&quot;. |
-| `filenameConfig.allowedFilenameAppendOptions` | Sträng | *Krävs*. Lista över tillgängliga filnamnsmappar som användare kan välja mellan. Detta avgör vilka objekt som läggs till i de exporterade filnamnen (målgrupps-ID, organisationsnamn, exportdatum och exporttid med mera). När du anger `defaultFilename` bör du se till att du inte duplicerar makron. <br><br>Värden som stöds: <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>Oavsett i vilken ordning du definierar makrona visas de alltid i den ordning som de anges här i användargränssnittet för Experience Platform. <br><br> Om `defaultFilename` är tom måste listan `allowedFilenameAppendOptions` innehålla minst ett makro. |
+| `filenameConfig.allowedFilenameAppendOptions` | Sträng | *Krävs*. Lista över tillgängliga filnamnsmappar som användare kan välja mellan. Detta avgör vilka objekt som läggs till i de exporterade filnamnen (målgrupps-ID, organisationsnamn, exportdatum och exporttid med mera). När du anger `defaultFilename` bör du se till att du inte duplicerar makron. <br><br>Värden som stöds: <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>Oavsett i vilken ordning du definierar makrona visas de alltid i den ordning som de visas här. <br><br> Om `defaultFilename` är tom måste listan `allowedFilenameAppendOptions` innehålla minst ett makro. |
 | `filenameConfig.defaultFilenameAppendOptions` | Sträng | *Krävs*. Förvalda standardmakron för filnamn som användare kan avmarkera.<br><br> Makrona i den här listan är en delmängd av de som definieras i `allowedFilenameAppendOptions`. |
 | `filenameConfig.defaultFilename` | Sträng | *Valfritt*. Definierar standardmakron för filnamn för de exporterade filerna. Användarna kan inte skriva över dem. <br><br>Alla makron som definieras av `allowedFilenameAppendOptions` läggs till efter makrona `defaultFilename`. <br><br>Om `defaultFilename` är tomt måste du definiera minst ett makro i `allowedFilenameAppendOptions`. |
 | `segmentGroupingEnabled` | Boolean | Definierar om de aktiverade målgrupperna ska exporteras i en eller flera filer, baserat på målgruppens [sammanfogningsprincip](../../../../profile/merge-policies/overview.md). Värden som stöds: <ul><li>`true`: exporterar en fil per sammanfogningsprincip.</li><li>`false`: exporterar en fil per målgrupp, oavsett kopplingsprofilen. Detta är standardbeteendet. Du kan uppnå samma resultat genom att helt utelämna den här parametern.</li></ul> |
@@ -113,9 +113,9 @@ Använd konfigurationsmakron för filnamn för att definiera vad de exporterade 
 | Makro | Gränssnittsetikett | Beskrivning | Exempel |
 |---|---|---|---|
 | `DESTINATION` | [!UICONTROL Destination] | Målnamn i användargränssnittet. | Amazon S3 |
-| `SEGMENT_ID` | [!UICONTROL Segment ID] | Unikt, plattformsgenererat målgrupps-ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
-| `SEGMENT_NAME` | [!UICONTROL Segment Name] | Användardefinierat publiknamn | VIP prenumerant |
-| `DESTINATION_INSTANCE_ID` | [!UICONTROL Destination ID] | Unikt, plattformsgenererat ID för målinstansen | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
+| `SEGMENT_ID` | [!UICONTROL Segment ID] | Unikt, Experience Platform-genererat målgrupps-ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
+| `SEGMENT_NAME` | [!UICONTROL Segment Name] | Användardefinierat publiknamn | VIP subscriber |
+| `DESTINATION_INSTANCE_ID` | [!UICONTROL Destination ID] | Unikt, Experience Platform-genererat ID för målinstansen | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
 | `DESTINATION_INSTANCE_NAME` | [!UICONTROL Destination Name] | Användardefinierat namn för målinstansen. | Mål för My 2022 Advertising |
 | `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | Namn på kundorganisationen i Adobe Experience Platform. | Organisationsnamn |
 | `SANDBOX_NAME` | [!UICONTROL Sandbox Name] | Namn på den sandlåda som används av kunden. | prod |

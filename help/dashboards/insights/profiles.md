@@ -2,9 +2,9 @@
 title: Profilinsikter
 description: Upptäck den SQL som ger er profilinsikter och använder dessa frågor för att generera anpassade insikter som ytterligare utforskar era kunder och deras kundupplevelser.
 exl-id: f3792076-3e01-4e26-8788-32927202a2e5
-source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1653'
+source-wordcount: '1654'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ De insikter som bygger på analysen av er datamodell gör era Adobe Real-Time CD
 
 Förstå era profilinsikter genom att få tillgång till den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska era kunder och deras kundupplevelser som tillsammans utgör era profiler. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
-Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via plattformsgränssnittet.
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via Experience Platform-gränssnittet.
 
 Följande insikter är tillgängliga för dig att använda som en del av [profilkontrollpanelen](../guides/profiles.md) eller en anpassad [användardefinierad kontrollpanel](../standard-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../standard-dashboards.md#create-widget).
 
@@ -465,7 +465,7 @@ Mer information om utseendet och funktionaliteten för den här insikten finns i
 
 Frågor som besvaras av den här insikten:
 
-- Vad är det totala antalet profiler i Adobe Real-time Customer Data Platform?
+- Vad är det totala antalet profiler i Adobe Real-Time Customer Data Platform?
 - Hur distribueras profiler baserat på kopplingsprofiler?
 - Vilken sammanfogningsprincip har det högsta antalet profiler?
 

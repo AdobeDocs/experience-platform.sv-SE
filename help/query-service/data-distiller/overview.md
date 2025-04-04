@@ -2,16 +2,16 @@
 title: Data Distiller Overview
 description: En sammanfattning av användningsgränserna för Data Distiller för Query Service-data i relation till ditt licensieringsberättigande.
 exl-id: eb4a184b-f241-4f6f-a250-bbe4605d6b1b
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '104'
+source-wordcount: '105'
 ht-degree: 0%
 
 ---
 
 # Distiller - översikt
 
-Data Distiller är ett paket som innehåller en deluppsättning av funktionerna från Adobe Experience Platform. Med Data Distiller kan du färdigställa data efter intag (t.ex. rengöring, formning och manipulering) för kundprofiler i realtid eller för analytiska syften genom att köra batchfrågor i Query Service. Din användning av Data Distiller är beroende av din behörighet för plattformsbaserade program.
+Data Distiller är ett paket som innehåller en deluppsättning av funktionerna från Adobe Experience Platform. Med Data Distiller kan du färdigställa data efter intag (t.ex. rengöring, formning och manipulering) för kundprofiler i realtid eller för analytiska syften genom att köra batchfrågor i Query Service. Din användning av Data Distiller är beroende av din behörighet för Experience Platform-baserade program.
 
 <!-- Commented out references to licence usage dashboard. It is temporarily hidden:
 ## License usage {#license-usage}

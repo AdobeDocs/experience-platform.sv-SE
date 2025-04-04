@@ -5,10 +5,10 @@ feature: Customer AI
 title: Åtkomstkontroll för kundens AI
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll för kundens AI.
 exl-id: 02e3b6a4-304a-4ac4-b07c-010531101feb
-source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '491'
-ht-degree: 0%
+source-wordcount: '492'
+ht-degree: 3%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
 
-Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Med attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla Experience Platform-arbetsflöden och -resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 På grund av den attributbaserade åtkomstkontrollen skulle vissa fält och funktioner ha begränsad åtkomst och vara otillgängliga för vissa AI-tjänstmodeller för kunder. Exempel: &quot;Identitet&quot;, &quot;Scores Definition&quot; och &quot;Clone&quot;.
 
@@ -46,4 +46,4 @@ Mer information om hur du tilldelar behörigheter för åtkomstkontroll](../../.
 
 ## Nästa steg
 
-Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i [!DNL Experience Platform]. Du kan nu fortsätta till användarhandboken för [åtkomstkontrollen](../overview.md) för detaljerade steg om hur du använder [!DNL Admin Console] för att skapa produktprofiler och tilldela behörigheter för [!DNL Platform].
+Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i [!DNL Experience Platform]. Du kan nu fortsätta till användarhandboken för [åtkomstkontrollen](../overview.md) för detaljerade steg om hur du använder [!DNL Admin Console] för att skapa produktprofiler och tilldela behörigheter för [!DNL Experience Platform].

@@ -4,16 +4,16 @@ description: Lär dig hur du hämtar granskningshändelser i Experience Platform
 role: Developer
 feature: Audits, API
 exl-id: c365b6d8-0432-41a5-9a07-44a995f69b7d
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för granskningshändelser
 
-Granskningsloggar används för att ge information om användaraktivitet för olika tjänster och funktioner. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen. Med slutpunkten `/audit/events` i API:t [!DNL Audit Query] kan du hämta händelsedata för din organisations aktivitet i [!DNL Platform] programmatiskt.
+Granskningsloggar används för att ge information om användaraktivitet för olika tjänster och funktioner. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen. Med slutpunkten `/audit/events` i API:t [!DNL Audit Query] kan du hämta händelsedata för din organisations aktivitet i [!DNL Experience Platform] programmatiskt.
 
 ## Komma igång
 
@@ -152,9 +152,9 @@ Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och
 | `imsOrgId` | ID för organisationen som händelsen ägde rum under. |
 | `permissionResource` | Den produkt eller funktion som gav behörighet att utföra åtgärden. En resurs kan vara något av följande: <ul><li>`Activation` </li><li>`ActivationAssociation` </li><li>`AnalyticSource` </li><li>`AudienceManagerSource` </li><li>`BizibleSource` </li><li>`CustomerAttributeSource` </li><li>`Dataset` </li><li>`EnterpriseSource` </li><li>`LaunchSource` </li><li>`MarketoSource` </li><li>`ProductProfile` </li><li>`ProfileConfig` </li><li>`Sandbox` </li><li>`Schema` </li><li>`Segment` </li><li>`StreamingSource` </li></ul> |
 | `permissionType` | Behörighetstypen som används för åtgärden. |
-| `assetType` | Typen av plattformsresurs som åtgärden utfördes på. |
-| `assetId` | En unik identifierare för den plattformsresurs som åtgärden utfördes på. |
-| `assetName` | Namnet på den plattformsresurs som åtgärden utfördes på. |
+| `assetType` | Den typ av Experience Platform-resurs som åtgärden utfördes på. |
+| `assetId` | En unik identifierare för den Experience Platform-resurs som åtgärden utfördes på. |
+| `assetName` | Namnet på den Experience Platform-resurs som åtgärden utfördes på. |
 | `action` | Den typ av åtgärd som spelades in för händelsen. En åtgärd kan vara något av följande: <ul><li>`Add` </li><li>`Create` </li><li>`Dataset activate` </li><li>`Dataset remove` </li><li>`Delete` </li><li>`Disable for profile` </li><li>`Enable` </li><li>`Enable for profile` </li><li>`Profile activate` </li><li>`Profile remove` </li><li>`remove` </li><li>`reset` </li><li>`segment activate` </li><li>`segment remove` </li><li>`update` </li></ul> |
 | `status` | Åtgärdens status. En status kan vara något av följande: </li><li>`Allow` </li><li>`Deny` </li><li>`Failure` </li><li>`Success` </li></ul> |
 

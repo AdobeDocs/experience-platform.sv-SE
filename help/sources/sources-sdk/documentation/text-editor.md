@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en källdokumentationssida med en textredigerare i din lokala miljö
 description: Det här dokumentet innehåller anvisningar om hur du använder din lokala miljö för att skapa dokumentation för källan och skicka en pull-begäran (PR).
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '601'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller anvisningar om hur du använder din lokala milj�
 
 >[!TIP]
 >
->Följande dokument från Adobe medverkande kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
 
 ## Förhandskrav
 
@@ -29,7 +29,7 @@ Det första steget i att konfigurera din lokala redigeringsmiljö är att navige
 
 ![platform-repo](../assets/platform-repo.png)
 
-På huvudsidan i GitHub-databasen för plattformen väljer du **Förgrening**.
+På huvudsidan i Experience Platform GitHub-databasen väljer du **Förgrening**.
 
 ![förgrening](../assets/fork.png)
 
@@ -53,7 +53,7 @@ Ange ett beskrivande namn för din gren i pover-panelen som visas och välj seda
 
 ![create-branch-vs](../assets/create-branch-vs.png)
 
-Välj sedan **Publish-gren**.
+Välj sedan **Publicera gren**.
 
 ![publish-branch](../assets/publish-branch.png)
 
@@ -61,7 +61,7 @@ Välj sedan **Publish-gren**.
 
 När databasen är klonad till din lokala dator och en ny gren har skapats kan du nu börja skapa dokumentationssidan för den nya källan med den [textredigerare som du väljer](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
 
-Adobe rekommenderar att du använder [Visual Studio Code](https://code.visualstudio.com/) och att du installerar redigeringstillägget Adobe Markdown. Om du vill installera tillägget startar du Visual Studio-kod och väljer sedan fliken **Tillägg** i den vänstra navigeringen.
+Adobe rekommenderar att du använder [Visual Studio Code](https://code.visualstudio.com/) och att du installerar tillägget Adobe Markdown Authoring. Om du vill installera tillägget startar du Visual Studio-kod och väljer sedan fliken **Tillägg** i den vänstra navigeringen.
 
 ![tillägg](../assets/extension.png)
 
@@ -89,11 +89,11 @@ Om du vill skapa en pull-begäran väljer du **Skapa pull-begäran**.
 
 ![create-pr-vs](../assets/create-pr-vs.png)
 
-Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR, som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR för att sammanfoga arbetsgrenen i ditt arbete med huvudgrenen i Adobe-databasen.
+Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR, som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR som sammanfogar arbetsgrenen i ditt arbete med huvudgrenen i Adobe-databasen.
 
 >[!TIP]
 >
->Låt kryssrutan **Tillåt redigeringar av underhållare** vara markerad så att dokumentationsteamet i Adobe kan göra ändringar i PR-dokumentet.
+>Låt kryssrutan **Tillåt redigeringar av underhållare** vara markerad för att se till att Adobe dokumentationsteam kan göra ändringar i PR-dokumentet.
 
 ![create-pr](../assets/create-pr.png)
 

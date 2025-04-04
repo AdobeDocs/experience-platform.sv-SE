@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;startsida;populära ämnen;handbok för utvecklare av sandlådor
+keywords: Experience Platform;home;populära topics;sandbox developguide
 solution: Experience Platform
 title: Komma igång med sandbox-API
 description: Med sandbox-API kan utvecklare programmässigt hantera sandlådor i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '373'
 ht-degree: 3%
 
 ---
@@ -28,7 +28,7 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa Experience Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -38,7 +38,7 @@ Förutom autentiseringshuvuden kräver alla begäranden en rubrik som anger namn
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare ett huvud:
 
 * Content-Type: application/json
 

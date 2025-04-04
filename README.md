@@ -1,19 +1,19 @@
 ---
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 163c6f6bacfd6f0928b1053bd146a2d4fc4c74d0
 workflow-type: tm+mt
-source-wordcount: '504'
-ht-degree: 57%
+source-wordcount: '470'
+ht-degree: 55%
 
 ---
 # Bidra med innehåll
 
-Vi välkomnar bidrag till innehåll från våra medarbetare i communityn och Adobe utanför dokumentationsteamen.
+Vi välkomnar innehållsinsatser från våra medarbetare och Adobe utanför dokumentationsteamen.
 
 ## Adobes uppförandekod gällande öppen källkod
 
 Detta projekt har antagit [Adobe Open Source Code of Conduct](code-of-conduct.md) eller [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct). Mer information finns i artikeln [Contributing](contributing.md).
 
-## Olika sätt att bidra till Adobe
+## Olika sätt att bidra till Adobe-material
 
 Se [Guiden för bidragsgivare till Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=sv).
 
@@ -21,9 +21,9 @@ Hur du bidrar beror på vem du är och vilken typ av ändringar du vill bidra me
 
 ### Mindre ändringar eller förfrågningar
 
-Klicka på **Logga ett problem** i en artikel som öppnar ett problem i GitHub. Ange en titel och en beskrivning och klicka sedan på **Skicka ny utgåva**.
+Om du vill skicka en begäran klickar du på länken **Logga ett problem** i en artikel som öppnar ett problem i GitHub. Ange en titel och en beskrivning och klicka sedan på **Skicka nytt utgåva**.
 
-Klicka på knappen **Redigera den här sidan** i en artikel som öppnar källartikeln i GitHub. Använd GitHub-gränssnittet för att göra uppdateringar. Mer information finns i den allmänna [guiden för bidragsgivare till Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=sv).
+Om du vill begära mindre uppdateringar klickar du på länken **Redigera den här sidan** i en artikel som öppnar källartikeln i GitHub. Använd GitHub-gränssnittet för att göra uppdateringar. Mer information finns i den allmänna [guiden för bidragsgivare till Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=sv).
 
 Mindre korrigeringar och förtydliganden som du lämnar in för dokumentation och kodexempel i den här databasen omfattas av Adobes användarvillkor.
 
@@ -35,15 +35,15 @@ Om du är en del av Adobes community och vill skapa en artikel eller skicka in s
 If you submit a pull request with significant changes to documentation and code examples, you'll see a message in the pull request asking you to submit an online contribution license agreement (CLA). You must complete the online form before we can review your pull request.
 -->
 
-### Större förändringar eller nya artiklar från anställda i Adobe
+### Större förändringar eller nya artiklar från Adobe Anställda
 
-Om du är teknikskribent, programchef eller utvecklare för en Adobe Experience Cloud-lösning, och det är ditt jobb att bidra till eller skriva tekniska artiklar, bör du använda det privata arkivet på `https://git.corp.adobe.com/AdobeDocs`. Se [Handbok för internt samarbete](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html) för mer information.
+Om du är teknikskribent, programchef eller utvecklare för en Adobe Experience Cloud-lösning, och det är ditt jobb att bidra till eller skapa tekniska artiklar, bör du använda den privata databasen på `https://git.corp.adobe.com/AdobeDocs`. Mer information finns i [den interna Collaboration-handboken](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html).
 
 <!--Employees from other parts of the Adobe world should use the public repo for minor updates.-->
 
 ## Kontakta Experience Platform dokumentationsteam
 
-Som tidigare nämnts kan medlemmar i Adobe-communityn skicka in ett ärende som kommer att tilldelas rätt skribent. Om du är anställd i Adobe kan du skicka in ett ärende eller kontakta Experience Platform dokumentationsteamet direkt. Information om hur du hittar huvudskrivaren för ett specifikt plattformsområde finns i [Adobe Experience Platform Documentation wiki](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation).
+Som tidigare nämnts kan medlemmar i Adobe-communityn skicka in ett problem som tilldelas rätt skribent. Om du är anställd hos Adobe kan du skicka in ett ärende eller kontakta Experience Platform dokumentationsteam direkt. Om du vill hitta huvudskrivaren för ett visst Experience Platform-område läser du [Adobe Experience Platform Documentation wiki](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation).
 
 ## Verktyg och inställningar
 
@@ -53,7 +53,7 @@ Deltagare i vårt community kan använda GitHub-gränssnittet för grundläggand
 
 Mer information finns i [guiden för bidragsgivare till Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=sv).
 
-### Markdown
+### Markering
 
 Alla artiklar i den här databasen använder GitHub-anpassad markdown. Om du inte är van vid markdown bör du läsa:
 

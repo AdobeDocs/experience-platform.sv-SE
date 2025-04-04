@@ -1,12 +1,12 @@
 ---
 keywords: mobil;mål för mobilengagemang;LINE;LINE mobile engagement destination
 title: LINJEanslutning
-description: Med LINE-destinationen kan ni lägga till profiler till era plattformar och leverera personaliserade upplevelser till anslutna användare.
+description: Med LINE-destinationen kan ni lägga till profiler till er Experience Platform-målgrupp och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1147'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Som marknadsförare kan ni inrikta er på användare i ett mål för mobilengage
 
 ### Krav för [!DNL LINE] {#prerequisites-destination}
 
-Observera följande krav i [!DNL LINE] för att kunna exportera data från Platform till ditt [!DNL LINE]-konto:
+Observera följande krav i [!DNL LINE] för att kunna exportera data från Experience Platform till ditt [!DNL LINE]-konto:
 
 #### Du måste ha ett [!DNL LINE]-konto {#prerequisites-account}
 
@@ -40,7 +40,7 @@ Du måste registrera och skapa ett [!DNL LINE]-konto om du inte redan har ett. S
 
 #### Samla [!DNL LINE channel access token (long-lived)] från utvecklarkonsolen [!DNL LINE] {#gather-credentials}
 
-Om du vill att plattformen ska kunna få åtkomst till [!DNL LINE]-resurser måste du ha *[!DNL Channel access token (long-lived)]* från den önskade [!DNL LINE] *MeddelandeAPI*-kanalen.
+För att Experience Platform ska kunna komma åt [!DNL LINE]-resurser måste du ha *[!DNL Channel access token (long-lived)]* från den önskade [!DNL LINE] *Messaging API* -kanalen.
 
 1. Logga in med ditt [!DNL LINE]-konto på [[!DNL LINE] utvecklarkonsolen](https://developers.line.biz/console).
 1. Gå sedan till listan *[!DNL Providers]*, markera *[!DNL Provider]* och markera till sist kanalen *MeddelandeAPI* för att komma åt inställningarna. Om du använder utvecklarkonsolen för första gången följer du [[!DNL LINE] dokumentationen](https://developers.line.biz/en/docs/messaging-api/getting-started/) för att slutföra stegen som krävs för att skapa en provider.
@@ -85,7 +85,7 @@ I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL
 ### Autentisera till mål {#authenticate}
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
-![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar.](../../assets/catalog/mobile-engagement/line/authenticate-destination.png)
+![Experience Platform UI, bild som visar hur du autentiserar.](../../assets/catalog/mobile-engagement/line/authenticate-destination.png)
 
 Fyll i de obligatoriska fälten nedan.
 * **[!UICONTROL Bearer token]**: Din [!DNL LINE Channel access token (long-lived)] från utvecklarkonsolen [!DNL LINE]. Se avsnittet [Samla in inloggningsuppgifter](#gather-credentials).
@@ -95,7 +95,7 @@ Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]*
 ### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
-![Skärmbild för plattformsgränssnitt som visar målinformationen.](../../assets/catalog/mobile-engagement/line/destination-details.png)
+![Experience Platform UI-skärmbild med målinformation.](../../assets/catalog/mobile-engagement/line/destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -118,7 +118,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa attribut och identiteter {#map}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL LINE] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL LINE]:
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL LINE] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL LINE]:
 
 Beroende på din källidentitet måste följande namnrymder för målidentitet mappas:
 
@@ -128,10 +128,10 @@ Beroende på din källidentitet måste följande namnrymder för målidentitet m
 | Användar-ID för RAD | `UserID` | `LineId` |
 
 Om dina mål-ID är *LINE-användar-ID:n* behöver du följande:
-![Exempel på skärmbild för användargränssnitt för plattform som visar målmappningen när LINE-användar-ID används för målidentiteter.](../../assets/catalog/mobile-engagement/line/mappings-userid.png)
+![Exempel på skärmbild i Experience Platform UI som visar målmappningen när LINE-användar-ID används för målidentiteter.](../../assets/catalog/mobile-engagement/line/mappings-userid.png)
 
 Om din målidentitet är *ID för Advertisers(IFA)* behöver du följande:
-![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningen när ID används för annonsörer (IFA) för målidentiteter.](../../assets/catalog/mobile-engagement/line/mappings-idfa.png)
+![Exempel på skärmbild i Experience Platform UI som visar målmappningen när ID används för annonsörer (IFA) för målidentiteter.](../../assets/catalog/mobile-engagement/line/mappings-idfa.png)
 
 ## Validera dataexport {#exported-data}
 

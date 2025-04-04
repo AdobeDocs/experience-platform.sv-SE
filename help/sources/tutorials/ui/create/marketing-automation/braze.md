@@ -4,9 +4,9 @@ description: Lär dig hur du skapar ett dataflöde för ditt Braze-konto med hj�
 last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta
 exl-id: 6e94414a-176c-4810-80ff-02cf9e797756
-source-git-commit: 59600165328181e41750b9b2a1f4fbf162dd1df5
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '969'
+source-wordcount: '971'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Om du redan har en [!DNL Braze]-anslutning kan du hoppa över resten av det här
 >
 >Du måste skapa ett XDM-schema (Experience Data Model) om det är första gången du skapar en [!DNL Braze Currents]-anslutning. Om du redan har skapat ett schema för [!DNL Braze Currents] kan du hoppa över det här steget och fortsätta med att [ansluta ditt konto till Experience Platform](#connect).
 
-Använd den vänstra navigeringen i plattformsgränssnittet och välj sedan **[!UICONTROL Schemas]** för att komma åt arbetsytan i [!UICONTROL Schemas]. Välj sedan **[!UICONTROL Create schema]** och sedan **[!UICONTROL Experience Event]**. Välj **[!UICONTROL Next]** om du vill fortsätta.
+Använd den vänstra navigeringen i användargränssnittet för Experience Platform och välj sedan **[!UICONTROL Schemas]** för att komma åt arbetsytan i [!UICONTROL Schemas]. Välj sedan **[!UICONTROL Create schema]** och sedan **[!UICONTROL Experience Event]**. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 ![Ett slutfört schema.](../../../../images/tutorials/create/braze/schema.png)
 
@@ -57,11 +57,11 @@ Mer information om scheman finns i guiden för att [skapa scheman i användargr�
 
 ## Anslut ditt [!DNL Braze]-konto till Experience Platform {#connect}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *Marknadsföringsautomatisering* väljer du **[!UICONTROL Braze Currents]** och sedan **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform med källan för Braze Currents markerad.](../../../../images/tutorials/create/braze/catalog.png)
+![Källkatalogen i Experience Platform-användargränssnittet med källan Braze Currents markerad.](../../../../images/tutorials/create/braze/catalog.png)
 
 Ladda sedan upp den tillhandahållna exempelfilen [Braze Currents](https://github.com/Appboy/currents-examples/blob/master/sample-data/Adobe/adobe_examples.json). Den här filen innehåller alla fält som Braze kan skicka som en del av en händelse.
 
@@ -84,7 +84,7 @@ När det nya beräknade fältet har lagts till väljer du **[!UICONTROL Map targ
 
 >[!IMPORTANT]
 >
->Hjärntidsstämplar anges inte i millisekunder utan i sekunder. För att tidsstämplarna i Experience Platform ska visas korrekt måste du skapa beräkningsfält i millisekunder. En beräkning av &quot;time * 1000&quot; konverteras korrekt till millisekunder, vilket är lämpligt för mappning till ett tidsstämpelfält i Experience Platform.
+>Hjärntidsstämplar anges inte i millisekunder utan i sekunder. För att tidsstämplarna i Experience Platform ska kunna visas korrekt måste du skapa beräkningsfält i millisekunder. En beräkning av &quot;time * 1000&quot; konverteras korrekt till millisekunder, vilket är lämpligt för mappning till ett tidsstämpelfält i Experience Platform.
 >
 >![Skapar ett beräknat fält för tidsstämpel ](../../../../images/tutorials/create/braze/create-calculated-field.png)
 
@@ -94,16 +94,16 @@ När du är klar väljer du **[!UICONTROL Next]**. Använd granskningssidan för
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-När anslutningen har skapats måste du samla in följande värden för autentiseringsuppgifter, som du sedan anger i Braze Dashboard för att skicka data till Experience Platform. Mer information finns i [!DNL Braze] [handboken om hur du navigerar till Valutor](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
+När anslutningen har skapats måste du samla in följande inloggningsvärden som du sedan anger i Braze Dashboard för att skicka data till Experience Platform. Mer information finns i [!DNL Braze] [handboken om hur du navigerar till Valutor](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
 
 | Fält | Beskrivning |
 | --- | --- |
-| Klient-ID | Klient-ID som är kopplat till Experience Platform-källan. |
-| Klienthemlighet | Klienthemligheten som är kopplad till Experience Platform-källan. |
-| Klient-ID | Klient-ID som är kopplat till Experience Platform-källan. |
-| Namn på sandlåda | Sandlådan som är associerad med Experience Platform-källan. |
-| Dataflödes-ID | Det dataflödes-ID som är kopplat till Experience Platform-källan. |
-| Slutpunkt för direktuppspelning | Den slutpunkt för direktuppspelning som är kopplad till Experience Platform-källan. **Obs!**: [!DNL Braze] konverterar automatiskt detta till gruppströmningsslutpunkten. |
+| Klient-ID | Klient-ID som är kopplat till din Experience Platform-källa. |
+| Klienthemlighet | Klienthemligheten som är kopplad till din Experience Platform-källa. |
+| Klient-ID | Det klient-ID som är kopplat till din Experience Platform-källa. |
+| Namn på sandlåda | Sandlådan som är kopplad till din Experience Platform-källa. |
+| Dataflödes-ID | Det dataflödes-ID som är kopplat till din Experience Platform-källa. |
+| Slutpunkt för direktuppspelning | Den slutpunkt för direktuppspelning som är kopplad till din Experience Platform-källa. **Obs!**: [!DNL Braze] konverterar automatiskt detta till gruppströmningsslutpunkten. |
 
 ### Konfigurera [!DNL Braze Currents] att strömma data till datakällan
 
@@ -111,4 +111,4 @@ I [!DNL Braze Dashboard] går du till Partnerintegreringar **->** Dataexport och
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Braze]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att få in data från automatiseringssystemet för marknadsföring i [!DNL Platform]](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Braze]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att få in data från automatiseringssystemet för marknadsföring i [!DNL Experience Platform]](../../dataflow/marketing-automation.md).

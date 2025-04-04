@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;behavior;behavior;behaviors;behaviors;behaviors;behaviors;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;behavior;behavior;behaviors;behaviors;behaviors;
 solution: Experience Platform
 title: API-slutpunkt för beteenden
 description: Med slutpunkten /behaviors i API:t för schemaregister kan du hämta alla tillgängliga beteenden i den globala behållaren.
 exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '417'
 ht-degree: 0%
 
 ---
 
 # Beteendeslutpunkt
 
-I Experience Data Model (XDM) definierar beteenden vilken typ av data som ett schema beskriver. Varje XDM-klass måste referera till ett specifikt beteende, som alla scheman som använder den klassen ärver. För nästan alla användningsområden i Platform finns det två tillgängliga beteenden:
+I Experience Data Model (XDM) definierar beteenden vilken typ av data som ett schema beskriver. Varje XDM-klass måste referera till ett specifikt beteende, som alla scheman som använder den klassen ärver. För nästan alla användningsområden i Experience Platform finns det två tillgängliga beteenden:
 
 * **[!UICONTROL Record]**: Tillhandahåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
 * **[!UICONTROL Time-series]**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
 
 >[!NOTE]
 >
->Det finns vissa användningsfall i Platform som kräver användning av schema som inte har något av ovanstående beteenden. I dessa fall finns ett tredje &quot;ad hoc&quot;-beteende att tillgå. Mer information finns i självstudiekursen [Skapa ett ad hoc-schema](../tutorials/ad-hoc.md).
+>Det finns vissa användningsfall i Experience Platform som kräver användning av schema som inte har något av ovanstående beteenden. I dessa fall finns ett tredje &quot;ad hoc&quot;-beteende att tillgå. Mer information finns i självstudiekursen [Skapa ett ad hoc-schema](../tutorials/ad-hoc.md).
 >
 >Mer allmän information om databeteenden i termer av hur de påverkar schemakomposition finns i guiden om [grunderna för schemakomposition](../schema/composition.md).
 
@@ -89,7 +89,7 @@ curl -X GET \
 
 ## Söka efter ett beteende {#lookup}
 
-Du kan söka efter ett visst beteende genom att ange dess ID i sökvägen för en GET-begäran till slutpunkten `/behaviors`.
+Du kan söka efter ett visst beteende genom att ange dess ID i sökvägen till en GET-begäran till slutpunkten `/behaviors`.
 
 **API-format**
 

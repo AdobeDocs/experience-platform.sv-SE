@@ -1,12 +1,12 @@
 ---
 solution: Experience Platform
-title: Så här får du och beviljar behörigheter för Experience Platform-kontrollpaneler
+title: Så här får du och beviljar behörigheter för Experience Platform Dashboards
 type: Documentation
-description: Ge användare möjlighet att visa, redigera och uppdatera kontrollpaneler i Experience Platform med Adobe Admin Console.
+description: Ge användarna möjlighet att visa, redigera och uppdatera Experience Platform-paneler med Adobe Admin Console.
 exl-id: 2e50790f-b3ab-4851-a9a5-7cb98bf98ce3
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '605'
+source-wordcount: '608'
 ht-degree: 5%
 
 ---
@@ -28,14 +28,14 @@ Tjänsten [!DNL Dashboards] ger tre behörigheter som tillsammans ger fullständ
 | Behörighet | Beskrivning |
 |---|---|
 | **Hantera standardinstrumentpaneler** | Den här behörigheten är en **global läs- och skrivbehörighet**. Du kan [skapa anpassade widgetar](./customize/custom-widgets.md) och [redigera widgetschemat](./customize/edit-schema.md) via [!UICONTROL Widget library]. |
-| **Visa standardinstrumentpaneler** | Detta ger **skrivskyddad** funktionalitet för kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Destinations] och [!UICONTROL Segments] och ger åtkomst till dem via plattformens vänstra navigering. Det lägger även till [!UICONTROL Dashboards] i den vänstra navigeringen och åtkomst till fliken [!UICONTROL Dashboards] för lager och integreringar. |
-| **Visa kontrollpanel för licensanvändning** | Den här behörigheten ger användare **skrivskyddad** åtkomst till [kontrollpanelen för licensanvändning](./guides/license-usage.md) i användargränssnittet i Experience Platform. |
+| **Visa standardinstrumentpaneler** | Detta ger **skrivskyddad** funktionalitet för kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Destinations] och [!UICONTROL Segments] och ger åtkomst till dem via Experience Platform vänstra navigering. Det lägger även till [!UICONTROL Dashboards] i den vänstra navigeringen och åtkomst till fliken [!UICONTROL Dashboards] för lager och integreringar. |
+| **Visa kontrollpanel för licensanvändning** | Den här behörigheten ger användare **skrivskyddad** åtkomst till [kontrollpanelen för licensanvändning](./guides/license-usage.md) i Experience Platform användargränssnitt. |
 
 Det finns fem behörigheter som inte ingår i kategorin [!DNL Dashboard] och som kan behövas beroende på dina behov. I följande tabell visas deras kategoriplatser i Admin Console:
 
 >[!IMPORTANT]
 >
->Både **[!DNL Manage Standard Dashboards]** och **[!DNL View Standard Dashboards]** permissions **kräver** en&quot;view&quot;- eller&quot;manage&quot;-behörighet från kategorin [!DNL Profile Management] eller [!DNL Destinations] i Admin Console för att aktivera de relevanta avsnitten i plattformsgränssnittet.
+>Både **[!DNL Manage Standard Dashboards]** och **[!DNL View Standard Dashboards]** permissions **kräver** en&quot;view&quot;- eller&quot;manage&quot;-behörighet från kategorin [!DNL Profile Management] eller [!DNL Destinations] i Admin Console för att aktivera de relevanta avsnitten i Experience Platform-gränssnittet.
 
 | Behörighet | Admin Console-kategoriplats |
 |---|---|
@@ -47,7 +47,7 @@ Det finns fem behörigheter som inte ingår i kategorin [!DNL Dashboard] och som
 
 ## Åtkomstkontrollmatris
 
-Följande åtkomstkontrollsmatris innehåller en beskrivning av vilka behörigheter som krävs och vilken funktion de tillhandahåller för åtkomst till de olika instrumentpanelsfunktionerna. Behörigheter visas på den övre vågräta raden och arbetsytan i användargränssnittet för plattformen visas längs den vänstra kolumnen.
+Följande åtkomstkontrollsmatris innehåller en beskrivning av vilka behörigheter som krävs och vilken funktion de tillhandahåller för åtkomst till de olika instrumentpanelsfunktionerna. Behörigheterna visas på den övre vågräta raden och Experience Platform UI-arbetsytan visas längs den vänstra kolumnen.
 
 |   | [!UICONTROL View Standard Dashboard] ELLER [!UICONTROL Manage Standard Dashboard] | [!UICONTROL View Profiles],<br/>[!UICONTROL View Segments],<br/> [!UICONTROL View Destinations] | [!UICONTROL Manage Queries] &amp; [!UICONTROL Manage Sandboxes] | [!UICONTROL View License Usage Dashboard] |
 |---|---|---|---|---|
@@ -55,7 +55,7 @@ Följande åtkomstkontrollsmatris innehåller en beskrivning av vilka behörighe
 | [!DNL Dashboards] i den vänstra navigeringen. | AKTIVERAT | **Minst en KRÄVS**. | N/A | N/A |
 | [!DNL Dashboards] [!DNL Inventory] <br/>(fliken Bläddra) | AKTIVERAT | N/A | N/A | N/A |
 | [!DNL Dashboards] [!DNL Integrations] tab <br/> (används för att installera Power BI) | AKTIVERAT | **Minst en KRÄVS** | N/A | N/A |
-| Knapp för installation av Power BI och arbetsflöde | AKTIVERAT | N/A | **KRÄVS** | N/A |
+| Power BI Install button &amp; workflow | AKTIVERAT | N/A | **KRÄVS** | N/A |
 | [!DNL Profiles],<br/>[!DNL Segments],<br/>[!DNL Destinations] instrumentpaneler.<br/>Möjlighet att redigera widgetscheman och lägga till nya attribut för widgetanpassning | **Hantera standardinstrumentpanel KRÄVS** | **OBLIGATORISKT (för varje instrumentpanel)** | N/A | N/A |
 | [!DNL License Usage Dashboard] | N/A | N/A | N/A | AKTIVERAT |
 
@@ -71,4 +71,4 @@ Beskrivningar av behörigheter finns i avsnittet [tillgängliga behörigheter](#
 >
 >Du behöver inte aktivera alla behörigheter för alla användare. Beroende på din organisations struktur kanske du vill skapa separata produktprofiler för vissa användare och bevilja begränsad åtkomst (till exempel skrivskyddad). Läs dokumentationen om hur du hanterar användare för en produktprofil om du vill veta mer om [hur du tilldelar behörigheter för specifika användare](../access-control/ui/users.md).
 
-När du har lagt till de nödvändiga åtkomstbehörigheterna kan användare i organisationen börja visa kontrollpaneler i användargränssnittet för Experience Platform och utföra andra åtgärder baserat på de behörigheter som du har tilldelat.
+När du har lagt till de nödvändiga åtkomstbehörigheterna kan användare i organisationen börja visa kontrollpaneler i Experience Platform-gränssnittet och utföra andra åtgärder baserat på de behörigheter som du har tilldelat.

@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
-title: Skapa en källanslutning för MailChimp-medlemmar med hjälp av plattformsgränssnittet
-description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-medlemmar med hjälp av plattformsgränssnittet.
+title: Skapa en källanslutning för MailChimp-medlemmar med hjälp av Experience Platform UI
+description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-medlemmar med hjälp av Experience Platform användargränssnitt.
 exl-id: dc620ef9-624d-4fc9-8475-bb475ea86eb7
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '663'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Mailchimp Members]-källanslutning med hjälp av plattformens användargränssnitt
+# Skapa en [!DNL Mailchimp Members]-källanslutning med Experience Platform UI
 
 I den här självstudiekursen beskrivs hur du skapar en [!DNL Mailchimp]-källanslutning för import av [!DNL Mailchimp Members]-data till Adobe Experience Platform med användargränssnittet.
 
@@ -19,12 +19,12 @@ I den här självstudiekursen beskrivs hur du skapar en [!DNL Mailchimp]-källan
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Med plattformen kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Samla in nödvändiga inloggningsuppgifter
 
-För att kunna överföra dina [!DNL Mailchimp Members]-data till plattformen måste du först ange de autentiseringsuppgifter som motsvarar ditt [!DNL Mailchimp]-konto.
+För att kunna överföra dina [!DNL Mailchimp Members]-data till Experience Platform måste du först ange de autentiseringsuppgifter som motsvarar ditt [!DNL Mailchimp]-konto.
 
 Källan [!DNL Mailchimp Members] stöder både OAuth 2-uppdateringskod och grundläggande autentisering. Se tabellerna nedan för mer information om dessa autentiseringstyper.
 
@@ -33,10 +33,10 @@ Källan [!DNL Mailchimp Members] stöder både OAuth 2-uppdateringskod och grund
 | Referenser | Beskrivning |
 | --- | --- |
 | Domän | Den rot-URL som används för att ansluta till MailChimp API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
-| Verifieringstestets URL | Verifieringstestets URL används för att validera autentiseringsuppgifter vid anslutning av [!DNL Mailchimp] till plattformen. Om detta inte anges kontrolleras autentiseringsuppgifterna automatiskt när källanslutningen skapas. |
+| Verifieringstestets URL | Verifieringstestets URL används för att verifiera autentiseringsuppgifter vid anslutning av [!DNL Mailchimp] till Experience Platform. Om detta inte anges kontrolleras autentiseringsuppgifterna automatiskt när källanslutningen skapas. |
 | Åtkomsttoken | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
-Mer information om hur du använder OAuth 2 för att autentisera ditt [!DNL Mailchimp]-konto för plattformen finns i det här [[!DNL Mailchimp] dokumentet om att använda OAuth 2](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/).
+Mer information om hur du använder OAuth 2 för att autentisera ditt [!DNL Mailchimp]-konto för Experience Platform finns i det här [[!DNL Mailchimp] dokumentet om att använda OAuth 2](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/).
 
 ### Grundläggande autentisering
 
@@ -46,9 +46,9 @@ Mer information om hur du använder OAuth 2 för att autentisera ditt [!DNL Mail
 | Användarnamn | Användarnamnet som motsvarar ditt MailChimp-konto. Detta krävs för grundläggande autentisering. |
 | Lösenord | Lösenordet som motsvarar ditt MailChimp-konto. Detta krävs för grundläggande autentisering. |
 
-## Anslut ditt [!DNL Mailchimp Members]-konto till plattformen
+## Anslut ditt [!DNL Mailchimp Members]-konto till Experience Platform
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -97,4 +97,4 @@ Sidan uppdateras till ett interaktivt schematräd där du kan utforska och inspe
 
 ## Nästa steg
 
-När ditt [!DNL Mailchimp]-konto är autentiserat och dina [!DNL Mailchimp Members]-data har valts kan du nu börja skapa ett dataflöde för att överföra dina data till plattformen. Detaljerade steg om hur du skapar ett dataflöde finns i dokumentationen om [att skapa ett dataflöde för att överföra data för automatiserad marknadsföring till plattformen](../../dataflow/marketing-automation.md).
+När ditt [!DNL Mailchimp]-konto är autentiserat och dina [!DNL Mailchimp Members]-data har valts kan du nu börja skapa ett dataflöde för att överföra dina data till Experience Platform. Detaljerade steg om hur du skapar ett dataflöde finns i dokumentationen om [att skapa ett dataflöde för att överföra automatiserade marknadsföringsdata till Experience Platform](../../dataflow/marketing-automation.md).

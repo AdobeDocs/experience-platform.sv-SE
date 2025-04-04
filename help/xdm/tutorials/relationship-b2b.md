@@ -2,9 +2,9 @@
 title: Definiera en relation mellan två scheman i Real-Time Customer Data Platform B2B edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-Time Customer Data Platform B2B edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 85d6cf10599d153a15c1bd56067f57439ddd0133
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: '1726'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ I den här självstudiekursen beskrivs stegen för att definiera en många-till-
 >
 >Om du inte använder Real-Time Customer Data Platform B2B edition eller vill skapa en 1:1-relation läser du i guiden om [att skapa en 1:1-relation](./relationship-ui.md) i stället.
 >
->I den här självstudiekursen fokuseras på hur du manuellt skapar relationer mellan B2B-scheman i plattformsgränssnittet. Om du hämtar in data från en B2B-källanslutning kan du använda ett verktyg för automatisk generering för att skapa nödvändiga scheman, identiteter och relationer i stället. I källdokumentationen för B2B-namnutrymmen och scheman finns mer information om [att använda verktyget för automatisk generering](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md).
+>I den här självstudiekursen fokuseras på hur du manuellt skapar relationer mellan B2B-scheman i Experience Platform användargränssnitt. Om du hämtar in data från en B2B-källanslutning kan du använda ett verktyg för automatisk generering för att skapa nödvändiga scheman, identiteter och relationer i stället. I källdokumentationen för B2B-namnutrymmen och scheman finns mer information om [att använda verktyget för automatisk generering](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md).
 
 ## Komma igång
 
@@ -53,7 +53,7 @@ Schemarelationer representeras av ett dedikerat fält i ett **källschema** som 
 >title="Namnutrymme för referensidentitet"
 >abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation. Mer information om identiteter i B2B-relationer finns i dokumentationen."
 
-För att en relation ska kunna upprättas måste referensschemat ha en definierad primär identitet. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Platform.
+För att en relation ska kunna upprättas måste referensschemat ha en definierad primär identitet. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Experience Platform.
 
 För att ta hänsyn till detta innehåller alla standardklasser B2B nyckelfält som överensstämmer med datatypen [[!UICONTROL B2B Source] ](../data-types/b2b-source.md). Den här datatypen innehåller fält för en strängidentifierare för B2B-enheten tillsammans med annan sammanhangsberoende information om identifierarens källa. Ett av dessa fält, `sourceKey`, sammanfogar värdena för de andra fälten i datatypen för att skapa en helt unik identifierare för entiteten. Det här fältet ska alltid användas som primär identitet för B2B-entitetsscheman.
 

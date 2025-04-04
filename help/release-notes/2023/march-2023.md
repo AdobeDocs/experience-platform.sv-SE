@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2023
 description: Versionsinformationen för Adobe Experience Platform i mars 2023.
 exl-id: 3f4d764a-77cd-4e4a-ae11-e97a23006a53
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2018'
-ht-degree: 3%
+source-wordcount: '2020'
+ht-degree: 26%
 
 ---
 
@@ -18,7 +18,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
 - [Dataförberedelse](#data-prep)
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Experience Data Model](#xdm)
 - [Frågetjänst](#query-service)
 - [Real-Time Customer Data Platform B2B-utgåva](#b2b)
@@ -27,7 +27,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## Kontrollpaneler {#dashboards}
 
-Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan visa viktiga insikter om organisationens data, som fångas upp under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner** {#dashboards-new-updated-features}
 
@@ -41,23 +41,23 @@ Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter o
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nytt snabbstartsarbetsflöde för Meta Conversions API (Beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start) kan kunderna snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
-| Nytt snabbstartarbetsflöde för Mobile SDK (Beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) kan du snabbt implementera Mobile SDK och validera grundläggande mobilhändelser i några enkla steg. |
+| Nytt snabbstartsarbetsflöde för Meta Conversions API (Beta) | Få tillgång till nya arbetsflöden för snabbstart under ”Komma igång” från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start) kan kunderna snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
+| Nytt snabbstartsarbetsflöde för Mobile SDK (Beta) | Få tillgång till nya arbetsflöden för snabbstart under ”Komma igång” från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) kan du snabbt implementera Mobile SDK och validera grundläggande mobilhändelser i några enkla steg. |
 | [!DNL Braze]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) för vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL Braze] i form av händelser på serversidan med API:erna för användarspårning i [!DNL Braze]. |
-| [!DNL Epsilon]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) kan du utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med hjälp av händelse-API:t [!DNL Epsilon]. |
-| [!DNL Mixpanel]-tillägg för händelsevidarebefordring | Tillägget [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) gör att kunder kan utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårningshändelser. |
+| [!DNL Epsilon]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) kan du utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med hjälp av [!DNL Epsilon] Event API. |
+| [!DNL Mixpanel]-tillägg för händelsevidarebefordring | Tillägget [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) gör det möjligt för kunder att utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårningshändelser. |
 
 {style="table-layout:auto"}
 
 ## Dataförberedelse {#data-prep}
 
-Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
+Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Uppdaterade funktioner**
 
@@ -68,17 +68,17 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 
 Mer information om dataprep finns i [översikten för dataprep](../../data-prep/home.md).
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya mål** {#new-destinations}
+**Nya destinationer** {#new-destinations}
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
 | [[!DNL Adobe Commerce] anslutning GA](../../destinations/catalog/personalization/adobe-commerce.md) | Med målanslutningen [!DNL Adobe Commerce] (som nu är allmänt tillgänglig) kan du välja en eller flera Real-Time CDP-målgrupper att aktivera för ditt [!DNL Adobe Commerce]-konto för att leverera en dynamisk, personlig upplevelse till era kunder. |
 | [[!DNL Snap Inc] anslutning GA](../../destinations/catalog/advertising/snap-inc.md) | Med målkopplingen [!DNL Snap Inc] (som nu är allmänt tillgänglig) kan marknadsförare importera användarsegment som skapats i Experience Platform till [!DNL Snapchat Ads] och använda dem för att rikta sina annonser. |
-| [(API) Oraclet Eloqua-anslutning](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) | Använd den API-baserade anslutningen till [!DNL Oracle Eloqua] för att planera och köra kampanjer samtidigt som en anpassad kundupplevelse för deras potentiella kunder i [!DNL Oracle Eloqua] levereras. |
+| [(API) Oracle Eloqua-anslutning](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) | Använd den API-baserade anslutningen till [!DNL Oracle Eloqua] för att planera och köra kampanjer samtidigt som en anpassad kundupplevelse för deras potentiella kunder i [!DNL Oracle Eloqua] levereras. |
 | [(Beta) [!DNL Amazon Ads] connection](../../destinations/catalog/advertising/amazon-ads.md) | Integrationen [!DNL Amazon Ads] med Adobe Experience Platform ger körklar integrering med [!DNL Amazon Ads]-produkter, inklusive [!DNL Amazon DSP (ADSP)]. Med målplatsen [!DNL Amazon Ads] i Adobe Experience Platform kan användare definiera annonsörer för målinriktning och aktivering på [!DNL Amazon DSP]. |
 | [[!DNL Marketo Measure Ultimate] anslutning](../../destinations/catalog/adobe/marketo-measure-ultimate.md) | [!DNL Marketo Measure] (tidigare Bizible) ger marknadsförarna insikt i vilka marknadsföringssatsningar som är mest effektiva när det gäller att öka intäkterna och maximera avkastningen på investeringen för deras företag. Målet möjliggör dataflöden mellan företag (B2B) från Adobe Experience Platform till [!DNL Marketo Measure]. Kortet är bara tillgängligt för [!DNL Marketo Measure Ultimate] kunder. |
 | [TikTok-anslutning](../../destinations/catalog/social/tiktok.md) | Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. |
@@ -105,13 +105,13 @@ Mer allmän information om destinationer finns i [målöversikten](../../destina
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| CSV till schemarapport | Du kan nu överföra dina lokala filer för att skapa scheman som genereras av maskininlärning och som eliminerar behovet av att skapa ett schema manuellt. Ladda upp en CSV-exempelfil från arbetsytan [!UICONTROL Sources], så föreslår maskininlärningsalgoritmerna i Adobe ett schema åt dig baserat på målfälten. Mer information finns i [dokumentationen](../../ingestion/tutorials/map-csv/recommendations.md).&quot; |
+| CSV till schemarapport | Du kan nu överföra dina lokala filer för att skapa scheman som genereras av maskininlärning och som eliminerar behovet av att skapa ett schema manuellt. Ladda upp en CSV-exempelfil från arbetsytan [!UICONTROL Sources], så föreslår Adobe maskininlärningsalgoritmer ett schema åt dig baserat på målfälten. Mer information finns i [dokumentationen](../../ingestion/tutorials/map-csv/recommendations.md).&quot; |
 
 {style="table-layout:auto"}
 
@@ -147,11 +147,11 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Frågetjänst {#query-service}
 
-Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla till alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datamängd som kan användas för rapportering, Data Science Workspace eller för förtäring i kundprofilen i realtid.
+Med frågetjänsten kan du använda standard SQL för att söka efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla samman alla datauppsättningar från datasjön och fånga upp sökresultaten som en ny datauppsättning för användning i rapportering, arbetsyta för datavetenskap eller för inmatning i kundprofil i realtid.
 
 **Uppdaterade funktioner**
 
@@ -161,25 +161,25 @@ Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Ad
 
 {style="table-layout:auto"}
 
-Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
+Mer information om frågetjänster finns i [översikten över frågetjänster](../../query-service/home.md).
 
 ## Real-Time Customer Data Platform B2B-utgåva {#b2b}
 
-Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time CDP) och är särskilt framtagen för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
+Real-Time CDP B2B edition bygger på Real-Time Customer Data Platform (Real-Time CDP) och är utformat för marknadsförare som arbetar i en affärs-till-affärstjänstmodell. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Bugfix | För att profilerna ska återges mer korrekt i systemet ingår inte längre interna profiler i det totala antalet profiler eller adresserbara målgruppsmått för Real-time Customer Data Platform B2B Edition. Från och med idag kan du se en engångsminskning av det totala antalet profiler/adresserbara målgruppsmått. Inga data har raderats, det här är bara en ändring av antalet. Kontakta din Adobe-chef om du har några frågor |
+| Bugfix | För att profilerna ska återges mer korrekt i systemet, inkluderar systemet inte längre interna profiler i det totala antalet profiler eller adresserbara målgruppsmått för Real-Time Customer Data Platform B2B edition. Från och med idag kan du se en engångsminskning av det totala antalet profiler/adresserbara målgruppsmått. Inga data har raderats, det här är bara en ändring av antalet. Kontakta din Adobe-chef om du har några frågor |
 
 {style="table-layout:auto"}
 
-Mer information om Real-Time CDP B2B Edition finns i [Real-Time CDP B2B Edition-översikten](../../rtcdp/overview.md).
+Läs [Real-Time CDP B2B edition overview](../../rtcdp/overview.md) om du vill veta mer om Real-Time CDP B2B edition.
 
 ## Segmenteringstjänst {#segmentation}
 
-[!DNL Segmentation Service] definierar en viss delmängd av profiler genom att beskriva kriterierna som särskiljer en marknadsföringsbar grupp av personer inom din kundbas. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Segmenten kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
 
 **Nya eller uppdaterade funktioner**
 
@@ -189,23 +189,23 @@ Mer information om Real-Time CDP B2B Edition finns i [Real-Time CDP B2B Edition-
 
 {style="table-layout:auto"}
 
-Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service] finns i [segmenteringsöversikten](../../segmentation/home.md).
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
 | Beta-tillgänglighet för [!DNL Chatlio] | [!DNL Chatlio]-källan är nu tillgänglig i betaversion. Använd [!DNL Chatlio]-källan för att strömma dina [!DNL Chatlio]-händelsedata till Experience Platform. Mer information finns i [[!DNL Chatlio] översikten](../../sources/connectors/marketing-automation/chatlio-webhook.md). |
-| Beta-tillgänglighet för [!DNL Customer.io] | [!DNL Customer.io]-källan är nu tillgänglig i betaversion. Använd [!DNL Customer.io]-källan för att strömma dina kundhändelsedata till Experience Platform. Mer information finns i [[!DNL Customer.io] översikten](../../sources/connectors/marketing-automation/customerio-webhook.md). |
+| Beta-tillgänglighet för [!DNL Customer.io] | [!DNL Customer.io]-källan är nu tillgänglig i betaversion. Använd källan [!DNL Customer.io] för att strömma dina kundhändelsedata till Experience Platform. Mer information finns i [[!DNL Customer.io] översikten](../../sources/connectors/marketing-automation/customerio-webhook.md). |
 | Beta-tillgänglighet för [!DNL Pendo] | [!DNL Pendo]-källan är nu tillgänglig i betaversion. Använd [!DNL Pendo]-källan för att strömma produktanalysdata till Experience Platform. Mer information finns i [[!DNL Pendo] översikten](../../sources/connectors/analytics/pendo-webhook.md). |
 | Stöd för dataflöden | Du kan nu använda API:t för Flow Service för att ställa in dataflödena till ett utkasttillstånd. Ritade dataflöden kan senare uppdateras och publiceras med ny information. Mer information finns i guiden om att [ställa in källans dataflöden som utkast](../../sources/tutorials/api/draft.md). |
 
 {style="table-layout:auto"}
 
-Läs [Källöversikten](../../sources/home.md) om du vill veta mer om källor.
+Mer information om källor finns i [översikten över källor](../../sources/home.md).

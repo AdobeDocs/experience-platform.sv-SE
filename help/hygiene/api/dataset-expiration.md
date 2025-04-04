@@ -3,9 +3,9 @@ title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 911089ec641d9fbb436807b04dd38e00fd47eecf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1964'
+source-wordcount: '1966'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ En datamängds förfallotid är endast en tidsfördröjd borttagningsåtgärd. D
 
 >[!NOTE]
 >
->Även om förfallodatumet anges som en specifik tidpunkt kan det dröja upp till 24 timmar efter det att den faktiska raderingen har påbörjats. När borttagningen har initierats kan det ta upp till sju dagar innan alla spår i datauppsättningen har tagits bort från plattformssystem.
+>Även om förfallodatumet anges som en specifik tidpunkt kan det dröja upp till 24 timmar efter det att den faktiska raderingen har påbörjats. När borttagningen har initierats kan det ta upp till sju dagar innan alla spår i datauppsättningen har tagits bort från Experience Platform-system.
 
 Du kan när som helst innan datauppsättningsborttagningen initieras avbryta förfallotiden eller ändra dess utlösningstid. När du har avbrutit en förfallotid för en datauppsättning kan du öppna den igen genom att ange en ny förfallotid.
 
@@ -28,7 +28,7 @@ När borttagningen av datauppsättningen initieras markeras dess förfallojobb s
 >
 >Om en datauppsättning är inställd på att förfalla måste du manuellt ändra alla dataflöden som kan inhämta data till datauppsättningen så att dina efterföljande arbetsflöden inte påverkas negativt.
 
-Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via datauppsättningens slutpunkt och ID-borttagningar (data på radnivå) med hjälp av primära identiteter via [arbetsorderslutpunkten](./workorder.md). Du kan också hantera [förfallodatum för datauppsättningar](../ui/dataset-expiration.md) och [borttagningar av poster](../ui/record-delete.md) via plattformsgränssnittet. Mer information finns i den länkade dokumentationen.
+Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via datauppsättningens slutpunkt och ID-borttagningar (data på radnivå) med hjälp av primära identiteter via [arbetsorderslutpunkten](./workorder.md). Du kan också hantera [förfallodatum för datauppsättningar](../ui/dataset-expiration.md) och [borttagningar av poster](../ui/record-delete.md) via Experience Platform-gränssnittet. Mer information finns i den länkade dokumentationen.
 
 >[!NOTE]
 >
@@ -107,7 +107,7 @@ Ett lyckat svar listar de resulterande datauppsättningens förfallotider. Följ
 
 ## Söka efter en förfallotid för en datauppsättning {#lookup}
 
-Om du vill söka efter en förfallotid för en datauppsättning gör du en GET-förfrågan med antingen `{DATASET_ID}` eller `{DATASET_EXPIRATION_ID}`.
+Om du vill söka efter en förfallotid för en datauppsättning gör du en GET-begäran med antingen `{DATASET_ID}` eller `{DATASET_EXPIRATION_ID}`.
 
 >[!IMPORTANT]
 >
@@ -202,11 +202,11 @@ Följande JSON representerar ett trunkerat svar för datauppsättningens informa
 
 För att säkerställa att data tas bort från systemet efter en angiven period schemalägger du en förfallotid för en viss datauppsättning genom att ange datauppsättnings-ID och utgångsdatum och -tid i ISO 8601-format.
 
-Om du vill skapa en förfallotid för en datauppsättning utför du en begäran om POST enligt nedan och anger de värden som anges nedan i nyttolasten.
+Om du vill skapa en förfallotid för en datauppsättning utför du en POST-begäran enligt nedan och anger värdena som anges nedan i nyttolasten.
 
 >[!NOTE]
 >
->Om du får ett 404-fel kontrollerar du att begäran inte har några ytterligare snedstreck. Ett avslutande snedstreck kan göra att en begäran om POST misslyckas.
+>Om du får ett 404-fel kontrollerar du att begäran inte har några ytterligare snedstreck. Ett avslutande snedstreck kan göra att en POST-begäran misslyckas.
 
 **API-format**
 
@@ -276,7 +276,7 @@ HTTP-statusen 400 (Ogiltig begäran) inträffar om det redan finns en förfallot
 
 ## Uppdatera utgångsdatum för en datauppsättning {#update}
 
-Om du vill uppdatera ett förfallodatum för en datauppsättning använder du en PUT-förfrågan och `ttlId`. Du kan uppdatera informationen för `displayName`, `description` och/eller `expiry`.
+Om du vill uppdatera ett förfallodatum för en datauppsättning använder du en PUT-begäran och `ttlId`. Du kan uppdatera informationen för `displayName`, `description` och/eller `expiry`.
 
 >[!NOTE]
 >

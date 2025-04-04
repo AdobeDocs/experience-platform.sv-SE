@@ -1,10 +1,10 @@
 ---
-title: Skapa en Marketo Engage Source-anslutning och ett dataflöde i användargränssnittet
-description: I den här självstudiekursen beskrivs hur du skapar en källanslutning och ett dataflöde i Marketo Engage i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
+title: Skapa en Marketo Engage Source Connection och ett dataflöde i användargränssnittet
+description: I den här självstudiekursen beskrivs hur du skapar en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet för att överföra B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 744098777141c61ac27fe6f150c05469d5705dee
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1766'
+source-wordcount: '1771'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Innan du skapar en [!DNL Marketo Engage]-källanslutning och ett dataflöde måste du först kontrollera att du har [mappat ditt Adobe-organisations-ID ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html) i [!DNL Marketo]. Dessutom måste du se till att du har fyllt i [B2B-namnutrymmen och scheman ](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) automatiskt innan du skapar en källanslutning och ett dataflöde. [!DNL Marketo] 
+>Innan du skapar en [!DNL Marketo Engage]-källanslutning och ett dataflöde måste du först kontrollera att du har [mappat ditt Adobe-organisations-ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html) i [!DNL Marketo]. Dessutom måste du se till att du har fyllt i [B2B-namnutrymmen och scheman ](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) automatiskt innan du skapar en källanslutning och ett dataflöde. [!DNL Marketo] 
 
 I den här självstudiekursen beskrivs hur du skapar en [!DNL Marketo Engage]-källkoppling (kallas nedan [!DNL Marketo]) i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 
@@ -22,20 +22,20 @@ I den här självstudiekursen beskrivs hur du skapar en [!DNL Marketo Engage]-k�
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Verktyget för automatisk generering av B2B-namnutrymmen och scheman](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md): Med verktyget för automatisk generering av B2B-namnutrymmen och scheman kan du använda [!DNL Postman] för att automatiskt generera värden för B2B-namnutrymmen och scheman. Du måste slutföra B2B-namnutrymmen och scheman först innan du skapar en [!DNL Marketo]-källanslutning och ett dataflöde.
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata med.
    * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i användargränssnittet.
 * [Identitetsnamnutrymmen](../../../../../identity-service/features/namespaces.md): Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] som fungerar som indikatorer för det sammanhang som en identitet relateras till. En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme.
 * [[!DNL Real-Time Customer Profile]](/help/profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Marketo]-konto på Experience Platform måste du ange följande värden:
+Du måste ange följande värden för att komma åt ditt [!DNL Marketo]-konto på Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---- | ---- |
-| `munchkinId` | Munchkin-ID är den unika identifieraren för en specifik [!DNL Marketo]-instans. |
+| `munchkinId` | Munchkin-id:t är den unika identifieraren för en specifik [!DNL Marketo]-instans. |
 | `clientId` | Det unika klient-ID:t för din [!DNL Marketo]-instans. |
 | `clientSecret` | Den unika klienthemligheten för din [!DNL Marketo]-instans. |
 
@@ -45,7 +45,7 @@ När du har samlat in dina inloggningsuppgifter kan du följa stegen i nästa av
 
 ## Anslut ditt [!DNL Marketo]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *Adobe-program* väljer du **[!UICONTROL Marketo Engage]** och sedan **[!UICONTROL Add data]**.
 
@@ -53,7 +53,7 @@ Under kategorin *Adobe-program* väljer du **[!UICONTROL Marketo Engage]** och s
 >
 >Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
-![Källkatalogen med Marketo Engage-källan markerad.](../../../../images/tutorials/create/marketo/catalog.png)
+![Källkatalogen med Marketo Engage-källan vald.](../../../../images/tutorials/create/marketo/catalog.png)
 
 Sidan **[!UICONTROL Connect Marketo Engage account]** visas. På den här sidan kan du antingen använda ett nytt konto eller komma åt ett befintligt konto.
 
@@ -97,7 +97,7 @@ Därefter måste du ange information om datauppsättningen och dataflödet.
 
 ### Information om datauppsättning {#dataset-details}
 
-En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har inhämtats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
+En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har importerats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
 
 >[!BEGINTABS]
 
@@ -132,7 +132,7 @@ Under det här steget kan du aktivera **[!UICONTROL Sample dataflow]** för att 
 
 **Snabbguide om hur du använder exempeldataflöde**
 
-Exempeldataflöde är en konfiguration som du kan ställa in för [!DNL Marketo]-dataflödet för att begränsa ditt intag och sedan prova Experience Platform-funktioner utan att behöva importera stora mängder data.
+Exempeldataflöde är en konfiguration som du kan ställa in för [!DNL Marketo]-dataflödet för att begränsa din inmatningsfrekvens och sedan testa Experience Platform-funktioner utan att behöva importera stora mängder data.
 
 * Aktivera exempeldataflöde för att begränsa historiska data genom att importera upp till 100 kB (från det största post-ID:t) eller upp till de sista 10 dagarna i aktivitet under backfill-jobbet.
 * När du använder exempeldataflödeskonfigurationen för alla B2B-entiteter måste du tänka på att det är möjligt att vissa relaterade poster saknas eftersom hela källdatahistoriken inte hämtas.
@@ -203,11 +203,11 @@ Följande avsnitt innehåller ytterligare riktlinjer som du kan följa när du a
 
 ### Felmeddelanden i användargränssnittet {#error-messages}
 
-Följande felmeddelanden visas i användargränssnittet när Platform upptäcker problem med konfigurationen:
+Följande felmeddelanden visas i användargränssnittet när Experience Platform upptäcker problem med installationen:
 
 #### [!DNL Munchkin ID] är inte mappad till rätt organisation
 
-Autentisering nekas om din [!DNL Munchkin ID] inte är mappad till den plattformsorganisation som du använder. Konfigurera mappningen mellan din [!DNL Munchkin ID] och din organisation med [[!DNL Marketo] gränssnittet](https://app-sjint.marketo.com/#MM0A1).
+Autentisering nekas om din [!DNL Munchkin ID] inte är mappad till den Experience Platform-organisation som du använder. Konfigurera mappningen mellan din [!DNL Munchkin ID] och din organisation med [[!DNL Marketo] gränssnittet](https://app-sjint.marketo.com/#MM0A1).
 
 ![Ett felmeddelande som visar att Marketo-instansen inte är korrekt mappad till Adobe-organisationen.](../../../../images/tutorials/create/marketo/munchkin-not-mapped.png)
 

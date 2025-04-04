@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för datalivscykel
 description: Lär dig hur du hanterar livscykeluppgifter för data i Adobe Experience Platform användargränssnitt.
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '221'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,11 @@ ht-degree: 0%
 
 Med arbetsytan **[!UICONTROL Data Lifecycle]** i Adobe Experience Platform-användargränssnittet kan du skapa och övervaka olika hanteringsuppgifter för datalängd, inklusive borttagning av poster och schemaläggning av förfallodatum för datauppsättningar.
 
-Den här guiden beskriver hur du hanterar livscykelaktiviteter för data i plattformens användargränssnitt. Information om hur du utför dessa åtgärder med API-anrop finns i [API-handboken för datahygien](../api/overview.md).
+I den här guiden beskrivs hur du hanterar livscykeluppgifter för data i Experience Platform användargränssnitt. Information om hur du utför dessa åtgärder med API-anrop finns i [API-handboken för datahygien](../api/overview.md).
 
 Om du vill få åtkomst till arbetsytan väljer du **Datalifecykel** i den vänstra navigeringen.
 
-![Arbetsytan [!UICONTROL Data Lifecycle] i plattformsgränssnittet, med [!UICONTROL Data Lifecycle] markerat i den vänstra navigeringen.](../images/ui/overview/home.png)
+![Arbetsytan [!UICONTROL Data Lifecycle] i Experience Platform-gränssnittet, med [!UICONTROL Data Lifecycle] markerat i den vänstra navigeringen.](../images/ui/overview/home.png)
 
 Härifrån kan du bläddra bland befintliga arbetsorder och konfigurera nya livscykelåtgärder för data. Läs mer i följande avsnitt i den här handboken:
 

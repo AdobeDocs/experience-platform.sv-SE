@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;produktprofil
+keywords: Experience Platform;home;populära topics;product profile
 solution: Experience Platform
 title: Hantera detaljer och ytterligare tjänster för en produktprofil
 description: Det här dokumentet innehåller de steg som krävs för att hantera information och ytterligare tjänster för en produktprofil i Adobe Admin Console. Du kan konfigurera information om en profil och få tillgång till ytterligare tjänster på menyn Profilinställningar.
 exl-id: ac9c2213-f2fb-44be-9334-87fada8a4717
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '268'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Menyn **[!UICONTROL Edit product profile]** visas med början på fliken **[!UIC
 
 Välj **[!UICONTROL Next]** för att komma åt sidan **[!UICONTROL Enable services]**.
 
-På menyn **[!UICONTROL Enable services]** kan du ändra en profils åtkomst till ytterligare [!DNL Platform]-tjänster som ursprungligen konfigurerades när profilen skapades. Beroende på din [!DNL Platform]-prenumeration kan följande tjänster omfatta:
+På menyn **[!UICONTROL Enable services]** kan du ändra en profils åtkomst till ytterligare [!DNL Experience Platform]-tjänster som ursprungligen konfigurerades när profilen skapades. Beroende på din [!DNL Experience Platform]-prenumeration kan följande tjänster omfatta:
 
 - [!DNL Data Science Workspace]
 - [!DNL Query Service]

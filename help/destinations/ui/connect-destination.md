@@ -3,9 +3,9 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1106'
+source-wordcount: '1107'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning t
 
 1. Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**.
 
-   ![Skärmbild av användargränssnittet i Experience Platform, med katalogsidan för mål.](../assets/ui/connect-destinations/catalog.png)
+   ![Skärmbild av användargränssnittet i Experience Platform med katalogsidan för mål.](../assets/ui/connect-destinations/catalog.png)
 
 2. Målkorten i katalogen kan ha olika åtgärdskontroller, beroende på om du har en befintlig anslutning till målet och om destinationerna stöder aktivering av målgrupper, export av datamängder eller båda. Du kan se någon av följande kontroller för målkort:
 
@@ -37,9 +37,9 @@ Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning t
 
    Välj antingen **[!UICONTROL Set up]**, **[!UICONTROL Activate]** eller **[!UICONTROL Activate audiences]**, beroende på vilken kontroll som är tillgänglig för dig.
 
-   ![Skärmbild av användargränssnittet i Experience Platform som visar katalogsidan för mål med kontrollen Konfigurera markerad.](../assets/ui/connect-destinations/set-up.png)
+   ![Skärmbild av Experience Platform-gränssnittet som visar målkatalogsidan med kontrollen Konfigurera markerad.](../assets/ui/connect-destinations/set-up.png)
 
-   ![Skärmbild av användargränssnittet i Experience Platform som visar målkatalogsidan med kontrollen Aktivera målgrupper markerad.](../assets/ui/connect-destinations/activate-segments.png)
+   ![Skärmbild av Experience Platform-gränssnittet som visar målkatalogsidan med kontrollen Aktivera målgrupper markerad.](../assets/ui/connect-destinations/activate-segments.png)
 
 3. Om du valde **[!UICONTROL Set up]** går du till nästa steg och [autentiserar](#authenticate) till målet.
 
@@ -47,13 +47,13 @@ Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning t
 
    Välj **[!UICONTROL Configure new destination]** om du vill upprätta en ny anslutning till målet.
 
-   ![Skärmbild av användargränssnittet i Experience Platform, med en lista över tillgängliga destinationer och den nya målkontrollen är markerad.](../assets/ui/connect-destinations/configure-new-destination.png)
+   ![Skärmbild av Experience Platform-gränssnittet, med en lista över tillgängliga mål och den nya målkontrollen är markerad.](../assets/ui/connect-destinations/configure-new-destination.png)
 
 ## Autentisera till mål {#authenticate}
 
 Det första steget när du ansluter till ett mål är att autentisera till målplattformen.
 
-Beroende på vilket mål du ansluter till kan du komma till målpartnersidan för att autentisera, eller så kan du bli ombedd att ange autentiseringsuppgifter direkt i plattformsarbetsflödet. Nedan visas ett exempel på nödvändiga indata för autentisering till ett [!DNL Amazon S3]-mål. Detaljerade instruktioner om nödvändiga indata finns på varje måldokumentationssida (se t.ex. autentiseringsavsnittet för [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) och för [[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)).
+Beroende på vilket mål du ansluter till kan du komma till målpartnersidan för att autentisera, eller så kan du bli ombedd att ange autentiseringsuppgifter direkt i Experience Platform-arbetsflödet. Nedan visas ett exempel på nödvändiga indata för autentisering till ett [!DNL Amazon S3]-mål. Detaljerade instruktioner om nödvändiga indata finns på varje måldokumentationssida (se t.ex. autentiseringsavsnittet för [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) och för [[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)).
 
 **[!DNL Amazon S3]obligatoriska och valfria autentiseringsparametrar**
 

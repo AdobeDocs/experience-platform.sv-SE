@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datumintervall
 title: Användargränssnittshandbok för aviseringar
-description: Lär dig hur du hanterar aviseringar i användargränssnittet i Experience Platform.
+description: Lär dig hur du hanterar aviseringar i Experience Platform användargränssnitt.
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: 2e0fc17fee9b1586b4c2b44c326e2c305c127fad
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '765'
-ht-degree: 0%
+source-wordcount: '766'
+ht-degree: 4%
 
 ---
 
@@ -41,7 +41,7 @@ Markera ellipsen (**..**) bredvid en regel och i en listruta visas kontroller f�
 
 >[!NOTE]
 >
-> Om du vill tilldela en avisering till ett Adobe-användar-ID, en extern e-postadress eller en e-postgrupplista måste du vara administratör.
+> Om du vill tilldela en avisering till ett Adobe användar-ID, en extern e-postadress eller en e-postgrupplista måste du vara administratör.
 
 Fliken **[!UICONTROL Browse]** visar de tillgängliga reglerna som kan utlösa en varning.
 
@@ -51,7 +51,7 @@ Markera ellipsen (**...**) bredvid en regels namn, så visas kontroller i en lis
 
 ![Markera de ellipser som ska visas i listrutan. Alternativet [!UICONTROL Manage alert subscribers] är markerat.](../images/alerts/ui/manage-alert-subscribers.png)
 
-Sidan [!UICONTROL Manage alert subscribers] visas. Om du vill tilldela aviseringar till specifika användare anger du användar-ID, extern e-postadress eller en e-postgrupplista för Adobe och trycker sedan på Retur.
+Sidan [!UICONTROL Manage alert subscribers] visas. Om du vill tilldela aviseringar till specifika användare anger du deras Adobe användar-ID, externa e-postadresser eller en e-postgrupplista och trycker sedan på Retur.
 
 >[!NOTE]
 >
@@ -91,14 +91,14 @@ Varningströskelvärden kan anpassas för följande varningstyper:
 
 | Aviseringstyp | Anpassad parameter |
 |---|---|
-| Fördröjning för segmentjobb | Fördröjningströskel |
-| Fördröjning för segmentexport | Fördröjningströskel |
+| Fördröjning av segmentjobb | Fördröjningströskel |
+| Fördröjning av segmentexport | Fördröjningströskel |
 | Körningsfördröjning för destinationsflöde | Fördröjningströskel |
 | Körningsfördröjning för identitetstjänstens flöde | Fördröjningströskel |
 | Körningsfördröjning för profilflöde | Fördröjningströskel |
 | Körningsfördröjning för källflöde | Fördröjningströskel |
 | Frågekörningsfördröjning | Fördröjningströskel |
-| Ingen aktiveringshastighet har överskridits | Feltröskel |
+| Överhoppningsfrekvens för aktivering överskriden | Feltröskel |
 | Felfrekvens för källinmatning har överskridits | Feltröskel |
 
 Markera ellipsen (**...**) bredvid en regels namn, så visas kontroller i en listruta. Välj **[!UICONTROL Edit]**.
@@ -125,4 +125,4 @@ Välj en avisering och mer information visas i den högra listen, inklusive en k
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över hur du visar och hanterar aviseringar i plattformsgränssnittet. Mer information om tjänstens funktioner finns i översikten om [Insights](../home.md).
+Det här dokumentet innehåller en översikt över hur du visar och hanterar aviseringar i Experience Platform användargränssnitt. Mer information om tjänstens funktioner finns i översikten om [Insights](../home.md).

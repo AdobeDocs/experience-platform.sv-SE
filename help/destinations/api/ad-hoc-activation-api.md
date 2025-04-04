@@ -5,9 +5,9 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: f01a044d3d12ef457c6242a0b93acbfeeaf48588
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1606'
+source-wordcount: '1617'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Med API:t för ad hoc-aktivering kan marknadsförarna programmatiskt aktivera m�
 
 Använd ad hoc-aktiverings-API:t för att exportera hela filer till det önskade filmottagningssystemet. Ad-hoc-målgruppsaktivering stöds endast av [gruppfilsbaserade mål](../destination-types.md#file-based).
 
-Bilden nedan visar det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som äger rum i Platform var 24:e timme.
+Bilden nedan visar det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben i Experience Platform var 24:e timme.
 
 ![ad hoc-aktivering](../assets/api/ad-hoc-activation/ad-hoc-activation-overview.png)
 
@@ -66,13 +66,13 @@ Innan du kan ringa anrop till Adobe Experience Platform API:er måste du kontrol
 
 ## Steg 2: Samla in inloggningsuppgifter {#credentials}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
+För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till plattforms-API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till Experience Platform API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -84,13 +84,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extr
 
 * Innehållstyp: `application/json`
 
-## Steg 3: Skapa aktiveringsflöde i användargränssnittet för plattformen {#activation-flow}
+## Steg 3: Skapa aktiveringsflöde i Experience Platform användargränssnitt {#activation-flow}
 
-Innan du kan aktivera målgrupper via API:t för ad hoc-aktivering måste du först ha ett aktiveringsflöde konfigurerat i plattformsgränssnittet för det valda målet.
+Innan du kan aktivera målgrupper via API:t för ad hoc-aktivering måste du först ha ett aktiveringsflöde konfigurerat i Experience Platform-gränssnittet för det valda målet.
 
 Detta innefattar att starta aktiveringsarbetsflödet, välja målgrupper, konfigurera ett schema och aktivera dem. Du kan använda gränssnittet eller API:t för att skapa ett aktiveringsflöde:
 
-* [Använd användargränssnittet för plattformen för att skapa ett aktiveringsflöde för att batchprofilera exportdestinationer](../ui/activate-batch-profile-destinations.md)
+* [Använd Experience Platform användargränssnitt för att skapa ett aktiveringsflöde för att batchprofilera exportdestinationer](../ui/activate-batch-profile-destinations.md)
 * [Använd API:t för Flow Service för att ansluta till exportmål för batchprofiler och aktivera data](../api/connect-activate-batch-destinations.md)
 
 ## Steg 4: Hämta det senaste målgruppsexportjobb-ID:t (krävs inte i v2) {#segment-export-id}
@@ -124,7 +124,7 @@ Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e t
 
 >[!IMPORTANT]
 >
->Observera följande engångsbegränsning: Innan du kör ett ad hoc-aktiveringsjobb måste du se till att det har gått minst en timme från det att målgruppen först aktiverades enligt det schema du angav i [Steg 3 - Skapa aktiveringsflöde i plattformsgränssnittet](#activation-flow).
+>Observera följande engångsbegränsning: Innan du kör ett ad hoc-aktiveringsjobb måste du se till att det har gått minst en timme från det att målgruppen först aktiverades enligt det schema du angav i [Steg 3 - Skapa aktiveringsflöde i Experience Platform-gränssnittet](#activation-flow).
 
 Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda målgruppsexportjobbet för dina målgrupper är klart. Information om hur du övervakar statusen för aktiveringsflöden finns i [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md). Om aktiveringsdataflödet till exempel visar statusen **[!UICONTROL Processing]** väntar du tills det är klart innan du kör ad hoc-aktiveringsjobbet för att exportera en fullständig fil.
 
@@ -164,8 +164,8 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/d
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera målgrupper för. Du kan hämta dessa ID:n från plattformsgränssnittet genom att gå till fliken **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i dokumentationen för [målarbetsytan](/help/destinations/ui/destinations-workspace.md#browse). |
-| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de målgrupper som du vill aktivera till det valda målet. Du kan använda ad hoc-API:t för att exportera plattformsgenererade målgrupper och externa (anpassade uppladdningar) målgrupper. När du aktiverar externa målgrupper ska du använda det systemgenererade ID:t i stället för målgrupps-ID:t. Du hittar det systemgenererade ID:t i målgruppsvyn i målgruppsgränssnittet. <br> ![Vy över det målgrupps-ID som inte ska väljas.](/help/destinations/assets/api/ad-hoc-activation/audience-id-do-not-use.png "Vy över det målgrupps-ID som inte ska markeras."){width="100" zoomable="yes"} <br> ![Visa det systemgenererade målar-ID som ska användas.](/help/destinations/assets/api/ad-hoc-activation/system-generated-id-to-use.png "Vy över det systemgenererade målar-ID som ska användas."){width="100" zoomable="yes"} |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera målgrupper för. Du kan hämta dessa ID:n från Experience Platform-gränssnittet genom att gå till fliken **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i dokumentationen för [målarbetsytan](/help/destinations/ui/destinations-workspace.md#browse). |
+| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de målgrupper som du vill aktivera till det valda målet. Du kan använda ad hoc-API:t för att exportera målgrupper som genererats av Experience Platform samt externa (anpassade uppladdningar) målgrupper. När du aktiverar externa målgrupper ska du använda det systemgenererade ID:t i stället för målgrupps-ID:t. Du hittar det systemgenererade ID:t i målgruppsvyn i målgruppsgränssnittet. <br> ![Vy över det målgrupps-ID som inte ska väljas.](/help/destinations/assets/api/ad-hoc-activation/audience-id-do-not-use.png "Vy över det målgrupps-ID som inte ska markeras."){width="100" zoomable="yes"} <br> ![Visa det systemgenererade målar-ID som ska användas.](/help/destinations/assets/api/ad-hoc-activation/system-generated-id-to-use.png "Vy över det systemgenererade målar-ID som ska användas."){width="100" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -205,7 +205,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera målgrupper för. Du kan hämta dessa ID:n från plattformsgränssnittet genom att gå till fliken **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i dokumentationen för [målarbetsytan](/help/destinations/ui/destinations-workspace.md#browse). |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera målgrupper för. Du kan hämta dessa ID:n från Experience Platform-gränssnittet genom att gå till fliken **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i dokumentationen för [målarbetsytan](/help/destinations/ui/destinations-workspace.md#browse). |
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de målgrupper som du vill aktivera till det valda målet. |
 | <ul><li>`exportId1`</li></ul> | Det ID som returnerades i svaret från [målgruppens exportjobb](../../segmentation/api/export-jobs.md#retrieve-list). Se [Steg 4: Hämta det senaste ID:t för målgruppsexportjobb](#segment-export-id) för instruktioner om hur du hittar det här ID:t. |
 
@@ -237,7 +237,7 @@ Ett lyckat svar returnerar HTTP-status 200.
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ### API-felkoder och meddelanden som är specifika för API för ad hoc-aktivering {#specific-error-messages}
 

@@ -3,14 +3,14 @@ title: Integrera stödet för IAB TCF 2.0 med Adobe Experience Platform Web SDK
 description: Lär dig hur du ställer in stöd för IAB TCF 2.0 för din webbplats utan att använda taggar.
 seo-description: Learn how to set up IAB TCF 2.0 consent with Adobe Experience Platform Web SDK
 exl-id: 14f1802a-0f8d-487f-ae17-5daaaab05162
-source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '615'
+source-wordcount: '617'
 ht-degree: 0%
 
 ---
 
-# Integrera stödet för IAB TCF 2.0 med Platform Web SDK
+# Integrera stödet för IAB TCF 2.0 med Experience Platform Web SDK
 
 Den här guiden visar hur du integrerar den interaktiva Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0) med Adobe Experience Platform Web SDK utan att använda taggar. En översikt över integrationen med IAB TCF 2.0 finns i [översikten](./overview.md). En guide om hur du integrerar med taggar finns i guiden [IAB TCF 2.0 för taggar](./with-tags.md).
 
@@ -24,7 +24,7 @@ Den här guiden använder gränssnittet `__tcfapi` för att komma åt medgivande
 
 Om du vill använda IAB TCF 2.0 med taggar och Adobe Experience Platform Web SDK-tillägget måste du ha ett XDM-schema tillgängligt. Om du inte har konfigurerat något av dessa kan du börja med att visa den här sidan innan du fortsätter.
 
-Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs [Adobe Experience Platform Web SDK-översikten](../../home.md) och [Vanliga frågor](../../faq.md) om du vill få en snabb uppdatering.
+Dessutom krävs det att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs [Adobe Experience Platform Web SDK overview](../../home.md) och [Vanliga frågor och svar](../../faq.md) om du vill få en snabb uppdatering.
 
 ## Aktivera standardmedgivande
 
@@ -106,4 +106,4 @@ Det andra sättet att lägga till medgivandeinformationen i varje begäran är m
 
 ## Nästa steg
 
-Nu när du har lärt dig att använda IAB TCF 2.0 med Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller Adobe Real-time Customer Data Platform. Mer information finns i [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md).
+Nu när du har lärt dig att använda IAB TCF 2.0 med Experience Platform Web SDK kan du även integrera med andra Adobe-lösningar som Adobe Analytics och Adobe Real-Time Customer Data Platform. Mer information finns i [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md).

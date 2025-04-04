@@ -4,16 +4,16 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: df7b9bb0c5dc4348e8be7a0ea93296e24bc0fb1d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4749'
+source-wordcount: '4752'
 ht-degree: 0%
 
 ---
 
 # Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 
-Använd de förbättrade funktionerna för filexport för att få bättre anpassningsfunktioner när du exporterar filer från Experience Platform:
+Använd de förbättrade funktionerna för filexport för att få tillgång till förbättrade anpassningsfunktioner när du exporterar filer från Experience Platform:
 
 * Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
 * Möjlighet att ange anpassade filhuvuden i de exporterade filerna via det [förbättrade mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
@@ -33,7 +33,7 @@ I den här artikeln förklaras det arbetsflöde som krävs för att använda [AP
 
 >[!TIP]
 >
->Du kan också använda användargränssnittet i Experience Platform för att exportera profiler till molnlagringsmål. Läs självstudiekursen [Aktivera filbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md) om du vill ha mer information.
+>Du kan också använda Experience Platform användargränssnitt för att exportera profiler till molnlagringsmål. Läs självstudiekursen [Aktivera filbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md) om du vill ha mer information.
 
 <!--
 
@@ -51,9 +51,9 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] låter dig skapa målgrupper och generera målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till filbaserade mål i Platform.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till filbaserade mål i Experience Platform.
 
 ### Nödvändiga behörigheter {#permissions}
 
@@ -67,13 +67,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values-headers}
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [Experience Platform-autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna ringa anrop till [!DNL Experience Platform] API:er måste du först slutföra [Experience Platform-autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Platform] API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Experience Platform] API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -3477,7 +3477,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/i
 
 +++ Visa tillgängliga identiteter som ska användas i indatabchemat
 
-Svaret returnerar de identiteter som du kan använda när du skapar indatarammet. Observera att det här svaret returnerar både [standard](/help/identity-service/features/namespaces.md#standard)- och [anpassade](/help/identity-service/features/namespaces.md#manage-namespaces)-identitetsnamnutrymmen som du anger i Experience Platform.
+Svaret returnerar de identiteter som du kan använda när du skapar indatarammet. Observera att det här svaret returnerar både [standard](/help/identity-service/features/namespaces.md#standard)- och [anpassade](/help/identity-service/features/namespaces.md#manage-namespaces)-identitetsnamnutrymmen som du har konfigurerat i Experience Platform.
 
 ```json
 [
@@ -3742,7 +3742,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **Svar med exempelschema**
 
-Inspect det svar du får när du genomför samtalet ovan. Du måste fördjupa dig i svaret för att hitta objektet `targetSpec.attributes.partnerSchema.jsonSchema`
+Kontrollera det svar du får när du genomför samtalet ovan. Du måste fördjupa dig i svaret för att hitta objektet `targetSpec.attributes.partnerSchema.jsonSchema`
 
 +++ Svar för att hämta partnerschema för utdataschemat
 
@@ -4514,7 +4514,7 @@ Om du vill lägga till en [marknadsföringsåtgärd](/help/data-governance/api/m
 >
 >Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av etag-värdet utför du en GET-förfrågan till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`-slutpunkten, där `{ID}` är det dataflödes-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av etag-värdet utför du en GET-begäran till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`-slutpunkten, där `{ID}` är det dataflödes-ID som du vill uppdatera.
 >
 > Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
 
@@ -4583,7 +4583,7 @@ Om du vill lägga till en [obligatorisk nyckel](/help/destinations/ui/activate-b
 >
 >Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av etag-värdet utför du en GET-förfrågan till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`-slutpunkten, där `{ID}` är det dataflödes-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av etag-värdet utför du en GET-begäran till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`-slutpunkten, där `{ID}` är det dataflödes-ID som du vill uppdatera.
 >
 > Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
 
@@ -4662,7 +4662,7 @@ Om du vill lägga till en [dedupliceringsnyckel](/help/destinations/ui/activate-
 >
 >Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av etag-värdet utför du en GET-förfrågan till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`-slutpunkten, där `{ID}` är det dataflödes-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av etag-värdet utför du en GET-begäran till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}`-slutpunkten, där `{ID}` är det dataflödes-ID som du vill uppdatera.
 >
 > Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
 
@@ -4817,11 +4817,11 @@ Du hittar information om de [olika parametrarna som returneras av Dataflödet k�
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit plattformen till en av dina favoritplatser för molnlagring och konfigurerat ett dataflöde till respektive mål för att exportera målgrupper. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Genom att följa den här självstudiekursen har du anslutit Experience Platform till en av dina favoritplatser för molnlagring och konfigurerat ett dataflöde till respektive mål för att exportera målgrupper. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)

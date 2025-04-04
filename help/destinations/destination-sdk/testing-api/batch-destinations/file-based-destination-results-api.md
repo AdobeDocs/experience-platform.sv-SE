@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /testing/destinationInstance för att visa fullständig information om testresultaten. Denna API-slutpunkt returnerar samma resultat som du skulle få när du använde API:t för Flow Service för att övervaka dataflöden.
 title: Visa detaljerade aktiveringsresultat
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
-source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '547'
 ht-degree: 1%
 
 ---
@@ -31,16 +31,16 @@ Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-star
 
 Innan du kan använda slutpunkten `/testing/destinationInstance` måste du kontrollera att följande villkor uppfylls:
 
-* Du har ett befintligt filbaserat mål som skapats via Destinationen SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
-* Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform.
-* För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i plattformsgränssnittet.
+* Du har ett befintligt filbaserat mål som skapats via Destination SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
+* Du har skapat minst ett aktiveringsflöde för destinationen i Experience Platform-gränssnittet.
+* För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i Experience Platform-gränssnittet.
 
   ![Gränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
 * Du har tidigare [testat målkonfigurationen](file-based-destination-testing-api.md) och fått ett giltigt API-svar, som innehåller en `results` -egenskap. Du kommer att använda det här `results`-värdet för att testa målet ytterligare.
 
 ## Visa detaljerade testresultat för destinationer {#test-activation-results}
 
-När du har [verifierat målkonfigurationen](file-based-destination-testing-api.md) kan du visa detaljerade aktiveringsresultat genom att göra en GET-förfrågan till `authoring/testing/destinationInstance/`-slutpunkten och ange målinstans-ID:t för det mål som du testar samt ID:n för flödeskörning för de aktiverade målgrupperna.
+När du har [verifierat målkonfigurationen](file-based-destination-testing-api.md) kan du visa detaljerade aktiveringsresultat genom att göra en GET-begäran till `authoring/testing/destinationInstance/`-slutpunkten och ange målinstans-ID:t för det mål som du testar samt ID:n för flödeskörning för de aktiverade målgrupperna.
 
 Du kan hitta den fullständiga API-URL som du behöver använda i egenskapen `results` som returneras i [svaret för destinationstestningsanropet](file-based-destination-testing-api.md).
 
@@ -213,10 +213,10 @@ Svaret innehåller en fullständig beskrivning av aktiveringsflödet. Du kan få
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg
 
 När du har läst det här dokumentet vet du nu hur du testar din filbaserade destinationskonfiguration och ser alla detaljer om aktiveringsresultaten.
 
-Om du skapar ett offentligt mål kan du nu [skicka målkonfigurationen](../../guides/submit-destination.md) till Adobe för granskning.
+Om du skapar ett publikt mål kan du nu [skicka målkonfigurationen](../../guides/submit-destination.md) till Adobe för granskning.

@@ -1,17 +1,17 @@
 ---
 title: Bestäm en benägenhetsgrad med hjälp av en maskininlärningsgenererad prediktiv modell
-description: Lär dig hur du använder frågetjänsten för att tillämpa den prediktiva modellen på plattformsdata. Det här dokumentet visar hur du använder plattformsdata för att förutsäga kundens benägenhet att köpa vid varje besök.
+description: Lär dig hur du använder frågetjänsten för att tillämpa den prediktiva modellen på Experience Platform-data. Det här dokumentet visar hur man använder Experience Platform-data för att förutsäga kundens benägenhet att köpa vid varje besök.
 exl-id: 29587541-50dd-405c-bc18-17947b8a5942
-source-git-commit: 40c27a52fdae2c7d38c5e244a6d1d6ae3f80f496
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1309'
 ht-degree: 0%
 
 ---
 
 # Bestäm en benägenhetspoäng med en maskininlärningsgenererad prediktiv modell
 
-Med hjälp av frågetjänsten kan du utnyttja prediktiva modeller, som benägenhetspoäng, som bygger på maskininlärningsplattformen för att analysera data från Experience Platform.
+Med Query Service kan ni utnyttja prediktiva modeller, som benägenhetspoäng, som bygger på datorns inlärningsplattform för att analysera Experience Platform-data.
 
 Den här guiden förklarar hur du använder frågetjänsten för att skicka data till din maskininlärningsplattform för att utbilda en modell i en bärbar dator. Den utbildade modellen kan tillämpas på data med SQL för att förutsäga kundens benägenhet att köpa för varje besök.
 
@@ -35,9 +35,9 @@ numpy
 tqdm
 ```
 
-## Importera analystabeller från plattformen till [!DNL Jupyter Notebook] {#import-analytics-tables}
+## Importera analystabeller från Experience Platform till [!DNL Jupyter Notebook] {#import-analytics-tables}
 
-Om du vill generera en prognosmodell måste en projektion av analysdata som lagras i Platform importeras till [!DNL Jupyter Notebook]. Från en [!DNL Python] 3 [!DNL Jupyter Notebook] som är ansluten till frågetjänsten importerar följande kommandon en kundbeteendedatauppsättning från Luma, en fiktiv klädbutik. När plattformsdata lagras i XDM-format (Experience Data Model) måste ett exempel-JSON-objekt skapas som följer schemats struktur. I dokumentationen finns instruktioner om hur du [genererar JSON-exempelobjektet](../../xdm/ui/sample.md).
+Om du vill generera en prognosmodell måste en projektion av analysdata som lagras i Experience Platform importeras till [!DNL Jupyter Notebook]. Från en [!DNL Python] 3 [!DNL Jupyter Notebook] som är ansluten till frågetjänsten importerar följande kommandon en kundbeteendedatauppsättning från Luma, en fiktiv klädbutik. När Experience Platform-data lagras i XDM-format (Experience Data Model) måste ett JSON-exempelobjekt skapas som följer schemats struktur. I dokumentationen finns instruktioner om hur du [genererar JSON-exempelobjektet](../../xdm/ui/sample.md).
 
 ![Kontrollpanelen [!DNL Jupyter Notebook] med flera kommandon markerade.](../images/use-cases/jupyter-commands.png)
 

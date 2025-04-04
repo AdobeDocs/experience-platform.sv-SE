@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
+keywords: Experience Platform;home;populära topics;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
 solution: Experience Platform
 title: Dataförhandsgranskning
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '790'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Om du vill veta mer om mappningsuppsättningar, inklusive hur du använder fält
 
 ## Dataformatshantering
 
-Data Prep kan hantera olika dataformat som importerats till Platform på ett robust sätt. Läs [översikten över dataformatshantering](./data-handling.md) om du vill veta mer om hur dataprep hanterar olika datatyper.
+Data Prep kan hantera olika dataformat som importerats till Experience Platform på ett robust sätt. Läs [översikten över dataformatshantering](./data-handling.md) om du vill veta mer om hur dataprep hanterar olika datatyper.
 
 ## Skicka uppdateringar av delar av rader med [!DNL Data Prep]
 

@@ -2,9 +2,9 @@
 title: Datauppsättningsexempel
 description: Med exempeldatauppsättningar för frågetjänsten kan du utföra utforskande frågor på stora data med avsevärt reducerad bearbetningstid, vilket gör att frågan blir korrekt. Den här guiden innehåller information om hur du hanterar dina exempel för ungefärlig frågebearbetning
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
-source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Om du vill använda funktionerna för att skapa och ta bort ungefärliga frågeb
 
 >[!NOTE]
 >
->Du måste aktivera sessionsflaggan varje gång du loggar in på plattformen.
+>Du måste aktivera sessionsflaggan varje gång du loggar in på Experience Platform.
 
 ![Frågeredigeraren med kommandot SET aqp=true; markerat.](../images/key-concepts/set-session-flag.png)
 

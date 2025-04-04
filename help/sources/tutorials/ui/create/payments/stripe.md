@@ -1,16 +1,16 @@
 ---
-title: Hämta in betalningsdata från ditt Stripe-konto till Experience Platform via användargränssnittet.
-description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Experience Platform med användargränssnittet.
+title: Importera betalningsdata från ditt Stripe-konto till Experience Platform via användargränssnittet.
+description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Experience Platform via användargränssnittet.
 badge: Beta
 exl-id: f20c5935-a7c0-4387-b29e-73e78cab4972
-source-git-commit: dd9afe650f4c83b3877f980acac66e703e9ae5d8
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1610'
+source-wordcount: '1611'
 ht-degree: 0%
 
 ---
 
-# Infoga betalningsdata från ditt [!DNL Stripe]-konto till Experience Platform med användargränssnittet
+# Infoga betalningsdata från ditt [!DNL Stripe]-konto till Experience Platform via användargränssnittet
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ Läs [[!DNL Stripe] översikten](../../../../connectors/payments/stripe.md) om d
 
 ## Anslut ditt [!DNL Stripe]-konto {#connect}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin *Betalningar* väljer du **[!DNL Stripe]** och sedan **[!UICONTROL Set up]**.
 
@@ -41,7 +41,7 @@ Under kategorin *Betalningar* väljer du **[!DNL Stripe]** och sedan **[!UICONTR
 >
 >Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
-![Källkatalogen i användargränssnittet i Experience Platform med källkortet Stripe markerat.](../../../../images/tutorials/create/stripe/catalog.png)
+![Källkatalogen i Experience Platform-gränssnittet med källkortet för Stripe markerat.](../../../../images/tutorials/create/stripe/catalog.png)
 
 Sidan **[!UICONTROL Connect Stripe account]** visas. På den här sidan kan du antingen använda nya eller befintliga autentiseringsuppgifter.
 
@@ -92,7 +92,7 @@ Därefter måste du ange information om datauppsättningen och dataflödet.
 
 ### Information om datauppsättning {#dataset-details}
 
-En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har inhämtats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
+En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har importerats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
 
 >[!BEGINTABS]
 
@@ -135,13 +135,13 @@ När datauppsättningen har konfigurerats måste du ange information om dataflö
 | --- | --- |
 | Dataflödesnamn | Dataflödets namn.  Som standard används namnet på filen som importeras. |
 | Beskrivning | (Valfritt) En kort beskrivning av dataflödet. |
-| Larm | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ kräver alla ett öppet dataflöde för att de ska aktiveras.  Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
+| Aviseringar | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ kräver alla ett öppet dataflöde för att de ska aktiveras.  Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
 
 När du är klar väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ## Mappa fält till ett XDM-schema {#mapping}
 
-**[!UICONTROL Mapping]**-steget visas. Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan data hämtas till Experience Platform. En utförlig guide om hur du använder mappningsgränssnittet finns i [Användargränssnittshandboken för dataförberedelser](../../../../../data-prep/ui/mapping.md) för mer information.
+**[!UICONTROL Mapping]**-steget visas. Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan du importerar dessa data till Experience Platform. En utförlig guide om hur du använder mappningsgränssnittet finns i [Användargränssnittshandboken för dataförberedelser](../../../../../data-prep/ui/mapping.md) för mer information.
 
 ![Mappningsgränssnittet för källarbetsflödet.](../../../../images/tutorials/create/stripe/mapping.png)
 
@@ -182,7 +182,7 @@ När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och tillåt 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde som skickar betalningsdata från källan [!DNL Stripe] till Experience Platform. Ytterligare resurser finns i dokumentationen nedan.
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att skicka betalningsdata från din [!DNL Stripe]-källa till Experience Platform. Ytterligare resurser finns i dokumentationen nedan.
 
 ### Övervaka dataflödet
 

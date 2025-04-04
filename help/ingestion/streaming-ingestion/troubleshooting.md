@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelning;direktuppspelningsuppläsning;felsökning;direktuppspelningsuppläsning, frågor och svar;frågor;
+keywords: Experience Platform;home;populära topics;streaming;direktuppspelningsuppläsning;felsökning;felsökning av direktuppspelningsuppläsning;frågor och svar;
 solution: Experience Platform
 title: Felsökningsguide för direktuppspelning av inmatningsproblem
 description: Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform.
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1020'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Felsökningsguide för direktuppspelning
 
-Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform. Om du har frågor och felsökning som rör andra [!DNL Platform]-tjänster, inklusive de som påträffas i alla [!DNL Platform] API:er, kan du läsa [felsökningsguiden för Experience Platform](../../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform. För frågor och felsökning som rör andra [!DNL Experience Platform]-tjänster, inklusive de som påträffas i alla [!DNL Experience Platform] API:er, se [Experience Platform felsökningsguide](../../landing/troubleshooting.md).
 
 Adobe Experience Platform [!DNL Data Ingestion] innehåller RESTful-API:er som du kan använda för att importera data till [!DNL Experience Platform]. Inkapslade data används för att uppdatera enskilda kundprofiler i nära realtid, så att ni kan leverera personaliserade, relevanta upplevelser över flera kanaler. Läs [Översikt över datainmatning](../home.md) om du vill ha mer information om tjänsten och de olika matningsmetoderna. Anvisningar om hur du använder API:er för direktuppspelning av inläsning finns i [översikten över direktuppspelning](../streaming-ingestion/overview.md).
 
@@ -33,9 +33,9 @@ Direktuppspelningsuppläsning stöder två valideringslägen: synkron och asynkr
 
 Mer information om synkron och asynkron validering finns i [översikt över direktuppspelningsvalidering](../quality/streaming-validation.md). Anvisningar om hur du visar batchar som inte kan valideras finns i guiden [Hämta misslyckade batchar](../quality/retrieve-failed-batches.md).
 
-### Kan jag validera nyttolasten för en begäran innan jag skickar den till [!DNL Platform]?
+### Kan jag validera nyttolasten för en begäran innan jag skickar den till [!DNL Experience Platform]?
 
-Nyttolaster för begäranden kan bara utvärderas efter att de har skickats till [!DNL Platform]. Vid synkron validering returnerar giltiga nyttolaster ifyllda JSON-objekt medan ogiltiga nyttolaster returnerar felmeddelanden. Under asynkron validering upptäcker och skickar tjänsten alla felformaterade data till [!DNL Data Lake], där de senare kan hämtas för analys. Mer information finns i [översikten för direktuppspelningsvalidering](../quality/streaming-validation.md).
+Nyttolaster för begäranden kan bara utvärderas efter att de har skickats till [!DNL Experience Platform]. Vid synkron validering returnerar giltiga nyttolaster ifyllda JSON-objekt medan ogiltiga nyttolaster returnerar felmeddelanden. Under asynkron validering upptäcker och skickar tjänsten alla felformaterade data till [!DNL Data Lake], där de senare kan hämtas för analys. Mer information finns i [översikten för direktuppspelningsvalidering](../quality/streaming-validation.md).
 
 ### Vad händer när synkron validering begärs på en kant som inte stöder det?
 
@@ -43,7 +43,7 @@ Om synkron validering inte stöds för den begärda platsen returneras ett 501-f
 
 ### Hur ser jag till att data bara samlas in från betrodda källor?
 
-[!DNL Experience Platform] har stöd för säker datainsamling. När autentiserad datainsamling är aktiverad måste klienterna skicka en JSON Web Token (JWT) och deras organisations-ID som begärandehuvuden. Mer information om hur du skickar autentiserade data till [!DNL Platform] finns i guiden om [autentiserad datainsamling](../tutorials/create-authenticated-streaming-connection.md).
+[!DNL Experience Platform] har stöd för säker datainsamling. När autentiserad datainsamling är aktiverad måste klienterna skicka en JSON Web Token (JWT) och deras organisations-ID som begärandehuvuden. Mer information om hur du skickar autentiserade data till [!DNL Experience Platform] finns i guiden om [autentiserad datainsamling](../tutorials/create-authenticated-streaming-connection.md).
 
 ### Vilken fördröjning har direktuppspelning av data till [!DNL Real-Time Customer Profile]?
 
@@ -51,15 +51,15 @@ Direktuppspelade händelser återspeglas i allmänhet i [!DNL Real-Time Customer
 
 ### Kan jag inkludera flera meddelanden i samma API-begäran?
 
-Du kan gruppera flera meddelanden inom en enskild nyttolast för begäran och strömma dem till [!DNL Platform]. När det används på rätt sätt är gruppering av flera meddelanden i en enda begäran ett utmärkt sätt att optimera dataåtgärderna. Mer information finns i självstudiekursen om att [skicka flera meddelanden i en begäran](../tutorials/streaming-multiple-messages.md).
+Du kan gruppera flera meddelanden inom en enskild nyttolast för begäran och strömma dem till [!DNL Experience Platform]. När det används på rätt sätt är gruppering av flera meddelanden i en enda begäran ett utmärkt sätt att optimera dataåtgärderna. Mer information finns i självstudiekursen om att [skicka flera meddelanden i en begäran](../tutorials/streaming-multiple-messages.md).
 
 ### Hur vet jag om de data jag skickar tas emot?
 
-Alla data som skickas till [!DNL Platform] (utan fel eller på annat sätt) lagras som gruppfiler innan de lagras i datauppsättningar. Batchernas bearbetningsstatus visas i den datauppsättning de skickades till.
+Alla data som skickas till [!DNL Experience Platform] (utan fel eller på annat sätt) lagras som gruppfiler innan de lagras i datauppsättningar. Batchernas bearbetningsstatus visas i den datauppsättning de skickades till.
 
-Du kan verifiera om data har importerats genom att kontrollera datauppsättningsaktiviteten med användargränssnittet [Experience Platform](https://platform.adobe.com). Klicka på **[!UICONTROL Datasets]** i den vänstra navigeringen för att visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna sidan **[!UICONTROL Dataset activity]** med alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar finns i guiden [Övervaka dataflöden för direktuppspelning](../quality/monitor-data-ingestion.md).
+Du kan verifiera om data har importerats genom att kontrollera datauppsättningsaktiviteten med [Experience Platform-användargränssnittet](https://platform.adobe.com). Klicka på **[!UICONTROL Datasets]** i den vänstra navigeringen för att visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna sidan **[!UICONTROL Dataset activity]** med alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar finns i guiden [Övervaka dataflöden för direktuppspelning](../quality/monitor-data-ingestion.md).
 
-Om dina data inte kunde importera och du vill återställa dem från [!DNL Platform], kan du hämta de misslyckade batcharna genom att skicka deras ID:n till [!DNL Data Access API]. Mer information finns i guiden [Hämta misslyckade batchar](../quality/retrieve-failed-batches.md).
+Om dina data inte kunde importera och du vill återställa dem från [!DNL Experience Platform], kan du hämta de misslyckade batcharna genom att skicka deras ID:n till [!DNL Data Access API]. Mer information finns i guiden [Hämta misslyckade batchar](../quality/retrieve-failed-batches.md).
 
 ### Varför är mina strömmande data inte tillgängliga i datasjön?
 

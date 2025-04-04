@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 8dbdfb1e8e574647bf621a320ee07ecc7a653a6c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1457'
+source-wordcount: '1461'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
 | Januari 2024 | Funktioner och dokumentation | Amazon S3-målkopplingen har nu stöd för en ny, antagen rollautentiseringstyp. Läs mer om det i avsnittet [autentisering](#assumed-role-authentication). |
-| Juli 2023 | Funktioner och dokumentation | I Experience Platform från juli 2023 har målet [!DNL Amazon S3] nya funktioner enligt nedan: <br><ul><li>[Exportstöd för datauppsättningar](/help/destinations/ui/export-datasets.md)</li><li>Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).</li><li>Möjlighet att ange anpassade filhuvuden i de exporterade filerna via det [förbättrade mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[Möjlighet att anpassa formateringen för exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> |
+| Juli 2023 | Funktioner och dokumentation | Med Experience Platform från juli 2023 har målet [!DNL Amazon S3] nya funktioner enligt nedan: <br><ul><li>[Exportstöd för datauppsättningar](/help/destinations/ui/export-datasets.md)</li><li>Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).</li><li>Möjlighet att ange anpassade filhuvuden i de exporterade filerna via det [förbättrade mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[Möjlighet att anpassa formateringen för exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ## Anslut till ditt [!DNL Amazon S3]-lagringsutrymme via API eller användargränssnittet {#connect-api-or-ui}
 
-* Läs avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan om du vill ansluta till lagringsplatsen [!DNL Amazon S3] med hjälp av användargränssnittet för plattformen.
+* Om du vill ansluta till lagringsplatsen [!DNL Amazon S3] med Experience Platform användargränssnitt läser du avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
 * Om du vill ansluta till din [!DNL Amazon S3]-lagringsplats programmatiskt läser du guiden om hur du [aktiverar målgrupper till filbaserade mål med hjälp av API-självstudiekursen för Flow-tjänsten](../../api/activate-segments-file-based-destinations.md).
 
 ## Målgrupper {#supported-audiences}
@@ -36,7 +36,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -58,14 +58,14 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
-* Så här [exporterar du datauppsättningar med användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här [exporterar du datauppsättningar med Experience Platform användargränssnitt](/help/destinations/ui/export-datasets.md).
 * Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service ](/help/destinations/api/export-datasets.md).
 
 ## Filformat för exporterade data {#file-format}
 
-När du exporterar *målgruppsdata* skapar Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
+När du exporterar *målgruppsdata* skapar Experience Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
 
-När du exporterar *datauppsättningar* skapar Platform en `.parquet` - eller `.json` -fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
+När du exporterar *datauppsättningar* skapar Experience Platform en `.parquet`- eller `.json`-fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
 ## Anslut till målet {#connect}
 
@@ -89,11 +89,11 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 #### Åtkomstnyckel och autentisering av hemlig nyckel
 
-Använd den här autentiseringsmetoden när du vill ange din Amazon S3-åtkomstnyckel och hemlig nyckel för att tillåta Experience Platform att exportera data till dina Amazon S3-egenskaper.
+Använd den här autentiseringsmetoden när du vill ange din Amazon S3-åtkomstnyckel och hemlig nyckel så att Experience Platform kan exportera data till dina Amazon S3-egenskaper.
 
 ![Bild av obligatoriska fält när åtkomstnyckel och autentisering av hemliga nycklar väljs.](/help/destinations/assets/catalog/cloud-storage/amazon-s3/access-key-secret-key-authentication.png)
 
-* **[!DNL Amazon S3]åtkomstnyckel** och **[!DNL Amazon S3]hemlig nyckel**: Generera ett `access key - secret access key`-par i [!DNL Amazon S3] för att ge plattformsåtkomst till ditt [!DNL Amazon S3]-konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!DNL Amazon S3]åtkomstnyckel** och **[!DNL Amazon S3]hemlig nyckel**: Generera ett `access key - secret access key`-par i [!DNL Amazon S3] för att ge Experience Platform åtkomst till ditt [!DNL Amazon S3]-konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i gränssnittet.](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
@@ -109,7 +109,7 @@ Använd den här autentiseringsmetoden när du vill ange din Amazon S3-åtkomstn
 
 Använd den här autentiseringstypen om du inte vill dela kontonycklar och hemliga nycklar med Adobe. I stället ansluter Experience Platform till din Amazon S3-plats med rollbaserad åtkomst.
 
-För att göra detta måste du skapa en användare som antas ha Adobe i AWS-konsolen med de [behörigheter som krävs](#minimum-permissions-iam-user) för att skriva till dina Amazon S3-bucket. Skapa en **[!UICONTROL Trusted entity]** i AWS med Adobe-kontot **[!UICONTROL 670664943635]**. Mer information finns i [AWS-dokumentationen om hur du skapar roller](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
+För att kunna göra detta måste du skapa en användare för Adobe i AWS-konsolen med de [behörigheter som krävs](#minimum-permissions-iam-user) för att skriva till dina Amazon S3-bucket. Skapa en **[!UICONTROL Trusted entity]** i AWS med Adobe-kontot **[!UICONTROL 670664943635]**. Mer information finns i [AWS-dokumentationen om hur du skapar roller](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
 
 * **[!DNL Role]**: Klistra in ARN för rollen som du skapade i AWS för Adobe-användaren. Mönstret liknar `arn:aws:iam::800873819705:role/destinations-role-customer`.
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
@@ -154,7 +154,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 
 ### [!DNL Amazon S3] behörigheter som krävs {#required-s3-permission}
 
-Om du vill ansluta och exportera data till din [!DNL Amazon S3]-lagringsplats skapar du en IAM-användare (Identity and Access Management) för [!DNL Platform] i [!DNL Amazon S3] och tilldelar behörigheter för följande åtgärder:
+Om du vill ansluta och exportera data till din [!DNL Amazon S3]-lagringsplats skapar du en IAM-användare (Identity and Access Management) för [!DNL Experience Platform] i [!DNL Amazon S3] och tilldelar behörigheter för följande åtgärder:
 
 * `s3:DeleteObject`
 * `s3:GetBucketLocation`
@@ -201,7 +201,7 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 >[!IMPORTANT]
 >
->Platform needs `write` permissions on the bucket object where the export files will be delivered.
+>Experience Platform needs `write` permissions on the bucket object where the export files will be delivered.
 
 -->
 
@@ -220,4 +220,4 @@ Kontrollera [!DNL Amazon S3]-lagringen och se till att de exporterade filerna in
 
 ## IP-adress tillåtelselista {#ip-address-allow-list}
 
-Läs artikeln [IP-adressen tillåtelselista ](ip-address-allow-list.md) om du behöver lägga till IP-adresser i Adobe i en tillåtelselista.
+Läs artikeln [IP-adressen tillåtelselista](ip-address-allow-list.md) om du behöver lägga till Adobe IP-adresser i en tillåtelselista.

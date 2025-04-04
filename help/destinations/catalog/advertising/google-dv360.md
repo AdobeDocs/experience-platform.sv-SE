@@ -2,10 +2,10 @@
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 0%
+source-wordcount: '1136'
+ht-degree: 2%
 
 ---
 
@@ -15,9 +15,9 @@ ht-degree: 0%
 >
 > Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([EU User Consent Policy](https://www.google.com/about/company/user-consent-policy/)). Tvingande av dessa ändringar av medgivandekraven gäller från och med den 6 mars 2024.
 ><br/>
->För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe de verktyg som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
+>För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
 ><br/>
->Kunder som har köpt Adobe sekretess- och säkerhetssköld och konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
 ><br/>
 >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
@@ -32,7 +32,7 @@ Observera följande information som är specifik för [!DNL Google Display & Vid
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med Google Display &amp; Video 360 och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program), kan du kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager, överförs de ID-synkroniseringar du har konfigurerat till Platform.
+>Om du vill skapa ditt första mål med Google Display &amp; Video 360 och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) kan du kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -54,7 +54,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -74,12 +74,12 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!NOTE]
 >
->Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Display & Video 360]-mål i plattformen. Kontrollera att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
+>Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Display & Video 360]-mål i Experience Platform. Kontrollera att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
 >Undantaget till den här regeln gäller [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)-kunder. Om du redan har skapat en anslutning till det här Google-målet i Audience Manager behöver du inte gå igenom processen för att tillåta listning igen och du kan fortsätta till nästa steg.
 
-Innan du skapar [!DNL Google Display & Video 360]-målet i Platform måste du kontakta Google och be Adobe om att läggas till i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta Google och lämna följande information:
+Innan du skapar [!DNL Google Display & Video 360]-målet i Experience Platform måste du kontakta Google och be om att Adobe finns med i listan över tillåtna dataleverantörer och att ditt konto läggs till i tillåtelselista. Kontakta Google och lämna följande information:
 
-* **Konto-ID**: Adobe-konto-ID med Google. Konto-ID: 87933855.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
 * **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.
 * **Din kontotyp**: använd **[!DNL Invite advertiser]** för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto eller använd **[!DNL Invite partner]** för att tillåta att målgrupper delas med alla varumärken i ditt Display &amp; Video 360-konto.
 
@@ -104,7 +104,7 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 
 >[!NOTE]
 >
->När du konfigurerar ett [!DNL Google Display & Video 360]-mål bör du samarbeta med din [!DNL Google Account Manager]- eller Adobe-representant för att förstå vilken kontotyp du har.
+>När du konfigurerar ett [!DNL Google Display & Video 360]-mål bör du samarbeta med din [!DNL Google Account Manager]- eller Adobe-representant för att ta reda på vilken kontotyp du har.
 
 ### Aktivera aviseringar {#enable-alerts}
 

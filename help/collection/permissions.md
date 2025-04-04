@@ -2,9 +2,9 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 2d71eafb00098d958c8cff9350caa27bd3f0260d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1335'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ I den här handboken visas hur du hanterar behörigheter för datainsamlingsfunk
 
 Om du vill konfigurera åtkomstkontroll för datainsamling måste du ha administratörsbehörighet för en organisation som har en produktintegrering med Adobe Experience Platform Data Collection. Den minsta rollen som kan bevilja eller återkalla behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (inga begränsningar). Mer information finns i artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) i administrationshandboken för Adobe Enterprise.
 
-I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i användarhandboken för [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
+I den här handboken förutsätts det att du känner till grundläggande Admin Console-koncept som produktprofiler och hur de ger produktbehörigheter till enskilda användare och grupper. Mer information finns i användarhandboken för [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
 
 ## Tillgängliga behörigheter
 
@@ -55,13 +55,13 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 | Plattformar | Webb | Ger åtkomst till [webbegenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
 | Plattformar | Mobil | Ger åtkomst till [mobila egenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
 | Plattformar | Edge | Ger åtkomst till [händelsevidarebefordrande Edge-egenskaper](../tags/ui/event-forwarding/getting-started.md) i kombination med andra egenskapsrättigheter. |
-| Egenskaper | (Ej tillämpligt) | Beroende på vilka egenskaper som har skapats under din organisation kan du styra åtkomsten till var och en av dem via den här behörighetskategorin i Admin Console.<br><br>En användares tilldelade egenskapsrättigheter gäller bara för de egenskaper som de har fått åtkomst till via den här behörighetskategorin. |
+| Egenskaper | (Ej tillämpligt) | Beroende på vilka egenskaper som har skapats under din organisation kan du styra åtkomsten till var och en av dem genom den här behörighetskategorin i Admin Console.<br><br>En användares tilldelade egenskapsrättigheter gäller bara för de egenskaper som de har fått åtkomst till via den här behörighetskategorin. |
 | Egendomsrättigheter | Godkänn | Ger möjlighet att godkänna ett biblioteksbygge som en del av [publiceringsflödet](../tags/ui/publishing/publishing-flow.md). |
 | Egendomsrättigheter | Utveckla | Ger möjlighet att utveckla ett bibliotek som en del av [publiceringsflödet](../tags/ui/publishing/publishing-flow.md). |
 | Egendomsrättigheter | Redigera egenskap | Ger möjlighet att redigera den grundläggande konfigurationen för de egenskaper som en användare har åtkomst till. |
 | Egendomsrättigheter | Hantera miljöer | Ger möjlighet att hantera [miljöerna](../tags/ui/publishing/environments.md) för egenskaperna som en användare har åtkomst till. |
 | Egendomsrättigheter | Hantera tillägg | Ger möjlighet att hantera [tilläggen](../tags/ui/managing-resources/extensions/overview.md) för egenskaperna som en användare har åtkomst till. |
-| Egendomsrättigheter | Publish | Ger möjlighet att publicera ett biblioteksbygge som en del av [publiceringsflödet](../tags/ui/publishing/publishing-flow.md). |
+| Egendomsrättigheter | Publicera | Ger möjlighet att publicera ett biblioteksbygge som en del av [publiceringsflödet](../tags/ui/publishing/publishing-flow.md). |
 | Företagsrättigheter | Utveckla tillägg | Ger möjlighet att skapa och ändra tilläggspaket som ägs av organisationen, inklusive privata releaser och förfrågningar om allmän spridning. |
 | Företagsrättigheter | Hantera appkonfigurationer | Detta tillstånd gäller endast om du har en licens för Adobe Journey Optimizer eller en annan lösning som ger åtkomst till mobilmeddelanden i appen och push-meddelanden. På så sätt kan du hantera de appar som Adobe Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple Push Notification-tjänsten. |
 | Företagsrättigheter | Hantera egenskaper | Ger dig möjlighet att skapa och hantera taggar (webbegenskaper), vidarebefordra händelser (edge-egenskap) och mobila egenskaper. |
@@ -87,7 +87,7 @@ Se underavsnitten nedan för steg om hur du hanterar behörigheter för respekti
 >
 >Om du vill hantera behörigheter för en roll måste du ha administratörsbehörighet. Kontakta systemadministratören om du inte har administratörsbehörighet.
 
-I Experience Cloud **[!UICONTROL Permissions]** kan du definiera användarroller och profiler för att hantera åtkomst för funktioner och objekt i ett produktprogram.
+I Experience Cloud **[!UICONTROL Permissions]**-avsnittet kan du definiera användarroller och profiler för att hantera åtkomst för funktioner och objekt i ett produktprogram.
 
 Genom [!UICONTROL Permissions] kan du skapa och hantera roller och tilldela önskade resursbehörigheter för dessa roller.
 
@@ -97,11 +97,11 @@ Om du vill komma åt datainsamlingsfunktioner måste du aktivera alla behörighe
 
 ![Bild som visar produktkortet för datainsamling i Admin Console](./images/permissions/platform-permission-card.png)
 
-Detaljerade instruktioner om hur du hanterar plattformsbehörigheter finns i [gränssnittshandboken för åtkomstkontroll](../access-control/ui/overview.md).
+Mer information om hur du hanterar Experience Platform-behörigheter finns i [användargränssnittshandboken för åtkomstkontroll](../access-control/ui/overview.md).
 
 >[!NOTE]
 >
->Beroende på vilka SKU:er din organisation har tillgång till kanske du inte har alla plattformsbehörigheter.
+>Beroende på vilka SKU:er din organisation har tillgång till kanske du inte har alla Experience Platform-behörigheter.
 
 ### Hantera behörigheter i Adobe Experience Platform Data Collection {#manage-collection}
 
@@ -113,11 +113,11 @@ Om du vill hantera de här behörigheterna loggar du in på Admin Console och v�
 
 På nästa skärm visas en lista med tillgängliga produktprofiler för datainsamling i din organisation. Standardprofilen är **[!DNL Default Data Collection All Access]**. Du kan välja att redigera standardproduktprofilen om du vill, eller så kan du välja **[!UICONTROL New Profile]** och skapa en. Om du har flera roller eller användargrupper i organisationen som kräver olika åtkomstnivåer bör du skapa en separat produktprofil för var och en av dem.
 
-![Bild som visar produktprofiler för datainsamling i Admin Console](./images/permissions/new-profile.png)
+![Bild som visar produktprofilerna för datainsamling i Admin Console](./images/permissions/new-profile.png)
 
 När du har valt eller skapat en produktprofil kan du använda ikonerna **[!UICONTROL Edit]** för att starta [redigeringsbehörigheter](#edit-permissions) för profilen eller välja fliken **[!UICONTROL Users]** för att börja [tilldela användare](#assign-users) till profilen.
 
-![Bild som visar fliken Behörigheter för en produktprofil Admin Console](./images/permissions/edit-permission-categories.png)
+![Bild som visar fliken Behörigheter för en produktprofil, Admin Console](./images/permissions/edit-permission-categories.png)
 
 #### Redigera behörigheter för produktprofilen {#edit-permissions}
 

@@ -2,9 +2,9 @@
 keywords: Experience Platform;Tutorial;feature pipeline;Data Science Workspace;populära ämnen
 title: Skapa en funktionspipeline med SDK för modellredigering
 type: Tutorial
-description: Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniska funktioner i stor skala via Sensei Machine Learning Framework Runtime. I det här dokumentet beskrivs de olika klasserna i en funktionspipeline och här finns en stegvis självstudiekurs om hur du skapar en anpassad funktionspipeline med SDK för modellredigering i PaySpark.
+description: Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniska funktioner i stor skala via Sensei Machine Learning Framework Runtime. I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med hjälp av Model Authoring SDK i PySpark.
 exl-id: c2c821d5-7bfb-4667-ace9-9566e6754f98
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1438'
 ht-degree: 0%
@@ -15,15 +15,15 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Data Science Workspace kan inte längre köpas.
+>Data Science Workspace finns inte längre att köpa.
 >
->Den här dokumentationen är avsedd för befintliga kunder med tidigare rättigheter till Data Science Workspace.
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 >[!IMPORTANT]
 >
-> Funktionspipelines är för närvarande endast tillgängliga via API.
+> Funktionspipeliner är för närvarande bara tillgängliga via API.
 
-Med Adobe Experience Platform kan du skapa och anpassa funktionspipelines för att utföra funktionsteknik i stor skala via Sensei Machine Learning Framework Runtime (nedan kallat Runtime).
+Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via Sensei Machine Learning Framework Runtime (nedan kallad Runtime).
 
 I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med [Model Authoring SDK](./sdk.md) i PySpark.
 
@@ -45,7 +45,7 @@ Följande krävs för att köra ett recept i en organisation:
 - Ett transformerat schema och en tom datauppsättning som baseras på det schemat.
 - Ett utdataschema och en tom datauppsättning som baseras på det schemat.
 
-Alla ovanstående datauppsättningar måste överföras till användargränssnittet för [!DNL Platform]. Om du vill konfigurera detta använder du det Adobe-tillhandahållna [bootstrap-skriptet](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap).
+Alla ovanstående datauppsättningar måste överföras till användargränssnittet för [!DNL Experience Platform]. Använd det [bootstrap-skript](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap) som tillhandahålls av Adobe för att konfigurera detta.
 
 ## Aktuella pipeline-klasser
 
@@ -54,8 +54,8 @@ I följande tabell beskrivs de huvudabstrakta klasser som du måste utöka för 
 | Abstrakt klass | Beskrivning |
 | -------------- | ----------- |
 | DataLoader | En DataLoader-klass tillhandahåller implementering för hämtning av indata. |
-| DatasetTransformer | En DataSetTransformer-klass innehåller implementeringar för att omvandla indatauppsättningen. Du kan välja att inte ange en DataSetTransformer-klass och i stället implementera din funktionstekniska logik i klassen FeaturePipelineFactory. |
-| FeaturePipelineFactory | En FeaturePipelineFactory-klass bygger en Spark Pipeline som består av en serie Spark-transformatorer för att utföra funktionsteknik. Du kan välja att inte ange en FeaturePipelineFactory-klass och i stället implementera din funktionstekniska logik i klassen DatasetTransformer. |
+| DatasetTransformer | En DataSetTransformer-klass tillhandahåller implementeringar för att omvandla indatamängden. Du kan välja att inte tillhandahålla en DatasetTransformer-klass och i stället implementera den funktionstekniska logiken i klassen FeaturePipelineFactory. |
+| FeaturePipelineFactory | Klassen FeaturePipelineFactory bygger en Spark Pipeline som består av en serie Spark-omformare som utför funktionskonstruktion. Du kan välja att inte tillhandahålla en FeaturePipelineFactory-klass och i stället implementera den funktionstekniska logiken i klassen DatasetTransformer. |
 | DataSaver | En DataSaver-klass innehåller logiken för lagring av en funktionsdatauppsättning. |
 
 När ett funktionsförloppsjobb initieras kör körtiden först DataLoader för att läsa in indata som en DataFrame och ändrar sedan DataFrame genom att köra antingen DatasetTransformer, FeaturePipelineFactory eller båda. Slutligen lagras den resulterande funktionsdatauppsättningen via DataSaver.
@@ -67,7 +67,7 @@ I följande flödesschema visas körningsordningen:
 
 ## Implementera dina rörliga funktionsklasser {#implement-your-feature-pipeline-classes}
 
-I följande avsnitt finns information och exempel på hur du implementerar de klasser som krävs för en Feature Pipeline.
+I följande avsnitt finns detaljerad information och exempel om hur du implementerar de klasser som krävs för en funktionspipeline.
 
 ### Definiera variabler i JSON-konfigurationsfilen {#define-variables-in-the-configuration-json-file}
 
@@ -107,13 +107,13 @@ Du kan komma åt konfigurations-JSON via alla klassmetoder som definierar `confi
 dataset_id = str(config_properties.get(dataset_id))
 ```
 
-I filen [pipeline.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/feature_pipeline_recipes/pyspark/pipeline.json) som tillhandahålls av Data Science Workspace finns ett mer detaljerat konfigurationsexempel.
+Se filen [pipeline.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/feature_pipeline_recipes/pyspark/pipeline.json) från Data Science Workspace för ett mer ingående konfigurationsexempel.
 
 ### Förbered indata med DataLoader {#prepare-the-input-data-with-dataloader}
 
 DataLoader ansvarar för hämtning och filtrering av indata. Din implementering av DataLoader måste utöka den abstrakta klassen `DataLoader` och åsidosätta den abstrakta metoden `load`.
 
-Följande exempel hämtar en [!DNL Platform]-datauppsättning med ID och returnerar den som en DataFrame, där datauppsättnings-ID (`dataset_id`) är en definierad egenskap i konfigurationsfilen.
+I följande exempel hämtas en [!DNL Experience Platform]-datauppsättning med ID och returneras som en DataFrame, där datauppsättnings-ID (`dataset_id`) är en definierad egenskap i konfigurationsfilen.
 
 **PySpark-exempel**
 
@@ -287,11 +287,11 @@ class MyFeaturePipelineFactory(FeaturePipelineFactory):
         return None
 ```
 
-### Lagra funktionsdatauppsättningen med DataSaver {#store-your-feature-dataset-with-datasaver}
+### Lagra dina funktionsdata med DataSaver {#store-your-feature-dataset-with-datasaver}
 
-DataSaver ansvarar för att lagra de funktionsdatauppsättningar som skapas på en lagringsplats. Din implementering av DataSaver måste utöka den abstrakta klassen `DataSaver` och åsidosätta den abstrakta metoden `save`.
+DataSaver ansvarar för att lagra de resulterande funktionsdatauppsättningarna på en lagringsplats. Din implementering av DataSaver måste utöka den abstrakta klassen `DataSaver` och åsidosätta den abstrakta metoden `save`.
 
-Följande exempel utökar klassen DataSaver som lagrar data till en [!DNL Platform]-datauppsättning efter ID, där data-ID (`featureDatasetId`) och klient-ID (`tenantId`) är definierade egenskaper i konfigurationen.
+I följande exempel utökas DataSaver-klassen som lagrar data till en [!DNL Experience Platform]-datauppsättning efter ID, där datauppsättnings-ID (`featureDatasetId`) och klient-ID (`tenantId`) definieras i konfigurationen.
 
 **PySpark-exempel**
 
@@ -404,37 +404,37 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### Skapa en rörlig motor för funktioner {#create-engine-api}
 
-När du har din Docker-bildplats kan du [skapa en rörlig funktionsmotor](../api/engines.md#feature-pipeline-docker) med API:t [!DNL Sensei Machine Learning] genom att göra en POST till `/engines`. En rörledningsmotor för funktioner har skapat en unik identifierare för motorn (`id`). Spara det här värdet innan du fortsätter.
+När du har din Docker-bildplats kan du [skapa en rörlig funktionsmotor](../api/engines.md#feature-pipeline-docker) med API:t [!DNL Sensei Machine Learning] genom att utföra en POST till `/engines`. En rörledningsmotor för funktioner har skapat en unik identifierare för motorn (`id`). Spara det här värdet innan du fortsätter.
 
 ### Skapa en MLInstance {#create-mlinstance}
 
-Med din nyskapade `engineID` måste du [skapa en MLIstance](../api/mlinstances.md#create-an-mlinstance) genom att göra en POST-förfrågan till slutpunkten `/mlInstance`. Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLInstance-instansen, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
+Med din nyskapade `engineID` måste du [skapa en MLIstance](../api/mlinstances.md#create-an-mlinstance) genom att göra en POST-begäran till `/mlInstance`-slutpunkten. Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLInstance-instansen, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
 
 ### Skapa en expert {#create-experiment}
 
-Sedan måste du [skapa en expert](../api/experiments.md#create-an-experiment). Om du vill skapa en expert måste du ha en unik identifierare (`id`) för din MLIstance och göra en POST-förfrågan till `/experiment`-slutpunkten. Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade experten, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
+Sedan måste du [skapa en expert](../api/experiments.md#create-an-experiment). Om du vill skapa en expert måste du ha en unik identifierare (`id`) för din MLIstance och göra en POST-begäran till `/experiment`-slutpunkten. Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade experten, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
 
 ### Ange pipeline-uppgiften för funktionen för experimentell körning {#specify-feature-pipeline-task}
 
-När du har skapat en expert måste du ändra Experimentens läge till `featurePipeline`. Om du vill ändra läget gör du ytterligare en POST till [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) med din `EXPERIMENT_ID` och i brödtexten som skickar `{ "mode":"featurePipeline"}` för att ange en experimentell körning av en funktionspipeline.
+När du har skapat en expert måste du ändra Experimentens läge till `featurePipeline`. Om du vill ändra läget gör du en extra POST till [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) med din `EXPERIMENT_ID` och i brödtexten som skickar `{ "mode":"featurePipeline"}` för att ange en experimentell körning av en funktionspipeline.
 
-När det är klart gör du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` för att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
+När det är klart gör du en GET-begäran till `/experiments/{EXPERIMENT_ID}` om att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
 
 ### Ange utbildningsuppgift för körning av experiment {#training}
 
-Därefter måste du [ange aktiviteten för körning av utbildning](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten ställ in läget på `train` och skicka en array med uppgifter som innehåller dina utbildningsparametrar. Ett lyckat svar returnerar en nyttolast som innehåller information om det begärda experimentet.
+Därefter måste du [ange aktiviteten för körning av utbildning](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och ange läget till `train` i brödtexten och skicka en array med uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
 
-När det är klart gör du en begäran om GET till `/experiments/{EXPERIMENT_ID}` för att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar tills experimentstatusen har uppdaterats för att slutföras.
+När det är klart gör du en GET-begäran till `/experiments/{EXPERIMENT_ID}` om att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
 
-### Ange bedömningsaktivitet för experimentell körning {#scoring}
+### Ange betygsuppgift för provkörning {#scoring}
 
 >[!NOTE]
 >
-> För att slutföra detta steg måste du ha minst en framgångsrik utbildning kopplad till ditt experiment.
+> För att slutföra det här steget måste du ha minst en lyckad utbildning kopplad till din Experiment.
 
-Efter en lyckad utbildningskörning måste du [ange betygskörningsuppgift](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och ange attributet `mode` som score i brödtexten. Detta startar din resultatutvärderingsexpertsession.
+Efter en lyckad utbildningskörning måste du [ange betygskörningsuppgift](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och ange attributet `mode` till &quot;score&quot; i brödtexten. Detta startar din resultatutvärderingsexpertsession.
 
-När det är klart gör du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` för att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
+När det är klart gör du en GET-begäran till `/experiments/{EXPERIMENT_ID}` om att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
 
 När poängsättningen är klar bör ditt tillvägagångssätt fungera.
 

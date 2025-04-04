@@ -3,9 +3,9 @@ title: Konfigurera en CSP
 seo-title: Configuring a CSP for Adobe Experience Platform Web SDK
 description: Lär dig konfigurera en CSP för Experience Platform Web SDK
 seo-description: Learn how to configure a CSP for the Experience Platform Web SDK
-keywords: konfigurera;konfiguration;SDK;kant;Web SDK;konfigurera;kontext;webb;enhet;miljö;web sdk-inställningar;content security policy;
+keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;kontext;web;device;environment;web sdk settings;content security policy;
 exl-id: 661d0001-9e10-479e-84c1-80e58f0e9c0b
-source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '339'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 En [CSP ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (Content Security Policy) används för att begränsa vilka resurser en webbläsare får använda. CSP kan även begränsa funktionerna för skript och formatresurser. Adobe Experience Platform Web SDK kräver ingen CSP, men om du lägger till en kan det minska attackytan för att förhindra skadliga attacker.
 
-CSP måste återspegla hur [!DNL Platform Web SDK] distribueras och konfigureras. Följande CSP visar vilka ändringar som kan behövas för att SDK ska fungera korrekt. Ytterligare CSP-inställningar krävs troligen, beroende på din specifika miljö.
+CSP måste återspegla hur [!DNL Experience Platform Web SDK] distribueras och konfigureras. Följande CSP visar vilka ändringar som kan behövas för att SDK ska fungera korrekt. Ytterligare CSP-inställningar krävs troligen, beroende på din specifika miljö.
 
 ## Exempel på skyddsprofil för innehåll
 
@@ -33,13 +33,13 @@ I exemplet ovan bör `EDGE-DOMAIN` ersättas med förstahandsdomänen. Den förs
 
 ### Använd NONCE för att tillåta infogade skript och formatelement
 
-[!DNL Platform Web SDK] kan ändra sidinnehåll och måste godkännas för att kunna skapa infogade skript och formatkoder. För att uppnå detta rekommenderar Adobe att du använder en nonce för CSP-direktivet [default-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) . Ett nonce är en servergenererad kryptografiskt stark slumpvariabel som genereras en gång per varje unik sidvy.
+[!DNL Experience Platform Web SDK] kan ändra sidinnehåll och måste godkännas för att kunna skapa infogade skript och formatkoder. För att uppnå detta rekommenderar Adobe att du använder en nonce för CSP-direktivet [default-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) . Ett nonce är en servergenererad kryptografiskt stark slumpvariabel som genereras en gång per varje unik sidvy.
 
 ```
 default-src 'nonce-SERVER-GENERATED-NONCE'
 ```
 
-Dessutom måste CSP nonce läggas till som ett attribut i skripttaggen [!DNL Platform Web SDK] [base code](../install/library.md) . [!DNL Platform Web SDK] kommer sedan att använda den funktionen en gång när du lägger till infogade skript eller formatkoder på sidan:
+Dessutom måste CSP nonce läggas till som ett attribut i skripttaggen [!DNL Experience Platform Web SDK] [base code](../install/library.md) . [!DNL Experience Platform Web SDK] kommer sedan att använda den funktionen en gång när du lägger till infogade skript eller formatkoder på sidan:
 
 ```
 <script nonce="SERVER-GENERATED-NONCE">

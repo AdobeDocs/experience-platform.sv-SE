@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Dataåtkomst i Jupyterlab-anteckningsböcker
 description: Den här guiden fokuserar på hur du använder Jupyter Notebooks, byggda i Data Science Workspace, för att få tillgång till dina data.
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3273'
+source-wordcount: '3276'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 >
 >Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
-Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa plattformsdata från en datamängd i en anteckningsbok. JupyterLab i Adobe Experience Platform Data Science Workspace stöder för närvarande bärbara datorer för [!DNL Python], R, PySpark och Scala. Stöd för sidnumrering av data är dock begränsat till bärbara datorer från [!DNL Python] och R. Den här guiden fokuserar på hur du använder JupyterLab-anteckningsböcker för att få tillgång till dina data.
+Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa Experience Platform-data från en datamängd i en anteckningsbok. JupyterLab i Adobe Experience Platform Data Science Workspace stöder för närvarande bärbara datorer för [!DNL Python], R, PySpark och Scala. Stöd för sidnumrering av data är dock begränsat till bärbara datorer från [!DNL Python] och R. Den här guiden fokuserar på hur du använder JupyterLab-anteckningsböcker för att få tillgång till dina data.
 
 ## Komma igång
 
@@ -92,8 +92,8 @@ När du läser datauppsättningar med bärbara datorer från PySpark och Scala k
 | Antal rader | 1 K | 10 kB | 100 000 | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB | 1B |
 |--------------|--------|---------|---------|-------|-------|-------|--------|--------|---------|--------|---------|-------|
 | Storlek på disk | 1,12 MB | 11,24MB | 109.48MB | 2,69 GB | 2,14 GB | 3,21 GB | 5,36 GB | 10,71 GB | 53,58 GB | 107,52 GB | 535,88 GB | 1,05 TB |
-| Interaktivt SDK-läge (i sekunder) | 28,2 s | 18,6 s | 20,8 s | 20,9 s | 23.8s | 21.7s | 24.7s | – | – | – | – | – |
-| SDK-batchläge (i sekunder) | 428.8s | 578.8s | 641.4s | 538.5s | 630.9 s | 467.3s | 411s | 675s | 702s | 719,2 s | 1022.1s | 1122.3s |
+| SDK Interactive mode (i sekunder) | 28,2 s | 18,6 s | 20,8 s | 20,9 s | 23.8s | 21.7s | 24.7s | – | – | – | – | – |
+| SDK batchläge (i sekunder) | 428.8s | 578.8s | 641.4s | 538.5s | 630.9 s | 467.3s | 411s | 675s | 702s | 719,2 s | 1022.1s | 1122.3s |
 
 ### Datagränser för [!DNL Spark] (Skalkärna) i anteckningsboken: {#scala-data-limits}
 
@@ -102,16 +102,16 @@ När du läser datauppsättningar med bärbara datorer från PySpark och Scala k
 | Antal rader | 1 K | 10 kB | 100 000 | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB |
 |---------------|--------|--------|-------|-------|-------|-------|---------|---------|----------|--------|--------|
 | Storlek på disk | 2,93 MB | 4,38 MB | 29,02 | 2,69 GB | 5,39 GB | 8,09 GB | 13,42 GB | 26,82 GB | 134,24 GB | 268,39 GB | 1,31 TB |
-| Interaktivt SDK-läge (i sekunder) | 37,9 s | 22.7s | 45,6 s | 231.7s | 444.7s | 660.6s | 1100s | – | – | – | – |
-| SDK-batchläge (i sekunder) | 374.4s | 398.5s | 527s | 487.9 s | 588.9 s | 829s | 939.1s | 1441s | 5473,2s | 10118,8 | 49207,6 |
+| SDK Interactive mode (i sekunder) | 37,9 s | 22.7s | 45,6 s | 231.7s | 444.7s | 660.6s | 1100s | – | – | – | – |
+| SDK batchläge (i sekunder) | 374.4s | 398.5s | 527s | 487.9 s | 588.9 s | 829s | 939.1s | 1441s | 5473,2s | 10118,8 | 49207,6 |
 
 **ad hoc-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~5,36 GB data på disk) med data som inte är XDM på mindre än 3 minuter. I gruppläge bör du kunna läsa upp maximalt 1 miljard rader (~1,05 TB data på disk) med data som inte är XDM på ca 16 minuter.
 
 | Antal rader | 1 K | 10 kB | 100 000 | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB | 1B |
 |--------------|--------|---------|---------|-------|-------|-------|---------|---------|---------|--------|---------|-------|
 | Storlek på disk | 1,12 MB | 11,24MB | 109.48MB | 2,69 GB | 2,14 GB | 3,21 GB | 5,36 GB | 10,71 GB | 53,58 GB | 107,52 GB | 535,88 GB | 1,05 TB |
-| Interaktivt SDK-läge (i sekunder) | 35.7s | 31s | 19,5 s | 25,3 s | 23s | 33,2 s | 25,5 s | – | – | – | – | – |
-| SDK-batchläge (i sekunder) | 448.8s | 459.7s | 519s | 475.8s | 599,9 s | 347.6s | 407.8s | 397s | 518.8s | 487.9 s | 760,2 s | 975,4 s |
+| SDK Interactive mode (i sekunder) | 35.7s | 31s | 19,5 s | 25,3 s | 23s | 33,2 s | 25,5 s | – | – | – | – | – |
+| SDK batchläge (i sekunder) | 448.8s | 459.7s | 519s | 475.8s | 599,9 s | 347.6s | 407.8s | 397s | 518.8s | 487.9 s | 760,2 s | 975,4 s |
 
 ## Python bärbara datorer {#python-notebook}
 
@@ -175,7 +175,7 @@ write_tracker = dataset_writer.write({PANDA_DATAFRAME}, file_format='json')
 
 ### Fråga data med [!DNL Query Service] i [!DNL Python] {#query-data-python}
 
-Med [!DNL JupyterLab] på [!DNL Platform] kan du använda SQL i en [!DNL Python] anteckningsbok för att komma åt data via [Adobe Experience Platform Query Service](https://www.adobe.com/go/query-service-home-en). Åtkomst av data via [!DNL Query Service] kan vara användbart för hantering av stora datamängder på grund av dess överlägsna körtider. Observera att en fråga om data som använder [!DNL Query Service] har en bearbetningstid på tio minuter.
+Med [!DNL JupyterLab] på [!DNL Experience Platform] kan du använda SQL i en [!DNL Python] anteckningsbok för att komma åt data via [Adobe Experience Platform Query Service](https://www.adobe.com/go/query-service-home-en). Åtkomst av data via [!DNL Query Service] kan vara användbart för hantering av stora datamängder på grund av dess överlägsna körtider. Observera att en fråga om data som använder [!DNL Query Service] har en bearbetningstid på tio minuter.
 
 Innan du använder [!DNL Query Service] i [!DNL JupyterLab] måste du ha en fungerande förståelse för [[!DNL Query Service] SQL-syntaxen](https://www.adobe.com/go/query-service-sql-syntax-en).
 
@@ -488,7 +488,7 @@ val spark = SparkSession
 
 ### Läs en datauppsättning {#read-scala-dataset}
 
-I Scala kan du importera `clientContext` för att hämta och returnera plattformsvärden, vilket eliminerar behovet av att definiera variabler som `var userToken`. I exemplet Scala nedan används `clientContext` för att hämta och returnera alla värden som krävs för att läsa en datauppsättning.
+I Scala kan du importera `clientContext` för att hämta och returnera Experience Platform-värden, vilket eliminerar behovet av att definiera variabler som `var userToken`. I exemplet Scala nedan används `clientContext` för att hämta och returnera alla värden som krävs för att läsa en datauppsättning.
 
 >[!IMPORTANT]
 >
@@ -543,7 +543,7 @@ Och
 
 ### Skriv till en datauppsättning {#scala-write-dataset}
 
-I Scala kan du importera `clientContext` för att hämta och returnera plattformsvärden, vilket eliminerar behovet av att definiera variabler som `var userToken`. I exemplet Scala nedan används `clientContext` för att definiera och returnera alla värden som krävs för att skriva till en datauppsättning.
+I Scala kan du importera `clientContext` för att hämta och returnera Experience Platform-värden, vilket eliminerar behovet av att definiera variabler som `var userToken`. I exemplet Scala nedan används `clientContext` för att definiera och returnera alla värden som krävs för att skriva till en datauppsättning.
 
 >[!IMPORTANT]
 >

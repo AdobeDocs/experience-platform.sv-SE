@@ -2,9 +2,9 @@
 title: Bästa praxis för avancerad livscykelhantering av data
 description: Lär dig hur du effektivt hanterar förfrågningar om datahygien i Adobe Experience Platform med hjälp av API:t Advanced Data Lifecycle Management (Advanced Data Lifecycle Management) och API:t Data Hygiene. Den här guiden beskriver bästa praxis, till exempel maximering av identiteter per begäran, specificering av enskilda datauppsättningar och anpassning efter API-begränsning för att förhindra flaskhalsar. Dokumentet innehåller riktlinjer för att ställa in automatisk rensning av datauppsättningar, hur arbetsorderstatus ska övervakas samt detaljerade metoder för hämtning av svar. Följ dessa rutiner för att effektivisera behandlingen av begäranden och optimera svarstiderna.
 exl-id: 75e2a97b-ce6c-4ebd-8fc8-597887f77037
-source-git-commit: 5174529d606ac0186ff3193790ada70a46c7e274
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
@@ -45,9 +45,9 @@ Ställ in automatisk rensning av datauppsättningar för kortlivade data. Använ
 
 ## Övervaka arbetsorder och utgångsstatus för datauppsättning {#monitor}
 
-Du kan effektivt övervaka förloppet för din livscykelhantering av data med hjälp av **I/O-händelser**. En I/O-händelse är en mekanism för att ta emot meddelanden i realtid om ändringar eller uppdateringar i olika tjänster inom plattformen.
+Du kan effektivt övervaka förloppet för din livscykelhantering av data med hjälp av **I/O-händelser**. En I/O-händelse är en mekanism för att ta emot meddelanden i realtid om ändringar eller uppdateringar i olika tjänster inom Experience Platform.
 
-I/O-händelsemeddelanden kan skickas till en konfigurerad webkrok för att möjliggöra automatisering av aktivitetsövervakning. Om du vill få meddelanden via webkrok måste du registrera din webkrok för plattformsaviseringar i Adobe Developer Console. Detaljerade instruktioner finns i guiden om att [prenumerera på Adobe I/O-händelsemeddelanden](../observability/alerts/subscribe.md).
+I/O-händelsemeddelanden kan skickas till en konfigurerad webkrok för att möjliggöra automatisering av aktivitetsövervakning. Om du vill få aviseringar via webkrok måste du registrera din webkrok för Experience Platform-aviseringar i Adobe Developer Console. Detaljerade instruktioner finns i guiden om att [prenumerera på Adobe I/O-händelsemeddelanden](../observability/alerts/subscribe.md).
 
 Använd följande metoder och riktlinjer för livscykeln för data för att effektivt hämta och övervaka jobbstatus:
 
@@ -63,7 +63,7 @@ För att effektivt kunna övervaka förloppet för dina uppgifter under datans l
 
 Använd följande tillvägagångssätt för att få detaljerad information om enskilda arbetsorder:
 
-- Gör en GET-förfrågan till `/workorder/{work_order_id}`-slutpunkten för detaljerade svarsdata.
+- Gör en GET-begäran till `/workorder/{work_order_id}`-slutpunkten om du vill ha detaljerade svarsdata.
 - Hämta produktspecifika svar och framgångsmeddelanden.
 - Undvik att använda den här metoden för vanliga avsökningsaktiviteter.
 

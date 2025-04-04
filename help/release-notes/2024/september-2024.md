@@ -1,10 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform september 2024
 description: Versionsinformationen för Adobe Experience Platform från september 2024.
-source-git-commit: eac613434f631cab567ab3fa6e30d33acac79d2f
+exl-id: e5b40712-2a54-4c6f-a4a1-2f078305da59
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2196'
-ht-degree: 100%
+source-wordcount: '2199'
+ht-degree: 97%
 
 ---
 
@@ -26,7 +27,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 
 ## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i Experience Platform användargränssnitt och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -49,7 +50,7 @@ Experience Platform tillhandahåller flera instrumentpaneler där du kan visa vi
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Register för licensanvändningstillägg | Få detaljerad insyn i licensanvändningen och hantera dina plattformsresurser med dedikerade tabeller för kärnprodukter och tillägg. Spåra och analysera nyckeltal för varje kärnprodukt med genomgångsvyer på sandlådenivå. Tilläggsstatistik integreras sömlöst med kärnproduktens mätningar och ger en heltäckande bild av användningen. Förbättrad synlighet hjälper dig att optimera licenshanteringen och anpassa resurserna till organisationens behov. Se [[!UICONTROL License Usage] guiden för kontrollpanelen](../../dashboards/guides/license-usage.md#overview-tab) för mer information. |
+| Register för licensanvändningstillägg | Få detaljerad insyn i licensanvändningen och hantera dina Experience Platform-resurser med dedikerade tabeller för kärnprodukter och tillägg. Spåra och analysera nyckeltal för varje kärnprodukt med genomgångsvyer på sandlådenivå. Tilläggsstatistik integreras sömlöst med kärnproduktens mätningar och ger en heltäckande bild av användningen. Förbättrad synlighet hjälper dig att optimera licenshanteringen och anpassa resurserna till organisationens behov. Se [[!UICONTROL License Usage] guiden för kontrollpanelen](../../dashboards/guides/license-usage.md#overview-tab) för mer information. |
 | Query Pro-läge - globala filteruppgraderingar | Förbättra analysen med det nya datumfiltret i Query Pro-läget. Förfina insikterna med dynamiska datumparametrar i dina SQL-frågor och filtrera data efter specifika tidsramar. Välj förinställda eller anpassade datumintervall med ett intuitivt användargränssnitt, så att kontrollpanelerna blir relevanta för alla användare. Förenkla arbetsflödena, bibehåll precisionen och fatta vältajmade beslut. Läs [guiden om hur du skapar datumfilter](../../dashboards/sql-insights-query-pro-mode/filters/global-filter.md) för mer information. |
 | Query Pro-lägen - detaljnivå | Få djupare insikter med Query Pro Mode&#39;s detaljnivåfunktion och navigera sömlöst från diagram på hög nivå till detaljerade kontrollpaneler. Använd den här funktionen för att enkelt gå från sammanfattningar till djupgående analyser och utforska trender, kundbeteenden och nyckeltal. Automatiska genomströmningar av filter och detaljnivå på flera nivåer håller data konsekventa, vilket ger en smidig utforskning. Förenkla arbetsflöden, håll rätt sammanhang och snabba upp beslutsfattandet. Läs [steg-för-steg-guiden om hur du skapar fördjupningar](../../dashboards/sql-insights-query-pro-mode/drill-through.md) för mer information. |
 | Query Pro-läge - avancerade tabellattribut | Använd Query Pro Mode för avancerade tabellattribut för att effektivisera datavisualisering, förbättra arbetsflödets effektivitet och förbättra tydlighet i data. Lägg till automatisk sortering, storleksändring och sidnumrering i tabellerna direkt från anpassade kontrollpaneler. Sortera kolumner för att prioritera nyckeldata, ändra storlek för optimal läsbarhet och navigera smidigt i stora datauppsättningar utan att ändra SQL-frågorna. Läs guiden ”[Visa mer](../../dashboards/sql-insights-query-pro-mode/view-more.md)” för att lära dig hur du integrerar dessa funktioner och förbättrar dina datainsikter. |

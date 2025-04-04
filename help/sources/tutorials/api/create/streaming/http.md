@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;skapa direktuppspelningsanslutning;api guide;självstudiekurs;skapa en direktuppspelningsanslutning;direktuppspelningsproblem;intag;
+keywords: Experience Platform;home;populära topics;streaming connection;create streaming connection;api guide;självstudiekurs;create a streaming connection;streaming ingtion;ingmit;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1646'
+source-wordcount: '1656'
 ht-degree: 0%
 
 ---
@@ -21,14 +21,14 @@ I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar upplevelsedata med.
+* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar upplevelsedata med.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Om du vill lära dig hur du skapar dessa läser du självstudiekursen [om dataströmmar ](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen [om dataströmmar i tidsserier](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
@@ -36,9 +36,9 @@ En basanslutning anger källan och innehåller den information som krävs för a
 
 ### Icke-autentiserad anslutning
 
-Icke-autentiserade anslutningar är den standarddirektuppspelningsanslutning som du kan skapa när du vill strömma data till plattformen.
+Icke-autentiserade anslutningar är den standardanslutning för direktuppspelning som du kan skapa när du vill strömma data till Experience Platform.
 
-Om du vill skapa en oautentiserad basanslutning skickar du en POST till slutpunkten `/connections` samtidigt som du anger ett namn för anslutningen, datatypen och ID:t för HTTP API-anslutningsspecifikationen. Detta ID är `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`.
+Om du vill skapa en oautentiserad basanslutning gör du en POST-begäran till `/connections`-slutpunkten och anger ett namn för anslutningen, datatypen och HTTP API-anslutningsspecifikations-ID:t. Detta ID är `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`.
 
 **API-format**
 
@@ -130,7 +130,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om den nyligen skapad
 
 ### Autentiserad anslutning
 
-Autentiserade anslutningar bör användas när du behöver skilja mellan poster som kommer från betrodda och ej betrodda källor. Användare som vill skicka information med personligt identifierbar information (PII) bör skapa en autentiserad anslutning vid direktuppspelning av information till plattformen.
+Autentiserade anslutningar bör användas när du behöver skilja mellan poster som kommer från betrodda och ej betrodda källor. Användare som vill skicka information med personligt identifierbar information (PII) bör skapa en autentiserad anslutning när de direktuppspelar information till Experience Platform.
 
 Om du vill skapa en autentiserad basanslutning måste du ta med parametern `authenticationRequired` i din begäran och ange dess värde som `true`. Under det här steget kan du även ange ett käll-ID för din autentiserade basanslutning. Den här parametern är valfri och kommer att använda samma värde som attributet `name`, om det inte anges.
 
@@ -290,7 +290,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
 
 ## Skapa en källanslutning {#source}
 
-Om du vill skapa en källanslutning skickar du en POST till slutpunkten `/sourceConnections` samtidigt som du anger ditt grundläggande anslutnings-ID.
+Om du vill skapa en källanslutning skickar du en POST-begäran till slutpunkten `/sourceConnections` samtidigt som du anger ditt grundläggande anslutnings-ID.
 
 **API-format**
 
@@ -332,21 +332,21 @@ Ett lyckat svar returnerar HTTP-status 201 med detaljerad information om den nyl
 
 ## Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/) utförs, med ID:t för målschemat i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 
 ## Skapa en målanslutning {#target}
 
-En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning skickar du en POST till `/targetConnections` samtidigt som du anger ID:n för måldatauppsättningen och XDM-målschemat. Under det här steget måste du även ange data Lake Connection specification ID. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning skickar du POST-begäran till `/targetConnections` samtidigt som du anger ID:n för måldatauppsättningen och XDM-målschemat. Under det här steget måste du även ange data Lake Connection specification ID. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 **API-format**
 
@@ -398,7 +398,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om den nya målanslut
 
 För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer.
 
-Om du vill skapa en mappningsuppsättning skickar du en POST till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://developer.adobe.com/experience-platform-apis/references/data-prep/) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
+Om du vill skapa en mappningsuppsättning skickar du en POST-begäran till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://developer.adobe.com/experience-platform-apis/references/data-prep/) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
 
 **API-format**
 
@@ -458,7 +458,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ## Skapa ett dataflöde
 
-När käll- och målanslutningarna har skapats kan du nu skapa ett dataflöde. Dataflödet ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST till slutpunkten `/flows`.
+När käll- och målanslutningarna har skapats kan du nu skapa ett dataflöde. Dataflödet ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran till slutpunkten `/flows`.
 
 **API-format**
 
@@ -559,7 +559,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om det nya dataflöde
 }
 ```
 
-## Bokför data som ska importeras till plattformen {#ingest-data}
+## Posta data som ska importeras till Experience Platform {#ingest-data}
 
 >[!NOTE]
 >
@@ -575,7 +575,7 @@ POST /collection/{INLET_URL}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{INLET_URL}` | URL:en för din direktuppspelande slutpunkt. Du kan hämta den här URL:en genom att göra en GET-förfrågan till slutpunkten `/connections` och samtidigt ange ditt grundläggande anslutnings-ID. |
+| `{INLET_URL}` | URL:en för din direktuppspelande slutpunkt. Du kan hämta den här URL:en genom att göra en GET-begäran till `/connections`-slutpunkten och ange ditt grundläggande anslutnings-ID. |
 | `{FLOW_ID}` | ID:t för HTTP API-direktuppspelningsdataflödet. Detta ID krävs för både XDM- och RAW-data. |
 
 **Begäran**
@@ -692,9 +692,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya informatio
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning, vilket gör att du kan använda direktuppspelningsslutpunkten för att importera data till plattformen. Instruktioner om hur du skapar en direktuppspelningsanslutning i användargränssnittet finns i självstudiekursen [Skapa en direktuppspelningsanslutning](../../../ui/create/streaming/http.md).
+Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning, vilket gör att du kan använda direktuppspelningsslutpunkten för att importera data till Experience Platform. Instruktioner om hur du skapar en direktuppspelningsanslutning i användargränssnittet finns i självstudiekursen [Skapa en direktuppspelningsanslutning](../../../ui/create/streaming/http.md).
 
-Om du vill lära dig hur du direktuppspelar data på en plattform kan du läsa självstudiekursen [om att strömma tidsseriedata](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen om [direktuppspelade postdata](../../../../../ingestion/tutorials/streaming-record-data.md).
+Om du vill lära dig att strömma data till Experience Platform kan du läsa antingen självstudiekursen [om strömning av tidsseriedata](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen om [strömning av postdata](../../../../../ingestion/tutorials/streaming-record-data.md).
 
 ## Bilaga
 

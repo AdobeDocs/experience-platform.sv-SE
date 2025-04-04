@@ -5,7 +5,7 @@ title: Skapa en Azure Table Storage Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Azure Table Storage-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 045cb954-e3e1-439d-a3cd-170d688dfbc8
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '454'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL Azure Table Storage]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Table Storage]-källkoppling (kallas nedan ATS) med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Table Storage]-källkoppling (kallas nedan ATS) med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Om du redan har en giltig ATS-anslutning kan du hoppa över resten av det här d
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Du måste ange följande värden för att komma åt ditt ATS-konto på [!DNL Platform]:
+Du måste ange följande värden för att komma åt ditt ATS-konto på [!DNL Experience Platform]:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -39,7 +39,7 @@ Mer information om hur du kommer igång finns i [det här [!DNL Azure Table Stor
 
 ## Anslut ditt [!DNL Azure Table Storage]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt ATS-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt ATS-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -65,4 +65,4 @@ Om du vill ansluta ett befintligt konto väljer du det ATS-konto som du vill ans
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt ATS-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt ATS-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

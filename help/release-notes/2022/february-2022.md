@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation om Adobe Experience Platform, februari 2022
-description: Versionsinformation från februari 2022 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform – februari 2022
+description: Versionsinformationen för Adobe Experience Platform från februari 2022.
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1014'
-ht-degree: 1%
+source-wordcount: '1018'
+ht-degree: 14%
 
 ---
 
@@ -39,7 +39,7 @@ Mer information om [!DNL Dashboards] finns i [[!DNL Dashboards] översikten](../
 
 ## Datainsamling {#data-collection}
 
-Platform innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till destinationer som Adobe eller inte är Adobe.
+Experience Platform har en programsvit som gör det möjligt att samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
 
 **Nya funktioner**
 
@@ -47,19 +47,19 @@ Platform innehåller en serie teknologier som gör att ni kan samla in kundupple
 | --- | --- |
 | Förbättrat gränssnittsarbetsflöde för datastream-konfiguration | Arbetsflödet för att skapa en ny datastam i användargränssnittet för datainsamling har uppdaterats. När du lägger till tjänster i ett dataflöde inkluderas endast de tjänster som du har tillgång till i listan med alternativ. Mer information finns i guiden [Konfigurera ett datastream](../../datastreams/overview.md). |
 | Dataförberedelse för datainsamling | Om du använder Adobe Experience Platform Web SDK kan du nu utnyttja funktionerna för dataförberedelser för att mappa dina data till Experience Data Model (XDM) på serversidan. Mer information finns i avsnittet [Dataprep för datainsamling](../../datastreams/data-prep.md) i datastreams-guiden. |
-| Enhets-ID:n från första part | Nu kan du skicka dina egna enhets-ID:n till Adobe Experience Platform Edge Network när du samlar in kunddata med Platform Web SDK, vilket ger en lösning för de senaste webbläsarbegränsningarna för cookie-intervall från tredje part. Mer information finns i handboken om [enhets-ID:n från första part](../../web-sdk/identity/first-party-device-ids.md). |
+| Enhets-ID:n från första part | Nu kan du skicka dina egna enhets-ID:n till Adobe Experience Platform Edge Network när du samlar in kunddata med Experience Platform Web SDK, vilket ger en lösning för de senaste webbläsarbegränsningarna för cookie-intervall från tredje part. Mer information finns i handboken om [enhets-ID:n från första part](../../web-sdk/identity/first-party-device-ids.md). |
 
-Mer information om datainsamling i Platform finns i [datainsamlingsöversikten](../../collection/home.md).
+Mer information om datainsamling i Experience Platform finns i [datainsamlingsöversikten](../../collection/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| (Beta) Stöd för Destination SDK för filbaserade mål | [Stöd för filbaserade Destinationer SDK](../../destinations/destination-sdk/functionality/destination-server/server-specs.md) finns för närvarande i en privat betaversion och är endast tillgängligt för ett visst antal partners och kunder. Funktionerna och tillhörande dokumentation kan ändras före den allmänna tillgänglighetsversionen.<br><br>Kontakta din kontorepresentant på Adobe om du vill veta hur du får tillgång till funktionen. Företrädare för Adobe-interna konton bör vända sig till Experience Platform för att få kontakt med produkts- och konstruktionsgrupper för att diskutera vilka användningsområden som stöds. <br><br> I betafasen av stöd för Destination SDK av filbaserade destinationer kan betatestare och kunder använda [Experience Platform Destination SDK](../../destinations/destination-sdk/overview.md) för att skapa privata destinationer och dra nytta av följande funktionalitet: <ul><li>Skapa en filbaserad (batch) destination via Amazon S3, SFTP-servrar, Azure Blob, Azure Data Lake Storage, Data Landing Zone-lagring.</li><li>Konfigurera och ange standardalternativ för schemaläggning och frekvens för filexport.</li><li>Konfigurera och ange alternativ för att formatera de exporterade CSV-filerna (avgränsare, escape-tecken och andra alternativ).</li><li>Möjlighet att ange och redigera anpassade filhuvuden.</li><li>Möjlighet att få händelseaviseringar om export av filer och segment.</li><li>Möjlighet att exportera ytterligare filtyper som CSV, TSV, JSON, Parquet.</li></ul>  <br>Om du vill komma igång med den nya funktionen läser du [ (Beta) Använd Destinationen SDK för att konfigurera ett filbaserat mål](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md). <br><br> Funktionen för att skapa privata eller producerade *streaming*-mål genom att använda Destination SDK är redan tillgänglig för alla Experience Platform-kunder och -partners. Läs guiden om hur du [använder Destination SDK för att konfigurera ett direktuppspelningsmål](../../destinations/destination-sdk/guides/configure-destination-instructions.md) för mer information. |
+| (Beta) Destination SDK-stöd för filbaserade mål | [Destination SDK-stöd för filbaserade mål](../../destinations/destination-sdk/functionality/destination-server/server-specs.md) finns för närvarande i en privat betaversion och är endast tillgängligt för ett visst antal partners och kunder. Funktionerna och tillhörande dokumentation kan ändras före den allmänna tillgänglighetsversionen.<br><br>Kontakta din Adobe-kontorepresentant om du vill veta hur du får tillgång till funktionen. Adobe interna kontorepresentanter bör kontakta Experience Platform målgrupper för att diskutera vilka användningsområden som stöds. <br><br> I betaversionen av Destination SDK-stöd för filbaserade destinationer kan betatestare och kunder använda [Experience Platform Destination SDK](../../destinations/destination-sdk/overview.md) för att skapa privata destinationer och dra nytta av följande funktionalitet: <ul><li>Skapa en filbaserad (batch) destination via Amazon S3, SFTP-servrar, Azure Blob, Azure Data Lake Storage, Data Landing Zone-lagring.</li><li>Konfigurera och ange standardalternativ för schemaläggning och frekvens för filexport.</li><li>Konfigurera och ange alternativ för att formatera de exporterade CSV-filerna (avgränsare, escape-tecken och andra alternativ).</li><li>Möjlighet att ange och redigera anpassade filhuvuden.</li><li>Möjlighet att få händelseaviseringar om export av filer och segment.</li><li>Möjlighet att exportera ytterligare filtyper som CSV, TSV, JSON, Parquet.</li></ul>  <br>Om du vill komma igång med den nya funktionen läser du [ (Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md). <br><br> Funktionen för att skapa privata eller producerade *streaming*-mål genom att använda Destination SDK är redan tillgänglig för alla Experience Platform kunder och partners. Läs guiden om hur du [använder Destination SDK för att konfigurera ett direktuppspelningsmål](../../destinations/destination-sdk/guides/configure-destination-instructions.md) för mer information. |
 
 ## [!DNL Identity Service] {#identity}
 
@@ -77,9 +77,9 @@ Mer allmän information om [!DNL Identity Service] finns i [Översikt över iden
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Uppdaterade funktioner**
 

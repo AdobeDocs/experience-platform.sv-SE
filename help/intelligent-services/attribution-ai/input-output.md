@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;komma igång;Attribution ai;populära topics;Attribution ai input;Attribution ai output;
 feature: Attribution AI
-title: Indata och utdata i Attribution AI
-description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
+title: Indata och utdata i attribut-AI
+description: I följande dokument beskrivs de olika in- och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2460'
+source-wordcount: '2467'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Följande dokument visar de olika indata och utdata som används i [!DNL Attribu
 
 ## [!DNL Attribution AI] indata
 
-Attribution AI arbetar genom att analysera följande datauppsättningar för att beräkna algoritmiska poäng:
+Attribution AI fungerar genom att analysera följande datauppsättningar för att beräkna algoritmiska poäng:
 
 - Adobe Analytics-datauppsättningar med [Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
 - Experience Event-datauppsättningar (EE) i allmänhet från Adobe Experience Platform-schema
@@ -63,15 +63,15 @@ Experience event-datauppsättningar behöver inte uttryckligen ha Channel- och M
 
 >[!IMPORTANT]
 >
-> Den minsta mängden data som behövs för att Attribution AI ska fungera är följande:
+> Den minsta mängd data som krävs för att Attribution AI ska fungera är följande:
 > - Du måste tillhandahålla minst 3 månaders (90 dagar) data för att kunna köra en bra modell.
 > - Du behöver minst 1 000 konverteringar.
 
-Attribution AI kräver historiska data som underlag för modellutbildning. Den datalängd som krävs bestäms huvudsakligen av två huvudfaktorer: utbildningsfönstret och kontrollfönstret. Indata med kortare utbildningsfönster är mer känsliga för aktuella trender, medan längre utbildningsfönster hjälper till att skapa mer stabila och korrekta modeller. Det är viktigt att modellera målet med historiska data som bäst motsvarar era affärsmål.
+Attribution AI kräver historiska data som indata för modellutbildning. Den datalängd som krävs bestäms huvudsakligen av två huvudfaktorer: utbildningsfönstret och kontrollfönstret. Indata med kortare utbildningsfönster är mer känsliga för aktuella trender, medan längre utbildningsfönster hjälper till att skapa mer stabila och korrekta modeller. Det är viktigt att modellera målet med historiska data som bäst motsvarar era affärsmål.
 
 [Utbildningsfönstrets konfiguration](./user-guide.md#training-window) filtrerar konverteringshändelser som ska inkluderas för modellutbildning baserat på förekomsttid. För närvarande är den kortaste utbildningstiden 1 fjärdedel (90 dagar). [Återsökningsfönstret](./user-guide.md#lookback-window) innehåller en tidsram som anger hur många dagar före konverteringshändelsens kontaktytor som är relaterade till den här konverteringshändelsen ska inkluderas. Dessa två begrepp avgör tillsammans mängden indata (mätt i dagar) som krävs för ett program.
 
-Som standard definierar Attribution AI utbildningsfönstret som de senaste 2 kvartalen (6 månader) och uppslagsfönstret som 56 dagar. Med andra ord kommer modellen att ta hänsyn till alla definierade konverteringshändelser som har inträffat under de senaste två kvartalen och söka efter alla kontaktytor som har inträffat inom 56 dagar före de associerade konverteringshändelserna.
+Som standard definierar Attribution AI utbildningsfönstret som de senaste två kvartalen (6 månader) och uppslagsfönstret som 56 dagar. Med andra ord kommer modellen att ta hänsyn till alla definierade konverteringshändelser som har inträffat under de senaste två kvartalen och söka efter alla kontaktytor som har inträffat inom 56 dagar före de associerade konverteringshändelserna.
 
 **Formel**:
 
@@ -85,7 +85,7 @@ Exempel:
 
 - Du vill attribuera konverteringshändelser som har inträffat under de senaste 90 dagarna (3 månader) och spåra alla kontaktytor som har inträffat inom 4 veckor före konverteringshändelsen. Varaktigheten för indata ska sträcka sig över de senaste 90 dagarna + 28 dagar (4 veckor). Utbildningsfönstret är 90 dagar och uppslagsfönstret är 28 dagar, totalt 18 dagar.
 
-## Attribution AI utdata
+## AI-utdata för attribut
 
 Attribution AI ger följande utdata:
 
@@ -98,7 +98,7 @@ Attribution AI ger följande utdata:
 
 ### Rågranulat {#raw-granular-scores}
 
-Attribution AI ger attribueringspoäng på så detaljnivå som möjligt så att du kan segmentera och minska poängen med valfri spalt. Om du vill visa dessa bakgrundsmusik i användargränssnittet läser du avsnittet [Visa sökvägar för råpoäng](#raw-score-path). Om du vill hämta bakgrundsmusik med API går du till [nedladdningen av bakgrundsmusik i Attribution AI](./download-scores.md) -dokumentet.
+Attribution AI ger attribueringspoäng på den mest detaljerade nivån så att du kan segmentera och skära ned poängen i valfri spalt. Om du vill visa dessa bakgrundsmusik i användargränssnittet läser du avsnittet [Visa sökvägar för råpoäng](#raw-score-path). Om du vill hämta bakgrundsmusik med API går du till [nedladdningen av bakgrundsmusik i AI](./download-scores.md) -dokumentet för attribuering.
 
 >[!NOTE]
 >
@@ -116,7 +116,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | eventMergeId (String) | True | Ett ID som korrelerar eller sammanfogar flera [!DNL Experience Events] som i princip är samma händelse eller ska sammanfogas. Detta ska fyllas i av den som producerar uppgifterna före intag. <br> **Exempel:** 575525617716-0-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
 | _id (sträng) | Falskt | En unik identifierare för tidsseriehändelsen. <br> **Exempel:** 4461-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
 | _tenantId (Object) | Falskt | Objektbehållaren på den översta nivån som motsvarar ditt tält-ID. <br> **Exempel:** _atsdsnrmmsv2 |
-| your_schema_name (Object) | Falskt | Poängrad med konverteringshändelse, alla kontaktyteshändelser som är associerade med den och deras metadata. <br> **Exempel:** Attribution AI - modellnamn__2020 |
+| your_schema_name (Object) | Falskt | Poängrad med konverteringshändelse, alla kontaktyteshändelser som är associerade med den och deras metadata. <br> **Exempel:** Attribution AI Scores - Model Name__2020 |
 | segmentering (sträng) | True | Konverteringssegment, t.ex. geosegmentering, som modellen är byggd mot. Om segment saknas är segmentet detsamma som conversionName. <br> **Exempel:** ORDER_US |
 | conversionName (String) | True | Namnet på konverteringen som konfigurerades under installationen. <br> **Exempel:** Order, Lead, Visit |
 | konvertering (objekt) | Falskt | Konvertera metadatakolumner. |
@@ -135,7 +135,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | commerce_order_purchaseCity (String) | True | Kolumn med extra bakgrundsuppsättning. <br> **Exempel:** stad: San Jose |
 | customerProfile (Object) | Falskt | Identitetsinformation om användaren som användes för att skapa modellen. |
 | identity (Object) | Falskt | Innehåller information om användaren som används för att skapa modellen, till exempel `id` och `namespace`. |
-| id (String) | True | Identitets-ID för användaren, till exempel cookie-ID, Adobe Analytics-ID (AAID) eller Experience Cloud ID (ECID, även kallat MCID eller besökar-ID) etc. <br> **Exempel:** 17348762725408656344688320891369597404 |
+| id (String) | True | Identitets-ID för användaren, till exempel cookie-ID, Adobe Analytics-ID (AAID) eller Experience Cloud-ID (ECID, även kallat MCID eller besökar-ID) etc. <br> **Exempel:** 17348762725408656344688320891369597404 |
 | namespace (String) | True | Identitetsnamnutrymme som används för att skapa sökvägarna och därmed modellen. <br> **Exempel:** aaid |
 | touchPointsDetail (Object Array) | True | Listan med kontaktpunktsinformation som leder till konverteringen som sorteras av | förekomst av kontaktyta eller tidsstämpel. |
 | touchpointName (String) | True | Namnet på den kontaktyta som konfigurerades under installationen. <br> **Exempel:** PAID_SEARCH_CLICK |
@@ -144,7 +144,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 
 ### Visa sökvägar för Raw-poäng (UI) {#raw-score-path}
 
-Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i plattformsgränssnittet och sök sedan efter och välj ditt AI-poängschema för attribuering från fliken **[!UICONTROL Browse]**.
+Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i Experience Platform-gränssnittet och sök sedan efter och välj ditt AI-poängschema för attribuering från fliken **[!UICONTROL Browse]**.
 
 ![Välj ditt schema](./images/input-output/schemas_browse.png)
 
@@ -154,13 +154,13 @@ Välj sedan ett fält i **[!UICONTROL Structure]**-fönstret i användargränssn
 
 ### Sammanlagda attribueringspoäng {#aggregated-attribution-scores}
 
-Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumintervallet är mindre än 30 dagar.
+Samlade poäng kan hämtas i CSV-format från Experience Platform-gränssnittet om datumintervallet är mindre än 30 dagar.
 
-Attribution AI har stöd för två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
+Attribution AI stöder två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
 
 Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje kontaktyta för marknadsföring ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna på marknaden.
 
-Här följer ett kort exempel på en Attribution AI-schemautdata från Adobe Experience Platform-gränssnittet:
+Här följer ett kort exempel på hur ett Attribution AI-schema ger utdata från Adobe Experience Platform UI:
 
 ![](./images/input-output/schema_screenshot.png)
 
@@ -178,7 +178,7 @@ Se tabellen nedan för mer information om var och en av dessa attribueringspoän
 
 **Referens för Raw-bakgrundsmusik (attribueringspoäng)**
 
-Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du vill hämta dina bakgrundsmusik går du till [nedladdningspoängen i dokumentationen för Attribution AI](./download-scores.md).
+Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du vill hämta dina Raw-resultat går du till [nedladdningspoängen i dokumentationen för Attribution AI](./download-scores.md).
 
 | Attributionspoäng | Referenskolumn för råskala |
 | --- | --- |
@@ -192,7 +192,7 @@ Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du 
 
 ### Sammanlagda poäng {#aggregated-scores}
 
-Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumintervallet är mindre än 30 dagar. Se tabellen nedan för mer information om var och en av dessa aggregerade kolumner.
+Samlade poäng kan hämtas i CSV-format från Experience Platform-gränssnittet om datumintervallet är mindre än 30 dagar. Se tabellen nedan för mer information om var och en av dessa aggregerade kolumner.
 
 | Kolumnnamn | Begränsning | Nullable | Beskrivning |
 | --- | --- | --- | --- |
@@ -213,7 +213,7 @@ Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumin
 
 **Referens för Raw-bakgrundsmusik (aggregerad)**
 
-Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om du vill hämta dina bakgrundsmusik går du till [nedladdningspoängen i dokumentationen för Attribution AI](./download-scores.md). Om du vill visa sökvägar för råpoäng i användargränssnittet går du till avsnittet [Visa sökvägar för råpoäng](#raw-score-path) i det här dokumentet.
+Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om du vill hämta dina Raw-resultat går du till [nedladdningspoängen i dokumentationen för Attribution AI](./download-scores.md). Om du vill visa sökvägar för råpoäng i användargränssnittet går du till avsnittet [Visa sökvägar för råpoäng](#raw-score-path) i det här dokumentet.
 
 | Kolumnnamn | Referenskolumn för Raw-poäng |
 | --- | --- |
@@ -234,9 +234,9 @@ Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om d
 
 >[!IMPORTANT]
 >
-> - Attribution AI använder endast uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.
-> - Attribution AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in förfrågningar från konsumenter om åtkomst och radering för att ta bort sina data över datasjön, identitetstjänst och kundprofil i realtid.
-> - Alla datauppsättningar som vi använder för in-/utdata av modeller följer riktlinjerna för plattformen. Plattformsdatakryptering gäller för data i vila och under överföring. Mer information om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md) finns i dokumentationen
+> - Attribution AI använder bara uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.
+> - Attribution AI utnyttjar Experience Platform datamängder. För att ge stöd åt förfrågningar om konsumenträttigheter som ett varumärke kan ta emot, bör varumärken använda Experience Platform Privacy Service för att skicka in förfrågningar om åtkomst och radering från konsumenter för att ta bort deras data i datasjön, identitetstjänst och kundprofil i realtid.
+> - Alla datauppsättningar som vi använder för in-/utdata av modeller följer Experience Platform riktlinjer. Experience Platform datakryptering gäller för data i vila och under överföring. Mer information om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md) finns i dokumentationen
 
 ## Nästa steg {#next-steps}
 

@@ -2,14 +2,14 @@
 title: Versionsinformation om Adobe Experience Platform från augusti 2023
 description: Versionsinformation för augusti 2023 för Adobe Experience Platform.
 exl-id: c67dca3a-eccb-427e-8ab3-b69c51b57938
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1715'
-ht-degree: 40%
+source-wordcount: '1717'
+ht-degree: 37%
 
 ---
 
-# Versionsinformation om Adobe Experience Platform
+# Versionsinformation för Adobe Experience Platform
 
 **Releasedatum: 23 augusti 2023**
 
@@ -46,9 +46,9 @@ Mer information finns i [Real-Time CDP-översikten](../../rtcdp/overview.md).
 
 ## Attributbaserad åtkomstkontroll {#abac}
 
-Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika Experience Platform-användare i organisationen.
 
-Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Med attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till, känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla Experience Platform arbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 **Nya eller uppdaterade funktioner**
 
@@ -162,7 +162,7 @@ Mer information finns i [Översikt över identitetstjänsten](../../identity-ser
 
 ## Segmenteringstjänst {#segmentation}
 
-Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Experience Platform] och är tillgängliga för alla Adobe-lösningar.
 
 **Nya eller uppdaterade funktioner**
 

@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: Felsökningsguide för Privacy Service
+title: Privacy Service felsökningsguide
 description: Det här dokumentet innehåller svar på vanliga frågor om Privacy Service samt information om vanliga fel i API:t.
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: c6507a39ba5ae5ca6aa2bf02cf8844a4592152ac
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1025'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -63,13 +63,13 @@ Arrayen innehåller två objekt, som representerar enskilda användare som ident
 Mer information om att tillhandahålla information om användaridentitet finns i guiden om [identitetsdata för sekretessförfrågningar](identity-data.md).
 
 
-## Kan jag använda [!DNL Privacy Service] för att rensa data som av misstag har skickats till [!DNL Platform]?
+## Kan jag använda [!DNL Privacy Service] för att rensa data som av misstag har skickats till [!DNL Experience Platform]?
 
-Adobe stöder inte att [!DNL Privacy Service] används för att rensa bort data som av misstag har skickats till en produkt. [!DNL Privacy Service] är utformat för att hjälpa dig att uppfylla dina skyldigheter för den registrerade (eller konsumenten) att få tillgång till eller ta bort data. All annan användning av Privacy Service för datarensning eller underhåll stöds inte eller tillåts inte.
+Adobe stöder inte att [!DNL Privacy Service] används för att rensa bort data som av misstag har skickats till en produkt. [!DNL Privacy Service] är utformat för att hjälpa dig att uppfylla dina skyldigheter för den registrerade (eller konsumenten) att få tillgång till eller ta bort data. All annan användning av Privacy Service för datarensning eller datareferenser stöds inte eller tillåts inte.
 
 Begäran om sekretess är tidskänslig och har fyllts i med avseende på tillämplig integritetslagstiftning. Inlämningen av förfrågningar som inte är registrerade/kunder eller förfrågningar om åtkomst eller borttagning påverkar alla [!DNL Privacy Service]-kunder och möjligheten för [!DNL Privacy Service] att stödja lämpliga juridiska tidslinjer. Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten.
 
-Kontakta kontoteamet på Adobe för att koordinera och vidta åtgärder för att ta bort eventuella PII- eller dataproblem.
+Kontakta Adobe kontoteam för att koordinera och åtgärda eventuella PII- eller dataproblem.
 
 ## Hur får jag information om status för min sekretessförfrågan eller mitt jobb?
 
@@ -81,7 +81,7 @@ Om du vill hämta statusen för ett visst jobb med API:t [!DNL Privacy Service],
 
 ### Använda gränssnittet
 
-Alla aktiva jobbbegäranden visas i **[!UICONTROL Job Requests]**-widgeten på kontrollpanelen för användargränssnittet i [!DNL Privacy Service]. Statusen för varje jobbförfrågan visas under kolumnen **[!UICONTROL Status]**. Mer information om hur du visar jobbförfrågningar i användargränssnittet finns i användarhandboken för [Privacy Service](ui/user-guide.md).
+Alla aktiva jobbbegäranden visas i **[!UICONTROL Job Requests]**-widgeten på kontrollpanelen för användargränssnittet i [!DNL Privacy Service]. Statusen för varje jobbförfrågan visas under kolumnen **[!UICONTROL Status]**. Mer information om hur du visar jobbförfrågningar i användargränssnittet finns i [Privacy Service användarhandbok](ui/user-guide.md).
 
 ## Hur hämtar jag resultaten från mina slutförda sekretessjobb?
 
@@ -95,7 +95,7 @@ Mer information finns i avsnittet [Söka efter ett jobb med hjälp av dess ID](a
 
 ### Använda gränssnittet
 
-På [!DNL Privacy Service] UI-kontrollpanelen hittar du det jobb du vill hämta från widgeten **Jobbförfrågningar**. Välj ID för jobbet för att öppna sidan Jobbinformation. Här väljer du **Hämta** i det övre högra hörnet för att hämta ZIP-filen. Mer information finns i användarhandboken för [Privacy Service](ui/user-guide.md).
+På [!DNL Privacy Service] UI-kontrollpanelen hittar du det jobb du vill hämta från widgeten **Jobbförfrågningar**. Välj ID för jobbet för att öppna sidan Jobbinformation. Här väljer du **Hämta** i det övre högra hörnet för att hämta ZIP-filen. Mer information finns i [Privacy Service användarhandbok](ui/user-guide.md).
 
 ## Vanliga felmeddelanden {#common-error-messages}
 
@@ -111,4 +111,4 @@ I följande tabell visas några vanliga fel i [!DNL Privacy Service], med beskri
 | Åtkomst och behörigheter krävs. | Åtkomst och behörigheter krävs för att använda [!DNL Privacy Service]. Kontakta administratören för att få åtkomst. |
 | Ett problem uppstod vid överföring och arkivering av åtkomstdata. | När det här felet inträffar överför du åtkomstdata igen och försöker igen. |
 | Arbetsbelastningen har överskridits för den aktuella dokumenthastighetsgränsen. | När det här felet inträffar ska du minska överföringshastigheten och försöka igen. |
-| För många begäranden <br> (HTTP 429-fel) | Om dina överföringsmönster överskrider den övervakade gränsen för tillåtna datatypsjobb får du ett HTTP 429-fel som svar på fortsatt trafik från din organisation. Privacy Service är avsedd för behandling av den registrerades förfrågningar om integritet. Den ska inte användas för datarensning. Om du får HTTP 429-fel implementeras begränsnings- och begärandebegränsningar för att skydda Adobe mot missbruk som kan äventyra regelefterlevnad.<br>Alternativa metoder för att minimera dina data tillhandahålls genom [att ange förfalloscheman för datauppsättningar](../hygiene/ui/dataset-expiration.md) och använda [funktionen för borttagning av dataposter](../hygiene/ui/record-delete.md). Mer information om hur du använder funktionerna finns i respektive dokumentation. |
+| För många begäranden <br> (HTTP 429-fel) | Om dina överföringsmönster överskrider den övervakade gränsen för tillåtna datatypsjobb får du ett HTTP 429-fel som svar på fortsatt trafik från din organisation. Privacy Service är avsett för behandling av förfrågningar om integritet hos registrerade. Den ska inte användas för datarensning. Om du får HTTP 429-fel implementeras begränsnings- och begärandebegränsningar för att skydda Adobe från missbruk som kan äventyra regelefterlevnad.<br>Alternativa metoder för att minimera dina data tillhandahålls genom [att ange förfalloscheman för datauppsättningar](../hygiene/ui/dataset-expiration.md) och använda [funktionen för borttagning av dataposter](../hygiene/ui/record-delete.md). Mer information om hur du använder funktionerna finns i respektive dokumentation. |

@@ -1,29 +1,29 @@
 ---
 keywords: Experience Platform;användarhandbok;attribuering;populära ämnen;region
 feature: Attribution AI
-title: Användargränssnittshandbok för Attribution AI
-description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
+title: Användargränssnittshandbok för attribuering av AI
+description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för Intelligent Services.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2392'
+source-wordcount: '2393'
 ht-degree: 0%
 
 ---
 
-# Användargränssnittshandbok för Attribution AI
+# Attribution AI UI Guide
 
-Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner i förhållande till angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonsutgifterna genom att förstå effekten av varje enskild kundinteraktion i varje fas av kundresan.
+Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner i förhållande till angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonskostnader genom att förstå effekten av varje enskild kundinteraktion under varje fas av kundresan.
 
-Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
+Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för Intelligent Services.
 
 ## Skapa en modell
 
-I användargränssnittet för [!DNL Adobe Experience Platform] väljer du **[!UICONTROL Services]** i den vänstra navigeringen. Webbläsaren **[!UICONTROL Services]** visas och tillgängliga smarta Adobe-tjänster visas. Markera **[!UICONTROL Open]** i behållaren för Attribution AI.
+I användargränssnittet för [!DNL Adobe Experience Platform] väljer du **[!UICONTROL Services]** i den vänstra navigeringen. Webbläsaren **[!UICONTROL Services]** visas och visar tillgängliga Adobe intelligenta tjänster. Välj **[!UICONTROL Open]** i behållaren för Attribution AI.
 
 ![Åtkomst till din modell](./images/user-guide/open_Attribution_ai.png)
 
-Attribution AI tjänstsida visas. På den här sidan visas tjänstmodeller med Attribution AI och information om dem, inklusive modellens namn, konverteringshändelser, hur ofta modellen körs och status för den senaste uppdateringen.
+AI-tjänstsidan för attribuering visas. På den här sidan visas tjänstmodeller för Attribution AI och information om dem, inklusive namnet på modellen, konverteringshändelser, hur ofta modellen körs och status för den senaste uppdateringen.
 
 Du hittar måttet **[!UICONTROL Total conversion events scored]** i den nedre högra delen av behållaren **[!UICONTROL Create model]**. Det här måttet spårar det totala antalet konverteringshändelser som har bedömts av Attribution AI för det aktuella kalenderåret, inklusive alla sandlådemiljöer och borttagna servicemodeller.
 
@@ -33,8 +33,8 @@ Tjänstmodeller kan redigeras, klonas och tas bort med kontrollerna till höger 
 
 - **[!UICONTROL Edit]**: Om du väljer **[!UICONTROL Edit]** kan du ändra en befintlig tjänstmodell. Du kan redigera namn, beskrivning, status, bedömningsfrekvens för modellen och ytterligare spalter för spaltdata.
 - **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** kopieras den valda tjänstmodellen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny modell.
-- **[!UICONTROL Delete]**: Du kan ta bort en tjänstmodell, inklusive historikkörningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
-- **[!UICONTROL Data source]**: En länk till datauppsättningen som används. Om mer än en datauppsättning används av Attribution AI visas&quot;Flera&quot; följt av antalet datauppsättningar. När du väljer hyperlänken visas förhandsvisningsdrivrutinen för datauppsättningar.
+- **[!UICONTROL Delete]**: Du kan ta bort en tjänstmodell, inklusive historikkörningar. Motsvarande utdatauppsättning kommer att tas bort från Experience Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
+- **[!UICONTROL Data source]**: En länk till datauppsättningen som används. Om mer än en datauppsättning används av Attribution AI visas &quot;Multiple&quot; följt av antalet datauppsättningar. När du väljer hyperlänken visas förhandsvisningsdrivrutinen för datauppsättningar.
 - **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
 
 ![Sidrutan](./images/user-guide/multiple-datasets-pane.png)
@@ -49,7 +49,7 @@ Välj **[!UICONTROL Create model]** för att börja.
 
 ![Skapa modell](./images/user-guide/landing_page.png)
 
-Därefter visas konfigurationssidan för Attribution AI där du kan ange ett namn och en valfri beskrivning för din tjänstmodell.
+Sedan visas sidan Konfigurera för Attribution AI där du kan ange ett namn och en valfri beskrivning för din tjänstmodell.
 
 ![namnger en modell](./images/user-guide/naming_instance.png)
 
@@ -57,7 +57,7 @@ Därefter visas konfigurationssidan för Attribution AI där du kan ange ett nam
 
 <!-- https://www.adobe.com/go/aai-select-data -->
 
-Attribution AI kan efter design använda data från Adobe Analytics, Experience Event och Consumer Experience Event för att beräkna attribueringspoäng. När du väljer en datauppsättning visas bara de som är kompatibla med Attribution AI. Om du vill välja en datauppsättning markerar du symbolen (**+**) bredvid datauppsättningsnamnet eller markerar kryssrutan för att lägga till flera datauppsättningar samtidigt. Du kan också använda sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
+Attribution AI kan per design använda Adobe Analytics-, Experience Event- och Consumer Experience Event-data för att beräkna attribueringspoäng. När du väljer en datauppsättning visas bara de som är kompatibla med attribut-AI. Om du vill välja en datauppsättning markerar du symbolen (**+**) bredvid datauppsättningsnamnet eller markerar kryssrutan för att lägga till flera datauppsättningar samtidigt. Du kan också använda sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
 
 När du har valt de datauppsättningar du vill använda väljer du knappen **[!UICONTROL Add]** för att lägga till datauppsättningarna i förhandsgranskningsfönstret för datauppsättningen.
 
@@ -71,7 +71,7 @@ Förhandsgranskningen av datauppsättningen innehåller data som senaste uppdate
 
 Välj **[!UICONTROL Save]** om du vill spara dina utkast när du följer arbetsflödet. Du kan också spara utkastmodellkonfigurationer och gå vidare till nästa steg i arbetsflödet. Använd **[!UICONTROL Save and continue]** för att skapa och spara utkast under modellkonfigurationer. Med den här funktionen kan du skapa och spara utkast av modellkonfigurationen och den är särskilt användbar när du måste definiera många fält i konfigurationsarbetsflödet.
 
-![Arbetsflödet Skapa på fliken Data Science Services-Attribution AI med Spara och Spara och fortsätt markerat.](./images/user-guide/aai-save-save-&-exit.png)
+![Arbetsflödet Skapa på fliken Data Science Services Attribution AI med Spara och Spara och fortsätt markerat.](./images/user-guide/aai-save-save-&-exit.png)
 
 ### Fullständighet för datauppsättning {#dataset-completeness}
 
@@ -109,7 +109,7 @@ Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rä
 
 <!-- https://www.adobe.com/go/aai-mapping -->
 
-När du har valt och lagt till datauppsättningar visas konfigurationssteget **Karta**. Attribution AI kräver att du mappar mediekanalsfältet för varje datauppsättning som du valde i föregående steg. Detta beror på att utan mediekanalmappningen mellan datauppsättningar kanske insikter som härletts från Attribution AI inte visas korrekt, vilket gör det svårt att tolka insikter. Även om bara mediekanalen krävs rekommenderar vi att du mappar några av de valfria fälten, som Media-åtgärd, Campaign-namn, Campaign-grupp och Campaign-tagg. På så sätt kan Attribution AI få tydligare insikter och optimala resultat.
+När du har valt och lagt till datauppsättningar visas konfigurationssteget **Karta**. Attribution AI kräver att du mappar mediekanalfältet för varje datamängd som du valde i föregående steg. Detta beror på att utan mediekanalmappningen mellan datauppsättningar kanske insikter som härleds från Attribution AI inte visas på rätt sätt, vilket gör det svårt att tolka insikterna på sidan. Även om bara mediekanalen krävs rekommenderar vi att du mappar några av de valfria fälten, som Media-åtgärd, Campaign-namn, Campaign-grupp och Campaign-tagg. Om du gör det kan Attribution AI ge tydligare insikter och optimala resultat.
 
 ![mappning](./images/user-guide/mapping-save-&-exit.png)
 
@@ -205,7 +205,7 @@ När du har definierat alla nödvändiga kontaktytor rullar du uppåt och välje
 
 ## Avancerad utbildning och poängsättning
 
-Den sista sidan i Attribution AI är sidan **[!UICONTROL Advanced]** som används för att ställa in utbildning och poängsättning.
+Den sista sidan i Attribution AI är sidan **[!UICONTROL Advanced]** som används för att konfigurera utbildning och poängsättning.
 
 ![nya alternativ för siduppsättning](./images/user-guide/advanced_settings_set_options.png)
 
@@ -267,10 +267,10 @@ När du har valt utbildningsfönstret väljer du **[!UICONTROL Finish]** i det �
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [upptäcka Attribution AI](./discover-insights.md). Om du dessutom vill hämta dina poängresultat går du till dokumentationen för [nedladdning av poäng](./download-scores.md).
+Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera AI-insikter för attribut](./discover-insights.md). Om du dessutom vill hämta dina poängresultat går du till dokumentationen för [nedladdning av poäng](./download-scores.md).
 
 ## Ytterligare resurser
 
-I följande video visas ett arbetsflöde från början till slut som du kan använda för att skapa en ny instans i Attribution AI.
+I följande video visas ett arbetsflöde från början till slut för att skapa en ny instans i Attribution AI.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32668?learn=on&quality=12)

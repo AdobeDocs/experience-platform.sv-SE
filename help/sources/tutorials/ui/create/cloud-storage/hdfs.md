@@ -5,7 +5,7 @@ title: Skapa en Apache HDFS Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Apache Hadoop Distributed File System med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 3b8bf210-13b6-44e6-9090-152998f67452
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 0%
@@ -18,11 +18,11 @@ ht-degree: 0%
 >
 >HDFS-anslutningen [!DNL Apache] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källöversikt](../../../../home.md#terms-and-conditions).
 
-Source-anslutningar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Apache Hadoop Distributed File System]-källanslutning (kallas nedan HDFS) med användargränssnittet i [!DNL Platform].
+Source-anslutningar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Apache Hadoop Distributed File System]-källanslutning (kallas nedan HDFS) med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Platform]:
+Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Experience Platform]:
 
 - [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    - [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
@@ -41,7 +41,7 @@ För att autentisera HDFS-källkopplingen måste du ange värden för följande 
 
 ## Anslut ditt HDFS-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt HDFS-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt HDFS-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -67,4 +67,4 @@ Om du vill ansluta ett befintligt konto väljer du det HDFS-konto som du vill an
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HDFS-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till  [!DNL Platform]](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HDFS-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till  [!DNL Experience Platform]](../../dataflow/batch/cloud-storage.md).

@@ -5,9 +5,9 @@ title: Generera utdatauppsättningar från frågeresultat
 type: Tutorial
 description: Med Adobe Experience Platform Query Service kan du skapa datauppsättningar från användargränssnittet. När en datauppsättning har skapats kan den nås som vilken annan datauppsättning som helst i datasjön och användas för en mängd olika användningsfall.
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 59d2d74b2d77f3bbaca381af908de5295af24e5b
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Så här skapar du datauppsättningar från Adobe Experience Platform användarg
 
 1. Skapa en fråga med en ansluten klient och validera utdata. Läs [!DNL Query Editor] UI-guiden [ om hur du skriver frågor ](./user-guide.md#writing-queries) om du vill lära dig hur du skriver frågor med [!DNL Query Editor].
 
-2. I plattformsgränssnittet går du till **[!UICONTROL Queries]** följt av fliken **[!UICONTROL Templates]** och väljer den fråga du har skapat. Mer information om hur du visar frågor som har skapats och sparats för din organisation i plattformsgränssnittet finns i [[!DNL Query Service] översikten](./overview.md#browse).
+2. I Experience Platform-gränssnittet går du till **[!UICONTROL Queries]** följt av fliken **[!UICONTROL Templates]** och väljer den fråga du har skapat. Mer information om hur du visar frågor som har skapats och sparats för din organisation i Experience Platform-gränssnittet finns i [[!DNL Query Service] översikten](./overview.md#browse).
 
 3. Välj **[!UICONTROL Run as CTAS]** på panelen Frågeinformation.
 
@@ -34,7 +34,7 @@ Så här skapar du datauppsättningar från Adobe Experience Platform användarg
 
    ![Dialogrutan för utdata med datauppsättningsinformation och [!UICONTROL Run as CTAS] markerad](../images/ui/create-datasets/run-query.png)
 
-6. När frågekörningen är klar går du till **[!UICONTROL Datasets]** för att visa den datauppsättning du har skapat. Mer information om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i plattformsgränssnittet finns i [användargränssnittsguiden för datauppsättningar](../../catalog/datasets/user-guide.md).
+6. När frågekörningen är klar går du till **[!UICONTROL Datasets]** för att visa den datauppsättning du har skapat. Mer information om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Experience Platform-gränssnittet finns i [användargränssnittshandboken för datauppsättningar](../../catalog/datasets/user-guide.md).
 
 När en datauppsättning har skapats kan den nås på samma sätt som andra datauppsättningar i [!DNL Data Lake] och användas för olika användningsområden.
 
@@ -52,4 +52,4 @@ Datauppsättningar som skapas med den här funktionen genereras med ett ad hoc-s
 
 ## Nästa steg
 
-När du har läst det här dokumentet bör du nu förstå hur du använder [!DNL Query Service] för att generera datauppsättningar från plattformsgränssnittet. Mer information om hur du får åtkomst till, skriver och kör frågor i plattformsgränssnittet finns i [[!DNL Query Service] användargränssnittsöversikt](./overview.md).
+När du har läst det här dokumentet bör du nu förstå hur du använder [!DNL Query Service] för att generera datauppsättningar från Experience Platform-gränssnittet. Mer information om hur du får åtkomst till, skriver och kör frågor i Experience Platform-gränssnittet finns i [[!DNL Query Service] användargränssnittsöversikt](./overview.md).

@@ -3,45 +3,45 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: 08a63fb854fe1c2aa83e7a7f74df4c02580e4d4c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '309'
-ht-degree: 16%
+source-wordcount: '324'
+ht-degree: 20%
 
 ---
 
 
 # Adobe Experience Platform - översikt {#landing}
 
-* [Plattformsöversikt](home.md)
-* [Plattformsöversikt (video)](video/platform-overview.md)
+* [Översikt över Experience Platform](home.md)
+* [Experience Platform - översikt (video)](video/platform-overview.md)
 * [Översikt över flera moln](multi-cloud.md)
-* [Edge Network och navet - jämförelse](./edge-and-hub-comparison.md)
-* [Plattformssjälvstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
-* [En kundupplevelse som bygger på Platform (Video)](video/customer-experience.md)
-* [Bakom scenen med en kundupplevelse som bygger på Platform (Video)](video/customer-experience-bts.md)
+* [Jämförelse mellan Edge Network och Hub](./edge-and-hub-comparison.md)
+* [Experience Platform självstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
+* [En kundupplevelse som bygger på Experience Platform (video)](video/customer-experience.md)
+* [Bakom scenen med en kundupplevelse som drivs av Experience Platform (video)](video/customer-experience-bts.md)
 * Komma igång {#getting-started}
    * [Exempelarbetsflöde från början till slut](end-to-end-tutorial.md)
    * [Nyckelfunktioner (video)](video/key-capabilities.md)
    * [Viktiga användningsfall (video)](video/platform-use-cases.md)
-   * [Plattformsarkitektur (video)](video/platform-architecture.md)
+   * [Experience Platform-arkitektur (video)](video/platform-architecture.md)
    * [Roller och projektfaser (video)](video/roles-project-phases.md)
 * Experience Platform-gränssnitt {#platform-ui}
-   * [Användargränssnittshandbok för plattformen](ui-guide.md)
-   * [Demo av användargränssnittet för plattformen (video)](video/platform-ui.md)
+   * [Experience Platform UI Guide](ui-guide.md)
+   * [Experience Platform UI tour (Video)](video/platform-ui.md)
    * [Användargränssnittshandbok för arbetsflöden](workflows.md)
    * [Stöd för webbläsare och språk](browser-language-support.md)
    * [Självidentifieringsundersökning](self-identification.md)
 * Experience Platform API:er {#platform-apis}
-   * [Komma igång med plattforms-API:er](api-guide.md)
-   * [Autentisera och få åtkomst till plattforms-API:er](api-authentication.md)
+   * [Komma igång med Experience Platform API:er](api-guide.md)
+   * [Autentisera och få åtkomst till Experience Platform-API:er](api-authentication.md)
    * [Grundläggande om API](api-fundamentals.md)
-   * [Använda Postman med plattforms-API:er](postman.md)
+   * [Använda Postman med Experience Platform API:er](postman.md)
    * [API-referensdokument](https://www.adobe.com/go/platform-api-reference-en)
-* Plattformsdokumentation {#documentation}
+* Experience Platform-dokumentation {#documentation}
    * [Översikt](documentation/overview.md)
    * [Språkstöd](documentation/language-support.md)
-* Program byggda på plattformen {#ecosystem}
+* Program som är byggda på Experience Platform {#ecosystem}
    * [Översikt](application-services.md)
    * [Adobe Real-Time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
@@ -49,7 +49,7 @@ ht-degree: 16%
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
    * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
    * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html)
-   * [Plattformsintegrering med Experience Cloud (video)](video/experience-cloud-integrations.md)
+   * [Experience Platform-integreringar med Experience Cloud (video)](video/experience-cloud-integrations.md)
 * Styrning, sekretess och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)
    * Medgivandehantering {#consent}
@@ -59,7 +59,7 @@ ht-degree: 16%
       * IAB TCF 2.0 {#iab}
          * [Översikt](./governance-privacy-security/consent/iab/overview.md)
          * [Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata](./governance-privacy-security/consent/iab/dataset.md)
-      * [Integrera Platform Web SDK för att bearbeta samtycke och inställningsdata](./governance-privacy-security/consent/sdk.md)
+      * [Integrera Experience Platform Web SDK för att bearbeta samtycke och inställningsdata](./governance-privacy-security/consent/sdk.md)
    * Granskningsloggar {#audit-logs}
       * [Översikt](./governance-privacy-security/audit-logs/overview.md)
       * API för granskningsfråga {#audit-api}

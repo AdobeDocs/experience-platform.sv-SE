@@ -2,9 +2,9 @@
 title: Definiera XDM-fält i API:t för schemaregister
 description: Lär dig hur du definierar olika fält när du skapar anpassade XDM-resurser (Experience Data Model) i API:t för schemaregister.
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1157'
+source-wordcount: '1158'
 ht-degree: 0%
 
 ---
@@ -368,7 +368,7 @@ Se till att du bara använder karttypsfält när det är absolut nödvändigt, e
 * Svarstiden från [Adobe Experience Platform Query Service](../../query-service/home.md) försämras från tre sekunder till tio sekunder för 100 miljoner poster.
 * Kartor måste ha färre än 16 tangenter, annars riskerar de att försämras ytterligare.
 
-Användargränssnittet för plattformen har även begränsningar för hur nycklarna för mappningsfält kan extraheras. Objekttypsfält kan expanderas, men kartor visas i stället som ett enda fält.
+Experience Platform användargränssnitt har även begränsningar för hur nycklarna för mappningsfält kan extraheras. Objekttypsfält kan expanderas, men kartor visas i stället som ett enda fält.
 
 ## Nästa steg
 

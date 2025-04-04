@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräcken;riktlinjer;gräns;
+keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsförslag;riktlinjer;limit;
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1585'
+source-wordcount: '1586'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ Det här dokumentet innehåller information om användning och hastighetsgränse
 
 ## Kom igång
 
-Följande Experience Platform-tjänster är involverade i modellering av identitetsdata:
+Följande Experience Platform-tjänster används för att modellera identitetsdata:
 
-* [Identiteter](home.md): Bridge-identiteter från olika datakällor när de hämtas till Platform.
+* [Identiteter](home.md): Bridge-identiteter från olika datakällor när de hämtas till Experience Platform.
 * [[!DNL Real-Time Customer Profile]](../profile/home.md): Skapa enhetliga konsumentprofiler med data från flera källor.
 
 ## Begränsningar för datamodell
@@ -90,12 +90,12 @@ I följande avsnitt beskrivs hur borttagningslogiken påverkar identitetstjänst
 
 #### Identitetstjänst: Anpassade ändringar av identitetstyp för namnområde
 
-Kontakta ditt Adobe-kontoteam för att begära en ändring av identitetstypen om din produktionssandlåda innehåller:
+Kontakta Adobe-kontoteamet om du vill ändra identitetstypen om din produktionssandlåda innehåller:
 
 * Ett anpassat namnutrymme där personidentifierare (till exempel CRMID) är konfigurerade som cookie/enhetsidentitetstyp.
 * Ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.
 
-När den här funktionen är tillgänglig kommer diagram som överskrider gränsen på 50 identiteter att minskas ned till 50 identiteter. För Real-Time CDP B2C Edition kan detta resultera i en minimal ökning av antalet profiler som kvalificerar för en viss målgrupp, eftersom dessa profiler tidigare ignorerades från segmentering och aktivering.
+När den här funktionen är tillgänglig kommer diagram som överskrider gränsen på 50 identiteter att minskas ned till 50 identiteter. För Real-Time CDP B2C Edition kan detta resultera i en minimal ökning av antalet profiler som kvalificerar för en målgrupp, eftersom dessa profiler tidigare ignorerades från segmentering och aktivering.
 
 #### Kundprofil i realtid: påverkan på adresserbara målgrupper
 
@@ -196,10 +196,10 @@ Mer information om [!DNL Identity Service] finns i följande dokumentation:
 * [[!DNL Identity Service] översikt](home.md)
 * [Identitetsdiagramvisningsprogram](features/identity-graph-viewer.md)
 
-Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
+I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C-utgåva - Premiere- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

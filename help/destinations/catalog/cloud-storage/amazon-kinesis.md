@@ -4,9 +4,9 @@ title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1950'
+source-wordcount: '1955'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 Med tjänsten [!DNL Kinesis Data Streams] från [!DNL Amazon Web Services] kan du samla in och bearbeta stora dataströmmar i realtid.
 
@@ -25,7 +25,7 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis]-l
 
 * Mer information om [!DNL Amazon Kinesis] finns i [Amazon-dokumentationen](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).
 * Om du vill ansluta till [!DNL Amazon Kinesis] programmatiskt läser du [API-självstudiekursen för direktuppspelningsmål](../../api/streaming-destinations.md).
-* Om du vill ansluta till [!DNL Amazon Kinesis] med hjälp av användargränssnittet för plattformen kan du läsa avsnitten nedan.
+* Om du vill ansluta till [!DNL Amazon Kinesis] med Experience Platform användargränssnitt läser du avsnitten nedan.
 
 ![Amazon Kinesis i användargränssnittet](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
 
@@ -41,7 +41,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -63,13 +63,13 @@ För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller
 
 ## [!DNL Amazon Kinesis] behörigheter som krävs {#required-kinesis-permission}
 
-För att kunna ansluta och exportera data till dina [!DNL Amazon Kinesis]-strömmar behöver Experience Platform behörighet för följande åtgärder:
+Experience Platform behöver behörighet för följande åtgärder för att kunna ansluta och exportera data till dina [!DNL Amazon Kinesis]-strömmar:
 
 * `kinesis:ListStreams`
 * `kinesis:PutRecord`
 * `kinesis:PutRecords`
 
-Dessa behörigheter ordnas via [!DNL Kinesis]-konsolen och kontrolleras av plattformen när du har konfigurerat Kinesis-målet i användargränssnittet för plattformen.
+Dessa behörigheter ordnas via [!DNL Kinesis]-konsolen och kontrolleras av Experience Platform när du har konfigurerat Kinesis-målet i Experience Platform användargränssnitt.
 
 I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att exportera data till ett [!DNL Kinesis]-mål.
 
@@ -95,8 +95,8 @@ I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att expor
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `kinesis:ListStreams` | En åtgärd som listar dataströmmarna i Amazon Kinesis. |
-| `kinesis:PutRecord` | En åtgärd som skriver en enskild datapost till en dataström från Kinesis. |
-| `kinesis:PutRecords` | En åtgärd som skriver flera dataposter till en dataström från Kinesis i ett enda anrop. |
+| `kinesis:PutRecord` | En åtgärd som skriver en enskild datapost till en Kinesis-dataström. |
+| `kinesis:PutRecords` | En åtgärd som skriver flera dataposter till en Kinesis-dataström i ett enda anrop. |
 
 {style="table-layout:auto"}
 
@@ -116,7 +116,7 @@ Ange fälten nedan och välj **[!UICONTROL Connect to destination]**:
 
 ![Bild av gränssnittsskärmen som visar slutförda fält för autentiseringsinformationen för Amazon Kinesis](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
 
-* **[!DNL Amazon Web Services]-åtkomstnyckel och hemlig nyckel**: Generera ett `access key - secret access key`-par i [!DNL Amazon Web Services] för att ge plattformsåtkomst till ditt [!DNL Amazon Kinesis]-konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera ett `access key - secret access key`-par i [!DNL Amazon Web Services] som ger Experience Platform åtkomst till ditt [!DNL Amazon Kinesis]-konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL Region]**: Ange vilken [!DNL Amazon Web Services]-region som data ska strömmas till.
 
 ### Fyll i målinformation {#destination-details}
@@ -137,7 +137,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ange ett namn för din anslutning till [!DNL Amazon Kinesis]
 * **[!UICONTROL Description]**: Ange en beskrivning för din anslutning till [!DNL Amazon Kinesis].
-* **[!UICONTROL Stream]**: Ange namnet på en befintlig dataström i ditt [!DNL Amazon Kinesis]-konto. Plattformen exporterar data till den här strömmen.
+* **[!UICONTROL Stream]**: Ange namnet på en befintlig dataström i ditt [!DNL Amazon Kinesis]-konto. Experience Platform exporterar data till den här strömmen.
 * **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de målgrupper som du exporterar. Ett exempel på en dataexport med det här alternativet markerat finns i avsnittet [Exporterade data](#exported-data) längre fram.
 * **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när målgrupperna skapades och uppdaterades, samt UNIX-tidsstämpeln när målgrupperna mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i avsnittet [Exporterade data](#exported-data) längre fram.
 
@@ -145,7 +145,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 >[!IMPORTANT]
 >
->Platform needs `write` permissions on the bucket object where the export files will be delivered.
+>Experience Platform needs `write` permissions on the bucket object where the export files will be delivered.
 
 -->
 
@@ -188,7 +188,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 Ta till exempel det här dataflödet som ett [!DNL Amazon Kinesis]-mål där tre målgrupper har valts i dataflödet och fyra attribut har mappats till målet.
 
-![Amazon Kinesis måldataflöde](../../assets/catalog/http/profile-export-example-dataflow.png)
+![Amazon Kinesis-måldataflöde](../../assets/catalog/http/profile-export-example-dataflow.png)
 
 En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-målgruppen men även är medlem av **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans**-målgrupperna, kommer dessa två andra målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om de här gemensamma sammanslagningarna Få en policy med segmentet **Customer with DeLorean Cars** .
 
@@ -196,7 +196,7 @@ När det gäller profilattribut kommer alla ändringar av de fyra attribut som m
 
 ## Bakgrundsfyllning av historiska data {#historical-data-backfill}
 
-När du lägger till en ny målgrupp till ett befintligt mål, eller när du skapar ett nytt mål och mappar målgrupper till det, exporterar Experience Platform historiska data om målgruppskvalificering till målet. Profiler som är kvalificerade för målgruppen *innan* målgruppen lades till i målet exporteras till målet inom ungefär en timme.
+När du lägger till en ny målgrupp till ett befintligt mål, eller när du skapar ett nytt mål och mappar målgrupper till det, exporterar Experience Platform data om målgruppens historiska kvalifikationer till målet. Profiler som är kvalificerade för målgruppen *innan* målgruppen lades till i målet exporteras till målet inom ungefär en timme.
 
 ## Exporterade data {#exported-data}
 
@@ -298,7 +298,7 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka UI-inst
 
 ## Begränsningar och återförsöksprincip {#limits-retry-policy}
 
-På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
+På 95 % av tiden försöker Experience Platform erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
 
 Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.
 

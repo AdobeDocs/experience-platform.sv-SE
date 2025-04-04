@@ -1,12 +1,12 @@
 ---
 keywords: tillägg för händelsevidarebefordring;blandpanel;tillägg för händelsesändning med mixpanel
 title: API-tillägg för händelsespårning i Mixpanel Track
-description: Det här Adobe Experience Platform-tillägget för händelsevidarebefordran skickar Edge Network-händelser till Mixpanel.
+description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Edge Network-händelser till Mixpanel.
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 21e2e0fa-4949-4be4-859f-d449d21d8f41
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '869'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ I [!DNL Mixpanel] innehåller ett identitetskluster en samling `distinct_id`-vä
 
 [!DNL Mixpanel] löser identitetskluster på två sätt:
 
-* **Identifiera** : [!DNL Mixpanel] ansluter den valda identifieraren till en anonym `distinct_id`. Om din webbplats har [!DNL Mixpanel] SDK aktiverat, kommer Platform att använda den `distinct_id` som är tilldelad den användare som är inloggad.
+* **Identifiera** : [!DNL Mixpanel] ansluter den valda identifieraren till en anonym `distinct_id`. Om [!DNL Mixpanel] SDK är aktiverat på webbplatsen använder Experience Platform `distinct_id` som tilldelats den användare som är inloggad.
 * **Alias**: [!DNL Mixpanel] kombinerar två icke-anonyma `distinct id` om ytterligare villkor för sammanslagning uppfylls.
 
 >[!NOTE]
@@ -95,7 +95,7 @@ När åtgärden [!UICONTROL Track Event] har lagts till i regeln kan du konfigur
 
 >[!IMPORTANT]
 >
->Om din webbplats använder [!DNL Mixpanel] SDK kan du fortsätta till nästa steg i [valideringen av dina data inom [!DNL Mixpanel]](#validate). Om du inte använder [!DNL Mixpanel] SDK måste du [skapa en separat regel för identitetsspårning](#create-an-identity-tracking-rule) för att säkerställa att lämpliga händelser och `distinct_id` värden skickas till [!DNL Mixpanel] när en användaridentifieringshändelse inträffar.
+>Om din webbplats använder SDK [!DNL Mixpanel] kan du fortsätta till nästa steg i [valideringen av dina data inom [!DNL Mixpanel]](#validate). Om du inte använder [!DNL Mixpanel] SDK måste du [skapa en separat regel för identitetsspårning](#create-an-identity-tracking-rule) för att säkerställa att lämpliga händelser och `distinct_id` värden skickas till [!DNL Mixpanel] när en användaridentifieringshändelse inträffar.
 
 ## Validera data i [!DNL Mixpanel] {#validate}
 
@@ -105,9 +105,9 @@ Kontrollera om [!DNL Mixpanel] har sammanfogat händelserna efter inloggning med
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du skickar konverteringshändelser till [!DNL Mixpanel] med hjälp av händelsevidarebefordran. Det här tillägget för vidarebefordran av händelser utnyttjar API:t [!DNL Mixpanel] för SDK och JavaScript. Mer information om dessa underliggande tekniker finns i den officiella dokumentationen:
+I den här guiden beskrivs hur du skickar konverteringshändelser till [!DNL Mixpanel] med hjälp av händelsevidarebefordran. Det här tillägget för vidarebefordran av händelser utnyttjar SDK- och JavaScript-API:t [!DNL Mixpanel]. Mer information om dessa underliggande tekniker finns i den officiella dokumentationen:
 
 * [[!DNL Mixpanel] SDK](https://developer.mixpanel.com/docs/nodejs)
 * [[!DNL Mixpanel] JavaScript API](https://developer.mixpanel.com/docs/javascript-full-api-reference#mixpanelidentify)
 
-Mer information om funktioner för att vidarebefordra händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
+Mer information om funktioner för vidarebefordran av händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).

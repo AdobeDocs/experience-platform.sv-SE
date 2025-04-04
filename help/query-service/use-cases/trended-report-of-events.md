@@ -3,9 +3,9 @@ keywords: Experience Platform;home;populära topics;query service;Query service;
 title: Skapa en trendrapport över händelser
 description: Lär dig hur du skriver frågor som använder Experience Events för att skapa en trendrapport med händelser över ett visst datumintervall, grupperade efter datum.
 exl-id: 8f7ed5b5-c265-4a1e-a360-4293d1e86e97
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '379'
+source-wordcount: '381'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller ett exempel på den SQL som krävs för att skapa en trendrapport över händelser per dag i ett visst datumintervall. Med Adobe Experience Platform Query Service kan du skriva frågor som använder [!DNL Experience Events] för att hämta olika användningsfall. Experience Events representeras av Experience Data Model (XDM) ExperienceEvent-klassen, som fångar en oföränderlig och icke-aggregerad ögonblicksbild av systemet när en användare interagerar med en webbplats eller tjänst. Experience Events kan till och med användas för tidsdomänanalys. Se avsnittet [Nästa steg](#next-steps) för fler användningsfall som inbegriper [!DNL Experience Events] för att generera besökarrapporter.
 
-Rapporterna ger er tillgång till era plattformsdata för att hjälpa er organisations strategiska affärsinsikter. Med de här rapporterna kan ni undersöka era plattformsdata på flera olika sätt, visa nyckeltal i lättbegripliga format och dela de insikter de ger.
+Rapporterna ger er tillgång till era Experience Platform-data för att hjälpa er organisations strategiska affärsinsikter. Med de här rapporterna kan ni undersöka era Experience Platform-data på flera olika sätt, visa viktiga mätvärden i lättbegripliga format och dela de insikter ni får.
 
 Mer information om XDM och [!DNL Experience Events] finns i [[!DNL XDM System] översikt](../../xdm/home.md). Genom att kombinera frågetjänsten med [!DNL Experience Events] kan du effektivt spåra beteendetrender bland dina användare. Följande dokument innehåller exempel på frågor som rör [!DNL Experience Events].
 

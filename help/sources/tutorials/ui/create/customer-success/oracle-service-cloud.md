@@ -1,22 +1,22 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Oracle Service Cloud;oracle service cloud
+keywords: Experience Platform;home;populära topics;Oracle Service Cloud;Oracle service cloud
 title: Skapa en Oracle Service Cloud Source Connection i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till Oracle Service Cloud med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: e5869c09-b61e-4d23-a594-5a07769da3c4
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '460'
 ht-degree: 0%
 
 ---
 
-# Skapa en källanslutning till Oracle Service Cloud i användargränssnittet
+# Skapa en Oracle Service Cloud-källanslutning i användargränssnittet
 
 >[!WARNING]
 >
 >[!DNL Oracle Service Cloud]-källan kommer att bli inaktuell i slutet av juni 2025.
 
-I den här självstudiekursen beskrivs hur du skapar en Oraclena Service Cloud-källanslutning med Adobe Experience Platform användargränssnitt.
+I den här självstudiekursen beskrivs hur du skapar en Oracle Service Cloud-källanslutning med Adobe Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -31,19 +31,19 @@ Om du redan har en giltig källanslutning till Oracle Service Cloud kan du hoppa
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Du måste ange följande värden för att komma åt ditt Oracle Service Cloud-konto på [!DNL Platform]:
+För att få tillgång till ditt Oracle Service Cloud-konto på [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | Värd | Värd-URL:en för din Oracle Service Cloud-instans. |
-| Användarnamn | Användarnamnet för ditt användarkonto för Oracle Service Cloud. |
+| Användarnamn | Användarnamnet för ditt Oracle Service Cloud-användarkonto. |
 | Lösenord | Lösenordet för ditt Oracle Service Cloud-konto. |
 
 Mer information om hur du autentiserar ditt Oracle Service Cloud-konto finns i [[!DNL Oracle] handboken om autentisering](https://docs.oracle.com/en/cloud/saas/b2c-service/20c/cxska/OKCS_Authenticate_and_Authorize.html).
 
 ## Anslut ditt Oracle Service Cloud-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Skärmen [!UICONTROL Catalog] innehåller en mängd olika källor som kan användas för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Skärmen [!UICONTROL Catalog] innehåller en mängd olika källor som kan användas för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
@@ -55,7 +55,7 @@ Sidan **[!UICONTROL Connect to Oracle Service Cloud]** visas. På den här sidan
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du det Oracle Service Cloud-konto du vill ansluta till och sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill ansluta ett befintligt konto väljer du det Oracle Service Cloud-konto som du vill ansluta till och sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![Det befintliga kontogränssnittet.](../../../../images/tutorials/create/oracle-service-cloud/existing.png)
 
@@ -67,4 +67,4 @@ Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Oracle Service Cloud-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att få in data om kundens framgång i plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Oracle Service Cloud-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att få in data om kundens framgång i Experience Platform](../../dataflow/crm.md).

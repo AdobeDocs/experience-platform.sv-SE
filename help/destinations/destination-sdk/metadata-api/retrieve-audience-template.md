@@ -2,9 +2,9 @@
 description: Den här sidan är ett exempel på det API-anrop som används för att hämta en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Hämta en målgruppsmall
 exl-id: 44f2d571-49c5-4112-b3ee-bc839f2b0874
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '421'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
@@ -317,8 +317,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om målgruppsmallen s
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du hämtar information om målserverkonfigurationen med API-slutpunkten `/authoring/destination-servers`. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.
+När du har läst det här dokumentet vet du nu hur du hämtar information om målserverkonfigurationen med API-slutpunkten `/authoring/destination-servers`. Läs [hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och få en förståelse för var det här steget passar in i processen att konfigurera ditt mål.

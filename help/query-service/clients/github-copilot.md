@@ -1,9 +1,10 @@
 ---
 title: Anslut GitHub Copilot och Visual Studio Code till Query Service
 description: Lär dig hur du ansluter GitHub Copilot och Visual Studio Code med Adobe Experience Platform Query Service.
-source-git-commit: f0c5b311721497bf2a14ca49dc5f1c9653e85efc
+exl-id: c5b71cc8-1d30-48c0-a8e2-135445a66639
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1359'
+source-wordcount: '1371'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Innan du använder det här integrerade verktyget måste du förstå vilka data som delas med GitHub. Delade data innehåller sammanhangsberoende information om koden och de filer som redigeras (&quot;prompts&quot;) och information om användaråtgärder (&quot;användarinteraktionsdata&quot;).  Läs sekretesspolicyn ](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#github-privacy-statement) för [[!DNL GitHub Copilot] om du vill veta mer om de data som samlas in. Ni måste också tänka på säkerhetsaspekterna av att involvera tredjepartstjänster, eftersom ni ansvarar för att se till att organisationens policyer för datastyrning följs. Adobe ansvarar inte för eventuella datarelaterade problem eller problem som kan uppstå till följd av användningen av detta verktyg. Mer information finns i dokumentationen för GitHub.
+>Innan du använder det här integrerade verktyget måste du förstå vilka data som delas med GitHub. Delade data innehåller sammanhangsberoende information om koden och de filer som redigeras (&quot;prompts&quot;) och information om användaråtgärder (&quot;användarinteraktionsdata&quot;).  Läs sekretesspolicyn ](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#github-privacy-statement) för [[!DNL GitHub Copilot] om du vill veta mer om de data som samlas in. Ni måste också tänka på säkerhetsaspekterna av att involvera tredjepartstjänster, eftersom ni ansvarar för att se till att organisationens policyer för datastyrning följs. Adobe ansvarar inte för eventuella datarelaterade problem eller problem som kan uppstå vid användning av detta verktyg. Mer information finns i dokumentationen för GitHub.
 
 [!DNL GitHub Copilot], som drivs av OpenAI Codex, är ett AI-drivet verktyg som förbättrar din kodningsupplevelse genom att föreslå kodfragment och hela funktioner direkt i redigeraren. Integrerat med [!DNL Visual Studio Code] ([!DNL VS Code]) kan [!DNL Copilot] avsevärt snabba upp ditt arbetsflöde, särskilt när du arbetar med komplexa frågor. Följ den här vägledningen när du vill lära dig hur du ansluter [!DNL GitHub Copilot] och [!DNL VS Code] till frågetjänsten för att skriva och hantera dina frågor effektivare. Mer information om [!DNL Copilot] finns på [GitHub&#39;s Copilot ](https://github.com/pricing) och i [officiell [!DNL Copilot] dokumentation](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot).
 
@@ -22,11 +23,11 @@ Det här dokumentet innehåller de steg som krävs för att ansluta [!DNL GitHub
 
 Den här guiden kräver att du redan har åtkomst till ett GitHub-konto och har registrerat dig för [!DNL GitHub Copilot]. Du kan [registrera dig från GitHub-webbplatsen](https://github.com/github-copilot/signup). Du behöver också [!DNL VS Code]. Du kan [hämta [!DNL VS Code] från deras officiella webbplats](https://code.visualstudio.com/download).
 
-När du har installerat [!DNL VS Code] och aktiverat din [!DNL Copilot]-prenumeration måste du hämta anslutningsinformationen för Experience Platform. Dessa autentiseringsuppgifter finns på fliken [!UICONTROL Credentials] på arbetsytan [!UICONTROL Queries] i plattformsgränssnittet. Läs referenshandboken för att [lära dig hur du hittar dessa värden i plattformsgränssnittet](../ui/credentials.md). Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan [!UICONTROL Queries].
+När du har installerat [!DNL VS Code] och aktiverat din [!DNL Copilot]-prenumeration måste du hämta dina anslutningsautentiseringsuppgifter för Experience Platform. Dessa autentiseringsuppgifter finns på fliken [!UICONTROL Credentials] på arbetsytan [!UICONTROL Queries] i Experience Platform-gränssnittet. Läs referenshandboken för att [lära dig hur du hittar de här värdena i användargränssnittet för Experience Platform](../ui/credentials.md). Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan [!UICONTROL Queries].
 
 ### [!DNL Visual Studio Code] tillägg som krävs {#required-extensions}
 
-Följande [!DNL Visual Studio Code] tillägg krävs för att effektivt hantera och fråga SQL-databaser för plattformen direkt i kodredigeraren. Hämta och installera dessa tillägg.
+Följande [!DNL Visual Studio Code] tillägg krävs för att effektivt hantera och fråga dina Experience Platform SQL-databaser direkt i kodredigeraren. Hämta och installera dessa tillägg.
 
 - [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools): Använd SQLTools-tillägget för att hantera och fråga efter flera SQL-databaser. Den innehåller funktioner som frågekörare, SQL-formatering och anslutningsutforskare, med stöd för ytterligare drivrutiner för att öka utvecklingsproduktiviteten. Läs översikten om Visual Studio Marketplace för mer information.
 - [SQLTools PostgreSQL/Cockroach Driver](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-pg): Med det här tillägget kan du ansluta, fråga efter och hantera PostgreSQL- och CockroachDB-databaser direkt i kodredigeraren.
@@ -48,17 +49,17 @@ Välj cylinderikonen (![Cylinderikonen.](../images/clients/github-copilot/cylind
 
 ### Inställningar för indataanslutning {#input-connection-settings}
 
-Vyn [!DNL Connection Settings] visas. Ange autentiseringsuppgifterna för plattformsanslutningen i lämpliga fält för SQLTools [!DNL Connection Assistant]. De värden som krävs förklaras i tabellen nedan.
+Vyn [!DNL Connection Settings] visas. Ange dina Experience Platform-anslutningsautentiseringsuppgifter i lämpliga fält för SQLTools [!DNL Connection Assistant]. De värden som krävs förklaras i tabellen nedan.
 
 | Egenskap | Beskrivning |
 | --- |--- |
 | [!DNL Connection name] | Ange en [!DNL Connection name]-typ `Prod_MySQL_Server` som är beskrivande och tydligt anger dess syfte (till exempel en produktionsmiljö för en MySQL-server). Bästa tillvägagångssätt är:<br><ul><li>Följ din organisations namngivningskonventioner för att säkerställa att den är unik i systemet.</li><li>Behåll det kortfattat för att behålla klarheten och undvika förvirring med andra kopplingar.</li><li>Inkludera relevant information om anslutningsens funktion eller miljö i namnet.</li></ul> |
-| [!DNL Connect using] | Använd alternativet **[!DNL Server and Port]** för att ange serveradressen (värdnamnet) och portnumret för att upprätta en direkt anslutning till plattformen |
-| [!DNL Server address] | Ange värdet **[!UICONTROL Host]** som anges i autentiseringsuppgifterna för din plattform, till exempel `acmeprod.platform-query.adobe.io`. |
-| [!DNL Port] | Det här värdet är vanligtvis `80` för plattformstjänster. |
-| [!DNL Database] | Ange värdet **[!UICONTROL Database]** som anges i autentiseringsuppgifterna för din plattform, till exempel `prod:all`. |
-| [!DNL Username] | Den här egenskapen refererar till ditt organisations-ID. Ange **[!UICONTROL Username]**-värdet som anges i autentiseringsuppgifterna för Platform Postgres. |
-| [!DNL Password] | Den här egenskapen är din åtkomsttoken. Ange **[!UICONTROL Password]**-värdet som anges i autentiseringsuppgifterna för Platform Postgres. |
+| [!DNL Connect using] | Använd alternativet **[!DNL Server and Port]** för att ange serveradressen (värdnamnet) och portnumret för att upprätta en direktanslutning till Experience Platform |
+| [!DNL Server address] | Ange värdet **[!UICONTROL Host]** som anges i dina Experience Platform Postgres-autentiseringsuppgifter, till exempel `acmeprod.platform-query.adobe.io`. |
+| [!DNL Port] | Det här värdet är vanligtvis `80` för Experience Platform-tjänster. |
+| [!DNL Database] | Ange värdet **[!UICONTROL Database]** som anges i dina Experience Platform Postgres-autentiseringsuppgifter, till exempel `prod:all`. |
+| [!DNL Username] | Den här egenskapen refererar till ditt organisations-ID. Ange värdet **[!UICONTROL Username]** som anges i dina Experience Platform Postgres-autentiseringsuppgifter. |
+| [!DNL Password] | Den här egenskapen är din åtkomsttoken. Ange värdet **[!UICONTROL Password]** som anges i dina Experience Platform Postgres-autentiseringsuppgifter. |
 
 ![Anslutningsassistentens arbetsyta med flera inställningar markerade.](../images/clients/github-copilot/connection-settings.png)
 
@@ -90,7 +91,7 @@ Arbetsytan [!DNL VS Code] visas med ett förslag från [!DNL GitHub Copilot].
 
 ## Snabbguide för [!DNL GitHub Copilot]
 
-När du har anslutit till din Platform-instans kan du använda [!DNL Copilot] som en AI-kodningsassistent för att skriva kod snabbare och med större tillförsikt. I det här avsnittet beskrivs de viktigaste funktionerna och hur du använder dem.
+När du är ansluten till din Experience Platform-instans kan du använda [!DNL Copilot] som en AI-kodningsassistent för att skriva kod snabbare och med större tillförsikt. I det här avsnittet beskrivs de viktigaste funktionerna och hur du använder dem.
 
 ## Kom igång med [!DNL GitHub Copilot] {#get-started-with-copilot}
 
@@ -150,4 +151,4 @@ Du kan även komma åt chatthistoriken genom att välja historikikonen (![Histor
 
 ## Nästa steg
 
-Nu kan du effektivt fråga dina plattformsdatabaser direkt från kodredigeraren och använda [!DNL GitHub Copilot]s AI-baserade kodförslag för att effektivisera skrivandet och optimeringen av SQL-frågor. Mer information om hur du skriver och kör frågor finns i [vägledningen för frågekörning](../best-practices/writing-queries.md).
+Nu kan du effektivt söka i dina Experience Platform-databaser direkt från kodredigeraren och använda [!DNL GitHub Copilot]s AI-baserade kodförslag för att effektivisera skrivandet och optimeringen av SQL-frågor. Mer information om hur du skriver och kör frågor finns i [vägledningen för frågekörning](../best-practices/writing-queries.md).

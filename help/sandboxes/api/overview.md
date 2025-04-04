@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;startsida;populära ämnen;handbok för utvecklare av sandlådor
+keywords: Experience Platform;home;populära topics;sandbox developguide
 solution: Experience Platform
 title: API-guide för sandlådor
 description: Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön.
 role: Developer
 exl-id: c77e96dc-d138-4126-bbb0-b67beb0a02d6
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '328'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ En sandlåda är en virtuell partition i en enda instans av Adobe Experience Pla
 
 ## Sandlådetyper
 
-För närvarande är de sandlådetyper som stöds på Experience Platform produktions- och utvecklingssandlådor. En standardplattformslicens ger dig totalt fem sandlådor, som du kan klassificera som produktion eller utveckling. Du kan licensiera ytterligare paket om 10 sandlådor, upp till totalt högst 75 sandlådor. Läs [slutpunktshandboken för sandlådetyper](./types.md) om du vill veta mer om hur du visar vilka sandlådetyper som stöds för din organisation i API:t.
+För närvarande är de sandlådetyper som stöds i Experience Platform produktions- och utvecklingssandlådor. En Experience Platform-standardlicens ger dig totalt fem sandlådor, som du kan klassificera som produktion eller utveckling. Du kan licensiera ytterligare paket om 10 sandlådor, upp till totalt högst 75 sandlådor. Läs [slutpunktshandboken för sandlådetyper](./types.md) om du vill veta mer om hur du visar vilka sandlådetyper som stöds för din organisation i API:t.
 
 ## Nästa steg
 

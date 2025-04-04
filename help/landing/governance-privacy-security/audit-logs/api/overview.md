@@ -4,9 +4,9 @@ description: Granskningsfrågan är ett RESTful-API som gör att utvecklare kan 
 role: Developer
 feature: Audits, API
 exl-id: 9ed291c6-ff8b-4d9b-9fed-d1e3fa8f92fb
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '172'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 
 ## Händelser
 
-Granskningshändelser ger insikter om användaråtgärder i Platform, inklusive åtgärdstyp, datum och tid, e-post-ID för den användare som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen för olika funktioner i Adobe Experience Platform. Mer information om hur du hämtar mätvärden med API:t finns i [händelsens slutpunktshandbok](./events.md).
+Granskningshändelser ger insikter om användaråtgärder i Experience Platform, inklusive åtgärdstyp, datum och tid, e-post-ID för den användare som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen för olika funktioner i Adobe Experience Platform. Mer information om hur du hämtar mätvärden med API:t finns i [händelsens slutpunktshandbok](./events.md).
 
 ## Exportera
 

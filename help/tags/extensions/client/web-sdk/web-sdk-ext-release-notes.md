@@ -2,16 +2,16 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2567'
+source-wordcount: '2570'
 ht-degree: 1%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägget
 
-Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [Versionsinformationen för Platform Web SDK](/help/web-sdk/release-notes.md).
+Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/web-sdk/release-notes.md).
 
 ## Version 2.29.0 - 5 mars 2025
 
@@ -337,7 +337,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.2.0 - 1 oktober 2020
 
-- När kunderna försökte skapa ett XDM-objekt från sandlådescheman, stötte de på autentiseringsproblem. API:t som anropar Platform är nu medvetet om miljöer, så användarna presenteras bara med de scheman de har tillgång till för redigering.
+- När kunderna försökte skapa ett XDM-objekt från sandlådescheman, stötte de på autentiseringsproblem. API:t som anropar Experience Platform är nu medvetet om miljöer, så att användare bara får de scheman de har tillgång till för redigering.
 - När du använder dataelementet `identityMap` är namnutrymmena nu förifyllda i en listruta så du behöver inte fylla i dessa manuellt.
 - Gränssnittet för dataelementet `xdmObject` har gjorts om. I det nya användargränssnittet kan du se vilka fält som har fyllts i utan att behöva ange varje objekt i objektet.
 
@@ -353,7 +353,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK Library.
 - Stöd för åsidosättande av datauppsättnings-ID:t i åtgärden `sendEvent`.
 - Lägg till ett nytt dataelement av typen `IdentityMap` som kan användas för att fylla i `identityMap`-posten i XDM-objektdataelementet som nu är aktiverat, och i åtgärden `setConsent`.
 - Stöd för att skicka en identitetskarta i åtgärden `setConsent`.
-- Stöd för att välja en plattformssandlåda i XDM-objektdataelementet.
+- Stöd för att välja en Experience Platform-sandlåda i XDM-objektdataelementet.
 
 ## Version 1.0.0 - 26 maj 2020
 

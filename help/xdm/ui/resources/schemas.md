@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i Experience Platform användargränssnitt.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 9691ce1ca560acce7a9512df7eb92e61962bc467
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3899'
+source-wordcount: '3902'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikte
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du manuellt skapar ett nytt schema i användargränssnittet. Om du importerar CSV-data till plattformen kan du använda HTML-algoritmer (Machine Learning) för att **generera ett schema från CSV-exempeldata**. Det här arbetsflödet matchar ditt dataformat och skapar automatiskt ett nytt schema baserat på strukturen och innehållet i din CSV-fil. Mer information om det här arbetsflödet finns i guiden [Skapa ML-stödda scheman](../ml-assisted-schema-creation.md).
+>I det här avsnittet beskrivs hur du manuellt skapar ett nytt schema i användargränssnittet. Om du importerar CSV-data till Experience Platform kan du använda HTML-algoritmer (Machine Learning) för att **generera ett schema från CSV-exempeldata**. Det här arbetsflödet matchar ditt dataformat och skapar automatiskt ett nytt schema baserat på strukturen och innehållet i din CSV-fil. Mer information om det här arbetsflödet finns i guiden [Skapa ML-stödda scheman](../ml-assisted-schema-creation.md).
 
 Välj **[!UICONTROL Create schema]** i det övre högra hörnet på arbetsytan [!UICONTROL Schemas].
 
@@ -342,7 +342,7 @@ Om du vill slutföra processen väljer du **[!UICONTROL Save]** för att spara s
 
 ![](../../images/ui/resources/schemas/profile-enabled.png)
 
-Schemat är nu aktiverat för användning i kundprofilen i realtid. När Platform samlar in data i datauppsättningar som baseras på det här schemat, kommer dessa data att införlivas i dina sammanställda profildata.
+Schemat är nu aktiverat för användning i kundprofilen i realtid. När Experience Platform infogar data i datauppsättningar som baseras på det här schemat, kommer dessa data att införlivas i dina sammanställda profildata.
 
 ## Redigera visningsnamn för schemafält {#display-names}
 
@@ -388,7 +388,7 @@ När du har bekräftat klassändringen återställs arbetsytan och alla disposit
 
 ## Nästa steg {#next-steps}
 
-Det här dokumentet innehåller grunderna för att skapa och redigera scheman i plattformsgränssnittet. Vi rekommenderar att du går igenom självstudiekursen [för att skapa schema](../../tutorials/create-schema-ui.md) för att få ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper for unika användningsfall.
+Det här dokumentet innehåller grunderna för att skapa och redigera scheman i Experience Platform användargränssnitt. Vi rekommenderar att du går igenom självstudiekursen [för att skapa schema](../../tutorials/create-schema-ui.md) för att få ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper for unika användningsfall.
 
 Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 

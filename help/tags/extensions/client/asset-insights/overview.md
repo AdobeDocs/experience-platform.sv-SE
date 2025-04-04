@@ -1,27 +1,27 @@
 ---
 title: AEM Asset Insights Extension - översikt
-description: Läs om tillägget AEM Asset Insights i Adobe Experience Platform.
+description: Läs mer om taggtillägget AEM Asset Insights i Adobe Experience Platform.
 exl-id: 7d3edd42-09fe-4e40-93dc-1edd2fdbb121
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1045'
-ht-degree: 0%
+source-wordcount: '1046'
+ht-degree: 4%
 
 ---
 
-# Översikt över tillägget AEM tillgångsinsikter
+# Översikt över tillägget AEM Asset Insights
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Det här tillägget är avsett att användas tillsammans med [AEM tillgångsinsikter](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html). Mer specifikt ersätter den processen&quot;pageTracker&quot; och bäddar in kod. När det här tillägget är konfigurerat skickas mått för *Impression* och *Click* till Adobe Analytics, varefter de importeras till AEM tillgångsinsikter. Måtten på tillgångarna kan sedan rapporteras med hjälp av AEM eller Adobe Analytics Project Workspaces.
+Det här tillägget är avsett att användas tillsammans med [AEM Asset Insights](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html). Mer specifikt ersätter den processen&quot;pageTracker&quot; och bäddar in kod. När det här tillägget är konfigurerat skickas mått för *Impression* och *Click* till Adobe Analytics, varefter de importeras till AEM tillgångsinsikter. Måtten på tillgångarna kan sedan rapporteras med hjälp av AEM resursinsikter eller Adobe Analytics projektarbetsytor.
 
 ## Förutsättningar för tillägg
 
 ### Analytics 
 
-Rapporterna om AEM i Analytics innehåller tre AEM:
+AEM Asset-rapporterna i Analytics innehåller tre AEM-dimensioner:
 
 * Tillgångs-ID
 * Resurs-Source
@@ -37,13 +37,13 @@ Taggtillägget *Adobe Analytics* för Adobe Experience Platform måste installer
 
 ### Adobe Experience Manager (AEM)
 
-1. Aktivera [AEM tillgångsinsikter](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html). I AEM väljer du **[!UICONTROL Tools > Assets]** och öppnar sedan panelen **[!UICONTROL Insights Configuration]**.
+1. Aktivera [AEM-resursinsikter](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html). I AEM väljer du **[!UICONTROL Tools > Assets]** och öppnar sedan panelen **[!UICONTROL Insights Configuration]**.
 
 1. Inaktivera UUID-spårning.
 
    >[!IMPORTANT]
    >
-   >Det här tillägget *fungerar inte* om AEM resurskonfigurationsinställningen **[!UICONTROL Disable UUID Tracking]** är markerad. Den är avmarkerad som standard.
+   >Tillägget *fungerar inte* om konfigurationsinställningen **[!UICONTROL Disable UUID Tracking]** för AEM-resurser är markerad. Den är avmarkerad som standard.
 
    ![Inaktivera UUID-spårning](images/disableassets.jpg)
 
@@ -53,19 +53,19 @@ I det här avsnittet beskrivs hur du konfigurerar AEM med taggar i Adobe Experie
 
 ### Integrera AEM med taggar
 
-Den rekommenderade integreringen av [Platform](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/overview.html) med Adobe Experience Manager görs via Adobe I/O.
+Den rekommenderade integreringen av [Experience Platform](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/overview.html) med Adobe Experience Manager görs via Adobe I/O.
 
-1. [Anslut AEM med taggar med Adobe I/O](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/connect-aem-launch-adobe-io.html).
+1. [Koppla AEM till taggar med Adobe I/O](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/connect-aem-launch-adobe-io.html).
 
-2. [Skapa en konfiguration för en Adobe Experience Platform-Cloud Service](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/create-launch-cloud-service.html).
+2. [Skapa en Adobe Experience Platform Cloud Service-konfiguration](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/experience-platform-launch/create-launch-cloud-service.html).
 
 ### Aktivera tillgångsinsikt i AEM
 
-Instruktioner om hur du aktiverar tillgångsinsikter finns i [Experience Manager 6.5 Assets användarhandbok](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html).
+Instruktioner om hur du aktiverar tillgångsinsikter finns i användarhandboken för [Experience Manager 6.5 Assets](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html).
 
 ### Aktivera UUID-spårning för Assets
 
-Spåra resurser i Analytics med hjälp av UUID för resursen i AEM.
+Spåra resurser i Analytics med hjälp av objektets UUID i AEM.
 
 Om du vill aktivera spårning med objektets UUID öppnar du komponentprincipkonsolen för den redigerbara mallen och avmarkerar egenskapen Inaktivera UUID-spårning. (Som standard kontrolleras den här egenskapen för OOTB-bildkomponenten.)
 
@@ -79,9 +79,9 @@ När du har aktiverat UUID bör du se dataelementet&quot;data-asset-id&quot; som
 
 Tillägget har två händelser och en åtgärd.
 
-* **Klickad resurs:** En _händelse_ som utlöses när besökaren väljer en AEM resurs som är aktiverad för spårning och har ett mål (href-attribut).
+* **Klickad resurs:** En _händelse_ som utlöses när besökaren väljer en AEM-resurs som är aktiverad för spårning och har ett mål (href-attribut).
 
-* **Klickad resurs (inget mål):** En _händelse_ som utlöses när besökaren väljer en AEM resurs som är aktiverad för spårning och som inte har något mål (inget href-attribut).
+* **Klickad resurs (inget mål):** En _händelse_ som utlöses när besökaren väljer en AEM-resurs som är aktiverad för spårning och som inte har något mål (inget href-attribut).
 
 * **Ange AA-variabler:** En _åtgärd_ som anger vilka Analytics-variabler som är reserverade för AEM Assets (kontextdatavariabler `a.assets.source`, `a.assets.idlist` och `a.asset.clickedid`) beroende på vilken händelse som användes och hur händelsen och åtgärden har konfigurerats. Det här tillägget använder inte några Analytics-händelser, -props eller -variabler.
 
@@ -120,7 +120,7 @@ Konfigurera tre regler enligt beskrivningen ovan:
 
 **Impressions**
 
-1. Navigera till en sida som innehåller AEM resurser.
+1. Navigera till en sida som innehåller AEM-resurser.
 
 1. Om det inte finns några resurser synliga i webbläsaren rullar du tills du kan se minst en resurs och välja den resursen, eller bara navigera till en annan sida.
 
@@ -136,7 +136,7 @@ Konfigurera tre regler enligt beskrivningen ovan:
 
 **Klicka**
 
-1. Navigera till en sida som innehåller AEM resurser.
+1. Navigera till en sida som innehåller AEM-resurser.
 
 1. Välj en av Assets:erna.
 
@@ -146,10 +146,10 @@ Om `a.assets.clickedid` inte ingår i avbildningsbegäran är det mest troligt e
 
 **Klicka utan mål**
 
-1. Navigera till en sida som innehåller minst en AEM resurs som inte har något mål (inget `href`-attribut).
+1. Navigera till en sida som innehåller minst en AEM-resurs som saknar mål (inget `href`-attribut).
 
 1. Välj den resursen.
 
 I den resulterande Analytics-bildbegäran fungerar regeln korrekt om `a.assets.clickedid` har resurs-ID:t.
 
-Om `a.assets.clickedid` inte ingår i bildbegäran är det mest troligt eftersom [Resursinsikter](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html) inte har aktiverats i AEM för den valda resursen.
+Om `a.assets.clickedid` inte ingår i bildbegäran är det mest troligt eftersom [Resursinsikter](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html) inte har aktiverats för den valda resursen i AEM.

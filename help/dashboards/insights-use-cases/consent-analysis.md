@@ -2,9 +2,9 @@
 title: Analys och spårning av samtycke
 description: Lär dig hur du bygger en kontrollpanel för samtyckesanalys för att spåra hur användarens samtycke har utvecklats över tid.
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: adc6d50f2784fe665d0590c3af053a057f8e4e38
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1804'
+source-wordcount: '1805'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ De användningsfall som behandlas i den här handboken är samtyckettrender och 
 
 ## Skapa godkända målgrupper {#create-consent-audiences}
 
-Om du vill skapa en kontrollpanel för samtycke måste du först skapa en målgrupp med alla profiler som har gett sitt samtycke till att kontakta. Om du vill navigera till Real-Time Customer Data Platform Segment Builder väljer du **[!UICONTROL Audiences]** i den vänstra navigeringen i plattformsgränssnittet. På fliken [!UICONTROL Customer] på kontrollpanelen [!UICONTROL Audiences] väljer du **[!UICONTROL Create audience]** längst upp till höger i vyn och sedan **[!UICONTROL Build rules]**.
+Om du vill skapa en kontrollpanel för samtycke måste du först skapa en målgrupp med alla profiler som har gett sitt samtycke till att kontakta. Om du vill navigera till Real-Time Customer Data Platform Segment Builder väljer du **[!UICONTROL Audiences]** i den vänstra navigeringen i användargränssnittet i Experience Platform. På fliken [!UICONTROL Customer] på kontrollpanelen [!UICONTROL Audiences] väljer du **[!UICONTROL Create audience]** längst upp till höger i vyn och sedan **[!UICONTROL Build rules]**.
 
 ![Kontrollpanelen [!UICONTROL Audiences] med [!UICONTROL Customer], [!UICONTROL Audiences] och [!UICONTROL Create segment] markerade.](../images/insights-use-cases/consent-analysis/create-audience.png)
 

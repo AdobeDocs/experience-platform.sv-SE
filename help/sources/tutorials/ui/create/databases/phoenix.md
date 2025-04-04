@@ -1,10 +1,10 @@
 ---
-title: Anslut ditt Phoenix-konto med användargränssnittet i Experience Platform
+title: Anslut ditt Phoenix-konto med Experience Platform användargränssnitt
 description: Lär dig hur du ansluter ditt Phoenix-konto och överför data från din Phoenix-databas till Experience Platform via användargränssnittet.
 exl-id: 2ed469bc-1c72-4f04-a5f0-6a0bb519a6c2
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Om du redan har ett autentiserat [!DNL Phoenix]-konto kan du hoppa över resten 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Phoenix]-konto på Experience Platform måste du ange följande värden:
+Du måste ange följande värden för att komma åt ditt [!DNL Phoenix]-konto på Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -47,7 +47,7 @@ När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stege
 
 ## Anslut ditt [!DNL Phoenix]-konto
 
-Välj **[!UICONTROL Sources]** i den vänstra navigeringen i plattformsgränssnittet för att komma åt källarbetsytan. På skärmen *[!UICONTROL Catalog]* visas en mängd olika källor som är tillgängliga i katalogen med Experience Platform-källor.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt källarbetsytan. På skärmen *[!UICONTROL Catalog]* visas en mängd olika källor som är tillgängliga i Experience Platform-källkatalogen.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också söka efter en viss källa med sökalternativet.
 
@@ -61,7 +61,7 @@ Välj **[!UICONTROL Databases]** i listan över källkategorier och välj sedan 
 >
 >* **[!UICONTROL Set up]** betyder att du måste ange autentiseringsuppgifter och autentisera ett nytt konto för att kunna använda den valda källan.
 
-![Källkatalogen i användargränssnittet i Experience Platform med källkortet Phoenix markerat.](../../../../images/tutorials/create/phoenix/catalog.png)
+![Källkatalogen i Experience Platform-gränssnittet med källkortet Phoenix markerat.](../../../../images/tutorials/create/phoenix/catalog.png)
 
 Sidan **[!UICONTROL Connect to Phoenix]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -83,4 +83,4 @@ Om du vill använda ett nytt konto väljer du [!UICONTROL New account] och anger
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Phoenix]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde så att data hämtas till Experience Platform](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Phoenix]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/databases.md).

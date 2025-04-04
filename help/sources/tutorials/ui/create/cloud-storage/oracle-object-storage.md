@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Oraclena objektlagring;oraclena objektlagring
+keywords: Experience Platform;hem;populära ämnen;Oracle Object Storage;Oracle object storage
 solution: Experience Platform
 title: Skapa en Source-anslutning för Oracle Object Storage i användargränssnittet
 type: Tutorial
-description: Lär dig hur du skapar en källanslutning till Oraclet Object Storage med Adobe Experience Platform-gränssnittet.
+description: Lär dig hur du skapar en källanslutning till en Oracle Object Storage-källa med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 32284163-5dde-4171-8977-f76ceeebcef2
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -20,8 +20,8 @@ I den här självstudiekursen beskrivs hur du skapar en [!DNL Oracle Object Stor
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -35,13 +35,13 @@ För att kunna ansluta till [!DNL Oracle Object Storage] måste du ange värden 
 | `bucketName` | Det tillåtna bucket-namn som krävs om användaren har begränsad åtkomst. Bucketnamnet måste innehålla mellan tre och 63 tecken, det måste börja och sluta med en bokstav eller en siffra och får bara innehålla gemena bokstäver, siffror eller bindestreck (`-`). Det går inte att formatera bucket-namnet som en IP-adress. |
 | `folderPath` | Den tillåtna mappsökväg som krävs om användaren har begränsad åtkomst. |
 
-Mer information om hur du hämtar de här värdena finns i [autentiseringsguiden för Oracle Object Storage](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
+Mer information om hur du hämtar dessa värden finns i [autentiseringsguiden för Oracle Object Storage](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt Oracle Object Storage-konto för att ansluta till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt Oracle Object Storage-konto för att ansluta till Experience Platform.
 
 ## Anslut till Oracle Object Storage
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
@@ -63,4 +63,4 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle Object Storage]-konto. Du kan nu gå vidare till nästa självstudiekurs om att [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle Object Storage]-konto. Du kan nu gå vidare till nästa självstudiekurs om att [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Experience Platform](../../dataflow/batch/cloud-storage.md).

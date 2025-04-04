@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Konfigurera källspecifikationer för självbetjäningskällor (batch-SDK)
+title: Konfigurera källspecifikationer för självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 1fdce7c798d8aff49ab4953298ad7aa8dddb16bd
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2084'
+source-wordcount: '2090'
 ht-degree: 0%
 
 ---
 
-# Konfigurera källspecifikation för självbetjäningskällor (batch-SDK)
+# Konfigurera källspecifikation för självbetjäningskällor (Batch SDK)
 
 Source-specifikationerna innehåller information som är specifik för en källa, inklusive attribut som gäller en källas kategori, betastatus och katalogikon. De innehåller även användbar information som URL-parametrar, innehåll, rubrik och schema. Source-specifikationerna beskriver också schemat för de parametrar som krävs för att skapa en källanslutning från en basanslutning. Schemat är nödvändigt för att skapa en källanslutning.
 
@@ -233,21 +233,21 @@ I [bilagan](#source-spec) finns ett exempel på en fullständigt ifylld källspe
 | `sourceSpec.attributes.uiAttributes` | Visar information om källan som är specifik för användargränssnittet. |
 | `sourceSpec.attributes.uiAttributes.isBeta` | Ett booleskt attribut som anger om källan kräver mer feedback från kunderna för att lägga till dess funktioner. | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.category` | Definierar källans kategori. | <ul><li>`advertising`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
-| `sourceSpec.attributes.uiAttributes.icon` | Definierar ikonen som används för återgivning av källan i plattformsgränssnittet. | `mailchimp-icon.svg` |
+| `sourceSpec.attributes.uiAttributes.icon` | Definierar den ikon som används för återgivning av källan i Experience Platform användargränssnitt. | `mailchimp-icon.svg` |
 | `sourceSpec.attributes.uiAttributes.description` | Visar en kort beskrivning av källan. |
-| `sourceSpec.attributes.uiAttributes.label` | Visar den etikett som ska användas för återgivning av källan i plattformsgränssnittet. |
+| `sourceSpec.attributes.uiAttributes.label` | Visar den etikett som ska användas för återgivning av källan i Experience Platform-gränssnittet. |
 | `sourceSpec.attributes.spec.properties.urlParams` | Innehåller information om URL-resursens sökväg, metod och vilka frågeparametrar som stöds. |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.path` | Definierar resurssökvägen varifrån data ska hämtas. | `/3.0/reports/${campaignId}/email-activity` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.method` | Definierar den HTTP-metod som ska användas för att göra en begäran till resursen om att hämta data. | `GET`, `POST` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.queryParams` | Definierar de frågeparametrar som stöds och som kan användas för att lägga till käll-URL:en när data hämtas. **Obs!** Alla användartillhandahållna parametervärden måste formateras som en platshållare. Till exempel: `${USER_PARAMETER}`. | `"queryParams" : {"key" : "value", "key1" : "value1"}` läggs till i käll-URL:en som: `/?key=value&key1=value1` |
 | `sourceSpec.attributes.spec.properties.spec.properties.headerParams` | Definierar rubriker som måste anges i HTTP-begäran till käll-URL:en när data hämtas. | `"headerParams" : {"Content-Type" : "application/json", "x-api-key" : "key"}` |
 | `sourceSpec.attributes.spec.properties.bodyParams` | Det här attributet kan konfigureras för att skicka HTTP-brödtext via en POST-begäran. |
-| `sourceSpec.attributes.spec.properties.contentPath` | Definierar noden som innehåller listan med objekt som krävs för att kopplas till plattformen. Attributet ska följa giltig JSON-sökvägssyntax och peka på en viss array. | Visa avsnittet [ytterligare resurser](#content-path) för ett exempel på resursen som finns i en innehållssökväg. |
-| `sourceSpec.attributes.spec.properties.contentPath.path` | Sökvägen som pekar på samlingsposterna som ska importeras till Platform. | `$.emails` |
+| `sourceSpec.attributes.spec.properties.contentPath` | Definierar noden som innehåller listan med objekt som ska importeras till Experience Platform. Attributet ska följa giltig JSON-sökvägssyntax och peka på en viss array. | Visa avsnittet [ytterligare resurser](#content-path) för ett exempel på resursen som finns i en innehållssökväg. |
+| `sourceSpec.attributes.spec.properties.contentPath.path` | Sökvägen som pekar på samlingsposterna som ska importeras till Experience Platform. | `$.emails` |
 | `sourceSpec.attributes.spec.properties.contentPath.skipAttributes` | Med den här egenskapen kan du identifiera specifika objekt från den resurs som identifieras i innehållssökvägen som ska uteslutas från kapsling. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.keepAttributes` | Med den här egenskapen kan du uttryckligen ange de enskilda attribut som du vill behålla. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.overrideWrapperAttribute` | Med den här egenskapen kan du åsidosätta värdet för attributnamnet som du angav i `contentPath`. | `email` |
-| `sourceSpec.attributes.spec.properties.explodeEntityPath` | Med den här egenskapen kan du förenkla två arrayer och omvandla resursdata till en plattformsresurs. |
+| `sourceSpec.attributes.spec.properties.explodeEntityPath` | Med den här egenskapen kan du förenkla två arrayer och omvandla resursdata till en Experience Platform-resurs. |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.path` | Sökvägen som pekar på samlingsposterna som du vill förenkla. | `$.email.activity` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.skipAttributes` | Med den här egenskapen kan du identifiera specifika objekt från den resurs som identifieras i entitetssökvägen som ska uteslutas från inkapsling. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.keepAttributes` | Med den här egenskapen kan du uttryckligen ange de enskilda attribut som du vill behålla. | `[total_items]` |
@@ -519,7 +519,7 @@ Sidnumreringstypen `NONE` kan användas för källor som inte stöder någon av 
 
 >[!ENDTABS]
 
-### Avancerad schemaläggning för självbetjäningskällor (batch-SDK)
+### Avancerad schemaläggning för självbetjäningskällor (Batch SDK)
 
 Konfigurera källans inkrementella schema och schema för efterfyllnad med avancerad schemaläggning. Med egenskapen `incremental` kan du konfigurera ett schema där källan bara importerar nya eller ändrade poster, medan egenskapen `backfill` gör att du kan skapa ett schema för att importera historiska data.
 
@@ -659,4 +659,4 @@ Följande är ett exempel på ett anpassat schema som du kan lägga till i käll
 
 ## Nästa steg
 
-När källspecifikationerna är ifyllda kan du fortsätta att konfigurera utforska specifikationerna för den källa som du vill integrera med plattformen. Mer information finns i dokumentet om [Konfigurera specifikationer](./explorespec.md).
+När källspecifikationerna är ifyllda kan du fortsätta att konfigurera utforska specifikationerna för den källa som du vill integrera med Experience Platform. Mer information finns i dokumentet om [Konfigurera specifikationer](./explorespec.md).

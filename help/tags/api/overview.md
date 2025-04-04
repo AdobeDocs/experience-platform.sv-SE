@@ -2,10 +2,10 @@
 title: API-guide för reaktor
 description: Med Reactor API kan utvecklare programmässigt hantera alla resurser för taggar i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 153eab11-db08-499e-80d1-c56f254372ce
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1079'
-ht-degree: 2%
+source-wordcount: '1080'
+ht-degree: 3%
 
 ---
 
@@ -99,7 +99,7 @@ I [slutpunktshandboken för granskningshändelser](./endpoints/audit-events.md) 
 
 ## Återanrop
 
-Ett återanrop är ett meddelande som Platform skickar till en URL-värd när en ny granskningshändelse genereras. Se [slutpunktshandboken för återanrop](./endpoints/callbacks.md) om du vill veta mer om hur du hanterar återanrop i API:t.
+Ett återanrop är ett meddelande som Experience Platform skickar till en URL-värd när en ny granskningshändelse genereras. Se [slutpunktshandboken för återanrop](./endpoints/callbacks.md) om du vill veta mer om hur du hanterar återanrop i API:t.
 
 ## Anteckningar
 
@@ -107,7 +107,7 @@ Anteckningar är textanteckningar som du kan lägga till i vissa taggresurser, t
 
 ## Profil
 
-En profil innehåller all information om den inloggade användaren, inklusive alla Adobe-organisationer som de tillhör, produktprofiler som de tillhör inom varje organisation och de rättigheter som de har från varje produktprofil.
+En profil innehåller all information om den inloggade användaren, inklusive alla Adobe-organisationer som användaren tillhör, produktprofiler som han/hon tillhör i varje organisation samt rättigheter som han/hon har från varje produktprofil.
 
 Se [profilslutpunktshandboken](./endpoints/profile.md) om du vill veta hur du visar den här informationen i API:t.
 

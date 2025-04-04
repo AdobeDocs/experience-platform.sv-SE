@@ -5,7 +5,7 @@ title: Skapa en HP Vertica Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en HP Vertica-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: d7315ad4-9250-4e66-be33-016efabb512e
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 > HP [!DNL Vertica]-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källöversikt](../../../../home.md#terms-and-conditions).
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en HP [!DNL Vertica]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en HP [!DNL Vertica]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -43,7 +43,7 @@ Mer information om hur du kommer igång finns i [det här HP [!DNL Vertica] doku
 
 ## Anslut ditt HP [!DNL Vertica]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt HP [!DNL Vertica]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt HP [!DNL Vertica]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -69,4 +69,4 @@ Om du vill ansluta ett befintligt konto väljer du det HP [!DNL Vertica]-konto d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HP [!DNL Vertica]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HP [!DNL Vertica]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

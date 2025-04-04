@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Datamodell för detaljhandeln
 description: Se en standardiserad datamodell för detaljhandeln som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: 40cbb243-668b-4280-815f-1f94a06b6b87
-source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Följande enhetsrelationsdiagram representerar en standardiserad datamodell för
 
 >[!NOTE]
 >
->Den rekommenderade referensmetoden är en rekommendation för hur du ska modellera dina data för det här användningsexemplet. Om du vill använda den här datamodellen i Platform måste du själv skapa de rekommenderade scheman och deras relationer. Mer information finns i guiderna för att hantera [scheman](../../ui/resources/schemas.md) och [relationer](../../tutorials/relationship-ui.md) i användargränssnittet.
+>Den rekommenderade referensmetoden är en rekommendation för hur du ska modellera dina data för det här användningsexemplet. Om du vill använda den här datamodellen i Experience Platform måste du själv skapa de rekommenderade scheman och deras relationer. Mer information finns i guiderna för att hantera [scheman](../../ui/resources/schemas.md) och [relationer](../../tutorials/relationship-ui.md) i användargränssnittet.
 
 Använd följande förklaring för att tolka denna ERD:
 

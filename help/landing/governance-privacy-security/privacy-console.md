@@ -2,28 +2,28 @@
 title: Översikt över Integritetskonsolen
 description: Lär dig övervaka dina sekretessrelaterade arbetsflöden i Adobe Experience Platform användargränssnitt.
 feature: Privacy
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '410'
 ht-degree: 2%
 
 ---
 
 # Översikt över Integritetskonsolen
 
-Fliken [!UICONTROL Privacy Console] i Adobe Experience Platform UI innehåller en instrumentpanel med en översikt över dina sekretessrelaterade åtgärder i Platform, inklusive arbetsorder för datahygien, förfrågningar från Privacy Service och granskningsloggar för användaraktiviteter i plattformen.
+På fliken [!UICONTROL Privacy Console] i Adobe Experience Platform UI finns en instrumentpanel med en översikt över dina sekretessrelaterade åtgärder i Experience Platform, inklusive arbetsorder för datahygien, förfrågningar från registrerade personer från Privacy Service och granskningsloggar för Experience Platform användaraktiviteter.
 
 Om du vill komma åt instrumentpanelen väljer du **[!UICONTROL Privacy Console]** i den vänstra navigeringen.
 
-![Bild som visar att [!UICONTROL Privacy Console] har valts i den vänstra navigeringen i plattformsgränssnittet](../images/governance-privacy-security/privacy-console/left-nav.png)
+![Bild som visar att [!UICONTROL Privacy Console] har valts i den vänstra navigeringen i Experience Platform-gränssnittet](../images/governance-privacy-security/privacy-console/left-nav.png)
 
-Härifrån kan du granska de [övervakningswidgetar](#widgets) som finns tillgängliga i konsolen, eller utforska en av flera [fallguider](#use-case-guides) för plattformens sekretessfunktioner.
+Härifrån kan du granska de [övervakningswidgetar](#widgets) som finns tillgängliga i konsolen eller utforska en av flera [fallguider](#use-case-guides) om Experience Platform sekretesskapacitet.
 
 ## Widgetar
 
 [!UICONTROL Privacy Console] innehåller flera widgetar som kan hjälpa dig att övervaka dina sekretessåtgärder.
 
-![Bild som visar att [!UICONTROL Privacy Console] har valts i den vänstra navigeringen i plattformsgränssnittet](../images/governance-privacy-security/privacy-console/widgets.png)
+![Bild som visar att [!UICONTROL Privacy Console] har valts i den vänstra navigeringen i Experience Platform-gränssnittet](../images/governance-privacy-security/privacy-console/widgets.png)
 
 >[!NOTE]
 >
@@ -35,21 +35,21 @@ Funktionen för varje widget beskrivs nedan:
 | --- | --- |
 | Orderstatus för datahygien | Visar status för postborttagningsprocesser under [Datahygien](../../hygiene/home.md) för den valda tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
 | Senaste arbetsorder för datahygien | Visar de senaste [datahygien](../../hygiene/home.md)-arbetsbeställningarna som bearbetas av systemet. Använd listrutan för att växla mellan nyligen skapade arbetsorder och nyligen uppdaterade arbetsorder. |
-| De vanligaste åtgärderna | Visar de vanligaste åtgärderna på plattformen enligt [granskningsloggarna](./audit-logs/overview.md) för den valda tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
-| De flesta aktiva användarna | Visar de mest aktiva plattformsanvändarna i organisationen enligt [granskningsloggarna](./audit-logs/overview.md) för den valda tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
+| De vanligaste åtgärderna | Visar de vanligaste åtgärderna på Experience Platform enligt [granskningsloggarna](./audit-logs/overview.md) för den valda tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
+| De flesta aktiva användarna | Visar de mest aktiva Experience Platform-användarna i organisationen enligt [granskningsloggarna](./audit-logs/overview.md) för den valda tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
 | Personförfrågningar | Visar antalet förfrågningar från registrerade personer som skickats och slutförts av [Privacy Service](../../privacy-service/home.md) för en viss dag. |
 
 {style="table-layout:auto"}
 
 ## Använda fallstödlinjer
 
-Konsolen innehåller flera produktguider som presenterar vanliga sekretessarbetsflöden i Platform, inklusive kortfattade instruktioner om hur du konfigurerar en grundläggande implementering.
+Konsolen innehåller flera produktguider som presenterar vanliga sekretessarbetsflöden i Experience Platform, inklusive kortfattade instruktioner om hur du konfigurerar en grundläggande implementering.
 
-![Bild som visar att [!UICONTROL Privacy Console] har valts i den vänstra navigeringen i plattformsgränssnittet](../images/governance-privacy-security/privacy-console/use-case-guide.png)
+![Bild som visar att [!UICONTROL Privacy Console] har valts i den vänstra navigeringen i Experience Platform-gränssnittet](../images/governance-privacy-security/privacy-console/use-case-guide.png)
 
 ## Nästa steg
 
-Mer information om de olika plattformstjänsterna som är kopplade till fall av sekretessanvändning finns i följande dokumentation:
+Mer information om de olika Experience Platform-tjänsterna som är kopplade till fall av sekretessanvändning finns i följande dokumentation:
 
 * [Attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)
 * [Granskningsloggar](./audit-logs/overview.md)

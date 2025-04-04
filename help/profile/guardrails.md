@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 31f725fc30b8fd9a045c0aac5ee65832cd995363
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2609'
+source-wordcount: '2615'
 ht-degree: 1%
 
 ---
@@ -31,9 +31,9 @@ Det här dokumentet innehåller standardbegränsningar för användning och frek
 Följande Experience Platform-tjänster är involverade i modellering av kundprofildata i realtid:
 
 * [[!DNL Real-Time Customer Profile]](home.md): Skapa enhetliga konsumentprofiler med data från flera källor.
-* [Identiteter](../identity-service/home.md): Bridge-identiteter från olika datakällor när de hämtas till Platform.
-* [Scheman](../xdm/home.md): XDM-scheman (Experience Data Model) är det standardiserade ramverk som Platform organiserar kundupplevelsedata med.
-* [Publiker](../segmentation/home.md): Segmenteringsmotorn inom plattformen används för att skapa målgrupper utifrån kundprofiler baserat på kundbeteenden och attribut.
+* [Identiteter](../identity-service/home.md): Bridge-identiteter från olika datakällor när de hämtas till Experience Platform.
+* [Scheman](../xdm/home.md): XDM-scheman (Experience Data Model) är det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata i.
+* [Publiker](../segmentation/home.md): Segmenteringsmotorn i Experience Platform används för att skapa målgrupper utifrån kundprofiler baserat på kundbeteenden och attribut.
 
 ## Begränsningstyper
 
@@ -177,9 +177,9 @@ I det här dokumentet finns det flera skyddsutkast som refererar till&quot;profi
 
 ### Sammanfoga profiler {#merge-policies}
 
-När du sammanfogar data från flera olika källor är sammanslagningsprinciper de regler som används av plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt avgör sammanfogningsprincipen vilken information som ska inkluderas i profilen för den enskilda personen. Högst fem (5) sammanslagningsprinciper som använder schemat `_xdm.context.profile` tillåts per sandlåda. Läs översikten [Sammanslagningsprinciper](merge-policies/overview.md) om du vill veta mer om sammanfogningsprinciper.
+När du sammanfogar data från flera olika källor är kopplingsregler de regler som Experience Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Experience Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt avgör sammanfogningsprincipen vilken information som ska inkluderas i profilen för den enskilda personen. Högst fem (5) sammanslagningsprinciper som använder schemat `_xdm.context.profile` tillåts per sandlåda. Läs översikten [Sammanslagningsprinciper](merge-policies/overview.md) om du vill veta mer om sammanfogningsprinciper.
 
-### Adobe Analytics rapportuppsättningar av datauppsättningar i plattformen {#aa-datasets}
+### Adobe Analytics rapportuppsättningar i Experience Platform {#aa-datasets}
 
 Flera rapportsviter kan aktiveras för profilen så länge som alla datakonflikter är lösta. Du kan använda funktionen Data Prep för att lösa datakonflikter mellan eVars, Lists och Props. Mer information om hur du använder dataprep-funktionen finns i [Adobe Analytics Connector UI Guide](../sources/tutorials/ui/create/adobe-applications/analytics.md).
 

@@ -3,9 +3,9 @@ title: Braze Currents Source Overview
 description: Lär dig hur du direktuppspelar data från Braze Currents till Experience Platform.
 badge: Beta
 exl-id: dd304e10-26e5-4586-ab39-8fe3294b19c9
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '357'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >Källan [!DNL Braze Currents] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för inmatning av data från direktuppspelningsprogram. Stöd för direktuppspelningsproviders omfattar [!DNL Braze Currents].
 
@@ -35,15 +35,15 @@ Om du vill skicka dina [!DNL Braze Currents]-data till Experience Platform måst
 
 | Fält | Beskrivning |
 | --- | --- |
-| Klient-ID | Klient-ID som är kopplat till Experience Platform-källan. |
-| Klienthemlighet | Klienthemligheten som är kopplad till Experience Platform-källan. |
-| Klient-ID | Klient-ID som är kopplat till Experience Platform-källan. |
-| Namn på sandlåda | Sandlådan som är associerad med Experience Platform-källan. |
-| Dataflödes-ID | Det dataflödes-ID som är kopplat till Experience Platform-källan. |
-| Slutpunkt för direktuppspelning | Den slutpunkt för direktuppspelning som är kopplad till Experience Platform-källan. **Obs!**: [!DNL Braze] konverterar automatiskt detta till gruppströmningsslutpunkten. |
+| Klient-ID | Klient-ID som är kopplat till din Experience Platform-källa. |
+| Klienthemlighet | Klienthemligheten som är kopplad till din Experience Platform-källa. |
+| Klient-ID | Det klient-ID som är kopplat till din Experience Platform-källa. |
+| Namn på sandlåda | Sandlådan som är kopplad till din Experience Platform-källa. |
+| Dataflödes-ID | Det dataflödes-ID som är kopplat till din Experience Platform-källa. |
+| Slutpunkt för direktuppspelning | Den slutpunkt för direktuppspelning som är kopplad till din Experience Platform-källa. **Obs!**: [!DNL Braze] konverterar automatiskt detta till gruppströmningsslutpunkten. |
 
-Mer information om hur du hämtar dessa värden finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-authentication.md). Mer information om hur du använder kontrollpanelen [!DNL Braze] finns i [!DNL Braze]-handboken om hur du [navigerar till aktuell information](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
+Mer information om hur du hämtar dessa värden finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-authentication.md). Mer information om hur du använder kontrollpanelen [!DNL Braze] finns i [!DNL Braze]-handboken om hur du [navigerar till aktuell information](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du slutfört de nödvändiga inställningarna för att kunna strömma data från ditt [!DNL Braze Currents]-konto till Experience Platform. Du kan nu fortsätta med guiden för [att ansluta [!DNL Braze Currents] till Experience Platform via användargränssnittet](../../tutorials/ui/create/marketing-automation/braze.md).
+Genom att läsa det här dokumentet har du slutfört de nödvändiga inställningarna för att kunna strömma data från ditt [!DNL Braze Currents]-konto till Experience Platform. Du kan nu fortsätta med guiden om att [ansluta [!DNL Braze Currents] till Experience Platform via användargränssnittet](../../tutorials/ui/create/marketing-automation/braze.md).

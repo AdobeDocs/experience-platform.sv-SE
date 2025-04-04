@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Pseudonymt utgångsdatum för profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 9d38fdae0fc65048d02a4337375004edafedd1b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1068'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ En profil används för att pseudonyma data ska upphöra att gälla om den uppfy
 
 ## Åtkomst {#access}
 
-Det går inte att konfigurera förfallodatum för pseudonyma profildata via plattformens gränssnitt eller API:er. Om du vill aktivera den här funktionen måste du kontakta supporten. När du kontaktar supporten, inkludera följande information:
+Det går inte att konfigurera förfallodatum för pseudonyma profildata via Experience Platform gränssnitt eller API:er. Om du vill aktivera den här funktionen måste du kontakta supporten. När du kontaktar supporten, inkludera följande information:
 
 - De identitetsnamnutrymmen som ska användas för pseudonyma profiler tas bort.
    - Till exempel: `ECID` endast, `AAID` enbart eller en kombination av `ECID` och `AAID`.
@@ -75,11 +75,11 @@ Pseudonyma utgångsdatum för profildata och utgångsdatum för upplevelsehände
 
 Du bör **alltid** konfigurera förfallodatum för Experience Event-data i dina datauppsättningar, baserat på dina behov av att lagra data om dina kända kunder. När Experience Event-data har förfallit kan du använda pseudonyma profildata som förfaller för att automatiskt ta bort pseudonyma profiler. Vanligtvis är utgångsdatumet för pseudonyma profiler kortare än utgångsdatumet för Experience Events.
 
-I ett typiskt fall kan du ange att dina Experience Event-data ska upphöra att gälla baserat på värdena för dina kända användardata, och du kan ange att dina pseudonyma profildata ska upphöra att gälla en mycket kortare tid för att begränsa effekten av pseudonyma profiler på plattformslicensernas efterlevnad.
+I ett typiskt fall kan du ange att dina Experience Event-data ska upphöra att gälla baserat på värdena för dina kända användardata, och du kan ange att dina pseudonyma profildata ska upphöra att gälla mycket kortare tid för att begränsa effekten av pseudonyma profiler på din Experience Platform licensefterlevnad.
 
 ### Vilka användare bör använda pseudonyma profiler när data förfaller?
 
-- Om du använder Web SDK för att skicka data direkt till Platform.
+- Om du använder Web SDK för att skicka data direkt till Experience Platform.
 - Om du har en webbplats som skickar oautentiserade kunder i stor skala.
 - Om du har ett stort antal profiler i datauppsättningarna och har bekräftat att det här stora antalet profiler beror på anonym cookie-baserad ID-namnrymd.
    - För att avgöra detta bör du använda överlappningsrapporten för identitetsnamnutrymme. Mer information om den här rapporten finns i [rapporten om identitetsöverlappning](./api/preview-sample-status.md#identity-overlap-report) i API-handboken för förhandsgranskning av exempelstatus.

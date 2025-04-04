@@ -5,9 +5,9 @@ feature: Customer AI
 title: Konfigurera en AI-instans för kund
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2740'
+source-wordcount: '2742'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan k
 
 ## Skapa en instans {#set-up-your-instance}
 
-Välj **[!UICONTROL Services]** i den vänstra navigeringen i plattformsgränssnittet. Webbläsaren **[!UICONTROL Services]** visas och visar alla tillgängliga tjänster. Välj **[!UICONTROL Open]** i behållaren för kund-AI.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Services]** i den vänstra navigeringen. Webbläsaren **[!UICONTROL Services]** visas och visar alla tillgängliga tjänster. Välj **[!UICONTROL Open]** i behållaren för kund-AI.
 
 ![](../images/user-guide/navigate-to-service.png)
 
@@ -35,7 +35,7 @@ Tjänstinstanser kan redigeras, klonas och tas bort med kontrollerna till höger
 
 - **[!UICONTROL Edit]**: Om du väljer **[!UICONTROL Edit]** kan du ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
 - **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** kopieras den valda tjänstinstansinställningen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
-- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans inklusive historikkörningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
+- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans inklusive historikkörningar. Motsvarande utdatauppsättning kommer att tas bort från Experience Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
 - **[!UICONTROL Data source]**: En länk till datauppsättningen som används av den här instansen. Om du använder flera datauppsättningar och markerar hyperlänktexten, öppnas förhandsvisningsprogramvaran för datauppsättningen.
 - **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
 - **[!UICONTROL Score definition]**: En snabb översikt över målet som du konfigurerade för den här instansen.

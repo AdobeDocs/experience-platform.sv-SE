@@ -2,9 +2,9 @@
 title: Data Landing Zone Source
 description: Lär dig ansluta Data Landing Zone till Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1358'
+source-wordcount: '1362'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Den här sidan är specifik för [!DNL Data Landing Zone] *source*-anslutningen i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *destination*-kopplingen finns på [[!DNL Data Landing Zone] dokumentationssidan för målet](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
-[!DNL Data Landing Zone] är ett [!DNL Azure Blob]-lagringsgränssnitt som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till plattformen. Du har åtkomst till en [!DNL Data Landing Zone]-behållare per sandlåda, och den totala datavolymen för alla behållare är begränsad till den totala datamängden som tillhandahålls med plattformsprodukten och tjänstlicensen. Alla Experience Platform-kunder etableras med en [!DNL Data Landing Zone]-behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
+[!DNL Data Landing Zone] är ett [!DNL Azure Blob]-lagringsgränssnitt som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till Experience Platform. Du har åtkomst till en [!DNL Data Landing Zone]-behållare per sandlåda, och den totala datavolymen för alla behållare är begränsad till den totala datamängden som levereras med din Experience Platform-licens för produkter och tjänster. Alla Experience Platform-kunder etableras med en [!DNL Data Landing Zone]-behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
 
 [!DNL Data Landing Zone] har stöd för SAS-baserad autentisering och dess data skyddas med standardsäkerhetsmekanismer för lagring i [!DNL Azure Blob] vid vila och överföring. Med SAS-baserad autentisering kan du få säker åtkomst till din [!DNL Data Landing Zone]-behållare via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk. Experience Platform tillämpar en strikt 7-dagars förfallotid för alla filer och mappar som överförts till en [!DNL Data Landing Zone]-behållare. Alla filer och mappar tas bort efter sju dagar.
 
@@ -54,7 +54,7 @@ När du har valt anslutningsmetod måste du sedan ange **visningsnamn** och **[!
 
 >[!TIP]
 >
->Du kan hämta dina [!DNL Data Landing Zone]-autentiseringsuppgifter från källkatalogen i plattformsgränssnittet.
+>Du kan hämta dina [!DNL Data Landing Zone]-autentiseringsuppgifter från källkatalogen i Experience Platform-användargränssnittet.
 
 Ange din [!DNL Data Landing Zone] SAS-URL och välj sedan **Nästa**
 
@@ -318,6 +318,6 @@ Dokumentationen nedan innehåller information om hur du hämtar data från din [
 
 ### Använda gränssnittet
 
-- [Anslut [!DNL Data Landing Zone] till plattformen med användargränssnittet](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
+- [Anslut [!DNL Data Landing Zone] till Experience Platform med användargränssnittet](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
 - [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
 

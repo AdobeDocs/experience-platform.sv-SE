@@ -1,10 +1,10 @@
 ---
-description: Lär dig hur du uppdaterar ett befintligt källkodsdataflöde i användargränssnittet för Experience Platform.
+description: Lär dig hur du uppdaterar ett befintligt källkodsdataflöde i användargränssnittet i Experience Platform.
 title: Uppdatera ett dataflöde för Source Connection i användargränssnittet
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: c3082a8769f317407197b3fd05b36cfe00b36470
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -17,8 +17,8 @@ I den här självstudiekursen beskrivs hur du uppdaterar ett befintligt dataflö
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Uppdatera dataflöden {#update-dataflows}
 
@@ -27,7 +27,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >title="Utgångsdatum för datauppsättning"
 >abstract="Den här kolumnen anger antalet dagar som måldatauppsättningen har kvar innan den automatiskt upphör att gälla.<br>Ett dataflöde misslyckas om måldatauppsättningen har gått ut. För att förhindra att ett dataflöde misslyckas kontrollerar du att måldatauppsättningen är inställd på att förfalla på rätt datum. Mer information om hur du uppdaterar förfallodatum finns i dokumentationen."
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sources]** i den vänstra navigeringen och sedan **[!UICONTROL Dataflows]** i den övre rubriken.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen och sedan **[!UICONTROL Dataflows]** i den övre rubriken.
 
 ![Källkatalogen med huvudfliken för dataflöden markerad.](../../images/tutorials/update-dataflows/catalog.png)
 

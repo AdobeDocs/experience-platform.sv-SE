@@ -2,9 +2,9 @@
 title: Skapa en Source-anslutning för Google Cloud-lagring i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en lagringskälla i Google Cloud med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 3258ccd7-757c-4c4a-b7bb-0e8c9de3b50a
-source-git-commit: 7181cb92dd44d8005fe1054020ffeb36c309b42e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -34,28 +34,28 @@ Om du redan har en giltig [!DNL Google Cloud Storage]-anslutning kan du hoppa ö
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till dina [!DNL Google Cloud Storage]-data på plattformen måste du ange följande värden:
+Du måste ange följande värden för att komma åt dina [!DNL Google Cloud Storage]-data på Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| Åtkomstnyckel-ID | En 61-siffrig, alfanumerisk sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen. |
-| Nyckel för hemlig åtkomst | En 40-siffrig, base-64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen. |
+| Åtkomstnyckel-ID | En alfanumerisk sträng på 61 tecken som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Experience Platform. |
+| Nyckel för hemlig åtkomst | En 40-siffrig, base-64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Experience Platform. |
 | Buckennamn | Namnet på din [!DNL Google Cloud Storage]-bucket. Du måste ange ett bucketnamn om du vill ge åtkomst till en viss undermapp i molnlagringen. |
 | Mappsökväg | Sökvägen till mappen som du vill ge åtkomst till. |
 
 Mer information om dessa värden finns i handboken [Google Cloud Storage HMAC keys](https://cloud.google.com/storage/docs/authentication/hmackeys#overview). Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] översikten](../../../../connectors/cloud-storage/google-cloud-storage.md).
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Google Cloud Storage]-konto till plattformen.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Google Cloud Storage]-konto till Experience Platform.
 
 ## Anslut ditt [!DNL Google Cloud Storage]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under kategorin [!UICONTROL Cloud storage] väljer du **[!UICONTROL Google Cloud Storage]** och sedan **[!UICONTROL Add data]**.
 
-![Plattformens användargränssnitt visar källkatalogsidan.](../../../../images/tutorials/create/google-cloud-storage/catalog.png)
+![Användargränssnittsskärmen i Experience Platform visar källkatalogsidan.](../../../../images/tutorials/create/google-cloud-storage/catalog.png)
 
 Sidan **[!UICONTROL Connect to Google Cloud Storage]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -63,7 +63,7 @@ Sidan **[!UICONTROL Connect to Google Cloud Storage]** visas. På den här sidan
 
 Om du vill ansluta ett befintligt konto markerar du det [!DNL Google Cloud Storage]-konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Plattformsanvändargränssnittet visar den befintliga kontosidan för en Google Cloud-lagringskälla](../../../../images/tutorials/create/google-cloud-storage/existing.png)
+![Experience Platform-gränssnittsskärmen visar den befintliga kontosidan för en Google Cloud-lagringskälla](../../../../images/tutorials/create/google-cloud-storage/existing.png)
 
 ### Nytt konto
 
@@ -71,9 +71,9 @@ Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account
 
 När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Plattformsanvändargränssnittet visar den nya kontosidan för en Google Cloud-lagringskälla.](../../../../images/tutorials/create/google-cloud-storage/new.png)
+![Experience Platform UI-skärmen visar den nya kontosidan för en Google Cloud-lagringskälla.](../../../../images/tutorials/create/google-cloud-storage/new.png)
 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Google Cloud Storage]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Google Cloud Storage]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Experience Platform](../../dataflow/batch/cloud-storage.md).

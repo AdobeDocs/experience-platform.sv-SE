@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Fråga service och data Distiller frågor och svar
 description: Det här dokumentet innehåller vanliga frågor och svar om Query Service och Data Distiller. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: ef4c7f20710f56ca0de7c0dfdb99751ff2fe8ebe
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '5006'
+source-wordcount: '5011'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,7 @@ Följande steg beskriver hur du visar en tabellvy av en datauppsättning via anv
 - När du har loggat in på Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen i användargränssnittet för att navigera till [!UICONTROL Datasets]-instrumentpanelen.
 - Fliken för datauppsättningar [!UICONTROL Browse] öppnas. Du kan använda sökfältet för att förfina de tillgängliga alternativen. Välj en datauppsättning i den lista som visas.
 
-![Kontrollpanelen för datauppsättningar i plattformsgränssnittet med sökfältet och en datauppsättning markerad.](./images/troubleshooting/dataset-selection.png)
+![Kontrollpanelen för datauppsättningar i Experience Platform-gränssnittet med sökfältet och en datauppsättning markerad.](./images/troubleshooting/dataset-selection.png)
 
 - Skärmen [!UICONTROL Datasets activity] visas. Välj **[!UICONTROL Preview dataset]** om du vill öppna en dialogruta med XDM-schemat och en tabellvy med separerade data från den valda datauppsättningen. Mer information finns i [förhandsgranskningen av en datauppsättningsdokumentation](../catalog/datasets/user-guide.md#preview-a-dataset)
 
@@ -287,7 +287,7 @@ SELECT count(1) FROM myTableName
 ### Kan jag ta prov på mina data?
 
 +++Svar
-Den här funktionen är ett pågående arbete. Information kommer att bli tillgänglig i [versionsinformationen](../release-notes/latest/latest.md) och i dialogrutorna för plattformsgränssnittet när funktionen är klar för lansering.
+Den här funktionen är ett pågående arbete. Information kommer att göras tillgänglig i [versionsinformationen](../release-notes/latest/latest.md) och i Experience Platform-dialogrutor så snart funktionen är klar för publicering.
 +++
 
 ### Vilka hjälpfunktioner stöds av frågetjänsten?
@@ -522,7 +522,7 @@ Det finns ingen gräns för samtidighet för frågor eftersom batchfrågor körs
 Det finns övervaknings- och varningsfunktioner för att kontrollera frågeaktiviteter och status. Mer information finns i loggintegreringen för [frågetjänstens granskningslogg](./data-governance/audit-log-guide.md) och i [frågeloggarna](./ui/overview.md#log) .
 +++
 
-### Finns det något sätt att återställa uppdateringar? Om det till exempel finns ett fel eller om vissa beräkningar behöver konfigureras om när data skrivs tillbaka till plattformen, hur ska detta scenario hanteras?
+### Finns det något sätt att återställa uppdateringar? Om det till exempel finns ett fel eller om vissa beräkningar behöver konfigureras om när data skrivs tillbaka till Experience Platform, hur ska då detta scenario hanteras?
 
 +++Svar
 För närvarande stöder vi inte återställningar eller uppdateringar på det sättet.
@@ -563,7 +563,7 @@ Det finns tre sätt att begränsa åtkomsten. De är följande:
 
 +++
 
-### När data har returnerats av Query Service, finns det några kontroller som kan köras av Platform för att säkerställa att inga skyddade data har returnerats?
+### När data har returnerats av Query Service, finns det några kontroller som Experience Platform kan köra för att säkerställa att inga skyddade data har returnerats?
 
 - Frågetjänsten stöder attributbaserad åtkomstkontroll. Du kan begränsa åtkomsten till data på kolumn-/lövnivå och/eller strukturnivå. Mer information om attributbaserad åtkomstkontroll finns i dokumentationen.
 
@@ -652,7 +652,7 @@ Infrastruktur för serverdelen har ständigt förbättrats för att optimera anv
 ### &quot;Skapa fråga&quot; fastnar &quot;Anslutningen initieras..&quot; när du försöker ansluta till frågetjänsten. Hur åtgärdar jag problemet?
 
 +++Svar
-Om frågan &quot;Skapa fråga&quot; har fastnat på &quot;Initialiserar anslutning..&quot; är detta troligen ett anslutnings- eller sessionsproblem. Uppdatera webbläsaren om du använder användargränssnittet för plattformen och försök igen.
+Om frågan &quot;Skapa fråga&quot; har fastnat på &quot;Initialiserar anslutning..&quot; är detta troligen ett anslutnings- eller sessionsproblem. Uppdatera webbläsaren om du använder Experience Platform-gränssnittet och försök igen.
 +++
 
 ## Datauppsättningsexempel

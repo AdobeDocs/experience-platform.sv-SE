@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Koppla DbVisualizer till frågetjänsten
 description: Det här dokumentet går igenom stegen för att ansluta DbVisualizer till Adobe Experience Platform Query Service.
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '878'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ I det här dokumentet beskrivs stegen för att ansluta databasverktyget [!DNL Db
 
 Den här guiden kräver att du redan har tillgång till skrivbordsappen [!DNL DbVisualizer] och känner till hur du navigerar i gränssnittet. Om du vill hämta datorprogrammet [!DNL DbVisualizer] eller om du vill ha mer information läser du [officiell [!DNL DbVisualizer] dokumentation](https://www.dbvis.com/download/).
 
-Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL  DbVisualizer] till Experience Platform måste du ha tillgång till arbetsytan Frågor i plattformsgränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
+Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL  DbVisualizer] till Experience Platform måste du ha tillgång till arbetsytan Frågor i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
 
 ## Skapa en databasanslutning {#connect-database}
 
@@ -39,12 +39,12 @@ Ange sedan drivrutinsegenskaperna som beskrivs i tabellen nedan.
 
 | Egenskap | Beskrivning |
 | ------ | ------ |
-| `PGHOST` | Värdnamnet för servern [!DNL PostgreSQL]. Det här värdet är dina **[!UICONTROL Host]-autentiseringsuppgifter** i Experience Platform. |
+| `PGHOST` | Värdnamnet för servern [!DNL PostgreSQL]. Det här värdet är dina **[!UICONTROL Host]-autentiseringsuppgifter för Experience Platform**. |
 | `ssl` | Definiera SSL-värdet `1` för att aktivera användning av SSL. |
 | `sslmode` | Detta styr nivån på SSL-skyddet. Du rekommenderas att använda SSL-läget `require` när du ansluter tredjepartsklienter till Adobe Experience Platform. Läget `require` ser till att kryptering krävs för all kommunikation och att nätverket är betrott för att ansluta till rätt server. Server SSL-certifikatvalidering krävs inte. |
-| `user` | Användarnamnet som är kopplat till databasen är ditt företags-ID. Det är en alfanumerisk sträng som slutar på `@Adobe.Org`. Det här värdet är dina **[!UICONTROL Username]-autentiseringsuppgifter** i Experience Platform. |
+| `user` | Användarnamnet som är kopplat till databasen är ditt företags-ID. Det är en alfanumerisk sträng som slutar på `@Adobe.Org`. Det här värdet är dina **[!UICONTROL Username]-autentiseringsuppgifter för Experience Platform**. |
 
-Använd sökfältet för att hitta varje egenskap och markera sedan motsvarande cell för parameterns värde. Cellen markeras med blått. Ange autentiseringsuppgifterna för plattformen i värdefältet och välj **[!DNL Apply]** för att lägga till drivrutinsegenskapen.
+Använd sökfältet för att hitta varje egenskap och markera sedan motsvarande cell för parameterns värde. Cellen markeras med blått. Ange dina Experience Platform-autentiseringsuppgifter i värdefältet och välj **[!DNL Apply]** för att lägga till drivrutinsegenskapen.
 
 >[!NOTE]
 >
@@ -54,9 +54,9 @@ Kolumnen [!DNL Edited] visar en bockmarkering som anger att parametervärdet har
 
 ### Autentiseringsuppgifter för Input Query Service {#query-service-credentials}
 
-Om du vill hitta de autentiseringsuppgifter som krävs för att ansluta BBVisualizer med frågetjänsten loggar du in på plattformsgränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar autentiseringsuppgifterna **host**, **port**, **database**, **username** och **password** finns i handboken för [autentiseringsuppgifter](../ui/credentials.md).
+Om du vill hitta de autentiseringsuppgifter som krävs för att ansluta BBVisualizer till frågetjänsten loggar du in på Experience Platform-gränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar autentiseringsuppgifterna **host**, **port**, **database**, **username** och **password** finns i handboken för [autentiseringsuppgifter](../ui/credentials.md).
 
-![Sidan Autentiseringsuppgifter på arbetsytan för Experience Platform-frågor med autentiseringsuppgifter och Utgående autentiseringsuppgifter markerade.](../images/clients/dbvisualizer/query-service-credentials-page.png)
+![Sidan Autentiseringsuppgifter på arbetsytan Experience Platform Queries med Autentiseringsuppgifter och Utgångsuppgifter markerade.](../images/clients/dbvisualizer/query-service-credentials-page.png)
 
 >[!IMPORTANT]
 >
@@ -68,9 +68,9 @@ Om du vill kräva ett användar-ID och lösenordsbaserad autentisering varje gå
 
 Markera kryssrutorna **[!DNL Require Userid]** och **[!DNL Require Password]** på panelen Anslutningsautentisering och välj sedan **[!DNL Apply]**. Mer information om att [ange autentiseringsalternativ](https://confluence.dbvis.com/display/UG140/Setting+Common+Authentication+Options) finns i den officiella dokumentationen.
 
-## Anslut till plattform
+## Anslut till Experience Platform
 
-Du kan upprätta en anslutning med hjälp av autentiseringsuppgifter som förfaller eller inte förfaller. Om du vill skapa en anslutning väljer du fliken **[!DNL Connection]** på fliken för objektvyn i [!DNL PostgreSQL] och anger dina inloggningsuppgifter för Experience Platform för följande inställningar. Kompletterande instruktioner för att [konfigurera en manuell anslutning](https://confluence.dbvis.com/display/UG100/Setting+Up+a+Connection+Manually) finns tillgängliga på den officiella DBVisualizer-webbplatsen.
+Du kan upprätta en anslutning med hjälp av autentiseringsuppgifter som förfaller eller inte förfaller. Om du vill skapa en anslutning väljer du fliken **[!DNL Connection]** på fliken för objektvyn i [!DNL PostgreSQL] och anger dina Experience Platform-autentiseringsuppgifter för följande inställningar. Kompletterande instruktioner för att [konfigurera en manuell anslutning](https://confluence.dbvis.com/display/UG100/Setting+Up+a+Connection+Manually) finns tillgängliga på den officiella DBVisualizer-webbplatsen.
 
 >[!NOTE]
 >
@@ -79,11 +79,11 @@ Du kan upprätta en anslutning med hjälp av autentiseringsuppgifter som förfal
 | Anslutningsparameter | Beskrivning |
 |---|---|
 | **[!UICONTROL Name]** | Skapa ett namn för anslutningen. Du bör ange ett användarvänligt namn för att känna igen anslutningen. |
-| **[!UICONTROL Database Server]** | Det här är dina **[!UICONTROL Host]**-autentiseringsuppgifter för Experience Platform. |
+| **[!UICONTROL Database Server]** | Det här är dina Experience Platform **[!UICONTROL Host]**-autentiseringsuppgifter. |
 | **[!UICONTROL Database Port]** | Porten för [!DNL Query Service]. Du måste använda porten **80** eller **5432** för att ansluta till [!DNL Query Service]. |
-| **[!UICONTROL Database]** | Använd Experience Platform **[!UICONTROL Database]**-autentiseringsuppgifter: `prod:all`. |
-| **[!UICONTROL Database Userid]** | Detta är ditt organisations-ID för plattformen. Använd autentiseringsuppgifter för Experience Platform **[!UICONTROL Username]**. ID:t har formatet `ORG_ID@AdobeOrg`. |
-| **[!UICONTROL Database Password]** | Den här alfanumeriska strängen är din **[!UICONTROL Password]**-autentiseringsuppgift i Experience Platform. Om du vill använda autentiseringsuppgifter som inte förfaller är det här värdet de sammanfogade argumenten från `technicalAccountID` och `credential` som hämtats i JSON-konfigurationsfilen. Lösenordsvärdet har följande format: {technicalAccountId}:{credential}. Konfigurations-JSON-filen för icke-förfallande autentiseringsuppgifter är en engångshämtning under initieringen som Adobe inte har någon kopia av. |
+| **[!UICONTROL Database]** | Använd ditt Experience Platform **[!UICONTROL Database]**-autentiseringsvärde: `prod:all`. |
+| **[!UICONTROL Database Userid]** | Detta är ditt företags-ID för Experience Platform. Använd ditt Experience Platform **[!UICONTROL Username]**-autentiseringsvärde. ID:t har formatet `ORG_ID@AdobeOrg`. |
+| **[!UICONTROL Database Password]** | Den här alfanumeriska strängen är din Experience Platform **[!UICONTROL Password]**-autentiseringsuppgift. Om du vill använda autentiseringsuppgifter som inte förfaller är det här värdet de sammanfogade argumenten från `technicalAccountID` och `credential` som hämtats i JSON-konfigurationsfilen. Lösenordsvärdet har följande format: {technicalAccountId}:{credential}. JSON-konfigurationsfilen för icke-förfallodatum är en engångshämtning under initieringen som Adobe inte behåller någon kopia av. |
 
 När du har angett alla relevanta autentiseringsuppgifter väljer du **[!DNL Connect]**.
 

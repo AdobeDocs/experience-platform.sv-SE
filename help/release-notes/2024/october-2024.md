@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2024
 description: Versionsinformationen för Adobe Experience Platform i oktober 2024.
 exl-id: 5e2112b8-2a0a-4c1e-af3e-b00d8cc4f4cf
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1138'
-ht-degree: 100%
+source-wordcount: '1139'
+ht-degree: 97%
 
 ---
 
@@ -86,7 +86,7 @@ För mer information om [!DNL Segmentation Service] kan du läsa [segmenterings�
 
 ## Sandlådor {#sandboxes}
 
-Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose det här behovet tillhandahåller Experience Platform sandlådor som partitionerar en enda Platform-sinstans i separata virtuella miljöer för att utveckla och förbättra program för digitala upplevelser.
+Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 **Nya eller uppdaterade funktioner**
 

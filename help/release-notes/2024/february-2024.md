@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2024
 description: Versionsinformationen för Adobe Experience Platform från februari 2024.
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
-source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
-workflow-type: ht
-source-wordcount: '1243'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '1247'
+ht-degree: 91%
 
 ---
 
@@ -24,7 +24,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 ## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i Experience Platform användargränssnitt och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -95,7 +95,7 @@ Mer allmän information om destinationer finns i [översikten över destinatione
 
 ## Sandlådor {#sandboxes}
 
-Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose det här behovet tillhandahåller Experience Platform sandlådor som partitionerar en enda Platform-sinstans i separata virtuella miljöer för att utveckla och förbättra program för digitala upplevelser.
+Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 **Nya eller uppdaterade funktioner**
 
@@ -109,13 +109,13 @@ Mer information om sandlådor finns i [översikten över sandlådor](../../sandb
 
 ## Segmenteringstjänst {#segmentation}
 
-Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Experience Platform] och är tillgängliga för alla Adobe-lösningar.
 
 **Ny funktion**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontomålgrupper | Kontomålgrupper är nu allmänt tillgängliga! Nu kan du använda kontosegmentering för att förenkla och förbättra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper i både B2B- och B2P-utgåvorna av Real-Time Customer Platform. I den här versionen kan du använda personbaserade målgrupper som en grund för kontobaserade målgrupper, lägga till sökfunktioner, stödja användningen av anpassade entiteter och säkerställa dataförvaltning. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/types/account-audiences.md). |
+| Kontomålgrupper | Kontomålgrupper är nu allmänt tillgängliga! Nu kan ni använda kontosegmentering för att göra marknadsföringssegmenteringen från personbaserade målgrupper mer enkel och avancerad till kontobaserade målgrupper i både B2B- och B2P-utgåvorna av Real-Time Customer Experience Platform. I den här versionen kan du använda personbaserade målgrupper som en grund för kontobaserade målgrupper, lägga till sökfunktioner, stödja användningen av anpassade entiteter och säkerställa dataförvaltning. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/types/account-audiences.md). |
 
 {style="table-layout:auto"}
 

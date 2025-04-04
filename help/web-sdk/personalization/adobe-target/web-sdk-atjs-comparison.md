@@ -3,14 +3,14 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 9489b5345c2b13b9d05b26d646aa7f1576840fb8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2182'
+source-wordcount: '2183'
 ht-degree: 2%
 
 ---
 
-# Jämföra biblioteket at.js med Web SDK
+# Jämföra biblioteket at.js med SDK
 
 ## Översikt
 
@@ -22,7 +22,7 @@ Den här artikeln innehåller en översikt över skillnaderna mellan biblioteket
 
 Vi låter våra kunder ladda ned biblioteket direkt från Adobe Experience Cloud på fliken Implementering. At.js-biblioteket anpassas med inställningar som kunden har: clientCode, imsOrgId osv.
 
-### Installera Web SDK
+### Installera SDK
 
 Den färdiga versionen finns tillgänglig på ett CDN. Du kan referera till biblioteket på CDN direkt på din sida eller hämta och lagra det på din egen infrastruktur. Den finns i minifierade och ominifierade format. Den ominiatyrversionen är användbar i felsökningssyfte.
 
@@ -71,7 +71,7 @@ window.adobe.target.init(window, document, {
 [Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
 
 
-### Konfigurera Web SDK
+### Konfigurera SDK för webben
 
 Konfigurationen för SDK görs med kommandot [`configure`](/help/web-sdk/commands/configure/overview.md). Kommandot `configure` anropas *alltid* först.
 
@@ -83,9 +83,9 @@ Om du använder at.js 2.x och aktiverar inställningen `pageLoadEnabled`, kommer
 
 ### Använda Web SDK
 
-Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) kan hämtas och återges automatiskt av SDK:n.
+Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) kan hämtas och återges automatiskt av SDK.
 
-Om du vill begära och automatiskt återge Target-erbjudanden använder du kommandot `sendEvent` och ställer in alternativet `renderDecisions` på `true`. Om du gör det tvingas SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
+Om du vill begära och automatiskt återge Target-erbjudanden använder du kommandot `sendEvent` och ställer in alternativet `renderDecisions` på `true`. Detta tvingar SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
 
 Exempel:
 
@@ -105,7 +105,7 @@ alloy("sendEvent", {
 });
 ```
 
-Experience Platform Web SDK skickar automatiskt ut ett meddelande med erbjudanden som kördes av WEB SDK. Det här är ett exempel på hur nyttolasten för en meddelandebegäran ser ut:
+Experience Platform Web SDK skickar automatiskt ut ett meddelande med erbjudanden som körs av WEB SDK, det här är ett exempel på hur nyttolasten för en meddelandebegäran ser ut:
 
 ```json
 {
@@ -219,9 +219,9 @@ adobe.target.getOffers({
 
 ### Använda Web SDK
 
-Kör ett `sendEvent`-kommando med ett särskilt omfång under `decisionScopes`: `__view__`. Vi använder det här omfånget som en signal för att hämta alla sidladdningsaktiviteter från Target och hämta alla vyer i förväg. Web SDK kommer även att försöka utvärdera alla VEC-vybaserade aktiviteter. Inaktivering av förhämtning av vy stöds för närvarande inte i Web SDK.
+Kör ett `sendEvent`-kommando med ett särskilt omfång under `decisionScopes`: `__view__`. Vi använder det här omfånget som en signal för att hämta alla sidladdningsaktiviteter från Target och hämta alla vyer i förväg. SDK kommer också att försöka utvärdera alla VEC-vybaserade aktiviteter. Inaktivering av förhämtning av vy stöds för närvarande inte i Web SDK.
 
-Om du vill få åtkomst till innehåll för personalisering kan du tillhandahålla en callback-funktion som anropas efter att SDK har fått ett lyckat svar från servern. Ditt återanrop är ett resultatobjekt som kan innehålla egenskapen propositioner som innehåller allt returnerat personaliseringsinnehåll.
+Om du vill få åtkomst till anpassat innehåll kan du tillhandahålla en callback-funktion som anropas när SDK har fått ett lyckat svar från servern. Ditt återanrop är ett resultatobjekt som kan innehålla egenskapen propositioner som innehåller allt returnerat personaliseringsinnehåll.
 
 Exempel:
 
@@ -657,7 +657,7 @@ alloy("sendEvent", {
 
 ### Använda at.js
 
-Använd funktionen `adobe.target.triggerView`. Den här funktionen kan anropas när en ny sida läses in eller när en komponent på en sida återges på nytt. adobe.target.triggerView() ska implementeras för enkelsidiga program (SPA) för att använda Visual Experience Composer (VEC) för att skapa A/B-tester och XT-aktiviteter (Experience Targeting). Om adobe.target.triggerView() inte implementeras på platsen kan VEC inte användas för SPA.
+Använd funktionen `adobe.target.triggerView`. Den här funktionen kan anropas när en ny sida läses in eller när en komponent på en sida återges på nytt. adobe.target.triggerView() ska implementeras för Single page-applikationer (SPA) för att använda Visual Experience Composer (VEC) för att skapa A/B-tester och XT-aktiviteter (Experience Targeting). Om adobe.target.triggerView() inte implementeras på platsen kan VEC inte användas för SPA.
 
 **Exempel**
 
@@ -670,7 +670,7 @@ adobe.target.triggerView("homeView")
 
 ### Använda Web SDK
 
-Om du vill aktivera eller signalera ett ensidigt program anger du egenskapen `web.webPageDetails.viewName` under alternativet `xdm` för kommandot `sendEvent`. Web SDK kommer att kontrollera visningscachen, om det finns erbjudanden för `viewName` som anges i `sendEvent` kommer den att köra dem och skicka en händelse för visningsmeddelande.
+Om du vill aktivera eller signalera ett ensidigt program anger du egenskapen `web.webPageDetails.viewName` under alternativet `xdm` för kommandot `sendEvent`. Web SDK kommer att kontrollera visningscachen, om det finns erbjudanden för `viewName` som anges i `sendEvent` kommer de att köras och en visningsmeddelandehändelse skickas.
 
 **Exempel**
 
@@ -712,7 +712,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 
 >[!IMPORTANT]
 >
->Kontrollera att du använder Platform Web SDK version 2.6.0 eller senare.
+>Kontrollera att du använder Experience Platform Web SDK version 2.6.0 eller senare.
 
 Svarstoken returneras som en del av `propositions` som visas i resultatet av kommandot `sendEvent`. Varje förslag innehåller en matris på `items`, och varje objekt har ett `meta`-objekt ifyllt med svarstoken om de är aktiverade i gränssnittet för måladministratörer. [Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
@@ -760,12 +760,12 @@ alloy("sendEvent", {
 Med at.js kan du hantera flimmer genom att ställa in `bodyHidingEnabled: true` så att at.js är den som tar hand om
 fördölja de anpassade behållarna innan den hämtar och tillämpar DOM-ändringarna.
 Sidavsnitten som innehåller anpassat innehåll kan döljas i förväg genom att åsidosätta at.js `bodyHiddenStyle`.
-Som standard döljs hela HTML `body` av `bodyHiddenStyle`.
+Som standard döljer `bodyHiddenStyle` hela HTML `body`.
 Båda inställningarna kan åsidosättas med `window.targetGlobalSettings`. `window.targetGlobalSettings` ska placeras innan du läser in at.js.
 
 ### Använda Web SDK
 
-Med hjälp av Web SDK kan kunden ställa in sin tidigare dolda stil i kommandot configure, som i exemplet nedan:
+Med Web SDK kan man lägga in en egen stil i kommandot configure, som i exemplet nedan:
 
 ```javascript
 alloy("configure", {
@@ -776,7 +776,7 @@ alloy("configure", {
 });
 ```
 
-När du läser in ett asynkront Web SDK rekommenderar vi att följande utdrag matas in på sidan innan Web SDK matas in:
+När du läser in Web SDK async rekommenderar vi att följande utdrag matas in på sidan innan Web SDK matas in:
 
 ```html
 <script>
@@ -884,7 +884,7 @@ Data flödar sedan enligt följande:
 
 ### Använda Web SDK
 
-Web SDK har även stöd för:
+Web SDK har också stöd för:
 
 * Loggning på klientsidan för analyser
 * Loggning på serversidan i Analytics
@@ -1027,7 +1027,7 @@ alloy("sendEvent", {
 });
 ```
 
-## Hur använder jag Target Recommendations?
+## Hur använder jag målrekommendationer?
 
 ### Använda at.js
 
@@ -1249,14 +1249,14 @@ At.js visar dessa felsökningsfunktioner:
 * Mbox Debug - at.js loggar varje åtgärd
 * Målspårning - med en mbox-spårningstoken som genereras i Bullseye finns ett spårningsobjekt med information som ingår i beslutsprocessen under objektet `window.___target_trace`
 
-Obs! Alla dessa felsökningsfunktioner är tillgängliga med utökade funktioner i [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
+Obs! Alla dessa felsökningsfunktioner är tillgängliga med förbättrade funktioner i [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
 
 ### Använda Web SDK
 
 Du har flera felsökningsfunktioner när du använder Web SDK:
 
-* Använder [Assurance](/help/assurance/home.md)
-* [Felsökning för Web SDK har aktiverats](/help/web-sdk/use-cases/debugging.md)
-* Använd [Web SDK-övervakningskopplingar](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
+* Använda [Assurance](/help/assurance/home.md)
+* [Felsökning för SDK på webben har aktiverats](/help/web-sdk/use-cases/debugging.md)
+* Använd [SDK-webbövervakningskopplingar](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
 * Använd [Adobe Experience Platform Debugger](/help/debugger/home.md)
 * Målspårning

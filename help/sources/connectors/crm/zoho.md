@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Zoho CRM;zoho crm;Zoho;zoho
+keywords: Experience Platform;home;populära topics;Zoho CRM;zoho crm;Zoho;zoho
 solution: Experience Platform
 title: Zoho CRM Source Connector - översikt
 description: Lär dig hur du ansluter Zoho CRM till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 4a010453-3d09-4a47-b04e-5789ae4af48c
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >[!DNL Zoho CRM]-källan kommer att bli inaktuell i slutet av juni 2025.
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-providers omfattar [!DNL Zoho CRM].
 
@@ -27,7 +27,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 ## Hämta autentiseringsuppgifter för [!DNL Zoho CRM]
 
-Innan du kan hämta data från ditt [!DNL Zoho CRM]-konto till plattformen måste du först hämta dina autentiseringsuppgifter för att autentisera din [!DNL Zoho CRM]-källa. Följ stegen nedan för att hämta klient-ID, klienthemlighet, åtkomsttoken och uppdatera token.
+Innan du kan överföra data från ditt [!DNL Zoho CRM]-konto till Experience Platform måste du först hämta dina autentiseringsuppgifter för att autentisera din [!DNL Zoho CRM]-källa. Följ stegen nedan för att hämta klient-ID, klienthemlighet, åtkomsttoken och uppdatera token.
 
 ### Registrera ditt program
 
@@ -43,21 +43,21 @@ När du skapar en auktoriseringsbegäran måste du fylla i värden för både **
 
 ### Generera åtkomsttoken och uppdatera token
 
-När du har hämtat din anslagstoken kan du generera din [åtkomst- och uppdateringstoken](https://www.zoho.com/crm/developer/docs/api/v2/access-refresh.html) genom att göra en begäran om POST till `{ACCOUNTS_URL}/oauth/v2/token` och samtidigt ange ditt klient-ID, din klienthemlighet, din anslagstoken och omdirigerings-URI. Under det här steget måste du även inkludera `grant_type` som en parameter och ange värdet som `"authorization_code"`.
+När du har hämtat din anslagstoken kan du generera din [åtkomst- och uppdateringstoken](https://www.zoho.com/crm/developer/docs/api/v2/access-refresh.html) genom att göra en POST-begäran till `{ACCOUNTS_URL}/oauth/v2/token` och samtidigt ange ditt klient-ID, din klienthemlighet, din anslagstoken och omdirigerings-URI. Under det här steget måste du även inkludera `grant_type` som en parameter och ange värdet som `"authorization_code"`.
 
 En lyckad begäran returnerar dina token för åtkomst och uppdatering, som du sedan kan använda för att autentisera.
 
 Detaljerade anvisningar om hur du hämtar dina autentiseringsuppgifter finns i [[!DNL Zoho CRM] autentiseringsguiden](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html).
 
-## Anslut [!DNL Zoho CRM] till [!DNL Platform] med API:er
+## Anslut [!DNL Zoho CRM] till [!DNL Experience Platform] med API:er
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Zoho CRM] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Zoho CRM] till Experience Platform med API:er eller användargränssnittet:
 
 - [Skapa en  [!DNL Zoho CRM] basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/zoho.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
-## Anslut [!DNL Zoho CRM] till [!DNL Platform] med användargränssnittet
+## Anslut [!DNL Zoho CRM] till [!DNL Experience Platform] med användargränssnittet
 
 - [Skapa en  [!DNL Zoho CRM] källanslutning i användargränssnittet](../../tutorials/ui/create/crm/zoho.md)
 - [Skapa ett dataflöde för en CRM-källanslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)

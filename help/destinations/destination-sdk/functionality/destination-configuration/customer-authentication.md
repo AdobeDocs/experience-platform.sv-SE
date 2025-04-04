@@ -2,29 +2,29 @@
 description: Lär dig hur du konfigurerar en autentiseringsmekanism för ditt mål och får information om vad användare ser i användargränssnittet beroende på vilken autentiseringsmetod du väljer.
 title: Konfiguration av kundautentisering
 exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1094'
 ht-degree: 0%
 
 ---
 
 # Konfiguration av kundautentisering
 
-Experience Platform erbjuder stor flexibilitet i de autentiseringsprotokoll som är tillgängliga för partners och kunder. Du kan konfigurera ditt mål så att det stöder någon av de autentiseringsmetoder som är branschstandard, som [!DNL OAuth2], autentisering med innehavartoken, lösenordsautentisering och många andra.
+Experience Platform ger stor flexibilitet i de autentiseringsprotokoll som är tillgängliga för partners och kunder. Du kan konfigurera ditt mål så att det stöder någon av de autentiseringsmetoder som är branschstandard, som [!DNL OAuth2], autentisering med innehavartoken, lösenordsautentisering och många andra.
 
-På den här sidan beskrivs hur du konfigurerar målet med den autentiseringsmetod du föredrar. Baserat på den autentiseringskonfiguration som du använder när du skapar målet, kommer kunderna att se olika typer av autentiseringssidor när de ansluter till målet i användargränssnittet i Experience Platform.
+På den här sidan beskrivs hur du konfigurerar målet med den autentiseringsmetod du föredrar. Baserat på den autentiseringskonfiguration som du använder när du skapar ditt mål, kommer kunderna att se olika typer av autentiseringssidor när de ansluter till målet i Experience Platform användargränssnitt.
 
 Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
-* [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-destination-configuration)
+* [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-Innan kunder kan exportera data från Platform till ditt mål måste de skapa en ny anslutning mellan Experience Platform och ditt mål genom att följa stegen som beskrivs i självstudiekursen [målanslutning](../../../ui/connect-destination.md).
+Innan kunder kan exportera data från Experience Platform till ditt mål måste de skapa en ny anslutning mellan Experience Platform och ditt mål genom att följa stegen som beskrivs i självstudiekursen [målanslutning](../../../ui/connect-destination.md).
 
 När [skapar ett mål](../../authoring-api/destination-configuration/create-destination-configuration.md) via Destination SDK, definierar avsnittet `customerAuthenticationConfigurations` vad kunderna ser på [autentiseringsskärmen](../../../ui/connect-destination.md#authenticate). Beroende på autentiseringstypen för målet måste kunderna tillhandahålla olika autentiseringsdetaljer, som:
 
-* För mål som använder [grundläggande autentisering](#basic) måste användare ange ett användarnamn och lösenord direkt på Experience Platform användargränssnittets autentiseringssida.
+* För mål som använder [grundläggande autentisering](#basic) måste användare ange ett användarnamn och lösenord direkt på autentiseringssidan för Experience Platform UI.
 * För mål som använder [innehavarautentisering](#bearer) måste användarna ange en innehavartoken.
 * För mål som använder [OAuth2-auktorisering](#oauth2) omdirigeras användare till målets inloggningssida där de kan logga in med sina autentiseringsuppgifter.
 * För [Amazon S3](#s3)-mål måste användare ange sin [!DNL Amazon S3]-åtkomstnyckel och hemlig nyckel.
@@ -35,15 +35,15 @@ Du kan konfigurera kundautentiseringsinformation via slutpunkten `/authoring/des
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-I den här artikeln beskrivs alla kompatibla konfigurationer för kundautentisering som du kan använda för ditt mål, och det som kunder ser i användargränssnittet i Experience Platform visas baserat på den autentiseringsmetod som du har ställt in för ditt mål.
+I den här artikeln beskrivs alla kompatibla konfigurationer för kundautentisering som du kan använda för ditt mål, och det som visas för kunderna i användargränssnittet i Experience Platform utifrån den autentiseringsmetod som du har konfigurerat för ditt mål visas.
 
 >[!IMPORTANT]
 >
->Konfigurationen för kundautentisering kräver inte att du konfigurerar några parametrar. Du kan kopiera och klistra in kodavsnitten som visas på den här sidan i dina API-anrop när [skapar](../../authoring-api/destination-configuration/create-destination-configuration.md) eller [uppdaterar](../../authoring-api/destination-configuration/update-destination-configuration.md) en målkonfiguration, och dina användare ser motsvarande autentiseringsskärm i plattformsgränssnittet.
+>Konfigurationen för kundautentisering kräver inte att du konfigurerar några parametrar. Du kan kopiera och klistra in kodavsnitten som visas på den här sidan i dina API-anrop när [skapar](../../authoring-api/destination-configuration/create-destination-configuration.md) eller [uppdaterar](../../authoring-api/destination-configuration/update-destination-configuration.md) en målkonfiguration, och dina användare ser motsvarande autentiseringsskärm i Experience Platform-gränssnittet.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -105,7 +105,7 @@ Konfigurera avsnittet `customerAuthenticationConfigurations` via `/destinations`
 
 ## OAuth 2-autentisering {#oauth2}
 
-Användare väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för Twitternas anpassade målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns på den dedikerade [Destination SDK OAuth 2-autentiseringssidan](oauth2-authorization.md).
+Användare väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för Twitter-målet för anpassade målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns på den dedikerade [Destination SDK OAuth 2-autentiseringssidan](oauth2-authorization.md).
 
 ![Gränssnittsåtergivning med OAuth 2-autentisering](../../assets/functionality/destination-configuration/oauth2-authentication-ui.png)
 
@@ -193,7 +193,7 @@ Konfigurera parametern `customerAuthenticationConfigurations` i slutpunkten `/de
 
 ## SFTP med autentisering med SSH-nyckel
 
-[!DNL SFTP]-autentisering med [!DNL SSH]-nyckel stöds för filbaserade mål i Experience Platform.
+[!DNL SFTP]-autentisering med nyckeln [!DNL SSH] stöds för filbaserade mål i Experience Platform.
 
 När du konfigurerar SFTP med autentiseringstypen SSH-nyckel måste användarna ange SFTP-användarnamnet och SSH-nyckeln samt SFTP-domänen och -porten (standardporten är 22).
 

@@ -1,11 +1,11 @@
 ---
-title: Single-page Application Implementation för Adobe Experience Platform Web SDK
-description: Lär dig hur du skapar en single page application (SPA)-implementering av Adobe Experience Platform Web SDK med Adobe Target.
+title: Single-page Application Implementation for the Adobe Experience Platform Web SDK
+description: Lär dig hur du skapar en SPA-implementering (Single-page application) av Adobe Experience Platform Web SDK med Adobe Target.
 keywords: mål;adobe target;xdm views; views;single page applications;SPA;SPA lifecycle;client-side;AB testing;AB;Experience targeting;XT;VEC
 exl-id: cc48c375-36b9-433e-b45f-60e6c6ea4883
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1817'
+source-wordcount: '1818'
 ht-degree: 0%
 
 ---
@@ -13,25 +13,25 @@ ht-degree: 0%
 
 # Programimplementering på en sida
 
-Adobe Experience Platform Web SDK innehåller många funktioner som gör det möjligt för ditt företag att utföra personalisering på nästa generations klientteknik, till exempel ensidiga program (SPA).
+Adobe Experience Platform Web SDK har många funktioner som gör det möjligt för ditt företag att utföra personalisering på nästa generations klientteknik, som SPA (Single-page applications).
 
 Traditionella webbplatser arbetade på&quot;sida-till-sida&quot;-navigeringsmodeller, som annars kallas för flersidiga program, där webbplatsdesign var nära kopplad till webbadresser och övergångar mellan olika webbsidor kräver en sidladdning.
 
 Moderna webbprogram, till exempel ensidiga program, har i stället antagit en modell som möjliggör snabb användning av webbläsargränssnittsåtergivning, som ofta är oberoende av sidomladdning. De här upplevelserna kan triggas av kundinteraktioner som rullningar, klick och markörrörelser. I takt med att de moderna webbens paradigmer har utvecklats fungerar inte längre de traditionella generiska eventernas relevans, till exempel en sidladdning, för personalisering och experimenterande.
 
-![Diagram som visar SPA livscykel jämfört med traditionell sidlivscykel.](assets/spa-vs-traditional-lifecycle.png)
+![Diagram som visar SPA-livscykeln jämfört med traditionell sidlivscykel.](assets/spa-vs-traditional-lifecycle.png)
 
-## Fördelar med Platform Web SDK för SPA
+## Fördelar med Experience Platform Web SDK för SPA
 
 Nedan följer några fördelar med att använda Adobe Experience Platform Web SDK för dina ensidiga program:
 
 * Möjlighet att cachelagra alla erbjudanden vid sidinläsning för att minska antalet serveranrop till ett enda serveranrop.
 * Förbättra användarupplevelsen på webbplatsen avsevärt eftersom erbjudandena visas direkt via cachen utan fördröjning som introducerats av traditionella serveranrop.
-* Med en enda kodrad och en gång-för-utvecklarkonfiguration kan marknadsförarna skapa och köra A/B- och Experience Targeting-aktiviteter (XT) via Visual Experience Composer (VEC) på era SPA.
+* Med en enda kodrad och en engångskonfiguration för utvecklare kan marknadsförarna skapa och köra A/B- och Experience Targeting-aktiviteter (XT) via Visual Experience Composer (VEC) på ert SPA.
 
 ## XDM-vyer och enkelsidiga program
 
-Adobe Target VEC for SPA utnyttjar konceptet Vyer: en logisk grupp visuella element som tillsammans utgör en SPA. Ett enkelsidigt program kan därför betraktas som en övergång via Vyer i stället för som URL-adresser baserade på användarinteraktioner. En vy kan vanligtvis representera en hel plats eller grupperade visuella element inom en plats.
+Adobe Target VEC för SPA utnyttjar konceptet Vyer: en logisk grupp visuella element som tillsammans utgör en SPA-upplevelse. Ett enkelsidigt program kan därför betraktas som en övergång via Vyer i stället för som URL-adresser baserade på användarinteraktioner. En vy kan vanligtvis representera en hel plats eller grupperade visuella element inom en plats.
 
 För att ytterligare förklara vad Vyer är använder följande exempel en hypotetisk e-handelsplats online som implementerats i React för att utforska exempelvyer.
 
@@ -59,7 +59,7 @@ Begreppet Vyer kan utvidgas mycket mer än så. Detta är bara några exempel p�
 
 ## Implementera XDM-vyer
 
-XDM-vyer kan användas i Adobe Target för att marknadsförarna ska kunna köra A/B- och XT-tester på SPA via Visual Experience Composer. Detta kräver att du utför följande steg för att slutföra en engångsinstallation av en utvecklare:
+XDM-vyer kan användas i Adobe Target för att marknadsförarna ska kunna köra A/B- och XT-tester på SPA-program via Visual Experience Composer. Detta kräver att du utför följande steg för att slutföra en engångsinstallation av en utvecklare:
 
 1. Installera [Adobe Experience Platform Web SDK](/help/web-sdk/install/overview.md)
 2. Bestäm alla XDM-vyer i ditt enkelsidiga program som du vill anpassa.
@@ -84,7 +84,7 @@ XDM-vyer kan användas i Adobe Target för att marknadsförarna ska kunna köra 
 
 ## `sendEvent()` funktionsexempel
 
-I det här avsnittet beskrivs tre exempel på hur du anropar funktionen `sendEvent()` i React för en hypotetisk e-SPA.
+I det här avsnittet beskrivs tre exempel som visar hur du anropar funktionen `sendEvent()` i React för en hypotetisk SPA för e-handel.
 
 ### Exempel 1: A/B-teststartsida
 
@@ -221,7 +221,7 @@ När du har definierat dina XDM-vyer och implementerat `sendEvent()` med dessa X
 
 >[!NOTE]
 >
->Om du vill använda VEC för SPA måste du installera och aktivera [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
+>Om du vill använda VEC för ditt SPA måste du installera och aktivera [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
 
 ### Panelen Ändringar
 
@@ -243,7 +243,7 @@ Om du klickar på en åtgärd markeras elementet på platsen där den här åtg�
 | Flytta | Flyttar åtgärden till en sidinläsningshändelse eller någon annan vy som redan finns på panelen Ändringar.<br/><br/>**Sidinläsningshändelse:** Alla åtgärder som motsvarar sidinläsningshändelsen tillämpas på den första sidinläsningen i webbprogrammet. <br/><br/>**Obs!** När en flyttåtgärd har utförts måste du navigera till vyn i VEC via Browse för att se om flyttningen var en giltig åtgärd. Om åtgärden inte kan tillämpas på vyn visas ett fel. |
 | Ta bort | Tar bort åtgärden. |
 
-## Använda VEC för SPA exempel
+## Använda VEC för SPA-exempel
 
 I det här avsnittet beskrivs tre exempel på hur du använder Visual Experience Composer för att skapa åtgärder och ändringar för A/B- och XT-aktiviteter.
 

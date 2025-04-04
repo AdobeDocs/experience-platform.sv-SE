@@ -1,10 +1,10 @@
 ---
-title: Skapa en Marketo Engage Source-anslutning och ett dataflöde för anpassade aktivitetsdata i användargränssnittet
+title: Skapa en Marketo Engage Source Connection och ett dataflöde för anpassade aktivitetsdata i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet för att överföra anpassade aktivitetsdata till Adobe Experience Platform.
 exl-id: 05a7b500-11d2-4d58-be43-a2c4c0ceeb87
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1417'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
@@ -22,12 +22,12 @@ Utöver [standardaktiviteter](../../../../connectors/adobe-applications/mapping/
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Verktyget för automatisk generering av B2B-namnutrymmen och scheman](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md): Med verktyget för automatisk generering av B2B-namnutrymmen och scheman kan du använda [!DNL Postman] för att automatiskt generera värden för B2B-namnutrymmen och scheman. Du måste slutföra B2B-namnutrymmen och scheman först innan du skapar en [!DNL Marketo]-källanslutning och ett dataflöde.
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata med.
    * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i användargränssnittet.
 * [Identitetsnamnutrymmen](../../../../../identity-service/features/namespaces.md): Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] som fungerar som indikatorer för det sammanhang som en identitet relateras till. En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme.
 * [[!DNL Real-Time Customer Profile]](/help/profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Hämta din anpassade aktivitetsinformation
 
@@ -41,17 +41,17 @@ Gränssnittet uppdateras och visar dina anpassade aktiviteter, inklusive informa
 
 Välj **Fält** i den översta rubriken om du vill visa fälten som är kopplade till din anpassade aktivitet. På den här sidan kan du visa namn, API-namn, beskrivningar och datatyper för fälten i din anpassade aktivitet. Information om enskilda fält kommer att användas i ett senare steg när du skapar ett schema.
 
-![Marketo sida med information om anpassade aktivitetsfält i användargränssnittet för Marketo Engage.](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity-fields.png)
+![Marketo sida med information om anpassade aktivitetsfält i Marketo Engage-gränssnittet.](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity-fields.png)
 
 ## Ställ in fältgrupper för anpassade aktiviteter i B2B-aktivitetsschemat
 
-Markera **[!UICONTROL Browse]** på kontrollpanelen *[!UICONTROL Schemas]* i användargränssnittet för Experience Platform och välj sedan **[!UICONTROL B2B Activity]** i listan med scheman.
+I *[!UICONTROL Schemas]*-kontrollpanelen i Experience Platform-gränssnittet väljer du **[!UICONTROL Browse]** och sedan **[!UICONTROL B2B Activity]** i listan med scheman.
 
 >[!TIP]
 >
 >Använd sökfältet för att underlätta navigeringen i schemalistan.
 
-![Schemaarbetsytan i användargränssnittet i Experience Platform med B2B-aktivitetsschemat markerat.](../../../../images/tutorials/create/marketo-custom-activities/b2b-activity.png)
+![Schemaarbetsytan i Experience Platform-gränssnittet med B2B-aktivitetsschemat markerat.](../../../../images/tutorials/create/marketo-custom-activities/b2b-activity.png)
 
 ### Skapa en ny fältgrupp för anpassad aktivitet
 
@@ -91,13 +91,13 @@ Det sista steget i att förbereda schemat är att lägga till enskilda fält i f
 
 När schemainställningarna är klara kan du nu skapa ett dataflöde för dina anpassade aktivitetsdata.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
 Välj **[!UICONTROL Marketo Engage]** under kategorin [!UICONTROL Adobe applications]. Välj sedan **[!UICONTROL Add data]** för att skapa ett nytt [!DNL Marketo]-dataflöde.
 
-![Källkatalogen i användargränssnittet i Experience Platform med Marketo Engage-källan markerad.](../../../../images/tutorials/create/marketo/catalog.png)
+![Källkatalogen i Experience Platform UI med Marketo Engage-källan markerad.](../../../../images/tutorials/create/marketo/catalog.png)
 
 ### Markera data
 
@@ -154,7 +154,7 @@ Om du vill lägga till anpassade aktivitetsdata i ett befintligt dataflöde änd
 
 När dataflödet är klart kan du använda [frågetjänsten](../../../../../query-service/home.md) för att filtrera aktiviteter efter anpassade aktivitetsdata.
 
-När anpassade aktiviteter hämtas till Platform blir API-namnet för den anpassade aktiviteten automatiskt `eventType`. Använd `eventType={API_NAME}` för att filtrera efter anpassade aktivitetsdata.
+När anpassade aktiviteter hämtas till Experience Platform blir API-namnet för den anpassade aktiviteten automatiskt `eventType`. Använd `eventType={API_NAME}` för att filtrera efter anpassade aktivitetsdata.
 
 ```sql
 SELECT * FROM with_custom_activities_ds_today WHERE eventType='aepCustomActivityDemo1' 
@@ -169,8 +169,8 @@ SELECT * FROM $datasetName WHERE eventType IN ('aepCustomActivityDemo1', 'aepCus
 
 Bilden nedan visar ett exempel på en SQL-sats i [frågeredigeraren](../../../../../query-service/ui/user-guide.md) som filtrerar efter anpassade aktivitetsdata.
 
-![Plattformsgränssnitt som visar ett frågeexempel för anpassade aktiviteter.](../../../../images/tutorials/create/marketo-custom-activities/queries.png)
+![Experience Platform-gränssnitt som visar ett frågeexempel för anpassade aktiviteter.](../../../../images/tutorials/create/marketo-custom-activities/queries.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du konfigurerat ett plattformsschema för [!DNL Marketo] anpassade aktivitetsdata och skapat ett dataflöde för att överföra dessa data till plattformen. Allmän information om källan [!DNL Marketo] finns i [[!DNL Marketo] källöversikten](../../../../connectors/adobe-applications/marketo/marketo.md).
+Genom att följa den här självstudiekursen har du konfigurerat ett Experience Platform-schema för [!DNL Marketo] anpassade aktivitetsdata och skapat ett dataflöde för att överföra dessa data till Experience Platform. Allmän information om källan [!DNL Marketo] finns i [[!DNL Marketo] källöversikten](../../../../connectors/adobe-applications/marketo/marketo.md).

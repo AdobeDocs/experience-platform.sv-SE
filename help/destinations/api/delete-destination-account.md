@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;ta bort målkonton;ta bort;api
+keywords: Experience Platform;home;populära topics;flow service;delete destination accounts;delete;api
 solution: Experience Platform
 title: Ta bort ett målkonto med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort ett målkonto med API:t för Flow Service.
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '761'
-ht-degree: 0%
+source-wordcount: '762'
+ht-degree: 9%
 
 ---
 
 # Ta bort ett målkonto med API:t för Flow Service
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 Innan du aktiverar data måste du ansluta till målet genom att först konfigurera ett målkonto. I den här självstudiekursen beskrivs stegen för att ta bort målkonton som inte längre behövs med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
->Det finns endast stöd för att ta bort målkonton i API:t för Flow Service. Det går inte att ta bort destinationskonton med hjälp av användargränssnittet i Experience Platform.
+>Det finns endast stöd för att ta bort målkonton i API:t för Flow Service. Det går inte att ta bort målkonton med Experience Platform-gränssnittet.
 
 ## Komma igång {#get-started}
 
@@ -28,8 +28,8 @@ Den här självstudiekursen kräver att du har ett giltigt anslutnings-ID. Anslu
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ta bort ett målkonto med API:t [!DNL Flow Service].
 
@@ -39,13 +39,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -53,7 +53,7 @@ Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow
 >
 >Om rubriken `x-sandbox-name` inte anges löses förfrågningar under sandlådan `prod`.
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * `Content-Type: application/json`
 
@@ -64,7 +64,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Det första steget i att ta bort ett målkonto är att ta reda på det anslutnings-ID som motsvarar målkontot som du vill ta bort.
 
-I användargränssnittet för Experience Platform bläddrar du till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]** och markerar det konto som du vill ta bort genom att markera numret i kolumnen **[!UICONTROL Destinations]**.
+I Experience Platform-gränssnittet bläddrar du till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]** och markerar det konto som du vill ta bort genom att markera numret i kolumnen **[!UICONTROL Destinations]**.
 
 ![Välj målkonto som ska tas bort](/help/destinations/assets/api/delete-destination-account/select-destination-account.png)
 
@@ -148,7 +148,7 @@ A successful response returns the current details of your connection including i
 >
 >Innan du tar bort målkontot måste du ta bort alla befintliga dataflöden till målkontot.
 >Om du vill ta bort befintliga dataflöden kan du läsa sidorna nedan:
->* [Använd användargränssnittet i Experience Platform](../ui/delete-destinations.md) för att ta bort befintliga dataflöden;
+>* [Använd Experience Platform-gränssnittet](../ui/delete-destinations.md) för att ta bort befintliga dataflöden;
 >* [Använd API:t för Flow Service ](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
 
 När du har ett anslutnings-ID och har säkerställt att det inte finns några dataflöden till målkontot, kan du utföra en DELETE-begäran till [!DNL Flow Service]-API:t.
@@ -180,7 +180,7 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtex
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg
 

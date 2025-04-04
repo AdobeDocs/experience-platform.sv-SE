@@ -2,10 +2,10 @@
 title: Självvärdande bibliotek
 description: Lär dig hur du implementerar självvärdtjänster för dina kodbiblioteksbyggen i Adobe Experience Platform.
 exl-id: 8c3bf202-de7a-46e0-801f-0cede24865fd
-source-git-commit: 91b28fc284344b42020b0e49b64ac023e492d572
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '489'
-ht-degree: 0%
+source-wordcount: '491'
+ht-degree: 9%
 
 ---
 
@@ -13,17 +13,17 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Taggar i Adobe Experience Platform tillåter produktion av en uppsättning filer som kallas [build](../builds.md). Den här uppsättningen filer styr programmets beteende vid körning.
 
 Byggnader måste ligga någonstans så att klientenheterna kan hämta dem vid körning efter behov.
 
-Plattformen kan antingen hantera värdtjänsten för dessa filer åt dig eller så kan du göra det själv.
+Experience Platform kan antingen hantera värdtjänsten för dessa filer åt dig eller göra det själv.
 
 ## Hanteras av Adobe {#managed-by-adobe}
 
-Adobe är inte webbhotell. Om du väljer att låta Adobe hantera värdtjänsten levereras dina byggen till ett tredjepartsnätverk för innehållsleverans (CDN) som vi har ett kontrakt med.
+Adobe använder inte webbhotell. Om du väljer att låta Adobe hantera värdtjänsten levereras dina byggen till ett tredjepartsnätverk för innehållsleverans (CDN) som vi har ett kontrakt med.
 
 För närvarande är den primära CDN-leverantören Akamai. Filer på Akamai har domänen `assets.adobedtm.com`.
 
@@ -33,7 +33,7 @@ Det främsta skälet till att använda hanterade värdtjänster är bekvämlighe
 
 ## Självvärdande
 
-Om du inte vill att Adobe ska hantera dina värdbaserade filer måste du själv vara värd för dem. Om du vill ha dina filer som värd måste du skaffa de färdiga byggnaderna från Platform och vara ansvarig för att få filerna via företagets releasecykel till företagshanterade servrar.
+Om du inte vill att Adobe ska hantera dina värdbaserade filer måste du själv vara värd för dem. För att kunna lagra dina filer måste du få de färdiga byggnaderna från Experience Platform och vara ansvarig för att få filerna via företagets releasecykel på företagshanterade servrar.
 
 ### Varför använda självbetjäning?
 
@@ -44,7 +44,7 @@ Det finns många skäl att välja att ha egna byggfiler.
 * Du har specifika rubriker som du måste ange för dokumentskydd
 * Kraven för cachekontroll skiljer sig från standardinställningarna för Adobe
 * Du vill ha större kontroll över placeringen av kantnoder
-* Din organisation har säkerhetskrav och juridiska krav som hindrar dig från att använda alternativet Adobe
+* Din organisation har säkerhetskrav och juridiska krav som hindrar dig från att använda det Adobe-hanterade alternativet
 
 ### Självvärd
 

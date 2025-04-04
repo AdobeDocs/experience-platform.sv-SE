@@ -2,16 +2,16 @@
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: e90bd5abe502a7638ae54fca5eb0f051a925a2d8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1175'
 ht-degree: 0%
 
 ---
 
 # Dataförberedelse för datainsamling
 
-Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När du konfigurerar en [datastream](./overview.md) som är aktiverad för plattformen kan du använda Data Prep-funktioner för att mappa dina källdata till XDM när du skickar dem till Platform Edge Network.
+Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När du konfigurerar en [datastream](./overview.md) som har aktiverats av Experience Platform kan du använda funktionen Data Prep för att mappa dina källdata till XDM när du skickar dem till Experience Platform Edge Network.
 
 Alla data som skickas från en webbsida måste landas i Experience Platform som XDM. Det finns tre sätt att översätta data från ett datalager på sidan till den XDM som accepteras av Experience Platform:
 
@@ -52,7 +52,7 @@ En snabb demonstration av datainsamlingsprocessen finns i följande video:
 
 ## [!UICONTROL Select data] {#select-data}
 
-Välj **[!UICONTROL Save and Add Mapping]** när du har slutfört den grundläggande konfigurationen för ett datastream och steget **[!UICONTROL Select data]** visas. Härifrån måste du ange ett exempel på ett JSON-objekt som representerar strukturen för de data som du planerar att skicka till Platform.
+Välj **[!UICONTROL Save and Add Mapping]** när du har slutfört den grundläggande konfigurationen för ett datastream och steget **[!UICONTROL Select data]** visas. Här måste du ange ett exempel på ett JSON-objekt som representerar strukturen för de data som du planerar att skicka till Experience Platform.
 
 Om du vill hämta egenskaper direkt från datalagret måste JSON-objektet ha en enda rotegenskap, `data`. Underegenskaperna för objektet `data` ska sedan konstrueras på ett sätt som mappar till de datalageregenskaper som du vill hämta. Markera avsnittet nedan om du vill visa ett exempel på ett korrekt formaterat JSON-objekt med en `data`-rot.
 
@@ -162,7 +162,7 @@ Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i
 
 ## [!UICONTROL Mapping]
 
-Steg **[!UICONTROL Mapping]** visas, så att du kan mappa fälten i källdata till målhändelseschemat i Platform. Här kan du konfigurera mappningen på två sätt:
+Steg **[!UICONTROL Mapping]** visas, så att du kan mappa fälten i källdata till målhändelseschemats fält i Experience Platform. Här kan du konfigurera mappningen på två sätt:
 
 * [Skapa mappningsregler](#create-mapping) för den här datastream via en manuell process.
 * [Importera mappningsregler](#import-mapping) från en befintlig datastream.

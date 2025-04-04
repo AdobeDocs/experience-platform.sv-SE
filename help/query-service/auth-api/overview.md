@@ -3,9 +3,9 @@ title: API-guide för dataauktorisering i Distiller
 description: Lär dig hur du använder API:t för dataauktorisering i Distiller för att framtvinga nätverksbaserade IP-begränsningar för säkra anslutningar via SQL. Använd detta API för att förbättra dataåtkomstkontrollen för dina Adobe Experience Platform-data.
 role: Developer
 exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
-source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '424'
+source-wordcount: '425'
 ht-degree: 1%
 
 ---
@@ -24,13 +24,13 @@ Med detta API kan du konfigurera, tillämpa och övervaka IP-begränsningar för
 
 Följande funktioner gör att du kan definiera IP-baserade åtkomstbegränsningar, övervaka åtkomstförsök och anpassa säkerhetsinställningar för nätverket för Query Service:
 
-- **Definiera nätverksbaserade dataåtkomstkontroller**: Ange tillåtna IP-intervall för åtkomst till frågetjänsten. Den här begränsningen gäller specifikt för SQL-databasanslutningar, inklusive sådana som har gjorts via verktyg för Business Intelligence (BI), databasklienter eller programmeringsgränssnitt som JDBC.
+- **Definiera nätverksbaserade dataåtkomstkontroller**: Ange tillåtna IP-intervall för åtkomst till frågetjänsten. Den här begränsningen gäller specifikt för SQL-databasanslutningar, inklusive sådana som har gjorts via Business Intelligence (BI)-verktyg, databasklienter eller programmeringsgränssnitt som JDBC.
 - **Aktivera omfattande övervakning och aviseringar**: Alla åtkomstförsök, inklusive nekade anslutningar, loggas och skickas till [Adobe Experience Platform granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md) för realtidsspårning. Använd den här funktionen för att övervaka åtkomstmönster och upptäcka potentiella säkerhetsintrång.
 - **Konfigurera flexibla IP-begränsningar**: Ange tillåtna IP-adresser i både enskilda IP- och CIDR-blockformat. Dessa inställningar gäller för varje sandlåda, vilket gör att du kan anpassa nätverksbegränsningar efter dina specifika säkerhetsbehov.
 
 ## Gransknings- och övervakningsfunktioner
 
-För att ge stöd åt säkra dataåtkomstmetoder loggar frågetjänsten alla IP-adresser för klienter som har åtkomst till eller försöker få åtkomst till Experience Platform. Granskningshändelser, inklusive nekade anslutningar, skickas till plattformsgranskningsloggar. Detta gör att:
+För att ge stöd åt säkra dataåtkomstrutiner loggar Query Service alla klient-IP:n som har åtkomst till eller försöker få åtkomst till Experience Platform. Granskningshändelser, inklusive nekade anslutningar, skickas till Experience Platform granskningsloggar. Detta gör att:
 
 - **Realtidsövervakning**: Spåra IP-baserade åtkomstmönster för att säkerställa regelefterlevnad.
 - **Varning vid obehörig åtkomst**: Identifiera och svara på åtkomstförsök från obehöriga IP-adresser.

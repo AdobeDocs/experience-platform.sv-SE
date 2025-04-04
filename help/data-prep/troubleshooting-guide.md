@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;
+keywords: Experience Platform;home;populära topics;
 title: Felsökningsguide för dataprep
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Prep.
 exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
-source-git-commit: ff8f660c2b3a04d8b4b9d4f19891816a44069088
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1251'
 ht-degree: 0%
 
 ---
 
 # [!DNL Data Prep] felsökningsguide
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Data Prep] samt en felsökningsguide för vanliga fel. Om du har frågor och felsökningsinformation om plattforms-API:er i allmänhet kan du läsa [felsökningsguiden för Adobe Experience Platform API](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Data Prep] samt en felsökningsguide för vanliga fel. Om du har frågor och felsökningsinformation om Experience Platform API:er i allmänhet kan du läsa [felsökningsguiden för Adobe Experience Platform API](../landing/troubleshooting.md).
 
 ## Vanliga frågor och svar
 
@@ -20,7 +20,7 @@ Nedan följer en lista med vanliga frågor om [!DNL Data Prep] och deras svar.
 
 ### Hur åtgärdas transformeringsfel?
 
-[!DNL Data Prep] lokaliserar alla transformeringsfel till den kolumn där de inträffade. Det innebär att kolumnen har värdet null och att resten av raden kommer att fortsätta att bearbetas. Dessa transformeringsproblem loggas som **Varningar**. Vi rekommenderar att du granskar varningarna med jämna mellanrum och justerar omformningslogiken för att ta hänsyn till omformningsproblemen. Detta kommer att öka kvaliteten på de data som hämtas in till Experience Platform.
+[!DNL Data Prep] lokaliserar alla transformeringsfel till den kolumn där de inträffade. Det innebär att kolumnen har värdet null och att resten av raden kommer att fortsätta att bearbetas. Dessa transformeringsproblem loggas som **Varningar**. Vi rekommenderar att du granskar varningarna med jämna mellanrum och justerar omformningslogiken för att ta hänsyn till omformningsproblemen. Detta ökar kvaliteten på de data som hämtas in till Experience Platform.
 
 Om kolumnerna som markerats som **Obligatorisk** har värdet null på grund av transformeringsproblem, kommer raden inte att kapslas in. När partiell datainmatning är aktiverat kan du ange tröskelvärdet för sådana avvisningar innan hela flödet misslyckas. Om attributet null inte påverkade några valideringar på schemanivå kommer raden att fortsätta att kapslas.
 
@@ -38,7 +38,7 @@ Beräknade fält får innehålla högst 4 096 tecken.
 
 Kontrollera att datatypen för varje fält matchar den typ som är definierad i schemat. Dessutom måste villkor som&quot;Obligatorisk&quot;,&quot;Uppräkning&quot; och&quot;format&quot; följas.
 
-De data som importeras måste överensstämma med XDM-schemat (Experience Data Model) som definieras i Experience Platform. Om attributet inte matchar den förväntade typen eller det förväntade formatet som anges i schemat, kommer importen att misslyckas.
+De data som importeras måste följa XDM-schemat (Experience Data Model) som har definierats i Experience Platform. Om attributet inte matchar den förväntade typen eller det förväntade formatet som anges i schemat, kommer importen att misslyckas.
 
 Om dataförinställningsfunktionerna används kontrollerar du att omvandlingen resulterar i rätt attribut. Du kan granska attributen under konfigurationen av arbetsflödet för källor. Under mappningssteget väljer du **[!UICONTROL New field type]** och sedan **[!UICONTROL Add calculated field]**. Använd sedan beräkningsfältets gränssnitt för att förhandsgranska varje funktion.
 
@@ -58,7 +58,7 @@ Efter intag kan du använda databearbetaren för att rengöra, forma och hantera
 >
 >* Identitetstjänst: Du kan inte ta bort poster direkt i identitetstjänsten. Du måste ta bort hela profilen och överföra profilen igen med rätt poster med hjälp av API:t för profilborttagning.
 
-### Vad är bästa sättet att använda beräkningsfält i data från GIF?
+### Vad är bästa sättet att använda beräkningsfält i GIF-data?
 
 Du kan använda funktionerna för dataprep-mappning under mappningssteget för källdata till XDM-schema för att skapa ett nytt beräknat fält.
 

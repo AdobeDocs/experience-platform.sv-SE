@@ -5,7 +5,7 @@ title: Skapa en datahanteringsprincip i API:t
 type: Tutorial
 description: Lär dig hur du skapar en datahanteringsprincip med hjälp av API:t för principtjänsten.
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1199'
 ht-degree: 0%
@@ -26,10 +26,10 @@ Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en st
 
 Den här självstudiekursen kräver en fungerande förståelse av följande viktiga begrepp när du skapar och utvärderar policyer:
 
-* [Adobe Experience Platform datastyrning](../home.md): Ramverket som [!DNL Platform] använder för att framtvinga efterlevnad av dataanvändning.
+* [Adobe Experience Platform datastyrning](../home.md): Ramverket som [!DNL Experience Platform] använder för att framtvinga efterlevnad av dataanvändning.
    * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används i XDM-datafält, vilket anger begränsningar för hur data kan nås.
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Policy Service]-API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
@@ -44,7 +44,7 @@ Det första steget i att skapa en dataanvändningspolicy är att avgöra vilken 
 
 ### Slå upp en befintlig marknadsföringsåtgärd {#look-up}
 
-Du kan söka efter befintliga marknadsföringsåtgärder som ska utvärderas av din policy genom att göra en GET-förfrågan till någon av `/marketingActions`-slutpunkterna.
+Du kan söka efter befintliga marknadsföringsåtgärder som ska utvärderas av din policy genom att göra en GET-begäran till någon av `/marketingActions`-slutpunkterna.
 
 **API-format**
 
@@ -225,7 +225,7 @@ Det här uttrycket kallas ett principuttryck och är ett objekt som innehåller 
 >
 >Endast operatorerna OR och AND stöds.
 
-När du har konfigurerat ditt principuttryck kan du skapa en ny princip genom att göra en POST-förfrågan till slutpunkten `/policies/custom`.
+När du har konfigurerat ditt principuttryck kan du skapa en ny princip genom att göra en POST-begäran till slutpunkten `/policies/custom`.
 
 **API-format**
 

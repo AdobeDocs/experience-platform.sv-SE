@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;Förminska;förminska;hemmabruk
+keywords: Experience Platform;hemmabruk;populära ämnen;Förminska;förminska;e-handel
 solution: Experience Platform
 title: Skapa en anslutning till basen för Shopify-koppling med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du ansluter Shopify till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 36086c7f-813e-4fc5-9778-f9d55aba03b2
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '442'
+source-wordcount: '447'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ I den här självstudiekursen får du hjälp med att skapa en basanslutning för
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Sources]](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Platform]-tjänster.
-* [[!DNL Sandboxes]](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sources]](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Experience Platform]-tjänster.
+* [[!DNL Sandboxes]](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Shopify] med API:t [!DNL Flow Service].
 
@@ -39,15 +39,15 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Shopify] måste du ang
 
 Mer information om hur du kommer igång finns i det här [Förenkla autentiseringsdokumentet](https://shopify.dev/concepts/about-apis/authentication).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Shopify] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Shopify]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -106,4 +106,4 @@ Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslu
 Genom att följa den här självstudiekursen har du skapat en [!DNL Shopify]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att överföra E-Commerce-data till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/ecommerce.md)
+* [Skapa ett dataflöde för att överföra E-Commerce-data till Experience Platform med  [!DNL Flow Service] API](../../collect/ecommerce.md)

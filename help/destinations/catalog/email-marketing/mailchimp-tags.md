@@ -3,9 +3,9 @@ title: Mailchimp-taggar
 description: Med Mailchimp Tags-målet kan du exportera dina kontodata och aktivera dem i Mailchimp för att interagera med kontakterna.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1590'
+source-wordcount: '1601'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Jämfört med [!DNL Mailchimp Interest Categories] som du skulle använda för att sortera dina kontakter baserat på deras intressen och inställningar, är [!DNL Mailchimp Tags] tänkt att hantera prenumerationer på ämnen som dina kontakter kan vara intresserade av. *Obs! Experience Platform har också en anslutning för [!DNL Mailchimp Interest Categories], du kan checka ut den på sidan [[!DNL Mailchimp Interest Categories]](/help/destinations/catalog/email-marketing/mailchimp-interest-categories.md).*
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) drar nytta av slutpunkten [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/). Du kan **lägga till nya kontakter** eller **uppdatera taggar för befintliga [!DNL Mailchimp] kontakter** inom en befintlig [!DNL Mailchimp]-målgrupp efter att ha aktiverat dem inom en ny målgrupp. [!DNL Mailchimp Tags] använder de valda målgruppsnamnen från Platform som taggnamn i [!DNL Mailchimp].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) drar nytta av slutpunkten [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/). Du kan **lägga till nya kontakter** eller **uppdatera taggar för befintliga [!DNL Mailchimp] kontakter** inom en befintlig [!DNL Mailchimp]-målgrupp efter att ha aktiverat dem inom en ny målgrupp. [!DNL Mailchimp Tags] använder de valda målgruppsnamnen från Experience Platform som taggnamn i [!DNL Mailchimp].
 
 ## Användningsfall {#use-cases}
 
@@ -30,7 +30,7 @@ Försäljningsavdelningen i en organisation vill sända en e-postbaserad marknad
 
 ## Förhandskrav {#prerequisites}
 
-I avsnitten nedan finns information om eventuella krav som du måste ställa in i Experience Platform och [!DNL Mailchimp]. Där finns även information som du måste samla in innan du kan arbeta med [!DNL Mailchimp Tags]-målet.
+I avsnitten nedan finns information om eventuella krav som du måste konfigurera i Experience Platform och [!DNL Mailchimp]. Här finns även information som du måste samla in innan du kan arbeta med målet för [!DNL Mailchimp Tags].
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
@@ -38,7 +38,7 @@ Innan du aktiverar data till målet [!DNL Mailchimp Tags] måste du ha ett [sche
 
 ### Krav för målet [!DNL Mailchimp Tags] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Platform till ditt [!DNL Mailchimp Tags]-konto:
+Observera följande krav för att kunna exportera data från Experience Platform till ditt [!DNL Mailchimp Tags]-konto:
 
 #### Du måste ha ett [!DNL Mailchimp]-konto {#prerequisites-account}
 
@@ -88,7 +88,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -99,7 +99,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje målgrupp som valts i Platform uppdateras motsvarande [!DNL Mailchimp Tags]-segmentstatus med målgruppsstatus från Platform.</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje målgrupp som valts i Experience Platform uppdateras motsvarande [!DNL Mailchimp Tags]-segmentstatus med målgruppsstatus från Experience Platform.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -125,7 +125,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 
 {style="table-layout:auto"}
 
-![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar.](../../assets/catalog/email-marketing/mailchimp-tags/authenticate-destination.png)
+![Experience Platform UI, bild som visar hur du autentiserar.](../../assets/catalog/email-marketing/mailchimp-tags/authenticate-destination.png)
 
 Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]** med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
@@ -133,14 +133,14 @@ Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]*
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Skärmbild för plattformsgränssnitt som visar målinformationen.](../../assets/catalog/email-marketing/mailchimp-tags/destination-details.png)
+![Experience Platform UI-skärmbild med målinformation.](../../assets/catalog/email-marketing/mailchimp-tags/destination-details.png)
 
 | Fält | Beskrivning |
 | --- | --- |
 | **[!UICONTROL Name]** | Ett namn som du känner igen det här målet med i framtiden. |
 | **[!UICONTROL Description]** | En beskrivning som hjälper dig att identifiera det här målet i framtiden. |
 | **[!UICONTROL Data center]** | Ditt [!DNL Mailchimp]-konto `data center`. Mer information finns i avsnittet [Identifiera [!DNL Mailchimp] datacenter](#identify-data-center). |
-| **[!UICONTROL Audience Name (Please enter Data center first)]** | När du har angett **[!UICONTROL Data center]** fylls den här listrutan automatiskt i med målgruppsnamnen från ditt [!DNL Mailchimp]-konto. Välj den målgrupp som du vill uppdatera med data från Platform. |
+| **[!UICONTROL Audience Name (Please enter Data center first)]** | När du har angett **[!UICONTROL Data center]** fylls den här listrutan automatiskt i med målgruppsnamnen från ditt [!DNL Mailchimp]-konto. Välj den målgrupp som du vill uppdatera med data från Experience Platform. |
 
 {style="table-layout:auto"}
 
@@ -161,18 +161,18 @@ Läs [Aktivera målgrupper till direktuppspelningsmål](/help/destinations/ui/ac
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Mailchimp Tags] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Mailchimp Tags] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet.
 
 Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL Mailchimp Tags]:
 
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
 1. I fönstret **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select identity namespace]** och sedan identitetsnamnutrymmet `Email`.
 
-   ![Skärmbild för plattformsgränssnitt med Source-fält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
+   ![Experience Platform UI-skärmbild med Source-fält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
 
 1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och sedan identitetsnamnutrymmet `Email`.
 
-   ![Skärmbild för plattformsgränssnitt med målfält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
+   ![Experience Platform UI-skärmbild med målfält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
 
    Mappningarna mellan ditt XDM-profilschema och [!DNL Mailchimp Tags] visas nedan:
 
@@ -181,7 +181,7 @@ Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [
    | `IdentityMap: Email` | `Identity: Email` | Ja |
 
    Ett exempel med de slutförda mappningarna visas nedan:
-   ![Exempel på skärmbild för plattformsgränssnitt som visar fältmappningar.](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)
+   ![Exempel på skärmbild i Experience Platform UI som visar fältkopplingar.](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 

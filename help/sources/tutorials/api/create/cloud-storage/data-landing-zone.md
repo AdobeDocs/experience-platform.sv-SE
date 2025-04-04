@@ -2,9 +2,9 @@
 title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 1d4dd60180ef2a3cbf6dcd565c2f09dd575716b9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1408'
+source-wordcount: '1417'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Den här sidan är specifik för [!DNL Data Landing Zone] *source*-kopplingen i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *destination*-kopplingen finns på [[!DNL Data Landing Zone] dokumentationssidan för målet](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
+>Den här sidan är specifik för [!DNL Data Landing Zone] *source*-anslutningen i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *destination*-kopplingen finns på [[!DNL Data Landing Zone] dokumentationssidan för målet](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
 [!DNL Data Landing Zone] är en säker, molnbaserad fillagringsfunktion som hämtar filer till Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 
@@ -23,10 +23,10 @@ I den här självstudiekursen får du hjälp med att skapa en [!DNL Data Landing
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Den här självstudien kräver även att du läser guiden [komma igång med plattforms-API:er](../../../../../landing/api-guide.md) för att lära dig hur du autentiserar till plattforms-API:er och tolkar de exempelanrop som finns i dokumentationen.
+Den här självstudien kräver även att du läser guiden [komma igång med Experience Platform API:er](../../../../../landing/api-guide.md) för att lära dig hur du autentiserar Experience Platform API:er och tolkar de exempelanrop som finns i dokumentationen.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Data Landing Zone]-källanslutning med API:t [!DNL Flow Service].
 
@@ -104,7 +104,7 @@ Beroende på din leverantör returnerar en slutförd begäran följande:
 
 ## Hämta autentiseringsuppgifter för [!DNL Data Landing Zone]
 
-Om du vill hämta autentiseringsuppgifter för en [!DNL Data Landing Zone] gör du en GET-förfrågan till `/credentials`-slutpunkten för [!DNL Connectors] API:t.
+Om du vill hämta autentiseringsuppgifter för en [!DNL Data Landing Zone] gör du en GET-begäran till `/credentials`-slutpunkten för API:t [!DNL Connectors].
 
 **API-format**
 
@@ -150,7 +150,7 @@ Beroende på din leverantör returnerar en slutförd begäran följande:
 | `SASToken` | Underskriftstoken för delad åtkomst för din [!DNL Data Landing Zone]. Strängen innehåller all information som krävs för att godkänna en begäran. |
 | `storageAccountName` | Namnet på ditt lagringskonto. |
 | `SASUri` | Den delade åtkomstsignaturens URI för din [!DNL Data Landing Zone]. Den här strängen är en kombination av URI:n till [!DNL Data Landing Zone] som du autentiseras mot och dess motsvarande SAS-token. |
-| `expiryDate` | Det datum då din SAS-token upphör att gälla. Du måste uppdatera din token före förfallodatumet för att kunna fortsätta använda den i ditt program för att överföra data till [!DNL Data Landing Zone]. Om du inte uppdaterar din token manuellt före det angivna förfallodatumet uppdateras den automatiskt och en ny token skapas när GETENS inloggningsanrop utförs. |
+| `expiryDate` | Det datum då din SAS-token upphör att gälla. Du måste uppdatera din token före förfallodatumet för att kunna fortsätta använda den i ditt program för att överföra data till [!DNL Data Landing Zone]. Om du inte uppdaterar din token manuellt före det angivna förfallodatumet uppdateras den automatiskt och en ny token skapas när GET-inloggningsanropet utförs. |
 
 >[!TAB Svar på AWS]
 
@@ -287,7 +287,7 @@ public class Main {
 
 ## Uppdatera autentiseringsuppgifter för [!DNL Data Landing Zone]
 
-Du kan uppdatera `SASToken` genom att göra en POST-förfrågan till `/credentials`-slutpunkten för [!DNL Connectors] API:t.
+Du kan uppdatera din `SASToken` genom att göra en POST-begäran till `/credentials`-slutpunkten för [!DNL Connectors] API:t.
 
 **API-format**
 
@@ -330,7 +330,7 @@ Följande svar returnerar uppdaterade värden för `SASToken` och `SASUri`.
 
 ## Utforska landningszonens filstruktur och innehåll
 
-Du kan utforska filstrukturen och innehållet i landningszonen genom att göra en GET-förfrågan till `connectionSpecs`-slutpunkten för [!DNL Flow Service] API.
+Du kan utforska filstrukturen och innehållet i landningszonen genom att göra en GET-begäran till `connectionSpecs`-slutpunkten för [!DNL Flow Service] API.
 
 **API-format**
 
@@ -385,7 +385,7 @@ Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfr
 
 ## Förhandsgranska landningszonens filstruktur och innehåll
 
-Om du vill inspektera strukturen för en fil i din landningszon ska du utföra en GET-förfrågan och ange filens sökväg och typ som en frågeparameter.
+Om du vill inspektera strukturen för en fil i landningszonen utför du en GET-begäran och anger filens sökväg och typ som en frågeparameter.
 
 **API-format**
 
@@ -479,7 +479,7 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen, inklusive fi
 
 ### Använd `determineProperties` för att automatiskt identifiera filegenskapsinformation för en [!DNL Data Landing Zone]
 
-Du kan använda parametern `determineProperties` för att automatiskt identifiera egenskapsinformation för filinnehållet i [!DNL Data Landing Zone] när du anropar en GET för att utforska källans innehåll och struktur.
+Du kan använda parametern `determineProperties` för att automatiskt identifiera egenskapsinformation för filinnehållet i [!DNL Data Landing Zone] när du gör ett GET-anrop för att utforska innehållet och strukturen i källan.
 
 #### `determineProperties` använder fall
 
@@ -619,7 +619,7 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen, inklusive fi
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
+Om du vill skapa en källanslutning skickar du en POST-begäran till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
 
 
 **API-format**
@@ -656,8 +656,8 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Namnet på [!DNL Data Landing Zone]-källanslutningen. |
-| `data.format` | Formatet på de data som du vill hämta till plattformen. |
-| `params.path` | Sökvägen till filen som du vill hämta till plattformen. |
+| `data.format` | Formatet på de data du vill hämta till Experience Platform. |
+| `params.path` | Sökvägen till filen som du vill hämta till Experience Platform. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 
 **Svar**
@@ -673,4 +673,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hämtat dina [!DNL Data Landing Zone]-inloggningsuppgifter, utforskat filstrukturen för att hitta filen som du vill hämta till plattformen och skapat en källanslutning för att börja överföra dina data till plattformen. Du kan nu gå vidare till nästa självstudiekurs, där du får lära dig att [skapa ett dataflöde för att överföra molnlagringsdata till plattformen med  [!DNL Flow Service] API](../../collect/cloud-storage.md).
+Genom att följa den här självstudiekursen har du hämtat dina [!DNL Data Landing Zone]-inloggningsuppgifter, utforskat filstrukturen för att hitta filen som du vill hämta till Experience Platform och skapat en källanslutning för att börja överföra dina data till Experience Platform. Du kan nu gå vidare till nästa självstudiekurs, där du får lära dig hur du [skapar ett dataflöde för att överföra molnlagringsdata till Experience Platform med  [!DNL Flow Service] API](../../collect/cloud-storage.md).

@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;identityMap;identity map;Identity map;Schema design;Map;event modeling;event modeling;best practices;event;events;
+keywords: Experience Platform;home;populära topics;schema;Schema;XDM;fields;schemas;Schemas;identityMap;identity map;identity map;Schema design;map;event modeling;event modeling;best practices;event;events;
 solution: Experience Platform
 title: Klassen XDM ExperienceEvent
 description: Lär dig mer om klassen XDM ExperienceEvent och de bästa metoderna för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 5537485206c1625ca661d6b33f7bba08538a0fa3
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2712'
+source-wordcount: '2717'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 0%
 
 [!DNL XDM ExperienceEvent] är en XDM-standardklass (Experience Data Model). Använd den här klassen för att skapa en tidsstämplad ögonblicksbild av systemet när en viss händelse inträffar eller när en viss uppsättning villkor har nåtts.
 
-En Experience Event är ett faktaregister över vad som inträffat, inklusive tidpunkten och identiteten för den berörda personen. Händelser kan antingen vara explicita (direkt observerbara mänskliga åtgärder) eller implicita (upphöjda utan en direkt mänsklig åtgärd) och registreras utan aggregering eller tolkning. Mer högnivåinformation om hur den här klassen används i plattformens ekosystem finns i [XDM-översikten](../home.md#data-behaviors).
+En Experience Event är ett faktaregister över vad som inträffat, inklusive tidpunkten och identiteten för den berörda personen. Händelser kan antingen vara explicita (direkt observerbara mänskliga åtgärder) eller implicita (upphöjda utan en direkt mänsklig åtgärd) och registreras utan aggregering eller tolkning. Mer högnivåinformation om hur den här klassen används i Experience Platform ekosystem finns i [XDM-översikten](../home.md#data-behaviors).
 
 Själva klassen [!DNL XDM ExperienceEvent] tillhandahåller flera tidsserierelaterade fält till ett schema. Två av dessa fält (`_id` och `timestamp`) är **obligatoriska** för alla scheman som baseras på den här klassen, medan resten är valfria. Värdena för vissa av fälten fylls i automatiskt när data hämtas.
 
-![Strukturen för XDM ExperienceEvent så som den visas i användargränssnittet för plattformen.](../images/classes/experienceevent/structure.png)
+![Strukturen för XDM ExperienceEvent så som den visas i Experience Platform-gränssnittet.](../images/classes/experienceevent/structure.png)
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `_id`<br>**(Obligatoriskt)** | Fältet Experience Event Class `_id` identifierar unika händelser som är inkapslade i Adobe Experience Platform. Det här fältet används för att spåra en enskild händelses unika karaktär, för att förhindra datadubblering och för att slå upp händelsen i underordnade tjänster.<br><br>Om dubbletthändelser upptäcks kan plattformsprogram och -tjänster hantera dubbletterna på olika sätt. Duplicerade händelser i profiltjänsten tas till exempel bort om händelsen med samma `_id` redan finns i profilarkivet.<br><br>I vissa fall kan `_id` vara en [Universally Unique Identifier (UUID)](https://datatracker.ietf.org/doc/html/rfc4122) eller [Global Unique Identifier (GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>Om du direktuppspelar data från en källanslutning eller direkt hämtar från en Parquet-fil, bör du generera det här värdet genom att sammanfoga en viss kombination av fält som gör händelsen unik. Exempel på händelser som kan sammanfogas är primärt ID, tidsstämpel, händelsetyp och så vidare. Det sammanfogade värdet måste vara en `uri-reference`-formaterad sträng, vilket innebär att alla kolontecken måste tas bort. Efteråt bör det sammanfogade värdet hashas med SHA-256 eller någon annan algoritm som du väljer.<br><br>Det är viktigt att särskilja att **det här fältet inte representerar en identitet som är relaterad till en enskild person**, utan själva dataposten. Identitetsdata som relaterar till en person ska i stället begränsas till [identitetsfält](../schema/composition.md#identity) som tillhandahålls av kompatibla fältgrupper. |
+| `_id`<br>**(Obligatoriskt)** | Fältet Experience Event Class `_id` identifierar unika händelser som är inkapslade i Adobe Experience Platform. Det här fältet används för att spåra en enskild händelses unika karaktär, för att förhindra datadubblering och för att slå upp händelsen i underordnade tjänster.<br><br>Om dubbletthändelser upptäcks kan Experience Platform-program och -tjänster hantera dubbletterna på olika sätt. Duplicerade händelser i profiltjänsten tas till exempel bort om händelsen med samma `_id` redan finns i profilarkivet.<br><br>I vissa fall kan `_id` vara en [Universally Unique Identifier (UUID)](https://datatracker.ietf.org/doc/html/rfc4122) eller [Global Unique Identifier (GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>Om du direktuppspelar data från en källanslutning eller direkt hämtar från en Parquet-fil, bör du generera det här värdet genom att sammanfoga en viss kombination av fält som gör händelsen unik. Exempel på händelser som kan sammanfogas är primärt ID, tidsstämpel, händelsetyp och så vidare. Det sammanfogade värdet måste vara en `uri-reference`-formaterad sträng, vilket innebär att alla kolontecken måste tas bort. Efteråt bör det sammanfogade värdet hashas med SHA-256 eller någon annan algoritm som du väljer.<br><br>Det är viktigt att särskilja att **det här fältet inte representerar en identitet som är relaterad till en enskild person**, utan själva dataposten. Identitetsdata som relaterar till en person ska i stället begränsas till [identitetsfält](../schema/composition.md#identity) som tillhandahålls av kompatibla fältgrupper. |
 | `eventMergeId` | Om du använder [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) för att importera data representerar detta ID för den inkapslade batchen som gjorde att posten skapades. Det här fältet fylls i automatiskt av systemet när data hämtas. Det går inte att använda det här fältet utanför en Web SDK-implementering. |
 | `eventType` | En sträng som anger händelsens typ eller kategori. Det här fältet kan användas om du vill skilja mellan olika händelsetyper inom samma schema och datauppsättning, till exempel att skilja en produkthändelse från en tilläggshändelse i kundvagnen för ett detaljhandelsföretag.<br><br>Standardvärden för den här egenskapen finns i [appendix-avsnittet](#eventType), inklusive beskrivningar av deras avsedda användningsfall. Det här fältet är en utökningsbar uppräkning, vilket innebär att du även kan använda egna händelsetypsträngar för att kategorisera de händelser som du spårar.<br><br>`eventType` begränsar dig till att endast använda en händelse per träff i ditt program, och därför måste du använda beräkningsfält för att tala om för systemet vilken händelse som är viktigast. Mer information finns i avsnittet [Bästa tillvägagångssätt för beräknade fält](#calculated). |
 | `producedBy` | Ett strängvärde som beskriver producenten eller händelsens ursprung. Detta fält kan användas för att filtrera bort vissa händelseproducenter om det behövs för segmenteringsändamål.<br><br>Vissa föreslagna värden för den här egenskapen finns i avsnittet [appendix](#producedBy). Det här fältet är en utökningsbar uppräkning, vilket innebär att du kan använda dina egna strängar för att representera olika händelseproducenter. |
@@ -50,11 +50,11 @@ Genom att hålla tidsstämpeln på klassnivå åtskild från andra relaterade da
 
 Vissa interaktioner i dina upplevelseprogram kan leda till flera relaterade händelser som tekniskt sett delar samma händelsetidsstämpel och därför kan representeras som en enda händelsepost. Om en kund t.ex. visar en produkt på din webbplats kan detta resultera i en händelsepost som har två möjliga `eventType`-värden: en produktvyhändelse (`commerce.productViews`) eller en allmän sidvyhändelse (`web.webpagedetails.pageViews`). I dessa fall kan du använda beräkningsfält för att hämta de viktigaste attributen när flera händelser fångas in i en enda träff.
 
-Använd [Adobe Experience Platform Data Prep](../../data-prep/home.md) för att mappa, omvandla och validera data till och från XDM. Med de tillgängliga [mappningsfunktionerna](../../data-prep/functions.md) som tillhandahålls av tjänsten kan du anropa logiska operatorer för att prioritera, omvandla och/eller konsolidera data från poster med flera händelser när de hämtas till Experience Platform. I exemplet ovan kan du ange `eventType` som ett beräkningsfält som prioriterar en&quot;produktvy&quot; framför en&quot;sidvy&quot; när båda förekommer.
+Använd [Adobe Experience Platform Data Prep](../../data-prep/home.md) för att mappa, omvandla och validera data till och från XDM. Med de tillgängliga [mappningsfunktionerna](../../data-prep/functions.md) från tjänsten kan du anropa logiska operatorer för att prioritera, omvandla och/eller konsolidera data från poster med flera händelser när de hämtas till Experience Platform. I exemplet ovan kan du ange `eventType` som ett beräkningsfält som prioriterar en&quot;produktvy&quot; framför en&quot;sidvy&quot; när båda förekommer.
 
-Om du hämtar data manuellt till plattformen via användargränssnittet kan du läsa guiden om [beräknade fält](../../data-prep/ui/mapping.md#calculated-fields) för att få mer information om hur du skapar beräkningsfält.
+Om du hämtar data manuellt till Experience Platform via användargränssnittet kan du läsa guiden om [beräknade fält](../../data-prep/ui/mapping.md#calculated-fields) för att få mer information om hur du skapar beräkningsfält.
 
-Om du direktuppspelar data till plattformen med en källanslutning kan du konfigurera källan så att beräkningsfält används i stället. Mer information om hur du implementerar beräknade fält när du konfigurerar anslutningen finns i [dokumentationen för den aktuella källan](../../sources/home.md).
+Om du direktuppspelar data till Experience Platform via en källanslutning kan du konfigurera källan så att beräkningsfält används i stället. Mer information om hur du implementerar beräknade fält när du konfigurerar anslutningen finns i [dokumentationen för den aktuella källan](../../sources/home.md).
 
 ## Kompatibla schemafältgrupper {#field-groups}
 
@@ -62,7 +62,7 @@ Om du direktuppspelar data till plattformen med en källanslutning kan du konfig
 >
 >Namnen på flera fältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../field-groups/name-updates.md).
 
-Adobe tillhandahåller flera standardfältgrupper som kan användas med klassen [!DNL XDM ExperienceEvent]. Nedan följer en lista över några vanliga fältgrupper för klassen:
+Adobe innehåller flera standardfältgrupper som kan användas med klassen [!DNL XDM ExperienceEvent]. Nedan följer en lista över några vanliga fältgrupper för klassen:
 
 * [[!UICONTROL Adobe Analytics ExperienceEvent Full Extension]](../field-groups/event/analytics-full-extension.md)
 * [[!UICONTROL Balance Transfers]](../field-groups/event/balance-transfers.md)
@@ -120,7 +120,7 @@ I följande tabell visas de godkända värdena för `eventType` tillsammans med 
 | `commerce.productViews` | Den här händelsen spårar när en produkt har fått en eller flera vyer. |
 | `commerce.purchases` | Den här händelsen spårar när en beställning har godkänts. Detta är den enda nödvändiga åtgärden i en handelskonvertering. En köphändelse måste ha en produktlista som refereras. |
 | `commerce.saveForLaters` | Den här händelsen spårar när en produktlista har sparats för framtida bruk, till exempel en produktönskelista. |
-| `decisioning.propositionDisplay` | Den här händelsen används när Web SDK automatiskt skickar information om vad som visas på en sida. Du behöver dock inte den här händelsetypen om du redan inkluderar visningsinformation på andra sätt, som med sidträffar uppifrån och ned. Du kan välja vilken händelsetyp du vill längst ned i sidträffar. |
+| `decisioning.propositionDisplay` | Den här händelsen används när SDK för webben automatiskt skickar information om vad som visas på en sida. Du behöver dock inte den här händelsetypen om du redan inkluderar visningsinformation på andra sätt, som med sidträffar uppifrån och ned. Du kan välja vilken händelsetyp du vill längst ned i sidträffar. |
 | `decisioning.propositionDismiss` | Den här händelsetypen används när ett Adobe Journey Optimizer-meddelande eller innehållskort stängs. |
 | `decisioning.propositionFetch` | Används för att indikera att en händelse främst är att hämta beslut. Adobe Analytics släpper det här evenemanget automatiskt. |
 | `decisioning.propositionInteract` | Den här händelsetypen används för att spåra interaktioner, som klickningar, i personaliserat innehåll. |

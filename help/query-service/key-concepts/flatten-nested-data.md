@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;frågetjänst;frågetjänst;kapslade datastrukturer;kapslade data;förenkla;förenkla kapslade data;
+keywords: Experience Platform;frågetjänst;Frågetjänst;kapslade datastrukturer;kapslade data;förenkla;förenkla kapslade data;
 title: Förenkla kapslade datastrukturer för användning med BI-verktyg
 description: Det här dokumentet förklarar hur du förenklar XDM-scheman för alla tabeller och vyer under en session när du använder BI-verktyg från tredje part med Query Service.
 exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
-source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '853'
+source-wordcount: '854'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Inställningen `FLATTEN` kräver en fungerande förståelse av följande kompone
 
    * [Skapa ett ad hoc-schema](../../xdm/tutorials/ad-hoc.md): Ett XDM-schema med fält som bara namnges av en enda datauppsättning kallas för ett ad hoc-schema. Ad hoc-scheman används i olika arbetsflöden för dataöverföring för Experience Platform och för att skapa vissa typer av källanslutningar.
 
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 * [Kapslade datastrukturer](./nested-data-structures.md): Det här dokumentet innehåller exempel på hur du skapar, bearbetar eller omformar datauppsättningar med komplexa datatyper, inklusive kapslade datastrukturer.
 
@@ -111,7 +111,7 @@ Inställningen `FLATTEN` förenklar för närvarande inte följande datastruktur
 
 Om du vill lösa både mappnings- och matrisbegränsningar måste du använda BI-verktygen för SQL-redigering, som de avancerade alternativen -> SQL-satsen i Power BI.
 
-BI-verktyg som rå SQL-redigering krävs för att lösa både mappnings- och matrisbegränsningar. Se guiden om hur du [använder avancerade alternativ för Power BI för att ange en anpassad SQL-fråga](../clients/power-bi.md#import-tables-using-custom-sql) i SQL-satsavsnittet.
+BI-verktyg som rå SQL-redigering krävs för att lösa både mappnings- och matrisbegränsningar. Se guiden om hur du [använder Power BI avancerade alternativ för att ange en anpassad SQL-fråga](../clients/power-bi.md#import-tables-using-custom-sql) i SQL-satsavsnittet.
 
 ## Nästa steg
 

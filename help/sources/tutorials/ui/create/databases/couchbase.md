@@ -5,7 +5,7 @@ title: Skapa en Couchbase Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Couchbase med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 4270a48a-843c-4f1e-b280-35b620581d68
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '440'
 ht-degree: 0%
@@ -18,11 +18,11 @@ ht-degree: 0%
 >
 >[!DNL Couchbase]-källan kommer att bli inaktuell i slutet av juni 2025.
 
-Source-anslutningar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Couchbase]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Couchbase]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Platform]:
+Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Experience Platform]:
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
@@ -41,7 +41,7 @@ För att autentisera [!DNL Couchbase]-källkopplingen måste du ange värden fö
 
 ## Anslut ditt [!DNL Couchbase]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Couchbase]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Couchbase]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -67,4 +67,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Couchbase]-konto d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Couchbase]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Couchbase]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;dataflöde;Dataflöd
 title: Konfigurera ett dataflöde för inmatning av batchdata från ett Source-lagringssystem i molnet i användargränssnittet
 description: I den här självstudien beskrivs hur du konfigurerar ett nytt dataflöde för att importera batchdata från en molnlagringskälla i användargränssnittet
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1874'
+source-wordcount: '1877'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Molnlagringskällor för batchdata har stöd för följande filformat för inhä
 
 ## Lägg till data
 
-När du har skapat ditt molnlagringskonto visas steget **[!UICONTROL Add data]** som ger dig ett gränssnitt där du kan utforska din molnlagringsfilshierarki och välja den mapp eller fil som du vill hämta till plattformen.
+När du har skapat ditt molnlagringskonto visas steget **[!UICONTROL Add data]** som ger dig ett gränssnitt där du kan utforska din molnlagringsfilshierarki och välja den mapp eller fil som du vill hämta till Experience Platform.
 
 * Den vänstra delen av gränssnittet är en katalogwebbläsare som visar din molnlagringsfilshierarki.
 * I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel mapp eller fil.
@@ -83,7 +83,7 @@ I steget [!UICONTROL Select data] väljer du en komprimerad fil för inhämtning
 
 ![](../../../../images/tutorials/dataflow/cloud-batch/custom.png)
 
-Om du vill hämta en viss fil till plattformen markerar du en mapp och väljer sedan den fil som du vill importera. Under det här steget kan du även förhandsgranska filinnehåll för andra filer i en viss mapp med hjälp av förhandsgranskningsikonen bredvid ett filnamn.
+Om du vill hämta en viss fil till Experience Platform markerar du en mapp och väljer sedan den fil som du vill importera. Under det här steget kan du även förhandsgranska filinnehåll för andra filer i en viss mapp med hjälp av förhandsgranskningsikonen bredvid ett filnamn.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -127,7 +127,7 @@ Välj **[!UICONTROL Next]** när du är klar med informationen om dataflödet.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -183,14 +183,14 @@ När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** och till
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en extern molnlagring och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Inkommande data kan nu användas av [!DNL Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en extern molnlagring och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Inkommande data kan nu användas av [!DNL Experience Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../../data-science-workspace/home.md)
 
 >[!WARNING]
 >
-> Användargränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+> Användargränssnittet [!DNL Experience Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29695?quality=12&learn=on)
 

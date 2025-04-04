@@ -2,9 +2,9 @@
 title: Adobe Commerce målanslutning
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbinnehåll och kampanjer, anpassade till kundgrupper som byggts och hanteras inom Real-Time CDP.
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '669'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ När du har slutfört kraven ansluter du till målet [!DNL Commerce].
 
 Så här ansluter du till målet [!DNL Adobe Commerce]:
 
-1. Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://experience.adobe.com/platform/).
+1. Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://experience.adobe.com/platform/).
 1. Välj **[!UICONTROL Personalization]**.
 1. Markera Adobe Commerce-målet för att markera det och välj sedan **[!UICONTROL Set up]**.
 1. Följ stegen som beskrivs i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).

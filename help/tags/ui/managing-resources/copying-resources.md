@@ -2,10 +2,10 @@
 title: Kopiera resurser
 description: Lär dig hur du skapar en ny taggresurs med inställningarna för en befintlig taggresurs i Adobe Experience Platform.
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '776'
-ht-degree: 0%
+source-wordcount: '777'
+ht-degree: 5%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Ibland kan det vara praktiskt att skapa en ny resurs med inställningarna för en befintlig resurs. I så fall kan du göra en kopia.
 
@@ -60,7 +60,7 @@ När du kopierar ett tillägg till en annan egenskap finns det några saker som 
 
 ## Kopiera regler och dataelement
 
-Alla regler och dataelement tillhandahålls av ett tillägg, så när du kopierar mellan egenskaper måste Platform ta hänsyn till dessa underliggande tillägg.
+Alla regler och dataelement tillhandahålls av ett tillägg, så när du kopierar mellan egenskaper måste Experience Platform ta hänsyn till dessa underliggande tillägg.
 
 ![Kopierar en regel till min demoegenskap](../../images/copy-rules-dialog1.png)
 

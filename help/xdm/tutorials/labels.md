@@ -2,16 +2,16 @@
 title: Hantera dataanvändningsetiketter för ett schema
 description: Lär dig hur du lägger till dataanvändningsetiketter i XDM-schemafält (Experience Data Model) i Adobe Experience Platform-gränssnittet.
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: ac6af3e90c417d1c97860394ce8afb07a0a7917d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '745'
 ht-degree: 0%
 
 ---
 
 # Hantera dataanvändningsetiketter för ett schema
 
-Alla data som hämtas till Adobe Experience Platform begränsas av XDM-scheman (Experience Data Model). Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. För att ta hänsyn till detta kan du med hjälp av plattformen begränsa användningen av vissa datauppsättningar och fält genom att använda [dataanvändningsetiketter](../../data-governance/labels/overview.md).
+Alla data som hämtas till Adobe Experience Platform begränsas av XDM-scheman (Experience Data Model). Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Med Experience Platform kan du begränsa användningen av vissa datauppsättningar och fält genom att använda [dataanvändningsetiketter](../../data-governance/labels/overview.md).
 
 En etikett som används i ett schemafält anger de användningsprinciper som gäller för data i det specifika fältet.
 
@@ -19,15 +19,15 @@ Etiketter kan användas på enskilda scheman och fält i dessa scheman. När eti
 
 Dessutom sprids alla fältetiketter som du lägger till i ett schema till alla andra scheman som använder samma fält från en delad klass eller fältgrupp. Detta bidrar till att säkerställa att användningsreglerna för liknande fält är konsekventa i hela datamodellen.
 
-I den här självstudiekursen beskrivs stegen för hur du lägger till etiketter i ett schema med Schemaredigeraren i plattformsgränssnittet.
+I den här självstudiekursen beskrivs stegen för hur du lägger till etiketter i ett schema med Schemaredigeraren i Experience Platform-gränssnittet.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
-   * [Schemaredigeraren](../ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
-* [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Tillhandahåller infrastrukturen för att framtvinga dataanvändningsbegränsningar för plattformsåtgärder, med hjälp av principer som definierar vilka marknadsföringsåtgärder som kan (eller inte kan) utföras på märkta data.
+   * [Schemaredigeraren](../ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i Experience Platform-gränssnittet.
+* [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Tillhandahåller infrastrukturen för att framtvinga dataanvändningsbegränsningar för Experience Platform-åtgärder, med hjälp av principer som definierar vilka marknadsföringsåtgärder som kan (eller inte kan) utföras på märkta data.
 
 ## Välj ett schema eller fält som etiketter ska läggas till i {#select-schema-field}
 

@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att skapa en målserver via Adobe Experience Platform Destination SDK.
 title: Skapa en målserverkonfiguration
 exl-id: 5c6b6cf5-a9d9-4c8a-9fdc-f8a95ab2a971
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2036'
+source-wordcount: '2040'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
@@ -94,13 +94,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | Parameter | Typ | Beskrivning |
 | -------- | ----------- | ----------- |
-| `name` | Sträng | *Krävs.* Representerar ett eget namn för servern, som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
+| `name` | Sträng | *Krävs.* Representerar ett eget namn på servern, som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
 | `destinationServerType` | Sträng | *Krävs.* Ange som `URL_BASED` för mål för realtidsströmning. |
-| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som `https://api.moviestar.com/data/{{customerData.region}}/items`, där `region`-delen kan skilja sig åt mellan kunder. I det här fallet måste du även konfigurera `region` som ett [kunddatafält](../../functionality/destination-configuration/customer-data-fields.md) i [målkonfigurationen] (../destination-configuration/create-destination-configuration.md). </li><li> Använd `NONE` om ingen omformning behövs på Adobe, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
+| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som `https://api.moviestar.com/data/{{customerData.region}}/items`, där `region`-delen kan skilja sig åt mellan kunder. I det här fallet måste du även konfigurera `region` som ett [kunddatafält](../../functionality/destination-configuration/customer-data-fields.md) i [målkonfigurationen] (../destination-configuration/create-destination-configuration.md). </li><li> Använd `NONE` om ingen omvandling behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
 | `urlBasedDestination.url.value` | Sträng | *Krävs.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
-| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe ska använda i anrop till servern. Alternativen är `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
+| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe använder i anrop till servern. Alternativen är `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
 | `httpTemplate.requestBody.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
-| `httpTemplate.requestBody.value` | Sträng | *Krävs.* Den här strängen är den teckenescape-version som omformar data för plattformskunder till det format som tjänsten förväntar sig. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i omformningen [Profilattribut](../../functionality/destination-server/message-format.md#attributes). </li></ul> |
+| `httpTemplate.requestBody.value` | Sträng | *Krävs.* Den här strängen är den teckenescape-version som omformar data från Experience Platform-kunder till det format som tjänsten förväntar sig. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i omformningen [Profilattribut](../../functionality/destination-server/message-format.md#attributes). </li></ul> |
 | `httpTemplate.contentType` | Sträng | *Krävs.* Innehållstypen som servern accepterar. Det här värdet är troligen `application/json`. |
 
 {style="table-layout:auto"}
@@ -828,11 +828,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | -------- | ----------- | ----------- |
 | `name` | Sträng | *Krävs.* Representerar ett eget namn på din dynamiska schemaserver, som bara är synligt för Adobe. |
 | `destinationServerType` | Sträng | *Krävs.* har angetts till `URL_BASED` för dynamiska schemaservrar. |
-| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omformning behövs på Adobe, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
+| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omvandling behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
 | `urlBasedDestination.url.value` | Sträng | *Krävs.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till och hämta schemafälten som ska fyllas i som målfält i mappningssteget i aktiveringsarbetsflödet. |
-| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe ska använda i anrop till servern. Använd `GET` för dynamiska schemaservrar. |
+| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe använder i anrop till servern. Använd `GET` för dynamiska schemaservrar. |
 | `responseFields.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
-| `responseFields.value` | Sträng | *Krävs.* Den här strängen är den omformningsmall för tecken som escape-konverterar svar från partner-API:t till det partnerschema som ska visas i plattformsgränssnittet. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i omformningen [Profilattribut](../../functionality/destination-server/message-format.md#attributes). </li></ul> |
+| `responseFields.value` | Sträng | *Krävs.* Den här strängen är den omformningsmall för tecken som escape-konverterar svar från partner-API:t till det partnerschema som ska visas i Experience Platform-gränssnittet. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i omformningen [Profilattribut](../../functionality/destination-server/message-format.md#attributes). </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -923,14 +923,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | Parameter | Typ | Beskrivning |
 | -------- | ----------- | ----------- |
-| `name` | Sträng | *Krävs.* Representerar ett eget namn på den dynamiska nedrullningsbara servern, som bara är synlig för Adobe. |
+| `name` | Sträng | *Krävs.* Representerar ett eget namn på din dynamiska nedrullningsbar server, som bara är synlig för Adobe. |
 | `destinationServerType` | Sträng | *Krävs.* anges till `URL_BASED` för dynamiska listruteservrar. |
-| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omformning behövs på Adobe, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
+| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omvandling behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
 | `urlBasedDestination.url.value` | Sträng | *Krävs.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till och hämta listrutans värden. |
-| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe ska använda i anrop till servern. Använd `GET` för dynamiska listruteservrar. |
+| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe använder i anrop till servern. Använd `GET` för dynamiska listruteservrar. |
 | `httpTemplate.headers` | Objekt | *Option.l* Inkludera alla huvuden som krävs för att ansluta till den dynamiska listruteservern. |
 | `responseFields.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
-| `responseFields.value` | Sträng | *Krävs.* Den här strängen är den omformningsmall för tecken som escape-konverterar svar från ditt API till värden som ska visas i plattformsgränssnittet. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). |
+| `responseFields.value` | Sträng | *Krävs.* Den här strängen är omformningsmallen för omformningar som kan konverteras från ditt API till värden som ska visas i Experience Platform-gränssnittet. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). |
 
 {style="table-layout:auto"}
 
@@ -946,11 +946,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserver
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du skapar en ny målserver via API-slutpunkten för Destinationen SDK `/authoring/destination-servers`.
+När du har läst det här dokumentet vet du nu hur du skapar en ny målserver via API-slutpunkten för Destination SDK `/authoring/destination-servers`.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 
@@ -960,5 +960,5 @@ Mer information om vad du kan göra med den här slutpunkten finns i följande a
 
 Mer information om var den här slutpunkten passar in i målredigeringsprocessen finns i följande artiklar:
 
-* [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-server-template-configuration)
+* [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-server-template-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration)

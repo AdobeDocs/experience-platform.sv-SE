@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: December 9, 2020
 author: ens60013 & ens72471
 exl-id: 89d631f1-1b11-4a18-98e1-08e1d5bd8b0d
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '432'
-ht-degree: 2%
+source-wordcount: '433'
+ht-degree: 10%
 
 ---
 
@@ -27,7 +27,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## [!DNL Dataflows] {#dataflows}
 
-Dataflöden är en representation av datajobb som flyttar data mellan olika plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till identitets- och profiltjänster samt till mål.
+Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till identitets- och profiltjänster samt till mål.
 
 **Nyckelfunktion**
 
@@ -39,7 +39,7 @@ Mer information om dataflöden finns i [dataflödesöversikten](../../dataflows/
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era datatillgångar i alla Adobe-lösningar.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era datatillgångar i alla Adobe lösningar.
 
 **Viktiga funktioner**
 
@@ -51,9 +51,9 @@ Mer information om Adobe Experience Platform Intelligence-pakettillägget finns 
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform kan importera data från externa källor samtidigt som du kan strukturera, etikettera och förbättra data med hjälp av [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor samtidigt som du kan strukturera, etikettera och förbättra data med hjälp av [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-[!DNL Experience Platform] innehåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+[!DNL Experience Platform] innehåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Viktiga funktioner**
 

@@ -5,9 +5,9 @@ title: Berika kundprofilen i realtid med insikt i maskininlärning
 type: Tutorial
 description: Det här dokumentet innehåller en guide om hur du kan förbättra kundprofilen i realtid med maskininlärningsinsikter.
 exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
-source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
@@ -31,8 +31,8 @@ Det här dokumentet innehåller länkar till självstudiekurser som gör att du 
 För att kunna slutföra självstudiekurserna nedan måste du ha en fungerande förståelse för att importera [!DNL Profile]-data och skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en fullständig, enhetlig representation av varje enskild kund baserat på aggregerade data från flera källor.
-- [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor som hämtas till plattformen.
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+- [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor som importeras till Experience Platform.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 
 Förutom de ovannämnda dokumenten rekommenderar vi att du även granskar följande handböcker om scheman och schemaläggningsprogrammet:
 

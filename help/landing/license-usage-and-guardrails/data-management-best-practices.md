@@ -2,9 +2,9 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 1b8fd7671146519fa66768aab3fe081adb0bd6c6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2145'
+source-wordcount: '2154'
 ht-degree: 1%
 
 ---
@@ -13,18 +13,18 @@ ht-degree: 1%
 
 Adobe Experience Platform är ett öppet system som omvandlar era data till robusta kundprofiler som uppdateras i realtid och använder AI-baserade insikter för att hjälpa er att leverera rätt upplevelser i alla kanaler. Ni kan lägga in data av olika typer, volymer och historik i Experience Platform med hjälp av olika källor och sedan ta hänsyn till dessa data för att kunna använda allt från segmentering och personalisering till analys och maskininlärning.
 
-Plattformen erbjuder licenser som fastställer antalet profiler du kan skapa och den mängd data du kan hämta in. Med tanke på kapaciteten att hämta in alla datakällor, volymer och historik för data är det möjligt att överskrida era licensrättigheter när datavolymer växer.
+Experience Platform erbjuder licenser som fastställer antalet profiler du kan skapa och hur mycket data du kan hämta in. Med tanke på kapaciteten att hämta in alla datakällor, volymer och historik för data är det möjligt att överskrida era licensrättigheter när datavolymer växer.
 
 I det här dokumentet beskrivs de bästa sätten att följa och de verktyg du kan använda för att hantera dina licensrättigheter bättre med Adobe Experience Platform.
 
 ## Förstå Adobe Experience Platform datalagring
 
-Experience Platform består främst av två datadatabaser: [!DNL data lake] och profilarkivet.
+Experience Platform består huvudsakligen av två datadatabaser: [!DNL data lake] och profilarkivet.
 
 **[!DNL data lake]** har i första hand följande syften:
 
-* fungerar som mellanlagringsområde för information om introduktion på Experience Platform,
-* fungerar som långsiktig datalagring för alla data från Experience Platform,
+* fungerar som mellanlagringsområde för information om introduktion till Experience Platform,
+* fungerar som långsiktig datalagring för alla Experience Platform-data,
 * Möjliggör användningsfall som dataanalys och datavetenskap.
 
 **Profilarkivet** är där kundprofiler skapas och har i första hand följande syften:
@@ -34,7 +34,7 @@ Experience Platform består främst av två datadatabaser: [!DNL data lake] och 
 
 >[!NOTE]
 >
->Åtkomsten till [!DNL data lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er finns hos Adobe.
+>Åtkomsten till [!DNL data lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er får du av Adobe.
 
 ## Licensanvändning {#license-usage}
 
@@ -48,9 +48,9 @@ Vilka mätvärden som är tillgängliga och vilken definition som finns för var
 
 ## Kontrollpanel för licensanvändning
 
-Adobe Experience Platform användargränssnitt tillhandahåller en kontrollpanel där du kan visa en ögonblicksbild av din organisations licensrelaterade data för Platform. Informationen i kontrollpanelen visas exakt som den visas vid den specifika tidpunkt då ögonblicksbilden togs. Ögonblicksbilden är varken en ungefärlig eller ett urval data och instrumentpanelen uppdateras inte i realtid.
+Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa en ögonblicksbild av din organisations licensrelaterade data för Experience Platform. Informationen i kontrollpanelen visas exakt som den visas vid den specifika tidpunkt då ögonblicksbilden togs. Ögonblicksbilden är varken en ungefärlig eller ett urval data och instrumentpanelen uppdateras inte i realtid.
 
-Mer information finns i handboken om [användning av kontrollpanelen för licensanvändning i plattformsgränssnittet](../../dashboards/guides/license-usage.md#license-usage-dashboard-data).
+Mer information finns i guiden om [användning av kontrollpanelen för licensanvändning i Experience Platform-gränssnittet](../../dashboards/guides/license-usage.md#license-usage-dashboard-data).
 
 ## Bästa praxis för datahantering
 
@@ -72,17 +72,17 @@ Det finns tre dimensioner att tänka på när du ska förstå värdet av dina da
 
 Det finns två centrala scenarier att tänka på när du ser till att din dataanvändning ligger inom licensens gränser:
 
-### Vilka data ska tas med i plattformen?
+### Vilka data ska föras in i Experience Platform?
 
-Data kan importeras till ett eller flera system i plattformen, nämligen [!DNL data lake] och/eller profilarkivet. Det innebär att det kan finnas olika data i båda systemen för olika användningsområden. Du kanske vill lagra historiska data i [!DNL data lake], men inte i profilarkivet. Du kan välja vilka data som ska skickas till profilarkivet genom att aktivera en datauppsättning för profilinmatning.
+Data kan importeras till ett eller flera system i Experience Platform, nämligen [!DNL data lake] och/eller profilarkivet. Det innebär att det kan finnas olika data i båda systemen för olika användningsområden. Du kanske vill lagra historiska data i [!DNL data lake], men inte i profilarkivet. Du kan välja vilka data som ska skickas till profilarkivet genom att aktivera en datauppsättning för profilinmatning.
 
 >[!NOTE]
 >
->Åtkomsten till [!DNL data lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er finns hos Adobe.
+>Åtkomsten till [!DNL data lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er får du av Adobe.
 
 ### Vilka data ska sparas?
 
-Du kan använda både dataöverföringsfilter och förfalloregler för att ta bort data som har blivit föråldrade för dina användningsfall. Vanligtvis förbrukar beteendedata (som analysdata) betydligt mer lagringsutrymme än postdata (som CRM-data). Många plattformsanvändare har till exempel upp till 90 % av de profiler som enbart fylls i av beteendedata, jämfört med postdata. Därför är det viktigt att du hanterar dina beteendedata för att säkerställa att licenserna efterlevs.
+Du kan använda både dataöverföringsfilter och förfalloregler för att ta bort data som har blivit föråldrade för dina användningsfall. Vanligtvis förbrukar beteendedata (som analysdata) betydligt mer lagringsutrymme än postdata (som CRM-data). Många Experience Platform-användare har till exempel upp till 90 % av de profiler som enbart fylls i med beteendedata jämfört med postdata. Därför är det viktigt att du hanterar dina beteendedata för att säkerställa att licenserna efterlevs.
 
 Det finns ett antal verktyg som du kan använda för att hålla dig inom dina licensanvändningsrättigheter:
 
@@ -102,10 +102,10 @@ Injektionsfilter gör att du bara kan hämta in de data som behövs för dina an
 | filtret Intag | Beskrivning |
 | --- | --- |
 | Adobe Audience Manager källfiltrering | När du skapar en Adobe Audience Manager-källanslutning kan du välja vilka segment och egenskaper som ska hämtas till kundprofilen [!DNL data lake] och Real-Time, i stället för att bara hämta in Audience Manager-data i sin helhet. Mer information finns i guiden om att [skapa en Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). |
-| Adobe Analytics Data Prep | Du kan använda [!DNL Data Prep]-funktioner när du skapar en Analytics-källanslutning för att filtrera bort data som inte behövs för dina användningsfall. Genom [!DNL Data Prep] kan du definiera vilka attribut/kolumner som måste publiceras till Profil. Du kan också tillhandahålla villkorssatser för att informera plattformen om data förväntas publiceras till Profil eller bara till [!DNL data lake]. Mer information finns i guiden om att [skapa en Analytics-källanslutning](../../sources/tutorials/ui/create/adobe-applications/analytics.md). |
+| Adobe Analytics Data Prep | Du kan använda [!DNL Data Prep]-funktioner när du skapar en Analytics-källanslutning för att filtrera bort data som inte behövs för dina användningsfall. Genom [!DNL Data Prep] kan du definiera vilka attribut/kolumner som måste publiceras till Profil. Du kan också tillhandahålla villkorssatser för att informera Experience Platform om data förväntas publiceras till Profil eller bara till [!DNL data lake]. Mer information finns i guiden om att [skapa en Analytics-källanslutning](../../sources/tutorials/ui/create/adobe-applications/analytics.md). |
 | Stöd för att aktivera/inaktivera datauppsättningar för profil | Om du vill importera data till kundprofilen i realtid måste du aktivera en datauppsättning för användning i profilarkivet. Om du gör det läggs dina [!DNL Addressable Audience]- och [!DNL Total Data Volume]-berättiganden till. När en datauppsättning inte längre behövs för att använda kundprofiler kan du inaktivera datauppsättningens integrering till Profil för att säkerställa att dina data fortfarande är licenskompatibla. Mer information finns i guiden [Aktivera och inaktivera datauppsättningar för profilen](../../catalog/datasets/enable-for-profile.md). |
-| SDK för webb och SDK för mobiler | Det finns två typer av data som samlas in via webb och Mobile SDK: data som samlas in automatiskt och data som uttryckligen samlas in av din utvecklare. Om du vill hantera licenskompatibiliteten bättre kan du inaktivera automatisk datainsamling i SDK-konfigurationen via kontextinställningen. Anpassade data kan också tas bort eller inte ställas in av utvecklaren. |
-| Undantag för vidarebefordrande data på serversidan | Om du skickar data till plattformen med hjälp av vidarebefordran på serversidan kan du utesluta vilka data som skickas genom att antingen ta bort mappningen i en regelåtgärd för att exkludera den i alla händelser, eller genom att lägga till villkor i regeln så att endast data aktiveras för vissa händelser. Mer information finns i dokumentationen om [händelser och villkor](/help/tags/ui/managing-resources/rules.md#events-and-conditions-if). |
+| SDK och SDK för mobiler | Det finns två typer av data som samlas in av webb och Mobile SDK: data som samlas in automatiskt och data som uttryckligen samlas in av din utvecklare. Om du vill hantera licensefterlevnaden bättre kan du inaktivera automatisk datainsamling i SDK-konfigurationen med hjälp av kontextinställningarna. Anpassade data kan också tas bort eller inte ställas in av utvecklaren. |
+| Undantag för vidarebefordrande data på serversidan | Om du skickar data till Experience Platform via vidarebefordran på serversidan kan du utesluta vilka data som skickas genom att antingen ta bort mappningen i en regelåtgärd för att exkludera den i alla händelser, eller genom att lägga till villkor i regeln så att endast data aktiveras för vissa händelser. Mer information finns i dokumentationen om [händelser och villkor](/help/tags/ui/managing-resources/rules.md#events-and-conditions-if). |
 | Filtrera data på källnivå | Du kan använda logiska operatorer och jämförelseoperatorer för att filtrera radnivådata från dina källor innan du skapar en anslutning och hämtar data till Experience Platform. Mer information finns i handboken om [filtrering av radnivådata för en källa med  [!DNL Flow Service] API](../../sources/tutorials/api/filter.md). |
 
 {style="table-layout:auto"}
@@ -116,7 +116,7 @@ Profilarkivet består av följande komponenter:
 
 | Profillagringskomponent | Beskrivning |
 | --- | --- |
-| Profilfragment | Varje kundprofil består av flera **profilfragment** som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera **profilfragment** som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de med hjälp av identitetsdiagrammet för att skapa en profil för den kunden. **Profilfragment** består av ett identitetsnamnutrymme som identifierare, med associerade postdata och/eller tidsseriedata. |
+| Profilfragment | Varje kundprofil består av flera **profilfragment** som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera **profilfragment** som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Experience Platform sammanfogas de med hjälp av identitetsdiagrammet för att skapa en profil för kunden. **Profilfragment** består av ett identitetsnamnutrymme som identifierare, med associerade postdata och/eller tidsseriedata. |
 | Postdata (attribut) | En profil är en representation av ett ämne, en organisation eller en individ, som består av många **attribut** (kallas även **postdata**). Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. **Postdata** har vanligtvis låg/måttlig volym, men är värdefullt under långa perioder. |
 | Tidsseriedata (beteende) | **Tidsseriedata** ger information om ett användarbeteende. Tidsseriedata representeras av den vanliga schemaklassen Experience Data Model (XDM) [!DNL ExperienceEvent] och kan beskriva händelser som objekt som läggs till i en kundvagn, länkar som klickas och videofilmer som visas. Beteendevärdet kan minska med tiden. |
 | Identitetsnamnutrymme (identiteter) | När kunddata sammanställs sammanfogas de till en enda profil med hjälp av **identitetsnamnutrymmen** och möjligheten att knyta samman dessa identiteter när mer information blir känd om användaren. Mer information finns i [översikten över identitetsnamnutrymmen](../../identity-service/features/namespaces.md). |
@@ -159,9 +159,9 @@ I följande tabell visas en lista över de funktioner som är tillgängliga för
 | Funktion | Beskrivning |
 | --- | --- |
 | [Aktivera/inaktivera datauppsättningar för profilen](../../catalog/datasets/user-guide.md) | Aktivera eller inaktivera datamängdsmatning i kundprofilen i realtid. |
-| [Händelseförfallodatum för upplevelse](../../profile/event-expirations.md) | Använd en förfallotid för alla händelser som är inkapslade i en profilaktiverad datauppsättning. Kontakta kontoteamet eller kundtjänst på Adobe för att aktivera den här funktionen. |
+| [Händelseförfallodatum för upplevelse](../../profile/event-expirations.md) | Använd en förfallotid för alla händelser som är inkapslade i en profilaktiverad datauppsättning. Kontakta ditt Adobe-kontoteam eller kundtjänst om du vill aktivera den här funktionen. |
 | [Adobe Analytics Data Prep-filter](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | Använd [!DNL Kafka] filter för att exkludera onödiga data från inmatning |
-| [Adobe Audience Manager källanslutningsfilter](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | Använd anslutningsfilter för Audience Manager-källa för att exkludera onödiga data från intag |
+| [Adobe Audience Manager källanslutningsfilter](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | Använd Audience Manager källanslutningsfilter för att exkludera onödiga data från inmatning |
 | [Datafilter för vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) | Använd filter på serversidan [!DNL Kafka] för att exkludera onödiga data från inmatning.  Mer information finns i dokumentationen om [taggregler](../../tags/ui/managing-resources/rules.md). |
 | [Gränssnitt för kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | Visa en ögonblicksbild av din organisations licensrelaterade data för Experience Platform |
 | [Rapport-API för datauppsättningsöverlappning](../../profile/tutorials/dataset-overlap-report.md) | Visar de datauppsättningar som ger mest för er adresserbara publik |

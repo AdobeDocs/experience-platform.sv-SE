@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;frågetjänst;frågetjänst;kapslade datastrukturer;kapslade data;
+keywords: Experience Platform;frågetjänst;Frågetjänst;kapslade datastrukturer;kapslade data;
 title: Arbeta med kapslade datastrukturer i frågetjänsten
 description: Det här dokumentet innehåller ett fungerande exempel för bearbetning och omformning av kapslade datafält med hjälp av CTAS- och INSERT INTO-satser.
 exl-id: 593379fb-88ad-4b14-8d2e-aa6d18129974
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '790'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 Adobe Experience Platform Query Service stöder användning av kapslade datafält. Komplexiteten i företagsdatastrukturerna kan göra det svårt att omforma eller bearbeta data. Det här dokumentet innehåller exempel på hur du skapar, bearbetar eller omformar datauppsättningar med komplexa datatyper, inklusive kapslade datastrukturer.
 
-Frågetjänsten tillhandahåller ett [!DNL PostgreSQL]-gränssnitt för att köra SQL-frågor på alla datauppsättningar som hanteras av Experience Platform. Platform stöder användning av antingen primitiva eller komplexa datatyper i tabellkolumner som struktur, arrayer, kartor och djupt inkapslade strukturer, arrayer och kartor. Datauppsättningar kan också innehålla kapslade strukturer där kolumndatatypen kan vara så komplex som en matris med kapslade strukturer, eller en karta med kartor där värdet för ett nyckelvärdepar kan vara en struktur med flera kapslingsnivåer.
+Frågetjänsten tillhandahåller ett [!DNL PostgreSQL]-gränssnitt för att köra SQL-frågor på alla datauppsättningar som hanteras av Experience Platform. Experience Platform stöder användning av primitiva eller komplexa datatyper i tabellkolumner som struktur, arrayer, kartor och djupt inkapslade strukturer, arrayer och kartor. Datauppsättningar kan också innehålla kapslade strukturer där kolumndatatypen kan vara så komplex som en matris med kapslade strukturer, eller en karta med kartor där värdet för ett nyckelvärdepar kan vara en struktur med flera kapslingsnivåer.
 
 ## Komma igång
 
-I den här självstudien måste du använda en PSQL-klient från en annan leverantör eller verktyget Frågeredigeraren för att skriva, validera och köra frågor i användargränssnittet i Experience Platform. Fullständig information om hur du kör frågor via användargränssnittet finns i [Användargränssnittsguiden för frågeredigering](../ui/user-guide.md). En detaljerad lista över vilka skrivbordsklienter från tredje part som kan ansluta till frågetjänsten finns i [översikten över klientanslutningar](../clients/overview.md).
+I den här självstudien måste du använda en PSQL-klient från en annan leverantör eller verktyget Frågeredigeraren för att skriva, validera och köra frågor i Experience Platform användargränssnitt. Fullständig information om hur du kör frågor via användargränssnittet finns i [Användargränssnittsguiden för frågeredigering](../ui/user-guide.md). En detaljerad lista över vilka skrivbordsklienter från tredje part som kan ansluta till frågetjänsten finns i [översikten över klientanslutningar](../clients/overview.md).
 
 Du bör också ha god förståelse för syntaxen `INSERT INTO` och `CTAS`. Specifik information om hur de används finns i avsnitten [`INSERT INTO`](../sql/syntax.md#insert-into) och [`CTAS`](../sql/syntax.md#create-table-as-select) i [referensdokumentationen för SQL-syntax](../sql/syntax.md).
 

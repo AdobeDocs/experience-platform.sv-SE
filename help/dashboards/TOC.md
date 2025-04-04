@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: cb3cc06a31c0390d9b1f152c2186da3847647f64
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 21%
+source-wordcount: '143'
+ht-degree: 23%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 21%
 * [Åtkomstbehörigheter för instrumentpanel](permissions.md)
 * [Instrumentpaneler](inventory.md)
 * [Standardinstrumentpaneler](standard-dashboards.md)
-* [Hämta instrumentpaneler till PDF](download.md)
+* [Hämta paneler till PDF](download.md)
 * SQL-insikter: frågeproffsläge {#sql-insights-query-pro-mode}
    * [Översikt](sql-insights-query-pro-mode/overview.md)
    * Distiller-mallar för data {#templates}
@@ -57,10 +57,10 @@ ht-degree: 21%
 * Insikter - användningsfall {#insights-use-cases}
    * [Samtyckesanalys](insights-use-cases/consent-analysis.md)
 * Tillgängliga datamodeller {#data-models}
-   * [Real-time Customer Data Platform Insights datamodell B2B edition](data-models/cdp-insights-data-model-b2b.md)
-   * [Real-time Customer Data Platform Insights, datamodell B2C Edition](data-models/cdp-insights-data-model-b2c.md)
+   * [Real-Time Customer Data Platform Insights datamodell B2B edition](data-models/cdp-insights-data-model-b2b.md)
+   * [Real-Time Customer Data Platform Insights, datamodell B2C Edition](data-models/cdp-insights-data-model-b2c.md)
 * Programintegreringar {#integrations}
    * [Power BI](integrations/power-bi.md)
 * [Datamängder för frågeinstrumentpanelen](query.md)
 * [Visa SQL-insikter](view-sql.md)
-* [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

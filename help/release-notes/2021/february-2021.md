@@ -1,14 +1,14 @@
 ---
-title: Versionsinformation om Adobe Experience Platform, februari 2021
-description: Versionsinformation från februari 2021 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform – februari 2021
+description: Versionsinformationen för Adobe Experience Platform från februari 2021.
 doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 1%
+source-wordcount: '1139'
+ht-degree: 20%
 
 ---
 
@@ -38,11 +38,11 @@ Adobe Experience Platform tillhandahåller flera kontrollpaneler där du kan vis
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Profiler, segment, destinationer och kontrollpaneler för licensanvändning (Beta) | **Obs! Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.**<br/><br/> Instrumentpaneler tillhandahåller körklar rapportering av organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering. |
+| Profiler, segment, destinationer och kontrollpaneler för licensanvändning (Beta) | **Obs! Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.**<br/><br/> Instrumentpaneler ger körklara rapporter om organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet i Experience Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering. |
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era datatillgångar i alla Adobe-lösningar.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era datatillgångar i alla Adobe lösningar.
 
 **Nya funktioner**
 
@@ -54,9 +54,9 @@ Mer allmän information om Data Science Workspace finns i [Data Science Workspac
 
 ## [!DNL Dataflows] {#dataflows}
 
-I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
+I Adobe Experience Platform hämtas data från en mängd olika källor, analyserade inom Experience Platform, och aktiverades för en mängd olika destinationer. Experience Platform gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
 
-Dataflöden är en representation av datajobb som flyttar data mellan olika plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan de aktiveras till [!DNL Destinations].
+Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan de aktiveras till [!DNL Destinations].
 
 **Nya funktioner**
 
@@ -68,7 +68,7 @@ Mer allmän information om dataflöden finns i [dataflödesöversikten](../../da
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya mål**
 
@@ -76,13 +76,13 @@ Mer allmän information om dataflöden finns i [dataflödesöversikten](../../da
 | ----------- | ----------- |
 | [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | Med anslutningen [!DNL LinkedIn Matched Audiences] kan du aktivera målgrupper på den sociala plattformen [!DNL LinkedIn]. |
 
-Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
+För mer allmän information om mål, se [översikt över mål](../../destinations/home.md).
 
 ## [!DNL Experience Data Model (XDM) System] {#xdm}
 
 Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
-XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya funktioner**
 
@@ -108,7 +108,7 @@ Mer allmän information om [!DNL Identity Service] finns i [Översikt över iden
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med [!DNL Profile] kan du konsolidera kunddata i en enhetlig vy med ett åtgärdbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta upplevelser för dina kunder, oavsett var eller när de interagerar med ditt varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med [!DNL Profile] kan du konsolidera kunddata i en enhetlig vy med ett åtgärdbart, tidsstämplat konto för varje kundinteraktion.
 
 **Nya funktioner**
 
@@ -120,9 +120,9 @@ Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Nya källor**
 

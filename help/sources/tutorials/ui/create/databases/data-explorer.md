@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Azure Data Explorer;azure data explorer;data explorer;Data Explorer
+keywords: Experience Platform;home;populära topics;Azure Data Explorer;azure data explorer;data explorer;Data Explorer
 solution: Experience Platform
-title: Skapa en Azure Data Explorer Source Connection i användargränssnittet
+title: Skapa en Azure Data Explorer Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Azure Data Explorer-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 561bf948-fc92-4401-8631-e2a408667507
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL Azure Data Explorer]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Data Explorer]-källkoppling (kallas nedan [!DNL Data Explorer]) med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Data Explorer]-källkoppling (kallas nedan [!DNL Data Explorer]) med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Om du redan har en giltig [!DNL Data Explorer]-anslutning kan du hoppa över res
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Data Explorer]-konto på [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till ditt [!DNL Data Explorer]-konto på [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -43,13 +43,13 @@ Mer information om hur du kommer igång finns i [det här [!DNL Data Explorer] d
 
 ## Anslut ditt [!DNL Azure Data Explorer]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Data Explorer]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Data Explorer]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto för.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Välj **[!UICONTROL Azure Data Explorer]** under kategorin **[!UICONTROL Databases]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny Data Explorer-koppling.
+Välj **[!UICONTROL Azure Data Explorer]** under kategorin **[!UICONTROL Databases]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny Data Explorer-anslutning.
 
 ![katalog](../../../../images/tutorials/create/data-explorer/catalog.png)
 
@@ -69,4 +69,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Data Explorer]-kon
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Data Explorer]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Data Explorer]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).

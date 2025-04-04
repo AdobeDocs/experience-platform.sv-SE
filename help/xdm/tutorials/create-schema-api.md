@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2569'
+source-wordcount: '2570'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ I den här självstudien används [!DNL Schema Registry]-API:t för att vägleda
 
 >[!NOTE]
 >
->Om du importerar CSV-data till plattformen kan du [mappa dessa data till ett XDM-schema som skapats av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (som för närvarande finns i beta) utan att behöva skapa schemat manuellt.
+>Om du importerar CSV-data till Experience Platform kan du [mappa dessa data till ett XDM-schema som skapats av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (som för närvarande finns i betaversionen) utan att behöva skapa schemat manuellt.
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    * [Grundläggande om schemakomposition](../schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t för [!DNL Schema Registry]. Detta inkluderar din `{TENANT_ID}`, begreppet&quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken `Accept` och dess möjliga värden).
 
@@ -129,7 +129,7 @@ En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som
 
 ### Söka efter ett schema
 
-Om du vill visa det nya schemat utför du en sökbegäran (GET) med hjälp av `meta:altId` eller den URL-kodade `$id`-URI:n för schemat.
+Om du vill visa det nyligen skapade schemat utför du en sökning (GET) med hjälp av `meta:altId` eller URL-kodad `$id` URI för schemat.
 
 **API-format**
 
@@ -955,7 +955,7 @@ En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext 
 }
 ```
 
-Du kan utföra en sökning (GET)-begäran med URL-kodad `$id`-URI för att visa den nya datatypen direkt. Se till att du inkluderar `version` i din `Accept`-rubrik för en uppslagsbegäran.
+Du kan utföra en sökningsbegäran (GET) med URL-kodad `$id`-URI för att visa den nya datatypen direkt. Se till att du inkluderar `version` i din `Accept`-rubrik för en uppslagsbegäran.
 
 ### Använd datatyp i schema
 
@@ -1065,7 +1065,7 @@ Svaret innehåller nu en referens (`$ref`) till datatypen i objektet `loyaltyTie
 }
 ```
 
-Om du utför en GET-förfrågan om att söka efter schemat nu, visar egenskapen `loyaltyTier` referensen till datatypen under `meta:referencedFrom`:
+Om du utför en GET-begäran om att söka efter schemat nu, visar egenskapen `loyaltyTier` referensen till datatypen under `meta:referencedFrom`:
 
 ```JSON
 "_{TENANT_ID}": {
@@ -1185,7 +1185,7 @@ När schemat har en primär identitetsbeskrivare kan du aktivera schemat för lo
 
 ### Lägg till en `union`-tagg
 
-För att ett schema ska kunna inkluderas i den sammanfogade unionsvyn måste taggen `union` läggas till i schemats `meta:immutableTags`-attribut. Detta görs via en PATCH-begäran om att uppdatera schemat och lägga till en `meta:immutableTags`-matris med värdet `union`.
+För att ett schema ska kunna inkluderas i den sammanfogade unionsvyn måste taggen `union` läggas till i schemats `meta:immutableTags`-attribut. Detta görs genom en PATCH-begäran om att uppdatera schemat och lägga till en `meta:immutableTags`-matris med värdet `union`.
 
 **API-format**
 
@@ -1298,7 +1298,7 @@ Svaret visar att åtgärden utfördes utan fel och schemat innehåller nu ett at
 
 ### Visa scheman i en union
 
-Du har nu lagt till ditt schema i unionen [!DNL XDM Individual Profile]. Om du vill se en lista över alla scheman som ingår i samma union kan du utföra en GET-förfrågan med hjälp av frågeparametrar för att filtrera svaret.
+Du har nu lagt till ditt schema i unionen [!DNL XDM Individual Profile]. Om du vill se en lista över alla scheman som ingår i samma union kan du utföra en GET-begäran med frågeparametrar för att filtrera svaret.
 
 Med frågeparametern `property` kan du ange att endast scheman som innehåller ett `meta:immutableTags`-fält som har `meta:class` som är lika med `$id` för klassen [!DNL XDM Individual Profile] returneras.
 

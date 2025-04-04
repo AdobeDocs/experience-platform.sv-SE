@@ -5,7 +5,7 @@ title: Skapa en allmän OData Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en allmän källanslutning till ett öppet dataprotokoll med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: aad6b6f7-622c-4ab6-bf6d-1221fe1132d1
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL Generic OData]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Generic Open Data Protocol]-källkoppling (kallas nedan [!DNL OData]) med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Generic Open Data Protocol]-källkoppling (kallas nedan [!DNL OData]) med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Om du redan har en giltig [!DNL OData]-anslutning kan du hoppa över resten av d
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL OData]-konto i [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till ditt [!DNL OData]-konto i [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -39,7 +39,7 @@ Mer information om hur du kommer igång finns i [det här [!DNL OData] dokumente
 
 ## Anslut ditt [!DNL OData]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL OData]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL OData]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -65,4 +65,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL OData]-konto du vi
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL OData]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta protokolldata till  [!DNL Platform]](../../dataflow/protocols.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL OData]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta protokolldata till  [!DNL Experience Platform]](../../dataflow/protocols.md).

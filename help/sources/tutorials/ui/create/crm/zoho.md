@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Zoho CRM;zoho crm;Zoho;zoho
+keywords: Experience Platform;home;populära topics;Zoho CRM;zoho crm;Zoho;zoho
 solution: Experience Platform
 title: Skapa en Zoho CRM Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Zoho CRM-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: c648fc3e-beea-4030-8d36-dd8a7e2c281e
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '535'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >[!DNL Zoho CRM]-källan kommer att bli inaktuell i slutet av juni 2025.
 
-Source-anslutningar i Adobe Experience Platform ger möjlighet att importera externt källkodsdata i CRM på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Zoho CRM]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform ger möjlighet att importera externt källkodsdata i CRM på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Zoho CRM]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -33,7 +33,7 @@ Om du redan har ett giltigt [!DNL Zoho CRM]-konto kan du hoppa över resten av d
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL Zoho CRM] till plattformen måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta [!DNL Zoho CRM] till Experience Platform måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -48,9 +48,9 @@ Mer information om dessa autentiseringsuppgifter finns i dokumentationen om [[!D
 
 ## Anslut ditt [!DNL Zoho CRM]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Zoho CRM]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Zoho CRM]-konto till [!DNL Experience Platform].
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -78,4 +78,4 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Zoho CRM]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Zoho CRM]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/crm.md).

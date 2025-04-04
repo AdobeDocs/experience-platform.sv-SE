@@ -1,10 +1,10 @@
 ---
 title: Definiera kartfält i användargränssnittet
-description: Lär dig hur du definierar ett kartfält i användargränssnittet för Experience Platform.
+description: Lär dig hur du definierar ett kartfält i Experience Platform användargränssnitt.
 exl-id: 657428a2-f184-4d7c-b657-4fc60d77d5c6
-source-git-commit: ee27fc42a1ee23ef650d320df64e5970a84d0d38
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Med Adobe Experience Platform kan ni helt anpassa strukturen för era anpassade 
 
 Du kan också definiera mappningsfält i Schemaredigeraren för att modellera flexibla och dynamiska datastrukturer eller lagra en samling nyckelvärdepar.
 
-När du definierar ett nytt fält i användargränssnittet för plattformen använder du listrutan **[!UICONTROL Type]** och väljer **[!UICONTROL Map]** i listan.
+När du definierar ett nytt fält i Experience Platform användargränssnitt använder du listrutan **[!UICONTROL Type]** och väljer **[!UICONTROL Map]** i listan.
 
 ![Schemaredigeraren med listrutan Typ och kartvärdet markerat.](../../images/ui/fields/special/map.png)
 
@@ -44,10 +44,10 @@ Se till att du bara använder karttypsfält när det är absolut nödvändigt, e
 
 >[!NOTE]
 >
->Plattformsgränssnittet har begränsningar för hur nycklarna för mappningsfält kan extraheras. Objekttypsfält kan expanderas, men kartor visas i stället som ett enda fält. Kartfält som skapats med API:t för schemaregister och som inte är sträng- eller heltalsdatatyper visas som [!UICONTROL Complex]-datatyper.
+>Experience Platform-gränssnittet har begränsningar för hur nycklarna för mappningsfält kan extraheras. Objekttypsfält kan expanderas, men kartor visas i stället som ett enda fält. Kartfält som skapats med API:t för schemaregister och som inte är sträng- eller heltalsdatatyper visas som [!UICONTROL Complex]-datatyper.
 
 ## Nästa steg
 
-När du har läst det här dokumentet kan du nu definiera kartfält i plattformsgränssnittet. Kom ihåg att du bara kan använda klasser och fältgrupper för att lägga till fält i scheman. Mer information om hur du hanterar de här resurserna i användargränssnittet finns i handböckerna om hur du skapar och redigerar [klasser](../resources/classes.md) och [fältgrupper](../resources/field-groups.md).
+När du har läst det här dokumentet kan du nu definiera kartfält i Experience Platform användargränssnitt. Kom ihåg att du bara kan använda klasser och fältgrupper för att lägga till fält i scheman. Mer information om hur du hanterar de här resurserna i användargränssnittet finns i handböckerna om hur du skapar och redigerar [klasser](../resources/classes.md) och [fältgrupper](../resources/field-groups.md).
 
 Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).

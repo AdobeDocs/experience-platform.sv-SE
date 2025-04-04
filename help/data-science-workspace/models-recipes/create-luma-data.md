@@ -5,9 +5,9 @@ title: Skapa webbscheman och datauppsättningar för Luma
 type: Tutorial
 description: I den här självstudiekursen får du tillgång till de förutsättningar och resurser som krävs för Lumas modell för benägenhet för demo.
 exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ I följande självstudie används en anpassad Luma-modell för köpbenägenhet. 
 
 ### Skapa Luma-webbdataramat och importera data
 
-För att kunna skapa en modell måste du ha en datauppsättning i Platform som används för att utbilda och bedöma modellen. I följande videofilm från [Data Science Workspace-kursen](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) får du hjälp med att skapa Luma-schemat och inhämta data som används av inköpsbenägenhetsmodellen.
+För att kunna skapa en modell måste du ha en datauppsättning i Experience Platform som används för att utbilda och bedöma din modell. I följande videofilm från [Data Science Workspace-kursen](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) får du hjälp med att skapa Luma-schemat och inhämta data som används av inköpsbenägenhetsmodellen.
 
 >[!VIDEO](https://video.tv.adobe.com/v/333312)
 

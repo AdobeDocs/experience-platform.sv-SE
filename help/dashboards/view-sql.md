@@ -2,16 +2,16 @@
 title: Visa Insight SQL
 description: Visa SQL bakom din profil, målgrupp, destination och anpassade insikter och kör frågan på begäran via Frågeredigeraren.
 exl-id: fd728926-c113-4593-92b1-916a02d09d41
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '384'
+source-wordcount: '385'
 ht-degree: 0%
 
 ---
 
 # Visa SQL-insikter
 
-Använd funktionen [!UICONTROL View SQL] om du vill visa SQL:en bakom din profil, målgrupp, mål och anpassade insikter och köra frågan på begäran via Frågeredigeraren. Hämta inspiration från SQL av över 40 befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov.
+Använd funktionen [!UICONTROL View SQL] om du vill visa SQL:en bakom din profil, målgrupp, mål och anpassade insikter och köra frågan på begäran via Frågeredigeraren. Hämta inspiration från SQL:s över 40 befintliga insikter för att skapa nya frågor som bygger på unika insikter från Experience Platform-data utifrån era affärsbehov.
 
 ## Navigera till översikten över kontrollpanelen {#navigate-to-overview}
 
@@ -19,7 +19,7 @@ Om du vill öppna den valda instrumentpanelen väljer du antingen **[!UICONTROL 
 
 Du kan också välja **[!UICONTROL Dashboards]** i den vänstra navigeringen följt av namnet på din anpassade instrumentpanel. Översikten över den användardefinierade kontrollpanelen visas.
 
-![Användargränssnittet Experience Platform med [!UICONTROL Profiles], [!UICONTROL Audiences], [!UICONTROL Destinations] och [!UICONTROL Dashboards] markerat.](./images/view-sql/dashboard-navigation.png)
+![Experience Platform-gränssnittet med [!UICONTROL Profiles], [!UICONTROL Audiences], [!UICONTROL Destinations] och [!UICONTROL Dashboards] markerat.](./images/view-sql/dashboard-navigation.png)
 
 ## Visa växlingsknappen för SQL {#toggle}
 
@@ -59,4 +59,4 @@ Frågeredigeraren visas. Nu kan du redigera satsen och fråga dina plattformsdat
 
 ## Nästa steg
 
-När du har läst det här dokumentet kan du nu förstå hur du får åtkomst till SQL för att få information antingen i standardkontrollpanelerna eller i en användardefinierad kontrollpanel. Om du inte redan har gjort det rekommenderar vi att du läser [Real-time Customer Data Platform Insights-datamodelldokumentet](./data-models/cdp-insights-data-model-b2c.md). Det dokumentet innehåller insikter om hur du anpassar SQL-mallar för Real-Time CDP-rapporter som är skräddarsydda efter dina marknadsförings- och KPI-behov.
+När du har läst det här dokumentet kan du nu förstå hur du får åtkomst till SQL för att få information antingen i standardkontrollpanelerna eller i en användardefinierad kontrollpanel. Om du inte redan har gjort det rekommenderar vi att du läser [Real-Time Customer Data Platform Insights-datamodelldokumentet](./data-models/cdp-insights-data-model-b2c.md). Det dokumentet innehåller insikter om hur du anpassar SQL-mallar för Real-Time CDP-rapporter som är skräddarsydda efter dina marknadsförings- och KPI-behov.

@@ -3,9 +3,9 @@ title: Utveckla kundvärdet en gång till livstidsvärdet
 description: Lär dig hur du skapar personaliserade kampanjer för att erbjuda de bästa kompletterande produkterna eller tjänsterna baserat på en viss kunds attribut, beteende och tidigare köp.
 feature: Use Cases
 exl-id: 45f72b5e-a63b-44ac-a186-28bac9cdd442
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3154'
+source-wordcount: '3156'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >* På den här sidan visas ett exempel på hur Real-Time CDP och Adobe Journey Optimizer implementeras för att uppnå det beskrivna användningsfallet. Använd sifferdata, kvalificeringskriterier och andra fält som anges på sidan som en vägledning, inte som prediktiva siffror.
 >* Du måste ha licens för Real-Time CDP och Adobe Journey Optimizer för att kunna använda produkten. Läs mer i avsnittet [Krav och planering](#prerequisites-and-planning) längre fram.
 
-Implementera engångskundens värde för livstidsanvändning för att öka varumärkesengagemang och varumärkeslojalitet. Bygg en uppkopplad kundupplevelse i flera kanaler eller på en resa med hjälp av Experience Platform, utökat av [Real-Time CDP](/help/rtcdp/home.md) och [Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home).
+Implementera engångskundens värde för livstidsanvändning för att öka varumärkesengagemang och varumärkeslojalitet. Bygg en uppkopplad kundupplevelse i flera kanaler eller på en resa med hjälp av kraften i Experience Platform, som utökas av [Real-Time CDP](/help/rtcdp/home.md) och [Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home).
 
 Personerna som ni riktar in er på är de ovanliga besökarna av era egendomar som har gjort några inköp de senaste tre månaderna.
 
@@ -33,7 +33,7 @@ Personerna som ni riktar in er på är de ovanliga besökarna av era egendomar s
 
 Med tanke på att ni internt har definierat ett affärsmål och mål att öka varumärkeslojaliteten. Detta kan leda till att man implementerar ett användningsexempel som kan öka kundengagemanget och lojaliteten.
 
-För att uppnå detta består tekniken av de två Experience Platform-apparna [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html). Nedan visas olika funktioner och gränssnittselement från de två programmen som du använder när du implementerar användningsexemplet.
+För att uppnå detta består den teknik som krävs av de två Experience Platform-programmen [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html). Nedan visas olika funktioner och gränssnittselement från de två programmen som du använder när du implementerar användningsexemplet.
 
 >[!TIP]
 >
@@ -44,7 +44,7 @@ För att uppnå detta består tekniken av de två Experience Platform-apparna [R
    * [Profiler](/help/profile/home.md)
    * [Datauppsättningar](/help/catalog/datasets/overview.md)
    * [Målgrupper](/help/segmentation/home.md)
-   * [Mål ](/help/destinations/home.md)
+   * [Mål](/help/destinations/home.md)
 * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html): Designa resor, konfigurera utlösare och skapa rätt meddelanden för att adressera besökarna.
    * [Händelse- eller målutlösare](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html)
    * [Publiker och händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html)
@@ -97,7 +97,7 @@ Mer information om hur du skapar [scheman](https://experienceleague.adobe.com/do
 
 Det finns flera schemadesigner som du kan använda i den här exempelimplementeringen för användningsfallet för att ändra ett enstaka värde till ett livstidsvärde. Varje schema innehåller specifika obligatoriska fält som ska ställas in och vissa fält som föreslås.
 
-Utifrån exempelimplementeringar föreslår Adobe att du skapar följande tre scheman för att uppnå det här användningsfallet:
+Baserat på exempelimplementeringar föreslår Adobe att du skapar följande tre scheman för att uppnå detta användningsfall:
 
 * [Kundattributschema](#customer-attributes-schema) (ett profilschema)
 * [Kundens schema för digitala transaktioner](#customer-digital-transactions-schema) (ett upplevelsehändelseschema)
@@ -210,7 +210,7 @@ Externa granskningsattribut för Source-system är en XDM-datatyp (Experience Da
 
 #### Schema för offlinetransaktioner för kund {#customer-offline-transactions-schema}
 
-Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på plattformar utanför webbplatsen. Dessa data hämtas vanligtvis in till [!DNL Adobe Experience Platform] från en POS (eller liknande system) och strömmas oftast till plattformen via en API-anslutning. Läs om [gruppinmatning](/help/ingestion/batch-ingestion/getting-started.md). Syftet är att hänvisa till olika offlinekonverteringshändelser som används för att utlösa resor, djupgående kundanalyser online och offline samt förbättrade segmenteringsfunktioner.
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på plattformar utanför webbplatsen. Dessa data importeras vanligtvis till [!DNL Adobe Experience Platform] från en POS (eller liknande system) och direktuppspelas oftast till Experience Platform via en API-anslutning. Läs om [gruppinmatning](/help/ingestion/batch-ingestion/getting-started.md). Syftet är att hänvisa till olika offlinekonverteringshändelser som används för att utlösa resor, djupgående kundanalyser online och offline samt förbättrade segmenteringsfunktioner.
 
 ![Schema för kundoffline-transaktioner med fältgrupper markerade](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/customer-offline-transactions-schema.png)
 
@@ -300,7 +300,7 @@ Det här användningsexemplet kräver att du skapar två målgrupper för att de
 
 * Mer information om hur du skapar en målgrupp finns i [Användargränssnittsguiden för målgruppstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience).
 * Mer information om hur du komponerar [målgrupper](/help/segmentation/home.md) finns i [Användargränssnittsguiden för målgruppsdisposition](/help/segmentation/ui/audience-composition.md).
-* Mer information om hur du skapar målgrupper med hjälp av plattformsbaserade segmentdefinitioner finns i [Användargränssnittshandboken för Audience Builder](/help/segmentation/ui/segment-builder.md).
+* Mer information om hur du skapar målgrupper med hjälp av Experience Platform-härledda segmentdefinitioner finns i [Användargränssnittshandboken för Audience Builder](/help/segmentation/ui/segment-builder.md).
 
 Du måste skapa och använda två målgrupper i olika steg av användningsfallet, vilket visas i bilden nedan.
 

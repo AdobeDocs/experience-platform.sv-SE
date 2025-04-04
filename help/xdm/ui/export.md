@@ -4,9 +4,9 @@ title: Exportera XDM-scheman i användargränssnittet
 description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller organisation i Adobe Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '634'
+source-wordcount: '636'
 ht-degree: 0%
 
 ---
@@ -28,11 +28,11 @@ För att tillgodose detta behov kan du med arbetsytan [!UICONTROL Schemas] i Ado
 
 ## Förhandskrav
 
-Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se guiden [Komma igång med API:t för schemaregister](../api/getting-started.md) för viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
+I Experience Platform UI kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se guiden [Komma igång med API:t för schemaregister](../api/getting-started.md) för viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
 
 ## Generera en exportnyttolast {#generate-export-payload}
 
-Du kan generera exportnyttolaster i plattformsgränssnittet från informationspanelen på fliken [!UICONTROL Browse] eller direkt från arbetsytan för schemat i schemaläggaren.
+Du kan generera nyttolaster för export i Experience Platform-gränssnittet från informationspanelen på fliken [!UICONTROL Browse] eller direkt från arbetsytan för schemat i Schemaredigeraren.
 
 Om du vill generera en exportnyttolast väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen. I arbetsytan [!UICONTROL Schemas] väljer du raden för det schema som du vill exportera för att visa schemainformation i den högra sidofältet.
 

@@ -2,16 +2,16 @@
 title: LiveRamp - Distribution Connection
 description: Lär dig hur du använder LiveRamp - Distribution Connector för att orkestrera och aktivera målgrupper som tidigare har anslutit till LiveRamp till reklamdestinationer längre fram i kedjan.
 exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '2623'
+source-wordcount: '2645'
 ht-degree: 0%
 
 ---
 
 # [!DNL LiveRamp - Distribution]-anslutning
 
-Med anslutningen [!DNL LiveRamp - Distribution] kan du aktivera målgrupper från Experience Platform till högklassiga utgivare på olika medier för mobil, webb, skärm och ansluten TV.
+Med anslutningen [!DNL LiveRamp - Distribution] kan du aktivera målgrupper från Experience Platform till förstklassiga utgivare på olika medier för mobil, webb, skärm och ansluten TV.
 
 >[!IMPORTANT]
 >
@@ -73,7 +73,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
-![Plattformens gränssnittsbild visar målanslutningsskärmen.l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-new-connection.png)
+![Experience Platform-gränssnittsbild visar målanslutningsskärmen.l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-new-connection.png)
 
 * **[!UICONTROL LiveRamp Organization ID]**: Organisations-ID för ditt LiveRamp-konto (anges som _owner_org_ i dina LiveRamp-angivna autentiseringsuppgifter).
 * **[!UICONTROL Password]**: Lösenordet för ditt LiveRamp-konto (anges som _secrets_key_ i dina LiveRamp-angivna autentiseringsuppgifter).
@@ -84,7 +84,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 När du har anslutit till ditt LiveRamp-konto anger du den information som krävs för att ansluta till målet som du vill aktivera målgrupper för.
 
-![Plattformens gränssnittsbild visar skärmen med målinformation.l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-destination-details.png)
+![Experience Platform-gränssnittsbild som visar skärmen för målinformation.l](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-destination-details.png)
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för målanslutningen.
 
@@ -114,7 +114,7 @@ I avsnitten nedan finns detaljerade riktlinjer för hur du konfigurerar varje m�
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för 4C Insights-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_4C_DestSpecific.png)
+![Experience Platform UI-bild som visar kunddatafälten för 4C Insights-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_4C_DestSpecific.png)
 
 * **[!UICONTROL 4C Brand Profile ID]**: Ange det numeriska ID som är associerat med din 4C-varumärkesprofil. Om du inte har detta ID kontaktar du din 4C-representant för klienttjänster.
 
@@ -127,7 +127,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Acast-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Acast_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för Acast-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Acast_DestSpecific.png)
 
 * **[!UICONTROL Client name]**: Ditt annonsörskontonamn, som du vill att det ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 
@@ -140,7 +140,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Ampersand-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Ampersand_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för Ampersand-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Ampersand_DestSpecific.png)
 
 * **[!UICONTROL Your Company Name]**: Ditt företagsnamn, som du vill ska visas för målpartnern. Använd inte blanksteg eller specialtecken.
 
@@ -153,7 +153,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Captify-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Captify_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för Captify-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Captify_DestSpecific.png)
 
 * **[!UICONTROL Client name]**: Ditt annonsörskontonamn, som du vill att det ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 
@@ -166,7 +166,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Cardlytics-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Cardlytics_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för Cardlytics-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Cardlytics_DestSpecific.png)
 
 * **[!UICONTROL Client name]**: Ditt annonsörskontonamn, som du vill att det ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 
@@ -191,7 +191,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Disney-målet.](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-disney-fields.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för Disney-destinationen.](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-disney-fields.png)
 
 * **[!UICONTROL Advertiser data destination terms agreement]**: Skriv in `I AGREE` för att bekräfta bekräftelsen och godkännandet av datavillkoren för Disney-annonseraren.
 * **[!UICONTROL Client name]**: Ange ditt företagsnamn som du vill att det ska visas för målpartnern.
@@ -206,7 +206,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för iHeartMedia-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_iHeart_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för iHeartMedia-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_iHeart_DestSpecific.png)
 
 * **[!UICONTROL Client Name]**: Ditt annonsörskontonamn, som du vill att det ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 
@@ -219,7 +219,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för indexExchange-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_IndexExchange_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för indexExchange-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_IndexExchange_DestSpecific.png)
 
 * **[!UICONTROL Account Name]**: Klientkontonamnet för Index Exchange. Använd inte blanksteg eller specialtecken.
 
@@ -232,7 +232,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Magnite CTV-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteCTV_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för Magnite CTV-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteCTV_DestSpecific.png)
 
 * **[!UICONTROL Client]**: Ditt klientnamn, som du vill ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 
@@ -250,7 +250,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Magnite DV+-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för Magnite DV+-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
 
 * **[!UICONTROL Partner ID]**: Det Rubicon-projektpartner-ID som är associerat med utgivaren som äger segmentet/data. Kontakta din kontorepresentant för Rubicon Project om du är osäker på vilket värde du ska använda.
 * **[!UICONTROL Seat ID]**: Magnite DV+ Licens-ID från din kontohanterare för Magnite
@@ -279,7 +279,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för nästa mål.](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för nästa mål.](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
 
 * **[!UICONTROL Rate Type]**: Hastighetstypen representerar hur dataanvändningen ska faktureras. Alla dollar ska vara en fast avgift. Kontakta din Nexen-representant om du inte är säker på vilken tarifftyp du ska använda.
 * **[!UICONTROL Market ID]**: Ange det numeriska marknads-ID där Nexen-datakontraktet ska skapas. Om du använder&quot;AlwaysOn&quot;-syndikering på alla marknader i Nexen-plattformen anger du -1.
@@ -295,7 +295,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för One Fox-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafälten för One Fox-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
 
 * **[!UICONTROL Client]**: Namnet på ditt företag/ditt distributionskonto så som du vill att det ska visas för partnern. Använd ditt företagsnamn som standard. Kontakta din kontorepresentant om du är osäker på vilket namn du ska använda. Använd inte blanksteg eller specialtecken.
 
@@ -308,7 +308,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för Pandora-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Pandora_DestSpecific.png)
+![Experience Platform-gränssnittsbild som visar kunddatafält för Pandora-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Pandora_DestSpecific.png)
 
 * **[!UICONTROL Account name]**: Namnet på ditt Pandora-konto. Kontakta din Pandora-kontorepresentant om du inte är säker på vad ditt kontonamn är. Använd inte blanksteg eller specialtecken.
 
@@ -326,7 +326,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar kunddatafälten för redigeringsmålet.](../../assets/catalog/advertising/liveramp-distribution/LR_Reddit_DestSpecific.png)
+![Experience Platform UI-bild som visar kunddatafälten för Reddit-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Reddit_DestSpecific.png)
 
 * **[!UICONTROL Reddit advertiser ID]**: Ditt ID för Redigera annonsör. Måste börja med &quot;t2_&quot; eller &quot;a2_&quot;. Kontakta din REDIGERINGSrepresentant om du inte känner till ditt annonsörs-ID.
 * **[!UICONTROL Reddit advertiser name]**: Din Redigera annonsörs namn. Använd inte blanksteg eller specialtecken.
@@ -345,7 +345,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar de identifierare som stöds för Roku-målet.](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-roku-fields.png)
+![Experience Platform UI-bild som visar de identifierare som stöds för Roku-målet.](../../assets/catalog/advertising/liveramp-distribution/liveramp-distribution-roku-fields.png)
 
 * **[!UICONTROL Roku account email address]**: Ange den e-postadress som är kopplad till ditt Roku-konto.
 * **[!UICONTROL Roku account representative email address]**: Ange e-postadressen till din Roku-kontorepresentant. Om du vill ange flera adresser avgränsar du dem med kommatecken.
@@ -359,7 +359,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar identifierare som stöds för destinationen Spotify.](../../assets/catalog/advertising/liveramp-distribution/LR_Spotify_DestSpecific.png)
+![Experience Platform UI-bild som visar identifierare som stöds för destinationen Spotify.](../../assets/catalog/advertising/liveramp-distribution/LR_Spotify_DestSpecific.png)
 
 * **[!UICONTROL Client name]**: Ditt annonsörskontonamn, som du vill att det ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 
@@ -377,7 +377,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar identifierare som stöds för Taboola-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Taboola_DestSpecific.png)
+![Experience Platform UI-bild som visar identifierare som stöds för Taboola-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Taboola_DestSpecific.png)
 
 * **[!UICONTROL Account manager email address]**: E-postadressen till kontohanteraren för Taboola.
 * **[!UICONTROL Segment type]**: Segmenttypen. Det finns för närvarande bara stöd för segment från första part.
@@ -391,7 +391,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar identifierare som stöds för TargetSpot-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_TargetSpot_DestSpecific.png)
+![Experience Platform UI-bild som visar identifierare som stöds för TargetSpot-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_TargetSpot_DestSpecific.png)
 
 * **[!UICONTROL Client name]**: Ditt annonsörskontonamn, som du vill att det ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 
@@ -404,7 +404,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar identifierare som stöds för TargetSpot-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Teads_DestSpecific.png)
+![Experience Platform UI-bild som visar identifierare som stöds för TargetSpot-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_Teads_DestSpecific.png)
 
 * **[!UICONTROL Teads ID]**: Ditt te-ID
 
@@ -417,7 +417,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 Om du vill konfigurera information för målet fyller du i fälten nedan.
 
-![Plattformsgränssnittsbild som visar identifierare som stöds för WB Discovery-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_WBD_DestSpecific.png)
+![Experience Platform UI-bild som visar identifierare som stöds för WB Discovery-målet.](../../assets/catalog/advertising/liveramp-distribution/LR_WBD_DestSpecific.png)
 
 * **[!UICONTROL Client name]**: Ditt annonsörskontonamn, som du vill att det ska visas för målpartnern. Använd ditt företagsnamn. Använd inte blanksteg eller specialtecken.
 

@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera autentiseringsspecifikationer för självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: 8517532f991413a239e0da890bf53b1bf5b621f0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Autentiseringsspecifikationer definierar hur Adobe Experience Platform-användare kan ansluta till din källa.
 
-Arrayen `authSpec` innehåller information om de autentiseringsparametrar som krävs för att ansluta en källa till plattformen. Alla angivna källor har stöd för flera olika typer av autentisering.
+Arrayen `authSpec` innehåller information om de autentiseringsparametrar som krävs för att ansluta en källa till Experience Platform. Alla angivna källor har stöd för flera olika typer av autentisering.
 
 ## Autentiseringsspecifikationer
 
@@ -340,4 +340,4 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
 
 ## Nästa steg
 
-När autentiseringsspecifikationerna är ifyllda kan du fortsätta att konfigurera källspecifikationerna för den källa som du vill integrera med plattformen. Mer information finns i dokumentet om [konfigurering av källspecifikationer](./sourcespec.md).
+När autentiseringsspecifikationerna är ifyllda kan du fortsätta att konfigurera källspecifikationerna för den källa som du vill integrera med Experience Platform. Mer information finns i dokumentet om [konfigurering av källspecifikationer](./sourcespec.md).

@@ -3,7 +3,7 @@ title: Moengage connection
 description: Moengage är en plattform för kundengagemang som driver kundcentrerade interaktioner mellan konsumenter och varumärken i realtid.
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: 1e22ad63414876af45d156ed030b8103908de8a1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -100,7 +100,7 @@ Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../..
 
 Om du vill skicka målgruppsdata korrekt från [!DNL Adobe Experience Platform] till [!DNL Moengage]-målet måste du gå igenom fältmappningssteget.
 
-Mappningen består av att skapa en länk mellan [!DNL Experience Data Model] (XDM)-schemafälten i ditt [!DNL Platform]-konto och motsvarande motsvarigheter från målmålet.
+Mappningen består av att skapa en länk mellan [!DNL Experience Data Model] (XDM)-schemafälten i ditt [!DNL Experience Platform]-konto och motsvarande motsvarigheter från målmålet.
 
 Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Moengage]:
 
@@ -128,7 +128,7 @@ I avsnittet [!UICONTROL Target Field] väljer du mappningsikonen till höger om 
 ![Målmappning för Moengage](../../assets/catalog/mobile-engagement/moengage/mapping-target.png)
 
 I fönstret [!UICONTROL Select target field] kan du välja mellan två kategorier av målfält:
-* [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa [!DNL Platform] identitetsnamnutrymmen till [!DNL Moengage] identitetsnamnutrymmen.
+* [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa [!DNL Experience Platform] identitetsnamnutrymmen till [!DNL Moengage] identitetsnamnutrymmen.
 * [!UICONTROL Select custom attributes]: Använd det här alternativet om du vill mappa XDM-attribut till anpassade [!DNL Moengage]-attribut som du har definierat i ditt [!DNL Moengage]-konto. <br> Du kan också använda det här alternativet om du vill byta namn på befintliga XDM-attribut till [!DNL Moengage]. Om du till exempel mappar ett `lastName` XDM-attribut till ett anpassat `Last_Name`-attribut i [!DNL Moengage] skapas `Last_Name`-attributet i [!DNL Moengage], om det inte redan finns, och `lastName` XDM-attributet mappas till det.
 
 ![Mappningsfält för målmål för rörelseinteraktion](../../assets/catalog/mobile-engagement/moengage/mapping-target-fields.png)

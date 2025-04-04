@@ -2,10 +2,10 @@
 title: Stöd för CSP (Content Security Policy)
 description: Lär dig hur du hanterar begränsningar för CSP (Content Security Policy) när du integrerar webbplatsen med taggar i Adobe Experience Platform.
 exl-id: 9232961e-bc15-47e1-aa6d-3eb9b865ac23
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1074'
-ht-degree: 0%
+source-wordcount: '1076'
+ht-degree: 4%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 En CSP (Content Security Policy) är en säkerhetsfunktion som hjälper till att förhindra serveröverskridande skriptattacker (XSS). Det här händer när webbläsaren tricks med att köra skadligt innehåll som verkar komma från en betrodd källa men som verkligen kommer från någon annan. Med CSP kan webbläsaren (för användaren) verifiera att skriptet verkligen kommer från en betrodd källa.
 
@@ -46,13 +46,13 @@ Om du är [självvärd](../publishing/hosts/self-hosting-libraries.md) för ditt
 Content-Security-Policy: script-src 'self'
 ```
 
-**HTML `<meta>` -tagg**
+**HTML `<meta>` tag**
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
 ```
 
-### Värdtjänster som hanteras av Adobe
+### Adobe-hanterade värdtjänster
 
 Om du använder en [Adobe-hanterad värd](../publishing/hosts/managed-by-adobe-host.md) bevaras din version på `assets.adobedtm.com`. Du bör ange `self` som en säker domän så att du inte bryter några skript som du redan läser in, men du måste också ange `assets.adobedtm.com` som säker, annars läses inte taggbiblioteket in på sidan. I så fall bör du använda följande konfiguration:
 
@@ -62,7 +62,7 @@ Om du använder en [Adobe-hanterad värd](../publishing/hosts/managed-by-adobe-h
 Content-Security-Policy: script-src 'self' assets.adobedtm.com
 ```
 
-**HTML `<meta>` -tagg**
+**HTML `<meta>` tag**
 
 
 Det finns en viktig förutsättning: Du måste läsa in taggbiblioteket [asynkront](./asynchronous-deployment.md). Detta fungerar inte med synkron inläsning av taggbiblioteket (vilket resulterar i konsolfel och att reglerna inte körs som de ska).
@@ -82,7 +82,7 @@ CSP tillåter inte infogade skript som standard och måste därför konfigureras
 
 >[!NOTE]
 >
->CSP-specifikationen innehåller information om ett tredje alternativ som använder hash-koder, men det här tillvägagångssättet går inte att använda med tagghanteringssystem som taggar. Mer information om begränsningarna med att använda hash-koder med taggar i Platform finns i [guiden för delresursintegritet (SRI)](./sri.md).
+>CSP-specifikationen innehåller information om ett tredje alternativ som använder hash-koder, men det här tillvägagångssättet går inte att använda med tagghanteringssystem som taggar. Mer information om begränsningarna med att använda hash-koder med taggar i Experience Platform finns i guiden [Delresursintegritet (SRI)](./sri.md).
 
 ### Tillåt som en gång {#nonce}
 
@@ -92,7 +92,7 @@ Den här metoden innebär att generera en kryptografisk engångsversion och läg
 >
 >Om du vill använda den här metoden måste du läsa in bygget asynkront. Detta fungerar inte när bygget läses in synkront, vilket resulterar i konsolfel och att reglerna inte körs som de ska. Mer information finns i guiden om [asynkron distribution](./asynchronous-deployment.md).
 
-I exemplen nedan visas hur du kan lägga till ditt namn i CSP-konfigurationen för en värddator som hanteras med Adobe. Om du använder självbetjäning kan du utesluta `assets.adobedtm.com`.
+I exemplen nedan visas hur du kan lägga till ditt namn i CSP-konfigurationen för en Adobe-hanterad värd. Om du använder självbetjäning kan du utesluta `assets.adobedtm.com`.
 
 **HTTP-huvud**
 
@@ -100,17 +100,17 @@ I exemplen nedan visas hur du kan lägga till ditt namn i CSP-konfigurationen f�
 Content-Security-Policy: script-src 'self' assets.adobedtm.com 'nonce-2726c7f26c'
 ```
 
-**HTML `<meta>` -tagg**
+**HTML `<meta>` tag**
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com 'nonce-2726c7f26c'">
 ```
 
-När du har konfigurerat sidhuvudet eller HTML-taggen måste du ange var taggen ska hitta nonce när du läser in ett textbundet skript. För att en tagg ska kunna använda nonce när skriptet läses in måste du:
+När du har konfigurerat sidhuvudet eller HTML-taggen måste du tala om för taggen var du ska hitta nonce när du läser in ett textbundet skript. För att en tagg ska kunna använda nonce när skriptet läses in måste du:
 
 1. Skapa ett dataelement som refererar till var nonce finns i datalagret.
 1. Konfigurera Core Extension och ange vilket dataelement du använde.
-1. Publish ditt dataelement och Core Extension ändras.
+1. Publicera dataelement och ändringar i Core Extension.
 
 >[!NOTE]
 >
@@ -132,15 +132,15 @@ Använd följande konfigurationer om du använder värdtjänster:
 Content-Security-Policy: script-src 'self' 'unsafe-inline'
 ```
 
-**HTML `<meta>` -tagg**
+**HTML `<meta>` tag**
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
 ```
 
-#### Värdtjänster som hanteras av Adobe
+#### Adobe-hanterade värdtjänster
 
-Använd följande konfigurationer om du använder värdtjänster som hanteras i Adobe:
+Använd följande konfigurationer om du använder Adobe-hanterade värdtjänster:
 
 **HTTP-huvud**
 
@@ -148,7 +148,7 @@ Använd följande konfigurationer om du använder värdtjänster som hanteras i 
 Content-Security-Policy: script-src 'self' assets.adobedtm.com 'unsafe-inline'
 ```
 
-**HTML `<meta>` -tagg**
+**HTML `<meta>` tag**
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com 'unsafe-inline'">
@@ -158,4 +158,4 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'unsafe-inline'
 
 Genom att läsa det här dokumentet bör du nu förstå hur du konfigurerar CSP-huvudet så att det godkänner taggbiblioteksfilen och infogade skript.
 
-Som en extra säkerhetsåtgärd kan du även välja att använda SRI (Subresource Integrity) för att validera hämtade biblioteksbyggen. Den här funktionen har dock vissa begränsningar när den används med tagghanteringssystem som taggar. Mer information finns i guiden om [SRI-kompatibilitet i plattformen](./sri.md).
+Som en extra säkerhetsåtgärd kan du även välja att använda SRI (Subresource Integrity) för att validera hämtade biblioteksbyggen. Den här funktionen har dock vissa begränsningar när den används med tagghanteringssystem som taggar. Mer information finns i guiden om [SRI-kompatibilitet i Experience Platform](./sri.md).

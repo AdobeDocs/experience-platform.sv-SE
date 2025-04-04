@@ -7,10 +7,10 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '1251'
-ht-degree: 0%
+ht-degree: 4%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >  
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html) för en konsoliderad referens av terminologiändringarna.
 
 Mailchimp-tillägget [för händelsevidarebefordran](../../../ui/event-forwarding/overview.md) skickar händelser till Mailchimp Marketing API som kan utlösa e-postmeddelanden för marknadsföringskampanjer, resor eller transaktioner för Mailchimp.
 
@@ -103,7 +103,7 @@ Tillägget är nu installerat och konfigurerat för att användas i din egenskap
 
 ## Datainsamling
 
-När du använder det här tillägget i en [regel](../../../ui/managing-resources/rules.md) finns det flera datavärden som tillägget skickar till Mailchimp för varje händelse. För en typisk implementering kan du konfigurera [Adobe Experience Platform Web SDK-tillägget](../../client/web-sdk/overview.md) så att data skickas till [!DNL Platform Edge Network] för användning av tillägget i egenskapen för händelsevidarebefordran.
+När du använder det här tillägget i en [regel](../../../ui/managing-resources/rules.md) finns det flera datavärden som tillägget skickar till Mailchimp för varje händelse. För en typisk implementering kan du konfigurera [Adobe Experience Platform Web SDK-tillägget](../../client/web-sdk/overview.md) så att data skickas till [!DNL Experience Platform Edge Network] för att användas av tillägget i egenskapen för händelsevidarebefordran.
 
 De data som krävs för det här tillägget kan skickas från Web SDK som antingen XDM-data (med objektet [`xdm`](/help/web-sdk/commands/sendevent/xdm.md)) eller data som inte är XDM (med objektet [`data`](/help/web-sdk/commands/sendevent/data.md)).
 
@@ -140,7 +140,7 @@ Du kan nu använda det här tillägget och åtgärden Lägg till händelse för 
 
 ## Dataverifiering
 
-När du arbetar med tillägg för händelsevidarebefordran är [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) mycket användbar. I avsnittet Loggar, under Edge loggar, kan du se de begäranden som har gjorts av reglerna för vidarebefordran av händelser när de har utlösts. På följande skärmbilder visas en begäran som görs till Mailchimp API av tillägget.
+[Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) är mycket användbart när du arbetar med tillägg för händelsevidarebefordran. I avsnittet Loggar, under Edge loggar, kan du se de begäranden som har gjorts av reglerna för vidarebefordran av händelser när de har utlösts. På följande skärmbilder visas en begäran som görs till Mailchimp API av tillägget.
 
 ![Adobe Experience Platform Debugger](../../../images/extensions/server/mailchimp/debugger-edge-logs.png)
 

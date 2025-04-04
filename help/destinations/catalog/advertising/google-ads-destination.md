@@ -2,9 +2,9 @@
 title: Google Ads-anslutning
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör det möjligt för företag att betala per klick för annonsering i textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appen.
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '930'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,11 @@ ht-degree: 0%
 Observera följande information som är specifik för [!DNL Google Ads] mål:
 
 * Aktiverade målgrupper skapas programmatiskt i plattformen [!DNL Google].
-* [!DNL Platform] innehåller för närvarande inte något mätvärde för att validera aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
+* [!DNL Experience Platform] innehåller för närvarande inte något mätvärde för att validera aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL Google Ads] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Audience Manager eller andra program) kan du kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager, överförs de ID-synkroniseringar du har konfigurerat till Platform.
+>Om du vill skapa ditt första mål med [!DNL Google Ads] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Audience Manager eller andra program) kan du kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -48,7 +48,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -76,12 +76,12 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!NOTE]
 >
->Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Ads]-mål i plattformen. Kontrollera att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
+>Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Ads]-mål i Experience Platform. Kontrollera att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
 >Undantaget till den här regeln gäller [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html)-kunder. Om du redan har skapat en anslutning till det här Google-målet i Audience Manager behöver du inte gå igenom processen för att tillåta listning igen och du kan fortsätta till nästa steg.
 
-Innan du skapar målet [!DNL Google Ads] i plattformen måste du kontakta [!DNL Google] för att få Adobe i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och ange följande information:
+Innan du skapar [!DNL Google Ads]-målet i Experience Platform måste du kontakta [!DNL Google] för att Adobe ska tas med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och ange följande information:
 
-* **Konto-ID**: Adobe-konto-ID med Google. Konto-ID: 87933855.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
 * **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.
 * Din kontotyp: **AdWords**
 * **Google AdWords ID**: Detta är ditt ID med [!DNL Google]. ID-formatet är vanligtvis 123-456-7890.

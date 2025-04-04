@@ -1,15 +1,15 @@
 ---
-title: Skapa ett högklassigt centrum med sandlådeverktyg
+title: Aktivera ett kompetenscentrum med hjälp av sandlådeverktyg
 description: Skapa ett center för hög kvalitet med sandlådeverktyg genom att skapa ett"gyllene sandlådepaket" som standardiserar metodtips för flera sandlådor.
 exl-id: 6f242ad5-bb02-4a6d-b255-d196dd5fe4b8
-source-git-commit: d4df5606228347b5fb69fdaa24c637c329099895
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '880'
-ht-degree: 0%
+source-wordcount: '881'
+ht-degree: 2%
 
 ---
 
-# Skapa ett högklassigt centrum med sandlådeverktyg
+# Aktivera ett kompetenscentrum med hjälp av sandlådeverktyg
 
 Skapa ett center för hög kvalitet med sandlådeverktyg genom att skapa ett&quot;gyllene sandlådepaket&quot; som standardiserar metodtips för flera sandlådor.
 
@@ -37,7 +37,7 @@ När du planerar att skapa ett eget center för hög kvalitet inom din organisat
 - Skapa en sandlåda med alla relevanta och validerade konfigurationer som ska anges som den gyllene sandlådan.
 - Om det behövs kan ni få synpunkter från intressenter och komma överens om era grundläggande standarder.
 
-### UI-funktionalitet, plattformskomponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}
+### Gränssnittsfunktioner, Experience Platform-komponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}
 
 För att implementera det här användningsexemplet måste du använda flera områden i Adobe Experience Platform. Kontrollera att du har de [attributbaserade åtkomstkontrollsbehörigheterna](../../access-control/abac/overview.md) som krävs för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 

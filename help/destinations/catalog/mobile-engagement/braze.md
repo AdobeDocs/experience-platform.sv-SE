@@ -4,7 +4,7 @@ title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 last-substantial-update: 2024-08-20T00:00:00Z
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1070'
 ht-degree: 0%
@@ -51,7 +51,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -108,7 +108,7 @@ Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../
 
 Om du vill skicka målgruppsdata korrekt från [!DNL Adobe Experience Platform] till [!DNL Braze]-målet måste du gå igenom fältmappningssteget.
 
-Mappningen består av att skapa en länk mellan [!DNL Experience Data Model] (XDM)-schemafälten i ditt [!DNL Platform]-konto och motsvarande motsvarigheter från målmålet.
+Mappningen består av att skapa en länk mellan [!DNL Experience Data Model] (XDM)-schemafälten i ditt [!DNL Experience Platform]-konto och motsvarande motsvarigheter från målmålet.
 
 Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Braze]:
 
@@ -125,7 +125,7 @@ I fönstret [!UICONTROL Select source field] kan du välja mellan två kategorie
 
 ![Braze Destination Mapping Source Attribute](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
-* [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa ett [!DNL Platform] identity-namnutrymme till ett [!DNL Braze] -namnutrymme.
+* [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa ett [!DNL Experience Platform] identity-namnutrymme till ett [!DNL Braze] -namnutrymme.
 
 ![Braze Destination Mapping Source Namespace](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 
@@ -136,7 +136,7 @@ Klicka på mappningsikonen till höger om fältet i avsnittet [!UICONTROL Target
 ![Braze Destination Target Mapping](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
 I fönstret [!UICONTROL Select target field] kan du välja mellan två kategorier av målfält:
-* [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa [!DNL Platform] identitetsnamnutrymmen till [!DNL Braze] identitetsnamnutrymmen.
+* [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa [!DNL Experience Platform] identitetsnamnutrymmen till [!DNL Braze] identitetsnamnutrymmen.
 * [!UICONTROL Select custom attributes]: Använd det här alternativet om du vill mappa XDM-attribut till anpassade [!DNL Braze]-attribut som du har definierat i ditt [!DNL Braze]-konto. <br> Du kan också använda det här alternativet om du vill byta namn på befintliga XDM-attribut till [!DNL Braze]. Om du till exempel mappar ett `lastName` XDM-attribut till ett anpassat `Last_Name`-attribut i [!DNL Braze] skapas `Last_Name`-attributet i [!DNL Braze], om det inte redan finns, och `lastName` XDM-attributet mappas till det.
 
 ![Braze Destination Target Mapping Fields](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)

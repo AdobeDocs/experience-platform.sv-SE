@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;schema;schema;scheman;scheman;scheman;schema;relation;relation;relation;relationsbeskrivare;relationsbeskrivare;referensidentitet;referensidentitet;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;scheman;scheman;scheman;scheman;relation;relation;relation;relationsbeskrivare;relationsbeskrivare;referensidentitet;referensidentitet;
 title: Definiera en relation mellan två scheman med API:t för schemaregister
 description: Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med API:t för schemaregistret.
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1379'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Den här självstudien kräver en fungerande förståelse av [!DNL Experience Da
 * [XDM-system i Experience Platform](../home.md): En översikt över XDM och dess implementering i [!DNL Experience Platform].
    * [Grunderna i schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t för [!DNL Schema Registry]. Detta inkluderar din `{TENANT_ID}`, begreppet&quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken [!DNL Accept] och dess möjliga värden).
 
@@ -44,7 +44,7 @@ Schemarelationer representeras av ett **källschema** med ett fält som referera
 >
 >För att kunna upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-Time Customer Profile]. Se avsnittet [Aktivera ett schema för användning i profilen](./create-schema-api.md#profile) i självstudiekursen för att skapa schema om du behöver hjälp med hur du konfigurerar dina scheman därefter.
 
-Om du vill definiera en relation mellan två scheman måste du först hämta `$id`-värdena för båda scheman. Om du känner till visningsnamnen (`title`) för scheman kan du hitta deras `$id`-värden genom att göra en GET-förfrågan till `/tenant/schemas`-slutpunkten i [!DNL Schema Registry] API.
+Om du vill definiera en relation mellan två scheman måste du först hämta `$id`-värdena för båda scheman. Om du känner till visningsnamnen (`title`) för scheman kan du hitta deras `$id`-värden genom att göra en GET-begäran till `/tenant/schemas`-slutpunkten i [!DNL Schema Registry] API.
 
 **API-format**
 
@@ -126,7 +126,7 @@ I den här självstudien innehåller referensschemat [!DNL Hotels] ett `hotelId`
 
 ### Skapa en ny fältgrupp
 
-Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en fältgrupp. Du kan skapa en ny fältgrupp genom att göra en POST-förfrågan till slutpunkten `/tenant/fieldgroups`.
+Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en fältgrupp. Du kan skapa en ny fältgrupp genom att göra en POST-begäran till slutpunkten `/tenant/fieldgroups`.
 
 **API-format**
 
@@ -238,7 +238,7 @@ Registrera `$id`-URI:n för fältgruppen som ska användas i nästa steg när f�
 
 ### Lägg till fältgruppen i källschemat
 
-När du har skapat en fältgrupp kan du lägga till den i källschemat genom att göra en PATCH-begäran till slutpunkten `/tenant/schemas/{SCHEMA_ID}`.
+När du har skapat en fältgrupp kan du lägga till den i källschemat genom att göra en PATCH-begäran i slutpunkten `/tenant/schemas/{SCHEMA_ID}`.
 
 **API-format**
 
@@ -348,7 +348,7 @@ Ett lyckat svar returnerar information om det uppdaterade schemat, som nu inneh�
 
 Schemafält måste ha en referensidentitetsbeskrivning tillämpad på dem om de används som referens till ett annat schema i en relation. Eftersom fältet `favoriteHotel` i [!DNL Loyalty Members] refererar till fältet `hotelId` i [!DNL Hotels] måste `favoriteHotel` få en beskrivare för en referensidentitet.
 
-Skapa en referensbeskrivning för källschemat genom att göra en POST-förfrågan till slutpunkten `/tenant/descriptors`.
+Skapa en referensbeskrivning för källschemat genom att göra en POST-begäran till slutpunkten `/tenant/descriptors`.
 
 **API-format**
 
@@ -405,7 +405,7 @@ Ett lyckat svar returnerar information om den nya referensbeskrivningen för kä
 
 ## Skapa en relationsbeskrivning {#create-descriptor}
 
-Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett referensschema. När du har definierat en referensidentitetsbeskrivning för rätt fält i källschemat kan du skapa en ny relationsbeskrivare genom att göra en POST-förfrågan till slutpunkten `/tenant/descriptors`.
+Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett referensschema. När du har definierat en referensidentitetsbeskrivare för rätt fält i källschemat kan du skapa en ny relationsbeskrivare genom att göra en POST-begäran till `/tenant/descriptors`-slutpunkten.
 
 **API-format**
 

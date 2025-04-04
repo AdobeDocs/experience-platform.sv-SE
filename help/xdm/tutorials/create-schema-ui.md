@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience data model;data model;datamodell;schema editor;schema;schema;schema;scheman;scheman;scheman;scheman;skapa
+keywords: Experience Platform;home;populära topics;ui;UI;XDM;XDM system;experience data model;Experience data model;experience data model;data model;datamodell;schema editor;schema;schema;schema;scheman;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: f530e4ff755ac89141ee67bef80700b46acf0868
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '4660'
+source-wordcount: '4661'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ I demonstrationssyfte handlar stegen i den här självstudien om att skapa ett e
 
 >[!NOTE]
 >
->Om du importerar CSV-data till plattformen kan du [mappa dessa data till ett XDM-schema som skapats av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (som för närvarande finns i beta) utan att behöva skapa schemat manuellt.
+>Om du importerar CSV-data till Experience Platform kan du [mappa dessa data till ett XDM-schema som skapats av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (som för närvarande finns i betaversionen) utan att behöva skapa schemat manuellt.
 >
 >Om du föredrar att skapa ett schema med API:t [!DNL Schema Registry] börjar du med att läsa [[!DNL Schema Registry] utvecklarhandboken](../api/getting-started.md) innan du provar självstudiekursen om hur du [skapar ett schema med API:t](create-schema-api.md).
 
@@ -28,13 +28,13 @@ I demonstrationssyfte handlar stegen i den här självstudien om att skapa ett e
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används för att skapa scheman. Innan du börjar med den här självstudiekursen bör du läsa om följande koncept i dokumentationen:
 
-* [[!DNL Experience Data Model (XDM)]](../home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [[!DNL Experience Data Model (XDM)]](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    * [Grundläggande om schemakomposition](../schema/composition.md): En översikt över XDM-scheman och deras byggstenar, inklusive klasser, schemafältgrupper, datatyper och enskilda fält.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Öppna arbetsytan [!UICONTROL Schemas] {#browse}
 
-Arbetsytan [!UICONTROL Schemas] i användargränssnittet för [!DNL Platform] ger en visualisering av [!DNL Schema Library] så att du kan visa hur du hanterar de scheman som är tillgängliga för din organisation. Arbetsytan innehåller också [!DNL Schema Editor], arbetsytan som du kan komponera ett schema på i hela den här självstudiekursen.
+Arbetsytan [!UICONTROL Schemas] i användargränssnittet för [!DNL Experience Platform] ger en visualisering av [!DNL Schema Library] så att du kan visa hur du hanterar de scheman som är tillgängliga för din organisation. Arbetsytan innehåller också [!DNL Schema Editor], arbetsytan som du kan komponera ett schema på i hela den här självstudiekursen.
 
 När du har loggat in på [!DNL Experience Platform] väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i **[!UICONTROL Schemas]**. På fliken **[!UICONTROL Browse]** visas en lista med scheman (en representation av [!DNL Schema Library]) som du kan visa och anpassa. Listan innehåller namn, typ, klass och beteende (post- eller tidsserie) som schemat baseras på samt datum och tid då schemat senast ändrades.
 
@@ -126,7 +126,7 @@ Arbetsytan för schemat visas igen. Avsnittet **[!UICONTROL Field groups]** inne
 
 >[!NOTE]
 >
-I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+I Schemaredigeraren visas standardklasser (Adobe-genererade) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
 >
 ![Schemaredigeraren med hänglåsikonen markerad](../images/ui/explore/padlock-icon-highlight.png)
 
@@ -395,7 +395,7 @@ Välj **[!UICONTROL Copy JSON structure]** om du vill generera en exportnyttolas
 
 Nu när du är klar med att komponera schemat kan du se hela schemat på arbetsytan. Välj **[!UICONTROL Save]** så sparas schemat i [!DNL Schema Library] så att det blir tillgängligt för [!DNL Schema Registry].
 
-Ditt nya schema kan nu användas för att importera data till [!DNL Platform]. Kom ihåg att när schemat väl har använts för att importera data får endast additiva ändringar göras. Mer information om schemaversion finns i [Grunderna för schemakomposition](../schema/composition.md).
+Ditt nya schema kan nu användas för att importera data till [!DNL Experience Platform]. Kom ihåg att när schemat väl har använts för att importera data får endast additiva ändringar göras. Mer information om schemaversion finns i [Grunderna för schemakomposition](../schema/composition.md).
 
 Nu kan du följa självstudiekursen om att [definiera en schemarelation i användargränssnittet](./relationship-ui.md) för att lägga till ett nytt relationsfält i schemat&quot;Förmånsmedlemmar&quot;.
 
@@ -405,9 +405,9 @@ Schemat &quot;Förmånsmedlemmar&quot; är också tillgängligt för att visas o
 
 >[!WARNING]
 >
-Användargränssnittet [!DNL Platform] som visas i följande videofilmer är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+Användargränssnittet [!DNL Experience Platform] som visas i följande videofilmer är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
-I följande video visas hur du skapar ett enkelt schema i användargränssnittet för [!DNL Platform].
+I följande video visas hur du skapar ett enkelt schema i användargränssnittet för [!DNL Experience Platform].
 
 >[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
 

@@ -4,9 +4,9 @@ title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs] lagringsutrymme för att strömma data från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2032'
+source-wordcount: '2033'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 [!DNL Azure Event Hubs] är en stor dataströmningsplattform och en tjänst för händelseinmatning. Den kan ta emot och bearbeta miljontals händelser per sekund. Data som skickas till ett händelsehubb kan omformas och lagras med hjälp av alla realtidsanalysleverantörer eller batchnings-/lagringsadaptrar.
 
@@ -25,7 +25,7 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs]
 
 * Mer information om [!DNL Azure Event Hubs] finns i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
 * Om du vill ansluta till [!DNL Azure Event Hubs] programmatiskt läser du [API-självstudiekursen för direktuppspelningsmål](../../api/streaming-destinations.md).
-* Om du vill ansluta till [!DNL Azure Event Hubs] med hjälp av användargränssnittet för plattformen kan du läsa avsnitten nedan.
+* Om du vill ansluta till [!DNL Azure Event Hubs] med Experience Platform användargränssnitt läser du avsnitten nedan.
 
 ![AWS Kinesis i användargränssnittet](../../assets/catalog/cloud-storage/event-hubs/catalog.png)
 
@@ -41,7 +41,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -153,7 +153,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 Ta till exempel det här dataflödet som ett [!DNL Azure Event Hubs]-mål där tre målgrupper har valts i dataflödet och fyra attribut har mappats till målet.
 
-![Amazon Kinesis måldataflöde](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
+![Amazon Kinesis-måldataflöde](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
 En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-målgruppen men även är medlem i segmenten **Bevakade&quot;Tillbaka till framtiden&quot;** och **Science fiction fans** kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om de har samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
 
@@ -161,7 +161,7 @@ När det gäller profilattribut kommer alla ändringar av de fyra attribut som m
 
 ## Bakgrundsfyllning av historiska data {#historical-data-backfill}
 
-När du lägger till en ny målgrupp till ett befintligt mål, eller när du skapar ett nytt mål och mappar målgrupper till det, exporterar Experience Platform historiska data om målgruppskvalificering till målet. Profiler som är kvalificerade för målgruppen *innan* målgruppen lades till i målet exporteras till målet inom ungefär en timme.
+När du lägger till en ny målgrupp till ett befintligt mål, eller när du skapar ett nytt mål och mappar målgrupper till det, exporterar Experience Platform data om målgruppens historiska kvalifikationer till målet. Profiler som är kvalificerade för målgruppen *innan* målgruppen lades till i målet exporteras till målet inom ungefär en timme.
 
 ## Exporterade data {#exported-data}
 
@@ -263,7 +263,7 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka UI-inst
 
 ## Begränsningar och återförsöksprincip {#limits-retry-policy}
 
-På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
+På 95 % av tiden försöker Experience Platform erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
 
 Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.
 

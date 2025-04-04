@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform januari 2024
 description: Versionsinformationen för Adobe Experience Platform i januari 2024.
 exl-id: d4b3c5b2-3adb-41fd-91ad-f4c0f21d2325
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
-workflow-type: ht
-source-wordcount: '1650'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '1653'
+ht-degree: 95%
 
 ---
 
@@ -43,9 +43,9 @@ Läs följande dokumentationssidor för att komma igång med [!UICONTROL Use Cas
 
 ## Attributbaserad åtkomstkontroll {#abac}
 
-Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika Experience Platform-användare i organisationen.
 
-Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Med attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till, känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla Experience Platform arbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 **Ny eller uppdaterad dokumentation**
 
@@ -79,7 +79,7 @@ Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan v
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Visa SQL | Du kan nu visa SQL bakom dina profiler, målgrupper, mål och anpassade insikter med hjälp av växlingsknappen Visa SQL och sedan köra frågan på begäran via frågeredigeraren. Genom att komma åt den SQL som driver dina insikter från plattformen för kunddata i realtid kan du förstå logiken bakom analysen av din datamodell. Denna transparens gör Adobes realtids-CDP-data mer tillgängliga, begripliga och effektiva för beslutsfattande.<br>Låt dig inspireras av SQL från över 40 befintliga insikter för att skapa nya frågor som ger unika insikter från plattformsdata baserat på dina affärsbehov. SQL finns också tillgängligt för dina insikter för [profiler](../../dashboards/insights/profiles.md), [målgrupper](../../dashboards/insights/audiences.md) och [mål](../../dashboards/insights/destinations.md) i dokumentationen för Experience League. Dessa dokument belyser de affärsanvändningsfall som kan besvaras med standardinsikterna. Mer information finns i guiden för [visning av SQL-insikter](../../dashboards/view-sql.md). |
+| Visa SQL | Du kan nu visa SQL bakom dina profiler, målgrupper, mål och anpassade insikter med hjälp av växlingsknappen Visa SQL och sedan köra frågan på begäran via frågeredigeraren. Genom att komma åt den SQL som driver dina insikter från plattformen för kunddata i realtid kan du förstå logiken bakom analysen av din datamodell. Denna transparens gör Adobes realtids-CDP-data mer tillgängliga, begripliga och effektiva för beslutsfattande.<br>Hämta inspiration från SQL av över 40 befintliga insikter för att skapa nya frågor som bygger på unika insikter från Experience Platform-data utifrån era affärsbehov. SQL finns också tillgängligt för dina insikter för [profiler](../../dashboards/insights/profiles.md), [målgrupper](../../dashboards/insights/audiences.md) och [mål](../../dashboards/insights/destinations.md) i dokumentationen för Experience League. Dessa dokument belyser de affärsanvändningsfall som kan besvaras med standardinsikterna. Mer information finns i guiden för [visning av SQL-insikter](../../dashboards/view-sql.md). |
 
 {style="table-layout:auto"}
 
@@ -89,7 +89,7 @@ Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer inform
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya mål** {#new-destinations}
+**Nya destinationer** {#new-destinations}
 
 | Mål | Beskrivning |
 | ----------- | ----------- |

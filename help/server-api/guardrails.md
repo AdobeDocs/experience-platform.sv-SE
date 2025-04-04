@@ -2,9 +2,9 @@
 title: Prestandaskydd för Edge Network Server API
 description: Lär dig hur du använder server-API:t med optimala prestandaresäkerhetsprofiler.
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '569'
+source-wordcount: '573'
 ht-degree: 1%
 
 ---
@@ -26,12 +26,12 @@ Alla säkerhetsutkast som beskrivs på den här sidan gäller på IMS-organisati
 
 ## Definitioner
 
-* **Tillgänglighet** beräknas för varje femminutersintervall som procentandelen begäranden som bearbetas av Experience Platform Edge Network som inte misslyckas med fel och som endast relaterar till de tilldelade Edge Network-API:erna. Om en klientorganisation inte har gjort några förfrågningar under ett givet femminutersintervall anses det intervallet vara 100 % tillgängligt.
+* **Tillgänglighet** beräknas för varje femminutersintervall som procentandelen förfrågningar som bearbetas av Experience Platform Edge Network som inte misslyckas med fel och som endast relaterar till de tilldelade Edge Network API:erna. Om en klientorganisation inte har gjort några förfrågningar under ett givet femminutersintervall anses det intervallet vara 100 % tillgängligt.
 * **Procentandel** per månad för ett givet område beräknas som medelvärdet för tillgängligheten för alla femminutersintervall under en månad.
-* Ett **upstream** är en tjänst bakom Edge Network, som är aktiverad för ett specifikt datastream, till exempel Adobe Server Side Forwarding, Adobe Edge Segmentation eller Adobe Target.
+* Ett **uppströms** är en tjänst bakom Edge Network som har aktiverats för ett specifikt datastam, till exempel Adobe Server Side Forwarding, Adobe Edge Segmentation eller Adobe Target.
 * En **begäranenhet** motsvarar ett 8 kB-fragment av en begäran och ett uppströms som konfigurerats för en datastream.
 * En **begäran** är ett enda meddelande som skickas av ett kundägt program till [!DNL Server API]. En begäran kan innehålla en eller flera begärandeenheter.
-* Ett **fel** är en begäran som misslyckas på grund av ett [internt tjänstfel](error-handling.md) i Edge Network.
+* Ett **fel** är en begäran som misslyckas på grund av ett Edge Network [interna tjänstfel](error-handling.md).
 
 ## Tjänstbegränsningar
 
@@ -45,10 +45,10 @@ Alla begränsningar tillämpas och normaliseras över en **begäranenhet (RU)**,
 
 | Uppdateringar konfigurerade per datastream | Genomsnittlig begärandestorlek | Begär enheter |
 | --- | --- | --- |
-| 1 (Adobe Platform) | 8 kB (1 fragment) | 1 |
-| 2 (Adobe Platform, Adobe Target) | 8 kB (1 fragment) | 2 |
-| 2 (Adobe Platform, Adobe Target) | 16 kB (2 fragment) | 4 |
-| 2 (Adobe Platform, Adobe Target) | 64 kB (8 fragment) | 16 |
+| 1 (Adobe Experience Platform) | 8 kB (1 fragment) | 1 |
+| 2 (Adobe Experience Platform, Adobe Target) | 8 kB (1 fragment) | 2 |
+| 2 (Adobe Experience Platform, Adobe Target) | 16 kB (2 fragment) | 4 |
+| 2 (Adobe Experience Platform, Adobe Target) | 64 kB (8 fragment) | 16 |
 
 ### Gränser för begärandeenheter
 
@@ -72,10 +72,10 @@ Tabellen nedan visar standardgränsvärdena. Om du behöver större enhetsgräns
 
 ## Nästa steg
 
-Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
+I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C-utgåva - Premiere- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

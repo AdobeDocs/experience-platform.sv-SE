@@ -2,9 +2,9 @@
 title: Identity Graph Viewer
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1379'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler. Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av Adobe Experience Platform Identity Service i nära realtid som svar på kundaktivitet.
 
-Med identitetsdiagramvisningsprogrammet i användargränssnittet för plattformen kan du visualisera och bättre förstå vilka kundidentiteter som sammanfogas och på vilka sätt. Med visningsprogrammet kan du dra och interagera med olika delar av diagrammet, vilket gör att du kan undersöka komplexa identitetsförhållanden, felsöka mer effektivt och dra nytta av ökad genomskinlighet när det gäller hur informationen används.
+Med identitetsdiagramvisningsprogrammet i Experience Platform användargränssnitt kan du visualisera och bättre förstå vilka kundidentiteter som sammanfogas och på vilka sätt. Med visningsprogrammet kan du dra och interagera med olika delar av diagrammet, vilket gör att du kan undersöka komplexa identitetsförhållanden, felsöka mer effektivt och dra nytta av ökad genomskinlighet när det gäller hur informationen används.
 
-Följande dokument innehåller steg för hur du får åtkomst till och använder identitetsdiagramvisningsprogrammet i plattformens användargränssnitt.
+Följande dokument innehåller steg för hur du får åtkomst till och använder identitetsdiagramvisningsprogrammet i Experience Platform användargränssnitt.
 
 ## Självstudievideo
 
@@ -38,9 +38,9 @@ Att arbeta med identitetsdiagramvisningsprogrammet kräver förståelse för de 
 
 ## Åtkomst till identitetsdiagramvisningsprogrammet {#access-identity-graph-viewer}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Identity Graph]** i listan med flikar i sidhuvudet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Identity Graph]** i listan med flikar i sidhuvudet.
 
-![Arbetsytan Identiteter i användargränssnittet i Experience Platform med fliken Identitetsdiagram markerad.](../images/graph-viewer/identity-graph.png)
+![Arbetsytan Identiteter i Experience Platform-gränssnittet med fliken Identitetsdiagram markerad.](../images/graph-viewer/identity-graph.png)
 
 Om du vill visa ett identitetsdiagram anger du ett identitetsnamnutrymme och dess motsvarande värde och väljer sedan **[!UICONTROL View]**.
 
@@ -135,7 +135,7 @@ I förhandsgranskningsfönstret väljer du en fingeravtrycksikon för att se vil
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att utforska kundernas identitetsdiagram i användargränssnittet för plattformen. Mer information om identiteter i plattformen finns i [Översikt över identitetstjänsten](../home.md)
+Genom att läsa det här dokumentet har du lärt dig att utforska dina kunders identitetsdiagram i Experience Platform användargränssnitt. Mer information om identiteter i Experience Platform finns i [Översikt över identitetstjänsten](../home.md)
 
 ## Changelog
 

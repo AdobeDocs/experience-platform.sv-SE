@@ -4,9 +4,9 @@ description: Lär dig hur du skapar en källanslutning för Merkury Enterprise I
 last-substantial-update: 2023-12=12
 badge: Beta
 exl-id: 2af48c18-76f9-4615-8e76-8f030a312a8f
-source-git-commit: d048109141168b33795753c4706dac64cdf29ca5
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2072'
+source-wordcount: '2075'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till din bucket på Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
+Om du vill komma åt din bucket på Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -42,7 +42,7 @@ Mer information om hur du konfigurerar för [!DNL Merkury] och andra krav finns 
 
 ## Anslut ditt Merkury-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -121,7 +121,7 @@ Du kan också importera komprimerade JSON-filer eller avgränsade filer genom at
 
 I steget [!UICONTROL Select data] väljer du en komprimerad fil för inhämtning och sedan lämplig filtyp och om den är XDM-kompatibel eller inte. Välj sedan **[!UICONTROL Compression type]** och välj sedan lämplig komprimerad filtyp för källdata.
 
-Om du vill hämta en viss fil till plattformen markerar du en mapp och väljer sedan den fil som du vill importera. Under det här steget kan du även förhandsgranska filinnehåll för andra filer i en viss mapp med hjälp av förhandsgranskningsikonen bredvid ett filnamn.
+Om du vill hämta en viss fil till Experience Platform markerar du en mapp och väljer sedan den fil som du vill importera. Under det här steget kan du även förhandsgranska filinnehåll för andra filer i en viss mapp med hjälp av förhandsgranskningsikonen bredvid ett filnamn.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -167,7 +167,7 @@ Välj **[!UICONTROL Next]** när du är klar med informationen om dataflödet.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -216,7 +216,7 @@ När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** och till
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta batchdata från [!DNL Merkury]-källan till Experience Platform. Ytterligare resurser finns i dokumentationen nedan.
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta batchdata från din [!DNL Merkury]-källa till Experience Platform. Ytterligare resurser finns i dokumentationen nedan.
 
 ### Övervaka dataflödet
 

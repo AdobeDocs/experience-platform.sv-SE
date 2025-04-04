@@ -2,9 +2,9 @@
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '681'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Frågetjänsten stöder användning av parametriserade frågor i Frågeredigerar
 
 ## Förhandskrav
 
-Läs [Användargränssnittsguiden för frågeredigering](./user-guide.md) innan du fortsätter med den här guiden. Frågeredigeringsguiden ger detaljerad information om hur man skriver, validerar och kör frågor om kundupplevelsedata i användargränssnittet i Experience Platform.
+Läs [Användargränssnittsguiden för frågeredigering](./user-guide.md) innan du fortsätter med den här guiden. Frågeredigeringsguiden ger detaljerad information om hur man skriver, validerar och kör frågor om kundupplevelsedata i Experience Platform användargränssnitt.
 
 >[!NOTE]
 >
@@ -79,4 +79,4 @@ Parametervärden sparas när du schemalägger en parametriserad fråga. Om du vi
 
 Genom att läsa det här dokumentet har du lärt dig att parametrisera frågor i Adobe Experience Platform-gränssnittet och använda dem i schemalagda frågekörningar. Dokumentet visade också hur loggarna skulle kontrolleras för parametervärden som används i frågekörningar.
 
-Därefter rekommenderar vi att du läser guiden om [övervakning av schemalagda frågor](./monitor-queries.md) för att få en bättre förståelse för statusen för alla frågejobb via plattformsgränssnittet.
+Därefter rekommenderar vi att du läser guiden om [övervakning av schemalagda frågor](./monitor-queries.md) för att få en bättre förståelse för statusen för alla frågejobb via Experience Platform-gränssnittet.

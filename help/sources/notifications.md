@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;hem;populära ämnen; meddelanden
-description: Genom att prenumerera på Adobe I/O Events kan du använda webbhooks för att få meddelanden om flödeskörningsstatus för dina källanslutningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
+description: Genom att prenumerera på Adobe I/O Events kan du använda webhooks för att få meddelanden om källanslutningarnas flödeskörningsstatus. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 solution: Experience Platform
 title: Flödeskörningsmeddelanden
 exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # Flödeskörningsmeddelanden
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) används för att samla in och centralisera kunddata från olika källor inom [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) används för att samla in och centralisera kunddata från olika källor inom [!DNL Experience Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Med Adobe I/O Events kan du prenumerera på händelser och använda webbhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
+Med Adobe I/O Events kan du prenumerera på händelser och använda webhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 
 Det här dokumentet innehåller anvisningar om hur du prenumererar på händelser, registrerar webhooks och får meddelanden som innehåller information om statusen för dina flödeskörningar.
 
@@ -323,9 +323,9 @@ I följande avsnitt finns ytterligare information om hur du arbetar med meddelan
 
 ### Om felmeddelanden {#errors}
 
-Inmatningsfel kan uppstå när data kopieras från källan eller när kopierade data bearbetas till [!DNL Platform]. Se tabellen nedan för mer information om specifika fel.
+Inmatningsfel kan uppstå när data kopieras från källan eller när kopierade data bearbetas till [!DNL Experience Platform]. Se tabellen nedan för mer information om specifika fel.
 
 | Fel | Beskrivning |
 | ---------- | ----------- |
 | `CONNECTOR-1001-500` | Ett fel uppstod när data kopierades från en källa. |
-| `CONNECTOR-2001-500` | Ett fel uppstod när kopierade data bearbetades till [!DNL Platform]. Det här felet kan gälla parsning, validering eller omformning. |
+| `CONNECTOR-2001-500` | Ett fel uppstod när kopierade data bearbetades till [!DNL Experience Platform]. Det här felet kan gälla parsning, validering eller omformning. |

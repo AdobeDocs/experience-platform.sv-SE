@@ -3,9 +3,9 @@ title: Infoga krypterade data i källanvändargränssnittet i Workspace
 description: Lär dig hur du importerar krypterade data i källans arbetsyta.
 badge: Beta
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: 70bfebc747c7e6267939eb313048cb2d0e132202
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1434'
+source-wordcount: '1435'
 ht-degree: 0%
 
 ---
@@ -24,17 +24,17 @@ Läs den här guiden och lär dig hur du kan importera krypterade data med batch
 
 Innan du fortsätter med den här självstudiekursen bör du läsa följande dokument för att få en bättre förståelse för följande Experience Platform-funktioner och -koncept.
 
-* [Källor](../../home.md): Använd källor i Experience Platform för att importera data från ett Adobe-program eller en datakälla från en tredje part.
+* [Källor](../../home.md): Använd källor i Experience Platform för att importera data från ett Adobe-program eller en datakälla från tredje part.
 * [Dataflöden](../../../dataflows/home.md): Dataflöden är representationer av datajobb som flyttar data mellan Experience Platform. Du kan använda källarbetsytan för att skapa dataflöden som importerar data från en viss källa till Experience Platform.
 * [Sandlådor](../../../sandboxes/home.md): Använd sandlådor i Experience Platform för att skapa virtuella partitioner mellan dina Experience Platform-instanser och skapa miljöer som är dedikerade till utveckling eller produktion.
 
 ### Kontur på hög nivå
 
-* Skapa ett krypteringsnyckelpar med hjälp av källarbetsytan i användargränssnittet i Experience Platform.
+* Skapa ett krypteringsnyckelpar med hjälp av källarbetsytan i Experience Platform användargränssnitt.
    * Du kan också skapa ett eget nyckelpar för signaturverifiering för att ge ytterligare ett säkerhetslager till dina krypterade data.
 * Använd den offentliga nyckeln från ditt krypteringsnyckelpar för att kryptera dina data.
 * Placera dina krypterade data i molnlagringen. Under det här steget måste du också se till att du har en exempelfil med dina data i molnlagringen som kan användas som referens för att mappa dina källdata till ett XDM-schema (Experience Data Model).
-* Använd din batchkälla för molnlagring och påbörja dataöverföringsprocessen i källarbetsytan i användargränssnittet i Experience Platform.
+* Använd din batchkälla för molnlagring och påbörja dataöverföringsprocessen i källarbetsytan i Experience Platform användargränssnitt.
 * Ange det nyckel-ID som motsvarar den offentliga nyckel som du använde för att kryptera dina data när du skapade källanslutningen.
    * Om du även använde teckenverifieringsnyckelparet måste du även ange det ID för signaturverifieringsnyckel som motsvarar dina krypterade data.
 * Fortsätt till stegen för att skapa dataflödet.
@@ -52,11 +52,11 @@ Innan du fortsätter med den här självstudiekursen bör du läsa följande dok
 
 Ett krypteringsnyckelpar är en asymmetrisk krypteringsmekanism som består av en offentlig nyckel och en privat nyckel. Den offentliga nyckeln används för att kryptera data och den privata nyckeln används sedan för att dekryptera dessa data.
 
-Du kan skapa ditt krypteringsnyckelpar via användargränssnittet i Experience Platform. När den genereras får du en offentlig nyckel och ett motsvarande nyckel-ID. Använd den offentliga nyckeln för att kryptera dina data och använd sedan nyckel-ID:t för att bekräfta din identitet när du håller på att hämta krypterade data. Den privata nyckeln skickas automatiskt till Experience Platform, där den lagras i ett säkert valv, och används endast när dina data är klara för dekryptering.
+Du kan skapa ditt krypteringsnyckelpar via Experience Platform UI. När den genereras får du en offentlig nyckel och ett motsvarande nyckel-ID. Använd den offentliga nyckeln för att kryptera dina data och använd sedan nyckel-ID:t för att bekräfta din identitet när du håller på att hämta krypterade data. Den privata nyckeln skickas automatiskt till Experience Platform, där den lagras i ett säkert valv, och används endast när dina data är klara för dekryptering.
 
 >[!ENDSHADEBOX]
 
-Navigera till källarbetsytan i plattformsgränssnittet och välj sedan [!UICONTROL Key Pairs] i det övre sidhuvudet.
+Gå till källarbetsytan i Experience Platform-användargränssnittet och välj sedan [!UICONTROL Key Pairs] i det övre sidhuvudet.
 
 ![Källkatalogen med rubriken&quot;Nyckelpar&quot; markerad.](../../images/tutorials/edi/catalog.png)
 

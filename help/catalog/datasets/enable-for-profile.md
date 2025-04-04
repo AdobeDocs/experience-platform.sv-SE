@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profil- och identitetstjänsten med API
 type: Tutorial
 description: I den här självstudiekursen visas hur du aktiverar en datauppsättning för användning med kundprofil och identitetstjänst i realtid med Adobe Experience Platform API:er.
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: b80d8349fc54a955ebb3362d67a482d752871420
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1069'
+source-wordcount: '1070'
 ht-degree: 0%
 
 ---
@@ -24,14 +24,14 @@ I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Experience Platform-tjänster som arbetar med att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa igenom dokumentationen för de här relaterade [!DNL Platform]-tjänsterna:
+Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Experience Platform-tjänster som arbetar med att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa igenom dokumentationen för de här relaterade [!DNL Experience Platform]-tjänsterna:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor som importeras till [!DNL Platform].
+- [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor som importeras till [!DNL Experience Platform].
 - [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful-API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-Time Customer Profile] och [!DNL Identity Service].
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Experience Platform API:er.
 
 ### Läser exempel-API-anrop
 
@@ -39,15 +39,15 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett `Content-Type`-huvud. Rätt värde för den här rubriken visas vid behov i exempelbegäranden.
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik för `Content-Type`. Rätt värde för den här rubriken visas vid behov i exempelbegäranden.
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver ett `x-sandbox-name`-huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver ett `x-sandbox-name`-huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 ## Skapa en datauppsättning aktiverad för profil och identitet {#create-a-dataset-enabled-for-profile-and-identity}
 
@@ -57,7 +57,7 @@ Du kan aktivera en datauppsättning för kundprofil och identitetstjänst i real
 >
 >Om du vill skapa en ny profilaktiverad datauppsättning måste du känna till ID:t för ett befintligt XDM-schema som är aktiverat för profilen. Information om hur du söker efter eller skapar ett profilaktiverat schema finns i självstudiekursen [Skapa ett schema med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md).
 
-Om du vill skapa en datauppsättning som är aktiverad för profilen kan du använda en POST-förfrågan till slutpunkten `/dataSets`.
+Om du vill skapa en datauppsättning som är aktiverad för profilen kan du använda en POST-begäran för slutpunkten `/dataSets`.
 
 **API-format**
 
@@ -204,7 +204,7 @@ Begärandetexten innehåller `path` till två typer av taggar, `unifiedProfile` 
 
 **Svar**
 
-En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. Taggarna `unifiedProfile` och `unifiedIdentity` har nu lagts till och datauppsättningen har aktiverats för användning av profiltjänster och identitetstjänster.
+En lyckad PATCH-begäran returnerar HTTP Status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickas i PATCH-begäran. Taggarna `unifiedProfile` och `unifiedIdentity` har nu lagts till och datauppsättningen har aktiverats för användning av profiltjänster och identitetstjänster.
 
 ```json
 [

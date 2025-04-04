@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Anslut RStudio till frågetjänsten
 description: Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '434'
 ht-degree: 0%
@@ -49,7 +49,7 @@ qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_
 >
 >Läs [[!DNL Query Service] SSL-dokumentationen](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter i SSL-läge `verify-full`.
 
-Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [referenshandboken](../ui/credentials.md). Logga in på [!DNL Platform] och välj sedan **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina autentiseringsuppgifter.
+Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [referenshandboken](../ui/credentials.md). Logga in på [!DNL Experience Platform] och välj sedan **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina autentiseringsuppgifter.
 
 Ett meddelande i konsolutdata bekräftar anslutningen till frågetjänsten.
 

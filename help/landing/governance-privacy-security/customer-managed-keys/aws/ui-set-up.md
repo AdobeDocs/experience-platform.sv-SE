@@ -1,16 +1,17 @@
 ---
-title: Konfigurera kundhanterade nycklar med AWS med hjälp av plattformsgränssnittet
+title: Konfigurera kundhanterade nycklar med AWS med hjälp av Experience Platform användargränssnitt
 description: Lär dig hur du konfigurerar din CMK-app med ditt Amazon Resource Name (ARN) och skickar ditt krypteringsnyckel-ID till Adobe Experience Platform.
-source-git-commit: e67aed9e8072bcd531d5aa6ce5b631c910a1812a
+exl-id: f0e38a60-d448-4975-977e-1367fca10515
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1218'
 ht-degree: 0%
 
 ---
 
-# Konfigurera kundhanterade nycklar med AWS med hjälp av plattformsgränssnittet
+# Konfigurera kundhanterade nycklar med AWS med hjälp av Experience Platform användargränssnitt
 
-Använd den här vägledningen när du vill aktivera kundhanterade nycklar (CMK) för plattformsinstanser på AWS via plattformsgränssnittet.
+Använd den här vägledningen när du vill aktivera kundhanterade nycklar (CMK) för Experience Platform-instanser som finns på AWS via Experience Platform användargränssnitt.
 
 >[!IMPORTANT]
 >
@@ -40,11 +41,11 @@ Om du vill integrera din AWS-nyckel med Experience Platform måste du redigera J
 }
 ```
 
-I exemplet ovan har alla resurser (`"Resource": "*"`) inom samma konto (`Principal.AWS`) åtkomst till nyckeln. Den här principen tillåter att tjänster i kontot utför krypterings- och dekrypteringsåtgärder som är begränsade till det angivna kontot. Om du vill ge ditt Platform single-tenant-konto åtkomst till den här nyckeln lägger du till nya programsatser i AWS standardpolicy. Du kan hämta den nödvändiga JSON-principen från plattformsgränssnittet och använda den på din AWS KMS-nyckel för att upprätta en säker anslutning till Adobe Experience Platform.
+I exemplet ovan har alla resurser (`"Resource": "*"`) inom samma konto (`Principal.AWS`) åtkomst till nyckeln. Den här principen tillåter att tjänster i kontot utför krypterings- och dekrypteringsåtgärder som är begränsade till det angivna kontot. Om du vill ge ditt Experience Platform single-tenant-konto åtkomst till den här nyckeln lägger du till nya programsatser i AWS standardpolicy. Du kan hämta den nödvändiga JSON-principen från Experience Platform-gränssnittet och använda den på din AWS KMS-nyckel för att upprätta en säker anslutning till Adobe Experience Platform.
 
-Gå till avsnittet **[!UICONTROL Administration]** i det vänstra navigeringsfältet i plattformsgränssnittet och välj **[!UICONTROL Encryption]**. Välj **[!UICONTROL Configure]** på [!UICONTROL Customer Managed Keys]-kortet på arbetsytan [!UICONTROL Encryption Configuration].
+Gå till avsnittet **[!UICONTROL Administration]** i det vänstra navigeringsfältet i Experience Platform-gränssnittet och välj **[!UICONTROL Encryption]**. Välj **[!UICONTROL Configure]** på [!UICONTROL Customer Managed Keys]-kortet på arbetsytan [!UICONTROL Encryption Configuration].
 
-![Arbetsytan Konfiguration av plattformskryptering med Konfigurera är markerad på kundkortet för hanterade nycklar.](../../../images/governance-privacy-security/key-management-service/encryption-configuration.png)
+![Arbetsytan för Experience Platform-krypteringskonfiguration med Konfigurera är markerad på kundkortet för hanterade nycklar.](../../../images/governance-privacy-security/key-management-service/encryption-configuration.png)
 
 [!UICONTROL Customer Managed Keys configuration] visas. Kopiera objektet `statement` från CMK KMS-principen som visas i [!UICONTROL Customer Managed Keys] [!UICONTROL Encryption Configuration].
 
@@ -159,9 +160,9 @@ Välj **[!DNL Finish]** för att bekräfta den uppdaterade principen och skapa n
 
 Den uppdaterade [!DNL Customer Managed Keys]-arbetsytan i AWS [!DNL Key Management Service] visas.
 
-### Lägg till information om AWS krypteringsnyckel till plattformen
+### Lägg till AWS-krypteringsnyckelinformation i Experience Platform
 
-Om du sedan vill aktivera kryptering lägger du till nyckelns ARN (Amazon Resource Name) på plattformen [!UICONTROL Customer Managed Keys configuration]. I avsnittet [!DNL Customer Managed Keys] i AWS väljer du alias för den nya nyckeln i listan i [!DNL Key Management Service].
+Om du sedan vill aktivera kryptering lägger du till nyckelns ARN (Amazon Resource Name) i din Experience Platform [!UICONTROL Customer Managed Keys configuration]. I avsnittet [!DNL Customer Managed Keys] i AWS väljer du alias för den nya nyckeln i listan i [!DNL Key Management Service].
 
 ![Arbetsytan för kundhanterade nycklar i AWS KMS med det nya nyckelaliaset markerat.](../../../images/governance-privacy-security/key-management-service/customer-managed-keys-on-aws.png)
 
@@ -172,17 +173,17 @@ Välj kopieringsikonen om du vill kopiera ARN. En bekräftelsedialogruta visas.
 
 ![Nyckelinformation om kundhanterad nyckel för AWS KMS med ARN markerad.](../../../images/governance-privacy-security/key-management-service/keys-details-arn.png)
 
-Gå tillbaka till användargränssnittet för plattformen [!UICONTROL Customer Managed Keys configuration]. I avsnittet **[!UICONTROL Add AWS encryption key details]** lägger du till en **[!UICONTROL Configuration name]** och den **[!UICONTROL KMS key ARN]** du kopierade från AWS-gränssnittet.
+Gå tillbaka till användargränssnittet för Experience Platform [!UICONTROL Customer Managed Keys configuration]. I avsnittet **[!UICONTROL Add AWS encryption key details]** lägger du till en **[!UICONTROL Configuration name]** och den **[!UICONTROL KMS key ARN]** du kopierade från AWS-gränssnittet.
 
-![Arbetsytan Konfiguration av plattformskryptering med konfigurationsnamnet och KMS-nyckeln ARN markeras i avsnittet Lägg till information om krypteringsnyckel för AWS.](../../../images/governance-privacy-security/key-management-service/add-encryption-key-details.png)
+![Arbetsytan för Experience Platform-krypteringskonfiguration med konfigurationsnamnet och KMS-nyckeln ARN markeras i avsnittet Lägg till information om AWS-krypteringsnyckel.](../../../images/governance-privacy-security/key-management-service/add-encryption-key-details.png)
 
 Välj sedan **[!UICONTROL SAVE]** för att skicka konfigurationsnamnet, KMS-nyckeln ARN, och börja validera nyckeln.
 
-![Arbetsytan Konfiguration av plattformskryptering med Spara markerad.](../../../images/governance-privacy-security/key-management-service/save.png)
+![Arbetsytan för Experience Platform-krypteringskonfiguration med Spara är markerad.](../../../images/governance-privacy-security/key-management-service/save.png)
 
 Du återgår till arbetsytan [!UICONTROL Encryption Configurations]. Status för krypteringskonfigurationen visas längst ned på kortet **[!UICONTROL Customer Managed Keys]**.
 
-![Arbetsytan Krypteringskonfigurationer i plattformsgränssnittet med bearbetning är markerad på kundens hanterade nyckelkort.](../../../images/governance-privacy-security/key-management-service/configuration-status.png)
+![Arbetsytan Krypteringskonfigurationer i Experience Platform-användargränssnittet med bearbetning är markerad på kundens hanterade nyckelkort.](../../../images/governance-privacy-security/key-management-service/configuration-status.png)
 
 När nyckeln har validerats läggs nyckelvalvet-ID:n till i datavjön och profildatastores för alla sandlådor.
 
@@ -198,7 +199,7 @@ När nyckeln har validerats läggs nyckelvalvet-ID:n till i datavjön och profil
 
 Här följer några viktiga saker att tänka på när du återkallar en nyckel:
 
-- Om du återkallar eller inaktiverar nyckeln blir plattformsdata otillgängliga. Denna åtgärd är irreversibel och bör utföras med försiktighet.
+- Om du återkallar eller inaktiverar nyckeln blir dina Experience Platform-data otillgängliga. Denna åtgärd är irreversibel och bör utföras med försiktighet.
 - Tänk på spridningstidslinjerna när åtkomst till krypteringsnycklar återkallas. Primära datalager blir oåtkomliga inom några minuter till 24 timmar. Cachelagrade eller tillfälliga datalager blir oåtkomliga inom sju dagar.
 
 Om du vill återkalla en tangent går du till arbetsytan i AWS KMS. I avsnittet **[!DNL Customer managed keys]** visas alla tillgängliga nycklar för ditt AWS-konto. Välj alias för nyckeln i listan.
@@ -209,7 +210,7 @@ Information om nyckeln visas. Om du vill inaktivera nyckeln väljer du **[!DNL K
 
 ![Information om din AWS-nyckel i AWS KMS-gränssnittet med Key actions och Disable markerat.](../../../images/governance-privacy-security/key-management-service/disable-key.png)
 
-En bekräftelsedialogruta visas. Välj **[!DNL Disable key]** för att bekräfta ditt val. Effekten av att inaktivera nyckeln bör återspeglas i plattformsapplikationer och användargränssnittet inom ungefär fem minuter.
+En bekräftelsedialogruta visas. Välj **[!DNL Disable key]** för att bekräfta ditt val. Effekten av att inaktivera nyckeln bör återspeglas i Experience Platform-programmen och användargränssnittet inom ungefär fem minuter.
 
 >[!NOTE]
 >
@@ -221,7 +222,7 @@ Om nyckeln används för andra tjänster kan du även ta bort åtkomsten för Ex
 
 ![Detaljdelen av AWS-nyckeln med Redigera markerat i nyckelprincipavsnittet.](../../../images/governance-privacy-security/key-management-service/edit-key-policy.png)
 
-Sidan **[!DNL Edit key policy]** visas. Markera och ta bort den principsats som kopierats från plattformsgränssnittet för att ta bort behörigheten för appen Kundhanterade nycklar. Välj sedan **[!DNL Save changes]** för att slutföra processen.
+Sidan **[!DNL Edit key policy]** visas. Markera och ta bort principutdraget, som kopierats från användargränssnittet i Experience Platform, för att ta bort behörigheterna för appen Kundhanterade nycklar. Välj sedan **[!DNL Save changes]** för att slutföra processen.
 
 ![Arbetsytan Redigera nyckelprincip på AWS med JSON-objektet för satsen och Spara ändringar markerade.](../../../images/governance-privacy-security/key-management-service/delete-statement-and-save-changes.png)
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 5184f714d6bd8fb6e202a5ca6eea2d52a7169ae6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3882'
+source-wordcount: '3885'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 * [Datauppsättningar](overview.md): Konstruktionen för lagring och hantering av databeständighet i [!DNL Experience Platform].
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
-   * [Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med [!DNL Schema Editor] i [!DNL Platform]-användargränssnittet.
+   * [Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med [!DNL Schema Editor] i [!DNL Experience Platform]-användargränssnittet.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Se till att kunddata är kompatibla med regler, begränsningar och principer.
 
@@ -57,7 +57,7 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 
 I användargränssnittet för [!DNL Experience Platform] väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna kontrollpanelen för **[!UICONTROL Datasets]**. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
-![Plattformsgränssnittet med datauppsättningsobjektet markerat i det vänstra navigeringsfältet.](../images/datasets/user-guide/browse-datasets.png)
+![Experience Platform-gränssnittet med datauppsättningsobjektet markerat i det vänstra navigeringsfältet.](../images/datasets/user-guide/browse-datasets.png)
 
 Markera namnet på en datauppsättning på fliken [!UICONTROL Browse] för att komma åt dess **[!UICONTROL Dataset activity]**-skärm och se information om den datauppsättning du valde. Fliken Aktivitet innehåller ett diagram som visar hur många meddelanden som har förbrukats samt en lista över lyckade och misslyckade batchar.
 
@@ -168,7 +168,7 @@ Dialogrutan [!UICONTROL Manage tags] kan även ta bort befintliga taggar från e
 
 När en tagg har lagts till i en datauppsättning kan datauppsättningarna filtreras baserat på motsvarande tagg. Mer information finns i avsnittet om att [filtrera datauppsättningar efter taggar](#enable-profile).
 
-Mer information om hur du klassificerar affärsobjekt för enklare identifiering och kategorisering finns i handboken [Hantera metadatataxonomier](../../administrative-tags/ui/managing-tags.md). I den här handboken beskrivs hur användare med rätt behörighet kan skapa fördefinierade taggar, tilldela dem till kategorier och hantera alla relaterade CRUD-åtgärder i plattformens användargränssnitt.
+Mer information om hur du klassificerar affärsobjekt för enklare identifiering och kategorisering finns i handboken [Hantera metadatataxonomier](../../administrative-tags/ui/managing-tags.md). I den här handboken beskrivs hur användare med rätt behörighet kan skapa fördefinierade taggar, tilldela dem till kategorier och hantera alla relaterade CRUD-åtgärder i Experience Platform-gränssnittet.
 
 ### (Beta) Ange datalagringspolicy {#data-retention-policy}
 
@@ -176,7 +176,7 @@ Mer information om hur du klassificerar affärsobjekt för enklare identifiering
 > 
 >Datalagringsinställningarna finns för närvarande i betaversion och är bara tillgängliga i en **begränsad version** för vissa organisationer. Gränssnittet kanske inte motsvarar funktionen som beskrivs nedan.
 
-Hantera inställningar för förfallodatum och kvarhållande för datauppsättningar med hjälp av den infogade åtgärdsmenyn på fliken [!UICONTROL Browse] på arbetsytan i [!UICONTROL Datasets]. Du kan använda den här funktionen för att konfigurera hur länge data ska lagras i datavagnen och profilarkivet. Förfallodatumet baseras på när data har importerats till plattformen och din konfigurerade lagringsperiod.
+Hantera inställningar för förfallodatum och kvarhållande för datauppsättningar med hjälp av den infogade åtgärdsmenyn på fliken [!UICONTROL Browse] på arbetsytan i [!UICONTROL Datasets]. Du kan använda den här funktionen för att konfigurera hur länge data ska lagras i datavagnen och profilarkivet. Förfallodatumet baseras på när data har importerats till Experience Platform och din konfigurerade lagringsperiod.
 
 >[!TIP]
 >
@@ -419,7 +419,7 @@ Om du vill ta bort gruppen väljer du **[!UICONTROL Delete batch]** uppe till h�
 
 ## Nästa steg
 
-Den här användarhandboken innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i användargränssnittet för [!DNL Experience Platform]. Anvisningar om hur du utför vanliga [!DNL Platform]-arbetsflöden med datauppsättningar finns i följande självstudier:
+Den här användarhandboken innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i användargränssnittet för [!DNL Experience Platform]. Anvisningar om hur du utför vanliga [!DNL Experience Platform]-arbetsflöden med datauppsättningar finns i följande självstudier:
 
 * [Skapa en datauppsättning med API:er](create.md)
 * [Fråga datauppsättningsdata med API:t för dataåtkomst](../../data-access/home.md)

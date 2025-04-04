@@ -3,10 +3,10 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut, anslutning
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 453884612e787439ea58f312d8080622ee0441f7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1102'
-ht-degree: 0%
+source-wordcount: '1105'
+ht-degree: 3%
 
 ---
 
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* Från och med 25 mars 2025 kan du se två [!DNL Airship Attributes]-kort sida vid sida i målkatalogen. Detta beror på en intern uppgradering av måltjänsten. Den befintliga [!DNL Airship Attributes]-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Airship Attributes]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Airship Attributes]**.
+>* Från och med 25 mars 2025 kan du se två [!DNL Airship Attributes]-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga [!DNL Airship Attributes]-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Airship Attributes]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Airship Attributes]**.
 >* Använd anslutningen **[!UICONTROL Airship Attributes]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Airship Attributes]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
 >* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
->   * Flödesspecifikation-ID: `a862e0be-966e-4e5a-80d3-1bb566461986`
->   * Anslutningsspecifikation-ID: `594bc002-4a47-49b7-8a98-ac0d21045502`
+>   * Flödesspecifikation-id: `a862e0be-966e-4e5a-80d3-1bb566461986`
+>   * Anslutningsspecifikation-id: `594bc002-4a47-49b7-8a98-ac0d21045502`
 
 ## Översikt {#overview}
 
-[!DNL Airship] är den ledande kundinteraktionsplattformen, som hjälper dig att leverera meningsfulla, personaliserade flerkanalsmeddelanden till användarna i alla faser av kundlivscykeln.
+[!DNL Airship] är det ledande Experience Platform för kundengagemang som hjälper dig att leverera meningsfulla, personaliserade flerkanalsmeddelanden till dina användare i alla faser av kundlivscykeln.
 
 Den här integreringen skickar Adobe-profildata till [!DNL Airship] som [Attribut](https://docs.airship.com/guides/audience/attributes/) för målinriktning eller utlösande åtgärder.
 
@@ -67,7 +67,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## Aktivera attribut {#enable-attributes}
 
-Adobe Experience Platform-profilattribut liknar [!DNL Airship]-attribut och kan enkelt mappas till varandra i Platform med hjälp av mappningsverktyget som visas längre fram på den här sidan.
+Adobe Experience Platform-profilattribut liknar [!DNL Airship]-attribut och kan enkelt mappas till varandra i Experience Platform med hjälp av mappningsverktyget som visas längre fram på den här sidan.
 
 [!DNL Airship] projekt har flera fördefinierade attribut och standardattribut. Om du har ett anpassat attribut måste du definiera det i [!DNL Airship] först. Mer information finns i [Konfigurera och hantera attribut](https://docs.airship.com/tutorials/audience/attributes/).
 
@@ -91,7 +91,7 @@ Utnyttja profildata som samlats in inom Adobe Experience Platform för att perso
 
 ### Använd skiftläge 2
 
-Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship]-profiler och kombinera dem med prediktiva data från SDK eller [!DNL Airship]. En återförsäljare kan t.ex. skapa en målgrupp med lojalitetsstatus och platsdata (attribut från Platform) och [!DNL Airship] förväntas ändra data för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV och har en hög sannolikhet för att bli bestulen.
+Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship]-profiler och kombinera dem med prediktiva data från SDK eller [!DNL Airship]. En återförsäljare kan t.ex. skapa en målgrupp med lojalitetsstatus och platsdata (attribut från Experience Platform) och [!DNL Airship] förväntas ändra data för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV och har en hög sannolikhet för kurning.
 
 ## Anslut till målet {#connect}
 

@@ -4,9 +4,9 @@ title: Översikt över instrumentpaneler
 type: Documentation
 description: Utforska flera instrumentpaneler i Adobe Experience Platform för att visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 exl-id: d56cb139-392d-4bbc-97ec-202a0c8a2863
-source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '301'
+source-wordcount: '302'
 ht-degree: 0%
 
 ---
@@ -18,11 +18,11 @@ Adobe Experience Platform tillhandahåller flera kontrollpaneler där du kan vis
 
 ## Introduktion till kontrollpaneler
 
-Instrumentpaneler ger användningsklara rapporter om organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering.
+Instrumentpaneler ger körklara rapporter om organisationens data och är inbyggda direkt i arbetsflödet för marknadsförare i Experience Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering.
 
 ## Komma igång med instrumentpaneler
 
-Om du vill visa och hantera instrumentpaneler går du till **[!UICONTROL Dashboards]** i användargränssnittet för Experience Platform och väljer fliken **[!UICONTROL Browse]** för att komma åt instrumentpanelens lager.
+Om du vill visa och hantera instrumentpaneler går du till **[!UICONTROL Dashboards]** i Experience Platform användargränssnitt och väljer fliken **[!UICONTROL Browse]** för att komma åt instrumentpanelens lager.
 
 Du kan även komma åt kontrollpaneler genom att navigera till rätt avsnitt i användargränssnittet för den kontrollpanel som du vill visa. Om du vill visa kontrollpanelen för profiler går du till arbetsytan **[!UICONTROL Profiles]** och väljer fliken **[!UICONTROL Overview]**.
 

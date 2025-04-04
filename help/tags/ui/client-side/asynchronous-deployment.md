@@ -2,10 +2,10 @@
 title: Asynkron distribution
 description: Lär dig hur du distribuerar taggbibliotek från Adobe Experience Platform asynkront på din webbplats.
 exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1045'
-ht-degree: 0%
+source-wordcount: '1046'
+ht-degree: 4%
 
 ---
 
@@ -18,9 +18,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Prestanda och en icke-blockerande driftsättning av JavaScript-bibliotek som våra produkter kräver blir allt viktigare för Adobe Experience Cloud-användare. Verktyg som [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) rekommenderar användare att ändra sitt sätt att distribuera Adobe-bibliotek på sin plats. I den här artikeln beskrivs hur du använder Adobe JavaScript-bibliotek på ett asynkront sätt.
+Prestanda och en icke-blockerande driftsättning av JavaScript-bibliotek som våra produkter kräver blir allt viktigare för Adobe Experience Cloud-användare. Verktyg som [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) rekommenderar användare att ändra sitt sätt att distribuera Adobe-bibliotek på sin webbplats. I den här artikeln beskrivs hur du använder Adobe JavaScript-bibliotek på ett asynkront sätt.
 
 ## Synkron jämfört med asynkron
 
@@ -106,4 +106,4 @@ Med taggar kan du aktivera asynkron inläsning när du skapar en inbäddningskod
    <script type="text/javascript">_satellite.pageBottom();</script>
    ```
 
-   Den här koden anger för plattformen att webbläsarparsern har nått sidans nederkant. Det är troligt att taggar inte har lästs in och körts tidigare. Därför genereras ett fel om `_satellite.pageBottom()` anropas och händelsetypen för sidnederkant kanske inte fungerar som förväntat.
+   Den här koden anger för Experience Platform att webbläsarparsern har nått sidans nederkant. Det är troligt att taggar inte har lästs in och körts tidigare. Därför genereras ett fel om `_satellite.pageBottom()` anropas och händelsetypen för sidnederkant kanske inte fungerar som förväntat.

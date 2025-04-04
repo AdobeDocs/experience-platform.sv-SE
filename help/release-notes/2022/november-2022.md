@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation om Adobe Experience Platform november 2022
-description: Versionsinformation november 2022 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform – november 2022
+description: Versionsinformationen för Adobe Experience Platform från november 2022.
 exl-id: 1048cfae-6e7a-4d05-a004-c5c095a17fc4
-source-git-commit: ccfc46714069e8c29f1777dea5ba73e318c0a4a6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '453'
-ht-degree: 1%
+source-wordcount: '456'
+ht-degree: 51%
 
 ---
 
@@ -21,21 +21,21 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL AWS]-tillägg för händelsevidarebefordran | Du kan nu skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Mer information finns i [[!DNL AWS] tilläggsöversikten](../../tags/extensions/server/aws/overview.md). |
-| [!DNL Google Ads Enhanced Conversions]-tillägg för händelsevidarebefordran | Du kan nu skicka konverteringsdata till [!DNL Google Ads] med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Mer information finns i [[!DNL Google Ads Enhanced Conversions] tilläggsöversikten](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md). |
-| [!DNL Microsoft Azure]-tillägg för händelsevidarebefordran | Du kan nu skicka data till [!DNL Microsoft Azure] med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Mer information finns i [[!DNL Microsoft Azure] tilläggsöversikten](../../tags/extensions/server/azure/overview.md). |
+| [!DNL AWS]-tillägg för händelsevidarebefordran | Du kan nu skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Se [[!DNL AWS] översikten över tillägg](../../tags/extensions/server/aws/overview.md) för mer information. |
+| [!DNL Google Ads Enhanced Conversions]-tillägg för händelsevidarebefordran | Du kan nu skicka konverteringsdata till [!DNL Google Ads] med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Se [[!DNL Google Ads Enhanced Conversions] översikten över tillägg](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för mer information. |
+| [!DNL Microsoft Azure]-tillägg för händelsevidarebefordran | Du kan nu skicka data till [!DNL Microsoft Azure] med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Se [[!DNL Microsoft Azure] översikten över tillägg](../../tags/extensions/server/azure/overview.md) för mer information. |
 
-Mer information om plattformens datainsamlingsfunktioner finns i [datainsamlingsöversikten](../../collection/home.md).
+Mer information om Experience Platform datainsamlingsfunktioner finns i [datainsamlingsöversikten](../../collection/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya eller uppdaterade funktioner**
 
@@ -45,18 +45,18 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- | 
-| Beta-tillgänglighet för Oracle Service Cloud-källa | Använd Oraclets Service Cloud-källa för att importera data från ditt Oracle Service Cloud-konto till Experience Platform. Mer information finns i dokumentationen om [Oracle Service Cloud-källan](../../sources/connectors/customer-success/oracle-service-cloud.md). |
+| Beta tillgänglighet av Oracle Service Cloud-källa | Använd Oracle Service Cloud-källan för att importera data från ditt Oracle Service Cloud-konto till Experience Platform. Mer information finns i dokumentationen om [Oracle Service Cloud-källan](../../sources/connectors/customer-success/oracle-service-cloud.md). |
 
-Läs [Källöversikten](../../sources/home.md) om du vill veta mer om källor.
+Mer information om källor finns i [översikten över källor](../../sources/home.md).

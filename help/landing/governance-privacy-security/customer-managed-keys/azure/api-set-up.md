@@ -4,16 +4,16 @@ description: Lär dig hur du konfigurerar din CMK-app med din Azure-klient och s
 role: Developer
 feature: API, Privacy
 exl-id: c9a1888e-421f-4bb4-b4c7-968fb1d61746
-source-git-commit: 53598f86e1876bc6d1807e95a26584da4d7db3f2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1023'
 ht-degree: 0%
 
 ---
 
 # Konfigurera och konfigurera kundhanterade nycklar för Azure med API:t
 
-Det här dokumentet innehåller de Azure-specifika instruktionerna för att aktivera kundhanterade nycklar (CMK) i Adobe Experience Platform med API:t. Instruktioner om hur du slutför den här processen med användargränssnittet för instanser av Azure-värdplattformen finns i [UI CMK-konfigurationsdokumentet](./ui-set-up.md).
+Det här dokumentet innehåller de Azure-specifika instruktionerna för att aktivera kundhanterade nycklar (CMK) i Adobe Experience Platform med API:t. Instruktioner om hur du slutför den här processen med användargränssnittet för Azure-värdbaserade Experience Platform-instanser finns i [UI CMK-konfigurationsdokumentet](./ui-set-up.md).
 
 Instruktioner som är specifika för AWS finns i [AWS installationsguide](../aws/ui-set-up.md).
 
@@ -23,7 +23,7 @@ Om du vill visa och gå till avsnittet [!UICONTROL Encryption] i Adobe Experienc
 
 Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html).
 
-Om du vill aktivera CMK för instanser av Azure-värdbaserade plattformar måste [[!DNL Azure] nyckelvalvet konfigureras](./azure-key-vault-config.md) med följande inställningar:
+Om du vill aktivera CMK för Azure-värdbaserade Experience Platform-instanser måste [[!DNL Azure] nyckelvalvet konfigureras](./azure-key-vault-config.md) med följande inställningar:
 
 * [Aktivera rensningsskydd](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview#purge-protection)
 * [Aktivera mjuk borttagning](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview)
@@ -36,7 +36,7 @@ När du har konfigurerat nyckelvalvet är nästa steg att registrera CMK-program
 
 ### Komma igång
 
-Om du registrerar CMK-appen måste du anropa API:er för plattformen. Mer information om hur du samlar in de autentiseringshuvuden som krävs för att ringa dessa anrop finns i [autentiseringsguiden för plattforms-API](../../../api-authentication.md).
+Om du registrerar CMK-appen måste du anropa Experience Platform API:er. Mer information om hur du samlar in de autentiseringsrubriker som krävs för att ringa dessa anrop finns i [autentiseringsguiden för Experience Platform API](../../../api-authentication.md).
 
 Autentiseringsguiden innehåller anvisningar om hur du skapar ett eget unikt värde för begärandehuvudet `x-api-key`, men alla API-åtgärder i den här handboken använder det statiska värdet `acp_provisioning` i stället. Du måste dock fortfarande ange dina egna värden för `{ACCESS_TOKEN}` och `{ORG_ID}`.
 
@@ -44,7 +44,7 @@ I alla API-anrop som visas i den här handboken används `platform.adobe.io` som
 
 ### Hämta en autentiserings-URL {#fetch-authentication-url}
 
-Om du vill starta registreringsprocessen skickar du en GET-förfrågan till slutpunkten för programregistreringen för att hämta den autentiserings-URL som krävs för din organisation.
+Om du vill starta registreringsprocessen skickar du en GET-begäran till slutpunkten för programregistrering för att hämta den autentiserings-URL som krävs för din organisation.
 
 **Begäran**
 
@@ -96,7 +96,7 @@ På nästa skärm väljer du **[!DNL Select members]** för att öppna en dialog
 
 ## Aktivera krypteringsnyckelkonfigurationen i Experience Platform {#send-to-adobe}
 
-När du har installerat CMK-appen på [!DNL Azure] kan du skicka krypteringsnyckelns identifierare till Adobe. Välj **[!DNL Keys]** i den vänstra navigeringen, följt av namnet på nyckeln som du vill skicka.
+När du har installerat CMK-appen på [!DNL Azure] kan du skicka din krypteringsnyckel till Adobe. Välj **[!DNL Keys]** i den vänstra navigeringen, följt av namnet på nyckeln som du vill skicka.
 
 ![Microsoft Azure-instrumentpanelen med objektet [!DNL Keys] och nyckelnamnet markerat.](../../../images/governance-privacy-security/customer-managed-keys/select-key.png)
 
@@ -176,7 +176,7 @@ Jobbet bör slutföras inom några minuter.
 
 ## Verifiera konfigurationens status {#check-status}
 
-Om du vill kontrollera statusen för konfigurationsbegäran kan du göra en GET-förfrågan.
+Om du vill kontrollera statusen för konfigurationsbegäran kan du göra en GET-begäran.
 
 **Begäran**
 
@@ -221,13 +221,13 @@ curl -X GET \
 
 Attributet `status` kan ha ett av fyra värden med följande betydelse:
 
-1. `RUNNING`: Verifierar att plattformen har åtkomst till nyckel- och nyckelvalvet.
+1. `RUNNING`: Verifierar att Experience Platform kan komma åt nyckel- och nyckelvalvet.
 1. `UPDATE_EXISTING_RESOURCES`: Nyckelvalvet och nyckelnamnet läggs till i datalagret över alla sandlådor i organisationen.
 1. `COMPLETED`: Nyckelvalvet och nyckelnamnet har lagts till i datalagret.
 1. `FAILED`: Ett problem har uppstått, huvudsakligen relaterat till nyckeln, nyckelvalvet eller konfigurationen av multi-tenant-appar.
 
 ## Nästa steg
 
-Genom att utföra ovanstående steg har du aktiverat CMK för din organisation. För instanser av Azure-värdbaserade plattformar krypteras och dekrypteras data som är inkapslade i primära datalager med nycklarna i [!DNL Azure]-nyckelvalvet.
+Genom att utföra ovanstående steg har du aktiverat CMK för din organisation. För Azure-värdbaserade Experience Platform-instanser krypteras och dekrypteras data som är inkapslade i primära datalager med nycklarna i [!DNL Azure]-nyckelvalvet.
 
 Mer information om datakryptering i Adobe Experience Platform finns i [krypteringsdokumentationen](../../encryption.md).

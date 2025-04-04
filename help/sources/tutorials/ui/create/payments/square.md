@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;Fyrkant;Fyrkant
 title: Skapa en fyrkantig Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en fast källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 7cdfeb36-c989-4875-bb94-e6594ddf30da
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Square]-källanslutning i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Square]-källanslutning med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Square]-källanslutning med Experience Platform-användargränssnittet.
 
 ## Komma igång
 
@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Du måste ange följande värden för att komma åt din [!DNL Square]-kontoplattform:
+Du måste ange följande värden för att komma åt ditt [!DNL Square]-konto för Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -37,11 +37,11 @@ Du måste ange följande värden för att komma åt din [!DNL Square]-kontoplatt
 
 Mer information om dessa autentiseringsuppgifter och hur du hämtar dem finns i [[!DNL Square] dokumentationen om OAuth](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens).
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Square]-konto till plattformen.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Square]-konto till Experience Platform.
 
 ## Anslut ditt [!DNL Square]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -65,4 +65,4 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du autentiserat och skapat en källanslutning mellan ditt [!DNL Square]-konto och din plattform. Du kan nu fortsätta till nästa självstudiekurs och [skapa ett dataflöde för att hämta betalningsdata till plattformen](../../dataflow/payments.md).
+Genom att följa den här självstudiekursen har du autentiserat och skapat en källanslutning mellan ditt [!DNL Square]-konto och Experience Platform. Du kan nu fortsätta till nästa självstudiekurs och [skapa ett dataflöde för att hämta betalningsdata till Experience Platform](../../dataflow/payments.md).

@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;kampanj;kampanjhanterade tjänster
-title: Skapa en Adobe Campaign Managed Cloud Services-källanslutning med hjälp av plattformsgränssnittet
-description: Lär dig hur du ansluter Adobe Experience Platform till Adobe Campaign Managed Cloud Services med hjälp av plattformsgränssnittet.
+title: Skapa en källanslutning till Adobe Campaign Managed Cloud Services med Experience Platform UI
+description: Lär dig hur du ansluter Adobe Experience Platform till Adobe Campaign Managed Cloud Services med Experience Platform användargränssnitt.
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: 67f42c155bf34f2b8adc3b08536bb3310bb77390
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1189'
+source-wordcount: '1202'
 ht-degree: 0%
 
 ---
 
-# Skapa en Adobe Campaign Managed Cloud Services-källanslutning med hjälp av plattformsgränssnittet
+# Skapa en källanslutning till Adobe Campaign Managed Cloud Services med Experience Platform UI
 
 I den här självstudiekursen beskrivs hur du skapar en källanslutning för att överföra dina Adobe Campaign Managed Cloud Services-data till Adobe Experience Platform.
 
@@ -18,15 +18,15 @@ I den här självstudiekursen beskrivs hur du skapar en källanslutning för att
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Med plattformen kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Anslut Adobe Campaign Managed Cloud Services till plattform
+## Anslut Adobe Campaign Managed Cloud Services till Experience Platform
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet för att begränsa vilka källor som visas.
 
@@ -60,7 +60,7 @@ Steget [!UICONTROL Select data] visas med ett gränssnitt för att konfigurera [
 | --- | --- |
 | Adobe Campaign, instans | Namnet på den Adobe Campaign-miljöinstans som du använder. |
 | Målmappning | De tekniska objekt som används av Campaign för att leverera meddelanden och innehåller alla tekniska inställningar som krävs för att skicka leveranser. |
-| Schemanamn | Namnet på schemaentiteten som du ska hämta till plattformen. Exempel: Leveranslogg och spårningslogg. |
+| Schemanamn | Namnet på den schemaentitet som du ska skicka till Experience Platform. Exempel: Leveranslogg och spårningslogg. |
 
 ![Ett gränssnitt där du kan konfigurera din Adobe Campaign-instans, målmappning och schemanamn.](../../../../images/tutorials/create/campaign/select-data.png)
 
@@ -96,7 +96,7 @@ Välj **[!UICONTROL Next]** när du är klar med informationen om dataflödet.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 >[!IMPORTANT]
 >
@@ -145,7 +145,7 @@ På den här sidan finns också ett gränssnitt där du kan uppdatera metadatabe
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat ett dataflöde för att överföra leveransloggar för Campaign v8 och spårningsloggdata till Platform. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+I den här självstudiekursen har du skapat ett dataflöde som kan hämta leveransloggar för Campaign v8 och data för spårningsloggar till Experience Platform. Inkommande data kan nu användas av Experience Platform-tjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../../data-science-workspace/home.md)

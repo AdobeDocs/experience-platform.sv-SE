@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Apache HDFS Source Connector - översikt
 description: Lär dig hur du ansluter Apache HDFS till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 1f156f7b-a19d-4dcf-a51d-ab6cb396d8f7
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -34,9 +34,9 @@ Nedan följer en lista över begränsningar som du måste ta hänsyn till när d
 - Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000` är inte giltiga Unicode-tecken, men de är giltiga i NTFS-filnamn. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Information om regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, Section 2.2: Basic Rules](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
 - Följande filnamn tillåts inte: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (. .).
 
-## Anslut [!DNL Apache] HDFS till [!DNL Platform]
+## Anslut [!DNL Apache] HDFS till [!DNL Experience Platform]
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache] HDFS till [!DNL Platform] med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache] HDFS till [!DNL Experience Platform] med API:er eller användargränssnittet:
 
 ### Använda API:er
 

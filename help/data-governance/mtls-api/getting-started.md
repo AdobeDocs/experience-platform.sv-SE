@@ -2,9 +2,10 @@
 title: Komma igång med MTLS Service API
 description: Det här dokumentet innehåller ytterligare information som du behöver känna till för att kunna arbeta med MTLS API.
 role: Developer
-source-git-commit: f0b9d414d7b08015478c132de6910629d86c9cf9
+exl-id: db5978cf-fe47-4b76-86ba-c8ea1ee6b12f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '214'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
@@ -21,7 +22,7 @@ API-dokumentationen för MTLS-tjänsten innehåller ett exempel-API-anrop som vi
 
 ## Obligatoriska rubriker
 
-API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa plattformsslutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Experience Platform API-anrop, vilket visas nedan:
+API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa Experience Platform-slutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Experience Platform API-anrop, vilket visas nedan:
 
 - Behörighet: `Bearer {ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`

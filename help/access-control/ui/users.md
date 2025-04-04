@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;produktprofil
+keywords: Experience Platform;home;populära topics;product profile
 solution: Experience Platform
 title: Hantera användare för en produktprofil
 description: I det här dokumentet visas hur du hanterar användare för en produktprofil i användargränssnittet för Adobe Experience Platform.
 exl-id: 1a35f2e4-cb33-4625-92ec-98e615607a8b
-source-git-commit: ea79ac7fecd980aba87d003c8c23f271c74ec23d
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -33,4 +33,4 @@ Följande video är tänkt att ge stöd för din förståelse för att hantera a
 
 ## Nästa steg
 
-Nu när du har lärt dig hur du styr åtkomsten till plattformsfunktioner via [!DNL Admin Console] kan du läsa avsnittet i bilagan i [åtkomstkontrollsöversikten](../home.md) för att lära dig mer om de enskilda behörigheterna och de plattformsfunktioner som de ger åtkomst till.
+Nu när du har lärt dig hur du styr åtkomsten till Experience Platform-funktioner via [!DNL Admin Console] kan du läsa avsnittet i bilagan i [åtkomstkontrollsöversikten](../home.md) för att lära dig mer om de enskilda behörigheterna och de Experience Platform-funktioner som de ger åtkomst till.

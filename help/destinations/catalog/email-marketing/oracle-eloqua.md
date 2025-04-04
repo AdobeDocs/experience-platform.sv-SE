@@ -1,11 +1,11 @@
 ---
 keywords: e-post;E-post;e-post;e-postmål;oracle eloqua;oracle
-title: (Filer) Oraclet Eloqua-anslutning
-description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oraclet och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
+title: (Filer) Oracle Eloqua-anslutning
+description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oracle och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '673'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -42,7 +42,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall till tillåtelselista.
 
-Se [IP-adressen tillåtelselista för SFTP-mål](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
+Se [IP-adressen tillåtelselista för SFTP-mål](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till Adobe IP-adresser i tillåtelselista.
 
 ## Anslut till målet {#connect}
 
@@ -75,14 +75,14 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 * Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under avsnittet **[!UICONTROL Key]**. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 * **[!UICONTROL Name]**: Välj ett relevant namn för målet.
 * **[!UICONTROL Description]**: Ange en beskrivning för målet.
-* **[!UICONTROL Folder Path]**: Ange sökvägen på din lagringsplats där Plattform sparar dina exportdata som CSV-filer.
+* **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där Experience Platform ska placera dina exportdata som CSV-filer.
 * **[!UICONTROL File Format]**: Välj **CSV** om du vill exportera CSV-filer till lagringsplatsen.
 
 <!--
 
 Commenting out Amazon S3 bucket part for now until support is clarified
 
-- **[!UICONTROL Bucket name]**: Your Amazon S3 bucket, where Platform will deposit the data export. Your input must be between 3 and 63 characters long. Must begin and end with a letter or number. Must contain only lowercase letters, numbers, or hyphens ( - ). Must not be formatted as an IP address (for example, 192.100.1.1).
+- **[!UICONTROL Bucket name]**: Your Amazon S3 bucket, where Experience Platform will deposit the data export. Your input must be between 3 and 63 characters long. Must begin and end with a letter or number. Must contain only lowercase letters, numbers, or hyphens ( - ). Must not be formatted as an IP address (for example, 192.100.1.1).
 
 -->
 
@@ -107,8 +107,8 @@ När du aktiverar målgrupper till det här målet rekommenderar Adobe att du v�
 
 ## Exporterade data {#exported-data}
 
-För [!DNL Oracle Eloqua] mål skapar Platform en `.csv`-fil på den lagringsplats som du angav. Mer information om filerna finns i [Verifiera målgruppsaktivering](../../ui/activate-batch-profile-destinations.md#verify) i självstudiekursen om målgruppsaktivering.
+För [!DNL Oracle Eloqua] mål skapar Experience Platform en `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i [Verifiera målgruppsaktivering](../../ui/activate-batch-profile-destinations.md#verify) i självstudiekursen om målgruppsaktivering.
 
 ## Konfigurera dataimport till [!DNL Oracle Eloqua] {#import-data-into-eloqua}
 
-När du har anslutit [!DNL Platform] till ditt [!DNL SFTP]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Oracle Eloqua]. Mer information om hur du gör detta finns i [Importera kontakter eller konton](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/DataImportExport/Tasks/ImportingContactsOrAccounts.htm) i [!DNL Oracle Eloqua Help Center].
+När du har anslutit [!DNL Experience Platform] till ditt [!DNL SFTP]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Oracle Eloqua]. Mer information om hur du gör detta finns i [Importera kontakter eller konton](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/DataImportExport/Tasks/ImportingContactsOrAccounts.htm) i [!DNL Oracle Eloqua Help Center].

@@ -2,9 +2,9 @@
 title: Bästa tillvägagångssätt
 description: Lär dig vilka regler och tips du bör följa när du skapar en dokumentationssida för målet, så att du kan vara säker på att den uppfyller Adobe Experience Platform kvalitetsstandarder för dokumentation.
 exl-id: b12059f1-6635-41cd-acc5-6ff471111164
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '499'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ Den här sidan beskriver regler som du bör följa när du redigerar sidan för 
 
 ## Allmän vägledning {#general-guidance}
 
-* När du fyller i [mallen](./self-service-template.md) för måldokumentationen läser du i handboken för Adobe Contributor om du vill ha information om [länkning](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html), [tabeller](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#tables), den [kodningssyntax som stöds](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html), [skrivande vägledning](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) med mera.
+* När du fyller i [mallen](./self-service-template.md) för måldokumentationen läser du i Adobe Contributor-handboken om du vill ha information om [länkning](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html), [tabeller](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#tables), den [kodningssyntax som stöds](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html), [skrivande vägledning](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) med mera.
 * Ta inte med observationer och uppskattningar i produktdokumentationen.
-* I Experience Platform-dokumentationen använder Adobe-skrivare **fet formatering** för att referera till gränssnittskontroller, enligt följande:
+* I Experience Platform-dokumentationen använder Adobe-skribenter **fet formatering** för att referera till användargränssnittskontroller, enligt följande:
    * Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Visa ett exempel på hur användargränssnittskontroller dokumenteras i en [målsjälvstudiekurs](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#select-destination).
 
 ## Skrivstil
@@ -37,22 +37,22 @@ Följ den angivna dokumentationsmallen och redigera inte de befintliga länkarna
 
 ## Riktlinjer för varumärken {#branding}
 
-* AEP är inte en godkänd offentlig term. Använd Adobe Experience Platform först, sedan Experience Platform och sedan Platform.
-   * **Använd inte**: Innan du kan exportera data från AEP till YourDestination bör du kontrollera att du läser och slutför dessa krav.
+* AEP är inte en godkänd offentlig term. Använd Adobe Experience Platform först, sedan Experience Platform och sedan Experience Platform.
+   * **Använd inte**: Innan du kan exportera data från AEP till ditt mål måste du kontrollera att du har läst och fyllt i dessa krav.
    * **Använd**: Innan du kan exportera data från Adobe Experience Platform till din destination måste du läsa och slutföra dessa krav.
 
 ## Bilder och skärmbilder {#images-and-screenshots}
 
 * Mer information om [hur du länkar till bilder](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#images) finns i handboken för medverkande.
-* När du använder skärmbilder måste du se till att skärmbilden fångar upp hela användargränssnittsskärmen för plattformen.
-* När du markerar bilder för att markera en viss kontroll eller etikett på sidan, ska du följa den markeringsstil som används av dokumentationsteamet på Experience Platform. Observera hur Profilbaserad markeras i [den här skärmbilden](/help/destinations/catalog/cloud-storage/amazon-s3.md#export-type-frequency).
+* När du använder skärmbilder måste du se till att skärmbilden fångar upp hela Experience Platform användargränssnittsskärm.
+* När du markerar bilder för att markera en viss kontroll eller etikett på sidan, ska du följa den markeringsstil som används av Experience Platform dokumentationsteam. Observera hur Profilbaserad markeras i [den här skärmbilden](/help/destinations/catalog/cloud-storage/amazon-s3.md#export-type-frequency).
 * Använd `png`-formatbilder.
 * Använd inte numrerade skärmbilder som filnamn. Bildfilnamn ska vara beskrivande.
    * **Använd inte**: `1.png`, `2.png`, `3.png`
    * **Använd**: `yourdestination-authentication-details.png`, `yourdestination-destination-details.png`
 * Använd alternativ text för alla bilder som du lägger till i dokumentationen och använd rätt grammatik i alternativ text.
    * **Använd inte**: Information om målanslutning
-   * **Använd**: Bild av plattformsgränssnittet, med information om målanslutning ifylld.
+   * **Använd**: En bild av Experience Platform-gränssnittet med information om målanslutningen ifylld.
 
 ## Process {#process}
 

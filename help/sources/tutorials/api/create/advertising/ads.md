@@ -2,9 +2,9 @@
 title: Koppla Google-annonser till Experience Platform med API:er
 description: Lär dig hur du ansluter Adobe Experience Platform till Google Ads med API:t för Flow Service.
 exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
-source-git-commit: ac90eea69f493bf944a8f9920426a48d62faaa6c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '462'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,9 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Google Ads] med API:t [!DNL Flow Service].
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -38,7 +38,7 @@ Mer information om autentisering finns i [[!DNL Google Ads] källöversikten](..
 
 ## Skapa en basanslutning
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
 Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till slutpunkten `/connections` och anger dina autentiseringsuppgifter för Google Ads som en del av parametrarna för begäran.
 
@@ -110,4 +110,4 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 Genom att följa den här självstudiekursen har du skapat en [!DNL Google Ads]-basanslutning med [!DNL Flow Service] API:t och anslutit ditt [!DNL Google Ads]-konto till Experience Platform. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att hämta annonsdata till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/advertising.md)
+* [Skapa ett dataflöde för att skicka annonsdata till Experience Platform med  [!DNL Flow Service] API](../../collect/advertising.md)

@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;batchförbrukning;batchintag;partiellt intag;partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt batchintag;intag;Inmatning;
+keywords: Experience Platform;hem;populära ämnen;batchförbrukning;batchintag;partiellt intag;partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt batchintag;partiellt;intag;Inmatning;
 solution: Experience Platform
 title: Översikt över partiell gruppinmatning
 description: Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '887'
 ht-degree: 0%
@@ -21,10 +21,10 @@ Det här dokumentet innehåller en självstudiekurs för hantering av partiell b
 
 Den här självstudiekursen kräver en fungerande kunskap om de olika Adobe Experience Platform-tjänster som är involverade i partiell batchförbrukning. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [Gruppinmatning](./overview.md): Den metod som [!DNL Platform] använder för att importera och lagra data från datafiler, till exempel CSV och Parquet.
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+- [Gruppinmatning](./overview.md): Den metod som [!DNL Experience Platform] använder för att importera och lagra data från datafiler, till exempel CSV och Parquet.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa [!DNL Platform] API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa [!DNL Experience Platform] API:er.
 
 ### Läser exempel-API-anrop
 
@@ -32,19 +32,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bärare `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 ## Aktivera en batch för partiell batchimport i API {#enable-api}
 
@@ -65,7 +65,7 @@ Om du vill skapa en ny grupp följer du stegen i [Utvecklarhandbok för batchimp
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `enableErrorDiagnostics` | En flagga som tillåter [!DNL Platform] att generera detaljerade felmeddelanden om din batch. |
+| `enableErrorDiagnostics` | En flagga som tillåter [!DNL Experience Platform] att generera detaljerade felmeddelanden om din batch. |
 | `partialIngestionPercent` | Procentandelen godtagbara fel innan hela gruppen misslyckas. I det här exemplet kan alltså maximalt 5 % av batchen vara fel, innan den misslyckas. |
 
 
@@ -75,7 +75,7 @@ Om du vill skapa en ny grupp följer du stegen i [Utvecklarhandbok för batchimp
 >
 >I det här avsnittet beskrivs hur du aktiverar en batch för partiell batchförbrukning med användargränssnittet. Om du redan har aktiverat en batch för partiell gruppinmatning med API:t kan du hoppa fram till nästa avsnitt.
 
-Om du vill aktivera en batch för partiellt bruk via användargränssnittet i [!DNL Platform] kan du skapa en ny grupp via källanslutningar, skapa en ny grupp i en befintlig datauppsättning eller skapa en ny grupp via [!UICONTROL Map CSV to XDM flow].
+Om du vill aktivera en batch för partiellt bruk via användargränssnittet i [!DNL Experience Platform] kan du skapa en ny grupp via källanslutningar, skapa en ny grupp i en befintlig datauppsättning eller skapa en ny grupp via [!UICONTROL Map CSV to XDM flow].
 
 ### Skapa en ny källanslutning {#new-source}
 
@@ -85,7 +85,7 @@ Om du vill skapa en ny källanslutning följer du stegen i listan i [Källövers
 
 Med växlingsknappen **[!UICONTROL Partial ingestion]** kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-**[!UICONTROL Error diagnostics]**-växeln visas bara när **[!UICONTROL Partial ingestion]**-växeln är inaktiverad. Med den här funktionen kan [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om växeln **[!UICONTROL Partial ingestion]** är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+**[!UICONTROL Error diagnostics]**-växeln visas bara när **[!UICONTROL Partial ingestion]**-växeln är inaktiverad. Med den här funktionen kan [!DNL Experience Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om växeln **[!UICONTROL Partial ingestion]** är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
@@ -99,7 +99,7 @@ Om du vill använda en befintlig datauppsättning börjar du med att välja en d
 
 Med växlingsknappen **[!UICONTROL Partial ingestion]** kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-**[!UICONTROL Error diagnostics]**-växeln visas bara när **[!UICONTROL Partial ingestion]**-växeln är inaktiverad. Med den här funktionen kan [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om växeln **[!UICONTROL Partial ingestion]** är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+**[!UICONTROL Error diagnostics]**-växeln visas bara när **[!UICONTROL Partial ingestion]**-växeln är inaktiverad. Med den här funktionen kan [!DNL Experience Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om växeln **[!UICONTROL Partial ingestion]** är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
 
@@ -115,7 +115,7 @@ Om du vill använda [!UICONTROL Map CSV to XDM schema]-flödet följer du stegen
 
 Med växlingsknappen **[!UICONTROL Partial ingestion]** kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-**[!UICONTROL Error diagnostics]**-växeln visas bara när **[!UICONTROL Partial ingestion]**-växeln är inaktiverad. Med den här funktionen kan [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om växeln **[!UICONTROL Partial ingestion]** är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+**[!UICONTROL Error diagnostics]**-växeln visas bara när **[!UICONTROL Partial ingestion]**-växeln är inaktiverad. Med den här funktionen kan [!DNL Experience Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om växeln **[!UICONTROL Partial ingestion]** är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 

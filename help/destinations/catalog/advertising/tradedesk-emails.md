@@ -3,9 +3,9 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: a189a86749996c0ee7b6146bcd030d8495745e12
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1088'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experie
 
 Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform eller använda obearbetade e-postadresser.
 
-Läs [översikten över gruppimporten](/help/ingestion/batch-ingestion/overview.md) om du vill veta mer om hur du kan importera e-postadresser i Experience Platform.
+Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
@@ -95,9 +95,9 @@ Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skap
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Advertiser ID]**: din [!DNL Trade Desk Advertiser ID], som antingen kan delas av din [!DNL Trade Desk]-kontohanterare eller hittas under [!DNL Advertiser Preferences] i [!DNL Trade Desk]-gränssnittet.
 
-![Skärmbild för plattformsgränssnitt som visar hur du fyller i målinformation.](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
+![Experience Platform UI-skärmbild som visar hur du fyller i målinformation.](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
 
-När du ansluter till målet är det helt valfritt att ange en datastyrningsprincip. Mer information finns i Experience Platform [översikten över datastyrning](/help/data-governance/policies/overview.md).
+När du ansluter till målet är det helt valfritt att ange en datastyrningsprincip. Mer information finns i Experience Platform [datastyrningsöversikt](/help/data-governance/policies/overview.md).
 
 ## Aktivera målgrupper till det här målet {#activate}
 
@@ -110,17 +110,17 @@ Läs [Aktivera målgruppsdata för exportmål för gruppprofiler](/help/destinat
 
 På sidan **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje målgrupp som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
 
-![Skärmbild för plattformsgränssnitt för att schemalägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
+![Experience Platform UI-skärmbild för att schemalägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
 
 >[!NOTE]
 >
 >Alla målgrupper som är aktiverade på [!DNL The Trade Desk] CRM-målet ställs automatiskt in på en daglig frekvens och fullständig filexport.
 
-![Skärmbild för plattformsgränssnitt för att schemalägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
+![Experience Platform UI-skärmbild för att schemalägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
 
 På sidan **[!UICONTROL Mapping]** måste du välja attribut eller identitetsnamnutrymmen från källkolumnen och mappa till målkolumnen.
 
-![Skärmbild av plattformsgränssnitt för att mappa målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
+![Experience Platform UI-skärmbild för att kartlägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
 
 Nedan visas ett exempel på korrekt identitetsmappning när målgrupper aktiveras till CRM-målet [!DNL The Trade Desk].
 
@@ -131,7 +131,7 @@ Nedan visas ett exempel på korrekt identitetsmappning när målgrupper aktivera
 Välja källfält:
 
 * Välj namnutrymmet eller attributet `Email` som källidentitet om du använder den oformaterade e-postadressen vid datahämtning.
-* Välj namnutrymmet eller attributet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser vid datahämtning på plattformen.
+* Välj namnutrymmet eller attributet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser när data hämtas till Experience Platform.
 
 Markera målfält:
 
@@ -140,12 +140,12 @@ Markera målfält:
 
 ## Validera dataexport {#validate}
 
-Om du vill verifiera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk] kan du hitta målgrupperna under datapanelen för Adobe 1PD i [!DNL The Trade Desk] Data Management Platform (DMP). Så här söker du efter motsvarande ID i användargränssnittet för [!DNL Trade Desk]:
+Om du vill verifiera att data har exporterats korrekt från Experience Platform och till [!DNL The Trade Desk] kan du hitta målgrupperna under datarutan Adobe 1PD i [!DNL The Trade Desk] Data Management Platform (DMP). Så här söker du efter motsvarande ID i användargränssnittet för [!DNL Trade Desk]:
 
 1. Välj först fliken **[!UICONTROL Data]** och granska avsnittet **[!UICONTROL First-Party]**.
 2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]**, hittar du **[!UICONTROL Adobe 1PD Tile]**.
 3. Klicka på rutan**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
-4. Segment-ID # från Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
+4. Segment-ID:t för Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

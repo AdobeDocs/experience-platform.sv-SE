@@ -3,9 +3,9 @@ title: Prospekt
 description: Lär dig hur du skapar och använder profiler för potentiella kunder för att samla in information om okända kunder med hjälp av tredjepartsinformation.
 type: Documentation
 exl-id: 194d25d6-88ae-4a7a-9b79-39120bced5c7
-source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Dialogrutan [!UICONTROL View JSON] visas. Attributen för den potentiella kunden
 
 ## Föreslagna användningsfall {#use-cases}
 
-Läs följande falldokumentation om du vill veta hur du kan använda profilfunktionerna i Experience Platform tillsammans med andra plattformsfunktioner:
+Läs följande falldokumentation om du vill veta hur du kan använda profilfunktionerna i Experience Platform tillsammans med andra Experience Platform-funktioner:
 
 - [Engagera och värva nya kunder med prospekteringsfunktionen](../../rtcdp/partner-data/prospecting.md)
 

@@ -2,9 +2,9 @@
 title: Skapa en Zendesk Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Zendesk-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '724'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Zendesk]-konto på plattformen måste du ange värden för följande autentiseringsuppgifter:
+För att få åtkomst till ditt [!DNL Zendesk]-konto på Experience Platform måste du ange värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -35,9 +35,9 @@ Mer information om hur du autentiserar [!DNL Zendesk]-källan finns i [[!DNL Zen
 
 ![Zendesk API-token](../../../../images/tutorials/create/zendesk/zendesk-api-tokens.png)
 
-### Skapa ett plattformsschema för [!DNL Zendesk]
+### Skapa ett Experience Platform-schema för [!DNL Zendesk]
 
-Innan du skapar en [!DNL Zendesk]-källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
+Innan du skapar en [!DNL Zendesk]-källanslutning måste du också se till att du först skapar ett Experience Platform-schema som kan användas för källan. I självstudiekursen [Skapa ett Experience Platform-schema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
 
 Mer information om ditt [!DNL Zendesk]-schema som krävs för [!DNL Zendesk Search API] finns i avsnittet [limits](#limits) nedan.
 
@@ -45,7 +45,7 @@ Mer information om ditt [!DNL Zendesk]-schema som krävs för [!DNL Zendesk Sear
 
 ## Anslut ditt [!DNL Zendesk]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -75,7 +75,7 @@ När källan har autentiserats uppdateras sidan till ett interaktivt schematräd
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du autentiserat och skapat en källanslutning mellan ditt [!DNL Zendesk]-konto och din plattform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att överföra data om kundframgångar till plattformen](../../dataflow/customer-success.md).
+Genom att följa den här självstudiekursen har du autentiserat och skapat en källanslutning mellan ditt [!DNL Zendesk]-konto och Experience Platform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att överföra data om kundframgångar till Experience Platform](../../dataflow/customer-success.md).
 
 ## Ytterligare resurser
 
@@ -83,9 +83,9 @@ Avsnitten nedan innehåller ytterligare resurser som du kan referera till när d
 
 ### Validering {#validation}
 
-I följande beskrivs de steg du kan utföra för att verifiera att du har anslutit din [!DNL Zendesk]-källa och att [!DNL Zendesk]-profiler importeras till plattformen.
+I följande beskrivs de steg du kan utföra för att verifiera att du har anslutit din [!DNL Zendesk]-källa och att [!DNL Zendesk]-profiler importeras till Experience Platform.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Datasets]. Skärmen [!UICONTROL Dataset Activity] visar information om körningar.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Datasets]. Skärmen [!UICONTROL Dataset Activity] visar information om körningar.
 
 ![Aktivitetssida](../../../../images/tutorials/create/zendesk/dataset-activity.png)
 
@@ -97,7 +97,7 @@ Välj slutligen **[!UICONTROL Preview dataset]** för att visa de data som har i
 
 ![Zendesk-datauppsättning](../../../../images/tutorials/create/zendesk/preview-dataset.png)
 
-Du kan också verifiera dina plattformsdata mot data på din [!DNL Zendesk] > [!DNL Customers]-sida.
+Du kan även verifiera dina Experience Platform-data mot data på din [!DNL Zendesk] > [!DNL Customers]-sida.
 
 ![zendesk-customers](../../../../images/tutorials/create/zendesk/zendesk-customers.png)
 

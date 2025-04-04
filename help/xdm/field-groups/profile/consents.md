@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Fältgrupp för innehåll och inställningar
 description: Läs mer om schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: be35c5398cd96cdfe424c5088db288ba4061ac4a
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '889'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Fältgruppen [!UICONTROL Consents and Preferences] tillhandahåller ett enskilt 
 
 >[!TIP]
 >
->I guiden om [att utforska XDM-resurser](../../ui/explore.md) finns anvisningar om hur du söker efter en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
+>I guiden om [att utforska XDM-resurser](../../ui/explore.md) finns anvisningar om hur du söker efter en XDM-resurs och inspekterar dess struktur i Experience Platform användargränssnitt.
 
 I följande JSON visas ett exempel på vilken typ av data som fältgruppen [!UICONTROL Consents and Preferences] kan bearbeta. Mer information om hur du använder de flesta fält som finns i fältgruppen finns i guiden för datatypen [Consents and Preferences](../../data-types/consents.md). Underavsnitten nedan fokuserar på de unika attribut som fältgruppen lägger till i datatypen.
 

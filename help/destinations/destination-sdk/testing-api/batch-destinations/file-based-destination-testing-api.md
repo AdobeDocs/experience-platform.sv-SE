@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /testing/destinationInstance för att testa om ditt filbaserade mål är korrekt konfigurerat och för att verifiera dataflödenas integritet till det konfigurerade målet.
 title: Testa ditt filbaserade mål med exempelprofiler
 exl-id: 75f76aec-245b-4f07-8871-c64a710db9f6
-source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '831'
 ht-degree: 0%
 
 ---
@@ -27,9 +27,9 @@ Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-star
 
 Innan du kan använda slutpunkten `/testing/destinationInstance` måste du kontrollera att följande villkor uppfylls:
 
-* Du har ett befintligt filbaserat mål som skapats via Destinationen SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
-* Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform.
-* För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i plattformsgränssnittet.
+* Du har ett befintligt filbaserat mål som skapats via Destination SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
+* Du har skapat minst ett aktiveringsflöde för destinationen i Experience Platform-gränssnittet.
+* För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i Experience Platform-gränssnittet.
 
   ![Gränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
 * *Valfritt*: Om du vill testa målkonfigurationen med en exempelprofil som lagts till i API-anropet använder du slutpunkten [/sample-profiles](file-based-sample-profile-generation-api.md) för att generera en exempelprofil baserat på ditt befintliga källschema. Om du inte anger någon exempelprofil genererar API:t en och returnerar den i svaret.
@@ -238,7 +238,7 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med svarsnyttolasten.
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg
 
@@ -246,4 +246,4 @@ När du har läst det här dokumentet vet du nu hur du testar din filbaserade m�
 
 Om du har fått ett giltigt API-svar fungerar målet korrekt. Om du vill se mer detaljerad information om aktiveringsflödet kan du använda egenskapen `results` från svaret för att [visa detaljerade aktiveringsresultat](file-based-destination-results-api.md).
 
-Om du skapar ett offentligt mål kan du nu [skicka målkonfigurationen](../../guides/submit-destination.md) till Adobe för granskning.
+Om du skapar ett publikt mål kan du nu [skicka målkonfigurationen](../../guides/submit-destination.md) till Adobe för granskning.

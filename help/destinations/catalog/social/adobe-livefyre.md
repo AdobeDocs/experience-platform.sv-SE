@@ -1,11 +1,11 @@
 ---
 keywords: livefyre;livefyre extension
 title: Adobe Livefyre-tillägg
-description: Adobe Livefyre är en social destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Adobe Livefyre är en social destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: a134c144-e7b8-4d48-8c90-5999e5ceb8a0
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '433'
+source-wordcount: '436'
 ht-degree: 0%
 
 ---
@@ -14,25 +14,25 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med Adobe Livefyre kan ni identifiera, ordna och publicera ett konstant flöde av användargenererat innehåll på er webbplats för att skapa autentiska och personaliserade upplevelser.
+Med Adobe Livefyre kan ni upptäcka, ordna och publicera ett konstant flöde av användargenererat innehåll på er webbplats för att skapa autentiska och personaliserade upplevelser.
 
 Adobe Livefyre är en social utbyggnad i Adobe Experience Platform. Mer information om Adobe Livefyre finns i [Handboken för Livefyre-implementering](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html).
 
-Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
 ![Adobe Livefyre-tillägg](../../assets/catalog/social/adobe-livefyre/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 
-Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Experience Platform.
 
 Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du tillägget Adobe Livefyre:
+Så här installerar du Adobe Livefyre-tillägget:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Plattformsgränssnittet](https://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 

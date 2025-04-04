@@ -3,11 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelning;molnlagring
 solution: Experience Platform
 title: Skapa ett direktuppspelat dataflöde för en molnlagringskälla i användargränssnittet
 type: Tutorial
-description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med molnlagringsbasen.
+description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med molnlagringsbasen.
 exl-id: 75deead6-ef3c-48be-aed2-c43d1f432178
-source-git-commit: 6419ae7648a91dc7f9432281c1960beccc65bdb0
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1028'
+source-wordcount: '1035'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Adobe Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du skapar ett direktuppspelat dataflöde för en molnlagringskälla i användargränssnittet.
 
-Innan du provar den här självstudiekursen måste du skapa en giltig och autentiserad anslutning mellan ditt molnlagringskonto och din plattform. Om du inte redan har en autentiserad anslutning kan du gå till någon av följande självstudiekurser för att få information om hur du autentiserar ditt molnbaserade lagringskonton:
+Innan du provar den här självstudiekursen måste du skapa en giltig och autentiserad anslutning mellan ditt molnlagringskonto och Experience Platform. Om du inte redan har en autentiserad anslutning kan du gå till någon av följande självstudiekurser för att få information om hur du autentiserar ditt molnbaserade lagringskonton:
 
 - [[!DNL Amazon Kinesis]](../../../ui/create/cloud-storage/kinesis.md)
 - [[!DNL Azure Event Hubs]](../../../ui/create/cloud-storage/eventhub.md)
@@ -26,7 +26,7 @@ Innan du provar den här självstudiekursen måste du skapa en giltig och autent
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Dataflöden](../../../../../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, från källor till [!DNL Identity Service], till [!DNL Profile] och till [!DNL Destinations].
+- [Dataflöden](../../../../../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan Experience Platform. Dataflöden är konfigurerade för olika tjänster, från källor till [!DNL Identity Service], till [!DNL Profile] och till [!DNL Destinations].
 - [Data Prep](../../../../../data-prep/home.md): Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM). Dataförinställning visas som ett steg för&quot;Karta&quot; i dataöverföringsprocesserna, inklusive arbetsflödet för CSV-inmatning.
 - [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
    - [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
@@ -39,7 +39,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >
 >Du kan bara skapa ett källdataflöde per konsumentgrupp för en given händelsehubb.
 
-När du har skapat ett autentiserat molnlagringskonto för direktuppspelning visas steget **[!UICONTROL Select data]** som ger dig ett gränssnitt där du kan välja vilken dataström du vill ta med till plattformen.
+När du har skapat ditt direktuppspelade molnlagringskonto visas steget **[!UICONTROL Select data]** som ger dig ett gränssnitt där du kan välja vilken dataström du vill ta med till Experience Platform.
 
 - Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 - Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.
@@ -62,7 +62,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 ## Mappning
 
-Steg **[!UICONTROL Mapping]** visas med ett gränssnitt för att mappa källdata till en plattformsdatauppsättning.
+Steget **[!UICONTROL Mapping]** visas med ett gränssnitt för att mappa källdata till en Experience Platform-datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
@@ -106,7 +106,7 @@ När din datauppsättning och ditt schema har etablerats visas gränssnittet **[
 
 >[!TIP]
 >
->Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
+>Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
@@ -139,7 +139,7 @@ När du har skapat ett direktuppspelat molnlagringsdataflöde kan du övervaka d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att strömma data från en molnlagringskälla. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att strömma data från en molnlagringskälla. Inkommande data kan nu användas av Experience Platform-tjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 - [[!DNL Data Science Workspace] översikt](../../../../../data-science-workspace/home.md)

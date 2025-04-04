@@ -1,12 +1,12 @@
 ---
 title: Google Customer Match + Display & Video 360 connection
-description: Med Google kundmatchning + Display & Video 360-destinationskoppling kan du använda online- och offlinedata från Experience Platform för att nå och återengagera dina kunder i Google egna och driftsatta egendomar, som Search, Shopping, Gmail och YouTube.
+description: Med Google kundmatchning + Display & Video 360-destinationskoppling kan du använda dina online- och offlinedata från Experience Platform för att nå och återengagera dina kunder i Google egna och driftsatta egendomar som Search, Shopping, Gmail och YouTube.
 badgeBeta: label="Beta" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: 27802292a7a06f2edaea9efc39d4a63507e0e7e1
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1960'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -20,7 +20,7 @@ Med den nyligen introducerade möjligheten att kunna använda [!DNL Customer Mat
 
 >[!IMPORTANT]
 >
->Den här målanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill ha åtkomst.
+>Den här destinationsanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få åtkomst.
 
 ![Google kundmatchning + DV360-mål i Adobe Experience Platform användargränssnitt.](/help/destinations/assets/catalog/advertising/gcm-dv360/catalog.png)
 
@@ -30,9 +30,9 @@ Med den nyligen introducerade möjligheten att kunna använda [!DNL Customer Mat
 >
 > Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([EU User Consent Policy](https://www.google.com/about/company/user-consent-policy/)). Tvingande av dessa ändringar av medgivandekraven gäller från och med den 6 mars 2024.
 ><br/>
->För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe de verktyg som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
+>För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
 ><br/>
->Kunder som har köpt Adobe sekretess- och säkerhetssköld och konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
 ><br/>
 >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
@@ -50,7 +50,7 @@ För att du bättre ska förstå hur och när du ska använda den här destinati
 
 ### Använd skiftläge 1
 
-Ett sportklädmärke vill nå befintliga kunder genom [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Experience Platform och bygga målgrupper utifrån sina egna offlinedata. Sedan kan de skicka dessa målgrupper till målet [!DNL Google Customer Match + Display & Video 360] som ska användas i alla [!DNL Google Display & Video 360] -egenskaper som [!DNL Search], [!DNL YouTube], [!DNL Gmail] och [!DNL Google Display Network].
+Ett sportklädmärke vill nå befintliga kunder genom [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Det klädvarumärket kan importera e-postadresser från sin egen CRM till Experience Platform och bygga målgrupper utifrån sina egna offlinedata. Sedan kan de skicka dessa målgrupper till målet [!DNL Google Customer Match + Display & Video 360] som ska användas i alla [!DNL Google Display & Video 360] -egenskaper som [!DNL Search], [!DNL YouTube], [!DNL Gmail] och [!DNL Google Display Network].
 
 ### Använd skiftläge 2
 
@@ -64,8 +64,8 @@ För att befordra releasen överför de e-postadresser från sin CRM-databas til
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| phone_sha256_e.164 | Telefonnummer i E164-format, hashas med algoritmen SHA256 | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256_e.164 | Telefonnummer i E164-format, hashas med algoritmen SHA256 | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 
 {style="table-layout:auto"}
 
@@ -83,7 +83,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -121,8 +121,8 @@ Beroende på vilken typ av ID som du importerar till Adobe Experience Platform m
 
 Det finns två metoder för att aktivera telefonnummer i [!DNL Google Customer Match]:
 
-* **Inkommande råtelefonnummer**: du kan importera råa telefonnummer i formatet [!DNL E.164] till [!DNL Platform], och de hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till namnutrymmet `Phone_E.164`.
-* **Inkommande hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du lägger in dem i [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `PHONE_SHA256_E.164`.
+* **Inkommande råtelefonnummer**: du kan importera råa telefonnummer i formatet [!DNL E.164] till [!DNL Experience Platform], och de hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till namnutrymmet `Phone_E.164`.
+* **Inkommande hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du lägger in dem i [!DNL Experience Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `PHONE_SHA256_E.164`.
 
 >[!NOTE]
 >
@@ -130,7 +130,7 @@ Det finns två metoder för att aktivera telefonnummer i [!DNL Google Customer M
 
 ### Krav för e-posthashning {#hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
+Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser som är tydliga i Experience Platform, och få [!DNL Experience Platform] hash-kodade adresser när de aktiveras.
 
 Mer information om Google hashkrav och andra begränsningar för aktivering finns i följande avsnitt i Google dokumentation:
 
@@ -140,7 +140,7 @@ Mer information om Google hashkrav och andra begränsningar för aktivering finn
 * [[!DNL Customer Match] med ID:n för mobila enheter](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 
-Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsuppläsningen](../../../ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](../../../ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla Google krav som beskrivs i länkarna ovan.
 
@@ -148,9 +148,9 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 Before you can use the `User_ID` namespace to send data to Google, make sure you synchronize your own identifiers using [!DNL gTag]. Refer to the [Google official documentation](https://support.google.com/google-ads/answer/9199250) for detailed information. -->
 
-<!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
+<!-- Data from unhashed namespaces is automatically hashed by [!DNL Experience Platform] upon activation.
 
-Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.
+Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Experience Platform] automatically hash the data on activation.
 ![Identity mapping transformation](../../assets/ui/activate-destinations/identity-mapping-transformation.png) -->
 
 <!-- ## Configure destination - video walkthrough {#video}
@@ -206,9 +206,9 @@ Detta är ett exempel på korrekt identitetsmappning när målgruppsdata aktiver
 Välja källfält:
 
 * Välj namnutrymmet `Email` som källidentitet om de e-postadresser du använder inte hashas.
-* Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser vid datahämtning till [!DNL Platform], enligt [!DNL Google Customer Match] [e-posthashkraven](#hashing-requirements).
-* Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av telefonnummer som inte är hashas. [!DNL Platform] hash-kodar telefonnumren så att de uppfyller kraven för [!DNL Google Customer Match].
-* Välj namnutrymmet `Phone_SHA256_E.164` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Platform], enligt [!DNL Facebook] [krav för telefonnummerhashning](#phone-number-hashing-requirements).
+* Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser vid datahämtning till [!DNL Experience Platform], enligt [!DNL Google Customer Match] [e-posthashkraven](#hashing-requirements).
+* Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av telefonnummer som inte är hashas. [!DNL Experience Platform] hash-kodar telefonnumren så att de uppfyller kraven för [!DNL Google Customer Match].
+* Välj namnutrymmet `Phone_SHA256_E.164` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Experience Platform], enligt [!DNL Facebook] [krav för telefonnummerhashning](#phone-number-hashing-requirements).
 
 Markera målfält:
 
@@ -217,9 +217,9 @@ Markera målfält:
 
 ![Identitetsmappning mellan käll- och målfält som visas i mappningssteget i aktiveringsarbetsflödet.](../../assets/catalog/advertising/google-customer-match-dv360/identity-mapping-gcm-dv360.png)
 
-Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
+Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
 
-Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
 
 ![Använd omvandlingskontroll markerat i mappningssteget i aktiveringsarbetsflödet.](../../assets/catalog/advertising/google-customer-match-dv360/transformation.png)
 
@@ -227,15 +227,15 @@ Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade 
 
 När du har anslutit till målet och etablerat ett måldataflöde kan du använda [övervakningsfunktionen](/help/dataflows/ui/monitor-destinations.md) i Real-Time CDP för att få omfattande information om de profilposter som är aktiverade för målet i varje dataflödeskörning.
 
-Övervakningsinformationen för anslutningen [!DNL Google Customer Match + Display & Video 360] innehåller information på målgruppsnivå om aktiverade, uteslutna och misslyckade identiteter i varje dataflöde och dataflöde. [Läs mer](/help/dataflows/ui/monitor-destinations.md#segment-level-view) om funktionerna.
+Övervakningsinformationen för anslutningen [!DNL Google Customer Match + Display & Video 360] innehåller information på målgruppsnivå om aktiverade, uteslutna och misslyckade identiteter i varje dataflöde och dataflöde. [Läs mer](/help/dataflows/ui/monitor-destinations.md#segment-level-view) om funktionaliteten.
 
 ## Verifiera att målgruppsaktiveringen lyckades {#verify-activation}
 
 När du har slutfört aktiveringsflödet växlar du till ditt **[!UICONTROL Google Ads]**-konto. De aktiverade målgrupperna visas i ditt Google-konto som kundlistor. Beroende på målgruppens storlek fyller vissa målgrupper inte plats om det inte finns fler än 1 000 aktiva användare att betjäna. Mer information finns i [Google Audience Partner-dokumentationen](https://developers.google.com/audience-partner/api/docs/customer-match/get-started#verify-list). Observera att du måste be Google om åtkomst till dokumentationen i länken.
 
-## Datastyrning
+## Dataförvaltning
 
-Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs mer](../../../data-governance/labels/overview.md) om verktyg och principer för datastyrning.
+Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från målplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs mer](../../../data-governance/labels/overview.md) om verktyg och principer för datastyrning.
 
 ## Felsökning {#troubleshooting}
 

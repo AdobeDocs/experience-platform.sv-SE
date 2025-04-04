@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2024
 description: Versionsinformationen för Adobe Experience Platform i mars 2024.
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
-workflow-type: ht
-source-wordcount: '1189'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '1191'
+ht-degree: 97%
 
 ---
 
@@ -22,7 +22,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 - [Katalogtjänst](#catalog-service)
 - [Datainsamling](#data-collection)
 - [Dataförberedelse](#data-prep)
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
@@ -98,15 +98,15 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för datatypen Experience Platform gränssnittsmappning | Anpassa XDM-datastrukturen (Experience Data Model) ytterligare genom att definiera kartfält i plattformens användargränssnitt. Nu kan du skapa kartfält i schemaredigeraren för att modellera flexibla datastrukturer eller lagra nyckelvärdepar på ett effektivt sätt. Välj ”Mappning” i rullgardinsmenyn Typ när du definierar ett nytt fält för att konfigurera underfält och tilldela dem till fältgrupper. Mappningsvärdestyper som stöds är sträng och heltal.<br>![Schemaredigeraren med fälten för typ och kartvärdestyp markerade.](../2024/assets/march/maps.png "Schemaredigeraren med fälten för typ och mappningsvärdestyp markerade."){width="100" zoomable="yes"}<br> Se gränssnittsguiden för information om hur du [definierar mappningsfält i användargränssnittet](../../xdm/ui/fields/map.md). |
+| Stöd för datatypen Experience Platform gränssnittsmappning | Anpassa XDM-datastrukturen (Experience Data Model) ytterligare genom att definiera kartfält i Experience Platform användargränssnitt. Nu kan du skapa kartfält i schemaredigeraren för att modellera flexibla datastrukturer eller lagra nyckelvärdepar på ett effektivt sätt. Välj ”Mappning” i rullgardinsmenyn Typ när du definierar ett nytt fält för att konfigurera underfält och tilldela dem till fältgrupper. Mappningsvärdestyper som stöds är sträng och heltal.<br>![Schemaredigeraren med fälten för typ och kartvärdestyp markerade.](../2024/assets/march/maps.png "Schemaredigeraren med fälten för typ och mappningsvärdestyp markerade."){width="100" zoomable="yes"}<br> Se gränssnittsguiden för information om hur du [definierar mappningsfält i användargränssnittet](../../xdm/ui/fields/map.md). |
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM-systemöversikten](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
-Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Experience Platform] och är tillgängliga för alla Adobe-lösningar.
 
 **Ny funktion**
 

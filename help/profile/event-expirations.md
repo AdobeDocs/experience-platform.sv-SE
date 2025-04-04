@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;tid att leva;ttl;tid-to-live;
+keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;tid att leva;ttl;time-to-live;
 solution: Experience Platform
 title: Händelseförfallodatum för upplevelser
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallotider för enskilda Experience Events i en Adobe Experience Platform-datauppsättning.
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '858'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du konfigurera förfallotider för alla Experience Events som är inkapslade i en datauppsättning som är aktiverad för [kundprofil i realtid](./home.md). På så sätt kan du automatiskt ta bort data från profilarkivet som inte längre är giltiga eller användbara för dina användningsfall.
 
-Händelseförfallotider för upplevelser kan inte konfigureras via plattformens gränssnitt eller API:er. Istället måste ni kontakta supporten för att aktivera Experience Event-förfallotider för era nödvändiga datauppsättningar.
+Det går inte att konfigurera förfallodatum för Experience Event via Experience Platform-gränssnittet eller API:er. Istället måste ni kontakta supporten för att aktivera Experience Event-förfallotider för era nödvändiga datauppsättningar.
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ Händelseförfallotider för upplevelser kan inte konfigureras via plattformens 
 
 ## Automatiserad förfalloprocess
 
-När Experience Event-förfallotider har aktiverats för en profilaktiverad datauppsättning tillämpar Platform automatiskt utgångsvärdena för varje hämtad händelse i en tvåstegsprocess:
+När Experience Event-förfallotider har aktiverats för en profilaktiverad datauppsättning tillämpar Experience Platform automatiskt utgångsvärdena för varje hämtad händelse i en tvåstegsprocess:
 
 1. För alla nya data som hämtas in till datauppsättningen tillämpas utgångsvärdet vid inmatningstiden baserat på händelsens tidsstämpel.
 1. Alla befintliga data i datauppsättningen har förfallovärdet retroaktivt tillämpat som en engångsåtgärd i systemet för efterfyllnad. När utgångsvärdet har placerats i datauppsättningen kommer händelser som är äldre än utgångsvärdet att omedelbart tas bort så fort som systemjobbet körs. Alla andra händelser avbryts så snart de når sina förfallovärden från händelsens tidsstämpel. När alla Experience Events har tagits bort och profilen inte längre har några profilattribut, finns den inte längre.
@@ -76,4 +76,4 @@ Pseudonyma utgångsdatum för profildata och utgångsdatum för Experience Event
 
 Du bör **alltid** ställa in Experience Event-dataförfallodatum i dina datauppsättningar, baserat på dina behov av att lagra data om dina kända kunder. När Experience Event-data har förfallit kan du använda Pseudonymous Profile data som förfaller för att automatiskt ta bort pseudonyma profiler. Vanligtvis är dataförfalloperioden för pseudonyma profiler kortare än dataförfalloperioden för Experience Events.
 
-I ett typiskt fall kan du ange att Experience Event-data ska upphöra att gälla baserat på värdena för dina kända användardata, och du kan ange att Pseudonymous-profildata ska ha en mycket kortare varaktighet för att begränsa effekten av pseudonyma profiler på plattformslicensens efterlevnad.
+I ett typiskt fall kan du ange att Experience Event-data ska upphöra att gälla baserat på värdena för dina kända användardata, och du kan ange att Pseudonymous-profildata ska ha en mycket kortare varaktighet för att begränsa effekten av pseudonyma profiler på din Experience Platform-licensefterlevnad.

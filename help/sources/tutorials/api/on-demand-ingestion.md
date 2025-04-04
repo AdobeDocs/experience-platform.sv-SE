@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;
+keywords: Experience Platform;home;populära topics;flow service;
 title: Skapa en flödeskörning för behovsstyrd matning med API:t för flödestjänsten
 description: Lär dig hur du skapar en flödeskörning för on-demand-inmatning med API:t för Flow Service
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '801'
 ht-degree: 0%
 
 ---
@@ -26,16 +26,16 @@ I den här självstudiekursen beskrivs hur du använder on-demand-inmatning och 
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ## Skapa en flödeskörning för en tabellbaserad källa
 
-Om du vill skapa ett flöde för en tabellbaserad källa skickar du en POST till API:t [!DNL Flow Service] samtidigt som du anger ID:t för det flöde som du vill köra mot, samt värden för starttid, sluttid och deltakolumn.
+Om du vill skapa ett flöde för en tabellbaserad källa skapar du en POST-begäran till [!DNL Flow Service]-API:t och anger ID:t för det flöde som du vill skapa körningen mot, samt värden för starttid, sluttid och delta-kolumn.
 
 >[!TIP]
 >
@@ -125,7 +125,7 @@ Ett lyckat svar returnerar information om den nyligen skapade flödeskörningen,
 
 ## Skapa en flödeskörning för en filbaserad källa
 
-Om du vill skapa ett flöde för en filbaserad källa skickar du en POST till API:t [!DNL Flow Service] samtidigt som du anger ID:t för det flöde som du vill skapa körningen mot och värden för starttid och sluttid.
+Om du vill skapa ett flöde för en filbaserad källa gör du en POST-begäran till [!DNL Flow Service]-API:t och anger ID:t för det flöde som du vill skapa körningen mot och värden för starttid och sluttid.
 
 >[!TIP]
 >
@@ -189,4 +189,4 @@ Ett lyckat svar returnerar information om den nyligen skapade flödeskörningen,
 
 ## Övervaka flödeskörningar
 
-När flödeskörningen har skapats kan du övervaka de data som importeras genom den för att se information om flödeskörningar, slutförandestatus och fel. Om du vill övervaka ditt flöde med API kan du läsa självstudiekursen om [övervakning av dataflöden i API:t](./monitor.md). Om du vill övervaka ditt flöde med hjälp av plattformsgränssnittet läser du i guiden [övervaka källans dataflöden med kontrollpanelen](../../../dataflows/ui/monitor-sources.md).
+När flödeskörningen har skapats kan du övervaka de data som importeras genom den för att se information om flödeskörningar, slutförandestatus och fel. Om du vill övervaka ditt flöde med API kan du läsa självstudiekursen om [övervakning av dataflöden i API:t](./monitor.md). Om du vill övervaka ditt flöde med hjälp av Experience Platform UI läser du i guiden [Övervaka källfilsflöden med kontrollpanelen](../../../dataflows/ui/monitor-sources.md).

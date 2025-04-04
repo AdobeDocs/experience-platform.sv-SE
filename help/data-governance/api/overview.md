@@ -5,10 +5,10 @@ title: API-guide för principtjänst
 description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '543'
-ht-degree: 2%
+source-wordcount: '545'
+ht-degree: 3%
 
 ---
 
@@ -22,7 +22,7 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 
 ## Etiketter
 
-Använd dataanvändningsetiketter på scheman för att kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa tillvägagångssätt uppmuntrar till etikettdata så snart de har importerats till [!DNL Experience Platform], eller så snart data blir tillgängliga för användning i [!DNL Platform]. Du kan skapa, visa, redigera och ta bort etiketter med slutpunkten `/labels`. Om du vill lära dig hur du använder den här slutpunkten kan du gå till [etikettguiden](./labels.md).
+Använd dataanvändningsetiketter på scheman för att kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa tillvägagångssätt uppmuntrar till etikettdata så snart de har importerats till [!DNL Experience Platform], eller så snart data blir tillgängliga för användning i [!DNL Experience Platform]. Du kan skapa, visa, redigera och ta bort etiketter med slutpunkten `/labels`. Om du vill lära dig hur du använder den här slutpunkten kan du gå till [etikettguiden](./labels.md).
 
 ## Marknadsföringsåtgärder
 
@@ -34,7 +34,7 @@ Datastyrningsprinciper är regler som beskriver den typ av marknadsföringsåtg�
 
 >[!NOTE]
 >
->Datastyrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som avgör vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Mer information finns i guiden om [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md).
+>Datastyrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som avgör vilka specifika dataattribut som vissa Experience Platform-användare i organisationen kan komma åt. Mer information finns i guiden om [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md).
 
 En datastyrningspolicy definieras enligt följande:
 
@@ -45,7 +45,7 @@ Mer information om hur du hanterar principer i API:t finns i [policyslutpunktsha
 
 ## Utvärdering
 
-När dataanvändningsetiketter har tillämpats på plattformsscheman och dataanvändningspolicyer har definierats för marknadsföringsåtgärder mot dessa etiketter, kan ni med datastyrningsfunktionerna tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser.
+När dataanvändningsetiketter har tillämpats på Experience Platform-scheman och dataanvändningspolicyer har definierats för marknadsföringsåtgärder mot dessa etiketter, kan ni med datastyrningsfunktionerna tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser.
 
 API:t [!DNL Policy Service] innehåller slutpunkter som gör att du kan testa marknadsföringsåtgärder mot datauppsättningar eller godtyckliga kombinationer av dataanvändningsetiketter för att kontrollera om några principöverträdelser inträffar. Baserat på API-svaret kan du sedan skapa protokoll i ditt upplevelseprogram för att säkerställa regelefterlevnad för dataanvändning. Mer information finns i [handboken för utvärderingsslutpunkter](./evaluation.md).
 

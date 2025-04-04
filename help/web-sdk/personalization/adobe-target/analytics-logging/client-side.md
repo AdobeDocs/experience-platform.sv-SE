@@ -1,18 +1,18 @@
 ---
-title: Loggning på klientsidan för A4T-data i Platform Web SDK
-description: Lär dig hur du aktiverar loggning på klientsidan för Adobe Analytics for Target (A4T) med Experience Platform Web SDK.
-seo-title: Client-side logging for A4T data in the Platform Web SDK
+title: Loggning på klientsidan för A4T-data i Experience Platform Web SDK
+description: Lär dig hur du aktiverar klientloggning för Adobe Analytics for Target (A4T) med Experience Platform Web SDK.
+seo-title: Client-side logging for A4T data in the Experience Platform Web SDK
 seo-description: Learn how to enable client-side logging for Adobe Analytics for Target (A4T) using the Experience Platform Web SDK.
 keywords: mål;a4t;logga;web sdk;upplevelse;plattform;
 exl-id: 7071d7e4-66e0-4ab5-a51a-1387bbff1a6d
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1090'
 ht-degree: 0%
 
 ---
 
-# Loggning på klientsidan för A4T-data i Platform Web SDK
+# Loggning på klientsidan för A4T-data i Experience Platform Web SDK
 
 ## Översikt {#overview}
 
@@ -24,13 +24,13 @@ Loggning på klientsidan innebär att relevanta [!DNL Target]-data returneras p�
 >
 >En metod för att utföra detta med [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) håller på att utvecklas och kommer att vara tillgänglig inom den närmaste framtiden.
 
-Det här dokumentet innehåller steg för hur du konfigurerar A4T-loggning på klientsidan för Web SDK och några exempel på implementering för vanliga användningsområden.
+I det här dokumentet beskrivs stegen för hur du konfigurerar A4T-loggning på klientsidan för Web SDK och några exempel på implementering för vanliga användningsområden.
 
 ## Förhandskrav {#prerequisites}
 
-I den här självstudiekursen förutsätts att du är bekant med de grundläggande begreppen och processerna för att använda Web SDK i personaliseringssyfte. Läs följande dokumentation om du behöver en introduktion:
+I den här självstudiekursen förutsätts att du är bekant med de grundläggande begreppen och processerna för att använda Web SDK för personalisering. Läs följande dokumentation om du behöver en introduktion:
 
-* [Konfigurera Web SDK](/help/web-sdk/commands/configure/overview.md)
+* [Konfigurera SDK för webben](/help/web-sdk/commands/configure/overview.md)
 * [Skicka händelser](/help/web-sdk/commands/sendevent/overview.md)
 * [Återger innehåll för personalisering](../../rendering-personalization-content.md)
 
@@ -227,9 +227,9 @@ I följande underavsnitt visas hur du implementerar loggning på klientsidan fö
 
 ### Formulärbaserade Experience Composer-aktiviteter {#form-based-composer}
 
-Du kan använda Web SDK för att styra körningen av förslag från [Adobe Target Form-Based Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) -aktiviteter.
+Du kan använda Web SDK för att styra utförandet av förslag från [Adobe Target formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)-aktiviteter.
 
-När du begär förslag för ett specifikt beslutsomfång innehåller det returnerade förslaget en lämplig analystoken. Det bästa sättet är att kedja på Platform Web SDK `sendEvent`-kommandot och iterera genom de returnerade förslagen för att köra dem samtidigt som Analytics-tokens samlas in.
+När du begär förslag för ett specifikt beslutsomfång innehåller det returnerade förslaget en lämplig analystoken. Det bästa sättet är att kedja Experience Platform Web SDK `sendEvent`-kommandot och iterera genom de returnerade förslagen för att köra dem samtidigt som analystoken samlas in.
 
 Du kan utlösa ett `sendEvent`-kommando för en formulärbaserad Experience Composer-aktivitetsomfattning som den här:
 
@@ -421,12 +421,12 @@ function getClickAnalyticsPayload(proposition) {
 
 #### Sammanfattning av implementering {#implementation-summary}
 
-Sammanfattningsvis måste följande steg utföras när formulärbaserade Experience Composer-aktiviteter används med Platform Web SDK:
+Sammanfattningsvis måste följande steg utföras när formulärbaserade Experience Composer-aktiviteter används i Experience Platform Web SDK:
 
 1. Skicka en händelse som hämtar aktivitetserbjudanden för formulärbaserad Experience Composer.
 1. Använda innehållsändringarna på sidan;
 1. Skicka meddelandehändelsen `decisioning.propositionDisplay`;
-1. Samla in analytiska visningstoken från SDK-svaret och konstruera en nyttolast för Analytics-träffen.
+1. Samla in analystoken-visningstoken från SDK-svar och konstruera en nyttolast för träffen Analytics.
 1. Skicka nyttolasten till Analytics med [API för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md);
 1. Om det finns klickvärden i levererade offerter bör klickavlyssnare konfigureras så att när klickningen utförs skickas meddelandehändelsen `decisioning.propositionInteract`. Hanteraren `onBeforeEventSend` bör konfigureras så att följande åtgärder inträffar när `decisioning.propositionInteract`-händelser fångas upp:
    1. Samlar in klickanalystoken från `xdm._experience.decisioning.propositions`
@@ -473,7 +473,7 @@ Med Web SDK kan du hantera erbjudanden som har skapats med [Visual Experience Co
 >
 >Stegen för implementering av det här användningsexemplet liknar mycket stegen för [formulärbaserade Experience Composer-aktiviteter](#form-based-composer). Mer information finns i föregående avsnitt.
 
-När automatisk återgivning är aktiverat kan du samla in analystoken från de förslag som kördes på sidan. Bästa sättet är att kedja på Platform Web SDK `sendEvent`-kommandot och iterera genom de returnerade förslagen för att filtrera dem som Web SDK har försökt återge.
+När automatisk återgivning är aktiverat kan du samla in analystoken från de förslag som kördes på sidan. Bästa sättet är att kedja Experience Platform Web SDK `sendEvent`-kommandot och iterera genom de returnerade förslagen för att filtrera dem som Web SDK har försökt återge.
 
 **Exempel**
 

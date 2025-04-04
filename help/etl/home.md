@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl integrations;ETL integrations
+keywords: Experience Platform;home;populära topics;ETL;etl;etl integrations;ETL integrations
 solution: Experience Platform
 title: Utveckla ETL-integreringar för Adobe Experience Platform
-description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
+description: Integreringsguiden för ETL beskriver allmänna steg för att skapa högpresterande, säkra kopplingar för Experience Platform och inmatning av data i Experience Platform.
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '3977'
+source-wordcount: '3978'
 ht-degree: 0%
 
 ---
 
 # Utveckla ETL-integreringar för Adobe Experience Platform
 
-Integreringsguiden för ETL innehåller allmänna steg för att skapa säkra anslutningar med höga prestanda för [!DNL Experience Platform] och för att importera data till [!DNL Platform].
+Integreringsguiden för ETL innehåller allmänna steg för att skapa säkra anslutningar med höga prestanda för [!DNL Experience Platform] och för att importera data till [!DNL Experience Platform].
 
 
 - [[!DNL Catalog]](https://www.adobe.io/experience-platform-apis/references/catalog/)
@@ -37,10 +37,10 @@ Följande arbetsflödesdiagram ger en översikt på hög nivå över integration
 
 Det finns flera Experience Platform-komponenter som ingår i ETL-anslutningsintegreringar. I följande lista beskrivs flera viktiga komponenter och funktioner:
 
-- **Adobe Identity Management System (IMS)** - Tillhandahåller ramverk för autentisering till Adobe-tjänster.
+- **Adobe Identity Management System (IMS)** - Tillhandahåller ramverk för autentisering av Adobe-tjänster.
 - **IMS-organisation** - En företagsenhet som kan äga eller licensiera produkter och tjänster och tillåta åtkomst till medlemmarna.
 - **IMS-användare** - medlemmar i en IMS-organisation. Relationen organisation till användare är många för många.
-- **[!DNL Sandbox]** - En virtuell partition är en enda [!DNL Platform]-instans som hjälper dig att utveckla och utveckla program för digitala upplevelser.
+- **[!DNL Sandbox]** - En virtuell partition är en enda [!DNL Experience Platform]-instans som hjälper dig att utveckla och utveckla program för digitala upplevelser.
 - **Dataidentifiering** - Registrerar metadata för inkapslade och omformade data i [!DNL Experience Platform].
 - **[!DNL Data Access]** - Ger användare ett gränssnitt för att komma åt data i [!DNL Experience Platform].
 - **[!DNL Data Ingestion]** - Skickar data till [!DNL Experience Platform] med [!DNL Data Ingestion] API:er.
@@ -56,21 +56,21 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bärare `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 - Content-Type: application/json
 
@@ -78,7 +78,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Till att börja med loggar en ETL-användare in i användargränssnittet för [!DNL Experience Platform] och skapar datauppsättningar för förtäring med hjälp av en standardanslutning eller en push-tjänstanslutning.
 
-I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som hämtas till [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
+I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som hämtas till [!DNL Experience Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
 
 I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha [!DNL Experience Platform] anslutningar installerade (processen är inte definierad i den här integreringshandboken).
 
@@ -168,7 +168,7 @@ Egenskapen schemaRef för en datamängd innehåller en URI som refererar till de
 
 XDM-schemat är det schema som du använder när du behöver visa en lista över alla tillgängliga fält som kan skrivas till användaren.
 
-Det första värdet för schemaRef.id i det föregående svarsobjektet (`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`) är en URI som pekar på ett specifikt XDM-schema i [!DNL Schema Registry]. Schemat kan hämtas genom att en sökbegäran (GET) görs till API:t [!DNL Schema Registry].
+Det första värdet för schemaRef.id i det föregående svarsobjektet (`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`) är en URI som pekar på ett specifikt XDM-schema i [!DNL Schema Registry]. Schemat kan hämtas genom att en sökning (GET) görs i API:t [!DNL Schema Registry].
 
 >[!NOTE]
 >
@@ -198,7 +198,7 @@ Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Up
 
 | Acceptera | Beskrivning |
 | ------ | ----------- |
-| `application/vnd.adobe.xed-id+json` | Lista (GET) över förfrågningar, titlar, id:n och versioner |
+| `application/vnd.adobe.xed-id+json` | Lista (GET) med förfrågningar, titlar, id:n och versioner |
 | `application/vnd.adobe.xed-full+json; version={major version}` | $refs och allOf resolved, har titlar och beskrivningar |
 | `application/vnd.adobe.xed+json; version={major version}` | Raw med $ref och allOf, har rubriker och beskrivningar |
 | `application/vnd.adobe.xed-notext+json; version={major version}` | Raw med $ref och allOf, inga titlar eller beskrivningar |
@@ -211,7 +211,7 @@ Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Up
 
 **Svar**
 
-Det returnerade JSON-schemat beskriver strukturen och fältnivåinformationen (&quot;type&quot;, &quot;format&quot;, &quot;minimum&quot;, &quot;maximum&quot;, etc.) av data, serialiserat som JSON. Om du använder ett annat serialiseringsformat än JSON för förtäring (till exempel Parquet eller Scala) innehåller [schematabellguiden](../xdm/tutorials/create-schema-api.md) en tabell som visar önskad JSON-typ (&quot;meta:xdmType&quot;) och dess motsvarande representation i andra format.
+Det returnerade JSON-schemat beskriver strukturen och fältnivåinformationen (&quot;type&quot;, &quot;format&quot;, &quot;minimum&quot;, &quot;maximum&quot;, etc.) för data, serialiserat som JSON. Om du använder ett annat serialiseringsformat än JSON för förtäring (till exempel Parquet eller Scala) innehåller [schematabellguiden](../xdm/tutorials/create-schema-api.md) en tabell som visar önskad JSON-typ (&quot;meta:xdmType&quot;) och dess motsvarande representation i andra format.
 
 Tillsammans med den här tabellen innehåller utvecklarhandboken för [!DNL Schema Registry] detaljerade exempel på alla anrop som kan göras med API:t [!DNL Schema Registry].
 
@@ -552,7 +552,7 @@ Svaret kan peka på en enskild fil eller en katalog. Mer information finns i [[!
 
 ### Åtkomst till filinnehåll
 
-[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) kan användas för att komma åt innehållet i en viss fil. För att hämta innehållet görs en GET-förfrågan med det värde som returnerats för `_links.self.href` vid åtkomst av en fil med fil-ID.
+[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) kan användas för att komma åt innehållet i en viss fil. För att hämta innehållet görs en GET-begäran med det värde som returnerats för `_links.self.href` vid åtkomst av en fil med fil-ID.
 
 **Begäran**
 
@@ -674,7 +674,7 @@ Nya aktiviteter kan schemaläggas om det tidigare värdet för batchstatus är S
 
 ### Hämta senaste batchstatus med ID
 
-En enskild batchstatus kan hämtas via [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) genom att en GET-förfrågan skickas med `{BATCH_ID}`. `{BATCH_ID}` som används skulle vara samma som det ID som returnerades när gruppen skapades.
+En enskild batchstatus kan hämtas via [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) genom att en GET-begäran utfärdas med `{BATCH_ID}`. `{BATCH_ID}` som används skulle vara samma som det ID som returnerades när gruppen skapades.
 
 **Begäran**
 
@@ -759,7 +759,7 @@ När ögonblicksbildsprofiler används måste ETL-verktyget välja den sista gru
 
 Batchrepriser och dataombearbetning kan behövas om en klient upptäcker att de data som behandlas i ETL inte har utförts som förväntat under de senaste &#39;n&#39; dagarna, eller om själva källdata inte har varit korrekta.
 
-För att göra detta använder klientens dataadministratörer [!DNL Platform]-gränssnittet för att ta bort de grupper som innehåller skadade data. Därefter kommer ETL sannolikt att behöva köras igen, vilket innebär att korrekta data fylls i igen. Om själva källan innehåller skadade data måste datateknikern/administratören korrigera källbatcherna och importera data igen (antingen till Adobe Experience Platform eller via ETL-anslutningar).
+För att göra detta använder klientens dataadministratörer [!DNL Experience Platform]-gränssnittet för att ta bort de grupper som innehåller skadade data. Därefter kommer ETL sannolikt att behöva köras igen, vilket innebär att korrekta data fylls i igen. Om själva källan innehåller skadade data måste datateknikern/administratören korrigera källbatcherna och importera data igen (antingen till Adobe Experience Platform eller via ETL-anslutningar).
 
 Beroende på vilken typ av data som genereras blir det datateknikerns val att ta bort en enda batch eller alla batchar från vissa datauppsättningar. Data tas bort/arkiveras enligt riktlinjerna för [!DNL Experience Platform].
 
@@ -781,7 +781,7 @@ För källbatchar är den åter beroende av klientinställningar och kundbegrän
 
 Uppskov är en process där indata ännu inte är tillräckligt fullständiga för att skickas ut till processer längre fram i kedjan, men kan användas i framtiden. Kunderna bestämmer sin individuella tolerans för datarutor för framtida matchning jämfört med kostnaden för bearbetning för att kunna fatta beslut om att ta bort data och bearbeta dem på nytt i nästa omformningskörning, i hopp om att de kan berikas och sys.k. sys.k. vid någon framtida tidpunkt i kvarhållningsfönstret. Denna cykel pågår tills raden behandlas tillräckligt eller den anses vara för gammal för att fortsätta investera. Varje iteration genererar fördröjda data som är en överordnad mängd av alla fördröjda data i tidigare iterationer.
 
-Adobe Experience Platform identifierar för närvarande inte fördröjda data, så klientimplementeringar måste förlita sig på manuella konfigurationer för ETL och datauppsättning för att skapa en annan datauppsättning i [!DNL Platform] som speglar källdatauppsättningen som kan användas för att behålla fördröjda data. I det här fallet liknar fördröjda data ögonblicksbildsdata. Vid varje körning av ETL-omvandlingen kommer källdata att förenas med fördröjda data och skickas för behandling.
+Adobe Experience Platform identifierar för närvarande inte fördröjda data, så klientimplementeringar måste förlita sig på manuella konfigurationer för ETL och datauppsättning för att skapa en annan datauppsättning i [!DNL Experience Platform] som speglar källdatauppsättningen som kan användas för att behålla fördröjda data. I det här fallet liknar fördröjda data ögonblicksbildsdata. Vid varje körning av ETL-omvandlingen kommer källdata att förenas med fördröjda data och skickas för behandling.
 
 ## Changelog
 

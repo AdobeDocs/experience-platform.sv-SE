@@ -5,7 +5,7 @@ type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: efebf8e341b17fdd71586827753eadfe1c2cfa15
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1706'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >ExperienceEvent-sökning med API:t för profilåtkomst kommer att bli inaktuell. Använd funktioner som beräknade attribut för användningsfall som kräver att du tittar upp med ExperienceEvents. Mer information om den här ändringen får du av Adobe kundtjänst.
 
-Med Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]-data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet för [!DNL Platform] finns i [användarhandboken för profilen](../ui/user-guide.md).
+Med Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]-data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet för [!DNL Experience Platform] finns i [användarhandboken för profilen](../ui/user-guide.md).
 
 ## Komma igång
 
@@ -1223,7 +1223,7 @@ Ett lyckat svar returnerar HTTP-status 202 med en tom svarstext.
 
 ## Nästa steg
 
-Genom att följa den här vägledningen har du fått åtkomst till [!DNL Real-Time Customer Profile] datafält, profiler och tidsseriedata. Mer information om hur du får åtkomst till andra dataresurser som lagras i [!DNL Platform] finns i [Dataåtkomstöversikten](../../data-access/home.md).
+Genom att följa den här vägledningen har du fått åtkomst till [!DNL Real-Time Customer Profile] datafält, profiler och tidsseriedata. Mer information om hur du får åtkomst till andra dataresurser som lagras i [!DNL Experience Platform] finns i [Dataåtkomstöversikten](../../data-access/home.md).
 
 ## Bilaga {#appendix}
 

@@ -3,9 +3,9 @@ title: API-guide för datahygien
 description: Lär dig att programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 role: Developer
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -28,13 +28,13 @@ För att kunna anropa API:t för datahygien måste du först samla in dina auten
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 * `Content-Type: application/json`
 
 ### Läser exempel-API-anrop
 
-Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/api-guide.md#sample-api) i Komma igång-guiden för Experience Platform-API:er.
+Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/api-guide.md#sample-api) i Komma igång-guiden för Experience Platform API:er.
 
 ## Utgångsdatum för datauppsättning
 
@@ -57,4 +57,4 @@ Din organisation är begränsad till en fördefinierad månadskvot för varje ty
 
 ## Nästa steg
 
-I den här handboken beskrivs hur du hanterar livscykelbegäranden om data med API-anrop. Information om hur du utför de här åtgärderna i plattformsgränssnittet finns i [användargränssnittsguiden för datalängd](../ui/overview.md).
+I den här handboken beskrivs hur du hanterar livscykelbegäranden om data med API-anrop. Information om hur du utför de här åtgärderna i Experience Platform-användargränssnittet finns i [användargränssnittsguiden för datalängd](../ui/overview.md).

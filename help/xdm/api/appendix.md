@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;compatibility;compatibility;compatibility mode;Compatibility mode;Compatibility mode;field type;field types;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;data model;data model;data model;schema register;schema Registry;compatibility;compatibility;compatibility mode;Compatibility mode;Compatibility mode;field type;field types;
 solution: Experience Platform
 title: API-handbok för schematabell
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-source-git-commit: 28891cf37dc9ffcc548f4c0565a77f62432c0b44
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '986'
 ht-degree: 0%
@@ -57,9 +57,9 @@ Du kan filtrera resultat med parametern `property` som används för att tilläm
 
 ## Kompatibilitetsläge {#compatibility}
 
-[!DNL Experience Data Model] (XDM) är en öppet dokumenterad specifikation som drivs av Adobe för att förbättra interoperabiliteten, uttrycksfullheten och styrkan i digitala upplevelser. Adobe underhåller källkoden och de formella XDM-definitionerna i ett [öppen källkodsprojekt på GitHub](https://github.com/adobe/xdm/). Dessa definitioner är skrivna i XDM Standard Notation, där JSON-LD (JavaScript Object Notation for Linked Data) och JSON Schema används som grammatik för att definiera XDM-scheman.
+[!DNL Experience Data Model] (XDM) är en öppet dokumenterad specifikation som drivs av Adobe för att förbättra interoperabiliteten, uttrycksfullheten och kraften i digitala upplevelser. Adobe underhåller källkoden och formella XDM-definitioner i ett [öppen källkodsprojekt på GitHub](https://github.com/adobe/xdm/). Dessa definitioner är skrivna i XDM Standard Notation, där JSON-LD (JavaScript Object Notation for Linked Data) och JSON Schema används som grammatik för att definiera XDM-scheman.
 
-När du tittar på formella XDM-definitioner i den offentliga databasen ser du att standard-XDM skiljer sig från det du ser i Adobe Experience Platform. Det du ser i [!DNL Experience Platform] kallas Kompatibilitetsläge och ger en enkel mappning mellan standard-XDM och hur det används i [!DNL Platform].
+När du tittar på formella XDM-definitioner i den offentliga databasen ser du att standard-XDM skiljer sig från det du ser i Adobe Experience Platform. Det du ser i [!DNL Experience Platform] kallas Kompatibilitetsläge och ger en enkel mappning mellan standard-XDM och hur det används i [!DNL Experience Platform].
 
 ### Så här fungerar kompatibilitetsläget
 
@@ -132,6 +132,6 @@ Adobe Experience Platform är utformat för att fungera tillsammans med flera l�
 
 De flesta [!DNL Experience Platform]-tjänster, inklusive [!DNL Catalog], [!DNL Data Lake] och [!DNL Real-Time Customer Profile] använder [!DNL Compatibility Mode] i stället för standard-XDM. API:t [!DNL Schema Registry] använder också [!DNL Compatibility Mode], och exemplen i det här dokumentet visas alla med [!DNL Compatibility Mode].
 
-Det är värt att veta att en mappning görs mellan standard-XDM och sättet den används i [!DNL Experience Platform], men det bör inte påverka din användning av [!DNL Platform]-tjänster.
+Det är värt att veta att en mappning görs mellan standard-XDM och sättet den används i [!DNL Experience Platform], men det bör inte påverka din användning av [!DNL Experience Platform]-tjänster.
 
 Du har tillgång till projektet med öppen källkod, men när det gäller att interagera med resurser via [!DNL Schema Registry] innehåller API-exemplen i det här dokumentet de bästa metoder du bör känna till och följa.

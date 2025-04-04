@@ -2,9 +2,9 @@
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '1593'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Du kan nu använda källan [!DNL Salesforce] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-providers omfattar [!DNL Salesforce].
 
@@ -29,9 +29,9 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 ### Fältmappning från [!DNL Salesforce] till XDM
 
-Om du vill upprätta en källanslutning mellan [!DNL Salesforce] och plattformen måste [!DNL Salesforce]-källdatafälten mappas till rätt mål-XDM-fält innan de hämtas till plattformen.
+Om du vill upprätta en källanslutning mellan [!DNL Salesforce] och Experience Platform måste [!DNL Salesforce] källdatafälten mappas till rätt mål-XDM-fält innan de hämtas till Experience Platform.
 
-Mer information om fältmappningsregler mellan [!DNL Salesforce]-datamängder och plattformen finns i följande:
+Mer information om fältmappningsregler mellan [!DNL Salesforce]-datamängder och Experience Platform finns i följande:
 
 - [Kontakter](../adobe-applications/mapping/salesforce.md#contact)
 - [Leads](../adobe-applications/mapping/salesforce.md#lead)
@@ -47,11 +47,11 @@ Mer information om fältmappningsregler mellan [!DNL Salesforce]-datamängder oc
 Om du vill använda källan [!DNL Salesforce] som en del av [!DNL B2B-CDP] måste du först konfigurera ett [!DNL Postman]-verktyg för att automatiskt generera [!DNL Salesforce] namnutrymmen och scheman. Följande dokumentation innehåller ytterligare information om hur du konfigurerar verktyget [!DNL Postman]:
 
 - Du kan hämta samlingen och miljön för automatisk generering av namnområde och scheman från den här [GitHub-databasen](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility).
-- Information om hur du använder plattforms-API:er, inklusive information om hur du samlar in värden för obligatoriska huvuden och läser exempel-API-anrop, finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
-- Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md).
-- Information om hur du konfigurerar [!DNL Postman] för plattforms-API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../landing/postman.md).
+- Information om hur du använder Experience Platform API:er, inklusive information om hur du samlar in värden för obligatoriska huvuden och läser API-anrop från exempel, finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
+- Mer information om hur du genererar autentiseringsuppgifter för Experience Platform API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md).
+- Information om hur du konfigurerar [!DNL Postman] för Experience Platform API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../landing/postman.md).
 
-Med en plattformsutvecklarkonsol och [!DNL Postman] konfigurerad kan du nu börja använda lämpliga miljövärden i din [!DNL Postman] -miljö.
+Med en Experience Platform-utvecklarkonsol och [!DNL Postman] konfigurerad kan du nu börja använda lämpliga miljövärden i din [!DNL Postman] -miljö.
 
 +++Visa den variabla tabellstödlinjen
 
@@ -269,15 +269,15 @@ public class Main {
 
 När du har slutfört kravkonfigurationen för ditt [!DNL Salesforce]-konto kan du fortsätta att ansluta ditt [!DNL Salesforce]-konto till Experience Platform och importera dina CRM-data. Läs dokumentationen nedan för mer information:
 
-### Anslut [!DNL Salesforce] till plattformen med API:er
+### Anslut [!DNL Salesforce] till Experience Platform med API:er
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce] till Experience Platform med API:er eller användargränssnittet:
 
 - [Anslut Salesforce till Experience Platform med API:t för Flow Service](../../tutorials/api/create/crm/salesforce.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
-### Anslut [!DNL Salesforce] till plattformen med användargränssnittet
+### Anslut [!DNL Salesforce] till Experience Platform med användargränssnittet
 
 - [Skapa en Salesforce-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/salesforce.md)
 - [Skapa ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)

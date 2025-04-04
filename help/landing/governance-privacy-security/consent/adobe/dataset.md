@@ -6,9 +6,9 @@ description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model)
 role: Developer
 feature: Consent, Schemas, Datasets
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1468'
+source-wordcount: '1476'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 För att Adobe Experience Platform ska kunna behandla dina data om kundens samtycke/preferens måste dessa data skickas till en datauppsättning vars schema innehåller fält som rör samtycke och andra behörigheter. Den här datauppsättningen måste baseras på klassen [!DNL XDM Individual Profile] och vara aktiverad för användning i [!DNL Real-Time Customer Profile].
 
-Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättning för att bearbeta medgivandedata i Experience Platform. En översikt över det fullständiga arbetsflödet för bearbetning av samtycke/inställningsdata i Platform finns i [översikten över godkännandebearbetning](./overview.md).
+Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättning för att bearbeta medgivandedata i Experience Platform. En översikt över det fullständiga arbetsflödet för behandling av medgivanden/inställningsdata i Experience Platform finns i [översikten över godkännandebearbetning](./overview.md).
 
 >[!IMPORTANT]
 >
@@ -39,7 +39,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 >[!IMPORTANT]
 >
->I den här självstudien antas att du känner till det [!DNL Profile]-schema i plattformen som du vill använda för att hämta kundattributsinformation. Oavsett vilken metod du använder för att samla in medgivandedata, måste schemat vara [aktiverat för kundprofilen i realtid](../../../../xdm/ui/resources/schemas.md#profile). Dessutom kan schemats primära identitet inte vara ett direkt identifierbart fält som inte får användas i intressebaserad annonsering, till exempel en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
+>I den här självstudien antas att du känner till det [!DNL Profile]-schema i Experience Platform som du vill använda för att hämta kundattributsinformation. Oavsett vilken metod du använder för att samla in medgivandedata, måste schemat vara [aktiverat för kundprofilen i realtid](../../../../xdm/ui/resources/schemas.md#profile). Dessutom kan schemats primära identitet inte vara ett direkt identifierbart fält som inte får användas i intressebaserad annonsering, till exempel en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
 
 ## [!UICONTROL Consent and Preference Details] fältgruppsstruktur {#structure}
 
@@ -99,9 +99,9 @@ Fältgruppen innehåller ett enskilt fält av objekttyp, `consents`, vars undere
 För att kunna samla in data om samtycke med hjälp av Adobe-standarden måste du ha ett profilaktiverat schema som innehåller följande två fältgrupper:
 
 * [[!UICONTROL Consent and Preference Details]](../../../../xdm/field-groups/profile/consents.md)
-* [[!UICONTROL IdentityMap]](../../../../xdm/field-groups/profile/identitymap.md) (krävs om du använder Platform Web eller Mobile SDK för att skicka medgivandesignaler)
+* [[!UICONTROL IdentityMap]](../../../../xdm/field-groups/profile/identitymap.md) (krävs om du använder Experience Platform Web eller Mobile SDK för att skicka godkännandesignaler)
 
-I plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Browse]** för att visa en lista över befintliga scheman. Här markerar du namnet på det [!DNL Profile]-aktiverade schema som du vill lägga till medgivandefält i. Skärmbilderna i det här avsnittet använder schemat &quot;Loyalty Members&quot; som är inbyggt i självstudiekursen [för schemaskapande](../../../../xdm/tutorials/create-schema-ui.md) som exempel.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Browse]** för att visa en lista över befintliga scheman. Här markerar du namnet på det [!DNL Profile]-aktiverade schema som du vill lägga till medgivandefält i. Skärmbilderna i det här avsnittet använder schemat &quot;Loyalty Members&quot; som är inbyggt i självstudiekursen [för schemaskapande](../../../../xdm/tutorials/create-schema-ui.md) som exempel.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/select-schema.png)
 
@@ -129,7 +129,7 @@ Arbetsytan visas igen och visar att fälten `consents` och `identityMap` har lag
 >
 >Om du skapar ett nytt schema, eller redigerar ett befintligt schema som inte har aktiverats för profilen, måste du [aktivera schemat för profilen](../../../../xdm/ui/resources/schemas.md#profile) innan du sparar.
 
-Om schemat du redigerade används av [!UICONTROL Profile Dataset] som anges i datastream för Platform Web SDK, kommer den datauppsättningen nu att innehålla de nya medgivandefälten. Du kan nu gå tillbaka till [handboken för behandling av samtycke](./overview.md#merge-policies) om du vill fortsätta att konfigurera Experience Platform för att bearbeta medgivandedata. Om du inte har skapat någon datauppsättning för det här schemat följer du stegen i nästa avsnitt.
+Om det redigerade schemat används av [!UICONTROL Profile Dataset] som anges i datastream för Experience Platform Web SDK, kommer den datauppsättningen nu att innehålla de nya medgivandefälten. Du kan nu gå tillbaka till [handboken för behandling av samtycke](./overview.md#merge-policies) om du vill fortsätta att konfigurera Experience Platform för att bearbeta data för samtycke. Om du inte har skapat någon datauppsättning för det här schemat följer du stegen i nästa avsnitt.
 
 ## Skapa en datauppsättning baserat på ditt medgivandeschema {#dataset}
 
@@ -161,13 +161,13 @@ Slutligen väljer du **[!UICONTROL Enable]** i bekräftelseporten för att aktiv
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-Datauppsättningen har nu sparats och aktiverats för användning i [!DNL Profile]. Om du planerar att använda Platform Web SDK för att skicka data om samtycke till profil måste du välja den här datauppsättningen som [!UICONTROL Profile Dataset] när du konfigurerar [datastream](../../../../datastreams/overview.md).
+Datauppsättningen har nu sparats och aktiverats för användning i [!DNL Profile]. Om du planerar att använda Experience Platform Web SDK för att skicka medgivandedata till profilen måste du välja den här datauppsättningen som [!UICONTROL Profile Dataset] när du konfigurerar [datastream](../../../../datastreams/overview.md).
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du lagt till medgivandefält i ett [!DNL Profile]-aktiverat schema, vars datamängd används för att importera medgivandedata med hjälp av Platform Web SDK eller direkt XDM-inmatning.
+Genom att följa den här självstudiekursen har du lagt till medgivandefält i ett [!DNL Profile]-aktiverat schema, vars datamängd används för att importera medgivandedata med Experience Platform Web SDK eller direkt XDM-inmatning.
 
-Du kan nu gå tillbaka till översikten över [godkännandebearbetning](./overview.md#merge-policies) för att fortsätta konfigurera Experience Platform för att bearbeta medgivandedata.
+Du kan nu gå tillbaka till översikten över [medgivandebearbetning](./overview.md#merge-policies) för att fortsätta konfigurera Experience Platform för att bearbeta medgivandedata.
 
 ## Bilaga
 
@@ -179,7 +179,7 @@ Om du behöver hämta ytterligare medgivandesignaler utanför de som representer
 
 >[!IMPORTANT]
 >
->SDK:n för plattformswebben och mobiler stöder inte anpassade fält i sina kommandon för ändring av samtycke. Det enda sättet att importera egna medgivandefält till profilen är för närvarande genom [batchinmatning](../../../../ingestion/batch-ingestion/overview.md) eller en [källanslutning](../../../../sources/home.md).
+>Experience Platform Web och Mobile SDK stöder inte anpassade fält i sina kommandon för ändring av samtycke. Det enda sättet att importera egna medgivandefält till profilen är för närvarande genom [batchinmatning](../../../../ingestion/batch-ingestion/overview.md) eller en [källanslutning](../../../../sources/home.md).
 
 Vi rekommenderar att du använder fältgruppen [!UICONTROL Consent and Preference Details] som en baslinje för strukturen för dina medgivandedata och lägger till ytterligare fält efter behov, i stället för att försöka skapa hela strukturen från grunden.
 

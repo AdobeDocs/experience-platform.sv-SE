@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 6f8922f972546d8cceeba63e1bb4d1a75f7ef5c3
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '5134'
+source-wordcount: '5137'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
+>* Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta Adobe om du vill ha mer information.
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [ september 2024-versionen av Experience Platform ](/help/release-notes/latest/latest.md#destinations) introduceras alternativet att ange ett `endTime`-datum för dataflöden för exportdatamängd. Adobe introducerar också ett standardslutdatum som är 1 maj 2025 för alla datauppsättningsexportdataflöden som skapats *före september-versionen*. För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars kan exporten stoppas på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som ska stoppas den 1 maj.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introduceras alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe introducerar också ett standardslutdatum som är 1 maj 2025 för alla datauppsättningsexportdataflöden som skapats *före september-versionen*. För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars kan exporten stoppas på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 maj.
 >
 >Detsamma gäller för alla dataflöden som du skapar utan att ange ett `endTime`-datum. Dessa kommer att ha en sluttid på sex månader från den tidpunkt då de skapades.
 
@@ -34,11 +34,11 @@ I den här artikeln förklaras det arbetsflöde som krävs för att använda [!D
 
 >[!TIP]
 >
->Du kan också använda användargränssnittet i Experience Platform för att exportera datauppsättningar. Mer information finns i självstudiekursen [Exportera datauppsättningar](/help/destinations/ui/export-datasets.md).
+>Du kan också använda Experience Platform användargränssnitt för att exportera datauppsättningar. Mer information finns i självstudiekursen [Exportera datauppsättningar](/help/destinations/ui/export-datasets.md).
 
 ## Tillgängliga datauppsättningar för export {#datasets-to-export}
 
-Vilka datauppsättningar du kan exportera beror på vilket Experience Platform-program (Real-Time CDP, Adobe Journey Optimizer), skiktet (Prime eller Ultimate) och vilka tillägg du har köpt (till exempel Data Distiller).
+Vilka datauppsättningar du kan exportera beror på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), skiktet (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
 
 Se tabellen [på självstudiesidan](/help/destinations/ui/export-datasets.md#datasets-to-export) för att förstå vilka datauppsättningar du kan exportera.
 
@@ -62,9 +62,9 @@ För närvarande kan du exportera datauppsättningar till molnlagringsmål som m
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md): Alla data som har importerats till Adobe Experience Platform lagras i [!DNL Data Lake] som datauppsättningar. En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Datauppsättningar innehåller också metadata som beskriver olika aspekter av de data som lagras.
-   * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+   * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du måste känna till för att kunna exportera datauppsättningar till molnlagringsmål i Platform.
+I följande avsnitt finns ytterligare information som du måste känna till för att kunna exportera datauppsättningar till molnlagringsmål i Experience Platform.
 
 ### Nödvändiga behörigheter {#permissions}
 
@@ -78,13 +78,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values-headers}
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [Experience Platform-autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna ringa anrop till [!DNL Experience Platform] API:er måste du först slutföra [Experience Platform-autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Platform] API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Experience Platform] API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -92,7 +92,7 @@ Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sand
 >
 >Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * Innehållstyp: `application/json`
 
@@ -2444,9 +2444,9 @@ Du hittar information om de [olika parametrarna som returneras av Dataflödet k�
 
 ## Verifiera datauppsättningsexport {#verify}
 
-När du exporterar datauppsättningar skapar Experience Platform en `.json`- eller `.parquet`-fil på den lagringsplats som du angav. En ny fil förväntas placeras på din lagringsplats enligt det exportschema som du angav när [ett dataflöde](#create-dataflow) skapades.
+När du exporterar datauppsättningar skapar Experience Platform en `.json`- eller `.parquet`-fil på lagringsplatsen som du angav. En ny fil förväntas placeras på din lagringsplats enligt det exportschema som du angav när [ett dataflöde](#create-dataflow) skapades.
 
-Experience Platform skapar en mappstruktur på den lagringsplats du angav, där den sparar de exporterade datauppsättningsfilerna. En ny mapp skapas för varje exporttid enligt mönstret nedan:
+Experience Platform skapar en mappstruktur på den lagringsplats du angav, där de exporterade datauppsättningsfilerna sparas. En ny mapp skapas för varje exporttid enligt mönstret nedan:
 
 `folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
 
@@ -2468,7 +2468,7 @@ Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
 ## Kända begränsningar {#known-limitations}
 
@@ -2480,7 +2480,7 @@ Visa en [lista med vanliga frågor](/help/destinations/ui/export-datasets.md#faq
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit Platform till en av dina favoritplatser för batchmolnlagring och konfigurerat ett dataflöde till respektive mål för att exportera datauppsättningar. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Genom att följa den här självstudiekursen har du anslutit Experience Platform till en av dina favoritplatser för lagring i batchmolnet och konfigurerat ett dataflöde till respektive mål för att exportera datauppsättningar. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över målkatalog](../catalog/overview.md)

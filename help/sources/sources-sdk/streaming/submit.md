@@ -3,9 +3,9 @@ title: Testa och skicka in din Source
 description: I följande dokument beskrivs hur du testar och verifierar en ny källa med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor (Streaming SDK).
 exl-id: 2ae0c3ad-1501-42ab-aaaa-319acea94ec2
 badge: Beta
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1244'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
+>Självbetjäning Källströmning SDK är en betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 De sista stegen för att integrera din nya källa till Adobe Experience Platform med självbetjäningskällor (Streaming SDK) är att testa och skicka den nya källan. När du har slutfört anslutningsspecifikationen och uppdaterat specifikationen för direktuppspelningsflödet kan du börja testa källans funktionalitet antingen via API:t eller gränssnittet. När det är klart kan du sedan skicka in din nya källfil genom att kontakta Adobe.
 
@@ -22,9 +22,9 @@ Följande dokument innehåller steg om hur du testar och felsöker källan med [
 
 ## Komma igång
 
-* Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
-* Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md).
-* Information om hur du konfigurerar [!DNL Postman] för plattforms-API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../landing/postman.md).
+* Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
+* Mer information om hur du genererar autentiseringsuppgifter för Experience Platform API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md).
+* Information om hur du konfigurerar [!DNL Postman] för Experience Platform API:er finns i självstudiekursen [Konfigurera utvecklarkonsol och [!DNL Postman]](../../../landing/postman.md).
 * Om du vill ha hjälp med testnings- och felsökningsprocessen kan du hämta verifieringssamlingen och miljön för [självbetjänade källor här](../assets/sdk-verification.zip) och följa stegen som beskrivs nedan.
 
 ## Testa källan med API:t
@@ -39,10 +39,10 @@ Om du vill börja testa måste du först konfigurera samlingen och miljön på [
 
 | Parameter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `x-api-key` | En unik identifierare som används för att autentisera anrop till API:er för Experience Platform. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md) finns mer information om hur du hämtar din `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `x-api-key` | En unik identifierare som används för att autentisera anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md) finns mer information om hur du hämtar din `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
 | `x-gw-ims-org-id` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen [Konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md) för instruktioner om hur du hämtar din `x-gw-ims-org-id`-information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `authorizationToken` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../landing/api-authentication.md) finns mer information om hur du hämtar din `authorizationToken`. | `Bearer authorizationToken` |
-| `schemaId` | För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../xdm/api/schemas.md). | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
+| `schemaId` | För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../xdm/api/schemas.md). | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `schemaVersion` | Den unika version som motsvarar ditt schema. | `application/vnd.adobe.xed-full-notext+json; version=1` |
 | `schemaAltId` | `meta:altId` som returneras tillsammans med `schemaId` när ett nytt schema skapas. | `_{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `dataSetId` | Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../catalog/api/create-dataset.md). | `5f3c3cedb2805c194ff0b69a` |
@@ -62,13 +62,13 @@ Gränssnittet [!DNL Runner] visas så att du kan konfigurera körningsordningen 
 
 >[!NOTE]
 >
->Du kan inaktivera **Ta bort flöde** från checklistan för körningsordning om du föredrar att använda kontrollpanelen för källövervakning i plattformsgränssnittet. När du är klar med testningen måste du dock se till att testflödena tas bort.
+>Du kan inaktivera **Ta bort flöde** från checklistan för körningsordning om du föredrar att använda kontrollpanelen för källövervakning i Experience Platform-gränssnittet. När du är klar med testningen måste du dock se till att testflödena tas bort.
 
 ![run-collection](../assets/run-collection.png)
 
 ## Testa källan med användargränssnittet
 
-Om du vill testa källan i användargränssnittet går du till källkatalogen för organisationens sandlåda i användargränssnittet för plattformen. Här ser du att din nya källa visas under kategorin *Direktuppspelning*.
+Om du vill testa källan i användargränssnittet går du till källkatalogen i organisationens sandlåda i Experience Platform-användargränssnittet. Här ser du att din nya källa visas under kategorin *Direktuppspelning*.
 
 När din nya källa nu är tillgänglig i din sandlåda måste du följa arbetsflödet för källor för att testa funktionerna. Börja genom att välja **[!UICONTROL Set up]**.
 
@@ -88,7 +88,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../data-prep/ui/mapping.md)
+Experience Platform ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../data-prep/ui/mapping.md)
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -103,10 +103,10 @@ När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och tillåt 
 
 ![Granskningssteget för källarbetsflödet.](../assets/testing/review-test.png)
 
-Slutligen måste du hämta dataflödets slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform. Om du vill hämta strömningsslutpunkten går du till sidan [!UICONTROL Dataflow activity] i det dataflöde som du just skapade och kopierar slutpunkten längst ned på panelen [!UICONTROL Properties].
+Slutligen måste du hämta dataflödets slutpunkt för direktuppspelning. Den här slutpunkten kommer att användas för att prenumerera på din webkrok så att strömningskällan kan kommunicera med Experience Platform. Om du vill hämta strömningsslutpunkten går du till sidan [!UICONTROL Dataflow activity] i det dataflöde som du just skapade och kopierar slutpunkten längst ned på panelen [!UICONTROL Properties].
 
 ![Slutpunkten för direktuppspelning i dataflödesaktivitet.](../assets/testing/endpoint-test.png)
 
 ## Skicka din källa
 
-När källan är klar med hela arbetsflödet kan du kontakta din Adobe-representant och skicka in källan för integrering mellan andra Experience Platform-organisationer.
+När källan är klar med hela arbetsflödet kan du kontakta Adobe och skicka in din källfil för integrering mellan andra Experience Platform-organisationer.

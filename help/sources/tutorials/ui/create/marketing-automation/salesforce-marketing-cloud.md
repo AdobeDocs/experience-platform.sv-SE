@@ -1,10 +1,10 @@
 ---
-title: Koppla ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet
+title: Anslut ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet
 description: Lär dig hur du ansluter ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet.
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '487'
+source-wordcount: '489'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Om du redan har ett [!DNL Salesforce Marketing Cloud]-konto kan du hoppa över r
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Salesforce Marketing Cloud]-konto på plattformen måste du ange följande värden:
+Du måste ange följande värden för att komma åt ditt [!DNL Salesforce Marketing Cloud]-konto på Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -46,7 +46,7 @@ Mer information om autentisering för [!DNL Salesforce Marketing Cloud] finns i 
 >
 >Inläsning av anpassade objekt stöds för närvarande inte av källintegreringen [!DNL Salesforce Marketing Cloud].
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. [!UICONTROL Catalog] visar en mängd olika källor som stöds av Experience Platform.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. [!UICONTROL Catalog] visar en mängd olika källor som stöds av Experience Platform.
 
 Du kan välja lämplig kategori i listan med kategorier. Du kan också använda sökfältet för att filtrera efter en viss källa.
 
@@ -72,4 +72,4 @@ Om du redan har ett befintligt konto väljer du **[!UICONTROL Existing account]*
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning mellan ditt [!DNL Salesforce Marketing Cloud]-konto och Experience Platform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att få in data för automatiserad marknadsföring i Experience Platform](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning mellan ditt [!DNL Salesforce Marketing Cloud]-konto och Experience Platform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att överföra dina marknadsföringsdata till Experience Platform](../../dataflow/marketing-automation.md).

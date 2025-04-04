@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;startsida;populära ämnen;handbok för utvecklare av sandlådor
+keywords: Experience Platform;home;populära topics;sandbox developguide
 solution: Experience Platform
 title: API-slutpunkt för sandlådehantering
 description: Med slutpunkten /sandbox i sandbox-API kan du programmässigt hantera sandlådor i Adobe Experience Platform.
 role: Developer
 exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
-source-git-commit: c15b24990835746a51a50a3e7e7b6a85701c0eb9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1477'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för sandlådehantering
 
-Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön. Med slutpunkten `/sandboxes` i API:t [!DNL Sandbox] kan du programmässigt hantera sandlådor i plattformen.
+Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön. Med slutpunkten `/sandboxes` i API:t [!DNL Sandbox] kan du programmässigt hantera sandlådor i Experience Platform.
 
 ## Komma igång
 
@@ -22,7 +22,7 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Sandbox] API](htt
 
 ## Hämta en lista med sandlådor {#list}
 
-Du kan lista alla sandlådor som tillhör din organisation (aktiva eller andra) genom att göra en GET-förfrågan till slutpunkten `/sandboxes`.
+Du kan lista alla sandlådor som tillhör din organisation (aktiva eller andra) genom att göra en GET-begäran till slutpunkten `/sandboxes`.
 
 **API-format**
 
@@ -195,7 +195,7 @@ Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `
 >
 >När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Mer information om hur du distribuerar en sandlåda till en produktprofil finns i dokumentationen om [hantering av behörigheter för en produktprofil](../../access-control/ui/permissions.md) .
 
-Du kan skapa en ny utvecklings- eller produktionssandlåda genom att göra en POST-förfrågan till slutpunkten `/sandboxes`.
+Du kan skapa en ny utvecklings- eller produktionssandlåda genom att göra en POST-begäran till slutpunkten `/sandboxes`.
 
 ### Skapa en utvecklingssandlåda
 
@@ -228,7 +228,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Värdet får inte innehålla blanksteg eller specialtecken. |
-| `title` | Ett läsbart namn som används för visning i användargränssnittet för plattformen. |
+| `title` | Ett läsbart namn som används för visning i Experience Platform användargränssnitt. |
 | `type` | Den typ av sandlåda som ska skapas. För en icke-produktionssandlåda måste värdet vara `development`. |
 
 **Svar**
@@ -281,7 +281,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Värdet får inte innehålla blanksteg eller specialtecken. |
-| `title` | Ett läsbart namn som används för visning i användargränssnittet för plattformen. |
+| `title` | Ett läsbart namn som används för visning i Experience Platform användargränssnitt. |
 | `type` | Den typ av sandlåda som ska skapas. För en produktionssandlåda måste värdet vara `production`. |
 
 **Svar**

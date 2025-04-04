@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;batchförbrukning;batchförtäring;partiellt intag;partiellt intag;partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt, oralt;intag;Inmatning;feldiagnostik;hämta feldiagnos;hämta feldiagnos;få fel;hämta fel;hämta fel;
+keywords: Experience Platform;hem;populära ämnen;batchöverföring;batchintag;partiellt intag;partiellt intag;Partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt, oralt;intag;Inggrefering;feldiagnos;hämta feldiagnos;hämta fel;hämta fel;hämta fel;
 solution: Experience Platform
 title: Diagnostik för dataöverföringsfel hämtas
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Hämtar feldiagnostik för dataöverföring
 
-Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga data till [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
+Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga data till [!DNL Experience Platform] med direktuppspelningsslutpunkter i realtid.
 
 Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 
@@ -30,23 +30,23 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 ## Hämtar feldiagnostik {#download-diagnostics}
 
-Med Adobe Experience Platform kan användare hämta feldiagnostiken för indatafilerna. Diagnostiken behålls inom [!DNL Platform] i upp till 30 dagar.
+Med Adobe Experience Platform kan användare hämta feldiagnostiken för indatafilerna. Diagnostiken behålls inom [!DNL Experience Platform] i upp till 30 dagar.
 
 ### Visa indatafiler {#list-files}
 
@@ -145,7 +145,7 @@ Om batchar innehåller fel bör du hämta felinformation om dessa fel så att du
 
 ### Kontrollera status {#check-status}
 
-Om du vill kontrollera status för den inkapslade batchen måste du ange batchens ID i sökvägen till en GET-förfrågan. Läs [katalogslutpunktshandboken](../../catalog/api/list-objects.md) om du vill veta mer om hur du använder det här API-anropet.
+Om du vill kontrollera status för den kapslade batchen måste du ange batchens ID i sökvägen för en GET-begäran. Läs [katalogslutpunktshandboken](../../catalog/api/list-objects.md) om du vill veta mer om hur du använder det här API-anropet.
 
 **API-format**
 

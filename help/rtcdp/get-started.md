@@ -1,21 +1,21 @@
 ---
-keywords: RTCDP;CDP;Real-time Customer Data Platform;realtids kunddataplattform;realtids-cdp;cdp;rtcdp
-title: Komma igång med Real-time Customer Data Platform
+keywords: RTCDP;CDP;Real-Time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;cdp;rtcdp
+title: Komma igång med Real-Time Customer Data Platform
 description: Använd det här testscenariot som exempel när du konfigurerar implementeringen av Adobe Real-Time Customer Data Platform.
 feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2320'
+source-wordcount: '2321'
 ht-degree: 1%
 
 ---
 
-# Komma igång med Real-time Customer Data Platform
+# Komma igång med Real-Time Customer Data Platform
 
-Den här guiden leder dig genom en exempelimplementering av Real-time Customer Data Platform (Real-Time CDP). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
+Den här guiden leder dig genom en exempelimplementering av Real-Time Customer Data Platform (Real-Time CDP). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
 
-I det här exemplet visas styrkan hos Real-time Customer Data Platform, som drivs av Adobe Experience Platform, för att:
+I det här exemplet visas styrkan hos Real-Time Customer Data Platform, som drivs av Adobe Experience Platform, för att:
 
 * Hämta in data från flera källor
 * Sammanfoga dem i en enda [!DNL real-time customer profile]
@@ -119,7 +119,7 @@ Det personliga innehållet hjälper Sarah att snabbt hitta relevanta objekt. Det
 
 Sarah blir distraherad och lämnar sajten. Luma kan använda sina data i Adobe Experience Platform för att ta med henne till sajten.
 
-Real-time Customer Data Platform, som drivs av Adobe Experience Platform, är byggt för kundupplevelsehantering. Med programmet kan man
+Real-Time Customer Data Platform, som drivs av Adobe Experience Platform, är byggt för kundupplevelsehantering. Med programmet kan man
 
 * Förenkla integrering och aktivering av data
 * Styr känd och okänd dataanvändning
@@ -134,7 +134,7 @@ Teamet på Luma har alla sina beteendedata och kunddata på ett och samma ställ
 De kan importera data från alla följande källor:
 
 * Data om befintliga Adobe Experience Cloud-lösningar
-* Andra källor än Adobe, t.ex. Lumas lojalitetsprogram, callcenter och systemdata för försäljningsställen
+* Källor utanför Adobe, t.ex. Lumas lojalitetsprogram, callcenter och data om försäljningssystem
 * Direktuppspelningsdata i realtid från Luma-datakällor
 * Realtidsdata från Adobe-lösningar (inga nya taggar krävs)
 
@@ -142,7 +142,7 @@ Alla dessa data från olika källor sammanfogas i en enda enhetlig kundprofil.
 
 ## Konfigurera en datakälla
 
-Använd [!DNL Real-Time Customer Data Platform] för att hämta nya datakällor till plattformen. Real-Time CDP innehåller en katalog med datakällor som snabbt och enkelt kan läggas till i profilen.
+Använd [!DNL Real-Time Customer Data Platform] för att hämta nya datakällor till Experience Platform. Real-Time CDP innehåller en katalog med datakällor som snabbt och enkelt kan läggas till i profilen.
 
 ![bild](assets/luma-source-cat.png)
 
@@ -193,7 +193,7 @@ All profilinformation Luma har om Sarah visar. Detta inkluderar hennes personupp
 
 | Kategori | Beskrivning |
 |---|---|
-| Identiteter | Visar de identiteter som har länkats tillsammans i [!DNL Platform] från Sarah&#39;s interaktioner med Luma över kanaler och enheter. Hennes ECID från webbplatsen visas. Hennes identitet inkluderar även ECID från hennes mobilapp, hennes e-post-ID, ett CRM-ID från den nyligen tillagda [!DNL Microsoft Dynamics]-datauppsättningen och ett lojalitets-ID som skickas till Adobe Experience Platform från Lumas lojalitetssystem. |
+| Identiteter | Visar de identiteter som har länkats tillsammans i [!DNL Experience Platform] från Sarah&#39;s interaktioner med Luma över kanaler och enheter. Hennes ECID från webbplatsen visas. Hennes identitet inkluderar även ECID från hennes mobilapp, hennes e-post-ID, ett CRM-ID från den nyligen tillagda [!DNL Microsoft Dynamics]-datauppsättningen och ett lojalitets-ID som skickas till Adobe Experience Platform från Lumas lojalitetssystem. |
 | Händelser | Visar alla Sarah interaktionsdata med Luma-varumärket. Detta inkluderar det som hon just tittat på, allt som hon tittat på tidigare, de e-postmeddelanden hon fått, hennes interaktioner med callcenter och vilken kanal och enhet som var och en av interaktionerna ägde rum på. |
 
 Real-Time CDP-profilen minskar arbetsflödet för Lumas marknadsföringsteam från veckor till minuter och frigör möjligheter till personalisering baserat på denna helhetsbild av kunden. Profilen sammanfogar beteendedata från när hon surfar på webbplatsen innan hon loggade in, med sin befintliga kundprofil, vilket skapar en heltäckande bild av Sarah.
@@ -231,14 +231,14 @@ Loyalty member
 
 Eftersom Sarah lade till en gåva i vagnen och övergav den kan Luma rikta in sig på henne med ett kostnadsfritt presenterbjudande.
 
-## Mål 
+## Mål
 
 När ni har lagt till målgruppen&quot;Gift Giving Cart Abandoners&quot; kan ni se ungefär hur många som ingår i den här målgruppen. Ni kan vidta åtgärder för det och göra det tillgängligt för personalisering i alla kanaler.
 
 Välj **[!UICONTROL Send to destinations]**.
 
 I Real-Time CDP kan Luma agera sömlöst på sina målgrupper för personalisering.\
-Här ser vi alla destinationer som Luma kan skicka till både Adobe och andra lösningar än Adobe:
+Här ser vi alla destinationer som Luma kan skicka denna destination till, både Adobe-lösningar och lösningar från andra företag:
 
 ![bild](assets/luma-dest.png)
 

@@ -4,9 +4,9 @@ description: Lär dig hur du ansluter PathFactory till Adobe Experience Platform
 last-substantial-update: 2024-04-30T00:00:00Z
 badge: Beta
 exl-id: befb73c4-fd6a-4512-9124-d23a1c27e0e0
-source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '463'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >Källan [!DNL PathFactory] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
-[[!DNL PathFactory]](https://www.pathfactory.com/) erbjuder en molnbaserad plattform som hjälper företag att hantera innehållsresor och öka engagemanget med hjälp av smarta innehållsinsikter. Den här guiden beskriver hur du kan integrera data från PathFactory i Experience Platform och använda PathFactorys anslutningar för optimalt databehov.
+[[!DNL PathFactory]](https://www.pathfactory.com/) erbjuder en molnbaserad plattform som hjälper företag att hantera innehållsresor och öka engagemanget med hjälp av smarta innehållsinsikter. Den här guiden beskriver hur du kan integrera data från PathFactory i Experience Platform med hjälp av PathFactorys anslutningar för optimalt databehov.
 
 Du kan importera data från [[!DNL PathFactory]](https://www.pathfactory.com/) med tre primära källor:
 
@@ -63,10 +63,10 @@ Detaljerade instruktioner om hur du får ditt användarnamn, lösenord, domän o
 
 Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[!UICONTROL Manage Sources]** aktiverat för ditt konto för att kunna ansluta ditt [!DNL PathFactory]-konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i [användargränssnittsguiden för åtkomstkontroll](../../../access-control/ui/overview.md).
 
-## Anslut [!DNL PathFactory] till plattformen {#pathfactory-connect}
+## Anslut [!DNL PathFactory] till Experience Platform {#pathfactory-connect}
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL PathFactory] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL PathFactory] till Experience Platform med API:er eller användargränssnittet:
 
-* [Skapa en källanslutning och ett dataflöde för att hämta [!DNL PathFactory] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/pathfactory.md).
+* [Skapa en källanslutning och ett dataflöde för att hämta [!DNL PathFactory] data till Experience Platform med API:er](../../tutorials/api/create/marketing-automation/pathfactory.md).
 * [Anslut ditt [!DNL PathFactory] konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/pathfactory.md).
 * [Skapa ett dataflöde för en källanslutning med användargränssnittet ](../../tutorials/ui/dataflow/marketing-automation.md).

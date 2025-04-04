@@ -1,15 +1,15 @@
 ---
-title: Konfigurera stöd för webb-meddelanden i appen i Web SDK
+title: Konfigurera stöd för webb-meddelanden i appen i SDK
 description: Lär dig hur du konfigurerar taggtillägget Web SDK så att det stöder Web In-app Messaging.
 exl-id: 90a19ef4-e94c-4f16-a26a-8919ad2dbd6f
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
 
-# Konfigurera stöd för webb-meddelanden i appen i Web SDK
+# Konfigurera stöd för webb-meddelanden i appen i SDK
 
 Meddelanden i appen är meddelanden som du kan skicka till användare i ditt webbprogram och vägleda dem till specifika intressepunkter.
 
@@ -19,16 +19,16 @@ Genom att använda meddelanden i appen kan ni effektivt interagera med era målg
 
 >[!IMPORTANT]
 >
->Web In-App Messaging är en [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html)-funktion som använder Web SDK för att leverera det personaliserade innehållet.
+>Web In-App Messaging är en [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html)-funktion som använder Web SDK för att leverera det anpassade innehållet.
 >
 >Detaljerade instruktioner om hur du konfigurerar din kampanj för webb-meddelanden i appen finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html).
 
 
 ## Förhandskrav {#prerequisites}
 
-### Tilläggsversion för Web SDK-tagg {#extension-version}
+### Tilläggsversion för SDK {#extension-version}
 
-Meddelandefunktionen i appen kräver den senaste versionen av taggtillägget Web SDK.
+Meddelandefunktionen i appen Web In-app kräver den senaste versionen av taggtillägget Web SDK.
 
 ### Konfigurera en CSP för webbmeddelanden i appen {#csp}
 
@@ -42,9 +42,9 @@ Mer information om hur du konfigurerar en CSP finns i [dedikerad dokumentation](
 
 ## Konfigurera webb-meddelanden i appen med hjälp av taggtillägget Web SDK {#tag-extension}
 
-Gå till konfigurationssidan för [Web SDK-taggtillägget](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) om du vill veta var du hittar de inställningar som beskrivs nedan.
+Gå till konfigurationssidan för [webbtillägget för SDK ](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) om du vill veta var du hittar de inställningar som beskrivs nedan.
 
-När du har [installerat](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#install-the-web-sdk-tag-extension) Web SDK-taggtillägget följer du stegen nedan för att konfigurera tillägget för Web In-app Messaging.
+När du har [installerat](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#install-the-web-sdk-tag-extension) SDK-taggtillägget för webben följer du stegen nedan för att konfigurera tillägget för meddelanden i webben.
 
 Markera alternativet **[!UICONTROL Enable personalization storage]** i avsnittet **[!UICONTROL Personalization]**. Med det här alternativet kan Web SDK hålla reda på vilka upplevelser användaren har sett över sidinläsningar.
 
@@ -53,14 +53,14 @@ Markera alternativet **[!UICONTROL Enable personalization storage]** i avsnittet
 
 Meddelanden i appen stöder två typer av utlösare:
 
-* [Skicka data till plattform](#send-data-platform)
+* [Skicka data till Experience Platform](#send-data-platform)
 * [Manuellt utlösa meddelandena](#manual-trigger)
 
 Se följande avsnitt för att konfigurera Web SDK-taggtillägget enligt de utlösare som du vill använda.
 
-### Konfigurationssteg för **[!UICONTROL Send data to Platform]**-utlösaren {#send-data-platform}
+### Konfigurationssteg för **[!UICONTROL Send data to Experience Platform]**-utlösaren {#send-data-platform}
 
-Välj taggegenskapen som innehåller ditt Web SDK-tillägg och [skapa en ny regel](../../tags/ui/managing-resources/rules.md##create-a-rule) med följande inställningar:
+Markera taggegenskapen som innehåller ditt Web SDK-tillägg och [skapa en ny regel](../../tags/ui/managing-resources/rules.md##create-a-rule) med följande inställningar:
 
 1. **[!UICONTROL Extension]**: [!UICONTROL Core]
 2. **[!UICONTROL Event Type]**: [!UICONTROL Library Loaded (Page Top)]
@@ -101,7 +101,7 @@ Konfigurationsprocessen är nu slutförd och meddelandet är klart att visas fö
 
 ### Konfigurationssteg för att använda manuella utlösare {#manual-trigger}
 
-Välj taggegenskapen som innehåller ditt Web SDK-tillägg och [skapa en ny regel](../../tags/ui/managing-resources/rules.md##create-a-rule) med följande inställningar:
+Markera taggegenskapen som innehåller ditt Web SDK-tillägg och [skapa en ny regel](../../tags/ui/managing-resources/rules.md##create-a-rule) med följande inställningar:
 
 1. **[!UICONTROL Extension]**: [!UICONTROL Core]
 2. **[!UICONTROL Event Type]**: [!UICONTROL Click]
@@ -142,7 +142,7 @@ Konfigurationsprocessen är nu slutförd och meddelandet är klart att visas fö
 
 ## Konfigurera Web In-App Messaging med Web SDK JavaScript-biblioteket {#js-library}
 
-Ett alternativ till att använda taggtillägget Web SDK är att konfigurera Web In-App Messaging direkt från JavaScript-biblioteket för Web SDK.
+Som ett alternativ till att använda taggtillägget Web SDK kan du även konfigurera Web In-App Messaging direkt från Web SDK JavaScript-biblioteket.
 
 
 

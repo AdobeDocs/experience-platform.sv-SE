@@ -3,9 +3,9 @@ title: Exportera arrayer, kartor och objekt från Real-Time CDP
 type: Tutorial
 description: Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till molnlagringsmål.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 2d59a92d7ff1e0be7977a90df460190a3b417809
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1081'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Hämta den viktigaste informationen om funktionerna i det här avsnittet och for
 * Du kan exportera arrayer, kartor och objekt till molnlagringsmål i `JSON`- och `Parquet`-filer. För företags- och kantanpassningsmål är den exporterade datatypen `JSON`. Målgrupper för människor och potentiella kunder stöds, men inte målgrupper för konton.
 * För filbaserade molnlagringsmål *kan* exportera arrayer, kartor och objekt till CSV-filer, men bara genom att använda funktionen för beräknade fält och sammanfoga dem till en sträng med funktionen `array_to_string` .
 
-## Arrayer och andra objekttyper i Platform {#arrays-strings-other-objects}
+## Arrayer och andra objekttyper i Experience Platform {#arrays-strings-other-objects}
 
 I Experience Platform kan du använda [XDM-scheman](/help/xdm/home.md) för att hantera olika fälttyper. Innan stöd för matrisexport lades till kunde du exportera enkla nyckelvärdepar, t.ex. strängar från Experience Platform, till önskade mål. Ett exempel på ett sådant fält som tidigare hade stöd för export är `personalEmail.address`:`johndoe@acme.org`.
 

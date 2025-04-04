@@ -6,10 +6,10 @@ user-guide-description: Använd maskininlärning för att utveckla, utbilda och 
 feature: Data Science Workspace
 solution: Experience Platform
 role: User, Developer
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '225'
-ht-degree: 15%
+source-wordcount: '227'
+ht-degree: 16%
 
 ---
 
@@ -43,7 +43,7 @@ ht-degree: 15%
 * Modellredigering {#authoring}
    * [Model Authoring SDK](authoring/sdk.md)
    * [Skapa en rörledning för funktioner](authoring/feature-pipeline.md)
-   * [Skapa modeller med Platform SDK (Python)](authoring/platform-sdk.md)
+   * [Skapa modeller med Experience Platform SDK (Python)](authoring/platform-sdk.md)
    * [Åtkomst till Python-data](authoring/python.md)
    * [Spark-dataåtkomst](authoring/spark.md)
 * Självstudiekurser för modell och recept {#models-recipes}
@@ -60,9 +60,9 @@ ht-degree: 15%
    * [Posta en modell (API)](models-recipes/score-model-api.md)
    * [Optimera en modell](models-recipes/optimize-model.md)
    * [Berika kundprofilen i realtid med maskininlärningsinsikter](models-recipes/enrich-profile.md)
-   * [Publish en modell som en tjänst (UI)](models-recipes/publish-model-service-ui.md)
-   * [Publish en modell som en tjänst (API)](models-recipes/publish-model-service-api.md)
+   * [Publicera en modell som en tjänst (UI)](models-recipes/publish-model-service-ui.md)
+   * [Publicera en modell som en tjänst (API)](models-recipes/publish-model-service-api.md)
    * [Schemalägg automatiserad utbildning och poängsättning för en tjänst (UI)](models-recipes/schedule-models-ui.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)
-* [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -2,9 +2,9 @@
 title: Skapa utkast till enhets-API:t för Flow-tjänsten
 description: Lär dig hur du skapar utkast för din basanslutning, källanslutning, målanslutning och dataflöde med API:t för Flow Service
 exl-id: aad6a302-1905-4a23-bc3d-39e76c9a22da
-source-git-commit: 9c40f6254b548027d271e5831bd1b03aec98df77
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1193'
 ht-degree: 0%
 
 ---
@@ -21,12 +21,12 @@ I den här självstudiekursen beskrivs hur du ställer in dina [!DNL Flow Servic
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../landing/api-guide.md).
 
 ### Kontrollera om det finns stöd för utkastläge
 
@@ -571,7 +571,7 @@ Ett lyckat svar returnerar flödesspecifikationsinformationen för källan. Kont
 
 ## Skapa ett utkast till basanslutning {#create-a-draft-base-connection}
 
-Om du vill skapa en utkastsbasanslutning skickar du en POST till `/connections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
+Om du vill skapa en utkastsbasanslutning skapar du en POST-begäran till `/connections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
 
 **API-format**
 
@@ -624,9 +624,9 @@ Ett lyckat svar returnerar basanslutnings-ID:t och motsvarande tagg för utkaste
 }
 ```
 
-## Publish din utkastanslutning {#publish-your-draft-base-connection}
+## Publicera utkast till basanslutning {#publish-your-draft-base-connection}
 
-När utkastet är klart att publiceras kan du göra en POST-förfrågan till slutpunkten `/connections` och ange ID:t för den utkastbasanslutning som du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras kan du göra en POST-begäran till `/connections`-slutpunkten och ange ID:t för den utkastbasanslutning som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -665,7 +665,7 @@ Ett lyckat svar returnerar ID:t och motsvarande tagg för din publicerade basans
 
 ## Skapa en utkastskällanslutning {#create-a-draft-source-connection}
 
-Om du vill skapa en utkastskällanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
+Om du vill skapa en utkastskällanslutning skapar du en POST-begäran till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
 
 **API-format**
 
@@ -716,13 +716,13 @@ Ett lyckat svar returnerar källanslutnings-ID och motsvarande tagg för utkastk
 }
 ```
 
-## Publish din utkastkällanslutning {#publish-your-draft-source-connection}
+## Publicera utkastet till källanslutning {#publish-your-draft-source-connection}
 
 >[!NOTE]
 >
 >Du kan inte publicera en källanslutning om dess associerade basanslutning fortfarande är i utkastläge. Kontrollera att din basanslutning är publicerad innan du publicerar källanslutningen.
 
-När utkastet är klart att publiceras gör du en POST till slutpunkten `/sourceConnections` och anger ID:t för den utkastkällanslutning som du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras gör du en POST-begäran till `/sourceConnections`-slutpunkten och anger ID:t för den utkastkällanslutning som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -761,7 +761,7 @@ Ett lyckat svar returnerar ID:t och motsvarande tagg för den publicerade källa
 
 ## Skapa en målanslutning för utkast {#create-a-draft-target-connection}
 
-Om du vill skapa en målanslutning för utkast, skickar du en POST till `/targetConnections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
+Om du vill skapa en utkastsanslutning skapar du en POST-begäran till `/targetConnections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
 
 **API-format**
 
@@ -813,13 +813,13 @@ Ett lyckat svar returnerar målanslutnings-ID och motsvarande tagg för utkastet
 }
 ```
 
-## Publish din målanslutning för utkast {#publish-your-draft-target-connection}
+## Publicera utkastet till målanslutning {#publish-your-draft-target-connection}
 
 >[!NOTE]
 >
 >Du kan inte publicera en målanslutning om den associerade basanslutningen fortfarande är i utkastläge. Kontrollera att din basanslutning är publicerad innan du publicerar målanslutningen.
 
-När utkastet är klart att publiceras gör du en POST till slutpunkten `/targetConnections` och anger ID:t för den målanslutning du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras gör du en POST-begäran till `/targetConnections`-slutpunkten och anger ID:t för den utkastmålanslutning som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -858,7 +858,7 @@ Ett lyckat svar returnerar ID:t och motsvarande tagg för den publicerade målan
 
 ## Skapa ett utkast till dataflöde {#create-a-draft-dataflow}
 
-Om du vill ange ett dataflöde som ett utkast gör du en POST till slutpunkten `/flows` samtidigt som du lägger till `mode=draft` som en frågeparameter. På så sätt kan du skapa ett dataflöde och spara det som ett utkast.
+Om du vill ange ett dataflöde som ett utkast skapar du en POST-begäran till `/flows`-slutpunkten samtidigt som du lägger till `mode=draft` som en frågeparameter. På så sätt kan du skapa ett dataflöde och spara det som ett utkast.
 
 **API-format**
 
@@ -908,13 +908,13 @@ Ett lyckat svar returnerar flödes-ID och motsvarande tagg för utkastet av data
 }
 ```
 
-## Publish ditt datautkastflöde {#publish-your-draft-dataflow}
+## Publicera ditt utkast till dataflöde {#publish-your-draft-dataflow}
 
 >[!NOTE]
 >
 >Du kan inte publicera ett dataflöde om dess associerade käll- och målanslutningar fortfarande är i utkastläge. Kontrollera att käll- och målanslutningarna publiceras först, innan du publicerar dataflödet.
 
-När utkastet är klart att publiceras kan du göra en POST-förfrågan till `/flows`-slutpunkten och ange ID:t för det utkastdataflöde som du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras kan du göra en POST-begäran till `/flows`-slutpunkten samtidigt som du anger ID:t för det utkastdataflöde som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 

@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om åtkomstkontroll
 user-guide-description: Använd produktprofiler i Adobe Admin Console för att hantera användarbehörigheter. Lär dig hur du tilldelar användare till produkter och sandlådor.
 feature: Access Control
 role: Admin
-source-git-commit: e2e16572c9c03b28d99d309b6810090b8778a941
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '131'
-ht-degree: 34%
+source-wordcount: '132'
+ht-degree: 44%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 34%
 * Attributbaserad åtkomstkontroll {#abac}
    * [Översikt](abac/overview.md)
    * [Handbok från början till slut](abac/end-to-end-guide.md)
-   * [Använd åtkomstetiketter för att hantera användaråtkomst till måldataflöden](/help/access-control/abac/apply-access-labels-destinations.md)
+   * [Använd åtkomstetiketter för att hantera användaråtkomst till destinationsdataflöden](/help/access-control/abac/apply-access-labels-destinations.md)
    * Behörigheter {#permissions-ui}
       * [Bläddra](abac/ui/browse.md)
       * [Etiketter](abac/ui/labels.md)
@@ -50,4 +50,4 @@ ht-degree: 34%
    * [Visa gällande policyer](api/effective-policies.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/access-control/)
-* [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

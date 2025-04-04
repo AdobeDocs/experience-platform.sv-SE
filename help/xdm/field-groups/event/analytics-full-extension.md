@@ -2,9 +2,9 @@
 title: Fältgruppen Adobe Analytics ExperienceEvent Full Extension Schema
 description: Läs mer om schemafältgruppen Adobe Analytics ExperienceEvent Full Extension.
 exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
-source-git-commit: 5eb15a7dfff7e6d8ba815ae4f89142ba50166620
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '793'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet beskriver strukturen och användningsfallet för fältgruppe
 
 >[!NOTE]
 >
->På grund av storleken och antalet upprepade element i den här fältgruppen har många av fälten som visas i den här guiden komprimerats för att spara utrymme. Om du vill utforska den fullständiga strukturen för den här fältgruppen kan du [leta upp den i plattformsgränssnittet](../../ui/explore.md) eller visa hela schemat i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
+>På grund av storleken och antalet upprepade element i den här fältgruppen har många av fälten som visas i den här guiden komprimerats för att spara utrymme. Om du vill utforska den fullständiga strukturen för den här fältgruppen kan du [leta upp den i Experience Platform-gränssnittet](../../ui/explore.md) eller visa hela schemat i den [publika XDM-databasen](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
 
 ## Fältgruppstruktur
 

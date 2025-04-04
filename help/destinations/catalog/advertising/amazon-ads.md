@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2025-01-07T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 546ef0f9a5a9c37de3891aba02491540a5c6f8c9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1770'
+source-wordcount: '1771'
 ht-degree: 1%
 
 ---
@@ -55,8 +55,8 @@ Anslutningen *[!DNL Amazon Ads]* stöder aktivering av identiteter som beskrivs 
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 
 {style="table-layout:auto"}
 
@@ -126,7 +126,7 @@ Anslutningen [!DNL Amazon Ads] har stöd för hash-kodade e-postadresser och has
 
 * Om du vill mappa hash-kodade e-postadresser väljer du identitetsnamnområdet `Email_LC_SHA256` som ett källfält.
 * Om du vill mappa hash-kodade telefonnummer markerar du identitetsnamnområdet `Phone_SHA256` som ett källfält.
-* Om du vill mappa ohashade e-postadresser eller telefonnummer markerar du motsvarande identitetsnamnutrymmen som källfält och markerar alternativet `Apply Transformation` om du vill att plattformen ska hash-koda identiteterna vid aktiveringen.
+* Om du vill mappa ohashade e-postadresser eller telefonnummer markerar du motsvarande ID-namnutrymmen som källfält och markerar alternativet `Apply Transformation` om du vill att Experience Platform ska hash-koda identiteterna när de aktiveras.
 * *NYTT från och med versionen från september 2024*: Amazon Ads kräver att du mappar ett fält som innehåller ett `countryCode`-värde i ISO-format med två tecken för att underlätta identitetsmatchningsprocessen (t.ex. USA, GB, MX, CA och så vidare). Anslutningar utan `countryCode` mappningar kommer att få negativ effekt på identitetsmatchningsfrekvenserna.
 
 Du väljer bara ett angivet målfält en gång i en destinationskonfiguration för [!DNL Amazon Ads]-kopplingen.  Om du till exempel skickar e-post för företag kan du inte heller mappa personlig e-post i samma målkonfiguration.

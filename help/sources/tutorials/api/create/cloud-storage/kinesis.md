@@ -1,11 +1,11 @@
 ---
-title: Skapa en Amazon Kinesis Source-anslutning med API:t för flödestjänsten
+title: Skapa en Amazon Kinesis Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till en Amazon Kinesis-källa med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '726'
+source-wordcount: '732'
 ht-degree: 0%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Amazon Kinesis] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Amazon Kinesis] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-I den här självstudiekursen får du hjälp med att ansluta [!DNL Amazon Kinesis] (kallas nedan [!DNL Kinesis]) till Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att ansluta [!DNL Amazon Kinesis] (kallas nedan [!DNL Kinesis]) till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Kinesis] till plattformen med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Kinesis] till Experience Platform med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -33,22 +33,22 @@ För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Amazon Kinesis]-k
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `accessKeyId` | Åtkomstnyckel-ID:t är hälften av åtkomstnyckelparet som används för att autentisera ditt [!DNL Kinesis]-konto för plattformen. |
-| `secretKey` | Den hemliga åtkomstnyckeln är den andra halvan av det åtkomstnyckelpar som används för att autentisera ditt [!DNL Kinesis]-konto för plattformen. |
+| `accessKeyId` | Åtkomstnyckel-ID:t är hälften av åtkomstnyckelparet som används för att autentisera ditt [!DNL Kinesis]-konto för Experience Platform. |
+| `secretKey` | Den hemliga åtkomstnyckeln är den andra halvan av det åtkomstnyckelpar som används för att autentisera ditt [!DNL Kinesis]-konto för Experience Platform. |
 | `region` | Regionen för ditt [!DNL Kinesis]-konto. Mer information om regioner finns i guiden om att [lägga till IP-adresser i tillåtelselista](../../../../ip-address-allow-list.md). |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID [!DNL Kinesis] är: `86043421-563b-46ec-8e6c-e23184711bf6`. |
 
 Mer information om [!DNL Kinesis]-åtkomstnycklar och hur du genererar dem finns i den här [[!DNL AWS] handboken om hur du hanterar åtkomstnycklar för IAM-användare](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 Det första steget i att skapa en källanslutning är att autentisera [!DNL Kinesis]-källan och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Kinesis] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Kinesis]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -107,7 +107,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
+Om du vill skapa en källanslutning skickar du en POST-begäran till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
 
 **API-format**
 

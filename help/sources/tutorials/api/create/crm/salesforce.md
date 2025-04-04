@@ -1,10 +1,10 @@
 ---
-title: Anslut Salesforce till Experience Platform med API:t för flödestjänsten
+title: Anslut Salesforce till Experience Platform med API:t för flödestjänst
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 01f655df8679383f57d60796be5274acd9b5df68
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1077'
+source-wordcount: '1082'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,16 @@ Läs den här vägledningen när du vill veta hur du kan ansluta ditt [!DNL Sale
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Anslut [!DNL Salesforce] till Experience Platform på [!DNL Azure] {#azure}
 
-Läs stegen nedan om du vill ha information om hur du ansluter [!DNL Salesforce]-källan till Experience Platform på [!DNL Azure].
+Läs stegen nedan om du vill ha information om hur du ansluter din [!DNL Salesforce]-källa till Experience Platform på [!DNL Azure].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -44,7 +44,7 @@ Om du vill ansluta ditt [!DNL Salesforce]-konto till [!DNL Flow Service] med gru
 | `username` | Användarnamnet för användarkontot [!DNL Salesforce]. |
 | `password` | Lösenordet för användarkontot [!DNL Salesforce]. |
 | `securityToken` | Säkerhetstoken för användarkontot [!DNL Salesforce]. |
-| `apiVersion` | Valfritt) REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| `apiVersion` | Valfritt) REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 Mer information om hur du kommer igång finns i [det här Salesforce-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
@@ -58,7 +58,7 @@ Om du vill ansluta ditt [!DNL Salesforce]-konto till [!DNL Flow Service] med OAu
 | `environmentUrl` | URL:en för [!DNL Salesforce]-källinstansen. Formatet för `environmentUrl` är `https://[domain].my.salesforce.com` |
 | `clientId` | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | `clientSecret` | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
-| `apiVersion` | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. Det här värdet är obligatoriskt för autentisering av OAuth2-klientautentiseringsuppgifter. |
+| `apiVersion` | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. Det här värdet är obligatoriskt för autentisering av OAuth2-klientautentiseringsuppgifter. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL Salesforce] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
@@ -67,9 +67,9 @@ Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL 
 
 ### Skapa en basanslutning för [!DNL Salesforce] i Experience Platform på [!DNL Azure]
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa en basanslutning och ansluta ditt [!DNL Salesforce]-konto till Experience Platform på [!DNL Azure] gör du en POST-förfrågan till `/connections`-slutpunkten och anger dina [!DNL Salesforce] autentiseringsuppgifter i begärandetexten.
+Om du vill skapa en basanslutning och ansluta ditt [!DNL Salesforce]-konto till Experience Platform på [!DNL Azure] gör du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Salesforce] autentiseringsuppgifter i begärandetexten.
 
 **API-format**
 
@@ -198,7 +198,7 @@ Ett lyckat svar returnerar din nyskapade basanslutning tillsammans med dess unik
 
 >[!AVAILABILITY]
 >
->Detta avsnitt gäller för implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../../../landing/multi-cloud.md).
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
 
 Läs stegen nedan om du vill ha information om hur du ansluter din [!DNL Salesforce]-källa till Experience Platform på AWS.
 
@@ -208,7 +208,7 @@ Mer information om hur du konfigurerar ditt [!DNL Salesforce]-konto så att det 
 
 ### Skapa en basanslutning för [!DNL Salesforce] på Experience Platform på AWS
 
-Om du vill skapa en basanslutning och ansluta ditt [!DNL Salesforce]-konto till Experience Platform på AWS, gör du en POST-förfrågan till `/connections`-slutpunkten och anger lämpliga värden för dina autentiseringsuppgifter.
+Om du vill skapa en basanslutning och ansluta ditt [!DNL Salesforce]-konto till Experience Platform på AWS gör du en POST-begäran till `/connections`-slutpunkten och anger lämpliga värden för dina autentiseringsuppgifter.
 
 **API-format**
 
@@ -248,7 +248,7 @@ curl -X POST \
   }'
 ```
 
-Mer information om hur du hämtar [!DNL Salesforce] `jwtToken` finns i guiden [Konfigurera en [!DNL Salesforce] källa att ansluta till Experience Platform på AWS](../../../../connectors/crm/salesforce.md#aws).
+Mer information om hur du hämtar din [!DNL Salesforce] `jwtToken` finns i guiden [Konfigurera en [!DNL Salesforce] källa att ansluta till Experience Platform på AWS](../../../../connectors/crm/salesforce.md#aws).
 
 +++
 
@@ -269,7 +269,7 @@ Ett lyckat svar returnerar din nyskapade basanslutning tillsammans med dess unik
 
 ### Verifiera din anslutningsstatus
 
-Kontrollera anslutningsstatusen genom att göra en GET-förfrågan till slutpunkten `/connections` och ange det grundläggande anslutnings-ID som genererades i skapandet.
+Verifiera anslutningsstatus genom att göra en GET-begäran till slutpunkten `/connections` och ange det grundläggande anslutnings-ID som genererades i skapandet.
 
 **API-format**
 
@@ -394,4 +394,4 @@ Följande svar visar information om basanslutnings-ID: `3e908d3f-c390-482b-9f44-
 Genom att följa den här självstudiekursen har du skapat en [!DNL Salesforce]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
 * [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att hämta CRM-data till plattformen med hjälp av  [!DNL Flow Service] API](../../collect/crm.md)
+* [Skapa ett dataflöde för att hämta CRM-data till Experience Platform med  [!DNL Flow Service] API](../../collect/crm.md)

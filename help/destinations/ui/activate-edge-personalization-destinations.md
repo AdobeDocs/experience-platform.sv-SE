@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1878'
+source-wordcount: '1882'
 ht-degree: 0%
 
 ---
@@ -85,7 +85,7 @@ När du konfigurerar datastream ska du under **[!UICONTROL Adobe Experience Plat
 
 ![Dataströmskonfiguration med Edge Segmentering och Personalization Destinations markerade!](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
-Mer information om hur du konfigurerar ett dataflöde finns i anvisningarna i [SDK-dokumentationen för plattformen](../../datastreams/configure.md#aep).
+Mer information om hur du konfigurerar ett dataflöde finns i anvisningarna i [Experience Platform Web SDK-dokumentationen](../../datastreams/configure.md#aep).
 
 ### Skapa en [!DNL Active-On-Edge]-sammanslagningsprincip {#create-merge-policy}
 
@@ -97,9 +97,9 @@ När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sam
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
-### Skapa en ny publik i Platform {#create-audience}
+### Skapa en ny publik i Experience Platform {#create-audience}
 
-När du har skapat sammanfogningsprincipen [!DNL Active-On-Edge] måste du skapa en ny publik i Platform.
+När du har skapat sammanfogningsprincipen [!DNL Active-On-Edge] måste du skapa en ny målgrupp i Experience Platform.
 
 Följ guiden [målgruppsbyggaren](../../segmentation/ui/segment-builder.md) för att skapa din nya målgrupp och se till att [tilldela den](../../segmentation/ui/segment-builder.md#merge-policies) den [!DNL Active-On-Edge] sammanslagningsprincip som du skapade i föregående steg.
 
@@ -141,7 +141,7 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 * **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
 * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
 ![Välj målgruppssteg i aktiveringsarbetsflödet med flera målgrupper markerade.](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)

@@ -5,9 +5,9 @@ title: Skapa och redigera datatyper med användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i Experience Platform användargränssnitt.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1333'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Adobe Experience Platform har många standarddatatyper som kan användas för et
 >
 >Om ett fält definieras som en viss datatyp kan du inte skapa samma fält med en annan datatyp i ett annat schema. Begränsningen gäller för hela organisationens klientorganisation.
 
-I den här självstudiekursen beskrivs stegen för att skapa och redigera anpassade datatyper i användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs stegen för hur du skapar och redigerar anpassade datatyper i Experience Platform användargränssnitt.
 
 ## Förhandskrav {#prerequisites}
 
@@ -37,7 +37,7 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikte
 
 ## Öppna [!DNL Schema Editor] för en datatyp {#data-type}
 
-I plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i [!UICONTROL Schemas] och sedan fliken **[!UICONTROL Data types]**. En lista över tillgängliga datatyper visas. Listan med datatyper filtreras automatiskt baserat på hur de skapades. Standardinställningen visar de datatyper som definieras av Adobe. Du kan även filtrera listan så att den visar de som har skapats av din organisation.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i [!UICONTROL Schemas] och sedan fliken **[!UICONTROL Data types]**. En lista över tillgängliga datatyper visas. Listan med datatyper filtreras automatiskt baserat på hur de skapades. Standardinställningen visar de datatyper som definieras av Adobe. Du kan även filtrera listan så att den visar de som har skapats av din organisation.
 
 ![Arbetsytan [!UICONTROL Schemas] med [!UICONTROL Schemas] i den vänstra navigeringen och [!UICONTROL Data types] markerad.](../../images/ui/resources/data-types/data-types-tab.png)
 
@@ -125,6 +125,6 @@ Arbetsytan uppdaterar datatypen för fältet från [!UICONTROL Object] till den 
 
 ## Nästa steg {#next-steps}
 
-I den här handboken beskrivs hur du skapar och redigerar datatyper med hjälp av användargränssnittet för plattformen. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
+I den här handboken beskrivs hur du skapar och redigerar datatyper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Mer information om hur du hanterar datatyper med [!DNL Schema Registry]-API:t finns i [slutpunktshandboken för datatyper](../../api/data-types.md).

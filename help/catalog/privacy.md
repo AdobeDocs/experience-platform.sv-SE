@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;datasjösekretess;identitetsnamnutrymmen;sekretess;datasjön
+keywords: Experience Platform;home;populära topics;data Lake privacy;identity namespaces;privacy;data Lake
 solution: Experience Platform
 title: Behandling av sekretessförfrågningar i datasjön
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i datasjön.
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,9 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 
 >[!NOTE]
 >
->Den här handboken handlar bara om hur man gör förfrågningar om integritet för sjön med data i Experience Platform. Om du även planerar att göra sekretessförfrågningar för datalagret för kundprofiler i realtid, kan du förutom den här självstudiekursen läsa guiden om [bearbetning av sekretessförfrågningar för profilen](../profile/privacy.md).
+>Den här handboken handlar bara om hur du gör sekretessförfrågningar för datasjön i Experience Platform. Om du även planerar att göra sekretessförfrågningar för datalagret för kundprofiler i realtid, kan du förutom den här självstudiekursen läsa guiden om [bearbetning av sekretessförfrågningar för profilen](../profile/privacy.md).
 >
->Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Servicens dokumentation](../privacy-service/experience-cloud-apps.md).
+>Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service-dokumentationen](../privacy-service/experience-cloud-apps.md).
 
 ## Komma igång
 
@@ -34,7 +34,7 @@ Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Expe
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder identitetsnamnutrymmen för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder identitetsnamnutrymmen för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
 
 [!DNL Identity Service] underhåller ett lager med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
@@ -73,7 +73,7 @@ När du har angett rätt fält i schemat som identitetsfält kan du fortsätta t
 >
 >I det här avsnittet förutsätts även att du vet hur du anropar API:t för schemaregister. Viktig information om hur du använder API:t, inklusive hur du känner till `{TENANT_ID}` och konceptet med behållare, finns i avsnittet [Komma igång](../xdm/api/getting-started.md) i API-handboken.
 
-Du kan lägga till en identitetsbeskrivning i en datamängds XDM-schema genom att göra en POST-förfrågan till `/descriptors`-slutpunkten i [!DNL Schema Registry] API.
+Du kan lägga till en identitetsbeskrivning till en datamängds XDM-schema genom att göra en POST-begäran till `/descriptors`-slutpunkten i [!DNL Schema Registry] API.
 
 **API-format**
 
@@ -200,11 +200,11 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Plattformen behandlar sekretessförfrågningar i alla [sandlådor](../sandboxes/home.md) som tillhör din organisation. Därför ignoreras alla `x-sandbox-name`-huvuden som ingår i begäran av systemet.
+>Experience Platform behandlar sekretessförfrågningar i alla [sandlådor](../sandboxes/home.md) som tillhör din organisation. Därför ignoreras alla `x-sandbox-name`-huvuden som ingår i begäran av systemet.
 
 ## Ta bort bearbetning av begäran
 
-När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], skickar [!DNL Platform] en bekräftelse till [!DNL Privacy Service] om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Registren tas sedan bort från sjön inom sju dagar. Under det sju dagar långa fönstret tas data bort utan att vara tillgängliga för någon [!DNL Platform]-tjänst.
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], skickar [!DNL Experience Platform] en bekräftelse till [!DNL Privacy Service] om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Registren tas sedan bort från sjön inom sju dagar. Under det sju dagar långa fönstret tas data bort utan att vara tillgängliga för någon [!DNL Experience Platform]-tjänst.
 
 Om du även inkluderade `ProfileService` eller `identity` i sekretessbegäran hanteras deras associerade data separat. Mer information finns i avsnittet [Ta bort begärandebearbetning för profilen](../profile/privacy.md#delete).
 

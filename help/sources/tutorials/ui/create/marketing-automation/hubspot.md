@@ -5,7 +5,7 @@ title: Skapa en HubSpot Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en HubSpot-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 452b7290-b9e8-4728-8b58-0e0c76bd9449
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '445'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL HubSpot]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL HubSpot]-källkoppling med användargränssnittet i [!DNL Platform].
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL HubSpot]-källkoppling med användargränssnittet i [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ Om du redan har en [!DNL HubSpot]-anslutning kan du hoppa över resten av det h�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL HubSpot]-konto på [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till ditt [!DNL HubSpot]-konto på [!DNL Experience Platform] måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -42,7 +42,7 @@ Mer information om hur du kommer igång finns i det här [[!DNL HubSpot] dokumen
 
 ## Anslut ditt [!DNL HubSpot]-konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL HubSpot]-konto till [!DNL Platform].
+När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL HubSpot]-konto till [!DNL Experience Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
@@ -68,4 +68,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL HubSpot]-konto du 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL HubSpot]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att få in data från automatiseringssystemet för marknadsföring i [!DNL Platform]](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL HubSpot]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att få in data från automatiseringssystemet för marknadsföring i [!DNL Experience Platform]](../../dataflow/marketing-automation.md).

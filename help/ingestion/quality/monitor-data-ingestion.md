@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;övervakning;övervaka;dataflöden;övervaka inmatning;dataöverföring;visa poster;visa batchar;
+keywords: Experience Platform;hem;populära ämnen;övervakning;övervaka;dataflöden;övervaka ifyllnad;dataöverföring;dataöverföring;visa poster;visa grupper;
 solution: Experience Platform
 title: Övervaka datainmatning
 description: I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
-source-git-commit: 9399a242b855e151e5822035bc952efa89fe4bf0
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '641'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Övervaka datainmatning
 
-Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
+Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Experience Platform] med direktuppspelningsslutpunkter i realtid.
 
 Den här användarhandboken innehåller anvisningar om hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 
@@ -32,7 +32,7 @@ Den här användarhandboken innehåller anvisningar om hur du övervakar data i 
 
 I [Experience Platform-gränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn följt av **[!UICONTROL Streaming end-to-end]**.
 
-Övervakningssidan **[!UICONTROL Streaming end-to-end]** visas. Den här arbetsytan innehåller ett diagram som visar hastigheten för direktuppspelade händelser som togs emot av [!DNL Platform], ett diagram som visar hastigheten för direktuppspelade händelser som bearbetades av [[!DNL Real-Time Customer Profile]](../../profile/home.md) samt en detaljerad lista över inkommande data.
+Övervakningssidan **[!UICONTROL Streaming end-to-end]** visas. Den här arbetsytan innehåller ett diagram som visar hastigheten för direktuppspelade händelser som togs emot av [!DNL Experience Platform], ett diagram som visar hastigheten för direktuppspelade händelser som bearbetades av [[!DNL Real-Time Customer Profile]](../../profile/home.md) samt en detaljerad lista över inkommande data.
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 

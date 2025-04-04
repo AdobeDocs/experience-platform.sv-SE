@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
+keywords: Experience Platform;home;populära topics;access control;attribute-based access control;ABAC
 title: Attributbaserad åtkomstkontrollbläddring
 description: Det här dokumentet innehåller information om hur du använder gränssnittet Behörigheter i Adobe Experience Platform
 exl-id: 39634bde-8858-44a6-b39a-776846654fc1
-source-git-commit: 73d9c81aa80d82525bd04904ba5de83fb57dbeb3
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '338'
+source-wordcount: '341'
 ht-degree: 1%
 
 ---
@@ -27,11 +27,11 @@ För att få åtkomst till attributbaserade åtkomstkontrollsbehörigheter för 
 
 Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
 
-När du har administratörsbehörighet går du till [Adobe Experience Platform](https://experience.adobe.com/) och loggar in med dina [!DNL Adobe]-inloggningsuppgifter. När du är inloggad visas sidan **[!UICONTROL Overview]** för din organisation som du har administratörsbehörighet för. På den här sidan visas de produkter som din organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i organisationen som helhet. Välj **[!UICONTROL Permissions]** om du vill öppna den attributbaserade åtkomstkontrollsarbetsytan för plattformsintegreringen.
+När du har administratörsbehörighet går du till [Adobe Experience Platform](https://experience.adobe.com/) och loggar in med dina [!DNL Adobe]-inloggningsuppgifter. När du är inloggad visas sidan **[!UICONTROL Overview]** för din organisation som du har administratörsbehörighet för. På den här sidan visas de produkter som din organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i organisationen som helhet. Välj **[!UICONTROL Permissions]** om du vill öppna den attributbaserade åtkomstkontrollsarbetsytan för din Experience Platform-integrering.
 
 ![flac-select-product](../../images/flac-ui/flac-select-product.png)
 
-Den attributbaserade åtkomstkontrollsarbetsytan för plattformen visas och öppnas på sidan **[!UICONTROL Roles]**. På den här sidan kan du visa alla roller och hantera olika inställningar enligt beskrivningen i det här dokumentet.
+Den attributbaserade åtkomstkontrollsarbetsytan för Experience Platform visas och öppnas på sidan **[!UICONTROL Roles]**. På den här sidan kan du visa alla roller och hantera olika inställningar enligt beskrivningen i det här dokumentet.
 
 >[!IMPORTANT]
 >
@@ -41,7 +41,7 @@ Nu bör du använda behörigheter på [!DNL Adobe Experience Platform] i ställe
 
 ![flac-select-roles](../../images/flac-ui/flac-select-roles.png)
 
-Den här användarhandboken fokuserar på hur du använder [!DNL Adobe Experience Platform] för att tilldela åtkomstbehörigheter för plattformen. Mer allmän information om hur du navigerar i [!DNL Admin Console] finns i användarhandboken för [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
+Den här användarhandboken fokuserar på hur du använder [!DNL Adobe Experience Platform] för att tilldela behörigheter till Experience Platform. Mer allmän information om hur du navigerar i [!DNL Admin Console] finns i [Admin Console användarhandbok](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
 
 ## Nästa steg
 

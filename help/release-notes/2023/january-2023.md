@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform Release Notes januari 2023
+title: Versionsinformation om Adobe Experience Platform januari 2023
 description: Versionsinformationen för Adobe Experience Platform i januari 2023.
 exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2150'
-ht-degree: 3%
+source-wordcount: '2153'
+ht-degree: 23%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 3%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Artificial Intelligence and Machine Learning Services]](#ai/ml-services)
-- [Säkerhet](#assurance)
+- [Assurance](#assurance)
 - [Datainsamling](#data-collection)
 - [[!DNL Destinations]](#destinations)
 - [Experience Data Model (XDM)](#xdm)
@@ -36,7 +36,7 @@ Attribution AI används för att attribuera krediter till kontaktytor som leder 
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Attribution AI och vissa andra Experience Platform-baserade tillämpningar. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
+| HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Attribution AI och vissa andra Experience Platform-baserade program. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
 | Redigera kolumner för extra poängdatauppsättning | Nu kan du lägga till eller ta bort ytterligare spaltdatakolumner (rapportkolumner) när du redigerar befintliga modeller. Detta utökar flexibiliteten i attribueringspoängen för att ge dig insikter om ytterligare dimensioner efter att en modell redan har skapats. Mer information finns i [Användargränssnittsguiden för attribut](../../intelligent-services/attribution-ai/user-guide.md). |
 
 {style="table-layout:auto"}
@@ -45,19 +45,19 @@ Mer information finns i översikten för [AI/ML-tjänster](../../intelligent-ser
 
 ### Kund-AI
 
-Kundens AI för Real-time Customer Data Platform används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
+Kundens AI för Real-Time Customer Data Platform används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Customer AI för Real-time Customer Data Platform och vissa andra Experience Platform-baserade tillämpningar. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
+| HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Customer AI för Real-Time Customer Data Platform och vissa andra Experience Platform-baserade program. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
 
 {style="table-layout:auto"}
 
 Mer information finns i översikten för [AI/ML-tjänster](../../intelligent-services/customer-ai/overview.md).
 
-## Säkerhet {#assurance}
+## Assurance {#assurance}
 
 Med Adobe Assurance kan ni inspektera, bevisa, simulera och validera hur ni samlar in data eller levererar upplevelser i er mobilapp.
 
@@ -73,20 +73,20 @@ Mer information om Assurance finns i [Assurance-dokumentationen](https://develop
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ny hemskärm | Startsidan för användargränssnittet för datainsamling har uppdaterats med information om introduktion och länkar som effektiviserar produktiviteten. Detta omfattar följande:<ol><li>Dokumentation och rekommenderade arbetsflöden för att komma igång</li><li>Senaste egenskaper, regler och dataelement</li><li>Populära tillägg</li><li>Nya tilläggsuppdateringar med en snabbinstallationsfunktion</li></ol> |
+| Ny hemskärm | Startsidan för användargränssnittet för datainsamling har uppdaterats med information om introduktion och länkar som effektiviserar produktiviteten. Detta inkluderar:<ol><li>Dokumentation och rekommenderade arbetsflöden för att komma igång</li><li>Nya egenskaper, regler och dataelement</li><li>Populära tillägg</li><li>Nya tilläggsuppdateringar med en snabbinstallationsfunktion</li></ol> |
 | Skicka data till [!DNL Google Ads] med händelsevidarebefordran | Du kan nu använda [[!DNL Google Ads Enhanced Conversions] API-tillägget](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för vidarebefordran av händelser i kombination med [Google Oauth 2-hemligheter](../../tags/ui/event-forwarding/secrets.md#google-oauth2) för att skicka data på serversidan säkert till [!DNL Google Ads] i realtid. |
 
 {style="table-layout:auto"}
 
 ## Destinationer (uppdaterad 2 februari) {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya mål**
 
@@ -100,7 +100,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| Förbättrad policy för betald mediamarknadsföring för integrering med direktuppspelningsmål | En [förbättring av tvångsprincip](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) på [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations) för användningsfall för betald mediaaktivering. När profiler inte längre är kvalificerade för en samtyckespolicy kommunicerar Experience Platform nu aktivt sin policy till direktuppspelningsdestinationer. <br> <b>Obs!</b>: Den här funktionen är bara tillgänglig för kunder med **[!UICONTROL Privacy and Security Shield]** och för **[!UICONTROL Healthcare Shield]**. |
+| Förbättrad policy för betald mediamarknadsföring för integrering med direktuppspelningsmål | En [förbättring av tvångsprincip](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) på [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations) för användningsfall för betald mediaaktivering. När profiler inte längre är kvalificerade för en samtyckespolicy meddelar Experience Platform nu aktivt sin policy att avsluta direktuppspelningsdestinationer. <br> <b>Obs!</b>: Den här funktionen är bara tillgänglig för kunder med **[!UICONTROL Privacy and Security Shield]** och för **[!UICONTROL Healthcare Shield]**. |
 | Nya avgränsningsalternativ för målanslutningar för betmolnlagring | Tre nya avgränsaralternativ (Kolon `:`, Pipe, Semikolon `;`) är nu tillgängliga för de nya lagringsplatserna för betmolnet - [ (Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ (Beta) Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [ (Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring ](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [ (Beta) SFTP ](/help/destinations/catalog/cloud-storage/sftp.md) . <br> Läs om de [filformateringsalternativ](/help/destinations/ui/batch-destinations-file-formatting-options.md) som stöds för filbaserade mål. |
 | Ny valfri parameter som är tillgänglig i [kunddatafält](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md) konfigurationer i [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`: Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldatafält som har konfigurerats av en användares organisation. <br> Fältet **[!UICONTROL Integration alias]** i målet [[!UICONTROL Custom Personalization]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) måste till exempel vara unikt, vilket innebär att två separata dataflöden till målet inte kan ha samma värde för det här fältet. |
 
@@ -125,7 +125,7 @@ Mer allmän information om destinationer finns i [målöversikten](../../destina
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya eller uppdaterade funktioner**
 
@@ -163,11 +163,11 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta upplevelser för dina kunder, oavsett var eller när de interagerar med ditt varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med profilen kan du konsolidera kunddata till en enhetlig vy som ger en handlingsbar, tidsstämplad redogörelse för varje kundinteraktion.
 
 **Kommer att tas bort** {#deprecation}
 
@@ -175,13 +175,13 @@ För att ta bort redundans i segmentmedlemskapets livscykel kommer statusen `Exi
 
 Efterborttagning av profiler som är kvalificerade i ett segment representeras som `Realized` och diskvalificerade profiler visas som `Exited`. Detta skapar paritet med filbaserade mål med `Active`- och `Expired`-segmentstatus.
 
-Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API) och har automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Granska dina integreringar längre fram i kedjan om så är fallet för dig. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Mer information får du av Adobe.
+Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API) och har automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Granska dina integreringar längre fram i kedjan om så är fallet för dig. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Kontakta Adobe om du vill ha mer information.
 
 Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa praxis för arbete med profildata, börjar du med att läsa [Översikt över kundprofilen i realtid](../../profile/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
-[!DNL Segmentation Service] definierar en viss delmängd av profiler genom att beskriva kriterierna som särskiljer en marknadsföringsbar grupp av personer inom din kundbas. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Segmenten kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
 
 **Nya eller uppdaterade funktioner**
 
@@ -189,17 +189,17 @@ Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och 
 | ------- | ----------- |
 | Import av massvärde i Segment Builder | Segment Builder har nu stöd för import av flera värden, antingen genom att en CSV- eller TSV-fil överförs eller genom att kommaavgränsade värden infogas manuellt. Mer information finns i guiden [Segment Builder](../../segmentation/ui/segment-builder.md#rule-builder-canvas). |
 | Utgångsdatum för externt medlemskap | Som standard behålls medlemskap för externa målgrupper i 30 dagar. Om du vill behålla dem längre använder du fältet `validUntil` när målgruppsdata hämtas. |
-| Utgångsdatum för plattformsgenererat segmentmedlemskap | Alla segmentmedlemskap som är i läget `Exited` i mer än 30 dagar, baserat på fältet `lastQualificationTime`, kan tas bort. |
+| Experience Platform-genererat segmentmedlemskap upphör att gälla | Alla segmentmedlemskap som är i läget `Exited` i mer än 30 dagar, baserat på fältet `lastQualificationTime`, kan tas bort. |
 
 {style="table-layout:auto"}
 
-Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service] finns i [segmenteringsöversikten](../../segmentation/home.md).
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 | Funktion | Beskrivning |
 | --- | --- |

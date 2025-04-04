@@ -2,9 +2,9 @@
 title: Skapa en SFTP-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: 919e2c34bf8b9b4646936fe8bfbd4ee33d44407a
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '761'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ I den här självstudiekursen får du hjälp med att skapa en basanslutning för
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 >[!IMPORTANT]
 >
@@ -32,9 +32,9 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 Läs [[!DNL SFTP] autentiseringsguiden](../../../../connectors/cloud-storage/sftp.md#gather-required-credentials) om du vill ha mer information om hur du hämtar autentiseringsuppgifter.
 
-### Använda plattforms-API:er
+### Använda Experience Platform API:er
 
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
@@ -42,11 +42,11 @@ Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma ig�
 >
 >När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL SFTP]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
 Källan [!DNL SFTP] stöder både grundläggande autentisering och autentisering via den offentliga nyckeln för SSH. Under det här steget kan du även ange sökvägen till den undermapp som du vill ge åtkomst till.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL SFTP] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL SFTP]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 >[!IMPORTANT]
 >
@@ -100,7 +100,7 @@ curl -X POST \
 | `auth.params.port` | Porten för SFTP-servern. Det här heltalsvärdet är som standard 22. |
 | `auth.params.username` | Användarnamnet som är associerat med SFTP-servern. |
 | `auth.params.password` | Lösenordet som är kopplat till SFTP-servern. |
-| `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av plattformen till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
+| `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av Experience Platform till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
 | `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
 | `auth.params.disableChunking` | Ett booleskt värde som används för att avgöra om SFTP-servern stöder chunking eller inte. |
 | `connectionSpec.id` | SFTP-serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
@@ -162,7 +162,7 @@ curl -X POST \
 | `auth.params.username` | Användarnamnet som är associerat med din [!DNL SFTP]-server. |
 | `auth.params.privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `auth.params.passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
-| `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av plattformen till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
+| `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av Experience Platform till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
 | `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
 | `auth.params.disableChunking` | Ett booleskt värde som används för att avgöra om SFTP-servern stöder chunking eller inte. |
 | `connectionSpec.id` | ID för serveranslutningsspecifikationen [!DNL SFTP]: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |

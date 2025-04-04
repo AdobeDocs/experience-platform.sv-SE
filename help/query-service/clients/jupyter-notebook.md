@@ -2,9 +2,9 @@
 title: Anslut Jupyter-anteckningsbok till frågetjänst
 description: Lär dig hur du ansluter Jupyter-anteckningsbok med Adobe Experience Platform Query Service.
 exl-id: 358eab67-538f-4ada-931f-783b92db4a1c
-source-git-commit: 1af89160cbf5b689396921869fec6c30a5bcfff0
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '562'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller de steg som krävs för att ansluta [!DNL Jupyte
 
 Den här guiden kräver att du redan har åtkomst till [!DNL Jupyter Notebook] och känner till dess gränssnitt. Om du vill hämta [!DNL Jupyter Notebook] eller om du vill ha mer information läser du [officiell [!DNL Jupyter Notebook] dokumentation](https://jupyter.org/).
 
-Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL Jupyter Notebook] till Experience Platform måste du ha tillgång till arbetsytan [!UICONTROL Queries] i plattformsgränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan [!UICONTROL Queries].
+Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL Jupyter Notebook] till Experience Platform måste du ha tillgång till arbetsytan [!UICONTROL Queries] i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan [!UICONTROL Queries].
 
 >[!TIP]
 >
@@ -40,13 +40,13 @@ Ange följande värde på den första raden i [!DNL Notebook]-redigeraren: `pip 
 
 Importera sedan ett [!DNL PostgreSQL]-databaskort för [!DNL Python]. Ange värdet: `import psycopg2` och välj **[!DNL Run]**. Det finns inget meddelande om att processen lyckades. Om det inte finns något felmeddelande fortsätter du till nästa steg.
 
-Du måste nu ange dina Adobe Experience Platform-autentiseringsuppgifter genom att ange värdet: `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`. Dina anslutningsautentiseringsuppgifter finns i avsnittet [!UICONTROL Queries] på fliken [!UICONTROL Credentials] i användargränssnittet för plattformen. Mer information finns i dokumentationen om hur du [hittar dina organisationsuppgifter](../ui/credentials.md).
+Du måste nu ange dina Adobe Experience Platform-autentiseringsuppgifter genom att ange värdet: `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`. Dina anslutningsautentiseringsuppgifter finns i avsnittet [!UICONTROL Queries] på fliken [!UICONTROL Credentials] i Experience Platform-gränssnittet. Mer information finns i dokumentationen om hur du [hittar dina organisationsuppgifter](../ui/credentials.md).
 
 Vi rekommenderar att du använder inloggningsuppgifter som inte upphör att gälla när du använder tredjepartsklienter för att spara arbetet med att ange dina uppgifter upprepade gånger. I dokumentationen finns instruktioner om [hur du genererar och använder autentiseringsuppgifter som inte upphör att gälla](../ui/credentials.md#non-expiring-credentials).
 
 >[!IMPORTANT]
 >
->När du kopierar inloggningsuppgifter från plattformsgränssnittet behövs ingen ytterligare formatering av inloggningsuppgifterna. De kan anges på en rad med ett enda mellanrum mellan egenskaperna och värdena. Autentiseringsuppgifterna omges av citattecken och **inte** kommaavgränsade.
+>När du kopierar inloggningsuppgifter från Experience Platform UI behöver du inte formatera dem ytterligare. De kan anges på en rad med ett enda mellanrum mellan egenskaperna och värdena. Autentiseringsuppgifterna omges av citattecken och **inte** kommaavgränsade.
 
 ```python
 conn = psycopg2.connect('''sslmode=require host=<YOUR_HOST_CREDENTIAL> port=80 dbname=prod:all user=<YOUR_ORGANIZATION_ID> password=<YOUR_PASSWORD>''')"

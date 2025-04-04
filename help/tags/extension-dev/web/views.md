@@ -2,10 +2,10 @@
 title: Vyer i webbtillägg
 description: Lär dig hur du definierar vyer för biblioteksmoduler i Adobe Experience Platform webbtillägg.
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: 41efcb14df44524b58be2293d2b943bd890c1621
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2061'
-ht-degree: 0%
+source-wordcount: '2063'
+ht-degree: 2%
 
 ---
 
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Varje händelse, villkor, åtgärd eller dataelementtyp kan innehålla en vy som gör att användaren kan ange inställningar. Tillägget kan också ha en [tilläggskonfigurationsvy](../configuration.md) på den översta nivån, som gör att användare kan ange globala inställningar för hela tillägget. Processen att skapa en vy är identisk för alla typer av vyer.
 
 ## Inkludera en dokumenttyp
 
-Se till att du inkluderar en `doctype`-tagg i HTML-filen. Vanligtvis innebär det att du börjar din HTML-fil med följande:
+Se till att du inkluderar en `doctype`-tagg i din HTML-fil. Vanligtvis innebär det att du börjar med en HTML-fil med följande:
 
 ```xml
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ Se till att du inkluderar en `doctype`-tagg i HTML-filen. Vanligtvis innebär de
 
 ## Inkludera taggarnas iframe-skript
 
-Inkludera taggar i iframe-skript i HTML i vyn:
+Inkludera taggar i iframe-skript i vyns HTML:
 
 ```html
 <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
@@ -72,7 +72,7 @@ Metoden `init` anropas av taggar så snart vyn har lästs in i iframe. Det komme
 | `settings` | Ett objekt som innehåller inställningar som tidigare sparats från den här vyn. Om `settings` är `null` anger det att användaren skapar de ursprungliga inställningarna i stället för att läsa in en sparad version. Om `settings` är ett objekt bör du använda det för att fylla i vyn eftersom användaren väljer att redigera de tidigare beständiga inställningarna. |
 | `extensionSettings` | Inställningar som har sparats från tilläggskonfigurationsvyn. Det här kan vara användbart för att komma åt tilläggsinställningar i vyer som inte är tilläggskonfigurationsvyn. Om den aktuella vyn är tilläggskonfigurationsvyn använder du `settings`. |
 | `propertySettings` | Ett objekt som innehåller inställningar för egenskapen. Mer information om vad som finns i det här objektet finns i [handboken för turbinobjektet](../turbine.md#property-settings). |
-| `tokens` | Ett objekt som innehåller API-token. Om du vill få åtkomst till Adobe-API:er inifrån vyn måste du vanligtvis använda en IMS-token under `tokens.imsAccess`. Den här variabeln blir bara tillgänglig för tillägg som utvecklats av Adobe. Om du är en Adobe-anställd som representerar ett tillägg som har skapats av Adobe, [skicka ett e-postmeddelande till datainsamlingsteamet](mailto:reactor@adobe.com) och ange namnet på tillägget så att vi kan lägga till det i tillåtelselista. |
+| `tokens` | Ett objekt som innehåller API-token. Om du vill få åtkomst till Adobe API:er inifrån vyn måste du vanligtvis använda en IMS-token under `tokens.imsAccess`. Denna token blir bara tillgänglig för tillägg som utvecklats av Adobe. Om du är en Adobe-anställd som representerar ett tillägg som har skapats av Adobe [skickar du ett e-postmeddelande till datainsamlingsingenjörsteamet](mailto:reactor@adobe.com) och anger namnet på tillägget så att vi kan lägga till det i tillåtelselista. |
 | `company` | Ett objekt som innehåller en enda egenskap, `orgId`, som i sin tur representerar ditt Adobe Experience Cloud-id (en 24-siffrig alfanumerisk sträng). |
 | `schema` | Ett objekt i formatet [JSON Schema](https://json-schema.org/). Det här objektet kommer från [tilläggsmanifestet](../manifest.md) och kan vara användbart när du validerar formuläret. |
 
@@ -148,9 +148,9 @@ Objektet `options` ska innehålla en enda boolesk egenskap, `tokenize`. Den här
 
 Dina vyer har antagligen formulärfält där användarna vill utnyttja dataelement. Om vyn t.ex. innehåller ett textfält där användaren ska ange ett produktnamn, kan det vara svårt att skriva in ett hårdkodat värde i fältet. I stället kanske de vill att fältets värde ska vara dynamiskt (bestämmas vid körning) och kan uppnå detta genom att använda ett dataelement.
 
-Anta till exempel att vi skapar ett tillägg som skickar en signal för att spåra en konvertering. Låt oss också anta att en av de data som vår beacon skickar är ett produktnamn. Vår tilläggsvy som gör att användaren kan konfigurera beacon har förmodligen ett textfält för produktnamnet. Det skulle vanligtvis inte vara särskilt vettigt för plattformsanvändaren att skriva in ett statiskt produktnamn som &quot;Calzone Oven XL&quot;, eftersom produktnamnet troligtvis är beroende av sidan som beacon ska skickas från. Detta är ett bra exempel på ett dataelement.
+Anta till exempel att vi skapar ett tillägg som skickar en signal för att spåra en konvertering. Låt oss också anta att en av de data som vår beacon skickar är ett produktnamn. Vår tilläggsvy som gör att användaren kan konfigurera beacon har förmodligen ett textfält för produktnamnet. Normalt skulle det inte vara särskilt vettigt för Experience Platform-användaren att skriva in ett statiskt produktnamn som &quot;Calzone Oven XL&quot;, eftersom produktnamnet troligen är beroende av vilken sida som beacon ska skickas från. Detta är ett bra exempel på ett dataelement.
 
-Om en användare vill använda dataelementet `productname` som produktnamnsvärde kan de skriva namnet på dataelementet med procenttecken på båda sidor (`%productname%`). Vi kallar ett procenttecken för ett dataelementnamn som en&quot;dataelementtoken&quot;. Plattformsanvändare känner ofta till denna konstruktion. Ditt tillägg skulle i sin tur spara dataelementstoken i det `settings`-objekt som exporteras. Inställningsobjektet kan då se ut så här:
+Om en användare vill använda dataelementet `productname` som produktnamnsvärde kan de skriva namnet på dataelementet med procenttecken på båda sidor (`%productname%`). Vi kallar ett procenttecken för ett dataelementnamn som en&quot;dataelementtoken&quot;. Användare av Experience Platform känner ofta till denna konstruktion. Ditt tillägg skulle i sin tur spara dataelementstoken i det `settings`-objekt som exporteras. Inställningsobjektet kan då se ut så här:
 
 ```js
 {
@@ -172,7 +172,7 @@ För att ange var det kan vara praktiskt för användarna att använda dataeleme
 
 >[!NOTE]
 >
->Om du vill hämta rätt ikon går du till sidan [ikoner på Adobe Spectrum](https://spectrum.adobe.com/page/icons/) och söker efter [!DNL Data].
+>Om du vill hämta rätt ikon går du till sidan [ikoner i Adobe Spectrum](https://spectrum.adobe.com/page/icons/) och söker efter [!DNL Data].
 
 När knappen bredvid textfältet markeras av en användare, anropar du `window.extensionBridge.openDataElementSelector` som [enligt ovan](#open-data-element). Då visas en lista med användarens dataelement som användaren kan välja bland i stället för att tvinga användaren att komma ihåg tecknen för namn och procent. När användaren har valt ett dataelement får du namnet på det markerade dataelementet omgivet av procenttecken (om du inte har angett alternativet `tokenize` till `false`). Vi rekommenderar att du sedan fyller i textfältet med resultatet.
 
@@ -230,4 +230,4 @@ I det här fallet kommer resultatet alltid att vara en sträng eftersom värdet 
 
 ## Undvik navigering
 
-Kommunikation mellan tilläggsvyn och det innehållande användargränssnittet för datainsamling är beroende av att ingen navigering sker i tilläggsvyn. Undvik därför att lägga till något i tilläggsvyn som skulle göra det möjligt för användaren att navigera bort från tilläggsvyns HTML-sida. Om du till exempel anger en länk i tilläggsvyn måste du se till att ett nytt webbläsarfönster öppnas (vanligtvis genom att lägga till `target="_blank"` till ankartaggen). Om du väljer att använda ett `form`-element i tilläggsvyn måste du se till att formuläret aldrig skickas. Om du har ett `button`-element i formuläret och inte lägger till `type="button"` i det kan det hända att formuläret skickas in av misstag. Om du skickar ett formulär i tilläggsvyn kommer HTML-dokumentet att uppdateras, vilket resulterar i en trasig användarupplevelse.
+Kommunikation mellan tilläggsvyn och det innehållande användargränssnittet för datainsamling är beroende av att ingen navigering sker i tilläggsvyn. Undvik därför att lägga till något i tilläggsvyn som skulle göra det möjligt för användaren att navigera bort från tilläggsvyns HTML-sida. Om du till exempel anger en länk i tilläggsvyn måste du se till att ett nytt webbläsarfönster öppnas (vanligtvis genom att lägga till `target="_blank"` till ankartaggen). Om du väljer att använda ett `form`-element i tilläggsvyn måste du se till att formuläret aldrig skickas. Om du har ett `button`-element i formuläret och inte lägger till `type="button"` i det kan det hända att formuläret skickas in av misstag. Om du skickar ett formulär i tilläggsvyn uppdateras HTML-dokumentet, vilket ger en trasig användarupplevelse.

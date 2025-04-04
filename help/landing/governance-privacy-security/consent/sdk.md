@@ -1,21 +1,21 @@
 ---
 title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
-description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
+description: Läs om hur man integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
 role: Developer
 feature: Consent, Web SDK
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1282'
+source-wordcount: '1293'
 ht-degree: 0%
 
 ---
 
-# Integrera Platform Web SDK för att bearbeta data om kundernas samtycke
+# Integrera Experience Platform Web SDK för att bearbeta data om kundernas samtycke
 
 Med Adobe Experience Platform Web SDK kan du hämta kundens medgivandesignaler som genererats av CMP (Consent Management Platforms) och skicka dem till Adobe Experience Platform när en händelse om ändring av samtycke inträffar.
 
-**SDK:n samverkar inte med några CMP:er i rutan**. Det är upp till dig att bestämma hur du ska integrera SDK i din webbplats, lyssna efter medgivandeändringar i CMP och anropa lämpligt kommando. Det här dokumentet innehåller allmän vägledning om hur du integrerar din CMP med Platform Web SDK.
+**SDK har inget gränssnitt mot några CMP:er i kartongen**. Det är upp till dig att bestämma hur du ska integrera SDK i din webbplats, lyssna efter medgivandeändringar i CMP och anropa lämpligt kommando. Det här dokumentet innehåller allmän vägledning om hur du integrerar din CMP med Experience Platform Web SDK.
 
 ## Förhandskrav {#prerequisites}
 
@@ -38,7 +38,7 @@ Installationsstegen i den här handboken kräver en fungerande förståelse för
 
 ## Konfigurera en datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du först konfigurera ett datastream. I användargränssnittet för datainsamlingen eller användargränssnittet för Experience Platform väljer du **[!UICONTROL Datastreams]** i den vänstra navigeringen.
+För att SDK ska kunna skicka data till Experience Platform måste du först konfigurera en datastream. I användargränssnittet för datainsamlingen eller användargränssnittet för Experience Platform väljer du **[!UICONTROL Datastreams]** i den vänstra navigeringen.
 
 När du har skapat ett nytt datastam eller valt ett befintligt som ska redigeras, markerar du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan värdena nedan för att fylla i formuläret.
 
@@ -46,19 +46,19 @@ När du har skapat ett nytt datastam eller valt ett befintligt som ska redigeras
 
 | Datastream-fält | Värde |
 | --- | --- |
-| [!UICONTROL Sandbox] | Namnet på plattformen [sandlådan](../../../sandboxes/home.md) som innehåller den nödvändiga direktuppspelningsanslutningen och de datauppsättningar som krävs för att konfigurera dataströmmen. |
-| [!UICONTROL Event Dataset] | En [!DNL XDM ExperienceEvent]-datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa ett plattformsdatastam, men observera att data som skickas via händelser inte hanteras i arbetsflöden för efterföljande tillämpning. |
+| [!UICONTROL Sandbox] | Namnet på Experience Platform [sandbox](../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
+| [!UICONTROL Event Dataset] | En [!DNL XDM ExperienceEvent]-datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa en Experience Platform-datastream, men observera att data som skickas via händelser inte hanteras i arbetsflöden för efterföljande tillämpning. |
 | [!UICONTROL Profile Dataset] | Den [!DNL Profile]-aktiverade datauppsättningen med kundmedgivandefält som du skapade [tidigare](#prerequisites). |
 
 När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och fortsätter att följa eventuella ytterligare uppmaningar för att slutföra konfigurationen.
 
-## Installera och konfigurera Platform Web SDK
+## Installera och konfigurera Experience Platform Web SDK
 
-När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på taggegenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under plattforms-SDK-tillägget i listan över tillgängliga tillägg.
+När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Experience Platform Web SDK-tillägg som du slutligen ska distribuera på din webbplats. Om du inte har SDK-tillägget installerat på taggegenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under tillägget Experience Platform SDK i listan över tillgängliga tillägg.
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/install.png)
 
-När du konfigurerar SDK, under **[!UICONTROL Edge Configurations]**, markerar du datastream som du skapade i föregående steg.
+När du konfigurerar SDK, under **[!UICONTROL Edge Configurations]**, väljer du den datastream du skapade i föregående steg.
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/config-sdk.png)
 
@@ -96,7 +96,7 @@ När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer info
 
 ## Kommandon för att ändra samtycke {#commands}
 
-När du har integrerat SDK-tillägget på webbplatsen kan du börja använda kommandot Platform Web SDK `setConsent` för att skicka medgivandedata till plattformen.
+När du har integrerat SDK-tillägget på webbplatsen kan du börja använda Experience Platform Web SDK `setConsent`-kommandot för att skicka data om godkännande till Experience Platform.
 
 Kommandot `setConsent` utför två åtgärder:
 
@@ -143,7 +143,7 @@ alloy("setConsent", {
 
 | Nyttolastegenskap | Beskrivning |
 | --- | --- |
-| `standard` | Den standard för samtycke som används. Värdet måste anges till `Adobe` för Adobe-standarden. |
+| `standard` | Den standard för samtycke som används. För Adobe-standarden måste värdet anges till `Adobe`. |
 | `version` | Versionsnumret för den medgivandestandard som anges under `standard`. Det här värdet måste anges till `2.0` för Adobe-standardbearbetning av samtycke. |
 | `value` | Kundens uppdaterade medgivandeinformation, som tillhandahålls som ett XDM-objekt som följer strukturen i den profilaktiverade datauppsättningens medgivandefält. |
 
@@ -182,7 +182,7 @@ var setConsent = function () {
     }
   };
 
-  // Pass the XDM object to the Platform Web SDK
+  // Pass the XDM object to the Experience Platform Web SDK
   alloy("setConsent", {
     consent: [{
       standard: "Adobe",
@@ -195,13 +195,13 @@ var setConsent = function () {
 
 ## Hantera SDK-svar
 
-Alla [!DNL Platform SDK]-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Mer information finns i [Kommandosvar](/help/web-sdk/commands/command-responses.md).
+Alla [!DNL Experience Platform SDK]-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Mer information finns i [Kommandosvar](/help/web-sdk/commands/command-responses.md).
 
-När du har gjort `setConsent` anrop med SDK kan du använda profilvisningsprogrammet i plattformsgränssnittet för att kontrollera om data landar i profilarkivet. Mer information finns i avsnittet [Bläddra bland profiler efter identitet](../../../profile/ui/user-guide.md#browse-identity).
+När du har genomfört `setConsent` samtal med SDK kan du använda profilvisningsprogrammet i Experience Platform-användargränssnitt för att kontrollera om data landar i profilarkivet. Mer information finns i avsnittet [Bläddra bland profiler efter identitet](../../../profile/ui/user-guide.md#browse-identity).
 
 ## Nästa steg
 
-Genom att följa den här guiden har du konfigurerat plattformstillägget för Web SDK för att skicka data om samtycke till Experience Platform. Anvisningar om hur du testar implementeringen finns i dokumentationen för den standard för samtycke som du implementerar:
+Genom att följa den här guiden har du konfigurerat Experience Platform Web SDK-tillägget för att skicka medgivandedata till Experience Platform. Anvisningar om hur du testar implementeringen finns i dokumentationen för den standard för samtycke som du implementerar:
 
-* [Adobe standard](./adobe/overview.md#test)
+* [Adobe](./adobe/overview.md#test)
 * [TCF 2.0-standard](./iab/overview.md#test)

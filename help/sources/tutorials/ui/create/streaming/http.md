@@ -2,9 +2,9 @@
 title: Skapa en HTTP API Streaming Connection med användargränssnittet
 description: Den här gränssnittshandboken hjälper dig att skapa en direktuppspelningsanslutning med Adobe Experience Platform.
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-source-git-commit: de721d204cda8e55c72ac5f530b89b2275d94306
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '935'
+source-wordcount: '938'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ## Skapa en direktuppspelningsanslutning
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -66,7 +66,7 @@ När dina data har överförts kan du använda den högra sidan av gränssnittet
 
 ## Mappa datafält till ett XDM-schema
 
-Steg [!UICONTROL Mapping] visas med ett gränssnitt för att mappa källdata till en plattformsdatauppsättning.
+Steget [!UICONTROL Mapping] visas med ett gränssnitt för att mappa källdata till en Experience Platform-datauppsättning.
 
 Källan [!DNL HTTP API] stöder inmatning av JSON-filer. JSON-filer behöver inte konfigureras manuellt om de är markerade som XDM-kompatibla. Om inte, måste du konfigurera mappningen explicit.
 
@@ -141,4 +141,4 @@ När anslutningen har skapats visas informationssidan för källor. På den här
 
 Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning, vilket gör att du kan använda direktuppspelningsslutpunkten för att få tillgång till olika [!DNL Data Ingestion] API:er. Instruktioner om hur du skapar en direktuppspelningsanslutning i API:t finns i [skapa en självstudiekurs för direktuppspelningsanslutning](../../../api/create/streaming/http.md).
 
-Om du vill lära dig hur du direktuppspelar data på en plattform kan du läsa självstudiekursen [om att strömma tidsseriedata](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen om [direktuppspelade postdata](../../../../../ingestion/tutorials/streaming-record-data.md).
+Om du vill lära dig att strömma data till Experience Platform kan du läsa antingen självstudiekursen [om strömning av tidsseriedata](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen om [strömning av postdata](../../../../../ingestion/tutorials/streaming-record-data.md).

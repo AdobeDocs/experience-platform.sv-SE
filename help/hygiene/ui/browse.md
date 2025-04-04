@@ -2,9 +2,9 @@
 title: Bläddra i arbetsorder för datasamling
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för livscykelarbete i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '810'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Den här guiden beskriver hur du visar och hanterar befintliga arbetsorder i Ado
 
 När du först kommer åt arbetsytan **[!UICONTROL Data Lifecycle]** i gränssnittet visas en lista med befintliga arbetsorder tillsammans med deras grundläggande information.
 
-![Bild som visar arbetsytan [!UICONTROL Data Lifecycle] i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
+![Bild som visar arbetsytan [!UICONTROL Data Lifecycle] i Experience Platform-gränssnittet](../images/ui/browse/work-order-list.png)
 
 I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** om du vill visa en lista över postborttagningsaktiviteter och **[!UICONTROL Dataset]** om du vill visa en lista över förfallotider för schemalagda datauppsättningar.
 
@@ -97,7 +97,7 @@ Detaljsidan för en datauppsättnings förfallodatum innehåller information om 
 
 ## Nästa steg
 
-I den här handboken beskrivs hur du visar och hanterar befintliga arbetsorder för livscykelarbete för data i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
+I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för livscykelarbete för data i Experience Platform användargränssnitt. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
 
 * [Hantera förfallodatum för datauppsättning](./dataset-expiration.md)
 * [Hantera postborttagningar](./record-delete.md)

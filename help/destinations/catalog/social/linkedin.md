@@ -1,9 +1,9 @@
 ---
 keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
-description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
+description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 4f82aab78e74cb7cdd76b603a1e182fbd7fe627c
+source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
 workflow-type: tm+mt
 source-wordcount: '1158'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Aktivera profiler för dina [!DNL LinkedIn]-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden och mobil-ID:n.
 
-![LinkedIn-mål i Adobe Experience Platform-gränssnitt](../../assets/catalog/social/linkedin/catalog.png)
+![LinkedIn-mål i Adobe Experience Platform-gränssnittet](../../assets/catalog/social/linkedin/catalog.png)
 
 ## Användningsfall
 
@@ -32,7 +32,7 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashad e-post. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashad e-post. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 
 {style="table-layout:auto"}
 
@@ -42,7 +42,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -58,11 +58,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Krav för linkedIn-konton {#LinkedIn-account-prerequisites}
+## Krav för LinkedIn-konto {#LinkedIn-account-prerequisites}
 
 Innan du kan använda målet [!UICONTROL LinkedIn Matched Audience] måste du kontrollera att ditt [!DNL LinkedIn Campaign Manager]-konto har behörighetsnivån [!DNL Creative Manager] eller högre.
 
-Mer information om hur du redigerar användarbehörigheter för [!DNL LinkedIn Campaign Manager] finns i [Lägg till, redigera och ta bort användarbehörigheter för Advertising-konton](https://www.linkedin.com/help/lms/answer/5753) i LinkedIn-dokumentationen.
+Mer information om hur du redigerar användarbehörigheter för [!DNL LinkedIn Campaign Manager] finns i [Lägg till, redigera och ta bort användarbehörigheter för Advertising-konton](https://www.linkedin.com/help/lms/answer/5753) i dokumentationen för LinkedIn.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -72,9 +72,9 @@ Beroende på vilken typ av ID som du importerar till Adobe Experience Platform m
 
 ## Krav för e-posthashning {#email-hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
+Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser som är tydliga i Experience Platform, och få [!DNL Experience Platform] hash-kodade adresser när de aktiveras.
 
-Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsuppläsningen](/help/ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](/help/ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
@@ -87,10 +87,10 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 >[!NOTE]
 >
->Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
+>Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
 > Attributkälldata hashas inte automatiskt.
 > 
-> Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+> Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
 > 
 > Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
@@ -110,25 +110,25 @@ I videon nedan visas också stegen för att konfigurera ett [!DNL LinkedIn Match
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
+>Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
 
 ### Autentisera till mål {#authenticate}
 
 1. Hitta [!DNL LinkedIn Matched Audiences]-målet i målkatalogen och välj **[!UICONTROL Set Up]**.
 2. Välj **[!UICONTROL Connect to destination]**.
    ![Autentisera till LinkedIn](/help/destinations/assets/catalog/social/linkedin/authenticate-linkedin-destination.png)
-3. Ange dina LinkedIn-autentiseringsuppgifter och välj **Logga in**.
+3. Ange dina inloggningsuppgifter för LinkedIn och välj **Logga in**.
 
 ### Uppdatera autentiseringsuppgifter {#refresh-authentication-credentials}
 
-LinkedIn-tokens upphör var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
+LinkedIn-tokens går ut var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
 
 1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**
 2. (Valfritt) Använd de tillgängliga filtren på sidan om du bara vill visa LinkedIn-konton.
    ![Filtrera så att endast LinkedIn-konton visas](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
 3. Markera det konto som du vill uppdatera, markera ellipsen och välj **[!UICONTROL Edit details]**.
    ![Välj kontrollen Redigera information](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
-4. I det modala fönstret väljer du **[!UICONTROL Reconnect OAuth]** och autentiserar igen med dina LinkedIn-autentiseringsuppgifter.
+4. I det modala fönstret väljer du **[!UICONTROL Reconnect OAuth]** och autentiserar igen med dina LinkedIn-inloggningsuppgifter.
    ![Modalt fönster med alternativet Återanslut OAuth](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
 
 >[!SUCCESS]

@@ -3,9 +3,9 @@ title: Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-i
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper från Adobe Experience Platform till anslutna TV- och ljuddestinationer samt andra integreringar med LiveRamp RampID.
 exl-id: 37e5bab9-588f-40b3-b65b-68f1a4b868f1
-source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '662'
 ht-degree: 0%
 
 ---
@@ -70,13 +70,13 @@ Det första du måste göra för att aktivera dina målgrupper till kuraterade m
 
 Det gör du med målet **[!DNL LiveRamp - Onboarding]**.
 
-![Experience Platform-gränssnittsbild som visar LiveRamp - Destinationskort för introduktion](../assets/ui/activate-curated-destinations-liveramp/liveramp-onboarding-catalog.png)
+![Experience Platform-gränssnittsbild som visar LiveRamp - Destinationskort för nyintroduktion](../assets/ui/activate-curated-destinations-liveramp/liveramp-onboarding-catalog.png)
 
 Läs [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-måldokumentationen om du vill lära dig hur du konfigurerar [!DNL LiveRamp - Onboarding]-målet och exporterar dina målgrupper från Experience Platform.
 
 >[!IMPORTANT]
 >
->När du exporterar filer till målet [!DNL LiveRamp - Onboarding] genererar Plattform en CSV-fil för varje [ID för sammanfogningsprincip](../../profile/merge-policies/overview.md). Mer information om hur du validerar dataexporten till LiveRamp finns i [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-måldokumentationen.
+>När du exporterar filer till målet [!DNL LiveRamp - Onboarding] genererar Experience Platform en CSV-fil för varje [sammanfogningsprincip-ID](../../profile/merge-policies/overview.md) . Mer information om hur du validerar dataexporten till LiveRamp finns i [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-måldokumentationen.
 
 
 När du har exporterat dina målgrupper till LiveRamp fortsätter du till [steg 2](#distribution).
@@ -107,7 +107,7 @@ När du konfigurerar **[!DNL LiveRamp - Distribution]**-målet måste du skapa e
 ><br>
 >Exempel: `LiveRamp - Roku`.
 
-![Skärmbild för användargränssnittet för plattformen med flera LiveRamp-mål.](../assets/ui/activate-curated-destinations-liveramp/liveramp-naming.png)
+![Experience Platform UI-skärmbild med flera LiveRamp-mål.](../assets/ui/activate-curated-destinations-liveramp/liveramp-naming.png)
 
 ## Exporterade data/Validera dataexport {#exported-data}
 

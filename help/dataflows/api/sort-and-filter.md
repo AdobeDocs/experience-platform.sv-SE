@@ -2,9 +2,9 @@
 title: Sorterings- och filtreringssvar i API:t för Flow Service
 description: Den här självstudiekursen beskriver syntaxen för sortering och filtrering med hjälp av frågeparametrar i API:t för Flow Service, inklusive vissa avancerade användningsfall.
 exl-id: 029c3199-946e-4f89-ba7a-dac50cc40c09
-source-git-commit: c7ff379b260edeef03f8b47f932ce9040eef3be2
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '827'
 ht-degree: 0%
 
 ---
@@ -249,4 +249,4 @@ GET /runs?property=flowId==<flow-id>&property=metrics.statusSummary.status==Fail
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du använder frågeparametrarna `orderby` och `property` för att sortera och filtrera svar i API:t för Flow Service. Stegvisa guider om hur du använder API:t för vanliga arbetsflöden i Platform finns i API-självstudiekurserna i dokumentationen för [sources](../../sources/home.md) och [destination](../../destinations/home.md) .
+I den här guiden beskrivs hur du använder frågeparametrarna `orderby` och `property` för att sortera och filtrera svar i API:t för Flow Service. Stegvisa guider om hur du använder API:t för vanliga arbetsflöden i Experience Platform finns i API-självstudiekurserna som finns i dokumentationen för [sources](../../sources/home.md) och [destination](../../destinations/home.md) .

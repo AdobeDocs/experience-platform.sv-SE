@@ -2,10 +2,10 @@
 title: Versionsinformation för taggar och vidarebefordran av händelser
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: e300e57df998836a8c388511b446e90499185705
-workflow-type: ht
-source-wordcount: '769'
-ht-degree: 100%
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+workflow-type: tm+mt
+source-wordcount: '771'
+ht-degree: 93%
 
 ---
 
@@ -54,13 +54,13 @@ Nya tillägg har släppts:
 
 ## 26 oktober 2022
 
-* **Hantering av känslig data för dataströmmar**: Dataströmmar utnyttjar nu flera plattformstekniker för att på lämpligt sätt hantera känsliga data enligt bestämmelser som HIPAA (Health Insurance Portability and Accountability Act). Mer information finns i avsnittet om [hantering av känsliga data i dataströmmar](../../datastreams/overview.md#sensitive).
+* **Känslig datahantering för datastreams**: Datastreams utnyttjar nu flera Experience Platform-tekniker för att hantera känsliga data på lämpligt sätt, vilket regleras av bestämmelser som HIPAA (Health Insurance Portability and Accounability Act). Mer information finns i avsnittet om [hantering av känsliga data i dataströmmar](../../datastreams/overview.md#sensitive).
 * **[!DNL Splunk]tillägg för vidarebefordran av händelser**: Du kan nu skicka data till [!DNL Splunk] med hjälp av ett tillägg för [vidarebefordran av händelser](../ui/event-forwarding/overview.md). Se [[!DNL Splunk] översikten över tillägg](../extensions/server/splunk/overview.md) för mer information.
-* **[!DNL Zendesk]tillägg för vidarebefordran av händelser**: Du kan nu skicka data till [!DNL Zendesk] med hjälp av ett tillägg för [vidarebefordran av händelser](../ui/event-forwarding/overview.md). Se [[!DNL Zendesk] översikten över tillägg](../extensions/server/zendesk/overview.md) för mer information.
+* **[!DNL Zendesk]tillägg för vidarebefordran av händelser**: Du kan nu skicka data till [!DNL Zendesk] med hjälp av tillägget för [vidarebefordran av händelser](../ui/event-forwarding/overview.md). Se [[!DNL Zendesk] översikten över tillägg](../extensions/server/zendesk/overview.md) för mer information.
 
 ## 28 september 2022
 
-* **Adobe Experience Platforms vänstra navigeringsintegration**: Alla funktioner som tidigare var exklusiva för datainsamlingsgränssnittet (inklusive taggar och vidarebefordran av händelser) är nu också tillgängliga via vänster navigering i Experience Platforms gränssnitt under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när man arbetar med datainsamlingsfunktioner i plattformen.
+* **Adobe Experience Platforms vänstra navigeringsintegration**: Alla funktioner som tidigare var exklusiva för datainsamlingsgränssnittet (inklusive taggar och vidarebefordran av händelser) är nu också tillgängliga via vänster navigering i Experience Platforms gränssnitt under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när du arbetar med datainsamlingsfunktioner i Experience Platform.
 * **Användartillskrivning i taggar och vidarebefordran av händelser**: När tillgängliga egenskaper listas i taggar och vidarebefordran av händelser, visas nu när den senast uppdaterades och av vem för varje listad egenskap.
 * **[[!DNL Snap Conversions API] tillägg](https://exchange.adobe.com/apps/ec/108550) för vidarebefordran av händelser**: Du kan nu skicka data till [!DNL Snapchat Conversions API] med hjälp av ett tillägg för [vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md). Mer information om hur du autentiserar dig och använder API:et finns i [[!DNL Snapchat Marketing API] dokumentationen](https://marketingapi.snapchat.com/docs/conversion.html).
 

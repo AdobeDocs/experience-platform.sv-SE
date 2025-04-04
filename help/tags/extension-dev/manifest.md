@@ -2,10 +2,10 @@
 title: Extension Manifest
 description: Lär dig hur du konfigurerar en JSON-manifestfil som informerar Adobe Experience Platform om hur du använder tillägget på rätt sätt.
 exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2591'
-ht-degree: 0%
+source-wordcount: '2606'
+ht-degree: 1%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 I tilläggets baskatalog måste du skapa filen `extension.json`. Detta innehåller viktig information om tillägget som gör att Adobe Experience Platform kan använda det korrekt. En del av innehållet formateras efter sättet för [npm:s `package.json`](https://docs.npmjs.com/files/package.json).
 
@@ -26,12 +26,12 @@ Ett tilläggsmanifest måste bestå av följande:
 | `name` | Namnet på tillägget. Den måste vara unik från alla andra tillägg och måste uppfylla [namnreglerna](#naming-rules). **Detta används av taggar som identifierare och bör inte ändras efter att du har publicerat tillägget.** |
 | `platform` | Plattformen för tillägget. Det enda värde som accepteras för tillfället är `web`. |
 | `version` | Versionen av tillägget. Den måste följa versionshanteringsformatet [server](https://semver.org/). Detta stämmer överens med [npm-versionsfältet](https://docs.npmjs.com/files/package.json#version). |
-| `displayName` | Tilläggets läsbara namn. Detta visas för plattformsanvändare. Du behöver inte ange&quot;taggar&quot; eller&quot;tillägg&quot;. Användarna vet redan att de tittar på ett taggtillägg. |
-| `description` | Beskrivningen av tillägget. Detta visas för plattformsanvändare. Om tillägget ger användarna möjlighet att implementera produkten på sin webbplats, beskriv vad produkten gör. Du behöver inte ange&quot;taggar&quot; eller&quot;tillägg&quot;. Användarna vet redan att de tittar på ett taggtillägg. |
-| `iconPath` *(Valfritt)* | Den relativa sökvägen till ikonen som ska visas för tillägget. Det får inte börja med ett snedstreck. Den måste referera till en SVG-fil med filnamnstillägget `.svg`. SVG ska vara fyrkantig och kan skalas av Platform. |
+| `displayName` | Tilläggets läsbara namn. Detta visas för Experience Platform-användare. Du behöver inte ange&quot;taggar&quot; eller&quot;tillägg&quot;. Användarna vet redan att de tittar på ett taggtillägg. |
+| `description` | Beskrivningen av tillägget. Detta visas för Experience Platform-användare. Om tillägget ger användarna möjlighet att implementera produkten på sin webbplats, beskriv vad produkten gör. Du behöver inte ange&quot;taggar&quot; eller&quot;tillägg&quot;. Användarna vet redan att de tittar på ett taggtillägg. |
+| `iconPath` *(Valfritt)* | Den relativa sökvägen till ikonen som ska visas för tillägget. Det får inte börja med ett snedstreck. Den måste referera till en SVG-fil med tillägget `.svg`. SVG ska vara fyrkantig och kan skalas av Experience Platform. |
 | `author` | &quot;Författaren&quot; är ett objekt som ska struktureras enligt följande: <ul><li>`name`: Namnet på tilläggsförfattaren. Du kan också använda företagsnamnet här.</li><li>`url` *(Valfritt)*: En URL där du kan ta reda på mer om tilläggsförfattaren.</li><li>`email` *(Valfritt)*: E-postadressen till tilläggsförfattaren.</li></ul>Detta är förenligt med [npm-reglerna för författarfält](https://docs.npmjs.com/files/package.json#people-fields-author-contributors). |
 | `exchangeUrl` *(Krävs för offentliga tillägg)* | URL:en till tilläggets lista på Adobe Exchange. Det måste matcha mönstret `https://www.adobeexchange.com/experiencecloud.details.######.html`. |
-| `viewBasePath` | Den relativa sökvägen till underkatalogen som innehåller alla vyer och visningsrelaterade resurser (HTML, JavaScript, CSS, images). Plattformen har den här katalogen på en webbserver och läser in iframe-innehåll från den. Detta är ett obligatoriskt fält och ska inte börja med ett snedstreck. Om alla dina vyer till exempel finns i `src/view/` blir värdet `viewBasePath` `src/view/`. |
+| `viewBasePath` | Den relativa sökvägen till underkatalogen som innehåller alla vyer och visningsrelaterade resurser (HTML, JavaScript, CSS, images). Experience Platform har den här katalogen på en webbserver och läser in iframe-innehåll från den. Detta är ett obligatoriskt fält och ska inte börja med ett snedstreck. Om alla dina vyer till exempel finns i `src/view/` blir värdet `viewBasePath` `src/view/`. |
 | `hostedLibFiles` *(Valfritt)* | Många av våra användare föredrar att ha alla taggrelaterade filer på sin egen server. Detta ger användarna en ökad säkerhet vad gäller filtillgänglighet vid körning och de kan enkelt söka efter säkerhetsluckor i koden. Om biblioteksdelen av tillägget behöver läsa in JavaScript-filer vid körning bör du använda den här egenskapen för att lista dessa filer. De listade filerna lagras tillsammans med taggens körtidsbibliotek. Tillägget kan sedan läsa in filerna via en URL som hämtats med metoden [getHostedLibFileUrl](./turbine.md#get-hosted-lib-file) .<br><br>Det här alternativet innehåller en matris med relativa sökvägar för biblioteksfiler från tredje part som måste lagras. |
 | `main` *(Valfritt)* | Den relativa sökvägen för en biblioteksmodul som ska köras vid körning.<br><br>Den här modulen inkluderas alltid i körningsbiblioteket och körs. Eftersom modulen alltid ingår i körningsbiblioteket rekommenderar vi att du bara använder huvudmodulen när det är absolut nödvändigt och att kodstorleken är minimal.<br><br>Det går inte att garantera att den här modulen körs först. Andra moduler kan köras innan. |
 | `configuration` *(Valfritt)* | Detta beskriver delen [tilläggskonfiguration](./configuration.md) i tillägget. Detta är nödvändigt om du vill att användarna ska ange globala inställningar för tillägget. Mer information om hur det här fältet ska struktureras finns i [bilagan](#config-object). |
@@ -68,11 +68,11 @@ Konfigurationsobjektet ska struktureras på följande sätt:
   <tbody>
     <tr>
       <td><code>viewPath</code></td>
-      <td>Den relativa URL:en till tilläggskonfigurationsvyn. Den ska vara relativ till <code>viewBasePath</code> och ska inte börja med ett snedstreck. Den måste referera till en HTML-fil med filnamnstillägget <code>.html</code>. Frågesträngar och fragment-ID (hash-suffix) kan användas.</td>
+      <td>Den relativa URL:en till tilläggskonfigurationsvyn. Den ska vara relativ till <code>viewBasePath</code> och ska inte börja med ett snedstreck. Den måste referera till en HTML-fil med tillägget <code>.html</code>. Frågesträngar och fragment-ID (hash-suffix) kan användas.</td>
     </tr>
     <tr>
       <td><code>schema</code></td>
-      <td>Ett objekt av <a href="https://json-schema.org/">JSON-schema</a> som beskriver formatet för ett giltigt objekt som sparas från tilläggskonfigurationsvyn. Eftersom du är utvecklare av konfigurationsvyn är det ditt ansvar att se till att alla sparade inställningsobjekt matchar det här schemat. Det här schemat används även för validering när användare försöker spara data med hjälp av plattformstjänster.<br><br>Ett exempelschemaobjekt är följande:
+      <td>Ett objekt av <a href="https://json-schema.org/">JSON-schema</a> som beskriver formatet för ett giltigt objekt som sparas från tilläggskonfigurationsvyn. Eftersom du är utvecklare av konfigurationsvyn är det ditt ansvar att se till att alla sparade inställningsobjekt matchar det här schemat. Det här schemat används även för validering när användare försöker spara data med Experience Platform tjänster.<br><br>Ett exempelschemaobjekt är följande:
 <pre class="JSON language-JSON hljs">
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -128,11 +128,11 @@ En typdefinition är ett objekt som används för att beskriva en händelse, ett
     </tr>
     <tr>
       <td><code>viewPath</code> <em>(Valfritt)</em></td>
-      <td>Den relativa URL:en till typvyn. Den ska vara relativ till <code>viewBasePath</code> och ska inte börja med ett snedstreck. Den måste referera till en HTML-fil med filnamnstillägget <code>.html</code>. Frågesträngar och fragment-ID:n (hash) tillåts. Om typens biblioteksmodul inte använder några inställningar från en användare, kan du exkludera den här egenskapen. I stället visas en platshållare som anger att ingen konfiguration behövs.</td>
+      <td>Den relativa URL:en till typvyn. Den ska vara relativ till <code>viewBasePath</code> och ska inte börja med ett snedstreck. Den måste referera till en HTML-fil med tillägget <code>.html</code>. Frågesträngar och fragment-ID:n (hash) tillåts. Om typens biblioteksmodul inte använder några inställningar från en användare, kan du utelämna den här egenskapen. I stället visas en platshållare som anger att ingen konfiguration behövs.</td>
     </tr>
     <tr>
       <td><code>schema</code></td>
-      <td>Ett objekt av <a href="https://json-schema.org/">JSON Schema</a> som beskriver formatet för ett giltigt inställningsobjekt som kan sparas av användaren. Inställningarna konfigureras och sparas vanligtvis av en användare med användargränssnittet i Datainsamling. I dessa fall kan tilläggsvyn vidta nödvändiga åtgärder för att validera de inställningar som användaren anger. Å andra sidan väljer vissa användare att använda tagg-API:er direkt utan hjälp av något användargränssnitt. Syftet med det här schemat är att göra det möjligt för Platform att på rätt sätt validera att inställningsobjekt som sparats av användare, oavsett om ett användargränssnitt används, har ett format som är kompatibelt med biblioteksmodulen som ska agera på inställningsobjektet vid körning.<br><br>Ett exempelschemaobjekt är följande:<br>
+      <td>Ett objekt av <a href="https://json-schema.org/">JSON Schema</a> som beskriver formatet för ett giltigt inställningsobjekt som kan sparas av användaren. Inställningarna konfigureras och sparas vanligtvis av en användare med användargränssnittet i Datainsamling. I dessa fall kan tilläggsvyn vidta nödvändiga åtgärder för att validera de inställningar som användaren anger. Å andra sidan väljer vissa användare att använda tagg-API:er direkt utan hjälp av något användargränssnitt. Syftet med det här schemat är att göra det möjligt för Experience Platform att validera att inställningsobjekt som sparats av användare, oavsett om användargränssnittet används, är i ett format som är kompatibelt med biblioteksmodulen som ska agera på inställningsobjektet vid körning.<br><br>Ett exempelschemaobjekt är följande:<br>
 <pre class="JSON language-JSON hljs">
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -160,9 +160,9 @@ En typdefinition är ett objekt som används för att beskriva en händelse, ett
 
 ### Omformningar {#transforms}
 
-För vissa specifika användningsområden behöver tillägg inställningsobjekten som har sparats från en vy omvandlas av plattformen innan de skickas till taggens körtidsbibliotek. Du kan begära att en eller flera av dessa omformningar äger rum genom att ange egenskapen `transforms` när du definierar en typdefinition i `extension.json`. Egenskapen `transforms` är en array med objekt där varje objekt representerar en omformning som ska utföras.
+För vissa specifika användningsområden behöver tillägg inställningsobjekten som har sparats från en vy omvandlas av Experience Platform innan de skickas till taggens körtidsbibliotek. Du kan begära att en eller flera av dessa omformningar äger rum genom att ange egenskapen `transforms` när du definierar en typdefinition i `extension.json`. Egenskapen `transforms` är en array med objekt där varje objekt representerar en omformning som ska utföras.
 
-Alla omformningar kräver en `type` och en `propertyPath`. `type` måste vara en av `function`, `remove` och `file` och beskriver vilken transformeringsplattform som ska användas för inställningsobjektet. `propertyPath` är en periodavgränsad sträng som anger var taggar ska hitta den egenskap som behöver ändras i inställningsobjektet. Här är ett exempel på inställningsobjekt och några `propertyPath`s:
+Alla omformningar kräver en `type` och en `propertyPath`. `type` måste vara en av `function`, `remove` och `file` och beskriver vilken omformning av Experience Platform som ska gälla för inställningsobjektet. `propertyPath` är en periodavgränsad sträng som anger var taggar ska hitta den egenskap som behöver ändras i inställningsobjektet. Här är ett exempel på inställningsobjekt och några `propertyPath`s:
 
 ```js
 {
@@ -191,7 +191,7 @@ Avsnitten nedan beskriver de tillgängliga omformningarna och hur de används.
 
 #### Funktionsomformning
 
-Funktionstransformeringen gör att kod som skrivits av plattformsanvändare kan köras av en biblioteksmodul i det utsända taggbiblioteket.
+Funktionsomformningen gör att kod som skrivits av Experience Platform-användare kan köras av en biblioteksmodul i det utsända taggbiblioteket.
 
 Låt oss anta att vi vill tillhandahålla en&quot;anpassad manusåtgärd&quot;. Åtgärdsvyn för anpassade skript kan innehålla ett textområde där användaren kan ange kod. Låt oss anta att en användare har angett följande kod i textområdet:
 
@@ -211,7 +211,7 @@ När en regel som använder vår åtgärd utlöses i taggens körtidsbibliotek, 
 
 När inställningsobjektet sparas från åtgärdstypens vy är användarens kod bara en sträng. Detta är bra eftersom det kan serialiseras till och från JSON, men det är också dåligt eftersom det vanligtvis skulle ha släppts som en sträng i taggens körningsbibliotek i stället för som en körbar funktion. Även om du kan försöka köra koden i åtgärdstypens biblioteksmodul med [`eval`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) eller en [funktionskonstruktor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) , rekommenderas det inte eftersom [skyddsprofiler](https://developer.mozilla.org/en-US/docs/Web/Security/CSP) eventuellt blockerar körningen.
 
-Som en tillfällig lösning på den här situationen kan du använda funktionsomformningen för att få Platform att kapsla in användarens kod i en körbar funktion när den släpps ut i taggens körningsbibliotek. För att lösa vårt exempelproblem definierar vi transformeringen för typdefinitionen i `extension.json` enligt följande:
+Som en tillfällig lösning på den här situationen kan du använda funktionsomformningen för att Experience Platform ska kapsla in användarens kod i en körbar funktion när den släpps ut i taggkörningsbiblioteket. För att lösa vårt exempelproblem definierar vi transformeringen för typdefinitionen i `extension.json` enligt följande:
 
 ```json
 {
@@ -226,7 +226,7 @@ Som en tillfällig lösning på den här situationen kan du använda funktionsom
 ```
 
 * `type` definierar den typ av omformning som ska användas på inställningsobjektet.
-* `propertyPath` är en periodavgränsad sträng som anger för plattformen var den egenskap som behöver ändras i inställningsobjektet ska hittas.
+* `propertyPath` är en periodavgränsad sträng som anger för Experience Platform var den egenskap som behöver ändras i inställningsobjektet ska hittas.
 * `parameters` är en array med parameternamn som ska inkluderas i radbrytningsfunktionens signatur.
 
 När inställningsobjektet skickas i taggens körningsbibliotek omvandlas det till följande:
@@ -245,7 +245,7 @@ Din biblioteksmodul kan sedan anropa funktionen som innehåller användarens kod
 
 #### Filomvandling
 
-Med filtransformeringen kan kod som skrivits av plattformsanvändare skickas till en fil som är separat från taggens körningsbibliotek. Filen lagras tillsammans med taggens körtidsbibliotek och kan sedan läsas in efter behov av tillägget vid körning.
+Med filtransformeringen kan kod som skrivits av Experience Platform-användare skickas till en fil som är separat från taggens körningsbibliotek. Filen lagras tillsammans med taggens körtidsbibliotek och kan sedan läsas in efter behov av tillägget vid körning.
 
 Låt oss anta att vi vill tillhandahålla en&quot;anpassad manusåtgärd&quot;. Åtgärdstypens vy kan innehålla ett textområde där användaren kan ange kod. Låt oss anta att en användare har angett följande kod i textområdet:
 
@@ -275,7 +275,7 @@ Vi vill att användarens kod ska placeras i en separat fil i stället för att i
 ```
 
 * `type` definierar den typ av omformning som ska användas på inställningsobjektet.
-* `propertyPath` är en periodavgränsad sträng som anger för plattformen var den egenskap som behöver ändras i inställningsobjektet ska hittas.
+* `propertyPath` är en periodavgränsad sträng som anger för Experience Platform var den egenskap som behöver ändras i inställningsobjektet ska hittas.
 
 När inställningsobjektet skickas i taggens körningsbibliotek omvandlas det till följande:
 
@@ -321,7 +321,7 @@ Vi vill inte inkludera egenskapen `bar` i taggens körningsbibliotek. För att l
 ```
 
 * `type` definierar den typ av omformning som ska användas på inställningsobjektet.
-* `propertyPath` är en periodavgränsad sträng som anger för plattformen var den egenskap som behöver ändras i inställningsobjektet ska hittas.
+* `propertyPath` är en periodavgränsad sträng som anger för Experience Platform var den egenskap som behöver ändras i inställningsobjektet ska hittas.
 
 När inställningsobjektet skickas i taggens körningsbibliotek omvandlas det till följande:
 

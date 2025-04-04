@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utforska en e-handelsanslutning med API:t för flödestjänsten
 description: I den här självstudien används API:t för Flow Service för att utforska e-handelsanslutningar.
 exl-id: 832ce399-6c9f-40da-8e7c-5434503c16b6
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -21,14 +21,14 @@ I den här självstudien används [!DNL Flow Service]-API:t för att utforska en
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Sources]](../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Platform]-tjänster.
-* [[!DNL Sandboxes]](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sources]](../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Experience Platform]-tjänster.
+* [[!DNL Sandboxes]](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en **[!UICONTROL eCommerce]**-anslutning med API:t [!DNL Flow Service].
 
 ### Hämta ett anslutnings-ID
 
-För att kunna utforska din **[!UICONTROL eCommerce]**-anslutning med [!DNL Platform] API:er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning för den **[!UICONTROL eCommerce]**-anslutning du vill arbeta med kan du skapa en genom följande självstudie:
+För att kunna utforska din **[!UICONTROL eCommerce]**-anslutning med [!DNL Experience Platform] API:er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning för den **[!UICONTROL eCommerce]**-anslutning du vill arbeta med kan du skapa en genom följande självstudie:
 
 * [Förminska](../create/ecommerce/shopify.md)
 
@@ -38,23 +38,23 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * `Content-Type: application/json`
 
 ## Utforska era datatabeller
 
-Med ditt **[!UICONTROL eCommerce]**-anslutnings-ID kan du utforska datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Platform].
+Med ditt anslutnings-ID för **[!UICONTROL eCommerce]** kan du utforska datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Experience Platform].
 
 **API-format**
 
@@ -79,7 +79,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en matris med tabeller från din **[!UICONTROL eCommerce]**-anslutning. Hitta tabellen som du vill hämta till [!DNL Platform] och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
+Ett lyckat svar returnerar en matris med tabeller från din **[!UICONTROL eCommerce]**-anslutning. Hitta tabellen som du vill hämta till [!DNL Experience Platform] och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
 
 ```json
 [
@@ -114,9 +114,9 @@ Ett lyckat svar returnerar en matris med tabeller från din **[!UICONTROL eComme
 ]
 ```
 
-## Inspect tabellstrukturen
+## Inspektera strukturen i en tabell
 
-Om du vill inspektera strukturen för en tabell från din **[!UICONTROL eCommerce]**-anslutning utför du en GET-förfrågan samtidigt som du anger sökvägen till en tabell i en `object` -frågeparameter.
+Om du vill inspektera strukturen för en tabell från din **[!UICONTROL eCommerce]**-anslutning utför du en GET-begäran samtidigt som du anger sökvägen till en tabell i en `object` -frågeparameter.
 
 **API-format**
 
@@ -196,4 +196,4 @@ Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om 
 
 ## Nästa steg
 
-Genom att följa den här självstudien har du undersökt din **[!UICONTROL eCommerce]**-anslutning, hittat sökvägen till tabellen som du vill importera till [!DNL Platform] och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in e-handelsdata och hämta dem till plattformen](../collect/ecommerce.md).
+Genom att följa den här självstudien har du undersökt din **[!UICONTROL eCommerce]**-anslutning, hittat sökvägen till tabellen som du vill importera till [!DNL Experience Platform] och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in e-handelsdata och hämta dem till Experience Platform](../collect/ecommerce.md).
