@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: c1f06b14cb33a0fc29a50a2851c1fb52ae82c45d
+source-git-commit: cfa8b24784ed24384131fe1248bb3f7dd41214c6
 workflow-type: tm+mt
-source-wordcount: '4152'
+source-wordcount: '4167'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,7 @@ Du kan lägga till fler fält i målportalen genom att välja ![filterattributsi
 | ----- | ----------- |
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
-| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är segmenteringstjänsten, anpassad överföring, målgruppskomposition och Audience Manager. |
+| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller) och [ 16}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview). |
 | [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för fältet är `Draft`, `Inactive` och `Published`. Mer information om livscykelstatus, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd, finns i avsnittet [livscykelstatus i Vanliga frågor om segmentering](../faq.md#lifecycle-status). |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge] och [!UICONTROL Not Scheduled]. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
