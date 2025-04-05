@@ -2,9 +2,9 @@
 title: Tips för att maximera värdet med Adobe Experience Platform Data Distiller - OS656
 description: Lär dig att maximera värdet med Adobe Experience Platform Data Distiller genom att berika kundprofildata i realtid och använda beteendeinsikter för att skapa riktade målgrupper. Den här resursen innehåller ett exempel på en datamängd och en fallstudie som visar hur man använder modellen för senaste, frekventa, monetära (RFM) för kundsegmentering.
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: 30db967fc94d8f5b9ded22ce81da3d51001610af
+source-git-commit: 3a8c53a5c5e72231c195ccfab32109ed4971fa8b
 workflow-type: tm+mt
-source-wordcount: '3624'
+source-wordcount: '3663'
 ht-degree: 0%
 
 ---
@@ -50,6 +50,10 @@ Alla marknadsföringsmodelleringstekniker innefattar kompromisser, som erbjuder 
 RFM-modellering har dock begränsningar. Det förutsätter enhetlighet inom segment baserat på senaste, frekventa och monetära värden, vilket kan göra kundbeteendet överdrivet. Modellen tilldelar också dessa faktorer samma vikt, vilket eventuellt inte motsvarar kundens värde. Dessutom tar den inte hänsyn till sammanhanget, t.ex. produktspecifika egenskaper eller kundpreferenser, vilket kan leda till missförstånd i köpbeteendet.
 
 ## Bygg en dynamisk RFM-poängbaserad SQL-målgrupp {#build-a-dynamic-rfm-audience}
+
+Följande infografik ger en översikt på hög nivå över arbetsflödet för att skapa RFM SQL-målgrupper som beskrivs i den här självstudien.
+
+![En infografik med namnet&quot;RFM-Score-Based SQL Audience&quot; som illustrerar fyra steg: ladda upp CSV, utforska data, berika med RFM-poäng och aktivera målgruppen.](../images/data-distiller/top-tips-to-maximize-value/rfm-score-based-sql-audience.png)
 
 Innan du påbörjar fallstudien Luma måste du importera en exempeldatauppsättning. Först [markerar du länken för att hämta `luma_web_data.zip`-datauppsättningen lokalt](../resources/luma_web_data.zip). Exempeldatauppsättningen är en csv-fil i ett komprimerat ZIP-format som är anpassad efter användningsfallet. Dekomprimera den här ZIP-filen med Adobe Acrobat eller ett pålitligt filextraheringsverktyg, till exempel det inbyggda verktyget i operativsystemet. I praktiken hämtar du vanligtvis data från Adobe Analytics, Adobe Commerce eller Adobe Web/Mobile SDK.
 
