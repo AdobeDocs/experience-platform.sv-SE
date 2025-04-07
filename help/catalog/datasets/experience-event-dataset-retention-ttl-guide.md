@@ -2,9 +2,9 @@
 title: Hantera lagring av Experience Event-datauppsättningar i Data Lake med TTL
 description: Lär dig hur du utvärderar, ställer in och hanterar lagring av Experience Event-datauppsättningar i datasjön med hjälp av TTL-konfigurationer (Time-To-Live) med Adobe Experience Platform API:er. Den här guiden förklarar hur TTL-radnivåförfallodatum stöder principer för datalagring, optimerar lagringseffektiviteten och säkerställer effektiv livscykelhantering. Här finns också användningsexempel och metodtips som hjälper dig att effektivt tillämpa TTL.
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 767e9536862799e31d1ab5c77588d485f80c59e9
 workflow-type: tm+mt
-source-wordcount: '2340'
+source-wordcount: '2406'
 ht-degree: 0%
 
 ---
@@ -50,11 +50,13 @@ Innan du tillämpar en kvarhållningsprincip måste du bedöma om datauppsättni
 
 Om historiska uppgifter är väsentliga för långtidsanalys eller affärstransaktioner är TTL kanske inte rätt metod. Genom att granska dessa faktorer ser du till att TTL-värdet anpassas efter dina datalagringsbehov utan att datatillgängligheten påverkas negativt.
 
-## Planera dina frågor
+## Planera dina frågor {#plan-queries}
 
-Innan du använder TTL bör du använda frågor för att analysera datauppsättningens storlek och relevans. Genom att köra riktade frågor kan du avgöra hur mycket data som ska behållas eller tas bort under olika TTL-konfigurationer.
+Innan TTL används är det viktigt att utvärdera datauppsättningens storlek och datarelevans samt att utvärdera hur mycket historiska data som ska lagras. I följande exempel beskrivs hela processen för implementering av TTL, från planering av frågor till övervakning av kvarhållningseffektivitet.
 
-I följande SQL-fråga räknas till exempel antalet poster som har skapats under de senaste 30 dagarna:
+![Ett visuellt arbetsflöde för implementering av TTL på Experience Event-datauppsättningar. Stegen är: utvärdera datalängd och påverkan av borttagning, validera TTL-inställningar med frågor, konfigurera TTL via Catalog Service API och övervaka kontinuerligt TTL-påverkan och göra justeringar.](../images/datasets/dataset-retention-ttl-guide/manage-experience-event-dataset-retention-in-the-data-lake.png)
+
+Genom att köra riktade frågor kan du avgöra hur mycket data som ska behållas eller tas bort under olika TTL-konfigurationer. I följande SQL-fråga räknas till exempel antalet poster som har skapats under de senaste 30 dagarna:
 
 ```sql
 SELECT COUNT(1) FROM [datasetName] WHERE timestamp > date_sub(now(), INTERVAL 30 DAY);
