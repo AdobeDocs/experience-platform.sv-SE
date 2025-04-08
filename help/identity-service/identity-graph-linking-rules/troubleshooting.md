@@ -2,9 +2,9 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: 0e7911e21c546fb40cd51f03a5a6d6a2aa751dec
 workflow-type: tm+mt
-source-wordcount: '3279'
+source-wordcount: '3331'
 ht-degree: 0%
 
 ---
@@ -175,6 +175,10 @@ Frågan förutsätter att:
 
 * En identitet skickas från identityMap och en annan identitet skickas från en identitetsbeskrivning. **OBS!**: I XDM-scheman (Experience Data Model) är identitetsbeskrivningen det fält som markerats som en identitet.
 * CRMID skickas via identityMap. Om CRMID skickas som ett fält tar du bort `key='Email'` från WHERE-satsen.
+
+>[!NOTE]
+>
+>**Vid WebSDK-implementering och ECID-duplicering**: Om ECID-fältet har markerats som en identitet (identitetsbeskrivning) i stället för identityMap genereras ett andra ECID i identityMap. Den här dupliceringen kan förhindra att kundprofilen i realtid lagrar anonyma händelser på grund av att det finns två ECID:n i en enda händelse.
 
 ## Problem relaterade till diagrambeteende {#graph-behavior-related-issues}
 
