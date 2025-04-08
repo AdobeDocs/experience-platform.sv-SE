@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: cfa8b24784ed24384131fe1248bb3f7dd41214c6
+source-git-commit: d80378d6ffc9598c21bc217c0577f611fe8671cc
 workflow-type: tm+mt
-source-wordcount: '4167'
+source-wordcount: '4209'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ Audience Portal är ett centralt nav i Adobe Experience Platform som gör att ni
 
 I Audience Portal kan du utföra följande uppgifter:
 
-- [Visa en lista över era målgrupper](#audience-list)
+>[!BEGINSHADEBOX]
+
+- [Visa en lista över era målgrupper](#list)
    - [Använd snabba åtgärder på era målgrupper](#quick-actions)
    - [Anpassa egenskaperna som visas i din lista över målgrupper](#customize)
    - [Använd filter, mappar och taggar för att ordna era målgrupper](#manage-audiences)
@@ -28,6 +30,8 @@ I Audience Portal kan du utföra följande uppgifter:
    - [Använd Federated Audience Composition för att skapa en målgrupp med data från ert befintliga datalager](#fac)
    - [Använd Data Distiller för att skapa en målgrupp](#data-distiller)
 - [Importera externt genererade målgrupper](#import-audience)
+
+>[!ENDSHADEBOX]
 
 Om du vill öppna målportalen väljer du fliken **[!UICONTROL Browse]** i segmenteringsavsnittet.
 
@@ -64,7 +68,7 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | [!UICONTROL Copy] | Segmenteringstjänst | Duplicerar den valda målgruppen. Mer information om den här funktionen finns i [Vanliga frågor om segmentering](../faq.md#copy). |
 | [!UICONTROL Apply access labels] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL Publish] | Anpassad överföring, segmenteringstjänst | Publicerar den valda målgruppen. Mer information om hantering av livscykelstatus finns i avsnittet [livscykeltillstånd i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
-| [!UICONTROL Deactivate] | Anpassad överföring, segmenteringstjänst | Inaktiverar den valda målgruppen. Mer information om hantering av livscykelstatus finns i avsnittet [livscykeltillstånd i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
+| [!UICONTROL Deactivate] | Anpassad överföring, segmenteringstjänst | Inaktiverar den valda målgruppen. Observera att för att inaktivera en målgrupp kan **inte** aktiveras i **vilket**-mål som helst (inklusive icke-Experience Platform-mål) eller vara en del av **någon** andra målgrupper. Mer information om hantering av livscykelstatus finns i avsnittet [livscykeltillstånd i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
 | [!UICONTROL Delete] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. Publiker som används i underordnade mål eller är beroende av andra målgrupper **kan inte** tas bort. Mer information om borttagning av målgrupper finns i [Frågor och svar om segmentering](../faq.md#lifecycle-states). |
 | [!UICONTROL Add to package] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Flyttar publiken mellan sandlådor. Mer information om den här funktionen finns i [handboken för sandlådeverktyg](../../sandboxes/ui/sandbox-tooling.md). |
 
@@ -199,7 +203,7 @@ Listan med tillgängliga filter visas.
 
 | Filter | Beskrivning |
 | ------ | ----------- |
-| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. De tillgängliga alternativen är segmenteringstjänst, anpassad överföring, målgruppskomposition och Audience Manager. |
+| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller) och [ 16}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview). |
 | [!UICONTROL Has any tag] | Gör att du kan filtrera efter taggar. Du kan välja mellan **[!UICONTROL Has any tag]** och **[!UICONTROL Has all tags]**. När **[!UICONTROL Has any tag]** har valts kommer de filtrerade målgrupperna att inkludera **alla** av de taggar som du har lagt till. När **[!UICONTROL Has all tags]** har valts måste de filtrerade målgrupperna innehålla **all** av de taggar du har lagt till. |
 | [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. De tillgängliga alternativen är [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive] och [!UICONTROL Published]. |
 | [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens (utvärderingsmetod). Tillgängliga alternativ är [!UICONTROL Batch], [!UICONTROL Streaming] och [!UICONTROL Edge] |
