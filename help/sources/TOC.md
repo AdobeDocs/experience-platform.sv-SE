@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 47f6251a190a12b86ec566e3ba72fa34a0bd028b
 workflow-type: tm+mt
-source-wordcount: '1064'
-ht-degree: 6%
+source-wordcount: '1070'
+ht-degree: 7%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 6%
       - [Adobe Commerce-källa](connectors/adobe-applications/commerce.md)
       - [Källa för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - [Datainsamlingskälla](connectors/adobe-applications/data-collection.md)
-      - Fältmappningar {#mapping}
+      - Fältkopplingar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager fältkopplingar](connectors/adobe-applications/mapping/audience-manager.md)
          - [Marketo Engage fältkopplingar](connectors/adobe-applications/mapping/marketo.md)
@@ -39,11 +39,11 @@ ht-degree: 6%
    - Advertising {#advertising}
       - [Google Ads Connector](connectors/advertising/ads.md)
       - [Pinterest Ads](connectors/advertising/pinterest-ads.md)
-   - Analyser {#analytics}
+   - Analytics  {#analytics}
       - [Koppling mellan olika paneler](connectors/analytics/mixpanel.md)
       - [Pendo](connectors/analytics/pendo-webhook.md)
       - [Regnfokus](connectors/analytics/rainfocus.md)
-   - Molnlagring {#cloud-storage}
+   - molnlagring {#cloud-storage}
       - [Amazon Kinesis-kontakt](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
@@ -66,7 +66,7 @@ ht-degree: 6%
       - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)
       - [Zoho CRM-koppling](connectors/crm/zoho.md)
-   - Kundens framgång {#customer-success}
+   - Nöjda kunder {#customer-success}
       - [Oracle Service Cloud](connectors/customer-success/oracle-service-cloud.md)
       - [Salesforce Service Cloud-anslutning](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow-koppling](connectors/customer-success/servicenow.md)
@@ -95,6 +95,7 @@ ht-degree: 6%
    - Data- och identitetspartner {#data-partner}
       - [Acxiom-datainmatning](connectors/data-partners/acxiom-data-ingestion.md)
       - [Acxiom Prospecting Data Import](connectors/data-partners/acxiom-prospecting-data-import.md)
+      - [Algoliska användarprofiler](connectors/data-partners/algolia-user-profiles.md)
       - [Bomborametod](connectors/data-partners/bombora.md)
       - [Demandbase-metod](connectors/data-partners/demandbase.md)
       - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
@@ -122,17 +123,17 @@ ht-degree: 6%
    - Protokoll {#protocols}
       - [Allmän OData-koppling](connectors/protocols/odata.md)
       - [Allmän REST API-koppling](connectors/protocols/generic-rest.md)
-   - Strömmar {#streaming}
+   - Direktuppspelning {#streaming}
       - [HTTP API-anslutning](connectors/streaming/http.md)
-- API-självstudiekurser {#api-tutorials}
+- API-självstudier {#api-tutorials}
    - Skapa en basanslutning {#create}
       - Advertising {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/api/create/advertising/pinterest-ads.md)
-      - Analyser {#analytics}
+      - Analytics  {#analytics}
          - [Blandpanel](tutorials/api/create/analytics/mixpanel.md)
          - [Pendo](tutorials/api/create/analytics/pendo-webhook.md)
-      - Molnlagring {#cloud-storage}
+      - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
@@ -155,7 +156,7 @@ ht-degree: 6%
          - [SugarCRM-händelser](tutorials/api/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
-      - Kundens framgång {#customer-success}
+      - Nöjda kunder {#customer-success}
          - [Oracle Service Cloud](tutorials/api/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
@@ -204,7 +205,7 @@ ht-degree: 6%
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/api/create/protocols/odata.md)
          - [Allmänt REST API](tutorials/api/create/protocols/generic-rest.md)
-      - Strömmar {#streaming}
+      - Direktuppspelning {#streaming}
          - [HTTP-API](tutorials/api/create/streaming/http.md)
    - Utforska data {#explore}
       - [Utforska annonsdata](tutorials/api/explore/advertising.md)
@@ -252,11 +253,11 @@ ht-degree: 6%
       - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
-      - Analyser {#analytics}
+      - Analytics  {#analytics}
          - [Blandpanel](tutorials/ui/create/analytics/mixpanel.md)
          - [Pendo](tutorials/ui/create/analytics/pendo-webhook.md)
          - [Regnfokus](tutorials/ui/create/analytics/rainfocus.md)
-      - Molnlagring {#cloud-storage}
+      - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
@@ -280,7 +281,7 @@ ht-degree: 6%
          - [SugarCRM-händelser](tutorials/ui/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
-      - Kundens framgång {#customer-success}
+      - Nöjda kunder {#customer-success}
          - [Oracle Service Cloud](tutorials/ui/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
@@ -309,6 +310,7 @@ ht-degree: 6%
       - Data- och identitetspartner {#data-partner}
          - [Acxiom-datainmatning](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
          - [Acxiom Prospecting Data Import](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
+         - [Algoliska användarprofiler](tutorials/ui/create/data-partners/algolia-user-profiles.md)
          - [Bomborametod](tutorials/ui/create/data-partners/bombora.md)
          - [Demandbase-metod](tutorials/ui/create/data-partners/demandbase.md)
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
@@ -337,7 +339,7 @@ ht-degree: 6%
          - [Stripe](tutorials/ui/create/payments/stripe.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/ui/create/protocols/odata.md)
-      - Strömmar {#streaming}
+      - Direktuppspelning {#streaming}
          - [HTTP-API](tutorials/ui/create/streaming/http.md)
    - Konfigurera ett dataflöde {#dataflow}
       - [Advertising-anslutningsdataflöde](tutorials/ui/dataflow/advertising.md)
@@ -372,7 +374,7 @@ ht-degree: 6%
       - [Konfigurera autentiseringsspecifikation](sources-sdk/config/authspec.md)
       - [Konfigurera källspecifikation](sources-sdk/config/sourcespec.md)
       - [Konfigurera specifikation för utforskande](sources-sdk/config/explorespec.md)
-   - Självbetjänade källor (Batch SDK) API-guide {#self-serve-api}
+   - Guide för självbetjäningskällor (Batch SDK) {#self-serve-api}
       - [Självbetjänade källor (Batch SDK) - API - översikt](sources-sdk/api/api-overview.md)
       - [Komma igång](sources-sdk/api/getting-started.md)
       - [Skapa en anslutningsspecifikation](sources-sdk/api/create.md)
@@ -385,7 +387,7 @@ ht-degree: 6%
       - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
       - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
       - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
-   - Strömmar SDK {#streaming-sdk}
+   - Strömma i SDK {#streaming-sdk}
       - [Kom igång med självbetjäningskällor (Streaming SDK)](sources-sdk/streaming/getting-started.md)
       - [Skapa en anslutningsspecifikation för en strömningskälla](sources-sdk/streaming/create.md)
       - [Uppdatera en anslutningsspecifikation för en strömningskälla](sources-sdk/streaming/update-connection-specs.md)
