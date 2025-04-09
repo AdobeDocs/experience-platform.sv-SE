@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f0879683629ba10ed1b799e52f0adf332f079daf
 workflow-type: tm+mt
 source-wordcount: '1235'
-ht-degree: 93%
+ht-degree: 97%
 
 ---
 
@@ -43,22 +43,22 @@ Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer inform
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya eller uppdaterade mål** {#new-updated-destinations}
+**Nya eller uppdaterade mål**
 
 | Mål | Beskrivning |
 | --- | --- |
-| [Anslutning för Demandbase-användare](/help/destinations/catalog/advertising/demandbase-people.md) | Använd anslutningen [!DNL Demandbase People] för att aktivera profiler för dina Demandbase-kampanjer för målgruppsanpassning, personalisering och nedtryckning. |
-| [Bombora-kontoanslutning](/help/destinations/catalog/advertising/bombora.md) | Använd [!DNL Bombora]-anslutningen för att aktivera profiler för era Bombora-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på [kontomåldrar](/help/segmentation/types/account-audiences.md). |
+| [Demandbase People-anslutning](/help/destinations/catalog/advertising/demandbase-people.md) | Använd [!DNL Demandbase People]-anslutningen för att aktivera profiler för dina Demandbase-kampanjer för målgruppsinriktning, anpassning och exkludering. |
+| [Bombora-kontoanslutning](/help/destinations/catalog/advertising/bombora.md) | Använd [!DNL Bombora]-anslutningen för att aktivera profiler för dina Bombora-kampanjer för målgruppsinriktning, anpassning och exkludering, baserat på [kontomålgrupper](/help/segmentation/types/account-audiences.md). |
 | Uppgradering av [Airship-attribut](/help/destinations/catalog/mobile-engagement/airship-attributes.md) | Från och med 25 mars 2025 kan du se två **[!UICONTROL Airship Attributes]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga målanslutningen **[!UICONTROL Airship Attributes]** har bytt namn till **[!UICONTROL (Deprecated) Airship Attributes]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Airship Attributes]**. <br> Använd anslutningen **[!UICONTROL Airship Attributes]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet [!DNL (Deprecated) Airship Attributes] uppdateras de automatiskt. Du behöver därför inte göra något. <br> Om du skapar dataflöden via [Flow Service-API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden: <ul><li> Flödesspecifikation-id: `a862e0be-966e-4e5a-80d3-1bb566461986`</li><li> Anslutningsspecifikation-id: `594bc002-4a47-49b7-8a98-ac0d21045502`</li> </ul> |
 
 {style="table-layout:auto"}
 
-**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
 | [Förbättringar av rapporteringsnoggrannhet för strömningsmål](../../dataflows/ui/monitor-destinations.md) | Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsdestinationerna. Denna förbättring säkerställer en bättre anpassning mellan rapporteringen i Experience Platform och destinationsplattformarna. <br> Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsåterförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsåterförsöket i det totala antalet. <br> Den här förbättringen gäller för alla strömningsdestinationerna. <br> Efter denna förbättring kan användare av strömningsdestinationer se en förväntad minskning av antalet **[!UICONTROL Identities failed]**. |
-| [Fältexport av karttyp för storföretags- och Edge-destinationer](/help/destinations/ui/export-arrays-maps-objects.md) | När du exporterar data till destinationerna [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) kan du nu välja karttypsfält för export i mappningssteget i aktiveringsarbetsflödet. <br> ![Exportera karttypsfält till storföretagsdestinationer.](../2025/assets/march/export-map.png "Exportera karttypsfält till storföretagsdestinationer."){width="250" align="center" zoomable="yes"} |
+| [Fältexport av karttyp för storföretags- och Edge-destinationer](/help/destinations/ui/export-arrays-maps-objects.md) | När du exporterar data till destinationerna [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) kan du nu välja karttypsfält för export i mappningssteget i aktiveringsarbetsflödet. <br> ![Exportera karttypsfält till storföretagsdestinationer.](../2025/assets/march/export-map.png "Exportera karttypsfält till storföretagsdestinationer.") |
 
 {style="table-layout:auto"}
 
@@ -66,7 +66,7 @@ Mer information finns i [översikten över destinationer](../../destinations/hom
 
 ## Federerad målgruppssammansättning {#federated-audience-composition}
 
-Information om de senaste uppdateringarna för Federated Audience Composition finns i [dedikerad versionsinformation](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/release-notes) här.
+Information om de senaste uppdateringarna för federerad målgruppssammansättning finns i [dedikerad versionsinformation](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/release-notes) här.
 
 ## Segmenteringstjänst {#segmentation-service}
 
