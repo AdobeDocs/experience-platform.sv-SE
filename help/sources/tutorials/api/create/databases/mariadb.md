@@ -1,52 +1,180 @@
 ---
-keywords: Experience Platform;home;populära topics;MariaDB;mariadb
-solution: Experience Platform
-title: Skapa en MariaDB-basanslutning med API:t för Flow Service
-type: Tutorial
-description: Lär dig hur du ansluter Adobe Experience Platform till MariaDB med API:t för Flow Service.
+title: Anslut MariaDB till Experience Platform med API:t för Flow Service
+description: Lär dig hur du ansluter ditt MariaDB-konto till Experience Platform med API:er.
 exl-id: 9b7ff394-ca55-4ab4-99ef-85c80b04a6df
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d5d47f9ca3c01424660fe33f8310586a70a32875
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '644'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL MariaDB]-basanslutning med API:t [!DNL Flow Service]
+# Anslut [!DNL MariaDB] till Experience Platform med API:t [!DNL Flow Service]
 
-En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
-
-I den här självstudien får du hjälp med att skapa en basanslutning för [!DNL MariaDB] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL MariaDB]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
-Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL MariaDB] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till [!DNL MariaDB] måste du ange följande anslutningsegenskap:
-
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med din [!DNL MariaDB]-autentisering. Anslutningssträngsmönstret [!DNL MariaDB] är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL MariaDB] är `3000eb99-cd47-43f3-827c-43caf170f015`. |
-
-Mer information om hur du hämtar en anslutningssträng finns i det här [[!DNL MariaDB] dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
+Läs [[!DNL MariaDB] översikten](../../../../connectors/databases/mariadb.md#prerequisites) om du vill ha information om autentisering.
 
 ### Använda Experience Platform API:er
 
-Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
+Läs guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md) om du vill ha information om hur du kan anropa Experience Platform API:er.
 
-## Skapa en basanslutning
+## Anslut [!DNL MariaDB] till Experience Platform på Azure {#azure}
+
+Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL MariaDB]-konto till Experience Platform på Azure.
+
+### Skapa en basanslutning för [!DNL MariaDB] på Experience Platform på Azure {#azure-base}
 
 En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL MariaDB]-autentiseringsuppgifter som en del av parametrarna för begäran.
+**API-format**
+
+```https
+POST /connections
+```
+
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger autentiseringsuppgifterna för ditt [!DNL MariaDB]-konto.
+
+>[!BEGINTABS]
+
+>[!TAB Anslutningssträngsbaserad autentisering]
+
+**Begäran**
+
+Följande begäran skapar en basanslutning för en [!DNL MariaDB]-källa med anslutningssträngsbaserad autentisering.
+
++++Exempel på visningsbegäran
+
+```shell
+curl -X POST \
+'https://platform.adobe.io/data/foundation/flowservice/connections' \
+-H 'Authorization: Bearer {ACCESS_TOKEN}' \
+-H 'x-api-key: {API_KEY}' \
+-H 'x-gw-ims-org-id: {ORG_ID}' \
+-H 'x-sandbox-name: {SANDBOX_NAME}' \
+-H 'Content-Type: application/json' \
+-d '{
+    "name": "MariaDB connection",
+    "description": "MariaDB connection",
+    "auth": {
+        "specName": "Connection String Based Authentication",
+        "params": {
+            "connectionString": "Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}"
+        }
+    },
+    "connectionSpec": {
+        "id": "3000eb99-cd47-43f3-827c-43caf170f015",
+        "version": "1.0"
+    }
+}'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `auth.params.connectionString` | Anslutningssträngen som är associerad med din [!DNL MariaDB]-autentisering. Anslutningssträngsmönstret [!DNL MariaDB] är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MariaDB] är: `3000eb99-cd47-43f3-827c-43caf170f015`. |
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`).
+
++++Visa svarsexempel
+
+```json
+{
+    "id": "be3a2d71-1fb6-4fea-ba2d-711fb61fea50",
+    "etag": "\"02002624-0000-0200-0000-5e41f7040000\""
+}
+```
+
++++
+
+>[!TAB Grundläggande autentisering]
+
+**Begäran**
+
+Följande begäran skapar en basanslutning för en [!DNL MariaDB]-källa med grundläggande autentisering.
+
++++Exempel på visningsbegäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "MariaDB on Experience Platform using basic auth",
+      "description": "MariaDB on Experience Platform using basic auth",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "server": "{SERVER}",
+              "database": "{DATABASE}",
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "sslMode": "{SSLMODE}"
+          }
+      },
+      "connectionSpec": {
+          "id": "3000eb99-cd47-43f3-827c-43caf170f015",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `auth.params.server` | Namnet eller IP-adressen för din [!DNL MariaDB]-databas. |
+| `auth.params.database` | Namnet på databasen. |
+| `auth.params.username` | Användarnamnet som motsvarar databasen. |
+| `auth.params.password` | Lösenordet som motsvarar databasen. |
+| `auth.params.sslMode` | Den metod som används för att kryptera data under dataöverföring. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MariaDB] är: `3000eb99-cd47-43f3-827c-43caf170f015`. |
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`).
+
++++Visa svarsexempel
+
+```json
+{
+    "id": "f847950c-1c12-4568-a550-d5312b16fdb8",
+    "etag": "\"0c0099f4-0000-0200-0000-67da91710000\""
+}
+```
+
++++
+
+>[!ENDTABS]
+
+## Anslut [!DNL MariaDB] till Experience Platform på Amazon Web Services {#aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
+
+Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL MariaDB]-konto till Experience Platform på AWS.
+
+### Skapa en basanslutning för [!DNL MariaDB] på Experience Platform på AWS {#aws-base}
 
 **API-format**
 
@@ -56,47 +184,64 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en basanslutning för [!DNL MariaDB]:
+Följande begäran skapar en basanslutning för [!DNL MariaDB] att ansluta till Experience Platform på AWS.
+
++++Exempel på visningsbegäran
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Test connection for maria-db",
-        "description": "Test connection for maria-db",
-        "auth": {
-            "specName": "Connection String Based Authentication",
-            "params": {
-                "connectionString": "Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}"
-            }
-        },
-        "connectionSpec": {
-            "id": "3000eb99-cd47-43f3-827c-43caf170f015",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "MariaDB on Experience Platform AWS",
+      "description": "MariaDB on Experience Platform AWS",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "server": "{SERVER}",
+              "database": "{DATABASE}",
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "sslMode": "{SSLMODE}"
+          }
+      },
+      "connectionSpec": {
+          "id": "3000eb99-cd47-43f3-827c-43caf170f015",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med din [!DNL MariaDB]-autentisering. Anslutningssträngsmönstret [!DNL MariaDB] är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| --- | --- |
+| `auth.params.server` | Namnet eller IP-adressen för din [!DNL MariaDB]-databas. |
+| `auth.params.database` | Namnet på databasen. |
+| `auth.params.username` | Användarnamnet som motsvarar databasen. |
+| `auth.params.password` | Lösenordet som motsvarar databasen. |
+| `auth.params.sslMode` | Den metod som används för att kryptera data under dataöverföring. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MariaDB] är: `3000eb99-cd47-43f3-827c-43caf170f015`. |
+
++++
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska din databas i nästa steg.
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`).
+
++++Visa svarsexempel
 
 ```json
 {
-    "id": "be3a2d71-1fb6-4fea-ba2d-711fb61fea50",
-    "etag": "\"02002624-0000-0200-0000-5e41f7040000\""
+    "id": "f847950c-1c12-4568-a550-d5312b16fdb8",
+    "etag": "\"0c0099f4-0000-0200-0000-67da91710000\""
 }
 ```
+
++++
+
 
 ## Nästa steg
 

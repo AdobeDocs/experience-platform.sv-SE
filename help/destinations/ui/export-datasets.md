@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 5624dab337bcd27e28b4153459bb4e85fab22d6f
+source-git-commit: 29fb232ecfbd119ef84d62599fc79249513dca43
 workflow-type: tm+mt
-source-wordcount: '2529'
+source-wordcount: '2638'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,19 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
+>Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
 
-I den här artikeln förklaras det arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats som du föredrar, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage] med hjälp av användargränssnittet i Experience Platform.
+>[!IMPORTANT]
+>
+>**Åtgärdsalternativ**: I [september 2024-versionen av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime` datum för export av datauppsättningsdataflöden. Adobe har också introducerat ett standardslutdatum den 1 maj 2025 för alla dataflöden för export av datauppsättningar som skapats *före versionen* från september 2024.
+>
+>För något av dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars stoppas exporterna på det datumet. Använd användargränssnittet i Experience Platform för att visa vilka dataflöden som kommer att ställas in för att upphöra den 1 maj 2025.
+>
+>Se [avsnittet](#scheduling) schemaläggning om du vill ha information om hur du redigerar slutdatumet för ett dataflöde för export av datauppsättning.
 
-Du kan också använda API:erna för Experience Platform för att exportera datauppsättningar. Mer information finns i [API-självstudiekursen för exportdatamängder](/help/destinations/api/export-datasets.md).
+I den här artikeln förklaras det arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats som du föredrar, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage] med hjälp av Experience Platform användargränssnitt.
+
+Du kan också använda Experience Platform API:er för att exportera datauppsättningar. Mer information finns i [API-självstudiekursen för exportdatamängder](/help/destinations/api/export-datasets.md).
 
 ## Tillgängliga datauppsättningar för export {#datasets-to-export}
 
@@ -38,11 +46,11 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
   <tr>
     <td rowspan="2">Real-Time CDP</td>
     <td>Prime</td>
-    <td>Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</td>
+    <td>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
+    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
@@ -56,7 +64,7 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
   <tr>
     <td>Customer Journey Analytics</td>
     <td>Alla</td>
-    <td> Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</td>
+    <td> Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</td>
   </tr>
   <tr>
     <td>Data Distiller</td>
@@ -110,11 +118,11 @@ Följ instruktionerna för att välja ett mål där du kan exportera datauppsät
 
 1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
 
-   ![Fliken Målkatalog med katalogkontrollen markerad.](/help/destinations/assets/ui/export-datasets/catalog-tab.png)
+   ![Fliken Målkatalog med kontrollen Katalog markerad.](/help/destinations/assets/ui/export-datasets/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate]** eller **[!UICONTROL Export datasets]** på kortet som motsvarar målet som du vill exportera datauppsättningar till.
+1. Välj **[!UICONTROL Activate]** eller **[!UICONTROL Export datasets]** på kortet som motsvarar det mål som du vill exportera datauppsättningar till.
 
-   ![Fliken Målkatalog med aktiveringskontrollen markerad.](/help/destinations/assets/ui/export-datasets/activate-button.png)
+   ![Fliken Målkatalog med kontrollen Aktivera markerad.](/help/destinations/assets/ui/export-datasets/activate-button.png)
 
 1. Välj **[!UICONTROL Data type Datasets]** och välj den målanslutning som du vill exportera datauppsättningar till. Välj sedan **[!UICONTROL Next]**.
 
@@ -124,13 +132,13 @@ Följ instruktionerna för att välja ett mål där du kan exportera datauppsät
 
 ![Arbetsflöde för målaktivering med datauppsättningskontroll markerat.](/help/destinations/assets/ui/export-datasets/select-datatype-datasets.png)
 
-1. Vyn **[!UICONTROL Select datasets]** visas. Gå till nästa avsnitt för att [välja dina datauppsättningar](#select-datasets) för export.
+1. Vyn **[!UICONTROL Select datasets]** visas. Fortsätt till nästa avsnitt för att [välja dina datauppsättningar](#select-datasets) för export.
 
-## Välj datauppsättningar {#select-datasets}
+## Välj dina datauppsättningar {#select-datasets}
 
-Använd kryssrutorna till vänster om datauppsättningsnamnen för att markera de datauppsättningar som du vill exportera till målet och välj sedan **[!UICONTROL Next]**.
+Använd kryssrutorna till vänster om datauppsättningens namn för att välja de datauppsättningar som du vill exportera till målet och välj **[!UICONTROL Next]** sedan .
 
-![Arbetsflöde för dataexport med steget Välj datauppsättningar där du kan välja vilka datauppsättningar som ska exporteras.](/help/destinations/assets/ui/export-datasets/select-datasets.png)
+![Arbetsflöde för export av datauppsättningar som visar steget Välj datauppsättningar där du kan välja vilka datauppsättningar som ska exporteras.](/help/destinations/assets/ui/export-datasets/select-datasets.png)
 
 ## Schemalägg datauppsättningsexport {#scheduling}
 
@@ -214,9 +222,9 @@ På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj
 
 ## Verifiera datauppsättningsexport {#verify}
 
-När du exporterar datauppsättningar skapar Experience Platform en eller flera `.json`- eller `.parquet`-filer på den lagringsplats som du angav. Förvänta dig att nya filer ska placeras på din lagringsplats enligt det exportschema som du angav.
+När du exporterar datauppsättningar skapar Experience Platform en eller flera `.json`- eller `.parquet`-filer på den angivna lagringsplatsen. Förvänta dig att nya filer ska placeras på din lagringsplats enligt det exportschema som du angav.
 
-Experience Platform skapar en mappstruktur på den lagringsplats du angav, där den sparar de exporterade datauppsättningsfilerna. Standardmönstret för mappexport visas nedan, men du kan [anpassa mappstrukturen med dina favoritmakron](#edit-folder-path).
+Experience Platform skapar en mappstruktur på den lagringsplats du angav, där de exporterade datauppsättningsfilerna sparas. Standardmönstret för mappexport visas nedan, men du kan [anpassa mappstrukturen med dina favoritmakron](#edit-folder-path).
 
 >[!TIP]
 > 
@@ -224,11 +232,11 @@ Experience Platform skapar en mappstruktur på den lagringsplats du angav, där 
 
 `folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
 
-Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade filnamnen är unika.
+Standardfilnamnet genereras slumpmässigt och säkerställer att exporterade filnamn är unika.
 
-### Exempeldatauppsättningsfiler {#sample-files}
+### Exempel på datauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. För att förstå hur de exporterade filerna är strukturerade kan du ladda ned en .parquet-exempelfil [](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json fil](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 
@@ -238,10 +246,10 @@ I [anslut till målarbetsflödet](/help/destinations/ui/connect-destination.md#f
 
 Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 
-* När du exporterar komprimerade JSON-filer är det exporterade filformatet `json.gz`. Formatet för den exporterade JSON-filen är NDJSON, som är standardformatet för utbyte i big data-ekosystemet. Adobe rekommenderar att du använder en NDJSON-kompatibel klient för att läsa de exporterade filerna.
-* Vid export av komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
+* När du exporterar komprimerade JSON-filer är `json.gz`det exporterade filformatet . Formatet för den exporterade JSON-filen är NDJSON, vilket är standardformatet för utbyte i stordataekosystemet. Adobe rekommenderar att du använder en NDJSON-kompatibel klient för att läsa de exporterade filerna.
+* När du exporterar komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
 
-Exportera till JSON-filer stöds *endast i komprimerat läge*. Export till Parquet-filer stöds i komprimerat och okomprimerat läge.
+Exporter till JSON-filer stöds *endast* i komprimerat läge. Export till Parquet-filer stöds i komprimerat och okomprimerat läge.
 
 ## Ta bort datauppsättningar från mål {#remove-dataset}
 
@@ -293,7 +301,7 @@ Tänk på följande begränsningar för den allmänna tillgänglighetsreleasen f
 **Kan vi generera en fil utan en mapp om vi bara sparar på `/` som mappsökväg? Om vi inte behöver någon mappsökväg, hur genereras filer med duplicerade namn i en mapp eller på en plats?**
 
 +++Svar
-Från och med versionen från september 2024 är det möjligt att anpassa mappnamnet och till och med använda `/` för att exportera filer för alla datauppsättningar i samma mapp. Adobe rekommenderar inte detta för mål som exporterar flera datauppsättningar eftersom systemgenererade filnamn som tillhör olika datauppsättningar kommer att blandas i samma mapp.
+Från och med versionen från september 2024 är det möjligt att anpassa mappnamnet och till och med använda `/` för att exportera filer för alla datauppsättningar i samma mapp. Adobe rekommenderar inte detta för mål som exporterar flera datauppsättningar, eftersom systemgenererade filnamn som tillhör olika datauppsättningar kommer att blandas i samma mapp.
 +++
 
 **Kan du dirigera manifestfilen till en mapp och datafiler till en annan mapp?**
@@ -329,7 +337,7 @@ Det finns ingen möjlighet att lägga till ytterligare information i manifestfil
 **Hur delas datafiler? Hur många poster per fil?**
 
 +++Svar
-Datafiler delas upp enligt standardpartitionen i datavjön i Experience Platform. Större datauppsättningar har ett större antal partitioner. Standardpartitioneringen kan inte konfigureras av användaren eftersom den är optimerad för läsning.
+Datafiler delas upp enligt standardpartitionen i Experience Platform dataruta. Större datauppsättningar har ett större antal partitioner. Standardpartitioneringen kan inte konfigureras av användaren eftersom den är optimerad för läsning.
 +++
 
 **Kan vi ange ett tröskelvärde (antal poster per fil)?**

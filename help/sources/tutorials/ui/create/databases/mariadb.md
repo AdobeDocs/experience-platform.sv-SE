@@ -1,26 +1,23 @@
 ---
-keywords: Experience Platform;home;populära topics;Maria DB;maria db
-solution: Experience Platform
-title: Skapa en MariaDB Source Connection i användargränssnittet
-type: Tutorial
-description: Lär dig hur du skapar en Maria DB-källanslutning med Adobe Experience Platform-gränssnittet.
+title: Anslut MariaDB till Experience Platform med användargränssnittet
+description: Lär dig hur du ansluter ditt MariaDB-konto till Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 exl-id: 259ca112-01f1-414a-bf9f-d94caf4c69df
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 0bf31c76f86b4515688d3aa60deb8744e38b4cd5
 workflow-type: tm+mt
-source-wordcount: '394'
-ht-degree: 1%
+source-wordcount: '564'
+ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL MariaDB]-källanslutning i användargränssnittet
+# Anslut [!DNL MariaDB] till Experience Platform med användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Maria DB-källkoppling med användargränssnittet [!DNL Experience Platform].
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL MariaDB]-konto till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil i realtid](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -29,38 +26,64 @@ Om du redan har en [!DNL MariaDB]-anslutning kan du hoppa över resten av det h�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL MariaDB]-konto på [!DNL Experience Platform] måste du ange följande värde:
+Läs [[!DNL MariaDB] översikten](../../../../connectors/databases/mariadb.md#prerequisites) om du vill ha information om autentisering.
 
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med din MariaDB-autentisering. Anslutningssträngsmönstret [!DNL MariaDB] är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+## Navigera i källkatalogen
 
-Mer information om hur du kommer igång finns i det här [[!DNL MariaDB] dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Välj lämplig kategori på panelen *[!UICONTROL Categories]*. Du kan också använda sökfältet för att navigera till den specifika källa som du vill använda.
 
-## Anslut ditt [!DNL Maria DB]-konto
+Om du vill använda [!DNL MariaDB] väljer du **[!UICONTROL MariaDB]**-källkortet under *[!UICONTROL Databases]* och sedan **[!UICONTROL Set up]**.
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Maria DB]-konto till [!DNL Experience Platform].
+>[!TIP]
+>
+>Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När ett autentiserat konto har skapats ändras alternativet till **[!UICONTROL Add data]**.
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
+![Källkatalogen i användargränssnittet med MariaDB-kortet markerat.](../../../../images/tutorials/create/maria-db/catalog.png)
 
-Välj **[!UICONTROL Maria DB]** under kategorin **[!UICONTROL Databases]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL Maria DB]-koppling.
+## Använd ett befintligt konto {#existing}
 
-![](../../../../images/tutorials/create/maria-db/catalog.png)
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det [!DNL MariaDB]-konto som du vill använda.
 
-Sidan **[!UICONTROL Connect to Maria DB]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+![Det befintliga kontogränssnittet i källarbetsflödet med &quot;Befintligt konto&quot; valt.](../../../../images/tutorials/create/maria-db/existing.png)
 
-### Nytt konto
+## Skapa ett nytt konto {#create}
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL MariaDB]-inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du inte har något befintligt konto måste du skapa ett nytt konto genom att ange de autentiseringsuppgifter som motsvarar källan.
 
-![](../../../../images/tutorials/create/maria-db/new.png)
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och kan lägga till en beskrivning för ditt konto.
 
-### Befintligt konto
+![Det nya kontogränssnittet i källarbetsflödet med ett kontonamn och en valfri beskrivning har angetts.](../../../../images/tutorials/create/maria-db/new.png)
 
-Om du vill ansluta ett befintligt konto markerar du det [!DNL MariaDB]-konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
+### Anslut till Experience Platform på Azure {#azure}
 
-![](../../../../images/tutorials/create/maria-db/existing.png)
+Du kan ansluta ditt [!DNL MariaDB]-konto till Experience Platform på Azure med antingen kontonyckel eller grundläggande autentisering.
+
+>[!BEGINTABS]
+
+>[!TAB Autentisering av kontonyckel]
+
+Om du vill använda kontonyckelautentisering väljer du **[!UICONTROL Account key authentication]**, anger din [anslutningssträng](../../../../connectors/databases/mariadb.md#azure) och väljer sedan **[!UICONTROL Connect to source]**.
+
+![Det nya kontogränssnittet i källarbetsflödet med autentiseringen av kontonyckeln markerat.](../../../../images/tutorials/create/maria-db/account-key.png)
+
+>[!TAB Grundläggande autentisering]
+
+Om du vill använda grundläggande autentisering väljer du **[!UICONTROL Basic authentication]**, anger värden för dina [autentiseringsuppgifter](../../../../connectors/databases/mariadb.md#azure) och väljer sedan **[!UICONTROL Connect to source]**.
+
+![Det nya kontogränssnittet i källarbetsflödet med Grundläggande autentisering markerat.](../../../../images/tutorials/create/maria-db/basic-auth.png)
+
+>[!ENDTABS]
+
+### Ansluta till Experience Platform på Amazon Web Services (AWS) {#aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
+
+Om du vill skapa ett nytt [!DNL MariaDB]-konto och ansluta till Experience Platform på AWS kontrollerar du att du befinner dig i en VA6-sandlåda och anger sedan de [autentiseringsuppgifter som krävs för autentisering](../../../../connectors/databases/mariadb.md#aws).
+
+![Det nya kontogränssnittet i källarbetsflödet som ska anslutas till AWS.](../../../../images/tutorials/create/maria-db/basic-auth.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL MariaDB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL MariaDB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/databases.md).

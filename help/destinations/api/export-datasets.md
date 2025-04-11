@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 29fb232ecfbd119ef84d62599fc79249513dca43
 workflow-type: tm+mt
-source-wordcount: '5137'
+source-wordcount: '5139'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta Adobe om du vill ha mer information.
+>* Den här funktionen är tillgänglig för kunder som har köpt CDP Prime- och Ultimate-paketet i realtid, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introduceras alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe introducerar också ett standardslutdatum som är 1 maj 2025 för alla datauppsättningsexportdataflöden som skapats *före september-versionen*. För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars kan exporten stoppas på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 maj.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 maj 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
+>
+>För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 maj 2025.
 >
 >Detsamma gäller för alla dataflöden som du skapar utan att ange ett `endTime`-datum. Dessa kommer att ha en sluttid på sex månader från den tidpunkt då de skapades.
 
@@ -92,7 +94,7 @@ Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sand
 >
 >Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
 * Innehållstyp: `application/json`
 
@@ -116,11 +118,11 @@ Innan du startar arbetsflödet för att exportera en datauppsättning ska du ide
 | [!DNL Azure Data Lake Gen 2(ADLS Gen2)] | `be2c3209-53bc-47e7-ab25-145db8b873e1` | `17be2013-2549-41ce-96e7-a70363bec293` |
 | [!DNL Data Landing Zone(DLZ)] | `10440537-2a7b-4583-ac39-ed38d4b848e8` | `cd2fc47e-e838-4f38-a581-8fff2f99b63a` |
 | [!DNL Google Cloud Storage] | `c5d93acb-ea8b-4b14-8f53-02138444ae99` | `585c15c4-6cbf-4126-8f87-e26bff78b657` |
-| SFTP | `36965a81-b1c6-401b-99f8-22508f1e6a26` | `354d6aad-4754-46e4-a576-1b384561c440` |
+| SFTP (på engelska) | `36965a81-b1c6-401b-99f8-22508f1e6a26` | `354d6aad-4754-46e4-a576-1b384561c440` |
 
 {style="table-layout:auto"}
 
-Du behöver dessa ID:n för att skapa olika [!DNL Flow Service]-entiteter. Du måste också referera till delar av själva [!DNL Connection Spec] för att konfigurera vissa entiteter så att du kan hämta [!DNL Connection Spec] från [!DNL Flow Service APIs]. Se exemplen nedan om hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
+Du behöver dessa ID:n för att skapa olika [!DNL Flow Service] entiteter. Du måste också referera till delar av sig själv för [!DNL Connection Spec] att ställa in vissa entiteter så att du kan hämta [!DNL Connection Spec] från [!DNL Flow Service APIs]. Se exemplen nedan på hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
 
 >[!BEGINTABS]
 
@@ -508,11 +510,11 @@ Kom ihåg följande:
 * Källanslutningen som skapas i det här steget måste länkas till ett dataflöde för att dess datauppsättningar ska aktiveras till ett mål. Mer information om hur du länkar en källanslutning till ett dataflöde finns i avsnittet [Skapa ett dataflöde](#create-dataflow).
 * Det går inte att ändra datauppsättnings-ID:n för en källanslutning när den har skapats. Om du behöver lägga till eller ta bort datauppsättningar från en källanslutning måste du skapa en ny källanslutning och länka ID:t för den nya källanslutningen till dataflödet.
 
-## Skapa en (mål) basanslutning {#create-base-connection}
+## Skapa en (mål)basanslutning {#create-base-connection}
 
-![Diagram som visar steg 3 i arbetsflödet för exportdatamängder](../assets/api/export-datasets/export-datasets-api-workflow-create-base-connection.png)
+![Diagram som visar steg 3 i arbetsflödet för export av datauppsättningar](../assets/api/export-datasets/export-datasets-api-workflow-create-base-connection.png)
 
-En basanslutning lagrar autentiseringsuppgifterna på ditt mål på ett säkert sätt. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta de här autentiseringsparametrarna hämtar du först [!DNL connection spec] för det önskade målet enligt beskrivningen i avsnittet [Samla anslutningsspecifikationer och flödesspecifikationer](#gather-connection-spec-flow-spec) och tittar sedan på `authSpec` för svaret. Referera till flikarna nedan för `authSpec`-egenskaperna för alla mål som stöds.
+En basanslutning lagrar autentiseringsuppgifterna på ett säkert sätt till ditt mål. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta dessa autentiseringsparametrar hämtar du först för [!DNL connection spec] det önskade målet enligt beskrivningen i avsnittet [Samla in anslutningsspecifikationer och flödesspecifikationer](#gather-connection-spec-flow-spec) och tittar sedan på `authSpec` svaret. På flikarna nedan hittar du egenskaperna för alla mål som `authSpec` stöds.
 
 >[!BEGINTABS]
 
@@ -567,7 +569,7 @@ Observera den markerade raden med textbundna kommentarer i exemplet [!DNL connec
 
 +++[!DNL Azure Blob Storage] - [!DNL Connection spec] visar [!DNL auth spec]
 
-Observera den markerade raden med textbundna kommentarer i exemplet [!DNL connection spec] nedan, som innehåller ytterligare information om var autentiseringsparametrarna i [!DNL connection spec] ska hittas.
+Observera den markerade raden med infogade [!DNL connection spec] kommentarer i exemplet nedan, som ger ytterligare information om var du hittar autentiseringsparametrarna i .[!DNL connection spec]
 
 ```json {line-numbers="true" start-line="1" highlight="8"}
 {
@@ -1074,7 +1076,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++SFTP med lösenord - Bas anslutningsbegäran
++++SFTP med lösenord - Grundläggande anslutningsbegäran
 
 >[!TIP]
 >
@@ -1115,7 +1117,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >
 >Mer information om hur du hämtar de autentiseringsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information) på dokumentationssidan för SFTP-målet.
 
-Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
+Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de infogade kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
 ```shell {line-numbers="true" start-line="1" highlight="19"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -1146,7 +1148,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Svar**
 
-+++SFTP - basanslutningssvar
++++SFTP – Svar på basanslutning
 
 ```json
 {
@@ -1171,13 +1173,13 @@ Därefter måste du skapa en målanslutning som lagrar exportparametrarna för d
 >
 >Export till JSON-filer stöds endast i komprimerat läge. Exportera till [!DNL Parquet] filer stöds i både komprimerat och okomprimerat läge.
 >
->Formatet på den exporterade JSON-filen är NDJSON, som är standardformatet för utbyte i big data-ekosystemet. Adobe rekommenderar att du använder en NDJSON-kompatibel klient för att läsa de exporterade filerna.
+>Formatet för den exporterade JSON-filen är NDJSON, vilket är standardutbytesformatet i stordataekosystemet. Adobe rekommenderar att du använder en NDJSON-kompatibel klient för att läsa de exporterade filerna.
 
 >[!BEGINTABS]
 
 >[!TAB Amazon S3]
 
-+++[!DNL Amazon S3] - [!DNL Connection spec] med målanslutningsparametrar
++++[!DNL Amazon S3] - [!DNL Connection spec] Visning av parametrar för målanslutning
 
 Observera de markerade raderna med textbundna kommentarer i exemplet [!DNL connection spec] nedan, som innehåller ytterligare information om var [!DNL target spec] -parametrarna ska hittas i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som *inte* är tillämpliga på exportdestinationer för datauppsättningar.
 
@@ -1263,9 +1265,9 @@ Observera de markerade raderna med textbundna kommentarer i exemplet [!DNL conne
 
 >[!TAB Azure Blob Storage]
 
-+++[!DNL Azure Blob Storage] - [!DNL Connection spec] med målanslutningsparametrar
++++[!DNL Azure Blob Storage] - [!DNL Connection spec] Visning av parametrar för målanslutning
 
-Observera de markerade raderna med textbundna kommentarer i exemplet [!DNL connection spec] nedan, som innehåller ytterligare information om var [!DNL target spec] -parametrarna ska hittas i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som *inte* är tillämpliga på exportdestinationer för datauppsättningar.
+Observera de markerade raderna med infogade [!DNL connection spec] kommentarer i exemplet nedan, som ger ytterligare information om var du hittar parametrarna [!DNL target spec] i anslutningsspecifikationen. Du kan även se i exemplet nedan vilka målparametrar som inte *gäller* för exportmål för datauppsättningar.
 
 ```json {line-numbers="true" start-line="1" highlight="10,29,44"}
 {
@@ -1675,7 +1677,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) på dokumentationssidan för [!DNL Azure Blob Storage].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet Fyll [i målinformation](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) på dokumentationssidan för [!DNL Azure Blob Storage] målet.
 >Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 
@@ -1725,12 +1727,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Azure Blob Storage] - Målanslutningsbegäran
++++[!DNL Azure Blob Storage] - Begäran om målanslutning
 
 >[!TIP]
 >
->Mer information om hur du hämtar de nödvändiga målparametrarna finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på sidan för Azure [!DNL Data Lake Gen 2(ADLS Gen2)]-måldokumentation.
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>Information om hur du hämtar de målparametrar som krävs finns i [avsnittet Fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på dokumentationssidan för Azure-målet [!DNL Data Lake Gen 2(ADLS Gen2)] .
+>Andra värden som stöds av `datasetFileType`finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1829,15 +1831,15 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Google Cloud Storage] - Målanslutningsbegäran
++++[!DNL Google Cloud Storage] - Begäran om målanslutning
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för [!DNL Google Cloud Storage].
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet Fyll [i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för [!DNL Google Cloud Storage] målet.
+>Andra värden som stöds av `datasetFileType`finns i API-referensdokumentationen.
 
 
-Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
+Observera de markerade raderna med infogade kommentarer i begäranexemplet, som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
 ```shell {line-numbers="true" start-line="1" highlight="19"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -1868,7 +1870,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Svar**
 
-+++Målanslutning - svar
++++Målanslutning - Svar
 
 ```json
 {
@@ -1887,7 +1889,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för SFTP-målet.
+>Mer information om hur du hämtar de målparametrar som krävs finns i [avsnittet Fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för SFTP-destinationen.
 >Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
@@ -1992,7 +1994,7 @@ Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `schedul
 | `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
 | `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
 | `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
-| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
+| `startTime` | Datum och tid i UNIX-sekunder när exporten av datauppsättningen ska starta. |
 | `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
 | `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
 
@@ -2018,7 +2020,7 @@ Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `schedul
 
 +++Skapa datauppsättningsdataflöde till målet [!DNL Azure Blob Storage] - begäran
 
-Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
+Observera de markerade raderna med infogade kommentarer i begäranexemplet, som ger ytterligare information. Ta bort de infogade kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
 ```shell {line-numbers="true" start-line="1" highlight="12,22-25"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/flows' \
@@ -2054,11 +2056,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` , vilket gör att du kan anpassa exporttider, frekvens, plats med mera för dina datauppsättningsexporter.
 
 | Parameter | Beskrivning |
 |---------|----------|
-| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
+| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns [i exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen för aktivering av gruppdestinationer. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan endast användas i kombination med `timeUnit`:`day` och `interval`:`0` för en fullständig engångsexport av datauppsättningen. Dagliga fullständiga exporter av datauppsättningar stöds inte. Om du behöver dagliga exporter använder du alternativet för inkrementell export. <br> **Inkrementella dagliga exporter**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för dagliga inkrementella exporter. <br> **Inkrementella exporter** per timme: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour`, och `interval` :`3`,`6`,`9`, eller `12` för inkrementella exporter per timme. |
 | `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
 | `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
 | `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
@@ -2133,7 +2135,7 @@ Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `schedul
 | `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
 | `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
 | `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
-| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> <span>= Namnet på den specifika instansen av målet.</span></li><li><code>DESTINATION_INSTANCE_ID</code> <span>= En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> <span>= Namnet på sandbox-miljön.</span></li><li><code>ORGANIZATION_NAME</code> <span>= Namnet på organisationen.</span></li></ul> |
 
 {style="table-layout:auto"}
 
@@ -2141,7 +2143,7 @@ Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `schedul
 
 **Svar**
 
-+++Skapa dataflöde - svar
++++Skapa dataflöde - Svar
 
 ```json
 {
@@ -2152,7 +2154,7 @@ Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `schedul
 
 +++
 
->[!TAB Data Landing Zone(DLZ)]
+>[!TAB Zon för datalandning (DLZ)]
 
 **Begäran**
 
@@ -2269,10 +2271,10 @@ Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `schedul
 |---------|----------|
 | `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
 | `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
-| `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
-| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
-| `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
-| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+| `interval` | Välj `1` när är `timeUnit` dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
+| `startTime` | Datum och tid i UNIX-sekunder när exporten av datauppsättningen ska starta. |
+| `endTime` | Datum och tid i UNIX-sekunder när exporten av datauppsättningen ska avslutas. |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> <span>= En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> <span>= Namnet på destinationen.</span></li><li><code>DATETIME (DATUM)</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
 
 {style="table-layout:auto"}
 
@@ -2480,7 +2482,7 @@ Visa en [lista med vanliga frågor](/help/destinations/ui/export-datasets.md#faq
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit Experience Platform till en av dina favoritplatser för lagring i batchmolnet och konfigurerat ett dataflöde till respektive mål för att exportera datauppsättningar. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Genom att följa den här självstudiekursen har du anslutit Experience Platform till en av dina favoritplatser för lagring i batchmolnet och konfigurerat ett dataflöde till respektive mål för att exportera datauppsättningar. Se följande sidor för mer information, till exempel hur du redigerar befintliga dataflöden med hjälp av API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över målkatalog](../catalog/overview.md)
