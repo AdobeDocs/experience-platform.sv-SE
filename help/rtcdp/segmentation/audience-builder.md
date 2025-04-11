@@ -3,13 +3,13 @@ title: Audience Builder i Real-Time Customer Data Platform
 description: Lär dig hur du använder Audience Builder i Real-Time Customer Data Platform för att skapa målgrupper.
 feature: Get Started, Audiences
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-source-git-commit: b9099b123ae83eef6d470076dc2f8d143170a846
+exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
+source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
-source-wordcount: '882'
+source-wordcount: '957'
 ht-degree: 0%
 
 ---
-
 
 # Audience Builder i Real-Time Customer Data Platform
 
@@ -18,6 +18,21 @@ ht-degree: 0%
 ![Audience Builder i avsnittet Konton.](../assets/segmentation/audience-builder/audience-builder.png){zoomable="yes"}
 
 ## Fält {#fields}
+
+>[!CONTEXTUALHELP]
+>id="platform_b2b_audiencebuilder_showfullxdmschema"
+>title="Visa fullständigt XDM-schema"
+>abstract="Som standard visas bara fält som innehåller data. Aktivera det här alternativet om du vill visa alla fält i XDM-schemat."
+
+>[!CONTEXTUALHELP]
+>id="platform_b2b_audiencebuilder_showrelationselectors"
+>title="Visa relationsväljare"
+>abstract="Standardrelationerna för din organisation används som standard. Aktivera det här alternativet om du vill visa de relationsväljare som används."
+
+>[!CONTEXTUALHELP]
+>id="platform_b2b_audiencebuilder_showconstrainedfields"
+>title="Visa begränsade fält"
+>abstract="Som standard visas endast fält som inte har några begränsningar. Aktivera det här alternativet om du vill visa fält som är begränsade."
 
 När du använder Audience Builder för konton kan du använda kontoattribut eller befintliga målgrupper som målgruppens fält.
 

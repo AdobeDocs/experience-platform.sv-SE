@@ -3,9 +3,9 @@ title: Flexibel guide för utvärdering av målgrupper
 description: Lär dig hur du använder flexibel målgruppsutvärdering för att köra batchsegmenteringsjobb på begäran.
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 71818ee273749bb5053286c5b8bbd07a4429c341
+source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1047'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,8 @@ ht-degree: 0%
 >[!AVAILABILITY]
 >
 >Flexibel målgruppsutvärdering är **endast** tillgängligt för instanser av Experience Platform som körs på [!DNL Microsoft Azure]. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../landing/multi-cloud.md).
+>
+>Flexibel målgruppsutvärdering är dessutom **endast** tillgänglig för användning med Real-Time CDP B2C Edition.
 
 Med flexibel målgruppsutvärdering kan ni köra ett batchsegmenteringsjobb på begäran. Med flexibel målgruppsutvärdering kan ni köra ad hoc-kampanjer, just-in-time-kommunikation eller andra tidskänsliga aktiviteter.
 
