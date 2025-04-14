@@ -3,7 +3,7 @@ title: Flexibel guide för utvärdering av målgrupper
 description: Lär dig hur du använder flexibel målgruppsutvärdering för att köra batchsegmenteringsjobb på begäran.
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 3829f506d0b4d78b543b949e8e11806d8fe10b9c
+source-git-commit: 7084b05d1ae142016cb2158fd22d07a240385190
 workflow-type: tm+mt
 source-wordcount: '1047'
 ht-degree: 0%
@@ -387,3 +387,4 @@ Endast målgrupper med ursprung i segmenteringstjänsten stöds för flexibel m�
 Flexibla målgruppsutvärderingar som skapats antingen med API:t eller UI-antalet mot maxgränsen. Den dagliga batchsegmenteringsjobbskörningen som körs på nattbasis bidrar **inte** till den här gränsen.
 
 +++
+
