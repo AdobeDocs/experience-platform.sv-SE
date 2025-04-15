@@ -6,10 +6,10 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7fe7bbf7f4566a567c08ef73b4b9b503ea140549
 workflow-type: tm+mt
-source-wordcount: '777'
-ht-degree: 16%
+source-wordcount: '778'
+ht-degree: 18%
 
 ---
 
@@ -32,7 +32,7 @@ ht-degree: 16%
    * [Jämför resursrevisioner](./ui/managing-resources/compare-resource-revisions.md)
    * [Ta bort resurser](./ui/managing-resources/delete-resources.md)
    * [Ta bort resurser från ett bibliotek](./ui/managing-resources/remove-resources-from-library.md)
-* Publicerar {#publish}
+* Publicering {#publish}
    * [Översikt](./ui/publishing/overview.md)
    * [Publiceringsflöde](./ui/publishing/publishing-flow.md)
    * Värdar {#hosts}
@@ -55,12 +55,12 @@ ht-degree: 16%
    * [Stöd för CSP (Content Security Policy)](./ui/client-side/content-security-policy.md)
    * [Stöd för SRI (Subresource Integrity)](./ui/client-side/sri.md)
    * [Säkerhet för transportlager](./ui/client-side/transport-layer-security.md)
-* Vidarebefordrar händelse {#event-forwarding}
+* Vidarebefordran av händelser {#event-forwarding}
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
    * [Konfigurera hemligheter](./ui/event-forwarding/secrets.md)
    * [Övervakning (Beta)](./ui/event-forwarding/monitoring.md)
-* Administration {#admin}
+* Administrering {#admin}
    * [Översikt](./ui/administration/overview.md)
    * [Företag och fastigheter](./ui/administration/companies-and-properties.md)
    * [Användarbehörigheter](./ui/administration/user-permissions.md)
@@ -100,7 +100,7 @@ ht-degree: 16%
          * [Versionsinformation](./extensions/client/id-service/release-notes.md)
       * Adobe Experience Platform Demo {#platform-demo}
          * [Översikt](./extensions/client/platform-demo/overview.md)
-      * Adobe Experience Platform Web SDK {#web-sdk}
+      * Webb-SDK för Adobe Experience Platform {#web-sdk}
          * [Översikt](./extensions/client/web-sdk/overview.md)
          * [Konfigurera SDK-taggtillägget för webben](./extensions/client/web-sdk/web-sdk-extension-configuration.md)
          * [Händelsetyper](./extensions/client/web-sdk/event-types.md)
@@ -110,7 +110,7 @@ ht-degree: 16%
          * [SDK-plugins för webben](./extensions/client/web-sdk/web-sdk-plugins.md)
          * [Versionsinformation om SDK-tillägg](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
          * [Versionsinformation om SDK-plugin-program för webben](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
-      * Adobe Experience Manager tillgångsinsikter {#asset-insights}
+      * Adobe Experience Manager resursinsikter {#asset-insights}
          * [Översikt](./extensions/client/asset-insights/overview.md)
          * [Versionsinformation](./extensions/client/asset-insights/release-notes.md)
       * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)
@@ -120,7 +120,7 @@ ht-degree: 16%
       * Adobe Media Analytics (3.x SDK) {#media-analytics-3x}
          * [Översikt](./extensions/client/media-analytics-3x/overview.md)
          * [Versionsinformation](./extensions/client/media-analytics-3x/release-notes.md)
-      * Adobe sekretess {#privacy}
+      * Adobe Integritet {#privacy}
          * [Översikt](./extensions/client/privacy/overview.md)
       * [Adobe Report Suite-väljare](https://exchange.adobe.com/apps/ec/100640)
       * Adobe Target {#target}
@@ -153,7 +153,7 @@ ht-degree: 16%
       * [Koncat](https://exchange.adobe.com/apps/ec/104690)
       * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)
       * [Hantering av cookie-samtycke av Usercentrics CMP v2](https://exchange.adobe.com/apps/ec/107037)
-      * Kärna {#core}
+      * Core {#core}
          * [Översikt](./extensions/client/core/overview.md)
          * [Versionsinformation](./extensions/client/core/release-notes.md)
       * [Anpassad felsökningsloggare](https://exchange.adobe.com/apps/ec/104698)
@@ -218,17 +218,19 @@ ht-degree: 16%
       * Adobe Experience Platform Cloud Connector {#cloud-connector}
          * [Översikt](./extensions/server/cloud-connector/overview.md)
          * [Versionsinformation](./extensions/server/cloud-connector/release-notes.md)
+      * [!DNL Adform] {#adform}
+         * [Översikt](./extensions/server/adform/overview.md)
       * [!DNL AWS] {#aws}
          * [Översikt](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [Översikt](./extensions/server/braze/overview.md)
       * [Cloud Connector för Google Analytics](https://exchange.adobe.com/apps/ec/106542)
-      * Kärna {#core}
+      * Core {#core}
          * [Översikt](./extensions/server/core/overview.md)
       * [Epsilon-händelse-API](https://exchange.adobe.com/apps/ec/109127)
-      * Förbättrade konverteringar för Google Ads {#google-ads-enhanced-conversions}
+      * Google Ads Enhanced Conversions {#google-ads-enhanced-conversions}
          * [Översikt](./extensions/server/google-ads-enhanced-conversions/overview.md)
-      * Google Cloud-plattform {#google-cloud-platform}
+      * Google Cloud Platform {#google-cloud-platform}
          * [Översikt](./extensions/server/google-cloud-platform/overview.md)
       * [!DNL LinkedIn Conversions API] {#linkedin}
          * [Översikt](./extensions/server/linkedin/overview.md)
@@ -251,17 +253,17 @@ ht-degree: 16%
          * [Översikt](./extensions/server/splunk/overview.md)
       * [!DNL Twitter] {#twitter}
          * [Översikt](./extensions/server/twitter/overview.md)
-      * [!DNL Tiktok] API för webbhändelser {#tiktok}
+      * Webbhändelse-API för [!DNL Tiktok] {#tiktok}
          * [Översikt](./extensions/server/tiktok/overview.md)
       * [!DNL The Trade Desk] {#thetradedesk}
          * [Översikt](./extensions/server/tradedesk/overview.md)
-      * [!DNL Zendesk] Händelse-API {#zendesk}
+      * [!DNL Zendesk]-händelse-API {#zendesk}
          * [Översikt](./extensions/server/zendesk/overview.md)
 * Tilläggsutveckling {#extension-dev}
    * [Översikt](./extension-dev/overview.md)
    * [Komma igång](./extension-dev/getting-started.md)
    * [Webbläsare som stöds](./extension-dev/browsers.md)
-   * Överföringsprocess {#submit}
+   * Inlämningsprocess {#submit}
       * [Översikt](./extension-dev/submit/overview.md)
       * [Organisationsinställningar](./extension-dev/submit/setup.md)
       * [Bevilja användaråtkomst](./extension-dev/submit/access.md)
@@ -292,7 +294,7 @@ ht-degree: 16%
    * [Värdar för bibliotek från tredje part](./extension-dev/third-party-libraries.md)
    * [Turbinfri variabel](./extension-dev/turbine.md)
    * [Bakåtkompatibilitetsstandard](./extension-dev/backwards-compatibility.md)
-* Reaktors-API {#api}
+* Reactor API {#api}
    * [Översikt](./api/overview.md)
    * [Autentisera och få åtkomst till Reactor API](./api/getting-started.md)
    * Slutpunkter {#endpoints}
@@ -315,7 +317,7 @@ ht-degree: 16%
       * [Profil](./api/endpoints/profile.md)
       * [Sök](./api/endpoints/search.md)
       * [Hemligheter](./api/endpoints/secrets.md)
-   * Stödlinjer {#guides}
+   * Användarhandböcker {#guides}
       * [Delegera beskrivnings-ID:n](./api/guides/delegate-descriptor-ids.md)
       * [Krypteringsvärden](./api/guides/encrypting-values.md)
       * [Felhantering](./api/guides/error-handling.md)
