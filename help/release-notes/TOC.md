@@ -6,7 +6,7 @@ user-guide-description: Hitta månatlig versionsinformation om Adobe Experience 
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '160'
-ht-degree: 93%
+ht-degree: 96%
 
 ---
 

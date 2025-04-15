@@ -7,7 +7,7 @@ feature: Sandboxes
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '84'
-ht-degree: 26%
+ht-degree: 28%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 26%
 # Sandlådor {#sandbox}
 
 * [Översikt över sandlådor](home.md)
-* Sandbox-gränssnitt {#ui}
+* Sandbox UI {#ui}
    * [Översikt över användargränssnittet i Sandbox](ui/overview.md)
    * [Handbok för sandlådeanvändare](ui/user-guide.md)
    * [Verktyg i sandlådan](ui/sandbox-tooling.md)
@@ -33,7 +33,7 @@ ht-degree: 26%
    * [Paket](sandbox-tooling-api/packages.md)
    * [Verktyg](sandbox-tooling-api/tools.md)
    * [Bilaga](sandbox-tooling-api/appendix.md)
-* Användningsexempel {#use-cases}
+* Användningsfall {#use-cases}
    * [Säkerhetskopiera objektkonfigurationer](use-cases/backup-object-configuration.md)
    * [Expertcenter](use-cases/center-of-excellence.md)
 * [Felsökningsguide](troubleshooting-guide.md)
