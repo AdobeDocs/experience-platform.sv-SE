@@ -2,7 +2,7 @@
 title: Strömma data från Snowflake-databasen till Experience Platform med användargränssnittet
 description: Lär dig hur du direktuppspelar data från en Synwoflake-databas till Experience Platform
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 04a1cecbacdaf0b701d3ef18d03497973a8f3263
 workflow-type: tm+mt
 source-wordcount: '1597'
 ht-degree: 0%
@@ -86,7 +86,7 @@ Använd databaskatalogen till vänster på skärmen och markera den tabell som d
 
 ![Det valda datagränssnittet med en databastabell markerad.](../../../../images/tutorials/create/snowflake-streaming/select-table.png)
 
-Välj sedan kolumntypen för tidsstämpling för tabellen. Du kan välja mellan två typer av tidsstämpelkolumner: `TIMESTAMP_NTZ` eller `TIMESTAMP_LTZ`. Om du väljer kolumntypen `TIMESTAMP_NTZ` måste du också ange en tidszon. Kolumnerna ska ha en begränsning som inte är null. Mer information finns i avsnittet [Begränsningar och vanliga frågor]
+Välj sedan kolumntypen för tidsstämpling för tabellen. Du kan välja mellan två typer av tidsstämpelkolumner: `TIMESTAMP_NTZ` eller `TIMESTAMP_LTZ`. Om du väljer kolumntypen `TIMESTAMP_NTZ` måste du också ange en tidszon. Kolumnerna ska ha en begränsning som inte är null. Mer information finns i avsnittet [Begränsningar och vanliga frågor](../../../../connectors/databases/snowflake-streaming.md#limitations-and-frequently-asked-questions).
 
 Du kan också konfigurera inställningar för bakgrundsfyllning under det här steget. Backfill avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om så inte är fallet importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte.
 
