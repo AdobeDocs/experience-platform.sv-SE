@@ -3,9 +3,10 @@ title: Anslut användarprofiler för Algoliet till Experience Platform med anvä
 description: Lär dig hur du ansluter användare av Algoliet till Experience Platform
 hide: true
 hidefromtoc: true
-source-git-commit: a55f0b37614bb43a66d7d2e9cf106484b4d6e8dc
+exl-id: d4c936a7-4983-4a12-a813-03b672116e44
+source-git-commit: 009866abc39b06c22b7bea758ce9fdfba8c72b00
 workflow-type: tm+mt
-source-wordcount: '1103'
+source-wordcount: '1107'
 ht-degree: 0%
 
 ---
@@ -53,13 +54,13 @@ Om du vill använda [!DNL Algolia] väljer du **[!UICONTROL Algolia]**-källkort
 
 ## Autentisering
 
-### Befintligt konto
+### Använd ett befintligt konto
 
 Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det [!DNL Algolia User Profiles]-konto som du vill använda. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 ![Det befintliga kontogränssnittet.](../../../../images/tutorials/create/algolia/user-profiles/existing-account.png)
 
-### Nytt konto
+### Skapa ett nytt konto
 
 Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och autentiseringsuppgifter för [!DNL Algolia]. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
@@ -76,7 +77,7 @@ När du är klar med att markera och förhandsgranska dina data för konsumtion 
 
 ![Arbetsflödets valda datagrupp.](../../../../images/tutorials/create/algolia/user-profiles/select-data.png)
 
-### Ange information om dataflöde
+## Ange information om dataflöde
 
 Om du använder en befintlig datauppsättning väljer du en datauppsättning som är associerad med ett schema som använder fältgruppen [!DNL Algolia Profile].
 
@@ -86,13 +87,13 @@ Om du skapar en ny datauppsättning väljer du ett schema som använder fältgru
 
 ![Det nya datauppsättningssteget i källarbetsflödet.](../../../../images/tutorials/create/algolia/user-profiles/dataflow-detail-new-dataset.png)
 
-### Mappa datafält till ett XDM-schema
+## Mappa datafält till ett XDM-schema
 
 Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan data importeras till Experience Platform.  Mer information finns i [mappningsguiden i användargränssnittet](../../../../../data-prep/ui/mapping.md).
 
 ![Mappningssteget för källarbetsflödet.](../../../../images/tutorials/create/algolia/user-profiles/mapping.png)
 
-### Schemalägg körning av inmatning
+## Schemalägg körning av inmatning
 
 Använd sedan schemaläggningsgränssnittet för att definiera inmatningsschemat för dataflödet.
 
@@ -107,7 +108,7 @@ Använd sedan schemaläggningsgränssnittet för att definiera inmatningsschemat
 | Starttid | Tidsstämpeln för den projicerade körningen visas i UTC-tidszonen. |
 | Backfill | Backfill avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om underfyllning är inaktiverad importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
 
-### Granska ditt dataflöde
+## Granska ditt dataflöde
 
 Använd granskningssidan för att få en sammanfattning av dataflödet före intag. Detaljerna är grupperade i följande kategorier:
 

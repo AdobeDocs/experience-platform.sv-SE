@@ -2,14 +2,18 @@
 title: Koppla Google-annonser till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter ditt Google Ads-konto till Adobe Experience Platform i användargränssnittet.
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 009866abc39b06c22b7bea758ce9fdfba8c72b00
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '856'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Google Ads] till Experience Platform med användargränssnittet
+
+>[!WARNING]
+>
+>[!DNL Google Ads]-källan är för närvarande inte tillgänglig i användargränssnittet. Du kan fortsätta att importera dina [!DNL Google Ads]-data till Experience Platform [med API:t](../../../api/create/advertising/ads.md).
 
 >[!NOTE]
 >

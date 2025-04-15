@@ -2,17 +2,19 @@
 title: Demandbase-metod
 description: Läs mer om Demandbase Intent-källan på Experience Platform.
 last-substantial-update: 2025-03-26T00:00:00Z
+badgeB2B: label="B2B-utgåva" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P-utgåva" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: 62dd27e0-b846-4c04-977f-8a3ab99bc464
-source-git-commit: 78aae71ff48fc710aaaabf4ef71f6e50d2a8c12e
+source-git-commit: a1af85c6b76cc7bded07ab4acaec9c3213a94397
 workflow-type: tm+mt
-source-wordcount: '1461'
+source-wordcount: '1471'
 ht-degree: 0%
 
 ---
 
 # [!DNL Demandbase Intent]
 
-[!DNL Demandbase] är en kontobaserad marknadsföringsplattform som du kan använda för B2B-försäljning och marknadsföring. [!DNL Demandbase Intent] är en Adobe Experience Platform-källa som du kan använda för att ansluta ditt [!DNL Demandbase]-konto till Experience Platform och integrera dina kontoåtergivningsdata.
+[!DNL Demandbase] är en kontobaserad marknadsföringsplattform som du kan använda för B2B-försäljning och marknadsföring. [!DNL Demandbase Intent] är en Adobe Experience Platform-källa som du kan använda för att ansluta ditt [!DNL Demandbase] konto till Experience Platform och integrera dina kontots avsiktsdata.
 
 Med källan [!DNL Demandbase] kan du identifiera intressevärda konton baserat på realtidsengagemang. Genom att prioritera de starkaste avsiktssignalerna kan ni skapa exakta segment och leverera hyperriktade kampanjer, så att era marknadsföringssatsningar fokuserar på de konton som mest sannolikt konverteras. Genom att aktivera intent-drivna strategier kan ni optimera annonskostnaderna, öka engagemanget och få högre avkastning.
 
@@ -45,9 +47,9 @@ De begränsningar som anges nedan måste beaktas när du namnger molnlagringsfil
 
 [!DNL Demandbase] på Experience Platform är värd för [!DNL Google Cloud Storage]. För att autentisera ditt [!DNL Demandbase]-konto måste du ange lämpliga värden för följande autentiseringsuppgifter:
 
-| Autentiseringsuppgifter | Beskrivning |
+| Referens | Beskrivning |
 | --- | --- |
-| Åtkomstnyckel-ID | Åtkomstnyckel-ID för [!DNL Demandbase]. Det här är en 61 tecken lång alfanumerisk sträng som krävs för att autentisera ditt konto för Experience Platform. |
+| ID för åtkomstnyckel | ID:t för åtkomstnyckeln [!DNL Demandbase] . Det här är en 61 tecken lång alfanumerisk sträng som krävs för att autentisera ditt konto för Experience Platform. |
 | Nyckel för hemlig åtkomst | Den hemliga åtkomstnyckeln [!DNL Demandbase]. Detta är en 40-siffrig, base-64-kodad sträng som krävs för att autentisera ditt konto för Experience Platform. |
 | Buckennamn | Den [!DNL Demandbase]-bucket från vilken data hämtas. |
 | Mappsökväg | Sökvägen till mappen som du vill ge åtkomst till. |
@@ -58,21 +60,21 @@ Mer information om dessa autentiseringsuppgifter finns i handboken [[!DNL Google
 
 Läs det här avsnittet för information om schemat och datastrukturen för [!DNL Demandbase].
 
-Schemat [!DNL Demandbase] kallas **företagsmetod varje vecka**. Det är veckovis information om avsikter (anonym B2B-köparundersökning och innehållskonsumtion) för angivna konton och nyckelord. Data är i parquetformat.
+Schemat [!DNL Demandbase] kallas **Company Intent Weekly**. Det är veckovis information om avsikter (anonym B2B-köparundersökning och innehållskonsumtion) för angivna konton och nyckelord. Data är i parquetformat.
 
-| Fältnamn | Datatyp | Obligatoriskt | Affärsnyckel | Anteckningar |
+| Fältnamn | Datatyp | Obligatoriskt | Nyckel för företag | Anteckningar |
 | --- | --- | --- | --- | --- |
 | `company_id` | STRÄNG | TRUE | JA | Det kanoniska företagets ID. |
 | `domain` | STRÄNG | TRUE | JA | Den identifierade domänen för kontot som visar återgivning. |
-| `start_date` | DATUM | TRUE | JA | Startdatum för när återgivningsaktiviteten inträffade under varaktighetsperioden. |
-| `end_date` | DATUM | TRUE | JA | Slutdatumet för när återgivningsaktiviteten inträffade under tidsperioden. |
+| `start_date` | DATUM | TRUE | JA | Startdatumet för när avsiktsaktiviteten inträffade under varaktighetsperioden. |
+| `end_date` | DATUM | SANN | JA | Slutdatumet för när återgivningsaktiviteten inträffade under tidsperioden. |
 | `duration_type` | STRÄNG | TRUE | JA | Typ av varaktighet. I allmänhet kan det här värdet vara varje dag, vecka eller månadsvis beroende på den valda sammanslagningstiden. Det här värdet är `week` för det här dataexemplet. |
 | `keyword_set_id` | STRÄNG | TRUE | JA | Nyckelordsuppsättnings-ID. Detta är unikt för varje enskild kund. |
 | `keyword_set` | STRÄNG | TRUE | JA | Namnet på nyckelordsuppsättningen. |
 | `is_trending` | STRÄNG | TRUE | | Det aktuella läget för en viss trend. Trendstatus mäts som en explosion i avsiktlig aktivitet under den senaste veckan i förhållande till medelvärden under de föregående sju veckorna. |
 | `intent_strength` | ENUM[STRING] | TRUE | | Ett kvantifierat mått på den intent styrkan. Godkända värden är: `HIGH`, `MED` och `LOW`. |
-| `num_people_researching` | INTEGER | TRUE | | Antalet personer som tillhör nyckelordet `company_id` som har sökt efter nyckelordet under de senaste sju dagarna. |
-| `num_trending_days` | INTEGER | TRUE | | Antalet dagar som nyckelordet trenderades under en viss tid. |
+| `num_people_researching` | INTEGER | TRUE | | Antalet personer som tillhör den `company_id` som undersöker sökordet under de senaste sju dagarna. |
+| `num_trending_days` | HELTAL | SANN | | Antalet dagar som sökordet var trendigt under en viss varaktighet. |
 | `trending_score` | INTEGER | TRUE | | Trendspåret. |
 | `record_id` | STRÄNG | TRUE | | Unikt primärt post-ID. |
 | `partition_date` | DATUM | TRUE | | Kalenderdatum för ögonblicksbilden. Detta görs varje vecka i slutet av veckan. |
@@ -91,7 +93,7 @@ När du är klar med konfigurationen av din förutsättning kan du läsa självs
 
 I det här avsnittet finns svar på vanliga frågor om källan [!DNL Demandbase].
 
-### Måste jag ha ett befintligt kontrakt med [!DNL Demandbase] för att kunna använda kontoavsiktsdata i Real-Time CDP B2B edition?
+### Måste jag ha ett befintligt avtal med [!DNL Demandbase] för att få använda deras kontoavsiktsdata i Real-Time CDP B2B Edition?
 
 +++Svar
 
@@ -115,19 +117,19 @@ Ja, du kan importera data från [!DNL Demandbase] på ad hoc-basis. Du kan skapa
 
 +++
 
-### Vilken är valideringsprocessen för återgivna data och hur kan jag kontrollera vilka återgivningsdata som är länkade till ett visst konto?
+### Hur ser valideringsprocessen ut för avsiktsdata och hur kan jag kontrollera vilka avsiktsdata som är länkade till ett visst konto?
 
 +++Svar
 
-Använd [Adobe Experience Platform Query Service](../../../query-service/home.md) av AccountID om du vill validera intent data och avgöra vilka intent-signaler som är kopplade till specifika konton.
+Om du vill validera avsiktsdata och avgöra vilka avsiktssignaler som är länkade till specifika konton använder du [Adobe Experience Platform Query Service](../../../query-service/home.md) by AccountID.
 
 +++
 
-### Hur hittar jag en metod för ett visst företag?
+### Hur kan jag slå upp en avsikt för ett specifikt företag?
 
 +++Svar
 
-Kör en SQL-fråga i [frågetjänsten](../../../query-service/home.md) om du vill söka efter avsiktsdata med företagsnamnet eller konto-ID:t. Om du vill visa alla intent-data för ett visst företag kan du köra en SQL-fråga i Query Service med företagsnamnet eller konto-ID för att hämta alla associerade intent-signaler.
+Kör en SQL-fråga i [Query Service](../../../query-service/home.md) för att söka efter avsiktsdata med hjälp av företagsnamnet eller AccountID. Om du vill visa alla intent-data för ett visst företag kan du köra en SQL-fråga i Query Service med företagsnamnet eller konto-ID för att hämta alla associerade intent-signaler.
 
 +++
 

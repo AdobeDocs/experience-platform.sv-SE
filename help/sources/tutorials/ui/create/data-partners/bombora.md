@@ -1,10 +1,12 @@
 ---
 title: Koppla Bombora-återgivning till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter Bombora Intent till Experience Platform
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: 76a4fed5-b2d5-46d5-9245-b52792a7d323
-source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
+source-git-commit: a1af85c6b76cc7bded07ab4acaec9c3213a94397
 workflow-type: tm+mt
-source-wordcount: '931'
+source-wordcount: '941'
 ht-degree: 0%
 
 ---
@@ -55,7 +57,7 @@ Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange
 
 * **Åtkomstnyckel-ID**: Ditt [!DNL Bombora]-ID för åtkomstnyckel. Det här är en 61 tecken lång alfanumerisk sträng som krävs för att autentisera ditt konto för Experience Platform.
 * **Hemlig åtkomstnyckel**: Den hemliga [!DNL Bombora]-åtkomstnyckeln. Detta är en 40-siffrig, base-64-kodad sträng som krävs för att autentisera ditt konto för Experience Platform.
-* **Bucket-namn**: Din [!DNL Bombora]-bucket som data hämtas från.
+* **Bucket name**: Your [!DNL Bombora] bucket from which data will be pulled from.
 
 ![Det nya kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/bombora/new.png)
 
