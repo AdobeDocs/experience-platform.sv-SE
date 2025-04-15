@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform mars 2025
 description: Versionsinformationen för Adobe Experience Platform i mars 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f0879683629ba10ed1b799e52f0adf332f079daf
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1235'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -43,7 +43,7 @@ Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer inform
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya eller uppdaterade mål**
+**Nya eller uppdaterade destinationer** {#new-updated-destinations}
 
 | Mål | Beskrivning |
 | --- | --- |
@@ -53,12 +53,12 @@ Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer inform
 
 {style="table-layout:auto"}
 
-**Ny eller uppdaterad funktionalitet**
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
 | Funktion | Beskrivning |
 | --- | --- |
 | [Förbättringar av rapporteringsnoggrannhet för strömningsmål](../../dataflows/ui/monitor-destinations.md) | Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsdestinationerna. Denna förbättring säkerställer en bättre anpassning mellan rapporteringen i Experience Platform och destinationsplattformarna. <br> Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsåterförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsåterförsöket i det totala antalet. <br> Den här förbättringen gäller för alla strömningsdestinationerna. <br> Efter denna förbättring kan användare av strömningsdestinationer se en förväntad minskning av antalet **[!UICONTROL Identities failed]**. |
-| [Fältexport av karttyp för storföretags- och Edge-destinationer](/help/destinations/ui/export-arrays-maps-objects.md) | När du exporterar data till destinationerna [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) kan du nu välja karttypsfält för export i mappningssteget i aktiveringsarbetsflödet. <br> ![Exportera karttypsfält till storföretagsdestinationer.](../2025/assets/march/export-map.png "Exportera karttypsfält till storföretagsdestinationer.") |
+| [Fältexport av karttyp för storföretags- och Edge-destinationer](/help/destinations/ui/export-arrays-maps-objects.md) | När du exporterar data till destinationerna [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) kan du nu välja karttypsfält för export i mappningssteget i aktiveringsarbetsflödet. <br> ![Exportera karttypsfält till storföretagsdestinationer.](../2025/assets/march/export-map.png "Exportera karttypsfält till storföretagsdestinationer."){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 

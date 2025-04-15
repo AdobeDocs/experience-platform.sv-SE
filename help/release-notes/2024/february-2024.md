@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform – februari 2024
 description: Versionsinformationen för Adobe Experience Platform från februari 2024.
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: tm+mt
-source-wordcount: '1247'
-ht-degree: 91%
+workflow-type: ht
+source-wordcount: '1237'
+ht-degree: 100%
 
 ---
 
@@ -24,7 +24,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 ## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i Experience Platform användargränssnitt och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Experience Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -84,9 +84,9 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 | ----------- | ----------- |
 | Aktivera kontomålgrupper är allmänt tillgänglig | Funktionen för att aktivera kontomålgrupper för vissa destinationer är nu allmänt tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-time Customer Data Platform. Läs självstudiekursen om [att aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md) för att få fullständig information, inklusive vilka destinationer som stöds. |
 | Verktyg för verkställande av medgivande enligt Digital Markets Act för Google-destinationer | Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [Customer Match](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderrelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([policy för användarmedgivande inom EU](https://www.google.com/about/company/user-consent-policy/)). Tillämpningen av dessa ändringar i medgivandekraven förväntas träda i kraft från och med den 6 mars 2024. <br/><br/> För att kunna följa policyn om användarmedgivande i EU och fortsätta skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partner se till att de får slutanvändarnas medgivande när de laddar upp målgruppsdata. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.<br/><br/>Kunder som har köpt Adobe Privacy &amp; Security Shield och konfigurerat en [medgivandeprincip](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte har gett sitt medgivande behöver inte vidta några åtgärder.<br/><br/>Kunder som inte har köpt Adobe Privacy &amp; Security Shield måste använda funktionerna för [segmentdefinition](../../segmentation/home.md#segment-definitions) i [Segment Builder](../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte har gett sitt medgivande, så att de kan fortsätta använda de befintliga Real-Time CDP Google-destinationerna utan avbrott. |
-| [!BADGE Beta]{type=Informative} Ändra ordning på mappningsfält för gruppdestinationer | Du kan nu ändra ordningen på kolumnerna i CSV-exporter genom att dra och släppa mappningsfälten i [mappningssteget](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Ordningen på de mappade fälten i användargränssnittet återspeglas i ordningen på kolumnerna i den exporterade CSV-filen, uppifrån och ned, där den översta raden är den vänstra kolumnen i CSV-filen. <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
-| [!BADGE Beta]{type=Informative} Förvalda standardexportplaner för gruppdestinationer | Experience Platform anger nu automatiskt ett standardschema för varje filexport. Mer information om hur du ändrar standardplanen finns i dokumentationen om [att planera målgruppsexporter](../../destinations/ui/activate-batch-profile-destinations.md#scheduling). <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
-| [!BADGE Beta]{type=Informative} Massredigera målgruppsaktiveringsplaner för gruppdestinationer | Du kan nu redigera aktiveringplanen för flera målgrupper samtidigt på sidan [Aktiveringsdata](../../destinations/ui/destination-details-page.md#bulk-edit-schedule). <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
+| [!BADGE Beta]{type=Informative} Ordna om mappningsfält för gruppdestinationer | Du kan nu ändra ordningen på kolumnerna i CSV-exporter genom att dra och släppa mappningsfälten i [mappningssteget](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Ordningen på de mappade fälten i användargränssnittet återspeglas i ordningen på kolumnerna i den exporterade CSV-filen, uppifrån och ned, där den översta raden är den vänstra kolumnen i CSV-filen. <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
+| [!BADGE Beta]{type=Informative} Förvalda standardscheman för export för gruppdestinationer | Experience Platform anger nu automatiskt ett standardschema för varje filexport. Mer information om hur du ändrar standardplanen finns i dokumentationen om [att planera målgruppsexporter](../../destinations/ui/activate-batch-profile-destinations.md#scheduling). <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
+| [!BADGE Beta]{type=Informative} Massredigera målgruppsaktiveringsscheman för gruppdestinationer | Du kan nu redigera aktiveringplanen för flera målgrupper samtidigt på sidan [Aktiveringsdata](../../destinations/ui/destination-details-page.md#bulk-edit-schedule). <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
 | [!BADGE Beta]{type=Informative} Massexportera filer på begäran till gruppdestinationer | Du kan nu massexportera målgrupper till gruppdestionationer med funktionen [Exportera filer på begäran](../../destinations/ui/export-file-now.md). <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
 
 {style="table-layout:auto"}
@@ -95,7 +95,7 @@ Mer allmän information om destinationer finns i [översikten över destinatione
 
 ## Sandlådor {#sandboxes}
 
-Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose det här behovet tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och förbättra program för digitala upplevelser.
 
 **Nya eller uppdaterade funktioner**
 
@@ -115,7 +115,7 @@ Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experi
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontomålgrupper | Kontomålgrupper är nu allmänt tillgängliga! Nu kan ni använda kontosegmentering för att göra marknadsföringssegmenteringen från personbaserade målgrupper mer enkel och avancerad till kontobaserade målgrupper i både B2B- och B2P-utgåvorna av Real-Time Customer Experience Platform. I den här versionen kan du använda personbaserade målgrupper som en grund för kontobaserade målgrupper, lägga till sökfunktioner, stödja användningen av anpassade entiteter och säkerställa dataförvaltning. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/types/account-audiences.md). |
+| Kontomålgrupper | Kontomålgrupper är nu allmänt tillgängliga! Du kan nu använda kontosegmentering för att förenkla och förbättra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper i både B2B- och B2P-utgåvorna av Real-Time Customer Experience Platform. I den här versionen kan du använda personbaserade målgrupper som en grund för kontobaserade målgrupper, lägga till sökfunktioner, stödja användningen av anpassade entiteter och säkerställa dataförvaltning. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/types/account-audiences.md). |
 
 {style="table-layout:auto"}
 

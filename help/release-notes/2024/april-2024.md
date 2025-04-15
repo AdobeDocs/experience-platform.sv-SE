@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform april 2024
 description: Versionsinformationen för Adobe Experience Platform från april 2024.
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: tm+mt
-source-wordcount: '1899'
-ht-degree: 97%
+workflow-type: ht
+source-wordcount: '1895'
+ht-degree: 100%
 
 ---
 
@@ -55,7 +55,7 @@ Adobe Experience Platform erbjuder en rad olika tekniker som gör att ni kan sam
 | Dataströmmar | [Identifiering av bot i Edge Network](../../datastreams/bot-detection.md) | Trafik som härrör från icke-mänskliga enheter, som automatiserade program, webbskrapning, spindlar och skriptskannrar kan göra det svårare att identifiera händelser som inträffar från mänskliga besökare. Den här typen av trafik kan påverka viktiga affärsvärden negativt, vilket leder till felaktig rapportering av trafik. <br>Med botdetektering kan du identifiera händelser som har genererats av [Web SDK](../../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Server API]](../../server-api/overview.md) som har genererats av kända spindlar och botar. Genom att konfigurera botdetektering för dina dataströmmar kan du identifiera specifika IP-adresser, IP-intervall och begäranrubriker som du vill klassificera som bothändelser. <br> Identifiering av bottrafik kan ge dig en mer exakt mätning av användaraktivitet på din webbplats eller i din mobilapp. |
 | Mobile SDK | Release av huvudversion | Nya större versioner av Mobile SDK har släppts för följande plattformar: iOS Mobile Core 5.x och kompatibla iOS-tillägg, Android Mobile Core 3.x och kompatibla Android-tillägg, React Native Core 6.x och kompatibla React Native-tillägg, Flutter Core 4.x och kompatibla Flutter-tillägg. Den här versionen innehåller flera nya funktioner och förbättringar, bland annat stöd för Android SDK för Jetpack Compose, stöd för kodbaserade upplevelser med Adobe Journey Optimizer och allmän åtkomst till tillägget Adobe Journey Optimizer Messaging för Flutter. Mer information finns i [Versionsinformation för Mobile SDK](https://developer.adobe.com/client-sdks/home/release-notes). |
 | Mobile SDK | Sekretess | På grund av Apples policyuppdatering, som gäller från 1 maj 2024, måste utvecklare implementera nya sekretessfunktioner för att kunna skicka in till App Store. Alla Adobe-kunder som använder Mobile SDK måste uppgradera till version 5.x av SDK:et om de vill få godkännande på App Store efter 1 maj. |
-| Roku SDK | Roku SDK | Den första större versionen av Roku SDK har släppts med stöd för Streaming Media för Experience Platform Edge Network. |
+| Roku SDK | Roku SDK | Den första större versionen av Roku SDK har släppts med stöd för strömmande media för Experience-plattformen Edge Network. |
 | Taggar och vidarebefordran av händelser | Vägledning i produkten | [Taggar](../../tags/home.md) och [Vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) i Experinece Platform erbjuder nya upplevelser som hjälper dig att snabbt komma igång snabbt och uppnå värde. De här upplevelserna omfattar nya registreringsskärmar, självstudiekurser i produkten och verktygstips. <br>![Vidarebefordran av händelser med vägledning i produkten markerad.](../2024/assets/april/event-forwarding.png "Schemaredigeraren med fälten Typ och Mappning markerade."){width="100" zoomable="yes"}<br> |
 | Web SDK | Förenklad användning av Web SDK för Audience Manager-kunder | Flera Web SDK-uppdateringar förenklar nu användningen av Web SDK utan att använda Experience Data Model (XDM) för Experience Cloud-lösningar, till exempel Audience Manager, Analytics och Target. Läs mer om användning av Audience Manager Web SDK i följande guider: <ul><li><a href="https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/migrate-to-web-sdk/dil-extension-to-web-sdk">Uppdatera datainsamlingsbiblioteket för Audience Manager från taggtillägget för Audience Manager till taggtillägget för Web SDK</li><li><a href="https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/migrate-to-web-sdk/appmeasurement-to-web-sdk">Uppdatera ditt datainsamlingsbibliotek för Audience Manager från JavaScript-biblioteket AppMeasurement till JavaScript-biblioteket för Web SDK</li></ul> |
 
@@ -69,7 +69,7 @@ Läs mer på [översikten över datainsamling](../../collection/home.md).
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
@@ -130,7 +130,7 @@ Mer information om frågetjänster finns i [översikten över frågetjänster](.
 
 ## Sandlådor {#sandboxes}
 
-Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose det här behovet tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och förbättra program för digitala upplevelser.
 
 **Nya eller uppdaterade funktioner**
 
@@ -166,7 +166,7 @@ Använd källor i Experience Platform för inmatning av data från ett Adobe-pro
 
 | Nya källor | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [!DNL PathFactory] | Använd [[!DNL PathFactory] -källan](../../sources/tutorials/ui/create/marketing-automation/pathfactory.md) för att integrera dina besökar-, sessions- och sidvisningsdata från [!DNL PathFactory] till Experience Platform. Läs [[!DNL PathFactory] översikten](../../sources/connectors/marketing-automation/pathfactory.md) om du vill ha mer information om hur du kommer igång. |
+| [!BADGE Beta]{type=Informative} [!DNL PathFactory] | Använd [[!DNL PathFactory] -källan](../../sources/tutorials/ui/create/marketing-automation/pathfactory.md) för att integrera dina besökar-, sessions- och sidvisningsdata från [!DNL PathFactory] till Experience Platform. Läs [[!DNL PathFactory] översikten](../../sources/connectors/marketing-automation/pathfactory.md) om du vill ha mer information om hur du kommer igång. |
 | [!DNL Teradata Vantage] | Använd [[!DNL Teradata Vantage] -källan](../../sources/tutorials/ui/create/databases/teradata-vantage.md) för att importera data från hybridmiljöer med flera moln till Experience Platform. Läs [[!DNL Teradata Vantage] översikten](../../sources/connectors/databases/teradata-vantage.md) om du vill ha mer information om hur du kommer igång. |
 
 {style="table-layout:auto"}

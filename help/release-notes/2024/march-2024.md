@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform mars 2024
 description: Versionsinformationen för Adobe Experience Platform i mars 2024.
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: tm+mt
-source-wordcount: '1191'
-ht-degree: 97%
+workflow-type: ht
+source-wordcount: '1187'
+ht-degree: 100%
 
 ---
 
@@ -71,7 +71,7 @@ Läs [datainsamlingsöversikten](../../tags/home.md) om du vill veta mer om data
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya och uppdaterade mål** {#new-updated-destinations}
+**Nya och uppdaterade destinationer** {#new-updated-destinations}
 
 | Mål | Typ | Beskrivning |
 | ----------- | --------- | ----------- |
@@ -98,11 +98,11 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för datatypen Experience Platform gränssnittsmappning | Anpassa XDM-datastrukturen (Experience Data Model) ytterligare genom att definiera kartfält i Experience Platform användargränssnitt. Nu kan du skapa kartfält i schemaredigeraren för att modellera flexibla datastrukturer eller lagra nyckelvärdepar på ett effektivt sätt. Välj ”Mappning” i rullgardinsmenyn Typ när du definierar ett nytt fält för att konfigurera underfält och tilldela dem till fältgrupper. Mappningsvärdestyper som stöds är sträng och heltal.<br>![Schemaredigeraren med fälten för typ och kartvärdestyp markerade.](../2024/assets/march/maps.png "Schemaredigeraren med fälten för typ och mappningsvärdestyp markerade."){width="100" zoomable="yes"}<br> Se gränssnittsguiden för information om hur du [definierar mappningsfält i användargränssnittet](../../xdm/ui/fields/map.md). |
+| Stöd för datatypen Experience Platform gränssnittsmappning | Anpassa XDM-datastrukturen (Experience Data Model) ytterligare genom att definiera kartfält i Experience Platform-användargränssnittet. Nu kan du skapa kartfält i schemaredigeraren för att modellera flexibla datastrukturer eller lagra nyckelvärdepar på ett effektivt sätt. Välj ”Mappning” i rullgardinsmenyn Typ när du definierar ett nytt fält för att konfigurera underfält och tilldela dem till fältgrupper. Mappningsvärdestyper som stöds är sträng och heltal.<br>![Schemaredigeraren med fälten för typ och kartvärdestyp markerade.](../2024/assets/march/maps.png "Schemaredigeraren med fälten för typ och mappningsvärdestyp markerade."){width="100" zoomable="yes"}<br> Se gränssnittsguiden för information om hur du [definierar mappningsfält i användargränssnittet](../../xdm/ui/fields/map.md). |
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [Systemöversikten över XDM](../../xdm/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
@@ -126,8 +126,8 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Funktion | Typ | Beskrivning |
 | --- | --- | --- |
-| [!BADGE Beta]{type=Informative} [!DNL Acxiom Data Ingestion] | Nyhet | Använd [[!DNL Acxiom Data Ingestion] källan](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md) för att mata in [!DNL Acxiom]-data i Real-time Customer Data Platform och berika förstapartsprofiler. Sedan kan du använda dina [!DNL Acxiom]-berikade förstapartsprofiler för att förbättra målgrupper och aktivera i alla marknadsföringskanaler. <br> ![Acxiom-källan för datainmatning.](../2024/assets/march/acxiom-data-ingestion.png "Ny Acxiom-källa för datainmatning."){width="100" zoomable="yes"} <br> Läs [[!DNL Acxiom Data Ingestion] översikten](../../sources/connectors/data-partners/acxiom-data-ingestion.md) för information om hur du kommer igång. |
-| [!BADGE Beta]{type=Informative} [!DNL Stripe] | Nyhet | Använd [[!DNL Stripe] källan](../../sources/connectors/payments/stripe.md) för att mata in data som dina kunder har samlat in under inköpsflödet i Experience Platform. När du har matat in data kan använda dem för att skapa personaliserade erbjudanden och låsa upp bättre affärsinsikter. <br> ![Stripe-källan.](../2024/assets/march/stripe.png "Ny Stripe-källa."){width="100" zoomable="yes"} <br> Läs [[!DNL Stripe] översikten](../../sources/connectors/payments/stripe.md) för information om hur du kommer igång. |
+| [!BADGE Beta]{type=Informative} [!DNL Acxiom Data Ingestion] | Nyhet | Använd [[!DNL Acxiom Data Ingestion] källan](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md) för att mata in [!DNL Acxiom]-data i Real-time Customer Data Platform och berika förstapartsprofiler. Sedan kan du använda dina [!DNL Acxiom]-berikade förstapartsprofiler för att förbättra målgrupper och aktivera i alla marknadsföringskanaler. <br> ![Acxiom-källan för datainmatning.](../2024/assets/march/acxiom-data-ingestion.png "Ny Acxiom-källa för datainmatning."){width="100" zoomable="yes"} <br> Läs [[!DNL Acxiom Data Ingestion] översikten](../../sources/connectors/data-partners/acxiom-data-ingestion.md) för information om hur du kommer igång. |
+| [!BADGE Beta]{type=Informative} [!DNL Stripe] | Nyhet | Använd [[!DNL Stripe] källan](../../sources/connectors/payments/stripe.md) för att mata in data som dina kunder har samlat in under inköpsflödet i Experience Platform. När du har matat in data kan använda dem för att skapa personaliserade erbjudanden och låsa upp bättre affärsinsikter. <br> ![Stripe-källan.](../2024/assets/march/stripe.png "Ny Stripe-källa."){width="100" zoomable="yes"} <br> Läs [[!DNL Stripe] översikten](../../sources/connectors/payments/stripe.md) för information om hur du kommer igång. |
 | Användargränssnittsstöd för [!DNL Snowflake Streaming] | Nyhet | Du kan nu använda [[!DNL Snowflake Streaming] källan](../../sources/tutorials/ui/create/databases/snowflake-streaming.md) i användargränssnittet för Experience Platform för att strömma data från din [!DNL Snowflake]-databas. <br> ![Snowflake-strömningskällan.](../2024/assets/march/snowflake-streaming.png "Ny Snowflake-strömningskälla."){width="100" zoomable="yes"} <br> Läs [[!DNL Snowflake Streaming] översikten](../../sources/connectors/databases/snowflake-streaming.md) för information om hur du kommer igång. |
 
 {style="table-layout:auto"}
