@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 66ebff274a5fb9255e284a2a38db780d64b45f2e
 workflow-type: tm+mt
-source-wordcount: '1282'
+source-wordcount: '1290'
 ht-degree: 2%
 
 ---
@@ -18,11 +18,11 @@ ht-degree: 2%
 * [Översikt över destinationer](./home.md)
 * [Måltyper och -kategorier](./destination-types.md)
 * [Destinationsskydd (aktivering)](./guardrails.md)
-* Så här fungerar mål {#how-destinations-work}
+* Så fungerar destinationer {#how-destinations-work}
    * [Konfigurerbara och gemensamma exportinställningar för destinationer](./how-destinations-work/destinations-configurations.md)
    * [Profilexportbeteende för olika måltyper](./how-destinations-work/profile-export-behavior.md)
    * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
-* API-självstudiekurser {#api}
+* API-självstudier {#api}
    * [Aktivera data till filbaserade mål med API:t för Flow Service ](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
@@ -36,7 +36,7 @@ ht-degree: 2%
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
    * [Skapa en ny målanslutning](./ui/connect-destination.md)
-   * Aktivera data till mål {#activate}
+   * Aktivera data till mål{#activate}
       * [Aktiveringsöversikt](./ui/activation-overview.md)
       * [Aktivera målgrupper för att strömma målgruppernas exportdestinationer](./ui/activate-segment-streaming-destinations.md)
       * [Aktivera målgrupper för att direktuppspela exportmål för profiler](./ui/activate-streaming-profile-destinations.md)
@@ -51,6 +51,7 @@ ht-degree: 2%
       * [(Beta) Använd den senaste kvalificeringstiden för XDM-attributet i det nya betmolnlagringsmålet](./ui/activate-last-qualification-time.md)
       * [Exportera arrayer, kartor och objekt](/help/destinations/ui/export-arrays-maps-objects.md)
       * [Utför omformningar av data som exporteras till molnlagringsmål](/help/destinations/ui/data-transformations-calculated-fields.md)
+      * [Uppdatera slutdatumet för datauppsättningsdataflöden för export](/help/destinations/ui/update-end-date-export-dataflows.md)
    * [Visa målinformation](./ui/destination-details-page.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
    * [Ta bort destinationskonton](./ui/delete-destination-account.md)
@@ -59,9 +60,9 @@ ht-degree: 2%
    * [Övervaka dataflöden](./ui/monitor-dataflows.md)
    * [Konfigurera filformateringsalternativ för filbaserade mål](./ui/batch-destinations-file-formatting-options.md)
    * [Prenumerera på aviseringar om destinationer i sitt sammanhang](ui/alerts.md)
-* Målkatalogen {#catalog}
+* Målkatalog {#catalog}
    * [Översikt över målkatalog](./catalog/overview.md)
-   * Adobe-mål{#adobe}
+   * Adobe destinationer{#adobe}
       * [Översikt över Adobe destinationer](./catalog/adobe/overview.md)
       * [Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
       * [Marketo Engage](./catalog/adobe/marketo-engage.md)
@@ -69,7 +70,7 @@ ht-degree: 2%
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition)
-   * Advertising-mål{#advertising}
+   * Advertising destinationer{#advertising}
       * [(Beta) Acxiom Audience Distribution](./catalog/advertising/acxiom-audience-distribution.md)
       * [Översikt över Advertising destinationer](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud-anslutning](./catalog/advertising/adobe-advertising-cloud-connection.md)
@@ -131,7 +132,7 @@ ht-degree: 2%
       * [SessionCam-tillägg](./catalog/analytics/sessioncam.md)
       * [TMMData-tillägg](./catalog/analytics/tmmdata.md)
       * [Yext Conversion Tracking-tillägg](./catalog/analytics/yext.md)
-   * Destinationer för molnlagring {#cloud-storage}
+   * Lagringsmål i molnet {#cloud-storage}
       * [Översikt över destinationer för molnlagring](./catalog/cloud-storage/overview.md)
       * [Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3-anslutning](./catalog/cloud-storage/amazon-s3.md)
@@ -153,12 +154,12 @@ ht-degree: 2%
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
       * [Audience Manager DIL-tillägg](./catalog/data-management/aam-dil-extension.md)
       * [Zeta Marketing Platform](/help/destinations/catalog/data-management/zeta-marketing-platform.md)
-   * Data- och identitetspartner {#data-partner}
+   * Data &amp; Identity Partner {#data-partner}
       * [Proportionerna för Acxiom undertryckning](./catalog/data-partner/acxiom-prospect-suppression.md)
       * [Dataförbättring i Acxiom](./catalog/data-partner/acxiom-data-enhancement.md)
       * [Merkury Enterprise Connections](/help/destinations/catalog/data-partners/merkury-enterprise-connections.md)
       * [Merkury Enterprise Identity](/help/destinations/catalog/data-partners/merkury-enterprise-identity.md)
-   * e-handelsmål {#ecommerce}
+   * e-handelsdestinationer {#ecommerce}
       * [SAP COMMERCE](./catalog/ecommerce/sap-commerce.md)
    * E-postmål {#email}
       * [Bizible-tillägg](./catalog/email/bizible.md)
@@ -189,7 +190,7 @@ ht-degree: 2%
       * [Braze connection](./catalog/mobile-engagement/braze.md)
       * [Radanslutning](./catalog/mobile-engagement/line.md)
       * [Moengage connection](./catalog/mobile-engagement/moengage.md)
-   * Personalization-mål {#personalization}
+   * Personalization destinationer {#personalization}
       * [Översikt över Personalization destinationer](./catalog/personalization/overview.md)
       * [(Begränsad tillgänglighet) Målgruppsanalys](./catalog/personalization/audience-analysis.md)
       * [Adobe Commerce](./catalog/personalization/adobe-commerce.md)
@@ -205,17 +206,17 @@ ht-degree: 2%
       * [Marketo Web Personalization-tillägg](./catalog/personalization/marketo-web-personalization.md)
       * [Pega-anslutning för kundens beslutshubb](./catalog/personalization/pega.md)
       * [Pega-profilanslutning](./catalog/personalization/pega-profile.md)
-   * Sociala mål {#social}
+   * Social destination{#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
       * [(Företag) LinkedIn Matched Auditions-anslutning](./catalog/social/linkedin-b2b.md)
       * [LinkedIn Matched Auditions connection](./catalog/social/linkedin.md)
       * [TikTok](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences]-anslutning](./catalog/social/twitter.md)
-   * Direktuppspelningsmål {#streaming}
+   * Strömmande mål {#streaming}
       * [HTTP API-anslutning](./catalog/streaming/http-destination.md)
       * [IP-adress tillåtelselista för direktuppspelningsmål](./catalog/streaming/ip-address-allow-list.md)
-   * Undersökningsmål {#survey}
+   * Destinationer för undersökning {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)
       * [Mål för Qualtrics Automation](./catalog/survey/qualtrics-automations.md)
       * [Mål för sidtillägg](./catalog/survey/foresee.md)
@@ -257,7 +258,7 @@ ht-degree: 2%
          * [Krav på historisk profil](./destination-sdk/functionality/destination-configuration/historical-profile-qualifications.md)
       * [Regler för hastighetsbegränsning och återförsök för direktuppspelningsmål](./destination-sdk/functionality/rate-limiting-retry-policy.md)
       * [Hantering av målgruppsmetadata](./destination-sdk/functionality/audience-metadata-management.md)
-   * Stödlinjer {#guides}
+   * Användarhandböcker {#guides}
       * [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](./destination-sdk/guides/configure-destination-instructions.md)
       * [Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/guides/configure-file-based-destination-instructions.md)
       * [Skicka för granskning till ett mål som skapats i Destination SDK](./destination-sdk/guides/submit-destination.md)
@@ -272,17 +273,17 @@ ht-degree: 2%
          * [Konfigurera ett filbaserat mål för att exportera potentiella målgrupper](/help/destinations/destination-sdk/guides/batch/configure-prospect-audience-destination.md)
    * API-referens för målredigering {#authoring-api}
       * [API-referens för Destination SDK (målredigering)](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
-      * Målserveråtgärder {#server-operations}
+      * Åtgärder på målservern {#server-operations}
          * [Skapa en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/create-destination-server.md)
          * [Hämta en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/retrieve-destination-server.md)
          * [Uppdatera en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/update-destination-server.md)
          * [Ta bort en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/delete-destination-server.md)
-      * Destinationskonfigurationsåtgärder {#destination-operations}
+      * Åtgärder för destinationskonfiguration {#destination-operations}
          * [Skapa en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/create-destination-configuration.md)
          * [Hämta en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/retrieve-destination-configuration.md)
          * [Uppdatera en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/update-destination-configuration.md)
          * [Ta bort en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/delete-destination-configuration.md)
-   * API-referens för målets metadata {#audience-template-api}
+   * API-referens för målgruppsmetadata {#audience-template-api}
       * [Skapa en målgruppsmall](./destination-sdk/metadata-api/create-audience-template.md)
       * [Hämta en målgruppsmall](./destination-sdk/metadata-api/retrieve-audience-template.md)
       * [Uppdatera en målgruppsmall](./destination-sdk/metadata-api/update-audience-template.md)
@@ -293,14 +294,14 @@ ht-degree: 2%
       * [Uppdatera en konfiguration för autentiseringsuppgifter](./destination-sdk/credentials-api/update-credential-configuration.md)
       * [Ta bort en autentiseringskonfiguration](./destination-sdk/credentials-api/delete-credential-configuration.md)
    * API-referens för måltestning {#testing-api}
-      * API:t {#streaming-destinations} för direktuppspelning av destinationstestning
+      * API för testning av direktuppspelningsmål {#streaming-destinations}
          * [API-översikt för testning av direktuppspelningsmål](./destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)
          * [Generera exempelprofiler baserat på ett källschema](./destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)
          * [Generera en omformningsmall för exempelmeddelanden](./destination-sdk/testing-api/streaming-destinations/sample-template-api.md)
          * [Validera exporterad profilstruktur](./destination-sdk/testing-api/streaming-destinations/render-template-api.md)
          * [Testa strömningsmålet med exempelprofiler](./destination-sdk/testing-api/streaming-destinations/destination-testing-api.md)
          * [Skapa och testa en meddelandeomformningsmall](./destination-sdk/testing-api/streaming-destinations/create-template.md)
-      * Filbaserat måltestnings-API {#batch-destinations}
+      * Filbaserat API för måltestning {#batch-destinations}
          * [Filbaserad API för måltestning - översikt](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)
          * [Generera exempelprofiler baserat på ett källschema](./destination-sdk/testing-api/batch-destinations/file-based-sample-profile-generation-api.md)
          * [Testa ditt filbaserade mål med exempelprofiler](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-api.md)
@@ -309,7 +310,7 @@ ht-degree: 2%
    * API-referens för målpublicering {#publishing-api}
       * [Skapa en publiceringsbegäran för destinationen](./destination-sdk/publishing-api/create-publishing-request.md)
       * [Hämta en publiceringsbegäran för mål](./destination-sdk/publishing-api/retrieve-publishing-request.md)
-   * Dokumentera ditt mål {#document-destination}
+   * Dokumentera destinationen {#document-destination}
       * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)
       * [Skapa en måldokumentationssida med GitHub-webbgränssnittet](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
       * [Skapa en måldokumentationssida med en textredigerare i den lokala miljön](./destination-sdk/docs-framework/work-in-local-environment.md)
