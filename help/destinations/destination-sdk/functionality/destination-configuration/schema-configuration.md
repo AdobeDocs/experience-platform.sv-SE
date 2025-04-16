@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 30a237c7acf814722d384792366f95289dc3f34a
 workflow-type: tm+mt
-source-wordcount: '1937'
+source-wordcount: '1884'
 ht-degree: 0%
 
 ---
@@ -105,8 +105,8 @@ Om du vill skapa ett statiskt schema med profilattribut definierar du målattrib
 | `profileRequired` | Boolean | Valfritt | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målplattformen. |
 | `segmentRequired` | Boolean | Obligatoriskt | Den här parametern krävs av Destination SDK och ska alltid anges till `true`. |
 | `identityRequired` | Boolean | Obligatoriskt | Ange som `true` om användare ska kunna mappa [identitetstyper](identity-namespace-configuration.md) från Experience Platform till de attribut du definierade i arrayen `profileFields` . |
-| `segmentNamespaceAllowList` | Array | Valfritt | Definierar specifika målgruppsnamnutrymmen från vilka användare kan mappa målgrupper till målet. Använd den här parametern för att begränsa Experience Platform-användare till att exportera målgrupper från endast de målgruppsnamnutrymmen som du definierar i arrayen. Den här parametern kan inte användas tillsammans med `segmentNamespaceDenyList`.<br> <br> Exempel: `"segmentNamespaceAllowList": ["AudienceManager"]` tillåter användare att endast mappa målgrupper från namnområdet `AudienceManager` till det här målet. <br> <br> Om du vill tillåta användare att exportera alla målgrupper till ditt mål, kan du ignorera den här parametern. <br> <br> Om både `segmentNamespaceAllowList` och `segmentNamespaceDenyList` saknas i konfigurationen kan användarna bara exportera målgrupper som kommer från [segmenteringstjänsten](../../../../segmentation/home.md). |
-| `segmentNamespaceDenyList` | Array | Valfritt | Begränsar användare från att mappa målgrupper till målet från de målgruppsnamnutrymmen som definieras i arrayen. Kan inte användas tillsammans med `segmentNamespaceAllowed`. <br> <br> Exempel: `"segmentNamespaceDenyList": ["AudienceManager"]` kommer att blockera användare från att mappa målgrupper från namnområdet `AudienceManager` till det här målet. <br> <br> Om du vill tillåta användare att exportera alla målgrupper till ditt mål, kan du ignorera den här parametern. <br> <br> Om både `segmentNamespaceAllowed` och `segmentNamespaceDenyList` saknas i konfigurationen kan användarna bara exportera målgrupper som kommer från [segmenteringstjänsten](../../../../segmentation/home.md). <br> <br> Om du vill tillåta export av alla målgrupper, oavsett ursprung, anger du `"segmentNamespaceDenyList":[]`. |
+| `segmentNamespaceAllowList` | Array | Valfritt | Tillåter användare att endast mappa målgrupper från de målgruppsnamnutrymmen som definieras i arrayen till målet. <br><br> Användning av den här parametern rekommenderas inte i de flesta fall. Använd i stället `"segmentNamespaceDenyList":[]` för att tillåta att alla typer av målgrupper exporteras till ditt mål. <br><br> Om både `segmentNamespaceAllowList` och `segmentNamespaceDenyList` saknas i konfigurationen kan användarna bara exportera målgrupper som kommer från [segmenteringstjänsten](../../../../segmentation/home.md). <br><br>`segmentNamespaceAllowList` och `segmentNamespaceDenyList` utesluter varandra. |
+| `segmentNamespaceDenyList` | Array | Valfritt | Begränsar användare från att mappa målgrupper från de målgruppsnamnutrymmen som definieras i arrayen till målet. <br><br>Adobe rekommenderar att alla målgrupper, oavsett ursprung, kan exporteras genom att ställa in `"segmentNamespaceDenyList":[]`. <br><br>Om både `segmentNamespaceAllowed` och `segmentNamespaceDenyList` saknas i konfigurationen kan användarna bara exportera målgrupper som kommer från [segmenteringstjänsten](../../../../segmentation/home.md). <br><br>`segmentNamespaceAllowList` och `segmentNamespaceDenyList` utesluter varandra. |
 
 {style="table-layout:auto"}
 
