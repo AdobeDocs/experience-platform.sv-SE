@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;Experience data model;Experience data model;experience data model;data model;data model;schema editor;schema editor;schema;schema;scheman;scheman;scheman;skapa;relation;relation;referens;referens;
+keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;Experience data model;Experience data model;experience data model;data model;datamodell;schema editor;schema;schema;scheman;scheman;scheman;scheman;skapa;relation;relation;referens;referens;
 solution: Experience Platform
 title: Definiera en relation mellan två scheman med Schemaredigeraren
-description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet i Experience Platform.
+description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med Schemaredigeraren i Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
 source-git-commit: 5f9fdc9eff4d8bba049c03058d24e80e9b89e953
@@ -41,7 +41,7 @@ I det här dokumentet finns en självstudiekurs för att definiera en relation m
 
 >[!NOTE]
 >
->Anvisningar om hur du skapar en många-till-en-relation i Adobe Real-time Customer Data Platform B2B Edition finns i handboken [Skapa B2B-relationer](./relationship-b2b.md).
+>Anvisningar om hur du skapar en många-till-en-relation i Adobe Real-Time Customer Data Platform B2B edition finns i handboken [Skapa B2B-relationer](./relationship-b2b.md).
 
 ## Komma igång
 
@@ -119,7 +119,7 @@ Dialogrutan [!UICONTROL Add relationship] visas. I den här dialogrutan kan du a
 
 >[!NOTE]
 >
->Om du har tillgång till Real-Time CDP B2B Edition kan du använda arbetsytans högerkontroller för att definiera ett relationsfält och skapa en många-till-en-relation med dialogrutan [samma](./relationship-b2b.md#relationship-field).
+>Om du har tillgång till Real-Time CDP B2B edition kan du använda kontrollerna till höger på arbetsytan för att definiera ett relationsfält och skapa en många-till-ett-relation med dialogrutan [samma](./relationship-b2b.md#relationship-field).
 
 ![Dialogrutan Lägg till relation.](../images/tutorials/relationship/add-relationship-dialog.png)
 

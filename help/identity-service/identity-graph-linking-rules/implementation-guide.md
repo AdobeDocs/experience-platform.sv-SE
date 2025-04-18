@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->This document assumes that you are starting your implementation in a new sandbox without any data.
+>I det här dokumentet förutsätts att du påbörjar implementeringen i en ny sandlåda utan några data.
 
 Läs det här dokumentet för att få en stegvis handledning som du kan följa när du implementerar dina data med Adobe Experience Platform Identity Service.
 

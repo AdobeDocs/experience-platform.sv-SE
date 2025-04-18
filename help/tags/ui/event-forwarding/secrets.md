@@ -242,7 +242,7 @@ Om du vill ta bort en befintlig hemlighet i arbetsytan **[!UICONTROL Secrets]** 
 
 ## Använda hemligheter i händelsevidarebefordran
 
-För att kunna använda en hemlighet vid vidarebefordran av händelser måste du först skapa ett [dataelement](../managing-resources/data-elements.md) som refererar till hemligheten. När du har sparat dataelementet kan du inkludera det i händelsevidarebefordran av [regler](../managing-resources/rules.md) och lägga till dessa regler i ett [bibliotek](../publishing/libraries.md) som i sin tur kan distribueras till Adobe som en [build](../publishing/builds.md) .
+För att kunna använda en hemlighet vid vidarebefordran av händelser måste du först skapa ett [dataelement](../managing-resources/data-elements.md) som refererar till hemligheten. När du har sparat dataelementet kan du inkludera det i händelsevidarebefordran av [regler](../managing-resources/rules.md) och lägga till dessa regler i ett [bibliotek](../publishing/libraries.md) som i sin tur kan distribueras till Adobe-servrar som en [build](../publishing/builds.md) .
 
 När du skapar dataelementet väljer du tillägget **[!UICONTROL Core]** och sedan **[!UICONTROL Secret]** som dataelementtyp. Den högra panelen uppdateras och innehåller listrutekontroller för att tilldela dataelementet upp till tre hemligheter: en för [!UICONTROL Development], [!UICONTROL Staging] och [!UICONTROL Production].
 

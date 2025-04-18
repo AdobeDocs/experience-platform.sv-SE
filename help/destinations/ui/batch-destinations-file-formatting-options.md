@@ -30,7 +30,7 @@ Om du vill visa filformateringsalternativen startar du arbetsflödet [Ansluta ti
 
 >[!IMPORTANT]
 >
->Målet som du ansluter till kanske inte har alla dessa alternativ tillgängliga. Det är upp till målutvecklaren att avgöra vilka filformateringsalternativ som stöds i målet. Målutvecklaren kan avgöra vilka alternativ som är tillgängliga vid anslutning till målet. Obligatoriska alternativ är markerade med en asterisk i användargränssnittet för Experience Platform.
+>Målet som du ansluter till kanske inte har alla dessa alternativ tillgängliga. Det är upp till målutvecklaren att avgöra vilka filformateringsalternativ som stöds i målet. Målutvecklaren kan avgöra vilka alternativ som är tillgängliga vid anslutning till målet. Obligatoriska alternativ är markerade med en asterisk i Experience Platform-gränssnittet.
 > 
 >De molnbaserade lagringsplatserna som skapats av Adobe - [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [Google Cloud Storage](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [SFTP](/help/destinations/catalog/cloud-storage/sftp.md) - stöder för närvarande endast de sex CSV-alternativ som markerats nedan.
 
@@ -120,8 +120,8 @@ Använd den här kontrollen för att ange strängbeteckningen för ett tomt vär
 
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
-* Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet omformar Experience Platform det tomma värdet till ett null-värde.
-* Exempelutdata med **&quot;** valt: `male,"",TestLastName`. I det här fallet omformar Experience Platform det tomma värdet till ett par dubbla citattecken.
+* Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet omvandlar Experience Platform det tomma värdet till ett null-värde.
+* Exempelutdata med **&quot;** valt: `male,"",TestLastName`. I det här fallet omvandlar Experience Platform det tomma värdet till ett par dubbla citattecken.
 * Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`. I det här fallet behåller Experience Platform det tomma värdet och exporterar det som det är (utan dubbla citattecken).
 
 >[!TIP]

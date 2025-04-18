@@ -25,7 +25,7 @@ ht-degree: 0%
 >
 >Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [Edge Network Server-API](/help/server-api/overview.md) när du konfigurerar **[!UICONTROL Custom Personalization]**-målet för attributbaserad personalisering. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../../server-api/authentication.md).
 >
-><br>Du kan hämta profilattribut via [Edge Network Server-API:t](/help/server-api/overview.md) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för webb- eller Mobile SDK-implementeringen.
+><br>Du kan hämta profilattribut via [ Edge Network Server-API:t](/help/server-api/overview.md) genom att lägga till en integrering på serversidan som använder samma dataström som du redan använder för din webb- eller Mobile SDK-implementering.
 >
 ><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på målgruppsmedlemskap.
 
@@ -39,7 +39,7 @@ Det här målet kräver någon av följande datainsamlingsmetoder, beroende på 
 
 * Använd [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) om du vill samla in data från din webbplats.
 * Använd [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) om du vill samla in data från ditt mobilprogram.
-* Använd [Edge Network Server-API:t](../../../server-api/overview.md) om du inte använder [Web SDK](/help/web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) eller om du vill anpassa användarupplevelsen baserat på profilattribut.
+* Använd [Edge Network Server-API:t](../../../server-api/overview.md) om du inte använder [Web SDK](/help/web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/), eller om du vill anpassa användarupplevelsen baserat på profilattribut.
 
 >[!IMPORTANT]
 >
@@ -51,7 +51,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -60,7 +60,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!DNL Profile request]** | Du begär alla målgrupper som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade personaliseringsmål kan ställas in för olika datamängder i [Adobe Data Collection](../../../datastreams/overview.md). |
+| Exporttyp | **[!DNL Profile request]** | Du begär alla målgrupper som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan ställas in för olika [Adobe Data Collection-datastreams](../../../datastreams/overview.md). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 ## Anslut till målet {#connect}
@@ -102,7 +102,7 @@ Läs [Aktivera profiler och målgrupper för kantanpassning](../../ui/activate-e
 
 ## Exporterade data {#exported-data}
 
-Om du använder [taggar i Adobe Experience Platform](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [send event complete](../../../tags/extensions/client/web-sdk/event-types.md) och din anpassade kodåtgärd har en `event.destinations`-variabel som du kan använda för att visa exporterade data.
+Om du använder [taggar i Adobe Experience Platform](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [send event complete](../../../tags/extensions/client/web-sdk/event-types.md) och din anpassade kodsåtgärd har en `event.destinations`-variabel som du kan använda för att visa exporterade data.
 
 Här är ett exempelvärde för variabeln `event.destinations`:
 

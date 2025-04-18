@@ -52,7 +52,7 @@ Mindmap börjar med en definition av vem som nås i användarresan och beskriver
 >title="Resurser"
 >abstract="Detta är resurserna som genereras av den här spelboken. När du har skapat en instans av spelboken kan du se resurserna i den inspirerande sandlådan och sedan befordra dem till andra sandlådor efter behov."
 
-Inspect i sammanfattningsavsnittet för att förstå vilka resurser som genereras när du skapar instanser från spelboken. Resurserna som genereras för varje spelningsbok är anpassade efter det användningsfall som spelningsboken aktiverar. Hämta mer information nedan om alla objekt i sammanfattningsavsnittet.
+Granska sammanfattningsavsnittet för att förstå vilka resurser som genereras när du skapar instanser från spelboken. Resurserna som genereras för varje spelningsbok är anpassade efter det användningsfall som spelningsboken aktiverar. Hämta mer information nedan om alla objekt i sammanfattningsavsnittet.
 
 | Objekt | Beskrivning |
 ---------|----------|

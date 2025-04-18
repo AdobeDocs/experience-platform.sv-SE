@@ -28,7 +28,7 @@ Den här gränssnittshandboken kräver förståelse för de olika [!DNL Experien
 
 ## Visa beräknade attribut {#view}
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen, följt av **[!UICONTROL Computed attributes]**, för att se en lista över beräknade attribut som är tillgängliga för din organisation. Detta innehåller information om det beräknade attributets namn, beskrivning, senaste utvärderingsdatum och senaste utvärderingsstatus.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen, följt av **[!UICONTROL Computed attributes]**, för att se en lista över beräknade attribut som är tillgängliga för din organisation. Detta innehåller information om det beräknade attributets namn, beskrivning, senaste utvärderingsdatum och senaste utvärderingsstatus.
 
 ![Avsnittet [!UICONTROL Profile] och flikarna [!UICONTROL Computed attributes] är markerade och visar hur användarna kommer åt bläddringssidan för beräknade attribut.](./images/ui/browse.png)
 
