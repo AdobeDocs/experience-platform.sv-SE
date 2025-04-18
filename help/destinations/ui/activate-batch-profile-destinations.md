@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 500cad30178e6371c8d7431b032a67f6ed15a1d6
 workflow-type: tm+mt
-source-wordcount: '4284'
+source-wordcount: '4347'
 ht-degree: 1%
 
 ---
@@ -83,6 +83,16 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >id="platform_destinations_activate_schedule"
 >title="Schema"
 >abstract="Använd pennikonen för att ange filexportformat (fullständiga eller stegvisa filer) och exportfrekvens."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_schedule_weekly_messaging"
+>title="Export varje vecka"
+>abstract="Välj startdatum och efterföljande exporter sker den dagen i veckan till det valda slutdatumet."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_schedule_monthly_messaging"
+>title="Månatlig export"
+>abstract="Välj startdatum och efterföljande exporter sker på det datumet i månaden till det valda slutdatumet. För månader med mindre än 30 eller 31 dagar sker exporten den sista dagen i månaden."
 
 [!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsmål som [olika filtyper](#supported-file-formats-export). På sidan **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje målgrupp som du exporterar.
 
