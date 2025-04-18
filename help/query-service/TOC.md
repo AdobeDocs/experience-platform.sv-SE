@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5e8dccf91e8c83b4734b363539cfb911b5c2ae29
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 12%
+source-wordcount: '404'
+ht-degree: 14%
 
 ---
 
@@ -27,12 +27,13 @@ ht-degree: 12%
       - [Översikt](data-distiller/derived-datasets/overview.md)
       - [Skapa härledda datauppsättningar med SQL](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
       - [Skapa decimalbaserade härledda datauppsättningar](data-distiller/derived-datasets/decile-based-derived-attributes.md)
-   - SQL-insikter för utökad apprapportering {#sql-insights}
+   - SQL Insights för utökad apprapportering {#sql-insights}
       - [Översikt](data-distiller/sql-insights/overview.md)
       - [Frågepro-läge](data-distiller/sql-insights/query-pro-mode.md)
+      - [Översikt över accelererad butik](data-distiller/sql-insights/accelerated-store-overview.md)
       - [Skicka accelererade frågor](data-distiller/sql-insights/send-accelerated-queries.md)
       - [Datamodellguide för rapportinsikter](data-distiller/sql-insights/reporting-insights-data-model.md)
-   - AI/ML-funktionspipelinjer {#ml-feature-pipelines}
+   - AI/ML-rörledningar {#ml-feature-pipelines}
       - [Översikt](data-distiller/ml-feature-pipelines/overview.md)
       - [Anslut till Jupyter-anteckningsböcker](data-distiller/ml-feature-pipelines/establish-connection.md)
       - [Förberedande dataanalys](data-distiller/ml-feature-pipelines/exploratory-analysis.md)
@@ -53,7 +54,7 @@ ht-degree: 12%
    - Exempel {#examples}
       - [Filtrera snabbt med statistik och maskininlärning](advanced-statistics/examples/statistics-and-ml-bot-filtering.md)
       - [Förutse kundbortfall med SQL-baserad logistisk regression](advanced-statistics/examples/predict-customer-churn.md)
-- Data för Distiller-målgrupper {#data-distiller-audiences}
+- Data Distiller-målgrupper {#data-distiller-audiences}
    - [Bygg externa målgrupper med SQL](data-distiller-audiences/overview.md)
 - Exempel {#use-cases}
    - [Översikt](use-cases/overview.md)
@@ -85,7 +86,7 @@ ht-degree: 12%
    - [Datadeduplicering](key-concepts/deduplication.md)
    - [Datauppsättningsexempel](key-concepts/dataset-samples.md)
    - [Datauppsättningsstatistikberäkning](key-concepts/dataset-statistics.md)
-- Data, Distiller-hyperkuber {#hypercubes}
+- Data Distiller Hypercubes {#hypercubes}
    - [Effektiv big data-analys med hyperkuber](hypercubes/overview.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
@@ -110,7 +111,7 @@ ht-degree: 12%
    - [Övervaka schemalagda frågor](ui/monitor-queries.md)
    - [Handbok för autentiseringsuppgifter](ui/credentials.md)
    - [Generera utdata från frågeresultat](ui/create-datasets.md)
-- Frågetjänstens API {#api}
+- API för frågetjänst {#api}
    - [Komma igång](api/getting-started.md)
    - [Frågor](api/queries.md)
    - [Anslutningsparametrar](api/connection-parameters.md)
@@ -119,17 +120,17 @@ ht-degree: 12%
    - [Frågemallar](api/query-templates.md)
    - [Snabbare frågor](api/accelerated-queries.md)
    - [Aviseringsprenumerationer](api/alert-subscriptions.md)
-- API för dataauktorisering för Distiller {#auth-api}
+- Data Distiller Authorization API {#auth-api}
    - [Översikt](auth-api/overview.md)
    - [Komma igång](auth-api/getting-started.md)
    - [IP-åtkomst](auth-api/ip-access.md)
    - [Validera](auth-api/validate.md)
-- Datastyrning {#data-governance}
+- Dataförvaltning {#data-governance}
    - [Översikt](data-governance/overview.md)
    - [Granskningsloggguide](data-governance/audit-log-guide.md)
    - [Identiteter i ad hoc-schemadatauppsättningar](data-governance/ad-hoc-schema-identities.md)
    - [Attributbaserad åtkomstkontroll för ad hoc-scheman](./data-governance/ad-hoc-schema-labels.md)
-- God praxis {#best-practices}
+- Bästa praxis {#best-practices}
    - [Frågekörning](best-practices/writing-queries.md)
    - [Dataresursorganisation](./best-practices/organize-data-assets.md)
 - SQL-referens {#sql}
