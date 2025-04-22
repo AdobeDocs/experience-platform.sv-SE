@@ -1,12 +1,12 @@
 ---
 title: Översikt över vidarebefordran av händelser
-description: Läs om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Experience Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
+description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Experience Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '1181'
-ht-degree: 3%
+ht-degree: 6%
 
 ---
 
