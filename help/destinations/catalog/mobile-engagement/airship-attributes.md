@@ -3,22 +3,14 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut, anslutning
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7377b2ffecf59fdb5ca5449daf1387ae1586bd63
 workflow-type: tm+mt
-source-wordcount: '1105'
-ht-degree: 3%
+source-wordcount: '1004'
+ht-degree: 0%
 
 ---
 
 # [!DNL Airship Attributes]-anslutning {#airship-attributes-destination}
-
->[!IMPORTANT]
->
->* Från och med 25 mars 2025 kan du se två [!DNL Airship Attributes]-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga [!DNL Airship Attributes]-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Airship Attributes]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Airship Attributes]**.
->* Använd anslutningen **[!UICONTROL Airship Attributes]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Airship Attributes]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
->* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
->   * Flödesspecifikation-id: `a862e0be-966e-4e5a-80d3-1bb566461986`
->   * Anslutningsspecifikation-id: `594bc002-4a47-49b7-8a98-ac0d21045502`
 
 ## Översikt {#overview}
 
