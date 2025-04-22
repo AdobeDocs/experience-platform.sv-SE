@@ -2,9 +2,9 @@
 title: Exempel på diagramkonfigurationer
 description: Lär dig mer om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '2796'
+source-wordcount: '2849'
 ht-degree: 1%
 
 ---
@@ -18,14 +18,18 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
+>
+>* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
+>* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
+>* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 
 >[!NOTE]
 >
 >* &quot;CRMID&quot; och &quot;loginID&quot; är egna namnutrymmen. I det här dokumentet är &quot;CRMID&quot; en personidentifierare och &quot;loginID&quot; är en inloggningsidentifierare som är associerad med en viss person.
 >* Om du vill simulera de exempeldiagramscenarier som beskrivs i det här dokumentet måste du först skapa två anpassade namnutrymmen, ett med identitetssymbolen &quot;CRMID&quot; och ett annat med identitetssymbolen &quot;loginID&quot;. Identitetssymboler är skiftlägeskänsliga.
 
-Det här dokumentet innehåller exempel på diagramkonfigurationer av vanliga scenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
+Det här dokumentet innehåller exempel på diagramkonfigurationer av vanliga scenarier som du kan stöta på när du arbetar med [!DNL Identity Graph Linking Rules] och identitetsdata.
 
 ## Endast CRMID
 
@@ -764,9 +768,9 @@ CRMID: Tom, ECID: 111
 
 ## Nästa steg
 
-Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
+Mer information om [!DNL Identity Graph Linking Rules] finns i följande dokumentation:
 
-* [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [[!DNL Identity Graph Linking Rules] översikt](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
 * [Felsökning och vanliga frågor](./troubleshooting.md)

@@ -2,14 +2,14 @@
 title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 9243da3ebe5e963ec457da5ae3e300e852787d37
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '1497'
 ht-degree: 0%
 
 ---
 
-# Översikt över regler för länkning av identitetsdiagram {#identity-graph-linking-rules-overview}
+# [!DNL Identity Graph Linking Rules] översikt {#identity-graph-linking-rules-overview}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_linkingrules_overview"
@@ -18,17 +18,21 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
+>
+>* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
+>* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
+>* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 
-Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRMID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare.
+Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRMID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via [!DNL Identity Graph Linking Rules] och tillåta korrekt personalisering för dina användare.
 
-I följande video finns mer information om hur du använder länkningsregler för identitetsdiagram:
+I följande video finns mer information om hur du använder [!DNL Identity Graph Linking Rules]:
 
 >[!VIDEO](https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops)
 
 ## Kom igång
 
-Följande dokument är viktiga när det gäller att förstå regler för länkning av identitetsdiagram.
+Följande dokument är viktiga för att förstå [!DNL Identity Graph Linking Rules].
 
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
@@ -45,7 +49,7 @@ Följande dokument är viktiga när det gäller att förstå regler för länkni
 >title="Diagram, komprimera scenarier"
 >abstract="Det finns flera orsaker till varför diagram kan&quot;komprimera&quot; eller representera flera personenheter."
 
-I det här avsnittet beskrivs exempelscenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
+I det här avsnittet beskrivs exempelscenarier som du kan överväga när du konfigurerar [!DNL Identity Graph Linking Rules].
 
 ### Delad enhet
 
@@ -61,7 +65,7 @@ Det finns instanser där flera inloggningar kan förekomma på en enda enhet:
 
 I dessa fall kommer ett enda ECID att länkas till flera CRMID från en diagramsynvinkel utan att några gränser är aktiverade.
 
-Med länkningsregler för identitetsdiagram kan du:
+Med [!DNL Identity Graph Linking Rules] kan du:
 
 * Konfigurera det ID som används för inloggning som unik identifierare. Du kan t.ex. begränsa ett diagram så att bara en identitet lagras med ett CRMID-namnutrymme och därmed definiera det CRMID:t som den unika identifieraren för en delad enhet.
    * På så sätt kan du se till att CRMID inte sammanfogas med ECID.
@@ -72,7 +76,7 @@ Det finns även instanser av användare som anger falska värden som telefonnumm
 
 ![Ett diagram som representerar ogiltiga e-post- eller telefonscenarier.](../images/identity-settings/invalid-email-phone.png)
 
-Med länkningsregler för identitetsdiagram kan du:
+Med [!DNL Identity Graph Linking Rules] kan du:
 
 * Konfigurera antingen CRMID, telefonnummer eller e-postadress som unik identifierare och begränsa därmed en person till endast ett CRMID, telefonnummer och/eller e-postadress som är kopplad till deras konto.
 
@@ -89,11 +93,11 @@ Dessa identiteter kan resultera i följande diagram, där flera CRMID sammanfoga
 
 ![Ett diagramexempel på identitetsdata med felaktiga eller felaktiga identitetsvärden.](../images/identity-settings/bad-data.png)
 
-Med länkningsregler för identitetsdiagram kan du konfigurera CRMID som den unika identifieraren för att förhindra att oönskade profiler komprimeras på grund av den här typen av data.
+Med [!DNL Identity Graph Linking Rules] kan du konfigurera CRMID som den unika identifieraren för att förhindra att oönskade profiler komprimeras på grund av den här datatypen.
 
-## Länkningsregler för identitetsdiagram {#identity-graph-linking-rules}
+## [!DNL Identity Graph Linking Rules] {#identity-graph-linking-rules}
 
-Med länkningsregler för identitetsdiagram kan du:
+Med [!DNL Identity Graph Linking Rules] kan du:
 
 * Skapa ett enskilt identitetsdiagram/sammanfogad profil för varje användare genom att konfigurera unika namnutrymmen, vilket förhindrar att två olika personidentifierare sammanfogas i ett identitetsdiagram.
 * Associera online-autentiserade händelser med personen genom att konfigurera prioriteringar
@@ -151,7 +155,7 @@ Mer information finns i handboken om [namnområdesprioritet](./namespace-priorit
 
 ## Nästa steg
 
-Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
+Mer information om [!DNL Identity Graph Linking Rules] finns i följande dokumentation:
 
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)

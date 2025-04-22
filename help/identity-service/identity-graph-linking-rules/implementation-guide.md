@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 45fdce7dc50b237edc511047ec150ecdd6adce50
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '1823'
+source-wordcount: '1876'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
+>
+>* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
+>* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
+>* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 
 >[!IMPORTANT]
 >
@@ -33,7 +37,7 @@ Stegvisa dispositioner:
 
 ## Krav för implementering {#prerequisites-for-implementation}
 
-I det här avsnittet beskrivs nödvändiga steg som du måste slutföra innan du implementerar länkningsregler för identitetsdiagram till dina data.
+I det här avsnittet beskrivs nödvändiga steg som du måste slutföra innan du kan implementera [!DNL Identity Graph Linking Rules] till dina data.
 
 ### Unikt namnutrymme
 
@@ -291,9 +295,9 @@ I det här exemplet visas även att Tom och Sommar ska skilja på personer som d
 
 ## Nästa steg
 
-Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
+Mer information om [!DNL Identity Graph Linking Rules] finns i följande dokumentation:
 
-* [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [[!DNL Identity Graph Linking Rules] översikt](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Exempel på diagramkonfigurationer](./example-configurations.md)
 * [Felsökning och vanliga frågor](./troubleshooting.md)

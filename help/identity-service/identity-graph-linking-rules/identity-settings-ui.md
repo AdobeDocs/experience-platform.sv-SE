@@ -2,9 +2,9 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 4c43813e234dd5d06c6b505652fca161b88971c9
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '679'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
+>
+>* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
+>* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
+>* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 
 Identitetsinställningar är en funktion i användargränssnittet för Adobe Experience Platform Identity Service som du kan använda för att ange unika namnutrymmen och konfigurera namnområdesprioritet.
 
@@ -23,7 +27,7 @@ Läs den här vägledningen när du vill lära dig hur du konfigurerar dina iden
 
 Läs följande dokument innan du börjar arbeta med identitetsinställningar:
 
-* [Länkningsregler för identitetsdiagram](./overview.md)
+* [[!DNL Identity Graph Linking Rules]](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
 * [Exempel på diagramkonfigurationer](./example-configurations.md)
@@ -83,9 +87,9 @@ Här måste du bekräfta följande innan du fortsätter till det sista steget:
 
 ## Nästa steg
 
-Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
+Mer information om [!DNL Identity Graph Linking Rules] finns i följande dokumentation:
 
-* [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [[!DNL Identity Graph Linking Rules] översikt](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
 * [Exempel på diagramkonfigurationer](./example-configurations.md)

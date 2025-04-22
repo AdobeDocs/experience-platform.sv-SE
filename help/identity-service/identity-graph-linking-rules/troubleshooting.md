@@ -2,20 +2,24 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 0e7911e21c546fb40cd51f03a5a6d6a2aa751dec
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '3331'
+source-wordcount: '3368'
 ht-degree: 0%
 
 ---
 
-# Felsökningsguide för länkningsregler för identitetsdiagram
+# Felsökningsguide för [!DNL Identity Graph Linking Rules]
 
 >[!AVAILABILITY]
 >
->Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
+>
+>* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
+>* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
+>* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 
-När du testar och validerar regler för länkning av identitetsdiagram kan du stöta på problem som rör datainmatning och diagrambeteende. Läs det här dokumentet om du vill veta mer om hur du felsöker några vanliga problem som kan uppstå när du arbetar med länkningsregler för identitetsdiagram.
+När du testar och validerar [!DNL Identity Graph Linking Rules] kan du råka ut för problem som rör datainmatning och diagrambeteende. Läs det här dokumentet för att lära dig hur du felsöker några vanliga problem som du kan stöta på när du arbetar med [!DNL Identity Graph Linking Rules].
 
 ## Översikt över dataöverföringsflöde {#data-ingestion-flow-overview}
 
@@ -55,7 +59,7 @@ Det finns olika orsaker till varför detta kan inträffa, bland annat följande:
 * Som standard är [AAID:n spärrade från inmatning](../guardrails.md#identity-namespace-ingestion).
 * Identiteten har tagits bort på grund av [systemskyddsräcken](../guardrails.md#understanding-the-deletion-logic-when-an-identity-graph-at-capacity-is-updated).
 
-Inom ramen för länkningsreglerna för identitetsdiagram kan en post refuseras från identitetstjänsten eftersom den inkommande händelsen har två eller flera identiteter med samma unika namnutrymme men olika identitetsvärde. Detta scenario inträffar vanligtvis på grund av implementeringsfel.
+I kontexten för [!DNL Identity Graph Linking Rules] kan en post avvisas från identitetstjänsten eftersom den inkommande händelsen har två eller flera identiteter med samma unika namnutrymme men olika identitetsvärden. Detta scenario inträffar vanligtvis på grund av implementeringsfel.
 
 Tänk på följande händelse med två antaganden:
 
@@ -318,11 +322,11 @@ Du kan använda följande fråga i datauppsättningen för export av ögonblicks
 
 >[!TIP]
 >
->De två frågor som anges ovan ger förväntade resultat om sandlådan inte är aktiverad för den delade enhetens övergångsmetod och beter sig annorlunda än länkningsreglerna för identitetsdiagram.
+>De två frågor som anges ovan ger förväntade resultat om sandlådan inte är aktiverad för den delade enhetens övergångsmetod och fungerar annorlunda än [!DNL Identity Graph Linking Rules].
 
 ## Vanliga frågor och svar {#faq}
 
-I det här avsnittet finns en lista med svar på vanliga frågor om länkningsregler för identitetsdiagram.
+I det här avsnittet finns en lista med svar på vanliga frågor om [!DNL Identity Graph Linking Rules].
 
 ## Identitetsoptimeringsalgoritm {#identity-optimization-algorithm}
 
@@ -389,7 +393,7 @@ Identitetsoptimeringsalgoritmen används först för att säkerställa personent
 
 ## Testning
 
-I det här avsnittet finns svar på vanliga frågor om testnings- och felsökningsfunktioner i länkningsregler för identitetsdiagram.
+I det här avsnittet finns svar på vanliga frågor om testnings- och felsökningsfunktioner i [!DNL Identity Graph Linking Rules].
 
 ### Vilka scenarier bör jag testa i en utvecklingssandlådemiljö?
 

@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
@@ -18,8 +18,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
 >
+>* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
+>* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
+>* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 >* Ditt konto måste ha behörigheten **Visa identitetsdiagram** för att kunna komma åt verktyget [!DNL Graph Simulation]. Mer information finns i [handboken om behörigheter i attributbaserad åtkomstkontroll](../../access-control/abac/ui/permissions.md).
 
 [!DNL Graph Simulation] är ett verktyg i identitetstjänstens gränssnitt som du kan använda för att simulera hur ett identitetsdiagram beter sig när en viss kombination av identiteter anges och hur du konfigurerar [identitetsoptimeringsalgoritmen](./identity-optimization-algorithm.md).
@@ -182,7 +185,7 @@ I exempeldiagrammet nedan finns det en prickad linje mellan `{Email: tom@acme.co
 
 Genom att läsa det här dokumentet vet du nu hur du använder verktyget [!DNL Graph Simulation] för att bättre förstå hur dina identitetsdata behandlas utifrån en viss uppsättning regler och konfigurationer. Mer information finns i följande dokument:
 
-* [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [[!DNL Identity Graph Linking Rules] översikt](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
 * [Felsökning och vanliga frågor](./troubleshooting.md)
