@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: df047593a14ce6683dc04a6ba6518e6d0810c43d
+source-git-commit: b456540a59c4b0455e8e1d52ed98d97454f8f61f
 workflow-type: tm+mt
-source-wordcount: '1282'
+source-wordcount: '1286'
 ht-degree: 2%
 
 ---
@@ -243,6 +243,7 @@ ht-degree: 2%
          * [Omformningsfunktioner som stöds](./destination-sdk/functionality/destination-server/supported-functions.md)
          * [Filformateringskonfiguration](./destination-sdk/functionality/destination-server/file-formatting.md)
       * Målkonfigurationskomponenter {#destination-configuration}
+         * [Konfigurera målgruppsdatatyp](./destination-sdk/functionality/destination-configuration/audience-data-type.md)
          * [Konfiguration av kundautentisering](./destination-sdk/functionality/destination-configuration/customer-authentication.md)
          * [OAuth2-auktorisering](./destination-sdk/functionality/destination-configuration/oauth2-authorization.md)
          * [Kunddatafält](./destination-sdk/functionality/destination-configuration/customer-data-fields.md)
