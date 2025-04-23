@@ -2,7 +2,7 @@
 title: Skapa och konfigurera datastreams
 description: Lär dig hur du kopplar samman SDK-integreringen på klientsidan med andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 637f7d68c0de93ede5ee808b68a0066f6abe52c9
 workflow-type: tm+mt
 source-wordcount: '2638'
 ht-degree: 0%
@@ -81,7 +81,7 @@ Enhet- och maskinvaruinformationen använder `context`-matrissträngen `"device"
 
 Kontrollera också att varje önskat XDM-fält finns i schemat. Om den inte gör det kan du lägga till fältgruppen `Environment Details` som tillhandahålls av Adobe i ditt schema.
 
-### Konfigurera avancerade alternativ {#@advanced-options}
+### Konfigurera avancerade alternativ {#advanced-options}
 
 Om du vill visa avancerade konfigurationsalternativ väljer du **[!UICONTROL Advanced Options]**. Här kan du konfigurera ytterligare datastream-inställningar, som IP-förfalskning, cookies för första parts-ID med mera.
 

@@ -1,18 +1,18 @@
 ---
-title: Första parts enhets-ID i Web SDK
+title: Använda enhets-ID:n från första part i Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) i Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c7be2fff2cd94677b745e6ed095454bc46f8a37b
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2173'
 ht-degree: 0%
 
 ---
 
 
-# Första parts enhets-ID i Web SDK
+# Använda enhets-ID:n från första part i Web SDK
 
-Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud-ID:n (ECID:n)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html) till webbplatsbesökare genom att använda cookies för att spåra användarbeteenden. Om du vill ta hänsyn till webbläsarbegränsningar för cookie-intervall kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Dessa kallas för enhets-ID:n från första part (`FPIDs`).
+Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID:n (ECID:n)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html) till webbplatsbesökare som använder cookies för att spåra användarbeteende. Om du vill åtgärda webbläsarbegränsningar för cookie-livscykler kan du ange och hantera egna enhetsidentifierare, som kallas FPID (First-party device ID).
 
 >[!NOTE]
 >
@@ -20,65 +20,30 @@ Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud-ID:n (ECID:n
 
 >[!IMPORTANT]
 >
->Första parts enhets-ID är inte kompatibelt med funktionen [cookies](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#identity) från tredje part i Web SDK.
->Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
+>Första parts enhets-ID är inte kompatibelt med funktionen [cookies](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#identity) från tredje part i Web SDK. Du kan använda antingen enhets-ID:n från första part eller cookies från tredje part, men inte båda samtidigt.
 
-I det här dokumentet beskrivs hur du konfigurerar enhets-ID:n från första part för din Web SDK-implementering.
+## Förhandskrav {#prerequisites}
 
-## Förhandskrav
+Innan du börjar bör du kontrollera att du är bekant med hur identitetsdata fungerar i Web SDK, inklusive ECID:n och `identityMap`. Mer information finns i översikten över [identitetsdata i Web SDK](./overview.md).
 
-I den här handboken förutsätts du känna till hur identitetsdata fungerar för Experience Platform Web SDK, inklusive rollen för ECID och `identityMap`. Mer information finns i översikten över [identitetsdata i Web SDK](./overview.md).
+## Krav för formatering av enhets-ID från första part {#formatting-requirements}
 
-## Använda FPID (First-party device ID) {#using-fpid}
+Edge Network godkänner endast ID:n som är kompatibla med formatet [UIDv4](https://datatracker.ietf.org/doc/html/rfc4122). Enhets-ID:n som inte är i UUIDv4-format kommer att avvisas.
 
-Första parts enhets-ID ([!DNL FPIDs]) spårar besökare med hjälp av cookies från första part. Första parts-cookies är mest effektiva när de ställs in med en server som använder en DNS [A-post](https://datatracker.ietf.org/doc/html/rfc1035) (för IPv4) eller [AAAA-post](https://datatracker.ietf.org/doc/html/rfc3596) (för IPv6), i motsats till en DNS [!DNL CNAME] - eller [!DNL JavaScript] -kod.
+* [!DNL UUIDs] är unika och slumpmässiga, med en försumbar sannolikhet för kollision.
+* [!DNL UUIDv4] kan inte dirigeras med IP-adresser eller annan personligt identifierbar information (PII).
+* Bibliotek för att generera [!DNL UUIDs] är tillgängliga för alla programmeringsspråk.
 
->[!IMPORTANT]
->
->[!DNL A]- eller [!DNL AAAA]-poster stöds bara för att ange och spåra cookies. Den primära metoden för datainsamling är via en [!DNL DNS] [!DNL CNAME]. [!DNL FPIDs] anges med andra ord med en [!DNL A]- eller [!DNL AAAA]-post och skickas sedan till Adobe med en [!DNL CNAME].
->
->[Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program) stöds fortfarande för datainsamling från första part.
+## Ange cookien [!DNL FPID] med din egen server {#set-cookie-server}
 
-När en [!DNL FPID]-cookie har angetts kan dess värde hämtas och skickas till Adobe när händelsedata samlas in. Insamlade [!DNL FPIDs] används som startvärde för att generera [!DNL ECIDs], som även fortsättningsvis är de primära identifierarna i Adobe Experience Cloud-program.
-
-Om du vill skicka en [!DNL FPID] för en webbplatsbesökare till Edge Network måste du inkludera [!DNL FPID] i `identityMap` för den besökaren. Mer information finns i avsnittet längre ned i det här dokumentet om [att använda FPID:n i `identityMap`](#identityMap).
-
-### Krav för formatering av enhets-ID från första part {#formatting-requirements}
-
-Edge Network godkänner bara [!DNL IDs] som överensstämmer med [UIDv4-formatet](https://datatracker.ietf.org/doc/html/rfc4122). Enhets-ID:n som inte är i formatet [!DNL UUIDv4] kommer att avvisas.
-
-Generering av [!DNL UUID] resulterar nästan alltid i ett unikt, slumpmässigt ID, med sannolikheten för att en kollision inträffar är försumbar. [!DNL UUIDv4] kan inte dirigeras med IP-adresser eller annan personlig identifierbar information ([!DNL PII]). [!DNL UUIDs] är vanligt förekommande och bibliotek kan hittas för praktiskt taget alla programmeringsspråk för att generera dem.
-
-## Ställa in en cookie för ett första parts-ID i användargränssnittet för datastreams {#setting-cookie-datastreams}
-
-Du kan ange ett cookie-namn i Datastreams-användargränssnittet, där [!DNL FPID] kan finnas, i stället för att behöva läsa cookie-värdet och inkludera [!DNL FPID] i identitetskartan.
-
->[!IMPORTANT]
->
->Den här funktionen kräver att du har [Första part-datainsamling](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) aktiverad.
-
-Mer information om hur du konfigurerar ett datastream finns i [datastreams-dokumentationen](../../datastreams/configure.md).
-
-Aktivera alternativet **[!UICONTROL First Party ID Cookie]** när du konfigurerar ditt datastream. Den här inställningen anger för Edge Network att referera till en angiven cookie vid sökning efter ett enhets-ID från en annan leverantör, i stället för att leta upp det här värdet i [identitetskartan](#identityMap).
-
-Mer information om hur de fungerar med Adobe Experience Cloud finns i dokumentationen om [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html).
-
-![Experience Platform-gränssnittsbild som visar datastream-konfigurationen som markerar cookie-inställningen för första parts-ID](../assets/first-party-id-datastreams.png)
-
-När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras.
-
-När du använder ID:n från första part kan du inte synkronisera ID:n från tredje part. Synkronisering av tredjeparts-ID är beroende av tjänsten [!DNL Visitor ID] och den `UUID` som genereras av den tjänsten. När du använder funktionen för första parts-ID genereras [!DNL ECID] utan att tjänsten [!DNL Visitor ID] används, vilket gör det omöjligt att synkronisera tredje parts-ID.
-
-När du använder egna ID:n stöds inte [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager)-funktioner som är avsedda för aktivering på partnerplattformar, eftersom synkroniseringen av Audience Manager partner-ID oftast baseras på `UUIDs` eller `DIDs`. [!DNL ECID] som härleds från ett första part-ID är inte länkat till en `UUID`, vilket gör den oadresserbar.
-
-## Ange en cookie med din egen server {#set-cookie-server}
-
-När du ställer in en cookie med en server som du äger kan du använda olika metoder för att förhindra att cookien begränsas på grund av webbläsarprinciper:
+När du ställer in en cookie via din egen server kan du använda olika metoder för att förhindra att cookien begränsas på grund av webbläsarprinciper:
 
 * Generera cookies med serverskriptspråk
 * Ange cookies som svar på en API-begäran som görs till en underdomän eller annan slutpunkt på webbplatsen
 * Generera cookies med en [!DNL CMS]
 * Generera cookies med en [!DNL CDN]
+
+Dessutom bör du alltid ange FPID-cookie under domänens `A`-post.
 
 >[!IMPORTANT]
 >
@@ -126,7 +91,101 @@ Med attributet `SameSite` kan servrar avgöra om cookies skickas med förfrågni
 
 Om inget `SameSite`-attribut anges är standardinställningen för vissa webbläsare nu `SameSite=Lax`.
 
-## Använda FPID i `identityMap` {#identityMap}
+## ID-hierarki {#id-hierarchy}
+
+När både [!DNL ECID] och [!DNL FPID] finns med prioriteras [!DNL ECID] när användaren identifieras. Detta garanterar att när en befintlig [!DNL ECID] finns i webbläsar-cookie-arkivet förblir den primära identifieraren och befintligt antal besökare riskerar inte att påverkas. För befintliga användare blir [!DNL FPID] inte den primära identiteten förrän [!DNL ECID] förfaller eller tas bort som ett resultat av en webbläsarprincip eller manuell process.
+
+Identiteter prioriteras i följande ordning:
+
+1. [!DNL ECID] ingår i `identityMap`
+1. [!DNL ECID] lagras i en cookie
+1. [!DNL FPID] ingår i `identityMap`
+1. [!DNL FPID] lagras i en cookie
+
+
+## Migrera till enhets-ID:n från första part {#migrating-to-fpid}
+
+Om du migrerar till enhets-ID:n från en tidigare implementering kan det vara svårt att se hur övergången kan se ut på en låg nivå.
+
+För att illustrera den här processen bör du överväga ett scenario där en kund som tidigare besökt din webbplats deltar och vilken inverkan en [!DNL FPID]-migrering skulle ha på hur kunden identifieras i Adobe-lösningar.
+
+![Diagram som visar hur en kunds ID-värden uppdateras mellan besök efter migrering till FPID](../assets/identity/tracking/visits.png)
+
+>[!IMPORTANT]
+>
+>Cookien `ECID` prioriteras alltid framför `FPID`.
+
+| Besök | Beskrivning |
+| --- | --- |
+| Första besök | Anta att du ännu inte har börjat ange cookien [!DNL FPID]. [!DNL ECID] i [AMCV-cookien](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8) är den identifierare som används för att identifiera besökaren. |
+| Andra besöket | Rollout of the [!DNL FPID] solution has started. Befintlig [!DNL ECID] finns fortfarande och är fortfarande den primära identifieraren för besökaridentifiering. |
+| Tredje besök | Mellan det andra och tredje besöket har det gått tillräckligt lång tid att ta bort [!DNL ECID] på grund av webbläsarprincipen. Eftersom [!DNL FPID] angavs med en [!DNL DNS] [!DNL A]-post kvarstår [!DNL FPID]. [!DNL FPID] betraktas nu som primärt ID och används för att skapa startvärde för [!DNL ECID], som skrivs till slutanvändarens enhet. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
+| Fjärde besöket | Mellan det tredje och fjärde besöket har det gått tillräckligt lång tid att ta bort [!DNL ECID] på grund av webbläsarprincipen. Precis som vid det föregående besöket beror [!DNL FPID] fortfarande på hur det var inställt. Den här gången genereras samma [!DNL ECID] som det föregående besöket. Användaren uppträder som samma användare i alla lösningar från Experience Platform och Experience Cloud som vid föregående besök. |
+| Femte besöket | Mellan den fjärde och femte besöken rensade slutanvändaren alla cookies i sin webbläsare. En ny [!DNL FPID] genereras och används för att skapa en ny [!DNL ECID]. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
+
+{style="table-layout:auto"}
+
+## Använda FPID (First-party device ID) {#using-fpid}
+
+Första parts enhets-ID ([!DNL FPIDs]) spårar besökare med hjälp av cookies från första part. Första parts-cookies är mest effektiva när de ställs in med en server som använder en DNS [A-post](https://datatracker.ietf.org/doc/html/rfc1035) (för IPv4) eller [AAAA-post](https://datatracker.ietf.org/doc/html/rfc3596) (för IPv6), i motsats till en DNS [!DNL CNAME] - eller [!DNL JavaScript] -kod.
+
+>[!IMPORTANT]
+>
+>[!DNL A]- eller [!DNL AAAA]-poster stöds bara för att ange och spåra cookies. Den primära metoden för datainsamling är via en [!DNL DNS CNAME]. [!DNL FPIDs] anges med en [!DNL A]- eller [!DNL AAAA]-post och skickas till Adobe med en [!DNL CNAME].
+>
+>[Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program) stöds även för datainsamling från första part.
+
+När en [!DNL FPID]-cookie har angetts kan dess värde hämtas och skickas till Adobe när händelsedata samlas in. Insamlade [!DNL FPIDs] används för att generera [!DNL ECIDs], som är de primära identifierarna i Adobe Experience Cloud-program.
+
+Du kan använda [!DNL FPIDs] på två sätt:
+
+* **[Metod 1](#setting-cookie-datastreams)**: Konfigurera en [!DNL CNAME] för dina SDK-webbanrop och inkludera namnet på din [!DNL FPID]-cookie i din datastream-konfiguration.
+* **[Metod 2](#identityMap)**: Inkludera [!DNL FPID] i identitetskartan. Mer information finns i avsnittet längre ned i det här dokumentet om [att använda FPID:n i `identityMap`](#identityMap).
+
+### Metod 1: Konfigurera en CNAME-fil för dina SDK-webbsamtal och ange en cookie-fil för första parts-ID i ditt datastam {#setting-cookie-datastreams}
+
+Om du vill ange en [!DNL FPID]-cookie från din egen domän måste du konfigurera din egen [!DNL CNAME] (kanoniskt namn) för dina SDK-webbanrop och sedan aktivera [!DNL First Party ID Cookie]-funktionen i din datastream-konfiguration.
+
+**Steg 1. Konfigurera en CNAME för din SDK-distributionsdomän**
+
+Med en [!DNL CNAME]-post i din DNS kan du skapa ett alias från ett domännamn till ett annat. Detta kan få tredjepartstjänster att se ut som om de är en del av din egen domän, vilket gör att deras cookies ser ut som cookies från första part.
+
+**Exempel**
+
+Tänk på att du vill implementera Web SDK på din webbplats `mywebsite.com`. SDK skickar data till Edge Network till domänen `edge.adobedc.net`.
+
+| Utan [!DNL CNAME] | Med [!DNL CNAME] |
+|---------|----------|
+| <ul><li>Webbplatsen `mywebsite.com` använder SDK-domänen `edge.adobedc.net` för att skicka data till Edge Network.</li><li>Cookies som anges av `edge.adobedc.net` betraktas som cookies från tredje part eftersom de inte kommer från din `mywebsite.com`-domän. Beroende på vilka webbläsare du använder kan cookies från tredje part blockeras och dina data når inte Edge Network.</li></ul> | <ul><li>Du skapar en underdomän där du distribuerar Web SDK, till exempel `metrics.mywebsite.com`.</li><li>Du anger en [!DNL CNAME]-post i DNS-systemet så att `metrics.mywebsite.com` pekar på `edge.adobedc.net`.</li><li>När din webbplats ställer in cookies via `metrics.mywebsite.com` ser det ut som om de kommer från `mywebsite.com` (första part) i stället för `edge.adobedc.net` (tredje part). Detta gör det mindre sannolikt att cookie-filen för första parts-ID blockeras, vilket ger en mer korrekt datainsamling.</li></ul> |
+
+När datainsamling från första part aktiveras med en [!DNL CNAME] skickas alla cookies för din domän på begäranden som görs till datainsamlingsslutpunkten.
+
+Om du vill använda den här funktionen måste du ange cookien [!DNL FPID] på den översta nivån i din domän i stället för en specifik underdomän. Om du anger värdet för en underdomän skickas inte cookie-värdet till Edge Network och lösningen [!DNL FPID] fungerar inte som den ska.
+
+>[!IMPORTANT]
+>
+>Den här funktionen kräver att du har [Första part-datainsamling](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) aktiverad.
+
+**Steg 2. Aktivera funktionen **[!UICONTROL First Party ID Cookie]**för din datastream**
+
+När du har konfigurerat CNAME måste du aktivera alternativet **[!UICONTROL First Party ID Cookie]** för ditt datastream. Den här inställningen anger för Edge Network att referera till en angiven cookie när du söker efter ett enhets-ID från en annan leverantör, i stället för att leta upp det här värdet i [identitetskartan](#identityMap).
+
+Läs [dokumentationen för datastream-konfigurationen](../../datastreams/configure.md#advanced-options) om du vill veta mer om hur du konfigurerar datastream.
+
+Mer information om hur de fungerar med Adobe Experience Cloud finns i dokumentationen om [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html).
+
+![Plattformens gränssnittsbild visar datastream-konfigurationen som markerar cookie-inställningen för första parts-ID](../assets/first-party-id-datastreams.png)
+
+När du aktiverar den här inställningen måste du ange namnet på den cookie där [!DNL FPID] förväntas lagras.
+
+>[!NOTE]
+>
+>När du använder ID:n från första part kan du inte synkronisera ID:n från tredje part. Synkronisering av tredjeparts-ID är beroende av tjänsten [!DNL Visitor ID] och den `UUID` som genereras av den tjänsten. När du använder funktionen för första parts-ID genereras [!DNL ECID] utan att tjänsten [!DNL Visitor ID] används, vilket gör det omöjligt att synkronisera tredje parts-ID.
+><br> När du använder egna ID:n stöds inte [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager)-funktioner som är avsedda för aktivering på partnerplattformar, eftersom synkroniseringen av Audience Manager partner-ID oftast baseras på `UUIDs` eller `DIDs`. [!DNL ECID] som härleds från ett första part-ID är inte länkat till en `UUID`, vilket gör den oadresserbar.
+
+## Metod 2: Använd FPID i `identityMap` {#identityMap}
+
+Som ett alternativ till att lagra [!DNL FPID] i din egen cookie kan du skicka [!DNL FPID] till Edge Network via identitetskartan.
 
 Nedan visas ett exempel på hur du skulle ange en [!DNL FPID] i `identityMap`:
 
@@ -220,49 +279,6 @@ Felsvaret som returnerades av Edge Network i det här fallet liknar följande:
 }
 ```
 
-## Ställa in ett FPID på din egen domän {#setting-fpid-domain}
-
-Förutom att ange [!DNL FPID] i identitetskartan kan du ange [!DNL FPID]-cookien på din egen domän, om du har konfigurerat en första part-datainsamling [!DNL CNAME].
-
-När datainsamling från första part aktiveras med en [!DNL CNAME] skickas alla cookies för din domän på begäranden som görs till datainsamlingsslutpunkten.
-
-Alla cookies som inte är relevanta för Adobe datainsamling tas bort. För [!DNL FPID] kan du ange namnet på cookien [!DNL FPID] i datastream-konfigurationen. När du gör detta läser Edge Network innehållet i cookien [!DNL FPID] i stället för att leta efter [!DNL FPID] i identitetskartan.
-
-Om du vill använda den här funktionen måste du ange [!DNL FPID] på den översta nivån i din domän i stället för en specifik underdomän. Om du anger värdet för en underdomän skickas inte cookie-värdet till Edge Network och lösningen [!DNL FPID] fungerar inte som den ska.
-
-## ID-hierarki {#id-hierarchy}
-
-När både [!DNL ECID] och [!DNL FPID] finns med prioriteras [!DNL ECID] när användaren identifieras. Detta garanterar att när en befintlig [!DNL ECID] finns i webbläsar-cookie-arkivet förblir den primära identifieraren och befintligt antal besökare riskerar inte att påverkas. För befintliga användare blir [!DNL FPID] inte den primära identiteten förrän [!DNL ECID] förfaller eller tas bort som ett resultat av en webbläsarprincip eller manuell process.
-
-Identiteter prioriteras i följande ordning:
-
-1. [!DNL ECID] ingår i `identityMap`
-1. [!DNL ECID] lagras i en cookie
-1. [!DNL FPID] ingår i `identityMap`
-1. [!DNL FPID] lagras i en cookie
-
-## Migrera till enhets-ID:n från första part {#migrating-to-fpid}
-
-Om du migrerar till enhets-ID:n från en tidigare implementering kan det vara svårt att se hur övergången kan se ut på en låg nivå.
-
-För att illustrera den här processen bör du överväga ett scenario där en kund som tidigare besökt din webbplats deltar och vilken inverkan en [!DNL FPID]-migrering skulle ha på hur kunden identifieras i Adobe-lösningar.
-
-![Diagram som visar hur en kunds ID-värden uppdateras mellan besök efter migrering till FPID](../assets/identity/tracking/visits.png)
-
->[!IMPORTANT]
->
->Cookien `ECID` prioriteras alltid framför `FPID`.
-
-| Besök | Beskrivning |
-| --- | --- |
-| Första besök | Anta att du ännu inte har börjat ange cookien [!DNL FPID]. [!DNL ECID] i [AMCV-cookien](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8) är den identifierare som används för att identifiera besökaren. |
-| Andra besöket | Rollout of the [!DNL FPID] solution has started. Befintlig [!DNL ECID] finns fortfarande och är fortfarande den primära identifieraren för besökaridentifiering. |
-| Tredje besök | Mellan det andra och tredje besöket har det gått tillräckligt lång tid att ta bort [!DNL ECID] på grund av webbläsarprincipen. Eftersom [!DNL FPID] angavs med en [!DNL DNS] [!DNL A]-post kvarstår [!DNL FPID]. [!DNL FPID] betraktas nu som primärt ID och används för att skapa startvärde för [!DNL ECID], som skrivs till slutanvändarens enhet. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
-| Fjärde besöket | Mellan det tredje och fjärde besöket har det gått tillräckligt lång tid att ta bort [!DNL ECID] på grund av webbläsarprincipen. Precis som vid det föregående besöket beror [!DNL FPID] fortfarande på hur det var inställt. Den här gången genereras samma [!DNL ECID] som det föregående besöket. Användaren uppträder som samma användare i alla lösningar från Experience Platform och Experience Cloud som vid föregående besök. |
-| Femte besöket | Mellan den fjärde och femte besöken rensade slutanvändaren alla cookies i sin webbläsare. En ny [!DNL FPID] genereras och används för att skapa en ny [!DNL ECID]. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
-
-{style="table-layout:auto"}
-
 ## Vanliga frågor och svar {#faq}
 
 Nedan följer en lista med svar på vanliga frågor om enhets-ID:n från första part.
@@ -279,6 +295,6 @@ För att minska potentiell besökarökning bör [!DNL FPID] genereras innan du g
 
 För närvarande stöder endast Web SDK enhets-ID:n från första part.
 
-### Lagras första parts enhets-ID på någon av Experience Platform- eller Experience Cloud-lösningarna?
+### Lagras förstahandsenhets-ID:n på någon plattforms- eller Experience Cloud-lösning?
 
 När [!DNL FPID] har använts för att skapa startvärdet för en [!DNL ECID] tas den bort från `identityMap` och ersätts med [!DNL ECID] som har genererats. [!DNL FPID] lagras inte i några Adobe Experience Platform- eller Experience Cloud-lösningar.
