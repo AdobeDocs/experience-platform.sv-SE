@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;batchingång;batchingösning;ingift;utvecklarguide;api guide;upload;ingest Parquet;ingest json;
+keywords: Experience Platform;hem;populära ämnen;batchmatning;batchmatning;intag;utvecklarguide;api guide;upload;ingest Parquet;ingest json;
 solution: Experience Platform
 title: API-guide för gruppinmatning
 description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 0e484dffa38d454561f9d67c6bea92f426d3515d
 workflow-type: tm+mt
-source-wordcount: '2383'
+source-wordcount: '2435'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,9 @@ Granska översikten för [API för gruppinläsning](overview.md) och [kom igång
 
 >[!NOTE]
 >
->Följande steg gäller för små filer (256 MB eller mindre). Om du råkar ut för en timeout för gatewayen eller begär fel i brödstorlek måste du växla till stor filöverföring.
+>- Följande steg gäller för små filer (256 MB eller mindre). Om du råkar ut för en timeout för gatewayen eller begär fel i brödstorlek måste du växla till stor filöverföring.
+>
+>- Använd enkelradig JSON i stället för flerradig JSON som indata för batchförtäring. En-rads JSON ger bättre prestanda eftersom systemet kan dela upp en indatafil i flera segment och bearbeta dem parallellt, medan flerrads-JSON inte kan delas. Detta kan avsevärt minska databehandlingskostnaderna och förbättra tidsfördröjningen för gruppbearbetning.
 
 ### Skapa batch
 
@@ -405,7 +407,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### Överför stora filsegment
 
-Nu när filen har skapats kan alla efterföljande segment överföras genom upprepade förfrågningar från PATCH, en för varje del av filen.
+Nu när filen har skapats kan alla efterföljande segment överföras genom upprepade PATCH-begäranden, en för varje del av filen.
 
 **API-format**
 
@@ -720,7 +722,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Ta bort en grupp {#delete-a-batch}
 
-En batch kan tas bort genom att utföra följande frågebegäran med frågeparametern `action=REVERT` till ID:t för den POST som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
+En batch kan tas bort genom att utföra följande POST-begäran med frågeparametern `action=REVERT` till ID:t för gruppen som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
 
 **API-format**
 
@@ -915,7 +917,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om hur man får in data i Experience Platform med hjälp av batchintag.
+Följande avsnitt innehåller ytterligare information om hur du får in data i Experience Platform med hjälp av batchintag.
 
 ### Datatransformering för batchinmatning
 
