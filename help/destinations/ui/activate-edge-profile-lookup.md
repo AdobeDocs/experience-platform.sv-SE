@@ -3,9 +3,9 @@ title: Söka efter kantprofilattribut i realtid
 description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1835'
+source-wordcount: '1839'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ När du konfigurerar det användningsfall som beskrivs på den här sidan använ
 * [Datastreams](../../datastreams/overview.md): En datastream tar emot inkommande händelsedata från Web SDK och svarar med edge-profildata.
 * [Sammanslagningsprinciper](../../segmentation/ui/segment-builder.md#merge-policies): Du skapar en [!UICONTROL Active-On-Edge] sammanfogningsprincip för att se till att kantprofilerna använder rätt profildata.
 * [Anpassad Personalization-anslutning](../catalog/personalization/custom-personalization.md): Du konfigurerar en ny anpassad personaliseringsanslutning som skickar profilattributen till Edge Network.
-* [Edge Network API](../../server-api/overview.md): Du använder Edge Network API-funktionen [interaktiv datainsamling](../../server-api/interactive-data-collection.md) för att snabbt hämta profilattribut från kantprofilerna.
+* [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/): Du använder Edge Network API-funktionen [interaktiv datainsamling](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/) för att snabbt hämta profilattribut från kantprofilerna.
 
 ## Prestandaskydd {#guardrails}
 
@@ -166,7 +166,7 @@ Nästa steg är att konfigurera din personaliseringslösning för att hämta pro
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du hämta profilattributen via [Edge Network API](../../server-api/overview.md). Du måste dessutom hämta profilattributen via Edge Network API [interaktiv datainsamlingsslutpunkt](../../server-api/interactive-data-collection.md) för att API-anropen ska kunna autentiseras.
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du hämta profilattributen via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/). Du måste dessutom hämta profilattributen via Edge Network API [interaktiv datainsamlingsslutpunkt](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/) för att API-anropen ska kunna autentiseras.
 ><br>Om du inte uppfyller kraven ovan kommer personaliseringen endast att baseras på målgruppsmedlemskap och profilattributen kommer inte att vara tillgängliga för dig.
 
 Datastream som du konfigurerade i [steg 1](#create-datastream) är nu klar att acceptera inkommande händelsedata och svara med edge-profilinformation.

@@ -3,9 +3,9 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Vanliga frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1672'
+source-wordcount: '1670'
 ht-degree: 0%
 
 ---
@@ -201,7 +201,7 @@ Nej, [Web SDK](../web-sdk/home.md) krävs inte för att aktivera målgrupper fö
 
 Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
 
-För [anpassning av hela och nästa sida](ui/activate-edge-personalization-destinations.md) måste du antingen använda [Web SDK](../web-sdk/home.md) eller [Edge Network Server-API](../server-api/overview.md). Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
+Om du vill använda [samma sida och nästa sida ](ui/activate-edge-personalization-destinations.md) måste du antingen använda [Web SDK](../web-sdk/home.md) eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) . Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
 +++
 
 ### Finns det någon gräns för hur många attribut jag kan skicka från kunddataplattformen i realtid till Adobe Target eller en anpassad Personalization-destination?
@@ -244,10 +244,10 @@ Detta stöds för närvarande inte via målgränssnittet. Om du behöver hjälp 
 När du tar bort ett mål tas alla målgrupper och attribut som är mappade under målet bort från Adobe Target och de tas också bort från Edge Network.
 +++
 
-### Fungerar integreringen med Edge Network Server API?
+### Fungerar integreringen med Edge Network API?
 
 +++Svar
-Ja, Edge Network Server-API:t fungerar med det anpassade Personalization-målet. Eftersom profilattribut kan innehålla känsliga data krävs det att du använder Edge Network Server API för datainsamling för att skydda dessa data. Dessutom måste alla API-anrop göras i en [autentiserad kontext](../server-api/authentication.md).
+Ja, Edge Network API fungerar med Personalization-destinationen Custom. Eftersom profilattribut kan innehålla känsliga data krävs det att du använder Edge Network API för datainsamling för att skydda dessa data. Dessutom måste alla API-anrop göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
 +++
 
 ### Jag kan bara ha en kopplingsregel som är aktiv i farten. Kan jag bygga målgrupper som använder en annan sammanslagningspolicy och ändå skicka dem till Adobe Target som direktuppspelade målgrupper?

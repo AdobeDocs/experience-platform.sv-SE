@@ -3,10 +3,10 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '855'
-ht-degree: 7%
+source-wordcount: '854'
+ht-degree: 6%
 
 ---
 
@@ -24,7 +24,7 @@ Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste 
 
 * [Webb-SDK för Adobe Experience Platform](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
-* [Server-API för Edge Network](/help/server-api/overview.md)
+* [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)
 
 >[!NOTE]
 >Experience Platform Web SDK och Experience Platform Mobile SDK kräver inte distribution via taggar i Adobe Experience Platform. Vi rekommenderar dock att du använder taggar för att distribuera dessa SDK:er.
@@ -35,7 +35,7 @@ När du har skickat data till Edge nätverk kan du aktivera Adobe-lösningar fö
 
 * Adobe Real-Time CDP Connections, Prime, or Ultimate (Contact your Adobe account team for pricing)
 * Vidarebefordran av händelser i Adobe Experience Platform
-* Adobe Experience Platform Web SDK, Mobile SDK eller Edge Network Server API har konfigurerats för att skicka data till Edge Network
+* Adobe Experience Platform Web SDK, Mobile SDK eller Edge Network API har konfigurerats för att skicka data till Edge Network
 * Mappa data till Experience Data Model (XDM) (Den här mappningen kan göras med taggar)
 
 ## Skapa ett XDM-schema

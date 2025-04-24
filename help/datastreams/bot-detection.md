@@ -2,9 +2,9 @@
 title: Konfigurera objektidentifiering för datastreams
 description: Lär dig hur du konfigurerar identifieringen av robotar för datastreams för att särskilja mänsklig och icke-mänsklig trafik.
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1321'
+source-wordcount: '1322'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Överflödig trafik från automatiserade program, webbskrapor, spindlar och skriptskannrar kan göra det svårt att identifiera händelser från besökare. Den här typen av trafik kan påverka viktiga affärsvärden negativt, vilket leder till felaktig trafikrapportering.
 
-Med punktidentifiering kan du identifiera händelser som har genererats av [Web SDK](../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Server API]](../server-api/overview.md) som om de har genererats av kända spindlar och bottar.
+Med punktidentifiering kan du identifiera händelser som har genererats av [Web SDK](../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/api/) som om de har genererats av kända spindlar och bottar.
 
 Genom att konfigurera robotidentifiering för dina datastreams kan du identifiera specifika IP-adresser, IP-intervall och begäranrubriker som ska klassificeras som båda händelser. Detta ger en mer exakt mätning av användaraktivitet på din webbplats eller i mobilapplikationer.
 
@@ -35,7 +35,7 @@ Denna robotbedömning hjälper de lösningar som tar emot begäran att identifie
 >
 >Adobe lösningar kan hantera båda poängen på olika sätt. Adobe Analytics använder till exempel sin egen [robotfiltreringstjänst](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html) och använder inte poängen som angetts av Edge Network. De två tjänsterna använder samma [IAB-robotlista](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), så robotpoängen är identiska.
 
-Det kan ta upp till 15 minuter att sprida regler för punktidentifiering över hela Edge Network efter att de har skapats.
+Det kan ta upp till 15 minuter att sprida regler för punktidentifiering i hela Edge Network efter att de har skapats.
 
 ## Förhandskrav {#prerequisites}
 
@@ -90,9 +90,9 @@ Om du behöver mer detaljerade regler för robotidentifiering kan du kombinera I
 | `sec-ch-ua-mobile` | Anger om webbläsaren finns på en mobil enhet. Den kan också användas av en webbläsare på datorn för att ange en inställning för en mobilanvändarupplevelse. |
 | `sec-ch-ua-platform` | Anger den plattform eller det operativsystem som användaragenten körs på. Exempel: &quot;Windows&quot; eller &quot;Android&quot;. |
 | `sec-ch-ua-platform-version` | Anger den version av operativsystemet som användaragenten körs på. |
-| `sec-ch-ua-arch` | Tillhandahåller användaragentens underliggande processorarkitektur, som ARM eller x86. |
+| `sec-ch-ua-arch` | Tillhandahåller användaragentens underliggande CPU-arkitektur, som ARM eller x86. |
 | `sec-ch-ua-model` | Anger den enhetsmodell som webbläsaren körs på. |
-| `sec-ch-ua-bitness` | Anger &quot;bitness&quot; för användaragentens underliggande processorarkitektur. Detta är storleken i bitar av ett heltal eller en minnesadress, vanligtvis 64 eller 32 bitar. |
+| `sec-ch-ua-bitness` | Anger&quot;bitness&quot; för användaragentens underliggande CPU-arkitektur. Detta är storleken i bitar av ett heltal eller en minnesadress, vanligtvis 64 eller 32 bitar. |
 | `sec-ch-ua-wow64` | Anger om en användaragentbinärfil körs i 32-bitarsläge i 64-bitars Windows. |
 
 Följ stegen nedan för att skapa en regel för identifiering av robotar:

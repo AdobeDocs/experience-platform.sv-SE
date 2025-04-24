@@ -1,10 +1,10 @@
 ---
 title: Konfigurera åsidosättningar av dataström
-description: Lär dig hur du konfigurerar åsidosättningar av dataströmmar i användargränssnittet för dataströmmar och aktiverar dem via Web SDK eller Mobile SDK.
+description: Lär dig hur du konfigurerar åsidosättningar av datastream i användargränssnittet för datastreams och aktiverar dem via Web SDK eller Mobile SDK.
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 17ed5f3c14d4787352f72d3d7721cbb6416d533e
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1062'
 ht-degree: 0%
 
 ---
@@ -20,14 +20,14 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 1. Först måste du definiera åsidosättningen av din datastream-konfiguration på [datastream-konfigurationssidan](configure.md).
 2. Sedan måste du skicka åsidosättningarna till Edge Network på något av följande sätt:
    * Via kommandona `sendEvent` eller `configure` [Web SDK](#send-overrides).
-   * Via Web SDK-taggtillägget [1.](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)
-   * Via Mobile SDK [sendEvent](#send-overrides)-API:t eller genom att använda [Regler](#send-overrides).
+   * Via SDK-taggtillägget [Web ](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+   * Genom Mobile SDK [sendEvent](#send-overrides)-API:t eller genom att använda [Rules](#send-overrides).
 
 I den här artikeln förklaras den kompletta processen för åsidosättning av datastream-konfigurationen för alla typer av åsidosättningar som stöds.
 
 >[!IMPORTANT]
 >
->Åsidosättningar av dataström stöds bara för [Web SDK](../web-sdk/home.md)- och [Mobile SDK](https://developer.adobe.com/client-sdks/home/)-integreringar. [Server-API](../server-api/overview.md)-integreringar stöder för närvarande inte datastream-åsidosättningar.
+>Åsidosättningar av dataström stöds bara för [Web SDK](../web-sdk/home.md)- och [Mobile SDK](https://developer.adobe.com/client-sdks/home/)-integreringar. [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)-integreringar stöder för närvarande inte datastream-åsidosättningar.
 ><br>
 >Åsidosättningar av datastream bör användas när du behöver olika data som skickas till olika datastreams. Använd inte åsidosättningar av datastream för personaliseringsanvändningsfall eller för medgivandedata.
 
@@ -45,7 +45,7 @@ Ett vanligt användningsexempel kan vara att skicka data till ett landspecifikt 
 
 **Differentierar profiler och identiteter för olika affärsenheter**
 
-Ett företag med flera affärsenheter vill använda flera Experience Platform sandlådor för att lagra data som är specifika för varje affärsenhet.
+Ett företag med flera affärsenheter vill använda flera Experience Platforms-sandlådor för att lagra data som är specifika för varje affärsenhet.
 
 I stället för att skicka data till en standarddatastream kan företaget använda åsidosättningar av datastream för att se till att varje affärsenhet har sin egen datastream för att ta emot data.
 
@@ -53,7 +53,7 @@ I stället för att skicka data till en standarddatastream kan företaget använ
 
 Åsidosättningar av dataströmskonfigurationer gör att du kan ändra följande datastream-konfigurationer:
 
-* Data för händelsen Experience Platform
+* Experience Platform händelsedatamängder
 * Adobe Target egenskapstoken
 * Synkroniseringsbehållare för Audience Manager ID
 * Adobe Analytics rapporteringsprogram
@@ -86,7 +86,7 @@ Nu bör du konfigurera Adobe Analytics datastream-åsidosättningar. Nu kan du [
 
 ### Datastream overrides for Experience Platform event datasets {#event-dataset-overrides}
 
-Om du vill konfigurera datastream-åsidosättningar för händelsedatamängder i Experience Platform måste du först skapa ett [Adobe Experience Platform](configure.md#aep)-datastream. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med tjänsten [Adobe Experience Platform](configure.md#aep).
+Om du vill konfigurera datastream-åsidosättningar för Experience Platform-händelsedatamängder måste du först skapa ett [Adobe Experience Platform](configure.md#aep)-datastream. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med tjänsten [Adobe Experience Platform](configure.md#aep).
 
 När du har skapat dataströmmen redigerar du den [Adobe Experience Platform](configure.md#aep)-tjänst som du har lagt till och väljer alternativet **[!UICONTROL Add Event Dataset]** för att lägga till en eller flera händelsedatamängder för åsidosättning, vilket visas i bilden nedan.
 
@@ -106,7 +106,7 @@ Använd sedan avsnittet **[!UICONTROL Container ID Overrides]** för att lägga 
 
 >[!IMPORTANT]
 >
->Behållar-ID:n måste vara numeriska värden, som `1234567`, och inte strängar, som `"1234567"`. Om du skickar ett strängvärde via Web SDK som åsidosättning av behållar-ID:n visas ett fel.
+>Behållar-ID:n måste vara numeriska värden, som `1234567`, och inte strängar, som `"1234567"`. Om du skickar ett strängvärde via Web SDK som åsidosättning av behållar-ID:n får du ett felmeddelande.
 
 ![Användargränssnittsskärmbild för datastreams visar datastream-inställningarna, med åsidosättningar av synkroniseringsbehållaren för tredjeparts-ID markerade.](assets/overrides/override-container.png)
 
@@ -118,8 +118,8 @@ Nu bör åsidosättningar av ID-synkroniseringsbehållare konfigureras. Nu kan d
 
 När du har konfigurerat åsidosättningar av datastream i användargränssnittet för datainsamling kan du skicka åsidosättningarna till Edge Network via Web SDK eller Mobile SDK.
 
-* **Web SDK**: Mer information om taggtillägg och exempel på JavaScript-bibliotekskod finns i [åsidosättningar av dataströmskonfiguration](../web-sdk/commands/datastream-overrides.md#library).
-* **Mobile SDK**: Du kan skicka åsidosättningar av dataström-ID:n med [sendEvent-API:t](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/) eller med [Regler](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/).
+* **Web SDK**: Mer information om taggtillägg och exempel på JavaScript-bibliotekskod finns i [åsidosättningar av dataströmskonfigurationer](../web-sdk/commands/datastream-overrides.md#library).
+* **Mobile SDK**: Du kan skicka åsidosättningar av dataström-ID:n med [sendEvent-API:t](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/) eller med [regler](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/).
 
 ## Exempel på nyttolast {#payload-example}
 

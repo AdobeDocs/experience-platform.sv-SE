@@ -1,9 +1,9 @@
 ---
-title: API-tillägg för webbhändelser i Adobe TikTok
+title: API-tillägg för webbevent i Adobe TikTok
 description: Med Adobe Experience Platform webbevent-API kan du dela webbinteraktioner direkt med TikTok.
 last-substantial-update: 2023-09-26T00:00:00Z
 exl-id: 14b8e498-8ed5-4330-b1fa-43fd1687c201
-source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
 source-wordcount: '1048'
 ht-degree: 1%
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # API-tilläggets [!DNL TikTok] för webbhändelser - översikt
 
-Händelse-API:t [!DNL TikTok] är ett säkert [Edge Network Server-API](/help/server-api/overview.md) som gör att du kan dela information med [!DNL TikTok] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från [!DNL Adobe Experience Platform Edge Network] till [!DNL TikTok] med hjälp av API-tillägget [!DNL TikTok] för webbhändelser.
+Händelse-API:t [!DNL TikTok] är ett säkert [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL TikTok] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från [!DNL Adobe Experience Platform Edge Network] till [!DNL TikTok] med hjälp av API-tillägget [!DNL TikTok] för webbhändelser.
 
 ## Krav för [!DNL TikTok] {#prerequisites}
 
@@ -82,7 +82,7 @@ Parametrar för användarkontext innehåller kundinformation som används för a
 | Användaragent | Den icke-hash-kodade användaragenten från användarens enhet. |
 | E-post | E-postadress till den kontakt som är associerad med konverteringshändelsen. |
 | Telefon | Telefonnumret måste vara i E164-format [+][landskod][riktnummer][local phone number] innan hashning utförs. |
-| Cookie-ID | Om du använder Pixel SDK sparas automatiskt en unik identifierare i `_ttp`-cookien, om cookies är aktiverade. Värdet `_ttp` kan extraheras och användas för det här fältet. |
+| Cookie-ID | Om du använder Pixel kommer SDK automatiskt att spara en unik identifierare i `_ttp`-cookien, om cookies är aktiverade. Värdet `_ttp` kan extraheras och användas för det här fältet. |
 | Externt ID | Alla unika identifierare, till exempel användar-ID:n, externa cookie-ID:n och så vidare, måste hash-kodas med SHA256. |
 | TikTok Click ID | `ttclid` som läggs till i URL:en för landningssidan varje gång en annons väljs [!DNL TikTok]. |
 | Sidans URL | Sidans URL vid tidpunkten för händelsen. |
@@ -118,7 +118,7 @@ Använd egenskapsparametrarna för att konfigurera ytterligare egenskaper som st
 
 [!DNL TikTok] pixel måste vara konfigurerad för borttagning av dubbletter om du använder både [!DNL TikTok] pixel SDK och [!DNL TikTok] API-tillägget för webbhändelser för att skicka samma händelser till [!DNL TikTok].
 
-Deduplicering krävs inte om distinkta händelsetyper skickas från klienten och servern utan någon överlappning. Om du vill vara säker på att din rapportering inte påverkas negativt måste du se till att alla enskilda händelser som delas av [!DNL TikTok] pixel-SDK och API-tillägget för [!DNL TikTok]-webbhändelser dedupliceras.
+Deduplicering krävs inte om distinkta händelsetyper skickas från klienten och servern utan någon överlappning. Om du vill vara säker på att din rapportering inte påverkas negativt måste du se till att alla enskilda händelser som delas av [!DNL TikTok] pixel SDK och [!DNL TikTok] API-tillägget för webbhändelser dedupliceras.
 
 När du skickar delade händelser måste du se till att alla händelser innehåller ett pixel-ID, händelse-ID och namn. Duplicerade händelser som kommer inom fem minuter från varandra sammanfogas. Om datafältet inte fanns med i den första händelsen kombineras det med den efterföljande händelsen. Alla dubbletthändelser som tas emot inom 48 timmar tas bort.
 

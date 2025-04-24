@@ -1,22 +1,22 @@
 ---
-title: Personalisering på serversidan med Edge Network Server API
-description: I den här artikeln visas hur du kan använda Edge Network Server-API:t för att distribuera anpassning på serversidan på dina webbegenskaper.
+title: Personalisering på serversidan med Edge Network API
+description: I den här artikeln visas hur du kan använda Edge Network API för att distribuera anpassning på serversidan på dina webbegenskaper.
 keywords: personalisering; server-API; edge network; server-side;
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '559'
 ht-degree: 1%
 
 ---
 
 
-# Personalisering på serversidan med Edge Network Server API
+# Personalisering på serversidan med Edge Network API
 
 ## Översikt {#overview}
 
-Personalisering på serversidan innebär att [Edge Network Server-API](../../server-api/overview.md) används för att anpassa kundupplevelsen på dina webbegenskaper.
+Personalisering på serversidan innebär att [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/) används för att anpassa kundupplevelsen på dina webbegenskaper.
 
-I det exempel som beskrivs i den här artikeln hämtas personaliseringsinnehåll på serversidan med Server-API:t. Sedan återges HTML på serversidan baserat på det hämtade personaliseringsinnehållet.
+I det exempel som beskrivs i den här artikeln hämtas personaliseringsinnehåll på serversidan med Edge Network API. Sedan återges HTML på serversidan baserat på det hämtade personaliseringsinnehållet.
 
 Tabellen nedan visar ett exempel på personaliserat och icke-personaliserat innehåll.
 
@@ -37,12 +37,12 @@ Cookies används för att bevara användaridentitet och klusterinformation.  Nä
 
 ### Begär placering {#request-placement}
 
-Personalization-begäranden krävs för att få förslag och skicka ett visningsmeddelande. När du använder en implementering på serversidan skickar programservern dessa begäranden till Edge Network Server-API:t.
+Personalization-begäranden krävs för att få förslag och skicka ett visningsmeddelande. När du använder en implementering på serversidan skickar programservern dessa begäranden till Edge Network API.
 
 | Begäran | Skapad av |
 |---|---|
-| Interagera begäran om att hämta förslag | Programservern anropar Edge Network Server-API:t. |
-| Interagera begäran om att skicka visningsmeddelanden | Programservern anropar Edge Network Server-API:t. |
+| Interagera begäran om att hämta förslag | Programserver som anropar Edge Network API. |
+| Interagera begäran om att skicka visningsmeddelanden | Programserver som anropar Edge Network API. |
 
 ## Exempelprogram {#sample-app}
 
@@ -68,7 +68,7 @@ I det här avsnittet beskrivs de steg som används för att hämta personaliseri
 
 1. [Express](https://expressjs.com/) används för en resurssnål implementering på serversidan. Detta hanterar grundläggande serverförfrågningar och routning.
 2. Webbläsaren begär webbsidan. Alla cookies som tidigare lagrats av webbläsaren, med prefix för `kndctr_`, inkluderas.
-3. När sidan begärs från programservern skickas en händelse till [slutpunkten för interaktiv datainsamling](../../../server-api/interactive-data-collection.md) för att hämta personaliseringsinnehåll. Exempelappen använder hjälpmetoder för att förenkla byggandet och skicka begäranden till API:t (se [aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js)). `POST`-begäran innehåller en `event` och en `query`. Cookies från föregående steg, om de är tillgängliga, ingår i `meta>state>entries`-arrayen.
+3. När sidan begärs från programservern skickas en händelse till [slutpunkten för interaktiv datainsamling](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/) för att hämta personaliseringsinnehåll. Exempelappen använder hjälpmetoder för att förenkla byggandet och skicka begäranden till API:t (se [aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js)). `POST`-begäran innehåller en `event` och en `query`. Cookies från föregående steg, om de är tillgängliga, ingår i `meta>state>entries`-arrayen.
 
    ```js
    fetch(
@@ -148,7 +148,7 @@ I det här avsnittet beskrivs de steg som används för att hämta personaliseri
    ).then((res) => res.json());
    ```
 
-4. Target-erbjudandet från den formulärbaserade aktiviteten läses från svaret och används när svaret från HTML tas fram.
+4. Target-erbjudandet från den formulärbaserade aktiviteten läses från svaret och används när HTML-svaret skapas.
 5. För formulärbaserade aktiviteter måste visningshändelser skickas manuellt i implementeringen för att ange när erbjudandet har visats. I det här exemplet skickas meddelandet på serversidan under livscykeln för begäran.
 
    ```js

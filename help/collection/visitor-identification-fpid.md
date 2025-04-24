@@ -1,23 +1,23 @@
 ---
 title: Besökaridentifiering via FPID
-description: Lär dig att konsekvent identifiera besökare via server-API med hjälp av FPID
-seo-description: Learn how to consistently identify visitors via the Server API, by using the FPID
+description: Lär dig att konsekvent identifiera besökare via Edge Network API med hjälp av FPID
+seo-description: Learn how to consistently identify visitors via the Edge Network API, by using the FPID
 keywords: gränsnätverk;gateway;api;besökare;identifiering;fpid
 exl-id: c61d2e7c-7b5e-4b14-bd52-13dde34e32e3
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '348'
+source-wordcount: '349'
 ht-degree: 0%
 
 ---
 
 # Besökaridentifiering via FPID
 
-[!DNL First-party IDs] (`FPIDs`) är enhets-ID:n som genereras, hanteras och lagras av kunder. Detta ger kunderna kontroll över att identifiera användarenheter. Genom att skicka `FPIDs` genererar Edge Network inte en helt ny `ECID` för en begäran som inte innehåller någon.
+[!DNL First-party IDs] (`FPIDs`) är enhets-ID:n som genereras, hanteras och lagras av kunder. Detta ger kunderna kontroll över att identifiera användarenheter. Genom att skicka `FPIDs` genererar inte Edge Network någon helt ny `ECID` för en begäran som inte innehåller någon.
 
 `FPID` kan inkluderas i API-begärandetexten som en del av `identityMap` eller skickas som en cookie.
 
-En `FPID` kan översättas till en `ECID` av Edge Network, vilket innebär att `FPID`-identiteter är helt kompatibla med Experience Cloud-lösningar. Att hämta `ECID` från en specifik `FPID` ger alltid samma resultat, så användarna får en konsekvent upplevelse.
+En `FPID` kan översättas deterministiskt till en `ECID` av Edge Network, vilket innebär att `FPID`-identiteter är helt kompatibla med Experience Cloud-lösningar. Att hämta `ECID` från en specifik `FPID` ger alltid samma resultat, så användarna får en konsekvent upplevelse.
 
 `ECID` som hämtas på det här sättet kan hämtas via en `identity.fetch`-fråga:
 
@@ -102,7 +102,7 @@ Felsvaret som returnerades av Edge Network i det här fallet liknar följande:
 
 ## Besökaridentifiering med `FPID`
 
-Om du vill identifiera användare via `FPID` måste du se till att `FPID`-cookien har skickats innan du skickar några begäranden till Edge Network. `FPID` kan skickas i en cookie eller som en del av `identityMap` i förfrågningens brödtext.
+Om du vill identifiera användare via `FPID` kontrollerar du att `FPID`-cookien har skickats innan du skickar några begäranden till Edge Network. `FPID` kan skickas i en cookie eller som en del av `identityMap` i förfrågningens brödtext.
 
 <!--
 

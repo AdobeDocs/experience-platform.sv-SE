@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform från augusti 2022
 description: Versionsinformation för augusti 2022 för Adobe Experience Platform.
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 25697d341b2970eeb20d9f2507ee701ade8046d3
 workflow-type: tm+mt
-source-wordcount: '1965'
+source-wordcount: '1967'
 ht-degree: 21%
 
 ---
@@ -94,11 +94,11 @@ Mer information om [!DNL Data Prep] finns i [[!DNL Data Prep] översikten](../..
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| (Beta) Attributbaserat personaliseringsstöd för personaliseringsmål | I betaversionen av attributbaserad personalisering visas två nya kort i [målkatalogen](../../destinations/catalog/overview.md): <ul><li>**[!UICONTROL Adobe Target V2]**: Den här kopplingen är för närvarande i betaversion och endast tillgänglig för ett visst antal kunder. Utöver de funktioner som finns på Adobe Target V1-kortet lägger Target V2-anslutningen till ett [mappningssteg](/help/destinations/ui/activate-edge-personalization-destinations.md#map-attributes) i aktiveringsarbetsflödet, vilket gör att du kan mappa profilattribut till Adobe Target, vilket möjliggör attributbaserad anpassning på samma sida och nästa sida.</li><li>**[!UICONTROL Custom Personalization With Attributes]**: Den här kopplingen är för närvarande i betaversion och endast tillgänglig för ett visst antal kunder. Utöver de funktioner som tillhandahålls av **[!UICONTROL Custom Personalization]** lägger **[!UICONTROL Custom Personalization With Attributes]**-kopplingen till ett valfritt [mappningssteg](../../destinations/ui/activate-edge-personalization-destinations.md#map-attributes) i aktiveringsarbetsflödet, vilket gör att du kan mappa profilattribut till ditt anpassade anpassningsmål, vilket möjliggör attributbaserad anpassning på samma sida och nästa sida.</li></ul> <br> profilattribut kan innehålla känsliga data. För att skydda dessa data kräver **[!UICONTROL Custom Personalization With Attributes]**-målet att du använder [ Edge Network Server-API ](../../server-api/overview.md) för datainsamling. Dessutom måste alla Server-API-anrop göras i en [autentiserad kontext](../../server-api/authentication.md). |
+| (Beta) Attributbaserat personaliseringsstöd för personaliseringsmål | I betaversionen av attributbaserad personalisering visas två nya kort i [målkatalogen](../../destinations/catalog/overview.md): <ul><li>**[!UICONTROL Adobe Target V2]**: Den här kopplingen är för närvarande i betaversion och endast tillgänglig för ett visst antal kunder. Utöver de funktioner som finns på Adobe Target V1-kortet lägger Target V2-anslutningen till ett [mappningssteg](/help/destinations/ui/activate-edge-personalization-destinations.md#map-attributes) i aktiveringsarbetsflödet, vilket gör att du kan mappa profilattribut till Adobe Target, vilket möjliggör attributbaserad anpassning på samma sida och nästa sida.</li><li>**[!UICONTROL Custom Personalization With Attributes]**: Den här kopplingen är för närvarande i betaversion och endast tillgänglig för ett visst antal kunder. Utöver de funktioner som tillhandahålls av **[!UICONTROL Custom Personalization]** lägger **[!UICONTROL Custom Personalization With Attributes]**-kopplingen till ett valfritt [mappningssteg](../../destinations/ui/activate-edge-personalization-destinations.md#map-attributes) i aktiveringsarbetsflödet, vilket gör att du kan mappa profilattribut till ditt anpassade anpassningsmål, vilket möjliggör attributbaserad anpassning på samma sida och nästa sida.</li></ul> <br> profilattribut kan innehålla känsliga data. För att skydda dessa data kräver **[!UICONTROL Custom Personalization With Attributes]**-målet att du använder [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/) för datainsamling. Dessutom måste alla Edge Network API-anrop göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication). |
 
 {style="table-layout:auto"}
 
-**Nya mål**
+**Nya destinationer**
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
@@ -137,7 +137,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [Systemöversikten över XDM](../../xdm/home.md).
 
 ## Kundprofil i realtid {#profile}
 

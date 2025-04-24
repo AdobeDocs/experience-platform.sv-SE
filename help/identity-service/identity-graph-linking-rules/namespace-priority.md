@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1866'
+source-wordcount: '1865'
 ht-degree: 1%
 
 ---
@@ -86,7 +86,7 @@ För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en vikti
 * När du har konfigurerat identitetsinställningar för en viss sandlåda bestäms den primära identiteten för upplevelsehändelser av den högsta namnområdesprioriteten i konfigurationen.
    * Det beror på att upplevelsehändelser är dynamiska till sin natur. En identitetskarta kan innehålla tre eller fler identiteter, och namnområdesprioriteten ser till att det viktigaste namnutrymmet är kopplat till upplevelsehändelsen.
 * Därför kommer följande konfigurationer **inte längre att användas av kundprofilen i realtid**:
-   * Den primära identitetskonfigurationen (`primary=true`) när identiteter skickas i identityMap med API:t för Web SDK, Mobile SDK eller Edge Network Server (ID-namnområde och identitetsvärde används fortfarande i Profile). **Obs!**: Tjänster utanför kundprofilen i realtid, t.ex. datasjölagring eller Adobe Target, fortsätter att använda den primära identitetskonfigurationen (`primary=true`).
+   * Den primära identitetskonfigurationen (`primary=true`) när identiteter skickas i identityMap med API:t för Web SDK, Mobile SDK eller Edge Network (ID-namnområde och identitetsvärde används fortfarande i Profile). **Obs!**: Tjänster utanför kundprofilen i realtid, t.ex. datasjölagring eller Adobe Target, fortsätter att använda den primära identitetskonfigurationen (`primary=true`).
    * Alla fält som markerats som primär identitet i ett XDM Experience Event Class-schema.
    * Standardinställningar för primär identitet i Adobe Analytics-källkopplingen (ECID eller AAID).
 * Å andra sidan bestämmer inte namnområdesprioriteten **den primära identiteten för profilposter**.

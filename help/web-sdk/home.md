@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web Software Development Kit (SDK) - översikt
 description: Läs om hur du använder Adobe Experience Platform Web SDK för att integrera Experience Platform-funktioner på din webbplats.
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '602'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Experience Platform Web SDK ingår i Adobe Experience Platform Edge Network, som
 
 * **[Experience Platform Web SDK](#overview)**: Ett JavaScript-bibliotek och taggtillägg som underlättar driftsättningen av Adobe-teknik.
 * **[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/)**: Ett tillägg till v5 Mobile SDK för den nya distributionsmetoden.
-* **[Edge Network API](../server-api/overview.md)**: Ett serversides-API för datainsamling, personalisering, reklam och marknadsföring. Du kan använda den på servrar, IoT-enheter, digitalboxar och andra enheter.
+* **[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)**: Ett serversides-API för datainsamling, personalisering, reklam och marknadsföring. Du kan använda den på servrar, IoT-enheter, digitalboxar och andra enheter.
 
 Edge Network erbjuder datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler. Det erbjuder en enda konsoliderad SDK för webben, mobiler och kanaler på serversidan, som skickar data till en gemensam Adobe-domän (`adobedc.net`) och tar emot en enda nyttolast för data- och upplevelseleverans.
 

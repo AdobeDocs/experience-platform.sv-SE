@@ -1,21 +1,21 @@
 ---
 title: Besökaridentifiering
-description: Läs om hur Adobe Experience Platform Edge Network Server API identifierar besökare
-seo-description: Learn how Adobe Experience Platform Edge Network Server API identifies visitors
+description: Se hur Adobe Experience Platform Edge Network API identifierar besökare
+seo-description: Learn how Adobe Experience Platform Edge Network API identifies visitors
 keywords: gränsnätverk;gateway;api;besökare;identifiering
 exl-id: aa2f3b83-5cc8-4e02-9119-edfd5e212588
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 1%
+source-wordcount: '149'
+ht-degree: 2%
 
 ---
 
 # Besökaridentifiering
 
-Edge Network Server-API:t stöder [identifiering av besökare via första parts-ID ([!DNL FPID])](visitor-identification-fpid.md).
+Edge Network-API:t stöder [identifiering av besökare via första parts-ID ([!DNL FPID])](visitor-identification-fpid.md).
 
-Alla användaridentiteter ska anges i fältgruppen `identityMap`. Den här fältgruppen ingår i AEP Web SDK-mixen `ExperienceEvent`.
+Alla användaridentiteter ska anges i fältgruppen `identityMap`. Den här fältgruppen ingår i AEP Web SDK `ExperienceEvent`-mixen.
 
 ```json
 {
@@ -38,7 +38,7 @@ Alla användaridentiteter ska anges i fältgruppen `identityMap`. Den här fält
 
 ## Enhetsidentifierare {#identifiers}
 
-Det finns flera sätt att identifiera en enhet i Edge Network. I tabellen nedan finns en översikt över vilka ID:n som stöds.
+Det finns flera sätt att identifiera en enhet inom Edge Network. I tabellen nedan finns en översikt över vilka ID:n som stöds.
 
 | ID-namnutrymme | Hanteras av | Beskrivning |
 | --- | --- | --- |

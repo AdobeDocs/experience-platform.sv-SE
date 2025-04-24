@@ -2,16 +2,16 @@
 title: Förbättra datainsamlingen med väderdata från DNL The Weather Channel
 description: Förbättra de data ni samlar in via datastreams med väderdata från DNL The Weather Channel.
 exl-id: 548dfca7-2548-46ac-9c7e-8190d64dd0a4
-source-git-commit: 041a1782442df5f08bb52e4e450734a51c7781ea
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '649'
 ht-degree: 1%
 
 ---
 
 # Förbättra datainsamling med väderdata från [!DNL The Weather Channel]
 
-Adobe har samarbetat med [!DNL [The Weather Company]](https://www.ibm.com/weather) för att ge den ytterligare kontexten för USA:s väder till data som samlats in via datastreams. Ni kan använda dessa data för analyser, målgruppsanpassning och målgruppsskapande i Experience Platform.
+Adobe har samarbetat med [!DNL [The Weather Company]](https://www.ibm.com/weather) för att ge den ytterligare kontexten för USA-väder till data som samlats in via datastreams. Ni kan använda dessa data för analyser, målgruppsanpassning och målgruppsskapande i Experience Platform.
 
 Det finns tre typer av data som är tillgängliga från [!DNL The Weather Channel]:
 
@@ -28,13 +28,13 @@ Det finns tre typer av data som är tillgängliga från [!DNL The Weather Channe
 Innan du använder väderdata bör du kontrollera att du uppfyller följande krav:
 
 * Du måste licensiera väderdata som du kommer att använda från [!DNL The Weather Channel]. De aktiverar det sedan på ditt konto.
-* Väderdata är bara tillgängliga via datastreams. Om du vill använda väderdata måste du använda [!DNL Web SDK], [!DNL Mobile Edge Extension] eller [Server-API](../../server-api/overview.md) för att inkludera dessa data.
+* Väderdata är bara tillgängliga via datastreams. Om du vill använda väderdata måste du använda [!DNL Web SDK], [!DNL Mobile Edge Extension] eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) för att inkludera dessa data.
 * [[!UICONTROL Geo Location]](../configure.md#advanced-options) måste vara aktiverat för din datastream.
 * Lägg till [väderfältgruppen](#schema-configuration) i schemat som du använder.
 
 ## Provisionering {#provisioning}
 
-När du har licensierat data från [!DNL The Weather Channel] aktiverar de ditt konto för åtkomst till data. Sedan måste du kontakta Adobe kundtjänst för att aktivera data på din datastam. När det här alternativet är aktiverat läggs data automatiskt till.
+När du har licensierat data från [!DNL The Weather Channel] aktiverar de ditt konto för åtkomst till data. Därefter kontaktar du Adobe kundtjänst för att aktivera data på din datastam. När det här alternativet är aktiverat läggs data automatiskt till.
 
 Du kan validera att det läggs till genom att köra en kantspårning med felsökaren eller genom att använda Assurance för att spåra en träff genom [!DNL Edge Network].
 
@@ -64,9 +64,9 @@ Du hittar listan med fält som du kan mappa på sidan [väderreferens](weather-r
 
 I [!DNL Adobe Customer Journey Analytics] är väderdata tillgängliga i datauppsättningen som anges i datastream. Så länge väderattributen [har lagts till i ditt schema](#prerequisites-prerequisites) är de tillgängliga för [att lägga till i en datavy](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/create-dataview.html) i [!DNL Customer Journey Analytics].
 
-### Real-Time Customer Data Platform {#rtcdp}
+### Plattform för kunddata i realtid {#rtcdp}
 
-Väderdata är tillgängliga i [Real-time Customer Data Platform](../../rtcdp/overview.md) som kan användas i målgrupper. Väderdata bifogas till händelser.
+Väderdata är tillgängliga i [Real-Time Customer Data Platform](../../rtcdp/overview.md) som kan användas i målgrupper. Väderdata bifogas till händelser.
 
 ![Segmentbyggaren visar väderhändelser](../assets/data-enrichment/weather/schema-builder.png)
 

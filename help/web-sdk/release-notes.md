@@ -3,7 +3,7 @@ title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Experience Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
 source-wordcount: '2288'
 ht-degree: 2%
@@ -199,7 +199,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 - Stöd har lagts till för [Fullständig sidmigrering](home.md#migrating-to-web-sdk). Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js och SDK webbsidor.
 - Konfigurerbart stöd för [hög entropi-klienttips för användaragent ](/help/web-sdk/use-cases/client-hints.md) har lagts till.
-- Stöd för kommandot [`applyResponse`](/help/web-sdk/commands/applyresponse.md) har lagts till. Detta aktiverar hybridanpassning via [Edge Network Server-API](../server-api/overview.md).
+- Stöd för kommandot [`applyResponse`](/help/web-sdk/commands/applyresponse.md) har lagts till. Detta aktiverar hybridanpassning via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/).
 - QA-lägeslänkar fungerar nu på flera sidor.
 
 **Korrigeringar och förbättringar**

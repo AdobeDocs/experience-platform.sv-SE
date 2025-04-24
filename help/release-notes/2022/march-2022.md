@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2022
 description: Versionsinformationen för Adobe Experience Platform i mars 2022.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
 workflow-type: tm+mt
-source-wordcount: '1181'
-ht-degree: 10%
+source-wordcount: '1182'
+ht-degree: 14%
 
 ---
 
@@ -59,7 +59,7 @@ Mer information om Real-Time CDP B2B edition finns i [översikten](../../rtcdp/o
 
 ## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i Experience Platform användargränssnitt och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Experience Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Uppdaterade funktioner**
 
@@ -115,7 +115,7 @@ Experience Platform har en programsvit som gör det möjligt att samla in kundup
 | Funktion | Beskrivning |
 | --- | --- |
 | Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geografisk plats, cookie för första parts-ID och synkronisering med tredje parts-ID. Mer information finns i avsnittet [Konfigurera en datastream](../../datastreams/overview.md#create) i gränssnittsguiden för datastreams. |
-| [Edge Network Server-API](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt för att driva en rad olika fall av datainsamling, personalisering, reklam och marknadsföring. |
+| [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/) | Edge Network API gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt som möjliggör en rad olika typer av datainsamling, personalisering, reklam och marknadsföring. |
 
 Mer information om datainsamling i Experience Platform finns i [datainsamlingsöversikten](../../collection/home.md).
 
