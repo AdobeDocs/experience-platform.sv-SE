@@ -5,7 +5,7 @@ title: Importera data till Experience Platform
 type: Tutorial
 description: Med Adobe Experience Platform kan du enkelt importera data som gruppfiler i form av Parquet-filer eller data som följer ett känt Experience Data Model-schema (XDM).
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 31631b03b6ff1e50e55c01e948fae5c29fd618dd
 workflow-type: tm+mt
 source-wordcount: '1261'
 ht-degree: 0%
@@ -78,7 +78,7 @@ På fliken Info finns också en **[!UICONTROL Profile]**-växel som används fö
 
 ![Datauppsättningsaktivitet](../images/tutorials/ingest-batch-data/sample-dataset.png)
 
-## Aktivera datauppsättning för [!DNL Real-Time Customer Profile]
+## Aktivera datauppsättning för [!DNL Real-Time Customer Profile] {#enable-for-profile}
 
 Datauppsättningar används för inmatning av data till [!DNL Experience Platform], och dessa data används i slutändan för att identifiera enskilda personer och sammanfoga information som kommer från flera källor. Den sammanfogade informationen kallas [!DNL Real-Time Customer Profile]. För att [!DNL Experience Platform] ska veta vilken information som ska inkluderas i [!DNL Real-Time Profile] kan datamängder markeras för inkludering med hjälp av växlingsknappen **[!UICONTROL Profile]**.
 

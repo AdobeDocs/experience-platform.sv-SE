@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 29fb232ecfbd119ef84d62599fc79249513dca43
+source-git-commit: 31631b03b6ff1e50e55c01e948fae5c29fd618dd
 workflow-type: tm+mt
-source-wordcount: '2638'
+source-wordcount: '2667'
 ht-degree: 0%
 
 ---
@@ -104,7 +104,10 @@ Det här dokumentet innehåller all information som behövs för att exportera d
 
 ## Förhandskrav {#prerequisites}
 
-Om du vill exportera datauppsättningar till molnlagringsmål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
+Observera följande krav för att kunna exportera datauppsättningar:
+
+* Om du vill exportera datauppsättningar till molnlagringsmål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
+* Profildatauppsättningar måste aktiveras för användning i kundprofilen i realtid. [Läs mer](/help/ingestion/tutorials/ingest-batch-data.md#enable-for-profile) om hur du aktiverar det här alternativet.
 
 ### Nödvändiga behörigheter {#permissions}
 
