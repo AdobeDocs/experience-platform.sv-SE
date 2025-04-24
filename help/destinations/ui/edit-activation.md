@@ -4,9 +4,9 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: ca33131c505803b74075f6d8331095b016a301a0
+source-git-commit: b8f3443c1e574505f7fd0ca8a5ae91801da4cbef
 workflow-type: tm+mt
-source-wordcount: '442'
+source-wordcount: '790'
 ht-degree: 0%
 
 ---
@@ -15,10 +15,12 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du konfigurera olika komponenter i befintliga aktiveringsdataflöden till mål, som:
 
-* [Aktivera eller inaktivera ](#enable-disable-dataflows) aktiveringsdataflöden;
-* [Lägg till ytterligare målgrupper och profilattribut](#add-audiences) i aktiveringsdataflöden;
-* [Lägg till ytterligare datauppsättningar](#add-datasets) i arbetsflöden för aktivering;
-* [Redigera namn och beskrivningar](#edit-names-descriptions) för aktiveringsdataflödena;
+* [Aktivera eller inaktivera ](#enable-disable-dataflows) aktiveringsdataflöden
+* [Lägg till ytterligare målgrupper](#add-audiences) i aktiveringsdataflöden
+* [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
+* [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)
+* [Lägg till ytterligare datauppsättningar](#add-datasets) i arbetsflöden för aktivering
+* [Redigera namn och beskrivningar](#edit-names-descriptions) för aktiveringsdataflödena
 
 <!-- * [Apply access labels](#apply-access-labels) to exported data; -->
 
@@ -44,19 +46,61 @@ Följ stegen nedan för att bläddra bland dina befintliga aktiveringsdataflöde
 
 Använd växlingsknappen **[!UICONTROL Enabled]/[!UICONTROL Disabled]** för att starta eller pausa all dataexport till målet.
 
-![Experience Platform-gränssnittsbild som visar växlingsknappen för Aktiverat/inaktiverat dataflöde.](../assets/ui/edit-activation/enable-toggle.png)
+![Experience Platform-gränssnittsbild som visar växlingsknappen för aktiverat/inaktiverat dataflöde.](../assets/ui/edit-activation/enable-toggle.png)
 
 ## Lägga till målgrupper i ett aktiveringsdataflöde {#add-audiences}
 
-Välj **[!UICONTROL Activate audiences]** i den högra listen för att ändra vilka målgrupper eller profilattribut som ska skickas till målet. Den här åtgärden tar dig till aktiveringsarbetsflödet, som skiljer sig åt beroende på måltyp.
+Välj **[!UICONTROL Activate audiences]** i den högra listen för att ändra vilka målgrupper som ska skickas till målet. Den här åtgärden tar dig till aktiveringsarbetsflödet.
 
 ![Experience Platform-gränssnittsbild som visar körningsalternativet Aktivera målgruppsdataflöde.](../assets/ui/edit-activation/activate-audiences.png)
 
-Mer information om aktiveringsarbetsflöden för respektive måltyp finns i följande handböcker:
+I steget **[!UICONTROL Select audiences]** i aktiveringsarbetsflödet kan du ta bort befintliga målgrupper eller lägga till nya målgrupper i aktiveringsarbetsflödet.
+
+Arbetsflödet för aktivering skiljer sig något beroende på måltyp. Mer information om aktiveringsarbetsflöden för respektive måltyp finns i följande handböcker:
 
 * [Aktivera målgrupper för direktuppspelningsmål](./activate-segment-streaming-destinations.md) (till exempel Facebook eller Twitter);
 * [Aktivera målgrupper för att batchprofilera exportmål](./activate-batch-profile-destinations.md) (till exempel Amazon S3 eller Oracle Eloqua);
 * [Aktivera målgrupper för att direktuppspela profilexportmål](./activate-streaming-profile-destinations.md) (till exempel HTTP API eller Amazon Kinesis).
+
+## Redigera aktiveringsschema och exportfrekvens {#edit-schedule-frequency}
+
+Välj **[!UICONTROL Activate audiences]** i den högra listen. Den här åtgärden tar dig till aktiveringsarbetsflödet.
+
+![Experience Platform-gränssnittsbild som visar körningsalternativet Aktivera målgruppsdataflöde.](../assets/ui/edit-activation/activate-audiences.png)
+
+Välj steget **[!UICONTROL Scheduling]** i aktiveringsarbetsflödet för att redigera aktiveringsschemat och exportfrekvensen för ditt dataflöde. I det här steget kan du konfigurera hur ofta data exporteras till målet.
+
+I **[!UICONTROL Scheduling]**-steget i aktiveringsarbetsflödet kan du:
+* Justera exportfrekvensen.
+* Ange eller ändra start- och slutdatum för aktiveringsdataflödet, med mera.
+
+Vilka schemaläggningsåtgärder du kan utföra varierar något beroende på måltyp. Mer information om aktiveringsarbetsflöden för respektive måltyp finns i följande handböcker:
+
+* [Aktivera målgrupper för direktuppspelningsmål](./activate-segment-streaming-destinations.md) (till exempel Facebook eller Twitter);
+* [Aktivera målgrupper för att batchprofilera exportmål](./activate-batch-profile-destinations.md) (till exempel Amazon S3 eller Oracle Eloqua);
+* [Aktivera målgrupper för att direktuppspela profilexportmål](./activate-streaming-profile-destinations.md) (till exempel HTTP API eller Amazon Kinesis).
+
+## Redigera mappade attribut och identiteter {#edit-mapped-attributes}
+
+Välj **[!UICONTROL Activate audiences]** i den högra listen. Den här åtgärden tar dig till aktiveringsarbetsflödet.
+
+![Experience Platform-gränssnittsbild som visar körningsalternativet Aktivera målgruppsdataflöde.](../assets/ui/edit-activation/activate-audiences.png)
+
+Välj steget **[!UICONTROL Mapping]** i aktiveringsarbetsflödet om du vill redigera mappade attribut och identiteter för aktiveringsdataflödet. På så sätt kan du justera vilka profilattribut och identiteter som ska exporteras till målet.
+
+I **[!UICONTROL Mapping]**-steget i aktiveringsarbetsflödet kan du:
+
+* Lägg till nya attribut eller identiteter i mappningen.
+* Ta bort befintliga attribut eller identiteter från mappningen.
+* Justera mappningsordningen för att definiera kolumnordningen i exporterade filer.
+
+Arbetsflödet för aktivering skiljer sig något beroende på måltyp. Mer information om aktiveringsarbetsflöden för respektive måltyp finns i följande handböcker:
+
+* [Aktivera målgrupper för direktuppspelningsmål](./activate-segment-streaming-destinations.md) (till exempel Facebook eller Twitter);
+* [Aktivera målgrupper för att batchprofilera exportmål](./activate-batch-profile-destinations.md) (till exempel Amazon S3 eller Oracle Eloqua);
+* [Aktivera målgrupper för att direktuppspela profilexportmål](./activate-streaming-profile-destinations.md) (till exempel HTTP API eller Amazon Kinesis).
+
+
 
 ## Lägga till datauppsättningar i ett aktiveringsdataflöde {#add-datasets}
 
@@ -66,7 +110,9 @@ Välj **[!UICONTROL Export datasets]** i den högra listen för att välja ytter
 >
 >Det här alternativet är bara synligt för [mål som stöder datauppsättningsexport](export-datasets.md#supported-destinations).
 
-![Experience Platform-gränssnittsbild som visar körningsalternativet Exportera datauppsättningar.](../assets/ui/edit-activation/export-datasets.png)
+![Experience Platform UI-bild som visar körningsalternativet Exportera datauppsättningar.](../assets/ui/edit-activation/export-datasets.png)
+
+
 
 <!-- ## Apply access labels {#apply-access-labels}
 
