@@ -5,10 +5,10 @@ audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgrupper utifrån dessa profiler och aktivera dessa målgrupper för tredjepartsdestinationer.
 role: Admin
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: ba2154e84f24ddf4ec270121bdcbb6dd5d3dff42
 workflow-type: tm+mt
-source-wordcount: '307'
-ht-degree: 16%
+source-wordcount: '305'
+ht-degree: 17%
 
 ---
 
@@ -80,7 +80,7 @@ ht-degree: 16%
       * [Engagera och få nya kunder utan att vara beroende av cookies från tredje part](/help/rtcdp/partner-data/prospecting.md)
       * [Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning](/help/rtcdp/partner-data/onsite-personalization.md)
       * [Återmarknadsföring på plats av oautentiserade användare](./partner-data/offsite-retargeting.md)
-      * [Återmarknadsföring på plats av oautentiserade användare](./partner-data/unauthenticated-retargeting.md)
+      * [Oautentiserad återmarknadsföring på serversidan](./partner-data/unauthenticated-retargeting.md)
    * Profilberikning {#profile-enrichment}
       * [Komplettera förstahandsprofiler med attribut som tillhandahålls av partner](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
    * Personliga insikter och engagemang {#personalization-insights-engagement}
