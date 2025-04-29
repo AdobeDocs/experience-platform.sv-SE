@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Pseudonymt utgångsdatum för profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 07786ad7f43c66411e9e167c17daa2baf51a2661
+source-git-commit: aeb9d6636f0d843bf13d09bcb4c12754e2890046
 workflow-type: tm+mt
 source-wordcount: '1241'
 ht-degree: 0%
@@ -138,3 +138,4 @@ I ett typiskt fall kan du ange att dina Experience Event-data ska upphöra att g
 ## Nästa steg
 
 När du har läst den här guiden kan du visa och skapa pseudonyma utgångsdatum för profildata. Mer information om datahantering för Experience Platform som helhet finns i [Handboken ](../landing/license-usage-and-guardrails/data-management-best-practices.md) om god praxis för tillstånd för datahanteringslicenser.
+
