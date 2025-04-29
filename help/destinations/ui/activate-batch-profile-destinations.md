@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 11961e291188d509609a036f41084f4487cab584
+source-git-commit: 6b91527afe172530597de30b9669b86ff0262e13
 workflow-type: tm+mt
-source-wordcount: '4347'
+source-wordcount: '4424'
 ht-degree: 1%
 
 ---
@@ -125,7 +125,7 @@ Om du vill redigera flera scheman samtidigt markerar du målgrupperna med kryssr
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
 >title="Aktivera efter målgruppsutvärdering"
->abstract="Aktiveringen körs omedelbart efter det dagliga segmenteringsjobbet. Detta garanterar att de senaste profilerna exporteras."
+>abstract="<p>Aktiveringen körs omedelbart efter det dagliga segmenteringsjobbet. Detta garanterar att de senaste profilerna exporteras.</p><p>Alternativet att exportera profiler efter målgruppsutvärdering är <i>inte</i> tillgängligt för export varje vecka och månad.</p>"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_scheduled"
@@ -140,6 +140,8 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
 
    * **[!UICONTROL Once]**: schemalägg en enda gång fullständig filexport på begäran.
    * **[!UICONTROL Daily]**: schemalägg fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
+   * **[!UICONTROL Weekly]**: välj startdatum och efterföljande exporter sker den dagen i veckan till det valda slutdatumet.
+   * **[!UICONTROL Monthly]**: välj startdatum och efterföljande exporter sker på det datumet i månaden till det valda slutdatumet. För månader med mindre än 30 eller 31 dagar sker exporten den sista dagen i månaden.
 
 2. Använd växlingsknappen **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller på schemalagd basis vid en angiven tidpunkt. När du väljer alternativet **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tidpunkten på dagen, i formatet [!DNL UTC], när exporten ska ske.
 
@@ -187,6 +189,7 @@ Välj **[!UICONTROL Export incremental files]** om du vill utlösa en export dä
 
    * **[!UICONTROL Daily]**: schemalägg inkrementell filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
    * **[!UICONTROL Hourly]**: schemalägg stegvis filexport var 3, 6, 8 eller 12:e timme.
+
 
 2. Använd väljaren **[!UICONTROL Time]** för att välja tidpunkten på dagen, i formatet [!DNL UTC], när exporten ska ske.
 
