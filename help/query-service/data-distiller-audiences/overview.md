@@ -2,9 +2,9 @@
 title: Bygg målgrupper med SQL
 description: Lär dig hur du använder SQL-målgruppstillägget i Adobe Experience Platform Data Distiller för att skapa, hantera och publicera målgrupper med hjälp av SQL-kommandon. Den här guiden täcker alla aspekter av målgruppens livscykel, inklusive skapande, uppdatering och borttagning av profiler samt användning av datadrivna målgruppsdefinitioner för filbaserade mål.
 exl-id: c35757c1-898e-4d65-aeca-4f7113173473
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9e16282f9f10733fac9f66022c521684f8267167
 workflow-type: tm+mt
-source-wordcount: '1483'
+source-wordcount: '1831'
 ht-degree: 0%
 
 ---
@@ -100,6 +100,97 @@ I följande exempel visas hur du lägger till profiler till en befintlig publik 
 INSERT INTO Audience aud_test
 SELECT userId, orders, total_revenue, recency, frequency, monetization FROM customer_ds;
 ```
+
+### Ersätta målgruppsdata (INSERT OVERWRITE) {#replace-audience}
+
+Använd kommandot `INSERT OVERWRITE INTO` om du vill ersätta alla befintliga profiler i en målgrupp med resultatet av en ny SQL-fråga. Det här kommandot är användbart när du vill hantera dynamiska målgruppssegment genom att göra det möjligt att helt uppdatera en målgrupps innehåll i ett enda steg.
+
+>[!AVAILABILITY]
+>
+>Kommandot `INSERT OVERWRITE INTO` är bara tillgängligt för Data Distiller-kunder. Kontakta din Adobe-representant om du vill veta mer om tillägget Data Distiller.
+
+Till skillnad från [`INSERT INTO`](#add-profiles-to-audience), som lägger till i den aktuella målgruppen, tar `INSERT OVERWRITE INTO` bort alla befintliga målgruppsmedlemmar och infogar bara de som returneras av frågan. Detta ger större kontroll och flexibilitet vid hantering av målgrupper som behöver uppdateras ofta eller som behöver uppdateras.
+
+Använd följande syntaxmall för att skriva över en målgrupp med en ny uppsättning profiler:
+
+```sql
+INSERT OVERWRITE INTO audience_name
+SELECT select_query
+```
+
+**Parametrar**
+
+Tabellen nedan förklarar de parametrar som krävs för kommandot `INSERT OVERWRITE INTO`:
+
+| Parameter | Beskrivning |
+|-----------|-------------|
+| `audience_name` | Namnet på målgruppen som skapats med kommandot `CREATE AUDIENCE`. |
+| `select_query` | En `SELECT`-programsats som definierar de profiler som ska inkluderas i målgruppen. |
+
+**Exempel:**
+
+I det här exemplet skrivs målgruppen `audience_monthly_refresh` över fullständigt med resultatet av frågan. Alla profiler som inte returneras av frågan tas bort från målgruppen.
+
+>[!NOTE]
+>
+>Det får bara finnas en batchöverföring kopplad till målgruppen för att överskrivningsåtgärder ska fungera korrekt.
+
+```sql
+INSERT OVERWRITE INTO audience_monthly_refresh
+SELECT user_id FROM latest_transaction_summary WHERE total_spend > 100;
+```
+
+#### Åsidosättningsbeteende i kundprofil i realtid
+
+När du skriver över en målgrupp använder kundprofilen i realtid följande logik för att uppdatera profilmedlemskapet:
+
+- Profiler som bara visas i den nya gruppen markeras som angivna.
+- Profiler som bara fanns i den tidigare gruppen markeras som avslutade.
+- Profiler som finns i båda batcharna ändras inte (ingen åtgärd utförs).
+
+Detta säkerställer att målgruppsuppdateringarna återspeglas korrekt i system och arbetsflöden längre fram i kedjan.
+
+**Exempelscenario**
+
+Om en målgrupp `A1` ursprungligen innehåller:
+
+| ID | NAMN |
+|----|------|
+| A | Jack |
+| B | John |
+| C | Martha |
+
+Överskrivningsfrågan returnerar:
+
+| ID | NAMN |
+|----|------|
+| A | Stewart |
+| C | Martha |
+
+Därefter kommer den uppdaterade publiken att innehålla:
+
+| ID | NAMN |
+|----|------|
+| A | Stewart |
+| C | Martha |
+
+Profil B tas bort, profil A uppdateras och profil C ändras inte.
+
+Om överskrivningsfrågan innehåller en ny profil:
+
+| ID | NAMN |
+|----|------|
+| A | Stewart |
+| C | Martha |
+| D | Chris |
+
+Då blir slutpubliken:
+
+| ID | NAMN |
+|----|------|
+| A | Stewart |
+| C | Martha |
+| D | Chris |
 
 ### Exempel på publik i RFM-modell {#rfm-model-audience-example}
 
