@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7521273c0ea4383b7141e9d7a82953257ff18c34
 workflow-type: tm+mt
-source-wordcount: '3211'
+source-wordcount: '3223'
 ht-degree: 0%
 
 ---
@@ -251,7 +251,7 @@ Följande är en samling förslag som bevarar dataintegriteten när du skapar et
 * **Använd mönster för konsekventa värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda inställningen **[!UICONTROL Pattern]** för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.
 * **Begränsa eVars i analysscheman**: Vanligtvis ska ett analysschema endast ha en eVar som är angiven som identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.
 * **Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer. Om du markerar ett icke-unikt fält som en identitet kan det orsaka oönskad profilkomprimering.
-* **Verifiera minsta stränglängd**: Alla strängfält måste vara minst ett tecken långa eftersom strängvärden aldrig får vara tomma. Null-värden för fält som inte är obligatoriska tillåts.
+* **Verifiera minsta stränglängd**: Alla strängfält måste vara minst ett tecken långa eftersom strängvärden aldrig får vara tomma. Null-värden för fält som inte är obligatoriska tillåts. Nya strängfält får som standard en minsta längd på ett.
 
 ## Nästa steg
 
