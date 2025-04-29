@@ -3,9 +3,9 @@ title: Models
 description: Modelllivscykelhantering med Data Distiller SQL-tillägget. Lär dig skapa, utbilda och hantera avancerade statistiska modeller med SQL, inklusive nyckelprocesser som modellversionshantering, utvärdering och förutsägelse, för att få användbara insikter från era data.
 role: Developer
 exl-id: c609a55a-dbfd-4632-8405-55e99d1e0bd8
-source-git-commit: 6a61900b19543f110c47e30f4d321d0016b65262
+source-git-commit: 09129d9d19816b4d93b4979305f4ad532e5ffde4
 workflow-type: tm+mt
-source-wordcount: '1229'
+source-wordcount: '1645'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >Den här funktionaliteten är tillgänglig för kunder som har köpt Data Distiller-tillägget. Kontakta din Adobe-representant om du vill veta mer.
 
-Frågetjänsten har nu stöd för kärnprocesserna för att bygga och driftsätta en modell. Du kan använda SQL för att utbilda modellen med dina data, utvärdera dess exakthet och sedan använda en tågmodell för att göra prognoser om nya data. Du kan sedan använda modellen för att generera från tidigare data och fatta välgrundade beslut om verkliga scenarier.
+Frågetjänsten har nu stöd för kärnprocesserna för att bygga och driftsätta en modell. Du kan använda SQL för att utbilda modellen med dina data, utvärdera dess exakthet och sedan använda den tränade modellen för att göra prognoser på nya data. Du kan sedan använda modellen för att generera från tidigare data och fatta välgrundade beslut om verkliga scenarier.
 
 De tre stegen i modelllivscykeln för att generera åtgärdbara insikter är:
 
@@ -75,6 +75,10 @@ För att du ska få en förståelse för de viktigaste komponenterna och konfigu
 
 Använd SQL för att referera till datauppsättningen som används för utbildning.
 
+>[!TIP]
+>
+>En fullständig referens om `TRANSFORM`-satsen, inklusive funktioner och användning som stöds i både `CREATE MODEL` och `CREATE TABLE`, finns i [`TRANSFORM`-satsen i SQL Syntax-dokumentationen ](../sql/syntax.md#transform).
+
 ## Uppdatera en modell {#update}
 
 Lär dig hur du uppdaterar en befintlig maskininlärningsmodell genom att använda nya funktionskonverteringar och konfigureringsalternativ som algoritmtyp och etikettkolumn. Varje uppdatering skapar en ny version av modellen, som ökas stegvis från den senaste versionen. Detta säkerställer att ändringarna spåras och att modellen kan återanvändas i framtida utvärderings- eller förutsägelsesteg.
@@ -104,6 +108,80 @@ Följande anmärkningar beskriver de viktigaste komponenterna och alternativen i
 - `UPDATE model <model_alias>`: Uppdateringskommandot hanterar versionshantering och skapar en ny modellversion som har ökats från den senaste versionen.
 - `version`: Ett valfritt nyckelord som bara används under uppdateringar för att explicit ange att en ny version ska skapas. Om det utelämnas ökas versionen automatiskt.
 
+### Förhandsgranska och bevara omformade funktioner {#preview-transform-output}
+
+Använd satsen `TRANSFORM` i programsatserna `CREATE TABLE` och `CREATE TEMP TABLE` för att förhandsgranska och behålla utdata för funktionsomformningar före modellutbildning. Den här förbättringen ger dig en inblick i hur omformningsfunktioner (som kodning, tokenisering och vektorsammansättning) används i datauppsättningen.
+
+Genom att materialisera omformade data till en fristående tabell kan du inspektera mellanliggande funktioner, validera bearbetningslogiken och säkerställa funktionskvaliteten innan du skapar en modell. Detta förbättrar genomskinligheten i maskininlärningen och stöder ett mer välgrundat beslutsfattande under modellutvecklingen.
+
+#### Syntax {#syntax}
+
+Använd `TRANSFORM`-satsen i en `CREATE TABLE` - eller `CREATE TEMP TABLE` -programsats enligt nedan:
+
+```sql
+CREATE TABLE [IF NOT EXISTS] table_name
+[WITH (tableProperties)]
+TRANSFORM (transformFunctionExpression1, transformFunctionExpression2, ...)
+AS SELECT * FROM source_table;
+```
+
+Eller:
+
+```sql
+CREATE TEMP TABLE [IF NOT EXISTS] table_name
+[WITH (tableProperties)]
+TRANSFORM (transformFunctionExpression1, transformFunctionExpression2, ...)
+AS SELECT * FROM source_table;
+```
+
+**Exempel**
+
+Skapa en tabell med grundläggande omformningar:
+
+```sql
+CREATE TABLE ctas_transform_table
+TRANSFORM(
+  String_Indexer(additional_comments) si_add_comments,
+  one_hot_encoder(si_add_comments) as ohe_add_comments,
+  tokenizer(comments) as token_comments
+)
+AS SELECT * FROM movie_review;
+```
+
+Skapa en temporär tabell med ytterligare funktionstekniska steg:
+
+```sql
+CREATE TEMP TABLE ctas_transform_table
+TRANSFORM(
+  String_Indexer(additional_comments) si_add_comments,
+  one_hot_encoder(si_add_comments) as ohe_add_comments,
+  tokenizer(comments) as token_comments,
+  stop_words_remover(token_comments, array('and','very','much')) stp_token,
+  ngram(stp_token, 3) ngram_token,
+  tf_idf(ngram_token, 20) ngram_idf,
+  count_vectorizer(stp_token, 13) cnt_vec_comments,
+  tf_idf(token_comments, 10, 1) as cmts_idf
+)
+AS SELECT * FROM movie_review;
+```
+
+Fråga sedan utdata:
+
+```sql
+SELECT * FROM ctas_transform_table LIMIT 1;
+```
+
+#### Viktiga överväganden {#considerations}
+
+Den här funktionen förbättrar genomskinligheten och stöder funktionsvalidering, men det finns viktiga begränsningar att tänka på när du använder `TRANSFORM`-satsen utanför modellskapandet.
+
+- **Vektorutdata**: Om omformningen genererar vektortyputdata konverteras de automatiskt till arrayer.
+- **Begränsning för återanvändning av grupp**: Tabeller som skapats med `TRANSFORM` kan bara tillämpa omformningar när tabeller skapas. Nya grupper med data som infogats med `INSERT INTO` omformas **inte automatiskt**. Om du vill använda samma transformeringslogik för nya data måste du återskapa tabellen med en ny `CREATE TABLE AS SELECT`-sats (CTAS).
+- **Begränsning för återanvändning av modell**: Tabeller som skapats med `TRANSFORM` kan inte användas direkt i `CREATE MODEL` -satser. Du måste definiera om logiken för `TRANSFORM` när modellen skapas. Transformeringar som producerar utdata av vektortyp stöds inte under modellutbildning. Mer information finns i [Utdatatyper för funktionsomformning](./feature-transformation.md#available-transformations).
+
+>[!NOTE]
+>
+>Den här funktionen är avsedd för inspektion och validering. Det ersätter inte återanvändbar pipeline-logik. Alla omformningar som är avsedda för modellindata måste omdefinieras explicit i steget för att skapa modellen.
 
 ## Utvärdera modeller {#evaluate-model}
 
@@ -114,10 +192,10 @@ SELECT *
 FROM   model_evaluate(model-alias, version-number,SELECT col1,
        col2,
        label-COLUMN
-FROM   test -dataset)
+FROM   test_dataset)
 ```
 
-Funktionen `model_evaluate` tar `model-alias` som sitt första argument och en flexibel `SELECT`-sats som sitt andra argument. Frågetjänsten kör först programsatsen `SELECT` och mappar resultatet till ADF (Adobe Defined Function) i `model_evaluate`. Systemet förväntar sig att kolumnnamnen och datatyperna i `SELECT`-satsens resultat matchar de som används i utbildningssteget. Dessa kolumnnamn och datatyper behandlas som testdata och etikettdata för utvärdering.
+Funktionen `model_evaluate` tar `model-alias` som sitt första argument och en flexibel `SELECT`-sats som sitt andra argument. Frågetjänsten kör först programsatsen `SELECT` och mappar resultatet till den `model_evaluate` Adobe Defined Function (ADF). Systemet förväntar sig att kolumnnamnen och datatyperna i `SELECT`-satsens resultat matchar de som används i utbildningssteget. Dessa kolumnnamn och datatyper behandlas som testdata och etikettdata för utvärdering.
 
 >[!IMPORTANT]
 >
@@ -125,21 +203,62 @@ Funktionen `model_evaluate` tar `model-alias` som sitt första argument och en f
 
 ## Förutspå {#predict}
 
-Använd sedan nyckelordet `model_predict` för att tillämpa den angivna modellen och versionen på en datauppsättning och generera prognoser för de markerade kolumnerna. I SQL nedan visas den här processen, som visar hur du kan förutse utfall med hjälp av modellens alias och version.
-
-```sql
-SELECT *
-FROM   model_predict(model-alias, version-number,SELECT col1,
-       col2,
-       label-COLUMN
-FROM   dataset)
-```
-
-`model_predict` accepterar modellaliaset som det första argumentet och en flexibel `SELECT`-sats som det andra argumentet. Frågetjänsten kör först programsatsen `SELECT` och mappar resultatet till ADF:en `model_predict`. Systemet förväntar sig att kolumnnamnen och datatyperna i `SELECT`-satsens resultat matchar dem från utbildningssteget. Dessa data används sedan för att bedöma och generera prognoser.
-
 >[!IMPORTANT]
 >
->Vid utvärdering av (`model_evaluate`) och prediktion (`model_predict`) används den (de) omvandling(ar) som utfördes vid kursen.
+>Förbättrad kolumnmarkering och kantutjämning för `model_predict` styrs av en funktionsflagga. Som standard inkluderas inte mellanliggande fält som `probability` och `rawPrediction` i förutsägelseutdata.\
+>Om du vill aktivera åtkomst till dessa mellanliggande fält kör du följande kommando innan du kör `model_predict`:
+>
+>`set advanced_statistics_show_hidden_fields=true;`
+
+Använd nyckelordet `model_predict` för att tillämpa den angivna modellen och versionen på en datauppsättning och generera prognoser. Du kan markera alla utdatakolumner, välja specifika eller tilldela alias för att förbättra utdataskärpan.
+
+Som standard returneras bara baskolumner och den slutliga förutsägelsen om inte funktionsflaggan är aktiverad.
+
+```sql
+SELECT * FROM model_predict(model-alias, version-number, SELECT col1, col2 FROM dataset);
+```
+
+### Välj specifika utdatafält {#select-specific-output-fields}
+
+När funktionsflaggan är aktiverad kan du hämta en delmängd av fält från `model_predict`-utdata. Använd det här om du vill hämta mellanliggande resultat, t.ex. förutsägbarhetssannolikheter, poängvärden för råförutsägelse och baskolumner från indatafrågan.
+
+**Fall 1: Returnera alla tillgängliga utdatafält**
+
+```sql
+SELECT * FROM model_predict(modelName, 1, SELECT a, b, c FROM dataset);
+```
+
+**Fall 2: Returnera markerade kolumner**
+
+```sql
+SELECT a, b, c, probability, predictionCol FROM model_predict(modelName, 1, SELECT a, b, c FROM dataset);
+```
+
+**Fall 3: Returnera markerade kolumner med alias**
+
+```sql
+SELECT a, b, c, probability AS p1, predictionCol AS pdc FROM model_predict(modelName, 1, SELECT a, b, c FROM dataset);
+```
+
+I varje fall returneras de yttre `SELECT`-kontrollerna som resultatfälten returneras. Dessa innehåller basfält från indatafrågan tillsammans med förutsägelseutdata som `probability`, `rawPrediction` och `predictionCol`.
+
+### Bevara förutsägelser med CREATE TABLE eller INSERT INTO
+
+Du kan behålla förutsägelser med antingen &quot;CREATE TABLE AS SELECT&quot; eller &quot;INSERT INTO SELECT&quot;, inklusive förväntade utdata om så önskas.
+
+**Exempel: Skapa tabell med alla förutsägelseutdatafält**
+
+```sql
+CREATE TABLE scored_data AS SELECT * FROM model_predict(modelName, 1, SELECT a, b, c FROM dataset);
+```
+
+**Exempel: Infoga markerade utdatafält med alias**
+
+```sql
+INSERT INTO scored_data SELECT a, b, c, probability AS p1, predictionCol AS pdc FROM model_predict(modelName, 1, SELECT a, b, c FROM dataset);
+```
+
+Detta ger flexibilitet att välja och behålla endast relevanta förutsägelseutdatafält och baskolumner för analys och rapportering i efterföljande led.
 
 ## Utvärdera och hantera dina modeller
 

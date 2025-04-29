@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 7e1eee48b45311f9ac358496e46ca8980df0112b
 workflow-type: tm+mt
-source-wordcount: '2150'
+source-wordcount: '2627'
 ht-degree: 0%
 
 ---
@@ -104,6 +104,50 @@ När du skriver i frågeredigeraren fyller redigeraren automatiskt i SQL-reserve
 
 ![Arbetsytan i frågeredigeraren.](../images/ui/overview/query-editor.png)
 
+### Hämta frågeresultat {#download-query-results}
+
+>[!AVAILABILITY]
+>
+>Hämtningsfunktionerna är bara tillgängliga för kunder med tillägget Data Distiller. Kontakta din Adobe-representant om du vill veta mer om Data Distiller.
+
+Du kan nu hämta frågeresultat direkt från användargränssnittet i Frågeredigeraren. När en fråga har körts kan du hämta utdata i filformaten CSV, XLSX eller JSON. Den här funktionen effektiviserar arbetsflödena för marknadsförings- och analysteam genom att ge omedelbar tillgång till frågeresultat för offlineanalys, rapportering och Excel-baserade processer.
+
+Om du vill hämta dina frågeresultat väljer du **[!UICONTROL Download]** i det övre högra hörnet på fliken Frågeredigeraren **[!UICONTROL Result]**. Välj sedan **[!UICONTROL CSV]**, **[!UICONTROL XLSX]** eller **[!UICONTROL JSON]** i listrutan. Filen hämtas automatiskt till den lokala datorn.
+
+>[!NOTE]
+>
+>Knappen **[!UICONTROL Download]** visas bara när en fråga returnerar resultat. Om inga poster returneras visar fliken **[!UICONTROL Result]** meddelandet&quot;Inga resultat&quot; och hämtningsalternativet är inaktiverat.
+
+![Fliken Resultat i Frågeredigeraren med Hämta och listrutan markerad.](../images/ui/overview/download-results.png)
+
+>[!NOTE]
+>
+>När du öppnar en CSV-fil i Excel kanske följande varning visas: <br>&quot;Möjlig dataförlust. Vissa funktioner kan gå förlorade om du sparar arbetsboken i kommaavgränsat format (.csv). Om du vill bevara dessa funktioner sparar du den i ett Excel-filformat.&quot;<br>Tänk dessutom på att datum- och tidsformateringen kan variera beroende på filtyp. CSV-filer behåller det format som visas i frågeresultatet, medan XLSX-filer kan tillämpa lokaliserad formatering automatiskt i Excel.
+
+### Visa resultat i helskärmsläge {#view-results}
+
+När du har kört en fråga väljer du **[!UICONTROL View results]** på fliken **[!UICONTROL Result]** för att öppna en helskärmsvy av resultatet i tabellform.
+
+I helskärmsläget visas utdata i ett stödraster som kan storleksändras, vilket gör det enklare att granska stora datauppsättningar och skanna över kolumner. Det här förhandsgranskningsläget är särskilt användbart när du analyserar breda tabeller eller granskar radnivådetaljer.
+
+>[!NOTE]
+>
+>Förhandsgranskningen är skrivskyddad och ändrar inte frågan eller datauppsättningen.
+
+![Dialogrutan för förhandsvisning i helskärmsläge med Visa resultat markerat.](../images/ui/overview/view-results-fullscreen.png)
+
+### Kopiera resultat {#copy-results}
+
+Använd den förbättrade kopieringsfunktionen i Frågeredigeraren för att snabbt kopiera frågeresultat som kommaavgränsade värden (CSV). Klistra enkelt in kopierade data i kalkylprogram som Excel för vidare analys. Den här funktionen förbättrar läsbarheten, bevarar formateringen och effektiviserar validerings- och rapporteringsarbetsflödena utan att använda verktyg från tredje part.
+
+Du kan kopiera frågeresultat antingen från fliken [!UICONTROL Result] eller från förhandsgranskningen av helskärmsresultatet. På fliken **[!UICONTROL Result]** väljer du kopieringsikonen (![En kopieringsikon.](../../images/icons/copy.png)) om du vill kopiera alla frågeresultat till Urklipp. Markera enskilda rader på fliken Resultat i frågeredigeraren eller använd kryssrutans kolumnrubrik för att markera alla rader. Markera en rad om du vill aktivera kopieringsikonen.
+
+![Fliken Resultat i frågeredigeraren med kopieringsikonen markerad.](../images/ui/overview/query-editor-copy-icon.png)
+
+Du kan också välja **[!UICONTROL View results]** för att öppna förhandsvisningen i helskärmsläge. I den här dialogrutan markerar du enskilda rader eller använder kryssrutan i det övre vänstra hörnet för att markera alla rader och väljer sedan kopieringsikonen (![En kopieringsikon.](../../images/icons/copy.png)) för att kopiera markerade data.
+
+![Dialogrutan för förhandsvisning i helskärmsläge med resultatrader markerade och kopieringsikonen markerad.](../images/ui/overview/results-copy.png)
+
 ## Schemalagda frågor {#scheduled-queries}
 
 Frågor som redan har sparats som en mall kan schemaläggas för att köras med en vanlig stängsel. När du schemalägger en fråga kan du välja körningsfrekvens, start- och slutdatum, veckodag som den schemalagda frågan körs samt vilken datamängd som frågan ska exporteras till. Frågescheman ställs in med Frågeredigeraren.
@@ -113,8 +157,6 @@ Mer information om hur du schemalägger en fråga via användargränssnittet fin
 När en fråga har schemalagts visas den i listan med schemalagda frågor på fliken [!UICONTROL Scheduled Queries]. Du hittar fullständig information om frågan, körningar, skapare och tidsinställningar genom att välja en schemalagd fråga i listan.
 
 ![Arbetsytan Frågor med fliken Schemalagda frågor är markerad och visar rader med frågescheman.](../images/ui/overview/scheduled-queries.png)
-
-<!--  -->
 
 | Kolumn | Beskrivning |
 | --- | --- |
