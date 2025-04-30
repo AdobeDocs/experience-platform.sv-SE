@@ -4,9 +4,9 @@ title: Lär dig hur du skapar och delar dina egna Playbooks med hjälp av AI Ass
 description: Skapa och dela egna fallspelningsböcker.
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: a910c922e9a51b60e276b0aac7e81e35d0a378fd
+source-git-commit: 401062fbea8845f16803edb72ccb14b75c3f8409
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1640'
 ht-degree: 0%
 
 ---
@@ -161,11 +161,11 @@ Om en spelbok flaggas för olämpligt eller stötande innehåll rapporteras den 
 
 Om din organisation innehåller flera sandlådor behöver du inte dela spelböcker manuellt över dem. När du har skapat och publicerat en spelbok i en sandlåda blir den tillgänglig i alla sandlådor i den organisationen. Du kan sedan skapa instanser av den spelboken i någon av de andra sandlådorna.
 
-Om spelningsboken refererar till fält som inte är tillgängliga i unionsschemat för en annan sandlåda, kan ett felmeddelande visas när du försöker skapa instansen. Det meddelandet anropar de saknade fälten så att du kan uppdatera schemat efter behov.
+Om spelningsboken refererar till fält som inte är tillgängliga i unionsschemat för målsandlådan eller som saknar nödvändig behörighet, kan ett felmeddelande visas när du försöker skapa instansen. Det meddelandet anropar de saknade fälten och/eller de saknade behörigheterna.
 
->[!IMPORTANT]
->
->Transitiv delning av spelbok stöds inte. Om du delar en spelbok från en organisation till en annan och sedan importerar den kan den inte delas igen från den mottagande organisationen till en tredje organisation.
+Om några fält saknas i ditt unionsschema markeras de i en dialogruta under importen.
+
+![Fält saknas i unionsschemat som listas under importprocessen](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
 
 ## Dela dina spelböcker i olika organisationer {#sharing-playbooks-organizations}
 
@@ -181,14 +181,14 @@ Så här delar du en spelbok från en organisation till en annan:
 * **Starta resursen**: Välj **[!UICONTROL Share Playbook]** när spelboken har publicerats och en koppling har upprättats.
 * **Välj målorganisation**: Välj den organisation du vill dela spelboken med när du uppmanas till det.
 * **Bekräfta och dela**: Bekräfta ditt val. Du får bekräftelsemeddelanden som anger att delningen lyckades.
-* ***Verifiera målorganisationen**: Logga in i målorganisationen för att verifiera att spelboken är tillgänglig.
+* **Verifiera målorganisationen**: Logga in i målorganisationen för att verifiera att spelboken är tillgänglig.
 * **Importera spelningsboken**: Välj **[!UICONTROL Import]** om du vill överföra spelningsboken till målorganisationen. Du kan visa den på fliken **Spelböcker**.
 
-Om några fält saknas i ditt unionsschema markeras de i en dialogruta under importen.
-
-![Fält saknas i unionsschemat som listas under importprocessen](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
-
 Om spelboken inte visas kontrollerar du att den är publicerad och att organisationens partnerskap är aktivt.
+
+>[!IMPORTANT]
+>
+>Transitiv delning av spelbok stöds inte. Om du delar en spelbok från en organisation till en annan och sedan importerar den kan den inte delas igen från den mottagande organisationen till en tredje organisation.
 
 ## Nödvändiga behörigheter
 
