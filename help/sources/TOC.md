@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 47f6251a190a12b86ec566e3ba72fa34a0bd028b
+source-git-commit: 7b1dbec504ba11983958c3452878cf410b2a490c
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1075'
 ht-degree: 7%
 
 ---
@@ -75,6 +75,7 @@ ht-degree: 7%
       - [Amazon Redshift-anslutning](connectors/databases/redshift.md)
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
+      - [Azure Databricks-koppling](connectors/databases/databricks.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics Connector](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
@@ -165,6 +166,7 @@ ht-degree: 7%
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/api/create/databases/spark.md)
+         - [Azure-databaser](tutorials/api/create/databases/databricks.md)
          - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/api/create/databases/ats.md)
