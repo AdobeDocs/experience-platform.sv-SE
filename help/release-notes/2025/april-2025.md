@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: a3b1e2e8-d780-4e23-b323-37e1a631f716
-source-git-commit: 7772e0b6f512c3854a03fb01580c80cc0cb41ba3
+source-git-commit: 65e0f0f98006f55bc08ccf24499841413def7a16
 workflow-type: tm+mt
-source-wordcount: '1692'
-ht-degree: 28%
+source-wordcount: '1885'
+ht-degree: 25%
 
 ---
 
@@ -31,6 +31,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Frågetjänst](#query-service)
 - [Kundprofil i realtid](#profile)
 - [Källor](#sources)
+- [Use Case Playbooks](#use-case-playbooks)
 
 ## Experience League {#experience-league}
 
@@ -152,3 +153,21 @@ Använd källor i Experience Platform för inmatning av data från ett Adobe-pro
 {style="table-layout:auto"}
 
 Mer information finns i [översikten över källor](../../sources/home.md).
+
+## Use Case Playbooks {#use-case-playbooks}
+
+Använd fallspelsböcker var ursprungligen utformade för att övervinna utmaningar när man kom igång med Real-Time Customer Data Platform eller Adobe Journey Optimizer. De fortsätter att utvecklas och gör det nu möjligt för er att snabbt komma igång med viktiga användningsfall för marknadsföring och tillhandahålla inspiration och färdiga resurser för att testa och börja producera.
+
+Använd fallspelsböcker har gått över från ett identifieringsverktyg till ett samverkansbaserat ramverk. De hjälper er nu att skapa, hantera och dela egna spelböcker i olika organisationer.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [!BADGE Beta]{type=Informative} Skapa och dela dina egna spelböcker | Med nya Playbook Authoring Framework kan du skapa, hantera och dela egna fallspelböcker. Detta inkluderar stöd för att hämta viktiga metadata, redigera färdkartor och associera relevanta tekniska resurser. Ni kan dela Playbooks mellan olika organisationer för att standardisera marknadsföringsstrategier och upprätthålla enhetlighet. |
+
+{style="table-layout:auto"}
+
+Läs dokumentet [Författare och dela dina egna spelböcker](/help/use-case-playbooks/playbooks/author.md) om du vill lära dig hur du kan skapa och dela dina egna spelböcker.
+
+Mer information finns i översikten [Använd fallspelningsböcker](/help/use-case-playbooks/playbooks/overview.md) som ger en översikt över spelbokens funktion, syfte och en heltäckande demonstration, inklusive hur du skapar instanser och importerar genererade resurser till andra sandlådemiljöer.
