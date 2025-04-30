@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 9bc7d372eba9ffcfe64f90d2d58a532411e5f1ce
+source-git-commit: 02fafc830e964bbfa94c125c2006f4998d9d193d
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1529'
 ht-degree: 0%
 
 ---
@@ -149,7 +149,7 @@ Experience Platform har stöd för inmatning av data från en data- och identite
 
 - [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Algolia User Profiles]](connectors/data-partners/algolia-user-profiles.md)
+- [[!DNL Algolia User Profiles]](connectors/data-partners/algolia-user-profiles.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE Gruppera]{type=Informative}
