@@ -4,9 +4,9 @@ title: Lär dig hur du skapar och delar dina egna Playbooks med hjälp av AI Ass
 description: Skapa och dela egna fallspelningsböcker.
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: aa1e155fb8d71497958d0de1f6c10cf47e58dbf0
+source-git-commit: a910c922e9a51b60e276b0aac7e81e35d0a378fd
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1638'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Med [!DNL Playbook Authoring Framework], som drivs av AI Assistant i Adobe Exper
 
 Ramverket följer en trestegsprocess:
 
-1. **Metadatainhämtning**: Använd AI-assistenten eller [webbformuläret] för att hämta metadata för spelningsboken.
+1. **Metadatainhämtning**: Använd AI-assistenten eller webbformuläret för att hämta metadata för spelningsböcker.
 
 2. **Teknisk association**: Lägg till specifika tekniska resurser som resor eller målgrupper i spelboken. Du behåller fullständig kontroll över processen att skapa spelböcker i din utvecklingssandlåda, vilket säkerställer justering med dina scheman och andra unika datastrukturer.
 
@@ -26,7 +26,7 @@ Ramverket följer en trestegsprocess:
 
 ## Skapa en spelningsbok
 
-Du kan skapa en spelbok på två sätt: antingen med hjälp av AI-assistenten eller manuellt. Läs följande avsnitt om du vill veta mer.
+Du kan skapa en spelbok på två sätt: antingen med hjälp av AI-assistenten eller manuellt. Läs följande avsnitt för att lära dig hur du skapar en spelbok med AI Assistant.
 
 ### Spelboksöversikt
 
@@ -40,9 +40,9 @@ Välj **[!UICONTROL New Playbook]** och välj sedan **Generera spelbok med AI As
 
 ![Spelningsbokens gränssnitt med Generera spelbok med AI Assistant har valts.](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
 
-Beskriv användningsfallet i promptfältet.
+Använd promptfältet för att beskriva användningsfallet. Exempel:
 
-**Exempel**:&quot;Engagera ACME-kunder som bläddrade skor men inte slutförde köpet.&quot;
+&quot;Engagera ACME-kunder som surfar på skor men inte slutförde köpet.&quot;
 
 ![Spelningsbokens gränssnitt med webbformulärsområdet markerat.](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
 
@@ -114,7 +114,7 @@ AI-assistenten kan bearbeta olika snabbstrukturer och extrahera nyckeldetaljer s
 
 &quot;Skapa en kampanj med namnet &quot;Complete the Look&quot; för att öka försäljningen och CLV. Kampanjen uppmuntrar kunderna att köpa köksartiklar och möbler för att slutföra ett kompletterande köp via personaliserade rekommendationer och erbjudanden i samband med deras inköp. Meddela först kunderna med produktrekommendationer. Om de inte gör några inköp inom 7 dagar får de ett andra meddelande med produktrekommendationer och erbjudanden. Använd push-meddelanden och e-post för att kontakta kunderna. Rikta er till kunder som har köpt köksartiklar eller möbler de senaste 7 dagarna och som inte har varit målkunder de senaste 30 dagarna. Som en del av kampanjen vill vi mäta nyckeltal som till exempel klick (e-post, app, sms, push), CTR, E-Wallet CTR, AOV Conversion.CLV Revenue, Total Purchase Events (in-store, digital, call center).&quot;
 
-![Exempel 1 fråga](/help/use-case-playbooks/assets/playbooks/authoring/example-prompt.png)
+![Exempel på att en lång fråga visas i textinmatningsrutan](/help/use-case-playbooks/assets/playbooks/authoring/long-prompt.png)
 
 **Exempel 2:**
 
@@ -126,20 +126,20 @@ Projektkanaler/kontaktytor: E-post
 Målgrupp: Kunder som prenumererar på ACME-nyhetsbrev.
 Mål-KPI:er/engagemangsmått/avkastning: 1. Öka intäkterna från produkterna. 2. Öka kundlojaliteten.&quot;
 
-![Exempel 2-fråga](/help/use-case-playbooks/assets/playbooks/authoring/example-2-prompt.png)
+![Exempel på hur en strukturerad fråga visas i textrutan](/help/use-case-playbooks/assets/playbooks/authoring/organized-list-prompt.png)
 
 **Exempel 3:**
 
 &quot;Knuffa kunderna för att köpa produkter under en pågående produktkampanj.
 Engagera med kunderna under en pågående kampanj genom att skicka lämplig kommunikation via e-post, SMS eller push-meddelanden för att köpa produkter. Skicka en påminnelse via e-post efter 24 timmar av att de inte engagerade sig i kampanjen.&quot;
 
-![Exempel 3 fråga](/help/use-case-playbooks/assets/playbooks/authoring/example-3-prompt.png)
+![Exempel som visar en kortfattad fråga i textrutan](/help/use-case-playbooks/assets/playbooks/authoring/concise-prompt.png)
 
 **Exempel 4:**
 
 &quot;Sälj skor till high school-spelare.&quot;
 
-![Exempel 4 fråga](/help/use-case-playbooks/assets/playbooks/authoring/example-4-prompt.png)
+![Exempel på att visa en enradig fråga](/help/use-case-playbooks/assets/playbooks/authoring/one-liner-prompt.png)
 
 AI-assistenten tar bort alla onödiga detaljer som &quot;Projektnamn&quot; eller &quot;Bakgrund&quot;. Det extraherar nyckelelement som&quot;målgrupp&quot;,&quot;kampanjmål&quot; och&quot;marknadsföringskanal&quot; och fungerar med alla indatatyper.
 
@@ -157,6 +157,85 @@ När du skapar spelböcker ska du tänka på vilket språk och vilket innehåll 
 
 Om en spelbok flaggas för olämpligt eller stötande innehåll rapporteras den automatiskt till Adobe för granskning. Adobe granskar sedan det flaggade innehållet. Om det anses olämpligt meddelas kunden och spelboken tas bort.
 
+## Dela spelböcker över sandlådor {#sharing-playbooks-sandboxes}
+
+Om din organisation innehåller flera sandlådor behöver du inte dela spelböcker manuellt över dem. När du har skapat och publicerat en spelbok i en sandlåda blir den tillgänglig i alla sandlådor i den organisationen. Du kan sedan skapa instanser av den spelboken i någon av de andra sandlådorna.
+
+Om spelningsboken refererar till fält som inte är tillgängliga i unionsschemat för en annan sandlåda, kan ett felmeddelande visas när du försöker skapa instansen. Det meddelandet anropar de saknade fälten så att du kan uppdatera schemat efter behov.
+
+>[!IMPORTANT]
+>
+>Transitiv delning av spelbok stöds inte. Om du delar en spelbok från en organisation till en annan och sedan importerar den kan den inte delas igen från den mottagande organisationen till en tredje organisation.
+
+## Dela dina spelböcker i olika organisationer {#sharing-playbooks-organizations}
+
+Så här delar du en spelbok från en organisation till en annan:
+
+* **Logga in i källorganisationen**: Navigera till organisationen som innehåller den spelbok som du skapade och vill dela på fliken **[!UICONTROL Your playbooks]**.
+* **Publicera spelningsboken**: Om spelningsboken inte redan är publicerad måste du publicera den innan du delar den.
+
+>[!NOTE]
+>
+>Ett partnerskap måste upprättas mellan käll- och målorganisationerna för att det ska gå att dela spelböcker. Lär dig hur du [skapar en förfrågan om organisationskoppling](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/ui/sharing-packages-across-orgs).
+
+* **Starta resursen**: Välj **[!UICONTROL Share Playbook]** när spelboken har publicerats och en koppling har upprättats.
+* **Välj målorganisation**: Välj den organisation du vill dela spelboken med när du uppmanas till det.
+* **Bekräfta och dela**: Bekräfta ditt val. Du får bekräftelsemeddelanden som anger att delningen lyckades.
+* ***Verifiera målorganisationen**: Logga in i målorganisationen för att verifiera att spelboken är tillgänglig.
+* **Importera spelningsboken**: Välj **[!UICONTROL Import]** om du vill överföra spelningsboken till målorganisationen. Du kan visa den på fliken **Spelböcker**.
+
+Om några fält saknas i ditt unionsschema markeras de i en dialogruta under importen.
+
+![Fält saknas i unionsschemat som listas under importprocessen](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
+
+Om spelboken inte visas kontrollerar du att den är publicerad och att organisationens partnerskap är aktivt.
+
+## Nödvändiga behörigheter
+
+Du behöver följande behörigheter för att få åtkomst till sandlådan och använda den här funktionen:
+
+* **Sandlådebehörigheter**:
+
+Dessa krävs för att komma åt sandlådemiljön där funktionen finns:
+
+* **Hantera sandlåda**
+* **Visa sandlåda**
+
+* **Behörigheter för paketdelning**:
+
+Dessa behörigheter krävs för intern delning:
+
+* [**Hantera paket**](/help/sandboxes/ui/sandbox-tooling.md)
+* [**Dela paket**](/help/sandboxes/ui/sharing-packages-across-orgs.md)
+
+Med dessa behörigheter kan du:
+
+* Ange sandlådemiljön
+* Få åtkomst till funktionen i sandlådan
+* Hantera och dela paket efter behov
+
+Dessa behörigheter finns i avsnittet **[!UICONTROL Sandboxes]** i behörighetslistan.
+
+![Behörighetslistan med relevanta behörigheter markerad.](/help/use-case-playbooks/assets/playbooks/authoring/permissions.png)
+
+### Resor och besläktade objekt - behörigheter
+
+När du skapar Journeys som använder Playbooks, kommer du troligen att referera till andra objekt som **Kanaler**, **Publiker** och andra entiteter. Var och en av dessa har en egen behörighetsgrupp.
+
+Det här är nyckelbehörigheterna för reserelaterade åtgärder, som:
+
+* **Visa resa**
+* **Hantera resa**
+* Behörigheter för objekt som målgrupper och kanaler
+
+Du behöver även följande behörigheter:
+
+* **Segmentläsning**
+* **Profilen har lästs**
+* **Datauppsättningen har lästs**
+
+Eftersom Resor är mycket flexibla och kan omfatta många sammankopplade objekt, dokumenteras deras [fullständiga behörigheter](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/access-control/privacy/high-low-permissions) separat och kan variera beroende på ditt specifika användningsfall.
+
 ## Nästa steg
 
-Nu när du förstår hur du skapar och publicerar spelböcker med AI Assistant kan du lära dig hur du kommer igång med de tillgängliga spelböckerna och välja rätt i [Spellistan](/help/use-case-playbooks/playbooks/choose.md).
+Nu när du förstår hur du skapar, publicerar och delar spelböcker med hjälp av AI-assistenten kan du lära dig hur du kommer igång med de tillgängliga spelböckerna och välja rätt i [Playbooks List](/help/use-case-playbooks/playbooks/choose.md).
