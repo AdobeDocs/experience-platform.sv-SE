@@ -1,19 +1,17 @@
 ---
 title: Anslut användarprofiler för Algoliet till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter användare av Algoliet till Experience Platform
-hide: true
-hidefromtoc: true
 exl-id: d4c936a7-4983-4a12-a813-03b672116e44
-source-git-commit: 009866abc39b06c22b7bea758ce9fdfba8c72b00
+source-git-commit: 9bc7d372eba9ffcfe64f90d2d58a532411e5f1ce
 workflow-type: tm+mt
-source-wordcount: '1107'
+source-wordcount: '1106'
 ht-degree: 0%
 
 ---
 
 # Infoga [!DNL Algolia User Profiles]-data till Experience Platform med användargränssnittet
 
-Läs den här självstudiekursen om du vill lära dig hur du importerar betalningsdata från ditt [!DNL Algolia User Profiles]-konto till Adobe Experience Platform via användargränssnittet.
+I den här självstudiekursen får du lära dig hur du importerar data från ditt [!DNL Algolia User Profiles]-konto till Adobe Experience Platform med användargränssnittet.
 
 ## Kom igång
 
