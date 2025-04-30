@@ -3,10 +3,10 @@ keywords: personalisering;Personalization
 title: Översikt över Personalization destinationer
 description: Personalization plattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgrupper med liknande vanor.
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cc18f5c9445e5d08565cd5ac4bcbdb11ccbc1a31
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -26,6 +26,7 @@ För närvarande stöder Experience Platform de personaliseringsmål som anges n
 * [Adobe Commerce](adobe-commerce.md)
 * [Anpassad personaliseringsanslutning](custom-personalization.md)
 * [Pega-anslutning för kundens beslutshubb](pega.md)
+* [(V2) Pega Customer Decision Hub-anslutning](pega.md)
 * [Pega-profilanslutning](pega-profile.md)
 
 **Tillägg**
