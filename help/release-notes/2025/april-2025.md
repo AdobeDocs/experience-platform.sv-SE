@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: a3b1e2e8-d780-4e23-b323-37e1a631f716
-source-git-commit: 65e0f0f98006f55bc08ccf24499841413def7a16
+source-git-commit: 52f6995beeff05948958bc7349242e2744e2fb05
 workflow-type: tm+mt
-source-wordcount: '1885'
-ht-degree: 25%
+source-wordcount: '2026'
+ht-degree: 28%
 
 ---
 
@@ -30,6 +30,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Identitetstjänst](#identity)
 - [Frågetjänst](#query-service)
 - [Kundprofil i realtid](#profile)
+- [Sandlådor](#sandboxes)
 - [Källor](#sources)
 - [Use Case Playbooks](#use-case-playbooks)
 
@@ -126,6 +127,20 @@ Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta
 {style="table-layout:auto"}
 
 Mer information om kundprofil i realtid finns i [profilöversikt](../../profile/home.md).
+
+## Sandlådor {#sandboxes}
+
+Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose det här behovet tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och förbättra program för digitala upplevelser.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för utökning av plugin-program för sandlådeverktyg | Anpassade åtgärder kan nu kopieras som ett beroende objekt när du duplicerar reseobjekt i sandlådeverktyg. Dessutom kan du välja befintliga åtgärder som ska återanvändas i målsandlådan. De kan också läggas till i ett paket oberoende av varandra. Fullständig information om vilka Adobe Journey Optimizer-objekt som stöds finns i handboken om [sandlådeverktyg](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects). |
+
+{style="table-layout:auto"}
+
+Mer information om sandlådor finns i [översikten över sandlådor](../../sandboxes/home.md).
 
 ## Källor {#sources}
 
