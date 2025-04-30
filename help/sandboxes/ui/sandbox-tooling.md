@@ -2,9 +2,9 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 480785dc17ab27df5544524cf08baa9150fe426f
+source-git-commit: 654a1c696d88d9e1748787402a1a50c8e232df57
 workflow-type: tm+mt
-source-wordcount: '2319'
+source-wordcount: '2338'
 ht-degree: 0%
 
 ---
@@ -49,18 +49,18 @@ Följande objekt importeras men har statusen Utkast eller Inaktiverat:
 
 Tabellen nedan visar [!DNL Adobe Journey Optimizer] objekt som för närvarande stöds för sandlådeverktyg och begränsningar:
 
-| Plattform | Objekt | Information |
-| --- | --- | --- |
-| [!DNL Adobe Journey Optimizer] | Målgrupp | En målgrupp kan kopieras som ett beroende objekt i reseobjektet. Du kan välja att skapa en ny målgrupp eller återanvända en befintlig i målsandlådan. |
-| [!DNL Adobe Journey Optimizer] | Schema | Scheman som används under resan kan kopieras som beroende objekt. Du kan välja att skapa ett nytt schema eller återanvända ett befintligt i målsandlådan. |
-| [!DNL Adobe Journey Optimizer] | Kopplingsprincip | Sammanfogningsprinciperna som används under resan kan kopieras som beroende objekt. I målsandlådan kan du **inte** skapa en ny sammanfogningsprincip. Du kan bara använda en befintlig. |
-| [!DNL Adobe Journey Optimizer] | Resa - arbetsytedetaljer | Återgivningen av resan på arbetsytan omfattar objekten på resan, till exempel villkor, åtgärder, händelser, läsning av målgrupper osv., som kopieras. Hoppaktiviteten tas inte med i kopian. |
-| [!DNL Adobe Journey Optimizer] | Händelse | Händelser och händelseinformation som används under resan kopieras. Den skapar alltid en ny version i målsandlådan. |
-| [!DNL Adobe Journey Optimizer] | Åtgärd | E-post och push-meddelanden som används under resan kan kopieras som beroende objekt. Kanalåtgärdsaktiviteterna som används i resefälten, som används för personalisering i meddelandet, kontrolleras inte för fullständighet. Innehållsblock kopieras inte.<br><br>Åtgärden för att uppdatera profil som används under resan kan kopieras. Anpassade åtgärder och åtgärdsinformation som används under resan kopieras också. Den skapar alltid en ny version i målsandlådan. |
-| [!DNL Adobe Journey Optimizer] | Resa | Om du lägger till en hel resa i ett paket kopieras huvuddelen av de objekt som resan är beroende av, inklusive målgrupper, scheman, händelser och åtgärder. |
-| [!DNL Adobe Journey Optimizer] | Innehållsmall | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
-| [!DNL Adobe Journey Optimizer] | Fragment | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
-| [!DNL Adobe Journey Optimizer] | Kampanjer | Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. beslutsobjekt, dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox). |
+| Plattform | Objekt | Beroende objekt som stöds | Information |
+| --- | --- | --- | --- |
+| [!DNL Adobe Journey Optimizer] | Målgrupp | | En målgrupp kan kopieras som ett beroende objekt i reseobjektet. Du kan välja att skapa en ny målgrupp eller återanvända en befintlig i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Schema | | Scheman som används under resan kan kopieras som beroende objekt. Du kan välja att skapa ett nytt schema eller återanvända ett befintligt i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Kopplingsprincip | | Sammanfogningsprinciperna som används under resan kan kopieras som beroende objekt. I målsandlådan **kan du inte** skapa en ny sammanfogningsprincip. Du kan bara använda en befintlig. |
+| [!DNL Adobe Journey Optimizer] | Resa | Följande objekt som används under resan kopieras som beroende objekt. Under importarbetsflödet kan du välja **[!UICONTROL Create new]** eller **[!UICONTROL Use existing]** för varje: <ul><li>Målgrupper</li><li>Scheman</li><li>Anpassade åtgärder</li><li>Händelser</li><li>Fragment</li><li>Innehållsmallar</li><li>Arbetsytedetaljer</li></ul> | <ul><li>**[!UICONTROL Custom actions]**: När du väljer **[!UICONTROL Use existing]** under importprocessen när du kopierar en resa till en annan sandlåda, måste de befintliga anpassade åtgärderna du väljer **vara** samma som den anpassade källåtgärden. Om de inte är samma kommer den nya resan att innehålla fel som inte går att lösa.</li><li>Händelser och händelseinformation som används under resan kopieras. Den skapar alltid en ny version i målsandlådan.</li></ul> |
+| [!DNL Adobe Journey Optimizer] | Åtgärd | | E-post och push-meddelanden som används under resan kan kopieras som beroende objekt. Kanalåtgärdsaktiviteterna som används i resefälten, som används för personalisering i meddelandet, kontrolleras inte för fullständighet. Innehållsblock kopieras inte.<br><br>Åtgärden för att uppdatera profil som används under resan kan kopieras. Anpassade åtgärder kan läggas till i ett paket oberoende av varandra. Åtgärdsinformation som används under resan kopieras också. Den skapar alltid en ny version i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Innehållsmall | | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
+| [!DNL Adobe Journey Optimizer] | Fragment | Alla kapslade fragment. | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
+| [!DNL Adobe Journey Optimizer] | Kampanjer | | Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. beslutsobjekt, dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i [Exportera objekt till en annan sandlåda] |
+
+<!-- | [!DNL Adobe Journey Optimizer] | Campaigns | The following objects used in the campaign are copied as dependent objects: <ul><li>Campaigns</li><li>Audiences</li><li>Schemas</li><li>Content templates</li><li>Fragments</li><li>Message/Content</li><li>Channel configuration</li><li>Unified decision objects</li><li>Experiment settings/variants</li></ul>| Campaigns can be copied along with all items related to the profile, audience, schema, inline messages, and dependent objects. Some items are not copied, such as decision items, data usage labels, and language settings. For a complete list of objects that cannot be copied, refer the [exporting objects to another sandbox](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox) guide. | -->
 
 Ytor (till exempel förinställningar) kopieras inte över. Systemet väljer automatiskt den närmsta möjliga matchningen i målsandlådan baserat på meddelandetyp och ytnamn. Om det inte finns några ytor i målsandlådan, kommer ytkopian att misslyckas, vilket gör att meddelandekopian misslyckas eftersom ett meddelande kräver att en yta är tillgänglig för konfiguration. I det här fallet måste minst en yta skapas för den högra kanalen i meddelandet för att kopian ska fungera.
 
