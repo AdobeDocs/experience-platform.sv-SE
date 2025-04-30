@@ -4,7 +4,7 @@ user-guide-title: Användarhandbok om dataflöden
 user-guide-description: Lär dig mer om dataflöden och hur du konfigurerar dem för olika tjänster.
 feature: Dataflows
 role: Developer
-source-git-commit: 8d7bb7058df67526710936e330c69e524d18b709
+source-git-commit: d4c1c9fce7ef5445c8f043d1f766603235b9bd88
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 23%
@@ -20,7 +20,7 @@ ht-degree: 23%
    - [Sortera och filtrera API-svar](./api/sort-and-filter.md)
 - Användargränssnittsguider {#ui}
    - [Översikt över kontrollpanelen för övervakning](./ui/monitor.md)
-   - [Övervaka dataflöden i källor](./ui/monitor-sources.md)
+   - [Övervaka inhämtning av data från sjön](./ui/monitor-sources.md)
    - [Övervaka dataflöden i identiteter](./ui/monitor-identities.md)
    - [Övervaka dataflöden i profiler](./ui/monitor-profiles.md)
    - [Övervaka dataflöden i målgrupper](./ui/monitor-audiences.md)

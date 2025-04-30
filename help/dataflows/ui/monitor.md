@@ -2,9 +2,9 @@
 title: Översikt över kontrollpanelen för övervakning
 description: Lär dig hur du använder kontrollpanelen för övervakning i användargränssnittet i Adobe Experience Platform
 exl-id: 06ea5380-d66e-45ae-aa02-c8060667da4e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cca405c58551a52a044ac513921298637974e88e
 workflow-type: tm+mt
-source-wordcount: '995'
+source-wordcount: '951'
 ht-degree: 0%
 
 ---
@@ -63,12 +63,6 @@ Välj **[!UICONTROL Customer & Account]** om du vill uppdatera instrumentpanelen
 
 ![Övervakningens datatyp har angetts till Kund och konto.](../assets/ui/monitor-overview/customer-account.png)
 
->[!TAB Prospekt]
-
-Välj **[!UICONTROL Prospect]** om du vill uppdatera instrumentpanelen och visa statistik om prospekteringsdata som har importerats till Experience Platform under en viss period. **Obs!**: Du kan bara visa datatypsaktiviteter för potentiella kunder om du är [berättigad till data för potentiella kunder](../../rtcdp/partner-data/prospecting.md).
-
-![Övervakningens datatyp har angetts till Prospect.](../assets/ui/monitor-overview/prospect.png)
-
 >[!TAB Berikning av kontoprofil]
 
 Välj **[!UICONTROL Account profile enrichment]** om du vill uppdatera din instrumentpanel och visa mått på profilberikningsdata. **Obs!**: Du kan bara visa anrikningsvärden för kontoprofiler om du är berättigad till [B2B-data](../../rtcdp/b2b-tutorial.md).
@@ -81,11 +75,11 @@ Använd panelens översta huvud för att få en upplevelse av övervakning över
 
 >[!BEGINTABS]
 
->[!TAB Källor]
+>[!TAB Datasjön]
 
-Välj **[!UICONTROL Sources]** om du vill visa mätvärden för dina källors inmatningsfrekvens. Läs guiden om [övervakning av källdata](monitor-sources.md) om du vill ha mer information.
+Välj **[!UICONTROL Data lake]** om du vill visa mätvärden för din datarömsintag. Läs guiden om [övervakning av dataöverföring](monitor-sources.md) om du vill ha mer information.
 
-![Kontrollpanelen i gränssnittet med källkortet markerat.](../assets/ui/monitor-overview/sources.png)
+![Kontrollpanelen i användargränssnittet med sjödatakortet markerat.](../assets/ui/monitor-overview/data-lake.png)
 
 >[!TAB Identiteter]
 
@@ -133,8 +127,12 @@ När du är klar väljer du **[!UICONTROL Apply]**.
 
 Genom att läsa det här dokumentet kan du nu navigera genom kontrollpanelen i användargränssnittet. Mer information om hur du övervakar data för en viss Experience Platform-tjänst finns i dokumentationen nedan:
 
-* [Övervaka källdata](monitor-sources.md).
+* [Övervaka inmatning av data i sjön](monitor-sources.md).
 * [Övervaka identitetsdata](monitor-identities.md).
 * [Övervaka profildata](monitor-profiles.md).
 * [Övervaka målgruppsdata](monitor-audiences.md).
 * [Övervaka måldata](monitor-destinations.md).
+
+<!-- >[!TAB Prospect]
+
+Select **[!UICONTROL Prospect]** to update your dashboard and display metrics on prospecting data that has been ingested to Experience Platform over the course of a given period. **Note**: You can only view prospect data type activities if you are [entitled to prospect data](../../rtcdp/partner-data/prospecting.md). -->

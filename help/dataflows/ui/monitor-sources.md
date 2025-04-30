@@ -1,21 +1,21 @@
 ---
-description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka data som hämtas från källor.
-title: Övervaka dataflöden för källor i användargränssnittet
+description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka data som hämtas in till datavjön.
+title: Övervaka inhämtning av data från sjön
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f671188fbc694b0d2d808577265f91788cb0d8e9
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1275'
 ht-degree: 0%
 
 ---
 
-# Övervaka dataflöden för källor i användargränssnittet
+# Övervaka inhämtning av data från sjön
 
 >[!IMPORTANT]
 >
 >Direktuppspelningskällor, som [HTTP API-källan](../../sources/connectors/streaming/http.md), stöds för närvarande inte av kontrollpanelen. För tillfället kan du bara använda kontrollpanelen för att övervaka batchkällor.
 
-Läs det här dokumentet om du vill lära dig hur du använder kontrollpanelen för att övervaka dina källdata i Experience Platform användargränssnitt.
+Läs det här dokumentet om du vill lära dig hur du använder kontrollpanelen för att övervaka inmatning av data i Experience Platform användargränssnitt.
 
 ## Kom igång {#get-started}
 
@@ -28,7 +28,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Kundprofil i realtid](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Övervaka källdata med kontrollpanelen
+## Använd kontrollpanelen för att kontrollera matning av data i sjön
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
@@ -42,15 +42,11 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >abstract="Källhanteringen innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
-<!-- In the [Experience Platform UI](https://platform.adobe.com), select **[!UICONTROL Monitoring]** from the left navigation to access the [!UICONTROL Monitoring] dashboard. The [!UICONTROL Monitoring] dashboard contains metrics and information on all sources dataflows, including insights into the health of data traffic from a source to [!DNL Identity Service], and to [!DNL Profile].
+Välj **[!UICONTROL Data lake]** i huvudrubriken på kontrollpanelen om du vill visa hur mycket data har fått i sig.
 
-At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which contains metrics and graphs that display data on records ingested and records failed. -->
+![Kontrollpanelen med källkortet valt.](../assets/ui/monitor-sources/data-lake.png)
 
-I kontrollpanelen väljer du [!UICONTROL Sources] i huvudrubriken för att uppdatera instrumentpanelen med en visning av källans dataflödeshastighet.
-
-![Kontrollpanelen med källkortet valt.](../assets/ui/monitor-sources/sources.png)
-
-Diagrammet [!UICONTROL Ingestion rate] visar dataöverföringshastigheten baserat på den konfigurerade tidsramen. Som standard visar kontrollpanelen hur många gånger de senaste 24 timmarna har fått i sig det. Anvisningar om hur du konfigurerar tidsramen finns i guiden [Konfigurera tidsbildruta för övervakning](monitor.md#configure-monitoring-time-frame).
+Diagrammet [!UICONTROL Ingestion rate] visar dataöverföringshastigheten baserat på den konfigurerade tidsramen. Som standard visas i kontrollpanelen hur många gånger de senaste 24 timmarna har tagit emot. Anvisningar om hur du konfigurerar tidsramen finns i guiden [Konfigurera tidsbildruta för övervakning](monitor.md#configure-monitoring-time-frame).
 
 Diagrammet är aktiverat för visning som standard. Om du vill dölja diagrammet väljer du **[!UICONTROL Metrics and graphs]** för att inaktivera växlingen och dölja diagrammet.
 
@@ -132,11 +128,9 @@ Använd avsnittet [!UICONTROL Records failed] om du vill visa mätvärden för p
 >
 >Du kan bara använda feldiagnostik om funktionen aktiverades när du skapade källanslutningen.
 
-![Dataflödets felpanel körs.](../assets/ui/monitor-sources/errors.png)
-
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du övervakat inmatningsdataflödet från källnivån med hjälp av kontrollpanelen **[!UICONTROL Monitoring]**. Du har också identifierat fel som bidrog till att dataflödena misslyckades under importen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen lärde du dig att övervaka inmatningshastigheten för datavjön med hjälp av kontrollpanelen **[!UICONTROL Monitoring]**. Du har också lärt dig att identifiera fel som orsakar dataflödesfel vid förtäring. Mer information finns i följande dokument:
 
 * [Övervakar identitetsdata](./monitor-identities.md).
 * [Övervakar profildata](./monitor-profiles.md).
