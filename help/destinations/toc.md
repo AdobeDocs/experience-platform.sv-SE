@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: b456540a59c4b0455e8e1d52ed98d97454f8f61f
+source-git-commit: 8a9320ae00fdb611e4fd0fdc9ba80e922273359e
 workflow-type: tm+mt
-source-wordcount: '1286'
+source-wordcount: '1292'
 ht-degree: 2%
 
 ---
@@ -203,7 +203,8 @@ ht-degree: 2%
       * [Gainsight-tillägg](./catalog/personalization/gainsight.md)
       * [KickFire-tillägg](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization-tillägg](./catalog/personalization/marketo-web-personalization.md)
-      * [Pega-anslutning för kundens beslutshubb](./catalog/personalization/pega.md)
+      * [Målgruppsanslutning för Pega CDH Realtime](./catalog/personalization/pega.md)
+      * [(V2) Audience-anslutning för Pega CDH Realtime](./catalog/personalization/pega-v2.md)
       * [Pega-profilanslutning](./catalog/personalization/pega-profile.md)
    * Social destination{#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)

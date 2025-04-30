@@ -1,9 +1,9 @@
 ---
 title: (V2) Audience-anslutning för Pega CDH Realtime
 description: Använd målplatsen Pega Customer Decision Hub Realtime Audience i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
-source-git-commit: cc18f5c9445e5d08565cd5ac4bcbdb11ccbc1a31
+source-git-commit: a51f6bd189bc25018cf25e69fe23bc9f6b3372dd
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1000'
 ht-degree: 0%
 
 ---
@@ -115,17 +115,21 @@ Nedan visas ett exempel på korrekt identitetsmappning när profiler exporteras 
 ## Exporterade data/Validera dataexport {#exported-data}
 
 En lyckad uppdatering av ett målgruppsmedlemskap för en profil skulle infoga målgruppsidentifieraren, namnet och statusvärdena i Pegas medlemskapsdatabas för marknadsföringspubliker. Medlemskapsinformationen är kopplad till en kund med Designer för kundprofil i [!DNL Pega Customer Decision Hub], vilket visas nedan.
+
 ![Bild av användargränssnittsskärmen där du kan koppla Adobe-målgruppsmedlemskapsdata till kunden med hjälp av Designer för kundprofil](../../assets/catalog/personalization/pega/pega-profile-designer-associate.png)
 
 Målgruppsmedlemskapsdata används i Pega Next-Best-Action Designer Engagement policies för nästa bästa åtgärd, vilket visas nedan.
-![Bild av användargränssnittsskärmen där du kan lägga till fält för målgruppsmedlemskap som villkor i Villkor för användarprofiler för Pega Designer för nästa bästa åtgärd](../../assets/catalog/personalization/pega/pega-profile-designer-engagment.png)
+
+![Bild av användargränssnittsskärmen där du kan lägga till fält för målgruppsmedlemskap som villkor i Villkor för användarprofiler för Pega Designer för nästa bästa åtgärd](../../assets/catalog/personalization/pega/pega-profile-designer-engagement.png)
 
 Datafälten för kundens målgruppsmedlemskap läggs till som prediktorer i adaptiva modeller, vilket visas nedan.
+
 ![Bild av gränssnittsskärmen där du kan lägga till fält för målgruppsmedlemskap som prediktorer i adaptiva modeller med Predication Studio](../../assets/catalog/personalization/pega/pega-profile-designer-adaptivemodel.png)
 
 ## Ytterligare resurser {#additional-resources}
 
 Mer information finns i följande [!DNL Pega]-dokumentation:
+
 * [Konfigurerar en OAuth 2.0-klientregistrering](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html)
 * [Skapa en körning i realtid för dataflöden](https://docs.pega.com/bundle/platform/page/platform/decision-management/data-flow-run-real-time-create.html)
 * [Hantera kundposter i kundprofilen Designer](https://docs.pega.com/bundle/customer-decision-hub/page/customer-decision-hub/implement/profile-designer-data-management.html)
