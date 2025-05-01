@@ -4,9 +4,9 @@ title: Lär dig hur du skapar och delar dina egna Playbooks med hjälp av AI Ass
 description: Skapa och dela egna fallspelningsböcker.
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: 401062fbea8845f16803edb72ccb14b75c3f8409
+source-git-commit: 9583d836d4e295bcb5cc2ce41ba8ba6d2046b114
 workflow-type: tm+mt
-source-wordcount: '1640'
+source-wordcount: '1652'
 ht-degree: 0%
 
 ---
@@ -157,11 +157,13 @@ När du skapar spelböcker ska du tänka på vilket språk och vilket innehåll 
 
 Om en spelbok flaggas för olämpligt eller stötande innehåll rapporteras den automatiskt till Adobe för granskning. Adobe granskar sedan det flaggade innehållet. Om det anses olämpligt meddelas kunden och spelboken tas bort.
 
-## Dela spelböcker över sandlådor {#sharing-playbooks-sandboxes}
+## Dela spelböcker över sandlådor {#share-playbooks-sandboxes}
 
-Om din organisation innehåller flera sandlådor behöver du inte dela spelböcker manuellt över dem. När du har skapat och publicerat en spelbok i en sandlåda blir den tillgänglig i alla sandlådor i den organisationen. Du kan sedan skapa instanser av den spelboken i någon av de andra sandlådorna.
+När du skapar och publicerar en spelbok i en sandlåda blir den automatiskt tillgänglig i alla sandlådor i organisationen. Detta eliminerar behovet av manuell delning och gör att du kan skapa instanser av spelboken i alla andra sandlådor sömlöst.
 
-Om spelningsboken refererar till fält som inte är tillgängliga i unionsschemat för målsandlådan eller som saknar nödvändig behörighet, kan ett felmeddelande visas när du försöker skapa instansen. Det meddelandet anropar de saknade fälten och/eller de saknade behörigheterna.
+>[!TIP]
+>
+>Om spelningsboken refererar till fält som inte är tillgängliga i unionsschemat för målsandlådan eller som saknar nödvändig behörighet, kan ett felmeddelande visas när du försöker skapa instansen. Det meddelandet anropar de saknade fälten och/eller de saknade behörigheterna.
 
 Om några fält saknas i ditt unionsschema markeras de i en dialogruta under importen.
 
@@ -169,34 +171,34 @@ Om några fält saknas i ditt unionsschema markeras de i en dialogruta under imp
 
 ## Dela dina spelböcker i olika organisationer {#sharing-playbooks-organizations}
 
-Så här delar du en spelbok från en organisation till en annan:
+Genom att dela spelböcker mellan olika organisationer kan du säkerställa enhetlighet och effektivitet när flera team behöver följa samma bästa praxis. Så här delar du en spelbok från en organisation till en annan:
 
-* **Logga in i källorganisationen**: Navigera till organisationen som innehåller den spelbok som du skapade och vill dela på fliken **[!UICONTROL Your playbooks]**.
-* **Publicera spelningsboken**: Om spelningsboken inte redan är publicerad måste du publicera den innan du delar den.
+1. **Logga in i källorganisationen**: Navigera till organisationen som innehåller den spelbok som du skapade och vill dela på fliken **[!UICONTROL Your playbooks]**.
+2. **Publicera spelningsboken**: Om spelningsboken inte redan är publicerad måste du publicera den innan du delar den.
 
->[!NOTE]
->
->Ett partnerskap måste upprättas mellan käll- och målorganisationerna för att det ska gå att dela spelböcker. Lär dig hur du [skapar en förfrågan om organisationskoppling](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/ui/sharing-packages-across-orgs).
+   >[!NOTE]
+   >
+   >Ett partnerskap måste upprättas mellan käll- och målorganisationerna för att det ska gå att dela spelböcker. Lär dig hur du [skapar en förfrågan om organisationskoppling](/help/sandboxes/ui/sharing-packages-across-orgs.md#create-an-organization-partnership-request).
 
-* **Starta resursen**: Välj **[!UICONTROL Share Playbook]** när spelboken har publicerats och en koppling har upprättats.
-* **Välj målorganisation**: Välj den organisation du vill dela spelboken med när du uppmanas till det.
-* **Bekräfta och dela**: Bekräfta ditt val. Du får bekräftelsemeddelanden som anger att delningen lyckades.
-* **Verifiera målorganisationen**: Logga in i målorganisationen för att verifiera att spelboken är tillgänglig.
-* **Importera spelningsboken**: Välj **[!UICONTROL Import]** om du vill överföra spelningsboken till målorganisationen. Du kan visa den på fliken **Spelböcker**.
+3. **Starta resursen**: Välj **[!UICONTROL Share Playbook]** när spelboken har publicerats och en koppling har upprättats.
+4. **Välj målorganisation**: Välj den organisation du vill dela spelboken med när du uppmanas till det.
+5. **Bekräfta och dela**: Bekräfta ditt val. Du får bekräftelsemeddelanden som anger att delningen lyckades.
+6. **Verifiera målorganisationen**: Logga in i målorganisationen för att verifiera att spelboken är tillgänglig.
+7. **Importera spelningsboken**: Välj **[!UICONTROL Import]** om du vill överföra spelningsboken till målorganisationen. Du kan visa den på fliken **Spelböcker**.
 
-Om spelboken inte visas kontrollerar du att den är publicerad och att organisationens partnerskap är aktivt.
+Om spelboken inte visas kontrollerar du att den är publicerad och att organisationspartnerskapet är aktivt.
 
 >[!IMPORTANT]
 >
 >Transitiv delning av spelbok stöds inte. Om du delar en spelbok från en organisation till en annan och sedan importerar den kan den inte delas igen från den mottagande organisationen till en tredje organisation.
 
-## Nödvändiga behörigheter
+## Nödvändiga behörigheter {#required-permissions}
 
 Du behöver följande behörigheter för att få åtkomst till sandlådan och använda den här funktionen:
 
-* **Sandlådebehörigheter**:
+### Sandlådebehörigheter
 
-Dessa krävs för att komma åt sandlådemiljön där funktionen finns:
+Dessa behörigheter krävs för att få åtkomst till sandlådemiljön där funktionen finns:
 
 * **Hantera sandlåda**
 * **Visa sandlåda**
