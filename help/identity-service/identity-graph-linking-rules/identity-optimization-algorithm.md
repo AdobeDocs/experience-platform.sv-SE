@@ -2,7 +2,7 @@
 title: Identitetsoptimeringsalgoritm
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: df89afb7131c57b9400788ce30c420b9830c022e
 workflow-type: tm+mt
 source-wordcount: '1617'
 ht-degree: 0%
@@ -147,7 +147,7 @@ Med algoritmen för identitetsoptimering sprids inte felaktiga identitetsvärden
 
 ![felaktig-e-post](../images/identity-settings/bad-email.png)
 
-### Anonym händelseassociation
+## Anonym händelseassociation
 
 ECID:n lagrar oautentiserade (anonyma) händelser medan CRMID lagrar autentiserade händelser. När det gäller delade enheter kopplas ECID (hanterare av oautentiserade händelser) till den **senaste autentiserade användaren**.
 
