@@ -4,7 +4,7 @@ description: Lär dig hur du ansluter Azure-databaser till Experience Platform m
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
+source-git-commit: 30f1c16084b3049fae45e26db0eed03888d35516
 workflow-type: tm+mt
 source-wordcount: '507'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Läs guiden om [hur du kommer igång med Experience Platform API:er](../../../..
 
 ### Konfigurera kravkonfiguration
 
-Läs [[!DNL Databricks] översikten](../../../../connectors/databases/databricks.md) om du vill ha information om de nödvändiga konfigurationer som måste slutföras innan du kan ansluta ditt konto till Experience Platform.
+Läs [[!DNL Databricks] översikten](../../../../connectors/databases/databricks.md) om du vill veta mer om de nödvändiga konfigurationer som måste slutföras innan du kan ansluta ditt konto till Experience Platform.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
