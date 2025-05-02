@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: Det här dokumentet innehåller information om och förklarar den SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 5adc587a232e77f1136410f52ec207631b6715e3
+source-git-commit: a0b7cd9e406b4a140ef70f8d80cb27ba6817c0cd
 workflow-type: tm+mt
-source-wordcount: '4623'
+source-wordcount: '4649'
 ht-degree: 1%
 
 ---
@@ -110,17 +110,21 @@ SELECT * FROM table_to_be_queried SNAPSHOT AS OF end_snapshot_id;
 
 SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN start_snapshot_id AND end_snapshot_id;
 
-SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN HEAD AND start_snapshot_id;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN 'HEAD' AND start_snapshot_id;
 
-SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN end_snapshot_id AND TAIL;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN end_snapshot_id AND 'TAIL';
 
-SELECT * FROM (SELECT id FROM table_to_be_queried BETWEEN start_snapshot_id AND end_snapshot_id) C 
+SELECT * FROM (SELECT id FROM table_to_be_queried SNAPSHOT BETWEEN start_snapshot_id AND end_snapshot_id) C;
 
 (SELECT * FROM table_to_be_queried SNAPSHOT SINCE start_snapshot_id) a
   INNER JOIN 
 (SELECT * from table_to_be_joined SNAPSHOT AS OF your_chosen_snapshot_id) b 
   ON a.id = b.id;
 ```
+
+>[!NOTE]
+>
+>När du använder `HEAD` eller `TAIL` i en `SNAPSHOT`-sats måste du omsluta dem med enkla citattecken (till exempel&quot;HEAD&quot;,&quot;TAIL&quot;). Om du använder dem utan citattecken uppstår ett syntaxfel.
 
 Tabellen nedan förklarar innebörden av varje syntaxalternativ i SNAPSHOT-satsen.
 
@@ -130,7 +134,7 @@ Tabellen nedan förklarar innebörden av varje syntaxalternativ i SNAPSHOT-satse
 | `AS OF end_snapshot_id` | Läser data som de var vid det angivna ögonblicksbild-ID:t (inklusive). |
 | `BETWEEN start_snapshot_id AND end_snapshot_id` | Läser data mellan de angivna ID:n för ögonblicksbilder av start och slut. Den är exklusiv för `start_snapshot_id` och inkluderar `end_snapshot_id`. |
 | `BETWEEN HEAD AND start_snapshot_id` | Läser data från början (före den första ögonblicksbilden) till det angivna ID:t för ögonblicksbild (inklusive). Obs! Detta returnerar bara rader i `start_snapshot_id`. |
-| `BETWEEN end_snapshot_id AND TAIL` | Läser data från strax efter den angivna `end-snapshot_id` till slutet av datauppsättningen (exklusive ögonblicksbilds-ID). Det innebär att om `end_snapshot_id` är den sista ögonblicksbilden i datauppsättningen returneras nollrader eftersom det inte finns några ögonblicksbilder utöver den senaste ögonblicksbilden. |
+| `BETWEEN end_snapshot_id AND TAIL` | Läser data från strax efter den angivna `end_snapshot_id` till slutet av datauppsättningen (exklusive ögonblicksbilds-ID). Det innebär att om `end_snapshot_id` är den sista ögonblicksbilden i datauppsättningen returneras nollrader eftersom det inte finns några ögonblicksbilder utöver den senaste ögonblicksbilden. |
 | `SINCE start_snapshot_id INNER JOIN table_to_be_joined AS OF your_chosen_snapshot_id ON table_to_be_queried.id = table_to_be_joined.id` | Läser data med början från det angivna ögonblicksbild-ID:t från `table_to_be_queried` och kopplar det med data från `table_to_be_joined` som det var på `your_chosen_snapshot_id`. Kopplingen baseras på matchande ID:n från ID-kolumnerna i de två tabellerna som kopplas. |
 
 En `SNAPSHOT`-sats fungerar med en tabell eller ett tabellalias men inte ovanpå en underfråga eller vy. En `SNAPSHOT`-sats fungerar var som helst där en `SELECT`-fråga i en tabell kan tillämpas.

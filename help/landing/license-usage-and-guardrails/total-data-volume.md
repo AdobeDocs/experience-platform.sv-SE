@@ -1,21 +1,21 @@
 ---
 title: Totalt datavolym - mått
 description: Lär dig mer om det nya måttet Total Data Volume och hur det ersätter det tidigare måttet för genomsnittlig profilrikedom.
-hide: true
-hidefromtoc: true
-source-git-commit: 9aba85d4e5a481b0eff53e1d87311c395934f585
+exl-id: 4b21d25c-b82b-4d1a-83ce-b510f02fd160
+source-git-commit: 62f5ecf82df46284365e64d633c8242ac45567bc
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '593'
 ht-degree: 1%
 
 ---
 
-
 # Totalt datavolym-mått
 
-Från och med den 24 september 2024 kommer det totala datavolym-måttet att ersätta det tidigare måttet för genomsnittlig profilnoggrannhet.
+Total datavolym ersätter det tidigare måttet för genomsnittlig profilnoggrannhet som ett enklare och mer förklarligt sätt att spåra användning jämfört med ditt tillstånd i profilarkivet.
 
-Total datavolym representerar den totala mängden data som är tillgängliga för Adobe Experience Platform kundprofil i realtid och som kan användas i engagemangsarbetsflöden. Det här värdet motsvarar det adresserbara målgruppsmåttet multiplicerat med medelprofilens noggrannhet.
+**Total datavolym = adresserbar publik × genomsnittlig profilnoggrannhet**
+
+Det här måttet visar den totala mängden data som lagras i **profilarkivet** och som är tillgängliga för användning i arbetsflöden för kundprofiler i realtid. Den innehåller **inte** några data som lagras i **datasjön**. Denna förändring ger en mer fokuserad och transparent bild av data som är relevanta för profilbaserad personalisering och engagemang.
 
 ## Vanliga frågor och svar {#faq}
 
@@ -36,6 +36,16 @@ Nej. Du får fortfarande tillgång till förmånspaketen som du tidigare köpt.
 ### Hur kommer det sig att jag ser ett annat värde för min totala datavolym jämfört med min profilbutik?
 
 Den totala datavolymen representerar den **totala** mängden data som är tillgängliga för profilen som ska användas i engagemangsarbetsflöden. Mätningen har uppdaterats för att vara mer deterministisk och förklarlig. De flesta användare bör **inte** se en betydande förändring mellan sin totala datavolym och sin totala profillagring. Om du är orolig kontaktar du en kundtjänstrepresentant.
+
+### Hur beräknas Total Data Volume? Inkluderar den Data Lake-lagring?
+
+Total datavolym beräknas med följande formel:
+
+**Total datavolym = adresserbar publik × genomsnittlig profilnoggrannhet**
+
+Det här måttet visar den totala mängden data som lagras i profilarkivet och som är tillgänglig för kundprofil i realtid som kan användas i engagemangsarbetsflöden. **inkluderar** inga data som lagras i datarjön.
+
+Tidigare använde vissa äldre erbjudanden ett totalt lagringsmått som kombinerade både Profile Store och Data Lake-användningen. Total datavolym är dock begränsad till enbart profilarkivet, vilket ger en mer fokuserad bild av data som är relevanta för profilbaserat engagemang.
 
 ### Måste jag återskapa mina ändringar för att fortsätta hantera min genomsnittliga profilprecision?
 

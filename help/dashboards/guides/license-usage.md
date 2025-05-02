@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 62f5ecf82df46284365e64d633c8242ac45567bc
 workflow-type: tm+mt
-source-wordcount: '3235'
+source-wordcount: '3279'
 ht-degree: 0%
 
 ---
@@ -307,7 +307,7 @@ Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden so
 | [!UICONTROL Profile Richness No of Packs] | En ökning av din auktoriserade totala datavolym med 25 kB per profil för varje ytterligare profilnoggrannhetspaket. |
 | [!UICONTROL Query Service Compute Hours] | Ett mått på hur lång tid det tar för frågetjänstmotorerna att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs. |
 | [!UICONTROL Streaming Segmentation No of Packs] | Paketuppdateringssegmentmedlemskapet för en personprofil när nya data matas in i segmenteringstjänsten via ett strömningsflöde. Segmentmedlemskap utvärderas baserat på attributen för den aktuella personprofilen och värdet för den aktuella händelsen, utan hänsyn till historiskt beteende. Direktuppspelningssegmentering är en delad funktion. |
-| [!UICONTROL Total Data Volume] | Den totala mängden data som är tillgängliga för kundprofil i realtid som kan användas i engagemangsarbetsflöden. Läs [vanliga frågor om Total Data Volume](../../landing/license-usage-and-guardrails/total-data-volume.md) om du vill veta mer. |
+| [!UICONTROL Total Data Volume] | Den totala mängden data som är tillgängliga för kundprofil i realtid som kan användas i engagemangsarbetsflöden. Total datavolym beräknas med följande formel: **Total datavolym = adresserbar publik × genomsnittlig profilnoggrannhet**. Detta mätresultat återger data som bara lagras i Profile Store och utesluter lagring av data Lake. Det ger en mer fokuserad bild av data som är relevanta för profilbaserat engagemang. Läs [vanliga frågor om Total Data Volume](../../landing/license-usage-and-guardrails/total-data-volume.md) om du vill veta mer. |
 | [!UICONTROL Total Volume of Data Egress] | Den sammanlagda årliga datavolymen som exporteras från Adobe Experience Platform till datalager från tredje part. |
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->

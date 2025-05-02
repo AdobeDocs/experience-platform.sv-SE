@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Anslut PSQL till frågetjänst
 description: Lär dig hur du ansluter PSQL-klienten till Adobe Experience Platform Query Service, inklusive PostgreSQL-versioner som stöds och installationsanvisningar.
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-source-git-commit: 74f4ac5a3ca4c06e81111ef453ae0effd21b3f16
+source-git-commit: f75ea97e8631984dcd1d4a7f8aff3c10cba7b11f
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 0%
@@ -29,7 +29,7 @@ När PSQL har installerats kan du ansluta den till frågetjänsten. Återgå til
 
 Under avsnittet **[!UICONTROL PSQL Command]** väljer du ikonen **[!UICONTROL Copy to clipboard]** (![Kopiera ikon](/help/images/icons/copy.png)) för att kopiera kommandosträngen.
 
-![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med kopieringsikonen markerad.](../images/clients/psql/connect-bi.png)
+![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med kopieringsikonen markerad.](../images/clients/psql/copy-credentials.png)
 
 Klistra in kommandosträngen i terminalen och tryck på **Enter** på tangentbordet.
 
