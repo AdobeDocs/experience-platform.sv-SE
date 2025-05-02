@@ -4,7 +4,7 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: debugger;experience Platform Debugger tillägg;chrome;tillägg;versionsinformation
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: f32c4bbf48fce2ada7cf7b75efc82e28d1ec26ff
+source-git-commit: a5af5c194bc6b3bf9a6e119a2f147efa85f263f0
 workflow-type: tm+mt
 source-wordcount: '850'
 ht-degree: 92%
@@ -17,7 +17,7 @@ ht-degree: 92%
 
 ### Åtgärder och förbättringar
 
-* Korrigerade ett problem där felsökaren kunde förhindra DTM- och Launch-funktioner.
+* Ett problem har korrigerats där felsökaren skulle förhindra DTM- och Tags-funktioner.
 * Ett problem har korrigerats där Analytics Post-Procsed Hits inte skulle visas i loggarna.
 * Ett problem har korrigerats där data på icke-ASCII-språk som japanska inte skulle visas korrekt i loggar.
 
