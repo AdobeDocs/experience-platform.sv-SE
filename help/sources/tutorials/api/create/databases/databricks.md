@@ -1,14 +1,21 @@
 ---
 title: Anslut Azure-databaser till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Azure-databaser till Experience Platform med API:er.
-source-git-commit: 22cdbb1cbdeafced17dcd6bec243173723c8e483
+badgeUltimate: label="Ultimate" type="Positive"
+badgeBeta: label="Beta" type="Informative"
+exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
+source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '507'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Azure Databricks] till Experience Platform med API:t [!DNL Flow Service]
+
+>[!IMPORTANT]
+>
+>Källan [!DNL Azure Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 
 Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Azure Databricks]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 

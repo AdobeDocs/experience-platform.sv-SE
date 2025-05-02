@@ -1,16 +1,22 @@
 ---
 title: Azure-databaser
 description: Läs mer om de nödvändiga stegen som krävs för att ansluta Azure-databaser till Experience Platform.
+badgeUltimate: label="Ultimate" type="Positive"
+badgeBeta: label="Beta" type="Informative"
 last-substantial-update: 2025-04-29T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: 16de2879f5f5da533ce640d93871571f03aa74c2
+source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '593'
 ht-degree: 0%
 
 ---
 
 # [!DNL Azure Databricks]
+
+>[!IMPORTANT]
+>
+>Källan [!DNL Azure Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 
 [!DNL Azure Databricks] är en molnbaserad plattform som utformats för dataanalys, maskininlärning och AI. Du kan använda [!DNL Databricks] för att integrera med [!DNL Azure] och tillhandahålla en helhetsmiljö för att bygga, distribuera och hantera datalösningar i stor skala.
 

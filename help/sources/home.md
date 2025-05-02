@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 02fafc830e964bbfa94c125c2006f4998d9d193d
+source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
 workflow-type: tm+mt
 source-wordcount: '1529'
 ht-degree: 0%
@@ -32,6 +32,7 @@ Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data P
 
 - [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Gruppera]{type=Informative}
+- [[!DNL Azure Databricks]](connectors/databases/databricks.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Google BigQuery]](connectors/databases/bigquery.md) [!BADGE Gruppera]{type=Informative}
@@ -128,7 +129,6 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 
 - [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Databricks]](connectors/databases/databricks.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE Gruppera]{type=Informative}
