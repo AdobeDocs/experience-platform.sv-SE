@@ -4,9 +4,9 @@ title: Lär dig hur du skapar och delar dina egna Playbooks med hjälp av AI Ass
 description: Skapa och dela egna fallspelningsböcker.
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: 9583d836d4e295bcb5cc2ce41ba8ba6d2046b114
+source-git-commit: 5cdbc160369a146da3ae8ca39d8c3095887e03b5
 workflow-type: tm+mt
-source-wordcount: '1652'
+source-wordcount: '1776'
 ht-degree: 0%
 
 ---
@@ -34,25 +34,25 @@ Så här skapar du en spelbok med AI-assistenten:
 
 Välj **[!UICONTROL Playbooks]** i den vänstra navigeringspanelen.
 
-![&quot;Playbooks&quot; markeras i den vänstra navigeringsrutan i användargränssnittet.](/help/use-case-playbooks/assets/playbooks/authoring/playbooks.png)
+![Plattformsgränssnitt med alternativet &quot;Playbooks&quot; markerat i den vänstra navigeringspanelen.](/help/use-case-playbooks/assets/playbooks/authoring/playbooks.png)
 
 Välj **[!UICONTROL New Playbook]** och välj sedan **Generera spelbok med AI Assistant**.
 
-![Spelningsbokens gränssnitt med Generera spelbok med AI Assistant har valts.](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
+![Gränssnittet för att skapa spelbok visar alternativet Generera spelbok med AI-assistenten markerat.](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
 
 Använd promptfältet för att beskriva användningsfallet. Exempel:
 
 &quot;Engagera ACME-kunder som surfar på skor men inte slutförde köpet.&quot;
 
-![Spelningsbokens gränssnitt med webbformulärsområdet markerat.](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
+![Gränssnittet för att skapa spelbok markerar det webbformulärsområde där användarna kan skriva in en fråga.](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
 
 Välj **[!UICONTROL Generate]** om du vill skapa spelbokens metadata.
 
-![Frågeområdet med spelboksknappen &quot;Generera&quot; markerad.](/help/use-case-playbooks/assets/playbooks/authoring/generate.png)
+![Gränssnittet för att skapa spelbok visar knappen Generera markerad i promptområdet.](/help/use-case-playbooks/assets/playbooks/authoring/generate.png)
 
 Välj **[!UICONTROL Edit]** om du vill ändra den genererade titeln, beskrivningen och metadata efter behov.
 
-![Den genererade spelboken med knappen Redigera markerad.](/help/use-case-playbooks/assets/playbooks/authoring/edit.png)
+![En genererad spelbok med knappen Redigera markerad, som tillåter användare att ändra metadata.](/help/use-case-playbooks/assets/playbooks/authoring/edit.png)
 
 Fyll i avsnittet **[!UICONTROL Playbook detail]** för att se till att datateknikerna har all information som krävs för att ställa in användningsfallet. Dessa fält är valfria, men hjälper till att hämta in viktig information, vilket gör det enklare att koppla samman rätt tekniska komponenter. Välj **[!UICONTROL Edit]** om du vill lägga till värden i följande fält:
 
@@ -60,17 +60,17 @@ Fyll i avsnittet **[!UICONTROL Playbook detail]** för att se till att datatekni
 * **Målgrupp**
 * **Marknadsföringskanal**
 
-![Avsnittet med information om spelningsboken med knappen Redigera markerat.](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
+![Avsnittet med information om spelboken med knappen Redigera markerat så att du kan lägga till eller ändra information som bransch, målgrupp och marknadsföringskanal.](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
 
 När metadata har genererats väljer du **[!UICONTROL Edit journey map]** om du vill justera stegen i färdplanen efter behov.
 
-![Redigera knappen för resekarta.](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map-button.png)
+![Knappen Redigera färdplan om du vill ändra stegen i färdplanen.](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map-button.png)
 
-![Redigera färdplanen när du har fångat in metadata för spelningsboken.](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map.png)
+![Gränssnittet för redigering av färdkarta så att du kan justera stegen efter att du har hämtat metadata för spelningsboken.](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map.png)
 
 Fortsätt sedan att associera spelboken med tekniska resurser. Om du vill skapa en spelbok manuellt väljer du **[!UICONTROL Create playbook manually]**.
 
-![Skapa spelbok manuellt](/help/use-case-playbooks/assets/playbooks/authoring/create-manually.png)
+![Alternativet Skapa spelningsbok manuellt om du vill starta en spelbok från en tom mall.](/help/use-case-playbooks/assets/playbooks/authoring/create-manually.png)
 
 En tom spelningsboksmall visas. Fyll i detaljer som **Titel** och **Beskrivning**. Du kan också redigera färdplanen för att lägga till händelser och kontaktytor efter behov.
 
@@ -82,25 +82,25 @@ Oavsett om du skapar en spelbok manuellt eller med AI-assistenten måste du kopp
 >
 > Stöd för Real-Time CDP kommer att läggas till i en kommande version.
 
-![Fliken &quot;Tekniska resurser&quot; och knappen &quot;Lägg till nödvändig produkt&quot; är markerade.](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
+![Fliken&quot;Technical Assets&quot; med knappen&quot;Add required product&quot; (Lägg till nödvändig produkt) har markerats som du kan använda för att associera tekniska resurser med spelboken.](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
 
 Välj **[!UICONTROL Select an Asset]** om du vill associera den här spelboken med en resa enligt bilden nedan. Välj sedan **Publicera spelningsbok** för att slutföra spelningsboken.
 
-Knappen ![&quot;Välj resurser&quot; markeras på fliken&quot;Tekniska resurser&quot; ](/help/use-case-playbooks/assets/playbooks/authoring/select-assets.png)
+![Fliken&quot;Technical Assets&quot; med knappen&quot;Select assets&quot; (Välj resurser) har markerats och du kan använda den för att associera en resa med spelboken.](/help/use-case-playbooks/assets/playbooks/authoring/select-assets.png)
 
-![Välj en resa](/help/use-case-playbooks/assets/playbooks/authoring/journey.png)
+![Välj en resa att associera med en spelbok.](/help/use-case-playbooks/assets/playbooks/authoring/journey.png)
 
 Efter publiceringen extraherar och associerar spelboken automatiskt kundens schema och målgruppsinformation.
 
-![Publicerad spelningsbok](/help/use-case-playbooks/assets/playbooks/authoring/publish-playbook.png)
+![En publicerad spelbok med metadata och associerade tekniska resurser.](/help/use-case-playbooks/assets/playbooks/authoring/publish-playbook.png)
 
 Alla skapade spelböcker är tillgängliga på fliken **Dina spelböcker**.
 
-Fliken ![&quot;Dina spelböcker&quot; ](/help/use-case-playbooks/assets/playbooks/authoring/your-playbooks-tab.png)
+Fliken ![&quot;Dina spelböcker&quot; som visar en lista med skapade spelböcker.](/help/use-case-playbooks/assets/playbooks/authoring/your-playbooks-tab.png)
 
 Du kan välja valfri spelningsbok från katalogen för att skapa instanser som ska återanvändas. Läs dokumentationen för att [lära dig hur du skapar instanser](/help/use-case-playbooks/playbooks/create-share-reuse.md).
 
-Alternativet ![&quot;Skapa instans&quot; är markerat på fliken&quot;Översikt över spelbok&quot; när du har valt en spelbok.](/help/use-case-playbooks/assets/playbooks/authoring/create-instance.png)
+![Fliken&quot;Spelboksöversikt&quot; med alternativet&quot;Skapa instans&quot; markerat.](/help/use-case-playbooks/assets/playbooks/authoring/create-instance.png)
 
 >[!NOTE]
 >
@@ -108,13 +108,13 @@ Alternativet ![&quot;Skapa instans&quot; är markerat på fliken&quot;Översikt 
 
 ## Exempeluppmaningar
 
-AI-assistenten kan bearbeta olika snabbstrukturer och extrahera nyckeldetaljer samtidigt som onödig information filtreras bort. Nedan visas några exempel på användaruppmaningar och hur de tolkas av systemet:
+AI-assistenten kan bearbeta olika snabbstrukturer och extrahera nyckeldetaljer samtidigt som onödig information filtreras bort. Nedan visas några exempel på användaruppmaningar och hur systemet tolkar dem.
 
 **Exempel 1:**
 
 &quot;Skapa en kampanj med namnet &quot;Complete the Look&quot; för att öka försäljningen och CLV. Kampanjen uppmuntrar kunderna att köpa köksartiklar och möbler för att slutföra ett kompletterande köp via personaliserade rekommendationer och erbjudanden i samband med deras inköp. Meddela först kunderna med produktrekommendationer. Om de inte gör några inköp inom 7 dagar får de ett andra meddelande med produktrekommendationer och erbjudanden. Använd push-meddelanden och e-post för att kontakta kunderna. Rikta er till kunder som har köpt köksartiklar eller möbler de senaste 7 dagarna och som inte har varit målkunder de senaste 30 dagarna. Som en del av kampanjen vill vi mäta nyckeltal som till exempel klick (e-post, app, sms, push), CTR, E-Wallet CTR, AOV Conversion.CLV Revenue, Total Purchase Events (in-store, digital, call center).&quot;
 
-![Exempel på att en lång fråga visas i textinmatningsrutan](/help/use-case-playbooks/assets/playbooks/authoring/long-prompt.png)
+![Ett exempel på en lång uppmaning i textrutan att generera en spelningsbok.](/help/use-case-playbooks/assets/playbooks/authoring/long-prompt.png)
 
 **Exempel 2:**
 
@@ -126,20 +126,20 @@ Projektkanaler/kontaktytor: E-post
 Målgrupp: Kunder som prenumererar på ACME-nyhetsbrev.
 Mål-KPI:er/engagemangsmått/avkastning: 1. Öka intäkterna från produkterna. 2. Öka kundlojaliteten.&quot;
 
-![Exempel på hur en strukturerad fråga visas i textrutan](/help/use-case-playbooks/assets/playbooks/authoring/organized-list-prompt.png)
+![Ett exempel på en ordnad fråga i liststil som har angetts i textinmatningsrutan för att skapa en spelningsbok.](/help/use-case-playbooks/assets/playbooks/authoring/organized-list-prompt.png)
 
 **Exempel 3:**
 
 &quot;Knuffa kunderna för att köpa produkter under en pågående produktkampanj.
 Engagera med kunderna under en pågående kampanj genom att skicka lämplig kommunikation via e-post, SMS eller push-meddelanden för att köpa produkter. Skicka en påminnelse via e-post efter 24 timmar av att de inte engagerade sig i kampanjen.&quot;
 
-![Exempel som visar en kortfattad fråga i textrutan](/help/use-case-playbooks/assets/playbooks/authoring/concise-prompt.png)
+![Ett exempel på en kortfattad fråga som har angetts i textrutan för att skapa en spelningsbok.](/help/use-case-playbooks/assets/playbooks/authoring/concise-prompt.png)
 
 **Exempel 4:**
 
 &quot;Sälj skor till high school-spelare.&quot;
 
-![Exempel på att visa en enradig fråga](/help/use-case-playbooks/assets/playbooks/authoring/one-liner-prompt.png)
+![Ett exempel på en enradig uppmaning som har angetts i textrutan för att skapa en spelningsbok.](/help/use-case-playbooks/assets/playbooks/authoring/one-liner-prompt.png)
 
 AI-assistenten tar bort alla onödiga detaljer som &quot;Projektnamn&quot; eller &quot;Bakgrund&quot;. Det extraherar nyckelelement som&quot;målgrupp&quot;,&quot;kampanjmål&quot; och&quot;marknadsföringskanal&quot; och fungerar med alla indatatyper.
 
@@ -151,23 +151,23 @@ De här exemplen visar hur AI kan förfina och extrahera viktig information frå
 
 ## Riktlinjer och moderering för innehåll
 
-När du skapar spelböcker ska du tänka på vilket språk och vilket innehåll du inkluderar. Spelböcker är synliga i hela organisationen och alla stötande eller olämpliga innehåll kan flaggas av användarna.
+När du skapar spelböcker ska du tänka på vilket språk och vilket innehåll du inkluderar. Spelböcker visas i hela organisationen och stötande eller olämpligt innehåll som användarna flaggar.
 
 ### Flaggning och granskningsprocess
 
-Om en spelbok flaggas för olämpligt eller stötande innehåll rapporteras den automatiskt till Adobe för granskning. Adobe granskar sedan det flaggade innehållet. Om det anses olämpligt meddelas kunden och spelboken tas bort.
+Om en spelbok innehåller olämpligt eller stötande innehåll får Adobe automatiskt en rapport för granskning. Adobe granskar det markerade innehållet, meddelar kunden om det anses olämpligt och tar bort spelboken.
 
 ## Dela spelböcker över sandlådor {#share-playbooks-sandboxes}
 
-När du skapar och publicerar en spelbok i en sandlåda blir den automatiskt tillgänglig i alla sandlådor i organisationen. Detta eliminerar behovet av manuell delning och gör att du kan skapa instanser av spelboken i alla andra sandlådor sömlöst.
+När du skapar och publicerar en spelbok i en sandlåda blir den automatiskt tillgänglig i alla sandlådor i organisationen. Den här funktionen eliminerar behovet av manuell delning och gör att du kan skapa instanser av spelboken i andra sandlådor utan problem.
 
 >[!TIP]
 >
->Om spelningsboken refererar till fält som inte är tillgängliga i unionsschemat för målsandlådan eller som saknar nödvändig behörighet, kan ett felmeddelande visas när du försöker skapa instansen. Det meddelandet anropar de saknade fälten och/eller de saknade behörigheterna.
+>Om spelningsboken refererar till fält som inte är tillgängliga i unionsschemat för målsandlådan eller om du saknar nödvändig behörighet, visas ett felmeddelande när du försöker skapa instansen. Meddelandet anger vilka fält och/eller behörigheter som saknas.
 
 Om några fält saknas i ditt unionsschema markeras de i en dialogruta under importen.
 
-![Fält saknas i unionsschemat som listas under importprocessen](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
+![En dialogruta med fält som saknas i unionsschemat under importprocessen för spelningsboken.](/help/use-case-playbooks/assets/playbooks/authoring/missing-fields.png)
 
 ## Dela dina spelböcker i olika organisationer {#sharing-playbooks-organizations}
 
@@ -210,7 +210,7 @@ Dessa behörigheter krävs för intern delning:
 * [**Hantera paket**](/help/sandboxes/ui/sandbox-tooling.md)
 * [**Dela paket**](/help/sandboxes/ui/sharing-packages-across-orgs.md)
 
-Med dessa behörigheter kan du:
+Använd dessa behörigheter för att:
 
 * Ange sandlådemiljön
 * Få åtkomst till funktionen i sandlådan
@@ -218,11 +218,11 @@ Med dessa behörigheter kan du:
 
 Dessa behörigheter finns i avsnittet **[!UICONTROL Sandboxes]** i behörighetslistan.
 
-![Behörighetslistan med relevanta behörigheter markerad.](/help/use-case-playbooks/assets/playbooks/authoring/permissions.png)
+![Behörighetslistan med relevanta behörigheter för att hantera och dela spelböcker är markerad.](/help/use-case-playbooks/assets/playbooks/authoring/permissions.png)
 
 ### Resor och besläktade objekt - behörigheter
 
-När du skapar Journeys som använder Playbooks, kommer du troligen att referera till andra objekt som **Kanaler**, **Publiker** och andra entiteter. Var och en av dessa har en egen behörighetsgrupp.
+När du skapar resor som använder Playbooks kan du referera till andra objekt, som **Kanaler**, **Publiker** och andra entiteter. Var och en av dessa objekt har en egen behörighetsgrupp.
 
 Det här är nyckelbehörigheterna för reserelaterade åtgärder, som:
 
@@ -240,4 +240,4 @@ Eftersom Resor är mycket flexibla och kan omfatta många sammankopplade objekt,
 
 ## Nästa steg
 
-Nu när du förstår hur du skapar, publicerar och delar spelböcker med hjälp av AI-assistenten kan du lära dig hur du kommer igång med de tillgängliga spelböckerna och välja rätt i [Playbooks List](/help/use-case-playbooks/playbooks/choose.md).
+Nu när du förstår hur du skapar, publicerar och delar spelböcker med hjälp av AI Assistant kan du lära dig hur du kommer igång med de tillgängliga spelböckerna och välja rätt i [Playbooks List](/help/use-case-playbooks/playbooks/choose.md).
