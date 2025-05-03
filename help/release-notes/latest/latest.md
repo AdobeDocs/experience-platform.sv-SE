@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3836b369d609448146a273fc6cf29061fd1ea422
+source-git-commit: be9e1a995e62fa5a437be82aa15187815bbc5a9d
 workflow-type: tm+mt
-source-wordcount: '2026'
-ht-degree: 28%
+source-wordcount: '2133'
+ht-degree: 29%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 28%
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
 - [Experience League](#experience-league)
+- [Datainsamling](#data-collection)
 - [Mål](#destinations)
 - [Experience Data Model](#xdm)
 - [Identitetstjänst](#identity)
@@ -41,6 +42,18 @@ Experience League är en omfattande utbildningsplattform som hjälper dig att h�
 | Funktion | Beskrivning |
 | --- | --- |
 | Personlig hemsida | Gå till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/en/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** på den översta menyn för att optimera din inlärningsupplevelse: <ul><li>**Bokmärken**: Använd funktionen [!UICONTROL Bookmarks] för att spara och samla in dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din inlärning**: Förbättra din inlärningsupplevelse genom att uppdatera din Experience League-profil med de roller, branscher, produkter och den upplevelsenivå som bäst passar dina behov.</li><li>**Rekommendationer**: Visa utbildningsinnehåll som rekommenderas baserat på din senaste aktivitet.</li><li>**Nyligen visade**: Använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videoklipp.</li><li>**Utbildningsresurser**: Använd panelen [!UICONTROL All learning resources] för att navigera till självstudiekurser, dokumentation, forum, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Titta på tidigare event on-demand**: Se tidigare inspelade liveströmmar på produktspotlights, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personaliserad hemsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig hemsida på Experience League."){width="250" align="center" zoomable="yes"} |
+
+{style="table-layout:auto"}
+
+## Datainsamling {#data-collection}
+
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| API-tillägg för [!DNL Amazon]-webbhändelser | API-tillägget [!DNL Amazon] Conversions gör att annonsörer kan dela webbplatsinteraktioner direkt med [!DNL Amazon], vilket ger förbättrad attribuering, tillförlitlighet för data och kampanjoptimering. Det här tillägget har stöd för vidarebefordran av händelser, vilket gör att du kan skicka konverteringshändelser som inköp, varukorgstillägg med mera, samtidigt som du säkerställer korrekt borttagning av dubbletter för korrekt rapportering. Mer information finns i [Översikt över Amazon-tillägget](/help/tags/extensions/server/amazon/overview.md). |
 
 {style="table-layout:auto"}
 
