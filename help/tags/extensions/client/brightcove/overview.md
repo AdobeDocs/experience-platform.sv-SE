@@ -100,7 +100,7 @@ Följande videotilläggsobjekt ska inkluderas:
 
 >[!TIP]
 >
->För dem som kanske inte vill tillhandahålla flera eVars eller props för varje videoelement sammanfogas datavärdesvärden som en alternativ metod. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Mer information finns i dokumentationen för verktyget [Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html). Slutligen används de som ett segment i Analysis Workspace.
+>För dem som kanske inte vill tillhandahålla flera eVars eller props för varje videoelement sammanfogas datavärdesvärden som en alternativ metod. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Mer information finns i dokumentationen för verktyget [Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=sv-SE). Slutligen används de som ett segment i Analysis Workspace.
 >
 >Det gör du genom att skapa ett nytt dataelement som kallas &quot;Video MetaData&quot; och programmera det för att hämta in alla videodataelement (som listas ovan) och sammanfoga dem.
 

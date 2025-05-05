@@ -85,7 +85,7 @@ Ange spårningsobjektet som ska användas globalt.
 
 #### Öppna redigeraren
 
-Gör att du kan infoga [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)-kärnkod. Den här koden fylls i automatiskt när den automatiska konfigurationsmetoden används.
+Gör att du kan infoga [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=sv-SE)-kärnkod. Den här koden fylls i automatiskt när den automatiska konfigurationsmetoden används.
 
 >[!NOTE]
 >
@@ -135,13 +135,13 @@ _satellite.cookie.set("sat_track", "true");
 Avgör hur bildbegäran kodas. Om implementeringen eller webbplatsen använder tecken som inte är ASCII-tecken är det viktigt att definiera teckenuppsättningen här. Du kan välja en förinställd teckenuppsättning eller ange en anpassad teckenuppsättning. Adobe rekommenderar att du använder samma teckenkodning som för din webbplats. Vanligtvis är det här värdet UTF-8.
 
 Teckenuppsättning kan anges i anpassad Analytics-kod med variabeln `s.charSet`.
-Mer information om teckenuppsättningar finns i [charSet-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/charset.html).
+Mer information om teckenuppsättningar finns i [charSet-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/charset.html?lang=sv-SE).
 
 ### Valutakod
 
 Bestämmer konverteringsgraden som ska användas för intäkt- och valutakurshändelser. Om sajten tillåter besökare att handla i flera valutor, säkerställer inställningen av valutakoden att det monetära beloppet konverteras och lagras korrekt.
 
-Mer information om vilka valutakoder som stöds finns i [currencyCode](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/currencycode.html).
+Mer information om vilka valutakoder som stöds finns i [currencyCode](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/currencycode.html?lang=sv-SE).
 
 ### Spårningsserver
 
@@ -149,7 +149,7 @@ Används för cookie-implementeringar från första part för att bestämma var 
 
 Spårningsservern kan anges i anpassad Analytics-kod med variabeln `s.trackingServer`.
 
-Se [trackingServer](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html) i implementeringsguiden för Adobe Analytics.
+Se [trackingServer](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html?lang=sv-SE) i implementeringsguiden för Adobe Analytics.
 
 ### SSL-spårningsserver
 
@@ -157,11 +157,11 @@ Används för SSL-cookie-implementeringar från första part för att bestämma 
 
 SSL-spårningsservern kan anges i anpassad Analytics-kod med variabeln `s.trackingServerSecure`.
 
-Se [trackingServerSecure](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserversecure.html).
+Se [trackingServerSecure](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserversecure.html?lang=sv-SE).
 
 ## Globala variabler
 
-Använd det här avsnittet för att konfigurera [eVars och Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html) och för att skapa hierarkier.
+Använd det här avsnittet för att konfigurera [eVars och Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=sv-SE) och för att skapa hierarkier.
 
 Globala variabler är variabler som ställs in på Analytics-spårningsobjektet när det objektet initieras på sidan. Alla variabler som du anger här ställs in när spårningsobjektet skapas på varje sida. När variablerna har angetts fungerar de precis som andra variabler har angetts på något annat sätt. Detta innebär i synnerhet att en regel kan ändra, ändra eller rensa dessa variabler.
 
@@ -173,25 +173,25 @@ Välj ett alternativ under Länkspårning på konfigurationssidan. Följande kon
 
 ### Aktivera ClickMap
 
-[ClickMap](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html) är en plugin för Internet Explorer och Firefox, samt en modul för rapporter och analyser.
+[ClickMap](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html?lang=sv-SE) är en plugin för Internet Explorer och Firefox, samt en modul för rapporter och analyser.
 
 ### Spåra nedladdningslänkar
 
 Spårar länkar till hämtningsbara filer på din plats.
 
-Se [s.trackDownLoadLinks](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackdownloadlinks.html).
+Se [s.trackDownLoadLinks](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackdownloadlinks.html?lang=sv-SE).
 
 ### Hämta tillägg
 
 Om alternativet Spåra nedladdningslänkar är aktiverat kan du välja filtillägg för fillänkar som ingår i rapporten Nedladdningar Om din webbplats innehåller länkar till filer med något av de angivna tilläggen, visas URL:erna för dessa länkar i rapporten.
 
-Se [s.linkDownloadFileTypes](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/linkdownloadfiletypes.html).
+Se [s.linkDownloadFileTypes](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/linkdownloadfiletypes.html?lang=sv-SE).
 
 ### Spåra utgående länkar
 
 Avgör om en markerad länk är en slutlänk.
 
-Se [s.trackExternalLinks](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackexternallinks.html).
+Se [s.trackExternalLinks](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackexternallinks.html?lang=sv-SE).
 
 **Överväganden för ensidiga appar:** På grund av hur vissa SPA webbplatser kodas kan en intern länk till en sida på den SPA webbplatsen se ut som en utgående länk.
 
@@ -212,7 +212,7 @@ Om-sidan är den enda utgående länken som spåras. Eventuella andra länkar p�
 
 Bevarar frågesträngar.
 
-Se [s.linkLeaveQueryString](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/linkleavequerystring.html).
+Se [s.linkLeaveQueryString](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/linkleavequerystring.html?lang=sv-SE).
 
 ## Cookies
 
@@ -222,37 +222,37 @@ Konfigurera fältbeskrivningar för de globala Cookies-inställningar som använ
 
 Unikt värde som representerar en kund både online och offline.
 
-Se [visitorID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html).
+Se [visitorID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html?lang=sv-SE).
 
 ### Namnutrymme för besökare
 
 Variabel som identifierar den domän som cookies är inställda på.
 
-Se [visitorNamespace](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitornamespace.html).
+Se [visitorNamespace](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitornamespace.html?lang=sv-SE).
 
 ### Domänperioder
 
 Domänen som Analytics-cookien `s_cc` och `s_sq` ställs in på genom att fastställa antalet punkter i domänen för sidans URL. Den här variabeln används även av vissa plugin-program för att fastställa rätt domän för att ange plugin-programmets cookie.
 
-Se [s.cookieDomainPeriods](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/cookiedomainperiods.html).
+Se [s.cookieDomainPeriods](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/cookiedomainperiods.html?lang=sv-SE).
 
 ### Domänperioder för första part
 
 Variabeln `fpCookieDomainPeriods` är för cookies som anges av JavaScript (`s_sq`, `s_cc`, plugin-program) som är förstapartscookies, även om implementeringen använder domänerna 2o7.net eller omtrdc.net från tredje part.
 
-Se [s.fpCookieDomainPeriods](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/fpcookiedomainperiods.html).
+Se [s.fpCookieDomainPeriods](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/fpcookiedomainperiods.html?lang=sv-SE).
 
 ### Cookie-livstid
 
 Bestämmer en cookies livslängd.
 
-Se [s.cookieLifetime](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/cookielifetime.html).
+Se [s.cookieLifetime](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/cookielifetime.html?lang=sv-SE).
 
 ### Säkra cookies
 
 Den här variabeln gör att AppMeasurementet kan skriva säkra cookies.
 
-Se [writeSecureCookies](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/writesecurecookies.html)
+Se [writeSecureCookies](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/writesecurecookies.html?lang=sv-SE)
 
 
 ## Anpassa sidkod
@@ -275,7 +275,7 @@ Du kan konfigurera avancerade inställningar genom att välja **Visa avancerade 
 
 ![](../../../images/an-ext-aam-adv.png)
 
-Om du vill ha information om de olika inställningarna väljer du informationsikonen eller läser [Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html).
+Om du vill ha information om de olika inställningarna väljer du informationsikonen eller läser [Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=sv-SE).
 
 ## Åtgärdstyper för analystillägg
 
@@ -305,7 +305,7 @@ I den här vyn kan du ange olika variabler som `eVars`, `Props`, `Events`.
 
 #### eVars
 
-Ange en eller flera [eVars](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html).
+Ange en eller flera [eVars](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=sv-SE).
 
 1. Välj en eVar i listrutan.
 1. Ange om du vill ange eVarna som ett värde (Ange som) eller kopiera (Duplicera från) en annan eVar.
@@ -315,7 +315,7 @@ Ange en eller flera [eVars](https://experienceleague.adobe.com/docs/analytics/im
 
 #### Props
 
-Ange en eller flera [props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html).
+Ange en eller flera [props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=sv-SE).
 
 1. Välj en profil i listrutan.
 1. Ange om du vill ange att svällningen ska vara ett annat eVar (Ange som) eller kopiera (Duplicera från).
@@ -325,10 +325,10 @@ Ange en eller flera [props](https://experienceleague.adobe.com/docs/analytics/im
 
 #### Händelser
 
-Ange en eller flera [händelser](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/events-overview.html).
+Ange en eller flera [händelser](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/events-overview.html?lang=sv-SE).
 
 1. Välj en händelse i listrutan.
-1. (Valfritt) Välj eller ange ett dataelement som används för [händelseserialisering](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html).
+1. (Valfritt) Välj eller ange ett dataelement som används för [händelseserialisering](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html?lang=sv-SE).
 1. (Valfritt) Välj **[!UICONTROL Add event]** om du vill ange fler händelser.
 1. Välj **[!UICONTROL Keep Changes]**.
 
@@ -353,7 +353,7 @@ Det finns dock vissa begränsningar:
 
 #### Hierarki
 
-Ange variabeln [Hierarki](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html) för analysen.
+Ange variabeln [Hierarki](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html?lang=sv-SE) för analysen.
 
 Ange varje nivå i hierarkin.
 
@@ -361,7 +361,7 @@ Konfigurera ytterligare hierarkier om du vill.
 
 #### Sidnamn
 
-Det här värdet refererar till namnet på en viss sida och motsvarar variabeln [`pageName` ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) i Analytics.
+Det här värdet refererar till namnet på en viss sida och motsvarar variabeln [`pageName` ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html?lang=sv-SE) i Analytics.
 
 >[!IMPORTANT]
 >

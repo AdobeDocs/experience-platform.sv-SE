@@ -49,13 +49,13 @@ Serverdomänen refererar till den domän som Target-begäranden skickas till. De
 
 #### GDPR-deltagande
 
-När detta är aktiverat tillhandahåller Adobe Target anmälningsfunktioner som kan stödja er strategi för samtyckeshantering. Med avanmälningsfunktionen kan kunderna styra hur och när Target-taggen aktiveras.  Mer information om Adobe-deltagande finns i [Sekretess och allmänna dataskyddsförordningen (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html).
+När detta är aktiverat tillhandahåller Adobe Target anmälningsfunktioner som kan stödja er strategi för samtyckeshantering. Med avanmälningsfunktionen kan kunderna styra hur och när Target-taggen aktiveras.  Mer information om Adobe-deltagande finns i [Sekretess och allmänna dataskyddsförordningen (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html?lang=sv-SE).
 
 #### Timeout (ms)
 
 Om svaret från Target inte tas emot inom den definierade perioden, går begäran ut och standardinnehållet visas. Ytterligare förfrågningar fortsätter att utföras under besökarens session. Standardvärdet är 3 000 ms, vilket kan vara ett annat värde än den timeout som konfigurerats i målanvändargränssnittet.
 
-Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
+Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=sv-SE).
 
 ## Åtgärdstyper för måltillägg
 
@@ -71,7 +71,7 @@ Ingen konfiguration behövs.
 
 ### Load Target med enhetsspecifik beslutsfattande
 
-Lägg till den här åtgärden i din taggregel där det är rimligt att läsa in Target med [enhetsbeslut](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) aktiverat i regelsammanhanget. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Load Target med enhetsspecifik beslutsåtgärd om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
+Lägg till den här åtgärden i din taggregel där det är rimligt att läsa in Target med [enhetsbeslut](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html?lang=sv-SE) aktiverat i regelsammanhanget. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Load Target med enhetsspecifik beslutsåtgärd om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
 
 >[!IMPORTANT]
 >
@@ -100,7 +100,7 @@ Du måste ange om brödtext ska kunna döljas för att undvika flimmer, och vilk
 * **Döljning av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
 * **Innehållet i dolt format:** Standardvärdet är body{opacity:0}. Värdet kan ändras till något annat, som body{display:none}.
 
-Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
+Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html?lang=sv-SE).
 
 ### Utlösarvy
 
@@ -109,7 +109,7 @@ Mer information finns i [Målets onlinehjälpdokumentation](https://experiencele
 1. Ange det vynamn som måste utlösas.
 1. Ange om utlösaren för vyn ska tillskrivas ett intryck för rapportering genom att markera kryssrutan Sida. Om vyn är korrelerad till en komponent som återges på nytt och inte ger ett intryck av att rapportera, ska du inte markera kryssrutan Sida.
 
-Mer information om hur du utlöser en vy finns i [`triggerView()` hjälpdokumentationen ](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html).
+Mer information om hur du utlöser en vy finns i [`triggerView()` hjälpdokumentationen ](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html?lang=sv-SE).
 
 ## Grundläggande Adobe Target-driftsättning
 

@@ -50,7 +50,7 @@ Ingen konfiguration krävs för att initiera eller lägga till ett plugin-progra
 >
 >Detta dataelement anger båda cookies och tillåter lagring av användargenererade värden i cookies. Mer information finns i den specifika dokumentationen för plugin-programmet.
 
-Gör att du kan konfigurera och konfigurera [`getAndPersistValue` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getandpersistvalue.html). Dataelementet `getAndPersistValue` lagrar ett värde i en cookie som kan hämtas senare under ett besök.
+Gör att du kan konfigurera och konfigurera [`getAndPersistValue` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getandpersistvalue.html?lang=sv-SE). Dataelementet `getAndPersistValue` lagrar ett värde i en cookie som kan hämtas senare under ett besök.
 
 Dataelementet `getAndPersistValue` innehåller följande argument:
 
@@ -66,7 +66,7 @@ Om variabeln i argumentet `vtp` är inställd anger dataelementet cookien och re
 >
 >Det här plugin-programmet kräver platsåtkomst på klienten men genererar inget undantag om det inte får det.
 
-Gör att du kan konfigurera och konfigurera [`getGeoCoordinates` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getgeocoordinates.html). Dataelementet `getGeoCoordinates` fångar latitud och longitud för besökarenheter.
+Gör att du kan konfigurera och konfigurera [`getGeoCoordinates` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getgeocoordinates.html?lang=sv-SE). Dataelementet `getGeoCoordinates` fångar latitud och longitud för besökarenheter.
 
 Dataelementet `getGeoCoordinates` använder inga argument. Det returnerar ett av följande värden:
 
@@ -80,7 +80,7 @@ Dataelementet `getGeoCoordinates` använder inga argument. Det returnerar ett av
 >
 >Detta dataelement ställer in cookies. Mer information finns i den specifika dokumentationen för plugin-programmet.
 
-Gör att du kan konfigurera och konfigurera [`getNewRepeat` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getnewrepeat.html). Dataelementet `getNewRepeat` avgör om en besökare på webbplatsen är en ny besökare eller en återkommande besökare inom ett önskat antal dagar.
+Gör att du kan konfigurera och konfigurera [`getNewRepeat` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getnewrepeat.html?lang=sv-SE). Dataelementet `getNewRepeat` avgör om en besökare på webbplatsen är en ny besökare eller en återkommande besökare inom ett önskat antal dagar.
 
 Dataelementet `getNewRepeat` använder följande argument:
 
@@ -90,7 +90,7 @@ Det här dataelementet returnerar värdet `"New"` om den cookie-fil som angetts 
 
 ### `getPageName`
 
-Gör att du kan konfigurera och konfigurera [`getPageName` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpagename.html). Dataelementet `getPageName` skapar en lättläst, användarvänlig formaterad version av den aktuella URL:en.
+Gör att du kan konfigurera och konfigurera [`getPageName` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpagename.html?lang=sv-SE). Dataelementet `getPageName` skapar en lättläst, användarvänlig formaterad version av den aktuella URL:en.
 
 Dataelementet `getPageName` använder följande argument:
 
@@ -107,7 +107,7 @@ Dataelementet returnerar en sträng som innehåller en användarformaterad versi
 >
 >Detta dataelement anger båda cookies och tillåter lagring av användargenererade värden i cookies. Mer information finns i den specifika dokumentationen för plugin-programmet.
 
-Gör att du kan konfigurera och konfigurera [`getPreviousValue` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpreviousvalue.html). Dataelementet `getPreviousValue` ställer in en variabel på ett värde som angetts vid en tidigare träff.
+Gör att du kan konfigurera och konfigurera [`getPreviousValue` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getpreviousvalue.html?lang=sv-SE). Dataelementet `getPreviousValue` ställer in en variabel på ett värde som angetts vid en tidigare träff.
 
 Dataelementet `getPreviousValue` använder följande argument:
 
@@ -118,7 +118,7 @@ När du anropar det här dataelementet returneras strängvärdet som finns i coo
 
 ### `getQueryParam`
 
-Gör att du kan konfigurera och konfigurera [`getQueryParam` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getqueryparam.html). Dataelementet `getQueryParam` extraherar värdet för alla frågesträngsparametrar som finns i en URL. Det är användbart för att extrahera kampanjkoder, både interna och externa, från URL:er för landningssidor. Det är också värdefullt när du extraherar söktermer eller andra frågesträngsparametrar. Det här dataelementet innehåller robusta funktioner för att analysera komplexa URL:er, inklusive hashvärden och URL:er som innehåller flera frågesträngsparametrar.
+Gör att du kan konfigurera och konfigurera [`getQueryParam` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getqueryparam.html?lang=sv-SE). Dataelementet `getQueryParam` extraherar värdet för alla frågesträngsparametrar som finns i en URL. Det är användbart för att extrahera kampanjkoder, både interna och externa, från URL:er för landningssidor. Det är också värdefullt när du extraherar söktermer eller andra frågesträngsparametrar. Det här dataelementet innehåller robusta funktioner för att analysera komplexa URL:er, inklusive hashvärden och URL:er som innehåller flera frågesträngsparametrar.
 
 Dataelementet `getQueryParam` använder följande argument:
 
@@ -135,7 +135,7 @@ Om du anropar det här dataelementet returneras ett värde beroende på argument
 
 ### `getTimeParting`
 
-Gör att du kan konfigurera och konfigurera [`getTimeParting` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimeparting.html). Dataelementet `getTimeParting` hämtar information om tiden när mätbara aktiviteter äger rum på din plats. Det här dataelementet är värdefullt när du vill dela upp mätvärden med en upprepningsbar uppdelning av tiden i ett visst datumintervall. Du kan till exempel jämföra konverteringsgraden mellan två olika veckodagar, till exempel alla söndagar jämfört med alla torsdagar. Du kan också jämföra tidsperioder på dagen, t.ex. alla tider jämfört med alla kvällar.
+Gör att du kan konfigurera och konfigurera [`getTimeParting` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimeparting.html?lang=sv-SE). Dataelementet `getTimeParting` hämtar information om tiden när mätbara aktiviteter äger rum på din plats. Det här dataelementet är värdefullt när du vill dela upp mätvärden med en upprepningsbar uppdelning av tiden i ett visst datumintervall. Du kan till exempel jämföra konverteringsgraden mellan två olika veckodagar, till exempel alla söndagar jämfört med alla torsdagar. Du kan också jämföra tidsperioder på dagen, t.ex. alla tider jämfört med alla kvällar.
 
 Dataelementet `getTimeParting` använder följande argument:
 
@@ -162,7 +162,7 @@ Anrop av det här dataelementet returnerar en sträng som innehåller följande 
 >
 >Detta dataelement ställer in cookies. Mer information finns i den specifika dokumentationen för plugin-programmet.
 
-Gör att du kan konfigurera och konfigurera [`getTimeSinceLastVisit` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimesincelastvisit.html). Dataelementet `getTimeSinceLastVisit` spårar hur lång tid det har tagit för en besökare att återvända till din webbplats efter det senaste besöket.
+Gör att du kan konfigurera och konfigurera [`getTimeSinceLastVisit` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/gettimesincelastvisit.html?lang=sv-SE). Dataelementet `getTimeSinceLastVisit` spårar hur lång tid det har tagit för en besökare att återvända till din webbplats efter det senaste besöket.
 
 Dataelementet `getTimeSinceLastVisit` använder inga argument. Den returnerar den tid som gått sedan besökaren senast kom till webbplatsen och som är paketerad i följande format:
 
@@ -177,7 +177,7 @@ Dataelementet `getTimeSinceLastVisit` använder inga argument. Den returnerar de
 >
 >Detta dataelement anger båda cookies och tillåter lagring av användargenererade värden i cookies. Mer information finns i den specifika dokumentationen för plugin-programmet.
 
-Gör att du kan konfigurera och konfigurera [`getValOnce` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvalonce.html). Dataelementet `getValOnce` förhindrar att en variabel ställs in som är lika med samma värde mer än en gång.
+Gör att du kan konfigurera och konfigurera [`getValOnce` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvalonce.html?lang=sv-SE). Dataelementet `getValOnce` förhindrar att en variabel ställs in som är lika med samma värde mer än en gång.
 
 Dataelementet `getValOnce` använder följande argument:
 
@@ -194,7 +194,7 @@ Om argumentet `vtc` och cookie-värdet matchar returnerar metoden en tom sträng
 >
 >Detta dataelement ställer in cookies. Mer information finns i den specifika dokumentationen för plugin-programmet.
 
-Gör att du kan konfigurera och konfigurera [`getVisitDuration` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitduration.html). Dataelementet `getVisitDuration` håller reda på hur lång tid i minuter som besökaren har varit på webbplatsen fram till den tidpunkten.
+Gör att du kan konfigurera och konfigurera [`getVisitDuration` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitduration.html?lang=sv-SE). Dataelementet `getVisitDuration` håller reda på hur lång tid i minuter som besökaren har varit på webbplatsen fram till den tidpunkten.
 
 Dataelementet `getVisitDuration` använder inga argument. Det returnerar ett av följande värden:
 
@@ -209,7 +209,7 @@ Dataelementet `getVisitDuration` använder inga argument. Det returnerar ett av 
 >
 >Detta dataelement ställer in cookies. Mer information finns i den specifika dokumentationen för plugin-programmet.
 
-Gör att du kan konfigurera och konfigurera [`getVisitNum` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitnum.html). Dataelementet `getVisitNum` returnerar besöksnumret för alla besökare som kommer till webbplatsen inom det önskade antalet dagar.
+Gör att du kan konfigurera och konfigurera [`getVisitNum` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/getvisitnum.html?lang=sv-SE). Dataelementet `getVisitNum` returnerar besöksnumret för alla besökare som kommer till webbplatsen inom det önskade antalet dagar.
 
 Dataelementet `getVisitNum` använder följande argument:
 
@@ -223,7 +223,7 @@ Besöksnummerökningen när besökaren återvänder till er webbplats efter 30 m
 
 ### `p_fo` (Endast sidan först)
 
-Gör att du kan konfigurera och konfigurera [`p_fo` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/p-fo.html). Dataelementet `p_fo` är ett verktyg som kontrollerar om det finns ett specifikt JavaScript-objekt. Om objektet inte finns skapar plugin-programmet objektet och returnerar `true`. Om JavaScript-objektet redan finns på sidan returneras `false`. Det här dataelementet är användbart om du vill köra kod exakt en gång på en sida.
+Gör att du kan konfigurera och konfigurera [`p_fo` Analytics-plugin ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/p-fo.html?lang=sv-SE). Dataelementet `p_fo` är ett verktyg som kontrollerar om det finns ett specifikt JavaScript-objekt. Om objektet inte finns skapar plugin-programmet objektet och returnerar `true`. Om JavaScript-objektet redan finns på sidan returneras `false`. Det här dataelementet är användbart om du vill köra kod exakt en gång på en sida.
 
 Dataelementet `p_fo` använder följande argument:
 

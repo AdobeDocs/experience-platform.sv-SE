@@ -15,6 +15,6 @@ ht-degree: 71%
 * [Översikt över hjälpmedel](home.md)
 * [Tillgänglighetsfunktioner](features.md)
 * [Anpassad tillgänglighet för Experience Platform](custom.md)
-* [Dokumentation om Experience Platform](https://experienceleague.adobe.com/docs/experience-platform.html)
+* [Dokumentation om Experience Platform](https://experienceleague.adobe.com/docs/experience-platform.html?lang=sv-SE)
 * [Experience Platform - översikt](https://www.adobe.com/go/platform-overview-en)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

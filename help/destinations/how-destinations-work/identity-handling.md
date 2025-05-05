@@ -78,7 +78,7 @@ Observera dock att du kan använda data från antingen [privata diagram](/help/p
 
 ### Advertising-destinationer som förlitar sig på cookie-integreringar från tredje part {#third-party-cookie-destinations}
 
-Advertising-mål som förlitar sig på cookies från tredje part (till exempel: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google DV360], [!DNL Bing], [!DNL The Trade Desk]) kräver inte att kunder väljer ID i aktiveringsarbetsflödet. När du konfigurerar ett aktiveringsarbetsflöde för dessa mål söker Experience Platform automatiskt upp identitetmatchningstabellen som skapats av [[!UICONTROL Experience Cloud ID service]](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) och exporterar alla identiteter som är tillgängliga för en profil och stöds av målet.
+Advertising-mål som förlitar sig på cookies från tredje part (till exempel: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google DV360], [!DNL Bing], [!DNL The Trade Desk]) kräver inte att kunder väljer ID i aktiveringsarbetsflödet. När du konfigurerar ett aktiveringsarbetsflöde för dessa mål söker Experience Platform automatiskt upp identitetmatchningstabellen som skapats av [[!UICONTROL Experience Cloud ID service]](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=sv-SE) och exporterar alla identiteter som är tillgängliga för en profil och stöds av målet.
 
 Dessa mål kräver att en ID-synkronisering utförs via antingen [!UICONTROL Experience Cloud ID service] eller via [!UICONTROL Experience Platform Web SDK].
 
@@ -88,7 +88,7 @@ När du konfigurerar ett datastream enligt beskrivningen i den länkade dokument
 
 >[!NOTE]
 >
->De flesta av dessa reklamdestinationer stöds i Audience Manager (dessa destinationstyper kallas i Audience Manager som enhetsbaserade destinationer). Visa en [lista över alla enhetsbaserade mål som stöds i Audience Manager ](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html)). Endast ett fåtal är listade i Experience Platform. Mer information om datadelning mellan Experience Platform och Audience Manager finns i avsnittet [Aktivera datadelning från Experience Platform till Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#enable-aep-to-aam-data). För närvarande finns det ingen plan för att stödja fler cookie-destinationer från tredje part.
+>De flesta av dessa reklamdestinationer stöds i Audience Manager (dessa destinationstyper kallas i Audience Manager som enhetsbaserade destinationer). Visa en [lista över alla enhetsbaserade mål som stöds i Audience Manager ](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html?lang=sv-SE)). Endast ett fåtal är listade i Experience Platform. Mer information om datadelning mellan Experience Platform och Audience Manager finns i avsnittet [Aktivera datadelning från Experience Platform till Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE#enable-aep-to-aam-data). För närvarande finns det ingen plan för att stödja fler cookie-destinationer från tredje part.
 
 ## Företagsmål {#enterprise-destinations}
 

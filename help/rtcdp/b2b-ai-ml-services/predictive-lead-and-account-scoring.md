@@ -3,7 +3,7 @@ title: Prediktiv lead- och kontobedömning i Real-Time CDP B2B
 type: Documentation
 description: En översikt och mer information om den prediktiva lead- och kontopoängsfunktionen i Experience Platform CDP B2B.
 feature: Profiles, B2B
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: d3afbabb-005d-4537-831a-857c88043759
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt

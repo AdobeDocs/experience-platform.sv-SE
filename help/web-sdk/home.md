@@ -15,7 +15,7 @@ Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan s
 
 Du kan implementera Web SDK på två sätt:
 
-* [Webbtaggtillägget för SDK](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Se självstudiekursen om hur du [implementerar Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) för mer information.
+* [Webbtaggtillägget för SDK](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Se självstudiekursen om hur du [implementerar Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=sv-SE) för mer information.
 * Manuell implementering med [Web SDK JavaScript-biblioteket](install/library.md).
 
 Den här guiden innehåller anvisningar för hur du interagerar med Experience Cloud lösningar med både Web SDK JavaScript-biblioteket och taggtillägget.
@@ -81,7 +81,7 @@ Innan du migrerar sidor med `AT.js` till Web SDK måste du aktivera följande ko
 >
 >Följande målfunktioner stöds inte vid migrering från `at.js` till Web SDK:
 >
->* [Omdirigeringserbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html)
->* [Stöd för CNAME och domänövergripande](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/atjs-cookies.html)
+>* [Omdirigeringserbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=sv-SE)
+>* [Stöd för CNAME och domänövergripande](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/atjs-cookies.html?lang=sv-SE)
 
 När du har migrerat från `AT.js` till Web SDK tar du bort alternativet `targetMigrationEnabled` från din konfiguration.

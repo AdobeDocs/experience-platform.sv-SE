@@ -563,7 +563,7 @@ Det returnerade svaret ska i parametern `transformations` inkludera de målgrupp
 
 >[!IMPORTANT]
 >
-> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
+> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=sv-SE), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
 
 ```json
 {

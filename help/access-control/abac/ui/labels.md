@@ -29,7 +29,7 @@ Med etiketter kan du kategorisera datauppsättningar och fält utifrån de anvä
 >id="platform_permissions_labels_about_create"
 >title="Skapa ny etikett"
 >abstract="Du kan skapa egna etiketter som passar organisationens behov. Anpassade etiketter kan användas för att tillämpa både datastyrning och åtkomstkontrollskonfigurationer på dina data."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#manage-labels" text="Hantera anpassade etiketter"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=sv-SE#manage-labels" text="Hantera anpassade etiketter"
 
 >[!NOTE]
 >

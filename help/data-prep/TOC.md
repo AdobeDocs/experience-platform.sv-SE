@@ -27,4 +27,4 @@ ht-degree: 56%
 - [Mappningsuppsättningar](mapping-set.md)
 - [Direktuppspelningar](upserts.md)
 - [Felsökningsguide](troubleshooting-guide.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

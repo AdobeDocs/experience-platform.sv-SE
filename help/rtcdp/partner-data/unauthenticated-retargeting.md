@@ -76,7 +76,7 @@ Konfigurera en händelsevidarebefordring inom Platform för att skicka insamlade
 
 Kontrollera att tillägget för omdirigering utanför webbplatsen är kopplat till en giltig händelseregel i Adobe Experience Platform Data Collection. Vanligtvis bör en global regel skapas för att aktiveras för nyckelåtgärder, som `page load` eller specifika användarinteraktioner.
 
-Mer information om hur du konfigurerar tillägget finns i dokumentationen om [vidarebefordran av händelser](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/getting-started).
+Mer information om hur du konfigurerar tillägget finns i dokumentationen om [vidarebefordran av händelser](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/event-forwarding/getting-started).
 
 ## Andra användningsområden {#other-use-cases}
 

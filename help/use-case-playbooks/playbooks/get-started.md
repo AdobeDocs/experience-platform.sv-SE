@@ -89,17 +89,17 @@ När du har [skapat en ny roll](/help/access-control/abac/ui/permissions.md#mana
 
 ## Konfigurera sandbox- och kanalytor i Journey Optimizer {#configure-channel-surfaces}
 
-Om din organisation har licens för [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) och du vill använda de spelböcker som är utformade för Journey Optimizer, måste du konfigurera kanalförinställningarna i sandlådan, som definierar de tekniska parametrar som krävs för dina meddelanden. [Lär dig hur du ställer in kanalytor i Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html).
+Om din organisation har licens för [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=sv-SE) och du vill använda de spelböcker som är utformade för Journey Optimizer, måste du konfigurera kanalförinställningarna i sandlådan, som definierar de tekniska parametrar som krävs för dina meddelanden. [Lär dig hur du ställer in kanalytor i Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html?lang=sv-SE).
 
 Om du vill skapa instanser av spelböcker i Journey Optimizer måste du konfigurera kanalytor för e-post-, push- och SMS-meddelanden.
 
 ### E-postkanalens yta
 
-Gå till `Channels` i Journey Optimizer-gränssnittet. Konfigurera separata underdomäner och IP-pooler för marknadsföringsmeddelanden och transaktionsmeddelanden, om de inte redan har konfigurerats. Det här är de bästa sätten att se till att transaktionsmeddelanden, som e-postmeddelanden med orderbekräftelse, når fram till dina kunder. Ange namn, e-postadresser och andra inställningar. Välj **Skicka** längst upp till höger på sidan för att skapa marknadskanalsytan. Läs dokumentationen om [hur du konfigurerar e-postkanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html).
+Gå till `Channels` i Journey Optimizer-gränssnittet. Konfigurera separata underdomäner och IP-pooler för marknadsföringsmeddelanden och transaktionsmeddelanden, om de inte redan har konfigurerats. Det här är de bästa sätten att se till att transaktionsmeddelanden, som e-postmeddelanden med orderbekräftelse, når fram till dina kunder. Ange namn, e-postadresser och andra inställningar. Välj **Skicka** längst upp till höger på sidan för att skapa marknadskanalsytan. Läs dokumentationen om [hur du konfigurerar e-postkanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html?lang=sv-SE).
 
 ### SMS-kanalsyta
 
-Om du vill skapa en SMS-kanalyta skapar du först en SMS API-autentiseringsuppgift och väljer önskad leverantör (till exempel Sinch). Ge SMS-kanalen ett namn (till exempel SMS Marketing), markera konfigurationen och ange ett avsändarnummer. Välj **Skicka** längst upp till höger på sidan om du vill spara SMS-kanalens yta. Läs dokumentationen om [hur du konfigurerar SMS-kanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html?lang=en#message-preset-sms).
+Om du vill skapa en SMS-kanalyta skapar du först en SMS API-autentiseringsuppgift och väljer önskad leverantör (till exempel Sinch). Ge SMS-kanalen ett namn (till exempel SMS Marketing), markera konfigurationen och ange ett avsändarnummer. Välj **Skicka** längst upp till höger på sidan om du vill spara SMS-kanalens yta. Läs dokumentationen om [hur du konfigurerar SMS-kanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html?lang=sv-SE#message-preset-sms).
 
 Konfigurera även kanaler för spelböcker som innehåller transaktionsmeddelanden som orderbekräftelser.
 
@@ -111,7 +111,7 @@ Bekräfta att kanalkonfigurationerna har konfigurerats från Experience Platform
 
 Välj sedan kanal, plattform och program som du tittade på i kanalkonfigurationerna. Välj **Skicka** för att skapa den push-kanalens yta.
 
-Läs dokumentationen om [hur du ställer in push-kanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/push/push-config/push-configuration.html).
+Läs dokumentationen om [hur du ställer in push-kanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/push/push-config/push-configuration.html?lang=sv-SE).
 
 ## Nästa steg {#next-steps}
 

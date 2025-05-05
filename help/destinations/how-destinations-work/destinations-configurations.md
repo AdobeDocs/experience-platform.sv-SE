@@ -23,7 +23,7 @@ Den här sidan beskriver eller länkar ut till alla vanliga och konfigurerbara e
 
 ## Gemensamma exportinställningar för olika måltyper {#common-settings-across-destination-types}
 
-Destinationsexportbeteendet är konsekvent mellan mål som tillhör en måltyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Målexporter utlöses av meddelanden om att måltjänsten får från [den överordnade kundprofiltjänsten](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram) i realtid.
+Destinationsexportbeteendet är konsekvent mellan mål som tillhör en måltyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Målexporter utlöses av meddelanden om att måltjänsten får från [den överordnade kundprofiltjänsten](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=sv-SE#adobe-experience-platform-%26-applications-detailed-architecture-diagram) i realtid.
 
 Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om de [vanligaste exportbeteendemönstren per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). Dessa inställningar kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
 

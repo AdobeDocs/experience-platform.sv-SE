@@ -11,25 +11,25 @@ ht-degree: 1%
 
 # Använd [!DNL Adobe Target] och [!DNL Web SDK] för personalisering
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Target] till webbkanalen. Du kan använda en WYSIWYG-redigerare, som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC), eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Target] till webbkanalen. Du kan använda en WYSIWYG-redigerare, som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE) (VEC), eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
->Lär dig hur du migrerar din Target-implementering till Experience Platform Web SDK med självstudiekursen [Migrate Target från at.js 2.x till Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html).
+>Lär dig hur du migrerar din Target-implementering till Experience Platform Web SDK med självstudiekursen [Migrate Target från at.js 2.x till Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html?lang=sv-SE).
 >
->Lär dig hur du implementerar Target för första gången med självstudiekursen [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html). Mer information om Target finns i självstudieavsnittet [Konfigurera mål med Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+>Lär dig hur du implementerar Target för första gången med självstudiekursen [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=sv-SE). Mer information om Target finns i självstudieavsnittet [Konfigurera mål med Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html?lang=sv-SE).
 
 
 Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
-* [A/B-tester](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html)
-* [A4T Impression and conversion reporting](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
-* [Automated Personalization-aktiviteter](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
-* [Aktiviteter för målinriktning](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
-* [Multivariata tester (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
-* [Rekommendationsaktiviteter](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
-* [Inbyggt målinställnings- och konverteringsrapportering](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
-* [VEC-support](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
+* [A/B-tester](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html?lang=sv-SE)
+* [A4T Impression and conversion reporting](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE)
+* [Automated Personalization-aktiviteter](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE)
+* [Aktiviteter för målinriktning](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE)
+* [Multivariata tester (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html?lang=sv-SE)
+* [Rekommendationsaktiviteter](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html?lang=sv-SE)
+* [Inbyggt målinställnings- och konverteringsrapportering](https://experienceleague.adobe.com/docs/target/using/reports/reports.html?lang=sv-SE)
+* [VEC-support](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE)
 
 ## [!DNL Web SDK] systemdiagram
 
@@ -64,7 +64,7 @@ Du kan sedan även lägga till följande alternativ:
 
 Om du vill använda VEC med en [!DNL Web SDK]-implementering installerar och aktiverar du [ Firefox ](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
 
-Mer information finns i [Hjälptillägg för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) i *Adobe Target-handboken*.
+Mer information finns i [Hjälptillägg för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html?lang=sv-SE) i *Adobe Target-handboken*.
 
 ## Återge personaliserat innehåll
 
@@ -85,7 +85,7 @@ Om du har [!DNL Target] aktiviteter med fördefinierade målgrupper som använde
 * Trafikkällor
 * Tidsram
 
-Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html) i *Adobe Target-handboken*.
+Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=sv-SE) i *Adobe Target-handboken*.
 
 ### Svarstoken
 

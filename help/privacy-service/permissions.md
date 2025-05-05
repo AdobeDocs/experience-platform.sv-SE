@@ -21,7 +21,7 @@ I den här handboken visas hur du hanterar behörigheter för Privacy Service.
 
 ## Komma igång
 
-För att kunna konfigurera åtkomstkontroll för Privacy Service måste du ha administratörsbehörighet för en organisation som har en produktintegrering med Adobe Experience Platform Privacy Service. Den minsta rollen som kan bevilja eller återkalla behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (inga begränsningar). Mer information finns i artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) i administrationshandboken för Adobe Enterprise.
+För att kunna konfigurera åtkomstkontroll för Privacy Service måste du ha administratörsbehörighet för en organisation som har en produktintegrering med Adobe Experience Platform Privacy Service. Den minsta rollen som kan bevilja eller återkalla behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (inga begränsningar). Mer information finns i artikeln om [administrativa roller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html) i administrationshandboken för Adobe Enterprise.
 
 I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i användarhandboken för [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
 
@@ -85,7 +85,7 @@ Om du vill tilldela användare till produktprofilen (och ge dem profilens konfig
 
 ![Fliken Användare för en produktprofil i Admin Console.](./images/permissions/manage-users.png)
 
-Mer information om hur du hanterar användare för en produktprofil finns i [Admin Console-dokumentationen](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
+Mer information om hur du hanterar användare för en produktprofil finns i [Admin Console-dokumentationen](https://helpx.adobe.com/se/enterprise/using/manage-product-profiles.html).
 
 ### Migrera tidigare API-autentiseringsuppgifter till profilen {#migrate-tech-accounts}
 

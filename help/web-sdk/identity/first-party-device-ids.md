@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Använda enhets-ID:n från första part i Web SDK
 
-Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID:n (ECID:n)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html) till webbplatsbesökare som använder cookies för att spåra användarbeteende. Om du vill åtgärda webbläsarbegränsningar för cookie-livscykler kan du ange och hantera egna enhetsidentifierare, som kallas FPID (First-party device ID).
+Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID:n (ECID:n)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html?lang=sv-SE) till webbplatsbesökare som använder cookies för att spåra användarbeteende. Om du vill åtgärda webbläsarbegränsningar för cookie-livscykler kan du ange och hantera egna enhetsidentifierare, som kallas FPID (First-party device ID).
 
 >[!NOTE]
 >
@@ -117,7 +117,7 @@ För att illustrera den här processen bör du överväga ett scenario där en k
 
 | Besök | Beskrivning |
 | --- | --- |
-| Första besök | Anta att du ännu inte har börjat ange cookien [!DNL FPID]. [!DNL ECID] i [AMCV-cookien](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8) är den identifierare som används för att identifiera besökaren. |
+| Första besök | Anta att du ännu inte har börjat ange cookien [!DNL FPID]. [!DNL ECID] i [AMCV-cookien](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html?lang=sv-SE#section-c55af54828dc4cce89f6118655d694c8) är den identifierare som används för att identifiera besökaren. |
 | Andra besöket | Rollout of the [!DNL FPID] solution has started. Befintlig [!DNL ECID] finns fortfarande och är fortfarande den primära identifieraren för besökaridentifiering. |
 | Tredje besök | Mellan det andra och tredje besöket har det gått tillräckligt lång tid att ta bort [!DNL ECID] på grund av webbläsarprincipen. Eftersom [!DNL FPID] angavs med en [!DNL DNS] [!DNL A]-post kvarstår [!DNL FPID]. [!DNL FPID] betraktas nu som primärt ID och används för att skapa startvärde för [!DNL ECID], som skrivs till slutanvändarens enhet. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
 | Fjärde besöket | Mellan det tredje och fjärde besöket har det gått tillräckligt lång tid att ta bort [!DNL ECID] på grund av webbläsarprincipen. Precis som vid det föregående besöket beror [!DNL FPID] fortfarande på hur det var inställt. Den här gången genereras samma [!DNL ECID] som det föregående besöket. Användaren uppträder som samma användare i alla lösningar från Experience Platform och Experience Cloud som vid föregående besök. |
@@ -133,7 +133,7 @@ Första parts enhets-ID ([!DNL FPIDs]) spårar besökare med hjälp av cookies f
 >
 >[!DNL A]- eller [!DNL AAAA]-poster stöds bara för att ange och spåra cookies. Den primära metoden för datainsamling är via en [!DNL DNS CNAME]. [!DNL FPIDs] anges med en [!DNL A]- eller [!DNL AAAA]-post och skickas till Adobe med en [!DNL CNAME].
 >
->[Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program) stöds även för datainsamling från första part.
+>[Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=sv-SE#adobe-managed-certificate-program) stöds även för datainsamling från första part.
 
 När en [!DNL FPID]-cookie har angetts kan dess värde hämtas och skickas till Adobe när händelsedata samlas in. Insamlade [!DNL FPIDs] används för att generera [!DNL ECIDs], som är de primära identifierarna i Adobe Experience Cloud-program.
 
@@ -164,7 +164,7 @@ Om du vill använda den här funktionen måste du ange cookien [!DNL FPID] på d
 
 >[!IMPORTANT]
 >
->Den här funktionen kräver att du har [Första part-datainsamling](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) aktiverad.
+>Den här funktionen kräver att du har [Första part-datainsamling](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=sv-SE) aktiverad.
 
 **Steg 2. Aktivera funktionen &#x200B;** [!UICONTROL First Party ID Cookie]&#x200B;**för din datastream**
 
@@ -172,7 +172,7 @@ När du har konfigurerat CNAME måste du aktivera alternativet **[!UICONTROL Fir
 
 Läs [dokumentationen för datastream-konfigurationen](../../datastreams/configure.md#advanced-options) om du vill veta mer om hur du konfigurerar datastream.
 
-Mer information om hur de fungerar med Adobe Experience Cloud finns i dokumentationen om [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html).
+Mer information om hur de fungerar med Adobe Experience Cloud finns i dokumentationen om [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=sv-SE).
 
 ![Plattformens gränssnittsbild visar datastream-konfigurationen som markerar cookie-inställningen för första parts-ID](../assets/first-party-id-datastreams.png)
 
@@ -181,7 +181,7 @@ När du aktiverar den här inställningen måste du ange namnet på den cookie d
 >[!NOTE]
 >
 >När du använder ID:n från första part kan du inte synkronisera ID:n från tredje part. Synkronisering av tredjeparts-ID är beroende av tjänsten [!DNL Visitor ID] och den `UUID` som genereras av den tjänsten. När du använder funktionen för första parts-ID genereras [!DNL ECID] utan att tjänsten [!DNL Visitor ID] används, vilket gör det omöjligt att synkronisera tredje parts-ID.
-><br> När du använder egna ID:n stöds inte [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager)-funktioner som är avsedda för aktivering på partnerplattformar, eftersom synkroniseringen av Audience Manager partner-ID oftast baseras på `UUIDs` eller `DIDs`. [!DNL ECID] som härleds från ett första part-ID är inte länkat till en `UUID`, vilket gör den oadresserbar.
+><br> När du använder egna ID:n stöds inte [Audience Manager](https://experienceleague.adobe.com/sv/docs/audience-manager)-funktioner som är avsedda för aktivering på partnerplattformar, eftersom synkroniseringen av Audience Manager partner-ID oftast baseras på `UUIDs` eller `DIDs`. [!DNL ECID] som härleds från ett första part-ID är inte länkat till en `UUID`, vilket gör den oadresserbar.
 
 ## Metod 2: Använd FPID i `identityMap` {#identityMap}
 

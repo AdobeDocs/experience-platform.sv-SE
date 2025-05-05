@@ -25,8 +25,8 @@ Det här dokumentet och den medföljande videopresentationen ger ett avancerat a
 Den här arbetsflödesdemonstrationen bygger på flera Adobe Experience Platform-tjänster. Om du vill följa med i utvecklingen rekommenderar vi att du har en bra förståelse för följande funktioner och tjänster:
 
 * [Grunderna i XDM-schemakompositionen (Experience Data Model)](../../xdm/schema/composition.md)
-* Så här [skapar du datauppsättningar och importerar data](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)
-* Så här [importerar du data med Adobe Analytics-källanslutningen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html)
+* Så här [skapar du datauppsättningar och importerar data](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE)
+* Så här [importerar du data med Adobe Analytics-källanslutningen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html?lang=sv-SE)
 * [Segmentering](../../segmentation/home.md)
 * [Mål](../../destinations/home.md)
 

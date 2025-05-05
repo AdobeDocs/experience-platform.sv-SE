@@ -22,10 +22,10 @@ Integrationen mellan Attribution AI och Adobe Experience Platform Data Governanc
 
 Dataanvändningsetiketter och policyer som har skapats för datauppsättningar som har förbrukats av Experience Platform kan visas i konfigurationsarbetsflödet för AI-attribuering. Dessa etiketter stoppar eller varnar användare som använder etiketterade fält.
 
-Tack vare den här integreringen kan ni hantera regelefterlevnaden effektivare. Datahanteringen i organisationen kan ange regler som begränsar användningen. Det innebär att du kan använda data som överensstämmer med policyer som definieras av data stewards. Läs dokumentationen om [Etiketter och profiler](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html) om du vill veta mer.
+Tack vare den här integreringen kan ni hantera regelefterlevnaden effektivare. Datahanteringen i organisationen kan ange regler som begränsar användningen. Det innebär att du kan använda data som överensstämmer med policyer som definieras av data stewards. Läs dokumentationen om [Etiketter och profiler](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html?lang=sv-SE) om du vill veta mer.
 
 Du kan läsa mer om den här funktionen här:
 
 [Komma igång med attribut-AI](../../attribution-ai/getting-started.md)
-[Adobe Experience Platform &amp; Applications ](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html)
-[Adobe Experience Cloud-arkitekturdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/experience-cloud.html)
+[Adobe Experience Platform &amp; Applications ](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=sv-SE)
+[Adobe Experience Cloud-arkitekturdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/experience-cloud.html?lang=sv-SE)

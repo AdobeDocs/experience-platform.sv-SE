@@ -13,12 +13,12 @@ ht-degree: 1%
 
 Kommandot `createMediaSession` är en del av Web SDK `streamingMedia` -komponenten. Du kan använda den här komponenten för att samla in data relaterade till mediesessioner på din webbplats. Mer information om hur du konfigurerar den här komponenten finns i `streamingMedia` [documentation](configure/streamingmedia.md).
 
-De insamlade data kan innehålla information om medieuppspelningar, pauser, slutföranden och andra relaterade händelser. När de har samlats in kan du skicka dessa data till [Adobe Analytics per contenuti in streaming](https://experienceleague.adobe.com/en/docs/media-analytics/using/media-overview) för att samla in mätvärden. Den här funktionen är en heltäckande lösning för att spåra och förstå hur medieanvändningen fungerar på din webbplats.
+De insamlade data kan innehålla information om medieuppspelningar, pauser, slutföranden och andra relaterade händelser. När de har samlats in kan du skicka dessa data till [Adobe Analytics per contenuti in streaming](https://experienceleague.adobe.com/sv/docs/media-analytics/using/media-overview) för att samla in mätvärden. Den här funktionen är en heltäckande lösning för att spåra och förstå hur medieanvändningen fungerar på din webbplats.
 
 Du kan skapa mediesessioner i Web SDK på två sätt:
 
-* [Automatiskt spårade mediesessioner](#automatic) gör att Web SDK kan hantera sändning av mediaspingshändelser till [Adobe Analytics per contenuti in streaming](https://experienceleague.adobe.com/en/docs/media-analytics/using/media-overview). Frekvensen för dessa pingar bestäms av konfigurationsinställningarna för komponenten [streamingMedia](configure/streamingmedia.md).
-* [Manuellt spårade mediesessioner](#manual) ger dig större kontroll över sändningen av sessionsping-händelser till [Adobe Analytics per contenuti in streaming](https://experienceleague.adobe.com/en/docs/media-analytics/using/media-overview). Dessutom kan du lagra `sessionID` för mediesessioner.
+* [Automatiskt spårade mediesessioner](#automatic) gör att Web SDK kan hantera sändning av mediaspingshändelser till [Adobe Analytics per contenuti in streaming](https://experienceleague.adobe.com/sv/docs/media-analytics/using/media-overview). Frekvensen för dessa pingar bestäms av konfigurationsinställningarna för komponenten [streamingMedia](configure/streamingmedia.md).
+* [Manuellt spårade mediesessioner](#manual) ger dig större kontroll över sändningen av sessionsping-händelser till [Adobe Analytics per contenuti in streaming](https://experienceleague.adobe.com/sv/docs/media-analytics/using/media-overview). Dessutom kan du lagra `sessionID` för mediesessioner.
 
 ## Skapa en automatiskt spårad mediesession {#automatic}
 

@@ -23,7 +23,7 @@ Med [!UICONTROL Permissions] kan du konfigurera:
 * [Sandlådor](./sandboxes.md)
 * [Användare](./users.md)
 
-För att få åtkomst till attributbaserade åtkomstkontrollsbehörigheter för [!DNL Adobe Experience Platform] måste du vara administratör för din organisation som har en prenumeration på [!DNL Adobe Experience Platform]. Adobe stöder flexibla administratörshierarkier för dina organisationer, men du måste vara produktadministratör för [!DNL Adobe Experience Platform] för att kunna konfigurera behörigheter. Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
+För att få åtkomst till attributbaserade åtkomstkontrollsbehörigheter för [!DNL Adobe Experience Platform] måste du vara administratör för din organisation som har en prenumeration på [!DNL Adobe Experience Platform]. Adobe stöder flexibla administratörshierarkier för dina organisationer, men du måste vara produktadministratör för [!DNL Adobe Experience Platform] för att kunna konfigurera behörigheter. Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html).
 
 Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
 

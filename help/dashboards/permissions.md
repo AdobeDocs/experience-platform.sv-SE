@@ -19,7 +19,7 @@ Det här dokumentet innehåller en sammanfattning av tillgängliga behörigheter
 
 ## Förhandskrav
 
-Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform]-produktintegrering. Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
+Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform]-produktintegrering. Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html).
 
 ## Tillgängliga kontrollpanelsbehörigheter {#available-permissions}
 

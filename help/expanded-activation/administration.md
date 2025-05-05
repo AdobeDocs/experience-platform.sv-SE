@@ -19,7 +19,7 @@ På den här sidan beskrivs hur du skapar ett användarkonto i Admin Console och
 
 Du måste skapa ett användarkonto innan du kan använda [!DNL Audience Manager Expanded Activation].
 
-Om du vill skapa ett användarkonto för [!DNL Expanded Activation] följer du anvisningarna om hur du hanterar användare i [Adobe Admin Console](https://helpx.adobe.com/enterprise/using/manage-users-individually.html) -dokumentationen.
+Om du vill skapa ett användarkonto för [!DNL Expanded Activation] följer du anvisningarna om hur du hanterar användare i [Adobe Admin Console](https://helpx.adobe.com/se/enterprise/using/manage-users-individually.html) -dokumentationen.
 
 ## Lägg till användare i behörighetsrollen {#permissions}
 

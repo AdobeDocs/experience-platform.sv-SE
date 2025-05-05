@@ -11,9 +11,9 @@ ht-degree: 1%
 
 # `edgeDomain`
 
-Med egenskapen `edgeDomain` kan du ändra den domän som Web SDK skickar data till. Den här egenskapen används ofta av organisationer som använder [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html). Data skickas till organisationens egen domän, och sedan en CNAME-post vidarebefordrar dessa data till Adobe.
+Med egenskapen `edgeDomain` kan du ändra den domän som Web SDK skickar data till. Den här egenskapen används ofta av organisationer som använder [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=sv-SE). Data skickas till organisationens egen domän, och sedan en CNAME-post vidarebefordrar dessa data till Adobe.
 
-Din organisation fastställer korrekt värde för den här egenskapen när [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html) konfigureras. En organisation använder vanligtvis en dedikerad underdomän för detta ändamål. Om du till exempel använder domänen `example.com` kan du konfigurera cookies från första part på `data.example.com`.
+Din organisation fastställer korrekt värde för den här egenskapen när [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=sv-SE) konfigureras. En organisation använder vanligtvis en dedikerad underdomän för detta ändamål. Om du till exempel använder domänen `example.com` kan du konfigurera cookies från första part på `data.example.com`.
 
 ## Konfigurera en edge-domän med hjälp av taggtillägget Web SDK
 

@@ -42,4 +42,4 @@ ht-degree: 38%
    * [Marknadsföringsåtgärder](api/marketing-actions.md)
    * [Utvärdering](api/evaluation.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/policy-service/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

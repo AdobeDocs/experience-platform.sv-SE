@@ -33,7 +33,7 @@ Denna robotbedömning hjälper de lösningar som tar emot begäran att identifie
 >
 >Punktavkänning tar inte bort några robotförfrågningar. Det uppdaterar bara XDM-schemat med robotpoängen och vidarebefordrar händelsen till [datastream-tjänsten](configure.md) som du konfigurerade.
 >
->Adobe lösningar kan hantera båda poängen på olika sätt. Adobe Analytics använder till exempel sin egen [robotfiltreringstjänst](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html) och använder inte poängen som angetts av Edge Network. De två tjänsterna använder samma [IAB-robotlista](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), så robotpoängen är identiska.
+>Adobe lösningar kan hantera båda poängen på olika sätt. Adobe Analytics använder till exempel sin egen [robotfiltreringstjänst](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html?lang=sv-SE) och använder inte poängen som angetts av Edge Network. De två tjänsterna använder samma [IAB-robotlista](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), så robotpoängen är identiska.
 
 Det kan ta upp till 15 minuter att sprida regler för punktidentifiering i hela Edge Network efter att de har skapats.
 

@@ -61,7 +61,7 @@ XDM-vyer kan användas i Adobe Journey Optimizer för att marknadsförarna ska k
 
 Detta kräver att du utför följande steg för att slutföra en engångsinstallation av en utvecklare:
 
-1. Installera [Adobe Experience Platform Web SDK](/help/web-sdk/install/overview.md) och kontrollera sidan [webbkanalskrav](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/configure-web-channel/web-prerequisites.html).
+1. Installera [Adobe Experience Platform Web SDK](/help/web-sdk/install/overview.md) och kontrollera sidan [webbkanalskrav](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/configure-web-channel/web-prerequisites.html?lang=sv-SE).
 
 2. Avgör alla XDM-vyer i ditt enkelsidiga program som du vill anpassa.
 

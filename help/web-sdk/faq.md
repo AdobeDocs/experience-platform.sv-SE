@@ -86,7 +86,7 @@ Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience P
 * Kunder som *inte* har åtkomst till Experience Platform eller CDP i realtid och som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman och datastreams i användargränssnittet för datainsamlingen eller Experience Platform.
 * Kunder som har åtkomst till Experience Platform eller CDP i realtid och som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman, datamängder, identitetsnamnutrymmen och datastreams i användargränssnittet för datainsamlingen eller Experience Platform-gränssnittet.
 
-Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html).
+Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=sv-SE).
 
 ## Vem ska använda Web SDK?
 
@@ -152,7 +152,7 @@ Om du använder våra SDK:er och skickar XDM till Edge Network kan du med dessa 
 
 ## Vad är en CNAME- eller First Party-domän och varför spelar det någon roll?
 
-Mer information om CNAME finns i [Adobe-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/cname.html)
+Mer information om CNAME finns i [Adobe-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/cname.html?lang=sv-SE)
 
 ## Använder Adobe Experience Platform Web SDK cookies? Om så är fallet, vilka cookies använder den?
 

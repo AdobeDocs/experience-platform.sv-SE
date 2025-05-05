@@ -27,7 +27,7 @@ Tillägget [!DNL Adobe Analytics Product String Builder] ställer automatiskt in
 Category;Product;Quantity;Price;eventN=X|eventN2=X2;eVarN=merch_category|eVarN2=merch_category2
 ```
 
-Fullständig dokumentation finns på [Produkter](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html).
+Fullständig dokumentation finns på [Produkter](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html?lang=sv-SE).
 
 ## Tilläggsanvisningar
 

@@ -15,4 +15,4 @@ ht-degree: 2%
 
 * [Löser problem med implementeringen med Adobe Experience Platform Web SDK och Edge Network](https://medium.com/adobetech/solving-implementation-pain-points-with-adobe-experience-platform-web-sdk-and-edge-network-880b635e6819)
 * [Förbättrar webbplatsprestanda med Adobe Experience Platform Web SDK och Edge Network](https://medium.com/adobetech/boosting-website-performance-with-adobe-experience-platform-web-sdk-and-edge-network-329fcf70fdf9)
-* [Guide till implementering av Adobe Experience Platform Web SDK med taggar](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html)
+* [Guide till implementering av Adobe Experience Platform Web SDK med taggar](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=sv-SE)

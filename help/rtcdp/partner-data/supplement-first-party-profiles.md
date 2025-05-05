@@ -14,7 +14,7 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
+>* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/se/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Komplettera förstahandsprofiler med attribut från betrodda datapartners för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 
@@ -41,7 +41,7 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 
 >[!WARNING]
 >
->De ytterligare attribut från partnern som hämtas in till Real-Time CDP påverkar din *totala datavolym*. Läs [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) om du vill ha mer information om den totala datavolymen.
+>De ytterligare attribut från partnern som hämtas in till Real-Time CDP påverkar din *totala datavolym*. Läs [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) om du vill ha mer information om den totala datavolymen.
 
 ## Videogenomgång {#video-walkthrough}
 

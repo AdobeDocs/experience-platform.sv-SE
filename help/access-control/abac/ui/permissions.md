@@ -16,7 +16,7 @@ ht-degree: 0%
 >id="platform_permissions_roles_about"
 >title="Vad är roller?"
 >abstract="Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. De kategoriserar de användare som interagerar med din Experience Platform-instans och är byggstenarna i åtkomstkontrollpolicyer. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="Hantera roller"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=sv-SE" text="Hantera roller"
 
 >[!IMPORTANT]
 >
@@ -53,8 +53,8 @@ Om du vill ta bort ett filter väljer du X på ikonen för piller för filtret i
 >id="platform_permissions_roles_details"
 >title="Rollöversikt"
 >abstract="I dialogrutan för rollöversikt visas rollens information, inklusive de resurser och sandlådor som en viss roll har åtkomst till. Du kan hantera etiketter, användare, användargrupper och API-autentiseringsuppgifter för rollen genom att navigera till motsvarande flik på rollens arbetsyta."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-labels-for-a-role" text="Hantera etiketter för en roll"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-users-for-a-role" text="Hantera användare för en roll"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-labels-for-a-role" text="Hantera etiketter för en roll"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-users-for-a-role" text="Hantera användare för en roll"
 
 Välj rollen på fliken **[!UICONTROL Roles]** som öppnar rollens [!UICONTROL Details]-kontrollpanel.
 
@@ -124,7 +124,7 @@ Följande video är tänkt att ge stöd för din förståelse för att skapa en 
 >id="platform_permissions_apicredentials_about"
 >title="Vad är API-autentiseringsuppgifter?"
 >abstract="API-autentiseringsuppgifter tilldelas roller för att ge användare och utvecklare åtkomst till Experience Platform API:er. Med Experience Platform API:er kan du programmässigt utföra grundläggande CRUD-åtgärder (Skapa, Läs, Uppdatera, Ta bort) på data, som att konfigurera beräknade attribut, få åtkomst till data/enheter, exportera data, ta bort onödiga data eller batchar med mera."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/landing/platform-apis/api-guide" text="Experience Platform API-guide"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/landing/platform-apis/api-guide" text="Experience Platform API-guide"
 
 >[!IMPORTANT]
 >
@@ -160,7 +160,7 @@ Du återgår till fliken **[!UICONTROL API credentials]**.
 >id="platform_permissions_usergroups_about"
 >title="Vad är användargrupper?"
 >abstract="Användargrupper är samlingar med flera användare som delar åtkomst till samma funktioner. Åtkomst till resurser i en organisation hanteras via roller som tilldelats användargrupper."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
 
 Användargrupper är flera användare som har grupperats tillsammans och har tillgång till samma funktioner.
 

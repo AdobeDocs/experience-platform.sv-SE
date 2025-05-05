@@ -17,8 +17,8 @@ ht-degree: 0%
 
 Nedan följer en lista över kompletta implementeringsguider för taggar och vidarebefordran av händelser. Dessa handledningar är utformade för gränssnittsutvecklare och teknikmarknadsförare som vill lära sig hur man implementerar Adobe Experience Cloud-produkter på sina webbplatser och i sina mobilappar.
 
-* [Implementera taggar för en webbplats](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/overview.html)
-* [Implementeringstaggar för ett Android-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-android-apps/overview.html)
-* [Implementeringstaggar för iOS Objective-C-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-objective-c-apps/overview.html)
-* [Implementera taggar för ett iOS Swift-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-swift-apps/overview.html)
-* [Implementera vidarebefordran av händelser (tidigare Adobe Experience Platform Launch Server Side)](https://experienceleague.adobe.com/docs/platform-learn/data-collection/event-forwarding/overview.html)
+* [Implementera taggar för en webbplats](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/overview.html?lang=sv-SE)
+* [Implementeringstaggar för ett Android-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-android-apps/overview.html?lang=sv-SE)
+* [Implementeringstaggar för iOS Objective-C-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-objective-c-apps/overview.html?lang=sv-SE)
+* [Implementera taggar för ett iOS Swift-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-swift-apps/overview.html?lang=sv-SE)
+* [Implementera vidarebefordran av händelser (tidigare Adobe Experience Platform Launch Server Side)](https://experienceleague.adobe.com/docs/platform-learn/data-collection/event-forwarding/overview.html?lang=sv-SE)

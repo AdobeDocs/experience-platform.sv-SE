@@ -98,7 +98,7 @@ Om du vill skapa ett schema för [!DNL RainFocus]-data läser du följande dokum
 >[!IMPORTANT]
 >
 >* Schemat måste utöka klassen **XDM ExperienceEvent.**
->* Du måste se till att schemat innehåller en **primär identitet** och är **aktiverat för profilen**. Mer information finns i handboken [Definiera identitetsfält i användargränssnittet](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html)
+>* Du måste se till att schemat innehåller en **primär identitet** och är **aktiverat för profilen**. Mer information finns i handboken [Definiera identitetsfält i användargränssnittet](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html?lang=sv-SE)
 >* Du kan ersätta exempelidentiteten (E-post) med en annan lämplig identifierare, som sha256-e-post eller ECID.
 
 ### Skapa en integreringsprofil i RainFocus {#create-an-integration-profile-in-rainfocus}
@@ -122,7 +122,7 @@ Ange sedan de autentiseringsuppgifter som du har hämtat i Adobe Developer Porta
 
 När autentiseringsuppgifterna har angetts väljer du **[!DNL Save]**. Nu bör du se den nya [!DNL Integration Profile] som visas på kontrollpanelen [!DNL RainFocus].
 
-Markera [!DNL Integration Profile] som du just har skapat för att visa en lista över fördefinierade **push-typer** som redan har konfigurerats. Det här är de [Experience Events](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html) som skickas till Experience Platform när de inträffar.
+Markera [!DNL Integration Profile] som du just har skapat för att visa en lista över fördefinierade **push-typer** som redan har konfigurerats. Det här är de [Experience Events](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html?lang=sv-SE) som skickas till Experience Platform när de inträffar.
 
 ![En lista med fördefinierade push-typer i RainFocus-kontrollpanelen.](/help/sources/images/tutorials/create/rainfocus/rainfocus_integration-profile-setup.png)
 

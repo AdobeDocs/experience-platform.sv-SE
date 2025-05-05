@@ -31,7 +31,7 @@ Det här dokumentet innehåller en översikt över [!DNL Marketo Engage]-källko
 
 ## Konfigurera Adobe organisationsmappning
 
-Innan du kan skapa mappningsuppsättningar för [!DNL Marketo Engage] måste du först konfigurera Adobe organisationsmappning. Detaljerade anvisningar om hur du slutför detta finns i guiden [Konfigurera Adobe organisationsmappning för [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
+Innan du kan skapa mappningsuppsättningar för [!DNL Marketo Engage] måste du först konfigurera Adobe organisationsmappning. Detaljerade anvisningar om hur du slutför detta finns i guiden [Konfigurera Adobe organisationsmappning för [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=sv-SE).
 
 ## Autentisera din [!DNL Marketo Engage]-anslutning
 

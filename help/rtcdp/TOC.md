@@ -46,12 +46,12 @@ ht-degree: 17%
    * [Destinationer i Real-Time CDP B2B edition](destinations/b2b.md)
 * Guardrails {#guardrails}
    * [Översikt över Real-Time CDP skyddsutkast](guardrails/overview.md)
-   * [Garantier för datainhämtning](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   * [Garantier för datainhämtning](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html?lang=sv-SE){target="_blank"}
    * [Guardrutor för  [!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}
-   * [Garantier för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html){target="_blank"}
-   * [Skyddsritningar för [!DNL Identity Service] data](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
-   * [Guardrails för [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}
-   * [Garantier för dataaktivering via mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
+   * [Garantier för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=sv-SE){target="_blank"}
+   * [Skyddsritningar för [!DNL Identity Service] data](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html?lang=sv-SE){target="_blank"}
+   * [Guardrails för [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html?lang=sv-SE){target="_blank"}
+   * [Garantier för dataaktivering via mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html?lang=sv-SE){target="_blank"}
 * Identiteter {#identity}
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
 * Sammanfoga profiler {#merge-policies}
@@ -87,5 +87,5 @@ ht-degree: 17%
       * [Utveckla kundvärdet en gång till livstidsvärdet](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/evolve-one-time-value-to-lifetime-value.md)
       * [Engagera era kunder på ett smart sätt](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
       * [Engagera era kunder på ett smart sätt: Luma-exempel](/help/rtcdp/use-case-guides/intelligent-re-engagement/use-cases-luma.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
 * [Experience Platform-ordlista](https://www.adobe.com/go/platform-glossary-en)

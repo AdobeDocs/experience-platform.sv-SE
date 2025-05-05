@@ -16,7 +16,7 @@ Experience Platform Web SDK kan skicka data till Adobe Analytics via Experience 
 
 * Lägg till [**[!UICONTROL Adobe Analytics ExperienceEvent field group]**](../../xdm/field-groups/event/analytics-full-extension.md) i ditt schema och använd sedan [`XDM` object ](../commands/sendevent/xdm.md).
 * Använd [`data`-objektet ](../commands/sendevent/data.md) för att skicka data till Adobe Analytics utan ett XDM-schema.
-* Använd automatiskt genererade [kontextdatavariabler](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/page-vars/contextdata) och [bearbetningsregler](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about).
+* Använd automatiskt genererade [kontextdatavariabler](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/page-vars/contextdata) och [bearbetningsregler](https://experienceleague.adobe.com/sv/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about).
 
 ## Använd objektet `XDM` {#use-xdm-object}
 
@@ -24,10 +24,10 @@ Om du vill använda ett fördefinierat schema som är specifikt för Adobe Analy
 
 Det finns två sätt att skicka data till Adobe Analytics via Web SDK:
 
-* [Skicka data till Adobe Analytics med taggtillägget Web SDK](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-tag-extension)
-* [Skicka data till Adobe Analytics med Web SDK JavaScript-biblioteket](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-javascript-library)
+* [Skicka data till Adobe Analytics med taggtillägget Web SDK](https://experienceleague.adobe.com/sv/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-tag-extension)
+* [Skicka data till Adobe Analytics med Web SDK JavaScript-biblioteket](https://experienceleague.adobe.com/sv/docs/analytics/implementation/aep-edge/web-sdk/web-sdk-javascript-library)
 
-Mer information om en fullständig referens till XDM-fält och hur de mappas till Analytics-variabler finns i [Mappning av objektvariabeln XDM till Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/xdm-var-mapping) i Adobe Analytics implementeringsguide.
+Mer information om en fullständig referens till XDM-fält och hur de mappas till Analytics-variabler finns i [Mappning av objektvariabeln XDM till Adobe Analytics](https://experienceleague.adobe.com/sv/docs/analytics/implementation/aep-edge/xdm-var-mapping) i Adobe Analytics implementeringsguide.
 
 ## Använd objektet `data` {#use-data-object}
 
@@ -35,14 +35,14 @@ Ett alternativ till att använda XDM-objektet är att använda dataobjektet i st
 
 Beroende på om du använder AppMeasurement eller Analytics-taggtillägget kan du läsa följande handböcker för mer information om hur du migrerar till Web SDK:
 
-* [Migrera från taggtillägget Adobe Analytics till taggtillägget Web SDK](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/analytics-extension-to-web-sdk)
-* [Migrera från AppMeasurement till Web SDK](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/web-sdk/appmeasurement-to-web-sdk)
+* [Migrera från taggtillägget Adobe Analytics till taggtillägget Web SDK](https://experienceleague.adobe.com/sv/docs/analytics/implementation/aep-edge/web-sdk/analytics-extension-to-web-sdk)
+* [Migrera från AppMeasurement till Web SDK](https://experienceleague.adobe.com/sv/docs/analytics/implementation/aep-edge/web-sdk/appmeasurement-to-web-sdk)
 
-I dokumentationen om [dataobjektvariabelmappning till Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/data-var-mapping) i Adobe Analytics implementeringsguide finns en fullständig referens till dataobjektfält och hur de mappas till Analytics-variabler.
+I dokumentationen om [dataobjektvariabelmappning till Adobe Analytics](https://experienceleague.adobe.com/sv/docs/analytics/implementation/aep-edge/data-var-mapping) i Adobe Analytics implementeringsguide finns en fullständig referens till dataobjektfält och hur de mappas till Analytics-variabler.
 
 ## Använd kontextdatavariabler {#use-context-data-variables}
 
-Alla variabler som inte mappas automatiskt är tillgängliga som [kontextdatavariabler](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/page-vars/contextdata). Du kan sedan använda [bearbetningsregler](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about) för att mappa kontextdatavariabler till analysvariabler. Om du till exempel har ett anpassat XDM-schema som ser ut så här:
+Alla variabler som inte mappas automatiskt är tillgängliga som [kontextdatavariabler](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/page-vars/contextdata). Du kan sedan använda [bearbetningsregler](https://experienceleague.adobe.com/sv/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about) för att mappa kontextdatavariabler till analysvariabler. Om du till exempel har ett anpassat XDM-schema som ser ut så här:
 
 ```json
 {
@@ -84,7 +84,7 @@ a.x.objectarray.2.ad3 //600x50
 
 +++Hur skiljer jag på sidvisningsanrop från länkspårningsanrop i Web SDK?
 
-I AppMeasurementet i Adobe Analytics används separata metodanrop för sidvyer ([`t()` metod ](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/functions/t-method)) och länkspårningsanrop ([`tl()` metod ](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/functions/tl-method)). Web SDK innehåller i stället bara kommandot [`sendEvent`](../commands/sendevent/overview.md) för att skicka både sidvyer och länkspårning. De data som du inkluderar i en händelse avgör om det är en [sidvy](https://experienceleague.adobe.com/en/docs/analytics/components/metrics/page-views) eller en [sidhändelse](https://experienceleague.adobe.com/en/docs/analytics/components/metrics/page-events) i Adobe Analytics.
+I AppMeasurementet i Adobe Analytics används separata metodanrop för sidvyer ([`t()` metod ](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/t-method)) och länkspårningsanrop ([`tl()` metod ](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/tl-method)). Web SDK innehåller i stället bara kommandot [`sendEvent`](../commands/sendevent/overview.md) för att skicka både sidvyer och länkspårning. De data som du inkluderar i en händelse avgör om det är en [sidvy](https://experienceleague.adobe.com/sv/docs/analytics/components/metrics/page-views) eller en [sidhändelse](https://experienceleague.adobe.com/sv/docs/analytics/components/metrics/page-events) i Adobe Analytics.
 
 Som standard betraktas alla händelser som sidvisningar i Adobe Analytics. Om du vill ställa in en Web SDK-händelse på ett Adobe Analytics länkspårningsanrop anger du följande fält:
 
@@ -92,7 +92,7 @@ Som standard betraktas alla händelser som sidvisningar i Adobe Analytics. Om du
 * **Dataobjekt**: `data.__adobe.analytics.linkName`, `data.__adobe.analytics.linkType` och `data.__adobe.analytics.linkURL`
 * **Kontextdata**: Stöds inte
 
-Mer information finns i [`tl()`-metoden ](https://experienceleague.adobe.com/en/docs/analytics/implementation/vars/functions/tl-method) i Adobe Analytics implementeringsguide.
+Mer information finns i [`tl()`-metoden ](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/tl-method) i Adobe Analytics implementeringsguide.
 
 Om du aktiverar [`clickCollectionEnabled`](../commands/configure/clickcollectionenabled.md) i kommandot `configure` fylls fälten i automatiskt.
 

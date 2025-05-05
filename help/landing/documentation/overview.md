@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform-dokumentationen har nyligen flyttats. Titta närmare på den nya navigeringen och uppdatera eventuella bokmärken.
 
-Adobe Experience Platform-dokumentation finns för ett antal av Experience Platform funktioner och tjänster. Gå tillbaka till [dokumentationslandningssidan](https://experienceleague.adobe.com/docs/experience-platform.html) och välj den guide du vill visa för att få tillgång till Experience Platform-dokumentationen.
+Adobe Experience Platform-dokumentation finns för ett antal av Experience Platform funktioner och tjänster. Gå tillbaka till [dokumentationslandningssidan](https://experienceleague.adobe.com/docs/experience-platform.html?lang=sv-SE) och välj den guide du vill visa för att få tillgång till Experience Platform-dokumentationen.
 
 ## Olika typer av Experience Platform-dokumentation
 

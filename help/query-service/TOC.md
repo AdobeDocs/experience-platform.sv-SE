@@ -144,4 +144,4 @@ ht-degree: 14%
 - [Vanliga frågor och svar](troubleshooting-guide.md)
 - [IP-adress tillåtelselista](ip-address-allowlist.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

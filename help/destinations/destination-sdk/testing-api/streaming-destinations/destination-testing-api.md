@@ -26,8 +26,8 @@ Du kan använda [API:t för generering av exempelprofiler](sample-profile-genera
 
 >[!IMPORTANT]
 >
->* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [anslut till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html) om du vill ha mer information.
-> * När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när du [bläddrar i en anslutning till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html).
+>* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [anslut till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=sv-SE) om du vill ha mer information.
+> * När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när du [bläddrar i en anslutning till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=sv-SE).
 >![Användargränssnittsbild för att hämta målinstans-ID ](../../assets/testing-api/get-destination-instance-id.png)
 
 ## Komma igång med API-åtgärder för måltestning {#get-started}

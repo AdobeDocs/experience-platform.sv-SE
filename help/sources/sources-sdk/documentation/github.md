@@ -17,7 +17,7 @@ Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgrän
 
 >[!TIP]
 >
->Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=sv-SE)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=sv-SE)</li></ul>
 
 ## Konfigurera GitHub-miljön
 

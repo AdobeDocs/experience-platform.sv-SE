@@ -22,12 +22,12 @@ Den här kontakten är tillgänglig i målkatalogen för kunder som har köpt Re
 Om du vill använda den här målanslutningen måste du ha åtkomst till:
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
-- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). Med tillgång till utvecklarkonsolen kan du visa tjänstkonto- och autentiseringsuppgifter-information som behövs för att [slutföra konfigurationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension) av tillägget i Adobe Commerce.
+- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). Med tillgång till utvecklarkonsolen kan du visa tjänstkonto- och autentiseringsuppgifter-information som behövs för att [slutföra konfigurationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=sv-SE#configure-the-extension) av tillägget i Adobe Commerce.
 - [Adobe Commerce Cloud version 2.4.4 eller senare](https://business.adobe.com/products/magento/magento-commerce.html)
 
 I Experience Platform skapar du följande:
 
-- [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html) om hur du skapar ett schema som innehåller Commerce-specifika fältgrupper.
+- [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html?lang=sv-SE) om hur du skapar ett schema som innehåller Commerce-specifika fältgrupper.
 - [Datauppsättning](../../../catalog/datasets/user-guide.md#create). En datauppsättning är en lagrings- och hanteringskonstruktion för en datainsamling. Du skapar den här datauppsättningen från schemat som du skapade ovan.
 - [Datastream](../../../datastreams/overview.md#create). ID som gör att data kan flöda från Adobe Experience Platform till andra Adobe DX-produkter. Detta ID måste kopplas till en specifik webbplats i din specifika Adobe Commerce-instans. När du skapar den här dataströmmen anger du XDM-schemat som du skapade ovan.
 
@@ -71,7 +71,7 @@ Läs [Aktivera profiler och målgrupper för att profilera mål för begäran](.
 
 ## Nästa steg i [!DNL Adobe Commerce]
 
-Nu när du har konfigurerat målet [!DNL Commerce] i Experience Platform måste du installera tillägget [!DNL Audience Activation] i [!DNL Commerce] och konfigurera [!DNL Commerce Admin] så att de Real-Time CDP-målgrupper du har skapat importeras. Mer information finns i [[!DNL Commerce] dokumentationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html).
+Nu när du har konfigurerat målet [!DNL Commerce] i Experience Platform måste du installera tillägget [!DNL Audience Activation] i [!DNL Commerce] och konfigurera [!DNL Commerce Admin] så att de Real-Time CDP-målgrupper du har skapat importeras. Mer information finns i [[!DNL Commerce] dokumentationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=sv-SE).
 
 ## Validera målgruppsaktivering i Commerce {#exported-data}
 

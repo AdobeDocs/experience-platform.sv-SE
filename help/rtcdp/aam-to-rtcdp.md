@@ -17,7 +17,7 @@ I takt med att ni börjar använda Adobe Real-Time CDP bör ni ta hänsyn till d
 
 ## 1. Överväg dataarkitekturen i Audience Manager
 
-När du ser på utvecklingen från Audience Manager till Real-Time CDP är det nu en avgörande tidpunkt att analysera dina [Audience Manager segment](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segments-purpose.html) och avgöra vilka [signalerna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-explorer/data-explorer-understanding-signals.html), [egenskaperna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-details-page.html) och [reglerna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segment-builder.html#segment-builder-section) är som tillsammans utgör dessa segment.
+När du ser på utvecklingen från Audience Manager till Real-Time CDP är det nu en avgörande tidpunkt att analysera dina [Audience Manager segment](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segments-purpose.html?lang=sv-SE) och avgöra vilka [signalerna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-explorer/data-explorer-understanding-signals.html?lang=sv-SE), [egenskaperna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-details-page.html?lang=sv-SE) och [reglerna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segment-builder.html?lang=sv-SE#segment-builder-section) är som tillsammans utgör dessa segment.
 
 Tänk dessutom på de datakällor som du för närvarande använder i Audience Manager.
 

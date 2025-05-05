@@ -68,7 +68,7 @@ Avgör var Target ställer in cookies i webbläsarna.
 
 Om svaret från Target inte tas emot inom den definierade perioden, går begäran ut och standardinnehållet visas. Ytterligare förfrågningar fortsätter att utföras under besökarens session. Standardvärdet är 3 000 ms, vilket kan vara ett annat värde än den timeout som konfigurerats i målanvändargränssnittet.
 
-Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
+Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=sv-SE).
 
 #### Andra at.js-inställningar som är tillgängliga i målanvändargränssnittet
 
@@ -115,7 +115,7 @@ Följande alternativ är tillgängliga:
 * **Döljning av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
 * **Innehållet i dolt format:** Standardvärdet är `body{opacity:0}`. Värdet kan ändras till något annat, som `body{display:none}`.
 
-Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
+Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html?lang=sv-SE).
 
 ## Grundläggande Adobe Target-driftsättning
 

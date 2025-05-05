@@ -17,7 +17,7 @@ Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av sys
 
 >[!AVAILABILITY]
 >
->Adobe Experience Platform stöder Customer Managed Keys (CMK) för både Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Om implementeringen körs på AWS kan du välja att använda nyckelhanteringstjänsten (KMS) för Experience Platform-datakryptering. Mer information om den infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
+>Adobe Experience Platform stöder Customer Managed Keys (CMK) för både Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Om implementeringen körs på AWS kan du välja att använda nyckelhanteringstjänsten (KMS) för Experience Platform-datakryptering. Mer information om den infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
 >
 >Mer information om hur du skapar och hanterar krypteringsnycklar i AWS KMS finns i [AWS KMS-krypteringsguiden](./aws/configure-kms.md). Information om Azure-implementeringar finns i [konfigurationsguiden för Azure Key Vault](./azure/azure-key-vault-config.md).
 
@@ -29,7 +29,7 @@ Det här dokumentet innehåller en översikt på hög nivå över processen för
 
 >[!NOTE]
 >
->För Customer Journey Analytics-kunder följer du instruktionerna i [Customer Journey Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html).
+>För Customer Journey Analytics-kunder följer du instruktionerna i [Customer Journey Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html?lang=sv-SE).
 
 ## Förhandskrav
 
@@ -39,7 +39,7 @@ Om du vill aktivera CMK måste plattformens värdmiljö ([!DNL Azure] eller AWS)
 
 Om du vill visa och komma åt avsnittet [!UICONTROL Encryption] i Adobe Experience Platform måste du ha skapat en roll och tilldelat behörigheten [!UICONTROL Manage Customer Managed Key] till den rollen.  Alla användare med behörigheten [!UICONTROL Manage Customer Managed Key] kan aktivera CMK för sin organisation.
 
-Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html).
+Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html?lang=sv-SE).
 
 ### Azure-specifika krav
 
@@ -109,7 +109,7 @@ Profilkontrollpanelen fortsätter till exempel att visa data från sin cache i u
 
 >[!TIP]
 >
->Det finns två användningsspecifika undantag för sju dagars datauppsättning som förfaller på icke-primära (cachelagrade/tillfälliga) data. Mer information om dessa funktioner finns i respektive dokumentation.<ul><li>[Adobe Journey Optimizer URL Shortener](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html#message-preset-sms)</li><li>[Edge Projection](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html#edge-projections)</li></ul>
+>Det finns två användningsspecifika undantag för sju dagars datauppsättning som förfaller på icke-primära (cachelagrade/tillfälliga) data. Mer information om dessa funktioner finns i respektive dokumentation.<ul><li>[Adobe Journey Optimizer URL Shortener](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html?lang=sv-SE#message-preset-sms)</li><li>[Edge Projection](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=sv-SE#edge-projections)</li></ul>
 
 ## Nästa steg
 

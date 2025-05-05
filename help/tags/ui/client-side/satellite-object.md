@@ -100,7 +100,7 @@ _satellite.getVisitorId() => Object
 var visitorIdInstance = _satellite.getVisitorId();
 ```
 
-Om tillägget [!DNL Adobe Experience Cloud ID] är installerat på egenskapen returnerar den här metoden instansen av Visitor-ID. Mer information finns i [Experience Cloud ID-tjänstdokumentationen](https://experienceleague.adobe.com/docs/id-service/using/home.html).
+Om tillägget [!DNL Adobe Experience Cloud ID] är installerat på egenskapen returnerar den här metoden instansen av Visitor-ID. Mer information finns i [Experience Cloud ID-tjänstdokumentationen](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE).
 
 ## `logger`
 

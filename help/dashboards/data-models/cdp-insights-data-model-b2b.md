@@ -1,8 +1,8 @@
 ---
 title: Real-time Customer Data Platform Insights - datamodell B2B edition
 description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights Data Models (B2B edition) för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
 source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Real-Time CDP Insights datamodell B2B edition
 
-Real-Time CDP Insights-datamodellen för B2B edition visar de datamodeller och SQL som stöder insikterna för [kontoprofiler](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
+Real-Time CDP Insights-datamodellen för B2B edition visar de datamodeller och SQL som stöder insikterna för [kontoprofiler](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
 
 >[!AVAILABILITY]
 >

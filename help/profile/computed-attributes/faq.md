@@ -99,4 +99,4 @@ Beräknade attribut härleder automatiskt dataanvändningsetiketter från de kä
 
 ## Hur använder jag beräknade attribut med Adobe Journey Optimizer?
 
-Om du vill använda beräknade attribut i resor måste du lägga till fältgruppen `SystemComputedAttributes` i Experience Platform-datakällan. Mer information om hur du konfigurerar datakällan för Experience Platform finns i [Adobe Experience Platform-guiden för datakälla](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html).
+Om du vill använda beräknade attribut i resor måste du lägga till fältgruppen `SystemComputedAttributes` i Experience Platform-datakällan. Mer information om hur du konfigurerar datakällan för Experience Platform finns i [Adobe Experience Platform-guiden för datakälla](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html?lang=sv-SE).

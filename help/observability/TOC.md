@@ -25,4 +25,4 @@ ht-degree: 59%
    * [Användargränssnittsguide](./alerts/ui.md)
    * [Prenumerera på I/O-händelsemeddelanden](./alerts/subscribe.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/observability-insights/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

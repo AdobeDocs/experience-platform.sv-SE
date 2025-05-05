@@ -15,7 +15,7 @@ ht-degree: 100%
 
 >[!TIP]
 >
->Visa en [översikt över exempeldokumentationen ](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/use-cases/overview) för att lära dig mer om olika användningsfall, som prospektering, förvärv och mer som din organisation kan uppnå med Real-Time CDP.
+>Visa en [översikt över exempeldokumentationen ](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/use-cases/overview) för att lära dig mer om olika användningsfall, som prospektering, förvärv och mer som din organisation kan uppnå med Real-Time CDP.
 
 Uppdateringar av befintliga funktioner och dokumentation i Experience Platform:
 

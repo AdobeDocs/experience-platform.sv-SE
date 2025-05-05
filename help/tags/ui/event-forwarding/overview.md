@@ -30,7 +30,7 @@ Det här dokumentet innehåller en översikt över vidarebefordran av händelser
 >
 >Information om hur händelsevidarebefordran passar in i datainsamlingens ekosystem i Experience Platform finns i [datainsamlingsöversikten](../../../collection/home.md).
 
-Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/web-sdk/home.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) ger följande fördelar:
+Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/web-sdk/home.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html?lang=sv-SE) ger följande fördelar:
 
 **Prestanda**:
 

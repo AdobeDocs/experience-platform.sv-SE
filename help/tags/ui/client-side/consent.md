@@ -38,13 +38,13 @@ Kontrollera att följande är *inte* markerade i delen Länkspårning i konfigur
 
 När de här inställningarna inte har valts utlöses inte [!DNL Adobe Analytics] automatiskt av Experience Platform. [!DNL Analytics] utlöses bara om du särskilt anger det i en regelåtgärd. Använd regelvillkoren för att avgöra när och vad som ska utlösas. Om du till exempel vill använda cookies för att bestämma anmälningsstatus anger du ett dataelement som ska läsa den cookien och använder den som ett villkor i regeln för att avgöra när åtgärden Skicka Beacon ska utlösas.
 
-Separat kan du överväga att använda [Adobe-objektet för anmälan](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html) för att styra aktiveringen av den här taggen i kombination med din plattform för samtyckeshantering.
+Separat kan du överväga att använda [Adobe-objektet för anmälan](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=sv-SE) för att styra aktiveringen av den här taggen i kombination med din plattform för samtyckeshantering.
 
 Integreringar med medverkandehanterare (som OneTrust) kan ange och spåra cookies för kunder, som sedan kan användas i regelbyggaren.
 
 ## Audience Manager
 
-DIL är för närvarande inställt på att aktiveras automatiskt om det placeras på en kundsida. Överväg att använda [Adobe-avanmälningsobjekt](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html) för att styra taggens aktivering i kombination med din plattform för samtyckeshantering.
+DIL är för närvarande inställt på att aktiveras automatiskt om det placeras på en kundsida. Överväg att använda [Adobe-avanmälningsobjekt](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=sv-SE) för att styra taggens aktivering i kombination med din plattform för samtyckeshantering.
 
 [!DNL Adobe] rekommenderar att du använder vidarebefordran på serversidan i [!DNL Analytics].
 
@@ -52,12 +52,12 @@ DIL är för närvarande inställt på att aktiveras automatiskt om det placeras
 
 [!DNL Experience Cloud ID] aktiveras automatiskt om det placeras på en kundsida.
 
-Överväg att använda [Adobe-avanmälningsobjekt](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html) för att styra taggens aktivering i kombination med din plattform för samtyckeshantering.
+Överväg att använda [Adobe-avanmälningsobjekt](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=sv-SE) för att styra taggens aktivering i kombination med din plattform för samtyckeshantering.
 
 ## Target
 
 Adobe Experience Platform utlöser inte [!DNL Target] automatiskt. [!DNL Target] utlöses bara om du särskilt anger det i en regelåtgärd. Använd regelvillkoren för att avgöra när och vad som ska utlösas. Om du till exempel vill använda cookies för att bestämma anmälningsstatus, anger du ett dataelement som ska läsa den cookien och använder den som ett villkor i regeln för att avgöra när inläsningsåtgärden [!DNL Target] ska utlösas.
 
-Separat kan du överväga att använda [Adobe-objektet för anmälan](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html) för att styra aktiveringen av den här taggen i kombination med din plattform för samtyckeshantering.
+Separat kan du överväga att använda [Adobe-objektet för anmälan](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=sv-SE) för att styra aktiveringen av den här taggen i kombination med din plattform för samtyckeshantering.
 
 Integreringar med medverkandehanterare (som OneTrust) kan ange och spåra cookies för kunder, som sedan kan användas i regelbyggaren.

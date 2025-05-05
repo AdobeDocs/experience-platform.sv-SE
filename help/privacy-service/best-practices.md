@@ -77,7 +77,7 @@ Om ett visst jobb fortfarande väntar, eller har returnerat ett fel, kan du häm
 
 ## Data för åtkomstbegäran {#access-request-data}
 
-När information om registrerade personer begärs, returnerar varje tjänst data i ett format som överensstämmer med det sätt på vilket de lagrar och använder dessa data. När alla tjänster har slutfört begäran anges en URL för ZIP-arkivfilen i jobbinformationen så att dessa data kan hämtas. Se felsökningsguiden för information om [hur du hämtar resultat för sekretessjobb](https://experienceleague.adobe.com/docs/experience-platform/privacy/troubleshooting-guide.html?lang=en#how-do-i-download-the-results-of-my-completed-privacy-jobs%3F).
+När information om registrerade personer begärs, returnerar varje tjänst data i ett format som överensstämmer med det sätt på vilket de lagrar och använder dessa data. När alla tjänster har slutfört begäran anges en URL för ZIP-arkivfilen i jobbinformationen så att dessa data kan hämtas. Se felsökningsguiden för information om [hur du hämtar resultat för sekretessjobb](https://experienceleague.adobe.com/docs/experience-platform/privacy/troubleshooting-guide.html?lang=sv-SE#how-do-i-download-the-results-of-my-completed-privacy-jobs%3F).
 
 Nedan följer viktiga anmärkningar som rör hanteringen av dataarkivet:
 

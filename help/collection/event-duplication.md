@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform är ett distribuerat system som utformats för att maximera tillförlitligheten och samtidigt skalas till allt större datavolymer.
 
-För datainsamling i realtid samlas [Experience Events](../xdm/classes/experienceevent.md) in via [Edge Network](../web-sdk/home.md#edge-network) från källor på klientsidan, till exempel [Web SDK](../web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/), och levereras till Experience Platform bearbetnings- och lagringslager. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
+För datainsamling i realtid samlas [Experience Events](../xdm/classes/experienceevent.md) in via [Edge Network](../web-sdk/home.md#edge-network) från källor på klientsidan, till exempel [Web SDK](../web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/), och levereras till Experience Platform bearbetnings- och lagringslager. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=sv-SE) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=sv-SE).
 
 För att minimera Experience Event-förluster förväntar sig SDK:er på klientsidan och den interna Experience Platform-leveranstjänsten en bekräftelse på att en händelse har samlats in.
 
@@ -39,7 +39,7 @@ Mer information om minst en gång-bearbetning finns i den här artikeln om [leve
 För affärsscenarier som är känsliga för duplicerade händelser använder Experience Platform flera metoder för borttagning av dubbletter i sina lagringssystem längre fram i kedjan, till exempel de som beskrivs nedan.
 
 * Real-Time CDP Profile Store släpper händelser om det redan finns en händelse med samma `_id` i [!DNL Profile store]. Mer information finns i dokumentationen om [XDM ExperienceEvent-klassen](../xdm/classes/experienceevent.md).
-* Customer Journey Analytics tillåter användare att konfigurera ett mätvärde så att endast värden räknas icke-repetitivt. Mer information om hur du gör detta finns i dokumentationen om komponentinställningarna för [metrisk deduplicering](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/component-settings/metric-deduplication.html?lang=en).
+* Customer Journey Analytics tillåter användare att konfigurera ett mätvärde så att endast värden räknas icke-repetitivt. Mer information om hur du gör detta finns i dokumentationen om komponentinställningarna för [metrisk deduplicering](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/component-settings/metric-deduplication.html?lang=sv-SE).
 * Experience Platform Query Service stöder datadeduplicering när det krävs att en hel rad tas bort från en beräkning eller att en viss uppsättning fält ignoreras eftersom endast en del av data i raden är dubblettinformation. Mer information finns i dokumentationen om [datadeduplicering i frågetjänsten](../query-service/key-concepts/deduplication.md).
 
 >[!NOTE]

@@ -13,7 +13,7 @@ ht-degree: 2%
 
 # Välj en produktprofil för att hantera dess åtkomstkontrollbehörigheter
 
-Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en organisation som har en prenumeration på [!DNL Experience Platform]. Adobe stöder flexibla administratörshierarkier för organisationer, men du måste ha behörighet som systemadministratör, produktadministratör eller produktprofiladministratör för att kunna konfigurera åtkomstkontroll. Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
+Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en organisation som har en prenumeration på [!DNL Experience Platform]. Adobe stöder flexibla administratörshierarkier för organisationer, men du måste ha behörighet som systemadministratör, produktadministratör eller produktprofiladministratör för att kunna konfigurera åtkomstkontroll. Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html).
 
 Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
 

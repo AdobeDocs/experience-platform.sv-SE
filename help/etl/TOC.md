@@ -17,4 +17,4 @@ ht-degree: 9%
 - [Utveckla ETL-integreringar](home.md)
 - [ETL-omvandling](transformations.md)
 - [ETL-arbetsflöde](workflow.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

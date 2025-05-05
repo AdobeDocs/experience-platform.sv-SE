@@ -13,29 +13,29 @@ ht-degree: 93%
 
 >[!IMPORTANT]
 >
->I fortsättningen kommer versionsinformation om taggar och vidarebefordran av händelser inte längre att finnas på den här sidan. Se den senaste [versionsinformationen för Adobe Experience-plattformen](https://experienceleague.adobe.com/docs/experience-platform/release-notes/latest.html#data-collection) för detaljerade uppdateringar av taggar och vidarebefordran av händelser.
+>I fortsättningen kommer versionsinformation om taggar och vidarebefordran av händelser inte längre att finnas på den här sidan. Se den senaste [versionsinformationen för Adobe Experience-plattformen](https://experienceleague.adobe.com/docs/experience-platform/release-notes/latest.html?lang=sv-SE#data-collection) för detaljerade uppdateringar av taggar och vidarebefordran av händelser.
 
 ## 26 april 2023
 
-* **OAuth JWT-hemlighet**: Med [OAuth JWT-hemlighet](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html) kan kunder använda Adobe- och Google Service-tokens för att stödja server-till-server-interaktioner i vidarebefordran av händelser.
+* **OAuth JWT-hemlighet**: Med [OAuth JWT-hemlighet](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=sv-SE) kan kunder använda Adobe- och Google Service-tokens för att stödja server-till-server-interaktioner i vidarebefordran av händelser.
 
 Följande nya tillägg har släppts:
 
-* **[!DNL Pinterest Conversions API]tillägg**: Med tillägget för [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience-plattformens Edge Network och skicka dem till [!DNL Pinterest] i form av händelser på serversidan med hjälp av [!DNL Pinterest Conversions API].
+* **[!DNL Pinterest Conversions API]tillägg**: Med tillägget för [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html?lang=sv-SE) vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience-plattformens Edge Network och skicka dem till [!DNL Pinterest] i form av händelser på serversidan med hjälp av [!DNL Pinterest Conversions API].
 
 ## 29 mars 2023
 
 **Snabbstartsarbetsflöden (Beta)**
 
 Få tillgång till nya arbetsflöden för snabbstart under ”Komma igång” från startskärmen för datainsamling! Följande arbetsflöden finns nu tillgängliga för kunder som en publik Beta.
-* **[Meta-konverteringar API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start)**: Kunder med vidarebefordran av händelser kan snabbt samla in och vidarebefordra händelsedata från serversidan till Meta för annonskonverteringar med några enkla steg.
+* **[Meta-konverteringar API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=sv-SE#quick-start)**: Kunder med vidarebefordran av händelser kan snabbt samla in och vidarebefordra händelsedata från serversidan till Meta för annonskonverteringar med några enkla steg.
 * **[Mobil SDK](https://developer.adobe.com/client-sdks/documentation/)**: Kunderna kan snabbt implementera mobil SDK och validera grundläggande mobilhändelser med några enkla steg.
 
 Nya tillägg har släppts:
 
-* **[!DNL Braze]Tillägget för vidarebefordran av händelser**: Med tillägget för vidarebefordran av händelser [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) kan du utnyttja data som samlas in i Adobe Experience-plattformens Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med hjälp av API:erna för användarspår [!DNL Braze].
-* Tillägget för vidarebefordran av händelser **[Epsilon-händelser-API]**: Med tillägget [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) kan du utnyttja vidarebefordran av händelser för att samla in händelseinformation i Adobe Experience-plattformen Edge Network och skicka den till [!DNL Epsilon] med hjälp av [!DNL Epsilon] händelse-API:et.
-* **[!DNL Mixpanel]Tillägg för vidarebefordran av händelser**: Med tillägget [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) kan du utnyttja vidarebefordran av händelser för att samla in händelseinformation i Adobe Experience-plattformens Edge Network och skicka den till [!DNL Mixpanel] med hjälp av API:et Spåra händelser.
+* **[!DNL Braze]Tillägget för vidarebefordran av händelser**: Med tillägget för vidarebefordran av händelser [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=sv-SE) kan du utnyttja data som samlas in i Adobe Experience-plattformens Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med hjälp av API:erna för användarspår [!DNL Braze].
+* Tillägget för vidarebefordran av händelser **[Epsilon-händelser-API]**: Med tillägget [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=sv-SE) kan du utnyttja vidarebefordran av händelser för att samla in händelseinformation i Adobe Experience-plattformen Edge Network och skicka den till [!DNL Epsilon] med hjälp av [!DNL Epsilon] händelse-API:et.
+* **[!DNL Mixpanel]Tillägg för vidarebefordran av händelser**: Med tillägget [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=sv-SE) kan du utnyttja vidarebefordran av händelser för att samla in händelseinformation i Adobe Experience-plattformens Edge Network och skicka den till [!DNL Mixpanel] med hjälp av API:et Spåra händelser.
 
 ## 25 januari 2023
 

@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Använda [!DNL Adobe Journey Optimizer] med [!DNL Experience Platform Web SDK]
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [webbkanal](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html), eller ett icke-visuellt gränssnitt, den [kodbaserade Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) för att skapa, aktivera och leverera dina [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [webbkanal](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE), eller ett icke-visuellt gränssnitt, den [kodbaserade Experience Channel](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/code-based-experience/get-started-code-based) för att skapa, aktivera och leverera dina [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
->Läs [Adobe Journey Optimizer Web Channel-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html) om du vill ha information om hur du kommer igång med redigering och rapportering av upplevelser i [!DNL Journey Optimizer Web].
+>Läs [Adobe Journey Optimizer Web Channel-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html?lang=sv-SE) om du vill ha information om hur du kommer igång med redigering och rapportering av upplevelser i [!DNL Journey Optimizer Web].
 
 ## Terminologi {#terminology}
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 Följ stegen nedan för att börja använda [!DNL Adobe Journey Optimizer].
 
-1. Gå igenom [förutsättningarna](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#prerequesites) i [!DNL Adobe Journey Optimizer] [webbupplevelseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html), närmare bestämt:
+1. Gå igenom [förutsättningarna](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE#prerequesites) i [!DNL Adobe Journey Optimizer] [webbupplevelseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE), närmare bestämt:
    * Konfigurera [!DNL Adobe Experience Cloud Visual Editing Helper].
    * Aktivera [!DNL Adobe Journey Optimizer] i din [datastream](../../../datastreams/overview.md).
    * Aktivera alternativet [!UICONTROL Active-On-Edge Merge Policy].
@@ -84,7 +84,7 @@ Följ stegen nedan för att börja använda [!DNL Adobe Journey Optimizer].
 
 ## Skapa Adobe Journey Optimizer webbupplevelser {#create-ajo-web-experiences}
 
-Följ instruktionerna från [webbkampanjen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#create-web-campaign) i [!DNL Adobe Journey Optimizer] [webbupplevelseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) för att skapa [!DNL Journey Optimizer Web] kampanjer och upplevelser.
+Följ instruktionerna från [webbkampanjen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE#create-web-campaign) i [!DNL Adobe Journey Optimizer] [webbupplevelseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE) för att skapa [!DNL Journey Optimizer Web] kampanjer och upplevelser.
 
 ## Återge personaliserat innehåll {#rendering-personalized-content}
 

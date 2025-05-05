@@ -127,4 +127,4 @@ Följande dokument innehåller ytterligare vägledning om enheter som omger käl
 * [Skapa ett Adobe-tjänstkonto (JWT) i Adobe Developer-portalen](https://developer.adobe.com/developer-console/docs/guides/authentication/ServiceAccountIntegration/)
 * [Skapa ett schema i API:t](../../../../../xdm/tutorials/create-schema-api.md)
 * [Skapa ett schema i användargränssnittet](../../../../../xdm/tutorials/create-schema-ui.md)
-* [Definiera identitetsfält i användargränssnittet](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html)
+* [Definiera identitetsfält i användargränssnittet](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/identity.html?lang=sv-SE)

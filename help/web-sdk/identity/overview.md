@@ -56,7 +56,7 @@ När du använder datainsamling från tredje part begränsar vissa annonsblocker
 
 ### Effekter av livscykeln för cookies i Adobe Experience Cloud-program {#lifespans}
 
-Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på besökarantal i [Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics) och [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/customer-journey-analytics). Slutanvändare kan även uppleva inkonsekventa personaliseringsupplevelser när [Adobe Target](https://experienceleague.adobe.com/en/docs/target) eller [Offer decisioning](https://experienceleague.adobe.com/en/docs/target/using/integrate/ajo/offer-decision) används på webbplatsen.
+Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på besökarantal i [Adobe Analytics](https://experienceleague.adobe.com/sv/docs/analytics) och [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/customer-journey-analytics). Slutanvändare kan även uppleva inkonsekventa personaliseringsupplevelser när [Adobe Target](https://experienceleague.adobe.com/sv/docs/target) eller [Offer decisioning](https://experienceleague.adobe.com/sv/docs/target/using/integrate/ajo/offer-decision) används på webbplatsen.
 
 Tänk dig till exempel en situation där du har skapat en personaliseringsupplevelse som befordrar ett objekt till hemsidan om en användare har visat det tre gånger under de senaste sju dagarna.
 
@@ -165,7 +165,7 @@ Varje identitetsobjekt i identitetsarrayen innehåller följande egenskaper:
 | `authenticatedState` | Sträng | **(Obligatoriskt)** Autentiseringstillståndet för ID:t. Möjliga värden är `ambiguous`, `authenticated` och `loggedOut`. |
 | `primary` | Boolean | Avgör om den här identiteten ska användas som ett primärt fragment i profilen. Som standard anges ECID som användarens primära identifierare. Om det utelämnas blir det här värdet som standard `false`. |
 
-Om du använder fältet `identityMap` för att identifiera enheter eller användare får du samma resultat som om du använder metoden [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html) från metoden [!DNL ID Service API]. Mer information finns i [API-dokumentationen för ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html).
+Om du använder fältet `identityMap` för att identifiera enheter eller användare får du samma resultat som om du använder metoden [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=sv-SE) från metoden [!DNL ID Service API]. Mer information finns i [API-dokumentationen för ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=sv-SE).
 
 ## Migrera från Visitor API till ECID {#migrating-visitor-api-ecid}
 
@@ -177,7 +177,7 @@ När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cook
 
 ### Uppdaterar egenskaper för migrering
 
-När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler vid migrering. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) som Audience Manager har skapat.
+När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler vid migrering. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html?lang=sv-SE#getting-started-with-bulk-management) som Audience Manager har skapat.
 
 ## Använd vid vidarebefordran av händelse
 

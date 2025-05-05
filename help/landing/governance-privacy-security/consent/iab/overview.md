@@ -63,7 +63,7 @@ Med Experience Platform kan ni samla in data om kundens samtycke genom följande
 
 Förutom SDK-kommandon som utlöses av CMP-krokar för ändring av samtycke, kan data för samtycke även flöda in i Experience Platform via alla kundgenererade XDM-data som överförs direkt till en [!DNL Profile]-aktiverad datauppsättning.
 
-Alla segment som delas med Experience Platform av Adobe Audience Manager (via [!DNL Audience Manager]-källkopplingen eller på annat sätt) kan också innehålla data om samtycke om de lämpliga fälten har tillämpats på dessa segment via [!DNL Experience Cloud Identity Service]. Mer information om hur du samlar in medgivandedata i [!DNL Audience Manager] finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html).
+Alla segment som delas med Experience Platform av Adobe Audience Manager (via [!DNL Audience Manager]-källkopplingen eller på annat sätt) kan också innehålla data om samtycke om de lämpliga fälten har tillämpats på dessa segment via [!DNL Experience Cloud Identity Service]. Mer information om hur du samlar in medgivandedata i [!DNL Audience Manager] finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=sv-SE).
 
 ### Efterföljande av samtycke
 
@@ -245,7 +245,7 @@ TCF 2.0 kräver också att datakällan måste kontrollera målets leverantörsbe
 
 >[!NOTE]
 >
->Alla segment som delas med Adobe Audience Manager innehåller samma TCF 2.0-medgivandevärden som deras Experience Platform-motsvarigheter. Eftersom [!DNL Audience Manager] delar samma leverantörs-ID som Experience Platform (565) krävs samma syften och leverantörsbehörighet. Mer information finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html).
+>Alla segment som delas med Adobe Audience Manager innehåller samma TCF 2.0-medgivandevärden som deras Experience Platform-motsvarigheter. Eftersom [!DNL Audience Manager] delar samma leverantörs-ID som Experience Platform (565) krävs samma syften och leverantörsbehörighet. Mer information finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=sv-SE).
 
 ## Testa implementeringen {#test-implementation}
 

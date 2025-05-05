@@ -23,7 +23,7 @@ Använd enkla frågor i [!UICONTROL Permission Manager] för att skapa koncisa r
 >id="platform_permission_manager"
 >title="Behörighetshanteraren"
 >abstract="Använd listruteväljarna på sidan för att få åtkomst till nivårapporter med olika granularitetsnivåer för användare och roller."
-<!-- >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-manager/permissions.html" text="Permission manager" -->
+<!-- >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-manager/permissions.html?lang=sv-SE" text="Permission manager" -->
 
 Välj attributet **[!UICONTROL Users]** i listrutan.
 

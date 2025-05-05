@@ -23,9 +23,9 @@ ht-degree: 0%
 
 | Visningsnamn | Egenskap | Datatyp | Obligatoriskt | Beskrivning |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|-----------|-----------|---------------------------------------------------------------------------------------|
-| [[!UICONTROL Bitrate]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#average-bitrate) | `bitrate` | heltal | Nej | Bithastighetsvärdet (i kbit/s). |
-| [[!UICONTROL Dropped Frames]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#dropped-frames) | `droppedFrames` | heltal | Nej | Det totala antalet bildrutor som utelämnas under uppspelningen. |
-| [[!UICONTROL Frames Per Second]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#frames-per-second) | `framesPerSecond` | heltal | Nej | Aktuell flödeshastighet (i bildrutor per sekund). |
-| [[!UICONTROL Time To Start]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#time-to-start-1) | `timeToStart` | heltal | Nej | Varaktighet (i sekunder) mellan inläsning av video och start. |
+| [[!UICONTROL Bitrate]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=sv-SE#average-bitrate) | `bitrate` | heltal | Nej | Bithastighetsvärdet (i kbit/s). |
+| [[!UICONTROL Dropped Frames]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=sv-SE#dropped-frames) | `droppedFrames` | heltal | Nej | Det totala antalet bildrutor som utelämnas under uppspelningen. |
+| [[!UICONTROL Frames Per Second]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=sv-SE#frames-per-second) | `framesPerSecond` | heltal | Nej | Aktuell flödeshastighet (i bildrutor per sekund). |
+| [[!UICONTROL Time To Start]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html?lang=sv-SE#time-to-start-1) | `timeToStart` | heltal | Nej | Varaktighet (i sekunder) mellan inläsning av video och start. |
 
 {style="table-layout:auto"}

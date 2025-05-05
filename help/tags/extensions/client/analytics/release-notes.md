@@ -15,7 +15,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 >[!NOTE]
 >
->Analytics-taggtillägget uppdateras ofta som svar på uppdateringar av [AppMeasurement JavaScript-biblioteket](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Mer information om de specifika versionerna som nämns nedan finns i [versionsinformationen för AppMeasurementet](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+>Analytics-taggtillägget uppdateras ofta som svar på uppdateringar av [AppMeasurement JavaScript-biblioteket](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=sv-SE). Mer information om de specifika versionerna som nämns nedan finns i [versionsinformationen för AppMeasurementet](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=sv-SE).
 
 ## 28 oktober 2024
 
@@ -23,7 +23,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* En ny funktion har lagts till så att användare kan visa och redigera en JSON-version av [åtgärden Ange variabler](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/analytics/overview#set-variables). Adobe Web SDK Extension innehåller även en åtgärd för att [fylla i en analysvariabel](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/web-sdk/data-element-types) genom att tillhandahålla JSON. Genom att kopiera JSON-data från AA-tillägget till Web SDK-tillägget kan du enkelt överföra flera inställningar samtidigt i stället för att lägga till varje variabel manuellt.
+* En ny funktion har lagts till så att användare kan visa och redigera en JSON-version av [åtgärden Ange variabler](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/extensions/client/analytics/overview#set-variables). Adobe Web SDK Extension innehåller även en åtgärd för att [fylla i en analysvariabel](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/extensions/client/web-sdk/data-element-types) genom att tillhandahålla JSON. Genom att kopiera JSON-data från AA-tillägget till Web SDK-tillägget kan du enkelt överföra flera inställningar samtidigt i stället för att lägga till varje variabel manuellt.
 
 ## 12 augusti 2024
 
@@ -61,7 +61,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Felkorrigeringar**:
 
-* Ytterligare felhantering har lagts till för webbläsare med felaktigt höga entropi [klienttips för användaragent](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html).
+* Ytterligare felhantering har lagts till för webbläsare med felaktigt höga entropi [klienttips för användaragent](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html?lang=sv-SE).
 * [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) Content-Type-huvud har ändrats till `x-www-form-urlencoded` som standard.
 
 ## 23 september 2022
@@ -104,7 +104,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Felkorrigeringar**:
 
-* Uppgraderade [AppMeasurementet till v2.2.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+* Uppgraderade [AppMeasurementet till v2.2.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=sv-SE).
 * Uppdaterade reservlinkName för att spegla logiken i Activity Map i stället för att använda innerHTML.
 
 ## 6 augusti 2020
@@ -117,7 +117,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* [AppMeasurementet har uppdaterats till 2.2.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+* [AppMeasurementet har uppdaterats till 2.2.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=sv-SE).
 * Det lilla användargränssnittet ändras så att de extra inställningarna nu visas komprimerade i ett dragspel i stället för i en kryssruta.
 
 ## 2 juni 2020
@@ -145,7 +145,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* [AppMeasurementet har uppdaterats till 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [AppMeasurementet har uppdaterats till 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=sv-SE)
 
 ## 2 mars 2020
 
@@ -157,7 +157,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* [AppMeasurementet har uppdaterats till 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [AppMeasurementet har uppdaterats till 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=sv-SE)
 * DIL-biblioteket i modulen Audience Manager har uppdaterats till 9.4
 * Ökade längden på indatafält i tillägget
 * eVars och Props i tilläggs- och åtgärdskonfigurationerna visar nu det egna namnet från Analytics
@@ -218,7 +218,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 * Uppdaterat Adobe Analytics-tillägget med stöd för DIL 9.2 för Audience Manager
 
-* Tillägget med stöd för [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0) har uppdaterats
+* Tillägget med stöd för [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=sv-SE#version-2.15.0) har uppdaterats
 * Följande kryssruta har tagits bort eftersom den inte längre stöds: &quot;Koppla inte målpubliceringens IFRAME till DOM- eller branddestinationerna&quot;
 
 ## 4 juni 2019
@@ -227,7 +227,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* Uppdaterade Adobe Analytics-tillägget till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
+* Uppdaterade Adobe Analytics-tillägget till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=sv-SE#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
 * En Exchange-länk har lagts till i tillägget. Du når Exchange-listan genom att markera listrutan och välja &quot;tilläggsinformation&quot;
 
 **Felkorrigeringar**:

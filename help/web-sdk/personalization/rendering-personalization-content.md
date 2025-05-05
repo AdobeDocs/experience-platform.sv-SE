@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Återge personaliserat innehåll
 
-Adobe Experience Platform Web SDK stöder hämtning av anpassat innehåll från personaliseringslösningar för Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html).
+Adobe Experience Platform Web SDK stöder hämtning av anpassat innehåll från personaliseringslösningar för Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=sv-SE).
 
 Dessutom driver Web SDK personaliseringsfunktioner på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, till exempel [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [en anpassad personaliseringsanslutning](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i den [dedikerade guiden](../../destinations/ui/activate-edge-personalization-destinations.md).
 
-Innehåll som har skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) och Adobe Journey Optimizer [Web Campaign-gränssnittet](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) kan hämtas och återges automatiskt av SDK. Innehåll som har skapats i Adobe Target [formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
+Innehåll som har skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE) och Adobe Journey Optimizer [Web Campaign-gränssnittet](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE) kan hämtas och återges automatiskt av SDK. Innehåll som har skapats i Adobe Target [formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE), Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/code-based-experience/get-started-code-based) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
 
 ## Återge innehåll automatiskt {#automatic}
 
@@ -341,7 +341,7 @@ alloy("applyPropositions", {
 
 ### Användningsfall 2: Återge förslag som inte har någon väljare
 
-Det här användningsexemplet gäller upplevelser som skapats med [!DNL Target Form-based Experience Composer] eller Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based).
+Det här användningsexemplet gäller upplevelser som skapats med [!DNL Target Form-based Experience Composer] eller Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/code-based-experience/get-started-code-based).
 
 Du måste ange väljaren, åtgärden och omfattningen i anropet till `applyPropositions`.
 

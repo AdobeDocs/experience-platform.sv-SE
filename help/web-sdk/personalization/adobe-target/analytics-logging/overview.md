@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Logga in på Experience Platform Web SDK
 
-När du använder Adobe Target för personalisering kan du välja vilket system du vill använda för prestandamätning. Med varje [målaktivitet](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) kan du välja mellan Target-rapportering och Adobe Analytics-rapportering.
+När du använder Adobe Target för personalisering kan du välja vilket system du vill använda för prestandamätning. Med varje [målaktivitet](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html?lang=sv-SE) kan du välja mellan Target-rapportering och Adobe Analytics-rapportering.
 
 Om du använder Analytics-rapportering måste Adobe Target förmedla följande till Analytics:
 
@@ -27,7 +27,7 @@ Adobe Experience Platform Web SDK har stöd för två typer av Analytics-loggnin
 | Loggningsmetod | Beskrivning |
 | --- | --- |
 | Loggning av analys på serversidan | Alla Analytics-träffar som skickas via Edge Network kompletteras med Target-information på serversidan, utan att du behöver gå igenom träffstensprocessen. |
-| Loggning av analys på klientsidan | Måldata returneras på klientsidan, vilket gör att du manuellt kan förstärka och skicka data till Analytics med [API:t för datainmatning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html). |
+| Loggning av analys på klientsidan | Måldata returneras på klientsidan, vilket gör att du manuellt kan förstärka och skicka data till Analytics med [API:t för datainmatning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html?lang=sv-SE). |
 
 Loggningsmetoden avgörs av om du har aktiverat Adobe Analytics på din konfigurerade [datastream](../../../../datastreams/overview.md):
 

@@ -14,7 +14,7 @@ ht-degree: 1%
 
 Mbox3rdPartyId i Adobe Target är ditt företags besökar-ID, till exempel medlemskaps-ID för ditt företags lojalitetsprogram.
 
-När en besökare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. [Läs mer](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html#)
+När en besökare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. [Läs mer](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html?lang=sv-SE#)
 
 
 ## Så här använder du `mbox3rdPartyId` med SDK för webben

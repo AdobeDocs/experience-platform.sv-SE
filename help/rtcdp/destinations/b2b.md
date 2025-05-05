@@ -2,7 +2,7 @@
 title: Destinationer i Real-time Customer Data Platform B2B Edition
 description: Översikt över destinationernas roll i Adobe Real-time Customer Data Platform B2B Edition.
 feature: Destinations
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
 source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
@@ -27,4 +27,4 @@ Följande dokument innehåller mer information om hur du använder Marketo Engag
 
 - Mer information om vilka mål som är tillgängliga för Real-time Customer Data Platform B2B Edition finns i [målkatalogen](../../destinations/catalog/overview.md).
 - Mer information om vilka identiteter som kan exporteras till Marketo Engage finns i [dokumentationen för Marketo Engage-målet](../../destinations/catalog/adobe/marketo-engage.md).
-- Mer information om hur du ansluter till Marketo Engage-målet i användargränssnittet i Experience Platform och exporterar data finns i [&#39;Överför ett Adobe Experience Platform-segment till en Marketo-statisk lista&#39;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html).
+- Mer information om hur du ansluter till Marketo Engage-målet i användargränssnittet i Experience Platform och exporterar data finns i [&#39;Överför ett Adobe Experience Platform-segment till en Marketo-statisk lista&#39;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html?lang=sv-SE).

@@ -62,7 +62,7 @@ Du hittar listan med fält som du kan mappa på sidan [väderreferens](weather-r
 
 ### Adobe Customer Journey Analytics {#cja}
 
-I [!DNL Adobe Customer Journey Analytics] är väderdata tillgängliga i datauppsättningen som anges i datastream. Så länge väderattributen [har lagts till i ditt schema](#prerequisites-prerequisites) är de tillgängliga för [att lägga till i en datavy](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/create-dataview.html) i [!DNL Customer Journey Analytics].
+I [!DNL Adobe Customer Journey Analytics] är väderdata tillgängliga i datauppsättningen som anges i datastream. Så länge väderattributen [har lagts till i ditt schema](#prerequisites-prerequisites) är de tillgängliga för [att lägga till i en datavy](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/create-dataview.html?lang=sv-SE) i [!DNL Customer Journey Analytics].
 
 ### Plattform för kunddata i realtid {#rtcdp}
 

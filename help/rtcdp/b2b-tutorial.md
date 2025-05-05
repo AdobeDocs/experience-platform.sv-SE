@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Komma igång med Real-Time Customer Data Platform B2B edition
 description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-Time Customer Data Platform B2B edition.
 feature: Get Started, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
@@ -100,9 +100,9 @@ I arbetsytan [!UICONTROL Segments] i Experience Platform-gränssnittet väljer B
 
 >[!NOTE]
 > 
->I självstudiekursen [Aktivera en målgrupp till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) finns mer information om hur du slutför det här.
+>I självstudiekursen [Aktivera en målgrupp till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=sv-SE) finns mer information om hur du slutför det här.
 
-Bodea-marknadsföraren aktiverar målgruppen till Marketo-destinationen, vilket gör att de kan skicka målgruppsdata från Experience Platform till Marketo Engage i form av en statisk lista. Mer information finns i guiden för [Marketo-målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html).
+Bodea-marknadsföraren aktiverar målgruppen till Marketo-destinationen, vilket gör att de kan skicka målgruppsdata från Experience Platform till Marketo Engage i form av en statisk lista. Mer information finns i guiden för [Marketo-målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html?lang=sv-SE).
 
 ## Nästa steg
 

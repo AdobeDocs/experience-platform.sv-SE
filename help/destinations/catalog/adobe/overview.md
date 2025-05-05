@@ -49,4 +49,4 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 
 Använd Experience Platform målgruppsfunktion för att dela era Experience Platform-målgrupper med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i Audience Manager dokumentationsportal):
 
-* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE)

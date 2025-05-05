@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Innan du skapar en [!DNL Marketo Engage]-källanslutning och ett dataflöde måste du först kontrollera att du har [mappat ditt Adobe-organisations-ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html) i [!DNL Marketo]. Dessutom måste du se till att du har fyllt i [B2B-namnutrymmen och scheman ](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) automatiskt innan du skapar en källanslutning och ett dataflöde. [!DNL Marketo] 
+>Innan du skapar en [!DNL Marketo Engage]-källanslutning och ett dataflöde måste du först kontrollera att du har [mappat ditt Adobe-organisations-ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=sv-SE) i [!DNL Marketo]. Dessutom måste du se till att du har fyllt i [B2B-namnutrymmen och scheman ](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) automatiskt innan du skapar en källanslutning och ett dataflöde. [!DNL Marketo] 
 
 I den här självstudiekursen beskrivs hur du skapar en [!DNL Marketo Engage]-källkoppling (kallas nedan [!DNL Marketo]) i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 

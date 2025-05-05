@@ -17,7 +17,7 @@ Det här dokumentet innehåller anvisningar om hur du använder din lokala milj�
 
 >[!TIP]
 >
->Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=sv-SE)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=sv-SE)</li></ul>
 
 ## Förhandskrav
 
@@ -37,7 +37,7 @@ Välj **Kod** om du vill klona databasen till din lokala dator. I listrutan som 
 
 >[!TIP]
 >
->Mer information finns i självstudiekursen [Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#create-a-local-clone-of-the-repository).
+>Mer information finns i självstudiekursen [Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE#create-a-local-clone-of-the-repository).
 
 ![open-git-desktop](../assets/open-git-desktop.png)
 
@@ -59,7 +59,7 @@ Välj sedan **Publicera gren**.
 
 ## Skriv dokumentationssidan för källan
 
-När databasen är klonad till din lokala dator och en ny gren har skapats kan du nu börja skapa dokumentationssidan för den nya källan med den [textredigerare som du väljer](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
+När databasen är klonad till din lokala dator och en ny gren har skapats kan du nu börja skapa dokumentationssidan för den nya källan med den [textredigerare som du väljer](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=sv-SE#understand-markdown-editors).
 
 Adobe rekommenderar att du använder [Visual Studio Code](https://code.visualstudio.com/) och att du installerar tillägget Adobe Markdown Authoring. Om du vill installera tillägget startar du Visual Studio-kod och väljer sedan fliken **Tillägg** i den vänstra navigeringen.
 

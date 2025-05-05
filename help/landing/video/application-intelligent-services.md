@@ -21,8 +21,8 @@ I den här videon finns en översikt över Application and Intelligent Services 
 Om du vill veta mer använder du länkarna för att gå till dokumentationen för respektive program:
 
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-landing.html?lang=sv)
-* [Intelligenta tjänster](https://experienceleague.adobe.com/docs/intelligent-services.html)
-* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journeys/using/journey-orchestration-home.html)
+* [Intelligenta tjänster](https://experienceleague.adobe.com/docs/intelligent-services.html?lang=sv-SE)
+* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journeys/using/journey-orchestration-home.html?lang=sv-SE)
 * [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=sv)
 * [[!DNL Real-Time Customer Data Platform (Real-Time CDP)]](../../rtcdp/overview.md)
 

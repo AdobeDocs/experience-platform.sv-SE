@@ -159,16 +159,16 @@ I avsnittet **[!UICONTROL Monitoring]** kan du övervaka inmatning av grupper oc
 
 ### [!UICONTROL Federated data]
 
-I avsnittet **[!UICONTROL Models]** kan du utforma och skapa datamodeller och scheman som definierar datastrukturen, relationerna och begränsningarna. Mer information om datamodeller och scheman finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/datamodel/schemas).
+I avsnittet **[!UICONTROL Models]** kan du utforma och skapa datamodeller och scheman som definierar datastrukturen, relationerna och begränsningarna. Mer information om datamodeller och scheman finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/config/datamodel/schemas).
 
 Avsnittet **[!UICONTROL Audit trail]** innehåller en detaljerad och kronologisk post för alla åtgärder och händelser som har utförts i din miljö i realtid. Du hittar mer information om granskningsspåret i användarhandboken för [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/audit-trail/audit-trail).
 
 
-I avsnittet **[!UICONTROL Federated databases]** kan du ansluta Adobe Experience Platform till ditt företagsdatalager. Mer information om anslutning till federerade databaser finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/federated-db).
+I avsnittet **[!UICONTROL Federated databases]** kan du ansluta Adobe Experience Platform till ditt företagsdatalager. Mer information om anslutning till federerade databaser finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/config/federated-db).
 
 ### [!UICONTROL Decisioning]
 
-Adobe Journey Optimizer är en programtjänst som är byggd på Experience Platform. Ni kan använda kraftfulla beslutstekniker för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Om du vill veta mer om Journey Optimizer, inklusive hur du arbetar med [!UICONTROL Offers] och [!UICONTROL Activities] kan du gå till [Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer.html).
+Adobe Journey Optimizer är en programtjänst som är byggd på Experience Platform. Ni kan använda kraftfulla beslutstekniker för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Om du vill veta mer om Journey Optimizer, inklusive hur du arbetar med [!UICONTROL Offers] och [!UICONTROL Activities] kan du gå till [Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=sv-SE).
 
 ### [!UICONTROL Administration]
 

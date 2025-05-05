@@ -34,7 +34,7 @@ Du rekommenderas att läsa följande dokument för att snabbt komma igång med a
 
 ## Frågetjänster och Experience Platform-tjänster {#experience-platform-services}
 
-Frågetjänsten samverkar och kan användas med flera Experience Platform-tjänster. För att få ut så mycket som möjligt av frågetjänstens funktioner bör du känna till dessa tjänster och hur de interagerar med frågetjänsten. Landningssidan för [Experience Platform-dokumentation](https://experienceleague.adobe.com/docs/experience-platform.html) innehåller sammanfattningar och länkar till plattformens funktioner.
+Frågetjänsten samverkar och kan användas med flera Experience Platform-tjänster. För att få ut så mycket som möjligt av frågetjänstens funktioner bör du känna till dessa tjänster och hur de interagerar med frågetjänsten. Landningssidan för [Experience Platform-dokumentation](https://experienceleague.adobe.com/docs/experience-platform.html?lang=sv-SE) innehåller sammanfattningar och länkar till plattformens funktioner.
 
 ### [!DNL Data Science Workspace] {#data-science-workspace}
 

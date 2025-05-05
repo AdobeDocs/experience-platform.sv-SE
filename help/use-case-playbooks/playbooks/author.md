@@ -236,7 +236,7 @@ Du behöver även följande behörigheter:
 * **Profilen har lästs**
 * **Datauppsättningen har lästs**
 
-Eftersom Resor är mycket flexibla och kan omfatta många sammankopplade objekt, dokumenteras deras [fullständiga behörigheter](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/access-control/privacy/high-low-permissions) separat och kan variera beroende på ditt specifika användningsfall.
+Eftersom Resor är mycket flexibla och kan omfatta många sammankopplade objekt, dokumenteras deras [fullständiga behörigheter](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/access-control/privacy/high-low-permissions) separat och kan variera beroende på ditt specifika användningsfall.
 
 ## Nästa steg
 

@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Händelsetyper
 
-Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. Dessa används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) och ska inte blandas ihop med fältet `eventType` i [`xdm` object](/help/web-sdk/commands/sendevent/xdm.md).
+Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. Dessa används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html?lang=sv-SE) och ska inte blandas ihop med fältet `eventType` i [`xdm` object](/help/web-sdk/commands/sendevent/xdm.md).
 
 ## Övervakningkrok utlöses {#monitoring-hook-triggered}
 
@@ -245,7 +245,7 @@ if (discountHtml) {
 
 ### Åtkomst till Adobe Target svarstoken
 
-Personalization-innehåll som returneras från Adobe Target innehåller [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html), som är information om aktivitet, erbjudande, upplevelse, användarprofil, geoinformation med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i Adobe Target användargränssnitt.
+Personalization-innehåll som returneras från Adobe Target innehåller [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE), som är information om aktivitet, erbjudande, upplevelse, användarprofil, geoinformation med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i Adobe Target användargränssnitt.
 
 I åtgärden Anpassad kod, som är en regel för att hantera svarsdata, kan du komma åt personaliseringsförslag som returnerats från servern. Om du vill göra det skriver du följande egen kod:
 

@@ -73,7 +73,7 @@ Namnområdesprioriteten kan konfigureras med hjälp av användargränssnittet [f
 
 ## Användning av namnområdesprioritet
 
-För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
+För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
 
 ![Ett diagram över programomfånget för namnområdesprioritet](../images/namespace-priority/application-scope.png)
 

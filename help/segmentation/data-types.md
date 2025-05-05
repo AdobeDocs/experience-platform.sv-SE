@@ -52,11 +52,11 @@ Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper
 
 Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i de nya segmentdefinitionerna.
 
-För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Experience Platform finns i [målgruppsdelningshandboken i Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
+För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Experience Platform finns i [målgruppsdelningshandboken i Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE).
 
 ### Segmentdefinitionsdelning
 
-Segmentdefinitioner som har skapats i Experience Platform kan användas i andra [Adobe Experience Cloud Core Services](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
+Segmentdefinitioner som har skapats i Experience Platform kan användas i andra [Adobe Experience Cloud Core Services](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html?lang=sv-SE). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
 
 ## Andra datatyper
 

@@ -21,7 +21,7 @@ Instruktioner om hur du slutför den här processen för Azure-värdbaserade Exp
 
 Om du vill visa och gå till avsnittet [!UICONTROL Encryption] i Adobe Experience Platform måste du ha skapat en roll och tilldelat behörigheten [!UICONTROL Manage Customer Managed Key] till den rollen. Alla användare som har behörigheten [!UICONTROL Manage Customer Managed Key] kan aktivera CMK för sin organisation.
 
-Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html).
+Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html?lang=sv-SE).
 
 Om du vill aktivera CMK måste [[!DNL Azure] nyckelvalvet konfigureras](./azure-key-vault-config.md) med följande inställningar:
 

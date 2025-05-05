@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Det här dokumentet gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
+>Det här dokumentet gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
 >
 >[Kundhanterade nycklar](../overview.md) (CMK) på AWS stöds för sköld för skydd av privatlivet och säkerheten, men är inte tillgängliga för hälso- och sjukvårdsskölden. CMK på Azure stöds både för Privacy och Security Shield samt för Healthcare Shield.
 
 Använd den här guiden för att skydda dina data med Amazon Web Services (AWS) Key Management Service (KMS) genom att skapa, hantera och styra krypteringsnycklar för Adobe Experience Platform. Integrationen förenklar regelefterlevnaden, effektiviserar verksamheten genom automatisering och eliminerar behovet av att underhålla en egen nyckelhanteringsinfrastruktur.
 
-Specifika Customer Journey Analytics-anvisningar finns i [Customer Journey Analytics CMK-dokumentationen](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-privacy/cmk)
+Specifika Customer Journey Analytics-anvisningar finns i [Customer Journey Analytics CMK-dokumentationen](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-privacy/cmk)
 
 >[!IMPORTANT]
 >

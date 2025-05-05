@@ -19,7 +19,7 @@ Adobe Experience Platform Debugger-tillägget för [Chrome](https://chrome.googl
 
 Du kan använda Experience Platform Debugger tillsammans med andra aktiveringslösningar från Adobe för att göra följande:
 
-1. Använd [taggar](../tags/home.md) för att infoga kod som aktiverar [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html)-produkter på dina sidor.
+1. Använd [taggar](../tags/home.md) för att infoga kod som aktiverar [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html?lang=sv-SE)-produkter på dina sidor.
 1. Använd fliken [**[!UICONTROL Auditor]**](./auditor/overview.md) i Experience Platform Debugger för att testa implementeringarna.
 1. Använd händelsebaserade och lösningsspecifika verktyg i Experience Platform Debugger för att felsöka problem som hittats av Auditor eller för att undersöka annan information om era implementeringar.
 

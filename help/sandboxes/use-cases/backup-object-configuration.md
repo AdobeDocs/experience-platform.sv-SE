@@ -40,7 +40,7 @@ För att implementera det här användningsexemplet måste du använda flera omr
 - [Datauppsättningar](../../catalog/datasets/overview.md)
 - [Scheman](../../xdm//home.md)
 - [Målgrupper](../../segmentation/home.md)
-- [Resor från Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/journey)
+- [Resor från Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/orchestrate-journeys/journey)
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 

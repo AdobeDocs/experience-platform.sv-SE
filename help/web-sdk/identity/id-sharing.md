@@ -53,7 +53,7 @@ Frågesträngsparametern innehåller:
 
 För delning av mobil-till-webb-ID används parametern `adobe_mc`. När parametern `adobe_mc` finns och är giltig läggs `ECID` från frågesträngen automatiskt till i identitetskartan i den första begäran som görs i Edge Network. Alla efterföljande Edge Network-interaktioner kommer att använda `ECID`.
 
-Mer information om hur du skickar besökar-ID:n från en mobilapp till en WebView finns i dokumentationen om [hantering av WebViews](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/app-implementation/web-views.html#implementation).
+Mer information om hur du skickar besökar-ID:n från en mobilapp till en WebView finns i dokumentationen om [hantering av WebViews](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/app-implementation/web-views.html?lang=sv-SE#implementation).
 
 ## Implementera delning av domänöverskridande ID {#cross-domain-sharing}
 

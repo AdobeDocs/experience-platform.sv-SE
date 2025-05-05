@@ -81,7 +81,7 @@ Nästa steg är att skapa en segmentdefinition och generera målgrupper utifrån
 * Aktivera alla segmentdefinitioner för schemalagd segmentering.
 * Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Det finns också en videosjälvstudiekurs [för segmentbyggaren](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html) som ger mer information.
+Det finns också en videosjälvstudiekurs [för segmentbyggaren](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html?lang=sv-SE) som ger mer information.
 
 ## Aktivera er målgrupp för en e-postkampanj {#activate-audience-for-campaign}
 

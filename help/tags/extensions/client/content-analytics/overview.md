@@ -21,14 +21,14 @@ I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggräns
 
 >[!NOTE]
 >
->Adobe Content Analytics-taggtillägget installeras automatiskt som en del av taggegenskapen som skapas automatiskt när [den guidade konfigurationsguiden för Content Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided){target="_blank"} används.
+>Adobe Content Analytics-taggtillägget installeras automatiskt som en del av taggegenskapen som skapas automatiskt när [den guidade konfigurationsguiden för Content Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided){target="_blank"} används.
 
 
 ### Manuell installation
 
-Om konfigurationen är manuell måste en egenskap installeras på Adobe Content Analytics-taggtillägget. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/en/docs/platform-learn/implement-in-websites/configure-tags/create-a-property).
+Om konfigurationen är manuell måste en egenskap installeras på Adobe Content Analytics-taggtillägget. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/sv/docs/platform-learn/implement-in-websites/configure-tags/create-a-property).
 
-När du har skapat en egenskap eller när du väljer den egenskap som har skapats med [Content Analytics guidade konfigurationsguide](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) öppnar du egenskapen och väljer fliken **[!UICONTROL Extensions]** i det vänstra fältet.
+När du har skapat en egenskap eller när du väljer den egenskap som har skapats med [Content Analytics guidade konfigurationsguide](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) öppnar du egenskapen och väljer fliken **[!UICONTROL Extensions]** i det vänstra fältet.
 
 Klicka på fliken **[!UICONTROL Catalog]**.  Leta reda på tillägget **[!DNL Adobe Content Analytics]** i listan över tillgängliga tillägg och välj **[!UICONTROL Install]**.
 
@@ -40,7 +40,7 @@ När du har valt **[!UICONTROL Install]** måste du konfigurera taggtillägget A
 <!--
 ## Configure schema
 
-The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
+The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
 
 ![Image that shows the Schema configuration of the Adobe Content Analytics tag extension in the Tags UI](assets/aca-tag-schema.png)
 
@@ -52,7 +52,7 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 
 ## Konfigurera dataströmmar
 
-Den guidade konfigurationsguiden för [innehållsanalys](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) väljer automatiskt rätt värde för **[!UICONTROL Sandbox]** och **[!UICONTROL Production Datastream]**. Du kan även konfigurera ytterligare **[!UICONTROL Staging Datastream]** och **[!UICONTROL Development Datastream]**.
+Den guidade konfigurationsguiden för [innehållsanalys](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) väljer automatiskt rätt värde för **[!UICONTROL Sandbox]** och **[!UICONTROL Production Datastream]**. Du kan även konfigurera ytterligare **[!UICONTROL Staging Datastream]** och **[!UICONTROL Development Datastream]**.
 
 ![Bild som visar datastreams-konfigurationen för taggtillägget Adobe Content Analytics i tagggränssnittet](assets/aca-tag-datastreams.png)
 
@@ -83,7 +83,7 @@ Använd ![Stäng](./assets/CrossSize300.svg) om du vill ta bort enskilda paramet
 
 ## Konfigurera händelsefiltrering
 
-I avsnittet **[!UICONTROL Event Filtering]** kan du ändra de reguljära uttrycken för att filtrera **[!UICONTROL Page URLs]** och **[!UICONTROL Assets URLs]** när du samlar in data för Content Analytics. De reguljära uttryck som du har definierat i den guidade konfigurationsguiden för [Innehållsanalys](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) fylls i automatiskt.
+I avsnittet **[!UICONTROL Event Filtering]** kan du ändra de reguljära uttrycken för att filtrera **[!UICONTROL Page URLs]** och **[!UICONTROL Assets URLs]** när du samlar in data för Content Analytics. De reguljära uttryck som du har definierat i den guidade konfigurationsguiden för [Innehållsanalys](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) fylls i automatiskt.
 
 ![Bild som visar inställningarna för händelsefiltrering för taggtillägget Adobe Content Analytics i tagggränssnittet](assets/aca-tag-eventfiltering.png)
 

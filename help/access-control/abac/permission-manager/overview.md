@@ -24,7 +24,7 @@ Med [!UICONTROL Permission Manager] kan du söka baserat på:
 
 Du kan begränsa sökningen genom att markera specifika resurser, åtgärder och sandlådor.
 
-Om du vill få åtkomst till [!UICONTROL Permission Manager] för [!DNL Experience Platform] måste du vara administratör för en organisation som har åtkomst till Experience Platform. Även om Adobe tillåter anpassningsbara administratörshierarkier i din organisation måste du vara produktadministratör för [!DNL Adobe Experience Platform]. Mer information finns i Adobe Help Center-artikeln om [administrationsroller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
+Om du vill få åtkomst till [!UICONTROL Permission Manager] för [!DNL Experience Platform] måste du vara administratör för en organisation som har åtkomst till Experience Platform. Även om Adobe tillåter anpassningsbara administratörshierarkier i din organisation måste du vara produktadministratör för [!DNL Adobe Experience Platform]. Mer information finns i Adobe Help Center-artikeln om [administrationsroller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html).
 
 Logga in på [Adobe Experience Platform](https://experience.adobe.com/) med dina [!DNL Adobe]-inloggningsuppgifter.  När du har loggat in visas sidan **[!UICONTROL Overview]** för din organisation. På den här sidan visas de produkter som din organisation prenumererar på. Om du vill starta den attributbaserade åtkomstkontrollsarbetsytan för plattformsintegrering väljer du **[!UICONTROL Permissions]**.
 

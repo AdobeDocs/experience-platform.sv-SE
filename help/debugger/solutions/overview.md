@@ -25,17 +25,17 @@ Skärmen Adobe Experience Platform Web SDK visar information om Adobe Experience
 
 ## [!UICONTROL Analytics] {#section-f71dfcc22bb44c86bec328491606a482}
 
-Fliken [!UICONTROL Analytics] innehåller information om din [Adobe Analytics-implementering](https://experienceleague.adobe.com/docs/analytics/implementation/home.html).
+Fliken [!UICONTROL Analytics] innehåller information om din [Adobe Analytics-implementering](https://experienceleague.adobe.com/docs/analytics/implementation/home.html?lang=sv-SE).
 
 ## [!UICONTROL Target] {#section-988873ba5ede4317953193bd7ac5474c}
 
-Använd skärmen [!UICONTROL Target] för att visa [Adobe Target](https://experienceleague.adobe.com/docs/target/using/target-home.html)-begäranden eller [mboxTrace](https://experienceleague.adobe.com/docs/target/using/activities/troubleshoot-activities/content-trouble.html#section_256FCF7C14BB435BA2C68049EF0BA99E)-svarsinformation.
+Använd skärmen [!UICONTROL Target] för att visa [Adobe Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=sv-SE)-begäranden eller [mboxTrace](https://experienceleague.adobe.com/docs/target/using/activities/troubleshoot-activities/content-trouble.html?lang=sv-SE#section_256FCF7C14BB435BA2C68049EF0BA99E)-svarsinformation.
 
 Mer information finns i guiden om [att använda felsökaren för målimplementeringar](./target.md).
 
 ## [!UICONTROL Audience Manager] {#section-1d4484f8b46f457f859ba88039a9a585}
 
-Använd fliken [[!UICONTROL Audience Manager]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) om du vill visa information om [händelser](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-event-calls/dcs-event-calls.html) i Adobe Audience Manager. Markera organisationen för att expandera den och visa informationen.
+Använd fliken [[!UICONTROL Audience Manager]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html?lang=sv-SE) om du vill visa information om [händelser](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-event-calls/dcs-event-calls.html?lang=sv-SE) i Adobe Audience Manager. Markera organisationen för att expandera den och visa informationen.
 
 ## [!UICONTROL Adobe Experience Platform Tags] {#section-ee80a9c509f2462c89c1e5bd8d05d7c8}
 
@@ -43,7 +43,7 @@ Använd avsnittet [!UICONTROL Adobe Experience Platform Tags] för att visa tagg
 
 ## [!UICONTROL Experience Cloud ID] {#section-a96c32f8e63a4991abb296f6e8ea01cf}
 
-Använd fliken [!UICONTROL Experience Cloud ID] om du vill visa [Experience Cloud ID-tjänstförfrågningar](https://experienceleague.adobe.com/docs/id-service/using/home.html).
+Använd fliken [!UICONTROL Experience Cloud ID] om du vill visa [Experience Cloud ID-tjänstförfrågningar](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE).
 
 ## [!UICONTROL Dynamic Tag Management]
 

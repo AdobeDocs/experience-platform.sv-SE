@@ -17,8 +17,8 @@ ht-degree: 0%
 >id="platform_datagovernance_framework"
 >title="Datastyrningsskyldighet"
 >abstract="Kom ihåg att det är ditt enda ansvar att följa din organisations policyer för datastyrning och uppfylla dina lagstadgade krav. Experience Platform tillhandahåller datastyrningsverktyg som du kan använda för att hantera dina skyldigheter när det gäller dataanvändning. Använd lämpliga etiketter för dataanvändning innan du frågar eller bearbetar data. Läs dokumentationen om du vill veta mer om verktyg för datastyrning och metodtips."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html" text="Datastyrning - översikt"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html" text="Översikt över etiketter för datastyrning"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE" text="Datastyrning - översikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=sv-SE" text="Översikt över etiketter för datastyrning"
 
 En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dina dataåtgärder i [!DNL Experience Platform] är kompatibla med dataanvändningsprinciper.
 

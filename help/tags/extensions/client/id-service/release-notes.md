@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud Identity Service Tag-tillägget. Versionsinformation om Experience Cloud Identity Service finns i [Identity Service-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html).
+Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud Identity Service Tag-tillägget. Versionsinformation om Experience Cloud Identity Service finns i [Identity Service-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html?lang=sv-SE).
 
 ## 17 okt 2022
 

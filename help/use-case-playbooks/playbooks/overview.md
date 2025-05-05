@@ -52,7 +52,7 @@ I den här videon får du lära dig hur du identifierar, skapar, publicerar och 
 
 ## Tillgänglighet {#availability}
 
-Vissa [!UICONTROL Use Case Playbooks] är anpassade efter Real-Time CDP-användningsfall medan andra är bäst lämpade för kunder som använder Journey Optimizer. Bläddra i katalogen och hitta de spelböcker som passar bäst för produkten och användningsexemplet. Läs mer om Real-Time CDP och Journey Optimizer i produktbeskrivningarna för [Adobe](https://helpx.adobe.com/legal/product-descriptions.html).
+Vissa [!UICONTROL Use Case Playbooks] är anpassade efter Real-Time CDP-användningsfall medan andra är bäst lämpade för kunder som använder Journey Optimizer. Bläddra i katalogen och hitta de spelböcker som passar bäst för produkten och användningsexemplet. Läs mer om Real-Time CDP och Journey Optimizer i produktbeskrivningarna för [Adobe](https://helpx.adobe.com/se/legal/product-descriptions.html).
 
 ## Användargränssnittsguider {#ui-guides}
 

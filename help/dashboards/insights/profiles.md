@@ -481,7 +481,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
   GROUP BY qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name;
 ```
 
-Fullständig information om utseendet och funktionaliteten för den här insikten finns i [widgetguiden för profilantal](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count).
+Fullständig information om utseendet och funktionaliteten för den här insikten finns i [widgetguiden för profilantal](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html?lang=sv-SE#profile-count).
 
 Mer information om utseendet och funktionaliteten för den här insikten finns i dokumentationen för [widgeten för profilantal](../guides/profiles.md#profile-count).
 

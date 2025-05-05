@@ -71,8 +71,8 @@ Tabellen nedan visar de AWS-regioner där Experience Platform är värd. Kontrol
 Adobe strävar efter att erbjuda funktionsparitet över olika molnplattformar för alla program som körs på Experience Platform, till exempel:
 
 * [Plattform för kunddata i realtid](../rtcdp/home.md)
-* [Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home)
-* [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-landing)
+* [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/ajo-home)
+* [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-landing)
 
 Vissa funktioner kan dock skilja sig åt mellan Azure- och AWS-implementeringar. Dessa skillnader beskrivs i avsnittet nedan och i andra delar av produktdokumentationen, där så är tillämpligt.
 

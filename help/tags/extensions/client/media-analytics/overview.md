@@ -174,7 +174,7 @@ MA-tillägget visar de delade modulerna `get-instance` och `media-heartbeat` fö
    ...
    ```
 
-1. Använd Media Heartbeat-instansen och följ [dokumentationen för SDK JS ](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html) och [JS API ](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
+1. Använd Media Heartbeat-instansen och följ [dokumentationen för SDK JS ](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html?lang=sv-SE) och [JS API ](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
 
 >[!NOTE]
 >

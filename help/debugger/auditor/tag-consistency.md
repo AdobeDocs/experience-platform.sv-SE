@@ -21,6 +21,6 @@ Konsekvenskontroll av taggar söker efter inkonsekvenser på alla skannade sidor
 
 | Test | Bredd | Kriterier | Rekommendation |
 | --- | --- | --- | --- |
-| Adobe Analytics - Konsekvent kodversion | 5 | Mer än en version av Analytics-koden hittades. | Ersätt alla instanser av Analytics med den aktuella versionen.<br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/analytics/implementation/home.html) |
+| Adobe Analytics - Konsekvent kodversion | 5 | Mer än en version av Analytics-koden hittades. | Ersätt alla instanser av Analytics med den aktuella versionen.<br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/analytics/implementation/home.html?lang=sv-SE) |
 
 {style="table-layout:auto"}

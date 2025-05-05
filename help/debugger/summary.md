@@ -35,11 +35,11 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Version </p> </td> 
-   <td colname="col2"> <p>Versionen <a href="https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html" format="html" scope="external"> AppMeasurement</a> har definierats för sidan </p> </td> 
+   <td colname="col2"> <p>Versionen <a href="https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=sv-SE" format="html" scope="external"> AppMeasurement</a> har definierats för sidan </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Besökarversion </p> </td> 
-   <td colname="col2"> <p>Versionen för <a href="https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html" format="html" scope="external"> besökar-ID </a>-biblioteket. </p> </td> 
+   <td colname="col2"> <p>Versionen för <a href="https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html?lang=sv-SE" format="html" scope="external"> besökar-ID </a>-biblioteket. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Sidnamn </p> </td> 
@@ -77,7 +77,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
  <tbody> 
   <tr> 
    <td colname="col1"> <p>Namn </p> </td> 
-   <td colname="col2"> <p>Namnet på taggen <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html" format="https" scope="external">-egenskapen </a> </p> </td> 
+   <td colname="col2"> <p>Namnet på taggen <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html?lang=sv-SE" format="https" scope="external">-egenskapen </a> </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Version </p> </td> 
@@ -85,11 +85,11 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Skapad den </p> </td> 
-   <td colname="col2"> <p>Taggens <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> bibliotek </a> - byggdatum </p> </td> 
+   <td colname="col2"> <p>Taggens <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html?lang=sv-SE" format="https" scope="external"> bibliotek </a> - byggdatum </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Miljö </p> </td> 
-   <td colname="col2"> <p><a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" format="https" scope="external">-miljön </a> som används av taggbiblioteket </p> </td> 
+   <td colname="col2"> <p><a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=sv-SE" format="https" scope="external">-miljön </a> som används av taggbiblioteket </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Tillägg </p> </td> 
@@ -139,7 +139,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Version </p> </td> 
-   <td colname="col2"> <p>Versionen för <a href="https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html" format="html" scope="external"> besökar-ID:t </a>-biblioteket </p> </td> 
+   <td colname="col2"> <p>Versionen för <a href="https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html?lang=sv-SE" format="html" scope="external"> besökar-ID:t </a>-biblioteket </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -150,47 +150,47 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
  <tbody> 
   <tr> 
    <td colname="col1"> <p>Klientkod </p> </td> 
-   <td colname="col2"> <p>Klientkoden </a> för ditt mål <a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/deploy-at-js/implementing-target-without-a-tag-manager.html" format="html" scope="external"> </p> </td> 
+   <td colname="col2"> <p>Klientkoden </a> för ditt mål <a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=sv-SE" format="html" scope="external"> </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Version </p> </td> 
-   <td colname="col2"> <p>Aktuell version av <a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/target-atjs-versions.html" format="html" scope="external"> at.js</a> eller mbox.js </p> </td> 
+   <td colname="col2"> <p>Aktuell version av <a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/target-atjs-versions.html?lang=sv-SE" format="html" scope="external"> at.js</a> eller mbox.js </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Namn på global begäran </p> </td> 
-   <td colname="col2"> <p>Den globala mbox </a> (<a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/global-mbox/understanding-global-mbox.html" format="html" scope="external">) refererar till det enda serveranropet som görs högst upp på varje webbsida i Target-implementeringen </p> </td> 
+   <td colname="col2"> <p>Den globala mbox </a> (<a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/global-mbox/understanding-global-mbox.html?lang=sv-SE" format="html" scope="external">) refererar till det enda serveranropet som görs högst upp på varje webbsida i Target-implementeringen </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Sidinläsningshändelse </p> </td> 
-   <td colname="col2"> <p>Typen av <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/adobe/target/overview.html" format="html" scope="external">händelse</a> som utlöses när sidan läses in </p> </td> 
+   <td colname="col2"> <p>Typen av <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/adobe/target/overview.html?lang=sv-SE" format="html" scope="external">händelse</a> som utlöses när sidan läses in </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Namn på begäran </p> </td> 
-   <td colname="col2"> <p>Namnet på en begäran runt en <a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/global-mbox/understanding-global-mbox.html" format="html" scope="external"> plats </a> på sidan. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>Namnet på en begäran runt en <a href="https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/global-mbox/understanding-global-mbox.html?lang=sv-SE" format="html" scope="external"> plats </a> på sidan. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Aktivitetsnamn </p> </td> 
-   <td colname="col2"> <p>Namnet på målkampanjen <a href="https://experienceleague.adobe.com/docs/target/using/activities/activities.html" format="html" scope="external"> eller aktiviteten </a>. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>Namnet på målkampanjen <a href="https://experienceleague.adobe.com/docs/target/using/activities/activities.html?lang=sv-SE" format="html" scope="external"> eller aktiviteten </a>. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Aktivitets-ID </p> </td> 
-   <td colname="col2"> <p>ID för målaktiviteten. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>ID för målaktiviteten. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Experience Name </p> </td> 
-   <td colname="col2"> <p>Namnet på målupplevelsen <a href="https://experienceleague.adobe.com/docs/target/using/experiences/experiences.html" format="html" scope="external"> </a>. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>Namnet på målupplevelsen <a href="https://experienceleague.adobe.com/docs/target/using/experiences/experiences.html?lang=sv-SE" format="html" scope="external"> </a>. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Experience ID </p> </td> 
-   <td colname="col2"> <p>ID för Target-upplevelsen. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>ID för Target-upplevelsen. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Namn på erbjudande</p> </td> 
-   <td colname="col2"> <p>Namnet på målerbjudandet <a href="https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html" format="html" scope="external"> </a>. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>Namnet på målerbjudandet <a href="https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=sv-SE" format="html" scope="external"> </a>. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Erbjudande-ID </p> </td> 
-   <td colname="col2"> <p>ID för Target-erbjudandet. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>ID för Target-erbjudandet. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar de nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE" format="html" scope="external"> svarstoken </a> i målgränssnittet. </p> </td> 
   </tr> 
  </tbody> 
 </table>

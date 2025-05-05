@@ -31,5 +31,5 @@ ht-degree: 28%
    * [Översikt över modellkort](./model-cards/overview.md)
    * AI-modellkort {#ai-model-cards}
       * [Kundens AI-benägenhetsbedömning](./model-cards/ai-model-cards/customer-ai.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
 

@@ -23,7 +23,7 @@ Datainsamling stöds för följande källor på klientsidan:
 
 Datainsamlingen fokuserar på att upptäcka och göra inkapslade datauppsättningar tillgängliga, vilket innefattar följande:
 
-* [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
+* [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html?lang=sv-SE)
 * [Taggar](../tags/home.md)
 * [Dataströmmar](../datastreams/overview.md)
 * [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)

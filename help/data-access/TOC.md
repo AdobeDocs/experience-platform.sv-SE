@@ -19,4 +19,4 @@ ht-degree: 69%
 - [API för dataåtkomst](api.md)
 - Självstudiekurser {#tutorials}
    - [Visa datauppsättningsdata](tutorials/dataset-data.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

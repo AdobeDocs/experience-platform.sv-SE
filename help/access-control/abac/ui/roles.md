@@ -20,8 +20,8 @@ Roller definierar åtkomsten som en administratör, en specialist eller en sluta
 >id="platform_permissions_roles_about_create"
 >title="Skapa ny roll"
 >abstract="Skapa nya roller för att kategorisera användare som interagerar med din Experience Platform-instans bättre. Du kan t.ex. skapa en roll för ett internt marknadsföringsteam och tillämpa etiketten för reglerade hälsodata (RHD) på den rollen, så att ditt interna marknadsföringsteam kan komma åt skyddad hälsoinformation (PHI). Du kan också skapa en roll för en extern byrå och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="Hantera en roll"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="Använd etiketter för en roll"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=sv-SE" text="Hantera en roll"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="Använd etiketter för en roll"
 
 Om du vill skapa en ny roll väljer du fliken **[!UICONTROL Roles]** i sidofältet och väljer **[!UICONTROL Create Role]**.
 

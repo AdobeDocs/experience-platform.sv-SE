@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[[!DNL Customer Attributes]](https://experienceleague.adobe.com/docs/core-services/interface/services/customer-attributes/attributes.html) i Experience Cloud gör att du kan överföra dina hämtade företagsdata från en CRM-databas (customer relationship management). Du kan överföra data till en kundattributdatakälla i Experience Cloud och sedan använda data i Adobe Analytics och Adobe Target.
+[[!DNL Customer Attributes]](https://experienceleague.adobe.com/docs/core-services/interface/services/customer-attributes/attributes.html?lang=sv-SE) i Experience Cloud gör att du kan överföra dina hämtade företagsdata från en CRM-databas (customer relationship management). Du kan överföra data till en kundattributdatakälla i Experience Cloud och sedan använda data i Adobe Analytics och Adobe Target.
 
 Experience Platform har stöd för import av [!DNL Customer Attributes]-profildata till Adobe Experience Platform.
 
@@ -31,7 +31,7 @@ Du kan inte välja ett befintligt namnområde för identiteten när du använder
 
 För att [!DNL Customer Attributes]-data ska kunna kopplas till andra [!DNL Profile]-datauppsättningar måste data och identiteter kunna matchas mot ett Experience Cloud-ID.
 
-Du kan upprätta namnutrymmet `CORE` genom att ange besökarens Experience Cloud-ID med [Web SDK](/help/web-sdk/identity/overview.md), [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/) eller [API:t för Experience Cloud ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html).
+Du kan upprätta namnutrymmet `CORE` genom att ange besökarens Experience Cloud-ID med [Web SDK](/help/web-sdk/identity/overview.md), [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/) eller [API:t för Experience Cloud ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=sv-SE).
 
 Filen [!DNL Customer Attributes] fyller inte i några andra identitetsrelationer. Om en [!DNL Customer Attributes]-källdatauppsättning till exempel innehåller ett **E-post** och ett **Förmåns-ID** måste dessa fält ha en etikett som identitetsfält i schemat för att kunna bearbetas till [!DNL Identity Service].
 

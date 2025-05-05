@@ -14,7 +14,7 @@ ht-degree: 0%
 
 När din organisation har etablerats för Adobe Experience Platform kan administratören ge dig åtkomst till [!DNL Query Service]. Innan du kan använda alla funktioner som erbjuds av [!DNL Query Service] måste du dock först importera data till Adobe Experience Platform.
 
-Den här självstudievideon [för dataöverföring](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) ger en översikt över hur du skapar en datauppsättning, mappar en datauppsättning till ett schema, lägger till data i datauppsättningen och bekräftar dess inmatning. [översiktsdokumentationen ](../../ingestion/home.md) kompletterar detta och ger mer detaljerad information och länkar till andra utbildningsresurser.
+Den här självstudievideon [för dataöverföring](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) ger en översikt över hur du skapar en datauppsättning, mappar en datauppsättning till ett schema, lägger till data i datauppsättningen och bekräftar dess inmatning. [översiktsdokumentationen ](../../ingestion/home.md) kompletterar detta och ger mer detaljerad information och länkar till andra utbildningsresurser.
 
 När du har importerat dina data till Adobe Experience Platform kan du börja arbeta med [!DNL Query Service] med [[!DNL Query Editor]  i Experience Platform användargränssnitt](../ui/user-guide.md) eller [[!DNL Query Service] API](../api/getting-started.md). Fullständig dokumentation om hur du använder dessa verktyg finns i respektive avsnitt.
 

@@ -22,7 +22,7 @@ Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserad
 
 ## Terminologi
 
-Det är viktigt att förstå följande terminologi när du arbetar med Offer Decisioning. Om du vill ha mer information och visa ytterligare villkor går du till [Offer Decisioning-ordlistan](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
+Det är viktigt att förstå följande terminologi när du arbetar med Offer Decisioning. Om du vill ha mer information och visa ytterligare villkor går du till [Offer Decisioning-ordlistan](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html?lang=sv-SE).
 
 * **Beslutsomfattningar:** För Offer Decisioning är beslutsomfattningar de Base64-kodade strängarna för JSON som innehåller de aktivitets- och placerings-ID som du vill att beslutsprocessen för erbjudandet ska använda för att föreslå erbjudanden.
 
@@ -81,7 +81,7 @@ Så här aktiverar du Offer Decisioning:
    * Installera SDK via taggar
 
       1. [Skapa en taggegenskap](/help/tags/ui/administration/companies-and-properties.md)
-      1. [Lägg till inbäddningskoden](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      1. [Lägg till inbäddningskoden](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html?lang=sv-SE)
       1. Installera och konfigurera Experience Platform Web SDK-tillägget med den dataström du skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](/help/tags/ui/managing-resources/extensions/overview.md).
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
@@ -328,4 +328,4 @@ Så här aktiverar du Offer Decisioning:
 
 ## Begränsningar
 
-Vissa begränsningar för erbjudanden stöds för närvarande inte i Edge Network mobila arbetsflöden, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Erbjud berättiganderegler och begränsningsdokumentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
+Vissa begränsningar för erbjudanden stöds för närvarande inte i Edge Network mobila arbetsflöden, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Erbjud berättiganderegler och begränsningsdokumentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html?lang=sv-SE#eligibility).

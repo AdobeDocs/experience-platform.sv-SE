@@ -17,7 +17,7 @@ ht-degree: 0%
 >* På den här sidan visas ett exempel på hur Real-Time CDP och Adobe Journey Optimizer implementeras för att uppnå det beskrivna användningsfallet. Använd sifferdata, kvalificeringskriterier och andra fält som anges på sidan som en vägledning, inte som prediktiva siffror.
 >* Du måste ha licens för Real-Time CDP och Adobe Journey Optimizer för att kunna använda produkten. Läs mer i avsnittet [Krav och planering](#prerequisites-and-planning) längre fram.
 
-Implementera engångskundens värde för livstidsanvändning för att öka varumärkesengagemang och varumärkeslojalitet. Bygg en uppkopplad kundupplevelse i flera kanaler eller på en resa med hjälp av kraften i Experience Platform, som utökas av [Real-Time CDP](/help/rtcdp/home.md) och [Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home).
+Implementera engångskundens värde för livstidsanvändning för att öka varumärkesengagemang och varumärkeslojalitet. Bygg en uppkopplad kundupplevelse i flera kanaler eller på en resa med hjälp av kraften i Experience Platform, som utökas av [Real-Time CDP](/help/rtcdp/home.md) och [Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/ajo-home).
 
 Personerna som ni riktar in er på är de ovanliga besökarna av era egendomar som har gjort några inköp de senaste tre månaderna.
 
@@ -33,22 +33,22 @@ Personerna som ni riktar in er på är de ovanliga besökarna av era egendomar s
 
 Med tanke på att ni internt har definierat ett affärsmål och mål att öka varumärkeslojaliteten. Detta kan leda till att man implementerar ett användningsexempel som kan öka kundengagemanget och lojaliteten.
 
-För att uppnå detta består den teknik som krävs av de två Experience Platform-programmen [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html). Nedan visas olika funktioner och gränssnittselement från de två programmen som du använder när du implementerar användningsexemplet.
+För att uppnå detta består den teknik som krävs av de två Experience Platform-programmen [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=sv-SE). Nedan visas olika funktioner och gränssnittselement från de två programmen som du använder när du implementerar användningsexemplet.
 
 >[!TIP]
 >
 >Kontrollera att du har de [attributbaserade åtkomstkontrollsbehörigheterna](/help/access-control/abac/end-to-end-guide.md) som krävs för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
-* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html): Integrera data mellan datakällor för att driva kampanjen. Dessa data används sedan för att skapa kampanjmålgrupper och ta fram personaliserade dataelement som används i e-postmeddelanden och webbkampanjpaneler (till exempel namn eller kontorelaterad information). Slutligen används Real-Time CDP även för att aktivera målgrupper för betalda mediematerial.
+* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html?lang=sv-SE): Integrera data mellan datakällor för att driva kampanjen. Dessa data används sedan för att skapa kampanjmålgrupper och ta fram personaliserade dataelement som används i e-postmeddelanden och webbkampanjpaneler (till exempel namn eller kontorelaterad information). Slutligen används Real-Time CDP även för att aktivera målgrupper för betalda mediematerial.
    * [Scheman](/help/xdm/home.md)
    * [Profiler](/help/profile/home.md)
    * [Datauppsättningar](/help/catalog/datasets/overview.md)
    * [Målgrupper](/help/segmentation/home.md)
    * [Mål](/help/destinations/home.md)
-* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html): Designa resor, konfigurera utlösare och skapa rätt meddelanden för att adressera besökarna.
-   * [Händelse- eller målutlösare](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html)
-   * [Publiker och händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html)
-   * [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE): Designa resor, konfigurera utlösare och skapa rätt meddelanden för att adressera besökarna.
+   * [Händelse- eller målutlösare](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html?lang=sv-SE)
+   * [Publiker och händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html?lang=sv-SE)
+   * [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE)
 
 ## Real-Time CDP och Journey Optimizer
 
@@ -268,9 +268,9 @@ Mer information om hur du skapar en [datauppsättning](/help/catalog/datasets/ov
 
 >[!IMPORTANT]
 >
->Ett juridiskt krav är att ge kunderna möjlighet att säga upp prenumerationen på information från ett varumärke och att se till att detta val respekteras. Läs mer om gällande lagstiftning i [Översikt över sekretesslagstiftning](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html).
+>Ett juridiskt krav är att ge kunderna möjlighet att säga upp prenumerationen på information från ett varumärke och att se till att detta val respekteras. Läs mer om gällande lagstiftning i [Översikt över sekretesslagstiftning](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html?lang=sv-SE).
 
-Överväg att implementera följande [medgivandeprinciper](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html) och be dina besökare om samtycke innan du kontaktar dem:
+Överväg att implementera följande [medgivandeprinciper](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html?lang=sv-SE) och be dina besökare om samtycke innan du kontaktar dem:
 
 * Om `consents.marketing.email.val = "Y"` kan du skicka e-post
 * Om `consents.marketing.sms.val = "Y"` så kan SMS
@@ -298,7 +298,7 @@ Det finns inga [marknadsföringspolicyer](/help/data-governance/policies/overvie
 
 Det här användningsexemplet kräver att du skapar två målgrupper för att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att särskilja en marknadsföringsbar grupp av personer. Målgrupper kan skapas på flera sätt i Adobe Experience Platform:
 
-* Mer information om hur du skapar en målgrupp finns i [Användargränssnittsguiden för målgruppstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience).
+* Mer information om hur du skapar en målgrupp finns i [Användargränssnittsguiden för målgruppstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=sv-SE#create-audience).
 * Mer information om hur du komponerar [målgrupper](/help/segmentation/home.md) finns i [Användargränssnittsguiden för målgruppsdisposition](/help/segmentation/ui/audience-composition.md).
 * Mer information om hur du skapar målgrupper med hjälp av Experience Platform-härledda segmentdefinitioner finns i [Användargränssnittshandboken för Audience Builder](/help/segmentation/ui/segment-builder.md).
 
@@ -344,7 +344,7 @@ Den här målgruppen har skapats för att inkludera profiler som har spenderat m
 >
 >[!DNL Adobe Journey Optimizer] omfattar inte allt som visas i diagrammen. Alla [betalda mediaannonser](/help/destinations/catalog/social/overview.md) skapas i [!UICONTROL destinations] [arbetsytan](/help/destinations/ui/destinations-workspace.md).
 
-[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html) hjälper dig att leverera sammankopplade, kontextuella och personaliserade upplevelser till dina kunder. Kundresan är hela processen för en kunds interaktioner med varumärket. Varje användningsfallsresa kräver specifik information.
+[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE) hjälper dig att leverera sammankopplade, kontextuella och personaliserade upplevelser till dina kunder. Kundresan är hela processen för en kunds interaktioner med varumärket. Varje användningsfallsresa kräver specifik information.
 
 För att uppnå detta måste du skapa två separata resor:
 
@@ -367,15 +367,15 @@ Livslängden riktar sig till kunder med högt värde och låg frekvens som inte 
 
 Den resa som visas ovan följer följande logik.
 
-1. Läser målgrupp: Använd en [läsmålgruppsaktivitet](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=en) för den första målgruppen som skapas i målgruppsavsnittet ovan.
+1. Läser målgrupp: Använd en [läsmålgruppsaktivitet](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=sv-SE) för den första målgruppen som skapas i målgruppsavsnittet ovan.
 
-2. Villkor - föredragen kanal: Använd en [villkorsaktivitet](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/condition-activity.html) för att avgöra hur du ska nå ut till kunder, oavsett om det är via e-post, SMS eller push-meddelanden. Använd tre åtgärdsaktiviteter för att skapa de tre grenarna.
+2. Villkor - föredragen kanal: Använd en [villkorsaktivitet](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/condition-activity.html?lang=sv-SE) för att avgöra hur du ska nå ut till kunder, oavsett om det är via e-post, SMS eller push-meddelanden. Använd tre åtgärdsaktiviteter för att skapa de tre grenarna.
 
-3. Vänta: Använd en [vänteaktivitet](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html) för att vänta tills du lyssnar efter köp.
+3. Vänta: Använd en [vänteaktivitet](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/read-audience.html?lang=sv-SE) för att vänta tills du lyssnar efter köp.
 
 4. Villkor - Inköpt prenumeration under de senaste 7 dagarna?: Använd en villkorsaktivitet för att lyssna efter produktköp under de senaste sju dagarna.
 
-5. JourneyStepEventTracker - Prenumerationen har inte köpts: Använd en [anpassad åtgärd](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions.html) för besökare som ännu inte har köpt din prenumeration, trots att du fått ditt meddelande. Som en del av det anpassade villkoret i slutet av resan skapar du en `journey.feedback`-händelse och lägger till den i en datauppsättning baserat på [!UICONTROL Journey Step Event]-schemat. Du kommer att använda den här händelsen för att segmentera den målgrupp som inte har köpt prenumerationen och som du kan rikta in dig på via betalda mediereklam.
+5. JourneyStepEventTracker - Prenumerationen har inte köpts: Använd en [anpassad åtgärd](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions.html?lang=sv-SE) för besökare som ännu inte har köpt din prenumeration, trots att du fått ditt meddelande. Som en del av det anpassade villkoret i slutet av resan skapar du en `journey.feedback`-händelse och lägger till den i en datauppsättning baserat på [!UICONTROL Journey Step Event]-schemat. Du kommer att använda den här händelsen för att segmentera den målgrupp som inte har köpt prenumerationen och som du kan rikta in dig på via betalda mediereklam.
 
 +++
 
@@ -436,7 +436,7 @@ Använd de föreslagna händelserna, fälten och åtgärderna nedan i bekräftel
 
 >[!ENDTABS]
 
-Mer information om hur du skapar resor i [!DNL Adobe Journey Optimizer] finns i guiden [kom igång med resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html).
+Mer information om hur du skapar resor i [!DNL Adobe Journey Optimizer] finns i guiden [kom igång med resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE).
 
 ### Ställ in ett mål för att visa annonser för betalda media {#paid-media-ads}
 

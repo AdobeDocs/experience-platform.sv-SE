@@ -30,7 +30,7 @@ Innan du kan skapa en källanslutning för att överföra Campaign v8 till Exper
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [dokumentationen för Campaign v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html) om du vill ha information om hur du hämtar och installerar klientkonsolen.
+>Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [dokumentationen för Campaign v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html?lang=sv-SE) om du vill ha information om hur du hämtar och installerar klientkonsolen.
 
 Logga in på Campaign v8-instansen via klientkonsolen. Under fliken [!DNL Explorer] väljer du [!DNL Administration] och sedan [!DNL Configuration]. Välj sedan [!DNL Data schemas] och använd sedan filtret `broadLog` för namn eller etikett. I listan som visas väljer du källschemat för mottagarleveransloggarna med namnet `broadLogRcp`.
 

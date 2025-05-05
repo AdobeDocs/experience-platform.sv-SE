@@ -3,7 +3,7 @@ title: Hantera prediktiv lead- och kontobedömning i Real-Time CDP B2B
 type: Documentation
 description: Det här dokumentet innehåller information om hur du hanterar funktionen för prediktiv lead och kontobedömning i Experience Platform CDP B2B.
 feature: Profiles, B2B
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: fe7eb94e-5cf1-46bf-80e5-affe5735c998
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt

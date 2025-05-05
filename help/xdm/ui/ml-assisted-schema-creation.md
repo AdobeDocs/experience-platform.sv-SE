@@ -24,7 +24,7 @@ Med generering av ML-schema kan du snabbt integrera nya datakällor och minska a
 
 Den här självstudiekursen kräver en fungerande förståelse av kraven för att skapa scheman. Innan du fortsätter med den här guiden bör du läsa [gränssnittsguiden för att skapa och redigera scheman](./resources/schemas.md).
 
-I den här guiden beskrivs hur du skapar scheman med hjälp av HTML-algoritmer (maskininlärning) för att generera ett schema från exempeldata. Mer information om hur du skapar scheman finns i den [manuella arbetsflödesguiden](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups) för att skapa scheman, eller i dokumentet om [fältbaserade arbetsflöden i Schemaredigeraren](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/field-based-workflows).
+I den här guiden beskrivs hur du skapar scheman med hjälp av HTML-algoritmer (maskininlärning) för att generera ett schema från exempeldata. Mer information om hur du skapar scheman finns i den [manuella arbetsflödesguiden](https://experienceleague.adobe.com/sv/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups) för att skapa scheman, eller i dokumentet om [fältbaserade arbetsflöden i Schemaredigeraren](https://experienceleague.adobe.com/sv/docs/experience-platform/xdm/ui/field-based-workflows).
 
 >[!NOTE]
 >
@@ -125,4 +125,4 @@ Schemaredigeraren visas med det schema du nyss skapade på arbetsytan. Välj **[
 
 När du har skapat schemat kan du använda Schemaredigeraren för att göra ytterligare ändringar, om det behövs. Ditt nya schema är nu klart att integreras med dina datakällor och användas för dataanalys.
 
-Se [Redigera en befintlig schemahandbok](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#edit) för mer information om hur du använder schemaredigeraren.
+Se [Redigera en befintlig schemahandbok](https://experienceleague.adobe.com/sv/docs/experience-platform/xdm/ui/resources/schemas#edit) för mer information om hur du använder schemaredigeraren.

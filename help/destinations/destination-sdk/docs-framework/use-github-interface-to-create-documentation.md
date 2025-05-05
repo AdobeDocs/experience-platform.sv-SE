@@ -16,14 +16,14 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 >[!TIP]
 >
 >Se även supportdokumentationen i Adobe Contributor Guide:
->* [Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)
->* [Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)
->* [Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html).
+>* [Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=sv-SE)
+>* [Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE)
+>* [Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=sv-SE).
 
 ## Konfigurera din GitHub-redigeringsmiljö {#set-up-environment}
 
 1. Navigera till `https://github.com/AdobeDocs/experience-platform.en` i webbläsaren.
-2. Om du vill [förgrena](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) databasen klickar du på **Förgrening** enligt nedan. Detta skapar en kopia av databasen Experience Platform i ditt eget GitHub-konto.
+2. Om du vill [förgrena](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE#fork-the-repository) databasen klickar du på **Förgrening** enligt nedan. Detta skapar en kopia av databasen Experience Platform i ditt eget GitHub-konto.
 
    ![Fork Adobe-dokumentationsdatabas](../assets/docs-framework/ssd-fork-repository.gif)
 
@@ -46,7 +46,7 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
    >
    >Du kan när som helst stänga webbläsarfönstret och öppna det igen senare. Ditt arbete sparas automatiskt och väntar på dig när du öppnar webbläsaren igen.
 3. Kopiera innehållet från markeringsredigeraren till den nya filen i GitHub.
-4. För skärmbilder eller bilder som du tänker använda använder du GitHub-gränssnittet för att överföra filerna till `experience-platform.en/help/destinations/assets/catalog/[...]`, där `[...]` är den önskade kategorin för målet. Om du till exempel lägger till ett anpassningsmål i Experience Platform väljer du kategorin `personalization`. Du måste länka till bilderna från sidan som du redigerar. Se [instruktioner om hur du länkar till bilder](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html#link-to-images).
+4. För skärmbilder eller bilder som du tänker använda använder du GitHub-gränssnittet för att överföra filerna till `experience-platform.en/help/destinations/assets/catalog/[...]`, där `[...]` är den önskade kategorin för målet. Om du till exempel lägger till ett anpassningsmål i Experience Platform väljer du kategorin `personalization`. Du måste länka till bilderna från sidan som du redigerar. Se [instruktioner om hur du länkar till bilder](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=sv-SE#link-to-images).
 
    ![Överför bild till GitHub](../assets/docs-framework/upload-image.gif)
 
@@ -82,4 +82,4 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 
 >[!TIP]
 >
->Om du vill lägga till bilder och länkar i din dokumentation och om du har frågor om Markdown kan du läsa [Använda Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html) i Adobe SAMARE-handbok.
+>Om du vill lägga till bilder och länkar i din dokumentation och om du har frågor om Markdown kan du läsa [Använda Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=sv-SE) i Adobe SAMARE-handbok.

@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en källanslutning för kundattribut i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en källanslutning i användargränssnittet för att hämta kundattributprofildata till Adobe Experience Platform. Mer information om kundattribut finns i [Översikt över kundattribut](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/attributes.html).
+I den här självstudiekursen beskrivs hur du skapar en källanslutning i användargränssnittet för att hämta kundattributprofildata till Adobe Experience Platform. Mer information om kundattribut finns i [Översikt över kundattribut](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/attributes.html?lang=sv-SE).
 
 >[!IMPORTANT]
 >

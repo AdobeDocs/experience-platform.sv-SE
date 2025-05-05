@@ -71,4 +71,4 @@ Följande dataelement finns i tillägget Common Analytics-plugin-program, som an
 
 >[!NOTE]
 >
->Mer information om ovanstående plugin-program finns i [Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).
+>Mer information om ovanstående plugin-program finns i [Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html?lang=sv-SE).

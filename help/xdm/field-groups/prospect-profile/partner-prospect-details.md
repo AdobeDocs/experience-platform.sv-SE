@@ -13,7 +13,7 @@ ht-degree: 0%
 
 [!UICONTROL Partner Prospect Details (Sample)] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). [!UICONTROL Partner Prospect Details (Sample)] innehåller ett exempelramverk för olika detaljer relaterade till en potentiell kunders profil. Detta ramverk effektiviserar processen att organisera och hantera olika typer av information som rör potentiella kunder.
 
-Den här fältgruppen utökar klassen [Individual Prospect Profile](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/prospect.html) i kontexten för en partner.
+Den här fältgruppen utökar klassen [Individual Prospect Profile](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/prospect.html?lang=sv-SE) i kontexten för en partner.
 
 ![Ett diagram över fältgruppen [!UICONTROL Partner Prospect Details (Sample)].](../../images/field-groups/partner/partner-prospect-details-sample.png)
 

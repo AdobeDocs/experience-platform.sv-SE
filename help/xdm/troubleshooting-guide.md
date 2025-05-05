@@ -92,7 +92,7 @@ Det här avsnittet innehåller svar på vanliga frågor om hur du definierar och
 
 ### Hur definierar jag identiteter för mitt schema?
 
-I [!DNL Experience Platform] används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID och andra unika ID-fält.
+I [!DNL Experience Platform] används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID och andra unika ID-fält.
 
 Fält kan markeras som identiteter med antingen API:t eller användargränssnittet.
 
@@ -140,7 +140,7 @@ Schemat aktiveras inte automatiskt för kundprofil i realtid. Du måste uttryckl
 
 ### Kan jag ta bort profilaktiverade scheman?
 
-Du kan inte ta bort ett schema efter att det har aktiverats för kundprofil i realtid. När ett schema har aktiverats för profilen kan det inte inaktiveras eller tas bort och fält kan inte tas bort från schemat. Därför är det viktigt att planera och verifiera schemakonfigurationen noggrant innan du aktiverar den för profil. Du kan dock ta bort en profilaktiverad datauppsättning. Information finns här: <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
+Du kan inte ta bort ett schema efter att det har aktiverats för kundprofil i realtid. När ett schema har aktiverats för profilen kan det inte inaktiveras eller tas bort och fält kan inte tas bort från schemat. Därför är det viktigt att planera och verifiera schemakonfigurationen noggrant innan du aktiverar den för profil. Du kan dock ta bort en profilaktiverad datauppsättning. Information finns här: <https://experienceleague.adobe.com/sv/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
 
 Om du inte längre vill att ett profilaktiverat schema ska användas rekommenderar vi att du byter namn på schemat så att det innehåller **Använd inte** eller **Inaktiv**.
 

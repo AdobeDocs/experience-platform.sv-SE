@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Profilslutpunkt
 
-I Reactor API representerar en profil en Adobe Experience Platform-användare. Reaktors-API:t underhåller inte sin egen databas med användare och behörigheter, utan förlitar sig i stället på Adobe-ID:n som hanteras av [Adobe:s identitetshanteringssystem (IMS)](https://helpx.adobe.com/enterprise/using/identity.html).
+I Reactor API representerar en profil en Adobe Experience Platform-användare. Reaktors-API:t underhåller inte sin egen databas med användare och behörigheter, utan förlitar sig i stället på Adobe-ID:n som hanteras av [Adobe:s identitetshanteringssystem (IMS)](https://helpx.adobe.com/se/enterprise/using/identity.html).
 
 En profil innehåller all information om den inloggade användaren, inklusive alla organisationer som användaren tillhör, produktprofiler som han/hon tillhör i varje organisation samt rättigheter som han/hon har från varje produktprofil.
 

@@ -69,7 +69,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 >id="platform_destinations_custom_personalization_datastream"
 >title="Om dataStream-ID"
 >abstract="Det här alternativet avgör i vilket datainsamlingsdatastam som målgrupperna ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html" text="Lär dig konfigurera ett datastream"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=sv-SE" text="Lär dig konfigurera ett datastream"
 
 >[!IMPORTANT]
 > 

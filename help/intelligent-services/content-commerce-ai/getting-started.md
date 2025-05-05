@@ -67,6 +67,6 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 När du har alla dina autentiseringsuppgifter kan du konfigurera en anpassad arbetare för [!DNL Content tagging]. Följande dokument hjälper till att förstå Extensibility Framework och miljöinställningar.
 
-Om du vill veta mer om Extensibility Framework börjar du med att läsa dokumentet [introduction to extensibility](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html) . I det här dokumentet beskrivs förutsättningarna och etableringskraven.
+Om du vill veta mer om Extensibility Framework börjar du med att läsa dokumentet [introduction to extensibility](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html?lang=sv-SE) . I det här dokumentet beskrivs förutsättningarna och etableringskraven.
 
-Om du vill veta mer om hur du konfigurerar en miljö för [!DNL Content tagging] börjar du med att läsa guiden för [konfigurera en utvecklarmiljö](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Asset compute.
+Om du vill veta mer om hur du konfigurerar en miljö för [!DNL Content tagging] börjar du med att läsa guiden för [konfigurera en utvecklarmiljö](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html?lang=sv-SE). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Asset compute.

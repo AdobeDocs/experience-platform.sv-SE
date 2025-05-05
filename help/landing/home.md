@@ -30,7 +30,7 @@ Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet 
 
 [!DNL Experience Platform]-dokumentation tillhandahålls i flera format för en rad olika funktioner och program. Mer information om vilka typer av dokumentation som är tillgängliga finns i [Experience Platform dokumentationsöversikt](documentation/overview.md).
 
-Om du vill lära dig mer om en viss [!DNL Experience Platform]-tjänst går du tillbaka till [dokumentationslandningssidan](https://experienceleague.adobe.com/docs/experience-platform.html) och väljer lämplig guide.
+Om du vill lära dig mer om en viss [!DNL Experience Platform]-tjänst går du tillbaka till [dokumentationslandningssidan](https://experienceleague.adobe.com/docs/experience-platform.html?lang=sv-SE) och väljer lämplig guide.
 
 ### Dokumentation för program som bygger på [!DNL Experience Platform]
 
@@ -38,10 +38,10 @@ Adobe har byggt flera program på Experience Platform. Dokumentation till dessa 
 
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](../rtcdp/overview.md)
 * [[!DNL Real-Time Customer Data Platform (Real-Time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
-* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html)
-* [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
-* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
-* [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler/using/overview.html?lang=en)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=sv-SE)
+* [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html?lang=sv-SE)
+* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html?lang=sv-SE)
+* [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler/using/overview.html?lang=sv-SE)
 
 I videon nedan beskrivs användningsexemplen för varje program som är byggt på Experience Platform.
 
@@ -64,7 +64,7 @@ Gå till landningssidan för [Experience Platform-självstudiekurser](https://ww
 * [**Ordlista**](glossary.md)\
   Se Adobe Experience Platform terminologi.
 
-* [**Versionsinformation**](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)\
+* [**Versionsinformation**](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)\
   Hitta information om den senaste [!DNL Experience Platform]-versionen och granska tidigare versioner.
 
 * [**Felsökningsguide**](troubleshooting.md)\

@@ -26,7 +26,7 @@ I Adobe Analytics kan man samla in data på produktnivå med hjälp av särskilt
 
 Dessa variabler kallas för säljvariabler för produktsyntax. Detta gör det möjligt att samla in information, t.ex. ett&quot;rabattbelopp&quot; per produkt eller information om produktens&quot;plats på sidan&quot; i kundens sökresultat.
 
-Mer information om hur du använder produktsyntaxen finns i Adobe Analytics-dokumentationen om [implementering av eVars med produktsyntax](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html#implement-using-product-syntax).
+Mer information om hur du använder produktsyntaxen finns i Adobe Analytics-dokumentationen om [implementering av eVars med produktsyntax](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=sv-SE#implement-using-product-syntax).
 
 Avsnitten nedan beskriver de XDM-fält som behövs för att få åtkomst till försäljningsvariablerna i din [!DNL Analytics]-datauppsättning:
 
@@ -127,7 +127,7 @@ Vid rapporteringen kan order, intäkter, produktvisningar och kundvagnstillägg 
 | intern sökning:sommarskjorta | 19,99 | 1 | 1 | 1 |
 | intern sökning:vintertid | 12,99 | 1 | 1 | 1 |
 
-Mer information om hur du använder syntaxen för konverteringsvariabler finns i Adobe Analytics-dokumentationen om [implementering av eVars med syntax för konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html#implement-using-conversion-variable-syntax).
+Mer information om hur du använder syntaxen för konverteringsvariabler finns i Adobe Analytics-dokumentationen om [implementering av eVars med syntax för konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=sv-SE#implement-using-conversion-variable-syntax).
 
 Nedan visas XDM-fälten som skapar konverteringsvariabelsyntaxen i din [!DNL Analytics]-datauppsättning:
 

@@ -158,4 +158,4 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 ## Ytterligare resurser {#additional-resources}
 
-* [RainFocus Streaming Source Connector](https://experienceleague.adobe.com/en/docs/experience-platform/sources/connectors/analytics/rainfocus)
+* [RainFocus Streaming Source Connector](https://experienceleague.adobe.com/sv/docs/experience-platform/sources/connectors/analytics/rainfocus)

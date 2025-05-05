@@ -46,7 +46,7 @@ För att implementera det här användningsexemplet måste du använda flera omr
 - [Datauppsättningar](../../catalog/datasets/overview.md)
 - [Scheman](../../xdm//home.md)
 - [Målgrupper](../../segmentation/home.md)
-- [Resor från Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/journey)
+- [Resor från Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/orchestrate-journeys/journey)
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 
@@ -89,7 +89,7 @@ Nu när ditt paket med den gyllene sandlådan är klart har du etablerat ett sta
 
 >[!NOTE]
 >
-> Stegen ovan följer processen i Experience Platform användargränssnitt. Du kan följa samma steg med API:t via olika slutpunkter. Mer information om hur du gör varje begäran via API finns i `sandboxes` [slutpunktshandboken](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/api/sandboxes#create) och `packages` [slutpunktshandboken](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/sandbox-tooling-api/packages) .
+> Stegen ovan följer processen i Experience Platform användargränssnitt. Du kan följa samma steg med API:t via olika slutpunkter. Mer information om hur du gör varje begäran via API finns i `sandboxes` [slutpunktshandboken](https://experienceleague.adobe.com/sv/docs/experience-platform/sandbox/api/sandboxes#create) och `packages` [slutpunktshandboken](https://experienceleague.adobe.com/sv/docs/experience-platform/sandbox/sandbox-tooling-api/packages) .
 
 ## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
 

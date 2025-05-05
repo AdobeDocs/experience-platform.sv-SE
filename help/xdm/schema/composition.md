@@ -59,7 +59,7 @@ Scheman används för att importera data till Experience Platform. Dessa data ka
 
 Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. Vid datainförsel infogas data i dessa fält i [!UICONTROL Identity Graph] för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra Experience Platform-tjänster för att ge en sammanslagen vy över varje enskild kund.
 
-Fält som oftast markeras som [!UICONTROL Identity] är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de kan vara bra fält av typen [!UICONTROL Identity].
+Fält som oftast markeras som [!UICONTROL Identity] är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de kan vara bra fält av typen [!UICONTROL Identity].
 
 Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa den mest robusta profilen som är möjlig. Mer information om hur identitetsinformation kan hjälpa dig att leverera digitala upplevelser till dina kunder finns i [Översikt över identitetstjänsten](../../identity-service/home.md). I dokumentet om god praxis för datamodellering finns [tips om hur du använder identiteter när du skapar ett schema](./best-practices.md#data-validation-fields).
 

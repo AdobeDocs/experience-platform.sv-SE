@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## [!DNL get-tracker]
 
-Innan Adobe Analytics skickar några beacons måste spårningsobjektet initieras. Initieringsprocessen börjar med att läsa in [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html), följt av att skapa ett spårarobjekt.
+Innan Adobe Analytics skickar några beacons måste spårningsobjektet initieras. Initieringsprocessen börjar med att läsa in [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=sv-SE), följt av att skapa ett spårarobjekt.
 
 Du kan komma åt spårningsobjektet efter att det har initierats fullständigt med den delade modulen `get-tracker` enligt följande:
 

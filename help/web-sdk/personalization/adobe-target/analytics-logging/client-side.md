@@ -16,13 +16,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med Adobe Experience Platform Web SDK kan du samla in [Adobe Analytics for Target-data (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) på klientsidan av webbprogrammet.
+Med Adobe Experience Platform Web SDK kan du samla in [Adobe Analytics for Target-data (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) på klientsidan av webbprogrammet.
 
-Loggning på klientsidan innebär att relevanta [!DNL Target]-data returneras på klientsidan, vilket gör att du kan samla in dem och dela dem med Analytics. Det här alternativet bör vara aktiverat om du tänker skicka data manuellt till Analytics med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html).
+Loggning på klientsidan innebär att relevanta [!DNL Target]-data returneras på klientsidan, vilket gör att du kan samla in dem och dela dem med Analytics. Det här alternativet bör vara aktiverat om du tänker skicka data manuellt till Analytics med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html?lang=sv-SE).
 
 >[!NOTE]
 >
->En metod för att utföra detta med [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) håller på att utvecklas och kommer att vara tillgänglig inom den närmaste framtiden.
+>En metod för att utföra detta med [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=sv-SE) håller på att utvecklas och kommer att vara tillgänglig inom den närmaste framtiden.
 
 I det här dokumentet beskrivs stegen för hur du konfigurerar A4T-loggning på klientsidan för Web SDK och några exempel på implementering för vanliga användningsområden.
 
@@ -227,7 +227,7 @@ I följande underavsnitt visas hur du implementerar loggning på klientsidan fö
 
 ### Formulärbaserade Experience Composer-aktiviteter {#form-based-composer}
 
-Du kan använda Web SDK för att styra utförandet av förslag från [Adobe Target formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)-aktiviteter.
+Du kan använda Web SDK för att styra utförandet av förslag från [Adobe Target formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE)-aktiviteter.
 
 När du begär förslag för ett specifikt beslutsomfång innehåller det returnerade förslaget en lämplig analystoken. Det bästa sättet är att kedja Experience Platform Web SDK `sendEvent`-kommandot och iterera genom de returnerade förslagen för att köra dem samtidigt som analystoken samlas in.
 
@@ -467,7 +467,7 @@ alloy("sendEvent", {
 
 ### Visual Experience Composer-aktiviteter {#visual-experience-composer-acitivties}
 
-Med Web SDK kan du hantera erbjudanden som har skapats med [Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
+Med Web SDK kan du hantera erbjudanden som har skapats med [Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE).
 
 >[!NOTE]
 >
