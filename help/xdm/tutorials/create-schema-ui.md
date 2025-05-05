@@ -409,7 +409,7 @@ Schemat &quot;Förmånsmedlemmar&quot; är också tillgängligt för att visas o
 
 I följande video visas hur du skapar ett enkelt schema i användargränssnittet för [!DNL Experience Platform].
 
->[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430224?quality=12&learn=on&captions=swe)
 
 Följande video är tänkt att förstärka din förståelse för att arbeta med fältgrupper och klasser.
 

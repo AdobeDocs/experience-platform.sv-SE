@@ -59,5 +59,5 @@ Kontakta ditt Adobe-kontoteam om du vill få tillgång till AI Assistant för ku
 
 Titta på följande video om du vill veta mer om hur du kan använda AI Assistant för kundsupport för att felsöka utan att lämna dina arbetsflöden.
 
->[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3443187?learn=on&captions=swe)
 

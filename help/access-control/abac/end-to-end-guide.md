@@ -247,4 +247,4 @@ Mer information om attributbaserad åtkomstkontroll finns i [Översikt över att
 
 Följande video är avsedd att ge stöd för din förståelse av attributbaserad åtkomstkontroll och visar hur du konfigurerar roller, resurser och principer.
 
->[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3451833?learn=on&captions=swe)

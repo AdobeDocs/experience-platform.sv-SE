@@ -23,4 +23,4 @@ I den här videon får du en snabb genomgång av Adobe Experience Platform anvä
 >Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [Adobe Experience Platform användargränssnittshandbok](../ui-guide.md).
 
 
->[!VIDEO](https://video.tv.adobe.com/v/32792?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430436?quality=12&learn=on&captions=swe)

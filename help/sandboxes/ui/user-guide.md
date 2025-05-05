@@ -53,7 +53,7 @@ När en sandlåda är markerad uppdateras skärmen och uppdateras till den sandl
 
 I följande video får du en snabb översikt över hur du använder sandlådor i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430296/?quality=12&learn=on&captions=swe)
 
 Om du vill skapa en ny sandlåda väljer du **[!UICONTROL Create sandbox]** i skärmens övre högra hörn.
 

@@ -23,4 +23,4 @@ Den här videon innehåller en översikt över fyra viktiga användningsfall fö
 * Leverans och upplevelse i flera kanaler
 * Utveckling av kundupplevelseapplikationer
 
->[!VIDEO](https://video.tv.adobe.com/v/32806?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430462?quality=12&learn=on&captions=swe)

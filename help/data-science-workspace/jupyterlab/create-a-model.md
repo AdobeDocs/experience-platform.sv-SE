@@ -69,7 +69,7 @@ Den återstående delen av den här självstudiekursen omfattar följande filer 
 
 I följande videofilm förklaras den bärbara datorn med Luma-benägenhetsmodellen:
 
->[!VIDEO](https://video.tv.adobe.com/v/333570)
+>[!VIDEO](https://video.tv.adobe.com/v/3452496?captions=swe)
 
 ### Kravfil {#requirements-file}
 

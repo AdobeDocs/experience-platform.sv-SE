@@ -182,4 +182,4 @@ Om du vill identifiera tillgängliga förkonfigurerade mått och visualiseringar
 
 Titta på följande video för att få en bättre förståelse för kontrollpaneler i Experience Platform:
 
->[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3432450?quality=12&learn=on&captions=swe)

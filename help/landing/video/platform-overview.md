@@ -20,4 +20,4 @@ I den här videon får du en snabb introduktion till Experience Platform och en 
 
 Börja med att läsa översikten [Experience Platform](../home.md) om du vill veta mer.
 
->[!VIDEO](https://video.tv.adobe.com/v/32797?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3428500?quality=12&learn=on&captions=swe)

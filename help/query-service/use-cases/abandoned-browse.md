@@ -59,7 +59,7 @@ order by price desc)D;
 
 Videopresentationen nedan ger ett helhetsbaserat exempel på hur dina Experience Platform-data kan användas i verkligheten med fokus på [!DNL Query Service]- och Adobe-analyser-integreringar.
 
->[!VIDEO](https://video.tv.adobe.com/v/342533?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3454942?quality=12&learn=on&captions=swe)
 
 ## Fördelar med [!DNL Query Service] {#benefits}
 

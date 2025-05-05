@@ -39,11 +39,11 @@ Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-an
 >
 >Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i konfigurationsstegen som beskrivs i avsnitten nedan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3449797/?quality=12&learn=on&captions=swe)
 
 Titta på videon nedan om du vill få en kort översikt över hur du delar målgrupper och profilattribut med Adobe Target och anpassade destinationer för personalisering.
 
->[!VIDEO](https://video.tv.adobe.com/v/3419036/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3447359/?quality=12&learn=on&captions=swe)
 
 ## Användningsfall {#use-cases}
 

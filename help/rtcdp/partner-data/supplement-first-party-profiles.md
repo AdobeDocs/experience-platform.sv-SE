@@ -47,7 +47,7 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 
 I videosjälvstudiekursen nedan får du en genomgång av hur du kan komplettera förstahandsmålgrupper med attribut från partners:
 
->[!VIDEO](https://video.tv.adobe.com/v/3423075/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3452455/?learn=on&captions=swe)
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 

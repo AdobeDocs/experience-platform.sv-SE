@@ -93,7 +93,7 @@ I videon nedan visas också stegen för att konfigurera ett Marketo-mål och akt
 >* De två begränsningar som anges i videon gäller inte längre. Du kan nu mappa många andra profilattributfält utöver den information om målgruppsmedlemskap som stöddes när videon spelades in. Du kan också exportera målgruppsmedlemmar till Marketo som ännu inte finns i dina statiska Marketo-listor, och dessa läggs till i listorna.
 >* I **[!UICONTROL Schedule audience step]** av aktiveringsarbetsflödet behövde du i Marketo V1 lägga till en **[!UICONTROL Mapping ID]** manuellt för att kunna exportera data till Marketo. Det här manuella steget behövs inte längre i Marketo V2.
 
->[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/3440162?quality=12&captions=swe)
 
 ## Bildskärmsmål {#monitor-destination}
 

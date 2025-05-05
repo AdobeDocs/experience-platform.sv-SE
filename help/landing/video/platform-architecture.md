@@ -18,4 +18,4 @@ ht-degree: 0%
 
 Den här videon går igenom ett arkitekturdiagram på hög nivå som förklarar de viktigaste komponenterna i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/32456?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3432346?quality=12&learn=on&captions=swe)

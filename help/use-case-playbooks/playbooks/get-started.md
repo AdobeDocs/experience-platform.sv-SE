@@ -26,7 +26,7 @@ Om du vill få tillgång till ett omfattande galleri med fallspelningsböcker i 
 
 I den här videon får du lära dig mer om hur du skapar sandlådan, konfigurerar behörigheter och konfigurerar kanalytor för e-post, push-meddelanden och SMS-meddelanden i Journey Optimizer.
 
->[!VIDEO](https://video.tv.adobe.com/v/3426987?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3449830?learn=on&captions=swe)
 
 ## Skapa en utvecklingssandlåda {#create-development-sandbox}
 

@@ -42,7 +42,7 @@ Välj fliken **[!UICONTROL Roles]** för att visa de roller som användaren är 
 
 Följande video är avsedd att ge stöd för din förståelse av utvecklares och API:s autentiseringsuppgifter.
 
->[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3446402/?learn=on&captions=swe)
 
 ## Nästa steg
 

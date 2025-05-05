@@ -18,4 +18,4 @@ ht-degree: 0%
 
 Den här videon ger en översikt över hur Adobe Experience Platform kan integreras med Adobe Experience Cloud program och funktioner som Adobe Analytics, Adobe Target, Adobe Campaign, Adobe Experience Manager, kundattribut, målgruppsbibliotek och taggar.
 
->[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430394?quality=12&learn=on&captions=swe)

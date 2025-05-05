@@ -24,4 +24,4 @@ I den här videon visas huvudfunktionerna i Experience Platform:
 1. Förbättra leveransen och personaliseringen av upplevelser i realtid
 1. Få förtroende för styrning, säkerhet och sekretesskontroll
 
->[!VIDEO](https://video.tv.adobe.com/v/32502?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3428512?quality=12&learn=on&captions=swe)

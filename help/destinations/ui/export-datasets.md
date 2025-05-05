@@ -78,7 +78,7 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
 
 I videon nedan finns en komplett förklaring av arbetsflödet som beskrivs på den här sidan, fördelar med att använda exportdatauppsättningsfunktionen samt några förslag på användningsområden.
 
->[!VIDEO](https://video.tv.adobe.com/v/3424392/)
+>[!VIDEO](https://video.tv.adobe.com/v/3448822?captions=swe)
 
 ## Mål som stöds {#supported-destinations}
 

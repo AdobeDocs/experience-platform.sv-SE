@@ -90,7 +90,7 @@ När det gäller frågor om driftsinsikter kanske svaren inte speglar det aktuel
 
 I följande video finns mer information om AI Assistant-driftsinsikter:
 
->[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3444036?learn=on&enablevpops&captions=swe)
 
 ### Funktionsomfång {#feature-scope}
 

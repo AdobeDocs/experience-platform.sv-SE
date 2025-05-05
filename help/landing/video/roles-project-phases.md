@@ -18,4 +18,4 @@ ht-degree: 0%
 
 Den här videon ger en översikt över roller, faser och viktiga resultat i ett lyckat Adobe Experience Platform-projekt.
 
->[!VIDEO](https://video.tv.adobe.com/v/32807?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430448?quality=12&learn=on&captions=swe)

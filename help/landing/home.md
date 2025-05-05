@@ -45,7 +45,7 @@ Adobe har byggt flera program på Experience Platform. Dokumentation till dessa 
 
 I videon nedan beskrivs användningsexemplen för varje program som är byggt på Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/32554/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3428523/?learn=on&captions=swe)
 
 ## Självstudiekurser om [!DNL Experience Platform]
 

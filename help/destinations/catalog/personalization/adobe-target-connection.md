@@ -33,7 +33,7 @@ Adobe Target är en personaliseringsanslutning i Adobe Experience Platform desti
 
 Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-anslutningen i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3449797/?quality=12&learn=on&captions=swe)
 
 ## Användningsexempel som stöds baserat på implementeringstyp {#supported-use-cases}
 

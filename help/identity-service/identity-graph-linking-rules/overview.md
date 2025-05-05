@@ -28,7 +28,7 @@ Med Adobe Experience Platform Identity Service och Real-Time Customer Profile ä
 
 I följande video finns mer information om hur du använder [!DNL Identity Graph Linking Rules]:
 
->[!VIDEO](https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3448276/?learn=on&enablevpops&captions=swe)
 
 ## Kom igång
 

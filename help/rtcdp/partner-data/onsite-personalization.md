@@ -64,7 +64,7 @@ För att implementera det här användningsexemplet måste du använda flera oli
 
 Se videosjälvstudiekursen nedan för en genomgång av hur ni personaliserar webbplatsupplevelser för okända besökare:
 
->[!VIDEO](https://video.tv.adobe.com/v/3423076/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3449256/?learn=on&captions=swe)
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 

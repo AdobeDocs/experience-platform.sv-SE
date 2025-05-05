@@ -16,12 +16,12 @@ Läs om hur Adobe anpassade användningen av intelligent återanvändning till a
 
 ## Implementering
 
->[!VIDEO](https://video.tv.adobe.com/v/3425184/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3454277/?quality=12&learn=on&captions=swe)
 
 ## Resekonfiguration
 
->[!VIDEO](https://video.tv.adobe.com/v/3427101/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3453965/?quality=12&learn=on&captions=swe)
 
 ## Konfigurering av målgrupp och mål
 
->[!VIDEO](https://video.tv.adobe.com/v/3427451/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3452910/?quality=12&learn=on&captions=swe)
