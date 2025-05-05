@@ -165,6 +165,7 @@ Följ de här stegen för att mappa dina XDM-fält till [!DNL Oracle Eloqua]-må
      | `xdm: workAddress.city` | `Attribute: city` | |
 
    * Ett exempel med mappningarna ovan visas nedan:
+
      ![Exempel på skärmbild i Experience Platform UI med attributmappningar.](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
 >[!IMPORTANT]

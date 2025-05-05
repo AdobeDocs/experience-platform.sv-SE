@@ -131,7 +131,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Configurations] | Skrivskyddad åtkomst till modellkonfigurationer. |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL Manage Adobe Mix Modeler Models Plans Configurations] | Möjlighet att visa och ändra plankonfigurationer. |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Plans Configurations] | Skrivskyddad åtkomst till plankonfigurationer. |
-| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | Möjlighet att ställa [!DNL [AI assistant]](../ai-assistant/access.md) frågor. |
+| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | Möjlighet att ställa [[!DNL [AI assistant]]](../ai-assistant/access.md) frågor. |
 | [!DNL AI Assistant] | [!UICONTROL View Operational Insights] | Åtkomst att få svar på [operativa insikter](../ai-assistant/home.md##operational-insights)-frågor. |
 | [!DNL AI Assistant] | [!UICONTROL Generate Content] | Gör det möjligt för användare att generera innehåll med [!DNL AI Assistant]. |
 | [!DNL AI Assistant] | [!UICONTROL Manage Brand Kit] | Gör det möjligt för användare att skapa varumärkesriktlinjer med [!DNL AI Assistant]. |

@@ -91,7 +91,7 @@ Kontrollera översikten över [e-postmarknadsföringsmål](../../destinations/ca
 
 ## Se returnerade analysdata från kampanjen {#post-campaign-data-analysis}
 
-Data från källor kan nu [bearbetas stegvis](../key-concepts/incremental-load.md) som en del av en schemalagd uppdatering av din datamodell i det accelererade datalagret. Kundernas svarshändelser kan hämtas in till Adobe Experience Platform när de inträffar eller gruppvis. Datamodellen kan uppdateras en gång eller flera gånger dagligen beroende på dina inställningar eller källanslutningarna. Mer information finns i översikten över API:t för gruppinhämtning [eller [översikten över direktuppspelning](../../ingestion/streaming-ingestion/overview.md).](../../ingestion/batch-ingestion/api-overview.md)
+Data från källor kan nu [bearbetas stegvis](../key-concepts/incremental-load.md) som en del av en schemalagd uppdatering av din datamodell i det accelererade datalagret. Kundernas svarshändelser kan hämtas in till Adobe Experience Platform när de inträffar eller gruppvis. Datamodellen kan uppdateras en gång eller flera gånger dagligen beroende på dina inställningar eller källanslutningarna. Mer information finns i översikten över API:t för gruppinhämtning [&#128279;](../../ingestion/batch-ingestion/api-overview.md)eller [översikten över direktuppspelning](../../ingestion/streaming-ingestion/overview.md).
 
 När datamodellen har uppdaterats tillhandahåller dina anpassade widgetar meningsfulla signaler som gör att du kan mäta och visualisera kundens livstidsvärde.
 

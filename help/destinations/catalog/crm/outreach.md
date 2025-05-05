@@ -152,6 +152,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
 1. I fönstret [!UICONTROL Select target field] väljer du den typ av målfält som du vill mappa källfältet till.
    * **[!UICONTROL Select identity namespace]**: välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
+
      ![Experience Platform UI-skärmbild som visar Target-mappning med OutreachId.](../../assets/catalog/crm/outreach/target-mapping.png)
 
    * Lägg till följande mappning mellan ditt XDM-profilschema och din [!DNL Outreach]-instans:
@@ -161,6 +162,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      | `Oid` | `OutreachId` | Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet [!UICONTROL Attribute name]. Se [[!DNL Outreach] dokumentationen för den potentiella kunden](https://api.outreach.io/api/v2/docs#prospect) för en utförlig lista över attribut som stöds.
+
      ![Experience Platform UI-skärmbild som visar Target-mappning med LastName.](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
 
    * Beroende på vilka värden du vill uppdatera lägger du till följande mappning mellan XDM-profilschemat och [!DNL Outreach]-instansen:
@@ -171,6 +173,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      | `person.name.lastName` | `lastName` |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
+
      ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/crm/outreach/mappings.png)
 
 ### Schemalägg målgruppsexport och exempel {#schedule-segment-export-example}

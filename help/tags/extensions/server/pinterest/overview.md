@@ -33,7 +33,7 @@ Mer information om användningsfall som är specifika för [!DNL Pinterest] finn
 
 Du måste ha ett giltigt [!DNL Pinterest] [företagskonto](https://help.pinterest.com/en/business/article/get-a-business-account) för att kunna använda det här tillägget. Gå till registreringssidan [[!DNL Pinterest] för att registrera dig och skapa ett konto om du inte redan har ett.](https://www.pinterest.com/business/create/)
 
-Du behöver också ett [!DNL Pinterest]-utvecklarkonto, som måste kopplas till ditt [!DNL Pinterest]-företagskonto. Mer information om hur du associerar ditt utvecklarkonto med ditt företagskonto finns i [[!DNL Pinterest ] utvecklarkontot](https://developers.pinterest.com/account-setup/).
+Du behöver också ett [!DNL Pinterest]-utvecklarkonto, som måste kopplas till ditt [!DNL Pinterest]-företagskonto. Mer information om hur du associerar ditt utvecklarkonto med ditt företagskonto finns i [[!DNL Pinterest &#x200B;] utvecklarkontot](https://developers.pinterest.com/account-setup/).
 
 ### Samla nödvändig konfigurationsinformation {#configuration-details}
 

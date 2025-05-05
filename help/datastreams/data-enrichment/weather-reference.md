@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Mappningar av väderdatafält
 
-Adobe har samarbetat med [!DNL [The Weather Company]](https://www.ibm.com/weather) för att ge den ytterligare kontexten för USA:s väder till data som samlats in via datastreams. Ni kan använda dessa data för analyser, målinriktning och segmentskapande i Experience Platform.
+Adobe har samarbetat med [[!DNL [The Weather Company]]](https://www.ibm.com/weather) för att ge den ytterligare kontexten för USA:s väder till data som samlats in via datastreams. Ni kan använda dessa data för analyser, målinriktning och segmentskapande i Experience Platform.
 
 På den här sidan visas alla tillgängliga fält som du kan använda för att förbättra dina målgruppsdata.
 
@@ -110,7 +110,7 @@ Det prognostiserade vädret för användaren, baserat på plats, vid en viss tid
 | [!DNL Day 1 Forecast Night Snow Range] | Väderprognos för en dag. Väderinformation under en nattperiod. Bucket med potentiell snöfall (1-3 tum, 3-6 tum osv.). | `weather.forecast.day01Forecast.night.snowRange` |
 | [!DNL Day 1 Forecast Night Temperature Celsius] | Väderprognos för en dag. Väderinformation under en nattperiod. Temperatur i angiven måttenhet. Intervall -140 till 140. Temperatur i grader Celsius | `weather.forecast.day01Forecast.night.temperature.celsius` |
 | [!DNL Day 1 Forecast Night Temperature Fahrenheit] | Väderprognos för en dag. Väderinformation under en nattperiod. Temperatur i angiven måttenhet. Intervall -140 till 140. Temperatur i grader Fahrenheit | `weather.forecast.day01Forecast.night.temperature.fahrenheit` |
-| [!DNL  Day 1 Forecast Night Temperature Heat Index Celsius] | Väderprognos för en dag. Väderinformation under en nattperiod. Temperatur som den skulle kännas för en person som exponeras baserat på temperatur och fuktighet. Temperatur i grader Celsius | `weather.forecast.day01Forecast.night.temperatureHeatIndex.celsius` |
+| [!DNL &#x200B; Day 1 Forecast Night Temperature Heat Index Celsius] | Väderprognos för en dag. Väderinformation under en nattperiod. Temperatur som den skulle kännas för en person som exponeras baserat på temperatur och fuktighet. Temperatur i grader Celsius | `weather.forecast.day01Forecast.night.temperatureHeatIndex.celsius` |
 | [!DNL Day 1 Forecast Night Temperature Heat Index Fahrenheit] | Väderprognos för en dag. Väderinformation under en nattperiod. Temperatur som den skulle kännas för en person som exponeras baserat på temperatur och fuktighet. Temperatur i grader Fahrenheit | `weather.forecast.day01Forecast.night.temperatureHeatIndex.fahrenheit` |
 | [!DNL Day 1 Forecast Night Temperature Wind Chill Celsius] | Väderprognos för en dag. Väderinformation under en nattperiod. Temperatur som den skulle kännas för en person som exponeras baserat på temperatur och vindhastighet. Temperatur i grader Celsius | `weather.forecast.day01Forecast.night.temperatureWindChill.celsius` |
 | [!UICONTROL Day 1 Forecast Night Temperature Wind Chill Fahrenheit] | Väderprognos för en dag. Väderinformation under en nattperiod. Temperatur som den skulle kännas för en person som exponeras baserat på temperatur och vindhastighet. Temperatur i grader Fahrenheit | `weather.forecast.day01Forecast.night.temperatureWindChill.fahrenheit` |

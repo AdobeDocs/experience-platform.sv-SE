@@ -222,6 +222,7 @@ Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för
      | `xdm: personalEmail.address` | `Attribute: Email` | Kontaktens e-postadress. |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
+
      ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-contacts.png)
 
    **Arbeta med leads**
@@ -238,6 +239,7 @@ Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för
      | `xdm: personalEmail.address` | `Attribute: Email` | Leadens e-postadress. |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
+
      ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-leads.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
@@ -288,17 +290,21 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
    **Arbeta med kontakter**
 
    * Om du har markerat *Kontakter* i ditt Experience Platform-segment går du till sidan **[!DNL Apps]** > **[!DNL Contacts]**.
+
      ![Salesforce CRM-skärmbild som visar sidan Kontakter med profilerna från segmentet.](../../assets/catalog/crm/salesforce/contacts.png)
 
    * Välj en *kontakt* och kontrollera om fälten har uppdaterats. Du kan se att varje målgruppsstatus i [!DNL Salesforce CRM] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet **[!UICONTROL Mapping ID]** som angavs under [målgruppsplaneringen](#schedule-segment-export-example).
+
      ![Salesforce CRM-skärmbild som visar sidan Kontaktinformation med uppdaterade målgruppsstatusar.](../../assets/catalog/crm/salesforce/contact-info.png)
 
    **Arbeta med leads**
 
    * Om du har valt *Leads* i ditt Experience Platform-segment går du till sidan **[!DNL Apps]** > **[!DNL Leads]**.
+
      ![Salesforce CRM-skärmbild som visar sidan Leads med profilerna från segmentet.](../../assets/catalog/crm/salesforce/leads.png)
 
    * Välj en *lead* och kontrollera om fälten har uppdaterats. Du kan se att varje målgruppsstatus i [!DNL Salesforce CRM] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet **[!UICONTROL Mapping ID]** som angavs under [målgruppsplaneringen](#schedule-segment-export-example).
+
      ![Salesforce CRM-skärmbild som visar sidan Leadinformation med uppdaterade målgruppsstatusar.](../../assets/catalog/crm/salesforce/lead-info.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}

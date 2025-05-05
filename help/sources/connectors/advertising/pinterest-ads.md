@@ -47,7 +47,7 @@ Det första steget för att skapa en [!DNL Pinterest Ads]-källanslutning är at
 >
 >Vi rekommenderar att du använder API:erna för [!DNL Pinterest] för att generera din åtkomsttoken, eftersom genereringen av din åtkomsttoken i gränssnittet ger begränsad åtkomst. Genom användargränssnittet kan du bara komma åt följande scope: `pins:read`, `boards:read` och `user_accounts:read`. Den här begränsningen är inte tillräcklig för användning med analysslutpunkterna i API:t [!DNL Pinterest].
 
-Läs [!DNL Pinterest]-handböckerna om hur du konfigurerar din app](https://developers.pinterest.com/docs/getting-started/set-up-app/) och [autentiserar med OAuth 2.0](https://developers.pinterest.com/docs/getting-started/authentication/) om du vill generera din åtkomsttoken.[
+Läs [!DNL Pinterest]-handböckerna om hur du konfigurerar din app[&#128279;](https://developers.pinterest.com/docs/getting-started/set-up-app/) och [autentiserar med OAuth 2.0](https://developers.pinterest.com/docs/getting-started/authentication/) om du vill generera din åtkomsttoken.
 
 ### Samla in nödvändiga inloggningsuppgifter {#gather-required-credentials}
 

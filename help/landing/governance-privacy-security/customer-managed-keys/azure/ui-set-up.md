@@ -100,7 +100,7 @@ Fältet **[!UICONTROL Key Identifier]** visar URI-identifieraren för nyckeln. K
 
 ![Nyckelinformation för Microsoft Azure-instrumentpanelen med avsnitten [!DNL Permitted operations] och kopieringsnyckel markerade.](../../../images/governance-privacy-security/customer-managed-keys/copy-key-url.png)
 
-När du har fått [!DNL Key vault URI] går du tillbaka till vyn [!UICONTROL Customer Managed Keys configuration] och anger en beskrivning **[!UICONTROL Configuration name]**. Lägg sedan till [!DNL Key Identifier] från sidan med Azure-nyckeldetaljer i **[!UICONTROL Key vault key identifier]** och välj **[!UICONTROL  Save]**.
+När du har fått [!DNL Key vault URI] går du tillbaka till vyn [!UICONTROL Customer Managed Keys configuration] och anger en beskrivning **[!UICONTROL Configuration name]**. Lägg sedan till [!DNL Key Identifier] från sidan med Azure-nyckeldetaljer i **[!UICONTROL Key vault key identifier]** och välj **[!UICONTROL &#x200B; Save]**.
 
 ![Vyn [!UICONTROL Customer Managed Keys configuration] med avsnitten [!UICONTROL Configuration name] och [!UICONTROL Key vault key identifier] markerade.](../../../images/governance-privacy-security/customer-managed-keys/configuration-name.png)
 

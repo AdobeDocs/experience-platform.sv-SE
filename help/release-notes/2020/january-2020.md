@@ -54,7 +54,7 @@ Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få ti
 | Nya API-slutpunkter | Bassökvägen för API:t [!DNL Privacy Service] har uppdaterats från `/data/privacy/gdpr` till `/data/core/privacy/jobs`. |
 | Ny obligatorisk `regulation`-egenskap | När du skapar nya jobb i [!DNL Privacy Service]-API:et måste en `regulation`-egenskap anges i nyttolasten för förfrågan för att ange vilken regel som jobbet ska spåras under. Godkända värden är `gdpr` och `ccpa`. |
 | Stöd för [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service] accepterar nu begäranden om åtkomst/borttagning från Adobe [!DNL Primetime Authentication], med `primetimeAuthentication` som produktvärde. |
-| Förbättringar av användargränssnittet i Privacy Service | Separata jobbspårningssidor för GDPR- och CCPA-regler. Ny **Regeltyp **listruta för att växla mellan spårningsdata för GDPR och CCPA. |
+| Förbättringar av användargränssnittet i Privacy Service | Separata jobbspårningssidor för GDPR- och CCPA-regler. Ny **Regeltyp &#x200B;** listruta för att växla mellan spårningsdata för GDPR och CCPA. |
 
 **Kända fel**
 

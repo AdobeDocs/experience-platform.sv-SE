@@ -19,7 +19,7 @@ I det här dokumentet beskrivs stegen för att ansluta databasverktyget [!DNL Db
 
 Den här guiden kräver att du redan har tillgång till skrivbordsappen [!DNL DbVisualizer] och känner till hur du navigerar i gränssnittet. Om du vill hämta datorprogrammet [!DNL DbVisualizer] eller om du vill ha mer information läser du [officiell [!DNL DbVisualizer] dokumentation](https://www.dbvis.com/download/).
 
-Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL  DbVisualizer] till Experience Platform måste du ha tillgång till arbetsytan Frågor i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
+Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL &#x200B; DbVisualizer] till Experience Platform måste du ha tillgång till arbetsytan Frågor i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
 
 ## Skapa en databasanslutning {#connect-database}
 

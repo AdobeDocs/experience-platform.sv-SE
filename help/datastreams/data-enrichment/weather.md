@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Förbättra datainsamling med väderdata från [!DNL The Weather Channel]
 
-Adobe har samarbetat med [!DNL [The Weather Company]](https://www.ibm.com/weather) för att ge den ytterligare kontexten för USA-väder till data som samlats in via datastreams. Ni kan använda dessa data för analyser, målgruppsanpassning och målgruppsskapande i Experience Platform.
+Adobe har samarbetat med [[!DNL [The Weather Company]]](https://www.ibm.com/weather) för att ge den ytterligare kontexten för USA-väder till data som samlats in via datastreams. Ni kan använda dessa data för analyser, målgruppsanpassning och målgruppsskapande i Experience Platform.
 
 Det finns tre typer av data som är tillgängliga från [!DNL The Weather Channel]:
 

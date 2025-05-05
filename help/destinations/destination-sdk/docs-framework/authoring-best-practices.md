@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Den här sidan beskriver regler som du bör följa när du redigerar sidan för måldokumentation](./documentation-instructions.md), för att se till att den uppfyller kvalitetsstandarderna för Adobe Experience Platform-dokumentation.[
+Den här sidan beskriver regler som du bör följa när du redigerar sidan för måldokumentation[&#128279;](./documentation-instructions.md), för att se till att den uppfyller kvalitetsstandarderna för Adobe Experience Platform-dokumentation.
 
 ## Allmän vägledning {#general-guidance}
 

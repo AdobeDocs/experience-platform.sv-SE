@@ -37,7 +37,7 @@ En segmentdefinition är **inte** berättigad till direktuppspelningssegmenterin
 - Segmentdefinitionen innehåller segment eller egenskaper för Adobe Audience Manager (AAM).
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment`-händelse.
-   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **** för direktuppspelningssegmentering.
+   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **&#x200B;**&#x200B;för direktuppspelningssegmentering.
 - I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 Observera följande riktlinjer som gäller frågor om direktuppspelningssegmentering:

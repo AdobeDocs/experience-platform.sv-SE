@@ -731,7 +731,7 @@ Du kan ta bort en sammanfogningsprincip genom att göra en DELETE-begäran till 
 
 >[!NOTE]
 >
->Om sammanfogningsprincipen har `isActiveOnEdge` inställt på true går det inte att ta bort sammanfogningsprincipen ****. Använd slutpunkterna [PATCH](#edit-individual-merge-policy-fields) eller [PUT](#overwrite-a-merge-policy) för att uppdatera sammanfogningsprincipen innan du tar bort den.
+>Om sammanfogningsprincipen har `isActiveOnEdge` inställt på true går det inte att ta bort sammanfogningsprincipen **&#x200B;**. Använd slutpunkterna [PATCH](#edit-individual-merge-policy-fields) eller [PUT](#overwrite-a-merge-policy) för att uppdatera sammanfogningsprincipen innan du tar bort den.
 
 **API-format**
 

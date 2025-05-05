@@ -166,7 +166,7 @@ Om du vill använda den här funktionen måste du ange cookien [!DNL FPID] på d
 >
 >Den här funktionen kräver att du har [Första part-datainsamling](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) aktiverad.
 
-**Steg 2. Aktivera funktionen **[!UICONTROL First Party ID Cookie]**för din datastream**
+**Steg 2. Aktivera funktionen &#x200B;** [!UICONTROL First Party ID Cookie]&#x200B;**för din datastream**
 
 När du har konfigurerat CNAME måste du aktivera alternativet **[!UICONTROL First Party ID Cookie]** för ditt datastream. Den här inställningen anger för Edge Network att referera till en angiven cookie när du söker efter ett enhets-ID från en annan leverantör, i stället för att leta upp det här värdet i [identitetskartan](#identityMap).
 

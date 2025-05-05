@@ -108,7 +108,7 @@ ht-degree: 8%
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
       * [XDM Business Person Components](./field-groups/profile/business-person-components.md)
       * [Information om XDM Business Person](./field-groups/profile/business-person-details.md)
-   * Individuell XDM-profil {#prospect-profile} för potentiell kund
+   * Individuell XDM-profil för potentiell kund {#prospect-profile}
       * [Information om partnerpotentiell kund (exempel)](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)

@@ -64,7 +64,7 @@ Det sista konfigurationssteget är att välja de produktprofiler som den här in
 
 >[!NOTE]
 >
-Produktprofiler och de detaljerade behörigheter de ger skapas och hanteras av administratörer via Adobe Admin Console. Mer information finns i handboken om [Privacy Service permissions](../permissions.md).
+>Produktprofiler och de detaljerade behörigheter de ger skapas och hanteras av administratörer via Adobe Admin Console. Mer information finns i handboken om [Privacy Service permissions](../permissions.md).
 
 När du är klar väljer du **[!UICONTROL Save configured API]**.
 

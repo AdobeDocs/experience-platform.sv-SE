@@ -42,7 +42,7 @@ När du har skapat en modell med begränsad information och fortsätter till ste
 
 När du använder åtkomstkontroll ger privilegierna **Visa kund-AI** och **Hantera kund-AI** åtkomst till olika funktioner i Kund-AI. Med behörigheten **Hantera kund-AI** kan du **skapa**,**uppdatera**, **ta bort**, **aktivera** eller **inaktivera** en modell medan du kan läsa eller visa den med **Visa kund-AI**. Åtgärderna **create**, **update** och **delete** registreras av granskningsloggarna.
 
-Mer information om hur du tilldelar behörigheter för åtkomstkontroll](../../../access-control/home.md) finns i dokumentationen. Du kan även läsa om hur du [använder granskningsloggar för att övervaka åtkomst och aktivitet](../../../landing/governance-privacy-security/audit-logs/overview.md).[
+Mer information om hur du tilldelar behörigheter för åtkomstkontroll[&#128279;](../../../access-control/home.md) finns i dokumentationen. Du kan även läsa om hur du [använder granskningsloggar för att övervaka åtkomst och aktivitet](../../../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## Nästa steg
 

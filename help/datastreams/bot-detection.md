@@ -59,7 +59,7 @@ Sidan **[!UICONTROL Bot Detection Rules]** visas.
 
 På sidan Regler för punktidentifiering kan du konfigurera robotidentifiering med följande funktioner:
 
-* Använder [!DNL [IAB/ABC International Spiders and Bots List]](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/).
+* Använder [[!DNL [IAB/ABC International Spiders and Bots List]]](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/).
 * Skapa egna identifieringsregler för robotar.
 
 ### Använd listan IAB/ABC International Spiders and Bots {#iab-list}

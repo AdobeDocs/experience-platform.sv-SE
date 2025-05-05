@@ -61,7 +61,7 @@ På nästa skärm får du en uppmaning om att välja en eller flera produktprofi
 
 >[!NOTE]
 >
-Produktprofiler hanteras av er organisation via Adobe Admin Console och innehåller specifika behörighetsgrupper för detaljfunktioner. Produktprofiler och deras behörigheter kan bara hanteras av användare med administratörsbehörighet inom organisationen. Om du är osäker på vilka produktprofiler du ska välja för API kontaktar du administratören.
+>Produktprofiler hanteras av er organisation via Adobe Admin Console och innehåller specifika behörighetsgrupper för detaljfunktioner. Produktprofiler och deras behörigheter kan bara hanteras av användare med administratörsbehörighet inom organisationen. Om du är osäker på vilka produktprofiler du ska välja för API kontaktar du administratören.
 
 Välj önskade produktprofiler i listan och välj sedan **Spara konfigurerad API** för att slutföra API-registreringen.
 
@@ -82,7 +82,7 @@ Nästa steg är att generera en `{ACCESS_TOKEN}`-autentiseringsuppgift som kan a
 
 >[!TIP]
 >
-Dessa token upphör att gälla efter 24 timmar. Om du använder den här integreringen för ett program är det en bra idé att hämta din innehavartoken programmatiskt inifrån programmet.
+>Dessa token upphör att gälla efter 24 timmar. Om du använder den här integreringen för ett program är det en bra idé att hämta din innehavartoken programmatiskt inifrån programmet.
 
 Det finns två alternativ för att generera åtkomsttoken, beroende på hur du använder dem:
 
@@ -109,7 +109,7 @@ Börja med att försöka göra ett API-anrop till [listan över alla företag](.
 
 >[!NOTE]
 >
-Du kanske inte har några företag i din organisation, och då är svaret HTTP-status 404 (Hittades inte). Så länge du inte får ett 403-fel (Ej tillåtet) är dina inloggningsuppgifter giltiga och fungerar.
+>Du kanske inte har några företag i din organisation, och då är svaret HTTP-status 404 (Hittades inte). Så länge du inte får ett 403-fel (Ej tillåtet) är dina inloggningsuppgifter giltiga och fungerar.
 
 När du har bekräftat att dina inloggningsuppgifter fungerar kan du fortsätta att utforska den andra API-referensdokumentationen och lära dig API:ts många funktioner.
 

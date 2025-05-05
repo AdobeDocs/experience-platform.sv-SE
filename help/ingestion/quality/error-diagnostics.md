@@ -284,7 +284,7 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat, returnerar s
 >
 >Om ingen feldiagnostik är tillgänglig visas följande felmeddelande i stället:
 >
-```json
+>```json
 >{
 >       "errors": [{
 >               "code": "INGEST-1211-400",

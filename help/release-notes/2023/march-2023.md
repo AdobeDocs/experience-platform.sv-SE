@@ -139,8 +139,8 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Fältgrupp | (Flera) | [Flera XDM-händelsetyper har lagts till för [!UICONTROL Media Reporting]](https://github.com/adobe/xdm/pull/1670/files). |
 | Fältgrupp | [!UICONTROL Workfront Change Event] | Fältgrupperna `Full Record` och `Accessor Employee Ids` lades till. |
 | Datatyp | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refund Amount] lades till för att ange det belopp som återbetalats för artikeln, om någon. |
-| Datatyp | [[!UICONTROL Order ]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
-| Datatyp | [[!UICONTROL Product List Item ]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
+| Datatyp | [[!UICONTROL Order &#x200B;]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
+| Datatyp | [[!UICONTROL Product List Item &#x200B;]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
 | Datatyp | [!UICONTROL Session details information] | `pev3`-strängfältet som [anger vilken typ av medieström som används för rapportering](https://github.com/adobe/xdm/pull/1676/files) har lagts till. Egenskapen `pccr` har också lagts till och anger om en omdirigering har gjorts. |
 | Datatyp | [!UICONTROL Requisition List] | Tillhandahåller egenskaperna för [rekvisitionslistan](https://github.com/adobe/xdm/pull/1675/files). De innehåller namn, ID och beskrivning. |
 | Datatyp | [!UICONTROL Commerce] | Datatypen [Commerce har uppdaterats](https://github.com/adobe/xdm/pull/1675/files) så att den omfattar `requisitionListOpens`, `requisitionListAdds`, `requisitionListRemovals` och `requisitionList`. |

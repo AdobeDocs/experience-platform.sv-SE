@@ -110,7 +110,7 @@ På skärmen **[!UICONTROL Configure API]** väljer du **[!UICONTROL AEP-Default
 
 >[!IMPORTANT]
 >
-För att få tillgång till vissa funktioner i Experience Platform behöver du också en systemadministratör som ger dig de nödvändiga attributbaserade behörigheterna för åtkomstkontroll. Läs mer i avsnittet [Få de nödvändiga attributbaserade behörigheterna för åtkomstkontroll](#get-abac-permissions).
+>För att få tillgång till vissa funktioner i Experience Platform behöver du också en systemadministratör som ger dig de nödvändiga attributbaserade behörigheterna för åtkomstkontroll. Läs mer i avsnittet [Få de nödvändiga attributbaserade behörigheterna för åtkomstkontroll](#get-abac-permissions).
 
 ![Välj produktprofiler för din integrering.](./images/api-authentication/select-product-profiles.png)
 
@@ -149,7 +149,7 @@ Nästa steg är att generera en `{ACCESS_TOKEN}`-autentiseringsuppgift som kan a
 
 >[!TIP]
 >
-Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Mer information finns i avsnittet om att [använda Postman för att autentisera och testa API-anrop](#use-postman).
+>Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Mer information finns i avsnittet om att [använda Postman för att autentisera och testa API-anrop](#use-postman).
 
 ## Skapa och hämta autentiseringsuppgifter direkt i API-referensdokumentationen {#get-credentials-functionality}
 
@@ -169,17 +169,17 @@ Använd sedan listruteväljaren för att öppna inloggningsfönstret, generera e
 
 >[!TIP]
 >
-Det övre referensblocket visas fortfarande när du navigerar mellan olika slutpunktssidor i referensdokumentationen för Experience Platform API.
+>Det övre referensblocket visas fortfarande när du navigerar mellan olika slutpunktssidor i referensdokumentationen för Experience Platform API.
 
 ## [!BADGE Inaktuell]{type=negative} Generera en JSON-webbtoken (JWT) {#jwt}
 
 >[!WARNING]
 >
-JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med autentiseringsmetoden [OAuth Server-till-server](#select-oauth-server-to-server). Adobe kräver också att du migrerar dina befintliga integreringar till OAuth-metoden senast 30 juni 2025 för att integreringarna ska fortsätta att fungera. Läs följande viktiga dokumentation:
+>JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med autentiseringsmetoden [OAuth Server-till-server](#select-oauth-server-to-server). Adobe kräver också att du migrerar dina befintliga integreringar till OAuth-metoden senast 30 juni 2025 för att integreringarna ska fortsätta att fungera. Läs följande viktiga dokumentation:
 > 
-* [Migreringsguide för program från JWT till OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
-* [Implementeringsguide för nya och gamla program med OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
-* [Fördelar med att använda inloggningsmetoden OAuth Server-till-server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
+>* [Migreringsguide för program från JWT till OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
+>* [Implementeringsguide för nya och gamla program med OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
+>* [Fördelar med att använda inloggningsmetoden OAuth Server-till-server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
 
 +++ Visa inaktuell information
 
@@ -187,9 +187,9 @@ Nästa steg är att generera en JSON Web Token (JWT) baserat på dina kontouppgi
 
 >[!IMPORTANT]
 >
-I den här självstudiekursen beskrivs hur du genererar en JWT-fil i Developer Console i stegen nedan. Denna genereringsmetod bör dock endast användas för testning och utvärdering.
+>I den här självstudiekursen beskrivs hur du genererar en JWT-fil i Developer Console i stegen nedan. Denna genereringsmetod bör dock endast användas för testning och utvärdering.
 >
-För normal användning måste JWT genereras automatiskt. Mer information om programmässig generering av JWT finns i [autentiseringsguiden för tjänstkontot](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) på Adobe Developer.
+>För normal användning måste JWT genereras automatiskt. Mer information om programmässig generering av JWT finns i [autentiseringsguiden för tjänstkontot](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) på Adobe Developer.
 
 Välj **[!UICONTROL Service Account (JWT)]** i den vänstra navigeringen och välj sedan **[!UICONTROL Generate JWT]**.
 
@@ -227,7 +227,7 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 
 >[!NOTE]
 >
-Du kan använda samma API-nyckel, klienthemlighet och JWT för att generera en ny åtkomsttoken för varje session. Detta gör att du kan automatisera genereringen av åtkomsttoken i dina program.
+>Du kan använda samma API-nyckel, klienthemlighet och JWT för att generera en ny åtkomsttoken för varje session. Detta gör att du kan automatisera genereringen av åtkomsttoken i dina program.
 
 **Svar**
 
@@ -290,7 +290,7 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 >[!IMPORTANT]
 >
-Samtalet ovan räcker för att testa dina inloggningsuppgifter, men tänk på att du inte kommer att kunna komma åt eller ändra flera resurser utan rätt attributbaserad åtkomstkontrollbehörighet. Läs mer i avsnittet **Hämta de nödvändiga attributbaserade åtkomstkontrollsbehörigheterna** nedan.
+>Samtalet ovan räcker för att testa dina inloggningsuppgifter, men tänk på att du inte kommer att kunna komma åt eller ändra flera resurser utan rätt attributbaserad åtkomstkontrollbehörighet. Läs mer i avsnittet **Hämta de nödvändiga attributbaserade åtkomstkontrollsbehörigheterna** nedan.
 
 ## Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll {#get-abac-permissions}
 
@@ -330,7 +330,7 @@ Innan du kan skapa integreringar på Adobe Developer Console måste ditt konto h
 
 >[!NOTE]
 >
-Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
+>Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
 
 ### Lägg till utvecklare i produktprofilen {#add-developers-to-product-profile}
 
@@ -360,7 +360,7 @@ Utvecklaren har lagts till och visas på fliken **[!UICONTROL Developers]**.
 
 >[!NOTE]
 >
-Endast en systemadministratör kan tilldela API:er till roller i Experience Platform-gränssnittet.
+>Endast en systemadministratör kan tilldela API:er till roller i Experience Platform-gränssnittet.
 
 Om du vill använda och utföra åtgärder på Experience Platform API:er måste en systemadministratör lägga till API-autentiseringsuppgifterna utöver en rolls angivna behörighetsuppsättning. Mer information finns i avsnittet om att [hantera API-autentiseringsuppgifter för en roll](../access-control/abac/ui/permissions.md#manage-api-credentials-for-a-role).
 

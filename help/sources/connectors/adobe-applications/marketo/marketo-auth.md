@@ -25,7 +25,7 @@ Logga in på [!DNL Marketo] och välj **[!DNL Admin]** i det övre navigeringsf�
 
 ![Administratör för en ny roll](../images/marketo/home.png)
 
-Sidan *för*[!DNL Users & Role] innehåller information om användare, roller och inloggningshistorik. Om du vill skapa en ny roll väljer du **[!DNL Roles]** i den översta rubriken och sedan **[!DNL New Role]**.
+Sidan *för&#x200B;*[!DNL Users & Role] innehåller information om användare, roller och inloggningshistorik. Om du vill skapa en ny roll väljer du **[!DNL Roles]** i den översta rubriken och sedan **[!DNL New Role]**.
 
 ![new-role](../images/marketo/new-role.png)
 

@@ -66,7 +66,7 @@ Därefter använder Bodea-marknadsföraren [Marketo Engage-kopplingen](../source
 
 Om du vill skapa en anslutning mellan ett Marketo-konto och Experience Platform måste du skaffa inloggningsuppgifter. Detaljerade instruktioner finns i [handboken om hur du får Marketo-autentiseringsuppgifter för källanslutning](../sources/connectors/adobe-applications/marketo/marketo-auth.md).
 
-När du har fått inloggningsuppgifter skapar Bodea-marknadsföraren en anslutning mellan Marketo-kontot och deras Experience Platform-organisation. I dokumentationen finns instruktioner om hur du ansluter ett Marketo-konto med Experience Platform-gränssnittet ](../sources/tutorials/ui/create/adobe-applications/marketo.md).[
+När du har fått inloggningsuppgifter skapar Bodea-marknadsföraren en anslutning mellan Marketo-kontot och deras Experience Platform-organisation. I dokumentationen finns instruktioner om hur du ansluter ett Marketo-konto med Experience Platform-gränssnittet [&#128279;](../sources/tutorials/ui/create/adobe-applications/marketo.md).
 
 Marketo Engage-källkopplingen har en automatisk mappningsfunktion som gör det enklare att mappa alla dina datafält till de nya scheman.
 

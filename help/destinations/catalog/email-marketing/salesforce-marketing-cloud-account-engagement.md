@@ -161,6 +161,7 @@ Följ stegen nedan för att mappa dina XDM-fält till målfälten för [!DNL Mar
      | `xdm: person.name.firstName` | `Attribute: firstName` | |
 
    * Ett exempel med mappningarna ovan visas nedan:
+
      ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.

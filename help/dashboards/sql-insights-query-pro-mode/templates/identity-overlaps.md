@@ -22,7 +22,7 @@ Dialogrutan **[!UICONTROL Filters]** visas. I den här vyn väljer du de globala
 
 1. Välj en **[!UICONTROL Audience]**: Välj det målgruppssegment som du vill analysera (till exempel **Kanada - Alberta**).
 2. Ange en **[!UICONTROL Merge Policy]**: Definiera sammanfogningspolicyn som anger hur identiteter kombineras över den valda målgruppen (i exempelskärmbilden är principen **Standardtidsbaserad** vald).
-3. Välj en **[!UICONTROL Identity A]** och **[!UICONTROL  Identity B]** för jämförelse**: Välj de två identitetstyperna som ska jämföras. I exemplet har **Identitet A** valts som &quot;crmId&quot; och **Identitet B** har valts som &quot;e-post&quot;.
+3. Välj en **[!UICONTROL Identity A]** och **[!UICONTROL &#x200B; Identity B]** för jämförelse&#x200B;**: Välj de två identitetstyperna som ska jämföras. I exemplet har &#x200B;** Identitet A **&#x200B; valts som &quot;crmId&quot; och &#x200B;** Identitet B** har valts som &quot;e-post&quot;.
 4. **Ange ett datumintervall**: Välj ett fördefinierat intervall som Today eller ange start- och slutdatum manuellt med hjälp av kalenderfälten.
 
 ![Dialogrutan Filter på kontrollpanelen för överlappande publikidentiteter.](../../images/sql-insights-query-pro-mode/templates/audience-identity-overlaps-filters-dialog.png)

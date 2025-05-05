@@ -167,6 +167,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
 1. I fönstret **[!UICONTROL Select target field]** väljer du den typ av målfält som du vill mappa källfältet till.
    * **[!UICONTROL Select identity namespace]**: välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
+
      ![Experience Platform UI-skärmbild som visar målmappning för kontaktperson.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
    * Lägg till följande mappning mellan ditt XDM-profilschema och din [!DNL Dynamics 365]-instans:
@@ -176,6 +177,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      | `contactid` | `contactid` | Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet **[!UICONTROL Attribute name]**. I [[!DNL Dynamics 365] dokumentationen](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) finns en omfattande lista över attribut som stöds.
+
      ![Experience Platform UI-skärmbild som visar målmappning för e-post.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]

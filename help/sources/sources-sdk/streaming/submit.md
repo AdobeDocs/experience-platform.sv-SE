@@ -29,7 +29,7 @@ Följande dokument innehåller steg om hur du testar och felsöker källan med [
 
 ## Testa källan med API:t
 
-Om du vill testa källan med API:t måste du köra verifieringssamlingen och miljön ](../assets/sdk-verification.zip) för [!DNL Postman]-källor med [självbetjäning, samtidigt som du anger lämpliga miljövariabler som hör till källan.
+Om du vill testa källan med API:t måste du köra verifieringssamlingen och miljön [&#128279;](../assets/sdk-verification.zip) för [!DNL Postman]-källor med självbetjäning, samtidigt som du anger lämpliga miljövariabler som hör till källan.
 
 Om du vill börja testa måste du först konfigurera samlingen och miljön på [!DNL Postman]. Ange sedan det ID för anslutningsspecifikationen som du vill testa.
 

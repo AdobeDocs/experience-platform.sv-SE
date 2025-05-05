@@ -16,7 +16,7 @@ ht-degree: 15%
 
 >[!AVAILABILITY]
 >
->>Funktionen för att aktivera kontomålgrupper för Demandbase-målet är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
+>&#x200B;>Funktionen för att aktivera kontomålgrupper för Demandbase-målet är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
 
 Aktivera profiler för dina Demandbase-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på [målgrupper](/help/segmentation/types/account-audiences.md) .
 

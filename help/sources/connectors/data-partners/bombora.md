@@ -48,7 +48,7 @@ En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan 
 
 ### Konfigurera behörigheter i Experience Platform
 
-Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[!UICONTROL Manage Sources]** aktiverat för ditt konto för att kunna ansluta ditt [!DNL Bombora]-konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i användargränssnittsguiden [](../../../access-control/abac/ui/permissions.md)för åtkomstkontroll.
+Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[!UICONTROL Manage Sources]** aktiverat för ditt konto för att kunna ansluta ditt [!DNL Bombora]-konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i användargränssnittsguiden [&#128279;](../../../access-control/abac/ui/permissions.md)för åtkomstkontroll.
 
 ### Namngivningsbegränsningar för filer och kataloger
 
@@ -71,7 +71,7 @@ Begränsningarna som anges nedan måste beaktas när du namnger din molnlagrings
 | Nyckel för hemlig åtkomst | Den hemliga åtkomstnyckeln [!DNL Bombora] . Det här är en 40-teckens, base-64-kodad sträng som krävs för att autentisera ditt konto till Experience Platform. |
 | Namn på bucket | Bucketen [!DNL Bombora] som data ska hämtas från. |
 
-Mer information om dessa autentiseringsuppgifter finns i guiden](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) för [[!DNL Google Cloud Storage] HMAC-nycklar. Anvisningar om hur du skapar en egen åtkomstnyckel finns [i kravguiden i källöversikten [!DNL Google Cloud Storage] ](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account).
+Mer information om dessa autentiseringsuppgifter finns i guiden[&#128279;](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) för [!DNL Google Cloud Storage] HMAC-nycklar. Anvisningar om hur du skapar en egen åtkomstnyckel finns [i kravguiden i källöversikten [!DNL Google Cloud Storage] ](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account).
 
 ## [!DNL Bombora] Schemat {#schema}
 

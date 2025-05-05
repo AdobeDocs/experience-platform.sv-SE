@@ -185,7 +185,9 @@ När siffrorna har hämtats kan de porteras till en sigmoid-funktion där algori
 ```sql
 SELECT CASE WHEN 1 / (1 + EXP(- (f1 + f2 + f3 + f4 + FLOAT(intercept)))) > 0.5 THEN 1 ELSE 0 END AS Prediction;
 ```
+
  
+
 ### Ett exempel från början till slut
 
 I en situation där du har två kolumner (`c1` och `c2`), om `c1` har två kategorier, är [!DNL Logistic Regression]-algoritmen utbildad med följande funktion:
@@ -194,6 +196,7 @@ I en situation där du har två kolumner (`c1` och `c2`), om `c1` har två kateg
 ```python
 y = 0.1 * "c1=category 1"+ 0.2 * "c1=category 2" +0.3 * c2+0.4
 ```
+
  
 Motsvarande i SQL är följande:
 
@@ -209,6 +212,7 @@ FROM
     FROM TABLE
   )
 ```
+
  
 Koden [!DNL Python] för att automatisera översättningsprocessen är följande:
 

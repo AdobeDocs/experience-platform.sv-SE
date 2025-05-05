@@ -55,7 +55,7 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 När du använder rollbaserad åtkomstkontroll ger behörigheterna **Visa attribut-AI** och **Hantera attribut-AI** åtkomst till olika funktioner för attribut-AI. Med **Hantera attribut-AI** kan du **skapa**, **klona**, **redigera**, **ta bort**, **aktivera** eller **inaktivera** en instans, och med **Visa attribut-AI** kan du **läsa** eller **visa** det. Åtgärderna **create**, **edit** och **delete** registreras av granskningsloggar.
 
-Mer information om hur du tilldelar behörigheter för åtkomstkontroll](../../../help/access-control/home.md) finns i dokumentationen. Du kan även läsa om hur du [använder granskningsloggar för att övervaka åtkomst och aktivitet](../../../help/landing/governance-privacy-security/audit-logs/overview.md).[
+Mer information om hur du tilldelar behörigheter för åtkomstkontroll[&#128279;](../../../help/access-control/home.md) finns i dokumentationen. Du kan även läsa om hur du [använder granskningsloggar för att övervaka åtkomst och aktivitet](../../../help/landing/governance-privacy-security/audit-logs/overview.md).
 
 ## Nästa steg {#next-steps}
 

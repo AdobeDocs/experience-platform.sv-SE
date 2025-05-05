@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare
 
-Använd Adobe Real-Time CDP-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
+Använd Adobe Real-Time CDP-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [[!DNL [LiveRamp RampID]]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
 
 >[!IMPORTANT]
 >

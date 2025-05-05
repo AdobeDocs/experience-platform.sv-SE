@@ -64,7 +64,7 @@ Du kan använda informationspanelen för att hitta [!UICONTROL Asset ID] och [!U
 Värdet för [!UICONTROL Asset ID] ändras beroende på vilken kategori som används i granskningen.
 
 * När du använder kategorin [!UICONTROL Query] är [!UICONTROL Asset ID] sessions-ID **.**
-* När du använder kategorin [!UICONTROL Query template] är [!UICONTROL Asset ID] mall-ID:t **** och prefixet `[!UICONTROL templateID:]`.
+* När du använder kategorin [!UICONTROL Query template] är [!UICONTROL Asset ID] mall-ID:t **&#x200B;**&#x200B;och prefixet `[!UICONTROL templateID:]`.
 * När du använder kategorin [!UICONTROL Scheduled query] är [!UICONTROL Asset ID] **Schedule-ID** och prefixet med `[!UICONTROL scheduleID:]`.
 
 Värdet för [!UICONTROL Event status] ändras beroende på vilken kategori som används i granskningen.
