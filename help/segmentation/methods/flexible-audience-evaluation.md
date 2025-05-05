@@ -3,9 +3,9 @@ title: Flexibel guide för utvärdering av målgrupper
 description: Lär dig hur du använder flexibel målgruppsutvärdering för att köra batchsegmenteringsjobb på begäran.
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 7084b05d1ae142016cb2158fd22d07a240385190
+source-git-commit: 9aa638903eaf9bf29ce1da3d62f8e69c15ffe50a
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1068'
 ht-degree: 0%
 
 ---
@@ -326,7 +326,7 @@ När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätt
 
 I följande videofilm visas hur du får tillgång till och använder en flexibel målgruppsutvärdering i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/3453644?&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## Vanliga frågor och svar {#faq}
 
@@ -337,6 +337,14 @@ I följande avsnitt visas vanliga frågor om flexibel utvärdering av målgruppe
 +++ Svar
 
 Ni kan aktivera en målgrupp med hjälp av en flexibel målgruppsutvärdering direkt efter att målgruppen har skapats.
+
++++
+
+### Hur lång tid tar det att göra en flexibel målgruppsutvärdering?
+
++++ Svar
+
+Det kan ta upp till fyra timmar att slutföra ett flexibelt målgruppsutvärderingsjobb.
 
 +++
 
