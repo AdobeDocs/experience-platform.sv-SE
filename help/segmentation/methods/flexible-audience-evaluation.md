@@ -326,7 +326,7 @@ När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätt
 
 I följande videofilm visas hur du får tillgång till och använder en flexibel målgruppsutvärdering i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/3453640?)
+>[!VIDEO](https://video.tv.adobe.com/v/3453644?&captions=swe)
 
 ## Vanliga frågor och svar {#faq}
 
