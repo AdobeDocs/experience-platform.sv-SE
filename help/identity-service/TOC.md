@@ -1,7 +1,7 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform Identity Service
-breadcrumb-title: Användarhandbok om Platform Identity Service
+breadcrumb-title: Användarhandbok om Experience Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personanpassade digitala upplevelser.
 feature: Identities
 role: Admin,Developer
@@ -47,4 +47,4 @@ ht-degree: 22%
 - [Definiera identitetsfält i användargränssnittet](label-identities.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
 - [Felsökningsguide](troubleshooting-guide.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
