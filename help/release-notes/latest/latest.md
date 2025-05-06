@@ -15,10 +15,10 @@ ht-degree: 29%
 >
 >Läs följande dokumentation om du vill veta mer om andra Adobe Experience Platform-program:
 >
->- [Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/whats-new/release-notes)
->- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/latest)
->- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/latest)
+>- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
+>- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/latest)
+>- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 april 2025**
 
@@ -41,7 +41,7 @@ Experience League är en omfattande utbildningsplattform som hjälper dig att h�
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Personlig hemsida | Gå till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/en/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** på den översta menyn för att optimera din inlärningsupplevelse: <ul><li>**Bokmärken**: Använd funktionen [!UICONTROL Bookmarks] för att spara och samla in dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din inlärning**: Förbättra din inlärningsupplevelse genom att uppdatera din Experience League-profil med de roller, branscher, produkter och den upplevelsenivå som bäst passar dina behov.</li><li>**Rekommendationer**: Visa utbildningsinnehåll som rekommenderas baserat på din senaste aktivitet.</li><li>**Nyligen visade**: Använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videoklipp.</li><li>**Utbildningsresurser**: Använd panelen [!UICONTROL All learning resources] för att navigera till självstudiekurser, dokumentation, forum, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Titta på tidigare event on-demand**: Se tidigare inspelade liveströmmar på produktspotlights, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personaliserad hemsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig hemsida på Experience League."){width="250" align="center" zoomable="yes"} |
+| Personlig hemsida | Gå till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/sv/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** på den översta menyn för att optimera din inlärningsupplevelse: <ul><li>**Bokmärken**: Använd funktionen [!UICONTROL Bookmarks] för att spara och samla in dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din inlärning**: Förbättra din inlärningsupplevelse genom att uppdatera din Experience League-profil med de roller, branscher, produkter och den upplevelsenivå som bäst passar dina behov.</li><li>**Rekommendationer**: Visa utbildningsinnehåll som rekommenderas baserat på din senaste aktivitet.</li><li>**Nyligen visade**: Använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videoklipp.</li><li>**Utbildningsresurser**: Använd panelen [!UICONTROL All learning resources] för att navigera till självstudiekurser, dokumentation, forum, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Titta på tidigare event on-demand**: Se tidigare inspelade liveströmmar på produktspotlights, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personaliserad hemsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig hemsida på Experience League."){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
