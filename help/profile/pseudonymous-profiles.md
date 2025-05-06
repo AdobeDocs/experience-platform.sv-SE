@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Pseudonymt utgångsdatum för profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: aeb9d6636f0d843bf13d09bcb4c12754e2890046
+source-git-commit: 8734b85914d965eebc2f8ccd8c09dd1ffede8cf9
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1260'
 ht-degree: 0%
 
 ---
@@ -43,8 +43,9 @@ En profil används för att pseudonyma data ska upphöra att gälla om den uppfy
 >
 >- Hantera profilinställningar
 >- Visa profiler
+>- Visa identitetsnamnutrymmen
 >
->Med behörigheten **Hantera profilinställningar** kan du ange förfallodatum för data, och med behörigheten **Visa profiler** kan du visa förfallodatum för data.
+>Med behörigheten **Hantera profilinställningar** kan du ange förfallodatum för data, behörigheten **Visa profiler** gör att du kan visa förfallodatum för data och behörigheten **Visa identitetsnamnutrymmen** gör att du kan visa tillgängliga identitetsnamnutrymmen som du kan använda.
 >
 >Mer information om behörigheter i Experience Platform finns i [åtkomstkontrollsöversikten](../access-control/home.md#permissions).
 
