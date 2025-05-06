@@ -4,14 +4,20 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: debugger;experience Platform Debugger tillägg;chrome;tillägg;versionsinformation
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: a5af5c194bc6b3bf9a6e119a2f147efa85f263f0
+source-git-commit: c4048b83c916f4b3b4b5acb3cccb957b65ee25c8
 workflow-type: tm+mt
-source-wordcount: '850'
-ht-degree: 92%
+source-wordcount: '864'
+ht-degree: 91%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Debugger
+
+## Version 1.6.4 - 6 maj 2025
+
+### Åtgärder och förbättringar
+
+* Ett problem där inloggningen inte var tillgänglig har korrigerats.
 
 ## Version 1.6.3 - 30 april 2025
 
