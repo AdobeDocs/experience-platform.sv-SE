@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: be9e1a995e62fa5a437be82aa15187815bbc5a9d
+source-git-commit: 92b9d4a0529fabb8094e13f4dc6b4bb6d8649b16
 workflow-type: tm+mt
-source-wordcount: '2133'
-ht-degree: 29%
+source-wordcount: '2183'
+ht-degree: 28%
 
 ---
 
@@ -15,10 +15,10 @@ ht-degree: 29%
 >
 >Läs följande dokumentation om du vill veta mer om andra Adobe Experience Platform-program:
 >
->- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
->- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/latest)
->- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
+>- [Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/whats-new/release-notes)
+>- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/latest)
+>- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 april 2025**
 
@@ -41,7 +41,7 @@ Experience League är en omfattande utbildningsplattform som hjälper dig att h�
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Personlig hemsida | Gå till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/sv/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** på den översta menyn för att optimera din inlärningsupplevelse: <ul><li>**Bokmärken**: Använd funktionen [!UICONTROL Bookmarks] för att spara och samla in dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din inlärning**: Förbättra din inlärningsupplevelse genom att uppdatera din Experience League-profil med de roller, branscher, produkter och den upplevelsenivå som bäst passar dina behov.</li><li>**Rekommendationer**: Visa utbildningsinnehåll som rekommenderas baserat på din senaste aktivitet.</li><li>**Nyligen visade**: Använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videoklipp.</li><li>**Utbildningsresurser**: Använd panelen [!UICONTROL All learning resources] för att navigera till självstudiekurser, dokumentation, forum, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Titta på tidigare event on-demand**: Se tidigare inspelade liveströmmar på produktspotlights, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personaliserad hemsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig hemsida på Experience League."){width="250" align="center" zoomable="yes"} |
+| Personlig hemsida | Gå till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/en/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** på den översta menyn för att optimera din inlärningsupplevelse: <ul><li>**Bokmärken**: Använd funktionen [!UICONTROL Bookmarks] för att spara och samla in dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din inlärning**: Förbättra din inlärningsupplevelse genom att uppdatera din Experience League-profil med de roller, branscher, produkter och den upplevelsenivå som bäst passar dina behov.</li><li>**Rekommendationer**: Visa utbildningsinnehåll som rekommenderas baserat på din senaste aktivitet.</li><li>**Nyligen visade**: Använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videoklipp.</li><li>**Utbildningsresurser**: Använd panelen [!UICONTROL All learning resources] för att navigera till självstudiekurser, dokumentation, forum, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Titta på tidigare event on-demand**: Se tidigare inspelade liveströmmar på produktspotlights, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personaliserad hemsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig hemsida på Experience League."){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -53,6 +53,7 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 
 | Funktion | Beskrivning |
 | --- | --- |
+| [!DNL Adform]-tillägg | Tillägget [!DNL Adform] på serversidan gör det möjligt för varumärken att enkelt rikta om målgrupper utanför webbplatsen med hjälp av ECID. Det här tillägget på serversidan är inte beroende av cookies från tredje part eller alternativa ID:n för cookies. Eftersom detta görs helt på serversidan behövs dessutom inga ytterligare pixlar eller andra ändringar på klientsidan. Mer information finns i [Översikt över tillägget Anpassa](/help/tags/extensions/server/adform/overview.md). |
 | API-tillägg för [!DNL Amazon]-webbhändelser | API-tillägget [!DNL Amazon] Conversions gör att annonsörer kan dela webbplatsinteraktioner direkt med [!DNL Amazon], vilket ger förbättrad attribuering, tillförlitlighet för data och kampanjoptimering. Det här tillägget har stöd för vidarebefordran av händelser, vilket gör att du kan skicka konverteringshändelser som inköp, varukorgstillägg med mera, samtidigt som du säkerställer korrekt borttagning av dubbletter för korrekt rapportering. Mer information finns i [Översikt över Amazon-tillägget](/help/tags/extensions/server/amazon/overview.md). |
 
 {style="table-layout:auto"}
