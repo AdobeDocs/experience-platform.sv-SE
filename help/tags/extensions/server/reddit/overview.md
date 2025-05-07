@@ -48,6 +48,7 @@ Så här installerar och konfigurerar du API-tillägget [!DNL Reddit] för konve
 3. Ange följande konfigurationsinformation:
    - **Pixel-ID**: Ange ditt [!DNL Reddit Ads] pixel-ID.
    - **Åtkomsttoken för konvertering**: Ange den token som har genererats i ditt [!DNL Reddit Ads]-konto och välj **[!UICONTROL Save]** när du är klar.
+
      ![Konfigurationsinformation för tillägget API för redigeringskonverteringar, inklusive fält för Pixel ID och konverteringsåtkomsttoken.](../../../images/extensions/server/reddit/reddit-capi-details.png)
 
 ## Konfigurera en regel för vidarebefordran av händelser {#config-rule}
