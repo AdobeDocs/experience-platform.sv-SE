@@ -15,7 +15,7 @@ Reddit är en plattform för sociala medier med en mångfaldig användarbas, vil
 
 Använd [[!DNL Reddit] API-tillägget för konvertering](https://ads-api.reddit.com/docs/v2/#tag/Conversions-API) för att skicka användarinteraktionshändelser som hämtats i Adobe Experience Platform Edge Network till [!DNL Reddit Ads]. Använd det här tillägget för att hjälpa ert varumärke att nå ut till fler än 379 miljoner aktiva användare varje vecka, och få en bättre förståelse för användarbeteende och köra riktade annonser.
 
-Läs den här vägledningen när du vill lära dig hur du installerar, konfigurerar och använder API-tillägget [!DNL Reddit] Conversions i [regler](https://experienceleague.adobe.com/en/docs/experience-platform/tags/ui/rules) för vidarebefordran av händelser.
+Läs den här vägledningen när du vill lära dig hur du installerar, konfigurerar och använder API-tillägget [!DNL Reddit] Conversions i [regler](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/ui/rules) för vidarebefordran av händelser.
 
 ## Viktiga fördelar {#benefits}
 
@@ -42,7 +42,7 @@ Följande indata krävs för att ansluta Experience Platform till [!DNL Reddit]:
 
 Så här installerar och konfigurerar du API-tillägget [!DNL Reddit] för konvertering:
 
-1. I användargränssnittet för Experience Platform Data Collection väljer du [!UICONTROL Extensions] i den vänstra navigeringen för att komma åt katalogen [!UICONTROL Extensions]. [Skapa sedan en ny egenskap för vidarebefordring av händelse](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/overview#properties) eller välj en befintlig egenskap.
+1. I användargränssnittet för Experience Platform Data Collection väljer du [!UICONTROL Extensions] i den vänstra navigeringen för att komma åt katalogen [!UICONTROL Extensions]. [Skapa sedan en ny egenskap för vidarebefordring av händelse](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/event-forwarding/overview#properties) eller välj en befintlig egenskap.
 2. Navigera till **[!UICONTROL Extensions]** i den vänstra navigeringspanelen. Välj **[!UICONTROL Catalog]** och välj sedan tillägget **[!DNL Reddit]**.
    ![Katalogen Adobe Experience Platform Extensions med tillägget Reddit markerat.](../../../images/extensions/server/reddit/reddit-extension.png)
 3. Ange följande konfigurationsinformation:
@@ -55,7 +55,7 @@ Så här installerar och konfigurerar du API-tillägget [!DNL Reddit] för konve
 
 När du har konfigurerat dataelementen kan du skapa regler för vidarebefordran av händelser som avgör när och hur händelser skickas till [!DNL Reddit Ads].
 
-1. Navigera till **Regler** i egenskapen för vidarebefordran av händelser och skapa en ny [regel](https://experienceleague.adobe.com/en/docs/experience-platform/tags/ui/rules).
+1. Navigera till **Regler** i egenskapen för vidarebefordran av händelser och skapa en ny [regel](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/ui/rules).
 2. Lägg till en ny åtgärd under **Åtgärder** och ange tillägget till **[!DNL Reddit CAPI]**.
 3. Ange **åtgärdstypen** till **Skicka händelse**.
    ![Konfigurationsgränssnittet för regel för vidarebefordran av händelser för tillägget för API för redigeringskonverteringar, med fälten för tillägg och åtgärdstyp markerade.](../../../images/extensions/server/reddit/reddit-rule.png)
