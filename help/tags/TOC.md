@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 3bd3ef14cd0bd2c079c1c881a70865b067f28341
+source-git-commit: 28eb48ec9fb7c9c5a5927c8582960cbd99199613
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '780'
 ht-degree: 18%
 
 ---
@@ -247,6 +247,8 @@ ht-degree: 18%
       * [Pega Customer Decision Hub](https://exchange.adobe.com/apps/ec/107597)
       * [!DNL Pinterest] {#pinterest}
          * [Översikt](./extensions/server/pinterest/overview.md)
+      * [!DNL Reddit] {#reddit}
+         * [Översikt](./extensions/server/reddit/overview.md)
       * [!DNL Snapchat] {#snap}
          * [Översikt](./extensions/server/snap/overview.md)
       * [!DNL Snowflake] {#snowflake}
@@ -333,5 +335,5 @@ ht-degree: 18%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
