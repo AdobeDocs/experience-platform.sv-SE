@@ -5,9 +5,9 @@ title: Slutpunkt för schema
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 role: Developer
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: a39fae1b72533261fb43e0acc95e50e5a6acd8df
 workflow-type: tm+mt
-source-wordcount: '1214'
+source-wordcount: '1224'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop 
 
 ### Hämta en lista med schemalagda frågor
 
-Du kan hämta en lista över alla schemalagda frågor för din organisation genom att göra en GET-förfrågan till slutpunkten `/schedules`.
+Du kan hämta en lista över alla schemalagda frågor för din organisation genom att göra en GET-begäran till slutpunkten `/schedules`.
 
 **API-format**
 
@@ -42,7 +42,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista schemala
 | `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultat efter skapade i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
 | `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet den äldsta schemalagda frågan först och fortsätter sedan att visa de senaste resultaten.<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. Grundläggande ISO-tidsstämplar har formatet `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skrivs som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30 am, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och anges med suffixet Z (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `templateId` och `userId`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än) och `==` (lika med). `userId==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla schemalagda frågor där användar-ID:t är angivet. |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML escape-konverterade. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `templateId` och `userId`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än) och `==` (lika med). `userId==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla schemalagda frågor där användar-ID:t är angivet. |
 
 **Begäran**
 
@@ -124,7 +124,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över schemalagda frågo
 
 ### Skapa en ny schemalagd fråga
 
-Du kan skapa en ny schemalagd fråga genom att göra en POST-förfrågan till slutpunkten `/schedules`. När du skapar en schemalagd fråga i API:t kan du även se den i Frågeredigeraren. Mer information om schemalagda frågor i användargränssnittet finns i [dokumentationen för Frågeredigeraren](../ui/user-guide.md#scheduled-queries).
+Du kan skapa en ny schemalagd fråga genom att göra en POST-begäran till slutpunkten `/schedules`. När du skapar en schemalagd fråga i API:t kan du även se den i Frågeredigeraren. Mer information om schemalagda frågor i användargränssnittet finns i [dokumentationen för Frågeredigeraren](../ui/user-guide.md#scheduled-queries).
 
 **API-format**
 
@@ -158,10 +158,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `query.dbName` | Namnet på databasen som du skapar en schemalagd fråga för. |
-| `query.sql` | Den SQL-fråga som du vill skapa. |
+| `query.dbName` | Namnet på databasen där den schemalagda frågan ska köras. |
+| `query.sql` | SQL-frågan som ska köras enligt angivet schema. |
 | `query.name` | Namnet på den schemalagda frågan. |
-| `schedule.schedule` | Kronschemat för frågan. Mer information om cron-scheman finns i dokumentationen för [cron-uttrycksformatet](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). I det här exemplet betyder &quot;30 * * *&quot; att frågan kommer att köras varje timme vid 30 minuters markering.<br><br>Du kan också använda följande kortkommandouttryck:<ul><li>`@once`: Frågan körs bara en gång.</li><li>`@hourly`: Frågan körs varje timme i början av timmen. Detta motsvarar cron-uttrycket `0 * * * *`.</li><li>`@daily`: Frågan körs en gång om dagen vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * *`.</li><li>`@weekly`: Frågan körs en gång i veckan, på söndag, vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * 0`.</li><li>`@monthly`: Frågan körs en gång i månaden, den första dagen i månaden, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 * *`.</li><li>`@yearly`: Frågan körs en gång per år, den 1 januari, vid midnatt. Detta motsvarar cron-uttrycket `1 0 0 1 1 *`. |
+| `query.description` | En valfri beskrivning av den schemalagda frågan. |
+| `schedule.schedule` | Kronschemat för frågan. Se [Crontab.guru](https://crontab.guru/) för ett interaktivt sätt att skapa, validera och förstå cron-uttryck. I det här exemplet betyder &quot;30 * * *&quot; att frågan kommer att köras varje timme vid 30 minuters markering.<br><br>Du kan också använda följande kortkommandouttryck:<ul><li>`@once`: Frågan körs bara en gång.</li><li>`@hourly`: Frågan körs varje timme i början av timmen. Detta motsvarar cron-uttrycket `0 * * * *`.</li><li>`@daily`: Frågan körs en gång om dagen vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * *`.</li><li>`@weekly`: Frågan körs en gång i veckan, på söndag, vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * 0`.</li><li>`@monthly`: Frågan körs en gång i månaden, den första dagen i månaden, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 * *`.</li><li>`@yearly`: Frågan körs en gång per år, den 1 januari, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 1 *`. |
 | `schedule.startDate` | Startdatumet för den schemalagda frågan, skrivet som en UTC-tidsstämpel. |
 
 **Svar**
@@ -223,7 +224,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 ### Begär information om en angiven schemalagd fråga
 
-Du kan hämta information för en viss schemalagd fråga genom att göra en GET-förfrågan till slutpunkten `/schedules` och ange dess ID i sökvägen för begäran.
+Du kan hämta information för en viss schemalagd fråga genom att göra en GET-begäran till slutpunkten `/schedules` och ange dess ID i sökvägen för begäran.
 
 **API-format**
 
@@ -308,7 +309,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna schema
 
 Du kan uppdatera informationen för en angiven schemalagd fråga genom att göra en PATCH-begäran till slutpunkten `/schedules` och ange dess ID i sökvägen för begäran.
 
-Begäran från PATCH stöder två olika sökvägar: `/state` och `/schedule/schedule`.
+PATCH-begäran stöder två olika sökvägar: `/state` och `/schedule/schedule`.
 
 ### Uppdatera status för schemalagd fråga
 
@@ -322,7 +323,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill PATCH. |
+| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill skicka till PATCH. |
 
 
 **Begäran**
@@ -375,7 +376,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill PATCH. |
+| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill skicka till PATCH. |
 
 **Begäran**
 
