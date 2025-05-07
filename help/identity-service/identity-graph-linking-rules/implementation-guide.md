@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: d0380844eb8dd98bd7c349beb035cce4c7ccb44f
 workflow-type: tm+mt
-source-wordcount: '1876'
+source-wordcount: '1874'
 ht-degree: 0%
 
 ---
@@ -113,7 +113,7 @@ Under förimplementeringsprocessen måste du se till att de autentiserade hände
 
 Om systemet skickar två personidentifierare kan implementeringen misslyckas med kravet på namnutrymme för en person. Om identityMap i din webSDK-implementering till exempel innehåller ett CRMID, ett customerID och ett ECID-namnutrymme, finns det ingen garanti för att varje enskild händelse ska innehålla både CRMID och customerID.
 
-Bäst är att du skickar en nyttolast som ser ut så här:
+Du bör **inte** skicka en nyttolast enligt nedan:
 
 ```json
 {
