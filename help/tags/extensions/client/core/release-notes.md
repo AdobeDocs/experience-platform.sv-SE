@@ -2,9 +2,9 @@
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 1ce579fc1f8548d1eb5c01d63e9fa4e8b32e2a4f
+source-git-commit: 1342461c95fa096496739fc14c92a7edd5aa6b57
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1693'
 ht-degree: 2%
 
 ---
@@ -14,6 +14,14 @@ ht-degree: 2%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
+
+## 8 maj 2025
+
+v3.4.3
+
+* Korrigerar ett problem där kryssrutan **Ersätt alla** är markerad i **Dataelement** > **JavaScript-verktyg** > **Simple Replace** men orsakar ett fel när regeln ska sparas med kryssrutan aktiverad.
+* Uppgraderar @adobe/reaktionsspektrum till v3.41.0.
+* Uppgraderar @adobe/reactor-sandbox till v13.2.1.
 
 ## 23 oktober 2024
 
@@ -161,7 +169,7 @@ v1.8.1
 v1.8.0
 
 * **Löften i anpassad kod** - Anpassade kodvillkor och JavaScript-åtgärder som inte körs i det globala omfånget kan nu returnera löften.  Du kan använda dem om du vill att efterföljande villkor och åtgärder ska vänta på att en asynkron process i din anpassade kod slutförs innan du går vidare till nästa objekt.
-* **Återanrop i anpassade kodåtgärder för HTML** - Du kan göra samma sak i anpassade kodåtgärder för HTML med hjälp av återanropen `onCustomCodeSuccess()` och `onCustomCodeFailure()`.
+* **Återanrop i HTML Custom Code Actions** - Du kan göra samma sak i HTML Custom Code-åtgärder med återanropen `onCustomCodeSuccess()` och `onCustomCodeFailure()`.
 
 Mer information finns i [Core Extension reference](./overview.md) i Conditions > Custom Code and Actions > Custom Code.
 
@@ -202,7 +210,7 @@ v1.4.3
 * **Indatafält** - Indatafälten är mycket längre nu!
 * **Anpassad händelse** - Anpassad händelsetyp kan nu användas med händelser som skickas utanför fönstret.
 * **Felkorrigering** - Ett fel har korrigerats där värdejämförelsevillkoret inte innehöll ett 0-värde.
-* **Felkorrigering** - Exchange\_url-fältet har uppdaterats, så du kan nu se listan Core Extension i Adobe Exchange.
+* **Felkorrigering** - Exchange\_url-fältet har uppdaterats så att du nu kan se listan Core Extension i Adobe Exchange.
 
 ## 8 januari 2019
 
