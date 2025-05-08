@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: d0380844eb8dd98bd7c349beb035cce4c7ccb44f
+source-git-commit: 1a6ca508f0f5e95ddad9014d6507a7a829592673
 workflow-type: tm+mt
-source-wordcount: '1874'
+source-wordcount: '1946'
 ht-degree: 0%
 
 ---
@@ -160,6 +160,8 @@ I diagramsimuleringar kan det här intrycket se ut så här:
 ![Gränssnittet för diagramsimulering med ett exempeldiagram återgivet.](../images/implementation/example-graph.png)
 
 >[!TAB Autentiserade händelser utan personidentifierare]
+
+I det här exemplet kan du anta att följande händelse skickades till Experience Platform medan John (slutanvändaren) surfade på din webbplats medan den autentiserades. Trots att han är autentiserad kan Experience Platform inte identifiera John på grund av att det saknas personidentifierare i händelsen. Därför tolkas den här händelsen som en anonym användare som surfar på Adobe Business-webbplatsen i stället för att identifieras som en onlineaktivitet som är specifikt kopplad till John.
 
 ```json
 {
