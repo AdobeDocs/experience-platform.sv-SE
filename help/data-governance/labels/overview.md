@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över dataanvändningsetiketter
 description: Läs om hur dataanvändningsetiketter används för att säkerställa regelefterlevnad för datastyrning i Adobe Experience Platform.
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 916eb01ea7878366620b859c1d6a667a88b850c9
 workflow-type: tm+mt
 source-wordcount: '786'
 ht-degree: 0%
@@ -44,7 +44,7 @@ Mer information om hur automatisk tillämpning fungerar i Experience Platform fi
 
 [!DNL Experience Platform] kan dela segment med Adobe Audience Manager. Alla dataexportkontroller som har tillämpats på Audience Manager-segment översätts till motsvarande etiketter och marknadsföringsåtgärder som identifieras av [!DNL Experience Platform] Data Governance.
 
-En referens om hur specifika dataexportkontroller mappar till dataanvändningsetiketter i [!DNL Experience Platform] finns i [Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE#aam-data-export-control-in-aep).
+En referens om hur specifika dataexportkontroller mappar till dataanvändningsetiketter i [!DNL Experience Platform] finns i [Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep).
 
 ## Hantera dataanvändningsetiketter i [!DNL Experience Platform] {#manage-labels}
 
@@ -57,7 +57,7 @@ Du kan hantera dataanvändningsetiketter med [!DNL Experience Platform] API:er e
 
 ### Använda gränssnittet
 
-På arbetsytan **[!UICONTROL Policies]** i användargränssnittet för [!DNL Experience Platform] kan du visa och hantera kärnetiketter och anpassade etiketter för din organisation. Du kan använda arbetsytan **[!UICONTROL Schemas]** för att [använda etiketter i XDM-scheman (Experience Data Model)](../../xdm/tutorials/labels.md), eller lära dig hur du [skapar och hanterar anpassade etiketter i användarhandboken för **[!UICONTROL Policies] UI](./user-guide.md) genom att läsa användarhandboken för dataanvändningsetiketter i stället.
+På arbetsytan **[!UICONTROL Policies]** i användargränssnittet för [!DNL Experience Platform] kan du visa och hantera kärnetiketter och anpassade etiketter för din organisation. Du kan använda arbetsytan **[!UICONTROL Schemas]** för att [använda etiketter i XDM-scheman (Experience Data Model)](../../xdm/tutorials/labels.md), eller lära dig hur du [skapar och hanterar anpassade etiketter i **[!UICONTROL Policies]** användargränssnittet](./user-guide.md) genom att läsa användarhandboken för dataanvändningsetiketter i stället.
 
 >[!IMPORTANT]
 >

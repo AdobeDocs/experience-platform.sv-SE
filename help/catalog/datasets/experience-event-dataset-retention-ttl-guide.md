@@ -2,9 +2,9 @@
 title: Hantera lagring av Experience Event-datauppsättningar i Data Lake med TTL
 description: Lär dig hur du utvärderar, ställer in och hanterar lagring av Experience Event-datauppsättningar i datasjön med hjälp av TTL-konfigurationer (Time-To-Live) med Adobe Experience Platform API:er. Den här guiden förklarar hur TTL-radnivåförfallodatum stöder principer för datalagring, optimerar lagringseffektiviteten och säkerställer effektiv livscykelhantering. Här finns också användningsexempel och metodtips som hjälper dig att effektivt tillämpa TTL.
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 06b58d714047cb69f237469ecd548bb824e565ab
+source-git-commit: 13db0477c0f42d0808647937d40c25b47a270894
 workflow-type: tm+mt
-source-wordcount: '2455'
+source-wordcount: '2451'
 ht-degree: 0%
 
 ---
@@ -301,11 +301,11 @@ Vanliga frågor och svar behandlar praktiska frågor om kvarhållningsjobb för 
 ### Vilka typer av datauppsättningar kan jag tillämpa regler för lagringspolicy på?
 
 +++Svar
-Du kan tillämpa TTL-baserade bevarandeprinciper på alla datauppsättningar som använder ett tidsserieschema. Detta inkluderar datauppsättningar baserade på standardklassen XDM ExperienceEvent, samt anpassade scheman som utökar klassen XDM Time Series.
+Du kan tillämpa TTL-baserade bevarandeprinciper på alla datauppsättningar som använder tidsseriebeteende. Detta inkluderar datauppsättningar som baseras på standardklassen för XDM ExperienceEvent, samt anpassade scheman som utformats för att hämta data från tidsserier.
 
 Giltighetstid på radnivå kräver följande tekniska villkor:
 
-- Schemat måste utöka XDM Time Series-basklassen.
+- Schemat måste vara utformat för att samla in data från tidsserier.
 - Schemat måste innehålla ett tidsstämpelfält som används för att utvärdera förfallodatum.
 - Datauppsättningen ska lagra data på händelsenivå, vanligtvis med klassen XDM ExperienceEvent eller som utökning.
 - Datauppsättningen måste registreras i katalogtjänsten eftersom TTL-inställningarna tillämpas via `extensions.adobe_lakeHouse.rowExpiration`.
