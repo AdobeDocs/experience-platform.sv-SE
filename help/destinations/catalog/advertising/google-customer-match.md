@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 98d83e8d09b6e469daf515063e2887bfbf9b8be6
 workflow-type: tm+mt
-source-wordcount: '2008'
+source-wordcount: '2322'
 ht-degree: 1%
 
 ---
@@ -58,11 +58,15 @@ Vissa destinationer i Experience Platform har vissa regler och skyldigheter för
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| GAID | GOOGLE ADVERTISING ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
-| IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
-| phone_sha256_e.164 | Telefonnummer i E164-format, hashas med algoritmen SHA256 | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
-| user_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
+| `GAID` | GOOGLE ADVERTISING ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
+| `IDFA` | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
+| `phone_sha256_e.164` | Telefonnummer i E164-format, hashas med algoritmen SHA256 | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| `email_lc_sha256` | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| `user_id` | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
+| `address_info_first_name` | Användarens förnamn | Den här målidentiteten är avsedd att användas tillsammans med `address_info_last_name`, `address_info_country_code` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. |
+| `address_info_last_name` | Användarens efternamn | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_country_code` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. |
+| `address_info_country_code` | Landskod för användaradress | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_last_name` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. <br><br>Godkänt format: landskoder med gemener och två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) . |
+| `address_info_postal_code` | Postnummer för användaradress | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_last_name` och `address_info_country_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. |
 
 {style="table-layout:auto"}
 
@@ -227,6 +231,10 @@ Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade 
 ## Bildskärmsmål {#monitor-destination}
 
 När du har anslutit till målet och etablerat ett måldataflöde kan du använda [övervakningsfunktionen](/help/dataflows/ui/monitor-destinations.md) i Real-Time CDP för att få omfattande information om de profilposter som är aktiverade för målet i varje dataflödeskörning.
+
+>[!IMPORTANT]
+>
+>När du mappar de fyra adressrelaterade mål-ID:n (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) räknas de som separata individuella identiteter för varje profil på dataflödets övervakningssida.
 
 ## Verifiera att målgruppsaktiveringen lyckades {#verify-activation}
 
