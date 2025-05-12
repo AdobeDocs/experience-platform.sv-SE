@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a79efc5d64862850d17cff0fd0633c73fd08207d
+source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
 workflow-type: tm+mt
-source-wordcount: '2183'
-ht-degree: 94%
+source-wordcount: '2178'
+ht-degree: 93%
 
 ---
 
@@ -108,7 +108,7 @@ Använd identitetstjänsten för Adobe Experience Platform för att skapa en hel
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Begränsad tillgänglighet]{type=Informative} [!DNL Identity Graph Linking Rules] | Länkningsregler för identitetsdiagram har nu begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor. <ul><li>**Aktiveringskrav**: funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan konfigurationen fortsätter systemet att fungera som vanligt, utan att beteendet förändras.</li><li>**Viktigt**! Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat för segmentmedlemskap. Streaming och gruppsegmentering fungerar dock som förväntat.</li><li>**Nästa steg**: kontakta Adobe-kontoteamet för mer information om hur du aktiverar funktionen i produktionssandlådor.</li></ul> |
+| [!BADGE Begränsad tillgänglighet]{type=Informative} [!DNL Identity Graph Linking Rules] Länkningsregler för identitetsdiagram kan nu nås av alla kunder i utvecklingssandlådor. <ul><li>**Aktiveringskrav**: funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan konfigurationen fortsätter systemet att fungera som vanligt, utan att beteendet förändras.</li><li>**Viktigt**! Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat för segmentmedlemskap. Streaming och gruppsegmentering fungerar dock som förväntat.</li><li>**Nästa steg**: kontakta Adobe-kontoteamet för mer information om hur du aktiverar funktionen i produktionssandlådor.</li></ul> |
 
 {style="table-layout:auto"}
 

@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: a3b1e2e8-d780-4e23-b323-37e1a631f716
-source-git-commit: b0ed9e38dbc3b4a4f4f7cde5751c2edd35355b59
+source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
 workflow-type: tm+mt
-source-wordcount: '2183'
-ht-degree: 28%
+source-wordcount: '2178'
+ht-degree: 93%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 28%
 
 >[!TIP]
 >
->Läs följande dokumentation om du vill veta mer om andra Adobe Experience Platform-program:
+>Ta del av följande dokumentation för versionsinformation om andra Adobe Experience Platform-program:
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
@@ -37,11 +37,11 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 
 ## Experience League {#experience-league}
 
-Experience League är en omfattande utbildningsplattform som hjälper dig att höja din kompetens med Adobe produkter. Här finns en mängd olika resurser, bland annat kurser, dokumentation, communitysidor, evenemang och tillgång till certifieringar.
+Experience League är en omfattande utbildningsplattform som förbättrar dina färdigheter inom Adobe-produkter. Här finns en mängd olika resurser, bland annat kurser, dokumentation, communitysidor, evenemang och tillgång till certifieringar.
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Personlig hemsida | Få åtkomst till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/sv/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** på den översta menyn för att optimera din inlärningsupplevelse: <ul><li>**Bokmärken**: Använd funktionen [!UICONTROL Bookmarks] för att spara och samla in dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din inlärning**: Förbättra din inlärningsupplevelse genom att uppdatera din Experience League-profil med de roller, branscher, produkter och den upplevelsenivå som bäst passar dina behov.</li><li>**Rekommendationer**: Visa utbildningsinnehåll som rekommenderas baserat på din senaste aktivitet.</li><li>**Nyligen visade**: Använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videoklipp.</li><li>**Utbildningsresurser**: Använd panelen [!UICONTROL All learning resources] för att navigera till självstudiekurser, dokumentation, forum, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Titta på tidigare event on-demand**: Se tidigare inspelade liveströmmar på produktspotlights, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personaliserad hemsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig hemsida på Experience League."){width="250" align="center" zoomable="yes"} |
+| Personlig startsida | Få åtkomst till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/sv/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** i menyn längst upp om du vill optimera din utbildningsupplevelse: <ul><li>**Bokmärken**: använd funktionen [!UICONTROL Bookmarks] om du vill spara och samla dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din utbildning**: förbättra din utbildningsupplevelse genom att uppdatera din Experience League-profil med roller, branscher, produkter och erfarenhetsnivå som passar dina behov bäst.</li><li>**Rekommendationer**: visa utbildningsinnehåll som rekommenderas utifrån din senaste aktivitet.</li><li>**Nyligen visade**: använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videor.</li><li>**Utbildningsresurser**: använd panelen [!UICONTROL All learning resources] för att komma till självstudiekurser, dokumentation, community, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Se tidigare händelser på begäran**: se tidigare inspelade livesändningar om produkter i fokus, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personlig startsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig startsida på Experience League."){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -66,25 +66,25 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 
 | Mål | Beskrivning |
 | --- | --- |
-| [Marketo Engage personsynkronisering](/help/destinations/catalog/adobe/marketo-engage-person-sync.md) | Adobe uppdaterade målet [!DNL Marketo Engage Person Sync] för att åtgärda ett problem som påverkade kunder när det fanns flera e-postmeddelanden i identitetskartan. |
-| [(V2) Målgruppsanslutning för Pega CDH Realtime ](/help/destinations/catalog/personalization/pega-v2.md) | Använd målet [!DNL (V2) Pega Customer Decision Hub Realtime Audience] i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för nästa bästa åtgärd-beslut, när du har flera Pega Customer Decision Hub-program konfigurerade i Pega-kontot. |
+| [Marketo Engage Person Sync](/help/destinations/catalog/adobe/marketo-engage-person-sync.md) | Adobe uppdaterade målet [!DNL Marketo Engage Person Sync] för att åtgärda ett problem som påverkade kunder när det fanns flera e-postmeddelanden i identitetsmappningen. |
+| [(V2) Målgruppsanslutning för Pega CDH Realtime ](/help/destinations/catalog/personalization/pega-v2.md) | Använd målet [!DNL (V2) Pega Customer Decision Hub Realtime Audience] i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för bästa beslutsfattande åtgärd när du har flera Pega Customer Decision Hub-program konfigurerade i Pega-kontot. |
 
 **Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Schemaläggningsalternativ för **Veckovis** och **Månadsvis** för fullständig filexport | Du kan nu schemalägga fullständig filexport för personer och potentiella målgrupper varje vecka eller månad när du aktiverar till filbaserade mål för molnlagring. [Läs mer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) om schemaläggningsalternativ. |
+| **Veckovisa** och **månadsvisa** schemaläggningsalternativ för fullständiga filexporter | Nu kan du schemalägga fullständiga filexporter för personer och potentiella målgrupper varje vecka eller månad när du aktiverar till filbaserade mål för molnlagring. [Läs mer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) om schemaläggningsalternativ. |
 
 {style="table-layout:auto"}
 
 **Korrigeringar, förbättringar och andra meddelanden** {#destinations-fixes-and-enhancements}
 
-- **Tvingande slutdatum för datauppsättningsexport fördröjt till 1 september 2025**\
-  Som en del av [september 2024-utgåvan](/help/release-notes/2024/september-2024.md#destinations-new-updated-functionality) har Adobe angett standardslutdatumet 1 maj 2025 för datauppsättningsexportdataflöden som skapats *före den utgåvan*. Adobe förlänger nu den här tidsgränsen till **1 september 2025** för att ge kunderna ytterligare tid att uppdatera sina scheman. Mer information om hur du redigerar slutdatumet för ett datauppsättningsexportflöde finns i avsnittet om schemaläggning i självstudiekursen [Exportera datauppsättningar](../../destinations/ui/export-datasets.md#schedule-dataset-export).
+- **Slutdatum för verkställande av datauppsättningsexport har senarelagts till 1 september 2025**\
+  Som en del av [versionen från september 2024](/help/release-notes/2024/september-2024.md#destinations-new-updated-functionality) har Adobe fastställt slutdatumet 1 maj 2025 för dataflöden avseende datauppsättningsexport som skapats *innan den versionen lanserades*. Adobe förlänger nu den här tidsfristen till **1 september 2025** för att ge kunderna ytterligare tid att uppdatera sina scheman. Mer information om hur du ändrar slutdatumet för ett dataflöde i en datauppsättningsexport finns i avsnittet om schemaläggning i [självstudiekursen för export av datauppsättningar](../../destinations/ui/export-datasets.md#schedule-dataset-export).
 
-- **Förbättrad hantering av misslyckade SFTP-överföringar för LiveRamp-introduktion**\
-  Adobe har implementerat en korrigering för ett problem som påverkar filexporten till [LiveRamp Onboarding](/help/destinations/catalog/advertising/liveramp-onboarding.md)-målet via SFTP. Ibland misslyckades filöverföringar på grund av tillfälliga serverproblem, och tillfälliga filer från misslyckade försök finns kvar på servern. Dessa filer som inte kan tas bort blockerade efterföljande försök eftersom Adobe inte har behörighet att skriva över dem.\
-  Om ett försök att ta bort den temporära filen inte kan tas bort med korrigeringen genereras en ny fil med det tillagda suffixet `attempt2` i Adobe, så att du kan vara säker på att återförsöket slutförs korrekt.
+- **Förbättrad hantering av misslyckade SFTP-överföringar för LiveRamp-registrering**\
+  Adobe har implementerat en korrigering för ett problem som påverkar filexporten tillmålet [LiveRamp-registering](/help/destinations/catalog/advertising/liveramp-onboarding.md) via SFTP. Ibland misslyckades filöverföringar på grund av tillfälliga serverproblem och tillfälliga filer från de här försöken finns kvar på servern. Filerna kan inte tas bort och hindrar efterföljande försök eftersom Adobe inte har behörighet att skriva över dem.\
+  Efter korrigeringen genererar Adobe en ny fil med ett suffix `attempt2` om ett efterföljande försök inte kan ta bort den temporära filen, så att efterföljande försök kan slutföras.
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -94,7 +94,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Strängfält får minst ett värde | Nya strängfält får som standard en minsta längd på ett. Null-värden för fält som inte är obligatoriska accepteras fortfarande. Mer information om bästa praxis finns i guiden [Bästa praxis för datamodellering](../../xdm/schema/best-practices.md#data-integrity-tips) |
+| Strängfält får ett lägsta värde på ett | Nya strängfält får som standard en kortaste längd på ett. Null-värden för fält som inte är obligatoriska accepteras fortfarande. Mer information om bästa praxis finns i guiden [Bästa praxis för datamodellering](../../xdm/schema/best-practices.md#data-integrity-tips) |
 
 {style="table-layout:auto"}
 
@@ -108,7 +108,7 @@ Använd identitetstjänsten för Adobe Experience Platform för att skapa en hel
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Begränsad tillgänglighet]{type=Informative} [!DNL Identity Graph Linking Rules] | Länkningsregler för identitetsdiagram har nu begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor. <ul><li>**Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.</li><li>**Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.</li><li>**Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.</li></ul> |
+| [!BADGE Begränsad tillgänglighet]{type=Informative} [!DNL Identity Graph Linking Rules] | Länkningsregler för identitetsdiagram kan nu användas av alla kunder i utvecklingssandlådor. <ul><li>**Aktiveringskrav**: funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan konfigurationen fortsätter systemet att fungera som vanligt, utan att beteendet förändras.</li><li>**Viktigt**! Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat för segmentmedlemskap. Streaming och gruppsegmentering fungerar dock som förväntat.</li><li>**Nästa steg**: kontakta Adobe-kontoteamet för mer information om hur du aktiverar funktionen i produktionssandlådor.</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -122,11 +122,11 @@ Fråga efter data i Adobe Experience Platforms datasjö med hjälp av standard-S
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Skriv över SQL-målgrupp | Uppdatera målgruppsmedlemskapet genom att skriva över befintliga profiler med resultatet av en ny SQL-fråga. På så sätt kan ni hantera dynamiska målgrupper effektivare genom att ta bort gamla poster och infoga uppdaterade i en enda åtgärd. Mer information finns i [guiden för SQL-målgruppstillägg](../../query-service/data-distiller-audiences/overview.md#replace-audience). |
-| Hämta och kopiera frågeresultat | [Hämta frågeresultat direkt från frågeredigeraren](../../query-service/ui/overview.md#download-query-results) som CSV-, XLSX- eller JSON-filer, eller [kopiera resultat till Urklipp](../../query-service/ui/overview.md#copy-results) som kommaavgränsade värden (CSV) för snabb användning i kalkylbladsprogram som Excel. Dessa förbättringar effektiviserar arbetsflödena för offlineanalys, rapportering och datavalidering. |
-| Visa frågeresultat i helskärm | [Förhandsgranska frågan resulterar i en dialogruta i helskärmsläge](../../query-service/ui/overview.md#view-results) för att förbättra läsbarheten, enkelt skanna stora datamängder och välja rader för kopiering. I helskärmsläget finns en stödrasterlayout som du kan ändra storlek på, vilket gör att du kan granska breda tabeller och detaljerade utdata mer effektivt. |
-| Förbättrad kolumnmarkering i modellförutsägelse | Välj specifika kolumner och tillämpa alias med den utökade syntaxen `model_predict`. Hämta resultat från mellanliggande förutsägelser, t.ex. funktionsvektorer och sannolikhetsresultat. Det utökade urvalet kräver aktivering av en funktionsflagga. Se [Modellens livscykeldokumentation](../../query-service/advanced-statistics/models.md#select-specific-output-fields) för syntaxexempel och information om funktionsflaggor. |
-| Spara modellförutsägelseutdata med CREATE TABLE och INSERT INTO | [Spara valda förutsägelseutdata i nya tabeller med CREATE TABLE AS SELECT eller infoga i befintliga tabeller med INSERT INTO SELECT](../../query-service/advanced-statistics/models.md#predict). Om utökad kolumnmarkering är aktiverat kan mellanliggande resultat som funktionsvektorer och sannolikheter också bevaras tillsammans med slutliga prognoser. Exempel på användning finns i [SQL-syntaxdokumentationen](../../query-service/sql/syntax.md#create-table-as-select). |
+| Skriv över SQL-målgrupp | Uppdatera målgruppsmedlemskapet genom att skriva över befintliga profiler med resultatet för en ny SQL-fråga. På så sätt kan du hantera dynamiska målgrupper effektivare genom att ta bort och uppdatera gamla poster i en enda åtgärd. Mer information finns i guiden för [SQL:s målgruppstillägg](../../query-service/data-distiller-audiences/overview.md#replace-audience). |
+| Hämta och kopiera resultat för frågor | [Hämta frågeresultat direkt från frågeredigeraren](../../query-service/ui/overview.md#download-query-results) i CSV-, XLSX- eller JSON-filer, eller [kopiera resultat till urklipp](../../query-service/ui/overview.md#copy-results) som kommaavgränsade värden (CSV) för snabb användning i kalkylbladsprogram som Excel. Förbättringarna effektiviserar arbetsflöden för offlineanalys, rapportering och datavalidering. |
+| Visa frågeresultat i helskärm | [Förhandsgranska frågeresultaten i en dialogruta i helskärmsläge](../../query-service/ui/overview.md#view-results) om du vill göra det lättare att läsa dem, enkelt skanna stora datauppsättningar och välja rader för kopiering. I helskärmsläget finns ett rutnät som du kan ändra storlek på för att göra det lättare att granska breda tabeller och detaljerade utdata. |
+| Utökat urval av kolumner i modellförutsägelse | Välj specifika kolumner och tillämpa alias med den utökade syntaxen `model_predict`. Hämta resultat från mellanliggande förutsägelser, t.ex. funktionsvektorer och sannolikhetsresultat. Det utökade urvalet kräver att en funktionsflagga aktiveras. Se [modellens livscykeldokumentation](../../query-service/advanced-statistics/models.md#select-specific-output-fields) för exempel på syntax och information om funktionsflaggor. |
+| Spara modellförutsägelseutdata med SKAPA TABELL och INFOGA I | [Spara valda förutsägelseutdata i nya tabeller med SKAPA TABELL MED VALDA eller infoga i befintliga tabeller med INFOGA I VALDA](../../query-service/advanced-statistics/models.md#predict). Om utökat urval av kolumner har aktiverats kan mellanliggande resultat som funktionsvektorer och sannolikheter också bevaras tillsammans med slutliga förutsägelser. Du hittar exempel på användning i [SQL:s syntaxdokumentation](../../query-service/sql/syntax.md#create-table-as-select). |
 
 Mer information om [!DNL Query Service] finns i [[!DNL Query Service] översikten](../../query-service/home.md).
 
@@ -136,7 +136,7 @@ Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Pseudonymt utgångsdatum för profildata | Hantera dina pseudonyma profildata när de förfaller på profilkontrollpanelen. Om du vill veta mer om den här funktionen och pseudonyma profiler läser du [utgångsguiden för pseudonyma profildata](../../profile/pseudonymous-profiles.md). |
+| Förfallotid för pseudonyma profilens data | Hantera förfallotid för din pseudonyma profils data i kontrollpanelen för profilen. Om du vill veta mer om funktionen och pseudonyma profiler kan du ta del av [guiden för förfallotid för pseudonyma profilens data](../../profile/pseudonymous-profiles.md). |
 
 {style="table-layout:auto"}
 
@@ -150,7 +150,7 @@ Adobe Experience Platform är utvecklad för att berika program för digitala up
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för utökning av plugin-program för sandlådeverktyg | Anpassade åtgärder kan nu kopieras som ett beroende objekt när du duplicerar reseobjekt i sandlådeverktyg. Dessutom kan du välja befintliga åtgärder som ska återanvändas i målsandlådan. De kan också läggas till i ett paket oberoende av varandra. Fullständig information om vilka Adobe Journey Optimizer-objekt som stöds finns i handboken om [sandlådeverktyg](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects). |
+| Utökad support för plugin-program för verktyg i sandlådan | Anpassade åtgärder kan nu kopieras som ett beroende objekt när du skapar dubbletter av Journey-objekt i sandlådeverktyg. Du kan dessutom välja befintliga åtgärder att återanvända i målsandlådan. De kan också läggas till i ett paket var för sig. Du hittar fullständig information om vilka Adobe Journey Optimizer-objekt som stöds i guiden om [sandlådeverktyg](../../sandboxes/ui/sandbox-tooling.md#adobe-journey-optimizer-objects). |
 
 {style="table-layout:auto"}
 
@@ -166,8 +166,8 @@ Använd källor i Experience Platform för inmatning av data från ett Adobe-pro
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [!DNL Algolia User Profiles] | [[!DNL Algolia User Profiles]](../../sources/connectors/data-partners/algolia-user-profiles.md)-källan är nu tillgänglig. Använd den här källan för att ta med dina [!DNL Algolia]-användarprofiler till Experience Platform. Ni kan sedan använda dessa data för att förbättra användarengagemanget, konverteringsgraden och den övergripande kundupplevelsen genom att tillhandahålla högpresterande söklösningar för webbplatser, e-handelsplattformar och applikationer. Mer information finns i guiden om hur du [importerar [!DNL Algolia User Profiles] data till Experience Platform](../../sources/tutorials/ui/create/data-partners/algolia-user-profiles.md). |
-| [!BADGE Stöd för Beta]{type=Informative} API för [!DNL Azure Databricks] | [!DNL Azure Databricks]-källan är nu tillgänglig i API:t. Använd API:t [!DNL Flow Service] för att ansluta ditt [!DNL Databricks]-konto och överföra dina [!DNL Databricks]-data till Experience Platform. Mer information finns i dokumentationen om [[!DNL Azure Databricks]](../../sources/connectors/databases/databricks.md). |
+| [!BADGE Beta]{type=Informative} [!DNL Algolia User Profiles] | Källan [[!DNL Algolia User Profiles]](../../sources/connectors/data-partners/algolia-user-profiles.md) är nu tillgänglig. Använd den här källan om du vill överföra data som tillhör dina [!DNL Algolia]-användarprofiler till Experience Platform. Du kan sedan använda dessa data för att förbättra användarengagemang, konverteringsgrader och övergripande kundupplevelser genom att tillhandahålla sökfunktionslösningar av hög kvalitet för webbplatser, e-handelsplattformar och program. Du hittar mer information i guiden om hur du [matar in [!DNL Algolia User Profiles]  data på Experience Platform](../../sources/tutorials/ui/create/data-partners/algolia-user-profiles.md). |
+| [!BADGE Beta]{type=Informative} API-stöd för [!DNL Azure Databricks] | Källan [!DNL Azure Databricks] är nu tillgänglig i API. Använd [!DNL Flow Service]-API för att ansluta ditt [!DNL Databricks]-konto och överföra dina [!DNL Databricks]-data till Experience Platform. Du hittar mer information i dokumentationen på [[!DNL Azure Databricks]](../../sources/connectors/databases/databricks.md). |
 
 {style="table-layout:auto"}
 
@@ -175,9 +175,9 @@ Använd källor i Experience Platform för inmatning av data från ett Adobe-pro
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Uppdaterade XDM-fält för inmatning av strömmande mediedata i Experience Platform. | Den nya XDM-fältgruppen, `mediaReporting`, är nu tillgänglig för inhämtning av direktuppspelningsmediedata via Adobe Analytics-källan till Experience Platform. Det här fältet ersätter fältet `media.mediaTimed`.</br> <br>Under en övergångsperiod på tre månader kommer inmatning av data i `media.mediaTimed` fält att fortsätta. I slutet av juli 2025 kommer dock `media.mediaTimed`-fälten att vara helt inaktuella och inte längre synliga i användargränssnittet för Experience Platform Schema, och data kommer endast att skickas med hjälp av fälten `mediaReporting`.</br><br>Om du har implementerat Analytics-källan för att samla in Streaming Media-data till plattformen före 22 april 2025 måste du migrera dina befintliga konfigurationer för att skicka data med den nya fältgruppen. Denna migrering måste vara slutförd i slutet av juli 2025. Kontakta Adobe Account Team för migreringssupport. |
+| XDM-fält för inmatning av data från mediestreaming i Experience Platform har uppdaterats. | Den nya XDM-fältgruppen `mediaReporting` är nu tillgänglig och kan användas för att mata in data från mediestreaming via Adobe Analytics-källan till Experience Platform. Det här fältet ersätter fältet `media.mediaTimed`.</br> <br>Under en övergångsperiod på tre månader kommer inmatning av data i `media.mediaTimed`-fält att fortsätta. I slutet av juli 2025 kommer dock `media.mediaTimed`-fälten att vara helt inaktuella och inte längre synliga i användargränssnittet för schemaläggning i Experience Platform. Data skickas istället endast med hjälp av `mediaReporting`-fälten.</br><br>Om du har implementerat Analytics-källan för att samla in data från mediestreaming till plattformen före 22 april 2025 måste du migrera dina befintliga konfigurationer för att skicka data med den nya fältgruppen. Migreringen måste vara klar i slutet av juli 2025. Kontakta Adobe-kontoteamet för migreringsstöd. |
 | Nya autentiseringstyper för [!DNL MariaDB] och [!DNL PostgreSQL] | Du kan nu använda grundläggande autentisering för att autentisera dina [!DNL MariaDB]- och [!DNL PostgreSQL]-källor på Experience Platform. Mer information finns i följande dokumentation: <ul><li>[[!DNL MariaDB]](../../sources/connectors/databases/mariadb.md)</li><li>[[!DNL PostgreSQL]](../../sources/connectors/databases/postgres.md) |
-| Filtreringsstöd på radnivå för [!DNL Amazon Redshift] | Du kan använda filtreringsfunktioner på radnivå för dina [!DNL Amazon Redshift]-data på Experience Platform. Mer information finns i handboken om [filtrering av radnivådata för källor i API](../../sources/tutorials/api/filter.md). |
+| Filtreringsstöd på radnivå för [!DNL Amazon Redshift] | Du kan använda filtreringsfunktioner på radnivå för dina [!DNL Amazon Redshift]-data på Experience Platform. Du hittar mer information i guiden om [filtrering av data på radnivå för källor i API](../../sources/tutorials/api/filter.md). |
 
 {style="table-layout:auto"}
 
@@ -185,18 +185,18 @@ Mer information finns i [översikten över källor](../../sources/home.md).
 
 ## Use Case Playbooks {#use-case-playbooks}
 
-Använd fallspelsböcker var ursprungligen utformade för att övervinna utmaningar när man kom igång med Real-Time Customer Data Platform eller Adobe Journey Optimizer. De fortsätter att utvecklas och gör det nu möjligt för er att snabbt komma igång med viktiga användningsfall för marknadsföring och tillhandahålla inspiration och färdiga resurser för att testa och börja producera.
+Use Case Playbooks utformades från början som stöd för att komma igång med Real-Time Customer Data Platform (RTCDP) eller Adobe Journey Optimizer. Men de har fortsatt att utvecklas och kan nu användas för att snabbt komma igång med viktiga användningsfall inom marknadsföring med inspiration och färdiga resurser för test och produktion.
 
-Använd fallspelsböcker har gått över från ett identifieringsverktyg till ett samverkansbaserat ramverk. De hjälper er nu att skapa, hantera och dela egna spelböcker i olika organisationer.
+Use Case Books har utvecklats från ett identifieringsverktyg till ett samverkansbaserat ramverk. Det kan användas för att skapa, hantera och dela egna spelböcker i olika organisationer.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} Skapa och dela dina egna spelböcker | Med nya Playbook Authoring Framework kan du skapa, hantera och dela egna fallspelböcker. Detta inkluderar stöd för att hämta viktiga metadata, redigera färdkartor och associera relevanta tekniska resurser. Ni kan dela Playbooks mellan olika organisationer för att standardisera marknadsföringsstrategier och upprätthålla enhetlighet. |
+| [!BADGE Beta]{type=Informative} Skapa och dela dina egna spelböcker | Med nya Playbook Authoring Framework kan du skapa, hantera och dela egna spelböcker med användningsfall. Du får stöd för att hämta viktiga metadata, redigera resekartor och associera relevanta tekniska resurser. Du kan dela spelböcker mellan olika organisationer för att standardisera marknadsföringsstrategier och skapa enhetlighet. |
 
 {style="table-layout:auto"}
 
-Läs dokumentet [Författare och dela dina egna spelböcker](/help/use-case-playbooks/playbooks/author.md) om du vill lära dig hur du kan skapa och dela dina egna spelböcker.
+Läs dokumentet [Skapa och dela dina egna spelböcker](/help/use-case-playbooks/playbooks/author.md) om du vill lära dig att skapa och dela dina egna spelböcker.
 
-Mer information finns i översikten [Använd fallspelningsböcker](/help/use-case-playbooks/playbooks/overview.md) som ger en översikt över spelbokens funktion, syfte och en heltäckande demonstration, inklusive hur du skapar instanser och importerar genererade resurser till andra sandlådemiljöer.
+Ta del av [översikten över Use Case Playbooks](/help/use-case-playbooks/playbooks/overview.md) som ger en översikt över spelböckernas funktionalitet, deras syfte och en heltäckande demonstration, inklusive hur man skapar instanser och importerar genererade tillgångar till andra sandlådemiljöer.
