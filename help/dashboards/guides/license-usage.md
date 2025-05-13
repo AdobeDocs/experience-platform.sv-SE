@@ -6,7 +6,7 @@ type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
 source-git-commit: 62f5ecf82df46284365e64d633c8242ac45567bc
 workflow-type: tm+mt
-source-wordcount: '3279'
+source-wordcount: '3292'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,10 @@ ht-degree: 0%
 # Kontrollpanel för licensanvändning {#license-usage-dashboard}
 
 >[!CONTEXTUALHELP]
->
+>id="testy-mctestface"
+>title="Testdialogruta som inte ska visas"
+>abstract="Objektet {name} visas på {date}."
+
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_core"
 >title="Tabell över kärnprodukter"
@@ -29,15 +32,15 @@ ht-degree: 0%
 >id="platform_dashboards_licenseUsage"
 >title="Kontrollpanel för licensanvändning"
 >abstract="Kontrollpanelen för licensanvändning ger dig insikt i vilka Adobe Experience Platform-produkter du har köpt. I översikten på kontrollpanelen visas de primära mätvärdena för dina produkter, inklusive din användning för var och en av de primära mätvärdena och ditt avtalade licensbelopp. På arbetsytan Detaljer visas en beskrivning av dina mätvärden för varje produkt i specifika sandlådor."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=sv-SE" text="Automatiska förfallodatum för datauppsättningar"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage"
 >title="Kontrollpanel för licensanvändning"
 >abstract="Kontrollpanelen för licensanvändning ger dig insikt i vilka Adobe Experience Platform-produkter du har köpt. I översikten på kontrollpanelen visas de primära mätvärdena för dina produkter, inklusive din användning för var och en av de primära mätvärdena och ditt avtalade licensbelopp. På arbetsytan Detaljer visas en beskrivning av dina mätvärden för varje produkt i specifika sandlådor."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=sv-SE" text="Automatiska förfallodatum för datauppsättningar"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
@@ -49,85 +52,85 @@ ht-degree: 0%
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="Förutsedd adresserbar publik"
 >abstract="Den adresserbara målgruppen är den uppsättning personprofiler i kundprofilen i realtid som din organisation har rätt att engagera. Detta mätresultat inkluderar både direkt identifierbara och pseudonyma profiler.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_engageableprofiles"
 >title="Förutsägda engagerande profiler"
 >abstract="Engagerande profiler är personprofiler i realtidskundprofilen som din organisation har försökt att använda Journey Optimizer under de senaste 12 månaderna.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_businesspersonprofile"
 >title="Profil för predicerad affärsperson"
 >abstract="Affärspersonprofiler är poster i realtidskundprofil som representerar individer i B2B-sammanhang.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_corehours"
 >title="Förväntade kärntimmar"
 >abstract="Kärntimmarna representerar bearbetningstid som förbrukas av Experience Platform tjänster.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_totaldatavolume"
 >title="Förväntad total datavolym"
 >abstract="Total datavolym är den mängd data som finns tillgängliga i kundprofilen i realtid för användning i engagemangs- och personaliseringsarbetsflöden.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_cjaRowsAvailable"
 >title="Förutsedda CJA-rader tillgängliga"
 >abstract="Tillgängliga CJA-rader avser de dagliga genomsnittliga dataraderna som är tillgängliga för analys i Customer Journey Analytics.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_addressableaudience"
 >title="Förutsedd adresserbar publik"
 >abstract="Den adresserbara målgruppen är den uppsättning personprofiler i kundprofilen i realtid som din organisation har rätt att engagera. Detta inkluderar både direkt identifierbara och pseudonyma profiler.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_engageableprofiles"
 >title="Förutsägda engagerande profiler"
 >abstract="Engagerande profiler är personprofiler i realtidskundprofilen som din organisation har försökt att använda Journey Optimizer under de senaste 12 månaderna.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_businesspersonprofile"
 >title="Profil för predicerad affärsperson"
 >abstract="Affärspersonprofiler är poster i realtidskundprofil som representerar individer i B2B-sammanhang.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_corehours"
 >title="Förväntade kärntimmar"
 >abstract="Kärntimmarna representerar bearbetningstid som förbrukas av Experience Platform tjänster.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_totaldatavolume"
 >title="Förväntad total datavolym"
 >abstract="Total datavolym är den mängd data som finns tillgängliga i kundprofilen i realtid för användning i engagemangs- och personaliseringsarbetsflöden.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_exceededusage_cjaRowsAvailable"
 >title="Förutsedda CJA-rader tillgängliga"
 >abstract="Tillgängliga CJA-rader avser de dagliga genomsnittliga dataraderna som är tillgängliga för analys i Customer Journey Analytics.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html?lang=sv-SE" text="Förfallodatum för upplevelsehändelser"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage]-kontrollpanelen. Den information som visas här fångas in vid en daglig ögonblicksbild av din Experience Platform-instans.
 
@@ -237,15 +240,15 @@ På fliken **[!UICONTROL Products]** visas licensanvändningsdata grupperade eft
 >id="platform_dashboards_licenseUsage_prediction"
 >title="Förutsedd användning"
 >abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras varje vecka varje fredag. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=sv-SE" text="Automatiska förfallodatum för datauppsättningar"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_licenseusage_prediction"
 >title="Förutsedd användning"
 >abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=sv-SE" text="Automatiska förfallodatum för datauppsättningar"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html?lang=sv-SE" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 Hantera och optimera era licensresurser proaktivt med korrekta och aktuella användningsprognoser. Kolumnen [!UICONTROL Predicted Usage] prognostiserar framtida licensanvändning på sandlådenivå för alla produktions- och utvecklingssandlådor för alla köpta produkter. Prediktionerna uppdateras nu varje vecka och innehåller en prognos för sex veckor baserat på de senaste användningsdata. Varje förutsägelse omfattar både en nedre och övre gräns för att stödja välinformerad planering.
 
@@ -320,12 +323,12 @@ Vilka mätvärden som är tillgängliga och vilken definition som finns för var
 
 | Licens | Produktbeskrivning |
 | --- | --- |
-| <ul><li>ADOBE EXPERIENCE PLATFORM:OD LITE</li><li>ADOBE EXPERIENCE PLATFORM:OD STANDARD</li><li>ADOBE EXPERIENCE PLATFORM:OD HEAVY</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/se/legal/product-descriptions/adobe-experience-platform.html) |
-| <ul><li>ADOBE EXPERIENCE PLATFORM:OD</li></ul> | [Experience Platform, App Services och Intelligent Services](https://helpx.adobe.com/se/legal/product-descriptions/exp-platform-app-svcs.html) |
-| <ul><li>RT KUNDDATAPLATTFORM:OD</li><li>RT KUNDDATAPLATTFORM:OD PRFL TILL 10 MB</li><li>RT KUNDDATAPLATTFORM:OD PRFL TO 50M</li></ul> | [Adobe Real-Time Customer Data Platform](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) |
-| <ul><li>AEP:OD-AKTIVERING</li><li>AEP:OD ACTIVATION PRFL TO 10M</li><li>AEP:OD ACTIVATION PRFL UPP TILL 50 MB</li></ul> | [Adobe Experience Platform-aktivering](https://helpx.adobe.com/se/legal/product-descriptions/adobe-experience-platform0.html) |
-| <ul><li>AEP:OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/se/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
-| <ul><li>JOURNEY OPTIMIZER SELECT:OD</li><li>JOURNEY OPTIMIZER PRIME:OD</li><li>JOURNEY OPTIMIZER ULTIMATE:OD</li><li>UNP AJO PRIME STARTER:OD</li><li>UNP AJO ULTIMATE STARTER:OD</li><li>UNP Real-Time CDP:ORDNING AV OD-PROFIL</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/se/legal/product-descriptions/adobe-journey-optimizer.html) |
+| <ul><li>ADOBE EXPERIENCE PLATFORM:OD LITE</li><li>ADOBE EXPERIENCE PLATFORM:OD STANDARD</li><li>ADOBE EXPERIENCE PLATFORM:OD HEAVY</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>ADOBE EXPERIENCE PLATFORM:OD</li></ul> | [Experience Platform, App Services och Intelligent Services](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
+| <ul><li>RT KUNDDATAPLATTFORM:OD</li><li>RT KUNDDATAPLATTFORM:OD PRFL TILL 10 MB</li><li>RT KUNDDATAPLATTFORM:OD PRFL TO 50M</li></ul> | [Adobe Real-Time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
+| <ul><li>AEP:OD-AKTIVERING</li><li>AEP:OD ACTIVATION PRFL TO 10M</li><li>AEP:OD ACTIVATION PRFL UPP TILL 50 MB</li></ul> | [Adobe Experience Platform-aktivering](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
+| <ul><li>AEP:OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
+| <ul><li>JOURNEY OPTIMIZER SELECT:OD</li><li>JOURNEY OPTIMIZER PRIME:OD</li><li>JOURNEY OPTIMIZER ULTIMATE:OD</li><li>UNP AJO PRIME STARTER:OD</li><li>UNP AJO ULTIMATE STARTER:OD</li><li>UNP Real-Time CDP:ORDNING AV OD-PROFIL</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/legal/product-descriptions/adobe-journey-optimizer.html) |
 
 >[!WARNING]
 >
