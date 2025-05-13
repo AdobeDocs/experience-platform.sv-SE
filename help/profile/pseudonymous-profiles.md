@@ -25,7 +25,7 @@ I Adobe Experience Platform kan du konfigurera förfallotider för pseudonyma pr
 
 >[!CONTEXTUALHELP]
 >id="platform_profile_pseudonymousprofile_dataexpiration"
->title="Pseudonymt utgångsdatum för profildata"
+>title="Förfallotid för pseudonyma profilens data"
 >abstract="Förfallodatumet för pseudonyma profildata anger hur många dagar en pseudonym profil kommer att finnas kvar i Adobe Experience Platform innan den tas bort. Värdet måste vara minst 1. Observera att det kan ta upp till tre dagar innan den pseudonyma profilen tas bort."
 
 En profil används för att pseudonyma data ska upphöra att gälla om den uppfyller följande villkor:
