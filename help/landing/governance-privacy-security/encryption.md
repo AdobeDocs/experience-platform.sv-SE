@@ -30,13 +30,13 @@ I allmänhet hämtas data till Experience Platform på tre sätt:
 När data har hämtats till systemet och [krypterats i viloläge](#at-rest) förbättrar och exporterar Experience Platform-tjänster data på följande sätt:
 
 - Med [Destinationer](../../destinations/home.md) kan du aktivera data för Adobe-program och partnerprogram.
-- Inbyggda Experience Platform-program som [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/ajo-home) kan också använda data.
+- Inbyggda Experience Platform-program som [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=sv-SE) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/ajo-home) kan också använda data.
 
 ### Stöd för mTLS-protokoll {#mtls-protocol-support}
 
 Nu kan du använda mTLS (Mutual Transport Layer Security) för att förbättra säkerheten i utgående anslutningar till [HTTP API-målet](../../destinations/catalog/streaming/http-destination.md) och Adobe Journey Optimizer [anpassade åtgärder](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions). mTLS är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. mTLS innehåller ytterligare ett steg jämfört med TLS, där servern också frågar efter klientens certifikat och verifierar det i slutet.
 
-Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) och Experience Platform HTTP API-målarbetsflöden, måste den serveradress som du anger i Adobe Journey Optimizer kundåtgärdsgränssnitt eller målgränssnittet ha TLS-protokoll inaktiverade och endast mTLS aktiverade. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med de här arbetsflödena måste den &quot;mottagande&quot; serverslutpunkten vara en mTLS **only** -aktiverad anslutningsslutpunkt.
+Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) och Experience Platform HTTP API-målarbetsflöden, måste den serveradress som du anger i Adobe Journey Optimizer kundåtgärdsgränssnitt eller målgränssnittet ha TLS-protokoll inaktiverade och endast mTLS aktiverade. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med de här arbetsflödena måste den &quot;mottagande&quot; serverslutpunkten vara en mTLS **only** -aktiverad anslutningsslutpunkt.
 
 >[!IMPORTANT]
 >
