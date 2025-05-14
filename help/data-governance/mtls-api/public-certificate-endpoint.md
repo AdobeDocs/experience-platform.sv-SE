@@ -3,20 +3,24 @@ title: Slutpunkt för offentligt certifikat
 description: Lär dig hur du hämtar offentliga certifikat med slutpunkten /public-certificate i MTLS Service API.
 role: Developer
 exl-id: 8369c783-e595-476f-9546-801cf4f10f71
-source-git-commit: 754044621cdaf1445f809bceaa3e865261eb16f0
+source-git-commit: d74353e70e992150c031397009d0c8add3df5e7b
 workflow-type: tm+mt
-source-wordcount: '358'
-ht-degree: 1%
+source-wordcount: '471'
+ht-degree: 0%
 
 ---
 
 # Slutpunkt för offentligt certifikat
 
-I den här guiden beskrivs hur du använder slutpunkten för det offentliga certifikatet för att på ett säkert sätt hämta offentliga certifikat för din organisations Adobe-program. Det innehåller ett exempel på API-anrop och detaljerade anvisningar som hjälper utvecklare att autentisera och verifiera datautbyten.
+>[!NOTE]
+>
+>Adobe har inte längre stöd för statisk hämtning av publika mTLS-certifikat. Använd detta API för att hämta giltiga certifikat för dina integreringar. Automatisk hämtning krävs nu för att undvika avbrott i tjänsten.
+
+Den här guiden förklarar hur du använder slutpunkten för det offentliga certifikatet för att på ett säkert sätt hämta offentliga certifikat för organisationens Adobe-program. Det innehåller ett exempel på API-anrop och detaljerade anvisningar som hjälper utvecklare att autentisera och verifiera datautbyten.
 
 ## Komma igång
 
-Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information om nödvändiga huvuden och hur du tolkar exempel-API-anrop.
 
 ## API-sökvägar {#paths}
 
@@ -28,7 +32,7 @@ Följande information är de viktigaste API-sökvägarna som du behöver för at
 
 ## Hämta dina offentliga certifikat {#list}
 
-Du kan hämta offentliga certifikat för alla Adobe-program i din organisation genom att göra en GET-förfrågan till slutpunkten `/v1/certificate/public-certificate`.
+Gör en GET-begäran till slutpunkten `/v1/certificate/public-certificate` om du vill hämta offentliga certifikat för något av organisationens Adobe-program.
 
 **API-format**
 
@@ -105,10 +109,19 @@ Ett godkänt svar returnerar HTTP-status 200 och visar de offentliga certifikate
 
 +++
 
+## Automatisering av certifikatets livscykel {#certificate-lifecycle-automation}
+
+Adobe automatiserar livscykeln för offentliga mTLS-certifikat för att säkerställa kontinuitet och minska antalet avbrott i tjänsten.
+
+- Certifikat utfärdas igen 60 dagar innan de upphör att gälla.
+- Certifikat återkallas 30 dagar innan de upphör att gälla.
+
+>[!NOTE]
+>
+>Dessa tidslinjer kommer att förkortas över tid i enlighet med [CA/B Forum-riktlinjerna](https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days), som syftar till att minska certifikatets livstid till högst 47 dagar.
+
+Du måste uppdatera integreringarna så att de stöder automatisk hämtning via API:t. Förlita dig inte på manuella certifikathämtningar eller statiska kopior eftersom dessa kan resultera i utgångna eller återkallade certifikat.
+
 ## Nästa steg
 
-När du har läst den här guiden får du nu veta hur du hämtar dina offentliga certifikat med Adobe Experience Platform API. Mer information om hur du hanterar kunddata för att säkerställa efterlevnad av regler och organisationsprofiler finns i [Datastyrningsöversikten](../home.md).
-
-<!-- To test this API call, navigate to the [MTLS API reference page]() to interact with the Experience Platform API endpoints. -->
-
-<!-- Add link after developer page is live -->
+När du har hämtat dina offentliga certifikat med API måste du uppdatera integreringarna så att slutpunkten anropas regelbundet innan certifikaten upphör att gälla. Om du vill testa det här samtalet interaktivt går du till [MTLS API-referenssidan](https://developer.adobe.com/experience-platform-apis/references/mtls-service/). Mer information om certifikatbaserade integreringar finns i [Datakrypteringen i Adobe Experience Platform-översikten](../../landing/governance-privacy-security/encryption.md) eller [Datastyrningsöversikten](../home.md).

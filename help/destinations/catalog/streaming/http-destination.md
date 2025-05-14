@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 2fa6997c043ef7ff24b1383dd8626cfe1cca4f54
+source-git-commit: d78b7a06318dabff5dac763068ca7c21a5a86633
 workflow-type: tm+mt
-source-wordcount: '2607'
+source-wordcount: '2598'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 HTTP API-målet är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 
@@ -71,13 +71,11 @@ Du kan använda [!DNL Mutual Transport Layer Security] ([!DNL mTLS]) för att f�
 
 Om du vill använda [!DNL mTLS] med [!DNL HTTP API] mål måste [!DNL TLS]-protokoll vara inaktiverade för den serveradress som du angav på sidan [målinformation](#destination-details) och bara [!DNL mTLS] aktiverade. Om protokollet [!DNL TLS] 1.2 fortfarande är aktiverat på slutpunkten skickas inget certifikat för klientautentiseringen. Det innebär att om du vill använda [!DNL mTLS] med ditt [!DNL HTTP API]-mål måste den &quot;mottagande&quot; serverslutpunkten vara en [!DNL mTLS]-aktiverad anslutningsslutpunkt.
 
-### Hämta certifikat {#certificate}
+### Hämta och inspektera certifikatinformation {#certificate}
 
-Om du vill kontrollera att [!DNL Common Name] (CN) och [!DNL Subject Alternative Names] (SAN) utför ytterligare tredjepartsvalidering kan du hämta certifikatet nedan:
+Om du vill inspektera certifikatinformation som [!DNL Common Name] (CN) och [!DNL Subject Alternative Names] (SAN) för ytterligare validering från tredje part använder du API:t för att hämta certifikatet och extrahera fälten från svaret.
 
-* [Allmänt certifikat för HTTP API mTLS](../../../landing/images/governance-privacy-security/encryption/destinations-public-certificate.zip)
-
-Du kan även hämta offentliga certifikat på ett säkert sätt genom att göra en GET-begäran till MTLS-slutpunkten. Mer information finns i [dokumentationen för slutpunkten för det offentliga certifikatet](../../../data-governance/mtls-api/public-certificate-endpoint.md).
+Mer information finns i [dokumentationen för slutpunkten för det offentliga certifikatet](../../../data-governance/mtls-api/public-certificate-endpoint.md).
 
 ## IP-adress tillåtelselista {#ip-address-allowlist}
 

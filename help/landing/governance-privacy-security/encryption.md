@@ -2,9 +2,9 @@
 title: Datakryptering i Adobe Experience Platform
 description: Läs om hur data krypteras under överföring och i vila i Adobe Experience Platform.
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f6eaba4c0622318ba713c562ba0a4c20bba02338
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,13 @@ I allmänhet hämtas data till Experience Platform på tre sätt:
 När data har hämtats till systemet och [krypterats i viloläge](#at-rest) förbättrar och exporterar Experience Platform-tjänster data på följande sätt:
 
 - Med [Destinationer](../../destinations/home.md) kan du aktivera data för Adobe-program och partnerprogram.
-- Inbyggda Experience Platform-program som [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=sv-SE) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/ajo-home) kan också använda data.
+- Inbyggda Experience Platform-program som [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/ajo-home) kan också använda data.
 
 ### Stöd för mTLS-protokoll {#mtls-protocol-support}
 
 Nu kan du använda mTLS (Mutual Transport Layer Security) för att förbättra säkerheten i utgående anslutningar till [HTTP API-målet](../../destinations/catalog/streaming/http-destination.md) och Adobe Journey Optimizer [anpassade åtgärder](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions). mTLS är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. mTLS innehåller ytterligare ett steg jämfört med TLS, där servern också frågar efter klientens certifikat och verifierar det i slutet.
 
-Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) och Experience Platform HTTP API-målarbetsflöden, måste den serveradress som du anger i Adobe Journey Optimizer kundåtgärdsgränssnitt eller målgränssnittet ha TLS-protokoll inaktiverade och endast mTLS aktiverade. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med de här arbetsflödena måste den &quot;mottagande&quot; serverslutpunkten vara en mTLS **only** -aktiverad anslutningsslutpunkt.
+Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) och Experience Platform HTTP API-målarbetsflöden, måste den serveradress som du anger i Adobe Journey Optimizer kundåtgärdsgränssnitt eller målgränssnittet ha TLS-protokoll inaktiverade och endast mTLS aktiverade. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med de här arbetsflödena måste den &quot;mottagande&quot; serverslutpunkten vara en mTLS **only** -aktiverad anslutningsslutpunkt.
 
 >[!IMPORTANT]
 >
@@ -48,14 +48,22 @@ Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](http
 
 >[!NOTE]
 >
->Det är ditt ansvar att hålla det offentliga certifikatet uppdaterat. Se till att du regelbundet granskar certifikatet, särskilt när dess förfallodatum närmar sig. Du bör skapa ett bokmärke för den här sidan för att kunna behålla den senaste kopian i din miljö.
+>Du ansvarar för att se till att dina system använder ett giltigt offentligt certifikat. Granska dina certifikat regelbundet, särskilt när utgångsdatumet närmar sig. Använd API för att hämta och uppdatera certifikat innan de upphör att gälla.
 
-Om du vill kontrollera KN eller SAN för att göra ytterligare validering från tredje part, kan ladda ned relevanta certifikat här:
+Direktnedladdningslänkar för offentliga mTLS-certifikat tillhandahålls inte längre. Använd i stället [slutpunkten för det offentliga certifikatet](../../data-governance/mtls-api/public-certificate-endpoint.md) för att hämta certifikat. Det här är den enda metod som stöds för att komma åt aktuella offentliga certifikat. Det ser till att du alltid får giltiga, aktuella certifikat för dina integreringar.
 
-- [Adobe Journey Optimizer offentliga certifikat](../images/governance-privacy-security/encryption/AJO-public-certificate.pem)
-- [Det offentliga certifikatet för destinationstjänsten](../images/governance-privacy-security/encryption/destinations-public-cert.pem).
+Integrationer som förlitar sig på certifikatbaserad kryptering måste uppdatera sina arbetsflöden för att stödja automatisk certifikathämtning med API:t. Om du förlitar dig på statiska länkar eller manuella uppdateringar kan det leda till att certifikat som har upphört att gälla eller har återkallats används, vilket leder till misslyckade integreringar.
 
-Du kan även hämta offentliga certifikat på ett säkert sätt genom att göra en GET-begäran till MTLS-slutpunkten. Mer information finns i [dokumentationen för slutpunkten för det offentliga certifikatet](../../data-governance/mtls-api/public-certificate-endpoint.md).
+#### Automatisering av certifikatets livscykel {#certificate-lifecycle-automation}
+
+Adobe automatiserar nu certifikatets livscykel för mTLS-integreringar för att förbättra tillförlitligheten och förhindra avbrott i tjänsten. Offentliga certifikat:
+
+- Återutfärdad 60 dagar före utgångsdatum.
+- Återkallad 30 dagar innan utgångsdatum.
+
+Dessa intervall kommer att fortsätta förkortas i enlighet med [kommande riktlinjer för CA/B-forum](https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days) som syftar till att minska certifikatets livstid till högst 47 dagar.
+
+Om du tidigare har använt länkar på den här sidan för att hämta certifikat uppdaterar du processen så att de hämtas exklusivt via API:t.
 
 ## Vilande uppgifter {#at-rest}
 
