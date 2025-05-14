@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Händelseförfallodatum för upplevelser
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallotider för enskilda Experience Events i en Adobe Experience Platform-datauppsättning.
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 71634a1dd0e0cd3f731272a179b4f1fe221eb046
 workflow-type: tm+mt
-source-wordcount: '858'
+source-wordcount: '884'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,10 @@ Du bör därför behålla samma utgångsvärde för Experience Event för alla d
 ## Vanliga frågor och svar {#faq}
 
 I följande avsnitt visas vanliga frågor om när Experience Event-data förfaller:
+
+### Vilken är den kortaste tid jag kan ange att Experience Event-data ska förfalla?
+
+Minimitiden för en förfallotid för Experience Event-data är **en dag**.
 
 ### Hur skiljer sig förfallodatumet för Experience Event-data från utgångsdatumet för pseudonyma profildata?
 
