@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig skapa och redigera klasser i Experience Platform användargränssnitt.
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: a05ee385694b028b513e2fa632079e665ba815bb
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1562'
 ht-degree: 0%
 
 ---
@@ -120,7 +120,7 @@ I guiden om att [definiera fält i användargränssnittet](../fields/overview.md
 
 Om du tidigare har skapat scheman som använder den här klassen visas de nya fälten automatiskt i dessa scheman.
 
-## Redigera en klass (#edit-a-class)
+## Redigera en klass {#edit-a-class}
 
 >[!NOTE]
 >
