@@ -2,7 +2,7 @@
 title: Definiera XDM-fält i API:t för schemaregister
 description: Lär dig hur du definierar olika fält när du skapar anpassade XDM-resurser (Experience Data Model) i API:t för schemaregister.
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 7521273c0ea4383b7141e9d7a82953257ff18c34
+source-git-commit: 6c6104a6aa0a80c886f4f02486a7645eb95da781
 workflow-type: tm+mt
 source-wordcount: '1166'
 ht-degree: 0%
@@ -188,7 +188,7 @@ Motsvarigheten till ett [!UICONTROL Long]-fält som skapats via Schema Builder-g
 
 ## [!UICONTROL Short] {#short}
 
-Motsvarigheten till ett [!UICONTROL Short]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält ](#integer) med specifika `minimum` - och `maximum`-värden (`-32768` respektive `32768`).
+Motsvarigheten till ett [!UICONTROL Short]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält ](#integer) med specifika `minimum` - och `maximum`-värden (`-32768` respektive `32767`).
 
 ```json
 "sampleField": {
@@ -196,13 +196,13 @@ Motsvarigheten till ett [!UICONTROL Short]-fält som skapats via Schema Builder-
   "description": "An example short field.",
   "type": "integer",
   "minimum": -32768,
-  "maximum": 32768
+  "maximum": 32767
 }
 ```
 
 ## [!UICONTROL Byte] {#byte}
 
-Motsvarigheten till ett [!UICONTROL Byte]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält ](#integer) med specifika `minimum` - och `maximum`-värden (`-128` respektive `128`).
+Motsvarigheten till ett [!UICONTROL Byte]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält ](#integer) med specifika `minimum` - och `maximum`-värden (`-128` respektive `127`).
 
 ```json
 "sampleField": {
@@ -210,7 +210,7 @@ Motsvarigheten till ett [!UICONTROL Byte]-fält som skapats via Schema Builder-g
   "description": "An example byte field.",
   "type": "integer",
   "minimum": -128,
-  "maximum": 128
+  "maximum": 127
 }
 ```
 
