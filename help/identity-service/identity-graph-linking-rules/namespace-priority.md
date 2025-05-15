@@ -2,10 +2,10 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: 44457b95b354e20808c1218ca3c8e698071f0528
 workflow-type: tm+mt
-source-wordcount: '1865'
-ht-degree: 1%
+source-wordcount: '2162'
+ht-degree: 4%
 
 ---
 
@@ -20,9 +20,9 @@ ht-degree: 1%
 >
 >Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
 >
->* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
->* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
->* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
+>* **Aktiveringskrav**: funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan konfigurationen fortsätter systemet att fungera som vanligt, utan att beteendet förändras.
+>* **Viktigt**! Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat för segmentmedlemskap. Streaming och gruppsegmentering fungerar dock som förväntat.
+>* **Nästa steg**: kontakta Adobe-kontoteamet för mer information om hur du aktiverar funktionen i produktionssandlådor.
 
 Varje kundimplementering är unik och skräddarsydd för att uppfylla en viss organisations mål, och som sådan varierar vikten av en viss namnrymd från kund till kund. Exempel från verkligheten:
 
@@ -73,7 +73,7 @@ Namnområdesprioriteten kan konfigureras med hjälp av användargränssnittet [f
 
 ## Användning av namnområdesprioritet
 
-För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
+För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
 
 ![Ett diagram över programomfånget för namnområdesprioritet](../images/namespace-priority/application-scope.png)
 
@@ -86,7 +86,7 @@ För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en vikti
 * När du har konfigurerat identitetsinställningar för en viss sandlåda bestäms den primära identiteten för upplevelsehändelser av den högsta namnområdesprioriteten i konfigurationen.
    * Det beror på att upplevelsehändelser är dynamiska till sin natur. En identitetskarta kan innehålla tre eller fler identiteter, och namnområdesprioriteten ser till att det viktigaste namnutrymmet är kopplat till upplevelsehändelsen.
 * Därför kommer följande konfigurationer **inte längre att användas av kundprofilen i realtid**:
-   * Den primära identitetskonfigurationen (`primary=true`) när identiteter skickas i identityMap med API:t för Web SDK, Mobile SDK eller Edge Network (ID-namnområde och identitetsvärde används fortfarande i Profile). **Obs!**: Tjänster utanför kundprofilen i realtid, t.ex. datasjölagring eller Adobe Target, fortsätter att använda den primära identitetskonfigurationen (`primary=true`).
+   * Den primära identitetskonfigurationen (`primary=true`) när identiteter skickas i `identityMap` med API:t för Web SDK, Mobile SDK eller Edge Network (ID-namnområde och identitetsvärde används fortfarande i profilen). **Obs!**: Tjänster utanför kundprofilen i realtid, t.ex. datasjölagring eller Adobe Target, fortsätter att använda den primära identitetskonfigurationen (`primary=true`).
    * Alla fält som markerats som primär identitet i ett XDM Experience Event Class-schema.
    * Standardinställningar för primär identitet i Adobe Analytics-källkopplingen (ECID eller AAID).
 * Å andra sidan bestämmer inte namnområdesprioriteten **den primära identiteten för profilposter**.
@@ -203,6 +203,25 @@ Mer information om partnerbyggda mål finns i [målöversikten](../../destinatio
 
 Mer information finns i [Översikt över sekretesstjänsten](../../privacy-service/home.md).
 
-### Adobe Target
+### Edge segmentering och Edge Network
 
-Adobe Target kan generera oväntad målinriktning för delade enhetsscenarier när kantsegmentering används.
+I sammanhanget [!DNL Identity Graph Linking Rules] finns det två viktiga beteendeförändringar att tänka på när det gäller Edge-segmentering och Edge Network-program:
+
+1. `identityMap` måste innehålla ett personnamnområde som har markerats som unikt. Fält markerade som en identitet (identitetsbeskrivare) stöds inte.
+2. Personens namnområde måste ha konfigurationen `primary = true` när en slutanvändare surfar under autentiseringen.
+
+#### Edge segmentering
+
+I en given händelse måste du se till att alla namnutrymmen som representerar en personentitet inkluderas i `identityMap` eftersom [identiteter som skickas som XDM-fält](../../xdm/ui/fields/identity.md) ignoreras och inte används för metadatalagring för segmentmedlemskap.
+
+* **Händelsetillämplighet**: Det här beteendet gäller endast för händelser som skickas direkt till Edge Network (till exempel WebSDK och Mobile SDK). Händelser som har importerats från [Experience Platform-hubben](../../landing/edge-and-hub-comparison.md), t.ex. de som har importerats med HTTP API-källan, andra strömningskällor och batchkällor, omfattas inte av den här begränsningen.
+* **Specifikation för Edge-segmentering**: Det här beteendet är specifikt för kantsegmentering. Segmentering av grupper och strömning är separata tjänster som utvärderas på navet och följer inte samma process. Läs [kantsegmenteringsguiden](../../segmentation/methods/edge-segmentation.md) om du vill ha mer information.
+* Mer information finns i [Adobe Experience Platform- och programarkitekturdiagrammen](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram) och [Edge Network- och navjämförelsesidorna](../../landing/edge-and-hub-comparison.md).
+
+#### Edge Network-program
+
+För att program på Edge Network ska ha tillgång till Edge-profilen utan dröjsmål måste du se till att dina händelser innehåller `primary=true` i CRMID. Detta garanterar omedelbar tillgänglighet utan att vänta på att identitetsdiagrammet uppdateras från navet.
+
+* Program på Edge Network, t.ex. Adobe Target, Offer Decisioning och anpassade Personalization-destinationer, fortsätter att vara beroende av den primära identiteten i händelser för att komma åt profiler från Edge-profilen.
+* Mer information om Edge Network beteende finns i [Experience Platform Web SDK &amp; Edge Network-arkitekturdiagrammet](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment).
+* Läs dokumentationen om [dataelementtyper](../../tags/extensions/client/web-sdk/data-element-types.md) och [identitetsdata i Web SDK](../../web-sdk/identity/overview.md) om du vill ha mer information om hur du konfigurerar primär identitet på Web SDK.
