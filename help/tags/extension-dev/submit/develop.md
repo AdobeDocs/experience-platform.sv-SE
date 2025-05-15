@@ -2,10 +2,10 @@
 title: Utveckla ett tillägg
 description: Det här dokumentet innehåller en allmän översikt över tagghanteringsprocessen med länkar till ytterligare dokumentation för mer detaljerade processer.
 exl-id: fb2f7275-a5da-4a41-b915-822c71c02e5c
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: cfcc70d66a34fa51bf0e21525539ba88de7fc367
 workflow-type: tm+mt
-source-wordcount: '473'
-ht-degree: 0%
+source-wordcount: '462'
+ht-degree: 10%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Ett taggtillägg ska betraktas som en (liten) produkt med egna krav. Om du fastställer hur en Adobe Experience Platform-användare ska använda tillägget kan det hjälpa dig att sortera funktionaliteten efter vilka händelsetyper, villkorstyper, åtgärdstyper och dataelementtyper som tillägget ska innehålla.
 
@@ -24,7 +24,7 @@ Med den kunskapen kan du planera vilka komponenter som ska ingå i tillägget.
 Med en plan på plats kan dessa guider hjälpa dig att förstå utvecklingsprocessen för tillägg:
 
 * Guiden [Komma igång](../getting-started.md) och andra dokument under **Tilläggsutveckling** i den vänstra navigeringen är bra referensmaterial för att förstå tillägg. De innehåller information om vad tillägg kan göra, hur användarinformation lagras och skickas mellan tillägget och Adobe Experience Platform, hur koden paketeras i bibliotek och hur tilläggskoden tolkas och används vid körning i webbläsaren.
-* Självstudievideon [för tillägg ](https://youtu.be/rxjtC9o4rl0) är en bra startplats.
+<!-- * The [extension tutorial video](https://youtu.be/rxjtC9o4rl0) is a great place to start. -->
 * YouTube-spellistan [Introduktion till tillägg](https://www.youtube.com/playlist?list=PLOdw8u2F8CIgynzKrPEwCPuDxzHW1WP5m) går igenom processen med att skapa tilläggspaket.
 * [Förstå JSON-schemaartikel](https://spacetelescope.github.io/understanding-json-schema/index.html#).
 * [JSON Lint/Validator](https://jsonlint.com/).
@@ -47,12 +47,12 @@ Det finns också ett antal nPM-verktyg som du kan använda för att utveckla til
 Det finns exempeltillägg för GitHub som du kan granska eller använda som startprojekt:
 
 * [Hello World-exempeltillägg](https://github.com/adobe/reactor-helloworld-extension)
-* [Facebook exempeltillägg](https://github.com/Adobe-Marketing-Cloud-Activation/extension-facebookpixel)
+* [Exempeltillägg för Facebook](https://github.com/Adobe-Marketing-Cloud-Activation/extension-facebookpixel)
 * [Exempeltillägg för Typekit](https://github.com/jeffchasin/extension-typekit)
 * [Pinterest exempeltillägg](https://github.com/jeffchasin/extension-pinterest)
 
 ## Slack arbetsyta
 
-Du kan begära åtkomst till Slack-communityarbetsytan där tilläggsförfattare kan stödja varandra med hjälp av det här [begärandeformuläret](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform).
+Du kan begära åtkomst till Slack community-arbetsytan där tilläggsförfattare kan stödja varandra med hjälp av det här [begärandeformuläret](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform).
 
-**Obs!** Även om det finns medlemmar i Adobe på den här arbetsytan i Slack är det en community-resurs som inte sponsras eller modereras av Adobe.
+**Obs!** Även om det finns medlemmar i Adobe på den här Slack-arbetsytan är det en community-resurs som inte sponsras eller modereras av Adobe.
