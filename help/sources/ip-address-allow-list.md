@@ -2,9 +2,9 @@
 description: Lär dig mer om IP-adresserna som du måste lägga till i tillåtelselista för att kunna använda Adobe Experience Platform-källor.
 title: IP-adress Tillåtelselista för källor
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
+source-git-commit: e2403b235b4cfee37761ebd683a1fb8662061406
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
@@ -292,4 +292,8 @@ Du måste lägga till följande IP-adresser på tillåtelselista för att tillå
 
 Du måste lägga till följande IP-adress i tillåtelselista för att kunna ansluta källan till Experience i AWS:
 
-- `66.117.18.0/24`
+### VA6
+
+- `34.193.63.59`
+- `44.217.93.240`
+- `44.194.79.229`
