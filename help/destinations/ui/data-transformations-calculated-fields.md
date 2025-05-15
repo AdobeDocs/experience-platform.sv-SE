@@ -3,9 +3,9 @@ title: Utför omformningar av data som exporteras till molnlagringsmål med ber�
 type: Tutorial
 description: Förstå hur du använder funktionen för beräknade fält för att utföra omformningar av data som exporteras till molnlagringsmål
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: 14c672ef57e0b0247020075552c782ed18db8484
+source-git-commit: bd9efc1bcf6058827cc5c603b9976c9e42c7ec9e
 workflow-type: tm+mt
-source-wordcount: '1574'
+source-wordcount: '1604'
 ht-degree: 0%
 
 ---
@@ -16,15 +16,7 @@ ht-degree: 0%
 >id="platform_destinations_export_arrays_flat_files"
 >title="Lägg till beräknade fält"
 >abstract="<p>Använd kontrollen **Lägg till beräknat fält** för att utföra olika dataomvandlingar på data som exporteras till molnlagringsmål. Du kan till exempel tillämpa hash-kodning på data, sammanfoga arrayer i strängar och mycket mer."
-
-<!--
-
-disable additional URLs for a while
-
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-maps-objects.html?lang=sv-SE#examples" text="Examples"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-maps-objects.html?lang=sv-SE#known-limitations" text="Known limitations"
-
--->
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="Exempel"
 
 >[!AVAILABILITY]
 >
@@ -53,6 +45,10 @@ Så här använder du beräknade fält för dataomvandlingar:
 >id="platform_destinations_export_arrays_calculated_field_disabled"
 >title="Lägg till beräknade fält inaktiverat"
 >abstract="Den här kontrollen är inaktiverad eftersom du valde **Exportera arrayer, kartor, objekt** växla *på* när du konfigurerade den här målanslutningen. Om du vill använda beräkningsfält och de funktioner som är tillgängliga i dem skapar du en ny målanslutning med **Exportera arrayer, kartor, objekt** och *av*."
+
+>[!IMPORTANT]
+>
+>När du arbetar med beräkningsfält måste du, utöver eventuella dataomvandlingsfunktioner som du använder, även använda funktionen `array_to_string` för att sammanfoga fält till en sträng.
 
 Välj **[!UICONTROL Add calculated field]** i mappningssteget i aktiveringsarbetsflödet för molnlagringsmål.
 
