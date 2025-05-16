@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: a3b1e2e8-d780-4e23-b323-37e1a631f716
-source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
+source-git-commit: e0740ca9cd6e1d0b92d5504a2869ac03c28d4980
 workflow-type: tm+mt
-source-wordcount: '2178'
-ht-degree: 93%
+source-wordcount: '2055'
+ht-degree: 99%
 
 ---
 
@@ -30,7 +30,6 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Experience Data Model](#xdm)
 - [Identitetstjänst](#identity)
 - [Frågetjänst](#query-service)
-- [Kundprofil i realtid](#profile)
 - [Sandlådor](#sandboxes)
 - [Källor](#sources)
 - [Use Case Playbooks](#use-case-playbooks)
@@ -41,7 +40,7 @@ Experience League är en omfattande utbildningsplattform som förbättrar dina f
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Personlig startsida | Få åtkomst till och anpassa din personliga hemsida på [Experience League](https://experienceleague.adobe.com/sv/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** i menyn längst upp om du vill optimera din utbildningsupplevelse: <ul><li>**Bokmärken**: använd funktionen [!UICONTROL Bookmarks] om du vill spara och samla dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din utbildning**: förbättra din utbildningsupplevelse genom att uppdatera din Experience League-profil med roller, branscher, produkter och erfarenhetsnivå som passar dina behov bäst.</li><li>**Rekommendationer**: visa utbildningsinnehåll som rekommenderas utifrån din senaste aktivitet.</li><li>**Nyligen visade**: använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videor.</li><li>**Utbildningsresurser**: använd panelen [!UICONTROL All learning resources] för att komma till självstudiekurser, dokumentation, community, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Se tidigare händelser på begäran**: se tidigare inspelade livesändningar om produkter i fokus, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personlig startsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig startsida på Experience League."){width="250" align="center" zoomable="yes"} |
+| Personlig startsida | Få åtkomst till och anpassa din personliga startsida på [Experience League](https://experienceleague.adobe.com/sv/home#). Logga in med dina Adobe-inloggningsuppgifter och välj sedan **[!UICONTROL Experience League]** i menyn längst upp om du vill optimera din utbildningsupplevelse: <ul><li>**Bokmärken**: använd funktionen [!UICONTROL Bookmarks] om du vill spara och samla dina favoritresurser på ett ställe. Du kan spara olika typer av innehåll, inklusive spellistor, artiklar och självstudiekurser.</li><li>**Anpassa din utbildning**: förbättra din utbildningsupplevelse genom att uppdatera din Experience League-profil med roller, branscher, produkter och erfarenhetsnivå som passar dina behov bäst.</li><li>**Rekommendationer**: visa utbildningsinnehåll som rekommenderas utifrån din senaste aktivitet.</li><li>**Nyligen visade**: använd avsnittet [!UICONTROL Recently viewed] för att snabbt gå tillbaka till nyligen visat innehåll, till exempel dokumentation och videor.</li><li>**Utbildningsresurser**: använd panelen [!UICONTROL All learning resources] för att komma till självstudiekurser, dokumentation, community, händelser och certifieringar.</li><li>**Nyheter**: I avsnittet [!UICONTROL What's new] finns en ström med det senaste innehållet på Experience League.</li><li>**Se tidigare händelser på begäran**: se tidigare inspelade livesändningar om produkter i fokus, användningsfall och självstudiekurser med avsnittet [!UICONTROL Watch past events on-demand].</li></ul><br> ![Personlig startsida på Experience League.](../2025/assets/april/personalized-home-page.png "Personlig startsida på Experience League."){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
@@ -53,8 +52,8 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL Adform]-tillägg | Tillägget [!DNL Adform] på serversidan gör det möjligt för varumärken att enkelt rikta om målgrupper utanför webbplatsen med hjälp av ECID. Det här tillägget på serversidan är inte beroende av cookies från tredje part eller alternativa ID:n för cookies. Eftersom detta görs helt på serversidan behövs dessutom inga ytterligare pixlar eller andra ändringar på klientsidan. Mer information finns i [Översikt över tillägget Anpassa](/help/tags/extensions/server/adform/overview.md). |
-| API-tillägg för [!DNL Amazon]-webbhändelser | API-tillägget [!DNL Amazon] Conversions gör att annonsörer kan dela webbplatsinteraktioner direkt med [!DNL Amazon], vilket ger förbättrad attribuering, tillförlitlighet för data och kampanjoptimering. Det här tillägget har stöd för vidarebefordran av händelser, vilket gör att du kan skicka konverteringshändelser som inköp, varukorgstillägg med mera, samtidigt som du säkerställer korrekt borttagning av dubbletter för korrekt rapportering. Mer information finns i [Översikt över Amazon-tillägget](/help/tags/extensions/server/amazon/overview.md). |
+| [!DNL Adform]-tillägg | Tillägget [!DNL Adform] på serversidan gör det möjligt för varumärken att enkelt rikta om målgrupper utanför webbplatsen med hjälp av ECID:er. Det här tillägget på serversidan är inte beroende av cookies från tredje part eller alternativa ID:n för cookies. Eftersom detta görs helt på serversidan behövs dessutom inga ytterligare pixlar eller andra ändringar på klientsidan. Mer information finns i [tilläggsöversikten för Adform](/help/tags/extensions/server/adform/overview.md). |
+| [!DNL Amazon] API-tillägg för webbhändelser | API-tillägget [!DNL Amazon]-konverteringar gör att annonsörer kan dela webbplatsinteraktioner direkt med [!DNL Amazon], vilket ger förbättrad tillskrivning, tillförlitlighet för data och kampanjoptimering. Det här tillägget har stöd för vidarebefordran av händelser, vilket gör att du kan skicka konverteringshändelser som inköp, varukorgstillägg med mera, samtidigt som du säkerställer korrekt deduplicering för korrekt rapportering. Mer information finns i [tilläggsöversikten för Amazon](/help/tags/extensions/server/amazon/overview.md). |
 
 {style="table-layout:auto"}
 
@@ -129,18 +128,6 @@ Fråga efter data i Adobe Experience Platforms datasjö med hjälp av standard-S
 | Spara modellförutsägelseutdata med SKAPA TABELL och INFOGA I | [Spara valda förutsägelseutdata i nya tabeller med SKAPA TABELL MED VALDA eller infoga i befintliga tabeller med INFOGA I VALDA](../../query-service/advanced-statistics/models.md#predict). Om utökat urval av kolumner har aktiverats kan mellanliggande resultat som funktionsvektorer och sannolikheter också bevaras tillsammans med slutliga förutsägelser. Du hittar exempel på användning i [SQL:s syntaxdokumentation](../../query-service/sql/syntax.md#create-table-as-select). |
 
 Mer information om [!DNL Query Service] finns i [[!DNL Query Service] översikten](../../query-service/home.md).
-
-## Kundprofil i realtid {#profile}
-
-Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta upplevelser för dina kunder, oavsett var eller när de interagerar med ditt varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med profilen kan du konsolidera kunddata till en enhetlig vy som ger en handlingsbar, tidsstämplad redogörelse för varje kundinteraktion.
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Förfallotid för pseudonyma profilens data | Hantera förfallotid för din pseudonyma profils data i kontrollpanelen för profilen. Om du vill veta mer om funktionen och pseudonyma profiler kan du ta del av [guiden för förfallotid för pseudonyma profilens data](../../profile/pseudonymous-profiles.md). |
-
-{style="table-layout:auto"}
-
-Mer information om kundprofil i realtid finns i [profilöversikt](../../profile/home.md).
 
 ## Sandlådor {#sandboxes}
 
