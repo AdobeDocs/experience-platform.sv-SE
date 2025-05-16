@@ -3,9 +3,9 @@ title: Exportera arrayer, kartor och objekt från Real-Time CDP
 type: Tutorial
 description: Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till molnlagringsmål.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f7ff10dd6489842adb8de49b3f8634c20d77cc71
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1062'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >Funktionen för att exportera arrayer och andra komplexa objekt till molnlagringsmål är vanligtvis tillgänglig för följande mål: [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md), [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md), [[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md), [[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md), [[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md), [[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md).
 >
->Dessutom kan du exportera mappningsfält till följande mål: [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md), [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md).
+>Dessutom kan du exportera mappningsfält till följande mål: [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md).
 
 
 Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md). Dessutom kan du exportera mappningsfält till [företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations) och begränsade [kantanpassningsmål](/help/destinations/destination-types.md#edge-personalization-destinations). Läs det här dokumentet om du vill veta mer om exportarbetsflödet, vilka användningsfall som den här funktionen har aktiverat och kända begränsningar. Se tabellen nedan för att förstå vilka funktioner som är tillgängliga per måltyp.
@@ -28,7 +28,7 @@ Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till [
 | Befintliga anpassade partnerbyggda molnlagringsmål (anpassade filbaserade mål byggda via Destination SDK) | Nej |
 | Företagsmål (Amazon Kinesis, Azure Event Hubs, HTTP API) | Delvis. Du kan markera och exportera mappningsobjekt i mappningssteget i aktiveringsarbetsflödet. |
 | Direktuppspelningsmål (t.ex. Facebook, Braze, Google Customer Match) | Nej |
-| Edge personaliseringsmål (Adobe Target) | Delvis. Du kan markera och exportera mappningsobjekt i mappningssteget i aktiveringsarbetsflödet. |
+| Edge personaliseringsmål | Nej |
 
 {style="table-layout:auto"}
 
