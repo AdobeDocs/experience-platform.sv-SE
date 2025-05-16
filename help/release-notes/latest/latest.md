@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
+source-git-commit: e0740ca9cd6e1d0b92d5504a2869ac03c28d4980
 workflow-type: ht
-source-wordcount: '2178'
+source-wordcount: '2055'
 ht-degree: 100%
 
 ---
@@ -30,7 +30,6 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Experience Data Model](#xdm)
 - [Identitetstjänst](#identity)
 - [Frågetjänst](#query-service)
-- [Kundprofil i realtid](#profile)
 - [Sandlådor](#sandboxes)
 - [Källor](#sources)
 - [Use Case Playbooks](#use-case-playbooks)
@@ -129,18 +128,6 @@ Fråga efter data i Adobe Experience Platforms datasjö med hjälp av standard-S
 | Spara modellförutsägelseutdata med SKAPA TABELL och INFOGA I | [Spara valda förutsägelseutdata i nya tabeller med SKAPA TABELL MED VALDA eller infoga i befintliga tabeller med INFOGA I VALDA](../../query-service/advanced-statistics/models.md#predict). Om utökat urval av kolumner har aktiverats kan mellanliggande resultat som funktionsvektorer och sannolikheter också bevaras tillsammans med slutliga förutsägelser. Du hittar exempel på användning i [SQL:s syntaxdokumentation](../../query-service/sql/syntax.md#create-table-as-select). |
 
 Mer information om [!DNL Query Service] finns i [[!DNL Query Service] översikten](../../query-service/home.md).
-
-## Kundprofil i realtid {#profile}
-
-Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta upplevelser för dina kunder, oavsett var eller när de interagerar med ditt varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med profilen kan du konsolidera kunddata till en enhetlig vy som ger en handlingsbar, tidsstämplad redogörelse för varje kundinteraktion.
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Förfallotid för pseudonyma profilens data | Hantera förfallotid för din pseudonyma profils data i kontrollpanelen för profilen. Om du vill veta mer om funktionen och pseudonyma profiler kan du ta del av [guiden för förfallotid för pseudonyma profilens data](../../profile/pseudonymous-profiles.md). |
-
-{style="table-layout:auto"}
-
-Mer information om kundprofil i realtid finns i [profilöversikt](../../profile/home.md).
 
 ## Sandlådor {#sandboxes}
 
