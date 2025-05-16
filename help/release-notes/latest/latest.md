@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform april 2025
 description: Versionsinformationen för Adobe Experience Platform från april 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 6558046e9708267cd0ceda36e7c0bdba6b2f758a
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2178'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
