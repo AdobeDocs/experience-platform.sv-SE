@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 98d83e8d09b6e469daf515063e2887bfbf9b8be6
+source-git-commit: ce205622260f4252d1a7db7c5011366fb2ed4d3c
 workflow-type: tm+mt
-source-wordcount: '2322'
+source-wordcount: '2372'
 ht-degree: 1%
 
 ---
@@ -136,6 +136,12 @@ Mer information om Google hashkrav och andra begränsningar för aktivering finn
 Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](../../../ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla Google krav som beskrivs i länkarna ovan.
+
+### Hash-krav för adressfält {#address-field-hashing}
+
+När adressrelaterade fält mappas till [!DNL Google Customer Match] kommer Experience Platform **automatiskt att krascha** `address_info_first_name` - och `address_info_last_name`-värdena innan de skickas till Google. Denna automatiska hashning krävs för att uppfylla Google säkerhets- och integritetskrav.
+
+Ange **inte** förhash-värden för `address_info_first_name` eller `address_info_last_name`. Om du redan anger hash-kodade värden misslyckas matchningsprocessen.
 
 ### Använda anpassade namnutrymmen {#custom-namespaces}
 
