@@ -1,20 +1,17 @@
 ---
-keywords: Experience Platform;home;populära topics;mysql;MySQL
-solution: Experience Platform
-title: Skapa en MySQL Source-anslutning i användargränssnittet
-type: Tutorial
-description: Lär dig hur du skapar en MySQL-källanslutning med Adobe Experience Platform-gränssnittet.
+title: Anslut MySQL till Experience Platform med användargränssnittet
+description: Lär dig hur du ansluter MySQL-databasen till Experience Platform med användargränssnittet.
 exl-id: 75e74bde-6199-4970-93d2-f95ec3a59aa5
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 659af23c6d05f184b745e13ab8545941f3892e7e
 workflow-type: tm+mt
-source-wordcount: '396'
-ht-degree: 1%
+source-wordcount: '515'
+ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL MySQL]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL MySQL]-källanslutning med Adobe Experience Platform-gränssnittet.
+Läs den här vägledningen när du vill lära dig hur du ansluter din [!DNL MySQL]-databas till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -29,36 +26,62 @@ Om du redan har en [!DNL MySQL]-anslutning kan du hoppa över resten av det här
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL MySQL]-konto på [!DNL Experience Platform] måste du ange följande värde:
+Läs [[!DNL MySQL] översikten](../../../../connectors/databases/mysql.md#prerequisites) om du vill ha information om autentisering.
 
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `connectionString` | Anslutningssträngen [!DNL MySQL] som är associerad med ditt konto. Anslutningssträngsmönstret [!DNL MySQL] är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. Du kan lära dig mer om anslutningssträngar och hur du hämtar dem genom att läsa [[!DNL MySQL] dokumentet](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html). |
+## Navigera i källkatalogen
 
-## Anslut ditt [!DNL MySQL]-konto
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Välj en kategori eller använd sökfältet för att hitta källan.
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL MySQL]-konto till [!DNL Experience Platform].
+Om du vill ansluta till [!DNL MySQL] går du till kategorin *[!UICONTROL Databases]*, markerar **[!UICONTROL MySQL]**-källkortet och väljer **[!UICONTROL Set up]**.
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
+>[!TIP]
+>
+>Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När ett autentiserat konto har skapats ändras alternativet till **[!UICONTROL Add data]**.
 
-Välj **[!UICONTROL MySQL]** under kategorin **[!UICONTROL Databases]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL MySQL]-koppling.
+![Källkatalogen med källkortet MySQL markerat.](../../../../images/tutorials/create/my-sql/catalog.png)
 
-![](../../../../images/tutorials/create/my-sql/catalog.png)
+## Använd ett befintligt konto {#existing}
 
-Sidan **[!UICONTROL Connect to MySQL]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det [!DNL MySQL]-konto som du vill använda.
 
-### Nytt konto
+![Det befintliga kontogränssnittet i källarbetsflödet med &quot;Befintligt konto&quot; valt.](../../../../images/tutorials/create/my-sql/existing.png)
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL MySQL]-inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+## Skapa ett nytt konto {#new}
 
-![](../../../../images/tutorials/create/my-sql/new.png)
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och kan lägga till en beskrivning för ditt konto.
 
-### Befintligt konto
+![Det nya kontogränssnittet i källarbetsflödet med ett kontonamn och en valfri beskrivning har angetts.](../../../../images/tutorials/create/my-sql/new.png)
 
-Om du vill ansluta ett befintligt konto markerar du det [!DNL MySQL]-konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
+### Anslut till Experience Platform på Azure {#azure}
 
-![](../../../../images/tutorials/create/my-sql/existing.png)
+Du kan ansluta din [!DNL MySQL]-databas till Experience Platform på Azure med antingen kontonyckel eller grundläggande autentisering.
 
-## Nästa steg
+>[!BEGINTABS]
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt MySQL-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).
+>[!TAB Autentisering av kontonyckel]
+
+Om du vill använda kontonyckelautentisering väljer du **[!UICONTROL Account key authentication]**, anger din [anslutningssträng](../../../../connectors/databases/mysql.md#azure) och väljer sedan **[!UICONTROL Connect to source]**.
+
+![Det nya kontogränssnittet i källarbetsflödet med autentiseringen av kontonyckeln markerat.](../../../../images/tutorials/create/my-sql/account-key.png)
+
+>[!TAB Grundläggande autentisering]
+
+Om du vill använda grundläggande autentisering väljer du **[!UICONTROL Basic authentication]**, anger värden för dina [autentiseringsuppgifter](../../../../connectors/databases/mysql.md#azure) och väljer sedan **[!UICONTROL Connect to source]**.
+
+![Det nya kontogränssnittet i källarbetsflödet med Grundläggande autentisering markerat.](../../../../images/tutorials/create/my-sql/basic-auth.png)
+
+>[!ENDTABS]
+
+### Ansluta till Experience Platform på Amazon Web Services (AWS) {#aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
+
+Om du vill skapa ett nytt [!DNL MySQL]-konto och ansluta till Experience Platform på AWS kontrollerar du att du befinner dig i en VA6-sandlåda och anger sedan de [autentiseringsuppgifter som krävs för autentisering](../../../../connectors/databases/mysql.md#aws).
+
+![Det nya kontogränssnittet i källarbetsflödet som ska anslutas till AWS.](../../../../images/tutorials/create/my-sql/aws.png)
+
+## Skapa ett dataflöde för [!DNL MySQL] data
+
+Nu när du har anslutit din [!DNL MySQL]-databas kan du [skapa ett dataflöde och importera data från din databas till Experience Platform](../../dataflow/databases.md).

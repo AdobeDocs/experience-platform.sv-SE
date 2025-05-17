@@ -1,52 +1,180 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;MySQL;mysql
-solution: Experience Platform
-title: Skapa en  [!DNL MySQL] basanslutning med API:t för flödestjänsten
-type: Tutorial
-description: Lär dig hur du ansluter Adobe Experience Platform till MySQL med API:t för Flow Service.
+title: Anslut MySQL till Experience Platform med API:t för Flow Service
+description: Lär dig hur du ansluter MySQL-databasen till Experience Platform med API:er.
 exl-id: 273da568-84ed-4a3d-bfea-0f5b33f1551a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 659af23c6d05f184b745e13ab8545941f3892e7e
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '597'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL MySQL]-basanslutning med API:t [!DNL Flow Service]
+# Anslut [!DNL MySQL] till Experience Platform med API:t [!DNL Flow Service]
 
-En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
-
-I den här självstudien får du hjälp med att skapa en basanslutning för [!DNL MySQL] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL MySQL]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL MySQL] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL MySQL]-lagringsutrymme måste du ange värdet för följande anslutningsegenskap:
-
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `connectionString` | Anslutningssträngen [!DNL MySQL] som är associerad med ditt konto. Anslutningssträngsmönstret [!DNL MySQL] är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL MySQL] är `26d738e0-8963-47ea-aadf-c60de735468a`. |
-
-Mer information om hur du hämtar en anslutningssträng finns i det här [[!DNL MySQL] dokumentet](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html).
+Läs [[!DNL MySQL] översikten](../../../../connectors/databases/mysql.md#prerequisites) om du vill ha information om autentisering.
 
 ### Använda Experience Platform API:er
 
-Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
+Läs guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md) om du vill ha information om hur du kan anropa Experience Platform API:er.
 
-## Skapa en basanslutning
+## Anslut [!DNL MySQL] till Experience Platform på Azure {#azure}
 
-En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL MySQL]-konto till Experience Platform på Azure.
 
-Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL MySQL]-autentiseringsuppgifter som en del av parametrarna för begäran.
+### Skapa en basanslutning för [!DNL MySQL] på Experience Platform på Azure {#azure-base}
+
+En basanslutning länkar källan till Experience Platform, lagrar autentiseringsinformation, anslutningsstatus och ett unikt ID. Använd detta ID för att bläddra bland källfiler och identifiera specifika objekt som ska importeras, inklusive deras datatyper och format.
+
+**API-format**
+
+```https
+POST /connections
+```
+
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL MySQL]-autentiseringsuppgifter som en del av parametrarna för begäran.
+
+>[!BEGINTABS]
+
+>[!TAB Anslutningssträngsbaserad autentisering]
+
+**Begäran**
+
+Följande begäran skapar en basanslutning för [!DNL MySQL] med anslutningssträngsbaserad autentisering.
+
++++Exempel på visningsbegäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "MySQL Base Connection to Experience Platform",
+      "description": "Via Connection String,
+      "auth": {
+          "specName": "Connection String Based Authentication",
+          "params": {
+              "connectionString": "Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}"
+          }
+      },
+      "connectionSpec": {
+          "id": "26d738e0-8963-47ea-aadf-c60de735468a",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `auth.params.connectionString` | Anslutningssträngen [!DNL MySQL] som är associerad med ditt konto. Anslutningssträngsmönstret [!DNL MySQL] är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MySQL]: `26d738e0-8963-47ea-aadf-c60de735468a`. |
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`).
+
++++Visa svarsexempel
+
+```json
+{
+    "id": "1a444165-3439-4c16-8441-653439dc166a",
+    "etag": "\"5b04c219-0000-0200-0000-5e179c8f0000\""
+}
+```
+
++++
+
+>[!TAB Grundläggande autentisering]
+
+**Begäran**
+
+Följande begäran skapar en basanslutning för en [!DNL MySQL]-källa med grundläggande autentisering.
+
++++Exempel på visningsbegäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "MySQL Base Connection to Experience Platform",
+      "description": "Via Basic Authentication",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "server": "{SERVER}",
+              "database": "{DATABASE}",
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "sslMode": "{SSLMODE}"
+          }
+      },
+      "connectionSpec": {
+          "id": "26d738e0-8963-47ea-aadf-c60de735468a",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `auth.params.server` | Namnet eller IP-adressen för din [!DNL MySQL]-databas. |
+| `auth.params.database` | Namnet på databasen. |
+| `auth.params.username` | Användarnamnet som motsvarar databasen. |
+| `auth.params.password` | Lösenordet som motsvarar databasen. |
+| `auth.params.sslMode` | Den metod som används för att kryptera data under dataöverföring. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MySQL] är: `26d738e0-8963-47ea-aadf-c60de735468a`. |
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`).
+
++++Visa svarsexempel
+
+```json
+{
+    "id": "025d4158-4113-403b-b551-e81724d3880c",
+    "etag": "\"ae004437-0000-0200-0000-67ee107e0000\""
+}
+```
+
++++
+
+>[!ENDTABS]
+
+## Anslut [!DNL MySQL] till Experience Platform på Amazon Web Services {#aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
+
+Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL MySQL]-konto till Experience Platform på AWS.
+
+### Skapa en basanslutning för [!DNL MySQL] på Experience Platform på AWS {#aws-base}
 
 **API-format**
 
@@ -56,52 +184,64 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en basanslutning för [!DNL MySQL]:
+Följande begäran skapar en basanslutning för [!DNL MySQL] att ansluta till Experience Platform på AWS.
+
++++Exempel på visningsbegäran
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "[!DNL MySQL] Test Connection",
-        "description": "[!DNL MySQL] Test Connection",
-        "auth": {
-            "specName": "Connection String Based Authentication",
-            "params": {
-                "connectionString": "Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}"
-            }
-        },
-        "connectionSpec": {
-            "id": "26d738e0-8963-47ea-aadf-c60de735468a",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "MySQL on Experience Platform AWS",
+      "description": "MySQL on Experience Platform AWS",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "server": "{SERVER}",
+              "database": "{DATABASE}",
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "sslMode": "{SSLMODE}"
+          }
+      },
+      "connectionSpec": {
+          "id": "26d738e0-8963-47ea-aadf-c60de735468a",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
-| --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen [!DNL MySQL] som är associerad med ditt konto. Anslutningssträngsmönstret [!DNL MySQL] är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MySQL]: `26d738e0-8963-47ea-aadf-c60de735468a`. |
+| --- | --- |
+| `auth.params.server` | Namnet eller IP-adressen för din [!DNL MySQL]-databas. |
+| `auth.params.database` | Namnet på databasen. |
+| `auth.params.username` | Användarnamnet som motsvarar databasen. |
+| `auth.params.password` | Lösenordet som motsvarar databasen. |
+| `auth.params.sslMode` | Den metod som används för att kryptera data under dataöverföring. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MySQL] är: `26d738e0-8963-47ea-aadf-c60de735468a`. |
+
++++
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska din databas i nästa självstudiekurs.
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`).
+
++++Visa svarsexempel
 
 ```json
 {
-    "id": "1a444165-3439-4c16-8441-653439dc166a",
-    "etag": "\"5b04c219-0000-0200-0000-5e179c8f0000\""
+    "id": "f847950c-1c12-4568-a550-d5312b16fdb8",
+    "etag": "\"0c0099f4-0000-0200-0000-67da91710000\""
 }
 ```
 
-## Nästa steg
++++
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL MySQL]basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
+## Skapa ett dataflöde för [!DNL MySQL] data
 
-* [Utforska strukturen och innehållet i datatabellerna med hjälp av  [!DNL Flow Service] API](../../explore/tabular.md)
-* [Skapa ett dataflöde för att hämta databasdata till Experience Platform med  [!DNL Flow Service] API](../../collect/database-nosql.md)
-
+Nu när du har anslutit din [!DNL MySQL]-databas kan du [skapa ett dataflöde och importera data från din databas till Experience Platform](../../collect/database-nosql.md).

@@ -1,35 +1,67 @@
 ---
-keywords: Experience Platform;home;populära topics;MySQL;mysql;My sql;My SQL
-solution: Experience Platform
 title: MySQL Source Connector - översikt
 description: Lär dig hur du ansluter MySQL till Adobe Experience Platform med API:er eller användargränssnittet.
+last-substantial-update: 2025-05-17T00:00:00Z
 exl-id: a18e8e69-880f-4bee-b339-726091d6f858
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 7a5dae76c5b58b302b4f3295efc17f40dbb9b18b
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
 
-# MySQL-koppling
+# [!DNL MySQL]
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+[!DNL MySQL] är ett relationsdatabashanteringssystem med öppen källkod som används för att lagra och hantera strukturerade data. Data ordnas i tabeller och SQL (Structured Query Language) används för att hämta och uppdatera information. [!DNL MySQL] används ofta i webbprogram, har stöd för flera plattformar och är känt för hastighet, tillförlitlighet och användarvänlighet. Det är idealiskt för allt från små webbplatser till storskaliga företagssystem.
 
-[!DNL Experience Platform] har stöd för inhämtning av data från en tredjepartsdatabas. [!DNL Experience Platform] kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL eller datalager. Stöd för databasleverantörer är bland annat MySQL.
+Du kan använda källan [!DNL MySQL] för att ansluta ditt konto och importera data från din [!DNL MySQL]-databas till Adobe Experience Platform.
 
-## IP-adress tillåtelselista
+## Förhandskrav {#prerequisites}
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Läs följande avsnitt för att slutföra kravkonfigurationen innan du ansluter ditt [!DNL MySQl]-konto till Experience Platform.
 
-Dokumentationen nedan innehåller information om hur du ansluter MySQL till [!DNL Experience Platform] med API:er eller användargränssnittet:
+### IP-adress tillåtelselista
 
-## Anslut MySQL till [!DNL Experience Platform] med API:er
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform på antingen Azure eller Amazon Web Services (AWS). Mer information finns i guiden [tillåtslista IP-adresser för att ansluta till Experience Platform på Azure och AWS](../../ip-address-allow-list.md).
 
-- [Skapa en MySQL-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/mysql.md)
+### Autentisera till Experience Platform på Azure {#azure}
+
+Du kan antingen använda kontonyckelautentisering eller grundläggande autentisering för att ansluta din [!DNL MySQL]-databas till Experience Platform på Azure.
+
+>[!BEGINTABS]
+
+>[!TAB Autentisering av kontonyckel]
+
+Ange värden för följande autentiseringsuppgifter för att ansluta din [!DNL MySQL]-databas till Experience Platform med autentisering av kontonycklar.
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `connectionString` | Anslutningssträngen [!DNL MySQL] som är associerad med ditt konto. Anslutningssträngsmönstret [!DNL MySQL] är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningens spec-ID för [!DNL MySQL] är `26d738e0-8963-47ea-aadf-c60de735468a`. |
+
+Mer information finns i [[!DNL MySQL] dokumentationen om anslutningssträngar](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html).
+
+>[!TAB Grundläggande autentisering]
+
+Ange värden för följande autentiseringsuppgifter för att ansluta din [!DNL MySQL]-databas till Experience Platform med grundläggande autentisering.
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `server` | Namnet eller IP-adressen för din [!DNL MySQL]-databas. |
+| `database` | Namnet på den [!DNL MySQL]-databas som du vill ansluta till. |
+| `username` | Det användarnamn som är associerat med din [!DNL MySQL]-databasautentisering. |
+| `password` | Lösenordet som är kopplat till din [!DNL MySQL]-databasautentisering. |
+| `sslMode` | Den [!DNL Secure Sockets Layer]-metod (SSL) som ska användas för anslutningen. De tillgängliga värdena är: <ul><li>`DISABLED`: Använd det här alternativet om du vill inaktivera SSL. Om servern kräver en SSL-konfiguration kommer anslutningen att misslyckas</li><li>`PREFERRED`: Använd det här alternativet om du vill använda SSL-anslutningar eftersom servern stöder dem. Det här alternativet tillåter även andra anslutningar än SSL.</li><li>`REQUIRED`: Använd det här alternativet om du vill göra SSL-anslutningar obligatoriska. Om servern inte stöder SSL kommer anslutningarna att misslyckas.</li><li>`Verify-Ca`: Använd det här alternativet om du vill verifiera servercertifikat medan anslutningar misslyckas om servern inte stöder SSL.</li><li>`Verify Identity`: Använd det här alternativet om du vill verifiera servercertifikat med värdnamnet när anslutningar misslyckas om servern inte stöder SSL.</li></ul> |
+
+>[!ENDTABS]
+
+## Anslut [!DNL MySQL] till Experience Platform med API:er
+
+- [Anslut  [!DNL MySQL] databasen med API:t för Flow Service](../../tutorials/api/create/databases/mysql.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
-## Anslut MySQL till [!DNL Experience Platform] med användargränssnittet
+## Anslut MySQL till Experience Platform med användargränssnittet
 
-- [Skapa en MySQL-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/mysql.md)
+- [Anslut din [!DNL MySQL] databas till Experience Platform med användargränssnittet](../../tutorials/ui/create/databases/mysql.md)
 - [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
