@@ -2,7 +2,7 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 44457b95b354e20808c1218ca3c8e698071f0528
+source-git-commit: 0bf62f5f527d50b59ed84cc0ad98200cf25b4c8e
 workflow-type: tm+mt
 source-wordcount: '2162'
 ht-degree: 4%
@@ -73,7 +73,7 @@ Namnområdesprioriteten kan konfigureras med hjälp av användargränssnittet [f
 
 ## Användning av namnområdesprioritet
 
-För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
+För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
 
 ![Ett diagram över programomfånget för namnområdesprioritet](../images/namespace-priority/application-scope.png)
 
@@ -216,12 +216,12 @@ I en given händelse måste du se till att alla namnutrymmen som representerar e
 
 * **Händelsetillämplighet**: Det här beteendet gäller endast för händelser som skickas direkt till Edge Network (till exempel WebSDK och Mobile SDK). Händelser som har importerats från [Experience Platform-hubben](../../landing/edge-and-hub-comparison.md), t.ex. de som har importerats med HTTP API-källan, andra strömningskällor och batchkällor, omfattas inte av den här begränsningen.
 * **Specifikation för Edge-segmentering**: Det här beteendet är specifikt för kantsegmentering. Segmentering av grupper och strömning är separata tjänster som utvärderas på navet och följer inte samma process. Läs [kantsegmenteringsguiden](../../segmentation/methods/edge-segmentation.md) om du vill ha mer information.
-* Mer information finns i [Adobe Experience Platform- och programarkitekturdiagrammen](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram) och [Edge Network- och navjämförelsesidorna](../../landing/edge-and-hub-comparison.md).
+* Mer information finns i [Adobe Experience Platform- och programarkitekturdiagrammen](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram) och [Edge Network- och navjämförelsesidorna](../../landing/edge-and-hub-comparison.md).
 
 #### Edge Network-program
 
 För att program på Edge Network ska ha tillgång till Edge-profilen utan dröjsmål måste du se till att dina händelser innehåller `primary=true` i CRMID. Detta garanterar omedelbar tillgänglighet utan att vänta på att identitetsdiagrammet uppdateras från navet.
 
 * Program på Edge Network, t.ex. Adobe Target, Offer Decisioning och anpassade Personalization-destinationer, fortsätter att vara beroende av den primära identiteten i händelser för att komma åt profiler från Edge-profilen.
-* Mer information om Edge Network beteende finns i [Experience Platform Web SDK &amp; Edge Network-arkitekturdiagrammet](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment).
+* Mer information om Edge Network beteende finns i [Experience Platform Web SDK &amp; Edge Network-arkitekturdiagrammet](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment).
 * Läs dokumentationen om [dataelementtyper](../../tags/extensions/client/web-sdk/data-element-types.md) och [identitetsdata i Web SDK](../../web-sdk/identity/overview.md) om du vill ha mer information om hur du konfigurerar primär identitet på Web SDK.
