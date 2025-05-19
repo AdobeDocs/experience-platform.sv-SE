@@ -2,9 +2,9 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a14d94a87eb433dd0bb38e5bf3c9c3a04be9a5c6
 workflow-type: tm+mt
-source-wordcount: '2154'
+source-wordcount: '2338'
 ht-degree: 1%
 
 ---
@@ -15,13 +15,34 @@ Adobe Experience Platform är ett öppet system som omvandlar era data till robu
 
 Experience Platform erbjuder licenser som fastställer antalet profiler du kan skapa och hur mycket data du kan hämta in. Med tanke på kapaciteten att hämta in alla datakällor, volymer och historik för data är det möjligt att överskrida era licensrättigheter när datavolymer växer.
 
-I det här dokumentet beskrivs de bästa sätten att följa och de verktyg du kan använda för att hantera dina licensrättigheter bättre med Adobe Experience Platform.
+Läs den här guiden för bästa praxis och verktyg som du kan använda för att hantera dina licensrättigheter bättre med Experience Platform.
 
-## Förstå Adobe Experience Platform datalagring
+## Sammanfattning av funktioner {#summary-of-features}
 
-Experience Platform består huvudsakligen av två datadatabaser: [!DNL data lake] och profilarkivet.
+Använd de bästa metoderna och verktygen som beskrivs i det här dokumentet för att bättre hantera användningen av dina licenser inom Experience Platform. Det här dokumentet uppdateras i takt med att ytterligare funktioner släpps för att ge synlighet och kontroll till alla Experience Platform-kunder.
 
-**[!DNL data lake]** har i första hand följande syften:
+I följande tabell visas en lista över de funktioner som är tillgängliga för tillfället, så att du bättre kan hantera din rätt till licensanvändning.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [Användargränssnitt för datauppsättning - Upplev datalagring för händelse](../../catalog/datasets/user-guide.md#data-retention-policy) | Konfigurera en fast kvarhållningsperiod för data i datavagn och profilarkiv. Poster tas bort när den konfigurerade kvarhållningsperioden avslutas. |
+| [Aktivera/inaktivera datauppsättningar för kundprofil i realtid](../../catalog/datasets/user-guide.md) | Aktivera eller inaktivera datamängdsmatning i kundprofilen i realtid. |
+| [Händelseförfallodatum i profilarkivet](../../profile/event-expirations.md) | Använd en förfallotid för alla händelser som är inkapslade i en profilaktiverad datauppsättning. Kontakta ditt Adobe-kontoteam eller kundtjänst om du vill aktivera den här funktionen. |
+| [Adobe Analytics Data Prep-filter](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-real-time-customer-profile) | Använd [!DNL Kafka] filter för att exkludera onödiga data från inmatning. |
+| [Adobe Audience Manager källanslutningsfilter](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | Använd Audience Manager källanslutningsfilter för att exkludera onödiga data från intag. |
+| [Datafilter för vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) | Använd filter på serversidan [!DNL Kafka] för att exkludera onödiga data från inmatning.  Mer information finns i dokumentationen om [taggregler](../../tags/ui/managing-resources/rules.md). |
+| [Gränssnitt för kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | Övervaka hur era Experience Platform-produkter konsumeras av licenserna. Få tillgång till vardagliga användningsögonblicksbilder, prediktiva trender och detaljerade sandlådenivådata som stöd för proaktiv licenshantering. |
+| [Rapport-API för datauppsättningsöverlappning](../../profile/tutorials/dataset-overlap-report.md) | Ger de datauppsättningar som bidrar mest till er adresserbara målgrupp. |
+| [Rapport-API för identitetsöverlappning](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) | Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik. |
+| [Pseudonyma profildata upphör](../../profile/pseudonymous-profiles.md) | Konfigurera förfallotider för pseudonyma profiler och ta automatiskt bort data från profilarkivet. |
+
+{style="table-layout:auto"}
+
+## Förstå Experience Platform datalagring
+
+Experience Platform består huvudsakligen av två datalager: dataländen och profillagringsplatsen.
+
+Datasjön har i första hand följande syften:
 
 * fungerar som mellanlagringsområde för information om introduktion till Experience Platform,
 * fungerar som långsiktig datalagring för alla Experience Platform-data,
@@ -40,9 +61,9 @@ Experience Platform består huvudsakligen av två datadatabaser: [!DNL data lake
 
 När du licensierar Experience Platform får du licensanvändningsrättigheter som varierar beroende på SKU:
 
-**[!DNL Addressable Audience]** - det totala antalet kundprofiler som enligt avtal tillåts i Experience Platform, inklusive både kända och pseudonyma profiler.
+**[!DNL Addressable Audience]**: Det totala antalet kundprofiler som enligt avtal tillåts i Experience Platform, inklusive både kända och pseudonyma profiler.
 
-**[!DNL Total Data Volume]** - den totala mängden data som är tillgängliga för Adobe Experience Platform Profile Service att använda i engagemangsarbetsflöden.
+**[!DNL Total Data Volume]**: Den totala mängden data som är tillgängliga för kundprofil i realtid som kan användas i engagemangsarbetsflöden.
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt.
 
@@ -123,7 +144,7 @@ Profilarkivet består av följande komponenter:
 
 {style="table-layout:auto"}
 
-#### Dispositionsrapporter för profilarkiv
+### Dispositionsrapporter för profilarkiv
 
 Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet är uppbyggt. Dessa rapporter hjälper er att fatta välgrundade beslut om hur och var era Experience Event-utgångsdatum ska anges för att optimera er licensanvändning:
 
@@ -132,13 +153,17 @@ Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet ä
 <!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
 -->
 
-#### Förfallodatum för pseudonyma profildata {#pseudonymous-profile-expirations}
+### Förfallodatum för pseudonyma profildata {#pseudonymous-profile-expirations}
 
-Med den här funktionen kan du automatiskt ta bort inaktuella pseudonyma profiler från profilarkivet. Mer information om den här funktionen finns i [Översikt över förfallodatum för pseudonyma profildata](../../profile/pseudonymous-profiles.md).
+Använd funktionen för pseudonyma profiler för att automatiskt ta bort data som inte längre är giltiga eller användbara för dina användningsfall från profilarkivet. Om data för pseudonym profil går ut tas både händelse- och profilposter bort. Den här inställningen minskar därmed adresserbara målvolymer. Mer information om den här funktionen finns i [Översikt över förfallodatum för pseudonyma profildata](../../profile/pseudonymous-profiles.md).
 
-#### Förfallodatum för upplevelsehändelser {#event-expirations}
+### Användargränssnitt för datauppsättning - Upplev kvarhållande av händelsedatauppsättning {#data-retention}
 
-Med den här funktionen kan du automatiskt ta bort beteendedata från en profilaktiverad datauppsättning som inte längre är värdefull för dina användningsfall. Mer information om hur den här processen fungerar när den har aktiverats för en datauppsättning finns i översikten [Händelseförfallotider](../../profile/event-expirations.md).
+Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen ](total-data-volume.md) i användningsstatistik för licenser. [ Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
+
+### Utgångsdatum för profilupplevelsehändelser {#event-expirations}
+
+Konfigurera förfallotider så att beteendedata automatiskt tas bort från din profilaktiverade datauppsättning när de inte längre är värdefulla för dina användningsfall. Mer information finns i översikten om [Experience Event-utgångsdatum](../../profile/event-expirations.md).
 
 ## Sammanfattning av de bästa sätten att uppfylla licensanvändningsvillkoren {#best-practices}
 
@@ -147,24 +172,6 @@ Nedan följer en lista över rekommenderade metoder som du kan följa för att s
 * Använd kontrollpanelen [för licensanvändning](../../dashboards/guides/license-usage.md) för att spåra och övervaka trender för kundanvändning. På så sätt kan du ligga steget före eventuella överbelastningar som kan uppstå.
 * Konfigurera [intessionsfilter](#ingestion-filters) genom att identifiera de händelser som krävs för din segmentering och dina användningsfall för personalisering. Detta gör att du bara kan skicka viktiga händelser som krävs för dina användningsfall.
 * Kontrollera att du bara har [aktiverade datauppsättningar för profilen](#ingestion-filters) som krävs för din segmentering och din personalisering.
-* Konfigurera [Händelseförfallodatum för upplevelse](#event-expirations) och [pseudonyma profildata](#pseudonymous-profile-expirations) för högfrekventa data som webbdata.
+* Konfigurera [Händelseförfallodatum för upplevelse](../../catalog/datasets/user-guide.md#data-retention-policy) och [pseudonyma profildata](../../profile/pseudonymous-profiles.md) för högfrekventa data som webbdata.
+* Konfigurera [TTL-kvarhållningsprinciper (Time-to-Live) för Experience Event-datamängder](../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md) i datasjön för att automatiskt ta bort föråldrade poster och optimera lagringsanvändningen i enlighet med licensrättigheterna.
 * Kontrollera [Profildispositionsrapporter](#profile-store-composition-reports) regelbundet för att förstå din profilarkivkomposition. På så sätt kan ni förstå vilka datakällor som bidrar mest till er licensanvändning.
-
-## Sammanfattning av funktioner och tillgänglighet {#feature-summary}
-
-De bästa metoderna och verktygen som beskrivs i det här dokumentet hjälper dig att bättre hantera användningen av dina licenser inom Adobe Experience Platform. Det här dokumentet kommer att uppdateras i takt med att ytterligare funktioner släpps för att ge synlighet och kontroll till alla Experience Platform-kunder.
-
-I följande tabell visas en lista över de funktioner som är tillgängliga för tillfället, så att du bättre kan hantera din rätt till licensanvändning.
-
-| Funktion | Beskrivning |
-| --- | --- |
-| [Aktivera/inaktivera datauppsättningar för profilen](../../catalog/datasets/user-guide.md) | Aktivera eller inaktivera datamängdsmatning i kundprofilen i realtid. |
-| [Händelseförfallodatum för upplevelse](../../profile/event-expirations.md) | Använd en förfallotid för alla händelser som är inkapslade i en profilaktiverad datauppsättning. Kontakta ditt Adobe-kontoteam eller kundtjänst om du vill aktivera den här funktionen. |
-| [Adobe Analytics Data Prep-filter](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | Använd [!DNL Kafka] filter för att exkludera onödiga data från inmatning |
-| [Adobe Audience Manager källanslutningsfilter](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | Använd Audience Manager källanslutningsfilter för att exkludera onödiga data från inmatning |
-| [Datafilter för vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) | Använd filter på serversidan [!DNL Kafka] för att exkludera onödiga data från inmatning.  Mer information finns i dokumentationen om [taggregler](../../tags/ui/managing-resources/rules.md). |
-| [Gränssnitt för kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | Visa en ögonblicksbild av din organisations licensrelaterade data för Experience Platform |
-| [Rapport-API för datauppsättningsöverlappning](../../profile/tutorials/dataset-overlap-report.md) | Visar de datauppsättningar som ger mest för er adresserbara publik |
-| [Rapport-API för identitetsöverlappning](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) | Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik |
-
-{style="table-layout:auto"}
