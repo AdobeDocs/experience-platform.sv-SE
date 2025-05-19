@@ -159,7 +159,7 @@ Använd funktionen för pseudonyma profiler för att automatiskt ta bort data so
 
 ### Användargränssnitt för datauppsättning - Upplev kvarhållande av händelsedatauppsättning {#data-retention}
 
-Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen ](total-data-volume.md) i användningsstatistik för licenser. [ Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
+Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen [&#128279;](total-data-volume.md) i användningsstatistik för licenser.  Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
 
 ### Utgångsdatum för profilupplevelsehändelser {#event-expirations}
 
