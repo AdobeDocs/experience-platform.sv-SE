@@ -3,9 +3,9 @@ title: Snowflake Source Connector - översikt
 description: Lär dig hur du ansluter Snowflake till Adobe Experience Platform med API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 573691db9f71fcbe8b5edd4ea647d718ab3784e4
 workflow-type: tm+mt
-source-wordcount: '694'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 0%
 >* Källan [!DNL Snowflake] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 >* Som standard tolkar [!DNL Snowflake]-källan `null` som en tom sträng. Kontakta din Adobe-representant för att kontrollera att dina `null`-värden är korrekt skrivna som `null` i Adobe Experience Platform.
 >* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC. Den enda tidsstämpeln som stöds för källan [!DNL Snowflake] är TIMESTAMP_NTZ med UTC-tid.
+
+>[!WARNING]
+>
+>Grundläggande autentisering (eller kontonyckelautentisering) för källan [!DNL Snowflake] kommer att bli inaktuell i november 2025. Du måste gå över till nyckelparsbaserad autentisering för att kunna fortsätta använda källan och hämta data från din databas till Experience Platform. Mer information om borttagningen finns i [[!DNL Snowflake] metodguiden om bästa praxis för att minska riskerna för kreditvärdighetsförluster](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/).
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
