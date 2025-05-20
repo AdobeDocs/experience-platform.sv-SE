@@ -2,10 +2,10 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 654a1c696d88d9e1748787402a1a50c8e232df57
+source-git-commit: 208c9c47b4bde211506867cf59b8743556db7fc8
 workflow-type: tm+mt
-source-wordcount: '2338'
-ht-degree: 0%
+source-wordcount: '2503'
+ht-degree: 1%
 
 ---
 
@@ -56,11 +56,10 @@ Tabellen nedan visar [!DNL Adobe Journey Optimizer] objekt som för närvarande 
 | [!DNL Adobe Journey Optimizer] | Kopplingsprincip | | Sammanfogningsprinciperna som används under resan kan kopieras som beroende objekt. I målsandlådan **kan du inte** skapa en ny sammanfogningsprincip. Du kan bara använda en befintlig. |
 | [!DNL Adobe Journey Optimizer] | Resa | Följande objekt som används under resan kopieras som beroende objekt. Under importarbetsflödet kan du välja **[!UICONTROL Create new]** eller **[!UICONTROL Use existing]** för varje: <ul><li>Målgrupper</li><li>Scheman</li><li>Anpassade åtgärder</li><li>Händelser</li><li>Fragment</li><li>Innehållsmallar</li><li>Arbetsytedetaljer</li></ul> | <ul><li>**[!UICONTROL Custom actions]**: När du väljer **[!UICONTROL Use existing]** under importprocessen när du kopierar en resa till en annan sandlåda, måste de befintliga anpassade åtgärderna du väljer **vara** samma som den anpassade källåtgärden. Om de inte är samma kommer den nya resan att innehålla fel som inte går att lösa.</li><li>Händelser och händelseinformation som används under resan kopieras. Den skapar alltid en ny version i målsandlådan.</li></ul> |
 | [!DNL Adobe Journey Optimizer] | Åtgärd | | E-post och push-meddelanden som används under resan kan kopieras som beroende objekt. Kanalåtgärdsaktiviteterna som används i resefälten, som används för personalisering i meddelandet, kontrolleras inte för fullständighet. Innehållsblock kopieras inte.<br><br>Åtgärden för att uppdatera profil som används under resan kan kopieras. Anpassade åtgärder kan läggas till i ett paket oberoende av varandra. Åtgärdsinformation som används under resan kopieras också. Den skapar alltid en ny version i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Anpassade åtgärder |  | Anpassade åtgärder kan läggas till i ett paket oberoende av varandra. När en anpassad åtgärd har tilldelats en resa kan den inte längre redigeras. Om du vill uppdatera anpassade åtgärder bör du: <ul><li>flytta anpassade åtgärder innan en resa migreras</li><li>uppdateringskonfigurationer (till exempel begärandehuvuden, frågeparametrar och autentisering) för anpassade åtgärder efter migrering</li><li>migrera reseobjekt med de anpassade åtgärder du lade till under det första steget</li></ul> |
 | [!DNL Adobe Journey Optimizer] | Innehållsmall | | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
 | [!DNL Adobe Journey Optimizer] | Fragment | Alla kapslade fragment. | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
-| [!DNL Adobe Journey Optimizer] | Kampanjer | | Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. beslutsobjekt, dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i [Exportera objekt till en annan sandlåda] |
-
-<!-- | [!DNL Adobe Journey Optimizer] | Campaigns | The following objects used in the campaign are copied as dependent objects: <ul><li>Campaigns</li><li>Audiences</li><li>Schemas</li><li>Content templates</li><li>Fragments</li><li>Message/Content</li><li>Channel configuration</li><li>Unified decision objects</li><li>Experiment settings/variants</li></ul>| Campaigns can be copied along with all items related to the profile, audience, schema, inline messages, and dependent objects. Some items are not copied, such as decision items, data usage labels, and language settings. For a complete list of objects that cannot be copied, refer the [exporting objects to another sandbox](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox) guide. | -->
+| [!DNL Adobe Journey Optimizer] | Kampanjer | Följande objekt som används i kampanjen kopieras som beroende objekt: <ul><li>Kampanjer</li><li>Målgrupper</li><li>Scheman</li><li>Innehållsmallar</li><li>Fragment</li><li>Meddelande/innehåll</li><li>Kanalkonfiguration</li><li>Enhetliga beslutsobjekt</li><li>Experimentera med inställningar/varianter</li></ul> | <ul><li>Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox).</li><li>Systemet identifierar och återanvänder automatiskt ett befintligt kanalkonfigurationsobjekt i målsandlådan om det finns en identisk konfiguration. Om ingen matchande konfiguration hittas hoppas kanalkonfigurationen över under importen, och användare måste uppdatera kanalinställningarna manuellt i målsandlådan för den här resan.</li><li>Användare kan återanvända befintliga experiment och målgrupper i målsandlådan som beroende objekt för valda kampanjer.</li></ul> |
 
 Ytor (till exempel förinställningar) kopieras inte över. Systemet väljer automatiskt den närmsta möjliga matchningen i målsandlådan baserat på meddelandetyp och ytnamn. Om det inte finns några ytor i målsandlådan, kommer ytkopian att misslyckas, vilket gör att meddelandekopian misslyckas eftersom ett meddelande kräver att en yta är tillgänglig för konfiguration. I det här fallet måste minst en yta skapas för den högra kanalen i meddelandet för att kopian ska fungera.
 
@@ -258,7 +257,7 @@ När importen är klar visas ett meddelande i Experience Platform-gränssnittet.
 
 Följande video är avsedd att ge stöd för din förståelse av sandlådeverktyg och visar hur du skapar ett nytt paket, publicerar ett paket och importerar ett paket.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446087/?learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## Nästa steg
 
