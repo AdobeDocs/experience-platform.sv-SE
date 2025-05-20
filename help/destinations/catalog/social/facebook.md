@@ -3,9 +3,9 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: a2420f86e650ce1ca8a5dc01d9a29548663d3f7c
 workflow-type: tm+mt
-source-wordcount: '2042'
+source-wordcount: '2083'
 ht-degree: 0%
 
 ---
@@ -157,7 +157,15 @@ I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål
 
 ### Uppdatera autentiseringsuppgifter {#refresh-authentication-credentials}
 
-Facebook-tokens går ut var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
+Autentiseringstoken för Facebook går ut var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera.
+
+Du kan övervaka dina tokens förfallodatum från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[!UICONTROL Accounts]** eller **[!UICONTROL Browse]**.
+
+![Förfallodatumkolumn för Facebook-kontotoken på fliken Bläddra](../../assets/catalog/social/facebook/account-expiration-browse.png)
+
+![Förfallodatumkolumn för Facebook-kontotoken på fliken Konton](../../assets/catalog/social/facebook/account-expiration-accounts.png)
+
+För att förhindra att en token upphör att gälla och detta orsakar avbrott i aktiveringsdataflödena kan du autentisera igen genom att utföra följande steg:
 
 1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**
 2. (Valfritt) Använd de tillgängliga filtren på sidan om du bara vill visa Facebook-konton.
