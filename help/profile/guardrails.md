@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cfc221250a9c8f91b16aa1d4572263ecaf4eeccc
 workflow-type: tm+mt
-source-wordcount: '2615'
+source-wordcount: '2620'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Med Adobe Experience Platform kan ni leverera personaliserade flerkanalsupplevel
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda. När du granskar följande skyddsutkast förutsätts det att du har modellerat data korrekt. Om du har frågor om hur du modellerar data kan du kontakta kundtjänstrepresentanten.
 
@@ -98,7 +98,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 | Största profilfragmentstorlek | 50 MB | Systemstyrt skyddsräcke | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla [profilfragment](#profile-fragments) som är större än 50 MB. |
 | Maximal storlek för fillagring | 50 MB | Prestandaskydd | **Den maximala storleken för en lagrad profil är 50 MB.** Om du lägger till nya [profilfragment](#profile-fragments) i en profil som är större än 50 MB påverkas systemets prestanda. En profil kan till exempel innehålla ett enskilt fragment som är 50 MB eller innehålla flera fragment över flera datauppsättningar med en sammanlagd storlek på 50 MB. Om du försöker lagra en profil med ett enskilt fragment som är större än 50 MB, eller med flera fragment som är större än 50 MB i kombination, påverkas systemets prestanda. |
 | Antal profiler eller ExperienceEvent-batchar som har importerats per dag | 90 | Prestandaskydd | **Det maximala antalet profiler eller ExperienceEvent-batchar som har skickats in per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om ytterligare batchar registreras påverkas systemets prestanda. |
-| Antal ExperienceEvents per profilpost | 5000 | Prestandaskydd | **Det maximala antalet ExperienceEvents per profilpost är 5000.** profiler med fler än 5 000 ExperienceEvents **beaktas inte** vid segmentering. |
+| Antal ExperienceEvents per profilpost | 5000 | Prestandaskydd | **Det maximala antalet ExperienceEvents per profilpost är 5000.** Profiler med fler än 5 000 ExperienceEvents använder bara de **senaste** 5 000 ExperienceEvents när de används med segmentering. |
 
 {style="table-layout:auto"}
 
@@ -188,7 +188,7 @@ Flera rapportsviter kan aktiveras för profilen så länge som alla datakonflikt
 I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=sv-SE#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

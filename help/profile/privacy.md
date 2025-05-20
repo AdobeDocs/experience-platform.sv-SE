@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 6eaa384feb1b84e6081f03cb4de9687ad26f437d
 workflow-type: tm+mt
-source-wordcount: '1740'
+source-wordcount: '1746'
 ht-degree: 0%
 
 ---
@@ -200,10 +200,10 @@ Beroende på om du även inkluderade identitetstjänsten (`identity`) och datasj
 
 | Produkter ingår | Effekter |
 | --- | --- |
-| Endast `ProfileService` | Profilen tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras. De data som är associerade med profilen finns också kvar i datasjön. |
-| `ProfileService` och `identity` | Profilen och tillhörande identitetsdiagram tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning togs emot. De data som är associerade med profilen finns kvar i datasjön. |
-| `ProfileService` och `aepDataLake` | Profilen tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Experience Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
-| `ProfileService`, `identity` och `aepDataLake` | Profilen och tillhörande identitetsdiagram tas bort omedelbart när Experience Platform skickar en bekräftelse på att begäran om borttagning togs emot.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Experience Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
+| Endast `ProfileService` | Profilen tas omedelbart bort så snart Privacy Service har bekräftat att borttagningsbegäran har slutförts. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras. De icke-personligt identifierbara data som är associerade med profilen finns också kvar i datasjön. |
+| `ProfileService` och `identity` | Profilen och tillhörande identitetsdiagram tas bort omedelbart när Privacy Service skickar en bekräftelse på att borttagningsbegäran har slutförts. De icke-personligt identifierbara data som är associerade med profilen finns också kvar i datasjön. |
+| `ProfileService` och `aepDataLake` | Profilen tas bort omedelbart när Privacy Service skickar en bekräftelse på att borttagningsbegäran har slutförts. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Experience Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
+| `ProfileService`, `identity` och `aepDataLake` | Profilen och tillhörande identitetsdiagram tas bort omedelbart när Privacy Service skickar en bekräftelse på att borttagningsbegäran har slutförts.<br><br>När datasjöprodukten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort på skärmen och är därför inte tillgängliga för någon [!DNL Experience Platform]-tjänst. När jobbet är klart tas data bort helt från datasjön. |
 
 Mer information om att spåra jobbstatus finns i [[!DNL Privacy Service] dokumentationen](../privacy-service/home.md#monitor).
 
