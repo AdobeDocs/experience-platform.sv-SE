@@ -2,9 +2,9 @@
 description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka data som hämtas in till datavjön.
 title: Övervaka inhämtning av data från sjön
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: f671188fbc694b0d2d808577265f91788cb0d8e9
+source-git-commit: 75970d41a316c97d98ebf6cefd3bfa0e58173030
 workflow-type: tm+mt
-source-wordcount: '1275'
+source-wordcount: '1427'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 >Direktuppspelningskällor, som [HTTP API-källan](../../sources/connectors/streaming/http.md), stöds för närvarande inte av kontrollpanelen. För tillfället kan du bara använda kontrollpanelen för att övervaka batchkällor.
 
-Läs det här dokumentet om du vill lära dig hur du använder kontrollpanelen för att övervaka inmatning av data i Experience Platform användargränssnitt.
+Du kan använda kontrollpanelen för övervakning i Adobe Experience Platform användargränssnitt för att hämta statistik om dataanvändningen och datalagringsprocesserna i datasjön. Använd diagrammen i gränssnittet för att övervaka trender för intag och kvarhållande över tiden och sammanfatta prestanda i alla era källfilsflöden.
+
+Läs det här dokumentet om du vill veta hur du kan använda kontrollpanelen för att övervaka all databearbetning i sjön, inklusive både förtäring och kvarhållande.
 
 ## Kom igång {#get-started}
 
@@ -60,6 +62,7 @@ I den nedre delen av kontrollpanelen visas en tabell som visar den aktuella mät
 | --- | --- |
 | Mottagna poster | Det totala antalet poster som tagits emot från en angiven källa. |
 | Insamlade poster | Det totala antalet poster som har importerats till datasjön. |
+| Borttagna poster | Det totala antalet poster som har tagits bort på grund av lagringsinställningar för datalagring eller ändringar av datainhämtningsåtgärder. |
 | Överhoppade poster | Det totala antalet poster som hoppats över. En överhoppad post refererar till fält som har hoppats över eftersom de inte behövdes för inmatning. Om du till exempel skapar ett källdataflöde med partiellt intag aktiverat, kan du konfigurera ett acceptabelt tröskelvärde för felfrekvens. Under importen kommer man att hoppa över poster i fält som inte är obligatoriska, t.ex. identitetsfält, så länge de ligger inom feltröskeln. |
 | Misslyckade poster | Det totala antalet poster som inte kunde importeras på grund av fel. |
 | Fakturerad frekvens | Procentandelen poster som har importerats baserat på det totala antalet mottagna poster. |
@@ -79,7 +82,19 @@ Du kan filtrera dina data ytterligare med hjälp av alternativen ovan i mättabe
 
 {style="table-layout:auto"}
 
+Om du vill anpassa kolumnvisningen väljer du ikonen för kolumninställningar ![för kolumn-ikon](/help/images/icons/column-settings.png).
+
+![Kontrollpanelen med ikonen för kolumninställningar markerad.](../assets/ui/monitor-sources/edit-columns.png)
+
+Använd sedan fönstret *[!UICONTROL Customize table]* för att markera de kolumner som du vill att instrumentpanelen ska visa. När du är klar väljer du **[!UICONTROL Apply]**.
+
+![Popup-fönstret för att anpassa kolumner i kontrollpanelen.](../assets/ui/monitor-sources/customize-table.png)
+
 Om du vill övervaka data som importeras i ett specifikt dataflöde väljer du filterikonen ![filter](/help/images/icons/filter-add.png) bredvid en källa.
+
+>[!TIP]
+>
+>Du kan använda kontrollpanelen för att övervaka dataraderingsmått för poster som tas bort med hjälp av datalagringsprinciper. Mer information om datalagring finns i handboken om [inställning av datalagringsprinciper](../../catalog/datasets/user-guide.md#data-retention-policy).
 
 ![Övervaka ett specifikt dataflöde genom att välja filterikonen bredvid en viss källa.](../assets/ui/monitor-sources/monitor-dataflow.png)
 
