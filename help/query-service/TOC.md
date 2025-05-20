@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: 5e8dccf91e8c83b4734b363539cfb911b5c2ae29
+source-git-commit: 8b33d9231aeebd454fd614a81b356a9e971b757c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '409'
 ht-degree: 14%
 
 ---
@@ -110,6 +110,7 @@ ht-degree: 14%
    - [Frågeloggar](ui/query-logs.md)
    - [Övervaka schemalagda frågor](ui/monitor-queries.md)
    - [Handbok för autentiseringsuppgifter](ui/credentials.md)
+   - [Migrera JWT till OAuth-autentiseringsuppgifter](ui/migrate-jwt-to-oauth.md)
    - [Generera utdata från frågeresultat](ui/create-datasets.md)
 - API för frågetjänst {#api}
    - [Komma igång](api/getting-started.md)
@@ -144,4 +145,4 @@ ht-degree: 14%
 - [Vanliga frågor och svar](troubleshooting-guide.md)
 - [IP-adress tillåtelselista](ip-address-allowlist.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

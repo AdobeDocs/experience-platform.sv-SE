@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: c8c04d79584093c8d13ffa205849e78ab04c0fc1
+source-git-commit: 264d3b12d8fd3bd100018513af1576b3de1cbb33
 workflow-type: tm+mt
-source-wordcount: '1837'
+source-wordcount: '1907'
 ht-degree: 0%
 
 ---
@@ -46,11 +46,11 @@ Avsnittet **[!UICONTROL Expiring credentials]** innehåller följande informatio
 >
 >![Fliken Admin Console-inställningar med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
 >
->Mer information om de [avancerade inställningarna](https://helpx.adobe.com/se/enterprise/using/authentication-settings.html#advanced-settings) som Admin Console erbjuder finns i hjälpdokumentationen för Adobe.
+>Mer information om de [avancerade inställningarna](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) som Admin Console erbjuder finns i hjälpdokumentationen för Adobe.
 
 ### Ansluta Customer Journey Analytics-data i frågesessioner {#connect-to-customer-journey-analytics}
 
-Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt dina [datavyer](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-dataviews/data-views) från Customer Journey Analytics med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integreringen av Customer Journey Analytics-data med andra källor i BI-plattformar.
+Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt dina [datavyer](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) från Customer Journey Analytics med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integreringen av Customer Journey Analytics-data med andra källor i BI-plattformar.
 
 Läs dokumentationen för att lära dig hur du [ansluter frågetjänsten till ett antal klientprogram för stationära datorer](../clients/overview.md), till exempel [Power BI](../clients/power-bi.md) eller [Tableau](../clients/tableau.md)
 
@@ -68,7 +68,7 @@ Om du vill få tillgång till dina Customer Journey Analytics-data i antingen Po
 
 Du kan även komma åt dina Customer Journey Analytics-data direkt från Frågeredigeraren eller Postgres CLI. Om du vill göra det refererar du till databasen `cja` när du skriver din fråga. Mer information om hur du skriver, kör och sparar frågor finns i frågeredigeraren [frågeredigeringsguiden](./user-guide.md#query-authoring).
 
-I [BI-tilläggsguiden](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-dataviews/bi-extension) finns fullständiga anvisningar om hur du får åtkomst till dina Customer Journey Analytics-datavyer med SQL.
+I [BI-tilläggsguiden](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) finns fullständiga anvisningar om hur du får åtkomst till dina Customer Journey Analytics-datavyer med SQL.
 
 ## Ej förfallande autentiseringsuppgifter {#non-expiring-credentials}
 
@@ -95,7 +95,7 @@ Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utf�
 2. [Välj en produktprofil.](../../access-control/ui/browse.md)
 3. [Konfigurera både **sandlådor** och **Hantera frågetjänstintegration** ](../../access-control/ui/permissions.md) för produktprofilen.
 4. [Lägg till en ny användare i en produktprofil](../../access-control/ui/users.md) så att de får sina konfigurerade behörigheter.
-5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/se/enterprise/using/manage-product-profiles.html) om du vill tillåta att ett konto skapas för en aktiv produktprofil.
+5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) om du vill tillåta att ett konto skapas för en aktiv produktprofil.
 6. [Lägg till användaren som produktprofilutvecklare](https://helpx.adobe.com/se/enterprise/using/manage-developers.html) för att skapa en integrering.
 
 Läs dokumentationen om [åtkomstkontroll](../../access-control/home.md) om du vill veta mer om hur du tilldelar behörigheter.
@@ -146,6 +146,18 @@ När du redigerar en referens som inte upphör att gälla visas ett modalt värd
 ![Dialogrutan Uppdatera konto.](../images/ui/credentials/update-credentials.png)
 
 När du har angett all nödvändig information väljer du **[!UICONTROL Update account]** för att slutföra uppdateringen av dina autentiseringsuppgifter.
+
+### Migrera autentiseringsuppgifter till OAuth {#migrate-credentials}
+
+Om du använder JWT-autentiseringsuppgifter som inte upphör att gälla måste du migrera var och en till OAuth Server-till-Server före 30 juni 2025 för att undvika avbrott i tjänsten.
+
+>[!IMPORTANT]
+>
+>JWT-inloggningsuppgifterna slutar att fungera efter 30 juni 2025. Du måste slutföra migreringen manuellt för att behålla auktoriseringen.
+
+Mer information om hur du identifierar påverkade autentiseringsuppgifter och slutför migreringen finns i handboken [Migrate from JWT to OAuth Server-to-Server credentials](./migrate-jwt-to-oauth.md).
+
+Vanliga frågor finns i [Vanliga frågor om migrering](./migrate-jwt-to-oauth.md#faq).
 
 ## Använd autentiseringsuppgifter för att ansluta till externa klienter {#use-credential-to-connect}
 
