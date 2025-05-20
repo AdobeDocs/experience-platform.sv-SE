@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Händelseförfallodatum för upplevelser
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallotider för enskilda Experience Events i en Adobe Experience Platform-datauppsättning.
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: 71634a1dd0e0cd3f731272a179b4f1fe221eb046
+source-git-commit: 05479dcfd1a375b3589ce212168f324aa72af4ba
 workflow-type: tm+mt
-source-wordcount: '884'
+source-wordcount: '872'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du konfigurera förfallotider för alla Experience Events som är inkapslade i en datauppsättning som är aktiverad för [kundprofil i realtid](./home.md). På så sätt kan du automatiskt ta bort data från profilarkivet som inte längre är giltiga eller användbara för dina användningsfall.
 
-Det går inte att konfigurera förfallodatum för Experience Event via Experience Platform-gränssnittet eller API:er. Istället måste ni kontakta supporten för att aktivera Experience Event-förfallotider för era nödvändiga datauppsättningar.
+Om du vill lära dig hur du hanterar förfallodatum för Experience Event i dina datauppsättningar läser du [gränssnittsguiden för datauppsättningar](../catalog/datasets/user-guide.md#data-retention-policy).
 
 >[!IMPORTANT]
 >
