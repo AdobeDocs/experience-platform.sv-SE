@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i Experience Platform användargränssnitt. Frågeredigeraren stöder utveckling av frågor för analys och datautforskning och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: bf9de8c5358f1ab90dd5d70b0607dcfba7d1e2f5
 workflow-type: tm+mt
-source-wordcount: '2601'
+source-wordcount: '3264'
 ht-degree: 0%
 
 ---
@@ -234,11 +234,69 @@ Konsolen ger information om status och funktion för frågetjänsten. Konsolen v
 >
 >Konsolen visar bara fel som uppstått efter körningen av en fråga. Det visar inte de frågevalideringsfel som inträffar innan en fråga körs.
 
-### Frågeresultat {#query-results}
+## Frågeresultat {#query-results}
 
 När en fråga har slutförts visas resultaten på fliken **[!UICONTROL Results]** bredvid fliken **[!UICONTROL Console]**. I den här vyn visas frågans tabellutdata, med mellan 50 och 1 000 resultatrader beroende på ditt valda [resultatantal](#result-count). I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med din fråga tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se självstudiekursen [om att generera datauppsättningar](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i Frågeredigeraren.
 
 ![Fliken Resultat i frågeredigeringskonsolen som visar resultatet av en frågekörning.](../images/ui/query-editor/query-results.png)
+
+### Hämta frågeresultat {#download-query-results}
+
+>[!AVAILABILITY]
+>
+>Hämtningsfunktionerna är bara tillgängliga för kunder med tillägget Data Distiller. Kontakta din Adobe-representant om du vill veta mer om Data Distiller.
+
+När du har kört en fråga hämtar du resultaten i CSV-, XLSX- eller JSON-format för offlineanalys, rapportering eller kalkylbladsarbetsflöden. Den här funktionen effektiviserar arbetsflödena för marknadsförings- och analysteam genom att ge omedelbar tillgång till frågeresultat för offlineanalys, rapportering och Excel-baserade processer.
+
+Om du vill hämta dina frågeresultat väljer du **[!UICONTROL Download]** i det övre högra hörnet på fliken Frågeredigeraren **[!UICONTROL Result]**. Välj sedan **[!UICONTROL CSV]**, **[!UICONTROL XLSX]** eller **[!UICONTROL JSON]** i listrutan. Filen hämtas automatiskt till den lokala datorn. Välj det format som passar ditt användningssätt, CSV för export med låg vikt, XLSX för formaterade kalkylblad eller JSON för strukturerad datahantering.
+
+>[!NOTE]
+>
+>Om knappen **[!UICONTROL Download]** saknas kontrollerar du frågeresultaten. Knappen visas bara när posterna returneras. Om inga poster returneras visar fliken **[!UICONTROL Result]** meddelandet&quot;Inga resultat&quot; och hämtningsalternativet är inaktiverat.
+
+![Fliken Resultat i Frågeredigeraren med Hämta och listrutan markerad.](../images/ui/overview/download-results.png)
+
+>[!NOTE]
+>
+>När du öppnar en CSV-fil i Excel kanske följande varning visas: <br>&quot;Möjlig dataförlust. Vissa funktioner kan gå förlorade om du sparar arbetsboken i kommaavgränsat format (.csv). Om du vill bevara dessa funktioner sparar du den i ett Excel-filformat.&quot;<br>Tänk dessutom på att datum- och tidsformateringen kan variera beroende på filtyp. CSV-filer behåller det format som visas i frågeresultatet, medan XLSX-filer kan tillämpa lokaliserad formatering automatiskt i Excel. Om den här varningen visas kan du fortsätta. Om du vill bevara Excel-specifik formatering sparar du filen som XLSX i stället.
+
+### Visa resultat i helskärmsläge {#view-results}
+
+När du har kört en fråga väljer du **[!UICONTROL View results]** på fliken **[!UICONTROL Result]** för att öppna en helskärmsvy av resultatet i tabellform.
+
+Använd förhandsgranskning i helskärmsläge för att enkelt skanna breda tabeller och inspektera radnivådetaljer utan vågrät rullning. I helskärmsläget visas utdata i ett stödraster som kan storleksändras, vilket gör det enklare att granska stora datauppsättningar och skanna över kolumner.
+
+>[!NOTE]
+>
+>Förhandsgranskningen är skrivskyddad och ändrar inte frågan eller datauppsättningen.
+
+![Dialogrutan för förhandsvisning i helskärmsläge med Visa resultat markerat.](../images/ui/overview/view-results-fullscreen.png)
+
+### Kopiera resultat {#copy-results}
+
+Använd den förbättrade kopieringsfunktionen i Frågeredigeraren för att kopiera frågeresultat som kommaavgränsade värden (CSV) och klistra in dem i kalkylbladsverktyg som Excel för omedelbar validering eller rapportering. Den här funktionen förbättrar läsbarheten, bevarar formateringen och effektiviserar arbetsflödena utan att behöva använda verktyg från tredje part.
+
+Du kan kopiera frågeresultat antingen från fliken [!UICONTROL Result] eller från förhandsgranskningen av helskärmsresultatet. På fliken **[!UICONTROL Result]** väljer du kopieringsikonen (![En kopieringsikon.](../../images/icons/copy.png)) om du vill kopiera alla frågeresultat till Urklipp. Om du vill aktivera kopieringsikonen markerar du först en rad. Du kan markera enskilda rader eller markera alla rader samtidigt med kryssrutan överst.
+
+![Fliken Resultat i frågeredigeraren med kopieringsikonen markerad.](../images/ui/overview/query-editor-copy-icon.png)
+
+Du kan också välja **[!UICONTROL View results]** för att öppna förhandsvisningen i helskärmsläge. I den här dialogrutan markerar du enskilda rader eller använder kryssrutan i det övre vänstra hörnet för att markera alla rader och väljer sedan kopieringsikonen (![En kopieringsikon.](../../images/icons/copy.png)) för att kopiera markerade data.
+
+![Dialogrutan för förhandsvisning i helskärmsläge med resultatrader markerade och kopieringsikonen markerad.](../images/ui/overview/results-copy.png)
+
+### Föregående resultattabell (begränsad tillgänglighet) {#legacy-results-table}
+
+>[!AVAILABILITY]
+>
+>Den äldre resultattabellen är bara tillgänglig för att markera användare via en funktionsflagga och kanske inte visas i den aktuella frågeredigeraren. Om ditt team använder dra-och-markera-arbetsflöden kontaktar du Adobe representant för att få åtkomst.
+
+Den äldre versionen av Frågeredigeraren är avsedd för användare som använder flexibla, manuella arbetsflöden för data, t.ex. QA eller kalkylbladsbaserad granskning.
+
+Det har stöd för inbyggda webbläsarbaserade dragningsmarkeringar, så att du kan markera och kopiera valfri del av utdata, inklusive enskilda celler eller block, med standardmarkeringsbeteendet. Det här är en kontrast till den förbättrade tabellen, som använder strukturerad radmarkering och dedikerade kopieringsåtgärder.
+
+Kopierade data är tabbavgränsade, så när du klistrar in dem i verktyg som Excel förblir kolumnerna justerade och läsbara. Kolumnrubriker inkluderas också när du drar över rubrikraden.
+
+![Resultatvisningen i det äldre redigeringsprogrammet med enkla dra-och-markera-resultat markerade.](../images/ui/query-editor/legacy-results-table.png)
 
 ## Exempel {#examples}
 
