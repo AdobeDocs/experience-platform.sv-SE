@@ -3,22 +3,108 @@ solution: Experience Platform
 title: Guide för strömningssegmentering
 description: Lär dig mer om direktuppspelningssegmentering, inklusive vad det är, hur du skapar en publik som utvärderas med direktuppspelningssegmentering och hur du visar målgrupper som skapats med direktuppspelningssegmentering.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: cd22213be0dbc2e5a076927e560f1b23b467b306
 workflow-type: tm+mt
-source-wordcount: '1238'
+source-wordcount: '1995'
 ht-degree: 0%
 
 ---
 
 # Direktuppspelningssegmenteringsguide
 
+>[!BEGINSHADEBOX]
+
+>[!NOTE]
+>
+>Kriterierna för behörighet att dela upp direktuppspelning har uppdaterats den 20 maj 2025.
+
++++Behörighetsuppdateringar
+
+>[!IMPORTANT]
+>
+>Alla befintliga segmentdefinitioner som för närvarande utvärderas med hjälp av direktuppspelning eller kantsegmentering fortsätter att fungera som de är, såvida de inte redigeras eller uppdateras.
+
+## Linjeset {#ruleset}
+
+Alla **nya eller redigerade**-segmentdefinitioner som matchar följande regeluppsättningar utvärderas **inte längre** med hjälp av direktuppspelning eller kantsegmentering. I stället utvärderas de med gruppsegmentering.
+
+- En enstaka händelse med ett tidsfönster längre än 24 timmar
+   - Aktivera en målgrupp med alla profiler som har visat en webbsida de senaste tre dagarna.
+- En enda händelse utan tidsfönster
+   - Aktivera en målgrupp med alla profiler som visade en webbsida.
+
+## Tidsfönster {#time-window}
+
+För att kunna utvärdera en målgrupp med direktuppspelningssegmentering måste **måste** begränsas inom ett 24-timmarsfönster.
+
+## Inkludera batchdata i strömmande målgrupper {#include-batch-data}
+
+Före den här uppdateringen kan du skapa en definition för direktuppspelad målgrupp som kombinerar både batchdatakällor och strömmande datakällor. I och med den senaste uppdateringen utvärderas dock möjligheten att skapa en målgrupp med både batch- och direktuppspelningsdatakällor med hjälp av gruppsegmentering.
+
+Om du behöver utvärdera en segmentdefinition med hjälp av direktuppspelning eller kantsegmentering som matchar den uppdaterade regeluppsättningen, måste du explicit skapa en grupp- och direktuppspelningsregeluppsättning och kombinera dem med segment. Den här gruppregeluppsättningen **måste** baseras på ett profilschema.
+
+Låt oss till exempel säga att du har två målgrupper, med en målgrupps schemadata och andra schemadata för boendeupplevelser:
+
+| Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
+| -------- | ------ | ----------- | ---------------- | ----------- |
+| Kalifornien | Profil | Grupp | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+
+Om du vill använda gruppkomponenten i din direktuppspelande målgrupp måste du skapa en referens till gruppmålgruppen med hjälp av segment.
+
+En exempelregeluppsättning som skulle kombinera de två målgrupperna skulle se ut så här:
+
+```
+inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and 
+CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) 
+WHEN(<= 24 hours before now)])
+```
+
+Den resulterande målgruppen *kommer* att utvärderas med direktuppspelningssegmentering, eftersom den utnyttjar gruppmålgruppens medlemskap genom att referera till gruppmålskomponenten.
+
+Om du vill kombinera två målgrupper med händelsedata kan du **inte** bara kombinera de två händelserna. Du måste skapa båda målgrupperna och sedan skapa en annan målgrupp som använder `inSegment` för att referera till båda dessa målgrupper.
+
+Låt oss till exempel säga att ni har två målgrupper, med båda målgrupperna som har händelseschemadata för upplevelsehändelser:
+
+| Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
+| -------- | ------ | ----------- | ---------------- | ----------- |
+| Senaste avhopp | Experience event | Grupp | Har minst en händelse om att användaren överger den under de senaste 24 timmarna | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+
+I den här situationen skulle du behöva skapa en tredje målgrupp enligt följande:
+
+```
+inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and inSegment("9e1646bb-57ff-4309-ba59-17d6c5bab6a1")
+```
+
+>[!IMPORTANT]
+>
+>Alla befintliga segmentdefinitioner som matchar linjalerna utvärderas fortfarande med hjälp av direktuppspelning eller kantsegmentering tills de redigeras.
+>
+>Dessutom kommer alla befintliga segmentdefinitioner som för närvarande uppfyller de andra kriterierna för utvärdering av direktuppspelning eller kantsegmentering att utvärderas även fortsättningsvis med hjälp av direktuppspelning eller kantsegmentering.
+
+## Kopplingsprincip {#merge-policy}
+
+Alla **nya eller redigerade**-segmentdefinitioner som kvalificerar för direktuppspelning eller kantsegmentering **måste** finnas i sammanfogningsprincipen Aktiv på Edge.
+
+Om det inte finns någon aktiv sammanfogningsprincip måste du [konfigurera din sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#configure) och ange att den ska vara aktiv vid sidan.
+
+
++++
+
+>[!ENDSHADEBOX]
+
 Direktuppspelningssegmentering är möjligheten att utvärdera målgrupper i Adobe Experience Platform i nära realtid samtidigt som man fokuserar på datainsamling.
 
 Med direktuppspelningssegmentering blir det numera en upplevelse av målgruppskvalificering när data strömmas in i Experience Platform, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. På så sätt kan ni utvärdera data när de skickas till Experience Platform och automatiskt hålla målgruppsmedlemskapet uppdaterat.
 
-## Berättigade frågetyper {#query-types}
+## Tillgängliga regeluppsättningar {#rulesets}
 
-En fråga är berättigad till direktuppspelningssegmentering om den uppfyller något av villkoren i följande tabell.
+>[!IMPORTANT]
+>
+>Om du vill använda direktuppspelningssegmentering **måste** använda en sammanfogningsprincip som är aktiv på Edge. Mer information om sammanfogningsprinciper finns i [översikten över sammanfogningsprinciper](../../profile/merge-policies/overview.md).
+
+En regeluppsättning är berättigad till direktuppspelningssegmentering om den uppfyller något av de villkor som beskrivs i följande tabell.
 
 >[!NOTE]
 >
@@ -29,33 +115,70 @@ En fråga är berättigad till direktuppspelningssegmentering om den uppfyller n
 | En händelse inom ett tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom ett tidsfönster på mindre än 24 timmar. | `CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse i ett relativt tidsfönster visas.](../images/methods/streaming/single-event.png) |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. | `homeAddress.country.equals("US", false)` | ![Ett exempel på ett profilattribut visas.](../images/methods/streaming/profile-attribute.png) |
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/methods/streaming/single-event-with-profile-attribute.png) |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. | `inSegment("a730ed3f-119c-415b-a4ac-27c396ae2dff") and inSegment("8fbbe169-2da6-4c9d-a332-b6a6ecf559b9")` | ![Ett exempel på ett segment av segment visas.](../images/methods/streaming/segment-of-segments.png) |
-| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("directMarketing.emailClicked", false)) WHEN(today), C1: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på flera händelser med ett profilattribut visas.](../images/methods/streaming/multiple-events-with-profile-attribute.png) |
+| Flera händelser inom ett relativt tidsfönster på 24 timmar | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("directMarketing.emailClicked", false)) WHEN(today), C1: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på flera händelser med ett profilattribut visas.](../images/methods/streaming/multiple-events-with-profile-attribute.png) |
 
 En segmentdefinition är **inte** berättigad till direktuppspelningssegmentering i följande scenarier:
 
 - Segmentdefinitionen innehåller segment eller egenskaper för Adobe Audience Manager (AAM).
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment`-händelse.
-   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **&#x200B;**&#x200B;för direktuppspelningssegmentering.
+   - Du kan till exempel kedja följande i en enda regeluppsättning: `inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and  CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false))  WHEN(<= 24 hours before now)])`.
 - I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 Observera följande riktlinjer som gäller frågor om direktuppspelningssegmentering:
 
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
-| Enkel händelsefråga | Det finns inga begränsningar för uppslagsfönstret. |
+| En enda händelselinjaluppsättning | Uppslagsfönstret är begränsat till **en dag**. |
 | Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Det finns ett strikt tidsordningsvillkor **måste** mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **kan dock inte** vara en negation.</li></ul> |
 
 Om en segmentdefinition ändras så att den inte längre uppfyller villkoren för direktuppspelningssegmentering, kommer segmentdefinitionen automatiskt att växla från&quot;direktuppspelning&quot; till&quot;Gruppering&quot;.
 
 Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i realtid. Om en publik inte längre kvalificerar sig för ett segment blir det därför omedelbart okvalificerat. Om segmentdefinitionen till exempel frågar efter&quot;Alla användare som har köpt röda skor de senaste tre timmarna&quot;, efter tre timmar, kommer alla profiler som ursprungligen kvalificerades för segmentdefinitionen att vara okvalificerade.
 
+### Kombinera målgrupper {#combine-audiences}
+
+För att kunna kombinera data från både batch- och direktuppspelningskällor måste ni separera batch- och direktuppspelningskomponenterna till separata målgrupper.
+
+Låt oss till exempel ta följande två exempelmålgrupper i beaktande:
+
+| Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
+| -------- | ------ | ----------- | ---------------- | ----------- |
+| Kalifornien | Profil | Grupp | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+
+Om du vill använda gruppkomponenten i din direktuppspelande målgrupp måste du skapa en referens till gruppmålgruppen med hjälp av segment.
+
+En exempelregeluppsättning som skulle kombinera de två målgrupperna skulle se ut så här:
+
+```
+inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and 
+CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) 
+WHEN(<= 24 hours before now)])
+```
+
+Den resulterande målgruppen *kommer* att utvärderas med direktuppspelningssegmentering, eftersom den utnyttjar gruppmålgruppens medlemskap genom att referera till gruppmålskomponenten.
+
+Om du vill kombinera två målgrupper med händelsedata kan du **inte** bara kombinera de två händelserna. Du måste skapa båda målgrupperna och sedan skapa en annan målgrupp som använder `inSegment` för att referera till båda dessa målgrupper.
+
+Låt oss till exempel säga att ni har två målgrupper, med båda målgrupperna som har händelseschemadata för upplevelsehändelser:
+
+| Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
+| -------- | ------ | ----------- | ---------------- | ----------- |
+| Senaste avhopp | Experience event | Grupp | Har minst en händelse om att användaren överger den under de senaste 24 timmarna | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+
+I den här situationen skulle du behöva skapa en tredje målgrupp enligt följande:
+
+```
+inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and inSegment("9e1646bb-57ff-4309-ba59-17d6c5bab6a1")
+```
+
 ## Skapa målgrupper {#create-audience}
 
 Du kan skapa en målgrupp som utvärderas med direktuppspelningssegmentering med hjälp av API:t för segmenteringstjänsten eller via Audience Portal i användargränssnittet.
 
-En segmentdefinition kan vara direktuppspelningsaktiverad om den matchar någon av de [berättigade frågetyperna](#eligible-query-types).
+En segmentdefinition kan vara direktuppspelningsaktiverad om den matchar någon av de [berättigade reglerna](#eligible-rulesets).
 
 >[!BEGINTABS]
 
@@ -166,7 +289,7 @@ En pover visas. Välj **[!UICONTROL Build rules]** om du vill ange Segment Build
 
 ![Knappen Skapa regler markeras i porten för att skapa målgrupper.](../images/methods/streaming/select-build-rules.png)
 
-Skapa en segmentdefinition som matchar någon av de [valbara frågetyperna](#eligible-query-types) i Segment Builder. Om segmentdefinitionen kvalificerar för direktuppspelningssegmentering kan du välja **[!UICONTROL Streaming]** som **[!UICONTROL Evaluation method]**.
+Skapa en segmentdefinition som matchar någon av de [berättigade reglerna](#eligible-rulesets) i Segment Builder. Om segmentdefinitionen kvalificerar för direktuppspelningssegmentering kan du välja **[!UICONTROL Streaming]** som **[!UICONTROL Evaluation method]**.
 
 ![Segmentdefinitionen visas. Utvärderingstypen är markerad och visar att segmentdefinitionen kan utvärderas med hjälp av direktuppspelningssegmentering.](../images/methods/streaming/streaming-evaluation-method.png)
 
