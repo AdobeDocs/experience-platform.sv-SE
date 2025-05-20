@@ -1,23 +1,15 @@
 ---
-title: Implementeringsguide för regler för länkning av identitetsdiagram
-description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
+title: Implementeringshandbok för länkningsregler för identitetsdiagram
+description: Lär dig de rekommenderade stegen som du bör följa när du implementerar data med konfigurationer för länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 1a6ca508f0f5e95ddad9014d6507a7a829592673
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '1946'
+source-wordcount: '1852'
 ht-degree: 0%
 
 ---
 
-# Implementeringsguide för regler för länkning av identitetsdiagram
-
->[!AVAILABILITY]
->
->Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
->
->* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
->* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
->* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
+# Implementeringsguide för [!DNL Identity Graph Linking Rules]
 
 >[!IMPORTANT]
 >
@@ -203,7 +195,7 @@ Om dina data kräver det måste du först skapa lämpliga namnutrymmen för din 
 
 Gå sedan till [diagramsimuleringsverktyget](./graph-simulation.md) på arbetsytan för identitetstjänstens användargränssnitt. Du kan använda verktyget för diagramsimulering för att simulera identitetsdiagram, som har skapats med olika konfigurationer av unika namnutrymmes- och namnområdesprioriteter.
 
-Genom att skapa olika konfigurationer kan du använda verktyget för diagramsimulering för att lära dig och förstå hur identitetsoptimeringsalgoritmen och vissa konfigurationer kan påverka hur diagrammet fungerar.
+Genom att skapa olika konfigurationer kan du använda verktyget för diagramsimulering för att lära dig och förstå hur algoritmen för identitetsoptimering och vissa konfigurationer kan påverka hur diagrammet fungerar.
 
 ## Konfigurera identitetsinställningar {#identity-settings}
 
@@ -300,7 +292,7 @@ I det här exemplet visas även att Tom och Sommar ska skilja på personer som d
 Mer information om [!DNL Identity Graph Linking Rules] finns i följande dokumentation:
 
 * [[!DNL Identity Graph Linking Rules] översikt](./overview.md)
-* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Optimeringsalgoritm för identitet](./identity-optimization-algorithm.md)
 * [Exempel på diagramkonfigurationer](./example-configurations.md)
 * [Felsökning och vanliga frågor](./troubleshooting.md)
 * [Namnområdesprioritet](./namespace-priority.md)

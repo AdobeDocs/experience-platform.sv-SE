@@ -2,9 +2,9 @@
 title: Exempel på diagramkonfigurationer
 description: Lär dig mer om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '2849'
+source-wordcount: '2759'
 ht-degree: 1%
 
 ---
@@ -15,14 +15,6 @@ ht-degree: 1%
 >id="platform_identities_algorithmconfiguration"
 >title="Algoritmkonfiguration"
 >abstract="Konfigurera unik namnområdes- och namnområdesprioritet som är anpassad efter dina inkapslade identiteter."
-
->[!AVAILABILITY]
->
->Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
->
->* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
->* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
->* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 
 >[!NOTE]
 >
@@ -771,7 +763,7 @@ CRMID: Tom, ECID: 111
 Mer information om [!DNL Identity Graph Linking Rules] finns i följande dokumentation:
 
 * [[!DNL Identity Graph Linking Rules] översikt](./overview.md)
-* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Optimeringsalgoritm för identitet](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
 * [Felsökning och vanliga frågor](./troubleshooting.md)
 * [Namnområdesprioritet](./namespace-priority.md)

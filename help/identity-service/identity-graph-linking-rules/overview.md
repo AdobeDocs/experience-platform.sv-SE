@@ -2,9 +2,9 @@
 title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 0aefcfbbbed675a08d9e3023b9f667ec59874e46
 workflow-type: tm+mt
-source-wordcount: '1497'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
@@ -16,31 +16,87 @@ ht-degree: 0%
 >title="Länkningsregler för identitetsdiagram"
 >abstract="För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare."
 
->[!AVAILABILITY]
+>[!IMPORTANT]
 >
->Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
->
->* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
->* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
->* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
+>Kontakta Adobe-kontoteamet om du har en befintlig sandlåda som kräver att komprimerade diagram inte är komprimerade (&quot;fasta&quot;) när du har aktiverat identitetsinställningarna.
 
 Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRMID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via [!DNL Identity Graph Linking Rules] och tillåta korrekt personalisering för dina användare.
-
-I följande video finns mer information om hur du använder [!DNL Identity Graph Linking Rules]:
-
->[!VIDEO](https://video.tv.adobe.com/v/3448276/?learn=on&enablevpops&captions=swe)
 
 ## Kom igång
 
 Följande dokument är viktiga för att förstå [!DNL Identity Graph Linking Rules].
 
-* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Optimeringsalgoritm för identitet](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
 * [Exempel på diagramkonfigurationer](./example-configurations.md)
 * [Felsökning och vanliga frågor](./troubleshooting.md)
 * [Namnområdesprioritet](./namespace-priority.md)
 * [Gränssnitt för diagramsimulering](./graph-simulation.md)
 * [Användargränssnitt för identitetsinställningar](./identity-settings-ui.md)
+
+## Videobibliotek
+
+Titta på följande videofilmer för att lära dig mer om några av de grundläggande aspekterna i Länkningsregler för identitetsdiagram.
+
+<!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
+<div class="columns">
+    <div class="column is-half-tablet is-half-desktop is-one-third-widescreen" aria-label="Identity Graph Linking Rules: Overview">
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
+            <div class="card-image">
+                <figure class="image x-is-16by9">
+                    <a href="https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops" title="Länkningsregler för identitetsdiagram: Översikt" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3429845/?format=jpeg&nocache=1732633205780" alt="Länkningsregler för identitetsdiagram: Översikt"
+                             style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
+                    </a>
+                </figure>
+            </div>
+            <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div class="top-card-content">
+                    <p class="headline is-size-6 has-text-weight-bold">
+                        <a href="https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram: Översikt">Länkningsregler för identitetsdiagram: Översikt</a>
+                    </p>
+                    <p class="is-size-6">I den här videon visas en översikt över länkningsregler för identitetsdiagram. Du lär dig hur du kan använda den här funktionen för att förhindra komprimering av diagram.</p>
+                </div>
+                <div style="display: flex; flex-direction; row;">
+                  <a href="https://video.tv.adobe.com/v/3448250/?learn=on&enablevpops" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
+                  </a>
+                  <a href="./overview.md" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Läs</span>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-half-tablet is-half-desktop is-one-third-widescreen" aria-label="Identity Graph Linking Rules: Identity Settings">
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
+            <div class="card-image">
+                <figure class="image x-is-16by9">
+                    <a href="https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops" title="Länkningsregler för identitetsdiagram: identitetsinställningar" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441066/?format=jpeg&nocache=1732633205785" alt="Länkningsregler för identitetsdiagram: identitetsinställningar"
+                             style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
+                    </a>
+                </figure>
+            </div>
+            <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div class="top-card-content">
+                    <p class="headline is-size-6 has-text-weight-bold">
+                        <a href="https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram: identitetsinställningar">Länkningsregler för identitetsdiagram: Identitetsinställningar</a>
+                    </p>
+                    <p class="is-size-6">I den här videon får du lära dig hur du konfigurerar dina identitetsinställningar och skapar högkvalitativa identitetsdiagram och kundprofiler för Adobe Experience Platform-program som Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics.</p>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                  <a href="https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
+                  </a>
+                  <a href="identity-settings-ui.md" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
+                      <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Läs</span>
+                  </a>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Diagramkomprimeringsscenarier {#graph-collapse-scenarios}
 
@@ -107,8 +163,8 @@ Med [!DNL Identity Graph Linking Rules] kan du:
 | Terminologi | Beskrivning |
 | --- | --- |
 | Unikt namnutrymme | Ett unikt namnutrymme är ett identitetsnamnutrymme som har ställts in för att vara distinkt i sammanhanget för ett identitetsdiagram. Du kan konfigurera ett namnutrymme så att det är unikt med användargränssnittet. När ett namnutrymme definieras som unikt kan ett diagram bara ha en identitet som innehåller det namnutrymmet. |
-| Namnområdesprioritet | Namnområdesprioritet avser den relativa vikten av namnutrymmen jämfört med varandra. Namnområdesprioriteten kan konfigureras via användargränssnittet. Du kan rangordna namnutrymmen i ett givet identitetsdiagram. När den är aktiverad används namnprioritet i olika scenarier, t.ex. indata för identitetsoptimeringsalgoritm och fastställande av primär identitet för upplevelsehändelsefragment. |
-| Identitetsoptimeringsalgoritm | Identitetsoptimeringsalgoritmen ser till att riktlinjer som skapas genom att konfigurera en unik namnområdes- och namnområdesprioritet används i ett givet identitetsdiagram. |
+| Namnområdesprioritet | Namnområdesprioritet avser den relativa vikten av namnutrymmen jämfört med varandra. Namnområdesprioriteten kan konfigureras via användargränssnittet. Du kan rangordna namnutrymmen i ett givet identitetsdiagram. När den är aktiverad används namnprioritet i olika scenarier, t.ex. indata för algoritmen för identitetsoptimering och fastställande av primär identitet för händelsesegment för upplevelser. |
+| Optimeringsalgoritm för identitet | Med algoritmen för identitetsoptimering säkerställs att riktlinjer som skapas genom att konfigurera en unik namnområdes- och namnområdesprioritet används i ett givet identitetsdiagram. |
 
 ### Unikt namnutrymme {#unique-namespace}
 
@@ -129,7 +185,7 @@ Om CRMID har konfigurerats som ett unikt namnutrymme delas CRMID:n upp i två se
 
 Om du inte konfigurerar ett unikt namnutrymme kan du få oönskade diagramsammanfogningar, till exempel två identiteter med samma CRMID-namnutrymme, men olika identitetsvärden (scenarier som dessa representerar ofta två olika personenheter i samma diagram).
 
-Du måste konfigurera ett unikt namnutrymme för att informera algoritmen för identitetsoptimering om du vill tillämpa begränsningar för identitetsdata som hämtas till ett givet identitetsdiagram.
+Du måste konfigurera ett unikt namnutrymme för att informera algoritmen för identitetsoptimering om du vill tillämpa begränsningar för identitetsdata som är inkapslade i ett visst identitetsdiagram.
 
 ### Namnområdesprioritet {#namespace-priority}
 
@@ -141,7 +197,7 @@ Både unika namnutrymmen och namnområdesprioriteter kan konfigureras på arbets
 
 | | Identitetstjänst | Kundprofil i realtid |
 | --- | --- | --- |
-| Unikt namnutrymme | I identitetstjänsten refererar algoritmen för identitetsoptimering till unika namnutrymmen för att bestämma vilka identitetsdata som importeras till ett visst identitetsdiagram. | Unika namnutrymmen påverkar inte kundprofilen i realtid. |
+| Unikt namnutrymme | I identitetstjänsten refererar algoritmen för identitetsoptimering till unika namnutrymmen för att fastställa vilka identitetsdata som är inkapslade i ett visst identitetsdiagram. | Unika namnutrymmen påverkar inte kundprofilen i realtid. |
 | Namnområdesprioritet | I identitetstjänsten avgör namnområdesprioriteten att rätt länkar tas bort för diagram som har flera lager. | När en upplevelsehändelse kapslas in i en profil blir det namnutrymme som har högst prioritet den primära identiteten för profilfragmentet. |
 
 * Namnområdesprioriteten påverkar inte diagrambeteendet när gränsen på 50 identiteter per diagram nås.
@@ -157,7 +213,7 @@ Mer information finns i handboken om [namnområdesprioritet](./namespace-priorit
 
 Mer information om [!DNL Identity Graph Linking Rules] finns i följande dokumentation:
 
-* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Optimeringsalgoritm för identitet](./identity-optimization-algorithm.md)
 * [Implementeringsguide](./implementation-guide.md)
 * [Exempel på diagramkonfigurationer](./example-configurations.md)
 * [Felsökning och vanliga frågor](./troubleshooting.md)

@@ -1,23 +1,15 @@
 ---
 title: Felsökningsguide för länkningsregler för identitetsdiagram
-description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
+description: Lär dig hur du felsöker vanliga problem i Länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: a309f0dca5ebe75fcb7abfeb98605aec2692324d
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '3368'
+source-wordcount: '3278'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för [!DNL Identity Graph Linking Rules]
-
->[!AVAILABILITY]
->
->Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
->
->* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
->* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
->* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
 
 När du testar och validerar [!DNL Identity Graph Linking Rules] kan du råka ut för problem som rör datainmatning och diagrambeteende. Läs det här dokumentet för att lära dig hur du felsöker några vanliga problem som du kan stöta på när du arbetar med [!DNL Identity Graph Linking Rules].
 
@@ -190,7 +182,7 @@ I det här avsnittet beskrivs vanliga problem som du kan råka ut för när iden
 
 ### Oautentiserade ExperienceEvents kopplas till fel autentiserade profil
 
-Identitetsoptimeringsalgoritmen respekterar [de senast upprättade länkarna och tar bort de äldsta länkarna](./identity-optimization-algorithm.md#identity-optimization-algorithm-details). Det är därför möjligt att när den här funktionen är aktiverad kan ECID:n omtilldelas (länkas) från en person till en annan. Följ stegen nedan för att förstå hur en identitet länkas över tid:
+Algoritmen för identitetsoptimering respekterar [de senast upprättade länkarna och tar bort de äldsta länkarna](./identity-optimization-algorithm.md#identity-optimization-algorithm-details). Det är därför möjligt att när den här funktionen är aktiverad kan ECID:n omtilldelas (länkas) från en person till en annan. Följ stegen nedan för att förstå hur en identitet länkas över tid:
 
 **Felsökningssteg**
 
@@ -266,7 +258,7 @@ ORDER BY timestamp desc
 
 **Felsökningssteg**
 
-Mer information finns i dokumentationen om [identitetsoptimeringsalgoritmen](./identity-optimization-algorithm.md), samt i de typer av diagramstrukturer som stöds.
+Läs dokumentationen om [algoritmen för identitetsoptimering](./identity-optimization-algorithm.md) samt vilka typer av diagramstrukturer som stöds.
 
 * I [diagramkonfigurationsguiden](./example-configurations.md) finns exempel på diagramstrukturer som stöds.
 * Du kan även läsa [implementeringshandboken](./implementation-guide.md#appendix) för exempel på diagramstrukturer som inte stöds. Det finns två scenarier:
@@ -328,9 +320,9 @@ Du kan använda följande fråga i datauppsättningen för export av ögonblicks
 
 I det här avsnittet finns en lista med svar på vanliga frågor om [!DNL Identity Graph Linking Rules].
 
-## Identitetsoptimeringsalgoritm {#identity-optimization-algorithm}
+## Optimeringsalgoritm för identitet {#identity-optimization-algorithm}
 
-I det här avsnittet finns svar på vanliga frågor om [algoritmen för identitetsoptimering](./identity-optimization-algorithm.md).
+I det här avsnittet finns svar på vanliga frågor om algoritmen [Identitetsoptimering](./identity-optimization-algorithm.md).
 
 ### Jag har ett CRMID för varje affärsenhet (B2C CRMID, B2B CRMID), men jag har inget unikt namnutrymme för alla mina profiler. Vad händer om jag markerar B2C CRMID och B2B CRMID som unika och aktiverar mina identitetsinställningar?
 
@@ -389,7 +381,7 @@ Nej. Namnområdesprioriteten gäller bara Experience Event-datauppsättningar so
 
 ### Hur fungerar den här funktionen tillsammans med identitetsgrafens skyddsytor med 50 identiteter per diagram? Påverkar namnområdesprioriteten den systemdefinierade skyddsprofilen?
 
-Identitetsoptimeringsalgoritmen används först för att säkerställa personentitetsrepresentationen. Om diagrammet därefter försöker överskrida [identitetdiagrammet ](../guardrails.md) (50 identiteter per diagram) används den här logiken. Namnområdesprioriteten påverkar inte borttagningslogiken för det 50 identitets-/diagramskyddsutkastet.
+Algoritmen för identitetsoptimering används först för att säkerställa personentitetsrepresentationen. Om diagrammet därefter försöker överskrida [identitetdiagrammet ](../guardrails.md) (50 identiteter per diagram) används den här logiken. Namnområdesprioriteten påverkar inte borttagningslogiken för det 50 identitets-/diagramskyddsutkastet.
 
 ## Testning
 

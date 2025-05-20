@@ -1,34 +1,26 @@
 ---
-title: Identitetsoptimeringsalgoritm
+title: Optimeringsalgoritm för identitet
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: df89afb7131c57b9400788ce30c420b9830c022e
+source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
 workflow-type: tm+mt
-source-wordcount: '1617'
+source-wordcount: '1527'
 ht-degree: 0%
 
 ---
 
-# Identitetsoptimeringsalgoritm {#identity-optimization-algorithm}
+# Optimeringsalgoritm för identitet {#identity-optimization-algorithm}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_uniquenamespace"
 >title="Unikt namnutrymme"
 >abstract="Ett diagram kan inte ha två identiteter med ett unikt namnutrymme. Om ett diagram försöker att överskrida gränsen behålls de senaste länkarna och de äldsta länkarna tas bort."
 
->[!AVAILABILITY]
->
->Länkningsregler för identitetsdiagram har för närvarande begränsad tillgänglighet och kan nås av alla kunder i utvecklingssandlådor.
->
->* **Aktiveringskrav**: Funktionen förblir inaktiv tills du konfigurerar och sparar [!DNL Identity Settings]. Utan den här konfigurationen kommer systemet att fortsätta fungera som vanligt, utan att beteendet förändras.
->* **Viktigt!** Under den här fasen med begränsad tillgänglighet kan Edge-segmentering ge oväntade resultat. Direktuppspelning och gruppsegmentering fungerar dock som förväntat.
->* **Nästa steg**: Kontakta Adobe-kontoteamet om du vill ha mer information om hur du aktiverar den här funktionen i produktionssandlådor.
-
-Identitetsoptimeringsalgoritmen är en diagramalgoritm i identitetstjänsten som hjälper till att säkerställa att ett identitetsdiagram är representativt för en enskild person och därför förhindrar oönskad sammanslagning av identiteter i kundprofilen i realtid.
+Algoritmen för identitetsoptimering är en diagramalgoritm för identitetstjänsten som hjälper till att säkerställa att ett identitetsdiagram är representativt för en enskild person och därför förhindrar oönskad sammanslagning av identiteter i kundprofilen i realtid.
 
 ## Indataparametrar {#input-parameters}
 
-I det här avsnittet finns information om unika namnutrymmen och namnområdesprioritet. Dessa två koncept fungerar som indataparametrar som krävs av identitetsoptimeringsalgoritmen.
+I det här avsnittet finns information om unika namnutrymmen och namnområdesprioritet. Dessa två koncept fungerar som indataparametrar som krävs av algoritmen för identitetsoptimering.
 
 ### Unikt namnutrymme {#unique-namespace}
 
@@ -61,7 +53,7 @@ Om du vill ha mer information om namnområdesprioritet och dess fullständiga fu
 
 ## Process {#process}
 
-När nya identiteter hämtas kontrollerar identitetstjänsten om de nya identiteterna och deras motsvarande namnutrymmen följer unika namnutrymmeskonfigurationer. Om konfigurationerna följs fortsätter intaget och de nya identiteterna länkas till diagrammet. Om konfigurationerna inte följs kommer dock identitetsoptimeringsalgoritmen att:
+När nya identiteter hämtas kontrollerar identitetstjänsten om de nya identiteterna och deras motsvarande namnutrymmen följer unika namnutrymmeskonfigurationer. Om konfigurationerna följs fortsätter intaget och de nya identiteterna länkas till diagrammet. Om konfigurationerna inte följs kommer dock algoritmen för identitetsoptimering att:
 
 * Infoga den senaste händelsen, med namnområdesprioritet i åtanke.
 * Ta bort länken som skulle sammanfoga två personenheter från rätt diagramlager.
@@ -80,7 +72,7 @@ När den unika namnutrymmesbegränsningen bryts kommer identitetsoptimeringsalgo
 
 ## Exempelscenarier för algoritm för identitetsoptimering
 
-I följande avsnitt beskrivs hur identitetsoptimeringsalgoritmen fungerar, i scenarier som delad enhet eller inmatning av data med samma tidsstämpel.
+I följande avsnitt beskrivs hur algoritmen för identitetsoptimering fungerar, i scenarier som delad enhet eller inmatning av data med samma tidsstämpel.
 
 ### Delad enhet
 
@@ -100,7 +92,7 @@ I det här exemplet anges både CRMID och Email som unika namnutrymmen. På `tim
 
 * `timestamp=1`: Jane loggar in på din e-handelswebbplats med en bärbar dator. Jane representeras av sitt CRMID och Email, medan webbläsaren på sin bärbara dator representeras av ett ECID.
 * `timestamp=2`: John loggar in på din e-handelswebbplats med samma bärbara dator. John representeras av sitt CRMID och Email, medan webbläsaren han använde redan representeras av ett ECID. Eftersom samma ECID är länkat till två olika diagram kan identitetstjänsten känna till att den här enheten (den bärbara datorn) är en delad enhet.
-* Men på grund av den unika namnområdeskonfigurationen som anger högst ett CRMID-namnutrymme och ett e-postnamnutrymme per diagram, delas grafen upp i två.
+* På grund av den unika namnutrymmeskonfigurationen som anger högst ett CRMID-namnutrymme och ett e-postnamnutrymme per diagram delas diagrammet upp i två.
    * Slutligen, eftersom John är den sista autentiserade användaren, förblir det ECID som representerar den bärbara datorn länkat till hans diagram i stället för Jane.
 
 ![delat skiftläge för en enhet](../images/identity-settings/shared-device-case-one.png)
@@ -117,7 +109,7 @@ I det här exemplet definieras CRMID-namnutrymmet som ett unikt namnutrymme.
 * `timestamp=1`: Jane loggar in på din e-handelswebbplats med en bärbar dator. Hon representeras av sitt CRMID, och webbläsaren på den bärbara datorn representeras av ECID.
 * `timestamp=2`: John loggar in på din e-handelswebbplats med samma bärbara dator. Han representeras av sitt CRMID och den webbläsare han använder representeras av samma ECID.
    * Den här händelsen länkar två oberoende CRMID till samma ECID, vilket överskrider den konfigurerade gränsen för ett CRMID.
-   * Därför tar identitetsoptimeringsalgoritmen bort den äldre länken, som i det här fallet är Jane&#39;s CRMID som länkades `timestamp=1`.
+   * Detta resulterar i att algoritmen för identitetsoptimering tar bort den äldre länken, som i det här fallet är Jane&#39;s CRMID som länkades `timestamp=1`.
    * Även om Jane&#39;s CRMID inte längre finns som diagram i identitetstjänsten finns den fortfarande som profil i kundprofilen i realtid. Detta beror på att ett identitetsdiagram måste innehålla minst två länkade identiteter, och som ett resultat av att länkarna tas bort har Jane&#39;s CRMID inte längre någon annan identitet att länka till.
 
 ![shared-device-case-two](../images/identity-settings/shared-device-case-two.png)
@@ -141,7 +133,7 @@ I det här exemplet är namnutrymmena CRMID och Email unika. Tänk på scenariot
 * `timestamp=3`: Din datatekniker importerade Jane CRM-post, vilket gör att hennes CRMID länkas till den felaktiga e-postadressen.
 * `timestamp=4`: Din datatekniker accepterar Johns CRM-post, vilket gör att hans CRMID länkas till den felaktiga e-postadressen.
    * Detta bryter sedan mot den unika namnområdeskonfigurationen eftersom ett diagram med två CRMID-namnutrymmen skapas.
-   * Som ett resultat av detta tar identitetsoptimeringsalgoritmen bort den äldre länken, som i det här fallet är länken mellan Jane identitet med CRMID-namnområde och identiteten med test<span>@test.
+   * Det innebär att algoritmen Identitetsoptimering tar bort den äldre länken, som i det här fallet är länken mellan Jane identitet med CRMID-namnområde och identiteten med test<span>@test.
 
 Med algoritmen för identitetsoptimering sprids inte felaktiga identitetsvärden som falska e-postmeddelanden eller telefonnummer över flera olika identitetsdiagram.
 
