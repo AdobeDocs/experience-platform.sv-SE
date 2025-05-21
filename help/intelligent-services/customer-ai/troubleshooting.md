@@ -6,9 +6,9 @@ title: Felsökning av kund-AI
 description: Hitta svar på vanliga fel i kundens AI.
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: 32c1affecb4cf58412eb91fd90e1a13f4bc43541
+source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
 workflow-type: tm+mt
-source-wordcount: '1720'
+source-wordcount: '1745'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Kund-AI visar fel när modellutbildning, poängsättning och konfiguration misslyckas. I avsnittet **[!UICONTROL Service instances]** visar en kolumn för **[!UICONTROL LAST RUN STATUS]** ett av följande meddelanden: **[!UICONTROL Success]**, **[!UICONTROL Training issue]** och **[!UICONTROL Failed]**.
 
-![status för senaste körning](./images/errors/last-run-status.png)
+![Senaste körningsstatus som visar om åtgärden lyckades, utbildningsproblemet eller misslyckades.](./images/errors/last-run-status.png)
 
 Om **[!UICONTROL Failed]** eller **[!UICONTROL Training issue]** visas kan du välja körningsstatus för att öppna en sidopanel. Sidpanelen innehåller din **[!UICONTROL Last run status]** och **[!UICONTROL Last run details]**. **[!UICONTROL Last run details]** innehåller information om varför körningen misslyckades. Om kundens AI inte kan ge detaljerad information om felet kontaktar du supporten med den felkod som anges.
 
@@ -27,13 +27,13 @@ Om **[!UICONTROL Failed]** eller **[!UICONTROL Training issue]** visas kan du v�
 
 Det finns inläsningsfel i Google Chrome inkognito-läge på grund av uppdateringar i Google Chrome inkognito-lägessäkerhetsinställningarna. Vi arbetar aktivt med Chrome för att göra experience.adobe.com till en betrodd domän.
 
-![Felbild](./images/errors/error.PNG){width=500}
+![Felbilden visar ett exempel på ett AI-felmeddelande från kunden.](./images/errors/error.PNG){width=500}
 
 ### Rekommenderad åtgärd
 
 För att lösa det här problemet måste du lägga till experience.adobe.com som en webbplats som alltid kan använda cookies. Börja med att gå till **chrome://settings/cookies**. Bläddra sedan nedåt till avsnittet **Anpassade beteenden** följt av att klicka på knappen **Lägg till** bredvid&quot;webbplatser som alltid kan använda cookies&quot;. Kopiera och klistra in `[*.]experience.adobe.com` i den pover som visas och markera sedan kryssrutan **Inkludera cookies från tredje part** på den här webbplatsen. När du är klar väljer du **Lägg till** och läser in kundens AI igen i incognito.
 
-![rekommenderad korrigering](./images/errors/cookies2.gif)
+![Animering som visar stegen för att lägga till experience.adobe.com som en webbplats som alltid kan använda cookies i Chrome-inställningar.](./images/errors/cookies2.gif)
 
 ## Modellkvaliteten är dålig
 

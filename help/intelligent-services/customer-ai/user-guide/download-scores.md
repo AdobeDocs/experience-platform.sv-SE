@@ -5,9 +5,9 @@ feature: Customer AI
 title: Ladda ned bakgrundsmusik i kundens AI
 description: Med kundens AI kan du hämta bakgrundsmusik i filformatet Parquet.
 exl-id: 08f05565-3fd4-4089-9c41-32467f0be751
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '985'
 ht-degree: 0%
 
 ---
@@ -31,11 +31,11 @@ För närvarande finns det två sätt att hämta kundens AI-poäng:
 
 Klicka på listrutan *Fler åtgärder* i den övre högra navigeringen och välj sedan **[!UICONTROL Access scores]** i tjänstinstansen för AI-insikter om kunder.
 
-![fler åtgärder](../images/insights/more-actions.png)
+![Fler åtgärder-listruta med alternativet Åtkomstpoäng.](../images/insights/more-actions.png)
 
 En ny dialogruta visas med en länk till dokumentationen för nedladdning av bakgrundsmusik och datauppsättnings-ID:t för den aktuella instansen. Kopiera datauppsättnings-ID:t till Urklipp och fortsätt till nästa steg.
 
-![Datauppsättnings-ID](../images/download-scores/access-scores.png)
+![Dialogrutan Åtkomstbakgrundsmusik visar datauppsättnings-ID för den aktuella instansen.](../images/download-scores/access-scores.png)
 
 ## Hämta ditt batch-ID {#retrieve-your-batch-id}
 
@@ -114,7 +114,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett batch-ID-objekt. I
 
 ## Hämta nästa API-anrop med ditt batch-ID {#retrieve-the-next-api-call-with-your-batch-id}
 
-När du har ditt batch-ID kan du göra en ny GET-förfrågan till `/batches`. Begäran returnerar en länk som används som nästa API-begäran.
+När du har ditt batch-ID kan du göra en ny GET-begäran till `/batches`. Begäran returnerar en länk som används som nästa API-begäran.
 
 **API-format**
 
@@ -168,7 +168,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links`-objekt. I
 
 ## Hämta dina filer {#retrieving-your-files}
 
-Använd det `href`-värde du fick i det föregående steget som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
+Använd värdet `href` som du fick i föregående steg som API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
 
 **API-format**
 
@@ -236,12 +236,11 @@ Svaret innehåller en datamatris som kan ha en enda post, eller en lista med fil
 | --------- | ----------- |
 | `_links.self.href` | Den URL för GET-begäran som används för att hämta en fil i din katalog. |
 
-
 Kopiera värdet `href` för alla filobjekt i arrayen `data` och fortsätt till nästa steg.
 
 ## Ladda ned fildata
 
-Om du vill hämta fildata skickar du en GET till det `"href"`-värde som du kopierade i föregående steg [när du hämtade dina filer](#retrieving-your-files).
+Om du vill hämta fildata gör du en GET-begäran till det `"href"`-värde som du kopierade i föregående steg [när du hämtade dina filer](#retrieving-your-files).
 
 >[!NOTE]
 >
@@ -271,13 +270,13 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 >[!TIP]
 >
->Se till att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du skickar GETEN.
+>Se till att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du skickar din GET-begäran.
 
 **Svar**
 
 Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet är filnamnet&quot;filename.parquet&quot;.
 
-![Terminal](../images/download-scores/response.png)
+![Exempel på ett terminalsvar som visar ett lyckat API-anrop.](../images/download-scores/response.png)
 
 ## Hämta ett segment som konfigurerats med kundens AI {#segment}
 

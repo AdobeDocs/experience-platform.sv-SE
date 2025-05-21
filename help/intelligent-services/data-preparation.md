@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
 workflow-type: tm+mt
-source-wordcount: '2814'
+source-wordcount: '2938'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ CEE-schemat, liksom alla XDM ExperienceEvent-scheman, hämtar systemets tidsseri
 
 [!DNL Intelligent Services] använder flera nyckelfält i det här schemat för att generera insikter från dina marknadsföringshändelsedata, som alla kan hittas på rotnivå och expanderas för att visa de underfält som krävs.
 
-![](./images/data-preparation/schema-expansion.gif)
+![Demo av schemaexpansion i Adobe Experience Platform UI, med navigerings- och underfältsinfo.](./images/data-preparation/schema-expansion.gif)
 
 Precis som alla XDM-scheman är CEE-schemafältgruppen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-fältgruppen, och olika variationer kan vid behov inkluderas i flera scheman.
 
@@ -134,19 +134,19 @@ Om du är osäker på vilket fält du ska använda som primär identitet kontakt
 
 Om du vill ange en primär identitet går du till schemat från fliken **[!UICONTROL Schemas]** och väljer hyperlänken för schemanamnet för att öppna **[!DNL Schema Editor]**.
 
-![Navigera till schema](./images/data-preparation/navigate_schema.png)
+![Navigering till schemat i Adobe Experience Platform-gränssnittet.](./images/data-preparation/navigate_schema.png)
 
 Navigera sedan till det fält som du vill använda som primär identitet och markera det. Menyn **[!UICONTROL Field properties]** öppnas för det fältet.
 
-![Markera fältet](./images/data-preparation/find_field.png)
+![Processen för att välja önskat fält i Adobe Experience Platform-gränssnittet.](./images/data-preparation/find_field.png)
 
 Bläddra nedåt på menyn **[!UICONTROL Field properties]** tills du hittar kryssrutan **[!UICONTROL Identity]**. När du har markerat rutan kan du ange den valda identiteten som **[!UICONTROL Primary identity]** visas. Markera även den här rutan.
 
-![Markera kryssruta](./images/data-preparation/set_primary_identity.png)
+![Kryssruta för att ange primär identitet i Adobe Experience Platform-gränssnittet.](./images/data-preparation/set_primary_identity.png)
 
 Därefter måste du ange **[!UICONTROL Identity namespace]** i listan med fördefinierade namnutrymmen i listrutan. I det här exemplet har ECID-namnutrymmet valts eftersom ett Adobe Audience Manager-ID `mcid.id` används. Välj **[!UICONTROL Apply]** för att bekräfta uppdateringarna och välj sedan **[!UICONTROL Save]** i det övre högra hörnet för att spara ändringarna i schemat.
 
-![Spara ändringarna](./images/data-preparation/select_namespace.png)
+![Listruta som visar markeringen av ECID-namnområdet i Adobe Experience Platform-gränssnittet.](./images/data-preparation/select_namespace.png)
 
 #### xdm:tidsstämpel {#timestamp}
 
@@ -160,7 +160,7 @@ Det här fältet representerar det datum/tid då händelsen inträffade. Det hä
 
 Detta fält representerar den marknadsföringskanal som är relaterad till ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp.
 
-![](./images/data-preparation/channel.png)
+![Diagram som visar strukturen för xdm:channel-fältet, inklusive underfält som type, mediaType och mediaAction.](./images/data-preparation/channel.png)
 
 **Exempelschema**
 
@@ -198,7 +198,7 @@ Här beskrivs resten av nyckelfälten. Dessa fält behövs inte nödvändigtvis 
 
 Det här fältet är en array med artiklar som representerar produkter som valts ut av en kund, inklusive produkt-SKU, namn, pris och kvantitet.
 
-![](./images/data-preparation/productListItems.png)
+![Fältet xdm:productListItems, inklusive underfält som SKU, name, currencyCode, quantity och priceTotal.](./images/data-preparation/productListItems.png)
 
 **Exempelschema**
 
@@ -227,7 +227,7 @@ Fullständig information om vart och ett av de obligatoriska underfälten för `
 
 Det här fältet innehåller handelsspecifik information om ExperienceEvent, inklusive inköpsordernummer och betalningsinformation.
 
-![](./images/data-preparation/commerce.png)
+![Strukturen för xdm:commerce-fältet, inklusive delfält som order, inköp och betalningar.](./images/data-preparation/commerce.png)
 
 **Exempelschema**
 
@@ -265,7 +265,7 @@ Fullständig information om vart och ett av de obligatoriska underfälten för `
 
 Det här fältet representerar webbinformation som relaterar till ExperienceEvent, t.ex. interaktionen, sidinformation och referenten.
 
-![](./images/data-preparation/web.png)
+![Fältet xdm:web, inklusive underfält som webPageDetails och webReference.](./images/data-preparation/web.png)
 
 **Exempelschema**
 
@@ -295,7 +295,7 @@ Fullständig information om vart och ett av de obligatoriska underfälten för `
 
 Detta fält innehåller information om marknadsföringsaktiviteter som är aktiva med kontaktytan.
 
-![](./images/data-preparation/marketing.png)
+![Strukturen för xdm:marketing-fältet, inklusive underfält som trackingCode, campaignGroup och campaignName.](./images/data-preparation/marketing.png)
 
 **Exempelschema**
 
