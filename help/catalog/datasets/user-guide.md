@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 52412c5d6231e10fc875d16971dbd8cbfb116d21
+source-git-commit: f66e85ee5fb3fdaf7036b131f9689082d9d96127
 workflow-type: tm+mt
-source-wordcount: '3920'
+source-wordcount: '4014'
 ht-degree: 0%
 
 ---
@@ -100,7 +100,7 @@ Användargränssnittet för datauppsättningar erbjuder nu en samling infogade �
 * [[!UICONTROL Manage data and access labels]](#manage-and-enforce-data-governance)
 * [[!UICONTROL Enable unified profile]](#enable-profile)
 * [[!UICONTROL Manage tags]](#manage-tags)
-* [(Beta) [!UICONTROL Set data retention policy]](#data-retention-policy)
+* [[!UICONTROL Set data retention policy]](#data-retention-policy)
 * [[!UICONTROL Move to folders]](#move-to-folders)
 * [[!UICONTROL Delete]](#delete).
 
@@ -174,13 +174,15 @@ När en tagg har lagts till i en datauppsättning kan datauppsättningarna filtr
 
 Mer information om hur du klassificerar affärsobjekt för enklare identifiering och kategorisering finns i handboken [Hantera metadatataxonomier](../../administrative-tags/ui/managing-tags.md). I den här handboken beskrivs hur användare med rätt behörighet kan skapa fördefinierade taggar, tilldela dem till kategorier och hantera alla relaterade CRUD-åtgärder i Experience Platform-gränssnittet.
 
-### (Beta) Ange datalagringspolicy {#data-retention-policy}
-
->[!AVAILABILITY]
-> 
->Datalagringsinställningarna finns för närvarande i betaversion och är bara tillgängliga i en **begränsad version** för vissa organisationer. Gränssnittet kanske inte motsvarar funktionen som beskrivs nedan.
+### Ange datalagringspolicy {#data-retention-policy}
 
 Hantera inställningar för förfallodatum och kvarhållande för datauppsättningar med hjälp av den infogade åtgärdsmenyn på fliken [!UICONTROL Browse] på arbetsytan i [!UICONTROL Datasets]. Du kan använda den här funktionen för att konfigurera hur länge data ska lagras i datavagnen och profilarkivet. Förfallodatumet baseras på när data har importerats till Experience Platform och din konfigurerade lagringsperiod.
+
+>[!IMPORTANT]
+>
+>Om du vill tillämpa eller uppdatera kvarhållningsregler för en ExperienceEvent-datauppsättning måste din användarroll inkludera behörigheten **Hantera datamängder**. Denna rollbaserade åtkomstkontroll säkerställer att bara behöriga användare kan ändra inställningarna för datalagring.
+>
+>Mer information om hur du tilldelar behörigheter i Adobe Experience Platform finns i [Översikt över åtkomstkontroll](../../access-control/home.md#platform-permissions).
 
 >[!TIP]
 >
@@ -216,7 +218,7 @@ Du kan använda den visuella prognosen för att utvärdera effekten av olika kva
 
 >[!NOTE]
 >
->Experience Event-fördelningsdiagrammet är datamängdsspecifikt och speglar bara den valda datamängdens data.
+>Experience Event-fördelningsdiagrammet är specifikt för den valda datauppsättningen och speglar endast dess data. Det gäller endast data som lagras i datasjön.
 
 ![Dialogrutan Ange datalagring visas med Experience Event-fördelningsdiagrammet.](../images/datasets/user-guide/visual-forecast.png)
 
@@ -226,7 +228,9 @@ När du är nöjd med konfigurationen kan du välja **[!UICONTROL Save]** för a
 >
 >När reglerna för datalagring har tillämpats tas alla data som är äldre än det antal dagar som har definierats av utgångsvärdet bort permanent och kan inte återställas.
 
-När du har konfigurerat dina kvarhållningsinställningar använder du övervakningsgränssnittet för att bekräfta att dina ändringar utfördes av systemet. Övervakningsgränssnittet ger en centraliserad vy över datalagringsaktivitet för alla datauppsättningar. Därifrån kan du spåra jobbkörning, granska hur mycket data som har tagits bort och se till att dina lagringsprinciper fungerar som förväntat. Denna synlighet ger stöd för styrning, regelefterlevnad och effektiv livscykelhantering av data.
+När du har konfigurerat dina kvarhållningsinställningar använder du övervakningsgränssnittet för att bekräfta att dina ändringar utfördes av systemet. Övervakningsgränssnittet ger en centraliserad vy över datalagringsaktivitet för alla datauppsättningar. Därifrån kan du spåra jobbkörning, granska hur mycket data som har tagits bort och se till att dina lagringsprinciper fungerar som förväntat.
+
+Om du vill utforska hur lagringsprinciper gäller för olika tjänster kan du läsa de dedikerade guiderna för [Upplevelsedatalagring i Profil](../../profile/event-expirations.md) och [Upplevelsedatalagring i datasjön](./experience-event-dataset-retention-ttl-guide.md). Denna synlighet ger stöd för styrning, regelefterlevnad och effektiv livscykelhantering av data.
 
 Mer information om hur du använder kontrollpanelen för att spåra källdataflöden i Experience Platform-gränssnittet finns i [Övervaka dataflöden för källor i dokumentationen för användargränssnittet](../../dataflows/ui/monitor-sources.md).
 
@@ -234,15 +238,15 @@ Mer information om hur du använder kontrollpanelen för att spåra källdatafl�
 
 Mer information om reglerna som definierar datumintervall för datauppsättningens förfallodatum och de bästa sätten att konfigurera din datalagringspolicy finns på sidan [Vanliga frågor](../catalog-faq.md).
 
-#### (Beta) Ökad synlighet för kvarhållningsperioder och lagringsmått {#retention-and-storage-metrics}
+#### Ökad synlighet för kvarhållningsperioder och lagringsmått {#retention-and-storage-metrics}
 
-Det finns fyra nya kolumner tillgängliga för betaanvändare för att ge bättre synlighet i datahanteringen: **[!UICONTROL Data Lake Storage]**, **[!UICONTROL Data Lake Retention]**, **[!UICONTROL Profile Storage]** och **[!UICONTROL Profile Retention]**. Dessa mätvärden visar hur mycket lagringsutrymme dina data förbrukar och hur länge de bevaras i både datavatten och profiltjänsten.
+Fyra nya kolumner ger bättre synlighet i datahanteringen: **[!UICONTROL Data Lake Storage]**, **[!UICONTROL Data Lake Retention]**, **[!UICONTROL Profile Storage]** och **[!UICONTROL Profile Retention]**. Dessa mätvärden visar hur mycket lagringsutrymme dina data förbrukar och hur länge de bevaras i både datavatten och profiltjänsten.
 
-Den ökade synligheten ger er möjlighet att fatta välgrundade beslut och hantera lagringskostnaderna mer effektivt. Sortera datauppsättningar efter lagringsstorlek för att identifiera de största i den aktuella sandlådan. Dessa insikter stöder också bättre styrning och hjälper er att förstå hur era data används under hela livscykeln och om ni har rätt att utnyttja dem.
+Den ökade synligheten ger er möjlighet att fatta välgrundade beslut och hantera lagringskostnaderna mer effektivt. Sortera datauppsättningar efter lagringsstorlek för att identifiera de största i den aktuella sandlådan. Dessa insikter stöder bästa praxis för datahantering och hjälper till att säkerställa att era licensierade rättigheter efterlevs.
 
 ![Fliken Bläddra på arbetsytan Datauppsättningar med de fyra nya kolumnerna för lagring och kvarhållning markerade.](../images/datasets/user-guide/storage-and-retention-columns.png)
 
-I följande tabell visas en översikt över de nya mätvärdena för kvarhållning och lagring som finns i betaversionen. Den beskriver syftet med varje kolumn och hur den stöder hantering av datalagring och lagring.
+I följande tabell visas en översikt över de nya mätvärdena för bevarande och lagring. Den beskriver syftet med varje kolumn och hur den stöder hantering av datalagring och lagring.
 
 | Kolumnrubrik | Beskrivning |
 |---|---|
@@ -252,6 +256,8 @@ I följande tabell visas en översikt över de nya mätvärdena för kvarhållni
 | [!UICONTROL Profile Retention] | Den aktuella kvarhållningsperioden för profildatauppsättningar. Du kan uppdatera det här värdet för att kontrollera hur länge profildata behålls. |
 
 {style="table-layout:auto"}
+
+Om du vill agera utifrån insikterna från lagrings- och kvarhållningsstatistik kan du läsa [guiden ](../../landing/license-usage-and-guardrails/data-management-best-practices.md) om bästa praxis för datahanteringslicenstillstånd. Använd det för att hantera vilka data ni ska importera och behålla, tillämpa filter och utgångsregler och kontrollera datatillväxten för att hålla er inom de tillåtna användningsgränserna.
 
 ### Flytta till mappar {#move-to-folders}
 
