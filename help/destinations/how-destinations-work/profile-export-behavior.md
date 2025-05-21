@@ -2,16 +2,16 @@
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: 6c2d10cffa30d9feb4d342014ea1b712094bb673
+source-git-commit: ede6f3ed4518babddb537a62cdb16915e2d37310
 workflow-type: tm+mt
-source-wordcount: '2939'
+source-wordcount: '2935'
 ht-degree: 0%
 
 ---
 
 # Profilexportbeteende för olika måltyper
 
-Det finns flera destinationstyper i Experience Platform, vilket visas i diagrammet nedan. Dessa destinationer har något annorlunda exportmönster vad gäller vilka som utlöser en destinationsexport och vad som ingår i en export, vilket beskrivs i avsnitten längre fram nedan.
+Det finns flera måltyper i Experience Platform, vilket visas i diagrammet nedan. Dessa destinationer har något annorlunda exportmönster vad gäller vilka som utlöser en destinationsexport och vad som ingår i en export, vilket beskrivs i avsnitten längre fram nedan.
 
 >[!IMPORTANT]
 >
@@ -27,26 +27,26 @@ Experience Platform mål exporterar data till API-baserade integreringar som HTT
 
 Profiler samlas i HTTPS-meddelanden innan de skickas till mål-API-slutpunkter.
 
-Ta [Facebook-målet](/help/destinations/catalog/social/facebook.md) med en *[konfigurerbar aggregering](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* som exempel - data skickas i aggregerad form, där måltjänsten tar alla inkommande data från profiltjänsten uppströms och samlar in dem med något av följande, innan de skickas till Facebook:
+Ta [Facebook-målet](/help/destinations/catalog/social/facebook.md) med en *[konfigurerbar aggregering](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)*-princip som exempel - data skickas på ett aggregerat sätt, där måltjänsten tar alla inkommande data från profiltjänsten uppströms och samlar in dem med något av följande, innan den skickas till Facebook:
 
 * Antal poster (högst 10 000) eller
 * Tidsfönsterintervall (300 sekunder)
 
-Vilken tröskel som helst som uppnås först utlöser en export till Facebook. På kontrollpanelen [!DNL Facebook Custom Audiences] kan du se målgrupper som kommer från Experience Platform i steg om 10 000 poster. Du kanske ser 10 000 poster varannan till var tredje minut eftersom data bearbetas och slås samman snabbare än 300 sekunders exportintervall och skickas snabbare, så cirka varannan till var tredje minut tills alla poster har bearbetats. Om det inte finns tillräckligt med poster för att kunna skapa en 10 000-sats, skickas det aktuella antalet poster som det är när tidsfönstrets tröskelvärde uppnås, så du kan se även mindre grupper skickade till Facebook.
+Vilken tröskel ovan som än möts utlöser en export till Facebook. På kontrollpanelen [!DNL Facebook Custom Audiences] kan du se målgrupper som kommer in från Experience Platform i steg om 10 000 poster. Du kanske ser 10 000 poster varannan till var tredje minut eftersom data bearbetas och slås samman snabbare än 300 sekunders exportintervall och skickas snabbare, så cirka varannan till var tredje minut tills alla poster har bearbetats. Om det inte finns tillräckligt med poster för att skapa en 10 000-batch, skickas det aktuella antalet poster som det är när tidsfönstrets tröskelvärde uppnås, så du kan se även mindre grupper skickade till Facebook.
 
-Som ett annat exempel kan du titta på [HTTP API-målet](/help/destinations/catalog/streaming/http-destination.md), som har en *[bästa möjliga ansträngningsaggregering](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)*-princip, med `maxUsersPerRequest: 10`. Detta innebär att högst tio profiler slås samman innan ett HTTP-anrop utlöses till det här målet, men Experience Platform försöker skicka profiler till målet så fort som måltjänsten får uppdaterad information om omvärdering från en tjänst i det övre flödet.
+Som ett annat exempel kan du titta på [HTTP API-målet](/help/destinations/catalog/streaming/http-destination.md), som har en *[bästa möjliga ansträngningsaggregering](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)*-princip, med `maxUsersPerRequest: 10`. Det innebär att högst tio profiler slås samman innan ett HTTP-anrop utlöses till det här målet, men Experience Platform försöker skicka profiler till målet så snart som måltjänsten får uppdaterad information om omvärdering från en tjänst i det övre flödet.
 
-Aggingsprincipen kan konfigureras och målutvecklare kan bestämma hur aggregeringsprincipen ska konfigureras så att den bäst uppfyller hastighetsbegränsningarna för API-slutpunkterna längre fram i kedjan. Läs mer om [aggregeringsprincipen](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) i Destinationens SDK dokumentation.
+Aggingsprincipen kan konfigureras och målutvecklare kan bestämma hur aggregeringsprincipen ska konfigureras så att den bäst uppfyller hastighetsbegränsningarna för API-slutpunkterna längre fram i kedjan. Läs mer om [aggregeringsprincipen](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) i Destination SDK-dokumentationen.
 
 ## Exportmål för direktuppspelningsprofil (företag) {#streaming-profile-destinations}
 
 >[!IMPORTANT]
 >
-> Företagsmål är bara tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Företagsmål är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 [Företagsmålen](/help/destinations/destination-types.md#advanced-enterprise-destinations) i Experience Platform är Amazon Kinesis, Azure Event Hubs och HTTP API.
 
-Experience Platform optimerar beteendet för profilexport till företagets mål, så att endast data exporteras till API-slutpunkten när relevanta uppdateringar av en profil har gjorts efter målgruppskvalifikation eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
+Experience Platform optimerar beteendet för profilexport till företagets mål, så att endast data exporteras till API-slutpunkten när relevanta uppdateringar av en profil har gjorts efter målgruppsklassificering eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
 
 * Profiluppdateringen bestäms av en ändring i [målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) för minst en av de målgrupper som är mappade till målet. Profilen har till exempel kvalificerats för en av de målgrupper som är mappade till målet eller har avslutat en av de målgrupper som är mappade till målet.
 * Profiluppdateringen bestäms av en ändring i [identitetskartan](/help/xdm/field-groups/profile/identitymap.md). En profil som redan är kvalificerad för en av de målgrupper som är mappade till målet har till exempel lagts till som en ny identitet i attributet för identitetskarta.
@@ -62,7 +62,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och målgrupper fungerar som referens för en målexport. Det innebär att om någon mappad publik ändrar tillstånd (från `null` till `realized` eller från `realized` till `exiting`) eller om några mappade attribut uppdateras, kommer en målexport att startas.</li><li>Eftersom identiteter för närvarande inte kan mappas till företagsmål, bestäms även målexporter av ändringar i identiteter i en viss profil.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>Objektet `segmentMembership` innehåller målgruppen som är mappad i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller målgruppsavslutningshändelse. Observera att andra omappade målgrupper för vilka profilen är kvalificerad kan ingå i målexporten, om dessa målgrupper tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som målgruppen som är mappad i aktiveringsdataflödet. </li><li>Alla identiteter i objektet `identityMap` ingår också (Experience Platform stöder för närvarande inte identitetsmappning i företagsmålet).</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om statusen `segmentMembership` för en profil ändras till `realized` eller `exiting` eller om alla mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter för närvarande inte kan mappas till företagsmål, bestäms även målexporter av ändringar i identiteter i en viss profil.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>Objektet `segmentMembership` innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som är mappat i aktiveringsdataflödet. </li><li>Alla identiteter i objektet `identityMap` ingår också (Experience Platform stöder för närvarande inte identitetsmappning i företagsmålet).</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -92,7 +92,7 @@ Profilexportbeteendet för direktuppspelningsdestinationer som Facebook, Trade D
 
 Exempel på målplatser för direktuppspelning är de mål som tillhör kategorierna [sociala medier och annonser](/help/destinations/destination-types.md#categories) i katalogen.
 
-Experience Platform optimerar beteendet för profilexport till ditt mål för direktuppspelning, så att endast data exporteras till API-baserade mål för direktuppspelning när relevanta uppdateringar av en profil har gjorts efter målgruppskvalifikation eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
+Experience Platform optimerar beteendet för profilexport till ditt mål för direktuppspelning, så att endast data exporteras till API-baserade mål för direktuppspelning när relevanta uppdateringar av en profil har gjorts efter målgruppsklassificering eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
 
 * Profiluppdateringen bestäms av en ändring i [målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) för minst en av de målgrupper som är mappade till målet. Profilen har till exempel kvalificerats för en av de målgrupper som är mappade till målet eller har avslutat en av de målgrupper som är mappade till målet.
 * Profiluppdateringen bestäms av en ändring i [identitetskartan](/help/xdm/field-groups/profile/identitymap.md) för ett identitetsnamnutrymme som har markerats för export för den här målinstansen. En profil som redan är kvalificerad för en av de målgrupper som är mappade till målet har till exempel lagts till som en ny identitet i attributet för identitetskarta.
@@ -109,7 +109,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och målgrupper fungerar som referens för en målexport. Det innebär att om någon mappad publik ändrar tillstånd (från `null` till `realized` eller från `realized` till `exiting`) eller om några mappade attribut uppdateras, kommer en målexport att startas.</li><li>En ändring i identitetskartan definieras som en identitet som läggs till/tas bort för [identitetsdiagrammet](/help/identity-service/features/identity-graph-viewer.md) i profilen, för identitetsnamnutrymmen som mappas för export.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, för attribut som mappas till målet.</li></ul> | <ul><li>Publiken som är mappade till målet och har ändrats inkluderas i objektet `segmentMembership`. I vissa fall kan de exporteras med flera anrop. I vissa scenarier kan även vissa målgrupper som inte har ändrats inkluderas i samtalet. I vilket fall som helst exporteras bara mappade målgrupper.</li><li>Alla identiteter från namnutrymmen som är mappade till målet i objektet `identityMap` ingår också.</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om statusen `segmentMembership` för en profil ändras till `realized` eller `exiting` eller om alla mappade attribut uppdateras, kommer en målexport att startas om.</li><li>En ändring i identitetskartan definieras som en identitet som läggs till/tas bort för [identitetsdiagrammet](/help/identity-service/features/identity-graph-viewer.md) i profilen, för identitetsnamnutrymmen som mappas för export.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, för attribut som mappas till målet.</li></ul> | <ul><li>Segmenten som är mappade till målet och har ändrats inkluderas i objektet `segmentMembership`. I vissa fall kan de exporteras med flera anrop. I vissa scenarier kan även vissa segment som inte har ändrats inkluderas i samtalet. I vilket fall som helst exporteras bara mappade segment.</li><li>Alla identiteter från namnutrymmen som är mappade till målet i objektet `identityMap` ingår också.</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -131,7 +131,7 @@ Om du ändrar något av de tre attribut som är mappade ovan för ett profilattr
 
 ## Batchmål (filbaserade) {#file-based-destinations}
 
-När du exporterar profiler till [filbaserade mål](/help/destinations/destination-types.md#file-based) i Experience Platform finns det tre typer av scheman (som visas nedan) och två alternativ för filexport (fullständiga eller stegvisa filer) som du kan använda. Alla dessa inställningar ställs in på en målgruppsnivå, även när flera målgrupper mappas till ett enda måldataflöde.
+När du exporterar profiler till [filbaserade mål](/help/destinations/destination-types.md#file-based) i Experience Platform finns det tre typer av scheman (som listas nedan) och två alternativ för filexport (fullständiga eller stegvisa filer) som du kan använda. Alla dessa inställningar ställs in på en målgruppsnivå, även när flera målgrupper mappas till ett enda måldataflöde.
 
 * Schemalagd export: Konfigurera ett mål, lägg till ett eller flera segment, markera om du vill exportera fullständiga eller stegvisa filer och markera en angiven tid varje dag eller flera gånger per dag när filer ska exporteras. En 5 PM-exporttid innebär till exempel att de profiler som är kvalificerade för målgruppen kommer att exporteras kl. 17.00.
 * Efter segmentutvärdering: Exporten utlöses omedelbart efter att det dagliga målgruppsutvärderingsjobbet har körts. Det innebär att de exporterade profilnumren i filen är så nära som möjligt den senaste utvärderade populationen i segmentet.

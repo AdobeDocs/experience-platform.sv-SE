@@ -4,9 +4,9 @@ title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs] lagringsutrymme för att strömma data från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 678f80445212edc1edd3f4799999990ddcc2a039
 workflow-type: tm+mt
-source-wordcount: '2033'
+source-wordcount: '2029'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 [!DNL Azure Event Hubs] är en stor dataströmningsplattform och en tjänst för händelseinmatning. Den kan ta emot och bearbeta miljontals händelser per sekund. Data som skickas till ett händelsehubb kan omformas och lagras med hjälp av alla realtidsanalysleverantörer eller batchnings-/lagringsadaptrar.
 
@@ -147,7 +147,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och målgrupper fungerar som referens för en målexport. Det innebär att om någon mappad publik ändrar tillstånd (från `null` till `realized` eller från `realized` till `exiting`) eller om några mappade attribut uppdateras, kommer en målexport att startas.</li><li>Eftersom identiteter för närvarande inte kan mappas till [!DNL Azure Event Hubs] mål, bestämmer ändringar i en viss profil även destinationsexporter.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>Objektet `segmentMembership` innehåller målgruppen som är mappad i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller målgruppsavslutningshändelse. Observera att andra omappade målgrupper för vilka profilen är kvalificerad kan ingå i målexporten, om dessa målgrupper tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som målgruppen som är mappad i aktiveringsdataflödet. </li><li>Alla identiteter i objektet `identityMap` ingår också (Experience Platform stöder för närvarande inte identitetsmappning i målet [!DNL Azure Event Hubs]).</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om statusen `segmentMembership` för en profil ändras till `realized` eller `exiting` eller om alla mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter för närvarande inte kan mappas till [!DNL Azure Event Hubs] mål, bestämmer ändringar i en viss profil även destinationsexporter.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>Objektet `segmentMembership` innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som är mappat i aktiveringsdataflödet. </li><li>Alla identiteter i objektet `identityMap` ingår också (Experience Platform stöder för närvarande inte identitetsmappning i målet [!DNL Azure Event Hubs]).</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
 
 {style="table-layout:fixed"}
 
