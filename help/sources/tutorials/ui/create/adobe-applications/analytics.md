@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De har samma innebörd för alla kunder och är tillgängliga i källdata för analyser och i schemafältgrupper för analyser.
-* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html).
+* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=sv-SE).
 * **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är användardefinierade och betraktas inte som standardattribut eller anpassade attribut.
 
 ## Navigera i källkatalogen
