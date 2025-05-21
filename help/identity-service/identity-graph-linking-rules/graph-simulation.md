@@ -20,7 +20,7 @@ ht-degree: 0%
 
 Titta på följande video om du vill ha mer information om hur du använder gränssnittet [!DNL Graph Simulation] på arbetsytan i identitetstjänstens gränssnitt:
 
->[!VIDEO](https://video.tv.adobe.com/v/3444047/?learn=on&enablevpops&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3444032/?learn=on&enablevpops)
 
 Läs det här dokumentet om du vill veta mer om hur du kan använda [!DNL Graph Simulation] för att bättre förstå identitetsgrafens beteende och hur diagramalgoritmen fungerar.
 
