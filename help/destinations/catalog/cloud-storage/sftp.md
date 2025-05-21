@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 45f22addbff9ec81d64e9e756e4c27e8af4b477d
 workflow-type: tm+mt
-source-wordcount: '1046'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -69,6 +69,18 @@ Detta mål stöder datauppsättningsexporter. Fullständig information om hur du
 När du exporterar *målgruppsdata* skapar Experience Platform en `.csv` -, `parquet` - eller `.json` -fil på den angivna lagringsplatsen. Mer information om filerna finns i avsnittet [Filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
 
 När du exporterar *datauppsättningar* skapar Experience Platform en `.parquet`- eller `.json`-fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
+
+## Anslutningskrav för SFTP-server {#sftp-connection-requirements}
+
+För att dataexporten ska lyckas måste du konfigurera SFTP-målservern så att ett tillräckligt antal samtidiga anslutningar tillåts. Om din SFTP-server begränsar antalet samtidiga anslutningar kan du råka ut för misslyckade exportjobb, särskilt när du exporterar flera målgrupper eller datauppsättningar samtidigt.
+
+**Rekommendation**
+För optimala prestanda bör SFTP-servern tillåta minst en samtidig anslutning för varje målgrupp eller datauppsättning som exporteras. Servern bör minst ha stöd för minst 30 % av det totala antalet målgrupper eller datauppsättningar som schemalagts för export samtidigt.
+
+**Exempel**\
+Om du schemalägger export för 100 målgrupper eller datauppsättningar samtidigt bör SFTP-servern tillåta minst 30 samtidiga anslutningar.
+
+Om du konfigurerar anslutningsgränserna för SFTP-servern korrekt kan du förhindra misslyckad export och säkerställa tillförlitlig dataleverans från Adobe Experience Platform.
 
 ## Anslut till målet {#connect}
 
