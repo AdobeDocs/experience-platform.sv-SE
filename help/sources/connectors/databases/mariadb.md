@@ -3,9 +3,9 @@ title: MariaDB Source Connector - översikt
 description: Lär dig hur du ansluter MariaDB till Adobe Experience Platform med API:er eller användargränssnittet.
 last-substantial-update: 2025-04-29T00:00:00Z
 exl-id: 37b8f991-dca9-4f85-9bdd-4927a015e4c0
-source-git-commit: 04634c6edc13d8b8da01a01077161866235c61b1
+source-git-commit: bca4f40d452f0a5e70a388872a65640d1fd58533
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -22,11 +22,11 @@ Läs följande avsnitt för att slutföra kravkonfigurationen innan du ansluter 
 
 ### IP-adress tillåtelselista
 
-Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform på antingen Azure eller Amazon Web Services (AWS). Mer information finns i guiden [tillåtslista IP-adresser för att ansluta till Experience Platform på Azure och AWS](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
-### Autentisera till Experience Platform på Azure {#azure}
+### Autentisera till Experience Platform
 
-Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta [!DNL MariaDB] till Experience Platform på Azure.
+Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta [!DNL MariaDB] till Experience Platform.
 
 >[!BEGINTABS]
 
@@ -58,26 +58,6 @@ Ange lämpliga värden för följande autentiseringsuppgifter om du vill använd
 Mer information om hur du hämtar en anslutningssträng finns i det här [[!DNL MariaDB] dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
 
 >[!ENDTABS]
-
-### Autentisera till Experience Platform på Amazon Web Services (AWS) {#aws}
-
->[!AVAILABILITY]
->
->Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
-
-Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta [!DNL MariaDB] till Experience Platform på AWS.
-
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| `server` | Namnet eller IP-adressen för din [!DNL MariaDB]-databas. |
-| `username` | Namnet på databasen. |
-| `port` | Portnumret för den kommunikationsslutpunkt du ansluter till. |
-| `password` | Användarnamnet som motsvarar databasen. |
-| `database` | Lösenordet som motsvarar databasen. |
-| `sslMode` | Den metod som används för att kryptera data under dataöverföring. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL MariaDB] är `3000eb99-cd47-43f3-827c-43caf170f015`. **Obs!**: Den här autentiseringsuppgiften krävs bara vid anslutning via [!DNL Flow Service] API. |
-
-Mer information om hur du hämtar en anslutningssträng finns i det här [[!DNL MariaDB] dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
 
 ## Anslut [!DNL MariaDB] till Experience Platform med API:er
 

@@ -2,9 +2,9 @@
 title: Ansluta PostgreSQL till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter PostgreSQL-databasen till Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 exl-id: e556d867-a1eb-4900-b8a9-189666a4f3f1
-source-git-commit: 8cabf1cb86993fdde37d0b9d957f6c8ec23bb237
+source-git-commit: f4200ca71479126e585ac76dd399af4092fdf683
 workflow-type: tm+mt
-source-wordcount: '617'
+source-wordcount: '626'
 ht-degree: 0%
 
 ---
@@ -43,19 +43,20 @@ Följande är ett exempel på en [!DNL PostgreSQL]-anslutningssträng med SSL-kr
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Välj lämplig kategori på panelen *[!UICONTROL Categories]*. Du kan också använda sökfältet för att navigera till den specifika källa som du vill använda.
 
-Om du vill använda [!DNL PostgreSQL] väljer du **[!UICONTROL PostgreSQL]**-källkortet under *[!UICONTROL Databases]* och sedan **[!UICONTROL Set up]**.
+Om du vill använda [!DNL PostgreSQL] väljer du **[!UICONTROL PostgreSQL DB]**-källkortet under *[!UICONTROL Databases]* och sedan **[!UICONTROL Set up]**.
 
 >[!TIP]
 >
 >Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När ett autentiserat konto har skapats ändras alternativet till **[!UICONTROL Add data]**.
 
+![Källkatalogen med PostgreSQL-källkortet valt.](../../../../images/tutorials/create/postgresql/catalog.png)
 
 
 ## Använd ett befintligt konto {#existing}
 
 Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det [!DNL PostgreSQL]-konto som du vill använda.
 
-![Källarbetsflödets befintliga kontogränssnitt.](../../../../images/tutorials/create/postgresql/catalog.png)
+![Källarbetsflödets befintliga kontogränssnitt.](../../../../images/tutorials/create/postgresql/existing.png)
 
 ## Skapa ett nytt konto {#create}
 
@@ -63,7 +64,7 @@ Om du inte har något befintligt konto måste du skapa ett nytt konto genom att 
 
 Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och kan lägga till en beskrivning för ditt konto.
 
-![Det nya kontogränssnittet i källarbetsflödet med ett kontonamn och en valfri beskrivning har angetts.](../../../../images/tutorials/create/postgresql/existing.png)
+![Det nya kontogränssnittet i källarbetsflödet med ett kontonamn och en valfri beskrivning har angetts.](../../../../images/tutorials/create/postgresql/new.png)
 
 ### Anslut till Experience Platform på Azure {#azure}
 
@@ -93,7 +94,7 @@ Om du vill använda grundläggande autentisering väljer du **[!UICONTROL Basic 
 
 Om du vill skapa ett nytt [!DNL PostgreSQL]-konto och ansluta till Experience Platform på AWS kontrollerar du att du befinner dig i en VA6-sandlåda och anger sedan de [autentiseringsuppgifter som krävs för autentisering](../../../../connectors/databases/postgres.md#aws).
 
-![Det nya kontogränssnittet i källarbetsflödet som ska anslutas till AWS.](../../../../images/tutorials/create/postgresql/basic-auth.png)
+![Det nya kontogränssnittet i källarbetsflödet som ska anslutas till AWS.](../../../../images/tutorials/create/postgresql/aws.png)
 
 ## Skapa ett dataflöde för dina [!DNL PostgreSQL]-data
 

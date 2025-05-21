@@ -1,11 +1,11 @@
 ---
 title: PostgreSQL Source Connector - översikt
 description: Läs mer om PostgreSQL-källan på Adobe Experience Platform.
-last-substantial-update: 2025-04-29T00:00:00Z
+last-substantial-update: 2025-05-20T00:00:00Z
 exl-id: 27b891c5-5fc5-4539-8f98-e3a53e2eefe3
-source-git-commit: 04634c6edc13d8b8da01a01077161866235c61b1
+source-git-commit: f4200ca71479126e585ac76dd399af4092fdf683
 workflow-type: tm+mt
-source-wordcount: '694'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta din [!DNL P
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
 | `connectionString` | Anslutningssträngen som är associerad med ditt [!DNL PostgreSQL]-konto. Anslutningssträngsmönstret [!DNL PostgreSQL] är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL PostgreSQL] är `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL PostgreSQL] är `74a1c565-4e59-48d7-9d67-7c03b8a13137`. Den här autentiseringsuppgiften krävs bara vid anslutning via API:t [!DNL Flow Service]. |
 
 Mer information finns i [[!DNL PostgreSQL] dokumentationen](https://www.postgresql.org/docs/current/).
 
@@ -51,6 +51,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta din [!DNL P
 | `password` | Lösenordet som är kopplat till din [!DNL PostgreSQL]-databasautentisering. |
 | `database` | Namnet på den [!DNL PostgreSQL]-databas som du vill ansluta till. |
 | `sslMode` | Den [!DNL Secure Sockets Layer]-metod (SSL) som ska användas för anslutningen. De tillgängliga värdena är: <ul><li>`Disable`: Använd det här alternativet om du vill inaktivera SSL. Om servern kräver en SSL-konfiguration kommer anslutningen att misslyckas.</li><li>`Allow`: Använd det här alternativet om du vill tillåta SSL-anslutningar. Icke-SSL-anslutningar kan fortfarande användas om servern stöder dem.</li><li>`Prefer`: Använd det här alternativet om du vill använda SSL-anslutningar eftersom servern stöder dem. Det här alternativet tillåter även andra anslutningar än SSL.</li><li>`Require`: Använd det här alternativet om du vill göra SSL-anslutningar obligatoriska. Om servern inte stöder SSL kommer anslutningarna att misslyckas.</li><li>`Verify-Ca`: Använd det här alternativet om du vill verifiera servercertifikat medan anslutningar misslyckas om servern inte stöder SSL.</li><li>`Verify-Full`: Använd det här alternativet om du vill verifiera servercertifikat med värdnamnet när anslutningar misslyckas om servern inte stöder SSL.</li></ul> |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL PostgreSQL] är `74a1c565-4e59-48d7-9d67-7c03b8a13137`. Den här autentiseringsuppgiften krävs bara vid anslutning via API:t [!DNL Flow Service]. |
 
 Mer information finns i [[!DNL PostgreSQL] dokumentationen](https://www.postgresql.org/docs/current/).
 
@@ -71,7 +72,8 @@ Ange värden för följande autentiseringsuppgifter för att ansluta din [!DNL P
 | `username` | Det användarnamn som är associerat med din [!DNL PostgreSQL]-databasautentisering. |
 | `password` | Lösenordet som är kopplat till din [!DNL PostgreSQL]-databasautentisering. |
 | `database` | Namnet på den [!DNL PostgreSQL]-databas som du vill ansluta till. |
-| `sslMode` | Den [!DNL Secure Sockets Layer]-metod (SSL) som ska användas för anslutningen. De tillgängliga värdena är: <ul><li>`Disable`: Använd det här alternativet om du vill inaktivera SSL. Om servern kräver en SSL-konfiguration kommer anslutningen att misslyckas.</li><li>`Allow`: Använd det här alternativet om du vill tillåta SSL-anslutningar. Icke-SSL-anslutningar kan fortfarande användas om servern stöder dem.</li><li>`Prefer`: Använd det här alternativet om du vill använda SSL-anslutningar eftersom servern stöder dem. Det här alternativet tillåter även andra anslutningar än SSL.</li><li>`Require`: Använd det här alternativet om du vill göra SSL-anslutningar obligatoriska. Om servern inte stöder SSL kommer anslutningarna att misslyckas.</li><li>`Verify-Ca`: Använd det här alternativet om du vill verifiera servercertifikat medan anslutningar misslyckas om servern inte stöder SSL.</li><li>`Verify-Full`: Använd det här alternativet om du vill verifiera servercertifikat med värdnamnet när anslutningar misslyckas om servern inte stöder SSL.</li></ul> |
+| `sslMode` | Ett booleskt värde som styr om SSL används eller inte, beroende på serverstödet. Den här konfigurationen är som standard `false`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL PostgreSQL] är `74a1c565-4e59-48d7-9d67-7c03b8a13137`. Den här autentiseringsuppgiften krävs bara vid anslutning via API:t [!DNL Flow Service]. |
 
 Mer information finns i [[!DNL PostgreSQL] dokumentationen](https://www.postgresql.org/docs/current/).
 

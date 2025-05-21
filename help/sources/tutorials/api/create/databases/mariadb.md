@@ -2,9 +2,9 @@
 title: Anslut MariaDB till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter ditt MariaDB-konto till Experience Platform med API:er.
 exl-id: 9b7ff394-ca55-4ab4-99ef-85c80b04a6df
-source-git-commit: d5d47f9ca3c01424660fe33f8310586a70a32875
+source-git-commit: bca4f40d452f0a5e70a388872a65640d1fd58533
 workflow-type: tm+mt
-source-wordcount: '644'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL MariaDB]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
-## Komma igång
+## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
@@ -30,11 +30,11 @@ Läs [[!DNL MariaDB] översikten](../../../../connectors/databases/mariadb.md#pr
 
 Läs guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md) om du vill ha information om hur du kan anropa Experience Platform API:er.
 
-## Anslut [!DNL MariaDB] till Experience Platform på Azure {#azure}
+## Anslut [!DNL MariaDB] till Experience Platform
 
-Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL MariaDB]-konto till Experience Platform på Azure.
+Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL MariaDB]-konto till Experience Platform.
 
-### Skapa en basanslutning för [!DNL MariaDB] på Experience Platform på Azure {#azure-base}
+### Skapa en basanslutning för [!DNL MariaDB]
 
 En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
@@ -165,82 +165,6 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 +++
 
 >[!ENDTABS]
-
-## Anslut [!DNL MariaDB] till Experience Platform på Amazon Web Services {#aws}
-
->[!AVAILABILITY]
->
->Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
-
-Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL MariaDB]-konto till Experience Platform på AWS.
-
-### Skapa en basanslutning för [!DNL MariaDB] på Experience Platform på AWS {#aws-base}
-
-**API-format**
-
-```https
-POST /connections
-```
-
-**Begäran**
-
-Följande begäran skapar en basanslutning för [!DNL MariaDB] att ansluta till Experience Platform på AWS.
-
-+++Exempel på visningsbegäran
-
-```shell
-curl -X POST \
-  'https://platform.adobe.io/data/foundation/flowservice/connections' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-      "name": "MariaDB on Experience Platform AWS",
-      "description": "MariaDB on Experience Platform AWS",
-      "auth": {
-          "specName": "Basic Authentication",
-          "params": {
-              "server": "{SERVER}",
-              "database": "{DATABASE}",
-              "username": "{USERNAME}",
-              "password": "{PASSWORD}",
-              "sslMode": "{SSLMODE}"
-          }
-      },
-      "connectionSpec": {
-          "id": "3000eb99-cd47-43f3-827c-43caf170f015",
-          "version": "1.0"
-      }
-  }'
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `auth.params.server` | Namnet eller IP-adressen för din [!DNL MariaDB]-databas. |
-| `auth.params.database` | Namnet på databasen. |
-| `auth.params.username` | Användarnamnet som motsvarar databasen. |
-| `auth.params.password` | Lösenordet som motsvarar databasen. |
-| `auth.params.sslMode` | Den metod som används för att kryptera data under dataöverföring. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MariaDB] är: `3000eb99-cd47-43f3-827c-43caf170f015`. |
-
-+++
-
-**Svar**
-
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`).
-
-+++Visa svarsexempel
-
-```json
-{
-    "id": "f847950c-1c12-4568-a550-d5312b16fdb8",
-    "etag": "\"0c0099f4-0000-0200-0000-67da91710000\""
-}
-```
-
-+++
 
 
 ## Nästa steg

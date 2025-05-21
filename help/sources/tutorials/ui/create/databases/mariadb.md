@@ -2,9 +2,9 @@
 title: Anslut MariaDB till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter ditt MariaDB-konto till Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 exl-id: 259ca112-01f1-414a-bf9f-d94caf4c69df
-source-git-commit: 0bf31c76f86b4515688d3aa60deb8744e38b4cd5
+source-git-commit: bca4f40d452f0a5e70a388872a65640d1fd58533
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL MariaDB]-konto till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
-## Komma igång
+## Kom igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
@@ -54,9 +54,9 @@ Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange
 
 ![Det nya kontogränssnittet i källarbetsflödet med ett kontonamn och en valfri beskrivning har angetts.](../../../../images/tutorials/create/maria-db/new.png)
 
-### Anslut till Experience Platform på Azure {#azure}
+### Anslut till Experience Platform
 
-Du kan ansluta ditt [!DNL MariaDB]-konto till Experience Platform på Azure med antingen kontonyckel eller grundläggande autentisering.
+Du kan ansluta ditt [!DNL MariaDB]-konto till Experience Platform med antingen kontonyckel eller grundläggande autentisering.
 
 >[!BEGINTABS]
 
@@ -73,17 +73,5 @@ Om du vill använda grundläggande autentisering väljer du **[!UICONTROL Basic 
 ![Det nya kontogränssnittet i källarbetsflödet med Grundläggande autentisering markerat.](../../../../images/tutorials/create/maria-db/basic-auth.png)
 
 >[!ENDTABS]
-
-### Ansluta till Experience Platform på Amazon Web Services (AWS) {#aws}
-
->[!AVAILABILITY]
->
->Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
-
-Om du vill skapa ett nytt [!DNL MariaDB]-konto och ansluta till Experience Platform på AWS kontrollerar du att du befinner dig i en VA6-sandlåda och anger sedan de [autentiseringsuppgifter som krävs för autentisering](../../../../connectors/databases/mariadb.md#aws).
-
-![Det nya kontogränssnittet i källarbetsflödet som ska anslutas till AWS.](../../../../images/tutorials/create/maria-db/basic-auth.png)
-
-## Nästa steg
 
 Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL MariaDB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/databases.md).

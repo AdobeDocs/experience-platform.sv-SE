@@ -2,9 +2,9 @@
 title: Anslut MySQL till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter MySQL-databasen till Experience Platform med API:er.
 exl-id: 273da568-84ed-4a3d-bfea-0f5b33f1551a
-source-git-commit: 659af23c6d05f184b745e13ab8545941f3892e7e
+source-git-commit: b73ced639100c95f6c62be92d4796a206a688958
 workflow-type: tm+mt
-source-wordcount: '597'
+source-wordcount: '607'
 ht-degree: 0%
 
 ---
@@ -124,11 +124,12 @@ curl -X POST \
       "auth": {
           "specName": "Basic Authentication",
           "params": {
-              "server": "{SERVER}",
-              "database": "{DATABASE}",
-              "username": "{USERNAME}",
-              "password": "{PASSWORD}",
-              "sslMode": "{SSLMODE}"
+              "server": "localhost",
+              "port": "443",
+              "database": "mysql-acme",
+              "username": "acme",
+              "password": "xxxx",
+              "sslMode": "DISABLED"
           }
       },
       "connectionSpec": {
@@ -202,11 +203,12 @@ curl -X POST \
       "auth": {
           "specName": "Basic Authentication",
           "params": {
-              "server": "{SERVER}",
-              "database": "{DATABASE}",
-              "username": "{USERNAME}",
-              "password": "{PASSWORD}",
-              "sslMode": "{SSLMODE}"
+              "server": "localhost",
+              "port": "443",
+              "database": "mysql-acme",
+              "username": "acme",
+              "password": "xxxx",
+              "sslMode": "false"
           }
       },
       "connectionSpec": {
@@ -222,7 +224,7 @@ curl -X POST \
 | `auth.params.database` | Namnet på databasen. |
 | `auth.params.username` | Användarnamnet som motsvarar databasen. |
 | `auth.params.password` | Lösenordet som motsvarar databasen. |
-| `auth.params.sslMode` | Den metod som används för att kryptera data under dataöverföring. |
+| `auth.params.sslMode` | Ett booleskt värde som styr om SSL används eller inte, beroende på serverstödet. Den här konfigurationen är som standard `false`. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL MySQL] är: `26d738e0-8963-47ea-aadf-c60de735468a`. |
 
 +++

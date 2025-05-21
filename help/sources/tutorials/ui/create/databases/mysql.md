@@ -2,14 +2,14 @@
 title: Anslut MySQL till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter MySQL-databasen till Experience Platform med användargränssnittet.
 exl-id: 75e74bde-6199-4970-93d2-f95ec3a59aa5
-source-git-commit: 659af23c6d05f184b745e13ab8545941f3892e7e
+source-git-commit: f4200ca71479126e585ac76dd399af4092fdf683
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL MySQL]-källanslutning i användargränssnittet
+# Anslut [!DNL MySQL] till Experience Platform med användargränssnittet
 
 Läs den här vägledningen när du vill lära dig hur du ansluter din [!DNL MySQL]-databas till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
