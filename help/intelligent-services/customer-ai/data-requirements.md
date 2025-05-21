@@ -117,7 +117,7 @@ Dessutom kan kundens AI använda prenumerationsdata för att skapa bättre kundm
 
 ### Lägga till anpassade händelser och profilattribut {#add-custom-events}
 
-Om du har information som du vill inkludera utöver standardhändelsefälten [som används av kundens AI, kan du använda den [anpassade händelsekonfigurationen](./user-guide/configure.md#custom-events) för att förstärka de data som används av modellen.](#standard-events)
+Om du har information som du vill inkludera utöver standardhändelsefälten [&#128279;](#standard-events)som används av kundens AI, kan du använda den [anpassade händelsekonfigurationen](./user-guide/configure.md#custom-events) för att förstärka de data som används av modellen.
 
 #### När anpassade händelser ska användas
 
