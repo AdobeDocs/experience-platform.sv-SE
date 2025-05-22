@@ -3,10 +3,10 @@ title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Experience Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: 5dc5e11962abf760692e0cb424cdd863d1905e87
 workflow-type: tm+mt
-source-wordcount: '2288'
-ht-degree: 2%
+source-wordcount: '2355'
+ht-degree: 1%
 
 ---
 
@@ -15,6 +15,15 @@ ht-degree: 2%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Versionsinformationen om SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.27.0 - 20 maj 2025
+
+**Korrigeringar och förbättringar**
+
+- Ett problem med meddelanden i appen där den anpassade formateringen inte tillämpades korrekt har korrigerats.
+- Ändrade formatet för händelsehistorik. Detta gör att meddelanden och innehållskort visas igen när gamla historikdata tas bort.
+- Korrigerade ett problem där förslag skulle återanvändas i SPA-användningsfall.
+- Ett problem med klickspårning på skuggans DOM-element har korrigerats.
 
 ## Version 2.26.0 - 5 mars 2025
 
@@ -157,7 +166,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 **Korrigeringar och förbättringar**
 
-- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE).
+- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
 
 ## Version 2.16.0 - 25 april 2023
 

@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5dc5e11962abf760692e0cb424cdd863d1905e87
 workflow-type: tm+mt
-source-wordcount: '2570'
+source-wordcount: '2639'
 ht-degree: 1%
 
 ---
@@ -12,6 +12,24 @@ ht-degree: 1%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägget
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.30.0 - 21 maj 2025
+
+**Nya funktioner**
+
+- Du kan nu ange ett dataelement när du aktiverar cookies från tredje part.
+- Töm knappar har lagts till i kodfält.
+- Innehåller [version 2.27.0](../../../../web-sdk/release-notes.md#2-27-0) av Adobe Experience Platform Web SDK.
+
+**Korrigeringar och förbättringar**
+
+- Validering har lagts till för att förhindra inställning av `onBeforeLinkClickSend` när händelsegruppering är aktiverad.
+
+## Version 2.29.1 - 8 maj 2025
+
+**Korrigeringar och förbättringar**
+
+- Korrigerade ett problem där inställningarna inte sparades när användaren omedelbart klickade på Spara efter redigering.
 
 ## Version 2.29.0 - 5 mars 2025
 
