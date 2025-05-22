@@ -39,7 +39,7 @@ Flödesdiagrammet nedan beskriver ordningen för de steg som vidtas för att lev
 1. Edge Network API returnerar personaliseringsinnehållet till programservern.
 1. Programservern returnerar ett HTML-svar till klientwebbläsaren som innehåller [identitets- och klustercookies](#cookies).
 1. På klientsidan anropas kommandot [!DNL Web SDK] `applyResponse` som skickar sidhuvuden och brödtexten i [!UICONTROL Edge Network API]-svaret från föregående steg.
-1. [!DNL Web SDK] återger mål [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)-erbjudanden och Journey Optimizer Web Channel-objekt automatiskt, eftersom flaggan `renderDecisions` är inställd på `true`.
+1. [!DNL Web SDK] återger mål [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE)-erbjudanden och Journey Optimizer Web Channel-objekt automatiskt, eftersom flaggan `renderDecisions` är inställd på `true`.
 1. Målformulärbaserade [!DNL HTML]/[!DNL JSON]-erbjudanden och kodbaserade Journey Optimizer-upplevelser tillämpas manuellt med metoden `applyProposition` för att uppdatera [!DNL DOM] baserat på personaliseringsinnehållet i förslaget.
 1. För målformulärbaserade [!DNL HTML]/[!DNL JSON]-erbjudanden och kodbaserade Journey Optimizer-upplevelser måste visningshändelser skickas manuellt för att ange när det returnerade innehållet har visats. Detta görs via kommandot `sendEvent`.
 
