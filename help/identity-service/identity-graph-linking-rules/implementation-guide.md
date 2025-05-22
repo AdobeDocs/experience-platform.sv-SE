@@ -2,9 +2,9 @@
 title: Implementeringshandbok för länkningsregler för identitetsdiagram
 description: Lär dig de rekommenderade stegen som du bör följa när du implementerar data med konfigurationer för länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: 0587ddf1012adb13e6d399953839735f73fe151e
 workflow-type: tm+mt
-source-wordcount: '1852'
+source-wordcount: '1943'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Du måste se till att det unika namnutrymmet med den högsta prioriteten alltid 
 
 Utan ett unikt namnutrymme som representerar dina personidentifierare kan det uppstå ett diagram som länkar till olika personidentifierare till samma ECID. I det här exemplet är både B2BCRM och B2CCRM kopplade till samma ECID samtidigt. I det här diagrammet visas att Tom med sitt B2C-inloggningskonto delade en enhet med sommaren med hjälp av sitt B2B-inloggningskonto. Systemet kommer dock att känna igen att detta är en profil (komprimering av diagram).
 
-![Ett diagramscenario där två personidentifierare är länkade till samma ECID.](../images/graph-examples/multi_namespaces.png)
+![Ett diagramscenario där två personidentifierare är länkade till samma ECID.](../images/graph-examples/multi_namespaces.png "Ett diagramscenario där två personidentifierare är länkade till samma ECID."){zoomable="yes"}
 
 +++
 
@@ -49,7 +49,7 @@ Utan ett unikt namnutrymme som representerar dina personidentifierare kan det up
 
 Med ett unikt namnutrymme (i det här fallet ett CRMID i stället för två olika namnutrymmen) kan identitetstjänsten identifiera den personidentifierare som senast var associerad med ECID. I det här exemplet, eftersom det finns ett unikt CRMID, kan identitetstjänsten identifiera ett scenario med delade enheter, där två enheter delar samma enhet.
 
-![Ett delat enhetsgrafscenario där två personidentifierare är länkade till samma ECID, men den äldre länken tas bort.](../images/graph-examples/crmid_only_multi.png)
+![Ett delat enhetsgrafscenario där två personidentifierare är länkade till samma ECID, men den äldre länken tas bort.](../images/graph-examples/crmid_only_multi.png "Ett delat enhetsgrafscenario där två personidentifierare är länkade till samma ECID, men den äldre länken tas bort."){zoomable="yes"}
 
 +++
 
@@ -149,7 +149,7 @@ Därför är det bäst att endast skicka en person-ID med dina autentiserade hä
 
 I diagramsimuleringar kan det här intrycket se ut så här:
 
-![Gränssnittet för diagramsimulering med ett exempeldiagram återgivet.](../images/implementation/example-graph.png)
+![Gränssnittet för diagramsimulering med ett exempeldiagram återgivet.](../images/implementation/example-graph.png "Gränssnittet för diagramsimulering med ett exempeldiagram återgivet."){zoomable="yes"}
 
 >[!TAB Autentiserade händelser utan personidentifierare]
 
@@ -201,7 +201,7 @@ Genom att skapa olika konfigurationer kan du använda verktyget för diagramsimu
 
 När du har fått en bättre uppfattning om hur du vill att diagrammet ska fungera går du till gränssnittet [för identitetsinställningar](./identity-settings-ui.md) på arbetsytan för identitetstjänstens användargränssnitt. Om du vill komma åt användargränssnittet för identitetsinställningar väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Settings]**.
 
-![Identiteterna bläddrar på sidan med inställningsknappen markerad.](../images/implementation/settings.png)
+![Identiteterna bläddrar på sidan med inställningsknappen markerad.](../images/implementation/settings.png "Identiteterna bläddrar på sidan med inställningsknappen markerad."){zoomable="yes"}
 
 Använd användargränssnittet för identitetsinställningar för att ange unika namnutrymmen och konfigurera dina namnutrymmen efter prioritetsordning. När du är klar med att använda inställningarna måste du vänta minst sex timmar innan du kan fortsätta att importera data, eftersom det tar minst sex timmar innan nya inställningar återspeglas i identitetstjänsten.
 
@@ -249,11 +249,11 @@ Använd identitetspanelen för att få insikter om identitetsgrafernas tillstån
 
 Markera ellipserna (`...`) och välj sedan **[!UICONTROL View more]** om du vill ha mer information och om du vill verifiera att det inte finns några komprimerade diagram.
 
-![Identitetspanelen på identitetstjänstens arbetsyta.](../images/implementation/identity_dashboard.png)
+![Identitetspanelen på identitetstjänstens arbetsyta.](../images/implementation/identity_dashboard.png "Identitetspanelen på identitetstjänstens arbetsyta."){zoomable="yes"}
 
 Använd det fönster som visas för att visa information om komprimerade diagram. I det här exemplet markeras både e-post och telefon som unika namnutrymmen, så det finns inga komprimerade diagram i sandlådan.
 
-![Popup-fönstret för diagram med flera identiteter.](../images/implementation/graphs.png)
+![Popup-fönstret för diagram med flera identiteter.](../images/implementation/graphs.png "Popup-fönstret för diagram med flera identiteter."){zoomable="yes"}
 
 ## Bilaga {#appendix}
 
@@ -269,13 +269,13 @@ I följande diagram simuleras ett &quot;farligt&quot; loginID-scenario. I det h�
 
 I det här exemplet lämnas `{loginID: ID_C}` farligt och inte länkat till ett CRMID. Personentiteten som detta användar-ID ska kopplas till är därför tvetydig.
 
-![Ett exempel på ett diagram med ett &quot;farligt&quot; loginID-scenario.](../images/graph-examples/dangling_example.png)
+![Ett exempel på ett diagram med ett &quot;farligt&quot; loginID-scenario.](../images/graph-examples/dangling_example.png "Ett exempel på ett diagram med ett farligt loginID-scenario."){zoomable="yes"}
 
 >[!TAB loginID är länkat till ett CRMID]
 
 I det här exemplet är `{loginID: ID_C}` länkad till `{CRMID: Tom}`. Därför kan systemet identifiera att detta användar-ID är kopplat till Tom.
 
-![Inloggnings-ID är länkat till ett CRMID.](../images/graph-examples/id_c_tom.png)
+![LoginID är länkat till ett CRMID.](../images/graph-examples/id_c_tom.png "Inloggnings-ID är länkat till ett CRMID."){zoomable="yes"}
 
 >[!TAB loginID är länkat till ett annat CRMID]
 
@@ -283,7 +283,7 @@ I det här exemplet är `{loginID: ID_C}` länkad till `{CRMID: Summer}`. Därf�
 
 I det här exemplet visas även att Tom och Sommar ska skilja på personer som delar en enhet, vilket representeras av `{ECID: 111}`.
 
-![Inloggnings-ID är länkat till ett annat CRMID.](../images/graph-examples/id_c_summer.png)
+![LoginID är länkat till ett annat CRMID.](../images/graph-examples/id_c_summer.png "Inloggnings-ID är länkat till ett annat CRMID."){zoomable="yes"}
 
 >[!ENDTABS]
 

@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform – maj 2025
 description: Versionsinformation för maj 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8f1538efc96c8dc47a505511ec7f064b07f124c8
+source-git-commit: ad9ec9c3177c25e2207b67b4c939c3f6fa97883f
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1171'
 ht-degree: 51%
 
 ---
@@ -84,7 +84,7 @@ Använd identitetstjänsten för Adobe Experience Platform för att skapa en hel
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Vi presenterar [!DNL Identity Graph Linking Rules] | [!DNL Identity Graph Linking Rules] är utformat för att hjälpa dig att behålla korrekta kundprofiler för anpassad marknadsföring genom att förhindra att diagrammet kollapsar.<ul><li>Använd [diagramsimuleringsverktyget](../../identity-service/identity-graph-linking-rules/graph-simulation.md) för att testa och validera dina konfigurationer.</li><li>Se [identitetspanelen](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs) för att övervaka alla förekomster av komprimerade diagram i din organisation.</li><li>Läs [[!DNL Identity Graph Linking Rules] implementeringsguiden](../../identity-service/identity-graph-linking-rules/implementation-guide.md) för att komma igång.</li></ul> **Obs!** Dina data ändras tills du konfigurerar dina identitetsinställningar manuellt. |
+| [!DNL Identity Graph Linking Rules] | [!DNL Identity Graph Linking Rules] är nu allmänt tillgänglig. [!DNL Identity Graph Linking Rules] förhindrar&quot;komprimering av diagram&quot;, vilket ger distinkta och korrekta kundprofiler för anpassad marknadsföring i Experience Platform och program. Viktiga funktioner:<ul><li>[Diagramsimuleringsverktyg](../../identity-service/identity-graph-linking-rules/graph-simulation.md): Utforska algoritmen och testa konfigurationer för identitetsinställningar.</li><li> [Identitetsinställningar](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md): Konfigurera unika namnutrymmen och ange prioriteter.</li><li>[Identitetspanelen](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs): Övervaka diagram och validera identitetsinställningar.</li></ul> **Obs!** Inga ändringar görs i dina data förrän du konfigurerar dina identitetsinställningar manuellt. |
 
 {style="table-layout:auto"}
 

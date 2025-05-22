@@ -2,9 +2,9 @@
 title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 6efd9c8fd1acce08027905f2e3c005a88a429a12
+source-git-commit: c9b5de33de91b93f179b4720f692eb876e94df72
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1600'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Kontakta Adobe-kontoteamet om du har en befintlig sandlåda som kräver att komprimerade diagram inte är komprimerade (&quot;fasta&quot;) när du har aktiverat identitetsinställningarna.
+>[!DNL Identity Graph Linking Rules] är nu allmänt tillgänglig. Kontakta Adobe Support om du har en befintlig sandlåda som kräver att komprimerade diagram inte är komprimerade (&quot;fasta&quot;) när du har aktiverat identitetsinställningar.
 
 Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRMID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via [!DNL Identity Graph Linking Rules] och tillåta korrekt personalisering för dina användare.
 
@@ -40,12 +40,12 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
 
 <!-- CARDS
 {target = _blank}
-* https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview
-* https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation 
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation 
 
     {description = Learn how to use the graph simulator to test out identity graph linking rules.}
 
-* https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings
     {description = Learn how to enable and configure identity graph linking rules to build accurate customer profiles}
 -->
 <!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
@@ -54,8 +54,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" title="Översikt över regler för länkning av identitetsdiagram" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448276/?format=jpeg&nocache=1747851655227&captions=swe" alt="Översikt över regler för länkning av identitetsdiagram"
+                    <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" title="Översikt över regler för länkning av identitetsdiagram" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448250/?format=jpeg&nocache=1747851655227" alt="Översikt över regler för länkning av identitetsdiagram"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -63,11 +63,11 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" title="Översikt över regler för länkning av identitetsdiagram">Översikt över länkningsregler för identitetsdiagram</a>
+                        <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" title="Översikt över regler för länkning av identitetsdiagram">Översikt över länkningsregler för identitetsdiagram</a>
                     </p>
                     <p class="is-size-6">Få en översikt över hur regler för länkning av identitetsdiagram hjälper dataarkitekter att bibehålla korrekta kundprofiler och förhindra att diagram komprimeras.</p>
                 </div>
-                <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
@@ -77,8 +77,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" title="Länkningsregler för identitetsdiagram - diagramsimulering" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444047/?format=jpeg&nocache=1747851655237&captions=swe" alt="Länkningsregler för identitetsdiagram - diagramsimulering"
+                    <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" title="Länkningsregler för identitetsdiagram - diagramsimulering" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444032/?format=jpeg&nocache=1747851655237" alt="Länkningsregler för identitetsdiagram - diagramsimulering"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -86,11 +86,11 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - diagramsimulering">Länkningsregler för identitetsdiagram - diagramsimulering</a>
+                        <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - diagramsimulering">Länkningsregler för identitetsdiagram - diagramsimulering</a>
                     </p>
                     <p class="is-size-6">Lär dig hur du använder diagramsimulatorn för att testa länkningsregler för identitetsdiagram.</p>
                 </div>
-                <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
@@ -100,7 +100,7 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" title="Länkningsregler för identitetsdiagram - identitetsinställningar" target="_blank" rel="referrer">
+                    <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" title="Länkningsregler för identitetsdiagram - identitetsinställningar" target="_blank" rel="referrer">
                         <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3458487/?format=jpeg&nocache=1747851655218" alt="Länkningsregler för identitetsdiagram - identitetsinställningar"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
@@ -109,11 +109,11 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - identitetsinställningar">Länkningsregler för identitetsdiagram - identitetsinställningar</a>
+                        <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - identitetsinställningar">Länkningsregler för identitetsdiagram - identitetsinställningar</a>
                     </p>
                     <p class="is-size-6">Lär dig hur du aktiverar och konfigurerar länkningsregler för identitetsdiagram för att skapa korrekta kundprofiler</p>
                 </div>
-                <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
@@ -142,7 +142,7 @@ Det finns instanser där flera inloggningar kan förekomma på en enda enhet:
 | Publik kiosk | Resenärer på en flygplats som loggar in med sitt lojalitets-ID för att checka in väskor och skriva ut boardingkort. |
 | Callcenter | Anställda på kundtjänst loggar in på en enda enhet för kunder som ringer kundsupport för att lösa problem. |
 
-![Ett diagram över vissa delade enheter.](../images/identity-settings/shared-devices.png)
+![Ett diagram över några vanliga delade enheter.](../images/identity-settings/shared-devices.png "Ett diagram över vissa delade enheter."){zoomable="yes"}
 
 I dessa fall kommer ett enda ECID att länkas till flera CRMID från en diagramsynvinkel utan att några gränser är aktiverade.
 
@@ -155,7 +155,7 @@ Med [!DNL Identity Graph Linking Rules] kan du:
 
 Det finns även instanser av användare som anger falska värden som telefonnummer och/eller e-postadresser när de registrerar sig. I dessa fall, om begränsningar inte är aktiverade, kommer telefon-/e-postrelaterade identiteter att länkas till flera olika CRMID:n.
 
-![Ett diagram som representerar ogiltiga e-post- eller telefonscenarier.](../images/identity-settings/invalid-email-phone.png)
+![Ett diagram som representerar ogiltiga e-post- eller telefonscenarier.](../images/identity-settings/invalid-email-phone.png "Ett diagram som representerar ogiltiga e-post- eller telefonscenarier."){zoomable="yes"}
 
 Med [!DNL Identity Graph Linking Rules] kan du:
 
@@ -172,7 +172,7 @@ Det finns fall där icke-unika, felaktiga identitetsvärden är inkapslade i sys
 
 Dessa identiteter kan resultera i följande diagram, där flera CRMID sammanfogas med den felaktiga identiteten:
 
-![Ett diagramexempel på identitetsdata med felaktiga eller felaktiga identitetsvärden.](../images/identity-settings/bad-data.png)
+![Ett diagramexempel på identitetsdata med felaktiga eller felaktiga identitetsvärden.](../images/identity-settings/bad-data.png "Ett diagramexempel på identitetsdata med felaktiga eller felaktiga identitetsvärden."){zoomable="yes"}
 
 Med [!DNL Identity Graph Linking Rules] kan du konfigurera CRMID som den unika identifieraren för att förhindra att oönskade profiler komprimeras på grund av den här datatypen.
 

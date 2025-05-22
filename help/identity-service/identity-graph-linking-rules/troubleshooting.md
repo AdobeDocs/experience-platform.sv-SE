@@ -2,9 +2,9 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i Länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: c9b5de33de91b93f179b4720f692eb876e94df72
 workflow-type: tm+mt
-source-wordcount: '3278'
+source-wordcount: '3288'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ När du testar och validerar [!DNL Identity Graph Linking Rules] kan du råka ut
 
 Bilden nedan är en förenklad representation av hur data flödar in i Adobe Experience Platform och Program. Använd det här diagrammet som referens för att få en bättre förståelse för innehållet på den här sidan.
 
-![Ett diagram över hur datainmatning flödar i identitetstjänsten.](../images/troubleshooting/dataflow_in_identity.png)
+![Ett diagram över hur datainmatning flödar i identitetstjänsten.](../images/troubleshooting/dataflow_in_identity.png "Ett diagram över hur datainmatning flödar i identitetstjänsten."){zoomable="yes"}
 
 Det är viktigt att notera följande faktorer:
 

@@ -2,9 +2,9 @@
 title: Exempel på diagramkonfigurationer
 description: Lär dig mer om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: cd9104e253cda4ce9a004f7931b9c38907874941
 workflow-type: tm+mt
-source-wordcount: '2759'
+source-wordcount: '3316'
 ht-degree: 1%
 
 ---
@@ -67,13 +67,13 @@ I den här konfigurationen definieras den primära identiteten så här:
 
 Följande är ett exempel på ett idealiskt enpersonsdiagram, där CRMID är unikt och har högsta prioritet.
 
-![Ett simulerat exempel på ett idealiskt enpersonsdiagram, där CRMID är unikt och har högsta prioritet.](../images/graph-examples/crmid_only_single.png)
+![Ett simulerat exempel på ett idealiskt enpersonsdiagram, där CRMID är unikt och har högsta prioritet.](../images/graph-examples/crmid_only_single.png "Ett simulerat exempel på ett idealiskt enpersonsdiagram, där CRMID är unikt och har högsta prioritet."){zoomable="yes"}
 
 >[!TAB Flerpersonsdiagram]
 
 Följande är ett exempel på ett flerpersonsdiagram. I det här exemplet visas ett scenario med delade enheter, där det finns två CRMID:n och där den med den äldre etablerade länken tas bort.
 
-![Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort.](../images/graph-examples/crmid_only_multi.png)
+![Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort.](../images/graph-examples/crmid_only_multi.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -136,13 +136,13 @@ I den här konfigurationen definieras den primära identiteten så här:
 
 Nedan följer exempel på ett par idealiska enpersonsdiagram, där varje CRMID är associerat med deras respektive hash-kodade e-postnamnutrymme och ECID.
 
-![I det här exemplet skapas två separata diagram som representerar en entitet för en person.](../images/graph-examples/crmid_hashed_single.png)
+![I det här exemplet genereras två separata diagram som representerar en entitet med en person.](../images/graph-examples/crmid_hashed_single.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 >[!TAB Flerpersonsdiagram: delad enhet]
 
 Följande är ett exempel på ett grafiscenario med flera personer där en enhet delas av två personer.
 
-![I det här exemplet visar det simulerade diagrammet ett &quot;delat enhetsscenario&quot; eftersom både Tom och sommaren är associerade med samma ECID.](../images/graph-examples/crmid_hashed_shared_device.png)
+![I det här exemplet visar det simulerade diagrammet ett &quot;delat enhetsscenario&quot; eftersom både Tom och sommaren är associerade med samma ECID.](../images/graph-examples/crmid_hashed_shared_device.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -158,7 +158,7 @@ CRMID: Summer, ECID: 111
 
 Följande är ett exempel på ett grafscenario med flera personer där e-post inte är unikt och associeras med två olika CRMID:n.
 
-![Det här scenariot liknar ett scenario där en delad enhet används. I stället för att låta personentiteterna dela ECID är de kopplade till samma e-postkonto.](../images/graph-examples/crmid_hashed_nonunique_email.png)
+![Det här scenariot liknar ett scenario där en delad enhet används. I stället för att låta personenheterna dela ECID kopplas de i stället till samma e-postkonto. &quot;Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort. ](../images/graph-examples/crmid_hashed_nonunique_email.png){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -233,13 +233,13 @@ I den här konfigurationen definieras den primära identiteten så här:
 
 Följande är ett idealiskt enpersonsdiagram där hash-kodad e-post och hash-kodad telefon är markerade som identiteter för användning i [!DNL Segment Match]. I det här scenariot delas diagrammen upp i två, som representerar olika personenheter.
 
-![Ett idealiskt enpersonsdiagram.](../images/graph-examples/crmid_hashed_single_seg_match.png)
+![Ett idealiskt enpersonsdiagram.](../images/graph-examples/crmid_hashed_single_seg_match.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 >[!TAB Flerpersonsdiagram: delad enhet, delad dator]
 
 Följande är ett flerpersonsdiagram där en enhet (dator) delas av två personer. I det här scenariot representeras den delade datorn av `{ECID: 111}` och är länkad till `{CRMID: Summer}` eftersom länken är den senast upprättade länken. `{CRMID: Tom}` har tagits bort eftersom länken mellan `{CRMID: Tom}` och `{ECID: 111}` är äldre och eftersom CRMID är det unika namnområdet i den här konfigurationen.
 
-![Ett flerpersonsdiagram där två användare delar en dator.](../images/graph-examples/shared_device_shared_computer.png)
+![Ett flerpersonsdiagram där två användare delar en dator.](../images/graph-examples/shared_device_shared_computer.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -257,7 +257,7 @@ CRMID: Summer, ECID: 111
 
 Följande är ett flerpersonsdiagram där en android-enhet delas av två personer. I det här scenariot är CRMID konfigurerat som ett unikt namnområde och därför ersätter den nyare länken för `{CRMID: Tom, GAID: B-B-B, ECID:444}` den äldre `{CRMID: Summer, GAID: B-B-B, ECID:444}`.
 
-![Ett flerpersonsdiagram där två användare delar en android-mobil enhet.](../images/graph-examples/shared_device_android.png)
+![Ett flerpersonsdiagram där två användare delar en android-mobil enhet.](../images/graph-examples/shared_device_android.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -275,7 +275,7 @@ CRMID: Tom, ECID: 444, GAID: B-B-B
 
 Följande är ett flerpersonsdiagram där en Apple-enhet delas av två personer. I det här scenariot delas IDFA, men ECID återställs inte.
 
-![Ett flerpersonsdiagram där två användare delar en mobilenhet från Apple.](../images/graph-examples/shared_device_apple_no_reset.png)
+![Ett flerpersonsdiagram där två användare delar en Apple-mobilenhet.](../images/graph-examples/shared_device_apple_no_reset.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -293,7 +293,7 @@ CRMID: Summer, ECID: 222, IDFA: A-A-A
 
 Följande är ett flerpersonsdiagram där en Apple-enhet delas av två personer. I det här scenariot återställs ECID, men IDFA är fortfarande detsamma.
 
-![Ett flerpersonsdiagram där två användare delar en Apple-mobilenhet, men ECID återställs.](../images/graph-examples/shared_device_apple_with_reset.png)
+![Ett flerpersonsdiagram där två användare delar en Apple-mobilenhet, men ECID återställs.](../images/graph-examples/shared_device_apple_with_reset.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -311,7 +311,7 @@ CRMID: Summer, ECID: 555, IDFA: A-A-A
 
 Följande är ett grafscenario med flera personer där samma telefonnummer delas av två personer.
 
-![Ett flerpersonsdiagram där telefonnamnutrymmet inte är unikt.](../images/graph-examples/non_unique_phone.png)
+![Ett flerpersonsdiagram där telefonnamnutrymmet inte är unikt.](../images/graph-examples/non_unique_phone.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -327,13 +327,13 @@ CRMID: Summer, Phone_SHA256: 123-4567
 
 I det här exemplet är `{Phone_SHA256}` också markerat som ett unikt namnutrymme. Därför kan ett diagram inte ha mer än en identitet med namnutrymmet `{Phone_SHA256}`. I det här scenariot är `{Phone_SHA256: 765-4321}` inte länkad från `{CRMID: Summer}` och `{Email_LC_SHA256: ddeeff}` eftersom det är den äldre länken,
 
-![Ett flerpersonsdiagram där Phone_SHA256 är unikt.](../images/graph-examples/unique_phone.png)
+![Ett flerpersonsdiagram där Phone_SHA256 är unikt.](../images/graph-examples/unique_phone.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 >[!TAB Flerpersonsdiagram: Icke-unik e-post]
 
 Följande är ett flerpersonsdiagram där e-post delas av två personer.
 
-![Ett flerpersonsdiagram där e-post inte är unik](../images/graph-examples/non_unique_email.png)
+![Ett flerpersonsdiagram där e-post inte är unikt](../images/graph-examples/non_unique_email.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -409,13 +409,13 @@ I den här konfigurationen definieras den primära identiteten så här:
 
 Följande är ett enpersonsdiagram med ett enda CRMID och flera inloggnings-ID:n.
 
-![Ett diagramscenario som innehåller ett enda CRMID och flera användar-ID:n.](../images/graph-examples/single_crmid.png)
+![Ett diagramscenario som innehåller ett enda CRMID och flera inloggnings-ID:n.](../images/graph-examples/single_crmid.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 >[!TAB Scenario med flera personer: delad enhet]
 
 Följande är ett flerpersonsdiagram där en enhet delas av två personer. I det här scenariot är `{ECID:111}` länkad till både `{loginID:ID_A}` och `{loginID:ID_C}` och den äldre etablerade länken för `{ECID:111, loginID:ID_A}` tas bort.
 
-![Ett flerpersonsscenario för delade enheter.](../images/graph-examples/single_crmid_shared_device.png)
+![Ett flerpersonsscenario för delade enheter.](../images/graph-examples/single_crmid_shared_device.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -433,7 +433,7 @@ loginID: ID_C, ECID: 111
 
 Följande är ett flerpersonsdiagram som innehåller felaktiga data. I det här scenariot är `{loginID:ID_D}` felaktigt länkad till två olika användare och länken med den äldre tidsstämpeln tas bort, till förmån för den senast upprättade länken.
 
-![Ett flerpersonsdiagram med felaktiga data.](../images/graph-examples/single_crmid_bad_data.png)
+![Ett flerpersonsdiagram med felaktiga data.](../images/graph-examples/single_crmid_bad_data.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -451,7 +451,7 @@ CRMID: Tom, loginID: ID_D
 
 I följande diagram simuleras ett &quot;farligt&quot; loginID-scenario. I det här exemplet är två olika loginID bundna till samma ECID. `{loginID:ID_C}` är dock inte länkad till CRMID. Det finns därför inget sätt för identitetstjänsten att upptäcka att dessa två loginID representerar två olika enheter.
 
-![Ett farligt loginID-scenario.](../images/graph-examples/dangling_example.png)
+![Ett farligt loginID-scenario.](../images/graph-examples/dangling_example.png "Ett farligt loginID-scenario."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -529,13 +529,13 @@ I den här konfigurationen definieras den primära identiteten så här:
 
 Följande är ett exempel på två enpersonsdiagram som har ett CRMID och flera loginID:n.
 
-![Ett enpersonsdiagram som innehåller ett CRMID och flera användar-ID](../images/graph-examples/complex_single_person.png)
+![Ett enpersonsdiagram som innehåller ett CRMID och flera inloggnings-ID.](../images/graph-examples/complex_single_person.png "Ett enpersonsdiagram som innehåller ett CRMID och flera användar-ID."){zoomable="yes"}
 
 >[!TAB Flerpersonsdiagram: delad enhet 1]
 
 Följande är ett flerpersonsscenario för delade enheter där `{ECID:111}` är länkat till både `{loginID:ID_A}` och `{loginID:ID_C}`. I det här fallet tas de äldre etablerade länkarna bort till förmån för de senast etablerade länkarna.
 
-![Ett diagram över delade enheter med flera personer.](../images/graph-examples/complex_shared_device_one.png)
+![Ett diagram över delade enheter med flera personer.](../images/graph-examples/complex_shared_device_one.png "Ett diagram över delade enheter med flera personer."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -555,7 +555,7 @@ loginID: ID_C, ECID: 111
 
 I det här fallet skickas både loginID och CRMID som upplevelsehändelser i stället för att bara skicka in inloggnings-ID.
 
-![Ett grafscenario för delade enheter med flera personer där både loginID och CRMID skickas som upplevelsehändelser.](../images/graph-examples/complex_shared_device_two.png)
+![Ett grafscenario för delade enheter med flera personer där både loginID och CRMID skickas som upplevelsehändelser.](../images/graph-examples/complex_shared_device_two.png "Ett grafscenario för delade enheter med flera personer där både loginID och CRMID skickas som upplevelsehändelser."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -576,7 +576,7 @@ loginID: ID_A, ECID: 111
 
 I det här scenariot är `{loginID:ID_C}` länkad till både `{CRMID:Tom}` och `{CRMID:Summer}` och anses därför vara felaktiga data eftersom idealiska diagramscenarier inte ska länka samma inloggnings-ID till två olika användare. I det här fallet tas de äldre etablerade länkarna bort till förmån för de länkar som upprättats nyligen.
 
-![Ett flerpersonsdiagram som innehåller felaktiga inloggningsdata.](../images/graph-examples/complex_bad_data.png)
+![Ett flerpersonsdiagram som innehåller felaktiga inloggningsdata.](../images/graph-examples/complex_bad_data.png "Ett flerpersonsdiagram som innehåller felaktiga inloggningsdata."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -596,7 +596,7 @@ CRMID: Tom, loginID: ID_C
 
 I det här scenariot länkas ett icke-unikt e-postmeddelande med två olika CRMID:n, och därför tas de äldre etablerade länkarna bort till förmån för de senast etablerade länkarna.
 
-![Ett flerpersonsdiagram som innehåller en icke-unik e-postadress.](../images/graph-examples/complex_non_unique_email.png)
+![Ett diagram för flera personer som innehåller en icke-unik e-postadress.](../images/graph-examples/complex_non_unique_email.png "Ett flerpersonsdiagram som innehåller en icke-unik e-postadress."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -616,7 +616,7 @@ CRMID: Summer, Email_LC_SHA256: aabbcc
 
 I det här scenariot länkas ett icke-unikt telefonnummer med två olika CRMID, de äldre etablerade länkarna tas bort till förmån för de senast etablerade länkarna.
 
-![Ett diagram för flera personer som innehåller ett icke-unikt telefonnummer.](../images/graph-examples/complex_non_unique_phone.png)
+![Ett diagram för flera personer som innehåller ett icke-unikt telefonnummer.](../images/graph-examples/complex_non_unique_phone.png "Ett diagram för flera personer som innehåller ett icke-unikt telefonnummer."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -693,13 +693,13 @@ I den här konfigurationen definieras den primära identiteten så här:
 
 Följande är ett exempel på ett idealiskt enpersonsdiagram.
 
-![Ett exempel på ett idealiskt enpersonsdiagram med ett e-postnamnutrymme.](../images/graph-examples/single_person_email.png)
+![Ett exempel på ett idealiskt enpersonsdiagram med ett e-postnamnutrymme.](../images/graph-examples/single_person_email.png "Ett exempel på ett idealiskt enpersonsdiagram med ett e-postnamnutrymme."){zoomable="yes"}
 
 >[!TAB Flerpersonsdiagram]
 
 Följande är ett exempel på ett flerpersonsdiagram där två registrerade användare surfar med samma enhet.
 
-![Ett flerpersonsdiagram där två registrerade användare surfar med samma enhet.](../images/graph-examples/two_registered_users.png)
+![Ett grafscenario med flera personer där två registrerade användare surfar med samma enhet.](../images/graph-examples/two_registered_users.png "Ett flerpersonsdiagram där två registrerade användare surfar med samma enhet."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -712,7 +712,7 @@ CRMID: Summer, ECID: 111
 
 I det här scenariot delar en registrerad användare och en gästanvändare samma enhet.
 
-![Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet.](../images/graph-examples/one_guest.png)
+![Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet.](../images/graph-examples/one_guest.png "Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -724,7 +724,7 @@ Email: summer@acme.com, ECID: 111
 
 I det här scenariot delar en registrerad användare och en gästanvändare en enhet. Ett implementeringsfel inträffar emellertid eftersom CRMID inte innehåller något motsvarande e-postnamnutrymme. I det här scenariot är Tom den registrerade användaren och Sommaren är gästanvändaren. Till skillnad från det föregående scenariot sammanfogas de två enheterna eftersom det inte finns några gemensamma e-postnamnutrymmen för de två personenheterna.
 
-![Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet, men ett implementeringsfel inträffar eftersom CRMID inte innehåller något e-postnamnutrymme.](../images/graph-examples/no_email_namespace_in_crmid.png)
+![Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet, men ett implementeringsfel inträffar eftersom CRMID inte innehåller något e-postnamnutrymme.](../images/graph-examples/no_email_namespace_in_crmid.png "Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet, men ett implementeringsfel inträffar eftersom CRMID inte innehåller något e-postnamnutrymme."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -735,7 +735,7 @@ Email: summer@acme.com, ECID: 111
 
 I det här fallet delar två gästanvändare samma enhet.
 
-![Ett grafscenario med flera personer där två gästanvändare delar samma enhet.](../images/graph-examples/two_guests.png)
+![Ett grafscenario med flera personer där två gästanvändare delar samma enhet.](../images/graph-examples/two_guests.png){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 
@@ -746,7 +746,7 @@ Email: summer@acme.com, ECID: 111
 
 I det här scenariot checkar en gästanvändare ut ett objekt och registrerar sedan med samma enhet.
 
-![Ett diagramscenario där en gästanvändare köper och registrerar sig för ett konto.](../images/graph-examples/guest_purchase.png)
+![Ett diagramscenario där en gästanvändare köper och registrerar sig för ett konto.](../images/graph-examples/guest_purchase.png "Ett diagramscenario där en gästanvändare köper och registrerar sig för ett konto."){zoomable="yes"}
 
 **Indata för diagramsimuleringshändelser**
 

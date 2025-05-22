@@ -2,9 +2,9 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 6efd9c8fd1acce08027905f2e3c005a88a429a12
+source-git-commit: 808562ac7b3bf91c4d133bc1d2106cfc3b0c9c84
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '628'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Kontakta Adobe-kontoteamet om du har en befintlig sandlåda som kräver att komprimerade diagram inte är komprimerade (&quot;fasta&quot;) när du har aktiverat identitetsinställningarna.
+>[!DNL Identity Graph Linking Rules] är nu allmänt tillgänglig. Kontakta Adobe Support om du har en befintlig sandlåda som kräver att komprimerade diagram inte är komprimerade (&quot;fasta&quot;) när du har aktiverat identitetsinställningar.
 
 Identitetsinställningar är en funktion i användargränssnittet för Adobe Experience Platform Identity Service som du kan använda för att ange unika namnutrymmen och konfigurera namnområdesprioritet.
 

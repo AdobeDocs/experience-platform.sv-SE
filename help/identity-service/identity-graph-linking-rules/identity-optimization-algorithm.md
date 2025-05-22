@@ -2,9 +2,9 @@
 title: Optimeringsalgoritm för identitet
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: 0587ddf1012adb13e6d399953839735f73fe151e
 workflow-type: tm+mt
-source-wordcount: '1527'
+source-wordcount: '1580'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Namnutrymmen i identitetstjänsten har en implicit relativ prioritetsordning. T�
 
 Om du vill ha mer information om namnområdesprioritet och dess fullständiga funktioner och användningsområden läser du [prioritetsguiden för namnutrymme](./namespace-priority.md).
 
-![diagramlager och namnområdesprioritet](../images/namespace-priority/graph-layers.png)
+![Prioriteten för diagramlager och namnutrymmen.](../images/namespace-priority/graph-layers.png "Prioriteten för diagramlager och namnutrymmen."){zoomable="yes"}
 
 ## Process {#process}
 
@@ -68,7 +68,7 @@ När den unika namnutrymmesbegränsningen bryts kommer identitetsoptimeringsalgo
 * Diagrammet återskapas baserat på ovanstående ordning. Om länken bryter mot begränsningsbegränsningen (diagrammet innehåller två eller flera identiteter med ett unikt namnutrymme) tas länkarna bort.
 * Det resulterande diagrammet kommer sedan att vara kompatibelt med den unika namnutrymmesbegränsningen som du konfigurerade.
 
-![Ett diagram som visualiserar algoritmen för identitetsoptimering.](../images/ido_algorithm.png)
+![Ett diagram som visar algoritmen för identitetsoptimering.](../images/ido_algorithm.png "Ett diagram som visualiserar algoritmen för identitetsoptimering."){zoomable="yes"}
 
 ## Exempelscenarier för algoritm för identitetsoptimering
 
@@ -95,7 +95,7 @@ I det här exemplet anges både CRMID och Email som unika namnutrymmen. På `tim
 * På grund av den unika namnutrymmeskonfigurationen som anger högst ett CRMID-namnutrymme och ett e-postnamnutrymme per diagram delas diagrammet upp i två.
    * Slutligen, eftersom John är den sista autentiserade användaren, förblir det ECID som representerar den bärbara datorn länkat till hans diagram i stället för Jane.
 
-![delat skiftläge för en enhet](../images/identity-settings/shared-device-case-one.png)
+![Fall på en delad enhet.](../images/identity-settings/shared-device-case-one.png "Fall på en delad enhet."){zoomable="yes"}
 
 >[!TAB Exempel två]
 
@@ -112,7 +112,7 @@ I det här exemplet definieras CRMID-namnutrymmet som ett unikt namnutrymme.
    * Detta resulterar i att algoritmen för identitetsoptimering tar bort den äldre länken, som i det här fallet är Jane&#39;s CRMID som länkades `timestamp=1`.
    * Även om Jane&#39;s CRMID inte längre finns som diagram i identitetstjänsten finns den fortfarande som profil i kundprofilen i realtid. Detta beror på att ett identitetsdiagram måste innehålla minst två länkade identiteter, och som ett resultat av att länkarna tas bort har Jane&#39;s CRMID inte längre någon annan identitet att länka till.
 
-![shared-device-case-two](../images/identity-settings/shared-device-case-two.png)
+![Fall två av den delade enheten.](../images/identity-settings/shared-device-case-two.png "Fall två av den delade enheten."){zoomable="yes"}
 
 >[!ENDTABS]
 
@@ -137,7 +137,7 @@ I det här exemplet är namnutrymmena CRMID och Email unika. Tänk på scenariot
 
 Med algoritmen för identitetsoptimering sprids inte felaktiga identitetsvärden som falska e-postmeddelanden eller telefonnummer över flera olika identitetsdiagram.
 
-![felaktig-e-post](../images/identity-settings/bad-email.png)
+![Ett diagram över felaktig e-postinmatning.](../images/identity-settings/bad-email.png "Ett diagram över felaktig e-postinmatning."){zoomable="yes"}
 
 ## Anonym händelseassociation
 
@@ -154,7 +154,7 @@ Se bilden nedan för att få en bättre förståelse för hur anonym händelseas
       * Före den första inloggningen före `timestamp=1`, och
       * Alla aktiviteter han eller Nora gjorde när han bläddrade anonymt mellan Kevin&#39;s första och andra inloggning.
 
-![anon-event-association](../images/identity-settings/anon-event-association.png)
+![Ett diagram över anonym händelseassociation.](../images/identity-settings/anon-event-association.png "Ett diagram över anonym händelseassociation."){zoomable="yes"}
 
 
 ## Nästa steg
