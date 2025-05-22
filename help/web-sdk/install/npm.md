@@ -2,7 +2,7 @@
 title: Installera Web SDK med NPM-paketet
 description: Använd ett NPM-paket för att installera och referera till Web SDK-biblioteket.
 exl-id: 4c70ec5d-33fd-4ef7-ba9e-5b92ff6c3e86
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 8b6c958613923127880263679ce00ce359151300
 workflow-type: tm+mt
 source-wordcount: '167'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Installera Web SDK med NPM-paketet
 
-Adobe Experience Platform Web SDK är tillgängligt som ett [NPM-paket](https://www.npmjs.com). Genom att installera NPM-paketet får du kontroll över byggprocessen för Adobe Experience Platform Web SDK JavaScript-biblioteket. NPM-paketet visar EcmaScript version 5-moduler eller EcmaScript version 2015-moduler (ES6) som ska köras i webbläsaren.
+Adobe Experience Platform Web SDK finns som [NPM-paket](https://www.npmjs.com). Genom att installera NPM-paketet får du kontroll över byggprocessen för Adobe Experience Platform Web SDK JavaScript-biblioteket. NPM-paketet visar EcmaScript version 5-moduler eller EcmaScript version 2015-moduler (ES6) som ska köras i webbläsaren.
 
 ```bash
 npm install @adobe/alloy
@@ -24,7 +24,7 @@ NPM-paketet för Adobe Experience Platform Web SDK visar en `createInstance`-fun
 ```js
 import { createInstance } from "@adobe/alloy";
 const alloy = createInstance({ name: "alloy" });
-alloy("config", { ... });
+alloy("configure", { ... });
 alloy("sendEvent", { ... });
 ```
 
@@ -37,6 +37,6 @@ alloy("sendEvent", { ... });
 ```js
 var alloyLibrary = require("@adobe/alloy");
 var alloy = alloyLibrary.createInstance({ name: "alloy" });
-alloy("config", { ... });
+alloy("configure", { ... });
 alloy("sendEvent", { ... });
 ```
