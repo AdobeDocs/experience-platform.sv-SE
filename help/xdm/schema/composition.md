@@ -163,7 +163,7 @@ Scheman består av följande formel:
 
 **Klass + schemafältgrupp&amp;stämpel;ast; = XDM-schema**
 
-&amp;ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
+&ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
 
 ### Klass {#class}
 
