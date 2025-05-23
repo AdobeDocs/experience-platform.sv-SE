@@ -3,9 +3,9 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: a2420f86e650ce1ca8a5dc01d9a29548663d3f7c
+source-git-commit: 09146fac0719b62c6c2ec1b6c3aa66cb80c1698a
 workflow-type: tm+mt
-source-wordcount: '2083'
+source-wordcount: '2781'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,14 @@ ht-degree: 0%
 # [!DNL Facebook]-anslutning
 
 ## Översikt {#overview}
+
+>[!IMPORTANT]
+>
+>* Från och med 23 maj 2025 och hela juni 2025 kan du tillfälligt se två **[!DNL Facebook Custom Audience]**-destinationskort i destinationskatalogen i upp till några timmar. Detta beror på en intern uppgradering av måltjänsten och stöd för nya fält för förbättrad målinriktning och matchning med profiler på Facebook-egenskaper. Mer information om de nya adressrelaterade fälten finns i avsnittet [identiteter som stöds](#supported-identities).
+>* Om du ser ett kort med etiketten **[!UICONTROL (New) Facebook Custom Audience]** använder du det här kortet för nya dataflöden för aktivering. Befintliga dataflöden uppdateras automatiskt, så du behöver inte göra något. Alla ändringar du gör i befintliga dataflöden under den här perioden bevaras efter uppgraderingen. När uppgraderingen är klar kommer målkortet **[!UICONTROL (New) Facebook Custom Audience]** att byta namn till **[!DNL Facebook Custom Audience]**.
+>* Om du skapar dataflöden med [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
+>   * Flödesspecifikation-id: `bb181d00-58d7-41ba-9c15-9689fdc831d3`
+>   * Anslutningsspecifikation-id: `c8b97383-2d65-4b7a-9913-db0fbfc71727`
 
 Aktivera profiler för dina [!DNL Facebook]-kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hash-kodade e-postmeddelanden.
 
@@ -42,11 +50,20 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
-| IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
-| extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
+| `GAID` | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
+| `IDFA` | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
+| `phone_sha256` | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| `email_lc_sha256` | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| `extern_id` | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
+| `gender` | Kön | Godkända värden: <ul><li>`m`för man</li><li>`f`för hona</li></ul> Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `date_of_birth` | Födelsedatum | Godkänt format: `yyyy-MM-DD`. <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `last_name` | Efternamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `first_name` | Förnamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga mellanslag. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `first_name_initial` | Första namn | Godkänt format: Endast gemener, `a-z` tecken. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `state` | Läge | Använd anSI-förkortningskoden [2 tecken ](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `city` | Ort | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga specialtecken, inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `zip` | Postnummer | Godkänt format: Gemener, inga mellanslag. För amerikanska postnummer ska du endast använda de första 5 siffrorna. Använd formatet `Area/District/Sector` för Storbritannien.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `country` | Land | Godkänt format: landskoder med två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) .  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 
 ## Målgrupper {#supported-audiences}
 
@@ -93,6 +110,12 @@ Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera 
 [!DNL Facebook] kräver att ingen personligt identifierbar information (PII) skickas i klartext. Därför kan målgrupper som är aktiverade för [!DNL Facebook] inaktiveras för *hashed*-identifierare, som e-postadresser eller telefonnummer.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
+
+## Maximera målgruppernas matchningsfrekvens {#match-rates}
+
+Om du vill uppnå de högsta målgruppsmatchningsfrekvenserna i [!DNL Facebook] rekommenderar vi att du använder målidentiteterna `phone_sha256` och `email_lc_sha256`.
+
+Dessa identifierare är de primära som används av [!DNL Facebook] för att matcha målgrupper över deras plattformar. Kontrollera att källdata är korrekt mappade till dessa målidentiteter och följer [!DNL Facebook's] hash-kraven.
 
 ## Krav för telefonnummerhashning {#phone-number-hashing-requirements}
 
