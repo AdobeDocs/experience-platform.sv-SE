@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Guide för strömningssegmentering
 description: Lär dig mer om direktuppspelningssegmentering, inklusive vad det är, hur du skapar en publik som utvärderas med direktuppspelningssegmentering och hur du visar målgrupper som skapats med direktuppspelningssegmentering.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: cd22213be0dbc2e5a076927e560f1b23b467b306
+source-git-commit: 8523ba35eab80a7496e17cb0ceb3e46a78dd6058
 workflow-type: tm+mt
-source-wordcount: '1995'
+source-wordcount: '2004'
 ht-degree: 0%
 
 ---
@@ -140,6 +140,8 @@ Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i
 
 För att kunna kombinera data från både batch- och direktuppspelningskällor måste ni separera batch- och direktuppspelningskomponenterna till separata målgrupper.
 
+### Profilattribut och upplevelsehändelse {#profile-and-event}
+
 Låt oss till exempel ta följande två exempelmålgrupper i beaktande:
 
 | Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
@@ -159,7 +161,9 @@ WHEN(<= 24 hours before now)])
 
 Den resulterande målgruppen *kommer* att utvärderas med direktuppspelningssegmentering, eftersom den utnyttjar gruppmålgruppens medlemskap genom att referera till gruppmålskomponenten.
 
-Om du vill kombinera två målgrupper med händelsedata kan du **inte** bara kombinera de två händelserna. Du måste skapa båda målgrupperna och sedan skapa en annan målgrupp som använder `inSegment` för att referera till båda dessa målgrupper.
+### Flera upplevelsehändelser {#two-events}
+
+Om du vill kombinera flera målgrupper med händelsedata kan du **inte** bara kombinera händelserna. Du måste skapa en målgrupp för varje händelse och sedan skapa en annan målgrupp som använder `inSegment` för att referera till alla målgrupper.
 
 Låt oss till exempel säga att ni har två målgrupper, med båda målgrupperna som har händelseschemadata för upplevelsehändelser:
 
