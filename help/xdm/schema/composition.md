@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Lär dig mer om XDM-scheman (Experience Data Model) och byggstenarna, principerna och de bästa sätten att komponera scheman i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dcb6770d739d0da5cfa339584a769f5311a8c7e1
 workflow-type: tm+mt
-source-wordcount: '4331'
+source-wordcount: '4308'
 ht-degree: 0%
 
 ---
@@ -55,24 +55,24 @@ Både post- och tidsseriescheman innehåller en karta över identiteter (`xdm:id
 >title="Identiteter i scheman"
 >abstract="Identiteter är nyckelfält i ett schema som kan användas för att identifiera ett ämne, till exempel en e-postadress eller ett marknadsförings-ID. Dessa fält används för att skapa identitetsdiagrammet för varje enskild person och för att skapa kundprofiler. Mer information om identiteter i scheman finns i dokumentationen."
 
-Scheman används för att importera data till Experience Platform. Dessa data kan användas för flera tjänster för att skapa en enda, enhetlig vy av en enskild enhet. Därför är det viktigt att tänka på vilka fält som kan användas för att identifiera ett ämne när du utformar scheman för kundidentiteter, oavsett varifrån uppgifterna kommer.
+Scheman definierar strukturen för data som hämtas in till Experience Platform. Dessa data möjliggör flera tjänster inom plattformen och bidrar till att skapa en enda, enhetlig bild av varje individ. När du utformar scheman bör du tänka på vilka fält som ska markeras som identiteter. De här styr hur profiler sammanfogas över datauppsättningar.
 
 Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. Vid datainförsel infogas data i dessa fält i [!UICONTROL Identity Graph] för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra Experience Platform-tjänster för att ge en sammanslagen vy över varje enskild kund.
 
-Fält som oftast markeras som [!UICONTROL Identity] är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de kan vara bra fält av typen [!UICONTROL Identity].
+Fält som oftast markeras som [!UICONTROL Identity] är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de kan vara bra fält av typen [!UICONTROL Identity].
 
-Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa den mest robusta profilen som är möjlig. Mer information om hur identitetsinformation kan hjälpa dig att leverera digitala upplevelser till dina kunder finns i [Översikt över identitetstjänsten](../../identity-service/home.md). I dokumentet om god praxis för datamodellering finns [tips om hur du använder identiteter när du skapar ett schema](./best-practices.md#data-validation-fields).
+Mer information om hur identitetsinformation kan hjälpa dig att leverera digitala upplevelser till dina kunder finns i [Översikt över identitetstjänsten](../../identity-service/home.md). I dokumentet om god praxis för datamodellering finns [tips om hur du använder identiteter när du skapar ett schema](./best-practices.md#data-validation-fields).
 
 Det finns två sätt att skicka identitetsdata till Experience Platform:
 
 1. Lägga till identitetsbeskrivningar i enskilda fält, antingen via [Schemaredigerarens användargränssnitt](../ui/fields/identity.md) eller med [API:t för schemaregister](../api/descriptors.md#create)
-1. Använda ett [`identityMap`-fält ](#identityMap)
+2. Använda ett [`identityMap`-fält ](#identityMap)
 
 #### `identityMap` {#identityMap}
 
 `identityMap` är ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Det här fältet kan användas för att ange identitetsinformation för dina scheman, i stället för att definiera identitetsvärden inom strukturen för själva schemat.
 
-Den största nackdelen med att använda `identityMap` är att identiteter bäddas in i data och blir mindre synliga som ett resultat av detta. Om du importerar rådata bör du definiera enskilda identitetsfält i den faktiska schemastrukturen i stället.
+Den största nackdelen med att använda `identityMap` är att identitetsvärden är kapslade och kan vara svårare att arbeta med i verktyg som förväntar sig identitetsfält på den översta nivån, som segmentbyggaren eller vissa integreringar från tredje part.
 
 >[!NOTE]
 >
@@ -129,13 +129,13 @@ I följande tabell visas vilka ändringar som stöds vid redigering av scheman, 
 
 | Ändringar som stöds | Brytande ändringar (stöds inte) |
 | --- | --- |
-| <ul><li>Lägga till nya fält i resursen</li><li>Göra ett obligatoriskt fält valfritt</li><li>Nya obligatoriska fält*</li><li>Ändra resursens visningsnamn och beskrivning</li><li>Aktiverar schemats deltagande i profilen</li></ul> | <ul><li>Tar bort tidigare definierade fält</li><li>Byta namn på eller definiera om befintliga fält</li><li>Ta bort eller begränsa fältvärden som tidigare stöds</li><li>Flytta befintliga fält till en annan plats i trädet</li><li>Tar bort schemat</li><li>Inaktivera schemat från att delta i profilen</li></ul> |
+| <ul><li>Lägga till nya fält i resursen</li><li>Göra ett obligatoriskt fält valfritt</li><li>Nya obligatoriska fält*</li><li>Ändra resursens visningsnamn och beskrivning</li><li>Aktiverar schemats deltagande i profilen</li></ul> | <ul><li>Tar bort tidigare definierade fält</li><li>Byta namn på eller definiera om befintliga fält</li><li>Ta bort eller begränsa fältvärden som tidigare stöds</li><li>Flytta befintliga fält till en annan plats i trädet</li><li>Tar bort schemat</li><li>Inaktivera schemat från att delta i profilen</li><li>Ändra det primära identitetsfältet i ett schema som är aktiverat för profilen och har inkapslade data</li></ul> |
 
 \**Läs avsnittet nedan om du vill veta mer om [hur du ställer in nya obligatoriska fält](#post-ingestion-required-fields).*
 
 ### Obligatoriska fält
 
-Enskilda schemafält kan [markeras som obligatoriska](../ui/fields/required.md), vilket innebär att alla inkapslade poster måste innehålla data i dessa fält för att validera. Om du till exempel anger ett schemats primära identitetsfält som obligatoriskt kan du se till att alla inkapslade poster deltar i kundprofilen i realtid. Om du anger ett tidsstämpelfält som obligatoriskt ser du dessutom till att alla händelser i tidsserien bevaras kronologiskt.
+Enskilda schemafält kan [markeras som obligatoriska](../ui/fields/required.md), vilket innebär att alla inkapslade poster måste innehålla data i dessa fält för att validera. Om du till exempel anger ett schemats primära identitetsfält som obligatoriskt kan du se till att alla inkapslade poster deltar i kundprofilen i realtid. Om du anger ett tidsstämpelfält som obligatoriskt ser du till att alla händelser i tidsserien bevaras kronologiskt.
 
 >[!IMPORTANT]
 >
@@ -163,7 +163,7 @@ Scheman består av följande formel:
 
 **Klass + schemafältgrupp&amp;stämpel;ast; = XDM-schema**
 
-&ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
+&amp;ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
 
 ### Klass {#class}
 

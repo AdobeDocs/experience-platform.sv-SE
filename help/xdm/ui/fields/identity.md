@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i Experience Platform användargränssnitt.
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 3570197ca6cff95368b4facb034386e793033fe2
 workflow-type: tm+mt
-source-wordcount: '644'
+source-wordcount: '657'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringen
 
 >[!IMPORTANT]
 >
->Om ett primärt identitetsfält redan är inställt kan du ändra det primära identitetsfältet i ditt schema genom att följa stegen ovan. Du måste dock inaktivera och sedan återaktivera alla associerade datauppsättningar i profilen för att ändringen ska börja gälla.
+>När ett schema har aktiverats för användning i kundprofilen i realtid och data har importerats kan **du inte ändra det primära identitetsfältet**. Om du försöker göra det resulterar det i ett valideringsfel. Om du behöver använda en annan primär identitet måste du skapa ett nytt schema och en ny datauppsättning med den uppdaterade identitetskonfigurationen.
 
 ![](../../images/ui/fields/special/identity-config.png)
 
@@ -63,4 +63,3 @@ Om du har definierat en primär identitet för schemat kan du nu [aktivera schem
 I den här handboken beskrivs hur du definierar ett identitetsfält i användargränssnittet. När data importeras med det här schemat uppdateras dina kundidentitetsdiagram så att de återspeglar schemats identitetsfält. Se guiden för [identitetsdiagramvisningsprogrammet](../../../identity-service/features/identity-graph-viewer.md) om du vill veta mer om hur du utforskar organisationens privata diagram i användargränssnittet.
 
 Mer information om hur du definierar andra XDM-fälttyper i [!DNL Schema Editor] finns i översikten [Definiera fält i användargränssnittet](./overview.md#special).
-
