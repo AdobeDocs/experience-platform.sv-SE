@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 62e481925df33ddfae6f630c900febbb027a2059
+source-git-commit: 0553b8bc62d54c3ab98c60b16840ce730d9ed5c0
 workflow-type: tm+mt
 source-wordcount: '2338'
 ht-degree: 0%
@@ -176,7 +176,7 @@ Fliken **[!UICONTROL Log]** innehåller en lista med frågor som tidigare har k�
 | **[!UICONTROL Client]** | Klienten som används för frågan. |
 | **[!UICONTROL Created by]** | Namnet på den person som skapade frågan. |
 
->
+>[!NOTE]
 >
 >Välj pennikonen (![En pennikon.](/help/images/icons/edit.png)) från valfri rad i frågeloggen för att navigera till frågeredigeraren. Frågan är ifylld i förväg för smidig redigering.
 
