@@ -2,9 +2,9 @@
 title: Konfigurera hemligheter i händelsevidarebefordran
 description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 592acdd45b1db5da95430b4e707cd9a2c18c1645
+source-git-commit: 374c140a5db678adfa2e038b69478ad8c7f8dc95
 workflow-type: tm+mt
-source-wordcount: '2228'
+source-wordcount: '2363'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,7 @@ Följande hemliga typer stöds för närvarande:
 
 | Hemlig typ | Beskrivning |
 | --- | --- |
+| [!UICONTROL Amazon OAuth 2] | Aktiverar säker autentisering med [!DNL Amazon] tjänster. Systemet lagrar token på ett säkert sätt och hanterar förnyelsen vid angivna intervall. |
 | [!UICONTROL Google OAuth 2] | Innehåller flera attribut som stöder autentiseringsspecifikationen [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) som kan användas i API:t [Google Ads ](https://developers.google.com/google-ads/api/docs/oauth/overview) och [API:t Pub/Sub](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL HTTP] | Innehåller två strängattribut för ett användarnamn respektive ett lösenord. |
 | [!UICONTROL [!DNL LinkedIn] OAuth 2] | Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
@@ -44,7 +45,7 @@ Du bör också ha en fungerande förståelse för publiceringsflödet för tagga
 >id="platform_eventforwarding_secrets_environments"
 >title="Hemligheter"
 >abstract="För att en hemlighet ska kunna användas av händelsevidarebefordran måste den tilldelas en befintlig miljö. Om du inte har några miljöer skapade för egenskapen för vidarebefordring av händelser måste du konfigurera dem innan du fortsätter."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=sv-SE" text="Miljööversikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" text="Miljööversikt"
 
 Om du vill skapa en hemlighet väljer du **[!UICONTROL Event Forwarding]** i den vänstra navigeringen och öppnar sedan den händelsevidarebefordringsegenskap som du vill lägga till hemligheten under. Välj sedan **[!UICONTROL Secrets]** i den vänstra navigeringen, följt av **[!UICONTROL Create New Secret]**.
 
@@ -78,6 +79,7 @@ Därifrån skiljer sig stegen för att skapa hemligheten åt beroende på vilken
 * [[!UICONTROL OAuth 2 JWT]](#oauth2jwt)
 * [[!UICONTROL Google OAuth 2]](#google-oauth2)
 * [[!UICONTROL [!DNL LinkedIn] OAuth 2]](#linkedin-oauth2)
+* [[!UICONTROL [!DNL Amazon] OAuth 2]](#amazon-oauth2)
 
 ### [!UICONTROL Token] {#token}
 
@@ -186,7 +188,7 @@ Om du vill skapa en [!DNL LinkedIn] OAuth 2-hemlighet väljer du **[!UICONTROL [
 
 En pover visas som talar om att hemligheten måste auktoriseras manuellt via [!DNL LinkedIn]. Välj **[!UICONTROL Create & Authorize secret with [!DNL LinkedIn]]** om du vill fortsätta.
 
-Markering av auktoriseringsppover för ![[!DNL LinkedIn] [!UICONTROL Create & Authorize secret with [!DNL LinkedIn]].](../../images/ui/event-forwarding/secrets/linkedin-authorization.png)
+![LänkadIn-auktoriseringsleverantör markerar knappen &quot;Skapa och auktorisera hemlighet med LinkedIn&quot;.](../../images/ui/event-forwarding/secrets/linkedin-authorization.png)
 
 En dialogruta visas där du uppmanas att ange dina [!DNL LinkedIn]-inloggningsuppgifter. Följ instruktionerna för att ge händelsevidarebefordringsåtkomst till dina data.
 
@@ -209,6 +211,22 @@ Du omdirigeras till fliken [!UICONTROL Secrets]. Hemligheterna på den här sida
 ![Flikmarkeringen [!UICONTROL Secret] [!UICONTROL Auth Needed] för [!DNL LinkedIn]-hemligheten.](../../images/ui/event-forwarding/secrets/linkedin-reauthorization.png)
 
 En dialogruta visas där du uppmanas att ange dina [!DNL LinkedIn]-inloggningsuppgifter. Följ anvisningarna för att auktorisera din hemlighet igen.
+
+### [!UICONTROL [!DNL Amazon] OAuth 2] {#amazon-oauth2}
+
+Om du vill skapa en [!DNL Amazon] OAuth 2-hemlighet väljer du **[!UICONTROL [!DNL Amazon] OAuth 2]** i listrutan **[!UICONTROL Type]**. Välj sedan **[!UICONTROL Create Secret]**.
+
+![Fliken [!UICONTROL Create Secret] med fältet [!UICONTROL Type] markerat.](../../images/ui/event-forwarding/secrets/amazon-oauth.png)
+
+En pover visas som talar om att hemligheten måste auktoriseras manuellt via [!DNL Amazon]. Välj **[!UICONTROL Create & Authorize secret with [!DNL Amazon]]** om du vill fortsätta.
+
+![Amazon-auktoriseringsleverantör markerar knappen &quot;Skapa och auktorisera hemlighet med Amazon&quot;.](../../images/ui/event-forwarding/secrets/amazon-authorization.png)
+
+En dialogruta visas där du uppmanas att ange dina [!DNL Amazon]-inloggningsuppgifter. Följ instruktionerna för att ge händelsevidarebefordringsåtkomst till dina data.
+
+När auktoriseringsprocessen är klar återgår du till fliken **[!UICONTROL Secrets]** där du kan se din nyligen skapade hemlighet. Här ser du hemlighetens status och utgångsdatum.
+
+![Fliken [!UICONTROL Secret] som markerar den nyligen skapade hemligheten.](../../images/ui/event-forwarding/secrets/amazon-new-secret.png)
 
 ## Redigera en hemlighet
 

@@ -1,10 +1,10 @@
 ---
 keywords: tillägg för händelsevidarebefordring;twitter;tillägg för vidarebefordran av twitter-händelse
-title: Vidarekoppling av twitter-händelse
-description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du infoga händelser i Twitter efter dina affärsbehov.
+title: Twitter-tillägg för händelsevidarebefordran
+description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du importera händelser till Twitter efter dina affärsbehov.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: 54c240e5-6160-4654-ac5b-6afa8d99a765
-source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
+source-git-commit: 374c140a5db678adfa2e038b69478ad8c7f8dc95
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 0%
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 [[!DNL Twitter]](https://twitter.com/i/flow/login) är en onlinetjänst för sociala medier och sociala nätverk där användarna kan publicera och interagera med 280-teckenlånga meddelanden som kallas tweets. Användare kan interagera med Twitter via en webbläsare, mobil klientprogramvara eller programmatiskt via sina [API:er](https://developer.twitter.com/en/docs/twitter-api)
 
-Med [!DNL Twitter] API:t [ för webbkonverteringar ](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
+Med tillägget [!DNL Twitter] API för webbkonverteringar [ för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
 
 [!DNL Twitter] kräver [OAuth 1.0](https://developer.twitter.com/en/docs/authentication/oauth-1-0a) för autentisering med API:t [!DNL Twitter] [!DNL Web Conversions].
 
 ## Användningsfall
 
-Det här tillägget bör användas om du vill använda data från Edge Network i [!DNL Twitter] för att utnyttja dess funktioner för kundanalys och målinriktning.
+Det här tillägget bör användas om du vill använda data från Edge Network i [!DNL Twitter] för att utnyttja dess funktioner för kundanalys och kundanpassning.
 
 Ta till exempel ett marknadsföringsteam i en organisation. Teamet samlar in händelsedata om användarinteraktion från sin webbplats som händelsedata från sin webbplats och läser in dem till [!DNL Twitter] med det här tillägget för händelsevidarebefordran.
 
@@ -45,7 +45,7 @@ Följande indata krävs för att ansluta Experience Platform till [!DNL Twitter]
 
 | Nyckeltyp | Beskrivning |
 | --- | --- |
-| Konsumentnyckel | &#x200B; Programmets API-nyckel för åtkomst till API:t [!DNL Twitter]. Mer information finns i [!DNL Twitter]-dokumentationen om [api-nycklar och hemligheter](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret). | |
+| Konsumentnyckel | &#x200B; Programmets API-nyckel för åtkomst till API:t [!DNL Twitter]. Mer information finns i [!DNL Twitter]-dokumentationen om [api-nycklar och hemligheter](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret). |
 | Konsumenthemlighet | API-hemligheten ger din app åtkomst till API:t [!DNL Twitter]. Mer information finns i [!DNL Twitter]-dokumentationen om [api-nycklar och hemligheter](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret). |
 | Tokenhemlighet | Den token-hemlighet som inte förfaller för din app, som används för autentisering till [!DNL Twitter] API via OAuth. Mer information finns i [!DNL Twitter]-dokumentationen om att [hämta åtkomsttoken för användning](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens). |
 | Åtkomsttoken | Åtkomsttoken som inte förfaller för din app, som används för autentisering till API:t [!DNL Twitter] via OAuth. Mer information finns i [!DNL Twitter]-dokumentationen om att [hämta åtkomsttoken för användning](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens). |
