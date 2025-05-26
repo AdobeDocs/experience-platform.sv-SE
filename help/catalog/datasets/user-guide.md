@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: f66e85ee5fb3fdaf7036b131f9689082d9d96127
+source-git-commit: 132024313dbe0d83c9af22d30927a01e32c9d94f
 workflow-type: tm+mt
-source-wordcount: '4014'
+source-wordcount: '4012'
 ht-degree: 0%
 
 ---
@@ -180,7 +180,7 @@ Hantera inställningar för förfallodatum och kvarhållande för datauppsättni
 
 >[!IMPORTANT]
 >
->Om du vill tillämpa eller uppdatera kvarhållningsregler för en ExperienceEvent-datauppsättning måste din användarroll inkludera behörigheten **Hantera datamängder**. Denna rollbaserade åtkomstkontroll säkerställer att bara behöriga användare kan ändra inställningarna för datalagring.
+>Om du vill tillämpa eller uppdatera kvarhållningsregler för en ExperienceEvent-datauppsättning måste din användarroll inkludera behörigheten **[!UICONTROL Manage datasets]**. Denna rollbaserade åtkomstkontroll säkerställer att bara behöriga användare kan ändra inställningarna för datalagring.
 >
 >Mer information om hur du tilldelar behörigheter i Adobe Experience Platform finns i [Översikt över åtkomstkontroll](../../access-control/home.md#platform-permissions).
 
