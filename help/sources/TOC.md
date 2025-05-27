@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 7b1dbec504ba11983958c3452878cf410b2a490c
+source-git-commit: dbcfd7bfbf2f2d8268d3d8b5748f75ec9f186597
 workflow-type: tm+mt
-source-wordcount: '1075'
+source-wordcount: '1078'
 ht-degree: 7%
 
 ---
@@ -242,6 +242,7 @@ ht-degree: 7%
    - [Importera krypterade data](tutorials/api/encrypt-data.md)
    - [Spara ett dataflöde som ett utkast](tutorials/api/draft.md)
    - [Tillämpa åtkomstetiketter på ett dataflöde](tutorials/api/labels.md)
+   - [Använd privata slutpunkter](tutorials/api/private-link.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källanslutning {#create}
       - Adobe-program {#adobe-applications}
@@ -405,4 +406,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
