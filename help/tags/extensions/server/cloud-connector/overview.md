@@ -2,10 +2,10 @@
 title: Översikt över Cloud Connector-tillägg
 description: Lär dig mer om tillägget för händelsevidarebefordran i Cloud Connector i Adobe Experience Platform.
 exl-id: f3713652-ac32-4171-8dda-127c8c235849
-source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
+source-git-commit: 3b9ff1d41c698feadd0215ab562f87747aaa91a1
 workflow-type: tm+mt
-source-wordcount: '1344'
-ht-degree: 0%
+source-wordcount: '1680'
+ht-degree: 2%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Med tillägget för händelsevidarebefordran i Cloud Connector kan du skapa anpassade HTTP-begäranden för att skicka data till ett mål eller hämta data från ett mål. Cloud Connector-tillägget fungerar som att ha Postman på Adobe Experience Platform Edge Network och kan användas för att skicka data till en slutpunkt som ännu inte har något dedikerat tillägg.
 
@@ -29,7 +29,7 @@ Om du vill välja vilken typ av begäran som krävs av slutpunkten väljer du l�
 
 | Metod | Beskrivning |
 |---|---|
-| [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) | Begär en representation av angiven resurs. Begäranden som använder GET bör bara hämta data. |
+| [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) | Begär en representation av angiven resurs. Begäranden som använder GET bör endast hämta data. |
 | [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) | Skickar en entitet till den angivna resursen, vilket ofta orsakar en ändring av tillstånd eller biverkningar på servern. |
 | [PUT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT) | Ersätter alla aktuella representationer av målresursen med den begärda nyttolasten. |
 | [PATCH](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH) | Tillämpar partiella ändringar på en resurs. |
@@ -125,3 +125,41 @@ arc.ruleStash.[EXTENSION-NAME-HERE].responses.[RESPONSE-KEY-HERE]
 
 arc.ruleStash.adobe-cloud-connector.reponses.productDetails 
 ```
+
+## Använd säkerhet för lager för ömsesidig transport [!DNL mTLS] i reglerna för händelsespridning {#mtls-rules}
+
+Certifikatet [!DNL mTLS] är en digital autentiseringsuppgift som bevisar identiteten på en server eller klient i säker kommunikation. När du använder tjänst-API:t [!DNL mTLS] hjälper dessa certifikat dig att verifiera och kryptera din interaktion med Adobe Experience Platform Event Forwarding. Denna process skyddar inte bara dina data, utan säkerställer även att alla anslutningar kommer från en betrodd partner.
+
+### Installera Adobe Cloud Connector-tillägget {#install}
+
+Om du vill installera tillägget [skapar du en egenskap för vidarebefordring av händelser](../../../ui/event-forwarding/overview.md#properties) eller väljer en befintlig egenskap att redigera i stället.
+
+Välj **[!UICONTROL Extensions]** i den vänstra panelen. På fliken **[!UICONTROL Catalog]** väljer du **[!UICONTROL Adobe Cloud Connector]** Real-Time Conversions API-kort och sedan **[!UICONTROL Install]**.
+
+![Tilläggskatalogen som visar installationen av [!DNL Adobe Cloud Connector] tilläggskort.](../../../images/extensions/server/cloud-connector/install-extension.png)
+
+### Konfigurera en regel för vidarebefordran av händelser {#rule}
+
+>[!NOTE]
+>
+>Om du vill konfigurera en regel att använda [!DNL mTLS] måste du ha Adobe Cloud Connector version 1.2.4 eller senare.
+
+När du har installerat tillägget kan du skapa en regel för vidarebefordran av händelser som använder [!DNL mTLS] och lägga till den i biblioteket.
+
+Skapa en ny händelsevidarebefordring av [regel](../../../ui/managing-resources/rules.md) i din händelsevidarebefordringsegenskap. Ange ett namn för regeln, lägg sedan till en ny åtgärd under **[!UICONTROL Actions]** och ange tillägget till **[!UICONTROL Adobe Cloud Connector]**. Välj sedan **[!UICONTROL Make Fetch Call]** för **[!UICONTROL Action Type]**.
+
+![Vyn för egenskapsregler för vidarebefordran av händelser, med de fält som krävs för att lägga till en åtgärdskonfiguration för vidarebefordring av händelser, markerad.](../../../images/extensions/server/cloud-connector/event-action.png)
+
+När du har gjort ditt val visas ytterligare kontroller för att konfigurera metoder och mål för [!DNL mTLS]-begäran. Om du vill aktivera användning av aktiva certifikat i miljöer väljer du **[!UICONTROL Enable in [!DNL mTLS]]** och sedan **[!UICONTROL Keep Changes]** för att spara regeln.
+
+![Vyn för egenskapsregler för vidarebefordran av händelser, med de extra kontrollfälten och med ändringarna markerade.](../../../images/extensions/server/cloud-connector/save-rule.png)
+
+Din nya regel är nu klar. Välj **[!UICONTROL Save to Library]** och välj sedan **[!UICONTROL Build]** för att distribuera den. [!DNL mTLS]-begäran är nu aktiv och tillgänglig i ditt bibliotek.
+
+![Regeln för vidarebefordran av händelser med Spara i bibliotek och bygge är markerad.](../../../images/extensions/server/cloud-connector/save-build.png)
+
+## Nästa steg
+
+I den här guiden beskrivs hur du konfigurerar mTLS-regler vid vidarebefordran av händelser. Mer information om hur du konfigurerar mTLS för en miljö finns i [Ömsesidig säkerhet för transportlager [!DNL mTLS] guide](../cloud-connector/mtls.md).
+
+Mer information om funktioner för vidarebefordran av händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
