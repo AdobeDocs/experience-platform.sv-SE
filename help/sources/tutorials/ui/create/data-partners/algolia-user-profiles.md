@@ -1,52 +1,54 @@
 ---
 title: Anslut användarprofiler för Algoliet till Experience Platform med användargränssnittet
-description: Lär dig hur du ansluter användare av Algoliet till Experience Platform
+description: Lär dig hur du ansluter data för Algolias användarmetod till Adobe Experience Platform
 exl-id: d4c936a7-4983-4a12-a813-03b672116e44
-source-git-commit: 9bc7d372eba9ffcfe64f90d2d58a532411e5f1ce
+source-git-commit: 2ba1f82fbefd9a7af7a1cf305ccafcb2c7814d7b
 workflow-type: tm+mt
-source-wordcount: '1106'
+source-wordcount: '1156'
 ht-degree: 0%
 
 ---
 
-# Infoga [!DNL Algolia User Profiles]-data till Experience Platform med användargränssnittet
 
-I den här självstudiekursen får du lära dig hur du importerar data från ditt [!DNL Algolia User Profiles]-konto till Adobe Experience Platform med användargränssnittet.
+# Infoga [!DNL Algolia User Profiles]-data i Experience Platform med användargränssnittet
+
+I den här självstudiekursen får du hjälp med att importera data från ditt [!DNL Algolia User Profiles]-konto till Adobe Experience Platform via användargränssnittet.
 
 ## Kom igång
 
 >[!IMPORTANT]
 >
->Innan du börjar måste du slutföra de nödvändiga stegen som beskrivs i [[!DNL Algolia User Profiles] översikten](../../../../connectors/data-partners/algolia-user-profiles.md#prerequisites).
+>Innan du börjar kontrollerar du att du har slutfört de krav som beskrivs i [[!DNL Algolia User Profiles] översikten](../../../../connectors/data-partners/algolia-user-profiles.md#prerequisites).
 
-Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
+I den här självstudiekursen förutsätts det att du är bekant med följande Experience Platform-komponenter:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+
+   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om schemakomposition, inklusive viktiga principer och bästa praxis.
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): En enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [Källor](../../../../home.md): Importera data från olika källor och använd Experience Platform tjänster för att strukturera, etikettera och förbättra data.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL Algolia] till Experience Platform måste du ange värden för följande autentiseringsuppgifter:
+Ange följande autentiseringsuppgifter för att ansluta [!DNL Algolia] till Adobe Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| Program-ID | Program-ID:t [!DNL Algolia] är en unik identifierare som tilldelats ditt [!DNL Algolia]-konto. |
-| API-nyckel | API-nyckeln [!DNL Algolia] är en autentiseringsuppgift som används för att autentisera och auktorisera API-begäranden till [!DNL Algolia]s sök- och indexeringstjänster. |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| Program-ID | Den unika identifierare som tilldelats ditt [!DNL Algolia]-konto. |
+| API-nyckel | Autentiseringsuppgifter för autentisering och auktorisering av API-begäranden till [!DNL Algolia]-tjänster. |
 
-Mer information om dessa autentiseringsuppgifter finns i [!DNL Algolia] [autentiseringsdokumentationen](https://www.algolia.com/doc/tools/cli/get-started/authentication/).
+Mer information finns i [!DNL Algolia] [autentiseringsdokumentationen](https://www.algolia.com/doc/tools/cli/get-started/authentication/).
 
 ## Anslut ditt [!DNL Algolia]-konto
 
-I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Du kan välja lämplig kategori på panelen *[!UICONTROL Categories]*. Du kan också använda sökfältet för att navigera till den specifika källa som du vill använda.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att öppna arbetsytan i *[!UICONTROL Sources]*. Använd panelen *[!UICONTROL Categories]* eller sökfältet för att hitta den källa du vill använda.
 
-Om du vill använda [!DNL Algolia] väljer du **[!UICONTROL Algolia]**-källkortet under *[!UICONTROL Data & Identity Partners]* och sedan **[!UICONTROL Set up]**.
+Om du vill ansluta [!DNL Algolia] väljer du **[!UICONTROL Algolia]**-källkortet under *[!UICONTROL Data & Identity Partners]* och väljer **[!UICONTROL Set up]**.
 
 >[!TIP]
 >
->Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
+> Om en källa ännu inte har något autentiserat konto visas alternativet **[!UICONTROL Set up]**. När den har autentiserats ändras den till **[!UICONTROL Add data]**.
 
 ![Källkatalogen med källan för användarprofiler i Algoliet har valts.](../../../../images/tutorials/create/algolia/user-profiles/catalog.png)
 
@@ -54,48 +56,76 @@ Om du vill använda [!DNL Algolia] väljer du **[!UICONTROL Algolia]**-källkort
 
 ### Använd ett befintligt konto
 
-Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det [!DNL Algolia User Profiles]-konto som du vill använda. Välj **[!UICONTROL Next]** om du vill fortsätta.
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och väljer det [!DNL Algolia User Profiles]-konto som du vill använda. Välj sedan **[!UICONTROL Next]**.
 
 ![Det befintliga kontogränssnittet.](../../../../images/tutorials/create/algolia/user-profiles/existing-account.png)
 
 ### Skapa ett nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och autentiseringsuppgifter för [!DNL Algolia]. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]**, anger ett namn, en valfri beskrivning och dina [!DNL Algolia]-inloggningsuppgifter. Välj **[!UICONTROL Connect to source]** och vänta på att anslutningen ska upprättas.
 
 ![Det nya kontogränssnittet.](../../../../images/tutorials/create/algolia/user-profiles/new-account.png)
 
 ## Lägg till data
 
-När du har skapat ditt [!DNL Algolia User Profiles]-konto visas steget **[!UICONTROL Add data]** som ger dig ett gränssnitt där du kan utforska dina [!DNL Algolia]-användarprofiler som du vill ta med till Experience Platform.
+När ditt [!DNL Algolia User Profiles]-konto har skapats visas steget **[!UICONTROL Add data]**. Använd den för att välja och förhandsgranska användarprofildata för konsumtion.
 
-* Den vänstra delen av gränssnittet är att du kan ange valfria **[!UICONTROL Indices]**- och **[!UICONTROL Affinity(s)]**-fält.
-* I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader med användarprofiler.
+* Ange valfria **[!UICONTROL Indices]** och **[!UICONTROL Affinity(s)]** till vänster.
+* Till höger kan du förhandsgranska upp till 100 rader med användarprofiler.
 
-När du är klar med att markera och förhandsgranska dina data för konsumtion väljer du **[!UICONTROL Next]**.
+Välj **[!UICONTROL Next]** när du är klar.
 
 ![Arbetsflödets valda datagrupp.](../../../../images/tutorials/create/algolia/user-profiles/select-data.png)
 
 ## Ange information om dataflöde
 
-Om du använder en befintlig datauppsättning väljer du en datauppsättning som är associerad med ett schema som använder fältgruppen [!DNL Algolia Profile].
+Om du använder en befintlig datauppsättning väljer du en som är associerad med ett schema som innehåller fältgruppen [!DNL Algolia Profile]. Kontrollera att fältet [!DNL Algolia User Token] använder identitetsnamnrymden [!DNL Algolia User Token].  Om [!DNL Algolia User Token] inte har skapats eller tilldelats för tillfället visas instruktioner nedan.
 
-![Det befintliga datauppsättningssteget i källarbetsflödet.](../../../../images/tutorials/create/algolia/user-profiles/dataflow-detail-existing-dataset.png)
+![Det befintliga datauppsättningssteget.](../../../../images/tutorials/create/algolia/user-profiles/dataflow-detail-existing-dataset.png)
 
-Om du skapar en ny datauppsättning väljer du ett schema som använder fältgruppen [!DNL Algolia Profile] som krävs i mappningssteget.
+Om du skapar en ny datauppsättning väljer du ett schema med fältgruppen [!DNL Algolia Profile].
 
-![Det nya datauppsättningssteget i källarbetsflödet.](../../../../images/tutorials/create/algolia/user-profiles/dataflow-detail-new-dataset.png)
+![Det nya datauppsättningssteget.](../../../../images/tutorials/create/algolia/user-profiles/dataflow-detail-new-dataset.png)
+
+### Skapa [!DNL Algolia User Token]-ID-namnområde
+
+Du måste skapa identitetsnamnrymden [!DNL Algolia User Token] om den inte redan finns i din organisation.
+
+Använd den vänstra navigeringen och välj **[!UICONTROL Identities]** för att komma åt arbetsytan för användargränssnittet i [ identitetstjänsten](../../../../../identity-service/home.md) och välj sedan **[!UICONTROL Create identity namespace]**.
+
+Ange sedan **[!UICONTROL Display Name]** och **[!UICONTROL Identity Symbol]** för ditt anpassade namnutrymme. Under det här steget måste du även konfigurera typen av namnutrymme. När du är klar väljer du **[!UICONTROL Create]**.
+
+![Skapa namnområdesskärm för identitet.](../../../../images/tutorials/create/algolia/user-profiles/aep-identity-inputs.png)
+
+| Konfigurera anpassat namnutrymme | Värde |
+| --- | --- |
+| **[!UICONTROL Display Name]** | [!DNL Algolia User Token] |
+| **[!UICONTROL Identity Symbol]** | [!DNL AlgoliaUserToken] |
+| **[!UICONTROL Select a type]** | [!DNL Cookie ID] |
+
+När namnutrymmet har lagts till visas det i listan. Du kan nu använda den i ditt schema.
+
+![Algoliets identitetsnamnområde har skapats.](../../../../images/tutorials/create/algolia/user-profiles/aep-algolia-user-token-identity.png)
+
+### Använd namnutrymmet i ditt schema
+
+Använd den vänstra navigeringen och välj **[!UICONTROL Schemas]** för att komma åt arbetsytan för användargränssnittet [ Scheman ](../../../../../xdm/ui/overview.md). Använd schemaarbetsytan för att skapa eller uppdatera ett schema med fältgruppen [!DNL Algolia Profile Details]. Navigera sedan till fältet **[!UICONTROL User Token]** och använd högerspåret för att markera rutan **[!UICONTROL Identity]**. Använd dessutom indatarutan för att definiera identitetsnamnrymden [!DNL Algolia User Token]. När du är klar väljer du **[!UICONTROL Save]**.
+
+![Ange identitet i fält.](../../../../images/tutorials/create/algolia/user-profiles/set-set-identity-on-field.png)
+
+När fältet **[!UICONTROL User Token]** har tilldelats identitetsnamnutrymmet [!DNL Algolia User Token] visas identiteten i användarprofilen för alla profiler.
+
+![Användarprofilgränssnittet.](../../../../images/tutorials/create/algolia/user-profiles/user-profile.png)
 
 ## Mappa datafält till ett XDM-schema
 
-Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan data importeras till Experience Platform.  Mer information finns i [mappningsguiden i användargränssnittet](../../../../../data-prep/ui/mapping.md).
+Använd mappningsgränssnittet för att mappa källdata till schemafält. Mer information finns i [mappningsguiden](../../../../../data-prep/ui/mapping.md).
 
-![Mappningssteget för källarbetsflödet.](../../../../images/tutorials/create/algolia/user-profiles/mapping.png)
+![Mappningssteget.](../../../../images/tutorials/create/algolia/user-profiles/mapping.png)
 
 ## Schemalägg körning av inmatning
 
 Använd sedan schemaläggningsgränssnittet för att definiera inmatningsschemat för dataflödet.
-
-<!-- The Scheduling step allows for configuration of the data/time to execute the [!DNL Algolia Uer Profiles] Source connector. There is configuration to backfill the data from [!DNL Algolia] which will pull all the profiles from the source system.  If the source is scheduled, then it will retrieve modified profiles from the [!DNL Algolia] based on the configured time interval. -->
 
 ![Schemaläggningssteget för källarbetsflödet.](../../../../images/tutorials/create/algolia/user-profiles/scheduling.png)
 
