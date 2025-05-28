@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform – maj 2025
 description: Versionsinformation för maj 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: cf88ed1082085fac28553dcc7c7be27c517adb22
+source-git-commit: 6ab9302a40547349c8d0390baafd8591ed6859e1
 workflow-type: tm+mt
-source-wordcount: '1360'
-ht-degree: 81%
+source-wordcount: '1522'
+ht-degree: 77%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 81%
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
+- [AI-assistenten](#ai-assistant)
 - [Katalogtjänst](#catalog-service)
 - [Dataförberedelse](#data-prep)
 - [Mål](#destinations)
@@ -33,6 +34,18 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
+
+## AI-assistenten {#ai-assistant}
+
+AI-assistenten i Adobe Experience Platform är en konversationsupplevelse som du kan använda för att påskynda dina arbetsflöden i Adobe-programmen. Du kan använda AI-assistenten för att lära dig mer om produkter, felsöka problem eller söka efter information och få insikter om användningen. AI-assistenten stöder Experience Platform, plattformen för kunddata i realtid, Adobe Journey Optimizer och Customer Journey Analytics.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Allmän tillgänglighet för Product Support Agent | Nu kan du använda Product Support Agent i AI Assistant för att felsöka utan att behöva lämna dina arbetsflöden. Supportadministratörer i din organisation kan nu använda Product Support Agent för att skapa kundsupportärenden, med kontext- och sessionsinformation från din interaktion med AI Assistant. <br><br>Åtkomst till Product Support Agent är tillgänglig till och med 30 november 2025. Du måste kontakta din Adobe-kontorepresentant för att få licens till Product Support Agent och fortsätta använda funktionen efter detta datum. Mer information finns i dokumentationen för [Product Support Agent](../../ai-assistant/new-features/customer-support.md). |
+
+Mer information finns i [översikten över AI-assistenten](../../ai-assistant/landing.md).
 
 ## Katalogtjänst {#catalog-service}
 
