@@ -2,9 +2,9 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 808562ac7b3bf91c4d133bc1d2106cfc3b0c9c84
+source-git-commit: 38d331bd9265f25a3aebdcbd20ae5fc30a93e960
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '647'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Identity Graph Linking Rules] är nu allmänt tillgänglig. Kontakta Adobe Support om du har en befintlig sandlåda som kräver att komprimerade diagram inte är komprimerade (&quot;fasta&quot;) när du har aktiverat identitetsinställningar.
+>[!DNL Identity Graph Linking Rules] är nu allmänt tillgänglig. Kontakta Adobe Account Team eller Adobe Support om du har en befintlig sandlåda som kräver att komprimerade diagram inte är komprimerade (&quot;fasta&quot;) när du har aktiverat identitetsinställningarna.
 
 Identitetsinställningar är en funktion i användargränssnittet för Adobe Experience Platform Identity Service som du kan använda för att ange unika namnutrymmen och konfigurera namnområdesprioritet.
 
@@ -82,6 +82,8 @@ Här måste du bekräfta följande innan du fortsätter till det sista steget:
 >* Det sista steget är ett annat bekräftelsemeddelande som anger att befintliga diagram bara påverkas av diagramalgoritmen **om diagrammen uppdateras efter att du har sparat dina inställningar** och att den primära identiteten för händelsefragment i kundprofilen i realtid inte uppdateras även efter att namnområdesprioriteten har ändrats.
 >
 >* Det tar upp till **24 timmar** innan de nya eller uppdaterade inställningarna börjar gälla. Bekräfta genom att ange namnet på din sandlåda och sedan välja **[!UICONTROL Confirm]**.
+>
+>* Inga ändringar görs i dina data förrän du sparar dina identitetsinställningar.
 
 ![Bekräftelsefönstret som visar en varning om en fördröjning på sex timmar innan konfigurationer bearbetas.](../images/rules/complete.png)
 
