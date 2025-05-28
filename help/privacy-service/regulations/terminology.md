@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hemmabas;populära ämnen;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;overview;Regulation;Regulation;Regulations;Regulations;Regulations;privacy;Privacy;
+keywords: Experience Platform;hem;populära ämnen;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;overview;overview;Regulation;Regulations;Regulations;Regulations;privacy;Privacy;Privacy;
 solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: 16a3900e7cb54ae1525c11c9316b3928e5f43096
+source-git-commit: ccde37961bd98275030db98440800925d3a6703e
 workflow-type: tm+mt
-source-wordcount: '2404'
+source-wordcount: '2630'
 ht-degree: 0%
 
 ---
@@ -87,11 +87,11 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## I
 
-**Identity Management Services (IMS)**: Adobe implementeringen av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Integrera IMS med programmet eller tjänsten Adobe så att användarna kan logga in och komma åt Adobes tjänster. Användare kan logga in direkt med Renga (identitetstjänstleverantören i Adobe) eller logga in via en betrodd autentiseringsdomän från tredje part (till exempel [!DNL Google], [!DNL Facebook] eller en företags-/organisations-LDAP).
+**Identity Management Services (IMS)**: Adobe-implementeringen av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Integrera IMS med dina Adobe-program eller -tjänster så att dina användare kan logga in och komma åt Adobes tjänster. Användare kan logga in direkt med Renga (Adobe identitetstjänstleverantör) eller logga in via en betrodd autentiseringsdomän från tredje part (till exempel [!DNL Google], [!DNL Facebook] eller ett företags-/organisations-LDAP).
 
 **Implicit samtycke**: Kallas även för otvetydigt samtycke. Implicit samtycke avser samtycke som inte uttryckligen gavs av den registrerade, men som ändå är entydigt till sin natur. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet räcker den positiva åtgärden att ange sin e-postadress för att betraktas som implicit samtycke.
 
-**IMS-organisations-ID**: Refererar till en Adobe-auktoriseringstoken för autentisering av tjänst-till-tjänst, som inte kräver användarinloggning. Den utfärdas till en IMS-klient och har ingen associerad användare. En IMS-klient behöver en tjänsttoken för att auktorisera begäranden i bakkanalen mellan tjänster. (Termen &quot;systemtoken&quot; används ibland för att beteckna tjänsttoken.)
+**IMS-organisation-ID**: Refererar till en Adobe-auktoriseringstoken för autentisering av tjänst-till-tjänst, som inte kräver användarinloggning. Den utfärdas till en IMS-klient och har ingen associerad användare. En IMS-klient behöver en tjänsttoken för att auktorisera begäranden i bakkanalen mellan tjänster. (Termen &quot;systemtoken&quot; används ibland för att beteckna tjänsttoken.)
 
 **[!DNL Iowa Consumer Data Protection Act]**: En statlig integritetslagstiftning som ger personer bosatta i Iowa rätt att få tillgång till, ta bort och avanmäla försäljning av sina personuppgifter. ICDPA gäller företag som behandlar data för mer än 100 000 invånare i Iowa eller som får över 50 % av intäkterna från dataförsäljningen. Avsevärda undantag är ideella organisationer och utbildningsinstitutioner. Lagen ger företag en 90-dagars botemedel för att korrigera överträdelser innan påföljder utdöms.
 
@@ -108,6 +108,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 **Huvudanläggning**: Den plats inom unionen där de viktigaste besluten om databehandling fattas, med avseende på behandlaren.
 
 **MHMDAa**: [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true) förbättrar konsumenternas sekretesspolicy när det gäller hälsodata. Det föreskriver att personuppgifter, konsumentens samtycke och raderingsrättigheter ska offentliggöras, och förbjuder försäljning av hälsodata utan tillstånd. Lagen gör det dessutom olagligt att använda geofencing runt vårdinrättningar.
+
+**[!DNL Minnesota Consumer Data Privacy Act]** (MCDPA): Från och med den 31 juli 2025 ger MCDPA de boende i Minnesota rätt att få tillgång till, korrigera, ta bort och få sina personuppgifter, samt avanmäla sig från försäljning av data, riktad reklam och viss profilering. Det gäller företag som är verksamma i eller riktar sig till Minnesota och som bearbetar data från fler än 100 000 konsumenter per år (exklusive data som bara betalas), eller 25 000+ konsumenter om mer än 25 % av intäkterna kommer från dataförsäljningen. De enheter som omfattas av avtalet måste vidta rimliga åtgärder för datasäkerhet och genomföra riskbedömningar.Minnesota Attorney General tillämpar lagen och kan utfärda böter på upp till 7 500 dollar per överträdelse. Företagen har dock fram till den 31 januari 2026 på sig att åtgärda eventuella överträdelser innan straffavgifter tillämpas.
 
 **[!DNL Montana Consumer Data Privacy Act]**: Den här lagen ger personer bosatta i Montana rätt att få tillgång till, korrigera, ta bort och begära kopior av sina personuppgifter. MCDPA gäller företag som behandlar uppgifter för över 50 000 Montana-konsumenter och betonar skyddet av känsliga personuppgifter, såsom biometrisk och genetisk information. Det genomsyrar genomskinlighet kring datainsamling, delning och försäljning.
 
@@ -169,6 +171,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 ## T
 
 **TDPSA**: Texas Data Privacy and Security Act (TDPSA) är en omfattande lagstiftning som skyddar de Texas-studenters personuppgifter. Det ger individer rätt att få tillgång till, korrigera, radera och få kopior av sina data och att avanmäla sig från försäljning av data och riktad reklam. Företag som bryter mot denna lagstiftning kan drabbas av ekonomiska påföljder.
+
+**[!DNL Tennessee Information Protection Act (TIPA)]**: Från och med 1 juli 2025 ger TIPA de boende rätt att få tillgång till, korrigera, ta bort och få sina personuppgifter. De kan också avanmäla sig från försäljning av data, riktad annonsering och profilering som används för att fatta beslut som ger juridiska eller liknande betydande effekter. Det gäller företag med en årsomsättning på över 25 miljoner dollar som bearbetar data från 175 000 eller fler konsumenter, eller 25 000 om över hälften av intäkterna kommer från försäljning av personuppgifter. Företag som omfattas måste vidta rimliga säkerhetsåtgärder och genomföra bedömningar av uppgiftsskydd för vissa högriskbehandlingsverksamheter. Tennessee Advokat General verkställer lagen, med böter på upp till 7 500 dollar per överträdelse. Företag har 60 dagar på sig att åtgärda överträdelser innan de drabbas av påföljder, men avsiktliga överträdelser eller kunskapsbrott kan leda till trefaldiga skador.
 
 **Trepartsmöten**: Trepartsmöten är informella förhandlingar mellan Europeiska kommissionen, Europaparlamentet och Europeiska unionens råd. Dessa förhandlingar hålls vanligen efter den första behandlingen av förslaget till lagstiftning för att snabbare komma överens om en kompromisstext som skall antas.
 komma överens om antagandet av en kompromisstext snabbare.

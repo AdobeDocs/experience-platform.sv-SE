@@ -2,17 +2,23 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Sekretessjobb API-slutpunkt
-description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
+description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service API.
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 26a50f21c1ebebf485eaf62712bd02de3406cceb
+source-git-commit: ec99b2a8f772e77d0a3957fc35b8cea112b91cba
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1861'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för sekretessjobb
+
+>[!IMPORTANT]
+>
+>Privacy Service ändrar sina `regulation_type`-värden för att stödja det ökande antalet amerikanska sekretesslagar. Använd de nya värdena som innehåller lägesförkortningar (till exempel `ucpa_ut_usa`) från och med **12 juni 2025**. De äldre värdena (till exempel `ucpa_usa`) slutar fungera efter **28 juli 2025**.
+>
+>Uppdatera integreringarna före den här tidsgränsen för att undvika att begäranden misslyckas.
 
 Det här dokumentet beskriver hur du arbetar med sekretessjobb med API-anrop. Det omfattar särskilt användningen av slutpunkten `/job` i API:t [!DNL Privacy Service]. Innan du läser den här guiden bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
@@ -22,11 +28,11 @@ Det här dokumentet beskriver hur du arbetar med sekretessjobb med API-anrop. De
 
 ## Visa alla jobb {#list}
 
-Du kan visa en lista över alla tillgängliga sekretessjobb inom din organisation genom att göra en GET-förfrågan till slutpunkten `/jobs`.
+Du kan visa en lista över alla tillgängliga sekretessjobb inom din organisation genom att göra en GET-begäran till slutpunkten `/jobs`.
 
 **API-format**
 
-Det här frågeformatet använder en `regulation`-frågeparameter på `/jobs`-slutpunkten, och börjar därför med ett frågetecken (`?`) enligt nedan. När resurser listas returneras upp till 1 000 jobb och Privacy Servicen numreras. Använd andra frågeparametrar (`page`, `size` och datumfilter) för att filtrera svaret. Du kan separera flera parametrar med et-tecken (`&`).
+Det här frågeformatet använder en `regulation`-frågeparameter på `/jobs`-slutpunkten, och börjar därför med ett frågetecken (`?`) enligt nedan. När resurser listas returneras upp till 1 000 jobb och svaret numreras. Använd andra frågeparametrar (`page`, `size` och datumfilter) för att filtrera svaret. Du kan separera flera parametrar med et-tecken (`&`).
 
 >[!TIP]
 >
@@ -42,7 +48,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`dpdpa`</li><li>`fdbr_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_usa`</li><li>`mhmda_usa`</li><li>`ndpa_usa`</li><li>`nhpa_usa`</li><li>`njdpa_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_usa`</li><li>`pdpa_tha`</li><li>`ql25`</li><li>`tdpsa_usa`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>Se översikten över [regler som stöds](../regulations/overview.md) för mer information om sekretessreglerna som ovanstående värden representerar. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_co_usa`</li><li>`cpra_ca_usa`</li><li>`ctdpa_ct_usa`</li><li>`dpdpa`</li><li>`fdbr_fl_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_ia_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_mn_usa`</li><li>`mcdpa_mt_usa`</li><li>`mhmda_wa_usa`</li><li>`ndpa_ne_usa`</li><li>`nhpa_nh_usa`</li><li>`njdpa_nj_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_or_usa`</li><li>`pdpa_tha`</li><li>`ql25`</li><li>`tdpsa_tx_usa`</li><li>`tipa_tn_usa`</li><li>`ucpa_ut_usa`</li><li>`vcdpa_va_usa`</li></ul><br>Se översikten över [regler som stöds](../regulations/overview.md) för mer information om sekretessreglerna som ovanstående värden representerar. |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
 | `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `100` och maxvärdet är `1000`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
 | `{status}` | Standardbeteendet är att inkludera alla statusvärden. Om du anger en statustyp returnerar begäran endast sekretessjobb som matchar den statustypen. Godkända värden är: <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
@@ -76,15 +82,15 @@ Om du vill hämta nästa resultatuppsättning i ett sidnumrerat svar måste du g
 
 >[!IMPORTANT]
 >
->Privacy Service är endast avsedd för den registrerade och för förfrågningar om konsumenträttigheter. All annan användning av Privacy Service för datarensning eller underhåll stöds inte eller tillåts inte. Adobe har en rättslig skyldighet att uppfylla dem i tid. Därför är lasttestning inte tillåtet på Privacy Service eftersom det är en produktionsmiljö och skapar en onödig eftersläpning av giltiga sekretessbegäranden.
+>Privacy Service är endast avsett för den registrerade och för förfrågningar om konsumenträttigheter. All annan användning av Privacy Service för datarensning eller datareferenser stöds inte eller tillåts inte. Adobe har en rättslig skyldighet att uppfylla dem i tid. Därför är lasttestning inte tillåtet på Privacy Service eftersom det är en produktionsmiljö och skapar en onödig eftersläpning av giltiga sekretessbegäranden.
 >
->Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten. Användare som råkar missbruka systemet kommer att ha åtkomst till tjänsten inaktiverad. Därefter kommer ett möte att hållas med dem för att diskutera deras åtgärder och hur Privacy Servicen kan användas.
+>Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten. Användare som råkar missbruka systemet kommer att ha åtkomst till tjänsten inaktiverad. Därefter kommer ett möte att hållas med dem för att diskutera hur Privacy Service kan användas.
 
-Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-förfrågan till slutpunkten `/jobs`.
+Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-begäran till slutpunkten `/jobs`.
 
 >[!NOTE]
 >
->Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade. Mer information om vilka identifierare som krävs för dina program finns i guiden för [Privacy Service och Experience Cloud ](../experience-cloud-apps.md). Mer allmän vägledning om hur du avgör vilka ID:n som ska skickas till [!DNL Privacy Service] finns i dokumentet om [identitetsdata i sekretessförfrågningar](../identity-data.md).
+>Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade. Mer information om vilka identifierare som krävs för dina program finns i guiden för [Privacy Service- och Experience Cloud-program](../experience-cloud-apps.md) . Mer allmän vägledning om hur du avgör vilka ID:n som ska skickas till [!DNL Privacy Service] finns i dokumentet om [identitetsdata i sekretessförfrågningar](../identity-data.md).
 
 API:t [!DNL Privacy Service] har stöd för två typer av jobbförfrågningar för personliga data:
 
@@ -234,7 +240,7 @@ När du har skickat jobbförfrågan kan du fortsätta till nästa steg i [kontro
 
 ## Kontrollera status för ett jobb {#check-status}
 
-Du kan hämta information om ett specifikt jobb, till exempel dess aktuella bearbetningsstatus, genom att ta med det jobbets `jobId` i sökvägen för en GET-förfrågan till slutpunkten `/jobs`.
+Du kan hämta information om ett specifikt jobb, till exempel dess aktuella bearbetningsstatus, genom att ta med det jobbets `jobId` i sökvägen till en GET-begäran till slutpunkten `/jobs`.
 
 >[!IMPORTANT]
 >
@@ -369,4 +375,4 @@ I följande tabell visas olika möjliga jobbstatuskategorier och deras motsvaran
 
 ## Nästa steg
 
-Du kan nu skapa och övervaka sekretessjobb med API:t [!DNL Privacy Service]. Mer information om hur du utför samma uppgifter med användargränssnittet finns i [Privacy Servicens användargränssnittsöversikt](../ui/overview.md).
+Du kan nu skapa och övervaka sekretessjobb med API:t [!DNL Privacy Service]. Mer information om hur du utför samma uppgifter med användargränssnittet finns i [Privacy Service-användargränssnittet - översikt](../ui/overview.md).
