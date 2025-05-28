@@ -171,5 +171,5 @@ Mer information om hur du felsöker implementeringen med verktyget för felsökn
 
 - [[!DNL Algolia] API-dokumentation för insikter](https://www.algolia.com/doc/rest-api/insights/)
 - [[!DNL Algolia] Händelsedokumentation](https://www.algolia.com/doc/guides/sending-events/getting-started/)
-- [[!DNL Adobe Experience Platform] Dokumentation för vidarebefordran av händelser](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)
+- [[!DNL Adobe Experience Platform] Dokumentation för vidarebefordran av händelser](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html?lang=sv-SE)
 - [[!DNL Algolia] Översikt över AI-funktioner](https://www.algolia.com/products/ai-search/)
