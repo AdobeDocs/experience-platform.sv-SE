@@ -2,9 +2,9 @@
 title: Översikt över Cloud Connector-tillägg
 description: Lär dig mer om tillägget för händelsevidarebefordran i Cloud Connector i Adobe Experience Platform.
 exl-id: f3713652-ac32-4171-8dda-127c8c235849
-source-git-commit: 3b9ff1d41c698feadd0215ab562f87747aaa91a1
+source-git-commit: e832694fed5dbb86b5ed544473d6a79e500a6222
 workflow-type: tm+mt
-source-wordcount: '1680'
+source-wordcount: '1681'
 ht-degree: 2%
 
 ---
@@ -126,7 +126,7 @@ arc.ruleStash.[EXTENSION-NAME-HERE].responses.[RESPONSE-KEY-HERE]
 arc.ruleStash.adobe-cloud-connector.reponses.productDetails 
 ```
 
-## Använd säkerhet för lager för ömsesidig transport [!DNL mTLS] i reglerna för händelsespridning {#mtls-rules}
+## Lägg till en säkerhetsregel för lager för ömsesidig transport ([!DNL mTLS]) i biblioteket för vidarebefordran av händelser {#mtls-rules}
 
 Certifikatet [!DNL mTLS] är en digital autentiseringsuppgift som bevisar identiteten på en server eller klient i säker kommunikation. När du använder tjänst-API:t [!DNL mTLS] hjälper dessa certifikat dig att verifiera och kryptera din interaktion med Adobe Experience Platform Event Forwarding. Denna process skyddar inte bara dina data, utan säkerställer även att alla anslutningar kommer från en betrodd partner.
 
@@ -134,7 +134,7 @@ Certifikatet [!DNL mTLS] är en digital autentiseringsuppgift som bevisar identi
 
 Om du vill installera tillägget [skapar du en egenskap för vidarebefordring av händelser](../../../ui/event-forwarding/overview.md#properties) eller väljer en befintlig egenskap att redigera i stället.
 
-Välj **[!UICONTROL Extensions]** i den vänstra panelen. På fliken **[!UICONTROL Catalog]** väljer du **[!UICONTROL Adobe Cloud Connector]** Real-Time Conversions API-kort och sedan **[!UICONTROL Install]**.
+Välj **[!UICONTROL Extensions]** i den vänstra panelen. Välj **[!UICONTROL Adobe Cloud Connector]**-kortet på fliken **[!UICONTROL Catalog]** och välj sedan **[!UICONTROL Install]**.
 
 ![Tilläggskatalogen som visar installationen av [!DNL Adobe Cloud Connector] tilläggskort.](../../../images/extensions/server/cloud-connector/install-extension.png)
 
@@ -142,7 +142,7 @@ Välj **[!UICONTROL Extensions]** i den vänstra panelen. På fliken **[!UICONTR
 
 >[!NOTE]
 >
->Om du vill konfigurera en regel att använda [!DNL mTLS] måste du ha Adobe Cloud Connector version 1.2.4 eller senare.
+>Om du vill konfigurera en regel att använda [!DNL mTLS] måste du ha installerat Adobe Cloud Connector version 1.2.4 eller senare.
 
 När du har installerat tillägget kan du skapa en regel för vidarebefordran av händelser som använder [!DNL mTLS] och lägga till den i biblioteket.
 
@@ -150,7 +150,7 @@ Skapa en ny händelsevidarebefordring av [regel](../../../ui/managing-resources/
 
 ![Vyn för egenskapsregler för vidarebefordran av händelser, med de fält som krävs för att lägga till en åtgärdskonfiguration för vidarebefordring av händelser, markerad.](../../../images/extensions/server/cloud-connector/event-action.png)
 
-När du har gjort ditt val visas ytterligare kontroller för att konfigurera metoder och mål för [!DNL mTLS]-begäran. Om du vill aktivera användning av aktiva certifikat i miljöer väljer du **[!UICONTROL Enable in [!DNL mTLS]]** och sedan **[!UICONTROL Keep Changes]** för att spara regeln.
+När du har gjort ditt val visas ytterligare kontroller för att konfigurera metoden och målet för [!DNL mTLS]-begäran. Om du vill aktivera användning av aktiva certifikat i miljöer väljer du **[!UICONTROL Enable in [!DNL mTLS]]** och sedan **[!UICONTROL Keep Changes]** för att spara regeln.
 
 ![Vyn för egenskapsregler för vidarebefordran av händelser, med de extra kontrollfälten och med ändringarna markerade.](../../../images/extensions/server/cloud-connector/save-rule.png)
 
@@ -160,6 +160,6 @@ Din nya regel är nu klar. Välj **[!UICONTROL Save to Library]** och välj seda
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du konfigurerar mTLS-regler vid vidarebefordran av händelser. Mer information om hur du konfigurerar mTLS för en miljö finns i [Ömsesidig säkerhet för transportlager [!DNL mTLS] guide](../cloud-connector/mtls.md).
+I den här guiden beskrivs hur du konfigurerar mTLS-regler vid vidarebefordran av händelser. Mer information om hur du konfigurerar mTLS för en miljö finns i [guiden [!DNL mTLS] om säkerhet för transportlager ](../cloud-connector/mtls.md).
 
 Mer information om funktioner för vidarebefordran av händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).

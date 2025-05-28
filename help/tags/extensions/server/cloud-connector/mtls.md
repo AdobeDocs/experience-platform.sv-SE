@@ -1,14 +1,15 @@
 ---
 title: mTLS (Mutual Transport Layer Security) - översikt
 description: Lär dig hur du kan använda mTLS för att säkert hämta offentliga certifikat som utfärdats av Adobe för händelsevidarebefordran.
-source-git-commit: 3b9ff1d41c698feadd0215ab562f87747aaa91a1
+exl-id: e8ee8655-213d-4d2a-93d4-d62824b53b1d
+source-git-commit: ab16cc3f70ec54460c7c4834e665c828d75d4d9e
 workflow-type: tm+mt
-source-wordcount: '604'
+source-wordcount: '605'
 ht-degree: 0%
 
 ---
 
-# Översikt över säkerhet för lager för ömsesidig transport [!DNL mTLS]
+# Översikt över säkerhet för lager för ömsesidig transport ([!DNL mTLS])
 
 Bind certifikat för ömsesidigt transportskikt ([!DNL mTLS]) i [!UICONTROL Environments UI] för att ta kontroll över säkerheten för tillägget. Certifikatet [!DNL mTLS] är en digital autentiseringsuppgift som bevisar identiteten på en server eller klient i säker kommunikation. När du använder tjänst-API:t [!DNL mTLS] hjälper dessa certifikat dig att verifiera och kryptera din interaktion med Adobe Experience Platform Event Forwarding. Denna process skyddar inte bara dina data, utan säkerställer även att alla anslutningar kommer från en betrodd partner.
 
@@ -48,14 +49,14 @@ Om du vill visa certifikatinformation för en miljö väljer du fliken **[!UICON
 
 Följande certifikatinformation visas:
 
-| Miljö | Beskrivning |
+| Fältnamn | Beskrivning |
 | --- | --- |
 | Certifikat | Uppgifter om certifikatet, som omfattar<ul><li>**Namn**: Namnet på certifikatet.</li><li>**Skapad**: Datumet då certifikatet skapades.</li><li>**Status**: Certifikatets aktuella status:<ul><li>**Aktuell**: Certifikatet används aktivt.</li><li>**Föråldrad**: Certifikatet används inte men har inte gått ut ännu. Den kan fortfarande väljas för användning.</li><li>**Utgånget**: Certifikatet har upphört att gälla, är nedtonat och inte längre tillgängligt för användning.</li></ul></ul> |
 | Upphör | Det datum då certifikatet upphör att gälla. |
 | Variabelnamn | Variabelnamnet för certifikatet. |
 | Status | Certifikatets aktuella status:<ul><li>**Depolyed**: Certifikatet har distribuerats och är aktivt.</li><li>**Distribuerar**: Certifikatet distribueras.</li><li>**Behöver distribueras**: Den här statusen visas när ett föråldrat certifikat har valts.</li></ul> |
 
-![Sidan Redigera utvecklingsmiljö där [!UICONTROL Certificate] information markeras.](../../../images/extensions/server/cloud-connector/create-environment.png)
+![Sidan Redigera utvecklingsmiljö där [!UICONTROL Certificate] information markeras.](../../../images/extensions/server/cloud-connector/certificate-details.png)
 
 ### Välj och distribuera ett föråldrat certifikat {#deploy-obsolete-certificate}
 
