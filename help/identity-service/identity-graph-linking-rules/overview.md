@@ -55,7 +55,7 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-image">
                 <figure class="image x-is-16by9">
                     <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" title="Översikt över regler för länkning av identitetsdiagram" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448250/?format=jpeg&nocache=1747851655227" alt="Översikt över regler för länkning av identitetsdiagram"
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448276/?format=jpeg&nocache=1747851655227&captions=swe" alt="Översikt över regler för länkning av identitetsdiagram"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -78,7 +78,7 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-image">
                 <figure class="image x-is-16by9">
                     <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" title="Länkningsregler för identitetsdiagram - diagramsimulering" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444032/?format=jpeg&nocache=1747851655237" alt="Länkningsregler för identitetsdiagram - diagramsimulering"
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444047/?format=jpeg&nocache=1747851655237&captions=swe" alt="Länkningsregler för identitetsdiagram - diagramsimulering"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
