@@ -62,5 +62,5 @@ När du är klar med dessa steg kan supportadministratörer i din onboardorganis
 
 Titta på följande video om du vill veta mer om hur du kan använda Product Support Agent för att felsöka utan att lämna dina arbetsflöden.
 
->[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3443187?learn=on&captions=swe)
 
