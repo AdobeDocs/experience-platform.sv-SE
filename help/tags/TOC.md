@@ -338,5 +338,5 @@ ht-degree: 18%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
 
