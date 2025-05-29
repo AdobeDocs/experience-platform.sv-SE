@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: a2d93b5c13194707e8a87d633e47d0446b9afabd
+source-git-commit: 3434fd13ba4ca58f27834e75b045af079c18c64c
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '783'
 ht-degree: 18%
 
 ---
@@ -221,6 +221,8 @@ ht-degree: 18%
          * [Versionsinformation](./extensions/server/cloud-connector/release-notes.md)
       * [!DNL Adform] {#adform}
          * [Översikt](./extensions/server/adform/overview.md)
+      * [!DNL Algolia] {#algolia}
+         * [Översikt](./extensions/server/algolia/overview.md)
       * [!DNL Amazon] {#amazon}
          * [Översikt](./extensions/server/amazon/overview.md)
       * [!DNL AWS] {#aws}
@@ -336,5 +338,5 @@ ht-degree: 18%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
