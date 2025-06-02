@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 3434fd13ba4ca58f27834e75b045af079c18c64c
+source-git-commit: f038927d6a19db5e0187ccefd76d9ecc9df91b6a
 workflow-type: tm+mt
-source-wordcount: '783'
+source-wordcount: '785'
 ht-degree: 18%
 
 ---
@@ -133,6 +133,8 @@ ht-degree: 18%
       * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)
       * [AEM-resursinsikter](https://exchange.adobe.com/apps/ec/103406)
       * [Airbroms-JS-aviserare](https://exchange.adobe.com/apps/ec/103342)
+      * [!DNL Algolia] insikter {#algolia-insights}
+         * [Översikt](./extensions/client/algolia/overview.md)
       * [Amplitud](https://exchange.adobe.com/apps/ec/108010)
       * [Apollo QAX](https://exchange.adobe.com/apps/ec/105068)
       * [Awin Advertiser MasterTag](https://exchange.adobe.com/apps/ec/103176)
@@ -338,5 +340,5 @@ ht-degree: 18%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
