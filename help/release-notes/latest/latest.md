@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform – maj 2025
 description: Versionsinformation för maj 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 6ab9302a40547349c8d0390baafd8591ed6859e1
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1522'
-ht-degree: 91%
+ht-degree: 100%
 
 ---
 
@@ -43,7 +43,7 @@ AI-assistenten i Adobe Experience Platform är en konversationsupplevelse som du
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Allmän tillgänglighet för Product Support Agent | Nu kan du använda Product Support Agent i AI Assistant för att felsöka utan att behöva lämna dina arbetsflöden. Supportadministratörer i din organisation kan nu använda Product Support Agent för att skapa kundsupportärenden, med kontext- och sessionsinformation från din interaktion med AI Assistant. <br><br>Åtkomst till Product Support Agent är tillgänglig till och med 30 november 2025. Du måste kontakta din Adobe-kontorepresentant för att få licens till Product Support Agent och fortsätta använda funktionen efter detta datum. Mer information finns i dokumentationen för [Product Support Agent](../../ai-assistant/new-features/customer-support.md). |
+| Allmän tillgänglighet för Product Support Agent | Nu kan du använda Product Support Agent i AI-assistenten för att felsöka utan att lämna dina arbetsflöden. Supportadministratörer i din organisation kan nu använda Product Support Agent för att skapa kundsupportärenden med kontext- och sessionsinformation från dina interaktioner med AI-assistenten. <br><br>Åtkomst till Product Support Agent gäller till och med 30 november 2025. Du måste kontakta din Adobe-kontorepresentant för att få en licens till Product Support Agent och fortsätta använda funktionen efter detta datum. Mer information finns i dokumentationen för [Product Support Agent](../../ai-assistant/new-features/customer-support.md). |
 
 Mer information finns i [översikten över AI-assistenten](../../ai-assistant/landing.md).
 
@@ -82,7 +82,7 @@ Mer information finns i [översikten över Dataförberedelse](../../data-prep/ho
 | Funktion | Beskrivning |
 | --- | --- |
 | Uppgrading av [anpassad målgrupp för Facebook](../../destinations/catalog/social/facebook.md) och stöd för adressrelaterade identifierare | Från och med 23 maj 2025 och hela juni 2025 kan du tillfälligt se två målkort för **[!DNL Facebook Custom Audience]** i målkatalogen i upp till några timmar. Detta beror på en intern uppgradering av måltjänsten med stöd för nya fält som ger bättre målinriktning och matchning med profiler för Facebook-egenskaper. Mer information om de nya adressrelaterade fälten finns i avsnittet [identiteter som stöds](#supported-identities). <br><br>Om du ser ett kort med etiketten **[!UICONTROL (New) Facebook Custom Audience]** använder du det här kortet för nya dataflöden för aktivering. Befintliga dataflöden uppdateras automatiskt, vilket innebär att du inte behöver göra något. Alla ändringar du gör i befintliga dataflöden under den här perioden sparas efter uppgraderingen. När uppgraderingen är klar kommer målkortet **[!UICONTROL (New) Facebook Custom Audience]** att byta namn till **[!DNL Facebook Custom Audience]**. <br><br>Om du skapar dataflöden via [Flow Service-API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden: <ul><li>Flödesspecifikation-id: `bb181d00-58d7-41ba-9c15-9689fdc831d3`</li><li>Anslutningsspecifikation-id: `c8b97383-2d65-4b7a-9913-db0fbfc71727`</li></ul> |
-| Stöd för reklam-ID för mobilen för målet [Google Customer Match + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities) | Du kan nu aktivera målgrupper för [Google kundmatchning + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities) baserat på mobila annonserings-ID:n, som [!DNL GAID] och [!DNL IDFA]. |
+| Stöd för ID för mobilreklam för destinationen [Google Customer Match + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities) | Du kan nu aktivera målgrupper för [Google kundmatchning + Display &amp; Video 360](../../destinations/catalog/advertising/google-customer-match-dv360.md#supported-identities) baserat på mobila annonserings-ID:n, som [!DNL GAID] och [!DNL IDFA]. |
 | Stöd för ytterligare identifierare för [Google Kundmatchning](../../destinations/catalog/advertising/google-customer-match.md) | Destinationen för Google Kundmatchning har nu stöd för mappning av adressrelaterade fält för förbättrade matchningsfrekvenser på Googles plattform. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inget av fälten saknar data i de exporterade profilerna. <br> Google matchar inte adressen om något fält antingen är omappat eller innehåller saknade data. |
 | Kolumn med förfallodatum för konto för [Facebook](../../destinations/catalog/social/facebook.md)-anslutningar | Du kan nu se förfallodatum för token för Facebook-kontot på flikarna [Bläddra](../../destinations/ui/destinations-workspace.md#browse) och [Konton](../../destinations/ui/destinations-workspace.md#accounts). |
 | Exportera datauppsättningar som skapats med API | Nu kan du exportera datauppsättningar som skapats med API. Den tidigare begränsningen där endast datauppsättningar som skapats i användargränssnittet var tillgängliga för export har hävts. Läs mer om [export av datauppsättningar](../../destinations/ui/export-datasets.md). |
