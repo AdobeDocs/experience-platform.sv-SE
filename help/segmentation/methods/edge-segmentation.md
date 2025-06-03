@@ -2,9 +2,9 @@
 title: Edge Segmenteringshandbok
 description: Lär dig hur du använder kantsegmentering för att utvärdera målgrupper i Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: a741fdb4393863dbc011c03c733e27572da0ae6c
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1101'
 ht-degree: 0%
 
 ---
@@ -33,14 +33,13 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. | `homeAddress.country.equals("US", false)` | ![Ett exempel på ett profilattribut visas.](../images/methods/edge/profile-attribute.png) |
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/methods/edge/single-event-with-profile-attribute.png) |
 | Segmentering | En segmentdefinition som innehåller en eller flera grupp- eller kantsegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. | `inSegment("a730ed3f-119c-415b-a4ac-27c396ae2dff") and inSegment("8fbbe169-2da6-4c9d-a332-b6a6ecf559b9")` | ![Ett exempel på ett segment av segment visas.](../images/methods/edge/segment-of-segments.png) |
-| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("directMarketing.emailClicked", false)) WHEN(today), C1: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på flera händelser med ett profilattribut visas.](../images/methods/edge/multiple-events-with-profile-attribute.png) |
 
-Dessutom måste segmentdefinitionen **&#x200B;**&#x200B;vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
+Dessutom måste segmentdefinitionen **** vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
 
 En segmentdefinition är **inte** berättigad till kantsegmentering i följande scenario:
 
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment`-händelse.
-   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **&#x200B;**&#x200B;för kantsegmentering.
+   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **** för kantsegmentering.
 - I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 ## Skapa målgrupper {#create-audience}
