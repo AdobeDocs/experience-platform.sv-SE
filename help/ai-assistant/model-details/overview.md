@@ -1,29 +1,29 @@
 ---
-title: Modellkort för AI-modellgenomskinlighet i Adobe Experience Platform
-description: Läs mer om modellkort i Adobe Experience Platform.
+title: Modellinformation för AI-modellgenomskinlighet i Adobe Experience Platform
+description: Läs mer om modellinformation i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
 exl-id: 74a8ef82-cff9-4a7e-95c8-f915eb664eda
-source-git-commit: dddd699f231d54ee44b33f86a5c9e59c0aedc30c
+source-git-commit: 6623c7dad0fc4ddb7cb79e8f474b824915f130fc
 workflow-type: tm+mt
 source-wordcount: '3171'
 ht-degree: 0%
 
 ---
 
-# Modellkort för AI-modellgenomskinlighet i Adobe Experience Platform
+# Modellinformation för AI-modellgenomskinlighet i Adobe Experience Platform
 
-Ett AI-modellkort är det standardformat som AI-modellens genomskinlighet kommuniceras med. Modellkort innehåller omfattande information om den underliggande modellen som ett visst AI-verktyg bygger på. Modellkort innehåller information om t.ex. AI-verktygets syfte, utbildningsdata, prestandamått, begränsningar och etiska överväganden. Du kan använda den genomskinlighet som modellkort ger för att bättre förstå modellens funktioner och begränsningar, samt för att bättre främja en ansvarsfull och rättvis användning av AI.
+En AI-modelldetalj är det standardformat som AI-modellens genomskinlighet kommuniceras med. Modellinformationen innehåller omfattande information om den underliggande modellen som ett visst AI-verktyg bygger på. Modellinformationen innehåller information om t.ex. AI-verktygets syfte, utbildningsdata, prestandamått, begränsningar och etiska överväganden. Du kan använda den transparens som modellinformationen ger för att bättre förstå modellens funktioner och begränsningar, samt för att bättre främja en ansvarsfull och rättvis användning av AI.
 
-Modellkort är offentliga och är avsedda att förbättra både befintliga och potentiella kundinsikter om de AI-modeller som Adobe använder. Modellkort är vanligtvis statiska. Det finns dock flera aspekter av AI-modeller som kan ändras över tid, bland annat rad-, avvikelse- och andra genomskinlighetsattribut.
+Modellinformationen är offentlig och är avsedd att förbättra både befintliga och potentiella kundinsikter om de AI-modeller som Adobe använder. Modellinformationen är vanligtvis statisk. Det finns dock flera aspekter av AI-modeller som kan ändras över tid, bland annat rad-, avvikelse- och andra genomskinlighetsattribut.
 
-Läs det här dokumentet om du vill veta mer om modellkort i Adobe Experience Platform.
+Läs det här dokumentet om du vill veta mer om modellinformation i Adobe Experience Platform.
 
-## Modellkortsavsnitt {#model-card-sections}
+## Modelldetaljavsnitt {#model-detail-sections}
 
-Ett modellkort består av en mängd olika sektioner, där var och en fokuserar på en viss aspekt av AI-modellen.
+En modelldetalj består av flera olika avsnitt, där varje del fokuserar på en viss aspekt av AI-modellen.
 
-Här nedan finns en guide om de olika avsnitten i ett modellkort, inklusive information om vilka frågor de besvarar.
+Här nedan finns en guide om de olika avsnitten i en modelldetalj, inklusive information om vilka frågor de besvarar.
 
 ### Modellöversikt {#model-overview}
 

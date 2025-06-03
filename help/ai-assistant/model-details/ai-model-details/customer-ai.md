@@ -1,31 +1,32 @@
 ---
-title: Kort för AI-poängsättningsmodell för kund
+title: Information om AI-betygsmodell för kund
 description: Lär dig mer om AI-modellen som används för kundens AI.
 hide: true
 hidefromtoc: true
 exl-id: b2eeb1d2-3c2b-40a0-b5cd-91e99d99a906
-source-git-commit: dddd699f231d54ee44b33f86a5c9e59c0aedc30c
+source-git-commit: 6623c7dad0fc4ddb7cb79e8f474b824915f130fc
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
 
-# Kort för AI-poängsättningsmodell för kund
+# Information om AI-betygsmodell för kund
 
 ## Modellöversikt {#model-overview}
 
-* Kundens AI-poängsättningsmodell är utformad för att ge marknadsförare och kundinteraktionsteam åtgärdbara insikter genom att förutsäga sannolikheten för att en kund kommer att utföra en viss åtgärd, som att göra ett köp, registrera sig för en prenumeration eller engagera sig i en e-postkampanj. Tack vare resultaten kan företag optimera målgruppssegmentering och personalisera kundinteraktioner baserat på förutsedda beteenden.
-* De främsta användarna i den här modellen är marknadsförare, dataanalytiker och kundinteraktionsteam som utnyttjar [Real-Time CDP](../../../rtcdp/home.md) för att driva datadrivna marknadsföringsstrategier.
-* Den här modellen används främst för kundsegmentering, riktad marknadsföring och bortfallsprognoser. Företagen använder den här modellen för att förutsäga kundens inköpsavsikt, optimera marknadsföringskampanjer och förbättra personaliseringen. Ett e-handelsföretag kan till exempel använda modellen för att identifiera kunder med hög återgivning och erbjuda dem exklusiva erbjudanden.
-* Marknadsförare kämpar ofta med att identifiera rätt kunder för att målinrikta och optimera engagemanget. Den här modellen minskar gissningsarbetet genom att tillhandahålla en datadriven metod för kundanpassning, vilket säkerställer att marknadsföringsresurserna fördelas effektivt.
-* Modellen bör inte användas för beslutsfattande med hög risk, t.ex. bedömning av finansiella krediter, medicinsk diagnostik eller rättsliga bedömningar. Dessutom är det inte avsett att användas för att förutsäga personligt känsliga beteenden (t.ex. hälsoförhållanden, politiska preferenser) på grund av potentiella etiska frågor.
+* **Modellnamn och version**: Kundens AI-prioritetsbedömningsmodell
+* **Modellsyfte**: Modellen är utformad för att ge marknadsförare och kundinteraktionsteam åtgärdbara insikter genom att förutsäga sannolikheten för att en konsument kommer att utföra en viss åtgärd, till exempel göra ett köp, registrera sig för en prenumeration eller engagera sig i en e-postkampanj. Tack vare resultaten kan företag optimera målgruppssegmentering och personalisera konsumentinteraktioner baserat på förutsedda beteenden.
+* **Avsedda användare**: De primära användarna i den här modellen är marknadsförare, dataanalytiker och kundinteraktionsteam som utnyttjar [Real-Time CDP](../../../rtcdp/home.md) för att driva datadrivna marknadsföringsstrategier.
+* **Användningsfall**: Den här modellen används främst för konsumentsegmentering, riktad marknadsföring och bortfallsprognoser. Företagen utnyttjar den här modellen för att förutsäga kundernas inköpsavsikt, optimera marknadsföringskampanjer och förbättra personaliseringen. Ett e-handelsföretag kan till exempel använda modellen för att identifiera kunder med hög återgivning och erbjuda dem exklusiva erbjudanden.
+* **Smärta punkter**: Marknadsförare kämpar ofta med att identifiera rätt konsumenter för att målinrikta och optimera engagemanget. Den här modellen minskar gissningsarbetet genom att tillhandahålla en datadriven metod för målgruppsanpassning, vilket säkerställer att marknadsföringsresurserna fördelas effektivt.
+* **Potentiell felaktig användning**: Modellen ska inte användas för högriskfall, t.ex. finansiell kreditbedömning, medicinsk diagnostik eller juridiska bedömningar. Dessutom bör modellen inte användas för att förutsäga personligt känsliga beteenden (t.ex. hälsoförhållanden, politiska preferenser).
 
 ## Modellinformation {#model-details}
 
-* Det här är en modell för inlärningsklassificering som övervakar sannolikheten för att en händelse inträffar (inköp, bortfall, engagemang) utifrån historiska kunddata. Den har tränats med hjälp av övertoningsstartsbeslutsträd (GBDT) med logistisk regression för att modellera benägenhetspoäng.
-* Modellen behandlar kundbeteendedata, demografiska attribut och historiska interaktioner. Detta inkluderar data som besöksfrekvens på webbplatser, inköpshistorik, engagemang med marknadsföringsmejl och demografiska uppgifter.
-* Modellen ger en poäng mellan 0 och 100, där högre värden anger en större sannolikhet för den förväntade händelsen bland den poängsatta populationskohorten. Dessutom ger det funktionens prioritet och gör det möjligt för användarna att förstå vilka faktorer som påverkade förutsägelsen.
+* **Modelltyp**: Det här är en övervakad inlärningsklassificeringsmodell som förutser sannolikheten för en händelse som inträffar (till exempel köp, köp, engagemang) utifrån historiska konsumentdata. Den har tränats med hjälp av övertoningsstartsbeslutsträd (GBDT) med logistisk regression för att modellera benägenhetspoäng.
+* **Indata**: Modellen behandlar konsumentbeteendedata, demografiska attribut och historiska interaktioner. Detta inkluderar data som besöksfrekvens på webbplatser, inköpshistorik, engagemang med marknadsföringsmejl och demografiska uppgifter.
+* **Utdata**: Modellen returnerar en poäng mellan 0 och 100, där högre värden anger en större sannolikhet för den förväntade händelsen i den poängsatta populationskohorten. Dessutom ger den funktionens prioritet och gör det möjligt för marknadsförarna att förstå vilka faktorer som påverkade förutsägbarheten.
 
 **Exempelindata**
 
@@ -49,41 +50,35 @@ ht-degree: 0%
 
 ## Modellutbildning {#model-training}
 
-* Utbildningsdata för varje kund hämtas direkt från deras egna data inom Experience Platform. Detta inkluderar kundens historiska interaktioner, transaktionsregister, beteendeloggar och demografiska uppgifter som samlats in och lagrats i Experience Platform-instansen. Datauppsättningen utnyttjar kundspecifika data över den valda tidsramen och fångar upp deras unika säsongstrender och engagemangsmönster. Innan de används genomgår varje kunds datauppsättning en förbearbetning som är anpassad efter deras dataegenskaper, inklusive hantering av saknade värden, kategorisisk kodning, funktionens skalning, avkänning av tidigare versioner och funktionsteknik för att säkerställa optimal kvalitet och användbarhet för just deras användningsfall.
-* Modellen utnyttjar [!DNL LightGBM] med [!DNL GBM], optimerad för strukturerade data. Det har utbildats på historiska kundhändelsesekvenser för att identifiera prediktiva beteendemönster.
-* Modellen har utvecklats med [!DNL LightGBM] och [!DNL scikit-learn] och har tränats i Adobe AI-molninfrastruktur.
-* Datorresurserna som används för modellutbildningen är [!DNL Databricks] kluster.
+* **Utbildningsdata och förbehandling**: Utbildningsdata för varje kund hämtas direkt från deras egna data i Adobe Experience Platform. Detta omfattar kundens historiska interaktioner, transaktionsregister, beteendeloggar och demografiska uppgifter som samlats in och lagrats i Adobe Experience Platform-instansen. Datauppsättningen utnyttjar kundspecifika data över den valda tidsramen och fångar upp deras unika säsongstrender och engagemangsmönster. Innan de används genomgår varje kunds datauppsättning en förbearbetning som är anpassad efter deras dataegenskaper, inklusive hantering av saknade värden, kategorisisk kodning, funktionens skalning, avkänning av avvikelser och funktionsteknik för att säkerställa optimal kvalitet och användbarhet för det specifika användningsfallet
+* **Utbildningsspecifikationer**: Modellen utnyttjar [!DNL LightGBM] med [!DNL GBM], optimerad för strukturerade data. Det har utbildats på historiska kundhändelsesekvenser för att identifiera prediktiva beteendemönster.
+* **Utbildningsramverk**: Modellen har utvecklats med [!DNL LightGBM] och [!DNL scikit-learn] och är utbildad i Adobe AI-molninfrastruktur.
+* **Utbildningsinfrastruktur**: [!DNL Databricks] kluster.
 
 ## Modellutvärdering {#model-evaluation}
 
-* Modellens effektivitet mäts med [!DNL AUC-ROC]. Eftersom kundens AI är avsett för ett mycket brett spektrum av kundanvändningsfall är det inte känt hur stort operativsystemet är. Därför används måttet [!DNL AUC] eftersom det är oberoende av räckvidd och budget.
-* Utvärderingsdata innehåller reserverade kundposter och är förbehandlade på liknande sätt som utbildningsdata med funktionsnormalisering, kodning och rengöringssteg för att matcha förväntningarna på indataformat. När resultatfönstret har passerat kan den slutliga prestandautvärderingen utföras.
+* **Mätvärden och procedurer för utvärdering**: Modellens effektivitet mäts med [!DNL AUC-ROC]. Eftersom kundens AI är avsett för ett mycket brett spektrum av kundanvändningsfall är det inte känt hur stort operativsystemet är. Därför använder vi måttet [!DNL AUC] som är oberoende av räckvidd och budget.
+* **Utvärderingsdata och förbehandling**: Utvärderingsdata innehåller konsumentposter som är utelämnade och förbearbetas på liknande sätt som utbildningsdata med funktionsnormalisering, kodning och rengöringssteg för att matcha förväntningarna för indataformat. När resultatfönstret är passerat kan vi göra en slutlig utvärdering av prestanda.
 
 ## Modelldistribution {#model-deployment}
 
-* Modellen ligger hos Experience Platform AI-tjänster och är integrerad med olika Adobe-program. Det är tillgängligt via API-slutpunkter, vilket ger smidig åtkomst för realtidspreditioner och batchbearbetning i arbetsflöden för marknadsföring och kundengagemang.
-* Modellen övervakas kontinuerligt via modellövervakning för att se skillnaden från utbildningens uppbyggnad. Periodiska upptåg (en gång i 3 månader) körs automatiskt.
-* Modellen omskolas en gång på flera månader (den bästa en gång på 6 månader) med uppdaterade data om kundinteraktionen för att säkerställa fortsatt relevans. Regelbunden omskolning bidrar till att minska dataavdrift och säsongsrelaterade fluktuationer som kan påverka prediktiv precision.
+* **Modelldistribution**: Modellen finns på Adobe Experience Platform AI-tjänster och är integrerad med olika Adobe-program. Det är tillgängligt via API-slutpunkter, vilket ger smidig åtkomst för realtidspreditioner och batchbearbetning i arbetsflöden för marknadsföring och konsumentengagemang.
+* **Modellövervakning**: Modellen övervakas kontinuerligt via modellövervakning för att se skillnaden från utbildningens inställning. Periodiska upptåg (en gång i tre månader) körs automatiskt.
+* **Modelluppdatering**: Modellen omskolas en gång på flera månader (högst en gång på sex månader) med uppdaterade interaktionsdata för konsumenter för att säkerställa fortsatt relevans. Regelbunden omskolning bidrar till att minska dataavdrift och säsongsrelaterade fluktuationer som kan påverka prediktiv precision.
 
 ## Förklaring {#explainability}
 
-Modellen använder [!DNL SHapley Additive Explanations] (SHAP) för att kvantifiera effekten av varje indatafunktion på dess prognoser, vilket ger transparens i hur kundattribut påverkar benägenhetspoängen. SHAP-värden möjliggör både global tolkning och identifierar de mest inflytelserika faktorerna i alla prognoser, samt lokal tolkning som förklarar individuella prognoser för specifika kunder. Modellen stöder även [!DNL Local Interpretable Model-Agnostic Explanations] (LIME).
+**Modellförklaring**: Modellen använder [!DNL SHapley Additive Explanations] (SHAP) för att kvantifiera effekten av varje indatafunktion på sina prognoser, vilket ger transparens i hur konsumentattribut påverkar benägenhetspoängen. SHAP-värden möjliggör både global tolkning, och identifierar de mest inflytelserika faktorerna i alla prognoser, samt lokal tolkning som förklarar individuella prognoser för specifika konsumenter. Modellen stöder även [!DNL Local Interpretable Model-Agnostic Explanations] (LIME).
 
 ## Fairness and bias {#fairness-and-bias}
 
-* Den här modellen är utbildad i anonyma beteendedata som är kopplade till cookie-ID:n, utan tillgång till skyddade demografiska attribut som ålder, kön eller etnicitet. Det är därför inte möjligt att direkt mäta rättvisa mellan känsliga grupper. Åtgärder för att minska bias är bland annat att normalisera användaraktivitetsfrekvensen, undertrycka överdrivet dominerande funktioner och genomföra kalibreringskontroller av poäng över kohorter.
-* Modellen tar hänsyn till nybörjaravvikelser och övervakar exponeringsbias genom att utvärdera modellprognoser för randomiserad utelämningstrafik. Pågående utvärderingar finns på plats för att upptäcka och minska dubbelriktade förstärkningar och feedbackslingor under modelldriftsättningen.
-* Datauppsättningen kommer huvudsakligen från engagerande användare, vilket kan innebära en förskjutning av urvalet. För att minska detta tillämpar modellen provtagningsstrategier.
+* **Modellens rättvisa**: Den här modellen har tränats på anonyma beteendedata som är kopplade till cookie-ID:n, utan åtkomst till skyddade demografiska attribut som ålder, kön eller etnicitet. Det är därför inte möjligt att direkt mäta rättvisa mellan känsliga grupper. Åtgärder för att minska bias är bland annat att normalisera användaraktivitetsfrekvensen, undertrycka överdrivet dominerande funktioner och genomföra kalibreringskontroller av poäng över kohorter. Vi tar hänsyn till nyheten och övervakar exponeringsbias genom att utvärdera modellprognoser för randomiserad utelämningstrafik. Pågående utvärderingar finns på plats för att upptäcka och minska dubbelriktade förstärkningar och feedbackslingor under modelldriftsättningen.
+* **Databitar**: Datauppsättningen kommer huvudsakligen från användare med högt engagemang, vilket kan innebära en förskjutning av urvalet. För att minska detta tillämpar modellen provtagningsstrategier. Beroende på användningsfallet bör kunderna överväga hur potentiella avvikelser i modellutdata kan anpassas till eller påverka den avsedda tillämpningen.
 
 ## Robusitet {#robustness}
 
-Modellen håller stor generalisering till nya kundregister. Prestandan är stabil för olika kundsegment men försämras något när användarbeteendet avviker avsevärt från historiska mönster.
-
-## Sekretess och säkerhet {#privacy-and-security-considerations}
-
-* Modellen behandlar inte eller bevarar någon personligt identifierbar information och alla data som används för utbildning anonymiseras och slås samman. Den uppfyller strikta krav på efterlevnad av GDPR, CCPA och Adobe interna integritetspolicyer. Modellen innehåller olika integritetstekniker, hashning, anonymisering och tokenisering för att säkerställa integriteten.
-* Kunds-AI följer dina önskemål om samtycke. När du har [konfigurerat och aktiverat din medgivandeprincip](../../../data-governance/policies/user-guide.md#create-a-consent-policy) respekterar kundens AI de medgivandedata som samlats in från dig. Endast godkända data används för att bedöma modellen i efterföljande körningar av modellen. De nya poängen ersätter de gamla poängen och kan användas vid segmentering. Den här funktionen är för närvarande endast tillgänglig för kunder som har skölden för hälso- och sjukvård samt för kunder som har skölden för skydd av privatlivet och privatlivet.
+**Modellens tillförlitlighet**: Modellen upprätthåller stark generalisering till nya konsumentposter. Prestandan är stabil för olika konsumentsegment men försämras något när användarbeteendet avviker avsevärt från historiska mönster.
 
 ## Etiska överväganden {#ethical-considerations}
 
-Modellen skulle kunna ge upphov till partiskhet i beslutsfattandet. För att förhindra detta följer Experience Platform riktlinjer för ansvarsfull AI, som säkerställer att modellerna genomgår partiska revisioner, rimlighetstestning och mänsklig tillsyn före driftsättningen.
+**Etiska överväganden som är kopplade till modellen**: Den här modellen är avsedd för användning på marknaden, och kunderna bör iaktta större försiktighet om de tillämpar den på känsliga eller reglerade domäner som kredit eller anställning. Utdata är sannolika och härledda från beteendedata, som kan återspegla historiska eller representationsmässiga biaser. Kunderna uppmuntras att tillämpa mänsklig tillsyn. Adobe Experience Platform följer riktlinjerna för ansvarsfull AI och ser till att modellerna genomgår partiska revisioner, rimlighetstestning och mänsklig tillsyn före driftsättningen. Mer information finns i [Etiska principer för Adobe AI](https://www.adobe.com/content/dam/cc/en/ai-ethics/pdfs/Adobe-AI-Ethics-Principles.pdf?msockid=0d85c8269eb36f0801d0ddb49fd16ebc).
