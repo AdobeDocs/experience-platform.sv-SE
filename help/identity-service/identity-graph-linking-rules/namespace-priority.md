@@ -2,7 +2,7 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: c9b5de33de91b93f179b4720f692eb876e94df72
+source-git-commit: 7df0d0c7eb97760190ac8b20d1b74472b87e8b6a
 workflow-type: tm+mt
 source-wordcount: '2120'
 ht-degree: 0%
@@ -49,7 +49,7 @@ En identitet representerar ett objekt i verkligheten. Det finns tre objekt som v
 
 Personnamnutrymmen är relativt oföränderliga jämfört med maskinvaruenheter (som IDFA, GAID), som är relativt oföränderliga jämfört med webbläsare. I princip är du (människa) alltid en enda enhet som kan ha flera maskinvaruenheter (telefon, bärbar dator, surfplatta osv.) och använda flera webbläsare (Google Chrome, Safari, FireFox osv.)
 
-Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRMID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställningar bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkogenläge eller återställa cookies när som helst). I allmänhet anger **lägre kardinalitet ett namnutrymme med ett högre värde**.
+Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRMID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställningar bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkogenläge eller återställa cookies när som helst). I allmänhet anger **lägre kardinalitet ett namnutrymme med högre prioritet**.
 
 ## Validera inställningarna för namnområdesprioritet
 
@@ -65,7 +65,7 @@ Namnområdesprioriteten kan konfigureras med hjälp av användargränssnittet [f
 
 ## Användning av namnområdesprioritet
 
-För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
+För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
 
 ![Ett diagram över programomfånget för namnområdesprioritet.](../images/namespace-priority/application-scope.png "Ett diagram över programomfånget för namnområdesprioritet."){zoomable="yes"}
 
@@ -208,13 +208,13 @@ I en given händelse måste du se till att alla namnutrymmen som representerar e
 
 * **Händelsetillämplighet**: Det här beteendet gäller endast för händelser som skickas direkt till Edge Network (till exempel WebSDK och Mobile SDK). Händelser som har importerats från [Experience Platform-hubben](../../landing/edge-and-hub-comparison.md), t.ex. de som har importerats med HTTP API-källan, andra strömningskällor och batchkällor, omfattas inte av den här begränsningen.
 * **Specifikation för Edge-segmentering**: Det här beteendet är specifikt för kantsegmentering. Segmentering av grupper och strömning är separata tjänster som utvärderas på navet och följer inte samma process. Läs [kantsegmenteringsguiden](../../segmentation/methods/edge-segmentation.md) om du vill ha mer information.
-* Mer information finns i [Adobe Experience Platform- och programarkitekturdiagrammen](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram) och [Edge Network- och navjämförelsesidorna](../../landing/edge-and-hub-comparison.md).
+* Mer information finns i [Adobe Experience Platform- och programarkitekturdiagrammen](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram) och [Edge Network- och navjämförelsesidorna](../../landing/edge-and-hub-comparison.md).
 
 #### Edge Network-program
 
 För att program på Edge Network ska ha tillgång till Edge-profilen utan dröjsmål måste du se till att dina händelser innehåller `primary=true` i CRMID. Detta garanterar omedelbar tillgänglighet utan att vänta på att identitetsdiagrammet uppdateras från navet.
 
 * Program på Edge Network, t.ex. Adobe Target, Offer Decisioning och anpassade Personalization-destinationer, fortsätter att vara beroende av den primära identiteten i händelser för att komma åt profiler från Edge-profilen.
-* Mer information om Edge Network beteende finns i [Experience Platform Web SDK &amp; Edge Network-arkitekturdiagrammet](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment).
+* Mer information om Edge Network beteende finns i [Experience Platform Web SDK &amp; Edge Network-arkitekturdiagrammet](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment).
 * Läs dokumentationen om [dataelementtyper](../../tags/extensions/client/web-sdk/data-element-types.md) och [identitetsdata i Web SDK](../../web-sdk/identity/overview.md) om du vill ha mer information om hur du konfigurerar primär identitet på Web SDK.
 * Kontrollera att ECID finns med i upplevelsehändelsen. Om ECID saknas läggs det till i händelsens nyttolast med `primary=true`, vilket kan leda till oväntade resultat.
