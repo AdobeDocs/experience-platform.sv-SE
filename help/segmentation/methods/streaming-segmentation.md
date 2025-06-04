@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Guide för strömningssegmentering
 description: Lär dig mer om direktuppspelningssegmentering, inklusive vad det är, hur du skapar en publik som utvärderas med direktuppspelningssegmentering och hur du visar målgrupper som skapats med direktuppspelningssegmentering.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 8523ba35eab80a7496e17cb0ceb3e46a78dd6058
+source-git-commit: 4a8d509286c92a76a897be663a68709bb3b71391
 workflow-type: tm+mt
 source-wordcount: '2004'
 ht-degree: 0%
@@ -169,13 +169,13 @@ Låt oss till exempel säga att ni har två målgrupper, med båda målgrupperna
 
 | Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
 | -------- | ------ | ----------- | ---------------- | ----------- |
-| Senaste avhopp | Experience event | Grupp | Har minst en händelse om att användaren överger den under de senaste 24 timmarna | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste avhopp | Experience event | Grupp | Har minst en händelse om att användaren överger den under de senaste 24 timmarna | `7deb246a-49b4-4687-95f9-6316df049948` |
 | Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
 
 I den här situationen skulle du behöva skapa en tredje målgrupp enligt följande:
 
 ```
-inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and inSegment("9e1646bb-57ff-4309-ba59-17d6c5bab6a1")
+inSegment("7deb246a-49b4-4687-95f9-6316df049948) and inSegment("9e1646bb-57ff-4309-ba59-17d6c5bab6a1")
 ```
 
 ## Skapa målgrupper {#create-audience}
