@@ -42,7 +42,7 @@ När du skapar en anpassad Web SDK-version används den av alla dina Web SDK-ins
 >[!IMPORTANT]
 >
 >Om du inaktiverar Web SDK-komponenter kan den befintliga implementeringen brytas. Varje gång du inaktiverar en komponent måste du testa implementeringen noggrant för att se till att alla funktioner du behöver fungerar som förväntat.
->>När du inaktiverar en komponent kan du inte längre redigera inställningarna för den komponenten.
+>&#x200B;>När du inaktiverar en komponent kan du inte längre redigera inställningarna för den komponenten.
 
 Följ stegen nedan för att skapa en anpassad Web SDK-version med hjälp av taggtillägget Web SDK.
 
@@ -117,9 +117,10 @@ I det här avsnittet kan du definiera hur Web SDK ska fungera när det gäller a
 * **[!UICONTROL Use third-party cookies]**: När det här alternativet är aktiverat försöker Web SDK lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kan SDK fortfarande inte lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller om den har konfigurerats av användaren att inte tillåta cookies från tredje part. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
 
   >[!IMPORTANT]
-  >>Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
-  >>Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
+  >&#x200B;>Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
+  >&#x200B;>Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
   >
+
 ## Konfigurera personaliseringsinställningar {#personalization}
 
 I det här avsnittet kan du konfigurera hur du vill dölja vissa delar av en sida medan anpassat innehåll läses in. Detta garanterar att besökarna bara ser den personaliserade sidan.
@@ -140,7 +141,7 @@ Om du vill använda det fördolda fragmentet kopierar och klistrar du in det inu
 
 >[!IMPORTANT]
 >
-När du använder det fördolda fragmentet rekommenderar Adobe att du använder samma [!DNL CSS]-regel som den som används i [fördöljningsformatet](#prehiding-style).
+>När du använder det fördolda fragmentet rekommenderar Adobe att du använder samma [!DNL CSS]-regel som den som används i [fördöljningsformatet](#prehiding-style).
 
 ## Konfigurera inställningar för datainsamling {#data-collection}
 
@@ -171,7 +172,7 @@ Hantera konfigurationsinställningar för datainsamling. Liknande inställningar
 
 >[!TIP]
 >
-Fältet **[!UICONTROL On before link click send]** är ett föråldrat återanrop som bara är synligt för egenskaper som redan har det konfigurerat. Det är taggen som motsvarar [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) i JavaScript-biblioteket. Använd motringningen **[!UICONTROL Filter click properties]** för att filtrera eller justera klickdata, eller använd **[!UICONTROL On before event send callback]** för att filtrera eller justera den totala nyttolasten som skickas till Adobe. Om både **[!UICONTROL Filter click properties]**-återanropet och **[!UICONTROL On before link click send]**-återanropet är inställda körs bara **[!UICONTROL Filter click properties]**-återanropet.
+>Fältet **[!UICONTROL On before link click send]** är ett föråldrat återanrop som bara är synligt för egenskaper som redan har det konfigurerat. Det är taggen som motsvarar [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) i JavaScript-biblioteket. Använd motringningen **[!UICONTROL Filter click properties]** för att filtrera eller justera klickdata, eller använd **[!UICONTROL On before event send callback]** för att filtrera eller justera den totala nyttolasten som skickas till Adobe. Om både **[!UICONTROL Filter click properties]**-återanropet och **[!UICONTROL On before link click send]**-återanropet är inställda körs bara **[!UICONTROL Filter click properties]**-återanropet.
 
 ## Konfigurera inställningar för mediesamling {#media-collection}
 
@@ -205,7 +206,7 @@ Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando 
 
 >[!IMPORTANT]
 >
-Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
+>Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
 
 ![Bild som visar åsidosättningar av dataströmskonfigurationer med hjälp av SDK-taggtilläggssidan för webben.](assets/datastream-overrides.png)
 
