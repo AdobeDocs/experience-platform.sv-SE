@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 57b29c396531ee18c79fad7cce068ff3adf5f2a2
 workflow-type: tm+mt
-source-wordcount: '2685'
+source-wordcount: '2775'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggräns
 
 ## Installera SDK-taggtillägget för webben {#install}
 
-Webbfilens SDK-taggtillägg måste ha en egenskap installerad på. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=sv-SE).
+Webbfilens SDK-taggtillägg måste ha en egenskap installerad på. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html).
 
 När du har skapat en egenskap öppnar du den och väljer fliken **[!UICONTROL Extensions]** i det vänstra fältet.
 
@@ -42,7 +42,7 @@ När du skapar en anpassad Web SDK-version används den av alla dina Web SDK-ins
 >[!IMPORTANT]
 >
 >Om du inaktiverar Web SDK-komponenter kan den befintliga implementeringen brytas. Varje gång du inaktiverar en komponent måste du testa implementeringen noggrant för att se till att alla funktioner du behöver fungerar som förväntat.
->När du inaktiverar en komponent kan du inte längre redigera inställningarna för den komponenten.
+>>När du inaktiverar en komponent kan du inte längre redigera inställningarna för den komponenten.
 
 Följ stegen nedan för att skapa en anpassad Web SDK-version med hjälp av taggtillägget Web SDK.
 
@@ -74,7 +74,7 @@ Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Plat
 
 * **[!UICONTROL Name]**: Adobe Experience Platform Web SDK-tillägget stöder flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en taggkonfiguration. Instansnamnet är som standard `alloy`. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
 * **[!UICONTROL IMS organization ID]**: ID för organisationen som du vill att data ska skickas till på Adobe. För det mesta använder du standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
-* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en första part visas [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=sv-SE).
+* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en första part visas [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
 
 ## Konfigurera inställningar för dataström {#datastreams}
 
@@ -117,11 +117,9 @@ I det här avsnittet kan du definiera hur Web SDK ska fungera när det gäller a
 * **[!UICONTROL Use third-party cookies]**: När det här alternativet är aktiverat försöker Web SDK lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kan SDK fortfarande inte lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller om den har konfigurerats av användaren att inte tillåta cookies från tredje part. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
 
   >[!IMPORTANT]
-  >&#x200B;>Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
-
-Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
+  >>Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
+  >>Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
   >
-
 ## Konfigurera personaliseringsinställningar {#personalization}
 
 I det här avsnittet kan du konfigurera hur du vill dölja vissa delar av en sida medan anpassat innehåll läses in. Detta garanterar att besökarna bara ser den personaliserade sidan.
@@ -142,7 +140,7 @@ Om du vill använda det fördolda fragmentet kopierar och klistrar du in det inu
 
 >[!IMPORTANT]
 >
->När du använder det fördolda fragmentet rekommenderar Adobe att du använder samma [!DNL CSS]-regel som den som används i [fördöljningsformatet](#prehiding-style).
+När du använder det fördolda fragmentet rekommenderar Adobe att du använder samma [!DNL CSS]-regel som den som används i [fördöljningsformatet](#prehiding-style).
 
 ## Konfigurera inställningar för datainsamling {#data-collection}
 
@@ -155,6 +153,11 @@ Hantera konfigurationsinställningar för datainsamling. Liknande inställningar
    * **[!UICONTROL No event grouping]**: Länkspårningsdata skickas till Adobe i olika händelser. Länkklickningar som skickas i olika händelser kan öka den avtalsenliga användningen av data som skickas till Adobe Experience Platform.
    * **[!UICONTROL Event grouping using session storage]**: Lagra länkspårningsdata i sessionslagring tills nästa sidhändelse. På följande sida skickas data för lagrad länkspårning och sidvisning till Adobe samtidigt. Adobe rekommenderar att den här inställningen aktiveras när interna länkar spåras.
    * **[!UICONTROL Event grouping using local object]**: Lagra länkspårningsdata i ett lokalt objekt fram till nästa sidhändelse. Om en besökare navigerar till en ny sida, försvinner länkspårningsdata. Den här inställningen är mest användbar för enkelsidiga program.
+
+  När du väljer händelsegruppering med sessionslagring eller ett lokalt objekt, och skickar data till Real-Time CDP, Customer Journey Analytics, Adobe Journey Optimizer eller Mix Modeler, måste du uppdatera taggningsreglerna. Kontrollera att varje sidvyhändelse explicit mappar både sidnamnet (som en sträng) och sidvisningsvärdet (som ett heltal, vanligtvis 1) till XDM-objektet innan data skickas till Adobe.
+
+  Om du skickar data till Adobe Analytics inkluderas dessa värden automatiskt och ingen ytterligare konfiguration behövs.
+
 * **[!UICONTROL Collect external link clicks]**: En kryssruta som aktiverar samlingen av externa länkar.
 * **[!UICONTROL Collect download link clicks]**: En kryssruta som aktiverar samlingen med hämtningslänkar.
 * **[!UICONTROL Download link qualifier]**: Ett reguljärt uttryck som kvalificerar en länk-URL som en nedladdningslänk.
@@ -168,7 +171,7 @@ Hantera konfigurationsinställningar för datainsamling. Liknande inställningar
 
 >[!TIP]
 >
->Fältet **[!UICONTROL On before link click send]** är ett föråldrat återanrop som bara är synligt för egenskaper som redan har det konfigurerat. Det är taggen som motsvarar [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) i JavaScript-biblioteket. Använd motringningen **[!UICONTROL Filter click properties]** för att filtrera eller justera klickdata, eller använd **[!UICONTROL On before event send callback]** för att filtrera eller justera den totala nyttolasten som skickas till Adobe. Om både **[!UICONTROL Filter click properties]**-återanropet och **[!UICONTROL On before link click send]**-återanropet är inställda körs bara **[!UICONTROL Filter click properties]**-återanropet.
+Fältet **[!UICONTROL On before link click send]** är ett föråldrat återanrop som bara är synligt för egenskaper som redan har det konfigurerat. Det är taggen som motsvarar [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) i JavaScript-biblioteket. Använd motringningen **[!UICONTROL Filter click properties]** för att filtrera eller justera klickdata, eller använd **[!UICONTROL On before event send callback]** för att filtrera eller justera den totala nyttolasten som skickas till Adobe. Om både **[!UICONTROL Filter click properties]**-återanropet och **[!UICONTROL On before link click send]**-återanropet är inställda körs bara **[!UICONTROL Filter click properties]**-återanropet.
 
 ## Konfigurera inställningar för mediesamling {#media-collection}
 
@@ -202,7 +205,7 @@ Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando 
 
 >[!IMPORTANT]
 >
->Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
+Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
 
 ![Bild som visar åsidosättningar av dataströmskonfigurationer med hjälp av SDK-taggtilläggssidan för webben.](assets/datastream-overrides.png)
 
