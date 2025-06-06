@@ -4,9 +4,9 @@ description: Lär dig mer om AI-modellen som används för kundens AI.
 hide: true
 hidefromtoc: true
 exl-id: b2eeb1d2-3c2b-40a0-b5cd-91e99d99a906
-source-git-commit: 6623c7dad0fc4ddb7cb79e8f474b824915f130fc
+source-git-commit: a7b69cd11ccbd9950cafa73dba51be1d67924bfe
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1016'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,8 @@ ht-degree: 0%
 
 ## Modellutbildning {#model-training}
 
-* **Utbildningsdata och förbehandling**: Utbildningsdata för varje kund hämtas direkt från deras egna data i Adobe Experience Platform. Detta omfattar kundens historiska interaktioner, transaktionsregister, beteendeloggar och demografiska uppgifter som samlats in och lagrats i Adobe Experience Platform-instansen. Datauppsättningen utnyttjar kundspecifika data över den valda tidsramen och fångar upp deras unika säsongstrender och engagemangsmönster. Innan de används genomgår varje kunds datauppsättning en förbearbetning som är anpassad efter deras dataegenskaper, inklusive hantering av saknade värden, kategorisisk kodning, funktionens skalning, avkänning av avvikelser och funktionsteknik för att säkerställa optimal kvalitet och användbarhet för det specifika användningsfallet
+* **Utbildningsdata och förbehandling**: Utbildningsdata för varje kund hämtas direkt från deras egna data i Adobe Experience Platform. Detta omfattar kundens historiska interaktioner, transaktionsregister, beteendeloggar och demografiska uppgifter som samlats in och lagrats i Adobe Experience Platform-instansen. Datauppsättningen utnyttjar kundspecifika data över den valda tidsramen och fångar upp deras unika säsongstrender och engagemangsmönster. Innan de används genomgår varje kunds datauppsättning en förbearbetning som är anpassad efter deras dataegenskaper, inklusive hantering av saknade värden, kategorisisk kodning, funktionens skalning, avkänning av tidigare versioner och funktionsteknik för att säkerställa optimal kvalitet och användbarhet för just deras användningsfall.
+   * Konsumentdata som används för utbildning används inte för kunder.
 * **Utbildningsspecifikationer**: Modellen utnyttjar [!DNL LightGBM] med [!DNL GBM], optimerad för strukturerade data. Det har utbildats på historiska kundhändelsesekvenser för att identifiera prediktiva beteendemönster.
 * **Utbildningsramverk**: Modellen har utvecklats med [!DNL LightGBM] och [!DNL scikit-learn] och är utbildad i Adobe AI-molninfrastruktur.
 * **Utbildningsinfrastruktur**: [!DNL Databricks] kluster.

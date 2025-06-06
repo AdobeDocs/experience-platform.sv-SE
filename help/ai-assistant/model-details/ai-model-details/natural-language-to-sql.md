@@ -4,9 +4,9 @@ description: Lär dig mer om AI Assistant Natural Language i SQL AI-modellen.
 hide: true
 hidefromtoc: true
 exl-id: ca157945-5f74-45d0-9d40-c65d09a8e80d
-source-git-commit: a8cc7c6f202cdd2786a69e548810b3957d69fdb3
+source-git-commit: a7b69cd11ccbd9950cafa73dba51be1d67924bfe
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '639'
 ht-degree: 0%
 
 ---
@@ -46,13 +46,13 @@ WHERE
 
 ## Modellutvärdering {#model-evaluation}
 
-* **Mätvärden och procedurer för utvärdering**: Modellen utvärderas med hjälp av precision. Av alla [!DNL NL2SQL]-begäranden, till exempel, hur många av förfrågningarna som ger rätt SQL-resultat. Utvärderingsprocessen är en kombination av regelbaserad matchning (SQL-standardisering och sedan direkt SQL-strängmatchning), LLM-baserad SQL-lösare och mänsklig utvärdering.
+* **Mätvärden och procedurer för utvärdering**: Modellen utvärderas genom att undersöka [!DNL NL2SQL] -begäranden och utvärdera hur många av förfrågningarna som ger rätt SQL-resultat. Utvärderingsprocessen är en kombination av regelbaserad matchning (SQL-standardisering och sedan direkt SQL-strängmatchning), LLM-baserad SQL-lösare och mänsklig utvärdering.
 * **Utvärderingsdata och förbearbetning**: Vi använder öppna uppsättningar för regressionstest och har också anteckningsprojekt varje vecka för att övervaka modellens prestanda genom provad verklig kundtrafik.
 
 ## Modelldistribution {#model-deployment}
 
 * **Modellövervakning**: Basmodellen hanteras av [!DNL Azure].
-* **Modelluppdatering**: Modellen uppdateras regelbundet, varje vecka, genom frågebanksexpansion. Modellen uppdateras också med nya strategier och instruktioner vid behov.
+* **Modelluppdatering**: Adobe Experience Platform AI Assistant Operational Insights Natural Language till SQL Model uppdateras regelbundet (varje vecka) genom frågebanksexpansion. Modellen uppdateras också med nya strategier och instruktioner vid behov.
 
 ## Fairness and bias {#fairness-and-bias}
 
