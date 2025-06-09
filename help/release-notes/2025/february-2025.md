@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2025
 description: Versionsinformationen för Adobe Experience Platform från februari 2025.
 exl-id: 734a9484-516e-4dd7-9503-8fcdc50cbaac
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: c8fe5f05b7dcef7db2ae44d5b6575e123cbd014d
 workflow-type: tm+mt
-source-wordcount: '1638'
-ht-degree: 97%
+source-wordcount: '1670'
+ht-degree: 96%
 
 ---
 
@@ -54,7 +54,7 @@ Catalog Service är det system som registrerar var data finns och hur de härsta
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ny API-slutpunkt | Hantera dina metadata för Adobe Experience Platform-datauppsättning effektivare med nya [slutpunkten Catalog Service API /v2/dataSets/{DATASET_ID}](../../catalog/api/update-object.md#patch-v2-notation). Uppdatera enkelt komplexa och djupt inkapslade datauppsättningsattribut när systemet automatiskt skapar saknade sökvägsnivåer för att spara tid, minska antalet manuella steg och minimera antalet fel. |
+| Ny API-slutpunkt | Hantera dina Adobe Experience Platform-datauppsättningsmetadata effektivare med nya [katalogtjänstens API /v2/dataSets/{DATASET_ID} slutpunkt](../../catalog/api/update-object.md#patch-v2-notation). Uppdatera enkelt komplexa och djupt inkapslade datauppsättningsattribut när systemet automatiskt skapar saknade sökvägsnivåer för att spara tid, minska antalet manuella steg och minimera antalet fel. |
 
 {style="table-layout:auto"}
 
@@ -78,7 +78,7 @@ Mer information finns i [översikten över Dataförberedelse](../../data-prep/ho
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya eller uppdaterade mål** {#new-updated-destinations}
+**Nya eller uppdaterade destinationer** {#new-updated-destinations}
 
 | Mål | Beskrivning |
 | --- | --- |
@@ -117,7 +117,7 @@ Mer information finns i [översikten över destinationer](../../destinations/hom
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Beständig delning | Audience Composition har nu stöd för beständiga delningar. Du kan låta de delade målgrupperna förbli konstanta när du delar efter profil genom att lägga till ett identitetsnamnutrymme i det delade blocket. Mer information om den här funktionen finns i [dokumentationen för målgruppskomposition](../../segmentation/ui/audience-composition.md). |
+| Beständig delning | Målgruppssammansättning har nu stöd för beständiga delningar. Du kan låta de delade målgrupperna förbli konstanta när du delar efter profil genom att lägga till ett identitetsnamnutrymme i det delade blocket. Mer information om den nya funktionen finns i [dokumentationen för målgruppssammansättning](../../segmentation/ui/audience-composition.md). |
 
 Mer information om [!DNL Segmentation Service] finns i [segmenteringsöversikten](../../segmentation/home.md).
 
@@ -132,6 +132,7 @@ Använd källor i Experience Platform för inmatning av data från ett Adobe-pro
 | Funktion | Beskrivning |
 | --- | --- |
 | Stöd för vyer i [!DNL Microsoft Dynamics] | Du kan nu fylla på `"entityType": "view"` när du använder källan [!DNL Microsoft Dynamics]. Mer information finns i guiden om att [ansluta en [!DNL Microsoft Dynamics] källa till Experience Platform](../../sources/tutorials/api/create/crm/ms-dynamics.md). |
+| Nya IP-adresser att tillåtslista | Du måste lägga till följande IP-adresser i tillåtelselista för att kunna använda Experience Platform-källor.<br></br>**VA7**<ul><li>`48.211.4.136/29`</li><li>`48.211.4.144/28`</li><li>`48.211.4.160/29`</li><li>`40.84.85.144/28`</li><li>`40.84.85.192/28`</li></ul>**AUS5**<ul><li>`20.213.194.144/29`</li><li>`20.227.120.32/27`</li></ul> <br></br>Mer information finns i guiden [tillåtelselista för IP-adressen för ](../../sources/ip-address-allow-list.md)-källor. |
 
 {style="table-layout:auto"}
 
