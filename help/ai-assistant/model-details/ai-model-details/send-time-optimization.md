@@ -4,7 +4,7 @@ description: Läs mer om AI-modellen som används för optimering av sändningst
 hide: true
 hidefromtoc: true
 exl-id: 95e1fc8f-1817-40d7-aa55-93daa50f43c0
-source-git-commit: 481108135ee6ed5b90547e4e95799ab99edb210e
+source-git-commit: 4c3f6ead150a2f793db92d2418df3177eba2d255
 workflow-type: tm+mt
 source-wordcount: '1218'
 ht-degree: 0%
@@ -17,19 +17,19 @@ ht-degree: 0%
 
 * **Modellnamn och version**: Sändningsoptimering
 * **Modellreleasedatum**: september 2024
-* **Modellsyfte**: Adobe Journey Optimizer Send-Time Optimization Model väljer den optimala sändningstiden för e-post och push-meddelanden för att maximera kundengagemanget, baserat på kundernas tidigare öppnings- och klickbeteende.
+* **Modellsyfte**: Adobe Journey Optimizer Send-Time Optimization Model väljer den optimala sändningstiden för e-post och push-meddelanden för att maximera konsumenternas engagemang, baserat på kundernas tidigare öppnings- och klickbeteende.
 * **Avsedda användare**: De primära användarna i den här modellen är marknadsförare, produktchefer och kundinteraktionsteam som utnyttjar Adobe Journey Optimizer för att driva datadrivna marknadsföringsstrategier.
 * **Användningsfall**: Optimering för sändningstid används bäst för mindre brådskande marknadsföringsmeddelanden, till exempel en veckoannons, kampanjinformation för en ny produkt eller information om en månadsvis försäljning. Sändningsoptimering är endast tillgängligt för Journey Optimizer inbyggda åtgärdstyper för e-post och push och är för närvarande inte tillgängligt för meddelanden som skickas via anpassade åtgärder eller för andra åtgärdstyper.
 * **Potentiell missbruk**: Optimering för sändningstid ska inte användas för brådskande, tidskänsliga operativa meddelanden, till exempel en orderbekräftelse, ett meddelande om lösenordsåterställning eller ett meddelande om ändring av flygport.
 
 ## Modellinformation {#model-details}
 
-* **Modelltyp**: Modellen för optimering av sändningstid innehåller information om kundbeteenden i din organisation och tittar på öppna- och klickhändelser på användarnivå för att förutsäga när det är mest troligt att dina kunder interagerar med dina meddelanden. Öppnings- och klickbeteenden på användarnivå för varje timma i veckan vägs och kombineras med lookalike och det övergripande användarbeteendet med en [!DNL Bayesian]-uppskattare. [!DNL Bayesian]-prognoserna för varje timma i veckan rangordnas sedan, vilket resulterar i en&quot;värmekarta&quot; för varje mätvärde (e-postöppning, e-postklick och push-öppningar) för varje kund, för att förutsäga hur många timmar i veckan det är mest och minst troligt att kontakten leder till önskat engagemangsresultat.
-* **Indata**: Vid optimering av sändningstid används användarens tidszonsdata i fältet `timeZone` i fältgruppen [!UICONTROL Preference Details], om sådan finns, för att fastställa en användares tidszon. Om en användares tidszon inte är tillgänglig i fältet `timeZone` försöker optimering av sändningstid härleda användarens tidszon baserat på den vanligaste tidszonen som matchar den första postadressen som finns lagrad i användarens profil med hjälp av datatypen [för postadresser](../../../xdm/data-types/postal-address.md). Med optimering för sändningstid kan du förutsäga för varje användare utifrån tre typer av beteendedata:
-   * Funktionerna för att öppna och klicka på dina användare som helhet.
-   * Beteendet att öppna och klicka på ser ut som användare i samma tidszon.
-   * Den enskilda användarens beteende att öppna och klicka.
-* **Utdata**: Dessa prognoser vägs och kombineras med en [!DNL Bayesian]-metod, vilket resulterar i en&quot;värmekarta&quot; för varje mätvärde (e-postöppning, e-postklick och push-öppningar) för varje kund, som anger antalet timmar i veckan som kontaktar den användaren mest och minst resulterar i önskat engagemangsresultat (öppna/klicka), vilket visas i följande exempelheatmap:
+* **Modelltyp**: Modellen för optimering av sändningstid innehåller information om din organisations Adobe Journey Optimizer konsumentbeteendedata och tittar på öppna- och klickhändelser på användarnivå för att förutsäga när kunderna är mest benägna att interagera med dina meddelanden. Öppnings- och klickbeteenden på konsumentnivå för varje timma i veckan vägs och kombineras med lookalike och konsumentbeteendet med en [!DNL Bayesian]-skattare. [!DNL Bayesian]-prognoserna för varje timma i veckan rangordnas sedan, vilket resulterar i en&quot;värmekarta&quot; för varje mätvärde (e-postöppning, e-postklick och push-öppning) för varje kund, för att förutsäga hur många timmar i veckan det är mest och minst troligt att kontakten med varje konsument leder till önskat engagemangsresultat.
+* **Indata**: För optimering av sändningstid används konsumenttidszonsdata i fältet `timeZone` i fältgruppen [!UICONTROL Preference Details], om sådana anges, för att fastställa en konsuments tidszon. Om en konsuments tidszon inte är tillgänglig i fältet `timeZone` försöker optimering av sändningstid härleda konsumentens tidszon, baserat på den vanligaste tidszonen som matchar den första postadressen som finns lagrad i konsumentprofilen med hjälp av datatypen [för postadresser](../../../xdm/data-types/postal-address.md). Med optimering för sändningstid kan man förutse för varje konsument utifrån tre typer av beteendedata:
+   * Konsumenternas öppna och klickande beteende som helhet.
+   * Beteendet med öppna och klickningar hos lookalike-konsumenter i samma tidszon.
+   * Den enskilda konsumentens öppna och klickbeteende.
+* **Utdata**: Dessa prognoser vägs och kombineras med en [!DNL Bayesian]-metod, vilket resulterar i en&quot;värmekarta&quot; för varje mätvärde (e-postöppning, e-postklick och push-öppningar) för varje kund, som anger de timmar i veckan som kontaktar den konsumenten mest och minst resulterar i önskat engagemangsresultat (öppna/klicka), vilket visas i följande exempelheatmap:
 
 ![Värmekartan för optimering av sändningstid.](../../images/models/send-time-optimization.png)
 
@@ -38,10 +38,10 @@ ht-degree: 0%
 ## Modellutbildning {#model-training}
 
 * **Utbildningsdata och förbearbetning**: Utbildningsdata för varje organisation hämtas endast från deras egna data inom Adobe Experience Platform.
-   * När optimeringsfunktionen för Skicka-tid är aktiverad för din organisation är modellen utbildad i e-post- och push-, send-, open- och click-händelser för alla organisationens resor och åtgärder de senaste 16 veckorna - oavsett om dessa åtgärder använder Send-Time Optimization. Detta gör att optimering av sändningstid kan dra nytta av alla data som genereras av dina kunder.
+   * När optimeringsfunktionen för Skicka-tid är aktiverad för din organisation är modellen utbildad i e-post- och push-, send-, open- och click-händelser för alla organisationens resor och åtgärder de senaste 16 veckorna - oavsett om dessa åtgärder använder Send-Time Optimization. Detta gör att optimering av sändningstid kan dra nytta av alla data som genereras av era kunder.
    * Modeller är initialt utbildade och poängsätts varje vecka. Efter 16 veckor får modellerna ny utbildning och ny kodning varje månad. Modellpoängsättningen omfattar alla kundprofiler - både befintliga och nya - sedan den senaste poängsättningen.
    * Meddelanden som skickas av optimering av sändningstid får något av följande:
-      * Skicka-tid för meddelande om att utforska ett meddelande, valt att testa olika sändningstider och observera hur kunderna svarar
+      * Ett meddelande om att utforska sändningstiden som valts ut för att testa olika sändningstider och observera hur konsumenterna svarar.
       * En&quot;optimerad&quot; sändningstid för meddelanden som valts för att maximera klickfrekvensen/öppningshastigheten. 5 % av sändningshändelserna får en utforskande sändningstid och 95 % av sändningshändelserna är&quot;optimerade&quot;.
    * Utforska sändningstider väljs slumpvis bland de sändningstider som är tillgängliga med den konfigurerade maximala väntetiden. Om ett meddelande till exempel markeras på onsdag 09:00 med optimering för Skicka-tid aktiverat och en 3-timmars maximal väntetid, kommer frågesändningstiderna för meddelandet att delas jämnt mellan 09:00, 10:00 och 12:00.
 
@@ -52,18 +52,18 @@ ht-degree: 0%
    * På grund av variationer inom små provstorlekar är det inte säkert att fördelarna med optimering av sändningstid kan observeras vid enskilda meddelanden.
    * Det är troligare att organisationer får större fördelar av att använda optimering vid sändning när:
       * Befintliga resor använder fasta och inte optimerade sändningstider.
-      * Variabilitet i kundbeteende (klickningar och öppningar) motsvarar kundens placering och kundernas preferenser.
+      * Variationer i konsumentbeteenden (klickningar och öppningar) motsvarar konsumenternas placering och preferenser.
       * Organisationer använder Send-Time Optimization för en större del av e-post och push-meddelanden.
       * Organisationer väljer maximal väntetid inom det rekommenderade intervallet på 6-12 timmar.
 
 ## Modelldistribution {#model-deployment}
 
-* **Modelluppdatering**: Modeller utbildas och utvärderas varje vecka. Efter 16 veckor får modellerna ny utbildning och ny kodning varje månad. Modellpoängen innehåller alla kundprofiler - både befintliga och nya sedan den senaste poängsättningen.
+* **Modelluppdatering**: Modeller utbildas och utvärderas varje vecka. Efter 16 veckor får modellerna ny utbildning och ny kodning varje månad. Modellbedömningen innehåller alla konsumentprofiler - både befintliga och nya sedan den senaste poängsättningen.
 
 ## Fairness and bias {#fairness-and-bias}
 
-* **Modellens rättvisa**: Felaktig härledning av en användares tidszon kan resultera i att ett meddelande skickas tidigare än optimalt för en viss användare eller senare än optimalt för en viss användare. Alla användare i ett meddelande som använder optimering av sändningstid får dock ett meddelande och har möjlighet att interagera med ett meddelande. Dessutom använder den här modellen inte användarens demografiska data eller proxies för demografiska data - endast användarbeteendes- och användartidszonsdata används. Därför är risken för rättvisa begränsad och mildras.
-* **Dataavvikelser**: Felaktig härledning av en användares tidszon kan resultera i att ett meddelande skickas tidigare än optimalt för en viss användare eller senare än optimalt för en viss användare. Alla användare i ett meddelande som använder optimering av sändningstid får dock ett meddelande och har möjlighet att interagera med ett meddelande. Dessutom använder den här modellen inte användarens demografiska data eller proxies för demografiska data - endast användarbeteendes- och användartidszonsdata används. Därför är de partiska oron begränsade och mildras.
+* **Modellens rättvisa**: Felaktig härledning av en konsuments tidszon kan leda till att ett meddelande skickas tidigare än optimalt för en viss konsument eller senare än optimalt för en viss konsument. Alla kunder i ett meddelande som använder optimering av sändningstid får dock ett meddelande och har möjlighet att interagera med ett meddelande. Dessutom använder den här modellen inte demografiska uppgifter eller proxies för demografiska data - endast konsumentbeteendedata och konsumentdata används. Därför är risken för rättvisa begränsad och mildras.
+* **Datafördomar**: Felaktig härledning av en konsuments tidszon kan leda till att ett meddelande skickas tidigare än optimalt för en viss konsument eller senare än optimalt för en viss konsument. Alla kunder i ett meddelande som använder optimering av sändningstid får dock ett meddelande och har möjlighet att interagera med ett meddelande. Dessutom använder den här modellen inte demografiska uppgifter eller proxies för demografiska data - endast konsumentbeteendedata och konsumentdata används. Därför är de partiska oron begränsade och mildras.
 
 ## Robusitet {#robustness}
 
@@ -71,4 +71,4 @@ ht-degree: 0%
 
 ## Etiska överväganden {#ethical-considerations}
 
-* **Etiska överväganden som är kopplade till modellen**: Felaktig härledning av en användares tidszon kan resultera i att ett meddelande skickas tidigare än optimalt för en viss användare eller senare än optimalt för en viss användare. Alla användare i ett meddelande som använder optimering av sändningstid får dock ett meddelande och har möjlighet att interagera med ett meddelande. Dessutom använder den här modellen inte användarens demografiska data eller proxies för demografiska data - endast användarbeteendes- och användartidszonsdata används. Därför är etiska frågor begränsade och mildras.
+* **Etiska överväganden som är kopplade till modellen**: Felaktig härledning av en konsuments tidszon kan resultera i att ett meddelande skickas tidigare än optimalt för en viss konsument eller senare än optimalt för en viss konsument. Alla kunder i ett meddelande som använder optimering av sändningstid får dock ett meddelande och har möjlighet att interagera med ett meddelande. Dessutom använder den här modellen inte demografiska uppgifter eller proxies för demografiska data - endast konsumentbeteendedata och konsumentdata används. Därför är etiska frågor begränsade och mildras.
