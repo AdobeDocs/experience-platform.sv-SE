@@ -3,9 +3,9 @@ title: Google PubSub Source Overview
 description: Lär dig hur du ansluter Google PubSub till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '857'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,10 @@ Du måste **ange att kvarhållningstiden för prenumerationsmeddelanden ska vara
 >Du kan bara skapa ett källdataflöde per [!DNL Google PubSub]-prenumeration. Om du återanvänder en prenumeration, även i sandlådor, går data förlorade.
 
 ## Anslut [!DNL Google PubSub] till Experience Platform
+
+>[!NOTE]
+>
+>När du har skapat eller uppdaterat ett dataflöde för direktuppspelning krävs en kort 5-minuters paus i datainmatningen för att förhindra eventuella fall av dataförlust eller dataförlust.
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google PubSub] till Experience Platform med API:er eller användargränssnittet:
 

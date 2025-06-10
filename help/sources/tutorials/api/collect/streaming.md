@@ -5,9 +5,9 @@ title: Skapa ett direktuppspelat dataflöde för rådata med API:t för flödest
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du hämtar direktuppspelningsdata och överför dem till Experience Platform med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '1180'
+source-wordcount: '1208'
 ht-degree: 0%
 
 ---
@@ -414,6 +414,10 @@ Ett lyckat svar returnerar en lista med dataflödesspecifikationer. Det ID för 
 ```
 
 ## Skapa ett dataflöde
+
+>[!NOTE]
+>
+>När du har skapat eller uppdaterat ett dataflöde för direktuppspelning krävs en kort 5-minuters paus i datainmatningen för att förhindra eventuella fall av dataförlust eller dataförlust.
 
 Det sista steget mot att samla in strömmande data är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 

@@ -3,9 +3,9 @@ title: Skapa en Amazon Kinesis Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till en Amazon Kinesis-källa med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '760'
 ht-degree: 0%
 
 ---
@@ -165,6 +165,10 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
     "etag": "\"66013508-0000-0200-0000-5f6e2ae70000\""
 }
 ```
+
+>[!NOTE]
+>
+>När du har skapat eller uppdaterat ett dataflöde för direktuppspelning krävs en kort 5-minuters paus i datainmatningen för att förhindra eventuella fall av dataförlust eller dataförlust.
 
 ## Nästa steg
 

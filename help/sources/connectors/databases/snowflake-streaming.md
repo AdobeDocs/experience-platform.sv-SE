@@ -4,9 +4,9 @@ description: Lär dig hur du skapar en källanslutning och ett dataflöde för a
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-09-24T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '841'
 ht-degree: 0%
 
 ---
@@ -86,6 +86,10 @@ Mer information om roll- och behörighetshantering finns i [[!DNL Snowflake] API
       * `TIMESTAMP_TZ` kan inte användas som en tidsstämpelkolumn eller i en mappning.
 
 ## Nästa steg
+
+>[!NOTE]
+>
+>När du har skapat eller uppdaterat ett dataflöde för direktuppspelning krävs en kort 5-minuters paus i datainmatningen för att förhindra eventuella fall av dataförlust eller dataförlust.
 
 I följande självstudie beskrivs hur du ansluter [!DNL Snowflake]-strömningskällan till Experience Platform med API:t:
 

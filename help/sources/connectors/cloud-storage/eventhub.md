@@ -3,9 +3,9 @@ title: Azure Event Hubs Source Connector - översikt
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
@@ -122,6 +122,10 @@ Se listan nedan för olika områden i Experience Platform undernät:
 Mer information om uppsättningar nätverksregler finns i följande [[!DNL Event Hubs] dokument](https://learn.microsoft.com/en-us/azure/event-hubs/network-security).
 
 ## Anslut [!DNL Event Hubs] till Experience Platform
+
+>[!NOTE]
+>
+>När du har skapat eller uppdaterat ett dataflöde för direktuppspelning krävs en kort 5-minuters paus i datainmatningen för att förhindra eventuella fall av dataförlust eller dataförlust.
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Event Hubs] till Experience Platform med API:er eller användargränssnittet:
 
