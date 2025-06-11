@@ -1,10 +1,10 @@
 ---
 title: Export PDF
-description: Lär dig hur du hämtar bearbetade data från anpassade instrumentpanelsinsikter i PDF-format.
+description: Lär dig hur du hämtar bearbetade data från dina anpassade instrumentpanelsinsikter i PDF-format.
 exl-id: b8878198-1f69-4cef-9819-886a309a9c70
-source-git-commit: eac613434f631cab567ab3fa6e30d33acac79d2f
+source-git-commit: 5ad15e557feb4e7cf0b1b2029cfad1545d78ea56
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '131'
 ht-degree: 0%
 
 ---
@@ -19,12 +19,16 @@ Välj en anpassad instrumentpanel från lagerlistan på fliken [!UICONTROL Brows
 
 Din anpassade kontrollpanel visas. Välj sedan **[!UICONTROL Export]** överst till höger i användargränssnittet.
 
+>[!NOTE]
+>
+>Export med endast visualisering kräver inte behörighet [!UICONTROL Export Dashboard Data]. Mer information finns i [[!UICONTROL View more]-dokumentationen ](./view-more.md#export).
+
 ![En anpassad kontrollpanel med Exportera markerad.](../images/sql-insights-query-pro-mode/export.png)
 
 Dialogrutan **[!UICONTROL Export file]** visas. Välj slutligen **[!UICONTROL Download]**
 
 ![Dialogrutan Exportera fil med nedladdning.](../images/sql-insights-query-pro-mode/export-dialog.png)
 
-Förhandsvisningen av PDF visas. Välj **[!UICONTROL Save]** för att slutföra processen.
+PDF-förhandsvisningen visas. Välj **[!UICONTROL Save]** för att slutföra processen.
 
 ![Dialogrutan för förhandsgranskning av utskrift med Spara markerad.](../images/sql-insights-query-pro-mode/print-preview.png)

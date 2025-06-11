@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 6a466770495b226f890ab67b21c5cb027fd46e02
 workflow-type: tm+mt
-source-wordcount: '3224'
+source-wordcount: '3254'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-För att kunna konfigurera åtkomstkontroll för Experience Platform måste du ha system- eller produktadministratörsbehörighet för en organisation som har en Experience Platform-produkt. Minimirollen som kan bevilja eller återkalla behörigheter är en produktadministratör. Andra administratörsroller som kan hantera behörigheter är systemadministratörer (inga begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html).
+För att kunna konfigurera åtkomstkontroll för Experience Platform måste du ha system- eller produktadministratörsbehörighet för en organisation som har en Experience Platform-produkt. Minimirollen som kan bevilja eller återkalla behörigheter är en produktadministratör. Andra administratörsroller som kan hantera behörigheter är systemadministratörer (inga begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
 
 >[!NOTE]
 >
@@ -131,7 +131,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Configurations] | Skrivskyddad åtkomst till modellkonfigurationer. |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL Manage Adobe Mix Modeler Models Plans Configurations] | Möjlighet att visa och ändra plankonfigurationer. |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Plans Configurations] | Skrivskyddad åtkomst till plankonfigurationer. |
-| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | Möjlighet att ställa [[!DNL [AI assistant]]](../ai-assistant/access.md) frågor. |
+| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | Möjlighet att ställa [!DNL [AI assistant]](../ai-assistant/access.md) frågor. |
 | [!DNL AI Assistant] | [!UICONTROL View Operational Insights] | Åtkomst att få svar på [operativa insikter](../ai-assistant/home.md##operational-insights)-frågor. |
 | [!DNL AI Assistant] | [!UICONTROL Generate Content] | Gör det möjligt för användare att generera innehåll med [!DNL AI Assistant]. |
 | [!DNL AI Assistant] | [!UICONTROL Manage Brand Kit] | Gör det möjligt för användare att skapa varumärkesriktlinjer med [!DNL AI Assistant]. |
@@ -193,10 +193,11 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Customer Managed Keys] | [!UICONTROL Manage Customer Managed Keys] | Tillgång till att visa och konfigurera kundhanterade nycklar. |
 | [!DNL Dashboards] | [!UICONTROL View License Usage Dashboard] | Skrivskyddad åtkomst för att visa kontrollpanelen för licensanvändning. |
 | [!DNL Dashboards] | [!UICONTROL Manage Standard Dashboards] | Lägg till anpassade attribut som ännu inte finns i datalagret. |
-| [!DNL Dashboards] | [!UICONTROL View Standard Dashboards] | Skrivskyddad åtkomst för att visa kontrollpanelen för licensanvändning. |
+| [!DNL Dashboards] | [!UICONTROL View Standard Dashboards] | Skrivskyddad åtkomst till kontrollpanelerna Profiler, Destinationer och Segment. Ger även åtkomst till Dashboards i den vänstra navigeringen och på fliken Instrumentpanelsinventering och integreringar. |
 | [!DNL Dashboards] | [!UICONTROL Manage Custom Dashboards] | Åtkomst för att skapa eller redigera en kontrollpanel. |
 | [!DNL Dashboards] | [!UICONTROL View Custom Dashboards] | Skrivskyddad åtkomst till användardefinierade instrumentpaneler. |
 | [!DNL Dashboards] | [!UICONTROL Manage Report Schedules] | Möjlighet att skapa scheman. |
+| [!DNL Dashboards] | [!UICONTROL Export Dashboard Data] | Styr en användares möjlighet att exportera tabelldata från kontrollpaneler för frågepro-läge. |
 | [!DNL Data Collection] | [!UICONTROL Manage Datastreams] | Åtkomst för att läsa, skapa och redigera datastreams. |
 | [!DNL Data Collection] | [!UICONTROL View Datastreams] | Skrivskyddad åtkomst till datastreams. |
 | [!DNL Data Governance] | [!UICONTROL Manage Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |

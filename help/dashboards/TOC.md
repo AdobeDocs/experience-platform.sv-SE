@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 3582ce4f73887f03bbb9da72f96aab1be9b99614
 workflow-type: tm+mt
 source-wordcount: '143'
-ht-degree: 23%
+ht-degree: 25%
 
 ---
 
@@ -20,9 +20,9 @@ ht-degree: 23%
 * [Instrumentpaneler](inventory.md)
 * [Standardinstrumentpaneler](standard-dashboards.md)
 * [Hämta paneler till PDF](download.md)
-* SQL-insikter: frågeproffsläge {#sql-insights-query-pro-mode}
+* SQL-insikter: frågans proffsläge {#sql-insights-query-pro-mode}
    * [Översikt](sql-insights-query-pro-mode/overview.md)
-   * Distiller-mallar för data {#templates}
+   * Data Distiller-mallar {#templates}
       * [Översikt](sql-insights-query-pro-mode/templates/overview.md)
       * [Avancerade målgruppsöverlappningar](sql-insights-query-pro-mode/templates/overlaps.md)
       * [Målgruppsjämförelse](sql-insights-query-pro-mode/templates/comparison.md)
@@ -34,7 +34,7 @@ ht-degree: 23%
    * [Detaljgranska](sql-insights-query-pro-mode/drill-through.md)
    * [Visa mer](sql-insights-query-pro-mode/view-more.md)
    * [Visa SQL](sql-insights-query-pro-mode/view-sql.md)
-   * [Hämta som CSV](sql-insights-query-pro-mode/download-csv.md)
+   * [Exportera som CSV](sql-insights-query-pro-mode/download-csv.md)
    * [Exportera som PDF](sql-insights-query-pro-mode/export-pdf.md)
 * Tillgängliga instrumentpaneler {#guides}
    * [Profiler](guides/profiles.md)
@@ -47,7 +47,7 @@ ht-degree: 23%
    * [Målgrupper](insights/audiences.md)
    * [Mål](insights/destinations.md)
    * [Kontoprofiler](insights/account-profiles.md)
-* Anpassa instrumentpaneler {#customize}
+* Anpassa kontrollpaneler {#customize}
    * [Anpassningsöversikt](customize/overview.md)
    * [Ändra instrumentpaneler](customize/modify.md)
    * [Widget-bibliotek](customize/widget-library.md)
@@ -63,4 +63,4 @@ ht-degree: 23%
    * [Power BI](integrations/power-bi.md)
 * [Datamängder för frågeinstrumentpanelen](query.md)
 * [Visa SQL-insikter](view-sql.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
