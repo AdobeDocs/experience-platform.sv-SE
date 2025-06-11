@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Experience Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personanpassade digitala upplevelser.
 feature: Identities
 role: Admin,Developer
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: 6690854048324567f9a8a1f000bd10f45d7c8340
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '144'
 ht-degree: 22%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 22%
       - [Översikt över funktioner](./identity-graph-linking-rules/overview.md)
       - [Optimeringsalgoritm för identitet](./identity-graph-linking-rules/identity-optimization-algorithm.md)
       - [Implementeringsguide för länkningsregler för identitetsdiagram](./identity-graph-linking-rules/implementation-guide.md)
-      - [Exempel på diagramkonfigurationer](./identity-graph-linking-rules/example-configurations.md)
+      - [Konfigurationsguide](./identity-graph-linking-rules/example-configurations.md)
       - [Felsökning av länkningsregler för identitetsdiagram](./identity-graph-linking-rules/troubleshooting.md)
       - [Namnområdesprioritet](./identity-graph-linking-rules/namespace-priority.md)
       - [Gränssnitt för diagramsimulering](./identity-graph-linking-rules/graph-simulation.md)
@@ -47,4 +47,4 @@ ht-degree: 22%
 - [Definiera identitetsfält i användargränssnittet](label-identities.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
 - [Felsökningsguide](troubleshooting-guide.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

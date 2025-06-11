@@ -1,15 +1,17 @@
 ---
-title: Exempel på diagramkonfigurationer
-description: Lär dig mer om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
+title: Guide för konfiguration av länkningsregler för identitetsdiagram
+description: Lär dig mer om de olika implementeringstyperna som du kan konfigurera med Länkningsregler för identitetsdiagram.
+hide: true
+hidefromtoc: true
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: cd9104e253cda4ce9a004f7931b9c38907874941
+source-git-commit: b65a5e8e9727da47729191e56c1a32838ec2c6c4
 workflow-type: tm+mt
-source-wordcount: '3316'
+source-wordcount: '1934'
 ht-degree: 1%
 
 ---
 
-# Exempel på diagramkonfigurationer {#examples-of-graph-configurations}
+# Konfigurationsguide för [!DNL Identity Graph Linking Rules] {#configurations-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_algorithmconfiguration"
@@ -21,740 +23,547 @@ ht-degree: 1%
 >* &quot;CRMID&quot; och &quot;loginID&quot; är egna namnutrymmen. I det här dokumentet är &quot;CRMID&quot; en personidentifierare och &quot;loginID&quot; är en inloggningsidentifierare som är associerad med en viss person.
 >* Om du vill simulera de exempeldiagramscenarier som beskrivs i det här dokumentet måste du först skapa två anpassade namnutrymmen, ett med identitetssymbolen &quot;CRMID&quot; och ett annat med identitetssymbolen &quot;loginID&quot;. Identitetssymboler är skiftlägeskänsliga.
 
-Det här dokumentet innehåller exempel på diagramkonfigurationer av vanliga scenarier som du kan stöta på när du arbetar med [!DNL Identity Graph Linking Rules] och identitetsdata.
+Läs det här dokumentet om du vill veta mer om olika implementeringstyper som du kan konfigurera med [!DNL Identity Graph Linking Rules].
 
-## Endast CRMID
+Scenarier med kunddiagram kan grupperas i tre olika kategorier.
 
-Detta är ett exempel på ett enkelt implementeringsscenario där online-händelser (CRMID och ECID) importeras och offline-händelser (profilposter) bara lagras mot CRMID.
+* **Grundläggande**: [Grundläggande implementeringar](#basic-implementations) innehåller diagram som oftast innehåller enkla implementeringar. Dessa implementeringar tenderar att kretsa kring ett namnutrymme mellan olika enheter (till exempel CRMID). Grundläggande implementeringar är relativt okomplicerade, men diagramkomprimering kan ändå inträffa, ofta på grund av **delade enheter** -scenarier.
+* **Mellanliggande**: [Mellanliggande implementeringar](#intermediate-implementations) innehåller flera variabler som **flera namnutrymmen mellan enheter**, **icke-unika identiteter** och **flera unika namnutrymmen**.
+* **Avancerat**: [Avancerade implementeringar](#advanced-implementations) omfattar scenarier med komplexa och flerskiktade diagram. För avancerade implementeringar är det viktigt att fastställa rätt namnområdesprioritet för att säkerställa att rätt länkar tas bort, vilket förhindrar att diagrammet komprimeras.
 
-**Implementering:**
+## Kom igång
 
-| Använda namnutrymmen | Samlingsmetod för webbeteenden |
-| --- | --- |
-| CRMID, ECID | Web SDK |
+Innan du går in i följande dokument måste du bekanta dig med flera viktiga begrepp i identitetstjänsten och [!DNL Identity Graph Linking Rules].
 
-**Händelser:**
+* [Översikt över identitetstjänsten](../home.md)
+* [[!DNL Identity Graph Linking Rules] översikt](../identity-graph-linking-rules/namespace-priority.md)
+* [Namnområdesprioritet](namespace-priority.md)
+* [Unikt namnutrymme](overview.md#unique-namespace)
+* [Diagramsimulering](graph-simulation.md)
 
-Du kan skapa det här scenariot i diagramsimulering genom att kopiera följande händelser till textläge:
+## Grundläggande implementeringar {#basic-implementations}
 
-```shell
-CRMID: Tom, ECID: 111
+Läs det här avsnittet för grundläggande implementeringar av [!DNL Identity Graph Linking Rules].
+
+### Användningsfall: enkel implementering som använder ett namnutrymme mellan olika enheter
+
+I allmänhet har Adobe-kunder ett enda namnutrymme som kan användas över alla deras egenskaper, inklusive webb, mobiler och program. Detta system är både branschmässigt och geografiskt agnostiskt eftersom kunder inom detaljhandel, telekom och finansiella tjänster använder denna typ av implementering.
+
+Vanligtvis representeras en slutanvändare av ett namnutrymme mellan olika enheter (ofta ett CRMID), och därför bör CRMID klassificeras som ett unikt namnutrymme. En slutanvändare som äger en dator och en [!DNL iPhone] och inte delar sin enhet kan ha ett identitetsdiagram som följande.
+
+Tänk dig att du är dataarkitekt på ett e-handelsföretag som heter **ACME**. John och Jane är era kunder. De är slutanvändare som bor tillsammans i San Jose i Kalifornien. De delar en stationär dator och använder den här datorn för att surfa på webbplatsen. John och Jane delar också en [!DNL iPad] och använder ibland denna [!DNL iPad] för att surfa på Internet, inklusive din webbplats.
+
+**Textläge**
+
+```json
+CRMID: John, ECID: 123
+CRMID: John, ECID: 999, IDFA: a-b-c
 ```
 
-**Algoritmkonfiguration:**
+**Algoritmkonfiguration (identitetsinställningar)**
 
-Du kan skapa det här scenariot i diagramsimulering genom att konfigurera följande inställningar för algoritmkonfigurationen:
+Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du simulerar diagrammet.
 
-| Prioritet | Visningsnamn | Identitetstyp | Unikt per diagram |
-| ---| --- | --- | --- |
-| 1 | CRMID | CROSS_DEVICE | Ja |
-| 2 | ECID | COOKIE | Nej |
+| Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
+| ECID | ECID | COOKIE | | 2 |
+| IDFA | IDFA | ENHET | | 3 |
 
-**Val av primär identitet för kundprofil i realtid:**
+**Simulerat diagram**
 
-I den här konfigurationen definieras den primära identiteten så här:
++++Markera för att visa det simulerade diagrammet
 
-| Autentiseringsstatus | Namnutrymme i händelser | Primär identitet |
-| --- | --- | --- |
-| Autentiserad | CRMID, ECID | CRMID |
-| Oautentiserad | ECID | ECID |
+I det här diagrammet representeras John (slutanvändaren) av CRMID. {ECID: 123} representerar den webbläsare som John använde på sin dator för att besöka din e-handelsplattform. {ECID: 999} representerar webbläsaren som han använde på sin [!DNL iPhone] och {IDFA: a-b-c} representerar sin [!DNL iPhone].
 
-**Diagramexempel**
+![En enkel implementering med ett namnutrymme mellan olika enheter..](../images/configs/basic/simple-implementation.png)
+
++++
+
+### Utövning
+
+Simulera följande konfiguration i Diagramsimulering. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
 
 >[!BEGINTABS]
 
->[!TAB Idealiskt enpersonsdiagram]
+>[!TAB Delad enhet (PC)]
 
-Följande är ett exempel på ett idealiskt enpersonsdiagram, där CRMID är unikt och har högsta prioritet.
+**Delad enhet (PC)**
 
-![Ett simulerat exempel på ett idealiskt enpersonsdiagram, där CRMID är unikt och har högsta prioritet.](../images/graph-examples/crmid_only_single.png "Ett simulerat exempel på ett idealiskt enpersonsdiagram, där CRMID är unikt och har högsta prioritet."){zoomable="yes"}
+**Textläge:**
 
->[!TAB Flerpersonsdiagram]
-
-Följande är ett exempel på ett flerpersonsdiagram. I det här exemplet visas ett scenario med delade enheter, där det finns två CRMID:n och där den med den äldre etablerade länken tas bort.
-
-![Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort.](../images/graph-examples/crmid_only_multi.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, ECID: 111
-CRMID: Summer, ECID: 111
+```json
+CRMID: John, ECID: 111
+CRMID: Jane, ECID: 111
 ```
+
+**Simulerat diagram**
+
++++Markera för att visa det simulerade diagrammet
+
+I det här diagrammet representeras John och Jane av sina egna respektive CRMID:
+
+* {CRMID: John}
+* {CRMID: Jane}
+
+Webbläsaren på den stationära datorn som båda använder för att besöka din e-handelsplattform representeras av {ECID: 111}. I det här diagramscenariot är Jane den sista autentiserade slutanvändaren och därför tas länken mellan {ECID: 111} och {CRMID: John} bort.
+
+![Ett simulerat diagram för en delad enhet (PC).](../images/configs/basic/shared-device-pc.png)
+
++++
+
+>[!TAB Delad enhet (mobil)]
+
+**Delad enhet (mobil)**
+
+**Textläge:**
+
+```json
+CRMID: John, ECID: 111, IDFA: a-b-c
+CRMID: Jane, ECID: 111, IDFA: a-b-c
+```
+
+**Simulerat diagram**
+
++++Markera för att visa det simulerade diagrammet
+
+I det här diagrammet representeras John och Jane av sina egna respektive CRMID:n. Webbläsaren som de använder representeras av {ECID: 111} och [!DNL iPad] som de delar representeras av {IDFA: a-b-c}. I det här diagramscenariot är Jane den sista autentiserade slutanvändaren och därför tas länkarna från {ECID: 111} och {IDFA: a-b-c} till {CRMID: John} bort.
+
+![Ett simulerat diagram för en delad enhet (mobil).](../images/configs/basic/shared-device-mobile.png)
+
++++
 
 >[!ENDTABS]
 
-## CRMID med hash-kodad e-post
+## Mellanliggande implementeringar {#intermediate-implementations}
 
-I det här scenariot är ett CRMID inkapslat och representerar både online- (upplevelsehändelse) och offlinedata (profilpost). Det här scenariot innebär även att ett hashade e-postmeddelande som representerar ett annat namnområde som skickas i CRM-postdatauppsättningen tillsammans med CRMID skickas.
+Läs det här avsnittet för mellanliggande implementeringar av [!DNL Identity Graph Linking Rules].
 
->[!IMPORTANT]
+### Användningsfall: Dina data innehåller icke-unika identiteter
+
+>[!TIP]
 >
->**Det är viktigt att CRMID alltid skickas för varje användare**. Om du inte gör det kan det resultera i ett&quot;farligt&quot; inloggnings-ID-scenario, där en enskild person antas dela en enhet med en annan person.
+>* En **icke-unik identitet** är en identitet som är associerad med ett icke-unikt namnområde.
+>
+>* I exemplen nedan är `CChash` ett anpassat namnutrymme som representerar ett hash-kreditkortsnummer.
 
-**Implementering:**
+Du är en dataarkitekt som arbetar för en affärsbank som utfärdar kreditkort. Marknadsföringsteamet har angett att de vill inkludera historik för tidigare kreditkortstransaktioner i en profil. Det här identitetsdiagrammet kan se ut så här.
 
-| Använda namnutrymmen | Samlingsmetod för webbeteenden |
-| --- | --- |
-| CRMID, Email_LC_SHA256, ECID | Web SDK |
+**Textläge:**
 
-**Händelser:**
-
-Du kan skapa det här scenariot i diagramsimulering genom att kopiera följande händelser till textläge:
-
-```shell
-CRMID: Tom, Email_LC_SHA256: tom<span>@acme.com
-CRMID: Tom, ECID: 111
-CRMID: Summer, Email_LC_SHA256: summer<span>@acme.com
-CRMID: Summer, ECID: 222
+```json
+CRMID: John, CChash: 1111-2222 
+CRMID: John, CChash: 3333-4444 
+CRMID: John, ECID: 123 
+CRMID: John, ECID: 999, IDFA: a-b-c
 ```
 
-**Algoritmkonfiguration:**
+**Algoritmkonfiguration (identitetsinställningar)**
 
-Du kan skapa det här scenariot i diagramsimulering genom att konfigurera följande inställningar för algoritmkonfigurationen:
+Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du simulerar diagrammet.
 
-| Prioritet | Visningsnamn | Identitetstyp | Unikt per diagram |
-| ---| --- | --- | --- |
-| 1 | CRMID | CROSS_DEVICE | Ja |
-| 2 | E-post (SHA256, nedsänkt) | E-post | Nej |
-| 3 | ECID | COOKIE | Nej |
+| Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
+| CChash | CChash | CROSS_DEVICE | | 2 |
+| ECID | ECID | COOKIE | | 3 |
+| IDFA | IDFA | ENHET | | 4 |
 
-**Val av primär identitet för profil:**
+**Simulerat diagram**
 
-I den här konfigurationen definieras den primära identiteten så här:
++++Markera för att visa det simulerade diagrammet
 
-| Autentiseringsstatus | Namnutrymme i händelser | Primär identitet |
-| --- | --- | --- |
-| Autentiserad | CRMID, ECID | CRMID |
-| Oautentiserad | ECID | ECID |
+![Bild av det simulerade diagrammet](../images/configs/basic/simple-implementation-non-unique.png)
 
-**Diagramexempel**
++++
+
+Det finns inga garantier för att dessa kreditkortsnummer, eller andra icke-unika namnutrymmen, alltid kommer att kopplas till en enda slutanvändare. Två slutanvändare kan registrera med samma kreditkort. Det kan finnas icke-unika platshållarvärden som felaktigt har importerats. Kort och gott: det finns ingen garanti för att icke-unika namnutrymmen inte orsakar komprimering av diagram.
+
+För att lösa det här problemet tar identitetstjänsten bort de äldsta länkarna och behåller de senaste länkarna. Detta garanterar att du bara har ett CRMID i ett diagram och förhindrar att diagrammet komprimeras.
+
+### Utövning
+
+Simulera följande konfigurationer i Graph Simulation. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
 
 >[!BEGINTABS]
 
->[!TAB Idealiskt enpersonsdiagram]
+>[!TAB Två slutanvändare med samma kreditkort]
 
-Nedan följer exempel på ett par idealiska enpersonsdiagram, där varje CRMID är associerat med deras respektive hash-kodade e-postnamnutrymme och ECID.
+Två olika slutanvändare registrerar sig för din e-handelswebbplats med samma kreditkort. Marknadsföringsteamet vill förhindra att diagram kollapsar genom att se till att kreditkortet bara är kopplat till en enda profil.
 
-![I det här exemplet genereras två separata diagram som representerar en entitet med en person.](../images/graph-examples/crmid_hashed_single.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+**Textläge:**
 
->[!TAB Flerpersonsdiagram: delad enhet]
-
-Följande är ett exempel på ett grafiscenario med flera personer där en enhet delas av två personer.
-
-![I det här exemplet visar det simulerade diagrammet ett &quot;delat enhetsscenario&quot; eftersom både Tom och sommaren är associerade med samma ECID.](../images/graph-examples/crmid_hashed_shared_device.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc
-CRMID: Tom, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff
-CRMID: Summer, ECID: 222
-CRMID: Summer, ECID: 111
+```json
+CRMID: John, CChash: 1111-2222
+CRMID: Jane, CChash: 1111-2222
+CRMID: John, ECID: 123
+CRMID: Jane, ECID:456
 ```
 
->[!TAB Flerpersonsdiagram: icke-unik e-post]
+**Simulerat diagram**
 
-Följande är ett exempel på ett grafscenario med flera personer där e-post inte är unikt och associeras med två olika CRMID:n.
++++Markera för att visa det simulerade diagrammet
 
-![Det här scenariot liknar ett scenario där en delad enhet används. I stället för att låta personenheterna dela ECID kopplas de i stället till samma e-postkonto. &quot;Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort. ](../images/graph-examples/crmid_hashed_nonunique_email.png){zoomable="yes"}
+![Ett diagram där två slutanvändare registrerar sig med samma kreditkort.](../images/configs/intermediate/graph-with-same-credit-card.png)
 
-**Indata för diagramsimuleringshändelser**
++++
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc
-CRMID: Tom, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff
-CRMID: Summer, ECID: 222
-CRMID: Summer, Email_LC_SHA256: aabbcc
+>[!TAB Ogiltigt kreditkortsnummer]
+
+På grund av orena data hämtas ett ogiltigt kreditkortsnummer till Experience Platform.
+
+**Textläge:**
+
+```json
+CRMID: John, CChash: undefined
+CRMID: Jane, CChash: undefined
+CRMID: Jack, CChash: undefined
+CRMID: Jill, CChash: undefined
 ```
+
+**Simulerat diagram**
+
++++Markera för att visa det simulerade diagrammet
+
+![Ett diagram där ett hash-problem orsakar ett ogiltigt kreditkort.](../images/configs/intermediate/graph-with-invalid-credit-card.png)
+
++++
 
 >[!ENDTABS]
 
-## CRMID med hash-kodad e-post, hash-kodad telefon, GAID och IDFA
+### Användningsfall: Dina data innehåller både hash-kodade och ohashade CRMID:n
 
-Detta scenario liknar det föregående. I det här scenariot markeras däremot hashad e-post och telefon som identiteter som ska användas i [[!DNL Segment Match]](../../segmentation/ui/segment-match/overview.md).
+Din inmatning innehåller både ett ej hashad (offline) CRMID och ett hashas (online) CRMID. De förväntar sig en direkt relation mellan både ohashade och hashade CRMID. När en slutanvändare bläddrar med ett autentiserat konto skickas det hashas-CRMID tillsammans med enhets-ID (representeras i identitetstjänsten som ett ECID).
 
->[!IMPORTANT]
->
->**Det är viktigt att CRMID alltid skickas för varje användare**. Om du inte gör det kan det resultera i ett&quot;farligt&quot; inloggnings-ID-scenario, där en enskild person antas dela en enhet med en annan person.
+**Algoritmkonfiguration (identitetsinställningar)**
 
-**Implementering:**
+Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du simulerar diagrammet.
 
-| Använda namnutrymmen | Samlingsmetod för webbeteenden |
-| --- | --- |
-| CRMID, Email_LC_SHA256, Phone_SHA256, GAID, IDFA, ECID | Web SDK |
+| Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
+| --- | --- | --- | --- | --- | 
+| CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
+| CRMIDhash | CRMIDhash | CROSS_DEVICE | ✔️ | 2 |
+| ECID | ECID | COOKIE | | 3 |
 
-**Händelser:**
 
-Du kan skapa det här scenariot i diagramsimulering genom att kopiera följande händelser till textläge:
+**Utövning**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID:B-B-B
-```
-
-**Algoritmkonfiguration:**
-
-Du kan skapa det här scenariot i diagramsimulering genom att konfigurera följande inställningar för algoritmkonfigurationen:
-
-| Prioritet | Visningsnamn | Identitetstyp | Unikt per diagram |
-| ---| --- | --- | --- |
-| 1 | CRMID | CROSS_DEVICE | Ja |
-| 2 | E-post (SHA256, nedsänkt) | E-post | Nej |
-| 3 | Telefon (SHA256) | Telefon | Nej |
-| 4 | Google Ad ID (GAID) | ENHET | Nej |
-| 5 | Apple IDFA (ID för Apple) | ENHET | Nej |
-| 6 | ECID | COOKIE | Nej |
-
-**Val av primär identitet för profil:**
-
-I den här konfigurationen definieras den primära identiteten så här:
-
-| Autentiseringsstatus | Namnutrymme i händelser | Primär identitet |
-| --- | --- | --- |
-| Autentiserad | CRMID, IDFA, ECID | CRMID |
-| Autentiserad | CRMID, GAID, ECID | CRMID |
-| Autentiserad | CRMID, ECID | CRMID |
-| Oautentiserad | GAID, ECID | GAID |
-| Oautentiserad | IDFA, ECID | IDFA |
-| Oautentiserad | ECID | ECID |
-
-**Diagramexempel**
+Simulera följande konfigurationer i Graph Simulation. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
 
 >[!BEGINTABS]
 
->[!TAB Idealiskt enpersonsdiagram]
+>[!TAB Scenario 1: delad enhet]
 
-Följande är ett idealiskt enpersonsdiagram där hash-kodad e-post och hash-kodad telefon är markerade som identiteter för användning i [!DNL Segment Match]. I det här scenariot delas diagrammen upp i två, som representerar olika personenheter.
+John och Jane delar en enhet.
 
-![Ett idealiskt enpersonsdiagram.](../images/graph-examples/crmid_hashed_single_seg_match.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+**Textläge:**
 
->[!TAB Flerpersonsdiagram: delad enhet, delad dator]
-
-Följande är ett flerpersonsdiagram där en enhet (dator) delas av två personer. I det här scenariot representeras den delade datorn av `{ECID: 111}` och är länkad till `{CRMID: Summer}` eftersom länken är den senast upprättade länken. `{CRMID: Tom}` har tagits bort eftersom länken mellan `{CRMID: Tom}` och `{ECID: 111}` är äldre och eftersom CRMID är det unika namnområdet i den här konfigurationen.
-
-![Ett flerpersonsdiagram där två användare delar en dator.](../images/graph-examples/shared_device_shared_computer.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID:B-B-B
-CRMID: Summer, ECID: 111
+```json
+CRMID: John, CRMIDhash: John
+CRMID: Jane, CRMIDhash: Jane
+CRMIDhash: John, ECID: 111 
+CRMIDhash: Jane, ECID: 111
 ```
 
->[!TAB Flerpersonsdiagram: delad enhet, android-mobil enhet]
+![platshållare](../images/configs/intermediate/shared-device-hashed-crmid.png)
 
-Följande är ett flerpersonsdiagram där en android-enhet delas av två personer. I det här scenariot är CRMID konfigurerat som ett unikt namnområde och därför ersätter den nyare länken för `{CRMID: Tom, GAID: B-B-B, ECID:444}` den äldre `{CRMID: Summer, GAID: B-B-B, ECID:444}`.
+>[!TAB Scenario 2: felaktiga data]
 
-![Ett flerpersonsdiagram där två användare delar en android-mobil enhet.](../images/graph-examples/shared_device_android.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+På grund av fel i hashprocessen genereras ett icke-unikt kraschat CRMID som skickas till identitetstjänsten.
 
-**Indata för diagramsimuleringshändelser**
+**Textläge:**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Tom, ECID: 444, GAID: B-B-B
+```json
+CRMID: John, CRMIDhash: aaaa
+CRMID: Jane, CRMIDhash: aaaa
 ```
 
->[!TAB Flerpersonsdiagram: delad enhet, äppelmobil enhet, ingen ECID-återställning]
+![Ett delat enhetsdiagram med ett fel i hashprocessen, vilket leder till ett icke-unikt kraschat CRMID.](../images/configs/intermediate/hashing-error.png)
 
-Följande är ett flerpersonsdiagram där en Apple-enhet delas av två personer. I det här scenariot delas IDFA, men ECID återställs inte.
+>[!ENDTABS]
+<!-- 
+### Use case: You are using Real-Time CDP and Adobe Commerce
 
-![Ett flerpersonsdiagram där två användare delar en Apple-mobilenhet.](../images/graph-examples/shared_device_apple_no_reset.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+You have two types of end-users:
 
-**Indata för diagramsimuleringshändelser**
+* **Members**: An end-user who is assigned a CRMID and has an email account registered to your system.
+* **Guests**: An end-user who is not a member. They do not have an assigned CRMID and their email accounts are not registered to your system.
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, ECID: 222, IDFA: A-A-A
+In this scenario, your customers are sending data from Adobe Commerce to Real-Time CDP.
+
+**Exercise**
+
+Simulate the following configurations in the graph simulation tool. You can either create your own events, or copy and paste using text mode.
+
+>[!BEGINTABS]
+
+>[!TAB Shared device between two members]
+
+In this scenario, two members share the same device to browse an e-commerce website.
+
+**Text mode**
+
+```json
+CRMID: John, Email: john@g
+CRMID: Jane, Email: jane@g
+CRMID: John, ECID: 111
+CRMID: Jane, ECID: 111
 ```
 
->[!TAB Flerpersonsdiagram: delad enhet, äpple, ECID-återställning]
+![A graph that displays two authenticated members who share a device.](../images/configs/intermediate/shared-device-two-members.png)
 
-Följande är ett flerpersonsdiagram där en Apple-enhet delas av två personer. I det här scenariot återställs ECID, men IDFA är fortfarande detsamma.
+>[!TAB Shared device between two guests]
 
-![Ett flerpersonsdiagram där två användare delar en Apple-mobilenhet, men ECID återställs.](../images/graph-examples/shared_device_apple_with_reset.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+In this scenario, two guests share the same device to browse an e-commerce website.
 
-**Indata för diagramsimuleringshändelser**
+**Text mode**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, ECID: 555, IDFA: A-A-A
+```json
+Email: john@g, ECID: 111
+Email: jane@g, ECID: 111
 ```
 
->[!TAB Flerpersonsdiagram: Icke-unik telefon]
+![A graph that displays two guests who share a device.](../images/configs/intermediate/shared-device-two-guests.png)
 
-Följande är ett grafscenario med flera personer där samma telefonnummer delas av två personer.
+>[!TAB Shared device between a member and a guest]
 
-![Ett flerpersonsdiagram där telefonnamnutrymmet inte är unikt.](../images/graph-examples/non_unique_phone.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+In this scenario, a member and a guest share the same device to browse an e-commerce website.
 
-**Indata för diagramsimuleringshändelser**
+**Text mode**
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, Phone_SHA256: 123-4567
+```json
+CRMID: John, Email: john@g
+CRMID: John, ECID: 111
+Email: jane@g, ECID: 111
 ```
 
-I det här exemplet är `{Phone_SHA256}` också markerat som ett unikt namnutrymme. Därför kan ett diagram inte ha mer än en identitet med namnutrymmet `{Phone_SHA256}`. I det här scenariot är `{Phone_SHA256: 765-4321}` inte länkad från `{CRMID: Summer}` och `{Email_LC_SHA256: ddeeff}` eftersom det är den äldre länken,
+![A graph that displays a member and a guest who share a device.](../images/configs/intermediate/shared-device-member-and-guest.png)
 
-![Ett flerpersonsdiagram där Phone_SHA256 är unikt.](../images/graph-examples/unique_phone.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+>[!ENDTABS] -->
 
->[!TAB Flerpersonsdiagram: Icke-unik e-post]
+### Användningsfall: Dina data innehåller tre unika namnutrymmen
 
-Följande är ett flerpersonsdiagram där e-post delas av två personer.
+Kunden definierar en enpersonsenhet enligt följande:
 
-![Ett flerpersonsdiagram där e-post inte är unikt](../images/graph-examples/non_unique_email.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
+* En slutanvändare med ett tilldelat CRMID.
+* En slutanvändare som är associerad med en hash-kodad e-postadress, så att profiler kan aktiveras för mål som stöder hash-kodad e-post (till exempel [!DNL Facebook]).
+* En slutanvändare som är associerad med en e-postadress, så att supportpersonalen kan slå upp sin profil på Real-Time CDP med den e-postadressen.
 
-**Indata för diagramsimuleringshändelser**
+| Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
+| E-post | E-post | E-post | ✔️ | 2 |
+| Email_LC_SHA256 | Email_LC_SHA256 | E-post | ✔️ | 3 |
+| ECID | ECID | COOKIE | | 4 |
 
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, ECID: 111
-CRMID: Tom, ECID: 222, IDFA: A-A-A
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, ECID: 333
-CRMID: Summer, ECID: 444, GAID: B-B-B
-CRMID: Summer, Email_LC_SHA256: aabbcc
+Simulera följande konfigurationer i diagramsimuleringsverktyget. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
+
+>[!BEGINTABS]
+
+>[!TAB Två slutanvändare loggar in]
+
+I det här scenariot loggar både John och Jane in på en e-handelswebbplats.
+
+**Textläge**
+
+```json
+CRMID: John, Email: john@g, Email_LC_SHA256: john_hash 
+CRMID: Jane, Email: jane@g, Email_LC_SHA256: jane_hash 
+CRMID: John, ECID: 111 
+CRMID: Jane, ECID: 111
 ```
+
+![Ett diagram som visar två slutanvändare som loggar in på webbplatsen med samma enhet.](../images/configs/intermediate/two-end-users-log-ing.png)
+
+>[!TAB En slutanvändare ändrar sin e-postadress]
+
+**Textläge**
+
+```json
+CRMID: John, Email: john@g, Email_LC_SHA256: john_hash
+CRMID: John, Email: john@y, Email_LC_SHA256: john_y_hash
+```
+
+![Ett diagram som visar en slutanvändare som har ändrat sin e-post.](../images/configs/intermediate/end-user-changes-email.png)
 
 >[!ENDTABS]
 
-## Ett CRMID med flera inloggnings-ID (enkel version)
+## Avancerade implementeringar {#advanced-implementations}
 
-I det här scenariot finns det ett enda CRMID som representerar en personenhet. En personenhet kan dock ha flera inloggningsidentifierare:
+Avancerade implementeringar omfattar komplexa och flerskiktade diagramscenarier. De här typerna av implementeringar inkluderar användningen av **namnområdesprioritet** för att identifiera rätt länkar som måste tas bort för att diagrammet inte ska komprimeras.
 
-* En viss personenhet kan ha olika kontotyper (personlig kontra affärsverksamhet, konto per delstat, konto per varumärke osv.)
-* En viss personenhet kan använda olika e-postadresser för valfritt antal konton.
+**Namnområdesprioritet** är metadata som rangordnar namnutrymmen efter deras prioritet. Om ett diagram innehåller två identiteter, där vart och ett har olika unika namnutrymmen, använder identitetstjänsten namnområdesprioritet för att bestämma vilka länkar som ska tas bort. Mer information finns i [dokumentationen om namnområdesprioritet](../identity-graph-linking-rules/namespace-priority.md).
 
->[!IMPORTANT]
->
->**Det är viktigt att CRMID alltid skickas för varje användare**. Om du inte gör det kan det resultera i ett&quot;farligt&quot; inloggnings-ID-scenario, där en enskild person antas dela en enhet med en annan person.
+Namnområdesprioritet spelar en viktig roll i komplexa diagramscenarier. Diagram kan ha flera lager - en slutanvändare kan vara kopplad till flera inloggnings-ID:n och dessa inloggnings-ID:n kan hash-kodas. Dessutom kan olika ECID länkas till olika inloggnings-ID:n. För att säkerställa att rätt länk tas bort i rätt lager måste dina konfigurationer för namnområdesprioritet vara korrekta.
 
-**Implementering:**
+Läs det här avsnittet för mer avancerade implementeringar av [!DNL Identity Graph Linking Rules].
 
-| Använda namnutrymmen | Samlingsmetod för webbeteenden |
-| --- | --- |
-| CRMID, loginID, ECID | Web SDK |
+### Användningsfall: Du behöver support för flera rader företag
 
-**Händelser:**
+Dina slutanvändare har två olika konton, ett personligt konto och ett företagskonto. Varje konto identifieras med ett annat ID. I det här scenariot skulle ett typiskt diagram se ut så här:
 
-Du kan skapa det här scenariot i diagramsimulering genom att kopiera följande händelser till textläge:
+**Textläge***
 
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
+```json
+CRMID: John, loginID: JohnPersonal
+CRMID: John, loginID: JohnBusiness
+loginID: JohnPersonal, ECID: 111
+loginID: JohnPersonal, ECID: 222
+loginID: JohnBusiness, ECID: 222
 ```
 
-**Algoritmkonfiguration:**
+**Algoritmkonfiguration (identitetsinställningar)**
 
-Du kan skapa det här scenariot i diagramsimulering genom att konfigurera följande inställningar för algoritmkonfigurationen:
+Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du simulerar diagrammet.
 
-| Prioritet | Visningsnamn | Identitetstyp | Unikt per diagram |
-| ---| --- | --- | --- |
-| 1 | CRMID | CROSS_DEVICE | Ja |
-| 2 | loginID | CROSS_DEVICE | Nej |
-| 3 | ECID | COOKIE | Nej |
+| Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
+| loginID | loginID | CROSS_DEVICE | | 2 |
+| ECID | ECID | COOKIE | | 3 |
 
-**Val av primär identitet för profil:**
+**Simulerat diagram**
 
-I den här konfigurationen definieras den primära identiteten så här:
++++Markera för att visa det simulerade diagrammet
 
-| Autentiseringsstatus | Namnutrymme i händelser | Primär identitet |
-| --- | --- | --- |
-| Autentiserad | loginID, ECID | loginID |
-| Autentiserad | loginID, ECID | loginID |
-| Autentiserad | CRMID, loginID, ECID | CRMID |
-| Autentiserad | CRMID, ECID | CRMID |
-| Oautentiserad | ECID | ECID |
+![Ett identitetsdiagram för en slutanvändare med ett företag och ett personligt e-postmeddelande.](../images/configs/advanced/advanced.png)
 
-**Diagramexempel**
++++
+
+
+**Utövning**
+
+Simulera följande konfiguration i Diagramsimulering. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
 
 >[!BEGINTABS]
 
->[!TAB Idealiskt enpersonsscenario]
+>[!TAB Delad enhet]
 
-Följande är ett enpersonsdiagram med ett enda CRMID och flera inloggnings-ID:n.
+**Textläge**
 
-![Ett diagramscenario som innehåller ett enda CRMID och flera inloggnings-ID:n.](../images/graph-examples/single_crmid.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
-
->[!TAB Scenario med flera personer: delad enhet]
-
-Följande är ett flerpersonsdiagram där en enhet delas av två personer. I det här scenariot är `{ECID:111}` länkad till både `{loginID:ID_A}` och `{loginID:ID_C}` och den äldre etablerade länken för `{ECID:111, loginID:ID_A}` tas bort.
-
-![Ett flerpersonsscenario för delade enheter.](../images/graph-examples/single_crmid_shared_device.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-loginID: ID_C, ECID: 111
+```json
+CRMID: John, loginID: JohnPersonal
+CRMID: John, loginID: JohnBusiness
+CRMID: Jane, loginID: JanePersonal
+CRMID: Jane, loginID: JaneBusiness
+loginID: JohnPersonal, ECID: 111
+loginID: JanePersonal, ECID: 111
 ```
 
->[!TAB Scenario med flera personer: felaktiga data]
+![Ett diagram över en avancerad delad enhet.](../images/configs/advanced/advanced-shared-device.png)
 
-Följande är ett flerpersonsdiagram som innehåller felaktiga data. I det här scenariot är `{loginID:ID_D}` felaktigt länkad till två olika användare och länken med den äldre tidsstämpeln tas bort, till förmån för den senast upprättade länken.
+>[!TAB Felaktiga data skickas till Real-Time CDP]
 
-![Ett flerpersonsdiagram med felaktiga data.](../images/graph-examples/single_crmid_bad_data.png "Ett simulerat exempel på ett flerpersonsdiagram. I det här exemplet visas ett delat enhetsscenario där det finns två CRMID:n och den äldre etablerade länken tas bort."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Tom, loginID: ID_D
+```json
+CRMID: John, loginID: JohnPersonal
+CRMID: John, loginID: error
+CRMID: Jane, loginID: JanePersonal
+CRMID: Jane, loginID: error
+loginID: JohnPersonal, ECID: 111
+loginID: JanePersonal, ECID: 222
 ```
 
->[!TAB &#39;Dangling&#39; loginID ]
-
-I följande diagram simuleras ett &quot;farligt&quot; loginID-scenario. I det här exemplet är två olika loginID bundna till samma ECID. `{loginID:ID_C}` är dock inte länkad till CRMID. Det finns därför inget sätt för identitetstjänsten att upptäcka att dessa två loginID representerar två olika enheter.
-
-![Ett farligt loginID-scenario.](../images/graph-examples/dangling_example.png "Ett farligt loginID-scenario."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-loginID: ID_C, ECID: 111
-```
+![Ett diagram som visar ett scenario där felaktiga data skickas till Real-Time CDP.](../images/configs/advanced/advanced-bad-data.png)
 
 >[!ENDTABS]
 
-## Ett CRMID med flera inloggnings-ID (komplex version)
+### Använd skiftläge: Du har komplexa implementeringar som kräver flera namnutrymmen
 
-I det här scenariot finns det ett enda CRMID som representerar en personenhet. En personenhet kan dock ha flera inloggningsidentifierare:
+Du är ett medie- och underhållningsföretag och dina slutanvändare har följande:
+* EN CRMID
+* Ett lojalitets-ID
+Dessutom kan slutanvändarna göra ett köp på e-handelswebbplatsen och dessa data är knutna till deras e-postadress. Användardata berikas också av en tredjeparts databasleverantör och skickas till Experience Platform i grupper.
 
-* En viss personenhet kan ha olika kontotyper (personlig kontra affärsverksamhet, konto per delstat, konto per varumärke osv.)
-* En viss personenhet kan använda olika e-postadresser för valfritt antal konton.
+**Textläge**
 
->[!IMPORTANT]
->
->**Det är viktigt att CRMID alltid skickas för varje användare**. Om du inte gör det kan det resultera i ett&quot;farligt&quot; inloggnings-ID-scenario, där en enskild person antas dela en enhet med en annan person.
-
-**Implementering:**
-
-| Använda namnutrymmen | Samlingsmetod för webbeteenden |
-| --- | --- |
-| CRMID, Email_LC_SHA256, Phone_SHA256, loginID, ECID | Adobe Analytics källanslutning. <br> **Obs!** Som standard blockeras AAID i identitetstjänsten, och du måste därför ange en högre prioritet för dina ECID:n än AAID:n när du använder Analytics-källan. Läs [implementeringsguiden](./implementation-guide.md#ingest-your-data) om du vill ha mer information.</br> |
-
-**Händelser:**
-
-Du kan skapa det här scenariot i diagramsimulering genom att kopiera följande händelser till textläge:
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+Email: john@g, orderID: aaa
+CRMID: John, thirdPartyID: xyz
+CRMID: John, ECID: 111
 ```
 
-**Algoritmkonfiguration:**
+**Algoritmkonfiguration (identitetsinställningar)**
 
-Du kan skapa det här scenariot i diagramsimulering genom att konfigurera följande inställningar för algoritmkonfigurationen:
+Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du simulerar diagrammet.
 
-| Prioritet | Visningsnamn | Identitetstyp | Unikt per diagram |
-| ---| --- | --- | --- | 
-| 1 | CRMID | CROSS_DEVICE | Ja |
-| 2 | Email_LC_SHA256 | E-post | Nej |
-| 3 | Phone_SHA256 | Telefon | Nej |
-| 4 | loginID | CROSS_DEVICE | Nej |
-| 5 | ECID | COOKIE | Nej |
-| 6 | STÖD | COOKIE | Nej |
+| Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
+| --- | --- | --- | --- | --- |
+| CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
+| loyaltyID | loyaltyID | CROSS_DEVICE | | 2 |
+| E-post | E-post | E-post | | 3 |
+| thirdPartyID | thirdPartyID | CROSS_DEVICE | | 4 |
+| orderID | orderID | CROSS_DEVICE | | 5 |
+| ECID | ECID | COOKIE | | 6 |
 
-**Val av primär identitet för profil:**
+**Utövning**
 
-I den här konfigurationen definieras den primära identiteten så här:
-
-| Autentiseringsstatus | Namnutrymme i händelser | Primär identitet |
-| --- | --- | --- |
-| Autentiserad | loginID, ECID | loginID |
-| Autentiserad | loginID, ECID | loginID |
-| Autentiserad | CRMID, loginID, ECID | CRMID |
-| Autentiserad | CRMID, ECID | CRMID |
-| Oautentiserad | ECID | ECID |
-
-**Diagramexempel**
+Simulera följande konfiguration i Diagramsimulering. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
 
 >[!BEGINTABS]
 
->[!TAB Idealiskt enpersonsdiagram]
+>[!TAB Delad enhet]
 
-Följande är ett exempel på två enpersonsdiagram som har ett CRMID och flera loginID:n.
+**Textläge**
 
-![Ett enpersonsdiagram som innehåller ett CRMID och flera inloggnings-ID.](../images/graph-examples/complex_single_person.png "Ett enpersonsdiagram som innehåller ett CRMID och flera användar-ID."){zoomable="yes"}
-
->[!TAB Flerpersonsdiagram: delad enhet 1]
-
-Följande är ett flerpersonsscenario för delade enheter där `{ECID:111}` är länkat till både `{loginID:ID_A}` och `{loginID:ID_C}`. I det här fallet tas de äldre etablerade länkarna bort till förmån för de senast etablerade länkarna.
-
-![Ett diagram över delade enheter med flera personer.](../images/graph-examples/complex_shared_device_one.png "Ett diagram över delade enheter med flera personer."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-loginID: ID_C, ECID: 111
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: Jane, loyaltyID: Jane, Email: jane@g
+Email: john@g, orderID: aaa 
+CRMID: John, thirdPartyID: xyz 
+CRMID: John, ECID: 111
+CRMID: Jane, ECID: 111
 ```
 
->[!TAB Flerpersonsdiagram: delad enhet 2]
+![Ett exempel på ett komplext diagram med en delad enhet.](../images/configs/advanced/complex-shared-device.png)
 
-I det här fallet skickas både loginID och CRMID som upplevelsehändelser i stället för att bara skicka in inloggnings-ID.
+>[!TAB Slutanvändaren ändrar sin e-postadress]
 
-![Ett grafscenario för delade enheter med flera personer där både loginID och CRMID skickas som upplevelsehändelser.](../images/graph-examples/complex_shared_device_two.png "Ett grafscenario för delade enheter med flera personer där både loginID och CRMID skickas som upplevelsehändelser."){zoomable="yes"}
+**Textläge**
 
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Summer, loginID: ID_C, ECID: 111
-loginID: ID_A, ECID: 111
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: John, loyaltyID: John, Email: john@y
 ```
 
->[!TAB Flerpersonsdiagram: felaktiga loginID-data]
+![Ett diagram som visar identitetsbeteendet med en e-poständring.](../images/configs/advanced/complex-email-change.png)
 
-I det här scenariot är `{loginID:ID_C}` länkad till både `{CRMID:Tom}` och `{CRMID:Summer}` och anses därför vara felaktiga data eftersom idealiska diagramscenarier inte ska länka samma inloggnings-ID till två olika användare. I det här fallet tas de äldre etablerade länkarna bort till förmån för de länkar som upprättats nyligen.
+>[!TAB Associationen thirdPartyID ändras]
 
-![Ett flerpersonsdiagram som innehåller felaktiga inloggningsdata.](../images/graph-examples/complex_bad_data.png "Ett flerpersonsdiagram som innehåller felaktiga inloggningsdata."){zoomable="yes"}
+**Textläge**
 
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Tom, loginID: ID_C
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: Jane, loyaltyID: Jane, Email: jane@g
+CRMID: John, thirdPartyID: xyz
+CRMID: Jane, thirdPartyID: xyz
 ```
 
->[!TAB Flerpersonsdiagram: icke-unik e-post]
+![Ett diagram som visar identitetsbeteende med en ändring i associationen för ett tredje parts-ID.](../images/configs/advanced/complex-third-party-change.png)
 
-I det här scenariot länkas ett icke-unikt e-postmeddelande med två olika CRMID:n, och därför tas de äldre etablerade länkarna bort till förmån för de senast etablerade länkarna.
+>[!TAB Icke-unikt orderID]
 
-![Ett diagram för flera personer som innehåller en icke-unik e-postadress.](../images/graph-examples/complex_non_unique_email.png "Ett flerpersonsdiagram som innehåller en icke-unik e-postadress."){zoomable="yes"}
+**Textläge**
 
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Summer, Email_LC_SHA256: aabbcc
+```json
+CRMID: John, loyaltyID: John, Email: john@g
+CRMID: Jane, loyaltyID: Jane, Email: jane@g
+Email: john@g, orderID: aaa
+Email: jane@g, orderID: aaa
 ```
 
->[!TAB Flerpersonsdiagram: icke-unik telefon]
+![Ett diagram som visar identitetsbeteendet utifrån ett icke-unikt order-ID.](../images/configs/advanced/complex-non-unique.png)
 
-I det här scenariot länkas ett icke-unikt telefonnummer med två olika CRMID, de äldre etablerade länkarna tas bort till förmån för de senast etablerade länkarna.
+>[!TAB Fel lojalitets-ID]
 
-![Ett diagram för flera personer som innehåller ett icke-unikt telefonnummer.](../images/graph-examples/complex_non_unique_phone.png "Ett diagram för flera personer som innehåller ett icke-unikt telefonnummer."){zoomable="yes"}
+**Textläge**
 
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
-CRMID: Tom, loginID: ID_A
-CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111
-CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
-CRMID: Summer, loginID: ID_C
-CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222
-CRMID: Tom, Phone_SHA256: 111-1111
-CRMID: Summer, Phone_SHA256: 111-1111
+```json
+CRMID: John, loyaltyID: aaa, Email: john@g
+CRMID: Jane, loyaltyID: aaa, Email: jane@g
 ```
 
->[!ENDTABS]
-
-## Användning i andra Adobe Commerce
-
-I diagramkonfigurationsexemplen i det här avsnittet beskrivs användningsexempel för Adobe Commerce. Exemplen nedan fokuserar på detaljhandelskunder med två användartyper:
-
-* Registrerad användare (användare som skapade ett konto)
-* Gästanvändare (användare som bara har en e-postadress)
-
->[!IMPORTANT]
->
->**Det är viktigt att CRMID alltid skickas för varje användare**. Om du inte gör det kan det resultera i ett&quot;farligt&quot; inloggnings-ID-scenario, där en enskild person antas dela en enhet med en annan person.
-
-**Implementering:**
-
-| Använda namnutrymmen | Samlingsmetod för webbeteenden |
-| --- | --- |
-| CRMID, Email, ECID | Web SDK |
-
-**Händelser:**
-
-Du kan skapa det här scenariot i diagramsimulering genom att kopiera följande händelser till textläge:
-
-```shell
-CRMID: Tom, Email: tom@acme.com
-CRMID: Tom, ECID: 111
-```
-
-**Algoritmkonfiguration:**
-
-Du kan skapa det här scenariot i diagramsimulering genom att konfigurera följande inställningar för algoritmkonfigurationen:
-
-| Prioritet | Visningsnamn | Identitetstyp | Unikt per diagram |
-| ---| --- | --- | --- | 
-| 1 | CRMID | CROSS_DEVICE | Ja |
-| 2 | E-post | E-post | Ja |
-| 5 | ECID | COOKIE | Nej |
-
-**Val av primär identitet för profil:**
-
-I den här konfigurationen definieras den primära identiteten så här:
-
-| Användaraktivitet | Namnutrymme i händelser | Primär identitet |
-| --- | --- | --- |
-| Autentiserad surfning | CRMID, ECID | CRMID |
-| Kassa på gäst | E-post, ECID | E-post |
-| Oautentiserad surfning | ECID | ECID |
-
->[!WARNING]
->
->Registrerade användare måste ha både CRMID och e-post i sina profiler för att följande diagramscenarier ska fungera.
-
-**Diagramexempel**
-
->[!BEGINTABS]
-
->[!TAB Idealiskt enpersonsdiagram]
-
-Följande är ett exempel på ett idealiskt enpersonsdiagram.
-
-![Ett exempel på ett idealiskt enpersonsdiagram med ett e-postnamnutrymme.](../images/graph-examples/single_person_email.png "Ett exempel på ett idealiskt enpersonsdiagram med ett e-postnamnutrymme."){zoomable="yes"}
-
->[!TAB Flerpersonsdiagram]
-
-Följande är ett exempel på ett flerpersonsdiagram där två registrerade användare surfar med samma enhet.
-
-![Ett grafscenario med flera personer där två registrerade användare surfar med samma enhet.](../images/graph-examples/two_registered_users.png "Ett flerpersonsdiagram där två registrerade användare surfar med samma enhet."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email: tom@acme.com
-CRMID: Summer, Email: summer@acme.com
-CRMID: Tom, ECID: 111
-CRMID: Summer, ECID: 111
-```
-
-I det här scenariot delar en registrerad användare och en gästanvändare samma enhet.
-
-![Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet.](../images/graph-examples/one_guest.png "Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, Email: tom@acme.com
-CRMID: Tom, ECID: 111
-Email: summer@acme.com, ECID: 111
-```
-
-I det här scenariot delar en registrerad användare och en gästanvändare en enhet. Ett implementeringsfel inträffar emellertid eftersom CRMID inte innehåller något motsvarande e-postnamnutrymme. I det här scenariot är Tom den registrerade användaren och Sommaren är gästanvändaren. Till skillnad från det föregående scenariot sammanfogas de två enheterna eftersom det inte finns några gemensamma e-postnamnutrymmen för de två personenheterna.
-
-![Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet, men ett implementeringsfel inträffar eftersom CRMID inte innehåller något e-postnamnutrymme.](../images/graph-examples/no_email_namespace_in_crmid.png "Ett exempel på flerpersonsdiagram där en registrerad användare och en gäst delar samma enhet, men ett implementeringsfel inträffar eftersom CRMID inte innehåller något e-postnamnutrymme."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-CRMID: Tom, ECID: 111
-Email: summer@acme.com, ECID: 111
-```
-
-I det här fallet delar två gästanvändare samma enhet.
-
-![Ett grafscenario med flera personer där två gästanvändare delar samma enhet.](../images/graph-examples/two_guests.png){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-Email: tom@acme.com, ECID: 111
-Email: summer@acme.com, ECID: 111
-```
-
-I det här scenariot checkar en gästanvändare ut ett objekt och registrerar sedan med samma enhet.
-
-![Ett diagramscenario där en gästanvändare köper och registrerar sig för ett konto.](../images/graph-examples/guest_purchase.png "Ett diagramscenario där en gästanvändare köper och registrerar sig för ett konto."){zoomable="yes"}
-
-**Indata för diagramsimuleringshändelser**
-
-```shell
-Email: tom@acme.com, ECID: 111
-Email: tom@acme.com, CRMID: Tom
-CRMID: Tom, ECID: 111
-```
+![Ett diagram som visar identitetsbeteendet utifrån ett felaktigt lojalitets-ID.](../images/configs/advanced/complex-error.png)
 
 >[!ENDTABS]
 
