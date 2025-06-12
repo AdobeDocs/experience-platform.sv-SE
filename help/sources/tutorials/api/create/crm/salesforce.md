@@ -2,9 +2,9 @@
 title: Anslut Salesforce till Experience Platform med API:t för flödestjänst
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
 workflow-type: tm+mt
-source-wordcount: '1082'
+source-wordcount: '1118'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,10 @@ Information om hur du kan anropa Experience Platform API:er finns i guiden [Komm
 Läs stegen nedan om du vill ha information om hur du ansluter din [!DNL Salesforce]-källa till Experience Platform på [!DNL Azure].
 
 ### Samla in nödvändiga inloggningsuppgifter
+
+>[!WARNING]
+>
+>Grundläggande autentisering för källan [!DNL Salesforce] kommer att bli inaktuell i januari 2026. Du måste flytta till autentiseringen för OAuth 2-klientautentiseringsuppgifter för att kunna fortsätta använda källan och hämta data från ditt [!DNL Salesforce]-konto till Experience Platform.
 
 Källan [!DNL Salesforce] stöder grundläggande autentisering och autentiseringsuppgifter för OAuth2-klient.
 
@@ -61,7 +65,7 @@ Om du vill ansluta ditt [!DNL Salesforce]-konto till [!DNL Flow Service] med OAu
 | `apiVersion` | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. Det här värdet är obligatoriskt för autentisering av OAuth2-klientautentiseringsuppgifter. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
-Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL Salesforce] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
+Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL Salesforce] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5).
 
 >[!ENDTABS]
 

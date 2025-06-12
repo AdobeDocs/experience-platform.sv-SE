@@ -2,9 +2,9 @@
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 1665c15c39667521bb74cca216694cf6b46bf26b
+source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1635'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >Du kan nu använda källan [!DNL Salesforce] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
+
+>[!WARNING]
+>
+>Grundläggande autentisering för källan [!DNL Salesforce] kommer att bli inaktuell i januari 2026. Du måste flytta till autentiseringen för OAuth 2-klientautentiseringsuppgifter för att kunna fortsätta använda källan och hämta data från ditt [!DNL Salesforce]-konto till Experience Platform.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -249,7 +253,7 @@ Följande tabell innehåller exempelvärden samt ytterligare information om hur 
 | `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i din organisation. | `b2bcdpproductiontest` |
 | `PLATFORM_URL` | URL-slutpunkten som du gör API-anrop till. Det här värdet är fast och är alltid inställt på: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
 | `munchkinId` | Unikt ID för ditt [!DNL Marketo]-konto. I självstudiekursen om [autentisering av din [!DNL Marketo] instans](../adobe-applications/marketo/marketo-auth.md) finns mer information om hur du hämtar din `munchkinId`. | `123-ABC-456` |
-| `sfdc_org_id` | Organisations-ID för ditt [!DNL Salesforce]-konto. Se följande [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1) för mer information om hur du skaffar ditt [!DNL Salesforce] organisations-ID. | `00D4W000000FgYJUA0` |
+| `sfdc_org_id` | Organisations-ID för ditt [!DNL Salesforce]-konto. Se följande [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&type=1&mode=1) för mer information om hur du skaffar ditt [!DNL Salesforce] organisations-ID. | `00D4W000000FgYJUA0` |
 | `has_abm` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Account-Based Marketing]. | `false` |
 | `has_msi` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Sales Insight]. | `false` |
 

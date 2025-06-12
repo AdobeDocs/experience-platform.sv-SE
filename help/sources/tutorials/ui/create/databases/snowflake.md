@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Snowflake med Adobe Experience Platform användargränssnitt.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
 workflow-type: tm+mt
-source-wordcount: '1126'
+source-wordcount: '1183'
 ht-degree: 1%
 
 ---
@@ -20,6 +20,10 @@ ht-degree: 1%
 Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Snowflake]-konto till Adobe Experience Platform med användargränssnittet.
 
 ## Komma igång
+
+>[!WARNING]
+>
+>Grundläggande autentisering (eller kontonyckelautentisering) för källan [!DNL Snowflake] kommer att bli inaktuell i november 2025. Du måste gå över till nyckelparsbaserad autentisering för att kunna fortsätta använda källan och hämta data från din databas till Experience Platform. Mer information om borttagningen finns i [[!DNL Snowflake] metodguiden om bästa praxis för att minska riskerna för kreditvärdighetsförluster](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/).
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 

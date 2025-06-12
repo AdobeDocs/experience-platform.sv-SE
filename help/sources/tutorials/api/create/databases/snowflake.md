@@ -3,9 +3,9 @@ title: Anslut Snowflake till Experience Platform med API:t för flödestjänst
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
 workflow-type: tm+mt
-source-wordcount: '1194'
+source-wordcount: '1251'
 ht-degree: 1%
 
 ---
@@ -36,6 +36,10 @@ Följande avsnitt innehåller ytterligare information som du behöver känna til
 Läs stegen nedan om du vill ha information om hur du ansluter din [!DNL Snowflake]-källa till Experience Platform på Azure.
 
 ### Samla in nödvändiga inloggningsuppgifter
+
+>[!WARNING]
+>
+>Grundläggande autentisering (eller kontonyckelautentisering) för källan [!DNL Snowflake] kommer att bli inaktuell i november 2025. Du måste gå över till nyckelparsbaserad autentisering för att kunna fortsätta använda källan och hämta data från din databas till Experience Platform. Mer information om borttagningen finns i [[!DNL Snowflake] metodguiden om bästa praxis för att minska riskerna för kreditvärdighetsförluster](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/).
 
 Du måste ange värden för följande autentiseringsegenskaper för att autentisera [!DNL Snowflake]-källan.
 

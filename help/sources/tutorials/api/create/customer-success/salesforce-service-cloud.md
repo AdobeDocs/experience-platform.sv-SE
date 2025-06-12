@@ -2,9 +2,9 @@
 title: Skapa en Salesforce Service Cloud Source-anslutning med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till Salesforce Service Cloud med API:t för Flow Service.
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '818'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,10 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Salesforce Service Cloud] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
+
+>[!WARNING]
+>
+>Grundläggande autentisering för källan [!DNL Salesforce Service Cloud] kommer att bli inaktuell i januari 2026. Du måste flytta till autentiseringen för OAuth 2-klientautentiseringsuppgifter för att kunna fortsätta använda källan och hämta data från ditt [!DNL Salesforce Service Cloud]-konto till Experience Platform.
 
 Källan [!DNL Salesforce Service Cloud] stöder grundläggande autentisering och autentiseringsuppgifter för OAuth2-klient.
 
@@ -57,7 +61,7 @@ Om du vill ansluta ditt [!DNL Salesforce Service Cloud]-konto till [!DNL Flow Se
 | `apiVersion` | REST API-versionen för den [!DNL Salesforce Service Cloud]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. Det här värdet är obligatoriskt för autentisering av OAuth2-klientautentiseringsuppgifter. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce Service Cloud] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
-Mer information om hur du använder OAuth för [!DNL Salesforce Service Cloud] finns i [[!DNL Salesforce Service Cloud] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
+Mer information om hur du använder OAuth för [!DNL Salesforce Service Cloud] finns i [[!DNL Salesforce Service Cloud] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5).
 
 >[!ENDTABS]
 
