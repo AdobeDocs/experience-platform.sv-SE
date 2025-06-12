@@ -3,10 +3,10 @@ title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: c34c41d384fbc4f309dffa8bba97a0f6f3468efc
+source-git-commit: c716bac1db556fe7a47462e38ee64d7b46bbefcc
 workflow-type: tm+mt
-source-wordcount: '1465'
-ht-degree: 41%
+source-wordcount: '1284'
+ht-degree: 44%
 
 ---
 
@@ -23,8 +23,8 @@ ht-degree: 41%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/latest)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 18 juni 2025**
@@ -38,7 +38,6 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 - [Mål ](#destinations)
 - [Federerad målgruppssammansättning](#fac)
 - [Integritetstjänst](#privacy-service)
-- [Frågetjänst](#query-service)
 - [Sandlådor](#sandboxes)
 - [Källor](#sources)
 
@@ -120,7 +119,7 @@ Med Federerad målgruppssammansättning kan företag sammanställa data för bä
 
 | Ny funktion | Beskrivning |
 | ----------- | ----------- |
-| HIPAA-beredskap | Federated Audience Composition är nu HIPAA-kompatibelt. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppskomposition finns i [sekretess- och säkerhetsöversikten för Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [HIPAA- och Adobe Products and Services-översikt](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
+| HIPAA-beredskap | Federated Audience Composition är nu HIPAA-kompatibelt. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppskomposition finns i [sekretess- och säkerhetsöversikten för Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [HIPAA- och Adobe Products and Services-översikt](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
 
 Mer information finns i dokumentationen för [Federerad målgruppssammansättning (Federated Audience Composition)](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
 
@@ -132,30 +131,9 @@ Flera juridiska och organisatoriska bestämmelser ger användare rätt att på b
 
 | Funktion | Beskrivning |
 |--- | ---|
-| Stöd för Tennessee och Minnesota Privacy Laws | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på statusnivå. Mer information finns i [Regelöversikt](https://experienceleague.adobe.com/sv/docs/experience-platform/privacy/regulations/overview). |
+| Stöd för Tennessee och Minnesota Privacy Laws | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på statusnivå. Mer information finns i [Regelöversikt](https://experienceleague.adobe.com/en/docs/experience-platform/privacy/regulations/overview). |
 
 Mer information om tjänsten finns i [översikten över Privacy Service](../privacy-service/home.md).
-
-## Frågetjänst {#query-service}
-
-Fråga efter data i Adobe Experience Platforms datasjö med hjälp av standard-SQL med Frågetjänst. Kombinera enkelt datauppsättningar och generera nya från frågeresultaten till kraftfull rapportering, möjliggör arbetsflöden för datavetenskap eller underlättar inmatning i kundprofilen i realtid.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Avancerade statistiska funktioner | **Theta-skissens skärningspunkt**: Ny funktion för att beräkna uppsättningsskärningar med hjälp av skisser för ungefärliga distinkta räknings- och uppsättningsåtgärder. **KLL-histogram**: Förbättrade histogramfunktioner med KLL-skisser (Kth small, L largest, Large items) för kvantitativ uppskattning och distributionsanalys. Dessa funktioner är tillgängliga för Data Distiller-kunder. |
-| SQL-mallbibliotek | Nu finns ett omfattande bibliotek med SQL-mallar för vanliga användningsområden. Den här funktionen snabbar upp frågeutvecklingen genom att tillhandahålla mallar för metodtips för ofta förekommande analysmönster, vilket hjälper Data-Distiller-kunder att implementera komplexa analyser mer effektivt. |
-
-**Uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Exempel på RFM-modellering | Ett omfattande exempel på nyhet, frekvens och monetär modellering (RFM) har lagts till för Data Distiller-kunder. Detta inkluderar detaljerad dokumentation och implementeringsguider för kundsegmentering och värdeanalys med hjälp av RFM-tekniker. |
-
-{style="table-layout:auto"}
-
-Mer information om [!DNL Query Service] finns i [[!DNL Query Service] översikten](../query-service/home.md).
 
 ## Sandlådor {#sandboxes}
 
