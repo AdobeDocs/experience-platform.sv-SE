@@ -4,9 +4,9 @@ description: Lär dig mer om de olika implementeringstyperna som du kan konfigur
 hide: true
 hidefromtoc: true
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: b65a5e8e9727da47729191e56c1a32838ec2c6c4
+source-git-commit: f793dbda0520366b3ee69b3aa0f912b005957561
 workflow-type: tm+mt
-source-wordcount: '1934'
+source-wordcount: '1999'
 ht-degree: 1%
 
 ---
@@ -43,6 +43,10 @@ Innan du går in i följande dokument måste du bekanta dig med flera viktiga be
 
 ## Grundläggande implementeringar {#basic-implementations}
 
+>[!TIP]
+>
+>Du måste skapa ett anpassat namnutrymme mellan enheter för&quot;CRMID&quot; för att kunna slutföra de grundläggande implementeringsövningarna nedan.
+
 Läs det här avsnittet för grundläggande implementeringar av [!DNL Identity Graph Linking Rules].
 
 ### Användningsfall: enkel implementering som använder ett namnutrymme mellan olika enheter
@@ -72,15 +76,11 @@ Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du 
 
 **Simulerat diagram**
 
-+++Markera för att visa det simulerade diagrammet
-
-I det här diagrammet representeras John (slutanvändaren) av CRMID. {ECID: 123} representerar den webbläsare som John använde på sin dator för att besöka din e-handelsplattform. {ECID: 999} representerar webbläsaren som han använde på sin [!DNL iPhone] och {IDFA: a-b-c} representerar sin [!DNL iPhone].
+I det här diagrammet representeras John (slutanvändaren) av CRMID. `{ECID: 123}` representerar den webbläsare som John använde på sin dator för att besöka din e-handelsplattform. `{ECID: 999}` representerar webbläsaren som han använde på sin [!DNL iPhone] och `{IDFA: a-b-c}` representerar sin [!DNL iPhone].
 
 ![En enkel implementering med ett namnutrymme mellan olika enheter..](../images/configs/basic/simple-implementation.png)
 
-+++
-
-### Utövning
+**Utövning**
 
 Simulera följande konfiguration i Diagramsimulering. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
 
@@ -99,18 +99,14 @@ CRMID: Jane, ECID: 111
 
 **Simulerat diagram**
 
-+++Markera för att visa det simulerade diagrammet
-
 I det här diagrammet representeras John och Jane av sina egna respektive CRMID:
 
-* {CRMID: John}
-* {CRMID: Jane}
+* `{CRMID: John}`
+* `{CRMID: Jane}`
 
-Webbläsaren på den stationära datorn som båda använder för att besöka din e-handelsplattform representeras av {ECID: 111}. I det här diagramscenariot är Jane den sista autentiserade slutanvändaren och därför tas länken mellan {ECID: 111} och {CRMID: John} bort.
+Webbläsaren på den stationära datorn som båda använder för att besöka din e-handelsplattform representeras av `{ECID: 111}`. I det här diagramscenariot är Jane den sista autentiserade slutanvändaren och därför tas länken mellan `{ECID: 111}` och `{CRMID: John}` bort.
 
 ![Ett simulerat diagram för en delad enhet (PC).](../images/configs/basic/shared-device-pc.png)
-
-+++
 
 >[!TAB Delad enhet (mobil)]
 
@@ -125,13 +121,9 @@ CRMID: Jane, ECID: 111, IDFA: a-b-c
 
 **Simulerat diagram**
 
-+++Markera för att visa det simulerade diagrammet
-
-I det här diagrammet representeras John och Jane av sina egna respektive CRMID:n. Webbläsaren som de använder representeras av {ECID: 111} och [!DNL iPad] som de delar representeras av {IDFA: a-b-c}. I det här diagramscenariot är Jane den sista autentiserade slutanvändaren och därför tas länkarna från {ECID: 111} och {IDFA: a-b-c} till {CRMID: John} bort.
+I det här diagrammet representeras John och Jane av sina egna respektive CRMID:n. Webbläsaren som de använder representeras av `{ECID: 111}` och [!DNL iPad] som de delar representeras av `{IDFA: a-b-c}`. I det här diagramscenariot är Jane den sista autentiserade slutanvändaren och därför tas länkarna från `{ECID: 111}` och `{IDFA: a-b-c}` till `{CRMID: John}` bort.
 
 ![Ett simulerat diagram för en delad enhet (mobil).](../images/configs/basic/shared-device-mobile.png)
-
-+++
 
 >[!ENDTABS]
 
@@ -145,9 +137,9 @@ Läs det här avsnittet för mellanliggande implementeringar av [!DNL Identity G
 >
 >* En **icke-unik identitet** är en identitet som är associerad med ett icke-unikt namnområde.
 >
->* I exemplen nedan är `CChash` ett anpassat namnutrymme som representerar ett hash-kreditkortsnummer.
+>* Du måste skapa anpassade namnutrymmen för olika enheter för&quot;CRMID&quot; och&quot;CChash&quot; för att slutföra de mellanliggande implementeringsövningarna nedan. &quot;CCHash&quot; är ett anpassat namnutrymme som representerar ett hashade kreditkortsnummer.
 
-Du är en dataarkitekt som arbetar för en affärsbank som utfärdar kreditkort. Marknadsföringsteamet har angett att de vill inkludera historik för tidigare kreditkortstransaktioner i en profil. Det här identitetsdiagrammet kan se ut så här.
+Tänk dig att du är en dataarkitekt som arbetar för en affärsbank som utfärdar kreditkort. Marknadsföringsteamet har angett att de vill inkludera historik för tidigare kreditkortstransaktioner i en profil. Det här identitetsdiagrammet kan se ut så här.
 
 **Textläge:**
 
@@ -171,21 +163,32 @@ Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du 
 
 **Simulerat diagram**
 
-+++Markera för att visa det simulerade diagrammet
-
 ![Bild av det simulerade diagrammet](../images/configs/basic/simple-implementation-non-unique.png)
-
-+++
 
 Det finns inga garantier för att dessa kreditkortsnummer, eller andra icke-unika namnutrymmen, alltid kommer att kopplas till en enda slutanvändare. Två slutanvändare kan registrera med samma kreditkort. Det kan finnas icke-unika platshållarvärden som felaktigt har importerats. Kort och gott: det finns ingen garanti för att icke-unika namnutrymmen inte orsakar komprimering av diagram.
 
 För att lösa det här problemet tar identitetstjänsten bort de äldsta länkarna och behåller de senaste länkarna. Detta garanterar att du bara har ett CRMID i ett diagram och förhindrar att diagrammet komprimeras.
 
-### Utövning
+**Utövning**
 
 Simulera följande konfigurationer i Graph Simulation. Du kan antingen skapa egna händelser eller kopiera och klistra in i textläge.
 
 >[!BEGINTABS]
+
+>[!TAB Delad enhet]
+
+**Textläge:**
+
+```json
+CRMID: John, CChash: 1111-2222
+CRMID: Jane, CChash: 3333-4444
+CRMID: John, ECID: 123
+CRMID: Jane, ECID:123
+```
+
+**Simulerat diagram**
+
+![Ett mellanliggande delat enhetsdiagram med hash.](../images/configs/intermediate/intermediate-shared-device.png)
 
 >[!TAB Två slutanvändare med samma kreditkort]
 
@@ -202,11 +205,7 @@ CRMID: Jane, ECID:456
 
 **Simulerat diagram**
 
-+++Markera för att visa det simulerade diagrammet
-
 ![Ett diagram där två slutanvändare registrerar sig med samma kreditkort.](../images/configs/intermediate/graph-with-same-credit-card.png)
-
-+++
 
 >[!TAB Ogiltigt kreditkortsnummer]
 
@@ -223,17 +222,17 @@ CRMID: Jill, CChash: undefined
 
 **Simulerat diagram**
 
-+++Markera för att visa det simulerade diagrammet
-
 ![Ett diagram där ett hash-problem orsakar ett ogiltigt kreditkort.](../images/configs/intermediate/graph-with-invalid-credit-card.png)
-
-+++
 
 >[!ENDTABS]
 
 ### Användningsfall: Dina data innehåller både hash-kodade och ohashade CRMID:n
 
-Din inmatning innehåller både ett ej hashad (offline) CRMID och ett hashas (online) CRMID. De förväntar sig en direkt relation mellan både ohashade och hashade CRMID. När en slutanvändare bläddrar med ett autentiserat konto skickas det hashas-CRMID tillsammans med enhets-ID (representeras i identitetstjänsten som ett ECID).
+>[!TIP]
+>
+>Du måste skapa anpassade namnutrymmen för olika enheter för&quot;CRMID&quot; och&quot;CRMIDhash&quot; för att slutföra de mellanliggande implementeringsövningarna nedan.
+
+Du infogar både ett ej hashas (offline) CRMID och ett hashas (online) CRMID. Förväntningarna är att det finns en direkt relation mellan både ohashed och hashed CRMID. När en slutanvändare bläddrar med ett autentiserat konto skickas det hashas-CRMID tillsammans med enhets-ID (representeras i identitetstjänsten som ett ECID).
 
 **Algoritmkonfiguration (identitetsinställningar)**
 
@@ -252,7 +251,7 @@ Simulera följande konfigurationer i Graph Simulation. Du kan antingen skapa egn
 
 >[!BEGINTABS]
 
->[!TAB Scenario 1: delad enhet]
+>[!TAB Delad enhet]
 
 John och Jane delar en enhet.
 
@@ -265,9 +264,9 @@ CRMIDhash: John, ECID: 111
 CRMIDhash: Jane, ECID: 111
 ```
 
-![platshållare](../images/configs/intermediate/shared-device-hashed-crmid.png)
+![Ett delat enhetsdiagram med hashade CRMID ](../images/configs/intermediate/shared-device-hashed-crmid.png)
 
->[!TAB Scenario 2: felaktiga data]
+>[!TAB Felaktiga data]
 
 På grund av fel i hashprocessen genereras ett icke-unikt kraschat CRMID som skickas till identitetstjänsten.
 
@@ -360,7 +359,7 @@ Simulera följande konfigurationer i diagramsimuleringsverktyget. Du kan antinge
 
 >[!BEGINTABS]
 
->[!TAB Två slutanvändare loggar in]
+>[!TAB Delad enhet]
 
 I det här scenariot loggar både John och Jane in på en e-handelswebbplats.
 
@@ -399,6 +398,10 @@ Namnområdesprioritet spelar en viktig roll i komplexa diagramscenarier. Diagram
 Läs det här avsnittet för mer avancerade implementeringar av [!DNL Identity Graph Linking Rules].
 
 ### Användningsfall: Du behöver support för flera rader företag
+
+>[!TIP]
+>
+>Du måste skapa anpassade namnutrymmen för olika enheter för &quot;CRMID&quot; och &quot;loginID&quot; för att slutföra de avancerade implementeringsövningarna nedan.
 
 Dina slutanvändare har två olika konton, ett personligt konto och ett företagskonto. Varje konto identifieras med ett annat ID. I det här scenariot skulle ett typiskt diagram se ut så här:
 
@@ -469,9 +472,15 @@ loginID: JanePersonal, ECID: 222
 
 ### Använd skiftläge: Du har komplexa implementeringar som kräver flera namnutrymmen
 
+>[!TIP]
+>
+>Du måste skapa anpassade namnutrymmen för olika enheter för CRMID, loyaltyID, thirdPartyID och orderID för att slutföra de avancerade implementeringsövningarna nedan.
+
 Du är ett medie- och underhållningsföretag och dina slutanvändare har följande:
+
 * EN CRMID
 * Ett lojalitets-ID
+
 Dessutom kan slutanvändarna göra ett köp på e-handelswebbplatsen och dessa data är knutna till deras e-postadress. Användardata berikas också av en tredjeparts databasleverantör och skickas till Experience Platform i grupper.
 
 **Textläge**
