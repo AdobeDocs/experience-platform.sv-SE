@@ -4,9 +4,9 @@ description: Lär dig mer om uppdateringar av kriterier för att välja om du vi
 hide: true
 hidefromtoc: true
 exl-id: c91c0f75-9bc8-4fa7-9d27-9b07d0ea560c
-source-git-commit: 2af73be351cb818862006adc8d0f1a33f95d93cf
+source-git-commit: 6935cee30adb59d52db6c6fed7036f81b54edd52
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -47,8 +47,8 @@ Låt oss till exempel säga att du har två målgrupper, med en målgrupps schem
 
 | Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
 | -------- | ------ | ----------- | ---------------- | ----------- |
-| Kalifornien | Profil | Grupp | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
-| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+| Kalifornien | Profil | Batchkälla | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste utcheckningar | Experience Event | Direktuppspelningskälla | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
 
 Om du vill använda gruppkomponenten i din direktuppspelande målgrupp måste du skapa en referens till gruppmålgruppen med hjälp av segment.
 
@@ -68,8 +68,8 @@ Låt oss till exempel säga att ni har två målgrupper, med båda målgrupperna
 
 | Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
 | -------- | ------ | ----------- | ---------------- | ----------- |
-| Senaste avhopp | Experience event | Grupp | Har minst en händelse om att användaren överger den under de senaste 24 timmarna | `7deb246a-49b4-4687-95f9-6316df049948` |
-| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+| Senaste avhopp | Experience event | Batchkälla | Har minst en händelse om att användaren överger den under de senaste 48 timmarna | `7deb246a-49b4-4687-95f9-6316df049948` |
+| Senaste utcheckningar | Experience Event | Direktuppspelningskälla | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
 
 I den här situationen skulle du behöva skapa en tredje målgrupp enligt följande:
 

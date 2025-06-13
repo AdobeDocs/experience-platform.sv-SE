@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 92b70dc6d6085067f11d43436bc74d64bce72dd0
 workflow-type: tm+mt
-source-wordcount: '4822'
+source-wordcount: '4817'
 ht-degree: 0%
 
 ---
@@ -120,7 +120,7 @@ Enrichment-attribut är attribut som kommer från en datauppsättning och som f�
 
 | Aktiveringskanal | Målgrupper från anpassad CSV-överföring | Målgrupper från Audience Composition |
 | --- | --- | --- |
-| Real-Time CDP Destinations | Både nyttolastattributen och målgrupperna kan aktiveras. | Bara målgruppen kan aktiveras. Det går inte att aktivera anrikningsattributen **&#x200B;**. |
+| Real-Time CDP Destinations | Både nyttolastattributen och målgrupperna kan aktiveras. | Bara målgruppen kan aktiveras. Det går inte att aktivera anrikningsattributen ****. |
 | Adobe Journey Optimizer Campaigns | Varken målgruppen eller nyttolastattributen kan aktiveras. | Både målgrupps- och anrikningsattributen kan aktiveras. |
 
 ## Livscykeltillstånd {#lifecycle-states}
@@ -420,7 +420,7 @@ Observera att om en segmentdefinition innehåller **både** och `inSegment` uttr
 
 Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegment. Detta värde visas för både grupp- och direktuppspelningssegment.
 
-Talet under de senaste X dagarna **endast** innehåller målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och det räknas mot den direktuppspelningsdefinitionen. Det här värdet visas **endast** för direktuppspelningssegment. Därför kan det här värdet **&#x200B;**&#x200B;visas som 0 för gruppsegment.
+Talet under de senaste X dagarna **endast** innehåller målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och det räknas mot den direktuppspelningsdefinitionen. Det här värdet visas **endast** för direktuppspelningssegment. Därför kan det här värdet **** visas som 0 för gruppsegment.
 
 Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **inte** direktuppspelat några profiler i systemet som skulle kvalificera för det segmentet.
 
@@ -430,4 +430,4 @@ Det tar upp till en timme innan en segmentdefinition är tillgänglig.
 
 ### Finns det några begränsningar för de data som strömmas in?
 
-För att direktuppspelade data ska kunna användas vid direktuppspelningssegmentering måste det finnas **ett** mellanrum mellan de direktuppspelade händelserna. Om för många händelser direktuppspelas inom samma sekund, kommer Experience Platform att behandla dessa händelser som robotgenererade data och de kommer att ignoreras. Som bästa praxis bör du ha **minst** fem sekunder mellan händelsedata för att säkerställa att data används på rätt sätt.
+När du använder kanter- eller direktuppspelningssegmentering måste du se till att händelserna för varje profil är utspridda. Om för många händelser direktuppspelas inom samma sekund, kommer Experience Platform att behandla dessa händelser som robotgenererade data och de kommer att ignoreras. Som bästa praxis bör du ha **minst** fem sekunder mellan händelsedata för att säkerställa att data används på rätt sätt.
