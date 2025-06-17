@@ -345,7 +345,7 @@ När du har identifierat de målobjekt som du vill uppdatera väljer du **[!UICO
 
 Följande video är avsedd att ge stöd för din förståelse av sandlådeverktyg och visar hur du skapar ett nytt paket, publicerar ett paket och importerar ett paket.
 
->[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3446087/?learn=on&captions=swe)
 
 ## Nästa steg
 
