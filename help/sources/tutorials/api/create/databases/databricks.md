@@ -4,9 +4,9 @@ description: Lär dig hur du ansluter Azure-databaser till Experience Platform m
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 0c8ff1029beee3f58cbf536b11b40551b6f6c2ed
+source-git-commit: 9df2f9cc70876834aa635d50d548a882f45e3190
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,8 @@ Ange värden för följande autentiseringsuppgifter för att ansluta [!DNL Datab
 | `accessToken` | Åtkomsttoken som autentiserar ditt [!DNL Databricks]-konto. Du kan generera din åtkomsttoken med arbetsytan [!DNL Databricks]. |
 | `database` | Namnet på databasen i deltasjön. |
 | `connectionSpec.Id` | Anslutningens spec-ID returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningens spec-ID för [!DNL Databricks] är `e9d7ec6b-0873-4e57-ad21-b3a7c65e310b`. |
+
+Mer information finns i [[!DNL Azure Databricks] översikten](../../../../connectors/databases/databricks.md).
 
 ## Skapa en basanslutning
 

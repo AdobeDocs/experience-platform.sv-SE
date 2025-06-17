@@ -3,11 +3,11 @@ title: Azure-databaser
 description: Läs mer om de nödvändiga stegen som krävs för att ansluta Azure-databaser till Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
-last-substantial-update: 2025-04-29T00:00:00Z
+last-substantial-update: 2025-06-17T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: c466c30bddf4e67117c88072bea00818d755e408
+source-git-commit: 11ec772f2b877ceac820f2b8a06ac27377e9b2e9
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -161,6 +161,9 @@ fs.azure.sas.{CONTAINER_NAME}.{STORAGE-ACCOUNT}.blob.core.windows.net {SAS-TOKEN
 
 ![Användargränssnittet för databaser på Azure.](../../images/tutorials/create/databricks/databricks-ui.png)
 
-## Anslut [!DNL Databricks] till Experience Platform med API:er
+## Anslut [!DNL Databricks] till Experience Platform
 
-Nu när du har slutfört de nödvändiga stegen kan du nu gå vidare till guiden om att [ansluta ditt [!DNL Databricks] konto till Experience Platform med API:t](../../tutorials/api/create/databases/databricks.md).
+Nu när du har slutfört de nödvändiga stegen kan du nu fortsätta och ansluta ditt [!DNL Databricks]-konto till Experience Platform:
+
+* [Anslut via API](../../tutorials/api/create/databases/databricks.md)
+* [Ansluta via källarbetsytan i användargränssnittet](../../tutorials/ui/create/databases/databricks.md)
