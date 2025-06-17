@@ -56,4 +56,4 @@ ht-degree: 27%
       - [Kundhanterade nycklar](customer-ai/cai-data-governance/customer-managed-keys.md)
       - [Dataförvaltning](customer-ai/cai-data-governance/data-governance.md)
       - [Styrningspolitik](customer-ai/cai-data-governance/governance-policies.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
