@@ -4,9 +4,9 @@ description: Lär dig mer om de olika implementeringstyperna som du kan konfigur
 hide: true
 hidefromtoc: true
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: f793dbda0520366b3ee69b3aa0f912b005957561
+source-git-commit: 2a5c8b3bd58d3659d0fcf519407b180bf5f091b4
 workflow-type: tm+mt
-source-wordcount: '1999'
+source-wordcount: '1951'
 ht-degree: 1%
 
 ---
@@ -17,11 +17,6 @@ ht-degree: 1%
 >id="platform_identities_algorithmconfiguration"
 >title="Algoritmkonfiguration"
 >abstract="Konfigurera unik namnområdes- och namnområdesprioritet som är anpassad efter dina inkapslade identiteter."
-
->[!NOTE]
->
->* &quot;CRMID&quot; och &quot;loginID&quot; är egna namnutrymmen. I det här dokumentet är &quot;CRMID&quot; en personidentifierare och &quot;loginID&quot; är en inloggningsidentifierare som är associerad med en viss person.
->* Om du vill simulera de exempeldiagramscenarier som beskrivs i det här dokumentet måste du först skapa två anpassade namnutrymmen, ett med identitetssymbolen &quot;CRMID&quot; och ett annat med identitetssymbolen &quot;loginID&quot;. Identitetssymboler är skiftlägeskänsliga.
 
 Läs det här dokumentet om du vill veta mer om olika implementeringstyper som du kan konfigurera med [!DNL Identity Graph Linking Rules].
 
@@ -43,9 +38,9 @@ Innan du går in i följande dokument måste du bekanta dig med flera viktiga be
 
 ## Grundläggande implementeringar {#basic-implementations}
 
->[!TIP]
+>[!NOTE]
 >
->Du måste skapa ett anpassat namnutrymme mellan enheter för&quot;CRMID&quot; för att kunna slutföra de grundläggande implementeringsövningarna nedan.
+>Om du vill slutföra implementeringarna nedan måste du skapa ett anpassat namnutrymme med identitetssymbolen (skiftlägeskänslig) för: `CRMID`.
 
 Läs det här avsnittet för grundläggande implementeringar av [!DNL Identity Graph Linking Rules].
 
@@ -90,7 +85,7 @@ Simulera följande konfiguration i Diagramsimulering. Du kan antingen skapa egna
 
 **Delad enhet (PC)**
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, ECID: 111
@@ -112,7 +107,7 @@ Webbläsaren på den stationära datorn som båda använder för att besöka din
 
 **Delad enhet (mobil)**
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, ECID: 111, IDFA: a-b-c
@@ -129,19 +124,23 @@ I det här diagrammet representeras John och Jane av sina egna respektive CRMID:
 
 ## Mellanliggande implementeringar {#intermediate-implementations}
 
+>[!TIP]
+>
+>En **icke-unik identitet** är en identitet som är associerad med ett icke-unikt namnområde.
+
 Läs det här avsnittet för mellanliggande implementeringar av [!DNL Identity Graph Linking Rules].
 
 ### Användningsfall: Dina data innehåller icke-unika identiteter
 
->[!TIP]
+>[!NOTE]
 >
->* En **icke-unik identitet** är en identitet som är associerad med ett icke-unikt namnområde.
->
->* Du måste skapa anpassade namnutrymmen för olika enheter för&quot;CRMID&quot; och&quot;CChash&quot; för att slutföra de mellanliggande implementeringsövningarna nedan. &quot;CCHash&quot; är ett anpassat namnutrymme som representerar ett hashade kreditkortsnummer.
+>För att slutföra implementeringarna nedan måste du skapa följande anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>* `CRMID`
+>* `CCHash` (Det här är ett anpassat namnutrymme som representerar ett hashade kreditkortsnummer.)
 
 Tänk dig att du är en dataarkitekt som arbetar för en affärsbank som utfärdar kreditkort. Marknadsföringsteamet har angett att de vill inkludera historik för tidigare kreditkortstransaktioner i en profil. Det här identitetsdiagrammet kan se ut så här.
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, CChash: 1111-2222 
@@ -177,7 +176,7 @@ Simulera följande konfigurationer i Graph Simulation. Du kan antingen skapa egn
 
 >[!TAB Delad enhet]
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, CChash: 1111-2222
@@ -194,7 +193,7 @@ CRMID: Jane, ECID:123
 
 Två olika slutanvändare registrerar sig för din e-handelswebbplats med samma kreditkort. Marknadsföringsteamet vill förhindra att diagram kollapsar genom att se till att kreditkortet bara är kopplat till en enda profil.
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, CChash: 1111-2222
@@ -211,7 +210,7 @@ CRMID: Jane, ECID:456
 
 På grund av orena data hämtas ett ogiltigt kreditkortsnummer till Experience Platform.
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, CChash: undefined
@@ -228,9 +227,11 @@ CRMID: Jill, CChash: undefined
 
 ### Användningsfall: Dina data innehåller både hash-kodade och ohashade CRMID:n
 
->[!TIP]
+>[!NOTE]
 >
->Du måste skapa anpassade namnutrymmen för olika enheter för&quot;CRMID&quot; och&quot;CRMIDhash&quot; för att slutföra de mellanliggande implementeringsövningarna nedan.
+>För att slutföra implementeringarna nedan måste du skapa anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>* `CRMID`
+>* `CRMIDhash`
 
 Du infogar både ett ej hashas (offline) CRMID och ett hashas (online) CRMID. Förväntningarna är att det finns en direkt relation mellan både ohashed och hashed CRMID. När en slutanvändare bläddrar med ett autentiserat konto skickas det hashas-CRMID tillsammans med enhets-ID (representeras i identitetstjänsten som ett ECID).
 
@@ -255,7 +256,7 @@ Simulera följande konfigurationer i Graph Simulation. Du kan antingen skapa egn
 
 John och Jane delar en enhet.
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, CRMIDhash: John
@@ -270,7 +271,7 @@ CRMIDhash: Jane, ECID: 111
 
 På grund av fel i hashprocessen genereras ett icke-unikt kraschat CRMID som skickas till identitetstjänsten.
 
-**Textläge:**
+**Textläge**
 
 ```json
 CRMID: John, CRMIDhash: aaaa
@@ -342,6 +343,10 @@ Email: jane@g, ECID: 111
 
 ### Användningsfall: Dina data innehåller tre unika namnutrymmen
 
+>[!NOTE]
+>
+>Om du vill slutföra implementeringarna nedan måste du skapa ett anpassat namnutrymme med identitetssymbolen (skiftlägeskänslig) för: `CRMID`.
+
 Kunden definierar en enpersonsenhet enligt följande:
 
 * En slutanvändare med ett tilldelat CRMID.
@@ -399,13 +404,15 @@ Läs det här avsnittet för mer avancerade implementeringar av [!DNL Identity G
 
 ### Användningsfall: Du behöver support för flera rader företag
 
->[!TIP]
+>[!NOTE]
 >
->Du måste skapa anpassade namnutrymmen för olika enheter för &quot;CRMID&quot; och &quot;loginID&quot; för att slutföra de avancerade implementeringsövningarna nedan.
+>För att slutföra implementeringarna nedan måste du skapa anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>* `CRMID`
+>* `loginID`
 
 Dina slutanvändare har två olika konton, ett personligt konto och ett företagskonto. Varje konto identifieras med ett annat ID. I det här scenariot skulle ett typiskt diagram se ut så här:
 
-**Textläge***
+**Textläge**
 
 ```json
 CRMID: John, loginID: JohnPersonal
@@ -427,12 +434,7 @@ Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du 
 
 **Simulerat diagram**
 
-+++Markera för att visa det simulerade diagrammet
-
 ![Ett identitetsdiagram för en slutanvändare med ett företag och ett personligt e-postmeddelande.](../images/configs/advanced/advanced.png)
-
-+++
-
 
 **Utövning**
 
@@ -457,6 +459,8 @@ loginID: JanePersonal, ECID: 111
 
 >[!TAB Felaktiga data skickas till Real-Time CDP]
 
+**Textläge**
+
 ```json
 CRMID: John, loginID: JohnPersonal
 CRMID: John, loginID: error
@@ -472,9 +476,12 @@ loginID: JanePersonal, ECID: 222
 
 ### Använd skiftläge: Du har komplexa implementeringar som kräver flera namnutrymmen
 
->[!TIP]
+>[!NOTE]
 >
->Du måste skapa anpassade namnutrymmen för olika enheter för CRMID, loyaltyID, thirdPartyID och orderID för att slutföra de avancerade implementeringsövningarna nedan.
+>För att slutföra implementeringarna nedan måste du skapa anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>* `CRMID`
+>* `loyaltyID`
+>* `thirdPartyID`
 
 Du är ett medie- och underhållningsföretag och dina slutanvändare har följande:
 
@@ -499,8 +506,8 @@ Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du 
 | Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
 | --- | --- | --- | --- | --- |
 | CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
-| loyaltyID | loyaltyID | CROSS_DEVICE | | 2 |
-| E-post | E-post | E-post | | 3 |
+| loyaltyID | loyaltyID | CROSS_DEVICE | ✔️ | 2 |
+| E-post | E-post | E-post | ✔️ | 3 |
 | thirdPartyID | thirdPartyID | CROSS_DEVICE | | 4 |
 | orderID | orderID | CROSS_DEVICE | | 5 |
 | ECID | ECID | COOKIE | | 6 |

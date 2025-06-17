@@ -2,9 +2,9 @@
 title: Implementeringshandbok för länkningsregler för identitetsdiagram
 description: Lär dig de rekommenderade stegen som du bör följa när du implementerar data med konfigurationer för länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 0587ddf1012adb13e6d399953839735f73fe151e
+source-git-commit: a9c9543783eb85dcaadef64b1c0deb84f850d40e
 workflow-type: tm+mt
-source-wordcount: '1943'
+source-wordcount: '1944'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ I det här avsnittet beskrivs nödvändiga steg som du måste slutföra innan du
 
 #### Krav på namnutrymme för en person {#single-person-namespace-requirement}
 
-Du måste se till att det unika namnutrymmet med den högsta prioriteten alltid finns i alla profiler. Om du gör det kan identitetstjänsten identifiera rätt personidentifierare i ett visst diagram.
+Du måste se till att det unika namnutrymmet med den högsta prioriteten alltid finns i alla kända profiler. Om du gör det kan identitetstjänsten identifiera rätt personidentifierare i ett visst diagram.
 
 +++Markera om du vill visa ett exempel på ett diagram utan ett namnutrymme för en identifierare
 
