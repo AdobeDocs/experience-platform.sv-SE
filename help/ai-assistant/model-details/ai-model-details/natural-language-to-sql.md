@@ -1,17 +1,19 @@
 ---
 title: AI Assistant Natural Language to SQL Model Details
 description: Lär dig mer om AI Assistant Natural Language i SQL AI-modellen.
-hide: true
-hidefromtoc: true
 exl-id: ca157945-5f74-45d0-9d40-c65d09a8e80d
-source-git-commit: a7b69cd11ccbd9950cafa73dba51be1d67924bfe
+source-git-commit: 3d870c367317d73bba8b75b38f7b2a93ab6b5bbd
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
 
 # AI Assistant Operational Insights Naturliga språk för SQL-modellinformation
+
+>[!IMPORTANT]
+>
+>Adobe publicerar aktivt mer modellinformation. Ytterligare dokumentation kommer att läggas till i Experience League när den blir tillgänglig.
 
 ## Modellöversikt {#model-overview}
 
