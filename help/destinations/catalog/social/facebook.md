@@ -3,9 +3,9 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 09146fac0719b62c6c2ec1b6c3aa66cb80c1698a
+source-git-commit: dd725b4d383bbcd93e68c81d4fe5182d6086e9be
 workflow-type: tm+mt
-source-wordcount: '2781'
+source-wordcount: '2636'
 ht-degree: 0%
 
 ---
@@ -13,14 +13,6 @@ ht-degree: 0%
 # [!DNL Facebook]-anslutning
 
 ## Översikt {#overview}
-
->[!IMPORTANT]
->
->* Från och med 23 maj 2025 och hela juni 2025 kan du tillfälligt se två **[!DNL Facebook Custom Audience]**-destinationskort i destinationskatalogen i upp till några timmar. Detta beror på en intern uppgradering av måltjänsten och stöd för nya fält för förbättrad målinriktning och matchning med profiler på Facebook-egenskaper. Mer information om de nya adressrelaterade fälten finns i avsnittet [identiteter som stöds](#supported-identities).
->* Om du ser ett kort med etiketten **[!UICONTROL (New) Facebook Custom Audience]** använder du det här kortet för nya dataflöden för aktivering. Befintliga dataflöden uppdateras automatiskt, så du behöver inte göra något. Alla ändringar du gör i befintliga dataflöden under den här perioden bevaras efter uppgraderingen. När uppgraderingen är klar kommer målkortet **[!UICONTROL (New) Facebook Custom Audience]** att byta namn till **[!DNL Facebook Custom Audience]**.
->* Om du skapar dataflöden med [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
->   * Flödesspecifikation-id: `bb181d00-58d7-41ba-9c15-9689fdc831d3`
->   * Anslutningsspecifikation-id: `c8b97383-2d65-4b7a-9913-db0fbfc71727`
 
 Aktivera profiler för dina [!DNL Facebook]-kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hash-kodade e-postmeddelanden.
 
@@ -146,8 +138,8 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >[!NOTE]
 >
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
-> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
-> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
+>> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
+>> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
 ![Använd omformningskontroll markerat i mappningssteget.](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
