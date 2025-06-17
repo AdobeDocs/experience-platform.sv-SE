@@ -2,10 +2,10 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 208c9c47b4bde211506867cf59b8743556db7fc8
+source-git-commit: b5330e10dc8b395d1ef299073182c836f5c3af7f
 workflow-type: tm+mt
-source-wordcount: '2503'
-ht-degree: 1%
+source-wordcount: '3210'
+ht-degree: 0%
 
 ---
 
@@ -59,7 +59,7 @@ Tabellen nedan visar [!DNL Adobe Journey Optimizer] objekt som för närvarande 
 | [!DNL Adobe Journey Optimizer] | Anpassade åtgärder |  | Anpassade åtgärder kan läggas till i ett paket oberoende av varandra. När en anpassad åtgärd har tilldelats en resa kan den inte längre redigeras. Om du vill uppdatera anpassade åtgärder bör du: <ul><li>flytta anpassade åtgärder innan en resa migreras</li><li>uppdateringskonfigurationer (till exempel begärandehuvuden, frågeparametrar och autentisering) för anpassade åtgärder efter migrering</li><li>migrera reseobjekt med de anpassade åtgärder du lade till under det första steget</li></ul> |
 | [!DNL Adobe Journey Optimizer] | Innehållsmall | | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
 | [!DNL Adobe Journey Optimizer] | Fragment | Alla kapslade fragment. | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
-| [!DNL Adobe Journey Optimizer] | Kampanjer | Följande objekt som används i kampanjen kopieras som beroende objekt: <ul><li>Kampanjer</li><li>Målgrupper</li><li>Scheman</li><li>Innehållsmallar</li><li>Fragment</li><li>Meddelande/innehåll</li><li>Kanalkonfiguration</li><li>Enhetliga beslutsobjekt</li><li>Experimentera med inställningar/varianter</li></ul> | <ul><li>Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox).</li><li>Systemet identifierar och återanvänder automatiskt ett befintligt kanalkonfigurationsobjekt i målsandlådan om det finns en identisk konfiguration. Om ingen matchande konfiguration hittas hoppas kanalkonfigurationen över under importen, och användare måste uppdatera kanalinställningarna manuellt i målsandlådan för den här resan.</li><li>Användare kan återanvända befintliga experiment och målgrupper i målsandlådan som beroende objekt för valda kampanjer.</li></ul> |
+| [!DNL Adobe Journey Optimizer] | Kampanjer | Följande objekt som används i kampanjen kopieras som beroende objekt: <ul><li>Kampanjer</li><li>Målgrupper</li><li>Scheman</li><li>Innehållsmallar</li><li>Fragment</li><li>Meddelande/innehåll</li><li>Kanalkonfiguration</li><li>Enhetliga beslutsobjekt</li><li>Experimentera med inställningar/varianter</li></ul> | <ul><li>Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox).</li><li>Systemet identifierar och återanvänder automatiskt ett befintligt kanalkonfigurationsobjekt i målsandlådan om det finns en identisk konfiguration. Om ingen matchande konfiguration hittas hoppas kanalkonfigurationen över under importen, och användare måste uppdatera kanalinställningarna manuellt i målsandlådan för den här resan.</li><li>Användare kan återanvända befintliga experiment och målgrupper i målsandlådan som beroende objekt för valda kampanjer.</li></ul> |
 
 Ytor (till exempel förinställningar) kopieras inte över. Systemet väljer automatiskt den närmsta möjliga matchningen i målsandlådan baserat på meddelandetyp och ytnamn. Om det inte finns några ytor i målsandlådan, kommer ytkopian att misslyckas, vilket gör att meddelandekopian misslyckas eftersom ett meddelande kräver att en yta är tillgänglig för konfiguration. I det här fallet måste minst en yta skapas för den högra kanalen i meddelandet för att kopian ska fungera.
 
@@ -253,11 +253,99 @@ Dialogrutan **[!UICONTROL Import summary]** visar en fördelning av importen med
 
 När importen är klar visas ett meddelande i Experience Platform-gränssnittet. Du kommer åt dessa meddelanden via varningsikonen. Du kan navigera till felsökning härifrån om ett jobb misslyckas.
 
+## Överför iterativa objektkonfigurationsuppdateringar över sandlådor via sandlådeverktyg {#move-configs}
+
+Du kan använda sandlådeverktyg för att överföra objektkonfigurationer mellan olika sandlådor. Tidigare var det nödvändigt att manuellt återskapa eller importera konfigurationsuppdateringar för dina objekt (t.ex. scheman, fältgrupper och datatyper) för att kunna överföras till andra sandlådor. Med den här funktionen kan du använda sandlådeverktyg för att snabba upp dina arbetsflöden och minska antalet potentiella fel genom att överföra dina konfigurationsuppdateringar mellan olika sandlådor.
+
+![Ett diagram som visar hur uppdateringar flyttas över sandlådor.](../images/ui/sandbox-tooling/move-updates-diagram.png)
+
+>[!TIP]
+>
+> Kontrollera att du har följande krav innan du försöker överföra dina objektkonfigurationer mellan olika sandlådor.
+>
+>- Lämpliga behörigheter för att komma åt sandlådeverktyg.
+>- Ett nyskapat eller uppdaterat objekt (till exempel ett schema) i källsandlådan.
+
+>[!BEGINSHADEBOX]
+
+### Objekttyper som stöds för uppdateringsåtgärd
+
+Följande objekttyper stöds för uppdatering:
+
+- Scheman
+- Fältgrupper
+- Datatyper
+
+| Uppdateringar som stöds | Uppdateringar som inte stöds |
+| --- | --- |
+| <ul><li>Lägger till nya fält/fältgrupper till resursen.</li><li>Gör ett obligatoriskt fält valfritt.</li><li>Nya obligatoriska fält introduceras.</li><li>Vi presenterar ett nytt relationsfält.</li><li>Ett nytt identitetsfält introduceras.</li><li>Ändra resursens visningsnamn och beskrivning.</li></ul> | <ul><li>Tar bort tidigare definierade fält.</li><li>Definiera om befintliga fält när schemat är aktiverat för kundprofil i realtid.</li><li>Tar bort eller begränsar fältvärden som tidigare stöds.</li><li>Befintliga fält flyttas till en annan plats i schematrädet. Detta skapar ett nytt fält i målsandlådan, men det föregående fältet tas inte bort.</li><li>Aktivera eller inaktivera schemat för att delta i profilen - den här åtgärden hoppas över vid differensjämförelse.</li><li>Åtkomstkontrolletiketter.</li></ul> |
+
+>[!ENDSHADEBOX]
+
+Följ stegen nedan för att lära dig hur du använder sandlådeverktyg för att överföra objektkonfigurationer mellan olika sandlådor.
+
+### Tidigare importerade objekt
+
+Följ de här stegen om du använder befintliga objekt i din källsandlåda som kräver konfigurationsuppdateringar när du redan har paketerat och importerat dem till andra sandlådor.
+
+Uppdatera först objektet i källsandlådan. Navigera till arbetsytan **[!UICONTROL Schemas]**, markera ditt schema och lägg till en ny fältgrupp.
+
+![Schemaarbetsytan med ett uppdaterat schema.](../images/ui/sandbox-tooling/update-schema.png)
+
+När du har uppdaterat ditt schema går du till **[!UICONTROL Sandboxes]**, väljer **[!UICONTROL Packages]** och letar upp ditt befintliga paket.
+
+![Verktygsgränssnittet för sandlådan med ett markerat paket](../images/ui/sandbox-tooling/select-package.png)
+
+Använd paketgränssnittet för att verifiera dina ändringar. Välj **[!UICONTROL Check for updates]** om du vill visa ändringar i artefakterna i ditt paket. Välj sedan **[!UICONTROL View diff]** om du vill få en detaljerad sammanfattning av alla ändringar som har utförts mot dina artefakter.
+
+![Paketgränssnittet med visningsknappen markerad.](../images/ui/sandbox-tooling/view-diff.png)
+
+Gränssnittet [!UICONTROL View diff] visas. Se den här avgiften för information om dina käll- och målartefakter samt vilka ändringar som ska tillämpas på dem.
+
+![Sammanfattning av ändringar.](../images/ui/sandbox-tooling/summary-of-changes.png)
+
+Under det här steget kan du även välja [!UICONTROL Summarize with AI] om du vill se en stegvis sammanfattning av alla ändringar.
+
+![Sammanfattningen med AI-aktiverad.](../images/ui/sandbox-tooling/ai-summary.png)
+
+När du är klar väljer du **[!UICONTROL Update package]** och sedan **[!UICONTROL Confirm]** i popup-fönstret som visas. När jobbet är klart kan du uppdatera sidan och välja **[!UICONTROL View history]** för att verifiera paketversionen.
+
+![Bekräftelsefönstret.](../images/ui/sandbox-tooling/confirm-changes.png)
+
+Om du vill importera ändringarna går du tillbaka till katalogen [!UICONTROL Packages] och markerar ellipserna (`...`) bredvid paketet. Välj sedan **[!UICONTROL Import package]**. Experience Platform väljer automatiskt [!UICONTROL Update existing objects]. Kontrollera ändringarna och välj sedan **[!UICONTROL Finish]**.
+
+>[!NOTE]
+>
+>Alla beroende objekt uppdateras automatiskt i målsandlådan som en del av det här arbetsflödet.
+
+![Gränssnittet för importmål.](../images/ui/sandbox-tooling/import-objective.png)
+
+Om du vill validera din importprocess ytterligare navigerar du till målsandlådan och manuellt visar det uppdaterade objektet inifrån den sandlådan.
+
+### Objekt som skapats manuellt i mållandlådan
+
+Följ de här stegen om du använder konfigurationsändringar på objekt som har skapats manuellt i separata sandlådor.
+
+Först skapar och publicerar du ett nytt paket med det uppdaterade objektet.
+
+Importera sedan paketet till målsandlådan som innehåller de objekt som du också vill uppdatera. Under importprocessen markerar du **[!UICONTROL Update existing objects]** och använder sedan objektnavigeraren för att manuellt markera de målobjekt som du vill att dina uppdateringar ska gälla för.
+
+>[!NOTE]
+>
+>- Det är valfritt att välja en målmappning i en annan sandlåda för beroende objekt. Om ingen är markerad skapas en ny.
+>- För identitetsnamnutrymmen upptäcker systemet automatiskt om en ny identitet behöver skapas om en befintlig identitet måste återanvändas i målsandlådan.
+
+![Det målgränssnitt för import med platshållare för de målobjekt som ska uppdateras.](../images/ui/sandbox-tooling/update-existing-objects.png)
+
+När du har identifierat de målobjekt som du vill uppdatera väljer du **[!UICONTROL Finish]**.
+
+![De markerade målobjekten.](../images/ui/sandbox-tooling/add-updated-objects.png)
+
 ## Videosjälvstudiekurs
 
 Följande video är avsedd att ge stöd för din förståelse av sandlådeverktyg och visar hur du skapar ett nytt paket, publicerar ett paket och importerar ett paket.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446087/?learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## Nästa steg
 
