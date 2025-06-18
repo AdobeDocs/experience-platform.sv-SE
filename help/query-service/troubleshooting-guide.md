@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Fråga service och data Distiller frågor och svar
 description: Det här dokumentet innehåller vanliga frågor och svar om Query Service och Data Distiller. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cd4734b2d837bc04e1de015771a74a48ff37173f
 workflow-type: tm+mt
-source-wordcount: '5011'
+source-wordcount: '5037'
 ht-degree: 0%
 
 ---
@@ -717,12 +717,18 @@ and timestamp < to_timestamp('2022-07-23');
 SQL-konstruktionen MERGE INTO stöds inte av Data Distiller eller Query Service.
 +++
 
-## ITAS-frågor
+## ITAS-frågor {#itas-queries}
 
 ### Vad är ITAS-frågor?
 
 +++Svar
 INSERT INTO-frågor kallas ITAS-frågor. Observera att CREATE TABLE-frågor kallas för CTAS-frågor.
++++
+
+### Har frågetjänsten stöd för att uppdatera och ta bort åtgärder?
+
++++Svar
+Nej, frågetjänsten stöder inte uppdaterings- eller borttagningsåtgärder. Det stöder bara åtgärder som bara kan läggas till med hjälp av ITAS.
 +++
 
 ## Tredjepartsverktyg {#third-party-tools}

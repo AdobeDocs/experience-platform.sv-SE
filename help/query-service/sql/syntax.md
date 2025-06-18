@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: Det här dokumentet innehåller information om och förklarar den SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: a0b7cd9e406b4a140ef70f8d80cb27ba6817c0cd
+source-git-commit: cd4734b2d837bc04e1de015771a74a48ff37173f
 workflow-type: tm+mt
-source-wordcount: '4649'
+source-wordcount: '4686'
 ht-degree: 1%
 
 ---
@@ -335,6 +335,10 @@ Följande begränsningar gäller när du använder `TRANSFORM` med `CREATE TABLE
 ## INFOGA I
 
 Kommandot `INSERT INTO` definieras så här:
+
+>[!IMPORTANT]
+>
+>Frågetjänsten stöder **åtgärder som bara är för tillägg** med ITAS-motorn. `INSERT INTO` är det enda datamanipuleringskommando som stöds, **update**- och **delete**-åtgärder är inte tillgängliga. Om du vill spegla ändringar i dina data infogar du nya poster som representerar det önskade läget.
 
 ```sql
 INSERT INTO table_name select_query

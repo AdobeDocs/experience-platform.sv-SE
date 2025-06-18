@@ -5,7 +5,7 @@ title: Sekretessjobb API-slutpunkt
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service API.
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: ec99b2a8f772e77d0a3957fc35b8cea112b91cba
+source-git-commit: c2394035dd6bd4fe6dbb443e4db13934a27066a6
 workflow-type: tm+mt
 source-wordcount: '1861'
 ht-degree: 0%
@@ -48,7 +48,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_co_usa`</li><li>`cpra_ca_usa`</li><li>`ctdpa_ct_usa`</li><li>`dpdpa`</li><li>`fdbr_fl_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_ia_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_mn_usa`</li><li>`mcdpa_mt_usa`</li><li>`mhmda_wa_usa`</li><li>`ndpa_ne_usa`</li><li>`nhpa_nh_usa`</li><li>`njdpa_nj_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_or_usa`</li><li>`pdpa_tha`</li><li>`ql25`</li><li>`tdpsa_tx_usa`</li><li>`tipa_tn_usa`</li><li>`ucpa_ut_usa`</li><li>`vcdpa_va_usa`</li></ul><br>Se översikten över [regler som stöds](../regulations/overview.md) för mer information om sekretessreglerna som ovanstående värden representerar. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa_co_usa`</li><li>`cpra_ca_usa`</li><li>`ctdpa_ct_usa`</li><li>`dpdpa_de_usa`</li><li>`fdbr_fl_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`icdpa_ia_usa`</li><li>`lgpd_bra`</li><li>`mcdpa_mn_usa`</li><li>`mcdpa_mt_usa`</li><li>`mhmda_wa_usa`</li><li>`ndpa_ne_usa`</li><li>`nhpa_nh_usa`</li><li>`njdpa_nj_usa`</li><li>`nzpa_nzl`</li><li>`ocpa_or_usa`</li><li>`pdpa_tha`</li><li>`ql25_qc_can`</li><li>`tdpsa_tx_usa`</li><li>`tipa_tn_usa`</li><li>`ucpa_ut_usa`</li><li>`vcdpa_va_usa`</li></ul><br>Se översikten över [regler som stöds](../regulations/overview.md) för mer information om sekretessreglerna som ovanstående värden representerar. |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
 | `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `100` och maxvärdet är `1000`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
 | `{status}` | Standardbeteendet är att inkludera alla statusvärden. Om du anger en statustyp returnerar begäran endast sekretessjobb som matchar den statustypen. Godkända värden är: <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
