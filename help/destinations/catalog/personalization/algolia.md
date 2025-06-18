@@ -48,7 +48,7 @@ Använd sedan motsvarande [[!DNL Algolia User Profiles]](/help/sources/connector
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Algolia] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/namespaces).
+[!DNL Algolia] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/sv/docs/experience-platform/identity/features/namespaces).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---------|---------|----------|
@@ -119,9 +119,9 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >[!IMPORTANT]
 > 
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
->* Om du vill exportera identiteter måste du ha behörigheten [Visa identitetsdiagram ](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions).
+>* Om du vill exportera identiteter måste du ha behörigheten [Visa identitetsdiagram ](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions).
 
-Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations) för instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#mapping-attributes-identities}
 
@@ -137,7 +137,7 @@ Kontrollera [!DNL Algolia]-instrumentpanelen och navigera till **[!UICONTROL Adv
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
 
 ## Ytterligare resurser {#additional-resources}
 
