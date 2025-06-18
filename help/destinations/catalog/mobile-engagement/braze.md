@@ -4,14 +4,23 @@ title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 last-substantial-update: 2024-08-20T00:00:00Z
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 37e78035f2656a3693a771ab5a9622f5446a4c9d
 workflow-type: tm+mt
-source-wordcount: '1070'
-ht-degree: 0%
+source-wordcount: '1169'
+ht-degree: 2%
 
 ---
 
 # [!DNL Braze]-anslutning
+
+>[!IMPORTANT]
+>
+>* Från och med 19 juni 2025 kan du se två **[!DNL Braze]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga [!DNL Braze]-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Braze]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Braze]**.
+>* Använd anslutningen **[!UICONTROL Braze]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Braze]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
+>* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
+>   * Flödesspecifikation-id: `cb7919bd-69aa-462d-bcc0-db7cdc7fdf51`
+>   * Anslutningsspecifikation-id: `ab957205-5a78-4393-b901-b930ed548220`
+
 
 ## Översikt {#overview}
 
