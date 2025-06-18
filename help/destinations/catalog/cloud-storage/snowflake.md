@@ -5,10 +5,10 @@ hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="Informative"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: b78f36ed20d5a08036598fa2a1da7dd066c401fa
 workflow-type: tm+mt
-source-wordcount: '645'
-ht-degree: 3%
+source-wordcount: '1023'
+ht-degree: 2%
 
 ---
 
@@ -20,7 +20,27 @@ ht-degree: 3%
 
 ## Översikt {#overview}
 
-Exportera data till ditt Snowflake-konto med privata listor.
+Använd Snowflake målanslutning för att exportera data till en Adobe Snowflake-instans och dela den sedan med din instans via [privata listor](https://other-docs.snowflake.com/en/collaboration/collaboration-listings-about).
+
+I följande avsnitt beskrivs hur Snowflake mål fungerar och hur data överförs mellan Adobe och Snowflake.
+
+### Hur Snowflake datautbyte fungerar {#data-sharing}
+
+Det här målet använder en [!DNL Snowflake]-dataresurs, vilket innebär att inga data exporteras fysiskt eller överförs till din egen Snowflake-instans. I stället ger Adobe skrivskyddad åtkomst till en livetabell som finns i Adobe Snowflake-miljö. Du kan fråga den här delade tabellen direkt från ditt Snowflake-konto, men du äger inte tabellen och kan inte ändra eller behålla den efter den angivna kvarhållningsperioden. Adobe hanterar den delade tabellens livscykel och struktur.
+
+Första gången du delar data från en Adobe Snowflake-instans till din blir du ombedd att godkänna den privata listan från Adobe.
+
+### Datalagring och TTL (Time-to-Live) {#ttl}
+
+Alla data som delas genom den här integreringen har en fast TTL-värde på sju dagar. Sju dagar efter den sista exporten förfaller den delade tabellen automatiskt och blir oåtkomlig, oavsett om dataflödet fortfarande är aktivt eller inte. Om du vill behålla data längre än sju dagar måste du kopiera innehållet till en tabell som du äger i din egen Snowflake-instans innan TTL-värdet går ut.
+
+### Funktion för målgruppsuppdatering {#audience-update-behavior}
+
+Om målgruppen utvärderas i [gruppläge](../../../segmentation/methods/batch-segmentation.md) uppdateras data i den delade tabellen var 24:e timme. Detta innebär att det kan bli en fördröjning på upp till 24 timmar mellan ändringar i målgruppsmedlemskap och när dessa ändringar återspeglas i den delade tabellen.
+
+### Inkrementell exportlogik {#incremental-export}
+
+När ett dataflöde körs för en målgrupp för första gången utförs en bakåtfyllnad och alla aktuella kvalificerade profiler delas. Efter den här initiala bakåtfyllnaden återspeglas endast inkrementella uppdateringar i den delade tabellen. Detta innebär profiler som läggs till eller tas bort från målgruppen. Det här sättet garanterar effektiva uppdateringar och håller den delade tabellen uppdaterad.
 
 ## Förhandskrav {#prerequisites}
 
@@ -67,13 +87,20 @@ Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destinati
 
 ### Fyll i målinformation {#destination-details}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_snowflake_accountID"
+>title="Ange ditt konto-ID för Snowflake"
+>abstract="Om ditt konto är länkat till en organisation använder du det här formatet: `OrganizationName.AccountName`<br><br> Om ditt konto inte är länkat till en organisation använder du det här formatet:`AccountName`"
+
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
 ![Exempelbild som visar hur du fyller i information för ditt mål](../../assets/catalog/cloud-storage/snowflake/configure-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Snowflake Account ID]**: Ditt Snowflake-konto-ID. Exempel: `adobe-123456`.
+* **[!UICONTROL Snowflake Account ID]**: Ditt Snowflake-konto-ID. Använd följande konto-ID-format beroende på om ditt konto är länkat till en organisation:
+   * Om ditt konto är länkat till en organisation:`OrganizationName.AccountName`.
+   * Om ditt konto inte är länkat till en organisation:`AccountName`.
 * **[!UICONTROL Account acknowledgment]**: Växla på bekräftelsen för ditt konto-ID på Snowflake för att bekräfta att ditt konto-ID är korrekt och tillhör dig.
 
 >[!IMPORTANT]
