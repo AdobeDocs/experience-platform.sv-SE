@@ -3,9 +3,9 @@ title: Flexibel guide för utvärdering av målgrupper
 description: Lär dig hur du använder flexibel målgruppsutvärdering för att köra batchsegmenteringsjobb på begäran.
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 9aa638903eaf9bf29ce1da3d62f8e69c15ffe50a
+source-git-commit: 7a0a98ea035892943a0e9a9a2b059701f6f1f612
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1124'
 ht-degree: 0%
 
 ---
@@ -326,7 +326,7 @@ När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätt
 
 I följande videofilm visas hur du får tillgång till och använder en flexibel målgruppsutvärdering i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/3453644?&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## Vanliga frågor och svar {#faq}
 
@@ -396,3 +396,10 @@ Flexibla målgruppsutvärderingar som skapats antingen med API:t eller UI-antale
 
 +++
 
+### Måste jag utvärdera alla beroende målgrupper när jag utvärderar huvudmålgruppen med flexibel målgruppsutvärdering?
+
++++ Svar
+
+Nej. Flexibel målgruppsutvärdering utvärderar automatiskt alla beroende målgrupper. Om till exempel målgrupp A är beroende av målgrupp B behöver du bara utvärdera målgrupp B. Flexibel målgruppsutvärdering utvärderar automatiskt målgrupp A och sedan målgrupp B.
+
++++
