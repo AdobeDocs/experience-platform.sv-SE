@@ -3,18 +3,26 @@ solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: d978437479bedd0f943a6d68de78073f318cccb5
 workflow-type: tm+mt
-source-wordcount: '2158'
+source-wordcount: '2262'
 ht-degree: 0%
 
 ---
 
 # Guide för lookalike-målgrupper
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
 >Insikter som liknar varandra och lookalike-målgrupper är bara tillgängliga i **B2C-utgåvan**.
+
+>[!IMPORTANT]
+>
+>Insikter som liknar lookalike och lookalike-målgrupper inaktiveras automatiskt för miljöer som visar låg användning. Låg användning definieras som att inte visa lookalike-insikter de senaste tre månaderna eller att inte skapa en ny lookalike-målgrupp de senaste sex månaderna.
+>
+>Om du har inaktiverat lookalike-insikter för din miljö kan du begära åtkomst genom att skicka ett e-postmeddelande till Adobe kundtjänst, inklusive ditt organisations-ID och miljöinformationen i ditt meddelande.
+>
+>Efter att ha fått en bekräftelse från Adobe kundtjänst aktiveras lookalike-insikter och målgrupper i alla sandlådor i din miljö.
 
 I Adobe Experience Platform ger lookalike-målgrupper intelligenta insikter om var och en av era målgrupper och utnyttjar maskininlärningsbaserade insikter för att identifiera och inrikta sig på värdefulla kunder med era marknadsföringskampanjer.
 
@@ -75,7 +83,9 @@ Följande berättiganden gäller för användning av lookalike-målgrupper:
 
 Tilläggspaket, som blir tillgängliga vid ett senare tillfälle, ökar berättigandena för produktionssandlådor med 20 lookalike-målgrupper per paket.
 
-Om du vill bekräfta att du har tillgång till lookalike-målgrupper kontaktar du Adobe.
+## Åtkomst {#access}
+
+Om du vill bekräfta om du har åtkomst till lookalike-målgrupper väljer du en målgrupp i Audience Portal och kontrollerar om fliken **[!UICONTROL Look-alike insights]** visas.
 
 ## Visa lookalike-insikter {#view}
 
@@ -118,7 +128,7 @@ I avsnittet för lookalike-målgrupper visas en lista med alla lookalike-målgru
 >id="platform_audiences_lookAlike_influentialFactors"
 >title="Influensafaktorer"
 >abstract="Inflytelserika faktorer är attribut, händelser och målgruppsmedlemskap som är viktiga när det gäller att förklara en profils likhet med medlemmarna i den grundläggande målgruppen. Dataanvändningsetiketter och dataprofiler kan användas för att utesluta vissa data från att betraktas som inflytelserika faktorer i lookalike-modeller."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html?lang=sv-SE#exclude" text="Uteslut data"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html#exclude" text="Uteslut data"
 
 I avsnittet Inflytelserika faktorer visas de 100 viktigaste faktorerna som påverkar den look-alike-modellen för den valda baspubliken. Dessa inflytelserika faktorer är profilattribut, upplevelsehändelser och målgruppsmedlemskap som är de viktigaste när det gäller att förklara likheter hos den grundläggande målgruppen. Genom att förstå de viktigaste inflytelserika faktorerna kan ni personalisera ert marknadsföringsinnehåll bättre för den här målgruppen och alla lookalike-målgrupper ni skapar utifrån den. Observera att inte alla inflytelserika faktorer som påverkar lookalike-modellen visas.
 
