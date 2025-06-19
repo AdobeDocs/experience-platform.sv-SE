@@ -18,8 +18,8 @@ ht-degree: 49%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 18 juni 2025**
@@ -129,7 +129,7 @@ Med Federerad målgruppssammansättning kan företag sammanställa data för bä
 
 | Ny funktion | Beskrivning |
 | ----------- | ----------- |
-| Allmän tillgänglighet för kunder inom Adobe Healthcare Shield | Federated Audience Composition kommer att vara tillgängligt för kunder som använder Adobe Healthcare Shield för att skapa, berika och berika målgrupper före slutet av juni. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppskomposition finns i [sekretess- och säkerhetsöversikten för Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [HIPAA- och Adobe Products and Services-översikt](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
+| Allmän tillgänglighet för kunder inom Adobe Healthcare Shield | Federated Audience Composition kommer att vara tillgängligt för kunder som använder Adobe Healthcare Shield för att skapa, berika och berika målgrupper före slutet av juni. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppskomposition finns i [sekretess- och säkerhetsöversikten för Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [HIPAA- och Adobe Products and Services-översikt](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
 
 Mer information finns i dokumentationen för [Federerad målgruppssammansättning (Federated Audience Composition)](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
 
@@ -141,7 +141,7 @@ Flera juridiska och organisatoriska bestämmelser ger användare rätt att på b
 
 | Funktion | Beskrivning |
 | --- | ---|
-| Stöd för Tennessee och Minnesota Privacy Laws | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på statusnivå. Mer information finns i [Regelöversikt](https://experienceleague.adobe.com/en/docs/experience-platform/privacy/regulations/overview). |
+| Stöd för Tennessee och Minnesota Privacy Laws | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på statusnivå. Mer information finns i [Regelöversikt](https://experienceleague.adobe.com/sv/docs/experience-platform/privacy/regulations/overview). |
 
 Mer information om tjänsten finns i [översikten över Privacy Service](../../privacy-service/home.md).
 
