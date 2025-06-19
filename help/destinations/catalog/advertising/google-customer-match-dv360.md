@@ -1,12 +1,11 @@
 ---
 title: Google Customer Match + Display & Video 360 connection
 description: Med Google kundmatchning + Display & Video 360-destinationskoppling kan du använda dina online- och offlinedata från Experience Platform för att nå och återengagera dina kunder i Google egna och driftsatta egendomar som Search, Shopping, Gmail och YouTube.
-badgeBeta: label="Beta" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: cf88ed1082085fac28553dcc7c7be27c517adb22
+source-git-commit: feb3077daf8b3632ff00b57099195523bbeac358
 workflow-type: tm+mt
-source-wordcount: '1993'
-ht-degree: 3%
+source-wordcount: '2213'
+ht-degree: 1%
 
 ---
 
@@ -18,10 +17,6 @@ Vissa Google-integrerade tredje parter, som Adobe Real-Time CDP, kan använda [!
 
 Med den nyligen introducerade möjligheten att kunna använda [!DNL Customer Matched] målgrupper i [!DNL Display & Video 360] kan du nu rikta in dig på målgrupper i en utökad lista med inventeringskällor.
 
->[!IMPORTANT]
->
->Den här destinationsanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få åtkomst.
-
 ![Google kundmatchning + DV360-mål i Adobe Experience Platform användargränssnitt.](/help/destinations/assets/catalog/advertising/gcm-dv360/catalog.png)
 
 ## Viktigt meddelande om ändringar av Google destinationer i samband med uppdaterade krav på medgivande i Europeiska unionen
@@ -29,12 +24,12 @@ Med den nyligen introducerade möjligheten att kunna använda [!DNL Customer Mat
 >[!IMPORTANT]
 >
 > Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([EU User Consent Policy](https://www.google.com/about/company/user-consent-policy/)). Tvingande av dessa ändringar av medgivandekraven gäller från och med den 6 mars 2024.
-><br/>
->För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
-><br/>
->Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
-><br/>
->Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
+> ><br/>
+> >För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
+> ><br/>
+> >Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+> ><br/>
+> >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
 ## När ska det här målet användas
 
@@ -97,7 +92,33 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platform måste du läsa och följa Google policy för användning av [!DNL Customer Match], som beskrivs i [Google supportdokumentation](https://support.google.com/google-ads/answer/6299717).
 
-Kontrollera sedan att ditt [!DNL Google]-konto har konfigurerats för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+Kontrollera sedan att ditt [!DNL Google]-konto har konfigurerats för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1).
+
+### Krav för länkning av konto {#linking}
+
+Innan du konfigurerar den här målanslutningen måste du länka ditt Google-konto-ID till Adobe Google konto-ID: `4641108541`.
+
+Dataexport misslyckas om ditt Google-konto inte är korrekt länkat till Adobe konto-ID.
+
+>[!NOTE]
+>
+>Adobe har uppdaterat Google Partner-konto-ID från `6219889373` till `4641108541`.
+>
+>**Om ditt Google-konto är länkat till det gamla Adobe Partner-konto-ID:t (`6219889373`) följer du stegen nedan:**
+>
+>1. Ta bort länken för ditt Google-konto från det gamla Adobe Partner-konto-ID:t (`6219889373`)
+>2. Länka ditt Google-konto till det nya Adobe Partner-konto-ID (`4641108541`)
+>3. Ta bort alla målgrupper från era befintliga dataflöden
+>4. Skapa nya dataflöden och kartlägga era målgrupper
+>
+>Om ditt Google-konto redan är länkat till det nya Adobe Partner-konto-ID:t (`4641108541`) krävs ingen åtgärd från dig.
+
+**För organisationer med chefskonton:**
+
+Om din organisation använder ett [manager [!DNL Google] account](https://support.google.com/google-ads/answer/6139186) för att hantera flera klientkonton följer du de här specifika länkningskraven:
+
+* **Så här exporterar du till ett specifikt klientkonto:** Länka det enskilda klientkontot (inte hanterarkontot) till Adobe Google konto-ID: `4641108541`
+* **Det räcker inte med enbart kontolänkning för hanterare** och det kan orsaka dataexportfel
 
 ### Tillåtelselista {#allowlist}
 
@@ -133,7 +154,6 @@ Mer information om Google hashkrav och andra begränsningar för aktivering finn
 * [[!DNL Customer Match] med telefonnummer](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
 * [[!DNL Customer Match] med ID:n för mobila enheter](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
-
 Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](../../../ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla Google krav som beskrivs i länkarna ovan.
@@ -154,6 +174,11 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## Anslut till målet {#connect}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_gcm_dv360_accountID"
+>title="Länka Google- och Adobe-konton"
+>abstract="Kontrollera att det konto-ID för Google som du anger här redan är länkat till ditt Adobe-konto. Om du har ett hanterarkonto för Google med flera klientkonton och vill exportera data från Experience Platform till ett specifikt klientkonto, måste du länka det klientkontot till ditt Adobe-konto och ange konto-ID här."
 
 >[!IMPORTANT]
 > 
@@ -239,4 +264,4 @@ När du konfigurerar det här målet kan du få följande fel:
 
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
-Det här felet inträffar när kundkonton inte uppfyller [kraven](#google-account-prerequisites). Om du vill åtgärda det här problemet kontaktar du Google och kontrollerar att ditt konto är tillåtet och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+Det här felet inträffar när kundkonton inte uppfyller [kraven](#google-account-prerequisites). Om du vill åtgärda det här problemet kontaktar du Google och kontrollerar att ditt konto är tillåtet och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1).
