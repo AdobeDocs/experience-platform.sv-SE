@@ -3,7 +3,7 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: dd725b4d383bbcd93e68c81d4fe5182d6086e9be
+source-git-commit: 6ca3687d067044c3fcb9455ec287863c4ffaafd2
 workflow-type: tm+mt
 source-wordcount: '2636'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 | `phone_sha256` | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | `email_lc_sha256` | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | `extern_id` | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
-| `gender` | Kön | Godkända värden: <ul><li>`m`för man</li><li>`f`för hona</li></ul> Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `gender` | Kön | Godkända värden: <ul><li>`m` för man</li><li>`f` för hona</li></ul> Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `date_of_birth` | Födelsedatum | Godkänt format: `yyyy-MM-DD`. <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `last_name` | Efternamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name` | Förnamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga mellanslag. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
@@ -138,8 +138,8 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >[!NOTE]
 >
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
->&#x200B;> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
->&#x200B;> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
+>> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
+>> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
 ![Använd omformningskontroll markerat i mappningssteget.](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
