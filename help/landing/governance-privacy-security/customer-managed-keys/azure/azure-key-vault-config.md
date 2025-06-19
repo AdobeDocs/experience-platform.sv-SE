@@ -4,9 +4,9 @@ description: Lär dig hur du skapar ett nytt Enterprise-konto med Azure, eller a
 role: Developer
 feature: Privacy
 exl-id: 670e3ca3-a833-4b28-9ad4-73685fa5d74d
-source-git-commit: f4100506947da7584de5b9fb42946ac877c8c102
+source-git-commit: c920f78363ee5f040964dbd3a0d0815474094b07
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,14 @@ Aktivera sedan Azure-rollbaserad åtkomstkontroll för ditt nyckelvalv. Välj **
 Om nyckelvalvet är konfigurerat för att begränsa offentlig åtkomst till vissa virtuella nätverk eller inaktivera allmän åtkomst helt måste du bevilja [!DNL Microsoft] ett brandväggsundantag.
 
 Välj **[!DNL Networking]** i den vänstra navigeringen. Markera kryssrutan **[!DNL Allow trusted Microsoft services to bypass this firewall]** under **[!DNL Firewalls and virtual networks]** och välj sedan **[!DNL Apply]**.
+
+>[!NOTE]
+>
+>Om ditt nyckelvalv använder begränsad nätverksåtkomst rekommenderar Adobe att du lägger till följande statiska IP-adress: `20.88.123.53`. Genom att lägga till den här IP-adressen kan Adobe-tjänster övervaka anslutningen mer effektivt och tillhandahålla varningar på plattformen när åtkomstproblem upptäcks.
+>
+>Mer information om när du ska tillåtslista Adobe IP-adress, hur aviseringar fungerar och hur du ska svara på meddelanden om nyckelåtkomstfel finns i [Konfigurera aviseringar och IP-åtkomst för Azure CMK](./alerts-and-ip-access.md).
+>
+>Om ditt nyckelvalv redan har konfigurerats för att tillåta offentlig nätverksåtkomst krävs ingen ytterligare åtgärd.
 
 ![Fliken [!DNL Networking] i [!DNL Microsoft Azure] med [!DNL Networking] och [!DNL Allow trusted Microsoft surfaces to bypass this firewall] undantag markerat.](../../../images/governance-privacy-security/customer-managed-keys/networking.png)
 
