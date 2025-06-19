@@ -3,9 +3,9 @@ title: API-slutpunkt för kvot
 description: Med slutpunkten /quota i API:t för datahygien kan du övervaka användningen av livscykelhantering för avancerade data i förhållande till organisationens månatliga kvotgränser för varje jobbtyp.
 role: Developer
 exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
-source-git-commit: 48a83e2b615fc9116a93611a5e6a8e7f78cb4dee
+source-git-commit: 4d34ae1885f8c4b05c7bb4ff9de9c0c0e26154bd
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -14,10 +14,7 @@ ht-degree: 0%
 
 Slutpunkten `/quota` i API:t för datahygien gör att du kan övervaka användningen av livscykelhantering för avancerade data i förhållande till organisationens kvotgränser för varje jobbtyp.
 
-Kvoter används för varje jobbtyp för datalifecycle på följande sätt:
-
-* Borttagningar och uppdateringar av poster begränsas till ett visst antal förfrågningar varje månad.
-* Datauppsättningens förfallodatum har en fast gräns för antalet samtidigt aktiva jobb, oavsett när förfallotiderna kommer att köras.
+Kvotanvändningen spåras för varje jobbtyp för datalängd. De faktiska kvotgränserna beror på organisationens berättigande och kan ses över regelbundet. Utgångsdatum för datauppsättningar är begränsade för antalet samtidiga aktiva jobb.
 
 ## Komma igång
 
@@ -25,7 +22,15 @@ Slutpunkten som används i den här guiden är en del av API:t för datahygien. 
 
 * Länkar till relaterad dokumentation
 * En guide till hur du läser exempelanrop till API i det här dokumentet
-* Viktig information om de rubriker som krävs för att anropa ett Experience Platform-API
+* Viktig information om de sidhuvuden som behövs för att ringa anrop till ett Experience Platform-API
+
+## Kvoter och bearbetningstidslinjer {#quotas}
+
+Registrera borttagningsbegäranden omfattas av kvoter och förväntningar på servicenivå baserat på din licensbehörighet. Dessa begränsningar gäller för både UI- och API-baserade borttagningsbegäranden.
+
+>[!TIP]
+> 
+>I det här dokumentet visas hur du frågar efter användningen mot berättigandebaserade begränsningar. En fullständig beskrivning av kvotnivåer, borttagningsrättigheter för poster och SLA-beteende finns i [UI-baserade postborttagnings](../ui/record-delete.md#quotas)- eller[API-baserade postborttagningsdokument](./workorder.md#quotas).
 
 ## Listkvoter {#list}
 
@@ -70,13 +75,13 @@ Ett lyckat svar returnerar information om era livscykelkvoter för data.
       "name": "dailyConsumerDeleteIdentitiesQuota",
       "description": "The consumed number of deleted identities in all workorder requests for the organization for today.",
       "consumed": 0,
-      "quota": 600000
+      "quota": 1000000
     },
     {
       "name": "monthlyConsumerDeleteIdentitiesQuota",
       "description": "The consumed number of deleted identities in all workorder requests for the organization for this month.",
       "consumed": 841,
-      "quota": 600000
+      "quota": 2000000
     },
     {
       "name": "monthlyUpdatedFieldIdentitiesQuota",
@@ -89,7 +94,5 @@ Ett lyckat svar returnerar information om era livscykelkvoter för data.
 ```
 
 | Egenskap | Beskrivning |
-| --- | --- |
+| -------- | ------- |
 | `quotas` | Visar kvotinformation för varje jobbtyp under datalängd. Varje kvotobjekt innehåller följande egenskaper:<ul><li>`name`: Datatillverkarens jobbtyp:<ul><li>`expirationDatasetQuota`: Datauppsättningens förfallodatum</li><li>`deleteIdentityWorkOrderDatasetQuota`: Posten tas bort</li></ul></li><li>`description`: En beskrivning av jobbtypen för livscykeln för data.</li><li>`consumed`: Antalet jobb av den här typen körs under den aktuella perioden. Objektnamnet anger kvotperioden.</li><li>`quota`: Tilldelningen för den här jobbtypen för din organisation. För radering och uppdatering av poster representerar kvoten antalet jobb som kan köras för varje månadsperiod. För datauppsättningens förfallodatum representerar kvoten antalet jobb som kan vara aktiva samtidigt vid en given tidpunkt.</li></ul> |
-
-{style="table-layout:auto"}

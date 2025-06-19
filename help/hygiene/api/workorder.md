@@ -1,38 +1,80 @@
 ---
-title: API-slutpunkt för arbetsorder
+title: Begäranden om radering av post (arbetsorderslutpunkt)
 description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för identiteter.
-badgeBeta: label="Beta" type="Informative"
 role: Developer
-badge: Beta
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: bf819d506b0ee6f3aba6850f598ee46f16695dfa
+source-git-commit: d569b1d04fa76e0a0e48364a586e8a1a773b9bf2
 workflow-type: tm+mt
-source-wordcount: '1278'
-ht-degree: 0%
+source-wordcount: '1505'
+ht-degree: 1%
 
 ---
 
-# Slutpunkt för arbetsorder {#work-order-endpoint}
+# Posta borttagningsbegäranden (arbetsorderslutpunkt) {#work-order-endpoint}
 
 Med slutpunkten `/workorder` i API:t för datahygien kan du programmässigt hantera begäranden om postborttagning i Adobe Experience Platform.
 
 >[!IMPORTANT]
 > 
->Funktionen Ta bort post finns för närvarande i Beta och är endast tillgänglig i en **begränsad version**. Det är inte tillgängligt för alla kunder. Begäranden om postborttagning är bara tillgängliga för organisationer i den begränsade versionen.
->
 >Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De **får inte** användas för förfrågningar om rättigheter för registrerade (efterlevnad) som gäller sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). Använd [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället för alla kompatibilitetsfall.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du gå igenom [översikten](./overview.md) och se om det finns länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du gå igenom [översikten](./overview.md) och se om det finns länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa Experience Platform-API:er.
+
+## Kvoter och bearbetningstidslinjer {#quotas}
+
+Begäran om att radera poster omfattas av dagliga och månadsvisa gränser för hur många identifierare som får skickas in, beroende på organisationens licensberättigande. Dessa begränsningar gäller för både UI- och API-baserade borttagningsbegäranden.
+
+>[!NOTE]
+>
+>Du kan skicka upp till **1 000 000 identifierare per dag**, men bara om den återstående månadskvoten tillåter det. Om din månadskvot är mindre än 1 miljon, kan din dagliga inskickning inte överstiga denna gräns.
+
+### Möjlighet att skicka in per produkt varje månad {#quota-limits}
+
+Tabellen nedan visar inlämningsgränser för identifierare per produkt och berättigandenivå. För varje produkt är den månatliga övre gränsen det lägsta av två värden: ett fast identifierartak eller ett procentbaserat tröskelvärde som är knutet till den licensierade datavolymen.
+
+| Produkt | Tillståndsbeskrivning | Månatligt tak (den som är mindre) |
+|----------|-------------------------|---------------------------------|
+| Real-Time CDP eller Adobe Journey Optimizer | Utan tillägg till sköld för skydd av privatlivet och säkerheten eller hälso- och sjukvårdsskölden | 2 000 000 identifierare eller 5 % av den adresserbara publiken |
+| Real-Time CDP eller Adobe Journey Optimizer | Med tillägget Privacy and Security Shield eller Healthcare Shield | 15 000 000 identifierare eller 10 % av den adresserbara publiken |
+| Customer Journey Analytics | Utan tillägg till sköld för skydd av privatlivet och säkerheten eller hälso- och sjukvårdsskölden | 2 000 000 identifierare eller 100 identifierare per miljon CJA-rader |
+| Customer Journey Analytics | Med tillägget Privacy and Security Shield eller Healthcare Shield | 15 000 000 identifierare eller 200 identifierare per miljon CJA-rader |
+
+>[!NOTE]
+>
+> De flesta organisationer har lägre månadsgränser baserat på den faktiska adresserbara målgruppen eller CJA-radrättigheterna.
+
+Kvoterna återställs den första dagen i varje kalendermånad. Oanvänd kvot för överföring av **inte**.
+
+>[!NOTE]
+>
+>Kvoterna baseras på din organisations licensierade månadsberättigande för **skickade identifierare**. Dessa används inte av systemskyddsräcken, men kan övervakas och granskas.
+>
+>Borttagning av post är en **delad tjänst**. Det högsta antalet licenser som gäller för Real-Time CDP, Adobe Journey Optimizer, Customer Journey Analytics och eventuella tillägg till Shield.
+
+### Bearbetar tidslinjer för identifieraröverföringar {#sla-processing-timelines}
+
+När du har skickat in en post köas och bearbetas förfrågningar om radering baserat på din berättigandenivå.
+
+| Produkt- och berättigandebeskrivning | Kövaraktighet | Maximal bearbetningstid (SLA) |
+|------------------------------------------------------------------------------------|---------------------|-------------------------------|
+| Utan tillägg till sköld för skydd av privatlivet och säkerheten eller hälso- och sjukvårdsskölden | Upp till 15 dagar | 30 dagar |
+| Med tillägget Privacy and Security Shield eller Healthcare Shield | Normalt 24 timmar | 15 dagar |
+
+Om din organisation kräver högre gränser kontaktar du Adobe för att få en tillståndsgranskning.
+
+>[!TIP]
+>
+>Information om hur du kontrollerar din aktuella kvotanvändning eller tillståndsnivå finns i [referensguiden för kvoter](../api/quota.md).
 
 ## Skapa en begäran om postborttagning {#create}
 
-Du kan ta bort en eller flera identiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-förfrågan till slutpunkten `/workorder`.
+Du kan ta bort en eller flera identiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-begäran till `/workorder`-slutpunkten.
 
->[!IMPORTANT]
-> 
->Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetspostborttagningar varje månad.<br>En enstaka [begäran om borttagning av post via användargränssnittet](../ui/record-delete.md) gör att du kan skicka 10 000 ID:n åt gången. API-metoden för att ta bort poster tillåter att 100 000 ID:n skickas samtidigt.<br>Det är bäst att skicka så många ID:n som möjligt per begäran, upp till din ID-gräns. Om du tänker ta bort en stor mängd ID:n bör du inte skicka in en låg volym eller ett enda ID per postborttagningsbegäran.
+>[!TIP]
+>
+>Varje postborttagningsbegäran som skickas via API kan innehålla upp till **100 000 identiteter**. För att maximera effektiviteten skickar du så många identiteter per begäran som möjligt och undviker att skicka in stora mängder, t.ex. enstaka ID-arbetsorder.
 
 **API-format**
 
@@ -130,7 +172,7 @@ Ett godkänt svar returnerar informationen om postborttagningen.
 
 ## Hämta status för en postborttagning {#lookup}
 
-När du har [skapat en begäran om postborttagning](#create) kan du kontrollera dess status med hjälp av en GET-begäran.
+När du har [skapat en begäran om postborttagning](#create) kan du kontrollera dess status med en GET-begäran.
 
 **API-format**
 
