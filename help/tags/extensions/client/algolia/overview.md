@@ -1,9 +1,10 @@
 ---
 title: Översikt över tillägget Algolia-taggar
 description: Läs mer om tillägget Algolia-taggar i Adobe Experience Platform.
-source-git-commit: 5b488a596472fe61b487f75ad62d741237caa820
+exl-id: 8409bf8b-fae2-44cc-8466-9942f7d92613
+source-git-commit: 605f89a09f58568c2ec2492f788bedbe610292ae
 workflow-type: tm+mt
-source-wordcount: '1421'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
@@ -60,7 +61,7 @@ I konfigurationsvyn som visas måste du ange följande information:
 >
 >I de flesta fall bör du läsa in [!DNL Algolia]-insikter på alla sidor på din webbplats.
 
-Lägg till åtgärden **[!UICONTROL Load Insights]** i din taggregel var det lämpligaste för inläsning av [!DNL Algolia]-insikter baserat på regelns kontext. Den här åtgärden läser in biblioteket `search-insights.js` på sidan.
+Lägg till åtgärden **[!UICONTROL Load Insights]** i din taggregel var det lämpligaste för inläsning av [!DNL Algolia]-insikter baserat på regelkontext. Den här åtgärden läser in biblioteket `search-insights.js` på sidan.
 
 Skapa en ny taggregel eller öppna en befintlig. Definiera villkoren enligt dina krav, välj sedan **[!UICONTROL Algolia]** som [!UICONTROL Extension] och välj **[!UICONTROL Load Insights]** som [!UICONTROL Action Type].
 
@@ -79,9 +80,18 @@ Lägg till åtgärden **[!UICONTROL Click]** i taggregeln för att skicka klicka
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Event Name] | Händelsenamnet som kan användas för att ytterligare förfina den här klickhändelsen. |
-| Dataelement för händelseinformation | Det dataelement som hämtar händelseinformationen, inklusive `indexName`, `objectIDs` och eventuellt `queryID`, `position`. Om både `queryID` och `position` inkluderas kategoriseras händelsen som *objekt-ID:n som klickats efter sökning*. I annat fall behandlas händelsen som en *objekt-ID:n* som klickats. Om dataelementet inte har något indexnamn används standardindexnamnet när händelsen skickas. |
+| Dataelement för händelseinformation | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` (valfritt)</li><li>`position` (valfritt)</li></ul> |
+
+>[!NOTE]
+>
+>Om både `queryID` och `position` ingår, klassificeras händelsen som **objekt-ID:n som klickats efter sökning**. Annars klassas den som en **klickad objekt-ID** -händelse.
+>><br><br>
+>>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
 
 ![](../../../images/extensions/client/algolia/clicked.png)
+
+Mer information om händelsekategorierna finns i [Klickade objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids-after-search/)
+och [Handböcker för objekt-ID:n som klickats ](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/) .
 
 ### Konverterad {#converted}
 
@@ -90,9 +100,17 @@ Lägg till åtgärden **[!UICONTROL Converted]** i taggregeln för att skicka ko
 | Egenskap | Beskrivning |
 | --- | --- |
 | Händelsenamn | Händelsenamnet som ska användas för att ytterligare förfina den här **convert**-händelsen. |
-| Dataelement för händelseinformation | Det dataelement som hämtar händelseinformationen, inklusive `indexName`, `objectId` och eventuellt `queryId`. Om dataelementet innehåller `queryId` kommer händelsen att klassas som *Konverterad efter sökning*, annars betraktas den som en *Konverterad* -händelseklass. Om dataelementet inte har något indexnamn används standardindexnamnet när händelsen skickas. |
+| Dataelement för händelseinformation | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` (valfritt)</li></ul> |
+
+>[!NOTE]
+>
+>Om dataelementet innehåller `queryId` klassas händelsen som **Konverterad efter sökning**. Annars kommer den att klassas som en **Konverterad**-händelse.
+>><br><br>
+>>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
 
 ![](../../../images/extensions/client/algolia/converted.png)
+
+Mer information om händelsekategorierna finns i handböckerna [Konverterade objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/converted-object-ids-after-search/) och [Konverterade objekt-ID:n](https://www.algolia.com/doc/api-reference/api-methods/converted-object-ids/).
 
 ### Tillagd i kundvagnen {#added-to-cart}
 
@@ -101,32 +119,60 @@ Lägg till åtgärden **[!UICONTROL Added to Cart]** i taggregeln för att skick
 | Egenskap | Beskrivning |
 | --- | --- |
 | Händelsenamn | Händelsenamnet som ska användas för att ytterligare förfina den här **convert**-händelsen. |
-| Dataelement för händelseinformation | Det dataelement som hämtar händelseinformationen, inklusive `indexName`, `objectId` och eventuellt `queryId`, `objectData`. Om dataelementet innehåller `queryId` kommer händelsen att klassas som *Added to cart object IDs after search* , annars betraktas den som en *Added to cart object IDs* -händelseklass. Om dataelementet inte har något indexnamn används standardindexnamnet när händelsen skickas. |
+| Dataelement för händelseinformation | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` (valfritt)</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` (valfritt)</li></ul>. |
 | Valuta | Anger valutatypen, till exempel `USD`. |
+
+>[!NOTE]
+>
+>Om dataelementet innehåller `queryId` kommer händelsen att klassas som **Added to cart object IDs after Search**. I annat fall kommer den att klassas som en **tillagd i cart-objekt-ID:n** .
+>><br><br>
+>>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+>><br><br>
+>>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
 
 ![](../../../images/extensions/client/algolia/added-to-cart.png)
 
+Mer information om händelsekategorierna finns i [Added to cart object IDs after search](https://www.algolia.com/doc/api-reference/api-methods/added-to-cart-object-ids-after-search/) and [Added to cart object IDs](https://www.algolia.com/doc/api-reference/api-methods/added-to-cart-object-ids/) guides.
+
 ### Köpt {#purchased}
 
-Lägg till åtgärden **[!UICONTROL Added to Cart]** i taggregeln för att skicka köpta händelser till [!DNL Algolia]. Skapa en ny taggregel eller öppna en befintlig. Definiera villkoren enligt dina krav, välj sedan **[!UICONTROL Algolia]** som [!UICONTROL Extension] och välj **[!UICONTROL Purchased]** som [!UICONTROL Action Type].
+Lägg till åtgärden **[!UICONTROL Purchased]** i taggregeln för att skicka köpta händelser till [!DNL Algolia]. Skapa en ny taggregel eller öppna en befintlig. Definiera villkoren enligt dina krav, välj sedan **[!UICONTROL Algolia]** som [!UICONTROL Extension] och välj **[!UICONTROL Purchased]** som [!UICONTROL Action Type].
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | Händelsenamn | Händelsenamnet som ska användas för att ytterligare förfina den här **purchase**-händelsen. |
-| Dataelement för händelseinformation | Det dataelement som hämtar händelseinformationen, inklusive `indexName`, `objectId` och eventuellt `queryId`. Om dataelementet innehåller `queryId` kommer händelsen att klassas som *Inköpta objekt-ID:n efter sökning*, annars betraktas den som en *Inköpta objekt-ID* -händelseklass. Om dataelementet inte har något indexnamn används standardindexnamnet när händelsen skickas. |
+| Dataelement för händelseinformation | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` (valfritt)</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` (valfritt)</li></ul>. |
+| Valuta | Anger valutatypen, till exempel `USD`. |
+
+>[!NOTE]
+>
+>Om dataelementet innehåller `queryId` kommer händelsen att klassas som **Inköpta objekt-ID:n efter sökning**. Annars klassas den som en **Inköpt objekt-ID** -händelse.
+>><br><br>
+>>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+>><br><br>
+>>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
 
 ![](../../../images/extensions/client/algolia/purchased.png)
 
+Mer information om händelsekategorierna finns i [Inköpta objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids-after-search/)
+och [ Inköpta objekt-ID:n ](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/) .
+
 ### Visad {#viewed}
 
-Lägg till åtgärden **[!UICONTROL Added to Cart]** i taggregeln för att skicka köpta händelser till [!DNL Algolia]. Skapa en ny taggregel eller öppna en befintlig. Definiera villkoren enligt dina krav, välj sedan **[!UICONTROL Algolia]** som [!UICONTROL Extension] och välj **[!UICONTROL Viewed]** som [!UICONTROL Action Type].
-
-![](../../../images/extensions/client/algolia/viewed.png)
+Lägg till åtgärden **[!UICONTROL Viewed]** i taggregeln för att skicka köpta händelser till [!DNL Algolia]. Skapa en ny taggregel eller öppna en befintlig. Definiera villkoren enligt dina krav, välj sedan **[!UICONTROL Algolia]** som [!UICONTROL Extension] och välj **[!UICONTROL Viewed]** som [!UICONTROL Action Type].
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | Händelsenamn | Händelsenamnet som ska användas för att ytterligare förfina den här **vyn**-händelsen. |
-| Dataelement för händelseinformation | Det dataelement som kommer att hämta händelseinformationen inklusive `indexName` och `objectId`. Om `indexName` inte är tillgängligt kommer standardindexnamnet att användas när händelserna skickas. |
+| Dataelement för händelseinformation | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li></ul> |
+
+>[!NOTE]
+>
+>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+
+![](../../../images/extensions/client/algolia/viewed.png)
+
+Mer information om händelsen view finns i guiden [Visade objekt-ID](https://www.algolia.com/doc/api-reference/api-methods/viewed-object-ids/).
 
 ## Dataelement för [!DNL Algolia] Insights-tillägg {#data-elements}
 
@@ -148,10 +194,10 @@ Detta dataelement returnerar:
 ```javascript
 {
   timestamp,
-    queryID,
-    indexName,
-    objectIDs,
-    positions
+  queryID,
+  indexName,
+  objectIDs,
+  positions
 }
 ```
 
@@ -186,9 +232,9 @@ Detta dataelement returnerar:
 ```javascript
 {
   timestamp,
-    queryID,
-    indexName,
-    objectIDs
+  queryID,
+  indexName,
+  objectIDs
 }
 ```
 
@@ -211,9 +257,9 @@ Det här dataelementet returnerar det som lagras i sessionslagringen.
 ```javascript
 {
   timestamp,
-    queryID,
-    indexName,
-    objectIDs
+  queryID,
+  indexName,
+  objectIDs
 }
 ```
 
@@ -228,6 +274,7 @@ Händelserna *som klickats efter sökning* eller *Konverterats efter sökning* k
 * [[!DNL Algolia] Starta GitHub-databasen för tillägg](https://github.com/algolia/algolia-launch-extension)
 * [InstantSearch.js-dokumentation](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)
 * [[!DNL Algolia] API-dokumentation för insikter](https://www.algolia.com/doc/rest-api/insights/)
+* [Algolia Launch Extension Code Repo](https://github.com/algolia/algolia-launch-extension)
 
 ## Nästa steg {#next-steps}
 
