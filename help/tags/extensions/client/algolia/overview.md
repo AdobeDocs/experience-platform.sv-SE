@@ -85,8 +85,8 @@ Lägg till åtgärden **[!UICONTROL Click]** i taggregeln för att skicka klicka
 >[!NOTE]
 >
 >Om både `queryID` och `position` ingår, klassificeras händelsen som **objekt-ID:n som klickats efter sökning**. Annars klassas den som en **klickad objekt-ID** -händelse.
->><br>
->>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+>&#x200B;><br>
+>&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
 
 ![](../../../images/extensions/client/algolia/clicked.png)
 
@@ -105,8 +105,8 @@ Lägg till åtgärden **[!UICONTROL Converted]** i taggregeln för att skicka ko
 >[!NOTE]
 >
 >Om dataelementet innehåller `queryId` klassas händelsen som **Konverterad efter sökning**. Annars kommer den att klassas som en **Konverterad**-händelse.
->><br>
->>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+>&#x200B;><br>
+>&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
 
 ![](../../../images/extensions/client/algolia/converted.png)
 
@@ -125,10 +125,10 @@ Lägg till åtgärden **[!UICONTROL Added to Cart]** i taggregeln för att skick
 >[!NOTE]
 >
 >Om dataelementet innehåller `queryId` kommer händelsen att klassas som **Added to cart object IDs after Search**. I annat fall kommer den att klassas som en **tillagd i cart-objekt-ID:n** .
->><br>
->>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
->><br>
->>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
+>&#x200B;><br>
+>&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+>&#x200B;><br>
+>&#x200B;>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
 
 ![](../../../images/extensions/client/algolia/added-to-cart.png)
 
@@ -147,10 +147,10 @@ Lägg till åtgärden **[!UICONTROL Purchased]** i taggregeln för att skicka k�
 >[!NOTE]
 >
 >Om dataelementet innehåller `queryId` kommer händelsen att klassas som **Inköpta objekt-ID:n efter sökning**. Annars klassas den som en **Inköpt objekt-ID** -händelse.
->><br>
->>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
->><br>
->>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
+>&#x200B;><br>
+>&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+>&#x200B;><br>
+>&#x200B;>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
 
 ![](../../../images/extensions/client/algolia/purchased.png)
 
