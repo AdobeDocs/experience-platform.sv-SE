@@ -1,10 +1,8 @@
 ---
 title: Guide för konfiguration av länkningsregler för identitetsdiagram
 description: Lär dig mer om de olika implementeringstyperna som du kan konfigurera med Länkningsregler för identitetsdiagram.
-hide: true
-hidefromtoc: true
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 2a5c8b3bd58d3659d0fcf519407b180bf5f091b4
+source-git-commit: 54a50cd3e122df7f653c06232e0598fa878eeac5
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 1%
@@ -136,7 +134,7 @@ Läs det här avsnittet för mellanliggande implementeringar av [!DNL Identity G
 >
 >För att slutföra implementeringarna nedan måste du skapa följande anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
 >* `CRMID`
->* `CCHash` (Det här är ett anpassat namnutrymme som representerar ett hashade kreditkortsnummer.)
+>* `CChash` (Det här är ett anpassat namnutrymme som representerar ett hashade kreditkortsnummer.)
 
 Tänk dig att du är en dataarkitekt som arbetar för en affärsbank som utfärdar kreditkort. Marknadsföringsteamet har angett att de vill inkludera historik för tidigare kreditkortstransaktioner i en profil. Det här identitetsdiagrammet kan se ut så här.
 
@@ -482,6 +480,7 @@ loginID: JanePersonal, ECID: 222
 >* `CRMID`
 >* `loyaltyID`
 >* `thirdPartyID`
+>* `orderID`
 
 Du är ett medie- och underhållningsföretag och dina slutanvändare har följande:
 
