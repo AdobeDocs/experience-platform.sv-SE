@@ -2,9 +2,9 @@
 title: SFTP Source Connector - översikt
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4816a6b627dc6551e351bfe3cdc4bc8c8ea8b17e
 workflow-type: tm+mt
-source-wordcount: '1226'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ I det här avsnittet finns information om nödvändiga steg som du måste slutf�
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista ](../../ip-address-allow-list.md).
 
 ### Namnbegränsningar för filer och kataloger
 
@@ -183,7 +183,7 @@ Ange lämpliga värden för följande autentiseringsuppgifter för att autentise
 | `port` | Serverporten [!DNL SFTP] som du ansluter till. Om det inte anges används standardvärdet `22`. |
 | `username` | Användarnamnet med åtkomst till din [!DNL SFTP]-server. |
 | `password` | Lösenordet för din [!DNL SFTP]-server. |
-| `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
+| `privateKeyContent` | Base64-kodad privat nyckel för SSH. De OpenSSH-nyckeltyper som stöds är `ed25519`, `RSA` och `DSA`. |
 | `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 | `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för antalet samtidiga anslutningar som Experience Platform skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Obs!** När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
 | `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. [!DNL SFTP]-källan kan du ange mappsökvägen för att ange användaråtkomst till den undermapp som du väljer. |

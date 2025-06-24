@@ -2,9 +2,9 @@
 title: Skapa en SFTP-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4816a6b627dc6551e351bfe3cdc4bc8c8ea8b17e
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connec
 
 >[!IMPORTANT]
 >
->[!DNL SFTP]-anslutningen stöder en OpenSSH-nyckel av RSA- eller DSA-typ. Kontrollera att nyckelfilsinnehållet börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
+>[!DNL SFTP]-kopplingen stöder `ed25519`, `RSA` eller `DSA` OpenSSH-nyckel. Kontrollera att nyckelfilsinnehållet börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
 
 **API-format**
 
@@ -160,7 +160,7 @@ curl -X POST \
 | `auth.params.host` | Värdnamnet för [!DNL SFTP]-servern. |
 | `auth.params.port` | Porten för SFTP-servern. Det här heltalsvärdet är som standard 22. |
 | `auth.params.username` | Användarnamnet som är associerat med din [!DNL SFTP]-server. |
-| `auth.params.privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
+| `auth.params.privateKeyContent` | Base64-kodad privat nyckel för SSH. De OpenSSH-nyckeltyper som stöds är `ed25519`, `RSA` och `DSA`. |
 | `auth.params.passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 | `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av Experience Platform till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
 | `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |

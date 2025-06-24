@@ -2,9 +2,9 @@
 title: Skapa en SFTP Source Connection i användargränssnittet
 description: Lär dig hur du skapar en SFTP-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 1a00ed27-3c95-4e57-9f94-45ff256bf75c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4816a6b627dc6551e351bfe3cdc4bc8c8ea8b17e
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '638'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Om du vill ansluta ett befintligt konto markerar du det FTP- eller SFTP-konto so
 >
 >* När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL SFTP]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 >
->* SFTP stöder en RSA- eller DSA-typ av OpenSSH-nyckel. Kontrollera att nyckelfilsinnehållet börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
+>* SFTP stöder `ed25519`, `RSA` eller `DSA` OpenSSH-nyckel. Kontrollera att nyckelfilsinnehållet börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
 
 Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och en valfri beskrivning för det nya [!DNL SFTP]-kontot.
 
