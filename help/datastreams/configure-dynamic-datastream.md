@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: label="Beta" type="Informative"
 exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
-source-git-commit: c193a6aa45d179acdf655a70987875bf0da51b2b
+source-git-commit: 8ce5b6718861d01731b9aab9f81645f2aeb2970f
 workflow-type: tm+mt
-source-wordcount: '1123'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
@@ -38,6 +38,7 @@ Dynamiska datastream-konfigurationer har specifika gränser och prestandabegrän
 | Guardrail | Gräns | Begränsningstyp |
 |---------|------------|------|
 | Maximalt antal dynamiska datastream-konfigurationer per datastream för Experience Platform-tjänster | 5 | Prestandaskydd |
+| Maximalt antal dynamiska datastream-konfigurationer per datastream för händelsevidarebefordran | 5 | Prestandaskydd |
 | Maximalt antal dynamiska datastream-konfigurationer per datastream för Adobe Analytics | 5 | Prestandaskydd |
 | Maximalt antal dynamiska datastream-konfigurationer per datastream för Adobe Target | 5 | Prestandaskydd |
 | Maximalt antal dynamiska datastream-konfigurationer per datastream för Adobe Audience Manager | 5 | Prestandaskydd |
