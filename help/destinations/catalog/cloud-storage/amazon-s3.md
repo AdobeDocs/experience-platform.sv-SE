@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7aff8d9eafb699133e90d3af8ef24f3135f3cade
 workflow-type: tm+mt
-source-wordcount: '1461'
+source-wordcount: '1773'
 ht-degree: 0%
 
 ---
@@ -87,7 +87,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 * Åtkomstnyckel och autentisering av hemlig nyckel
 * Antagen rollautentisering
 
-#### Åtkomstnyckel och autentisering av hemlig nyckel
+#### Autentisering med S3-åtkomstnyckel och hemlig nyckel
 
 Använd den här autentiseringsmetoden när du vill ange din Amazon S3-åtkomstnyckel och hemlig nyckel så att Experience Platform kan exportera data till dina Amazon S3-egenskaper.
 
@@ -98,21 +98,103 @@ Använd den här autentiseringsmetoden när du vill ange din Amazon S3-åtkomstn
 
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i gränssnittet.](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
-#### Antagen roll {#assumed-role-authentication}
+#### Autentisering med rollen S3 antas {#assumed-role-authentication}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_assumed_role"
 >title="Antagen rollautentisering"
 >abstract="Använd den här autentiseringstypen om du inte vill dela kontonycklar och hemliga nycklar med Adobe. I stället ansluter Experience Platform till din Amazon S3-plats med rollbaserad åtkomst. Klistra in ARN för rollen som du skapade i AWS för Adobe-användaren. Mönstret liknar `arn:aws:iam::800873819705:role/destinations-role-customer` "
 
-![Bild av de obligatoriska fälten när du väljer autentisering av antagen roll.](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
-
 Använd den här autentiseringstypen om du inte vill dela kontonycklar och hemliga nycklar med Adobe. I stället ansluter Experience Platform till din Amazon S3-plats med rollbaserad åtkomst.
 
-För att kunna göra detta måste du skapa en användare för Adobe i AWS-konsolen med de [behörigheter som krävs](#minimum-permissions-iam-user) för att skriva till dina Amazon S3-bucket. Skapa en **[!UICONTROL Trusted entity]** i AWS med Adobe-kontot **[!UICONTROL 670664943635]**. Mer information finns i [AWS-dokumentationen om hur du skapar roller](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
+![Bild av de obligatoriska fälten när du väljer autentisering av antagen roll.](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
 
-* **[!DNL Role]**: Klistra in ARN för rollen som du skapade i AWS för Adobe-användaren. Mönstret liknar `arn:aws:iam::800873819705:role/destinations-role-customer`.
+* **[!DNL Role]**: Klistra in ARN för rollen som du skapade i AWS för Adobe-användaren. Mönstret liknar `arn:aws:iam::800873819705:role/destinations-role-customer`. I stegen nedan finns detaljerade riktlinjer för hur du konfigurerar S3-åtkomsten korrekt.
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
+
+För att göra detta måste du skapa en antagen roll för Adobe i AWS-konsolen med de [behörigheter som krävs](#minimum-permissions-iam-user) för att skriva till dina Amazon S3-bucket.
+
+**Skapa en profil med nödvändig behörighet**
+
+1. Öppna AWS Console och gå till IAM > Profiler > Skapa profil
+2. Välj Policy Editor > JSON och lägg till behörigheterna nedan.
+
+   ```json
+   {
+       "Version": "2012-10-17",
+       "Statement": [
+           {
+               "Sid": "VisualEditor0",
+               "Effect": "Allow",
+               "Action": [
+                   "s3:PutObject",
+                   "s3:GetObject",
+                   "s3:DeleteObject",
+                   "s3:GetBucketLocation",
+                   "s3:ListMultipartUploadParts"
+               ],
+               "Resource": "arn:aws:s3:::bucket/folder/*"
+           },
+           {
+               "Sid": "VisualEditor1",
+               "Effect": "Allow",
+               "Action": [
+                   "s3:ListBucket"
+               ],
+               "Resource": "arn:aws:s3:::bucket"
+           }
+       ]
+   }
+   ```
+
+3. På nästa sida anger du ett namn för profilen och sparar den som referens. Du behöver det här profilnamnet när du skapar rollen i nästa steg.
+
+**Skapa användarroll i ditt S3-kundkonto**
+
+1. Öppna AWS Console och gå till IAM > Roller > Skapa ny roll
+2. Välj **Betrodd entitetstyp** > **AWS-konto**
+3. Välj **Ett AWS-konto** > **Ett annat AWS-konto** och ange Adobe konto-ID: `670664943635`
+4. Lägg till behörigheter med den profil som skapades tidigare
+5. Ange ett rollnamn (till exempel `destinations-role-customer`). Rollnamnet ska behandlas konfidentiellt, ungefär som ett lösenord. Den kan innehålla upp till 64 tecken och kan innehålla alfanumeriska tecken och följande specialtecken: `+=,.@-_`. Verifiera sedan att:
+   * Adobe konto-ID `670664943635` finns i avsnittet **[!UICONTROL Select trusted entities]**
+   * Principen som skapades tidigare finns i **[!UICONTROL Permissions policy summary]**
+
+**Ange rollen som Adobe ska anta**
+
+När du har skapat rollen i AWS måste du tillhandahålla rollen ARN till Adobe. ARN följer mönstret: `arn:aws:iam::800873819705:role/destinations-role-customer`
+
+Du hittar ARN på huvudsidan när du har skapat rollen i AWS-konsolen. Du använder den här ARN när du skapar målet.
+
+**Verifiera rollbehörigheter och förtroenderelationer**
+
+Kontrollera att din roll har följande konfiguration:
+
+* **Behörigheter**: Rollen bör ha behörighet att komma åt S3 (antingen fullständig åtkomst eller minimal behörighet som anges i **Skapa en profil med de behörigheter som krävs** steg ovan)
+* **Förtroenderelationer**: Rollen bör ha Adobe-rotkontot (`670664943635`) i sina förtroenderelationer
+
+**Alternativ: Begränsa till en viss Adobe-användare (valfritt)**
+
+Om du inte vill tillåta hela Adobe-kontot kan du begränsa åtkomsten till endast den specifika Adobe-användaren. Om du vill göra det redigerar du förtroendeprincipen med följande konfiguration:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::670664943635:user/destinations-adobe-user"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {}
+        }
+    ]
+}
+```
+
+Mer information finns i [AWS-dokumentationen om hur du skapar roller](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
+
+
 
 ### Fyll i målinformation {#destination-details}
 
@@ -125,7 +207,7 @@ För att kunna göra detta måste du skapa en användare för Adobe i AWS-konsol
 >id="platform_destinations_connect_s3_folderpath"
 >title="Mappsökväg"
 >abstract="Får endast innehålla tecknen A-Z, a-z, 0-9 och kan innehålla följande specialtecken: `/!-_.'()"^[]+$%.*"`. Om du vill skapa en mapp per målgruppsfil infogar du makrot `/%SEGMENT_NAME%`, `/%SEGMENT_ID%` eller `/%SEGMENT_NAME%/%SEGMENT_ID%` i textfältet. Makron kan bara infogas i slutet av mappsökvägen. Visa makroexempel i dokumentationen."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html?lang=sv-SE#use-macros" text="Använd makron för att skapa en mapp på lagringsplatsen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html#use-macros" text="Använd makron för att skapa en mapp på lagringsplatsen"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
