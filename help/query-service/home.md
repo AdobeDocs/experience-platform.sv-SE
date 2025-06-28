@@ -17,7 +17,7 @@ Adobe Experience Platform importerar data från en mängd olika källor. En stor
 
 Med Query Service kan ni koppla samman kundresan online-till-offline och förstå flerkanalsattribueringen för ert varumärke. I följande video visas hur ett upplevelseföretag kan använda frågetjänsten för att hantera viktiga användningsfall och hur frågetjänsten fungerar.
 
->[!VIDEO](https://video.tv.adobe.com/v/29795?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3464265?quality=12&learn=on&captions=swe)
 
 ## Använda frågetjänsten {#usage}
 
