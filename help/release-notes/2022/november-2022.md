@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform – november 2022
 description: Versionsinformationen för Adobe Experience Platform från november 2022.
 exl-id: 1048cfae-6e7a-4d05-a004-c5c095a17fc4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2e41a1716e057cd33e4635c11ba9c3cfc185418a
 workflow-type: tm+mt
-source-wordcount: '456'
-ht-degree: 51%
+source-wordcount: '312'
+ht-degree: 59%
 
 ---
 
@@ -45,18 +45,4 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
-
-## Källor {#sources}
-
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
-
-Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
-
-**Uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- | 
-| Beta tillgänglighet av Oracle Service Cloud-källa | Använd Oracle Service Cloud-källan för att importera data från ditt Oracle Service Cloud-konto till Experience Platform. Mer information finns i dokumentationen om [Oracle Service Cloud-källan](../../sources/connectors/customer-success/oracle-service-cloud.md). |
-
-Mer information om källor finns i [översikten över källor](../../sources/home.md).
+Mer information om XDM i Experience Platform finns i [Systemöversikten över XDM](../../xdm/home.md).

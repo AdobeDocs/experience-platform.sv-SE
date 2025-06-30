@@ -6,10 +6,10 @@ last-update: April 13, 2020
 author: ens71067
 keywords: Versionsinformation.
 exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 104db777446b19fa9e3ea7538ae1dda6f51a00b1
 workflow-type: tm+mt
-source-wordcount: '985'
-ht-degree: 25%
+source-wordcount: '972'
+ht-degree: 26%
 
 ---
 
@@ -91,7 +91,7 @@ Mer information finns i [Översikt över datastyrning](../../data-governance/hom
 
 I [Real-Time Customer Data Platform](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partner på ett smidigt sätt.
 
-**Nya mål**
+**Nya destinationer**
 
 Real-Time CDP har nu stöd för dataaktivering till över femtio [!DNL Experience Cloud Launch]-tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
 
@@ -130,8 +130,7 @@ Adobe Experience Platform kan importera data från externa källor samtidigt som
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| API- och gränssnittsstöd för databaser | Nya källanslutningar för [!DNL Apache Spark] (på HDInsights), [!DNL Azure Synapse Analytics], [!DNL Azure Table Storage], [!DNL Hive] (på HDInsights) och [!DNL Phoenix]. |
-| API- och gränssnittsstöd för betalningsbaserade program | Nya källanslutningar för [!DNL PayPal]. |
+| API- och gränssnittsstöd för databaser | Nya källanslutningar för [!DNL Apache Spark] (på HDInsights), [!DNL Azure Synapse Analytics], [!DNL Azure Table Storage] och [!DNL Hive]. |
 | API- och gränssnittsstöd för protokollbaserade program | Nya källanslutningar för [!DNL Generic OData]. |
 
 **Kända fel**

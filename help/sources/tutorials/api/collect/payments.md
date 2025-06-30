@@ -5,7 +5,7 @@ title: Skapa ett dataflöde för betalningskällor med API:t för flödestjänst
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du hämtar data från ett betalningsprogram och importerar dem till Experience Platform med hjälp av källanslutningar och API:er.
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 104db777446b19fa9e3ea7538ae1dda6f51a00b1
 workflow-type: tm+mt
 source-wordcount: '1375'
 ht-degree: 0%
@@ -69,15 +69,15 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "PayPal source connection",
+        "name": "Stripe source connection",
         "baseConnectionId": "24151d58-ffa7-4960-951d-58ffa7396097",
-        "description": "PayPal source connection",
+        "description": "Stripe source connection",
         "data": {
             "format": "tabular",
             }
         },
         "params": {
-            "tableName": "PayPal.Catalog_Products",
+            "tableName": "Stripe.Catalog_Products",
             "columns": [
                 {
                     "name": "Product_Id",

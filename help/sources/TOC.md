@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 9df2f9cc70876834aa635d50d548a882f45e3190
+source-git-commit: 079c1d7ac790fb7df72a6127a980080bdaa49518
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1045'
 ht-degree: 7%
 
 ---
@@ -65,9 +65,7 @@ ht-degree: 7%
       - [Salesforce Connector](connectors/crm/salesforce.md)
       - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)
-      - [Zoho CRM-koppling](connectors/crm/zoho.md)
    - Nöjda kunder {#customer-success}
-      - [Oracle Service Cloud](connectors/customer-success/oracle-service-cloud.md)
       - [Salesforce Service Cloud-anslutning](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow-koppling](connectors/customer-success/servicenow.md)
       - [Zendesk-kontakt](connectors/customer-success/zendesk.md)
@@ -79,7 +77,6 @@ ht-degree: 7%
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics Connector](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
-      - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
       - [GreenPlum-kontakt](connectors/databases/greenplum.md)
       - [HP Vertica-koppling](connectors/databases/hp-vertica.md)
@@ -88,7 +85,6 @@ ht-degree: 7%
       - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
       - [MySQL-koppling](connectors/databases/mysql.md)
       - [Oracle Connector](connectors/databases/oracle.md)
-      - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
       - [Snowflake Streaming Connector](connectors/databases/snowflake-streaming.md)
       - [Snowflake Connector](connectors/databases/snowflake.md)
@@ -114,11 +110,9 @@ ht-degree: 7%
       - [Mailchimp-anslutning](connectors/marketing-automation/mailchimp.md)
       - [Oracle Eloqua-kontakt](connectors/marketing-automation/oracle-eloqua.md)
       - [Oracle NetSuite](connectors/marketing-automation/oracle-netsuite.md)
-      - [Oracle Responsys Connector](connectors/marketing-automation/oracle-responsys.md)
       - [PathFactory](connectors/marketing-automation/pathfactory.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
-      - [PayPal-anslutning](connectors/payments/paypal.md)
       - [Kvadratisk koppling](connectors/payments/square.md)
       - [Stripe Connector](connectors/payments/stripe.md)
    - Protokoll {#protocols}
@@ -156,9 +150,7 @@ ht-degree: 7%
          - [SugarCRM-konton och kontakter](tutorials/api/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM-händelser](tutorials/api/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
-         - [Zoho CRM](tutorials/api/create/crm/zoho.md)
       - Nöjda kunder {#customer-success}
-         - [Oracle Service Cloud](tutorials/api/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
          - [Zendesk](tutorials/api/create/customer-success/zendesk.md)
@@ -170,7 +162,6 @@ ht-degree: 7%
          - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/api/create/databases/ats.md)
-         - [Kuchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
          - [GreenPlum](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica](tutorials/api/create/databases/hp-vertica.md)
@@ -178,7 +169,6 @@ ht-degree: 7%
          - [MariaDB](tutorials/api/create/databases/mariadb.md)
          - [MySQL](tutorials/api/create/databases/mysql.md)
          - [Oracle](tutorials/api/create/databases/oracle.md)
-         - [Phoenix](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/api/create/databases/postgres.md)
          - [Snowflake Streaming](tutorials/api/create/databases/snowflake-streaming.md)
          - [Snowflake](tutorials/api/create/databases/snowflake.md)
@@ -197,11 +187,9 @@ ht-degree: 7%
          - [Oracle Eloqua](tutorials/api/create/marketing-automation/oracle-eloqua.md)
          - [Oracle NetSuite-aktiviteter](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
          - [Oracle NetSuite-entiteter](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
-         - [Oracle Responsys](tutorials/api/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/api/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
-         - [PayPal](tutorials/api/create/payments/paypal.md)
          - [Fyrkant](tutorials/api/create/payments/square.md)
          - [Stripe](tutorials/api/create/payments/stripe.md)
       - Protokoll {#protocols}
@@ -283,9 +271,7 @@ ht-degree: 7%
          - [SugarCRM-konton och kontakter](tutorials/ui/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM-händelser](tutorials/ui/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
-         - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
       - Nöjda kunder {#customer-success}
-         - [Oracle Service Cloud](tutorials/ui/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
          - [Zendesk](tutorials/ui/create/customer-success/zendesk.md)
@@ -297,7 +283,6 @@ ht-degree: 7%
          - [Azure Data Explorer](tutorials/ui/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/ui/create/databases/ats.md)
-         - [Kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
          - [GreenPlum](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
@@ -306,7 +291,6 @@ ht-degree: 7%
          - [Microsoft SQL Server](tutorials/ui/create/databases/sql-server.md)
          - [MySQL](tutorials/ui/create/databases/mysql.md)
          - [Oracle](tutorials/ui/create/databases/oracle.md)
-         - [Phoenix](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
          - [Snowflake Streaming](tutorials/ui/create/databases/snowflake-streaming.md)
@@ -334,11 +318,9 @@ ht-degree: 7%
          - [Oracle Eloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
          - [Oracle NetSuite-aktiviteter](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
          - [Oracle NetSuite-entiteter](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
-         - [Oracle Responsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
-         - [PayPal](tutorials/ui/create/payments/paypal.md)
          - [Fyrkant](tutorials/ui/create/payments/square.md)
          - [Stripe](tutorials/ui/create/payments/stripe.md)
       - Protokoll {#protocols}
@@ -407,4 +389,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

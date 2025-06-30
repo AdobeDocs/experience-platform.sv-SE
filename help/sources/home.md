@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 5637a12d5f9cc14b6cf3d88f018aa92de06ab739
+source-git-commit: 2e4df13bae9f4afa24f761e650790704da44da90
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1524'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Med Experience Platform kan ni centralisera data som ni samlar in från olika k�
 
 ## Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 - [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Gruppera]{type=Informative}
@@ -112,13 +112,11 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 - [[!DNL Salesforce]](connectors/crm/salesforce.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL SugarCRM]](connectors/crm/sugarcrm.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Zoho CRM]](connectors/crm/zoho.md) [!BADGE Gruppera]{type=Informative}
 
 ### Nöjda kunder {#customer-success}
 
 Experience Platform har stöd för inmatning av data från tredjepartsprogram. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Oracle Service Cloud]](connectors/customer-success/oracle-service-cloud.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Zendesk]](connectors/customer-success/zendesk.md) [!BADGE Gruppera]{type=Informative}
@@ -131,7 +129,6 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 - [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) [!BADGE Gruppera]{type=Informative}
@@ -139,7 +136,6 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 - [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL MySQL]](connectors/databases/mysql.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Oracle]](connectors/databases/oracle.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Phoenix]](connectors/databases/phoenix.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL PostgreSQL]](connectors/databases/postgres.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE Gruppera]{type=Informative}
 
@@ -181,15 +177,11 @@ Experience Platform har stöd för inmatning av data från ett automatiseringssy
 - [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) [!BADGE Gruppera]{type=Informative}
-<!-- 
-- [[!DNL Oracle Responsys]](connectors/marketing-automation/oracle-responsys.md)
--->
 
 ### Betalningar {#payments}
 
 Experience Platform har stöd för inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL PayPal]](connectors/payments/paypal.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Square]](connectors/payments/square.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Stripe]](connectors/payments/stripe.md) [!BADGE Gruppera]{type=Informative}
 
