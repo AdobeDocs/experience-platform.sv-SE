@@ -28,7 +28,7 @@ Med Experience Platform kan ni centralisera data som ni samlar in från olika k�
 
 ## Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 - [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Gruppera]{type=Informative}
