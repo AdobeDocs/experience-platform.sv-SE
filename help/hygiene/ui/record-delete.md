@@ -2,9 +2,9 @@
 title: Begäranden om radering av post (UI-arbetsflöde)
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 07e09cfe2e2c3ff785caf0b310cbe2f2cc381c17
+source-git-commit: 9ee5225c7494c28023c26181dfe626780133bb5d
 workflow-type: tm+mt
-source-wordcount: '1730'
+source-wordcount: '1781'
 ht-degree: 0%
 
 ---
@@ -45,19 +45,28 @@ Arbetsflödet för att skapa en begäran visas. Som standard är alternativet **
 
 ## Välj datauppsättningar {#select-dataset}
 
-Nästa steg är att avgöra om du vill ta bort poster från en enskild datauppsättning eller alla datauppsättningar. Om det här alternativet inte är tillgängligt för dig fortsätter du till avsnittet [Ange identiteter](#provide-identities) i handboken.
+Nästa steg är att avgöra om du vill ta bort poster från en enskild datauppsättning eller alla datauppsättningar. Beroende på din organisations konfiguration kanske inte datauppsättningsalternativet är tillgängligt. Om du inte ser det här alternativet fortsätter du till avsnittet [Ange identiteter](#provide-identities) i handboken.
 
-Under avsnittet **[!UICONTROL Record Details]** använder du alternativknappen för att välja mellan en viss datauppsättning och alla datauppsättningar. Om du väljer **[!UICONTROL Select dataset]** fortsätter du med att välja databasikonen (![Databasikonen](/help/images/icons/database.png)) för att öppna en dialogruta med en lista över tillgängliga datauppsättningar. Välj önskad datauppsättning i listan följt av **[!UICONTROL Done]**.
+I avsnittet **[!UICONTROL Record Details]** väljer du en alternativknapp för att välja en specifik datamängd eller alla datamängder.
+
+Om du vill ta bort från en viss datauppsättning väljer du **[!UICONTROL Select dataset]** och sedan databasikonen (![Databasikonen](/help/images/icons/database.png)). I dialogrutan som visas väljer du en datauppsättning och sedan **[!UICONTROL Done]** för att bekräfta.
 
 ![Dialogrutan [!UICONTROL Select dataset] med en datamängd markerad och [!UICONTROL Done] markerad.](../images/ui/record-delete/select-dataset.png)
 
-Om du vill ta bort poster från alla datauppsättningar väljer du **[!UICONTROL All datasets]**.
+Om du vill ta bort från alla datauppsättningar väljer du **[!UICONTROL All datasets]**. Det här alternativet ökar åtgärdens omfattning och kräver att du anger alla relevanta identitetstyper.
 
 ![Dialogrutan [!UICONTROL Select dataset] med alternativet [!UICONTROL All datasets] markerat.](../images/ui/record-delete/all-datasets.png)
 
->[!NOTE]
+>[!WARNING]
 >
->Om du väljer alternativet **[!UICONTROL All datasets]** kan det ta längre tid att ta bort borttagningen och det kan leda till att posten inte tas bort korrekt.
+>Om du väljer **[!UICONTROL All datasets]** utökas åtgärden till alla datauppsättningar i organisationen. Varje datauppsättning kan ha en annan primär identitetstyp. Du måste ange **alla identitetstyper** som krävs för att säkerställa korrekt matchning.
+>
+>Om någon identitetstyp saknas kan vissa poster hoppas över under borttagningen. Detta kan göra bearbetningen långsam och leda till **partiella resultat**.
+
+Varje datauppsättning i Experience Platform har bara stöd för en primär identitetstyp.
+
+* När du tar bort från en **enskild datamängd** måste alla identiteter i din begäran använda **samma typ**.
+* När du tar bort från **alla datauppsättningar** kan du ta med **flera identitetstyper**, eftersom olika datauppsättningar kan vara beroende av olika primära identiteter.&quot;
 
 ## Ange identiteter {#provide-identities}
 
@@ -80,8 +89,6 @@ Precis som alla identitetsfält i Experience Platform består ett identitetsnamn
 >Om du inte känner till identitetsnamnutrymmet för en viss datauppsättning kan du hitta det i Experience Platform-gränssnittet. Välj datauppsättningen i listan på arbetsytan **[!UICONTROL Datasets]**. På informationssidan för datauppsättningen håller du pekaren över namnet på datasetens schema i den högra listen. Identitetsnamnområdet visas tillsammans med schemanamnet och beskrivningen.
 >
 >![Kontrollpanelen för datauppsättningar med en datauppsättning markerad och en schemadialogruta öppnas från informationspanelen för datauppsättningar. Datauppsättningens primära ID är markerat.](../images/ui/record-delete/dataset-primary-identity.png)
-
-Om du tar bort poster från en enskild datauppsättning måste alla identiteter som du anger ha samma typ, eftersom en datauppsättning bara kan ha ett identitetsnamnutrymme. Om du tar bort från alla datauppsättningar kan du inkludera flera identitetstyper eftersom olika datauppsättningar kan ha olika primära identiteter.
 
 Det finns två alternativ för att ange identiteter när du tar bort poster:
 
