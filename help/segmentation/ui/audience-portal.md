@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: f02c76c646bb9966b345940e30e37ac52e636cfa
+source-git-commit: c8befc7379da491f6de78a89c9f14a0b123b3fb8
 workflow-type: tm+mt
-source-wordcount: '4217'
+source-wordcount: '4290'
 ht-degree: 0%
 
 ---
@@ -102,7 +102,7 @@ Du kan lägga till fler fält i målportalen genom att välja ![filterattributsi
 | ----- | ----------- |
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
-| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6&rbrace;AJO B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
+| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
 | [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för fältet är `Draft`, `Inactive` och `Published`. Mer information om livscykelstatus, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd, finns i avsnittet [livscykelstatus i Vanliga frågor om segmentering](../faq.md#lifecycle-status). |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge] och [!UICONTROL Not Scheduled]. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
@@ -138,7 +138,7 @@ Om du vill använda [!DNL Unified Search] lägger du till den term som du vill s
 
 ![Sökfältet är markerat.](../images/ui/audience-portal/browse-audience-search.png)
 
-Mer information om [!DNL Unified Search], inklusive funktioner som stöds, finns i [dokumentationen för enhetlig sökning](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html?lang=sv-SE).
+Mer information om [!DNL Unified Search], inklusive funktioner som stöds, finns i [dokumentationen för enhetlig sökning](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html).
 
 #### Taggar {#tags}
 
@@ -203,7 +203,7 @@ Listan med tillgängliga filter visas.
 
 | Filter | Beskrivning |
 | ------ | ----------- |
-| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6&rbrace;AJO B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
+| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
 | [!UICONTROL Has any tag] | Gör att du kan filtrera efter taggar. Du kan välja mellan **[!UICONTROL Has any tag]** och **[!UICONTROL Has all tags]**. När **[!UICONTROL Has any tag]** har valts kommer de filtrerade målgrupperna att inkludera **alla** av de taggar som du har lagt till. När **[!UICONTROL Has all tags]** har valts måste de filtrerade målgrupperna innehålla **all** av de taggar du har lagt till. |
 | [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. De tillgängliga alternativen är [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive] och [!UICONTROL Published]. |
 | [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens (utvärderingsmetod). Tillgängliga alternativ är [!UICONTROL Batch], [!UICONTROL Streaming] och [!UICONTROL Edge] |
@@ -404,6 +404,11 @@ Mer information om Data Distiller finns i [skapa målgrupper med hjälp av SQL-g
 
 ## Importera en målgrupp {#import-audience}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_importaudience_dataexpiration"
+>title="Förfallodatum för data"
+>abstract="Antalet dagar som målgruppsmedlemskapet upphör att gälla. Värdet kan anges från 1 dag till 180 dagar."
+
 >[!IMPORTANT]
 >
 >För att kunna importera en externt genererad publik måste **ha följande behörigheter:**, [!UICONTROL View segments], [!UICONTROL Manage segments] och [!UICONTROL Import audience]. Mer information om den här behörigheten finns i [åtkomstkontrollsöversikten](../../access-control/home.md#permissions).
@@ -434,7 +439,9 @@ När du importerar den externt genererade målgruppen måste du markera en av ko
 
 ![Sidan [!UICONTROL Audience details] visas.](../images/ui/audience-portal/import-audience-audience-details.png)
 
-Du kan också lägga till ytterligare information till den externt genererade målgruppen, som att ge den ett ID, definiera dess sammanfogningsprincip eller redigera dess kolumndatatyp.
+Du kan också lägga till ytterligare information till den externt genererade målgruppen, som att ge den ett externt ID, definiera dess sammanfogningsprincip, redigera dess kolumndatatyp eller tillämpa en anpassad förfallotid för data.
+
++++ Anpassat externt målgrupps-ID
 
 >[!NOTE]
 >
@@ -442,6 +449,12 @@ Du kan också lägga till ytterligare information till den externt genererade m�
 >
 > - Det **måste** börja med en bokstav (a-z eller A-Z), ett understreck (_) eller ett dollartecken ($).
 > - Alla efterföljande tecken kan vara alfanumeriska (a-z, A-Z, 0-9), understreck (_) eller dollartecken ($).
+
++++
+
+>[!NOTE]
+>
+>Förfallodatumet för anpassade data anger antalet dagar som profiler **kvarstår** i målgruppsmedlemskapet. När utgångsdatumet för data är över avslutas målgruppsmedlemskapet. Värdet kan anges från 1 till 180 dagar.
 
 När du har fyllt i målgruppsinformationen väljer du **[!UICONTROL Next]**.
 

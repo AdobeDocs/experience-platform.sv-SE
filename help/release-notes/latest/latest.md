@@ -2,10 +2,10 @@
 title: Versionsinformation för Adobe Experience Platform juni 2025
 description: Versionsinformationen för juni 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fb34e033c90c269742a2045025bf0c964b513679
-workflow-type: ht
+source-git-commit: c78dc0e83976499403e066b314a0889df803c976
+workflow-type: tm+mt
 source-wordcount: '1646'
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
@@ -18,8 +18,8 @@ ht-degree: 100%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 18 juni 2025**
@@ -128,7 +128,7 @@ Med Federerad målgruppssammansättning kan företag sammanställa data för bä
 
 | Ny funktion | Beskrivning |
 | ----------- | ----------- |
-| Allmän tillgänglighet för kunder inom Adobe Healthcare Shield | Federerad målgruppssammansättning kommer att vara tillgängligt för kunder som använder Adobe Healthcare Shield för att skapa och berika målgrupper och profiler i slutet av juni. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppssammansättning finns i [sekretess- och säkerhetsöversikten för federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [översikten över HIPAA och Adobes produkter och tjänster](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
+| Allmän tillgänglighet för kunder inom Adobe Healthcare Shield | Federerad målgruppssammansättning kommer att vara tillgängligt för kunder som använder Adobe Healthcare Shield för att skapa och berika målgrupper och profiler i slutet av juni. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppssammansättning finns i [sekretess- och säkerhetsöversikten för federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [översikten över HIPAA och Adobes produkter och tjänster](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
 
 Mer information finns i dokumentationen för [Federerad målgruppssammansättning (Federated Audience Composition)](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
 
@@ -140,7 +140,7 @@ Flera juridiska och organisatoriska bestämmelser ger användare rätt att på b
 
 | Funktion | Beskrivning |
 | --- | ---|
-| Stöd för sekretesslagar i Tennessee och Minnesota  | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på delstatsnivå. Se [regelverksöversikten](https://experienceleague.adobe.com/sv/docs/experience-platform/privacy/regulations/overview) för mer information. |
+| Stöd för sekretesslagar i Tennessee och Minnesota  | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på delstatsnivå. Se [regelverksöversikten](https://experienceleague.adobe.com/en/docs/experience-platform/privacy/regulations/overview) för mer information. |
 
 Mer information om tjänsten finns i [översikten över integritetstjänst](../../privacy-service/home.md).
 
@@ -177,7 +177,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | [!BADGE Beta]{type=Informative}-användargränssnitt har stöd för [!DNL Azure Databricks] | Du kan nu ansluta ditt [!DNL Azure Databricks]-konto till Experience Platform med hjälp av arbetsytan för källor i användargränssnittet. Läs guiden om [att ansluta [!DNL Databricks] till Experience Platform i användargränssnittet](../../sources/connectors/databases/databricks.md) om du vill ha mer information. |
-| Stöd för ny autentiseringstyp för [!DNL Azure Synapse Analytics] | [!DNL Azure Synapse Analytics] stöder nu även tjänsters huvudautentisering utöver den befintliga autentiseringen av anslutningssträngen. Mer information finns i [[!DNL Azure Synapse Analytics] autentiseringsöversikten](../../sources/connectors/databases/synapse-analytics.md) |
+| Stöd för ny autentiseringstyp för [!DNL Azure Synapse Analytics] | [!DNL Azure Synapse Analytics] stöder nu även tjänsters huvudautentisering utöver den befintliga autentiseringen av anslutningssträngen. Mer information finns i [[!DNL Azure Synapse Analytics] autentiseringsöversikten](../../sources/connectors/databases/synapse-analytics.md). |
 | [!DNL Salesforce] Borttagning av grundläggande autentisering | Grundläggande autentisering för [Salesforce CRM](../../sources/connectors/crm/salesforce.md) och [Salesforce Service Cloud](../../sources/connectors/customer-success/salesforce-service-cloud.md) kommer att upphöra i januari 2026. Kunder måste migrera till OAuth 2.0-autentisering för att upprätthålla anslutningen. Den här ändringen påverkar båda källanslutningar och säkerställer förbättrad säkerhet och överensstämmelse med Salesforce autentiseringsstandarder. |
 
 {style="table-layout:auto"}
