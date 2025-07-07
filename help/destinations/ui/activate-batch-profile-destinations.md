@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 6b91527afe172530597de30b9669b86ff0262e13
+source-git-commit: 13adf42a23458d10e217d216d8fe79e8ce33376d
 workflow-type: tm+mt
-source-wordcount: '4424'
+source-wordcount: '4423'
 ht-degree: 1%
 
 ---
@@ -120,7 +120,7 @@ Om du vill redigera flera scheman samtidigt markerar du målgrupperna med kryssr
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
 >abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för målgruppen. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för målgruppen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för målgruppen och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för målgruppen sedan den första inkrementella filexporten."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=sv-SE#export-incremental-files" text="Exportera inkrementella filer"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="Exportera inkrementella filer"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -252,7 +252,7 @@ När du har konfigurerat alla dina målgrupper väljer du **[!UICONTROL Next]** 
 
 I det här steget måste du välja de profilattribut som du vill lägga till i filerna som exporteras till målmålet. Så här väljer du profilattribut och identiteter för export:
 
-1. Välj **[!UICONTROL Add new mapping]** på sidan **[!UICONTROL Mapping]**.
+1. Välj **[!UICONTROL Mapping]** på sidan **[!UICONTROL Add new mapping]**.
 
    ![Lägg till ny fältkontroll markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
 
@@ -348,7 +348,7 @@ Låt oss titta på följande två profiler.
   "identityMap": {
     "Email": [
       {
-        "id": "johndoe_1@example.com"
+        "id": "johndoe@example.com"
       },
       {
         "id": "doejohn_1@example.com"
@@ -382,7 +382,7 @@ Låt oss titta på följande två profiler.
   "identityMap": {
     "Email": [
       {
-        "id": "johndoe_2@example.com"
+        "id": "johndoe@example.com"
       },
       {
         "id": "doejohn_2@example.com"
@@ -425,7 +425,7 @@ Om deduplicering anges av namnutrymmet [!DNL Email] innehåller exportfilen föl
 
 | E-post* | personalEmail | firstName | lastName |
 |---|---|---|---|
-| johndoe_2@example.com | johndoe@example.com | John | D |
+| johndoe@example.com | johndoe@example.com | John | D |
 | doejohn_2@example.com | johndoe@example.com | John | D |
 
 ### Användning av deduplicering, exempel 3: deduplicering baserad på ett enda profilattribut {#deduplication-use-case-3}
@@ -450,7 +450,7 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 
 ### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
 
-När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
 
 #### Viktiga överväganden
 
@@ -530,7 +530,7 @@ Som en tillfällig lösning kan du antingen:
 
 För profilbaserade mål måste du välja de profilattribut som du vill skicka till målmålet.
 
-1. Välj **[!UICONTROL Add new field]** på sidan **[!UICONTROL Select attributes]**.
+1. Välj **[!UICONTROL Select attributes]** på sidan **[!UICONTROL Add new field]**.
 
    ![Bild som markerar knappen Lägg till nytt fält.](../assets/ui/activate-batch-profile-destinations/add-new-field.png)
 
@@ -554,9 +554,10 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 >
 >På grund av en känd begränsning kan du för närvarande inte använda fönstret **[!UICONTROL Select field]** för att lägga till `segmentMembership.seg_namespace.seg_id.status` i din filexport. I stället måste du klistra in värdet `xdm: segmentMembership.seg_namespace.seg_id.status` manuellt i schemafältet, vilket visas nedan.
 >
->![Skärminspelning som visar målgruppsmedlemskapets tillfälliga lösning i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+>![Skärminspelning som visar målgruppsmedlemskapets tillfälliga lösning i aktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg_namespace.seg_id.status` har valts:
+
 * Om fältet `segmentMembership.seg_namespace.seg_id.status` är markerat innehåller exporterade filer **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]**- och **[!UICONTROL Expired]**-medlemmar i efterföljande stegvisa exporter.
 * Om fältet `segmentMembership.seg_namespace.seg_id.status` inte är markerat innehåller exporterade filer bara **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
@@ -632,7 +633,7 @@ Om du är nöjd med ditt val och inga principöverträdelser har identifierats, 
 
 ## Verifiera målgruppsaktivering {#verify}
 
-När du exporterar målgrupper till molnlagringsmål skapar Adobe Experience Platform en `.csv`-, `.json`- eller `.parquet`-fil på den angivna lagringsplatsen. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet visas nedan, men du kan [redigera komponenterna för filnamnet](#file-names):
+När du exporterar målgrupper till molnlagringsmål skapar Adobe Experience Platform en `.csv`-, `.json`- eller `.parquet`-fil på den angivna lagringsplatsen. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet visas nedan, men du kan [redigera komponenterna för filnamnet](#configure-file-names):
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
 Om du till exempel har valt en daglig exportfrekvens kan filerna som du får tre dagar i följd se ut så här:
