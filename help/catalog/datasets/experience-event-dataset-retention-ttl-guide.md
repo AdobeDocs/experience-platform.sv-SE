@@ -2,9 +2,9 @@
 title: Hantera lagring av Experience Event-datauppsättningar i Data Lake med TTL
 description: Lär dig hur du utvärderar, ställer in och hanterar lagring av Experience Event-datauppsättningar i datasjön med hjälp av TTL-konfigurationer (Time-To-Live) med Adobe Experience Platform API:er. Den här guiden förklarar hur TTL-radnivåförfallodatum stöder principer för datalagring, optimerar lagringseffektiviteten och säkerställer effektiv livscykelhantering. Här finns också användningsexempel och metodtips som hjälper dig att effektivt tillämpa TTL.
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: 13db0477c0f42d0808647937d40c25b47a270894
+source-git-commit: 65a132609bc30233ac9f7efbe1981d4f75f3acb9
 workflow-type: tm+mt
-source-wordcount: '2451'
+source-wordcount: '2457'
 ht-degree: 0%
 
 ---
@@ -333,7 +333,7 @@ For example, if you apply a 30-day expiration policy on May 15th, the following 
 ### Kan jag ange olika bevarandepolicyer för datavinje- och profiltjänster?
 
 +++Svar
-Ja, du kan ange olika lagringspolicyer för datalinje- och profiltjänster. Lagringsperioden för profilen får dock inte vara kortare än den som angetts för datasjön.
+Ja, du kan ange olika lagringspolicyer för datalinje- och profiltjänster. Lagringsperioden för profilarkivet kan vara kortare eller längre än den kvarhållningsperiod som gäller för datavjön, beroende på organisationens behov.
 +++
 
 ### Hur kan jag kontrollera min aktuella datauppsättningsanvändning?
