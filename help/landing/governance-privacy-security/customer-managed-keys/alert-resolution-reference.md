@@ -1,9 +1,10 @@
 ---
 title: Referens för CMK-varningsmatchning
 description: Identifiera, felsök och åtgärda vanliga varningar som utlöses av felkonfigurationer av kundhanterad nyckel (CMK) i Adobe Experience Platform. Använd den här vägledningen när du vill följa tydliga steg-för-steg-instruktioner och återställa säker nyckelåtkomst.
-source-git-commit: 0d9cc046956dd380bb8816f0d8bf497bbad6140b
+exl-id: ffe2eadc-dfb5-418b-a201-2c20dcc9cfe4
+source-git-commit: e8cfed9ebd50cf50f03e232755eddef1cb8c0d3b
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -22,11 +23,7 @@ I följande avsnitt beskrivs vilka typer av varningar som kan utlösas av proble
 
 ## Nyckelåtkomst inaktiverad {#key-access-disabled}
 
-Den här varningen indikerar att Adobe Experience Platform inte kan komma åt den konfigurerade CMK-filen eftersom nyckeln inaktiveras eller inte kan nås av relaterade nyckelkonfigurationsproblem.
-
->[!IMPORTANT]
->
->I det här fallet behandlar Adobe CMK åtkomstfelet som en avsiktlig borttagning och rensar alla data som är kopplade till organisationen, baserat på din SLA.
+Den här varningen indikerar att Adobe Experience Platform inte kan komma åt den konfigurerade CMK-filen eftersom nyckeln är inaktiverad eller inte tillgänglig på grund av dess konfiguration. I sådana fall behandlas villkoret som en avsiktlig borttagning av nyckelåtkomst.
 
 ### När det inträffar
 
