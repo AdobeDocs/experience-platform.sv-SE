@@ -172,7 +172,7 @@ Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till e
 >[!NOTE]
 >
 >När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i avsnittet [!UICONTROL EXPIRING CREDENTIALS] förutom lösenordet och användarnamnet.
->>Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
+>&#x200B;>Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
 
 | Parameter | Beskrivning | Exempel |
 |---|---|---|
