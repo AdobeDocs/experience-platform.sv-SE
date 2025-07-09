@@ -5,18 +5,32 @@ title: Slutpunkt för schema
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 role: Developer
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: a39fae1b72533261fb43e0acc95e50e5a6acd8df
+source-git-commit: 10c0c5c639226879b1ca25391fc4a1006cf40003
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1410'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för scheman
 
+Lär dig hur du skapar, hanterar och övervakar schemalagda frågor programmatiskt med hjälp av API:t för frågetjänstscheman med detaljerad information och exempel.
+
+## Krav och krav
+
+Du kan skapa schemalagda frågor antingen med ett tekniskt konto (autentiserat via autentiseringsuppgifter för OAuth Server-till-Server) eller med ett personligt användarkonto (användartoken). Adobe rekommenderar dock starkt att man använder ett tekniskt konto för att säkerställa oavbruten och säker körning av schemalagda frågor, särskilt för långvariga eller produktionsbaserade arbetsbelastningar.
+
+Frågor som skapats med ett personligt användarkonto misslyckas om användarens åtkomst återkallas eller deras konto inaktiveras. Tekniska konton ger större stabilitet eftersom de inte är knutna till en enskild användares anställningssituation eller åtkomsträttigheter.
+
+>[!IMPORTANT]
+>
+>Viktigt att tänka på när du hanterar schemalagda frågor:<ul><li>Schemalagda frågor misslyckas om kontot (tekniskt eller användarens) som användes för att skapa dem förlorar åtkomst eller behörigheter.</li><li>Schemalagda frågor måste inaktiveras innan de tas bort via API:t eller användargränssnittet.</li><li>Schemaläggning i oändlighet utan slutdatum stöds inte. Ett slutdatum måste alltid anges.</li></ul>
+
+Detaljerad vägledning om kontokrav, behörighetsinställningar och hantering av schemalagda frågor finns i [dokumentationen om frågescheman](../ui/query-schedules.md#technical-account-user-requirements). Stegvisa instruktioner för hur du skapar och konfigurerar ett tekniskt konto finns i [Developer Console-konfigurationen](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman) och [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup).
+
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Query Service]. Följande avsnitt går igenom de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+När du har konfigurerat nödvändiga autentiseringshuvuden (se [API-autentiseringsguiden](../../landing/api-authentication.md)) kan du börja ringa anrop till [!DNL Query Service] API. I följande avsnitt visas olika API-anrop med allmänna format, exempelbegäranden inklusive obligatoriska rubriker och exempelsvar.
 
 ### Hämta en lista med schemalagda frågor
 

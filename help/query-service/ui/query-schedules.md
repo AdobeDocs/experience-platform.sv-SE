@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 04b804b81b605040c74db040bc5118e0392ddd32
 workflow-type: tm+mt
-source-wordcount: '1934'
+source-wordcount: '2089'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,24 @@ Du kan automatisera frågekörningar genom att skapa frågescheman. Schemalagda 
 >
 >Du kan bara lägga till ett schema i en fråga som redan har skapats och sparats.
 
-Alla schemalagda frågor läggs till i listan på fliken [!UICONTROL Scheduled queries]. Från den arbetsytan kan du övervaka statusen för alla schemalagda frågejobb via gränssnittet. På fliken [!UICONTROL Scheduled queries] kan du hitta viktig information om frågekörningar och prenumerera på aviseringar. Den tillgängliga informationen omfattar status, schemainformation och felmeddelanden/koder om en körning misslyckas. Mer information finns i dokumentet [Övervaka schemalagda frågor](./monitor-queries.md).
+## Kontokrav för schemalagda frågor {#technical-account-user-requirements}
 
-Det här arbetsflödet omfattar schemaläggningsprocessen i användargränssnittet för frågetjänsten. Om du vill lära dig hur du lägger till scheman med API:t läser du [slutpunktshandboken för schemalagda frågor](../api/scheduled-queries.md).
+För att schemalagda frågor ska kunna köras på ett tillförlitligt sätt rekommenderar Adobe att administratörer skapar schemalagda frågor med hjälp av ett tekniskt konto (med autentiseringsuppgifter för OAuth Server-till-Server). Schemalagda frågor kan också skapas med ett personligt användarkonto, men frågor som skapas på det här sättet kommer att sluta köras om användarens åtkomst tas bort eller inaktiveras.
+
+Mer information om hur du konfigurerar tekniska konton och tilldelar de behörigheter som krävs finns i [Förutsättningar för handboken för autentiseringsuppgifter](./credentials.md#prerequisites) och [API-autentisering](../../landing/api-authentication.md).
+
+Mer information om hur du skapar och konfigurerar ett tekniskt konto finns i:
+
+- [Developer Console-konfiguration](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman): Steg-för-steg-instruktioner för hur du konfigurerar Adobe Developer Console och hämtar OAuth-autentiseringsuppgifter.
+- [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup): En omfattande genomgång för att skapa och konfigurera ett tekniskt konto i Adobe Experience Platform.
+
+Om du bara använder gränssnittet för frågetjänsten måste du se till att du har nödvändig behörighet eller koordinat med en administratör som hanterar tekniska konton. Alla schemalagda frågor läggs till i listan på fliken [!UICONTROL Scheduled queries], där du kan övervaka status, schemainformation och felmeddelanden för alla schemalagda frågejobb samt prenumerera på aviseringar. Mer information om övervakning och hantering av frågor finns i dokumentet [Övervaka schemalagda frågor](./monitor-queries.md).
+
+Det här arbetsflödet omfattar schemaläggningsprocessen i användargränssnittet för frågetjänsten. Mer information om hur du lägger till scheman med API:t finns i [slutpunktshandboken för schemalagda frågor](../api/scheduled-queries.md).
+
+>[!NOTE]
+>
+>Använd ett tekniskt konto för att se till att schemalagda frågor fortsätter att köras även om användarna lämnar organisationen eller ändrar deras roller. Välj ett tekniskt konto när det är möjligt för oavbruten frågeautomatisering.
 
 ## Skapa ett frågeschema {#create-schedule}
 
@@ -163,7 +178,6 @@ Följande tabell innehåller beskrivningar av de kolumner som är tillgängliga 
 >[!NOTE]
 >
 >Data för beräkningstimmar är tillgängliga från 2024-08-15. Data före detta datum visas som Inte tillgängligt.
-
 
 I guiden [Övervaka schemalagd fråga](./monitor-queries.md#inline-actions) finns fullständig information om hur du övervakar statusen för alla frågefunktioner via användargränssnittet.
 
