@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 132024313dbe0d83c9af22d30927a01e32c9d94f
+source-git-commit: 47cb1e9851a288961ecca01cf609b72342c58631
 workflow-type: tm+mt
-source-wordcount: '4012'
+source-wordcount: '4316'
 ht-degree: 0%
 
 ---
@@ -108,11 +108,13 @@ Mer information om de här tillgängliga åtgärderna finns i respektive avsnitt
 
 ### Förhandsgranska en datauppsättning {#preview}
 
-Du kan förhandsgranska datauppsättningsexempeldata både från de infogade alternativen på fliken [!UICONTROL Browse] och från vyn [!UICONTROL Dataset activity]. På fliken [!UICONTROL Browse] väljer du ellipserna (..) bredvid datauppsättningsnamnet som du vill förhandsgranska. En menylista med alternativ visas. Välj sedan **[!UICONTROL Preview dataset]** i listan med tillgängliga alternativ. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och anger i stället att förhandsgranskningen inte är tillgänglig.
+Du kan förhandsgranska datauppsättningsexempeldata både från de infogade alternativen på fliken [!UICONTROL Browse] och från vyn [!UICONTROL Dataset activity]. Ett nytt förhandsgranskningsfönster för datauppsättningar finns med ytterligare navigerings- och kontextförbättringar.
+
+På fliken [!UICONTROL Browse] väljer du ellipsen (..) bredvid datauppsättningsnamnet som du vill förhandsgranska. En lista med alternativ visas. Välj sedan [!UICONTROL Preview dataset] bland de tillgängliga alternativen. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och anger att förhandsgranskningen inte är tillgänglig.
 
 ![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Förhandsgranska datauppsättning markerat för den valda datauppsättningen.](../images/datasets/user-guide/preview-dataset-option.png)
 
-Då öppnas förhandsgranskningsfönstret, där den hierarkiska vyn av datasetet visas till höger.
+Då öppnas förhandsgranskningsfönstret, där den hierarkiska schemavyn för datauppsättningen visas till vänster.
 
 >[!NOTE]
 >
@@ -120,11 +122,49 @@ Då öppnas förhandsgranskningsfönstret, där den hierarkiska vyn av datasetet
 
 ![Dialogrutan för förhandsgranskning av datauppsättning med information om strukturen, samt exempelvärden, för datauppsättningen visas.](../images/datasets/user-guide/preview-dataset.png)
 
-Du kan också välja **[!UICONTROL Preview dataset]** i det övre högra hörnet av skärmen **[!UICONTROL Dataset activity]** om du vill förhandsgranska upp till 100 rader med data.
+Du kan också välja **[!UICONTROL Dataset activity]** i det övre högra hörnet av skärmen **[!UICONTROL Preview dataset]** om du vill förhandsgranska upp till 100 rader med data.
 
 ![Knappen Förhandsgranska datauppsättning är markerad.](../images/datasets/user-guide/select-preview.png)
 
-För mer robusta metoder för att komma åt dina data tillhandahåller [!DNL Experience Platform] tjänster längre fram i kedjan, till exempel [!DNL Query Service] och [!DNL JupyterLab], för att utforska och analysera data. Mer information finns i följande dokument:
+Förhandsgranskningsfönstret för datauppsättningar har ett smidigt gränssnitt för att utforska och validera datauppsättningar.
+
+#### Förhandsgranskningsfönster för datauppsättning {#dataset-preview-window}
+
+I följande animering visas förhandsgranskningsfönstret för datauppsättningar med navigerings- och dataundersökningsfunktionerna:
+
+![Skärminspelning med förhandsgranskningsfönstret för datauppsättningen. Inspelningen markerar objektwebbläsarens sidofält, datatypsindikatorer, visning av SQL-fråga och formaterad datatabell.](../images/datasets/user-guide/dataset-preview-demo.gif)
+
+Fönstret för förhandsgranskning av datauppsättningar innehåller:
+
+* Ett sidofält till vänster för objektwebbläsare för navigering och filtrering av datamängdsfält.
+* Datatypsindikatorer som visas bredvid varje kolumnnamn för att snabbt få insikt i datauppsättningens struktur.
+* En SQL-fråga visas högst upp i fönstret och visar den fråga som används för att generera datauppsättningen.
+* En formaterad tabellvy med upp till 100 rader i det nedre högra området för effektiv datagranskning.
+* Direkt navigering till Frågeredigeraren för Data Distiller-användare, där SQL-frågan är ifylld för ytterligare utforskande eller ändring.
+
+Dessa funktioner har stöd för snabb navigering, schemaförståelse och transparent datamängdsvalidering.
+
+Välj **[!UICONTROL Preview dataset]** bland de infogade åtgärderna eller från skärmen [!UICONTROL Dataset activity] för att öppna förhandsgranskningsfönstret.
+
+>[!NOTE]
+>
+>I förhandsvisningsfönstret visas ett exempel på upp till 100 rader. Fält utan data tas inte med i vyn.
+
+#### Kortkommando för Avancerad frågeredigerare {#query-editor-shortcut}
+
+Om din organisation har en Data Distiller-licens kan du komma åt den avancerade frågeredigeraren direkt från förhandsgranskningsfönstret för datauppsättningar.
+
+>[!AVAILABILITY]
+>
+>Endast användare med den nödvändiga Distiller-licensen för data har åtkomst till den här funktionen. Om din organisation inte har Data Distiller visas inte alternativet [!UICONTROL Advanced query editor].
+
+Välj **[!UICONTROL Advanced query editor]** i det övre högra hörnet av förhandsgranskningsfönstret för att öppna frågeredigeraren. Den aktuella förhandsgranskningsfrågan är förinläst och klar för körning eller ytterligare analys.
+
+![Förhandsgranskningsfönstret för datauppsättningar visar knappen Avancerad frågeredigerare i det övre högra hörnet.](../images/datasets/user-guide/dataset-preview-advanced-query-editor.png)
+
+Med den här genvägen kan du enkelt gå från att förhandsgranska exempeldata till att köra och förfina frågor i frågetjänsten utan att ange SQL eller kontext igen.
+
+Använd underordnade tjänster som [!DNL Query Service] och [!DNL JupyterLab] för ytterligare dataåtkomst och analys. Mer information finns i följande dokument:
 
 * [Översikt över frågetjänsten](../../query-service/home.md)
 * [Användarhandbok för JupyterLab](../../data-science-workspace/jupyterlab/overview.md)
@@ -148,7 +188,7 @@ Du kan aktivera en datauppsättning för profil både från de infogade alternat
 
 ![Fliken Bläddra på arbetsytan Datauppsättningar med ellipserna och Aktivera enhetlig profil markerad.](../images/datasets/user-guide/enable-for-profile.png)
 
-Du kan också välja alternativet **[!UICONTROL Profile]** i kolumnen **[!UICONTROL Properties]** på datamängdens **[!UICONTROL Dataset activity]**-skärm. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
+Du kan också välja alternativet **[!UICONTROL Dataset activity]** i kolumnen **[!UICONTROL Profile]** på datamängdens **[!UICONTROL Properties]**-skärm. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
 
 >[!NOTE]
 >
@@ -393,7 +433,7 @@ Datauppsättningar kan filtreras från listan med tillgängliga datauppsättning
 
 ### Skapa en datauppsättning med en CSV-fil {#csv}
 
-När en datauppsättning skapas med hjälp av en CSV-fil skapas ett ad hoc-schema som ger datauppsättningen en struktur som matchar den angivna CSV-filen. Välj **[!UICONTROL Create dataset from CSV file]** på skärmen **[!UICONTROL Create dataset]**.
+När en datauppsättning skapas med hjälp av en CSV-fil skapas ett ad hoc-schema som ger datauppsättningen en struktur som matchar den angivna CSV-filen. Välj **[!UICONTROL Create dataset]** på skärmen **[!UICONTROL Create dataset from CSV file]**.
 
 ![Knappen Skapa datauppsättning från CSV-fil är markerad.](../images/datasets/user-guide/create-dataset-csv.png)
 
