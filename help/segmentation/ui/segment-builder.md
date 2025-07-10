@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 7be3e6c143d792113a0d623e2d12d6710a3be70c
+source-git-commit: 152ec3ca36a69bea79b8ed3c33dd21bd9479171f
 workflow-type: tm+mt
-source-wordcount: '5110'
+source-wordcount: '5043'
 ht-degree: 0%
 
 ---
@@ -324,7 +324,7 @@ Listan över tillgängliga tidsbegränsningar för den här åtgärden skiljer s
 >[!NOTE]
 >
 >När du använder After-tidsbegränsningen kan den senare händelsen inträffa mer än den tid som anges i tidsbegränsningen. >
->&#x200B;>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
+>>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
 >
 >Dessutom kan dessa två tidsbegränsningar användas tillsammans.
 >
@@ -380,7 +380,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="Uppdatera uppskattningar"
 >abstract="Du kan uppdatera uppskattningarna av din segmentdefinition så att du omedelbart ser en förhandsvisning av hur många profiler som skulle kvalificera sig för den föreslagna segmentdefinitionen. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=sv-SE#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
@@ -390,7 +390,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_estimatedprofiles"
 >title="Uppskattade profiler"
->abstract="Uppskattade profiler anger ett ungefärligt antal profiler, baserade på exempeljobbet, som skulle vara kvalificerade för segmentdefinitionens regler. Detta innebär att exempeldata projiceras på den större profiluppsättningen, vilket resulterar i ett uppskattat antal som kan skilja sig från det faktiska antalet kvalificerade profiler. Det uppskattade profilprovet har ett 95% konfidensintervall. <br><br>Numret uppdateras när exempeljobbet uppdateras, vilket inträffar när kunddata ändras med mer än 5 % eller när det senaste exempeljobbet är äldre än 7 dagar."
+>abstract="Uppskattade profiler anger ett ungefärligt antal profiler, baserade på exempeljobbet, som skulle vara kvalificerade för segmentdefinitionens regler."
 
 När du skapar en segmentdefinition visas en uppskattning av storleken på den resulterande segmentdefinitionen i avsnittet **[!UICONTROL Audience properties]** till höger om arbetsytan, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
@@ -400,7 +400,10 @@ Tidsstämpeln för kvalificerade profiler anger det senaste **batch**-segmentutv
 
 **[!UICONTROL Estimated Profiles]** anger ett **ungefärligt** antal profiler, baserat på **exempeljobbet**. Detta innebär att exempeldata projiceras på den större profiluppsättningen, vilket resulterar i ett uppskattat antal som kan skilja sig från det faktiska antalet kvalificerade profiler. Det uppskattade profilprovet har ett 95% konfidensintervall.
 
-Numret uppdateras när exempeljobbet uppdateras, vilket inträffar när kunddata ändras med mer än 5 % eller när det senaste exempeljobbet är äldre än 7 dagar.&quot;
+Numret uppdateras i två scenarier:
+
+1. Kunddata förändras med mer än 5 % eller så är det senaste exempeljobbet äldre än sju dagar.
+2. Målgruppens regler har ändrats eller tagits bort.
 
 Om du väljer informationsbubblan visas feltröskeln och den senaste samplingsjobbstiden.
 
@@ -444,4 +447,4 @@ I Segment Builder finns ett omfattande arbetsflöde som gör att du kan isolera 
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [[!DNL Segmentation Service] användarhandboken](./overview.md) om du vill veta mer om de andra delarna i användargränssnittet för [!DNL Segmentation Service]
+Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [!DNL Segmentation Service]användarhandboken[[!DNL Segmentation Service]  om du vill veta mer om de andra delarna i användargränssnittet för ](./overview.md)
