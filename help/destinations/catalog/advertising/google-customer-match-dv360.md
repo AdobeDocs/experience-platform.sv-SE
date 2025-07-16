@@ -1,15 +1,20 @@
 ---
 title: Google Customer Match + Display & Video 360 connection
 description: Med Google kundmatchning + Display & Video 360-destinationskoppling kan du använda dina online- och offlinedata från Experience Platform för att nå och återengagera dina kunder i Google egna och driftsatta egendomar som Search, Shopping, Gmail och YouTube.
+badge: Begränsad tillgänglighet
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: feb3077daf8b3632ff00b57099195523bbeac358
+source-git-commit: efdec64dee4c5857d0df008c2d1242674f9d0b49
 workflow-type: tm+mt
-source-wordcount: '2213'
+source-wordcount: '2309'
 ht-degree: 1%
 
 ---
 
 # [!DNL Google Customer Match + Display & Video 360]-anslutning
+
+>[!NOTE]
+>
+>**Begränsad tillgänglighet för Google Customer Match + DV360-kontakten**<br> När vi går igenom hela mognadsperioden för den här integreringen med Google ser vi data som pekar på svagheter i implementeringen som behöver korrigeras innan mer omfattande implementering kan ske. På grund av detta har Adobe minskat synligheten för destinationen till ett begränsat antal kunder. Vi har aktiva samtal med Google för att förbättra produktupplevelsen. Vi förstår att det här kan vara en besvikelse, men vi anser att det är det ansvarsfulla tillvägagångssättet för att säkerställa en högkvalitativ, tillförlitlig upplevelse för våra kunder.</br>
 
 Använd det här målet om du vill aktivera dina egna PII-baserade [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en)-listor direkt till [!DNL Google Display & Video 360]-egenskaper som [!DNL Search], [!DNL YouTube], [!DNL Gmail] och [!DNL Google Display Network].
 
@@ -24,12 +29,12 @@ Med den nyligen introducerade möjligheten att kunna använda [!DNL Customer Mat
 >[!IMPORTANT]
 >
 > Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([EU User Consent Policy](https://www.google.com/about/company/user-consent-policy/)). Tvingande av dessa ändringar av medgivandekraven gäller från och med den 6 mars 2024.
-> &#x200B;><br/>
-> &#x200B;>För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
-> &#x200B;><br/>
-> &#x200B;>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
-> &#x200B;><br/>
-> &#x200B;>Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
+> ><br/>
+> >För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
+> ><br/>
+> >Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+> ><br/>
+> >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
 ## När ska det här målet användas
 
