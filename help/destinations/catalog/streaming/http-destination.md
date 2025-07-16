@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 678f80445212edc1edd3f4799999990ddcc2a039
+source-git-commit: b757f61a46930f08fe05be4c0f701113597567a4
 workflow-type: tm+mt
-source-wordcount: '2596'
+source-wordcount: '2652'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 HTTP API-målet är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 
@@ -45,7 +45,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+| ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment, tillsammans med önskade schemafält (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på mappningsskärmen i [målaktiveringsarbetsflödet](../../ui/activate-segment-streaming-destinations.md#mapping). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -58,6 +58,7 @@ Om du vill använda HTTP API-målet för att exportera data från Experience Pla
 * Du måste ha en HTTP-slutpunkt som stöder REST API.
 * HTTP-slutpunkten måste ha stöd för Experience Platform-profilschemat. Ingen omvandling till ett nyttolastschema från tredje part stöds i HTTP API-målet. Se avsnittet [exporterade data](#exported-data) för ett exempel på Experience Platform utdataschema.
 * HTTP-slutpunkten måste ha stöd för rubriker.
+* HTTP-slutpunkten måste svara inom 2 sekunder för att säkerställa korrekt databearbetning och undvika timeoutfel.
 
 >[!TIP]
 >
@@ -69,7 +70,7 @@ Du kan använda [!DNL Mutual Transport Layer Security] ([!DNL mTLS]) för att f�
 
 [!DNL mTLS] är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. [!DNL mTLS] innehåller ytterligare ett steg jämfört med [!DNL TLS], där servern också frågar efter klientens certifikat och verifierar det i slutet.
 
-Om du vill använda [!DNL mTLS] med [!DNL HTTP API] mål måste [!DNL TLS]-protokoll vara inaktiverade för den serveradress som du angav på sidan [målinformation](#destination-details) och bara [!DNL mTLS] aktiverade. Om protokollet [!DNL TLS] 1.2 fortfarande är aktiverat på slutpunkten skickas inget certifikat för klientautentiseringen. Det innebär att om du vill använda [!DNL mTLS] med ditt [!DNL HTTP API]-mål måste den &quot;mottagande&quot; serverslutpunkten vara en [!DNL mTLS]-aktiverad anslutningsslutpunkt.
+Om du vill använda [!DNL mTLS] med [!DNL HTTP API] mål måste [-protokoll vara inaktiverade för den serveradress som du angav på sidan ](#destination-details)målinformation[!DNL TLS] och bara [!DNL mTLS] aktiverade. Om protokollet [!DNL TLS] 1.2 fortfarande är aktiverat på slutpunkten skickas inget certifikat för klientautentiseringen. Det innebär att om du vill använda [!DNL mTLS] med ditt [!DNL HTTP API]-mål måste den &quot;mottagande&quot; serverslutpunkten vara en [!DNL mTLS]-aktiverad anslutningsslutpunkt.
 
 ### Hämta och inspektera certifikatinformation {#certificate}
 
@@ -363,3 +364,7 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka UI-inst
 På 95 % av tiden försöker Experience Platform erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
 
 Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.
+
+## Felsökning {#troubleshooting}
+
+För att säkerställa tillförlitlig dataleverans och undvika timeoutproblem måste du se till att HTTP-slutpunkten svarar på Experience Platform-begäranden inom 2 sekunder, enligt vad som anges i avsnittet [Krav](#prerequisites) . Svar som tar längre tid resulterar i timeoutfel.
