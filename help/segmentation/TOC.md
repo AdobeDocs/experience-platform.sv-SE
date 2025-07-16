@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
+source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '208'
 ht-degree: 24%
 
 ---
@@ -17,12 +17,14 @@ ht-degree: 24%
 
 - [Översikt över segmenteringstjänsten](home.md)
 - [Segmenteringsdatatyper](data-types.md)
-- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=sv-SE#segmentation-guardrails)
+- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
 - Segmenterings-API {#api}
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
+   - [Skapa målgruppsmetadata](api/create-audience.md)
    - [Målgrupper](api/audiences.md)
    - [Exportera jobb](api/export-jobs.md)
+   - [Externa målgrupper](api/external-audiences.md)
    - [Förhandsvisningar och uppskattningar](api/previews-and-estimates.md)
    - [Scheman](api/schedules.md)
    - [Segmentdefinitioner](api/segment-definitions.md)
@@ -80,4 +82,4 @@ ht-degree: 24%
 - [Uppdatering av kvalificeringskriterier](./eligibility-criteria-update.md)
 - [Vanliga frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
