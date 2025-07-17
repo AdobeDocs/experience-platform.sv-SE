@@ -2,9 +2,9 @@
 title: Anslut Adobe Analytics till Experience Platform
 description: Lär dig hur du kan skicka data från Adobe Analytics rapportprogramsvit till Experience Platform
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 086777a09eec17c94a7e0a5d2db58e4a1f6b523f
+source-git-commit: d6a290b9891b3507d531a595a5428955c7e9ee90
 workflow-type: tm+mt
-source-wordcount: '2606'
+source-wordcount: '2625'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De har samma innebörd för alla kunder och är tillgängliga i källdata för analyser och i schemafältgrupper för analyser.
-* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=sv-SE).
+* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html).
 * **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är användardefinierade och betraktas inte som standardattribut eller anpassade attribut.
 
 ## Navigera i källkatalogen
@@ -287,6 +287,10 @@ Mer information om bakåtfyllnad, livedata och deras respektive latenser finns i
 
 ## Ta bort ditt dataflöde {#delete-dataflow}
 
+>[!NOTE]
+>
+>Du kan inte inaktivera ett analysdataflöde. Om du vill stoppa flödet av analysdata måste du **ta bort** dataflödet helt och hållet.
+
 Om du vill ta bort Analytics-dataflödet väljer du **[!UICONTROL Dataflows]** i det övre huvudet på källarbetsytan. Använd dataflödessidan för att hitta Analytics-dataflödet som du vill ta bort och markera sedan ellipserna (`...`) bredvid det. Använd sedan listrutan och välj **[!UICONTROL Delete]**.
 
 * Om du tar bort liveanalysdataflödet tas även dess underliggande datauppsättning bort.
@@ -307,5 +311,5 @@ Följande video är tänkt att ge stöd för din förståelse av datainhämtning
 >
 > Användargränssnittet [!DNL Experience Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3430253?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
 
