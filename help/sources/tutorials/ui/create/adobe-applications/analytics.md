@@ -311,5 +311,5 @@ Följande video är tänkt att ge stöd för din förståelse av datainhämtning
 >
 > Användargränssnittet [!DNL Experience Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
->[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3430253?quality=12&learn=on&captions=swe)
 
