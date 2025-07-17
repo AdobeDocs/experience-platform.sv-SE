@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 13adf42a23458d10e217d216d8fe79e8ce33376d
+source-git-commit: 00cec76319c1209e4527e31fad36992b7e778367
 workflow-type: tm+mt
-source-wordcount: '4423'
+source-wordcount: '4472'
 ht-degree: 1%
 
 ---
@@ -120,7 +120,7 @@ Om du vill redigera flera scheman samtidigt markerar du målgrupperna med kryssr
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
 >abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för målgruppen. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för målgruppen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för målgruppen och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för målgruppen sedan den första inkrementella filexporten."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=sv-SE#export-incremental-files" text="Exportera inkrementella filer"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="Exportera inkrementella filer"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -142,6 +142,18 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
    * **[!UICONTROL Daily]**: schemalägg fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
    * **[!UICONTROL Weekly]**: välj startdatum och efterföljande exporter sker den dagen i veckan till det valda slutdatumet.
    * **[!UICONTROL Monthly]**: välj startdatum och efterföljande exporter sker på det datumet i månaden till det valda slutdatumet. För månader med mindre än 30 eller 31 dagar sker exporten den sista dagen i månaden.
+
+   >[!NOTE]
+   >
+   > Schemaläggningsalternativen veckovis och månadsvis stöds för närvarande bara för följande filbaserade molnlagringsmål, och endast när [målgrupper](../../segmentation/types/overview.md#people-audience) och [potentiella målgrupper](../../segmentation/types/overview.md#prospect-audience) aktiveras.
+   > 
+   > * [Amazon S3](../catalog/cloud-storage/amazon-s3.md)
+   > * [Azure Blob Storage](../catalog/cloud-storage/azure-blob.md)
+   > * [Datalandningszon](../catalog/cloud-storage/data-landing-zone.md)
+   > * [Google Cloud-lagring](../catalog/cloud-storage/google-cloud-storage.md)
+   > * [SFTP](../catalog/cloud-storage/sftp.md)
+   > 
+   > Schemaläggningsalternativen Varje vecka och Varje månad är inte tillgängliga för andra måltyper.
 
 2. Använd växlingsknappen **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller på schemalagd basis vid en angiven tidpunkt. När du väljer alternativet **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tidpunkten på dagen, i formatet [!DNL UTC], när exporten ska ske.
 
@@ -450,7 +462,7 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 
 ### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
 
-När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
 
 #### Viktiga överväganden
 
