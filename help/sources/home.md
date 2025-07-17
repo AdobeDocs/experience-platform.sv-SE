@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 2e4df13bae9f4afa24f761e650790704da44da90
+source-git-commit: 952fc2fac819c545304aca4505208fe59841097f
 workflow-type: tm+mt
-source-wordcount: '1524'
+source-wordcount: '1610'
 ht-degree: 0%
 
 ---
@@ -26,19 +26,7 @@ Med Experience Platform kan ni centralisera data som ni samlar in från olika k�
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
 
-## Avancerade företagskällor {#advanced-enterprise-sources}
-
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
-
-- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Databricks]](connectors/databases/databricks.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Google BigQuery]](connectors/databases/bigquery.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL Snowflake]](connectors/databases/snowflake.md) [!BADGE Gruppera]{type=Informative}
+>[!BEGINSHADEBOX]
 
 ## Adobe-byggda och partnerbyggda källor {#adobe-and-partner-built-sources}
 
@@ -46,157 +34,239 @@ Vissa av anslutningarna i Experience Platform-källkatalogen byggs och underhål
 
 För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Kontakta Adobe eller kundtjänst om du har problem med kontakter som skapats och underhålls av Adobe.
 
-## Källkategorier
+>[!ENDSHADEBOX]
 
-Källor i Experience Platform är grupperade i följande kategorier:
+## Källkatalog
+
+I följande avsnitt finns en lista med alla tillgängliga källor i källkatalogen.
 
 ### Adobe-program {#adobe-applications}
 
-Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
+Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Läs följande relaterade dokument för mer information:
 
-- [Översikt över Adobe Audience Manager-källa](connectors/adobe-applications/audience-manager.md)
+- [Adobe Audience Manager](connectors/adobe-applications/audience-manager.md)
    - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Översikt över datakällan för Adobe Analytics Classics](connectors/adobe-applications/classifications.md)
+- [Adobe Analytics-klassificeringsdata](connectors/adobe-applications/classifications.md)
    - [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
-- [Översikt över datakällan i Adobe Analytics Report Suite](connectors/adobe-applications/analytics.md)
+- [Adobe Analytics Report Suite-data](connectors/adobe-applications/analytics.md)
    - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
-- [Översikt över Adobe Campaign Managed Cloud Services-källa](connectors/adobe-applications/campaign.md)
+- [Adobe Campaign Managed Cloud Services](connectors/adobe-applications/campaign.md)
    - [Skapa en Adobe Campaign Managed Cloud Services-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/campaign.md)
-- [Översikt över Adobe Commerce-källa](connectors/adobe-applications/commerce.md)
-- [Översikt över Adobe Data Collection-källa](connectors/adobe-applications/data-collection.md)
+- [Adobe Commerce](connectors/adobe-applications/commerce.md)
+- [Adobe Data Collection](connectors/adobe-applications/data-collection.md)
    - [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
-- [[!DNL Marketo Engage] - källöversikt](connectors/adobe-applications/marketo/marketo.md)
+- [[!DNL Marketo Engage]](connectors/adobe-applications/marketo/marketo.md)
    - [Skapa en  [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
    - [Skapa en  [!DNL Marketo Engage] källanslutning och ett dataflöde för anpassade aktivitetsdata](./tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
 
+### Avancerade företagskällor {#advanced-enterprise-sources}
+
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+
+| Source | Kategori | Inmatningstyp | Cloud |
+| --- | --- | --- | --- |
+| [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) | molnlagring | Direktuppspelning | Azure, AWS |
+| [[!DNL Amazon Redshift]](connectors/databases/redshift.md) | Databas | Grupp | Azure, AWS |
+| [[!DNL Azure Databricks]](connectors/databases/databricks.md) | Databas | Grupp | Azure |
+| [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) | molnlagring | Direktuppspelning | Azure, AWS |
+| [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) | Databas | Grupp | Azure |
+| [[!DNL Google BigQuery]](connectors/databases/bigquery.md) | Databas | Grupp | Azure |
+| [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md) | molnlagring | Direktuppspelning | Azure |
+| [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) | Databas | Direktuppspelning | Azure, AWS |
+| [[!DNL Snowflake]](connectors/databases/snowflake.md) | Databas | Grupp | Azure, AWS |
+
+{style="table-layout:auto"}
+
 ### Advertising {#advertising}
 
-Experience Platform stöder inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Du kan använda följande källor för att importera annonsdata till Experience Platform.
 
-- [Google Ads](connectors/advertising/ads.md) [!BADGE Batch]{type=Informative}
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [Google Ads](connectors/advertising/ads.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Analytics  {#analytics}
 
-Experience Platform har stöd för inmatning av data från en analysplattform från tredje part. Läs följande relaterade dokument för mer information:
+Du kan använda följande källor för att importera analysdata till Experience Platform.
 
-- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Pendo]](connectors/analytics/pendo-webhook.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL RainFocus]](connectors/analytics/rainfocus.md) [!BADGE Direktuppspelning]{type=Positive}
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) | Grupp | Azure |
+| [[!DNL Pendo]](connectors/analytics/pendo-webhook.md) | Direktuppspelning | Azure |
+| [[!DNL RainFocus]](connectors/analytics/rainfocus.md) | Direktuppspelning | Azure |
+
+{style="table-layout:auto"}
 
 ### molnlagring {#cloud-storage}
 
 Lagringskällor i molnet kan överföra dina egna data till Experience Platform utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL FTP]](connectors/cloud-storage/ftp.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL SFTP]](connectors/cloud-storage/sftp.md) [!BADGE Gruppera]{type=Informative}
+Du kan använda följande källor för att importera molnlagringsdata till Experience Platform.
+
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) | Grupp | Azure |
+| [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) | Grupp | Azure |
+| [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) | Grupp | Azure, AWS |
+| [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) | Grupp | Azure |
+| [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) | Grupp | Azure |
+| [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md) | Grupp | Azure, AWS |
+| [[!DNL FTP]](connectors/cloud-storage/ftp.md) | Grupp | Azure |
+| [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md) | Grupp | Azure |
+| [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md) | Grupp | Azure |
+| [[!DNL SFTP]](connectors/cloud-storage/sftp.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Samtycke och inställningar {#consent}
 
-Experience Platform har stöd för inmatning av data från en plattform för hantering av medgivanden och preferenser från tredje part. Mer information finns i följande relaterade dokument:
+Du kan använda följande källor för att importera data för samtycke och inställningar till Experience Platform.
 
-- [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md) [!BADGE Gruppera]{type=Informative}
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Kundrelationshantering (CRM) {#customer-relationship-management}
 
 CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. Experience Platform har stöd för inhämtning av CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Salesforce]](connectors/crm/salesforce.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL SugarCRM]](connectors/crm/sugarcrm.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Veeva CRM]](connectors/crm/veeva.md) [!BADGE Gruppera]{type=Informative}
+Du kan använda följande källor för att importera CRM-data till Experience Platform.
+
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md) | Grupp | Azure |
+| [[!DNL Salesforce]](connectors/crm/salesforce.md) | Grupp | Azure, AWS |
+| [[!DNL SugarCRM]](connectors/crm/sugarcrm.md) | Grupp | Azure |
+| [[!DNL Veeva CRM]](connectors/crm/veeva.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Nöjda kunder {#customer-success}
 
-Experience Platform har stöd för inmatning av data från tredjepartsprogram. Mer information finns i följande relaterade dokument:
+Du kan använda följande källor för att importera kunddata till Experience Platform.
 
-- [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Zendesk]](connectors/customer-success/zendesk.md) [!BADGE Gruppera]{type=Informative}
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) | Grupp | Azure |
+| [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) | Grupp | Azure |
+| [[!DNL Zendesk]](connectors/customer-success/zendesk.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Databas {#database}
 
 Experience Platform har stöd för inmatning av data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL MariaDB]](connectors/databases/mariadb.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL MySQL]](connectors/databases/mysql.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Oracle]](connectors/databases/oracle.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL PostgreSQL]](connectors/databases/postgres.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE Gruppera]{type=Informative}
+Du kan använda följande källor för att importera data från din databas till Experience Platform.
+
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) | Grupp | Azure |
+| [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) | Grupp | Azure |
+| [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) | Grupp | Azure |
+| [[!DNL Azure Table Storage]](connectors/databases/ats.md) | Grupp | Azure |
+| [[!DNL GreenPlum]](connectors/databases/greenplum.md) | Grupp | Azure |
+| [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) | Grupp | Azure |
+| [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) | Grupp | Azure |
+| [[!DNL MariaDB]](connectors/databases/mariadb.md) | Grupp | Azure |
+| [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) | Grupp | Azure |
+| [[!DNL MySQL]](connectors/databases/mysql.md) | Grupp | Azure, AWS |
+| [[!DNL Oracle]](connectors/databases/oracle.md) | Grupp | Azure |
+| [[!DNL PostgreSQL]](connectors/databases/postgres.md) | Grupp | Azure, AWS |
+| [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Data- och identitetspartners {#data-partner}
 
-Experience Platform har stöd för inmatning av data från en data- och identitetspartner. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Du kan använda följande källor för att importera data och identitetspartnerdata till Experience Platform.
 
-- [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Algolia User Profiles]](connectors/data-partners/algolia-user-profiles.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE Gruppera]{type=Informative}
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) | Grupp | Azure |
+| [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) | Grupp | Azure |
+| [[!DNL Algolia User Profiles]](connectors/data-partners/algolia-user-profiles.md) | Grupp | Azure |
+| [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) | Grupp | Azure |
+| [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) | Grupp | Azure |
+| [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) | Grupp | Azure |
 
-### eCommerce {#ecommerce}
+{style="table-layout:auto"}
 
-Experience Platform stöder inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+### e-handel {#ecommerce}
 
-- [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Shopify]](connectors/ecommerce/shopify.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Shopify]](connectors/ecommerce/shopify-streaming.md) [!BADGE Direktuppspelning]{type=Positive}
+Du kan använda följande källor för att importera e-handelsdata till Experience Platform.
+
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md) | Grupp | Azure |
+| [[!DNL Shopify]](connectors/ecommerce/shopify.md) | Grupp | Azure |
+| [[!DNL Shopify]](connectors/ecommerce/shopify-streaming.md) | Direktuppspelning | Azure |
+
+{style="table-layout:auto"}
 
 ### Lokalt system {#local-system}
 
-Experience Platform har stöd för inmatning av data från ditt lokala system. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Du kan använda följande källor för att importera data från ditt lokala system till Experience Platform.
 
-- [Lokal filöverföring](connectors/local-system/local-file-upload.md)
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [Lokal filöverföring](connectors/local-system/local-file-upload.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Marknadsföringsautomatisering {#marketing-automation}
 
-Experience Platform har stöd för inmatning av data från ett automatiseringssystem för tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Du kan använda följande källor för att importera automatiserade marknadsföringsdata till Experience Platform.
 
-- [[!DNL Braze]](connectors/marketing-automation/braze.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) [!BADGE Gruppera]{type=Informative}
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Braze]](connectors/marketing-automation/braze.md) | Direktuppspelning | Azure |
+| [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) | Direktuppspelning | Azure |
+| [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) | Direktuppspelning | Azure |
+| [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) | Grupp | Azure |
+| [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md) | Grupp | Azure |
+| [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) | Grupp | Azure |
+| [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) | Grupp | Azure |
+| [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) | Grupp | Azure |
+| [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) | Grupp | Azure, AWS |
+
+{style="table-layout:auto"}
 
 ### Betalningar {#payments}
 
-Experience Platform har stöd för inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Du kan använda följande källor för att importera betalningsdata till Experience Platform.
 
-- [[!DNL Square]](connectors/payments/square.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Stripe]](connectors/payments/stripe.md) [!BADGE Gruppera]{type=Informative}
+| Source | Inmatningstyp | Cloud |
+| --- | --- | --- |
+| [[!DNL Square]](connectors/payments/square.md) | Grupp | Azure |
+| [[!DNL Stripe]](connectors/payments/stripe.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ### Direktuppspelning {#streaming}
 
-Experience Platform stöder inmatning av data från strömningskällor. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Du kan använda följande källor för att strömma data till Experience Platform.
 
-- [[!DNL HTTP API]](connectors/streaming/http.md) [!BADGE Direktuppspelning]{type=Positive}
+| Source | Inmatningstyp | Molnsupport |
+| --- | --- | --- |
+| [[!DNL HTTP API]](connectors/streaming/http.md) | Direktuppspelning | Azure, AWS |
+
+{style="table-layout:auto"}
 
 ### Protokoll {#protocols}
 
-Experience Platform har stöd för inmatning av data från tredjepartsprotokoll. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Du kan använda följande källor för att importera protokolldata till Experience Platform.
 
-- [[!DNL Generic OData]](connectors/protocols/odata.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Generic REST API]](connectors/protocols/generic-rest.md) [!BADGE Gruppera]{type=Informative}
+| Source | Inmatningstyp | Molnsupport |
+| --- | --- | --- |
+| [[!DNL Generic OData]](connectors/protocols/odata.md) | Grupp | Azure |
+| [[!DNL Generic REST API]](connectors/protocols/generic-rest.md) | Grupp | Azure |
+
+{style="table-layout:auto"}
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
