@@ -3,13 +3,13 @@ title: API-slutpunkt för externa målgrupper
 description: Lär dig hur du använder API:t för externa målgrupper för att skapa, uppdatera, aktivera och ta bort externa målgrupper från Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
+exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
+source-git-commit: 3acadf73b5c82d6f5f0f1eaec41387bec897558d
 workflow-type: tm+mt
-source-wordcount: '2312'
+source-wordcount: '2405'
 ht-degree: 1%
 
 ---
-
 
 # Extern målgruppsslutpunkt
 
@@ -381,7 +381,7 @@ Du kan påbörja en målgruppsinmatning genom att göra en POST-begäran till f�
 **API-format**
 
 ```http
-POST /external-audience/{AUDIENCE_ID}/run
+POST /external-audience/{AUDIENCE_ID}/runs
 ```
 
 **Begäran**
@@ -391,7 +391,7 @@ Följande begäran utlöser en ingressning för den externa målgruppen.
 +++ Ett exempel på en förfrågan om att starta ett målgruppsintag.
 
 ```shell
-curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1435-4180-97a5-58af4aa285ab/run \
+curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1435-4180-97a5-58af4aa285ab/runs \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
@@ -442,6 +442,10 @@ Ett lyckat svar returnerar HTTP-status 200 med information om importen.
 +++
 
 ## Hämta specifik status för målgruppsinmatning {#retrieve-ingestion-status}
+
+>[!NOTE]
+>
+>Om du vill använda följande slutpunkt måste du ha både `audienceId` för din externa målgrupp och `runId` för ditt ID för att köra inmatning. Du kan hämta din `audienceId` från ett lyckat anrop till `GET /external-audiences/operations/{OPERATION_ID}`-slutpunkten och din `runId` från ett tidigare lyckat anrop av `POST /external-audience/{AUDIENCE_ID}/runs`-slutpunkten.
 
 Du kan hämta status för ett målgruppsintag genom att göra en GET-begäran till följande slutpunkt samtidigt som du anger både målgrupps- och kör-ID:n.
 
@@ -514,9 +518,13 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den externa målgr
 
 +++
 
-## Visa målgruppsintendationsstatus {#list-ingestion-statuses}
+## Lista målgruppsmatningar {#list-ingestion-runs}
 
-Du kan hämta alla inmatningsstatusar för den valda externa målgruppen genom att göra en GET-begäran till följande slutpunkt och samtidigt ange målar-ID. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+>[!NOTE]
+>
+>Om du vill använda följande slutpunkt måste du ha `audienceId` för din externa målgrupp. Du kan hämta `audienceId` från ett lyckat anrop till slutpunkten `GET /external-audiences/operations/{OPERATION_ID}`.
+
+Du kan hämta alla inmatningskörningar för den valda externa målgruppen genom att göra en GET-begäran till följande slutpunkt och samtidigt ange målar-ID:t. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 **API-format**
 
@@ -534,16 +542,16 @@ GET /external-audience/{AUDIENCE_ID}/runs?{QUERY_PARAMETERS}
 | Parameter | Beskrivning | Exempel |
 | --------- | ----------- | ------- |
 | `limit` | Det maximala antalet objekt som returneras i svaret. Värdet kan ligga mellan 1 och 40. Som standard är gränsen 20. | `limit=30` |
-| `sortBy` | Den ordning som returnerade artiklar sorteras i. Du kan sortera efter antingen `name` eller `ingestionTime`. Dessutom kan du lägga till ett `-`-tecken för att sortera efter **fallande** i stället för **stigande** ordning. Som standard sorteras objekten efter `ingestionTime` i fallande ordning. | `sortBy=name` |
-| `property` | Ett filter för att avgöra vilka målgruppsinmatningar som visas. Du kan filtrera följande egenskaper: <ul><li>`name`: Du kan filtrera efter målgruppens namn. Om du använder den här egenskapen kan du jämföra med `=`, `!=`, `=contains` eller `!=contains`. </li><li>`ingestionTime`: Du kan filtrera efter användningstiden. Om du använder den här egenskapen kan du jämföra med `>=` eller `<=`.</li><li>`status`: Gör att du kan filtrera efter körningens status. Om du använder den här egenskapen kan du jämföra med `=`, `!=`, `=contains` eller `!=contains`. </li></ul> | `property=ingestionTime<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
+| `sortBy` | Den ordning som returnerade artiklar sorteras i. Du kan sortera efter antingen `name` eller `createdAt`. Dessutom kan du lägga till ett `-`-tecken för att sortera efter **fallande** i stället för **stigande** ordning. Som standard sorteras objekten efter `createdAt` i fallande ordning. | `sortBy=name` |
+| `property` | Ett filter för att avgöra vilka målgruppsinmatningar som visas. Du kan filtrera följande egenskaper: <ul><li>`name`: Du kan filtrera efter målgruppens namn. Om du använder den här egenskapen kan du jämföra med `=`, `!=`, `=contains` eller `!=contains`. </li><li>`createdAt`: Du kan filtrera efter användningstiden. Om du använder den här egenskapen kan du jämföra med `>=` eller `<=`.</li><li>`status`: Gör att du kan filtrera efter körningens status. Om du använder den här egenskapen kan du jämföra med `=`, `!=`, `=contains` eller `!=contains`. </li></ul> | `property=createdAt<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
 
 +++
 
 **Begäran**
 
-Följande begäran hämtar alla inmatningsstatusar för den externa målgruppen.
+Följande begäran hämtar alla inmatningskörningar för den externa målgruppen.
 
-+++ Ett exempel på en begäran om att få en lista över status för målgruppsinmatning.
++++ En exempelbegäran om att få en lista över målgruppsinmatning körs.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1435-4180-97a5-58af4aa285ab/runs \
@@ -557,9 +565,9 @@ curl -X GET https://platform.adobe.io/data/core/ais/external-audience/60ccea95-1
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över intagsstatus för den angivna externa målgruppen.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över antalet inkommande filer för den angivna externa målgruppen.
 
-+++ Ett exempelsvar när du hämtar en lista över målgruppsintagningsstatus.
++++ Ett exempelsvar när du hämtar en lista över målgruppsinmatningen körs.
 
 ```json
 {
@@ -573,19 +581,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över intagsstatus för 
             "dataFilterStartTime": 764245635,
             "dataFilterEndTime": 3456788568,
             "createdAt": 1785678909,
-            "createdBy": "{USER_NAME}",
-            "details": [
-                {
-                    "stage": "DATASET_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                },
-                {
-                    "stage": "PROFILE_STORE_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                }
-            ]
+            "createdBy": "{USER_NAME}"
         },
         {
             "audienceName": "Sample external audience 2",
@@ -596,19 +592,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över intagsstatus för 
             "dataFilterStartTime": 764245635,
             "dataFilterEndTime": 3456788568,
             "createdAt": 1749324248,
-            "createdBy": "{USER_ID}",
-            "details": [
-                {
-                    "stage": "DATASET_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                },
-                {
-                    "stage": "PROFILE_STORE_INGEST",
-                    "status": "SUCCESS",
-                    "flowRunId": "{FLOW_RUN_ID}"
-                }
-            ]
+            "createdBy": "{USER_ID}"
         }
     ],
     "_page": {
@@ -627,6 +611,10 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över intagsstatus för 
 +++
 
 ## Ta bort en extern målgrupp {#delete-audience}
+
+>[!NOTE]
+>
+>Om du vill använda följande slutpunkt måste du ha `audienceId` för din externa målgrupp. Du kan hämta `audienceId` från ett lyckat anrop till slutpunkten `GET /external-audiences/operations/{OPERATION_ID}`.
 
 Du kan ta bort en extern målgrupp genom att göra en DELETE-förfrågan till följande slutpunkt och samtidigt ange målar-ID.
 
