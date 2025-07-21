@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 65a3b5b904a9dfc6a2fbc09ab869e5642e088363
 workflow-type: tm+mt
-source-wordcount: '2242'
+source-wordcount: '2258'
 ht-degree: 0%
 
 ---
@@ -310,6 +310,10 @@ Dessutom kan du begränsa antalet profiler som returneras genom att aktivera vä
 >id="platform_segmentation_ao_split_otherprofiles_text"
 >title="Andra profiler"
 >abstract="Med alternativet Andra profiler kan du skapa ytterligare en sökväg med de återstående profilerna som inte matchar något av de andra sökvägarnas angivna villkor."
+
+>[!NOTE]
+>
+>För att du ska kunna använda **[!UICONTROL Split]**-blocket måste **måste** ha minst 10 profiler i din målgrupp.
 
 Med blocktypen **[!UICONTROL Split]** kan du dela upp din nya målgrupp i olika undermålgrupper. Du kan antingen dela den här målgruppen baserat på procent eller ett attribut.
 

@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 92b70dc6d6085067f11d43436bc74d64bce72dd0
+source-git-commit: 721024192b54fcbab11b483cc26fa84151bb61a7
 workflow-type: tm+mt
-source-wordcount: '4817'
+source-wordcount: '4821'
 ht-degree: 0%
 
 ---
@@ -120,7 +120,7 @@ Enrichment-attribut är attribut som kommer från en datauppsättning och som f�
 
 | Aktiveringskanal | Målgrupper från anpassad CSV-överföring | Målgrupper från Audience Composition |
 | --- | --- | --- |
-| Real-Time CDP Destinations | Både nyttolastattributen och målgrupperna kan aktiveras. | Bara målgruppen kan aktiveras. Det går inte att aktivera anrikningsattributen **&#x200B;**. |
+| Real-Time CDP Destinations | Både nyttolastattributen och målgrupperna kan aktiveras. | Bara målgruppen kan aktiveras. Det går inte att aktivera anrikningsattributen ****. |
 | Adobe Journey Optimizer Campaigns | Varken målgruppen eller nyttolastattributen kan aktiveras. | Både målgrupps- och anrikningsattributen kan aktiveras. |
 
 ## Livscykeltillstånd {#lifecycle-states}
@@ -306,7 +306,7 @@ Komponentplaceringen följer en hård struktur enligt följande:
 4. Du kan också lägga till ett [!UICONTROL Rank]- eller [!UICONTROL Split]-block. Du kan **bara** ha ett av dessa block per disposition.
 5. Du **alltid** slutar med ett [!UICONTROL Save]-block för att spara din publik.
 
-Följande begränsningar (?) gäller när du använder dessa block:
+Dessutom gäller följande begränsningar när du använder dessa block:
 
 - Delat block
    - Det här blocket har bara stöd för datatyperna **String**. Delningsblocket stöder **inte** datatypen date eller boolean.
@@ -326,7 +326,7 @@ När publikens komposition har skapats kan det ta upp till 48 timmar innan den k
 
 ### När kan jag använda den målgrupp jag skapat?
 
-Publiken som skapas i Audience Composition **visas omedelbart** i Audience Portal. För att kunna använda programmet i Adobe Journey Optimizer måste du dock vänta minst 24 timmar efter utvärderingen.
+Publiken som skapas i Audience Composition **visas omedelbart** i Audience Portal. För att kunna använda programmet i tjänster som Adobe Journey Optimizer längre fram i kedjan måste du dock vänta minst 24 timmar efter utvärderingen.
 
 ### Är utvärderingsjobb synliga i övervakningsavsnittet?
 
@@ -420,7 +420,7 @@ Observera att om en segmentdefinition innehåller **både** och `inSegment` uttr
 
 Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegment. Detta värde visas för både grupp- och direktuppspelningssegment.
 
-Talet under de senaste X dagarna **endast** innehåller målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och det räknas mot den direktuppspelningsdefinitionen. Det här värdet visas **endast** för direktuppspelningssegment. Därför kan det här värdet **&#x200B;**&#x200B;visas som 0 för gruppsegment.
+Talet under de senaste X dagarna **endast** innehåller målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och det räknas mot den direktuppspelningsdefinitionen. Det här värdet visas **endast** för direktuppspelningssegment. Därför kan det här värdet **** visas som 0 för gruppsegment.
 
 Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **inte** direktuppspelat några profiler i systemet som skulle kvalificera för det segmentet.
 
