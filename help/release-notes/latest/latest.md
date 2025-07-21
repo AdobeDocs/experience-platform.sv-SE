@@ -3,7 +3,7 @@ title: Versionsinformation för Adobe Experience Platform juni 2025
 description: Versionsinformationen för juni 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: cff694c1b04ba1513cb460c3b47b56eaef4b1f34
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '1613'
 ht-degree: 100%
 
@@ -18,8 +18,8 @@ ht-degree: 100%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 18 juni 2025**
@@ -127,7 +127,7 @@ Med Federerad målgruppssammansättning kan företag sammanställa data för bä
 
 | Ny funktion | Beskrivning |
 | ----------- | ----------- |
-| Allmän tillgänglighet för kunder inom Adobe Healthcare Shield | Federerad målgruppssammansättning kommer att vara tillgängligt för kunder som använder Adobe Healthcare Shield för att skapa och berika målgrupper och profiler i slutet av juni. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppssammansättning finns i [sekretess- och säkerhetsöversikten för federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [översikten över HIPAA och Adobes produkter och tjänster](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
+| Allmän tillgänglighet för kunder inom Adobe Healthcare Shield | Federerad målgruppssammansättning kommer att vara tillgängligt för kunder som använder Adobe Healthcare Shield för att skapa och berika målgrupper och profiler i slutet av juni. Mer information om sekretess- och säkerhetsåtgärder för federerad målgruppssammansättning finns i [sekretess- och säkerhetsöversikten för federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/privacy-security). Mer information om HIPAA-kompatibilitet för Experience Platform-produkter i allmänhet finns i [översikten över HIPAA och Adobes produkter och tjänster](https://www.adobe.com/trust/compliance/hipaa-ready.html). |
 
 Mer information finns i dokumentationen för [Federerad målgruppssammansättning (Federated Audience Composition)](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
 
@@ -139,7 +139,7 @@ Flera juridiska och organisatoriska bestämmelser ger användare rätt att på b
 
 | Funktion | Beskrivning |
 | --- | ---|
-| Stöd för sekretesslagar i Tennessee och Minnesota  | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på delstatsnivå. Se [regelverksöversikten](https://experienceleague.adobe.com/sv/docs/experience-platform/privacy/regulations/overview) för mer information. |
+| Stöd för sekretesslagar i Tennessee och Minnesota  | Privacy Service stöder nu Tennessee Information Protection Act (`tipa_tn_usa`) och Minnesota Consumer Data Privacy Act (`mcdpa_mn_usa`). Du kan bearbeta begäranden om åtkomst och borttagning i enlighet med dessa nya regler på delstatsnivå. Se [regelverksöversikten](https://experienceleague.adobe.com/en/docs/experience-platform/privacy/regulations/overview) för mer information. |
 
 Mer information om tjänsten finns i [översikten över integritetstjänst](../../privacy-service/home.md).
 
