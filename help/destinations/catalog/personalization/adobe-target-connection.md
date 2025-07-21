@@ -72,8 +72,8 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 >[!IMPORTANT]
 >
 >När *kantmålgrupper aktiveras för användning av samma sida och nästa sida* måste *målgrupperna* använda en [aktiv-on-edge-sammanfogningsprincip](../../../segmentation/ui/segment-builder.md#merge-policies). Sammanslagningsprincipen [!DNL active-on-edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan ](../../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid och på nästa sida.  Läs om [alla tillgängliga användningsfall](#parameter), baserat på implementeringstyp.
->>Om du kopplar ut målgrupper som använder en annan sammanfogningspolicy till Adobe Target-destinationer, kommer dessa målgrupper inte att utvärderas för användning i realtid och på nästa sida.
->>Följ instruktionerna på [skapa en sammanfogningsprincip](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
+>&#x200B;>Om du kopplar ut målgrupper som använder en annan sammanfogningspolicy till Adobe Target-destinationer, kommer dessa målgrupper inte att utvärderas för användning i realtid och på nästa sida.
+>&#x200B;>Följ instruktionerna på [skapa en sammanfogningsprincip](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
 
 | Målgruppsursprung | Stöds | Beskrivning |
@@ -140,8 +140,8 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 >[!NOTE]
 >
 >När du använder en anpassad målarbetsyta för [anpassning av samma sida och nästa sida med attribut](../../ui/activate-edge-personalization-destinations.md), skickas endast de [valda målgrupperna](../../ui/activate-edge-personalization-destinations.md#select-audiences) till den valda målarbetsytan. De [mappade attributen](../../ui/activate-edge-personalization-destinations.md#mapping) skickas till standardmålarbetsytan.
->><br>
->>Detta beteende ändras i en framtida uppdatering.
+>&#x200B;><br>
+>&#x200B;>Detta beteende ändras i en framtida uppdatering.
 
 ### Aktivera aviseringar {#enable-alerts}
 
