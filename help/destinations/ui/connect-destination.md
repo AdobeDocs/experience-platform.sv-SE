@@ -3,9 +3,9 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 59ff77ff9f4a6fe147b5d8231fd3caa2550ae20e
 workflow-type: tm+mt
-source-wordcount: '1107'
+source-wordcount: '1138'
 ht-degree: 0%
 
 ---
@@ -50,6 +50,11 @@ Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning t
    ![Skärmbild av Experience Platform-gränssnittet, med en lista över tillgängliga mål och den nya målkontrollen är markerad.](../assets/ui/connect-destinations/configure-new-destination.png)
 
 ## Autentisera till mål {#authenticate}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_account_name"
+>title="Kontonamn"
+>abstract="Ange ett namn som gör det enklare att identifiera det här destinationskontot i framtiden. Detta är särskilt användbart om du har flera anslutningar till samma måltyp."
 
 Det första steget när du ansluter till ett mål är att autentisera till målplattformen.
 
