@@ -4,10 +4,10 @@ description: En förhandsgranskning av den senaste versionsinformationen för Ad
 hide: true
 hidefromtoc: true
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: d30778ef3152b779157206ce0d416c0e61ba98c3
+source-git-commit: fddefb7de85b5dcb8c8721e14d04efc0567ccae4
 workflow-type: tm+mt
-source-wordcount: '1375'
-ht-degree: 21%
+source-wordcount: '1352'
+ht-degree: 22%
 
 ---
 
@@ -23,8 +23,8 @@ ht-degree: 21%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 juli 2025**
@@ -53,10 +53,9 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för målkryptering med DLZ (Data Landing Zone) | Lagt till krypteringsstöd för Data Landing Zone-målet. Nu kan du bifoga RSA-formaterade offentliga nycklar för att lägga till kryptering till dina exporterade filer, vilket ger bättre skydd vid export av känsliga data. |
-| Förbättrad datastream-information för kantmål | Förbättrad information om rätt spår för Adobe Target och anpassade Personalization-mål visar nu både fältet Datastream-namn och Datastream-ID, vilket ger tydligare synlighet i associerade datastream-konfigurationer och minskar förvirringen när befintliga dataflöden granskas. **[!UICONTROL Datastream ID]**-väljaren i målkonfigurationsskärmen har uppdaterats till **[!UICONTROL Datastream]** för att användargränssnittet ska bli tydligare. |
-| Synlighet för marknadsföringsåtgärder i målval | Marknadsföringsåtgärder visas nu i rätt spår i steget [!UICONTROL Select Destination] när ett dataflöde konfigureras, vilket ger omedelbar synlighet till ändringar av marknadsföringsåtgärder utan att det krävs navigering till visningssidan. Den här förbättringen förbättrar användarupplevelsen genom att göra det enklare att verifiera konfigurationer av marknadsföringsåtgärder under målkonfigurationen. |
-| Redigera marknadsföringsåtgärder för destinationer | Nu kan du redigera marknadsföringsåtgärder för befintliga destinationer. |
+| Förbättrad datastream-information för kantmål | Förbättrad information om rätt spår för Adobe Target och anpassade Personalization-destinationer visar nu datasternamnet, vilket ger tydligare synlighet i associerade datastream-konfigurationer och minskar förvirringen vid granskning av befintliga dataflöden. **[!UICONTROL Datastream ID]**-väljaren i målkonfigurationsskärmen har uppdaterats till **[!UICONTROL Datastream]** för att användargränssnittet ska bli tydligare. |
+| Synlighet för marknadsföringsåtgärder i målval | Marknadsföringsåtgärder visas nu i den högra listen på fliken **[!UICONTROL Browse]** och på sidan **[!UICONTROL Dataflow runs]**, vilket ger omedelbar synlighet till ändringar av marknadsföringsåtgärder utan att det krävs navigering till visningssidan. Den här förbättringen förbättrar användarupplevelsen genom att göra det enklare att verifiera konfigurationer av marknadsföringsåtgärder under målkonfigurationen. |
+| (Begränsad beta) Redigera marknadsföringsåtgärder för destinationer | Nu kan du redigera marknadsföringsåtgärder för befintliga destinationer. Den här funktionaliteten finns i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst till den. |
 | Kontonamn och beskrivningar för målanslutningar | Nu kan du lägga till kontonamn och beskrivningar när du ansluter till mål, vilket ger bättre hantering av mål med flera konton. |
 
 **Korrigeringar**
