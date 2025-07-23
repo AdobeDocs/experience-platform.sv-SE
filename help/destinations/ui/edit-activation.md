@@ -4,9 +4,9 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: b8f3443c1e574505f7fd0ca8a5ae91801da4cbef
+source-git-commit: 24951f7680f134beb64c7679a94bac9b18042af1
 workflow-type: tm+mt
-source-wordcount: '790'
+source-wordcount: '830'
 ht-degree: 0%
 
 ---
@@ -19,10 +19,9 @@ I Adobe Experience Platform kan du konfigurera olika komponenter i befintliga ak
 * [Lägg till ytterligare målgrupper](#add-audiences) i aktiveringsdataflöden
 * [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
 * [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)
-* [Lägg till ytterligare datauppsättningar](#add-datasets) i arbetsflöden för aktivering
+* [Lägg till ytterligare datauppsättningar](#add-datasets) i aktiveringsarbetsflödet
+* [Använd åtkomstetiketter](#apply-access-labels) på exporterade data
 * [Redigera namn och beskrivningar](#edit-names-descriptions) för aktiveringsdataflödena
-
-<!-- * [Apply access labels](#apply-access-labels) to exported data; -->
 
 ## Bläddra bland aktiveringsdataflöden {#browse-activation-dataflows}
 
@@ -100,8 +99,6 @@ Arbetsflödet för aktivering skiljer sig något beroende på måltyp. Mer infor
 * [Aktivera målgrupper för att batchprofilera exportmål](./activate-batch-profile-destinations.md) (till exempel Amazon S3 eller Oracle Eloqua);
 * [Aktivera målgrupper för att direktuppspela profilexportmål](./activate-streaming-profile-destinations.md) (till exempel HTTP API eller Amazon Kinesis).
 
-
-
 ## Lägga till datauppsättningar i ett aktiveringsdataflöde {#add-datasets}
 
 Välj **[!UICONTROL Export datasets]** i den högra listen för att välja ytterligare datauppsättningar att exportera till ditt mål. Det här alternativet tar dig till arbetsflödet för [datauppsättningsexport](export-datasets.md).
@@ -112,13 +109,11 @@ Välj **[!UICONTROL Export datasets]** i den högra listen för att välja ytter
 
 ![Experience Platform UI-bild som visar körningsalternativet Exportera datauppsättningar.](../assets/ui/edit-activation/export-datasets.png)
 
+## Använd åtkomstetiketter {#apply-access-labels}
 
+Välj **[!UICONTROL Apply access labels]** om du vill redigera dataanvändningsetiketterna för exporterade data. Mer information finns i [dokumentationen om dataanvändningsetiketter](../../data-governance/labels/overview.md).
 
-<!-- ## Apply access labels {#apply-access-labels}
-
-Select **[!UICONTROL Apply access labels]** to edit the data usage labels for the exported data. See the [data usage labels documentation](../../data-governance/labels/overview.md) to learn more.
-
-![Experience Platform UI image showing the Export datasets dataflow run option.](../assets/ui/edit-activation/apply-access-labels.png) -->
+![Experience Platform UI-bild som visar körningsalternativet Exportera datauppsättningar.](../assets/ui/edit-activation/apply-access-labels.png)
 
 ## Redigera namn och beskrivningar för aktiveringsdataflöde {#edit-names-descriptions}
 
