@@ -2,9 +2,9 @@
 title: SFTP-värdar
 description: Lär dig hur du konfigurerar taggar i Adobe Experience Platform för att leverera biblioteksbyggen till en säker, självvärd SFTP-server.
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a077d3a1b14d9b7786d3181a556c49e940a42c2f
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '796'
 ht-degree: 5%
 
 ---
@@ -37,27 +37,11 @@ Den privata nyckeln används för att kryptera den offentliga nyckeln. Du måste
 
 ### IP-adresser för Tillåtslista Experience Platform
 
->[!IMPORTANT]
->
-> Den 23 juni 2025 uppdaterar Adobe Launch externa IP-adresser som används för att ge stöd åt SFTP-värdtyp och API-funktioner för återanrop. Om du vill fortsätta använda någon av dessa funktioner måste du se till att brandväggsreglerna tillåter trafik från de nya IP-adresserna.
->
-> För att upprätthålla oavbruten åtkomst rekommenderar vi att du lägger till de nya IP-adresserna nu och tar bort de gamla efter den 23 juni 2025.
->
->**Gamla IP-adresser:**
-> * `184.72.239.68`
-> * `23.20.85.113`
-> * `54.226.193.184`
->
->**Nya IP-adresser:**
-> * `34.227.138.75 `
-> * `44.194.43.191`
-> * `3.215.163.18`
-
 Du kan behöva godkänna en uppsättning IP-adresser som ska användas i företagets brandvägg för att Experience Platform ska kunna nå din SFTP-server och ansluta till den. Dessa IP-adresser är:
 
-* `184.72.239.68`
-* `23.20.85.113`
-* `54.226.193.184`
+* `34.227.138.75`
+* `44.194.43.191`
+* `3.215.163.18`
 
 >[!NOTE]
 >
@@ -71,7 +55,7 @@ Välj **[!UICONTROL Hosts]** i den vänstra navigeringen, följt av **[!UICONTRO
 
 ![Bild som visar knappen Lägg till värd som markeras i gränssnittet](../../../images/ui/publishing/sftp-hosts/add-host-button.png)
 
-Dialogrutan Värdskapande visas. Ange ett namn för värden och välj **[!UICONTROL SFTP]** under **[!UICONTROL Type]**.
+Dialogrutan Värdskapande visas. Ange ett namn för värden och välj **[!UICONTROL Type]** under **[!UICONTROL SFTP]**.
 
 ![Bild som visar det SFTP-värdalternativ som väljs](../../../images/ui/publishing/sftp-hosts/select-sftp.png)
 
