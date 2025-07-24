@@ -1,7 +1,7 @@
 ---
 title: Arkitekturuppgraderingar till Real-Time CDP B2B edition
 description: Läs det här dokumentet om du vill veta mer om de omfattande uppgraderingarna av arkitekturen till Real-Time CDP B2B edition.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 hide: true
 hidefromtoc: true
 source-git-commit: 78444555178773a8305ba27aaaf7998fe279a71d
