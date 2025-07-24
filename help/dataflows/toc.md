@@ -4,10 +4,10 @@ user-guide-title: Användarhandbok om dataflöden
 user-guide-description: Lär dig mer om dataflöden och hur du konfigurerar dem för olika tjänster.
 feature: Dataflows
 role: Developer
-source-git-commit: d4c1c9fce7ef5445c8f043d1f766603235b9bd88
+source-git-commit: 2f78b70761ef676fe4ab61b89b6cbb261c99e9ca
 workflow-type: tm+mt
-source-wordcount: '60'
-ht-degree: 23%
+source-wordcount: '66'
+ht-degree: 21%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 23%
    - [Övervaka dataflöden i profiler](./ui/monitor-profiles.md)
    - [Övervaka dataflöden i målgrupper](./ui/monitor-audiences.md)
    - [Övervaka dataflöden i mål](./ui/monitor-destinations.md)
+   - [Bildskärmsdataflöden för inmatning av direktuppspelningsprofil](./ui/monitor-streaming-profile.md)
    - B2B-övervakning {#b2b}
       - [Övervaka profilanrikningsjobb](./ui/b2b/monitor-profile-enrichment.md)
 - [API för flödestjänst](https://www.adobe.io/experience-platform-apis/references/flow-service/)
