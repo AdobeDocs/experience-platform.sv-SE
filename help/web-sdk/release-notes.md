@@ -3,18 +3,31 @@ title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Experience Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 5dc5e11962abf760692e0cb424cdd863d1905e87
+source-git-commit: cf8912aea5c46b3414486f638b92eebf556528a9
 workflow-type: tm+mt
-source-wordcount: '2355'
+source-wordcount: '2438'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation
+# Versionsinformation om SDK för webben
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Versionsinformationen om SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.28.0 - 24 juli 2025
+
+**Nya funktioner**
+
+- Stöd för Adobe Journey Optimizer diskvalificeringsregler har lagts till.
+
+**Korrigeringar och förbättringar**
+
+- Korrigerade ett fel i [Media Analytics-spåraren](commands/getmediaanalyticstracker.md) där egenskapen `length` för mediaobjektet felaktigt accepterade ogiltiga datatyper.
+- Förbättrad felhantering för [identitetshantering](identity/overview.md) för att kunna bearbeta löftesavvisanden korrekt när identitetssökningen misslyckas.
+- Ett problem där [personaliseringsinnehåll](personalization/rendering-personalization-content.md) med HTML-innehållsobjekt inte kunde återges har åtgärdats. Felet beror på att `renderStatusHandler` saknas.
+- Åtgärdade aktivitetskartan [URL-samling](commands/configure/clickcollectionenabled.md) för att hantera URL:er som inte är HTTP.
 
 ## Version 2.27.0 - 20 maj 2025
 
@@ -166,7 +179,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 **Korrigeringar och förbättringar**
 
-- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE).
+- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
 
 ## Version 2.16.0 - 25 april 2023
 
