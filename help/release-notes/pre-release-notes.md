@@ -4,10 +4,10 @@ description: En förhandsgranskning av den senaste versionsinformationen för Ad
 hide: true
 hidefromtoc: true
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: fddefb7de85b5dcb8c8721e14d04efc0567ccae4
+source-git-commit: 7e91181f71b84fdaf04a39e003cbbd415827e282
 workflow-type: tm+mt
-source-wordcount: '1352'
-ht-degree: 22%
+source-wordcount: '1381'
+ht-degree: 21%
 
 ---
 
@@ -23,8 +23,8 @@ ht-degree: 22%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 juli 2025**
@@ -56,6 +56,7 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 | Förbättrad datastream-information för kantmål | Förbättrad information om rätt spår för Adobe Target och anpassade Personalization-destinationer visar nu datasternamnet, vilket ger tydligare synlighet i associerade datastream-konfigurationer och minskar förvirringen vid granskning av befintliga dataflöden. **[!UICONTROL Datastream ID]**-väljaren i målkonfigurationsskärmen har uppdaterats till **[!UICONTROL Datastream]** för att användargränssnittet ska bli tydligare. |
 | Synlighet för marknadsföringsåtgärder i målval | Marknadsföringsåtgärder visas nu i den högra listen på fliken **[!UICONTROL Browse]** och på sidan **[!UICONTROL Dataflow runs]**, vilket ger omedelbar synlighet till ändringar av marknadsföringsåtgärder utan att det krävs navigering till visningssidan. Den här förbättringen förbättrar användarupplevelsen genom att göra det enklare att verifiera konfigurationer av marknadsföringsåtgärder under målkonfigurationen. |
 | (Begränsad beta) Redigera marknadsföringsåtgärder för destinationer | Nu kan du redigera marknadsföringsåtgärder för befintliga destinationer. Den här funktionaliteten finns i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst till den. |
+| (Begränsad betaversion) Redigera mål | Du kan nu redigera målkonfigurationen när du har skapat den. Den här funktionaliteten finns i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst till den. |
 | Kontonamn och beskrivningar för målanslutningar | Nu kan du lägga till kontonamn och beskrivningar när du ansluter till mål, vilket ger bättre hantering av mål med flera konton. |
 
 **Korrigeringar**
