@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar inställningar för filexport för mål som skapats med Destination SDK.
 title: Batchkonfiguration
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a149e0b96b68c8ac61e355cf8605742feb4eec41
 workflow-type: tm+mt
 source-wordcount: '1031'
 ht-degree: 0%
@@ -63,7 +63,9 @@ Värdena som du anger här visas i steget [Schemalägg målexport](../../../ui/a
       "EVERY_6_HOURS",
       "EVERY_8_HOURS",
       "EVERY_12_HOURS",
-      "ONCE"
+      "ONCE",
+      "WEEKLY",
+      "MONTHLY"
    ],
    "defaultFrequency":"DAILY",
    "defaultStartTime":"00:00",
@@ -92,7 +94,7 @@ Värdena som du anger här visas i steget [Schemalägg målexport](../../../ui/a
 | `allowDedupeKeyFieldSelection` | Boolean | Ange som `true` så att kunderna kan ange dedupliceringsnycklar. Standardvärdet är `false`.  Mer information finns i [Dedupliceringsnycklar](../../../ui/activate-batch-profile-destinations.md#deduplication-keys). |
 | `defaultExportMode` | Enum | Definierar standardläget för filexport. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> Standardvärdet är `DAILY_FULL_EXPORT`. Mer information om schemaläggning av filexport finns i [dokumentationen för batchaktivering](../../../ui/activate-batch-profile-destinations.md#scheduling). |
 | `allowedExportModes` | Lista | Definierar vilka filexportlägen som är tillgängliga för kunderna. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> |
-| `allowedScheduleFrequency` | Lista | Definierar den filexportfrekvens som är tillgänglig för kunder. Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
+| `allowedScheduleFrequency` | Lista | Definierar den filexportfrekvens som är tillgänglig för kunder. Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li><li>`WEEKLY`</li><li>`MONTHLY`</li></ul> |
 | `defaultFrequency` | Enum | Definierar standardexportfrekvensen för filer.Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> Standardvärdet är `DAILY`. |
 | `defaultStartTime` | Sträng | Definierar standardstarttiden för filexporten. Använder 24-timmars filformat. Standardvärdet är &quot;00:00&quot;. |
 | `filenameConfig.allowedFilenameAppendOptions` | Sträng | *Krävs*. Lista över tillgängliga filnamnsmappar som användare kan välja mellan. Detta avgör vilka objekt som läggs till i de exporterade filnamnen (målgrupps-ID, organisationsnamn, exportdatum och exporttid med mera). När du anger `defaultFilename` bör du se till att du inte duplicerar makron. <br><br>Värden som stöds: <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>Oavsett i vilken ordning du definierar makrona visas de alltid i den ordning som de visas här. <br><br> Om `defaultFilename` är tom måste listan `allowedFilenameAppendOptions` innehålla minst ett makro. |
