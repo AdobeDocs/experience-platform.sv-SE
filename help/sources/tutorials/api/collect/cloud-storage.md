@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för molnlagringskällor med API:t för flödestjän
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du hämtar data från ett molnlagringsutrymme från tredje part och för in dem i Experience Platform med hjälp av källanslutningar och API:er.
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: b184319f6c5f5430a5ae1e9de4728b5074bca9b8
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '1792'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,8 @@ curl -X POST \
       },
       "params": {
           "path": "/acme/summerCampaign/account.csv",
-          "type": "file"
+          "type": "file",
+          "cdcEnabled": true
       },
       "connectionSpec": {
           "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
@@ -100,6 +101,7 @@ curl -X POST \
 | `data.properties.compressionType` | (Valfritt) En egenskap som definierar den komprimerade filtypen för förtäring. De komprimerade filtyper som stöds är: `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip` och `tar`. **Obs!**: Egenskapen `compressionType` kan bara användas vid import av avgränsade filer eller JSON-filer. |
 | `params.path` | Sökvägen till källfilen som du försöker komma åt. Den här parametern pekar på en enskild fil eller en hel mapp.  **Obs!**: Du kan använda en asterisk i stället för filnamnet för att ange att en hel mapp ska tas emot. Till exempel: `/acme/summerCampaign/*.csv` kommer att importera hela mappen `/acme/summerCampaign/`. |
 | `params.type` | Filtypen för den källdatafil som du vill importera. Använd typen `file` för att importera en enskild fil och använd typen `folder` för att importera en hel mapp. |
+| `params.cdcEnabled` | Ett booleskt värde som anger om registrering av ändringshistorik är aktiverat eller inte. Den här egenskapen stöds av följande molnlagringskällor: <ul><li>[!DNL Azure Blob]</li><li>[!DNL Data Landing Zone]</li><li>[!DNL Google Cloud Storage]</li><li>[!DNL SFTP]</li></ul> Mer information finns i guiden om hur du använder [ändring av datainhämtning i källor](../change-data-capture.md). |
 | `connectionSpec.id` | Det ID för anslutningsspecifikation som är kopplat till din specifika molnlagringskälla. I [bilagan](#appendix) finns en lista över anslutningsspecifikations-ID:n. |
 
 **Svar**

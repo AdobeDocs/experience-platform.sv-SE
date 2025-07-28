@@ -1,13 +1,11 @@
 ---
-keywords: Experience Platform;home;populära topics;third party database;database flow service
-solution: Experience Platform
 title: Utforska en databas med API:t för Flow Service
 description: I den här självstudien används API:t för Flow Service för att utforska innehållet och filstrukturen i en tredjepartsdatabas.
 exl-id: 94935492-a7be-48dc-8089-18476590bf98
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 46e1a62e558a209ffed4a693cfd71ad5e76d7d98
 workflow-type: tm+mt
-source-wordcount: '561'
-ht-degree: 0%
+source-wordcount: '386'
+ht-degree: 1%
 
 ---
 
@@ -19,38 +17,18 @@ I den här självstudien används API:t [!DNL Flow Service] för att utforska in
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster.
-* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en tredjepartsdatabas med API:t [!DNL Flow Service].
 
-### Samla in nödvändiga inloggningsuppgifter
+### Använda Experience Platform API:er
 
-Den här självstudien kräver att du har en giltig anslutning till den tredjepartsdatabas som du vill importera data från. En giltig anslutning innefattar databasens anslutningsspecifikations-ID och anslutnings-ID. Mer information om hur du skapar en databasanslutning och hämtar dessa värden finns i [källanslutningsöversikten](./../../../home.md#database).
-
-### Läser exempel-API-anrop
-
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
-
-### Samla in värden för obligatoriska rubriker
-
-För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla E[!DNL xperience Experience Platform] API-anrop, vilket visas nedan:
-
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {ORG_ID}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
-
-* `Content-Type: application/json`
+Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../landing/api-guide.md).
 
 ## Utforska era datatabeller
 
-Med hjälp av anslutnings-ID:t för din databas kan du utforska dina datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Experience Platform].
+Med hjälp av anslutnings-ID:t för din databas kan du utforska dina datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till Experience Platform.
 
 **API-format**
 
@@ -75,7 +53,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med tabeller från databasen. Hitta tabellen som du vill hämta till [!DNL Experience Platform] och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
+Ett lyckat svar returnerar en array med tabeller från databasen. Leta reda på tabellen som du vill hämta till Experience Platform och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
 
 ```json
 [
@@ -146,10 +124,14 @@ Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om 
                 }
             }
         ]
+    },
+    "data": [],
+    "cdcMetadata": {
+      "columnDetected": true
     }
 }
 ```
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du undersökt din databas, hittat sökvägen till tabellen som du vill importera till [!DNL Experience Platform] och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från din databas och hämta dem till Experience Platform](../collect/database-nosql.md).
+I den här självstudiekursen har du undersökt din databas, hittat sökvägen till tabellen som du vill importera till Experience Platform och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från din databas och hämta dem till Experience Platform](../collect/database-nosql.md).
