@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: cfc221250a9c8f91b16aa1d4572263ecaf4eeccc
+source-git-commit: 1536201961211aeb747e418794196c146d86e869
 workflow-type: tm+mt
-source-wordcount: '2620'
+source-wordcount: '2634'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Med Adobe Experience Platform kan ni leverera personaliserade flerkanalsupplevel
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda. När du granskar följande skyddsutkast förutsätts det att du har modellerat data korrekt. Om du har frågor om hur du modellerar data kan du kontakta kundtjänstrepresentanten.
 
@@ -120,9 +120,9 @@ De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrup
 | --------- | ----- | ---------- | ----------- |
 | Målgrupper per sandlåda | 4000 | Prestandaskydd | Du kan ha upp till 4 000 **aktiva** målgrupper per sandlåda. Du kan ha fler än 4 000 målgrupper per organisation, förutsatt att det finns färre än 4 000 målgrupper i varje **enskild** sandlåda. Detta inkluderar grupper, strömning och gränspubliken. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om att [skapa målgrupper](/help/segmentation/ui/segment-builder.md) med segmentbyggaren. |
 | Edge målgrupper per sandlåda | 150 | Prestandaskydd | Du kan ha upp till 150 **aktiva**-målgrupper per sandlåda. Du kan ha fler än 150 målgrupper per organisation, förutsatt att det finns färre än 150 målgrupper i varje **enskild** sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [målgrupper](/help/segmentation/methods/edge-segmentation.md). |
-| Edge genomströmning i alla sandlådor | 1 500 RPS | Prestandaskydd | Edge segmentering stöder ett toppvärde på 1 500 inkommande händelser per sekund i Adobe Experience Platform Edge Network. Edge-segmentering kan ta upp till 350 millisekunder att bearbeta en inkommande händelse när den kommer in i Adobe Experience Platform Edge Network. Läs mer om [målgrupper](/help/segmentation/methods/edge-segmentation.md). |
+| Edge genomströmning i alla sandlådor | 1 500 RPS | Prestandaskydd | Edge segmentering har stöd för ett kombinerat toppvärde på 1 500 inkommande händelser per sekund som läggs in i Adobe Experience Platform Edge Network i dina produktions- och utvecklingssandlådor. Edge-segmentering kan ta upp till 350 millisekunder att bearbeta en inkommande händelse när den kommer in i Adobe Experience Platform Edge Network. Läs mer om [målgrupper](/help/segmentation/methods/edge-segmentation.md). |
 | Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | Du kan ha upp till 500 **aktiva** direktuppspelade målgrupper per sandlåda. Du kan ha fler än 500 direktuppspelade målgrupper per organisation, förutsatt att det finns färre än 500 direktuppspelade målgrupper i varje **enskild** sandlåda. Detta inkluderar både strömnings- och edge-målgrupper. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelade målgrupper](/help/segmentation/methods/streaming-segmentation.md). |
-| Direktuppspelningsgenomströmning över alla sandlådor | 1 500 RPS | Prestandaskydd | Direktuppspelningssegmentering stöder ett toppvärde på 1 500 inkommande händelser per sekund. Det kan ta upp till 5 minuter att kvalificera en profil för segmentmedlemskap. Läs mer om [direktuppspelade målgrupper](/help/segmentation/methods/streaming-segmentation.md). |
+| Direktuppspelningsgenomströmning över alla sandlådor | 1 500 RPS | Prestandaskydd | Direktuppspelningssegmentering har stöd för ett kombinerat toppvärde på 1 500 inkommande händelser per sekund i dina produktions- och utvecklingssandlådor. Det kan ta upp till 5 minuter att kvalificera en profil för segmentmedlemskap. Läs mer om [direktuppspelade målgrupper](/help/segmentation/methods/streaming-segmentation.md). |
 | Gruppera målgrupper per sandlåda | 4000 | Prestandaskydd | Du kan ha upp till 4 000 **aktiva** gruppmålgrupper per sandlåda. Du kan ha fler än 4000 gruppmålgrupper per organisation, förutsatt att det finns färre än 4000 gruppmålgrupper i varje **enskild** sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
 | Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan skapa högst 50 kontomålgrupper i en sandlåda. När du har nått 50 målgrupper i en sandlåda inaktiveras kontrollen **[!UICONTROL Create audience]** när du försöker skapa en ny målgrupp. Läs mer om [kontominnen](/help/segmentation/types/account-audiences.md). |
 | Publicerade kompositioner per sandlåda | 10 | Prestandaskydd | Du kan ha högst 10 publicerade kompositioner i en sandlåda. Läs mer om [målgruppssammansättning i gränssnittsguiden](/help/segmentation/ui/audience-composition.md). |
@@ -188,7 +188,7 @@ Flera rapportsviter kan aktiveras för profilen så länge som alla datakonflikt
 I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=sv-SE#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
