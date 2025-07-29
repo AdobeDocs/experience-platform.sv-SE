@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Experience Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: cf8912aea5c46b3414486f638b92eebf556528a9
+source-git-commit: 99a2bb12fb0ed8b6bb9001d25f2bddc17201c8cf
 workflow-type: tm+mt
-source-wordcount: '2438'
+source-wordcount: '2486'
 ht-degree: 1%
 
 ---
@@ -28,6 +28,10 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 - Förbättrad felhantering för [identitetshantering](identity/overview.md) för att kunna bearbeta löftesavvisanden korrekt när identitetssökningen misslyckas.
 - Ett problem där [personaliseringsinnehåll](personalization/rendering-personalization-content.md) med HTML-innehållsobjekt inte kunde återges har åtgärdats. Felet beror på att `renderStatusHandler` saknas.
 - Åtgärdade aktivitetskartan [URL-samling](commands/configure/clickcollectionenabled.md) för att hantera URL:er som inte är HTTP.
+
+**Kända fel**
+
+- Den [anpassade build](/help/web-sdk/install/create-custom-build.md)-processen som använder `npx @adobe/alloy` fungerar för närvarande inte som förväntat i version 2.28.0. Alla komponenter inkluderas i det genererade bygget, oavsett vilka moduler som har valts. Problemet påverkar inte JavaScript-standardfilen som finns i CDN. En korrigering pågår.
 
 ## Version 2.27.0 - 20 maj 2025
 
@@ -179,7 +183,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 **Korrigeringar och förbättringar**
 
-- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE).
+- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
 
 ## Version 2.16.0 - 25 april 2023
 

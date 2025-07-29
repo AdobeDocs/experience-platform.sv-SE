@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: cf8912aea5c46b3414486f638b92eebf556528a9
+source-git-commit: 99a2bb12fb0ed8b6bb9001d25f2bddc17201c8cf
 workflow-type: tm+mt
-source-wordcount: '2720'
+source-wordcount: '2788'
 ht-degree: 1%
 
 ---
@@ -25,6 +25,11 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 - Ett problem där ett fel uppstår när en datastream-åsidosättning aktiveras via ett dataelement har åtgärdats.
 - Ett problem har korrigerats där tomma `idSyncContainerId` åsidosättningar skulle orsaka ett fel.
 - När mediedataelement matchas inkluderas nu händelseobjektet.
+
+**Kända fel**
+
+- Efter utgåvan av v2.31.0 identifierades ett problem med byggprocessen för [anpassade komponenter](/help/web-sdk/install/create-custom-build.md). Medan anpassade byggen fortsätter att fungera ingår alla komponenter för närvarande i bygget, vilket resulterar i ett paket i full storlek oavsett komponentval. En fix till detta problem håller på att utvecklas. Om du förlitar dig på anpassade komponenter för att minimera byggstorleken rekommenderar vi att du väntar på en framtida version.
+
 
 ## Version 2.30.1 - 27 maj 2025
 
