@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform juli 2025
 description: Versionsinformationen för Adobe Experience Platform från juli 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: ec87cb1c8755f52233a5725aa3bb0c80a135d60c
+source-git-commit: 2a8d5576ea937cdda70f10218b5eec35613fd264
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1617'
+ht-degree: 24%
 
 ---
 
@@ -18,8 +18,8 @@ ht-degree: 0%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 juli 2025**
@@ -28,11 +28,11 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 
 - [Kapacitet](#capacity)
 - [Mål](#destinations)
-- [Datainmatning](#ingestion)
-- [Frågetjänst](#query-service)
+- [Datainmatning](#data-ingestion)
+- [Frågetjänst]&#x200B;(#query-service
 - [Real-Time CDP B2B-utgåva](#b2b)
 - [Sandlådor](#sandboxes)
-- [Segmenteringstjänst](#segmentation)
+- [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
 ## Kapacitet {#capacity}
@@ -155,5 +155,6 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | Stöd för registrering av ändringsdata i utvalda källor med API:t [!DNL Flow Service] | Nu kan du skapa dataflöden som möjliggör registrering av ändringsdata för inkrementellt intag med hjälp av källanslutningar. Med den här funktionen kan kunderna ta med sig datatypen change för inkrementellt intag, vilket förbättrar dataaktualiteten och minskar belastningen på processerna. Mer information finns i dokumentationen om [hur du använder datainhämtning för källor](../../sources/tutorials/api/change-data-capture.md) |
+| Stöd för mjuk borttagning av poster i [!DNL Salesforce] | Källan [!DNL Salesforce] har nu stöd för att ta med mjuka borttagna poster via en valfri `includeDeletedObjects`-parameter. Om värdet är true kan kunder ta med mjuka borttagna poster i sina [!DNL Salesforce]-frågor och hämta dessa poster till Experience Platform. Mer information finns i [[!DNL Salesforce] källdokumentationen](../../sources/connectors/crm/salesforce.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).

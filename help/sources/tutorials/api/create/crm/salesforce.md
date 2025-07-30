@@ -2,9 +2,9 @@
 title: Anslut Salesforce till Experience Platform med API:t för flödestjänst
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
+source-git-commit: 56307d8457ba6d0046ad80a7c97405220aa6161c
 workflow-type: tm+mt
-source-wordcount: '1118'
+source-wordcount: '1175'
 ht-degree: 0%
 
 ---
@@ -63,6 +63,7 @@ Om du vill ansluta ditt [!DNL Salesforce]-konto till [!DNL Flow Service] med OAu
 | `clientId` | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | `clientSecret` | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | `apiVersion` | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. Det här värdet är obligatoriskt för autentisering av OAuth2-klientautentiseringsuppgifter. |
+| `includeDeletedObjects` | Ett booleskt värde som används för att avgöra om mjuka borttagna poster ska tas med. Om värdet är true kan poster som har tagits bort på skärmen inkluderas i din [!DNL Salesforce]-fråga och hämtas från ditt konto till Experience Platform. Om du inte anger din konfiguration används standardvärdet `false`. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL Salesforce] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5).
@@ -162,7 +163,8 @@ curl -X POST \
             "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
             "clientId": "xxxx",
             "clientSecret": "xxxx",
-            "apiVersion": "60.0"
+            "apiVersion": "60.0",
+            "includeDeletedObjects": true
         }
       },
       "connectionSpec": {
@@ -178,6 +180,7 @@ curl -X POST \
 | `auth.params.clientId` | Klient-ID som är associerat med ditt [!DNL Salesforce]-konto. |
 | `auth.params.clientSecret` | Klienthemligheten som är associerad med ditt [!DNL Salesforce]-konto. |
 | `auth.params.apiVersion` | REST API-versionen för den [!DNL Salesforce]-instans som du använder. |
+| `auth.params.includeDeletedObjects` | Ett booleskt värde som används för att bestämma om mjuka borttagna poster ska inkluderas eller inte. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Salesforce]: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 +++

@@ -2,16 +2,16 @@
 title: Anslut ditt Salesforce-konto med Experience Platform användargränssnitt
 description: Lär dig hur du ansluter ditt Salesforce-konto och överför dina CRM-data till Experience Platform via användargränssnittet.
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: eab6303a3b420d4622185316922d242a4ce8a12d
+source-git-commit: 56307d8457ba6d0046ad80a7c97405220aa6161c
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '971'
 ht-degree: 0%
 
 ---
 
 # Anslut ditt [!DNL Salesforce]-konto till Experience Platform med användargränssnittet
 
-I den här självstudien beskrivs hur du ansluter ditt [!DNL Salesforce]-konto och överför dina CRM-data till Adobe Experience Platform med Experience Platform användargränssnitt.
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Salesforce]-konto och överför dina CRM-data till Adobe Experience Platform med Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -58,6 +58,7 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 | Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | Klienthemlighet | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | API-version | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| Inkludera borttagna objekt | Ett booleskt värde som används för att avgöra om mjuka borttagna poster ska tas med. Om värdet är true kan poster som tas bort på skärmen tas med i din [!DNL Salesforce]-fråga och hämtas från ditt konto till Experience Platform Om du inte anger din konfiguration används standardvärdet `false`. |
 
 Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL Salesforce] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5).
 
@@ -67,13 +68,13 @@ När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stege
 
 ## Anslut ditt [!DNL Salesforce]-konto
 
-I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet går du till **[!UICONTROL Sources]** på den vänstra menyn för att öppna arbetsytan i [!UICONTROL Sources]. Använd katalogen till vänster för att bläddra bland kategorier, eller använd sökfältet för att snabbt hitta källan som du vill ansluta till.
 
 Välj **[!DNL Salesforce]** under kategorin *[!UICONTROL CRM]* och välj sedan **[!UICONTROL Add data]**.
 
 >[!TIP]
 >
->Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
+>I källkatalogen visas **[!UICONTROL Set up]** om inget konto är anslutet, eller **[!UICONTROL Add data]** om ett konto redan är autentiserat.
 
 ![Källkatalogen i Experience Platform-gränssnittet med Salesforce-källkortet markerat.](../../../../images/tutorials/create/salesforce/catalog.png)
 
@@ -116,10 +117,11 @@ För autentiseringsuppgifter för OAuth 2-klient väljer du **[!UICONTROL OAuth2
 * Klient-ID
 * Klienthemlighet
 * API-version
+* Inkludera borttagningsobjekt
 
 När du är klar väljer du **[!UICONTROL Connect to source]**.
 
-![OAuth-gränssnittet för att skapa Salesforce-konton.](../../../../images/tutorials/create/salesforce/oauth2.png)
+![OAuth-gränssnittet för att skapa Salesforce-konton.](../../../../images/tutorials/create/salesforce/oauth.png)
 
 >[!ENDTABS]
 
