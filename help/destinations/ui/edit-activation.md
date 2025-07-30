@@ -4,9 +4,9 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 24951f7680f134beb64c7679a94bac9b18042af1
+source-git-commit: ec87cb1c8755f52233a5725aa3bb0c80a135d60c
 workflow-type: tm+mt
-source-wordcount: '830'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,7 @@ I Adobe Experience Platform kan du konfigurera olika komponenter i befintliga ak
 * [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
 * [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)
 * [Lägg till ytterligare datauppsättningar](#add-datasets) i aktiveringsarbetsflödet
+* [Redigera marknadsföringsåtgärder](#edit-marketing-actions) för dina aktiveringsdataflöden
 * [Använd åtkomstetiketter](#apply-access-labels) på exporterade data
 * [Redigera namn och beskrivningar](#edit-names-descriptions) för aktiveringsdataflödena
 
@@ -108,6 +109,23 @@ Välj **[!UICONTROL Export datasets]** i den högra listen för att välja ytter
 >Det här alternativet är bara synligt för [mål som stöder datauppsättningsexport](export-datasets.md#supported-destinations).
 
 ![Experience Platform UI-bild som visar körningsalternativet Exportera datauppsättningar.](../assets/ui/edit-activation/export-datasets.png)
+
+## [!BADGE Beta]{type=Informative} Redigera marknadsföringsåtgärder {#edit-marketing-actions}
+
+>[!NOTE]
+>
+>Den här funktionen finns för närvarande i **beta**. Kontakta din Adobe-representant om du vill få åtkomst till den.
+
+Du kan lägga till eller ta bort marknadsföringsåtgärder som du ställer in när du ansluter till målet från början.
+
+Välj **[!UICONTROL Edit marketing actions]** i den högra listen för att öppna skärmen för val av marknadsföringsåtgärder.
+
+![Experience Platform-gränssnittsbild som visar alternativet för redigering av marknadsföringsåtgärder.](../assets/ui/edit-activation/edit-marketing-actions.png)
+
+Välj tillämpliga marknadsföringsåtgärder och välj sedan **[!UICONTROL Save]** för att tillämpa ändringarna.
+
+![Experience Platform-gränssnittsbild som visar skärmen Redigera marknadsföringsåtgärder.](../assets/ui/edit-activation/edit-marketing-actions-screen.png)
+
 
 ## Använd åtkomstetiketter {#apply-access-labels}
 
