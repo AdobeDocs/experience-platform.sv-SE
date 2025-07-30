@@ -1,12 +1,12 @@
 ---
 title: Målgrupper
 description: Lär dig hur du skapar och använder kontomålgrupper för att rikta in kontoprofiler på efterföljande destinationer.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1498'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ ht-degree: 0%
 Med kontosegmentering kan Adobe Experience Platform göra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper så enkel och sofistikerad som möjligt.
 
 Kontomålgrupper kan användas som indata för kontobaserade destinationer, så att ni kan inrikta er på personer inom dessa konton i underordnade tjänster. Du kan till exempel använda kontobaserade målgrupper för att hämta poster för alla konton som **inte** har kontaktinformation för alla personer med titeln Chief Operating Officer (COO) eller Chief Marketing Officer (CMO).
+
+>[!NOTE]
+>
+>Som en del av B2B-arkitekturens uppgradering beräknas nu målgruppsstorleksberäkningarna för målgrupper med B2B-enheter med exakt precision. Dessa uppskattningar är tillgängliga under förhandsgranskningen och ger mer korrekta och tillförlitliga insikter för målgrupper som involverar komplexa B2B-relationer. <br>Mer information finns i [Översikt över uppgraderingar av Real-Time CDP B2B edition-arkitektur](../../rtcdp/b2b-architecture-upgrade.md).
 
 ## Terminologi {#terminology}
 
@@ -126,8 +130,8 @@ Följande avsnitt innehåller ytterligare information om kontomaterial.
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_eventLookbackWindow"
->title="Maximalt uppslagsfönsterfel"
->abstract="Det maximala uppslagsfönstret för Experience Events är 30 dagar."
+>title="Fönstret Lookback"
+>abstract="Använd uppslagsfönstret för att visa hela historiken för händelser på personnivå."
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_combinationMaxDepth"
@@ -194,20 +198,21 @@ Följande avsnitt innehåller ytterligare information om kontomaterial.
 >title="Begränsningsöverträdelse"
 >abstract="Publiken bryter mot en begränsning. Läs det länkade dokumentet för mer information."
 
-När du använder kontomålgrupper måste målgruppen **&#x200B;**&#x200B;uppfylla följande begränsningar:
+När du använder kontomålgrupper måste målgruppen **** uppfylla följande begränsningar:
 
-- Det maximala uppslagsfönstret för Experience Events är **30 dagar**.
 - Det maximala djupet för kapslade behållare är **5**.
    - Det innebär att du **inte kan** ha fler än fem kapslade behållare när du skapar målgruppen.
 - Det högsta antalet regler i en enskild behållare är **5**.
    - Det innebär att målgruppen **inte kan** ha fler än fem regler som utgör målgruppen.
 - Det maximala antalet korsentiteter som kan användas är **5**.
    - En korsenhet är när du ändrar mellan olika enheter inom målgruppen. Du kan till exempel gå från ett konto till en person till en marknadsföringslista.
-- Anpassade entiteter **kan inte** användas.
 - Det maximala antalet värden som kan kontrolleras för ett enskilt fält är **50**.
    - Om du till exempel har fältet&quot;Ortnamn&quot; kan du kontrollera det värdet mot 50 stadsnamn.
-- Kontomålgrupper **kan inte** använda `inSegment` händelser.
 - Kontomålgrupper **kan inte** använda sekventiella händelser.
 - Kontomålgrupper **kan inte** använda kartor.
 - Det maximala djupet för kapslade arrayer är **5**.
 - Det högsta antalet kapslade objekt är **10**.
+
+<!-- - The maximum lookback window for Experience Events is **30 days**. -->
+<!-- - Account audiences **cannot** use `inSegment` events. -->
+<!-- - Custom entities **cannot** be used. -->
