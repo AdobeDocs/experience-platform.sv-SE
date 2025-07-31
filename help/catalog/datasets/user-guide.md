@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 47cb1e9851a288961ecca01cf609b72342c58631
+source-git-commit: 24b0df7025971a999453cd988813aa32b449ba0f
 workflow-type: tm+mt
-source-wordcount: '4316'
+source-wordcount: '4244'
 ht-degree: 0%
 
 ---
@@ -108,9 +108,9 @@ Mer information om de här tillgängliga åtgärderna finns i respektive avsnitt
 
 ### Förhandsgranska en datauppsättning {#preview}
 
-Du kan förhandsgranska datauppsättningsexempeldata både från de infogade alternativen på fliken [!UICONTROL Browse] och från vyn [!UICONTROL Dataset activity]. Ett nytt förhandsgranskningsfönster för datauppsättningar finns med ytterligare navigerings- och kontextförbättringar.
+Du kan förhandsgranska upp till 100 rader med exempeldata för en datauppsättning, antingen från de infogade alternativen på fliken [!UICONTROL Browse] eller från vyn [!UICONTROL Dataset activity].
 
-På fliken [!UICONTROL Browse] väljer du ellipsen (..) bredvid datauppsättningsnamnet som du vill förhandsgranska. En lista med alternativ visas. Välj sedan [!UICONTROL Preview dataset] bland de tillgängliga alternativen. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och anger att förhandsgranskningen inte är tillgänglig.
+På fliken [!UICONTROL Browse] markerar du ellipsen (..) bredvid datauppsättningsnamnet och väljer [!UICONTROL Preview dataset]. Om datauppsättningen är tom inaktiveras förhandsvisningsalternativet. Du kan också välja **[!UICONTROL Dataset activity]** i skärmens övre högra hörn på skärmen **[!UICONTROL Preview dataset]**.
 
 ![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Förhandsgranska datauppsättning markerat för den valda datauppsättningen.](../images/datasets/user-guide/preview-dataset-option.png)
 
@@ -118,15 +118,16 @@ Då öppnas förhandsgranskningsfönstret, där den hierarkiska schemavyn för d
 
 >[!NOTE]
 >
->I schemarollen till vänster i vyn visas endast fält som innehåller data. Fält utan data döljs automatiskt för att effektivisera användargränssnittet och fokusera på relevant information.
+>I schemarollen till vänster visas endast fält som innehåller data. Fält utan data döljs automatiskt för att effektivisera användargränssnittet och fokusera på relevant information.
 
 ![Dialogrutan för förhandsgranskning av datauppsättning med information om strukturen, samt exempelvärden, för datauppsättningen visas.](../images/datasets/user-guide/preview-dataset.png)
 
-Du kan också välja **[!UICONTROL Dataset activity]** i det övre högra hörnet av skärmen **[!UICONTROL Preview dataset]** om du vill förhandsgranska upp till 100 rader med data.
+Du kan också välja **[!UICONTROL Dataset activity]** på skärmen **[!UICONTROL Preview dataset]** för att öppna förhandsgranskningsfönstret och granska ett exempel på datauppsättningens struktur och värden.
 
 ![Knappen Förhandsgranska datauppsättning är markerad.](../images/datasets/user-guide/select-preview.png)
 
-Förhandsgranskningsfönstret för datauppsättningar har ett smidigt gränssnitt för att utforska och validera datauppsättningar.
+Med förhandsgranskningsfönstret för datauppsättningar kan du snabbt utforska och validera datauppsättningens struktur och data.
+
 
 #### Förhandsgranskningsfönster för datauppsättning {#dataset-preview-window}
 
@@ -137,34 +138,25 @@ I följande animering visas förhandsgranskningsfönstret för datauppsättninga
 Fönstret för förhandsgranskning av datauppsättningar innehåller:
 
 * Ett sidofält till vänster för objektwebbläsare för navigering och filtrering av datamängdsfält.
-* Datatypsindikatorer som visas bredvid varje kolumnnamn för att snabbt få insikt i datauppsättningens struktur.
+* Datatypsindikatorer bredvid varje kolumnnamn för att få insikt i datauppsättningens struktur.
 * En SQL-fråga visas högst upp i fönstret och visar den fråga som används för att generera datauppsättningen.
-* En formaterad tabellvy med upp till 100 rader i det nedre högra området för effektiv datagranskning.
-* Direkt navigering till Frågeredigeraren för Data Distiller-användare, där SQL-frågan är ifylld för ytterligare utforskande eller ändring.
+* En formaterad tabellvy med upp till 100 rader för effektiv datagranskning.
 
-Dessa funktioner har stöd för snabb navigering, schemaförståelse och transparent datamängdsvalidering.
-
-Välj **[!UICONTROL Preview dataset]** bland de infogade åtgärderna eller från skärmen [!UICONTROL Dataset activity] för att öppna förhandsgranskningsfönstret.
-
->[!NOTE]
->
->I förhandsvisningsfönstret visas ett exempel på upp till 100 rader. Fält utan data tas inte med i vyn.
+Med de här funktionerna kan du navigera, förstå schemadetaljer och validera exempeldata effektivt.
 
 #### Kortkommando för Avancerad frågeredigerare {#query-editor-shortcut}
 
-Om din organisation har en Data Distiller-licens kan du komma åt den avancerade frågeredigeraren direkt från förhandsgranskningsfönstret för datauppsättningar.
+Om din organisation har en Data Distiller-licens kan du komma åt [!UICONTROL Advanced Query Editor] direkt från förhandsgranskningsfönstret för datauppsättningen. Använd den här genvägen när du vill gå från att förhandsgranska exempeldata till att köra och förfina frågor i Query Service.
 
 >[!AVAILABILITY]
 >
->Endast användare med den nödvändiga Distiller-licensen för data har åtkomst till den här funktionen. Om din organisation inte har Data Distiller visas inte alternativet [!UICONTROL Advanced query editor].
+>Åtkomsten till [!UICONTROL Advanced Query Editor] är begränsad till organisationer med en Data Distiller SKU-licens. Om din organisation inte har den licens som krävs visas inte det här alternativet i förhandsgranskningsfönstret för datauppsättningar.
 
-Välj **[!UICONTROL Advanced query editor]** i det övre högra hörnet av förhandsgranskningsfönstret för att öppna frågeredigeraren. Den aktuella förhandsgranskningsfrågan är förinläst och klar för körning eller ytterligare analys.
+Välj [!UICONTROL Advanced Query Editor] i det övre högra hörnet av förhandsgranskningsfönstret om du vill öppna frågetjänsten med den aktuella SQL-frågan förinläst och körd. Du kan fortsätta att analysera eller ändra SQL-satsen utan att skriva in frågan igen.
 
 ![Förhandsgranskningsfönstret för datauppsättningar visar knappen Avancerad frågeredigerare i det övre högra hörnet.](../images/datasets/user-guide/dataset-preview-advanced-query-editor.png)
 
-Med den här genvägen kan du enkelt gå från att förhandsgranska exempeldata till att köra och förfina frågor i frågetjänsten utan att ange SQL eller kontext igen.
-
-Använd underordnade tjänster som [!DNL Query Service] och [!DNL JupyterLab] för ytterligare dataåtkomst och analys. Mer information finns i följande dokument:
+Använd underordnade tjänster som [!DNL Query Service] och [!DNL JupyterLab] för ytterligare analys. Mer information finns i följande dokument:
 
 * [Översikt över frågetjänsten](../../query-service/home.md)
 * [Användarhandbok för JupyterLab](../../data-science-workspace/jupyterlab/overview.md)

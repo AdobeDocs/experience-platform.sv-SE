@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Fråga service och data Distiller frågor och svar
 description: Det här dokumentet innehåller vanliga frågor och svar om Query Service och Data Distiller. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: cd4734b2d837bc04e1de015771a74a48ff37173f
+source-git-commit: f0656fcde077fc6c983a7a2d8dc21d2548fa7605
 workflow-type: tm+mt
-source-wordcount: '5037'
+source-wordcount: '5168'
 ht-degree: 0%
 
 ---
@@ -406,7 +406,7 @@ Konsolutdata i gränssnittet för frågetjänsten är ett mer läsbart format:
 
 #### Konvertera från UTC-tidsstämpeln
 
-Metoden `from_utc_timestamp()` tolkar de angivna parametrarna **från tidsstämpeln för den lokala tidszonen** och tillhandahåller motsvarande tidsstämpel för det önskade området i UTC-format. I exemplet nedan är timmen 2:40 PM i användarens lokala tidszon. Seoul-tidszonen som skickas som en variabel ligger nio timmar före den lokala tidszonen.
+Metoden `from_utc_timestamp()` tolkar de angivna parametrarna **från tidsstämpeln för den lokala tidszonen** och tillhandahåller motsvarande tidsstämpel för det önskade området i UTC-format. I exemplet nedan är timmen 2:40PM i användarens lokala tidszon. Seoul-tidszonen som skickas som en variabel ligger nio timmar före den lokala tidszonen.
 
 ```SQL
 SELECT from_utc_timestamp('2021-08-31 14:40:00.0', 'Asia/Seoul');
@@ -647,6 +647,14 @@ Beräkningstimmar för en fråga kan fluktuera på grund av flera faktorer. Dess
 Infrastruktur för serverdelen har ständigt förbättrats för att optimera användningen av timmor för beräkning och bearbetningstid. Det innebär att du kan märka att prestandaförbättringarna förändras över tid.
 +++
 
+### Är Data Distiller prestanda olika för utvecklings- och produktionssandlådor?
+
++++Svar
+Du kan förvänta dig liknande prestanda när du kör frågor i både utvecklings- och produktionssandlådor. Båda miljöerna är utformade för att ge samma nivå av bearbetningskapacitet. Men det kan uppstå skillnader i beräkningstiden, beroende på mängden data som bearbetas och den övergripande systemaktiviteten när frågan körs.
+
+Spåra användningen av beräkningstimmar på kontrollpanelen [Licensanvändning](../dashboards/guides/license-usage.md) i Experience Platform-gränssnittet.
++++
+
 ## Användargränssnitt för frågor
 
 ### &quot;Skapa fråga&quot; fastnar &quot;Anslutningen initieras..&quot; när du försöker ansluta till frågetjänsten. Hur åtgärdar jag problemet?
@@ -752,6 +760,12 @@ Ja, klientdatorer från tredje part kan anslutas till Query Service via en engå
 +++Svar
 Värdet för autentiseringsuppgifter som inte förfaller är sammanfogade argument från `technicalAccountID` och `credential` från JSON-konfigurationsfilen. Lösenordsvärdet har formatet: `{{technicalAccountId}:{credential}}`.
 Mer information om hur du [ansluter till externa klienter med autentiseringsuppgifter finns i dokumentationen ](./ui/credentials.md#using-credentials-to-connect-to-external-clients).
++++
+
+### Finns det några begränsningar för specialtecken för lösenord som inte förfaller?
+
++++Svar
+Ja. När du anger ett lösenord för autentiseringsuppgifter som inte förfaller måste du ta med minst en siffra, en gemen, en versal och ett specialtecken. dollartecknet ($) stöds inte. Använd specialtecken som !, @, #, ^ eller &amp; i stället.
 +++
 
 ### Vilken typ av SQL-redigerare från tredje part kan jag ansluta till Query Service Editor?

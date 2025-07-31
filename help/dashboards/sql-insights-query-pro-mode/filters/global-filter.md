@@ -2,9 +2,9 @@
 title: Skapa ett globalt filter
 description: Lär dig filtrera dina datainsikter med ett anpassat globalt filter.
 exl-id: a0084039-8809-4883-9f68-c666dcac5881
-source-git-commit: 473aaa8dedd549cf524d77c9b0a37d71b4688805
+source-git-commit: 60b0c73766c89b98685810b4f58cfe1a40316dc9
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '518'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,10 @@ Dialogrutan [!UICONTROL Create a global filter] öppnas. När du skapar ett glob
 >Du måste inkludera ett ID och ett värde när du skapar ett globalt filter. Med exempelvärdena kan du köra SQL-satsen och skapa diagrammet. Observera att de exempelvärden du anger när du komponerar programsatsen ersätts med de faktiska värden du väljer för datumet eller det globala filtret vid körning.
 
 När frågan har körts visas resultatet på fliken Resultat. Välj **[!UICONTROL Next]**.
+
+>[!NOTE]
+>
+>Frågeresultaten är som standard begränsade till 100 rader. Om du vill returnera fler rader lägger du till en LIMIT-sats i SQL-frågan med önskat radantal. Om du vill hämta alla rader och ta bort standardgränsen använder du LIMIT 0 i frågan.
 
 ![[!UICONTROL Create a global filter dialog] med listrutan Datauppsättning, körningsikonen och nästa markerade.](../../images/sql-insights-query-pro-mode/global-filter.png)
 
