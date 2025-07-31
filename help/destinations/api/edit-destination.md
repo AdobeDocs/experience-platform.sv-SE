@@ -4,9 +4,9 @@ title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: ea397360e5277bef478b2173bfb5e4be4ac1fab4
 workflow-type: tm+mt
-source-wordcount: '1601'
+source-wordcount: '1614'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ I den här självstudiekursen beskrivs stegen för redigering av olika komponent
 
 >[!NOTE]
 >
-> De redigeringsåtgärder som beskrivs i den här självstudiekursen stöds för närvarande bara via API:t för Flow Service.
+> De redigeringsåtgärder som beskrivs i den här självstudiekursen stöds även i användargränssnittet i Experience Platform. Läs självstudiekursen om hur du [redigerar mål i användargränssnittet](/help/destinations/ui/edit-destination.md) om du vill ha mer information.
 
 ## Komma igång {#get-started}
 

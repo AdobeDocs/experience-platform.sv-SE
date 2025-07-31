@@ -3,9 +3,9 @@ keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;des
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a2420f86e650ce1ca8a5dc01d9a29548663d3f7c
+source-git-commit: a0326a6d616937552d7f8ff7001808bbfb69bd62
 workflow-type: tm+mt
-source-wordcount: '1175'
+source-wordcount: '1238'
 ht-degree: 0%
 
 ---
@@ -69,9 +69,9 @@ Fliken **[!UICONTROL Accounts]** visar information om anslutningar som du har up
 
 >[!TIP]
 >
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Aktivera kontroll ](/help/images/icons/data-add.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**&#x200B;för att exportera målgrupper eller datauppsättningar till det målet.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Redigera information ](/help/images/icons/edit.png)**[!UICONTROL Edit details]**&#x200B;för att [uppdatera](update-accounts.md) informationen för ett befintligt målkonto.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Ta bort ](/help/images/icons/delete.png)**[!UICONTROL Delete]**&#x200B;för att [ta bort](delete-destination-account.md) ett befintligt målkonto.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Aktivera kontroll ](/help/images/icons/data-add.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**för att exportera målgrupper eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Redigera information ](/help/images/icons/edit.png)**[!UICONTROL Edit details]**för att [uppdatera](update-accounts.md) informationen för ett befintligt målkonto.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Ta bort ](/help/images/icons/delete.png)**[!UICONTROL Delete]**för att [ta bort](delete-destination-account.md) ett befintligt målkonto.
 
 ![Fliken Konton](../assets/ui/workspace/destination-account-options.png)
 
@@ -92,16 +92,18 @@ Fliken **[!UICONTROL Browse]** visar de mål som du har upprättat en anslutning
 
 >[!TIP]
 >
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Aktivera målgrupper ](/help/images/icons/data-add.png)**[!UICONTROL Activate]**&#x200B;för att exportera målgrupper eller datauppsättningar till det målet.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Ta bort ](/help/images/icons/delete.png)**[!UICONTROL Delete]**&#x200B;för att [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Visa i övervakningskontroll ](/help/images/icons/monitoring.png)**[!UICONTROL View in monitoring]**&#x200B;för att visa aktiveringsinformation för det här målet på kontrollpanelen [Övervakning](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Prenumerera på aviseringar ](/help/images/icons/alert-add.png)**[!UICONTROL Subscribe to alerts]**&#x200B;för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på destinationsvarningar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesvarningar.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Aktivera målgrupper](/help/images/icons/data-add.png) **[!UICONTROL Activate audiences]** för att exportera målgrupper eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera målkontroll ](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**för att redigera befintliga målanslutningar. Mer information finns i självstudiekursen [Redigera mål](/help/destinations/ui/edit-destination.md).
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera marknadsföringsåtgärder](/help/images/icons/edit-marketing-actions.svg) **[!UICONTROL Edit marketing actions]** för att [ändra marknadsföringsåtgärderna](/help/destinations/ui/edit-activation.md#edit-marketing-actions) för det valda målet.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Ta bort](/help/images/icons/delete.png) **[!UICONTROL Delete]** för att [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Visa i övervakningskontroll](/help/images/icons/monitoring.png) **[!UICONTROL View in monitoring]** för att visa aktiveringsinformation för det här målet på kontrollpanelen [för övervakning](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Prenumerera på aviseringar ](/help/images/icons/alert-add.png) **[!UICONTROL Subscribe to alerts]** för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på destinationsvarningar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesvarningar.
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
 
 | Element | Beskrivning |
 |---------|----------|
-| Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. Samma kolumn innehåller två kontroller: [!UICONTROL Activate] och [!UICONTROL Delete destination]. |
+| Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. |
 | Datatyp | Den typ av data som stöds av målanslutningen. Datatyper som stöds: <ul><li>**[!UICONTROL Customers]**</li><li>**[!UICONTROL Prospects]**</li><li>**[!UICONTROL Accounts]**</li><li>**[!UICONTROL Datasets]**</li></ul> |
 | [!UICONTROL Last Dataflow Run Status] | Status för den senaste dataflödeskörningen. Mer information om dataflödeskörningar finns i [Visa målinformation](destination-details-page.md). |
 | [!UICONTROL Last Dataflow Run Date] | Tid och datum då den senaste dataflödeskörningen inträffade. Mer information om dataflödeskörningar finns i [Visa målinformation](destination-details-page.md). |
@@ -112,6 +114,7 @@ Fliken **[!UICONTROL Browse]** visar de mål som du har upprättat en anslutning
 | [!UICONTROL Activation Data] | Anger antalet målgrupper som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade målgrupperna. Mer information om aktiverade målgrupper finns på sidan [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) i målinformationssidan. |
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. Välj uppåt-/nedåtpilen för att sortera aktiveringsflödena efter det senaste först eller det äldsta först. |
 | [!UICONTROL Status] | `Enabled` eller `Disabled`. Anger om data aktiveras till det här målet. |
+| [!UICONTROL Access labels] | Visar alla åtkomstetiketter som har lagts till i måldataflödet. Läs mer om att [använda åtkomstetiketter i måldataflöden](/help/access-control/abac/apply-access-labels-destinations.md). |
 
 Klicka på en målrad för att visa mer information om målet i den högra listen, t.ex. mål-ID, beskrivning, antal aktiva målgrupper med mera.
 
