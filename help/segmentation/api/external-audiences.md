@@ -1,12 +1,10 @@
 ---
 title: API-slutpunkt för externa målgrupper
 description: Lär dig hur du använder API:t för externa målgrupper för att skapa, uppdatera, aktivera och ta bort externa målgrupper från Adobe Experience Platform.
-hide: true
-hidefromtoc: true
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: 3acadf73b5c82d6f5f0f1eaec41387bec897558d
+source-git-commit: 3e1eb697569d75d0ef3af53be1a556bdcd8a293b
 workflow-type: tm+mt
-source-wordcount: '2405'
+source-wordcount: '2219'
 ht-degree: 1%
 
 ---
@@ -528,24 +526,23 @@ Du kan hämta alla inmatningskörningar för den valda externa målgruppen genom
 
 **API-format**
 
-Följande slutpunkt har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. Dessa parametrar är valfria, men vi rekommenderar starkt att de används för att hjälpa dig att fokusera dina resultat.
+<!-- The following endpoint supports several query parameters to help filter your results. While these parameters are optional, their use is strongly recommended to help focus your results. -->
 
 ```http
 GET /external-audience/{AUDIENCE_ID}/runs
-GET /external-audience/{AUDIENCE_ID}/runs?{QUERY_PARAMETERS}
 ```
 
-**Frågeparametrar**
+<!-- **Query parameters**
 
-+++ En lista med tillgängliga frågeparametrar.
++++ A list of available query parameters. 
 
-| Parameter | Beskrivning | Exempel |
+| Parameter | Description | Example |
 | --------- | ----------- | ------- |
-| `limit` | Det maximala antalet objekt som returneras i svaret. Värdet kan ligga mellan 1 och 40. Som standard är gränsen 20. | `limit=30` |
-| `sortBy` | Den ordning som returnerade artiklar sorteras i. Du kan sortera efter antingen `name` eller `createdAt`. Dessutom kan du lägga till ett `-`-tecken för att sortera efter **fallande** i stället för **stigande** ordning. Som standard sorteras objekten efter `createdAt` i fallande ordning. | `sortBy=name` |
-| `property` | Ett filter för att avgöra vilka målgruppsinmatningar som visas. Du kan filtrera följande egenskaper: <ul><li>`name`: Du kan filtrera efter målgruppens namn. Om du använder den här egenskapen kan du jämföra med `=`, `!=`, `=contains` eller `!=contains`. </li><li>`createdAt`: Du kan filtrera efter användningstiden. Om du använder den här egenskapen kan du jämföra med `>=` eller `<=`.</li><li>`status`: Gör att du kan filtrera efter körningens status. Om du använder den här egenskapen kan du jämföra med `=`, `!=`, `=contains` eller `!=contains`. </li></ul> | `property=createdAt<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
+| `limit` | The maximum number of items returned in the response. This value can range from 1 to 40. By default, the limit is set to 20. | `limit=30` |
+| `sortBy` | The order in which the returned items are sorted. You can sort by either `name` or by `createdAt`. Additionally, you can add a `-` sign to sort by **descending** order instead of **ascending** order. By default, the items are sorted by `createdAt` in descending order. | `sortBy=name` |
+| `property` | A filter to determine which audience ingestion runs are displayed. You can filter on the following properties: <ul><li>`name`: Lets you filter by the audience name. If using this property, you can compare by using `=`, `!=`, `=contains`, or `!=contains`. </li><li>`createdAt`: Lets you filter by the ingestion time. If using this property, you can compare by using `>=` or `<=`.</li><li>`status`: Lets you filter by the ingestion run's status. If using this property, you can compare by using `=`, `!=`, `=contains`, or `!=contains`. </li></ul>  | `property=createdAt<1683669114845`<br/>`property=name=demo_audience`<br/>`property=status=SUCCESS` |
 
-+++
++++ -->
 
 **Begäran**
 
@@ -594,19 +591,23 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över antalet inkommande
             "createdAt": 1749324248,
             "createdBy": "{USER_ID}"
         }
-    ],
+    ]
+}
+```
+
+<!-- ,
     "_page": {
         "limit": 20,
         "count": 2,
         "totalCount": 2
     }
-}
-```
+    
+| `_page` | Object | An object that contains the pagination information about the list of results. |
+     -->
 
 | Egenskap | Typ | Beskrivning |
 | -------- | ---- | ----------- |
 | `runs` | Objekt | Ett objekt som innehåller listan med förtäring körs som tillhör målgruppen. Mer information om det här objektet finns i avsnittet [Hämta inmatningsstatus](#retrieve-ingestion-status). |
-| `_page` | Objekt | Ett objekt som innehåller sidnumreringsinformation om resultatlistan. |
 
 +++
 
