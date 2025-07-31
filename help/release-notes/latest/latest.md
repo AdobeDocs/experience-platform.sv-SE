@@ -1,14 +1,12 @@
 ---
 title: Versionsinformation om Adobe Experience Platform juli 2025
 description: Versionsinformationen för Adobe Experience Platform från juli 2025.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 2553b8f016a20678550eed50671e3549ec42aae7
+source-git-commit: fff6318e7f70176aee5fafe2e024c71922496aff
 workflow-type: tm+mt
-source-wordcount: '1451'
+source-wordcount: '1553'
 ht-degree: 22%
 
 ---
-
 
 # Versionsinformation för Adobe Experience Platform
 
@@ -18,8 +16,8 @@ ht-degree: 22%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 juli 2025**
@@ -33,6 +31,7 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
+
 
 ## Kapacitet {#capacity}
 
@@ -53,6 +52,7 @@ Mer information finns i [Kapacitetsöversikt](../../landing/license-usage-and-gu
 | Mål | Beskrivning |
 | --- | --- |
 | Begränsad tillgänglighet för anslutningen [Google Customer Match + Display &amp; Video 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md) | Efter att ha varit tillgängligt för alla kunder i juni har Adobe återgått till den här integreringen till begränsad tillgänglighet. För närvarande är åtkomsten till den här destinationen begränsad till kunder som redan är aktiverade, medan Adobe och Google arbetar med att lösa implementeringsproblem. Om du är intresserad av att använda den här integreringen när den bredare utrullningen återupptas, kan du kontakta Adobe för att få uttryck för din avsikt. |
+| [[!DNL The Trade Desk]](../../destinations/catalog/advertising/tradedesk.md) intern uppgradering | Från och med den 31 juli 2025 kan du se två [!DNL The Trade Desk]-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. <br><br>Den befintliga [!DNL The Trade Desk]-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) The Trade Desk]** och ett nytt kort med namnet **[!UICONTROL The Trade Desk]** är nu tillgängligt. Använd den nya **[!UICONTROL The Trade Desk]**-anslutningen i katalogen för nya aktiveringsdataflöden. <br><br>Om du har aktiva dataflöden till **[!UICONTROL (Deprecated) The Trade Desk]**-målet uppdateras de automatiskt, så ingen åtgärd krävs från dig. <br><br>Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `86134ea1-b014-49e8-8bd3-689f4ce70578`</li><li>Anslutningsspecifikation-id: `1029798b-a97f-4c21-81b2-e0301471166e`</li></ul> |
 
 **Ny eller uppdaterad funktionalitet**
 
@@ -144,3 +144,4 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Stöd för mjuk borttagning av poster i [!DNL Salesforce] | Källan [!DNL Salesforce] har nu stöd för att ta med mjuka borttagna poster via en valfri `includeDeletedObjects`-parameter. Om värdet är true kan kunder ta med mjuka borttagna poster i sina [!DNL Salesforce]-frågor och hämta dessa poster till Experience Platform. Mer information finns i [[!DNL Salesforce] källdokumentationen](../../sources/connectors/crm/salesforce.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
+
