@@ -3,9 +3,9 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 59ff77ff9f4a6fe147b5d8231fd3caa2550ae20e
+source-git-commit: ec6f055de02610e23f30051c4fed4f362e9fbc53
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1236'
 ht-degree: 0%
 
 ---
@@ -54,15 +54,24 @@ Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning t
 >[!CONTEXTUALHELP]
 >id="platform_destinations_account_name"
 >title="Kontonamn"
->abstract="Ange ett namn som gör det enklare att identifiera det här destinationskontot i framtiden. Detta är särskilt användbart om du har flera anslutningar till samma måltyp."
+>abstract="Ange ett namn som gör det enklare att identifiera det här destinationskontot i framtiden. Detta är särskilt användbart om du har flera anslutningar till samma mål."
 
 Det första steget när du ansluter till ett mål är att autentisera till målplattformen.
 
-Beroende på vilket mål du ansluter till kan du komma till målpartnersidan för att autentisera, eller så kan du bli ombedd att ange autentiseringsuppgifter direkt i Experience Platform-arbetsflödet. Nedan visas ett exempel på nödvändiga indata för autentisering till ett [!DNL Amazon S3]-mål. Detaljerade instruktioner om nödvändiga indata finns på varje måldokumentationssida (se t.ex. autentiseringsavsnittet för [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) och för [[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)).
+Beroende på vilket mål du ansluter till kan du komma till målpartnersidan för att autentisera, eller så kan du bli ombedd att ange autentiseringsuppgifter direkt i Experience Platform-arbetsflödet.
+
+När du konfigurerar en ny målanslutning måste du ange en **[!UICONTROL Account name]** och, om du vill, en **[!UICONTROL Description]**. Dessa fält är tillgängliga för alla mål.
+
+* **[!UICONTROL Account name]**: Ange ett namn som gör det enklare att identifiera det här destinationskontot i framtiden. Detta är särskilt användbart om du har flera anslutningar till samma mål.
+* **[!UICONTROL Description]** (valfritt): Lägg till ytterligare information som kan hjälpa dig eller ditt team att skilja mellan konton, till exempel anslutningssyfte eller relevant affärskontext.
+
+Genom att tillhandahålla tydlig och beskrivande information i dessa fält blir det enklare för dig att hantera och välja rätt målkonto när du aktiverar målgrupper.
+
+Nedan visas ett exempel på nödvändiga indata för autentisering till ett [!DNL Amazon S3]-mål. Detaljerade instruktioner om nödvändiga indata finns på varje måldokumentationssida (se t.ex. autentiseringsavsnittet för [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) och för [[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate)).
 
 **[!DNL Amazon S3]obligatoriska och valfria autentiseringsparametrar**
 
-![Bild som visar obligatoriska och valfria indataparametrar vid autentisering till ett Amazon S3-mål.](../assets/ui/connect-destinations/authenticate-amazon-s3-example.png)
+![Bild som visar obligatoriska och valfria indataparametrar vid autentisering till ett Amazon S3-mål.](../assets/ui/connect-destinations/s3-new-acc.png)
 
 ## Ställ in anslutningsparametrar {#set-up-connection-parameters}
 
