@@ -1,15 +1,13 @@
 ---
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
-hide: true
-hidefromtoc: true
-source-git-commit: b3b0792a1a1dd5270dec697539ed58d895814fc8
+exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
+source-git-commit: 326710e48ea9d6eb16f62b9f288311a1d255b287
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '577'
 ht-degree: 0%
 
 ---
-
 
 # Licensanvändning och licenskapacitet
 
@@ -41,9 +39,9 @@ För närvarande stöder Capacity följande tjänster:
 
 Inom dessa tjänster spåras följande skyddsräcken:
 
-- Maximalt antal direktuppspelade målgrupper är 500
+- Det högsta antalet direktuppspelade målgrupper är 500
    - Av dessa 500 direktuppspelade målgrupper är det maximala antalet kantmålgrupper 150
-- Maximal kombinerad genomströmning för direktuppspelningssegmentering är 1 500 poster per sekund (rps)
+- Den maximala sammanlagda genomströmningen för direktuppspelningssegmentering är 1 500 poster per sekund (rps)
 
 Målgruppskapaciteten är på en **sandbox**-nivå. Det innebär att ni för varje sandlåda ni har i organisationen kan ha 500 direktuppspelade målgrupper, varav 150 av dessa kan vara gränspubliken.
 
