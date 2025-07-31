@@ -2,9 +2,9 @@
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 83e2c014e62509fee2843505d7975cde368665ef
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '778'
 ht-degree: 1%
 
 ---
@@ -26,15 +26,15 @@ Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats ell
 
 ## Identiteter som stöds {#supported-identities}
 
-Målet [!DNL Pinterest Customer List] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv-SE#getting-started).
+Målet [!DNL Pinterest Customer List] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
-Mappa önskade identiteter till målfältet *pinterest_audience* i [mappningssteget](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) i arbetsflödet för målaktivering. Identiteter särskiljs och löses vid datainhämtning till Pinterest.
+I [mappningssteget](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) i arbetsflödet för målaktivering mappar du önskade identiteter till målfältet *pinterest_audition*. Identiteter särskiljs och löses vid datainhämtning till Pinterest.
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| GAID | [!DNL Google Advertising ID] | Mappa *GAID*-källidentitetens namnområde till målidentitetsfältet *pinterest_audience*. Identiteter särskiljs och löses vid datainhämtning till Pinterest. |
-| IDFA | [!DNL Apple ID for Advertisers] | Mappa *IDFA*-källidentitetens namnområde till målidentitetsfältet *pinterest_audience*. Identiteter särskiljs och löses vid datainhämtning till Pinterest. |
-| E-POST | E-postadresser (klartext eller hashas med SHA256-algoritmen) | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. <br> Mappa *Email* eller *Email_LC_SHA256*-källidentitetsfältet till målidentitetsfältet *pinterest_audience*. |
+| GAID | [!DNL Google Advertising ID] | Mappa *GAID*-källidentitetens namnområde till målidentitetsfältet *pinterest_audience*. |
+| IDFA | [!DNL Apple ID for Advertisers] | Mappa *IDFA*-källidentitetens namnområde till målidentitetsfältet *pinterest_audience*. |
+| E-POST | E-postadresser (klartext eller hashas med SHA256-algoritmen) | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. <br> Mappa *Email* eller *Email_LC_SHA256*-källidentitetsnamnområdet till målidentitetsfältet *pinterest_audience*. |
 
 {style="table-layout:auto"}
 
@@ -106,7 +106,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Ytterligare resurser {#additional-resources}
 

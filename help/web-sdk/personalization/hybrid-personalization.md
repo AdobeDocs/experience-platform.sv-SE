@@ -3,7 +3,7 @@ title: Hybrid-personalisering med Web SDK och Edge Network API
 description: I den här artikeln visas hur du kan använda Web SDK tillsammans med Edge Network API för att distribuera hybridanpassning på dina webbegenskaper.
 keywords: personalisering, hybrid, server-api, server-side, hybridimplementering,
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: 7b91f4f486db67d4673877477a6be8287693533a
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Hybridanpassning beskriver processen att hämta innehåll på serversidan för personalisering med [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) och återge den på klientsidan med [Web SDK](../home.md).
+Hybrid-personalisering beskriver processen att hämta innehåll på serversidan för personalisering med [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) och återge den på klientsidan med [Web SDK](../home.md).
 
 Du kan använda hybridpersonalisering med personaliseringslösningar som Adobe Target, Adobe Journey Optimizer eller Offer Decisioning. Skillnaden är innehållet i [!UICONTROL Edge Network API]-nyttolasten.
 
@@ -39,7 +39,7 @@ Flödesdiagrammet nedan beskriver ordningen för de steg som vidtas för att lev
 1. Edge Network API returnerar personaliseringsinnehållet till programservern.
 1. Programservern returnerar ett HTML-svar till klientwebbläsaren som innehåller [identitets- och klustercookies](#cookies).
 1. På klientsidan anropas kommandot [!DNL Web SDK] `applyResponse` som skickar sidhuvuden och brödtexten i [!UICONTROL Edge Network API]-svaret från föregående steg.
-1. [!DNL Web SDK] återger mål [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE)-erbjudanden och Journey Optimizer Web Channel-objekt automatiskt, eftersom flaggan `renderDecisions` är inställd på `true`.
+1. [!DNL Web SDK] återger mål [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)-erbjudanden och Journey Optimizer Web Channel-objekt automatiskt, eftersom flaggan `renderDecisions` är inställd på `true`.
 1. Målformulärbaserade [!DNL HTML]/[!DNL JSON]-erbjudanden och kodbaserade Journey Optimizer-upplevelser tillämpas manuellt med metoden `applyProposition` för att uppdatera [!DNL DOM] baserat på personaliseringsinnehållet i förslaget.
 1. För målformulärbaserade [!DNL HTML]/[!DNL JSON]-erbjudanden och kodbaserade Journey Optimizer-upplevelser måste visningshändelser skickas manuellt för att ange när det returnerade innehållet har visats. Detta görs via kommandot `sendEvent`.
 
@@ -92,7 +92,7 @@ Om det inte finns något platstips (d.v.s. ingen cookie) använder du standardv�
 
 >[!TIP]
 >
->Det är en god vana att använda en lista över tillåtna platser. Detta förhindrar att platstipset värms upp, eftersom det tillhandahålls via cookies på klientsidan.
+>Det är en god vana att använda en lista över tillåtna platser. Detta förhindrar att platstipset manipuleras, eftersom det tillhandahålls via cookies på klientsidan.
 
 ## Analysens konsekvenser {#analytics}
 

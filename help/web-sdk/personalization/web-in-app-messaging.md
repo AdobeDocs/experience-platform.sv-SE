@@ -2,7 +2,7 @@
 title: Konfigurera stöd för webb-meddelanden i appen i SDK
 description: Lär dig hur du konfigurerar taggtillägget Web SDK så att det stöder Web In-app Messaging.
 exl-id: 90a19ef4-e94c-4f16-a26a-8919ad2dbd6f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -19,9 +19,9 @@ Genom att använda meddelanden i appen kan ni effektivt interagera med era målg
 
 >[!IMPORTANT]
 >
->Web In-App Messaging är en [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=sv-SE)-funktion som använder Web SDK för att leverera det anpassade innehållet.
+>Web In-App Messaging är en [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html)-funktion som använder Web SDK för att leverera det anpassade innehållet.
 >
->Detaljerade instruktioner om hur du konfigurerar din kampanj för webb-meddelanden i appen finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=sv-SE).
+>Detaljerade instruktioner om hur du konfigurerar din kampanj för webb-meddelanden i appen finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html).
 
 
 ## Förhandskrav {#prerequisites}
@@ -32,7 +32,7 @@ Meddelandefunktionen i appen Web In-app kräver den senaste versionen av taggtil
 
 ### Konfigurera en CSP för webbmeddelanden i appen {#csp}
 
-När du konfigurerar [Web In-App Messaging](../personalization/web-in-app-messaging.md) måste du ta med följande direktiv i din CSP:
+När du konfigurerar [Web In-App Messaging](../personalization/web-in-app-messaging.md) måste du inkludera följande direktiv i din CSP:
 
 ```
 default-src  blob:;
@@ -46,7 +46,7 @@ Gå till konfigurationssidan för [webbtillägget för SDK ](../../tags/extensio
 
 När du har [installerat](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#install-the-web-sdk-tag-extension) SDK-taggtillägget för webben följer du stegen nedan för att konfigurera tillägget för meddelanden i webben.
 
-Markera alternativet **[!UICONTROL Enable personalization storage]** i avsnittet **[!UICONTROL Personalization]**. Med det här alternativet kan Web SDK hålla reda på vilka upplevelser användaren har sett över sidinläsningar.
+Markera alternativet **[!UICONTROL Personalization]** i avsnittet **[!UICONTROL Enable personalization storage]**. Med det här alternativet kan Web SDK hålla reda på vilka upplevelser användaren har sett över sidinläsningar.
 
 ![Bild som visar lagringsalternativet för anpassning på konfigurationssidan för taggtillägg.](assets/web-in-app-messaging/enable-personalization-storage.png)
 
@@ -71,7 +71,7 @@ Markera taggegenskapen som innehåller ditt Web SDK-tillägg och [skapa en ny re
 
 Sedan måste du lägga till en åtgärd i regeln som du skapade.
 
-1. Välj **[!UICONTROL Add]** i avsnittet [!DNL Actions].
+1. Välj [!DNL Actions] i avsnittet **[!UICONTROL Add]**.
    ![Bild som visar skärmen för redigeringsregler.](assets/web-in-app-messaging/add-action.png)
 
 2. Använd följande **[!UICONTROL Action]**-inställningar:
@@ -80,10 +80,10 @@ Sedan måste du lägga till en åtgärd i regeln som du skapade.
 
      ![Bild som visar åtgärdskonfigurationsskärmen.](assets/web-in-app-messaging/action-configuration.png)
 
-3. Aktivera alternativet **[!UICONTROL Render visual personalization decisions]** i avsnittet **[!UICONTROL Personalization]** till höger på skärmen.
+3. Aktivera alternativet **[!UICONTROL Personalization]** i avsnittet **[!UICONTROL Render visual personalization decisions]** till höger på skärmen.
    ![Bild som visar skärmen för konfiguration av anpassning.](assets/web-in-app-messaging/render-visual-personalization.png)
 
-4. Till höger på skärmen definierar du de **[!UICONTROL Key]**/**[!UICONTROL Value]**-par som du använde i kampanjkonfigurationen i avsnittet **[!UICONTROL Decision context]** för att kvalificera dig för meddelandet i appen.
+4. Till höger på skärmen definierar du de **[!UICONTROL Decision context]**/**[!UICONTROL Key]**-par som du använde i kampanjkonfigurationen i avsnittet **[!UICONTROL Value]** för att kvalificera dig för meddelandet i appen.
    ![Bild som visar skärmen för konfiguration av anpassning.](assets/web-in-app-messaging/decision-context.png)
 
 5. Välj **[!UICONTROL Keep Changes]** om du vill spara konfigurationen.
@@ -105,14 +105,14 @@ Markera taggegenskapen som innehåller ditt Web SDK-tillägg och [skapa en ny re
 
 1. **[!UICONTROL Extension]**: [!UICONTROL Core]
 2. **[!UICONTROL Event Type]**: [!UICONTROL Click]
-3. Ange utlösaren för ett specifikt element på sidan, identifieraren av en CSS-väljare som du väljer.
+3. Ange utlösaren för ett specifikt element på sidan, som identifieras av en CSS-väljare som du väljer.
 
    ![Bild som visar händelsekonfigurationsskärmen.](assets/web-in-app-messaging/event-configuration-manual.png)
 
 
 Sedan måste du lägga till en åtgärd i regeln som du skapade.
 
-1. Välj **[!UICONTROL Add]** i avsnittet [!DNL Actions].
+1. Välj [!DNL Actions] i avsnittet **[!UICONTROL Add]**.
    ![Bild som visar skärmen för redigeringsregler.](assets/web-in-app-messaging/add-action.png)
 
 2. Använd följande **[!UICONTROL Action]**-inställningar:
@@ -125,7 +125,7 @@ Sedan måste du lägga till en åtgärd i regeln som du skapade.
    ![Bild som visar skärmen för konfiguration av anpassning.](assets/web-in-app-messaging/manual-trigger-render.png)
 
 
-4. Till höger på skärmen definierar du de **[!UICONTROL Key]**/**[!UICONTROL Value]**-par som du använde i kampanjkonfigurationen i avsnittet **[!UICONTROL Decision context]** för att kvalificera dig för meddelandet i appen.
+4. Till höger på skärmen definierar du de **[!UICONTROL Decision context]**/**[!UICONTROL Key]**-par som du använde i kampanjkonfigurationen i avsnittet **[!UICONTROL Value]** för att kvalificera dig för meddelandet i appen.
    ![Bild som visar skärmen för konfiguration av anpassning.](assets/web-in-app-messaging/manual-trigger-decision-context.png)
 
 5. Välj **[!UICONTROL Keep Changes]** om du vill spara konfigurationen.
@@ -184,5 +184,5 @@ Du kan välja att visa meddelanden i appen för användarna ett visst antal gån
 
 I [Web SDK-konfigurationen](../commands/configure/overview.md) anger du alternativet `personalizationStorageEnabled` efter dina behov:
 
-* `personalizationStorageEnabled: true` utlöser meddelandet i appen med den frekvens som du definierade i [Adobe Journey Optimizer-kampanjen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=sv-SE#configure-inapp).
+* `personalizationStorageEnabled: true` utlöser meddelandet i appen med den frekvens som du definierade i [Adobe Journey Optimizer-kampanjen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html#configure-inapp).
 * `personalizationStorageEnabled: false` utlöser meddelandet i appen på varje sida som läses in.

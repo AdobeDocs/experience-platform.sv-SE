@@ -5,7 +5,7 @@ description: Lär dig konfigurera en CSP för Experience Platform Web SDK
 seo-description: Learn how to configure a CSP for the Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;kontext;web;device;environment;web sdk settings;content security policy;
 exl-id: 661d0001-9e10-479e-84c1-80e58f0e9c0b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '339'
 ht-degree: 0%
@@ -63,7 +63,7 @@ style-src 'unsafe-inline'
 
 ## Konfigurera en CSP för meddelanden i appen {#in-app-messaging}
 
-När du konfigurerar [Web In-App Messaging](../personalization/web-in-app-messaging.md) måste du ta med följande direktiv i din CSP:
+När du konfigurerar [Web In-App Messaging](../personalization/web-in-app-messaging.md) måste du inkludera följande direktiv i din CSP:
 
 ```
 default-src  blob:;

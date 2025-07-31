@@ -3,7 +3,7 @@ title: Single-page Application Implementation for the Adobe Experience Platform 
 description: Lär dig hur du skapar en SPA-implementering (Single-page application) av Adobe Experience Platform Web SDK med Adobe Target.
 keywords: mål;adobe target;xdm views; views;single page applications;SPA;SPA lifecycle;client-side;AB testing;AB;Experience targeting;XT;VEC
 exl-id: cc48c375-36b9-433e-b45f-60e6c6ea4883
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1818'
 ht-degree: 0%

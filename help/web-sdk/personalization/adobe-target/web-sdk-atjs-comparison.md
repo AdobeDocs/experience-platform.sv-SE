@@ -3,7 +3,7 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '2183'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 ## Översikt
 
-Den här artikeln innehåller en översikt över skillnaderna mellan biblioteket `at.js` och Experience Platform Web SDK.
+I den här artikeln finns en översikt över skillnaderna mellan biblioteket `at.js` och Experience Platform Web SDK.
 
 ## Installera biblioteken
 
@@ -68,7 +68,7 @@ window.adobe.target.init(window, document, {
 });
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
 
 
 ### Konfigurera SDK för webben
@@ -83,7 +83,7 @@ Om du använder at.js 2.x och aktiverar inställningen `pageLoadEnabled`, kommer
 
 ### Använda Web SDK
 
-Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE) kan hämtas och återges automatiskt av SDK.
+Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) kan hämtas och återges automatiskt av SDK.
 
 Om du vill begära och automatiskt återge Target-erbjudanden använder du kommandot `sendEvent` och ställer in alternativet `renderDecisions` på `true`. Detta tvingar SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
 
@@ -215,7 +215,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
 
 ### Använda Web SDK
 
@@ -300,7 +300,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
 
 
 ### Använda Web SDK
@@ -438,7 +438,7 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-Läs mer om kommandot `applyOffers` i den [dedikerade dokumentationen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=sv-SE).
+Läs mer om kommandot `applyOffers` i den [dedikerade dokumentationen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html).
 
 
 ### Använda Web SDK
@@ -490,7 +490,7 @@ adobe.target.sendNotifications({
 });
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html)
 
 ### Använda Web SDK
 
@@ -665,7 +665,7 @@ Använd funktionen `adobe.target.triggerView`. Den här funktionen kan anropas n
 adobe.target.triggerView("homeView")
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html)
 
 
 ### Använda Web SDK
@@ -691,7 +691,7 @@ alloy("sendEvent", {
 
 ## Så här använder du svarstoken
 
-Personalization-innehåll som returneras från Adobe Target innehåller [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE), som är information om aktivitet, erbjudande, upplevelse, användarprofil, geoinformation med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i Adobe Target användargränssnitt.
+Personalization-innehåll som returneras från Adobe Target innehåller [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html), som är information om aktivitet, erbjudande, upplevelse, användarprofil, geoinformation med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i Adobe Target användargränssnitt.
 
 ### Använda at.js
 
@@ -705,7 +705,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 }); 
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
 
 ### Använda Web SDK
@@ -714,7 +714,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 >
 >Kontrollera att du använder Experience Platform Web SDK version 2.6.0 eller senare.
 
-Svarstoken returneras som en del av `propositions` som visas i resultatet av kommandot `sendEvent`. Varje förslag innehåller en matris på `items`, och varje objekt har ett `meta`-objekt ifyllt med svarstoken om de är aktiverade i gränssnittet för måladministratörer. [Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE)
+Svarstoken returneras som en del av `propositions` som visas i resultatet av kommandot `sendEvent`. Varje förslag innehåller en matris på `items`, och varje objekt har ett `meta`-objekt ifyllt med svarstoken om de är aktiverade i gränssnittet för måladministratörer. [Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
 **Exempel**
 
@@ -880,7 +880,7 @@ Data flödar sedan enligt följande:
 
 ![Diagram som visar arbetsflödet för loggning på serversidan i Analytics](assets/a4t-server-side-atjs.png)
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html)
 
 ### Använda Web SDK
 
@@ -964,7 +964,7 @@ window.targetGlobalSettings = {
 };
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
 
 ### Använda Web SDK
 
@@ -1064,7 +1064,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html)
 
 
 ### Använda Web SDK
@@ -1144,7 +1144,7 @@ window.targetPageParams = function() {
 };
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html?lang=sv-SE)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html)
 
 ### Använda Web SDK
 

@@ -1,9 +1,9 @@
 ---
-title: Återge anpassat innehåll med Adobe Experience Platform Web SDK
+title: Återge personaliserat innehåll med Adobe Experience Platform Web SDK
 description: Lär dig återge personaliserat innehåll med Adobe Experience Platform Web SDK.
 keywords: personalisering;renderDecision;sendEvent;DecisionScopes;propositions;
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 9489b5345c2b13b9d05b26d646aa7f1576840fb8
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '947'
 ht-degree: 0%
@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Återge personaliserat innehåll
 
-Adobe Experience Platform Web SDK stöder hämtning av anpassat innehåll från personaliseringslösningar för Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=sv-SE).
+Adobe Experience Platform Web SDK har stöd för att hämta anpassat innehåll från Adobe personaliseringslösningar, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [Offer Decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html).
 
-Dessutom driver Web SDK personaliseringsfunktioner på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, till exempel [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [en anpassad personaliseringsanslutning](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i den [dedikerade guiden](../../destinations/ui/activate-edge-personalization-destinations.md).
+Dessutom utnyttjar Web SDK personaliseringsfunktioner på samma sida och nästa sida via Adobe Experience Platform personaliseringsmål, till exempel [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [anpassade personaliseringsanslutningar](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i den [dedikerade guiden](../../destinations/ui/activate-edge-personalization-destinations.md).
 
-Innehåll som har skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE) och Adobe Journey Optimizer [Web Campaign-gränssnittet](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE) kan hämtas och återges automatiskt av SDK. Innehåll som har skapats i Adobe Target [formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE), Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/code-based-experience/get-started-code-based) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
+Innehåll som har skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) och Adobe Journey Optimizer [Web Campaign-gränssnittet](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) kan hämtas och återges automatiskt av SDK. Innehåll som har skapats i Adobe Target [formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) eller Offer Decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
 
 ## Återge innehåll automatiskt {#automatic}
 
-När du skickar händelser till servern kan du ange alternativet `renderDecisions` till `true`. Om du gör det tvingas SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
+När du skickar händelser till servern kan du ange alternativet `renderDecisions` till `true`. Detta tvingar SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
 
 ```javascript
 alloy("sendEvent", {
@@ -42,7 +42,7 @@ alloy("sendEvent", {
 
 ## Återge innehåll manuellt {#manual}
 
-Om du vill få åtkomst till innehåll för personalisering kan du tillhandahålla en callback-funktion som anropas efter att SDK har fått ett lyckat svar från servern. Återanropet tillhandahålls som ett `result`-objekt, som kan innehålla en `propositions`-egenskap som innehåller returnerat personaliseringsinnehåll. Nedan visas ett exempel på hur du kan tillhandahålla en callback-funktion när du skickar en händelse.
+Om du vill få åtkomst till anpassat innehåll kan du tillhandahålla en callback-funktion som anropas när SDK har fått ett lyckat svar från servern. Återanropet tillhandahålls som ett `result`-objekt, som kan innehålla en `propositions`-egenskap som innehåller returnerat personaliseringsinnehåll. Nedan visas ett exempel på hur du kan tillhandahålla en callback-funktion när du skickar en händelse.
 
 ```javascript
 alloy("sendEvent", {
@@ -103,7 +103,7 @@ Arrayen `propositions` kan se ut ungefär som i det här exemplet:
 ]
 ```
 
-I exemplet var alternativet `renderDecisions` inte inställt på `true` när kommandot `sendEvent` kördes, så SDK försökte inte att automatiskt återge något innehåll. SDK hämtade dock fortfarande automatiskt det innehåll som är berättigat till automatisk återgivning, och om du vill göra det kunde du återge det manuellt. Observera att egenskapen `renderAttempted` har angetts till `false` för varje förslagsobjekt.
+I exemplet var alternativet `renderDecisions` inte inställt på `true` när kommandot `sendEvent` kördes, så SDK försökte inte att automatiskt återge något innehåll. SDK har dock fortfarande automatiskt hämtat det material som kan återges automatiskt, och om du vill kan du återge det manuellt. Observera att egenskapen `renderAttempted` har angetts till `false` för varje förslagsobjekt.
 
 Om du i stället skulle ha angett alternativet `renderDecisions` som `true` när du skickade händelsen, skulle SDK ha försökt att återge alla förslag som är berättigade till automatisk återgivning (enligt beskrivningen ovan). Därför skulle egenskapen `renderAttempted` för vart och ett av förslagsobjekten ha angetts till `true`. Du behöver inte återge dessa förslag manuellt i det här fallet.
 
@@ -122,7 +122,7 @@ alloy("sendEvent", {
   });
 ```
 
-I det här exemplet returneras och inkluderas i `result.propositions`-arrayen om det finns förslag på servern som matchar omfånget `salutation` eller `discount`. Observera att alla förslag som kvalificerar för automatisk återgivning kommer att inkluderas i `propositions`-arrayen, oavsett hur du konfigurerar alternativen för `renderDecisions` eller `decisionScopes`. Arrayen `propositions` skulle i det här fallet se ut som i det här exemplet:
+I det här exemplet returneras och inkluderas i `salutation`-arrayen om det finns förslag på servern som matchar omfånget `discount` eller `result.propositions`. Observera att alla förslag som kvalificerar för automatisk återgivning kommer att inkluderas i `propositions`-arrayen, oavsett hur du konfigurerar alternativen för `renderDecisions` eller `decisionScopes`. Arrayen `propositions` skulle i det här fallet se ut som i det här exemplet:
 
 ```json
 [
@@ -224,8 +224,8 @@ Nu kan du återge offertinnehåll när du vill. I det här exemplet är det för
 
 1. Extrahera utdrag från objektet `result`.
 1. Slinga igenom varje förslag och söker efter förslaget med omfånget `discount`.
-1. Om du hittar ett förslag går du igenom varje objekt i utkastet och letar efter det objekt som innehåller HTML. (Det är bättre att kontrollera än att anta.)
-1. Om du hittar ett objekt som innehåller innehåll från HTML söker du efter elementet `daily-special` på sidan och ersätter HTML med det anpassade innehållet.
+1. Om du hittar ett förslag går du igenom varje objekt i utkastet och letar efter det objekt som är HTML-innehåll. (Det är bättre att kontrollera än att anta.)
+1. Om du hittar ett objekt som innehåller HTML-innehåll söker du efter elementet `daily-special` på sidan och ersätter dess HTML med det anpassade innehållet.
 1. Skicka en `display`-händelse när innehållet har återgetts.
 
 Koden ser ut så här:
@@ -252,7 +252,7 @@ alloy("sendEvent", {
   var discountHtml;
   if (discountProposition) {
     // Find the item from proposition that should be rendered.
-    // Rather than assuming there a single item that has HTML
+    // Rather than assuming there is a single item that has HTML
     // content, find the first item whose schema indicates
     // it contains HTML content.
     for (var j = 0; j < discountProposition.items.length; j++) {
@@ -263,7 +263,7 @@ alloy("sendEvent", {
         var dailySpecialElement = document.getElementById("daily-special");
         dailySpecialElement.innerHTML = discountHtml;
         
-        // For this example, we assume there is only a signle place to update in the HTML.
+        // For this example, we assume there is only a single place to update in the HTML.
         break;  
       }
     }
@@ -298,7 +298,7 @@ alloy("sendEvent", {
 
 ### Hantera flimmer
 
-SDK ger möjligheter att [hantera flimmer](../personalization/manage-flicker.md) under personaliseringsprocessen.
+SDK erbjuder möjligheter att [hantera flimmer](../personalization/manage-flicker.md) under personaliseringsprocessen.
 
 ## Rendera utkast i ensidiga program utan att öka mätvärdena {#applypropositions}
 
@@ -341,7 +341,7 @@ alloy("applyPropositions", {
 
 ### Användningsfall 2: Återge förslag som inte har någon väljare
 
-Det här användningsexemplet gäller upplevelser som skapats med [!DNL Target Form-based Experience Composer] eller Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/code-based-experience/get-started-code-based).
+Det här användningsexemplet gäller upplevelser som skapats med [!DNL Target Form-based Experience Composer] eller Adobe Journey Optimizer [kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based).
 
 Du måste ange väljaren, åtgärden och omfattningen i anropet till `applyPropositions`.
 

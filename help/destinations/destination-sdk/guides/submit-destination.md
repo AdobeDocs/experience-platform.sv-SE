@@ -1,15 +1,15 @@
 ---
-description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
-title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
+description: På den här sidan finns all information du behöver för att skicka in en produkterad destination för granskning när du har skrivit den med Destination SDK.
+title: Skicka en produkterad destination för granskning
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 756c14c67e349a9ca906c027a07766e952485525
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1045'
 ht-degree: 0%
 
 ---
 
-# Skicka för granskning av ett produkterat mål som skapats i Destination SDK
+# Skicka en produkterad destination för granskning
 
 ## Översikt {#overview}
 
@@ -17,15 +17,15 @@ ht-degree: 0%
 >
 >* Processen som beskrivs här krävs endast för partners som skickar producerade (offentliga) destinationer. Om du skapar ett privat mål för eget bruk behöver du inte producera och dela dessa material med Adobe.
 >
->* Adobe standardsvarstid för att granska begäranden om publicering är fem arbetsdagar.
+>* Adobe standardsvarstid för granskning av målpubliceringsbegäranden är fem arbetsdagar.
 >
->* Om Adobe-teamet frågar om du vill göra några uppdateringar av dina konfigurationer efter ditt ursprungliga inskick, måste du skicka in en ny begäran om destinationspublicering när du har gjort uppdateringarna.
+>* Om Adobe-teamet frågar om du vill göra några uppdateringar av dina konfigurationer efter det att du skickat in ditt första bidrag, måste du skicka in en ny begäran om målpublicering när du har gjort uppdateringarna.
 >
->* Även efter att målet finns i Experience Platform-katalogen måste du, om du behöver göra några uppdateringar av dina konfigurationer, skicka en ny begäran om målpublicering för att uppdateringarna ska återspeglas i konfigurationerna.
+>* Om du behöver göra några uppdateringar av dina konfigurationer måste du skicka en ny begäran om målpublicering för att uppdateringarna ska återspeglas i konfigurationerna, även efter att destinationen är aktiv i Experience Platform-katalogen.
 >
 >* Tidslinjen för granskningen och nödvändiga artefakter är desamma för nya destinationer och befintliga destinationer som du uppdaterar.
 
-Innan destinationen kan publiceras till [Experience Platform-målkatalogen](/help/destinations/catalog/overview.md) måste du förse Adobe med viss information om destinationen och testningen du utförde, så att användarna får bästa möjliga upplevelse när de aktiverar data till din plattform.
+Innan destinationen kan publiceras till [Experience Platform målkatalog](/help/destinations/catalog/overview.md) måste du förse Adobe med viss information om destinationen och testningen du utförde för att säkerställa att användarna får bästa möjliga upplevelse när de aktiverar data till din plattform.
 
 På den här sidan visas all information du behöver ange när du skickar eller uppdaterar ett mål som du har skapat med Adobe Experience Platform Destination SDK. Om du vill skicka ett mål i Adobe Experience Platform skickar du ett e-postmeddelande till <aepdestsdk@adobe.com> som innehåller:
 
@@ -39,13 +39,13 @@ På den här sidan visas all information du behöver ange när du skickar eller 
    * Skicka in någon form av bevis på att du har importerat den exporterade filen från lagringsplatsen till systemet.
 * Bevis på att du har skickat in en destinationspubliceringsbegäran för ditt mål med [målpublicerings-API:t](../publishing-api/create-publishing-request.md).
 * En PR-dokumentation (pull-begäran) som följer instruktionerna som beskrivs i [självbetjäningsdokumentationsprocessen](../docs-framework/documentation-instructions.md).
-* En bildfil som visas som logotyp för målkortet i Experience Platform-katalogen.
+* En bildfil som visas som en logotyp för målkortet i Experience Platform målkatalog.
 
 Du hittar detaljerad information om varje objekt i avsnitten nedan:
 
 ## Använd fallbeskrivning {#use-case-description}
 
-Ange en beskrivning av de användningsfall som din destination löser för Experience Platform-kunder. Dina beskrivningar kan likna användningsexempel från befintliga partners:
+Ange en beskrivning av de användningsområden som din destination löser för Experience Platform-kunder. Dina beskrivningar kan likna användningsexempel från befintliga partners:
 
 * [Pinterest](/help/destinations/catalog/advertising/pinterest.md): Skapa målgrupper från kundlistor, personer som har besökt din webbplats eller personer som redan har interagerat med ditt innehåll på Pinterest.
 * [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases): DataX-API:er är tillgängliga för annonsörer som vill ha en specifik målgruppsgrupp som är inkapslad med e-postadresser i Verizon Media (VMG) kan snabbt skapa en ny målgrupp och skicka den önskade målgruppsgruppen med hjälp av VMG:s API i nära realtid.

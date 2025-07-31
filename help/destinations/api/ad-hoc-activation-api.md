@@ -5,7 +5,7 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1617'
 ht-degree: 0%
@@ -50,7 +50,7 @@ Tänk på följande skyddsutkast när du använder API:t för ad hoc-aktivering.
 
 * För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 80 målgrupper. Om du försöker aktivera fler än 80 målgrupper per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
 * Ad hoc-aktiveringsjobb kan inte köras parallellt med schemalagda [målgruppsexportjobb](../../segmentation/api/export-jobs.md). Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda målgruppsexportjobbet har slutförts. Information om hur du övervakar statusen för aktiveringsflöden finns i [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md). Om aktiveringsdataflödet till exempel visar statusen **[!UICONTROL Processing]** väntar du tills det är klart innan du kör ad hoc-aktiveringsjobbet.
-* Kör inte fler än ett samtidiga ad hoc-aktiveringsjobb per målgrupp.
+* Kör inte mer än ett samtidiga ad hoc-aktiveringsjobb per målgrupp.
 
 ## Segmentering {#segmentation-considerations}
 

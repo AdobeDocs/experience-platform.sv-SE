@@ -1,17 +1,17 @@
 ---
 title: Övervaka kopplingar för Adobe Experience Platform Web SDK
-description: Lär dig hur du använder de övervakningsverktyg som tillhandahålls av Adobe Experience Platform Web SDK för att felsöka implementeringen och hämta Web SDK-loggar.
-source-git-commit: 3dacc991fd7760c1c358bec07aca83ffeb4f4f4d
+description: Lär dig hur du använder övervakningsböckerna från Adobe Experience Platform Web SDK för att felsöka implementeringen och hämta Web SDK-loggar.
+exl-id: 56633311-2f89-4024-8524-57d45c7d38f7
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '1244'
 ht-degree: 1%
 
 ---
 
+# Övervaka hookar för Web SDK
 
-# Övervaka kopplingar för Web SDK
-
-Adobe Experience Platform Web SDK innehåller övervakningskopplingar som du kan använda för att övervaka olika systemhändelser. De här verktygen är användbara när du vill utveckla egna felsökningsverktyg och hämta Web SDK-loggar.
+Adobe Experience Platform Web SDK innehåller funktioner för övervakning av kopplingar som du kan använda för att övervaka olika systemhändelser. De här verktygen är användbara när du vill utveckla egna felsökningsverktyg och hämta webb-SDK-loggar.
 
 Web SDK utlöser övervakningsfunktionerna oavsett om du har aktiverat [felsökning](commands/configure/debugenabled.md) eller inte.
 
@@ -45,7 +45,7 @@ Den här återanropsfunktionen aktiveras av Web SDK när kommandot [`configure`]
 | Parameter | Typ | Beskrivning |
 |---------|----------|----------|
 | `data.instanceName` | Sträng | Namnet på den globala variabeln där Web SDK-instansen lagras. |
-| `data.config` | Objekt | Ett objekt som innehåller konfigurationen som du använde för din Web SDK-instans. Detta är alternativen som skickas till kommandot [`configure`](commands/configure/overview.md) med alla standardvärden tillagda. |
+| `data.config` | Objekt | Ett objekt som innehåller den konfiguration du använde för din Web SDK-instans. Detta är alternativen som skickas till kommandot [`configure`](commands/configure/overview.md) med alla standardvärden tillagda. |
 
 ## `onBeforeCommand` {#onBeforeCommand}
 
@@ -83,7 +83,7 @@ onCommandResolved(data) {
 | `data.instanceName` | Sträng | Namnet på den globala variabeln där Web SDK-instansen lagras. |
 | `data.commandName` | Sträng | Namnet på det körda Web SDK-kommandot. |
 | `data.options` | Objekt | Ett objekt som innehåller de alternativ som skickas till Web SDK-kommandot. |
-| `data.result` | Objekt | Ett objekt som innehåller resultatet av Web SDK-kommandot. |
+| `data.result` | Objekt | Ett objekt som innehåller resultatet av kommandot Web SDK. |
 
 ## `onCommandRejected` {#onCommandRejected}
 
@@ -214,7 +214,7 @@ Den här återanropsfunktionen aktiveras av komponenten `personalization` i olik
 | `data.instanceName` | Sträng | Namnet på den globala variabeln där Web SDK-instansen lagras. |
 | `data.componentName` | Sträng | Namnet på komponenten som genererade loggmeddelandet. |
 | `data.payload` | Objekt | Nyttolastobjektet som ska konverteras till JSON-format och skickas i förfrågningens brödtext via en `POST`-metod. |
-| `data.status` | Sträng | Komponenten `personalization` meddelar Web SDK om återgivningsstatus.  Värden som stöds: <ul><li>`rendering-started`: Anger att Web SDK håller på att återge förslag. Innan Web SDK börjar återge ett beslutsområde eller en vy kan du i objektet `data` se de förslag som ska återges av komponenten `personalization` och scopenamnet.</li><li>`no-offers`: Anger att ingen nyttolast har tagits emot för de begärda parametrarna.</li> <li>`rendering-failed`: Anger att Web SDK inte kunde återge ett förslag.</li><li>`rendering-succeeded`: Anger att återgivningen har slutförts för ett beslutsområde.</li> <li>`rendering-redirect`: Anger att Web SDK återger ett omdirigeringsförslag.</li></ul> |
+| `data.status` | Sträng | Komponenten `personalization` meddelar Web SDK om återgivningsstatus.  Värden som stöds: <ul><li>`rendering-started`: Anger att Web SDK ska återge förslag. Innan Web SDK börjar återge ett beslutsområde eller en vy kan du i objektet `data` se de förslag som ska återges av komponenten `personalization` och scopenamnet.</li><li>`no-offers`: Anger att ingen nyttolast har tagits emot för de begärda parametrarna.</li> <li>`rendering-failed`: Anger att Web SDK inte kunde återge ett förslag.</li><li>`rendering-succeeded`: Anger att återgivningen har slutförts för ett beslutsområde.</li> <li>`rendering-redirect`: Anger att Web SDK ska återge ett omdirigeringsförslag.</li></ul> |
 
 ## `onContentHiding` {#onContentHiding}
 
@@ -234,9 +234,9 @@ onContentHiding(data) {
 | `data.componentName` | Sträng | Namnet på komponenten som genererade loggmeddelandet. |
 | `data.status` | Sträng | Komponenten `personalization` meddelar Web SDK om återgivningsstatus. Värden som stöds: <ul><li>`hide-containers`</li><li>`show-containers`</ul> |
 
-## Ange övervakningskopplingar när NPM-paketet används {#specify-monitoris-npm}
+## Ange övervakningskopplingar när NPM-paketet används {#specify-monitoring-npm}
 
-Om du använder Web SDK via [NPM-paketet](install/npm.md) kan du ange övervakningskopplingar i funktionen `createInstasnce` enligt nedan.
+Om du använder Web SDK via [NPM-paketet](install/npm.md) kan du ange övervakningskopplingar i funktionen `createInstance` enligt nedan.
 
 ```js
 var monitor = {
@@ -253,11 +253,11 @@ alloy("sendEvent", { ... });
 
 ## Exempel {#example}
 
-Web SDK söker efter en array med objekt i en global variabel som heter `__alloyMonitors`.
+Web SDK söker efter en objektmatris i en global variabel som heter `__alloyMonitors`.
 
-Om du vill hämta alla Web SDK-händelser måste du definiera övervakningsböckerna innan Web SDK-koden läses in på sidan. Varje övervakningsmetod hämtar en Web SDK-händelse.
+Om du vill spela in alla Web SDK-händelser måste du definiera övervakningsböckerna innan Web SDK-koden läses in på sidan. Varje övervakningsmetod hämtar en Web SDK-händelse.
 
-Du kan definiera övervakningskopplingar *efter att* Web SDK-kod har lästs in på sidan, men eventuella kopplingar som har utlösts före sidinläsning *hämtas* inte.
+Du kan definiera övervakningskopplingar *när* Web SDK-kod har lästs in på sidan, men alla kopplingar som har utlösts före sidinläsning *hämtas* inte.
 
 När du definierar ett övervakningsobjekt behöver du bara definiera de metoder som du vill definiera en speciell logik för.
 Om du till exempel bara bryr dig om `onContentRendering` kan du bara definiera den metoden. Du behöver inte använda alla övervakningskopplingar samtidigt.

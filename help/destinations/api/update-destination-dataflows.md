@@ -5,7 +5,7 @@ title: Uppdatera måldataflöden med API:t för Flow Service
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort målgrupper och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '2410'
 ht-degree: 1%
@@ -646,7 +646,7 @@ Se exemplen nedan för fler exempel på målgruppskomponenter som du kan uppdate
 
 +++ Klicka för att se ett exempel där en målgruppsexport uppdateras från att aktiveras varje dag vid en viss tidpunkt till att aktiveras varje dag när Experience Platform batchsegmenteringsjobb har slutförts.
 
-Publiken exporteras varje dag kl. 16.00 UTC.
+Publiken exporteras varje dag med 16:00 UTC.
 
 ```json
 {

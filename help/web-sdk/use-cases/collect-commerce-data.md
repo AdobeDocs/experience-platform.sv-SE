@@ -2,7 +2,7 @@
 title: Samla in information om handel, produkter och beställningar med Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till produktrelaterade data eller en kundvagn med Adobe Experience Platform Web SDK.
 exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
 source-wordcount: '785'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Expandera avsnittet nedan om du vill se ett exempel på ett Web SDK-kommando med
 
 +++`productViews`
 
-Ett grundläggande webb-SDK `sendEvent`-anrop som ställer in fältet `productViews` på `1`:
+Ett grundläggande SDK `sendEvent`-anrop för webben som anger att fältet `productViews` ska vara `1`:
 
 ```javascript
 alloy("sendEvent", {
@@ -89,7 +89,7 @@ I det här avsnittet beskrivs alla fält som stöds av objektet `order`.
 
 ### Exempel på orderobjekt
 
-Expandera avsnittet nedan om du vill se ett exempel på ett Web SDK-kommando med objektet `commerce`.
+Expandera avsnittet nedan om du vill se ett exempel på ett Web SDK-kommando som använder objektet `commerce`.
 
 +++`Order` objektexempel
 

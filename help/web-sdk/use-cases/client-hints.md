@@ -1,11 +1,11 @@
 ---
 title: Tips för användaragentklient
-description: Lär dig hur klienttips för användaragenter fungerar i Web SDK. Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i användaragentsträngen, men på ett mer sekretessbeständigt sätt.
+description: Läs om hur kundagenttips fungerar i Web SDK. Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i användaragentsträngen, men på ett mer sekretessbeständigt sätt.
 keywords: användaragent;klienttips; sträng; användaragentsträng; låg entropi; hög entropi
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: 89dfe037e28bae51e335dc67185afa42b2c418e3
+source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
 workflow-type: tm+mt
-source-wordcount: '1245'
+source-wordcount: '1244'
 ht-degree: 1%
 
 ---
@@ -86,7 +86,7 @@ Det finns två typer av klienttips för användaragenten:
 
 Klienttips för låg entropi innehåller grundläggande information som inte kan användas för fingeravtrycksanvändare. Information som webbläsarens varumärke, plattform och om begäran kommer från en mobil enhet.
 
-Klienttips med låg entropi är aktiverade som standard i Web SDK och skickas för varje begäran.
+Klienttips med låg entropi är aktiverade som standard i Web SDK, och skickas för varje begäran.
 
 | HTTP-huvud | JavaScript | Ingår i användaragent som standard | Ingår i klienttips som standard |
 |---|---|---|---|
@@ -101,9 +101,9 @@ High-entropy-klienttips är mer detaljerad information om klientenheten, som pla
 | Egenskap | Beskrivning | HTTP-huvud | XDM-sökväg | Exempel | Ingår i användaragent som standard | Ingår i klienttips som standard |
 | --- | --- | --- | --- | --- |---|---|
 | Operativsystemversion | Operativsystemets version. | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | `10.15.7` | Ja | Nej |
-| Arkitektur | Den underliggande processorarkitekturen. | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` | Ja | Nej |
+| Arkitektur | CPU underliggande arkitektur. | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` | Ja | Nej |
 | Enhetsmodell | Namnet på den enhet som används. | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | `Intel Mac OS X 10_15_7` | Ja | Nej |
-| Bitness | Antalet bitar som den underliggande processorarkitekturen stöder. | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` | Ja | Nej |
+| Bitness | Antalet bitar som den underliggande CPU-arkitekturen stöder. | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` | Ja | Nej |
 | Webbläsarleverantör | Företaget som skapade webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-CH-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.vendor` | `Google` | Ja | Nej |
 | Webbläsarnamn | Webbläsaren används. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | `Chrome` | Ja | Nej |
 | Webbläsarversion | Den viktiga versionen av webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. Exakt webbläsarversion samlas inte in automatiskt. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | `105` | Ja | Nej |
@@ -111,25 +111,25 @@ High-entropy-klienttips är mer detaljerad information om klientenheten, som pla
 
 Klienttips för hög entropi är inaktiverade som standard i Web SDK. Om du vill aktivera dem måste du konfigurera Web SDK manuellt för att begära tips för hög entropi-klient.
 
-## Högupplösta klienttips påverkar Experience Cloud-lösningar {#impact-in-experience-cloud-solutions}
+## Högupplösta kundtips påverkar Experience Cloud lösningar {#impact-in-experience-cloud-solutions}
 
 Vissa Adobe Experience Cloud-lösningar förlitar sig på information som ingår i kundtips med hög entropi när rapporter genereras.
 
-Om du inte aktiverar klienttips för hög entropi i din miljö fungerar inte rapporterna och egenskaperna som beskrivs nedan i Adobe Analytics och Audience Manager.
+Om du inte aktiverar klienttips med hög entropi i din miljö fungerar inte Adobe Analytics och Audience Manager rapporter och egenskaper som beskrivs nedan.
 
 ### Adobe Analytics rapporterar beroende av klienttips för hög entropi {#analytics}
 
-Dimensionen [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=sv-SE) innehåller en operativsystemversion som lagras som ett högt entropi-klienttips. Om tips för klienter med hög entropi inte är aktiverat kan det bero på att operativsystemets version inte stämmer för träffar som samlats in från Chromium-webbläsare.
+Dimensionen [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html) innehåller en operativsystemversion som lagras som ett klienttips för hög entropi. Om tips för klienter med hög entropi inte är aktiverat kan det bero på att operativsystemets version inte stämmer för träffar som samlats in från Chromium-webbläsare.
 
 ### Audience Manager förlitar sig på klienttips med hög entropi {#aam}
 
-[!DNL Google] har uppdaterat webbläsarfunktionen [!DNL Chrome] för att minimera den information som samlas in via rubriken `User-Agent`. Detta innebär att Audience Manager-kunder som använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE) inte längre får tillförlitlig information om egenskaper baserat på [plattformsnivånycklar](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=sv-SE).
+[!DNL Google] har uppdaterat webbläsarfunktionen [!DNL Chrome] för att minimera den information som samlas in via rubriken `User-Agent`. Därför får Audience Manager-kunder som använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html) inte längre tillförlitlig information om egenskaper baserat på [plattformsnivånycklar](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html).
 
-Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste växla till [Experience Platform Web SDK](/help/web-sdk/home.md) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE) och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) för att fortsätta få pålitliga trait-data.
+Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste växla till [Experience Platform Web SDK](/help/web-sdk/home.md) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html) och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) för att fortsätta få pålitliga trait-data.
 
 ## Aktivera tips för hög entropi-klient {#enabling-high-entropy-client-hints}
 
-Om du vill aktivera tips för hög entropi-klient i Web SDK-distributionen måste du inkludera det extra alternativet `highEntropyUserAgentHints` i fältet [`context`](/help/web-sdk/commands/configure/context.md).
+Om du vill aktivera tips för hög entropi-klient för din Web SDK-distribution måste du inkludera det extra `highEntropyUserAgentHints`-kontextalternativet i fältet [`context`](/help/web-sdk/commands/configure/context.md).
 
 Om du till exempel vill hämta klienttips för hög entropi från webbegenskaper ser konfigurationen ut så här:
 
