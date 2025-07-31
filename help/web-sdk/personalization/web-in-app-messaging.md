@@ -19,9 +19,9 @@ Genom att använda meddelanden i appen kan ni effektivt interagera med era målg
 
 >[!IMPORTANT]
 >
->Web In-App Messaging är en [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html)-funktion som använder Web SDK för att leverera det anpassade innehållet.
+>Web In-App Messaging är en [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=sv-SE)-funktion som använder Web SDK för att leverera det anpassade innehållet.
 >
->Detaljerade instruktioner om hur du konfigurerar din kampanj för webb-meddelanden i appen finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html).
+>Detaljerade instruktioner om hur du konfigurerar din kampanj för webb-meddelanden i appen finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=sv-SE).
 
 
 ## Förhandskrav {#prerequisites}
@@ -184,5 +184,5 @@ Du kan välja att visa meddelanden i appen för användarna ett visst antal gån
 
 I [Web SDK-konfigurationen](../commands/configure/overview.md) anger du alternativet `personalizationStorageEnabled` efter dina behov:
 
-* `personalizationStorageEnabled: true` utlöser meddelandet i appen med den frekvens som du definierade i [Adobe Journey Optimizer-kampanjen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html#configure-inapp).
+* `personalizationStorageEnabled: true` utlöser meddelandet i appen med den frekvens som du definierade i [Adobe Journey Optimizer-kampanjen](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html?lang=sv-SE#configure-inapp).
 * `personalizationStorageEnabled: false` utlöser meddelandet i appen på varje sida som läses in.

@@ -119,13 +119,13 @@ Om du inte aktiverar klienttips med hög entropi i din miljö fungerar inte Adob
 
 ### Adobe Analytics rapporterar beroende av klienttips för hög entropi {#analytics}
 
-Dimensionen [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html) innehåller en operativsystemversion som lagras som ett klienttips för hög entropi. Om tips för klienter med hög entropi inte är aktiverat kan det bero på att operativsystemets version inte stämmer för träffar som samlats in från Chromium-webbläsare.
+Dimensionen [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=sv-SE) innehåller en operativsystemversion som lagras som ett klienttips för hög entropi. Om tips för klienter med hög entropi inte är aktiverat kan det bero på att operativsystemets version inte stämmer för träffar som samlats in från Chromium-webbläsare.
 
 ### Audience Manager förlitar sig på klienttips med hög entropi {#aam}
 
-[!DNL Google] har uppdaterat webbläsarfunktionen [!DNL Chrome] för att minimera den information som samlas in via rubriken `User-Agent`. Därför får Audience Manager-kunder som använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html) inte längre tillförlitlig information om egenskaper baserat på [plattformsnivånycklar](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html).
+[!DNL Google] har uppdaterat webbläsarfunktionen [!DNL Chrome] för att minimera den information som samlas in via rubriken `User-Agent`. Därför får Audience Manager-kunder som använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE) inte längre tillförlitlig information om egenskaper baserat på [plattformsnivånycklar](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=sv-SE).
 
-Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste växla till [Experience Platform Web SDK](/help/web-sdk/home.md) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html) och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) för att fortsätta få pålitliga trait-data.
+Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste växla till [Experience Platform Web SDK](/help/web-sdk/home.md) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE) och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) för att fortsätta få pålitliga trait-data.
 
 ## Aktivera tips för hög entropi-klient {#enabling-high-entropy-client-hints}
 
