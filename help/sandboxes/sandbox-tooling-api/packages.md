@@ -2,9 +2,9 @@
 title: API-slutpunkt för sandlådeverktygspaket
 description: Med slutpunkten /packages i sandlådeverktygets API kan du programmässigt hantera paket i Adobe Experience Platform.
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: 47e4616e5465ec97512647b9280f461c6971aa42
+source-git-commit: 1d8c29178927c7ee3aceb0b68f97baeaefd9f695
 workflow-type: tm+mt
-source-wordcount: '2547'
+source-wordcount: '2933'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ Med slutpunkten `/packages` i sandlådeverktygets API kan du programmässigt han
 
 ## Skapa ett paket {#create}
 
-Du kan skapa ett paket med flera artefakter genom att göra en POST-förfrågan till slutpunkten `/packages` och samtidigt ange värden för paketets namn och pakettyp.
+Du kan skapa ett paket med flera artefakter genom att göra en POST-begäran till `/packages`-slutpunkten och ange värden för paketets namn och pakettyp.
 
 **API-format**
 
@@ -100,7 +100,7 @@ Ett lyckat svar returnerar det nya paketet. Svaret innehåller motsvarande paket
 
 ## Uppdatera ett paket {#update}
 
-Du kan uppdatera ett paket genom att göra en PUT-begäran till slutpunkten `/packages`.
+Använd slutpunkten `/packages` i sandlådans verktyg-API för att uppdatera ett paket.
 
 ### Lägga till artefakter i ett paket {#add-artifacts}
 
@@ -139,7 +139,7 @@ curl -X PUT \
 | `id` | ID:t för paketet som ska uppdateras. | Sträng | Ja |
 | `action` | Om du vill lägga till artefakter i paketet måste åtgärdsvärdet vara **ADD**. Den här åtgärden stöds bara för pakettyperna **PARTIAL**. | Sträng | Ja |
 | `artifacts` | En lista med artefakter som ska läggas till i paketet. Paketet ändras inte om listan är **null** eller **tom**. Artefakter tas bort innan de läggs till i paketet. Se tabellen nedan för en fullständig lista över de artefakter som stöds. | Array | Nej |
-| `expiry` | Tidsstämpeln som definierar paketets förfallodatum. Standardvärdet är 90 dagar från den tidpunkt då PUT API anropas om inget förfallodatum anges i nyttolasten. Svarets förfallofält är epoch UTC-tid. | Sträng (UTC-tidsstämpelformat) | Nej |
+| `expiry` | Tidsstämpeln som definierar paketets förfallodatum. Standardvärdet är 90 dagar från den tidpunkt då PUT API anropas om förfallodatum inte anges i nyttolasten. Svarets förfallofält är epoch UTC-tid. | Sträng (UTC-tidsstämpelformat) | Nej |
 
 Följande artefakttyper stöds för närvarande.
 
@@ -380,9 +380,9 @@ Ett lyckat svar returnerar en orsak som visar det paket-ID som tagits bort.
 }
 ```
 
-## Publish ett paket {#publish}
+## Publicera ett paket {#publish}
 
-Om du vill kunna importera ett paket till en sandlåda måste du publicera det. Gör en GET-förfrågan till `/packages`-slutpunkten och ange ID:t för det paket som du vill publicera.
+Om du vill kunna importera ett paket till en sandlåda måste du publicera det. Gör en GET-begäran till slutpunkten `/packages` samtidigt som du anger ID:t för det paket som du vill publicera.
 
 **API-format**
 
@@ -501,7 +501,7 @@ Ett slutfört svar returnerar information för det efterfrågade paket-ID:t. Sva
 
 ## Listpaket {#list-packages}
 
-Du kan visa alla paket i din organisation genom att göra en GET-förfrågan till slutpunkten `/packages`.
+Du kan visa alla paket i din organisation genom att göra en GET-begäran till slutpunkten `/packages`.
 
 **API-format**
 
@@ -753,7 +753,7 @@ Konflikter returneras i svaret. Svaret visar det ursprungliga paketet plus `alte
 >
 >Med konfliktlösning är det naturligt att den alternativa artefakten redan finns i målsandlådan.
 
-Du kan skicka en import för ett paket när du har granskat konflikter och tillhandahållit ersättningar genom att göra en POST-förfrågan till slutpunkten `/packages`. Resultatet anges som en nyttolast, som startar importjobbet för målsandlådan enligt vad som anges i nyttolasten.
+Du kan skicka en import för ett paket när du har granskat konflikter och tillhandahållit ersättningar genom att göra en POST-begäran till slutpunkten `/packages`. Resultatet anges som en nyttolast, som startar importjobbet för målsandlådan enligt vad som anges i nyttolasten.
 
 Nyttolasten accepterar även användarspecificerat jobbnamn och beskrivning för importjobb. Om användarspecificerat namn och beskrivning inte är tillgängliga används paketnamn och beskrivning för jobbnamn och beskrivning.
 
@@ -820,7 +820,7 @@ curl -X POST \
 
 ## Lista alla beroende objekt {#dependent-objects}
 
-Visa alla beroende objekt för de exporterade objekten i ett paket genom att göra en POST-förfrågan till slutpunkten `/packages` samtidigt som du anger paketets ID.
+Visa alla beroende objekt för de exporterade objekten i ett paket genom att göra en POST-begäran till slutpunkten `/packages` samtidigt som du anger paketets ID.
 
 **API-format**
 
@@ -900,7 +900,7 @@ Ett godkänt svar returnerar en lista med underordnade objekt för objekten.
 
 ## Kontrollera rollbaserade behörigheter för att importera alla paketartefakter {#role-based-permissions}
 
-Du kan kontrollera om du har behörighet att importera paketartefakter genom att göra en GET-begäran till slutpunkten `/packages` och samtidigt ange ID:t för paketet och målsandlådans namn.
+Du kan kontrollera om du har behörighet att importera paketartefakter genom att göra en GET-begäran till slutpunkten `/packages` och samtidigt ange ID:t för paketet och namnet på målsandlådan.
 
 **API-format**
 
@@ -1048,7 +1048,7 @@ Ett lyckat svar returnerar resursbehörigheter för målsandlådan, inklusive en
 
 ## Visa export-/importjobb {#list-jobs}
 
-Du kan visa aktuella export-/importjobb genom att göra en GET-förfrågan till slutpunkten `/packages`.
+Du kan visa aktuella export-/importjobb genom att göra en GET-begäran till slutpunkten `/packages`.
 
 **API-format**
 
@@ -1165,7 +1165,7 @@ Med slutpunkten `/handshake` i sandlådeverktygs-API kan du samarbeta med andra 
 
 ### Skicka en delningsbegäran {#send-request}
 
-Skicka en begäran till en målpartnerorganisation för att dela godkännande genom att göra en POST-förfrågan till slutpunkten `/handshake/bulkCreate`. Detta krävs innan du kan dela privata paket.
+Skicka en begäran till en målpartnerorganisation för att dela godkännande genom att göra en POST-begäran till slutpunkten `/handshake/bulkCreate`. Detta krävs innan du kan dela privata paket.
 
 **API-format**
 
@@ -1223,7 +1223,7 @@ Ett godkänt svar returnerar information om din delningsförfrågan.
             "modifiedByName": "{MODIFIED_BY}",
             "modifiedByIMSOrgId": "{ORG_ID}",
             "statusHistory": "[{\"actionTakenBy\":\"acme@98ff67fa661fdf6549420b.e\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"INITIATED\",\"actionTimeStamp\":1724938816885}]",
-            "linkingId": "{LINKIND_ID}"
+            "linkingId": "{LINKING_ID}"
         }
     },
     "failedRequests": {}
@@ -1232,7 +1232,7 @@ Ett godkänt svar returnerar information om din delningsförfrågan.
 
 ### Godkänna mottagna delningsbegäranden {#approve-requests}
 
-Godkänn delningsbegäranden från målpartnerorganisationer genom att göra en POST-förfrågan till slutpunkten `/handshake/action`. Efter godkännande kan källpartnerorganisationer dela privata paket.
+Godkänn delningsbegäranden från målpartnerorganisationer genom att göra en POST-begäran till slutpunkten `/handshake/action`. Efter godkännande kan källpartnerorganisationer dela privata paket.
 
 **API-format**
 
@@ -1300,7 +1300,7 @@ Ett godkänt svar returnerar information om den godkända delningsbegäran.
 
 ### Visa utgående/inkommande delningsbegäranden {#outgoing-and-incoming-requests}
 
-Visa utgående och inkommande delningsbegäranden genom att göra en GET-förfrågan till slutpunkten `handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING`.
+Visa utgående och inkommande delningsbegäranden genom att göra en GET-begäran till slutpunkten `handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING`.
 
 **API-format**
 
@@ -1374,7 +1374,7 @@ Använd slutpunkten `/transfer` i sandlådans verktyg-API för att hämta och sk
 
 ### Ny delningsbegäran {#share-request}
 
-Hämta en publicerad källorganisations paket och dela det med en målorganisation genom att göra en POST-förfrågan till slutpunkten `/transfer` samtidigt som paket-ID och målorganisations-ID tillhandahålls.
+Hämta en publicerad källorganisations paket och dela det med en målorganisation genom att göra en POST-begäran till slutpunkten `/transfer` samtidigt som paket-ID och målorganisations-ID tillhandahålls.
 
 **API-format**
 
@@ -1481,7 +1481,7 @@ Ett svar om att åtgärden lyckades returnerar information om en delningsbegära
 
 ### Hämta resurslista {#transfers-list}
 
-Hämta en lista över överföringsbegäranden genom att göra en GET-begäran till `/transfer/list?{QUERY_PARAMETERS}`-slutpunkten och ändra frågeparametrarna efter behov.
+Hämta en lista över överföringsbegäranden genom att göra en GET-begäran till slutpunkten `/transfer/list?{QUERY_PARAMETERS}` och ändra frågeparametrarna efter behov.
 
 **API-format**
 
@@ -1628,7 +1628,7 @@ Ett godkänt svar returnerar information om ett paket och dess synlighet.
 
 ### Begäran om att importera ett publikt paket {#pull-public-package}
 
-Importera ett paket från en källorganisation med publik tillgänglighet genom att göra en POST-förfrågan till slutpunkten `/transfer/pullRequest`.
+Importera ett paket från en källorganisation med publik tillgänglighet genom att göra en POST-begäran till slutpunkten `/transfer/pullRequest`.
 
 **API-format**
 
@@ -1684,7 +1684,7 @@ Ett lyckat svar returnerar information om det importerade publika paketet.
 
 ### Visa offentliga paket {#list-public-packages}
 
-Hämta en lista över paket med offentlig synlighet genom att göra en GET-begäran till slutpunkten `/transfer/list?{QUERY_PARAMS}`.
+Hämta en lista med paket med offentlig synlighet genom att göra en GET-begäran till slutpunkten `/transfer/list?{QUERY_PARAMS}`.
 
 **API-format**
 
@@ -1935,7 +1935,7 @@ Ett lyckat svar returnerar en lista med publika paket och deras information.
 
 ## Kopiera paketnyttolast (#package-payload)
 
-Du kan kopiera ett publikt pakets nyttolast genom att göra en GET-begäran till slutpunkten `/packages/payload` som innehåller motsvarande ID för paketet i sökvägen för begäran.
+Du kan kopiera nyttolasten för ett offentligt paket genom att göra en GET-begäran till slutpunkten `/packages/payload` som innehåller motsvarande ID för paketet i sökvägen för begäran.
 
 **API-format**
 
@@ -1975,5 +1975,497 @@ Ett lyckat svar returnerar paketets nyttolast.
 {
     "imsOrgId": "{ORG_ID}",
     "packageId": "{PACKAGE_ID}"
+}
+```
+
+## Migrera uppdateringar av objektkonfiguration
+
+Använd slutpunkten /packages i verktygs-API:t för sandlådan för att migrera objektkonfigurationsuppdateringar.
+
+### Uppdateringsåtgärder (#update-operations)
+
+Jämför en angiven eller senaste version av en paketögonblicksbild med antingen det aktuella läget för källsandlådan eller en tidigare använd målsandlåda där paketet importerades genom att göra en POST-begäran till `/packages/{packageId}/version/compare`-slutpunkten, med paket-ID:t.
+
+***API-format***
+
+```http
+PATCH /packages/{packageId}/version/compare
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `packageId` | Paketets ID. | Sträng | Ja |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/version/compare/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "triggerNew": true,
+      "targetSandbox": "{SANDBOX_NAME}"
+  }'
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `triggerNew` | Flagga som utlöser det nya differensberäkningsjobbet även om det redan finns ett aktivt eller slutfört jobb. | Boolean | Nej |
+| `targetSandbox` | Representerar namnet på målsandlådan som differensen ska beräknas med. Om inget anges används källsandlådan som målsandlåda. | Sträng | Nej |
+
+**Svar**
+
+Ett lyckat svar för ett tidigare slutfört jobb returnerar jobbobjektet med tidigare beräknade differensresultat. Ett nyligen slutfört jobb returnerar JobId.
+
++++Visa svar (skickat jobb)
+
+```json
+{
+    "status": "OK",
+    "type": "SUCCESS",
+    "ajo": false,
+    "message": "Job with ID: {JOB_ID}",
+    "object": {
+        "id": "c4b7d07ae4c646279e2070a31c50bd5c",
+        "name": "Compute Job Package: {SNAPSHOT_ID}",
+        "description": null,
+        "visibility": "TENANT",
+        "requestType": "VERSION",
+        "expiry": 0,
+        "snapshotId": "{SNAPSHOT_ID}",
+        "packageVersion": 0,
+        "createdTimestamp": 0,
+        "modifiedTimestamp": 0,
+        "type": "PARTIAL",
+        "jobStatus": "SUCCESS",
+        "jobType": "COMPUTE",
+        "counter": 0,
+        "imsOrgId": "{ORG_ID}",
+        "sourceSandbox": {
+            "name": "prod",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "destinationSandbox": {
+            "name": "amanda-1",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "deltaPackageVersion": {
+            "packageId": "{PACKAGE_ID}",
+            "currentVersion": 0,
+            "validated": false,
+            "rootArtifacts": [
+                {
+                    "id": "https://ns.adobe.com/sandboxtoolingstage/schemas/355f461cbfb662fd0d12d06aeab34e206efcfa5d913604de",
+                    "type": "REGISTRY_SCHEMA",
+                    "found": false,
+                    "count": 0
+                }
+            ],
+            "eximGraphDelta": {
+                "vertices": [],
+                "pluginDeltas": [
+                    {
+                        "sourceArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/9fad8b185640a2db7daf9bb1295543ee8cb5965d80a21e8d",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 2"
+                        },
+                        "targetArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/b7fa3024777ef11b68c5121e937d8543677093f4f0e63a5f",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 2_1738766274074"
+                        },
+                        "changes": [
+                            {
+                                "op": "replace",
+                                "path": "/title",
+                                "oldValue": "Custom FieldGroup 2_1738766274074",
+                                "newValue": "Custom FieldGroup 2"
+                            },
+                            {
+                                "op": "replace",
+                                "path": "/description",
+                                "oldValue": "Description for furnished object",
+                                "newValue": ""
+                            }
+                        ]
+                    },
+                    {
+                        "sourceArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/304ac900943716c8bd99e6aaf6aa840aac91995729f1987f",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 4"
+                        },
+                        "targetArtifact": {
+                            "id": "https://ns.adobe.com/sandboxtoolingstage/mixins/34c9add91cce4a40d68a0e715c9f0a16048871734f8c8b74",
+                            "type": "REGISTRY_MIXIN",
+                            "found": false,
+                            "count": 0,
+                            "title": "Custom FieldGroup 4_1738766274074"
+                        },
+                        "changes": [
+                            {
+                                "op": "replace",
+                                "path": "/title",
+                                "oldValue": "Custom FieldGroup 4_1738766274074",
+                                "newValue": "Custom FieldGroup 4"
+                            },
+                            {
+                                "op": "replace",
+                                "path": "/description",
+                                "oldValue": "Description for furnished object",
+                                "newValue": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "importReplacementMap": {
+            "https://ns.adobe.com/sandboxtoolingstage/mixins/9fad8b185640a2db7daf9bb1295543ee8cb5965d80a21e8d": "https://ns.adobe.com/sandboxtoolingstage/mixins/b7fa3024777ef11b68c5121e937d8543677093f4f0e63a5f",
+            "5a45f8cd309d5ed5797be9a0af65e89152a51d57a6c74b52": "4ae041fa182d6faf2e7c56463399170d913138a7c5712909",
+            "https://ns.adobe.com/sandboxtoolingstage/schemas/b2b7705e770a35341b8bc5ec5e3644d9c7387266777fe4ba": "https://ns.adobe.com/sandboxtoolingstage/schemas/838c4e21ad81543ac14238ac1756012f7f98f0e0bec6b425",
+            "https://ns.adobe.com/sandboxtoolingstage/schemas/355f461cbfb662fd0d12d06aeab34e206efcfa5d913604de": "https://ns.adobe.com/sandboxtoolingstage/schemas/9a55692d527169d0239e126137a694ed9db2406c9bcbd06a",
+            "8f45c79235c91e7f0c09af676a77d170a34b5ee0ad5de72c": "65d755cc3300674c3cfcec620c59876af07f046884afd359",
+            "f04b8e461396ff426f8ba8dc5544f799bf287baa8e0fa5c": "b6fa821ada8cb97cac384f0b0354bbe74209ec97fb6a83a3",
+            "https://ns.adobe.com/sandboxtoolingstage/mixins/304ac900943716c8bd99e6aaf6aa840aac91995729f1987f": "https://ns.adobe.com/sandboxtoolingstage/mixins/34c9add91cce4a40d68a0e715c9f0a16048871734f8c8b74",
+            "c8304f3cb7986e8c9b613cd8d832125bd867fb4a5aedf67a": "4d21e9bf89ce0042b52d7d41ff177a7697d695e2617d1fc1"
+        },
+        "schemaFieldMappings": null
+    }
+}
+```
+
++++
+
++++Visa svar (nyligen skickat jobb)
+
+```json
+{
+    "status": "OK",
+    "type": "SUCCESS",
+    "ajo": false,
+    "message": "Job with ID: {JOB_ID}",
+    "object": {
+        "id": "aa5cfacf35a8478c8cf44a675fab1c30 ",
+        "name": "Compute Job Package: {SNAPSHOT_ID}",
+        "description": null,
+        "visibility": "TENANT",
+        "requestType": "VERSION",
+        "expiry": 0,
+        "snapshotId": "{SNAPSHOT_ID}",
+        "packageVersion": 0,
+        "createdTimestamp": 0,
+        "modifiedTimestamp": 0,
+        "type": "PARTIAL",
+        "jobStatus": "IN_PROGRESS",
+        "jobType": "COMPUTE",
+        "counter": 0,
+        "imsOrgId": "{ORG_ID}",
+        "sourceSandbox": {
+            "name": "prod",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "destinationSandbox": {
+            "name": "amanda-1",
+            "imsOrgId": "{ORG_ID}",
+            "empty": false
+        },
+        "schemaFieldMappings": null
+    }
+}
+```
+
++++
+
+### Uppdatera paketversion (#package-versioning)
+
+Uppgradera paketet till en ny version med hjälp av den senaste ögonblicksbilden från källsandlådan för varje objekt genom att göra en GET-begäran till `/packages/{packageId}/version/save`-slutpunkten och ange paket-ID:t.
+
+***API-format***
+
+```http
+PATCH /packages/{packageId}/version/save
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `packageId` | Paketets ID. | Sträng | Ja |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/version/save/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+```
+
+**Svar**
+
+Ett lyckat svar returnerar jobbstatusen för versionsuppgraderingen.
+
+```json
+{
+    "id": "3cec9bae662e43d9b9106fcbf7744a75",
+    "name": "Version Job Package: {JOB_ID}",
+    "description": null,
+    "visibility": "TENANT",
+    "requestType": "VERSION",
+    "expiry": 0,
+    "snapshotId": "{SNAPSHOT_ID}",
+    "packageVersion": 2,
+    "createdTimestamp": 0,
+    "modifiedTimestamp": 0,
+    "type": "PARTIAL",
+    "jobStatus": "PENDING",
+    "jobType": "UPGRADE",
+    "counter": 0,
+    "imsOrgId": "{ORG_ID}",
+    "sourceSandbox": {
+        "name": "prod",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "destinationSandbox": {
+        "name": "prod",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "schemaFieldMappings": null
+}
+```
+
+### Hämta paketets versionshistorik (#package-version-history)
+
+Hämta versionshistoriken för paketet, inklusive tidsstämpeln och modifieraren, genom att göra en GET-begäran till slutpunkten `/packages/{packageId}/history` och ange paket-ID:t.
+
+***API-format***
+
+```http
+PATCH /packages/{packageId}/history
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `packageId` | Paketets ID. | Sträng | Ja |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/history/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+```
+
+**Svar**
+
+Ett lyckat svar returnerar versionshistoriken för ett paket.
+
+```json
+[
+    {
+        "id": "cb68591a1ed941e191e7f52e33637a26",
+        "version": 0,
+        "createdDate": 1739516784000,
+        "modifiedDate": 1739516784000,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "imsOrgId": "{ORG_ID}",
+        "packageVersion": 3
+    },
+    {
+        "id": "e26189e6e4df476bb66c3fc3e66a1499",
+        "version": 0,
+        "createdDate": 1739343268000,
+        "modifiedDate": 1739343268000,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "imsOrgId": "{ORG_ID}",
+        "packageVersion": 2
+    },
+    {
+        "id": "11af34c0eee449ac84ef28c66d9383e3",
+        "version": 0,
+        "createdDate": 1739343073000,
+        "modifiedDate": 1739343073000,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "imsOrgId": "{ORG_ID}",
+        "packageVersion": 1
+    }
+]
+```
+
+### Skicka ett uppdateringsjobb (#submit-update)
+
+Skicka nya uppdateringar till målsandlådeobjekten genom att göra en PATCH-begäran till `/packages/{packageId}/import`-slutpunkten och ange paket-ID:t.
+
+***API-format***
+
+```http
+PATCH /packages/{packageId}/import
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `packageId` | Paketets ID. | Sträng | Ja |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/import/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "id": "50fd94f8072b4f248737a2b57b41058f",
+      "name": "Test Update",
+      "destinationSandbox": {
+        "name": "test-sandbox-sbt",
+        "imsOrgId": "{ORG_ID}"
+      },
+      "overwriteMappings": {
+        "https://ns.adobe.com/sandboxtoolingstage/schemas/327a48c83a5359f8160420a00d5a07f0ba8631a1fd466f9e" : {
+            "id" : "https://ns.adobe.com/sandboxtoolingstage/schemas/e346bb2cd7b26576cb51920d214aebbd42940a9bf94a75cd",
+            "type" : "REGISTRY_SCHEMA"
+        }
+      }
+  }'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar jobb-ID:t för uppdateringen.
+
+```json
+{
+    "id": "3cec9bae662e43d9b9106fcbf7744a75",
+    "name": "Update Job Name",
+    "description": "Update Job Description",
+    "visibility": "TENANT",
+    "requestType": "IMPORT",
+    "expiry": 0,
+    "snapshotId": "{SNAPSHOT_ID}",
+    "packageVersion": 2,
+    "createdTimestamp": 0,
+    "modifiedTimestamp": 0,
+    "type": "PARTIAL",
+    "jobStatus": "PENDING",
+    "jobType": "UPDATE",
+    "counter": 0,
+    "imsOrgId": "{ORG_ID}",
+    "sourceSandbox": {
+        "name": "prod",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "destinationSandbox": {
+        "name": "amanda-1",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "schemaFieldMappings": null
+}
+```
+
+### Inaktivera uppdatering och åsidosättning för ett paket (#disable-update)
+
+Inaktivera uppdatering och åsidosättning för paket som inte stöder dem genom att göra en GET-begäran till slutpunkten `/packages/{packageId}/?{QUERY_PARAMS}` och ange paket-ID:t.
+
+***API-format***
+
+```http
+PATCH /packages/{packageId}?{QUERY_PARAMS}
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `packageId` | Paketets ID. | Sträng | Ja |
+| {QUERY_PARAM} | Frågeparametern getCapabilities. Det här bör anges till `true` eller `false` | Boolean | Ja |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform-stage.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}?getCapabilities=true'/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+```
+
+**Svar**
+
+Ett lyckat svar returnerar en lista över paketets funktioner.
+
+```json
+{
+    "id": "80230dde96574a828191144709bb9b51",
+    "version": 3,
+    "createdDate": 1749808582000,
+    "modifiedDate": 1749808648000,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "name": "Ankit_Primary_Descriptor_Test",
+    "description": "RestPackage",
+    "imsOrgId": "{ORG_ID}",
+    "clientId": "usecasebuilder",
+    "packageType": "PARTIAL",
+    "expiry": 1757584598000,
+    "publishDate": 1749808648000,
+    "status": "PUBLISHED",
+    "packageVisibility": "PRIVATE",
+    "latestPackageVersion": 0,
+    "packageAccessType": "TENANT",
+    "artifactsList": [
+        {
+            "id": "https://ns.adobe.com/sandboxtoolingstage/schemas/1c767056056de64d8030380d1b9f570d26bc15501a1e0e95",
+            "altId": null,
+            "type": "REGISTRY_SCHEMA",
+            "found": false,
+            "count": 0
+        }
+    ],
+    "schemaMapping": {},
+    "sourceSandbox": {
+        "name": "atul-sandbox",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    },
+    "packageCapabilities": {
+        "capabilities": [
+            "VERSIONABLE"
+        ]
+    }
 }
 ```
