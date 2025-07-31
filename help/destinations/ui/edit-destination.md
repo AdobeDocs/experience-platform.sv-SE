@@ -27,7 +27,7 @@ Så här redigerar du olika komponenter i en befintlig målanslutning:
 
 1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]**.
 2. Välj önskat mål som du vill redigera.
-3. Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera målkontroll ](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**för att redigera befintliga målanslutningar.
+3. Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera målkontroll ](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**&#x200B;för att redigera befintliga målanslutningar.
 4. Redigera önskade inställningar i det modala fönstret. Välj **[!UICONTROL Save]** när du är klar.
 
 I redigeringsfönstret kan du uppdatera alla inställningar som du konfigurerade när du först anslöt till målet. Dessa inställningar skiljer sig åt beroende på vilken målplattform du uppdaterar.
