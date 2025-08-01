@@ -2,16 +2,20 @@
 title: Didomi Source - översikt
 description: Lär dig hur du ansluter Didomi till Adobe Experience Platform med användargränssnittet.
 last-substantial-update: 2025-07-29T00:00:00Z
+badge: Beta
 exl-id: c59bcfb8-e831-4a13-8b0e-4c6d538f1059
-source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
+source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '893'
 ht-degree: 0%
 
 ---
 
 # [!DNL Didomi]
 
+>[!AVAILABILITY]
+>
+>Källan [!DNL Didomi] är i betaversion. Läs [villkoren](../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 [!DNL Didomi] är en plattform för hantering av samtycke och preferenser som hjälper organisationer att samla in, hantera och genomdriva användarval när det gäller personuppgifter på webbplatser, i appar och för interna verktyg.
 

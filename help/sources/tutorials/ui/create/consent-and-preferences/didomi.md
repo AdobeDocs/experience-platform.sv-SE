@@ -2,15 +2,20 @@
 title: Anslut Didomi till Experience Platform
 description: Lär dig hur du ansluter ditt Didomi-konto till Experience Platform med användargränssnittet.
 last-substantial-update: 2025-07-29T00:00:00Z
+badge: Beta
 exl-id: 1374574f-c8ba-4cf5-bad0-94a884f5c0a6
-source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
+source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
 workflow-type: tm+mt
-source-wordcount: '1097'
+source-wordcount: '1119'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Didomi] till Experience Platform
+
+>[!AVAILABILITY]
+>
+>Källan [!DNL Didomi] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Didomi]-konto till Adobe Experience Platform med hjälp av källarbetsytan i användargränssnittet.
 
