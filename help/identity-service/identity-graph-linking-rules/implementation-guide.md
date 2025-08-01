@@ -2,7 +2,7 @@
 title: Implementeringshandbok för länkningsregler för identitetsdiagram
 description: Lär dig de rekommenderade stegen som du bör följa när du implementerar data med konfigurationer för länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: a9c9543783eb85dcaadef64b1c0deb84f850d40e
+source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
 workflow-type: tm+mt
 source-wordcount: '1944'
 ht-degree: 0%
@@ -203,7 +203,11 @@ När du har fått en bättre uppfattning om hur du vill att diagrammet ska funge
 
 ![Identiteterna bläddrar på sidan med inställningsknappen markerad.](../images/implementation/settings.png "Identiteterna bläddrar på sidan med inställningsknappen markerad."){zoomable="yes"}
 
-Använd användargränssnittet för identitetsinställningar för att ange unika namnutrymmen och konfigurera dina namnutrymmen efter prioritetsordning. När du är klar med att använda inställningarna måste du vänta minst sex timmar innan du kan fortsätta att importera data, eftersom det tar minst sex timmar innan nya inställningar återspeglas i identitetstjänsten.
+Använd användargränssnittet för identitetsinställningar för att ange unika namnutrymmen och konfigurera dina namnutrymmen efter prioritetsordning.
+
+>[!IMPORTANT]
+>
+>När du är klar med att använda inställningarna måste du vänta minst 24 timmar innan du kan fortsätta att importera data, eftersom det tar minst 24 timmar innan nya inställningar återspeglas i identitetstjänsten.
 
 Mer information finns i användargränssnittsguiden för [identitetsinställningar](./identity-settings-ui.md).
 

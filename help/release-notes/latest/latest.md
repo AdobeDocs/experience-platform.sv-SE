@@ -1,7 +1,8 @@
 ---
 title: Versionsinformation om Adobe Experience Platform juli 2025
 description: Versionsinformationen för Adobe Experience Platform från juli 2025.
-source-git-commit: fff6318e7f70176aee5fafe2e024c71922496aff
+exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
+source-git-commit: ba475df04342424dc0b22cb1d3d429d12701dbd1
 workflow-type: tm+mt
 source-wordcount: '1553'
 ht-degree: 22%
@@ -16,8 +17,8 @@ ht-degree: 22%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 juli 2025**
@@ -144,4 +145,3 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Stöd för mjuk borttagning av poster i [!DNL Salesforce] | Källan [!DNL Salesforce] har nu stöd för att ta med mjuka borttagna poster via en valfri `includeDeletedObjects`-parameter. Om värdet är true kan kunder ta med mjuka borttagna poster i sina [!DNL Salesforce]-frågor och hämta dessa poster till Experience Platform. Mer information finns i [[!DNL Salesforce] källdokumentationen](../../sources/connectors/crm/salesforce.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
-

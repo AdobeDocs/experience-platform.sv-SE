@@ -3,9 +3,9 @@ title: API-guide för segmenteringstjänst
 description: Med API:t för segmenteringstjänsten kan utvecklare programmässigt hantera segmenteringsåtgärder i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: af79493c831c401c0bf14e391eb36a8175b4a2dd
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '614'
 ht-degree: 2%
 
 ---
@@ -29,6 +29,12 @@ Mer information om hur du använder den här slutpunkten finns i [målgruppsguid
 Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten `/export/jobs` för att hämta alla exportjobb, skapa ett nytt exportjobb, hämta information om ett specifikt exportjobb eller avbryta ett specifikt exportjobb.
 
 Mer information om hur du använder den här slutpunkten finns i [slutpunktshandboken för exportjobb](./export-jobs.md).
+
+## Externa målgrupper
+
+Du kan importera externa målgrupper till Experience Platform, hämta en målgrupps skapandestatus, uppdatera en extern målgrupp, starta en målgruppsinspektion, hämta en extern målgruppsinmatningsstatus, lista målgruppsinmatningar och ta bort en extern målgrupp med slutpunkten `/core/ais/external-audiences`.
+
+Mer information om hur du använder den här slutpunkten finns i [handboken för externa målgrupper](./external-audiences.md).
 
 ## Förhandsvisningar och uppskattningar
 

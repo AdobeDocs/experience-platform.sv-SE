@@ -2,7 +2,7 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 38d331bd9265f25a3aebdcbd20ae5fc30a93e960
+source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
 workflow-type: tm+mt
 source-wordcount: '647'
 ht-degree: 0%
@@ -85,7 +85,7 @@ Här måste du bekräfta följande innan du fortsätter till det sista steget:
 >
 >* Inga ändringar görs i dina data förrän du sparar dina identitetsinställningar.
 
-![Bekräftelsefönstret som visar en varning om en fördröjning på sex timmar innan konfigurationer bearbetas.](../images/rules/complete.png)
+![Bekräftelsefönstret som visar en varning om en 24-timmars fördröjning innan konfigurationer bearbetas.](../images/rules/complete.png)
 
 ## Nästa steg
 

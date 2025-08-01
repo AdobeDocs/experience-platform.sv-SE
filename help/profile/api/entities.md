@@ -5,9 +5,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1933'
 ht-degree: 0%
 
 ---
@@ -23,6 +23,25 @@ Med Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]
 ## Komma igång
 
 API-slutpunkten som används i den här guiden ingår i [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
+
+>[!BEGINSHADEBOX]
+
+## Enhetsupplösning
+
+Som en del av uppgraderingen av arkitekturen introducerar Adobe entitetsupplösning för konton och säljprojekt med hjälp av deterministisk ID-matchning baserat på de senaste data. Enhetsupplösningsjobbet körs dagligen under gruppsegmentering, innan man utvärderar flerenhetsmålgrupper med B2B-attribut.
+
+Förbättringen gör det möjligt för Experience Platform att identifiera och sammanställa flera poster som representerar samma enhet, vilket ger enhetligare data och möjliggör mer korrekt målgruppssegmentering.
+
+Tidigare förlitade sig konton och affärsmöjligheter på identitetsgrafbaserad upplösning som kopplade identiteter, inklusive alla historiska inmatningar. I den nya metoden för enhetsupplösning är identiteter länkade baserat på enbart de senaste data
+
+### Hur fungerar enhetsupplösning?
+
+- **Före**: Om ett DUNS-nummer (Data Universal Numbering System) användes som en ytterligare identitet och kontots DUNS-nummer uppdaterades i ett källsystem som CRM, länkas konto-ID till både gamla och nya DUNS-nummer.
+- **Efter**: Om DUNS-numret användes som en extra identitet och kontots DUNS-nummer uppdaterades i ett källsystem som CRM, länkas konto-ID bara till det nya DUNS-numret, vilket ger en mer korrekt bild av det aktuella kontotillståndet.
+
+Som ett resultat av den här uppdateringen speglar API:t [!DNL Profile Access] nu den senaste sammanfogningsprofilvyn när en entitetsupplösningsjobbcykel har slutförts. Dessutom ger konsekventa data användningsexempel som segmentering, aktivering och analys med förbättrad datakvalitet och enhetlighet.
+
+>[!ENDSHADEBOX]
 
 ## Hämta en entitet {#retrieve-entity}
 
@@ -1236,10 +1255,10 @@ Följande parametrar används i sökvägen för GET-begäranden till slutpunkten
 | Parameter | Beskrivning | Exempel |
 | --------- | ----------- | ------- |
 | `schema.name` | **(Obligatoriskt)** Namnet på entitetens XDM-schema. | `schema.name=_xdm.context.profile` |
-| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
+| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
 | `entityId` | **(Obligatoriskt)** ID för entiteten. Om värdet för den här parametern inte är ett XID måste även en identitetsnamnområdesparameter (`entityIdNS`) anges. | `entityId=janedoe@example.com` |
-| `entityIdNS` | Om `entityId` inte anges som ett XID måste **&#x200B;**&#x200B;ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
-| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| `entityIdNS` | Om `entityId` inte anges som ett XID måste **** ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
+| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | Om `schema.name` är&quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan. | `fields=personalEmail,person.name,person.gender` |
 | `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |

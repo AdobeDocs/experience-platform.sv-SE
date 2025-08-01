@@ -4,14 +4,18 @@ title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: b3c7b97e257f76337bd02d1db9390ab314f7d1cd
+source-git-commit: 424702d7d16eddabefe19d023c3829bd650c88ce
 workflow-type: tm+mt
-source-wordcount: '1519'
+source-wordcount: '1558'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för segmentdefinitioner
+
+>[!WARNING]
+>
+>Skapande av målgrupper med B2B-enheter med segmenteringstjänstens API är föråldrat. Du kan inte längre skapa målgrupper med hjälp av följande B2B-enheter: Konto, Kontorelation, Kampanj, Kampanjmedlem, Marknadsföringslista, Marknadsföringslistmedlem, Affärsmöjlighet och Person-relation.
 
 Med Adobe Experience Platform kan du skapa segmentdefinitioner som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Segmentdefinitioner används på profiler för att skapa målgrupper. Det här objektet (segmentdefinitionen) kallas också för ett PQL-predikat. PQL förutsäger regler för segmentdefinitionen baserat på villkor som relaterar till alla post- eller tidsseriedata som du skickar till [!DNL Real-Time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-handboken](../pql/overview.md).
 
@@ -23,7 +27,7 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hämta en lista med segmentdefinitioner {#list}
 
-Du kan hämta en lista över alla segmentdefinitioner för din organisation genom att göra en GET-förfrågan till slutpunkten `/segment/definitions`.
+Du kan hämta en lista över alla segmentdefinitioner för din organisation genom att göra en GET-begäran till slutpunkten `/segment/definitions`.
 
 **API-format**
 
@@ -162,7 +166,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
 
 ## Skapa en ny segmentdefinition {#create}
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till slutpunkten `/segment/definitions`.
+Du kan skapa en ny segmentdefinition genom att göra en POST-begäran till slutpunkten `/segment/definitions`.
 
 >[!IMPORTANT]
 >
@@ -338,7 +342,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinit
 
 ## Hämta en specifik segmentdefinition {#get}
 
-Du kan hämta detaljerad information om en specifik segmentdefinition genom att göra en GET-förfrågan till slutpunkten `/segment/definitions` och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen till begäran.
+Du kan hämta detaljerad information om en specifik segmentdefinition genom att göra en GET-begäran till slutpunkten `/segment/definitions` och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen till begäran.
 
 **API-format**
 
@@ -427,7 +431,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ## Hämta segmentdefinitioner gruppvis {#bulk-get}
 
-Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-förfrågan till `/segment/definitions/bulk-get`-slutpunkten och ange `id`-värdena för segmentdefinitionerna i begärandetexten.
+Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-begäran till `/segment/definitions/bulk-get`-slutpunkten och ange `id`-värdena för segmentdefinitionerna i begärandetexten.
 
 **API-format**
 
@@ -606,7 +610,7 @@ Ett lyckat svar returnerar HTTP-status 200 utan något meddelande.
 
 ## Uppdatera en specifik segmentdefinition
 
-Du kan uppdatera en specifik segmentdefinition genom att göra en PATCH-begäran till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill uppdatera i begärandesökvägen.
+Du kan uppdatera en specifik segmentdefinition genom att göra en PATCH-begäran till slutpunkten `/segment/definitions` och ange ID:t för segmentdefinitionen som du vill uppdatera i sökvägen till begäran.
 
 **API-format**
 
@@ -709,7 +713,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
 
 ## Konvertera segmentdefinition
 
-Du kan konvertera en segmentdefinition mellan `pql/text` och `pql/json` eller `pql/json` till `pql/text` genom att göra en POST-förfrågan till `/segment/conversion`-slutpunkten.
+Du kan konvertera en segmentdefinition mellan `pql/text` och `pql/json` eller `pql/json` till `pql/text` genom att göra en POST-begäran till `/segment/conversion`-slutpunkten.
 
 **API-format**
 

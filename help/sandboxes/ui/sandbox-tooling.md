@@ -2,9 +2,9 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: b5330e10dc8b395d1ef299073182c836f5c3af7f
+source-git-commit: a3db2b69400a43abe399f90036041aaeaf0bd0a0
 workflow-type: tm+mt
-source-wordcount: '3210'
+source-wordcount: '3294'
 ht-degree: 0%
 
 ---
@@ -24,6 +24,17 @@ Du kan använda sandlådeverktygen för att markera olika objekt och exportera d
 Verktygsfunktionen i sandlådan ger dig möjlighet att exportera [!DNL Adobe Real-Time Customer Data Platform]- och [!DNL Adobe Journey Optimizer]-objekt till ett paket.
 
 ### Objekt för kunddataplattform i realtid {#real-time-cdp-objects}
+
+>[!BEGINSHADEBOX]
+
+### Ändringar av målgruppsimporter för flera enheter
+
+Med [B2B-arkitekturuppgraderingarna](../../rtcdp/b2b-architecture-upgrade.md) kan du inte längre importera målgrupper med flera enheter med B2B-attribut och Experience Events om ett paket som innehöll dessa målgrupper publicerades före uppgraderingen. Dessa målgrupper kommer inte att kunna importera och kan inte automatiskt konverteras till den nya arkitekturen.
+
+För att kringgå den här begränsningen måste du skapa ett nytt paket med de uppdaterade målgrupperna och sedan importera dem till deras respektive målsandlådor med hjälp av sandlådeverktyg.
+
+
+>[!ENDSHADEBOX]
 
 Tabellen nedan visar [!DNL Adobe Real-Time Customer Data Platform] objekt som för närvarande stöds för sandlådeverktyg:
 
@@ -54,12 +65,12 @@ Tabellen nedan visar [!DNL Adobe Journey Optimizer] objekt som för närvarande 
 | [!DNL Adobe Journey Optimizer] | Målgrupp | | En målgrupp kan kopieras som ett beroende objekt i reseobjektet. Du kan välja att skapa en ny målgrupp eller återanvända en befintlig i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Schema | | Scheman som används under resan kan kopieras som beroende objekt. Du kan välja att skapa ett nytt schema eller återanvända ett befintligt i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Kopplingsprincip | | Sammanfogningsprinciperna som används under resan kan kopieras som beroende objekt. I målsandlådan **kan du inte** skapa en ny sammanfogningsprincip. Du kan bara använda en befintlig. |
-| [!DNL Adobe Journey Optimizer] | Resa | Följande objekt som används under resan kopieras som beroende objekt. Under importarbetsflödet kan du välja **[!UICONTROL Create new]** eller **[!UICONTROL Use existing]** för varje: <ul><li>Målgrupper</li><li>Scheman</li><li>Anpassade åtgärder</li><li>Händelser</li><li>Fragment</li><li>Innehållsmallar</li><li>Arbetsytedetaljer</li></ul> | <ul><li>**[!UICONTROL Custom actions]**: När du väljer **[!UICONTROL Use existing]** under importprocessen när du kopierar en resa till en annan sandlåda, måste de befintliga anpassade åtgärderna du väljer **vara** samma som den anpassade källåtgärden. Om de inte är samma kommer den nya resan att innehålla fel som inte går att lösa.</li><li>Händelser och händelseinformation som används under resan kopieras. Den skapar alltid en ny version i målsandlådan.</li></ul> |
+| [!DNL Adobe Journey Optimizer] | Resa | Följande objekt som används under resan kopieras som beroende objekt. Under importarbetsflödet kan du välja antingen **[!UICONTROL Create new]** eller **[!UICONTROL Use existing]** för varje: <ul><li>Målgrupper</li><li>Arbetsytedetaljer</li><li>Innehållsmallar</li><li>Anpassade åtgärder</li><li>Datakällor</li><li>Händelser</li><li>Fältgrupper</li><li>Fragment</li><li>Scheman</li></ul> | När du väljer **[!UICONTROL Use existing]** under importprocessen för att kopiera en resa till en annan sandlåda, måste de befintliga anpassade åtgärderna som du väljer **vara en exakt matchning med den anpassade källåtgärden.** Om de inte matchar kommer den nya resan att generera fel som inte går att lösa.<br>Systemet kopierar händelser och händelseinformation som används under resan och skapar en ny version i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Åtgärd | | E-post och push-meddelanden som används under resan kan kopieras som beroende objekt. Kanalåtgärdsaktiviteterna som används i resefälten, som används för personalisering i meddelandet, kontrolleras inte för fullständighet. Innehållsblock kopieras inte.<br><br>Åtgärden för att uppdatera profil som används under resan kan kopieras. Anpassade åtgärder kan läggas till i ett paket oberoende av varandra. Åtgärdsinformation som används under resan kopieras också. Den skapar alltid en ny version i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Anpassade åtgärder |  | Anpassade åtgärder kan läggas till i ett paket oberoende av varandra. När en anpassad åtgärd har tilldelats en resa kan den inte längre redigeras. Om du vill uppdatera anpassade åtgärder bör du: <ul><li>flytta anpassade åtgärder innan en resa migreras</li><li>uppdateringskonfigurationer (till exempel begärandehuvuden, frågeparametrar och autentisering) för anpassade åtgärder efter migrering</li><li>migrera reseobjekt med de anpassade åtgärder du lade till under det första steget</li></ul> |
 | [!DNL Adobe Journey Optimizer] | Innehållsmall | | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
 | [!DNL Adobe Journey Optimizer] | Fragment | Alla kapslade fragment. | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
-| [!DNL Adobe Journey Optimizer] | Kampanjer | Följande objekt som används i kampanjen kopieras som beroende objekt: <ul><li>Kampanjer</li><li>Målgrupper</li><li>Scheman</li><li>Innehållsmallar</li><li>Fragment</li><li>Meddelande/innehåll</li><li>Kanalkonfiguration</li><li>Enhetliga beslutsobjekt</li><li>Experimentera med inställningar/varianter</li></ul> | <ul><li>Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox).</li><li>Systemet identifierar och återanvänder automatiskt ett befintligt kanalkonfigurationsobjekt i målsandlådan om det finns en identisk konfiguration. Om ingen matchande konfiguration hittas hoppas kanalkonfigurationen över under importen, och användare måste uppdatera kanalinställningarna manuellt i målsandlådan för den här resan.</li><li>Användare kan återanvända befintliga experiment och målgrupper i målsandlådan som beroende objekt för valda kampanjer.</li></ul> |
+| [!DNL Adobe Journey Optimizer] | Kampanjer | Följande objekt som används i kampanjen kopieras som beroende objekt: <ul><li>Kampanjer</li><li>Målgrupper</li><li>Scheman</li><li>Innehållsmallar</li><li>Fragment</li><li>Meddelande/innehåll</li><li>Kanalkonfiguration</li><li>Enhetliga beslutsobjekt</li><li>Experimentera med inställningar/varianter</li></ul> | <ul><li>Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox).</li><li>Systemet identifierar och återanvänder automatiskt ett befintligt kanalkonfigurationsobjekt i målsandlådan om det finns en identisk konfiguration. Om ingen matchande konfiguration hittas hoppas kanalkonfigurationen över under importen, och användare måste uppdatera kanalinställningarna manuellt i målsandlådan för den här resan.</li><li>Användare kan återanvända befintliga experiment och målgrupper i målsandlådan som beroende objekt för valda kampanjer.</li></ul> |
 
 Ytor (till exempel förinställningar) kopieras inte över. Systemet väljer automatiskt den närmsta möjliga matchningen i målsandlådan baserat på meddelandetyp och ytnamn. Om det inte finns några ytor i målsandlådan, kommer ytkopian att misslyckas, vilket gör att meddelandekopian misslyckas eftersom ett meddelande kräver att en yta är tillgänglig för konfiguration. I det här fallet måste minst en yta skapas för den högra kanalen i meddelandet för att kopian ska fungera.
 
@@ -98,7 +109,7 @@ Välj **[!UICONTROL Schemas]** i den vänstra navigeringen och välj sedan flike
 
 ![Lista med scheman som visar listrutan med markering av kontrollen [!UICONTROL Add to package].](../images/ui/sandbox-tooling/add-to-package.png)
 
-Välj alternativet **[!UICONTROL Create new package]** i dialogrutan **[!UICONTROL Add to package]**. Ange en [!UICONTROL Name] för ditt paket och en valfri [!UICONTROL Description] och välj sedan **[!UICONTROL Add]**.
+Välj alternativet **[!UICONTROL Add to package]** i dialogrutan **[!UICONTROL Create new package]**. Ange en [!UICONTROL Name] för ditt paket och en valfri [!UICONTROL Description] och välj sedan **[!UICONTROL Add]**.
 
 ![Dialogrutan [!UICONTROL Add to package] med [!UICONTROL Create new package] markerad och markerad [!UICONTROL Add].](../images/ui/sandbox-tooling/create-new-package.png)
 
@@ -345,7 +356,7 @@ När du har identifierat de målobjekt som du vill uppdatera väljer du **[!UICO
 
 Följande video är avsedd att ge stöd för din förståelse av sandlådeverktyg och visar hur du skapar ett nytt paket, publicerar ett paket och importerar ett paket.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446087/?learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## Nästa steg
 
