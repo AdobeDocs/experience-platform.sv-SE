@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: 30a237c7acf814722d384792366f95289dc3f34a
+source-git-commit: 3c772e99e7f0417672e60d56ace962abda2b7d76
 workflow-type: tm+mt
-source-wordcount: '1884'
+source-wordcount: '1898'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ Om du vill skapa ett statiskt schema med profilattribut definierar du målattrib
 | `segmentRequired` | Boolean | Obligatoriskt | Den här parametern krävs av Destination SDK och ska alltid anges till `true`. |
 | `identityRequired` | Boolean | Obligatoriskt | Ange som `true` om användare ska kunna mappa [identitetstyper](identity-namespace-configuration.md) från Experience Platform till de attribut du definierade i arrayen `profileFields` . |
 | `segmentNamespaceAllowList` | Array | Valfritt | Tillåter användare att endast mappa målgrupper från de målgruppsnamnutrymmen som definieras i arrayen till målet. <br><br> Användning av den här parametern rekommenderas inte i de flesta fall. Använd i stället `"segmentNamespaceDenyList":[]` för att tillåta att alla typer av målgrupper exporteras till ditt mål. <br><br> Om både `segmentNamespaceAllowList` och `segmentNamespaceDenyList` saknas i konfigurationen kan användarna bara exportera målgrupper som kommer från [segmenteringstjänsten](../../../../segmentation/home.md). <br><br>`segmentNamespaceAllowList` och `segmentNamespaceDenyList` utesluter varandra. |
-| `segmentNamespaceDenyList` | Array | Valfritt | Begränsar användare från att mappa målgrupper från de målgruppsnamnutrymmen som definieras i arrayen till målet. <br><br>Adobe rekommenderar att alla målgrupper, oavsett ursprung, kan exporteras genom att ställa in `"segmentNamespaceDenyList":[]`. <br><br>Om både `segmentNamespaceAllowed` och `segmentNamespaceDenyList` saknas i konfigurationen kan användarna bara exportera målgrupper som kommer från [segmenteringstjänsten](../../../../segmentation/home.md). <br><br>`segmentNamespaceAllowList` och `segmentNamespaceDenyList` utesluter varandra. |
+| `segmentNamespaceDenyList` | Array | Valfritt | Begränsar användare från att mappa målgrupper från de målgruppsnamnutrymmen som definieras i arrayen till målet. <br><br>Adobe rekommenderar att alla målgrupper, oavsett ursprung, kan exporteras genom att ställa in `"segmentNamespaceDenyList":[]`. <br><br>**Viktigt!** Om du inte anger `segmentNamespaceDenyList` i `schemaConfig` och du inte använder `segmentNamespaceAllowList`, ställs `segmentNamespaceDenyList` in automatiskt på `[]`. Detta förhindrar att man förlorar sina egna målgrupper i framtiden. Av säkerhetsskäl rekommenderar Adobe att du uttryckligen anger `"segmentNamespaceDenyList":[]` i din konfiguration. <br><br>`segmentNamespaceAllowList` och `segmentNamespaceDenyList` utesluter varandra. |
 
 {style="table-layout:auto"}
 
@@ -250,7 +250,7 @@ Om du vill konfigurera målet så att det stöder aktivering av [externt generer
 }
 ```
 
-Mer information om funktionen `segmentNamespaceDenyList` finns i egenskapsbeskrivningarna i [tabellen](#attributes-schema) ovan på den här sidan.
+Mer information om funktionen [ finns i egenskapsbeskrivningarna i ](#attributes-schema)tabellen`segmentNamespaceDenyList` ovan på den här sidan.
 
 ## Nästa steg {#next-steps}
 
