@@ -8,7 +8,7 @@ feature: API
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2409'
+source-wordcount: '2408'
 ht-degree: 1%
 
 ---
@@ -52,7 +52,7 @@ Innan du skapar integreringar på Adobe Developer Console måste ditt konto ha u
 
 ### Få utvecklaråtkomst {#gain-developer-access}
 
-Kontakta en Admin Console-administratör i din organisation om du vill lägga till dig som utvecklare i en Experience Platform-produktprofil. Mer information om hur du [hanterar utvecklaråtkomst för produktprofiler](https://helpx.adobe.com/se/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html) finns i Admin Console-dokumentationen.
+Kontakta en Admin Console-administratör i din organisation om du vill lägga till dig som utvecklare i en Experience Platform-produktprofil. Mer information om hur du [hanterar utvecklaråtkomst för produktprofiler](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html) finns i Admin Console-dokumentationen.
 
 När du har tilldelats en utvecklare kan du börja skapa integreringar i [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API:er.
 
@@ -60,7 +60,7 @@ När du har tilldelats en utvecklare kan du börja skapa integreringar i [Adobe 
 
 Din Admin Console-administratör måste också lägga till dig som användare i samma produktprofil. Med användaråtkomst kan du i gränssnittet se resultatet av de API-åtgärder du utför.
 
-Mer information finns i guiden om [hantering av användargrupper i Admin Console](https://helpx.adobe.com/se/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html).
+Mer information finns i guiden om [hantering av användargrupper i Admin Console](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html).
 
 ## Generera en API-nyckel (klient-ID) och ett företags-ID {#generate-credentials}
 
@@ -100,7 +100,7 @@ Välj sedan autentiseringstypen **[!UICONTROL OAuth Server-to-Server]** för att
 
 >[!IMPORTANT]
 >
->Metoden **[!UICONTROL OAuth Server-to-Server]** är den enda tokengenereringsmetod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** som tidigare stöddes är föråldrad och kan inte väljas för nya integreringar. Befintliga integreringar som använder JWT-autentiseringsmetoden fortsätter att fungera fram till 30 juni 2025, men Adobe rekommenderar starkt att du migrerar befintliga integreringar till den nya [!UICONTROL OAuth Server-to-Server]-metoden före det datumet. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Skapa en JSON-webbtoken (JWT)](#jwt).
+>Metoden **[!UICONTROL OAuth Server-to-Server]** är den enda tokengenereringsmetod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** som tidigare stöddes är föråldrad och kan inte väljas för nya integreringar. Befintliga integreringar som använder JWT-autentiseringsmetoden fortsätter att fungera fram till 30 juni 2025, men Adobe rekommenderar starkt att du migrerar befintliga integreringar till den nya [!UICONTROL OAuth Server-to-Server]-metoden före det datumet. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative} [Generera en JSON-webbtoken (JWT)](#jwt).
 
 ![Välj autentiseringsmetoden OAuth Server-till-Server för Experience Platform API.](./images/api-authentication/oauth-authentication-method.png)
 
@@ -171,15 +171,15 @@ Använd sedan listruteväljaren för att öppna inloggningsfönstret, generera e
 >
 >Det övre referensblocket visas fortfarande när du navigerar mellan olika slutpunktssidor i referensdokumentationen för Experience Platform API.
 
-## [!BADGE Inaktuell]{type=negative} Generera en JSON-webbtoken (JWT) {#jwt}
+## [!BADGE Borttagen]{type=negative} Generera en JSON-webbtoken (JWT) {#jwt}
 
 >[!WARNING]
 >
 >JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med autentiseringsmetoden [OAuth Server-till-server](#select-oauth-server-to-server). Adobe kräver också att du migrerar dina befintliga integreringar till OAuth-metoden senast 30 juni 2025 för att integreringarna ska fortsätta att fungera. Läs följande viktiga dokumentation:
 > 
->* [Migreringsguide för program från JWT till OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
->* [Implementeringsguide för nya och gamla program med OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
->* [Fördelar med att använda inloggningsmetoden OAuth Server-till-server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
+> * [Migreringsguide för program från JWT till OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
+> * [Implementeringsguide för nya och gamla program med OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
+> * [Fördelar med att använda inloggningsmetoden OAuth Server-till-server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
 
 +++ Visa inaktuell information
 
@@ -241,7 +241,7 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `token_type` | Typen of token returneras. För åtkomsttoken är det här värdet alltid `bearer`. |
+| `token_type` | Den typ av token som returneras. För åtkomsttoken är det här värdet alltid `bearer`. |
 | `access_token` | Den genererade `{ACCESS_TOKEN}`. Det här värdet, som föregås av ordet `Bearer`, krävs som `Authentication`-rubrik för alla Experience Platform API-anrop. |
 | `expires_in` | Antalet millisekunder som återstår tills åtkomsttoken upphör att gälla. När värdet når 0 måste en ny åtkomsttoken genereras för att du ska kunna fortsätta använda Experience Platform API:er. |
 
@@ -340,7 +340,7 @@ Välj **[!UICONTROL Products]** i navigeringsfältet och välj sedan **[!UICONTR
 
 ![Produktsidan på Adobe Admin Console med Adobe Experience Platform-produkten markerad.](././images/api-authentication/products.png)
 
-Välj **[!UICONTROL AEP-Default-All-Users]** på fliken **[!UICONTROL Product Profiles]**. Du kan också använda sökfältet för att söka efter produktprofilen genom att ange namnet.
+Välj **[!UICONTROL Product Profiles]** på fliken **[!UICONTROL AEP-Default-All-Users]**. Du kan också använda sökfältet för att söka efter produktprofilen genom att ange namnet.
 
 ![Produktprofilsidan med sökfältet och AEP-Default-All-Users-produkten markerad.](././images/api-authentication/select-product-profile.png)
 
@@ -360,19 +360,19 @@ Utvecklaren har lagts till och visas på fliken **[!UICONTROL Developers]**.
 
 >[!NOTE]
 >
->Endast en systemadministratör kan tilldela API:er till roller i Experience Platform-gränssnittet.
+> Endast en systemadministratör kan tilldela API:er till roller i Experience Platform-gränssnittet.
 
 Om du vill använda och utföra åtgärder på Experience Platform API:er måste en systemadministratör lägga till API-autentiseringsuppgifterna utöver en rolls angivna behörighetsuppsättning. Mer information finns i avsnittet om att [hantera API-autentiseringsuppgifter för en roll](../access-control/abac/ui/permissions.md#manage-api-credentials-for-a-role).
 
 En genomgång av stegen som beskrivs ovan för att lägga till utvecklare i produktprofiler och tilldela API:er till roller finns också i videosjälvstudien nedan:
 
->[!VIDEO](https://video.tv.adobe.com/v/3446402/?learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 
 ## Ytterligare resurser {#additional-resources}
 
 Mer information om hur du kommer igång med Experience Platform API:er finns i de ytterligare resurserna som är länkade nedan
 
-* [Autentisera och få tillgång till sidan med självstudiekurser för Experience Platform API](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html?lang=sv-SE)
+* [Autentisera och få tillgång till sidan med självstudiekurser för Experience Platform API](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html)
 * [Identity Management Service Postman Collection](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims) för generering av åtkomsttoken
 * [Experience Platform API Postman-samlingar](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform)
 
