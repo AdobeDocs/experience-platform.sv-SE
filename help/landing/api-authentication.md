@@ -366,7 +366,7 @@ Om du vill använda och utföra åtgärder på Experience Platform API:er måste
 
 En genomgång av stegen som beskrivs ovan för att lägga till utvecklare i produktprofiler och tilldela API:er till roller finns också i videosjälvstudien nedan:
 
->[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3446402/?learn=on&captions=swe)
 
 ## Ytterligare resurser {#additional-resources}
 
