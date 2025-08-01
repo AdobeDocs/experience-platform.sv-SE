@@ -52,7 +52,7 @@ Innan du skapar integreringar på Adobe Developer Console måste ditt konto ha u
 
 ### Få utvecklaråtkomst {#gain-developer-access}
 
-Kontakta en Admin Console-administratör i din organisation om du vill lägga till dig som utvecklare i en Experience Platform-produktprofil. Mer information om hur du [hanterar utvecklaråtkomst för produktprofiler](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html) finns i Admin Console-dokumentationen.
+Kontakta en Admin Console-administratör i din organisation om du vill lägga till dig som utvecklare i en Experience Platform-produktprofil. Mer information om hur du [hanterar utvecklaråtkomst för produktprofiler](https://helpx.adobe.com/se/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html) finns i Admin Console-dokumentationen.
 
 När du har tilldelats en utvecklare kan du börja skapa integreringar i [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API:er.
 
@@ -60,7 +60,7 @@ När du har tilldelats en utvecklare kan du börja skapa integreringar i [Adobe 
 
 Din Admin Console-administratör måste också lägga till dig som användare i samma produktprofil. Med användaråtkomst kan du i gränssnittet se resultatet av de API-åtgärder du utför.
 
-Mer information finns i guiden om [hantering av användargrupper i Admin Console](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html).
+Mer information finns i guiden om [hantering av användargrupper i Admin Console](https://helpx.adobe.com/se/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html).
 
 ## Generera en API-nyckel (klient-ID) och ett företags-ID {#generate-credentials}
 
@@ -372,7 +372,7 @@ En genomgång av stegen som beskrivs ovan för att lägga till utvecklare i prod
 
 Mer information om hur du kommer igång med Experience Platform API:er finns i de ytterligare resurserna som är länkade nedan
 
-* [Autentisera och få tillgång till sidan med självstudiekurser för Experience Platform API](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html)
+* [Autentisera och få tillgång till sidan med självstudiekurser för Experience Platform API](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html?lang=sv-SE)
 * [Identity Management Service Postman Collection](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims) för generering av åtkomsttoken
 * [Experience Platform API Postman-samlingar](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform)
 
