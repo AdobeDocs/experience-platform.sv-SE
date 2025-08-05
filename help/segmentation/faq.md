@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 721024192b54fcbab11b483cc26fa84151bb61a7
+source-git-commit: b7bf7a2b7628f61231321205e2a6b9d675afce8b
 workflow-type: tm+mt
-source-wordcount: '4821'
+source-wordcount: '4808'
 ht-degree: 0%
 
 ---
@@ -120,7 +120,7 @@ Enrichment-attribut är attribut som kommer från en datauppsättning och som f�
 
 | Aktiveringskanal | Målgrupper från anpassad CSV-överföring | Målgrupper från Audience Composition |
 | --- | --- | --- |
-| Real-Time CDP Destinations | Både nyttolastattributen och målgrupperna kan aktiveras. | Bara målgruppen kan aktiveras. Det går inte att aktivera anrikningsattributen **&#x200B;**. |
+| Real-Time CDP Destinations | Både nyttolastattributen och målgrupperna kan aktiveras. | Bara målgruppen kan aktiveras. Det går inte att aktivera anrikningsattributen ****. |
 | Adobe Journey Optimizer Campaigns | Varken målgruppen eller nyttolastattributen kan aktiveras. | Både målgrupps- och anrikningsattributen kan aktiveras. |
 
 ## Livscykeltillstånd {#lifecycle-states}
@@ -290,7 +290,7 @@ Vid den här tidpunkten, nej. Denna kapacitet bör dock vara tillgänglig inom d
 
 ### Kan jag skicka målgrupper från Audience Composition till alla destinationer och kanaler längre fram i kedjan?
 
-Vid den här tidpunkten, nej. För närvarande kan ni använda målgrupper från Audience Composition i Adobe Journey Optimizer Campaigns och Real-Time CDP destinationer. Adobe Journey Optimizer Journeys kommer att få stöd i en kommande version.
+Ja! Ni kan använda målgrupper från Audience Composition i Adobe Journey Optimizer Campaigns, Real-Time CDP destinationer och Adobe Journey Optimizer Journeys.
 
 ### Finns det några skyddsräcken för antalet kompositioner?
 
@@ -420,7 +420,7 @@ Observera att om en segmentdefinition innehåller **både** och `inSegment` uttr
 
 Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegment. Detta värde visas för både grupp- och direktuppspelningssegment.
 
-Talet under de senaste X dagarna **endast** innehåller målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och det räknas mot den direktuppspelningsdefinitionen. Det här värdet visas **endast** för direktuppspelningssegment. Därför kan det här värdet **&#x200B;**&#x200B;visas som 0 för gruppsegment.
+Talet under de senaste X dagarna **endast** innehåller målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och det räknas mot den direktuppspelningsdefinitionen. Det här värdet visas **endast** för direktuppspelningssegment. Därför kan det här värdet **** visas som 0 för gruppsegment.
 
 Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **inte** direktuppspelat några profiler i systemet som skulle kvalificera för det segmentet.
 
