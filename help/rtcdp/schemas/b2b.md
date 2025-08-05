@@ -1,25 +1,25 @@
 ---
-title: Scheman i Real-time Customer Data Platform B2B Edition
-description: En översikt över XDM-schemats (Experience Data Model) roll i Adobe Real-time Customer Data Platform B2B Edition.
+title: Scheman i Real-Time Customer Data Platform B2B edition
+description: En översikt över XDM-schemats (Experience Data Model) roll i Adobe Real-Time Customer Data Platform B2B edition.
 feature: Get Started, Data Management, Schemas
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 09f671af0d04251ab7b0a71528cb4b9745594b1c
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---
 
-# Scheman i Real-time Customer Data Platform B2B Edition
+# Scheman i Real-Time Customer Data Platform B2B edition
 
-Adobe Real-time Customer Data Platform B2B Edition innehåller flera standardklasser [i Experience Data Model (XDM)](../../xdm/schema/composition.md#class) som samlar in information om viktiga B2B-datatabeller, som konton, affärsmöjligheter, kampanjer med mera. Dessutom kan du med Real-Time CDP B2B Edition definiera många-till-ett-relationer mellan dessa scheman så att de kan delta i avancerad segmenteringsanvändning.
+Adobe Real-Time Customer Data Platform B2B edition innehåller flera [XDM-klasser (Experience Data Model)](../../xdm/schema/composition.md#class) som är standard och som samlar in information om viktiga B2B-datatabeller, som konton, affärsmöjligheter, kampanjer med mera. Dessutom kan du med Real-Time CDP B2B edition definiera många-till-ett-relationer mellan dessa scheman så att de kan delta i avancerad segmenteringsanvändning.
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till Real-Time CDP B2B Edition för att B2B-scheman ska kunna delta i [kundprofilen i realtid](../../profile/home.md).
+>B2B-scheman är tillgängliga för användning i Experience Platform-program (till exempel i [Customer Journey Analytics B2B edition](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-b2b/cja-b2b-edition)). <br/>Du måste dock ha tillgång till Real-Time CDP B2B edition för att (profiler i) B2B-scheman ska kunna delta i [kundprofilen i realtid](../../profile/home.md).
 
-Följande standardklasser finns i Real-Time CDP B2B Edition:
+Följande standardklasser finns i Real-Time CDP B2B edition:
 
 * [XDM Business Account](../../xdm/classes/b2b/business-account.md)
 * [XDM Business Account Person Relation](../../xdm/classes/b2b/business-account-person-relation.md)
