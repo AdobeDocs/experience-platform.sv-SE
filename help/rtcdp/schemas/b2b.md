@@ -2,7 +2,7 @@
 title: Scheman i Real-Time Customer Data Platform B2B edition
 description: En översikt över XDM-schemats (Experience Data Model) roll i Adobe Real-Time Customer Data Platform B2B edition.
 feature: Get Started, Data Management, Schemas
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
 source-git-commit: 09f671af0d04251ab7b0a71528cb4b9745594b1c
 workflow-type: tm+mt
@@ -17,7 +17,7 @@ Adobe Real-Time Customer Data Platform B2B edition innehåller flera [XDM-klasse
 
 >[!IMPORTANT]
 >
->B2B-scheman är tillgängliga för användning i Experience Platform-program (till exempel i [Customer Journey Analytics B2B edition](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-b2b/cja-b2b-edition)). <br/>Du måste dock ha tillgång till Real-Time CDP B2B edition för att (profiler i) B2B-scheman ska kunna delta i [kundprofilen i realtid](../../profile/home.md).
+>B2B-scheman är tillgängliga för användning i Experience Platform-program (till exempel i [Customer Journey Analytics B2B edition](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-overview/cja-b2b/cja-b2b-edition)). <br/>Du måste dock ha tillgång till Real-Time CDP B2B edition för att (profiler i) B2B-scheman ska kunna delta i [kundprofilen i realtid](../../profile/home.md).
 
 Följande standardklasser finns i Real-Time CDP B2B edition:
 
