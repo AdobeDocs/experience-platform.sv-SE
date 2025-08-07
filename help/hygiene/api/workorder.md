@@ -1,30 +1,30 @@
 ---
-title: Begäranden om radering av post (arbetsorderslutpunkt)
-description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för identiteter.
+title: Spela in ta bort arbetsorder
+description: Lär dig hur du använder slutpunkten /workorder i API:t Data Hygiene för att hantera postborttagningsarbetsorder i Adobe Experience Platform. Den här guiden täcker kvoter, bearbetningstidslinjer och API-användning.
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: d569b1d04fa76e0a0e48364a586e8a1a773b9bf2
+source-git-commit: 4f4b668c2b29228499dc28b2c6c54656e98aaeab
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '2104'
 ht-degree: 1%
 
 ---
 
-# Posta borttagningsbegäranden (arbetsorderslutpunkt) {#work-order-endpoint}
+# Registrera borttagning av arbetsorder {#work-order-endpoint}
 
-Med slutpunkten `/workorder` i API:t för datahygien kan du programmässigt hantera begäranden om postborttagning i Adobe Experience Platform.
+Använd slutpunkten `/workorder` i API:t för datahygien för att skapa, visa och hantera arbetsorder för borttagning av poster i Adobe Experience Platform. Med arbetsorder kan ni styra, övervaka och spåra borttagning av data mellan datauppsättningar för att upprätthålla datakvaliteten och stödja organisationens standarder för datastyrning.
 
 >[!IMPORTANT]
-> 
->Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De **får inte** användas för förfrågningar om rättigheter för registrerade (efterlevnad) som gäller sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). Använd [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället för alla kompatibilitetsfall.
+>
+>Arbetsorder för radering av poster används för datarensning, borttagning av anonyma data eller datamängning. **Använd inte postborttagning av arbetsorder för förfrågningar om rättigheter för registrerade i enlighet med sekretessbestämmelser som GDPR.** Använd [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) om du vill ha exempel på efterlevnad.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du gå igenom [översikten](./overview.md) och se om det finns länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa Experience Platform-API:er.
+Innan du börjar kan du läsa [översikten](./overview.md) för att lära dig mer om obligatoriska rubriker, hur du läser exempel-API-anrop och var du hittar relaterad dokumentation.
 
 ## Kvoter och bearbetningstidslinjer {#quotas}
 
-Begäran om att radera poster omfattas av dagliga och månadsvisa gränser för hur många identifierare som får skickas in, beroende på organisationens licensberättigande. Dessa begränsningar gäller för både UI- och API-baserade borttagningsbegäranden.
+Gränserna för att skicka in raderade arbetsorder gäller för dag- och månadsvisa ID-inlämningar, som bestäms av din organisations licensberättigande. Dessa begränsningar gäller för både UI- och API-baserade begäranden om postborttagning.
 
 >[!NOTE]
 >
@@ -32,7 +32,7 @@ Begäran om att radera poster omfattas av dagliga och månadsvisa gränser för 
 
 ### Möjlighet att skicka in per produkt varje månad {#quota-limits}
 
-Tabellen nedan visar inlämningsgränser för identifierare per produkt och berättigandenivå. För varje produkt är den månatliga övre gränsen det lägsta av två värden: ett fast identifierartak eller ett procentbaserat tröskelvärde som är knutet till den licensierade datavolymen.
+I följande tabell visas inskicksgränser för identifierare per produkt och berättigandenivå. För varje produkt är den månatliga övre gränsen det lägsta av två värden: ett fast identifierartak eller ett procentbaserat tröskelvärde som är knutet till den licensierade datavolymen.
 
 | Produkt | Tillståndsbeskrivning | Månatligt tak (den som är mindre) |
 |----------|-------------------------|---------------------------------|
@@ -43,22 +43,23 @@ Tabellen nedan visar inlämningsgränser för identifierare per produkt och ber�
 
 >[!NOTE]
 >
-> De flesta organisationer har lägre månadsgränser baserat på den faktiska adresserbara målgruppen eller CJA-radrättigheterna.
-
-Kvoterna återställs den första dagen i varje kalendermånad. Oanvänd kvot för överföring av **inte**.
+>De flesta organisationer har lägre månadsgränser baserat på den faktiska adresserbara målgruppen eller CJA-radrättigheterna.
 
 >[!NOTE]
 >
->Kvoterna baseras på din organisations licensierade månadsberättigande för **skickade identifierare**. Dessa används inte av systemskyddsräcken, men kan övervakas och granskas.
+>Kvoterna återställs den första dagen i varje kalendermånad. Oanvänd kvot för överföring av **inte**.
+
+>[!NOTE]
 >
->Borttagning av post är en **delad tjänst**. Det högsta antalet licenser som gäller för Real-Time CDP, Adobe Journey Optimizer, Customer Journey Analytics och eventuella tillägg till Shield.
+>Kvotanvändningen baseras på din organisations licensierade månadsberättigande för **skickade identifierare**. Kvoterna styrs inte av systemgarantisystem, men kan övervakas och granskas.\
+>Posten för borttagning av arbetsorderkapacitet är en **delad tjänst**. Det högsta antalet licenser som gäller för Real-Time CDP, Adobe Journey Optimizer, Customer Journey Analytics och eventuella tillägg till Shield.
 
 ### Bearbetar tidslinjer för identifieraröverföringar {#sla-processing-timelines}
 
-När du har skickat in en post köas och bearbetas förfrågningar om radering baserat på din berättigandenivå.
+När du har skickat in en post köas och bearbetas arbetsorder för borttagning baserat på din berättigandenivå.
 
 | Produkt- och berättigandebeskrivning | Kövaraktighet | Maximal bearbetningstid (SLA) |
-|------------------------------------------------------------------------------------|---------------------|-------------------------------|
+|------------------------------------|---------------------|-------------------------------|
 | Utan tillägg till sköld för skydd av privatlivet och säkerheten eller hälso- och sjukvårdsskölden | Upp till 15 dagar | 30 dagar |
 | Med tillägget Privacy and Security Shield eller Healthcare Shield | Normalt 24 timmar | 15 dagar |
 
@@ -68,13 +69,129 @@ Om din organisation kräver högre gränser kontaktar du Adobe för att få en t
 >
 >Information om hur du kontrollerar din aktuella kvotanvändning eller tillståndsnivå finns i [referensguiden för kvoter](../api/quota.md).
 
-## Skapa en begäran om postborttagning {#create}
+## Lista post ta bort arbetsorder {#list}
 
-Du kan ta bort en eller flera identiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-begäran till `/workorder`-slutpunkten.
+Hämta en sidnumrerad lista med arbetsorder för att ta bort poster för datahygien i organisationen. Filtrera resultat med frågeparametrar. Varje arbetsorderpost innehåller åtgärdstypen (till exempel `identity-delete`), status, relaterad datauppsättning och användarinformation samt granskningsmetadata.
+
+**API-format**
+
+```http
+GET /workorder
+```
+
+I följande tabell beskrivs de frågeparametrar som är tillgängliga för att lista arbetsorder för radering av poster.
+
+| Frågeparameter | Beskrivning |
+| --------------- | ------------|
+| `search` | Skiftlägeskänslig partiell matchning (jokerteckensökning) mellan fält: författare, visningsnamn, beskrivning eller datauppsättningsnamn. Matchar även exakt förfallodatum-ID. |
+| `type` | Filtrera resultat efter arbetsordertyp (t.ex. `identity-delete`). |
+| `status` | Kommaavgränsad lista över arbetsorderstatusar. Statusvärden är skiftlägeskänsliga.<br>Uppräkning: `received`, `validated`, `submitted`, `ingested`, `completed`, `failed` |
+| `author` | Hitta den person som senast uppdaterade arbetsordern (eller den som skapade originalet). Accepterar literalt eller SQL-mönster. |
+| `displayName` | Skiftlägesokänslig matchning för arbetsorderns visningsnamn. |
+| `description` | Skiftlägesokänslig matchning för arbetsorderbeskrivning. |
+| `workorderId` | Exakt matchning för arbetsorder-ID. |
+| `sandboxName` | Exakt matchning för sandlådenamn som används i begäran, eller använd `*` för att inkludera alla sandlådor. |
+| `fromDate` | Filtrera efter arbetsorder som skapats på eller efter detta datum. Kräver att `toDate` anges. |
+| `toDate` | Filtrera efter arbetsorder som skapats på eller före detta datum. Kräver att `fromDate` anges. |
+| `filterDate` | Returnerar endast arbetsorder som har skapats, uppdaterats eller ändrats detta datum. |
+| `page` | Sidindex som ska returneras (börjar vid 0). |
+| `limit` | Högsta antal resultat per sida (1-100, standard: 25). |
+| `orderBy` | Sorteringsordning för resultat. Använd prefixet `+` eller `-` för stigande/fallande. Exempel: `orderBy=-datasetName`. |
+| `properties` | Kommaavgränsad lista med ytterligare fält som ska inkluderas per resultat. Valfritt. |
+
+
+**Begäran**
+
+Följande begäran hämtar alla slutförda arbetsorder för radering av poster, begränsat till två per sida:
+
+```shell
+curl -X GET \
+  "https://platform.adobe.io/data/core/hygiene/workorder?status=completed&limit=2" \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett godkänt svar returnerar en numrerad lista över arbetsorder för radering av poster.
+
+```json
+{
+  "results": [
+    {
+      "workorderId": "DI-1729d091-b08b-47f4-923f-6a4af52c93ac",
+      "orgId": "9C1F2AC143214567890ABCDE@AcmeOrg",
+      "bundleId": "BN-4cfabf02-c22a-45ef-b21f-bd8c3d631f41",
+      "action": "identity-delete",
+      "createdAt": "2034-03-15T11:02:10.935Z",
+      "updatedAt": "2034-03-15T11:10:10.938Z",
+      "operationCount": 3,
+      "targetServices": [
+        "profile",
+        "datalake",
+        "identity"
+      ],
+      "status": "received",
+      "createdBy": "a.stark@acme.com <a.stark@acme.com> BD8C3D631F41@acme.com",
+      "datasetId": "a7b7c8f3a1b8457eaa5321ab",
+      "datasetName": "Acme_Customer_Exports",
+      "displayName": "Customer Identity Delete Request",
+      "description": "Scheduled identity deletion for compliance"
+    }
+  ],
+  "total": 1,
+  "count": 1,
+  "_links": {
+    "next": {
+      "href": "https://platform.adobe.io/workorder?page=1&limit=2",
+      "templated": false
+    },
+    "page": {
+      "href": "https://platform.adobe.io/workorder?limit={limit}&page={page}",
+      "templated": true
+    }
+  }
+}
+```
+
+I följande tabell beskrivs egenskaperna i svaret.
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `results` | Array med postborttagningar av arbetsorderobjekt. Varje objekt innehåller fälten nedan. |
+| `workorderId` | Den unika identifieraren för postens arbetsorder för borttagning. |
+| `orgId` | Din unika organisations-ID. |
+| `bundleId` | Den unika identifieraren för paketet som innehåller den här postens arbetsorder för borttagning. Med paketering kan flera raderingsorder grupperas och bearbetas tillsammans av underordnade tjänster. |
+| `action` | Åtgärdstypen som begärdes i arbetsordern. |
+| `createdAt` | Tidsstämpeln när arbetsordern skapades. |
+| `updatedAt` | Tidsstämpeln när arbetsordern senast uppdaterades. |
+| `operationCount` | Antalet åtgärder som ingår i arbetsordern. |
+| `targetServices` | Lista över måltjänster för arbetsordern. |
+| `status` | Aktuell status för arbetsordern. Möjliga värden är: `received`,`validated`, `submitted`, `ingested`, `completed` och `failed`. |
+| `createdBy` | E-postadress och identifierare för den användare som skapade arbetsordern. |
+| `datasetId` | Den unika identifieraren för den datauppsättning som är associerad med arbetsordern. Om begäran gäller alla datauppsättningar ställs fältet in på ALL. |
+| `datasetName` | Namnet på datauppsättningen som är associerad med arbetsordern. |
+| `displayName` | En etikett som kan läsas av människor för arbetsordern. |
+| `description` | En beskrivning av arbetsorderns syfte. |
+| `total` | Totalt antal arbetsorder för borttagning av poster som matchar frågan. |
+| `count` | Antal arbetsorder för radering av poster på den aktuella sidan. |
+| `_links` | Sidnumrering och navigeringslänkar. |
+| `next` | Objekt med `href` (sträng) och `templated` (booleskt) för nästa sida. |
+| `page` | Objekt med `href` (sträng) och `templated` (booleskt) för sidnavigering. |
+
+{style="table-layout:auto"}
+
+## Skapa en post för borttagning av arbetsorder {#create}
+
+Om du vill ta bort poster som är associerade med en eller flera identiteter från en enskild datamängd eller alla datamängder, gör du en POST-begäran till `/workorder`-slutpunkten.
+
+Arbetsorder bearbetas asynkront och visas i arbetsorderlistan när de har skickats.
 
 >[!TIP]
 >
->Varje postborttagningsbegäran som skickas via API kan innehålla upp till **100 000 identiteter**. För att maximera effektiviteten skickar du så många identiteter per begäran som möjligt och undviker att skicka in stora mängder, t.ex. enstaka ID-arbetsorder.
+>Varje postborttagningsarbetsorder som skickas via API kan innehålla upp till **100 000 identiteter**. Skicka så många identiteter per begäran som möjligt för att maximera effektiviteten. Undvik att skicka in stora mängder, t.ex. arbetsorder med ett enda ID.
 
 **API-format**
 
@@ -84,11 +201,15 @@ POST /workorder
 
 >[!NOTE]
 >
->Data Lifecycle-begäranden kan bara ändra datauppsättningar som baseras på primära identiteter eller en identitetskarta. En begäran måste antingen ange den primära identiteten eller tillhandahålla en identitetskarta.
+>Du kan bara ta bort poster från datauppsättningar vars associerade XDM-schema definierar en primär identitet eller identitetskarta.
+
+>[!NOTE]
+>
+>Om du försöker skapa en postborttagningsarbetsorder för en datauppsättning som redan har en aktiv förfallotid, returnerar begäran HTTP 400 (Ogiltig begäran). En aktiv förfallotid är en schemalagd borttagning som ännu inte har slutförts.
 
 **Begäran**
 
-Beroende på värdet för `datasetId` som anges i den begärda nyttolasten, tar API-anropet bort identiteter från alla datauppsättningar eller en enskild datauppsättning som du anger. Följande begäran tar bort tre identiteter från en specifik datauppsättning.
+Följande begäran tar bort alla poster som är associerade med angivna e-postadresser från en viss datauppsättning.
 
 ```shell
 curl -X POST \
@@ -99,90 +220,100 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
+        "displayName": "Acme Loyalty - Customer Data Deletion",
+        "description": "Delete all records associated with the specified email addresses from the Acme_Loyalty_2023 dataset.",
         "action": "delete_identity",
-        "datasetId": "c48b51623ec641a2949d339bad69cb15",
-        "displayName": "Example Record Delete Request",
-        "description": "Cleanup identities required by Jira request 12345.",
-        "identities": [
+        "datasetId": "7eab61f3e5c34810a49a1ab3",
+        "namespacesIdentities": [
           {
             "namespace": {
               "code": "email"
             },
-            "id": "poul.anderson@example.com"
-          },
-          {
-            "namespace": {
-              "code": "email"
-            },
-            "id": "cordwainer.smith@gmail.com"
-          },
-          {
-            "namespace": {
-              "code": "email"
-            },
-            "id": "cyril.kornbluth@yahoo.com"
+            "IDs": [
+              "alice.smith@acmecorp.com",
+              "bob.jones@acmecorp.com",
+              "charlie.brown@acmecorp.com"
+            ]
           }
         ]
       }'
 ```
 
+I följande tabell beskrivs egenskaperna för att skapa en postborttagningsarbetsordning.
+
 | Egenskap | Beskrivning |
 | --- | --- |
-| `action` | Den åtgärd som ska utföras. Värdet måste anges till `delete_identity` för postborttagningar. |
-| `datasetId` | Om du tar bort från en enskild datauppsättning måste det här värdet vara ID:t för datauppsättningen i fråga. Om du tar bort från alla datauppsättningar anger du värdet till `ALL`.<br><br>Om du anger en enskild datauppsättning måste datasetens associerade XDM-schema (Experience Data Model) ha en primär identitet definierad. Om datauppsättningen inte har någon primär identitet måste den ha en identitetskarta för att kunna ändras av en begäran om datatillägslivet.<br>Om det finns en identitetskarta kommer den att finnas som ett fält på den översta nivån med namnet `identityMap`.<br>Observera att en datauppsättningsrad kan ha många identiteter i sin identitetskarta, men bara en kan markeras som primär. `"primary": true` måste inkluderas för att `id` ska matcha en primär identitet. |
-| `displayName` | Visningsnamnet för postborttagningsbegäran. |
-| `description` | En beskrivning av postborttagningsbegäran. |
-| `identities` | En array som innehåller identiteterna för minst en användare vars information du vill ta bort. Varje identitet består av ett [ID-namnområde](../../identity-service/features/namespaces.md) och ett värde:<ul><li>`namespace`: Innehåller en enda strängegenskap, `code`, som representerar identitetsnamnutrymmet. </li><li>`id`: Identitetsvärdet.</ul>Om `datasetId` anger en enskild datauppsättning måste varje entitet under `identities` använda samma identitetsnamnutrymme som schemats primära identitet.<br><br>Om `datasetId` är `ALL` begränsas inte arrayen `identities` till ett enda namnutrymme eftersom varje datauppsättning kan vara olika. Dina förfrågningar är dock fortfarande begränsade till de namnutrymmen som är tillgängliga för din organisation, vilket rapporteras av [identitetstjänsten](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
-
-{style="table-layout:auto"}
+| `displayName` | En etikett som kan läsas av människor för den här posten tar bort arbetsorder. |
+| `description` | En beskrivning av postens arbetsorder för borttagning. |
+| `action` | Den begärda åtgärden för postborttagning av arbetsorder. Använd `delete_identity` om du vill ta bort poster som är associerade med en viss identitet. |
+| `datasetId` | Den unika identifieraren för datauppsättningen. Använd datauppsättnings-ID:t för en specifik datauppsättning, eller `ALL` om du vill ange alla datauppsättningar som mål. Datauppsättningar måste ha en primär identitet eller identitetskarta. Om det finns en identitetskarta finns den som ett fält på den översta nivån med namnet `identityMap`.<br>Observera att en datauppsättningsrad kan ha många identiteter i sin identitetskarta, men bara en kan markeras som primär. `"primary": true` måste inkluderas för att `id` ska matcha en primär identitet. |
+| `namespacesIdentities` | En array med objekt som var och en innehåller:<br><ul><li> `namespace`: Ett objekt med en `code`-egenskap som anger identitetsnamnutrymmet (t.ex. &quot;email&quot;).</li><li> `IDs`: En array med identitetsvärden som ska tas bort för det här namnområdet.</li></ul>Identitetsnamnutrymmen ger kontext till identitetsdata. Du kan använda standardnamnutrymmen från Experience Platform eller skapa egna. Mer information finns i dokumentationen för [identitetsnamnrymden](../../identity-service/features/namespaces.md) och [API-specifikationen för identitetstjänsten](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om postborttagningen.
+Ett lyckat svar returnerar information om den nya postens arbetsorder för borttagning.
 
 ```json
 {
-  "workorderId": "a15345b8-a2d6-4d6f-b33c-5b593e86439a",
-  "orgId": "{ORG_ID}",
-  "bundleId": "BN-35c1676c-3b4f-4195-8d6c-7cf5aa21efdd",
+  "workorderId": "DI-95c40d52-6229-44e8-881b-fc7f072de63d",
+  "orgId": "8B1F2AC143214567890ABCDE@AcmeOrg",
+  "bundleId": "BN-c61bec61-5ce8-498f-a538-fb84b094adc6",
   "action": "identity-delete",
-  "createdAt": "2022-07-21T18:05:28.316029Z",
-  "updatedAt": "2022-07-21T17:59:43.217801Z",
+  "createdAt": "2035-06-02T09:21:00.000Z",
+  "updatedAt": "2035-06-02T09:21:05.000Z",
+  "operationCount": 1,
+  "targetServices": [
+    "profile",
+    "datalake",
+    "identity"
+  ],
   "status": "received",
-  "createdBy": "{USER_ID}",
-  "datasetId": "c48b51623ec641a2949d339bad69cb15",
-  "displayName": "Example Record Delete Request",
-  "description": "Cleanup identities required by Jira request 12345."
+  "createdBy": "c.lannister@acme.com <c.lannister@acme.com> 7EAB61F3E5C34810A49A1AB3@acme.com",
+  "datasetId": "7eab61f3e5c34810a49a1ab3",
+  "datasetName": "Acme_Loyalty_2023",
+  "displayName": "Loyalty Identity Delete Request",
+  "description": "Schedule deletion for Acme loyalty program dataset"
 }
 ```
 
+I följande tabell beskrivs egenskaperna i svaret.
+
 | Egenskap | Beskrivning |
 | --- | --- |
-| `workorderId` | ID:t för raderingsordern. Detta kan användas för att senare slå upp borttagningsstatus. |
-| `orgId` | Ditt organisations-ID. |
-| `bundleId` | ID:t för det paket som den här borttagningsordern är kopplad till, används för felsökning. Flera raderingsorder paketeras ihop för att behandlas av tjänster i senare led. |
-| `action` | Den åtgärd som utförs av arbetsordern. För postborttagningar är värdet `identity-delete`. |
-| `createdAt` | En tidsstämpel som anger när raderingsordningen skapades. |
-| `updatedAt` | En tidsstämpel som anger när raderingsordningen senast uppdaterades. |
-| `status` | Den aktuella statusen för borttagningsordern. |
-| `createdBy` | Användaren som skapade borttagningsordningen. |
-| `datasetId` | ID:t för den datauppsättning som är föremål för begäran. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
+| `workorderId` | Den unika identifieraren för postens arbetsorder för borttagning. Använd det här värdet för att slå upp status eller information om borttagningen. |
+| `orgId` | Din unika organisations-ID. |
+| `bundleId` | Den unika identifieraren för paketet som innehåller den här postens arbetsorder för borttagning. Med paketering kan flera raderingsorder grupperas och bearbetas tillsammans av underordnade tjänster. |
+| `action` | Åtgärdstypen som begärdes i postens arbetsorder för borttagning. |
+| `createdAt` | Tidsstämpeln när arbetsordern skapades. |
+| `updatedAt` | Tidsstämpeln när arbetsordern senast uppdaterades. |
+| `operationCount` | Antalet åtgärder som ingår i arbetsordern. |
+| `targetServices` | En lista med måltjänster för postens radering av arbetsorder. |
+| `status` | Aktuell status för postens radera arbetsorder. |
+| `createdBy` | E-postadressen och identifieraren för den användare som skapade posten tar bort arbetsorder. |
+| `datasetId` | Den unika identifieraren för datauppsättningen. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
+| `datasetName` | Namnet på datauppsättningen för den här posten tar bort arbetsorder. |
+| `displayName` | En etikett som kan läsas av människor för arbetsorder för radering av poster. |
+| `description` | En beskrivning av postens arbetsorder för borttagning. |
 
 {style="table-layout:auto"}
 
-## Hämta status för en postborttagning {#lookup}
+>[!NOTE]
+>
+>Åtgärdsegenskapen för arbetsorder för att ta bort poster är för närvarande `identity-delete` i API-svar. Om API:t ändras till ett annat värde (till exempel `delete_identity`) uppdateras den här dokumentationen därefter.
 
-När du har [skapat en begäran om postborttagning](#create) kan du kontrollera dess status med en GET-begäran.
+## Hämta information för en viss postborttagningsarbetsorder {#lookup}
+
+Hämta information för en viss postborttagningsarbetsordning genom att göra en GET-begäran till `/workorder/{WORKORDER_ID}`. Svaret innehåller åtgärdstyp, status, associerad datauppsättning och användarinformation samt granskningsmetadata.
 
 **API-format**
 
 ```http
-GET /workorder/{WORK_ORDER_ID}
+GET /workorder/{WORKORDER_ID}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{WORK_ORDER_ID}` | `workorderId` för den post som du letar upp tas bort. |
+| `{WORK_ORDER_ID}` | Den unika identifieraren för den postborttagningsarbetsorder som du söker upp. |
 
 {style="table-layout:auto"}
 
@@ -190,7 +321,7 @@ GET /workorder/{WORK_ORDER_ID}
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/workorder/BN-35c1676c-3b4f-4195-8d6c-7cf5aa21efdd \
+  https://platform.adobe.io/data/core/hygiene/workorder/DI-6fa98d52-7bd2-42a5-bf61-fb5c22ec9427 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -199,67 +330,66 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar information om borttagningsåtgärden, inklusive dess aktuella status.
+Ett lyckat svar returnerar information om den angivna arbetsordern för borttagning av post.
 
 ```json
 {
-  "workorderId": "a15345b8-a2d6-4d6f-b33c-5b593e86439a",
-  "orgId": "{ORG_ID}",
-  "bundleId": "BN-35c1676c-3b4f-4195-8d6c-7cf5aa21efdd",
+  "workorderId": "DI-6fa98d52-7bd2-42a5-bf61-fb5c22ec9427",
+  "orgId": "3C7F2AC143214567890ABCDE@AcmeOrg",
+  "bundleId": "BN-dbe3ffad-cb0b-401f-91ae-01c189f8e7b2",
   "action": "identity-delete",
-  "createdAt": "2022-07-21T18:05:28.316029Z",
-  "updatedAt": "2022-07-21T17:59:43.217801Z",
+  "createdAt": "2037-01-21T08:25:45.119Z",
+  "updatedAt": "2037-01-21T08:30:45.233Z",
+  "operationCount": 3,
+  "targetServices": [
+    "ajo",
+    "profile",
+    "datalake",
+    "identity"
+  ],
   "status": "received",
-  "createdBy": "{USER_ID}",
-  "datasetId": "c48b51623ec641a2949d339bad69cb15",
-  "displayName": "Example Record Delete Request",
-  "description": "Cleanup identities required by Jira request 12345.",
-  "productStatusDetails": [
-    {
-        "productName": "Data Management",
-        "productStatus": "success",
-        "createdAt": "2022-08-08T16:51:31.535872Z"
-    },
-    {
-        "productName": "Identity Service",
-        "productStatus": "success",
-        "createdAt": "2022-08-08T16:43:46.331150Z"
-    },
-    {
-        "productName": "Profile Service",
-        "productStatus": "waiting",
-        "createdAt": "2022-08-08T16:37:13.443481Z"
-    }
-  ]
+  "createdBy": "g.baratheon@acme.com <g.baratheon@acme.com> C189F8E7B2@acme.com",
+  "datasetId": "d2f1c8a4b8f747d0ba3521e2",
+  "datasetName": "Acme_Marketing_Events",
+  "displayName": "Marketing Identity Delete Request",
+  "description": "Scheduled identity deletion for marketing compliance"
 }
 ```
 
+I följande tabell beskrivs egenskaperna i svaret.
+
 | Egenskap | Beskrivning |
 | --- | --- |
-| `workorderId` | ID:t för raderingsordern. Detta kan användas för att senare slå upp borttagningsstatus. |
-| `orgId` | Ditt organisations-ID. |
-| `bundleId` | ID:t för det paket som den här borttagningsordern är kopplad till, används för felsökning. Flera raderingsorder paketeras ihop för att behandlas av tjänster i senare led. |
-| `action` | Den åtgärd som utförs av arbetsordern. För postborttagningar är värdet `identity-delete`. |
-| `createdAt` | En tidsstämpel som anger när raderingsordningen skapades. |
-| `updatedAt` | En tidsstämpel som anger när raderingsordningen senast uppdaterades. |
-| `status` | Den aktuella statusen för borttagningsordern. |
-| `createdBy` | Användaren som skapade borttagningsordningen. |
-| `datasetId` | ID:t för den datauppsättning som är föremål för begäran. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
-| `productStatusDetails` | En array som visar den aktuella statusen för processer som är relaterade till begäran. Varje arrayobjekt innehåller följande egenskaper:<ul><li>`productName`: Namnet på den underordnade tjänsten.</li><li>`productStatus`: Den aktuella bearbetningsstatusen för begäran från den underordnade tjänsten.</li><li>`createdAt`: En tidsstämpel som anger när den senaste statusen bokfördes av tjänsten.</li></ul> |
+| `workorderId` | Den unika identifieraren för postens arbetsorder för borttagning. |
+| `orgId` | Organisationens unika identifierare. |
+| `bundleId` | Den unika identifieraren för paketet som innehåller den här postens arbetsorder för borttagning. Med paketering kan flera raderingsorder grupperas och bearbetas tillsammans av underordnade tjänster. |
+| `action` | Åtgärdstypen som begärdes i postens arbetsorder för borttagning. |
+| `createdAt` | Tidsstämpeln när arbetsordern skapades. |
+| `updatedAt` | Tidsstämpeln när arbetsordern senast uppdaterades. |
+| `operationCount` | Antalet åtgärder som ingår i arbetsordern. |
+| `targetServices` | En lista över måltjänster som påverkas av den här posten tar bort arbetsorder. |
+| `status` | Aktuell status för postens radera arbetsorder. |
+| `createdBy` | E-postadressen och identifieraren för den användare som skapade posten tar bort arbetsorder. |
+| `datasetId` | Den unika identifieraren för den datauppsättning som är associerad med arbetsordern. |
+| `datasetName` | Namnet på datauppsättningen som är associerad med arbetsordern. |
+| `displayName` | En etikett som kan läsas av människor för arbetsorder för radering av poster. |
+| `description` | En beskrivning av postens arbetsorder för borttagning. |
 
-## Uppdatera en begäran om radering av post
+## Uppdatera en post, ta bort arbetsorder
 
-Du kan uppdatera `displayName` och `description` för en postborttagning genom att göra en PUT-begäran.
+Uppdatera `name` och `description` för en postborttagning av arbetsorder genom att göra en PUT-begäran till slutpunkten `/workorder/{WORKORDER_ID}`.
 
 **API-format**
 
 ```http
-PUT /workorder{WORK_ORDER_ID}
+PUT /workorder/{WORKORDER_ID}
 ```
+
+I följande tabell beskrivs parametern för denna begäran.
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{WORK_ORDER_ID}` | `workorderId` för den post som du letar upp tas bort. |
+| `{WORK_ORDER_ID}` | Den unika identifieraren för den postborttagningsarbetsorder som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
@@ -267,44 +397,51 @@ PUT /workorder{WORK_ORDER_ID}
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/core/hygiene/workorder/BN-35c1676c-3b4f-4195-8d6c-7cf5aa21efdd \
+  https://platform.adobe.io/data/core/hygiene/workorder/DI-893a6b1d-47c2-41e1-b3f1-2d7c2956aabb \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
   -d '{
-        "displayName" : "Update - displayName",
-        "description" : "Update - description"
+        "name": "Updated Marketing Identity Delete Request",
+        "description": "Updated deletion request for marketing data"
       }'
 ```
 
+I följande tabell beskrivs de egenskaper som du kan uppdatera.
+
 | Egenskap | Beskrivning |
 | --- | --- |
-| `displayName` | Ett uppdaterat visningsnamn för postborttagningsbegäran. |
-| `description` | En uppdaterad beskrivning av postborttagningsbegäran. |
+| `name` | Den uppdaterade etiketten som kan läsas av människor för postens arbetsorder för radering. |
+| `description` | Den uppdaterade beskrivningen för postens radering av arbetsorder. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om postborttagningen.
+Ett svar returnerar den uppdaterade arbetsorderbegäran.
 
 ```json
 {
-    "workorderId": "DI-61828416-963a-463f-91c1-dbc4d0ddbd43",
-    "orgId": "{ORG_ID}",
-    "bundleId": "BN-aacacc09-d10c-48c5-a64c-2ced96a78fca",
-    "action": "identity-delete",
-    "createdAt": "2024-06-12T20:02:49.398448Z",
-    "updatedAt": "2024-06-13T21:35:01.944749Z",
-    "operationCount": 1,
-    "status": "ingested",
-    "createdBy": "{USER_ID}",
-    "datasetId": "666950e6b7e2022c9e7d7a33",
-    "datasetName": "Acme_Dataset_E2E_Identity_Map_Schema_5_1718178022379",
-    "displayName": "Updated Display Name",
-    "description": "Updated Description",
-    "productStatusDetails": [
+  "workorderId": "DI-893a6b1d-47c2-41e1-b3f1-2d7c2956aabb",
+  "orgId": "7D4E2AC143214567890ABCDE@AcmeOrg",
+  "bundleId": "BN-12abcf45-32ea-45bc-9d1c-8e7b321cabc8",
+  "action": "identity-delete",
+  "createdAt": "2038-04-15T12:14:29.210Z",
+  "updatedAt": "2038-04-15T12:30:29.442Z",
+  "operationCount": 2,
+  "targetServices": [
+    "profile",
+    "datalake"
+  ],
+  "status": "received",
+  "createdBy": "b.tarth@acme.com <b.tarth@acme.com> 8E7B321CABC8@acme.com",
+  "datasetId": "1a2b3c4d5e6f7890abcdef12",
+  "datasetName": "Acme_Marketing_2024",
+  "displayName": "Updated Marketing Identity Delete Request",
+  "description": "Updated deletion request for marketing data",
+  "productStatusDetails": [
         {
             "productName": "Data Management",
             "productStatus": "waiting",
@@ -330,16 +467,21 @@ Ett godkänt svar returnerar informationen om postborttagningen.
 ```
 
 | Egenskap | Beskrivning |
-| --- | --- |
-| `workorderId` | ID:t för raderingsordern. Detta kan användas för att senare slå upp borttagningsstatus. |
-| `orgId` | Ditt organisations-ID. |
-| `bundleId` | ID:t för det paket som den här borttagningsordern är kopplad till, används för felsökning. Flera raderingsorder paketeras ihop för att behandlas av tjänster i senare led. |
-| `action` | Den åtgärd som utförs av arbetsordern. För postborttagningar är värdet `identity-delete`. |
-| `createdAt` | En tidsstämpel som anger när raderingsordningen skapades. |
-| `updatedAt` | En tidsstämpel som anger när raderingsordningen senast uppdaterades. |
-| `status` | Den aktuella statusen för borttagningsordern. |
-| `createdBy` | Användaren som skapade borttagningsordningen. |
-| `datasetId` | ID:t för den datauppsättning som är föremål för begäran. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
-| `productStatusDetails` | En array som visar den aktuella statusen för processer som är relaterade till begäran. Varje arrayobjekt innehåller följande egenskaper:<ul><li>`productName`: Namnet på den underordnade tjänsten.</li><li>`productStatus`: Den aktuella bearbetningsstatusen för begäran från den underordnade tjänsten.</li><li>`createdAt`: En tidsstämpel som anger när den senaste statusen bokfördes av tjänsten.</li></ul> |
+| ---------------- | ----------------------------------------------------------------------------------------- |
+| `workorderId` | Den unika identifieraren för postens arbetsorder för borttagning. |
+| `orgId` | Organisationens unika identifierare. |
+| `bundleId` | Den unika identifieraren för paketet som innehåller den här postens arbetsorder för borttagning. Med paketering kan flera raderingsorder grupperas och bearbetas tillsammans av underordnade tjänster. |
+| `action` | Åtgärdstypen som begärdes i postens arbetsorder för borttagning. |
+| `createdAt` | Tidsstämpeln när arbetsordern skapades. |
+| `updatedAt` | Tidsstämpeln när arbetsordern senast uppdaterades. |
+| `operationCount` | Antalet åtgärder som ingår i arbetsordern. |
+| `targetServices` | En lista över måltjänster som påverkas av den här posten tar bort arbetsorder. |
+| `status` | Aktuell status för postens radera arbetsorder. Möjliga värden är: `received`,`validated`, `submitted`, `ingested`, `completed` och `failed`. |
+| `createdBy` | E-postadressen och identifieraren för den användare som skapade posten tar bort arbetsorder. |
+| `datasetId` | Den unika identifieraren för den datauppsättning som är associerad med postens arbetsorder för borttagning. |
+| `datasetName` | Namnet på den datauppsättning som är associerad med postens arbetsorder för borttagning. |
+| `displayName` | En etikett som kan läsas av människor för arbetsorder för radering av poster. |
+| `description` | En beskrivning av postens arbetsorder för borttagning. |
+| `productStatusDetails` | En array som visar den aktuella statusen för processerna längre fram i kedjan för begäran. Varje objekt innehåller:<ul><li>`productName`: Namnet på den underordnade tjänsten.</li><li>`productStatus`: Aktuell bearbetningsstatus från den underordnade tjänsten.</li><li>`createdAt`: Tidsstämpeln när den senaste statusen bokfördes av tjänsten.</li></ul>Den här egenskapen är tillgänglig när arbetsordern har skickats till tjänster i senare led för att påbörja bearbetningen. |
 
 {style="table-layout:auto"}
