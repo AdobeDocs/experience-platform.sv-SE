@@ -1,69 +1,73 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Oracle DB;oracle db
-solution: Experience Platform
-title: Skapa en Oracle DB Source-anslutning i användargränssnittet
-type: Tutorial
-description: Lär dig hur du skapar en Oracle DB-källanslutning med Adobe Experience Platform-gränssnittet.
+title: Anslut Oracle DB till Experience Platform med användargränssnittet
+description: Lär dig hur du ansluter Oracle DB-instansen till Experience Platform med användargränssnittet.
 exl-id: 4ca6ecc6-0382-4cee-acc5-1dec7eeb9443
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: aa5496be968ee6f117649a6fff2c9e83a4ed7681
 workflow-type: tm+mt
-source-wordcount: '442'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Oracle DB]-källanslutning i användargränssnittet
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Oracle DB]-källkoppling med användargränssnittet i [!DNL Experience Platform].
+Läs den här vägledningen när du vill lära dig hur du ansluter [!DNL Oracle DB]-instansen till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig [!DNL Oracle DB]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/databases.md).
+Om du redan har en [!DNL Oracle DB]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/databases.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Oracle DB]-konto på [!DNL Experience Platform] måste du ange följande värden:
+Läs [[!DNL Oracle DB] översikten](../../../../connectors/databases/oracle.md#prerequisites) om du vill ha information om autentisering.
 
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Oracle DB]. Anslutningssträngsmönstret [!DNL Oracle DB] är: `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`. |
-| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Oracle DB] är `d6b52d86-f0f8-475f-89d4-ce54c8527328`. |
+## Navigera i källkatalogen
 
-Mer information om hur du kommer igång finns i [det här Oracle-dokumentet](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Välj en kategori eller använd sökfältet för att hitta källan.
 
-## Anslut ditt [!DNL Oracle DB]-konto
+Om du vill ansluta till [!DNL Oracle DB] går du till kategorin *[!UICONTROL Databases]*, markerar **[!UICONTROL Oracle DB]**-källkortet och väljer **[!UICONTROL Set up]**.
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Oracle DB]-konto till [!DNL Experience Platform].
+>[!TIP]
+>
+>Källor visar **[!UICONTROL Set up]** för nya anslutningar och **[!UICONTROL Add data]** om ett konto redan finns.
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i **[!UICONTROL Sources]**. På skärmen **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
+![Källkatalogen med &quot;Oracle DB&quot; har valts.](../../../../images/tutorials/create/oracle/catalog.png)
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+## Använd ett befintligt konto {#existing}
 
-Välj **[!UICONTROL Oracle DB]** under kategorin **[!UICONTROL Databases]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL Oracle DB]-koppling.
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det [!DNL Oracle DB]-konto som du vill använda.
 
-![katalog](../../../../images/tutorials/create/oracle/catalog.png)
+![Det befintliga kontogränssnittet i källarbetsflödet med &quot;Befintligt konto&quot; valt.](../../../../images/tutorials/create/oracle/existing.png)
 
-Sidan **[!UICONTROL Connect to Oracle DB]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+## Skapa ett nytt konto {#new}
 
-### Nytt konto
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och kan lägga till en beskrivning för ditt konto.
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL Oracle DB]-inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+### Anslut till Experience Platform på Azure {#azure}
 
-![anslut](../../../../images/tutorials/create/oracle/new.png)
+Du kan ansluta din [!DNL Oracle DB]-databas till Experience Platform på Azure med en anslutningssträng.
 
-### Befintligt konto
+Om du vill använda autentisering av anslutningssträngar anger du din [anslutningssträng](../../../../connectors/databases/oracle.md#azure) och väljer **[!UICONTROL Connect to source]**.
 
-Om du vill ansluta ett befintligt konto markerar du det [!DNL Oracle DB]-konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
+![Det nya kontogränssnittet i källarbetsflödet med autentiseringen av anslutningssträngar markerat.](../../../../images/tutorials/create/oracle/azure.png)
 
-![befintlig](../../../../images/tutorials/create/oracle/existing.png)
+### Ansluta till Experience Platform på Amazon Web Services (AWS) {#aws}
 
-## Nästa steg
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle DB]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Experience Platform]](../../dataflow/databases.md).
+Om du vill skapa ett nytt [!DNL Oracle DB]-konto och ansluta till Experience Platform på AWS kontrollerar du att du befinner dig i en VA6-sandlåda och anger sedan de [autentiseringsuppgifter som krävs för autentisering](../../../../connectors/databases/oracle.md#aws).
+
+![Det nya kontogränssnittet i källarbetsflödet som ska anslutas till AWS.](../../../../images/tutorials/create/oracle/aws.png)
+
+## Skapa ett dataflöde för [!DNL Oracle DB] data
+
+Nu när du har anslutit din [!DNL Oracle DB]-databas kan du [skapa ett dataflöde och importera data från din databas till Experience Platform](../../dataflow/databases.md).

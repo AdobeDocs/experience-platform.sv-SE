@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7596a87309105897a2727faa8e22b06cdf5547c3
+source-git-commit: 79d614ddddde2ca1b982c66f4916d3255d6cffa4
 workflow-type: tm+mt
-source-wordcount: '1612'
-ht-degree: 0%
+source-wordcount: '1613'
+ht-degree: 1%
 
 ---
 
@@ -61,9 +61,9 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
-| Source | Kategori | Inmatningstyp | Cloud |
+| Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
 | [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) | molnlagring | Direktuppspelning | Azure, AWS |
 | [[!DNL Amazon Redshift]](connectors/databases/redshift.md) | Databas | Grupp | Azure, AWS |
@@ -81,7 +81,7 @@ Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data P
 
 Du kan använda följande källor för att importera annonsdata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [Google Ads](connectors/advertising/ads.md) | Grupp | Azure |
 
@@ -91,7 +91,7 @@ Du kan använda följande källor för att importera annonsdata till Experience 
 
 Du kan använda följande källor för att importera analysdata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) | Grupp | Azure |
 | [[!DNL Pendo]](connectors/analytics/pendo-webhook.md) | Direktuppspelning | Azure |
@@ -105,7 +105,7 @@ Lagringskällor i molnet kan överföra dina egna data till Experience Platform 
 
 Du kan använda följande källor för att importera molnlagringsdata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) | Grupp | Azure |
 | [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) | Grupp | Azure |
@@ -124,7 +124,7 @@ Du kan använda följande källor för att importera molnlagringsdata till Exper
 
 Du kan använda följande källor för att importera data för samtycke och inställningar till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Didomi]](../sources/connectors/consent-and-preferences/didomi.md) | Direktuppspelning | Azure |
 | [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md) | Grupp | Azure |
@@ -137,7 +137,7 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 
 Du kan använda följande källor för att importera CRM-data till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md) | Grupp | Azure |
 | [[!DNL Salesforce]](connectors/crm/salesforce.md) | Grupp | Azure, AWS |
@@ -150,7 +150,7 @@ Du kan använda följande källor för att importera CRM-data till Experience Pl
 
 Du kan använda följande källor för att importera kunddata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) | Grupp | Azure |
 | [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) | Grupp | Azure |
@@ -164,7 +164,7 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 
 Du kan använda följande källor för att importera data från din databas till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) | Grupp | Azure |
 | [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) | Grupp | Azure |
@@ -176,7 +176,7 @@ Du kan använda följande källor för att importera data från din databas till
 | [[!DNL MariaDB]](connectors/databases/mariadb.md) | Grupp | Azure |
 | [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) | Grupp | Azure |
 | [[!DNL MySQL]](connectors/databases/mysql.md) | Grupp | Azure, AWS |
-| [[!DNL Oracle]](connectors/databases/oracle.md) | Grupp | Azure |
+| [[!DNL Oracle]](connectors/databases/oracle.md) | Grupp | Azure, AWS |
 | [[!DNL PostgreSQL]](connectors/databases/postgres.md) | Grupp | Azure, AWS |
 | [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) | Grupp | Azure |
 
@@ -186,7 +186,7 @@ Du kan använda följande källor för att importera data från din databas till
 
 Du kan använda följande källor för att importera data och identitetspartnerdata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) | Grupp | Azure |
 | [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) | Grupp | Azure |
@@ -201,7 +201,7 @@ Du kan använda följande källor för att importera data och identitetspartnerd
 
 Du kan använda följande källor för att importera e-handelsdata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md) | Grupp | Azure |
 | [[!DNL Shopify]](connectors/ecommerce/shopify.md) | Grupp | Azure |
@@ -213,7 +213,7 @@ Du kan använda följande källor för att importera e-handelsdata till Experien
 
 Du kan använda följande källor för att importera data från ditt lokala system till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [Lokal filöverföring](connectors/local-system/local-file-upload.md) | Grupp | Azure |
 
@@ -223,7 +223,7 @@ Du kan använda följande källor för att importera data från ditt lokala syst
 
 Du kan använda följande källor för att importera automatiserade marknadsföringsdata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Braze]](connectors/marketing-automation/braze.md) | Direktuppspelning | Azure |
 | [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) | Direktuppspelning | Azure |
@@ -241,7 +241,7 @@ Du kan använda följande källor för att importera automatiserade marknadsför
 
 Du kan använda följande källor för att importera betalningsdata till Experience Platform.
 
-| Source | Inmatningstyp | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Square]](connectors/payments/square.md) | Grupp | Azure |
 | [[!DNL Stripe]](connectors/payments/stripe.md) | Grupp | Azure |
@@ -252,7 +252,7 @@ Du kan använda följande källor för att importera betalningsdata till Experie
 
 Du kan använda följande källor för att strömma data till Experience Platform.
 
-| Source | Inmatningstyp | Molnsupport |
+| Källa | Inmatningstyp | Molnsupport |
 | --- | --- | --- |
 | [[!DNL HTTP API]](connectors/streaming/http.md) | Direktuppspelning | Azure, AWS |
 
@@ -262,7 +262,7 @@ Du kan använda följande källor för att strömma data till Experience Platfor
 
 Du kan använda följande källor för att importera protokolldata till Experience Platform.
 
-| Source | Inmatningstyp | Molnsupport |
+| Källa | Inmatningstyp | Molnsupport |
 | --- | --- | --- |
 | [[!DNL Generic OData]](connectors/protocols/odata.md) | Grupp | Azure |
 | [[!DNL Generic REST API]](connectors/protocols/generic-rest.md) | Grupp | Azure |
