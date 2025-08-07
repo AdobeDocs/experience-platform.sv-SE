@@ -3,9 +3,9 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 92ba27aeb35685741151a618e64c78b4c8318865
+source-git-commit: 564ee7fbd45677c35057c56de049158f3282d7ad
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '979'
 ht-degree: 1%
 
 ---
@@ -13,6 +13,23 @@ ht-degree: 1%
 # [!DNL The Trade Desk]-anslutning
 
 ## Översikt {#overview}
+
+
+>[!IMPORTANT]
+>
+> Efter den [interna uppgraderingen](../../../release-notes/2025/july-2025.md#destinations) till måltjänsten från juli 2025 kan du uppleva en **minskning av antalet aktiverade profiler** i dataflödena till [!DNL The Trade Desk].
+> > Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
+>
+>**Vad har ändrats:**
+>
+>* ECID-mappning (Experience Cloud ID) är nu **obligatoriskt** för alla profilaktiveringar.
+>* Profiler utan ECID-mappning kommer att **tas bort** från befintliga aktiveringsdataflöden.
+>
+>**Vad du behöver göra:**
+>
+>* Granska era målgruppsdata för att bekräfta att profilerna har giltiga ECID-värden.
+>* Övervaka dina aktiveringsvärden för att verifiera förväntat antal profiler.
+
 
 Använd den här målkopplingen för att skicka profildata till [!DNL The Trade Desk]. Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
 
@@ -67,7 +84,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/sv/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
+>Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ## Anslut till målet {#connect}
 
@@ -121,7 +138,7 @@ Alla målidentiteter som beskrivs i avsnittet [identiteter som stöds](#supporte
 * **ECID** (Experience Cloud-ID)
 * **Trade Desk-ID**
 
-Om det inte går att mappa alla nödvändiga identiteter kommer målgruppsaktiveringen inte att lyckas till [!DNL The Trade Desk]. Varje identitet har ett specifikt syfte i integreringen och alla krävs för att målet ska fungera korrekt.
+Om du inte kan mappa alla identiteter som krävs kan du inte slutföra aktiveringsarbetsflödet. Varje identitet har ett specifikt syfte i integreringen och alla krävs för att målet ska fungera korrekt.
 
 ![Skärmbild med obligatoriska mappningar](../../assets/catalog/advertising/tradedesk/mandatory-mappings.png)
 
