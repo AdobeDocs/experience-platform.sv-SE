@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 79d614ddddde2ca1b982c66f4916d3255d6cffa4
+source-git-commit: cad2cafdf39c718c3ba971eaa4e7f2318bd5f517
 workflow-type: tm+mt
-source-wordcount: '1613'
+source-wordcount: '1614'
 ht-degree: 1%
 
 ---
@@ -61,7 +61,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 | Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
@@ -70,7 +70,7 @@ Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data P
 | [[!DNL Azure Databricks]](connectors/databases/databricks.md) | Databas | Grupp | Azure |
 | [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) | molnlagring | Direktuppspelning | Azure, AWS |
 | [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) | Databas | Grupp | Azure |
-| [[!DNL Google BigQuery]](connectors/databases/bigquery.md) | Databas | Grupp | Azure |
+| [[!DNL Google BigQuery]](connectors/databases/bigquery.md) | Databas | Grupp | Azure, AWS |
 | [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md) | molnlagring | Direktuppspelning | Azure |
 | [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) | Databas | Direktuppspelning | Azure, AWS |
 | [[!DNL Snowflake]](connectors/databases/snowflake.md) | Databas | Grupp | Azure, AWS |
