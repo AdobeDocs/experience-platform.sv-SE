@@ -1,18 +1,16 @@
 ---
-title: Snowflake
+title: Snowflake Streaming-anslutning
 description: Exportera data till ditt Snowflake-konto med privata listor.
-hide: true
-hidefromtoc: true
 badgeBeta: label="Beta" type="Informative"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: dca3762169d2a469948ee7e877213697f4c444b6
+source-git-commit: b5f28a2df411d3aa99bc2714a4e2bb569c16dda1
 workflow-type: tm+mt
-source-wordcount: '1095'
+source-wordcount: '1097'
 ht-degree: 2%
 
 ---
 
-# Snowflake {#snowflake-destination}
+# Snowflake Streaming-anslutning {#snowflake-destination}
 
 >[!IMPORTANT]
 >
