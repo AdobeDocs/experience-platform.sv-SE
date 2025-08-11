@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform juli 2025
 description: Versionsinformationen för Adobe Experience Platform från juli 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1554'
-ht-degree: 89%
+ht-degree: 100%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 89%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 29 juli 2025**
@@ -42,7 +42,7 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 
 Kapaciteten ger en heltäckande bild av organisationens [skyddsräcken](../../rtcdp/guardrails/overview.md) och ger rekommendationer om hur du kan lösa potentiella kapacitetsöverträdelser genom att tilldela kapacitet på sandlådenivå. I den här versionen kan du visa din kapacitet för både strömningsinmatning och strömningssegmentering.
 
-Mer information finns i [Kapacitetsöversikt](../../landing/license-usage-and-guardrails/capacity.md).
+Mer information finns i [kapacitetsöversikten](../../landing/license-usage-and-guardrails/capacity.md).
 
 ## Mål {#destinations}
 
@@ -53,7 +53,7 @@ Mer information finns i [Kapacitetsöversikt](../../landing/license-usage-and-gu
 | Mål | Beskrivning |
 | --- | --- |
 | Begränsad tillgänglighet för anslutningen [Google Customer Match + Display &amp; Video 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md) | Efter att ha varit tillgänglig för alla kunder i juni återgår nu denna Adobe-integrering till begränsad tillgänglighet. För närvarande är åtkomsten till den här destinationen begränsad till kunder som redan är aktiverade, medan Adobe och Google arbetar med att lösa implementeringsproblem. Om du är intresserad av att använda den här integreringen när den bredare utrullningen återupptas ber vi dig kontakta Adobe och meddela detta. |
-| [[!DNL The Trade Desk]](../../destinations/catalog/advertising/tradedesk.md) intern uppgradering | Från och med den 31 juli 2025 kan du se två [!DNL The Trade Desk]-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. <br><br>Den befintliga [!DNL The Trade Desk]-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) The Trade Desk]** och ett nytt kort med namnet **[!UICONTROL The Trade Desk]** är nu tillgängligt. Använd den nya **[!UICONTROL The Trade Desk]**-anslutningen i katalogen för nya aktiveringsdataflöden. <br><br>Om du har aktiva dataflöden till **[!UICONTROL (Deprecated) The Trade Desk]**-målet uppdateras de automatiskt, så ingen åtgärd krävs från dig. <br><br>Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `86134ea1-b014-49e8-8bd3-689f4ce70578`</li><li>Anslutningsspecifikation-id: `1029798b-a97f-4c21-81b2-e0301471166e`</li></ul> |
+| [[!DNL The Trade Desk]](../../destinations/catalog/advertising/tradedesk.md) intern uppgradering | Från och med 31 juli 2025 kan du se två [!DNL The Trade Desk]-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. <br><br>Den befintliga målanslutningen [!DNL The Trade Desk] har bytt namn till **[!UICONTROL (Deprecated) The Trade Desk]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL The Trade Desk]**. Använd den nya anslutningen **[!UICONTROL The Trade Desk]** i katalogen för nya aktiveringsdataflöden. <br><br>Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) The Trade Desk]** uppdateras de automatiskt. Du behöver därför inte göra något. <br><br> Om du skapar dataflöden via [Flow Service API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `86134ea1-b014-49e8-8bd3-689f4ce70578`</li><li>Anslutningsspecifikation-id: `1029798b-a97f-4c21-81b2-e0301471166e`</li></ul> |
 
 **Ny eller uppdaterad funktionalitet**
 
@@ -62,7 +62,7 @@ Mer information finns i [Kapacitetsöversikt](../../landing/license-usage-and-gu
 | Kontonamn och beskrivningar för målanslutningar | Nu kan du [lägga till kontonamn och beskrivningar](/help/destinations/ui/connect-destination.md) vid anslutning till mål, vilket ger bättre hantering av mål med flera konton. |
 | Förbättrad dataströmningsinformation för kantmål | Högerspaltsinformationen för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-v2.md) - och [anpassade Personalization](/help/destinations/catalog/personalization/custom-personalization.md)-mål har förbättrats så att dataströmningsnamnet visas, vilket ger tydligare synlighet i associerade dataströmningskonfigurationer och bidrar till att minska förvirringen när befintliga dataflöden granskas. **[!UICONTROL Datastream ID]**-väljaren i målkonfigurationsskärmen har uppdaterats till **[!UICONTROL Datastream]** för att användargränssnittet ska bli tydligare. |
 | Synlighet för marknadsföringsåtgärder i målval | Marknadsföringsåtgärder visas nu i den högra listen på fliken **[[!UICONTROL Browse]](/help/destinations/ui/destinations-workspace.md#browse)** på arbetsytan Mål och på sidan **[[!UICONTROL Dataflow runs]](/help/dataflows/ui/monitor-destinations.md)**, vilket ger omedelbar insyn i ändringar av marknadsföringsåtgärder utan att du behöver navigera till visningssidan. Den här förbättringen förbättrar användarupplevelsen genom att göra det enklare att verifiera konfigurationer av marknadsföringsåtgärder under målkonfigurationen. |
-| [!BADGE Begränsad beta]{type=Informative} Redigera marknadsföringsåtgärder för mål | Du kan nu [redigera marknadsföringsåtgärder](/help/destinations/ui/edit-activation.md#edit-marketing-actions) för befintliga mål. Den här funktionen är för närvarande i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst. |
+| [!BADGE Begränsad beta]{type=Informative} Redigera marknadsföringsåtgärder för mål | Nu kan du [redigera marknadsföringsåtgärderna](/help/destinations/ui/edit-activation.md#edit-marketing-actions) för befintliga destinationer. Den här funktionen är för närvarande i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst. |
 | [!BADGE Begränsad beta]{type=Informative} Redigera mål | Du kan nu [redigera målkonfigurationen](/help/destinations/ui/edit-destination.md) när den har skapats. Den här funktionen är för närvarande i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst. |
 
 **Korrigeringar**
@@ -135,13 +135,13 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Källa | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} - stöd för [!DNL Didomi] (direktuppspelande SDK) | Använd [!DNL Didomi]-källan för att inhämta data för samtycke och preferenshantering från [!DNL Didomi], vilket stöder efterlevnad av sekretessbestämmelser och samtyckesbaserade marknadsföringsstrategier. Läs [[!DNL Didomi] källöversikten](../../sources/connectors/consent-and-preferences/didomi.md) för information om hur du skaffar konfigurationen. Anvisningar om hur du skapar en källanslutning finns i [[!DNL Didomi] källanslutningsguiden](../../sources/tutorials/ui/create/consent-and-preferences/didomi.md). |
+| [!BADGE Beta]{type=Informative}-stöd för [!DNL Didomi] (strömning av SDK) | Använd [!DNL Didomi]-källan för att inhämta data för samtycke och preferenshantering från [!DNL Didomi], vilket stöder efterlevnad av sekretessbestämmelser och samtyckesbaserade marknadsföringsstrategier. Läs [[!DNL Didomi] källöversikten](../../sources/connectors/consent-and-preferences/didomi.md) för information om hur du skaffar konfigurationen. Anvisningar om hur du skapar en källanslutning finns i [[!DNL Didomi] källanslutningsguiden](../../sources/tutorials/ui/create/consent-and-preferences/didomi.md). |
 
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
 | Stöd för registrering av ändringsdata i utvalda källor med API:et [!DNL Flow Service] | Nu kan du skapa dataflöden som möjliggör registrering av ändringsdata för inkrementell inmatning med hjälp av källanslutningar. Med den här funktionen kan kunderna mata in ändringsdatatypen inkrementellt, vilket ökar datans aktualitet och minskar bearbetningsbelastningen. Mer information finns i dokumentationen om [hur du använder datainhämtning för källor](../../sources/tutorials/api/change-data-capture.md) |
-| Stöd för mjuk borttagning av poster i [!DNL Salesforce] | Källan [!DNL Salesforce] har nu stöd för att ta med mjuka borttagna poster via en valfri `includeDeletedObjects`-parameter. Om värdet är true kan kunder ta med mjuka borttagna poster i sina [!DNL Salesforce]-frågor och hämta dessa poster till Experience Platform. Mer information finns i [[!DNL Salesforce] källdokumentationen](../../sources/connectors/crm/salesforce.md). |
+| Stöd för mjuk borttagning av poster i [!DNL Salesforce] | Källan [!DNL Salesforce] har nu stöd för att ta med mjuka borttagna poster via en valfri `includeDeletedObjects`-parameter. Om värdet är sant kan kunderna ta med mjuka borttagna poster i sina [!DNL Salesforce]-frågor och hämta dessa poster till Experience Platform. Läs [[!DNL Salesforce] källdokumentationen](../../sources/connectors/crm/salesforce.md) för mer information. |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
