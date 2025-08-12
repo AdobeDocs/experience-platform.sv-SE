@@ -3,16 +3,38 @@ keywords: Reklam.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Advertising-nätverket, inklusive webbannonsering, sökannonsering och inbyggt webbmaterial.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c52cdd0f2a3aff506bff31ec0775420c66bea11f
 workflow-type: tm+mt
-source-wordcount: '662'
-ht-degree: 1%
+source-wordcount: '945'
+ht-degree: 4%
 
 ---
 
 # [!DNL Microsoft Bing]-anslutning {#bing-destination}
 
 ## Översikt {#overview}
+
+
+>[!IMPORTANT]
+>
+>* Från och med 11 augusti 2025 kan du se två **[!DNL Microsoft Bing]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga **[!DNL Microsoft Bing]**-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Microsoft Bing]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Microsoft Bing]**.
+>* Använd den nya anslutningen **[!UICONTROL Microsoft Bing]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Microsoft Bing]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
+>* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
+>   * Flödesspecifikation-id: `8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`
+>   * Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`
+>
+> Efter den här uppgraderingen kan det hända att antalet aktiverade profiler **i dina dataflöden minskar till**.[!DNL Microsoft Bing]
+> > Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
+>
+>**Vad har ändrats:**
+>
+>* ECID-mappning (Experience Cloud ID) är nu **obligatoriskt** för alla profilaktiveringar.
+>* Profiler utan ECID-mappning kommer att **tas bort** från befintliga aktiveringsdataflöden.
+>
+>**Vad du behöver göra:**
+>
+>* Granska era målgruppsdata för att bekräfta att profilerna har giltiga ECID-värden.
+>* Övervaka dina aktiveringsvärden för att verifiera förväntat antal profiler.
 
 Använd målet [!DNL Microsoft Bing] för att skicka profildata till hela [!DNL Microsoft Advertising Network], inklusive [!DNL Display Advertising], [!DNL Search] och [!DNL Native].
 
@@ -31,6 +53,7 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 | Identitet | Beskrivning |
 |---|---|
 | MAID | MICROSOFT ADVERTISING ID |
+| ECID | Experience Cloud ID. Den här identiteten är obligatorisk för att integreringen ska fungera korrekt, men den används inte för målgruppsaktivering. |
 
 {style="table-layout:auto"}
 
@@ -62,7 +85,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL Microsoft Bing] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=sv-SE) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Microsoft Bing]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
+>Om du vill skapa ditt första mål med [!DNL Microsoft Bing] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Microsoft Bing]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 När du konfigurerar målet måste du ange följande information:
 
@@ -107,6 +130,15 @@ I steget [Målgruppsschema](../../ui/activate-segment-streaming-destinations.md#
 
 ![Gränssnittsbild som visar målgruppsfönstret med ett exempel på hur målgruppsnamnet mappas till Bing Mapping-ID.](../../assets/catalog/advertising/bing/mapping-id.png)
 
+### Obligatoriska mappningar {#mandatory-mappings}
+
+Alla målidentiteter som beskrivs i avsnittet [identiteter som stöds](#supported-identities) är obligatoriska och måste mappas under målgruppsaktiveringen. Detta inkluderar:
+
+* **MAID** (Microsoft Advertising ID)
+* **ECID** (Experience Cloud-ID)
+
+Om du inte kan mappa alla identiteter som krävs kan du inte slutföra aktiveringsarbetsflödet. Varje identitet har ett specifikt syfte i integreringen och alla krävs för att målet ska fungera korrekt.
+
 ## Exporterade data {#exported-data}
 
-Kontrollera ditt [!DNL Microsoft Bing Ads]-konto om du vill verifiera om data har exporterats till målet [!DNL Microsoft Bing]. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
+Kontrollera ditt [!DNL Microsoft Bing]-konto om du vill verifiera om data har exporterats till målet [!DNL Microsoft Bing Ads]. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
