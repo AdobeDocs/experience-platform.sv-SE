@@ -4,10 +4,10 @@ description: En förhandsgranskning av den senaste versionsinformationen för Ad
 hide: true
 hidefromtoc: true
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 7e91181f71b84fdaf04a39e003cbbd415827e282
+source-git-commit: a26ad18b1e44b3198db9e8a36ad3749ed8a0afa2
 workflow-type: tm+mt
-source-wordcount: '1381'
-ht-degree: 21%
+source-wordcount: '1105'
+ht-degree: 37%
 
 ---
 
@@ -23,106 +23,73 @@ ht-degree: 21%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
-**Releasedatum: 29 juli 2025**
+**Releasedatum: augusti 2025**
 
 Nya funktioner och uppdateringar i Adobe Experience Platform:
 
+- [Aviseringar](#alerts)
 - [Mål](#destinations)
-- [Datainmatning](#ingestion)
-- [Frågetjänst](#query-service)
-- [Real-Time CDP B2B-utgåva](#b2b)
-- [Sandlådor](#sandboxes)
-- [Segmenteringstjänst](#segmentation)
+- [Experience Data Model (XDM)](#xdm)
+- [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
-## Mål {#destinations}
+## Aviseringar {#alerts}
 
-[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
-
-**Uppdaterade mål**
-
-| Mål | Beskrivning |
-| --- | --- |
-| Konsolidering av Marketo-destinationskort | Marketo V2- och Marketo Engage Person Sync-målkort har konsoliderats till ett enda, enhetligt målkort. Konsolideringen förenklar urvalsprocessen och ger en smidigare upplevelse för Marketo-integreringar. |
-
-**Ny eller uppdaterad funktionalitet**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Förbättrad datastream-information för kantmål | Förbättrad information om rätt spår för Adobe Target och anpassade Personalization-destinationer visar nu datasternamnet, vilket ger tydligare synlighet i associerade datastream-konfigurationer och minskar förvirringen vid granskning av befintliga dataflöden. **[!UICONTROL Datastream ID]**-väljaren i målkonfigurationsskärmen har uppdaterats till **[!UICONTROL Datastream]** för att användargränssnittet ska bli tydligare. |
-| Synlighet för marknadsföringsåtgärder i målval | Marknadsföringsåtgärder visas nu i den högra listen på fliken **[!UICONTROL Browse]** och på sidan **[!UICONTROL Dataflow runs]**, vilket ger omedelbar synlighet till ändringar av marknadsföringsåtgärder utan att det krävs navigering till visningssidan. Den här förbättringen förbättrar användarupplevelsen genom att göra det enklare att verifiera konfigurationer av marknadsföringsåtgärder under målkonfigurationen. |
-| (Begränsad beta) Redigera marknadsföringsåtgärder för destinationer | Nu kan du redigera marknadsföringsåtgärder för befintliga destinationer. Den här funktionaliteten finns i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst till den. |
-| (Begränsad betaversion) Redigera mål | Du kan nu redigera målkonfigurationen när du har skapat den. Den här funktionaliteten finns i begränsad betaversion. Kontakta din Adobe-representant om du vill få åtkomst till den. |
-| Kontonamn och beskrivningar för målanslutningar | Nu kan du lägga till kontonamn och beskrivningar när du ansluter till mål, vilket ger bättre hantering av mål med flera konton. |
-
-**Korrigeringar**
-
-| Problem | Beskrivning |
-| --- | --- |
-| Rullningsfunktion för kategorier | Ett problem har korrigerats där kategorisidmenyn i målkatalogen och källkatalogen inte rullade korrekt när användaren för musen över, vilket förbättrar navigeringsanvändbarheten för användare som bläddrar i målkategorier. |
-
-Mer information finns i [översikten över destinationer](../destinations/home.md).
-
-## Datainmatning {#ingestion}
-
-Experience Platform har ett omfattande ramverk för datainhämtning som stöder både batchvis och strömmande datainmatning från olika källor.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Experience Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Stöd för övervakning av inmatning av direktuppspelningsprofiler | Realtidsövervakning för inmatning av strömmande profiler är nu tillgängligt, vilket ger transparens i mätvärden för genomströmning, fördröjning och datakvalitet. Detta stöder förebyggande varningar och åtgärdbara insikter som hjälper datatekniker att identifiera kapacitetsöverträdelser och problem med inmatning. |
+| Aviseringar om strömning av genomströmningskapacitet | Med tre nya larm kan användare abonnera på och konfigurera aviseringar för att proaktivt hantera och övervaka prestanda för strömningskapacitet. Nya varningsmeddelanden kan vara när strömningsflödet har nått 80 %, 90 % eller överstiger kapacitetsgränserna. Mer information finns i guiden [kapacitetsvarningsregler](../observability/alerts/rules.md#capacity). |
 
-Mer information finns i [översikten över dataöverföring](../ingestion/home.md).
+Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] översikt](../observability/home.md).
 
-## Frågetjänst {#query-service}
+## Mål {#destinations}
 
-Adobe Experience Platform Query Service är ett robust SQL-gränssnitt för dataanalys och -utforskning på hela plattformen.
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya eller uppdaterade funktioner**
+**Nya destinationer**
 
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Förbättrad sessionshantering | Data Distiller innehåller nu förbättrade funktioner för sessionshantering, vilket ger bättre kontroll över användarsessioner och förbättrad prestandaövervakning i utvecklings- och produktionsmiljöer. |
-| Stöd för teckenbegränsningar för lösenord som inte förfaller | Data Distiller har nu stöd för icke-utgångsdatum med specifika teckenbegränsningar. För lösenord krävs minst en siffra, en gemen, en versal och ett specialtecken, men dollartecknet ($) stöds inte. `!, @, #, ^, or &` rekommenderas som specialtecken. |
-| Bättre enhetlighet i olika miljöer | Data Distiller prestanda är nu konsekvent mellan utvecklings- och produktionssandlådor, med liknande backend-resurser tillgängliga i båda miljöerna. Utnyttjade beräkningstimmar kan variera beroende på datavolym och tillgängliga backend-beräkningsresurser vid bearbetningstid. |
+| Mål | Beskrivning |
+| --- | --- |
+| [!DNL Acxiom Real ID Audience] mål | Använd målet [!DNL Acxiom Real ID Audience Connection] för att förbättra målgrupper med tekniken [!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/) och aktivera målgrupper på flera plattformar, till exempel [!DNL Altice], [!DNL Ampersand], [!DNL Comcast]. |
 
-Mer information finns i [Översikt över frågetjänsten](../query-service/home.md).
 
-## Real-Time CDP B2B-utgåva {#b2b}
+**Uppdaterade mål**
 
-Real-Time CDP B2B edition har omfattande funktioner för hantering av kunddata inom B2B, vilket gör det möjligt för organisationer att skapa enhetliga kundprofiler, skapa sofistikerade B2B-målgrupper och aktivera data över olika marknadsföringskanaler.
+| Mål | Beskrivning |
+| --- | --- |
+| Information om förfallodatum för autentisering för [!DNL LinkedIn] mål | Du behöver aldrig bekymra dig om utgångna autentiseringsuppgifter igen. Information om förfallodatum för kontot visas nu direkt i Experience Platform-gränssnittet, så du kan se när din [!DNL LinkedIn]-autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. |
+| Krypteringsstöd för [!DNL Data Landing Zone] mål | Skydda exporterade data med kryptering. Nu kan du bifoga RSA-formaterade offentliga nycklar för att kryptera dina exporterade filer, vilket ger dig samma säkerhetsnivå som andra molnlagringsplatser tillhandahåller för din känsliga information. |
+| [[!DNL Microsoft Bing]](../destinations/catalog/advertising/bing.md) intern uppgradering | Från och med 11 augusti 2025 kan du se två **[!DNL Microsoft Bing]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga målanslutningen **[!DNL Microsoft Bing]** har bytt namn till **[!UICONTROL (Deprecated) Microsoft Bing]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Microsoft Bing]**. Använd den nya anslutningen **[!UICONTROL Microsoft Bing]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Microsoft Bing]** uppdateras de automatiskt. Du behöver därför inte göra något. <br><br> Om du skapar dataflöden via [Flow Service API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> Efter den här uppgraderingen kan det hända att antalet aktiverade profiler **i dina dataflöden minskar till**. [!DNL Microsoft Bing] Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. |
+| Ytterligare identifierare för [!DNL Amazon Ads] mål | Amazon Ads-målet har nu stöd för nya identiteter (`firstName`, `lastName`, `street`, `city`, `state`, `zip`, `country`). Dessa fält är avsedda att förbättra målgruppsmatchningen och skickas som oformaterad text med SHA256-hash som tillval. |
+| Konsolidering av [!DNL Marketo] målkort | Förenkla målinställningen för [!DNL Marketo] med vårt enhetliga målkort. Vi har konsoliderat [!DNL Marketo] V2- och V3-kort till ett enda smidigt alternativ, vilket gör det enklare att välja rätt mål och komma igång snabbt. |
 
-**Nya eller uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Uppgradering av B2B-arkitektur | Experience Platform uppgraderar till en ny B2B-arkitektur som innebär betydande förbättringar för målgrupper med flera enheter med B2B-attribut. Den här uppgraderingen konsoliderar stöd för sammanslagningsprinciper, ökar målgruppernas noggrannhet och förbättrar möjligheten till enhetsupplösning. |
-| Sammanfoga principkonsolidering för målgrupper med flera enheter | Flera målgrupper med B2B-attribut har nu endast stöd för en enda sammanslagningsprincip - standardprincipen för sammanslagning - i stället för att ha stöd för flera sammanslagningsprinciper. Den här ändringen ger en enhetlig målgruppskomposition och förenklar hanteringen av sammanfogningslogik. |
-| Uppdateringar av begränsningar för målgrupper | Kontomålgrupper har inte längre de tidigare begränsningarna i ett 30-dagars uppslagsfönster för Experience Events, anpassade entitetsbegränsningar eller begränsningar för att använda `inSegment`-händelser. Dessa uppdateringar ger större flexibilitet när det gäller att skapa komplexa B2B-målgruppsdefinitioner. |
-| Bättre antal målgrupper för B2B-enheter | Beräkningar av målgruppsstorlek för målgrupper med B2B-enheter som konton och säljprojekt är nu exakta, baserat på segmenteringsresultat i realtid. Denna förbättring ger exaktare och tillförlitligare uppskattningar för målgrupper som involverar komplexa B2B-relationer. |
-| Ögonblicksbilder av konton för målgruppsmedlemskap | Information om målgruppsmedlemskap ingår nu för kontoenheter vid export av ögonblicksbilder, vilket ger åtkomst till målgruppsstatus på kontonivå, tidsstämplar och medlemsindikatorer. Detta ger en funktionsparitet mellan segmenteringsmodellerna Profil (Person) och Konto. |
-| Verktygsändringar i sandlådan för målgrupper med flera enheter | Import av målgrupper med flera enheter med B2B-enheter och Experience Events som exporterats före migrering stöds inte längre. Dessa målgrupper kommer inte att kunna validera importen och kan inte konverteras automatiskt till den nya arkitekturen. Publiker måste exporteras igen efter migrering innan de kan importeras till målsandlådor. |
-| Avvikelser i enhets-API:t för B2B | Målgruppsgenerering via API för B2B-enheter (konto, säljprojekt, konto-personrelation, relation mellan säljprojekt och person, kampanj, kampanjmedlem, marknadsföringslista och marknadsföringslistmedlem) är nu föråldrat. API-söknings- och borttagningsåtgärder för profilåtkomst för dessa B2B-enheter är också föråldrade. |
-| Uppdateringar av identitetsnamnrymden för entitetsupplösning | Konto- och säljprojektsenheter använder nu tidsprioritetsbaserad sammanslagning med specifika identitetsnamnutrymmen (`b2b_account` för konto, `b2b_opportunity` för säljprojekt). Alla andra enheter är enhetliga med primära identitetsöverlappningar som sammanfogas med tidsprioritetsbaserad sammanslagning. |
-
-Mer information finns i [Real-Time CDP B2B edition - översikt](../rtcdp/b2b-overview.md).
-
-## Sandlådor {#sandboxes}
-
-Experience Platform är utvecklat för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav.
-
-**Nya eller uppdaterade funktioner**
+**Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ändringar av målgruppsimporter för flera enheter | Sandlådeverktygen har uppdaterats för att stödja den nya uppgraderingen av B2B-arkitekturen. Målgrupper med flera enheter som innehåller B2B-enheter och Experience Events måste exporteras på nytt efter uppgraderingen av arkitekturen innan de kan importeras till målsandlådor via sandlådeverktyg. Det går inte att validera importen av föruppgraderingsversioner. |
+| Utöka datauppsättningsexportscheman för dataflöden som skapats före november 2024 | Om dataflödena för dataexport har skapats före november 2024 kommer dessa dataflöden att sluta fungera den 1 september 2025. Om du behöver dataflödena för att kunna fortsätta exportera data efter 1 september 2025 måste du utöka deras scheman för varje mål som du exporterar datauppsättningar till genom att följa stegen i [den här handboken](../destinations/ui/dataset-expiration-update.md). |
+| Förbättrade funktioner för sökning, filtrering och taggning för destinationer | Förbättra arbetsflödet för målhantering med förbättrade funktioner för sökning, filtrering och taggning på flikarna Bläddra och Konton. Nu kan du söka efter specifika dataflöden och konton efter namn, filtrera efter olika villkor, inklusive målplattform, status och datum, och skapa anpassade taggar för att ordna dina mål. Kolumnsortering är också tillgängligt för nyckelfält som körningstid för senaste dataflöde, vilket gör det enklare att identifiera och hantera målanslutningarna. |
 
-Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
+Mer information finns i [översikten över destinationer](../destinations/home.md).
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Modellbaserade scheman | Förenkla datamodelleringen med modellbaserade scheman. Nu kan du skapa scheman enklare med omfattande instruktionsexempel och vägledning. Den här funktionen är för närvarande tillgänglig för innehavare av Campaign Orchestration-licenser och kommer att utvidgas till att omfatta Data Distiller-kunder på GA, vilket gör datamodelleringen mer tillgänglig och effektiv. |
+
+Mer information finns i [XDM-översikten](../xdm/home.md).
 
 ## Segmenteringstjänst {#segmentation-service}
 
@@ -132,23 +99,49 @@ Mer information om sandlådor finns i [översikten över sandlådor](../sandboxe
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| API för extern publik | Du kan använda det externa målgrupps-API:t för att programmässigt importera externt genererade målgrupper till Adobe Experience Platform. |
+| Målgruppsuppskattningar | Målgruppsuppskattningar genereras nu automatiskt i Segment Builder. Värdet uppdateras varje gång du ändrar målgruppen och speglar alltid de senaste målgruppsreglerna. |
+
+Mer information finns i [[!DNL Segmentation Service] översikten](../segmentation/home.md).
 
 ## Källor {#sources}
 
 Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
-**Nya källor**
-
-| Source | Beskrivning |
-| --- | --- |
-| Stöd för [!DNL Didomi] (direktuppspelande SDK) | Med källkopplingen [!DNL Didomi] kan du importera data för samtyckeshantering från plattformen för [!DNL Didomi], vilket stöder efterlevnad av sekretessbestämmelser och medgivandebaserade marknadsföringsstrategier. |
-
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för inhämtning av ändringsdata i utvalda källor | Nu kan du skapa dataflöden som möjliggör registrering av ändringsdata för inkrementellt intag med hjälp av källanslutningar. Med den här funktionen kan kunderna ta med sig datatypen change för inkrementellt intag, vilket förbättrar dataaktualiteten och minskar belastningen på processerna. |
-| Stöd för mjuk borttagning av poster i [!DNL Salesforce] | Källan [!DNL Salesforce] har nu stöd för att ta med mjuka borttagna poster via en valfri `includeDeletedObjects`-parameter. Om värdet är true kan kunder ta med mjuka borttagna poster i sina [!DNL Salesforce]-frågor och hämta dessa poster till Experience Platform. |
+| [!BADGE Stöd för Azure Private Link i Beta]{type=Informative} i användargränssnittet | Skydda dina data med privata nätverksanslutningar. Nu kan du skapa privata slutpunkter och konfigurera dataflöden som kringgår det allmänna Internet, vilket ger dig förbättrad säkerhet och nätverksisolering för dina känsliga data. |
+| [!DNL Marketo] dokumentationsuppdateringar | Få fullständig synlighet i hur dina [!DNL Marketo]-data omvandlas när de kommer in i Experience Platform. Alla fältmappningar innehåller nu detaljerade förklaringar av dataomvandlingar, så att du kan förstå exakt hur `PersonID` blir `leadID` och `eventType` blir `activityType`. |
+| Stöd för huvudautentisering av tjänst för [!DNL Azure Blob Storage] | Du kan nu ansluta ditt [!DNL Azure Blob Storage]-konto till Experience Platform med autentisering av tjänstens huvudnamn. |
 
 Mer information finns i [översikten över källor](../sources/home.md).
+
+<!--
+
+## Query Service {#query-service}
+
+Adobe Experience Platform Query Service provides a robust SQL interface for data analysis and exploration across the platform.
+
+**New or updated features**
+
+| Feature | Description |
+| ------- | ----------- |
+| Data Distiller Session Management | Take control of your data analysis sessions with enhanced session management. You can now monitor and manage your sessions more effectively across development and production environments, giving you better visibility into your query performance and resource usage. |
+
+For more information, read the [Query Service overview](../query-service/home.md).
+
+## B2B CDP {#b2b-cdp}
+
+Real-Time CDP B2B Edition provides comprehensive B2B customer data management capabilities, enabling organizations to build unified customer profiles, create sophisticated B2B audiences, and activate data across various marketing channels.
+
+**New or updated features**
+
+| Feature | Description |
+| ------- | ----------- |
+| Lookup Support for B2B Classes Only | Streamline your B2B data access with focused lookup support. You can now look up Person (Profile), Experience Events, Account, and Opportunity entities directly through the Entities API. This simplified approach helps you access the most important B2B data more efficiently while reducing complexity. |
+| B2B Namespace and Schema Updates | Experience a cleaner, more streamlined B2B data model. We've simplified the B2B namespace and schema structure by removing complex relationship mappings and non-primary identity support for certain B2B classes. This makes your B2B data easier to work with and understand. |
+
+For more information, read the [Real-Time CDP B2B Edition overview](../rtcdp/b2b-overview.md).
+
+-->
