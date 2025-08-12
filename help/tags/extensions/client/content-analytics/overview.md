@@ -2,9 +2,9 @@
 title: Adobe Content Analytics Extension - översikt
 description: Läs mer om Adobe Content Analytics-taggtillägg i Adobe Experience Platform.
 exl-id: fcc46c86-e765-4bc7-bfdf-b8b10e8afacc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 45ce2b0ff57155dccef2f7c94390a6ddff5c17cd
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
@@ -17,30 +17,28 @@ Med tillägget kan du strömma specifika innehållsrelaterade händelsedata till
 
 I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggränssnittet.
 
-## Installera taggtillägget Adobe Content Analytics {#install}
+## Installera Adobe Content Analytics-taggtillägget {#install}
 
->[!NOTE]
->
->Adobe Content Analytics-taggtillägget installeras automatiskt som en del av taggegenskapen som skapas automatiskt när [den guidade konfigurationsguiden för Content Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided){target="_blank"} används.
+Adobe Content Analytics-taggtillägget installeras automatiskt som en del av taggegenskapen som skapas automatiskt när [den guidade konfigurationsguiden för Content Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) används.
 
+<!--
+### Manual installation
 
-### Manuell installation
+In case of a manual configuration, the Adobe Content Analytics tag extension needs a property to be installed on. If you have not done so already, see the documentation on [creating a tag property](https://experienceleague.adobe.com/en/docs/platform-learn/implement-in-websites/configure-tags/create-a-property).
 
-Om konfigurationen är manuell måste en egenskap installeras på Adobe Content Analytics-taggtillägget. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/sv/docs/platform-learn/implement-in-websites/configure-tags/create-a-property).
+After you have created a property or when you select the property created using the [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided), open the property and select the **[!UICONTROL Extensions]** tab on the left side bar.
 
-När du har skapat en egenskap eller när du väljer den egenskap som har skapats med [Content Analytics guidade konfigurationsguide](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) öppnar du egenskapen och väljer fliken **[!UICONTROL Extensions]** i det vänstra fältet.
+Select the **[!UICONTROL Catalog]** tab. From the list of available extensions, find the **[!DNL Adobe Content Analytics]** extension and select **[!UICONTROL Install]**.
 
-Klicka på fliken **[!UICONTROL Catalog]**.  Leta reda på tillägget **[!DNL Adobe Content Analytics]** i listan över tillgängliga tillägg och välj **[!UICONTROL Install]**.
+![Image showing the Tags UI with the Web SDK extension selected](assets/aca-tag-install.png)
 
-![Bild som visar användargränssnittet Taggar med Web SDK-tillägget markerat](assets/aca-tag-install.png)
-
-När du har valt **[!UICONTROL Install]** måste du konfigurera taggtillägget Adobe Content Analytics och spara konfigurationen.
-
+After selecting **[!UICONTROL Install]**, you must configure the Adobe Content Analytics tag extension and save the configuration.
+-->
 
 <!--
 ## Configure schema
 
-The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
+The [Content Analytics guided configuration wizard](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) automatically populates the proper value for the **[!UICONTROL Tenant Schema Name]**. 
 
 ![Image that shows the Schema configuration of the Adobe Content Analytics tag extension in the Tags UI](assets/aca-tag-schema.png)
 
@@ -52,9 +50,9 @@ The [Content Analytics guided configuration wizard](https://experienceleague.ado
 
 ## Konfigurera dataströmmar
 
-Den guidade konfigurationsguiden för [innehållsanalys](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) väljer automatiskt rätt värde för **[!UICONTROL Sandbox]** och **[!UICONTROL Production Datastream]**. Du kan även konfigurera ytterligare **[!UICONTROL Staging Datastream]** och **[!UICONTROL Development Datastream]**.
+[Content Analytics guidade konfigurationsguide](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) väljer automatiskt rätt värde för **[!UICONTROL Sandbox]** och **[!UICONTROL Production Datastream]**. Du kan även konfigurera ytterligare **[!UICONTROL Staging Datastream]** och **[!UICONTROL Development Datastream]**.
 
-![Bild som visar datastreams-konfigurationen för taggtillägget Adobe Content Analytics i tagggränssnittet](assets/aca-tag-datastreams.png)
+![Bild som visar dataströmskonfigurationen för Adobe Content Analytics-taggtillägget i tagggränssnittet](assets/aca-tag-datastreams.png)
 
 Du kan åsidosätta de automatiskt markerade värdena för **[!UICONTROL Sandbox]** och **[!UICONTROL Production Datastream]** om du vill använda Content Analytics i en annan sandlåda och med olika datastölar. När du gör det kan du antingen välja en sandlåda och datastödraster från de tillgängliga listrutorna, eller välja **[!UICONTROL Enter values]** och ange ett anpassat datastream-ID för varje miljö.
 
@@ -63,7 +61,7 @@ Du kan åsidosätta de automatiskt markerade värdena för **[!UICONTROL Sandbox
 >När du konfigurerar en annan sandlåda och datastreams ska du se till att
 >
 >* den markerade sandlådan inte redan är kopplad till en annan Content Analytics-konfiguration, och
->* Experience Platform-tjänsten har konfigurerats med en aktiverad händelsedatamängd för upplevelsen av Content Analytics.
+>* Experience Platform-tjänsten har konfigurerats med en aktiverad datauppsättning för Content Analytics Experience-händelser för alla markerade datauppsättningar.
 
 Mer information om hur du konfigurerar ett datastream finns i guiden för [datastreams](../../../../datastreams/overview.md).
 
@@ -83,9 +81,9 @@ Använd ![Stäng](./assets/CrossSize300.svg) om du vill ta bort enskilda paramet
 
 ## Konfigurera händelsefiltrering
 
-I avsnittet **[!UICONTROL Event Filtering]** kan du ändra de reguljära uttrycken för att filtrera **[!UICONTROL Page URLs]** och **[!UICONTROL Assets URLs]** när du samlar in data för Content Analytics. De reguljära uttryck som du har definierat i den guidade konfigurationsguiden för [Innehållsanalys](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/content-analytics/configuration/guided) fylls i automatiskt.
+I avsnittet **[!UICONTROL Event Filtering]** kan du ändra de reguljära uttrycken för att filtrera **[!UICONTROL Page URLs]** och **[!UICONTROL Assets URLs]** när du samlar in data för Content Analytics. De reguljära uttryck som du har definierat i [Content Analytics guidade konfigurationsguide](https://experienceleague.adobe.com/en/docs/analytics-platform/using/content-analytics/configuration/guided) fylls i automatiskt.
 
-![Bild som visar inställningarna för händelsefiltrering för taggtillägget Adobe Content Analytics i tagggränssnittet](assets/aca-tag-eventfiltering.png)
+![Bild som visar inställningarna för händelsefiltrering för Adobe Content Analytics-taggtillägget i tagggränssnittet](assets/aca-tag-eventfiltering.png)
 
 
 ### Exempel
