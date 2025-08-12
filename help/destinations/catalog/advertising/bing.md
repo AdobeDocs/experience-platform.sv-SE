@@ -24,7 +24,7 @@ ht-degree: 4%
 >   * Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`
 >
 > Efter den här uppgraderingen kan det hända att antalet aktiverade profiler **i dina dataflöden minskar till**.[!DNL Microsoft Bing]
-> > Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
+> &#x200B;> Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
 >
 >**Vad har ändrats:**
 >
