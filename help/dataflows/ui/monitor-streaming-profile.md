@@ -2,9 +2,9 @@
 title: Inmatning av direktuppspelningsprofil för bildskärm
 description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka inmatning av direktuppspelningsprofiler
 exl-id: da7bb08d-2684-45a1-b666-7580f2383748
-source-git-commit: 75e0231aa9a040226584aeb05f10756b6db8bb62
+source-git-commit: 75ccdfdff4ded0a13213089d1c7dcc4d8f14e0f8
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '1932'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 >[!NOTE]
 >
->Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+>Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 ## Övervakningsmått för inmatning av direktuppspelningsprofil {#streaming-profile-metrics}
 
@@ -197,6 +197,28 @@ Om din nuvarande gräns på **1 500 händelser per sekund** är otillräcklig b�
 | Onödig datainmatning | Inmatning av data som inte behövs för personalisering ökar genomströmningen utan att något mervärde läggs till, vilket slösar med resurser. Om du till exempel samlar in all analystrafik i profiler, oavsett relevans. | För mycket data som inte är relevanta skapar brus, vilket gör det svårare att identifiera viktiga datapunkter. Det kan också orsaka friktion när man definierar och hanterar målgrupper och profiler. | Importera endast data som behövs för dina användningsfall. Se till att du filtrerar bort onödiga data.<ul><li>**Adobe Analytics**: Använd [radnivåfiltrering](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-real-time-customer-profile) för att optimera dataanvändningen.</li><li>**Källor**: Använd [[!DNL Flow Service] API:t för att filtrera radnivådata](../../sources/tutorials/api/filter.md) för källor som stöds, som [!DNL Snowflake] och [!DNL Google BigQuery].</li></li>**Edge datastream**: Konfigurera [dynamiska datastreams](../../datastreams/configure-dynamic-datastream.md) för filtrering på radnivå av trafik som kommer in från WebSDK.</li></ul> |
 
 {style="table-layout:auto"}
+
+### Vanliga frågor och svar {#faq}
+
+I det här avsnittet finns svar på vanliga frågor om övervakning av inmatning av strömningsprofiler.
+
+#### Varför ser mina mätvärden olika ut på kontrollpanelerna Kapacitet och Övervakning för att få genomströmning av förfrågningar?
+
++++Svar
+
+Kontrollpanelen [!UICONTROL Monitoring] visar realtidsvärden för inmatning och bearbetning. Dessa siffror är exakta mätvärden som registreras vid aktivitetstidpunkten. Omvänt använder kontrollpanelen [!UICONTROL Capacity] en utjämningsmekanism för beräkning av genomströmningskapacitet. Denna mekanism hjälper till att minska antalet korta toppar från att omedelbart räknas som överträdelser och säkerställer att kapacitetsvarningar fokuserar på kontinuerliga trender snarare än tillfälliga sprängningar.
+
+På grund av utjämningsmekanismen kan du lägga märke till:
+
+* Små toppar i [!UICONTROL Monitoring] som inte visas i [!UICONTROL Capacity].
+* Något lägre värden i [!UICONTROL Capacity] jämfört med [!UICONTROL Monitoring] vid samma tidsstämpel.
+
+De två kontrollpanelerna är korrekta, men har utformats för olika syften.
+
+* [!UICONTROL Monitoring]: Detaljerad, omedelbar synlighet.
+* [!UICONTROL Capacity]: Strategisk vy för att identifiera mönster för användning och överträdelser.
+
++++
 
 ## Nästa steg {#next-steps}
 
