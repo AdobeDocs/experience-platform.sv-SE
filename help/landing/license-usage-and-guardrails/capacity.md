@@ -2,7 +2,7 @@
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: b65765d8e93b13fbb3c2a3e44f47725b936223eb
+source-git-commit: 1bde1f2c1bd33756bd20a2524b50d5a2b4bc464e
 workflow-type: tm+mt
 source-wordcount: '1521'
 ht-degree: 0%
@@ -59,7 +59,7 @@ Inom dessa tjänster spåras följande skyddsräcken:
 
 Målgruppskapaciteten är på en **sandbox**-nivå. Det innebär att ni för varje sandlåda ni har i organisationen kan ha 500 direktuppspelade målgrupper, varav 150 av dessa kan vara gränspubliken.
 
-Genomströmningskapaciteten är på **organisationsnivå** och kan distribueras till dina enskilda sandlådor. Med till exempel 1500 rps för direktuppspelad segmenteringsgenomströmning kan du ange att din produktionssandlåda ska vara 1500 rps och att din utvecklingssandlåda ska vara 150 rps.
+Genomströmningskapaciteten är på **organisationsnivå** och kan distribueras till dina enskilda sandlådor. Med till exempel 1500 rps för direktuppspelad segmenteringsgenomströmning kan du ange att din produktionssandlåda ska vara 1350 rps och att din utvecklingssandlåda ska vara 150 rps.
 
 Experience Platform beräknar sandlådans genomströmning i 15 minuters rullande intervall. Detta genomflöde mäts i realtid och data uppdateras var 60:e sekund.
 
