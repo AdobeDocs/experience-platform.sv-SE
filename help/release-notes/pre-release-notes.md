@@ -4,10 +4,10 @@ description: En förhandsgranskning av den senaste versionsinformationen för Ad
 hide: true
 hidefromtoc: true
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: a26ad18b1e44b3198db9e8a36ad3749ed8a0afa2
+source-git-commit: bcf3045fbbf4f9673e954a5ebf95d1225d4cdcd7
 workflow-type: tm+mt
-source-wordcount: '1105'
-ht-degree: 37%
+source-wordcount: '1063'
+ht-degree: 39%
 
 ---
 
@@ -23,8 +23,8 @@ ht-degree: 37%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: augusti 2025**
@@ -53,28 +53,31 @@ Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] 
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
+>[!IMPORTANT]
+>
+>**Schematillägg för datauppsättningsexport**
+>
+>Om dataflöden för dataexport har skapats före november 2024 kommer dessa dataflöden att sluta fungera den **1 september 2025**. Om du behöver dataflödena för att kunna fortsätta exportera data efter 1 september 2025 måste du utöka deras scheman för varje mål som du exporterar datauppsättningar till genom att följa stegen i [den här handboken](../destinations/ui/dataset-expiration-update.md).
+
 **Nya destinationer**
 
 | Mål | Beskrivning |
 | --- | --- |
 | [!DNL Acxiom Real ID Audience] mål | Använd målet [!DNL Acxiom Real ID Audience Connection] för att förbättra målgrupper med tekniken [!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/) och aktivera målgrupper på flera plattformar, till exempel [!DNL Altice], [!DNL Ampersand], [!DNL Comcast]. |
 
-
 **Uppdaterade mål**
 
 | Mål | Beskrivning |
 | --- | --- |
-| Information om förfallodatum för autentisering för [!DNL LinkedIn] mål | Du behöver aldrig bekymra dig om utgångna autentiseringsuppgifter igen. Information om förfallodatum för kontot visas nu direkt i Experience Platform-gränssnittet, så du kan se när din [!DNL LinkedIn]-autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. |
+| Information om förfallodatum för autentisering för [!DNL LinkedIn] och [!DNL Pinterest] mål | Information om förfallodatum för kontot visas nu direkt i Experience Platform-gränssnittet, så du kan se när din [!DNL LinkedIn]- och [!DNL Pinterest]-autentisering upphör att gälla och förnya den innan den orsakar eventuella avbrott i dataflödena. |
 | Krypteringsstöd för [!DNL Data Landing Zone] mål | Skydda exporterade data med kryptering. Nu kan du bifoga RSA-formaterade offentliga nycklar för att kryptera dina exporterade filer, vilket ger dig samma säkerhetsnivå som andra molnlagringsplatser tillhandahåller för din känsliga information. |
 | [[!DNL Microsoft Bing]](../destinations/catalog/advertising/bing.md) intern uppgradering | Från och med 11 augusti 2025 kan du se två **[!DNL Microsoft Bing]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga målanslutningen **[!DNL Microsoft Bing]** har bytt namn till **[!UICONTROL (Deprecated) Microsoft Bing]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Microsoft Bing]**. Använd den nya anslutningen **[!UICONTROL Microsoft Bing]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Microsoft Bing]** uppdateras de automatiskt. Du behöver därför inte göra något. <br><br> Om du skapar dataflöden via [Flow Service API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> Efter den här uppgraderingen kan det hända att antalet aktiverade profiler **i dina dataflöden minskar till**. [!DNL Microsoft Bing] Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. |
-| Ytterligare identifierare för [!DNL Amazon Ads] mål | Amazon Ads-målet har nu stöd för nya identiteter (`firstName`, `lastName`, `street`, `city`, `state`, `zip`, `country`). Dessa fält är avsedda att förbättra målgruppsmatchningen och skickas som oformaterad text med SHA256-hash som tillval. |
 | Konsolidering av [!DNL Marketo] målkort | Förenkla målinställningen för [!DNL Marketo] med vårt enhetliga målkort. Vi har konsoliderat [!DNL Marketo] V2- och V3-kort till ett enda smidigt alternativ, vilket gör det enklare att välja rätt mål och komma igång snabbt. |
 
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Utöka datauppsättningsexportscheman för dataflöden som skapats före november 2024 | Om dataflödena för dataexport har skapats före november 2024 kommer dessa dataflöden att sluta fungera den 1 september 2025. Om du behöver dataflödena för att kunna fortsätta exportera data efter 1 september 2025 måste du utöka deras scheman för varje mål som du exporterar datauppsättningar till genom att följa stegen i [den här handboken](../destinations/ui/dataset-expiration-update.md). |
 | Förbättrade funktioner för sökning, filtrering och taggning för destinationer | Förbättra arbetsflödet för målhantering med förbättrade funktioner för sökning, filtrering och taggning på flikarna Bläddra och Konton. Nu kan du söka efter specifika dataflöden och konton efter namn, filtrera efter olika villkor, inklusive målplattform, status och datum, och skapa anpassade taggar för att ordna dina mål. Kolumnsortering är också tillgängligt för nyckelfält som körningstid för senaste dataflöde, vilket gör det enklare att identifiera och hantera målanslutningarna. |
 
 Mer information finns i [översikten över destinationer](../destinations/home.md).
