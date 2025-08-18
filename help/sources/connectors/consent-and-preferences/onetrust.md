@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;home;populära topics;OneTrust;ontrust;medgivande;medgivande och inställningar;efterlevnad
-solution: Experience Platform
 title: OneTrust Integration Source Connector - översikt
 description: Lär dig hur du ansluter OneTrust Integration till Adobe Experience Platform med API:er eller användargränssnittet.
-last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: f2229d4d-8aa6-483a-9156-403309f80007
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 0b3053e23f5b13fd7ebf0cf41a64c1bc5b71f2db
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '169'
 ht-degree: 0%
 
 ---
@@ -16,13 +13,15 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Källan [!DNL OneTrust Integration] stöder endast inmatning av medgivanden och inställningsdata, inte cookies. Kontakta OneTrust-supporten på https://support.onetrust.com om du har problem med källkopplingen
+>Källan [!DNL OneTrust Integration] stöder endast inmatning av medgivanden och inställningsdata, inte cookies. Kontakta [[!DNL OneTrust] support](https://support.onetrust.com) om du har problem med källkopplingen.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+[!DNL OneTrust] är en plattform för hantering av sekretess, säkerhet och förtroende som är utformad för att hjälpa organisationer att hantera data på ett ansvarsfullt sätt, följa regler och bygga förtroende med kunder och intressenter. Det ger en enhetlig verktygslåda för datastyrning, riskhantering och automatisering av regelefterlevnad.
 
-Experience Platform har stöd för inmatning av data från en plattform för hantering av medgivanden och preferenser från tredje part. Stöd för samtycka- och inställningsleverantörer inkluderar [!DNL OneTrust Integration].
+Använd källan [!DNL OneTrust Integration] för att ansluta ditt konto och importera samtycke och inställningsdata till Experience Platform.
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL OneTrust Integration] till Experience Platform med API:er eller användargränssnittet:
+>[!IMPORTANT]
+>
+>Med [!DNL OneTrust Integration]-källan importeras endast nya data som har skapats efter den föregående körningen, även om den föregående körningen inte slutfördes korrekt.
 
 ## Anslut [!DNL OneTrust Integration] till Experience Platform med API:er
 
