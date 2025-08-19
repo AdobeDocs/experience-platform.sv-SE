@@ -1,8 +1,7 @@
 ---
 title: Versionsinformation om Adobe Experience Platform från augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8b67b2b33b37d631f73d9ea13786cae0e0db59ce
+source-git-commit: 6b99f9f0bef18b8a4d04a18f817e300cc4c5d9a3
 workflow-type: tm+mt
 source-wordcount: '1425'
 ht-degree: 41%
@@ -22,6 +21,7 @@ ht-degree: 41%
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
+
 
 Nya funktioner och uppdateringar i Adobe Experience Platform:
 
@@ -104,6 +104,7 @@ Mer information om katalogtjänsten finns i [Katalogtjänstöversikten](../../ca
 | --- | --- |
 | [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) intern uppgradering | Från och med 11 augusti 2025 kan du se två **[!DNL Microsoft Bing]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga målanslutningen **[!DNL Microsoft Bing]** har bytt namn till **[!UICONTROL (Deprecated) Microsoft Bing]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Microsoft Bing]**. Använd den nya anslutningen **[!UICONTROL Microsoft Bing]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Microsoft Bing]** uppdateras de automatiskt. Du behöver därför inte göra något. <br><br> Om du skapar dataflöden via [Flow Service API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> Efter den här uppgraderingen kan det hända att antalet aktiverade profiler **i dina dataflöden minskar till**. [!DNL Microsoft Bing] Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. |
 
+
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
@@ -171,3 +172,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Förbättrad autentisering för [!DNL Azure Blob Storage] | Du kan nu använda tjänstens huvudbaserade autentisering för att ansluta [!DNL Azure Blob Storage]-källan till Experience Platform. Använd huvudbaserad autentisering för förbättrad säkerhet, enklare rotation av autentiseringsuppgifter och en mer detaljerad åtkomstkontroll för ditt konto. Mer information finns i [[!DNL Azure Blob Storage] översikten](../../sources/connectors/cloud-storage/blob.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
+
+<!--
+| [!DNL Marketo] source documentation updates | Get complete visibility into how your [!DNL Marketo] data is transformed when it enters Experience Platform. All field mappings now include detailed explanations of data transformations, so you can understand exactly how your `PersonID` becomes `leadID` and `eventType` becomes `activityType`. |
+-->
