@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform från augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8b67b2b33b37d631f73d9ea13786cae0e0db59ce
+source-git-commit: af669d58ac4031354e477954a8a733cf0bd7a64b
 workflow-type: tm+mt
 source-wordcount: '1425'
 ht-degree: 41%
@@ -17,8 +17,8 @@ ht-degree: 41%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -41,7 +41,7 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 **Nya funktioner**
 
 | Funktion | Beskrivning |
-| ------- | ----------- |
+| --- | --- |
 | Aviseringar om strömning av genomströmningskapacitet | Med tre nya larm kan användare abonnera på och konfigurera aviseringar för att proaktivt hantera och övervaka prestanda för strömningskapacitet. Nya varningsmeddelanden kan vara när strömningsflödet har nått 80 %, 90 % eller överstiger kapacitetsgränserna. Mer information finns i guiden [kapacitetsvarningsregler](../../observability/alerts/rules.md#capacity). |
 
 Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] översikt](../../observability/home.md).
