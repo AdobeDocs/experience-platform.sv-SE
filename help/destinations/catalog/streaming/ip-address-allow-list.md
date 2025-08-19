@@ -4,35 +4,51 @@ title: IP-adress tillåtelselista för direktuppspelningsmål
 type: Documentation
 description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten, Amazon Kinesis eller Azure Event Hubs-instansen.
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 5c67466f5321038e75d22e216a8be2e745adac49
+source-git-commit: 851565b4c40452d102eff134533c9d44ea19ca76
 workflow-type: tm+mt
-source-wordcount: '310'
+source-wordcount: '407'
 ht-degree: 0%
 
 ---
 
-# IP-adress tillåtelselista för direktuppspelningsmål {#ip-address-allowlist}
+
+# IP-adress tillåtelselista för API-baserade mål för direktuppspelning {#ip-address-allowlist}
 
 >[!IMPORTANT]
 >
 > * Adobe rekommenderar att du bokmärker den här sidan och går tillbaka till den var tredje månad för att kontrollera de senaste IP-adresserna. Adobe meddelar inte om nya IP-intervall.
-> * Listan över IP-adresser som beskrivs här *gäller inte* för alla mål som du skapar med [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
 
 ## Översikt {#overview}
 
-De IP-intervall som beskrivs här gäller följande destinationer:
+IP-intervallen som beskrivs på den här sidan gäller för följande mål:
 
-* [HTTP API-mål](./http-destination.md)
-* [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
-* [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [Avancerade företagsmål](../../destination-types.md#advanced-enterprise-destinations): [HTTP API-mål](./http-destination.md), [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [Målgrupper för direktuppspelad export](../../destination-types.md#streaming-destinations), till exempel [Pega CDH Realtime Audience](/help/destinations/catalog/personalization/pega-v2.md), API-baserade integreringar med [Salesforce Marketing Cloud](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md) och [Oracle Eloqua](/help/destinations/catalog/email-marketing/oracle-eloqua-api.md)
+* Offentliga eller privata mål som skapats via [Destination SDK](../../destination-sdk/getting-started.md)
 
 Utgående trafik från Experience Platform till dessa destinationer går alltid igenom de IP-adresser som anges på den här sidan.
 
-Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP-slutpunkten, [!DNL Amazon Kinesis] eller [!DNL Azure Event Hubs]-instansen. Den här funktionen är särskilt användbar om HTTP-slutpunkten finns bakom en brandvägg för företag eller om företagets säkerhets- och efterlevnadsstandarder kräver att en lista över IP-intervall tillåtslista.
+Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till de mål som anges ovan. Den här funktionen är särskilt användbar om HTTP-slutpunkten finns bakom en brandvägg för företag eller om företagets säkerhets- och efterlevnadsstandarder kräver att en lista över IP-intervall tillåtslista.
 
 Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-intervall kan du tillåta trafik för dataöverföringstjänsten.
 
-Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtelselista innan du börjar arbeta med de mål som anges ovan på den här sidan. Om du inte lägger till ditt regionspecifika IP-intervall på tillåtelselista kan det leda till fel eller utebliven prestanda när du använder dessa direktuppspelningsmål.
+## När IP-adresserna på den här sidan ska tillåtslista {#when-to-allowlist}
+
+Om din organisationspolicy kräver att du tillåtslista IP-adresser för inkommande trafik måste du lägga till IP-intervallen från följande kategorier i din tillåtelselista innan du kan arbeta med de mål som nämns ovan på den här sidan:
+
+1. Alla [globala IP-adresser](#global)
+2. Förutom de globala IP-adresserna lägger du till IP-adresserna för den region du är etablerad i i listan längre ned på sidan. Om du inte lägger till ditt regionspecifika IP-intervall på tillåtelselista kan det leda till fel eller utebliven prestanda när du använder dessa direktuppspelningsmål.
+
+## Globala IP-adresser {#global}
+
+* `3.209.222.108`
+* `3.211.230.204`
+* `35.169.227.49`
+* `66.117.18.133`
+* `66.117.18.134`
+* `66.117.18.135`
+
+Förutom dessa globala IP-adresser måste du tillåtslista IP-adresserna för den region där din organisation etableras från listan nedan.
 
 ## VA7: Kunder i USA och Amerika {#us-americas}
 
@@ -209,3 +225,4 @@ IP-intervallet nedan gäller för Experience Platform-kunder som använder Amazo
 * `20.244.79.192/28`
 * `20.244.79.208/28`
 * `20.244.79.224/28`
+
