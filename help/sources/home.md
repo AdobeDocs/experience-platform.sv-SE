@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: cad2cafdf39c718c3ba971eaa4e7f2318bd5f517
+source-git-commit: 785ddd4ed3a5b8ba2c515ee6390e78b601367814
 workflow-type: tm+mt
 source-wordcount: '1614'
 ht-degree: 1%
@@ -61,7 +61,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 | Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
@@ -108,7 +108,7 @@ Du kan använda följande källor för att importera molnlagringsdata till Exper
 | Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) | Grupp | Azure |
-| [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) | Grupp | Azure |
+| [[!DNL Azure Blob Storage]](connectors/cloud-storage/blob.md) | Grupp | Azure |
 | [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) | Grupp | Azure, AWS |
 | [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) | Grupp | Azure |
 | [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) | Grupp | Azure |

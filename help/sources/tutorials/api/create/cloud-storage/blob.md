@@ -1,19 +1,17 @@
 ---
-title: Skapa en Azure Blob Base-anslutning med API:t för Flow Service
+title: Anslut Azure Blob Storage till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Azure Blob med API:t för Flow Service.
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7acdc090c020de31ee1a010d71a2969ec9e5bbe1
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '651'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Azure Blob]-basanslutning med API:t [!DNL Flow Service]
+# Anslut [!DNL Azure Blob Storage] till Experience Platform med API:t
 
-En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
-
-I den här självstudien beskrivs steg för att skapa en basanslutning för [!DNL Azure Blob] (kallas nedan [!DNL Blob]) med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Azure Blobg Storage]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
@@ -22,65 +20,45 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Blob]-källanslutning med API:t [!DNL Flow Service].
-
-### Samla in nödvändiga inloggningsuppgifter
-
-För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Blob]-lagringsutrymme måste du ange värden för följande anslutningsegenskap:
-
->[!BEGINTABS]
-
->[!TAB Autentisering av anslutningssträng]
-
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| `connectionString` | En sträng som innehåller den auktoriseringsinformation som krävs för att autentisera [!DNL Blob] till Experience Platform. Anslutningssträngsmönstret [!DNL Blob] är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. Mer information om anslutningssträngar finns i det här [!DNL Blob]-dokumentet om [konfigurering av anslutningssträngar](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string). |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Blob] är: `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
-
->[!TAB SAS URI-autentisering]
-
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| `sasUri` | Den URI för signatur för delad åtkomst som du kan använda som en alternativ autentiseringstyp för att ansluta ditt [!DNL Blob]-konto. SAS-URI-mönstret [!DNL Blob] är: `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>` Mer information finns i det här [!DNL Blob]-dokumentet om [signatur-URI:er för delad åtkomst](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication). |
-| `container` | Namnet på den behållare som du vill tilldela åtkomst till. När du skapar ett nytt konto med källan [!DNL Blob] kan du ange ett behållarnamn som anger användaråtkomst till den undermapp du väljer. |
-| `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Blob] är: `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
-
->[!ENDTABS]
-
 ### Använda Experience Platform API:er
 
 Information om hur du kan anropa Experience Platform API:er finns i guiden [Komma igång med Experience Platform API:er](../../../../../landing/api-guide.md).
 
-## Skapa en basanslutning
+### Samla in nödvändiga inloggningsuppgifter
 
->[!TIP]
+Läs [[!DNL Azure Blob Storage] översikten](../../../../connectors/cloud-storage/blob.md#authentication) om du vill ha information om autentisering.
+
+## Anslut ditt [!DNL Azure Blob Storage]-konto till Experience Platform {#connect}
+
+Läs stegen nedan om du vill ha information om hur du ansluter ditt [!DNL Azure Blob Storage]-konto till Experience Platform.
+
+### Skapa en basanslutning
+
+>[!NOTE]
 >
->När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Blob]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+>När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Azure Blob Storage]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
-En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning länkar källan till Experience Platform, lagrar autentiseringsinformation, anslutningsstatus och ett unikt ID. Använd detta ID för att bläddra bland källfiler och identifiera specifika objekt som ska importeras, inklusive deras datatyper och format.
 
-Källan [!DNL Blob] stöder både anslutningssträng och autentisering med delad åtkomstsignatur (SAS). En SAS-URI (Shared Access Signature) möjliggör säker delegerad auktorisering till ditt [!DNL Blob]-konto. Du kan använda SAS för att skapa autentiseringsuppgifter med olika grad av åtkomst, eftersom en SAS-baserad autentisering gör att du kan ange behörigheter, start- och förfallodatum samt villkor för specifika resurser.
+Du kan ansluta ditt [!DNL Azure Blob Storage]-konto till Experience Platform med följande autentiseringstyper:
 
-Under det här steget kan du även ange vilka undermappar ditt konto ska ha åtkomst till genom att definiera namnet på behållaren och sökvägen till undermappen.
-
-Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Blob]-autentiseringsuppgifter som en del av parametrarna för begäran.
+* **Verifiering av kontonyckel**: Lagringskontots åtkomstnyckel används för att autentisera och ansluta till ditt [!DNL Azure Blob Storage]-konto.
+* **Delad åtkomstsignatur (SAS)**: Använder en SAS-URI för att ge delegerad, tidsbegränsad åtkomst till resurser i ditt [!DNL Azure Blob Storage]-konto.
+* **Tjänsthuvudbaserad autentisering**: Använder ett Azure Active Directory-tjänstens huvudnamn (AAD) (klient-ID och hemlighet) för att autentisera på ditt Azure Blob Storage-konto på ett säkert sätt.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
-**Begäran**
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till slutpunkten `/connections` och anger dina autentiseringsuppgifter som en del av parametrarna för begäran.
 
 >[!BEGINTABS]
 
->[!TAB Anslutningssträng]
+>[!TAB Autentisering av kontonyckel]
 
-Följande begäran skapar en basanslutning för [!DNL Blob] med hjälp av anslutningssträngsbaserad autentisering:
-
-+++Begäran
+Ange värden för `connectionString`, `container` och `folderPath` om du vill använda kontonyckelautentisering.
 
 ```shell
 curl -X POST \
@@ -91,48 +69,33 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Azure Blob connection using connectionString",
-      "description": "Azure Blob connection using connectionString",
-      "auth": {
-          "specName": "ConnectionString",
-          "params": {
-              "connectionString": "DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}",
-              "container": "acme-blob-container",
-              "folderPath": "/acme/customers/salesData"
-          }
-      },
-      "connectionSpec": {
-          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-          "version": "1.0"
+    "name": "Azure Blob Storage connection using connectingString",
+    "description": "Azure Blob Storage connection using connectionString",
+    "auth": {
+      "specName": "ConnectionString",
+      "params": {
+        "connectionString": "DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}",
+        "container": "acme-blob-container",
+        "folderPath": "/acme/customers/salesData"
       }
+    },
+    "connectionSpec": {
+      "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+      "version": "1.0"
+    }
   }'
 ```
 
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som krävs för att komma åt data i blobblagringen. Blobanslutningssträngsmönstret är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
-| `connectionSpec.id` | Bloblagringsanslutningens specifikations-ID är: `4c10e202-c428-4796-9208-5f1f5732b1cf` |
+| Parameter | Beskrivning |
+| --- | --- |
+| `connectionString` | Anslutningssträngen för ditt [!DNL Azure Blob Storage]-konto. Anslutningssträngsmönstret är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY};EndpointSuffix=core.windows.net`. |
+| `container` | Namnet på behållaren [!DNL Azure Blob Storage] där dina datafiler lagras. |
+| `folderPath` | Sökvägen inom den angivna behållaren där filerna finns. |
+| `connectionSpec.id` | Anslutningens spec-ID för källan [!DNL Azure Blob Storage]. Detta ID har korrigerats som: `4c10e202-c428-4796-9208-5f1f5732b1cf`. |
 
-+++
+>[!TAB Delad åtkomstsignatur]
 
-+++svar
-
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
-
-```json
-{
-    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
-    "etag": "\"1700c57b-0000-0200-0000-5e3b3f440000\""
-}
-```
-
-+++
-
->[!TAB SAS URI-autentisering]
-
-Om du vill skapa en [!DNL Blob]-anslutning med signatur-URI för delad åtkomst gör du en POST-begäran till [!DNL Flow Service]-API:t och anger värden för [!DNL Blob] `sasUri`.
-
-+++Begäran
+Om du vill använda signatur för delad åtkomst anger du värden för `sasUri`, `container` och `folderPath`.
 
 ```shell
 curl -X POST \
@@ -143,44 +106,87 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Azure Blob source connection using SAS URI",
-      "description": "Azure Blob source connection using SAS URI",
-      "auth": {
-          "specName": "SAS URI Authentication",
-          "params": {
-              "sasUri": "https://{ACCOUNT_NAME}.blob.core.windows.net/?sv={STORAGE_VERSION}&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>",
-              "container": "acme-blob-container",
-              "folderPath": "/acme/customers/salesData"
-          }
-      },
-      "connectionSpec": {
-          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-          "version": "1.0"
+    "name": "Azure Blob Storage source connection using SAS URI",
+    "description": "Azure Blob Storage source connection using SAS URI",
+    "auth": {
+      "specName": "SAS URI Authentication",
+      "params": {
+        "sasUri": "https://{ACCOUNT_NAME}.blob.core.windows.net/?sv={STORAGE_VERSION}&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>",
+        "container": "acme-blob-container",
+        "folderPath": "/acme/customers/salesData"
       }
+    },
+    "connectionSpec": {
+      "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+      "version": "1.0"
+    }
   }'
 ```
 
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `auth.params.connectionString` | Den SAS-URI som krävs för att komma åt data i ditt [!DNL Blob]-lagringsutrymme. SAS-URI-mönstret [!DNL Blob] är: `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>`. |
-| `connectionSpec.id` | ID för lagringsanslutningsspecifikationen [!DNL Blob] är: `4c10e202-c428-4796-9208-5f1f5732b1cf` |
+| Parameter | Beskrivning |
+| --- | --- |
+| `sasUri` | Den URI för signatur för delad åtkomst som du kan använda som en alternativ autentiseringstyp för att ansluta ditt konto. SAS URI-mönstret är: `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv={STORAGE_VERSION}&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}`. |
+| `container` | Namnet på behållaren [!DNL Azure Blob Storage] där dina datafiler lagras. |
+| `folderPath` | Sökvägen inom den angivna behållaren där filerna finns. |
+| `connectionSpec.id` | Anslutningens spec-ID för källan [!DNL Azure Blob Storage]. Detta ID har korrigerats som: `4c10e202-c428-4796-9208-5f1f5732b1cf`. |
 
-+++
+>[!TAB Tjänstens huvudbaserade autentisering]
 
-+++svar
+Om du vill ansluta via huvudbaserad autentisering anger du värden för: `serviceEndpoint`, `servicePrincipalId`, `servicePrincipalKey`, `accountKind`, `tenant`, `container` och `folderPath`.
 
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
-
-```json
-{
-    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
-    "etag": "\"1700c57b-0000-0200-0000-5e3b3f440000\""
-}
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Azure Blob Storage source connection using service principal based authentication",
+    "description": "Azure Blob Storage source connection using service principal based authentication",
+    "auth": {
+      "specName": "Service Principal Based Authentication",
+      "params": {
+        "serviceEndpoint": "{SERVICE_ENDPOINT}",
+        "servicePrincipalId": "{SERVICE_PRINCIPAL_ID}",
+        "servicePrincipalKey": "{SERVICE_PRINCIPAL_KEY}",
+        "accountKind": "{ACCOUNT_KIND}",
+        "tenant": "{TENANT}",
+        "container": "acme-blob-container",
+        "folderPath": "/acme/customers/salesData"
+      }
+    },
+    "connectionSpec": {
+      "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+      "version": "1.0"
+    }
+  }'
 ```
 
-+++
+| Parameter | Beskrivning |
+| --- | --- |
+| `serviceEndpoint` | Slutpunkts-URL för ditt [!DNL Azure Blob Storage]-konto. Vanligtvis i formatet: `https://{ACCOUNT_NAME}.blob.core.windows.net`. |
+| `servicePrincipalId` | Klient-/program-ID för Azure Active Directory-tjänstens huvudnamn (AAD) som används för autentisering. |
+| `servicePrincipalKey` | Klienthemligheten eller lösenordet som är associerat med Azure-tjänstens huvudnamn. |
+| `accountKind` | Typen för ditt [!DNL Azure Blob Storage]-konto. Vanliga värden är `StorageV2`, `BlobStorage` eller `Storage`. |
+| `tenant` | Klient-ID för Azure Active Directory (AAD) där tjänstens huvudnamn är registrerat. |
+| `container` | Namnet på behållaren [!DNL Azure Blob Storage] där dina datafiler lagras. |
+| `folderPath` | Sökvägen inom den angivna behållaren där filerna finns. |
+| `connectionSpec.id` | Anslutningens spec-ID för källan [!DNL Azure Blob Storage]. Detta ID har korrigerats som: `4c10e202-c428-4796-9208-5f1f5732b1cf`. |
 
 >[!ENDTABS]
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
+
+```json
+{
+    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
+    "etag": "\"1700c57b-0000-0200-0000-5e3b3f440000\""
+}
+```
+
+
 
 ## Nästa steg
 

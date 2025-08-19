@@ -2,14 +2,14 @@
 title: Anslut Oracle DB till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter Oracle DB-instansen till Experience Platform med användargränssnittet.
 exl-id: 4ca6ecc6-0382-4cee-acc5-1dec7eeb9443
-source-git-commit: aa5496be968ee6f117649a6fff2c9e83a4ed7681
+source-git-commit: 7acdc090c020de31ee1a010d71a2969ec9e5bbe1
 workflow-type: tm+mt
 source-wordcount: '445'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Oracle DB]-källanslutning i användargränssnittet
+# Anslut [!DNL Oracle DB] till Experience Platform med användargränssnittet
 
 Läs den här vägledningen när du vill lära dig hur du ansluter [!DNL Oracle DB]-instansen till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 

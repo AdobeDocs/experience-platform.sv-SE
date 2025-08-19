@@ -1,17 +1,17 @@
 ---
-title: Skapa en Azure Blob Source Connection i användargränssnittet
-description: Lär dig hur du skapar en Azure Blob-källanslutning med Experience Platform-användargränssnittet.
+title: Anslut Azure Blob Storage till Experience Platform i användargränssnittet
+description: Lär dig hur du ansluter ditt Azure Blob Storage-konto till Experience Platform med hjälp av källarbetsytan i användargränssnittet.
 exl-id: 0e54569b-7305-4065-981e-951623717648
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7acdc090c020de31ee1a010d71a2969ec9e5bbe1
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '559'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Azure Blob]-källanslutning i användargränssnittet
+# Anslut [!DNL Azure Blob Storage] till Experience Platform med användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Blob]-källanslutning (kallas nedan [!DNL Blob]) med Experience Platform användargränssnitt.
+Läs den här vägledningen när du vill lära dig hur du ansluter [!DNL Azure Blob Storage]-instansen till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -22,7 +22,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig [!DNL Blob]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
+Om du redan har en giltig [!DNL Azure Blob Storage]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
 
 ### Filformat som stöds
 
@@ -34,78 +34,56 @@ Experience Platform har stöd för följande filformat som kan importeras från 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Du måste ange giltiga värden för följande autentiseringsuppgifter för att komma åt ditt [!DNL Blob]-lagringsutrymme på Experience Platform:
+Läs [[!DNL Azure Blob Storage] översikten](../../../../connectors/cloud-storage/blob.md#authentication) om du vill ha information om autentisering.
 
->[!BEGINTABS]
+## Navigera i källkatalogen
 
->[!TAB Autentisering av anslutningssträng]
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Välj en kategori eller använd sökfältet för att hitta källan.
 
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| Anslutningssträng | En sträng som innehåller den auktoriseringsinformation som krävs för att autentisera [!DNL Blob] till Experience Platform. Anslutningssträngsmönstret [!DNL Blob] är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. Mer information om anslutningssträngar finns i det här [!DNL Blob]-dokumentet om [konfigurering av anslutningssträngar](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string). |
-
->[!TAB SAS URI-autentisering]
-
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| SAS-URI | Den URI för signatur för delad åtkomst som du kan använda som en alternativ autentiseringstyp för att ansluta ditt [!DNL Blob]-konto. SAS-URI-mönstret [!DNL Blob] är: `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>` Mer information finns i det här [!DNL Blob]-dokumentet om [signatur-URI:er för delad åtkomst](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication). |
-| Behållare | Namnet på den behållare som du vill tilldela åtkomst till. När du skapar ett nytt konto med källan [!DNL Blob] kan du ange ett behållarnamn som anger användaråtkomst till den undermapp du väljer. |
-| Mappsökväg | Sökvägen till mappen som du vill ge åtkomst till. |
-
->[!ENDTABS]
-
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att ansluta ditt [!DNL Blob]-lagringsutrymme till Experience Platform
-
-## Anslut ditt [!DNL Blob]-konto
-
-I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
-
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
-
-Under kategorin [!UICONTROL Cloud storage] väljer du **[!UICONTROL Azure Blob Storage]** och sedan **[!UICONTROL Add data]**.
-
-![Experience Platform-källkatalogen med Azure Blob Storage-källan vald.](../../../../images/tutorials/create/blob/catalog.png)
-
-Sidan **[!UICONTROL Connect to Azure Blob Storage]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
-
-### Befintligt konto
-
-Om du vill använda ett befintligt konto väljer du det [!DNL Blob]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
-
-![befintlig](../../../../images/tutorials/create/blob/existing.png)
-
-### Nytt konto
+Om du vill ansluta till [!DNL Azure Blob Storage] går du till kategorin *[!UICONTROL Cloud storage]*, markerar **[!UICONTROL Azure Blob Storage]**-källkortet och väljer **[!UICONTROL Set up]**.
 
 >[!TIP]
 >
->När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Blob]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+>Källor visar **[!UICONTROL Set up]** för nya anslutningar och **[!UICONTROL Add data]** om ett konto redan finns.
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och en valfri beskrivning för det nya [!DNL Blob]-kontot.
+![Källkatalogen med Azure Blob Storage-källan vald.](../../../../images/tutorials/create/blob/catalog.png)
 
-![Den nya kontoskärmen för Azure Blob Storage-källan.](../../../../images/tutorials/create/blob/new.png)
+## Använd ett befintligt konto
 
-Källan [!DNL Blob] stöder både autentisering av kontonycklar och autentisering med delad åtkomstsignatur (SAS). En kontonyckelbaserad autentisering kräver en anslutningssträng för verifiering, medan en SAS-autentisering använder en URI som tillåter säker delegerad autentisering av ditt konto.
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det [!DNL Azure Blob Storage]-konto som du vill använda.
 
-Under det här steget kan du även ange vilka undermappar ditt konto ska ha åtkomst till genom att definiera namnet på behållaren och sökvägen till undermappen.
+![Det befintliga källgränssnittet för Azure Blob Storage.](../../../../images/tutorials/create/blob/existing.png)
+
+## Skapa ett nytt konto
+
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och kan lägga till en beskrivning för ditt konto. Du kan ansluta ditt [!DNL Azure Blob Storage]-konto till Experience Platform med följande autentiseringstyper:
+
+* **Verifiering av kontonyckel**: Lagringskontots åtkomstnyckel används för att autentisera och ansluta till ditt [!DNL Azure Blob Storage]-konto.
+* **Delad åtkomstsignatur (SAS)**: Använder en SAS-URI för att ge delegerad, tidsbegränsad åtkomst till resurser i ditt [!DNL Azure Blob Storage]-konto.
+* **Tjänsthuvudbaserad autentisering**: Använder ett Azure Active Directory-tjänstens huvudnamn (AAD) (klient-ID och hemlighet) för att autentisera på ditt Azure Blob Storage-konto på ett säkert sätt.
 
 >[!BEGINTABS]
 
->[!TAB Anslutningssträng]
+>[!TAB Autentisering av kontonyckel]
 
-Om du vill autentisera med en kontonyckel väljer du **[!UICONTROL Account key authentication]** och anger anslutningssträngen. Under det här steget kan du även ange behållarnamnet och sökvägen till den undermapp som du vill ha åtkomst till. När du är klar väljer du **[!UICONTROL Connect to source]**.
+Välj **[!UICONTROL Account key authentication]** och ange din `connectionString`, `container` och `folderPath`. Välj sedan **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
 
-![anslutningssträng](../../../../images/tutorials/create/blob/connectionstring.png)
+![Autentiseringsalternativet för kontonycklar i det nya steget när konton skapas.](../../../../images/tutorials/create/blob/account-key.png)
 
->[!TAB SAS URI]
+>[!TAB Delad åtkomstsignatur]
 
-Du kan använda SAS för att skapa autentiseringsuppgifter med olika grad av åtkomst, eftersom en SAS-baserad autentisering gör att du kan ange behörigheter, start- och förfallodatum samt villkor för specifika resurser.
+Välj **[!UICONTROL Shared access signature]** och ange din `sasUri`, `container` och `folderPath`. Välj sedan **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
 
-Om du vill autentisera med en signatur för delad åtkomst väljer du **[!UICONTROL Shared access signature authentication]** och anger sedan din SAS-URI. Under det här steget kan du även ange behållarnamnet och sökvägen till den undermapp som du vill ha åtkomst till. När du är klar väljer du **[!UICONTROL Connect to source]**.
+![Alternativet för signaturautentisering för delad åtkomst i det nya steget för att skapa konto.](../../../../images/tutorials/create/blob/sas.png)
 
-![sas-uri](../../../../images/tutorials/create/blob/sas-uri.png)
+>[!TAB Tjänstens huvudbaserade autentisering]
+
+Välj **[!UICONTROL Service principal based authentication]** och ange din `serviceEndpoint`, `servicePrincipalId`, `servicePrincipalKey`, `accountKind`, `tenant`, `container` och `folderPath`. Välj sedan **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
+
+![Det tjänsthuvudbaserade autentiseringsalternativet i det nya kontoskapandesteget.](../../../../images/tutorials/create/blob/service-principal.png)
 
 >[!ENDTABS]
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Blob]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Experience Platform](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Azure Blob Storage]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Experience Platform](../../dataflow/batch/cloud-storage.md).
