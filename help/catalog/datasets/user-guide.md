@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 24b0df7025971a999453cd988813aa32b449ba0f
+source-git-commit: 1b278562c815953d2068a5142dbefcf1572baff5
 workflow-type: tm+mt
-source-wordcount: '4244'
+source-wordcount: '4259'
 ht-degree: 0%
 
 ---
@@ -237,6 +237,8 @@ Konfigurera den önskade kvarhållningsperioden i dialogrutan för datalagringsi
 >[!NOTE]
 > 
 >Den minsta kvarhållningsperioden för datasjön är 30 dagar. Den minsta kvarhållningsperioden för profiltjänsten är en dag.
+>
+>Dessutom kan du bara uppdatera kvarhållningsperioden för profiltjänsten en gång var 30:e dag.
 
 För att ge stöd för genomskinlighet och övervakning anges tidsstämplar för jobbkörningarna **senaste** och **nästa** datalagring. Tidsstämplarna hjälper dig att förstå när den senaste datarensningen inträffade och när nästa är schemalagd.
 

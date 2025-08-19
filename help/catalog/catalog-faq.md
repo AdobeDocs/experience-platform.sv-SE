@@ -3,9 +3,9 @@ keywords: katalogtjänst; frågor; vanliga frågor; frågor; faq; dataset faq
 title: Vanliga frågor och svar
 description: Svar på de vanligaste frågorna om tjänsten Adobe Experience Platform Catalog och datauppsättningar.
 exl-id: 70d2a352-75bd-4bbc-98e6-aeea16306f63
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 38f63f1fc985601c53925a529e603f47dc7fb58b
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '485'
 ht-degree: 1%
 
 ---
@@ -27,6 +27,10 @@ Du kan ställa in bevarandeprinciper för datauppsättningar som skapats med kla
 ### Kan jag ange olika bevarandeprinciper för datasjön och profiltjänst?
 
 +++Svar
+
+>[!NOTE]
+>
+>Kvarhållningsperioden för profiltjänsten kan bara uppdateras en gång var 30:e dag.
 
 Ja, du kan tillämpa olika bevarandeprinciper för datasjön och profiltjänst.
 
