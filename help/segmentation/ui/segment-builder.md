@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: d942093bffc680501384f7c8193f4cdddc1cef33
+source-git-commit: 52571689c97fdc2ed052b53537e736f03d666ad5
 workflow-type: tm+mt
-source-wordcount: '5103'
+source-wordcount: '5089'
 ht-degree: 0%
 
 ---
@@ -131,7 +131,7 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 >id="platform_segmentation_segmentbuilder_externalaudiences"
 >title="Externa målgrupper"
 >abstract="Publiker som importeras via fliken Publiker visas nu automatiskt via Audience Portal. Målgrupper som importerats från Audience Manager, Customer Journey Analytics, Segment Match och andra anpassade integreringar är tillgängliga utan att först behöva konfigurera i Segment Builder. Från och med den 1 september 2025 hämtas alla målgrupper exklusivt via Unified Search, och det tidigare arbetsflödet stöds inte längre."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
 
 >[!NOTE]
 >
@@ -330,7 +330,7 @@ Listan över tillgängliga tidsbegränsningar för den här åtgärden skiljer s
 >[!NOTE]
 >
 >När du använder After-tidsbegränsningen kan den senare händelsen inträffa mer än den tid som anges i tidsbegränsningen. >
->&#x200B;>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
+>>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
 >
 >Dessutom kan dessa två tidsbegränsningar användas tillsammans.
 >
@@ -375,28 +375,28 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 
 ![Väljaren för sammanfogningsprincip är markerad. Detta gör att du kan välja vilken sammanfogningsprincip som ska väljas för segmentdefinitionen.](../images/ui/segment-builder/merge-policy-selector.png)
 
-## Segmentdefinitionsegenskaper {#segment-properties}
+## Målgruppsegenskaper {#audience-properties}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
->title="Segmentdefinitionsegenskaper"
->abstract="I avsnittet för segmentdefinitionsegenskaper visas en uppskattning av storleken på den resulterande segmentdefinitionen, med antalet kvalificerade profiler jämfört med det totala antalet profiler. På så sätt kan du justera segmentdefinitionen efter behov innan du skapar själva målgruppen."
+>title="Målgruppsegenskaper"
+>abstract="I avsnittet för målgruppsegenskaper visas en uppskattning av storleken på den slutliga målgruppen, med antalet kvalificerade profiler jämfört med det totala antalet profiler. På så sätt kan ni justera målgruppen efter behov innan ni själva bygger målgruppen."
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="Uppdatera uppskattningar"
 >abstract="Du kan uppdatera uppskattningarna av din segmentdefinition så att du omedelbart ser en förhandsvisning av hur många profiler som skulle kvalificera sig för den föreslagna segmentdefinitionen. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=sv-SE#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
 >title="Kvalificerade profiler"
->abstract="Kvalificerade profiler anger det faktiska antalet profiler som matchar segmentdefinitionens regler. Antalet uppdateras var 24:e timme efter att segmentutvärderingsjobbet har körts."
+>abstract="Kvalificerade profiler anger det faktiska antalet profiler som matchar målgruppens regler. Antalet uppdateras var 24:e timme efter att segmentutvärderingsjobbet har körts."
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_estimatedprofiles"
 >title="Uppskattade profiler"
->abstract="Uppskattade profiler anger ett ungefärligt antal profiler, baserade på exempeljobbet, som skulle vara kvalificerade för segmentdefinitionens regler."
+>abstract="Uppskattade profiler anger ett ungefärligt antal profiler, baserade på provjobbet, som uppfyller målgruppens regler."
 
 När du skapar en segmentdefinition visas en uppskattning av storleken på den resulterande segmentdefinitionen i avsnittet **[!UICONTROL Audience properties]** till höger om arbetsytan, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
@@ -404,22 +404,22 @@ När du skapar en segmentdefinition visas en uppskattning av storleken på den r
 
 Tidsstämpeln för kvalificerade profiler anger det senaste **batch**-segmentutvärderingsjobbet och visas **inte** för segmentdefinitioner som utvärderas med hjälp av direktuppspelning eller kantsegmentering. Om du redigerar segmentdefinitionen ändras antalet kvalificerade profiler inte förrän nästa segmentutvärderingsjobb körs.
 
-**[!UICONTROL Estimated Profiles]** anger ett **ungefärligt** antal profiler, baserat på **exempeljobbet**. Detta innebär att exempeldata projiceras på den större profiluppsättningen, vilket resulterar i ett uppskattat antal som kan skilja sig från det faktiska antalet kvalificerade profiler. Det uppskattade profilprovet har ett 95% konfidensintervall.
+**[!UICONTROL Estimated Profiles]** anger ett **ungefärligt profilintervall** baserat på **exempeljobbet**. Detta innebär att exempeldata projiceras på den större profiluppsättningen, vilket resulterar i ett uppskattat antal som kan skilja sig från det faktiska antalet kvalificerade profiler. Det uppskattade profilprovet har ett 95% konfidensintervall.
 
 Numret uppdateras i två scenarier:
 
-1. Kunddata förändras med mer än 5 % eller så är det senaste exempeljobbet äldre än sju dagar.
+1. Kunddata förändras med mer än 3 % eller så är det senaste exempeljobbet äldre än tre dagar.
 2. Målgruppens regler har ändrats eller tagits bort.
 
-Om du väljer informationsbubblan visas feltröskeln och den senaste samplingsjobbstiden.
+Om du väljer informationsbubblan visas datum och tid då det senaste exempeljobbet kördes.
 
 ![Kvalificerade profiler och beräknade profiler markeras i avsnittet för målgruppsegenskaper.](../images/ui/segment-builder/audience-estimates.png)
 
-I avsnittet **[!UICONTROL Audience properties]** kan du även ange viktig information om segmentdefinitionen, inklusive namn, beskrivning och utvärderingstyp. Segmentdefinitionsnamn används för att identifiera din segmentdefinition bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
+I avsnittet **[!UICONTROL Audience properties]** kan du även ange viktig information om din målgrupp, inklusive namn, beskrivning och utvärderingstyp. Namnen används för att identifiera en segmentdefinition bland de som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
 
-När du fortsätter att skapa segmentdefinitionen kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
+När du fortsätter att skapa din målgrupp kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
 
-![Avsnittet för segmentdefinitionsegenskaper är markerat. Segmentdefinitionsegenskaperna innehåller, men är inte begränsade till, segmentdefinitionsnamnet, beskrivningen och utvärderingsmetoden.](../images/ui/segment-builder/segment-properties.png)
+![Avsnittet för målgruppsegenskaper är markerat. Publiken innehåller, men är inte begränsad till, namnet, beskrivningen och utvärderingsmetoden.](../images/ui/segment-builder/segment-properties.png)
 
 >[!NOTE]
 >
@@ -453,4 +453,4 @@ I Segment Builder finns ett omfattande arbetsflöde som gör att du kan isolera 
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [!DNL Segmentation Service]användarhandboken[[!DNL Segmentation Service]  om du vill veta mer om de andra delarna i användargränssnittet för ](./overview.md)
+Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [!DNL Segmentation Service]användarhandboken[[!DNL Segmentation Service]  om du vill veta mer om de andra delarna i användargränssnittet för ](./overview.md).
