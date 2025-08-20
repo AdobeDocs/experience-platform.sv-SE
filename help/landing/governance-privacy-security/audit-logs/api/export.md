@@ -4,9 +4,9 @@ description: Lär dig hur du exporterar granskningshändelser i Experience Platf
 role: Developer
 feature: Audits, API
 exl-id: 76c5de76-e391-4258-afd8-ddb2c8a9443f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d6575e44339ea41740fa18af07ce5b893f331488
 workflow-type: tm+mt
-source-wordcount: '159'
+source-wordcount: '168'
 ht-degree: 0%
 
 ---
@@ -43,4 +43,4 @@ curl -X POST \
 
 **Svar**
 
-Resultatet genereras i en CSV-fil för export. Ett lyckat svar returnerar HTTP 307 utan svarstext. En länk till exportfilen finns i svarsrubriken `Location`.
+Resultatet genereras i en CSV-fil för export, där varje post representerar en viktig eller förbättrad granskningshändelse. Ett lyckat svar returnerar HTTP 307 utan svarstext. En länk till exportfilen finns i svarsrubriken `Location`.
