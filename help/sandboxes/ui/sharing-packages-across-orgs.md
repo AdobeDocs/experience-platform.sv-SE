@@ -1,9 +1,10 @@
 ---
 title: Dela paket mellan organisationer med hjälp av verktygslådan
 description: Lär dig hur du använder sandlådeverktyg i Adobe Experience Platform för att dela paket mellan olika organisationer.
-source-git-commit: 77994c1cdd185cc8a2963c5aa2eb345c8702fe02
+exl-id: 02826a8d-f01d-44cb-9ae0-0fcde24de83e
+source-git-commit: 3183d265eda36df9b08d920ba731bd9e63d150cc
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '956'
 ht-degree: 0%
 
 ---
@@ -72,17 +73,34 @@ Använd det här arbetsflödet/den här processen för att dela paket mellan org
 >
 >Endast paket med statusen **Publicerad** kan delas.
 
-Om du vill dela ett paket med en godkänd partnerorganisation går du till fliken [!UICONTROL Sandboxes] **[!UICONTROL Packages]**. Markera sedan ellipsen (`...`) bredvid paketet och välj **[!UICONTROL Share package]** i listrutan.
+#### Dela paket med flera objekt {#multi-object-packages}
+
+Om du vill dela ett paket med flera objekt till en godkänd partnerorganisation går du till fliken [!UICONTROL Sandboxes] **[!UICONTROL Packages]**. Markera sedan ellipsen (`...`) bredvid paketet och välj **[!UICONTROL Share package]** i listrutan.
 
 ![Lista med paket som visar listrutemenyn med Dela-paketet markerat.](../images/ui/sandbox-tooling/private-share-package.png)
 
-I dialogrutan **[!UICONTROL Share package]** väljer du det paket som ska delas i listrutan **[!UICONTROL Share settings]** och sedan **[!UICONTROL Confirm]**.
+I dialogrutan **[!UICONTROL Share package]** väljer du de organisationer som paketet ska delas med i listrutan **[!UICONTROL Share settings]** och sedan **[!UICONTROL Confirm]**.
 
 >[!TIP]
 >
 >Det går att välja flera organisationer. De valda organisationerna visas under listrutan [!UICONTROL Share settings].
 
 ![Dialogrutan Dela paket med Dela-inställningar och Bekräfta markerat.](../images/ui/sandbox-tooling/private-share-package-confirm.png)
+
+#### Dela hela sandlådepaket {#entire-sandbox-packages}
+
+Om du vill dela ett helt sandlådepaket med en godkänd partnerorganisation går du till fliken [!UICONTROL Sandboxes] **[!UICONTROL Packages]**. Markera sedan ellipsen (`...`) bredvid paketet och välj **[!UICONTROL Share package]** i listrutan.
+
+![Fliken Paket med en lista över paket, med den nedrullningsbara menyn.](../images/ui/sandbox-tooling/private-share-entire-sandbox.png)
+
+I dialogrutan **[!UICONTROL Share package]** väljer du de organisationer som paketet ska delas med i listrutan **[!UICONTROL Share settings]** och sedan **[!UICONTROL Confirm]**.
+
+>[!TIP]
+>
+>Det går att välja flera organisationer. De valda organisationerna visas under listrutan [!UICONTROL Share settings].
+
+![Dialogrutan Dela paket med Dela-inställningar och Bekräfta markerat.](../images/ui/sandbox-tooling/private-share-entire-sandbox-confirm.png)
+
 
 ## Offentliga paket {#public-packages}
 
