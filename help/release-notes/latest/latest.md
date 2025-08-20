@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform från augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: af669d58ac4031354e477954a8a733cf0bd7a64b
+source-git-commit: 6672ed3fd4ee4f48952dcf5ffb6561de026fe55b
 workflow-type: tm+mt
-source-wordcount: '1425'
-ht-degree: 41%
+source-wordcount: '1437'
+ht-degree: 40%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 41%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -108,7 +108,8 @@ Mer information om katalogtjänsten finns i [Katalogtjänstöversikten](../../ca
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Förbättrade funktioner för sökning, filtrering och taggning för destinationer | Förbättra arbetsflödet för målhantering med förbättrade sök-, filtrerings- och taggningsfunktioner på flikarna [Bläddra](../../destinations/ui/destinations-workspace.md#browse) och [Konton](../../destinations/ui/destinations-workspace.md#accounts). Nu kan du söka efter specifika dataflöden och konton efter namn, filtrera efter olika villkor, inklusive målplattform, status och datum, och skapa anpassade taggar för att ordna dina mål. Kolumnsortering är också tillgängligt för nyckelfält som körningstid för senaste dataflöde, vilket gör det enklare att identifiera och hantera målanslutningarna. |
+| Förbättrade funktioner för sökning, filtrering och taggning för destinationer | Förbättra arbetsflödet för målhantering med förbättrade sök-, filtrerings- och taggningsfunktioner på flikarna [Bläddra](../../destinations/ui/destinations-workspace.md#browse) och [Konton](../../destinations/ui/destinations-workspace.md#accounts). <br> Du kan nu söka efter specifika dataflöden och konton efter namn, filtrera efter olika villkor, inklusive målplattform, status och datum, och skapa anpassade taggar för att ordna dina mål. Kolumnsortering är också tillgängligt för nyckelfält som körningstid för senaste dataflöde, vilket gör det enklare att identifiera och hantera målanslutningarna. <br> ![Animerad demonstration av sökning efter ett måldataflöde på fliken Bläddra](../../destinations/assets/ui/workspace/search.gif) |
+
 
 ## Experience Data Model (XDM) {#xdm}
 
