@@ -6,10 +6,10 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: f038927d6a19db5e0187ccefd76d9ecc9df91b6a
+source-git-commit: 24ff17af89bc882f08ec0f331ebae53b61f35d78
 workflow-type: tm+mt
-source-wordcount: '785'
-ht-degree: 18%
+source-wordcount: '787'
+ht-degree: 19%
 
 ---
 
@@ -92,6 +92,7 @@ ht-degree: 18%
          * [Versionsinformation](./extensions/client/client-data-layer/release-notes.md)
       * Adobe Content Analytics {#content-analytics}
          * [Översikt](./extensions/client/content-analytics/overview.md)
+         * [Versionsinformation](./extensions/client/content-analytics/release-notes.md)
       * Adobe ContextHub {#contexthub}
          * [Översikt](./extensions/client/contexthub/overview.md)
       * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)
@@ -340,5 +341,5 @@ ht-degree: 18%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
