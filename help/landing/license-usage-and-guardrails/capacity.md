@@ -2,7 +2,7 @@
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: 1bde1f2c1bd33756bd20a2524b50d5a2b4bc464e
+source-git-commit: d0b54e15f132d85964d6458da0769548d231a9c4
 workflow-type: tm+mt
 source-wordcount: '1521'
 ht-degree: 0%
@@ -103,7 +103,7 @@ För närvarande visas kapacitetsinformation om strömmande dataflöde, direktup
 
 #### Strömmande genomströmning {#streaming-throughput}
 
-I avsnittet för direktuppspelning visas information om direktuppspelningsflödet i hela organisationens sandlådor. Värdet för direktuppspelningsgenomströmning mäter de kombinerade topphändelserna för inkommande trafik per sekund för direktuppspelning till profiltjänsten.
+I avsnittet för direktuppspelning visas information om direktuppspelningsflödet i organisationens sandlådor. Värdet för direktuppspelningsgenomströmning mäter de kombinerade topphändelserna för inkommande trafik per sekund för direktuppspelning till profiltjänsten.
 
 ![Avsnittet för direktuppspelad dataflöde på sidan med kapacitetsinformation visas.](/help/landing/images/capacity/streaming-throughput-section.png)
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Direktuppspelning - översikt
 description: Direktuppspelning för Adobe Experience Platform ger användarna en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: f5ae9170b312d9f24c863a14b8cc2310fcaf1cb2
 workflow-type: tm+mt
-source-wordcount: '424'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och 
 
 >[!IMPORTANT]
 >
->Guardrails för direktuppspelning beräknas på organisationsnivå och inte på sandlådenivå. Detta innebär att din dataanvändning per sandlåda är bunden till det totala licensanvändningsberättigande som motsvarar hela din organisation. Dessutom är dataanvändningen i utvecklingssandlådor begränsad till 10 % av det totala antalet profiler. Mer information om berättigande för licensanvändning finns i [handboken om bästa praxis för datahantering](../../landing/license-usage-and-guardrails/data-management-best-practices.md).
+>Garantier för direktuppspelning är bundna till det totala licensanvändningsberättigande som motsvarar hela organisationen. Dessutom är dataanvändningen i utvecklingssandlådor begränsad till 10 % av det totala antalet profiler. Mer information om berättigande för licensanvändning finns i [handboken om bästa praxis för datahantering](../../landing/license-usage-and-guardrails/data-management-best-practices.md). Läs [Översikt över kapacitet](../../landing/license-usage-and-guardrails/capacity.md) om du vill lära dig hur du ställer in gränser för ditt strömmande flöde.
 
 | Mål | Förväntad fördröjning |
 | --------- | ---------------- |
