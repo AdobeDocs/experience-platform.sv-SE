@@ -2,9 +2,9 @@
 title: Anslut Azure Blob Storage till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Azure Blob med API:t för Flow Service.
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: 7acdc090c020de31ee1a010d71a2969ec9e5bbe1
+source-git-commit: 8e932a25026bef2b785cfddfb8b668b1dd47eb0d
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '657'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,7 @@ curl -X POST \
 | `serviceEndpoint` | Slutpunkts-URL för ditt [!DNL Azure Blob Storage]-konto. Vanligtvis i formatet: `https://{ACCOUNT_NAME}.blob.core.windows.net`. |
 | `servicePrincipalId` | Klient-/program-ID för Azure Active Directory-tjänstens huvudnamn (AAD) som används för autentisering. |
 | `servicePrincipalKey` | Klienthemligheten eller lösenordet som är associerat med Azure-tjänstens huvudnamn. |
-| `accountKind` | Typen för ditt [!DNL Azure Blob Storage]-konto. Vanliga värden är `StorageV2`, `BlobStorage` eller `Storage`. |
+| `accountKind` | Typen för ditt [!DNL Azure Blob Storage]-konto. Vanliga värden är `Storage` (allmänt syfte V1), `StorageV2` (allmänt syfte V2), `BlobStorage` och `BlockBlobStorage`. |
 | `tenant` | Klient-ID för Azure Active Directory (AAD) där tjänstens huvudnamn är registrerat. |
 | `container` | Namnet på behållaren [!DNL Azure Blob Storage] där dina datafiler lagras. |
 | `folderPath` | Sökvägen inom den angivna behållaren där filerna finns. |

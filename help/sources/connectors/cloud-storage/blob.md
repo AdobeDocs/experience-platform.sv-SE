@@ -2,9 +2,9 @@
 title: Azure Blob Source Connector - översikt
 description: Lär dig hur du ansluter ditt Azure Blob-konto till Experience Platform
 exl-id: 62adc74f-3570-42c7-9ae6-3ddbc09eccc7
-source-git-commit: f659d78eebc1c5e74021f9a41a2a489389a6588e
+source-git-commit: 8e932a25026bef2b785cfddfb8b668b1dd47eb0d
 workflow-type: tm+mt
-source-wordcount: '1015'
+source-wordcount: '1021'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta ditt [!DNL 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
 | `serviceEndpoint` | Slutpunkts-URL för ditt [!DNL Azure Blob Storage]-konto. Vanligtvis i formatet: `https://{ACCOUNT_NAME}.blob.core.windows.net`. |
-| `accountKind` | Typen för ditt [!DNL Azure Blob Storage]-konto. Vanliga värden är `StorageV2`, `BlobStorage` eller `Storage`. |
+| `accountKind` | Typen för ditt [!DNL Azure Blob Storage]-konto. Vanliga värden är `Storage` (allmänt syfte V1), `StorageV2` (allmänt syfte V2), `BlobStorage` och `BlockBlobStorage`. |
 | `servicePrincipalId` | Klient-/program-ID för Azure Active Directory-tjänstens huvudnamn (AAD) som används för autentisering. |
 | `servicePrincipalKey` | Klienthemligheten eller lösenordet som är associerat med Azure-tjänstens huvudnamn. |
 | `tenant` | Klient-ID för Azure Active Directory (AAD) där tjänstens huvudnamn är registrerat. |

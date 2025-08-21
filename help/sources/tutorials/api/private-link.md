@@ -1,17 +1,16 @@
 ---
-title: Stöd för privata länkar i källor
+title: Använd Azure Private Link för källor i API
 description: Lär dig hur du skapar och använder privata länkar för Adobe Experience Platform-källor
 badge: Beta
-hide: true
-hidefromtoc: true
-source-git-commit: 4c91ffc60a2537fcc76ce935bf3b163984fdc5e4
+exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
+source-git-commit: 52365851aef0e0e0ad532ca19a8e0ddccacf7af7
 workflow-type: tm+mt
-source-wordcount: '1326'
+source-wordcount: '1380'
 ht-degree: 0%
 
 ---
 
-# Stöd för privata länkar i källor
+# Använd [!DNL Azure Private Link] som källa i API:t
 
 >[!AVAILABILITY]
 >
@@ -22,11 +21,13 @@ ht-degree: 0%
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
 >* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
 
-Läs den här vägledningen när du vill veta hur du kan upprätta en privat slutpunktsanslutning till Azure-baserade källor via en privat länk och skapa en säkrare överföringsmekanism för dina data.
+Du kan använda funktionen [!DNL Azure Private Link] för att skapa privata slutpunkter som dina Adobe Experience Platform-källor kan ansluta till. Anslut dina källor säkert till ett virtuellt nätverk med privata IP-adresser, vilket eliminerar behovet av offentliga IP-adresser och minskar din attackyta.Förenkla nätverksinstallationen genom att ta bort behovet av komplexa konfigurationer för brandvägg eller översättning av nätverksadresser, samtidigt som datatrafiken endast når godkända tjänster.
+
+Läs den här guiden och lär dig hur du kan använda API:er för att skapa och använda en privat slutpunkt.
 
 ## Kom igång
 
-Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
 * [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Platform]-tjänster.
 * [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
@@ -49,7 +50,7 @@ POST /privateEndpoints
 
 I följande begäran skapas en privat slutpunkt:
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X POST \
@@ -88,7 +89,7 @@ curl -X POST \
 
 Ett lyckat svar returnerar följande:
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -134,7 +135,7 @@ GET /privateEndpoints
 
 Följande begäran hämtar en lista över alla privata slutpunkter som finns i organisationen.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X GET \
@@ -152,7 +153,7 @@ curl -X GET \
 
 Ett lyckat svar returnerar en lista med privata slutpunkter i organisationen.
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -211,7 +212,7 @@ GET /privateEndpoints?property=connectionSpec.id=={CONNECTION_SPEC_ID}
 
 Följande begäran hämtar en lista över alla privata slutpunkter som motsvarar källan med anslutningsspecifikation-ID: `4c10e202-c428-4796-9208-5f1f5732b1cf`.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X GET \
@@ -229,7 +230,7 @@ curl -X GET \
 
 Ett lyckat svar returnerar en lista med alla privata slutpunkter som motsvarar källan med anslutningsspecifikation-ID: `4c10e202-c428-4796-9208-5f1f5732b1cf`.
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -288,7 +289,7 @@ GET /privateEndpoints/{PRIVATE_ENDPOINT_ID}
 
 Följande begäran hämtar den privata slutpunkten med ID:`2c5699b0-b9b6-486f-8877-ee5e21fe9a9d`.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X GET \
@@ -306,7 +307,7 @@ curl -X GET \
 
 Ett svar returnerar den privata slutpunkten med ID: `2c5699b0-b9b6-486f-8877-ee5e21fe9a9d`
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -342,7 +343,7 @@ GET /privateEndpoints?op=autoResolve
 
 **Begäran**
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X GET \
@@ -371,7 +372,7 @@ curl -X GET \
 
 **Svar**
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -415,7 +416,7 @@ POST /privateEndpoints/interactiveAuthoring?op=enable
 
 Följande begäran aktiverar interaktiv redigering för din privata slutpunkt och ställer in TTL på 60 minuter.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X POST \
@@ -454,7 +455,7 @@ GET /privateEndpoints/interactiveAuthoring
 
 Följande begäran hämtar status för interaktiv redigering:
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X GET \
@@ -470,7 +471,7 @@ curl -X GET \
 
 **Svar**
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -502,7 +503,7 @@ DELETE /privateEndpoints/{PRIVATE_ENDPOINT_ID}
 
 Följande begäran tar bort privat slutpunkt med ID: `02a74b31-a566-4a86-9cea-309b101a7f24`.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X DELETE \
@@ -538,7 +539,7 @@ POST /connections/
 
 Följande begäran skapar en autentiserad basanslutning för [!DNL Snowflake], samtidigt som en privat slutpunkt används.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X POST \
@@ -581,7 +582,7 @@ curl -X POST \
 
 Ett lyckat svar returnerar ditt nyligen genererade basanslutnings-ID och -tagg.
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -610,7 +611,7 @@ GET /connections?property=auth.params.privateEndpointId=={PRIVATE_ENDPOINT_ID}
 
 Följande begäran hämtar befintliga anslutningar som är kopplade till en privat slutpunkt med ID: `02a74b31-a566-4a86-9cea-309b101a7f24`.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X GET \
@@ -628,7 +629,7 @@ curl -X GET \
 
 Ett lyckat svar returnerar en lista över anslutningar som är kopplade till den efterfrågade privata slutpunkten.
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
@@ -722,7 +723,7 @@ GET /connections?property=auth.params.usePrivateLink==true
 
 Följande begäran hämtar alla anslutningar i organisationen som använder privata slutpunkter.
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X GET \
@@ -740,7 +741,7 @@ curl -X GET \
 
 Ett lyckat svar returnerar alla anslutningar som är kopplade till privata slutpunkter.
 
-+++Markera för att visa svarsexempel
++++Välj för att visa svarsexempel
 
 ```json
 {
