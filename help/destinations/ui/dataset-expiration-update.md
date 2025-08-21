@@ -2,15 +2,13 @@
 title: Utöka datauppsättningsexportscheman för dataflöden som skapats före november 2024
 description: Lär dig hur du förlänger exportschemat för dataexportdataflöden som skapats före november 2024 och som slutar fungera den 1 september 2025.
 type: Tutorial
-hide: true
-hidefromtoc: true
-source-git-commit: 08a1c6a1830ace4661ab6aa5b547c4473301ce84
+exl-id: a756886b-3f4b-4427-bd26-817221ba68aa
+source-git-commit: 6f8b906729ec31cc0c4847ccd0ae0f89f63a1627
 workflow-type: tm+mt
 source-wordcount: '648'
 ht-degree: 0%
 
 ---
-
 
 # Utöka datauppsättningsexportscheman för dataflöden som skapats före november 2024
 
