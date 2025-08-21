@@ -34,13 +34,13 @@ Marknadsföringsavdelningen på ett globalt varumärke för finansiella tjänste
 ## Förhandskrav {#prerequisites}
 
 * **Bekräfta användningsvillkoren:** Innan du kan konfigurera ett nytt [!DNL Acxiom Real ID Audience Connection]-mål måste du läsa och signera [!DNL Acxiom's] användningsvillkoren för avtalet. Du får länken till avtalet när den genomförda försäljningsordern är slutförd. Innan du har signerat avtalet visas inte målkortet [!DNL Acxiom Real ID Audience Connection] i Experience Platform målkatalog. När du har godkänt och signerat avtalet slutför [!DNL Adobe] din introduktionsprocess och du ser målkortet [!DNL Acxiom Real ID Audience Connection].
-* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
-* **Skaffa licens för [!DNL Acxiom's Real ID] product:** När en licens har erhållits gör du Acxioms riktiga ID tillgängligt i Real-Time CDP. Mer information finns i [Dataförbättring för Acxiom](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/data-partner/acxiom-data-enhancement).
+* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/sv/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
+* **Skaffa licens för [!DNL Acxiom's Real ID] product:** När en licens har erhållits gör du Acxioms riktiga ID tillgängligt i Real-Time CDP. Mer information finns i [Dataförbättring för Acxiom](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/data-partner/acxiom-data-enhancement).
 
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Acxiom's Real ID Audience Connection]-målet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/namespaces).
+[!DNL Acxiom's Real ID Audience Connection]-målet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/sv/docs/experience-platform/identity/features/namespaces).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---------------|----------------|----------------|
@@ -53,8 +53,8 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------------|----------------|----------------|
-| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/audience-portal#import-audience) till Experience Platform från CSV-filer. |
+| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
+| Anpassade överföringar | ✓ | Publikerna [importerade](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/audience-portal#import-audience) till Experience Platform från CSV-filer. |
 
 
 ## Mål som stöds {#supported-destinations}
@@ -95,7 +95,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan.
 
 
 
-Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 >[!NOTE]
 >
@@ -132,7 +132,7 @@ Om du är nöjd med resultaten väljer du **[!UICONTROL Finish]** för att aktiv
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/sv/docs/experience-platform/data-governance/home).
 
 ## Felsökning {#troubleshooting}
 
