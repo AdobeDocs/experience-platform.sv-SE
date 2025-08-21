@@ -2,9 +2,9 @@
 title: Utveckla ett tillägg
 description: Det här dokumentet innehåller en allmän översikt över tagghanteringsprocessen med länkar till ytterligare dokumentation för mer detaljerade processer.
 exl-id: fb2f7275-a5da-4a41-b915-822c71c02e5c
-source-git-commit: cfcc70d66a34fa51bf0e21525539ba88de7fc367
+source-git-commit: 73452d0735c6a040ddd25b4cd00cec4b91eaf7ae
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '447'
 ht-degree: 10%
 
 ---
@@ -24,8 +24,6 @@ Med den kunskapen kan du planera vilka komponenter som ska ingå i tillägget.
 Med en plan på plats kan dessa guider hjälpa dig att förstå utvecklingsprocessen för tillägg:
 
 * Guiden [Komma igång](../getting-started.md) och andra dokument under **Tilläggsutveckling** i den vänstra navigeringen är bra referensmaterial för att förstå tillägg. De innehåller information om vad tillägg kan göra, hur användarinformation lagras och skickas mellan tillägget och Adobe Experience Platform, hur koden paketeras i bibliotek och hur tilläggskoden tolkas och används vid körning i webbläsaren.
-<!-- * The [extension tutorial video](https://youtu.be/rxjtC9o4rl0) is a great place to start. -->
-* YouTube-spellistan [Introduktion till tillägg](https://www.youtube.com/playlist?list=PLOdw8u2F8CIgynzKrPEwCPuDxzHW1WP5m) går igenom processen med att skapa tilläggspaket.
 * [Förstå JSON-schemaartikel](https://spacetelescope.github.io/understanding-json-schema/index.html#).
 * [JSON Lint/Validator](https://jsonlint.com/).
 * [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh) Chrome-tillägg för att markera och skriva ut JSON &amp; JSONP.
