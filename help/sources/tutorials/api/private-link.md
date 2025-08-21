@@ -3,9 +3,9 @@ title: Använd Azure Private Link för källor i API
 description: Lär dig hur du skapar och använder privata länkar för Adobe Experience Platform-källor
 badge: Beta
 exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
-source-git-commit: 52365851aef0e0e0ad532ca19a8e0ddccacf7af7
+source-git-commit: 65063d3b81d7082fc7780949c6ebd2ce09461b88
 workflow-type: tm+mt
-source-wordcount: '1380'
+source-wordcount: '1657'
 ht-degree: 0%
 
 ---
@@ -398,9 +398,13 @@ curl -X GET \
 
 +++
 
-## Aktivera interaktiv redigering {#enable-interactive-authoring}
+## Aktivera [!DNL Interactive Authoring] {#enable-interactive-authoring}
 
-Interaktiv redigering används för funktioner som att utforska en anslutning eller ett konto och förhandsgranska data. Om du vill aktivera interaktiv redigering gör du en POST-begäran till `/privateEndpoints/interactiveAuthoring` och anger `enable` som en operator i frågeparametrarna.
+>[!IMPORTANT]
+>
+>Du måste aktivera [!DNL Interactive Authoring] innan du skapar eller uppdaterar ett flöde och innan du skapar, uppdaterar eller utforskar en anslutning.
+
+[!DNL Interactive Authoring] används för funktioner som att utforska en anslutning eller ett konto och förhandsgranska data. Aktivera [!DNL Interactive Authoring] genom att göra en POST-begäran till `/privateEndpoints/interactiveAuthoring` och ange `enable` som en operator i frågeparametrarna.
 
 **API-format**
 
@@ -410,11 +414,11 @@ POST /privateEndpoints/interactiveAuthoring?op=enable
 
 | Frågeparameter | Beskrivning |
 | --- | --- |
-| `op` | Den åtgärd som du vill utföra. Om du vill aktivera interaktiv redigering anger du värdet `op` till `enable`. |
+| `op` | Den åtgärd som du vill utföra. Aktivera [!DNL Interactive Authoring] genom att ange värdet `op` till `enable`. |
 
 **Begäran**
 
-Följande begäran aktiverar interaktiv redigering för din privata slutpunkt och ställer in TTL på 60 minuter.
+Följande begäran aktiverar [!DNL Interactive Authoring] för din privata slutpunkt och ställer in TTL på 60 minuter.
 
 +++Välj för att visa begärandeexempel
 
@@ -433,7 +437,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `autoTerminationMinutes` | Den interaktiva TTL-redigeringen (time-to-live) på några minuter. Interaktiv redigering används för funktioner som att utforska en anslutning eller ett konto och förhandsgranska data. Du kan ange en maximal TTL på 120 minuter. Standardvärdet för TTL är 60 minuter. |
+| `autoTerminationMinutes` | [!DNL Interactive Authoring] TTL (time-to-live) på några minuter. [!DNL Interactive Authoring] används för funktioner som att utforska en anslutning eller ett konto och förhandsgranska data. Du kan ange en maximal TTL på 120 minuter. Standardvärdet för TTL är 60 minuter. |
 
 +++
 
@@ -441,9 +445,9 @@ curl -X POST \
 
 Ett lyckat svar returnerar HTTP-status 202 (Accepterad).
 
-## Hämta interaktiv redigeringsstatus {#retrieve-interactive-authoring-status}
+## Hämta [!DNL Interactive Authoring]-status {#retrieve-interactive-authoring-status}
 
-Om du vill visa den aktuella statusen för interaktiv redigering för din privata slutpunkt gör du en GET-begäran till `/privateEndpoints/interactiveAuthoring`.
+Om du vill visa aktuell status för [!DNL Interactive Authoring] för din privata slutpunkt gör du en GET-begäran till `/privateEndpoints/interactiveAuthoring`.
 
 **API-format**
 
@@ -453,7 +457,7 @@ GET /privateEndpoints/interactiveAuthoring
 
 **Begäran**
 
-Följande begäran hämtar status för interaktiv redigering:
+Följande begäran hämtar statusen för [!DNL Interactive Authoring]:
 
 +++Välj för att visa begärandeexempel
 
@@ -481,7 +485,7 @@ curl -X GET \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `status` | Status för interaktiv redigering. Giltiga värden är: `disabled`, `enabling`, `enabled`. |
+| `status` | Status för [!DNL Interactive Authoring]. Giltiga värden är: `disabled`, `enabling`, `enabled`. |
 
 +++
 
@@ -819,3 +823,124 @@ Ett lyckat svar returnerar alla anslutningar som är kopplade till privata slutp
 ```
 
 +++
+
+## Bilaga
+
+Läs det här avsnittet om du vill ha mer information om hur du använder [!DNL Azure] privata länkar i API:t.
+
+### Konfigurera ditt [!DNL Snowflake]-konto för att ansluta till privata länkar
+
+Du måste slutföra följande nödvändiga steg för att kunna använda källan [!DNL Snowflake] med privata länkar.
+
+Först måste du skaffa en supportbiljett i [!DNL Snowflake] och begära **slutpunktstjänstens resurs-ID** för [!DNL Azure]-regionen för ditt [!DNL Snowflake]-konto. Följ stegen nedan för att höja upp en [!DNL Snowflake]-biljett:
+
+1. Navigera till [[!DNL Snowflake] användargränssnittet](https://app.snowflake.com) och logga in med ditt e-postkonto. Under det här steget måste du se till att din e-post verifieras i profilinställningarna.
+2. Välj din **användarmeny** och välj sedan **support** för att få tillgång till [!DNL Snowflake]-support.
+3. Välj **[!DNL + Support Case]** om du vill skapa ett supportärende. Fyll sedan i formuläret med relevant information och bifoga nödvändiga filer.
+4. När du är klar skickar du ärendet.
+
+Resurs-ID för slutpunkten har följande format:
+
+```shell
+subscriptions/{SUBSCRIPTION_ID}/resourceGroups/az{REGION}-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-az{REGION}
+```
+
++++Markera för att visa exempel
+
+```shell
+/subscriptions/4575fb04-6859-4781-8948-7f3a92dc06a3/resourceGroups/azwestus2-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-azwestus2
+```
+
++++
+
+| Parameter | Beskrivning | Exempel |
+| --- | --- | --- |
+| `{SUBSCRIPTION_ID}` | Det unika ID som identifierar din [!DNL Azure]-prenumeration. | `a1b2c3d4-5678-90ab-cdef-1234567890ab` |
+| `{REGION}` | Regionen [!DNL Azure] för ditt [!DNL Snowflake]-konto. | `azwestus2` |
+
+### Hämta information om konfigurationen av din privata länk
+
+Du måste köra följande kommando i [!DNL Snowflake] om du vill hämta information om konfigurationen av din privata länk:
+
+```sql
+USE ROLE accountadmin;
+SELECT key, value::varchar
+FROM TABLE(FLATTEN(input => PARSE_JSON(SYSTEM$GET_PRIVATELINK_CONFIG())));
+```
+
+Hämta sedan värden för följande egenskaper:
+
+* `privatelink-account-url`
+* `regionless-privatelink-account-url`
+* `privatelink_ocsp-url`
+
+När du har hämtat värdena kan du göra följande anrop för att skapa en privat länk för [!DNL Snowflake].
+
+**Begäran**
+
+I följande begäran skapas en privat slutpunkt för [!DNL Snowflake]:
+
+>[!BEGINTABS]
+
+>[!TAB Mall]
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/connectors/privateEndpoints/' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "{ENDPOINT_NAME}",
+    "subscriptionId": "{AZURE_SUBSCRIPTION_ID}",
+    "resourceGroupName": "{RESOURCE_GROUP_NAME}",
+    "resourceName": "{SNOWFLAKE_ENDPOINT_SERVICE_NAME}",
+    "fqdns": [
+      "{PRIVATELINK_ACCOUNT_URL}",
+      "{REGIONLESS_PRIVATELINK_ACCOUNT_URL}",
+      "{PRIVATELINK_OCSP_URL}"
+    ],
+    "connectionSpec": {
+      "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+      "version": "1.0"
+    }
+  }'
+```
+
+>[!TAB Exempel]
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/connectors/privateEndpoints/' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "TEST_Snowflake_PE",
+    "subscriptionId": "4575fb04-6859-4781-8948-7f3a92dc06a3",
+    "resourceGroupName": "azwestus2-privatelink",
+    "resourceName": "sf-pvlinksvc-azwestus2",
+    "fqdns": [
+      "hf06619.west-us-2.privatelink.snowflakecomputing.com",
+      "adobe-segmentationdbint.privatelink.snowflakecomputing.com",
+      "ocsp.hf06619.west-us-2.privatelink.snowflakecomputing.com"
+    ],
+    "connectionSpec": {
+      "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+      "version": "1.0"
+    }
+  }'
+```
+
+
+>[!ENDTABS]
+
+### Godkänn en privat slutpunkt för [!DNL Azure Blob] och [!DNL Azure Data Lake Gen2]
+
+Logga in på [!DNL Azure Blob] om du vill godkänna en privat slutpunktsbegäran för källorna [!DNL Azure Data Lake Gen2] och [!DNL Azure Portal]. Välj **[!DNL Data storage]** i den vänstra navigeringen, gå till fliken **[!DNL Security + networking]** och välj **[!DNL Networking]**. Välj sedan **[!DNL Private endpoints]** för att visa en lista över privata slutpunkter som är associerade med ditt konto och deras aktuella anslutningstillstånd. Om du vill godkänna en väntande begäran markerar du önskad slutpunkt och klickar på **[!DNL Approve]**.
+
+![Azure-portalen med en lista över väntande privata slutpunkter.](../../images/tutorials/private-links/azure.png)
