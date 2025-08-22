@@ -1,25 +1,35 @@
 ---
-title: Marketo Engage personsynkronisering
-description: Använd Marketo Engage Person Sync-anslutningen för att strömma uppdateringar från en målgrupp till motsvarande poster i Marketo Engage.
+title: Marketo Engage Person Sync
+description: Använd Marketo Engage Person Sync-anslutningen för att strömma uppdateringar från en viss målgrupp till motsvarande poster i din Marketo Engage.
 last-substantial-update: 2025-01-14T00:00:00Z
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: c5543997747daa336b0a5bb40c46aa720e8bcadd
+exl-id: 2c909633-b169-4ec8-9f58-276395cb8df2
+source-git-commit: 88864353d4872d62258914d6490b90331692fa96
 workflow-type: tm+mt
-source-wordcount: '1027'
-ht-degree: 0%
+source-wordcount: '1087'
+ht-degree: 2%
 
 ---
 
-
-# Synkroniseringsanslutning för Marketo Engage {#marketo-engage-person-sync}
+# Marketo Engage Person Sync Connection {#marketo-engage-person-sync}
 
 >[!IMPORTANT]
 >
->Den här målanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill ha åtkomst.
+>Den här destinationsanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få åtkomst.
+
+>[!IMPORTANT]
+>
+>Målkortet **[!UICONTROL Marketo Engage Person Sync]** kommer att bli inaktuellt i **mars 2026**.
+>
+>Granska följande nyckelpunkter och nödvändiga åtgärder för att säkerställa en smidig övergång till det nya **[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**-målet:
+>
+>* Alla användare med **[!UICONTROL Marketo Engage Person Sync]** mål måste migrera till det nya **[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**-målet före mars 2026.
+>* **Befintliga dataflöden migreras inte automatiskt.** Du måste [konfigurera en ny anslutning](marketo-engage-connection.md#connect-to-the-destination) till det nya **[!UICONTROL Marketo Engage]**-målet och aktivera målgrupperna där.
+
 
 ## Översikt {#overview}
 
-Använd Marketo Engage Person Sync-kopplingen för att strömma uppdateringar från målgrupper till motsvarande poster i Marketo Engage-instansen.
+Använd Marketo Engage Person Sync-kopplingen för att strömma uppdateringar från målgrupper till motsvarande poster i din Marketo Engage-instans.
 
 >[!IMPORTANT]
 > 
@@ -37,7 +47,7 @@ Använd Marketo Engage Person Sync-kopplingen för att strömma uppdateringar fr
 
 ### Attribut som stöds {#supported-attributes}
 
-Du kan mappa attribut från Experience Platform till alla attribut som din organisation har åtkomst till i Marketo. I Marketo kan du använda [Beskriv API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_6) -begäran för att hämta de attributfält som din organisation har åtkomst till.
+Du kan mappa attribut från Experience Platform till alla attribut som din organisation har tillgång till i Marketo. I Marketo kan du använda [Beskriv API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_6) -begäran för att hämta de attributfält som din organisation har åtkomst till.
 
 ## Målgrupper som stöds {#supported-audiences}
 
@@ -45,7 +55,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 | -------------------- | :-------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
+| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
 | Anpassade överföringar | ✓ | Publiker som importerats till Experience Platform från CSV-filer. |
 
 ## Exporttyp och frekvens {#export-type-and-frequency}
@@ -68,18 +78,18 @@ Om ditt företag har tillgång till flera organisationer måste du använda samm
 
 >[!IMPORTANT]
 >
->Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
+>Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
 
 ![Anslut till mål](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Munchkin ID]**: Munchkin-id:t är den unika identifieraren för en specifik Marketo-instans.
-* **[!UICONTROL Partition]**: Ett koncept i Marketo Engage används för att skilja lead-poster åt utifrån affärsproblem
+* **[!UICONTROL Partition]**: ett koncept i Marketo Engage som används för att skilja lead-poster åt utifrån affärsproblem
 * **[!UICONTROL First searchable field]**: Fält som ska dedupliceras. Fältet måste finnas i varje lead-post för indata. Standardvärdet är e-post
 * **[!UICONTROL First searchable field]**: Ett sekundärt fält att deduplicera. Fältet måste finnas i varje lead-post för indata. Valfritt
 
-När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [Lead-partition](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
+När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [huvudpartition](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster åt efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
 
 >[!IMPORTANT]
 > 
@@ -90,7 +100,7 @@ När du har valt instansen måste du också välja den Lead-partition som du vil
 När du skickar uppdateringar till Marketo-inloggning väljs poster baserat på den valda partitionen och ett eller två fält som valts av användaren. Om målet är konfigurerat med den nordamerikanska partitionen och har e-postadress och företagsnamn konfigurerat som dedupliceringsfält, måste alla tre fälten matcha för att ändringarna ska gälla för en befintlig post. Exempel:
 
 * Målet är konfigurerat med Nordamerika-partitionen
-* Personen med e-postadressen <test@example.com> och företagsnamnet Example Inc. i Experience Platform matchar målgruppen
+* Person med e-postadress <test@example.com> och företagsnamn Example Inc. i Experience Platform matchar målgruppen
 * Om det inte redan finns en post med dessa värden i Nordamerika-partitionen i Marketo skapas en ny lead-post
 
 Om ingen matchande lead-post hittas skapas en ny post.
@@ -111,11 +121,11 @@ I steget Aktivera målgrupper kan du välja vilka målgrupper som ska vara synli
 
 ## Fältmappning {#field-mapping}
 
-För att ändringar av ett visst personattribut ska kunna skickas till Marketo Engage måste fältet mappas från ett Real-Time CDP-fält till Marketo-fält.
+För att ändringar av ett visst personattribut ska kunna skickas till Marketo Engage måste fältet mappas från ett Real-Time CDP-fält till Marketo Field.
 
 ![Fältmappning](../../assets/catalog/adobe/marketo-engage-person-sync/field-mapping.png)
 
-Datatyperna Experience Platform och Marketo kan mappas på följande sätt:
+Experience Platform datatyper och Marketo datatyper kan mappas på följande sätt:
 
 | Experience Platform datatyp | Marketo datatyp |
 | ----------------------------- | ------------------------------------ |
