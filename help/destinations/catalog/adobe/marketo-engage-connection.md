@@ -45,7 +45,7 @@ De kan aktivera sina målgrupper i Marketo Engage och använda synkroniseringsty
 
 ## Förhandskrav {#prerequisites}
 
-Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i sin Marketo-instans och -partition.
+Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i sin Marketo-instans och -partition.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -144,7 +144,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
    * **[!UICONTROL Profile only]**: Välj det här alternativet om du vill att Marketo lead-profiler ska vara uppdaterade med den senaste informationen från Experience Platform.
    * **[!UICONTROL Audience only]**: Välj det här alternativet om du vill lägga till målgruppsmedlemmar i Marketo-listor utan att uppdatera deras profilinformation.
 * **[!UICONTROL Partition]**: *Partitionsval är bara tillgängligt när du väljer **[!UICONTROL Profile only]**&#x200B;eller **[!UICONTROL Audience and profile]**&#x200B;synkroniseringstyper*. Välj ett partitions-ID för Marketo som är kopplat till den valda arbetsytan. På så sätt kan du ange vilken huvudpartition i Marketo som ska ta emot exporterade data. Om du inte väljer en viss partition skickas dina data till partitionen **[!UICONTROL Default]** i Marketo.
-* **[!UICONTROL Marketo deduplication field]**: Markera det Marketo-fält för borttagning av dubbletter som du vill använda när du uppdaterar befintliga Marketo-leads. Den här väljaren visar de fält som du har markerat som dedupliceringsfält i Marketo. Om du vill att ett visst fält från Marketo ska visas som ett dedupliceringsfält måste du markera fältet som ett [sökbart fält](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/lead-database) i Marketo.
+* **[!UICONTROL Marketo deduplication field]**: Markera det Marketo-fält för borttagning av dubbletter som du vill använda när du uppdaterar befintliga Marketo-leads. Den här väljaren visar de fält som du har markerat som dedupliceringsfält i Marketo. Om du vill att ett visst fält från Marketo ska visas som ett dedupliceringsfält måste du markera fältet som ett [sökbart fält](https://experienceleague.adobe.com/sv/docs/marketo-developer/marketo/rest/lead-database/lead-database) i Marketo.
 
   >[!NOTE]
   >
