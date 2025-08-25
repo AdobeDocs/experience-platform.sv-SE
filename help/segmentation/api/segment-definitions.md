@@ -4,9 +4,9 @@ title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 424702d7d16eddabefe19d023c3829bd650c88ce
+source-git-commit: 5f19bd0601770115cae859fd6dc85bd9c9f6e92c
 workflow-type: tm+mt
-source-wordcount: '1558'
+source-wordcount: '1571'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->Skapande av målgrupper med B2B-enheter med segmenteringstjänstens API är föråldrat. Du kan inte längre skapa målgrupper med hjälp av följande B2B-enheter: Konto, Kontorelation, Kampanj, Kampanjmedlem, Marknadsföringslista, Marknadsföringslistmedlem, Affärsmöjlighet och Person-relation.
+>Skapande av målgrupper med B2B-enheter med segmenteringstjänstens API är föråldrat. Du kan inte längre skapa målgrupper med hjälp av följande B2B-enheter: Konto, Kontorelation, Kampanj, Kampanjmedlem, Marknadsföringslista, Marknadsföringslistmedlem, Affärsmöjlighet och Person-relation. Mer information finns i guiden om [uppgraderingar av Real-Time CDP B2B edition-arkitektur](../../rtcdp/b2b-architecture-upgrade.md).
 
 Med Adobe Experience Platform kan du skapa segmentdefinitioner som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Segmentdefinitioner används på profiler för att skapa målgrupper. Det här objektet (segmentdefinitionen) kallas också för ett PQL-predikat. PQL förutsäger regler för segmentdefinitionen baserat på villkor som relaterar till alla post- eller tidsseriedata som du skickar till [!DNL Real-Time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-handboken](../pql/overview.md).
 
