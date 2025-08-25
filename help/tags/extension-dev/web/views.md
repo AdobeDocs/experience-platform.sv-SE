@@ -2,9 +2,9 @@
 title: Vyer i webbtillägg
 description: Lär dig hur du definierar vyer för biblioteksmoduler i Adobe Experience Platform webbtillägg.
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1bfa2e27e554dc899efc8a32900a926e787a58ac
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '2148'
 ht-degree: 2%
 
 ---
@@ -68,15 +68,22 @@ Innehållet i varje metod måste ändras för att passa dina visningsbehov.
 Metoden `init` anropas av taggar så snart vyn har lästs in i iframe. Det kommer att skicka ett enskilt argument (`info`) som måste vara ett objekt som innehåller följande egenskaper:
 
 | Egenskap | Beskrivning |
-| --- | --- |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `settings` | Ett objekt som innehåller inställningar som tidigare sparats från den här vyn. Om `settings` är `null` anger det att användaren skapar de ursprungliga inställningarna i stället för att läsa in en sparad version. Om `settings` är ett objekt bör du använda det för att fylla i vyn eftersom användaren väljer att redigera de tidigare beständiga inställningarna. |
 | `extensionSettings` | Inställningar som har sparats från tilläggskonfigurationsvyn. Det här kan vara användbart för att komma åt tilläggsinställningar i vyer som inte är tilläggskonfigurationsvyn. Om den aktuella vyn är tilläggskonfigurationsvyn använder du `settings`. |
 | `propertySettings` | Ett objekt som innehåller inställningar för egenskapen. Mer information om vad som finns i det här objektet finns i [handboken för turbinobjektet](../turbine.md#property-settings). |
 | `tokens` | Ett objekt som innehåller API-token. Om du vill få åtkomst till Adobe API:er inifrån vyn måste du vanligtvis använda en IMS-token under `tokens.imsAccess`. Denna token blir bara tillgänglig för tillägg som utvecklats av Adobe. Om du är en Adobe-anställd som representerar ett tillägg som har skapats av Adobe [skickar du ett e-postmeddelande till datainsamlingsingenjörsteamet](mailto:reactor@adobe.com) och anger namnet på tillägget så att vi kan lägga till det i tillåtelselista. |
-| `company` | Ett objekt som innehåller en enda egenskap, `orgId`, som i sin tur representerar ditt Adobe Experience Cloud-id (en 24-siffrig alfanumerisk sträng). |
+| `company` | Ett objekt som innehåller `orgId` (ditt 24-siffriga Adobe Experience Cloud-ID), `id` (ditt företags unika identifierare i Reactor API) och `tenantId` (den unika identifieraren för en organisation i Adobe Identity Management System). |
 | `schema` | Ett objekt i formatet [JSON Schema](https://json-schema.org/). Det här objektet kommer från [tilläggsmanifestet](../manifest.md) och kan vara användbart när du validerar formuläret. |
+| `apiEndpoints` | Ett objekt som innehåller `reactor` som innehåller en referens till webbadressen för Reactor API. |
+| `userConsentPermissions` | Ett objekt som innehåller godkännandeflaggor från Adobe [produktanvändningsdata](https://experienceleague.adobe.com/en/docs/core-services/interface/features/account-preferences#product-usage-data). Använd flaggan som är lagrad i `globalDataCollectionAndUsage` för att förstå om ditt tillägg får samla in *alla* kunddata. |
+| `preferredLanguages` | En array med språksträngar. |
 
 Vyn bör använda den här informationen för att återge och hantera formuläret. Det är troligt att du bara behöver hantera `info.settings`, men den andra informationen tillhandahålls om det är nödvändigt.
+
+>[!IMPORTANT]
+>
+>Om du vill att tillägget ska vara GDPR-kompatibelt kontrollerar du att du använder flaggan `userConsentPermissions.globalDataCollectionAndUsage` för att avgöra om tillägget får samla in data om användaren.
 
 ### [!DNL validate]
 
