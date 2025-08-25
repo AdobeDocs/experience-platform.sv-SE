@@ -76,7 +76,7 @@ Metoden `init` anropas av taggar så snart vyn har lästs in i iframe. Det komme
 | `company` | Ett objekt som innehåller `orgId` (ditt 24-siffriga Adobe Experience Cloud-ID), `id` (ditt företags unika identifierare i Reactor API) och `tenantId` (den unika identifieraren för en organisation i Adobe Identity Management System). |
 | `schema` | Ett objekt i formatet [JSON Schema](https://json-schema.org/). Det här objektet kommer från [tilläggsmanifestet](../manifest.md) och kan vara användbart när du validerar formuläret. |
 | `apiEndpoints` | Ett objekt som innehåller `reactor` som innehåller en referens till webbadressen för Reactor API. |
-| `userConsentPermissions` | Ett objekt som innehåller godkännandeflaggor från Adobe [produktanvändningsdata](https://experienceleague.adobe.com/en/docs/core-services/interface/features/account-preferences#product-usage-data). Använd flaggan som är lagrad i `globalDataCollectionAndUsage` för att förstå om ditt tillägg får samla in *alla* kunddata. |
+| `userConsentPermissions` | Ett objekt som innehåller godkännandeflaggor från Adobe [produktanvändningsdata](https://experienceleague.adobe.com/sv/docs/core-services/interface/features/account-preferences#product-usage-data). Använd flaggan som är lagrad i `globalDataCollectionAndUsage` för att förstå om ditt tillägg får samla in *alla* kunddata. |
 | `preferredLanguages` | En array med språksträngar. |
 
 Vyn bör använda den här informationen för att återge och hantera formuläret. Det är troligt att du bara behöver hantera `info.settings`, men den andra informationen tillhandahålls om det är nödvändigt.
