@@ -2,9 +2,9 @@
 description: På den här sidan visas ett exempel på API-anropet som används för att skapa en Adobe Experience Platform Destination SDK-konfiguration för autentiseringsuppgifter.
 title: Skapa en konfiguration för autentiseringsuppgifter
 exl-id: 9844c9c5-d2dc-4d4b-ae93-759bf23b87fa
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '586'
 ht-degree: 2%
 
 ---
@@ -27,7 +27,7 @@ Den här sidan innehåller exempel på API-begäran och nyttolast som du kan anv
 
 Använd den här API-slutpunkten om du bara vill skapa en autentiseringskonfiguration om det finns ett globalt autentiseringssystem mellan Adobe och målplattformen, och [!DNL Experience Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till målet. I det här fallet måste du skapa en autentiseringskonfiguration med API-slutpunkten `/credentials`.
 
-När du använder ett globalt autentiseringssystem måste du ange `"authenticationRule":"PLATFORM_AUTHENTICATION"` i konfigurationen för [målleverans](../functionality/destination-configuration/destination-delivery.md) när du [skapar en ny målkonfiguration](../authoring-api/destination-configuration/create-destination-configuration.md).
+När du använder ett globalt autentiseringssystem måste du ange `"authenticationRule":"PLATFORM_AUTHENTICATION"` i konfigurationen för [målleverans](../functionality/destination-configuration/destination-delivery.md) när du [skapar en ny målkonfiguration](../authoring-api/destination-configuration/create-destination-configuration.md). Sedan måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md) och skicka ID:t för autentiseringsuppgiftsobjektet i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication).
 
 >[!IMPORTANT]
 >
@@ -86,7 +86,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen för dina nya autentiseringsuppgifter.
 
@@ -123,7 +123,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen för dina nya autentiseringsuppgifter.
 
@@ -160,7 +160,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen för dina nya autentiseringsuppgifter.
 
@@ -201,7 +201,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen för dina nya autentiseringsuppgifter.
 
@@ -236,7 +236,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen för dina nya autentiseringsuppgifter.
 

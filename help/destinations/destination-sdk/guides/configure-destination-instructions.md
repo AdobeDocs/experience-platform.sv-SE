@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 804370a778a4334603f3235df94edaa91b650223
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -273,9 +273,9 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 >
 >`CUSTOMER_AUTHENTICATION` är det vanligaste av de två autentiseringsreglerna och det är det som ska användas om du kräver att användarna tillhandahåller någon form av autentisering till ditt mål innan de kan konfigurera en anslutning och exportera data.
 
-Läs [OAuth 2-autentisering](../functionality/destination-configuration/oauth2-authorization.md) om du valde `"authenticationRule": "CUSTOMER_AUTHENTICATION"` i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
+Läs `"authenticationRule": "CUSTOMER_AUTHENTICATION"`OAuth 2-autentisering[ om du valde ](../functionality/destination-configuration/oauth2-authorization.md) i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
 
-Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md).
+Om du har valt `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md) och skicka autentiseringsuppgiftsobjektets ID i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication).
 
 ## Steg 6: Testa destinationen {#test-destination}
 
@@ -284,7 +284,7 @@ När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i f
 Som en del av processen för att testa målet måste du använda Experience Platform-gränssnittet för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en publikdokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
-* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE)
+* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 7: Publicera destinationen {#publish-destination}
 

@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett filbaserat mål
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 804370a778a4334603f3235df94edaa91b650223
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '745'
 ht-degree: 0%
 
 ---
@@ -413,8 +413,7 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
    * [SFTP-autentisering med SSH-nyckel](../functionality/destination-configuration/customer-authentication.md#sftp-ssh)
    * [SFTP-autentisering med lösenord](../functionality/destination-configuration/customer-authentication.md#sftp-password)
 
-* Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"` kan du läsa [dokumentationen för konfigurations-API:t för autentiseringsuppgifter](../credentials-api/create-credential-configuration.md#when-to-use).
-
+* Om du har valt `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md) och skicka autentiseringsuppgiftsobjektets ID i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication).
 
 ## Steg 5: Testa destinationen {#test-destination}
 
@@ -423,7 +422,7 @@ När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i f
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa målgrupper, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en målgrupp - dokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
-* [Skapa en publik - videogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE)
+* [Skapa en publik - videogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 6: Publicera destinationen {#publish-destination}
 

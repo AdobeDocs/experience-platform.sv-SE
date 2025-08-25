@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: 3c772e99e7f0417672e60d56ace962abda2b7d76
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '1898'
+source-wordcount: '1912'
 ht-degree: 0%
 
 ---
@@ -148,7 +148,7 @@ I en dynamisk schemakonfiguration ersätts `profileFields`-arrayen av avsnittet 
 
 | Parameter | Typ | Obligatoriskt/valfritt | Beskrivning |
 |---------|----------|------|---|
-| `dynamicEnum.authenticationRule` | Sträng | Obligatoriskt | Anger hur [!DNL Experience Platform]-kunder ansluter till ditt mål. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om Experience Platform-kunder loggar in på ditt system via någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md). </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och kunden [!DNL Experience Platform] inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du [skapa ett autentiseringsobjekt](../../credentials-api/create-credential-configuration.md) med hjälp av API:t för autentiseringsuppgifter. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
+| `dynamicEnum.authenticationRule` | Sträng | Obligatoriskt | Anger hur [!DNL Experience Platform]-kunder ansluter till ditt mål. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om Experience Platform-kunder loggar in på ditt system via någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md). </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och kunden [!DNL Experience Platform] inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du [skapa ett autentiseringsobjekt](../../credentials-api/create-credential-configuration.md) med hjälp av API:t för autentiseringsuppgifter och skicka ID:t för autentiseringsuppgiftsobjektet i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication). </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `dynamicEnum.destinationServerId` | Sträng | Obligatoriskt | `instanceId` för din dynamiska schemaserver. Målservern innehåller API-slutpunkten som Experience Platform anropar för att hämta det dynamiska schemat. |
 | `dynamicEnum.value` | Sträng | Obligatoriskt | Namnet på det dynamiska schemat, enligt definitionen i den dynamiska schemaserverkonfigurationen. |
 | `dynamicEnum.responseFormat` | Sträng | Obligatoriskt | Alltid inställt på `SCHEMA` när ett dynamiskt schema definieras. |

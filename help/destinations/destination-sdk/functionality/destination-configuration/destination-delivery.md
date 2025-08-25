@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar leveransinställningar för mål som skapats med Destination SDK för att ange var exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas.
 title: Destinationsleverans
 exl-id: ade77b6b-4b62-4b17-a155-ef90a723a4ad
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '641'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,8 @@ När du konfigurerar inställningarna för destinationsleverans kan du använda 
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `authenticationRule` | Sträng | Anger hur [!DNL Experience Platform] ska ansluta till ditt mål. Värden som stöds:<ul><li>`CUSTOMER_AUTHENTICATION`: Använd det här alternativet om Experience Platform-kunder loggar in på ditt system med någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`: Använd det här alternativet om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och kunden [!DNL Experience Platform] inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av [API:t för autentiseringsuppgifter](../../credentials-api/create-credential-configuration.md)-konfigurationen. </li><li>`NONE`: Använd det här alternativet om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
+| `authenticationRule` | Sträng | Anger hur [!DNL Experience Platform] ska ansluta till ditt mål. Värden som stöds:<ul><li>`CUSTOMER_AUTHENTICATION`: Använd det här alternativet om Experience Platform-kunder loggar in på ditt system med någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`: Använd det här alternativet om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och kunden [!DNL Experience Platform] inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av konfigurationen för [autentiseringsuppgifter-API](../../credentials-api/create-credential-configuration.md) och ange parametern `authenticationId` till värdet för autentiseringsuppgiftsobjekt-ID.</li><li>`NONE`: Använd det här alternativet om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
+| `authenticationId` | Sträng | `instanceId` för det konfigurations-ID för autentiseringsuppgifter som ska användas för autentisering. Den här parametern krävs bara när du behöver ange en viss autentiseringskonfiguration. |
 | `destinationServerId` | Sträng | `instanceId` för den [målserver](../../authoring-api/destination-server/create-destination-server.md) som du vill exportera data till. |
 | `deliveryMatchers.type` | Sträng | <ul><li>När målleverans konfigureras för filbaserade mål ska du alltid ange det här till `SOURCE`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål krävs inte avsnittet `deliveryMatchers`.</li></ul> |
 | `deliveryMatchers.value` | Sträng | <ul><li>När målleverans konfigureras för filbaserade mål ska du alltid ange det här till `batch`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål krävs inte avsnittet `deliveryMatchers`.</li></ul> |
@@ -94,6 +95,32 @@ I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras
          ],
          "authenticationRule":"CUSTOMER_AUTHENTICATION",
          "destinationServerId":"{{destinationServerId}}"
+      }
+   ]
+}
+```
+
+>[!ENDSHADEBOX]
+
+## Konfiguration av plattformsautentisering {#platform-authentication}
+
+När du använder `PLATFORM_AUTHENTICATION` måste du ange parametern `authenticationId` för att länka målkonfigurationen till autentiseringskonfigurationen.
+
+1. Ange `destinationDelivery.authenticationRule` till `"PLATFORM_AUTHENTICATION"` i målkonfigurationen
+2. [Skapa autentiseringsuppgiften ](/help/destinations/destination-sdk/credentials-api/create-credential-configuration.md).
+3. Ställ in parametern `authenticationId` på autentiseringsuppgiftsobjektets `instanceId`-värde.
+
+**Exempelkonfiguration med PLATFORM_AUTHENTICATION:**
+
+>[!BEGINSHADEBOX]
+
+```json
+{
+   "destinationDelivery":[
+      {
+         "authenticationRule":"PLATFORM_AUTHENTICATION",
+         "authenticationId":"<string-here>",
+         "destinationServerId":"<string-here>"
       }
    ]
 }
