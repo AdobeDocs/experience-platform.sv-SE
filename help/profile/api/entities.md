@@ -5,18 +5,14 @@ type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
+source-git-commit: 40400ab8cc87a6c8d6d37f1a20eaf96ab49aabf7
 workflow-type: tm+mt
-source-wordcount: '1933'
+source-wordcount: '1981'
 ht-degree: 0%
 
 ---
 
 # Entitetens slutpunkt (profilåtkomst)
-
->[!IMPORTANT]
->
->ExperienceEvent-sökning med API:t för profilåtkomst kommer att bli inaktuell. Använd funktioner som beräknade attribut för användningsfall som kräver att du tittar upp med ExperienceEvents. Mer information om den här ändringen får du av Adobe kundtjänst.
 
 Med Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]-data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet för [!DNL Experience Platform] finns i [användarhandboken för profilen](../ui/user-guide.md).
 
@@ -44,6 +40,12 @@ Som ett resultat av den här uppdateringen speglar API:t [!DNL Profile Access] n
 >[!ENDSHADEBOX]
 
 ## Hämta en entitet {#retrieve-entity}
+
+>[!IMPORTANT]
+>
+>Följande B2B-entiteter stöds inte längre för sökbegäranden via API: **Account-Person Relation, Opportunity-Person Relation, Campaign, Campaign Member, Marketing List och Marketing List Member**.
+>
+>Stöd för dessa entiteter har tagits bort. Om du har befintliga integreringar eller arbetsflöden som kräver åtkomst till dessa enheter måste du uppdatera dem så att de använder de entitetstyper som stöds för att säkerställa fortsatt funktionalitet.
 
 Du kan hämta en profilentitet genom att göra en GET-begäran till `/access/entities`-slutpunkten tillsammans med de obligatoriska frågeparametrarna.
 
@@ -372,7 +374,7 @@ POST /access/entities
 
 Följande begäran hämtar namnen och e-postadresserna för flera kunder med hjälp av en lista över identiteter.
 
-+++En exempelbegäran för att hämta flera entiteter
++++En exempelbegäran om att hämta flera entiteter
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
@@ -590,7 +592,7 @@ POST /access/entities
 
 Följande begäran hämtar begärda B2B-konton.
 
-+++En exempelbegäran för att hämta flera entiteter
++++En exempelbegäran om att hämta flera entiteter
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
@@ -1203,6 +1205,19 @@ Ett godkänt svar returnerar nästa resultatsida. Det här svaret har inga efter
 
 ## Ta bort en entitet {#delete-entity}
 
+>[!IMPORTANT]
+>
+>Borttagningsbegäranden för följande B2B-enheter har tagits bort:
+>
+>- Konto
+>- Konto-personrelation
+>- Möjligheter
+>- Relation mellan möjlighet och person
+>- Campaign
+>- Kampanjmedlem
+>- Marknadsföringslista
+>- Medlemmar i marknadsföringslista
+
 Du kan ta bort en entitet från profilarkivet genom att göra en DELETE-begäran till `/access/entities`-slutpunkten tillsammans med de obligatoriska frågeparametrarna.
 
 **API-format**
@@ -1255,10 +1270,10 @@ Följande parametrar används i sökvägen för GET-begäranden till slutpunkten
 | Parameter | Beskrivning | Exempel |
 | --------- | ----------- | ------- |
 | `schema.name` | **(Obligatoriskt)** Namnet på entitetens XDM-schema. | `schema.name=_xdm.context.profile` |
-| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
+| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
 | `entityId` | **(Obligatoriskt)** ID för entiteten. Om värdet för den här parametern inte är ett XID måste även en identitetsnamnområdesparameter (`entityIdNS`) anges. | `entityId=janedoe@example.com` |
-| `entityIdNS` | Om `entityId` inte anges som ett XID måste **&#x200B;**&#x200B;ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
-| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| `entityIdNS` | Om `entityId` inte anges som ett XID måste **** ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
+| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | Om `schema.name` är&quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan. | `fields=personalEmail,person.name,person.gender` |
 | `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |
