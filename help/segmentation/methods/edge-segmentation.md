@@ -2,9 +2,9 @@
 title: Edge Segmenteringshandbok
 description: Lär dig hur du använder kantsegmentering för att utvärdera målgrupper i Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: a741fdb4393863dbc011c03c733e27572da0ae6c
+source-git-commit: 5de8597dd1d5249297a09976c804d1c1f3d822c5
 workflow-type: tm+mt
-source-wordcount: '1101'
+source-wordcount: '1133'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,8 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 >[!NOTE]
 >
 >Om frågan matchar någon av frågetyperna i följande tabell utvärderas den automatiskt med kantsegmentering. Den här funktionen bestäms automatiskt av systemet baserat på frågeuttrycket.
+>
+>Om målgruppen **only** innehåller profilattribut utvärderas den dagligen. Om ni vill att er målgrupp ska utvärderas i realtid måste ni lägga till händelsedata till er målgrupp.
 
 | Frågetyp | Information | Fråga | Exempel |
 | ---------- | ------- | ----- | ------- |
@@ -34,12 +36,12 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/methods/edge/single-event-with-profile-attribute.png) |
 | Segmentering | En segmentdefinition som innehåller en eller flera grupp- eller kantsegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. | `inSegment("a730ed3f-119c-415b-a4ac-27c396ae2dff") and inSegment("8fbbe169-2da6-4c9d-a332-b6a6ecf559b9")` | ![Ett exempel på ett segment av segment visas.](../images/methods/edge/segment-of-segments.png) |
 
-Dessutom måste segmentdefinitionen **&#x200B;**&#x200B;vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
+Dessutom måste segmentdefinitionen **** vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
 
 En segmentdefinition är **inte** berättigad till kantsegmentering i följande scenario:
 
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment`-händelse.
-   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **&#x200B;**&#x200B;för kantsegmentering.
+   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **** för kantsegmentering.
 - I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 ## Skapa målgrupper {#create-audience}

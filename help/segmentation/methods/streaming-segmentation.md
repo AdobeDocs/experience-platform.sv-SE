@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Guide för strömningssegmentering
 description: Lär dig mer om direktuppspelningssegmentering, inklusive vad det är, hur du skapar en publik som utvärderas med direktuppspelningssegmentering och hur du visar målgrupper som skapats med direktuppspelningssegmentering.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 6935cee30adb59d52db6c6fed7036f81b54edd52
+source-git-commit: c009eb89331758c512abd8ff7ef185489063b48f
 workflow-type: tm+mt
-source-wordcount: '2004'
+source-wordcount: '2033'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Kriterierna för behörighet att dela upp direktuppspelning har uppdaterats den 20 maj 2025.
 
-+++Behörighetsuppdateringar
++++Uppdateringar om rätt till uppgradering
 
 >[!IMPORTANT]
 >
@@ -38,6 +38,10 @@ Alla **nya eller redigerade**-segmentdefinitioner som matchar följande regelupp
 För att kunna utvärdera en målgrupp med direktuppspelningssegmentering måste **måste** begränsas inom ett 24-timmarsfönster.
 
 ## Inkludera batchdata i strömmande målgrupper {#include-batch-data}
+
+>[!NOTE]
+>
+>Om du vill att direktuppspelningssegmenteringen ska vara korrekt när du använder batchdata kontrollerar du att batchdata **endast** finns inom batchmålgruppen och att det finns referenser till dem inom den direktuppspelande målgruppen.
 
 Före den här uppdateringen kan du skapa en definition för direktuppspelad målgrupp som kombinerar både batchdatakällor och strömmande datakällor. I och med den senaste uppdateringen utvärderas dock möjligheten att skapa en målgrupp med både batch- och direktuppspelningsdatakällor med hjälp av gruppsegmentering.
 
