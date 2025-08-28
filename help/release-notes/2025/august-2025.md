@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: d93e98f3-d165-4710-ad1d-2ad3857cd0f8
-source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
+source-git-commit: bbeab81e64a86a59a1f85ca139935abf220ef361
 workflow-type: tm+mt
-source-wordcount: '1541'
-ht-degree: 81%
+source-wordcount: '1422'
+ht-degree: 79%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 81%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -30,7 +30,6 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 - [Katalogtjänst](#catalog-service)
 - [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [Kundprofil i realtid](#profile)
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
@@ -125,17 +124,20 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 Mer information finns i [XDM-översikten](../../xdm/home.md).
 
-## Kundprofil i realtid {#profile}
+<!--
+## Real-Time Customer Profile {#profile}
 
-Kundprofilen i realtid ger en enhetlig, användbar bild av varje kund genom att konsolidera data från alla kanaler till en enda profil.
+Real-Time Customer Profile provides a unified, actionable view of each customer by consolidating data from all channels into a single profile.
 
-**Nya eller uppdaterade funktioner**
+**New or updated features**
 
-| Funktion | Beskrivning |
+| Feature | Description |
 | --- | --- |
-| Förbättrade sökfunktioner i Entities API | Entities API har nu stöd för följande: <ul><li>Person (profil)</li><li>Experience-händelser</li><li>Konto</li><li>Möjligheter</li></ul> Den här uppdateringen förenklar API-användningen och hjälper till att säkerställa optimal prestanda och tillförlitlighet. Om du tidigare har använt sökningar efter andra enhetstyper, inklusive sammanfogningstabeller och anpassade multienhetstyper, kan du passa på att granska din API-användning och dra nytta av den förbättrade upplevelsen. Mer information finns i [arkitekturuppgraderingsguiden för Real-Time CDP B2B Edition](../../rtcdp/b2b-architecture-upgrade.md). |
+| Enhanced lookup functionality in the Entities API | The Entities API now supports the following: <ul><li>Person (Profile)</li><li>Experience Events</li><li>Account</li><li>Opportunity</li></ul> This update simplifies API usage and helps ensure optimal performance and reliability. If you previously used lookups for other entity types—including join tables and custom Multi-Entity types—now is a great opportunity to review your API usage and take advantage of the improved experience. For more information, read the [Real-Time CDB B2B Edition architecture upgrade guide](../../rtcdp/b2b-architecture-upgrade.md). |
 
-Mer information om kundprofil i realtid finns i [profilöversikten](../../profile/home.md).
+For more information on Real-Time Customer Profile, read the [Profile overview](../../profile/home.md).
+
+-->
 
 ## Sandlådor {#sandboxes}
 
