@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: d2b605925a8fd7ea06f198ba8a9f85747a2e585b
+source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
 workflow-type: tm+mt
-source-wordcount: '1617'
-ht-degree: 82%
+source-wordcount: '1541'
+ht-degree: 81%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 82%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -170,7 +170,13 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative}-stöd för [!DNL Azure Private Links] i användargränssnittet | Du kan nu använda [!DNL Azure Private Links] för en utvald grupp med källor i användargränssnittet. Använd den här funktionen för att skapa en privat slutpunkt som källan kan ansluta till. Med privata slutpunkter kan du skapa anslutningar och dataflöden som kringgår det offentliga Internet, vilket ger förbättrad säkerhet och nätverksisolering för dina känsliga data. Stöd för [!DNL Azure Private Links] finns för följande källor: <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li><li>[[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md)</li></ul> Mer information finns i guiden för [[!DNL Azure Private Links]](../../sources/tutorials/ui/private-link.md). |
 | Förbättrad autentisering för [!DNL Azure Blob Storage] | Nu kan du använda tjänsteprincipbaserad autentisering för att ansluta din [!DNL Azure Blob Storage]-källa till Experience Platform. Använd tjänsteprincipbaserad autentisering för förbättrad säkerhet, enklare rotation av autentiseringsuppgifter och en mer detaljerad åtkomstkontroll för kontot. Mer information finns i [[!DNL Azure Blob Storage] översikten](../../sources/connectors/cloud-storage/blob.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
+
+<!---
+
+| [!BADGE Beta]{type=Informative} Support for [!DNL Azure Private Links] in the UI | You can now use [!DNL Azure Private Links] for a select group of sources in the UI. Use this feature to create a private endpoint that which your source can connect to. With private endpoints, you can set up connections and dataflows that bypass the public internet, giving you enhanced security and network isolation for your sensitive data. Support for [!DNL Azure Private Links] is available to the following following sources: <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li><li>[[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md)</li></ul> For more information, read the guide on [[!DNL Azure Private Links]](../../sources/tutorials/ui/private-link.md). |
+
+-->
+

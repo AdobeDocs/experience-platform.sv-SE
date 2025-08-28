@@ -1,16 +1,18 @@
 ---
-title: Använd Azure Private Link för källor i användargränssnittet
+title: Stöd för privata länkar för källor i användargränssnittet
 description: Lär dig hur du använder privata Azure-länkar för källor i Experience Platform-gränssnittet.
 badge: Beta
+hide: true
+hidefromtoc: true
 exl-id: 2882729e-2d46-48dc-9227-51dda5bf7dfb
-source-git-commit: b88cf63e907b3f127f83304aa95f82300b47ce0b
+source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
 workflow-type: tm+mt
-source-wordcount: '719'
+source-wordcount: '725'
 ht-degree: 0%
 
 ---
 
-# Använd [!DNL Azure Private Link] för källor i användargränssnittet
+# Stöd för privata länkar för källor i användargränssnittet
 
 >[!AVAILABILITY]
 >
@@ -21,13 +23,13 @@ ht-degree: 0%
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
 >* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
 
-Du kan använda funktionen [!DNL Azure Private Link] för att skapa privata slutpunkter som dina Adobe Experience Platform-källor kan ansluta till. Anslut dina källor säkert till ett virtuellt nätverk med privata IP-adresser, vilket eliminerar behovet av offentliga IP-adresser och minskar din attackyta.Förenkla nätverksinstallationen genom att ta bort behovet av komplexa konfigurationer för brandvägg eller översättning av nätverksadresser, samtidigt som datatrafiken endast når godkända tjänster.
+Du kan använda funktionen Privata länkar för att skapa privata slutpunkter som dina Adobe Experience Platform-källor kan ansluta till. Anslut dina källor till ett virtuellt nätverk med privata IP-adresser på ett säkert sätt, så att du slipper använda offentliga IP-adresser och minskar antalet attacker. Förenkla nätverkskonfigurationen genom att eliminera behovet av komplexa brandväggs- eller nätverksadressöversättningskonfigurationer, samtidigt som datatrafiken endast når ut till godkända tjänster.
 
 Läs den här vägledningen när du vill veta hur du kan använda arbetsytan för källor i Experience Platform-användargränssnittet för att skapa och använda en privat slutpunkt.
 
 ## Skapa en privat slutpunkt
 
-Om du vill komma igång med [!DNL Azure Private Link] går du till katalogen *[!UICONTROL Sources]* i Experience Platform-gränssnittet och väljer **[!UICONTROL Private endpoints]** på flikmenyn på arbetsytan för källor.
+Om du vill komma igång med privata länkar går du till katalogen *[!UICONTROL Sources]* i Experience Platform-användargränssnittet och väljer **[!UICONTROL Private endpoints]** på flikmenyn på arbetsytan för källor.
 
 ![Källkatalogen med privata slutpunkter.](../../images/tutorials/private-links/catalog.png)
 

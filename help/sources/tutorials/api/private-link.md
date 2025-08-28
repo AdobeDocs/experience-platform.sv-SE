@@ -1,16 +1,18 @@
 ---
-title: Använd Azure Private Link för källor i API
+title: Stöd för privata länkar för källor i API
 description: Lär dig hur du skapar och använder privata länkar för Adobe Experience Platform-källor
 badge: Beta
+hide: true
+hidefromtoc: true
 exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
-source-git-commit: 65063d3b81d7082fc7780949c6ebd2ce09461b88
+source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
 workflow-type: tm+mt
-source-wordcount: '1657'
+source-wordcount: '1661'
 ht-degree: 0%
 
 ---
 
-# Använd [!DNL Azure Private Link] som källa i API:t
+# Stöd för privata länkar för källor i API
 
 >[!AVAILABILITY]
 >
@@ -21,7 +23,7 @@ ht-degree: 0%
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
 >* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
 
-Du kan använda funktionen [!DNL Azure Private Link] för att skapa privata slutpunkter som dina Adobe Experience Platform-källor kan ansluta till. Anslut dina källor säkert till ett virtuellt nätverk med privata IP-adresser, vilket eliminerar behovet av offentliga IP-adresser och minskar din attackyta.Förenkla nätverksinstallationen genom att ta bort behovet av komplexa konfigurationer för brandvägg eller översättning av nätverksadresser, samtidigt som datatrafiken endast når godkända tjänster.
+Du kan använda funktionen Privat länk för att skapa privata slutpunkter som dina Adobe Experience Platform-källor kan ansluta till. Anslut dina källor till ett virtuellt nätverk med privata IP-adresser på ett säkert sätt, så att du slipper använda offentliga IP-adresser och minskar antalet attacker. Förenkla nätverkskonfigurationen genom att eliminera behovet av komplexa brandväggs- eller nätverksadressöversättningskonfigurationer, samtidigt som datatrafiken endast når ut till godkända tjänster.
 
 Läs den här guiden och lär dig hur du kan använda API:er för att skapa och använda en privat slutpunkt.
 
