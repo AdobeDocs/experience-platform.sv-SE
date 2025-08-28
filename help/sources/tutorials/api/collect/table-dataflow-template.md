@@ -1,15 +1,16 @@
 ---
-title: Skapa ett dataflöde för inmatning av data från en CRM till Experience Platform
+title: Skapa ett dataflöde för inmatning av Source-data i Experience Platform
 description: Lär dig använda API:t för Flow Service för att skapa ett dataflöde och importera källdata till Experience Platform.
-exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: fe310a326f423a32b278b8179578933295de3a87
+hide: true
+hidefromtoc: true
+source-git-commit: 4e9448170a6c3eb378e003bcd7520cb0e573e408
 workflow-type: tm+mt
-source-wordcount: '2095'
+source-wordcount: '2127'
 ht-degree: 0%
 
 ---
 
-# Skapa ett dataflöde för att importera data från en CRM till Experience Platform
+# Skapa ett dataflöde för att importera data från en källa
 
 Läs den här vägledningen när du vill lära dig hur du skapar ett dataflöde och importerar data till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
@@ -29,9 +30,9 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 Mer information om hur du kan ringa anrop till Experience Platform API:er finns i guiden [komma igång med Experience Platform API:er](../../../../landing/api-guide.md).
 
-### Skapa basanslutning {#base}
+### Skapa basanslutning
 
-Om du vill skapa ett dataflöde för källan behöver du ett fullständigt autentiserat källkonto och dess motsvarande grundläggande anslutnings-ID. Om du inte har det här ID:t kan du gå till [källkatalogen](../../../home.md) och hitta en lista med källor som du kan skapa en basanslutning för.
+Du måste ha ett fullständigt autentiserat källkonto och det är motsvarande basanslutnings-ID för att kunna skapa ett dataflöde för källan. Om du inte har det här ID:t kan du gå till [källkatalogen](../../../home.md) och se en lista över källor som du kan skapa en basanslutning med.
 
 ### Skapa ett mål-XDM-schema {#target-schema}
 
@@ -106,7 +107,7 @@ Ett lyckat svar returnerar ditt måldataset-ID. Detta ID krävs senare för att 
 
 +++
 
-## Skapa en källanslutning {#source}
+## Skapa en källanslutning
 
 En källanslutning definierar hur data hämtas till Experience Platform från en extern källa. Den anger både källsystemet och formatet för inkommande data och refererar till en basanslutning som innehåller autentiseringsinformation. Varje källanslutning är unik för din organisation.
 
@@ -133,8 +134,8 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "ACME source connection",
-    "description": "A source connection for ACME contact data",
     "baseConnectionId": "6990abad-977d-41b9-a85d-17ea8cf1c0e4",
+    "description": "A source connection for ACME contact data",
     "data": {
       "format": "tabular"
     },
@@ -164,7 +165,8 @@ curl -X POST \
             "format": "date-time"
           }
         }
-      ]
+      ],
+      "cdcEnabled": true
     },
     "connectionSpec": {
       "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
@@ -181,6 +183,7 @@ curl -X POST \
 | `data.format` | Dataformatet. Ange det här värdet till `tabular` för tabellbaserade källor (t.ex. databaser, CRM och leverantörer av automatiserad marknadsföring). |
 | `params.tableName` | Namnet på tabellen i källkontot som du vill importera till Experience Platform. |
 | `params.columns` | De specifika tabellkolumnerna med data som du vill importera till Experience Platform. |
+| `params.cdcEnabled` | Ett booleskt värde som anger om registrering av ändringshistorik är aktiverat eller inte. Den här egenskapen stöds av följande datakällor: <ul><li>[!DNL Azure Databricks]</li><li>[!DNL Google BigQuery]</li><li>[!DNL Snowflake]</li></ul> Mer information finns i guiden om hur du använder [ändring av datainhämtning i källor](../change-data-capture.md). |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan som du använder. |
 
 **Svar**
@@ -194,9 +197,9 @@ Ett lyckat svar returnerar ID:t för din källanslutning. Detta ID krävs för a
 }
 ```
 
-## Skapa en målanslutning {#target}
+## Skapa en målanslutning {#target-connection}
 
-En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta ID för anslutningsspecifikation som är associerat med datasjön. Detta anslutningsspecifikations-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Anslutningens spec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 **API-format**
 
@@ -314,7 +317,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 }
 ```
 
-## Hämta dataflödesspecifikationer {#flow-specs}
+## Hämta dataflödesspecifikationer
 
 Innan du kan skapa ett dataflöde måste du först hämta de dataflödesspecifikationer som motsvarar källan. Om du vill hämta den här informationen skickar du en GET-begäran till `/flowSpecs`-slutpunkten för API:t [!DNL Flow Service].
 
@@ -342,7 +345,7 @@ curl -X GET \
 
 Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvarar för att hämta data från källan till Experience Platform. Svaret innehåller den unika flödesspecifikation `id` som krävs för att skapa ett nytt dataflöde.
 
-Kontrollera `items.sourceConnectionSpecIds`-arrayen i svaret för att försäkra dig om att du använder rätt dataflödesspecifikation. Bekräfta att anslutningsspecifikations-ID:t för källan finns med i den här listan.
+Kontrollera `items.sourceConnectionSpecIds`-arrayen i svaret för att försäkra dig om att du använder rätt dataflödesspecifikation. Bekräfta att källans anslutningsspec-ID finns med i listan.
 
 +++Välj att visa
 
@@ -631,16 +634,16 @@ Kontrollera `items.sourceConnectionSpecIds`-arrayen i svaret för att försäkra
 
 +++
 
-## Skapa ett dataflöde {#dataflow}
+## Skapa ett dataflöde
 
 Ett dataflöde är en konfigurerad pipeline som överför data mellan Experience Platform-tjänster. Det definierar hur data hämtas från externa källor (som databaser, molnlagring eller API:er), bearbetas och dirigeras till måldatamängder. Dessa datauppsättningar används sedan av tjänster som identitetstjänst, kundprofil i realtid och destinationer för aktivering och analys.
 
 Om du vill skapa ett dataflöde måste du ha värden för följande objekt:
 
-* [Source-anslutnings-ID](#source)
-* [Målanslutnings-ID](#target)
-* [Mappnings-ID](#mapping)
-* [ID för dataflödesspecifikation](#flow-specs)
+* Source-anslutnings-ID
+* Målanslutnings-ID
+* Mappnings-ID
+* ID för dataflödesspecifikation
 
 Under det här steget kan du använda följande parametrar i `scheduleParams` för att konfigurera ett intag-schema för ditt dataflöde:
 
@@ -739,7 +742,7 @@ Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet.
 }
 ```
 
-### Använd gränssnittet för att validera API-arbetsflödet {#validate-in-ui}
+### Använd gränssnittet för att validera API-arbetsflödet
 
 Du kan använda Experience Platform användargränssnitt för att validera skapandet av dataflödet. Navigera till katalogen *[!UICONTROL Sources]* i Experience Platform-gränssnittet och välj sedan **[!UICONTROL Dataflows]** på rubrikflikarna. Använd sedan kolumnen [!UICONTROL Dataflow Name] och leta reda på dataflödet som du skapade med API:t [!DNL Flow Service].
 

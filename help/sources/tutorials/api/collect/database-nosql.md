@@ -1,22 +1,22 @@
 ---
 title: Skapa ett dataflöde för datakällor med API:t för Flow Service
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du hämtar data från en databas och importerar dem till Experience Platform med hjälp av källanslutningar och API:er.
+description: Lär dig hur du använder API:t för Flow Service för att skapa ett dataflöde och importera data från din databas till Experience Platform.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: b184319f6c5f5430a5ae1e9de4728b5074bca9b8
+source-git-commit: a5fa939d522b0bf828f42144657ea15f9c3347ed
 workflow-type: tm+mt
-source-wordcount: '1453'
+source-wordcount: '1455'
 ht-degree: 0%
 
 ---
 
 # Skapa ett dataflöde för datakällor med API:t [!DNL Flow Service]
 
-I den här självstudiekursen beskrivs stegen för hur du hämtar data från en datakälla och överför dem till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du lära dig hur du skapar ett dataflöde och importerar data från din databas till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
->* För att kunna skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutning med en datakälla. Om du inte har det här ID:t kan du se [Källöversikt](../../../home.md#database) för en lista över databaskällor som du kan skapa en basanslutning med.
+>* För att kunna skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutning med en datakälla. Om du inte har det här ID:t kan du gå till [källkatalogen](../../../home.md#database) för att få en lista över databaskällor som du kan skapa en basanslutning med.
 >* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC. Den enda tidsstämpeln som stöds för [[!DNL Snowflake] source](../../../connectors/databases/snowflake.md) är TIMESTAMP_NTZ med UTC-tid.
 
 ## Komma igång
