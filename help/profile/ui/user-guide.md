@@ -3,7 +3,7 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
 workflow-type: tm+mt
 source-wordcount: '2135'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Profilantalet omfattar även både profiler med attribut (postdata) och profiler
 
 #### Uppdaterar måttet för antal profiler
 
-När inmatningen av poster i arkivet [!DNL Profile] ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning är uppfyllt, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilbutiken.
+När inmatningen av poster i arkivet [!DNL Profile] ökar eller minskar antalet med mer än 3 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 3 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 3 % ökning eller minskning är uppfyllt, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilbutiken.
 
 ### [!UICONTROL Profiles by namespace] {#profiles-by-namespace}
 

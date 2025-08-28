@@ -4,7 +4,7 @@ title: Förhandsgranskningar och uppskattningar av API-slutpunkter
 description: I takt med att segmentdefinitionen utvecklas kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen.
 role: Developer
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
+source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
 workflow-type: tm+mt
 source-wordcount: '1016'
 ht-degree: 0%
@@ -31,8 +31,8 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur datainsamling utlöses beror på intagsmetoden:
 
-* **Gruppinmatning:** Om tröskelvärdet på 5 % ökning eller minskning är uppfyllt, körs ett jobb för att uppdatera antalet inom 15 minuter efter att en batch har importerats till profilbutiken.
-* **Direktuppspelningsinmatning:** För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller inte. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet.
+* **Gruppinmatning:** Om tröskelvärdet på 3 % ökning eller minskning är uppfyllt, körs ett jobb för att uppdatera antalet inom 15 minuter efter att en batch har importerats till profilbutiken.
+* **Direktuppspelningsinmatning:** För arbetsflöden med direktuppspelningsdata utförs en timkontroll för att avgöra om tröskelvärdet på 3 % har uppnåtts eller inte. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet.
 
 Exempelstorleken för sökningen beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 
@@ -48,7 +48,7 @@ Exempelstorleken för sökningen beror på det totala antalet enheter i din prof
 
 ## Skapa en ny förhandsgranskning {#create-preview}
 
-Du kan skapa en ny förhandsgranskning genom att göra en POST-förfrågan till slutpunkten `/preview`.
+Du kan skapa en ny förhandsgranskning genom att göra en POST-begäran till slutpunkten `/preview`.
 
 >[!NOTE]
 >
@@ -114,7 +114,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med information om den nya f
 
 ## Hämta resultatet från en viss förhandsgranskning {#get-preview}
 
-Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-förfrågan till `/preview`-slutpunkten och ange förhandsgransknings-ID:t i begärandesökvägen.
+Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-begäran till slutpunkten `/preview` och ange ID:t för förhandsgranskning i sökvägen för begäran.
 
 **API-format**
 
@@ -199,7 +199,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
-När du har skapat ett förhandsgranskningsjobb kan du använda dess `previewId` i sökvägen för en GET-begäran till `/estimate`-slutpunkten för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+När du har skapat ett förhandsgranskningsjobb kan du använda dess `previewId` i sökvägen för en GET-begäran till slutpunkten `/estimate` för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
 
 **API-format**
 

@@ -2,7 +2,7 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: c8befc7379da491f6de78a89c9f14a0b123b3fb8
+source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
 workflow-type: tm+mt
 source-wordcount: '4290'
 ht-degree: 0%
@@ -102,7 +102,7 @@ Du kan lägga till fler fält i målportalen genom att välja ![filterattributsi
 | ----- | ----------- |
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
-| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6&rbrace;AJO B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
+| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
 | [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för fältet är `Draft`, `Inactive` och `Published`. Mer information om livscykelstatus, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd, finns i avsnittet [livscykelstatus i Vanliga frågor om segmentering](../faq.md#lifecycle-status). |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge] och [!UICONTROL Not Scheduled]. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
@@ -138,7 +138,7 @@ Om du vill använda [!DNL Unified Search] lägger du till den term som du vill s
 
 ![Sökfältet är markerat.](../images/ui/audience-portal/browse-audience-search.png)
 
-Mer information om [!DNL Unified Search], inklusive funktioner som stöds, finns i [dokumentationen för enhetlig sökning](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html?lang=sv-SE).
+Mer information om [!DNL Unified Search], inklusive funktioner som stöds, finns i [dokumentationen för enhetlig sökning](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html).
 
 #### Taggar {#tags}
 
@@ -203,7 +203,7 @@ Listan med tillgängliga filter visas.
 
 | Filter | Beskrivning |
 | ------ | ----------- |
-| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6&rbrace;AJO B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
+| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
 | [!UICONTROL Has any tag] | Gör att du kan filtrera efter taggar. Du kan välja mellan **[!UICONTROL Has any tag]** och **[!UICONTROL Has all tags]**. När **[!UICONTROL Has any tag]** har valts kommer de filtrerade målgrupperna att inkludera **alla** av de taggar som du har lagt till. När **[!UICONTROL Has all tags]** har valts måste de filtrerade målgrupperna innehålla **all** av de taggar du har lagt till. |
 | [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. De tillgängliga alternativen är [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive] och [!UICONTROL Published]. |
 | [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens (utvärderingsmetod). Tillgängliga alternativ är [!UICONTROL Batch], [!UICONTROL Streaming] och [!UICONTROL Edge] |
@@ -327,9 +327,9 @@ Under finns ett exempel på profiler som är kvalificerade för segmentet, med d
 
 Det sätt på vilket datainsamling utlöses beror på metoden för intag.
 
-För batchimport skannas profilarkivet automatiskt var 15:e minut för att se om en ny batch har importerats sedan den senaste samplingsjobbet kördes. I så fall genomsöks sedan profilarkivet för att se om det har skett minst 5 % ändring av antalet poster. Om dessa villkor uppfylls utlöses ett nytt samplingsjobb.
+För batchimport skannas profilarkivet automatiskt var 15:e minut för att se om en ny batch har importerats sedan den senaste samplingsjobbet kördes. I så fall genomsöks sedan profilarkivet för att se om det har skett minst 3 % ändring av antalet poster. Om dessa villkor uppfylls utlöses ett nytt samplingsjobb.
 
-För direktuppspelningsinläsning genomsöks profilarkivet automatiskt varje timme för att se om det har skett minst 5 procents ändring av antalet poster. Om det här villkoret är uppfyllt utlöses ett nytt samplingsjobb.
+För direktuppspelningsinläsning skannas profilarkivet automatiskt varje timme för att se om det har skett minst 3 % ändring av antalet poster. Om det här villkoret är uppfyllt utlöses ett nytt samplingsjobb.
 
 Exempelstorleken för sökningen beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 

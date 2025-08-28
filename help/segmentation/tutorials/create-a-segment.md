@@ -4,7 +4,7 @@ title: Skapa en segmentdefinition med hjälp av segmenteringstjänstens API
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvecklar, testar, förhandsgranskar och sparar en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
 workflow-type: tm+mt
 source-wordcount: '1067'
 ht-degree: 0%
@@ -76,8 +76,8 @@ När data som har aktiverats för kundprofilen i realtid hämtas till Experience
 
 Hur provet utlöses beror på vilken typ av intag som används:
 
-- För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om detta tröskelvärde har uppnåtts aktiveras ett provjobb automatiskt för att uppdatera antalet.
-- Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera antalet vid batchintag inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
+- För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 3 % har uppnåtts eller ej. Om detta tröskelvärde har uppnåtts aktiveras ett provjobb automatiskt för att uppdatera antalet.
+- Om tröskelvärdet på 3 % ökning eller minskning uppnås, körs ett jobb för att uppdatera antalet vid batchintag inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 
 Samplingsstorleken beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 
