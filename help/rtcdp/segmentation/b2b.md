@@ -2,16 +2,20 @@
 title: Exempel på segmenteringsanvändning för Real-Time Customer Data Platform B2B edition
 description: En översikt över de olika användningsområdena för Adobe Real-Time Customer Data Platform B2B edition.
 feature: Get Started, Audiences, Segments, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: d819a7e72e873ef3a47f9bb7946e242cb5fb7a8a
+source-git-commit: d1f48140922b4c98f75b4c9af9e1706a402319a4
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1605'
 ht-degree: 0%
 
 ---
 
 # Exempel på segmenteringsanvändning för Real-Time Customer Data Platform B2B edition
+
+>[!IMPORTANT]
+>
+>Publikationer som innehåller Experience Events som refererar till B2B-enheter (som kampanjer och marknadsföringslistor) stöds inte längre. Mer information finns i översikten över [uppgraderingarna av Real-Time CDP B2B edition-arkitekturen](../../rtcdp/b2b-architecture-upgrade.md).
 
 Det här dokumentet innehåller exempel på segmentdefinitioner i Adobe Real-Time Customer Data Platform B2B edition och hur olika typer av attribut kan kombineras för vanliga B2B-användningsområden. Mer information om hur destinationer passar in i ditt B2B-arbetsflöde finns i [den kompletta självstudiekursen](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
 
