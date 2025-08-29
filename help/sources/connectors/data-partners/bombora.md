@@ -1,20 +1,20 @@
 ---
-title: Bombora avsikt
-description: Lär dig mer om Bombora Intent-källan på Experience Platform.
+title: Bomborametod
+description: Läs mer om Bombora Intent-källan på Experience Platform.
 last-substantial-update: 2025-03-26T00:00:00Z
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: d2e81207-8ef5-4e52-bbac-a2fa262d8d08
-source-git-commit: 9ab2c4725d2188f772bde1f7a89db2bb47c7a46b
+source-git-commit: 8a5fdcfcf503df1b9d5aa338ff530181a2d03b5d
 workflow-type: tm+mt
-source-wordcount: '1611'
+source-wordcount: '1603'
 ht-degree: 0%
 
 ---
 
 # [!DNL Bombora Intent]
 
-[!DNL Bombora] är en omfattande målgruppslösning som specialiserar sig på B2B-avsiktsdata. [!DNL Bombora Intent] är en Adobe Experience Platform-källa som du kan använda för att ansluta ditt [!DNL Bombora] konto till Experience Platform och integrera dina kontots avsiktsdata.
+[!DNL Bombora] är en omfattande målgruppslösning som specialiserar sig på B2B-avsiktsdata. [!DNL Bombora Intent] är en Adobe Experience Platform-källa som du kan använda för att ansluta ditt [!DNL Bombora]-konto till Experience Platform och integrera dina kontoåtergivningsdata.
 
 Med källan [!DNL Bombora Intent] kan du integrera [!DNL Bombora's] företagsdata för att identifiera konton som aktivt söker efter dina produkter eller tjänster. Använd [!DNL Bombora] om du vill prioritera marknadskonton för att skapa exakta segment och köra hyperriktade ABM-kampanjer, vilket säkerställer att era marknadsföringssatsningar fokuserar på de konton som mest sannolikt konverteras. Dessutom kan ni utnyttja intent-drivna strategier för att optimera annonskostnaderna, öka engagemanget och maximera avkastningen.
 
@@ -24,9 +24,9 @@ Läs det här dokumentet om du vill ha information om krav för källan [!DNL Bo
 
 Läs följande exempel på användningsexempel som du kan använda för källan [!DNL Bombora].
 
-### Integrering med DSP (Demand-Side Platform)
+### Integrering med Demand-Side Platform (DSP)
 
-Som B2B-marknadsförare kan du skapa en kontolista i Real-Time CDP, identifiera företag som visar hög återgivning för dina produkter och sedan aktivera den här listan i [!DNL Bombora], som integreras direkt med DSP:er, så att du kan köra riktade programmatiska annonskampanjer med [!DNL Bombora's]-data. Detta säkerställer att dina annonsutgifter är fokuserade på företag som mest sannolikt kommer att konvertera.
+Som B2B-marknadsförare kan du skapa en kontolista i Real-Time CDP, identifiera företag som visar hög återgivning för dina produkter och sedan aktivera den här listan i [!DNL Bombora], som integreras direkt med DSP:er, så att du kan köra riktade programmatiska annonskampanjer med [!DNL Bombora's]-data. Detta garanterar att era annonskostnader fokuserar på de företag som mest sannolikt konverterar.
 
 ### Account-Based Marketing (ABM)
 
@@ -34,13 +34,13 @@ Som B2B-marknadsförare kan du skapa en kontolista baserad på första och tredj
 
 ### Aktivering av flerkanals-ABM
 
-Som B2B-marknadsförare kan du skapa en kontolista i Real-Time CDP, identifiera företag med hög återgivning och aktivera den i [!DNL Bombora] för att köra riktade kampanjer i flera kanaler. På betalda sociala medier kan du visa personliga annonser till proffs på målkonton på plattformar som [!DNL Linkedin] och [!DNL Facebook].
+Som B2B-marknadsförare kan du skapa en kontolista i Real-Time CDP, identifiera företag med hög återgivning och aktivera den i [!DNL Bombora] för att köra riktade kampanjer i flera kanaler. På betalda sociala medier kan du leverera personaliserade annonser till proffs på målkonton på plattformar som [!DNL Linkedin] och [!DNL Facebook].
 
-Med hjälp av inbyggda annonsplattformar kan du se till att ditt innehåll når beslutsfattare i relevanta sammanhang. Du kan också utöka kampanjer till avancerad TV och leverera annonser till nyckelkonton. Detta flerkanalstillvägagångssätt säkerställer konsekventa meddelanden på alla plattformar, vilket maximerar engagemang och konverteringsfrekvenser.
+Med inbyggda annonsplattformar kan ni se till att ert innehåll når beslutsfattare i relevanta sammanhang. Ni kan även utöka kampanjer till avancerad TV och leverera annonser till viktiga konton. Detta flerkanaliga arbetssätt säkerställer enhetliga meddelanden på olika plattformar och maximerar engagemanget och konverteringsgraden.
 
 ## Förhandskrav {#prerequisites}
 
-Läs följande avsnitt för nödvändiga steg innan du ansluter [!DNL Bombora] till Experience Platform.
+Läs igenom följande avsnitt för nödvändiga steg innan du ansluter [!DNL Bombora] till Experience Platform.
 
 ### IP-adress tillåtelselista
 
@@ -48,47 +48,56 @@ En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan 
 
 ### Konfigurera behörigheter i Experience Platform
 
-Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[!UICONTROL Manage Sources]** aktiverat för ditt konto för att kunna ansluta ditt [!DNL Bombora]-konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i användargränssnittsguiden [&#128279;](../../../access-control/abac/ui/permissions.md)för åtkomstkontroll.
+Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[!UICONTROL Manage Sources]** aktiverat för ditt konto för att kunna ansluta ditt [!DNL Bombora]-konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i [användargränssnittsguiden för åtkomstkontroll](../../../access-control/abac/ui/permissions.md).
 
-### Namngivningsbegränsningar för filer och kataloger
+### Namnbegränsningar för filer och kataloger
 
-Begränsningarna som anges nedan måste beaktas när du namnger din molnlagringsfil eller katalog:
+De begränsningar som anges nedan måste beaktas när du namnger molnlagringsfilen eller -katalogen:
 
 * Katalog- och filkomponentnamn får inte innehålla fler än 255 tecken.
 * Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Den tas bort automatiskt om den anges.
-* Följande reserverade URL-tecken måste vara korrekt undantagna: `! ' ( ) ; @ & = + $ , % # [ ]`
-* Följande tecken är inte tillåtna: `" \ / : | < > * ?`.
-* Ogiltiga tecken för URL-sökvägar är inte tillåtna. Kodpunkter som `\uE000`, även om de är giltiga i NTFS-filnamn, är inte giltiga Unicode-tecken. Dessutom är vissa ASCII- eller Unicode-tecken, till exempel kontrolltecken (0x00 till 0x1F, \u0081 osv.), inte heller tillåtna. Regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, avsnitt 2.2: Grundläggande regler](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
-* Följande filnamn är inte tillåtna: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (..).
+* Följande reserverade URL-tecken måste ha escape-konverterats: `! ' ( ) ; @ & = + $ , % # [ ]`
+* Följande tecken tillåts inte: `" \ / : | < > * ?`.
+* Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000` är inte giltiga Unicode-tecken, men de är giltiga i NTFS-filnamn. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Information om regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, Section 2.2: Basic Rules](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
+* Följande filnamn tillåts inte: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (. .).
 
-### Samla in nödvändiga autentiseringsuppgifter
+### Samla in nödvändiga inloggningsuppgifter
 
-[!DNL Bombora] på Experience Platform drivs av [!DNL Google Cloud Storage]. För att kunna autentisera ditt [!DNL Bombora] konto måste du ange lämpliga värden för följande autentiseringsuppgifter:
+[!DNL Bombora] på Experience Platform är värd för [!DNL Google Cloud Storage]. För att autentisera ditt [!DNL Bombora]-konto måste du ange lämpliga värden för följande autentiseringsuppgifter:
 
-| Referens | Beskrivning |
+| Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| ID för åtkomstnyckel | Åtkomstnyckel-ID för [!DNL Bombora]. Det här är en alfanumerisk sträng på 61 tecken som krävs för att autentisera ditt konto till Experience Platform. |
-| Nyckel för hemlig åtkomst | Den hemliga åtkomstnyckeln [!DNL Bombora] . Det här är en 40-teckens, base-64-kodad sträng som krävs för att autentisera ditt konto till Experience Platform. |
-| Namn på bucket | Bucketen [!DNL Bombora] som data ska hämtas från. |
+| Åtkomstnyckel-ID | Åtkomstnyckel-ID för [!DNL Bombora]. Det här är en 61 tecken lång alfanumerisk sträng som krävs för att autentisera ditt konto för Experience Platform. |
+| Nyckel för hemlig åtkomst | Den hemliga åtkomstnyckeln [!DNL Bombora]. Detta är en 40-siffrig, base-64-kodad sträng som krävs för att autentisera ditt konto för Experience Platform. |
+| Buckennamn | Den [!DNL Bombora]-bucket från vilken data hämtas. |
 
-Mer information om dessa autentiseringsuppgifter finns i guiden[&#128279;](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) för [!DNL Google Cloud Storage] HMAC-nycklar. Anvisningar om hur du skapar en egen åtkomstnyckel finns [i kravguiden i källöversikten [!DNL Google Cloud Storage] ](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account).
+Mer information om dessa autentiseringsuppgifter finns i handboken [[!DNL Google Cloud Storage] HMAC-nycklar](https://cloud.google.com/storage/docs/authentication/hmackeys#overview). Anvisningar om hur du skapar en egen åtkomstnyckel finns i guiden [Krav i  [!DNL Google Cloud Storage] källöversikten](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account).
 
-## [!DNL Bombora] Schemat {#schema}
+## [!DNL Bombora]-schema {#schema}
 
-Läs det här avsnittet om du vill ha information om schemat och datastrukturen [!DNL Bombora] .
+Läs det här avsnittet för information om schemat och datastrukturen för [!DNL Bombora].
 
-Schemat [!DNL Bombora] kallas **Account Intent Weekly**. Det är den veckovisa avsiktsinformationen (anonym B2B-köparundersökning och innehållskonsumtion) om angivna konton och ämnen. Data är i parquet-format.
+Schemat [!DNL Bombora] kallas **B2B Bombora Account Intent**. Det är information om avsikter varje vecka (anonym B2B-köparundersökning och innehållskonsumtion) för angivna konton och ämnen. Data är i parquetformat.
 
-| Fältnamn | Datatyp | Krävs | Nyckel för företag | Anteckningar |
-| --- | --- | --- | --- | --- |
-| `Account_Name` | STRÄNG | TRUE | JA | Företagets kanoniska namn. |
-| `Domain` | STRÄNG | SANN | JA | Domänen för det identifierade konto som visar avsikt. |
-| `Topic_Id` | STRÄNG | TRUE | JA | Ämnes-ID [!DNL Bombora] . |
-| `Topic_Name` | STRÄNG | TRUE | | Ämnesnamnet [!DNL Bombora]. |
-| `Cluster_Name` | STRÄNG | TRUE | | Klusternamnet på [!DNL Bombora] för ett visst ämne. |
-| `Cluster_Id` | STRÄNG | SANN | | Kluster-ID:t som är associerat med ett visst ämne. |
-| `Composite_Score` | HELTAL | TRUE | | Den sammansatta poängen representerar en domäns konsumtionsmönster för ett visst ämne under en viss tidsperiod. Den sammansatta poängen mäts mellan 0 och 100, där 100 representerar den högsta möjliga poängen och 0 den lägsta möjliga poängen. En sammansatt poäng på över 60 representerar en ökning av intresset för ett visst ämne av en domän. Detta kallas också för en &quot;ökning&quot;. |
-| `Partition_Date` | DATUM | TRUE | | Kalenderdatumet för en ögonblicksbild. Detta görs varje vecka, i slutet av veckan, i `mm/dd/yyyy` format. |
+* Klass - XDM [!DNL Bombora Account Intent]
+* Namnutrymme - B2B [!DNL Bombora Account Intent]
+* Primär identitet - `intentID`
+* Relationer - B2B-konto
+
+| Fältnamn | Datatyp | Beskrivning |
+|------------------------|-----------|----------------------------------------------------------------------------------------|
+| `extSourceSystemAudit` | OBJEKT | Det här fältet används av systemet för granskning av källsystem. |
+| `_id` | STRÄNG | Det här fältet används av systemet som en unik identifierare. |
+| `accountDomain` | STRÄNG | Det här fältet innehåller kontodomänen. |
+| `accountID` | STRÄNG | Det här fältet innehåller det B2B-konto-ID som den här intent-posten är associerad med. |
+| `bomboraAccountName` | STRÄNG | Det här fältet innehåller företagets ID i Bombora. |
+| `clusterID` | STRÄNG | Det här fältet innehåller kluster-ID:t. |
+| `clusterName` | STRÄNG | Det här fältet innehåller klusternamnet. |
+| `compositeScore` | INTEGER | Det här fältet innehåller den sammansatta poängen för avsikt. |
+| `intentID` | STRÄNG | Det här fältet innehåller ett systemgenererat unikt värde. |
+| `partitionDate` | DATUM | Det här fältet innehåller partitionsdatumet. Detta görs varje vecka i slutet av veckan i formatet `mm/dd/yyyy`. |
+| `topicID` | STRÄNG | Det här fältet innehåller ämnets-ID från Bombora. |
+| `topicName` | STRÄNG | Det här fältet innehåller det intent topic name from Bombora. |
 
 {style="table-layout:auto"}
 
@@ -104,11 +113,11 @@ När du är klar med konfigurationen av din förutsättning kan du läsa självs
 
 I det här avsnittet finns svar på vanliga frågor om källan [!DNL Bombora].
 
-### Måste jag ha ett befintligt avtal med [!DNL Bombora] för att få använda deras kontoavsiktsdata i Real-Time CDP B2B Edition?
+### Måste jag ha ett befintligt kontrakt med [!DNL Bombora] för att kunna använda kontoavsiktsdata i Real-Time CDP B2B edition?
 
 +++Svar
 
-Ja, du måste ha ett aktivt avtal med [!DNL Bombora] dem för att få tillgång till och använda deras avsiktsdata i Experience Platform och Real-Time CDP B2B Edition. Integreringen utnyttjar ditt befintliga avtal för [!DNL Bombora] att importera och aktivera signaler för kontoavsikt i Experience Platform och Real-Time CDP.
+Ja, du måste ha ett aktivt kontrakt med [!DNL Bombora] för att få tillgång till och använda deras avsiktsdata i Experience Platform och Real-Time CDP B2B edition. Integreringen utnyttjar ditt befintliga avtal med [!DNL Bombora] för att importera och aktivera kontoavsiktssignaler i Experience Platform och Real-Time CDP.
 
 +++
 
@@ -124,11 +133,11 @@ För närvarande kan du bara använda [!DNL Bombora]-standardfält för inmatnin
 
 +++Svar
 
-Ja, du kan mata in data från [!DNL Bombora] ad hoc. Du kan skapa ett nytt dataflöde för att importera de senaste avsiktsdata, så länge det finns nya data från [!DNL Bombora]. Du kan dock bara ha ett aktivt dataflöde i taget. Se därför till att du tar bort det befintliga dataflödet innan du skapar ett nytt.
+Ja, du kan importera data från [!DNL Bombora] på ad hoc-basis. Du kan skapa ett nytt dataflöde om du vill importera de senaste återgivningsdata, förutsatt att det finns nya data från [!DNL Bombora]. Du kan dock bara ha ett aktivt dataflöde åt gången. Se därför till att du tar bort det befintliga dataflödet innan du skapar ett nytt.
 
 +++
 
-### Hur ser valideringsprocessen ut för avsiktsdata och hur kan jag kontrollera vilka avsiktsdata som är länkade till ett visst konto?
+### Vilken är valideringsprocessen för återgivna data och hur kan jag kontrollera vilka återgivningsdata som är länkade till ett visst konto?
 
 +++Svar
 
@@ -136,23 +145,23 @@ Använd [Adobe Experience Platform Query Service](../../../query-service/home.md
 
 +++
 
-### Hur kan jag slå upp en avsikt för ett specifikt företag?
+### Hur hittar jag en metod för ett visst företag?
 
 +++Svar
 
-Kör en SQL-fråga i [Query Service](../../../query-service/home.md) för att söka efter avsiktsdata med hjälp av företagsnamnet eller AccountID. Om du vill visa alla avsiktsdata för ett visst företag kan du köra en SQL-fråga i Query Service med hjälp av företagsnamnet eller AccountID för att hämta alla associerade avsiktssignaler.
+Kör en SQL-fråga i [frågetjänsten](../../../query-service/home.md) om du vill söka efter avsiktsdata med företagsnamnet eller konto-ID:t. Om du vill visa alla intent-data för ett visst företag kan du köra en SQL-fråga i Query Service med företagsnamnet eller konto-ID för att hämta alla associerade intent-signaler.
 
 +++
 
 
-### Jag hittade ett problem med kontomatchningsprocessen i Experience Platform, vad ska jag göra?
+### Jag hittade ett problem med kontomatchningen i Experience Platform, vad ska jag göra?
 
 +++Svar
 
-Lösningen beror på den specifika frågan:
+Upplösningen beror på det specifika problemet:
 
-* **Felaktig eller saknad företagsdomän i Experience Platform**: Om problemet beror på ett felaktigt företagsdomänvärde i kontodata uppdaterar du fältet för företagsdomän i Experience Platform för att säkerställa korrekt matchning.
-* **Felaktig fältmappning i dataflödet**: Om problemet beror på en felaktig fältsökväg för företagsdomänen i dataflödet uppdaterar du dataflödeskonfigurationen så att den refererar till rätt fältsökväg.
+* **Felaktig eller saknad företagsdomän i Experience Platform**: Om felet beror på ett felaktigt företagsdomänvärde i kontoinformationen måste du uppdatera företagsdomänfältet i Experience Platform för att säkerställa korrekt matchning.
+* **Felaktig fältmappning i dataflöde**: Om felet beror på en felaktig sökväg till företagsdomänfält i dataflödet uppdaterar du dataflödeskonfigurationen så att den refererar till rätt fältsökväg.
 
 +++
 
@@ -196,6 +205,6 @@ Domänmatchning i Experience Platform baseras på en exakt matchning av det rens
 
 +++Svar
 
-Återgivningsdata kan användas i [målgrupper för konto](../../../segmentation/types/account-audiences.md) för att förbättra målgruppsanpassning, segmentering och personalisering. Genom att utnyttja avsiktssignaler kan företag identifiera och engagera sig med konton som visar stort intresse för specifika ämnen, vilket optimerar marknadsföring och försäljningsuppsökande verksamhet.
+Återgivningsdata kan användas i [målgrupper för konto](../../../segmentation/types/account-audiences.md) för att förbättra målgruppsanpassning, segmentering och personalisering. Genom att utnyttja avsiktssignaler kan företag identifiera och interagera med konton som visar ett stort intresse för specifika ämnen, optimera marknadsförings- och säljkontakten.
 
 +++

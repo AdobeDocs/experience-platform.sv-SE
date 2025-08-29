@@ -2,12 +2,12 @@
 title: Demandbase-metod
 description: Läs mer om Demandbase Intent-källan på Experience Platform.
 last-substantial-update: 2025-03-26T00:00:00Z
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: 62dd27e0-b846-4c04-977f-8a3ab99bc464
-source-git-commit: 5757bc84a9aeec18eb5fe21d6f02160b2ba55166
+source-git-commit: 8a5fdcfcf503df1b9d5aa338ff530181a2d03b5d
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '1474'
 ht-degree: 0%
 
 ---
@@ -60,25 +60,33 @@ Mer information om dessa autentiseringsuppgifter finns i handboken [[!DNL Google
 
 Läs det här avsnittet för information om schemat och datastrukturen för [!DNL Demandbase].
 
-Schemat [!DNL Demandbase] kallas **företagsmetod varje vecka**. Det är veckovis information om avsikter (anonym B2B-köparundersökning och innehållskonsumtion) för angivna konton och nyckelord. Data är i parquetformat.
+Schemat [!DNL Demandbase] kallas **B2B Demandbase-kontoåtergivning**. Det är veckovis information om avsikter (anonym B2B-köparundersökning och innehållskonsumtion) för angivna konton och nyckelord. Data är i parquetformat.
 
-| Fältnamn | Datatyp | Obligatoriskt | Affärsnyckel | Anteckningar |
-| --- | --- | --- | --- | --- |
-| `company_id` | STRÄNG | TRUE | JA | Det kanoniska företagets ID. |
-| `domain` | STRÄNG | TRUE | JA | Den identifierade domänen för kontot som visar återgivning. |
-| `start_date` | DATUM | TRUE | JA | Startdatum för när återgivningsaktiviteten inträffade under varaktighetsperioden. |
-| `end_date` | DATUM | TRUE | JA | Slutdatumet för när återgivningsaktiviteten inträffade under tidsperioden. |
-| `duration_type` | STRÄNG | TRUE | JA | Typ av varaktighet. I allmänhet kan det här värdet vara varje dag, vecka eller månadsvis beroende på den valda sammanslagningstiden. Det här värdet är `week` för det här dataexemplet. |
-| `keyword_set_id` | STRÄNG | TRUE | JA | Nyckelordsuppsättnings-ID. Detta är unikt för varje enskild kund. |
-| `keyword_set` | STRÄNG | TRUE | JA | Namnet på nyckelordsuppsättningen. |
-| `keyword` | STRÄNG | TRUE | | Nyckelordet intent. |
-| `is_trending` | STRÄNG | TRUE | | Det aktuella läget för en viss trend. Trendstatus mäts som en explosion i avsiktlig aktivitet under den senaste veckan i förhållande till medelvärden under de föregående sju veckorna. |
-| `intent_strength` | ENUM[STRING] | TRUE | | Ett kvantifierat mått på den intent styrkan. Godkända värden är: `HIGH`, `MED` och `LOW`. |
-| `num_people_researching` | INTEGER | TRUE | | Antalet personer som tillhör nyckelordet `company_id` som har sökt efter nyckelordet under de senaste sju dagarna. |
-| `num_trending_days` | INTEGER | TRUE | | Antalet dagar som nyckelordet trenderades under en viss tid. |
-| `trending_score` | INTEGER | TRUE | | Trendspåret. |
-| `record_id` | STRÄNG | TRUE | | Unikt primärt post-ID. |
-| `partition_date` | DATUM | TRUE | | Kalenderdatum för ögonblicksbilden. Detta görs varje vecka i slutet av veckan. |
+* Klass - XDM [!DNL Demandbase Account Intent]
+* Namnutrymme - B2B [!DNL Demandbase Account Intent]
+* Primär identitet - `intentID`
+* Relationer - B2B-konto
+
+| Fältnamn | Datatyp | Beskrivning |
+|--------------------------|-----------|-------------------------------------------------------------------------------------------------------------|
+| `extSourceSystemAudit` | OBJEKT | Det här fältet innehåller systemgranskningsinformation från den externa källan. |
+| `_id` | STRÄNG | Detta är den unika systemidentifieraren för posten. |
+| `accountDomain` | STRÄNG | Det här fältet innehåller kontodomänen. |
+| `accountID` | STRÄNG | Detta är det B2B-konto-ID som den här intent-posten är associerad med. |
+| `demandbaseAccountID` | STRÄNG | Det här är företagets ID i [!DNL Demandbase]. |
+| `durationType` | STRÄNG | I det här fältet anges typen av giltighetsperiod, t.ex. &quot;vecka&quot;. |
+| `endDate` | DATUM | Detta är slutdatumet för den ingående giltighetsperioden. |
+| `intentID` | STRÄNG | Detta är ett systemgenererat unikt värde för intent-posten. |
+| `intentStrength` | STRÄNG | I det här fältet anges typen av giltighetsperiod, t.ex. &quot;DAY&quot;, &quot;WEEK&quot; eller &quot;MONTH&quot;. |
+| `isTrending` | BOOLEAN | Det här fältet anger om nyckelordet är trendmässigt, med möjliga värden låg, Medium eller hög. |
+| `keyword` | STRÄNG | Det här fältet innehåller nyckelordet eller frasen som anger metod från [!DNL Demandbase]. |
+| `keywordSetID` | STRÄNG | Detta är identifieraren för nyckelordsuppsättningen. |
+| `keywordSetName` | STRÄNG | Det här är namnet på nyckelordsuppsättningen. |
+| `numTrendingDays` | INTEGER | I det här fältet anges antalet dagar som nyckelordet har trendats. |
+| `partitionDate` | DATUM | Detta är partitionsdatumet för posten. |
+| `peopleResearchingCount` | INTEGER | I det här fältet visas antalet personer som söker efter nyckelordet. |
+| `startDate` | DATUM | Detta är startdatumet för den ingående giltighetsperioden. |
+| `trendingScore` | INTEGER | Det här fältet innehåller trendspåret för nyckelordet. |
 
 {style="table-layout:auto"}
 
