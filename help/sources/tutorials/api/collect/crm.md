@@ -2,9 +2,9 @@
 title: Skapa ett dataflöde för inmatning av data från en CRM till Experience Platform
 description: Lär dig använda API:t för Flow Service för att skapa ett dataflöde och importera källdata till Experience Platform.
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: fe310a326f423a32b278b8179578933295de3a87
+source-git-commit: b4f8d44c3ce9507ff158cf051b7a4b524b293c64
 workflow-type: tm+mt
-source-wordcount: '2095'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Läs den här vägledningen när du vill lära dig hur du skapar ett dataflöde 
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Gruppinmatning](../../../../ingestion/batch-ingestion/overview.md): Upptäck hur du kan överföra stora datavolymer effektivt i grupper.
+* [Gruppinmatning](../../../../ingestion/batch-ingestion/overview.md): Upptäck hur du snabbt och effektivt kan överföra stora datavolymer i grupper.
 * [Katalogtjänst](../../../../catalog/datasets/overview.md): Ordna och håll reda på datauppsättningarna i Experience Platform.
 * [Dataprep](../../../../data-prep/home.md): Omforma och mappa inkommande data så att de matchar schemakraven.
 * [Dataflöden](../../../../dataflows/home.md): Konfigurera och hantera pipelines som flyttar dina data från källor till mål.
@@ -31,13 +31,13 @@ Mer information om hur du kan ringa anrop till Experience Platform API:er finns 
 
 ### Skapa basanslutning {#base}
 
-Om du vill skapa ett dataflöde för källan behöver du ett fullständigt autentiserat källkonto och dess motsvarande grundläggande anslutnings-ID. Om du inte har det här ID:t kan du gå till [källkatalogen](../../../home.md) och hitta en lista med källor som du kan skapa en basanslutning för.
+Om du vill skapa ett dataflöde för källan måste du ha ett fullständigt autentiserat källkonto och dess motsvarande grundläggande anslutnings-ID. Om du inte har det här ID:t kan du gå till [källkatalogen](../../../home.md) och hitta en lista med källor som du kan skapa en basanslutning för.
 
 ### Skapa ett mål-XDM-schema {#target-schema}
 
 Ett XDM-schema (Experience Data Model) är ett standardiserat sätt att organisera och beskriva kundupplevelsedata i Experience Platform. Om du vill importera källdata till Experience Platform måste du först skapa ett mål-XDM-schema som definierar strukturen och datatyperna som du vill importera. Det här schemat fungerar som en plan för den Experience Platform-datauppsättning där dina inmatade data finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs. Läs de här riktlinjerna för mer ingående information om hur du skapar ett XDM-målschema:
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs. Mer information om hur du skapar ett XDM-målschema finns i följande guider:
 
 * [Skapa ett schema med API:t ](../../../../xdm/api/schemas.md).
 * [Skapa ett schema med användargränssnittet](../../../../xdm/tutorials/create-schema-ui.md).
@@ -46,7 +46,7 @@ När du har skapat målschemat `$id` kommer det att krävas senare för måldata
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har importerats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
+En datamängd är en lagrings- och hanteringskonstruktion för en datamängd som vanligtvis är strukturerad som en tabell med kolumner (schema) och rader (fält). Data som har importerats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du antingen skapa en ny datauppsättning eller använda en befintlig.
 
 Du kan skapa en måldatamängd genom att göra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), samtidigt som du anger målschemats ID i nyttolasten. Detaljerade steg om hur du skapar en måldatauppsättning finns i guiden om att [skapa en datauppsättning med API:t](../../../../catalog/api/create-dataset.md).
 
@@ -64,7 +64,7 @@ POST /dataSets
 
 **Begäran**
 
-I följande exempel visas hur du skapar en måldatauppsättning som är aktiverad för kundprofilsinmatning i realtid. I den här begäran är egenskapen `unifiedProfile` inställd på `true` (under objektet `tags`), vilket innebär att Experience Platform ska inkludera den här datauppsättningen i kundprofilen i realtid.
+I följande exempel visas hur du skapar en måldatauppsättning som är aktiverad för kundprofilsinmatning i realtid. I den här begäran är egenskapen `unifiedProfile` inställd på `true` (under objektet `tags`), vilket innebär att Experience Platform ska inkludera datauppsättningen i kundprofilen i realtid.
 
 ```shell
 curl -X POST \
@@ -96,7 +96,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt måldataset-ID. Detta ID krävs senare för att skapa en målanslutning.
+Ett svar returnerar ID:t för måldatauppsättningen. Detta ID krävs senare för att skapa en målanslutning.
 
 ```json
 [
@@ -175,7 +175,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Ett beskrivande namn för källanslutningen. Använd ett tydligt och unikt namn för att göra det enklare att identifiera och hantera anslutningen i framtida åtgärder. |
+| `name` | Ett beskrivande namn för källanslutningen. Använd ett tydligt och unikt namn som gör det enklare att identifiera och hantera anslutningen i framtida åtgärder. |
 | `description` | En valfri beskrivning som du kan lägga till för att ge ytterligare information om din källanslutning. |
 | `baseConnectionId` | `id` för din basanslutning. Du kan hämta detta ID genom att autentisera källan till Experience Platform med API:t [!DNL Flow Service]. |
 | `data.format` | Dataformatet. Ange det här värdet till `tabular` för tabellbaserade källor (t.ex. databaser, CRM och leverantörer av automatiserad marknadsföring). |
@@ -235,7 +235,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Ett beskrivande namn för målanslutningen. Använd ett tydligt och unikt namn för att göra det enklare att identifiera och hantera anslutningen i framtida åtgärder. |
+| `name` | Ett beskrivande namn för målanslutningen. Använd ett tydligt och unikt namn som gör det enklare att identifiera och hantera anslutningen i framtida åtgärder. |
 | `description` | En valfri beskrivning som du kan lägga till för att ge ytterligare information om målanslutningen. |
 | `data.schema.id` | ID för ditt mål-XDM-schema. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
@@ -243,7 +243,7 @@ curl -X POST \
 
 ## Mappning {#mapping}
 
-Därefter måste du mappa källdata till målschemat som måldatauppsättningen följer. Om du vill skapa en mappning gör du en POST-begäran till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://developer.adobe.com/experience-platform-apis/references/data-prep/), anger ditt mål-XDM-schema-ID och information om de mappningsuppsättningar som du vill skapa.
+Mappa sedan källdata till målschemat som måldatauppsättningen följer. Skapa en mappning genom att göra en POST-begäran till `mappingSets`-slutpunkten för [[!DNL Data Prep] API](https://developer.adobe.com/experience-platform-apis/references/data-prep/). Inkludera ditt mål-XDM-schema-ID och information om de mappningsuppsättningar som du vill skapa.
 
 **API-format**
 
@@ -635,7 +635,7 @@ Kontrollera `items.sourceConnectionSpecIds`-arrayen i svaret för att försäkra
 
 Ett dataflöde är en konfigurerad pipeline som överför data mellan Experience Platform-tjänster. Det definierar hur data hämtas från externa källor (som databaser, molnlagring eller API:er), bearbetas och dirigeras till måldatamängder. Dessa datauppsättningar används sedan av tjänster som identitetstjänst, kundprofil i realtid och destinationer för aktivering och analys.
 
-Om du vill skapa ett dataflöde måste du ha värden för följande objekt:
+Om du vill skapa ett dataflöde måste du ange värden för följande objekt:
 
 * [Source-anslutnings-ID](#source)
 * [Målanslutnings-ID](#target)
@@ -647,8 +647,8 @@ Under det här steget kan du använda följande parametrar i `scheduleParams` f�
 | Schemaläggningsparameter | Beskrivning |
 | --- | --- |
 | `startTime` | epoktiden (i sekunder) när dataflödet ska starta. |
-| `frequency` | Hur ofta du har fått i dig läkemedlet. Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan ange frekvensen till: <ul><li>`once`: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>`minute`: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>`hour`: Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>`day`: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>`week`: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
-| `interval` | Intervallet mellan efterföljande inmatningar (krävs för alla frekvenser utom `once`). Konfigurera intervallinställningen för att fastställa tidsramen mellan varje intag. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Du kan inte ange intervallet till noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>`once`: ingen</li><li>`minute`: 15</li><li>`hour`: 1</li><li>`day`: 1</li><li>`week`: 1</li></ul> |
+| `frequency` | Hur ofta du har fått i dig läkemedlet. Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan ange frekvensen till: <ul><li>`once`: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Inställningarna för intervall och bakåtfyllnad är inte tillgängliga för engångsinmatningsjobb. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>`minute`: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>`hour`: Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>`day`: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>`week`: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
+| `interval` | Intervallet mellan efterföljande inmatningar (krävs för alla frekvenser utom `once`). Konfigurera intervallinställningen för att fastställa tidsramen mellan varje intag. Om din frekvens till exempel är inställd på dag och intervallet är 15, kommer dataflödet att köras var 15:e dag. Du kan inte ange intervallet till noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>`once`: ingen</li><li>`minute`: 15</li><li>`hour`: 1</li><li>`day`: 1</li><li>`week`: 1</li></ul> |
 | `backfill` | Anger om historiska data ska importeras före `startTime`. |
 
 {style="table-layout:auto"}
@@ -723,7 +723,7 @@ curl -X POST \
 | `transformations.params.mappingId` | Mappnings-ID som genererades i ett tidigare steg. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid (sekunder sedan Unix-epok). Avgör när dataflödet börjar sin första körning. |
 | `scheduleParams.frequency` | Den frekvens som dataflödet körs med. Godtagbara värden är: `once`, `minute`, `hour`, `day` eller `week`. |
-| `scheduleParams.interval` | Intervallet mellan på varandra följande dataflöden körs, baserat på vald frekvens. Måste vara ett heltal som inte är noll. Ett intervall på `15` med frekvensen `minute` innebär till exempel att dataflödet körs var 15:e minut. |
+| `scheduleParams.interval` | Intervallet mellan på varandra följande dataflöden körs, baserat på vald frekvens. Måste vara ett heltal som inte är noll. Om du till exempel har angett frekvensen som minut och intervallet är 15, kommer dataflödet att köras var 15:e minut. |
 | `scheduleParams.backfill` | Ett booleskt värde (`true` eller `false`) som avgör om historiska data (bakåtfyllnad) ska importeras när dataflödet skapas. |
 
 {style="table-layout:auto"}
@@ -755,11 +755,11 @@ I den här självstudiekursen får du hjälp med att skapa ett dataflöde i Expe
 
 ### Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som hämtas genom det för att visa information om hur mycket data som har importerats, hur bra de är och vilka fel som har uppstått. Mer information om hur du övervakar dataflöde finns i självstudiekursen [Övervaka konton och dataflöden](../../../../dataflows/ui/monitor-sources.md).
+När dataflödet har skapats kan du övervaka dess prestanda direkt i Experience Platform-gränssnittet. Detta inkluderar spårning av ingångsfrekvens, framgångsmått och eventuella fel som inträffar. Mer information om hur du övervakar dataflöde finns i självstudiekursen [Övervaka konton och dataflöden](../../../../dataflows/ui/monitor-sources.md).
 
 ### Uppdatera ditt dataflöde
 
-Om du vill uppdatera konfigurationer för schemaläggning, mappning och allmän information för dina dataflöden går du till självstudiekursen [Uppdatera källfilens dataflöden](../../api/update-dataflows.md).
+Om du vill uppdatera konfigurationer för schemaläggning, mappning eller allmän information för dataflöden går du till självstudiekursen [Uppdatera källfilens dataflöden](../../api/update-dataflows.md).
 
 ## Ta bort ditt dataflöde
 

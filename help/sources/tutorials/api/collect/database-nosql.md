@@ -3,9 +3,9 @@ title: Skapa ett dataflöde för datakällor med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du använder API:t för Flow Service för att skapa ett dataflöde och importera data från din databas till Experience Platform.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: a5fa939d522b0bf828f42144657ea15f9c3347ed
+source-git-commit: b4f8d44c3ce9507ff158cf051b7a4b524b293c64
 workflow-type: tm+mt
-source-wordcount: '1455'
+source-wordcount: '1456'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ I den här självstudiekursen får du lära dig hur du skapar ett dataflöde och
 
 >[!NOTE]
 >
->* För att kunna skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutning med en datakälla. Om du inte har det här ID:t kan du gå till [källkatalogen](../../../home.md#database) för att få en lista över databaskällor som du kan skapa en basanslutning med.
+>* För att kunna skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutning med en datakälla. Om du inte har det här ID:t kan du gå till [källkatalogen](../../../home.md#database) och visa en lista över databaskällor som du kan skapa en basanslutning med.
 >* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC. Den enda tidsstämpeln som stöds för [[!DNL Snowflake] source](../../../connectors/databases/snowflake.md) är TIMESTAMP_NTZ med UTC-tid.
 
 ## Komma igång
