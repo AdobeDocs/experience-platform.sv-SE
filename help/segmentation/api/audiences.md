@@ -33,7 +33,7 @@ GET /audiences?{QUERY_PARAMETERS}
 
 >[!NOTE]
 >
->Om du använder den här slutpunkten utan frågeparametrar returneras **inte** för inaktiva målgrupper. Om du däremot använder den här slutpunkten tillsammans med frågeparametern `property=audienceId`, returneras inaktiva målgrupper ****.
+>Om du använder den här slutpunkten utan frågeparametrar returneras **inte** för inaktiva målgrupper. Om du däremot använder den här slutpunkten tillsammans med frågeparametern `property=audienceId`, returneras inaktiva målgrupper **&#x200B;**.
 
 Följande frågeparametrar kan användas när en lista över målgrupper hämtas:
 
