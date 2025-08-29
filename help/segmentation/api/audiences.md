@@ -3,7 +3,7 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 2ec6bacb44dc9b31fcd5cb4c457ba109a921aa84
+source-git-commit: 63fa87ac9777b3ac66d990dd4bfbd202f07b0eba
 workflow-type: tm+mt
 source-wordcount: '1592'
 ht-degree: 0%
@@ -33,7 +33,7 @@ GET /audiences?{QUERY_PARAMETERS}
 
 >[!NOTE]
 >
->Om du använder den här slutpunkten utan frågeparametrar returneras **inte** för inaktiva målgrupper. Om du däremot använder den här slutpunkten tillsammans med frågeparametern `property=audienceId`, returneras inaktiva målgrupper **&#x200B;**.
+>Om du använder den här slutpunkten utan frågeparametrar returneras **inte** för inaktiva målgrupper. Om du däremot använder den här slutpunkten tillsammans med frågeparametern `property=audienceId`, returneras inaktiva målgrupper ****.
 
 Följande frågeparametrar kan användas när en lista över målgrupper hämtas:
 
@@ -51,7 +51,7 @@ Följande frågeparametrar kan användas när en lista över målgrupper hämtas
 
 Följande begäran hämtar de två sista målgrupperna som skapats i din organisation.
 
-+++En exempelbegäran om att hämta en lista över målgrupper.
++++Ett exempel på en begäran om att hämta en lista över målgrupper.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=2 \
@@ -166,7 +166,12 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper som sk
     ],
     "_page":{
       "totalCount": 111,
-      "pageSize": 2,
+      "totalPages": 21,
+      "sortField": "name",
+      "sort": "asc", 
+      "pageSize": 5,
+      "limit": 5,
+      "start": "0",
       "next": "1"
    },
    "_links":{
@@ -559,7 +564,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-41
 
 Ett lyckat svar returnerar HTTP-status 200 med den uppdaterade publiken.
 
-+++Ett exempelsvar när du korrigerar ett fält i en målgrupp.
++++Ett exempelsvar när ett fält korrigeras i en målgrupp.
 
 ```json
 {
