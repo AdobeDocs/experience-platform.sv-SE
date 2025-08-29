@@ -103,8 +103,8 @@ Objektet conversionDetails samlar in spårningsinformation för annonskonverteri
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `trackingCode` | Sträng | Koden för konverteringsspårning för händelsen. En lista över möjliga format finns i [AMO ID-format](https://experienceleague.adobe.com/en/docs/advertising/integrations/customer-journey-analytics/ids#amo-id-formats). |
-| `trackingIdentities` | Sträng | EF-ID:t eller identitetsinformation för spårning för en händelse. En lista över möjliga format finns i [EF ID-format](https://experienceleague.adobe.com/en/docs/advertising/integrations/customer-journey-analytics/ids#ef-id-formats). |
+| `trackingCode` | Sträng | Koden för konverteringsspårning för händelsen. En lista över möjliga format finns i [AMO ID-format](https://experienceleague.adobe.com/sv/docs/advertising/integrations/customer-journey-analytics/ids#amo-id-formats). |
+| `trackingIdentities` | Sträng | EF-ID:t eller identitetsinformation för spårning för en händelse. En lista över möjliga format finns i [EF ID-format](https://experienceleague.adobe.com/sv/docs/advertising/integrations/customer-journey-analytics/ids#ef-id-formats). |
 | `conversionProperties` | Objekt | En karta över konverteringsegenskaper, som representeras av en matris med nyckelvärdepar (till exempel `subscriptions=253`). |
 
 ## `fees` {#fees}
