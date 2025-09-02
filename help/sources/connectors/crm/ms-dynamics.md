@@ -4,22 +4,22 @@ solution: Experience Platform
 title: Microsoft Dynamics Source Connector - översikt
 description: Lär dig hur du ansluter Microsoft Dynamics till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 6ca162ce-2016-4270-b741-301cf4230233
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16fe5340582dcea0ff40000fb516c1b72d5f150e
 workflow-type: tm+mt
-source-wordcount: '285'
-ht-degree: 1%
+source-wordcount: '284'
+ht-degree: 0%
 
 ---
 
-# Microsoft Dynamics-koppling
+# [!DNL Microsoft Dynamics]-källa
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+[!DNL Microsoft Dynamics] är en uppsättning affärsprogram som du kan använda för att hantera dina åtgärder mer effektivt. Oavsett om du ser kundrelationer, ekonomi eller leveranskedjor ger [!DNL Microsoft Dynamics] dig verktygen du behöver för att effektivisera dina arbetsflöden och fatta smartare beslut. Plattformen är byggd för att stödja både resursplanering och CRM (customer relationship management), vilket gör att ni kan sammanföra era affärsprocesser i ett enda integrerat system.
 
-[!DNL Experience Platform] har stöd för inhämtning av data från ett CRM-system från tredje part. Stöd för CRM-providers omfattar [!DNL Microsoft Dynamics].
+Du kan använda källan [!DNL Microsoft Dynamics] för att importera data från ditt [!DNL Microsoft Dynamics]-konto till Adobe Experience Platform.
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ## Fältmappning från [!DNL Microsoft Dynamics] till XDM
 
