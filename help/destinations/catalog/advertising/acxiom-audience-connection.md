@@ -1,43 +1,43 @@
 ---
-title: Acxiom-målgruppsdistribution
-description: Använd  [!DNL Acxiom Audience Distribution] målet om du vill förbättra målgrupper med  [!DNL Acxiom's Real ID] teknik och aktivera målgrupper på flera plattformar, till exempel  [!DNL Altice], [!DNL Ampersand], [!DNL Comcast] med flera.
+title: Acxiom Audience Connection
+description: Använd  [!DNL Acxiom Audience Connection] målet om du vill förbättra målgrupper med  [!DNL Acxiom's Real ID] teknik och aktivera målgrupper på flera plattformar, till exempel  [!DNL Altice], [!DNL Ampersand], [!DNL Comcast] med flera.
 badge: label="Beta" type="Informative"
 exl-id: bac0f337-bfab-4779-acc8-f70239552666
-source-git-commit: 290d6eb20b7d35839b4bb37e71e2c993b112d896
+source-git-commit: 70a1cdcfd99ae006f02289ab5a20ced624b51ccc
 workflow-type: tm+mt
 source-wordcount: '909'
 ht-degree: 3%
 
 ---
 
-# [!DNL Acxiom Audience Distribution] mål
+# Mål [!DNL Acxiom Audience Connection]
 
 >[!NOTE]
 >
->Målet [!DNL Acxiom Audience Distribution] är i betaversion. Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Acxiom]-teamet. Kontakta Acxiom [här](mailto:acxiom-adobe-help@acxiom.com) om du har frågor eller uppdateringsfrågor.
+>Målet [!DNL Acxiom Audience Connection] är i betaversion. Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Acxiom]-teamet. Kontakta Acxiom [här](mailto:acxiom-adobe-help@acxiom.com) om du har frågor eller uppdateringsfrågor.
 
-Använd målet [!DNL Acxiom Audience Distribution] för att förbättra målgrupper med tekniken [!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/) och aktivera målgrupper på flera plattformar, till exempel [!DNL Altice], [!DNL Ampersand], [!DNL Comcast].
+Använd målet [!DNL Acxiom Audience Connection] för att förbättra målgrupper med tekniken [!DNL Acxiom's] [Real ID™](https://www.acxiom.com/real-id/real-id/) och aktivera målgrupper på flera plattformar, till exempel [!DNL Altice], [!DNL Ampersand], [!DNL Comcast].
 
-Den här självstudien innehåller anvisningar om hur du skapar en [!DNL Acxiom Audience Distribution]-målkoppling med användargränssnittet i [!DNL Adobe Experience Platform]. Den här kopplingen används för att skapa och distribuera målgrupper till valda destinationer.
+Den här självstudien innehåller anvisningar om hur du skapar en [!DNL Acxiom Audience Connection]-målkoppling med användargränssnittet i [!DNL Adobe Experience Platform]. Den här kopplingen används för att skapa och distribuera målgrupper till valda destinationer.
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Acxiom Audience Distribution] finns det ett exempel på användning som [!DNL Adobe Experience Platform]-kunder kan lösa med den här anslutningen.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Acxiom Audience Connection] finns det ett exempel på användning som [!DNL Adobe Experience Platform]-kunder kan lösa med den här anslutningen.
 
 ### Skicka målgrupper från Experience Platform till ditt Acxiom-konto {#send-audiences}
 
 Använd den här målkopplingen om du är marknadsföringsproffs och vill skicka målgrupper från [!DNL Experience Platform] till ditt [!DNL Acxiom]-konto för kanalövergripande värvning.
 
-Marknadsföringsavdelningen på ett globalt varumärke för finansiella tjänster är till exempel intresserad av att värva kunder över flera kanaler via olika annonsplattformar. De kan använda [!DNL Acxiom Audience Distribution]-målanslutningen för att skicka målgrupper från [!DNL Experience Platform] till [!DNL Acxiom], förbättra målgrupperna med [!DNL Acxiom's Real ID]-teknik och aktivera målgrupperna på flera plattformar, som [!DNL Altice], [!DNL Ampersand], [!DNL Comcast] med mera.
+Marknadsföringsavdelningen på ett globalt varumärke för finansiella tjänster är till exempel intresserad av att värva kunder över flera kanaler via olika annonsplattformar. De kan använda [!DNL Acxiom Audience Connection]-målanslutningen för att skicka målgrupper från [!DNL Experience Platform] till [!DNL Acxiom], förbättra målgrupperna med [!DNL Acxiom's Real ID]-teknik och aktivera målgrupperna på flera plattformar, som [!DNL Altice], [!DNL Ampersand], [!DNL Comcast] med mera.
 
 ## Förhandskrav {#prerequisites}
 
-* **Bekräfta användningsvillkoren:** Innan du kan konfigurera ett nytt [!DNL Acxiom Audience Distribution]-mål måste du läsa och signera [!DNL Acxiom's] användningsvillkoren för avtalet. Du får länken till avtalet när den genomförda försäljningsordern är slutförd. Innan du har signerat avtalet visas inte målkortet [!DNL Acxiom Audience Distribution] i Experience Platform målkatalog. När du har godkänt och signerat avtalet slutför [!DNL Adobe] din introduktionsprocess och du ser målkortet [!DNL Acxiom Audience Distribution].
-* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/sv/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
+* **Bekräfta användningsvillkoren:** Innan du kan konfigurera ett nytt [!DNL Acxiom Audience Connection]-mål måste du läsa och signera [!DNL Acxiom's] användningsvillkoren för avtalet. Du får länken till avtalet när den genomförda försäljningsordern är slutförd. Innan du har signerat avtalet visas inte målkortet [!DNL Acxiom Audience Connection] i Experience Platform målkatalog. När du har godkänt och signerat avtalet slutför [!DNL Adobe] din introduktionsprocess och du ser målkortet [!DNL Acxiom Audience Connection].
+* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
 
 ## Destinationer som stöds {#supported-destinations}
 
-Målet [!DNL Acxiom Audience Distribution] stöder för närvarande målgruppsaktivering på följande plattformar.<br>
+Målet [!DNL Acxiom Audience Connection] stöder för närvarande målgruppsaktivering på följande plattformar.<br>
 
 * [!DNL Altice]
 * [!DNL Ampersand]
@@ -49,11 +49,11 @@ Målet [!DNL Acxiom Audience Distribution] stöder för närvarande målgruppsak
 
 ## Anslut till målet {#connect}
 
-Autentisering till [!DNL Acxiom's Audience Distribution]-målet hanteras automatiskt bakom scenerna för att underlätta för dig.
+Autentisering till [!DNL Acxiom's Audience Connection]-målet hanteras automatiskt bakom scenerna för att underlätta för dig.
 
 ## Målspecifika inställningar {#destination-settings}
 
-Vissa [!DNL Acxiom Audience Distribution]-mål kräver ytterligare information. Avsnitten nedan innehåller detaljerad vägledning om hur du konfigurerar dessa alternativ.
+Vissa [!DNL Acxiom Audience Connection]-mål kräver ytterligare information. Avsnitten nedan innehåller detaljerad vägledning om hur du konfigurerar dessa alternativ.
 
 ### [!DNL LG Ads] {#lg-ads}
 
@@ -74,13 +74,13 @@ Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinat
 
 >[!NOTE]
 >
->Målet [!DNL Acxiom Audience Distribution] stöder endast fullständig filexport.
+>Målet [!DNL Acxiom Audience Connection] stöder endast fullständig filexport.
 
 ### Mappa attribut och identiteter {#map}
 
-För att målplatsen [!DNL Acxiom Audience Distribution] ska kunna ta emot målgruppsdata på rätt sätt måste du mappa källfälten från Experience Platform till rätt [!DNL Acxiom Audience Distribution] målfält.
+För att målplatsen [!DNL Acxiom Audience Connection] ska kunna ta emot målgruppsdata på rätt sätt måste du mappa källfälten från Experience Platform till rätt [!DNL Acxiom Audience Connection] målfält.
 
-[!DNL Acxiom Audience Distribution] tillåter bara mappning till följande målfält. Målfälten som beskrivs i tabellen nedan måste mappas i den ordning som visas nedan.
+[!DNL Acxiom Audience Connection] tillåter bara mappning till följande målfält. Målfälten som beskrivs i tabellen nedan måste mappas i den ordning som visas nedan.
 
 | Fältnamn | Beskrivning | Obligatoriskt | Fältordning | Maximal längd |
 |---|---|---|---|---|          
@@ -96,7 +96,7 @@ För att målplatsen [!DNL Acxiom Audience Distribution] ska kunna ta emot målg
 | E-post | Primär e-post Som standard används det här fältet som en dedupliceringsnyckel för att göra posterna unika | Nej | 10 | 255 |
 | Telefon | Telefonnummer till individ (riktnummer + nummer)<br> Det här fältet används som standard som en dedupliceringsnyckel för att göra posterna unika. | Nej | 11 | 10 |
 
-I kolumnen **[!UICONTROL Source Field]** anger du namnet på vart och ett av källattributen som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL &#x200B; Select source field]**.<br>
+I kolumnen **[!UICONTROL Source Field]** anger du namnet på vart och ett av källattributen som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL  Select source field]**.<br>
 ![ Mappningsskärm ](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
 
 När du har mappat alla fält väljer du **[!UICONTROL Next]**.
@@ -105,7 +105,7 @@ Om du inte använder standardschemat [!DNL Adobe's] läser du [Användargränssn
 
 ### Granska {#review}
 
-När du har slutfört alla steg ovan kan du granska din målanslutningsstatus och målgruppsinformation innan du aktiverar (distribuerar) den. De valda målgrupperna visas längst ned i en lista. Varje målgrupp blir ett separat anrop till API:t [!DNL Acxiom Audience Distribution].
+När du har slutfört alla steg ovan kan du granska din målanslutningsstatus och målgruppsinformation innan du aktiverar (distribuerar) den. De valda målgrupperna visas längst ned i en lista. Varje målgrupp blir ett separat anrop till API:t [!DNL Acxiom Audience Connection].
 
 Om du är nöjd med resultaten väljer du **[!UICONTROL Finish]** för att aktivera målet.
 
@@ -128,4 +128,4 @@ Genom att följa den här självstudiekursen har du aktiverat en målgrupp för 
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/sv/docs/experience-platform/data-governance/home).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home).
