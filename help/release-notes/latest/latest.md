@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 35c3933f5debbba04c885f6000b908e292613395
-workflow-type: ht
-source-wordcount: '1323'
-ht-degree: 100%
+source-git-commit: 76acf488ad06ec7b3fe818cf34c86ea76dc614f4
+workflow-type: tm+mt
+source-wordcount: '1305'
+ht-degree: 97%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 100%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -160,7 +160,7 @@ Mer information om sandlådor finns i [översikten över sandlådor](../../sandb
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Målgruppsuppskattningar | Målgruppsuppskattningar genereras nu automatiskt i Segment Builder. Värdet uppdateras varje gång du ändrar målgruppen och återspeglar alltid de senaste målgruppsreglerna. Beräkningen visas nu som ett **intervall** som baseras på konfidensintervall för samplingsdata. |
+| Målgruppsuppskattningar | Målgruppsuppskattningar visas nu som ett **intervall**, som baseras på samplingsdatans konfidensintervall. Mer information om uppskattningar finns i [guiden Skapa segment](/help/segmentation/ui/segment-builder.md#audience-properties). |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 

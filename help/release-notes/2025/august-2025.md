@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: d93e98f3-d165-4710-ad1d-2ad3857cd0f8
-source-git-commit: 35c3933f5debbba04c885f6000b908e292613395
+source-git-commit: 76acf488ad06ec7b3fe818cf34c86ea76dc614f4
 workflow-type: tm+mt
-source-wordcount: '1323'
-ht-degree: 85%
+source-wordcount: '1305'
+ht-degree: 97%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 85%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -102,14 +102,14 @@ Mer information om Katalogtjänsten finns i [översikten över Katalogtjänsten]
 
 | Mål | Beskrivning |
 | --- | --- |
-| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) intern uppgradering | Från och med den 11 augusti 2025 har du kanske sett två **[!DNL Microsoft Bing]**-kort sida vid sida i målkatalogen under en kort tidsperiod. Det här beror på en intern uppgradering av måltjänsten. Den befintliga målanslutningen **[!DNL Microsoft Bing]** har bytt namn till **[!UICONTROL (Deprecated) Microsoft Bing]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Microsoft Bing]**. <br> Uppgraderingen har slutförts och det borttagna kortet har tagits bort från målkatalogen. Använd anslutningen **[!UICONTROL Microsoft Bing]** i katalogen för nya aktiveringsdataflöden. Om du har haft aktiva dataflöden till målet **[!UICONTROL (Deprecated) Microsoft Bing]** uppdateras de automatiskt, så ingen åtgärd krävs från dig. <br><br> Om du skapar dataflöden via [Flow Service API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> Efter den här uppgraderingen kan det hända att **antalet aktiverade profiler** i dina dataflöden minskar till [!DNL Microsoft Bing]. Denna minskning orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. |
-| Information om förfallodatum för autentisering för [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md) och [LinkedIn Matched Audiences](../../destinations/catalog/social/linkedin-b2b.md) | Information om förfallodatum för autentisering för [!DNL LinkedIn]-mål visas nu direkt i Experience Platform-gränssnittet, så du kan se när din autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. Du kan övervaka dina tokens förfallodatum från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**. |
+| [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) intern uppgradering | Från och med 11 augusti 2025 har du under en kort tidsperiod kanske sett två **[!DNL Microsoft Bing]**-kort sida vid sida i destinationskatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga målanslutningen **[!DNL Microsoft Bing]** har bytt namn till **[!UICONTROL (Deprecated) Microsoft Bing]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Microsoft Bing]**. <br> Uppgraderingen har slutförts och det inaktuella kortet har tagits bort från destinationskatalogen. Använd **[!UICONTROL Microsoft Bing]**-anslutningen i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till **[!UICONTROL (Deprecated) Microsoft Bing]**-destinationen uppdateras de automatiskt. Du behöver därför inte göra något. <br><br> Om du skapar dataflöden via [Flow Service API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> Efter den här uppgraderingen kan det hända att **antalet aktiverade profiler** i dina dataflöden minskar till [!DNL Microsoft Bing]. Denna minskning orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. |
+| Information om förfallotid för autentisering för [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md)- och [LinkedIn Matched Audiences](../../destinations/catalog/social/linkedin-b2b.md)-destinationer | Information om förfallotid för autentisering för [!DNL LinkedIn]-destinationer visas nu direkt i Experience Platform-gränssnittet, så du kan se när din autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. Du kan övervaka förfallotiden för dina tokens från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**. |
 
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Förbättrade funktioner för sökning, filtrering och taggning för mål | Förbättra arbetsflödet för målhantering med förbättrade sök-, filtrerings- och taggningsfunktioner på flikarna [Bläddra](../../destinations/ui/destinations-workspace.md#browse) och [Konton](../../destinations/ui/destinations-workspace.md#accounts). <br> Du kan nu söka efter specifika dataflöden och konton efter namn, filtrera efter olika villkor, inklusive målplattform, status och datum, och skapa anpassade taggar för att ordna dina mål. Kolumnsortering är också tillgängligt för nyckelfält som körningstid för senaste dataflöde, vilket gör det enklare att identifiera och hantera målanslutningarna. <br> ![Animerad demonstration av sökning efter ett måldataflöde på fliken Bläddra](../../destinations/assets/ui/workspace/search.gif) |
+| Förbättrade funktioner för sökning, filtrering och taggning för mål | Förbättra arbetsflödet för målhantering med förbättrade sök-, filtrerings- och taggningsfunktioner på flikarna [Bläddra](../../destinations/ui/destinations-workspace.md#browse) och [Konton](../../destinations/ui/destinations-workspace.md#accounts). <br> Nu kan du söka efter specifika dataflöden och konton med namn, filtrera efter olika kriterier däribland destinationsplattform eller status och datum samt skapa anpassade taggar för att ordna dina destinationer. Kolumnsortering är också tillgänglig för viktiga fält, bland annat körningstid för senaste dataflöde, vilket gör det enklare att identifiera och hantera destinationsanslutningarna. <br> ![Animerad demonstration av sökning efter ett destinationsdataflöde på fliken Bläddra](../../destinations/assets/ui/workspace/search.gif) |
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -159,7 +159,7 @@ Mer information om sandlådor finns i [översikten över sandlådor](../../sandb
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Målgruppsuppskattningar | Målgruppsuppskattningar genereras nu automatiskt i Segment Builder. Värdet uppdateras varje gång du ändrar målgruppen och återspeglar alltid de senaste målgruppsreglerna. Beräkningen visas nu som ett **intervall** som baseras på konfidensintervall för samplingsdata. |
+| Målgruppsuppskattningar | Målgruppsuppskattningar visas nu som ett **intervall**, som baseras på samplingsdatans konfidensintervall. Mer information om uppskattningar finns i [guiden Skapa segment](/help/segmentation/ui/segment-builder.md#audience-properties). |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
