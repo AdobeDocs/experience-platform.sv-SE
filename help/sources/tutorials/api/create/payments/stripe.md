@@ -3,18 +3,14 @@ title: Infoga betalningsdata från ditt [!DNL Stripe] konto till Experience Plat
 description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service
 badge: Beta
 exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '2028'
+source-wordcount: '2006'
 ht-degree: 0%
 
 ---
 
 # Infoga betalningsdata från ditt [!DNL Stripe]-konto till Experience Platform med API:er
-
->[!NOTE]
->
->Källan [!DNL Stripe] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 Läs följande självstudiekurs om du vill lära dig hur du importerar dina betalningsdata från [!DNL Stripe] till Adobe Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -550,7 +546,7 @@ POST /conversion/mappingSets
 
 Följande begäran skapar en mappning för [!DNL Stripe].
 
-+++Markera för att visa ett exempel på en begäran
++++Välj för att visa begärandeexempel
 
 ```shell
 curl -X POST \
@@ -880,7 +876,7 @@ curl -X POST \
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 | `scheduleParams.startTime` | Den tid då dataflödet börjar. Du måste ange starttidsvärdet i formatet Unix-tidsstämpel. |
-| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Du kan konfigurera intagsfrekvensen till:  <ul><li>**En gång**: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>**Minut**: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>**Timme**:Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>**Dag**: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>**Vecka**: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
+| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Du kan konfigurera intagsfrekvensen till:  <ul><li>**En gång**: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>**Minut**: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>**Timme**:Set din frekvens till `hour` om du vill schemalägga ditt dataflöde att importera data per timme.</li><li>**Dag**: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>**Vecka**: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
 | `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Intervallvärdet ska vara ett heltal som inte är noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
 
 **Svar**

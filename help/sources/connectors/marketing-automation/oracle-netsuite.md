@@ -2,20 +2,15 @@
 title: Oracle NetSuite Source - översikt
 description: Lär dig hur du ansluter Oracle NetSuite till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2024-01-30T00:00:00Z
-badge: Beta
 exl-id: 1dd30660-c990-4d3f-a64f-2a17e426f56d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '738'
 ht-degree: 0%
 
 ---
 
 # [!DNL Oracle NetSuite]
-
->[!NOTE]
->
->Källan [!DNL Oracle NetSuite] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -30,7 +25,7 @@ Du kan använda två olika källor för att importera data från [!DNL Oracle Ne
 
 Visa följande tabell för mer information om de två [!DNL Oracle NetSuite]-källorna.
 
-| Source | Typ | Beskrivning |
+| Källa | Typ | Beskrivning |
 | --- | --- | --- |
 | [[!DNL Oracle NetSuite Activities]](#oracle-netsuite-activities) | Händelse | Hämta schemalagda aktiviteter som lagts till i din kalender. |
 | [[!DNL Oracle NetSuite Entities]](#oracle-netsuite-entities) | Kund | Hämta specifika kunddata, t.ex. kundnamn, adresser och nyckelidentifierare. |

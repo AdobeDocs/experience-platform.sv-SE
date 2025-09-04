@@ -3,18 +3,14 @@ title: Importera betalningsdata från ditt Stripe-konto till Experience Platform
 description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Experience Platform via användargränssnittet.
 badge: Beta
 exl-id: f20c5935-a7c0-4387-b29e-73e78cab4972
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '1611'
+source-wordcount: '1590'
 ht-degree: 0%
 
 ---
 
 # Infoga betalningsdata från ditt [!DNL Stripe]-konto till Experience Platform via användargränssnittet
-
->[!NOTE]
->
->Källan [!DNL Stripe] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 Läs följande självstudiekurs om du vill veta mer om hur du importerar betalningsdata från ditt [!DNL Stripe]-konto till Adobe Experience Platform via användargränssnittet.
 
@@ -116,7 +112,7 @@ Om du redan har en befintlig datauppsättning väljer du **[!UICONTROL Existing 
 
 >[!ENDTABS]
 
-+++Välj om du vill ha steg för att aktivera profilintagning, feldiagnostik och partiell förtäring.
++++Välj för steg om du vill aktivera profilinmatning, feldiagnostik och partiell inmatning.
 
 Om din datauppsättning är aktiverad för kundprofil i realtid kan du under det här steget växla **[!UICONTROL Profile dataset]** för att aktivera dina data för profilinmatning. Du kan också använda det här steget för att aktivera **[!UICONTROL Error diagnostics]** och **[!UICONTROL Partial ingestion]**.
 

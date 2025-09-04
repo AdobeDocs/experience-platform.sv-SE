@@ -1,22 +1,15 @@
 ---
 title: Skapa en källanslutning och ett dataflöde för Oracle NetSuite-enheter med API:t för Flow Service
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att skicka Oracle NetSuite-kontakter och kunddata till Experience Platform med API:t för Flow Service.
-hide: true
-hidefromtoc: true
-badge: Beta
 exl-id: ddbb413e-a6ca-49df-b68d-37c9d2aab61b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '2177'
+source-wordcount: '2160'
 ht-degree: 0%
 
 ---
 
 # Skapa en källanslutning och ett dataflöde för [!DNL Oracle NetSuite Entities] med API:t för Flow Service
-
->[!NOTE]
->
->Källan [!DNL Oracle NetSuite Entities] är i betaversion. Mer information om hur du använder betatecknade källor finns i [källöversikten](../../../../home.md#terms-and-conditions).
 
 Läs följande självstudiekurs om du vill veta mer om hur du kan ta med kontakter och kunddata från ditt [!DNL Oracle NetSuite Activities Entities]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

@@ -1,22 +1,15 @@
 ---
 title: Skapa en  [!DNL Oracle NetSuite Activities] källanslutning i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en Oracle NetSuite-aktivitet med hjälp av Adobe Experience Platform användargränssnitt.
-hide: true
-hidefromtoc: true
-badge: Beta
 exl-id: 99ef0b50-c8d6-48d6-895f-46b7ade47520
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '608'
-ht-degree: 0%
+source-wordcount: '591'
+ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Oracle NetSuite Activities]-källanslutning i användargränssnittet
-
->[!NOTE]
->
->Källan [!DNL Oracle NetSuite Activities] är i betaversion. Mer information om hur du använder betatecknade källor finns i [källöversikten](../../../../home.md#terms-and-conditions).
 
 Läs följande självstudiekurs om du vill lära dig hur du överför händelsedata från ditt [!DNL Oracle NetSuite Activities]-konto till Adobe Experience Platform i användargränssnittet.
 

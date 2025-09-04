@@ -2,20 +2,15 @@
 title: PathFactory Source - översikt
 description: Lär dig hur du ansluter PathFactory till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2024-04-30T00:00:00Z
-badge: Beta
 exl-id: befb73c4-fd6a-4512-9124-d23a1c27e0e0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
 
 # [!DNL PathFactory]
-
->[!NOTE]
->
->Källan [!DNL PathFactory] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 [[!DNL PathFactory]](https://www.pathfactory.com/) erbjuder en molnbaserad plattform som hjälper företag att hantera innehållsresor och öka engagemanget med hjälp av smarta innehållsinsikter. Den här guiden beskriver hur du kan integrera data från PathFactory i Experience Platform med hjälp av PathFactorys anslutningar för optimalt databehov.
 

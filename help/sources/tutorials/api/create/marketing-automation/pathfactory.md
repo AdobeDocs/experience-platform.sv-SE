@@ -1,11 +1,10 @@
 ---
 title: Skapa en PathFactory-basanslutning med API:t för Flow-tjänsten
 description: Lär dig hur du autentiserar ditt PathFactory-konto mot Experience Platform med API:t för Flow Service.
-badge: Beta
 exl-id: 2bdfe38b-d3f7-480f-87c6-0b98b9521be2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '545'
 ht-degree: 1%
 
 ---
