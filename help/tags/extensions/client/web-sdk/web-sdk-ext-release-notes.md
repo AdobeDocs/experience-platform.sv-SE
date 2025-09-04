@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 54c609ec995ac8e48c1c6441390b205bfb5a01cc
+source-git-commit: 1cc62ee8c87ff2c1c1d55db2e462d485289120ed
 workflow-type: tm+mt
-source-wordcount: '2812'
+source-wordcount: '2934'
 ht-degree: 1%
 
 ---
@@ -13,6 +13,18 @@ ht-degree: 1%
 # Versionsinformation om SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.32.0 - 4 september 2025
+
+**Nya funktioner**
+
+- Innehåller [version 2.29.0](../../../../web-sdk/release-notes.md#2-29-0) av Adobe Experience Platform Web SDK.
+- Stöd för Adobe Advertising har lagts till som en ny anpassad byggkomponent. Konfigurera i tilläggskonfigurationen och i skicka händelseanrop.
+- Stöd för inspelning av push-prenumerationsinformation har lagts till i profilen. Detta görs genom en ny åtgärd,&quot;Push subscription details&quot;
+
+**Korrigeringar och förbättringar**
+
+- Förbättrad redigering av XDM-dataelement när scheman eller sandlådor inte är tillgängliga. Nu kan du redigera XDM-objekt och variabeldataelement även när det inte går att hitta deras refererade scheman eller när sandlådor inte är tillgängliga. Detta löser problem som ofta inträffar under organisationsmigreringar till nya datacenter, där schema-ID:n kan ändras och tidigare orsakade att redigeringsgränssnitt visade fel och blir oanvändbara.
 
 ## Version 2.31.1 - 31 juli 2025
 
@@ -34,7 +46,6 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 **Kända fel**
 
 - Efter utgåvan av v2.31.0 identifierades ett problem med byggprocessen för [anpassade komponenter](/help/web-sdk/install/create-custom-build.md). Medan anpassade byggen fortsätter att fungera ingår alla komponenter för närvarande i bygget, vilket resulterar i ett paket i full storlek oavsett komponentval. En fix till detta problem håller på att utvecklas. Om du förlitar dig på anpassade komponenter för att minimera byggstorleken rekommenderar vi att du väntar på en framtida version.
-
 
 ## Version 2.30.1 - 27 maj 2025
 
