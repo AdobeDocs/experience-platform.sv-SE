@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 8fe725ee41472d49cbc8411a0d2db665ac3c1814
+source-git-commit: 2c62ab01fe94e71095df33e24615fa7e596e84d3
 workflow-type: tm+mt
-source-wordcount: '5113'
+source-wordcount: '5161'
 ht-degree: 0%
 
 ---
@@ -130,8 +130,8 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_segmentbuilder_externalaudiences"
 >title="Externa målgrupper"
->abstract="Publiker som importeras via fliken Publiker visas nu automatiskt via Audience Portal. Målgrupper som importerats från Audience Manager, Customer Journey Analytics, Segment Match och andra anpassade integreringar är tillgängliga utan att först behöva konfigurera i Segment Builder. Från och med den 1 september 2025 hämtas alla målgrupper exklusivt via Unified Search, och det tidigare arbetsflödet stöds inte längre."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
+>abstract="Publiker som importeras via fliken Publiker visas nu automatiskt via Audience Portal. Detta inkluderar målgrupper som importerats från Audience Manager, Customer Journey Analytics, Segment Match och andra anpassade integreringar.<br/><br/>I slutet av september 2025 hämtas målgrupper exklusivt via Unified Search, och det tidigare arbetsflödet stöds inte längre. Segmentmatchning är bara tillgängligt för ett litet antal utvalda kunder medan vi överför tjänsten. Åtkomst för nya kunder med segmentmatchning kan fortfarande aktiveras på begäran innan tjänsten är helt indragen.<br/><br/>För pågående datasamarbete rekommenderar Adobe att man går över till Collaboration, som är den långsiktiga lösning som stöds."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
 
 >[!NOTE]
 >
@@ -330,7 +330,7 @@ Listan över tillgängliga tidsbegränsningar för den här åtgärden skiljer s
 >[!NOTE]
 >
 >När du använder After-tidsbegränsningen kan den senare händelsen inträffa mer än den tid som anges i tidsbegränsningen. >
->&#x200B;>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
+>>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
 >
 >Dessutom kan dessa två tidsbegränsningar användas tillsammans.
 >
@@ -386,7 +386,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="Uppdatera uppskattningar"
 >abstract="Du kan uppdatera uppskattningarna av din segmentdefinition så att du omedelbart ser en förhandsvisning av hur många profiler som skulle kvalificera sig för den föreslagna segmentdefinitionen. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=sv-SE#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
