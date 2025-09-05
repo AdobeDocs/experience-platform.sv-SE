@@ -330,7 +330,7 @@ Listan över tillgängliga tidsbegränsningar för den här åtgärden skiljer s
 >[!NOTE]
 >
 >När du använder After-tidsbegränsningen kan den senare händelsen inträffa mer än den tid som anges i tidsbegränsningen. >
->>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
+>&#x200B;>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
 >
 >Dessutom kan dessa två tidsbegränsningar användas tillsammans.
 >
