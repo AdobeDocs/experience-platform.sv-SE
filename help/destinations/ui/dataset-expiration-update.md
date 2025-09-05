@@ -3,9 +3,9 @@ title: Utöka datauppsättningsexportscheman för dataflöden som skapats före 
 description: Lär dig hur du förlänger exportschemat för dataexportdataflöden som skapats före november 2024 och som slutar fungera den 1 september 2025.
 type: Tutorial
 exl-id: a756886b-3f4b-4427-bd26-817221ba68aa
-source-git-commit: 6f8b906729ec31cc0c4847ccd0ae0f89f63a1627
+source-git-commit: 0da592dd2846ed0f1eeb31102842c8895cac6952
 workflow-type: tm+mt
-source-wordcount: '648'
+source-wordcount: '668'
 ht-degree: 0%
 
 ---
@@ -87,8 +87,6 @@ Nu kan du ändra exportschemat så att det fortsätter efter 1 september 2025.
 
 ## Vad händer om jag missar den 1 september 2025? {#missed-deadline}
 
-Om datauppsättningsexportflödena förfaller den 1 september 2025 och du inte har förlängt deras scheman finns det en **30-dagarsperiod** där du kan kontakta Adobe för att återaktivera dataflödena utan dataförlust. Detta inkluderar data som inte exporterats mellan den 1 september och det datum då du kontaktade Adobe.
+Om datauppsättningsexportflödena löpte ut den 1 september 2025 och du fortfarande vill utöka dem följer du stegen i avsnitten ovan för att utöka deras schema.
 
->[!IMPORTANT]
->
->Även om Adobe erbjuder denna respitperiod rekommenderar vi att du förlänger dina scheman före den 1 september 2025-deadline för att säkerställa oavbruten dataexport och undvika eventuella avbrott i tjänsten.
+Om du utökar exportschemat inom 30 dagar (eller mindre om [time-to-live-uppsättningen för den exporterade datamängden](/help/catalog/datasets/experience-event-dataset-retention-ttl-guide.md) är mindre än 30 dagar) kan du fortfarande få en återfyllnad av data som inte exporterades mellan den 1 september och det datum du återaktiverade exporten. När du anger en ny sluttid blir *inte* en fullständig filexport först. I stället fortsätter exporten stegvis från den plats där den slutade den 1 september.
