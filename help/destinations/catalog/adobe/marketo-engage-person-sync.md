@@ -4,10 +4,10 @@ description: Använd Marketo Engage Person Sync-anslutningen för att strömma u
 last-substantial-update: 2025-01-14T00:00:00Z
 badgeBeta: label="Beta" type="Informative"
 exl-id: 2c909633-b169-4ec8-9f58-276395cb8df2
-source-git-commit: 88864353d4872d62258914d6490b90331692fa96
+source-git-commit: 7d9f06f77f2265f3ae62542fd7fc1bd09d34d078
 workflow-type: tm+mt
-source-wordcount: '1087'
-ht-degree: 2%
+source-wordcount: '1094'
+ht-degree: 6%
 
 ---
 
@@ -19,12 +19,12 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Målkortet **[!UICONTROL Marketo Engage Person Sync]** kommer att bli inaktuellt i **mars 2026**.
+>Målkortet **[!UICONTROL Marketo Engage Person Sync]** kommer att bli inaktuellt i **oktober 2025**.
 >
->Granska följande nyckelpunkter och nödvändiga åtgärder för att säkerställa en smidig övergång till det nya **[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**-målet:
+>Granska följande nyckelpunkter och nödvändiga åtgärder för att säkerställa en smidig övergång till den nya **[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**-destinationen:
 >
->* Alla användare med **[!UICONTROL Marketo Engage Person Sync]** mål måste migrera till det nya **[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**-målet före mars 2026.
->* **Befintliga dataflöden migreras inte automatiskt.** Du måste [konfigurera en ny anslutning](marketo-engage-connection.md#connect-to-the-destination) till det nya **[!UICONTROL Marketo Engage]**-målet och aktivera målgrupperna där.
+>* Alla användare måste **sluta använda Marketo Engage Person Sync-målet** och migrera till det nya **[[!UICONTROL Marketo Engage]](marketo-engage-connection.md)**-målet före oktober 2025.
+>* **Befintliga dataflöden migreras inte automatiskt.** Du måste [konfigurera en ny anslutning](marketo-engage-connection.md#connect-to-the-destination) till den nya **[!UICONTROL Marketo Engage]**-destinationen och aktivera målgrupperna där.
 
 
 ## Översikt {#overview}
@@ -55,7 +55,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 | -------------------- | :-------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
+| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
 | Anpassade överföringar | ✓ | Publiker som importerats till Experience Platform från CSV-filer. |
 
 ## Exporttyp och frekvens {#export-type-and-frequency}
@@ -78,7 +78,7 @@ Om ditt företag har tillgång till flera organisationer måste du använda samm
 
 >[!IMPORTANT]
 >
->Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
+>Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
 
 ![Anslut till mål](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
@@ -89,7 +89,7 @@ Om ditt företag har tillgång till flera organisationer måste du använda samm
 * **[!UICONTROL First searchable field]**: Fält som ska dedupliceras. Fältet måste finnas i varje lead-post för indata. Standardvärdet är e-post
 * **[!UICONTROL First searchable field]**: Ett sekundärt fält att deduplicera. Fältet måste finnas i varje lead-post för indata. Valfritt
 
-När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [huvudpartition](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster åt efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
+När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [huvudpartition](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster åt efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
 
 >[!IMPORTANT]
 > 
