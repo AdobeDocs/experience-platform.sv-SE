@@ -2,16 +2,24 @@
 title: Twitter-anslutning för anpassade målgrupper
 description: Rikta er till era befintliga följare och kunder på Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats i Adobe Experience Platform
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 5b529a1af62c2745c3226029de1a1ff508bddfc7
 workflow-type: tm+mt
-source-wordcount: '827'
-ht-degree: 1%
+source-wordcount: '927'
+ht-degree: 4%
 
 ---
 
 # [!DNL Twitter Custom Audiences]-anslutning
 
 ## Översikt {#overview}
+
+>[!IMPORTANT]
+>
+>* Från och med 9 september 2025 kan du se två **[!DNL Twitter Custom Audiences]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga **[!DNL Twitter Custom Audiences]**-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Twitter Custom Audiences]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Twitter Custom Audiences]**.
+>* Använd den nya anslutningen **[!UICONTROL Twitter Custom Audiences]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Twitter Custom Audiences]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
+>* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
+>   * Flödesspecifikation-id: `903da9e4-7cf5-442a-9498-a237e4f064f9`
+>   * Anslutningsspecifikation-id: `9eb18875-a095-4b89-854e-39b9e29ccd41`
 
 Rikta er till era befintliga följare och kunder på Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats inom Adobe Experience Platform.
 
@@ -24,7 +32,7 @@ Innan du konfigurerar ditt [!DNL Twitter Custom Audiences]-mål bör du kontroll
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Twitter Custom Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv-SE#getting-started).
+[!DNL Twitter Custom Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
@@ -116,7 +124,7 @@ När du mappar målgrupper till Twitter ska du ge målgruppsmappningsnamn som ka
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Ytterligare resurser {#additional-resources}
 
