@@ -3,16 +3,25 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: c8eedc1f020b8605c9565015461cb1dfd47bba1f
+source-git-commit: 13b95db846d70c36233cf8ded491d19e1c93e4c0
 workflow-type: tm+mt
-source-wordcount: '1172'
-ht-degree: 0%
+source-wordcount: '1264'
+ht-degree: 4%
 
 ---
 
 # [!DNL LinkedIn Matched Audiences]-anslutning
 
 ## Översikt {#overview}
+
+>[!IMPORTANT]
+>
+>* Från och med 9 september 2025 kan du se två **[!DNL LinkedIn Matched Audiences]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga **[!DNL LinkedIn Matched Audiences]**-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) LinkedIn Matched Audiences]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL LinkedIn Matched Audiences]**.
+>* Använd den nya anslutningen **[!UICONTROL LinkedIn Matched Audiences]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) LinkedIn Matched Audiences]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
+>* Den nya **[!UICONTROL LinkedIn Matched Audiences]**-anslutningen stöder inte längre [!DNL IDFA]-identiteter.
+>* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
+>   * Flödesspecifikation-id: `963604d1-811d-4ce4-ac66-1fc78bde7c42`
+>   * Anslutningsspecifikation-id: `393a7ce1-e527-4fdb-8d99-0b11dc910279`
 
 Aktivera profiler för dina [!DNL LinkedIn]-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden och mobil-ID:n.
 
@@ -31,7 +40,6 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
-| IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
 | email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashad e-post. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 
 {style="table-layout:auto"}
@@ -88,7 +96,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >[!NOTE]
 >
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
->&#x200B;> Attributkälldata hashas inte automatiskt.
+>> Attributkälldata hashas inte automatiskt.
 > 
 > Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
 > 
@@ -121,7 +129,7 @@ I videon nedan visas också stegen för att konfigurera ett [!DNL LinkedIn Match
 
 ### Uppdatera autentiseringsuppgifter {#refresh-authentication-credentials}
 
-LinkedIn-tokens går ut var 60:e dag. Du kan övervaka dina tokens förfallodatum från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../ui/destinations-workspace.md#browse)**.
+LinkedIn-tokens går ut var 60:e dag. Du kan övervaka förfallotiden för dina tokens från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../ui/destinations-workspace.md#browse)**.
 
 När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
 
