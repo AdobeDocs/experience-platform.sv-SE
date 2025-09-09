@@ -159,7 +159,7 @@ Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter s
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=sv-SE#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
