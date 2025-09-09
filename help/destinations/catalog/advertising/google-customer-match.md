@@ -3,10 +3,10 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: ce205622260f4252d1a7db7c5011366fb2ed4d3c
+source-git-commit: 4541e812ac1f44b5374b81685c1e41cb7f00993f
 workflow-type: tm+mt
-source-wordcount: '2372'
-ht-degree: 1%
+source-wordcount: '2413'
+ht-degree: 8%
 
 ---
 
@@ -15,12 +15,12 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([EU User Consent Policy](https://www.google.com/about/company/user-consent-policy/)). Tvingande av dessa ändringar av medgivandekraven gäller från och med den 6 mars 2024.
-><br/>
->För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
-><br/>
->Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
-><br/>
->Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
+> ><br/>
+> >För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
+> ><br/>
+> >Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+> ><br/>
+> >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
 Med [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) kan du använda dina online- och offlinedata för att nå och återengagera dina kunder via egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping] och [!DNL Gmail].
 
@@ -63,10 +63,10 @@ Vissa destinationer i Experience Platform har vissa regler och skyldigheter för
 | `phone_sha256_e.164` | Telefonnummer i E164-format, hashas med algoritmen SHA256 | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | `email_lc_sha256` | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | `user_id` | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
-| `address_info_first_name` | Användarens förnamn | Den här målidentiteten är avsedd att användas tillsammans med `address_info_last_name`, `address_info_country_code` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. |
-| `address_info_last_name` | Användarens efternamn | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_country_code` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. |
-| `address_info_country_code` | Landskod för användaradress | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_last_name` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. <br><br>Godkänt format: landskoder med gemener och två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) . |
-| `address_info_postal_code` | Postnummer för användaradress | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_last_name` och `address_info_country_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inga av dessa fält saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. |
+| `address_info_first_name` | Användarens förnamn | Den här målidentiteten är avsedd att användas tillsammans med `address_info_last_name`, `address_info_country_code` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inget av fälten saknar data i de exporterade profilerna. <br> Google matchar inte adressen om något fält antingen är omappat eller innehåller saknade data. |
+| `address_info_last_name` | Användarens efternamn | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_country_code` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inget av fälten saknar data i de exporterade profilerna. <br> Google matchar inte adressen om något fält antingen är omappat eller innehåller saknade data. |
+| `address_info_country_code` | Landskod för användaradress | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_last_name` och `address_info_postal_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inget av fälten saknar data i de exporterade profilerna. <br> Om något fält antingen är omappat eller innehåller data som saknas matchar inte Google adressen. <br><br>Godkänt format: landskoder med gemener och två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) . |
+| `address_info_postal_code` | Postnummer för användaradress | Den här målidentiteten är avsedd att användas tillsammans med `address_info_first_name`, `address_info_last_name` och `address_info_country_code` när du vill skicka e-postadressdata till ditt mål. <br><br>Om du vill vara säker på att Google matchar adressen måste du mappa alla fyra adressfälten (`address_info_first_name`, `address_info_last_name`, `address_info_country_code` och `address_info_postal_code`) och se till att inget av fälten saknar data i de exporterade profilerna. <br> Google matchar inte adressen om något fält antingen är omappat eller innehåller saknade data. |
 
 {style="table-layout:auto"}
 
@@ -96,7 +96,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platform måste du läsa och följa Google policy för användning av [!DNL Customer Match], som beskrivs i [Google supportdokumentation](https://support.google.com/google-ads/answer/6299717).
 
-Kontrollera sedan att ditt [!DNL Google]-konto har konfigurerats för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+Kontrollera sedan att ditt [!DNL Google]-konto har konfigurerats för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1).
 
 ### Tillåtelselista {#allowlist}
 
@@ -180,6 +180,10 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 * **[!UICONTROL Description]**: ange en beskrivning för den här målanslutningen
 * **[!UICONTROL Account ID]**: ditt [Google Ads-kund-ID](https://support.google.com/google-ads/answer/1704344?hl=en). Formatet på ID:t är xxx-xxx-xxxx. Använd inte ditt konto-ID om du använder [!DNL Google Ads Manager Account (My Client Center)]. Använd [Google Ads-kund-ID](https://support.google.com/google-ads/answer/1704344?hl=en) i stället.
 
+>[!NOTE]
+>
+>Under OAuth2-anslutningsprocessen kan du se&quot;Marketo Test&quot; som projektnamnet för Google OAuth. Detta är ett normalt beteende eftersom Adobe använder det här projektnamnet för Google kundmatchningsintegrering. Detta påverkar inte målkonfigurationen.
+
 >[!IMPORTANT]
 >
 > * Marknadsföringsåtgärden **[!UICONTROL Combine with PII]** är markerad som standard för målet [!DNL Google Customer Match] och kan inte tas bort.
@@ -256,4 +260,4 @@ När du konfigurerar det här målet kan du få följande fel:
 
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
-Det här felet inträffar när kundkonton inte uppfyller [kraven](#google-account-prerequisites). Om du vill åtgärda det här problemet kontaktar du Google och kontrollerar att ditt konto är tillåtet och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+Det här felet inträffar när kundkonton inte uppfyller [kraven](#google-account-prerequisites). Om du vill åtgärda det här problemet kontaktar du Google och kontrollerar att ditt konto är tillåtet och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1).
