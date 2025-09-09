@@ -4,9 +4,9 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: eb7d1b9c167839db39cbb28bf497edac706c0b6c
 workflow-type: tm+mt
-source-wordcount: '4752'
+source-wordcount: '4900'
 ht-degree: 0%
 
 ---
@@ -987,7 +987,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++SFTP med lösenord - Bas anslutningsbegäran
++++SFTP med lösenord - basanslutningsbegäran
 
 >[!TIP]
 >
@@ -1137,11 +1137,11 @@ Du kan också lägga till kryptering till de exporterade filerna. Du måste läg
             ]
 ```
 
-+++
++++ 
 
 **Begäran**
 
-+++Lägg till kryptering i basanslutningen - Begäran
++++Lägg till kryptering till basanslutningen - Begäran
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2422,7 +2422,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "bucketName": "your-bucket-name",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "4fce964d-3f37-408f-9778-e597338a21ee", // Amazon S3 connection spec id
@@ -2456,6 +2457,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2514,7 +2516,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "container": "your-container-name",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "6d6b59bf-fb58-4107-9064-4d246c0e5bb2", // Azure Blob Storage connection spec id
@@ -2548,6 +2551,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2605,7 +2609,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "Server-to-server",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "be2c3209-53bc-47e7-ab25-145db8b873e1", // Azure Data Lake Gen 2(ADLS Gen2) connection spec id
@@ -2639,6 +2644,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2696,7 +2702,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "Server-to-server",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "10440537-2a7b-4583-ac39-ed38d4b848e8", // Data Landing Zone connection spec id
@@ -2730,6 +2737,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2788,7 +2796,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "bucketName": "your-bucket-name",
         "path": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "c5d93acb-ea8b-4b14-8f53-02138444ae99", // Google Cloud Storage connection spec id
@@ -2822,6 +2831,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -2879,7 +2889,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "mode": "Server-to-server",
         "remotePath": "folder/subfolder",
         "compression": "NONE",
-        "fileType": "JSON"
+        "fileType": "JSON",
+        "includeFileManifest": true // Include this parameter if you want to enable manifest file generation for your destination
     },
     "connectionSpec": {
         "id": "36965a81-b1c6-401b-99f8-22508f1e6a26", // SFTP connection spec id
@@ -2913,6 +2924,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
       "path":"folder/subfolder",
       "compression":"GZIP",
       "fileType":"CSV",
+      "includeFileManifest": true, //Include this parameter if you want to enable manifest file generation for your destination
       "csvOptions":{
          "nullValue":"null",
          "emptyValue":"",
@@ -3677,7 +3689,7 @@ Därefter måste du kopiera svaret ovan och använda det för att skapa ditt ind
 
 **Begäran om att skapa indatabema**
 
-+++Skapa ett indatabema - begäran
++++Skapa ett inmatningsschema - begäran
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/schemas/' \ 
@@ -3726,7 +3738,7 @@ Sedan måste du konfigurera utdataschemat för din export. Först måste du hitt
 
 **Begäran**
 
-+++Begäran om att hämta partnerschema för utdatabchemat
++++Begär att få partnerschema för utdataschemat
 
 Observera att exemplet nedan använder `connection spec ID` för Amazon S3. Ersätt det här värdet med det anslutningsspec-ID som är specifikt för ditt mål.
 
@@ -4504,7 +4516,7 @@ Svaret från API:t för Flow Service returnerar ID:t för det uppdaterade datafl
 
 ![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step7.png)
 
-Använd åtgärden `PATCH` om du vill göra uppdateringar av dataflödet. Du kan till exempel lägga till en marknadsföringsåtgärd i dataflödena. Du kan även uppdatera dina dataflöden och välja fält som obligatoriska nycklar eller dedupliceringsnycklar.
+Använd åtgärden `PATCH` om du vill göra uppdateringar av dataflödet. Du kan till exempel lägga till en marknadsföringsåtgärd i dataflödena, uppdatera dataflödena för att välja fält som obligatoriska nycklar eller dedupliceringsnycklar eller lägga till generering av filmanifest till befintliga mål.
 
 ### Lägg till en marknadsföringsåtgärd {#add-marketing-action}
 
@@ -4739,6 +4751,44 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!ENDSHADEBOX]
 
+### Lägg till generering av filmanifest till befintlig destination {#add-file-manifest}
+
+Om du vill lägga till generering av filmanifest till ett befintligt mål måste du uppdatera målanslutningsparametrarna med åtgärden `PATCH`. Detta möjliggör generering av manifestfiler för destinationen, som tillhandahåller metadata om de exporterade filerna.
+
+>[!IMPORTANT]
+>
+>Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av målanslutningen som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
+>
+> Om du vill hämta den senaste versionen av taggvärdet utför du en GET-begäran till `https://platform.adobe.io/data/foundation/flowservice/targetConnections/{ID}`-slutpunkten, där `{ID}` är det målanslutnings-ID som du vill uppdatera.
+>
+> Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
+
+>[!BEGINSHADEBOX]
+
+**Begäran**
+
++++Lägg till filmanifest till befintlig målanslutning - Begäran
+
+```shell
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/targetConnections/{TARGET_CONNECTION_ID}' \
+--header 'accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {API_KEY}' \
+--header 'x-gw-ims-org-id: {ORG_ID}' \
+--header 'x-sandbox-name: {SANDBOX_NAME}' \
+--header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'If-Match: "{ETAG_HERE}"' \
+--data-raw '[
+  {
+    "op": "add",
+    "path": "/params/includeFileManifest",
+    "value": true
+  }
+]'
+```
+
+>[!ENDSHADEBOX]
+
 ## Validera dataflöde (hämta dataflödeskörningar) {#get-dataflow-runs}
 
 ![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step8.png)
@@ -4749,7 +4799,7 @@ Använd API:t för dataflödeskörning om du vill kontrollera körningarna av et
 
 **Begäran**
 
-+++Get data aflow running - Request
++++Körning av Get dataflow - begäran
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==eb54b3b3-3949-4f12-89c8-64eafaba858f' \
