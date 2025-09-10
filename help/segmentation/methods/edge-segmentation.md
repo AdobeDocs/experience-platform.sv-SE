@@ -2,7 +2,7 @@
 title: Edge Segmenteringshandbok
 description: Lär dig hur du använder kantsegmentering för att utvärdera målgrupper i Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 5de8597dd1d5249297a09976c804d1c1f3d822c5
+source-git-commit: 1b69fa4ecadb1f6b8575358ca4a81549221430e1
 workflow-type: tm+mt
 source-wordcount: '1133'
 ht-degree: 0%
@@ -31,17 +31,17 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 
 | Frågetyp | Information | Fråga | Exempel |
 | ---------- | ------- | ----- | ------- |
-| En händelse inom ett tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom ett tidsfönster på mindre än 24 timmar. | `CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse i ett relativt tidsfönster visas.](../images/methods/edge/single-event.png) |
-| Endast profil | En segmentdefinition som bara refererar till ett profilattribut. | `homeAddress.country.equals("US", false)` | ![Ett exempel på ett profilattribut visas.](../images/methods/edge/profile-attribute.png) |
-| En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/methods/edge/single-event-with-profile-attribute.png) |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupp- eller kantsegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. | `inSegment("a730ed3f-119c-415b-a4ac-27c396ae2dff") and inSegment("8fbbe169-2da6-4c9d-a332-b6a6ecf559b9")` | ![Ett exempel på ett segment av segment visas.](../images/methods/edge/segment-of-segments.png) |
+| En händelse inom ett tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom ett tidsfönster på mindre än 24 timmar. | `CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse i ett relativt tidsfönster visas.](../images/methods/edge/single-event.png){zoomable="yes"} |
+| Endast profil | En segmentdefinition som bara refererar till ett profilattribut. | `homeAddress.country.equals("US", false)` | ![Ett exempel på ett profilattribut visas.](../images/methods/edge/profile-attribute.png){zoomable="yes"} |
+| En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/methods/edge/single-event-with-profile-attribute.png){zoomable="yes"} |
+| Segmentering | En segmentdefinition som innehåller en eller flera grupp- eller kantsegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. | `inSegment("a730ed3f-119c-415b-a4ac-27c396ae2dff") and inSegment("8fbbe169-2da6-4c9d-a332-b6a6ecf559b9")` | ![Ett exempel på ett segment av segment visas.](../images/methods/edge/segment-of-segments.png){zoomable="yes"} |
 
-Dessutom måste segmentdefinitionen **&#x200B;**&#x200B;vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
+Dessutom måste segmentdefinitionen **** vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
 
 En segmentdefinition är **inte** berättigad till kantsegmentering i följande scenario:
 
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment`-händelse.
-   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **&#x200B;**&#x200B;för kantsegmentering.
+   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **** för kantsegmentering.
 - I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 ## Skapa målgrupper {#create-audience}
@@ -153,15 +153,15 @@ Mer information om hur du använder den här slutpunkten finns i [segmentdefinit
 
 Välj **[!UICONTROL Create audience]** i Audience Portal.
 
-![Knappen Skapa målgrupp är markerad i målgruppsportalen.](../images/methods/edge/select-create-audience.png)
+![Knappen Skapa målgrupp är markerad i målgruppsportalen.](../images/methods/edge/select-create-audience.png){zoomable="yes"}
 
 En pover visas. Välj **[!UICONTROL Build rules]** om du vill ange Segment Builder.
 
-![Knappen Skapa regler markeras i porten för att skapa målgrupper.](../images/methods/edge/select-build-rules.png)
+![Knappen Skapa regler markeras i porten för att skapa målgrupper.](../images/methods/edge/select-build-rules.png){zoomable="yes"}
 
 Skapa en segmentdefinition som matchar någon av de [valbara frågetyperna](#eligible-query-types) i Segment Builder. Om segmentdefinitionen kvalificerar för kantsegmentering kan du välja **[!UICONTROL Edge]** som **[!UICONTROL Evaluation method]**.
 
-![Segmentdefinitionen visas. Utvärderingstypen är markerad och visar att segmentdefinitionen kan utvärderas med hjälp av kantsegmentering.](../images/methods/edge/edge-evaluation-method.png)
+![Segmentdefinitionen visas. Utvärderingstypen är markerad och visar att segmentdefinitionen kan utvärderas med hjälp av kantsegmentering.](../images/methods/edge/edge-evaluation-method.png){zoomable="yes"}
 
 Mer information om hur du skapar segmentdefinitioner finns i guiden [Segment Builder](../ui/segment-builder.md)
 
@@ -297,11 +297,11 @@ Mer detaljerad information om den returnerade segmentdefinitionen finns i [stöd
 
 Du kan hämta alla målgrupper som är aktiverade för kantsegmentering inom organisationen med hjälp av filter i Audience Portal. Välj ![filterikonen](../../images/icons/filter.png) för att visa filterlistan.
 
-![Filterikonen är markerad i målportalen.](../images/methods/filter-audiences.png)
+![Filterikonen är markerad i målportalen.](../images/methods/filter-audiences.png){zoomable="yes"}
 
 Gå till **Uppdateringsfrekvens** inom de tillgängliga filtren och välj Edge. Med det här filtret visas alla målgrupper i organisationen som utvärderas med kantsegmentering.
 
-![Edge uppdateringsfrekvens har valts och visar alla målgrupper i organisationen som utvärderas med kantsegmentering.](../images/methods/edge/filter-edge.png)
+![Edge uppdateringsfrekvens har valts och visar alla målgrupper i organisationen som utvärderas med kantsegmentering.](../images/methods/edge/filter-edge.png){zoomable="yes"}
 
 Om du vill veta mer om hur du visar målgrupper i Experience Platform kan du läsa [guiden för målportalen](../ui/audience-portal.md).
 
@@ -321,7 +321,7 @@ Måttet **[!UICONTROL Total qualified]** representerar det totala antalet kvalif
 
 Måttet **[!UICONTROL New audience updated]** representeras av ett linjediagram som visar förändringen i målgruppsstorlek genom kantsegmentering. Du kan justera listrutan så att den visar de senaste 24 timmarna, den senaste veckan eller de senaste 30 dagarna.
 
-![Profilerna över tidskortet är markerade.](../images/methods/edge/profiles-over-time.png)
+![Profilerna över tidskortet är markerade.](../images/methods/edge/profiles-over-time.png){zoomable="yes"}
 
 Mer information om målgruppsinformation finns i [Översikt över målgruppsportalen](../ui/audience-portal.md#audience-details).
 

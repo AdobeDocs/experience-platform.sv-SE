@@ -2,9 +2,9 @@
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: d0b54e15f132d85964d6458da0769548d231a9c4
+source-git-commit: 568a0ba7707402496167145ce2673181b240496e
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1577'
 ht-degree: 0%
 
 ---
@@ -55,11 +55,13 @@ Inom dessa tjänster spåras följande skyddsräcken:
 
 - Det högsta antalet direktuppspelade målgrupper är 500
    - Av dessa 500 direktuppspelade målgrupper är det maximala antalet kantmålgrupper 150
-- Den maximala sammanlagda genomströmningen för direktuppspelningssegmentering är 1 500 poster per sekund (rps)
+- Den initiala kombinerade genomströmningen för direktuppspelning är 1 500 poster per sekund (rps)
+   - Detta kombinerade strömmande dataflöde mäter de kombinerade topphändelserna för inkommande trafik per sekund för strömning till kundprofilen i realtid i era produktions- och utvecklingssandlådor.
+   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 Målgruppskapaciteten är på en **sandbox**-nivå. Det innebär att ni för varje sandlåda ni har i organisationen kan ha 500 direktuppspelade målgrupper, varav 150 av dessa kan vara gränspubliken.
 
-Genomströmningskapaciteten är på **organisationsnivå** och kan distribueras till dina enskilda sandlådor. Med till exempel 1500 rps för direktuppspelad segmenteringsgenomströmning kan du ange att din produktionssandlåda ska vara 1350 rps och att din utvecklingssandlåda ska vara 150 rps.
+Strömmande genomströmningskapacitet är på **organisationsnivå** och kan distribueras till dina enskilda sandlådor. Med till exempel 1500 rps för strömmande ingspessel kan du ställa in din produktionssandlåda till 1300 rps och din utvecklingssandlåda till 200 rps.
 
 Experience Platform beräknar sandlådans genomströmning i 15 minuters rullande intervall. Detta genomflöde mäts i realtid och data uppdateras var 60:e sekund.
 
@@ -202,11 +204,11 @@ Ni ser till att resultatet blir konsekvent vid högbelastade händelser och undv
 
 +++
 
-### Vilka är de bästa sätten att hantera direktuppspelad segmenteringsgenomströmning?
+### Vilka är de bästa sätten att hantera strömmande ingång?
 
 +++ Svar
 
-För att hantera strömmande segmenteringsgenomströmning på bästa sätt bör ni utvärdera era datauppsättningar och försäkra er om att de prioriterar de data som behövs för personalisering.
+För att på bästa sätt hantera strömmande ingång bör ni utvärdera era datauppsättningar för att säkerställa att de prioriterar data som är nödvändiga för personalisering.
 
 
 Om realtidsbearbetning inte behövs bör du använda batchinmatning i stället för direktuppspelning.
