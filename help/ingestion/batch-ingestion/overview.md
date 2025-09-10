@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över API för gruppinmatning
 description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dace7bc2f7940748422628b62f0f57854036ad3f
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1389'
 ht-degree: 1%
 
 ---
@@ -56,7 +56,7 @@ När du importerar data är det viktigt att du förstår hur [!DNL Experience Da
 
 Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om den inte kan det misslyckas gruppen med en `TypeCompatibilityException`.
 
-Till exempel har varken JSON eller CSV typen `date` eller `date-time`. Därför uttrycks dessa värden med [ISO 8601-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (153126395) 9000) och konverteras vid intag till mål-XDM-typen.
+Till exempel har varken JSON eller CSV typen `date` eller `date-time`. Därför uttrycks dessa värden med [ISO 8601-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (1531263955 9000) och konverteras vid intag till mål-XDM-typen.
 
 Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 
