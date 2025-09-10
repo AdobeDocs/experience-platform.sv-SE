@@ -3,24 +3,16 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 5619424024eff81fca21408288494402e2a4d4ff
+source-git-commit: 5a2f1c87381c39d6d15f569523cfb3b00d02b34b
 workflow-type: tm+mt
-source-wordcount: '1036'
-ht-degree: 3%
+source-wordcount: '934'
+ht-degree: 0%
 
 ---
 
 # [!DNL Airship Tags]-anslutning {#airship-tags-destination}
 
 ## Översikt
-
->[!IMPORTANT]
->
->* Från och med 21 augusti 2025 kan du se två **[!DNL Airship Tags]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga **[!DNL Airship Tags]**-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Airship Tags]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Airship Tags]**.
->* Använd den nya anslutningen **[!UICONTROL Airship Tags]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Airship Tags]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
->* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
->   * Flödesspecifikation-id: `0c7e71c8-4d60-4685-a216-77f57e37b04a`
->   * Anslutningsspecifikation-id: `aec13e22-8226-4b5d-9961-6baa35b251d2`
 
 [!DNL Airship] är den ledande kundinteraktionsplattformen, som hjälper dig att leverera meningsfulla, personaliserade flerkanalsmeddelanden till användarna i alla faser av kundlivscykeln.
 
