@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 9d92999df8e35ac6223986ece8a98af72ab6ace8
+source-git-commit: d9e137a34ad013e2396daa51eb55c22aef1e618e
 workflow-type: tm+mt
-source-wordcount: '3454'
+source-wordcount: '3475'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ Varje enskild dataflödeskörning visar följande information:
 - **[!UICONTROL Dataflow run start]**: Den tid då dataflödet startades. För direktuppspelande dataflöden hämtar Experience Platform mätvärden som baseras på början av dataflödet, i form av timstatistik. Det innebär att för direktuppspelande dataflöde körs, och om ett dataflöde startades till exempel vid 10:30PM, visas starttiden som 10:00 PM i användargränssnittet.
 - **[!UICONTROL Processing time]**: Den tid det tog för dataflödet att bearbeta.
    - För **[!UICONTROL completed]**-körningar visas alltid en timme i bearbetningstidens mått.
-   - För dataflöden som fortfarande är i **[!UICONTROL processing]**-läge är fönstret för att hämta alla mått öppet i mer än en timme för att bearbeta alla mått som motsvarar dataflödeskörningen. En dataflödeskörning som påbörjades kl. 9:30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd** ändras den visade bearbetningstiden till en timme.
+   - För dataflöden som fortfarande är i **[!UICONTROL processing]**-läge är fönstret för att hämta alla mått öppet i mer än en timme för att bearbeta alla mått som motsvarar dataflödeskörningen. En dataflödeskörning som påbörjades kl. 9:30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. Bearbetningstidens längd påverkas direkt av återförsök som gjorts som ett resultat av målets misslyckade svar. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd** ändras den visade bearbetningstiden till en timme.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet.
 - **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverades till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade målgrupper.
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot medgivande.
@@ -159,7 +159,7 @@ Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter s
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=sv-SE#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
