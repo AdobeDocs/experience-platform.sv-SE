@@ -172,7 +172,7 @@ När du har lagt till en fältgrupp i ett schema kan du antingen ta bort fält g
 >[!IMPORTANT]
 >
 >Om du väljer **[!UICONTROL Remove]** tas fältet bort från själva fältgruppen, vilket påverkar *alla* scheman som använder den fältgruppen.
->>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
+>&#x200B;>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
 
 Om du vill ta bort ett fält från fältgruppen markerar du det på arbetsytan och väljer **[!UICONTROL Remove]** på den högra listen. I det här exemplet visas fältet `taxId` från gruppen **[!UICONTROL Demographic Details]**.
 
