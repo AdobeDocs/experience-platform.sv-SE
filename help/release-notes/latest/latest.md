@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
 workflow-type: tm+mt
 source-wordcount: '1416'
-ht-degree: 91%
+ht-degree: 93%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 91%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -160,7 +160,7 @@ Mer information om sandlådor finns i [översikten över sandlådor](../../sandb
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Målgruppsuppskattningar | Målgruppsuppskattningar visas nu som ett **intervall**, som baseras på samplingsdatans konfidensintervall. Mer information om uppskattningar finns i [guiden Skapa segment](/help/segmentation/ui/segment-builder.md#audience-properties). |
+| Målgruppsuppskattningar | Målgruppsberäkningar visas nu som ett **intervall** som baseras på konfidensintervall för samplingsdata. Om du vill veta mer om beräkningar kan du läsa [Segment Builder-guiden](/help/segmentation/ui/segment-builder.md#audience-properties). |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
