@@ -2,9 +2,9 @@
 title: Extension Manifest
 description: Lär dig hur du konfigurerar en JSON-manifestfil som informerar Adobe Experience Platform om hur du använder tillägget på rätt sätt.
 exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a7c66b9172421510510b6acf3466334c33cdaa3d
 workflow-type: tm+mt
-source-wordcount: '2606'
+source-wordcount: '2652'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ Ett exempel `extension.json` finns i GitHub-databasen [Hello World-tillägget](h
 Ett tilläggsmanifest måste bestå av följande:
 
 | Egenskap | Beskrivning |
-| --- | --- |
+|--------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name` | Namnet på tillägget. Den måste vara unik från alla andra tillägg och måste uppfylla [namnreglerna](#naming-rules). **Detta används av taggar som identifierare och bör inte ändras efter att du har publicerat tillägget.** |
 | `platform` | Plattformen för tillägget. Det enda värde som accepteras för tillfället är `web`. |
 | `version` | Versionen av tillägget. Den måste följa versionshanteringsformatet [server](https://semver.org/). Detta stämmer överens med [npm-versionsfältet](https://docs.npmjs.com/files/package.json#version). |
@@ -30,6 +30,7 @@ Ett tilläggsmanifest måste bestå av följande:
 | `description` | Beskrivningen av tillägget. Detta visas för Experience Platform-användare. Om tillägget ger användarna möjlighet att implementera produkten på sin webbplats, beskriv vad produkten gör. Du behöver inte ange&quot;taggar&quot; eller&quot;tillägg&quot;. Användarna vet redan att de tittar på ett taggtillägg. |
 | `iconPath` *(Valfritt)* | Den relativa sökvägen till ikonen som ska visas för tillägget. Det får inte börja med ett snedstreck. Den måste referera till en SVG-fil med tillägget `.svg`. SVG ska vara fyrkantig och kan skalas av Experience Platform. |
 | `author` | &quot;Författaren&quot; är ett objekt som ska struktureras enligt följande: <ul><li>`name`: Namnet på tilläggsförfattaren. Du kan också använda företagsnamnet här.</li><li>`url` *(Valfritt)*: En URL där du kan ta reda på mer om tilläggsförfattaren.</li><li>`email` *(Valfritt)*: E-postadressen till tilläggsförfattaren.</li></ul>Detta är förenligt med [npm-reglerna för författarfält](https://docs.npmjs.com/files/package.json#people-fields-author-contributors). |
+| `releaseNotesUrl` *(Valfritt)* | URL:en till tilläggets versionsinformation, om du har en plats att publicera informationen på. Den här URL:en används i användargränssnittet för Adobe-taggar för att visa länken under installation och uppgradering av tillägg. Den här egenskapen stöds bara för webbtillägg och Edge-tillägg. |
 | `exchangeUrl` *(Krävs för offentliga tillägg)* | URL:en till tilläggets lista på Adobe Exchange. Det måste matcha mönstret `https://www.adobeexchange.com/experiencecloud.details.######.html`. |
 | `viewBasePath` | Den relativa sökvägen till underkatalogen som innehåller alla vyer och visningsrelaterade resurser (HTML, JavaScript, CSS, images). Experience Platform har den här katalogen på en webbserver och läser in iframe-innehåll från den. Detta är ett obligatoriskt fält och ska inte börja med ett snedstreck. Om alla dina vyer till exempel finns i `src/view/` blir värdet `viewBasePath` `src/view/`. |
 | `hostedLibFiles` *(Valfritt)* | Många av våra användare föredrar att ha alla taggrelaterade filer på sin egen server. Detta ger användarna en ökad säkerhet vad gäller filtillgänglighet vid körning och de kan enkelt söka efter säkerhetsluckor i koden. Om biblioteksdelen av tillägget behöver läsa in JavaScript-filer vid körning bör du använda den här egenskapen för att lista dessa filer. De listade filerna lagras tillsammans med taggens körtidsbibliotek. Tillägget kan sedan läsa in filerna via en URL som hämtats med metoden [getHostedLibFileUrl](./turbine.md#get-hosted-lib-file) .<br><br>Det här alternativet innehåller en matris med relativa sökvägar för biblioteksfiler från tredje part som måste lagras. |
@@ -74,20 +75,20 @@ Konfigurationsobjektet ska struktureras på följande sätt:
       <td><code>schema</code></td>
       <td>Ett objekt av <a href="https://json-schema.org/">JSON-schema</a> som beskriver formatet för ett giltigt objekt som sparas från tilläggskonfigurationsvyn. Eftersom du är utvecklare av konfigurationsvyn är det ditt ansvar att se till att alla sparade inställningsobjekt matchar det här schemat. Det här schemat används även för validering när användare försöker spara data med Experience Platform tjänster.<br><br>Ett exempelschemaobjekt är följande:
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       Vi rekommenderar att du använder ett verktyg som <a href="https://www.jsonschemavalidator.net/">JSON-schemavalideraren</a> för att manuellt testa ditt schema.</td>
     </tr>
@@ -134,20 +135,20 @@ En typdefinition är ett objekt som används för att beskriva en händelse, ett
       <td><code>schema</code></td>
       <td>Ett objekt av <a href="https://json-schema.org/">JSON Schema</a> som beskriver formatet för ett giltigt inställningsobjekt som kan sparas av användaren. Inställningarna konfigureras och sparas vanligtvis av en användare med användargränssnittet i Datainsamling. I dessa fall kan tilläggsvyn vidta nödvändiga åtgärder för att validera de inställningar som användaren anger. Å andra sidan väljer vissa användare att använda tagg-API:er direkt utan hjälp av något användargränssnitt. Syftet med det här schemat är att göra det möjligt för Experience Platform att validera att inställningsobjekt som sparats av användare, oavsett om användargränssnittet används, är i ett format som är kompatibelt med biblioteksmodulen som ska agera på inställningsobjektet vid körning.<br><br>Ett exempelschemaobjekt är följande:<br>
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       Vi rekommenderar att du använder ett verktyg som <a href="https://www.jsonschemavalidator.net/">JSON-schemavalideraren</a> för att manuellt testa ditt schema.</td>
     </tr>
