@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i Experience Platform användargränssnitt.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 0b03a8873f828faef78e5bf0b66c9773fc693206
 workflow-type: tm+mt
-source-wordcount: '3905'
+source-wordcount: '4001'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikte
 >
 >I det här avsnittet beskrivs hur du manuellt skapar ett nytt schema i användargränssnittet. Om du importerar CSV-data till Experience Platform kan du använda HTML-algoritmer (Machine Learning) för att **generera ett schema från CSV-exempeldata**. Det här arbetsflödet matchar ditt dataformat och skapar automatiskt ett nytt schema baserat på strukturen och innehållet i din CSV-fil. Mer information om det här arbetsflödet finns i guiden [Skapa ML-stödda scheman](../ml-assisted-schema-creation.md).
 
-Välj **[!UICONTROL Create schema]** i det övre högra hörnet på arbetsytan [!UICONTROL Schemas].
+Välj [!UICONTROL Schemas] i det övre högra hörnet på arbetsytan **[!UICONTROL Create schema]**.
 
 ![Arbetsytan Scheman med [!UICONTROL Create Schema] är markerad.](../../images/ui/resources/schemas/create-schema.png)
 
@@ -167,27 +167,43 @@ När du har lagt till en fältgrupp i ett schema kan du [ta bort befintliga fäl
 
 ### Ta bort fält som lagts till från fältgrupper {#remove-fields}
 
-När du har lagt till en fältgrupp i ett schema kan du ta bort fält som du inte behöver.
+När du har lagt till en fältgrupp i ett schema kan du antingen ta bort fält globalt från fältgruppen eller dölja dem lokalt från det aktuella schemat. Att förstå skillnaden mellan dessa åtgärder är avgörande för att undvika oönskade schemaändringar.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Om du tar bort fält från en fältgrupp påverkas bara schemat som du arbetar med och påverkar inte själva fältgruppen. Om du tar bort fält i ett schema är dessa fält fortfarande tillgängliga i alla andra scheman som använder samma fältgrupp.
+>Om du väljer **[!UICONTROL Remove]** tas fältet bort från själva fältgruppen, vilket påverkar *alla* scheman som använder den fältgruppen.
+>>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
 
-I följande exempel har standardfältgruppen **[!UICONTROL Demographic Details]** lagts till i ett schema. Om du vill ta bort ett enskilt fält, till exempel `taxId`, markerar du fältet på arbetsytan och väljer sedan **[!UICONTROL Remove]** i den högra listen.
+Om du vill ta bort ett fält från fältgruppen markerar du det på arbetsytan och väljer **[!UICONTROL Remove]** på den högra listen. I det här exemplet visas fältet `taxId` från gruppen **[!UICONTROL Demographic Details]**.
 
 ![[!DNL Schema Editor] med [!UICONTROL Remove] markerat. Den här åtgärden tar bort ett enskilt fält.](../../images/ui/resources/schemas/remove-single-field.png)
 
-Om det finns flera fält som du vill ta bort kan du hantera fältgruppen som helhet. Markera ett fält som tillhör gruppen på arbetsytan och välj sedan **[!UICONTROL Manage related fields]** i den högra listen.
+Om du vill dölja flera fält från ett schema utan att ta bort dem från själva fältgruppen använder du alternativet **[!UICONTROL Manage related fields]**. Markera ett fält i gruppen på arbetsytan och välj sedan **[!UICONTROL Manage related fields]** i den högra listen.
 
 ![[!DNL Schema Editor] med [!UICONTROL Manage related fields] markerat.](../../images/ui/resources/schemas/manage-related-fields.png)
 
-En dialogruta visas med strukturen för fältgruppen i fråga. Härifrån kan du använda de angivna kryssrutorna för att markera eller avmarkera de fält som du behöver. Välj **[!UICONTROL Confirm]** när du är nöjd.
+En dialogruta med fältgruppens struktur visas. Använd kryssrutorna för att markera eller avmarkera de fält som du vill inkludera.
 
 ![Dialogrutan [!UICONTROL Manage related fields] med markerade fält och [!UICONTROL Confirm] markerat.](../../images/ui/resources/schemas/select-fields.png)
 
-Arbetsytan visas igen med endast de markerade fälten i schemastrukturen.
+Välj **[!UICONTROL Confirm]** om du vill uppdatera arbetsytan och spegla de valda fälten.
+
 
 ![Fält har lagts till](../../images/ui/resources/schemas/fields-added.png)
+
+### Fältbeteende vid borttagning eller borttagning av fält {#field-removal-deprecation-behavior}
+
+Använd tabellen nedan för att förstå omfattningen av varje åtgärd.
+
+| Åtgärd | Gäller endast aktuellt schema | Ändrar fältgrupp | Påverkar andra scheman | Beskrivning |
+|--------------------------|--------------------------------|----------------------|-----------------------|-------------|
+| **Ta bort fält** | Nej | Ja | Ja | Tar bort fältet från fältgruppen. Detta tar bort den från alla scheman som använder den gruppen. |
+| **Hantera relaterade fält** | Ja | Nej | Nej | Döljer endast fält från det aktuella schemat. Fältgruppen ändras inte. |
+| **Föråldrat fält** | Nej | Ja | Ja | Markerar fältet som inaktuellt i fältgruppen. Den är inte längre tillgänglig för användning i något schema. |
+
+>[!NOTE]
+>
+>Detta beteende är konsekvent i både postbaserade och händelsebaserade scheman.
 
 ### Lägg till anpassade fält i fältgrupper {#add-fields}
 
