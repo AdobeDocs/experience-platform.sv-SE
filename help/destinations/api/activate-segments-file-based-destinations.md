@@ -4,9 +4,9 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: eb7d1b9c167839db39cbb28bf497edac706c0b6c
+source-git-commit: 833e38559f7150c579840c69fa2658761fc9472c
 workflow-type: tm+mt
-source-wordcount: '4900'
+source-wordcount: '4975'
 ht-degree: 0%
 
 ---
@@ -4752,6 +4752,14 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 >[!ENDSHADEBOX]
 
 ### Lägg till generering av filmanifest till befintlig destination {#add-file-manifest}
+
+Manifest-JSON-filer innehåller information om exportplats, exportstorlek med mera. Manifestet har fått ett namn i formatet `manifest-<<destinationId>>-<<dataflowRunId>>.json`. Visa en [exempelmanifestfil](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json). Manifestfilen innehåller följande fält:
+
+* `flowRunId`: [Dataflödet kör](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) som genererade den exporterade filen.
+* `scheduledTime`: Tiden i UTC när filen exporterades.
+* `exportResults.sinkPath`: Sökvägen till lagringsplatsen där den exporterade filen placeras.
+* `exportResults.name`: Namnet på den exporterade filen.
+* `size`: Den exporterade filens storlek i byte.
 
 Om du vill lägga till generering av filmanifest till ett befintligt mål måste du uppdatera målanslutningsparametrarna med åtgärden `PATCH`. Detta möjliggör generering av manifestfiler för destinationen, som tillhandahåller metadata om de exporterade filerna.
 

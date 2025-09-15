@@ -4,7 +4,7 @@ description: Lär dig hur du använder (V2) Salesforce Marketing Cloud Account E
 badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: 21ca268d3ade99cf46b6c511360084297e8163d3
+source-git-commit: d1405237698271607fa672ccae1ac731d66df263
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 1%
@@ -22,9 +22,9 @@ Det här målet använder [[!DNL Salesforce Import API v5]](https://developer.sa
 
 >[!IMPORTANT]
 > 
-> Det här är V2-versionen av målet [Salesforce Marketing Cloud Account Engagement](help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md). Den här versionen ersätter den tidigare målversionen och finns för närvarande i Alpha-utgåvan.
-> &#x200B;> <br>
-> &#x200B;> Om du för närvarande använder den tidigare versionen av målet [Salesforce Marketing Cloud Account Engagement](help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) måste du migrera till den här V2-versionen före **januari 2026**. Efter januari 2026 kommer Adobe att avveckla den tidigare versionen och den kommer inte längre att vara tillgänglig.
+> Det här är V2-versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md). Den här versionen ersätter den tidigare målversionen och finns för närvarande i Alpha-utgåvan.
+> > <br>
+> > Om du för närvarande använder den tidigare versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) måste du migrera till den här V2-versionen före **januari 2026**. Efter januari 2026 kommer Adobe att avveckla den tidigare versionen och den kommer inte längre att vara tillgänglig.
 
 
 ## Användningsfall {#use-cases}
