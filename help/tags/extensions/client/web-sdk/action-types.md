@@ -3,9 +3,9 @@ title: Åtgärdstyper i Adobe Experience Platform Web SDK Extension
 description: Läs mer om de olika åtgärdstyperna i taggtillägget Adobe Experience Platform Web SDK.
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e274dda06c678bdbd230bc2f06204724bac633e8
 workflow-type: tm+mt
-source-wordcount: '1976'
+source-wordcount: '2145'
 ht-degree: 0%
 
 ---
@@ -122,13 +122,28 @@ Använd väljaren **[!UICONTROL Instance]** för att välja den Web SDK-instans 
 ![Användargränssnittsbild för Experience Platform-taggar visar Personalization-inställningarna för åtgärdstypen Skicka händelse.](assets/personalization-settings.png)
 
 * **[!UICONTROL Scopes]**: Välj de omfattningar (Adobe Target [!DNL mboxes]) som du vill begära explicit från personalisering. Du kan ange omfattningarna manuellt eller genom att ange ett dataelement.
-* **[!UICONTROL Surfaces]**: Ange de webbytor som är tillgängliga på sidan för personalisering. Mer information finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE).
+* **[!UICONTROL Surfaces]**: Ange de webbytor som är tillgängliga på sidan för personalisering. Mer information finns i [Adobe Journey Optimizer-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html).
 * **Återge beslut om visuell anpassning:** Om du vill återge anpassat innehåll på sidan markerar du kryssrutan **[!UICONTROL Render visual personalization decisions]** . Du kan också ange beslutsomfattningar och/eller ytor om det behövs. Mer information om återgivning av anpassat innehåll finns i [anpassningsdokumentationen](/help/web-sdk/personalization/rendering-personalization-content.md#automatically-rendering-content).
 * **[!UICONTROL Request default personalization]**: Använd det här avsnittet för att kontrollera om det sidomfattande omfånget (global mbox) och standardytan (web surface based on current URL) efterfrågas. Som standard begärs detta automatiskt under det första `sendEvent` anropet av sidinläsningen. Du kan välja mellan följande alternativ:
    * **[!UICONTROL Automatic]**: Detta är standardbeteendet. Begär endast standardanpassning när den ännu inte har begärts. Detta motsvarar `requestDefaultPersonalization` som inte har angetts i Web SDK-kommandot.
    * **[!UICONTROL Enabled]**: Begär sidomfånget och standardytan explicit. Detta uppdaterar SPA-vycachen. Detta motsvarar `requestDefaultPersonalization` inställt på `true`.
    * **[!UICONTROL Disabled]**: Undertrycker explicit begäran för sidomfånget och standardytan. Detta motsvarar `requestDefaultPersonalization` inställt på `false`.
 * **[!UICONTROL Decision context]**: Det här är ett nyckelvärdesschema som används vid utvärdering av Adobe Journey Optimizer-regler för enhetsbeslut. Du kan ange beslutskontexten manuellt eller via ett dataelement.
+
+### Advertising {#advertising}
+
+När du väljer komponenten **[!UICONTROL Advertising]** för den anpassade build-komponenten för Web SDK innehåller regelinställningarna för `sendEvent`-åtgärder ett [!UICONTROL Advertising]-avsnitt som definierar hur annonsdata används för attribueringsmätning. Den här inställningen är användbar när regeln innehåller en sekvens med flera åtgärder.
+
+![Användargränssnittsbild för Experience Platform-taggar visar Advertising-inställningarna för åtgärdstypen Skicka händelse.](assets/send-event-advertising.png)
+
+Avsnittet **[!UICONTROL Request default Advertising data]** innehåller följande alternativ:
+
+* **[!UICONTROL Automatic]**: Alla annonsdata som är tillgängliga vid den här händelsen läggs automatiskt till i XDM.
+* **[!UICONTROL Wait]**: Fördröj utförandet av det här anropet tills annonsdata har hämtats och lösts. Lägg sedan till data i XDM.
+* **[!UICONTROL Disabled]**: Lägg inte till annonsdata i XDM. Använd detta för alla förfrågningar som inte är avsedda för Customer Journey Analytics eller Adobe Analytics.
+* **[!UICONTROL Provide a data element]**: Använd ett dataelement för att inkludera eller exkludera annonsdata under sidinläsning. Lösta värden för dataelementet kan innehålla `automatic`, `wait` och `disabled`.
+
+Om du inte använder en regel för att konfigurera en `sendEvent`-åtgärd skickas annonsdata som en separat Advertisement enrichment-händelse.
 
 ### Åsidosättningar av dataströmskonfiguration {#datastream-overrides}
 
