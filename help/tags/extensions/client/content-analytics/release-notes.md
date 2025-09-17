@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Content Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Content Analytics i Adobe Experience Platform.
 exl-id: 37b34915-655b-40de-b17b-43028c579e37
-source-git-commit: 77d19ab813f881cd3c48c27ed4a9ac02e268e23f
+source-git-commit: dcd880ed73cc8294e6019c43021cb27ea6dd9995
 workflow-type: tm+mt
-source-wordcount: '282'
+source-wordcount: '398'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,7 @@ Nedan följer en lista över versionsinformation för Content Analytics-taggtill
 
 | Version | Datum | Korrigeringar |
 |---|---|---|
+| 1.0.49 | 12 september 2025 | <ul><li>Korrigerade ett mindre fel som skulle göra att gränssnittet för taggtillägg inte lästes in alls om användaren inte hade behörighet för dataström. Gränssnittet kommer nu att visa en behörighetsvarning i datastream-alternativet **[!UICONTROL Choose from list]** och fortfarande tillåta användaren att ange värden manuellt.</li><li>Uppdaterade ett sökvägsproblem för l10n.</li><li>Ett problem har korrigerats där vissa bilder som var underordnade element till överordnade bilder som inte är bilder inte hämtade resursklickningar korrekt för dessa underordnade bildelement.</li><li>Om en användare har konfigurerat WebSDK i taggar med ett annat instansnamn än `alloy`, identifierar Content Analytics-biblioteket den första instansen av WebSDK-biblioteket och använder den för att skicka Content Analytics-händelser.</li></ul> |
 | 1.0.48 | 25 augusti 2025 | <ul><li>Lägger till stöd för att spåra resurser i ett dokuments skuggrots-DOM-element.</li></ul> |
 | 1.0.47 | 23 juli 2025 | <ul><li>Korrigerade ett fel som inträffade när upplevelser inte aktiverades, vilket gjorde att det reguljära uttrycket inte kunde kontrollera upplevelser. Detta förhindrar att Content Analytics data samlas in.</li><li>Ett problem med standardspråkinställningen som hindrade användargränssnittet för taggar från att visas för vissa användare som inte hade sitt primära standardspråk i Experience Cloud har åtgärdats.</li></ul> |
 | 1.0.46 | 18 juni 2025 | <ul><li>Ett popup-meddelande lades till när tilläggskonfigurationen skulle sparas, om det inte finns något produktionsdatastream.</li><li>Korrigera tillfälligt synlighetsproblemet för Content Analytics-nyttolasten genom att placera det stringifierade nyttolastinnehållet i konsolen i stället.</li><li>Stöd för lokalisering har lagts till i tilläggsgränssnittet.</li><li>Ett CSS-problem som orsakade extra utfyllnad runt gränssnittsinnehållet i tillägget har delvis åtgärdats.</li></ul> |
