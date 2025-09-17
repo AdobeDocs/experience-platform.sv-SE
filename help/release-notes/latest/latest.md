@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1416'
-ht-degree: 93%
+ht-degree: 100%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 93%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -172,9 +172,9 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Allmän tillgänglighet för källan [!DNL Oracle NetSuite] | [!DNL Oracle NetSuite]-källan är nu allmänt tillgänglig. Du kan nu ansluta ditt [!DNL Oracle NetSuite]-konto till Experience Platform för att importera aktiviteter och entitetsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL Oracle NetSuite] översikten](../../sources/connectors/marketing-automation/oracle-netsuite.md). |
-| Allmän tillgänglighet för källan [!DNL PathFactory] | [!DNL PathFactory]-källan är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL PathFactory]-konto till Experience Platform för att hämta besökare, sessioner och sidvisningsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL PathFactory] översikten](../../sources/connectors/marketing-automation/pathfactory.md). |
-| Allmän tillgänglighet för källan [!DNL Stripe] | [!DNL Stripe]-källan är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL Stripe]-konto till Experience Platform för att importera betalnings- och transaktionsdata för enhetlig analys och aktivering. Mer information finns i [[!DNL Stripe] översikten](../../sources/connectors/payments/stripe.md). |
+| Allmän tillgänglighet för källan [!DNL Oracle NetSuite] | Källan [!DNL Oracle NetSuite] är nu allmänt tillgänglig. Du kan nu ansluta ditt [!DNL Oracle NetSuite]-konto till Experience Platform för att fylla på med aktiviteter och enhetsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL Oracle NetSuite] översikten](../../sources/connectors/marketing-automation/oracle-netsuite.md). |
+| Allmän tillgänglighet för källan [!DNL PathFactory] | Källan [!DNL PathFactory] är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL PathFactory]-konto till Experience Platform för att fylla på med besökare, sessioner och sidvisningsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL PathFactory] översikten](../../sources/connectors/marketing-automation/pathfactory.md). |
+| Allmän tillgänglighet för källan [!DNL Stripe] | Källan [!DNL Stripe] är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL Stripe]-konto till Experience Platform för att fylla på med betalnings- och transaktionsdata för enhetlig analys och aktivering. Mer information finns i [[!DNL Stripe] översikten](../../sources/connectors/payments/stripe.md). |
 | Förbättrad autentisering för [!DNL Azure Blob Storage] | Nu kan du använda tjänsteprincipbaserad autentisering för att ansluta din [!DNL Azure Blob Storage]-källa till Experience Platform. Använd tjänsteprincipbaserad autentisering för förbättrad säkerhet, enklare rotation av autentiseringsuppgifter och en mer detaljerad åtkomstkontroll för kontot. Mer information finns i [[!DNL Azure Blob Storage] översikten](../../sources/connectors/cloud-storage/blob.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
