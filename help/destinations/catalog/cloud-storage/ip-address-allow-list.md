@@ -3,9 +3,9 @@ title: IP-adress tillåtelselista för filbaserade molnlagringsmål
 type: Documentation
 description: På den här sidan finns IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till molnlagringsplatser.
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: 7cf15550d7619e247052efc4d9b4c72c5d32641a
+source-git-commit: 4ae7ff58d02b46f1b213bd382d3e98b3f63819e8
 workflow-type: tm+mt
-source-wordcount: '284'
+source-wordcount: '290'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ IP-intervallinformationen på den här sidan gäller följande filbaserade molnl
 
 >[!IMPORTANT]
 >
->IP-intervallen som dokumenteras på den här sidan stöds *inte* för följande filbaserade molnlagringsmål: [!UICONTROL Azure Blob], [!UICONTROL Azure Data Lake Storage Gen2] och [!UICONTROL Data Landing Zone].
+>IP-intervallen som dokumenteras på den här sidan stöds *inte* för följande filbaserade molnlagringsmål: [!UICONTROL Azure Blob], [!UICONTROL Azure Data Lake Storage Gen2], [!UICONTROL Data Landing Zone] och SFTP-servrar på Microsoft Azure.
 
 ## Översikt {#overview}
 
