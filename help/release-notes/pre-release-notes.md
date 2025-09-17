@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 491e0881167e3fb383a5a611924bd0d1df07b441
+source-git-commit: c592d007932835f5263d7f78b2e8155790313840
 workflow-type: tm+mt
-source-wordcount: '1263'
-ht-degree: 43%
+source-wordcount: '1209'
+ht-degree: 45%
 
 ---
 
@@ -21,8 +21,8 @@ ht-degree: 43%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: september 2025**
@@ -46,9 +46,8 @@ Adobe Experience Platform AI Assistant är en konversationsupplevelse som du kan
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator är en intelligent assistent för Experience Cloud-program. När du ställer frågor eller ber om hjälp, ber Agent Orchestrator automatiskt specialanställda att ge dig rätt svar. Agent Orchestrator kommer ihåg er konversationshistorik, vilket gör att ni kan bygga vidare på tidigare frågor på ett naturligt sätt utan att behöva upprepa sammanhanget, och kombinerar insikter från olika agenter för att ge er tydliga, enhetliga svar. Du kan använda Agent Orchestrator-funktionerna via konversationsgränssnittet i AI Assistant. |
+| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator är AI Assistant för intelligenta lager. När du ställer frågor eller ber om hjälp, ber Agent Orchestrator automatiskt specialanställda att ge dig rätt svar. Agent Orchestrator kommer ihåg er konversationshistorik, vilket gör att ni kan bygga vidare på tidigare frågor på ett naturligt sätt utan att behöva upprepa sammanhanget, och kombinerar insikter från olika agenter för att ge er tydliga, enhetliga svar. |
 | Audience Agent | Med Audience Agent kan ni visa insikter om målgrupper, inklusive att identifiera betydande förändringar av målgruppsstorlek, identifiera duplicerade målgrupper, utforska ert målgruppslager och ta fram era målgruppers storlek. |
-| Fältidentifieringsagent | Med fältsökningsagenten kan användare automatiskt identifiera och förstå datafält i sina scheman och datamängder. Denna intelligenta agent analyserar datastrukturen och ger insikter om fältanvändning, relationer och rekommendationer för optimering. |
 
 Mer information finns i [översikten över AI-assistenten](../ai-assistant/home.md).
 
