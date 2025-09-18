@@ -4,7 +4,7 @@ title: Skapa en segmentdefinition med hjälp av segmenteringstjänstens API
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvecklar, testar, förhandsgranskar och sparar en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: d9fc1fa6a1bbc6b13b2600a5ec9400a0b488056a
+source-git-commit: a374d261e3b34b30869f1a9e8486d52f5bd658cb
 workflow-type: tm+mt
 source-wordcount: '1067'
 ht-degree: 0%
@@ -72,7 +72,7 @@ Det finns två nödvändiga steg för att förhandsgranska eller få en uppskatt
 
 ### Hur uppskattningar genereras
 
-När data som har aktiverats för kundprofilen i realtid hämtas till Experience Platform lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Om profilantalet inte ändras med mer än 5 % körs provtagningsjobbet automatiskt varje vecka.
+När data som har aktiverats för kundprofilen i realtid hämtas till Experience Platform lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 3 %, utlöses ett samplingsjobb för att uppdatera antalet. Om profilantalet inte ändras med mer än 3 % körs provtagningsjobbet automatiskt varje vecka.
 
 Hur provet utlöses beror på vilken typ av intag som används:
 
