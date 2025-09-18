@@ -3,9 +3,9 @@ keywords: Experience Platform;home;populära topics;map csv;map csv file;map csv
 title: Användargränssnittshandbok för dataprep
 description: Lär dig hur du använder förinställningsfunktioner för data i Experience Platform-gränssnittet för att mappa CSV-filer till ett XDM-schema.
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c9638cdca887f439c57f1dc01f93d63016869b29
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1405'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,7 @@ Använd sedan fönstret [!UICONTROL Upload template] för att hämta en CSV-kopi
 
 ![Överföringsmallfönstret som visar alternativ för att både hämta och överföra en exporterad CSV-fil med mappningarna.](../images/ui/mapping/upload_template.png)
 
-+++Markera för att visa ett exempel på en exporterad mappningsfil
++++Välj det här alternativet om du vill visa ett exempel på en exporterad mappningsfil
 
 ![Den hämtade CSV-filen för mappningsmallen.](../images/ui/mapping/mapping_csv_file.png)
 
@@ -151,6 +151,10 @@ När du är klar väljer du **[!UICONTROL Upload file]** och markerar den uppdat
 >[!ENDTABS]
 
 När mappningarna är klara kan du nu välja **[!UICONTROL Finish]** och fortsätta till nästa steg för att slutföra dataflödet.
+
+>[!TIP]
+>
+>När du är klar med mappningarna väntar du upp till 10 minuter innan du påbörjar dataimporten. Den här vänteperioden ser till att dina nya mappningar är helt sparade och tillgängliga i systemet.
 
 ![Mappningsgränssnittet med en fullständig uppsättning mappningar.](../images/ui/mapping/completed_mappings.png)
 
