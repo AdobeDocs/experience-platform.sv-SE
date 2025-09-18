@@ -64,7 +64,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >Det här steget gäller endast vissa målgruppsmål för direktuppspelning. Om målet inte har ett **[!UICONTROL Mapping]**-steg går du till [målgruppsplanering](#scheduling).
 >
 >När du aktiverar målgrupper till direktuppspelningsmål måste du även mappa *minst ett målidentitetsnamnområde*, förutom målprofilsattribut. Annars aktiveras inte målgrupperna till målplattformen.
->> ![Bild av mappningssteg som visar en obligatorisk namnutrymmesmappning för identitet.](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
+>&#x200B;> ![Bild av mappningssteg som visar en obligatorisk namnutrymmesmappning för identitet.](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
 
 
 Vissa målgruppsmål för direktuppspelning kräver att du väljer källattribut eller identitetsnamnutrymmen som ska mappas som målidentiteter i målet.
