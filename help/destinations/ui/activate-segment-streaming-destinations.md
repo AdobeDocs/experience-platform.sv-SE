@@ -3,7 +3,7 @@ title: Aktivera målgruppsdata för direktuppspelningsmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att mappa dem till direktuppspelningsmål.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 595856842a3890426bb196218bd8be4e321ff8aa
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 > 
 > * Om du vill aktivera målgrupper och aktivera [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 > * Om du vill aktivera målgrupper utan att gå igenom [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
->* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
+> * Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 > 
 > Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
@@ -64,12 +64,12 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >Det här steget gäller endast vissa målgruppsmål för direktuppspelning. Om målet inte har ett **[!UICONTROL Mapping]**-steg går du till [målgruppsplanering](#scheduling).
 >
 >När du aktiverar målgrupper till direktuppspelningsmål måste du även mappa *minst ett målidentitetsnamnområde*, förutom målprofilsattribut. Annars aktiveras inte målgrupperna till målplattformen.
-> ![Bild av mappningssteg som visar en obligatorisk namnutrymmesmappning för identitet.](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
+>> ![Bild av mappningssteg som visar en obligatorisk namnutrymmesmappning för identitet.](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
 
 
 Vissa målgruppsmål för direktuppspelning kräver att du väljer källattribut eller identitetsnamnutrymmen som ska mappas som målidentiteter i målet.
 
-1. Välj **[!UICONTROL Add new mapping]** på sidan **[!UICONTROL Mapping]**.
+1. Välj **[!UICONTROL Mapping]** på sidan **[!UICONTROL Add new mapping]**.
 
    ![Lägg till ny mappningskontroll är markerat.](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
 
