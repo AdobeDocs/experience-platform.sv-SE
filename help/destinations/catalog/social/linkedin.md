@@ -3,25 +3,16 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 13b95db846d70c36233cf8ded491d19e1c93e4c0
+source-git-commit: 653f43ac6afb25445fe8ef3c2832be8f1c4723fe
 workflow-type: tm+mt
-source-wordcount: '1264'
-ht-degree: 4%
+source-wordcount: '1186'
+ht-degree: 2%
 
 ---
 
 # [!DNL LinkedIn Matched Audiences]-anslutning
 
 ## Översikt {#overview}
-
->[!IMPORTANT]
->
->* Från och med 9 september 2025 kan du se två **[!DNL LinkedIn Matched Audiences]**-kort sida vid sida i målkatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga **[!DNL LinkedIn Matched Audiences]**-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) LinkedIn Matched Audiences]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL LinkedIn Matched Audiences]**.
->* Använd den nya anslutningen **[!UICONTROL LinkedIn Matched Audiences]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) LinkedIn Matched Audiences]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
->* Den nya **[!UICONTROL LinkedIn Matched Audiences]**-anslutningen stöder inte längre [!DNL IDFA]-identiteter.
->* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
->   * Flödesspecifikation-id: `963604d1-811d-4ce4-ac66-1fc78bde7c42`
->   * Anslutningsspecifikation-id: `393a7ce1-e527-4fdb-8d99-0b11dc910279`
 
 Aktivera profiler för dina [!DNL LinkedIn]-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden och mobil-ID:n.
 
@@ -36,6 +27,11 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 ## Identiteter som stöds {#supported-identities}
 
 [!DNL LinkedIn Matched Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
+
+>[!IMPORTANT]
+>
+>Från och med september 2025 har målet [!DNL LinkedIn Matched Audiences] inte längre stöd för [!DNL IDFA]-identiteter (identifierare för annonsörer).  Den här ändringen beror på LinkedIn:s krav och är inte relaterad till några uppgraderingar av Experience Platform destinationstjänst.
+
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
@@ -96,7 +92,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >[!NOTE]
 >
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
->&#x200B;> Attributkälldata hashas inte automatiskt.
+>> Attributkälldata hashas inte automatiskt.
 > 
 > Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
 > 
