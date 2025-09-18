@@ -3,16 +3,18 @@ title: Målgruppsanalys
 description: Se vilka målgrupper kunderna är berättigade till i Customer Journey Analytics.
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Informative"
 exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+hide: true
+hidefromtoc: true
+source-git-commit: 4bd94c292a13a80405a3d726295ebd6eaf86aaaa
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '758'
 ht-degree: 0%
 
 ---
 
 # Målgruppsanalys
 
-Med målet [!UICONTROL Audience Analysis] kan du berika Adobe Experience Platform målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=sv-SE). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html?lang=sv-SE) -rapportering.
+Med målet [!UICONTROL Audience Analysis] kan du berika Adobe Experience Platform målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html) -rapportering.
 
 >[!AVAILABILITY]
 >
