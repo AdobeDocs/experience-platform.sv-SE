@@ -3,10 +3,10 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 653f43ac6afb25445fe8ef3c2832be8f1c4723fe
+source-git-commit: 6b3b830f822cc02c78d6f593c0a949d3e19ada37
 workflow-type: tm+mt
-source-wordcount: '1186'
-ht-degree: 2%
+source-wordcount: '1202'
+ht-degree: 1%
 
 ---
 
@@ -30,7 +30,7 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 
 >[!IMPORTANT]
 >
->Från och med september 2025 har målet [!DNL LinkedIn Matched Audiences] inte längre stöd för [!DNL IDFA]-identiteter (identifierare för annonsörer).  Den här ändringen beror på LinkedIn:s krav och är inte relaterad till några uppgraderingar av Experience Platform destinationstjänst.
+>Från och med september 2025 kan du inte längre mappa [!DNL IDFA] som en målidentitet, eftersom [!DNL IDFA] inte längre stöds av målet [!DNL LinkedIn Matched Audiences]. Mer information finns i [!DNL LinkedIn Matched Audiences]-integreringens [dokumentation](https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users?view=li-lms-2025-07&tabs=http#idtypes). Den här ändringen beror på LinkedIn:s krav och är inte relaterad till några uppgraderingar av Experience Platform destinationstjänst.
 
 
 | Målidentitet | Beskrivning | Överväganden |
@@ -92,7 +92,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >[!NOTE]
 >
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
->&#x200B;> Attributkälldata hashas inte automatiskt.
+>> Attributkälldata hashas inte automatiskt.
 > 
 > Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
 > 

@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: d93e98f3-d165-4710-ad1d-2ad3857cd0f8
-source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
+source-git-commit: 6b3b830f822cc02c78d6f593c0a949d3e19ada37
 workflow-type: tm+mt
-source-wordcount: '1416'
-ht-degree: 91%
+source-wordcount: '1469'
+ht-degree: 96%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 91%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 19 augusti 2025**
@@ -104,6 +104,7 @@ Mer information om Katalogtjänsten finns i [översikten över Katalogtjänsten]
 | --- | --- |
 | [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md) intern uppgradering | Från och med 11 augusti 2025 har du under en kort tidsperiod kanske sett två **[!DNL Microsoft Bing]**-kort sida vid sida i destinationskatalogen. Det här beror på en intern uppgradering av måltjänsten. Den befintliga målanslutningen **[!DNL Microsoft Bing]** har bytt namn till **[!UICONTROL (Deprecated) Microsoft Bing]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Microsoft Bing]**. <br> Uppgraderingen har slutförts och det inaktuella kortet har tagits bort från destinationskatalogen. Använd **[!UICONTROL Microsoft Bing]**-anslutningen i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till **[!UICONTROL (Deprecated) Microsoft Bing]**-destinationen uppdateras de automatiskt. Du behöver därför inte göra något. <br><br> Om du skapar dataflöden via [Flow Service API:et](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:<ul><li>Flödesspecifikation-id: `8d42c81d-9ba7-4534-9bf6-cf7c64fbd12e`</li><li>Anslutningsspecifikation-id: `dd69fc59-3bc5-451e-8ec2-1e74a670afd4`</li></ul> Efter den här uppgraderingen kan det hända att **antalet aktiverade profiler** i dina dataflöden minskar till [!DNL Microsoft Bing]. Denna minskning orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. |
 | Information om förfallotid för autentisering för [[!DNL LinkedIn]](../../destinations/catalog/social/linkedin.md)- och [LinkedIn Matched Audiences](../../destinations/catalog/social/linkedin-b2b.md)-destinationer | Information om förfallotid för autentisering för [!DNL LinkedIn]-destinationer visas nu direkt i Experience Platform-gränssnittet, så du kan se när din autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. Du kan övervaka förfallotiden för dina tokens från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**. |
+| [Borttagning av identitetsstöd för LinkedIn Matched Audiences](../../destinations/catalog/social/linkedin-b2b.md) [!DNL IDFA] | Från och med september 2025 kan du inte längre mappa [!DNL IDFA] som en målidentitet, eftersom [!DNL IDFA] inte längre stöds av målet [!DNL LinkedIn Matched Audiences]. Mer information finns i [!DNL LinkedIn Matched Audiences]-integreringens [dokumentation](https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users?view=li-lms-2025-07&tabs=http#idtypes). Den här ändringen beror på LinkedIn:s krav och är inte relaterad till några uppgraderingar av Experience Platform destinationstjänst. |
 
 **Ny eller uppdaterad funktionalitet**
 
@@ -159,7 +160,7 @@ Mer information om sandlådor finns i [översikten över sandlådor](../../sandb
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Målgruppsuppskattningar | Målgruppsuppskattningar visas nu som ett **intervall**, som baseras på samplingsdatans konfidensintervall. Mer information om uppskattningar finns i [guiden Skapa segment](/help/segmentation/ui/segment-builder.md#audience-properties). |
+| Målgruppsuppskattningar | Målgruppsberäkningar visas nu som ett **intervall** som baseras på konfidensintervall för samplingsdata. Om du vill veta mer om beräkningar kan du läsa [Segment Builder-guiden](/help/segmentation/ui/segment-builder.md#audience-properties). |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
@@ -171,9 +172,9 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Allmän tillgänglighet för källan [!DNL Oracle NetSuite] | [!DNL Oracle NetSuite]-källan är nu allmänt tillgänglig. Du kan nu ansluta ditt [!DNL Oracle NetSuite]-konto till Experience Platform för att importera aktiviteter och entitetsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL Oracle NetSuite] översikten](../../sources/connectors/marketing-automation/oracle-netsuite.md). |
-| Allmän tillgänglighet för källan [!DNL PathFactory] | [!DNL PathFactory]-källan är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL PathFactory]-konto till Experience Platform för att hämta besökare, sessioner och sidvisningsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL PathFactory] översikten](../../sources/connectors/marketing-automation/pathfactory.md). |
-| Allmän tillgänglighet för källan [!DNL Stripe] | [!DNL Stripe]-källan är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL Stripe]-konto till Experience Platform för att importera betalnings- och transaktionsdata för enhetlig analys och aktivering. Mer information finns i [[!DNL Stripe] översikten](../../sources/connectors/payments/stripe.md). |
+| Allmän tillgänglighet för källan [!DNL Oracle NetSuite] | Källan [!DNL Oracle NetSuite] är nu allmänt tillgänglig. Du kan nu ansluta ditt [!DNL Oracle NetSuite]-konto till Experience Platform för att fylla på med aktiviteter och enhetsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL Oracle NetSuite] översikten](../../sources/connectors/marketing-automation/oracle-netsuite.md). |
+| Allmän tillgänglighet för källan [!DNL PathFactory] | Källan [!DNL PathFactory] är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL PathFactory]-konto till Experience Platform för att fylla på med besökare, sessioner och sidvisningsdata för en enhetlig analys och aktivering. Mer information finns i [[!DNL PathFactory] översikten](../../sources/connectors/marketing-automation/pathfactory.md). |
+| Allmän tillgänglighet för källan [!DNL Stripe] | Källan [!DNL Stripe] är nu allmänt tillgänglig. Du kan ansluta ditt [!DNL Stripe]-konto till Experience Platform för att fylla på med betalnings- och transaktionsdata för enhetlig analys och aktivering. Mer information finns i [[!DNL Stripe] översikten](../../sources/connectors/payments/stripe.md). |
 | Förbättrad autentisering för [!DNL Azure Blob Storage] | Nu kan du använda tjänsteprincipbaserad autentisering för att ansluta din [!DNL Azure Blob Storage]-källa till Experience Platform. Använd tjänsteprincipbaserad autentisering för förbättrad säkerhet, enklare rotation av autentiseringsuppgifter och en mer detaljerad åtkomstkontroll för kontot. Mer information finns i [[!DNL Azure Blob Storage] översikten](../../sources/connectors/cloud-storage/blob.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
