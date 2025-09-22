@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1385f91694f9b6dfe96b9d424af0da6f2a1443c2
 workflow-type: tm+mt
-source-wordcount: '697'
-ht-degree: 8%
+source-wordcount: '702'
+ht-degree: 9%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 8%
       * [Sjukvård](./schema/industries/healthcare.md)
       * [Telekommunikation](./schema/industries/telecom.md)
       * [Resor och turism](./schema/industries/travel-hospitality.md)
-   * Vårddatamodell V2 {#healthcare}
+   * Sjukvårdsdatamodell V2 {#healthcare}
       * [Sjukvård V2](./schema/healthcare/healthcare-v2.md)
       * Klasser {#classes}
          * [Plats](./schema/healthcare/classes/location.md)
@@ -94,7 +94,7 @@ ht-degree: 8%
       * [XDM Business Marketing List](./classes/b2b/business-marketing-list.md)
       * [XDM Business Marketing List-medlemmar](./classes/b2b/business-marketing-list-members.md)
 * Fältgrupper {#field-groups}
-   * XDM-individuell profil {#profile}
+   * Individuell XDM-profil {#profile}
       * [Innehåll och inställningar](./field-groups/profile/consents.md)
       * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
       * [Information om sjukvårdsmedlem](./field-groups/profile/healthcare-member-details.md)
@@ -108,10 +108,11 @@ ht-degree: 8%
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
       * [XDM Business Person Components](./field-groups/profile/business-person-components.md)
       * [Information om XDM Business Person](./field-groups/profile/business-person-details.md)
-   * Individuell XDM-profil för potentiell kund {#prospect-profile}
+   * XDM-profil för enskild potentiell kund {#prospect-profile}
       * [Information om partnerpotentiell kund (exempel)](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)
+      * [Adobe Advertising Cloud, fullständigt tillägg](./field-groups/event/advertising-full-extension.md)
       * [Information om Advertising](./field-groups/event/advertising-details.md)
       * [Programinformation](./field-groups/event/application-details.md)
       * [Saldoöverföringar](./field-groups/event/balance-transfers.md)
@@ -140,9 +141,9 @@ ht-degree: 8%
       * [Information om XDM Business Campaign](./field-groups/b2b-campaign/details.md)
    * XDM Business Campaign-medlemmar {#b2b-campaign-members}
       * [Information om medlemmar i XDM Business Campaign](./field-groups/b2b-campaign-members/details.md)
-   * Medication {#medication}
+   * Medicin {#medication}
       * [Sjukvård](./field-groups/medication/healthcare-medication.md)
-   * Planera {#plan}
+   * Plan {#plan}
       * [Information om vårdplan](./field-groups/plan/healthcare-plan-details.md)
    * Produkt {#product}
       * [Produktkatalog](./field-groups/product/product-catalog.md)
@@ -251,7 +252,7 @@ ht-degree: 8%
    * [Skapa scheman med hjälp av maskininlärning](./ui/ml-assisted-schema-creation.md)
    * [Generera XDM-exempeldata](./ui/sample.md)
    * [Exportera XDM-scheman](./ui/export.md)
-* API:t för schemaregistret {#api}
+* API för schemaregister {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [Scheman](api/schemas.md)
@@ -284,4 +285,4 @@ ht-degree: 8%
    * [Skapa ett ad hoc-schema](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
