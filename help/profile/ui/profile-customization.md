@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;a
 title: Anpassning av profildetaljer i användargränssnittet
 description: Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt.
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: e253be0c4e02b82bfc8926ac4531589782b9c8fe
 workflow-type: tm+mt
-source-wordcount: '1316'
+source-wordcount: '1289'
 ht-degree: 0%
 
 ---
@@ -27,8 +27,6 @@ När du har valt att ändra kontrollpanelen kan du ändra ordning på korten gen
 ![Knappen för att ändra storlek är markerad i Basic-attributkortet.](../images/profile-customization/resize.png)
 
 Det valda kortet justeras till önskad storlek och omgivande kort flyttas dynamiskt. Detta kan medföra att vissa kort flyttas till ytterligare rader, vilket kräver att du rullar nedåt för att se alla kort. Om du till exempel ändrar storlek på kortet [!UICONTROL Basic attributes] visas inte längre kortet [!UICONTROL Linked identities] på den översta raden och visas nu på en ny andra rad i profilen (visas inte). Om du vill returnera [!UICONTROL Linked identities]-kortet till den översta raden kan du dra och släppa det till den aktuella positionen för [!UICONTROL Channel preferences]-kortet.
-
-![Ett omskalat kort är markerat.](../images/profile-customization/resized.png)
 
 ## Redigera och ta bort kort
 
@@ -70,8 +68,6 @@ När du återgår till skärmen **[!UICONTROL Edit widget]** bör listan med att
 
 När du har sparat återgår du till fliken **[!UICONTROL Detail]** där det uppdaterade kortet och attributen visas.
 
-![De nya attributen visas på kortet på kontrollpanelen Profil.](../images/profile-customization/added-attributes.png)
-
 ## Lägg till ett nytt kort {#add-a-new-card}
 
 Om du vill anpassa utseendet på profiler i Experience Platform ytterligare kan du välja att lägga till nya kort på kontrollpanelen och välja de attribut som du vill visa på dessa kort. Börja med att välja **[!UICONTROL Modify dashboard]** på fliken **[!UICONTROL Detail]**.
@@ -99,8 +95,6 @@ Om du vill spara ditt nya kort måste du först ange **[!UICONTROL Card title]**
 ![Den nya widgeten förhandsvisas i fönstret Redigera widget.](../images/profile-customization/new-widget.png)
 
 När du har sparat återgår du till fliken **[!UICONTROL Detail]** där ditt nya kort och attribut visas.
-
-![Den nya widgeten läggs till på profilkontrollpanelen.](../images/profile-customization/added-widget.png)
 
 ## Återställ standardkort
 
