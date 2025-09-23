@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 24ff17af89bc882f08ec0f331ebae53b61f35d78
+source-git-commit: 84cc86e4afa74668ba00a7ef5ba824f44db3f8f1
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '788'
 ht-degree: 19%
 
 ---
@@ -202,6 +202,8 @@ ht-degree: 19%
       * [SDI-undersökning](https://exchange.adobe.com/apps/ec/102991)
       * [SDI Toolkit](https://exchange.adobe.com/apps/ec/101460)
       * [SessionCam](https://exchange.adobe.com/apps/ec/100517)
+      * [!DNL Snap Pixel] {#snap-pixel}
+         * [Översikt](./extensions/client/snap-pixel/overview.md)
       * [Lagringsspanner](https://exchange.adobe.com/apps/ec/102990)
       * [TAGGAR efter loop-Horisont](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium-samling](https://exchange.adobe.com/apps/ec/104217)
@@ -341,5 +343,5 @@ ht-degree: 19%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
