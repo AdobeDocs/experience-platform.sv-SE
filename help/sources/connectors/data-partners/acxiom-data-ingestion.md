@@ -1,22 +1,17 @@
 ---
 title: Acxiom-datainmatning
-description: Lär dig hur du importerar [!DNL Acxiom] data till Real-time Customer Data Platform, förbättrar förstahandsprofiler och förbättrar målgrupper och aktiverar i alla marknadsföringskanaler.
-badge: Beta
+description: Lär dig hur du importerar [!DNL Acxiom] data till Real-Time Customer Data Platform, förbättrar förstahandsprofiler och förbättrar målgrupper och aktiverar i alla marknadsföringskanaler.
 exl-id: 3bbbe4e1-5e34-4104-bf39-2c452865b807
-source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
 
 # [!DNL Acxiom Data Ingestion]
 
->[!NOTE]
->
->Källan [!DNL Acxiom Prospecting Data Import] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
-
-Använd källan [!DNL Acxiom Data Ingestion] för att importera [!DNL Acxiom]-data till Real-time Customer Data Platform och berika förstapartsprofiler. Sedan kan du använda dina [!DNL Acxiom]-berikade förstahandsprofiler för att förbättra målgrupper och aktivera i alla marknadsföringskanaler.
+Använd källan [!DNL Acxiom Data Ingestion] för att importera [!DNL Acxiom]-data till Real-Time Customer Data Platform och berika förstapartsprofiler. Sedan kan du använda dina [!DNL Acxiom]-berikade förstahandsprofiler för att förbättra målgrupper och aktivera i alla marknadsföringskanaler.
 
 ![acxiom-data-ingestion-workflow](../../images/tutorials/create/acxiom-data-enhancement-import/acxiom-data-ingestion.png)
 
@@ -35,7 +30,7 @@ Om du vill ansluta ditt [!DNL Acxiom Data Ingestion]-konto till Experience Platf
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Innan du kan använda källanslutningar måste du lägga till de IP-adresser som krävs för din region på tillåtelselista. Om du inte lägger till de här IP-adresserna kanske källanslutningarna inte fungerar som de ska eller så kan fel uppstå. Detaljerade instruktioner och en lista över IP-adresser som ska tillåtas finns på sidan [IP-adressen tillåtelselista ](../../ip-address-allow-list.md).
 
 ### Konfigurera behörigheter i Experience Platform
 
@@ -54,4 +49,4 @@ De begränsningar som anges nedan måste beaktas när du namnger molnlagringsfil
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du slutfört de nödvändiga inställningarna för att kunna överföra data från ditt [!DNL Acxiom]-konto till Experience Platform. Du kan nu fortsätta med guiden för [att ansluta [!DNL Acxiom Data Ingestion] till Experience Platform via användargränssnittet](../../tutorials/ui/create/data-partners/acxiom-data-ingestion.md).
+Genom att läsa det här dokumentet har du slutfört de nödvändiga inställningarna för att kunna överföra data från ditt [!DNL Acxiom]-konto till Experience Platform. Du kan nu fortsätta med guiden om att [ansluta [!DNL Acxiom Data Ingestion] till Experience Platform via användargränssnittet](../../tutorials/ui/create/data-partners/acxiom-data-ingestion.md).

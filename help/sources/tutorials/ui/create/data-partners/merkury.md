@@ -1,21 +1,15 @@
 ---
 title: Skapa en Merkury Enterprise Identity Resolution Source Connection och Dataflöde i användargränssnittet
 description: Lär dig hur du skapar en källanslutning för Merkury Enterprise Identity Resolution med hjälp av Adobe Experience Platform-gränssnittet.
-last-substantial-update: 2023-12=12
-badge: Beta
 exl-id: 2af48c18-76f9-4615-8e76-8f030a312a8f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '2075'
+source-wordcount: '2057'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Merkury Enterprise Identity Resolution]-källanslutning och ett dataflöde i användargränssnittet
-
->[!NOTE]
->
->Källan [!DNL Merkury Enterprise Identity Resolution] är i betaversion. Läs [källöversikten](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 I den här självstudiekursen beskrivs hur du skapar en [!DNL Merkury Enterprise Identity Resolution]-källanslutning och ett dataflöde med Adobe Experience Platform-användargränssnittet.
 
@@ -105,7 +99,7 @@ I följande tabell visas rätt dataformat för de filtyper som stöds:
 
 ### Markera en kolumnavgränsare
 
-+++Välj för att visa steg för hur du anger en avgränsare
++++Välj det här alternativet om du vill visa steg för hur du ställer in en avgränsare
 
 När du har konfigurerat dataformatet kan du ange en kolumnavgränsare när du importerar avgränsade filer. Välj alternativet **[!UICONTROL Delimiter]** och välj sedan en avgränsare i listrutan. Menyn innehåller de vanligaste alternativen för avgränsare, inklusive kommatecken (`,`), tabbar (`\t`) och ett rör (`|`).
 
@@ -145,7 +139,7 @@ Om du vill importera till en ny datauppsättning väljer du **[!UICONTROL New da
 
 ### Aktivera profil- och feldiagnostik
 
-+++Välj för att visa steg för att aktivera feldiagnostik och profilinmatning
++++Välj det här alternativet om du vill visa steg för att aktivera feldiagnostik och profilinmatning
 
 Välj sedan **[!UICONTROL Profile dataset]** för att aktivera datauppsättningen för kundprofilen i realtid. På så sätt kan du skapa en helhetsbild av en enhets attribut och beteenden. Data från alla profilaktiverade datauppsättningar inkluderas i profilen och ändringarna tillämpas när du sparar dataflödet.
 
@@ -155,7 +149,7 @@ Välj sedan **[!UICONTROL Profile dataset]** för att aktivera datauppsättninge
 
 ### Aktivera aviseringar
 
-+++Välj för att visa steg för att aktivera aviseringar
++++Markera för att visa steg för att aktivera aviseringar
 
 Du kan aktivera varningar för att få meddelanden om status för ditt dataflöde. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på källvarningar med användargränssnittet](../../alerts.md).
 

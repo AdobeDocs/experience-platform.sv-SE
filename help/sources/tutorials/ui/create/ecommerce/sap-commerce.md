@@ -1,20 +1,15 @@
 ---
 title: Skapa en källanslutning för SAP Commerce i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en SAP Commerce med hjälp av Adobe Experience Platform användargränssnitt.
-badge: Beta
 exl-id: 6484e51c-77cd-4dbd-9c68-0a4e3372da33
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '955'
+source-wordcount: '938'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL SAP Commerce]-källanslutning i användargränssnittet
-
->[!NOTE]
->
->Källan [!DNL SAP Commerce] är i betaversion. Mer information om hur du använder betatecknade källor finns i [källöversikten](../../../../home.md#terms-and-conditions).
 
 I följande självstudiekurs får du hjälp med att skapa en [!DNL SAP Commerce]-källanslutning för att få [[!DNL SAP] faktureringskontakter för prenumerationer](https://www.sap.com/products/financial-management/subscription-billing.html) och kunddata med hjälp av Adobe Experience Platform användargränssnitt.
 

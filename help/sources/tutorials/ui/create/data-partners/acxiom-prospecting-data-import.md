@@ -1,21 +1,15 @@
 ---
 title: Acxiom Prospecting Data Import
 description: Lär dig hur du ansluter Acxiom Prospecting Data till Adobe Experience Platform och Adobe Real-Time Customer Data Platform med användargränssnittet.
-last-substantial-update: 2024-02-21T00:00:00Z
-badge: Beta
 exl-id: cde0bfe9-0604-41d3-8422-114f58a74d04
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '1819'
+source-wordcount: '1801'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Acxiom Prospecting Data Import]-källanslutning och ett dataflöde i användargränssnittet
-
->[!NOTE]
->
->Källan [!DNL Acxiom Prospecting Data Import] är i betaversion. Läs [källöversikten](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 [!DNL Acxiom]s Prospecting Data Import för Adobe Real-Time Customer Data Platform är en process för att leverera de mest produktiva målgrupperna för potentiella kunder. [!DNL Acxiom] tar Real-Time CDP egna data via en säker export och kör dessa data via ett prisbelönt hygien- och identitetsupplösningssystem. Detta skapar en datafil som ska användas som en undertryckningslista. Den här datafilen matchas sedan mot den globala Acxiom-databasen, som gör att listan över potentiella kunder kan anpassas för import.
 

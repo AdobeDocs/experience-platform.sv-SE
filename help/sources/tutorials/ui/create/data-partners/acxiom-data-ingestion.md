@@ -1,21 +1,15 @@
 ---
 title: Acxiom-datainmatning
 description: Använd Acxiom-datainmatning för att importera Acxiom-data till Real-Time CDP och berika förstahandsprofiler. Använd era Acxiom-berikade förstapartsprofiler för att förbättra målgrupperna och aktivera i alla marknadsföringskanaler.
-last-substantial-update: 2024-03-19T00:00:00Z
-badge: Beta
 exl-id: a0a080ef-4603-437f-8a68-11dbf530ac90
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '1791'
+source-wordcount: '1769'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Acxiom Data Ingestion]-källanslutning och ett dataflöde i användargränssnittet
-
->[!NOTE]
->
->Källan [!DNL Acxiom Data Ingestion] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 Använd källan [!DNL Acxiom Data Ingestion] för att importera [!DNL Acxiom]-data till Real-Time Customer Data Platform och berika förstapartsprofiler. Sedan kan du använda dina [!DNL Acxiom]-berikade förstahandsprofiler för att förbättra målgrupper och aktivera i alla marknadsföringskanaler.
 
@@ -125,7 +119,7 @@ Du kan välja **[!UICONTROL Advanced search]** om du vill visa ett fönster med 
 
 >[!ENDTABS]
 
-+++Välj om du vill ha steg för att aktivera profilintagning, feldiagnostik och partiell förtäring.
++++Välj för steg om du vill aktivera profilinmatning, feldiagnostik och partiell inmatning.
 
 Om din datauppsättning är aktiverad för kundprofil i realtid kan du under det här steget växla **[!UICONTROL Profile dataset]** för att aktivera dina data för profilinmatning. Du kan också använda det här steget för att aktivera **[!UICONTROL Error diagnostics]** och **[!UICONTROL Partial ingestion]**.
 

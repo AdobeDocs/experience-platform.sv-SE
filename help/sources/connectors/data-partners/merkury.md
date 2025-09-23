@@ -1,21 +1,15 @@
 ---
 title: Merkury Enterprise Identity Resolution Source - översikt
 description: Lär dig hur du ansluter Merkury Enterprise Identity Resolution till Adobe Experience Platform via användargränssnittet.
-last-substantial-update: 2023-12-12T00:00:00Z
-badge: Beta
 exl-id: c5eaa561-d620-4c82-bce1-972d0a422c3f
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: e402a58f51de49b26f9d279cebf551ec11e4698f
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '486'
 ht-degree: 0%
 
 ---
 
 # [!DNL Merkury Enterprise Identity Resolution]
-
->[!NOTE]
->
->Källan [!DNL Merkury Enterprise Identity Resolution] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 Adobe Experience Platform har stöd för inmatning av data från ett datapartnerprogram. Stöd för datapartners är [!DNL Merkury Enterprise Identity Resolution].
 
@@ -23,8 +17,8 @@ Du kan använda [!DNL Merkury] av [!DNL Merkle] för att identifiera fler digita
 
 Du kan använda **person-ID** som en del av [!DNL Merkury]-källan för att kombinera allt som din organisation känner till om en individ till en enda heltäckande profil. Dessa uppgifter kan vara:
 
-- digitala beteenden
-- köpinställningar
+- Digitala beteenden
+- Köpinställningar
 - Identifiera information som namn, e-postadress, fysisk adress eller enhets-ID.
 
 Du kan formatera inkapslade data som XDM (Experience Data Model) JSON, XDM Parquet eller avgränsat. Varje steg i processen är integrerat i källorna
@@ -33,7 +27,7 @@ Du kan formatera inkapslade data som XDM (Experience Data Model) JSON, XDM Parqu
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Innan du kan använda källanslutningar måste du lägga till de IP-adresser som krävs för din region på tillåtelselista. Om du inte lägger till de här IP-adresserna kanske källanslutningarna inte fungerar som de ska eller så kan fel uppstå. Detaljerade instruktioner och en lista över IP-adresser som ska tillåtas finns på sidan [IP-adressen tillåtelselista ](../../ip-address-allow-list.md).
 
 ## Namnbegränsningar för filer och kataloger
 
@@ -59,4 +53,4 @@ Du måste uppfylla följande krav innan du kan börja använda källan [!DNL Mer
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du slutfört nödvändiga inställningar för att kunna överföra data från ditt [!DNL Merkury]-konto till Experience Platform. Du kan nu fortsätta med guiden för [att ansluta [!DNL Merkury] till Experience Platform via användargränssnittet](../../tutorials/ui/create/data-partners/merkury.md).
+Genom att läsa det här dokumentet har du slutfört nödvändiga inställningar för att kunna överföra data från ditt [!DNL Merkury]-konto till Experience Platform. Du kan nu fortsätta med guiden om att [ansluta [!DNL Merkury] till Experience Platform via användargränssnittet](../../tutorials/ui/create/data-partners/merkury.md).
