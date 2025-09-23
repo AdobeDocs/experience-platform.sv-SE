@@ -80,5 +80,5 @@ Använd dessa värden för att konfigurera webkroken i **Relay-konsolen**. Detal
 
 ## Ytterligare resurser
 
-* [Skapa en ny anslutningsspecifikation med API:t för Flow Service ](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/create)
-* [Anslut till källan med användargränssnittet](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)
+* [Skapa en ny anslutningsspecifikation med API:t för Flow Service ](https://experienceleague.adobe.com/sv/docs/experience-platform/sources/sdk/streaming-sdk/create)
+* [Anslut till källan med användargränssnittet](https://experienceleague.adobe.com/sv/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)

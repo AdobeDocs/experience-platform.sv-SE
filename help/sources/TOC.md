@@ -400,4 +400,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
