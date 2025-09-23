@@ -1,24 +1,24 @@
 ---
-title: Snowflake Streaming-anslutning
+title: Snowflake Batch-anslutning
 description: Exportera data till ditt Snowflake-konto med privata listor.
 badgeBeta: label="Beta" type="Informative"
-exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: 183858daac3a2471cb842f1d7308f91cf514c5ee
+badgeUltimate: label="Ultimate" type="Positive"
+source-git-commit: 3500e5ba00727c6299331cff79c56a99009cfd37
 workflow-type: tm+mt
-source-wordcount: '1407'
-ht-degree: 1%
+source-wordcount: '1611'
+ht-degree: 0%
 
 ---
 
-# Snowflake Streaming-anslutning {#snowflake-destination}
+# Snowflake Batch-anslutning {#snowflake-destination}
 
 >[!IMPORTANT]
 >
->Den här destinationsanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få åtkomst.
+>Den här målanslutningen är i betaversion och endast tillgänglig för Real-Time CDP Ultimate-kunder. Funktionen och dokumentationen kan komma att ändras.
 
 ## Översikt {#overview}
 
-Använd Snowflake målanslutning för att exportera data till en Adobe Snowflake-instans, som Adobe sedan delar med din instans via [privata listor](https://other-docs.snowflake.com/en/collaboration/collaboration-listings-about).
+Använd det här målet för att skicka målgruppsdata till dynamiska tabeller i ditt Snowflake-konto. Dynamiska tabeller ger åtkomst till dina data utan att det krävs fysiska datakopior.
 
 I följande avsnitt beskrivs hur Snowflake mål fungerar och hur data överförs mellan Adobe och Snowflake.
 
@@ -26,29 +26,35 @@ I följande avsnitt beskrivs hur Snowflake mål fungerar och hur data överförs
 
 Det här målet använder en [!DNL Snowflake]-dataresurs, vilket innebär att inga data exporteras fysiskt eller överförs till din egen Snowflake-instans. I stället ger Adobe skrivskyddad åtkomst till en livetabell som finns i Adobe Snowflake-miljö. Du kan fråga den här delade tabellen direkt från ditt Snowflake-konto, men du äger inte tabellen och kan inte ändra eller behålla den efter den angivna kvarhållningsperioden. Adobe hanterar den delade tabellens livscykel och struktur.
 
-Första gången du delar data från en Adobe Snowflake-instans till din blir du ombedd att godkänna den privata listan från Adobe.
+Första gången du har konfigurerat ett dataflöde från Adobe till ditt Snowflake-konto uppmanas du att godkänna den privata listan från Adobe.
 
-![Skärmbild som visar Snowflake bekräftelseskärm för privat listning](../../assets/catalog/cloud-storage/snowflake/snowflake-accept-listing.png)
+![Skärmbild som visar Snowflake bekräftelseskärm för privat listning](../../assets/catalog/cloud-storage/snowflake-batch/snowflake-accept-listing.png)
 
 ### Datalagring och TTL (Time-to-Live) {#ttl}
 
-Alla data som delas genom den här integreringen har en fast TTL-värde på sju dagar. Sju dagar efter den sista exporten förfaller den delade tabellen automatiskt och blir oåtkomlig, oavsett om dataflödet fortfarande är aktivt eller inte. Om du vill behålla data längre än sju dagar måste du kopiera innehållet till en tabell som du äger i din egen Snowflake-instans innan TTL-värdet går ut.
+Alla data som delas genom den här integreringen har en fast TTL-värde på sju dagar. Sju dagar efter den senaste exporten förfaller den dynamiska tabellen automatiskt och blir oåtkomlig, oavsett om dataflödet fortfarande är aktivt eller inte. Om du vill behålla data längre än sju dagar måste du kopiera innehållet till en tabell som du äger i din egen Snowflake-instans innan TTL-värdet går ut.
+
+>[!IMPORTANT]
+>
+>Om du tar bort ett dataflöde i Experience Platform försvinner den dynamiska tabellen från ditt Snowflake-konto.
 
 ### Funktion för målgruppsuppdatering {#audience-update-behavior}
 
 Om målgruppen utvärderas i [gruppläge](../../../segmentation/methods/batch-segmentation.md) uppdateras data i den delade tabellen var 24:e timme. Detta innebär att det kan bli en fördröjning på upp till 24 timmar mellan ändringar i målgruppsmedlemskap och när dessa ändringar återspeglas i den delade tabellen.
 
-### Inkrementell exportlogik {#incremental-export}
+### Logik för batchdatadelning {#batch-data-sharing}
 
-När ett dataflöde körs för en målgrupp för första gången utförs en bakåtfyllnad och alla aktuella kvalificerade profiler delas. Efter den här initiala bakåtfyllnaden återspeglas endast inkrementella uppdateringar i den delade tabellen. Detta innebär profiler som läggs till eller tas bort från målgruppen. Det här sättet garanterar effektiva uppdateringar och håller den delade tabellen uppdaterad.
+När ett dataflöde körs för en målgrupp för första gången utförs en bakåtfyllnad och alla aktuella kvalificerade profiler delas. Efter den här initiala bakåtfyllnaden tillhandahåller målet periodiska ögonblicksbilder av hela målgruppsmedlemskapet. Varje ögonblicksbild ersätter tidigare data i den delade tabellen, så att du alltid ser den senaste fullständiga bilden av målgruppen utan historiska data.
 
 ## Direktuppspelning jämfört med batchdelning av data {#batch-vs-streaming}
 
-Experience Platform tillhandahåller två typer av Snowflake-mål: [Snowflake Streaming](snowflake.md) och [Snowflake Batch](../cloud-storage/snowflake-batch.md).
+Experience Platform tillhandahåller två typer av Snowflake-mål: [Snowflake Streaming](/help/destinations/catalog/cloud-storage/snowflake.md) och [Snowflake Batch](snowflake-batch.md).
 
-Tabellen nedan hjälper dig att avgöra vilket mål som ska användas genom att beskriva de scenarier där varje datadelningsmetod är lämpligast.
+Båda destinationerna ger dig åtkomst till dina data i Snowflake på ett sätt där ingen kopia behövs, men det finns några rekommenderade metoder för användning för varje anslutning.
 
-|  | Välj [Snowflake Batch](../cloud-storage/snowflake-batch.md) när du behöver | Välj [Snowflake Streaming](snowflake.md) när du behöver |
+Tabellen nedan hjälper dig att avgöra vilken koppling som ska användas genom att beskriva de scenarier där varje datautdelningsmetod är lämpligast.
+
+|  | Välj [Snowflake Batch](snowflake-batch.md) när du behöver | Välj [Snowflake Streaming](/help/destinations/catalog/cloud-storage/snowflake.md) när du behöver |
 |--------|-------------------|----------------------|
 | **Uppdateringsfrekvens** | Periodiska ögonblicksbilder | Kontinuerliga uppdateringar i realtid |
 | **Datapresentation** | Fullständig målgruppsbild som ersätter tidigare data | Inkrementella uppdateringar baserade på profiländringar |
@@ -56,26 +62,19 @@ Tabellen nedan hjälper dig att avgöra vilket mål som ska användas genom att 
 | **Datahantering** | Visa alltid den senaste fullständiga fixeringen | Inkrementella uppdateringar baserade på förändringar av målgruppsmedlemskap |
 | **Exempelscenarier** | Affärsrapportering, dataanalys, ML-modellutbildning | Förhindra marknadsföringskampanjer, personalisering i realtid |
 
-Mer information om gruppdatadelning finns i dokumentationen för [Snowflake Batch-anslutningen](../cloud-storage/snowflake-batch.md).
+Mer information om datadelning vid direktuppspelning finns i dokumentationen för [Snowflake Streaming Connection](../cloud-storage/snowflake.md).
 
 ## Användningsfall {#use-cases}
 
-Direktuppspelning av data är idealiskt för scenarier där du behöver omedelbara uppdateringar när en profil ändrar sitt medlemskap eller andra attribut. Detta är avgörande för användningsområden som kräver svarstider i realtid, till exempel:
+Batchdatadelning är idealiskt för scenarier där du behöver en fullständig ögonblicksbild av din målgrupp och det inte krävs några realtidsuppdateringar, till exempel:
 
-* **Inaktivering av marknadsföringskampanjer**: Inaktivera marknadsföringskampanjer för användare som har vidtagit specifika åtgärder, som att registrera sig för en tjänst eller göra ett köp omedelbart
-* **Realtidspersonalisering**: Uppdatera användarupplevelser direkt när profilattributen ändras, till exempel när en användare besöker en webbplats, visar en produktsida eller lägger till artiklar i en kundvagn
-* **Omedelbara åtgärdsscenarier**: Utför snabb inaktivering och återmarknadsföring baserat på realtidsdata för att minska fördröjningar och se till att marknadsföringskampanjer är mer relevanta och aktuella
-* **Effektivitet och nyans**: Aktivera ökad effektivitet och nyans i marknadsföringen genom att tillåta snabba svar på ändringar av användarbeteenden
-* **Optimering av kundresan i realtid**: Uppdatera kundupplevelsen direkt när segmentmedlemskapet eller profilattributen ändras
+* **Analytiska arbetsbelastningar**: Vid dataanalys, rapportering eller affärsintelligensaktiviteter som kräver en fullständig vy över målgruppsmedlemskapet
+* **Maskinininlärningsarbetsflöden**: För utbildning av ML-modeller eller körning av prediktiv analys som drar nytta av fullständiga målgruppsbilder
+* **Datalagerhantering**: När du behöver underhålla en aktuell kopia av målgruppsdata i din egen Snowflake-instans
+* **Periodisk rapportering**: För regelbunden affärsrapportering där du behöver det senaste målgruppsläget utan historik för ändringsspårning
+* **ETL-processer**: När du behöver omvandla eller bearbeta målgruppsdata i grupper
 
-Direktuppspelning av datadelning ger kontinuerliga uppdateringar baserat på segmentändringar, ändringar av identitetskartan eller attributändringar, vilket gör den lämplig för scenarier där fördröjning är viktig och omedelbara uppdateringar krävs.
-
-## Förhandskrav {#prerequisites}
-
-Innan du konfigurerar din Snowflake-anslutning måste du kontrollera att följande krav uppfylls:
-
-* Du har åtkomst till ett [!DNL Snowflake]-konto.
-* Ditt Snowflake-konto prenumererar på privata listor. Du eller någon på ditt företag som har kontoadministratörsbehörighet för Snowflake kan konfigurera detta.
+Batchdatadelning förenklar datahanteringen genom att tillhandahålla fullständiga ögonblicksbilder, vilket eliminerar behovet av att hantera inkrementella uppdateringar eller manuellt sammanfoga ändringar.
 
 ## Målgrupper {#supported-audiences}
 
@@ -88,6 +87,17 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 {style="table-layout:auto"}
 
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | ✓ | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
@@ -95,7 +105,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL Snowflake]. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Batch]** | Det här målet ger periodiska ögonblicksbilder av ett fullständigt målgruppsmedlemskap genom Snowflake datautbyte. Varje ögonblicksbild ersätter tidigare data och ser till att du alltid har den senaste fullständiga bilden av din publik. |
 
 {style="table-layout:auto"}
 
@@ -109,20 +119,20 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 ### Autentisera till mål {#authenticate}
 
-Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
+Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]** och anger ett kontonamn och, eventuellt, en kontobeskrivning.
 
-![Exempelbild som visar hur du autentiserar till målet](../../assets/catalog/cloud-storage/snowflake/authenticate-destination.png)
+![Exempelbild som visar hur du autentiserar till målet](../../assets/catalog/cloud-storage/snowflake-batch/authenticate-destination.png)
 
 ### Fyll i målinformation {#destination-details}
 
 >[!CONTEXTUALHELP]
->id="platform_destinations_snowflake_accountID"
+>id="platform_destinations_snowflake_batch_accountID"
 >title="Ange ditt konto-ID för Snowflake"
 >abstract="Om ditt konto är länkat till en organisation använder du det här formatet: `OrganizationName.AccountName`<br><br> Om ditt konto inte är länkat till en organisation använder du det här formatet:`AccountName`"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Exempelbild som visar hur du fyller i information för ditt mål](../../assets/catalog/cloud-storage/snowflake/configure-destination-details.png)
+![Exempelbild som visar hur du fyller i information för ditt mål](../../assets/catalog/cloud-storage/snowflake-batch/configure-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -148,19 +158,37 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappningsattribut {#map}
 
-Snowflake-målet stöder mappning av profilattribut till anpassade attribut.
+Du kan exportera identiteter och profilattribut till det här målet.
 
-![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake/mapping.png)
+![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
+
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-Kontrollera ditt Snowflake-konto för att bekräfta att data exporterades korrekt.
+Data läggs in i ditt Snowflake-konto via en dynamisk tabell. Kontrollera ditt Snowflake-konto för att bekräfta att data exporterades korrekt.
+
+### Datastruktur {#data-structure}
+
+Den dynamiska tabellen innehåller följande kolumner:
+
+* **TS**: En tidsstämpelkolumn som representerar när varje rad senast uppdaterades
+* **Mappningsattribut**: Alla mappningsattribut som du väljer under aktiveringsarbetsflödet representeras som en kolumnrubrik i Snowflake
+* **Målgruppsmedlemskap**: Medlemskap för alla målgrupper som är mappade till dataflödet anges via en `active` -post i motsvarande cell
+
+![Skärmbild som visar Snowflake-gränssnittet med dynamiska tabelldata](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png)
+
+## Kända begränsningar {#known-limitations}
+
+### Flera sammanfogningsprinciper
+
+Målgrupper med flera sammanfogningsprinciper stöds inte i ett enda dataflöde. Olika sammanfogningsprinciper skapar olika ögonblicksbilder, och i praktiken skrivs data som är relaterade till en viss målgrupp över av data från den andra målgruppen, i stället för att data exporteras som förväntat från båda.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
