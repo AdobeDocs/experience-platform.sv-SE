@@ -1,16 +1,21 @@
 ---
 title: Översikt över Capillary Streaming Events
 description: Lär dig att strömma data från Capillary till Experience Platform.
-hide: true
-hidefromtoc: true
-source-git-commit: 7b733831932c48240340b0a2136e15f5d2144635
+last-substantial-update: 2025-09-23T00:00:00Z
+badge: Beta
+exl-id: 3b8eb2f6-3b4a-4b91-89d4-b6d9027c6ab4
+source-git-commit: 91d6206c6ce387fde365fa72dc79ca79fc0e46fa
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
 
 # [!DNL Capillary Streaming Events]
+
+>[!AVAILABILITY]
+>
+>Källan [!DNL Capillary Streaming Events] är i betaversion. Läs [villkoren](../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 [!DNL Capillary Technologies] är en ledande lojalitets- och engagemangsplattform som är betrodd av över 300 varumärken runt om i världen. Använd [!DNL Capillary Streaming Events]-källan för att göra det möjligt för ditt företag att strömma kundprofiler, lojalitetsdata och transaktionshändelser från [!DNL Capillary] till Adobe Experience Platform. Anslut [!DNL Capillary]-källan för att aktivera personalisering i realtid, avancerad målgruppssegmentering och flerkanalskampanjer.
 

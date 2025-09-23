@@ -1,16 +1,20 @@
 ---
 title: Anslut Capillary till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Capillary till Experience Platform med API:er.
-hide: true
-hidefromtoc: true
-source-git-commit: 7119ca51e0a4db09c8adb68bcde41ab3837439d1
+badge: Beta
+exl-id: 763792d0-d5dc-40ac-b86a-6a0d26463b71
+source-git-commit: 91d6206c6ce387fde365fa72dc79ca79fc0e46fa
 workflow-type: tm+mt
-source-wordcount: '1112'
+source-wordcount: '1150'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Capillary Streaming Events] till Experience Platform med API:t [!DNL Flow Service]
+
+>[!AVAILABILITY]
+>
+>Källan [!DNL Capillary Streaming Events] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 Läs den här vägledningen när du vill lära dig hur du använder [!DNL Capillary Streaming Events] och [[!DNL Flow Service]  API](https://developer.adobe.com/experience-platform-apis/references/flow-service/) för att strömma data från ditt [!DNL Capillary]-konto till Adobe Experience Platform.
 
@@ -230,9 +234,9 @@ Transaktioner fångar upp handelsaktiviteter. Visa följande nyttolast för ett 
 
 >[!ENDTABS]
 
-### Händelser som stöds
+<!--### Supported Events
 
-[!DNL Capillary]-källan stöder följande händelser:
+The [!DNL Capillary] source supports the following events:
 
 * `pointsIssued`
 * `tierDowngraded`
@@ -247,8 +251,7 @@ Transaktioner fångar upp handelsaktiviteter. Visa följande nyttolast för ett 
 * `pointsRedeemed`
 * `transactionAdded`
 * `tierRenewed`
-* `customerUpdated`
-
+* `customerUpdated`-->
 
 ### Historisk datamigrering
 
@@ -319,11 +322,15 @@ Mappa de kapillära fälten till motsvarande XDM-schemafält enligt följande:
 
 | Source-schema | Målschema |
 |------------------------------|-------------------------------|
-| `identityMap.email.id` | `xdm:identityMap.email` |
-| `loyalty.points` | `xdm:loyaltyPoints` |
-| `loyalty.tier` | `xdm:loyaltyTier` |
+| `identityMap.email.id` | `xdm:identityMap.email[0].id` |
+| `loyalty.points` | `xdm:loyalty.points` |
+| `loyalty.tier` | `xdm:loyalty.tier` |
 | `commerce.order.priceTotal` | `xdm:commerce.order.priceTotal` |
 | `productLineItems.SKU` | `xdm:productListItems.SKU` |
+
+>[!TIP]
+>
+>Du kan hämta [händelser och profilmappningar](../../../../images/tutorials/create/capillary/mappings.zip) för [!DNL Capillary] och [importera filerna till Data Prep](../../../../../data-prep/ui/mapping.md#import-mapping) när du är redo att mappa dina data.
 
 ### Skapa ett dataflöde {#flow}
 
@@ -376,7 +383,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar ditt dataflöde med dess motsvarande dataflödes-ID.
+Ett lyckat svar returnerar dataflödet med dess motsvarande dataflödes-ID.
 
 ```json
 {

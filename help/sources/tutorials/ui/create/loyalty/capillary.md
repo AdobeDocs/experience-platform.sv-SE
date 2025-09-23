@@ -1,16 +1,20 @@
 ---
 title: Koppla Capillary till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter Capillary till Experience Platform med användargränssnittet
-hide: true
-hidefromtoc: true
-source-git-commit: 7b733831932c48240340b0a2136e15f5d2144635
+badge: Beta
+exl-id: c90e6500-b92c-44ba-8de6-84e772bd9db1
+source-git-commit: 91d6206c6ce387fde365fa72dc79ca79fc0e46fa
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '791'
 ht-degree: 0%
 
 ---
 
-# Anslut [!DNL Capillary] till Experience Platform med användargränssnittet
+# Anslut [!DNL Capillary Streaming Events] till Experience Platform med användargränssnittet
+
+>[!AVAILABILITY]
+>
+>Källan [!DNL Capillary Streaming Events] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
 Läs den här vägledningen när du vill lära dig hur du ansluter din [!DNL Capillary]-databas till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
@@ -74,13 +78,17 @@ När datauppsättningen har konfigurerats måste du ange information om dataflö
 | --- | --- |
 | Dataflödesnamn | Dataflödets namn.  Som standard används namnet på filen som importeras. |
 | Beskrivning | (Valfritt) En kort beskrivning av dataflödet. |
-| Aviseringar | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ är alla ett öppet dataflöde som utlöser dem.  Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
+| Aviseringar | Experience Platform kan skapa händelsebaserade aviseringar som användare kan prenumerera på. Dessa alternativ gör att ett löpande dataflöde kan aktivera dessa.  Mer information finns i [varningsöversikten](../../alerts.md) <ul><li>**Källdataflödeskörning Start**: Välj den här aviseringen för att få ett meddelande när dataflödeskörningen börjar.</li><li>**Källdataflödet har körts**: Välj den här aviseringen om du vill få ett meddelande om dataflödet slutar utan fel.</li><li>**Körningsfel för källdataflöde**: Välj den här aviseringen för att få ett meddelande om dataflödet avslutas med fel.</li></ul> |
 
 {style="table-layout:auto"}
 
 ## Mappning
 
-Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan data importeras till Experience Platform.  Mer information finns i [mappningsguiden i användargränssnittet](../../../../../data-prep/ui/mapping.md).
+Använd mappningsgränssnittet för att mappa källdata till rätt schemafält innan data importeras till Experience Platform. Mer information finns i [mappningsguiden i användargränssnittet](../../../../../data-prep/ui/mapping.md).
+
+>[!TIP]
+>
+>Du kan hämta [händelser och profilmappningar](../../../../images/tutorials/create/capillary/mappings.zip) för [!DNL Capillary] och [importera filerna till Data Prep](../../../../../data-prep/ui/mapping.md#import-mapping) när du är redo att mappa dina data.
 
 ![Mappningsgränssnittet för Capillary.](../../../../images/tutorials/create/capillary/mappings.png)
 
