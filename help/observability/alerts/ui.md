@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för aviseringar
 description: Lär dig hur du hanterar aviseringar i Experience Platform användargränssnitt.
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 57261ca37bf10e394f47ea4bb3c01856a18b197d
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '782'
 ht-degree: 4%
 
 ---
@@ -96,10 +96,12 @@ Varningströskelvärden kan anpassas för följande varningstyper:
 | Körningsfördröjning för destinationsflöde | Fördröjningströskel |
 | Körningsfördröjning för identitetstjänstens flöde | Fördröjningströskel |
 | Körningsfördröjning för profilflöde | Fördröjningströskel |
+| Inmatningsfel för profilströmning har överskridits | Feltröskel |
+| Överhoppningshastighet för inmatning av profilströmning har överskridits | Feltröskel |
 | Körningsfördröjning för källflöde | Fördröjningströskel |
+| Felfrekvens för källinmatning har överskridits | Feltröskel |
 | Frågekörningsfördröjning | Fördröjningströskel |
 | Överhoppningsfrekvens för aktivering överskriden | Feltröskel |
-| Felfrekvens för källinmatning har överskridits | Feltröskel |
 
 Markera ellipsen (**...**) bredvid en regels namn, så visas kontroller i en listruta. Välj **[!UICONTROL Edit]**.
 
