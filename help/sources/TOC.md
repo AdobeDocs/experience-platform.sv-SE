@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 197cdc89abd292d87276d792201dedb2373f5564
+source-git-commit: a05e20845b6c111139451f593ef24fb8f760b5bd
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1070'
 ht-degree: 7%
 
 ---
@@ -103,6 +103,8 @@ ht-degree: 7%
       - [Förminska strömning](connectors/ecommerce/shopify-streaming.md)
    - Lokalt system {#local-system}
       - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
+   - Lojalitet {#loyalty}
+      - [Kapillärströmningshändelser](connectors/loyalty/capillary.md)
    - Automatisering av marknadsföring {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
       - [Chatlio](connectors/marketing-automation/chatlio-webhook.md)
@@ -179,6 +181,8 @@ ht-degree: 7%
          - [SAP COMMERCE](tutorials/api/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
          - [Förminska strömning](tutorials/api/create/ecommerce/shopify-streaming.md)
+      - Lojalitet {#loyalty}
+         - [Kapillärströmningshändelser](tutorials/api/create/loyalty/capillary.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [Chatlio](tutorials/api/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/api/create/marketing-automation/customerio-webhook.md)
@@ -311,6 +315,8 @@ ht-degree: 7%
          - [Förminska strömning](tutorials/ui/create/ecommerce/shopify-streaming.md)
       - Lokalt system {#local-system}
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
+      - Lojalitet {#loyalty}
+         - [Kapillärströmningshändelser](tutorials/ui/create/loyalty/capillary.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [Braze Currents](tutorials/ui/create/marketing-automation/braze.md)
          - [Chatlio](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
@@ -322,6 +328,7 @@ ht-degree: 7%
          - [Oracle NetSuite-aktiviteter](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
          - [Oracle NetSuite-entiteter](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
+         - [Relay Connector](tutorials/ui/create/marketing-automation/relay-connector.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [Fyrkant](tutorials/ui/create/payments/square.md)
@@ -393,4 +400,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
