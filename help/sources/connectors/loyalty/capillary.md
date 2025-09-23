@@ -1,0 +1,72 @@
+---
+title: Översikt över Capillary Streaming Events
+description: Lär dig att strömma data från Capillary till Experience Platform.
+hide: true
+hidefromtoc: true
+source-git-commit: 7b733831932c48240340b0a2136e15f5d2144635
+workflow-type: tm+mt
+source-wordcount: '273'
+ht-degree: 0%
+
+---
+
+# [!DNL Capillary Streaming Events]
+
+[!DNL Capillary Technologies] är en ledande lojalitets- och engagemangsplattform som är betrodd av över 300 varumärken runt om i världen. Använd [!DNL Capillary Streaming Events]-källan för att göra det möjligt för ditt företag att strömma kundprofiler, lojalitetsdata och transaktionshändelser från [!DNL Capillary] till Adobe Experience Platform. Anslut [!DNL Capillary]-källan för att aktivera personalisering i realtid, avancerad målgruppssegmentering och flerkanalskampanjer.
+
+Genom att integrera [!DNL Capillary] med Experience Platform kan du:
+
+* Synkronisera **förmånspunkter, nivåer och belöningar** i realtid.
+* Skicka **transaktionsdata** till Experience Platform för analys och aktivering.
+* Använd Real-Time CDP, Experience Platform och Adobe Journey Optimizer för segmentering, resesamordning och personalisering.
+
+## Förhandskrav
+
+Innan du ansluter [!DNL Capillary] till Adobe Experience Platform bör du kontrollera att du har:
+
+* Ett giltigt **Adobe-organisations-ID** och åtkomst till en aktiverad Experience Platform-sandlåda.
+* **[!DNL Capillary]källautentiseringsuppgifter** (klient-ID och klienthemlighet).
+* Behörigheter som krävs i Adobe Admin Console för att skapa källor och dataflöden.
+
+### Samla in nödvändiga inloggningsuppgifter
+
+Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta ditt [!DNL Capillary]-konto till Experience Platform:
+
+| Autentiseringsuppgifter | Beskrivning | Exempel |
+| --- | --- | --- |
+| Klient-ID | Klient-ID för källan [!DNL Capillary]. | `321c8a8fee0d4a06838d46f9d3109e8a` |
+| Klienthemlighet | Klienthemligheten som utfärdas med klient-ID | `xxxxxxxxxxxxxxxxxx` |
+| Organisations-ID | Ditt Adobe-organisations-ID | `0A7D42FC5DB9D3360A495FD3@AdobeOrg` |
+
+Mer information om hur du genererar åtkomsttoken finns i [Adobe-autentiseringsguiden](https://developer.adobe.com/developer-console/docs/guides/authentication/).
+
+### Generera en åtkomsttoken
+
+Använd sedan ditt klient-ID och klienthemlighet för att generera en åtkomsttoken från Adobe.
+
+**Begäran**
+
+```shell
+curl -X POST 'https://ims-na1.adobelogin.com/ims/token' \
+  -d 'client_id={CLIENT_ID}' \
+  -d 'client_secret={CLIENT_SECRET}' \
+  -d 'grant_type=client_credentials' \
+  -d 'scope=openid AdobeID read_organizations additional_info.projectedProductContext session'
+```
+
+**Svar**
+
+```json
+{
+  "access_token": "eyJhbGciOi...",
+  "token_type": "bearer",
+  "expires_in": 86399994
+}
+```
+
+## Nästa steg
+
+När du har slutfört kravkonfigurationen för [!DNL Capillary] kan du läsa följande dokumentation för att lära dig hur du kan ansluta ditt konto och starta direktuppspelning av data från [!DNL Capillary] till Experience Platform.
+
+* [Anslut [!DNL Capillary Streaming Events] till Experience Platform med API:t](../../tutorials/api/create/loyalty/capillary.md)
+* [Anslut [!DNL Capillary Streaming Events] till Experience Platform med användargränssnittet](../../tutorials/ui/create/loyalty/capillary.md)
