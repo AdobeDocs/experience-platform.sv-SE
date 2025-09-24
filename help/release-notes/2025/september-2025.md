@@ -1,7 +1,6 @@
 ---
-title: Versionsinformation om Adobe Experience Platform för augusti 2025
-description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
+title: Versionsinformation om Adobe Experience Platform september 2025
+description: Versionsinformationen för Adobe Experience Platform från september 2025.
 source-git-commit: e21381f2683070fdbf24c473fa6794b89160864b
 workflow-type: tm+mt
 source-wordcount: '1393'
@@ -92,6 +91,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Modellbaserade scheman | Förenkla datamodelleringen med modellbaserade scheman. Nu kan du lättare skapa scheman tack vare många exempel och guider. Den här funktionen är för närvarande tillgänglig för innehavare av Campaign Orchestration-licenser och kommer att utvidgas till att omfatta Data Distiller-kunder på GA, vilket gör datamodelleringen mer tillgänglig och effektiv. Funktionen har stöd för tidsseriedata och funktioner för datainhämtning vid ändring. |
 
 Mer information finns i [XDM-översikten](../../xdm/home.md).
+
 <!--
 
 | Data Mirror | Ingest row-level changes from cloud data warehouses (e.g., Snowflake, Databricks, BigQuery) into Adobe Experience Platform using model-based schemas. Data Mirror eliminates upstream ETL and preserves relationships, versioning, and deletions by mirroring existing database structures directly into the data lake. Time-series and record event schema behavior with change data capture capabilities are all supported. This feature is currently available for Campaign Orchestration license holders and will expand through this limited release, also including Customer Journey Analytics customers. See the [Data Mirror documentation](../../xdm/data-mirror/overview.md) for more details. Contact your Adobe representative for access. |
