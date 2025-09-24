@@ -1,13 +1,10 @@
 ---
 title: Stöd för privata länkar för källor i API
 description: Lär dig hur du skapar och använder privata länkar för Adobe Experience Platform-källor
-badge: Beta
-hide: true
-hidefromtoc: true
 exl-id: 9b7fc1be-5f42-4e29-b552-0b0423a40aa1
-source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
+source-git-commit: 4d82b0a7f5ae9e0a7607fe7cb75261e4d3489eff
 workflow-type: tm+mt
-source-wordcount: '1661'
+source-wordcount: '1515'
 ht-degree: 0%
 
 ---
@@ -16,23 +13,36 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är begränsad och stöds för närvarande endast av följande källor:
+>Den här funktionen stöds av följande källor:
 >
->* [[!DNL Azure Blob]](../../connectors/cloud-storage/blob.md)
->* [[!DNL Azure Data Lake Gen2]](../../connectors/cloud-storage/adls-gen2.md)
+>* [[!DNL Azure Blob Storage]](../../connectors/cloud-storage/blob.md)
+>* [[!DNL ADLS Gen2]](../../connectors/cloud-storage/adls-gen2.md)
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
->* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
+>
+>Stöd för privata länkar är för närvarande endast tillgängligt för organisationer som har köpt Adobe Healthcare Shield eller Adobe Privacy &amp; Security Shield.
 
 Du kan använda funktionen Privat länk för att skapa privata slutpunkter som dina Adobe Experience Platform-källor kan ansluta till. Anslut dina källor till ett virtuellt nätverk med privata IP-adresser på ett säkert sätt, så att du slipper använda offentliga IP-adresser och minskar antalet attacker. Förenkla nätverkskonfigurationen genom att eliminera behovet av komplexa brandväggs- eller nätverksadressöversättningskonfigurationer, samtidigt som datatrafiken endast når ut till godkända tjänster.
 
 Läs den här guiden och lär dig hur du kan använda API:er för att skapa och använda en privat slutpunkt.
 
+>[!BEGINSHADEBOX]
+
+## Licensanvändningsberättigande för stöd för privata länkar
+
+Giltighetsmåtten för licensanvändning för stöd för privata länkar i källor är följande:
+
+* Kunderna har rätt till upp till 2 TB per år dataöverföring via de källor som stöds ([!DNL Azure Blob Storage], [!DNL ADLS Gen2] och [!DNL Azure File Storage]), i alla sandlådor och organisationer.
+* Varje organisation kan ha högst 10 slutpunkter för alla produktionssandlådor.
+* Varje organisation kan ha högst en slutpunkt för alla utvecklingssandlådor.
+
+>[!ENDSHADEBOX]
+
 ## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Platform]-tjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
@@ -67,7 +77,6 @@ curl -X POST \
       "subscriptionId": "4281a16a-696f-4993-a7d3-a3da32b846f3",
       "resourceGroupName": "acme-sources-experience-platform",
       "resourceName": "acmeexperienceplatform",
-      "fqdns": [],
       "connectionSpec": {
           "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
           "version": "1.0"
@@ -81,7 +90,6 @@ curl -X POST \
 | `subscriptionId` | Det ID som är kopplat till din [!DNL Azure]-prenumeration. Mer information finns i guiden [!DNL Azure] om hur du [hämtar dina prenumerations- och klient-ID:n från  [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id). |
 | `resourceGroupName` | Namnet på resursgruppen på [!DNL Azure]. En resursgrupp innehåller relaterade resurser för en [!DNL Azure]-lösning. Mer information finns i guiden [!DNL Azure] om [hantering av resursgrupper](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal). |
 | `resourceName` | Namnet på resursen. I [!DNL Azure] refererar en resurs till instanser som virtuella datorer, webbprogram och databaser. Mer information finns i guiden [!DNL Azure] om [att förstå  [!DNL Azure] resurshanteraren](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview). |
-| `fqdns` | De kvalificerade domännamnen för källan. Den här egenskapen krävs bara när källan [!DNL Snowflake] används. |
 | `connectionSpec.id` | Anslutningens spec-ID för källan som du använder. |
 | `connectionSpec.version` | Versionen av det anslutningsspec-ID som du använder. |
 
@@ -100,7 +108,6 @@ Ett lyckat svar returnerar följande:
   "subscriptionId": "4281a16a-696f-4993-a7d3-a3da32b846f3",
   "resourceGroupName": "acme-sources-experience-platform",
   "resourceName": "acmeexperienceplatform",
-  "fqdns": [],
   "connectionSpec": {
       "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
       "version": "1.0"
@@ -116,7 +123,6 @@ Ett lyckat svar returnerar följande:
 | `subscriptionId` | Det ID som är kopplat till din [!DNL Azure]-prenumeration. Mer information finns i guiden [!DNL Azure] om hur du [hämtar dina prenumerations- och klient-ID:n från  [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id). |
 | `resourceGroupName` | Namnet på resursgruppen på [!DNL Azure]. En resursgrupp innehåller relaterade resurser för en [!DNL Azure]-lösning. Mer information finns i guiden [!DNL Azure] om [hantering av resursgrupper](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal). |
 | `resourceName` | Namnet på resursen. I [!DNL Azure] refererar en resurs till instanser som virtuella datorer, webbprogram och databaser. Mer information finns i guiden [!DNL Azure] om [att förstå  [!DNL Azure] resurshanteraren](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview). |
-| `fqdns` | De kvalificerade domännamnen för källan. Den här egenskapen krävs bara när källan [!DNL Snowflake] används. |
 | `connectionSpec.id` | Anslutningens spec-ID för källan som du använder. |
 | `connectionSpec.version` | Versionen av det anslutningsspec-ID som du använder. |
 | `state` | Det aktuella läget för din privata slutpunkt. Giltiga lägen är: <ul><li>`Pending`</li><li>`Failed`</li><li>`Approved`</li><li>`Rejected`</li></ul> |
@@ -543,7 +549,7 @@ POST /connections/
 
 **Begäran**
 
-Följande begäran skapar en autentiserad basanslutning för [!DNL Snowflake], samtidigt som en privat slutpunkt används.
+Följande begäran skapar en autentiserad basanslutning för [!DNL Azure Blob Storage], samtidigt som en privat slutpunkt används.
 
 +++Välj för att visa begärandeexempel
 
@@ -556,8 +562,8 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Snowflake base connection",
-      "description": "A base connection for a Snowflake source that uses a private link.",
+      "name": "Azure Blob Storage base connection",
+      "description": "A base connection for a Azure Blob Storage source that uses a private link.",
       "auth": {
           "specName": "ConnectionString",
           "params": {
@@ -566,7 +572,7 @@ curl -X POST \
           }
       },
       "connectionSpec": {
-          "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
           "version": "1.0"
       }
   }'
@@ -577,10 +583,10 @@ curl -X POST \
 | `name` | Namnet på din basanslutning. |
 | `description` | (Valfritt) En beskrivning med ytterligare information om anslutningen. |
 | `auth.specName` | Autentiseringen som används för att ansluta källan till Experience Platform. |
-| `auth.params.connectionString` | Anslutningssträngen [!DNL Snowflake]. Mer information finns i [[!DNL Snowflake] API-autentiseringsguiden](../api/create/databases/snowflake.md). |
+| `auth.params.connectionString` | Anslutningssträngen [!DNL Azure Blob Storage]. Mer information finns i [[!DNL Azure Blob Storage] API-autentiseringsguiden](../api/create/cloud-storage/blob.md). |
 | `auth.params.usePrivateLink` | Ett booleskt värde som avgör om du använder en privat slutpunkt eller inte. Ange det här värdet till `true` om du använder en privat slutpunkt. |
-| `connectionSpec.id` | Anslutningens spec-ID för [!DNL Snowflake]. |
-| `connectionSpec.version` | Versionen av ditt [!DNL Snowflake]-anslutningsspec-ID. |
+| `connectionSpec.id` | Anslutningens spec-ID för [!DNL Azure Blob Storage]. |
+| `connectionSpec.version` | Versionen av ditt [!DNL Azure Blob Storage]-anslutningsspec-ID. |
 
 +++
 
@@ -830,24 +836,32 @@ Ett lyckat svar returnerar alla anslutningar som är kopplade till privata slutp
 
 Läs det här avsnittet om du vill ha mer information om hur du använder [!DNL Azure] privata länkar i API:t.
 
-### Konfigurera ditt [!DNL Snowflake]-konto för att ansluta till privata länkar
+### Godkänn en privat slutpunkt för [!DNL Azure Blob] och [!DNL Azure Data Lake Gen2]
 
-Du måste slutföra följande nödvändiga steg för att kunna använda källan [!DNL Snowflake] med privata länkar.
+Logga in på [!DNL Azure Blob] om du vill godkänna en privat slutpunktsbegäran för källorna [!DNL Azure Data Lake Gen2] och [!DNL Azure Portal]. Välj **[!DNL Data storage]** i den vänstra navigeringen, gå till fliken **[!DNL Security + networking]** och välj **[!DNL Networking]**. Välj sedan **[!DNL Private endpoints]** för att visa en lista över privata slutpunkter som är associerade med ditt konto och deras aktuella anslutningstillstånd. Om du vill godkänna en väntande begäran markerar du önskad slutpunkt och klickar på **[!DNL Approve]**.
 
-Först måste du skaffa en supportbiljett i [!DNL Snowflake] och begära **slutpunktstjänstens resurs-ID** för [!DNL Azure]-regionen för ditt [!DNL Snowflake]-konto. Följ stegen nedan för att höja upp en [!DNL Snowflake]-biljett:
+![Azure-portalen med en lista över väntande privata slutpunkter.](../../images/tutorials/private-links/azure.png)
 
-1. Navigera till [[!DNL Snowflake] användargränssnittet](https://app.snowflake.com) och logga in med ditt e-postkonto. Under det här steget måste du se till att din e-post verifieras i profilinställningarna.
-2. Välj din **användarmeny** och välj sedan **support** för att få tillgång till [!DNL Snowflake]-support.
-3. Välj **[!DNL + Support Case]** om du vill skapa ett supportärende. Fyll sedan i formuläret med relevant information och bifoga nödvändiga filer.
-4. När du är klar skickar du ärendet.
+<!--
 
-Resurs-ID för slutpunkten har följande format:
+### Configure your [!DNL Snowflake] account to connect to private links
+
+You must complete the following prerequisite steps in order to use the [!DNL Snowflake] source with private links.
+
+First, you must raise a support ticket in [!DNL Snowflake] and request for the **endpoint service resource ID** of the [!DNL Azure] region of your [!DNL Snowflake] account. Follow the steps below to raise a [!DNL Snowflake] ticket:
+
+1. Navigate to the [[!DNL Snowflake] UI](https://app.snowflake.com) and sign in with your email account. During this step, you must ensure that your email is verified in profile settings.
+2. Select your **user menu** and then select **support** to access [!DNL Snowflake] support.
+3. To create a support case, select **[!DNL + Support Case]**. Then, fill out the form with relevant details and attach any necessary files.
+4. When finished, submit the case.
+
+The endpoint resource ID is formatted as follows:
 
 ```shell
 subscriptions/{SUBSCRIPTION_ID}/resourceGroups/az{REGION}-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-az{REGION}
 ```
 
-+++Markera för att visa exempel
++++Select to view example
 
 ```shell
 /subscriptions/4575fb04-6859-4781-8948-7f3a92dc06a3/resourceGroups/azwestus2-privatelink/providers/microsoft.network/privatelinkservices/sf-pvlinksvc-azwestus2
@@ -855,14 +869,14 @@ subscriptions/{SUBSCRIPTION_ID}/resourceGroups/az{REGION}-privatelink/providers/
 
 +++
 
-| Parameter | Beskrivning | Exempel |
+| Parameter | Description | Example |
 | --- | --- | --- |
-| `{SUBSCRIPTION_ID}` | Det unika ID som identifierar din [!DNL Azure]-prenumeration. | `a1b2c3d4-5678-90ab-cdef-1234567890ab` |
-| `{REGION}` | Regionen [!DNL Azure] för ditt [!DNL Snowflake]-konto. | `azwestus2` |
+| `{SUBSCRIPTION_ID}` | The unique ID that identifies your [!DNL Azure] subscription. | `a1b2c3d4-5678-90ab-cdef-1234567890ab` |
+| `{REGION}` | The [!DNL Azure] region of your [!DNL Snowflake] account. | `azwestus2` |
 
-### Hämta information om konfigurationen av din privata länk
+### Retrieve your private link configuration details
 
-Du måste köra följande kommando i [!DNL Snowflake] om du vill hämta information om konfigurationen av din privata länk:
+To retrieve your private link configuration details, you must run the following command in [!DNL Snowflake]:
 
 ```sql
 USE ROLE accountadmin;
@@ -870,21 +884,21 @@ SELECT key, value::varchar
 FROM TABLE(FLATTEN(input => PARSE_JSON(SYSTEM$GET_PRIVATELINK_CONFIG())));
 ```
 
-Hämta sedan värden för följande egenskaper:
+Next, retrieve values for the following properties:
 
 * `privatelink-account-url`
 * `regionless-privatelink-account-url`
 * `privatelink_ocsp-url`
 
-När du har hämtat värdena kan du göra följande anrop för att skapa en privat länk för [!DNL Snowflake].
+Once you have retrieved the values, you can make the following call to create a private link for [!DNL Snowflake].
 
-**Begäran**
+**Request**
 
-I följande begäran skapas en privat slutpunkt för [!DNL Snowflake]:
+The following request creates a private endpoint for [!DNL Snowflake]:
 
 >[!BEGINTABS]
 
->[!TAB Mall]
+>[!TAB Template]
 
 ```shell
 curl -X POST \
@@ -911,7 +925,7 @@ curl -X POST \
   }'
 ```
 
->[!TAB Exempel]
+>[!TAB Example]
 
 ```shell
 curl -X POST \
@@ -938,11 +952,6 @@ curl -X POST \
   }'
 ```
 
-
 >[!ENDTABS]
 
-### Godkänn en privat slutpunkt för [!DNL Azure Blob] och [!DNL Azure Data Lake Gen2]
-
-Logga in på [!DNL Azure Blob] om du vill godkänna en privat slutpunktsbegäran för källorna [!DNL Azure Data Lake Gen2] och [!DNL Azure Portal]. Välj **[!DNL Data storage]** i den vänstra navigeringen, gå till fliken **[!DNL Security + networking]** och välj **[!DNL Networking]**. Välj sedan **[!DNL Private endpoints]** för att visa en lista över privata slutpunkter som är associerade med ditt konto och deras aktuella anslutningstillstånd. Om du vill godkänna en väntande begäran markerar du önskad slutpunkt och klickar på **[!DNL Approve]**.
-
-![Azure-portalen med en lista över väntande privata slutpunkter.](../../images/tutorials/private-links/azure.png)
+-->

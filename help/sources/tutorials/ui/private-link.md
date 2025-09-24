@@ -1,13 +1,10 @@
 ---
 title: Stöd för privata länkar för källor i användargränssnittet
 description: Lär dig hur du använder privata Azure-länkar för källor i Experience Platform-gränssnittet.
-badge: Beta
-hide: true
-hidefromtoc: true
 exl-id: 2882729e-2d46-48dc-9227-51dda5bf7dfb
-source-git-commit: 45a50800f74a6a072e4246b11d338b0c134856e0
+source-git-commit: 4d82b0a7f5ae9e0a7607fe7cb75261e4d3489eff
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '789'
 ht-degree: 0%
 
 ---
@@ -16,16 +13,29 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är i betaversion och stöds för närvarande bara för följande källor:
+>Den här funktionen stöds av följande källor:
 >
 >* [[!DNL Azure Blob Storage]](../../connectors/cloud-storage/blob.md)
 >* [[!DNL ADLS Gen2]](../../connectors/cloud-storage/adls-gen2.md)
 >* [[!DNL Azure File Storage]](../../connectors/cloud-storage/azure-file-storage.md)
->* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
+>
+>Stöd för privata länkar är för närvarande endast tillgängligt för organisationer som har köpt Adobe Healthcare Shield eller Adobe Privacy &amp; Security Shield.
 
 Du kan använda funktionen Privata länkar för att skapa privata slutpunkter som dina Adobe Experience Platform-källor kan ansluta till. Anslut dina källor till ett virtuellt nätverk med privata IP-adresser på ett säkert sätt, så att du slipper använda offentliga IP-adresser och minskar antalet attacker. Förenkla nätverkskonfigurationen genom att eliminera behovet av komplexa brandväggs- eller nätverksadressöversättningskonfigurationer, samtidigt som datatrafiken endast når ut till godkända tjänster.
 
 Läs den här vägledningen när du vill veta hur du kan använda arbetsytan för källor i Experience Platform-användargränssnittet för att skapa och använda en privat slutpunkt.
+
+>[!BEGINSHADEBOX]
+
+## Licensanvändningsberättigande för stöd för privata länkar
+
+Giltighetsmåtten för licensanvändning för stöd för privata länkar i källor är följande:
+
+* Kunderna har rätt till upp till 2 TB per år dataöverföring via de källor som stöds ([!DNL Azure Blob Storage], [!DNL ADLS Gen2] och [!DNL Azure File Storage]), i alla sandlådor och organisationer.
+* Varje organisation kan ha högst 10 slutpunkter för alla produktionssandlådor.
+* Varje organisation kan ha högst en slutpunkt för alla utvecklingssandlådor.
+
+>[!ENDSHADEBOX]
 
 ## Skapa en privat slutpunkt
 
@@ -45,7 +55,6 @@ Välj sedan den önskade källan och ange värden för följande egenskaper:
 | `subscriptionId` | Det ID som är kopplat till din [!DNL Azure]-prenumeration. Mer information finns i guiden [!DNL Azure] om hur du [hämtar dina prenumerations- och klient-ID:n från  [!DNL Azure Portal]](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id). |
 | `resourceGroupName` | Namnet på resursgruppen på [!DNL Azure]. En resursgrupp innehåller relaterade resurser för en [!DNL Azure]-lösning. Mer information finns i guiden [!DNL Azure] om [hantering av resursgrupper](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal). |
 | `resourceGroup` | Namnet på resursen. I [!DNL Azure] refererar en resurs till instanser som virtuella datorer, webbprogram och databaser. Mer information finns i guiden [!DNL Azure] om [att förstå  [!DNL Azure] resurshanteraren](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview). |
-| `fqdns` | De kvalificerade domännamnen för källan. **OBS**: Den här egenskapen krävs bara när källan [!DNL Snowflake] används. |
 
 {style="table-layout:auto"}
 
