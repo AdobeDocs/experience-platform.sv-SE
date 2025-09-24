@@ -525,7 +525,7 @@ Den primära nyckelbeskrivningen (`xdm:descriptorPrimaryKey`) tillämpar unikhet
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas versionsbeskrivningen som [!UICOTRNOL Versionsidentifierare].
+>I UI-schemaredigeraren visas versionsbeskrivningen som [ !UICOTRNOL Versionsidentifierare].
 
 Versionsbeskrivningen (`xdm:descriptorVersion`) anger ett fält som identifierar och förhindrar konflikter från oordnade ändringshändelser.
 
@@ -547,7 +547,7 @@ Versionsbeskrivningen (`xdm:descriptorVersion`) anger ett fält som identifierar
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas tidsstämpelbeskrivningen som [!UICOTRNOL Tidsstämpelidentifierare].
+>I UI-schemaredigeraren visas tidsstämpelbeskrivningen som [ !UICOTRNOL Tidsstämpelidentifierare].
 
 Tidsstämpelbeskrivningen (`xdm:descriptorTimestamp`) anger ett datum/tid-fält som tidsstämpel för scheman med `"meta:behaviorType": "time-series"`.
 

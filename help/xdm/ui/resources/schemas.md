@@ -79,8 +79,8 @@ Fortsätt sedan till [definiera primärnycklar](../fields/identity.md#define-a-i
 
 >[!NOTE]
 >
->När fältet [!UICONTROL Type] har sparats i sidofältet [!UICONTROL  Schema properties] anger det att det är ett [!UICONTROL Model-based]-schema. Detta visas även i sidofältet med detaljer i vyn för schemalager.
->>![Schemaredigerarens arbetsyta visar en tom modellbaserad schemastruktur med modellbaserad typ markerad.](../../images/ui/resources/schemas/relational-empty-canvas.png)
+>När fältet [!UICONTROL Type] har sparats i sidofältet [!UICONTROL &#x200B; Schema properties] anger det att det är ett [!UICONTROL Model-based]-schema. Detta visas även i sidofältet med detaljer i vyn för schemalager.
+>&#x200B;>![Schemaredigerarens arbetsyta visar en tom modellbaserad schemastruktur med modellbaserad typ markerad.](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### Överföra en DDL-fil {#upload-ddl-file}
 
@@ -253,7 +253,7 @@ När du har lagt till en fältgrupp i ett schema kan du antingen ta bort fält g
 >[!IMPORTANT]
 >
 >Om du väljer **[!UICONTROL Remove]** tas fältet bort från själva fältgruppen, vilket påverkar *alla* scheman som använder den fältgruppen.
->>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
+>&#x200B;>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
 
 Om du vill ta bort ett fält från fältgruppen markerar du det på arbetsytan och väljer **[!UICONTROL Remove]** på den högra listen. I det här exemplet visas fältet `taxId` från gruppen **[!UICONTROL Demographic Details]**.
 

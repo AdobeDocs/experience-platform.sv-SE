@@ -71,7 +71,7 @@ Använd en primärnyckelbeskrivning för att säkerställa att varje post är un
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [!UICOTRNOL Versionsidentifierare] respektive [!UICOTRNOL Tidsstämpelidentifierare].
+>I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [ !UICOTRNOL Versionsidentifierare] respektive [ !UICOTRNOL Tidsstämpelidentifierare].
 
 **Exempel (enfält):**
 

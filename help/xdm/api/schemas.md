@@ -302,7 +302,7 @@ Skapa schemat först med `POST /tenant/schemas`. Lägg sedan till de nödvändig
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [!UICOTRNOL Versionsidentifierare] respektive [!UICOTRNOL Tidsstämpelidentifierare].
+>I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [ !UICOTRNOL Versionsidentifierare] respektive [ !UICOTRNOL Tidsstämpelidentifierare].
 
 <!-- >[!AVAILABILITY]
 >
