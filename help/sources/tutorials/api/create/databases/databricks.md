@@ -1,25 +1,25 @@
 ---
-title: Anslut Azure-databaser till Experience Platform med API:t för Flow Service
-description: Lär dig hur du ansluter Azure-databaser till Experience Platform med API:er.
+title: Anslut databaser till Experience Platform med API:t för Flow Service
+description: Lär dig hur du ansluter databaser till Experience Platform med API:er.
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 9df2f9cc70876834aa635d50d548a882f45e3190
+source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
 workflow-type: tm+mt
-source-wordcount: '534'
-ht-degree: 0%
+source-wordcount: '532'
+ht-degree: 1%
 
 ---
 
-# Anslut [!DNL Azure Databricks] till Experience Platform med API:t [!DNL Flow Service]
+# Anslut [!DNL Databricks] till Experience Platform med API:t [!DNL Flow Service]
 
 >[!AVAILABILITY]
 >
->* Källan [!DNL Azure Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
+>* Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 >
->* Källan [!DNL Azure Databricks] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
+>* Källan [!DNL Databricks] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
-Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Azure Databricks]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Databricks]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 ## Kom igång
 
@@ -48,7 +48,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta [!DNL Datab
 | `database` | Namnet på databasen i deltasjön. |
 | `connectionSpec.Id` | Anslutningens spec-ID returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningens spec-ID för [!DNL Databricks] är `e9d7ec6b-0873-4e57-ad21-b3a7c65e310b`. |
 
-Mer information finns i [[!DNL Azure Databricks] översikten](../../../../connectors/databases/databricks.md).
+Mer information finns i [[!DNL Databricks] översikten](../../../../connectors/databases/databricks.md).
 
 ## Skapa en basanslutning
 
@@ -66,7 +66,7 @@ POST /connections
 
 Följande begäran skapar en basanslutning för en [!DNL Databricks]-källa med åtkomsttokenautentisering.
 
-+++Exempel på visningsbegäran
++++Visa exempel på förfrågan
 
 ```shell
 curl -X POST \

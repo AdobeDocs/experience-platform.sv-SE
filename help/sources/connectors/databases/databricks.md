@@ -1,26 +1,26 @@
 ---
-title: Azure-databaser
-description: Läs mer om de nödvändiga stegen som krävs för att ansluta Azure-databaser till Experience Platform.
+title: Databricks
+description: Lär dig mer om de nödvändiga stegen som krävs för att ansluta Databricks till Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
 last-substantial-update: 2025-06-17T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: e5ece120329a550204174b7bf588f06cdff45846
+source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '628'
 ht-degree: 0%
 
 ---
 
-# [!DNL Azure Databricks]
+# [!DNL Databricks]
 
 >[!AVAILABILITY]
 >
->* Källan [!DNL Azure Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
+>* Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 >
->* Källan [!DNL Azure Databricks] är i betaversion. Läs [villkoren](../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
+>* Källan [!DNL Databricks] är i betaversion. Läs [villkoren](../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
-[!DNL Azure Databricks] är en molnbaserad plattform som utformats för dataanalys, maskininlärning och AI. Du kan använda [!DNL Databricks] för att integrera med [!DNL Azure] och tillhandahålla en helhetsmiljö för att bygga, distribuera och hantera datalösningar i stor skala.
+[!DNL Databricks] är en molnbaserad plattform som utformats för dataanalys, maskininlärning och AI. Du kan använda [!DNL Databricks] för att integrera och tillhandahålla en helhetsmiljö för att bygga, distribuera och hantera datalösningar i stor skala.
 
 Använd [!DNL Databricks]-källan för att ansluta ditt konto och importera dina [!DNL Databricks]-data till Adobe Experience Platform.
 

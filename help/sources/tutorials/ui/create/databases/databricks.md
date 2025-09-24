@@ -1,24 +1,25 @@
 ---
-title: Anslut Azure-databaser till Experience Platform med användargränssnittet
-description: Lär dig hur du ansluter Azure-databaser till Experience Platform med användargränssnittet.
+title: Ansluta databaser till Experience Platform med användargränssnittet
+description: Lär dig hur du ansluter databaser till Experience Platform via användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 2bd16d5a55c5bbeedbc6a6012d9f0229eee8433a
+exl-id: 877e22c0-cb77-45bb-88c9-54fdde2d6905
+source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
 workflow-type: tm+mt
-source-wordcount: '462'
-ht-degree: 1%
+source-wordcount: '460'
+ht-degree: 2%
 
 ---
 
-# Anslut [!DNL Azure Databricks] till Experience Platform i användargränssnittet
+# Anslut [!DNL Databricks] till Experience Platform i användargränssnittet
 
 >[!AVAILABILITY]
 >
->* Källan [!DNL Azure Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
+>* Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 >
->* Källan [!DNL Azure Databricks] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
+>* Källan [!DNL Databricks] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
-Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Azure Databricks]-konto till Adobe Experience Platform med hjälp av källarbetsytan i användargränssnittet.
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Databricks]-konto till Adobe Experience Platform med hjälp av källarbetsytan i användargränssnittet.
 
 ## Kom igång
 
@@ -29,22 +30,22 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Ange värden för följande autentiseringsuppgifter för att ansluta [!DNL Azure Databricks] till Experience Platform.
+Ange värden för följande autentiseringsuppgifter för att ansluta [!DNL Databricks] till Experience Platform.
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Domän | URL-adressen till din [!DNL Azure Databricks]-arbetsyta. Exempel: `https://adb-1234567890123456.7.azuredatabricks.net`. |
-| Kluster-ID | ID för ditt kluster i [!DNL Azure Databricks]. Det här klustret måste redan vara ett befintligt kluster och bör vara ett interaktivt kluster. |
-| Åtkomsttoken | Åtkomsttoken som autentiserar ditt [!DNL Azure Databricks]-konto. Du kan generera din åtkomsttoken med arbetsytan [!DNL Azure Databricks]. |
+| Domän | URL-adressen till din [!DNL Databricks]-arbetsyta. Exempel: `https://adb-1234567890123456.7.azuredatabricks.net`. |
+| Kluster-ID | ID för ditt kluster i [!DNL Databricks]. Det här klustret måste redan vara ett befintligt kluster och bör vara ett interaktivt kluster. |
+| Åtkomsttoken | Åtkomsttoken som autentiserar ditt [!DNL Databricks]-konto. Du kan generera din åtkomsttoken med arbetsytan [!DNL Databricks]. |
 | Databas | Namnet på databasen i deltasjön. |
 
-Mer information finns i [[!DNL Azure Databricks] översikten](../../../../connectors/databases/databricks.md).
+Mer information finns i [[!DNL Databricks] översikten](../../../../connectors/databases/databricks.md).
 
 ## Navigera i källkatalogen
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Välj en kategori eller använd sökfältet för att hitta källan.
 
-Om du vill ansluta till [!DNL Azure Databricks] går du till kategorin *[!UICONTROL Databases]*, markerar **[!UICONTROL Azure Databricks]**-källkortet och väljer **[!UICONTROL Set up]**.
+Om du vill ansluta till [!DNL Databricks] går du till kategorin *[!UICONTROL Databases]*, markerar **[!UICONTROL Azure Databricks]**-källkortet och väljer **[!UICONTROL Set up]**.
 
 >[!TIP]
 >

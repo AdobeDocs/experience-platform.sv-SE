@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: e21381f2683070fdbf24c473fa6794b89160864b
+source-git-commit: ac180f045dd3cc7e8ad9de702a3672630d668ee5
 workflow-type: tm+mt
-source-wordcount: '1393'
-ht-degree: 43%
+source-wordcount: '1471'
+ht-degree: 40%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 43%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 23 september 2025**
@@ -90,12 +90,9 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Modellbaserade scheman | Förenkla datamodelleringen med modellbaserade scheman. Nu kan du lättare skapa scheman tack vare många exempel och guider. Den här funktionen är för närvarande tillgänglig för innehavare av Campaign Orchestration-licenser och kommer att utvidgas till att omfatta Data Distiller-kunder på GA, vilket gör datamodelleringen mer tillgänglig och effektiv. Funktionen har stöd för tidsseriedata och funktioner för datainhämtning vid ändring. |
+| Data Mirror | Infoga radnivåändringar från molndatalager (t.ex. Snowflake, Databricks, BigQuery) i Adobe Experience Platform med modellbaserade scheman. Data Mirror eliminerar ETL-uppströms och bevarar relationer, versionshantering och borttagningar genom att spegla befintliga databasstrukturer direkt in i datasjön. Funktioner för tidsserier och inspelningshändelsescheman med funktioner för registrering av ändringsdata stöds. Den här funktionen är för närvarande tillgänglig för innehavare av licenser för kampanjsamordning och kommer att utökas genom den här begränsade versionen, även för Customer Journey Analytics-kunder. Mer information finns i [Data Mirror-dokumentationen](../../xdm/data-mirror/overview.md). Kontakta din Adobe-representant för att få åtkomst. |
 
 Mer information finns i [XDM-översikten](../../xdm/home.md).
-<!--
-
-| Data Mirror | Ingest row-level changes from cloud data warehouses (e.g., Snowflake, Databricks, BigQuery) into Adobe Experience Platform using model-based schemas. Data Mirror eliminates upstream ETL and preserves relationships, versioning, and deletions by mirroring existing database structures directly into the data lake. Time-series and record event schema behavior with change data capture capabilities are all supported. This feature is currently available for Campaign Orchestration license holders and will expand through this limited release, also including Customer Journey Analytics customers. See the [Data Mirror documentation](../../xdm/data-mirror/overview.md) for more details. Contact your Adobe representative for access. |
--->
 
 ## Kundprofil i realtid {#profile}
 
@@ -138,7 +135,10 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | --- | --- |
 | Nya källor i allmän tillgänglighet | Följande källor är nu allmänt tillgängliga: Flera källanslutningar har uppdaterats från Beta till GA: <ul><li>[Acxiom-datainmatning](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom Prospect Data Inghit](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury Enterprise](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>. De här källorna stöds nu fullt ut och är klara för produktion. |
 | [!DNL Snowflake] autentiseringsstöd för nyckelpar | Förbättrad säkerhet för Snowflake-anslutningar med stöd för autentisering med nyckelpar. Grundläggande autentisering (användarnamn/lösenord) kommer att vara inaktuellt i november 2025, så kunder uppmuntras att migrera till nyckelpars autentisering för att få bättre säkerhet. Mer information finns i [[!DNL Snowflake] dokumentationen](../../sources/connectors/databases/snowflake.md). |
-| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Använd [[!DNL Capillary Streaming Events] source](../../sources/connectors/loyalty/capillary.md) för att strömma bonusdata från ditt [!DNL Capillary]-konto till Experience Platform. |
 | Allmän tillgänglighet för stöd för privata länkar i källor | Du kan nu använda **privata länkar** för en vald grupp källor. Använd den här funktionen för att skapa en privat slutpunkt som källan kan ansluta till. Med privata slutpunkter kan du skapa anslutningar och dataflöden som kringgår det offentliga Internet, vilket ger förbättrad säkerhet och nätverksisolering för dina känsliga data. Stöd för privata länkar finns för följande källor: <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>. Mer information finns i handböckerna om hur du skapar privata länkar [ i API:t ](../../sources/tutorials/api/private-link.md) och [ i gränssnittet](../../sources/tutorials/ui/private-link.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
+
+<!--
+| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Use the [[!DNL Capillary Streaming Events] source](../../sources/connectors/loyalty/capillary.md) to stream loyalty data from your [!DNL Capillary] account to Experience Platform. |
+-->
