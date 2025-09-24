@@ -3,9 +3,9 @@ title: API-guide för datahygien
 description: Lär dig att programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 role: Developer
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 8aa8a1c42e9656716be746ba447a5f77a8155b4c
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '432'
 ht-degree: 0%
 
 ---
@@ -43,9 +43,6 @@ En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en da
 ## Posten tas bort
 
 >[!IMPORTANT]
->
->Begäranden om radering av poster är bara tillgängliga för organisationer som har köpt **Adobe Healthcare Shield**.
->
 >
 >Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De **får inte** användas för förfrågningar om rättigheter för registrerade (efterlevnad) som gäller sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). Använd [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället för alla kompatibilitetsfall.
 

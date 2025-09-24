@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Klassen XDM ExperienceEvent
 description: Lär dig mer om klassen XDM ExperienceEvent och de bästa metoderna för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f00b195567c22f69c05909e76906c8770da4b9d0
+source-git-commit: 8aa8a1c42e9656716be746ba447a5f77a8155b4c
 workflow-type: tm+mt
 source-wordcount: '2728'
 ht-degree: 0%
@@ -65,6 +65,7 @@ Om du direktuppspelar data till Experience Platform via en källanslutning kan d
 Adobe innehåller flera standardfältgrupper som kan användas med klassen [!DNL XDM ExperienceEvent]. Nedan följer en lista över några vanliga fältgrupper för klassen:
 
 * [[!UICONTROL Adobe Analytics ExperienceEvent Full Extension]](../field-groups/event/analytics-full-extension.md)
+* [[!UICONTROL Adobe Advertising Cloud ExperienceEvent Full Extension]](../field-groups/event/advertising-full-extension.md)
 * [[!UICONTROL Balance Transfers]](../field-groups/event/balance-transfers.md)
 * [[!UICONTROL Campaign Marketing Details]](../field-groups/event/campaign-marketing-details.md)
 * [[!UICONTROL Card Actions]](../field-groups/event/card-actions.md)

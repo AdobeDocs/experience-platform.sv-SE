@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för scheman
 description: Med slutpunkten /schemas i API:t för schemaregister kan du programmässigt hantera XDM-scheman i ditt upplevelseprogram.
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: 974faad835b5dc2a4d47249bb672573dfb4d54bd
+source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
 workflow-type: tm+mt
-source-wordcount: '2095'
+source-wordcount: '2091'
 ht-degree: 0%
 
 ---
@@ -302,7 +302,7 @@ Skapa schemat först med `POST /tenant/schemas`. Lägg sedan till de nödvändig
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [ !UICOTRNOL Versionsidentifierare] respektive [ !UICOTRNOL Tidsstämpelidentifierare].
+>I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [!UICONTROL Version identifier] respektive [!UICONTROL Timestamp identifier].
 
 <!-- >[!AVAILABILITY]
 >

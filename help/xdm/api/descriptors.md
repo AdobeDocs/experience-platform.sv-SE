@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
+source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
 workflow-type: tm+mt
-source-wordcount: '2886'
+source-wordcount: '2882'
 ht-degree: 0%
 
 ---
@@ -525,7 +525,7 @@ Den primära nyckelbeskrivningen (`xdm:descriptorPrimaryKey`) tillämpar unikhet
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas versionsbeskrivningen som [ !UICOTRNOL Versionsidentifierare].
+>I UI-schemaredigeraren visas versionsbeskrivningen som [!UICONTROL Version identifier].
 
 Versionsbeskrivningen (`xdm:descriptorVersion`) anger ett fält som identifierar och förhindrar konflikter från oordnade ändringshändelser.
 
@@ -547,7 +547,7 @@ Versionsbeskrivningen (`xdm:descriptorVersion`) anger ett fält som identifierar
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas tidsstämpelbeskrivningen som [ !UICOTRNOL Tidsstämpelidentifierare].
+>Tidsstämpelbeskrivningen visas som [!UICONTROL Timestamp identifier] i UI-schemaredigeraren.
 
 Tidsstämpelbeskrivningen (`xdm:descriptorTimestamp`) anger ett datum/tid-fält som tidsstämpel för scheman med `"meta:behaviorType": "time-series"`.
 

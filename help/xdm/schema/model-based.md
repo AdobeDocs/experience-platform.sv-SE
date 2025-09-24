@@ -4,9 +4,10 @@ solution: Experience Platform
 title: Modellbaserade scheman
 description: Lär dig mer om modellbaserade scheman (kallas även relationsscheman) i Adobe Experience Platform, inklusive funktioner, obligatoriska fält, relationer och begränsningar.
 badge: Begränsad tillgänglighet
-source-git-commit: 192e97c97ffcb2d695bcfa6269cc6920f5440832
+exl-id: 397e5937-b892-4fd3-b90e-29ed9229dc69
+source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
 workflow-type: tm+mt
-source-wordcount: '1306'
+source-wordcount: '1302'
 ht-degree: 0%
 
 ---
@@ -37,7 +38,7 @@ Använd modellbaserade scheman för att:
 
 ## Hur modellbaserade scheman skiljer sig från vanliga XDM-scheman
 
-XDM-standardscheman i Experience Platform följer en av tre databeteenden: Record, Time-series eller Ad-hoc. Mer information och definitioner finns i [XDM-databeteenden](https://experienceleague.adobe.com/sv/docs/experience-platform/xdm/home#data-behaviors).
+XDM-standardscheman i Experience Platform följer en av tre databeteenden: Record, Time-series eller Ad-hoc. Mer information och definitioner finns i [XDM-databeteenden](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/home#data-behaviors).
 
 I den traditionella modellen deltar scheman för inspelning och tidsserier i [fackscheman](../api/unions.md) (se även [gränssnittsguiden för unionsscheman](../../profile/ui/union-schema.md)). Dessa scheman utvecklas automatiskt när delade [fältgrupper](./composition.md#field-group) uppdateras och anpassade fält måste kapslas under ett innehavarnamnområde. Den här modellen är kraftfull och kan göra onboarding långsammare, skapa alltför komplexa scheman med oanvända fält och kräva ytterligare datamappning eller dataomvandling. Dessa faktorer ökar inlärningskurvan och den pågående underhållsinsatsen.
 
@@ -71,7 +72,7 @@ Använd en primärnyckelbeskrivning för att säkerställa att varje post är un
 
 >[!NOTE]
 >
->I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [ !UICOTRNOL Versionsidentifierare] respektive [ !UICOTRNOL Tidsstämpelidentifierare].
+>I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [!UICONTROL Version identifier] respektive [!UICONTROL Timestamp identifier].
 
 **Exempel (enfält):**
 
@@ -210,4 +211,3 @@ Granska följande begränsningar innan du använder modellbaserade scheman:
 * Relationer är begränsade till 1:1 och många-till-1.
 * Tillgängligheten beror på licensen eller funktionens aktivering.
 * Sammansatta primärnycklar krävs för tidsseriescheman.
-
