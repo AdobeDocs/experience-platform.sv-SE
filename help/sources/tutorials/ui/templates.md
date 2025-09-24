@@ -51,7 +51,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >id="platform_sources_templates_accounttype"
 >title="Välj affärstyp"
 >abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-Time Customer Data Platform-prenumerationskonto."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP - översikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE" text="Real-Time CDP - översikt"
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
 

@@ -37,7 +37,7 @@ Använd modellbaserade scheman för att:
 
 ## Hur modellbaserade scheman skiljer sig från vanliga XDM-scheman
 
-XDM-standardscheman i Experience Platform följer en av tre databeteenden: Record, Time-series eller Ad-hoc. Mer information och definitioner finns i [XDM-databeteenden](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/home#data-behaviors).
+XDM-standardscheman i Experience Platform följer en av tre databeteenden: Record, Time-series eller Ad-hoc. Mer information och definitioner finns i [XDM-databeteenden](https://experienceleague.adobe.com/sv/docs/experience-platform/xdm/home#data-behaviors).
 
 I den traditionella modellen deltar scheman för inspelning och tidsserier i [fackscheman](../api/unions.md) (se även [gränssnittsguiden för unionsscheman](../../profile/ui/union-schema.md)). Dessa scheman utvecklas automatiskt när delade [fältgrupper](./composition.md#field-group) uppdateras och anpassade fält måste kapslas under ett innehavarnamnområde. Den här modellen är kraftfull och kan göra onboarding långsammare, skapa alltför komplexa scheman med oanvända fält och kräva ytterligare datamappning eller dataomvandling. Dessa faktorer ökar inlärningskurvan och den pågående underhållsinsatsen.
 
