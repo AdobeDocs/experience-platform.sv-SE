@@ -3,9 +3,9 @@ title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4eef1804d6974fd54f5e74e0efe62257190f408b
 workflow-type: tm+mt
-source-wordcount: '1937'
+source-wordcount: '1976'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ När du exporterar *datauppsättningar* skapar Experience Platform en `.parquet`
 
 >[!AVAILABILITY]
 >
->Det här avsnittet gäller implementeringar av Experience Platform som körs på Microsoft Azure. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
+>Det här avsnittet gäller implementeringar av Experience Platform som körs på Microsoft Azure. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
 Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
 
@@ -210,7 +210,7 @@ Med din [!DNL Data Landing Zone]-behållare ansluten till [!DNL Azure Storage Ex
 
 >[!AVAILABILITY]
 >
->Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
 Utför åtgärderna nedan för att hämta autentiseringsuppgifter till din [!DNL Data Landing Zone]-instans som har etablerats på AWS. Använd sedan en valfri klient för att ansluta till din [!DNL Data Landing Zone]-instans.
 
@@ -282,7 +282,7 @@ Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusi
 > 
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
 ### Autentisera till mål {#authenticate}
 
@@ -292,6 +292,8 @@ Kontrollera att du har anslutit [!DNL Data Landing Zone]-behållaren till [!DNL 
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
+* **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
+  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i gränssnittet.](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
