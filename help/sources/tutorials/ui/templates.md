@@ -3,9 +3,9 @@ description: Lär dig hur du använder mallar i Adobe Experience Platform använ
 title: Skapa ett källdataflöde med mallar i användargränssnittet
 badge1: Beta
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2271'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >id="platform_sources_templates_accounttype"
 >title="Välj affärstyp"
 >abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-Time Customer Data Platform-prenumerationskonto."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE" text="Real-Time CDP - översikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP - översikt"
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
 
@@ -65,6 +65,12 @@ Ett popup-fönster visas där du kan bläddra bland mallar eller använda befint
 
 * **Bläddra bland mallar**: Källmallar skapar automatiskt scheman, identiteter, datauppsättningar och dataflöden med mappningsregler åt dig. Du kan anpassa dessa resurser efter behov.
 * **Använd mina befintliga resurser**: Importera dina data med befintliga datauppsättningar och scheman som du har skapat. Du kan också skapa nya datauppsättningar och scheman vid behov.
+
+>[!NOTE]
+>
+>Mallar kan automatiskt generera modellbaserade scheman när de arbetar med källor som kräver arbetsflöden för datainhämtning eller stöder flera datamodeller. Dessa scheman möjliggör Data Mirror-funktioner för datasynkronisering i realtid.\
+>När du använder mallar med modellbaserade scheman, kommer de automatiskt genererade resurserna att innehålla den nödvändiga primärnyckeln, versionsidentifieraren och tidsstämpelidentifierarfälten.\
+>Mer information finns i [Data Mirror översikt](../../../xdm/data-mirror/overview.md) och [modellbaserade scheman, teknisk referens](../../../xdm/schema/model-based.md).
 
 Om du vill använda automatiskt genererade resurser väljer du **[!UICONTROL Browse templates]** och sedan **[!UICONTROL Select]**.
 
@@ -95,7 +101,7 @@ Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange
 När ditt konto är autentiserat kan du nu välja den mall som du vill använda för ditt dataflöde.
 
 +++[!DNL Marketo Engage] mallar
-I följande tabell visas mallarna som är tillgängliga för [!DNL Marketo Engage] -källan.
+I följande tabell visas mallarna som är tillgängliga för källan [!DNL Marketo Engage].
 
 | [!DNL Marketo Engage] mallar | Beskrivning |
 | --- | --- |
@@ -115,7 +121,7 @@ I följande tabell visas mallarna som är tillgängliga för [!DNL Marketo Engag
 +++
 
 +++[!DNL Salesforce] B2B-mallar
-Följande tabell visar vilka B2B-mallar som är tillgängliga för [!DNL Salesforce] -källan.
+Följande tabell visar vilka B2B-mallar som är tillgängliga för källan [!DNL Salesforce].
 
 | [!DNL Salesforce] B2B-mallar | Beskrivning |
 | --- | --- |
@@ -133,7 +139,7 @@ Följande tabell visar vilka B2B-mallar som är tillgängliga för [!DNL Salesfo
 +++
 
 +++[!DNL Salesforce] B2C-mallar
-Följande tabell visar vilka B2C-mallar som är tillgängliga för [!DNL Salesforce] -källan.
+Följande tabell visar vilka B2C-mallar som är tillgängliga för källan [!DNL Salesforce].
 
 | [!DNL Salesforce] B2C-mallar | Beskrivning |
 | --- | --- |
@@ -145,7 +151,7 @@ Följande tabell visar vilka B2C-mallar som är tillgängliga för [!DNL Salesfo
 +++
 
 +++[!DNL Microsoft Dynamics] B2B-mallar
-Följande tabell visar vilka B2B-mallar som är tillgängliga för [!DNL Microsoft Dynamics] -källan.
+Följande tabell visar vilka B2B-mallar som är tillgängliga för källan [!DNL Microsoft Dynamics].
 
 | [!DNL Microsoft Dynamics] B2B-mallar | Beskrivning |
 | --- | --- |
@@ -163,7 +169,7 @@ Följande tabell visar vilka B2B-mallar som är tillgängliga för [!DNL Microso
 +++
 
 +++[!DNL Microsoft Dynamics] B2C-mallar
-Följande tabell visar vilka B2C-mallar som är tillgängliga för [!DNL Microsoft Dynamics] -källan.
+Följande tabell visar vilka B2C-mallar som är tillgängliga för källan [!DNL Microsoft Dynamics].
 
 | [!DNL Microsoft Dynamics] B2C-mallar | Beskrivning |
 | --- | --- |

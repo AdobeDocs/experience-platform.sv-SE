@@ -3,9 +3,9 @@ title: Skapa ett dataflöde för datakällor med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du använder API:t för Flow Service för att skapa ett dataflöde och importera data från din databas till Experience Platform.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: b4f8d44c3ce9507ff158cf051b7a4b524b293c64
+source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
 workflow-type: tm+mt
-source-wordcount: '1456'
+source-wordcount: '1489'
 ht-degree: 0%
 
 ---
@@ -113,7 +113,7 @@ curl -X POST \
 | -------- | ----------- |
 | `baseConnectionId` | Anslutnings-ID för datakällan. |
 | `params.tableName` | Källfilens sökväg. |
-| `params.cdcEnabled` | Ett booleskt värde som anger om registrering av ändringshistorik är aktiverat eller inte. Den här egenskapen stöds av följande datakällor: <ul><li>[!DNL Azure Databricks]</li><li>[!DNL Google BigQuery]</li><li>[!DNL Snowflake]</li></ul> Mer information finns i guiden om hur du använder [ändring av datainhämtning i källor](../change-data-capture.md). |
+| `params.cdcEnabled` | Ett booleskt värde som anger om registrering av ändringshistorik är aktiverat. När det används med modellbaserade scheman infogar, uppdaterar och tar du bort datainhämtningsspår för att behålla måldatauppsättningen synkroniserad med källan. Den här egenskapen stöds av följande datakällor: <ul><li>[!DNL Azure Databricks]</li><li>[!DNL Google BigQuery]</li><li>[!DNL Snowflake]</li></ul> En översikt över den här funktionen finns i [Data Mirror-översikten](../../../../xdm/data-mirror/overview.md). Implementeringsinformation finns i [Ändra datainhämtning i källhandboken](../change-data-capture.md) och [modellbaserade scheman, teknisk referens](../../../../xdm/schema/model-based.md). |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för datakällan. I [Bilaga](#appendix) finns en lista över databasspecifika ID:n. |
 
 **Svar**

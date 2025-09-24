@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 1b278562c815953d2068a5142dbefcf1572baff5
+source-git-commit: 2f8589ec58d9afe69e21f909f905a941e43f710c
 workflow-type: tm+mt
 source-wordcount: '4259'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 >[!CONTEXTUALHELP]
 >id="platform_datasets_orchestratedCampaigns_toggle"
 >title="Samordnade kampanjer"
->abstract="Aktivera det här alternativet om du vill tillåta att den valda datauppsättningen används i Adobe Journey Optimizer Orchestrated Campaigns. Datauppsättningen måste använda ett relationsschema och endast en datauppsättning kan skapas per schema."
+>abstract="Aktivera det här alternativet om du vill tillåta att den valda datauppsättningen används i Adobe Journey Optimizer Orchestrated-kampanjer. Datauppsättningen måste använda ett modellbaserat schema och endast en datauppsättning kan skapas per schema."
 
 I användargränssnittet för [!DNL Experience Platform] väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna kontrollpanelen för **[!UICONTROL Datasets]**. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 

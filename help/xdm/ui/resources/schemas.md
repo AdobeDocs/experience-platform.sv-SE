@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i Experience Platform användargränssnitt.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 0b03a8873f828faef78e5bf0b66c9773fc693206
+source-git-commit: 974faad835b5dc2a4d47249bb672573dfb4d54bd
 workflow-type: tm+mt
-source-wordcount: '4001'
+source-wordcount: '4635'
 ht-degree: 0%
 
 ---
@@ -27,15 +27,96 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikte
 
 ## Skapa ett nytt schema {#create}
 
+Välj [!UICONTROL Schemas] i det övre högra hörnet på arbetsytan **[!UICONTROL Create schema]**. Listrutan Välj schematyp visas med alternativ för [!UICONTROL Standard] eller [!UICONTROL Model-based] scheman.
+
+![Arbetsytan Scheman med [!UICONTROL Create Schema] markerad och listrutan Välj schematyp visas](../../images/ui/resources/schemas/create-schema.png).
+
+## Skapa ett modellbaserat schema {#create-model-based-schema}
+
+>[!AVAILABILITY]
+>
+>Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+
+Välj **[!UICONTROL Model-based]** om du vill definiera strukturerade, modellbaserade scheman med detaljerad kontroll över poster. Modellbaserade scheman stöder primär nyckelkontroll, versionshantering på postnivå och relationer på schemanivå via primära och externa nycklar. De är också optimerade för inkrementellt intag med hjälp av registrering av ändringsdata och har stöd för flera datamodeller som används i Campaign Orchestration, Data Distiller och B2B-implementeringar.
+
+Mer information finns i översikten [Data Mirror](../../data-mirror/overview.md) eller [Modellbaserat schema](../../schema/model-based.md) .
+
+### Skapa manuellt {#create-manually}
+
+>[!AVAILABILITY]
+>
+>DDL-filöverföring är bara tillgängligt för innehavare av Adobe Journey Optimizer Orchestrated-kampanjlicenser. Gränssnittet kan se annorlunda ut.
+
+Dialogrutan **[!UICONTROL Create a model-based schema]** visas. Du kan välja antingen **[!UICONTROL Create manually]** eller [**[!UICONTROL Upload DDL file]**](#upload-ddl-file) för att definiera schemastrukturen.
+
+I dialogrutan **[!UICONTROL Create a model-based schema]** väljer du **[!UICONTROL Create manually]** och sedan **[!UICONTROL Next]**.
+
+![Dialogrutan Skapa ett modellbaserat schema med Skapa manuellt markerat och Nästa markerat.](../../images/ui/resources/schemas/relational-dialog.png)
+
+Sidan **[!UICONTROL Model-based schema details]** visas. Ange ett visningsnamn för schemat och en valfri beskrivning och välj sedan **[!UICONTROL Finish]** för att skapa schemat.
+
+![Modellbaserad schemainformationsvy med [!UICONTROL Schema display name], [!UICONTROL Description] och [!UICONTROL Finish] markerade.](../../images/ui/resources/schemas/relational-details.png)
+
+Schemaredigeraren öppnas med en tom arbetsyta för att definiera schemastrukturen. Du kan lägga till fält som vanligt.
+
+#### Lägg till ett versionsidentifierarfält {#add-version-identifier}
+
+Om du vill aktivera versionshantering och ha stöd för datainhämtning från ändringsdata måste du ange ett fält för versionsidentifierare i ditt schema. Välj plusikonen (![A plus-ikonen i Schemaredigeraren.](/help/images/icons/plus.png)) bredvid schemanamnet för att lägga till ett nytt fält.
+
+Ange ett fältnamn som `updateSequence` och välj datatypen **[!UICONTROL DateTime]** eller **[!UICONTROL Number]**.
+
+Aktivera kryssrutan **[!UICONTROL Version Identifier]** i den högra listen och markera sedan **[!UICONTROL Apply]** för att bekräfta fältet.
+
+![Schemaredigeraren med ett DateTime-fält med namnet `updateSequence` har lagts till och kryssrutan Version Identifier har markerats.](../../images/ui/resources/schemas/add-version-identifier.png)
+
+>[!IMPORTANT]
+>
+>Ett modellbaserat schema måste innehålla ett fält för versionsidentifierare för att kunna hantera uppdateringar på postnivå och ändring av datainhämtning.
+
+Om du vill definiera relationer väljer du **[!UICONTROL Add Relationship]** i Schemaredigeraren för att skapa primära/externa nyckelrelationer på schemanivå. Mer information finns i självstudiekursen om att [lägga till relationer på schemanivå](../../tutorials/relationship-ui.md#relationship-field).
+
+Fortsätt sedan till [definiera primärnycklar](../fields/identity.md#define-a-identity-field) och [lägg till ytterligare fält](#add-field-groups) efter behov. Mer information om hur du aktiverar registrering av ändringsdata i Experience Platform-källor finns i [handboken om registrering av ändringsdata](../../../sources/tutorials/api/change-data-capture.md).
+
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du manuellt skapar ett nytt schema i användargränssnittet. Om du importerar CSV-data till Experience Platform kan du använda HTML-algoritmer (Machine Learning) för att **generera ett schema från CSV-exempeldata**. Det här arbetsflödet matchar ditt dataformat och skapar automatiskt ett nytt schema baserat på strukturen och innehållet i din CSV-fil. Mer information om det här arbetsflödet finns i guiden [Skapa ML-stödda scheman](../ml-assisted-schema-creation.md).
+>När fältet [!UICONTROL Type] har sparats i sidofältet [!UICONTROL  Schema properties] anger det att det är ett [!UICONTROL Model-based]-schema. Detta visas även i sidofältet med detaljer i vyn för schemalager.
+>>![Schemaredigerarens arbetsyta visar en tom modellbaserad schemastruktur med modellbaserad typ markerad.](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
-Välj [!UICONTROL Schemas] i det övre högra hörnet på arbetsytan **[!UICONTROL Create schema]**.
+### Överföra en DDL-fil {#upload-ddl-file}
 
-![Arbetsytan Scheman med [!UICONTROL Create Schema] är markerad.](../../images/ui/resources/schemas/create-schema.png)
+>[!AVAILABILITY]
+>
+>DDL-filöverföring är bara tillgängligt för innehavare av Adobe Journey Optimizer Orchestrated-kampanjlicenser.
 
-Dialogrutan [!UICONTROL Create a schema] visas. I den här dialogrutan kan du välja att antingen skapa ett schema manuellt genom att lägga till fält och fältgrupper, eller så kan du överföra en CSV-fil och använda ML-algoritmer för att generera ett schema. Välj ett arbetsflöde för att skapa schema i dialogrutan.
+Använd det här arbetsflödet för att definiera schemat genom att överföra en DDL-fil. I dialogrutan **[!UICONTROL Create a model-based schema]** väljer du **[!UICONTROL Upload DDL file]** och drar sedan en lokal DDL-fil från systemet eller väljer **[!UICONTROL Choose files]**. Experience Platform validerar schemat och visar en grön bockmarkering om filöverföringen lyckas. Välj **[!UICONTROL Next]** för att bekräfta överföringen.
+
+![Dialogrutan Skapa ett modellbaserat schema med [!UICONTROL Upload DDL file] markerat och [!UICONTROL Next] markerat.](../../images/ui/resources/schemas/upload-ddl-file.png)
+
+Dialogrutan [!UICONTROL Select entities and fields to import] visas så att du kan förhandsgranska schemat. Granska schemastrukturen och använd alternativknapparna och kryssrutorna för att se till att varje entitet har en primär nyckel och versionsidentifierare angiven.
+
+>[!IMPORTANT]
+>
+>Tabellstrukturen måste innehålla en **primärnyckel** och en **versionsidentifierare**, till exempel ett `updateSequence`-fält av typen datetime eller number.
+>
+>För import av ändringsdata krävs även en särskild kolumn med namnet `_change_request_type` av typen String för att aktivera inkrementell bearbetning. Det här fältet anger typen av dataändring (till exempel `u` (upsert) eller `d` (delete)).
+
+Kontrollkolumner som `_change_request_type` lagras inte i schemat och visas inte i den slutliga schemastrukturen trots att de krävs vid inmatning. Om allt ser korrekt ut väljer du **[!UICONTROL Done]** för att skapa schemat.
+
+>[!NOTE]
+>
+>Den största filstorlek som stöds för en DDL-överföring är 10 MB.
+
+![Modellbaserad schemagranskningsvy med importerade fält visade och [!UICONTROL Finish] markerade.](../../images/ui/resources/schemas/entities-and-files-to-inport.png)
+
+Schemat öppnas i Schemaredigeraren där du kan justera strukturen innan du sparar.
+
+Fortsätt sedan till [lägg till ytterligare fält](#add-field-groups) och [lägg till ytterligare schemanivårelationer](../../tutorials/relationship-ui.md#relationship-field) efter behov.
+
+Mer information om hur du aktiverar registrering av ändringsdata i Experience Platform-källor finns i [handboken om registrering av ändringsdata](../../../sources/tutorials/api/change-data-capture.md).
+
+## Skapa standardschema {#standard-based-creation}
+
+Om du väljer Standardschematyp på den nedrullningsbara menyn Välj schematyp visas dialogrutan [!UICONTROL Create a schema]. I den här dialogrutan kan du välja att antingen skapa ett schema manuellt genom att lägga till fält och fältgrupper, eller så kan du överföra en CSV-fil och använda ML-algoritmer för att generera ett schema. Välj ett arbetsflöde för att skapa schema i dialogrutan.
 
 ![Dialogrutan Skapa ett schema med arbetsflödesalternativen och välj markerad.](../../images/ui/resources/schemas/create-a-schema-dialog.png)
 
@@ -172,7 +253,7 @@ När du har lagt till en fältgrupp i ett schema kan du antingen ta bort fält g
 >[!IMPORTANT]
 >
 >Om du väljer **[!UICONTROL Remove]** tas fältet bort från själva fältgruppen, vilket påverkar *alla* scheman som använder den fältgruppen.
->&#x200B;>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
+>>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
 
 Om du vill ta bort ett fält från fältgruppen markerar du det på arbetsytan och väljer **[!UICONTROL Remove]** på den högra listen. I det här exemplet visas fältet `taxId` från gruppen **[!UICONTROL Demographic Details]**.
 

@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: 1385f91694f9b6dfe96b9d424af0da6f2a1443c2
+source-git-commit: f6e63f3fe390c1e47347015e873282719508a0ec
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '707'
 ht-degree: 9%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 9%
    * [Bästa tillvägagångssätt för datamodellering](schema/best-practices.md)
    * [Känsliga och personliga uppgifter](./schema/sensitive-and-personal-data.md)
    * [Begränsningar för XDM-fälttyp](schema/field-constraints.md)
+   * [Modellbaserat schema](./schema/model-based.md)
    * [Namnavstånd i XDM](./schema/namespaces.md)
    * Branschdatamodeller {#industries}
       * [Översikt](./schema/industries/overview.md)
@@ -73,6 +74,8 @@ ht-degree: 9%
          * [Timing](./schema/healthcare/data-types/timing.md)
          * [Virtuell tjänst](./schema/healthcare/data-types/virtual-service-detail.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
+* Data Mirror {#data-mirror}
+   * [Översikt](./data-mirror/overview.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
@@ -285,4 +288,4 @@ ht-degree: 9%
    * [Skapa ett ad hoc-schema](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -4,26 +4,41 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: d6015125e3e29bdd6a6c505b5f5ad555bd17a0e0
+source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
 workflow-type: tm+mt
-source-wordcount: '2190'
+source-wordcount: '2886'
 ht-degree: 0%
 
 ---
 
 # Beskrivningsslutpunkt
 
-Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolka metadata om ett schema med hjälp av beskrivningar.
+Scheman definierar dataenheternas struktur, men anger inte hur datauppsättningar som skapats från dessa scheman relaterar till varandra. I Adobe Experience Platform kan du använda beskrivningar för att beskriva dessa relationer och lägga till tolkningsmetadata i ett schema.
 
-Schemabeskrivare är metadata på tenant-nivå, vilket innebär att de är unika för din organisation och att alla beskrivningsåtgärder utförs i innehavarbehållaren.
+Beskrivningar är metadataobjekt på tenant-nivå som tillämpas på scheman i Adobe Experience Platform. De definierar strukturella relationer, nycklar och beteendefält (t.ex. tidsstämplar eller versionshantering) som påverkar hur data valideras, förenas eller tolkas nedåt.
 
-Varje schema kan ha en eller flera schemabeskrivningsentiteter tillämpade. Varje schemabeskrivningsentitet innehåller en beskrivning `@type` och den `sourceSchema` som den gäller för. När dessa beskrivningar har tillämpats gäller de alla datauppsättningar som har skapats med schemat.
+Ett schema kan ha en eller flera beskrivningar. Varje beskrivning definierar en `@type` och den `sourceSchema` som den gäller för. Beskrivningen gäller automatiskt för alla datauppsättningar som skapas från det schemat.
+
+I Adobe Experience Platform är en beskrivning metadata som lägger till beteenderegler eller strukturell innebörd i ett schema.
+Det finns flera typer av beskrivningar, bland annat:
+
+- [Identitetsbeskrivning](#identity-descriptor) - markerar ett fält som en identitet
+- [Primär nyckelbeskrivning](#primary-key-descriptor) - använder unikhet
+- [Relationsbeskrivning](#relationship-descriptor) - definierar en koppling med sekundärnyckel
+- [Beskrivning av alternativ visningsinformation](#friendly-name) - du kan byta namn på ett fält i användargränssnittet
+- [Version](#version-descriptor)- och [timestamp](#timestamp-descriptor)-beskrivningar - spåra händelseordning och ändringsidentifiering
 
 Med slutpunkten `/descriptors` i API:t [!DNL Schema Registry] kan du programmässigt hantera beskrivningar i ditt upplevelseprogram.
 
 ## Komma igång
 
 Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
+
+Förutom standardbeskrivningar har [!DNL Schema Registry] stöd för beskrivningstyper för modellbaserade scheman, till exempel **primärnyckel**, **version** och **tidsstämpel**. Dessa lägger in unika funktioner, styr versionshantering och definierar tidsseriefält på schemanivå. Om du inte känner till modellbaserade scheman kan du förhandsgranska [Data Mirror översikt](../data-mirror/overview.md) och [modellbaserade scheman ](../schema/model-based.md) innan du fortsätter.
+
+>[!IMPORTANT]
+>
+>Mer information om alla beskrivningstyper finns i [Bilaga](#defining-descriptors).
 
 ## Hämta en lista med beskrivningar {#list}
 
@@ -86,7 +101,7 @@ När du använder rubriken `link` `Accept` visas varje beskrivning som ett array
 
 ## Söka efter en beskrivning {#lookup}
 
-Om du vill visa information om en viss beskrivning kan du söka efter (GET) en enskild beskrivning med hjälp av dess `@id`.
+Om du vill visa information om en viss beskrivning skickar du en GET-begäran med hjälp av dess `@id`.
 
 **API-format**
 
@@ -283,7 +298,7 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtex
 
 Om du vill bekräfta att beskrivningen har tagits bort kan du utföra en [uppslagsbegäran](#lookup) mot beskrivningen `@id`. Svaret returnerar HTTP-status 404 (Hittades inte) eftersom beskrivningen har tagits bort från [!DNL Schema Registry].
 
-## Bilaga
+## Bilaga {#appendix}
 
 Följande avsnitt innehåller ytterligare information om hur du arbetar med beskrivningar i API:t [!DNL Schema Registry].
 
@@ -299,9 +314,9 @@ I följande avsnitt ges en översikt över tillgängliga beskrivningstyper, inkl
 >
 >Du kan inte etikettera klientnamnområdesobjektet eftersom systemet skulle tillämpa den etiketten på alla anpassade fält i den sandlådan. I stället måste du ange den lövnod under det objektet som du vill etikettera.
 
-#### Identitetsbeskrivare
+#### Identitetsbeskrivare {#identity-descriptor}
 
-En identitetsbeskrivare signalerar att [!UICONTROL sourceProperty] för [!UICONTROL sourceSchema] är ett [!DNL Identity]-fält enligt beskrivningen i [Adobe Experience Platform Identity Service](../../identity-service/home.md).
+En identitetsbeskrivare signalerar att [!UICONTROL sourceProperty] för [!UICONTROL sourceSchema] är ett [!DNL Identity]-fält enligt beskrivningen i [Experience Platform Identity Service](../../identity-service/home.md).
 
 ```json
 {
@@ -371,21 +386,36 @@ Med egna namnbeskrivningar kan en användare ändra värdena `title`, `descripti
 
 #### Relationsbeskrivning {#relationship-descriptor}
 
-Relationsbeskrivare beskriver en relation mellan två olika scheman, som är aktiverade för egenskaperna som beskrivs i `sourceProperty` och `destinationProperty`. Mer information finns i självstudiekursen [om hur du definierar en relation mellan två scheman](../tutorials/relationship-api.md).
+Relationsbeskrivare beskriver en relation mellan två olika scheman, som är aktiverade för egenskaperna som beskrivs i `xdm:sourceProperty` och `xdm:destinationProperty`. Mer information finns i självstudiekursen [om hur du definierar en relation mellan två scheman](../tutorials/relationship-api.md).
+
+Använd de här egenskaperna för att deklarera hur ett källfält (sekundärnyckel) relaterar till ett målfält ([primärnyckel](#primary-key-descriptor) eller kandidatnyckel).
+
+>[!TIP]
+>
+>En **sekundärnyckel** är ett fält i källschemat (definierat av `xdm:sourceProperty`) som refererar till ett nyckelfält i ett annat schema. En **kandidatnyckel** är ett fält (eller en uppsättning fält) i målschemat som unikt identifierar en post och kan användas i stället för primärnyckeln.
+
+API:t har stöd för två mönster:
+
+- `xdm:descriptorOneToOne`: standardrelation med :1.
+- `xdm:descriptorRelationship`: allmänt mönster för nytt arbete och modellbaserade scheman (stöder kardinalitet, namngivning och icke-primära nyckelmål).
+
+##### Ett-till-ett-förhållande (standardscheman)
+
+Använd det här när du behåller befintliga standardschemaintegreringar som redan är beroende av `xdm:descriptorOneToOne`.
 
 ```json
 {
   "@type": "xdm:descriptorOneToOne",
-  "xdm:sourceSchema":
-    "https://ns.adobe.com/{TENANT_ID}/schemas/fbc52b243d04b5d4f41eaa72a8ba58be",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SOURCE_SCHEMA_ID}",
   "xdm:sourceVersion": 1,
   "xdm:sourceProperty": "/parentField/subField",
-  "xdm:destinationSchema": 
-    "https://ns.adobe.com/{TENANT_ID}/schemas/78bab6346b9c5102b60591e15e75d254",
+  "xdm:destinationSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{DEST_SCHEMA_ID}",
   "xdm:destinationVersion": 1,
   "xdm:destinationProperty": "/parentField/subField"
 }
 ```
+
+I följande tabell beskrivs de fält som krävs för att definiera en 1:1-relationsbeskrivning.
 
 | Egenskap | Beskrivning |
 | --- | --- |
@@ -397,7 +427,143 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, som är akt
 | `xdm:destinationVersion` | Huvudversionen av referensschemat. |
 | `xdm:destinationProperty` | (Valfritt) Sökväg till ett målfält i referensschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
 
-{style="table-layout:auto"}
+##### Allmän relation (modellbaserade scheman och rekommenderas för nya projekt)
+
+Använd den här beskrivningen för alla nya implementeringar och för modellbaserade scheman. Du kan definiera relationens kardinalitet (t.ex. en-till-en eller många-till-en), ange relationsnamn och länka till ett målfält som inte är primärnyckeln (icke-primärnyckel).
+
+I följande exempel visas hur du definierar en allmän relationsbeskrivning.
+
+**Minimalt exempel:**
+
+Det här minimala exemplet innehåller bara de obligatoriska fälten för att definiera en många-till-ett-relation mellan två scheman.
+
+```json
+{
+  "@type": "xdm:descriptorRelationship",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SOURCE_SCHEMA_ID}",
+  "xdm:sourceProperty": "/customer_ref",
+  "xdm:sourceVersion": 1,
+  "xdm:destinationSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{DEST_SCHEMA_ID}",
+  "xdm:cardinality": "M:1"
+}
+```
+
+**Exempel med alla valfria fält:**
+
+Det här exemplet innehåller alla valfria fält, till exempel relationsnamn, visningsrubriker och ett explicit målfält för icke-primärnyckel.
+
+```json
+{
+  "@type": "xdm:descriptorRelationship",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SOURCE_SCHEMA_ID}",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/customer_ref",
+  "xdm:destinationSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{DEST_SCHEMA_ID}",
+  "xdm:destinationProperty": "/customer_id",
+  "xdm:sourceToDestinationName": "CampaignToCustomer",
+  "xdm:destinationToSourceName": "CustomerToCampaign",
+  "xdm:sourceToDestinationTitle": "Customer campaigns",
+  "xdm:destinationToSourceTitle": "Campaign customers",
+  "xdm:cardinality": "M:1"
+}
+```
+
+##### Välja en relationsbeskrivning
+
+Använd följande riktlinjer för att bestämma vilken relationsbeskrivning som ska användas:
+
+| Situationen | Beskrivning som ska användas |
+| --------------------------------------------------------------------- | ----------------------------------------- |
+| Nytt arbete eller modellbaserade scheman | `xdm:descriptorRelationship` |
+| Befintlig :1-mappning i standardscheman | Fortsätt använda `xdm:descriptorOneToOne` om du inte behöver funktioner som bara stöds av `xdm:descriptorRelationship`. |
+| Behöver många-till-ett eller valfri kardinalitet (`1:1`, `1:0`, `M:1`, `M:0`) | `xdm:descriptorRelationship` |
+| Relationsnamn eller titlar för läsbarhet i användargränssnittet/nedladdningsbart | `xdm:descriptorRelationship` |
+| Behöver ett målmål som inte är en identitet | `xdm:descriptorRelationship` |
+
+>[!NOTE]
+>
+>Om det finns befintliga `xdm:descriptorOneToOne`-beskrivningar i standardscheman kan du fortsätta använda dem om du inte behöver funktioner som icke-primära mål för identitetsmål, anpassade namn eller utökade kardinalitetsalternativ.
+
+##### Funktionsjämförelse
+
+I följande tabell jämförs funktionerna för de två beskrivningstyperna:
+
+| Funktion | `xdm:descriptorOneToOne` | `xdm:descriptorRelationship` |
+| ------------------ | ------------------------ | ------------------------------------------------------------------------ |
+| Kardinalitet | 1:1 | 1:1, 1:0, M:1, M:0 (informativt) |
+| Målmål | Identitet/explicit fält | Primärnyckel som standard, eller icke-primärnyckel via `xdm:destinationProperty` |
+| Namngivningsfält | Stöds inte | `xdm:sourceToDestinationName`, `xdm:destinationToSourceName` och titlar |
+| Relationell anpassning | Begränsad | Primärt mönster för modellbaserade scheman |
+
+##### Begränsningar och validering
+
+Följ dessa krav och rekommendationer när du definierar en allmän relationsbeskrivning:
+
+- För modellbaserade scheman placerar du källfältet (sekundärnyckeln) på rotnivån. Detta är för närvarande en teknisk begränsning för konsumtion, inte bara en rekommendation om god praxis.
+- Kontrollera att datatyperna för käll- och målfält är kompatibla (numeriskt, datum, booleskt, sträng).
+- Kom ihåg att kardinalitet är informativt; lagring tvingar inte till det. Ange kardinalitet i formatet `<source>:<destination>`. Godkända värden är: `1:1`, `1:0`, `M:1` eller `M:0`.
+
+#### Primär nyckelbeskrivning {#primary-key-descriptor}
+
+Den primära nyckelbeskrivningen (`xdm:descriptorPrimaryKey`) tillämpar unikhet och begränsningar som inte är null i ett eller flera fält i ett schema.
+
+```json
+{
+  "@type": "xdm:descriptorPrimaryKey",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+  "xdm:sourceProperty": ["/orderId", "/orderLineId"]
+}
+```
+
+| Egenskap | Beskrivning |
+| -------------------- | ----------------------------------------------------------------------------- |
+| `@type` | Måste vara `xdm:descriptorPrimaryKey`. |
+| `xdm:sourceSchema` | `$id` URI för schemat. |
+| `xdm:sourceProperty` | JSON-pekare till primärnyckelfält. Använd en array för sammansatta nycklar. För scheman i tidsserier måste den sammansatta nyckeln innehålla tidsstämpelfältet för att säkerställa att alla händelseposter är unika. |
+
+#### Versionsbeskrivare {#version-descriptor}
+
+>[!NOTE]
+>
+>I UI-schemaredigeraren visas versionsbeskrivningen som [!UICOTRNOL Versionsidentifierare].
+
+Versionsbeskrivningen (`xdm:descriptorVersion`) anger ett fält som identifierar och förhindrar konflikter från oordnade ändringshändelser.
+
+```json
+{
+  "@type": "xdm:descriptorVersion",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+  "xdm:sourceProperty": "/versionNumber"
+}
+```
+
+| Egenskap | Beskrivning |
+| -------------------- | ------------------------------------------------------------- |
+| `@type` | Måste vara `xdm:descriptorVersion`. |
+| `xdm:sourceSchema` | `$id` URI för schemat. |
+| `xdm:sourceProperty` | JSON-pekare till versionsfältet. Måste markeras som `required`. |
+
+#### Tidsstämpelbeskrivning {#timestamp-descriptor}
+
+>[!NOTE]
+>
+>I UI-schemaredigeraren visas tidsstämpelbeskrivningen som [!UICOTRNOL Tidsstämpelidentifierare].
+
+Tidsstämpelbeskrivningen (`xdm:descriptorTimestamp`) anger ett datum/tid-fält som tidsstämpel för scheman med `"meta:behaviorType": "time-series"`.
+
+```json
+{
+  "@type": "xdm:descriptorTimestamp",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+  "xdm:sourceProperty": "/eventTime"
+}
+```
+
+| Egenskap | Beskrivning |
+| -------------------- | ------------------------------------------------------------------------------------------ |
+| `@type` | Måste vara `xdm:descriptorTimestamp`. |
+| `xdm:sourceSchema` | `$id` URI för schemat. |
+| `xdm:sourceProperty` | JSON-pekare till tidsstämpelfältet. Måste vara markerad som `required` och vara av typen `date-time`. |
 
 ##### B2B-relationsbeskrivning {#B2B-relationship-descriptor}
 
@@ -427,7 +593,7 @@ Real-Time CDP B2B edition introducerar ett alternativt sätt att definiera relat
 | `xdm:sourceProperty` | Sökväg till fältet i källschemat där relationen definieras. Bör börja med &quot;/&quot; och inte sluta med &quot;/&quot;. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
 | `xdm:destinationSchema` | URI `$id` för det referensschema som den här beskrivningen definierar en relation med. |
 | `xdm:destinationVersion` | Huvudversionen av referensschemat. |
-| `xdm:destinationProperty` | (Valfritt) Sökväg till ett målfält i referensschemat, som måste vara schemats primära ID. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
+| `xdm:destinationProperty` | (Valfritt) Sökväg till ett målfält i referensschemat. Detta måste matcha schemats primära ID eller ett annat fält med en kompatibel datatyp till `xdm:sourceProperty`. Om det utelämnas kanske relationen inte fungerar som förväntat. |
 | `xdm:destinationNamespace` | Namnområdet för det primära ID:t från referensschemat. |
 | `xdm:destinationToSourceTitle` | Visningsnamnet för relationen från referensschemat till källschemat. |
 | `xdm:sourceToDestinationTitle` | Visningsnamnet för relationen från källschemat till referensschemat. |

@@ -1,56 +1,123 @@
 ---
 title: Aktivera registrering av ändringsdata för källanslutningar i API
 description: Lär dig hur du aktiverar registrering av ändringsdata för källanslutningar i API:t
-source-git-commit: d8b4557424e1f29dfdd8893932aef914226dd60d
+exl-id: 362f3811-7d1e-4f16-b45f-ce04f03798aa
+source-git-commit: 192e97c97ffcb2d695bcfa6269cc6920f5440832
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '1238'
 ht-degree: 0%
 
 ---
 
 # Aktivera registrering av ändringsdata för källanslutningar i API
 
-Att hämta in data i Adobe Experience Platform-källor är en funktion som du kan använda för att upprätthålla datasynkronisering i realtid mellan käll- och målsystemen.
+Använd datainhämtning från Adobe Experience Platform för att synkronisera käll- och målsystemen i nära realtid.
 
-För närvarande stöder Experience Platform **inkrementell datakopia**, vilket garanterar att nyligen skapade eller uppdaterade poster i källsystemet regelbundet kopieras till de inkapslade datauppsättningarna. Den här processen är beroende av att **tidsstämpelkolumnen** används, till exempel `LastModified`, för att spåra ändringar och för att **endast samla in nyligen infogade eller uppdaterade data**. Den här metoden tar dock inte hänsyn till borttagna poster, vilket kan leda till inkonsekvenser i data över tiden.
+Experience Platform har för närvarande stöd för **inkrementell datakopia**, som regelbundet överför nyligen skapade eller uppdaterade poster från källsystemet till inkapslade datauppsättningar. Den här metoden förlitar sig på en **tidsstämpelkolumn** för att spåra ändringar, men den identifierar inte borttagningar, vilket kan leda till inkonsekventa data över tid.
 
-Med datainhämtning hämtar och tillämpar ett givet flöde alla ändringar, inklusive infogningar, uppdateringar och borttagningar. På samma sätt förblir Experience Platform datamängder helt synkroniserade med källsystemet.
+Om du däremot ändrar datainhämtningen hämtas och infogas, uppdateras och tas bort nästan i realtid. Denna omfattande ändringsspårning säkerställer att datauppsättningarna är helt anpassade till källsystemet och ger en fullständig ändringshistorik utöver vad inkrementell kopia stöder. Borttagningsåtgärder kräver dock särskild hänsyn eftersom de påverkar alla program som använder måldatauppsättningarna.
 
-Du kan använda registrering av ändringsdata för följande källor:
+För registrering av ändringsdata i Experience Platform krävs **[Data Mirror](../../../xdm/data-mirror/overview.md)** med [modellbaserade scheman](../../../xdm/schema/model-based.md) (kallas även relationsscheman). Du kan skicka ändringsdata till Data Mirror på två sätt:
 
-## [!DNL Amazon S3]
+* **[Manuell ändringsspårning](#file-based-sources)**: Inkludera en `_change_request_type`-kolumn i datauppsättningen för källor som inte genererar poster för registrering av ändringsdata internt
+* **[Inbyggd export av datainhämtning vid ändring](#database-sources)**: Använd poster för registrering av ändringsdata som exporterats direkt från källsystemet
 
-Kontrollera att `_change_request_type` finns i filen [!DNL Amazon S3] som du vill importera till Experience Platform. Dessutom måste du se till att följande giltiga värden finns med i filen:
+Båda metoderna kräver att Data Mirror har modellbaserade scheman för att bevara relationer och genomdriva unika lösningar.
 
-* `u`: för infogningar och uppdateringar
-* `d`: för borttagningar.
+## Data Mirror med modellbaserade diagram
 
-Om `_change_request_type` inte finns i filen används standardvärdet `u`.
+>[!AVAILABILITY]
+>
+>Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
 
-Läs följande dokumentation om hur du aktiverar registrering av ändringsdata för din [!DNL Amazon S3]-källanslutning:
+>[!NOTE]
+>
+>**Orchestrerade kampanjanvändare**: Använd de Data Mirror-funktioner som beskrivs i det här dokumentet för att arbeta med kunddata som behåller referensintegriteten. Även om din källa inte använder formatering för registrering av ändringsdata, stöder Data Mirror relationsfunktioner som primärnyckel, postnivåuppdateringar och schemarelationer. Dessa funktioner säkerställer enhetlig och tillförlitlig datamodellering för alla anslutna datamängder.
 
-* [Skapa en [!DNL Amazon S3] basanslutning](../api/create/cloud-storage/s3.md).
-* [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
+Data Mirror använder modellbaserade scheman för att utöka datainhämtningen av ändringsdata och aktivera avancerade funktioner för databassynkronisering. En översikt över Data Mirror finns i [Data Mirror - översikt](../../../xdm/data-mirror/overview.md).
 
-## [!DNL Azure Blob]
+Modellbaserade scheman utökar Experience Platform för att framtvinga unika primärnycklar, spåra ändringar på radnivå och definiera relationer på schemanivå. Med datainhämtning kan man lägga in, uppdatera och radera data direkt i datasjön, vilket minskar behovet av Extract, Transform, Load (ETL) eller manuell avstämning.
 
-Kontrollera att `_change_request_type` finns i filen [!DNL Azure Blob] som du vill importera till Experience Platform. Dessutom måste du se till att följande giltiga värden finns med i filen:
+Mer information finns i [Modellbaserade scheman - översikt](../../../xdm/schema/model-based.md).
 
-* `u`: för infogningar och uppdateringar
-* `d`: för borttagningar.
+### Modellbaserade schemakrav för registrering av ändringsdata
 
-Om `_change_request_type` inte finns i filen används standardvärdet `u`.
+Konfigurera följande identifierare innan du använder ett modellbaserat schema med registrering av ändringsdata:
 
-Läs följande dokumentation om hur du aktiverar registrering av ändringsdata för din [!DNL Azure Blob]-källanslutning:
+* Identifiera unikt varje post med en primärnyckel.
+* Tillämpa uppdateringar sekventiellt med en versionsidentifierare.
+* Lägg till en tidsstämpelidentifierare för tidsseriescheman.
 
-* [Skapa en [!DNL Azure Blob] basanslutning](../api/create/cloud-storage/blob.md).
-* [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
+### Styra kolumnhantering {#control-column-handling}
 
-## [!DNL Azure Databricks]
+Använd kolumnen `_change_request_type` för att ange hur varje rad ska bearbetas:
 
-Du måste aktivera **ändra datafeed** i din [!DNL Azure Databricks]-tabell för att kunna använda datainhämtning i din källanslutning.
+* `u` — upsert (standard om kolumnen inte finns)
+* `d` - ta bort
 
-Använd följande kommandon för att explicit aktivera alternativet för att ändra datafeed i [!DNL Azure Databricks]
+Den här kolumnen utvärderas endast vid förtäring och lagras eller mappas inte till XDM-fält.
+
+### Arbetsflöde {#workflow}
+
+Så här aktiverar du registrering av ändringsdata med ett modellbaserat schema:
+
+1. Skapa ett modellbaserat schema.
+2. Lägg till de beskrivningar som krävs:
+   * [Primär nyckelbeskrivning](../../../xdm/api/descriptors.md#primary-key-descriptor)
+   * [Versionsbeskrivare](../../../xdm/api/descriptors.md#version-descriptor)
+   * [Tidsstämpelbeskrivning](../../../xdm/api/descriptors.md#timestamp-descriptor) (endast tidsserie)
+3. Skapa en datauppsättning från schemat och aktivera registrering av ändringsdata.
+4. Endast för filbaserad inmatning: Lägg till kolumnen `_change_request_type` i källfilerna om du behöver ange borttagningsåtgärder explicit. CDC-exportkonfigurationer hanterar detta automatiskt för databaskällor.
+5. Slutför konfigurationen av källanslutningen för att aktivera förtäring.
+
+>[!NOTE]
+>
+>Kolumnen `_change_request_type` krävs bara för filbaserade källor (Amazon S3, Azure Blob, Google Cloud Storage, SFTP) när du vill styra ändringsbeteendet på radnivå explicit. För databaskällor med inbyggda CDC-funktioner hanteras ändringsåtgärder automatiskt via CDC-exportkonfigurationer. Filbaserad inmatning förutsätter att du utför en överföring som standard. Du behöver bara lägga till den här kolumnen om du vill ange borttagningsåtgärder i filöverföringen.
+
+>[!IMPORTANT]
+>
+>**Planering av borttagning av data krävs**. Alla program som använder modellbaserade scheman måste förstå borttagningskonsekvenserna innan ändringsdatainhämtningen implementeras. Planera för hur borttagningar påverkar relaterade datamängder, efterlevnadskrav och processerna längre fram i kedjan. Mer information finns i [Ta hänsyn till datahygien](../../../hygiene/ui/record-delete.md#model-based-record-delete).
+
+## Erbjuda ändringsdata för filbaserade källor {#file-based-sources}
+
+>[!IMPORTANT]
+>
+>Filbaserad datainhämtning av ändringsdata kräver Data Mirror med modellbaserade scheman. Innan du följer filformateringsstegen nedan kontrollerar du att du har slutfört det [Data Mirror-installationsarbetsflöde](#workflow) som beskrivs tidigare i det här dokumentet. Stegen nedan beskriver hur du formaterar dina datafiler så att de innehåller ändringsspårningsinformation som kommer att bearbetas av Data Mirror.
+
+För filbaserade källor ([!DNL Amazon S3], [!DNL Azure Blob], [!DNL Google Cloud Storage] och [!DNL SFTP]) tar du med en `_change_request_type`-kolumn i filerna.
+
+Använd de `_change_request_type`-värden som definieras i avsnittet [Hantera kontrollkolumner](#control-column-handling) ovan.
+
+>[!IMPORTANT]
+>
+>För **filbaserade källor endast** kan vissa program kräva en `_change_request_type`-kolumn med antingen `u` (upsert) eller `d` (delete) för att validera funktionerna för ändringsspårning. Adobe Journey Optimizer **orkestrerade kampanjer** kräver till exempel den här kolumnen för att aktivera alternativet för orkestrerad kampanj och tillåta val av datauppsättning för målinriktning. Programspecifika valideringskrav kan variera.
+
+Följ de källspecifika stegen nedan.
+
+### Lagringskällor i molnet {#cloud-storage-sources}
+
+Aktivera datainhämtning för molnlagringskällor genom att följa dessa steg:
+
+1. Skapa en basanslutning för källan:
+
+   | Källa | Grundläggande anslutningsguide |
+   |---|---|
+   | [!DNL Amazon S3] | [Skapa en [!DNL Amazon S3] basanslutning](../api/create/cloud-storage/s3.md) |
+   | [!DNL Azure Blob] | [Skapa en [!DNL Azure Blob] basanslutning](../api/create/cloud-storage/blob.md) |
+   | [!DNL Google Cloud Storage] | [Skapa en [!DNL Google Cloud Storage] basanslutning](../api/create/cloud-storage/google.md) |
+   | [!DNL SFTP] | [Skapa en [!DNL SFTP] basanslutning](../api/create/cloud-storage/sftp.md) |
+
+2. [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
+
+Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [ Filbaserade källor ](#file-based-sources) ovan.
+
+## Databaskällor {#database-sources}
+
+### [!DNL Azure Databricks]
+
+Om du vill använda registrering av ändringsdata med [!DNL Azure Databricks] måste du båda aktivera **Ändra datafeed** i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
+
+Använd följande kommandon om du vill aktivera dataöverföring i tabeller:
 
 **Ny tabell**
 
@@ -83,20 +150,20 @@ Läs följande dokumentation om hur du aktiverar registrering av ändringsdata f
 * [Skapa en [!DNL Azure Databricks] basanslutning](../api/create/databases/databricks.md).
 * [Skapa en källanslutning för en databas](../api/collect/database-nosql.md#create-a-source-connection).
 
-## [!DNL Data Landing Zone]
+### [!DNL Data Landing Zone]
 
-Du måste aktivera **ändra datafeed** i din [!DNL Data Landing Zone]-tabell för att kunna använda datainhämtning i din källanslutning.
-
-Använd följande kommandon för att explicit aktivera alternativet för att ändra datafeed i [!DNL Data Landing Zone].
+Om du vill använda registrering av ändringsdata med [!DNL Data Landing Zone] måste du båda aktivera **Ändra datafeed** i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
 
 Läs följande dokumentation om hur du aktiverar registrering av ändringsdata för din [!DNL Data Landing Zone]-källanslutning:
 
 * [Skapa en [!DNL Data Landing Zone] basanslutning](../api/create/cloud-storage/data-landing-zone.md).
 * [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
 
-## [!DNL Google BigQuery]
+### [!DNL Google BigQuery]
 
-Om du vill använda registrering av ändringsdata i [!DNL Google BigQuery]-källanslutningen. Navigera till din [!DNL Google BigQuery]-sida i [!DNL Google Cloud]-konsolen och ange `enable_change_history` som `TRUE`. Den här egenskapen aktiverar ändringshistorik för datatabellen.
+Om du vill använda registrering av ändringsdata med [!DNL Google BigQuery] måste du både aktivera ändringshistorik i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
+
+Om du vill aktivera ändringshistorik i [!DNL Google BigQuery]-källanslutningen navigerar du till [!DNL Google BigQuery]-sidan i [!DNL Google Cloud]-konsolen och anger `enable_change_history` som `TRUE`. Den här egenskapen aktiverar ändringshistorik för datatabellen.
 
 Mer information finns i handboken om [språksatser för datadefinitioner i  [!DNL GoogleSQL]](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#table_option_list).
 
@@ -105,39 +172,9 @@ Läs följande dokumentation om hur du aktiverar registrering av ändringsdata f
 * [Skapa en [!DNL Google BigQuery] basanslutning](../api/create/databases/bigquery.md).
 * [Skapa en källanslutning för en databas](../api/collect/database-nosql.md#create-a-source-connection).
 
-## [!DNL Google Cloud Storage]
+### [!DNL Snowflake]
 
-Kontrollera att `_change_request_type` finns i filen [!DNL Google Cloud Storage] som du vill importera till Experience Platform. Dessutom måste du se till att följande giltiga värden finns med i filen:
-
-* `u`: för infogningar och uppdateringar
-* `d`: för borttagningar.
-
-Om `_change_request_type` inte finns i filen används standardvärdet `u`.
-
-Läs följande dokumentation om hur du aktiverar registrering av ändringsdata för din [!DNL Google Cloud Storage]-källanslutning:
-
-* [Skapa en [!DNL Google Cloud Storage] basanslutning](../api/create/cloud-storage/google.md).
-* [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
-
-
-## [!DNL SFTP]
-
-Kontrollera att `_change_request_type` finns i filen [!DNL SFTP] som du vill importera till Experience Platform. Dessutom måste du se till att följande giltiga värden finns med i filen:
-
-* `u`: för infogningar och uppdateringar
-* `d`: för borttagningar.
-
-Om `_change_request_type` inte finns i filen används standardvärdet `u`.
-
-Läs följande dokumentation om hur du aktiverar registrering av ändringsdata för din [!DNL SFTP]-källanslutning:
-
-* [Skapa en [!DNL SFTP] basanslutning](../api/create/cloud-storage/sftp.md).
-* [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
-
-
-## [!DNL Snowflake]
-
-Du måste aktivera **ändringsspårning** i [!DNL Snowflake]-tabellerna för att kunna använda ändringsdatainhämtning i källanslutningarna.
+Om du vill använda registrering av ändringsdata med [!DNL Snowflake] måste du båda aktivera **ändringsspårning** i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
 
 Aktivera ändringsspårning i [!DNL Snowflake] genom att använda `ALTER TABLE` och ange `CHANGE_TRACKING` som `TRUE`.
 
@@ -151,4 +188,3 @@ Läs följande dokumentation om hur du aktiverar registrering av ändringsdata f
 
 * [Skapa en [!DNL Snowflake] basanslutning](../api/create/databases/snowflake.md).
 * [Skapa en källanslutning för en databas](../api/collect/database-nosql.md#create-a-source-connection).
-

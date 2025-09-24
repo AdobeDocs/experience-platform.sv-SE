@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM - systemöversikt
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7527732c91e55f6ffaefbf98c37a2c4aad3aa3b9
 workflow-type: tm+mt
-source-wordcount: '2095'
+source-wordcount: '2411'
 ht-degree: 0%
 
 ---
@@ -104,6 +104,40 @@ Katalogdata lagras i datasjön, ett mycket detaljerat datalager som innehåller 
 Om du vill börja inhämta data till Experience Platform kan du använda katalogtjänsten för att skapa en datauppsättning. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datauppsättning skapas utan ett schema, härleds ett &quot;observerat schema&quot; av Experience Platform genom att typen och innehållet i inkapslade datafält kontrolleras. Datauppsättningar spåras sedan i katalogtjänsten och lagras i datasjön tillsammans med de scheman och observerade scheman som de baseras på.
 
 Mer information finns i [Katalogtjänstöversikt](../catalog/home.md). Mer information om Adobe Experience Platform datainmatning finns i [Översikt över datainmatning](../ingestion/home.md).
+
+### Data Mirror och modellbaserade scheman {#model-based-schemas}
+
+>[!AVAILABILITY]
+>
+>Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+
+Data Mirror är en Adobe Experience Platform-funktion som möjliggör avancerad databassynkronisering med modellbaserade scheman. En fullständig översikt över Data Mirror funktioner och användningsexempel finns i [Data Mirror-översikten](./data-mirror/overview.md).
+
+Data Mirror använder modellbaserade scheman som är utformade för strukturerade, relationella datamönster. De använder primärnycklar, ID:n för supportversion och definierar relationer mellan schema och schema med hjälp av primära och externa nycklar. Till skillnad från vanliga XDM-scheman kräver de inte klasser eller fältgrupper och är optimerade för arbetsflöden för inhämtning av ändringsdata.
+
+Mer information om hur du definierar scheman-till-schema-relationer finns i [deskriptorns slutpunktsdokumentation](./api/descriptors.md).
+
+Använd Data Mirror när du behöver:
+
+* Synkronisera dataändringar från externa system som Snowflake, Databricks eller BigQuery
+* Bevara databasrelationerna och bevara dataintegriteten vid inmatning
+* Stöd för avancerad analys och resesamordning
+* Aktivera exakt ändringsspårning med överföringar och borttagningar
+
+Om du vill skapa ett modellbaserat schema väljer du **[!UICONTROL model-based]** när du skapar ett schema. Modellbaserade scheman använder inte klasser eller fältgrupper. I stället definierar du strukturen manuellt eller överför en DDL-fil. Modellbaserade scheman kräver en primärnyckel, versionsidentifierare och, om tillämpligt, tidsstämpelidentifierarfält. Sedan kan du konfigurera ytterligare fält och definiera relationer med andra scheman.
+
+>[!NOTE]
+>
+>Kontrollkolumner som används vid inmatning (till exempel `_change_request_type` för arbetsflöden för registrering av ändringsdata) läses vid inmatningstiden och lagras inte i schemat eller mappas till XDM-fält. Relationsscheman är tillgängliga med lämpliga Experience Platform-berättiganden och funktioner.
+
+Detaljerade anvisningar och fallvägledning finns i:
+
+* [Data Mirror - översikt](./data-mirror/overview.md) - Funktioner, användningsexempel och implementeringsplanering
+* [Modellbaserad teknisk referens för schema](./schema/model-based.md) - Tekniska specifikationer och begränsningar
+* [Självstudiekurs om användargränssnitt](./ui/resources/schemas.md#create-model-based-schema)
+* [API, genomgång](./api/schemas.md#create-model-based-schema)
+* [Beskrivningsdokumentation (ID)](./api/descriptors.md#relationship-descriptor)
+* [Aktivera inhämtning av ändringsdata](../sources/tutorials/api/change-data-capture.md)
 
 ### Frågetjänst {#query-service}
 

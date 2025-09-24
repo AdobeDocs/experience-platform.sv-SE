@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: API-slutpunkt för scheman
 description: Med slutpunkten /schemas i API:t för schemaregister kan du programmässigt hantera XDM-scheman i ditt upplevelseprogram.
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 974faad835b5dc2a4d47249bb672573dfb4d54bd
 workflow-type: tm+mt
-source-wordcount: '1443'
+source-wordcount: '2095'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] 
 
 ## Hämta en lista med scheman {#list}
 
-Du kan lista alla scheman under behållaren `global` eller `tenant` genom att göra en GET-förfrågan till `/global/schemas` respektive `/tenant/schemas`.
+Du kan lista alla scheman under behållaren `global` eller `tenant` genom att göra en GET-begäran till `/global/schemas` respektive `/tenant/schemas`.
 
 >[!NOTE]
 >
@@ -99,7 +99,7 @@ Begäran ovan använde rubriken `application/vnd.adobe.xed-id+json` `Accept`, oc
 
 ## Söka efter ett schema {#lookup}
 
-Du kan söka efter ett specifikt schema genom att göra en GET-förfrågan som innehåller schemats ID i sökvägen.
+Du kan söka efter ett specifikt schema genom att göra en GET-begäran som innehåller schemats ID i sökvägen.
 
 **API-format**
 
@@ -109,7 +109,7 @@ GET /{CONTAINER_ID}/schemas/{SCHEMA_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CONTAINER_ID}` | Behållaren som innehåller det schema som du vill hämta: `global` för ett schema som skapats av Adobe eller `tenant` för ett schema som ägs av din organisation. |
+| `{CONTAINER_ID}` | Behållaren som innehåller det schema som du vill hämta: `global` för ett schema som har skapats av Adobe eller `tenant` för ett schema som ägs av din organisation. |
 | `{SCHEMA_ID}` | `meta:altId` eller URL-kodad `$id` för schemat som du vill söka efter. |
 
 {style="table-layout:auto"}
@@ -198,6 +198,8 @@ Ett lyckat svar returnerar information om schemat. Vilka fält som returneras be
 
 Schemadispositionsprocessen börjar med att tilldela en klass. Klassen definierar viktiga beteendeaspekter för data (post- eller tidsserier) samt de minimifält som krävs för att beskriva de data som ska importeras.
 
+Instruktioner om hur du skapar ett schema utan klasser eller fältgrupper, som kallas modellbaserat schema, finns i avsnittet [Skapa ett modellbaserat schema](#create-model-based-schema).
+
 >[!NOTE]
 >
 >Exempelanropet nedan är bara ett grundläggande exempel på hur du skapar ett schema i API:t, med de minimala dispositionskraven för en klass och utan fältgrupper. Fullständiga steg för hur du skapar ett schema i API:t, inklusive hur du tilldelar fält med fältgrupper och datatyper, finns i [självstudiekursen för att skapa schema](../tutorials/create-schema-api.md).
@@ -275,13 +277,199 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om en GET-förfrågan om att [lista alla scheman](#list) i klientbehållaren utförs, kommer det nya schemat nu att ingå. Du kan utföra en [Lookup-begäran (GET)](#lookup) med URL-kodad `$id` URI för att visa det nya schemat direkt.
+Om en GET-begäran om att [visa alla scheman](#list) i innehavarbehållaren utförs, kommer nu det nya schemat att ingå. Du kan utföra en [Lookup-begäran (GET)](#lookup) med URL-kodad `$id` URI för att visa det nya schemat direkt.
 
-Om du vill lägga till fler fält i ett schema kan du utföra en [PATCH-åtgärd](#patch) för att lägga till fältgrupper i schemats `allOf`- och `meta:extends`-arrayer.
+Om du vill lägga till ytterligare fält i ett schema kan du utföra en [PATCH-åtgärd](#patch) för att lägga till fältgrupper i schemats `allOf`- och `meta:extends`-arrayer.
+
+## Skapa ett modellbaserat schema {#create-model-based-schema}
+
+>[!AVAILABILITY]
+>
+>Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+
+Skapa ett modellbaserat schema genom att göra en POST-begäran till slutpunkten `/schemas`. Modellbaserade scheman lagrar strukturerade relationsliknande data **utan**-klasser eller fältgrupper. Definiera fält direkt i schemat och identifiera schemat som modellbaserat med en logisk beteendetagg.
+
+>[!IMPORTANT]
+>
+>Om du vill skapa ett modellbaserat schema anger du `meta:extends` till `"https://ns.adobe.com/xdm/data/adhoc-v2"`. Detta är en **logisk beteendeidentifierare** (inte en fysisk funktion eller klass). Referera **inte** till klasser eller fältgrupper i `allOf` och ta **inte** med klasser eller fältgrupper i `meta:extends`.
+
+Skapa schemat först med `POST /tenant/schemas`. Lägg sedan till de nödvändiga beskrivningarna med [API:t för beskrivningar (`POST /tenant/descriptors`)](../api/descriptors.md):
+
+- [Primär nyckelbeskrivning](../api/descriptors.md#primary-key-descriptor): Ett primärnyckelfält måste finnas på **rotnivå** och **markeras som obligatoriskt**.
+- [Versionsbeskrivare](../api/descriptors.md#version-descriptor): **Obligatorisk** när det finns en primärnyckel.
+- [Relationsbeskrivare](../api/descriptors.md#relationship-descriptor): Valfritt, definierar kopplingar. Kardinaliteten är inte tvingande vid förtäring.
+- [Tidsstämpelbeskrivare](../api/descriptors.md#timestamp-descriptor): För tidsseriescheman måste primärnyckeln vara en **sammansatt**-nyckel som innehåller tidsstämpelsfältet.
+
+>[!NOTE]
+>
+>I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [!UICOTRNOL Versionsidentifierare] respektive [!UICOTRNOL Tidsstämpelidentifierare].
+
+<!-- >[!AVAILABILITY]
+>
+>Although `meta:behaviorType` technically accepts `time-series`, support is not currently available for model-based schemas. Set `meta:behaviorType` to `"record"`. -->
+
+>[!CAUTION]
+>
+>Modellbaserade scheman är **inte kompatibla med unionsscheman**. Använd inte taggen `union` för `meta:immutableTags` när du arbetar med modellbaserade scheman. Den här konfigurationen blockeras i användargränssnittet men blockeras för närvarande inte av API:t. Mer information om fackschemats beteende finns i [slutpunktshandboken för föreningar](./unions.md).
+
+**API-format**
+
+```http
+POST /tenant/schemas
+```
+
+**Begäran**
+
+```shell
+curl --request POST \
+  --url https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas \
+  -H 'Accept: application/vnd.adobe.xed+json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+  "title": "marketing.customers",
+  "type": "object",
+  "description": "Schema of the Marketing Customers table.",
+  "definitions": {
+    "customFields": {
+      "type": "object",
+      "properties": {
+        "customer_id": {
+          "title": "Customer ID",
+          "description": "Primary key of the customer table.",
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "description": "Name of the customer.",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "description": "Email of the customer.",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        }
+      },
+      "required": ["customer_id"]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/customFields",
+      "meta:xdmType": "object"
+    }
+  ],
+  "meta:extends": ["https://ns.adobe.com/xdm/data/adhoc-v2"],
+  "meta:behaviorType": "record"
+}
+'
+```
+
+### Egenskaper för begärandebrödtext
+
+| Egenskap | Typ | Beskrivning |
+| ------------------------------- | ------ | --------------------------------------------------------- |
+| `title` | Sträng | Schemats visningsnamn. |
+| `description` | Sträng | Kort förklaring av schemats syfte. |
+| `type` | Sträng | Måste vara `"object"` för modellbaserade scheman. |
+| `definitions` | Objekt | Innehåller rotnivåobjekt som definierar schemafälten. |
+| `definitions.<name>.properties` | Objekt | Fältnamn och datatyper. |
+| `allOf` | Array | Refererar till objektdefinitionen på rotnivå (till exempel `#/definitions/marketing_customers`). |
+| `meta:extends` | Array | `"https://ns.adobe.com/xdm/data/adhoc-v2"` måste inkluderas för att schemat ska kunna identifieras som modellbaserat. |
+| `meta:behaviorType` | Sträng | Ange till `"record"`. Använd bara `"time-series"` när det är aktiverat och lämpligt. |
+
+>[!IMPORTANT]
+>
+>Schemautvecklingen för modellbaserade scheman följer samma tilläggsregler som standardscheman. Du kan lägga till nya fält med en PATCH-begäran. Ändringar som att byta namn på eller ta bort fält tillåts bara om inga data har importerats till datauppsättningen.
+
+**Svar**
+
+En slutförd begäran returnerar **HTTP 201 (skapad)** och det skapade schemat.
+
+>[!NOTE]
+>
+>Modellbaserade scheman ärver inte fördefinierade fält (till exempel id, timestamp eller eventType). Definiera alla obligatoriska fält explicit i ditt schema.
+
+**Exempelsvar**
+
+```json
+{
+  "$id": "https://ns.adobe.com/<TENANT_ID>/schemas/<SCHEMA_UUID>",
+  "meta:altId": "_<SCHEMA_ALT_ID>",
+  "meta:resourceType": "schemas",
+  "version": "1.0",
+  "title": "marketing.customers",
+  "description": "Schema of the Marketing Customers table.",
+  "type": "object",
+  "definitions": {
+    "marketing_customers": {
+      "type": "object",
+      "properties": {
+        "customer_id": {
+          "title": "Customer ID",
+          "description": "Primary key of the customer table.",
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "description": "Name of the customer.",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "description": "Email of the customer.",
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        }
+      },
+      "required": ["customer_id"]
+    }
+  },
+  "allOf": [
+    { "$ref": "#/definitions/marketing_customers" }
+  ],
+  "meta:extends": ["https://ns.adobe.com/xdm/data/adhoc-v2"],
+  "meta:behaviorType": "record",
+  "meta:containerId": "tenant"
+}
+```
+
+### Egenskaper för svarstext
+
+| Egenskap | Typ | Beskrivning |
+| ------------------- | ------ | -------------------------- |
+| `$id` | Sträng | Den unika URL:en för det skapade schemat. Använd i efterföljande API-anrop. |
+| `meta:altId` | Sträng | En alternativ identifierare för schemat. |
+| `meta:resourceType` | Sträng | Resurstypen (alltid `"schemas"`). |
+| `version` | Sträng | En schemaversion tilldelad när den skapades. |
+| `title` | Sträng | Schemats visningsnamn. |
+| `description` | Sträng | En kort förklaring av schemats syfte. |
+| `type` | Sträng | Schematypen. |
+| `definitions` | Objekt | Definierar återanvändbara objekt eller fältgrupper som används i schemat. Detta inkluderar vanligtvis huvuddatastrukturen och refereras i `allOf`-arrayen för att definiera schemaroten. |
+| `allOf` | Array | Anger schemats rotobjekt genom att referera till en eller flera definitioner (till exempel `#/definitions/marketing_customers`). |
+| `meta:extends` | Array | Identifierar schemat som modellbaserat (`adhoc-v2`). |
+| `meta:behaviorType` | Sträng | Beteendetyp (`record` eller `time-series`, när den är aktiverad). |
+| `meta:containerId` | Sträng | Behållare som schemat lagras i (t.ex. `tenant`). |
+
+Om du vill lägga till fält i ett modellbaserat schema efter att det har skapats gör du en [PATCH-begäran](#patch). Modellbaserade scheman ärver inte eller utvecklas automatiskt. Strukturella ändringar som att byta namn på eller ta bort fält tillåts bara om inga data har importerats till datauppsättningen. När det finns data stöds bara **additiva ändringar** (till exempel tillägg av nya fält).
+
+Du kan lägga till nya rotnivåfält (inom rotdefinitionen eller roten `properties`), men du kan inte ta bort, byta namn på eller ändra typen för befintliga fält.
+
+>[!CAUTION]
+>
+>Schemautvecklingen begränsas efter att en datauppsättning har initierats med schemat. Planera fältnamn och typer noggrant i förväg eftersom det inte går att ta bort eller ändra fält när data har importerats.
 
 ## Uppdatera ett schema {#put}
 
-Du kan ersätta ett helt schema med en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar ett schema via en PUT-begäran måste texten innehålla alla fält som krävs när [ett nytt schema](#create) skapas i en POST-begäran.
+Du kan ersätta ett helt schema genom en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar ett schema via en PUT-begäran måste texten innehålla alla fält som krävs när [du skapar ett nytt schema](#create) i en POST-begäran.
 
 >[!NOTE]
 >
