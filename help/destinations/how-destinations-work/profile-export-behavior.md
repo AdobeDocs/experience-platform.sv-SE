@@ -2,9 +2,9 @@
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: ede6f3ed4518babddb537a62cdb16915e2d37310
+source-git-commit: d0ee4b30716734b8fce3509a6f3661dfa572cc9f
 workflow-type: tm+mt
-source-wordcount: '2935'
+source-wordcount: '3068'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,8 @@ Det finns flera måltyper i Experience Platform, vilket visas i diagrammet nedan
 
 >[!IMPORTANT]
 >
->På den här dokumentationssidan beskrivs endast hur profilexporten fungerar för de anslutningar som markeras längst ned i diagrammet.
+>* Observera den förändring av exportbeteendet som introducerades i september 2025 för [företagsmål](#enterprise-behavior)
+>* På den här dokumentationssidan beskrivs endast hur profilexporten fungerar för de anslutningar som markeras längst ned i diagrammet.
 
 ![Typer av destinationsdiagram](/help/destinations/assets/how-destinations-work/types-of-destinations-v4.png)
 
@@ -42,7 +43,7 @@ Aggingsprincipen kan konfigureras och målutvecklare kan bestämma hur aggregeri
 
 >[!IMPORTANT]
 >
-> Företagsmål är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Företagsmål är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 [Företagsmålen](/help/destinations/destination-types.md#advanced-enterprise-destinations) i Experience Platform är Amazon Kinesis, Azure Event Hubs och HTTP API.
 
@@ -56,13 +57,13 @@ I alla de fall som beskrivs ovan exporteras endast de profiler där relevanta up
 
 Observera att alla mappade attribut exporteras för en profil, oavsett var ändringarna finns. I exemplet ovan exporteras alltså alla mappade attribut för de fem nya profilerna även om attributen inte har ändrats.
 
-### Vad avgör en dataexport och vad som ingår i exporten
+### Vad avgör en dataexport och vad som ingår i exporten {#enterprise-behavior}
 
 När det gäller data som exporteras för en viss profil är det viktigt att förstå de två olika begreppen *vad som avgör en dataexport till ditt företags mål* och *vilka data som inkluderas i exporten*.
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om statusen `segmentMembership` för en profil ändras till `realized` eller `exiting` eller om alla mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter för närvarande inte kan mappas till företagsmål, bestäms även målexporter av ändringar i identiteter i en viss profil.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>Objektet `segmentMembership` innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som är mappat i aktiveringsdataflödet. </li><li>Alla identiteter i objektet `identityMap` ingår också (Experience Platform stöder för närvarande inte identitetsmappning i företagsmålet).</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om statusen `segmentMembership` för en profil ändras till `realized` eller `exiting` eller om alla mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter för närvarande inte kan mappas till företagsmål, bestäms även målexporter av ändringar i identiteter i en viss profil.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>**Obs!** Exportbeteendet för företagsmål uppdaterades i versionen från september 2025. Det nya beteendet som markeras nedan gäller för närvarande bara för nya företagsmål som skapas efter den här versionen. För befintliga företagsmål kan du fortsätta att använda det gamla exportbeteendet eller kontakta Adobe för att migrera till det nya beteendet där endast mappade målgrupper exporteras. Alla organisationer migreras gradvis till det nya beteendet under 2026. <br><br> <span class="preview"> **Nytt exportbeteende**: Segmenten som har mappats till målet och ändrats inkluderas i `segmentMembership`-objektet. I vissa fall kan de exporteras med flera anrop. I vissa scenarier kan även vissa segment som inte har ändrats inkluderas i samtalet. I vilket fall som helst exporteras bara segment som är mappade i dataflödet.</span></li><br>**Gammalt beteende**: Objektet `segmentMembership` innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som är mappat i aktiveringsdataflödet.<li>Alla identiteter i objektet `identityMap` ingår också (Experience Platform stöder för närvarande inte identitetsmappning i företagsmålet).</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -76,7 +77,8 @@ Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre målgrup
 
 ![Måldataflöde för företag](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership`, kan andra omappade målgrupper visas, om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-målgruppen men även är medlem i segmenten **Bevakade &quot;Tillbaka till framtiden&quot;** och **Science fiction fans** , kommer dessa två målgrupper också att finnas i `segmentMembership` -objektet för dataexporten, även om de inte mappas i dataflödet, om de har samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership`, kan andra mappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-målgruppen och även är medlem i segmenten **Basic Site Active och City - Dallas** så finns dessa två andra målgrupper också i `segmentMembership` -objektet för dataexporten, eftersom de är mappade i dataflödet, om de har samma sammanslagningsprincip som **Customer with DeLorean Cars** segment.
+
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 
@@ -103,7 +105,7 @@ I alla de fall som beskrivs ovan exporteras endast de profiler där relevanta up
 
 Observera att alla mappade attribut exporteras för en profil, oavsett var ändringarna finns. I exemplet ovan exporteras alltså alla mappade attribut för de fem nya profilerna även om attributen inte har ändrats.
 
-### Vad avgör en dataexport och vad som ingår i exporten
+### Vad avgör en dataexport och vad som ingår i exporten {#streaming-behavior}
 
 När det gäller data som exporteras för en viss profil är det viktigt att förstå de två olika begreppen för vad som bestämmer en dataexport till API-målet för direktuppspelning och vilka data som inkluderas i exporten.
 
