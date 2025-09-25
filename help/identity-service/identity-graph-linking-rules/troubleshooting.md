@@ -2,9 +2,9 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i Länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: c9b5de33de91b93f179b4720f692eb876e94df72
+source-git-commit: 0381940206d8730f2f7ae2dce849d943316b0451
 workflow-type: tm+mt
-source-wordcount: '3288'
+source-wordcount: '3444'
 ht-degree: 0%
 
 ---
@@ -146,7 +146,27 @@ Det finns olika orsaker till varför dina händelsefragment inte kommer in i pro
    * En upplevelsehändelse måste till exempel innehålla både `_id` och `timestamp`.
    * Dessutom måste `_id` vara unik för varje händelse (post).
 
-När det gäller namnområdesprioritet, kommer profilen att ignorera alla händelser som innehåller två eller flera identiteter med den högsta namnområdesprioriteten. Om exempelvis GAID inte är markerat som ett unikt namnutrymme och två identiteter båda med ett GAID-namnutrymme och olika identitetsvärden kommer in, kommer profilen inte att lagra någon av händelserna.
+I samband med namnområdesprioriteten avvisar profilen alla händelser som innehåller två eller flera identiteter med den högsta namnområdesprioriteten i den **angivna inkommande händelsen**. Anta till exempel att dina identitetsinställningar är konfigurerade så här:
+
+| Namnutrymme | Unikt per diagram | Prioritet |
+| --- | --- | --- |
+| CRMID | ✔️ | 1 |
+| GAID | | 2 |
+| ECID | | 3 |
+
+Anta att Experience Events innehåller följande händelser för varje scenario:
+
+**Scenario 1: 2 GAID, 1 ECID**
+
+* I det här scenariot innehåller en inkommande Experience Event 2 GAID och 1 ECID. Mellan dessa namnutrymmen konfigureras GAID som namnutrymme med den högsta namnområdesprioriteten. Eftersom det finns två GAID:n lagrar inte **profilen** den här Experience Event:n.
+
+**Scenario 2: 2 CRMID, 1 GAID**
+
+* I det här scenariot innehåller en inkommande Experience Event 2 CRMID och 1 GAID. Mellan dessa namnutrymmen konfigureras CRMID som det namnutrymme som har den högsta namnområdesprioriteten. Eftersom det finns två GAID:n lagrar inte **profilen** den här Experience Event:n.
+
+**Scenario 3: 1 CRMID, 2 GAID:n**
+
+* I det här scenariot innehåller en inkommande Experience Event 1 CRMID och 2 GAID. Mellan dessa namnutrymmen konfigureras CRMID som det namnutrymme som har den högsta namnområdesprioriteten. Eftersom det bara finns ett CRMID, kommer Profil att importera Experience Events eftersom det bara finns en instans av namnutrymmet med den högsta namnområdesprioriteten.
 
 **Felsökningssteg**
 

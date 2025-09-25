@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f791940300036159ceaad11ff725eecfaa8332f4
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1574'
 ht-degree: 0%
 
 ---
@@ -74,6 +74,10 @@ Identitetstjänsten utför följande åtgärder för att utföra sitt uppdrag:
 
 ## Så här länkar identitetstjänsten identiteter
 
+>[!IMPORTANT]
+>
+>Identitetstjänsten är skiftlägeskänslig. **abc<span>@gmail.com** och **ABC<span>@GMAIL.COM** behandlas som två separata e-postidentiteter.
+
 En länk mellan två identiteter skapas när identitetsnamnutrymmet och identitetsvärdena matchar.
 
 En vanlig inloggningshändelse **skickar två identiteter** till Experience Platform:
@@ -89,7 +93,7 @@ Titta på följande exempel:
    * CRMID: ABC är det namnutrymme och värde som representerar dig som autentiserad användare.
    * ECID: 123 är namnutrymmet och värdet som representerar webbläsaranvändningen på din bärbara dator.
 * Om du sedan loggar in med samma inloggningsuppgifter på samma e-handelswebbplats, men använder webbläsaren på telefonen i stället för webbläsaren på din bärbara dator, registreras ett nytt ECID i identitetstjänsten.
-* Bakom kulisserna bearbetar identitetstjänsten den nya händelsen som `{CRM_ID:ABC, ECID:456}`, där CRM_ID: ABC representerar ditt autentiserade kund-ID och ECID:456 representerar webbläsaren på din mobila enhet.
+* Bakom kulisserna bearbetar identitetstjänsten den nya händelsen som `{CRM_ID:ABC, ECID:456}`, där CRM_ID: ABC representerar ditt autentiserade kund-ID och ECID :456 representerar webbläsaren på din mobila enhet.
 
 Med tanke på scenarierna ovan upprättar identitetstjänsten en länk mellan `{CRM_ID:ABC, ECID:123}` och `{CRM_ID:ABC, ECID:456}`. Detta resulterar i ett identitetsdiagram där du&quot;äger&quot; tre identiteter: en för personidentifierare (CRMID) och två för cookie-identifierare (ECID).
 
@@ -101,7 +105,7 @@ Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnu
 
 Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram.
 
->[!VIDEO](https://video.tv.adobe.com/v/3432348?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
 ## Förstå identitetstjänstens roll i Experience Platform infrastruktur
 

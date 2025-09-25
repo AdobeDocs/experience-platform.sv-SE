@@ -2,7 +2,7 @@
 title: Guide för konfiguration av länkningsregler för identitetsdiagram
 description: Lär dig mer om de olika implementeringstyperna som du kan konfigurera med Länkningsregler för identitetsdiagram.
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 54a50cd3e122df7f653c06232e0598fa878eeac5
+source-git-commit: 6af5f87c9c32212568e84edbed9f043a766870be
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 1%
@@ -133,6 +133,7 @@ Läs det här avsnittet för mellanliggande implementeringar av [!DNL Identity G
 >[!NOTE]
 >
 >För att slutföra implementeringarna nedan måste du skapa följande anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>
 >* `CRMID`
 >* `CChash` (Det här är ett anpassat namnutrymme som representerar ett hashade kreditkortsnummer.)
 
@@ -228,6 +229,7 @@ CRMID: Jill, CChash: undefined
 >[!NOTE]
 >
 >För att slutföra implementeringarna nedan måste du skapa anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>
 >* `CRMID`
 >* `CRMIDhash`
 
@@ -477,6 +479,7 @@ loginID: JanePersonal, ECID: 222
 >[!NOTE]
 >
 >För att slutföra implementeringarna nedan måste du skapa anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>
 >* `CRMID`
 >* `loyaltyID`
 >* `thirdPartyID`
