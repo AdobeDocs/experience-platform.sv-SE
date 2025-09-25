@@ -19,7 +19,7 @@ I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggräns
 
 ## Installera SDK-taggtillägget för webben {#install}
 
-Webbfilens SDK-taggtillägg måste ha en egenskap installerad på. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html).
+Webbfilens SDK-taggtillägg måste ha en egenskap installerad på. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=sv-SE).
 
 När du har skapat en egenskap öppnar du den och väljer fliken **[!UICONTROL Extensions]** i det vänstra fältet.
 
@@ -76,7 +76,7 @@ Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Plat
 
 * **[!UICONTROL Name]**: Adobe Experience Platform Web SDK-tillägget stöder flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en taggkonfiguration. Instansnamnet är som standard `alloy`. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
 * **[!UICONTROL IMS organization ID]**: ID för organisationen som du vill att data ska skickas till på Adobe. För det mesta använder du standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
-* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en första part visas [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
+* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en första part visas [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=sv-SE).
 * **[!UICONTROL Adobe Advertising]**: Tillgängligt när komponenten `Advertising` har valts. Inställningar endast för företag med Adobe Advertising DSP:
    * **[!UICONTROL Adobe Advertising DSP]**: Aktiverar vyövergripande spårning.
    * **[!UICONTROL Advertisers]**: Tillgängligt när [!UICONTROL Adobe Advertising DSP] är aktiverat. De annonsörer för vilka genomsiktsspårning ska aktiveras.
