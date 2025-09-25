@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 7d5896a4427af54d3a6323744d726bf0b0c3137a
+source-git-commit: 7c2afd6d823ebb2db0fabb4cc16ef30bcbfeef13
 workflow-type: tm+mt
-source-wordcount: '2878'
+source-wordcount: '2888'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggräns
 
 ## Installera SDK-taggtillägget för webben {#install}
 
-Webbfilens SDK-taggtillägg måste ha en egenskap installerad på. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=sv-SE).
+Webbfilens SDK-taggtillägg måste ha en egenskap installerad på. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html).
 
 När du har skapat en egenskap öppnar du den och väljer fliken **[!UICONTROL Extensions]** i det vänstra fältet.
 
@@ -42,7 +42,7 @@ När du skapar en anpassad Web SDK-version används den av alla dina Web SDK-ins
 >[!IMPORTANT]
 >
 >Om du inaktiverar Web SDK-komponenter kan den befintliga implementeringen brytas. Varje gång du inaktiverar en komponent måste du testa implementeringen noggrant för att se till att alla funktioner du behöver fungerar som förväntat.
->&#x200B;>När du inaktiverar en komponent kan du inte längre redigera inställningarna för den komponenten.
+>>När du inaktiverar en komponent kan du inte längre redigera inställningarna för den komponenten.
 
 Följ stegen nedan för att skapa en anpassad Web SDK-version med hjälp av taggtillägget Web SDK.
 
@@ -60,7 +60,8 @@ Följ stegen nedan för att skapa en anpassad Web SDK-version med hjälp av tagg
    * **[!UICONTROL Media analytics bridge]**: Den här komponenten aktiverar Edge Network Streaming Media med medieanalysgränssnittet. Om du inaktiverar den här komponenten inaktiveras följande element:
       * [Åtgärdstypen Hämta Media Analytics-spåraren](action-types.md#get-media-analytics-tracker)
    * **[!UICONTROL Personalization]**: Den här komponenten aktiverar Adobe Target- och Adobe Journey Optimizer-integreringar. Om du inaktiverar den här komponenten inaktiveras följande element:
-      * [Använd förslagsåtgärd](action-types.md) typ
+      * [Använd förslag](action-types.md#apply-propositions)åtgärdstyp
+   * **[!UICONTROL Push notifications]**: Den här komponenten aktiverar webb-push-meddelanden för Adobe Journey Optimizer.
    * **[!UICONTROL Rules engine]**: Den här komponenten aktiverar Adobe Journey Optimizer On-device-beslut. Om du inaktiverar den här komponenten inaktiveras följande element:
       * [Utvärdera regeluppsättningar](action-types.md#evaluate-rulesets), åtgärdstyp
       * [Prenumerera regeluppsättningsobjekt](event-types.md#subscribe-ruleset-items) - händelsetyp
@@ -75,7 +76,7 @@ Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Plat
 
 * **[!UICONTROL Name]**: Adobe Experience Platform Web SDK-tillägget stöder flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en taggkonfiguration. Instansnamnet är som standard `alloy`. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
 * **[!UICONTROL IMS organization ID]**: ID för organisationen som du vill att data ska skickas till på Adobe. För det mesta använder du standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
-* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en första part visas [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=sv-SE).
+* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en första part visas [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
 * **[!UICONTROL Adobe Advertising]**: Tillgängligt när komponenten `Advertising` har valts. Inställningar endast för företag med Adobe Advertising DSP:
    * **[!UICONTROL Adobe Advertising DSP]**: Aktiverar vyövergripande spårning.
    * **[!UICONTROL Advertisers]**: Tillgängligt när [!UICONTROL Adobe Advertising DSP] är aktiverat. De annonsörer för vilka genomsiktsspårning ska aktiveras.
@@ -123,10 +124,9 @@ I det här avsnittet kan du definiera hur Web SDK ska fungera när det gäller a
 * **[!UICONTROL Use third-party cookies]**: När det här alternativet är aktiverat försöker Web SDK lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kan SDK fortfarande inte lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller om den har konfigurerats av användaren att inte tillåta cookies från tredje part. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
 
   >[!IMPORTANT]
-  >&#x200B;>Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
-  >&#x200B;>Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
+  >>Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
+  >>Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
   >
-
 ## Konfigurera personaliseringsinställningar {#personalization}
 
 I det här avsnittet kan du konfigurera hur du vill dölja vissa delar av en sida medan anpassat innehåll läses in. Detta garanterar att besökarna bara ser den personaliserade sidan.

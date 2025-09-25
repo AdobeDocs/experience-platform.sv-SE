@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 1cc62ee8c87ff2c1c1d55db2e462d485289120ed
+source-git-commit: 7c2afd6d823ebb2db0fabb4cc16ef30bcbfeef13
 workflow-type: tm+mt
-source-wordcount: '2934'
+source-wordcount: '2957'
 ht-degree: 1%
 
 ---
@@ -13,6 +13,13 @@ ht-degree: 1%
 # Versionsinformation om SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.3.0 - 24 september 2025
+
+**Nya funktioner**
+
+- Stöd för att visa push-meddelanden har lagts till
+- Innehåller [version 2.30.0](../../../../web-sdk/release-notes.md#2-30-0) av Adobe Experience Platform Web SDK.
 
 ## Version 2.32.0 - 4 september 2025
 
