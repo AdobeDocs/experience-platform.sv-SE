@@ -2,9 +2,9 @@
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 1342461c95fa096496739fc14c92a7edd5aa6b57
+source-git-commit: 1dab2b2778844ac08c1fbc013405dc81fa7dc0b5
 workflow-type: tm+mt
-source-wordcount: '1693'
+source-wordcount: '1723'
 ht-degree: 2%
 
 ---
@@ -14,6 +14,15 @@ ht-degree: 2%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
+
+## 25 september 2025
+
+v3.4.4
+
+* Lägg till fältet `releaseNotesUrl` i extension.json med den här sidan som värde.
+* Granska beroenden.
+* Ta bort Garn och anpassa byggprocessen efter våra andra databaser med öppen källkod.
+
 
 ## 8 maj 2025
 
