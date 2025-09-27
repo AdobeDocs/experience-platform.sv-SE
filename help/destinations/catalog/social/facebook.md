@@ -157,7 +157,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera målgrupper.
 
->[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
+>[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe)
 
 >[!NOTE]
 >
