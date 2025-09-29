@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform september 2025
 description: Versionsinformationen för Adobe Experience Platform från september 2025.
 exl-id: 9c5ab487-22b8-4590-b4ea-abec0f377703
-source-git-commit: ac180f045dd3cc7e8ad9de702a3672630d668ee5
+source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
 workflow-type: tm+mt
-source-wordcount: '1379'
-ht-degree: 43%
+source-wordcount: '1406'
+ht-degree: 42%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 43%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 23 september 2025**
@@ -41,10 +41,10 @@ Adobe Experience Platform Agent Orchestrator är det nya agakta lagret i Adobe E
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator är det nya agakta lagret i Adobe Experience Platform. Experience Platform Agent Orchestrator är utformat för att utnyttja plattformens omfattande data och kundupplevelser och driver intelligens och resonemang bakom specialbyggda Adobe Experience Platform-agenter som gör det möjligt för dem att fatta komplexa beslut och lösa problem snabbt och i stor skala - allt med mänsklig tillsyn. När du ställer frågor eller begär hjälp via ett naturligt språk i ett konversationsgränssnitt som AI Assistant, uppmanar Agent Orchestrator automatiskt våra specialistrepresentanter att ge dig rätt svar. Agent Orchestrator kommer ihåg er konversationshistorik, vilket gör att ni kan bygga vidare på tidigare frågor på ett naturligt sätt utan att behöva upprepa sammanhanget, och kombinerar insikter från olika agenter för att ge er tydliga, enhetliga svar. Mer information finns i [Agent Orchestrator-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). |
-| Audience Agent | Med Audience Agent kan ni visa insikter om målgrupper, inklusive att identifiera betydande förändringar av målgruppsstorlek, identifiera duplicerade målgrupper, utforska ert målgruppslager och ta fram era målgruppers storlek. Mer information finns i [Audience Agent-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/audience). |
+| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator är det nya agakta lagret i Adobe Experience Platform. Experience Platform Agent Orchestrator är utformat för att utnyttja plattformens omfattande data och kundupplevelser och driver intelligens och resonemang bakom specialbyggda Adobe Experience Platform-agenter som gör det möjligt för dem att fatta komplexa beslut och lösa problem snabbt och i stor skala - allt med mänsklig tillsyn. När du ställer frågor eller begär hjälp via ett naturligt språk i ett konversationsgränssnitt som AI Assistant, uppmanar Agent Orchestrator automatiskt våra specialistrepresentanter att ge dig rätt svar. Agent Orchestrator kommer ihåg er konversationshistorik, vilket gör att ni kan bygga vidare på tidigare frågor på ett naturligt sätt utan att behöva upprepa sammanhanget, och kombinerar insikter från olika agenter för att ge er tydliga, enhetliga svar. Mer information finns i [Agent Orchestrator-dokumentationen](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). |
+| Audience Agent | Med Audience Agent kan ni visa insikter om målgrupper, inklusive att identifiera betydande förändringar av målgruppsstorlek, identifiera duplicerade målgrupper, utforska ert målgruppslager och ta fram era målgruppers storlek. Mer information finns i [Audience Agent-dokumentationen](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/audience). |
 
-Mer information finns i [Agent Orchestrator-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
+Mer information finns i [Agent Orchestrator-dokumentationen](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/home).
 
 ## Aviseringar {#alerts}
 
@@ -139,10 +139,8 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | --- | --- |
 | Nya källor i allmän tillgänglighet | Följande källor är nu allmänt tillgängliga: Flera källanslutningar har uppdaterats från Beta till GA: <ul><li>[Acxiom-datainmatning](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom Prospect Data Inghit](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury Enterprise](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>. De här källorna stöds nu fullt ut och är klara för produktion. |
 | [!DNL Snowflake] autentiseringsstöd för nyckelpar | Förbättrad säkerhet för Snowflake-anslutningar med stöd för autentisering med nyckelpar. Grundläggande autentisering (användarnamn/lösenord) kommer att vara inaktuellt i november 2025, så kunder uppmuntras att migrera till nyckelpars autentisering för att få bättre säkerhet. Mer information finns i [[!DNL Snowflake] dokumentationen](../../sources/connectors/databases/snowflake.md). |
+| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Använd [[!DNL Capillary Streaming Events] source](../../sources/connectors/loyalty/capillary.md) för att strömma bonusdata från ditt [!DNL Capillary]-konto till Experience Platform. |
+| [!BADGE Beta]{type=Informative} [!DNL Relay Connector] | Använd [[!DNL Relay Connector]](../../sources/tutorials/ui/create/marketing-automation/relay-connector.md) för att strömma händelsedata från din [!DNL Relay Network]-integrering till Experience Platform. |
 | Allmän tillgänglighet för stöd för privata länkar i källor | Du kan nu använda **privata länkar** för en vald grupp källor. Använd den här funktionen för att skapa en privat slutpunkt som källan kan ansluta till. Med privata slutpunkter kan du skapa anslutningar och dataflöden som kringgår det offentliga Internet, vilket ger förbättrad säkerhet och nätverksisolering för dina känsliga data. Stöd för privata länkar finns för följande källor: <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>. Mer information finns i handböckerna om hur du skapar privata länkar [ i API:t ](../../sources/tutorials/api/private-link.md) och [ i gränssnittet](../../sources/tutorials/ui/private-link.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
-
-<!--
-| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Use the [[!DNL Capillary Streaming Events] source](../../sources/connectors/loyalty/capillary.md) to stream loyalty data from your [!DNL Capillary] account to Experience Platform. |
--->

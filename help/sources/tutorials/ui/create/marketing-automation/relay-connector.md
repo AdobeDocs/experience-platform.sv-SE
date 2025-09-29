@@ -1,10 +1,8 @@
 ---
 title: Connect Relay till Experience Platform i användargränssnittet
 description: Lär dig hur du skapar en anpassad Relay Connector-källanslutning med Adobe Experience Platform-gränssnittet.
-hide: true
-hidefromtoc: true
 exl-id: f80855f5-0769-4253-b737-28c46e4dea6e
-source-git-commit: b3b1542f7e297f4ca872a155ac3801266bc1e6a6
+source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
 workflow-type: tm+mt
 source-wordcount: '544'
 ht-degree: 0%
@@ -83,5 +81,5 @@ Använd dessa värden för att konfigurera webkroken i **Relay-konsolen**. Detal
 
 ## Ytterligare resurser
 
-* [Skapa en ny anslutningsspecifikation med API:t för Flow Service ](https://experienceleague.adobe.com/sv/docs/experience-platform/sources/sdk/streaming-sdk/create)
-* [Anslut till källan med användargränssnittet](https://experienceleague.adobe.com/sv/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)
+* [Skapa en ny anslutningsspecifikation med API:t för Flow Service ](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/create)
+* [Anslut till källan med användargränssnittet](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)

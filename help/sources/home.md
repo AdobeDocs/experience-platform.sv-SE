@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: b3b1542f7e297f4ca872a155ac3801266bc1e6a6
+source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1666'
 ht-degree: 1%
 
 ---
@@ -61,7 +61,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 | Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
@@ -219,18 +219,15 @@ Du kan använda följande källor för att importera data från ditt lokala syst
 
 {style="table-layout:auto"}
 
-<!--
-### Loyalty {#loyalty}
+### Lojalitet {#loyalty}
 
-You can use the following sources to ingest data loyalty to Experience Platform.
+Du kan använda följande källor när du vill importera datamöjligheter till Experience Platform.
 
-| Source | Ingestion type | Cloud |
+| Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
-| [[!DNL Capillary Streaming Events]](connectors/loyalty/capillary.md) | Streaming | Azure |
+| [[!DNL Capillary Streaming Events]](connectors/loyalty/capillary.md) | Direktuppspelning | Azure |
 
-| [[!DNL Relay Connector]](tutorials/ui/create/marketing-automation/relay-connector.md) | Streaming | Azure |
-
--->
+{style="table-layout:auto"}
 
 ### Marknadsföringsautomatisering {#marketing-automation}
 
@@ -246,6 +243,7 @@ Du kan använda följande källor för att importera automatiserade marknadsför
 | [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) | Grupp | Azure |
 | [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) | Grupp | Azure |
 | [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) | Grupp | Azure |
+| [[!DNL Relay Connector]](tutorials/ui/create/marketing-automation/relay-connector.md) | Direktuppspelning | Azure |
 | [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) | Grupp | Azure, AWS |
 
 {style="table-layout:auto"}
