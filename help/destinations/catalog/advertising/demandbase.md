@@ -1,14 +1,14 @@
 ---
 title: Demandbase-anslutning
 description: Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Annonsera till relevanta personas och roller i dina målgruppskonton via DemandBases B2B Demand Side Platform (DSP). Målgruppskonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led av marknadsförings- och säljprocessen.
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 last-substantial-update: 2024-09-30T00:00:00Z
 exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
-source-git-commit: 08c2c7f5080f0e6afb7be53aad9f88ba0fccf923
+source-git-commit: 39012e2308af57af7c9193bdc4894f8f2e358606
 workflow-type: tm+mt
-source-wordcount: '671'
-ht-degree: 15%
+source-wordcount: '737'
+ht-degree: 14%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 15%
 
 >[!AVAILABILITY]
 >
->&#x200B;>Funktionen för att aktivera kontomålgrupper för Demandbase-målet är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
+>Funktionen för att aktivera kontomålgrupper för Demandbase-målet är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
 
 Aktivera profiler för dina Demandbase-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på [målgrupper](/help/segmentation/types/account-audiences.md) .
 
@@ -93,6 +93,20 @@ Nu kan ni aktivera era målgrupper i Demandbase.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md) om du vill ha instruktioner om hur du aktiverar kontomålgrupper till det här målet.
+
+### Obligatoriska mappningar {#mandatory-mappings}
+
+När du aktiverar målgrupper till målet [!DNL Demandbase] måste du konfigurera följande obligatoriska fältmappningar i mappningssteget:
+
+| Source | Målfält | Beskrivning |
+|--------------|--------------|-------------|
+| `xdm: accountName` | `xdm: accountName` | Namnet på kontot |
+| `xdm: accountOrganization.domain` | `xdm: accountEmailDomain` | Kontoorganisationens e-postdomän |
+| `xdm: accountKey.sourceKey` | `Identity: primaryId` | Den primära identifieraren för kontot |
+
+![Demandbase-mappningar](/help/destinations/assets/catalog/advertising/demandbase/demandbase-mapping.png)
+
+Dessa mappningar krävs för att målet ska fungera korrekt och måste konfigureras innan du kan fortsätta med aktiveringsarbetsflödet.
 
 ## Ytterligare kommentarer och viktiga bildtexter {#additional-notes}
 
