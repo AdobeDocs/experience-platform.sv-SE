@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för unionsschema
 type: Documentation
 description: I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket unionsschema som helst i organisationen och förhandsgranska fält, identiteter, relationer och bidragande scheman för en viss klass. Den här guiden innehåller detaljerad information om hur du visar och utforskar fackliga scheman med hjälp av Experience Platform användargränssnitt.
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: b7f5f08d5b3632a2d80c39559a5fb5116d9567f8
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1190'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket unionsschema som helst i organisationen och förhandsgranska fält, identiteter, relationer och bidragande scheman för en viss klass. Den här guiden innehåller detaljerad information om hur du visar och utforskar fackliga scheman med hjälp av Experience Platform användargränssnitt.
 
-## Komma igång
+## Komma igång {#getting-started}
 
 Den här gränssnittshandboken kräver förståelse av de olika [!DNL Experience Platform]-tjänsterna som används för att hantera kundprofildata i realtid. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
 
@@ -23,7 +23,14 @@ Den här gränssnittshandboken kräver förståelse av de olika [!DNL Experience
 * [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor när de hämtas till [!DNL Experience Platform].
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
-## Förstå fackscheman
+## Förstå fackscheman {#understanding-union-schemas}
+
+>[!CONTEXTUALHELP]
+>id="rtcdp_collaboration_union_schema"
+>title="Unionens system"
+>abstract=""
+
+<!-- The above contextual help is used in the Collaboration UI for a read more link. -->
 
 Med kundprofilen i realtid kan ni skapa robusta, centraliserade profiler med kundattribut och tidsstämplade händelser för varje kundinteraktion i alla system som är integrerade med Adobe Experience Platform. Format och struktur för dessa data tillhandahålls av XDM-scheman (Experience Data Model), där varje schema baseras på en XDM-klass och innehåller fält som är kompatibla med den klassen.
 
@@ -31,13 +38,13 @@ Du kan skapa scheman för flera användningsfall, som refererar till samma klass
 
 Att arbeta med fackliga scheman kräver en djupgående förståelse av XDM-scheman. Om du vill ha mer information börjar du med att läsa [grunderna för schemakomposition](../../xdm/schema/composition.md).
 
-## Visa unionskartor
+## Visa unionskartor {#view-union-schemas}
 
 Om du vill navigera till unionsscheman i Experience Platform-användargränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Union Schema]**. Fliken [!UICONTROL Union Schema] öppnas och visar unionsschemat för den valda klassen.
 
 ![Sidan Unionens schema visas med fliken Profil och Unionsschema markerad.](../images/union-schema/landing.png)
 
-## Välj en klass
+## Välj en klass {#select-a-class}
 
 Om du vill visa unionsschemat för en viss XDM-klass väljer du klassen i listrutan **[!UICONTROL Class]**. På grund av att inte alla klasser har union-scheman är bara klasser med union-scheman (dvs. klasser med scheman som har aktiverats för profil) tillgängliga i listrutan.
 
@@ -45,7 +52,7 @@ När en klass har valts uppdateras det schema som visas så att det återspeglar
 
 ![En listruta som innehåller klasserna i unionsschemat är markerad.](../images/union-schema/class.png)
 
-## Utforska fackscheman
+## Utforska fackscheman {#explore-union-schemas}
 
 Du kan utforska unionsschemat genom att rulla uppåt och nedåt för att visa den fullständiga schemastrukturen och genom att välja en höger vinkelparentes (`>`) för att expandera kapslade fält.
 
@@ -61,7 +68,7 @@ Mer information om datauppsättningar, inklusive hur du visar datauppsättningsa
 
 ![Listan med datauppsättningar relaterade till schemat är markerad.](../images/union-schema/datasets.png)
 
-## Visa bidragande scheman
+## Visa bidragande scheman {#view-contributing-schemas}
 
 Du kan också visa vilka specifika scheman som bidrar till unionsschemat genom att välja **[!UICONTROL All contributing schemas]** för att expandera listan med scheman. Beroende på vilken klass du har valt och hur många scheman din organisation har skapat inom Experience Platform kan det vara en kort lista som innehåller ett enda schema eller en lång lista med många scheman.
 
@@ -71,7 +78,7 @@ Om du väljer namnet på ett specifikt schema markeras de fält i det förenings
 
 ![Det valda bidragande schemat är markerat. Fälten som ingår i det medverkande schemat förblir svarta, medan fälten som inte ingår i det medverkande schemat är nedtonade.](../images/union-schema/select-schema.png)
 
-## Visa identiteter
+## Visa identiteter {#view-identities}
 
 Genom användargränssnittet kan du visa en lista med identiteter som ingår i unionsschemat genom att välja **[!UICONTROL Identities]** för att expandera listan.
 
@@ -83,7 +90,7 @@ Identitetsfältet markeras i unionsschemat och informationen om identiteten visa
 
 ![Den valda identiteten är markerad. Information om den valda identiteten visas på höger sidofält.](../images/union-schema/select-identity.png)
 
-## Visa relationer
+## Visa relationer {#view-relationships}
 
 Med unionsschemats användargränssnitt kan du även se relationer som har definierats för scheman baserat på den valda schemaklassen. Att definiera en relation är ett sätt att koppla samman två scheman som tillhör olika klasser för att få mer komplexa insikter i kunddata.
 
