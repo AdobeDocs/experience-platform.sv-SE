@@ -6,9 +6,9 @@ breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
 role: Developer
-source-git-commit: bed63cb9be1ffe39a538d1c3f8be9065ffb2ca28
+source-git-commit: c697d0e924545caf430382385797bde340b57d94
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '241'
 ht-degree: 18%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 18%
 
 * [SDK - översikt](home.md)
 * [Versionsinformation](release-notes.md)
-* Webbinstallation av SDK {#install}
+* Installation av SDK {#install}
    * [Översikt](install/overview.md)
    * [Installera Web SDK med hjälp av taggtillägget](install/extension.md)
    * [Installera Web SDK med JavaScript-biblioteket](install/library.md)
@@ -43,6 +43,7 @@ ht-degree: 18%
       * [onBeforeLinkClickSend](commands/configure/onbeforelinkclicksend.md)
       * [orgId](commands/configure/orgid.md)
       * [prehideStyle](commands/configure/prehidingstyle.md)
+      * [pushNotifications](commands/configure/pushnotifications.md)
       * [targetMigrationEnabled](commands/configure/targetmigrationenabled.md)
       * [thirdPartyCookiesEnabled](commands/configure/thirdpartycookiesenabled.md)
    * sendEvent {#sendevent}
@@ -63,6 +64,7 @@ ht-degree: 18%
    * [setConsent](commands/setconsent.md)
    * [setDebug](commands/setdebug.md)
    * [sendMediaEvent](commands/sendmediaevent.md)
+   * [sendPushSubscription](commands/sendPushSubscription.md)
    * [subscribeRulesetItems](commands/subscriberulesetitems.md)
    * [Konfigurera åsidosättningar av dataström](commands/datastream-overrides.md)
    * [Kommandosvar](commands/command-responses.md)
