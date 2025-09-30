@@ -18,7 +18,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > Efter den [interna uppgraderingen](../../../release-notes/2025/july-2025.md#destinations) till måltjänsten från juli 2025 kan du uppleva en **minskning av antalet aktiverade profiler** i dataflödena till [!DNL The Trade Desk].
-> > Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
+> &#x200B;> Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
 >
 >**Vad har ändrats:**
 >
