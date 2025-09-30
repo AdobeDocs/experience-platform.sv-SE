@@ -3,9 +3,9 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 564ee7fbd45677c35057c56de049158f3282d7ad
+source-git-commit: f078d7b20bc16bf1a6cca065e5e6fba85d9d0648
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '1028'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > Efter den [interna uppgraderingen](../../../release-notes/2025/july-2025.md#destinations) till måltjänsten från juli 2025 kan du uppleva en **minskning av antalet aktiverade profiler** i dataflödena till [!DNL The Trade Desk].
-> &#x200B;> Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
+> > Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
 >
 >**Vad har ändrats:**
 >
@@ -84,7 +84,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/sv/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
+>Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ## Anslut till målet {#connect}
 
@@ -131,16 +131,33 @@ När du kartlägger målgrupper rekommenderar Adobe att du använder Experience 
 
 ### Obligatoriska mappningar {#mandatory-mappings}
 
-Alla målidentiteter som beskrivs i avsnittet [identiteter som stöds](#supported-identities) är obligatoriska och måste mappas under målgruppsaktiveringen. Detta inkluderar:
+Alla målidentiteter som beskrivs i avsnittet [identiteter som stöds](#supported-identities) måste mappas i mappningssteget i arbetsflödet för målgruppsaktivering. Detta inkluderar:
 
-* **GAID** (Google Advertising ID)
-* **IDFA** (Apple ID för annonsörer)
-* **ECID** (Experience Cloud-ID)
-* **Trade Desk-ID**
-
-Om du inte kan mappa alla identiteter som krävs kan du inte slutföra aktiveringsarbetsflödet. Varje identitet har ett specifikt syfte i integreringen och alla krävs för att målet ska fungera korrekt.
+* [!DNL GAID] (Google Advertising-id)
+* [!DNL IDFA] (Apple-id för annonsörer)
+* [!DNL ECID] (Experience Cloud-ID)
+* [!DNL The Trade Desk ID]
 
 ![Skärmbild med obligatoriska mappningar](../../assets/catalog/advertising/tradedesk/mandatory-mappings.png)
+
+Genom att mappa alla målidentiteter säkerställer du att aktiveringen kan dela upp och leverera profiler på rätt sätt med valfri identitet. Det innebär inte att alla identiteter måste finnas i varje profil.
+
+För att exporten till The Trade Desk ska lyckas måste en profil innehålla:
+
+* [!DNL ECID] och
+* minst en av: [!DNL GAID], [!DNL IDFA] eller [!DNL The Trade Desk ID]
+
+Exempel:
+
+* Endast [!DNL ECID]: exporteras inte
+* [!DNL ECID] + [!DNL The Trade Desk ID]: exporterad
+* [!DNL ECID] + [!DNL IDFA]: exporterad
+* [!DNL ECID] + [!DNL GAID]: exporterad
+* [!DNL IDFA] + [!DNL The Trade Desk ID] (no [!DNL ECID]): exporteras inte
+
+>[!NOTE]
+> 
+>Efter uppgraderingen [ från ](/help/release-notes/2025/july-2025.md#destinations)juli 2025 till måltjänsten har mappningen [!DNL ECID] framtvingats. Profiler som saknar [!DNL ECID] tas nu bort som förväntat, vilket kan leda till lägre antal aktiveringar jämfört med äldre beteenden.
 
 ## Exporterade data {#exported-data}
 
