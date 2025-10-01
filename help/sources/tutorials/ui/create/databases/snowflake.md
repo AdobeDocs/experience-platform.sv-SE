@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Snowflake med Adobe Experience Platform användargränssnitt.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
+source-git-commit: 80ea8b5aa46e7aa4fdecfee3c962a77989a9b191
 workflow-type: tm+mt
-source-wordcount: '1183'
+source-wordcount: '1213'
 ht-degree: 1%
 
 ---
@@ -111,17 +111,25 @@ Mer information om dessa värden finns i [det här Snowflake-dokumentet](https:/
 
 Om du vill skapa ett nytt [!DNL Snowflake]-konto och ansluta till Experience Platform på AWS kontrollerar du att du befinner dig i en VA6-sandlåda och anger sedan de nödvändiga autentiseringsuppgifterna för autentisering.
 
+>[!BEGINTABS]
+
+>[!TAB Autentisering med nyckelpar]
+
+Om du vill ansluta med hjälp av nyckelpar väljer du **[!UICONTROL KeyPair Authentication]**, anger dina autentiseringsuppgifter och väljer sedan **[!UICONTROL Connect to source]**. Mer information om dessa autentiseringsuppgifter finns i [[!DNL Snowflake] gruppöversikten](../../../../connectors/databases/snowflake.md#gather-required-credentials).
+
+![Det nya steget för att skapa ett konto för autentisering av nyckelpar.](../../../../images/tutorials/create/snowflake/key-pair-aws.png)
+
+>[!TAB Grundläggande autentisering]
+
+>[!WARNING]
+>
+>Grundläggande autentisering (eller kontonyckelautentisering) för källan [!DNL Snowflake] kommer att bli inaktuell i november 2025. Du måste gå över till nyckelparsbaserad autentisering för att kunna fortsätta använda källan och hämta data från din databas till Experience Platform. Mer information om borttagningen finns i [[!DNL Snowflake] metodguiden om bästa praxis för att minska riskerna för kreditvärdighetsförluster](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/).
+
+Om du vill ansluta med en kombination av användarnamn och lösenord väljer du **[!UICONTROL Basic authentication]**, anger dina autentiseringsuppgifter och väljer sedan **[!UICONTROL Connect to source]**. Mer information om dessa autentiseringsuppgifter finns i [[!DNL Snowflake] gruppöversikten](../../../../connectors/databases/snowflake.md#gather-required-credentials).
+
 ![Det nya kontosteget i källarbetsflödet där du kan ansluta Snowflake till Experience Platform på AWS.](../../../../images/tutorials/create/snowflake/aws-auth.png)
 
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| Värd | Den värd-URL som ditt [!DNL Snowflake]-konto ansluter till. |
-| Port | Portnumret som används av [!DNL Snowflake] vid anslutning till en server via Internet. |
-| Användarnamn | Användarnamnet som är associerat med ditt [!DNL Snowflake]-konto. |
-| Lösenord | Lösenordet som är kopplat till ditt [!DNL Snowflake]-konto. |
-| Databas | Databasen [!DNL Snowflake] från vilken data hämtas. |
-| Schema | Namnet på schemat som är associerat med din [!DNL Snowflake]-databas. Du måste se till att användaren som du vill ge databasåtkomst till också har åtkomst till det här schemat. |
-| Lagerställe | Det [!DNL Snowflake]-lagerställe som du använder. |
+>[!ENDTABS]
 
 ### Hoppa över förhandsgranskning av exempeldata {#skip-preview-of-sample-data}
 
