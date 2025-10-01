@@ -2,16 +2,16 @@
 title: Strömma data från Snowflake-databasen till Experience Platform med användargränssnittet
 description: Lär dig hur du direktuppspelar data från en Synwoflake-databas till Experience Platform
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: 04a1cecbacdaf0b701d3ef18d03497973a8f3263
+source-git-commit: 0d646136da2c508fe7ce99a15787ee15c5921a6c
 workflow-type: tm+mt
-source-wordcount: '1597'
+source-wordcount: '1397'
 ht-degree: 0%
 
 ---
 
 # Strömma data från din [!DNL Snowflake]-databas till Experience Platform med användargränssnittet
 
-Lär dig hur du använder användargränssnittet för att strömma data från din [!DNL Snowflake]-databas till Adobe Experience Platform genom att följa den här guiden.
+Läs den här vägledningen när du vill lära dig hur du direktuppspelar data från din [!DNL Snowflake]-databas till Experience Platform med hjälp av källarbetsytan i användargränssnittet.
 
 ## Kom igång
 
@@ -30,7 +30,7 @@ Läs guiden om [nödvändig konfiguration för [!DNL Snowflake] direktuppspelnin
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under kategorin *Databaser* väljer du **[!DNL Snowflake Streaming]** och sedan **[!UICONTROL Add data]**.
+Under kategorin *Databaser* väljer du **[!DNL Snowflake Streaming]** och sedan **[!UICONTROL Set up]**.
 
 >[!TIP]
 >
@@ -40,37 +40,33 @@ Under kategorin *Databaser* väljer du **[!DNL Snowflake Streaming]** och sedan 
 
 Sidan **[!UICONTROL Connect Snowflake Streaming account]** visas. På den här sidan kan du antingen använda nya eller befintliga autentiseringsuppgifter.
 
->[!BEGINTABS]
+### Skapa ett nytt konto
 
->[!TAB Skapa ett nytt konto]
-
-Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger ett namn, en valfri beskrivning och dina autentiseringsuppgifter.
-
-När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger ett namn och en valfri beskrivning för ditt konto.
 
 ![Det nya gränssnittet för att skapa konton i källarbetsflödet.](../../../../images/tutorials/create/snowflake-streaming/new.png)
 
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| Konto | Namnet på ditt [!DNL Snowflake]-konto. Mer information om konventioner för kontonamn finns i [[!DNL Snowflake Streaming] autentiseringsguiden](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials). |
-| Lagerställe | Namnet på ditt [!DNL Snowflake]-lagerställe. Lagerställen hanterar körningen av frågor i [!DNL Snowflake]. Varje [!DNL Snowflake]-lagerställe är oberoende av varandra och måste nås individuellt för att data ska kunna hämtas till Experience Platform. |
-| Databas | Namnet på din [!DNL Snowflake]-databas. Databasen innehåller de data som du vill hämta till Experience Platform. |
-| Schema | (Valfritt) Databasschemat som är associerat med ditt [!DNL Snowflake]-konto. |
-| Användarnamn | Användarnamnet för ditt [!DNL Snowflake]-konto. |
-| Lösenord | Lösenordet till ditt [!DNL Snowflake]-konto. |
-| Roll | (Valfritt) En anpassad definierad roll som kan ges till en användare för en viss anslutning. Om det inte anges används standardvärdet `public`. |
+>[!BEGINTABS]
 
-Mer information om att skapa konto finns i avsnittet [konfigurera rollinställningar](../../../../connectors/databases/snowflake-streaming.md#configure-role-settings) i översikten [!DNL Snowflake Streaming].
+>[!TAB Grundläggande autentisering]
 
->[!TAB Använd ett befintligt konto]
+Om du vill använda [!UICONTROL Basic authentication] väljer du **[!UICONTROL Basic Authentication for Snowflake]** och anger autentiseringsuppgifter för ditt [!DNL Snowflake]-konto. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
 
-Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och väljer sedan önskat konto i den befintliga kontokatalogen.
+Läs översikten [!DNL Snowflake Streaming] om du vill ha mer information om [hur du samlar in nödvändiga inloggningsuppgifter](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials).
 
-Välj **[!UICONTROL Next]** om du vill fortsätta.
+![Det nya kontogränssnittet i källarbetsflödet med grundläggande autentisering markerat.](../../../../images/tutorials/create/snowflake-streaming/basic-auth.png)
 
-![Den befintliga kontourvalssidan för källkatalogen.](../../../../images/tutorials/create/snowflake-streaming/existing.png)
+>[!TAB KeyPair-autentisering]
+
+Om du vill använda [!UICONTROL KeyPair authentication] väljer du **[!UICONTROL KeyPair Authentication for Snowflake]** och anger autentiseringsuppgifter för ditt [!DNL Snowflake]-konto. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
+
+Läs översikten [!DNL Snowflake Streaming] om du vill ha mer information om [hur du samlar in nödvändiga inloggningsuppgifter](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials).
+
+![Det nya kontogränssnittet i källarbetsflödet, autentisering med nyckelpar har valts](../../../../images/tutorials/create/snowflake-streaming/key-pair.png)
 
 >[!ENDTABS]
+
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]**, markerar ditt konto i listan och väljer **[!UICONTROL Next]**.
 
 ## Markera data {#select-data}
 
@@ -83,8 +79,6 @@ Välj **[!UICONTROL Next]** om du vill fortsätta.
 [!UICONTROL Select data]-steget visas. I det här steget måste du markera de data som du vill importera till Experience Platform, konfigurera tidsstämplar och tidszoner och tillhandahålla en exempelkälldatafil för inmatning av rådata.
 
 Använd databaskatalogen till vänster på skärmen och markera den tabell som du vill importera till Experience Platform.
-
-![Det valda datagränssnittet med en databastabell markerad.](../../../../images/tutorials/create/snowflake-streaming/select-table.png)
 
 Välj sedan kolumntypen för tidsstämpling för tabellen. Du kan välja mellan två typer av tidsstämpelkolumner: `TIMESTAMP_NTZ` eller `TIMESTAMP_LTZ`. Om du väljer kolumntypen `TIMESTAMP_NTZ` måste du också ange en tidszon. Kolumnerna ska ha en begränsning som inte är null. Mer information finns i avsnittet [Begränsningar och vanliga frågor](../../../../connectors/databases/snowflake-streaming.md#limitations-and-frequently-asked-questions).
 
@@ -108,13 +102,11 @@ Därefter måste du ange information om datauppsättningen och dataflödet.
 
 En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Data som har inhämtats till Experience Platform lagras i datasjön som datauppsättningar. Under det här steget kan du skapa en ny datauppsättning eller använda en befintlig datauppsättning.
 
->[!BEGINTABS]
+Om du har en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** och använder sedan alternativet **[!UICONTROL Advanced search]** för att visa ett fönster med alla datauppsättningar i organisationen, inklusive deras respektive information, t.ex. om de har aktiverats för inmatning i kundprofilen i realtid.
 
->[!TAB Använd en ny datauppsättning]
+![Det befintliga gränssnittet för val av datauppsättning.](../../../../images/tutorials/create/snowflake-streaming/dataset.png)
 
 Om du vill använda en ny datauppsättning väljer du **[!UICONTROL New dataset]** och anger sedan ett namn och en valfri beskrivning för datauppsättningen. Du måste också välja ett XDM-schema (Experience Data Model) som datauppsättningen följer.
-
-![Det nya gränssnittet för val av datauppsättning.](../../../../images/tutorials/create/snowflake-streaming/new-dataset.png)
 
 | Ny datauppsättningsinformation | Beskrivning |
 | --- | --- |
@@ -122,28 +114,11 @@ Om du vill använda en ny datauppsättning väljer du **[!UICONTROL New dataset]
 | Beskrivning | (Valfritt) En kort översikt över den nya datauppsättningen. |
 | Schema | En listruta med scheman som finns i organisationen. Du kan också skapa ett eget schema före källkonfigurationsprocessen. Mer information finns i guiden om att [skapa ett XDM-schema i användargränssnittet](../../../../../xdm/tutorials/create-schema-ui.md). |
 
->[!TAB Använd en befintlig datamängd]
-
-Om du redan har en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** och använder sedan alternativet **[!UICONTROL Advanced search]** för att visa ett fönster med alla datauppsättningar i organisationen, inklusive deras respektive information, t.ex. om de har aktiverats för inmatning i kundprofilen i realtid.
-
-![Det befintliga gränssnittet för val av datauppsättning.](../../../../images/tutorials/create/snowflake-streaming/existing-dataset.png)
-
->[!ENDTABS]
-
-+++Välj om du vill ha steg för att aktivera profilintagning, feldiagnostik och partiell förtäring.
-
-Om din datauppsättning är aktiverad för kundprofil i realtid kan du under det här steget växla **[!UICONTROL Profile dataset]** för att aktivera dina data för profilinmatning. Du kan också använda det här steget för att aktivera **[!UICONTROL Error diagnostics]** och **[!UICONTROL Partial ingestion]**.
-
-* **[!UICONTROL Error diagnostics]**: Välj **[!UICONTROL Error diagnostics]** om du vill instruera källan att skapa feldiagnostik som du kan referera till senare när du övervakar datauppsättningsaktiviteten och dataflödesstatusen.
-* **[!UICONTROL Partial ingestion]**: Partiell gruppinmatning är möjligheten att importera data som innehåller fel, upp till ett visst konfigurerbart tröskelvärde. Med den här funktionen kan du importera alla korrekta data till Experience Platform, medan alla felaktiga data batchas separat med information om varför de är ogiltiga.
-
-+++
-
 ### Information om dataflöde {#dataflow-details}
 
 När datauppsättningen har konfigurerats måste du ange information om dataflödet, inklusive ett namn, en valfri beskrivning och aviseringskonfigurationer.
 
-![Konfigurationssteget för dataflödesinformation.](../../../../images/tutorials/create/snowflake-streaming/dataflow-details.png)
+![Konfigurationssteget för dataflödesinformation.](../../../../images/tutorials/create/snowflake-streaming/dataflow-detail.png)
 
 | Dataflödeskonfigurationer | Beskrivning |
 | --- | --- |
