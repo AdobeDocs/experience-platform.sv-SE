@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
 workflow-type: tm+mt
 source-wordcount: '1498'
-ht-degree: 40%
+ht-degree: 93%
 
 ---
 
@@ -17,13 +17,13 @@ ht-degree: 40%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 23 september 2025**
 
-Nya funktioner och uppdateringar i Adobe Experience Platform:
+Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Agent Orchestrator](#agent-orchestrator)
 - [Aviseringar](#alerts)
@@ -35,16 +35,16 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 
 ## Agent Orchestrator {#agent-orchestrator}
 
-Adobe Experience Platform Agent Orchestrator är det nya agakta lagret i Adobe Experience Platform.
+Adobe Experience Platform Agent Orchestrator är det nya agentiska lagret i Adobe Experience Platform.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator är det nya agakta lagret i Adobe Experience Platform. Experience Platform Agent Orchestrator är utformat för att utnyttja plattformens omfattande data och kundupplevelser och driver intelligens och resonemang bakom specialbyggda Adobe Experience Platform-agenter som gör det möjligt för dem att fatta komplexa beslut och lösa problem snabbt och i stor skala - allt med mänsklig tillsyn. När du ställer frågor eller begär hjälp via ett naturligt språk i ett konversationsgränssnitt som AI Assistant, uppmanar Agent Orchestrator automatiskt våra specialistrepresentanter att ge dig rätt svar. Agent Orchestrator kommer ihåg er konversationshistorik, vilket gör att ni kan bygga vidare på tidigare frågor på ett naturligt sätt utan att behöva upprepa sammanhanget, och kombinerar insikter från olika agenter för att ge er tydliga, enhetliga svar. Mer information finns i [Agent Orchestrator-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). |
-| Audience Agent | Med Audience Agent kan ni visa insikter om målgrupper, inklusive att identifiera betydande förändringar av målgruppsstorlek, identifiera duplicerade målgrupper, utforska ert målgruppslager och ta fram era målgruppers storlek. Mer information finns i [Audience Agent-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/audience). |
+| Agent Orchestrator | Adobe Experience Platform Agent Orchestrator är det nya agentiska lagret i Adobe Experience Platform. Experience Platform Agent Orchestrator är utformat för att utnyttja plattformens omfattande data och kundupplevelser. Den driver intelligens och resonemang bakom specialbyggda Adobe Experience Platform-agenter, vilket möjliggör för dem att fatta komplexa beslut och lösa problem snabbt och i stor skala – allt med mänsklig tillsyn. När du ställer frågor eller begär hjälp via ett naturligt språk i ett konversationsgränssnitt som AI-assistenten, uppmanar Agent Orchestrator automatiskt våra specialistrepresentanter att ge dig rätt svar. Agent Orchestrator kommer ihåg din konversationshistorik, vilket gör att du kan bygga vidare på tidigare frågor på ett naturligt sätt utan att behöva upprepa sammanhanget. Den kombinerar även insikter från olika agenter för att ge dig tydliga och enhetliga svar. Mer information finns i [dokumentationen om Agent Orchestrator](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). |
+| Audience-agent | Med Audience-agenten kan du visa insikter om målgrupper, inklusive att identifiera betydande förändringar av målgruppsstorlek, identifiera duplicerade målgrupper, utforska dina målgruppslager och ta fram dina målgruppers storlek. Mer information finns i [dokumentationen om Audience-agent](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/audience). |
 
-Mer information finns i [Agent Orchestrator-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
+Mer information finns i [dokumentationen om Agent Orchestrator](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
 
 ## Aviseringar {#alerts}
 
@@ -54,7 +54,7 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Aviseringar om inhämtning av strömmande profiler | Du kan nu prenumerera på två nya aviseringar för direktuppspelning på en dataflödesnivå: <ul><li>Felfrekvens för direktuppspelningsinmatning överskreds</li><li>Överhoppad frekvens för direktuppspelningsinmatning överskreds</li></ul> Varningar på plattformen eller via e-post meddelar dig när tröskelvärdena överskrids för standardtröskelvärdet, eller när du anger ett anpassat tröskelvärde. Mer information finns i guiden [Profilaviseringar](../../observability/alerts/rules.md#profile). |
+| Aviseringar om inmatning av strömmande profiler | Du kan nu prenumerera på två nya aviseringar för strömningsinmatning på en dataflödesnivå: <ul><li>Felfrekvens för strömningsinmatning överskreds</li><li>Överhoppad frekvens för strömningsinmatning överskreds</li></ul> Varningar på plattformen eller via e-post meddelar dig när tröskelvärdena överskrids för standardtröskelvärdet, eller när du anger ett anpassat tröskelvärde. Mer information finns i guiden [Profilvarningar](../../observability/alerts/rules.md#profile). |
 
 {style="table-layout:auto"}
 
@@ -68,15 +68,15 @@ Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] 
 
 | Mål | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)-anslutning | En ny [!DNL Snowflake Batch]-anslutning är nu tillgänglig som ett alternativ till direktuppspelningsanslutaren för specifika användningsfall. |
-| Krypteringsstöd för [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | Nu kan du bifoga RSA-formaterade offentliga nycklar för att kryptera dina exporterade filer, vilket ger dig samma säkerhetsnivå som andra molnlagringsplatser tillhandahåller för din känsliga information. |
-| Information om förfallodatum för autentisering för [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md) mål | Information om förfallotid för autentisering för [!DNL Pinterest]-destinationer visas nu direkt i Experience Platform-gränssnittet, så du kan se när din autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. Du kan övervaka förfallotiden för dina tokens från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**. |
+| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)-anslutning | En ny [!DNL Snowflake Batch]-anslutning är nu tillgänglig som ett alternativ till strömningsanslutning för specifika användningsfall. |
+| Stöd för [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)-kryptering | Nu kan du bifoga RSA-formaterade offentliga nycklar för att kryptera dina exporterade filer, vilket ger dig samma säkerhetsnivå som andra molnlagringsplatser tillhandahåller för din känsliga information. |
+| Information om förfallodatum för autentisering för [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md)-mål | Information om förfallotid för autentisering för [!DNL Pinterest]-destinationer visas nu direkt i Experience Platform-gränssnittet, så du kan se när din autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. Du kan övervaka förfallotiden för dina tokens från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**. |
 
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Förbättrade funktioner för destinationshantering i Experience Platform UI | Förbättra arbetsflödet för målhantering med nya sorteringsfunktioner på flikarna [[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse) och [[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts). Nu kan du även se en visuell indikator när din kontoautentisering håller på att gå ut. <br> ![](../../destinations/assets/ui/workspace/expired-accounts.png){width="100" zoomable="yes"} |
+| Förbättrade funktioner för destinationshantering i användargränssnittet i Experience Platform | Förbättra arbetsflödet för målhantering med nya sorteringsfunktioner på flikarna [[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse) och [[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts). Nu kan du även se en visuell indikator när din kontoautentisering håller på att gå ut. <br> ![](../../destinations/assets/ui/workspace/expired-accounts.png){width="100" zoomable="yes"} |
 | Inställningar för beständig kolumnbredd | Inställningarna för kolumnbredd behålls nu när du navigerar bort från en sida och återgår till den. Om du till exempel justerar en kolumnbredd på fliken [[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse) ändras inte den anpassade kolumnbredden när du navigerar bort och återgår till den fliken. |
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
@@ -89,7 +89,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Modellbaserade scheman | Förenkla datamodelleringen med modellbaserade scheman. Nu kan du lättare skapa scheman tack vare många exempel och guider. Den här funktionen är för närvarande tillgänglig för innehavare av Campaign Orchestration-licenser och kommer att utvidgas till att omfatta Data Distiller-kunder på GA, vilket gör datamodelleringen mer tillgänglig och effektiv. Funktionen har stöd för tidsseriedata och funktioner för datainhämtning vid ändring. |
+| Modellbaserade scheman | Förenkla datamodelleringen med modellbaserade scheman. Nu kan du lättare skapa scheman tack vare många exempel och guider. Den här funktionen är för närvarande tillgänglig för innehavare av Campaign Orchestration-licens och kommer att utvidgas till att omfatta Data Distiller-kunder på GA, vilket gör datamodelleringen mer tillgänglig och effektiv. Funktionen har stöd för tidsseriedata och funktioner för datainhämtning vid ändring. |
 | Data Mirror | Infoga radnivåändringar från molndatalager (t.ex. Snowflake, Databricks, BigQuery) i Adobe Experience Platform med modellbaserade scheman. Data Mirror eliminerar ETL-uppströms och bevarar relationer, versionshantering och borttagningar genom att spegla befintliga databasstrukturer direkt in i datasjön. Funktioner för tidsserier och inspelningshändelsescheman med funktioner för registrering av ändringsdata stöds. Den här funktionen är för närvarande tillgänglig för innehavare av licenser för kampanjsamordning och kommer att utökas genom den här begränsade versionen, även för Customer Journey Analytics-kunder. Mer information finns i [Data Mirror-dokumentationen](../../xdm/data-mirror/overview.md). Kontakta din Adobe-representant för att få åtkomst. |
 
 Mer information finns i [XDM-översikten](../../xdm/home.md).
@@ -102,9 +102,9 @@ Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Förbättringar av profilvisningsprogram | Septemberversionen 2025 innehåller följande förbättringar av profilvisningsprogrammet. <ul><li>**Kombinerad vy**: Attribut, händelser och insikter har kombinerats till en enda vy.</li><li>**AI-genererade insikter**: Sidan med profilinformation visar nu AI-genererade insikter, som visar information som genererats från din profil. Dessa insikter kan innehålla information som benägenhetspoäng och trendanalyser.</li><li>**Formatuppdatering**: Sidan med profilinformation har uppdaterats visuellt.</li><li>**Bläddra**: Nu kan du utforska dina profiler via en interaktiv kortbaserad karusell med sökning och anpassning.</li></ul> |
+| Förbättringar av profilvisningsprogram | Septemberversionen 2025 innehåller följande förbättringar av profilvisningsprogrammet. <ul><li>**Kombinerad vy**: Attribut, händelser och insikter har kombinerats till en enda vy.</li><li>**AI-genererade insikter**: Sidan med profilinformation visar nu AI-genererade insikter, som visar information som genererats från din profil. Dessa insikter kan innehålla information som benägenhetspoäng och trendanalyser.</li><li>**Stiluppdatering**: Sidan med profilinformation har uppdaterats visuellt.</li><li>**Bläddra**: Nu kan du utforska dina profiler via en interaktiv kortbaserad karusell med sökning och anpassning.</li></ul> |
 
-Mer information finns i [Översikt över kundprofilen i realtid](../../profile/home.md).
+Mer information finns i [Översikten över kundprofil i realtid](../../profile/home.md).
 
 ## Segmenteringstjänst {#segmentation-service}
 
@@ -114,14 +114,14 @@ Mer information finns i [Översikt över kundprofilen i realtid](../../profile/h
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontomålgrupper med borttagning av upplevelsehändelser | Efter uppgraderingen av B2B-arkitekturen stöds inte längre kontomålgrupper med upplevelsehändelser. Använd i stället den nya segmentmetoden: skapa en publik med Experience Events och hänvisa sedan till den målgruppen när du skapar en Account Audience. Detta ger en mer flexibel och underhållande metod för att skapa B2B-målgrupper. |
+| Kontomålgrupper med borttagning av upplevelsehändelser | Efter uppgraderingen av B2B-arkitekturen stöds inte längre kontomålgrupper med upplevelsehändelser. Använd i stället den nya segmentmetoden: skapa en målgrupp med Experience Events och hänvisa sedan till den målgruppen när du skapar en målgrupp för konton. Detta ger en mer flexibel och underhållande metod för att skapa B2B-målgrupper. |
 
 **Viktiga uppdateringar**
 
 | Uppdatering | Beskrivning |
 | ------- | ----------- |
-| Målgruppsuppskattningar återställer automatiskt | Förbättringen av den automatiska uppdateringen för målgruppsuppskattningar har återställts. Målgruppsuppskattningar kommer även i fortsättningen att genereras i Segment Builder, men funktionen för automatisk uppdatering har tagits bort. |
-| Extern publik | Från och med den 30 september hämtas externa målgrupper via Unified Search i Segment Builder. Om du använder segmentmatchning kan du aktivera den gamla funktionen i Segment Builder. |
+| Målgruppsuppskattningar återställs automatiskt | Förbättringen av den automatiska uppdateringen för målgruppsuppskattningar har återställts. Målgruppsuppskattningar kommer även i fortsättningen att genereras i Segment Builder, men funktionen för automatisk uppdatering har tagits bort. |
+| Extern målgrupp | Från och med den 30 september hämtas externa målgrupper via Unified Search i Segment Builder. Om du använder Segment Match kan du aktivera den gamla funktionen i Segment Builder. |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
@@ -133,10 +133,10 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nya källor i allmän tillgänglighet | Följande källor är nu allmänt tillgängliga: Flera källanslutningar har uppdaterats från Beta till GA: <ul><li>[Acxiom-datainmatning](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Acxiom Prospect Data Inghit](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury Enterprise](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>. De här källorna stöds nu fullt ut och är klara för produktion. |
-| [!DNL Snowflake] autentiseringsstöd för nyckelpar | Förbättrad säkerhet för Snowflake-anslutningar med stöd för autentisering med nyckelpar. Grundläggande autentisering (användarnamn/lösenord) kommer att vara inaktuellt i november 2025, så kunder uppmuntras att migrera till nyckelpars autentisering för att få bättre säkerhet. Mer information finns i [[!DNL Snowflake] dokumentationen](../../sources/connectors/databases/snowflake.md). |
-| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Använd [[!DNL Capillary Streaming Events] source](../../sources/connectors/loyalty/capillary.md) för att strömma bonusdata från ditt [!DNL Capillary]-konto till Experience Platform. |
+| Nya källor i Allmän tillgänglighet | Följande källor finns nu i Allmän tillgänglighet: flera källanslutningar har uppdaterats från Beta till GA: <ul><li>[Acxiom-datainmatning](../../sources/connectors/data-partners/acxiom-data-ingestion.md)</li><li>[Datainmatning av potentiell Acxiom-kund](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md)</li><li>[Merkury Enterprise](../../sources/connectors/data-partners/merkury.md)</li><li>[SAP Commerce](../../sources/connectors/ecommerce/sap-commerce.md)</li></ul>. De här källorna stöds nu fullt ut och är klara för produktionsanvändning. |
+| [!DNL Snowflake] autentiseringsstöd för nyckelpar | Förbättrad säkerhet för Snowflake-anslutningar med stöd för autentisering med nyckelpar. Grundläggande autentisering (användarnamn/lösenord) kommer att tas ur bruk i november 2025, så kunder uppmuntras att migrera till autentisering med nyckelpar för att få bättre säkerhet. Mer information finns i [[!DNL Snowflake] dokumentationen](../../sources/connectors/databases/snowflake.md). |
+| [!BADGE Beta]{type=Informative} [!DNL Capillary Streaming Events] | Använd [[!DNL Capillary Streaming Events] källan](../../sources/connectors/loyalty/capillary.md) för att strömma lojalitetsdata från ditt [!DNL Capillary]-konto till Experience Platform. |
 | [!BADGE Beta]{type=Informative} [!DNL Relay Connector] | Använd [[!DNL Relay Connector]](../../sources/tutorials/ui/create/marketing-automation/relay-connector.md) för att strömma händelsedata från din [!DNL Relay Network]-integrering till Experience Platform. |
-| Allmän tillgänglighet för stöd för privata länkar i källor | Du kan nu använda **privata länkar** för en vald grupp källor. Använd den här funktionen för att skapa en privat slutpunkt som källan kan ansluta till. Med privata slutpunkter kan du skapa anslutningar och dataflöden som kringgår det offentliga Internet, vilket ger förbättrad säkerhet och nätverksisolering för dina känsliga data. Stöd för privata länkar finns för följande källor: <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>. Mer information finns i handböckerna om hur du skapar privata länkar [ i API:t ](../../sources/tutorials/api/private-link.md) och [ i gränssnittet](../../sources/tutorials/ui/private-link.md). |
+| Allmän tillgänglighet för stöd för privata länkar i källor | Du kan nu använda **privata länkar** för en vald grupp källor. Använd den här funktionen för att skapa en privat slutpunkt som källan kan ansluta till. Med privata slutpunkter kan du skapa anslutningar och dataflöden som kringgår det offentliga Internet, vilket ger förbättrad säkerhet och nätverksisolering för dina känsliga data. Stöd för privata länkar finns tillgängligt för följande källor: <ul><li>[[!DNL Azure Blob Storage]](../../sources/connectors/cloud-storage/blob.md)</li><li>[[!DNL ADLS Gen2]](../../sources/connectors/cloud-storage/adls-gen2.md)</li><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li></ul>. Mer information finns i handböckerna om hur du skapar privata länkar [i API:t](../../sources/tutorials/api/private-link.md) och [i användargränssnittet](../../sources/tutorials/ui/private-link.md). |
 
 Mer information finns i [översikten över källor](../../sources/home.md).
