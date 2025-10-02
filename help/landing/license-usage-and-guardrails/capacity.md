@@ -2,9 +2,9 @@
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: 568a0ba7707402496167145ce2673181b240496e
+source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
 workflow-type: tm+mt
-source-wordcount: '1577'
+source-wordcount: '1587'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ Inom dessa tjänster spåras följande skyddsräcken:
    - Av dessa 500 direktuppspelade målgrupper är det maximala antalet kantmålgrupper 150
 - Den initiala kombinerade genomströmningen för direktuppspelning är 1 500 poster per sekund (rps)
    - Detta kombinerade strömmande dataflöde mäter de kombinerade topphändelserna för inkommande trafik per sekund för strömning till kundprofilen i realtid i era produktions- och utvecklingssandlådor.
-   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 Målgruppskapaciteten är på en **sandbox**-nivå. Det innebär att ni för varje sandlåda ni har i organisationen kan ha 500 direktuppspelade målgrupper, varav 150 av dessa kan vara gränspubliken.
 
@@ -169,6 +169,12 @@ Dessutom kan ni titta på era dataflöden och se om ni kan optimera er datastrat
 | --- | --- | --- | --- |
 | Konvertering från batch till direktuppspelning | Batcharbetsbelastningar som konverteras till strömning kan öka genomströmningen avsevärt, vilket påverkar prestanda och resursallokering. Du kan till exempel utföra en gruppprofilsuppdatering efter en händelse utan hastighetsbegränsningar. | Direktuppspelningsstrategier är inte nödvändiga för gruppanvändning när bearbetning med låg fördröjning inte krävs. | Utvärdera kraven för användningsfall. För utgående batchmarknadsföring bör du överväga att använda [batchingång](/help/ingestion/batch-ingestion/overview.md) i stället för direktuppspelning för att hantera datainmatningen mer effektivt. |
 | Onödig datainmatning | Inmatning av data som inte behövs för personalisering ökar genomströmningen utan att något mervärde läggs till, vilket slösar med resurser. Om du till exempel samlar in all analystrafik i profiler, oavsett relevans. | För mycket data som inte är relevanta skapar brus, vilket gör det svårare att identifiera viktiga datapunkter. Det kan också orsaka friktion när man definierar och hanterar målgrupper och profiler. | Importera endast data som behövs för dina användningsfall. Se till att du filtrerar bort onödiga data.<ul><li>**Adobe Analytics**: Använd [radnivåfiltrering](/help/sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-real-time-customer-profile) för att optimera dataanvändningen.</li><li>**Källor**: Använd [[!DNL Flow Service] API:t för att filtrera radnivådata](/help/sources/tutorials/api/filter.md) för källor som stöds, som [!DNL Snowflake] och [!DNL Google BigQuery].</li></li>**Edge datastream**: Konfigurera [dynamiska datastreams](/help/datastreams/configure-dynamic-datastream.md) för filtrering på radnivå av trafik som kommer in från WebSDK.</li></ul> |
+
+## Videoöversikt {#video}
+
+I följande video visas en översikt över kapacitet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
 
 ## Vanliga frågor och svar {#faq}
 

@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
+source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
 workflow-type: tm+mt
-source-wordcount: '1498'
-ht-degree: 93%
+source-wordcount: '1499'
+ht-degree: 92%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 93%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 23 september 2025**
@@ -102,7 +102,7 @@ Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Förbättringar av profilvisningsprogram | Septemberversionen 2025 innehåller följande förbättringar av profilvisningsprogrammet. <ul><li>**Kombinerad vy**: Attribut, händelser och insikter har kombinerats till en enda vy.</li><li>**AI-genererade insikter**: Sidan med profilinformation visar nu AI-genererade insikter, som visar information som genererats från din profil. Dessa insikter kan innehålla information som benägenhetspoäng och trendanalyser.</li><li>**Stiluppdatering**: Sidan med profilinformation har uppdaterats visuellt.</li><li>**Bläddra**: Nu kan du utforska dina profiler via en interaktiv kortbaserad karusell med sökning och anpassning.</li></ul> |
+| Förbättringar i [!BADGE Alpha]{type=Informative}-profilvisningsprogrammet | Septemberversionen 2025 innehåller följande förbättringar av profilvisningsprogrammet. <ul><li>**Kombinerad vy**: Attribut, händelser och insikter har kombinerats till en enda vy.</li><li>**AI-genererade insikter**: Sidan med profilinformation visar nu AI-genererade insikter, som visar information som genererats från din profil. Dessa insikter kan innehålla information som benägenhetspoäng och trendanalyser.</li><li>**Stiluppdatering**: Sidan med profilinformation har uppdaterats visuellt.</li><li>**Bläddra**: Nu kan du utforska dina profiler via en interaktiv kortbaserad karusell med sökning och anpassning.</li></ul> |
 
 Mer information finns i [Översikten över kundprofil i realtid](../../profile/home.md).
 

@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: e4f303f9de2d36717288d2119458c8df95fc01bf
+source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
 workflow-type: tm+mt
-source-wordcount: '1907'
+source-wordcount: '1921'
 ht-degree: 0%
 
 ---
@@ -127,6 +127,8 @@ I avsnittet **[!UICONTROL Customer profile insights]** visas en kort introduktio
 
 #### AI insight-widgetar {#ai-insight-widgets}
 
+[!BADGE Alpha]{type=Informative} Den här funktionen finns i Alpha.
+
 Avsnittet **[!UICONTROL AI insight widgets]** visar widgetar som genereras av AI. Dessa widgetar ger snabba insikter om profilen, baserat på profildata som demografi (till exempel ålder, kön eller plats), användarbeteenden (till exempel inköpshistorik, webbplatsaktivitet eller engagemang i sociala medier) samt psykografi (till exempel intressen, preferenser eller livsstilar). Alla AI-widgetar använder data som **redan** finns i profilen.
 
 ![AI-widgetar visas.](../images/user-guide/ai-insight-widgets.png)
@@ -144,6 +146,8 @@ Du kan också växla mellan att visa attributnamnen som visningsnamn och fälts�
 ![Växlingen av visningsnamn är markerad.](../images/user-guide/show-display-names.png)
 
 #### Automatiskt klassificerade widgetar {#auto-classified-widgets}
+
+[!BADGE Alpha]{type=Informative} Den här funktionen finns i Alpha.
 
 Avsnittet **[!UICONTROL Auto-classified widgets]** visar widgetar som utnyttjar unionsschemat för att avgöra vilka källfältsgrupper ett attribut tillhör, vilket ger en tydligare kontext om varifrån data kommer. Du kan använda sökfältet för att enklare söka efter nyckelord i dina widgetar.
 
