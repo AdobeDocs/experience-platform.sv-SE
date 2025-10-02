@@ -2,11 +2,12 @@
 title: Snowflake Streaming-anslutning
 description: Exportera data till ditt Snowflake-konto med privata listor.
 badgeBeta: label="Beta" type="Informative"
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: 183858daac3a2471cb842f1d7308f91cf514c5ee
+source-git-commit: eed90a5ce988acafface0bac9191f1b3ae28f90c
 workflow-type: tm+mt
-source-wordcount: '1407'
-ht-degree: 1%
+source-wordcount: '1411'
+ht-degree: 0%
 
 ---
 
@@ -14,7 +15,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Den här destinationsanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få åtkomst.
+>Den här målanslutningen är i betaversion och endast tillgänglig för Real-Time CDP Ultimate-kunder. Funktionen och dokumentationen kan komma att ändras.
 
 ## Översikt {#overview}
 
