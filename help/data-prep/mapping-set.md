@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över mappningsuppsättningar
 description: Lär dig använda mappningsuppsättningar med Adobe Experience Platform Data Prep.
 exl-id: b45545b7-3ae7-400d-b6fd-b2cb76061093
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb0366284f1850bd9742b18d95608f901319f642
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '979'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,10 @@ Följande JSON är ett exempel på en typisk mappningsuppsättning:
 ## Konfigurera mappningskällor
 
 I en mappning kan `source` vara ett fält, uttryck eller ett statiskt värde. Baserat på den angivna källtypen kan värdet extraheras på olika sätt.
+
+>[!TIP]
+>
+>Vänta i upp till 10 minuter efter att mappningarna har sparats innan du påbörjar dataimporten för att vara säker på att de har sparats fullständigt.
 
 ### Fält i kolumndata
 
