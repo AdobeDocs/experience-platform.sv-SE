@@ -174,7 +174,7 @@ Dessutom kan ni titta på era dataflöden och se om ni kan optimera er datastrat
 
 I följande video visas en översikt över kapacitet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475277/?learn=on&enablevpops&captions=swe)
 
 ## Vanliga frågor och svar {#faq}
 
