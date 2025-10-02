@@ -3,9 +3,9 @@ keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: a0c1ddc5bcdd8b89e7605491441d56199f301e9e
+source-git-commit: d8a4d292747f8ea29709eb13c3344baadba1b6f5
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '283'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,6 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Dubbelklicka på FlowLight-tillägg](doubleclick-floodlight.md)
 * [Pixeltillägg för Facebook](facebook-pixel.md)
 * [Flashtalk OneTag-tillägg](flashtalking.md)
-* [Google Ads-tillägg](google-ads-extension.md)
 * [Google Gtag-tillägg](gtag-advertising.md)
 * [Tillägget LinkedIn Insight-tagg](linkedin.md)
 * [Pinterest Conversion Tracking-tillägg](pinterest-extension.md)
