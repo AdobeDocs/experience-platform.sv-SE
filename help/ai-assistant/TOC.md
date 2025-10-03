@@ -1,7 +1,7 @@
 ---
 audience: user
 user-guide-title: AI Assistant i Adobe Experience Platform Guide
-user-guide-description: Lär dig använda AI Assistant för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
+user-guide-description: Lär dig använda AI-assistenten för att snabba upp arbetsflödet med Adobe Experience Platform och Real-Time Customer Data Platform.
 description: I det här dokumentet visas innehållsförteckningen för AI Assistant i Adobe Experience Platform.
 role: Admin,User,Developer,Leader
 source-git-commit: 40f7ea3e6477590dc2eed5af8aa9848901a8c204
@@ -32,5 +32,5 @@ ht-degree: 27%
    * [Översikt över modellinformation](./model-details/overview.md)
    * [AI Assistant Natural Operational Insights Language to SQL](./model-details/natural-language-to-sql.md)
    * [Sändningsoptimering](./model-details/send-time-optimization.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
