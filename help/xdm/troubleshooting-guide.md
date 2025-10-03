@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fa856644a106469f0cafe7f8c0a61219dc7deac7
 workflow-type: tm+mt
-source-wordcount: '2338'
+source-wordcount: '2368'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) och XDM-system i Adobe Experience Platform, inklusive en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra Experience Platform-tjänster, se [Experience Platform felsökningsguide](../landing/troubleshooting.md).
 
-**[!DNL Experience Data Model] (XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, opererar [!DNL Experience Data Model] scheman som ska användas av [!DNL Experience Platform]-tjänster. **[!DNL Schema Registry]** innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]** i [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md).
+**[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, opererar [!DNL Experience Data Model] scheman som ska användas av [!DNL Experience Platform]-tjänster. **[!DNL Schema Registry]** innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]** i [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md).
 
 ## Vanliga frågor och svar
 
@@ -63,11 +63,13 @@ Mer information om fälttyper finns i dokumentet om [XDM-fälttypsbegränsningar
 
 XDM har följande begränsningar för användning av den här datatypen:
 
-- Karttyper MÅSTE vara av typen objekt.
+- Karttyperna MÅSTE vara av typen `object`.
 - Karttyper FÅR INTE ha egenskaper definierade (de definierar med andra ord tomma objekt).
-- Karttyper MÅSTE innehålla ett additionalProperties.type-fält som beskriver de värden som kan placeras i kartan, antingen sträng eller heltal.
+- Karttyperna MÅSTE innehålla ett `additionalProperties.type`-fält som beskriver de värden som kan placeras i kartan, antingen `string` eller `integer`.
 - Segmentering för flera enheter kan bara definieras baserat på kartnycklarna och inte på värdena.
 - Kartor stöds inte för kontomålgrupper.
+- Kartor som definieras i anpassade XDM-objekt begränsas till en enda nivå. Kapslade kartor kan inte skapas. Den här begränsningen gäller inte för kartor som definieras i standard-XDM-objekt.
+- Matriser med kartor stöds inte.
 
 Mer information finns i [användningsbegränsningarna för mappningsobjekt](./ui/fields/map.md#restrictions).
 
@@ -92,7 +94,7 @@ Det här avsnittet innehåller svar på vanliga frågor om hur du definierar och
 
 ### Hur definierar jag identiteter för mitt schema?
 
-I [!DNL Experience Platform] används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID och andra unika ID-fält.
+I [!DNL Experience Platform] används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID och andra unika ID-fält.
 
 Fält kan markeras som identiteter med antingen API:t eller användargränssnittet.
 
@@ -106,7 +108,7 @@ Mer information om hur du skapar identitetsbeskrivningar i API:t finns i dokumen
 
 ### Definiera identiteter i användargränssnittet
 
-Med schemat öppet i Schemaredigeraren markerar du det fält i **[!UICONTROL Structure]**-delen av redigeraren som du vill markera som en identitet. Markera kryssrutan **[!UICONTROL Identity]** under **[!UICONTROL Field Properties]** till höger.
+Med schemat öppet i Schemaredigeraren markerar du det fält i **[!UICONTROL Structure]**-delen av redigeraren som du vill markera som en identitet. Markera kryssrutan **[!UICONTROL Field Properties]** under **[!UICONTROL Identity]** till höger.
 
 Mer information om hur du hanterar identiteter i användargränssnittet finns i avsnittet [Definiera identitetsfält](./tutorials/create-schema-ui.md#identity-field) i schemaredigerarens självstudiekurs.
 
@@ -130,7 +132,7 @@ Mer information om hur du använder API:t för att aktivera ett schema för anv�
 
 ### Aktiverar ett befintligt schema för [!DNL Profile] med användargränssnittet
 
-I [!DNL Experience Platform] väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen och väljer namnet på schemat som du vill aktivera i listan med scheman. Sedan väljer du **[!UICONTROL Profile]** till höger om redigeraren under **[!UICONTROL Schema Properties]** för att aktivera den.
+I [!DNL Experience Platform] väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen och väljer namnet på schemat som du vill aktivera i listan med scheman. Sedan väljer du **[!UICONTROL Schema Properties]** till höger om redigeraren under **[!UICONTROL Profile]** för att aktivera den.
 
 Mer information finns i avsnittet [Använd i kundprofil för realtid](./tutorials/create-schema-ui.md#profile) i självstudiekursen [!UICONTROL Schema Editor].
 
@@ -140,7 +142,7 @@ Schemat aktiveras inte automatiskt för kundprofil i realtid. Du måste uttryckl
 
 ### Kan jag ta bort profilaktiverade scheman?
 
-Du kan inte ta bort ett schema efter att det har aktiverats för kundprofil i realtid. När ett schema har aktiverats för profilen kan det inte inaktiveras eller tas bort och fält kan inte tas bort från schemat. Därför är det viktigt att planera och verifiera schemakonfigurationen noggrant innan du aktiverar den för profil. Du kan dock ta bort en profilaktiverad datauppsättning. Information finns här: <https://experienceleague.adobe.com/sv/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
+Du kan inte ta bort ett schema efter att det har aktiverats för kundprofil i realtid. När ett schema har aktiverats för profilen kan det inte inaktiveras eller tas bort och fält kan inte tas bort från schemat. Därför är det viktigt att planera och verifiera schemakonfigurationen noggrant innan du aktiverar den för profil. Du kan dock ta bort en profilaktiverad datauppsättning. Information finns här: <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
 
 Om du inte längre vill att ett profilaktiverat schema ska användas rekommenderar vi att du byter namn på schemat så att det innehåller **Använd inte** eller **Inaktiv**.
 
