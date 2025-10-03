@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) och XDM-system i Adobe Experience Platform, inklusive en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra Experience Platform-tjänster, se [Experience Platform felsökningsguide](../landing/troubleshooting.md).
 
-**[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, opererar [!DNL Experience Data Model] scheman som ska användas av [!DNL Experience Platform]-tjänster. **[!DNL Schema Registry]** innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]** i [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md).
+**[!DNL Experience Data Model] (XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, opererar [!DNL Experience Data Model] scheman som ska användas av [!DNL Experience Platform]-tjänster. **[!DNL Schema Registry]** innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]** i [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md).
 
 ## Vanliga frågor och svar
 
@@ -128,7 +128,7 @@ Scheman har aktiverats för användning i [[!DNL Real-Time Customer Profile]](..
 
 Gör en PATCH-begäran om att uppdatera schemat och lägga till attributet `meta:immutableTags` som en matris som innehåller värdet &quot;union&quot;. Om uppdateringen lyckas visas det uppdaterade schemat som nu innehåller unionstaggen.
 
-Mer information om hur du använder API:t för att aktivera ett schema för användning i [!DNL Real-Time Customer Profile] finns i dokumentet [ union](./api/unions.md) i [!DNL Schema Registry]-utvecklarhandboken.
+Mer information om hur du använder API:t för att aktivera ett schema för användning i [!DNL Real-Time Customer Profile] finns i dokumentet [&#x200B; union](./api/unions.md) i [!DNL Schema Registry]-utvecklarhandboken.
 
 ### Aktiverar ett befintligt schema för [!DNL Profile] med användargränssnittet
 

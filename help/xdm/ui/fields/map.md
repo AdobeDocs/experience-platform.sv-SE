@@ -52,4 +52,4 @@ Se till att du bara använder karttypsfält när det är absolut nödvändigt, e
 
 När du har läst det här dokumentet kan du nu definiera kartfält i Experience Platform användargränssnitt. Kom ihåg att du bara kan använda klasser och fältgrupper för att lägga till fält i scheman. Mer information om hur du hanterar de här resurserna i användargränssnittet finns i handböckerna om hur du skapar och redigerar [klasser](../resources/classes.md) och [fältgrupper](../resources/field-groups.md).
 
-Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
+Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
