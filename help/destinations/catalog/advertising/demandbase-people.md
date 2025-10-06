@@ -1,13 +1,13 @@
 ---
 title: Anslutning för Demandbase-användare
 description: Använd den här destinationen för att aktivera era målgrupper och berika dem med tredjepartsdata från Demandbase för andra användningsfall i senare led i marknadsföring och försäljning.
-source-git-commit: df2cb1edbf998082fca961e6d9bb567a1ad3b7e6
+exl-id: 748f5518-7cc1-4d65-ab70-4a129d9e2066
+source-git-commit: ab29c1113dbbd1811acd3d5add5a247cb2703884
 workflow-type: tm+mt
-source-wordcount: '723'
-ht-degree: 0%
+source-wordcount: '797'
+ht-degree: 1%
 
 ---
-
 
 # Anslutning för Demandbase-användare {#demandbase-people}
 
@@ -15,7 +15,7 @@ Aktivera profiler för era Demandbase-kampanjer för målgruppsanpassning, perso
 
 >[!IMPORTANT]
 >
->Använd målkopplingen [Demandbase](demandbase.md) i stället för B2B-fall där du behöver [aktivera kontomaterial](../../ui/activate-account-audiences.md).
+>Använd målkopplingen [Demandbase](../../ui/activate-account-audiences.md) i stället för B2B-fall där du behöver [aktivera kontomaterial](demandbase.md).
 
 ## Användningsfall {#use-case}
 
@@ -99,6 +99,21 @@ Nu kan ni aktivera era målgrupper inom Demandbase People.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
+
+### Obligatoriska mappningar {#mandatory-mappings}
+
+När du aktiverar målgrupper till målet [!DNL Demandbase People] måste du konfigurera följande obligatoriska fältmappningar i mappningssteget:
+
+| Source | Målfält | Beskrivning |
+|--------------|--------------|-------------|
+| `xdm: b2b.personKey.sourceKey` | `xdm: externalPersonId` | Unik identifierare för personen |
+| `xdm: person.name.lastName` | `xdm: lastName` | Personens efternamn |
+| `xdm: person.name.firstName` | `xdm: firstName` | Personens förnamn |
+| `xdm: workEmail.address` | `Identity: email` | Personens e-postadress till arbetet |
+
+![Personmappningar för Demandbase](/help/destinations/assets/catalog/advertising/demandbase-people/demandbase-people-mapping.png)
+
+Dessa mappningar krävs för att målet ska fungera korrekt och måste konfigureras innan du kan fortsätta med aktiveringsarbetsflödet.
 
 ## Ytterligare kommentarer och viktiga bildtexter {#additional-notes}
 
