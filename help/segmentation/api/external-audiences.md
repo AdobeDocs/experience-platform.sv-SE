@@ -2,9 +2,9 @@
 title: API-slutpunkt för externa målgrupper
 description: Lär dig hur du använder API:t för externa målgrupper för att skapa, uppdatera, aktivera och ta bort externa målgrupper från Adobe Experience Platform.
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: bc74f86dca62a62dde39ad2e167e66b511d59086
+source-git-commit: 0a37ef2f5fc08eb515c7c5056936fd904ea6d360
 workflow-type: tm+mt
-source-wordcount: '2189'
+source-wordcount: '2253'
 ht-degree: 1%
 
 ---
@@ -98,7 +98,7 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
 | `description` | Sträng | En valfri beskrivning för den externa målgruppen. |
 | `customAudienceId` | Sträng | En valfri identifierare för den externa målgruppen. |
 | `fields` | Array med objekt | Listan med fält och deras datatyper. När du skapar fältlistan kan du lägga till följande objekt: <ul><li>`name`: **Obligatoriskt** Namnet på fältet som är en del av den externa målgruppsspecifikationen.</li><li>`type`: **Obligatoriskt** Den typ av data som placeras i fältet. Värden som stöds är `string`, `number`, `long`, `integer`, `date` (`2025-05-13`), `datetime` (`2025-05-23T20:19:00+00:00`) och `boolean`.</li><li>`identityNs`: **Krävs för identitetsfält** Det namnutrymme som används av identitetsfältet. Värden som stöds innehåller alla giltiga namnutrymmen, till exempel `ECID` eller `email`.</li><li>`labels`: *Valfritt* En array med åtkomstkontrolletiketter för fältet. Mer information om tillgängliga etiketter för åtkomstkontroll finns i [etikettordlistan för dataanvändning](/help/data-governance/labels/reference.md). </li></ul> |
-| `sourceSpec` | Objekt | Ett objekt som innehåller information om var den externa målgruppen finns. När du använder det här objektet **måste** innehålla följande information: <ul><li>`path`: **Obligatoriskt**: Platsen för den externa målgruppen eller mappen som innehåller den externa målgruppen i källan.</li><li>`type`: **Obligatoriskt** Den typ av objekt som du hämtar från källan. Värdet kan vara `file` eller `folder`.</li><li>`sourceType`: *Valfritt* Den typ av källa som du hämtar från. För närvarande är det enda värdet som stöds `Cloud Storage`.</li><li>`cloudType`: *Valfritt* Typen av molnlagring, baserat på källtypen. Värden som stöds är `S3`, `DLZ`, `GCS` och `SFTP`.</li><li>`baseConnectionId`: ID:t för basanslutningen och tillhandahålls av din källleverantör. Det här värdet är **obligatoriskt** om `cloudType`-värdet `S3`, `GCS` eller `SFTP` används. Mer information finns i översikten över [källanslutningar](../../sources/home.md)</li></ul> |
+| `sourceSpec` | Objekt | Ett objekt som innehåller information om var den externa målgruppen finns. När du använder det här objektet **måste** innehålla följande information: <ul><li>`path`: **Obligatoriskt**: Platsen för den externa målgruppen eller mappen som innehåller den externa målgruppen i källan. Filsökvägen **får inte innehålla blanksteg**. Om sökvägen till exempel är `activation/sample-source/Example CSV File.csv` anger du sökvägen till `activation/sample-source/ExampleCSVFile.csv`. Du hittar sökvägen till källan i kolumnen **Source data** i dataflödesavsnittet.</li><li>`type`: **Obligatoriskt** Den typ av objekt som du hämtar från källan. Värdet kan vara `file` eller `folder`.</li><li>`sourceType`: *Valfritt* Den typ av källa som du hämtar från. För närvarande är det enda värdet som stöds `Cloud Storage`.</li><li>`cloudType`: **Obligatoriskt** Typen av molnlagring, baserat på källtypen. Värden som stöds är `S3`, `DLZ`, `GCS`, `Azure` och `SFTP`.</li><li>`baseConnectionId`: ID:t för basanslutningen och tillhandahålls av din källleverantör. Det här värdet är **obligatoriskt** om `cloudType`-värdet `S3`, `GCS` eller `SFTP` används. Annars behöver du **inte** ta med den här parametern. Mer information finns i översikten över [källanslutningar](../../sources/home.md).</li></ul> |
 | `ttlInDays` | Heltal | Datan upphör att gälla för den externa målgruppen, i dagar. Värdet kan anges från 1 till 90. Som standard är utgångsdatumet för data inställt på 30 dagar. |
 | `audienceType` | Sträng | Målgruppstypen för den externa målgruppen. För närvarande stöds bara `people`. |
 | `originName` | Sträng | **Obligatorisk** Målgruppens ursprung. Det är här som publiken kommer ifrån. För externa målgrupper bör du använda `CUSTOM_UPLOAD`. |
@@ -408,8 +408,8 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/60ccea95-
 
 | Egenskap | Typ | Beskrivning |
 | -------- | ---- | ----------- |
-| `dataFilterStartTime` | Epoch-tidsstämpel | **Obligatoriskt** Intervallet som anger den starttid som flödet ska köras för att välja vilka filer som ska bearbetas. |
-| `dataFilterEndTime` | Epoch-tidsstämpel | Det intervall som anger sluttiden som flödet ska köras för att välja vilka filer som ska bearbetas. |
+| `dataFilterStartTime` | Epoch-tidsstämpel | **Obligatoriskt** Intervallet som anger starttid för att avgöra vilka filer som ska bearbetas. Det innebär att de markerade filerna blir filer **efter** den angivna tiden. |
+| `dataFilterEndTime` | Epoch-tidsstämpel | Det intervall som anger sluttiden som flödet ska köras för att välja vilka filer som ska bearbetas. Det innebär att de markerade filerna blir filer **före** den angivna tiden. |
 
 +++
 

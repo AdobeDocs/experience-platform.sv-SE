@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
+source-git-commit: 043e0c930b30dc4f04acdcab88a5d63ad044fbfc
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '207'
 ht-degree: 24%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 24%
 
 - [Översikt över segmenteringstjänsten](home.md)
 - [Segmenteringsdatatyper](data-types.md)
-- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=sv-SE#segmentation-guardrails)
+- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
 - Segmenterings-API {#api}
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
@@ -62,7 +62,7 @@ ht-degree: 24%
    - [Segmentering för flera enheter](tutorials/multi-entity-segmentation.md)
    - [Godkännande](tutorials/consents.md)
    - [Utvärdera en segmentdefinition](tutorials/evaluate-a-segment.md)
-   - [Importera och använda externa målgrupper](tutorials/using-external-audiences.md)
+   - [Skapa en extern publik](tutorials/create-external-audience.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Tvinga målgrupper att följa dataanvändningen](tutorials/governance.md)
 - Profile Query Language {#pql}
@@ -82,4 +82,4 @@ ht-degree: 24%
 - [Uppdatering av kvalificeringskriterier](./eligibility-criteria-update.md)
 - [Vanliga frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

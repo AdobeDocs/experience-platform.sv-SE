@@ -3,17 +3,17 @@ title: Skapa målgrupps-API-slutpunkt
 description: Lär dig hur du skapar metadata för en extern målgrupp med API:t.
 hide: true
 hidefromtoc: true
-source-git-commit: 74fa66e78ac36c8007eb89e8c271d989845c96f0
+exl-id: e841a5f6-f406-4e1d-9e8a-acb861ba6587
+source-git-commit: bf90b09693c7b9b7d3ad6ccc6940d255bf7bf4cb
 workflow-type: tm+mt
-source-wordcount: '237'
+source-wordcount: '246'
 ht-degree: 2%
 
 ---
 
-
 # Skapa målgruppsslutpunkt
 
-POST `/audiences`-slutpunkten kan användas för att skapa metadata för en extern målgrupp. Du bör använda den här slutpunkten om målgruppsinmatningen hanteras i en separat tjänst, som batchförbrukning.
+POST `/audiences`-slutpunkten kan användas för att skapa metadata för en extern målgrupp, vilket gör att målgruppen kan vara synlig i Audience Portal. Du bör använda den här slutpunkten om målgruppsinmatningen hanteras i en separat tjänst, som batchförbrukning.
 
 ## Komma igång
 
