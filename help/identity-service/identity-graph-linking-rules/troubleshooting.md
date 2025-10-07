@@ -2,7 +2,7 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i Länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 0381940206d8730f2f7ae2dce849d943316b0451
+source-git-commit: 10cdbef8281ec43a21af9fead80345f1c78b9d2c
 workflow-type: tm+mt
 source-wordcount: '3444'
 ht-degree: 0%
@@ -162,11 +162,11 @@ Anta att Experience Events innehåller följande händelser för varje scenario:
 
 **Scenario 2: 2 CRMID, 1 GAID**
 
-* I det här scenariot innehåller en inkommande Experience Event 2 CRMID och 1 GAID. Mellan dessa namnutrymmen konfigureras CRMID som det namnutrymme som har den högsta namnområdesprioriteten. Eftersom det finns två GAID:n lagrar inte **profilen** den här Experience Event:n.
+* I det här scenariot innehåller en inkommande Experience Event 2 CRMID och 1 GAID. Mellan dessa namnutrymmen konfigureras CRMID som det namnutrymme som har den högsta namnområdesprioriteten. Eftersom det finns två CRMID:n lagrar inte **profilen** den här upplevelsehändelsen.
 
 **Scenario 3: 1 CRMID, 2 GAID:n**
 
-* I det här scenariot innehåller en inkommande Experience Event 1 CRMID och 2 GAID. Mellan dessa namnutrymmen konfigureras CRMID som det namnutrymme som har den högsta namnområdesprioriteten. Eftersom det bara finns ett CRMID, kommer Profil att importera Experience Events eftersom det bara finns en instans av namnutrymmet med den högsta namnområdesprioriteten.
+* I det här scenariot innehåller en inkommande Experience Event 1 CRMID och 2 GAID. Mellan dessa namnutrymmen konfigureras CRMID som det namnutrymme som har den högsta namnområdesprioriteten. Eftersom det bara finns ett CRMID, kommer Profil att importera Experience Events eftersom det bara finns en identitet för namnutrymmet med den högsta namnområdesprioriteten.
 
 **Felsökningssteg**
 
