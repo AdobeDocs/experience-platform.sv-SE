@@ -44,9 +44,9 @@ Det är viktigt att notera följande faktorer:
 
 Det finns olika orsaker till varför detta kan inträffa, bland annat följande:
 
-* [Datauppsättningen är inte aktiverad för profilen ](../../catalog/datasets/enable-for-profile.md).
+* [Datauppsättningen är inte aktiverad för profilen &#x200B;](../../catalog/datasets/enable-for-profile.md).
 * Posten hoppas över eftersom det bara finns en identitet i händelsen.
-* [Ett verifieringsfel uppstod i identitetstjänsten ](../guardrails.md#identity-value-validation).
+* [Ett verifieringsfel uppstod i identitetstjänsten &#x200B;](../guardrails.md#identity-value-validation).
    * Ett ECID kan till exempel ha överskridit den maximala längden på 38 tecken.
 * Som standard är [AAID:n spärrade från inmatning](../guardrails.md#identity-namespace-ingestion).
 * Identiteten har tagits bort på grund av [systemskyddsräcken](../guardrails.md#understanding-the-deletion-logic-when-an-identity-graph-at-capacity-is-updated).
@@ -141,8 +141,8 @@ AAID:n blockeras som standard. Om du använder [Adobe Analytics-källkopplingen]
 
 Det finns olika orsaker till varför dina händelsefragment inte kommer in i profilen, bland annat men inte begränsat till:
 
-* [Datauppsättningen är inte aktiverad för profilen ](../../catalog/datasets/enable-for-profile.md).
-* [Ett verifieringsfel kan ha inträffat i profilen ](../../xdm/classes/experienceevent.md).
+* [Datauppsättningen är inte aktiverad för profilen &#x200B;](../../catalog/datasets/enable-for-profile.md).
+* [Ett verifieringsfel kan ha inträffat i profilen &#x200B;](../../xdm/classes/experienceevent.md).
    * En upplevelsehändelse måste till exempel innehålla både `_id` och `timestamp`.
    * Dessutom måste `_id` vara unik för varje händelse (post).
 
@@ -401,7 +401,7 @@ Nej. Namnområdesprioriteten gäller bara Experience Event-datauppsättningar so
 
 ### Hur fungerar den här funktionen tillsammans med identitetsgrafens skyddsytor med 50 identiteter per diagram? Påverkar namnområdesprioriteten den systemdefinierade skyddsprofilen?
 
-Algoritmen för identitetsoptimering används först för att säkerställa personentitetsrepresentationen. Om diagrammet därefter försöker överskrida [identitetdiagrammet ](../guardrails.md) (50 identiteter per diagram) används den här logiken. Namnområdesprioriteten påverkar inte borttagningslogiken för det 50 identitets-/diagramskyddsutkastet.
+Algoritmen för identitetsoptimering används först för att säkerställa personentitetsrepresentationen. Om diagrammet därefter försöker överskrida [identitetdiagrammet &#x200B;](../guardrails.md) (50 identiteter per diagram) används den här logiken. Namnområdesprioriteten påverkar inte borttagningslogiken för det 50 identitets-/diagramskyddsutkastet.
 
 ## Testning
 
