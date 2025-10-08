@@ -91,7 +91,7 @@ Nej. Det finns ingen gräns för datastorlek, men det finns en timeout för frå
 +++Svar
 En eller flera av följande lösningar rekommenderas vid timeout i frågor.
 
-- [Konvertera frågan till en CTAS-fråga](./sql/syntax.md#create-table-as-select) och schemalägg körningen. Du kan schemalägga en körning antingen [ via gränssnittet ](./ui/user-guide.md#scheduled-queries) eller [API](./api/scheduled-queries.md#create).
+- [Konvertera frågan till en CTAS-fråga](./sql/syntax.md#create-table-as-select) och schemalägg körningen. Du kan schemalägga en körning antingen [&#x200B; via gränssnittet &#x200B;](./ui/user-guide.md#scheduled-queries) eller [API](./api/scheduled-queries.md#create).
 - Kör frågan i ett mindre datasegment genom att tillämpa ytterligare [filtervillkor](https://spark.apache.org/docs/latest/api/sql/index.html#filter).
 - [Kör EXPLAIN-kommandot](./sql/syntax.md#explain) om du vill samla in mer information.
 - Granska statistiken för data i datauppsättningen.
@@ -785,7 +785,7 @@ Ja, klientdatorer från tredje part kan anslutas till Query Service via en engå
 
 +++Svar
 Värdet för autentiseringsuppgifter som inte förfaller är sammanfogade argument från `technicalAccountID` och `credential` från JSON-konfigurationsfilen. Lösenordsvärdet har formatet: `{{technicalAccountId}:{credential}}`.
-Mer information om hur du [ansluter till externa klienter med autentiseringsuppgifter finns i dokumentationen ](./ui/credentials.md#using-credentials-to-connect-to-external-clients).
+Mer information om hur du [ansluter till externa klienter med autentiseringsuppgifter finns i dokumentationen &#x200B;](./ui/credentials.md#using-credentials-to-connect-to-external-clients).
 +++
 
 ### Finns det några begränsningar för specialtecken för lösenord som inte förfaller?
