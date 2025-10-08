@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Fråga service och data Distiller frågor och svar
 description: Det här dokumentet innehåller vanliga frågor och svar om Query Service och Data Distiller. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: f0656fcde077fc6c983a7a2d8dc21d2548fa7605
+source-git-commit: f072f95823768d5b65169b56bb874ae9c3986c44
 workflow-type: tm+mt
-source-wordcount: '5168'
+source-wordcount: '5423'
 ht-degree: 0%
 
 ---
@@ -573,18 +573,6 @@ Det finns tre sätt att begränsa åtkomsten. De är följande:
 Ja, SSL-lägen stöds. I [dokumentationen för SSL-lägen](./clients/ssl-modes.md) finns en beskrivning av de olika SSL-lägena som är tillgängliga och vilken skyddsnivå de erbjuder.
 +++
 
-### Använder vi TLS 1.2 för alla anslutningar från Power BI-klienter för att fråga tjänsten?
-
-+++Svar
-Ja. Data-in-Transition är alltid HTTPS-kompatibel. Den version som stöds för närvarande är TLS1.2.
-+++
-
-### Använder en anslutning som görs på port 80 fortfarande https?
-
-+++Svar
-Ja, en anslutning som görs på port 80 använder fortfarande SSL. Du kan också använda port 5432.
-+++
-
 ### Kan jag styra åtkomsten till specifika datauppsättningar och kolumner för en viss anslutning? Hur är detta konfigurerat?
 
 +++Svar
@@ -615,35 +603,73 @@ Ja, du kan använda kommandot `CREATE VIEW` utan åtkomst till Data Distiller. D
 Ja. Vissa tredjepartsklienter, som DbVisualizer, kan kräva en separat identifierare före och efter ett SQL-block för att ange att en del av ett skript ska hanteras som en enda sats. Mer information finns i [anonym blockdokumentation](./key-concepts/anonymous-block.md) eller i [den officiella DbVisualizer-dokumentationen](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsinganSQLDialect).
 +++
 
+## TLS, Portåtkomst och Kryptering {#tls-port-questions}
+
+### Använder en anslutning som görs på port 80 fortfarande HTTPS- och TLS-kryptering?
+
++++Svar
+Ja. Anslutningar på port 80 skyddas med TLS-kryptering och TLS-tvång krävs av tjänsten. Oformaterade HTTP-anslutningar accepteras inte. Stöd för port 80 finns för vissa kundens nätverksprinciper. Om organisationen blockerar port 80 ska du använda port 5432 i stället. Båda portarna kräver TLS och har samma säkerhetsposition.
++++
+
+### Exponerar Adobe Query Service data över okrypterad HTTP (port 80)?
+
++++Svar
+Nej. För anslutningar på port 80 krävs TLS, och alla vanliga HTTP-begäranden avvisas på serversidan. Port 5432 stöds också och är TLS-krypterad.
++++
+
+### Är användningen av port 80 för Query Service och Data Distiller en äldre konfiguration?
+
++++Svar
+Nej. Port 80 med obligatorisk TLS är en konfiguration som stöds för kunder med specifika nätverkskrav. Det är inte ett äldre eller osäkert läge. Om miljön begränsar utgående anslutningar på port 80 ska du använda port 5432 i stället. Båda portarna tillämpar TLS.
++++
+
+### Använder vi TLS 1.2 för alla anslutningar från Power BI-klienter till Query Service?
+
++++Svar
+Ja. Data som överförs skyddas alltid med HTTPS, och den version som stöds för närvarande är TLS 1.2. Alla Power BI-anslutningar till Query Service kräver krypterad transport.
++++
+
+### Är port 80 okrypterad när den används med Data Distiller?
+
++++Svar
+Nej. Data Distiller använder TLS på port 80 och avvisar alla vanliga HTTP-begäranden. Port 5432 stöds också och är TLS-krypterad.
++++
+
+### Finns det några risker eller begränsningar när man använder port 80 med Query Service eller Data Distiller?
+
++++Svar
+Ja. TLS används på port 80 och okrypterade anslutningar stöds inte. Vissa organisationer blockerar utgående trafik på port 80 på grund av principbegränsningar. Om detta gäller ditt nätverk ska du använda port 5432 i stället. Båda portarna ger samma säkerhetsnivå eftersom TLS alltid krävs.
++++
+
 ## Data Distiller {#data-distiller}
 
 ### Hur spåras användningen av Data Distiller-licenser och var kan jag se den här informationen?
 
-+++Svar\
++++Svar  
 Huvudmåttet som används för att spåra batchfrågeanvändning är beräkningstiden. Du har tillgång till den här informationen och din nuvarande förbrukning via kontrollpanelen för [licensanvändning](../dashboards/guides/license-usage.md).
 +++
 
 ### Vad är en Compute Hour?
 
-+++Svar\
++++Svar  
 Beräkningstimmar är det tidsmått som Query Service-motorerna tar för att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs.
 +++
 
 ### Hur mäts Beräkna timmar?
 
-+++Svar\
++++Svar  
 Beräkna timmar mäts kumulativt över alla dina godkända sandlådor.
 +++
 
 ### Varför märker jag ibland en variation i konsumtionen av Beräkna timmar även när jag kör samma fråga i följd?
 
-+++Svar\
++++Svar  
 Beräkningstimmar för en fråga kan fluktuera på grund av flera faktorer. Dessa omfattar den bearbetade datavolymen, komplexiteten hos omformningsåtgärder i SQL-frågan och så vidare. Frågetjänsten skalar klustret baserat på ovanstående parametrar för varje fråga, vilket kan leda till skillnader i beräkningstimmar.
 +++
 
 ### Är det normalt att lägga märke till en minskning av beräkningstimmar när jag kör samma fråga med samma data under en lång tid? Varför händer detta?
 
-+++Svar\
++++Svar  
 Infrastruktur för serverdelen har ständigt förbättrats för att optimera användningen av timmor för beräkning och bearbetningstid. Det innebär att du kan märka att prestandaförbättringarna förändras över tid.
 +++
 
