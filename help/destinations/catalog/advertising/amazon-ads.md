@@ -1,11 +1,11 @@
 ---
 title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
-last-substantial-update: 2025-01-07T00:00:00Z
+last-substantial-update: 2025-10-08T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 6afb8d56b8af8e5b0450f769414d3afcac1d58eb
 workflow-type: tm+mt
-source-wordcount: '1771'
+source-wordcount: '1977'
 ht-degree: 1%
 
 ---
@@ -57,6 +57,13 @@ Anslutningen *[!DNL Amazon Ads]* stöder aktivering av identiteter som beskrivs 
 |---|---|---|
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| `firstName` | Användarens förnamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+| `lastName` | Användarens efternamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+| `street` | Användarens gatuminivå | Endast SHA256-hash-indata stöds. Normalisera före hashning. Aktivera **inte**-omvandling på Adobe-sidan. |
+| `city` | Användarens ort | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+| `state` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+| `zip` | Användarens postnummer | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+| `country` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
 
 {style="table-layout:auto"}
 
@@ -65,7 +72,7 @@ Anslutningen *[!DNL Amazon Ads]* stöder aktivering av identiteter som beskrivs 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+| ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet *[!DNL Amazon Ads]*. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -129,6 +136,14 @@ Anslutningen [!DNL Amazon Ads] har stöd för hash-kodade e-postadresser och has
 * Om du vill mappa ohashade e-postadresser eller telefonnummer markerar du motsvarande ID-namnutrymmen som källfält och markerar alternativet `Apply Transformation` om du vill att Experience Platform ska hash-koda identiteterna när de aktiveras.
 * *NYTT från och med versionen från september 2024*: Amazon Ads kräver att du mappar ett fält som innehåller ett `countryCode`-värde i ISO-format med två tecken för att underlätta identitetsmatchningsprocessen (t.ex. USA, GB, MX, CA och så vidare). Anslutningar utan `countryCode` mappningar kommer att få negativ effekt på identitetsmatchningsfrekvenserna.
 
+>[!NOTE]
+>
+>Så här använder du dessa fält:
+> 
+>* Alla identitetsvärden ska normaliseras före intag. Se [normaliseringsguiden](https://advertising.amazon.com/help/GCCXMZYCK4RXWS6C).
+>* SHA256-hash krävs, antingen på klientsidan eller genom att aktivera Adobe omformningsinställning.
+>* I Adobe UI finns en kryssruta för att tillämpa omvandling per identitetsfält under anslutningsinställningar.
+
 Du väljer bara ett angivet målfält en gång i en destinationskonfiguration för [!DNL Amazon Ads]-kopplingen.  Om du till exempel skickar e-post för företag kan du inte heller mappa personlig e-post i samma målkonfiguration.
 
 Vi rekommenderar att du mappar så många fält du har. Om bara ett källattribut är tillgängligt kan du mappa ett enskilt fält. Målet [!DNL Amazon Ads] använder alla mappade fält för mappningsändamål, vilket ger högre matchningsfrekvenser om fler fält anges. Mer information om godkända identifierare finns på [hjälpsidan för Amazon Ads hashed-målgrupper](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
@@ -159,7 +174,7 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 Ytterligare hjälpdokumentation finns på följande [!DNL Amazon Ads] hjälpresurser:
 
-* [Amazon DSP Help Center](https://www.amazon.com/ap/signin?openid.pape.max_auth_age=28800&amp;openid.return_to=https%3A%2F%2Fadvertising.amazon.com%2Fdsp%2Fhelp%2Fss%2Fen%2Faudiences&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=amzn_bt_desktop_us&amp;openid.mode=checkid_setup&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0)
+* [Amazon DSP Help Center](https://www.amazon.com/ap/signin?openid.pape.max_auth_age=28800&openid.return_to=https%3A%2F%2Fadvertising.amazon.com%2Fdsp%2Fhelp%2Fss%2Fen%2Faudiences&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_bt_desktop_us&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0)
 
 ## Changelog {#changelog}
 
@@ -169,6 +184,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
+| Oktober 2025 | Stöd för ytterligare identitetsfält har lagts till | Ytterligare stöd för personliga identifierare som `firstName`, `lastName`, `street`, `city`, `state`, `zip` och `country` har lagts till. Genom att mappa dessa fält kan du förbättra målgruppsmatchningen. |
 | Februari 2025 | Lagt till kravet att lägga till **[!UICONTROL Amazon Ads Consent Signal]** i exportdataflöden och befordrade målet från betaversionen till allmänt tillgängligt. |
 | Maj 2024 | Funktioner och dokumentation | Mappningsalternativet har lagts till för att exportera parametern `countryCode` till Amazon Ads. Använd `countryCode` i [mappningssteget](#map) om du vill förbättra identitetsmatchningsfrekvensen med Amazon. |
 | Mars 2024 | Funktioner och dokumentation | Lagt till alternativet att exportera målgrupper som ska användas i [!DNL Amazon Marketing Cloud] (AMC). |
