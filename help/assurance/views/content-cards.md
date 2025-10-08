@@ -34,7 +34,7 @@ Använd växlingsknappen **[!UICONTROL Theme]** för att visa kortet i ljust ell
 
 I det vänstra avsnittet beror de tillgängliga flikarna på det valda kortet. Om kortet innehåller regler visas tre flikar: **[!UICONTROL Info]**, **[!UICONTROL Interactions]** och **[!UICONTROL Analyze Rules]**.
 
-![Tillgängliga flikar när det finns regler: Info, Interaktioner, Analysera regler ](./images/content-cards/tabs-with-rules.png)
+![Tillgängliga flikar när det finns regler: Info, Interaktioner, Analysera regler &#x200B;](./images/content-cards/tabs-with-rules.png)
 
 Om kortet inte innehåller regler visas två flikar: **[!UICONTROL Info]** och **[!UICONTROL Interactions]**.
 
@@ -66,7 +66,7 @@ Varje rad representerar en sessionshändelse och varje kolumn anger om kortets r
 
 Om händelsen matchar ett villkor visas en grön bockmarkering. Om händelsen inte matchar visas en röd ikon.
 
-![Analysera flikhändelsetabell med kolumnerna Visa, Stäng och Disvalidera regel ](./images/content-cards/rules-tab.png)
+![Analysera flikhändelsetabell med kolumnerna Visa, Stäng och Disvalidera regel &#x200B;](./images/content-cards/rules-tab.png)
 
 Använd skjutreglaget **[!UICONTROL Match Threshold]** för att filtrera händelser efter lägsta matchningsprocent.
 
@@ -74,7 +74,7 @@ Använd skjutreglaget **[!UICONTROL Match Threshold]** för att filtrera händel
 
 När du väljer en händelse öppnas en informationspanel till höger med ett dragspel som listar de tre reglerna: **[!UICONTROL Display]**, **[!UICONTROL Dismiss]** och **[!UICONTROL Disqualify]**.
 
-![Panelen Händelseinformation med en lista över regler för att visa, avvisa och diskvalificera ](./images/content-cards/rules-panel.png)
+![Panelen Händelseinformation med en lista över regler för att visa, avvisa och diskvalificera &#x200B;](./images/content-cards/rules-panel.png)
 
 Expandera valfritt avsnitt för att se regelns villkor, vilka villkor som matchar, och den beräknade matchningsprocenten för det resultatet.
 
