@@ -2,9 +2,9 @@
 title: Kopiera resurser
 description: Lär dig hur du skapar en ny taggresurs med inställningarna för en befintlig taggresurs i Adobe Experience Platform.
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a4e4fe0ae0f52a3b4b5bfa2c42ef4dce7f2a6a59
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '831'
 ht-degree: 5%
 
 ---
@@ -42,6 +42,10 @@ När du har konfigurerat det beteende du vill använda väljer du **[!UICONTROL 
 ## Kopiera egenskaper
 
 När du gör en kopia av en fullständig egenskap finns det några saker du bör känna till om processen.
+
+>[!IMPORTANT]
+>
+>Resurser som använder variabeltypen för uppdatering av dataelement kräver ytterligare steg efter kopiering. Redigera varje åtgärd för att uppdatera variabeln, redigera valfritt värde i data- eller XDM-objektet och spara ändringarna. Det publicerade biblioteket ska sedan fungera som förväntat. Kontakta teknisk support om du har frågor om detta.
 
 * Egenskapsinställningarna kopieras exakt som de är (domäner, avancerade inställningar osv.)
 * Regler, dataelement och tillägg från egenskapen origin kopieras till den nya egenskapen target.  Adaptrar, miljöer och bibliotek kopieras inte.
