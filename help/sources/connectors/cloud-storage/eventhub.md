@@ -3,9 +3,9 @@ title: Azure Event Hubs Source Connector - översikt
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
+source-git-commit: 02c777b5db9734cf45b35f131d83c35c5ce670fb
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,9 @@ Om du vill öka hastigheten för intag på Experience Platform-sidan måste Expe
 
 ## Använd ett virtuellt nätverk för att ansluta till [!DNL Event Hubs] till Experience Platform
 
-Du kan konfigurera ett virtuellt nätverk för att ansluta [!DNL Event Hubs] till Experience Platform medan brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till det här [[!DNL Event Hubs] uppsättningsdokumentet för nätverksregler](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) och följer stegen nedan:
+Experience Platform stöder anslutning till [!DNL Event Hubs] via ett virtuellt nätverk. På så sätt kan du överföra data via en säker, privat anslutning i stället för via det offentliga Internet. Du kan tillåtslista Experience Platform VNet för att på ett säkert sätt dirigera [!DNL Event Hubs]-trafik via det privata [!DNL Azure]-stamnätet samtidigt som du behåller dina befintliga brandväggsskydd.
+
+Om du vill konfigurera ett virtuellt nätverk går du till det här [[!DNL Event Hubs] uppsättningsdokumentet för nätverksregler](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) och följer stegen nedan:
 
 * Välj **Prova** på REST API-panelen;
 * Autentisera ditt [!DNL Azure]-konto med dina autentiseringsuppgifter i samma webbläsare;
