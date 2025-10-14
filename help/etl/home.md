@@ -25,7 +25,7 @@ Integreringsguiden för ETL innehåller allmänna steg för att skapa säkra ans
 
 Den här handboken innehåller även exempel på API-anrop som ska användas när du utformar en ETL-koppling, med länkar till dokumentation som beskriver varje [!DNL Experience Platform]-tjänst och användningen av dess API, i detalj.
 
-En exempelintegrering är tillgänglig på [!DNL GitHub] via [ETL Ecosystem Integration Reference Code ](https://github.com/adobe/acp-data-services-etl-reference) under [!DNL Apache] License Version 2.0.
+En exempelintegrering är tillgänglig på [!DNL GitHub] via [ETL Ecosystem Integration Reference Code &#x200B;](https://github.com/adobe/acp-data-services-etl-reference) under [!DNL Apache] License Version 2.0.
 
 ## Arbetsflöde
 
@@ -286,7 +286,7 @@ Det observerbara schemat är det schema som du skulle använda om du läste data
 
 ### Förhandsgranska data
 
-ETL-programmet kan ge möjlighet att förhandsgranska data ([&quot;Bild 8&quot; i ETL-arbetsflödet ](./workflow.md)). API:t för dataåtkomst innehåller flera alternativ för att förhandsgranska data.
+ETL-programmet kan ge möjlighet att förhandsgranska data ([&quot;Bild 8&quot; i ETL-arbetsflödet &#x200B;](./workflow.md)). API:t för dataåtkomst innehåller flera alternativ för att förhandsgranska data.
 
 Ytterligare information, inklusive stegvisa anvisningar för att förhandsgranska data med hjälp av API:t för dataåtkomst, finns i [dataåtkomstsjälvstudiekursen](../data-access/tutorials/dataset-data.md).
 
@@ -454,7 +454,7 @@ Mer information om API:t [!DNL Data Access], inklusive detaljerade begäranden o
 
 ### Hämta fileDescription från datauppsättningen
 
-Målkomponenten är utdata från omformade data och datateknikern väljer en utdatauppsättning ([&quot;Figur 12&quot; i ETL-arbetsflödet ](workflow.md)). XDM-schemat är associerat med utdatauppsättningen. De data som ska skrivas identifieras av attributet &quot;fileDescription&quot; för datauppsättningsentiteten från API:erna för dataidentifiering. Den här informationen kan hämtas med ett datauppsättnings-ID (`{DATASET_ID}`). Egenskapen fileDescription i JSON-svaret innehåller den begärda informationen.
+Målkomponenten är utdata från omformade data och datateknikern väljer en utdatauppsättning ([&quot;Figur 12&quot; i ETL-arbetsflödet &#x200B;](workflow.md)). XDM-schemat är associerat med utdatauppsättningen. De data som ska skrivas identifieras av attributet &quot;fileDescription&quot; för datauppsättningsentiteten från API:erna för dataidentifiering. Den här informationen kan hämtas med ett datauppsättnings-ID (`{DATASET_ID}`). Egenskapen fileDescription i JSON-svaret innehåller den begärda informationen.
 
 **API-format**
 

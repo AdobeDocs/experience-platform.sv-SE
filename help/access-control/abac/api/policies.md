@@ -22,7 +22,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här slutpunkten ska inte blandas ihop med `/policies`-slutpunkten i [ API:t för principtjänst ](../../../data-governance/api/policies.md) som används för att hantera dataanvändningsprinciper.
+>Den här slutpunkten ska inte blandas ihop med `/policies`-slutpunkten i [&#x200B; API:t för principtjänst &#x200B;](../../../data-governance/api/policies.md) som används för att hantera dataanvändningsprinciper.
 
 ## Komma igång
 

@@ -20,7 +20,7 @@ ht-degree: 96%
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
 - [AI-assistenten](#ai-assistant)
-- [Mål ](#destinations)
+- [Mål &#x200B;](#destinations)
 - [Frågetjänst](#query-service)
 - [Sandlådor](#sandboxes)
 - [Dokumentationsuppdateringar](#documentation-updates)

@@ -71,7 +71,7 @@ Mer information om taggar i Experience Platform finns i [taggöversikten](../../
 
 Om du vill testa implementeringen i utvecklings- eller staging-miljöer samtidigt som [!DNL Meta Pixel]-analysen för produktionen förblir intakt, kan du använda ett dataelement för att dynamiskt välja ett lämpligt [!DNL Pixel]-ID beroende på vilken miljö som används.
 
-Du kan uppnå detta genom att använda ett [!UICONTROL Custom Code]-dataelement (tillhandahålls av [[!UICONTROL Core] extension](../core/overview.md)) i kombination med den [`turbine` kostnadsfria variabeln ](../../../extension-dev/turbine.md). I dataelementets JavaScript-kod använder du objektet `turbine` för att hitta den aktuella miljöfasen och returnerar sedan ett lämpligt [!DNL Pixel]-ID baserat på resultatet.
+Du kan uppnå detta genom att använda ett [!UICONTROL Custom Code]-dataelement (tillhandahålls av [[!UICONTROL Core] extension](../core/overview.md)) i kombination med den [`turbine` kostnadsfria variabeln &#x200B;](../../../extension-dev/turbine.md). I dataelementets JavaScript-kod använder du objektet `turbine` för att hitta den aktuella miljöfasen och returnerar sedan ett lämpligt [!DNL Pixel]-ID baserat på resultatet.
 
 I följande exempel returneras det falska produktions-ID:t `exampleProductionKey` när det används i produktionsmiljön och ett annat ID `exampleTestKey` när någon annan miljö används. När du implementerar den här koden ska du ersätta varje värde med din faktiska produktion och testa [!DNL Pixel]-ID:n.
 

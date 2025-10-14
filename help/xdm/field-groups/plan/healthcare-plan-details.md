@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Schemafältgruppen [!UICONTROL Healthcare Plan Details]
 
-[!UICONTROL Healthcare Plan Details] är en standardschemafältgrupp för klassen [[!UICONTROL Plan] ](../../classes/plan.md). Det tillhandahåller ett enskilt objekttypsfält `healthcarePlanDetails` som hämtar egenskaper som är relaterade till en medicinsk plan.
+[!UICONTROL Healthcare Plan Details] är en standardschemafältgrupp för klassen [[!UICONTROL Plan] &#x200B;](../../classes/plan.md). Det tillhandahåller ett enskilt objekttypsfält `healthcarePlanDetails` som hämtar egenskaper som är relaterade till en medicinsk plan.
 
 ![](../../images/field-groups/plan/healthcare-plan-details.png)
 

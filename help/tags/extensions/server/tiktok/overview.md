@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # API-tilläggets [!DNL TikTok] för webbhändelser - översikt
 
-Händelse-API:t [!DNL TikTok] är ett säkert [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL TikTok] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från [!DNL Adobe Experience Platform Edge Network] till [!DNL TikTok] med hjälp av API-tillägget [!DNL TikTok] för webbhändelser.
+Händelse-API:t [!DNL TikTok] är ett säkert [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL TikTok] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från [!DNL Adobe Experience Platform Edge Network] till [!DNL TikTok] med hjälp av API-tillägget [!DNL TikTok] för webbhändelser.
 
 ## Krav för [!DNL TikTok] {#prerequisites}
 

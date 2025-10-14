@@ -82,7 +82,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 När du har upprättat autentiseringsanslutningen till [!DNL Amazon S3] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector ](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector &#x200B;](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 

@@ -20,7 +20,7 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 1. Först måste du definiera åsidosättningen av din datastream-konfiguration på [datastream-konfigurationssidan](configure.md).
 2. Sedan måste du skicka åsidosättningarna till Edge Network på något av följande sätt:
    * Via kommandona `sendEvent` eller `configure` [Web SDK](#send-overrides).
-   * Via SDK-taggtillägget [Web ](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+   * Via SDK-taggtillägget [Web &#x200B;](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
    * Genom Mobile SDK [sendEvent](#send-overrides)-API:t eller genom att använda [Rules](#send-overrides).
 
 I den här artikeln förklaras den kompletta processen för åsidosättning av datastream-konfigurationen för alla typer av åsidosättningar som stöds.

@@ -64,7 +64,7 @@ Vi kommer att gå igenom åtkomsten till data internt från [!DNL Adobe Experien
 
 #### Externa data
 
-När butiksförsäljningsjournalen är öppen hittar du rubriken&quot;Läs in data&quot;. I följande [!DNL Python]-kod används pandas `DataFrame`-datastruktur och funktionen [ read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns på [!DNL Github] i DataFrame:
+När butiksförsäljningsjournalen är öppen hittar du rubriken&quot;Läs in data&quot;. I följande [!DNL Python]-kod används pandas `DataFrame`-datastruktur och funktionen [&#x200B; read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns på [!DNL Github] i DataFrame:
 
 ![](../images/jupyterlab/analyze-data/read_csv.png)
 

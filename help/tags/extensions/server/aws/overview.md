@@ -18,7 +18,7 @@ ht-degree: 0%
 
 [[!DNL Amazon Web Services] ([!DNL AWS])](https://aws.amazon.com/) är en molnbaserad datorplattform som erbjuder en mängd olika tjänster, till exempel distribuerad databehandling, databaslagring, innehållsleverans och SaaS-integrationstjänster (Software-as-a-service) för kundrelationshantering (CRM) och resursplanering (ERP).
 
-Tillägget [!DNL AWS] [Vidarebefordra ](../../../ui/event-forwarding/overview.md) använder [[!DNL Amazon Kinesis Data Streams]](https://docs.aws.amazon.com/streams/latest/dev/introduction.html) för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL AWS] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
+Tillägget [!DNL AWS] [Vidarebefordra &#x200B;](../../../ui/event-forwarding/overview.md) använder [[!DNL Amazon Kinesis Data Streams]](https://docs.aws.amazon.com/streams/latest/dev/introduction.html) för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL AWS] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
 
 ## Förhandskrav
 

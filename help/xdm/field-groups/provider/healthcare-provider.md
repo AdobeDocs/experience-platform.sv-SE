@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Schemafältgruppen [!UICONTROL Healthcare Provider]
 
-[!UICONTROL Healthcare Provider] är en standardschemafältgrupp för klassen [[!UICONTROL Provider] ](../../classes/provider.md). Det tillhandahåller ett enskilt objekttypsfält `healthcareProvider` som fångar egenskaper som är kopplade till en enskild hälso- och sjukvårdspersonal eller en organisation som är licensierad att tillhandahålla hälso- och sjukvårdstjänster.
+[!UICONTROL Healthcare Provider] är en standardschemafältgrupp för klassen [[!UICONTROL Provider] &#x200B;](../../classes/provider.md). Det tillhandahåller ett enskilt objekttypsfält `healthcareProvider` som fångar egenskaper som är kopplade till en enskild hälso- och sjukvårdspersonal eller en organisation som är licensierad att tillhandahålla hälso- och sjukvårdstjänster.
 
 ![](../../images/field-groups/healthcare-provider.png)
 

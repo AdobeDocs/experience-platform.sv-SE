@@ -478,5 +478,5 @@ Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[
 
 När du har slutfört konfigurationen av din förutsättning kan du fortsätta ansluta och importera dina [!DNL Stripe]-data till Experience Platform. Läs följande guider om du vill veta hur du importerar [!DNL Stripe] betalningsdata till Experience Platform med API:er eller användargränssnittet:
 
-* [Infoga betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service ](../../tutorials/api/create/payments/stripe.md).
+* [Infoga betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service &#x200B;](../../tutorials/api/create/payments/stripe.md).
 * [Registrera betalningsdata från ditt Stripe-konto till Experience Platform via användargränssnittet](../../tutorials/ui/create/payments/stripe.md).

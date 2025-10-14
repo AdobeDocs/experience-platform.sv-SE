@@ -109,7 +109,7 @@ Nu kan du överföra data med knappen **Lägg till data** och det kommer att imp
 
 ### Använd flödet [!UICONTROL Map CSV to XDM schema] {#map-flow}
 
-Om du vill använda [!UICONTROL Map CSV to XDM schema]-flödet följer du stegen i [Mappa en CSV-fil ](../tutorials/map-csv/overview.md). När du har nått steget **[!UICONTROL Add data]** bör du notera fälten **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]**.
+Om du vill använda [!UICONTROL Map CSV to XDM schema]-flödet följer du stegen i [Mappa en CSV-fil &#x200B;](../tutorials/map-csv/overview.md). När du har nått steget **[!UICONTROL Add data]** bör du notera fälten **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]**.
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 

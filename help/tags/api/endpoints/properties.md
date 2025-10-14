@@ -714,7 +714,7 @@ Egenskaperna är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du 
 
 ## Hämta relaterade resurser för en egenskap {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en egenskap. När [söker upp en egenskap ](#lookup) visas dessa relationer under egenskapen `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för en egenskap. När [söker upp en egenskap &#x200B;](#lookup) visas dessa relationer under egenskapen `relationships`.
 
 Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 

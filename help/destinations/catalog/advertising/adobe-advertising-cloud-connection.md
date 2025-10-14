@@ -72,7 +72,7 @@ Om du vill ansluta till målet följer du instruktionerna för att [skapa en må
 
 Om du vill ansluta till målet anger du följande parameter i avsnittet [!UICONTROL Connection type] och väljer sedan **[!UICONTROL Connect to destination]**:
 
-* **[!UICONTROL Account or Advertiser Key]**: Den här [!UICONTROL Source Key] genereras när en [[!DNL Real-Time CDP] källa skapas i det DSP användargränssnittet ](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE). Ditt DSP-kontoteam delar nyckeln med dig när de har skapat källan.
+* **[!UICONTROL Account or Advertiser Key]**: Den här [!UICONTROL Source Key] genereras när en [[!DNL Real-Time CDP] källa skapas i det DSP användargränssnittet &#x200B;](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE). Ditt DSP-kontoteam delar nyckeln med dig när de har skapat källan.
 
 ![Fält för anslutningstyp](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 

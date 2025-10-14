@@ -100,7 +100,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)*
 * [Pinterest Conversion Tracking](https://exchange.adobe.com/apps/ec/100523)*
 * [Pixelinläsare](https://exchange.adobe.com/apps/ec/100152)*
-* [Frågor och svar om webbplatsen ](https://exchange.adobe.com/apps/ec/101569)*
+* [Frågor och svar om webbplatsen &#x200B;](https://exchange.adobe.com/apps/ec/101569)*
 * [Quantum Metric](https://exchange.adobe.com/apps/ec/101535)*
 * [Lös kortskrift](https://exchange.adobe.com/apps/ec/108352)*
 * [Rokt](https://exchange.adobe.com/apps/ec/107591)*

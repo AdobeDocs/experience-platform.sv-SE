@@ -51,7 +51,7 @@ I den aktuella versionen av stöd för tillståndsbearbetning i Experience Platf
 
 >[!NOTE]
 >
->Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] ](/help/xdm/data-types/consents.md).
+>Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] &#x200B;](/help/xdm/data-types/consents.md).
 
 När systemet har konfigurerats tolkar Experience Platform Web SDK datainsamlingsvärdet för den aktuella användaren för att avgöra om data ska skickas till Adobe Experience Platform Edge Network, tas bort från klienten eller bevaras tills datainsamlingsbehörigheten är inställd på ja eller nej.
 

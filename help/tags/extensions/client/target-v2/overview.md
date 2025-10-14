@@ -109,7 +109,7 @@ Mer information finns i [Målets onlinehjälpdokumentation](https://experiencele
 1. Ange det vynamn som måste utlösas.
 1. Ange om utlösaren för vyn ska tillskrivas ett intryck för rapportering genom att markera kryssrutan Sida. Om vyn är korrelerad till en komponent som återges på nytt och inte ger ett intryck av att rapportera, ska du inte markera kryssrutan Sida.
 
-Mer information om hur du utlöser en vy finns i [`triggerView()` hjälpdokumentationen ](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html?lang=sv-SE).
+Mer information om hur du utlöser en vy finns i [`triggerView()` hjälpdokumentationen &#x200B;](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html?lang=sv-SE).
 
 ## Grundläggande Adobe Target-driftsättning
 

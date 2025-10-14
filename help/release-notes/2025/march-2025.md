@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 
 - [Versionsinformation för Adobe Experience Platform](#adobe-experience-platform-release-notes)
    - [Kontrollpaneler](#dashboards)
-   - [Mål ](#destinations)
+   - [Mål &#x200B;](#destinations)
    - [Federerad målgruppssammansättning](#federated-audience-composition)
    - [Segmenteringstjänst](#segmentation-service)
    - [Källor](#sources)
@@ -57,7 +57,7 @@ Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer inform
 | Funktion | Beskrivning |
 | --- | --- |
 | [Förbättringar av rapporteringsnoggrannhet för strömningsmål](../../dataflows/ui/monitor-destinations.md) | Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsdestinationerna. Denna förbättring säkerställer en bättre anpassning mellan rapporteringen i Experience Platform och destinationsplattformarna. <br> Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsåterförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsåterförsöket i det totala antalet. <br> Den här förbättringen gäller för alla strömningsdestinationerna. <br> Efter denna förbättring kan användare av strömningsdestinationer se en förväntad minskning av antalet **[!UICONTROL Identities failed]**. |
-| [Fältexport av karttyp för storföretags- och Edge-destinationer](/help/destinations/ui/export-arrays-maps-objects.md) | När du exporterar data till [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [ HTTP API](/help/destinations/catalog/streaming/http-destination.md) och [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) -destinationer kan du nu välja mappningsfält för export i mappningssteget i aktiveringsarbetsflödet. <br> ![Exportera karttypsfält till storföretagsdestinationer.](../2025/assets/march/export-map.png "Exportera karttypsfält till storföretagsdestinationer."){width="250" align="center" zoomable="yes"} |
+| [Fältexport av karttyp för storföretags- och Edge-destinationer](/help/destinations/ui/export-arrays-maps-objects.md) | När du exporterar data till [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [&#x200B; HTTP API](/help/destinations/catalog/streaming/http-destination.md) och [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) -destinationer kan du nu välja mappningsfält för export i mappningssteget i aktiveringsarbetsflödet. <br> ![Exportera karttypsfält till storföretagsdestinationer.](../2025/assets/march/export-map.png "Exportera karttypsfält till storföretagsdestinationer."){width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 

@@ -109,7 +109,7 @@ Arbetsytan [!UICONTROL Job Requests] innehåller information om de senaste jobbf
 >
 >Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
 
-Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken [!UICONTROL Job Requests]. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Sökfältet utför en snabbsökning som matchar sekretessposter-ID:n för de återgivna/inlästa jobben i användargränssnittet. Det är inte en omfattande sökning efter alla dina skickade jobb. Det är i stället ett filter som tillämpas på de inlästa resultaten. Använd Privacy Service-API:t för att [returnera jobb baserat på en viss regel, datumintervall eller ett enskilt jobb ](../api/privacy-jobs.md#list).
+Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken [!UICONTROL Job Requests]. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Sökfältet utför en snabbsökning som matchar sekretessposter-ID:n för de återgivna/inlästa jobben i användargränssnittet. Det är inte en omfattande sökning efter alla dina skickade jobb. Det är i stället ett filter som tillämpas på de inlästa resultaten. Använd Privacy Service-API:t för att [returnera jobb baserat på en viss regel, datumintervall eller ett enskilt jobb &#x200B;](../api/privacy-jobs.md#list).
 
 >[!TIP]
 >

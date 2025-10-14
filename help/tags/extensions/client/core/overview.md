@@ -636,7 +636,7 @@ Den här åtgärden utlöser alla regler som använder en specifik [direktanrops
 
 ![Skärmbild av en direktanropsåtgärd för utlösare i användargränssnittet för datainsamling](../../../images/extensions/client/core/direct-call-action.png)
 
-Åtgärden mappar direkt till [`track`-metoden ](../../../ui/client-side/satellite-object.md#track) i `satellite`-objektet, som kan nås av kod på klientsidan.
+Åtgärden mappar direkt till [`track`-metoden &#x200B;](../../../ui/client-side/satellite-object.md#track) i `satellite`-objektet, som kan nås av kod på klientsidan.
 
 ## Dataelementtyper för kärntillägg
 

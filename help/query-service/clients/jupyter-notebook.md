@@ -82,4 +82,4 @@ Ange och kör funktionen `df.head()` för att se resultatet av en tabellfråga.
 
 ## Nästa steg
 
-Nu när du har anslutit till frågetjänsten kan du använda [!DNL Jupyter Notebook] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i [guiden ](../best-practices/writing-queries.md) som kör frågor.
+Nu när du har anslutit till frågetjänsten kan du använda [!DNL Jupyter Notebook] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i [guiden &#x200B;](../best-practices/writing-queries.md) som kör frågor.

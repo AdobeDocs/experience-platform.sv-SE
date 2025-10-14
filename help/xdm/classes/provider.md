@@ -23,4 +23,4 @@ I Experience Data Model (XDM) fångar klassen [!UICONTROL Provider] den minsta u
 
 {style="table-layout:auto"}
 
-Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare Provider] ](../field-groups/provider/healthcare-provider.md) för att beskriva mer information om en vårdleverantör.
+Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare Provider] &#x200B;](../field-groups/provider/healthcare-provider.md) för att beskriva mer information om en vårdleverantör.

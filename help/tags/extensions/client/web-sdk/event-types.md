@@ -20,7 +20,7 @@ Adobe Experience Platform Web SDK innehåller övervakningskopplingar som du kan
 
 Fullständig information om vilka parametrar varje övervakningshändelse innehåller finns i [dokumentationen för Web SDK-övervakning av kopplingar](../../../../web-sdk/monitoring-hooks.md).
 
-![Taggar användargränssnittsbilden som visar typen för Övervakningshändelse ](assets/monitoring-hook-triggered.png)
+![Taggar användargränssnittsbilden som visar typen för Övervakningshändelse &#x200B;](assets/monitoring-hook-triggered.png)
 
 Web SDK-taggtillägget stöder följande övervakningskopplingar:
 
@@ -44,7 +44,7 @@ Web SDK-taggtillägget stöder följande övervakningskopplingar:
 
 ## [!UICONTROL Send event complete]
 
-Vanligtvis har din egenskap en eller flera regler som använder [[!UICONTROL Send event]-åtgärden ](action-types.md#send-event) för att skicka händelser till Adobe Experience Platform Edge Network. Varje gång en händelse skickas till Edge Network returneras ett svar med användbara data till webbläsaren. Utan händelsetypen [!UICONTROL Send event complete] har du inte åtkomst till dessa returnerade data.
+Vanligtvis har din egenskap en eller flera regler som använder [[!UICONTROL Send event]-åtgärden &#x200B;](action-types.md#send-event) för att skicka händelser till Adobe Experience Platform Edge Network. Varje gång en händelse skickas till Edge Network returneras ett svar med användbara data till webbläsaren. Utan händelsetypen [!UICONTROL Send event complete] har du inte åtkomst till dessa returnerade data.
 
 Om du vill komma åt returnerade data skapar du en separat regel och lägger sedan till en [!UICONTROL Send event complete]-händelse i regeln. Den här regeln aktiveras varje gång ett lyckat svar tas emot från servern som ett resultat av en [!UICONTROL Send event]-åtgärd.
 

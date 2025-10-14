@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform. [!DNL Schema Library] innehåller resurser som gjorts tillgängliga för dig av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
-I den här självstudien används [!DNL Schema Registry]-API:t för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [ självstudiekursen för schemaredigeraren ](create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
+I den här självstudien används [!DNL Schema Registry]-API:t för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [&#x200B; självstudiekursen för schemaredigeraren &#x200B;](create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
 
 >[!NOTE]
 >
@@ -221,7 +221,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 **Begäran**
 
-Denna begäran uppdaterar schemat för bonusmedlemmar så att fälten i fältgruppen [[!UICONTROL Demographic Details] ](../field-groups/profile/demographic-details.md) (`profile-person-details`) inkluderas.
+Denna begäran uppdaterar schemat för bonusmedlemmar så att fälten i fältgruppen [[!UICONTROL Demographic Details] &#x200B;](../field-groups/profile/demographic-details.md) (`profile-person-details`) inkluderas.
 
 Genom att lägga till fältgruppen `profile-person-details` hämtar schemat för lojalitetsmedlemmar nu demografisk information för lojalitetsprogrammedlemmar som förnamn, efternamn och födelsedag.
 

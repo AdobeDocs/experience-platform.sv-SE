@@ -29,7 +29,7 @@ När du först kommer åt arbetsytan **[!UICONTROL Data Lifecycle]** i gränssni
 
 I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** om du vill visa en lista över postborttagningsaktiviteter och **[!UICONTROL Dataset]** om du vill visa en lista över förfallotider för schemalagda datauppsättningar.
 
-![Bild som visar fliken [!UICONTROL Dataset] ](../images/ui/browse/dataset-tab.png)
+![Bild som visar fliken [!UICONTROL Dataset] &#x200B;](../images/ui/browse/dataset-tab.png)
 
 Välj trattikonen (![Bild av trattikonen](/help/images/icons/filter.png)) om du vill visa en lista med filter för de arbetsorder som visas.
 

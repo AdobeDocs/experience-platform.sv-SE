@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här versionen av Pega Customer Decision Hub Realtime Audience-destinationen stöder endast en Pega Customer Decision-applikation. Om du har konfigurerat flera Pega Customer Decision Hub-program måste du använda målanslutningen [(V2) Pega CDH Realtime Audience ](./pega-v2.md).
+>Den här versionen av Pega Customer Decision Hub Realtime Audience-destinationen stöder endast en Pega Customer Decision-applikation. Om du har konfigurerat flera Pega Customer Decision Hub-program måste du använda målanslutningen [(V2) Pega CDH Realtime Audience &#x200B;](./pega-v2.md).
 
 ## Översikt {#overview}
 
@@ -86,7 +86,7 @@ Fyll i fälten nedan och välj **[!UICONTROL Connect to destination]**:
 
 När du har upprättat autentiseringsanslutningen till [!DNL Pega Customer Decision Hub] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH ](../../assets/catalog/personalization/pega/pega-connect-destination.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH &#x200B;](../../assets/catalog/personalization/pega/pega-connect-destination.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**.
 

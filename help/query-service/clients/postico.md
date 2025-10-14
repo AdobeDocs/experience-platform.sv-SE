@@ -45,4 +45,4 @@ Mer information om [att använda frågevyn](https://eggerapps.at/postico/docs/v1
 
 ## Nästa steg
 
-Nu när du är ansluten till [!DNL Query Service] kan du använda [!DNL Postico] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i [guiden ](../best-practices/writing-queries.md) som kör frågor.
+Nu när du är ansluten till [!DNL Query Service] kan du använda [!DNL Postico] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i [guiden &#x200B;](../best-practices/writing-queries.md) som kör frågor.

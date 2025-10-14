@@ -117,7 +117,7 @@ Varje etikett har en tillhörande grundprincip som, när den är aktiverad, till
 
 Om de tillgängliga grundreglerna inte täcker alla dina användningsfall (till exempel när du använder anpassade etiketter som du har definierat under din organisation) kan du definiera en anpassad profil i stället. Välj **[!UICONTROL Create policy]** på arbetsytan **[!UICONTROL Policies]**.
 
-![Bild som visar knappen [!UICONTROL Create policy] som markeras i användargränssnittet ](./images/e2e/create-policy.png)
+![Bild som visar knappen [!UICONTROL Create policy] som markeras i användargränssnittet &#x200B;](./images/e2e/create-policy.png)
 
 En pover visas och du uppmanas att välja vilken typ av profil du vill skapa. Välj **[!UICONTROL Data governance policy]** och sedan **[!UICONTROL Continue]**.
 

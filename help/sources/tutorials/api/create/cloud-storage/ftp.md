@@ -108,4 +108,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en FTP-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service ](../../explore/cloud-storage.md).
+Genom att följa den här självstudiekursen har du skapat en FTP-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service &#x200B;](../../explore/cloud-storage.md).

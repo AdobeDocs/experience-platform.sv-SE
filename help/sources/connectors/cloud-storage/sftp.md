@@ -25,7 +25,7 @@ I det här avsnittet finns information om nödvändiga steg som du måste slutf�
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista ](../../ip-address-allow-list.md).
+En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista &#x200B;](../../ip-address-allow-list.md).
 
 ### Namnbegränsningar för filer och kataloger
 

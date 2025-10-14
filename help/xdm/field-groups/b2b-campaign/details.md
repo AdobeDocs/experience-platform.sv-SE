@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Schemafältgruppen [!UICONTROL XDM Business Campaign Details]
 
-[!UICONTROL XDM Business Campaign Details] är en standardschemafältgrupp för klassen [[!UICONTROL XDM Business Campaign] ](../../classes/b2b/business-campaign.md) som samlar in detaljerad information om en företagskampanj.
+[!UICONTROL XDM Business Campaign Details] är en standardschemafältgrupp för klassen [[!UICONTROL XDM Business Campaign] &#x200B;](../../classes/b2b/business-campaign.md) som samlar in detaljerad information om en företagskampanj.
 
 ![Strukturen för fältgruppen XDM Business Campaign Details så som den visas i användargränssnittet](../../images/field-groups/b2b/business-campaign-details.png)
 

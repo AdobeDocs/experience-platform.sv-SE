@@ -23,4 +23,4 @@ I Experience Data Model (XDM) hämtar klassen [!UICONTROL Plan] den minsta upps�
 
 {style="table-layout:auto"}
 
-Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare Plan Details] ](../field-groups/plan/healthcare-plan-details.md) för att beskriva mer information om en sjukförsäkringsplan.
+Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare Plan Details] &#x200B;](../field-groups/plan/healthcare-plan-details.md) för att beskriva mer information om en sjukförsäkringsplan.

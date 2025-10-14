@@ -17,7 +17,7 @@ Det här dokumentet innehåller information om användning och begränsningar f�
 
 ## Förhandskrav
 
-Textbundna mallar stöds både av API:t för användargränssnittet och frågetjänsten. Läs dokumentationen om hur du [skapar en frågemall via API:t ](../api/query-templates.md#create-a-query-template) eller med [frågeredigeraren](../ui/user-guide.md#query-authoring) innan du fortsätter med den här guiden.
+Textbundna mallar stöds både av API:t för användargränssnittet och frågetjänsten. Läs dokumentationen om hur du [skapar en frågemall via API:t &#x200B;](../api/query-templates.md#create-a-query-template) eller med [frågeredigeraren](../ui/user-guide.md#query-authoring) innan du fortsätter med den här guiden.
 
 ## Syntax för infogad mall {#syntax}
 

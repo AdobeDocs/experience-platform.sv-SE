@@ -141,7 +141,7 @@ Fältgruppen [Consents and Preferences](/help/xdm/field-groups//profile/consents
 
 +++Profiltestinformation (fältgrupp)
 
-Med den här fältgruppen kan du testa din resa innan den publiceras med testprofiler. Mer information om hur du skapar testprofiler finns i självstudiekursen [Skapa testprofiler](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html?lang=sv-SE) och [testa självstudiekursen ](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html?lang=sv-SE).
+Med den här fältgruppen kan du testa din resa innan den publiceras med testprofiler. Mer information om hur du skapar testprofiler finns i självstudiekursen [Skapa testprofiler](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html?lang=sv-SE) och [testa självstudiekursen &#x200B;](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html?lang=sv-SE).
 
 +++
 

@@ -21,7 +21,7 @@ Din anpassade kontrollpanel visas. Välj sedan **[!UICONTROL Export]** överst t
 
 >[!NOTE]
 >
->Export med endast visualisering kräver inte behörighet [!UICONTROL Export Dashboard Data]. Mer information finns i [[!UICONTROL View more]-dokumentationen ](./view-more.md#export).
+>Export med endast visualisering kräver inte behörighet [!UICONTROL Export Dashboard Data]. Mer information finns i [[!UICONTROL View more]-dokumentationen &#x200B;](./view-more.md#export).
 
 ![En anpassad kontrollpanel med Exportera markerad.](../images/sql-insights-query-pro-mode/export.png)
 

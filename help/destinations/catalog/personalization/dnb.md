@@ -20,7 +20,7 @@ Analysera okända besökare och konvertera dem till leads.
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
-![Tillägget D&amp;B Visitor Intelligence ](../../assets/catalog/personalization/dnb/catalog.png)
+![Tillägget D&amp;B Visitor Intelligence &#x200B;](../../assets/catalog/personalization/dnb/catalog.png)
 
 ## Förhandskrav {#prerequisites}
 

@@ -55,4 +55,4 @@ När du har angett anslutningsinformationen väljer du **[!DNL Test Connection]*
 
 ## Nästa steg
 
-Nu när du har anslutit till [!DNL Query Service] kan du använda **[!DNL Query Analyzer]** i [!DNL Aqua Data Studio] för att köra och redigera SQL-satser. Mer information om hur du skriver och kör frågor finns i [guiden ](../best-practices/writing-queries.md) som kör frågor.
+Nu när du har anslutit till [!DNL Query Service] kan du använda **[!DNL Query Analyzer]** i [!DNL Aqua Data Studio] för att köra och redigera SQL-satser. Mer information om hur du skriver och kör frågor finns i [guiden &#x200B;](../best-practices/writing-queries.md) som kör frågor.

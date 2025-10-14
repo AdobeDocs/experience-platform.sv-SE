@@ -46,7 +46,7 @@ Felsvar syftar till att följa [JSON:API-felspecifikationen](http://jsonapi.org/
 | `code` | En programspecifik felkod, uttryckt som ett strängvärde. |
 | `title` | En kort, läsbar sammanfattning av problemet som **inte ska ändras** från förekomst till förekomst, utom för lokaliseringsändamål. |
 | `detail` | En läsbar förklaring som är specifik för den här förekomsten av problemet. Precis som `title` kan fältets värde lokaliseras. |
-| `source` | Ett objekt som innehåller referenser till felets källa, eventuellt inklusive någon av följande medlemmar:<ul><li>`pointer`: en [ JSON-pekare (RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901)-sträng som refererar till den associerade entiteten i begärandedokumentet (till exempel `/data` för ett primärt dataobjekt eller `/data/attributes/title` för ett specifikt attribut).</li></ul> |
+| `source` | Ett objekt som innehåller referenser till felets källa, eventuellt inklusive någon av följande medlemmar:<ul><li>`pointer`: en [&#x200B; JSON-pekare (RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901)-sträng som refererar till den associerade entiteten i begärandedokumentet (till exempel `/data` för ett primärt dataobjekt eller `/data/attributes/title` för ett specifikt attribut).</li></ul> |
 | `meta` | Ett objekt som innehåller metadata om felet som inte är standard. |
 
 {style="table-layout:auto"}

@@ -65,7 +65,7 @@ På arbetsytan **[!UICONTROL Policies]** i användargränssnittet för [!DNL Exp
 
 ### Använda API:er
 
-`/labels`-slutpunkten i [ API:t för principtjänsten ](https://www.adobe.io/experience-platform-apis/references/policy-service/) gör att du kan hantera dataanvändningsetiketter programmatiskt, inklusive skapa anpassade etiketter. Mer information finns i [etikettens slutpunktshandbok](../api/labels.md).
+`/labels`-slutpunkten i [&#x200B; API:t för principtjänsten &#x200B;](https://www.adobe.io/experience-platform-apis/references/policy-service/) gör att du kan hantera dataanvändningsetiketter programmatiskt, inklusive skapa anpassade etiketter. Mer information finns i [etikettens slutpunktshandbok](../api/labels.md).
 
 [API:t för datauppsättningstjänsten](https://www.adobe.io/experience-platform-apis/references/dataset-service/) används för att hantera etiketter för datauppsättningar och fält. Mer information finns i guiden [Hantera datauppsättningsetiketter](./dataset-api.md).
 

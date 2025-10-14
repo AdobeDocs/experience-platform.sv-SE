@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) tillhandahåller en kontrollpanel där du kan visa viktig information om dina [!DNL Real-Time Customer Profile]-data, som de har fångats in under en daglig ögonblicksbild.
 
-Detaljerade instruktioner om hur du får åtkomst till och interagerar med kontrollpanelen [!UICONTROL Profiles] i gränssnittet, samt hur du lär dig mer om tillgängliga mått som visas på kontrollpanelen, finns i [[!UICONTROL Profiles] instrumentpanelsguiden ](../../dashboards/guides/profiles.md).
+Detaljerade instruktioner om hur du får åtkomst till och interagerar med kontrollpanelen [!UICONTROL Profiles] i gränssnittet, samt hur du lär dig mer om tillgängliga mått som visas på kontrollpanelen, finns i [[!UICONTROL Profiles] instrumentpanelsguiden &#x200B;](../../dashboards/guides/profiles.md).
 
 Om du vill ha en översikt över alla instrumentpanelsfunktioner i användargränssnittet i Experience Platform börjar du med att läsa översikten [dashboards](../../dashboards/home.md).
 

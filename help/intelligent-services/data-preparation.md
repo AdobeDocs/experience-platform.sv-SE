@@ -289,7 +289,7 @@ Det här fältet representerar webbinformation som relaterar till ExperienceEven
 }
 ```
 
-Fullständig information om vart och ett av de obligatoriska underfälten för `xdm:productListItems` finns i specifikationen för [ExperienceEvent-webbinformationen ](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) .
+Fullständig information om vart och ett av de obligatoriska underfälten för `xdm:productListItems` finns i specifikationen för [ExperienceEvent-webbinformationen &#x200B;](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) .
 
 #### xdm:marknadsföring
 
@@ -307,7 +307,7 @@ Detta fält innehåller information om marknadsföringsaktiviteter som är aktiv
 }
 ```
 
-Fullständig information om vart och ett av de obligatoriska underfälten för `xdm:productListItems` finns i [marknadsspecifikationen ](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md).
+Fullständig information om vart och ett av de obligatoriska underfälten för `xdm:productListItems` finns i [marknadsspecifikationen &#x200B;](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md).
 
 ## Mappning och inhämtning av data {#mapping}
 

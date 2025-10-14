@@ -38,7 +38,7 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL ServiceNow] måste du 
 | `password` | Lösenordet som ska anslutas till [!DNL ServiceNow]-servern för autentisering. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL ServiceNow] är: `eb13cb25-47ab-407f-ba89-c0125281c563`. |
 
-Mer information om hur du kommer igång finns i [det här ServiceNow-dokumentet](https://developer.servicenow.com/app.do#!/rest_api_doc?v=newyork&amp;id=r_TableAPI-GET).
+Mer information om hur du kommer igång finns i [det här ServiceNow-dokumentet](https://developer.servicenow.com/app.do#!/rest_api_doc?v=newyork&id=r_TableAPI-GET).
 
 ### Använda Experience Platform API:er
 

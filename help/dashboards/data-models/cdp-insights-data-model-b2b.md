@@ -52,7 +52,7 @@ I diagrammet nedan visas de relevanta datafälten i varje datauppsättning, dera
 
 #### De nya kontona efter bransch {#accounts-by-industry}
 
-Logiken som används för insikten [!UICONTROL New accounts by industry] returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Mer information finns i [[!UICONTROL New accounts By Industry]-widgetens dokumentation ](../guides/account-profiles.md#accounts-by-industry).
+Logiken som används för insikten [!UICONTROL New accounts by industry] returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Mer information finns i [[!UICONTROL New accounts By Industry]-widgetens dokumentation &#x200B;](../guides/account-profiles.md#accounts-by-industry).
 
 >[!TIP]
 >
@@ -97,7 +97,7 @@ LIMIT 5000;
 
 #### De nya kontona efter typ av användningsfall {#accounts-by-type}
 
-Logiken som används för insikten [!UICONTROL New accounts by type] returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Mer information finns i [[!UICONTROL New accounts by type]-widgetens dokumentation ](../guides/account-profiles.md#accounts-by-type).
+Logiken som används för insikten [!UICONTROL New accounts by type] returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Mer information finns i [[!UICONTROL New accounts by type]-widgetens dokumentation &#x200B;](../guides/account-profiles.md#accounts-by-type).
 
 Den SQL som genererar insikten [!UICONTROL New accounts by type] visas i det infällbara avsnittet nedan.
 

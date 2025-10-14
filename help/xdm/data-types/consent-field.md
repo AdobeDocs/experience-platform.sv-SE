@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Den här datatypen är avsedd att användas för att anpassa strukturen för organisationens medgivandescheman med hjälp av fältgruppen [[!UICONTROL Consents and Preferences] ](../field-groups/profile/consents.md) som baslinje.
+>Den här datatypen är avsedd att användas för att anpassa strukturen för organisationens medgivandescheman med hjälp av fältgruppen [[!UICONTROL Consents and Preferences] &#x200B;](../field-groups/profile/consents.md) som baslinje.
 
 ![](../images/data-types/consent-field.png)
 

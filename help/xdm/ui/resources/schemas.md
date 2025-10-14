@@ -122,7 +122,7 @@ Om du väljer Standardschematyp på den nedrullningsbara menyn Välj schematyp v
 
 ### [!BADGE Skapa scheman manuellt eller med ML-stöd i Beta]{type=Informative} {#manual-or-assisted}
 
-Mer information om hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en csv-fil finns i [handboken ](../ml-assisted-schema-creation.md) som hjälper dig att skapa scheman. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
+Mer information om hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en csv-fil finns i [handboken &#x200B;](../ml-assisted-schema-creation.md) som hjälper dig att skapa scheman. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
 
 ### Manuell schemagenerering {#manual-creation}
 
@@ -487,6 +487,6 @@ När du har bekräftat klassändringen återställs arbetsytan och alla disposit
 
 Det här dokumentet innehåller grunderna för att skapa och redigera scheman i Experience Platform användargränssnitt. Vi rekommenderar starkt att du går igenom självstudiekursen [för att skapa scheman](../../tutorials/create-schema-ui.md) för ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper för unika användningsfall.
 
-Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
+Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
 
 Mer information om hur du hanterar scheman i [!DNL Schema Registry] API finns i [schemas slutpunktshandbok](../../api/schemas.md).

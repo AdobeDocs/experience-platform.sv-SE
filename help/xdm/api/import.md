@@ -13,8 +13,8 @@ ht-degree: 0%
 
 Med slutpunkten `/rpc/import` i API:t [!DNL Schema Registry] kan du skapa XDM-resurser (Experience Data Model) från genererade exportnyttolaster. Du kan skapa nyttolaster för export från två källor:
 
-* [`/rpc/export`-slutpunkten ](./export.md) skapar exportnyttolaster från befintliga XDM-resurser, vilket gör att du kan dela resurser mellan sandlådor.
-* [`/rpc/csv2schema`-slutpunkten ](./csv-to-schema.md) skapar exportnyttolaster från CSV-mallar.
+* [`/rpc/export`-slutpunkten &#x200B;](./export.md) skapar exportnyttolaster från befintliga XDM-resurser, vilket gör att du kan dela resurser mellan sandlådor.
+* [`/rpc/csv2schema`-slutpunkten &#x200B;](./csv-to-schema.md) skapar exportnyttolaster från CSV-mallar.
 
 När du har skapat en exportnyttolast kan du använda slutpunkten `/rpc/import` för att generera resursen (och alla beroende resurser) i valfri sandlåda.
 
@@ -36,7 +36,7 @@ POST /rpc/import
 
 **Begäran**
 
-Följande begäran tar nyttolasten som returneras från ett anrop till [`/rpc/export` endpoint ](./export.md) för att importera en fältgrupp (`Restaurant`) till en ny organisation och sandlåda, enligt rubrikerna `x-gw-ims-org-id` respektive `x-sandbox-name`.
+Följande begäran tar nyttolasten som returneras från ett anrop till [`/rpc/export` endpoint &#x200B;](./export.md) för att importera en fältgrupp (`Restaurant`) till en ny organisation och sandlåda, enligt rubrikerna `x-gw-ims-org-id` respektive `x-sandbox-name`.
 
 ```shell
 curl -X POST \

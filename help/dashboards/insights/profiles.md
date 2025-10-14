@@ -131,7 +131,7 @@ SELECT source_segment_name,
 
 +++
 
-I [Målgruppswidgetens dokumentation ](../guides/profiles.md#audience-overlap-report) finns information om utseendet och funktionaliteten för den här insikten.
+I [Målgruppswidgetens dokumentation &#x200B;](../guides/profiles.md#audience-overlap-report) finns information om utseendet och funktionaliteten för den här insikten.
 
 ## Målgrupper (antal) {#audiences}
 

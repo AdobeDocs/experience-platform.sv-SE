@@ -91,5 +91,5 @@ Den konfigurerade nyckeln visas i listan med nycklar för valvet.
 
 Om du vill fortsätta med engångsinstallationen av funktionen Kundhanterade nycklar följer du konfigurationsguiden för din plattforms värdmiljö:
 
-- Använd installationsguiderna för [ API ](./api-set-up.md) eller [UI](./ui-set-up.md) för [!DNL Azure].
+- Använd installationsguiderna för [&#x200B; API &#x200B;](./api-set-up.md) eller [UI](./ui-set-up.md) för [!DNL Azure].
 - Information om AWS finns i [AWS Konfigurera KMS-guiden](../aws/configure-kms.md) och [UI-installationsguiden](../aws/ui-set-up.md).

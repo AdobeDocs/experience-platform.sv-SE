@@ -35,7 +35,7 @@ Callback-funktionen tar emot de två parametrar som beskrivs i tabellen nedan n�
 
 | Parameter | Typ | Beskrivning |
 | --- | --- | --- |
-| `result` | Objekt | Det här objektet innehåller en `propositions`-matris.  De här förslagen är det direkta resultatet av färdiga regeluppsättningar. Objektet `result` är strukturerat på samma sätt som det [ result-objekt ](command-responses.md) som returneras av `sendEvent` med en `then` -sats. |
+| `result` | Objekt | Det här objektet innehåller en `propositions`-matris.  De här förslagen är det direkta resultatet av färdiga regeluppsättningar. Objektet `result` är strukturerat på samma sätt som det [&#x200B; result-objekt &#x200B;](command-responses.md) som returneras av `sendEvent` med en `then` -sats. |
 | `collectEvent` | Funktion | En smidig funktion som du kan använda för att skicka Edge Network-händelser för att spåra interaktioner, skärmar och andra händelser. |
 
 ### Funktionen `collectEvent` {#collectevent-function}

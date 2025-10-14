@@ -56,7 +56,7 @@ Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datam
 * Skapa dimensionstabeller för att utöka er modell för rapportinsikter.
 * Fråga om datamodell för utökad accelererad butiksrapportering
 
-Läs dokumentationen för Real-Time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall ](../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
+Läs dokumentationen för Real-Time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall &#x200B;](../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
 
 Se till att du ställer in ett schema för att uppdatera din anpassade datamodell med en vanlig stängsel. Detta garanterar att data kommer in igen som en del av din inmatningsprocess efter behov och fyller i dina användardefinierade instrumentpaneler. Se guiden [Schemafrågor](../ui/query-schedules.md#create-schedule) för att lära dig hur du ställer in ditt schema.
 

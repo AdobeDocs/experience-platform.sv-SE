@@ -48,7 +48,7 @@ Om du vill hämta ID:t för en målinstans måste du först skapa en anslutning 
 >
 >* Om du vill använda detta API måste du ha en befintlig anslutning till målet i Experience Platform-gränssnittet. Läs [anslut till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=sv-SE) om du vill ha mer information.
 > * När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när du [bläddrar i en anslutning till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=sv-SE).
->![Användargränssnittsbild för att hämta målinstans-ID ](../../assets/testing-api/get-destination-instance-id.png)
+>![Användargränssnittsbild för att hämta målinstans-ID &#x200B;](../../assets/testing-api/get-destination-instance-id.png)
 
 **API-format**
 

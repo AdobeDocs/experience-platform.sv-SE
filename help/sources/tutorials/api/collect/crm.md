@@ -37,9 +37,9 @@ Om du vill skapa ett dataflöde för källan måste du ha ett fullständigt aute
 
 Ett XDM-schema (Experience Data Model) är ett standardiserat sätt att organisera och beskriva kundupplevelsedata i Experience Platform. Om du vill importera källdata till Experience Platform måste du först skapa ett mål-XDM-schema som definierar strukturen och datatyperna som du vill importera. Det här schemat fungerar som en plan för den Experience Platform-datauppsättning där dina inmatade data finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs. Mer information om hur du skapar ett XDM-målschema finns i följande guider:
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs. Mer information om hur du skapar ett XDM-målschema finns i följande guider:
 
-* [Skapa ett schema med API:t ](../../../../xdm/api/schemas.md).
+* [Skapa ett schema med API:t &#x200B;](../../../../xdm/api/schemas.md).
 * [Skapa ett schema med användargränssnittet](../../../../xdm/tutorials/create-schema-ui.md).
 
 När du har skapat målschemat `$id` kommer det att krävas senare för måldatauppsättningen och målmappningen.
@@ -743,7 +743,7 @@ Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet.
 
 Du kan använda Experience Platform användargränssnitt för att validera skapandet av dataflödet. Navigera till katalogen *[!UICONTROL Sources]* i Experience Platform-gränssnittet och välj sedan **[!UICONTROL Dataflows]** på rubrikflikarna. Använd sedan kolumnen [!UICONTROL Dataflow Name] och leta reda på dataflödet som du skapade med API:t [!DNL Flow Service].
 
-![Dataflödsgränssnittet för källarbetsytan i Experience Platform-gränssnittet ](../../../images/tutorials/validations/dataflows-interface.png)
+![Dataflödsgränssnittet för källarbetsytan i Experience Platform-gränssnittet &#x200B;](../../../images/tutorials/validations/dataflows-interface.png)
 
 Du kan validera ditt dataflöde ytterligare via gränssnittet [!UICONTROL Dataflow activity]. Använd den högra listen för att visa [!UICONTROL API usage]-information om dataflödet. I det här avsnittet visas samma dataflödes-ID, datauppsättnings-ID och mappnings-ID som genererades när dataflödet skapades i [!DNL Flow Service].
 

@@ -46,7 +46,7 @@ I nästa avsnitt beskrivs hur du skapar ett nytt schema som du kan använda etik
 
 ### Skapa ett nytt schema
 
-Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan i **[!UICONTROL Schemas]**. Fullständiga anvisningar finns i guiden [Skapa ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create). Du kan också [skapa ett schema med API:t ](../../xdm/tutorials/create-schema-api.md) för schemaregister om det behövs.
+Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan i **[!UICONTROL Schemas]**. Fullständiga anvisningar finns i guiden [Skapa ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create). Du kan också [skapa ett schema med API:t &#x200B;](../../xdm/tutorials/create-schema-api.md) för schemaregister om det behövs.
 
 ### Lägga till dataanvändningsetiketter i ett schema {#add-labels-to-schema}
 

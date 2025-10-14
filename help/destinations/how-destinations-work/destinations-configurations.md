@@ -17,7 +17,7 @@ När du tänker på exportbeteendet till destinationer i Experience Platform må
 * På en andra nivå kan vissa inställningar anpassas på en målnivå av målutvecklaren när måldestinationer skapas med Destination SDK.
 * På en tredje nivå finns det konfigurationsinställningar som Real-Time CDP-användare kan ange i aktiveringsarbetsflödena.
 
-![Diagram som visar hur exporten mellan vanliga och konfigurerbara exportinställningar för destinationer fungerar ](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
+![Diagram som visar hur exporten mellan vanliga och konfigurerbara exportinställningar för destinationer fungerar &#x200B;](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
 
 Den här sidan beskriver eller länkar ut till alla vanliga och konfigurerbara exportinställningar för destinationer på de tre nivåer som beskrivs ovan.
 
@@ -44,13 +44,13 @@ Vilka inställningar som är tillgängliga för användare vid anslutning till e
 
 För [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations) kan en målutvecklare konfigurera vilka identiteter som deras mål accepterar och endast dessa identiteter visas för användaren i [mappningssteget i aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping), vilket visas nedan:
 
-![Skärminspelning av identitetsvalet för målfältet i mappningssteget i aktiveringsarbetsflödet. ](/help/destinations/assets/how-destinations-work/identity-mapping-example.gif)
+![Skärminspelning av identitetsvalet för målfältet i mappningssteget i aktiveringsarbetsflödet. &#x200B;](/help/destinations/assets/how-destinations-work/identity-mapping-example.gif)
 
-På samma sätt kan målutvecklaren för [filbaserade mål](/help/destinations/destination-types.md#file-based) avgöra vilka [filnamnstillägg ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) som ska vara tillgängliga för respektive mål, eller vilka [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) som ska vara tillgängliga, och användaren kan endast välja mellan dessa alternativ, vilket visas nedan:
+På samma sätt kan målutvecklaren för [filbaserade mål](/help/destinations/destination-types.md#file-based) avgöra vilka [filnamnstillägg &#x200B;](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) som ska vara tillgängliga för respektive mål, eller vilka [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) som ska vara tillgängliga, och användaren kan endast välja mellan dessa alternativ, vilket visas nedan:
 
 ![Skärminspelning av filformateringsalternativet vid anslutning till ett filbaserat mål.](/help/destinations/assets/how-destinations-work/file-formatting-options.gif)
 
-![Skärminspelning av alternativet för filnamnstillägg i schemaläggningssteget i aktiveringsarbetsflödet. ](/help/destinations/assets/how-destinations-work/filename-append-options.gif)
+![Skärminspelning av alternativet för filnamnstillägg i schemaläggningssteget i aktiveringsarbetsflödet. &#x200B;](/help/destinations/assets/how-destinations-work/filename-append-options.gif)
 
 Läs mer om de olika alternativen och stegen i aktiveringsarbetsflödet:
 

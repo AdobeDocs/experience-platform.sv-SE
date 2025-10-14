@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ### Förhandskrav
 
-Läs översikten [[!DNL Demandbase Intent] ](../../../../connectors/data-partners/demandbase.md) för information om hur du hämtar dina autentiseringsuppgifter.
+Läs översikten [[!DNL Demandbase Intent] &#x200B;](../../../../connectors/data-partners/demandbase.md) för information om hur du hämtar dina autentiseringsuppgifter.
 
 ## Navigera i källkatalogen {#navigate}
 

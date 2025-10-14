@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Schemafältgruppen [!UICONTROL Healthcare medication]
 
-[!UICONTROL Healthcare medication] är en standardschemafältgrupp för klassen [[!UICONTROL Medication] ](../../classes/medication.md). Det innehåller ett enskilt objekttypsfält `medication` som samlar in information som varumärkesnamn, partinummer och kvantitet.
+[!UICONTROL Healthcare medication] är en standardschemafältgrupp för klassen [[!UICONTROL Medication] &#x200B;](../../classes/medication.md). Det innehåller ett enskilt objekttypsfält `medication` som samlar in information som varumärkesnamn, partinummer och kvantitet.
 
 ![](../../images/field-groups/healthcare-medication.png)
 

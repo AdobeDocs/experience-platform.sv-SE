@@ -67,7 +67,7 @@ Du kan ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform på Az
 
 >[!TAB Använd grundläggande autentisering]
 
-Om du vill använda grundläggande autentisering markerar du **[!UICONTROL Basic Authentication]** och anger värden för ditt [projekt, klient-ID, klienthemlighet, uppdateringstoken och (valfritt) datamängd-ID för stora resultat ](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials). När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
+Om du vill använda grundläggande autentisering markerar du **[!UICONTROL Basic Authentication]** och anger värden för ditt [projekt, klient-ID, klienthemlighet, uppdateringstoken och (valfritt) datamängd-ID för stora resultat &#x200B;](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials). När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
 
 ![Det nya kontogränssnittet där grundläggande autentisering väljs.](../../../../images/tutorials/create/google-big-query/basic-auth.png)
 

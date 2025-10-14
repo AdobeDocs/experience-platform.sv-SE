@@ -47,7 +47,7 @@ Insikter på profilkontrollpanelen är knutna till sammanslagningsprinciper som 
 
 Namnkonventionen för dessa datauppsättningar är **Profile-Snapshot-Export** följt av ett systemgenererat slumpmässigt alfanumeriskt värde. Till exempel: `Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`.
 
-Om du vill förstå det fullständiga schemat för varje profilögonblicksbilds exportdatamängd kan du förhandsgranska och utforska datamängderna [med datamängdsvisningsprogrammet ](../catalog/datasets/user-guide.md) i användargränssnittet för Experience Platform.
+Om du vill förstå det fullständiga schemat för varje profilögonblicksbilds exportdatamängd kan du förhandsgranska och utforska datamängderna [med datamängdsvisningsprogrammet &#x200B;](../catalog/datasets/user-guide.md) i användargränssnittet för Experience Platform.
 
 ![En förhandsgranskning av datamängden Profile-Snapshot-Export.](images/query/profile-attribute.png)
 
@@ -70,7 +70,7 @@ Det finns en samling metadata för målgrupper i datasjön som innehåller metad
 
 Namnkonventionen för den här datauppsättningen är **Segmentdefinition-Snapshot-Export** följt av ett alfanumeriskt värde. Till exempel: `Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
 
-Om du vill förstå det fullständiga schemat för varje ögonblicksbildsexportdatauppsättning för segmentdefinitioner kan du förhandsgranska och utforska datamängderna [med datamängdsvisningsprogrammet ](../catalog/datasets/user-guide.md) i användargränssnittet för Experience Platform.
+Om du vill förstå det fullständiga schemat för varje ögonblicksbildsexportdatauppsättning för segmentdefinitioner kan du förhandsgranska och utforska datamängderna [med datamängdsvisningsprogrammet &#x200B;](../catalog/datasets/user-guide.md) i användargränssnittet för Experience Platform.
 
 ### Metadatadatamängd för mål
 
@@ -78,7 +78,7 @@ Metadata för alla era aktiverade destinationer är tillgängliga som en rådata
 
 Namnkonventionen för den här datauppsättningen är **DIM_Destination**.
 
-Om du vill förstå det fullständiga schemat för DIM-måldatauppsättningen kan du förhandsgranska och utforska datauppsättningen [med datamängdsvisningsprogrammet ](../catalog/datasets/user-guide.md) i användargränssnittet för Experience Platform.
+Om du vill förstå det fullständiga schemat för DIM-måldatauppsättningen kan du förhandsgranska och utforska datauppsättningen [med datamängdsvisningsprogrammet &#x200B;](../catalog/datasets/user-guide.md) i användargränssnittet för Experience Platform.
 
 ![En förhandsgranskning av DIM_Destination-datauppsättningen.](images/query/destinations-metadata.png)
 

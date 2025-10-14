@@ -18,7 +18,7 @@ Fältgruppen är ett tillägg till fältgruppen [!UICONTROL Reservation Details]
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om arrayen `diningReservations`. Mer information om de andra fälten under objektet `reservations` finns i [[!UICONTROL Reservation Details] fältgruppsreferensen ](./reservation-details.md).
+>Det här dokumentet innehåller information om arrayen `diningReservations`. Mer information om de andra fälten under objektet `reservations` finns i [[!UICONTROL Reservation Details] fältgruppsreferensen &#x200B;](./reservation-details.md).
 
 ![Reservationsstruktur vid matning](../../images/field-groups/dining-reservation/structure.png)
 

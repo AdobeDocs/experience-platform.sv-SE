@@ -27,7 +27,7 @@ XDM byggs ovanpå JSON-schema och därför ärver XDM-fält en liknande syntax n
 
 >[!NOTE]
 >
->Mer information om JSON-schema och andra underliggande tekniker i Experience Platform API:er finns i [API-handboken ](../../landing/api-fundamentals.md#json-schema).
+>Mer information om JSON-schema och andra underliggande tekniker i Experience Platform API:er finns i [API-handboken &#x200B;](../../landing/api-fundamentals.md#json-schema).
 
 I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsammans med ett exempelvärde som överensstämmer med typen:
 

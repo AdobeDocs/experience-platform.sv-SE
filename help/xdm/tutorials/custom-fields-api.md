@@ -142,7 +142,7 @@ Nummerfält indikeras av `type: number` och har inga andra obligatoriska egenska
 
 >[!NOTE]
 >
->`number`-typer används för alla numeriska typer, antingen heltal eller flyttal, medan [`integer` typer ](#integer) används specifikt för heltal. Mer information om användningsexempel för varje typ finns i [dokumentationen för JSON-schemat för numeriska typer](https://json-schema.org/understanding-json-schema/reference/numeric.html).
+>`number`-typer används för alla numeriska typer, antingen heltal eller flyttal, medan [`integer` typer &#x200B;](#integer) används specifikt för heltal. Mer information om användningsexempel för varje typ finns i [dokumentationen för JSON-schemat för numeriska typer](https://json-schema.org/understanding-json-schema/reference/numeric.html).
 
 ## [!UICONTROL Integer] {#integer}
 
@@ -158,7 +158,7 @@ Nummerfält indikeras av `type: number` och har inga andra obligatoriska egenska
 
 >[!NOTE]
 >
->`integer`-typer refererar specifikt till heltal, men [`number` typer ](#number) används för alla numeriska typer, antingen heltal eller flyttal. Mer information om användningsexempel för varje typ finns i [dokumentationen för JSON-schemat för numeriska typer](https://json-schema.org/understanding-json-schema/reference/numeric.html).
+>`integer`-typer refererar specifikt till heltal, men [`number` typer &#x200B;](#number) används för alla numeriska typer, antingen heltal eller flyttal. Mer information om användningsexempel för varje typ finns i [dokumentationen för JSON-schemat för numeriska typer](https://json-schema.org/understanding-json-schema/reference/numeric.html).
 
 Du kan begränsa heltalets intervall genom att lägga till egenskaperna `minimum` och `maximum` i definitionen. Flera andra numeriska typer som stöds av gränssnittet i Schema Builder är bara `integer` typer med specifika `minimum`- och `maximum`-begränsningar, som [[!UICONTROL Long]](#long), [[!UICONTROL Short]](#short) och [[!UICONTROL Byte]](#byte).
 
@@ -174,7 +174,7 @@ Du kan begränsa heltalets intervall genom att lägga till egenskaperna `minimum
 
 ## [!UICONTROL Long] {#long}
 
-Motsvarigheten till ett [!UICONTROL Long]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält ](#integer) med specifika `minimum` - och `maximum`-värden (`-9007199254740992` respektive `9007199254740992`).
+Motsvarigheten till ett [!UICONTROL Long]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält &#x200B;](#integer) med specifika `minimum` - och `maximum`-värden (`-9007199254740992` respektive `9007199254740992`).
 
 ```json
 "sampleField": {
@@ -188,7 +188,7 @@ Motsvarigheten till ett [!UICONTROL Long]-fält som skapats via Schema Builder-g
 
 ## [!UICONTROL Short] {#short}
 
-Motsvarigheten till ett [!UICONTROL Short]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält ](#integer) med specifika `minimum` - och `maximum`-värden (`-32768` respektive `32767`).
+Motsvarigheten till ett [!UICONTROL Short]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält &#x200B;](#integer) med specifika `minimum` - och `maximum`-värden (`-32768` respektive `32767`).
 
 ```json
 "sampleField": {
@@ -202,7 +202,7 @@ Motsvarigheten till ett [!UICONTROL Short]-fält som skapats via Schema Builder-
 
 ## [!UICONTROL Byte] {#byte}
 
-Motsvarigheten till ett [!UICONTROL Byte]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält ](#integer) med specifika `minimum` - och `maximum`-värden (`-128` respektive `127`).
+Motsvarigheten till ett [!UICONTROL Byte]-fält som skapats via Schema Builder-gränssnittet är ett [`integer` typfält &#x200B;](#integer) med specifika `minimum` - och `maximum`-värden (`-128` respektive `127`).
 
 ```json
 "sampleField": {
@@ -333,7 +333,7 @@ Du kan också definiera hela objektet genom att referera till en datatyp, förut
 
 ## [!UICONTROL Map] {#map}
 
-Ett kartfält är i princip ett [`object`-typsfält ](#object) med en obegränsad uppsättning tangenter. Precis som objekt har kartor värdet `type`, men `meta:xdmType` anges uttryckligen till `map`.`object`
+Ett kartfält är i princip ett [`object`-typsfält &#x200B;](#object) med en obegränsad uppsättning tangenter. Precis som objekt har kartor värdet `type`, men `meta:xdmType` anges uttryckligen till `map`.`object`
 
 En karta **får inte** definiera några egenskaper. Den **måste** definiera ett enskilt `additionalProperties`-schema för att beskriva värdetypen som finns i kartan (varje karta kan bara innehålla en enda datatyp). Värdet `type` måste vara antingen `string` eller `integer`.
 

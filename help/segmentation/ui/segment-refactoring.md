@@ -24,7 +24,7 @@ Före januari 2024-versionen refererade alla tidsbegränsningar på regelnivå, 
 
 Tidigare kunde en enskild händelse ha flera bifogade tidsbegränsningsregler. Med den här senaste uppdateringen kommer försök att lägga till en tidsbegränsning i en regel nu att resultera i ett **fel**.
 
-![Tidsbegränsningen på regelnivå är markerad. Det fel som sedan inträffar markeras också. ](../images/ui/segment-refactoring/rule-time-constraint.png)
+![Tidsbegränsningen på regelnivå är markerad. Det fel som sedan inträffar markeras också. &#x200B;](../images/ui/segment-refactoring/rule-time-constraint.png)
 
 Tidsbegränsningar kan nu bara tillämpas på arbetsytans eller kortets nivå.
 

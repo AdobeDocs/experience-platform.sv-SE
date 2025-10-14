@@ -77,7 +77,7 @@ Använd SQL för att referera till datauppsättningen som används för utbildni
 
 >[!TIP]
 >
->En fullständig referens om `TRANSFORM`-satsen, inklusive funktioner och användning som stöds i både `CREATE MODEL` och `CREATE TABLE`, finns i [`TRANSFORM`-satsen i SQL Syntax-dokumentationen ](../sql/syntax.md#transform).
+>En fullständig referens om `TRANSFORM`-satsen, inklusive funktioner och användning som stöds i både `CREATE MODEL` och `CREATE TABLE`, finns i [`TRANSFORM`-satsen i SQL Syntax-dokumentationen &#x200B;](../sql/syntax.md#transform).
 
 ## Uppdatera en modell {#update}
 

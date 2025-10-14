@@ -70,7 +70,7 @@ Om du vill använda en etikett på ett befintligt fält väljer du ett eller fle
 
 ![The Edit labels pover.](../images/data-governance/edit-labels-popover.png)
 
-Mer information om hur du [skapar eller redigerar etiketter för det markerade schemat eller fältet ](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) finns i dokumentationen.
+Mer information om hur du [skapar eller redigerar etiketter för det markerade schemat eller fältet &#x200B;](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) finns i dokumentationen.
 
 >[!NOTE]
 >

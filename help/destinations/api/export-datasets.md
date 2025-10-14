@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
+>**Åtgärdsobjekt**: I [&#x200B; september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
 >
 >För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 september 2025.
 >
@@ -107,7 +107,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extr
 
 ### API-referensdokumentation {#api-reference-documentation}
 
-Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats ](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
+Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats &#x200B;](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
 
 ### Ordlista {#glossary}
 
@@ -2463,7 +2463,7 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 ### Exempeldatauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet &#x200B;](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json &#x200B;](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 

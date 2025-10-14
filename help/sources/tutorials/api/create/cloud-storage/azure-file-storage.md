@@ -106,4 +106,4 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Azure File Storage]-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudie när du lär dig hur du [utforskar ett molnlagringsutrymme från tredje part med API:t för Flow Service ](../../explore/cloud-storage.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Azure File Storage]-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudie när du lär dig hur du [utforskar ett molnlagringsutrymme från tredje part med API:t för Flow Service &#x200B;](../../explore/cloud-storage.md).

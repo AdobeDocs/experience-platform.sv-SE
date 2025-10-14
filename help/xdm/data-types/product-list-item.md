@@ -32,7 +32,7 @@ De värden som registreras i den här datatypen kan skilja sig från produktpost
 | `productAddMethod` | [!UICONTROL String] | Den metod som användes för att lägga till en produktartikel i listan av besökaren. |
 | `productImageUrl` | [!UICONTROL String] | En URL för produktens huvudbild. |
 | `quantity` | [!UICONTROL Integer] | Antalet enheter som kunden har angett att de behöver av produkten. |
-| `unitOfMeasureCode` | [!UICONTROL String] | Standardmåttenheten [för produkten ](https://ucum.org/ucum) som är relaterad till egenskapen `quantity`. |
+| `unitOfMeasureCode` | [!UICONTROL String] | Standardmåttenheten [för produkten &#x200B;](https://ucum.org/ucum) som är relaterad till egenskapen `quantity`. |
 
 {style="table-layout:auto"}
 

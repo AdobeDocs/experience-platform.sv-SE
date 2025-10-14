@@ -20,7 +20,7 @@ Med [!DNL Query Service] kan du använda frågor för att generera datauppsättn
 
 Så här skapar du datauppsättningar från Adobe Experience Platform användargränssnitt:
 
-1. Skapa en fråga med en ansluten klient och validera utdata. Läs [!DNL Query Editor] UI-guiden [ om hur du skriver frågor ](./user-guide.md#writing-queries) om du vill lära dig hur du skriver frågor med [!DNL Query Editor].
+1. Skapa en fråga med en ansluten klient och validera utdata. Läs [!DNL Query Editor] UI-guiden [&#x200B; om hur du skriver frågor &#x200B;](./user-guide.md#writing-queries) om du vill lära dig hur du skriver frågor med [!DNL Query Editor].
 
 2. I Experience Platform-gränssnittet går du till **[!UICONTROL Queries]** följt av fliken **[!UICONTROL Templates]** och väljer den fråga du har skapat. Mer information om hur du visar frågor som har skapats och sparats för din organisation i Experience Platform-gränssnittet finns i [[!DNL Query Service] översikten](./overview.md#browse).
 

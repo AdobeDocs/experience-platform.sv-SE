@@ -193,10 +193,10 @@ Viktigast av allt är att [!DNL Data Science Workspace] förser datavetenskapen 
 
 I och med samgåendet mellan varumärkesexpertis och Adobe maskininlärning och AI-processer har företag möjlighet att öka affärsvärdet och varumärkeslojaliteten genom att ge kunderna det de vill ha, innan de ber om det.
 
-Om du vill ha mer information, t.ex. ett komplett arbetsflöde, kan du börja med att läsa [Data Science Workspace-dokumentationen ](./walkthrough.md).
+Om du vill ha mer information, t.ex. ett komplett arbetsflöde, kan du börja med att läsa [Data Science Workspace-dokumentationen &#x200B;](./walkthrough.md).
 
 ## Ytterligare resurser
 
 Följande video har utformats för att ge stöd för din förståelse av [!DNL Data Science Workspace].
 
->[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&amp;enable10seconds=on&amp;speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&enable10seconds=on&speedcontrol=on)

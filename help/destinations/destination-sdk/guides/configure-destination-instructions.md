@@ -273,7 +273,7 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 >
 >`CUSTOMER_AUTHENTICATION` är det vanligaste av de två autentiseringsreglerna och det är det som ska användas om du kräver att användarna tillhandahåller någon form av autentisering till ditt mål innan de kan konfigurera en anslutning och exportera data.
 
-Läs `"authenticationRule": "CUSTOMER_AUTHENTICATION"`OAuth 2-autentisering[ om du valde ](../functionality/destination-configuration/oauth2-authorization.md) i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
+Läs `"authenticationRule": "CUSTOMER_AUTHENTICATION"`OAuth 2-autentisering[&#x200B; om du valde &#x200B;](../functionality/destination-configuration/oauth2-authorization.md) i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
 
 Om du har valt `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md) och skicka autentiseringsuppgiftsobjektets ID i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication).
 

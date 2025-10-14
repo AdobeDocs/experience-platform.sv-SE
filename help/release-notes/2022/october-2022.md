@@ -15,7 +15,7 @@ ht-degree: 26%
 
 - [Kundhanterade nycklar](#cmk)
 - [Datainsamling](#data-collection)
-- [Mål ](#destinations)
+- [Mål &#x200B;](#destinations)
 - [Experience Data Model](#xdm)
 - [Frågetjänst](#query-service)
 

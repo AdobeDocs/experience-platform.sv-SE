@@ -55,7 +55,7 @@ Med dessa standarddefinitioner kan data tolkas på ett enhetligt sätt, oavsett 
 
 ## Söka efter ett datauppsättningsschema
 
-Den här självstudiekursen börjar där [API-självstudiekursen ](../../xdm/tutorials/create-schema-api.md) för schemat Schema Registry avslutas, och använder det schema för lojalitetsmedlemmar som skapades under den självstudiekursen.
+Den här självstudiekursen börjar där [API-självstudiekursen &#x200B;](../../xdm/tutorials/create-schema-api.md) för schemat Schema Registry avslutas, och använder det schema för lojalitetsmedlemmar som skapades under den självstudiekursen.
 
 Om du inte har slutfört självstudiekursen [!DNL Schema Registry] kan du börja där och fortsätta med den här självstudiekursen för datauppsättningar först när du har komponerat det nödvändiga schemat.
 

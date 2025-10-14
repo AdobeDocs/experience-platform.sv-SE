@@ -108,7 +108,7 @@ För att Experience Platform ska kunna koppla de medgivandedata som tas emot til
 >
 >Exempelschemat som visas i det här avsnittet använder fältet `identityMap` som sin primära identitet. Om du vill ange ett annat fält som primär identitet måste du se till att du använder en indirekt identifierare, som ett cookie-ID, och inte ett direkt identifierbart fält som är förbjudet att använda i intressebaserad annonsering, som en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
 >
->Steg om hur du anger ett primärt identitetsfält för ett schema finns i [[!UICONTROL Schemas] gränssnittshandboken ](../../../../xdm/ui/fields/identity.md).
+>Steg om hur du anger ett primärt identitetsfält för ett schema finns i [[!UICONTROL Schemas] gränssnittshandboken &#x200B;](../../../../xdm/ui/fields/identity.md).
 
 Om du vill aktivera schemat för [!DNL Profile] markerar du schemats namn i den vänstra listen för att öppna avsnittet **[!UICONTROL Schema properties]**. Välj växlingsknappen **[!UICONTROL Profile]** härifrån.
 

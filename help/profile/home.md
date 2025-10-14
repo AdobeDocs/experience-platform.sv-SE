@@ -135,7 +135,7 @@ Datastyrning hanteras vid flera tillfällen. Det kan vara att bestämma vilka da
 
 ### Hantera avanmälan och förfrågningar om datasekretess
 
-[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden ](../segmentation/tutorials/consents.md) respekteras.
+[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden &#x200B;](../segmentation/tutorials/consents.md) respekteras.
 
 ## Nästa steg och ytterligare resurser
 

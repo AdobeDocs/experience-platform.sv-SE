@@ -112,4 +112,4 @@ Ett lyckat svar returnerar anslutnings-ID:t för den nya anslutningen. Detta ID 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Oracle Object Storage]-anslutning med API:t [!DNL Flow Service] och har fått dess unika anslutnings-ID. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service ](../../explore/cloud-storage.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Oracle Object Storage]-anslutning med API:t [!DNL Flow Service] och har fått dess unika anslutnings-ID. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service &#x200B;](../../explore/cloud-storage.md).

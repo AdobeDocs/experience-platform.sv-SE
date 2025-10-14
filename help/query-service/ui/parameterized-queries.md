@@ -73,7 +73,7 @@ Parametervärden sparas när du schemalägger en parametriserad fråga. Om du vi
 
 >[!TIP]
 >
->Frågetjänsten stöder förberedda satser med hjälp av parametriserade frågor. Mer information om SQL-syntaxen som ingår finns i [förberedda programsatser ](../sql/prepared-statements.md).
+>Frågetjänsten stöder förberedda satser med hjälp av parametriserade frågor. Mer information om SQL-syntaxen som ingår finns i [förberedda programsatser &#x200B;](../sql/prepared-statements.md).
 
 ## Nästa steg
 

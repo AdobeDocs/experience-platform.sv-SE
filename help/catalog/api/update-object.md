@@ -69,7 +69,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade da
 
 I följande exempelanrop visas hur du uppdaterar ett objekt med JSON Patch, enligt beskrivningen i [RFC-6902](https://tools.ietf.org/html/rfc6902).
 
-Mer information om JSON Patch-syntax finns i [API-handboken ](../../landing/api-fundamentals.md#json-patch).
+Mer information om JSON Patch-syntax finns i [API-handboken &#x200B;](../../landing/api-fundamentals.md#json-patch).
 
 **API-format**
 

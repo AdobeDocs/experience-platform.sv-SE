@@ -21,7 +21,7 @@ Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättnin
 
 >[!IMPORTANT]
 >
->Exemplen i den här handboken använder en standardiserad uppsättning fält för att representera värden för kundgodkännande, enligt definitionen i schemafältgruppen [[!UICONTROL Consent and Preference Details] ](../../../../xdm/field-groups/profile/consents.md). Strukturen på dessa fält är avsedd att tillhandahålla en effektiv datamodell som omfattar många vanliga fall av insamling av samtycke.
+>Exemplen i den här handboken använder en standardiserad uppsättning fält för att representera värden för kundgodkännande, enligt definitionen i schemafältgruppen [[!UICONTROL Consent and Preference Details] &#x200B;](../../../../xdm/field-groups/profile/consents.md). Strukturen på dessa fält är avsedd att tillhandahålla en effektiv datamodell som omfattar många vanliga fall av insamling av samtycke.
 >
 >Du kan dock även definiera egna fältgrupper för att representera samtycke enligt dina egna datamodeller. Kontakta ditt juridiska team för att få ett godkännande av en datamodell för samtycke som passar era affärsbehov, baserat på följande alternativ:
 >
@@ -92,7 +92,7 @@ Fältgruppen innehåller ett enskilt fält av objekttyp, `consents`, vars undere
 
 >[!NOTE]
 >
->Mer information om underegenskapernas struktur och innebörd i `consents` finns i översikten i [[!UICONTROL Consent and Preference Details] fältgruppen ](../../../../xdm/field-groups/profile/consents.md).
+>Mer information om underegenskapernas struktur och innebörd i `consents` finns i översikten i [[!UICONTROL Consent and Preference Details] fältgruppen &#x200B;](../../../../xdm/field-groups/profile/consents.md).
 
 ## Lägg till obligatoriska fältgrupper i ditt [!DNL Profile]-schema {#add-field-group}
 

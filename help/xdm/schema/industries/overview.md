@@ -29,7 +29,7 @@ Om du vill läsa de referensdokument för elektroniska avhandlingar som det hän
 * [Systemöversikt för XDM](../../home.md): Lär dig hur XDM fungerar i Experience Platform ekosystem.
 * [Grunderna för schemakomposition](../../schema/composition.md): Lär dig hur XDM-komponenter (till exempel schemafältgrupper, klasser och datatyper) bidrar till strukturen i ett schema samt identitetsfältens roll.
 
-Vi rekommenderar också att du läser [guiden ](../../schema/best-practices.md) om bästa praxis för datamodellering för allmänna riktlinjer om hur du mappar dina data till XDM.
+Vi rekommenderar också att du läser [guiden &#x200B;](../../schema/best-practices.md) om bästa praxis för datamodellering för allmänna riktlinjer om hur du mappar dina data till XDM.
 
 ## ERD för branschdatamodell {#erds}
 

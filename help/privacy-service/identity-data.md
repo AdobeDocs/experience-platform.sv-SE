@@ -25,7 +25,7 @@ När du till exempel hanterar kunddatabegäranden i [!DNL Privacy Service] kan e
 
 Det krävs därför att varje identitet som skickas till [!DNL Privacy Service] åtföljs av ett namnutrymme som tillhandahåller kontext genom att identitetsvärdet kopplas till ursprungssystemet. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
 
-Adobe Experience Platform identitetstjänst lagrar globalt definierade och användardefinierade identitetsnamnutrymmen. Mer information om namnutrymmen finns i [översikten över namnutrymmet identity](../identity-service/features/namespaces.md). En lista över standardnamnutrymmen och namnutrymmeskvalificerare som ofta används i [!DNL Privacy Service] finns i avsnittet [ appendix ](api/appendix.md) i API-handboken.
+Adobe Experience Platform identitetstjänst lagrar globalt definierade och användardefinierade identitetsnamnutrymmen. Mer information om namnutrymmen finns i [översikten över namnutrymmet identity](../identity-service/features/namespaces.md). En lista över standardnamnutrymmen och namnutrymmeskvalificerare som ofta används i [!DNL Privacy Service] finns i avsnittet [&#x200B; appendix &#x200B;](api/appendix.md) i API-handboken.
 
 ## ECID- och anmälningstjänst
 

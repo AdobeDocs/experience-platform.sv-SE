@@ -45,7 +45,7 @@ Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista ](../../ip-address-allow-list.md).
+En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista &#x200B;](../../ip-address-allow-list.md).
 
 ## Anslut ditt [!DNL Algolia]-konto till Experience Platform
 

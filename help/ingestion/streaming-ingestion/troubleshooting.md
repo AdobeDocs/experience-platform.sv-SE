@@ -23,7 +23,7 @@ Nedan följer en lista med svar på vanliga frågor om direktuppspelning.
 
 ### Hur vet jag att nyttolasten jag skickar är korrekt formaterad?
 
-[!DNL Data Ingestion] använder [!DNL Experience Data Model] (XDM)-scheman för att validera formatet för inkommande data. Om du skickar data som inte följer strukturen i ett fördefinierat XDM-schema, kommer det att leda till att importen misslyckas. Mer information om XDM och hur det används i [!DNL Experience Platform] finns i [ översikten över XDM-systemet](../../xdm/home.md).
+[!DNL Data Ingestion] använder [!DNL Experience Data Model] (XDM)-scheman för att validera formatet för inkommande data. Om du skickar data som inte följer strukturen i ett fördefinierat XDM-schema, kommer det att leda till att importen misslyckas. Mer information om XDM och hur det används i [!DNL Experience Platform] finns i [&#x200B; översikten över XDM-systemet](../../xdm/home.md).
 
 Direktuppspelningsuppläsning stöder två valideringslägen: synkron och asynkron. Varje verifieringsmetodhanterare misslyckades med data på olika sätt.
 

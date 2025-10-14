@@ -59,4 +59,4 @@ Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar
 
 Genom att följa den här självstudiekursen har du använt arbetsytan [!UICONTROL Sources] för att uppdatera informationen för ett befintligt källkonto.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Uppdatera anslutningsinformation med API:t för Flow Service ](../../tutorials/api/update.md).
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Uppdatera anslutningsinformation med API:t för Flow Service &#x200B;](../../tutorials/api/update.md).

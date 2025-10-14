@@ -15,7 +15,7 @@ Använd den här vägledningen när du vill aktivera kundhanterade nycklar (CMK)
 
 >[!IMPORTANT]
 >
->Innan du fortsätter med den här guiden kontrollerar du att du har slutfört konfigurationen som beskrivs i dokumentet [ Konfigurera AWS KMS för CMK ](./configure-kms.md).
+>Innan du fortsätter med den här guiden kontrollerar du att du har slutfört konfigurationen som beskrivs i dokumentet [&#x200B; Konfigurera AWS KMS för CMK &#x200B;](./configure-kms.md).
 
 ## Uppdatera AWS nyckelpolicy för att integrera nyckeln med Experience Platform
 

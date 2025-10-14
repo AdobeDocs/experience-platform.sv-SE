@@ -137,7 +137,7 @@ Kryptering är användning av en algoritmisk process för att omvandla data till
 
 Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med hjälp av nycklar på systemnivå. Mer information finns i dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md). Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i den [officiella Azure-dokumentationen](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
-Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Läs [kundhanterade nycklar (CMK) ](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
+Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Läs [kundhanterade nycklar (CMK) &#x200B;](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 
 
 ## Granskning {#audit}
@@ -200,7 +200,7 @@ Mer information om [identitetsdata för sekretessförfrågningar](../../privacy-
 
 Frågetjänstfunktioner för datastyrning förenklar och effektiviserar processen för kategorisering av data och efterlevnad av regler för dataanvändning. När data har identifierats kan du med Query Service tilldela den primära identiteten till alla utdatamängder. Du **måste** lägga till identiteter i datauppsättningen för att underlätta förfrågningar om datasekretess och arbeta mot datakompatibilitet.
 
-Schemadatafält kan anges som ett identitetsfält via Experience Platform UI och Query Service. Du kan också [markera de primära identiteterna med SQL-kommandot ALTER TABLE ](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
+Schemadatafält kan anges som ett identitetsfält via Experience Platform UI och Query Service. Du kan också [markera de primära identiteterna med SQL-kommandot ALTER TABLE &#x200B;](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
 
 ## Datahygien {#data-hygiene}
 

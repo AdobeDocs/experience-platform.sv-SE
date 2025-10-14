@@ -25,7 +25,7 @@ Hur du konfigurerar källan i Experience Platform steg för steg beskrivs nedan:
 ### Integrering
 
 * [Skapa en ny anslutningsspecifikation för direktuppspelning av SDK](create.md).
-* [Uppdatera specifikationen för direktuppspelningsflödet med ditt nya anslutningsspecifikation-ID ](update-flow-specs.md).
+* [Uppdatera specifikationen för direktuppspelningsflödet med ditt nya anslutningsspecifikation-ID &#x200B;](update-flow-specs.md).
 * [Testa och skicka strömningskällan](submit.md).
 
 ### Dokumentation

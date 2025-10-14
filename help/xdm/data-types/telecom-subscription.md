@@ -17,9 +17,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Det här dokumentet beskriver datatypen. För fältgruppen med samma namn, se [[!UICONTROL Telecom Subscription]-referenshandboken för fältgruppen ](../field-groups/profile/telecom-subscription.md).
+>Det här dokumentet beskriver datatypen. För fältgruppen med samma namn, se [[!UICONTROL Telecom Subscription]-referenshandboken för fältgruppen &#x200B;](../field-groups/profile/telecom-subscription.md).
 >
->Om du beskriver en prenumerationstyp som inte har med telekommunikationsbranschen att göra, ska du använda den generiska datatypen [[!UICONTROL Subscription] ](./subscription.md) i stället.
+>Om du beskriver en prenumerationstyp som inte har med telekommunikationsbranschen att göra, ska du använda den generiska datatypen [[!UICONTROL Subscription] &#x200B;](./subscription.md) i stället.
 
 ![Telecom Subscription structure](../images/data-types/telecom-subscription/structure.png)
 
@@ -65,7 +65,7 @@ Mer information om datatypen finns i den offentliga XDM-databasen:
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `deviceFees` | Objekt | Ett objekt som fångar eventuella enhetsavgifter för objekt som routrar, modem och mottagare. Följande egenskaper förväntas:<ul><li>`amount`: Det monetära beloppet som representeras av `currencyCode`.</li><li>`conversionDate`: Det datum då valutakonverteringen gjordes.</li><li>`currencyCode`: Valutakoden [ ISO 4217 ](https://www.iso.org/iso-4217-currency-codes.html) för `amount`.</li></ul> |
+| `deviceFees` | Objekt | Ett objekt som fångar eventuella enhetsavgifter för objekt som routrar, modem och mottagare. Följande egenskaper förväntas:<ul><li>`amount`: Det monetära beloppet som representeras av `currencyCode`.</li><li>`conversionDate`: Det datum då valutakonverteringen gjordes.</li><li>`currencyCode`: Valutakoden [&#x200B; ISO 4217 &#x200B;](https://www.iso.org/iso-4217-currency-codes.html) för `amount`.</li></ul> |
 | `ID` | Sträng | Ett unikt ID för enheten. |
 | `OS` | Sträng | Enhetens operativsystem. |
 | `deviceInsurance` | Sträng | Anger om en kund har anmält sig till försäkringen för den här enheten. |

@@ -64,7 +64,7 @@ På sidan Regler för punktidentifiering kan du konfigurera robotidentifiering m
 
 ### Använd listan IAB/ABC International Spiders and Bots {#iab-list}
 
-Listan [IAB/ABC International Spiders and Bots ](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) är en tredjeparts lista över internetspindlar och -bottnar som följer branschstandard. I den här listan kan du identifiera automatiserad trafik, som crawlningar för sökmotorer, övervakningsverktyg och annan icke-mänsklig trafik som du kanske inte vill ta med i dina analysräkningar.
+Listan [IAB/ABC International Spiders and Bots &#x200B;](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) är en tredjeparts lista över internetspindlar och -bottnar som följer branschstandard. I den här listan kan du identifiera automatiserad trafik, som crawlningar för sökmotorer, övervakningsverktyg och annan icke-mänsklig trafik som du kanske inte vill ta med i dina analysräkningar.
 
 Så här konfigurerar du din datastream att använda listan IAB/ABC International Spiders and Bots:
 
@@ -75,7 +75,7 @@ Så här konfigurerar du din datastream att använda listan IAB/ABC Internationa
 
 ### Skapa identifieringsregler för robotar {#rules}
 
-Förutom att använda listan [IAB/ABC International Spiders and Bots ](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) kan du definiera egna robotidentifieringsregler för varje datastream.
+Förutom att använda listan [IAB/ABC International Spiders and Bots &#x200B;](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) kan du definiera egna robotidentifieringsregler för varje datastream.
 
 Du kan skapa identifieringsregler för robotar baserat på **IP-adresser** och **IP-adressintervall**.
 

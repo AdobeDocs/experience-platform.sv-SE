@@ -119,7 +119,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >[!IMPORTANT]
 > 
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
->* Om du vill exportera identiteter måste du ha behörigheten [Visa identitetsdiagram ](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions).
+>* Om du vill exportera identiteter måste du ha behörigheten [Visa identitetsdiagram &#x200B;](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions).
 
 Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

@@ -132,7 +132,7 @@ Använd källor i Experience Platform för inmatning av data från ett Adobe-pro
 | Funktion | Beskrivning |
 | --- | --- |
 | Stöd för vyer i [!DNL Microsoft Dynamics] | Du kan nu fylla på `"entityType": "view"` när du använder källan [!DNL Microsoft Dynamics]. Mer information finns i guiden om att [ansluta en [!DNL Microsoft Dynamics] källa till Experience Platform](../../sources/tutorials/api/create/crm/ms-dynamics.md). |
-| Nya IP-adresser att tillåtslista | Du måste lägga till följande IP-adresser i tillåtelselista för att kunna använda Experience Platform-källor.<br></br>**VA7**<ul><li>`48.211.4.136/29`</li><li>`48.211.4.144/28`</li><li>`48.211.4.160/29`</li><li>`40.84.85.144/28`</li><li>`40.84.85.192/28`</li></ul>**AUS5**<ul><li>`20.213.194.144/29`</li><li>`20.227.120.32/27`</li></ul> <br></br>Mer information finns i guiden [tillåtelselista för IP-adressen för ](../../sources/ip-address-allow-list.md)-källor. |
+| Nya IP-adresser att tillåtslista | Du måste lägga till följande IP-adresser i tillåtelselista för att kunna använda Experience Platform-källor.<br></br>**VA7**<ul><li>`48.211.4.136/29`</li><li>`48.211.4.144/28`</li><li>`48.211.4.160/29`</li><li>`40.84.85.144/28`</li><li>`40.84.85.192/28`</li></ul>**AUS5**<ul><li>`20.213.194.144/29`</li><li>`20.227.120.32/27`</li></ul> <br></br>Mer information finns i guiden [tillåtelselista för IP-adressen för &#x200B;](../../sources/ip-address-allow-list.md)-källor. |
 
 {style="table-layout:auto"}
 

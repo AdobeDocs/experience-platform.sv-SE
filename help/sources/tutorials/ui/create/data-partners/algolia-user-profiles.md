@@ -91,7 +91,7 @@ Om du skapar en ny datauppsättning väljer du ett schema med fältgruppen [!DNL
 
 Du måste skapa identitetsnamnrymden [!DNL Algolia User Token] om den inte redan finns i din organisation.
 
-Använd den vänstra navigeringen och välj **[!UICONTROL Identities]** för att komma åt arbetsytan för användargränssnittet i [ identitetstjänsten](../../../../../identity-service/home.md) och välj sedan **[!UICONTROL Create identity namespace]**.
+Använd den vänstra navigeringen och välj **[!UICONTROL Identities]** för att komma åt arbetsytan för användargränssnittet i [&#x200B; identitetstjänsten](../../../../../identity-service/home.md) och välj sedan **[!UICONTROL Create identity namespace]**.
 
 Ange sedan **[!UICONTROL Display Name]** och **[!UICONTROL Identity Symbol]** för ditt anpassade namnutrymme. Under det här steget måste du även konfigurera typen av namnutrymme. När du är klar väljer du **[!UICONTROL Create]**.
 
@@ -109,7 +109,7 @@ När namnutrymmet har lagts till visas det i listan. Du kan nu använda den i di
 
 ### Använd namnutrymmet i ditt schema
 
-Använd den vänstra navigeringen och välj **[!UICONTROL Schemas]** för att komma åt arbetsytan för användargränssnittet [ Scheman ](../../../../../xdm/ui/overview.md). Använd schemaarbetsytan för att skapa eller uppdatera ett schema med fältgruppen [!DNL Algolia Profile Details]. Navigera sedan till fältet **[!UICONTROL User Token]** och använd högerspåret för att markera rutan **[!UICONTROL Identity]**. Använd dessutom indatarutan för att definiera identitetsnamnrymden [!DNL Algolia User Token]. När du är klar väljer du **[!UICONTROL Save]**.
+Använd den vänstra navigeringen och välj **[!UICONTROL Schemas]** för att komma åt arbetsytan för användargränssnittet [&#x200B; Scheman &#x200B;](../../../../../xdm/ui/overview.md). Använd schemaarbetsytan för att skapa eller uppdatera ett schema med fältgruppen [!DNL Algolia Profile Details]. Navigera sedan till fältet **[!UICONTROL User Token]** och använd högerspåret för att markera rutan **[!UICONTROL Identity]**. Använd dessutom indatarutan för att definiera identitetsnamnrymden [!DNL Algolia User Token]. När du är klar väljer du **[!UICONTROL Save]**.
 
 ![Ange identitet i fält.](../../../../images/tutorials/create/algolia/user-profiles/set-set-identity-on-field.png)
 

@@ -97,7 +97,7 @@ För att målplatsen [!DNL Acxiom Audience Connection] ska kunna ta emot målgru
 | Telefon | Telefonnummer till individ (riktnummer + nummer)<br> Det här fältet används som standard som en dedupliceringsnyckel för att göra posterna unika. | Nej | 11 | 10 |
 
 I kolumnen **[!UICONTROL Source Field]** anger du namnet på vart och ett av källattributen som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL &#x200B; Select source field]**.<br>
-![ Mappningsskärm ](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
+![&#x200B; Mappningsskärm &#x200B;](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
 
 När du har mappat alla fält väljer du **[!UICONTROL Next]**.
 

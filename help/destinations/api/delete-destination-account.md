@@ -149,7 +149,7 @@ A successful response returns the current details of your connection including i
 >Innan du tar bort målkontot måste du ta bort alla befintliga dataflöden till målkontot.
 >Om du vill ta bort befintliga dataflöden kan du läsa sidorna nedan:
 >* [Använd Experience Platform-gränssnittet](../ui/delete-destinations.md) för att ta bort befintliga dataflöden;
->* [Använd API:t för Flow Service ](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
+>* [Använd API:t för Flow Service &#x200B;](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
 
 När du har ett anslutnings-ID och har säkerställt att det inte finns några dataflöden till målkontot, kan du utföra en DELETE-begäran till [!DNL Flow Service]-API:t.
 

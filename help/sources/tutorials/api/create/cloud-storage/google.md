@@ -109,4 +109,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Google Cloud Storage]-anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service ](../../explore/cloud-storage.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Google Cloud Storage]-anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service &#x200B;](../../explore/cloud-storage.md).

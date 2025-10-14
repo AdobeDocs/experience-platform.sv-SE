@@ -44,9 +44,9 @@ Observera följande krav för att kunna exportera data från Experience Platform
 
 Ett [!DNL Marketing Cloud Account Engagement]-konto med en prenumeration på [Marketing Cloud Account Engagement](https://www.salesforce.com/products/marketing-cloud/marketing-automation/)-produkten är obligatoriskt för att fortsätta.
 
-Ditt [!DNL Salesforce]-konto bör ha [!DNL Salesforce] `Account Engagement Administrator role`. Detta krävs för att [skapa anpassade fält för potentiell kund](https://help.salesforce.com/s/articleView?id=sf.pardot_fields_create_custom_field.htm&amp;type=5).
+Ditt [!DNL Salesforce]-konto bör ha [!DNL Salesforce] `Account Engagement Administrator role`. Detta krävs för att [skapa anpassade fält för potentiell kund](https://help.salesforce.com/s/articleView?id=sf.pardot_fields_create_custom_field.htm&type=5).
 
-Slutligen bör ditt konto även kunna komma åt [[!DNL Account Engagement Lightning App]](https://help.salesforce.com/s/articleView?id=sf.pardot_lightning_enable.htm&amp;type=5).
+Slutligen bör ditt konto även kunna komma åt [[!DNL Account Engagement Lightning App]](https://help.salesforce.com/s/articleView?id=sf.pardot_lightning_enable.htm&type=5).
 
 Kontakta [[!DNL Salesforce] support](https://www.salesforce.com/company/contact-us/?d=cta-glob-footer-10) eller din [!DNL Salesforce]-kontoadministratör om du inte har något konto, eller om kontot saknar [!DNL Marketing Cloud Account Engagement]-prenumerationen eller [!DNL Account Engagement Administrator role].
 
@@ -68,7 +68,7 @@ Se [!DNL Marketing Cloud Account Engagement] [hastighetsbegränsningarna](https:
 
 >[!IMPORTANT]
 >
->Om din [!DNL Salesforce]-kontoadministratör har begränsat åtkomsten till betrodda IP-intervall måste du kontakta dem för att få [tillåtslista Experience Platform IP](/help/destinations/catalog/streaming/ip-address-allow-list.md). Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) om du behöver ytterligare hjälp.
+>Om din [!DNL Salesforce]-kontoadministratör har begränsat åtkomsten till betrodda IP-intervall måste du kontakta dem för att få [tillåtslista Experience Platform IP](/help/destinations/catalog/streaming/ip-address-allow-list.md). Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5) om du behöver ytterligare hjälp.
 
 ## Identiteter som stöds {#supported-identities}
 

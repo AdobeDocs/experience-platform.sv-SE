@@ -36,7 +36,7 @@ Begrepp att förstå:
 
 ## Recipe creation
 
-Recipe-skapandet börjar med att paketera källfiler för att skapa en arkivfil. Source-filer definierar den maskininlärningslogik och de algoritmer som används för att lösa ett specifikt problem och skrivs antingen i [!DNL Python], R, PySpark eller Scala. De inbyggda arkivfilerna har formen av en Docker-bild. När den packade arkivfilen har skapats importeras den till [!DNL Data Science Workspace] för att skapa ett recept [ i användargränssnittet ](./import-packaged-recipe-ui.md) eller [ med API:t ](./import-packaged-recipe-api.md).
+Recipe-skapandet börjar med att paketera källfiler för att skapa en arkivfil. Source-filer definierar den maskininlärningslogik och de algoritmer som används för att lösa ett specifikt problem och skrivs antingen i [!DNL Python], R, PySpark eller Scala. De inbyggda arkivfilerna har formen av en Docker-bild. När den packade arkivfilen har skapats importeras den till [!DNL Data Science Workspace] för att skapa ett recept [&#x200B; i användargränssnittet &#x200B;](./import-packaged-recipe-ui.md) eller [&#x200B; med API:t &#x200B;](./import-packaged-recipe-api.md).
 
 ### Skapa modeller med Docker {#docker-based-model-authoring}
 

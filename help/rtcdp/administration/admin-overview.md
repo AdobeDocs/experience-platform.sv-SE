@@ -23,7 +23,7 @@ Följande avsnitt innehåller introduktioner till de centrala komponenterna i [!
 
 Attributbaserad åtkomstkontroll administreras via behörighetsgränssnittet. Den här funktionen utnyttjar roller i användargränssnittet för behörigheter, så att du kan länka användare med behörigheter och sandlådor. Med den här funktionen kan administratörer ge eller begränsa åtkomsten till specifika Real-Time CDP-funktioner för angivna användargrupper.
 
-Mer information om åtkomstkontroll finns i [attributbaserad åtkomstkontroll ](/help/access-control/abac/overview.md) i [!DNL Experience Platform]-dokumentationen.
+Mer information om åtkomstkontroll finns i [attributbaserad åtkomstkontroll &#x200B;](/help/access-control/abac/overview.md) i [!DNL Experience Platform]-dokumentationen.
 
 >[!IMPORTANT]
 >

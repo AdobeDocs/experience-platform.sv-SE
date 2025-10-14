@@ -130,7 +130,7 @@ Utför stegen nedan när widgetens disposition har fyllts i med data från den t
   ![Widgetdispositionen med tilläggsikonen och listrutan markerad.](../images/standard-dashboards/attributes-dropdown.png)
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL count_of_profiles]` och använd sedan ikonen + för att lägga till attributet `[!UICONTROL count_of_profiles]` på Y-axeln i listrutan.
 - Markera ikonen `...` (ellipser) i fältet [!UICONTROL Y-axis] och välj sedan sammanställningsfunktionen [!UICONTROL SUM] i listrutan.
-  ![Widgetens widget för godkännande av disposition av trender med datamodell, tabell och listrutan Y-axel och SUM-funktionen markerad. ](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
+  ![Widgetens widget för godkännande av disposition av trender med datamodell, tabell och listrutan Y-axel och SUM-funktionen markerad. &#x200B;](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
 - Välj listrutan [!UICONTROL Marks] och ändra diagramtyp till [!UICONTROL Line].
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL segment_name]` och använd sedan ikonen + för att lägga till `segment_name` som en [!UICONTROL Filter] i listrutan. Dialogrutan [!UICONTROL Filter: Segment_name] visas. Välj målgrupper som skapats tidigare och som hör till samtycke. I det här exemplet väljer du **[!UICONTROL Users Consented to Calls]**, **[!UICONTROL Users Consented to SMS]** och **[!UICONTROL Users Consented to Email]** följt av **[!UICONTROL Apply]**.
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL segment_name]` och välj sedan +-ikonen för att lägga till `segment_name` som [!UICONTROL Color] i listrutan.

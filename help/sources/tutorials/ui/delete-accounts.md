@@ -63,4 +63,4 @@ En slutgiltig bekräftelsedialogruta visas. Välj **[!UICONTROL Delete]** för a
 
 Genom att följa den här självstudiekursen har du använt arbetsytan **[!UICONTROL Sources]** för att ta bort befintliga konton.
 
-Anvisningar om hur du utför de här åtgärderna programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Ta bort anslutningar med API:t för Flow Service ](../../tutorials/api/delete.md)
+Anvisningar om hur du utför de här åtgärderna programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Ta bort anslutningar med API:t för Flow Service &#x200B;](../../tutorials/api/delete.md)

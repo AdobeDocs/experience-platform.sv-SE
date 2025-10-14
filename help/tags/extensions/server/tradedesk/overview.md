@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Du kan använda tillägget [[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) om du vill skicka data från Adobe Experience Platform Edge Network till [!DNL The Trade Desk] genom att använda API:ts funktioner i [reglerna för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
 
-Med tillägget [!DNL The Trade Desk Real-Time Conversions API] kan du utnyttja API:ts funktioner i reglerna för [ vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL The Trade Desk] från Adobe Experience Platform Edge Network.
+Med tillägget [!DNL The Trade Desk Real-Time Conversions API] kan du utnyttja API:ts funktioner i reglerna för [&#x200B; vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL The Trade Desk] från Adobe Experience Platform Edge Network.
 
 Läs det här dokumentet för att lära dig hur du installerar tillägget och använder dess funktioner i en händelsevidarebefordring av [regeln](../../../ui/managing-resources/rules.md).
 

@@ -24,7 +24,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar upplevelsedata med.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Om du vill lära dig hur du skapar dessa läser du självstudiekursen [om dataströmmar ](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen [om dataströmmar i tidsserier](../../../../../ingestion/tutorials/streaming-time-series-data.md).
+Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Om du vill lära dig hur du skapar dessa läser du självstudiekursen [om dataströmmar &#x200B;](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen [om dataströmmar i tidsserier](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 
 ### Använda Experience Platform API:er
 
@@ -334,7 +334,7 @@ Ett lyckat svar returnerar HTTP-status 201 med detaljerad information om den nyl
 
 För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 

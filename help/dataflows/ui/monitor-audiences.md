@@ -45,7 +45,7 @@ Instrumentpanelen innehåller mätvärden för både målgrupper och segmenterin
 
 >[!IMPORTANT]
 >
->För närvarande stöds bara målgrupper som har aktiverats för [gruppmål (filbaserade) ](../../destinations/destination-types.md#file-based) för kontrollpanelen för målgrupper.
+>För närvarande stöds bara målgrupper som har aktiverats för [gruppmål (filbaserade) &#x200B;](../../destinations/destination-types.md#file-based) för kontrollpanelen för målgrupper.
 
 ![Målgruppspanelen. Information om olika målgrupper i din organisation och sandlåda visas.](../assets/ui/monitor-audiences/audience-dashboard.png)
 

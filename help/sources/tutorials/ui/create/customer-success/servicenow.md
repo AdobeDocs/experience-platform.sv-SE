@@ -37,7 +37,7 @@ För att få åtkomst till ditt [!DNL ServiceNow]-konto på [!DNL Experience Pla
 | `username` | Användarnamnet som används för att ansluta till servern [!DNL ServiceNow] för autentisering. |
 | `password` | Lösenordet som ska anslutas till [!DNL ServiceNow]-servern för autentisering. |
 
-Mer information om hur du kommer igång finns i [det här [!DNL ServiceNow] dokumentet](https://developer.servicenow.com/app.do#!/rest_api_doc?v=newyork&amp;id=r_TableAPI-GET).
+Mer information om hur du kommer igång finns i [det här [!DNL ServiceNow] dokumentet](https://developer.servicenow.com/app.do#!/rest_api_doc?v=newyork&id=r_TableAPI-GET).
 
 ## Anslut ditt [!DNL ServiceNow]-konto
 

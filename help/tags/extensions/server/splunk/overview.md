@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Översikt över segmenttillägg
 
-[Splunk](https://www.splunk.com) är en observerbarhetsplattform som tillhandahåller sökning, analys och visualisering för åtgärdbara insikter i dina data. Tillägget [Splunk ](../../../ui/event-forwarding/overview.md) för händelsevidarebefordran[utnyttjar REST API:t för HTTP-händelseinsamlaren](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints) för att skicka händelser från Adobe Experience Platform Edge Network till [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector).
+[Splunk](https://www.splunk.com) är en observerbarhetsplattform som tillhandahåller sökning, analys och visualisering för åtgärdbara insikter i dina data. Tillägget [Splunk &#x200B;](../../../ui/event-forwarding/overview.md) för händelsevidarebefordran[utnyttjar REST API:t för HTTP-händelseinsamlaren](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints) för att skicka händelser från Adobe Experience Platform Edge Network till [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector).
 
 Splunk använder lagertoken som autentiseringsmekanism för att kommunicera med Splunk Event Collector API.
 

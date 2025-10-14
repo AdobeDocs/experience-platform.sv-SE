@@ -52,7 +52,7 @@ Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och 
 | Funktion | Beskrivning |
 | --- | --- |
 | Uppdateringar av bakåtfyllnadsperiod för Adobe Analytics i icke-produktionssandlådor | Förifyllningsperioden för Adobe Analytics i icke-produktionssandlådor har reducerats till tre månader. Backfill för produktionssandlådor är desamma vid 13 månader. Den här ändringen gäller endast för nya flöden och påverkar inte befintliga flöden. Mer information finns i [Adobe Analytics-översikten](../../sources/connectors/adobe-applications/analytics.md). |
-| Ny mappningsfunktion som konverterar FPID-strängar till ECID | Använd funktionen `fpid_to_ecid` för att konvertera FPID-strängar till ECID för användning i Experience Platform- och Experience Cloud-program. Mer information finns i handboken [Dataförberedelser ](../../data-prep/functions.md). |
+| Ny mappningsfunktion som konverterar FPID-strängar till ECID | Använd funktionen `fpid_to_ecid` för att konvertera FPID-strängar till ECID för användning i Experience Platform- och Experience Cloud-program. Mer information finns i handboken [Dataförberedelser &#x200B;](../../data-prep/functions.md). |
 
 {style="table-layout:auto"}
 
@@ -134,7 +134,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Fältgrupp | [[!UICONTROL Adobe Unified Profile Service Account Union Extension]](https://github.com/adobe/xdm/pull/1696/files) | En fältgrupp för kontotillägg för kundprofil i realtid har lagts till som gör det möjligt för användare att lägga till segmentmedlemskap i en kontounion. |
 | Schema | [[!UICONTROL Computed Attributes System Schema]](https://github.com/adobe/xdm/pull/1696/files) | Fältgruppen Beräknade attribut som används av kundprofilen i realtid har uppdaterats till ett skrivskyddat globalt schema. |
 | Fältgrupp | Flera | Flera händelser har lagts till som fält för [[!UICONTROL Time-series Schema]](https://github.com/adobe/xdm/pull/1718/files). |
-| Fältgrupp | Profilens lojalitetsinformation | [Korrigerade titeln ](https://github.com/adobe/xdm/pull/1717/files) för `xdm:upgradeDate` från &quot;Programnamn&quot; till &quot;Uppgraderingsdatum&quot;. |
+| Fältgrupp | Profilens lojalitetsinformation | [Korrigerade titeln &#x200B;](https://github.com/adobe/xdm/pull/1717/files) för `xdm:upgradeDate` från &quot;Programnamn&quot; till &quot;Uppgraderingsdatum&quot;. |
 | Fältgrupp | Flera | Flera fält från [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1714/files) har uppdaterats för att ta bort den dubbla kapslade hierarkin. |
 
 {style="table-layout:auto"}

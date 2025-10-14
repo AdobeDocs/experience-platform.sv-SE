@@ -21,7 +21,7 @@ Alla fält i XDM-scheman (Experience Data Model) har ett associerat namnutrymme.
 
 Med namnmellanrum kan du definiera ett fält i ett namnutrymme så att det betyder något annat än samma fält i ett annat namnutrymme. I praktiken visar namnutrymmet för ett fält vem som skapade fältet (till exempel standard-XDM (Adobe), en leverantör eller din organisation).
 
-Ta till exempel ett XDM-schema som använder fältgruppen [[!UICONTROL Personal Contact Details] ](../field-groups/profile/demographic-details.md), som har ett standardfält `mobilePhone` som finns i namnområdet `xdm`. I samma schema kan du även skapa ett separat `mobilePhone`-fält under ett annat namnområde (ditt [klientorganisations-ID](../api/getting-started.md#know-your-tenant_id)). Båda dessa fält kan samexistera med olika underliggande betydelse eller begränsningar.
+Ta till exempel ett XDM-schema som använder fältgruppen [[!UICONTROL Personal Contact Details] &#x200B;](../field-groups/profile/demographic-details.md), som har ett standardfält `mobilePhone` som finns i namnområdet `xdm`. I samma schema kan du även skapa ett separat `mobilePhone`-fält under ett annat namnområde (ditt [klientorganisations-ID](../api/getting-started.md#know-your-tenant_id)). Båda dessa fält kan samexistera med olika underliggande betydelse eller begränsningar.
 
 ## Namnområdessyntax
 

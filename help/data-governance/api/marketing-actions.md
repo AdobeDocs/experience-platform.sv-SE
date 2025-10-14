@@ -103,7 +103,7 @@ Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgä
 | `_page.count` | Det totala antalet returnerade marknadsföringsåtgärder. |
 | `children` | En array med objekt som innehåller information om hämtade marknadsföringsåtgärder. |
 | `name` | Namnet på marknadsföringsåtgärden, som fungerar som sin unika identifierare när [en letar upp en viss marknadsföringsåtgärd](#lookup). |
-| `_links.self.href` | En URI-referens för marknadsföringsåtgärden, som kan användas för att slutföra `marketingActionsRefs`-arrayen när [en dataanvändningsprincip ](policies.md#create-policy) skapas. |
+| `_links.self.href` | En URI-referens för marknadsföringsåtgärden, som kan användas för att slutföra `marketingActionsRefs`-arrayen när [en dataanvändningsprincip &#x200B;](policies.md#create-policy) skapas. |
 
 ## Slå upp en specifik marknadsföringsåtgärd {#lookup}
 

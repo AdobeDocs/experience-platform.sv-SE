@@ -81,7 +81,7 @@ Mer information om hur du skapar en exportnyttolast för en befintlig XDM-resurs
 
 ## Import
 
-Om du använder [export](#export) eller [ CSV för schemakonvertering](./import.md)-slutpunkter för att skapa en exportnyttolast kan du skicka den nyttolasten till en målorganisation och sandlåda för att importera de angivna resurserna.
+Om du använder [export](#export) eller [&#x200B; CSV för schemakonvertering](./import.md)-slutpunkter för att skapa en exportnyttolast kan du skicka den nyttolasten till en målorganisation och sandlåda för att importera de angivna resurserna.
 
 Mer information om hur du genererar XDM-resurser från exportnyttolaster finns i [importguiden](./export.md).
 

@@ -71,7 +71,7 @@ Om du vill ta hänsyn till effekterna av cookie-livscykler enligt ovan kan du v�
 Beroende på ditt användningssätt kan du komma åt [!DNL ECID] på två sätt:
 
 * [Hämta  [!DNL ECID] via datainställning för datainsamling](#retrieve-ecid-data-prep): Det här är den rekommenderade metoden som du bör använda.
-* [Hämta  [!DNL ECID]  via `getIdentity()`-kommandot ](#retrieve-ecid-getidentity): Använd bara den här metoden när du behöver [!DNL ECID]-informationen på klientsidan.
+* [Hämta  [!DNL ECID]  via `getIdentity()`-kommandot &#x200B;](#retrieve-ecid-getidentity): Använd bara den här metoden när du behöver [!DNL ECID]-informationen på klientsidan.
 
 ### Hämta [!DNL ECID] via datapresten för datainsamling {#retrieve-ecid-data-prep}
 
@@ -126,7 +126,7 @@ alloy("getIdentity",{
 
 ## Använder `identityMap` {#using-identitymap}
 
-Med hjälp av ett XDM [`identityMap`-fält ](../../xdm/schema/composition.md#identityMap) kan du identifiera en enhet/användare med flera identiteter, ange deras autentiseringstillstånd och avgöra vilken identifierare som betraktas som den primära. Om ingen identifierare har angetts som `primary` blir standardvärdet `ECID`.
+Med hjälp av ett XDM [`identityMap`-fält &#x200B;](../../xdm/schema/composition.md#identityMap) kan du identifiera en enhet/användare med flera identiteter, ange deras autentiseringstillstånd och avgöra vilken identifierare som betraktas som den primära. Om ingen identifierare har angetts som `primary` blir standardvärdet `ECID`.
 
 `identityMap` fält uppdateras med kommandot `sentEvent`.
 

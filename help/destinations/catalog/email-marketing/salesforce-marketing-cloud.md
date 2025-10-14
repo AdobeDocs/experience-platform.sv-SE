@@ -112,4 +112,4 @@ För [!DNL Salesforce Marketing Cloud] mål skapar Experience Platform en `.csv`
 
 ## Konfigurera dataimport till [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-När du har anslutit [!DNL Experience Platform] till ditt [!DNL SFTP]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Salesforce Marketing Cloud]. Mer information om hur du gör detta finns i [Importera prenumeranter till Marketing Cloud från en fil](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) i [!DNL Salesforce Help Center].
+När du har anslutit [!DNL Experience Platform] till ditt [!DNL SFTP]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Salesforce Marketing Cloud]. Mer information om hur du gör detta finns i [Importera prenumeranter till Marketing Cloud från en fil](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&type=5) i [!DNL Salesforce Help Center].

@@ -61,4 +61,4 @@ Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar
 
 Genom att följa den här självstudiekursen har du använt arbetsytan [!UICONTROL Sources] för att ta bort ett befintligt dataflöde.
 
-I självstudiekursen [Ta bort dataflöden med API:t för Flow Service ](../../tutorials/api/delete-dataflows.md) finns anvisningar om hur du utför dessa åtgärder programmatiskt med API-anrop.
+I självstudiekursen [Ta bort dataflöden med API:t för Flow Service &#x200B;](../../tutorials/api/delete-dataflows.md) finns anvisningar om hur du utför dessa åtgärder programmatiskt med API-anrop.

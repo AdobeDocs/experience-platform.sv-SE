@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Med [[!DNL Meta Conversions API]](https://developers.facebook.com/docs/marketing-api/conversions-api/) kan du koppla marknadsföringsdata på serversidan till [!DNL Meta]-tekniker för att optimera er annonsinriktning, minska kostnaden per åtgärd och mäta resultat. Händelser är länkade till ett [[!DNL Meta Pixel]](https://developers.facebook.com/docs/meta-pixel/)-ID och bearbetas på ungefär samma sätt som händelser på klientsidan.
 
-Med tillägget [!DNL Meta Conversions API] kan du utnyttja API:ts funktioner i reglerna för [ vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL Meta] från Adobe Experience Platform Edge Network. Det här dokumentet beskriver hur du installerar tillägget och använder dess funktioner i en händelsevidarebefordring av [regeln](../../../ui/managing-resources/rules.md).
+Med tillägget [!DNL Meta Conversions API] kan du utnyttja API:ts funktioner i reglerna för [&#x200B; vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL Meta] från Adobe Experience Platform Edge Network. Det här dokumentet beskriver hur du installerar tillägget och använder dess funktioner i en händelsevidarebefordring av [regeln](../../../ui/managing-resources/rules.md).
 
 ## Demo
 
@@ -23,7 +23,7 @@ Följande video är avsedd att stödja din förståelse av [!DNL Meta Conversion
 
 ## Förhandskrav
 
-Vi rekommenderar starkt att du använder [!DNL Meta Pixel] och [!DNL Conversions API] för att dela och skicka samma händelser från klient- respektive serversidan, eftersom detta kan hjälpa till att återställa händelser som inte plockats upp av [!DNL Meta Pixel]. Innan du installerar tillägget [!DNL Conversions API] ska du läsa guiden för tillägget [[!DNL Meta Pixel] ](../../client/meta/overview.md) för steg om hur du integrerar det i implementeringar av taggar på klientsidan.
+Vi rekommenderar starkt att du använder [!DNL Meta Pixel] och [!DNL Conversions API] för att dela och skicka samma händelser från klient- respektive serversidan, eftersom detta kan hjälpa till att återställa händelser som inte plockats upp av [!DNL Meta Pixel]. Innan du installerar tillägget [!DNL Conversions API] ska du läsa guiden för tillägget [[!DNL Meta Pixel] &#x200B;](../../client/meta/overview.md) för steg om hur du integrerar det i implementeringar av taggar på klientsidan.
 
 >[!NOTE]
 >
@@ -160,7 +160,7 @@ Det tar några minuter innan den första installationsprocessen har slutförts o
 
 ![Bekräftelseskärmen för den första konfigurationen slutfördes](../../../images/extensions/server/meta/setup-complete.png)
 
-I dialogrutan **[!UICONTROL Add Code on Your Site]** kopierar du koden som har tillhandahållits med funktionen ![ Kopiera](/help/images/icons/copy.png) och klistrar in den i `<head>` på källwebbplatsen. Välj **[!UICONTROL Start Validation]** när den är implementerad
+I dialogrutan **[!UICONTROL Add Code on Your Site]** kopierar du koden som har tillhandahållits med funktionen ![&#x200B; Kopiera](/help/images/icons/copy.png) och klistrar in den i `<head>` på källwebbplatsen. Välj **[!UICONTROL Start Validation]** när den är implementerad
 
 ![Lägg till kod i webbplatsdialogrutan](../../../images/extensions/server/meta/add-code-on-your-site.png)
 

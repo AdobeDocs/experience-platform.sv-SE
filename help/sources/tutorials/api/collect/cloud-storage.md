@@ -200,7 +200,7 @@ curl -X POST \
 
 För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../xdm/api/schemas.md).
 
@@ -657,7 +657,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `flowSpec.id` | [Flödesspec-ID:t ](#specs) som hämtades i föregående steg. |
+| `flowSpec.id` | [Flödesspec-ID:t &#x200B;](#specs) som hämtades i föregående steg. |
 | `sourceConnectionIds` | [källanslutnings-ID](#source) har hämtats i ett tidigare steg. |
 | `targetConnectionIds` | [målanslutnings-ID](#target-connection) har hämtats i ett tidigare steg. |
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) hämtades i ett tidigare steg. |

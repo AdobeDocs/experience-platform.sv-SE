@@ -23,7 +23,7 @@ Kort sagt fungerar [!DNL Catalog] som ett metadataarkiv eller en katalog där du
 * Hur mycket data har bearbetats?
 * Vilka fel uppstod under bearbetningen?
 
-[!DNL Catalog] innehåller ett RESTful-API som gör att du kan hantera [!DNL Experience Platform]-metadata programmatiskt med grundläggande CRUD-åtgärder. Mer information finns i [Utvecklarhandboken för ](api/getting-started.md).
+[!DNL Catalog] innehåller ett RESTful-API som gör att du kan hantera [!DNL Experience Platform]-metadata programmatiskt med grundläggande CRUD-åtgärder. Mer information finns i [Utvecklarhandboken för &#x200B;](api/getting-started.md).
 
 ## [!DNL Catalog] och [!DNL Experience Platform] tjänster
 

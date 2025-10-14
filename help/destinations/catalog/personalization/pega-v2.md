@@ -81,7 +81,7 @@ Fyll i fälten nedan och välj **[!UICONTROL Connect to destination]**:
 
 När du har upprättat autentiseringsanslutningen till [!DNL Pega Customer Decision Hub] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH ](../../assets/catalog/personalization/pega/pega-connect-destination-v2.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH &#x200B;](../../assets/catalog/personalization/pega/pega-connect-destination-v2.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**.
 

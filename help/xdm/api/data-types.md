@@ -353,11 +353,11 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om du utför en GET-begäran om att [visa alla datatyper](#list) i klientbehållaren skulle det nu inkludera datatypen Egenskapsinformation. Du kan också [utföra en sökning (GET) ](#lookup) med URL-kodad `$id` URI för att visa den nya datatypen direkt.
+Om du utför en GET-begäran om att [visa alla datatyper](#list) i klientbehållaren skulle det nu inkludera datatypen Egenskapsinformation. Du kan också [utföra en sökning (GET) &#x200B;](#lookup) med URL-kodad `$id` URI för att visa den nya datatypen direkt.
 
 ## Uppdatera en datatyp {#put}
 
-Du kan ersätta en hel datatyp genom en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar en datatyp via en PUT-begäran måste brödtexten innehålla alla fält som krävs när [en ny datatyp ](#create) skapas i en POST-begäran.
+Du kan ersätta en hel datatyp genom en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar en datatyp via en PUT-begäran måste brödtexten innehålla alla fält som krävs när [en ny datatyp &#x200B;](#create) skapas i en POST-begäran.
 
 >[!NOTE]
 >

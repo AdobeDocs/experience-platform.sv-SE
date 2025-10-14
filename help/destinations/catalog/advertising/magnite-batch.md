@@ -153,7 +153,7 @@ I **[!UICONTROL Source field]** kan du välja attribut eller identitet för dina
 ![mappa önskade datafält till fältet device_id](../../assets/catalog/advertising/magnite/destination-batch-active-audience-field-mapping.png)
 
 I **[!UICONTROL Target field]**:
-![ Välj lämplig målidentitet för enhetstyp ](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [ Identiteter som stöds ](#supported-identities) .
+![&#x200B; Välj lämplig målidentitet för enhetstyp &#x200B;](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [&#x200B; Identiteter som stöds &#x200B;](#supported-identities) .
 I det här exemplet har vi valt **[!UICONTROL Target field]**: magnite_deviceId_CUSTOM eftersom **[!UICONTROL Source field]** definierades som en anpassad IdentityMap: DeviceID.
 
 >[!NOTE]

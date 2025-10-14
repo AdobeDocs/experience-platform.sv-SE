@@ -35,7 +35,7 @@ Förbättrade konverteringar använder API:t [!DNL Google Ads] för att lägga t
 >
 >Om du vill associera konverteringshändelsen på klientsidan med förstahandsdata som skickas från händelsevidarebefordran måste `transaction_ID` vara samma i båda anropen. Mer information om var det här värdet måste anges för varje tjänst finns i avsnitten om konfigurering av konverteringsåtgärder för [tags](#conversion-action-tags) respektive [händelsevidarebefordran](#conversion-action-event-forwarding).
 
-Eftersom sändning av konverteringshändelser innefattar både en implementering på klientsidan och på serversidan, innehåller det här dokumentet de nödvändiga stegen för konfiguration av [[!DNL Google Global Site Tag] (gtag)-tillägget ](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) på klientsidan förutom [!DNL Enhanced Conversions]-tillägget för händelsevidarebefordran.
+Eftersom sändning av konverteringshändelser innefattar både en implementering på klientsidan och på serversidan, innehåller det här dokumentet de nödvändiga stegen för konfiguration av [[!DNL Google Global Site Tag] (gtag)-tillägget &#x200B;](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) på klientsidan förutom [!DNL Enhanced Conversions]-tillägget för händelsevidarebefordran.
 
 I följande video visas en introduktion till tillägget [!DNL Enhanced Conversions] som går igenom implementeringsstegen på en hög nivå:
 

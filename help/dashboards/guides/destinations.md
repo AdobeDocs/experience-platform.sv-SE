@@ -33,7 +33,7 @@ Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL 
 
 >[!NOTE]
 >
->Om din organisation är ny för Experience Platform och ännu inte har aktiva mål visas inte kontrollpanelen Destinationer och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [!UICONTROL Catalog]. Mer information om fliken [!UICONTROL Catalog] finns i handboken om [[!UICONTROL Destinations]-arbetsytan ](../../destinations/ui/destinations-workspace.md).
+>Om din organisation är ny för Experience Platform och ännu inte har aktiva mål visas inte kontrollpanelen Destinationer och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [!UICONTROL Catalog]. Mer information om fliken [!UICONTROL Catalog] finns i handboken om [[!UICONTROL Destinations]-arbetsytan &#x200B;](../../destinations/ui/destinations-workspace.md).
 
 ![Översikt över destinationer för Experience Platform-gränssnittet med den senaste ögonblicksbilden markerad.](../images/destinations/snapshot-timestamp.png)
 
@@ -294,7 +294,7 @@ Widgeten [!UICONTROL Activated audiences across all destinations] visar det tota
 
 ![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
 
-Välj **[!UICONTROL Audiences]** för att navigera till fliken [!UICONTROL Browse] för mål. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Mer information om fliken [[!UICONTROL Browse] ](../../destinations/ui/destinations-workspace.md#browse) finns i dokumentationen.
+Välj **[!UICONTROL Audiences]** för att navigera till fliken [!UICONTROL Browse] för mål. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Mer information om fliken [[!UICONTROL Browse] &#x200B;](../../destinations/ui/destinations-workspace.md#browse) finns i dokumentationen.
 
 Se avsnittet med förutsättningar för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 

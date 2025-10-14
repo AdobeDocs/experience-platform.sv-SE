@@ -80,7 +80,7 @@ Det finns **ingen hämtnings-URL** i svaret på en **borttagningsbegäran** efte
 >
 >Avsnitten nedan innehåller länkar till dokumentation som beskriver hur du gör allmänna sekretessförfrågningar i API:t eller användargränssnittet. Beroende på vilka [!DNL Experience Cloud]-program du använder kan dock de fält som du måste skicka i nyttolasten för begäran skilja sig från de exempel som visas i dessa handböcker.
 >
->I dokumentet om [Privacy Service och Experience Cloud ](./experience-cloud-apps.md) finns mer information om hur du formaterar sekretessförfrågningar för dina [!DNL Experience Cloud] -program, allt eftersom du följer med API- och användargränssnittsguiderna.
+>I dokumentet om [Privacy Service och Experience Cloud &#x200B;](./experience-cloud-apps.md) finns mer information om hur du formaterar sekretessförfrågningar för dina [!DNL Experience Cloud] -program, allt eftersom du följer med API- och användargränssnittsguiderna.
 >
 >Det är också viktigt att notera att sekretessförfrågningar behandlas asynkront mellan olika Experience Cloud-program. När en begäran har tagits emot av Privacy Servicen kan det ta en stund mellan minuter och veckor innan den kan slutföras. Den tid det tar att slutföra varje begäran är specifik för programmet du arbetar med och den mängd data som behöver behandlas.
 

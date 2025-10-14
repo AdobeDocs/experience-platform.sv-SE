@@ -151,7 +151,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-När ett mål-XDM-schema har skapats och dess unika `$id` kan du nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatamängd skapar du en POST-begäran till `dataSets`-slutpunkten för [-katalogtjänstens API ](https://www.adobe.io/experience-platform-apis/references/catalog/) samtidigt som du anger målschemats ID i nyttolasten.
+När ett mål-XDM-schema har skapats och dess unika `$id` kan du nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatamängd skapar du en POST-begäran till `dataSets`-slutpunkten för [-katalogtjänstens API &#x200B;](https://www.adobe.io/experience-platform-apis/references/catalog/) samtidigt som du anger målschemats ID i nyttolasten.
 
 **API-format**
 
@@ -470,7 +470,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `flowSpec.id` | [Flödesspec-ID:t ](#specs) som hämtades i föregående steg. |
+| `flowSpec.id` | [Flödesspec-ID:t &#x200B;](#specs) som hämtades i föregående steg. |
 | `sourceConnectionIds` | [källanslutnings-ID](#source) har hämtats i ett tidigare steg. |
 | `targetConnectionIds` | [målanslutnings-ID](#target-connection) har hämtats i ett tidigare steg. |
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) hämtades i ett tidigare steg. |

@@ -31,5 +31,5 @@ Kunds-AI följer dina önskemål om samtycke. När du har [konfigurerat och akti
 Du kan läsa mer om den här funktionen här:
 
 [Komma igång med kundens AI](../../customer-ai/getting-started.md)
-[Adobe Experience Platform &amp; Applications ](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=sv-SE)
+[Adobe Experience Platform &amp; Applications &#x200B;](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=sv-SE)
 [Adobe Experience Cloud-arkitekturdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/experience-cloud.html?lang=sv-SE)

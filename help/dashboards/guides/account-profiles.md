@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om dina kontoprofiler, som de tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Account Profiles] i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
-Det här dokumentet innehåller en översikt över funktionerna på kontrollpanelen [!UICONTROL Account Profiles] och information om tillgängliga standardinsikter. Mer information om de tillgängliga funktionerna finns i [[!UICONTROL Account Profiles]-gränssnittshandboken ](../../rtcdp/accounts/account-profile-ui-guide.md).
+Det här dokumentet innehåller en översikt över funktionerna på kontrollpanelen [!UICONTROL Account Profiles] och information om tillgängliga standardinsikter. Mer information om de tillgängliga funktionerna finns i [[!UICONTROL Account Profiles]-gränssnittshandboken &#x200B;](../../rtcdp/accounts/account-profile-ui-guide.md).
 
 ## Komma igång
 

@@ -81,7 +81,7 @@ Om du vill utöka `meta:enum` för ett standardsträngfält kan du skapa en [ege
 >
 >Föreslagna värden för strängfält kan bara läggas till på schemanivå. Att utöka `meta:enum` för ett standardfält i ett schema påverkar alltså inte andra scheman som använder samma standardfält.
 
-Följande begäran lägger till föreslagna värden i standardfältet `eventType` (tillhandahålls av klassen [ XDM ExperienceEvent](../classes/experienceevent.md)) för det schema som identifieras under `sourceSchema`:
+Följande begäran lägger till föreslagna värden i standardfältet `eventType` (tillhandahålls av klassen [&#x200B; XDM ExperienceEvent](../classes/experienceevent.md)) för det schema som identifieras under `sourceSchema`:
 
 ```curl
 curl -X POST \

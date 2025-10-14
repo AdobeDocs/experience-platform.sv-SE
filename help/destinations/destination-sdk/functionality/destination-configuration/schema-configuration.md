@@ -250,7 +250,7 @@ Om du vill konfigurera målet så att det stöder aktivering av [externt generer
 }
 ```
 
-Mer information om funktionen [ finns i egenskapsbeskrivningarna i ](#attributes-schema)tabellen`segmentNamespaceDenyList` ovan på den här sidan.
+Mer information om funktionen [&#x200B; finns i egenskapsbeskrivningarna i &#x200B;](#attributes-schema)tabellen`segmentNamespaceDenyList` ovan på den här sidan.
 
 ## Nästa steg {#next-steps}
 

@@ -34,7 +34,7 @@ Med slutpunkten `/descriptors` i API:t [!DNL Schema Registry] kan du programmäs
 
 Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
-Förutom standardbeskrivningar har [!DNL Schema Registry] stöd för beskrivningstyper för modellbaserade scheman, till exempel **primärnyckel**, **version** och **tidsstämpel**. Dessa lägger in unika funktioner, styr versionshantering och definierar tidsseriefält på schemanivå. Om du inte känner till modellbaserade scheman kan du förhandsgranska [Data Mirror översikt](../data-mirror/overview.md) och [modellbaserade scheman ](../schema/model-based.md) innan du fortsätter.
+Förutom standardbeskrivningar har [!DNL Schema Registry] stöd för beskrivningstyper för modellbaserade scheman, till exempel **primärnyckel**, **version** och **tidsstämpel**. Dessa lägger in unika funktioner, styr versionshantering och definierar tidsseriefält på schemanivå. Om du inte känner till modellbaserade scheman kan du förhandsgranska [Data Mirror översikt](../data-mirror/overview.md) och [modellbaserade scheman &#x200B;](../schema/model-based.md) innan du fortsätter.
 
 >[!IMPORTANT]
 >

@@ -34,7 +34,7 @@ Om du vill komma åt din bucket på Experience Platform måste du ange giltiga v
 
 ## IP-adress tillåtelselista
 
-Innan du kan använda källanslutningar måste du lägga till de IP-adresser som krävs för din region på tillåtelselista. Om du inte lägger till de här IP-adresserna kanske källanslutningarna inte fungerar som de ska eller så kan fel uppstå. Detaljerade instruktioner och en lista över IP-adresser som ska tillåtas finns på sidan [IP-adressen tillåtelselista ](../../ip-address-allow-list.md).
+Innan du kan använda källanslutningar måste du lägga till de IP-adresser som krävs för din region på tillåtelselista. Om du inte lägger till de här IP-adresserna kanske källanslutningarna inte fungerar som de ska eller så kan fel uppstå. Detaljerade instruktioner och en lista över IP-adresser som ska tillåtas finns på sidan [IP-adressen tillåtelselista &#x200B;](../../ip-address-allow-list.md).
 
 ### Konfigurera behörigheter i Experience Platform
 

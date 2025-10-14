@@ -113,7 +113,7 @@ Om du använder enhetssökningar när [du konfigurerar ditt datastream](/help/da
 
 ## Samla in kontextinformation med taggtillägget Web SDK
 
-Inställningen för kontextinformation är en kombination av alternativknappar och kryssrutor när [taggtillägget ](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) konfigureras. Varje kryssruta mappas till ett kontextnyckelord.
+Inställningen för kontextinformation är en kombination av alternativknappar och kryssrutor när [taggtillägget &#x200B;](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) konfigureras. Varje kryssruta mappas till ett kontextnyckelord.
 
 1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.

@@ -86,7 +86,7 @@ SELECT source_segment_name,
 
 +++
 
-I [Målgruppswidgetens dokumentation ](../guides/audiences.md#audience-overlap-report) finns information om utseendet och funktionaliteten för den här insikten.
+I [Målgruppswidgetens dokumentation &#x200B;](../guides/audiences.md#audience-overlap-report) finns information om utseendet och funktionaliteten för den här insikten.
 
 ## Målgruppsöverlappning {#audience-overlap}
 

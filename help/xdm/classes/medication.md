@@ -23,4 +23,4 @@ I Experience Data Model (XDM) fångar klassen [!UICONTROL Medication] den minsta
 
 {style="table-layout:auto"}
 
-Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare medication] ](../field-groups/medication/healthcare-medication.md) för att beskriva mer information om läkemedlet eller läkemedlet.
+Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare medication] &#x200B;](../field-groups/medication/healthcare-medication.md) för att beskriva mer information om läkemedlet eller läkemedlet.

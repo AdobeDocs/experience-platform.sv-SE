@@ -133,7 +133,7 @@ Autentisera med molnlagringskällan som du väljer. Under arbetsflödets dataurv
 
 Välj sedan en exempelfil från källdata. Eftersom dina data är krypterade behöver Experience Platform en exempelfil för att kunna skapa ett XDM-schema som kan mappas till dina källdata.
 
-![The &quot;Is this file encrypted?&quot; växla aktiverat och knappen Välj exempelfil markerad. ](../../images/tutorials/edi/select_sample_file.png)
+![The &quot;Is this file encrypted?&quot; växla aktiverat och knappen Välj exempelfil markerad. &#x200B;](../../images/tutorials/edi/select_sample_file.png)
 
 När du har valt exempelfilen konfigurerar du inställningarna för dina data, till exempel motsvarande dataformat, avgränsare och komprimeringstyp. Ge förhandsvisningsgränssnittet lite tid att rendera och välj sedan **[!UICONTROL Save]**.
 

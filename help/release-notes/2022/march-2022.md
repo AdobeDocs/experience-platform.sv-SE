@@ -100,7 +100,7 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de mål som din or
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Widgeten Antal destinationer | Widgeten visar totalt antal tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål. Mer information finns i [dokumentationen för standardwidgeten ](../../dashboards/guides/destinations.md#standard-widgets). |
+| Widgeten Antal destinationer | Widgeten visar totalt antal tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål. Mer information finns i [dokumentationen för standardwidgeten &#x200B;](../../dashboards/guides/destinations.md#standard-widgets). |
 
 {style="table-layout:auto"}
 

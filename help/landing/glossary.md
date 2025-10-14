@@ -345,7 +345,7 @@ ht-degree: 0%
 
 **Sammanslagningsprincip**: Sammanslagningsprinciper är regler som Experience Platform använder för att avgöra hur kunddatafragment från flera källor kombineras för att skapa en enskild profil. När en datakonflikt inträffar avgör sammanfogningsprincipen vilka data som ska prioriteras för att inkluderas i profilen.
 
-**MHMDAa**: [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true) förbättrar konsumenternas sekretesspolicy när det gäller hälsodata. Det föreskriver att personuppgifter, konsumentens samtycke och raderingsrättigheter ska offentliggöras, och förbjuder försäljning av hälsodata utan tillstånd. Lagen gör det dessutom olagligt att använda geofencing runt vårdinrättningar.
+**MHMDAa**: [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&full=true) förbättrar konsumenternas sekretesspolicy när det gäller hälsodata. Det föreskriver att personuppgifter, konsumentens samtycke och raderingsrättigheter ska offentliggöras, och förbjuder försäljning av hälsodata utan tillstånd. Lagen gör det dessutom olagligt att använda geofencing runt vårdinrättningar.
 
 **Mixin**: Se &quot;Schemafältgrupp&quot;.
 

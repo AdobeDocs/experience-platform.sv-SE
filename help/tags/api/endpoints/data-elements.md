@@ -804,7 +804,7 @@ Dataelement är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du k
 
 ## Hämta relaterade resurser för ett dataelement {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för ett dataelement. När [söker upp ett dataelement ](#lookup) visas dessa relationer under egenskapen `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för ett dataelement. När [söker upp ett dataelement &#x200B;](#lookup) visas dessa relationer under egenskapen `relationships`.
 
 Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 

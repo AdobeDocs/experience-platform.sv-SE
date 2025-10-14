@@ -24,4 +24,4 @@ I Experience Data Model (XDM) hämtar klassen [!UICONTROL Location] platsinforma
 | [!UICONTROL Location Identifier] | `locationID` | [!UICONTROL String] | En unik identifierare för platsen. |
 | [!UICONTROL Location Name] | `locationName` | [!UICONTROL String] | Namnet på platsen. |
 
-Klassen kan utökas med fältgruppen [[!UICONTROL Location] ](../field-groups/location.md) för att beskriva mer information om en plats.
+Klassen kan utökas med fältgruppen [[!UICONTROL Location] &#x200B;](../field-groups/location.md) för att beskriva mer information om en plats.

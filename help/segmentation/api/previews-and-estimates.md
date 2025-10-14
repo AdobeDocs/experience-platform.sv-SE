@@ -273,4 +273,4 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 
 ## Nästa steg
 
-När du har läst den här guiden bör du få en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t. Om du vill lära dig hur du får åtkomst till mått som hör till kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, går du till [profilförhandsgranskningsguiden (`/previewsamplestatus`) ](../../profile/api/preview-sample-status.md).
+När du har läst den här guiden bör du få en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t. Om du vill lära dig hur du får åtkomst till mått som hör till kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, går du till [profilförhandsgranskningsguiden (`/previewsamplestatus`) &#x200B;](../../profile/api/preview-sample-status.md).

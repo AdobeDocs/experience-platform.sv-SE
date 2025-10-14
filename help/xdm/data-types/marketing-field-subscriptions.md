@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Den här datatypen är avsedd att användas för att anpassa strukturen för organisationens medgivandescheman med hjälp av fältgruppen [[!UICONTROL Consents and Preferences] ](../field-groups/profile/consents.md) som baslinje.
+>Den här datatypen är avsedd att användas för att anpassa strukturen för organisationens medgivandescheman med hjälp av fältgruppen [[!UICONTROL Consents and Preferences] &#x200B;](../field-groups/profile/consents.md) som baslinje.
 >
 >Om du inte behöver en `subscriptions`-karta för ett visst marknadsföringsinställningsfält kan du använda datatypen [basic marketing field](./marketing-field.md) i stället.
 
@@ -94,7 +94,7 @@ Följande JSON representerar ett exempel på ett marknadsföringsfält för en m
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `val` | [värdet ](#val) för medgivande för prenumerationen. |
+| `val` | [värdet &#x200B;](#val) för medgivande för prenumerationen. |
 | `type` | Prenumerationstypen. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken. |
 | `topics` | En array med strängar som representerar intressanta områden som en kund prenumererar på, som kan användas för att skicka relevant innehåll till dem. |
 | `subscribers` | Ett valfritt mappningsfält som representerar en uppsättning identifierare (t.ex. e-postadresser eller telefonnummer) som har prenumererat på en viss prenumeration. Varje nyckel i det här objektet representerar den aktuella identifieraren och innehåller två underegenskaper: <ul><li>`time`: En ISO 8601-tidsstämpel för när identiteten prenumererade, om tillämpligt.</li><li>`source`: Källan som prenumeranten kommer från. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken.</li></ul> |

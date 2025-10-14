@@ -56,7 +56,7 @@ Som exemplet visar motsvarar varje rotnivånyckel på `xdm:identityPrivacyInfo` 
 >
 >I exemplet ovan används ett namnutrymmes-/värdepar för att representera kundens identitet, men du kan lägga till ytterligare nycklar för andra namnutrymmen, och varje namnområde kan ha flera identitetsvärden, var och en med sin egen uppsättning inställningar för TCF-medgivande.
 
-För varje identitetsvärde måste en `identityIABConsent`-egenskap anges, som tillhandahåller TCF-medgivandevärdet för identiteten. Värdet för den här egenskapen måste överensstämma med datatypen [[!UICONTROL Consent String] ](../../data-types/consent-string.md).
+För varje identitetsvärde måste en `identityIABConsent`-egenskap anges, som tillhandahåller TCF-medgivandevärdet för identiteten. Värdet för den här egenskapen måste överensstämma med datatypen [[!UICONTROL Consent String] &#x200B;](../../data-types/consent-string.md).
 
 Mer information om hur den här fältgruppen används finns i guiden [IAB TCF 2.0-stöd i Experience Platform](../../../landing/governance-privacy-security/consent/iab/overview.md). Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
 

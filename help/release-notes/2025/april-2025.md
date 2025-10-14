@@ -66,7 +66,7 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 | Mål | Beskrivning |
 | --- | --- |
 | [Marketo Engage Person Sync](/help/destinations/catalog/adobe/marketo-engage-person-sync.md) | Adobe uppdaterade målet [!DNL Marketo Engage Person Sync] för att åtgärda ett problem som påverkade kunder när det fanns flera e-postmeddelanden i identitetsmappningen. |
-| [(V2) Målgruppsanslutning för Pega CDH Realtime ](/help/destinations/catalog/personalization/pega-v2.md) | Använd målet [!DNL (V2) Pega Customer Decision Hub Realtime Audience] i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för bästa beslutsfattande åtgärd när du har flera Pega Customer Decision Hub-program konfigurerade i Pega-kontot. |
+| [(V2) Målgruppsanslutning för Pega CDH Realtime &#x200B;](/help/destinations/catalog/personalization/pega-v2.md) | Använd målet [!DNL (V2) Pega Customer Decision Hub Realtime Audience] i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för bästa beslutsfattande åtgärd när du har flera Pega Customer Decision Hub-program konfigurerade i Pega-kontot. |
 
 **Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 

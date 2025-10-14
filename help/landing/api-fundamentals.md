@@ -116,7 +116,7 @@ Det finns många PATCH-åtgärder för [!DNL Experience Platform] API:er som acc
    * `copy`
    * `move`
    * `test`
-* `path`: Den del av JSON-strukturen som ska uppdateras identifieras med [ JSON-pekarnotation](#json-pointer) .
+* `path`: Den del av JSON-strukturen som ska uppdateras identifieras med [&#x200B; JSON-pekarnotation](#json-pointer) .
 
 Beroende på vilken åtgärdstyp som anges i `op` kan JSON Patch-objektet kräva ytterligare egenskaper. Mer information om olika JSON-korrigeringsåtgärder och deras syntax som krävs finns i [JSON-korrigeringsdokumentationen](https://datatracker.ietf.org/doc/html/rfc6902).
 

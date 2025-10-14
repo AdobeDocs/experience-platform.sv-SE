@@ -524,7 +524,7 @@ Regler är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan sk
 
 ## Hämta relaterade resurser för en regel {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en regel. När [söker efter en regel ](#lookup) visas de här relationerna under regeln `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för en regel. När [söker efter en regel &#x200B;](#lookup) visas de här relationerna under regeln `relationships`.
 
 Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 

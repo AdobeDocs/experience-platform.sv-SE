@@ -48,11 +48,11 @@ Om du vill redigera etiketterna för ett enskilt fält kan du markera fältet p�
 
 Du kan också markera fliken **[!UICONTROL Labels]**, välja önskat fält i listan och välja **[!UICONTROL Apply Access and Data Governance Labels]** i den högra listen.
 
-![Välj ett fält på fliken [!UICONTROL Labels] ](../images/tutorials/labels/select-field-on-labels-tab.png)
+![Välj ett fält på fliken [!UICONTROL Labels] &#x200B;](../images/tutorials/labels/select-field-on-labels-tab.png)
 
 Om du vill redigera etiketterna för hela schemat markerar du kryssrutan under filterikonen på fliken **[!UICONTROL Labels]**. Detta markerar alla tillgängliga fält i schemat. Välj sedan **[!UICONTROL Apply Access and Data Governance Labels]** i den högra listen.
 
-![Välj schemanamnet på fliken [!UICONTROL Labels] ](../images/tutorials/labels/select-schema-on-labels-tab.png)
+![Välj schemanamnet på fliken [!UICONTROL Labels] &#x200B;](../images/tutorials/labels/select-schema-on-labels-tab.png)
 
 >[!NOTE]
 >

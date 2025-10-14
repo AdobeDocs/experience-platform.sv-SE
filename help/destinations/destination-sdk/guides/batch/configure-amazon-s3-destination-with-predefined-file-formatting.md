@@ -36,7 +36,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 **Begäran**
 
 Följande begäran skapar en ny målserverkonfiguration, konfigurerad med parametrarna som anges i nyttolasten.
-Nyttolasten nedan innehåller en allmän [!DNL Amazon S3]-konfiguration med fördefinierade standardkonfigurationsparametrar för [ CSV-filformatering](../../functionality/destination-server/file-formatting.md) som användare kan definiera i användargränssnittet i Experience Platform.
+Nyttolasten nedan innehåller en allmän [!DNL Amazon S3]-konfiguration med fördefinierade standardkonfigurationsparametrar för [&#x200B; CSV-filformatering](../../functionality/destination-server/file-formatting.md) som användare kan definiera i användargränssnittet i Experience Platform.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \

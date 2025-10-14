@@ -18,7 +18,7 @@ Fältgruppen är ett tillägg till fältgruppen [!UICONTROL Reservation Details]
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om arrayen `flightReservations`. Mer information om de andra fälten under objektet `reservations` finns i [[!UICONTROL Reservation Details] fältgruppsreferensen ](./reservation-details.md).
+>Det här dokumentet innehåller information om arrayen `flightReservations`. Mer information om de andra fälten under objektet `reservations` finns i [[!UICONTROL Reservation Details] fältgruppsreferensen &#x200B;](./reservation-details.md).
 
 ![Flight Reservation-struktur](../../images/field-groups/flight-reservation/structure.png)
 

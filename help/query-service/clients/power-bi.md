@@ -69,7 +69,7 @@ Genom att välja **[!DNL Import]** [!DNL Data Connectivity mode] importeras hela
 >
 >Om du vill se dataändringar som har gjorts sedan den första importen måste du uppdatera data i [!DNL Power BI] genom att importera den fullständiga datauppsättningen igen.
 
-Om du vill importera en tabell anger du server- och databasinformationen [ enligt beskrivningen ovan](#connect-power-bi) och väljer **[!DNL Import]** [!DNL Data Connectivity mode] följt av **[!DNL OK]**. Dialogrutan [!DNL Navigator] visas med en lista över alla tillgängliga tabeller. Markera tabellen som du vill förhandsgranska, följt av **[!DNL Load]**, för att hämta datauppsättningen till Power BI. Tabellen importeras nu till [!DNL Power BI].
+Om du vill importera en tabell anger du server- och databasinformationen [&#x200B; enligt beskrivningen ovan](#connect-power-bi) och väljer **[!DNL Import]** [!DNL Data Connectivity mode] följt av **[!DNL OK]**. Dialogrutan [!DNL Navigator] visas med en lista över alla tillgängliga tabeller. Markera tabellen som du vill förhandsgranska, följt av **[!DNL Load]**, för att hämta datauppsättningen till Power BI. Tabellen importeras nu till [!DNL Power BI].
 
 [Allmän information om att ansluta till data i PowerBi-datorprogrammet](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-quickstart-connect-to-data#connect-to-data) finns i den officiella dokumentationen.
 

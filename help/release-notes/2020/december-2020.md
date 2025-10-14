@@ -60,6 +60,6 @@ Adobe Experience Platform kan importera data från externa källor samtidigt som
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Uppdatera konto- och anslutningsinformation för strömningskällor | Nu kan du uppdatera namn, beskrivningar och autentiseringsuppgifter för befintliga direktuppspelningsanslutningar med API:t [!DNL Flow Service] och gränssnittet. Mer information finns i självstudiekursen om att [uppdatera anslutningar med API](../../sources/tutorials/api/update.md) och [redigera kontoinformation med gränssnittet](../../sources/tutorials/ui/monitor.md). |
-| Ta bort dataflöden | Strömmande dataflöden som innehåller fel eller har blivit onödiga kan nu tas bort med API:t [!DNL Flow Service] och gränssnittet. Mer information finns i självstudiekursen om att [ta bort dataflöden med API:t ](../../sources/tutorials/api/delete-dataflows.md) och [ta bort dataflöden med användargränssnittet](../../sources/tutorials/ui/delete.md). |
+| Ta bort dataflöden | Strömmande dataflöden som innehåller fel eller har blivit onödiga kan nu tas bort med API:t [!DNL Flow Service] och gränssnittet. Mer information finns i självstudiekursen om att [ta bort dataflöden med API:t &#x200B;](../../sources/tutorials/api/delete-dataflows.md) och [ta bort dataflöden med användargränssnittet](../../sources/tutorials/ui/delete.md). |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).

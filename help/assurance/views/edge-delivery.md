@@ -86,7 +86,7 @@ I det här avsnittet finns detaljerad information om de meddelanden som leverera
 
 I det här avsnittet finns detaljerad information om de interaktioner som spårades i den valda begäran. Den innehåller interaktionstypen (under `propositionEventType`) samt tillhörande förslagsmetadata, till exempel aktivitetsmetadata (under `scopeDetails.activity`) och proposition-händelsetoken (i `scopeDetails.characteristics.eventToken`).
 
-![Interaktioner spåras via propositionstoken och associerade aktivitetsmetadata ](./images/edge-delivery/interactions.png)
+![Interaktioner spåras via propositionstoken och associerade aktivitetsmetadata &#x200B;](./images/edge-delivery/interactions.png)
 
 ### Raw-spår
 

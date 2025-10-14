@@ -34,7 +34,7 @@ I dataelementet [!UICONTROL Identity map] anger du följande information för va
 
 Du bör inte ange [!DNL ECID] när du skapar en identitetskarta. När du använder SDK genereras [!DNL ECID] automatiskt på servern och inkluderas i identitetskartan.
 
-Identitetsmappningsdataelementet används ofta tillsammans med dataelementtypen [[!UICONTROL XDM object] ](#xdm-object) och åtgärdstypen [[!UICONTROL Set consent] ](action-types.md#set-consent).
+Identitetsmappningsdataelementet används ofta tillsammans med dataelementtypen [[!UICONTROL XDM object] &#x200B;](#xdm-object) och åtgärdstypen [[!UICONTROL Set consent] &#x200B;](action-types.md#set-consent).
 
 Läs mer om [Adobe Experience Platform identitetstjänst](../../../../identity-service/home.md).
 

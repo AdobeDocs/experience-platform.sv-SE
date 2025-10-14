@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Översikt över tillägget [!DNL Snapchat] för konverterings-API
 
-Konverterings-API-tillägget [!DNL Snap] är ett säkert [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL Snapchat] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från **[!DNL Adobe Experience Platform Edge Network]** till **[!DNL Snapchat]** med hjälp av tillägget **[!DNL Snap]** för konverterings-API.
+Konverterings-API-tillägget [!DNL Snap] är ett säkert [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL Snapchat] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från **[!DNL Adobe Experience Platform Edge Network]** till **[!DNL Snapchat]** med hjälp av tillägget **[!DNL Snap]** för konverterings-API.
 
 ## Krav för [!DNL Snapchat] {#prerequisites}
 
@@ -69,7 +69,7 @@ Om du vill skicka data till API-tillägget för [!DNL Snapchat]-konverteringar s
 
 Om du till exempel skapar ett dataelement som refererar till `snapClickId` i schemat som visas nedan:
 
-![Bilden visar schemat ](../../../images/extensions/server/snap/schema.png)
+![Bilden visar schemat &#x200B;](../../../images/extensions/server/snap/schema.png)
 
 Du måste konfigurera dataelementet eftersom `snapClickId` finns under `_snap.inc.exchange` i XDM-schemat.
 

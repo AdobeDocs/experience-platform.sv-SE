@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 
 - [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection-)
-- [Mål ](#destinations)
+- [Mål &#x200B;](#destinations)
 - [Segmenteringstjänst](#segmentation-service)
 - [Sandlådor](#sandboxes)
 - [Källor](#sources)

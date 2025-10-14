@@ -86,7 +86,7 @@ När det nya beräknade fältet har lagts till väljer du **[!UICONTROL Map targ
 >
 >Hjärntidsstämplar anges inte i millisekunder utan i sekunder. För att tidsstämplarna i Experience Platform ska kunna visas korrekt måste du skapa beräkningsfält i millisekunder. En beräkning av &quot;time * 1000&quot; konverteras korrekt till millisekunder, vilket är lämpligt för mappning till ett tidsstämpelfält i Experience Platform.
 >
->![Skapar ett beräknat fält för tidsstämpel ](../../../../images/tutorials/create/braze/create-calculated-field.png)
+>![Skapar ett beräknat fält för tidsstämpel &#x200B;](../../../../images/tutorials/create/braze/create-calculated-field.png)
 
 ![Mappningen utan fel.](../../../../images/tutorials/create/braze/completed_mapping.png)
 

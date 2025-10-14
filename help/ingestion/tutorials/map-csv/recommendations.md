@@ -36,7 +36,7 @@ Arbetsflödet **[!UICONTROL Map CSV XDM schema]** visas med början i steget **[
 
 Välj **[!UICONTROL Create a new schema using ML recommendations]**, vilket gör att nya kontroller visas. Välj lämplig klass för de CSV-data som du vill mappa ([!UICONTROL Profile] eller [!UICONTROL ExperienceEvent]). Du kan också använda listrutan för att välja den bransch som är relevant för ditt företag, eller lämna den tom om de angivna kategorierna inte gäller för dig. Om din organisation arbetar under en [business-to-business-modell (B2B)](../../../xdm/tutorials/relationship-b2b.md) markerar du kryssrutan **[!UICONTROL B2B data]** .
 
-![Steget [!UICONTROL Dataflow detail] med alternativet för ML-rekommendation markerat. [!UICONTROL Profile] väljs för klassen och [!UICONTROL Telecommunications] väljs för branschen ](../../images/tutorials/map-csv-recommendations/select-class-and-industry.png)
+![Steget [!UICONTROL Dataflow detail] med alternativet för ML-rekommendation markerat. [!UICONTROL Profile] väljs för klassen och [!UICONTROL Telecommunications] väljs för branschen &#x200B;](../../images/tutorials/map-csv-recommendations/select-class-and-industry.png)
 
 Här anger du ett namn för schemat som ska skapas från CSV-data och ett namn för den utdatauppsättning som ska innehålla data som hämtas under det schemat.
 

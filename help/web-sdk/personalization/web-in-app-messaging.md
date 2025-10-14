@@ -42,7 +42,7 @@ Mer information om hur du konfigurerar en CSP finns i [dedikerad dokumentation](
 
 ## Konfigurera webb-meddelanden i appen med hjälp av taggtillägget Web SDK {#tag-extension}
 
-Gå till konfigurationssidan för [webbtillägget för SDK ](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) om du vill veta var du hittar de inställningar som beskrivs nedan.
+Gå till konfigurationssidan för [webbtillägget för SDK &#x200B;](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) om du vill veta var du hittar de inställningar som beskrivs nedan.
 
 När du har [installerat](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#install-the-web-sdk-tag-extension) SDK-taggtillägget för webben följer du stegen nedan för att konfigurera tillägget för meddelanden i webben.
 

@@ -75,7 +75,7 @@ Följande cookies anges när medgivandekonfigurationen tillåter:
 
 ## Ange standardsamtycke med hjälp av taggtillägget Web SDK
 
-Välj önskad alternativknapp under **[!UICONTROL Default consent]** när [taggtillägget ](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) konfigureras.
+Välj önskad alternativknapp under **[!UICONTROL Default consent]** när [taggtillägget &#x200B;](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) konfigureras.
 
 1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.

@@ -14,8 +14,8 @@ ht-degree: 0%
 
 Experience Platform Web SDK kan skicka data till Adobe Analytics via Experience Platform Edge Network. I Adobe finns flera alternativ för att skicka data till Adobe Analytics via Web SDK:
 
-* Lägg till [**[!UICONTROL Adobe Analytics ExperienceEvent field group]**](../../xdm/field-groups/event/analytics-full-extension.md) i ditt schema och använd sedan [`XDM` object ](../commands/sendevent/xdm.md).
-* Använd [`data`-objektet ](../commands/sendevent/data.md) för att skicka data till Adobe Analytics utan ett XDM-schema.
+* Lägg till [**[!UICONTROL Adobe Analytics ExperienceEvent field group]**](../../xdm/field-groups/event/analytics-full-extension.md) i ditt schema och använd sedan [`XDM` object &#x200B;](../commands/sendevent/xdm.md).
+* Använd [`data`-objektet &#x200B;](../commands/sendevent/data.md) för att skicka data till Adobe Analytics utan ett XDM-schema.
 * Använd automatiskt genererade [kontextdatavariabler](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/page-vars/contextdata) och [bearbetningsregler](https://experienceleague.adobe.com/sv/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/c-processing-rules/c-processing-rules-configuration/processing-rules-about).
 
 ## Använd objektet `XDM` {#use-xdm-object}
@@ -84,7 +84,7 @@ a.x.objectarray.2.ad3 //600x50
 
 +++Hur skiljer jag på sidvisningsanrop från länkspårningsanrop i Web SDK?
 
-I AppMeasurementet i Adobe Analytics används separata metodanrop för sidvyer ([`t()` metod ](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/t-method)) och länkspårningsanrop ([`tl()` metod ](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/tl-method)). Web SDK innehåller i stället bara kommandot [`sendEvent`](../commands/sendevent/overview.md) för att skicka både sidvyer och länkspårning. De data som du inkluderar i en händelse avgör om det är en [sidvy](https://experienceleague.adobe.com/sv/docs/analytics/components/metrics/page-views) eller en [sidhändelse](https://experienceleague.adobe.com/sv/docs/analytics/components/metrics/page-events) i Adobe Analytics.
+I AppMeasurementet i Adobe Analytics används separata metodanrop för sidvyer ([`t()` metod &#x200B;](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/t-method)) och länkspårningsanrop ([`tl()` metod &#x200B;](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/tl-method)). Web SDK innehåller i stället bara kommandot [`sendEvent`](../commands/sendevent/overview.md) för att skicka både sidvyer och länkspårning. De data som du inkluderar i en händelse avgör om det är en [sidvy](https://experienceleague.adobe.com/sv/docs/analytics/components/metrics/page-views) eller en [sidhändelse](https://experienceleague.adobe.com/sv/docs/analytics/components/metrics/page-events) i Adobe Analytics.
 
 Som standard betraktas alla händelser som sidvisningar i Adobe Analytics. Om du vill ställa in en Web SDK-händelse på ett Adobe Analytics länkspårningsanrop anger du följande fält:
 
@@ -92,7 +92,7 @@ Som standard betraktas alla händelser som sidvisningar i Adobe Analytics. Om du
 * **Dataobjekt**: `data.__adobe.analytics.linkName`, `data.__adobe.analytics.linkType` och `data.__adobe.analytics.linkURL`
 * **Kontextdata**: Stöds inte
 
-Mer information finns i [`tl()`-metoden ](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/tl-method) i Adobe Analytics implementeringsguide.
+Mer information finns i [`tl()`-metoden &#x200B;](https://experienceleague.adobe.com/sv/docs/analytics/implementation/vars/functions/tl-method) i Adobe Analytics implementeringsguide.
 
 Om du aktiverar [`clickCollectionEnabled`](../commands/configure/clickcollectionenabled.md) i kommandot `configure` fylls fälten i automatiskt.
 

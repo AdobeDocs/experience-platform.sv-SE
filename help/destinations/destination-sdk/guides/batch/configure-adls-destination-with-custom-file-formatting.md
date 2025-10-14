@@ -36,7 +36,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 **Begäran**
 
 Följande begäran skapar en ny målserverkonfiguration, konfigurerad med parametrarna som anges i nyttolasten.
-Nyttolasten nedan innehåller en allmän [!DNL Azure Data Lake Storage]-konfiguration med anpassade [ CSV-filformateringsparametrar](../../functionality/destination-server/file-formatting.md) som användare kan definiera i användargränssnittet i Experience Platform.
+Nyttolasten nedan innehåller en allmän [!DNL Azure Data Lake Storage]-konfiguration med anpassade [&#x200B; CSV-filformateringsparametrar](../../functionality/destination-server/file-formatting.md) som användare kan definiera i användargränssnittet i Experience Platform.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \

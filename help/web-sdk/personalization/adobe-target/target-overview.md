@@ -62,7 +62,7 @@ Du kan sedan även lägga till följande alternativ:
 
 ## Använda Adobe Target VEC
 
-Om du vill använda VEC med en [!DNL Web SDK]-implementering installerar och aktiverar du [ Firefox ](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
+Om du vill använda VEC med en [!DNL Web SDK]-implementering installerar och aktiverar du [&#x200B; Firefox &#x200B;](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
 
 Mer information finns i [Hjälptillägg för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html?lang=sv-SE) i *Adobe Target-handboken*.
 

@@ -82,7 +82,7 @@ Skapa ett&quot;Airline Loyalty Decile Schema&quot; om du vill skapa en decimalda
 
 ### Aktivera schemat för kundprofil i realtid
 
-Data som hämtas till Experience Platform för användning av kundprofilen i realtid måste överensstämma med [ett XDM-schema (Experience Data Model) som är aktiverat för profilen ](../../xdm/ui/resources/schemas.md). För att ett schema ska kunna aktiveras för profilen måste det implementera antingen klassen XDM Individual Profile eller klassen XDM ExperienceEvent.
+Data som hämtas till Experience Platform för användning av kundprofilen i realtid måste överensstämma med [ett XDM-schema (Experience Data Model) som är aktiverat för profilen &#x200B;](../../xdm/ui/resources/schemas.md). För att ett schema ska kunna aktiveras för profilen måste det implementera antingen klassen XDM Individual Profile eller klassen XDM ExperienceEvent.
 
 [Aktivera ditt schema för användning i kundprofilen i realtid med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md) eller användargränssnittet för [Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).  Detaljerade anvisningar om hur du aktiverar ett schema för profil finns i deras respektive dokumentation.
 

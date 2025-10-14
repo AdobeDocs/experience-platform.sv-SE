@@ -33,7 +33,7 @@ Nedan visas vanliga användningsområden som kan hanteras effektivt via SQL Insi
 
 **Problem:** Så här bryter du ned nyckeltal (KPI) efter specifika kriterier som affärsenheter, lojalitetsstatus eller kundens livstidsvärde (CLTV).
 
-**SQL Insights-lösning:** Data-Distiller möjliggör tillägg av rapportdatamodeller i Adobe Experience Platform, vilket underlättar för [ att lägga till anpassade profilattribut som CLTV](../../use-cases/customer-lifetime-value.md) eller lojalitetsstatus.
+**SQL Insights-lösning:** Data-Distiller möjliggör tillägg av rapportdatamodeller i Adobe Experience Platform, vilket underlättar för [&#x200B; att lägga till anpassade profilattribut som CLTV](../../use-cases/customer-lifetime-value.md) eller lojalitetsstatus.
 
 ### Åtkomst till avvikelsespårning {#consent-anomaly-tracking}
 
@@ -78,4 +78,4 @@ Följ instruktionerna nedan om du vill utveckla en SQL Insights-instrumentpanel 
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet får du nu en bättre förståelse för användningsfall, viktiga funktioner och nödvändiga steg för att utveckla en instrumentpanel för SQL-insikter med Data Distiller. Mer information om hur du skapar anpassade rapportdatamodeller finns i [guiden ](./reporting-insights-data-model.md) om datamodellen för rapportinsikter.
+Genom att läsa det här dokumentet får du nu en bättre förståelse för användningsfall, viktiga funktioner och nödvändiga steg för att utveckla en instrumentpanel för SQL-insikter med Data Distiller. Mer information om hur du skapar anpassade rapportdatamodeller finns i [guiden &#x200B;](./reporting-insights-data-model.md) om datamodellen för rapportinsikter.

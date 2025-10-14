@@ -42,7 +42,7 @@ Följ stegen nedan för att börja använda [!DNL Adobe Journey Optimizer].
    })
    ```
 
-3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i alternativet `personalization.surfaces` för kommandot `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] action ](../../../tags/extensions/client/web-sdk/action-types.md#send-event) -konfiguration för Web SDK Extension.
+3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i alternativet `personalization.surfaces` för kommandot `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] action &#x200B;](../../../tags/extensions/client/web-sdk/action-types.md#send-event) -konfiguration för Web SDK Extension.
 
    ```javascript
    alloy("sendEvent", {

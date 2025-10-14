@@ -110,4 +110,4 @@ Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslu
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Square]-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar betalningsprogram med API:t för Flow Service ](../../explore/payments.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Square]-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar betalningsprogram med API:t för Flow Service &#x200B;](../../explore/payments.md).

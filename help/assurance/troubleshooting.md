@@ -21,7 +21,7 @@ Du kan ändra SDK-loggnivåer med API:t [`setLogLevel`](https://developer.adobe.
 
 ### QR-koden öppnar inte appen
 
-* Öppna länken direkt. Kopiera länken från **sessionsinformation**. Klistra in den i webbläsarens adressfält på enheten för att öppna den. Om den inte öppnas kan du läsa avsnittet [Länken ](#app-does-not-open-link) öppnas inte i appen.
+* Öppna länken direkt. Kopiera länken från **sessionsinformation**. Klistra in den i webbläsarens adressfält på enheten för att öppna den. Om den inte öppnas kan du läsa avsnittet [Länken &#x200B;](#app-does-not-open-link) öppnas inte i appen.
 * Använd en annan QR-läsare. För iOS 11 eller senare använder du fotoappen för att läsa QR-koden.
 
 ### Appen öppnar inte länken

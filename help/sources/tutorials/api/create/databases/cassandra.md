@@ -123,4 +123,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Cassandra]-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar databaser med API:t för Flow Service ](../../explore/database-nosql.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Cassandra]-anslutning med API:t [!DNL Flow Service] och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar databaser med API:t för Flow Service &#x200B;](../../explore/database-nosql.md).

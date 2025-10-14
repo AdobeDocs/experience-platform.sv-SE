@@ -61,4 +61,4 @@ I videon nedan används Postman-samlingen [Identity Management Service (IMS)](ht
 
 ## Nästa steg
 
-I det här dokumentet introducerades Postman-miljöer, samlingar och hur du importerar samlingar. Nu när du är klar med Postman kan du gå till [Experience Platform guide ](api-guide.md) för att få information om vilka sidhuvuden, exempel och en lista över [API-guider](api-guide.md#api-guides) som är tillgängliga för respektive Experience Platform-tjänst.
+I det här dokumentet introducerades Postman-miljöer, samlingar och hur du importerar samlingar. Nu när du är klar med Postman kan du gå till [Experience Platform guide &#x200B;](api-guide.md) för att få information om vilka sidhuvuden, exempel och en lista över [API-guider](api-guide.md#api-guides) som är tillgängliga för respektive Experience Platform-tjänst.

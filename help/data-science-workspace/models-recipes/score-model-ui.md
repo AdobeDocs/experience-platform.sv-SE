@@ -28,7 +28,7 @@ I den här självstudiekursen visas de steg som krävs för att göra en modell 
 
 Du måste ha tillgång till [!DNL Experience Platform] för att kunna slutföra den här självstudiekursen. Om du inte har åtkomst till en organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
 
-Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell följer du [tåget och utvärderar en modell i självstudiekursen ](./train-evaluate-model-ui.md) innan du fortsätter.
+Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell följer du [tåget och utvärderar en modell i självstudiekursen &#x200B;](./train-evaluate-model-ui.md) innan du fortsätter.
 
 ## Skapa en ny poängkörning
 

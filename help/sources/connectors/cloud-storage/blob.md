@@ -59,7 +59,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta ditt [!DNL 
 | `folderPath` | Sökvägen inom den angivna behållaren där filerna finns. Detta är en valfri underkatalogsökväg (virtuell mapp) inuti behållaren. Om inget anges används behållarens rot. |
 | `connectionSpec.id` | Anslutningens spec-ID returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningens spec-ID för [!DNL Azure Blob Storage] är `4c10e202-c428-4796-9208-5f1f5732b1cf`. **Obs!**: Den här autentiseringsuppgiften krävs bara vid anslutning via [!DNL Flow Service] API. |
 
-Läs den officiella [!DNL Azure Blob Storage]autentiseringsguiden för Microsoft Azure[ om du vill veta mer om hur du använder kontonyckelautentisering med ](https://learn.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#account-key-authentication).
+Läs den officiella [!DNL Azure Blob Storage]autentiseringsguiden för Microsoft Azure[&#x200B; om du vill veta mer om hur du använder kontonyckelautentisering med &#x200B;](https://learn.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#account-key-authentication).
 
 >[!TAB Delad åtkomstsignatur]
 
@@ -72,7 +72,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta ditt [!DNL 
 | `folderPath` | Sökvägen inom den angivna behållaren där filerna finns. Detta är en valfri underkatalogsökväg (virtuell mapp) inuti behållaren. Om inget anges används behållarens rot. |
 | `connectionSpec.id` | Anslutningens spec-ID returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningens spec-ID för [!DNL Azure Blob Storage] är `4c10e202-c428-4796-9208-5f1f5732b1cf`. **Obs!**: Den här autentiseringsuppgiften krävs bara vid anslutning via [!DNL Flow Service] API. |
 
-Läs den officiella [!DNL Azure Blob Storage]autentiseringsguiden för Microsoft Azure[ om du vill veta mer om hur du använder signaturen för delad åtkomst med ](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication).
+Läs den officiella [!DNL Azure Blob Storage]autentiseringsguiden för Microsoft Azure[&#x200B; om du vill veta mer om hur du använder signaturen för delad åtkomst med &#x200B;](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication).
 
 >[!TAB Tjänstens huvudbaserade autentisering]
 
@@ -89,7 +89,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta ditt [!DNL 
 | `folderPath` | Sökvägen inom den angivna behållaren där filerna finns. Detta är en valfri underkatalogsökväg (virtuell mapp) inuti behållaren. Om inget anges används behållarens rot. |
 | `connectionSpec.id` | Anslutningens spec-ID returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningens spec-ID för Azure Blob Storage är `4c10e202-c428-4796-9208-5f1f5732b1cf`. **Obs!**: Den här autentiseringsuppgiften krävs bara vid anslutning via [!DNL Flow Service] API. |
 
-Läs den officiella [!DNL Azure Blob Storage]autentiseringsguiden för Microsoft Azure[ om du vill veta mer om hur du använder tjänstens huvudbaserade autentisering med ](https://learn.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#service-principal-authentication).
+Läs den officiella [!DNL Azure Blob Storage]autentiseringsguiden för Microsoft Azure[&#x200B; om du vill veta mer om hur du använder tjänstens huvudbaserade autentisering med &#x200B;](https://learn.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#service-principal-authentication).
 
 >[!ENDTABS]
 

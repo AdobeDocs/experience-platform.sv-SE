@@ -45,11 +45,11 @@ Gå till sidan [!DNL Salesforce] [utvärderingsversion](https://www.salesforce.c
 
 #### Konfigurera en ansluten app i [!DNL Salesforce] {#prerequisites-connected-app}
 
-Först måste du konfigurera en [[!DNL Salesforce] ansluten app](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&amp;language=en_US&amp;r=https%3A%2F%2Fhelp.salesforce.com%2F&amp;type=5) i ditt [!DNL Salesforce]-konto, om du inte redan har en. [!DNL Salesforce CRM] utnyttjar den anslutna appen för att ansluta till [!DNL Salesforce].
+Först måste du konfigurera en [[!DNL Salesforce] ansluten app](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&language=en_US&r=https%3A%2F%2Fhelp.salesforce.com%2F&type=5) i ditt [!DNL Salesforce]-konto, om du inte redan har en. [!DNL Salesforce CRM] utnyttjar den anslutna appen för att ansluta till [!DNL Salesforce].
 
-Aktivera sedan [!DNL OAuth Settings for API Integration] för [!DNL Salesforce connected app]. Mer information finns i [[!DNL Salesforce]](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US)-dokumentationen.
+Aktivera sedan [!DNL OAuth Settings for API Integration] för [!DNL Salesforce connected app]. Mer information finns i [[!DNL Salesforce]](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&type=5&language=en_US)-dokumentationen.
 
-Se även till att de [omfattningar](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) som nämns nedan är markerade för [!DNL Salesforce connected app].
+Se även till att de [omfattningar](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&type=5&language=en_US) som nämns nedan är markerade för [!DNL Salesforce connected app].
 
 * ``chatter_api``
 * ``lightning``
@@ -62,11 +62,11 @@ Se även till att de [omfattningar](https://help.salesforce.com/s/articleView?id
 * ``refresh_token``
 * ``offline_access``
 
-Kontrollera slutligen att `password`-anslaget är aktiverat i ditt [!DNL Salesforce]-konto. Om du behöver hjälp kan du läsa dokumentationen för [!DNL Salesforce] [OAuth 2.0-användarnamn-lösenord för särskilda scenarier](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_username_password_flow.htm&amp;type=5) .
+Kontrollera slutligen att `password`-anslaget är aktiverat i ditt [!DNL Salesforce]-konto. Om du behöver hjälp kan du läsa dokumentationen för [!DNL Salesforce] [OAuth 2.0-användarnamn-lösenord för särskilda scenarier](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_username_password_flow.htm&type=5) .
 
 >[!IMPORTANT]
 >
->Om din [!DNL Salesforce]-kontoadministratör har begränsat åtkomsten till betrodda IP-intervall måste du kontakta dem för att få [tillåtslista Experience Platform IP](/help/destinations/catalog/streaming/ip-address-allow-list.md). Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) om du behöver ytterligare hjälp.
+>Om din [!DNL Salesforce]-kontoadministratör har begränsat åtkomsten till betrodda IP-intervall måste du kontakta dem för att få [tillåtslista Experience Platform IP](/help/destinations/catalog/streaming/ip-address-allow-list.md). Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5) om du behöver ytterligare hjälp.
 
 #### Skapa anpassade fält i [!DNL Salesforce] {#prerequisites-custom-field}
 
@@ -74,7 +74,7 @@ När du aktiverar målgrupper till målet [!DNL Salesforce CRM] måste du ange e
 
 [!DNL Salesforce CRM] kräver det här värdet för att läsa och tolka målgrupper som kommer från Experience Platform korrekt och för att uppdatera deras målgruppsstatus inom [!DNL Salesforce]. Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
-För varje målgrupp som du aktiverar från Experience Platform till [!DNL Salesforce CRM] måste du skapa ett anpassat fält av typen `Text Area (Long)` i [!DNL Salesforce]. Du kan definiera längden på fälttecknen i valfri storlek mellan 256 och 131 072 tecken beroende på ditt företags behov. Mer information om anpassade fälttyper finns på dokumentationssidan [!DNL Salesforce] [Anpassade fälttyper](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&amp;type=5). Se även [!DNL Salesforce]-dokumentationen för att [skapa anpassade fält](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) om du behöver hjälp med att skapa fält.
+För varje målgrupp som du aktiverar från Experience Platform till [!DNL Salesforce CRM] måste du skapa ett anpassat fält av typen `Text Area (Long)` i [!DNL Salesforce]. Du kan definiera längden på fälttecknen i valfri storlek mellan 256 och 131 072 tecken beroende på ditt företags behov. Mer information om anpassade fälttyper finns på dokumentationssidan [!DNL Salesforce] [Anpassade fälttyper](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&type=5). Se även [!DNL Salesforce]-dokumentationen för att [skapa anpassade fält](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&type=5&language=en_US) om du behöver hjälp med att skapa fält.
 
 >[!IMPORTANT]
 >
@@ -94,7 +94,7 @@ Ett exempel på hur du skapar anpassade fält i [!DNL Salesforce], *Steg 2 - Ang
 
 >[!NOTE]
 >
->* Objekt i Salesforce är begränsade till 25 externa fält, se [Anpassade fältattribut](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5).
+>* Objekt i Salesforce är begränsade till 25 externa fält, se [Anpassade fältattribut](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&type=5).
 >* Den här begränsningen innebär att du bara kan ha högst 25 medlemskap för Experience Platform-målgrupper aktiva åt gången.
 >* Om du har nått den här gränsen inom Salesforce måste du ta bort de anpassade attribut från Salesforce som användes för att lagra målgruppsstatusen mot äldre målgrupper inom Experience Platform innan en ny **[!UICONTROL Mapping ID]** kan användas.
 
@@ -106,16 +106,16 @@ Observera objekten nedan innan du autentiserar till målet [!DNL Salesforce CRM]
 | --- | --- | --- |
 | `Username` | Användarnamn för ditt [!DNL Salesforce]-konto. | |
 | `Password` | Lösenordet för ditt [!DNL Salesforce]-konto. | |
-| `Security Token` | Din [!DNL Salesforce]-säkerhetstoken som du senare lägger till i slutet av ditt [!DNL Salesforce]-lösenord för att skapa en sammanfogad sträng som ska användas som **[!UICONTROL Password]** vid [autentisering till målet](#authenticate).<br> Läs [!DNL Salesforce]-dokumentationen för att [återställa din säkerhetstoken](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&amp;type=5) och lär dig hur du återskapar den från [!DNL Salesforce]-gränssnittet om du inte har säkerhetstoken. |  |
-| `Custom Domain` | Domänprefixet [!DNL Salesforce]. <br> Läs [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) om du vill veta hur du hämtar det här värdet från gränssnittet [!DNL Salesforce]. | Om din [!DNL Salesforce]-domän är <br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*,<br> du behöver `d5i000000isb4eak-dev-ed` som värde. |
-| `Client ID` | Din Salesforce `Consumer Key`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [!DNL Salesforce] finns i [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5). | |
-| `Client Secret` | Din Salesforce `Consumer Secret`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [!DNL Salesforce] finns i [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5). | |
+| `Security Token` | Din [!DNL Salesforce]-säkerhetstoken som du senare lägger till i slutet av ditt [!DNL Salesforce]-lösenord för att skapa en sammanfogad sträng som ska användas som **[!UICONTROL Password]** vid [autentisering till målet](#authenticate).<br> Läs [!DNL Salesforce]-dokumentationen för att [återställa din säkerhetstoken](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&type=5) och lär dig hur du återskapar den från [!DNL Salesforce]-gränssnittet om du inte har säkerhetstoken. |  |
+| `Custom Domain` | Domänprefixet [!DNL Salesforce]. <br> Läs [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&type=5) om du vill veta hur du hämtar det här värdet från gränssnittet [!DNL Salesforce]. | Om din [!DNL Salesforce]-domän är <br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*,<br> du behöver `d5i000000isb4eak-dev-ed` som värde. |
+| `Client ID` | Din Salesforce `Consumer Key`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [!DNL Salesforce] finns i [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5). | |
+| `Client Secret` | Din Salesforce `Consumer Secret`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [!DNL Salesforce] finns i [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5). | |
 
 ### Guardrails {#guardrails}
 
 [!DNL Salesforce] balanserar transaktionsinläsningar genom att införa gräns för antal begäranden, frekvens och tidsgräns. Mer information finns i [API-begäransgränser och allokeringar](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
 
-Om din [!DNL Salesforce]-kontoadministratör har infört IP-begränsningar måste du lägga till [Experience Platform IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) i [!DNL Salesforce]-kontonas betrodda IP-intervall. Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) om du behöver ytterligare hjälp.
+Om din [!DNL Salesforce]-kontoadministratör har infört IP-begränsningar måste du lägga till [Experience Platform IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) i [!DNL Salesforce]-kontonas betrodda IP-intervall. Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5) om du behöver ytterligare hjälp.
 
 >[!IMPORTANT]
 >
@@ -198,14 +198,14 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
 Attribut som anges i **[!UICONTROL Target field]** ska namnges exakt så som beskrivs i tabellen för attributmappningar eftersom dessa attribut kommer att utgöra begärandetexten.
 
-Attribut som anges i **[!UICONTROL Source field]** följer inte någon sådan begränsning. Du kan mappa den baserat på dina behov, men kontrollera att indata-formatet är giltigt enligt [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5). Om indata inte är giltiga kommer uppdateringsanropet till [!DNL Salesforce] att misslyckas och dina kontakter/leads kommer inte att uppdateras.
+Attribut som anges i **[!UICONTROL Source field]** följer inte någon sådan begränsning. Du kan mappa den baserat på dina behov, men kontrollera att indata-formatet är giltigt enligt [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&type=5). Om indata inte är giltiga kommer uppdateringsanropet till [!DNL Salesforce] att misslyckas och dina kontakter/leads kommer inte att uppdateras.
 
 Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL (API) Salesforce CRM]:
 
 1. I steget **[!UICONTROL Mapping]** väljer du **[!UICONTROL Add new mapping]** så visas en ny mappningsrad på skärmen.
    ![Experience Platform UI, skärmbild för Lägg till ny mappning.](../../assets/catalog/crm/salesforce/add-new-mapping.png)
 1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
-1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och sedan en identitet eller väljer **[!UICONTROL Select custom attributes]**-kategori och väljer ett attribut eller definierar ett med hjälp av fältet **[!UICONTROL Attribute name]** efter behov. Mer information om attribut som stöds finns i [[!DNL Salesforce CRM] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5).
+1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och sedan en identitet eller väljer **[!UICONTROL Select custom attributes]**-kategori och väljer ett attribut eller definierar ett med hjälp av fältet **[!UICONTROL Attribute name]** efter behov. Mer information om attribut som stöds finns i [[!DNL Salesforce CRM] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&type=5).
    * Upprepa de här stegen för att lägga till följande mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce CRM]:
 
    **Arbeta med kontakter**
@@ -253,7 +253,7 @@ Det gör du genom att markera varje segment och sedan ange det anpassade fältna
 Om det anpassade fältet [!DNL Salesforce] till exempel är `crm_2_seg` anger du det här värdet i [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** för att fylla i målgrupper från Experience Platform i det här anpassade fältet.
 
 Ett exempel på ett anpassat fält från [!DNL Salesforce] visas nedan:
-![[!DNL Salesforce] Skärmbild i användargränssnittet med anpassat fält. ](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
+![[!DNL Salesforce] Skärmbild i användargränssnittet med anpassat fält. &#x200B;](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
 Ett exempel som anger platsen för [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** visas nedan:
 ![Exempel på skärmbild i Experience Platform UI som visar schemalagd målgruppsexport.](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
@@ -321,7 +321,7 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
    * Om du vill åtgärda det här felet kontrollerar du att **[!UICONTROL Mapping ID]** som du angav i aktiveringsarbetsflödet till [!DNL Salesforce CRM]-målet exakt matchar värdet för den anpassade fälttyp som du skapade i [!DNL Salesforce]. Mer information finns i avsnittet [Skapa anpassade fält i [!DNL Salesforce]](#prerequisites-custom-field).
 
 * När du aktiverar ett segment kan du få ett felmeddelande: `The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
-   * Om du vill åtgärda det här felet kontaktar du kontoadministratören för [!DNL Salesforce] och lägger till [Experience Platform IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) i [!DNL Salesforce]-kontonas betrodda IP-intervall. Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) om du behöver ytterligare hjälp.
+   * Om du vill åtgärda det här felet kontaktar du kontoadministratören för [!DNL Salesforce] och lägger till [Experience Platform IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) i [!DNL Salesforce]-kontonas betrodda IP-intervall. Mer information finns i dokumentationen för [!DNL Salesforce] [Begränsa åtkomst till betrodda IP-intervall för ett anslutet program](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&type=5) om du behöver ytterligare hjälp.
 
 ## Ytterligare resurser {#additional-resources}
 

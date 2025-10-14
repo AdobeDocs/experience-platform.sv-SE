@@ -392,7 +392,7 @@ Om du utför en GET-begäran om att [visa alla klasser](#list) i behållaren `te
 
 ## Uppdatera en klass {#put}
 
-Du kan ersätta en hel klass med en PUT-åtgärd, i princip skriva om resursen. När en klass uppdateras via en PUT-begäran måste brödtexten innehålla alla fält som krävs när [en ny klass ](#create) skapas i en POST-begäran.
+Du kan ersätta en hel klass med en PUT-åtgärd, i princip skriva om resursen. När en klass uppdateras via en PUT-begäran måste brödtexten innehålla alla fält som krävs när [en ny klass &#x200B;](#create) skapas i en POST-begäran.
 
 >[!NOTE]
 >

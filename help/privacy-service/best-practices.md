@@ -17,7 +17,7 @@ I den här guiden beskrivs de bästa sätten att effektivt behandla sekretessfö
 
 ## Komma igång {#getting-started}
 
-Den här handboken kräver en fungerande förståelse av [Privacy Service](./home.md) och hur den gör det möjligt att hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program. Du rekommenderas också att läsa guiden om att [skapa en begäran om sekretessjobb i gränssnittet ](./ui/user-guide.md#create-a-new-privacy-job-request) eller [API:t](./api/overview.md) och förstå hur du utför dessa åtgärder programmatiskt.
+Den här handboken kräver en fungerande förståelse av [Privacy Service](./home.md) och hur den gör det möjligt att hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program. Du rekommenderas också att läsa guiden om att [skapa en begäran om sekretessjobb i gränssnittet &#x200B;](./ui/user-guide.md#create-a-new-privacy-job-request) eller [API:t](./api/overview.md) och förstå hur du utför dessa åtgärder programmatiskt.
 
 ## Förhandskrav {#prerequisites}
 
@@ -51,7 +51,7 @@ Mer information om hur du konfigurerar en händelseregistrering för Privacy Ser
 
 ### Hämta alla jobb baserat på filter {#retrieve-filtered-responses-for-all-jobs}
 
-Om du vill hämta alla dina sekretessjobbdata baserat på angivna filter **utför du en GET-begäran till `/jobs` endpoint**. Det här API-anropet är användbart för att ge en översikt på hög nivå över den aktuella jobbstatusen för stora uppsättningar jobb-ID:n med endast en begäran. Det saknas detaljerade produktsvar, men de kan hittas med [`/jobs/{jobID}`-slutpunkten ](#retrieve-detailed-responses-for-specific-jobs).
+Om du vill hämta alla dina sekretessjobbdata baserat på angivna filter **utför du en GET-begäran till `/jobs` endpoint**. Det här API-anropet är användbart för att ge en översikt på hög nivå över den aktuella jobbstatusen för stora uppsättningar jobb-ID:n med endast en begäran. Det saknas detaljerade produktsvar, men de kan hittas med [`/jobs/{jobID}`-slutpunkten &#x200B;](#retrieve-detailed-responses-for-specific-jobs).
 
 En GET-begäran till slutpunkten `/jobs` används bäst för att samla in eller jämföra statusdata för en stor uppsättning jobb-ID, men är **inte** avsedd för vanliga avsökningstypsaktiviteter.
 
@@ -59,7 +59,7 @@ En GET-begäran till slutpunkten `/jobs` används bäst för att samla in eller 
 
 - **Frågeparametrar:** Använd specifika filter för att begränsa resultaten, till exempel: dataintervall, regeltyper och status (bearbetning, fullständig och så vidare).
 
-Du kan visa en lista över alla aktuella sekretessjobb i din organisation via användargränssnittet för Privacy Service. Mer information om hur du filtrerar listan över jobbförfrågningar finns i [Hantera sekretessjobb i gränssnittsdokumentationen](./ui/user-guide.md#job-requests). Du kan även läsa dokumentationen om hur du [använder slutpunkten /job i Privacy Services-API:t ](./api/privacy-jobs.md).
+Du kan visa en lista över alla aktuella sekretessjobb i din organisation via användargränssnittet för Privacy Service. Mer information om hur du filtrerar listan över jobbförfrågningar finns i [Hantera sekretessjobb i gränssnittsdokumentationen](./ui/user-guide.md#job-requests). Du kan även läsa dokumentationen om hur du [använder slutpunkten /job i Privacy Services-API:t &#x200B;](./api/privacy-jobs.md).
 
 Privacy Service-API-dokumentationen innehåller information om [tillgängliga frågeparameterfilter](https://developer.adobe.com/experience-platform-apis/references/privacy-service/#tag/Privacy-jobs/operation/listPrivacyJobs).
 

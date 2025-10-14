@@ -169,4 +169,4 @@ Följ stegen nedan för att verifiera att du har konfigurerat källan och att [!
 
 ![Experience Platform-användargränssnitt, skärmbild som visar kapslade händelser](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/platform-dataset.png)
 
-Mer information om [!DNL Chatlio] finns i [[!DNL Chatlio] dokumentationen](https://chatlio.com/docs/) och [Vanliga frågor ](https://chatlio.com/pricing/#FAQ).
+Mer information om [!DNL Chatlio] finns i [[!DNL Chatlio] dokumentationen](https://chatlio.com/docs/) och [Vanliga frågor &#x200B;](https://chatlio.com/pricing/#FAQ).

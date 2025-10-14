@@ -22,7 +22,7 @@ Du kan skapa och hantera datastölar i användargränssnittet för datainsamling
 
 Fliken **[!UICONTROL Datastreams]** visar en lista över befintliga datastreams, inklusive deras egna namn, ID och senaste ändringsdatum. Om du vill [visa information om det och konfigurera tjänster](#view-details) markerar du namnet på ett datastream.
 
-Om du vill visa fler alternativ för en viss datastam väljer du ikonen &quot;mer&quot; (**...**). Välj [ om du vill uppdatera den ](#configure)grundläggande konfigurationen **[!UICONTROL Edit]** för datastream. Om du vill ta bort datastream väljer du **[!UICONTROL Delete]**.
+Om du vill visa fler alternativ för en viss datastam väljer du ikonen &quot;mer&quot; (**...**). Välj [&#x200B; om du vill uppdatera den &#x200B;](#configure)grundläggande konfigurationen **[!UICONTROL Edit]** för datastream. Om du vill ta bort datastream väljer du **[!UICONTROL Delete]**.
 
 ![Alternativ för att redigera eller ta bort ett befintligt datastream](assets/configure/edit-datastream.png)
 
@@ -34,7 +34,7 @@ Om du vill skapa ett datastream börjar du med att välja **[!UICONTROL New Data
 
 Arbetsflödet för att skapa en datastam visas med början i konfigurationssteget. Härifrån måste du ange ett namn och en valfri beskrivning för datastream.
 
-Om du konfigurerar en datastream för användning i Experience Platform och du även använder Web SDK, måste du även välja ett [händelsebaserat XDM-schema ](../xdm/classes/experienceevent.md) som representerar de data som du planerar för inhämtning.
+Om du konfigurerar en datastream för användning i Experience Platform och du även använder Web SDK, måste du även välja ett [händelsebaserat XDM-schema &#x200B;](../xdm/classes/experienceevent.md) som representerar de data som du planerar för inhämtning.
 
 ![Grundkonfiguration för ett datastream](assets/configure/configure.png)
 

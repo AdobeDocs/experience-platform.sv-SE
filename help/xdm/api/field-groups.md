@@ -384,11 +384,11 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om en GET-begäran om att [visa alla fältgrupper](#list) i innehavarbehållaren utförs, inkluderas nu fältgruppen Egenskapsinformation. Du kan också [utföra en sökning (GET) ](#lookup) med URL-kodad `$id` URI för att visa den nya fältgruppen direkt.
+Om en GET-begäran om att [visa alla fältgrupper](#list) i innehavarbehållaren utförs, inkluderas nu fältgruppen Egenskapsinformation. Du kan också [utföra en sökning (GET) &#x200B;](#lookup) med URL-kodad `$id` URI för att visa den nya fältgruppen direkt.
 
 ## Uppdatera en fältgrupp {#put}
 
-Du kan ersätta en hel fältgrupp genom en PUT-åtgärd och skriva om resursen. När du uppdaterar en fältgrupp via en PUT-begäran måste texten innehålla alla fält som krävs när [en ny fältgrupp ](#create) skapas i en POST-begäran.
+Du kan ersätta en hel fältgrupp genom en PUT-åtgärd och skriva om resursen. När du uppdaterar en fältgrupp via en PUT-begäran måste texten innehålla alla fält som krävs när [en ny fältgrupp &#x200B;](#create) skapas i en POST-begäran.
 
 >[!NOTE]
 >

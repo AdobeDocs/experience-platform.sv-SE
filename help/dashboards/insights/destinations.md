@@ -71,7 +71,7 @@ WHERE
 
 +++
 
-Se [Aktivera målgrupper för alla målgruppswidgetar ](../guides/destinations.md#activated-audiences-across-all-destinations) för information om utseendet och funktionaliteten för den här insikten.
+Se [Aktivera målgrupper för alla målgruppswidgetar &#x200B;](../guides/destinations.md#activated-audiences-across-all-destinations) för information om utseendet och funktionaliteten för den här insikten.
 
 ## Aktiva destinationer per målplattform {#active-destinations-by-destination-platform}
 
@@ -214,7 +214,7 @@ SELECT k.destination_name1,
 
 +++
 
-Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för widgeten ](../guides/destinations.md#common-audiences) Vanliga målgrupper.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för widgeten &#x200B;](../guides/destinations.md#common-audiences) Vanliga målgrupper.
 
 ## Målstatus {#destination-status}
 

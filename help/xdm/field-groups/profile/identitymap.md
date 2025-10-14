@@ -16,9 +16,9 @@ ht-degree: 0%
 >
 >Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL IdentityMap] är en standardschemafältgrupp för [[!UICONTROL XDM ExperienceEvent] class ](../../classes/experienceevent.md) och en kompatibel fältgrupp för [[!UICONTROL XDM Individual Profile] class](../../classes/individual-profile.md). Fältgruppen innehåller ett enda mappningsfält som innehåller en uppsättning användaridentiteter som angetts av namnutrymmet.
+[!UICONTROL IdentityMap] är en standardschemafältgrupp för [[!UICONTROL XDM ExperienceEvent] class &#x200B;](../../classes/experienceevent.md) och en kompatibel fältgrupp för [[!UICONTROL XDM Individual Profile] class](../../classes/individual-profile.md). Fältgruppen innehåller ett enda mappningsfält som innehåller en uppsättning användaridentiteter som angetts av namnutrymmet.
 
-![Ett diagram över [!UICONTROL IdentityMap] schemafältgruppen ](../../images/field-groups/identitymap.png)
+![Ett diagram över [!UICONTROL IdentityMap] schemafältgruppen &#x200B;](../../images/field-groups/identitymap.png)
 
 I avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) finns mer information om användningsfall, inklusive fördelar och nackdelar.
 

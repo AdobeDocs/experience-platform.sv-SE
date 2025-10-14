@@ -27,5 +27,5 @@ Tack vare den här integreringen kan ni hantera regelefterlevnaden effektivare. 
 Du kan läsa mer om den här funktionen här:
 
 [Komma igång med attribut-AI](../../attribution-ai/getting-started.md)
-[Adobe Experience Platform &amp; Applications ](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=sv-SE)
+[Adobe Experience Platform &amp; Applications &#x200B;](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=sv-SE)
 [Adobe Experience Cloud-arkitekturdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/experience-cloud.html?lang=sv-SE)

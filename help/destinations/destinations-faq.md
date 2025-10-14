@@ -201,7 +201,7 @@ Nej, [Web SDK](../web-sdk/home.md) krävs inte för att aktivera målgrupper fö
 
 Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=sv-SE) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
 
-Om du vill använda [samma sida och nästa sida ](ui/activate-edge-personalization-destinations.md) måste du antingen använda [Web SDK](../web-sdk/home.md) eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) . Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
+Om du vill använda [samma sida och nästa sida &#x200B;](ui/activate-edge-personalization-destinations.md) måste du antingen använda [Web SDK](../web-sdk/home.md) eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) . Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
 +++
 
 ### Finns det någon gräns för hur många attribut jag kan skicka från kunddataplattformen i realtid till Adobe Target eller en anpassad Personalization-destination?
@@ -271,7 +271,7 @@ För användningsfall där hantering av medgivandeprinciper måste tillämpas i 
 
 Den här tjänsten innehåller kundhanterade nycklar och förhöjda tröskelvärden för hantering av kundens datalängd.
 
-Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten ](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
+Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten &#x200B;](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
 
 
 

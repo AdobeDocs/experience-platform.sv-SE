@@ -70,8 +70,8 @@ Processen är följande:
 
 1. [Konfigurera ett [!DNL Azure] nyckelvalv](./azure/azure-key-vault-config.md) baserat på din organisations principer och [generera sedan en krypteringsnyckel](./azure/azure-key-vault-config.md#generate-a-key) som du kan dela med Adobe.
 1. Konfigurera CMK-appen med din [!DNL Azure]-klientorganisation genom antingen [API-anrop](./azure/api-set-up.md#register-app) eller [användargränssnittet](./azure/ui-set-up.md#register-app).
-1. Skicka ditt krypteringsnyckel-ID till Adobe och starta aktiveringsprocessen för funktionen, antingen [ i användargränssnittet](./azure/ui-set-up.md#send-to-adobe) eller med ett [API-anrop](./azure/api-set-up.md#send-to-adobe).
-1. Kontrollera konfigurationsstatusen för att verifiera om CMK har aktiverats, antingen [ i användargränssnittet ](./azure/ui-set-up.md#check-status) eller med ett [API-anrop](./azure/api-set-up.md#check-status).
+1. Skicka ditt krypteringsnyckel-ID till Adobe och starta aktiveringsprocessen för funktionen, antingen [&#x200B; i användargränssnittet](./azure/ui-set-up.md#send-to-adobe) eller med ett [API-anrop](./azure/api-set-up.md#send-to-adobe).
+1. Kontrollera konfigurationsstatusen för att verifiera om CMK har aktiverats, antingen [&#x200B; i användargränssnittet &#x200B;](./azure/ui-set-up.md#check-status) eller med ett [API-anrop](./azure/api-set-up.md#check-status).
 
 När installationsprocessen är klar för Azure-värdbaserade Experience Platform-instanser krypteras alla data som är inskrivna i Experience Platform över alla sandlådor med hjälp av nyckelkonfigurationen för [!DNL Azure]. Om du vill använda CMK använder du [!DNL Microsoft Azure]-funktioner som kan ingå i deras [allmänna förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
 

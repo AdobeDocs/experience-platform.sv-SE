@@ -60,7 +60,7 @@ Följande mått är tillgängliga för lead-till-konto-matchande profilberikande
 
 Kontrollpanelen [!UICONTROL Predictive lead and account scoring] visar grundläggande mått och daglig jobbkörningsstatus som är specifik för profilberikning för [Predictive lead and account scoring](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md) .
 
-![Profil för prediktiv lead- och kontopoängsättning ](/help/dataflows/assets/ui/b2b/predictive-lead-and-account-scoring.png)
+![Profil för prediktiv lead- och kontopoängsättning &#x200B;](/help/dataflows/assets/ui/b2b/predictive-lead-and-account-scoring.png)
 
 Följande mätvärden är tillgängliga för prediktiva lead- och kontopoängsprofiler:
 

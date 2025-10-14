@@ -20,7 +20,7 @@ ht-degree: 0%
 - Målgruppsanpassa användare för marknadsförings- och kampanjkampanjer för att öka antalet återkommande kunder.
 - Studera användarbeteenden och mönster för att inrikta er på specifika målgrupper med anpassade meddelanden, vilket kan öka intäkterna.
 
-Med tillägget [!DNL Braze Track Events API] [ för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som har samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med API:t [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) .
+Med tillägget [!DNL Braze Track Events API] [&#x200B; för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som har samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med API:t [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) .
 
 Det här dokumentet beskriver tilläggets användningsfall, hur du installerar det i biblioteken för vidarebefordran av händelser och hur du använder dess funktioner i en [regel](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
 
@@ -200,7 +200,7 @@ Användarattribut kan vara ett JSON-objekt som innehåller fält som skapar elle
 
 ## Validera data i [!DNL Braze] {#validate}
 
-Om händelsesamlingen och integreringen av [!DNL Adobe Experience Platform] lyckades visas händelser i [!DNL Braze]-konsolen när [användarprofiler ](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/) visades. De nya händelsedata som skickas till [!DNL Braze] visas i avsnittet [!DNL Purchases] på en viss användares [översiktsflik](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/#overview-tab).
+Om händelsesamlingen och integreringen av [!DNL Adobe Experience Platform] lyckades visas händelser i [!DNL Braze]-konsolen när [användarprofiler &#x200B;](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/) visades. De nya händelsedata som skickas till [!DNL Braze] visas i avsnittet [!DNL Purchases] på en viss användares [översiktsflik](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/#overview-tab).
 
 ## Nästa steg
 

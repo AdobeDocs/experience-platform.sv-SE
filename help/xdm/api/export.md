@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Exportera slutpunkt
 
-Alla resurser i [!DNL Schema Library] finns i en specifik sandlåda i Adobe Experience Platform. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och organisationer. Med slutpunkten `/rpc/export` i API:t [!DNL Schema Registry] kan du generera en exportnyttolast för alla scheman, schemafältgrupper och datatyper i [!DNL Schema Library] och sedan använda den nyttolasten för att importera resursen (och alla beroende resurser) till en mållandlåda och organisation via [`/rpc/import` endpoint ](./import.md).
+Alla resurser i [!DNL Schema Library] finns i en specifik sandlåda i Adobe Experience Platform. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och organisationer. Med slutpunkten `/rpc/export` i API:t [!DNL Schema Registry] kan du generera en exportnyttolast för alla scheman, schemafältgrupper och datatyper i [!DNL Schema Library] och sedan använda den nyttolasten för att importera resursen (och alla beroende resurser) till en mållandlåda och organisation via [`/rpc/import` endpoint &#x200B;](./import.md).
 
 ## Komma igång
 

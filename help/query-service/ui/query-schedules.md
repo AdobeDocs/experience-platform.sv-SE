@@ -183,7 +183,7 @@ I guiden [Övervaka schemalagd fråga](./monitor-queries.md#inline-actions) finn
 
 Välj en **[!UICONTROL Query run ID]** i listan för att navigera till frågekörningsöversikten. En fullständig beskrivning av informationen som är tillgänglig i [frågekörningsöversikt](./monitor-queries.md#query-run-overview) finns i dokumentationen för övervakningsplanerade frågor.
 
-Om du vill övervaka schemalagda frågor med hjälp av API:t för frågetjänsten läser du [guiden ](../api/runs-scheduled-queries.md) för schemalagda frågekörningsslutpunkter.
+Om du vill övervaka schemalagda frågor med hjälp av API:t för frågetjänsten läser du [guiden &#x200B;](../api/runs-scheduled-queries.md) för schemalagda frågekörningsslutpunkter.
 
 ## Aktivera, inaktivera eller ta bort ett schema {#delete-schedule}
 

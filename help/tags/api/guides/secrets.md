@@ -69,7 +69,7 @@ För hemligheter med värdet `type_of` `oauth2-client_credentials` krävs följa
 | `client_secret` | Sträng | Klienthemligheten för OAuth-integreringen. Det här värdet ingår inte i API-svaret. |
 | `token_url` | Sträng | Auktoriserings-URL:en för OAuth-integreringen. |
 | `refresh_offset` | Heltal | *(Valfritt)* Värdet i sekunder som uppdateringsåtgärden ska förskjutas med. Om det här attributet utelämnas när hemligheten skapas ställs värdet in på `14400` (fyra timmar) som standard. |
-| `options` | Objekt | *(Valfritt)* Anger ytterligare alternativ för OAuth-integrering:<ul><li>`scope`: En sträng som representerar [ OAuth 2.0-omfånget ](https://oauth.net/2/scope/) för autentiseringsuppgifterna.</li><li>`audience`: En sträng som representerar en [Auth0-åtkomsttoken](https://auth0.com/docs/protocols/protocol-oauth2).</li></ul> |
+| `options` | Objekt | *(Valfritt)* Anger ytterligare alternativ för OAuth-integrering:<ul><li>`scope`: En sträng som representerar [&#x200B; OAuth 2.0-omfånget &#x200B;](https://oauth.net/2/scope/) för autentiseringsuppgifterna.</li><li>`audience`: En sträng som representerar en [Auth0-åtkomsttoken](https://auth0.com/docs/protocols/protocol-oauth2).</li></ul> |
 
 När en `oauth2-client_credentials`-hemlighet skapas eller uppdateras, byts `client_id` och `client_secret` (och eventuellt `options`) ut i en POST till `token_url`, enligt klientautentiseringsflödet i OAuth-protokollet.
 
@@ -113,7 +113,7 @@ När hemligheten `oauth2-google` har skapats innehåller svaret en `meta.authori
 
 Auktoriserings-URL:en för en `oauth2-google`-hemlighet går ut en timme efter att hemligheten har skapats (vilket anges av `meta.authorization_url_expires_at`). Därefter måste hemligheten auktoriseras på nytt för att autentiseringsprocessen ska kunna förnyas.
 
-Mer information om hur du återauktoriserar en `oauth2-google`-hemlighet genom att göra en PATCH-begäran till Reactor API finns i [Slutpunktshandboken ](../endpoints/secrets.md#reauthorize).
+Mer information om hur du återauktoriserar en `oauth2-google`-hemlighet genom att göra en PATCH-begäran till Reactor API finns i [Slutpunktshandboken &#x200B;](../endpoints/secrets.md#reauthorize).
 
 ## Miljörelation
 

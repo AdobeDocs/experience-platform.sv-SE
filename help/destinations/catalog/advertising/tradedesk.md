@@ -157,7 +157,7 @@ Exempel:
 
 >[!NOTE]
 > 
->Efter uppgraderingen [ från ](/help/release-notes/2025/july-2025.md#destinations)juli 2025 till måltjänsten har mappningen [!DNL ECID] framtvingats. Profiler som saknar [!DNL ECID] tas nu bort som förväntat, vilket kan leda till lägre antal aktiveringar jämfört med äldre beteenden.
+>Efter uppgraderingen [&#x200B; från &#x200B;](/help/release-notes/2025/july-2025.md#destinations)juli 2025 till måltjänsten har mappningen [!DNL ECID] framtvingats. Profiler som saknar [!DNL ECID] tas nu bort som förväntat, vilket kan leda till lägre antal aktiveringar jämfört med äldre beteenden.
 
 ## Exporterade data {#exported-data}
 

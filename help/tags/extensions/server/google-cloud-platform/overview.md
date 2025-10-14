@@ -14,7 +14,7 @@ ht-degree: 0%
 
 [[!DNL Google Cloud Platform]](https://cloud.google.com/) är en plattform för cloud computing som erbjuder en mängd olika tjänster, till exempel distribuerad databehandling, databaslagring, innehållsleverans och SaaS-integreringstjänster (Software-as-a-service) för kundrelationshantering (CRM) och resursplanering (ERP).
 
-Tillägget [!DNL Google Cloud Platform] [Vidarebefordra ](../../../ui/event-forwarding/overview.md) använder [[!DNL Cloud Pub/Sub]](https://cloud.google.com/pubsub) för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL Google Cloud Platform] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
+Tillägget [!DNL Google Cloud Platform] [Vidarebefordra &#x200B;](../../../ui/event-forwarding/overview.md) använder [[!DNL Cloud Pub/Sub]](https://cloud.google.com/pubsub) för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL Google Cloud Platform] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
 
 ## Förhandskrav
 

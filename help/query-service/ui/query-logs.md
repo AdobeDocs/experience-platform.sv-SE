@@ -33,7 +33,7 @@ Du kan också söka efter loggar som relaterar till särskilda frågemallar geno
 
 ![Arbetsytan för frågeloggen med sökfältet och listrutan för hantering av kolumntabeller är markerad.](../images/ui/query-log/customize-logs.png)
 
-En [beskrivning för var och en av loggtabellkolumnerna ](./overview.md#log) finns i loggavsnittet i frågetjänstens översikt.
+En [beskrivning för var och en av loggtabellkolumnerna &#x200B;](./overview.md#log) finns i loggavsnittet i frågetjänstens översikt.
 
 ## Identifiera loggdata
 
