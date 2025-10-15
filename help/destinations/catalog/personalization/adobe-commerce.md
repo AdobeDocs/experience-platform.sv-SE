@@ -23,7 +23,7 @@ Om du vill använda den här målanslutningen måste du ha åtkomst till:
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
 - [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). Med tillgång till utvecklarkonsolen kan du visa tjänstkonto- och autentiseringsuppgifter-information som behövs för att [slutföra konfigurationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=sv-SE#configure-the-extension) av tillägget i Adobe Commerce.
-- [Adobe Commerce Cloud version 2.4.4 eller senare](https://business.adobe.com/products/magento/magento-commerce.html)
+- [Adobe Commerce Cloud version 2.4.4 eller senare](https://business.adobe.com/se/products/magento/magento-commerce.html)
 
 I Experience Platform skapar du följande:
 

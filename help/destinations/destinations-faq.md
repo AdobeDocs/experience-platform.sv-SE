@@ -265,7 +265,7 @@ Ja. [Datastyrnings- och sambandsprinciper](../data-governance/home.md) som skapa
 ### Är [!DNL Adobe Target] och [!DNL Custom Personalization] mål [!DNL HIPAA]-kompatibla?
 
 +++Svar
-[!DNL Adobe Target] är inte [!DNL HIPPA]-kompatibel med [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/solutions/industries/healthcare.html). Kunderna bör kontrollera med sina egna juridiska team vad gäller [!DNL HIPPA]-beredskap för anpassade optimeringskanaler innan de använder kantanpassning via [!DNL Adobe Target] eller [!DNL Custom Personalization]-destinationer.
+[!DNL Adobe Target] är inte [!DNL HIPPA]-kompatibel med [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/se/solutions/industries/healthcare.html). Kunderna bör kontrollera med sina egna juridiska team vad gäller [!DNL HIPPA]-beredskap för anpassade optimeringskanaler innan de använder kantanpassning via [!DNL Adobe Target] eller [!DNL Custom Personalization]-destinationer.
 
 För användningsfall där hantering av medgivandeprinciper måste tillämpas i stor skala måste kunderna köpa [!DNL Adobe Privacy & Security Shield]. [!DNL Adobe Privacy & Security Shield] funktioner säljs som en avancerad uppsättning funktioner och kan inte köpas separat.
 

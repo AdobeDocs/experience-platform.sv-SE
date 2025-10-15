@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Återge personaliserat innehåll
 
-Adobe Experience Platform Web SDK har stöd för att hämta anpassat innehåll från Adobe personaliseringslösningar, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [Offer Decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=sv-SE).
+Adobe Experience Platform Web SDK har stöd för att hämta anpassat innehåll från Adobe personaliseringslösningar, inklusive [Adobe Target](https://business.adobe.com/se/products/target/adobe-target.html), [Offer Decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=sv-SE).
 
 Dessutom utnyttjar Web SDK personaliseringsfunktioner på samma sida och nästa sida via Adobe Experience Platform personaliseringsmål, till exempel [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [anpassade personaliseringsanslutningar](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i den [dedikerade guiden](../../destinations/ui/activate-edge-personalization-destinations.md).
 
