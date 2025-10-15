@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 9cf809f8fd6e424b4dcd800c3d554e4eb0e337dc
+source-git-commit: de95e9a51c979e9249ddf9ceb262fc521d2b38f4
 workflow-type: tm+mt
-source-wordcount: '943'
-ht-degree: 33%
+source-wordcount: '1007'
+ht-degree: 30%
 
 ---
 
@@ -21,8 +21,8 @@ ht-degree: 33%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: oktober 2025**
@@ -30,7 +30,7 @@ ht-degree: 33%
 Nya funktioner och uppdateringar i Adobe Experience Platform:
 
 - [Aviseringar](#alerts)
-- [Mål &#x200B;](#destinations)
+- [Mål ](#destinations)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
@@ -57,7 +57,9 @@ Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] 
 | Mål | Beskrivning |
 | --- | --- |
 | [!DNL AdForm] | Använd det här målet för att skicka Adobe Real-Time CDP-målgrupper till [!DNL AdForm] för aktivering baserat på Experience Cloud ID (ECID) och [!DNL AdForm]s ID Fusion. ID Fusion för [!DNL AdForm] är en ID-matchningstjänst som gör att du kan aktivera dina första målgrupper baserat på Experience Cloud ID (ECID). |
-| `Amazon Ads` | Vi har lagt till ytterligare stöd för personliga identifierare som `firstName`, `lastName`, `street`, `city`, `state`, `zip` och `country`. Genom att mappa dessa fält som målidentiteter kan ni förbättra målgruppernas matchningsfrekvens. |
+| [!DNL Amazon Ads] | Vi har lagt till ytterligare stöd för personliga identifierare som `firstName`, `lastName`, `street`, `city`, `state`, `zip` och `country`. Genom att mappa dessa fält som målidentiteter kan ni förbättra målgruppernas matchningsfrekvens. |
+| [!DNL Snowflake Batch] (begränsad tillgänglighet) | Skapa en [!DNL Snowflake]-dataresurs live för att ta emot dagliga målgruppsuppdateringar direkt som delade tabeller till ditt konto. Den här integreringen är för närvarande tillgänglig för kundorganisationer som etablerats i VA7-regionen. |
+| [!DNL Snowflake Streaming] (begränsad tillgänglighet) | Skapa en [!DNL Snowflake]-dataresurs live för att ta emot uppdateringar för direktuppspelad målgrupp direkt som delade tabeller till ditt konto. Den här integreringen är för närvarande tillgänglig för kundorganisationer som etablerats i VA7-regionen. |
 
 **Ny eller uppdaterad funktionalitet**
 
