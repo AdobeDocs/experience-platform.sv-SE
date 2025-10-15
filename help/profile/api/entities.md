@@ -5,9 +5,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 40400ab8cc87a6c8d6d37f1a20eaf96ab49aabf7
+source-git-commit: 193045d530d73d8a3e4f7ac3df4e1f43e8ad5b15
 workflow-type: tm+mt
-source-wordcount: '1981'
+source-wordcount: '2141'
 ht-degree: 0%
 
 ---
@@ -66,6 +66,10 @@ Om du vill komma åt en profilentitet måste **du** ange följande frågeparamet
 - `schema.name`: Namnet på entitetens XDM-schema. I det här fallet `schema.name=_xdm.context.profile`.
 - `entityId`: ID:t för entiteten som du försöker hämta.
 - `entityIdNS`: Namnområdet för entiteten som du försöker hämta. Det här värdet måste anges om `entityId` är **inte** ett XID.
+
+Dessutom rekommenderas *mycket* av följande frågeparameter:
+
+- `mergePolicyId`: ID:t för den sammanfogningsprincip som du vill filtrera data med. Om ingen sammanfogningsprincip anges används organisationens standardprincip för sammanfogning.
 
 En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
 
@@ -180,6 +184,10 @@ Om du vill komma åt B2B-kontodata **måste** ange följande frågeparametrar:
 - `entityId`: ID:t för entiteten som du försöker hämta.
 - `entityIdNS`: Namnområdet för entiteten som du försöker hämta. Det här värdet måste anges om `entityId` är **inte** ett XID.
 
+Dessutom rekommenderas *mycket* av följande frågeparameter:
+
+- `mergePolicyId`: ID:t för den sammanfogningsprincip som du vill filtrera data med. Om ingen sammanfogningsprincip anges används organisationens standardprincip för sammanfogning.
+
 En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
 
 **Begäran**
@@ -271,6 +279,10 @@ Om du vill komma åt en B2B-säljprojektsenhet **måste** ange följande frågep
 - `schema.name`: Namnet på entitetens XDM-schema. I det här fallet `schema.name=_xdm.context.opportunity`.
 - `entityId`: ID:t för entiteten som du försöker hämta.
 - `entityIdNS`: Namnområdet för entiteten som du försöker hämta. Det här värdet måste anges om `entityId` är **inte** ett XID.
+
+Dessutom rekommenderas *mycket* av följande frågeparameter:
+
+- `mergePolicyId`: ID:t för den sammanfogningsprincip som du vill filtrera data med. Om ingen sammanfogningsprincip anges används organisationens standardprincip för sammanfogning.
 
 En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
 
@@ -1207,7 +1219,9 @@ Ett godkänt svar returnerar nästa resultatsida. Det här svaret har inga efter
 
 >[!IMPORTANT]
 >
->Borttagningsbegäranden för följande B2B-enheter har tagits bort:
+>Slutpunkten för borttagning av entitet kommer att vara inaktuell i slutet av oktober 2025. Om du vill utföra postborttagningsåtgärder kan du använda [API-arbetsflödet för borttagning av datalivscykelpost](/help/hygiene/api/workorder.md) eller [arbetsflödet för borttagning av datalivscykelpost](/help/hygiene/ui/record-delete.md) i stället.
+>
+>Borttagningsbegäranden för följande B2B-enheter har redan tagits bort:
 >
 >- Konto
 >- Konto-personrelation
@@ -1270,13 +1284,13 @@ Följande parametrar används i sökvägen för GET-begäranden till slutpunkten
 | Parameter | Beskrivning | Exempel |
 | --------- | ----------- | ------- |
 | `schema.name` | **(Obligatoriskt)** Namnet på entitetens XDM-schema. | `schema.name=_xdm.context.profile` |
-| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
+| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
 | `entityId` | **(Obligatoriskt)** ID för entiteten. Om värdet för den här parametern inte är ett XID måste även en identitetsnamnområdesparameter (`entityIdNS`) anges. | `entityId=janedoe@example.com` |
-| `entityIdNS` | Om `entityId` inte anges som ett XID måste **&#x200B;**&#x200B;ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
-| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| `entityIdNS` | Om `entityId` inte anges som ett XID måste **** ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
+| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | Om `schema.name` är&quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan. | `fields=personalEmail,person.name,person.gender` |
-| `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |
+| `mergePolicyId` | *Rekommenderad* Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har definierats för det schema du begär returnerar API:t en HTTP 422-felstatuskod. | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |
 | `orderBy` | Sorteringsordningen för hämtade entiteter efter tidsstämpel. Detta skrivs som `(+/-)timestamp`, med standardvärdet `+timestamp`. | `orderby=-timestamp` |
 | `startTime` | Anger starttiden som entiteterna ska filtreras (i millisekunder). | `startTime=1539838505` |
 | `endTime` | Anger sluttiden för filtrering av enheter (i millisekunder). | `endTime=1539838510` |

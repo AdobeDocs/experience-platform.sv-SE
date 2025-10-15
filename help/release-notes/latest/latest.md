@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
+source-git-commit: fe8456823d0e7f1b60ea647e044747cfee4bc4c5
 workflow-type: tm+mt
-source-wordcount: '1499'
-ht-degree: 92%
+source-wordcount: '1605'
+ht-degree: 86%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 92%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 23 september 2025**
@@ -103,6 +103,12 @@ Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Förbättringar i [!BADGE Alpha]{type=Informative}-profilvisningsprogrammet | Septemberversionen 2025 innehåller följande förbättringar av profilvisningsprogrammet. <ul><li>**Kombinerad vy**: Attribut, händelser och insikter har kombinerats till en enda vy.</li><li>**AI-genererade insikter**: Sidan med profilinformation visar nu AI-genererade insikter, som visar information som genererats från din profil. Dessa insikter kan innehålla information som benägenhetspoäng och trendanalyser.</li><li>**Stiluppdatering**: Sidan med profilinformation har uppdaterats visuellt.</li><li>**Bläddra**: Nu kan du utforska dina profiler via en interaktiv kortbaserad karusell med sökning och anpassning.</li></ul> |
+
+**Viktiga uppdateringar**
+
+| Uppdatering | Beskrivning |
+| ------ | ----------- |
+| API för borttagning av profil | API:t [för profilborttagning](/help/profile/api/entities.md#delete-entity) kommer att vara inaktuellt i slutet av oktober 2025. Om du vill utföra postborttagningsåtgärder kan du använda [API-arbetsflödet för borttagning av datalivscykelpost](/help/hygiene/api/workorder.md) eller [arbetsflödet för borttagning av datalivscykelpost](/help/hygiene/ui/record-delete.md) i stället. Arbetsflödena för datalängd ger livscykeluppföljning från början till slut samt månatliga kvoter som du kan visa och hantera. <br/><br/>När slutpunkten har tagits bort har alla användare som för närvarande använder den här slutpunkten fortfarande åtkomst till den här slutpunkten. Slutet av livet för detta kommer att tillkännages separat. Kontakta Adobe kundtjänst om du har några frågor. |
 
 Mer information finns i [Översikten över kundprofil i realtid](../../profile/home.md).
 
