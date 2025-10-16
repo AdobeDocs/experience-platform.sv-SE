@@ -2,18 +2,14 @@
 title: Koppla Google-annonser till Experience Platform med API:er
 description: Lär dig hur du ansluter Adobe Experience Platform till Google Ads med API:t för Flow Service.
 exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: a0977e98219797eda14dd8d7ddb6cf3f1410cef0
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Google Ads] till Experience Platform med API:t [!DNL Flow Service]
-
->[!NOTE]
->
->Källan [!DNL Google Ads] är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
@@ -72,7 +68,7 @@ curl -X POST \
               "refreshToken": "{REFRESH_TOKEN}",
               "clientId": "{CLIENT_ID}",
               "clientSecret": "{CLIENT_SECRET}",
-              "googleAdsApiVersion": "v17"
+              "googleAdsApiVersion": "v19"
 
           }
       },
@@ -91,7 +87,7 @@ curl -X POST \
 | `auth.params.refreshToken` | Uppdateringstoken för ditt [!DNL Google Ads]-konto. |
 | `auth.params.clientID` | Klient-ID för ditt [!DNL Google Ads]-konto. |
 | `auth.params.clientSecret` | Klienthemligheten för ditt [!DNL Google Ads]-konto. |
-| `auth.params.googleAdsApiVersion` | API-versionen [!DNL Google Ads] som du använder. Den senaste versionen som stöds på Experience Platform är `v17`. |
+| `auth.params.googleAdsApiVersion` | API-versionen [!DNL Google Ads] som du använder. Experience Platform har för närvarande stöd för version `v19` och senare. Kontrollera att du använder någon av dessa versioner som stöds för att säkerställa kompatibilitet. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Google Ads]: `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
 
 **Svar**

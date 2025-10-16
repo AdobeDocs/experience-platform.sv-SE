@@ -2,7 +2,7 @@
 title: Google Ads Source - översikt
 description: Lär dig hur du ansluter Google Ads till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 1f6257e0-213c-4723-a240-511c11c5833c
-source-git-commit: ac90eea69f493bf944a8f9920426a48d62faaa6c
+source-git-commit: a0977e98219797eda14dd8d7ddb6cf3f1410cef0
 workflow-type: tm+mt
 source-wordcount: '558'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Experience Platform stöder inmatning av data från ett annonssystem från tredj
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ### Konfigurera behörigheter i Experience Platform
 
@@ -41,7 +41,7 @@ Du måste ange lämpliga värden för följande autentiseringsuppgifter för att
 | `refreshToken` | Uppdateringstoken är en del av [!DNL OAuth2]-autentiseringen. Med denna token kan du återskapa dina åtkomsttoken när de har upphört att gälla. |
 | `clientId` | Klient-ID används tillsammans med klienthemligheten som en del av [!DNL OAuth2]-autentiseringen. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för [!DNL Google]. |
 | `clientSecret` | Klienthemligheten används tillsammans med klient-ID som en del av [!DNL OAuth2]-autentiseringen. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för [!DNL Google]. |
-| `googleAdsApiVersion` | Den aktuella API-versionen som stöds av [!DNL Google Ads]. Den senaste versionen är `v18`, men den senaste versionen som stöds på Experience Platform är `v17`. |
+| `googleAdsApiVersion` | Den aktuella API-versionen som stöds av [!DNL Google Ads]. Den senaste [!DNL Google Ads] API-versionen är v21, men Experience Platform stöder för närvarande version v19 och senare. Kontrollera att du använder någon av dessa versioner som stöds för att säkerställa kompatibilitet. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Google Ads] är: `d771e9c1-4f26-40dc-8617-ce58c4b53702`. Det här värdet krävs om du ansluter ditt [!DNL Google Ads]-konto med API:t [!DNL Flow Service]. |
 
 ## Anslut [!DNL Google Ads] till Experience Platform
