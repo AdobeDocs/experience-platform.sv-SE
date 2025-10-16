@@ -3,9 +3,9 @@ title: Översikt över Capillary Streaming Events
 description: Lär dig att strömma data från Capillary till Experience Platform.
 badge: Beta
 exl-id: 3b8eb2f6-3b4a-4b91-89d4-b6d9027c6ab4
-source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
+source-git-commit: 428aed259343f56a2bf493b40ff2388340fffb7b
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '530'
 ht-degree: 0%
 
 ---
@@ -26,51 +26,41 @@ Genom att integrera [!DNL Capillary] med Experience Platform kan du:
 
 ## Förhandskrav
 
-Innan du ansluter [!DNL Capillary] till Adobe Experience Platform bör du kontrollera att du har:
+Innan du ansluter [!DNL Capillary] till Adobe Experience Platform måste du ha följande:
 
 * Ett giltigt **Adobe-organisations-ID** och åtkomst till en aktiverad Experience Platform-sandlåda.
-* **[!DNL Capillary]källautentiseringsuppgifter** (klient-ID och klienthemlighet).
-* Behörigheter som krävs i Adobe Admin Console för att skapa källor och dataflöden.
+* Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[!UICONTROL Manage Sources]** aktiverat för ditt konto för att kunna ansluta ditt [!DNL Capillary]-konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i [användargränssnittsguiden för åtkomstkontroll](../../../access-control/ui/overview.md).
 
-### Samla in nödvändiga inloggningsuppgifter
+### Skapa ett schema
 
-Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta ditt [!DNL Capillary]-konto till Experience Platform:
+Du måste skapa ett XDM-schema (Experience Data Model) för att beskriva en datauppsättning som kan lagra möjliga fält och datatyper som ska skickas från [!DNL Capillary].
 
-| Autentiseringsuppgifter | Beskrivning | Exempel |
-| --- | --- | --- |
-| Klient-ID | Klient-ID för källan [!DNL Capillary]. | `321c8a8fee0d4a06838d46f9d3109e8a` |
-| Klienthemlighet | Klienthemligheten som utfärdas med klient-ID | `xxxxxxxxxxxxxxxxxx` |
-| Organisations-ID | Ditt Adobe-organisations-ID | `0A7D42FC5DB9D3360A495FD3@AdobeOrg` |
+1. Logga in på Adobe Experience Platform och gå till Experience Platform via din organisations inloggning.
+2. I den vänstra navigeringspanelen väljer du **[!UICONTROL Schemas]** för att öppna arbetsytan i [!UICONTROL Schemas].
+3. Välj **[!UICONTROL Create schema]** i det övre högra hörnet.
+4. I dialogrutan Skapa schema väljer du mellan **[!UICONTROL Manual creation]** (lägg till fält och fältgrupper själv) eller **[!UICONTROL ML-assisted creation]** (överför en CSV-fil och använd maskininlärning för att generera ett rekommenderat schema).
+5. Välj en basklass för ditt schema (t.ex. XDM Individual Profile, XDM ExperienceEvent eller Other). Om du väljer **[!UICONTROL Other]** kan du välja bland tillgängliga anpassade klasser eller standardklasser.
+6. Ange ett användarvänligt namn och en beskrivning för ditt schema.
+7. Använd Schemaredigeraren för att: Lägga till fältgrupper (återanvändbara fältblock), definiera enskilda fält (anpassa namn, datatyper och alternativ) och eventuellt skapa anpassade datatyper eller fältgrupper om befintliga inte passar dina behov.
+8. Granska schemastrukturen på arbetsytan. Välj **[!UICONTROL Finish]** för att skapa schemat.
+9. (Valfritt) Redigera fält, lägg till beskrivningar och justera fältgrupper efter behov i Schemaredigeraren.
 
-Mer information om hur du genererar åtkomsttoken finns i [Adobe-autentiseringsguiden](https://developer.adobe.com/developer-console/docs/guides/authentication/).
+Mer information om hur du skapar ett XDM-schema finns i guiden om att [skapa ett schema med schemaredigeraren](../../../xdm/tutorials/create-schema-ui.md).
 
-### Generera en åtkomsttoken
+### Skapa en datauppsättning
 
-Använd sedan ditt klient-ID och klienthemlighet för att generera en åtkomsttoken från Adobe.
+Därefter måste du skapa en datauppsättning som refererar till det schema du just skapade.
 
-**Begäran**
+1. I Experience Platform-gränssnittet väljer du [!UICONTROL Datasets] i den vänstra navigeringen för att öppna arbetsytan i [!UICONTROL Datasets].
+2. Välj **[!UICONTROL Create dataset]** längst upp till höger.
+3. Välj **[!UICONTROL Create dataset from schema]** i alternativen för att skapa.
+4. I listan söker du efter och väljer det XDM-schema som du skapade tidigare. När du har hittat ditt schema väljer du **[!UICONTROL Next]**.
+5. Ange ett unikt, beskrivande namn för datauppsättningen.
+6. Om du vill kan du lägga till en beskrivning som hjälper framtida användare att identifiera datauppsättningen.
+7. Välj **[!UICONTROL Finish]** om du vill skapa datauppsättningen.
 
-```shell
-curl -X POST 'https://ims-na1.adobelogin.com/ims/token' \
-  -d 'client_id={CLIENT_ID}' \
-  -d 'client_secret={CLIENT_SECRET}' \
-  -d 'grant_type=client_credentials' \
-  -d 'scope=openid AdobeID read_organizations additional_info.projectedProductContext session'
-```
+Mer information om hur du skapar en datauppsättning finns i [användargränssnittsguiden för datauppsättningar](../../../catalog/datasets/user-guide.md).
 
-**Svar**
+## Anslut [!DNL Capillary Streaming Events] till Experience Platform
 
-```json
-{
-  "access_token": "eyJhbGciOi...",
-  "token_type": "bearer",
-  "expires_in": 86399994
-}
-```
-
-## Nästa steg
-
-När du har slutfört kravkonfigurationen för [!DNL Capillary] kan du läsa följande dokumentation för att lära dig hur du kan ansluta ditt konto och starta direktuppspelning av data från [!DNL Capillary] till Experience Platform.
-
-* [Anslut [!DNL Capillary Streaming Events] till Experience Platform med API:t](../../tutorials/api/create/loyalty/capillary.md)
-* [Anslut [!DNL Capillary Streaming Events] till Experience Platform med användargränssnittet](../../tutorials/ui/create/loyalty/capillary.md)
+När du har slutfört kravkonfigurationen för [!DNL Capillary] kan du läsa [[!DNL Capillary Streaming Events] självstudiekursen för användargränssnitt](../../tutorials/ui/create/loyalty/capillary.md) och lära dig hur du kan ansluta ditt konto och strömma data från [!DNL Capillary] till Experience Platform.

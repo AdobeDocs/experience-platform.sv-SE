@@ -3,9 +3,9 @@ title: Koppla Capillary till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter Capillary till Experience Platform med användargränssnittet
 badge: Beta
 exl-id: c90e6500-b92c-44ba-8de6-84e772bd9db1
-source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
+source-git-commit: 428aed259343f56a2bf493b40ff2388340fffb7b
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '819'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,10 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
+>[!NOTE]
+>
+>Läs [[!DNL Capillary Streaming Events] översikten](../../../../connectors/loyalty/capillary.md) om du vill ha information om hur du konfigurerar källan [!DNL Capillary].
+
 ## Navigera i källkatalogen
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Välj lämplig kategori på panelen *[!UICONTROL Categories]*. Du kan också använda sökfältet för att navigera till den specifika källa som du vill använda.
@@ -42,6 +46,10 @@ Om du vill använda [!DNL Capillary] väljer du **[!UICONTROL Capillary Streamin
 ## Markera data
 
 Använd sedan gränssnittet *[!UICONTROL Select data]* för att överföra en JSON-exempelfil och definiera källschemat. Under det här steget kan du använda förhandsvisningsgränssnittet för att visa nyttolastens filstruktur. När du är klar väljer du **[!UICONTROL Next]**.
+
+>[!TIP]
+>
+>Du kan hämta [händelser och profilscheman](../../../../images/tutorials/create/capillary/schemas.zip) för [!DNL Capillary] som ska användas i datamarkeringsgränssnittet.
 
 ![Steg för val av data i källarbetsflödet](../../../../images/tutorials/create/capillary/select-data.png)
 
