@@ -3,9 +3,9 @@ title: Snowflake Streaming Source Connector - översikt
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att importera strömmande data från din Snowflake-instans till Adobe Experience Platform
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: 0d646136da2c508fe7ce99a15787ee15c5921a6c
+source-git-commit: 1d0cc448293ab3cad6ccb971bb2edc86c1b01a5c
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -157,6 +157,25 @@ Du måste konfigurera behörigheter för en roll, även om den allmänna standar
 >Automatiskt återupptagande och automatiskt uppehåll måste vara aktiverat i den avancerade inställningskonfigurationen för ditt lagerställe.
 
 Mer information om roll- och behörighetshantering finns i [[!DNL Snowflake] API-referensen](<https://docs.snowflake.com/en/sql-reference/sql/grant-privilege>).
+
+## Konvertera Unix-tid till datumfält
+
+[!DNL Snowflake Streaming] tolkar och skriver ` DATE`-fält som antalet dagar sedan Unix-epoken (1970-01-01). Värdet `DATE` betyder till exempel 1 januari 1970, medan värdet 1 betyder 2 januari 1970. När du förbereder filen för att skapa mappningar i källan [!DNL Snowflake Streaming] måste du därför se till att kolumnen `DATE` representeras som ett heltal.
+
+Du kan använda [Data Prep-data och tidsfunktioner](../../../data-prep/functions.md#date-and-time-functions) för att konvertera Unix-tid till datumfält som kan importeras till Experience Platform. Exempel:
+
+```shell
+dformat({DATE_COLUMN} * 86400000, "yyyy-MM-dd")
+```
+
+I den här funktionen:
+
+* `{DATE_COLUMN}` är datumkolumnen som innehåller epokdagens heltal.
+* Om du multiplicerar med 8640000 konverteras epokdagarna till millisekunder.
+* åååå-MM-dd anger önskat datumformat.
+
+Med den här konverteringen kan du vara säker på att datumet visas korrekt i datauppsättningen.
+
 
 ## Begränsningar och vanliga frågor {#limitations-and-frequently-asked-questions}
 
