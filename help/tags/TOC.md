@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 84cc86e4afa74668ba00a7ef5ba824f44db3f8f1
+source-git-commit: cc89bf68011499e69f4ed8c7dc891ec02a34d361
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '791'
 ht-degree: 19%
 
 ---
@@ -306,6 +306,7 @@ ht-degree: 19%
    * [Värdar för bibliotek från tredje part](./extension-dev/third-party-libraries.md)
    * [Turbinfri variabel](./extension-dev/turbine.md)
    * [Bakåtkompatibilitetsstandard](./extension-dev/backwards-compatibility.md)
+   * [Delade privata tillägg](./extension-dev/shared-private-extensions.md)
 * Reactor API {#api}
    * [Översikt](./api/overview.md)
    * [Autentisera och få åtkomst till Reactor API](./api/getting-started.md)
@@ -343,5 +344,5 @@ ht-degree: 19%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
