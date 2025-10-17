@@ -2,9 +2,9 @@
 title: Inmatning on demand för källdataflöden i användargränssnittet
 description: Lär dig hur du skapar dataflöden on demand för dina källanslutningar med Experience Platform användargränssnitt.
 exl-id: e5a70044-2484-416a-8098-48e6d99c2d98
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fabacf273fb5774ddcee42d0cdcf12281eb0216b
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '546'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ I det här dokumentet får du information om hur du skapar dataflöden på begä
 
 **Vad är en flödeskörning?**
 
-Flödeskörningar är en instans av körning av dataflöde. Om ett dataflöde till exempel är schemalagt att köras varje timme kl. 9.00, 10.00 och 11.00 har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
+Flödeskörningar är en instans av körning av dataflöde. Om ett dataflöde till exempel är schemalagt att köras varje timme kl. 9:00, 10:00 AM och 11:00 AM, har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
 
 >[!ENDSHADEBOX]
 
@@ -58,6 +58,10 @@ Välj **[!UICONTROL Schedule]** och tillåt ett par stunder så att dataflödet 
 ![Schemaläggningskonfigurationsfönstret för on demand-inmatning.](../../images/tutorials/on-demand/configure-schedule.png)
 
 Välj dataflödets namn för att visa dataflödesaktiviteten. Här visas en lista över dataflödeskörningar som har bearbetats. Du kan köra enskilda versioner av ditt dataflöde på nytt oavsett om de har misslyckats eller slutförts. För körningsiterationer som har misslyckats kan du använda **[!UICONTROL Retry]** för att starta körningen igen efter att ha diagnostiserat och åtgärdat eventuella fel som kan ha påträffats under skapandeprocessen.
+
+>[!TIP]
+>
+>Om du försöker köra ett flöde igen bearbetas bara filer med tidsstämplar som ligger inom intervallet för den ursprungliga körningen.
 
 ![En lista över bearbetade flödeskörningar för ett valt dataflöde.](../../images/tutorials/on-demand/processed.png)
 
