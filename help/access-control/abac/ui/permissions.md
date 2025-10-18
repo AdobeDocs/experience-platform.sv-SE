@@ -116,7 +116,7 @@ Om du vill ta bort en användare från en roll väljer du ikonen **X** bredvid a
 
 Följande video är tänkt att ge stöd för din förståelse för att skapa en ny roll och hantera användare för den rollen.
 
->[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3475977/?captions=swe&learn=on)
 
 ## Hantera API-autentiseringsuppgifter för en roll {#manage-api-credentials-for-role}
 

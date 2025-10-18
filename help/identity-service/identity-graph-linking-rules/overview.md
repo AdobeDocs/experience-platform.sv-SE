@@ -101,7 +101,7 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-image">
                 <figure class="image x-is-16by9">
                     <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" title="Länkningsregler för identitetsdiagram - identitetsinställningar" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3458487/?format=jpeg&nocache=1747851655218" alt="Länkningsregler för identitetsdiagram - identitetsinställningar"
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3475966/?captions=swe&format=jpeg&nocache=1747851655218" alt="Länkningsregler för identitetsdiagram - identitetsinställningar"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>

@@ -29,7 +29,7 @@ När du har valt en användare väljer du **[!UICONTROL Save]** för att lägga 
 
 Följande video är tänkt att ge stöd för din förståelse för att hantera administratörer för en produktprofil.
 
->[!VIDEO](https://video.tv.adobe.com/v/333860/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3475945/?captions=swe&learn=on)
 
 ## Nästa steg
 

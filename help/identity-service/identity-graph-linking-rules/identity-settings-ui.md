@@ -19,7 +19,7 @@ Identitetsinställningar är en funktion i användargränssnittet för Adobe Exp
 
 Titta på följande video om du vill ha mer information om hur du använder gränssnittet [!DNL Graph Simulation] på arbetsytan i identitetstjänstens gränssnitt:
 
->[!VIDEO](https://video.tv.adobe.com/v/3458487/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475966/?captions=swe&learn=on&enablevpops)
 
 Läs den här vägledningen när du vill lära dig hur du konfigurerar dina identitetsinställningar i användargränssnittet.
 

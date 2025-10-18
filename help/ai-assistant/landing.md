@@ -234,8 +234,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3436470/?learn=on" title="Få tillgång till AI Assistant" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3436470/?format=jpeg&nocache=1732633204686" alt="Få tillgång till AI Assistant"
+                    <a href="https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on" title="Få tillgång till AI Assistant" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3475923/?captions=swe&format=jpeg&nocache=1732633204686" alt="Få tillgång till AI Assistant"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -243,12 +243,12 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3436470/?learn=on" target="_blank" rel="referrer" title="Få tillgång till AI Assistant">Få åtkomst till AI Assistant</a>
+                        <a href="https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on" target="_blank" rel="referrer" title="Få tillgång till AI Assistant">Få åtkomst till AI Assistant</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du kan använda gränssnittet [!DNL Permissions] för att få åtkomst till AI Assistant.</p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3436470/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                   <a href="./access.md" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -271,8 +271,8 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3438032/?learn=on" title="Minska starttiden" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3438032/?format=jpeg&nocache=1732633205780" alt="Minska starttiden"
+                    <a href="https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on" title="Minska starttiden" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3475934/?captions=swe&format=jpeg&nocache=1732633205780" alt="Minska starttiden"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -280,11 +280,11 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3438032/?learn=on" target="_blank" rel="referrer" title="Minska starttiden">Minska starttiden</a>
+                        <a href="https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on" target="_blank" rel="referrer" title="Minska starttiden">Minska starttiden</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du kan använda AI Assistant för att minska introduktionstiden.</p>
                 </div>
-                <a href="https://video.tv.adobe.com/v/3438032/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
