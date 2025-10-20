@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 52dfba88ce3549fb93e8cfcca144e6be720bc26b
+source-git-commit: 6debb9eeb811c98d322c99b1b779f5f9eff8573c
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1073'
 ht-degree: 7%
 
 ---
@@ -105,6 +105,7 @@ ht-degree: 7%
       - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
    - Lojalitet {#loyalty}
       - [Kapillärströmningshändelser](connectors/loyalty/capillary.md)
+      - [Talon.One](connectors/loyalty/talon-one.md)
    - Automatisering av marknadsföring {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
       - [Chatlio](connectors/marketing-automation/chatlio-webhook.md)
@@ -315,6 +316,8 @@ ht-degree: 7%
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
       - Lojalitet {#loyalty}
          - [Kapillärströmningshändelser](tutorials/ui/create/loyalty/capillary.md)
+         - [Talon.One Streaming Events](tutorials/ui/create/loyalty/talon-one-streaming.md)
+         - [Talon.One Batch Source Connector](tutorials/ui/create/loyalty/talon-one-batch.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [Braze Currents](tutorials/ui/create/marketing-automation/braze.md)
          - [Chatlio](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
@@ -398,4 +401,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
