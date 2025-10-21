@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform-ordlista
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: b960e67789acaeb27a0a39db933a2bbb7d84f4d5
 workflow-type: tm+mt
-source-wordcount: '8003'
+source-wordcount: '8170'
 ht-degree: 0%
 
 ---
@@ -351,6 +351,8 @@ ht-degree: 0%
 
 **Modul**: I taggarnas kontext är en modul ett utdrag av körbar JavaScript som tillhandahålls av ett tillägg, som utför åtgärder i en klientmiljö utan att behöva skapa en regel.
 
+**MODPA**: [!DNL Maryland Online Data Privacy Act] (MODPA) från 2024 ger Maryland-boende rättigheter, inklusive åtkomst, korrigering, borttagning och dataportabilitet. Medborgarna kan välja bort riktad reklam, försäljning av personuppgifter och profilering. De registeransvariga måste tillhandahålla meddelanden om integritetsskydd och genomföra bedömningar av uppgiftsskydd för högriskbehandling. MODPA skiljer sig från mängden genom att förbjuda geostaket runt anläggningar för psykisk eller reproduktionsrelaterad hälsa. Lagen gäller för enheter som behandlar data från mer än 35 000 konsumenter, eller för dem som behandlar data från mer än 10 000 konsumenter och får mer än 20 % av intäkterna från försäljningen av dessa data. Den drivs av Maryland Attorney General.
+
 ## N
 
 **[!DNL New Zealand Privacy Act]**: [[!DNL New Zealand Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) styr hur byråer kan samla in, använda, avslöja, lagra och ge åtkomst till nyzeeländska medborgare och organisationer personuppgifter. Under 2020 infördes i den senaste versionen av lagen avsevärda uppdateringar av dessa integritetslagar, bland annat nya brott, höjda böter, obligatoriska anmälningar om dataintrång och ökade befogenheter för sekretesschefen.
@@ -383,11 +385,9 @@ ht-degree: 0%
 
 **PDPA**: [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) introducerades för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
 
-<!-- Not yet released
-**PDPD**: The [[!DNL Personal Data Protection Decree] (PDPD) 
--->
-
 **Personaliserade erbjudanden**: Ett personligt erbjudande är ett anpassningsbart marknadsföringsmeddelande som baseras på regler och begränsningar för behörighet.
+
+**PIPA** (Sydkorea): [[!DNL Personal Information Protection Act] (PIPA)](https://elaw.klri.re.kr/eng_service/lawView.do?hseq=53044&lang=ENG) reglerar behandling och skydd av personuppgifter för sydkoreanska medborgare. PIPA ger rätt att få information, få tillgång till, få kopior och begära korrigering, radering eller avbrytande av behandlingen. De personuppgiftsansvariga ska specificera insamlingsändamål, bearbeta uppgifter lagligen i den mån det är nödvändigt och se till att uppgifterna är korrekta. PIPA inrättade också kommissionen för skydd av personuppgifter för att utreda och genomföra bestämmelser om skydd av personuppgifter.
 
 **Placeringar**: en placering är den plats och/eller det sammanhang där ett erbjudande visas för en slutanvändare.
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Service användargränssnitt
 description: Lär dig hur du använder Privacy Service användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
+source-git-commit: b960e67789acaeb27a0a39db933a2bbb7d84f4d5
 workflow-type: tm+mt
-source-wordcount: '1668'
+source-wordcount: '1689'
 ht-degree: 0%
 
 ---
@@ -34,40 +34,49 @@ Kontrollpanelen för användargränssnittet [!DNL Privacy Service] innehåller t
 
 ### Regeltyp
 
-[!DNL Privacy Service] stöder jobbförfrågningar för flera sekretessregler. I följande tabell visas vilka regler som stöds och deras motsvarande etikett som representeras i användargränssnittet:
+[!DNL Privacy Service] stöder jobbförfrågningar för flera sekretessregler. I följande tabell visas vilka regler som stöds och deras motsvarande etikett som representeras i användargränssnittet.
 
-| UI-etikett | Förordning |
-|-------------------------------------|------------------------|
-| [!UICONTROL APA_AUS  (Australia)] | [!DNL Australia Privacy Act] |
-| [!UICONTROL CCPA (California)] | [!DNL California Consumer Privacy Act] |
-| [!UICONTROL CPA_USA (Colorado)] | [!DNL Colorado Privacy Act] |
-| [!UICONTROL CPRA_USA (California)] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
-| [!UICONTROL CTDPA_USA (Connecticut)] | [!DNL Connecticut Data Privacy Act] |
-| [!UICONTROL DPDPA_USA (Delaware)] | [!DNL Delaware Personal Data Privacy Act] |
-| [!UICONTROL FDBR_USA (Florida)] | [!DNL Florida Digital Bill of Rights] |
-| [!UICONTROL GDPR (European Union)] | Europeiska unionens [!DNL General Data Protection Regulation] |
-| [!UICONTROL HIPPA_USA (United States)] | [!DNL Health Insurance Portability and Accountability Act] |
-| [!UICONTROL ICDPA_USA] (Iowa) | [!DNL Iowa Consumer Data Protection Act] |
-| [!UICONTROL LGPD_BRA (Brazil)] | Brasiliens [!DNL General Data Protection Law] [!DNL Lei Geral de Proteção de Dados] |
-| [!UICONTROL MHMDA_USA (Washington)] | [!DNL Washington My Health My Data Act] |
-| [!UICONTROL MCDPA_USA (Montana)] | [!DNL Montana Consumer Data Privacy Act] |
-| [!UICONTROL NDPA_USA (Nebraska)] | [!DNL Nebraska Data Protection Act] |
-| [!UICONTROL NZPA_NZL (New Zealand)] | Nya Zeelands [!DNL Privacy Act] |
-| [!UICONTROL NHPA_USA (New Hampshire)] | [!DNL New Hampshire Privacy Act] |
-| [!UICONTROL NJDPA_USA (New Jersey)] | [!DNL New Jersey Data Protection Act] |
-| [!UICONTROL OCPA USA (Oregon)] | [!DNL Oregon Consumer Privacy Act] |
-| [!UICONTROL PDPA_THA (Thailand)] | Thailands [!DNL Personal Data Protection Act] |
-| [!UICONTROL QL25_CAN (Quebec)] | [!DNL Quebec Law 25] |
-| [!UICONTROL TDPSA USA (Texas)] | [!DNL Texas Data Privacy and Security Act] |
-| [!UICONTROL UCPA_USA (Utah)] | [!DNL Utah Consumer Privacy Act] |
-| [!UICONTROL VCDPA_USA (Virginia)] | [!DNL Virginia Consumer Data Protection Act] |
+I [Översikt över sekretessbestämmelser](../regulations/overview.md) finns en beskrivning av varje regel som förklarar konsumentens rättigheter och de obligatoriska affärsskyldigheterna.
+
+>[!TIP]
+>
+>Typ av API-regel har inkluderats av praktiska skäl.
+
+| UI-etikett | API `regulation_type` | Förordning |
+|-------------------------------------------|-----------------------|----------------|
+| [!UICONTROL APA_AUS (Australia)] | `apa_aus` | [!DNL Australia Privacy Act] |
+| [!UICONTROL CCCA (California)] | `ccpa` | [!DNL California Consumer Privacy Act] (CCPA) |
+| [!UICONTROL CPA_CO_USA (Colorado)] | `cpa_co_usa` | [!DNL Colorado Privacy Act] |
+| [!UICONTROL CPRA_CA_USA (California)] | `cpra_ca_usa` | [!DNL California Privacy Rights Act] (CPRA) |
+| [!UICONTROL CTDPA_CT_USA (Connecticut)] | `ctdpa_ct_usa` | [!DNL Connecticut Data Privacy Act] |
+| [!UICONTROL DPDPA_DE_USA (Delaware)] | `dpdpa_de_usa` | [!DNL Delaware Personal Data Privacy Act] |
+| [!UICONTROL FDBR_FL_USA (Florida)] | `fdbr_fl_usa` | [!DNL Florida Digital Bill of Rights] |
+| [!UICONTROL GDPR (European Union)] | `gdpr` | Europeiska unionens [!DNL General Data Protection Regulation] |
+| [!UICONTROL HIPAA_USA (United States)] | `hipaa_usa` | [!DNL Health Insurance Portability and Accountability Act] |
+| [!UICONTROL ICDPALIA_USA (Iowa)] | `icdpa_ia_usa` | [!DNL Iowa Consumer Data Protection Act] |
+| [!UICONTROL LGPD_BRA (Brazil)] | `lgpd_bra` | Brasiliens [!DNL General Data Protection Law] [!DNL Lei Geral de Proteção de Dados] |
+| [!UICONTROL MCDPA_MN_USA (Minnesota)] | `mcdpa_mn_usa` | [!DNL Minnesota Consumer Data Privacy Act] |
+| [!UICONTROL MCDPA_MT_USA (Montana)] | `mcdpa_mt_usa` | [!DNL Montana Consumer Data Privacy Act] |
+| [!UICONTROL MHMDA_WA_USA (Washington)] | `mhmda_wa_usa` | [!DNL Washington My Health My Data Act] |
+| [!UICONTROL MODPA_MD_USA (Maryland)] | `modpa_md_usa` | [!DNL Maryland Online Data Privacy Act] |
+| [!UICONTROL NDPA_NE_USA (Nebraska)] | `ndpa_ne_usa` | [!DNL Nebraska Data Protection Act] |
+| [!UICONTROL NHPA_NH_USA (New Hampshire)] | `nhpa_nh_usa` | [!DNL New Hampshire Privacy Act] |
+| [!UICONTROL NJDPA_NJ_USA (New Jersey)] | `njdpa_nj_usa` | [!DNL New Jersey Data Protection Act] |
+| [!UICONTROL NZPA_NZL (New Zealand)] | `nzpa_nzl` | Nya Zeelands [!DNL Privacy Act] (PA) |
+| [!UICONTROL OCPA_OR_USA (Oregon)] | `ocpa_or_usa` | [!DNL Oregon Consumer Privacy Act] |
+| [!UICONTROL PDPA_THA (Thailand)] | `pdpa_tha` | Thailands [!DNL Personal Data Protection Act] (PDPA) |
+| [!UICONTROL PIPA_KOR (South Korea)] | `pipa_kor` | Sydkoreas [!DNL Personal Information Privacy Act] (PIPA) |
+| [!UICONTROL QL25_QC_CAN (Quebec)] | `ql25_qc_can` | [!DNL Quebec Law 25] |
+| [!UICONTROL TDPSA_TX_USA (Texas)] | `tdpsa_tx_usa` | [!DNL Texas Data Privacy and Security Act] |
+| [!UICONTROL TIPA_TN_USA (Tennessee)] | `tipa_tn_usa` | [!DNL Tennessee Information Protection Act] |
+| [!UICONTROL UCPA_UT_USA (Utah)] | `ucpa_ut_usa` | [!DNL Utah Consumer Privacy Act] |
+| [!UICONTROL VCDPA_VA_USA (Virginia)] | `vcdpa_va_usa` | [!DNL Virginia Consumer Data Protection Act] (VCDPA) |
 
 {style="table-layout:auto"}
 
-<!-- 
-Waiting:
-| **[!UICONTROL PIPA_KOR]**  ?        | South Korea [!DNL Personal Information Privacy Act] |
- -->
+<!-- | [!UICONTROL ICDPA_IN_USA (Indiana)]       | `icdpa_in_usa` | [!DNL Indiana Consumer Data Protection Act]| NOT SUPP YET JAN 1st ### ... -->
+<!-- | [!UICONTROL KCDPA_KY_USA (Kentucky)]      | `kcdpa_ky_usa`| [!DNL Kentucky Consumer Data Protection Act]|  NOT SUPP YET JAN 1st ### ... -->
+<!-- | [!UICONTROL RIDTPPA_RI_USA (Rhode Island)]| `ridtppa_ri_usa` | [!DNL Rhode Island Data Transparency and Privacy Protection Act]|  NOT SUPP YET JAN 1st ### ... -->
 
 >[!NOTE]
 >
@@ -109,7 +118,7 @@ Arbetsytan [!UICONTROL Job Requests] innehåller information om de senaste jobbf
 >
 >Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
 
-Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken [!UICONTROL Job Requests]. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Sökfältet utför en snabbsökning som matchar sekretessposter-ID:n för de återgivna/inlästa jobben i användargränssnittet. Det är inte en omfattande sökning efter alla dina skickade jobb. Det är i stället ett filter som tillämpas på de inlästa resultaten. Använd Privacy Service-API:t för att [returnera jobb baserat på en viss regel, datumintervall eller ett enskilt jobb &#x200B;](../api/privacy-jobs.md#list).
+Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken [!UICONTROL Job Requests]. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Sökfältet utför en snabbsökning som matchar sekretessposter-ID:n för de återgivna/inlästa jobben i användargränssnittet. Det är inte en omfattande sökning efter alla dina skickade jobb. Det är i stället ett filter som tillämpas på de inlästa resultaten. Använd Privacy Service-API:t för att [returnera jobb baserat på en viss regel, datumintervall eller ett enskilt jobb ](../api/privacy-jobs.md#list).
 
 >[!TIP]
 >
@@ -136,7 +145,7 @@ Om du vill hämta alla jobbdata som en CSV-fil väljer du **[!UICONTROL Export t
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
 >title="Instruktioner"
->abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html?lang=sv-SE#logging-in-from-experience-platform">Förfrågningar</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. I listan med alternativ väljer du <b>Överför JSON</b> och överför filen. Om du inte har någon JSON-fil att överföra väljer du <b>Hämta Adobe-GDPR-Request.json</b> för att hämta en mall som du kan fylla i. Ladda upp JSON och välj <b>Create</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html?lang=sv-SE">Privacy Service användarhandbok</a> för Experience League.</li></ul>"
+>abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Förfrågningar</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. I listan med alternativ väljer du <b>Överför JSON</b> och överför filen. Om du inte har någon JSON-fil att överföra väljer du <b>Hämta Adobe-GDPR-Request.json</b> för att hämta en mall som du kan fylla i. Ladda upp JSON och välj <b>Create</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html">Privacy Service användarhandbok</a> för Experience League.</li></ul>"
 
 >[!NOTE]
 >

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: ccde37961bd98275030db98440800925d3a6703e
+source-git-commit: b960e67789acaeb27a0a39db933a2bbb7d84f4d5
 workflow-type: tm+mt
-source-wordcount: '2630'
+source-wordcount: '2790'
 ht-degree: 0%
 
 ---
@@ -111,6 +111,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **[!DNL Minnesota Consumer Data Privacy Act]** (MCDPA): Från och med den 31 juli 2025 ger MCDPA de boende i Minnesota rätt att få tillgång till, korrigera, ta bort och få sina personuppgifter, samt avanmäla sig från försäljning av data, riktad reklam och viss profilering. Det gäller företag som är verksamma i eller riktar sig till Minnesota och som bearbetar data från fler än 100 000 konsumenter per år (exklusive data som bara betalas), eller 25 000+ konsumenter om mer än 25 % av intäkterna kommer från dataförsäljningen. De enheter som omfattas av avtalet måste vidta rimliga åtgärder för datasäkerhet och genomföra riskbedömningar.Minnesota Attorney General tillämpar lagen och kan utfärda böter på upp till 7 500 dollar per överträdelse. Företagen har dock fram till den 31 januari 2026 på sig att åtgärda eventuella överträdelser innan straffavgifter tillämpas.
 
+**MODPA**: [!DNL Maryland Online Data Privacy Act] beviljar behörigheter för personer med hemvist, inklusive åtkomst, korrigering, borttagning och dataportabilitet. Medborgarna kan avanmäla sig från databehandling för riktad annonsering, försäljning av personuppgifter och profilering. Lagen förbjuder geofencing kring psykisk hälsa och fortplantningsvård. Lagen gäller för enheter som behandlar data från mer än 35 000 konsumenter, eller för dem som behandlar data från mer än 10 000 konsumenter och får mer än 20 % av intäkterna från försäljningen av dessa data. Verkställigheten hanteras av Maryland Attorney General, med böter och påföljder för överträdelser.
+
 **[!DNL Montana Consumer Data Privacy Act]**: Den här lagen ger personer bosatta i Montana rätt att få tillgång till, korrigera, ta bort och begära kopior av sina personuppgifter. MCDPA gäller företag som behandlar uppgifter för över 50 000 Montana-konsumenter och betonar skyddet av känsliga personuppgifter, såsom biometrisk och genetisk information. Det genomsyrar genomskinlighet kring datainsamling, delning och försäljning.
 
 ## N
@@ -133,6 +135,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 **Personuppgifter**: All information som rör en fysisk person eller en registrerad person och som kan användas för att direkt eller indirekt identifiera personen.
 
 **Överträdelse av personuppgifter**: En säkerhetsöverträdelse som leder till oavsiktlig eller olaglig åtkomst, förstörelse, missbruk och så vidare av personuppgifter.
+
+**PIPA** (Sydkorea): [!DNL Personal Information Protection Act] reglerar behandling och skydd av personuppgifter för sydkoreanska medborgare. PIPA ger de boende rätt att få information, tillgång, få kopior och begära korrigering, radering eller avbrytande av behandlingen. De registeransvariga ska specificera insamlingsändamål, bearbeta data lagligen i den mån det behövs och säkerställa att uppgifterna är korrekta. Genom lagen inrättades också en kommission för skydd av personuppgifter för verkställighet, som kan utdöma böter och administrativa påföljder vid bristande efterlevnad.
 
 **Sekretess efter design**: En princip som kräver att dataskydd ska inkluderas när systemen designas, i stället för som tillägg.
 
