@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
+source-git-commit: 0a9782b6018e5c5405c79ce37d969754d7b99fd6
 workflow-type: tm+mt
-source-wordcount: '1713'
+source-wordcount: '1712'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast antas att du har [anslutit till mål](/help/destinations/ui/connect-destination.md) korrekt.
 
@@ -121,11 +121,9 @@ Datauppsättningsexporter stöds för närvarande i ett **[!UICONTROL First Full
 
 Skyddsfilerna för datauppsättningsexport gäller för två typer av datauppsättningar som exporteras från Experience Platform, enligt beskrivningen nedan:
 
-**Datauppsättningar baserade på XDM Experience Events-schemat**
-När det gäller datauppsättningar som baseras på XDM Experience Events-schemat innehåller datauppsättningsschemat en *timestamp* -kolumn på den översta nivån. Data importeras endast som tillägg.
+**Datauppsättningar baserade på XDM Experience Events-schemat och datauppsättningar baserade på andra scheman**
 
-**Datauppsättningar baserade på schemat för enskild XDM-profil**
-När det gäller datauppsättningar som baseras på XDM-schemat för enskild profil, innehåller datasetet inte en *timestamp* -kolumn på den översta nivån. Data hämtas in på ett sätt som präglas av förändring.
+När det gäller datauppsättningar som baseras på XDM Experience Events-schemat innehåller datasetet en kolumn för tidsstämpling på den översta nivån. Data importeras endast som tillägg. När det gäller datauppsättningar som baseras på andra scheman kan datasetet innehålla en tidsstämpelkolumn och data importeras på ett sätt som gör dem aktuella.
 
 Skyddsutkastet nedan gäller alla datauppsättningar som exporteras från Experience Platform. Granska även de hårda garantierna nedan, som gäller olika datamängder och komprimeringstyper.
 
@@ -146,7 +144,7 @@ För schemalagda eller återkommande datauppsättningsexporter är skyddsritning
 | Datauppsättningstyp | Guardrail | Typ av skyddsräcke | Beskrivning |
 ---------|----------|---------|-------|
 | Datauppsättningar baserade på **XDM Experience Events-schemat** | De senaste 365 dagarna | Systemstyrt skyddsräcke | Data från det senaste kalenderåret exporteras. |
-| Datauppsättningar baserade på schemat **XDM för enskild profil** | Tio miljarder poster i alla exporterade filer i ett dataflöde | Systemstyrt skyddsräcke | Antalet poster i datauppsättningen måste vara mindre än tio miljarder för komprimerade JSON- eller parquet-filer och en miljon för okomprimerade parquet-filer, annars misslyckas exporten. Minska storleken på datauppsättningen som du försöker exportera om den är större än det tillåtna tröskelvärdet. |
+| Datauppsättningar baserade på **ett annat schema än XDM Experience Events-schemat** | Tio miljarder poster i alla exporterade filer i ett dataflöde | Systemstyrt skyddsräcke | Antalet poster i datauppsättningen måste vara mindre än tio miljarder för komprimerade JSON- eller parquet-filer och en miljon för okomprimerade parquet-filer, annars misslyckas exporten. Minska storleken på datauppsättningen som du försöker exportera om den är större än det tillåtna tröskelvärdet. |
 
 {style="table-layout:auto"}
 
@@ -169,7 +167,7 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 -->
 
-Läs mer om [att exportera datauppsättningar](/help/destinations/ui/export-datasets.md).
+Läs mer om [export av datauppsättningar](/help/destinations/ui/export-datasets.md).
 
 
 ### Destination SDK skyddsräcken {#destination-sdk-guardrails}
@@ -198,7 +196,7 @@ Uppgifter om begränsningströsklar eller begränsningar för angivna destinatio
 I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=sv-SE#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
