@@ -247,7 +247,7 @@ Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automati
 
 Börja publiceringsprocessen genom att gå igenom källarbetsflödet. När du har valt [!UICONTROL Update dataflow] dirigeras du till arbetsflödets *[!UICONTROL Add data]*-steg. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
-![Steget Lägg till data för ett dataflöde ](../../images/tutorials/templates/continue-draft.png)
+![Steget Lägg till data för ett dataflöde &#x200B;](../../images/tutorials/templates/continue-draft.png)
 
 Bekräfta sedan dataflödesinformationen och konfigurera inställningarna för feldiagnostik, partiell import och varningsmeddelanden. När du är klar väljer du **[!UICONTROL Next]**.
 
