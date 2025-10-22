@@ -2,16 +2,16 @@
 title: Begäranden om radering av post (UI-arbetsflöde)
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: a25187339a930f7feab4a1e0059bc9ac09f1a707
+source-git-commit: 83aed6a79d47ee4043a8303ec8f8c8c20482e12a
 workflow-type: tm+mt
-source-wordcount: '2353'
+source-wordcount: '2383'
 ht-degree: 0%
 
 ---
 
 # Registrera borttagningsbegäranden (UI-arbetsflöde) {#record-delete}
 
-Använd arbetsytan [[!UICONTROL Data Lifecycle] &#x200B;](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
+Använd arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
 
 >[!IMPORTANT]
 >
@@ -205,9 +205,13 @@ När begäran har skickats skapas en arbetsordning och visas på fliken [!UICONT
 
 ![Fliken [!UICONTROL Record] på arbetsytan [!UICONTROL Data Lifecycle] med den nya begäran markerad.](../images/ui/record-delete/request-log.png)
 
-## Tar bort poster från modellbaserade datauppsättningar {#model-based-record-delete}
+## Ta bort poster från datauppsättningar baserade på relationsscheman {#relational-record-delete}
 
-Om datauppsättningen som du tar bort från är ett modellbaserat schema bör du kontrollera följande för att se till att posterna tas bort korrekt och inte hämtas igen på grund av avvikelser mellan Experience Platform och källsystemet.
+Om datauppsättningen som du tar bort från baseras på ett relationsschema bör du kontrollera följande för att se till att posterna tas bort på rätt sätt och inte hämtas igen på grund av avvikelser mellan Experience Platform och källsystemet.
+
+>[!NOTE]
+>
+>Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Funktionerna och borttagningsbeteendet är desamma.
 
 ### Funktionen för borttagning av post
 
@@ -224,22 +228,22 @@ Om du vill förhindra att något fylls i igen använder du samma borttagningsmet
 
 ### Ändra datainhämtnings- och kontrollkolumner
 
-Modellbaserade scheman som använder Källor med registrering av ändringsdata kan använda kontrollkolumnen `_change_request_type` när borttagningar från överordnade särskiljs. Under importen tas poster som är flaggade med `d` bort från datauppsättningen, medan de som är flaggade med `u` eller utan kolumnen behandlas som överordnade. Kolumnen `_change_request_type` läses bara vid inmatningstid och lagras inte i målschemat eller mappas till XDM-fält.
+Relationsscheman som använder Källor med registrering av ändringsdata kan använda kontrollkolumnen `_change_request_type` när borttagningar från överordnade särskiljs. Under importen tas poster som är flaggade med `d` bort från datauppsättningen, medan de som är flaggade med `u` eller utan kolumnen behandlas som överordnade. Kolumnen `_change_request_type` läses bara vid inmatningstid och lagras inte i målschemat eller mappas till XDM-fält.
 
 >[!NOTE]
 >
 >Källsystemet påverkas inte om du tar bort poster via användargränssnittet för datalängd. Om du vill ta bort data från båda platserna tar du bort dem både i Experience Platform och i källan.
 
-### Ytterligare borttagningsmetoder för modellbaserade scheman
+### Ytterligare borttagningsmetoder för relationsscheman
 
-Utöver standardarbetsflödet för postborttagning stöder modellbaserade scheman ytterligare metoder för specifika användningsfall:
+Utöver standardarbetsflödet för postborttagning stöder relationsscheman ytterligare metoder för specifika användningsfall:
 
 * **Datauppsättningsmetod för säker kopia**: Duplicera produktionsdatauppsättningen och tillämpa borttagningar i kopian för kontrollerad testning eller avstämning innan du tillämpar ändringar i produktionsdata.
 * **Tar bort endast batchöverföring**: Överför en fil som bara innehåller raderingsåtgärder för målinriktad hygien när du behöver ta bort specifika poster utan att påverka andra data.
 
 ### Beskrivningsstöd vid hygienåtgärder {#descriptor-support}
 
-Modellbaserade schemabeskrivare ger viktiga metadata för exakta hygienåtgärder:
+Relationsschemabeskrivningar ger viktiga metadata för exakta hygienåtgärder:
 
 * **Primär nyckelbeskrivning**: Identifierar poster unikt för riktade uppdateringar eller borttagningar och ser till att rätt poster påverkas.
 * **Versionsbeskrivare**: Ser till att borttagningar och uppdateringar tillämpas i rätt kronologisk ordning och förhindrar åtgärder i fel ordning.
@@ -249,7 +253,7 @@ Modellbaserade schemabeskrivare ger viktiga metadata för exakta hygienåtgärde
 >
 >Hygienprocesserna fungerar på datauppsättningsnivå. För profilaktiverade datauppsättningar kan ytterligare arbetsflöden behövas för att upprätthålla en konsekvent kundprofil i realtid.
 
-### Schemalagd lagring för modellbaserade scheman
+### Schemalagd lagring för relationsscheman
 
 Automatisk hygien baserad på datagsålder i stället för specifika identiteter finns i [Hantera kvarhållande av händelsedatamängd (TTL)](../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md) för schemalagd radnivålagring i datavjön.
 
@@ -257,7 +261,7 @@ Automatisk hygien baserad på datagsålder i stället för specifika identiteter
 >
 >Förfallodatum på radnivå stöds bara för datauppsättningar som använder tidsseriebeteende.
 
-### Bästa tillvägagångssätt för modellbaserad postborttagning
+### Bästa tillvägagångssätt för borttagning av relationsposter
 
 Följ de här bästa metoderna för att undvika oavsiktligt återinträde och upprätthålla datakonsekvens mellan olika system:
 
@@ -265,8 +269,9 @@ Följ de här bästa metoderna för att undvika oavsiktligt återinträde och up
 * **Övervaka datainhämtningsflöden för ändringar**: När du har tagit bort poster i plattformen bör du övervaka dataflödena och bekräfta att källsystemet antingen tar bort samma poster eller inkluderar dem med `_change_request_type = 'd'`.
 * **Rensa källan**: För källor som använder fullständig uppdatering eller de som inte stöder borttagning via registrering av ändringsdata, bör du ta bort poster direkt från källsystemet för att undvika återmatning.
 
-Mer information om schemakrav finns i [modellbaserade schemabeskrivningskrav](../../xdm/schema/model-based.md#model-based-schemas).\
-Mer information om hur datainhämtning från ändringsdata fungerar med källor finns i [Aktivera inhämtning av ändringsdata i källor](../../sources/tutorials/api/change-data-capture.md#using-change-data-capture-with-model-based-schemas).
+Mer information om schemakrav finns i [Krav för relationsschemabeskrivning](../../xdm/schema/relational.md#relational-schemas).
+
+Mer information om hur datainhämtning från ändringsdata fungerar med källor finns i [Aktivera inhämtning av ändringsdata i källor](../../sources/tutorials/api/change-data-capture.md#using-change-data-capture-with-relational-schemas).
 
 ## Nästa steg
 

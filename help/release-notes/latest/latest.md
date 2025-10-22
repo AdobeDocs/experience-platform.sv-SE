@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform för augusti 2025
 description: Versionsinformation för augusti 2025 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fe8456823d0e7f1b60ea647e044747cfee4bc4c5
+source-git-commit: 96b9fcd8bfb4ff62eb9d4adce2e486782d918344
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1610'
 ht-degree: 86%
 
 ---
@@ -17,8 +17,8 @@ ht-degree: 86%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 23 september 2025**
@@ -89,8 +89,8 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Modellbaserade scheman | Förenkla datamodelleringen med modellbaserade scheman. Nu kan du lättare skapa scheman tack vare många exempel och guider. Den här funktionen är för närvarande tillgänglig för innehavare av Campaign Orchestration-licens och kommer att utvidgas till att omfatta Data Distiller-kunder på GA, vilket gör datamodelleringen mer tillgänglig och effektiv. Funktionen har stöd för tidsseriedata och funktioner för datainhämtning vid ändring. |
-| Data Mirror | Infoga radnivåändringar från molndatalager (t.ex. Snowflake, Databricks, BigQuery) i Adobe Experience Platform med modellbaserade scheman. Data Mirror eliminerar ETL-uppströms och bevarar relationer, versionshantering och borttagningar genom att spegla befintliga databasstrukturer direkt in i datasjön. Funktioner för tidsserier och inspelningshändelsescheman med funktioner för registrering av ändringsdata stöds. Den här funktionen är för närvarande tillgänglig för innehavare av licenser för kampanjsamordning och kommer att utökas genom den här begränsade versionen, även för Customer Journey Analytics-kunder. Mer information finns i [Data Mirror-dokumentationen](../../xdm/data-mirror/overview.md). Kontakta din Adobe-representant för att få åtkomst. |
+| Relationsscheman | Förenkla din datamodellering med relationsscheman (tidigare kallat modellbaserade scheman). Nu kan du lättare skapa scheman tack vare många exempel och guider. Den här funktionen är för närvarande tillgänglig för innehavare av Campaign Orchestration-licens och kommer att utvidgas till att omfatta Data Distiller-kunder på GA, vilket gör datamodelleringen mer tillgänglig och effektiv. Funktionen har stöd för tidsseriedata och funktioner för datainhämtning vid ändring. |
+| Data Mirror | Infoga radnivåändringar från molndatalager (t.ex. Snowflake, Databricks, BigQuery) i Adobe Experience Platform med hjälp av relationsscheman. Data Mirror eliminerar ETL-uppströms och bevarar relationer, versionshantering och borttagningar genom att spegla befintliga databasstrukturer direkt in i datasjön. Funktioner för tidsserier och inspelningshändelsescheman med funktioner för registrering av ändringsdata stöds. Den här funktionen är för närvarande tillgänglig för innehavare av licenser för kampanjsamordning och kommer att utökas genom den här begränsade versionen, även för Customer Journey Analytics-kunder. Mer information finns i [Data Mirror-dokumentationen](../../xdm/data-mirror/overview.md). Kontakta din Adobe-representant för att få åtkomst. |
 
 Mer information finns i [XDM-översikten](../../xdm/home.md).
 

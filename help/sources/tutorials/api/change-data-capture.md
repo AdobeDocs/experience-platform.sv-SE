@@ -2,9 +2,9 @@
 title: Aktivera registrering av ändringsdata för källanslutningar i API
 description: Lär dig hur du aktiverar registrering av ändringsdata för källanslutningar i API:t
 exl-id: 362f3811-7d1e-4f16-b45f-ce04f03798aa
-source-git-commit: 192e97c97ffcb2d695bcfa6269cc6920f5440832
+source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
 workflow-type: tm+mt
-source-wordcount: '1238'
+source-wordcount: '1261'
 ht-degree: 0%
 
 ---
@@ -17,32 +17,36 @@ Experience Platform har för närvarande stöd för **inkrementell datakopia**, 
 
 Om du däremot ändrar datainhämtningen hämtas och infogas, uppdateras och tas bort nästan i realtid. Denna omfattande ändringsspårning säkerställer att datauppsättningarna är helt anpassade till källsystemet och ger en fullständig ändringshistorik utöver vad inkrementell kopia stöder. Borttagningsåtgärder kräver dock särskild hänsyn eftersom de påverkar alla program som använder måldatauppsättningarna.
 
-För registrering av ändringsdata i Experience Platform krävs **[Data Mirror](../../../xdm/data-mirror/overview.md)** med [modellbaserade scheman](../../../xdm/schema/model-based.md) (kallas även relationsscheman). Du kan skicka ändringsdata till Data Mirror på två sätt:
+För registrering av ändringsdata i Experience Platform krävs **[Data Mirror](../../../xdm/data-mirror/overview.md)** med [relationsscheman](../../../xdm/schema/relational.md). Du kan skicka ändringsdata till Data Mirror på två sätt:
 
 * **[Manuell ändringsspårning](#file-based-sources)**: Inkludera en `_change_request_type`-kolumn i datauppsättningen för källor som inte genererar poster för registrering av ändringsdata internt
 * **[Inbyggd export av datainhämtning vid ändring](#database-sources)**: Använd poster för registrering av ändringsdata som exporterats direkt från källsystemet
 
-Båda metoderna kräver att Data Mirror har modellbaserade scheman för att bevara relationer och genomdriva unika lösningar.
+Båda metoderna kräver att Data Mirror har relationsscheman för att bevara relationer och genomdriva unika lösningar.
 
-## Data Mirror med modellbaserade diagram
+## Data Mirror med relationsscheman
 
 >[!AVAILABILITY]
 >
->Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+>Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+
+>[!NOTE]
+>
+>Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Funktionerna och funktionerna för datainhämtning är desamma.
 
 >[!NOTE]
 >
 >**Orchestrerade kampanjanvändare**: Använd de Data Mirror-funktioner som beskrivs i det här dokumentet för att arbeta med kunddata som behåller referensintegriteten. Även om din källa inte använder formatering för registrering av ändringsdata, stöder Data Mirror relationsfunktioner som primärnyckel, postnivåuppdateringar och schemarelationer. Dessa funktioner säkerställer enhetlig och tillförlitlig datamodellering för alla anslutna datamängder.
 
-Data Mirror använder modellbaserade scheman för att utöka datainhämtningen av ändringsdata och aktivera avancerade funktioner för databassynkronisering. En översikt över Data Mirror finns i [Data Mirror - översikt](../../../xdm/data-mirror/overview.md).
+Data Mirror använder relationsscheman för att utöka datainhämtningen av ändringsdata och aktivera avancerade funktioner för databassynkronisering. En översikt över Data Mirror finns i [Data Mirror - översikt](../../../xdm/data-mirror/overview.md).
 
-Modellbaserade scheman utökar Experience Platform för att framtvinga unika primärnycklar, spåra ändringar på radnivå och definiera relationer på schemanivå. Med datainhämtning kan man lägga in, uppdatera och radera data direkt i datasjön, vilket minskar behovet av Extract, Transform, Load (ETL) eller manuell avstämning.
+Relationsscheman utökar Experience Platform för att framtvinga unika primärnycklar, spåra ändringar på radnivå och definiera relationer på schemanivå. Med datainhämtning kan man lägga in, uppdatera och radera data direkt i datasjön, vilket minskar behovet av Extract, Transform, Load (ETL) eller manuell avstämning.
 
-Mer information finns i [Modellbaserade scheman - översikt](../../../xdm/schema/model-based.md).
+Mer information finns i [Översikt över relationsscheman](../../../xdm/schema/relational.md).
 
-### Modellbaserade schemakrav för registrering av ändringsdata
+### Krav för relationsschema för registrering av ändringsdata
 
-Konfigurera följande identifierare innan du använder ett modellbaserat schema med registrering av ändringsdata:
+Konfigurera följande identifierare innan du använder ett relationsschema med registrering av ändringsdata:
 
 * Identifiera unikt varje post med en primärnyckel.
 * Tillämpa uppdateringar sekventiellt med en versionsidentifierare.
@@ -59,9 +63,9 @@ Den här kolumnen utvärderas endast vid förtäring och lagras eller mappas int
 
 ### Arbetsflöde {#workflow}
 
-Så här aktiverar du registrering av ändringsdata med ett modellbaserat schema:
+Så här aktiverar du registrering av ändringsdata med ett relationsschema:
 
-1. Skapa ett modellbaserat schema.
+1. Skapa ett relationsschema.
 2. Lägg till de beskrivningar som krävs:
    * [Primär nyckelbeskrivning](../../../xdm/api/descriptors.md#primary-key-descriptor)
    * [Versionsbeskrivare](../../../xdm/api/descriptors.md#version-descriptor)
@@ -76,13 +80,13 @@ Så här aktiverar du registrering av ändringsdata med ett modellbaserat schema
 
 >[!IMPORTANT]
 >
->**Planering av borttagning av data krävs**. Alla program som använder modellbaserade scheman måste förstå borttagningskonsekvenserna innan ändringsdatainhämtningen implementeras. Planera för hur borttagningar påverkar relaterade datamängder, efterlevnadskrav och processerna längre fram i kedjan. Mer information finns i [Ta hänsyn till datahygien](../../../hygiene/ui/record-delete.md#model-based-record-delete).
+>**Planering av borttagning av data krävs**. Alla program som använder relationsscheman måste förstå borttagningskonsekvenser innan ändringsdatainhämtningen implementeras. Planera för hur borttagningar påverkar relaterade datamängder, efterlevnadskrav och processerna längre fram i kedjan. Mer information finns i [Ta hänsyn till datahygien](../../../hygiene/ui/record-delete.md#relational-record-delete).
 
 ## Erbjuda ändringsdata för filbaserade källor {#file-based-sources}
 
 >[!IMPORTANT]
 >
->Filbaserad datainhämtning av ändringsdata kräver Data Mirror med modellbaserade scheman. Innan du följer filformateringsstegen nedan kontrollerar du att du har slutfört det [Data Mirror-installationsarbetsflöde](#workflow) som beskrivs tidigare i det här dokumentet. Stegen nedan beskriver hur du formaterar dina datafiler så att de innehåller ändringsspårningsinformation som kommer att bearbetas av Data Mirror.
+>Filbaserad datainhämtning av ändringsdata kräver Data Mirror med relationsscheman. Innan du följer filformateringsstegen nedan kontrollerar du att du har slutfört det [Data Mirror-installationsarbetsflöde](#workflow) som beskrivs tidigare i det här dokumentet. Stegen nedan beskriver hur du formaterar dina datafiler så att de innehåller ändringsspårningsinformation som kommer att bearbetas av Data Mirror.
 
 För filbaserade källor ([!DNL Amazon S3], [!DNL Azure Blob], [!DNL Google Cloud Storage] och [!DNL SFTP]) tar du med en `_change_request_type`-kolumn i filerna.
 
@@ -109,13 +113,13 @@ Aktivera datainhämtning för molnlagringskällor genom att följa dessa steg:
 
 2. [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
 
-Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [&#x200B; Filbaserade källor &#x200B;](#file-based-sources) ovan.
+Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [ Filbaserade källor ](#file-based-sources) ovan.
 
 ## Databaskällor {#database-sources}
 
 ### [!DNL Azure Databricks]
 
-Om du vill använda registrering av ändringsdata med [!DNL Azure Databricks] måste du båda aktivera **Ändra datafeed** i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
+Om du vill använda registrering av ändringsdata med [!DNL Azure Databricks] måste du båda aktivera **Ändra datafeed** i källtabellerna och konfigurera Data Mirror med relationsscheman i Experience Platform.
 
 Använd följande kommandon om du vill aktivera dataöverföring i tabeller:
 
@@ -152,7 +156,7 @@ Läs följande dokumentation om hur du aktiverar registrering av ändringsdata f
 
 ### [!DNL Data Landing Zone]
 
-Om du vill använda registrering av ändringsdata med [!DNL Data Landing Zone] måste du båda aktivera **Ändra datafeed** i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
+Om du vill använda registrering av ändringsdata med [!DNL Data Landing Zone] måste du båda aktivera **Ändra datafeed** i källtabellerna och konfigurera Data Mirror med relationsscheman i Experience Platform.
 
 Läs följande dokumentation om hur du aktiverar registrering av ändringsdata för din [!DNL Data Landing Zone]-källanslutning:
 
@@ -161,7 +165,7 @@ Läs följande dokumentation om hur du aktiverar registrering av ändringsdata f
 
 ### [!DNL Google BigQuery]
 
-Om du vill använda registrering av ändringsdata med [!DNL Google BigQuery] måste du både aktivera ändringshistorik i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
+Om du vill använda registrering av ändringsdata med [!DNL Google BigQuery] måste du båda aktivera ändringshistorik i källtabellerna och konfigurera Data Mirror med relationsscheman i Experience Platform.
 
 Om du vill aktivera ändringshistorik i [!DNL Google BigQuery]-källanslutningen navigerar du till [!DNL Google BigQuery]-sidan i [!DNL Google Cloud]-konsolen och anger `enable_change_history` som `TRUE`. Den här egenskapen aktiverar ändringshistorik för datatabellen.
 
@@ -174,7 +178,7 @@ Läs följande dokumentation om hur du aktiverar registrering av ändringsdata f
 
 ### [!DNL Snowflake]
 
-Om du vill använda registrering av ändringsdata med [!DNL Snowflake] måste du båda aktivera **ändringsspårning** i källtabellerna och konfigurera Data Mirror med modellbaserade scheman i Experience Platform.
+Om du vill använda registrering av ändringsdata med [!DNL Snowflake] måste du båda aktivera **ändringsspårning** i källtabellerna och konfigurera Data Mirror med relationsscheman i Experience Platform.
 
 Aktivera ändringsspårning i [!DNL Snowflake] genom att använda `ALTER TABLE` och ange `CHANGE_TRACKING` som `TRUE`.
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i Experience Platform användargränssnitt.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 974faad835b5dc2a4d47249bb672573dfb4d54bd
+source-git-commit: dc5ac5427e1eeef47434c3974235a1900d29b085
 workflow-type: tm+mt
-source-wordcount: '4635'
+source-wordcount: '4652'
 ht-degree: 0%
 
 ---
@@ -27,19 +27,23 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikte
 
 ## Skapa ett nytt schema {#create}
 
-Välj [!UICONTROL Schemas] i det övre högra hörnet på arbetsytan **[!UICONTROL Create schema]**. Listrutan Välj schematyp visas med alternativ för [!UICONTROL Standard] eller [!UICONTROL Model-based] scheman.
+Välj [!UICONTROL Schemas] i det övre högra hörnet på arbetsytan **[!UICONTROL Create schema]**. Listrutan Välj schematyp visas med alternativ för [!UICONTROL Standard] eller [!UICONTROL Relational] scheman.
 
 ![Arbetsytan Scheman med [!UICONTROL Create Schema] markerad och listrutan Välj schematyp visas](../../images/ui/resources/schemas/create-schema.png).
 
-## Skapa ett modellbaserat schema {#create-model-based-schema}
+## Skapa ett relationsschema {#create-relational-schema}
 
 >[!AVAILABILITY]
 >
->Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+>Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
 
-Välj **[!UICONTROL Model-based]** om du vill definiera strukturerade, modellbaserade scheman med detaljerad kontroll över poster. Modellbaserade scheman stöder primär nyckelkontroll, versionshantering på postnivå och relationer på schemanivå via primära och externa nycklar. De är också optimerade för inkrementellt intag med hjälp av registrering av ändringsdata och har stöd för flera datamodeller som används i Campaign Orchestration, Data Distiller och B2B-implementeringar.
+>[!NOTE]
+>
+>Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen.
 
-Mer information finns i översikten [Data Mirror](../../data-mirror/overview.md) eller [Modellbaserat schema](../../schema/model-based.md) .
+Välj **[!UICONTROL Relational]** om du vill definiera strukturerade, relationella scheman med detaljerad kontroll över poster. Relationsscheman har stöd för primär nyckelkontroll, versionshantering på postnivå och relationer på schemanivå via primära och externa nycklar. De är också optimerade för inkrementellt intag med hjälp av registrering av ändringsdata och har stöd för flera datamodeller som används i Campaign Orchestration, Data Distiller och B2B-implementeringar.
+
+Mer information finns i översikten för [Data Mirror](../../data-mirror/overview.md) eller [Relationsschema](../../schema/relational.md).
 
 ### Skapa manuellt {#create-manually}
 
@@ -47,15 +51,15 @@ Mer information finns i översikten [Data Mirror](../../data-mirror/overview.md)
 >
 >DDL-filöverföring är bara tillgängligt för innehavare av Adobe Journey Optimizer Orchestrated-kampanjlicenser. Gränssnittet kan se annorlunda ut.
 
-Dialogrutan **[!UICONTROL Create a model-based schema]** visas. Du kan välja antingen **[!UICONTROL Create manually]** eller [**[!UICONTROL Upload DDL file]**](#upload-ddl-file) för att definiera schemastrukturen.
+Dialogrutan **[!UICONTROL Create a relational schema]** visas. Du kan välja antingen **[!UICONTROL Create manually]** eller [**[!UICONTROL Upload DDL file]**](#upload-ddl-file) för att definiera schemastrukturen.
 
-I dialogrutan **[!UICONTROL Create a model-based schema]** väljer du **[!UICONTROL Create manually]** och sedan **[!UICONTROL Next]**.
+I dialogrutan **[!UICONTROL Create a relational schema]** väljer du **[!UICONTROL Create manually]** och sedan **[!UICONTROL Next]**.
 
-![Dialogrutan Skapa ett modellbaserat schema med Skapa manuellt markerat och Nästa markerat.](../../images/ui/resources/schemas/relational-dialog.png)
+![Dialogrutan Skapa ett relationsschema med Skapa manuellt markerat och Nästa markerat.](../../images/ui/resources/schemas/relational-dialog.png)
 
-Sidan **[!UICONTROL Model-based schema details]** visas. Ange ett visningsnamn för schemat och en valfri beskrivning och välj sedan **[!UICONTROL Finish]** för att skapa schemat.
+Sidan **[!UICONTROL Relational schema details]** visas. Ange ett visningsnamn för schemat och en valfri beskrivning och välj sedan **[!UICONTROL Finish]** för att skapa schemat.
 
-![Modellbaserad schemainformationsvy med [!UICONTROL Schema display name], [!UICONTROL Description] och [!UICONTROL Finish] markerade.](../../images/ui/resources/schemas/relational-details.png)
+![Vyn med relationsschemainformation med [!UICONTROL Schema display name], [!UICONTROL Description] och [!UICONTROL Finish] markerade.](../../images/ui/resources/schemas/relational-details.png)
 
 Schemaredigeraren öppnas med en tom arbetsyta för att definiera schemastrukturen. Du kan lägga till fält som vanligt.
 
@@ -71,7 +75,7 @@ Aktivera kryssrutan **[!UICONTROL Version Identifier]** i den högra listen och 
 
 >[!IMPORTANT]
 >
->Ett modellbaserat schema måste innehålla ett fält för versionsidentifierare för att kunna hantera uppdateringar på postnivå och ändring av datainhämtning.
+>Ett relationsschema måste innehålla ett fält för versionsidentifierare för att kunna hantera uppdateringar på postnivå och ändring av datainhämtning.
 
 Om du vill definiera relationer väljer du **[!UICONTROL Add Relationship]** i Schemaredigeraren för att skapa primära/externa nyckelrelationer på schemanivå. Mer information finns i självstudiekursen om att [lägga till relationer på schemanivå](../../tutorials/relationship-ui.md#relationship-field).
 
@@ -79,8 +83,8 @@ Fortsätt sedan till [definiera primärnycklar](../fields/identity.md#define-a-i
 
 >[!NOTE]
 >
->När fältet [!UICONTROL Type] har sparats i sidofältet [!UICONTROL &#x200B; Schema properties] anger det att det är ett [!UICONTROL Model-based]-schema. Detta visas även i sidofältet med detaljer i vyn för schemalager.
->&#x200B;>![Schemaredigerarens arbetsyta visar en tom modellbaserad schemastruktur med modellbaserad typ markerad.](../../images/ui/resources/schemas/relational-empty-canvas.png)
+>När fältet [!UICONTROL Type] har sparats i sidofältet [!UICONTROL  Schema properties] anger det att det är ett [!UICONTROL Relational]-schema. Detta visas även i sidofältet med detaljer i vyn för schemalager.
+>>![Schemaredigerarens arbetsyta visar en tom relationsschemastruktur med relationstypen markerad.](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### Överföra en DDL-fil {#upload-ddl-file}
 
@@ -88,9 +92,9 @@ Fortsätt sedan till [definiera primärnycklar](../fields/identity.md#define-a-i
 >
 >DDL-filöverföring är bara tillgängligt för innehavare av Adobe Journey Optimizer Orchestrated-kampanjlicenser.
 
-Använd det här arbetsflödet för att definiera schemat genom att överföra en DDL-fil. I dialogrutan **[!UICONTROL Create a model-based schema]** väljer du **[!UICONTROL Upload DDL file]** och drar sedan en lokal DDL-fil från systemet eller väljer **[!UICONTROL Choose files]**. Experience Platform validerar schemat och visar en grön bockmarkering om filöverföringen lyckas. Välj **[!UICONTROL Next]** för att bekräfta överföringen.
+Använd det här arbetsflödet för att definiera schemat genom att överföra en DDL-fil. I dialogrutan **[!UICONTROL Create a relational schema]** väljer du **[!UICONTROL Upload DDL file]** och drar sedan en lokal DDL-fil från systemet eller väljer **[!UICONTROL Choose files]**. Experience Platform validerar schemat och visar en grön bockmarkering om filöverföringen lyckas. Välj **[!UICONTROL Next]** för att bekräfta överföringen.
 
-![Dialogrutan Skapa ett modellbaserat schema med [!UICONTROL Upload DDL file] markerat och [!UICONTROL Next] markerat.](../../images/ui/resources/schemas/upload-ddl-file.png)
+![Dialogrutan Skapa ett relationsschema med [!UICONTROL Upload DDL file] markerat och [!UICONTROL Next] markerat.](../../images/ui/resources/schemas/upload-ddl-file.png)
 
 Dialogrutan [!UICONTROL Select entities and fields to import] visas så att du kan förhandsgranska schemat. Granska schemastrukturen och använd alternativknapparna och kryssrutorna för att se till att varje entitet har en primär nyckel och versionsidentifierare angiven.
 
@@ -106,7 +110,8 @@ Kontrollkolumner som `_change_request_type` lagras inte i schemat och visas inte
 >
 >Den största filstorlek som stöds för en DDL-överföring är 10 MB.
 
-![Modellbaserad schemagranskningsvy med importerade fält visade och [!UICONTROL Finish] markerade.](../../images/ui/resources/schemas/entities-and-files-to-inport.png)
+![Granskningsvyn för relationsschemat med importerade fält som visas och [!UICONTROL Finish] markeras.](../../images/ui/resources/schemas/entities-and-files-to-inport.png)
+
 
 Schemat öppnas i Schemaredigeraren där du kan justera strukturen innan du sparar.
 
@@ -122,7 +127,7 @@ Om du väljer Standardschematyp på den nedrullningsbara menyn Välj schematyp v
 
 ### [!BADGE Skapa scheman manuellt eller med ML-stöd i Beta]{type=Informative} {#manual-or-assisted}
 
-Mer information om hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en csv-fil finns i [handboken &#x200B;](../ml-assisted-schema-creation.md) som hjälper dig att skapa scheman. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
+Mer information om hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en csv-fil finns i [handboken ](../ml-assisted-schema-creation.md) som hjälper dig att skapa scheman. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
 
 ### Manuell schemagenerering {#manual-creation}
 
@@ -253,7 +258,7 @@ När du har lagt till en fältgrupp i ett schema kan du antingen ta bort fält g
 >[!IMPORTANT]
 >
 >Om du väljer **[!UICONTROL Remove]** tas fältet bort från själva fältgruppen, vilket påverkar *alla* scheman som använder den fältgruppen.
->&#x200B;>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
+>>Använd inte det här alternativet om du inte vill **ta bort fältet från alla scheman som innehåller fältgruppen**.
 
 Om du vill ta bort ett fält från fältgruppen markerar du det på arbetsytan och väljer **[!UICONTROL Remove]** på den högra listen. I det här exemplet visas fältet `taxId` från gruppen **[!UICONTROL Demographic Details]**.
 
@@ -487,6 +492,6 @@ När du har bekräftat klassändringen återställs arbetsytan och alla disposit
 
 Det här dokumentet innehåller grunderna för att skapa och redigera scheman i Experience Platform användargränssnitt. Vi rekommenderar starkt att du går igenom självstudiekursen [för att skapa scheman](../../tutorials/create-schema-ui.md) för ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper för unika användningsfall.
 
-Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
+Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Mer information om hur du hanterar scheman i [!DNL Schema Registry] API finns i [schemas slutpunktshandbok](../../api/schemas.md).

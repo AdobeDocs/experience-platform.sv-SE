@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
-source-wordcount: '2882'
+source-wordcount: '2916'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,11 @@ Med slutpunkten `/descriptors` i API:t [!DNL Schema Registry] kan du programmäs
 
 Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
-Förutom standardbeskrivningar har [!DNL Schema Registry] stöd för beskrivningstyper för modellbaserade scheman, till exempel **primärnyckel**, **version** och **tidsstämpel**. Dessa lägger in unika funktioner, styr versionshantering och definierar tidsseriefält på schemanivå. Om du inte känner till modellbaserade scheman kan du förhandsgranska [Data Mirror översikt](../data-mirror/overview.md) och [modellbaserade scheman &#x200B;](../schema/model-based.md) innan du fortsätter.
+Förutom standardbeskrivningar har [!DNL Schema Registry] stöd för beskrivningstyper för relationsscheman, till exempel **primärnyckel**, **version** och **tidsstämpel**. Dessa lägger in unika funktioner, styr versionshantering och definierar tidsseriefält på schemanivå. Om du inte är bekant med relationsscheman kan du gå igenom den tekniska referensen för [Data Mirror-översikten](../data-mirror/overview.md) och [relationsscheman](../schema/relational.md) innan du fortsätter.
+
+>[!NOTE]
+>
+>Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Beskrivningsfunktionen och API-slutpunkterna ändras inte. Det är bara terminologin som har uppdaterats för tydlighet.
 
 >[!IMPORTANT]
 >
@@ -397,7 +401,7 @@ Använd de här egenskaperna för att deklarera hur ett källfält (sekundärnyc
 API:t har stöd för två mönster:
 
 - `xdm:descriptorOneToOne`: standardrelation med :1.
-- `xdm:descriptorRelationship`: allmänt mönster för nytt arbete och modellbaserade scheman (stöder kardinalitet, namngivning och icke-primära nyckelmål).
+- `xdm:descriptorRelationship`: allmänt mönster för nya arbeten och relationsscheman (stöder kardinalitet, namngivning och icke-primära nyckelmål).
 
 ##### Ett-till-ett-förhållande (standardscheman)
 
@@ -427,9 +431,9 @@ I följande tabell beskrivs de fält som krävs för att definiera en 1:1-relati
 | `xdm:destinationVersion` | Huvudversionen av referensschemat. |
 | `xdm:destinationProperty` | (Valfritt) Sökväg till ett målfält i referensschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
 
-##### Allmän relation (modellbaserade scheman och rekommenderas för nya projekt)
+##### Allmän relation (relationsscheman och rekommenderas för nya projekt)
 
-Använd den här beskrivningen för alla nya implementeringar och för modellbaserade scheman. Du kan definiera relationens kardinalitet (t.ex. en-till-en eller många-till-en), ange relationsnamn och länka till ett målfält som inte är primärnyckeln (icke-primärnyckel).
+Använd den här beskrivningen för alla nya implementeringar och för relationsscheman. Du kan definiera relationens kardinalitet (t.ex. en-till-en eller många-till-en), ange relationsnamn och länka till ett målfält som inte är primärnyckeln (icke-primärnyckel).
 
 I följande exempel visas hur du definierar en allmän relationsbeskrivning.
 
@@ -474,7 +478,7 @@ Använd följande riktlinjer för att bestämma vilken relationsbeskrivning som 
 
 | Situationen | Beskrivning som ska användas |
 | --------------------------------------------------------------------- | ----------------------------------------- |
-| Nytt arbete eller modellbaserade scheman | `xdm:descriptorRelationship` |
+| Nya arbetsscheman och relationskartor | `xdm:descriptorRelationship` |
 | Befintlig :1-mappning i standardscheman | Fortsätt använda `xdm:descriptorOneToOne` om du inte behöver funktioner som bara stöds av `xdm:descriptorRelationship`. |
 | Behöver många-till-ett eller valfri kardinalitet (`1:1`, `1:0`, `M:1`, `M:0`) | `xdm:descriptorRelationship` |
 | Relationsnamn eller titlar för läsbarhet i användargränssnittet/nedladdningsbart | `xdm:descriptorRelationship` |
@@ -493,13 +497,13 @@ I följande tabell jämförs funktionerna för de två beskrivningstyperna:
 | Kardinalitet | 1:1 | 1:1, 1:0, M:1, M:0 (informativt) |
 | Målmål | Identitet/explicit fält | Primärnyckel som standard, eller icke-primärnyckel via `xdm:destinationProperty` |
 | Namngivningsfält | Stöds inte | `xdm:sourceToDestinationName`, `xdm:destinationToSourceName` och titlar |
-| Relationell anpassning | Begränsad | Primärt mönster för modellbaserade scheman |
+| Relationell anpassning | Begränsad | Primärt mönster för relationsscheman |
 
 ##### Begränsningar och validering
 
 Följ dessa krav och rekommendationer när du definierar en allmän relationsbeskrivning:
 
-- För modellbaserade scheman placerar du källfältet (sekundärnyckeln) på rotnivån. Detta är för närvarande en teknisk begränsning för konsumtion, inte bara en rekommendation om god praxis.
+- För relationsscheman placerar du källfältet (sekundärnyckeln) på rotnivån. Detta är för närvarande en teknisk begränsning för konsumtion, inte bara en rekommendation om god praxis.
 - Kontrollera att datatyperna för käll- och målfält är kompatibla (numeriskt, datum, booleskt, sträng).
 - Kom ihåg att kardinalitet är informativt; lagring tvingar inte till det. Ange kardinalitet i formatet `<source>:<destination>`. Godkända värden är: `1:1`, `1:0`, `M:1` eller `M:0`.
 

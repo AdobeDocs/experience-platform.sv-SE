@@ -5,7 +5,7 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: f6e63f3fe390c1e47347015e873282719508a0ec
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
 source-wordcount: '707'
 ht-degree: 9%
@@ -21,7 +21,7 @@ ht-degree: 9%
    * [Bästa tillvägagångssätt för datamodellering](schema/best-practices.md)
    * [Känsliga och personliga uppgifter](./schema/sensitive-and-personal-data.md)
    * [Begränsningar för XDM-fälttyp](schema/field-constraints.md)
-   * [Modellbaserat schema](./schema/model-based.md)
+   * [Relationsschema](./schema/relational.md)
    * [Namnavstånd i XDM](./schema/namespaces.md)
    * Branschdatamodeller {#industries}
       * [Översikt](./schema/industries/overview.md)
@@ -288,4 +288,4 @@ ht-degree: 9%
    * [Skapa ett ad hoc-schema](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

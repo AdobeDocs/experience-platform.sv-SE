@@ -5,7 +5,7 @@ title: Skapa ett dataflöde med hjälp av en databas-Source i användargränssni
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en databaskälla med hjälp av Experience Platform UI.
 exl-id: 9fd8a7ec-bbd8-4890-9860-e6defc6cade3
-source-git-commit: 2f8589ec58d9afe69e21f909f905a941e43f710c
+source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
 workflow-type: tm+mt
 source-wordcount: '1653'
 ht-degree: 0%
@@ -90,13 +90,13 @@ Experience Platform ger intelligenta rekommendationer för automatiskt mappade f
 
 >[!NOTE]
 >
->När du mappar till modellbaserade scheman måste du se till att källdata innehåller de fält som krävs, t.ex. en primärnyckel och en versionsidentifierare, eller en tidsstämpelidentifierare för tidsseriescheman.
+>När du mappar till relationsscheman måste du se till att källdata innehåller de obligatoriska fälten, till exempel en primärnyckel och en versionsidentifierare, eller en tidsstämpelidentifierare för tidsseriescheman.
 
 Kontrollkolumner som `_change_request_type`, som används för att hämta ändringsdata, läses under inläsning men lagras inte i målschemat.
 
-Modellbaserade scheman har också stöd för relationer mellan datauppsättningar med hjälp av mappningar av primärnyckel och sekundärnyckel.
+Relationsscheman stöder även relationer mellan datauppsättningar med hjälp av primära och externa nyckelmappningar.
 
-Mer information finns i [Data Mirror översikt](../../../../xdm/data-mirror/overview.md) och [modellbaserade scheman, teknisk referens](../../../../xdm/schema/model-based.md).
+Mer information finns i [Data Mirror översikt](../../../../xdm/data-mirror/overview.md) och [relationsscheman, teknisk referens](../../../../xdm/schema/relational.md).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -133,7 +133,7 @@ Se tabellen nedan för mer information om schemaläggningskonfigurationer.
 Steg **[!UICONTROL Review]** visas, så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
 * **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
-* **[!UICONTROL Assign dataset & map fields]**: Visar den datauppsättning som källdata kommer att importeras till, tillsammans med det associerade schemat. Om du använder ett modellbaserat schema kontrollerar du att obligatoriska fält, som primärnyckeln och versionsidentifieraren, är korrekt mappade. Se även till att alla kolumner för registrering av ändringsdata är korrekt konfigurerade. Datauppsättningar som använder modellbaserade scheman stöder flera datamodeller och aktiverar [arbetsflöden för datainhämtning](../../api/change-data-capture.md).
+* **[!UICONTROL Assign dataset & map fields]**: Visar den datauppsättning som källdata kommer att importeras till, tillsammans med det associerade schemat. Om du använder ett relationsschema kontrollerar du att obligatoriska fält, som primärnyckeln och versionsidentifieraren, är korrekt mappade. Se även till att alla kolumner för registrering av ändringsdata är korrekt konfigurerade. Datauppsättningar som använder relationsscheman stöder flera datamodeller och aktiverar [arbetsflöden för datainhämtning](../../api/change-data-capture.md).
 * **[!UICONTROL Scheduling]**: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 
 När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och tillåt en tid innan dataflödet skapas.

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för scheman
 description: Med slutpunkten /schemas i API:t för schemaregister kan du programmässigt hantera XDM-scheman i ditt upplevelseprogram.
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: 4586a820556919aeb6cebd94d961c3f726637f16
+source-git-commit: dc5ac5427e1eeef47434c3974235a1900d29b085
 workflow-type: tm+mt
-source-wordcount: '2091'
+source-wordcount: '2122'
 ht-degree: 0%
 
 ---
@@ -198,7 +198,7 @@ Ett lyckat svar returnerar information om schemat. Vilka fält som returneras be
 
 Schemadispositionsprocessen börjar med att tilldela en klass. Klassen definierar viktiga beteendeaspekter för data (post- eller tidsserier) samt de minimifält som krävs för att beskriva de data som ska importeras.
 
-Instruktioner om hur du skapar ett schema utan klasser eller fältgrupper, som kallas modellbaserat schema, finns i avsnittet [Skapa ett modellbaserat schema](#create-model-based-schema).
+Instruktioner om hur du skapar ett schema utan klasser eller fältgrupper, som kallas relationsschema, finns i avsnittet [Skapa ett relationsschema](#create-relational-schema).
 
 >[!NOTE]
 >
@@ -281,17 +281,21 @@ Om en GET-begäran om att [visa alla scheman](#list) i innehavarbehållaren utf�
 
 Om du vill lägga till ytterligare fält i ett schema kan du utföra en [PATCH-åtgärd](#patch) för att lägga till fältgrupper i schemats `allOf`- och `meta:extends`-arrayer.
 
-## Skapa ett modellbaserat schema {#create-model-based-schema}
+## Skapa ett relationsschema {#create-relational-schema}
 
 >[!AVAILABILITY]
 >
->Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+>Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
 
-Skapa ett modellbaserat schema genom att göra en POST-begäran till slutpunkten `/schemas`. Modellbaserade scheman lagrar strukturerade relationsliknande data **utan**-klasser eller fältgrupper. Definiera fält direkt i schemat och identifiera schemat som modellbaserat med en logisk beteendetagg.
+>[!NOTE]
+>
+>Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform API-dokumentationen. Funktionen är densamma - bara terminologin har ändrats för att vara tydlig.
+
+Skapa ett relationsschema genom att göra en POST-begäran till slutpunkten `/schemas`. Relationsscheman lagrar strukturerade relationsliknande data **utan**-klasser eller fältgrupper. Definiera fält direkt i schemat och identifiera schemat som relationellt med en logisk beteendetagg.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ett modellbaserat schema anger du `meta:extends` till `"https://ns.adobe.com/xdm/data/adhoc-v2"`. Detta är en **logisk beteendeidentifierare** (inte en fysisk funktion eller klass). Referera **inte** till klasser eller fältgrupper i `allOf` och ta **inte** med klasser eller fältgrupper i `meta:extends`.
+>Om du vill skapa ett relationsschema anger du `meta:extends` till `"https://ns.adobe.com/xdm/data/adhoc-v2"`. Detta är en **logisk beteendeidentifierare** (inte en fysisk funktion eller klass). Referera **inte** till klasser eller fältgrupper i `allOf` och ta **inte** med klasser eller fältgrupper i `meta:extends`.
 
 Skapa schemat först med `POST /tenant/schemas`. Lägg sedan till de nödvändiga beskrivningarna med [API:t för beskrivningar (`POST /tenant/descriptors`)](../api/descriptors.md):
 
@@ -304,13 +308,9 @@ Skapa schemat först med `POST /tenant/schemas`. Lägg sedan till de nödvändig
 >
 >I UI-schemaredigeraren visas versionsbeskrivningarna och tidsstämpelbeskrivningarna som [!UICONTROL Version identifier] respektive [!UICONTROL Timestamp identifier].
 
-<!-- >[!AVAILABILITY]
->
->Although `meta:behaviorType` technically accepts `time-series`, support is not currently available for model-based schemas. Set `meta:behaviorType` to `"record"`. -->
-
 >[!CAUTION]
 >
->Modellbaserade scheman är **inte kompatibla med unionsscheman**. Använd inte taggen `union` för `meta:immutableTags` när du arbetar med modellbaserade scheman. Den här konfigurationen blockeras i användargränssnittet men blockeras för närvarande inte av API:t. Mer information om fackschemats beteende finns i [slutpunktshandboken för föreningar](./unions.md).
+>Relationsscheman är **inte kompatibla med unionsscheman**. Använd inte taggen `union` för `meta:immutableTags` när du arbetar med relationsscheman. Den här konfigurationen blockeras i användargränssnittet men blockeras för närvarande inte av API:t. Mer information om fackschemats beteende finns i [slutpunktshandboken för föreningar](./unions.md).
 
 **API-format**
 
@@ -377,16 +377,16 @@ curl --request POST \
 | ------------------------------- | ------ | --------------------------------------------------------- |
 | `title` | Sträng | Schemats visningsnamn. |
 | `description` | Sträng | Kort förklaring av schemats syfte. |
-| `type` | Sträng | Måste vara `"object"` för modellbaserade scheman. |
+| `type` | Sträng | Måste vara `"object"` för relationsscheman. |
 | `definitions` | Objekt | Innehåller rotnivåobjekt som definierar schemafälten. |
 | `definitions.<name>.properties` | Objekt | Fältnamn och datatyper. |
 | `allOf` | Array | Refererar till objektdefinitionen på rotnivå (till exempel `#/definitions/marketing_customers`). |
-| `meta:extends` | Array | `"https://ns.adobe.com/xdm/data/adhoc-v2"` måste inkluderas för att schemat ska kunna identifieras som modellbaserat. |
+| `meta:extends` | Array | `"https://ns.adobe.com/xdm/data/adhoc-v2"` måste inkluderas för att schemat ska kunna identifieras som relationsbaserat. |
 | `meta:behaviorType` | Sträng | Ange till `"record"`. Använd bara `"time-series"` när det är aktiverat och lämpligt. |
 
 >[!IMPORTANT]
 >
->Schemautvecklingen för modellbaserade scheman följer samma tilläggsregler som standardscheman. Du kan lägga till nya fält med en PATCH-begäran. Ändringar som att byta namn på eller ta bort fält tillåts bara om inga data har importerats till datauppsättningen.
+>Schemautvecklingen för relationsscheman följer samma tilläggsregler som standardscheman. Du kan lägga till nya fält med en PATCH-begäran. Ändringar som att byta namn på eller ta bort fält tillåts bara om inga data har importerats till datauppsättningen.
 
 **Svar**
 
@@ -394,7 +394,7 @@ En slutförd begäran returnerar **HTTP 201 (skapad)** och det skapade schemat.
 
 >[!NOTE]
 >
->Modellbaserade scheman ärver inte fördefinierade fält (till exempel id, timestamp eller eventType). Definiera alla obligatoriska fält explicit i ditt schema.
+>Relationsscheman ärver inte fördefinierade fält (till exempel id, timestamp eller eventType). Definiera alla obligatoriska fält explicit i ditt schema.
 
 **Exempelsvar**
 
@@ -455,11 +455,11 @@ En slutförd begäran returnerar **HTTP 201 (skapad)** och det skapade schemat.
 | `type` | Sträng | Schematypen. |
 | `definitions` | Objekt | Definierar återanvändbara objekt eller fältgrupper som används i schemat. Detta inkluderar vanligtvis huvuddatastrukturen och refereras i `allOf`-arrayen för att definiera schemaroten. |
 | `allOf` | Array | Anger schemats rotobjekt genom att referera till en eller flera definitioner (till exempel `#/definitions/marketing_customers`). |
-| `meta:extends` | Array | Identifierar schemat som modellbaserat (`adhoc-v2`). |
+| `meta:extends` | Array | Identifierar schemat som relationellt (`adhoc-v2`). |
 | `meta:behaviorType` | Sträng | Beteendetyp (`record` eller `time-series`, när den är aktiverad). |
 | `meta:containerId` | Sträng | Behållare som schemat lagras i (t.ex. `tenant`). |
 
-Om du vill lägga till fält i ett modellbaserat schema efter att det har skapats gör du en [PATCH-begäran](#patch). Modellbaserade scheman ärver inte eller utvecklas automatiskt. Strukturella ändringar som att byta namn på eller ta bort fält tillåts bara om inga data har importerats till datauppsättningen. När det finns data stöds bara **additiva ändringar** (till exempel tillägg av nya fält).
+Om du vill lägga till fält i ett relationsschema efter att det har skapats gör du en [PATCH-begäran](#patch). Relationsscheman ärvs inte och utvecklas inte automatiskt. Strukturella ändringar som att byta namn på eller ta bort fält tillåts bara om inga data har importerats till datauppsättningen. När det finns data stöds bara **additiva ändringar** (till exempel tillägg av nya fält).
 
 Du kan lägga till nya rotnivåfält (inom rotdefinitionen eller roten `properties`), men du kan inte ta bort, byta namn på eller ändra typen för befintliga fält.
 

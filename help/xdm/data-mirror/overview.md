@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;dataspegling;modellbaserat schema;relationsschema;registrering av ändringsdata;databassynkronisering;primärnyckel;relationer
+keywords: Experience Platform;dataspegling;relationsschema;registrering av ändringsdata;databassynkronisering;primärnyckel;relationer
 solution: Experience Platform
 title: Data Mirror - översikt
-description: Läs om hur Data Mirror möjliggör redigering på radnivå från externa databaser till Adobe Experience Platform med hjälp av modellbaserade scheman med tvingande unikhet, relationer och versionshantering.
+description: Läs om hur Data Mirror möjliggör inmatning av ändringar på radnivå från externa databaser till Adobe Experience Platform med hjälp av relationsscheman med tvingande unikhet, relationer och versionshantering.
 badge: Begränsad tillgänglighet
-source-git-commit: 6ce214073f625a253fcc5bb14dfdb6a4a61e6e7b
+exl-id: bb92c77a-6c7a-47df-885a-794cf55811dd
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
-source-wordcount: '1355'
+source-wordcount: '1356'
 ht-degree: 0%
 
 ---
@@ -15,9 +16,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Data Mirror och modellbaserade scheman är tillgängliga för innehavare av Adobe Journey Optimizer **samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
+>Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
 
-Data Mirror är en Adobe Experience Platform-funktion som gör det möjligt att ändra på radnivå från externa databaser till datasjön med hjälp av modellbaserade scheman. Den bevarar datarelationer, tillämpar unikt utseende och stöder versionshantering utan att kräva extraherings-, transformerings- och inläsningsprocesser (ETL) uppströms.
+>[!NOTE]
+>
+>Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Funktionen är densamma.
+
+Data Mirror är en Adobe Experience Platform-funktion som gör det möjligt att ändra på radnivå från externa databaser till datasjön med hjälp av relationsscheman. Den bevarar datarelationer, tillämpar unikt utseende och stöder versionshantering utan att kräva extraherings-, transformerings- och inläsningsprocesser (ETL) uppströms.
 
 Använd Data Mirror för att synkronisera infogningar, uppdateringar och borttagningar (ändringsbara data) från externa system som [!DNL Snowflake], [!DNL Databricks] eller [!DNL BigQuery] direkt till Experience Platform. Detta hjälper dig att bevara den befintliga databasmodellstrukturen och dataintegriteten när du överför data till plattformen.
 
@@ -33,7 +38,7 @@ Data Mirror har följande viktiga funktioner för databassynkronisering:
 
 Använd Data Mirror för att importera ändringar direkt från era källsystem, tillämpa schemaintegriteten och göra data tillgängliga för analyser, resesamordning och arbetsflöden för regelefterlevnad. Data Mirror eliminerar komplexa ETL-processer i tidigare led och snabbar upp implementeringen genom att möjliggöra direkt spegling av befintliga databasmodeller.
 
-Planera för raderings- och datahygien när du implementerar modellbaserade scheman med Data Mirror. Alla program måste beakta hur borttagningar påverkar relaterade datauppsättningar, arbetsflöden för regelefterlevnad och processer i senare led före distributionen.
+Planera för raderings- och datahygikrav vid implementering av relationsscheman med Data Mirror. Alla program måste beakta hur borttagningar påverkar relaterade datauppsättningar, arbetsflöden för regelefterlevnad och processer i senare led före distributionen.
 
 ## Förhandskrav {#prerequisites}
 
@@ -42,12 +47,12 @@ Innan du börjar bör du förstå följande komponenter i Experience Platform oc
 * [Skapa scheman i Experience Platform UI](../ui/resources/schemas.md) eller [API](../api/schemas.md)
 * [Konfigurera molnkällanslutningar](../../sources/home.md#cloud-storage)
 * [Använd begrepp för datainhämtning](../../sources/tutorials/api/change-data-capture.md) (överför, tar bort)
-* Skilj mellan [standard](../schema/composition.md) och [modellbaserade scheman](../schema/model-based.md)
+* Skilj mellan [standard](../schema/composition.md) och [relationsscheman](../schema/relational.md)
 * [Definiera strukturella relationer med beskrivningar](../api/descriptors.md)
 
 ### Implementeringskrav
 
-Plattformsinstansen och källdata måste uppfylla specifika krav för att Data Mirror ska fungera korrekt. Data Mirror kräver **modellbaserade scheman**, som är flexibla datastrukturer med tvingande begränsningar. För närvarande arbetar Data Mirror främst med modellbaserade scheman, men integrering med vanliga XDM-scheman stöds av kommande funktioner för anpassade B2B-objekt (planeras i oktober 2025).
+Plattformsinstansen och källdata måste uppfylla specifika krav för att Data Mirror ska fungera korrekt. Data Mirror kräver **relationsscheman**, som är flexibla datastrukturer med tvingande begränsningar.
 
 Inkludera en **primärnyckel och versionsbeskrivning** i alla scheman. Om du arbetar med ett tidsserieschema krävs även en **tidsstämpelbeskrivning**.
 
@@ -61,17 +66,17 @@ Till skillnad från vanliga ingrepp bevarar Data Mirror databasmodellstrukturen 
 
 ### Definiera schemastrukturen
 
-Skapa [modellbaserade scheman](../schema/model-based.md) med obligatoriska beskrivningar (metadata som definierar schemabeteende och begränsningar). Välj en metod som passar teamets arbetsflöde, antingen via gränssnittet eller direkt via API:t.
+Skapa [relationsscheman](../schema/relational.md) med obligatoriska beskrivningar (metadata som definierar schemabeteende och begränsningar). Välj en metod som passar teamets arbetsflöde, antingen via gränssnittet eller direkt via API:t.
 
-* **Gränssnittsmetod**: [Skapa modellbaserade scheman i Schemaredigeraren](../ui/resources/schemas.md#create-model-based-schema)
-* **API-inflygning**: [Skapa scheman via API:t för schemaregister](../api/schemas.md#create-model-based-schema)
+* **Gränssnittsmetod**: [Skapa relationsscheman i Schemaredigeraren](../ui/resources/schemas.md#create-relational-schema)
+* **API-inflygning**: [Skapa scheman via API:t för schemaregister](../api/schemas.md#create-relational-schema)
 
 ### Mappa relationer och definiera datahantering
 
 Definiera anslutningar mellan datauppsättningar med hjälp av relationsbeskrivare. Hantera relationer och bibehåll datakvaliteten i alla datauppsättningar. Dessa uppgifter säkerställer enhetliga kopplingar och uppfyller kraven på datahygien.
 
 * **Schemarelationer**: [Definiera relationer mellan datauppsättningar med hjälp av beskrivningar](../api/descriptors.md)
-* **Posthygien**: [Hantera precisionspostborttagningar](../../hygiene/ui/record-delete.md#model-based-record-delete)
+* **Posthygien**: [Hantera precisionspostborttagningar för datauppsättningar baserat på relationsscheman](../../hygiene/ui/record-delete.md#relational-record-delete)
 
 ### Konfigurera källanslutningen
 
@@ -93,7 +98,7 @@ Läs vad som är vanligt: Data Mirror har stöd för exakt datasynkronisering oc
 
 ### Relationsdatamodellering
 
-Använd [modellbaserade scheman](../schema/model-based.md) (även kallade relationsscheman) i Data Mirror för att representera entiteter, bearbeta infogningar, uppdateringar och borttagningar på radnivå och för att underhålla primära och externa nyckelrelationer som finns i dina datakällor. Detta tillvägagångssätt ger Experience Platform relationsbaserade datamodelleringsprinciper och säkerställer strukturell enhetlighet mellan datauppsättningar.
+Använd [relationsscheman](../schema/relational.md) i Data Mirror för att representera entiteter, processinfogningar, uppdateringar och borttagningar på radnivå samt för att underhålla primära och externa nyckelrelationer som finns i dina datakällor. Detta tillvägagångssätt ger Experience Platform relationsbaserade datamodelleringsprinciper och säkerställer strukturell enhetlighet mellan datauppsättningar.
 
 ### Synkronisering mellan lager och sjöar
 
@@ -121,11 +126,11 @@ Granska dessa viktiga aspekter för att se till att implementeringen är anpassa
 
 ### Krav på radering av data och hygien
 
-Alla program som använder modellbaserade scheman och Data Mirror måste förstå vad det innebär att ta bort data. Modellbaserade scheman möjliggör exakt borttagning på postnivå som kan påverka relaterade data över sammankopplade datamängder. Dessa borttagningsfunktioner påverkar dataintegritet, regelefterlevnad och programbeteende längre fram i kedjan, oavsett vilket användningsfall du har. Granska [datahygien](../../hygiene/ui/record-delete.md#model-based-record-delete) och planera för borttagningsscenarier innan implementering.
+Alla program som använder relationsscheman och Data Mirror måste förstå vad dataradering innebär. Relationsscheman möjliggör exakt borttagning på postnivå som kan påverka relaterade data över sammankopplade datauppsättningar. Dessa borttagningsfunktioner påverkar dataintegritet, regelefterlevnad och programbeteende längre fram i kedjan, oavsett vilket användningsfall du har. Granska [datahygien för datauppsättningar baserat på relationsscheman](../../hygiene/ui/record-delete.md#relational-record-delete) och planera för borttagningsscenarier innan implementering.
 
 ### Val av schemabeteende
 
-Modellbaserade scheman är som standard **postbeteende**, som hämtar enhetstillstånd (kunder, konton osv.). Om du behöver **tidsseriebeteende** för händelsespårning måste du konfigurera det explicit.
+Relationsscheman är som standard **postbeteende**, som hämtar enhetstillstånd (kunder, konton osv.). Om du behöver **tidsseriebeteende** för händelsespårning måste du konfigurera det explicit.
 
 ### Jämförelse av försäljningsmetod
 
@@ -146,8 +151,8 @@ Data Mirror har stöd för **1:1- och** många-till-1 **-relationer med hjälp a
 När du har granskat den här översikten bör du kunna avgöra om Data Mirror passar ditt användningssätt och förstå implementeringskraven. Så här kommer du igång:
 
 1. **Dataarkitekterna** bör utvärdera din datamodell för att se till att den har stöd för primärnycklar, versionshantering och ändringsspårningsfunktioner.
-2. **Affärsintressenter** bör bekräfta att din licens innehåller modellbaserat schemastöd och nödvändiga Experience Platform-utgåvor.
+2. **Affärsintressenter** bör bekräfta att din licens innehåller stöd för relationsschema och nödvändiga Experience Platform-utgåvor.
 3. **Schemadesigners** bör planera din schemastruktur för att identifiera nödvändiga beskrivningar, fältrelationer och datastyrningsbehov.
 4. **Implementeringsteamen** bör välja en inmatningsmetod som baseras på dina källsystem, realtidskrav och arbetsflöden.
 
-Implementeringsinformation finns i [modellbaserad schemadokumentation](../schema/model-based.md).
+Mer information om implementering finns i dokumentationen för [relationsscheman](../schema/relational.md).

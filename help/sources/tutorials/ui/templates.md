@@ -3,7 +3,7 @@ description: Lär dig hur du använder mallar i Adobe Experience Platform använ
 title: Skapa ett källdataflöde med mallar i användargränssnittet
 badge1: Beta
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: 02a22362b9ecbfc5fd7fcf17dc167309a0ea45d5
+source-git-commit: f9e3c19fdfd4ca0e03fdf3b3a7b5e82b72490dbc
 workflow-type: tm+mt
 source-wordcount: '2271'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >id="platform_sources_templates_accounttype"
 >title="Välj affärstyp"
 >abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-Time Customer Data Platform-prenumerationskonto."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE" text="Real-Time CDP - översikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP - översikt"
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
 
@@ -68,9 +68,9 @@ Ett popup-fönster visas där du kan bläddra bland mallar eller använda befint
 
 >[!NOTE]
 >
->Mallar kan automatiskt generera modellbaserade scheman när de arbetar med källor som kräver arbetsflöden för datainhämtning eller stöder flera datamodeller. Dessa scheman möjliggör Data Mirror-funktioner för datasynkronisering i realtid.\
->När du använder mallar med modellbaserade scheman, kommer de automatiskt genererade resurserna att innehålla den nödvändiga primärnyckeln, versionsidentifieraren och tidsstämpelidentifierarfälten.\
->Mer information finns i [Data Mirror översikt](../../../xdm/data-mirror/overview.md) och [modellbaserade scheman, teknisk referens](../../../xdm/schema/model-based.md).
+>Mallar kan automatiskt generera relationsscheman när de arbetar med källor som kräver arbetsflöden för datainhämtning eller stöder flera datamodeller. Dessa scheman möjliggör Data Mirror-funktioner för datasynkronisering i realtid.\
+>När du använder mallar med relationsscheman, kommer de automatiskt genererade resurserna att innehålla den nödvändiga primärnyckeln, versionsidentifieraren och tidsstämpelidentifierarfälten.\
+>Mer information finns i [Data Mirror översikt](../../../xdm/data-mirror/overview.md) och [relationsscheman, teknisk referens](../../../xdm/schema/relational.md).
 
 Om du vill använda automatiskt genererade resurser väljer du **[!UICONTROL Browse templates]** och sedan **[!UICONTROL Select]**.
 
@@ -247,7 +247,7 @@ Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automati
 
 Börja publiceringsprocessen genom att gå igenom källarbetsflödet. När du har valt [!UICONTROL Update dataflow] dirigeras du till arbetsflödets *[!UICONTROL Add data]*-steg. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
-![Steget Lägg till data för ett dataflöde &#x200B;](../../images/tutorials/templates/continue-draft.png)
+![Steget Lägg till data för ett dataflöde ](../../images/tutorials/templates/continue-draft.png)
 
 Bekräfta sedan dataflödesinformationen och konfigurera inställningarna för feldiagnostik, partiell import och varningsmeddelanden. När du är klar väljer du **[!UICONTROL Next]**.
 

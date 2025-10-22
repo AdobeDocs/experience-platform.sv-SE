@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 2f8589ec58d9afe69e21f909f905a941e43f710c
+source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
 workflow-type: tm+mt
 source-wordcount: '4259'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 >[!CONTEXTUALHELP]
 >id="platform_datasets_orchestratedCampaigns_toggle"
 >title="Samordnade kampanjer"
->abstract="Aktivera det här alternativet om du vill tillåta att den valda datauppsättningen används i Adobe Journey Optimizer Orchestrated-kampanjer. Datauppsättningen måste använda ett modellbaserat schema och endast en datauppsättning kan skapas per schema."
+>abstract="Aktivera det här alternativet om du vill tillåta att den valda datauppsättningen används i Adobe Journey Optimizer Orchestrated-kampanjer. Datauppsättningen måste använda ett relationsschema och endast en datauppsättning kan skapas per schema."
 
 I användargränssnittet för [!DNL Experience Platform] väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna kontrollpanelen för **[!UICONTROL Datasets]**. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
@@ -291,7 +291,7 @@ I följande tabell visas en översikt över de nya mätvärdena för bevarande o
 
 {style="table-layout:auto"}
 
-Om du vill agera utifrån insikterna från lagrings- och kvarhållningsstatistik kan du läsa [guiden &#x200B;](../../landing/license-usage-and-guardrails/data-management-best-practices.md) om bästa praxis för datahanteringslicenstillstånd. Använd det för att hantera vilka data ni ska importera och behålla, tillämpa filter och utgångsregler och kontrollera datatillväxten för att hålla er inom de tillåtna användningsgränserna.
+Om du vill agera utifrån insikterna från lagrings- och kvarhållningsstatistik kan du läsa [guiden ](../../landing/license-usage-and-guardrails/data-management-best-practices.md) om bästa praxis för datahanteringslicenstillstånd. Använd det för att hantera vilka data ni ska importera och behålla, tillämpa filter och utgångsregler och kontrollera datatillväxten för att hålla er inom de tillåtna användningsgränserna.
 
 ### Flytta till mappar {#move-to-folders}
 
