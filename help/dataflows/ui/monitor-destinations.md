@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: d9e137a34ad013e2396daa51eb55c22aef1e618e
+source-git-commit: c024637ab73a3a1c3d2512f9879303b4e4d830a9
 workflow-type: tm+mt
-source-wordcount: '3475'
+source-wordcount: '3484'
 ht-degree: 0%
 
 ---
@@ -119,33 +119,11 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 ![Dataflödesposter för direktuppspelningsmål med ett felmeddelande markerat.](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
-#### [!BADGE Beta]{type=Informative} Körningsövervakning av dataflöde på målgruppsnivå för direktuppspelningsmål {#audience-level-dataflow-runs-for-streaming-destinations}
+#### Körningsövervakning av dataflöde på målgruppsnivå för direktuppspelningsmål {#audience-level-dataflow-runs-for-streaming-destinations}
 
 Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter som är uppdelade på en målgruppsnivå för varje målgrupp som är en del av dataflödet.
 
-Övervakning på målgruppsnivå för direktuppspelningsmål är för närvarande endast tillgängligt för följande mål:
-
-- [[!DNL (API) Oracle Eloqua]-anslutning](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)
-- [[!DNL (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)
-- [[!DNL Airship Attributes]](../../destinations/catalog/mobile-engagement/airship-attributes.md)
-- [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md)
-- [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)
-- [[!DNL Google Customer Match + Display & Video 360]](../../destinations/catalog/advertising/google-customer-match-dv360.md)
-- [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md)
-- [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md)
-- [[!DNL Magnite: Real-time]](../../destinations/catalog/advertising/magnite-streaming.md)
-- [[!DNL Marketo Engage Person Sync]](../../destinations/catalog/adobe/marketo-engage-person-sync.md)
-- [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md)
-- [[!DNL Moengage]](../../destinations/catalog/mobile-engagement/moengage.md)
-- [[!DNL Outreach]](../../destinations/catalog/crm/outreach.md)
-- [[!DNL PubMatic Connect]](../../destinations/catalog/advertising/pubmatic.md)
-- [[!DNL PubMatic Connect (Custom Audience ID Mapping)]](../../destinations/catalog/advertising/pubmatic.md)
-- [[!DNL Qualtrics Automations]](../../destinations/catalog/survey/qualtrics-automations.md)
-- [[!DNL RainFocus Attendee Profiles]](../../destinations/catalog/marketing-automation/rainfocus.md)
-- [[!DNL SAP Commerce]](../../destinations/catalog/ecommerce/sap-commerce.md)
-- [[!DNL Snowflake]](../../destinations/catalog/cloud-storage/snowflake.md)
-- [[!DNL Yahoo DataX]](../../destinations/catalog/advertising/datax.md)
-- [[!DNL Zendesk]](../../destinations/catalog/crm/zendesk.md)
+Övervakning på målgruppsnivå för direktuppspelningsdestinationer är endast tillgängligt för vissa destinationer. I avsnittet [målgruppsvy](#audience-level-view) finns en lista över mål som stöds.
 
 ![Övervakning på målgruppsnivå för direktuppspelningsmål.](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
 
@@ -159,7 +137,7 @@ Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter s
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=sv-SE#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -330,21 +308,28 @@ Du aktiverar till exempel en publik som heter&quot;Lojalitetsmedlemmar i Kalifor
 >   - [[!DNL (API) Oracle Eloqua] anslutning](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)
 >   - [[!DNL (V2) Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)
 >   - [[!DNL Airship Attributes]](../../destinations/catalog/mobile-engagement/airship-attributes.md)
+>   - [[!DNL Airship Tags]](../../destinations/catalog/mobile-engagement/airship-tags.md)
 >   - [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md)
 >   - [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)
 >   - [[!DNL Google Customer Match + Display & Video 360]](../../destinations/catalog/advertising/google-customer-match-dv360.md)
 >   - [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md)
 >   - [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md)
 >   - [[!DNL Magnite: Real-time]](../../destinations/catalog/advertising/magnite-streaming.md)
+>   - [[!DNL Marketo Engage]](../../destinations/catalog/adobe/marketo-engage.md)
 >   - [[!DNL Marketo Engage Person Sync]](../../destinations/catalog/adobe/marketo-engage-person-sync.md)
+>   - [[!DNL Microsoft Bing]](../../destinations/catalog/advertising/bing.md)
 >   - [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md)
 >   - [[!DNL Moengage]](../../destinations/catalog/mobile-engagement/moengage.md)
 >   - [[!DNL Outreach]](../../destinations/catalog/crm/outreach.md)
+>   - [[!DNL Pega CDH Realtime Audience (V1)]](../../destinations/catalog/personalization/pega.md)
+>   - [[!DNL Pega CDH Realtime Audience (V2)]](../../destinations/catalog/personalization/pega-v2.md)
 >   - [[!DNL PubMatic Connect]](../../destinations/catalog/advertising/pubmatic.md)
 >   - [[!DNL PubMatic Connect (Custom Audience ID Mapping)]](../../destinations/catalog/advertising/pubmatic.md)
 >   - [[!DNL Qualtrics Automations]](../../destinations/catalog/survey/qualtrics-automations.md)
 >   - [[!DNL RainFocus Attendee Profiles]](../../destinations/catalog/marketing-automation/rainfocus.md)
+>   - [[!DNL Salesforce Marketing Cloud] (API)](../../destinations/catalog/email-marketing/salesforce-marketing-cloud.md)
 >   - [[!DNL SAP Commerce]](../../destinations/catalog/ecommerce/sap-commerce.md)
+>   - [[!DNL The Trade Desk]](../../destinations/catalog/advertising/tradedesk.md)
 >   - [[!DNL Snowflake]](../../destinations/catalog/cloud-storage/snowflake.md)
 >   - [[!DNL Yahoo DataX]](../../destinations/catalog/advertising/datax.md)
 >   - [[!DNL Zendesk]](../../destinations/catalog/crm/zendesk.md)
@@ -364,7 +349,7 @@ På sidan för dataflöden visas information om dataflödets körningar, inklusi
 När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](#segment-level-view) kan du filtrera dataflödet med följande alternativ:
 
 - **[!UICONTROL Dataflow runs with failed records]**: För den valda målgruppen listas alla dataflödeskörningar som misslyckades för aktivering med det här alternativet. Information om varför poster i ett visst dataflöde misslyckades finns på [informationssidan för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
-- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan &#x200B;](#dataflow-run-details-page) för dataflödeskörningen.
+- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan ](#dataflow-run-details-page) för dataflödeskörningen.
 - **[!UICONTROL Dataflow runs with activated records]**: För den valda målgruppen listas alla dataflödeskörningar som har poster som har aktiverats.
 
 ![Alternativknappar som visar hur du filtrerar dataflöden för målgrupper.](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
