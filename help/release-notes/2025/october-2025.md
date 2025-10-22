@@ -1,7 +1,6 @@
 ---
 title: Versionsinformation om Adobe Experience Platform oktober 2025
 description: Versionsinformationen för Adobe Experience Platform i oktober 2025.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 199acd8d3bdbb0e89fc1ab881bff4d94063b7f78
 workflow-type: tm+mt
 source-wordcount: '920'
