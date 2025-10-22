@@ -5,9 +5,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 193045d530d73d8a3e4f7ac3df4e1f43e8ad5b15
+source-git-commit: 2f32cae89d69f6dc2930c3908c87b79e1b724f4b
 workflow-type: tm+mt
-source-wordcount: '2141'
+source-wordcount: '2211'
 ht-degree: 0%
 
 ---
@@ -20,15 +20,22 @@ Med Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]
 
 API-slutpunkten som används i den här guiden ingår i [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
 
->[!BEGINSHADEBOX]
-
 ## Enhetsupplösning
 
 Som en del av uppgraderingen av arkitekturen introducerar Adobe entitetsupplösning för konton och säljprojekt med hjälp av deterministisk ID-matchning baserat på de senaste data. Enhetsupplösningsjobbet körs dagligen under gruppsegmentering, innan man utvärderar flerenhetsmålgrupper med B2B-attribut.
 
 Förbättringen gör det möjligt för Experience Platform att identifiera och sammanställa flera poster som representerar samma enhet, vilket ger enhetligare data och möjliggör mer korrekt målgruppssegmentering.
 
-Tidigare förlitade sig konton och affärsmöjligheter på identitetsgrafbaserad upplösning som kopplade identiteter, inklusive alla historiska inmatningar. I den nya metoden för enhetsupplösning är identiteter länkade baserat på enbart de senaste data
+Tidigare förlitade sig konton och affärsmöjligheter på identitetsgrafbaserad upplösning som kopplade identiteter, inklusive alla historiska inmatningar. I den nya metoden för enhetsupplösning är identiteter länkade baserat enbart på de senaste data.
+
+- Konto och säljprojekt är entiteter som lösts med en tidsprioritetsbaserad sammanslagning:
+   - Konto: identiteter som använder namnutrymmet `b2b_account`.
+   - Möjlighet: identiteter som använder namnområdet `b2b_opportunity`.
+- Alla andra enheter är helt enkelt enhetliga och endast primära identitetsöverlappningar sammanfogas med tidsprioritetsbaserad sammanslagning.
+
+>[!NOTE]
+>
+>Entitetsupplösningen stöder bara `b2b_account` och `b2b_opportunity`. Identiteter från andra namnutrymmen används inte i entitetsupplösning. Om du använder anpassade namnutrymmen kan du inte hitta konton och möjligheter.
 
 ### Hur fungerar enhetsupplösning?
 
@@ -36,8 +43,6 @@ Tidigare förlitade sig konton och affärsmöjligheter på identitetsgrafbaserad
 - **Efter**: Om DUNS-numret användes som en extra identitet och kontots DUNS-nummer uppdaterades i ett källsystem som CRM, länkas konto-ID bara till det nya DUNS-numret, vilket ger en mer korrekt bild av det aktuella kontotillståndet.
 
 Som ett resultat av den här uppdateringen speglar API:t [!DNL Profile Access] nu den senaste sammanfogningsprofilvyn när en entitetsupplösningsjobbcykel har slutförts. Dessutom ger konsekventa data användningsexempel som segmentering, aktivering och analys med förbättrad datakvalitet och enhetlighet.
-
->[!ENDSHADEBOX]
 
 ## Hämta en entitet {#retrieve-entity}
 
@@ -1284,10 +1289,10 @@ Följande parametrar används i sökvägen för GET-begäranden till slutpunkten
 | Parameter | Beskrivning | Exempel |
 | --------- | ----------- | ------- |
 | `schema.name` | **(Obligatoriskt)** Namnet på entitetens XDM-schema. | `schema.name=_xdm.context.profile` |
-| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
+| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
 | `entityId` | **(Obligatoriskt)** ID för entiteten. Om värdet för den här parametern inte är ett XID måste även en identitetsnamnområdesparameter (`entityIdNS`) anges. | `entityId=janedoe@example.com` |
-| `entityIdNS` | Om `entityId` inte anges som ett XID måste **&#x200B;**&#x200B;ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
-| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **&#x200B;**&#x200B;ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| `entityIdNS` | Om `entityId` inte anges som ett XID måste **** ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
+| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | Om `schema.name` är&quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan. | `fields=personalEmail,person.name,person.gender` |
 | `mergePolicyId` | *Rekommenderad* Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har definierats för det schema du begär returnerar API:t en HTTP 422-felstatuskod. | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |
