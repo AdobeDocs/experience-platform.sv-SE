@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform-ordlista
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: b960e67789acaeb27a0a39db933a2bbb7d84f4d5
+source-git-commit: 0ff9adc8869528f9e13ee384b866b8dcc3d781bd
 workflow-type: tm+mt
-source-wordcount: '8170'
+source-wordcount: '8169'
 ht-degree: 0%
 
 ---
@@ -351,7 +351,7 @@ ht-degree: 0%
 
 **Modul**: I taggarnas kontext är en modul ett utdrag av körbar JavaScript som tillhandahålls av ett tillägg, som utför åtgärder i en klientmiljö utan att behöva skapa en regel.
 
-**MODPA**: [!DNL Maryland Online Data Privacy Act] (MODPA) från 2024 ger Maryland-boende rättigheter, inklusive åtkomst, korrigering, borttagning och dataportabilitet. Medborgarna kan välja bort riktad reklam, försäljning av personuppgifter och profilering. De registeransvariga måste tillhandahålla meddelanden om integritetsskydd och genomföra bedömningar av uppgiftsskydd för högriskbehandling. MODPA skiljer sig från mängden genom att förbjuda geostaket runt anläggningar för psykisk eller reproduktionsrelaterad hälsa. Lagen gäller för enheter som behandlar data från mer än 35 000 konsumenter, eller för dem som behandlar data från mer än 10 000 konsumenter och får mer än 20 % av intäkterna från försäljningen av dessa data. Den drivs av Maryland Attorney General.
+**MODPA**: [!DNL Maryland Online Data Privacy Act] (MODPA) från 2024 ger Maryland-boende rättigheter, inklusive åtkomst, korrigering, borttagning och dataportabilitet. Medborgarna kan välja bort riktad reklam, försäljning av personuppgifter och profilering. De registeransvariga måste tillhandahålla sekretessmeddelanden och genomföra bedömningar av uppgiftsskydd för högriskbehandling. MODPA skiljer sig från mängden genom att förbjuda geostaket runt anläggningar för psykisk eller reproduktionsrelaterad hälsa. Lagen gäller för enheter som behandlar data från mer än 35 000 konsumenter, eller för dem som behandlar data från mer än 10 000 konsumenter och får mer än 20 % av intäkterna från försäljningen av dessa data. Den drivs av Maryland Attorney General.
 
 ## N
 
