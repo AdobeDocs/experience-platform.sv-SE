@@ -17,8 +17,8 @@ ht-degree: 28%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 22 oktober 2025**
@@ -83,7 +83,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | Ändring av datauppsättning för Adobe Analytics-källa | Som en del av processen för att skapa dataflöden mellan Adobe Analytics och Experience Platform skapas en datauppsättning via katalogtjänsten. Den här datauppsättningen fungerar som en behållare för data som ska landas i. För närvarande innehåller den här processen ett DataSource-ID som hämtas från Analytics-rapportsviten, skickas till katalogtjänsten och sedan kopplas till den nya datauppsättningen. Efter ändringen är alternativet att ange ID för datakälla inte längre tillgängligt när datauppsättningar skapas. Därför kommer nya datauppsättningar som skapas av Analytics-källan inte längre att ha något associerat DataSource-ID i katalogtjänsten. Den här ändringen gäller endast för metadata och påverkar inte lagringen av data i datauppsättningen på något sätt. Det är dock viktigt att veta att det DataSource-ID som tillhandahålls av katalogtjänsten inte längre är tillgängligt i nya datauppsättningar för Adobe Analytics. Läs [Adobe Analytics källdokumentation](../../sources/connectors/adobe-applications/analytics.md) om du vill ha mer information om Adobe Analytics källanslutning. |
-| Allmän tillgänglighet för källan [!DNL Google Ads] (endast API) | [API-versionen av  [!DNL Google Ads]](../../sources/tutorials/api/create/advertising/ads.md)-källan har nu generell tillgänglighet. API-dokumentationen har uppdaterats för att återspegla att den senaste versionen nu är `v21`, och Experience Platform stöder alla versioner v19 och senare. [Gränssnittsversionen &#x200B;](../../sources/tutorials/ui/create/advertising/ads.md) finns kvar i betaversionen och stöder endast engångsbruk. Använd API-vägen om du vill använda inkrementell datainhämtning. |
+| Allmän tillgänglighet för källan [!DNL Google Ads] (endast API) | [API-versionen av  [!DNL Google Ads]](../../sources/tutorials/api/create/advertising/ads.md)-källan har nu generell tillgänglighet. API-dokumentationen har uppdaterats för att återspegla att den senaste versionen nu är `v21`, och Experience Platform stöder alla versioner v19 och senare. [Gränssnittsversionen ](../../sources/tutorials/ui/create/advertising/ads.md) finns kvar i betaversionen och stöder endast engångsbruk. Använd API-vägen om du vill använda inkrementell datainhämtning. |
 | Stöd för [!DNL Azure Event Hubs] virtuella nätverk | Adobe har nu explicit stöd för virtuella nätverksanslutningar till [[!DNL Azure Event Hubs]](../../sources/connectors/cloud-storage/eventhub.md), vilket aktiverar dataöverföring över privata nätverk i stället för offentliga nätverk. Kunderna kan tillåtslista Experience Platform VNet för att dirigera Event Hubs-trafik privat via Azure privata stamnät, vilket ger förbättrad säkerhet och regelefterlevnad för arbetsflöden för dataöverföringar. |
 
 {style="table-layout:auto"}
