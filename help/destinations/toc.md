@@ -24,7 +24,7 @@ ht-degree: 2%
    * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
    * [Målgruppens livscykel på direktuppspelningsmål](./how-destinations-work/audience-lifecycle-streaming-destinations.md)
 * API-självstudier {#api}
-   * [Aktivera data till filbaserade mål med API:t för Flow Service ](/help/destinations/api/activate-segments-file-based-destinations.md)
+   * [Aktivera data till filbaserade mål med API:t för Flow Service &#x200B;](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
    * [Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
