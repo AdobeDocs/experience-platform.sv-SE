@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform september 2025
 description: Versionsinformationen för Adobe Experience Platform från september 2025.
 exl-id: 9c5ab487-22b8-4590-b4ea-abec0f377703
-source-git-commit: 96b9fcd8bfb4ff62eb9d4adce2e486782d918344
+source-git-commit: 1e1e91a4006a55a94c64bbc8e89ff3e2e58c4918
 workflow-type: tm+mt
 source-wordcount: '1524'
 ht-degree: 91%
@@ -17,8 +17,8 @@ ht-degree: 91%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 23 september 2025**
@@ -68,7 +68,7 @@ Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] 
 
 | Mål | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/cloud-storage/snowflake-batch.md)-anslutning | En ny [!DNL Snowflake Batch]-anslutning är nu tillgänglig som ett alternativ till strömningsanslutning för specifika användningsfall. |
+| [!BADGE Beta]{type=Informative} [[!DNL Snowflake Batch]](../../destinations/catalog/warehouses/snowflake-batch.md)-anslutning | En ny [!DNL Snowflake Batch]-anslutning är nu tillgänglig som ett alternativ till strömningsanslutning för specifika användningsfall. |
 | Stöd för [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)-kryptering | Nu kan du bifoga RSA-formaterade offentliga nycklar för att kryptera dina exporterade filer, vilket ger dig samma säkerhetsnivå som andra molnlagringsplatser tillhandahåller för din känsliga information. |
 | Information om förfallodatum för autentisering för [[!DNL Pinterest]](../../destinations/catalog/advertising/pinterest.md)-mål | Information om förfallotid för autentisering för [!DNL Pinterest]-destinationer visas nu direkt i Experience Platform-gränssnittet, så du kan se när din autentisering kommer att upphöra och förnya den innan den orsakar eventuella avbrott i dataflödena. Du kan övervaka förfallotiden för dina tokens från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../destinations/ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../destinations/ui/destinations-workspace.md#browse)**. |
 

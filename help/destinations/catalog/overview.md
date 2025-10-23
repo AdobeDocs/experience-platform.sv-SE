@@ -1,9 +1,9 @@
 ---
 keywords: Katalog;katalog
 title: Översikt över målkatalog
-description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
+description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 212faadcc31e064c4b74cef2f10906003ab1e781
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Översikt över målkatalog
 
-Målkatalogen innehåller en lista över tillgängliga målplattformar som kan ta emot data. Bland målplattformarna finns Adobe-lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
+Målkatalogen innehåller en lista över tillgängliga målplattformar som kan ta emot data. Dessa målplattformar omfattar Adobe lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
 
 Bläddra i katalogen för att fastställa vilka målplattformar som är bäst för era användningsfall för annonsering och personalisering, och konfigurera sedan flöden för att aktivera era målgrupper för målgrupperna.
 
@@ -27,7 +27,7 @@ Bläddra i katalogen för att fastställa vilka målplattformar som är bäst f�
 
 Du kan aktivera dina data till olika målkategorier i Adobe Experience Platform. Länkarna nedan ger mer information om varje målkategori:
 
-- [Översikt över Adobe [!UICONTROL destinations]](adobe/overview.md)
+- [Adobe [!UICONTROL destinations] - översikt](adobe/overview.md)
 - [[!UICONTROL Advertising] [!UICONTROL destinations] - översikt](advertising/overview.md)
 - [[!UICONTROL Analytics] [!UICONTROL destinations] - översikt](analytics/overview.md)
 - [[!UICONTROL Cloud storage] [!UICONTROL destinations] - översikt](cloud-storage/overview.md)

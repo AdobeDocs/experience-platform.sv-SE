@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: c024637ab73a3a1c3d2512f9879303b4e4d830a9
+source-git-commit: a4db84f5918e99b3c6dd63ff5a25063b89be2ba7
 workflow-type: tm+mt
 source-wordcount: '3484'
 ht-degree: 0%
@@ -137,7 +137,7 @@ Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter s
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=sv-SE#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -329,8 +329,8 @@ Du aktiverar till exempel en publik som heter&quot;Lojalitetsmedlemmar i Kalifor
 >   - [[!DNL RainFocus Attendee Profiles]](../../destinations/catalog/marketing-automation/rainfocus.md)
 >   - [[!DNL Salesforce Marketing Cloud] (API)](../../destinations/catalog/email-marketing/salesforce-marketing-cloud.md)
 >   - [[!DNL SAP Commerce]](../../destinations/catalog/ecommerce/sap-commerce.md)
+>   - [[!DNL Snowflake]](../../destinations/catalog/warehouses/snowflake-batch.md)
 >   - [[!DNL The Trade Desk]](../../destinations/catalog/advertising/tradedesk.md)
->   - [[!DNL Snowflake]](../../destinations/catalog/cloud-storage/snowflake.md)
 >   - [[!DNL Yahoo DataX]](../../destinations/catalog/advertising/datax.md)
 >   - [[!DNL Zendesk]](../../destinations/catalog/crm/zendesk.md)
 >   - Batchmål (filbaserade)
@@ -349,7 +349,7 @@ På sidan för dataflöden visas information om dataflödets körningar, inklusi
 När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](#segment-level-view) kan du filtrera dataflödet med följande alternativ:
 
 - **[!UICONTROL Dataflow runs with failed records]**: För den valda målgruppen listas alla dataflödeskörningar som misslyckades för aktivering med det här alternativet. Information om varför poster i ett visst dataflöde misslyckades finns på [informationssidan för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
-- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan &#x200B;](#dataflow-run-details-page) för dataflödeskörningen.
+- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan ](#dataflow-run-details-page) för dataflödeskörningen.
 - **[!UICONTROL Dataflow runs with activated records]**: För den valda målgruppen listas alla dataflödeskörningar som har poster som har aktiverats.
 
 ![Alternativknappar som visar hur du filtrerar dataflöden för målgrupper.](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)

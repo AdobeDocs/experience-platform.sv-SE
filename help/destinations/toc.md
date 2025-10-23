@@ -5,7 +5,7 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 73241750bdb310abf28cd4b1bcb4ba3ec43a6f39
+source-git-commit: 212faadcc31e064c4b74cef2f10906003ab1e781
 workflow-type: tm+mt
 source-wordcount: '1325'
 ht-degree: 2%
@@ -24,7 +24,7 @@ ht-degree: 2%
    * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
    * [Målgruppens livscykel på direktuppspelningsmål](./how-destinations-work/audience-lifecycle-streaming-destinations.md)
 * API-självstudier {#api}
-   * [Aktivera data till filbaserade mål med API:t för Flow Service &#x200B;](/help/destinations/api/activate-segments-file-based-destinations.md)
+   * [Aktivera data till filbaserade mål med API:t för Flow Service ](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
    * [Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
@@ -33,7 +33,7 @@ ht-degree: 2%
    * [Ta bort destinationskonton](./api/delete-destination-account.md)
    * [Ta bort måldataflöden](./api/delete-destination-dataflow.md)
    * [Exportera datauppsättningar](/help/destinations/api/export-datasets.md)
-   * [Sortera och filtrera API-svar för mål](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=sv-SE#use-cases)
+   * [Sortera och filtrera API-svar för mål](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
    * [Skapa en ny målanslutning](./ui/connect-destination.md)
@@ -71,7 +71,7 @@ ht-degree: 2%
       * [(Äldre) (V2) Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
       * [(Beta) Marketo Engage Person Sync-anslutning](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE)
+      * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising destinationer{#advertising}
       * [(Beta) Acxiom Audience Connection](./catalog/advertising/acxiom-audience-connection.md)
@@ -146,8 +146,6 @@ ht-degree: 2%
       * [Datallandningszon](./catalog/cloud-storage/data-landing-zone.md)
       * [Google Cloud-lagring](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
-      * [(Beta) Snowflake Streaming Connection](./catalog/cloud-storage/snowflake.md)
-      * [(Beta) Snowflake Batch-anslutning](./catalog/cloud-storage/snowflake-batch.md)
       * [IP-adress tillåtelselista för filbaserade molnlagringsmål](./catalog/cloud-storage/ip-address-allow-list.md)
    * CRM-mål {#crm}
       * [Delpunktsanslutning](./catalog/crm/hubspot.md)
@@ -237,6 +235,9 @@ ht-degree: 2%
       * [Medieanslutning](./catalog/voice/medallia-connector.md)
       * [Medietillägg](./catalog/voice/medallia.md)
       * [Tillägg för URL-inkorg](./catalog/voice/talkurl.md)
+   * Destinationer för lagerställe {#warehouse}
+      * [Snowflake Batch-anslutning](./catalog/warehouses/snowflake-batch.md)
+      * [Snowflake Streaming-anslutning](./catalog/warehouses/snowflake.md)
 * Destination SDK {#destination-sdk}
    * [Översikt](./destination-sdk/overview.md)
    * [Krav för integrering](./destination-sdk/integration-prerequisites.md)
@@ -325,4 +326,4 @@ ht-degree: 2%
       * [Självbetjäningsmall för dokumentation](./destination-sdk/docs-framework/self-service-template.md)
       * [Bästa tillvägagångssätt](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [Vanliga frågor och svar](./destinations-faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
