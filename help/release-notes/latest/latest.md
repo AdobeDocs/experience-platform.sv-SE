@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2025
 description: Versionsinformationen för Adobe Experience Platform i oktober 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7f37ba35111f6fa96d1889d74a66e32302b8ab85
+source-git-commit: 0191fc8419c696d8cd114a5eb575b8cc0a815a72
 workflow-type: tm+mt
-source-wordcount: '1068'
-ht-degree: 26%
+source-wordcount: '1159'
+ht-degree: 28%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 26%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 22 oktober 2025**
@@ -28,6 +28,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 - [Agent Orchestrator](#agent-orchestrator)
 - [Aviseringar](#alerts)
 - [Mål](#destinations)
+- [Real-Time CDP B2B Edition](#b2b)
 - [Källor](#sources)
 
 ## Agent Orchestrator {#agent-orchestrator}
@@ -84,6 +85,18 @@ Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] 
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
 
+## Real-Time CDP B2B Edition {#b2b}
+
+Real-Time CDP B2B edition har omfattande funktioner för hantering av B2B-kunddata, vilket gör det möjligt för organisationer att skapa enhetliga kundprofiler, skapa sofistikerade B2B-målgrupper och aktivera data över olika marknadsföringskanaler.
+
+**Ny eller uppdaterad funktionalitet**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Borttagning av B2B-stöd för icke-standardiserade relationer mellan B2B-enheter | Från och med januari 2026 har Real-Time CDP B2B edition inte längre stöd för **icke-standard**-relationer mellan B2B-enheter. Därför bör du uppdatera dina B2B-enheter så att de använder standardrelationerna som beskrivs i [B2B-namnutrymmen och schemaguiden](../../rtcdp/schemas/b2b.md). |
+
+{style="table-layout:auto"}
+
 ## Källor {#sources}
 
 Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
@@ -93,7 +106,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | Ändring av datauppsättning för Adobe Analytics-källa | Som en del av processen för att skapa dataflöden mellan Adobe Analytics och Experience Platform skapas en datauppsättning via katalogtjänsten. Den här datauppsättningen fungerar som en behållare för data som ska landas i. För närvarande innehåller den här processen ett DataSource-ID som hämtas från Analytics-rapportsviten, skickas till katalogtjänsten och sedan kopplas till den nya datauppsättningen. Efter ändringen är alternativet att ange ID för datakälla inte längre tillgängligt när datauppsättningar skapas. Därför kommer nya datauppsättningar som skapas av Analytics-källan inte längre att ha något associerat DataSource-ID i katalogtjänsten. Den här ändringen gäller endast för metadata och påverkar inte lagringen av data i datauppsättningen på något sätt. Det är dock viktigt att veta att det DataSource-ID som tillhandahålls av katalogtjänsten inte längre är tillgängligt i nya datauppsättningar för Adobe Analytics. Läs [Adobe Analytics källdokumentation](../../sources/connectors/adobe-applications/analytics.md) om du vill ha mer information om Adobe Analytics källanslutning. |
-| Allmän tillgänglighet för källan [!DNL Google Ads] (endast API) | [API-versionen av  [!DNL Google Ads]](../../sources/tutorials/api/create/advertising/ads.md)-källan har nu generell tillgänglighet. API-dokumentationen har uppdaterats för att återspegla att den senaste versionen nu är `v21`, och Experience Platform stöder alla versioner v19 och senare. [Gränssnittsversionen &#x200B;](../../sources/tutorials/ui/create/advertising/ads.md) finns kvar i betaversionen och stöder endast engångsbruk. Använd API-vägen om du vill använda inkrementell datainhämtning. |
+| Allmän tillgänglighet för källan [!DNL Google Ads] (endast API) | [API-versionen av  [!DNL Google Ads]](../../sources/tutorials/api/create/advertising/ads.md)-källan har nu generell tillgänglighet. API-dokumentationen har uppdaterats för att återspegla att den senaste versionen nu är `v21`, och Experience Platform stöder alla versioner v19 och senare. [Gränssnittsversionen ](../../sources/tutorials/ui/create/advertising/ads.md) finns kvar i betaversionen och stöder endast engångsbruk. Använd API-vägen om du vill använda inkrementell datainhämtning. |
 | Stöd för [!DNL Azure Event Hubs] virtuella nätverk | Adobe har nu explicit stöd för virtuella nätverksanslutningar till [[!DNL Azure Event Hubs]](../../sources/connectors/cloud-storage/eventhub.md), vilket aktiverar dataöverföring över privata nätverk i stället för offentliga nätverk. Kunderna kan tillåtslista Experience Platform VNet för att dirigera Event Hubs-trafik privat via Azure privata stamnät, vilket ger förbättrad säkerhet och regelefterlevnad för arbetsflöden för dataöverföringar. |
 
 {style="table-layout:auto"}
