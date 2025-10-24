@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform oktober 2025
 description: Versionsinformationen för Adobe Experience Platform i oktober 2025.
-source-git-commit: 57cb9f5e57c83576a125ec2de5eb3e4526d5b572
+source-git-commit: 7f37ba35111f6fa96d1889d74a66e32302b8ab85
 workflow-type: tm+mt
-source-wordcount: '1004'
-ht-degree: 28%
+source-wordcount: '1068'
+ht-degree: 26%
 
 ---
 
@@ -16,8 +16,8 @@ ht-degree: 28%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 22 oktober 2025**
@@ -77,15 +77,11 @@ Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] 
 | [Flera nya mål som stöder övervakning på målgruppsnivå](../../dataflows/ui/monitor-destinations.md#audience-level-view) | Följande mål har nu stöd för övervakning på målgruppsnivå: <ul><li>[!DNL Airship Tags]</li><li>(API) [!DNL Salesforce Marketing Cloud]</li><li>[!DNL Marketo Engage]</li><li>[!DNL Microsoft Bing]</li><li>(V1) [!DNL Pega CDH Realtime Audience]</li><li>(V2) [!DNL Pega CDH Realtime Audience]</li><li>Kontoengagemang för [!DNL Salesforce Marketing Cloud]</li><li>[!DNL The Trade Desk]</li></ul> |
 | Åtgärda säkerhetsutkast för datauppsättningsexport | En korrigering har implementerats för datauppsättningens exportskyddsutkast. Tidigare behandlades vissa datauppsättningar som innehöll en tidsstämpelkolumn men _inte_ baserat på XDM Experience Events-schemat felaktigt som Experience Events-datauppsättningar, vilket begränsar exporten till ett 365-dagars uppslagsfönster. Det dokumenterade 365-dagars arbetsskyddsutkastet gäller nu enbart för Experience Events-datauppsättningar. Datamängder som använder något annat schema än XDM Experience Events-schemat styrs nu av 10 miljarder poster som skyddsprotokoll. Vissa kunder kan se ett ökat exportnummer för datauppsättningar som felaktigt föll under 365-dagars uppslagsfönstret. På så sätt kan du exportera datauppsättningar för prediktiva arbetsflöden som har ett långt uppslagsfönster. Mer information finns i [DATAuppsättningens exportskyddsutkast](../../destinations/guardrails.md#dataset-exports). |
 | Förbättrad rapportering på målgruppsnivå för företagsdestinationer | Efter den här versionen kommer kunderna att se mer korrekta målgruppsrapporteringsnummer som endast innehåller målgrupper som är relevanta för det valda målet. Denna övervakningsjustering säkerställer att rapporteringen endast omfattar målgrupper som kartlagts i dataflödet, vilket ger tydligare insikter i den faktiska dataaktiveringen. Detta påverkar inte mängden data som aktiveras - det är endast en övervakningsförbättring som förbättrar rapporteringsnoggrannheten. |
+| UI-nedtonade dataflöden på grund av åtkomstetiketter | För att åtgärda problemet där vissa användare såg tomma sidor eftersom måldataflöden som de inte hade tillgång till var helt dolda, visar nu gränssnittet dessa begränsade dataflöden i ett nedtonat läge i stället för att utelämna dem helt. Mer information finns i dokumentationen om [hur du använder åtkomstetiketter för att hantera användaråtkomst till måldataflöden](../../access-control/abac/apply-access-labels-destinations.md#important-callouts-and-items-to-know). |
 
 {style="table-layout:auto"}
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
-
-<!--
-| [!DNL Snowflake Batch] (Limited availability) | Create a live [!DNL Snowflake] data share to receive daily audience updates directly as shared tables into your account. This integration is currently available for customer organizations provisioned in the VA7 region. |
-| [!DNL Snowflake Streaming] (Limited availability) | Create a live [!DNL Snowflake] data share to receive streaming audience updates directly as shared tables into your account. This integration is currently available for customer organizations provisioned in the VA7 region. |
--->
 
 ## Källor {#sources}
 
@@ -96,7 +92,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | Ändring av datauppsättning för Adobe Analytics-källa | Som en del av processen för att skapa dataflöden mellan Adobe Analytics och Experience Platform skapas en datauppsättning via katalogtjänsten. Den här datauppsättningen fungerar som en behållare för data som ska landas i. För närvarande innehåller den här processen ett DataSource-ID som hämtas från Analytics-rapportsviten, skickas till katalogtjänsten och sedan kopplas till den nya datauppsättningen. Efter ändringen är alternativet att ange ID för datakälla inte längre tillgängligt när datauppsättningar skapas. Därför kommer nya datauppsättningar som skapas av Analytics-källan inte längre att ha något associerat DataSource-ID i katalogtjänsten. Den här ändringen gäller endast för metadata och påverkar inte lagringen av data i datauppsättningen på något sätt. Det är dock viktigt att veta att det DataSource-ID som tillhandahålls av katalogtjänsten inte längre är tillgängligt i nya datauppsättningar för Adobe Analytics. Läs [Adobe Analytics källdokumentation](../../sources/connectors/adobe-applications/analytics.md) om du vill ha mer information om Adobe Analytics källanslutning. |
-| Allmän tillgänglighet för källan [!DNL Google Ads] (endast API) | [API-versionen av  [!DNL Google Ads]](../../sources/tutorials/api/create/advertising/ads.md)-källan har nu generell tillgänglighet. API-dokumentationen har uppdaterats för att återspegla att den senaste versionen nu är `v21`, och Experience Platform stöder alla versioner v19 och senare. [Gränssnittsversionen &#x200B;](../../sources/tutorials/ui/create/advertising/ads.md) finns kvar i betaversionen och stöder endast engångsbruk. Använd API-vägen om du vill använda inkrementell datainhämtning. |
+| Allmän tillgänglighet för källan [!DNL Google Ads] (endast API) | [API-versionen av  [!DNL Google Ads]](../../sources/tutorials/api/create/advertising/ads.md)-källan har nu generell tillgänglighet. API-dokumentationen har uppdaterats för att återspegla att den senaste versionen nu är `v21`, och Experience Platform stöder alla versioner v19 och senare. [Gränssnittsversionen ](../../sources/tutorials/ui/create/advertising/ads.md) finns kvar i betaversionen och stöder endast engångsbruk. Använd API-vägen om du vill använda inkrementell datainhämtning. |
 | Stöd för [!DNL Azure Event Hubs] virtuella nätverk | Adobe har nu explicit stöd för virtuella nätverksanslutningar till [[!DNL Azure Event Hubs]](../../sources/connectors/cloud-storage/eventhub.md), vilket aktiverar dataöverföring över privata nätverk i stället för offentliga nätverk. Kunderna kan tillåtslista Experience Platform VNet för att dirigera Event Hubs-trafik privat via Azure privata stamnät, vilket ger förbättrad säkerhet och regelefterlevnad för arbetsflöden för dataöverföringar. |
 
 {style="table-layout:auto"}

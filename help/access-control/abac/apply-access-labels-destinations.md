@@ -1,18 +1,18 @@
 ---
-title: Använd åtkomstetiketter för att hantera användaråtkomst till måldataflöden
+title: Använd åtkomstetiketter för att hantera användaråtkomst till destinationsdataflöden
 description: Lär dig hur du använder åtkomstetiketter för att hantera användaråtkomst till måldataflöden så att bara en delmängd av användarna i organisationen får åtkomst till specifika måldataflöden.
 role: Developer, Admin, User
 exl-id: 85944720-8551-491c-8991-dd9668beb0ca
-source-git-commit: e1b8ca463146d300b48257304778a82aa745df73
+source-git-commit: de71e9e7825ab9a3eaf1e06d03046636406493db
 workflow-type: tm+mt
-source-wordcount: '977'
-ht-degree: 0%
+source-wordcount: '1019'
+ht-degree: 4%
 
 ---
 
-# Använd åtkomstetiketter för att hantera användaråtkomst till måldataflöden
+# Använd åtkomstetiketter för att hantera användaråtkomst till destinationsdataflöden
 
-Som en del av funktionen [[!UICONTROL attribute-based access control]](overview.md) i Real-Time CDP kan du nu använda åtkomstetiketter i [måldataflöden](../../dataflows/ui/monitor-destinations.md). På så sätt kan du se till att bara en delmängd av användarna i organisationen får tillgång till specifika måldataflöden.
+Som en del av funktionen [[!UICONTROL attribute-based access control]](overview.md) i Real-Time CDP kan du nu tillämpa åtkomstetiketter i [destinationsdataflöden](../../dataflows/ui/monitor-destinations.md). På så sätt kan du se till att bara en delmängd av användarna i organisationen får tillgång till specifika måldataflöden.
 
 När du lägger till en åtkomstetikett till ett visst mål, är det bara användare som har tillgång till en roll som har den etiketten tilldelad som kan se och redigera måldataflödet. Om ett måldataflöde inte har någon etikett visas det för alla användare som tillhör din organisation.
 
@@ -73,11 +73,12 @@ Du kan lägga till standardetiketter och anpassade etiketter i måldataflöden. 
 
 ## Viktiga hänvisningar och objekt att känna till {#important-callouts}
 
-Åtkomstetiketter kan för närvarande bara användas på befintliga dataflöden. Det innebär att du måste skapa ett dataflöde för ett mål innan du kan använda åtkomstetiketter.
+* Åtkomstetiketter kan för närvarande bara användas på befintliga dataflöden. Det innebär att du måste skapa ett dataflöde för ett mål innan du kan använda åtkomstetiketter.
+* Du kan inte använda en åtkomstetikett för ett måldataflöde om du inte har tillgång till den etiketten.
+* När du lägger till flera etiketter i ett måldataflöde måste användare som ska kunna visa och redigera dataflödet läggas till i en roll med minst samma kombination av etiketter. Om du till exempel använder etiketterna C1, I2 och en annan anpassad etikett på ett måldataflöde, kan bara användare som har lagts till i roller med åtkomst till kombinationen av dessa tre etiketter visa och redigera det här specifika måldataflödet.
+* Måldatafält som en användare inte har åtkomst till på grund av åtkomstetikettkonfigurationer kan visas i gränssnittet i ett nedtonat läge. Användarna kan inte utföra några åtgärder på dessa dataflöden.
 
-Du kan inte använda en åtkomstetikett för ett måldataflöde om du inte har tillgång till den etiketten.
-
-När du lägger till flera etiketter i ett måldataflöde måste användare som ska kunna visa och redigera dataflödet läggas till i en roll med minst samma kombination av etiketter. Om du till exempel använder etiketterna C1, I2 och en annan anpassad etikett på ett måldataflöde, kan bara användare som har lagts till i roller med åtkomst till kombinationen av dessa tre etiketter visa och redigera det här specifika måldataflödet.
+![Målen bläddrar i katalogen med åtgärdsfönstret nedtonat.](../images/olac/destinations-greyed-edit.png)
 
 >[!NOTE]
 >

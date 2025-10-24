@@ -2,7 +2,7 @@
 title: Länkningslogik för identitetstjänst
 description: Läs om hur identitetstjänsten länkar olika identiteter för att skapa en heltäckande bild av en kund.
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 5c05f2dbcf9088b95eb8d35e455912219e87662f
+source-git-commit: bbfc1d749fbe0e74489a48e0c962d9f51d19ccde
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 0%
@@ -23,10 +23,6 @@ Det finns två typer av identiteter som länkas:
 * **Profilposter**: Dessa identiteter kommer vanligtvis från CRM-system.
 * **Upplevelsehändelser**: Dessa identiteter kommer vanligtvis från WebSDK-implementeringen eller Adobe Analytics-källan.
 
->[!IMPORTANT]
->
->Identitetstjänsten är skiftlägeskänslig. **abc<span>@gmail.com** och **ABC<span>@GMAIL.COM** behandlas som två separata e-postidentiteter.
-
 ## Semantisk betydelse för att skapa länkar
 
 En identitet representerar en verklighetstrogen enhet. Om det finns en länk mellan två identiteter betyder det att de två identiteterna är kopplade till varandra. Här följer några exempel som illustrerar detta koncept:
@@ -44,6 +40,7 @@ En identitet består av ett identitetsnamnutrymme och ett identitetsvärde.
 
 * Ett identitetsnamnutrymme är kontexten för ett givet identitetsvärde. Vanliga exempel på identitetsnamnutrymmen är CRMID, Email och Phone.
 * Ett identitetsvärde är den sträng som representerar en faktisk enhet. Till exempel:&quot;julien<span>@acme.com&quot; kan vara ett identitetsvärde för ett e-postnamnområde och 555-555-1234 kan vara ett motsvarande identitetsvärde för ett Phone-namnområde.
+* Identitetstjänsten är skiftlägeskänslig. **julien<span>@gmail.com** och **JULIEN<span>@GMAIL.COM** behandlas som två separata e-postidentiteter.
 
 >[!TIP]
 >
