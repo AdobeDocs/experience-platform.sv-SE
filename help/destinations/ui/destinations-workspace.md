@@ -20,11 +20,11 @@ Arbetsytan [!UICONTROL Destinations] består av fem avsnitt, [!UICONTROL Overvie
 
 ## [!UICONTROL Overview] {#overview}
 
-Fliken **[!UICONTROL Overview]** visar kontrollpanelen [!UICONTROL Destinations] med nyckelmått för organisationens måldata. Mer information finns i [[!UICONTROL Destinations]-handboken för instrumentpanelen ](../../dashboards/guides/destinations.md).
+Fliken **[!UICONTROL Overview]** visar kontrollpanelen [!UICONTROL Destinations] med nyckelmått för organisationens måldata. Mer information finns i [[!UICONTROL Destinations]-handboken för instrumentpanelen &#x200B;](../../dashboards/guides/destinations.md).
 
 >[!NOTE]
 >
->Om din organisation är ny för Experience Platform och ännu inte har aktiva mål visas inte kontrollpanelen [!UICONTROL Destinations] och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [[!UICONTROL Catalog] ](#catalog).
+>Om din organisation är ny för Experience Platform och ännu inte har aktiva mål visas inte kontrollpanelen [!UICONTROL Destinations] och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [[!UICONTROL Catalog] &#x200B;](#catalog).
 
 ![Fliken Översikt över kontrollpanelen Destinationer.](../../dashboards/images/destinations/dashboard-overview.png)
 
@@ -83,11 +83,11 @@ Destinationer med växeln **[!UICONTROL Enabled/Disabled]** aktiverad anger mål
 > ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
 > 
 > * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Aktivera målgrupper](/help/images/icons/data-add.png) **[!UICONTROL Activate audiences]** för att exportera målgrupper eller datauppsättningar till det målet.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera målkontroll ](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**för att redigera befintliga målanslutningar. Mer information finns i självstudiekursen [Redigera mål](/help/destinations/ui/edit-destination.md).
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera målkontroll &#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**&#x200B;för att redigera befintliga målanslutningar. Mer information finns i självstudiekursen [Redigera mål](/help/destinations/ui/edit-destination.md).
 > * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera marknadsföringsåtgärder](/help/images/icons/edit-marketing-actions.svg) **[!UICONTROL Edit marketing actions]** för att [ändra marknadsföringsåtgärderna](/help/destinations/ui/edit-activation.md#edit-marketing-actions) för det valda målet.
 > * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Ta bort](/help/images/icons/delete.png) **[!UICONTROL Delete]** för att [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
 > * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Visa i övervakningskontroll](/help/images/icons/monitoring.png) **[!UICONTROL View in monitoring]** för att visa aktiveringsinformation för det här målet på kontrollpanelen [för övervakning](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Prenumerera på aviseringar ](/help/images/icons/alert-add.png) **[!UICONTROL Subscribe to alerts]** för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på destinationsvarningar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesvarningar.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Prenumerera på aviseringar &#x200B;](/help/images/icons/alert-add.png) **[!UICONTROL Subscribe to alerts]** för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på destinationsvarningar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesvarningar.
 > * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Hantera taggar](/help/images/icons/manage-tags.png) **[!UICONTROL Manage tags]** för att lägga till eller ta bort taggar från ett mål. Mer information om hur du använder taggar finns i avsnittet [Hantera måltaggar](#manage-tags).
 
 Se tabellen nedan för all information som anges för varje mål på fliken [!UICONTROL Browse].
@@ -99,7 +99,7 @@ Se tabellen nedan för all information som anges för varje mål på fliken [!UI
 | [!UICONTROL Last Dataflow Run Status] | Status för den senaste dataflödeskörningen. Mer information om dataflödeskörningar finns i [Visa målinformation](destination-details-page.md). |
 | [!UICONTROL Last Dataflow Run Date] | Tid och datum då den senaste dataflödeskörningen inträffade. Markera kolumnrubriken för att komma åt sorteringsalternativen (**[!UICONTROL Sort Ascending]**, **[!UICONTROL Sort Descending]**). Mer information om dataflödeskörningar finns i [Visa målinformation](destination-details-page.md). |
 | [!UICONTROL Destination] | Målplattformen som du valde för aktiveringsflödet. |
-| [!UICONTROL Account Expiration Date] | Det datum då anslutningsauktoriseringen till det här målet upphör. <br> En varningsikon ![Varning! Ikonen ](/help/images/icons/alert-expiration.png) visas före förfallodatumet så att du får ett meddelande om att anslutningen kommer att upphöra och kan behöva förnyas. Dataflöden till utgångna anslutningar stoppas och du måste autentisera igen för att kunna återuppta aktiveringsarbetsflödena. <br>**Viktigt**: Den här kolumnen är för närvarande bara tillgänglig för [Pinterest](../catalog/advertising/pinterest.md)-, [LinkedIn](../catalog/social/linkedin.md)- och [LinkedIn Matched Audiences](../catalog/social/linkedin-b2b.md) -anslutningar. <br> ![Exempel på förfallovarning för konto på fliken Bläddra](../assets/ui/workspace/account-expiration-browse.png){width="100" zoomable="yes" alt="Screenshot showing the account expiration warning icon and expiration date in the Browse tab."} |
+| [!UICONTROL Account Expiration Date] | Det datum då anslutningsauktoriseringen till det här målet upphör. <br> En varningsikon ![Varning! Ikonen &#x200B;](/help/images/icons/alert-expiration.png) visas före förfallodatumet så att du får ett meddelande om att anslutningen kommer att upphöra och kan behöva förnyas. Dataflöden till utgångna anslutningar stoppas och du måste autentisera igen för att kunna återuppta aktiveringsarbetsflödena. <br>**Viktigt**: Den här kolumnen är för närvarande bara tillgänglig för [Pinterest](../catalog/advertising/pinterest.md)-, [LinkedIn](../catalog/social/linkedin.md)- och [LinkedIn Matched Audiences](../catalog/social/linkedin-b2b.md) -anslutningar. <br> ![Exempel på förfallovarning för konto på fliken Bläddra](../assets/ui/workspace/account-expiration-browse.png){width="100" zoomable="yes" alt="Screenshot showing the account expiration warning icon and expiration date in the Browse tab."} |
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
 | [!UICONTROL Activation Data] | Anger antalet målgrupper som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade målgrupperna. Mer information om aktiverade målgrupper finns på sidan [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) i målinformationssidan. |
 | [!UICONTROL Created] | Datum och tid då aktiveringsflödet till målet skapades. Välj uppåt-/nedåtpilen för att sortera aktiveringsflödena efter det senaste först eller det äldsta först. |
@@ -183,9 +183,9 @@ Fliken **[!UICONTROL Accounts]** visar information om anslutningar som du har up
 
 >[!TIP]
 >
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Aktivera kontroll ](/help/images/icons/data-add.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**för att exportera målgrupper eller datauppsättningar till det målet.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Redigera information ](/help/images/icons/edit.png)**[!UICONTROL Edit details]**för att [uppdatera](update-accounts.md) informationen för ett befintligt målkonto.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Ta bort ](/help/images/icons/delete.png)**[!UICONTROL Delete]**för att [ta bort](delete-destination-account.md) ett befintligt målkonto.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Aktivera kontroll &#x200B;](/help/images/icons/data-add.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**&#x200B;för att exportera målgrupper eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Redigera information &#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit details]**&#x200B;för att [uppdatera](update-accounts.md) informationen för ett befintligt målkonto.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Ta bort &#x200B;](/help/images/icons/delete.png)**[!UICONTROL Delete]**&#x200B;för att [ta bort](delete-destination-account.md) ett befintligt målkonto.
 
 ![Fliken Konton](../assets/ui/workspace/accounts-tab.png)
 
