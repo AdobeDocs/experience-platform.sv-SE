@@ -1,9 +1,10 @@
 ---
 title: Snowflake Batch-anslutning
 description: Skapa en live-Snowflake-datadelning för att få dagliga målgruppsuppdateringar direkt som delade tabeller till ditt konto.
+last-substantial-update: 2025-10-23T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 59df2c6a0fb5d9dbdd10b52d82fb6b94f5083c3a
+source-git-commit: c429ee227bd93455f541a32266bfbef9ddeaae06
 workflow-type: tm+mt
 source-wordcount: '1659'
 ht-degree: 0%
@@ -175,7 +176,7 @@ Du kan exportera identiteter och profilattribut till det här målet.
 
 ![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
 
-Du kan använda kontrollen [&#x200B; för &#x200B;](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
