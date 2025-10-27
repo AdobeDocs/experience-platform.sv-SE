@@ -2,10 +2,10 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: a14d94a87eb433dd0bb38e5bf3c9c3a04be9a5c6
+source-git-commit: 1f3cf3cc57342a23dae2d69c883b5768ec2bba57
 workflow-type: tm+mt
-source-wordcount: '2338'
-ht-degree: 1%
+source-wordcount: '2957'
+ht-degree: 0%
 
 ---
 
@@ -159,7 +159,7 @@ Använd funktionen för pseudonyma profiler för att automatiskt ta bort data so
 
 ### Användargränssnitt för datauppsättning - Upplev kvarhållande av händelsedatauppsättning {#data-retention}
 
-Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen [&#128279;](total-data-volume.md) i användningsstatistik för licenser.  Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
+Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen [ i användningsstatistik för licenser. ](total-data-volume.md) Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
 
 ### Utgångsdatum för profilupplevelsehändelser {#event-expirations}
 
@@ -175,3 +175,99 @@ Nedan följer en lista över rekommenderade metoder som du kan följa för att s
 * Konfigurera [Händelseförfallodatum för upplevelse](../../catalog/datasets/user-guide.md#data-retention-policy) och [pseudonyma profildata](../../profile/pseudonymous-profiles.md) för högfrekventa data som webbdata.
 * Konfigurera [TTL-kvarhållningsprinciper (Time-to-Live) för Experience Event-datamängder](../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md) i datasjön för att automatiskt ta bort föråldrade poster och optimera lagringsanvändningen i enlighet med licensrättigheterna.
 * Kontrollera [Profildispositionsrapporter](#profile-store-composition-reports) regelbundet för att förstå din profilarkivkomposition. På så sätt kan ni förstå vilka datakällor som bidrar mest till er licensanvändning.
+
+## Användningsexempel: Efterlevnad av licensanvändning
+
+### Varför ska man tänka på det här användningsexemplet?
+
+Genom att se till att du följer **licensanvändningsvillkoren** för både data Lake- och Profile-lagring, kan du tryggt förhindra överage, optimera kostnader och anpassa dina datalagringspolicyer efter dina affärskrav.
+
+### Förutsättningar och planering
+
+Tänk på följande när du planerar:
+
+* **Åtkomst och behörigheter**:
+   * Kontrollera att du har behörighet **Hantera datauppsättningar** att använda Experience Event TTL.
+   * Kontrollera att du har **Hantera profilinställningar** för att använda pseudonym profil-TTL.
+* **Förstå datalagringspolicy**:
+   * Organisationspolicyer för datalagring och efterlevnad
+   * Affärsbehov med fönster för dataanalys och segmenteringssökning
+
+### Gränssnittsfunktioner, Experience Platform-komponenter och Experience Cloud-produkter som du kommer att använda
+
+För att implementera det här användningsexemplet måste du använda flera områden i Adobe Experience Platform. Se till att du har de nödvändiga attributbaserade behörigheterna för åtkomstkontroll i alla dessa områden, eller be systemadministratören att ge dem.
+
+* Kontrollpanel för licensanvändning - Visa din aktuella tillståndsanvändning på sandlådenivå.
+* Hantering av datauppsättningar - Övervaka och hantera lagringsprinciper på datauppsättningsnivå.
+* Målgrupper (kundprofil i realtid) - Se till att segmenteringsreglerna ser bakåt-fönstret och anpassar sig till datalagringsfönster.
+* Övervakning och aviseringar - Spåra uppdateringar och få insikter om kvarhållningsåtgärder för datauppsättningar.
+
+### Så här uppnår du användningsfallet: stegvisa instruktioner
+
+Läs igenom avsnitten nedan, som innehåller länkar till ytterligare dokumentation, för att slutföra varje steg i översikten ovan.
+
+**Kontrollera din aktuella licensanvändning**
+
+Navigera först till kontrollpanelen för **licensanvändning** och granska din tillståndsanvändning på sandlådenivå.
+
+>[!BEGINTABS]
+
+>[!TAB Produktionssandlåda]
+
+Använd gränssnittet [!UICONTROL Metrics] för att visa dina användningsvärden för licenser. Gränssnittet visar information för din produktionssandlåda som standard.
+
+![Kontrollpanelens användargränssnitt för licensanvändning visar dina användningsvärden för licenser för en produktionssandlåda.](../images/data-management/prod-sandbox.png)
+
+>[!TAB Utvecklingssandlåda]
+
+Välj [!UICONTROL Development] om du vill visa användningsstatistik för licenser för dina utvecklingssandlådor.
+
+![Gränssnittet för kontrollpanelen för licensanvändning visar dina användningsvärden för licenser för utvecklingssandlådor.](../images/data-management/dev-sandbox.png)
+
+>[!ENDTABS]
+
+Mer information finns i dokumentationen om [med kontrollpanelen för licensanvändning](../../dashboards/guides/license-usage.md).
+
+**Analysera lagringsanvändning på datauppsättningsnivå**
+
+Använd **datauppsättningens bläddringsvy** för att granska dina användningsvärden för datauppsättningar för både datasjön och kundprofil i realtid. Markera kolumnrubrikerna för antingen **[!UICONTROL Data Lake Storage]** eller **[!UICONTROL Profile Storage]** och välj sedan **[!UICONTROL Sort Descending]** på popup-panelen.
+
+>[!BEGINTABS]
+
+>[!TAB Data Lake Storage]
+
+Dina datauppsättningar i datasjön sorteras efter lagringsstorlek. Använd den här funktionen för att identifiera de största konsumenterna av lagringsutrymme i sjön med data.
+
+![Datauppsättningarna i datasjön har sorterats från den största till den minsta.](../images/data-management/data-lake-storage.png)
+
+>[!TAB Profillagring]
+
+Dina datauppsättningar i profilen sorteras efter lagringsstorlek. Använd den här funktionen för att identifiera de största konsumenterna av lagringsutrymme i profilen.
+
+![Datauppsättningarna i profilen har sorterats från störst till minsta.](../images/data-management/profile-storage.png)
+
+>[!ENDTABS]
+
+**Utvärdera och konfigurera regel för kvarhållande**
+
+Bestäm sedan om era datauppsättningar har rätt lagringspolicyer baserat på licensbegränsningar och affärskrav för analys och segmentering. Om du vill visa en datamängds bevarandeprincip markerar du ellipserna (`...`) bredvid datamängden och väljer sedan **[!UICONTROL Set data retention policy]**.
+
+![Popup-panelen med datauppsättningsalternativ, inklusive Ange datalagringsprincip.](../images/data-management/set-retention-policy.png)
+
+Gränssnittet *[!UICONTROL Set dataset retention]* visas. Använd det här gränssnittet för att konfigurera en lagringsprincip för datauppsättningen. Du kan också använda den för att visa hur mycket lagringsutrymme som datauppsättningen förbrukar, antingen i datasjön eller i profil.
+
+![Gränssnittet för att ange datamängdsbevarande.](../images/data-management/dataset-retention.png)
+
+Du kan analysera den kvarhållna effekten av datauppsättningen ytterligare med hjälp av effektprognosen. Välj **[!UICONTROL View ExperienceEvent data distribution]** om du vill visa ett diagram som visar kvarhållningsfönstret och den totala procentandelen lagringsutrymme som har angetts till förfallodatum.
+
+När du är klar väljer du **[!UICONTROL Save]**
+
+![Påverkansprognosen inifrån datamängdens lagringsgränssnitt.](../images/data-management/impact-forecaster.png)
+
+**Verifiera kvarhållningsändringar**
+
+När du har tillämpat dina bevarandeprinciper kan du använda följande verktyg för att validera dina ändringar:
+
+* [Användningsstatistik för datauppsättning](../../catalog/datasets/user-guide.md#enhanced-visibility-of-retention-periods-and-storage-metrics) i datauppsättningens bläddringsvy.
+* Kontrollpanelen [övervakar](../../dataflows/ui/monitor.md) för att visa och analysera hur kvarhållandet påverkas.
+* Kontrollpanelen [för licensanvändning](../../dashboards/guides/license-usage.md) för att visa dagliga ögonblicksbilder, prediktiva trender och insikter på sandlådenivå.
