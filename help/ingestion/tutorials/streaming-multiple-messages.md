@@ -5,9 +5,9 @@ title: Skicka flera meddelanden i en enda HTTP-begäran
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till Adobe Experience Platform inom en enda HTTP-begäran med direktuppspelningsinmatning.
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 31c00e69dd92f7c3232e09f02da36c60cd8cf486
 workflow-type: tm+mt
-source-wordcount: '1484'
+source-wordcount: '1483'
 ht-degree: 1%
 
 ---
@@ -68,7 +68,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -78,7 +78,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -127,7 +127,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -137,7 +137,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -244,7 +244,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -254,7 +254,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -303,7 +303,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -314,7 +314,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "invalidIMSOrg@AdobeOrg",
         "datasetId": "{DATASET_ID}",
@@ -324,7 +324,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -373,7 +373,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
       "header": {
         "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-          "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+          "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
         },
         "imsOrgId": "{ORG_ID}",
         "datasetId": "{DATASET_ID}",
@@ -383,7 +383,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
@@ -498,7 +498,7 @@ Det andra meddelandet misslyckades eftersom det saknade meddelandetext. Samlings
         "xdmMeta": {
           "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;{SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
           }
         },
         "xdmEntity": {
