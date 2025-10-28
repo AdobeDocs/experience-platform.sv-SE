@@ -4,7 +4,7 @@ title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgrans
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d1eb9191c74add1ab21cd268327bab9a3255d182
 workflow-type: tm+mt
 source-wordcount: '2904'
 ht-degree: 0%
@@ -37,10 +37,10 @@ Om du vill veta mer om profiler och deras roll i Experience Platform börjar du 
 
 ## Hur exempeljobbet utlöses
 
-När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Experience Platform] lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
+När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Experience Platform] lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 3 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
 
-* För **direktuppspelningsarbetsflöden** görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller inte. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
-* Om tröskelvärdet på 5 % ökning eller minskning uppnås, kommer ett jobb att köras för att uppdatera antalet för **batchinmatning** inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
+* För **direktuppspelningsarbetsflöden** görs en timkontroll för att avgöra om tröskelvärdet på 3 % har uppnåtts eller inte. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
+* Om tröskelvärdet på 3 % ökning eller minskning är uppfyllt, körs ett jobb för att uppdatera antalet för **batchinmatning** inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 
 Profilantal och profiler efter namnområdesmått är också tillgängliga i avsnittet [!UICONTROL Profiles] i Experience Platform-gränssnittet. Mer information om hur du får åtkomst till profildata via användargränssnittet finns i [[!DNL Profile] gränssnittshandboken](../ui/user-guide.md).
 
