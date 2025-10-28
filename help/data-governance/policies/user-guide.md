@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i Experience Platform användargränssnitt.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 364a92bde1a1629d2811e7ff16bd6a4fb5287249
 workflow-type: tm+mt
-source-wordcount: '1705'
+source-wordcount: '2380'
 ht-degree: 0%
 
 ---
@@ -55,11 +55,9 @@ Om du vill skapa en ny anpassad dataanvändningsprincip väljer du **[!UICONTROL
 
 ![](../images/policies/create-policy-button.png)
 
-Beroende på om du är en del av betatestningspolicyn för samtycke, händer något av följande:
+Dialogrutan [!UICONTROL Choose type of policy] visas. Välj antingen en [medgivandeprincip](#consent-policy) eller en [datastyrningsprincip](#create-governance-policy).
 
-* Om du inte är en del av betaversionen kommer du omedelbart till arbetsflödet för [att skapa en datastyrningsprincip](#create-governance-policy).
-* Om du är en del av betaversionen finns det ett extra alternativ i en dialogruta för att [skapa en samtyckesprincip](#consent-policy).
-  ![](../images/policies/choose-policy-type.png)
+![Dialogrutan Välj typ av princip.](../images/policies/choose-policy-type.png)
 
 ### Använd datastyrning och godkännandeprinciper tillsammans {#combine-policies}
 
@@ -104,7 +102,7 @@ Fliken **[!UICONTROL Browse]** visas igen, där den nya principen visas med stat
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_instructions"
 >title="Instruktioner"
->abstract="<ul><li>Se till att du samlar in inställningsdata i dina fackliga scheman via OneTrust-källkopplingen eller XDM-standardschemat för samtycke.</li><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=sv-SE">Profiler</a> i den vänstra navigeringen och välj sedan <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=sv-SE#create-governance-policy">Skapa profil</a>.</li><li>Beskriv villkoren eller åtgärderna som kommer att utlösa principkontrollen under avsnittet <b>If</b>.</li><li>Under avsnittet <b>Sedan</b> anger du de medgivandeattribut som måste finnas för en profil som ska inkluderas i den åtgärd som utlöste principen.</li><li>Välj <b>Spara</b> för att skapa profilen. Om du vill aktivera principen väljer du alternativet <b>Status</b> i den högra listen.</li><li>Experience Platform tillämpar automatiskt de regler för samtycke du har aktiverat när du aktiverar segment till destinationer och ger information om hur varje policy påverkar målgruppens storlek.</li><li>Mer hjälp om den här funktionen finns i guiden <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=sv-SE#consent-policy">Skapa medgivandeprinciper</a> för Experience League.</li></ul>"
+>abstract="<ul><li>Se till att du samlar in inställningsdata i dina fackliga scheman via OneTrust-källkopplingen eller XDM-standardschemat för samtycke.</li><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen och välj sedan <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Skapa profil</a>.</li><li>Beskriv villkoren eller åtgärderna som kommer att utlösa principkontrollen under avsnittet <b>If</b>.</li><li>Under avsnittet <b>Sedan</b> anger du de medgivandeattribut som måste finnas för en profil som ska inkluderas i den åtgärd som utlöste principen.</li><li>Välj <b>Spara</b> för att skapa profilen. Om du vill aktivera principen väljer du alternativet <b>Status</b> i den högra listen.</li><li>Experience Platform tillämpar automatiskt de regler för samtycke du har aktiverat när du aktiverar segment till destinationer och ger information om hur varje policy påverkar målgruppens storlek.</li><li>Mer hjälp om den här funktionen finns i guiden <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#consent-policy">Skapa medgivandeprinciper</a> för Experience League.</li></ul>"
 
 >[!IMPORTANT]
 >
@@ -121,12 +119,16 @@ Samtyckesprinciper består av två logiska komponenter:
 * **[!UICONTROL If]**: Villkoret som utlöser principkontrollen. Detta kan baseras på en viss marknadsföringsåtgärd som utförs, förekomsten av vissa dataanvändningsetiketter eller en kombination av de två.
 * **[!UICONTROL Then]**: Medgivandeattributen som måste finnas för att en profil ska kunna inkluderas i åtgärden som utlöste principen.
 
+>[!NOTE]
+>
+>Samtyckesprinciper stöder avancerad regelgenerering med olika fälttyper och operatorer. En fullständig referens till fälttyper, operatorer och exempel på regelgenerering som stöds finns i [Referens för policyregler för samtycke](./consent-policy-rule-building-reference.md).
+
 #### Konfigurera villkor {#consent-conditions}
 
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_consentif"
 >title="Om villkor"
->abstract="Börja med att definiera villkoren som utlöser principkontrollen. Villkoren kan omfatta vissa marknadsföringsåtgärder som vidtas, vissa datastyrningsetiketter finns eller en kombination av båda."
+>abstract="Börja med att definiera villkoren som utlöser principkontrollen. Villkoren kan omfatta vissa marknadsföringsåtgärder som vidtas, vissa datastyrningsetiketter finns eller en kombination av båda. Använd AND/OR-logik för att skapa komplexa villkorsstyrda relationer mellan flera villkor."
 
 Under avsnittet **[!UICONTROL If]** väljer du de marknadsföringsåtgärder och/eller etiketter för dataanvändning som ska utlösa den här principen. Välj **[!UICONTROL View all]** och **[!UICONTROL Select labels]** om du vill visa en fullständig lista över tillgängliga marknadsföringsåtgärder och etiketter.
 
@@ -143,29 +145,89 @@ Om du markerar mer än ett villkor kan du använda ikonen som visas mellan dem f
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_consentthen"
 >title="Villkor"
->abstract="När ditt If-villkor har definierats kan du använda sektionen &#39;then&#39; för att välja minst ett medgivandeattribut från unionsschemat. Det här är attributet som måste finnas för att profiler ska kunna inkluderas i åtgärden som styrs av den här principen."
+>abstract="När ditt If-villkor har definierats kan du använda sektionen &#39;then&#39; för att välja minst ett medgivandeattribut från unionsschemat. Du måste navigera i behållarfält (Object, Map, Array) för att kunna nå primitiva fält (String, Number, Boolean osv.) för att skapa regler. Det här primitiva fältet är det attribut som måste finnas för att profiler ska kunna inkluderas i åtgärden som styrs av den här principen."
 
-Under avsnittet **[!UICONTROL Then]** väljer du minst ett medgivandeattribut från unionsschemat. Det här är attributet som måste finnas för att profiler ska kunna inkluderas i åtgärden som styrs av den här principen. Du kan välja ett av de angivna alternativen i listan eller välja **[!UICONTROL View all]** för att välja attributet direkt från unionsschemat.
+Under avsnittet **[!UICONTROL Then]** väljer du minst ett medgivandeattribut från unionsschemat. Det här är attributet som måste finnas för att profiler ska kunna inkluderas i åtgärden som styrs av den här principen. Du kan välja ett av de föreslagna alternativen eller välja **[!UICONTROL View all]** för att välja attributet direkt från unionsschemat.
 
-När du väljer medgivandeattributet väljer du värdena för attributet som du vill att den här principen ska söka efter.
+>[!NOTE]
+>
+>Samtyckesprofiler stöder primitiva fälttyper (String, Number, Boolean, Date) och behållartyper (Object, Map, Array). Du kan navigera i behållare för att välja specifika attribut och använda AND/OR-logik för att kombinera regler. En fullständig referens till fälttyper, operatorer och exempel på regelgenerering som stöds finns i [referenshandboken för regelgenerering för medgivande](./consent-policy-rule-building-reference.md).
 
-![](../images/policies/select-schema-field.png)
+![Gränssnittet för principbyggaren för samtycke visar avsnitten Om och sedan med Visa alla markerade.](../images/policies/view-all.png)
 
-När du har valt minst ett medgivandeattribut uppdateras panelen **[!UICONTROL Policy properties]** så att det beräknade antalet profiler som tillåts enligt den här principen visas, inklusive procentandelen av det totala profilarkivet. Den här uppskattningen uppdateras automatiskt när du justerar principkonfigurationen.
+Om du väljer **[!UICONTROL View all]** visas dialogrutan **[!UICONTROL Select consent attribute]**. Välj det eller de medgivandeattribut som du vill att den här principen ska kontrollera. I den här dialogrutan kan du också välja **[!UICONTROL Advanced Schema search]** för att välja ett kapslat primitivt fält som ska bedömas som en del av principen. Välj **[!UICONTROL Done]** för att bekräfta dina inställningar.
 
-![](../images/policies/audience-preview.png)
+![Dialogrutan Välj medgivande-attribut med ett attribut markerat.](../images/policies/select-consent-attribute.png)
 
-Om du vill lägga till fler medgivandeattribut till profilen väljer du **[!UICONTROL Add result]**.
+### Avancerad schemasökning {#advanced-schema-search}
 
-![](../images/policies/add-result.png)
+I dialogrutan **[!UICONTROL Select consent attribute]** väljer du **[!UICONTROL Advanced Schema search]** för att öppna dialogrutan **[!UICONTROL Select union schema field]**. I den här vyn väljer du attribut på rotnivå eller kapslade för primitiva fälttyper som sträng, tal, booleskt värde och datum samt behållartyper som objekt, karta och array.
 
-Du kan fortsätta lägga till och justera villkor och medgivandeattribut i profilen efter behov. När du är nöjd med konfigurationen måste du ange ett namn och en valfri beskrivning för principen innan du väljer **[!UICONTROL Save]**.
+![Klicksökvägen för att navigera i den avancerade schemasökningen.](../images/policies/consent-advanced-schema-search.gif)
+
+#### Fält med fast värde för ett policyvillkor {#fixed-value-fields}
+
+När du väljer ett fält med fast värde som ett principvillkor visas de fördefinierade värdena som definierats i ditt dataschema på panelen [!UICONTROL Selected attributes].
+
+>[!NOTE]
+>
+>Om ett fält har konfigurerats med en fast uppsättning värden (till exempel som en uppräkning eller annan kontrollerad vokabulär) tillämpar principbyggaren den begränsningen för att se till att villkoren bara utvärderas mot giltiga, standardiserade data.
+
+För att upprätthålla datakvalitet och konsekvens återges dessa värden som valbara kryssrutor i stället för som fritextfält. Den här metoden minskar den manuella valideringen och hjälper er att utvärdera data på ett tillförlitligt sätt.
+
+Om du vill definiera villkoret markerar du kryssrutorna för de värden som du vill att profilen ska utvärdera.
+
+![Dialogrutan Välj unionsschemafält med ett schema-diagramfält och de tillgängliga kryssrutorna för fasta värden är markerade.](../images/policies/select-schema-field.png)
+
+#### Mappa datatypfält för ett principvillkor {#map-data-type-fields}
+
+När du markerar ett primitivt fält som finns i datatypen Map visas ytterligare konfigurationsalternativ på panelen **[!UICONTROL Selected attributes]**. Använd dessa alternativ för att konfigurera godkännandekontroller för flera nycklar utan att behöva använda en separat profil för varje nyckel. Den här konfigurationsmetoden förenklar hanteringen av principer genom att minska antalet principer du måste skapa.
+
+![Avsnittet Samtyckesprofilsmappning är markerat på attributpanelen.](../images/policies/consent-policies-map.png)
+
+##### Konfigurera attribut för kartdatatyp {#configure-map-attributes}
+
+Så här konfigurerar du ett attribut av typen Karta:
+
+Välj ett primitivt fält (till exempel en sträng eller ett tal) som finns i datatypen Map i unionsschemat. Panelen **[!UICONTROL Selected attributes]** uppdateras för att visa ytterligare konfigurationsalternativ för det fältet.
+
+![Uppdaterade attributalternativ för ett primitivt fält som finns i datatypen Map.](../images/policies/select-union-schema-field.png)
+
+Konfigurera hur principen utvärderar kartnycklar på panelen **[!UICONTROL Selected attributes]** genom att markera eller avmarkera kryssrutan **[!UICONTROL Find any matching item]**.
+
+| Alternativ | Åtgärd | Principbeteende |
+| --- | --- | --- |
+| Kryssrutan **[!UICONTROL Find any matching item]** är **markerad** | Textfältet **[!UICONTROL within]** är inaktiverat. | Principen kontrollerar **alla nycklar** på kartan. Alla nycklar där det kapslade fältet uppfyller värdevillkoret betraktas som en matchning för principen. Detta är användbart när du vill genomdriva global överensstämmelse för dynamiskt keyade attribut. |
+| Kryssrutan **[!UICONTROL Find any matching item]** är **omarkerad** | Du måste ange ett specifikt nyckelnamn i textfältet **[!UICONTROL within]**. | Principen kontrollerar bara den mappningsnyckel som anges i fältet **[!UICONTROL within]**. Endast profiler där det kapslade fältet för en viss nyckel uppfyller det definierade värdet matchas. Detta är användbart för principer som har ett specifikt program eller en viss frekvensnyckel som mål (till exempel `frequencyMap.m1`). |
+
+Ange värdet för det valda primitiva fältet som profilen ska utvärdera. Om fälttypen till exempel är `Integer` anger du ett numeriskt värde.
+
+![Sidofältet Markerade attribut med kartkonfigurationsalternativen markerade.](../images/policies/within-option.png)
+
+Välj **[!UICONTROL Select]** för att bekräfta konfigurationen och återgå till principbyggaren.
+
+När du har valt minst ett medgivandeattribut uppdateras panelen **[!UICONTROL Policy properties]** så att det beräknade antalet profiler som ingår i den här principen visas, tillsammans med procentandelen profiler som påverkas i profilarkivet. Det uppskattade antalet profiler uppdateras automatiskt när du ändrar principkonfigurationen.
+
+![Gränssnittet för principbyggaren visar ett konfigurerat villkor med principegenskaperna till höger som visar antalet beräknade kvalificerade profiler.](../images/policies/audience-preview.png)
+
+Om du vill lägga till ytterligare medgivandeattribut väljer du **[!UICONTROL Add result]**. Då skapas en annan regel för att inkludera profiler som baseras på dessa attribut.
+
+![Gränssnittet för principbyggaren för samtycke med Lägg till resultat markerat.](../images/policies/add-result.png)
+
+>[!NOTE]
+>
+>Om du vill redigera ett befintligt attribut markerar du attributnamnet och väljer sedan pennikonen (![En pennikon.](/help/images/icons/edit.png)). Dialogrutan **[!UICONTROL Select union schema field]** öppnas så att du kan göra ändringar.
+>
+>![Gränssnittet för principbyggaren för samtycke med attributet för samtycke och redigeringsikonen markerad.](../images/policies/edit-then-attributes.png)
+
+Fortsätt lägga till eller justera villkor och medgivandeattribut tills profilen matchar dina krav. När du är klar anger du ett namn och en (valfri) beskrivning och väljer sedan **[!UICONTROL Save]** för att skapa profilen.
 
 ![](../images/policies/name-and-save.png)
 
 Medgivandeprincipen skapas nu och dess status är inställd på [!UICONTROL Disabled] som standard. Om du vill aktivera principen direkt väljer du alternativet **[!UICONTROL Status]** i den högra listen.
 
 ![](../images/policies/enable-consent-policy.png)
+
 
 #### Verifiera policytillämpning
 

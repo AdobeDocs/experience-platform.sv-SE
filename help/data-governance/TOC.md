@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om datastyrning
 user-guide-description: Tvinga dataanvändningsbegränsningar genom användning av etiketter, marknadsföringsåtgärder och styrningspolicyer.
 feature: Data Governance
 role: User,Developer,Admin
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 6e9ea451eafd08a72a5f26dabe229fdb7c6c909d
 workflow-type: tm+mt
-source-wordcount: '100'
-ht-degree: 38%
+source-wordcount: '105'
+ht-degree: 36%
 
 ---
 
@@ -22,15 +22,16 @@ ht-degree: 38%
    * [Etikettordlista](labels/reference.md)
    * [Hantera etiketter i användargränssnittet](labels/user-guide.md)
    * [Hantera etiketter för datauppsättningar med API:er](labels/dataset-api.md)
-* Dataanvändningsprinciper {#policies}
+* Dataanvändningspolicyer {#policies}
    * [Översikt](policies/overview.md)
    * [Hantera profiler i användargränssnittet](policies/user-guide.md)
    * [Skapa en princip i API:t](policies/create.md)
-* Principkontroll {#enforcement}
+   * [Referens för policyregelbygge för samtycke](policies/consent-policy-rule-building-reference.md)
+* Politiska åtgärder {#enforcement}
    * [Översikt](enforcement/overview.md)
    * [Automatisk kontroll](enforcement/auto-enforcement.md)
    * [API-baserad tillämpning](enforcement/api-enforcement.md)
-* MTLS-tjänst-API {#mtls-api}
+* API för MTLS-tjänst {#mtls-api}
    * [Översikt](mtls-api/overview.md)
    * [Komma igång](mtls-api/getting-started.md)
    * [Slutpunkt för offentligt certifikat](mtls-api/public-certificate-endpoint.md)
@@ -42,4 +43,4 @@ ht-degree: 38%
    * [Marknadsföringsåtgärder](api/marketing-actions.md)
    * [Utvärdering](api/evaluation.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/policy-service/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
