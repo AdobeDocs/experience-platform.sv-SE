@@ -2,9 +2,9 @@
 description: Lär dig hur du uppdaterar ett befintligt källkodsdataflöde i användargränssnittet i Experience Platform.
 title: Uppdatera ett dataflöde för Source Connection i användargränssnittet
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4c4f221a5060360fa0381c8532227e854ad40a77
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '885'
 ht-degree: 0%
 
 ---
@@ -69,6 +69,15 @@ Dialogrutan **[!UICONTROL Edit schedule]** innehåller alternativ för att uppda
 
 ![Ett popup-fönster som du kan använda för att redigera dataflödets schema för förtäring.](../../images/tutorials/update-dataflows/edit_schedule.png)
 
+Läs följande avsnitt om du vill ha mer information om hur schema för intag varje vecka fungerar.
+
+#### Om schema för veckointag {#weekly}
+
+När du väljer att ställa in dataflödet så att det körs en gång i veckan, kommer dataflödet att köras baserat på något av följande scenarier:
+
+* Om datakällan har skapats men inga data har importerats än kommer det första veckodataflödet att köras 7 dagar efter det att källan skapades. Detta sjudagarsintervall startar alltid från när källan skapades, oavsett när du ställer in schemat. Efter den första körningen fortsätter dataflödet att köras varje vecka enligt det konfigurerade schemat.
+* Om data från källan har importerats tidigare och du schemalägger dem för veckointag igen, kommer nästa dataflöde att köras 7 dagar efter det senaste framgångsrika intaget.
+
 ### Inaktivera dataflöde
 
 Du kan inaktivera dataflödet med samma listruta. Om du vill inaktivera dataflödet väljer du **[!UICONTROL Disable dataflow]**.
@@ -85,4 +94,4 @@ Om och när du senare återaktiverar det här dataflödet schemaläggs återfyll
 
 Genom att följa den här självstudiekursen har du använt arbetsytan [!UICONTROL Sources] för att uppdatera inmatningsschemat och mappningsuppsättningarna för dataflödet.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Uppdatera dataflöden med API:t för Flow Service &#x200B;](../../tutorials/api/update-dataflows.md).
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Uppdatera dataflöden med API:t för Flow Service ](../../tutorials/api/update-dataflows.md).

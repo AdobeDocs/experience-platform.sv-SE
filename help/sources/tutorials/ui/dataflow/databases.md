@@ -5,9 +5,9 @@ title: Skapa ett dataflöde med hjälp av en databas-Source i användargränssni
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en databaskälla med hjälp av Experience Platform UI.
 exl-id: 9fd8a7ec-bbd8-4890-9860-e6defc6cade3
-source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
+source-git-commit: 6de14e210b78b321ed7d2c4c30769c260694f474
 workflow-type: tm+mt
-source-wordcount: '1653'
+source-wordcount: '1787'
 ht-degree: 0%
 
 ---
@@ -120,13 +120,20 @@ Se tabellen nedan för mer information om schemaläggningskonfigurationer.
 
 | Schemaläggningskonfiguration | Beskrivning |
 | --- | --- |
-| Frekvens | Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan ange frekvensen till: <ul><li>**En gång**: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>**Minut**: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>**Timme**: Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>**Dag**: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>**Vecka**: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
+| Frekvens | Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan ange frekvensen till: <ul><li>**En gång**: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>**Minut**: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>**Timme**: Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>**Dag**: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>**Vecka**: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka. Mer information finns i avsnittet [Om att förstå schema för veckointag] (#week).</li></ul> |
 | Intervall | När du har valt en frekvens kan du konfigurera intervallinställningen för att upprätta en tidsram mellan varje intag. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Du kan inte ange intervallet till noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
 | Starttid | Tidsstämpeln för den projicerade körningen visas i UTC-tidszonen. |
 | Backfill | Backfill avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om underfyllning är inaktiverad importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
 | Läs in inkrementella data med | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Fältet som du väljer för **[!UICONTROL Load incremental data by]** måste ha sina datum- och tidsvärden i UTC-tidszonen för att inkrementella data ska kunna läsas in korrekt. Alla tabellbaserade batchkällor hämtar inkrementella data genom att jämföra ett deltskolumnens tidsstämpelvärde med motsvarande körningsfönster UTC-tid och sedan kopiera data från källan, om nya data hittas i UTC-tidsfönstret. |
 
 ![bakgrundsfyllning](../../../images/tutorials/dataflow/table-based/backfill.png)
+
+### Om schema för veckointag {#weekly}
+
+När du väljer att ställa in dataflödet så att det körs en gång i veckan, kommer dataflödet att köras baserat på något av följande scenarier:
+
+* Om datakällan har skapats men inga data har importerats än kommer det första veckodataflödet att köras 7 dagar efter det att källan skapades. Detta sjudagarsintervall startar alltid från när källan skapades, oavsett när du ställer in schemat. Efter den första körningen fortsätter dataflödet att köras varje vecka enligt det konfigurerade schemat.
+* Om data från källan har importerats tidigare och du schemalägger dem för veckointag igen, kommer nästa dataflöde att köras 7 dagar efter det senaste framgångsrika intaget.
 
 ## Granska ditt dataflöde
 
