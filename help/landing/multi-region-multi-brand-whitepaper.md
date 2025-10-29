@@ -431,7 +431,7 @@ Experience Platform ger ett robust ramverk för att centralisera, styra och akti
 
    - Du måste noggrant bedöma om **flera organisations-ID:n eller flera sandlådor** ska distribueras baserat på datastorlek, efterlevnad och driftbehov.
 
-   - **Organisations-ID** erbjuder fullständig isolering**, medan flersandlådeinställningar ger operativ flexibilitet i ett delat styrningsramverk**.
+   - **Organisations-ID** erbjuder fullständig isolering&#x200B;**, medan flersandlådeinställningar ger operativ flexibilitet i ett delat styrningsramverk**.
 
 ## Sluttankar
 
