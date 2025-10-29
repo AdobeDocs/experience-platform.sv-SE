@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: 9df876a730cc1568162f3353bc75258c5ce0e3dd
+source-git-commit: c54749c5f5dadc51d58eb29ff649014bc05ff41d
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '345'
 ht-degree: 20%
 
 ---
@@ -16,8 +16,9 @@ ht-degree: 20%
 * [Översikt över Experience Platform](home.md)
 * [Experience Platform - översikt (video)](video/platform-overview.md)
 * [Översikt över flera moln](multi-cloud.md)
+* [Rapport för företag med flera regioner och varumärken](./multi-region-multi-brand-whitepaper.md)
 * [Jämförelse mellan Edge Network och Hub](./edge-and-hub-comparison.md)
-* [Experience Platform självstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=sv-SE)
+* [Experience Platform självstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [En kundupplevelse som bygger på Experience Platform (video)](video/customer-experience.md)
 * [Bakom scenen med en kundupplevelse som drivs av Experience Platform (video)](video/customer-experience-bts.md)
 * Komma igång {#getting-started}
@@ -43,12 +44,12 @@ ht-degree: 20%
    * [Språkstöd](documentation/language-support.md)
 * Program som bygger på Experience Platform {#ecosystem}
    * [Översikt](application-services.md)
-   * [Adobe Real-Time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html?lang=sv-SE)
+   * [Adobe Real-Time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
-   * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html?lang=sv-SE)
-   * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=sv-SE)
-   * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html?lang=sv-SE)
-   * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html?lang=sv-SE)
+   * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
+   * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
+   * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
+   * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html)
    * [Experience Platform-integreringar med Experience Cloud (video)](video/experience-cloud-integrations.md)
 * Styrning, integritet och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)
@@ -84,10 +85,10 @@ ht-degree: 20%
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)
    * [Licensanvändning och kapacitet](./license-usage-and-guardrails/capacity.md)
    * [Total datavolym](./license-usage-and-guardrails/total-data-volume.md)
-   * [Adobe Journey Optimizer skyddsräcken](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html?lang=sv-SE)
-   * [Customer Journey Analytics skyddsräcken](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=sv-SE)
-   * [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html?lang=sv-SE)
+   * [Adobe Journey Optimizer skyddsräcken](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
+   * [Customer Journey Analytics skyddsräcken](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)
+   * [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html)
 * [Felsökningsguide](troubleshooting.md)
 * [Migrering av data från Gen2](adls2-gen2-migration.md)
 * [Ordlista](glossary.md)
-* [Versionsinformation](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
