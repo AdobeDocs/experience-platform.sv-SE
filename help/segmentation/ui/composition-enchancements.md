@@ -3,7 +3,7 @@ title: Förbättringar av målgruppssammansättning
 description: Läs om förbättringarna i Audience Composition med målgruppsberikning och snabbare aktivering.
 hide: true
 hidefromtoc: true
-source-git-commit: 9c790f0b47161301fa8c02c4afb7edfb925e1499
+source-git-commit: 065990790307124e0992731139abe9641a742a1b
 workflow-type: tm+mt
 source-wordcount: '470'
 ht-degree: 0%
@@ -48,12 +48,16 @@ Tänk på följande när du använder målgruppsberikning:
 - Det första blocket som används i kompositionen **måste** vara en regelbaserad målgrupp.
 - Du **kan inte** använda några andra åtgärder i kompositionen.
 - När du har publicerat **kan du inte** redigera kompositionen på den regelbaserade målgruppen.
+
    - Du *kan* kopiera kompositionen till ett utkast och redigera utkastet om du vill ändra baskompositionen eller regelbaserade målgrupper.
+
 - Endast **en**-objektmatris kan användas för att generera anrikningsnyttolasten inom en enskild målgrupp
+
    - Nyttolastarrayen kan kapslas i ett objekt (upp till sju lager i profilschemat), men **kan inte** finnas i en annan array.
    - Nyttolastmatrisen **måste** ha 50 eller färre rader.
    - Alla kolumnutdata i nyttolasten **måste** vara av primitiv typ.
    - Endast de första **tjugo** kolumnerna i arrayen returneras.
+
 - Endast **tio** publikkompositioner är tillgängliga för användning för tillfället
 
 ## Snabbare aktivering {#faster-activation}

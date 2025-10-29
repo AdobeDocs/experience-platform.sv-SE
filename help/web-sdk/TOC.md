@@ -6,7 +6,7 @@ breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
 role: Developer
-source-git-commit: c697d0e924545caf430382385797bde340b57d94
+source-git-commit: 84faff58bac199c1113d7451f8cc865b6a870680
 workflow-type: tm+mt
 source-wordcount: '241'
 ht-degree: 18%
@@ -64,7 +64,7 @@ ht-degree: 18%
    * [setConsent](commands/setconsent.md)
    * [setDebug](commands/setdebug.md)
    * [sendMediaEvent](commands/sendmediaevent.md)
-   * [sendPushSubscription](commands/sendPushSubscription.md)
+   * [sendPushSubscription](commands/sendpushsubscription.md)
    * [subscribeRulesetItems](commands/subscriberulesetitems.md)
    * [Konfigurera åsidosättningar av dataström](commands/datastream-overrides.md)
    * [Kommandosvar](commands/command-responses.md)
