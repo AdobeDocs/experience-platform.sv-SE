@@ -289,7 +289,7 @@ Det gör du genom att markera varje segment och sedan ange namnet på den anpass
 >[!IMPORTANT]
 >
 > Använd inte den anpassade referensetiketten som värde.
-> >![Bild som anger att du inte ska använda det anpassade referensvärdet för mappning.](../../assets/catalog/ecommerce/sap-commerce/custom-reference-dont-use-label-for-mapping.png)
+> &#x200B;>![Bild som anger att du inte ska använda det anpassade referensvärdet för mappning.](../../assets/catalog/ecommerce/sap-commerce/custom-reference-dont-use-label-for-mapping.png)
 
 Om den valda Experience Platform-målgruppen till exempel är `sap_audience1` och du vill att dess status ska uppdateras till den [!DNL SAP Subscription Billing] anpassade referensen `SAP_1` anger du det här värdet i fältet [!DNL SAP_Commerce] **[!UICONTROL Mapping ID]**.
 

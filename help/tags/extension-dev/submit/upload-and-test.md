@@ -63,8 +63,8 @@ Med `npx` kan du hämta och köra ett npm-paket utan att installera det på dato
 
 >[!NOTE]
 > Som standard förväntas Adobe I/O-autentiseringsuppgifter för ett Oauth-flöde mellan servrar. De gamla `jwt-auth`-autentiseringsuppgifterna
-> > kan användas genom att köra `npx @adobe/reactor-uploader@v5.2.0` tills borttagningen är den 1 januari 2025. De parametrar som krävs
-> > för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452).
+> &#x200B;> kan användas genom att köra `npx @adobe/reactor-uploader@v5.2.0` tills borttagningen är den 1 januari 2025. De parametrar som krävs
+> &#x200B;> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452).
 
 Överföraren kräver att du bara anger ett fåtal delar av informationen. `clientId` och `clientSecret` kan hämtas från Adobe I/O-konsolen. Navigera till [integreringssidan](https://console.adobe.io/integrations) i I/O-konsolen. Välj rätt organisation i listrutan, hitta rätt integrering och välj **[!UICONTROL View]**.
 

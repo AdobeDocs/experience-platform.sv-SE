@@ -51,8 +51,8 @@ Om du inte har någon privat app följer du dokumentationen för att [skapa en p
 >[!IMPORTANT]
 >
 > Det privata programmet bör tilldelas följande omfång:
-> > `crm.objects.contacts.write`, `crm.objects.contacts.read`
-> > `crm.schemas.contacts.write`, `crm.schemas.contacts.read`
+> &#x200B;> `crm.objects.contacts.write`, `crm.objects.contacts.read`
+> &#x200B;> `crm.schemas.contacts.write`, `crm.schemas.contacts.read`
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |

@@ -24,7 +24,7 @@ I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en mo
 
 ## Förhandskrav
 
-Följ [Importera ett paketerat recept med API:t ](./import-packaged-recipe-api.md) för att skapa en motor, vilket krävs för att träna och utvärdera en modell med API:t.
+Följ [Importera ett paketerat recept med API:t &#x200B;](./import-packaged-recipe-api.md) för att skapa en motor, vilket krävs för att träna och utvärdera en modell med API:t.
 
 Följ självstudiekursen [Experience Platform API-autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att börja göra API-anrop.
 

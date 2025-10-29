@@ -189,7 +189,7 @@ CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> pr
 >[!IMPORTANT]
 >
 >Det går inte att skapa fältgrupper via SQL om flaggan `label` inte anges i satsen eller om fältgruppen redan finns.
->>Kontrollera att frågan innehåller en `IF NOT EXISTS`-sats för att undvika att frågan misslyckas eftersom fältgruppen redan finns.
+>&#x200B;>Kontrollera att frågan innehåller en `IF NOT EXISTS`-sats för att undvika att frågan misslyckas eftersom fältgruppen redan finns.
 
 Ett verkligt exempel kan se ut ungefär som det nedan.
 

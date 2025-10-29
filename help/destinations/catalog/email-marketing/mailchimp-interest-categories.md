@@ -114,7 +114,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 | Fält | Beskrivning |
 | --- | --- |
 | **[!UICONTROL Username]** | Ditt [!DNL Mailchimp Interest Categories]-användarnamn. |
-| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel ](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
+| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel &#x200B;](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
 
 {style="table-layout:auto"}
 

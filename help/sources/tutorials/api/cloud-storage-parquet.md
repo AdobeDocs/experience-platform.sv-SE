@@ -63,7 +63,7 @@ Hämta och lagra den unika identifieraren (`$id`) för anslutningen och fortsät
 
 För att källdata ska kunna användas i [!DNL Experience Platform] måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Experience Platform]-datauppsättning där källdata finns.
 
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [-schemaredigerarsjälvstudiekursen ](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [-schemaredigerarsjälvstudiekursen &#x200B;](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
 
 **API-format**
 

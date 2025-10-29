@@ -458,8 +458,8 @@ productListItems     | array_distinct(productListItems)
 
 Följande exempel på funktioner i högre ordning förklaras som en del av hämtningen av liknande poster använder skiftläget. Ett exempel och en förklaring till hur de olika funktionerna används finns i respektive avsnitt i dokumentet.
 
-Funktionsexemplet [`transform` ](../use-cases/retrieve-similar-records.md#length-adjustment) beskriver tokeniseringen för en produktlista.
+Funktionsexemplet [`transform` &#x200B;](../use-cases/retrieve-similar-records.md#length-adjustment) beskriver tokeniseringen för en produktlista.
 
-Funktionsexemplet [`filter` ](../use-cases/retrieve-similar-records.md#filter-results) visar en mer detaljerad extrahering av relevant information från textdata.
+Funktionsexemplet [`filter` &#x200B;](../use-cases/retrieve-similar-records.md#filter-results) visar en mer detaljerad extrahering av relevant information från textdata.
 
-[`reduce`-funktionen ](../use-cases/retrieve-similar-records.md#higher-order-function-solutions) erbjuder ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.
+[`reduce`-funktionen &#x200B;](../use-cases/retrieve-similar-records.md#higher-order-function-solutions) erbjuder ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.

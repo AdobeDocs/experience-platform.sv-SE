@@ -124,7 +124,7 @@ I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för a
 
 Om du använder [!DNL JupyterLab] kan du avsluta din session för att förhindra att fler resurser används. Börja med att välja **strömikonen** ![strömikonen](/help/images/icons/power.png) och välj sedan **[!UICONTROL Shut Down]** i den port som visas för att avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
 
-Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** ![starta om ](/help/images/icons/restart.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den port som visas.
+Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** ![starta om &#x200B;](/help/images/icons/restart.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den port som visas.
 
 ![avsluta jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 

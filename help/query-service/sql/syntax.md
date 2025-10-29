@@ -223,8 +223,8 @@ AS (select_query)
 | `schema` | XDM-schemats titel. Använd bara den här satsen om du vill koppla den nya tabellen till ett befintligt XDM-schema. |
 | `rowvalidation` | (Valfritt) Aktiverar validering på radnivå för varje batch som hämtas till datauppsättningen. Standardvärdet är true. |
 | `label` | (Valfritt) Använd värdet `PROFILE` för att etikettera datauppsättningen som aktiverad för profilinmatning. |
-| `transform` | (Valfritt) Tillämpar funktionstekniska omformningar (till exempel strängindexering, kodning med ett enda varv eller TF-IDF) innan datauppsättningen materialiseras. Den här satsen används för förhandsgranskning av omformade funktioner. Mer information finns i [`TRANSFORM`-satsdokumentationen ](#transform). |
-| `select_query` | En `SELECT`-standardsats som definierar datauppsättningen. Mer information finns i avsnittet [`SELECT`-frågor ](#select-queries). |
+| `transform` | (Valfritt) Tillämpar funktionstekniska omformningar (till exempel strängindexering, kodning med ett enda varv eller TF-IDF) innan datauppsättningen materialiseras. Den här satsen används för förhandsgranskning av omformade funktioner. Mer information finns i [`TRANSFORM`-satsdokumentationen &#x200B;](#transform). |
+| `select_query` | En `SELECT`-standardsats som definierar datauppsättningen. Mer information finns i avsnittet [`SELECT`-frågor &#x200B;](#select-queries). |
 
 >[!NOTE]
 >

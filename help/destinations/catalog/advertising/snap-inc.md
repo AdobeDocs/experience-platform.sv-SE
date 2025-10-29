@@ -133,7 +133,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ## Validera dataexport {#exported-data}
 
-När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** ](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
+När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** &#x200B;](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
 
 1. Logga in i [hanteraren för ögonblicksbilder](https://ads.snapchat.com/)
 2. Välj **Publiker** på menyn längst upp till vänster på skärmen. Du ser vilka målgrupper du har aktiverat i Adobe Experience Platform i målgruppsbiblioteket:

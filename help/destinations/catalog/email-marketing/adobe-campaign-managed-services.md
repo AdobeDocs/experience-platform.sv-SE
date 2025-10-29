@@ -146,7 +146,7 @@ Välj XDM-fält som ska exporteras med profilerna och mappa dem till motsvarande
    >
    >Fältet&quot;segmentMembershipStatus&quot; är en obligatorisk mappning som återspeglar statusen för segmentMembership. Det här fältet läggs till som standard och kan inte ändras eller tas bort.
 
-1. Mappa varje fält med målfältet i Adobe Campaign. Tillgängliga målfält avgörs av den målmappning som valts när [målet ](#destination-details) skapades.
+1. Mappa varje fält med målfältet i Adobe Campaign. Tillgängliga målfält avgörs av den målmappning som valts när [målet &#x200B;](#destination-details) skapades.
 
 1. Identifiera obligatoriska attribut och dedupliceringsnycklar. Observera att värden i attribut som är markerade som&quot;Obligatorisk&quot; eller&quot;Avdupliceringsnyckel&quot; inte kan vara null.
 

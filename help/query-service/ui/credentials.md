@@ -97,7 +97,7 @@ Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utf�
 
 1. Logga in på [Adobe Admin Console](https://adminconsole.adobe.com/) och välj relevant organisation i det övre navigeringsfältet.
 2. [Välj en produktprofil.](../../access-control/ui/browse.md)
-3. [Konfigurera både **sandlådor** och **Hantera frågetjänstintegration** ](../../access-control/ui/permissions.md) för produktprofilen.
+3. [Konfigurera både **sandlådor** och **Hantera frågetjänstintegration** &#x200B;](../../access-control/ui/permissions.md) för produktprofilen.
 4. [Lägg till en ny användare i en produktprofil](../../access-control/ui/users.md) så att de får sina konfigurerade behörigheter.
 5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) om du vill tillåta att ett konto skapas för en aktiv produktprofil.
 6. [Lägg till användaren som produktprofilutvecklare](https://helpx.adobe.com/se/enterprise/using/manage-developers.html) för att skapa en integrering.
@@ -176,7 +176,7 @@ Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till e
 >[!NOTE]
 >
 >När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i avsnittet [!UICONTROL EXPIRING CREDENTIALS] förutom lösenordet och användarnamnet.
->>Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
+>&#x200B;>Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
 
 | Parameter | Beskrivning | Exempel |
 |---|---|---|

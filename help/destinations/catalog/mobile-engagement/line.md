@@ -50,7 +50,7 @@ För att Experience Platform ska kunna komma åt [!DNL LINE]-resurser måste du 
 | --- | --- | --- |
 | `[!DNL Channel access token (long-lived)]` | Din [!DNL LINE Channel access token (long-lived)]. | `aaa2112XSMWqLXR7..........nyilFU=` |
 
-Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [[!DNL LINE] -konto via ](https://developers.line.biz/en/docs/messaging-api/getting-started/)-utvecklarkonsolen finns i [!DNL LINE]dokumentationen[!DNL LINE].
+Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [[!DNL LINE] -konto via &#x200B;](https://developers.line.biz/en/docs/messaging-api/getting-started/)-utvecklarkonsolen finns i [!DNL LINE]dokumentationen[!DNL LINE].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -140,7 +140,7 @@ När dataexporten är klar från Experience Platform skapar [!DNL LINE]-målet e
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-1. Logga in på [!DNL LINE]Manager-konsolen[ i ](https://manager.line.biz/).
+1. Logga in på [!DNL LINE]Manager-konsolen[&#x200B; i &#x200B;](https://manager.line.biz/).
 
 1. Gå sedan till **[!UICONTROL Data Controls]** > **[!UICONTROL Audiences]** och kontrollera namnet som matchar den valda målgruppen i kolumnen **[!UICONTROL Audience name]**.
 

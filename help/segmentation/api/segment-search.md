@@ -38,7 +38,7 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 | Parametrar | Beskrivning |
 | ---------- | ----------- | 
 | `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} representerar schemaklassvärdet som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Where {SEARCH_TERM} representerar en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax ](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Where {SEARCH_TERM} representerar en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax &#x200B;](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
 
 **Begäran**
 
@@ -99,7 +99,7 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 | ---------- | ----------- | 
 | `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller schemaklassvärdet som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
 | `namespace={NAMESPACE}` | **(Obligatoriskt)** Där {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} innehåller en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax ](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} innehåller en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax &#x200B;](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
 | `entityId={ENTITY_ID}` | *(Valfritt)* Begränsar sökningen till i den angivna mappen, som anges med {ENTITY_ID}. |
 | `limit={LIMIT}` | *(Valfritt)* Där {LIMIT} representerar antalet sökresultat som ska returneras. Standardvärdet är 50. |
 | `page={PAGE}` | *(Valfritt)* Där {PAGE} representerar sidnumret som används för att sidnumrera resultaten av den fråga som sökts. Observera att sidnumret börjar **0**. |
