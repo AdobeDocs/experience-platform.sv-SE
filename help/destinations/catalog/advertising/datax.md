@@ -67,7 +67,7 @@ Läs mer om [taxonomimetadata](https://developer.verizonmedia.com/datax/guide/ta
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Verizon Media] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
+[!DNL Verizon Media] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv-SE#getting-started).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
@@ -127,7 +127,7 @@ Läs [Aktivera profiler och målgrupper till ett mål](../../ui/activate-segment
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
 
 ## Ytterligare resurser {#additional-resources}
 

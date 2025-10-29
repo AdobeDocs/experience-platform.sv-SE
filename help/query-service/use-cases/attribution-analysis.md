@@ -19,8 +19,8 @@ SQL-exemplen i det här dokumentet är frågor som ofta används med Adobe Analy
 
 * [Adobe Analytics-källkopplingen för rapportsvitens dataöversikt](../../sources/connectors/adobe-applications/mapping/analytics.md).
 * [Analysfältmappningsdokumentationen](../../sources/connectors/adobe-applications/mapping/analytics.md) innehåller mer information om hur analysdata hämtas och mappas för användning med frågetjänsten.
-* [Attribution IQ - översikt](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)
-* [Guiden för Adobe Analytics-panelen Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html).
+* [Attribution IQ - översikt](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=sv-SE)
+* [Guiden för Adobe Analytics-panelen Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html?lang=sv-SE).
 
 En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](../sql/adobe-defined-functions.md#window-functions). [Adobe Marketing och Commerce Term Glossary](https://business.adobe.com/glossary/index.html) kan också användas.
 
