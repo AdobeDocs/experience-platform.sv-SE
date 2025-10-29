@@ -5,7 +5,7 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: 0f1ccaf9ea698737eccc25cec6f5b46b7184fc11
+source-git-commit: 60775eeeb0a07a95f3fac86dc4ecc8603328ed49
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 23%
@@ -17,7 +17,7 @@ ht-degree: 23%
 
 - [Översikt över segmenteringstjänsten](home.md)
 - [Segmenteringsdatatyper](data-types.md)
-- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=sv-SE#segmentation-guardrails)
+- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
 - Segmenterings-API {#api}
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
@@ -35,7 +35,7 @@ ht-degree: 23%
    - [Audience dashboard](ui/audience-dashboard.md)
    - [Målgruppsportal](ui/audience-portal.md)
    - [Målgruppssammansättning](ui/audience-composition.md)
-   - [Förbättringar av målgruppssammansättning](ui/composition-enchancements.md)
+   - [Förbättringar av målgruppssammansättning](ui/composition-enhancements.md)
    - [Segment Builder](ui/segment-builder.md)
    - [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home)
    - [Ignorera uppdatering av tidsbegränsning för år](ui/ignore-year.md)
@@ -63,7 +63,7 @@ ht-degree: 23%
    - [Segmentering för flera enheter](tutorials/multi-entity-segmentation.md)
    - [Godkännande](tutorials/consents.md)
    - [Utvärdera en segmentdefinition](tutorials/evaluate-a-segment.md)
-   - [Skapa en extern publik](tutorials/create-external-audience.md)
+   - [Skapa en extern målgrupp](tutorials/create-external-audience.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Tvinga målgrupper att följa dataanvändningen](tutorials/governance.md)
 - Profile Query Language {#pql}
@@ -83,4 +83,4 @@ ht-degree: 23%
 - [Uppdatering av kvalificeringskriterier](./eligibility-criteria-update.md)
 - [Vanliga frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
