@@ -94,4 +94,4 @@ Om och när du senare återaktiverar det här dataflödet schemaläggs återfyll
 
 Genom att följa den här självstudiekursen har du använt arbetsytan [!UICONTROL Sources] för att uppdatera inmatningsschemat och mappningsuppsättningarna för dataflödet.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Uppdatera dataflöden med API:t för Flow Service ](../../tutorials/api/update-dataflows.md).
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Uppdatera dataflöden med API:t för Flow Service &#x200B;](../../tutorials/api/update-dataflows.md).
