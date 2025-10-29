@@ -5,7 +5,7 @@ title: Utbildning och utvärdering av en modell med Sensei Machine Learning API
 type: Tutorial
 description: I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop för Sensei Machine Learning.
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
-source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1240'
 ht-degree: 0%
@@ -24,7 +24,7 @@ I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en mo
 
 ## Förhandskrav
 
-Följ [Importera ett paketerat recept med API:t &#x200B;](./import-packaged-recipe-api.md) för att skapa en motor, vilket krävs för att träna och utvärdera en modell med API:t.
+Följ [Importera ett paketerat recept med API:t ](./import-packaged-recipe-api.md) för att skapa en motor, vilket krävs för att träna och utvärdera en modell med API:t.
 
 Följ självstudiekursen [Experience Platform API-autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att börja göra API-anrop.
 
@@ -438,6 +438,7 @@ GET-anropet ger status i parametern `state` enligt nedan:
 `{EXPERIMENT_ID}`: Det ID som representerar den experimentversion som Experiment Run är under.
 
 Förutom läget `DONE` innehåller andra lägen:
+
 - `PENDING`
 - `RUNNING`
 - `FAILED`

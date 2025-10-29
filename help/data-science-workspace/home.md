@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Data Science Workspace Overview
 description: Den här guiden ger en översikt över de viktigaste begreppen för Data Science Workspace i Adobe Experience Platform.
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '2411'
 ht-degree: 0%
@@ -33,6 +33,7 @@ Dagens företag sätter hög prioritet på att ta fram big data för prognoser o
 Lika viktigt som det är kan det vara en hög kostnad att gå från data till insikter. Det kräver ofta kunniga datavetare som bedriver intensiv och tidsödande dataforskning för att utveckla maskininlärningsmodeller, eller recept, som driver intelligenta tjänster. Processen är lång, tekniken är komplex och kvalificerade datavetare kan vara svåra att hitta.
 
 Med [!DNL Data Science Workspace] kan du med Adobe Experience Platform ta fram upplevelsefokuserad AI i hela företaget och effektivisera och snabba upp data-till-insikter-till-kod med:
+
 - Ett ramverk för maskininlärning och körning
 - Integrerad åtkomst till data som lagras i Adobe Experience Platform
 - Ett enhetligt dataschema byggt på [!DNL Experience Data Model] (XDM)
@@ -193,10 +194,10 @@ Viktigast av allt är att [!DNL Data Science Workspace] förser datavetenskapen 
 
 I och med samgåendet mellan varumärkesexpertis och Adobe maskininlärning och AI-processer har företag möjlighet att öka affärsvärdet och varumärkeslojaliteten genom att ge kunderna det de vill ha, innan de ber om det.
 
-Om du vill ha mer information, t.ex. ett komplett arbetsflöde, kan du börja med att läsa [Data Science Workspace-dokumentationen &#x200B;](./walkthrough.md).
+Om du vill ha mer information, t.ex. ett komplett arbetsflöde, kan du börja med att läsa [Data Science Workspace-dokumentationen ](./walkthrough.md).
 
 ## Ytterligare resurser
 
 Följande video har utformats för att ge stöd för din förståelse av [!DNL Data Science Workspace].
 
->[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&enable10seconds=on&speedcontrol=on)
+>[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&amp;enable10seconds=on&amp;speedcontrol=on)

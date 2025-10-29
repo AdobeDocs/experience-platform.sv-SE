@@ -5,7 +5,7 @@ title: Skapa en modell med JupyterLab Notebooks
 type: Tutorial
 description: I den här självstudiekursen får du hjälp med att skapa ett recept med mallen för receptbyggaren för JupyterLab-anteckningsböcker.
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '2079'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Den återstående delen av den här självstudiekursen omfattar följande filer 
 
 I följande videofilm förklaras den bärbara datorn med Luma-benägenhetsmodellen:
 
->[!VIDEO](https://video.tv.adobe.com/v/3452496?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/333570)
 
 ### Kravfil {#requirements-file}
 
@@ -139,6 +139,7 @@ En ingående självstudiekurs om hur du använder datainläsaren `platform_sdk` 
 ### Externa källor {#external-sources}
 
 I det här avsnittet visas hur du importerar en JSON- eller CSV-fil till ett pandaobjekt. Officiell dokumentation från pandabiblioteket finns här:
+
 - [read_csv](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
 - [read_json](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_json.html)
 
@@ -178,6 +179,7 @@ def load(config_properties):
 >[!NOTE]
 >
 >Som vi nämnt i avsnittet [Konfigurationsfil](#configuration-files) ställs följande konfigurationsparametrar in åt dig när du använder `client_context = get_client_context(config_properties)` för att få åtkomst till data från Experience Platform:
+>
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`

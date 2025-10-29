@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 58018684a5f042bd4e121f4162e7c1663597c19a
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1975'
 ht-degree: 0%
@@ -46,11 +46,11 @@ Avsnittet **[!UICONTROL Expiring credentials]** innehåller följande informatio
 >
 >![Fliken Admin Console-inställningar med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
 >
->Mer information om de [avancerade inställningarna](https://helpx.adobe.com/se/enterprise/using/authentication-settings.html#advanced-settings) som Admin Console erbjuder finns i hjälpdokumentationen för Adobe.
+>Mer information om de [avancerade inställningarna](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) som Admin Console erbjuder finns i hjälpdokumentationen för Adobe.
 
 ### Ansluta Customer Journey Analytics-data i frågesessioner {#connect-to-customer-journey-analytics}
 
-Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt dina [datavyer](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-dataviews/data-views) från Customer Journey Analytics med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integreringen av Customer Journey Analytics-data med andra källor i BI-plattformar.
+Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt dina [datavyer](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) från Customer Journey Analytics med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integreringen av Customer Journey Analytics-data med andra källor i BI-plattformar.
 
 Läs dokumentationen för att lära dig hur du [ansluter frågetjänsten till ett antal klientprogram för stationära datorer](../clients/overview.md), till exempel [Power BI](../clients/power-bi.md) eller [Tableau](../clients/tableau.md)
 
@@ -68,7 +68,7 @@ Om du vill få tillgång till dina Customer Journey Analytics-data i antingen Po
 
 Du kan även komma åt dina Customer Journey Analytics-data direkt från Frågeredigeraren eller Postgres CLI. Om du vill göra det refererar du till databasen `cja` när du skriver din fråga. Mer information om hur du skriver, kör och sparar frågor finns i frågeredigeraren [frågeredigeringsguiden](./user-guide.md#query-authoring).
 
-I [BI-tilläggsguiden](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-dataviews/bi-extension) finns fullständiga anvisningar om hur du får åtkomst till dina Customer Journey Analytics-datavyer med SQL.
+I [BI-tilläggsguiden](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) finns fullständiga anvisningar om hur du får åtkomst till dina Customer Journey Analytics-datavyer med SQL.
 
 ## Ej förfallande autentiseringsuppgifter {#non-expiring-credentials}
 
@@ -88,7 +88,7 @@ Du kan använda autentiseringsuppgifter som inte upphör att gälla för att kon
 >Giltiga autentiseringsuppgifter har följande begränsningar:
 >
 >- Användare måste logga in med sitt användarnamn och lösenord i formatet `{technicalAccountId}:{credential}`. Mer information finns i avsnittet [Generera autentiseringsuppgifter](#generate-credentials).
->- Som standard ges autentiseringsuppgifter som inte förfaller behörighet att endast köra `SELECT`-frågor. Om du vill köra `CTAS`- eller `ITAS`-frågor lägger du manuellt till behörigheterna Hantera datauppsättning och Hantera scheman i rollen som är kopplad till de autentiseringsuppgifter som inte förfaller. Behörigheten Hantera scheman finns under avsnittet Datamodellering och behörigheten Hantera datauppsättningar finns under avsnittet Datahantering i [Adobe Developer Console](<https://developer.adobe.com/console/>).
+>- Som standard ges autentiseringsuppgifter som inte förfaller behörighet att endast köra `SELECT`-frågor. Om du vill köra `CTAS`- eller `ITAS`-frågor lägger du manuellt till behörigheterna Hantera datauppsättning och Hantera scheman i rollen som är kopplad till de autentiseringsuppgifter som inte förfaller. Behörigheten Hantera scheman finns under avsnittet Datamodellering och behörigheten Hantera datauppsättningar finns under avsnittet Datahantering i [Adobe Developer Console](https://developer.adobe.com/console/).
 >- Tredjepartsklienter kan fungera annorlunda än väntat när frågeobjekt listas. Vissa tredjepartsklienter, till exempel [!DNL DB Visualizer], visar inte vynamnet på den vänstra panelen. Visningsnamnet är dock tillgängligt om det anropas i en `SELECT`-fråga. På samma sätt kanske [!DNL PowerUI] inte listar de tillfälliga vyer som har skapats via SQL för val när kontrollpaneler skapas.
 
 ### Förhandskrav
@@ -97,9 +97,9 @@ Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utf�
 
 1. Logga in på [Adobe Admin Console](https://adminconsole.adobe.com/) och välj relevant organisation i det övre navigeringsfältet.
 2. [Välj en produktprofil.](../../access-control/ui/browse.md)
-3. [Konfigurera både **sandlådor** och **Hantera frågetjänstintegration** &#x200B;](../../access-control/ui/permissions.md) för produktprofilen.
+3. [Konfigurera både **sandlådor** och **Hantera frågetjänstintegration** ](../../access-control/ui/permissions.md) för produktprofilen.
 4. [Lägg till en ny användare i en produktprofil](../../access-control/ui/users.md) så att de får sina konfigurerade behörigheter.
-5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/se/enterprise/using/manage-product-profiles.html) om du vill tillåta att ett konto skapas för en aktiv produktprofil.
+5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) om du vill tillåta att ett konto skapas för en aktiv produktprofil.
 6. [Lägg till användaren som produktprofilutvecklare](https://helpx.adobe.com/se/enterprise/using/manage-developers.html) för att skapa en integrering.
 
 Efter dessa steg konfigureras de nödvändiga behörigheterna i [Adobe Developer Console](https://developer.adobe.com/console/) så att du kan generera autentiseringsuppgifter för OAuth Server-till-Server och använda funktionerna för förfallande eller ej förfallande autentiseringsuppgifter.
@@ -176,7 +176,7 @@ Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till e
 >[!NOTE]
 >
 >När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i avsnittet [!UICONTROL EXPIRING CREDENTIALS] förutom lösenordet och användarnamnet.
->&#x200B;>Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
+>>Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
 
 | Parameter | Beskrivning | Exempel |
 |---|---|---|

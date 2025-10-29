@@ -5,7 +5,7 @@ title: Anslut till gruppmål och aktivera data med API:t för Flow Service
 description: Stegvisa instruktioner om hur du använder API:t för Flow Service för att skapa ett batchmolnlagringsutrymme eller ett marknadsföringsmål för e-post i Experience Platform och aktivera data
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 833e38559f7150c579840c69fa2658761fc9472c
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '3435'
 ht-degree: 0%
@@ -127,7 +127,7 @@ Ett lyckat svar innehåller en lista över tillgängliga mål och deras unika id
 Tabellen nedan innehåller anslutningsspecifikations-ID:n för vanliga gruppmål:
 
 | Mål | Anslutningsspecifikation-ID |
----------|----------|
+|---------|----------|
 | [!DNL Adobe Campaign] | `0b23e41a-cb4a-4321-a78f-3b654f5d7d97` |
 | [!DNL Oracle Eloqua] | `c1e44b6b-e7c8-404b-9031-58f0ef760604` |
 | [!DNL Oracle Responsys] | `a5e28ddf-e265-426e-83a1-9d03a3a6822b` |
@@ -942,7 +942,7 @@ curl -X POST \
 Som referens innehåller tabellen nedan ID:n för de vanligaste gruppmålen:
 
 | Mål | Flödesspekt-ID |
----------|----------|
+|---------|----------|
 | Alla molnlagringsmål ([!DNL Amazon S3], SFTP, [!DNL Azure Blob]) och [!DNL Oracle Eloqua] | `71471eba-b620-49e4-90fd-23f1fa0174d8` |
 | [!DNL Oracle Responsys] | `51d675ce-e270-408d-91fc-22717bdf2148` |
 | [!DNL Salesforce Marketing Cloud] | `493b2bd6-26e4-4167-ab3b-5e910bba44f0` |

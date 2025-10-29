@@ -2,10 +2,10 @@
 title: Snap Inc-anslutning
 description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar dina målgrupper från Experience Platform.
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: 9a80a9b49b1983e8e488d11b114c02130b045686
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1034'
-ht-degree: 0%
+source-wordcount: '1031'
+ht-degree: 1%
 
 ---
 
@@ -76,7 +76,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i Snap Inc-målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -133,14 +133,14 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ## Validera dataexport {#exported-data}
 
-När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** &#x200B;](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
+När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** ](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
 
 1. Logga in i [hanteraren för ögonblicksbilder](https://ads.snapchat.com/)
 2. Välj **Publiker** på menyn längst upp till vänster på skärmen. Du ser vilka målgrupper du har aktiverat i Adobe Experience Platform i målgruppsbiblioteket:
 
 ![Publiker](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den först som en tom publik. Detta beror på att Adobe Experience Platform inte exporterar medlemsdata till Snap Inc förrän målgruppen utvärderas. Mer information om hur målgrupper utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=sv-SE#evaluate-segments).
+Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den först som en tom publik. Detta beror på att Adobe Experience Platform inte exporterar medlemsdata till Snap Inc förrän målgruppen utvärderas. Mer information om hur målgrupper utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

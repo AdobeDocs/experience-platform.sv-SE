@@ -1,33 +1,33 @@
 ---
 keywords: Experience Platform;insikter;attribuering;populära ämnen;attribueringsinsikter
 feature: Attribution AI
-title: Upptäck insikter inom Attribution AI
+title: Identifiera insikter i attribuerings-AI
 description: Det här dokumentet är en guide för interaktion med Service Instance-insikter i användargränssnittet för Adobe Intelligent Services.
 exl-id: 6b8e51e7-1b56-4f4e-94cf-96672b426c88
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1583'
 ht-degree: 0%
 
 ---
 
-# Upptäck insikter inom Attribution AI
+# Upptäck insikter i Attribution AI
 
-Attribution AI Service-instanser ger insikter som kan användas för att fatta och mäta marknadsföringsbeslut som rör marknadsföringens resultat och avkastningen på investeringen. Genom att välja en tjänstinstans får ni visualiseringar och filter som hjälper er att förstå effekten av varje kundinteraktion i varje fas av kundresan.
+AI-instanser för attribuering ger insikter som kan användas för att fatta och mäta marknadsföringsbeslut som rör marknadsföringens resultat och avkastningen på investeringen. Genom att välja en tjänstinstans får ni visualiseringar och filter som hjälper er att förstå effekten av varje kundinteraktion i varje fas av kundresan.
 
 Det här dokumentet är en guide för interaktion med Service Instance-insikter i användargränssnittet för Adobe Intelligent Services.
 
 ## Komma igång
 
-För att kunna utnyttja insikter om Attribution AI måste du ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Attribution AI användargränssnittshandbok](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
+Om du vill kunna använda insikter för Attribution AI måste du ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [AI-användargränssnittshandboken för Attribution](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
 
 ## Översikt över insikter om tjänstinstans
 
-I användargränssnittet för [!DNL Adobe Experience Platform] väljer du **[!UICONTROL Services]** i den vänstra navigeringen. Webbläsaren **[!UICONTROL Services]** visas och visar tillgängliga Adobe Intelligent Services. Markera **[!UICONTROL Open]** i behållaren för Attribution AI.
+I användargränssnittet för [!DNL Adobe Experience Platform] väljer du **[!UICONTROL Services]** i den vänstra navigeringen. Webbläsaren **[!UICONTROL Services]** visas och visar tillgängliga Adobe Intelligent Services. Välj **[!UICONTROL Open]** i behållaren för Attribution AI.
 
 ![Åtkomst till din instans](./images/insights/open_Attribution_ai.png)
 
-Attribution AI tjänstsida visas. På den här sidan visas tjänstinstanser av Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Välj ett tjänstinstansnamn som ska börja.
+AI-tjänstsidan för attribuering visas. På den här sidan visas tjänstinstanser för Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Välj ett tjänstinstansnamn som ska börja.
 
 >[!NOTE]
 >
@@ -45,7 +45,7 @@ Om du vill visa mer information om en tjänstinstans väljer du **[!UICONTROL Sh
 
 ![visa mer](./images/insights/show-more.png)
 
-En detaljerad lista visas. Mer information om egenskaperna finns i användarhandboken för [Attribution AI](./user-guide.md).
+En detaljerad lista visas. Mer information om de angivna egenskaperna finns i användarhandboken för [Attribution AI](./user-guide.md).
 
 ![visa information](./images/insights/advanced-details.png)
 
@@ -65,14 +65,14 @@ Knappen **[!UICONTROL More actions]** finns i den övre högra navigeringen bred
 - **[!UICONTROL Clone]**: Klonar instansen.
 - **[!UICONTROL Delete]**: Tar bort instansen.
 - **[!UICONTROL Download summary data]**: Hämtar en CSV-fil som innehåller sammanfattningsdata.
-- **[!UICONTROL Access scores]**: Om du väljer **[!UICONTROL Access scores]** omdirigeras du till [åtkomstpoängen för självstudiekursen](./download-scores.md).
+- **[!UICONTROL Access scores]**: Om du väljer **[!UICONTROL Access scores]** omdirigeras du till [åtkomstpoängen för AI-självstudiekursen för attribut](./download-scores.md).
 - **[!UICONTROL View run history]**: En portfölj med en lista över alla poäng som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](./images/insights/more-actions.png)
 
 ## Filtrera data
 
-Med hjälp av Attribution AI kan du filtrera data och automatiskt uppdatera gränssnittets visuella information baserat på de filter du valt.
+Tack vare AI-insikter för attribuering kan du filtrera data och automatiskt uppdatera gränssnittets visuella information baserat på de filter du valt.
 
 ### Konverteringshändelse
 
@@ -92,7 +92,7 @@ Om du väljer **[!UICONTROL Attribution Model]** öppnas en listruta med alla ol
 
 >[!NOTE]
 >
->Det här filtret finns bara om du utförde det valfria steget [regionbaserad modellering](./user-guide.md#region-based-modeling-optional) i användargränssnittshandboken för Attribution AI när du skapade tjänstinstansen.
+>Det här filtret finns bara om du utförde det valfria steget [regionbaserad modellering](./user-guide.md#region-based-modeling-optional) i AI-gränssnittshandboken för Attribution när du skapade tjänstinstansen.
 
 Med det här filtret kan du markera alla områden som du har konfigurerat när du skapar instansen.
 
@@ -155,9 +155,9 @@ Diagrammet **[!UICONTROL Breakdown by touchpoint position]** är en fördelning 
 - **Spelare:** Anger att kontaktytan inte var den första eller sista kontakten som ledde till en konvertering.
 - **Closer:** Anger att kontaktytan var den sista kontakten före en konvertering.
 
+>[!NOTE]
 >
->
-> Summan av procentandelen för en attribueringsmodell för alla kontaktytor och positioner ska vara lika med 100.
+>Summan av procentandelen för en attribueringsmodell för alla kontaktytor och positioner ska vara lika med 100.
 
 ![slutpunkt för nedbrytning av användarsökväg](./images/insights/user-paths.png)
 
@@ -169,7 +169,7 @@ Diagrammet **[!UICONTROL Top conversion paths]** visar de påverkade och algorit
 
 ## Pekpunktseffektivitet
 
-Om du väljer fliken **[!UICONTROL Touchpoint Effectiveness]** läses **[!UICONTROL Touchpoint effectiveness]**-kortet in. Det här kortet använder Attribution AI datadistribution för att visa information för varje kontaktyta. Data för den här tabellen genereras endast för specifika tidsperioder enligt datumet **[!UICONTROL As of]** i kortets övre högra hörn.
+Om du väljer fliken **[!UICONTROL Touchpoint Effectiveness]** läses **[!UICONTROL Touchpoint effectiveness]**-kortet in. På det här kortet används attributets AI-distribution av data för att visa information för varje kontaktyta. Data för den här tabellen genereras endast för specifika tidsperioder enligt datumet **[!UICONTROL As of]** i kortets övre högra hörn.
 
 ![pekpunktseffekt välj](./images/insights/Touchpoint-effectiveness.png)
 
@@ -189,10 +189,10 @@ Du kan använda kortinformationen **[!UICONTROL Touchpoint effectiveness]** för
 
 ## Nästa steg
 
-När du är klar med filtreringen av data och kan visa lämplig information kan du välja att få åtkomst till poängen. Om du vill ha en detaljerad guide om hur du får tillgång till dina poäng kan du gå till självstudiekursen [access scores i Attribution AI](./download-scores.md). Du kan även hämta dina sammanfattningsdata enligt vad som anges i [fler åtgärder](#more-actions). Om du väljer Hämta sammanfattningsdata hämtas sammanfattningsdata som aggregerats efter datum.
+När du är klar med filtreringen av data och kan visa lämplig information kan du välja att få åtkomst till poängen. Om du vill ha en detaljerad guide om hur du får tillgång till dina poäng kan du gå till självstudiekursen [access scores in Attribution AI](./download-scores.md). Du kan även hämta dina sammanfattningsdata enligt vad som anges i [fler åtgärder](#more-actions). Om du väljer Hämta sammanfattningsdata hämtas sammanfattningsdata som aggregerats efter datum.
 
 ## Ytterligare resurser
 
-Följande videofilm är utformad för att hjälpa dig att lära dig hur du använder informationssidan för Attribution AI för att förstå avkastningen på marknadsföringskanaler och kampanjer.
+Följande video är utformad för att hjälpa till att lära sig hur man använder informationssidan för attributanalys för att förstå avkastningen på marknadsföringskanaler och kampanjer.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32669?learn=on&quality=12)

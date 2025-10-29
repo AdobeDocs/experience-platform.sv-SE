@@ -2,7 +2,7 @@
 title: mTLS (Mutual Transport Layer Security) - översikt
 description: Lär dig hur du kan använda mTLS för att säkert hämta offentliga certifikat som utfärdats av Adobe för händelsevidarebefordran.
 exl-id: e8ee8655-213d-4d2a-93d4-d62824b53b1d
-source-git-commit: ab16cc3f70ec54460c7c4834e665c828d75d4d9e
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '605'
 ht-degree: 0%
@@ -35,7 +35,7 @@ På nästa sida väljer du den miljö som du vill använda för den här konfigu
 
 ![Miljön väljer skärm och [!UICONTROL Select] markeras för utveckling.](../../../images/extensions/server/cloud-connector/select-environment.png)
 
-Ange en **[!UICONTROL Name]** på sidan **[!UICONTROL Create Environment]** och välj ***Adobe Managed*** i listrutan **[!UICONTROL Select Host]**. **[!UICONTROL Certificate]** har ***lagts till automatiskt***. Välj slutligen **[!UICONTROL Save]**.
+Ange en **[!UICONTROL Create Environment]** på sidan **[!UICONTROL Name]** och välj ***Adobe Managed*** i listrutan **[!UICONTROL Select Host]**. **[!UICONTROL Certificate]** har ***lagts till automatiskt***. Välj slutligen **[!UICONTROL Save]**.
 
 ![Sidan Skapa utvecklingsmiljö, som markerar [!UICONTROL Name], [!UICONTROL Select Host] och [!UICONTROL Save].](../../../images/extensions/server/cloud-connector/create-environment.png)
 
@@ -77,4 +77,4 @@ Om du vill distribuera certifikatet väljer du **[!UICONTROL Save and deploy]** 
 
 I det här dokumentet visades hur du skapar en miljö för egenskapen för händelsevidarebefordran, lägger till ett certifikat och använder ett föråldrat certifikat. Mer information om [!DNL mTLS]-certifikaten finns i [[!DNL mTLS] Översikt över tjänst-API:t](../../../../data-governance/mtls-api/overview.md)
 
-Mer information om hur du använder [!DNL mTLS]-certifikat i reglerna för händelsevidarebefordran finns i översikten för [Cloud Connector-tillägget](../cloud-connector/overview.md/#mtls-rules).
+Mer information om hur du använder [!DNL mTLS]-certifikat i reglerna för händelsevidarebefordran finns i översikten för [Cloud Connector-tillägget](../cloud-connector/overview.md#mtls-rules).

@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;göra en modellpoäng;Data Science Workspace;populära ämnen;ui;poängsättning;poängresultat
+keywords: Experience Platform;göra en modell;Data Science Workspace;populära ämnen;ui;poängsättning;poängresultat
 solution: Experience Platform
 title: Skapa en modell i användargränssnittet för datavetenskap i Workspace
 type: Tutorial
 description: Du kan göra en bedömning i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 exl-id: 00d6a872-d71a-47f4-8625-92621d4eed56
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '641'
 ht-degree: 0%
@@ -28,7 +28,7 @@ I den här självstudiekursen visas de steg som krävs för att göra en modell 
 
 Du måste ha tillgång till [!DNL Experience Platform] för att kunna slutföra den här självstudiekursen. Om du inte har åtkomst till en organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
 
-Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell följer du [tåget och utvärderar en modell i självstudiekursen &#x200B;](./train-evaluate-model-ui.md) innan du fortsätter.
+Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell följer du [tåget och utvärderar en modell i självstudiekursen ](./train-evaluate-model-ui.md) innan du fortsätter.
 
 ## Skapa en ny poängkörning
 
@@ -38,7 +38,7 @@ Hitta den mest optimala kursen för att använda dess konfigurationer för poän
 
 ![Välj utbildningskörning](../images/models-recipes/score/select-run.png)
 
-Välj **[!UICONTROL Score]** som finns högst upp till höger på skärmen på fliken **[!UICONTROL Evaluation]** i utbildningskörningen. Ett nytt bedömningsarbetsflöde börjar.
+Välj **[!UICONTROL Evaluation]** som finns högst upp till höger på skärmen på fliken **[!UICONTROL Score]** i utbildningskörningen. Ett nytt bedömningsarbetsflöde börjar.
 
 ![](../images/models-recipes/score/training_run_overview.png)
 
@@ -60,6 +60,7 @@ Granska och bekräfta poängkonfigurationerna och välj **[!UICONTROL Finish]** 
 ![poäng kör flik](../images/models-recipes/score/scoring_runs_tab.png)
 
 En bedömningskörning kan visas med någon av följande statusar:
+
 - Väntande
 - Complete
 - Misslyckades

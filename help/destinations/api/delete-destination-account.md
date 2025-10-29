@@ -5,7 +5,7 @@ title: Ta bort ett målkonto med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort ett målkonto med API:t för Flow Service.
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 9%
@@ -147,9 +147,10 @@ A successful response returns the current details of your connection including i
 >[!IMPORTANT]
 >
 >Innan du tar bort målkontot måste du ta bort alla befintliga dataflöden till målkontot.
->Om du vill ta bort befintliga dataflöden kan du läsa sidorna nedan:
+>>Om du vill ta bort befintliga dataflöden kan du läsa sidorna nedan:
+>
 >* [Använd Experience Platform-gränssnittet](../ui/delete-destinations.md) för att ta bort befintliga dataflöden;
->* [Använd API:t för Flow Service &#x200B;](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
+>* [Använd API:t för Flow Service ](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
 
 När du har ett anslutnings-ID och har säkerställt att det inte finns några dataflöden till målkontot, kan du utföra en DELETE-begäran till [!DNL Flow Service]-API:t.
 

@@ -2,7 +2,7 @@
 title: Medieanslutning
 description: Aktivera profiler för riktade medieundersökningar och insamling av feedback för att bättre förstå kundernas behov och förväntningar.
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1098'
 ht-degree: 0%
@@ -34,6 +34,7 @@ En återförsäljare vill förstå kundernas preferenser bättre för orderhante
 ## Förhandskrav {#prerequisites}
 
 Följande information krävs för att upprätta en parallellanslutning:
+
 * **URL för OAuth-tokenslutpunkt**
 * **Klient-ID**
 * **Klienthemlighet**
@@ -58,7 +59,7 @@ Medallia stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs m
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla nykvalificerade medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i arbetsflödet för [målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -111,14 +112,17 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 ### Mappa attribut och identiteter {#map}
 
 Följande namnutrymmen för målidentitet måste mappas beroende på användningsfallet:
+
 * För e-postbaserade undersökningar måste **email** mappas som ett målfält med **målfält** > **Välj identitetsnamnutrymme** > **e-post**
 * För SMS-baserade enkäter måste **phone** mappas som ett målfält med **målfält** > **Välj identitetsnamnområde** > **telefon**. Telefonnummer måste vara i E.164-format, som innehåller ett plustecken (+), en landskod, en lokal områdeskod och ett telefonnummer
 
 Vi rekommenderar starkt att du även mappar ytterligare anpassade målattribut för att skapa personaliserade enkäter och lägger till ytterligare information om kunden till enkätposten:
 
 * Personaliserade enkäter riktar sig vanligtvis till kunden efter namn
+
    * Mappa kundens förnamn till **målfält** > **Välj anpassade attribut** > **Attributnamn** > **förnamn**
    * Mappa kundens efternamn till **målfält** > **Välj anpassade attribut** > **attributnamn** > **efternamn**
+
 * Lägg till mappningar för andra anpassade målattribut efter behov
 
 ![Bild som visar en exempelmappning för identiteter och attribut.](/help/destinations/assets/catalog/voice/medallia-destination-mapping.png)

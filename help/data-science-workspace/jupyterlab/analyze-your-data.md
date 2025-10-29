@@ -5,7 +5,7 @@ title: Analysera dina data med bärbara datorer
 type: Tutorial
 description: Den här självstudiekursen fokuserar på hur du använder Jupyter Notebooks, byggda i Data Science Workspace, för att få tillgång till, utforska och visualisera dina data.
 exl-id: 3b0148d1-9c08-458b-9601-979cb6c7a0fb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1727'
 ht-degree: 0%
@@ -64,7 +64,7 @@ Vi kommer att gå igenom åtkomsten till data internt från [!DNL Adobe Experien
 
 #### Externa data
 
-När butiksförsäljningsjournalen är öppen hittar du rubriken&quot;Läs in data&quot;. I följande [!DNL Python]-kod används pandas `DataFrame`-datastruktur och funktionen [&#x200B; read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns på [!DNL Github] i DataFrame:
+När butiksförsäljningsjournalen är öppen hittar du rubriken&quot;Läs in data&quot;. I följande [!DNL Python]-kod används pandas `DataFrame`-datastruktur och funktionen [ read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns på [!DNL Github] i DataFrame:
 
 ![](../images/jupyterlab/analyze-data/read_csv.png)
 
@@ -120,6 +120,7 @@ Om du startar om kärnan och kör alla celler igen bör du få samma utdata som 
 ### Utforska era data
 
 Nu när vi har tillgång till era data kan vi fokusera på själva data genom att använda statistik och visualisering. Den datauppsättning som vi använder är en detaljhandelsdatamängd som ger övrig information om 45 olika butiker en viss dag. Vissa egenskaper för en given `date` och `store` innehåller följande:
+
 - `storeType`
 - `weeklySales`
 - `storeSize`
@@ -161,6 +162,7 @@ Det innebär att 22 butiker är av `storeType` `A`, 17 är `storeType` `B` och 6
 #### Datavisualisering
 
 Nu när vi känner till våra värden för dataramar vill vi komplettera detta med visualiseringar för att göra saker klarare och enklare att identifiera mönster. Diagram är också användbara när du vill förmedla resultat till en viss målgrupp. Vissa [!DNL Python]-bibliotek som är användbara för visualisering är bland annat:
+
 - [Matplotlib](https://matplotlib.org/)
 - [pandor](https://pandas.pydata.org/)
 - [avbruten](https://seaborn.pydata.org/)
@@ -201,6 +203,7 @@ Observera diagonalen för 1 är nedåt i mitten. Detta visar att en variabel har
 ## Nästa steg
 
 Den här självstudiekursen gick igenom hur du skapar en ny Jupyter-anteckningsbok i Data Science Workspace och hur du får åtkomst till data externt såväl som från [!DNL Adobe Experience Platform]. Vi gick igenom följande steg:
+
 - Skapa en ny Jupyter-anteckningsbok
 - Få tillgång till datauppsättningar och scheman
 - Utforska datauppsättningar

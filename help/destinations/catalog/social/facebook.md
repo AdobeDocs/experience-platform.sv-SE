@@ -3,7 +3,7 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: c8eedc1f020b8605c9565015461cb1dfd47bba1f
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '2636'
 ht-degree: 0%
@@ -52,7 +52,7 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 | `last_name` | Efternamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name` | Förnamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga mellanslag. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name_initial` | Första namn | Godkänt format: Endast gemener, `a-z` tecken. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
-| `state` | Läge | Använd anSI-förkortningskoden [2 tecken &#x200B;](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `state` | Läge | Använd anSI-förkortningskoden [2 tecken ](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `city` | Ort | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga specialtecken, inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `zip` | Postnummer | Godkänt format: Gemener, inga mellanslag. För amerikanska postnummer ska du endast använda de första 5 siffrorna. Använd formatet `Area/District/Sector` för Storbritannien.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `country` | Land | Godkänt format: landskoder med två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) .  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
@@ -73,7 +73,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i Facebook-målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -138,8 +138,8 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >[!NOTE]
 >
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Experience Platform] vid aktiveringen.
->&#x200B;> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
->&#x200B;> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
+>> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.
+>> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
 ![Använd omformningskontroll markerat i mappningssteget.](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
@@ -157,7 +157,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera målgrupper.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -174,7 +174,7 @@ I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål
 
 Autentiseringstoken för Facebook går ut var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera.
 
-Du kan övervaka dina tokens förfallodatum från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../ui/destinations-workspace.md#browse)**.
+Du kan övervaka förfallotiden för dina tokens från kolumnen **[!UICONTROL Account expiration date]** på flikarna **[[!UICONTROL Accounts]](../../ui/destinations-workspace.md#accounts)** eller **[[!UICONTROL Browse]](../../ui/destinations-workspace.md#browse)**.
 
 ![Förfallodatumkolumn för Facebook-kontotoken på fliken Bläddra](../../assets/catalog/social/facebook/account-expiration-browse.png)
 

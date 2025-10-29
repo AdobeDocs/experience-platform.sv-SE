@@ -3,7 +3,7 @@ keywords: Experience Platform;home;populära topics;query service;Query service;
 title: Visa besökare efter antal sidvyer
 description: Lär dig hur du skriver frågor som använder Experience Events för att hämta en lista över besökare ordnade efter antalet sidvisningar.
 exl-id: 6e8eed0c-838e-4cd0-ae8c-453114fbf4ea
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '273'
 ht-degree: 0%
@@ -34,7 +34,7 @@ Frågeresultaten visas i tabellen nedan.
 
 ```console
                id                  | pageViews
------------------------------------+-----------
+|-----------------------------------+-----------
  457C3510571E5930-69AA721C4CBF9339 |     706.0
  776F85658792C017-6491FE6570382A01 |     700.0
  6BEC9C6AB52E779F-28F5B023113F2C85 |     654.0

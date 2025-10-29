@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över användargränssnittet i JupyterLab
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1832'
+source-wordcount: '1831'
 ht-degree: 0%
 
 ---
@@ -124,7 +124,7 @@ I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för a
 
 Om du använder [!DNL JupyterLab] kan du avsluta din session för att förhindra att fler resurser används. Börja med att välja **strömikonen** ![strömikonen](/help/images/icons/power.png) och välj sedan **[!UICONTROL Shut Down]** i den port som visas för att avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
 
-Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** ![starta om &#x200B;](/help/images/icons/restart.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den port som visas.
+Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** ![starta om ](/help/images/icons/restart.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den port som visas.
 
 ![avsluta jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 
@@ -264,6 +264,7 @@ Om du vill visa en lista över paket som stöds i Python, R och PySpark kopierar
 ![exempel](../images/jupyterlab/user-guide/libraries.PNG)
 
 Dessutom används följande beroenden, som inte finns med i listan:
+
 * CUDA 11.2
 * CUDNN 8.1
 

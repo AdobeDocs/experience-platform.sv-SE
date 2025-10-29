@@ -3,7 +3,7 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: f078d7b20bc16bf1a6cca065e5e6fba85d9d0648
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1028'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > Efter den [interna uppgraderingen](../../../release-notes/2025/july-2025.md#destinations) till måltjänsten från juli 2025 kan du uppleva en **minskning av antalet aktiverade profiler** i dataflödena till [!DNL The Trade Desk].
-> &#x200B;> Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
+> > Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
 >
 >**Vad har ändrats:**
 >
@@ -74,7 +74,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp till målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -84,7 +84,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/sv/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
+>Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ## Anslut till målet {#connect}
 
@@ -157,7 +157,7 @@ Exempel:
 
 >[!NOTE]
 > 
->Efter uppgraderingen [&#x200B; från &#x200B;](/help/release-notes/2025/july-2025.md#destinations)juli 2025 till måltjänsten har mappningen [!DNL ECID] framtvingats. Profiler som saknar [!DNL ECID] tas nu bort som förväntat, vilket kan leda till lägre antal aktiveringar jämfört med äldre beteenden.
+>Efter uppgraderingen [ från ](/help/release-notes/2025/july-2025.md#destinations)juli 2025 till måltjänsten har mappningen [!DNL ECID] framtvingats. Profiler som saknar [!DNL ECID] tas nu bort som förväntat, vilket kan leda till lägre antal aktiveringar jämfört med äldre beteenden.
 
 ## Exporterade data {#exported-data}
 

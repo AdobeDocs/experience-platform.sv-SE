@@ -3,7 +3,7 @@ title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '2218'
 ht-degree: 0%
@@ -36,7 +36,7 @@ I avsnitten nedan finns information om eventuella krav som du måste ställa in 
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Mailchimp Interest Categories] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Mailchimp Interest Categories] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 ### Krav för målet [!DNL Mailchimp Interest Categories] {#prerequisites-destination}
 
@@ -91,7 +91,7 @@ Se även [!DNL Mailchimp] [tariffgränser](https://mailchimp.com/developer/marke
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Experience Platform uppdateras motsvarande [!DNL Mailchimp Interest Categories]-segmentstatus med målgruppsstatus från Experience Platform.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -105,7 +105,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-Sök efter [!DNL Mailchimp Interest Categories] inom **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Du kan också hitta den under kategorin **[!UICONTROL Email marketing]**.
+Sök efter **[!UICONTROL Destinations]** inom **[!UICONTROL Catalog]** > [!DNL Mailchimp Interest Categories]. Du kan också hitta den under kategorin **[!UICONTROL Email marketing]**.
 
 ### Autentisera till mål {#authenticate}
 
@@ -114,7 +114,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 | Fält | Beskrivning |
 | --- | --- |
 | **[!UICONTROL Username]** | Ditt [!DNL Mailchimp Interest Categories]-användarnamn. |
-| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel &#x200B;](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
+| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel ](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
 
 {style="table-layout:auto"}
 
@@ -163,8 +163,8 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
 Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL Mailchimp Interest Categories]:
 
-1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. Nu kan du se en ny mappningsrad på skärmen.
-1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
+1. Välj **[!UICONTROL Mapping]** i steget **[!UICONTROL Add new mapping]**. Nu kan du se en ny mappningsrad på skärmen.
+1. Välj kategorin **[!UICONTROL Select source field]** i fönstret **[!UICONTROL Select attributes]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
 1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och en identitet eller väljer **[!UICONTROL Select attributes]**-kategori och väljer i listan över attribut i API:t för [!DNL Mailchimp] . *Alla anpassade attribut som du har lagt till i den valda målgruppen för [!DNL Mailchimp] är också tillgängliga för markering som målfält.*
 
    De tillgängliga mappningarna mellan ditt XDM-profilschema och [!DNL Mailchimp Interest Categories] är som följer:
@@ -237,6 +237,7 @@ På sidan [[!DNL Mailchimp] errors](https://mailchimp.com/developer/marketing/do
 ## Ytterligare resurser {#additional-resources}
 
 Ytterligare användbar information från dokumentationen för [!DNL Mailchimp] finns nedan:
+
 * [Komma igång med [!DNL Mailchimp]](https://mailchimp.com/help/getting-started-with-mailchimp/)
 * [Komma igång med målgrupper](https://mailchimp.com/help/getting-started-audience/)
 * [Skapa en publik](https://mailchimp.com/help/create-audience/)

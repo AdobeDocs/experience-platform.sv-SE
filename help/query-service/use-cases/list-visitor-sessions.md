@@ -3,7 +3,7 @@ keywords: Experience Platform;home;populära topics;query service;Query service;
 title: Visa en användares sidvyer
 description: Lär dig hur du skriver frågor som använder Experience Events för att skapa en lista över de 100 senaste sidorna som en angiven användare har använt.
 exl-id: d831910d-d3a4-4a5a-b897-b09f0546dab0
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '268'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Resultatet av den här frågan visas nedan.
 
 ```console
       timestamp       |  referrerType  |                            referrer                                |                 pageName            |  A  |  B  |  C  | pageViews
-----------------------+----------------+--------------------------------------------------------------------+-------------------------------------+-----+-----+-----+--------------
+|----------------------+----------------+--------------------------------------------------------------------+-------------------------------------+-----+-----+-----+--------------
 2019-11-08 17:15:28.0 | typed_bookmark |                                                                    |                                     |     |     |     |
 2019-11-08 17:53:05.0 | social         | http://www.reddit.com                                              | Home                                |     |     |     |          1.0
 2019-11-08 17:53:45.0 | typed_bookmark |                                                                    | Kids                                |     |     |     |          1.0

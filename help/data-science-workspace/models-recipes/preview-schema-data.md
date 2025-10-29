@@ -5,7 +5,7 @@ title: Förhandsgranska schema och datauppsättning för butiksförsäljning
 type: Tutorial
 description: I följande dokument visas förhandsvisningar av scheman och datauppsättningar på Adobe Experience Platform.
 exl-id: dca9835b-4f76-42cc-b262-b20323bf4356
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '255'
 ht-degree: 0%
@@ -39,6 +39,7 @@ Välj **[!UICONTROL Preview Dataset]** längst upp till höger om du vill förha
 Du har nu importerat exempeldata för butiksförsäljning till [!DNL Experience Platform] med det angivna bootstrap-skriptet.
 
 Så här fortsätter du att arbeta med inkapslade data:
+
 - [Analysera dina data med Jupyter Notebooks](../jupyterlab/analyze-your-data.md)
    - Använd Jupyter-anteckningsböcker i [!DNL Data Science Workspace] för att få tillgång till, utforska, visualisera och förstå dina data.
 - [Paketera källfiler i en mottagare](./package-source-files-recipe.md)

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Produktinköpsförutsägelsekvitto
 description: Med recept för produktinköpsförutsägelse kan du förutsäga sannolikheten för en viss typ av kundinköpshändelse, till exempel ett produktköp.
 exl-id: 66a45629-33a3-4081-8dbd-b864983b8f57
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '415'
 ht-degree: 0%
@@ -24,6 +24,7 @@ Med recept för produktinköpsförutsägelse kan du förutsäga sannolikheten f�
 ![](../images/pre-built-recipes/ppp_bigpicture.png)
 
 Följande dokument kommer att svara på frågor som:
+
 * Vem är receptet avsett för?
 * Vad gör det här receptet?
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Dataåtkomst i Jupyterlab-anteckningsböcker
 description: Den här guiden fokuserar på hur du använder Jupyter Notebooks, byggda i Data Science Workspace, för att få tillgång till dina data.
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '3276'
+source-wordcount: '3274'
 ht-degree: 2%
 
 ---
@@ -29,7 +29,7 @@ Innan du läser den här guiden bör du läsa [[!DNL JupyterLab] användarhandbo
 
 >[!IMPORTANT]
 >
->För PySpark- och Scala-anteckningsböcker om du får ett fel med anledningen&quot;RPC-fjärrklienten har kopplats från&quot;. Detta innebär vanligtvis att minnet håller på att ta slut för drivrutinen eller en exekvering. Försök med att växla till [&quot;gruppläge&quot; &#x200B;](#mode) för att lösa det här felet.
+>För PySpark- och Scala-anteckningsböcker om du får ett fel med anledningen&quot;RPC-fjärrklienten har kopplats från&quot;. Detta innebär vanligtvis att minnet håller på att ta slut för drivrutinen eller en exekvering. Försök med att växla till [&quot;gruppläge&quot; ](#mode) för att lösa det här felet.
 
 Följande information definierar den maximala mängden data som kan läsas, vilken typ av data som användes och den beräknade tidsramen som läser data.
 
@@ -535,7 +535,9 @@ df1.show(10)
 Du kan generera exemplet ovan automatiskt i JupyterLab genom att använda följande metod:
 
 Välj fliken Data icon (markerad nedan) i den vänstra navigeringen i JupyterLab. Katalogerna **[!UICONTROL Datasets]** och **[!UICONTROL Schemas]** visas. Välj **[!UICONTROL Datasets]** och högerklicka och välj sedan alternativet **[!UICONTROL Explore Data in Notebook]** i listrutan på den datauppsättning som du vill använda. En körbar kodpost visas längst ned i anteckningsboken.
+
 Och
+
 - Använd **[!UICONTROL Explore Data in Notebook]** för att generera en läscell.
 - Använd **[!UICONTROL Write Data in Notebook]** för att generera en skrivcell.
 

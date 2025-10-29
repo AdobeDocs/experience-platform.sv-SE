@@ -3,7 +3,7 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >I och med lanseringen av EUID (European Unified ID) ser du nu två [!DNL The Trade Desk - CRM] mål i [målkatalogen](/help/destinations/catalog/overview.md).
+>
 >* Använd målet **[!DNL The Trade Desk - CRM (EU)]** om du hämtar data i EU.
 >* Använd målet **[!DNL The Trade Desk - CRM (NAMER & APAC)]** om du hämtar data i APAC- eller NAMER-regionerna.
 >
@@ -74,7 +75,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (e-post eller hashad e-post) som används i Trade Desk-målet. |
 | Exportfrekvens | **[!UICONTROL Daily Batch]** | När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering uppdateras profilen (identiteterna) en gång om dagen nedströms till målplattformen. Läs mer om [batchexport](/help/destinations/destination-types.md#file-based). |
 
@@ -88,7 +89,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
@@ -144,7 +145,7 @@ Om du vill verifiera att data har exporterats korrekt från Experience Platform 
 
 1. Välj först fliken **[!UICONTROL Data]** och granska avsnittet **[!UICONTROL First-Party]**.
 2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]**, hittar du **[!UICONTROL Adobe 1PD Tile]**.
-3. Klicka på rutan&#x200B;**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
+3. Klicka på rutan**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
 4. Segment-ID:t för Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
 
 ## Dataanvändning och styrning {#data-usage-governance}

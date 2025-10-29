@@ -1,15 +1,15 @@
 ---
 title: Bomboras anslutning
 description: Aktivera profiler för era Bombora-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på målgrupper.
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-source-git-commit: 026d8e4c2bcea407d2a750e66b11766b1114b758
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+exl-id: a2f8e399-e192-4104-876a-fe60f8403143
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '846'
 ht-degree: 0%
 
 ---
-
 
 # Bomboras anslutning {#bombora}
 
@@ -48,7 +48,7 @@ Detta flerkanaliga arbetssätt säkerställer enhetliga meddelanden på olika pl
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | X | Publikerna [importerade](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
@@ -69,7 +69,7 @@ Bombora kräver att målidentiteten mappas enligt tabellen nedan. Läs mer om [i
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL Bombora]. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -136,4 +136,3 @@ Bomboras mål kräver att du konfigurerar följande mappningar för att kunna ak
 ## Ytterligare kommentarer och viktiga bildtexter {#additional-notes}
 
 Om en kontopublik med samma namn aktiverades tidigare för Bombora, kommer du att få ett felmeddelande om du försöker aktivera den igen via ett annat dataflöde till Bomboras mål.
-

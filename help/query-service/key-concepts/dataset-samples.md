@@ -2,7 +2,7 @@
 title: Datauppsättningsexempel
 description: Med exempeldatauppsättningar för frågetjänsten kan du utföra utforskande frågor på stora data med avsevärt reducerad bearbetningstid, vilket gör att frågan blir korrekt. Den här guiden innehåller information om hur du hanterar dina exempel för ungefärlig frågebearbetning
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 0%
@@ -18,12 +18,12 @@ Eftersom många användare inte behöver ett exakt svar för en sammanställning
 För att du ska kunna hantera dina exempel för ungefärlig frågebearbetning har frågetjänsten stöd för följande åtgärder för datauppsättningsexempel:
 
 - [Datauppsättningsexempel](#dataset-samples)
-   - [Komma igång {#get-started}](#getting-started-get-started)
-   - [Skapa ett enhetligt slumpmässigt datauppsättningsexempel {#create-a-sample}](#create-a-uniform-random-dataset-sample-create-a-sample)
-   - [Du kan också ange filtervillkor {#optional-filter-criteria}](#optionally-specify-a-filter-criteria-optional-filter-criteria)
-   - [Visa listan med exempel {#view-list-of-samples}](#view-the-list-of-samples-view-list-of-samples)
-   - [Fråga exempeldatamängden {#query-sample-datasets}](#query-the-sample-dataset-query-sample-datasets)
-   - [Ta bort datauppsättningsexempel {#delete-a-sample}](#delete-dataset-samples-delete-a-sample)
+   - [Komma igång](#getting-started-get-started)
+   - [Skapa ett enhetligt exempel på en slumpmässig datauppsättning](#create-a-uniform-random-dataset-sample-create-a-sample)
+   - [Du kan också ange filtervillkor](#optionally-specify-a-filter-criteria-optional-filter-criteria)
+   - [Visa listan med exempel](#view-the-list-of-samples-view-list-of-samples)
+   - [Fråga exempeldatauppsättningen](#query-the-sample-dataset-query-sample-datasets)
+   - [Ta bort datauppsättningsexempel](#delete-dataset-samples-delete-a-sample)
 
 ## Komma igång {#get-started}
 
@@ -83,7 +83,7 @@ Listan med datauppsättningsexempel visas i formatet för exemplet nedan.
 
 ```shell
                   sample_table_name                  |    sample_dataset_id     |    parent_dataset_id     | sample_type | sampling_rate | sample_num_rows |       created      
------------------------------------------------------+--------------------------+--------------------------+-------------+---------------+-----------------+---------------------
+|-----------------------------------------------------+--------------------------+--------------------------+-------------+---------------+-----------------+---------------------
  x5e5cd8ea0a83c418a8ef0928_uniform_4_0_percent_ughk7 | 62ff19853d338f1c07b18965 | 5e5cd8ea0a83c418a8ef0928 | uniform     |           4.0 |             391 | 19/08/2022 05:03:01
 (1 row)
 ```

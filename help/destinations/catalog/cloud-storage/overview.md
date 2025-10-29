@@ -3,7 +3,7 @@ keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
 description: Adobe Experience Platform kan leverera dina målgrupper som datafiler till dina Amazon S3-, AWS Kinesis-, Azure Event Hubs- eller SFTP-molnlagringsplatser.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 1%
@@ -73,6 +73,7 @@ På samma sätt som i exemplen ovan kan du använda ytterligare makron för att 
 ## Dataexporttyp {#export-type}
 
 Molnlagringsdestinationer har stöd för följande exporttyper:
+
 * **Profilbaserad export**. Det innebär att du exporterar information om personerna i målgruppen. Dessa uppgifter behövs för personalisering och kan omfatta attribut, event, medlemskap för målgrupper med mera.
 * **Datauppsättningsexport**. Med den här funktionen kan du exportera hela datauppsättningar till molnlagringsmål. [Läs mer](/help/destinations/ui/export-datasets.md) om funktionaliteten.
 

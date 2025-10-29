@@ -1,7 +1,8 @@
 ---
 title: Förutspå kundomsättning med SQL-baserad Logistisk regression
 description: Lär dig förutse kundbortfall med hjälp av SQL-baserad logistisk regression. Den här guiden täcker hela processen från att skapa modeller till utvärdering och förutsägelse. Få användbara insikter från kundernas beteenden när det gäller att implementera förebyggande strategier och optimera affärsbeslut.
-source-git-commit: 95c7ad3f8eb86cacd42077008824eea9e25b4db0
+exl-id: 3b18870d-104c-4dce-8549-a6818dc40d24
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1126'
 ht-degree: 0%
@@ -45,7 +46,7 @@ Modellen är beroende av nyckelfält i tabellen `webevents` som samlar in inform
 | `timestamp` | Exakt datum och tid för varje köphändelse. |
 | `commerce.order.purchaseID` | Ett obligatoriskt värde som bekräftar ett slutfört köp. |
 
-Datauppsättningen måste innehålla strukturerade historiska kundtransaktionsposter, där varje rad representerar en köphändelse. Varje händelse måste innehålla tidsstämplar i ett lämpligt datum- och tidsformat som är kompatibelt med SQL `DATEDIFF`-funktionen (till exempel YYY-MM-DD HH:MI:SS). Dessutom måste varje post innehålla ett giltigt Experience Cloud-ID (`ECID`) i fältet `identityMap` för att unikt identifiera kunder.
+Datauppsättningen måste innehålla strukturerade historiska kundtransaktionsposter, där varje rad representerar en köphändelse. Varje händelse måste innehålla tidsstämplar i ett lämpligt datum- och tidsformat som är kompatibelt med SQL `DATEDIFF`-funktionen (till exempel YYY-MM-DD HH:MI:SS). Dessutom måste varje post innehålla ett giltigt Experience Cloud-id (`ECID`) i fältet `identityMap` för att unikt identifiera kunder.
 
 >[!TIP]
 >
@@ -128,7 +129,7 @@ Utdatadatauppsättningen innehåller kundrelaterade mått och deras bortfallssta
 
 ```console
  customer_id  | total_purchases | total_revenue | avg_order_value  | customer_lifetime | days_since_last_purchase | purchase_frequency | churned |
---------------+-----------------+---------------+------------------+-------------------+--------------------------+--------------------+----------
+|--------------+-----------------+---------------+------------------+-------------------+--------------------------+--------------------+----------
   100001      | 25              | 1250.00       | 50.00            | 540               | 20                       | 10                 | 0       
   100002      | 3               | 90.00         | 30.00            | 120               | 95                       | 1                  | 1       
   100003      | 60              | 7200.00       | 120.00           | 800               | 5                        | 24                 | 0       
@@ -144,7 +145,7 @@ Utdatadatauppsättningen innehåller kundrelaterade mått och deras bortfallssta
 
 Utvärdera sedan modellen för omsättningsförutsägelse för att avgöra hur effektiv den är när det gäller att identifiera riskkunder. Utvärdera modellens prestanda med viktiga mätvärden som mäter precision och tillförlitlighet.
 
-Använd funktionen `model_evaluate` för att mäta noggrannheten hos modellen `retention_model_logistic_reg` när det gäller att förutsäga kundbortfall. I följande SQL-exempel utvärderas modellen med en datauppsättning som är strukturerad som utbildningsdata:
+Använd funktionen `retention_model_logistic_reg` för att mäta noggrannheten hos modellen `model_evaluate` när det gäller att förutsäga kundbortfall. I följande SQL-exempel utvärderas modellen med en datauppsättning som är strukturerad som utbildningsdata:
 
 ```sql
 SELECT * 
@@ -203,7 +204,7 @@ Utvärderingsresultatet innehåller nyckeltal för prestanda, som AUC-ROC, preci
 
 ```console
  auc_roc | accuracy | precision | recall 
----------+----------+-----------+--------
+|---------+----------+-----------+--------
 1        | 0.99998  |  1        |  1      
 ```
 
@@ -279,7 +280,7 @@ Datauppsättningen för utdata innehåller viktiga kundfunktioner och deras för
 
 ```console
  total_purchases | total_revenue | avg_order_value | customer_lifetime | days_since_last_purchase | purchase_frequency | churned | prediction
------------------+---------------+-----------------+-------------------+--------------------------+--------------------+---------+------------
+|-----------------+---------------+-----------------+-------------------+--------------------------+--------------------+---------+------------
  2               | 299           | 149.5           | 0                 | 13                        | 1                  | 0       | 0
  1               | 710           | 710.00          | 0                 | 149                       | 1                  | 1       | 1
  1               | 19.99         | 19.99           | 0                 | 30                        | 1                  | 0       | 0

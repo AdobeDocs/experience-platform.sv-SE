@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Diagnostik för dataöverföringsfel hämtas
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -132,7 +132,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **Svar**
 
-Ett lyckat svar returnerar JSON-objekt som innehåller `path` objekt med information om var diagnostiken sparades. Svaret returnerar `path`-objekten i formatet [&#x200B; JSON-rader &#x200B;](https://jsonlines.readthedocs.io/en/latest/).
+Ett lyckat svar returnerar JSON-objekt som innehåller `path` objekt med information om var diagnostiken sparades. Svaret returnerar `path`-objekten i formatet [ JSON-rader ](https://jsonlines.readthedocs.io/en/latest/).
 
 ```json
 {"path": "F1.json"}
@@ -311,11 +311,11 @@ Partiell gruppinmatning har tre olika feltyper vid datainmatning:
 
 ### Oläsbara filer {#unreadable}
 
-Om det finns oläsbara filer i den inlästa gruppen bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden &#x200B;](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
+Om det finns oläsbara filer i den inlästa gruppen bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden ](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
 
 ### Ogiltiga scheman eller rubriker {#schemas-headers}
 
-Om den inmatade gruppen har ett ogiltigt schema eller ogiltiga rubriker, bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden &#x200B;](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
+Om den inmatade gruppen har ett ogiltigt schema eller ogiltiga rubriker, bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden ](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
 
 ### Otolkningsbara rader {#unparsable}
 

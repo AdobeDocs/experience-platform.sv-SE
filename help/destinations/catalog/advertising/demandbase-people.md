@@ -2,7 +2,7 @@
 title: Anslutning för Demandbase-användare
 description: Använd den här destinationen för att aktivera era målgrupper och berika dem med tredjepartsdata från Demandbase för andra användningsfall i senare led i marknadsföring och försäljning.
 exl-id: 748f5518-7cc1-4d65-ab70-4a129d9e2066
-source-git-commit: ab29c1113dbbd1811acd3d5add5a247cb2703884
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '797'
 ht-degree: 1%
@@ -40,7 +40,7 @@ Anslutningen [!DNL Demandbase People] stöder aktivering av identiteter som besk
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | X | Publikerna [importerade](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 

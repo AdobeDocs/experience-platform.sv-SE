@@ -4,7 +4,7 @@ title: Allmänna tillgänglighetsfunktioner i Experience Platform
 type: Documentation
 description: Läs mer om de allmänna tillgänglighetsfunktionerna i Adobe Experience Platform, inklusive tangentbordsnavigering, färgpaletter och kontrast samt stöd för hjälpmedelstekniker.
 exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '483'
 ht-degree: 0%
@@ -24,6 +24,7 @@ Användare med funktionshinder förlitar sig ofta på maskinvara och programvara
 Experience Platform strävar efter att stödja fullständig tangentbordstillgänglighet.
 
 Följande navigeringselement underlättar tillgängligheten:
+
 * Tabbtangenten flyttar mellan gränssnittselement, avsnitt och menygrupper.
 * Piltangenterna flyttar inom menygrupper för att ställa in fokus på enskilda aktiva element.
 * Skift+Tabb flyttas bakåt i tabbordningen.

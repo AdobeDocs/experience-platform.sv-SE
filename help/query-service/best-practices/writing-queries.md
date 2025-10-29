@@ -5,7 +5,7 @@ title: Allmänna riktlinjer för frågekörning i frågetjänsten
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1089'
 ht-degree: 2%
@@ -86,7 +86,7 @@ Båda exempelfrågorna ovan returnerar ett förenklat objekt i stället för ett
 
 ```console
               endUserIds._experience.mcid   
---------------------------------------------------------
+|--------------------------------------------------------
  (48168239533518554367684086979667672499,"(ECID)",true)
 (1 row)
 ```
@@ -109,7 +109,7 @@ LIMIT 1
 
 ```console
      endUserIds._experience.mcid.id 
-----------------------------------------
+|----------------------------------------
  48168239533518554367684086979667672499
 (1 row)
 ```
@@ -210,7 +210,7 @@ Kommandot `\d` visar standardvyn [!DNL PostgreSQL] för att lista tabeller. Ett 
 ```sql
              List of relations
  Schema |       Name      | Type  |  Owner   
---------+-----------------+-------+----------
+|--------+-----------------+-------+----------
  public | luma_midvalues  | table | postgres
  public | luma_postvalues | table | postgres
 (2 rows)
@@ -222,7 +222,7 @@ Kommandot `SHOW TABLES` är ett anpassat kommando som ger mer detaljerad informa
 
 ```sql
        name      |        dataSetId         |     dataSet    | description | resolved 
------------------+--------------------------+----------------+-------------+----------
+|-----------------+--------------------------+----------------+-------------+----------
  luma_midvalues  | 5bac030c29bb8d12fa992e58 | Luma midValues |             | false
  luma_postvalues | 5c86b896b3c162151785b43c | Luma midValues |             | false
 (2 rows)
@@ -237,7 +237,7 @@ I följande exempel visas schemainformationen för tabellen `luma_midvalues`, so
 ```sql
                          Table "public.luma_midvalues"
       Column       |             Type            | Collation | Nullable | Default 
--------------------+-----------------------------+-----------+----------+---------
+|-------------------+-----------------------------+-----------+----------+---------
  timestamp         | timestamp                   |           |          | 
  _id               | text                        |           |          | 
  productlistitems  | anyarray                    |           |          | 
@@ -262,7 +262,7 @@ I följande exempel visas ytterligare information för kolumnen `web` och anropa
 ```sql
                  Composite type "public.luma_midvalues_web"
      Column     |               Type                | Collation | Nullable | Default 
-----------------+-----------------------------------+-----------+----------+---------
+|----------------+-----------------------------------+-----------+----------+---------
  webpagedetails | luma_midvalues_web_webpagedetails |           |          | 
  webreferrer    | web_webreferrer                   |           |          | 
 ```

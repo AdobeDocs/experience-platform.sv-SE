@@ -5,7 +5,7 @@ title: Importera en paketerad mottagare i användargränssnittet för datavetens
 type: Tutorial
 description: I den här självstudiekursen får du information om hur du konfigurerar och importerar ett paketerat recept med hjälp av det angivna exemplet på detaljhandelsförsäljning. I slutet av kursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform Data Science Workspace.
 exl-id: 2556e1f0-3f9c-4884-a699-06c041d5c4d1
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1760'
 ht-degree: 0%
@@ -31,6 +31,7 @@ Den här självstudiekursen kräver ett paketerat recept i form av en Docker-bil
 För import av ett paketerat recept till [!DNL Data Science Workspace] krävs specifika receptkonfigurationer, som kompileras till en enda JSON-fil (JavaScript Object Notation). Den här kompileringen av receptkonfigurationer kallas konfigurationsfilen. Ett paketerat recept med en viss uppsättning konfigurationer kallas en recept-instans. Ett recept kan användas för att skapa många receptinstanser i [!DNL Data Science Workspace].
 
 Arbetsflödet för att importera ett paketrecept består av följande steg:
+
 - [Konfigurera ett recept](#configure)
 - [Importera Docker-baserat recept - Python](#python)
 - [Importera Docker-baserat recept - R](#r)

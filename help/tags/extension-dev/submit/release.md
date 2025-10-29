@@ -2,7 +2,7 @@
 title: Frigöra ett tillägg
 description: Lär dig hur du frigör ett taggtillägg privat eller offentligt i Adobe Experience Platform.
 exl-id: a5eb6902-4b0f-4717-a431-a290c50fb5a6
-source-git-commit: 2152cf98d9809654cca7abd7b8469a72e8387b2a
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '478'
 ht-degree: 9%
@@ -37,9 +37,9 @@ npx @adobe/reactor-releaser
 Med `npx` kan du hämta och köra ett npm-paket utan att installera det på datorn. Det här är det enklaste sättet att köra releaser.
 
 >[!NOTE]
-> Som standard förväntar sig releaser Adobe I/O-autentiseringsuppgifter för ett Oauth-flöde från server till server. De gamla `jwt-auth`-autentiseringsuppgifterna
-> kan användas genom att köra `npx @adobe/reactor-releaser@v3.1.3` tills borttagningen är den 1 januari 2025. De parametrar som krävs
-> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5).
+> Som standard förväntar sig releaser att Adobe I/O-autentiseringsuppgifter används för ett server-till-server-Oauth-flöde. De gamla `jwt-auth`-autentiseringsuppgifterna
+> > kan användas genom att köra `npx @adobe/reactor-releaser@v3.1.3` tills borttagningen är den 1 januari 2025. De parametrar som krävs
+> > för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5).
 
 Du behöver bara ange några få uppgifter i releasern. `clientId` och `clientSecret` kan hämtas från Adobe I/O-konsolen. Navigera till [integreringssidan](https://console.adobe.io/integrations) i I/O-konsolen. Välj rätt organisation i listrutan, hitta rätt integrering och välj **[!UICONTROL View]**.
 
@@ -49,10 +49,10 @@ Du behöver bara ange några få uppgifter i releasern. `clientId` och `clientSe
 Releaseraren läser fälten `name` och `platform` från ditt tilläggsmanifest och frågar API efter ett matchande tilläggspaket i Development-tillgänglighet.
 Releaser kommer sedan att be dig bekräfta att det har hittat rätt tilläggspaket som du vill frisläppa till privat tillgänglighet.
 
-Om du vill frigöra tillägget med privat tillgänglighet med API:t direkt kan du läsa exempelanropet för [privat släppning av ett tilläggspaket](../../api/endpoints/extension-packages.md/#private-release) i API-dokumenten för mer information.
+Om du vill frigöra tillägget med privat tillgänglighet med API:t direkt kan du läsa exempelanropet för [privat släppning av ett tilläggspaket](/help/tags/api/endpoints/extension-packages.md#private-release) i API-dokumenten för mer information.
 
 ## Offentlig release
 
-När du har slutfört den privata releasen kan du be Adobe att publicera den offentligt.  Tillägget blir då tillgängligt i den offentliga katalogen. Alla användare av datainsamlingen kan installera tillägget på alla egenskaper.
+När du har slutfört den privata versionen kan du be Adobe att publicera den offentligt.  Tillägget blir då tillgängligt i den offentliga katalogen. Alla användare av datainsamlingen kan installera tillägget på alla egenskaper.
 
-Fyll i det [offentliga begärandeformuläret &#x200B;](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest) för att starta versionsprocessen.
+Fyll i det [offentliga begärandeformuläret ](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest) för att starta versionsprocessen.

@@ -2,7 +2,7 @@
 title: Hantera matriser och mappa datatyper med funktioner i högre ordning
 description: Lär dig hur du hanterar matriser och mappar datatyper med funktioner för högre ordning i frågetjänsten. Exempel finns med vanliga användningsområden.
 exl-id: dec4e4f6-ad6b-4482-ae8c-f10cc939a634
-source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1470'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
  productListItems | price_in_inr
--------------------+----------------
+|-------------------+----------------
 (8376, NULL, NULL) | 611448.0
 {(Burbank Hills Jeans, NULL, NULL), (Thermomax Steel, NULL, NULL), (Bruin Point Shearling Boots, NULL, NULL), (Uintas Pro Ski Gloves, NULL, NULL), (Timberline Survival Knife, NULL, NULL), (Thermomax Steel, NULL, NULL), (Timpanogos Scarf, NULL, NULL), (Lost Prospector Beanie, NULL, NULL), (Timpanogos Scarf, NULL, NULL), (Uintas Pro Ski Gloves, NULL, NULL)} | {0.0,0.0.0.0,0,0,0,0,0,0,0,0,0,0,0,0,0.0}
 (84763,NULL, NULL) | 6187699.0
@@ -80,7 +80,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems
------------------
+|-----------------
 {(123679, NULL,NULL)}
 {(123679, NULL, NULL)}
 {(123679, NULL, NULL), (150196, NULL, NULL)}
@@ -120,7 +120,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems | _filter
------------------+---------
+|-----------------+---------
 (123679, NULL, NULL) (123679, NULL, NULL)
 (1346, NULL, NULL) |
 (98347, NULL, NULL) |
@@ -159,7 +159,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems | max_value
------------------+---------
+|-----------------+---------
 (123679, NULL, NULL) | 247358
 (1346,NULL, NULL) | 2692
 (98347, NULL, NULL) | 196694
@@ -193,7 +193,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems     | zip_with
----------------------+---------
+|---------------------+---------
                      | {(1,NULL), (2,NULL), (3,NULL),(4,NULL), (5,NULL)}
 (123679, NULL, NULL) | {(1,123679), (2,NULL), (3,NULL), (4,NULL), (5,NULL)}
                      | {(1,NULL), (2,NULL),(3,NULL),(4,NULL), (5,NULL)}
@@ -232,7 +232,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems     | map_from_entries
----------------------+------------------
+|---------------------+------------------
 (123679, NULL, NULL) | [1 -> "(123679,NULL,NULL)"]
 (1346, NULL, NULL)   | [1 -> "(1346, NULL, NULL)"]
 (98347, NULL, NULL)  | [1 -> "(98347, NULL, NULL)"]
@@ -278,7 +278,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems     | map_from_entries
----------------------+------------------
+|---------------------+------------------
 (123679, NULL, NULL) | [1 -> "(123679,NULL,NULL)"]
 (1346, NULL, NULL)   | [1 -> "(1346, NULL, NULL)"]
 (98347, NULL, NULL)  | [1 -> "(98347, NULL, NULL)"]
@@ -321,7 +321,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems     | map_from_entries
----------------------+------------------
+|---------------------+------------------
 (123679, NULL, NULL) | [1 -> "(123679,NULL,NULL)",2 -> "(123679, NULL, NULL)"]
 (1346, NULL, NULL)   | [1 -> "(1346, NULL, NULL)",2 -> "(1346, NULL, NULL)"]
 (98347, NULL, NULL)  | [1 -> "(98347, NULL, NULL)",2 -> "(98347, NULL, NULL)"]
@@ -363,7 +363,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
                                                                   identitymap                                            |  element_at(identitymap, AAID) 
--------------------------------------------------------------------------------------------------------------------------+-------------------------------------
+|-------------------------------------------------------------------------------------------------------------------------+-------------------------------------
 [AAID -> "(3617FBB942466D79-5433F727AD6A0AD, false)",ECID -> "(67383754798169392543508586197135045866,true)"]            | (3617FBB942466D79-5433F727AD6A0AD, false) 
 [AAID -> "[AAID -> "(533F56A682C059B1-396437F68879F61D, false)",ECID -> "(91989370462250197735311833131353001213,true)"] | (533F56A682C059B1-396437F68879F61D, false) 
 [AAID -> "(22E195F8A8ECCC6A-A39615C93B72A9F, false)",ECID -> "(57699241367342030964647681192998909474,true)"]            | (22E195F8A8ECCC6A-A39615C93B72A9F, false) 
@@ -401,7 +401,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
                                                                   identitymap                                            |  size(identitymap) 
--------------------------------------------------------------------------------------------------------------------------+-------------------------------------
+|-------------------------------------------------------------------------------------------------------------------------+-------------------------------------
 [AAID -> "(3617FBB942466D79-5433F727AD6A0AD, false)",ECID -> "(67383754798169392543508586197135045866,true)"]            |      2  
 [AAID -> "[AAID -> "(533F56A682C059B1-396437F68879F61D, false)",ECID -> "(91989370462250197735311833131353001213,true)"] |      2  
 [AAID -> "(22E195F8A8ECCC6A-A39615C93B72A9F, false)",ECID -> "(57699241367342030964647681192998909474,true)"]            |      2  
@@ -439,7 +439,7 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 ```console
 productListItems     | array_distinct(productListItems)
----------------------+---------------------------------
+|---------------------+---------------------------------
                      |
 (123679, NULL, NULL) | (123679, NULL, NULL)
                      |
@@ -458,8 +458,8 @@ productListItems     | array_distinct(productListItems)
 
 Följande exempel på funktioner i högre ordning förklaras som en del av hämtningen av liknande poster använder skiftläget. Ett exempel och en förklaring till hur de olika funktionerna används finns i respektive avsnitt i dokumentet.
 
-Funktionsexemplet [`transform` &#x200B;](../use-cases/retrieve-similar-records.md#length-adjustment) beskriver tokeniseringen för en produktlista.
+Funktionsexemplet [`transform` ](../use-cases/retrieve-similar-records.md#length-adjustment) beskriver tokeniseringen för en produktlista.
 
-Funktionsexemplet [`filter` &#x200B;](../use-cases/retrieve-similar-records.md#filter-results) visar en mer detaljerad extrahering av relevant information från textdata.
+Funktionsexemplet [`filter` ](../use-cases/retrieve-similar-records.md#filter-results) visar en mer detaljerad extrahering av relevant information från textdata.
 
-[`reduce`-funktionen &#x200B;](../use-cases/retrieve-similar-records.md#higher-order-function-solutions) erbjuder ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.
+[`reduce`-funktionen ](../use-cases/retrieve-similar-records.md#higher-order-function-solutions) erbjuder ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.

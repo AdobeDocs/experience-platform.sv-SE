@@ -1,13 +1,13 @@
 ---
 title: Dela privata tilläggspaket i reaktors-API
 description: Lär dig hur du tillåter andra företag att dela privata tilläggspaket i Reactor API.
-source-git-commit: ea9a2bb00d3ce59e28ea4cda0d30945e77aa95cb
+exl-id: 3300a630-6d22-46e1-8b1b-b5d12a3ea44c
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
 
 ---
-
 
 # Dela privata tilläggspaket
 
@@ -94,10 +94,10 @@ curl -X PATCH \
   -d '{
         "data": {
           "attributes": {
-	          "state": "approved"
-	        },
-	        "id": ":extension_package_usage_authorization_id",
-	        "type": "extension_package_usage_authorizations"
+            "state": "approved"
+            },
+            "id": ":extension_package_usage_authorization_id",
+            "type": "extension_package_usage_authorizations"
         }
       }
 ```

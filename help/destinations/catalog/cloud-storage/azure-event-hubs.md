@@ -4,7 +4,7 @@ title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs] lagringsutrymme för att strömma data från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '2022'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 [!DNL Azure Event Hubs] är en stor dataströmningsplattform och en tjänst för händelseinmatning. Den kan ta emot och bearbeta miljontals händelser per sekund. Data som skickas till ett händelsehubb kan omformas och lagras med hjälp av alla realtidsanalysleverantörer eller batchnings-/lagringsadaptrar.
 
@@ -51,7 +51,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i arbetsflödet för [målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -157,7 +157,7 @@ Ta till exempel det här dataflödet som ett [!DNL Azure Event Hubs]-mål där t
 
 ![Amazon Kinesis-måldataflöde](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [&#x200B; Exporterade data &#x200B;](#exported-data) nedan), kan andra mappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som den målgrupp som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars** och även är medlem i segmenten **Basic Site Active och City - Dallas** så finns dessa två andra målgrupper också i `segmentMembership` -objektet för dataexporten, eftersom de mappas i dataflödet, om de har samma sammanslagningsprincip som för **Customer med DeLorean Cars** segment.
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra mappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som den målgrupp som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars** och även är medlem i segmenten **Basic Site Active och City - Dallas** så finns dessa två andra målgrupper också i `segmentMembership` -objektet för dataexporten, eftersom de mappas i dataflödet, om de har samma sammanslagningsprincip som för **Customer med DeLorean Cars** segment.
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 
@@ -273,6 +273,6 @@ Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience 
 
 >[!MORELIKETHIS]
 >
->* [Anslut till Azure Event Hubs och aktivera data med API:t för Flow Service &#x200B;](../../api/streaming-destinations.md)
+>* [Anslut till Azure Event Hubs och aktivera data med API:t för Flow Service ](../../api/streaming-destinations.md)
 >* [AWS Kinesis-mål](./amazon-kinesis.md)
 >* [Måltyper och -kategorier](../../destination-types.md)

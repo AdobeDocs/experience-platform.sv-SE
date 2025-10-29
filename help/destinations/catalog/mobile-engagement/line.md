@@ -4,7 +4,7 @@ title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler till er Experience Platform-målgrupp och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 0%
@@ -50,7 +50,7 @@ För att Experience Platform ska kunna komma åt [!DNL LINE]-resurser måste du 
 | --- | --- | --- |
 | `[!DNL Channel access token (long-lived)]` | Din [!DNL LINE Channel access token (long-lived)]. | `aaa2112XSMWqLXR7..........nyilFU=` |
 
-Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [!DNL LINE]-konto via [!DNL LINE]-utvecklarkonsolen finns i [[!DNL LINE] dokumentationen](https://developers.line.biz/en/docs/messaging-api/getting-started/).
+Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [[!DNL LINE] -konto via ](https://developers.line.biz/en/docs/messaging-api/getting-started/)-utvecklarkonsolen finns i [!DNL LINE]dokumentationen[!DNL LINE].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -66,7 +66,7 @@ Mer information om hur du skapar en kanal eller lägger till en kanal till ditt 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL LINE]. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -88,6 +88,7 @@ Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destinati
 ![Experience Platform UI, bild som visar hur du autentiserar.](../../assets/catalog/mobile-engagement/line/authenticate-destination.png)
 
 Fyll i de obligatoriska fälten nedan.
+
 * **[!UICONTROL Bearer token]**: Din [!DNL LINE Channel access token (long-lived)] från utvecklarkonsolen [!DNL LINE]. Se avsnittet [Samla in inloggningsuppgifter](#gather-credentials).
 
 Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]** med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
@@ -139,7 +140,7 @@ När dataexporten är klar från Experience Platform skapar [!DNL LINE]-målet e
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-1. Logga in på [Manager-konsolen](https://manager.line.biz/) i [!DNL LINE].
+1. Logga in på [!DNL LINE]Manager-konsolen[ i ](https://manager.line.biz/).
 
 1. Gå sedan till **[!UICONTROL Data Controls]** > **[!UICONTROL Audiences]** och kontrollera namnet som matchar den valda målgruppen i kolumnen **[!UICONTROL Audience name]**.
 

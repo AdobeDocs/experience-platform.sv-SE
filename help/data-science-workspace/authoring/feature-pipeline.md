@@ -4,7 +4,7 @@ title: Skapa en funktionspipeline med SDK för modellredigering
 type: Tutorial
 description: Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniska funktioner i stor skala via Sensei Machine Learning Framework Runtime. I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med hjälp av Model Authoring SDK i PySpark.
 exl-id: c2c821d5-7bfb-4667-ace9-9566e6754f98
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1438'
 ht-degree: 0%
@@ -40,6 +40,7 @@ Följande arbetsflöde utförs när en funktionspipeline körs:
 ## Komma igång
 
 Följande krävs för att köra ett recept i en organisation:
+
 - En indatamängd.
 - Datamängdens schema.
 - Ett transformerat schema och en tom datauppsättning som baseras på det schemat.

@@ -3,9 +3,9 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-Time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1853'
+source-wordcount: '1849'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL LiveRamp - Onboarding]. |
 | Exportfrekvens | **[!UICONTROL Daily batch]** | När profiler uppdateras i Experience Platform baserat på målgruppsutvärdering uppdateras profilerna (identiteterna) en gång om dagen nedströms målplattformen. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
@@ -77,7 +77,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 * **[!UICONTROL Password]**: Lösenordet för lagringsplatsen [!DNL LiveRamp - Onboarding].
 * **[!UICONTROL PGP/GPG encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp-onboarding/pgp-key.png)
-* **[!UICONTROL Subkey ID]**:Om du anger en krypteringsnyckel måste du även ange en kryptering **[!UICONTROL Subkey ID]**. Läs [!DNL LiveRamp] [krypteringsdokumentationen](https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key) om du vill veta mer om hur du hämtar undernyckel-ID:t.
+* **[!UICONTROL Subkey ID]**:Ifsom du anger en krypteringsnyckel måste du också ange en kryptering **[!UICONTROL Subkey ID]**. Läs [!DNL LiveRamp] [krypteringsdokumentationen](https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key) om du vill veta mer om hur du hämtar undernyckel-ID:t.
 
 **SFTP med SSH-nyckelautentisering** {#sftp-ssh}
 
@@ -92,7 +92,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 * **[!UICONTROL PGP/GPG encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp-onboarding/pgp-key.png)
-* **[!UICONTROL Subkey ID]**:Om du anger en krypteringsnyckel måste du även ange en kryptering **[!UICONTROL Subkey ID]**. Läs [!DNL LiveRamp] [krypteringsdokumentationen](https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key) om du vill veta mer om hur du hämtar undernyckel-ID:t.
+* **[!UICONTROL Subkey ID]**:Ifsom du anger en krypteringsnyckel måste du också ange en kryptering **[!UICONTROL Subkey ID]**. Läs [!DNL LiveRamp] [krypteringsdokumentationen](https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key) om du vill veta mer om hur du hämtar undernyckel-ID:t.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -163,11 +163,11 @@ I steget **[!UICONTROL Mapping]** definierar mappningen **[!UICONTROL Target fie
 >
 >Om målfälten ändras efter den första filleveransen till [!DNL LiveRamp] ska du kontakta ditt [!DNL LiveRamp]-kontoteam eller [skicka en biljett till LiveRamp-support](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#creating-a-support-case) för att se till att ändringarna återspeglas i automatiseringsprocessen.
 
-1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
+1. Välj **[!UICONTROL Mapping]** i steget **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
 
    ![Skärmbilden i Experience Platform UI visar skärmen Mappning.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-add-new-mapping.png)
 
-2. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera det XDM-attribut som du vill mappa, eller välj kategorin **[!UICONTROL Select identity namespace]** och välj en identitet som du vill mappa till målet.
+2. Välj kategorin **[!UICONTROL Select source field]** i fönstret **[!UICONTROL Select attributes]** och markera det XDM-attribut som du vill mappa, eller välj kategorin **[!UICONTROL Select identity namespace]** och välj en identitet som du vill mappa till målet.
 
    ![Experience Platform-användargränssnitt med skärmen för källmappning.](../../assets/catalog/advertising/liveramp-onboarding/liveramp-source-mapping.png)
 

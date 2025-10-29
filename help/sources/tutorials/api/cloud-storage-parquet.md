@@ -5,9 +5,9 @@ title: Infoga parquet-data från ett tredjeparts molnlagringssystem med API:t f�
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera Apache Parquet-data från ett molnlagringssystem från en annan leverantör.
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1072'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ Hämta och lagra den unika identifieraren (`$id`) för anslutningen och fortsät
 
 För att källdata ska kunna användas i [!DNL Experience Platform] måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Experience Platform]-datauppsättning där källdata finns.
 
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [-schemaredigerarsjälvstudiekursen &#x200B;](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [-schemaredigerarsjälvstudiekursen ](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
 
 **API-format**
 
@@ -259,7 +259,10 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 För att kunna importera externa data till [!DNL Experience Platform] måste en [!DNL Experience Platform]-datauppsättningsbasanslutning först hämtas.
 
-Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i [självstudiekursen för datauppsättningsbasanslutningar](./create-dataset-base-connection.md).
+<!--
+broken link. this file not in TOC.
+To create a dataset base connection, follow the steps outlined in the [dataset base connection tutorial](./create-dataset-base-connection.md).
+-->
 
 Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat en datauppsättningsbasanslutning. Hämta och lagra den unika identifieraren (`$id`) och fortsätt att använda den som bas-anslutnings-ID i nästa steg för att skapa en målanslutning.
 

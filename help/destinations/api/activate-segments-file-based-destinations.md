@@ -4,7 +4,7 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 833e38559f7150c579840c69fa2658761fc9472c
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '4975'
 ht-degree: 0%
@@ -100,7 +100,7 @@ Beskrivningar av de termer som du kommer att stöta på i den här API-självstu
 Innan du startar arbetsflödet för att exportera profiler, ska du identifiera anslutningsspec och flödesspec-ID för det mål som du tänker exportera målgrupper till. Använd tabellen nedan som referens.
 
 | Mål | Anslutningsspecifikation | Flödesspecifikation |
----------|----------|---------|
+|---------|----------|---------|
 | Amazon S3 | `4fce964d-3f37-408f-9778-e597338a21ee` | `1a0514a6-33d4-4c7f-aff8-594799c47549` |
 | Azure Blob Storage | `6d6b59bf-fb58-4107-9064-4d246c0e5bb2` | `752d422f-b16f-4f0d-b1c6-26e448e3b388` |
 | Azure Data Lake Gen 2 (ADLS Gen2) | `be2c3209-53bc-47e7-ab25-145db8b873e1` | `17be2013-2549-41ce-96e7-a70363bec293` |

@@ -2,9 +2,9 @@
 keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära ämnen;Maskininlärning i realtid;
 solution: Experience Platform
 title: Machine Learning-översikt i realtid
-description: Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att man utnyttjar realtidskonferenser och kontinuerlig inlärning på Experience Platform Edge Network.
+description: Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta kan man göra genom att utnyttja realtidsinterferenser och kontinuerlig inlärning i Experience Platform Edge Network.
 exl-id: 23eb1877-1bdf-4982-b58c-cfb58467035a
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '574'
 ht-degree: 0%
@@ -65,7 +65,8 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 
 >[!NOTE]
 >
-> Begränsningar för Alpha:
+> Alpha begränsningar:
+>
 > - För närvarande stöds endast ONNX-baserade modeller.
 > - Funktioner som används i noder kan inte serialiseras. En lambda-funktion används till exempel i en Pandarod.
 > - Det finns 20 sekunder sömn efter att distributionen av [!DNL Edge] har slutförts manuellt.
@@ -76,7 +77,7 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 
 | | Alpha (maj) |
 | --- | --- |
-| **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Stöd för import av förutbildade maskininlärningsmodeller. <br> - Maskinininlärning i realtid SDK. <br> - Startuppsättning med redigeringsnoder. <br> - distribuerad till Adobe Experience Platform Hub. |
+| **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Stöd för import av förutbildade maskininlärningsmodeller. <br> - Maskinininlärning i realtid i SDK. <br> - Startuppsättning med redigeringsnoder. <br> - distribuerad till Adobe Experience Platform Hub. |
 | **Tillgänglighet** | Nordamerika |
 | **Redigeringsnoder** | - Pandor <br> - ScikitLearn <br> - ONNXNode <br> - Split <br> - ModelUpload <br> - OneHotEncoder |
 | **Poängkörningstider** | ONNX |

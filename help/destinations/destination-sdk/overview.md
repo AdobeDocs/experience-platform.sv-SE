@@ -2,7 +2,7 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt eller lagringsplats, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 9c59f6edd51c61c1fe2ff69e0adea49e6efb8745
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # Adobe Experience Platform Destination SDK
 
-Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster för Experience Platform för att leverera målgrupps- och profildata till din slutpunkt eller lagringsplats, baserat på valfritt data och autentiseringsformat. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
+Adobe Experience Platform Destination SDK är en serie konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster för Experience Platform så att målgrupps- och profildata kan levereras till din slutpunkt eller lagringsplats, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 
-I dokumentationen till Destinationen SDK finns instruktioner om hur du kan använda Adobe Experience Platform Destinationen SDK för att konfigurera, testa och släppa en produktanpassad målintegration med Adobe Experience Platform, och få destinationen att bli en del av den ständigt växande destinationskatalogen. Genom att använda Destination SDK kan du även skapa ett eget, anpassat privat mål för att exportera data som är anpassade efter dina behov.
+I Destination SDK-dokumentationen finns instruktioner om hur du använder Adobe Experience Platform Destination SDK för att konfigurera, testa och släppa en produkterad målintegration med Adobe Experience Platform, och om du vill att destinationen ska ingå i den ständigt växande målkatalogen. Genom att använda Destination SDK kan du även skapa ett eget, anpassat privat mål för att exportera data som är anpassade efter dina behov.
 
-![Skärmbild från användargränssnittet i Experience Platform visar målkatalogen.](assets/destinations-catalog-overview.png)
+![Skärmbild från Experience Platform-gränssnittet som visar målkatalogen.](assets/destinations-catalog-overview.png)
 
 ## Snabbstart - utforska viktig information {#quick-start}
 
@@ -32,7 +32,7 @@ Läs igenom dokumentationen på länkarna nedan för att snabbt komma igång med
                 <li><a href="/help/destinations/destination-sdk/functionality/configuration-options.md">Alla konfigurationsalternativ förklaras</a></li>
                 <li> Målserverkonfiguration - <a href="/help/destinations/destination-sdk/functionality/destination-server/server-specs.md">serverspecifikationer</a> och <a href="/help/destinations/destination-sdk/functionality/destination-server/templating-specs.md">mallspecifikationer</a></li>
                 <li><a href="/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md">Kunddatafält och andra målkonfigurationskomponenter</a></li>
-                <li><a href="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">Mallar och makron</a></li>
+                <li><a href="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">Mallar och makron</a></li>
             </ul>
         </td>
         <td>
@@ -68,7 +68,7 @@ Läs igenom dokumentationen på länkarna nedan för att snabbt komma igång med
                 <li><a href="/help/destinations/destination-sdk/guides/configure-destination-instructions.md">Konfigurera en guide för direktuppspelningsmål från början till slut</a></li>
                 <li><a href="/help/destinations/destination-sdk/functionality/destination-server/message-format.md">Förstå dataomvandling via mallar för att hämta in data</a> och <a href="/help/destinations/destination-sdk/functionality/destination-server/supported-functions.md">visa mallfunktioner som stöds</a></li>
                 <li><a href="/help/destinations/destination-sdk/functionality/destination-configuration/aggregation-policy.md">Förstå policyer för dataaggregering</a></li>
-                <li><a href="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">Exempel på Live-konfiguration</a></li>
+                <li><a href="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">Exempel på Live-konfiguration</a></li>
                 <li><a href="/help/destinations/destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md">Testa strömningsmålet</a></li>
             </ul>
         </td>
@@ -87,7 +87,7 @@ Läs igenom dokumentationen på länkarna nedan för att snabbt komma igång med
             <ul>
                 <li><a href="/help/destinations/destination-sdk/getting-started.md#obtain-authentication-credentials">Hämta nödvändiga autentiseringsuppgifter för att använda API:t</a></li>
                 <li><a href="/help/destinations/destination-sdk/integration-prerequisites.md">Krav för integrering</a></li>
-                <li><a href="/help/destinations/destination-sdk/glossary.md">Destinationens SDK ordlista</a></li>                
+                <li><a href="/help/destinations/destination-sdk/glossary.md">Ordlista för Destination SDK-termer</a></li>                
                 <li><a href="/help/destinations/destination-sdk/functionality/rate-limiting-retry-policy.md">Klassificeringsgränser och återförsöksprincip</a></li>
                 <li><a href="/help/destinations/destination-sdk/docs-framework/self-service-template.md">Självbetjäningsmall för att dokumentera destinationen</a></li>
             </ul>
@@ -103,15 +103,15 @@ Läs igenom dokumentationen på länkarna nedan för att snabbt komma igång med
 
 >[!IMPORTANT]
 >
-> Den här funktionen för att skapa privata anpassade destinationer är bara tillgänglig för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
+> Den här funktionen för att skapa privata anpassade destinationer är bara tillgänglig för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
 
-Som Destination SDK partner kan du dra nytta av att lägga till det producerade målet i [Experience Platform-katalogen](../catalog/overview.md):
+Som Destination SDK-partner kan du dra nytta av att lägga till ditt produkterade mål i [Experience Platform-katalogen](../catalog/overview.md):
 
 1. Standardisera integrationskonfigurationer mellan kunder med förkonfigurerade parametrar och förenkla konfigurationsupplevelsen för kunderna.
-2. Lägg in ett varumärkesprofilerat destinationskort i Experience Platform-katalogen för enklare kundkonfiguration och ökad medvetenhet.
-3. Upptäck detta som en produkterad målintegration med Adobe Experience Platform &amp; Adobe Real-time Customer Data Platform.
+2. Lägg in ett varumärkesprofilerat destinationskort i Experience Platform målkatalog för enklare kundkonfiguration och ökad medvetenhet.
+3. Upptäck detta som en produkterad målintegration med Adobe Experience Platform &amp; Adobe Real-Time Customer Data Platform.
 
-Som Experience Platform-kund kan du också skapa en egen egen, anpassad destination som passar dina aktiveringsbehov.
+Som Experience Platform-kund kan du också skapa en egen, anpassad destination som passar dina behov.
 
 ![Översiktsdiagram som visar hur målutvecklare interagerar med Destination SDK och hur Real-Time CDP-kunder drar nytta av produktioner och privata destinationer.](assets/destination-sdk-visual.png)
 
@@ -119,7 +119,7 @@ Som Experience Platform-kund kan du också skapa en egen egen, anpassad destinat
 
 ### Integrering i realtid (direktuppspelning) {#real-time-integrations}
 
-Genom Destination SDK stöder Adobe Experience Platform realtidsintegrering (kallas även direktuppspelning) med mål som har en REST API-slutpunkt. Realtidsintegreringen med Experience Platform stöder funktioner som:
+Genom Destination SDK stöder Adobe Experience Platform realtidsintegreringar (kallas även direktuppspelning) med mål som har en REST API-slutpunkt. Realtidsintegreringen med Experience Platform har funktioner som:
 
 * Meddelandeomvandling och -aggregering
 * Bakfyllning av profil
@@ -129,7 +129,7 @@ Genom Destination SDK stöder Adobe Experience Platform realtidsintegrering (kal
 
 ### Filbaserade integreringar {#file-based-integrations}
 
-Med Destination SDK kan du även konfigurera integreringar för att regelbundet exportera filer till valfri lagringsplats. Den filbaserade integrationen med Experience Platform stöder funktioner som:
+Med Destination SDK kan du också konfigurera integreringar för att regelbundet exportera filer till valfri lagringsplats. Den filbaserade integrationen med Experience Platform har funktioner som:
 
 * Filexport i flera format som stöds (CSV, Parquet, JSON)
 * Konfigurerbara filformateringsalternativ som gör att du kan strukturera formatet för de exporterade filerna så att de uppfyller dina senare krav.
@@ -138,13 +138,13 @@ Läs om de tekniska kraven på målsidan i artikeln [integrationskrav](integrati
 
 ## Få tillgång till Destination SDK {#get-access}
 
-Destinationernas SDK åtkomst varierar beroende på din status som partner eller Experience Platform, Real-Time CDP-kund. Se tabellen nedan för mer information.
+Destination SDK åtkomst varierar beroende på din status som partner eller Experience Platform, Real-Time CDP kund. Se tabellen nedan för mer information.
 
-| Typ av partner eller kund | Åtkomst till Destination SDK |
----------|----------|
+| Typ av partner eller kund | Hitta Destination SDK |
+|---------|----------|
 | Independent Software Vendor (ISV) | Gå med i [Adobe Technology Partner Program](https://partners.adobe.com/technologyprogram/experiencecloud.html) och begär att få en Experience Platform-sandlåda för åtkomst till Destination SDK. |
 | Systemintegratör | Du måste vara på antingen Guld- eller Platina-nivå i [Adobe Solution Partner Program](https://solutionpartners.adobe.com/home.html) för att få tillgång till en Experience Platform-sandlåda och tillgång till Destination SDK. |
-| Experience Platform-kund i [Real-Time CDP Ultimate-paketet](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) | Som standard får du tillgång till sandlådor och Destination SDK i Experience Platform, så att du kan skapa privata mål för din organisation. |
+| Experience Platform-kund i [Real-Time CDP Ultimate-paketet](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | Som standard får du tillgång till Experience Platform sandlådor och Destination SDK, så att du kan skapa privata mål för din organisation. |
 
 {style="table-layout:auto"}
 
@@ -152,13 +152,13 @@ Destinationernas SDK åtkomst varierar beroende på din status som partner eller
 
 Hur du konfigurerar ditt mål i Experience Platform beskrivs nedan:
 
-1. Om du är en ISV eller SI läser du [få åtkomst](#get-access)-informationen i avsnittet ovan. [Real-Time CDP Ultimate-paket](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder kan hoppa över det här steget.
+1. Om du är en ISV eller SI läser du [få åtkomst](#get-access)-informationen i avsnittet ovan. [Real-Time CDP Ultimate-paket](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder kan hoppa över det här steget.
 2. [Begäran om att etablera en Experience Platform-sandlåda](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support) och aktivera målredigeringsbehörighet.
 3. Bygg er integration. Följ instruktionerna i produktdokumentationen för att konfigurera [direktuppspelningsmål](guides/configure-destination-instructions.md) eller [filbaserade mål](guides/configure-file-based-destination-instructions.md).
 4. Testa integreringen. Följ instruktionerna i produktdokumentationen för att testa [direktuppspelningsmål](testing-api/streaming-destinations/streaming-destination-testing-overview.md) eller [filbaserade mål](testing-api/batch-destinations/file-based-destination-testing-overview.md).
-5. Om du är en ISV eller SI som skapar en [tillverkad integrering](./overview.md#productized-custom-integrations), [skickar du din integrering](guides/submit-destination.md) för Adobe Review (standardsvarstiden är fem arbetsdagar).
-6. Om du är en ISV- eller SI-leverantör och skapar en produkterad integrering använder du [självbetjäningsdokumentationsprocessen](docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida på Experience League för destinationen.
-7. När integreringen har godkänts av Adobe visas den i katalogen [Experience Platform](../catalog/overview.md) för producerade integreringar.
+5. Om du är en ISV eller SI som skapar en [produktiserad integrering](./overview.md#productized-custom-integrations) [skickar du integreringen](guides/submit-destination.md) för Adobe granskning (standardsvarstiden är fem arbetsdagar).
+6. Om du är en ISV- eller SI-leverantör och skapar en produkterad integrering använder du [självbetjäningsdokumentationsprocessen](docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida på Experience League för ditt mål.
+7. När din integrering har godkänts av Adobe visas den i [Experience Platform-katalogen](../catalog/overview.md) för producerade integreringar.
 8. Om du vill uppdatera integreringen följer du samma process.
 
 ## Referens {#reference}
@@ -166,5 +166,5 @@ Hur du konfigurerar ditt mål i Experience Platform beskrivs nedan:
 Adobe rekommenderar att du läser och förstår följande Experience Platform-dokumentation:
 
 * [Översikt över Adobe Experience Platform-mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.htmll?lang=sv)
-* [Grundläggande om XDM-schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=sv-SE)
+* [Grundläggande om XDM-schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html)
 * [Översikt över namnområde för identitet](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv)

@@ -2,7 +2,7 @@
 title: Query Accelerated Store Reporting Insights Guide
 description: Lär dig hur du bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler.
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1037'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Med det frågeaccelererade arkivet kan du minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Vanligtvis behandlas data med regelbundna intervall (t.ex. varje timme eller dag) där aggregerade vyer skapas och rapporteras. Analysen av dessa rapporter som genereras utifrån aggregerade data ger insikter som är avsedda att förbättra affärsresultatet. Det frågeaccelererade arkivet tillhandahåller en cachetjänst, samtidighet, en interaktiv upplevelse och ett tillståndslöst API. Det förutsätter dock att data är förbearbetade och optimerade för aggregerad fråga och inte för rådatafrågor.
 
-Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka en befintlig Adobe Real-Time Customer Data Platform datamodell. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen för Real-Time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall &#x200B;](../../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
+Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka en befintlig Adobe Real-Time Customer Data Platform datamodell. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen för Real-Time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall ](../../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
 
 Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profiler, målgrupper och destinationer och möjliggör Real-Time CDP insiktspaneler. I det här dokumentet får du hjälp med att skapa datamodellen för dina rapportinsikter och hur du kan utöka Real-Time CDP datamodeller efter behov.
 
@@ -88,7 +88,7 @@ När programsatserna har körts använder du kommandot `SHOW datagroups;` för a
 
 ```console
     Database     |    Schema     | GroupType |      ChildType       |        ChildName        | PhysicalParent |               ChildId               
------------------+---------------+-----------+----------------------+-------------------------+----------------+--------------------------------------
+|-----------------+---------------+-----------+----------------------+-------------------------+----------------+--------------------------------------
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencemapping | true           | 9155d3b4-889d-41da-9014-5b174f6fa572
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencereach   | true           | 1b941a6d-6214-4810-815c-81c497a0b636
 ```
@@ -113,7 +113,7 @@ Resultatet i tabellen innehåller ett antal och ett ID.
 
 ```console
 ext_custom_audience_id | approximate_count_upper_bound
-------------------------+-------------------------------
+|------------------------+-------------------------------
  23850912218170554      |                          1000
  23850808585120554      |                       1012000
  23850808585220554      |                        100000
@@ -158,7 +158,7 @@ Använd kommandot `SHOW datagroups;` för att bekräfta skapandet av ytterligare
 
 ```console
     Database     |     Schema     | GroupType |      ChildType       |                ChildName  | PhysicalParent |               ChildId               
------------------+----------------+-----------+----------------------+----------------------------------------------------+----------------+--------------------------------------
+|-----------------+----------------+-----------+----------------------+----------------------------------------------------+----------------+--------------------------------------
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | external_seg_dest_map      | true           | 4b4b86b7-2db7-48ee-a67e-4b28cb900810
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencemapping    | true           | b0302c05-28c3-488b-a048-1c635d88dca9
  audienceinsight | audiencemodel | QSACCEL   | Data Warehouse Table | externalaudiencereach      | true           | 4485c610-7424-4ed6-8317-eed0991b9727
@@ -186,7 +186,7 @@ Frågan returnerar alla datauppsättningar i det snabblagrade arkivet:
 
 ```console
 ext_custom_audience_id | destination_name |       audience_name        | destination_status | destination_id | audience_id 
-------------------------+------------------+---------------------------+--------------------+----------------+-------------
+|------------------------+------------------+---------------------------+--------------------+----------------+-------------
  23850808595110554      | FCA_Test2        | United States             | enabled            |     -605911558 | -1357046572
  23850799115800554      | FCA_Test2        | Born in 1980s             | enabled            |     -605911558 | -1224554872
  23850799115790554      | FCA_Test2        | Born in 1970s             | enabled            |     -605911558 |  1899603869

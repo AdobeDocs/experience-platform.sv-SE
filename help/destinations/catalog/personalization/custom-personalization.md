@@ -3,7 +3,7 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: c037e75da7fa419051a7e38b365a5b6b3a1fc346
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '923'
 ht-degree: 1%
@@ -25,7 +25,7 @@ ht-degree: 1%
 >
 >Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar **[!UICONTROL Custom Personalization]**-målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication).
 >
-><br>Du kan hämta profilattribut via [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
+><br>Du kan hämta profilattribut via [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
 >
 ><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på målgruppsmedlemskap.
 
@@ -59,7 +59,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 ## Exportera typ och frekvens {#export-type-frequency}
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!DNL Profile request]** | Du begär alla målgrupper som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan ställas in för olika [Adobe Data Collection-datastreams](../../../datastreams/overview.md). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -69,7 +69,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 >id="platform_destinations_custom_personalization_datastream"
 >title="Om datastreams"
 >abstract="Det här alternativet avgör i vilket datainsamlingsdatastam som målgrupperna ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=sv-SE" text="Lär dig konfigurera ett datastream"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html" text="Lär dig konfigurera ett datastream"
 
 >[!IMPORTANT]
 > 

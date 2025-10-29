@@ -2,7 +2,7 @@
 title: Skapa härledda datauppsättningar med SQL
 description: Lär dig hur du använder SQL för att skapa en härledd datauppsättning som är aktiverad för profilen och hur du använder datauppsättningen för kundprofil och segmenteringstjänst i realtid.
 exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1238'
 ht-degree: 0%
@@ -91,7 +91,7 @@ ALTER TABLE your_decile_table ADD label 'PROFILE';
 
 >[!NOTE]
 >
->Konsolen returnerar `ALTER SUCCESS` när kommandot `ALTER TABLE` har körts.
+>Konsolen returnerar `ALTER TABLE` när kommandot `ALTER SUCCESS` har körts.
 
 ### Lägga till en primär identitet i en befintlig datauppsättning {#add-primary-identity}
 
@@ -167,7 +167,7 @@ Ett exempel på det här kommandots utdata visas nedan:
 
 ```sql
        name          |        dataSetId         |     dataSet    | description | labels 
----------------------+--------------------------+----------------+-------------+----------
+|---------------------+--------------------------+----------------+-------------+----------
  luma_midvalues      | 5bac030c29bb8d12fa992e58 | Luma midValues |             | false
  luma_postvalues     | 5c86b896b3c162151785b43c | Luma midValues |             | false
  table_with_a_decile | 5c86b896b3c162151785b43c | Luma midValues |             | 'UPSERT', 'PROFILE'
@@ -189,7 +189,7 @@ CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> pr
 >[!IMPORTANT]
 >
 >Det går inte att skapa fältgrupper via SQL om flaggan `label` inte anges i satsen eller om fältgruppen redan finns.
->Kontrollera att frågan innehåller en `IF NOT EXISTS`-sats för att undvika att frågan misslyckas eftersom fältgruppen redan finns.
+>>Kontrollera att frågan innehåller en `IF NOT EXISTS`-sats för att undvika att frågan misslyckas eftersom fältgruppen redan finns.
 
 Ett verkligt exempel kan se ut ungefär som det nedan.
 
@@ -227,7 +227,7 @@ Ett exempel på det här kommandots utdata visas nedan:
 
 ```sql
        name                      |        fieldgroupId                             |     owner      |
----------------------------------+-------------------------------------------------+-----------------
+|---------------------------------+-------------------------------------------------+-----------------
  AEP Mobile Lifecycle Details    | _experience.aep-mobile-lifecycle-details        | Luma midValues |
  AEP Web SDK ExperienceEvent     | _experience.aep-web-sdk-experienceevent         | Luma midValues |
  AJO Classification Fields       | _experience.journeyOrchestration.classification | Luma midValues |

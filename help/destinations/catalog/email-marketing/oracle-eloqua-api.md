@@ -3,7 +3,7 @@ title: (API) Oracle Eloqua-anslutning
 description: (API) Oracle Eloqua-destinationen gör att du kan exportera dina kontodata och aktivera dem i Oracle Eloqua för dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1967'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad 
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -76,7 +76,7 @@ Mer information finns i [Logga in på [!DNL Oracle Eloqua]](https://docs.oracle.
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Experience Platform uppdateras motsvarande [!DNL Oracle Eloqua]-segmentstatus med målgruppsstatus från Experience Platform.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
@@ -100,6 +100,7 @@ I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL
 >abstract="Fyll i det här fältet med ditt företagsnamn och ditt användarnamn från Oracle Eloqua i formatet `{COMPANY_NAME}\{USERNAME}`"
 
 Fyll i de obligatoriska fälten nedan. Mer information finns i avsnittet [Samla [!DNL Oracle Eloqua] inloggningsuppgifter](#gather-credentials).
+
 * **[!UICONTROL Password]**: Lösenordet för ditt [!DNL Oracle Eloqua]-konto.
 * **[!UICONTROL Username]**: En sammanfogad sträng som består av ditt [!DNL Oracle Eloqua] företagsnamn och [!DNL Oracle Eloqua] användarnamn.<br>Det sammanfogade värdet har formen `{COMPANY_NAME}\{USERNAME}`.<br> Obs! Använd inte klammerparenteser eller mellanslag och bevara `\`. <br>Om ditt [!DNL Oracle Eloqua] företagsnamn till exempel är `MyCompany` och [!DNL Oracle Eloqua] användarnamn är `Username` är det sammanfogade värde som du kommer att använda i fältet **[!UICONTROL Username]** `MyCompany\Username`.
 
@@ -145,8 +146,8 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
 Följ de här stegen för att mappa dina XDM-fält till [!DNL Oracle Eloqua]-målfälten:
 
-1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
-1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
+1. Välj **[!UICONTROL Mapping]** i steget **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
+1. Välj kategorin **[!UICONTROL Select source field]** i fönstret **[!UICONTROL Select attributes]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
 1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och väljer en identitet, eller väljer **[!UICONTROL Select custom attributes]** och skriver det önskade attributnamnet i fältet **[!UICONTROL Attribute name]**. Attributnamnet som du anger ska matcha ett befintligt kontaktattribut i [!DNL Oracle Eloqua]. I [[!DNL create a contact]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) finns de exakta attributnamnen som du kan använda i [!DNL Oracle Eloqua].
 
    * Upprepa dessa steg för att lägga till både nödvändiga och önskade attributmappningar mellan XDM-profilschemat och [!DNL Oracle Eloqua]:
@@ -165,7 +166,6 @@ Följ de här stegen för att mappa dina XDM-fält till [!DNL Oracle Eloqua]-må
      | `xdm: workAddress.city` | `Attribute: city` | |
 
    * Ett exempel med mappningarna ovan visas nedan:
-
      ![Exempel på skärmbild i Experience Platform UI med attributmappningar.](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
 >[!IMPORTANT]

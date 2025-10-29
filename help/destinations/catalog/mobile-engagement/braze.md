@@ -4,7 +4,7 @@ title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 last-substantial-update: 2024-08-20T00:00:00Z
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 2440a4d4ec5d572d1d44228fe99914a01e19d60d
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1068'
 ht-degree: 0%
@@ -61,7 +61,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.[!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under attributet `AdobeExperiencePlatformSegments`. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -112,7 +112,7 @@ Mappningen består av att skapa en länk mellan [!DNL Experience Data Model] (XD
 
 Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Braze]:
 
-Klicka på **[!UICONTROL Add new mapping]** i steget [!UICONTROL Mapping].
+Klicka på [!UICONTROL Mapping] i steget **[!UICONTROL Add new mapping]**.
 
 ![Lägg till mappning för Braze-mål](../../assets/catalog/mobile-engagement/braze/mapping.png)
 
@@ -121,6 +121,7 @@ Klicka på pilknappen bredvid det tomma fältet i avsnittet [!UICONTROL Source F
 ![Braze Destination Source Mapping](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
 
 I fönstret [!UICONTROL Select source field] kan du välja mellan två kategorier med XDM-fält:
+
 * [!UICONTROL Select attributes]: använd det här alternativet om du vill mappa ett specifikt fält från XDM-schemat till ett [!DNL Braze] -attribut.
 
 ![Braze Destination Mapping Source Attribute](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
@@ -136,6 +137,7 @@ Klicka på mappningsikonen till höger om fältet i avsnittet [!UICONTROL Target
 ![Braze Destination Target Mapping](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
 I fönstret [!UICONTROL Select target field] kan du välja mellan två kategorier av målfält:
+
 * [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa [!DNL Experience Platform] identitetsnamnutrymmen till [!DNL Braze] identitetsnamnutrymmen.
 * [!UICONTROL Select custom attributes]: Använd det här alternativet om du vill mappa XDM-attribut till anpassade [!DNL Braze]-attribut som du har definierat i ditt [!DNL Braze]-konto. <br> Du kan också använda det här alternativet om du vill byta namn på befintliga XDM-attribut till [!DNL Braze]. Om du till exempel mappar ett `lastName` XDM-attribut till ett anpassat `Last_Name`-attribut i [!DNL Braze] skapas `Last_Name`-attributet i [!DNL Braze], om det inte redan finns, och `lastName` XDM-attributet mappas till det.
 

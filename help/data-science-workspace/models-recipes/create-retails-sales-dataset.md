@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;recept;data Science Workspace;populära ämnen;recept
+keywords: Experience Platform;recept;Data Science Workspace;populära ämnen;recept
 solution: Experience Platform
 title: Skapa schema och datauppsättning för butiksförsäljning
 type: Tutorial
-description: I den här självstudiekursen får du de förutsättningar och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar kommer schema och datauppsättningar för detaljhandel att vara tillgängliga för dig och medlemmar i din organisation på Experience Platform.
+description: I den här självstudiekursen får du de förutsättningar och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din organisation på Experience Platform.
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 0%
@@ -26,6 +26,7 @@ I den här självstudiekursen får du de krav och resurser som krävs för alla 
 ## Komma igång
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
+
 - Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har åtkomst till en organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
 - Behörighet att göra [!DNL Experience Platform] API-anrop. Slutför självstudiekursen [Autentisera och få tillgång till Adobe Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en) för att få tillgång till följande värden för att slutföra den här självstudiekursen:
    - Behörighet: `{ACCESS_TOKEN}`
@@ -33,7 +34,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - x-gw-ims-org-id: `{ORG_ID}`
    - Klienthemlighet: `{CLIENT_SECRET}`
    - Klientcertifikat: `{PRIVATE_KEY}`
-- Exempeldata och källfiler för [Retail Sales Recipe](../pre-built-recipes/retail-sales.md). Hämta resurserna som krävs för den här och andra [!DNL Data Science Workspace] självstudiekurser från den offentliga Git-databasen [Adobe](https://github.com/adobe/experience-platform-dsw-reference/).
+- Exempeldata och källfiler för [Retail Sales Recipe](../pre-built-recipes/retail-sales.md). Hämta de resurser som krävs för den här och andra [!DNL Data Science Workspace] självstudiekurser från [Adobe offentliga Git-databas](https://github.com/adobe/experience-platform-dsw-reference/).
 - [Python >= 2.7](https://www.python.org/downloads/) och följande [!DNL Python]-paket:
    - [pip](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
@@ -117,6 +118,7 @@ för mer information.
 Du har även inläst exempeldata för butiksförsäljning till [!DNL Experience Platform] med det angivna bootstrap-skriptet.
 
 Så här fortsätter du att arbeta med inkapslade data:
+
 - [Analysera dina data med Jupyter Notebooks](../jupyterlab/analyze-your-data.md)
    - Använd Jupyter Notebooks i Data Science Workspace för att få tillgång till, utforska, visualisera och förstå era data.
 - [Paketera källfiler i en mottagare](./package-source-files-recipe.md)

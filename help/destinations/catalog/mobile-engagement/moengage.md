@@ -3,7 +3,7 @@ title: Moengage connection
 description: Moengage är en plattform för kundengagemang som driver kundcentrerade interaktioner mellan konsumenter och varumärken i realtid.
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -49,7 +49,7 @@ Innan du kan skicka dina Adobe Experience Platform-data till [!DNL Moengage] bö
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|---------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment (publik) med identifierarna (user_id, anonymous_id) tillsammans med anpassade attribut som definieras av dig och som har exporterats till [!DNL Moengage]. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -73,6 +73,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 ![Moengage Destination Authentication](../../assets/catalog/mobile-engagement/moengage/settings.png)
+
 * **[!UICONTROL USERNAME]**: DATA APP ID för inställningssidan för [!DNL Moengage]-instrumentpanelen.
 * **[!UICONTROL PASSWORD]**: DATA APP KEY från inställningssidan på [!DNL Moengage]-instrumentpanelen.
 
@@ -104,11 +105,11 @@ Mappningen består av att skapa en länk mellan [!DNL Experience Data Model] (XD
 
 Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Moengage]:
 
-Välj **[!UICONTROL Checkbox]** i steget [!UICONTROL Mapping].
+Välj [!UICONTROL Mapping] i steget **[!UICONTROL Checkbox]**.
 
 ![Mappning av måltillägg för Moengage](../../assets/catalog/mobile-engagement/moengage/segments.png)
 
-Välj **[!UICONTROL Add new mapping]** i steget [!UICONTROL Mapping].
+Välj [!UICONTROL Mapping] i steget **[!UICONTROL Add new mapping]**.
 
 ![Mappning av måltillägg för Moengage](../../assets/catalog/mobile-engagement/moengage/mapping.png)
 
@@ -117,6 +118,7 @@ I avsnittet [!UICONTROL Source Field] markerar du pilknappen bredvid det tomma f
 ![Moengage Destination Source Mapping](../../assets/catalog/mobile-engagement/moengage/mapping-source.png)
 
 I fönstret [!UICONTROL Select source field] kan du välja mellan två kategorier med XDM-fält:
+
 * [!UICONTROL Select attributes]: använd det här alternativet om du vill mappa ett specifikt fält från XDM-schemat till attributet [!DNL Moengage].
 
 ![Source-attribut för målmappning för Moengage](../../assets/catalog/mobile-engagement/moengage/mapping-attributes.png)
@@ -128,6 +130,7 @@ I avsnittet [!UICONTROL Target Field] väljer du mappningsikonen till höger om 
 ![Målmappning för Moengage](../../assets/catalog/mobile-engagement/moengage/mapping-target.png)
 
 I fönstret [!UICONTROL Select target field] kan du välja mellan två kategorier av målfält:
+
 * [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa [!DNL Experience Platform] identitetsnamnutrymmen till [!DNL Moengage] identitetsnamnutrymmen.
 * [!UICONTROL Select custom attributes]: Använd det här alternativet om du vill mappa XDM-attribut till anpassade [!DNL Moengage]-attribut som du har definierat i ditt [!DNL Moengage]-konto. <br> Du kan också använda det här alternativet om du vill byta namn på befintliga XDM-attribut till [!DNL Moengage]. Om du till exempel mappar ett `lastName` XDM-attribut till ett anpassat `Last_Name`-attribut i [!DNL Moengage] skapas `Last_Name`-attributet i [!DNL Moengage], om det inte redan finns, och `lastName` XDM-attributet mappas till det.
 

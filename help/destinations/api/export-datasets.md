@@ -4,7 +4,7 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 8b2b40be94bb35f0c6117bfc1d51f8ce282f2b29
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '5208'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [&#x200B; september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
 >
 >För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 september 2025.
 >
@@ -107,7 +107,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extr
 
 ### API-referensdokumentation {#api-reference-documentation}
 
-Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats &#x200B;](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
+Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats ](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
 
 ### Ordlista {#glossary}
 
@@ -119,7 +119,7 @@ Innan du startar arbetsflödet för att exportera en datauppsättning ska du ide
 
 
 | Mål | Anslutningsspecifikation | Flödesspecifikation |
----------|----------|---------|
+|---------|----------|---------|
 | [!DNL Amazon S3] | `4fce964d-3f37-408f-9778-e597338a21ee` | `269ba276-16fc-47db-92b0-c1049a3c131f` |
 | [!DNL Azure Blob Storage] | `6d6b59bf-fb58-4107-9064-4d246c0e5bb2` | `95bd8965-fc8a-4119-b9c3-944c2c2df6d2` |
 | [!DNL Azure Data Lake Gen 2(ADLS Gen2)] | `be2c3209-53bc-47e7-ab25-145db8b873e1` | `17be2013-2549-41ce-96e7-a70363bec293` |
@@ -1083,7 +1083,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++SFTP med lösenord - Bas anslutningsbegäran
++++SFTP med lösenord - basanslutningsbegäran
 
 >[!TIP]
 >
@@ -1632,7 +1632,7 @@ Genom att använda specifikationen ovan kan du skapa en målanslutningsbegäran 
 >[!TIP]
 >
 >Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) på dokumentationssidan för [!DNL Amazon S3].
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>>Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1685,7 +1685,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) på dokumentationssidan för [!DNL Azure Blob Storage].
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>>Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
@@ -1739,7 +1739,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >Mer information om hur du hämtar de nödvändiga målparametrarna finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på sidan för Azure [!DNL Data Lake Gen 2(ADLS Gen2)]-måldokumentation.
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>>Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1791,7 +1791,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details) på dokumentationssidan för [!DNL Data Landing Zone].
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>>Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1843,7 +1843,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för [!DNL Google Cloud Storage].
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>>Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
@@ -1897,7 +1897,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!TIP]
 >
 >Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för SFTP-målet.
->Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
+>>Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1929,7 +1929,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Svar**
 
-+++målanslutning - svar
++++Målanslutning - svar
 
 ```json
 {
@@ -2384,7 +2384,7 @@ Använd API:t för dataflödeskörning om du vill kontrollera körningarna av et
 
 **Begäran**
 
-+++Get data aflow running - Request
++++Körning av Get dataflow - begäran
 
 I begäran om att hämta dataflödeskörningar lägger du till det dataflödes-ID som du fick i föregående steg som frågeparameter när du skapade dataflödet.
 
@@ -2463,7 +2463,7 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 ### Exempeldatauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet &#x200B;](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json &#x200B;](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 

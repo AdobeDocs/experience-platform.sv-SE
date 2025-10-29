@@ -3,7 +3,7 @@ title: Salesforce Marketing Cloud Account Engagement
 description: Lär dig hur du använder Salesforce Marketing Cloud Account Engagement-målet (tidigare Pardot) för att exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud Account Engagement för dina affärsbehov.
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1482'
 ht-degree: 0%
@@ -34,7 +34,7 @@ I avsnitten nedan finns information om eventuella krav som du måste konfigurera
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Marketing Cloud Account Engagement] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Marketing Cloud Account Engagement] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 ### Förutsättningar i [!DNL Marketing Cloud Account Engagement] {#prerequisites-destination}
 
@@ -85,7 +85,7 @@ Se [!DNL Marketing Cloud Account Engagement] [hastighetsbegränsningarna](https:
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald målgrupp i Experience Platform uppdateras motsvarande [!DNL Salesforce Marketing Cloud Account Engagement]-segmentstatus med målgruppsstatus från Experience Platform.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -99,7 +99,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-Sök efter [!DNL Salesforce Marketing Cloud Account Engagement] inom **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Du kan också hitta den under kategorin **[!UICONTROL Email marketing]**.
+Sök efter **[!UICONTROL Destinations]** inom **[!UICONTROL Catalog]** > [!DNL Salesforce Marketing Cloud Account Engagement]. Du kan också hitta den under kategorin **[!UICONTROL Email marketing]**.
 
 ### Autentisera till mål {#authenticate}
 
@@ -148,8 +148,8 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
 Följ stegen nedan för att mappa dina XDM-fält till målfälten för [!DNL Marketing Cloud Account Engagement] korrekt.
 
-1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
-1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
+1. Välj **[!UICONTROL Mapping]** i steget **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
+1. Välj kategorin **[!UICONTROL Select source field]** i fönstret **[!UICONTROL Select attributes]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
 1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och väljer en identitet eller väljer kategorin **[!UICONTROL Select custom attributes]** och anger i listan med [[!DNL Prospect API fields]](https://developer.salesforce.com/docs/marketing/pardot/guide/prospect-v5.html#fields) från det tillgängliga schemat.
 
    * Upprepa de här stegen för att lägga till mappningar mellan XDM-profilschemat och [!DNL Marketing Cloud Account Engagement]:
@@ -161,7 +161,6 @@ Följ stegen nedan för att mappa dina XDM-fält till målfälten för [!DNL Mar
      | `xdm: person.name.firstName` | `Attribute: firstName` | |
 
    * Ett exempel med mappningarna ovan visas nedan:
-
      ![Exempel på skärmbild i Experience Platform UI som visar målmappningar.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.

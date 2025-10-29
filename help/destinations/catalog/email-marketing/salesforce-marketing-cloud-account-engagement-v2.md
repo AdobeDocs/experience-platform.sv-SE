@@ -4,7 +4,8 @@ description: Lär dig hur du använder (V2) Salesforce Marketing Cloud Account E
 badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: d1405237698271607fa672ccae1ac731d66df263
+exl-id: cd792eb0-9e90-49e4-8c50-c65126e355c2
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 1%
@@ -23,8 +24,8 @@ Det här målet använder [[!DNL Salesforce Import API v5]](https://developer.sa
 >[!IMPORTANT]
 > 
 > Det här är V2-versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md). Den här versionen ersätter den tidigare målversionen och finns för närvarande i Alpha-utgåvan.
-> &#x200B;> <br>
-> &#x200B;> Om du för närvarande använder den tidigare versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) måste du migrera till den här V2-versionen före **januari 2026**. Efter januari 2026 kommer Adobe att avveckla den tidigare versionen och den kommer inte längre att vara tillgänglig.
+> > <br>
+> > Om du för närvarande använder den tidigare versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) måste du migrera till den här V2-versionen före **januari 2026**. Efter januari 2026 kommer Adobe att avveckla den tidigare versionen och den kommer inte längre att vara tillgänglig.
 
 
 ## Användningsfall {#use-cases}
@@ -88,7 +89,7 @@ Om en matchning hittas med någon av dessa identifierare uppdateras den befintli
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li>Detta mål stöder batchexport av profildata med Salesforce Import API v5.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Batch]** | <ul><li>**Inledande export**: Fullständig export omedelbart efter mappning</li><li>**Efterföljande exporter**: Inkrementell export var tredje timme</li><li>Schemat är fast och kan inte anpassas i Alpha</li></ul> |
 

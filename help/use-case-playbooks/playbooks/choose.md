@@ -4,7 +4,7 @@ title: Välj bland ett urval av spelböcker
 description: Lär dig hur du väljer rätt spelbok för dina användningsfall för att aktivera spelböcker.
 role: User
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: 1781aa552107b6ca1fed357c053a4f892960dc55
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '738'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Mindmap börjar med en definition av vem som nås i användarresan och beskriver
 Granska sammanfattningsavsnittet för att förstå vilka resurser som genereras när du skapar instanser från spelboken. Resurserna som genereras för varje spelningsbok är anpassade efter det användningsfall som spelningsboken aktiverar. Hämta mer information nedan om alla objekt i sammanfattningsavsnittet.
 
 | Objekt | Beskrivning |
----------|----------|
+|---------|----------|
 | **[!UICONTROL Target audience]** | Beskriver de profiler som du vill nå genom den här användningsfallsspelboken. |
 | **[!UICONTROL Marketing Channels]** | Beskriver de kanaler som används för att nå de profiler som spelboken riktar sig till. |
 | **[!UICONTROL Technical assets]** | En lista med tekniska resurser som genereras när du har skapat instanser av spelboken. De genererade resurserna skiljer sig åt i spelboken, beroende på användningsfallet. Vissa spelböcker kan generera scheman, segment och resor. Andra kan generera destinationer. Mer information om hur du använder och återanvänder genererade resurser finns i avsnittet [Förstå genererade resurser](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets) mer i guiden om hur du skapar och återanvänder instanser. |

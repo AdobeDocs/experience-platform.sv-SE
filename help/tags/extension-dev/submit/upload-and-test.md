@@ -2,7 +2,7 @@
 title: Ladda upp och implementera kompletta tester för ett tillägg
 description: Lär dig hur du validerar, överför och testar tillägg i Adobe Experience Platform.
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '2344'
 ht-degree: 2%
@@ -63,8 +63,8 @@ Med `npx` kan du hämta och köra ett npm-paket utan att installera det på dato
 
 >[!NOTE]
 > Som standard förväntas Adobe I/O-autentiseringsuppgifter för ett Oauth-flöde mellan servrar. De gamla `jwt-auth`-autentiseringsuppgifterna
-> kan användas genom att köra `npx @adobe/reactor-uploader@v5.2.0` tills borttagningen är den 1 januari 2025. De parametrar som krävs
-> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452).
+> > kan användas genom att köra `npx @adobe/reactor-uploader@v5.2.0` tills borttagningen är den 1 januari 2025. De parametrar som krävs
+> > för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452).
 
 Överföraren kräver att du bara anger ett fåtal delar av informationen. `clientId` och `clientSecret` kan hämtas från Adobe I/O-konsolen. Navigera till [integreringssidan](https://console.adobe.io/integrations) i I/O-konsolen. Välj rätt organisation i listrutan, hitta rätt integrering och välj **[!UICONTROL View]**.
 
@@ -82,7 +82,7 @@ Tilläggspaketet kommer sedan att överföras och den överförande filen ger di
 >
 >Om du tänker köra överföringen ofta kan det vara en börda att skicka all den här informationen varje gång. Du kan också skicka dessa som argument från kommandoraden. Mer information finns i avsnittet [Kommandoradsargument](https://www.npmjs.com/package/@adobe/reactor-uploader#command-line-arguments) i NPM-dokumenten.
 
-Om du vill hantera överföringen av tillägget med API:t direkt kan du läsa exempelanropen för [skapa](../../api/endpoints/extension-packages.md/#create) eller [uppdatera](../../api/endpoints/extension-packages.md#update) ett tilläggspaket i API-dokumenten för mer information.
+Om du vill hantera överföringen av tillägget med API:t direkt kan du läsa exempelanropen för [skapa](../../api/endpoints/extension-packages.md#create) eller [uppdatera](../../api/endpoints/extension-packages.md#update) ett tilläggspaket i API-dokumenten för mer information.
 
 ## Skapa en utvecklingsegenskap {#property}
 

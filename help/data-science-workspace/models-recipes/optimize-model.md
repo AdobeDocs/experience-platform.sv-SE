@@ -5,9 +5,9 @@ title: Optimera en modell med Model Insights Framework
 type: Tutorial
 description: Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment.
 exl-id: f989a3f1-6322-47c6-b7d6-6a828766053f
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1209'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,7 @@ Model Insights Framework ger datavetenskaparen verktyg i [!DNL Data Science Work
 ## Vad är mätvärden?
 
 Efter att ha implementerat och utbildat en modell är nästa steg som en datavetare skulle göra att hitta hur bra modellen kommer att fungera. Olika mätvärden används för att hitta hur effektiv en modell är jämfört med andra. Några exempel på mätvärden är:
+
 - Klassificeringsnoggrannhet
 - Område under kurva
 - Sammanställningsmatris
@@ -33,6 +34,7 @@ Efter att ha implementerat och utbildat en modell är nästa steg som en datavet
 ## Konfigurera receptkod
 
 Model Insights Framework har för närvarande stöd för följande körningsmiljöer:
+
 - [Scala](#scala)
 - [Python/Tensorflow](#pythontensorflow)
 - [R](#r)
@@ -41,7 +43,7 @@ Exempelkod för recept finns i databasen [experience-platform-dsw-reference](htt
 
 ### Scala {#scala}
 
-Det finns två sätt att hämta in mätvärden till recepten. Den ena är att använda standardmåtten för utvärdering som tillhandahålls av SDK och den andra är att skriva anpassade mått för utvärdering.
+Det finns två sätt att hämta in mätvärden till recepten. Den ena är att använda de standardvärden för utvärdering som tillhandahålls av SDK och den andra är att skriva anpassade mått för utvärdering.
 
 #### Standardmått för utvärdering av Scala
 
@@ -89,11 +91,11 @@ I följande tabell anges standardmåtten för varje klass. En användare kan ock
 
 #### Anpassade utvärderingsmått för Scala
 
-Den anpassade utvärderaren kan tillhandahållas genom att utöka gränssnittet för `MLEvaluator.scala` i `Evaluator.scala`-filen. I exemplet [Evaluator.scala](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) definierar vi anpassade funktioner för `split()` och `evaluate()`. Vår `split()`-funktion delar våra data slumpmässigt med förhållandet 8:2 och vår `evaluate()`-funktion definierar och returnerar 3 mått: MAPE, MAE och RMSE.
+Den anpassade utvärderaren kan tillhandahållas genom att utöka gränssnittet för `MLEvaluator.scala` i `Evaluator.scala`-filen. I exemplet [Evaluator.scala](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) definierar vi anpassade funktioner för `split()` och `evaluate()`. Vår `split()`-funktion delar våra data slumpmässigt med en kvot på 8:2 och vår `evaluate()`-funktion definierar och returnerar 3 mått: MAPE, MAE och RMSE.
 
 >[!IMPORTANT]
 >
->Använd inte `"measures"` för `valueType` för klassen `MLMetric` när du skapar en ny `MLMetric`, annars fylls inte måttet i i den anpassade utvärderingstabellen.
+>Använd inte `MLMetric` för `"measures"` för klassen `valueType` när du skapar en ny `MLMetric`, annars fylls inte måttet i i den anpassade utvärderingstabellen.
 >  
 > Gör detta: `metrics.add(new MLMetric("MAPE", mape, "double"))`\
 > Inte detta: `metrics.add(new MLMetric("MAPE", mape, "measures"))`
@@ -121,13 +123,13 @@ Om du skapar utvärderingsmått i [!DNL Python] måste användaren implementera 
 
 Metoden `evaluate()` returnerar det metriska objektet som innehåller en array med metriska objekt med egenskaperna `name`, `value` och `valueType`.
 
-Syftet med metoden `split()` är att mata in data och att mata ut en utbildning och en testdatamängd. I vårt exempel matar metoden `split()` in data med SDK:t `DataSetReader` och rensar sedan data genom att ta bort icke-relaterade kolumner. Därifrån skapas ytterligare funktioner från befintliga Raw-funktioner i data.
+Syftet med metoden `split()` är att mata in data och att mata ut en utbildning och en testdatamängd. I vårt exempel matar metoden `split()` in data med SDK `DataSetReader` och rensar sedan data genom att ta bort icke-relaterade kolumner. Därifrån skapas ytterligare funktioner från befintliga Raw-funktioner i data.
 
 Metoden `split()` bör returnera en utbildnings- och testdatabildruta som sedan används av metoderna `pipeline()` för att träna och testa ML-modellen.
 
 #### Anpassade utvärderingsmått för tensorflow
 
-Metoderna `evaluate()` och `split()` i klassen `Evaluator` måste implementeras för [!DNL Tensorflow], ungefär som [!DNL Python]. För `evaluate()` ska mätvärdena returneras medan `split()` returnerar tåget och testdatauppsättningarna.
+Metoderna [!DNL Tensorflow] och [!DNL Python] i klassen `evaluate()` måste implementeras för `split()`, ungefär som `Evaluator`. För `evaluate()` ska mätvärdena returneras medan `split()` returnerar tåget och testdatauppsättningarna.
 
 ```PYTHON
 from ml.runtime.python.Interfaces.AbstractEvaluator import AbstractEvaluator
@@ -154,6 +156,7 @@ Från och med nu finns det inga standardvärden för R. Om du vill hämta utvär
 Huvudsyftet med `applicationEvaluator` är att returnera ett JSON-objekt som innehåller nyckelvärdepar med mätvärden.
 
 Denna [applicationEvaluator.R](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/R/applicationEvaluator.R) kan användas som exempel. I det här exemplet delas `applicationEvaluator` upp i tre välkända avsnitt:
+
 - Läs in data
 - Datakivering/funktionsutveckling
 - Hämta sparad modell och utvärdera

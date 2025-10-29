@@ -1,9 +1,9 @@
 ---
-title: Marketo Measure Ultimate-mål
+title: Marketo Measure Ultimate
 description: Lär dig hur du ansluter och aktiverar data till Marketo Measure Ultimate-målet.
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 0%
@@ -30,7 +30,7 @@ För att du bättre ska förstå hur och när du ska använda Marketo Measure-de
 
 Observera följande krav för Marketo Measure-destinationen:
 
-* Mappning av sandlådor i Experience Platform ska slutföras av administratören på inställningssidan för Marketo Measure. Utan sandlådemappning kan du inte slutföra arbetsflödet för att ansluta till målet och spara och aktivera data.
+* Mappning av Experience Platform-sandlådor ska slutföras av administratören på inställningssidan för Marketo Measure. Utan sandlådemappning kan du inte slutföra arbetsflödet för att ansluta till målet och spara och aktivera data.
 * Endast datauppsättningar av B2B XDM-klasser kan exporteras (se t.ex. XDM Business Account och XDM Business Opportunity-klasserna). Du kan inte hämta flera datauppsättningar av samma B2B XDM-klass för en viss datakälla.
 * Varje datauppsättning kan bara inkluderas i ett dataflöde till Marketo Measure-målet.
 
@@ -39,7 +39,7 @@ Observera följande krav för Marketo Measure-destinationen:
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Dataset export]** | Du exporterar rådatamängder som inte är grupperade eller strukturerade efter målgruppsintressen eller kvalifikationer. Läs mer om [datauppsättningsexporter](/help/destinations/destination-types.md#dataset-export-destinations). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Detta batchmål exporterar filer till Marketo Measure-plattformen varannan timme. Läs mer om [schemaläggning av datauppsättningsexporter](/help/destinations/ui/export-datasets.md#scheduling). |
 
@@ -78,7 +78,7 @@ Läs självstudiekursen [Exportera datauppsättningar](/help/destinations/ui/exp
 
 ## Validera dataexport {#exported-data}
 
-Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till datalagret [Snowflake](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=sv-SE).
+Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till ditt [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

@@ -3,7 +3,7 @@ title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1408'
 ht-degree: 1%
@@ -26,7 +26,7 @@ Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en s�
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Zendesk] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Zendesk] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -59,7 +59,7 @@ Sidan [Pris- och prisgränser](https://developer.zendesk.com/api-reference/sales
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Zendesk] uppdateras med motsvarande målgruppsstatus från Experience Platform, baserat på det **[!UICONTROL Mapping ID]**-värde som angavs under [målgruppsplaneringssteget](#schedule-segment-export-example).</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
@@ -78,6 +78,7 @@ I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL
 ### Autentisera till mål {#authenticate}
 
 Fyll i de obligatoriska fälten nedan. Mer information finns i avsnittet [Samla [!DNL Zendesk] inloggningsuppgifter](#gather-credentials).
+
 * **[!UICONTROL Bearer Token]**: Den åtkomsttoken som du har genererat i ditt [!DNL Zendesk]-konto.
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
@@ -118,8 +119,8 @@ Attribut som anges i **[!UICONTROL Source field]** följer inte någon sådan be
 
 Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Zendesk]:
 
-1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
-1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
+1. Välj **[!UICONTROL Mapping]** i steget **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
+1. Välj kategorin **[!UICONTROL Select source field]** i fönstret **[!UICONTROL Select attributes]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
 1. I fönstret **[!UICONTROL Select target field]** väljer du kategorin **[!UICONTROL Select identity namespace]** och väljer en målidentitet, eller väljer kategorin **[!UICONTROL Select attributes]** och väljer ett av de schemaattribut som stöds.
 
    * Upprepa dessa steg om du vill lägga till följande obligatoriska mappningar, du kan även lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och din [!DNL Zendesk]-instans:
@@ -131,7 +132,6 @@ Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för
      | `xdm: person.name.firstName` | `xdm: first_name` | |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
-
      ![Exempel på skärmbild i Experience Platform UI med attributmappningar.](../../assets/catalog/crm/zendesk/mappings.png)
 
 >[!IMPORTANT]
@@ -160,7 +160,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Övervaka målgruppssammanfattningen och kontrollera att antalet profiler motsvarar antalet inom segmentet.
    ![Exempel på skärmbild i Experience Platform UI som visar segment.](../../assets/catalog/crm/zendesk/segment.png)
 
-1. Logga in på webbplatsen [!DNL Zendesk] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera om profilerna från målgruppen har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som har skapats med målgruppsstatus&#x200B;**[!UICONTROL Mapping ID]** och målgruppsstatus.
+1. Logga in på webbplatsen [!DNL Zendesk] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera om profilerna från målgruppen har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som har skapats med målgruppsstatus**[!UICONTROL Mapping ID]** och målgruppsstatus.
    ![Skärmbild från användargränssnittet i Zendesk som visar sidan Kontakter med de ytterligare fält som har skapats med målgruppens namn.](../../assets/catalog/crm/zendesk/contacts.png)
 
 1. Du kan även gå ned på en enskild **[!UICONTROL Person]**-sida och kontrollera avsnittet **[!UICONTROL Additional fields]** som visar målgruppsnamnet och målgruppsstatus.
@@ -173,6 +173,7 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 ## Ytterligare resurser {#additional-resources}
 
 Ytterligare användbar information från dokumentationen för [!DNL Zendesk] finns nedan:
+
 * [Gör ditt första samtal](https://developer.zendesk.com/documentation/sales-crm/first-call/)
 * [Anpassade fält](https://developer.zendesk.com/api-reference/sales-crm/requests/#custom-fields)
 

@@ -2,7 +2,7 @@
 title: (V1) Pega CDH Realtime Audience connection
 description: Använd målplatsen Pega Customer Decision Hub Realtime Audience i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: 71de5b0d3e9c4413caa911fbe174e74c0e409d89
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1043'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här versionen av Pega Customer Decision Hub Realtime Audience-destinationen stöder endast en Pega Customer Decision-applikation. Om du har konfigurerat flera Pega Customer Decision Hub-program måste du använda målanslutningen [(V2) Pega CDH Realtime Audience &#x200B;](./pega-v2.md).
+>Den här versionen av Pega Customer Decision Hub Realtime Audience-destinationen stöder endast en Pega Customer Decision-applikation. Om du har konfigurerat flera Pega Customer Decision Hub-program måste du använda målanslutningen [(V2) Pega CDH Realtime Audience ](./pega-v2.md).
 
 ## Översikt {#overview}
 
@@ -60,7 +60,7 @@ Innan du kan använda det här målet för att exportera data från Adobe Experi
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Exportera alla medlemmar i en målgrupp med identifierare (*CustomerID*), attribut (efternamn, förnamn, plats osv.) och data för målgruppsmedlemskap. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform, baserat på målgruppsutvärdering, skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Mer information finns i [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -86,7 +86,7 @@ Fyll i fälten nedan och välj **[!UICONTROL Connect to destination]**:
 
 När du har upprättat autentiseringsanslutningen till [!DNL Pega Customer Decision Hub] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH &#x200B;](../../assets/catalog/personalization/pega/pega-connect-destination.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH ](../../assets/catalog/personalization/pega/pega-connect-destination.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**.
 

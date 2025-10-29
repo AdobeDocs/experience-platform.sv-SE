@@ -2,7 +2,7 @@
 title: Metodtips för dataresursorganisation i frågetjänsten
 description: I det här dokumentet beskrivs ett logiskt sätt att ordna data så att de blir lätta att använda med frågetjänsten.
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '787'
 ht-degree: 0%
@@ -66,7 +66,7 @@ En lista över alla databaser under `dbname="all"` visar tre tillgängliga datab
 SHOW DATABASES;
   
 name     
----------
+|---------
 databaseA
 databaseB
 databaseC
@@ -78,7 +78,7 @@ Om du visar alla scheman under `dbname="all"` visas de tre scheman som är relat
 SHOW SCHEMAS;
   
 database       | schema
-----------------------
+|----------------------
 databaseA      | schema1
 databaseA      | schema2
 databaseB      | schema3
@@ -90,14 +90,14 @@ När du skapar en [!DNL PostgreSQL]-anslutning med `dbname="databaseA"` kan du k
 SHOW DATABASES;
   
 name     
----------
+|---------
 databaseA
  
 
 SHOW SCHEMAS;
   
 database       | schema
-----------------------
+|----------------------
 databaseA      | schema1
 databaseA      | schema2
 ```
@@ -108,20 +108,20 @@ Med punktnotation kan du komma åt alla tabeller som är kopplade till ett speci
 SHOW DATABASES;
   
 name     
----------
+|---------
 databaseA
 
 
 SHOW SCHEMAS;
   
 database       | schema
-----------------------
+|----------------------
 databaseA      | schema1
 
 
 SHOW tables;
 name       | type
-----------------------
+|----------------------
 dataset1| table
 dataset2| table
 dataset3| table

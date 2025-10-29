@@ -4,9 +4,9 @@ description: Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälp
 hide: true
 hidefromtoc: true
 exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
-source-wordcount: '1328'
+source-wordcount: '1327'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ En annonsör vill rikta sig till användare inom specifika målgrupper via Zeta 
 > Målet för Zeta Marketing Platform kräver att du mappar ett namnområde för källidentiteten till ZMP `uid`-målidentiteten. Detta hjälper Zeta Marketing Platform att särskilja varje profil unikt.
 
 | Målidentitet | Beskrivning | Överväganden | Anteckningar |
----------|----------|----------|----------|
+|---------|----------|----------|----------|
 | uid | Unikt ID som ZMP använder för att differentiera kundprofiler | Obligatoriskt | Välj standardnamnområdet för identiteter `Email` om du vill identifiera unika profiler med deras e-postadresser. Du kan också välja att mappa ditt anpassade namnområde till `uid` om kundprofilerna inte har något e-postmeddelande. |
 | email_md5_id | E-post MD5 som representerar varje kundprofil | Valfritt | Välj den här målidentiteten när du vill identifiera kundprofiler unikt med e-post-MD5-värden. Det är viktigt att e-postadresser redan är i MD5-format inom Experience Platform eftersom Experience Platform inte konverterar oformaterad text till MD5. I det här scenariot anger du `uid` (obligatoriskt) till antingen samma MD5-värden för e-post eller till ett annat lämpligt ID-namnområde. |
 
@@ -76,7 +76,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -101,6 +101,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
 ![Bild som visar ZMP-konfiguration](../../assets/catalog/data-management-platform/zeta-marketing-platform/zeta-configure-new-destination.png)
+
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL ZMP Account Site Id]**: Ditt ZMP **Site ID** där du vill skicka dina målgrupper. Du kan visa ditt webbplats-ID genom att gå till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns [här](https://knowledgebase.zetaglobal.com/kb/integrations).
@@ -126,10 +127,12 @@ Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/
 Nedan visas ett exempel på korrekt identitetsmappning när profiler exporteras till [!DNL Zeta Marketing Platform].
 
 Välja källfält:
+
 * Välj ett namnområde för källidentitet (anpassat eller standard, till exempel `Email`) som unikt identifierar en profil i Adobe Experience Platform och [!DNL Zeta Marketing Platform].
 * Välj eventuella XDM-källprofilattribut som behöver exporteras till och uppdateras i [!DNL Zeta Marketing Platform].
 
 Markera målfält:
+
 * (Obligatoriskt) Välj `uid` som den målidentitet som du mappar ett källidentitetsnamnområde till.
 * (Valfritt) Välj `email_md5_id` som mål-ID som du mappade källidentitetsnamnområdet som representerar e-post-ID5-värden till. Det är viktigt att e-postadresserna redan är i MD5-format i Experience Platform eftersom Experience Platform inte konverterar oformaterad text till MD5
 * Välj eventuella ytterligare målmappningar.

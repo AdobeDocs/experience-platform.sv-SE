@@ -4,7 +4,7 @@ description: Skapa en live-Snowflake-datadelning för att få dagliga målgrupps
 last-substantial-update: 2025-10-23T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: c429ee227bd93455f541a32266bfbef9ddeaae06
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1659'
 ht-degree: 0%
@@ -113,7 +113,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL Snowflake]. |
 | Exportfrekvens | **[!UICONTROL Batch]** | Det här målet ger periodiska ögonblicksbilder av ett fullständigt målgruppsmedlemskap genom Snowflake datautbyte. Varje ögonblicksbild ersätter tidigare data och ser till att du alltid har den senaste fullständiga bilden av din publik. |
 
@@ -176,7 +176,7 @@ Du kan exportera identiteter och profilattribut till det här målet.
 
 ![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
 
-Du kan använda kontrollen [&#x200B; för &#x200B;](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 

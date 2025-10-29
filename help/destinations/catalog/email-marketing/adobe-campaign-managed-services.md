@@ -2,7 +2,7 @@
 title: Adobe Campaign Managed Cloud Services
 description: Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring.
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
 workflow-type: tm+mt
 source-wordcount: '1571'
 ht-degree: 0%
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=sv-SE#release-8-4-1).
+>Den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html#release-8-4-1).
 
 ## Översikt {#overview}
 
-Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med Campaign](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html?lang=sv-SE)
+Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med Campaign](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html)
 
 Använd Campaign för att
 
@@ -60,7 +60,7 @@ För att du bättre ska kunna förstå hur och när du ska använda Adobe Campai
   >
   >Synkronisering av profilattribut är tillgängligt för profiler som redan finns i Adobe Campaign-databasen.
 
-[Läs mer om Adobe Campaign-integrering med Adobe Experience Platform](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html?lang=sv-SE)
+[Läs mer om Adobe Campaign-integrering med Adobe Experience Platform](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html)
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -82,7 +82,7 @@ För att du bättre ska kunna förstå hur och när du ska använda Adobe Campai
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i arbetsflödet för [målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
@@ -105,7 +105,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Select instance]**: Din **[!DNL Campaign]**-marknadsföringsinstans.
-* **[!UICONTROL Target mapping]**: Välj den målmappning som du använder i **[!DNL Adobe Campaign]** för att skicka leveranser. [Läs mer](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html?lang=sv-SE).
+* **[!UICONTROL Target mapping]**: Välj den målmappning som du använder i **[!DNL Adobe Campaign]** för att skicka leveranser. [Läs mer](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html).
 * **[!UICONTROL Select sync type]**:
 
    * **[!UICONTROL Audience sync]**: Använd det här alternativet om du vill skicka Adobe Experience Platform-målgrupper till Adobe Campaign.
@@ -130,7 +130,7 @@ Mer information om marknadsföringsåtgärder finns i översikten [över dataanv
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=sv-SE) om du vill ha instruktioner om hur du aktiverar målgruppsdata till det här målet.
+Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html) om du vill ha instruktioner om hur du aktiverar målgruppsdata till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
@@ -146,7 +146,7 @@ Välj XDM-fält som ska exporteras med profilerna och mappa dem till motsvarande
    >
    >Fältet&quot;segmentMembershipStatus&quot; är en obligatorisk mappning som återspeglar statusen för segmentMembership. Det här fältet läggs till som standard och kan inte ändras eller tas bort.
 
-1. Mappa varje fält med målfältet i Adobe Campaign. Tillgängliga målfält avgörs av den målmappning som valts när [målet &#x200B;](#destination-details) skapades.
+1. Mappa varje fält med målfältet i Adobe Campaign. Tillgängliga målfält avgörs av den målmappning som valts när [målet ](#destination-details) skapades.
 
 1. Identifiera obligatoriska attribut och dedupliceringsnycklar. Observera att värden i attribut som är markerade som&quot;Obligatorisk&quot; eller&quot;Avdupliceringsnyckel&quot; inte kan vara null.
 
