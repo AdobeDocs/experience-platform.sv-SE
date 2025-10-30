@@ -5,7 +5,7 @@ title: Skapa en modell med JupyterLab Notebooks
 type: Tutorial
 description: I den här självstudiekursen får du hjälp med att skapa ett recept med mallen för receptbyggaren för JupyterLab-anteckningsböcker.
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '2079'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Den återstående delen av den här självstudiekursen omfattar följande filer 
 
 I följande videofilm förklaras den bärbara datorn med Luma-benägenhetsmodellen:
 
->[!VIDEO](https://video.tv.adobe.com/v/3452496?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/333570)
 
 ### Kravfil {#requirements-file}
 
@@ -93,7 +93,7 @@ För bärbara Luma-benägenhetsmodeller behöver kraven inte uppdateras.
 
 Konfigurationsfilerna, `training.conf` och `scoring.conf`, används för att ange de datauppsättningar som du vill använda för utbildning och bedömning samt för att lägga till hyperparametrar. Det finns olika konfigurationer för utbildning och poängsättning.
 
-För att en modell ska kunna köra utbildning måste du ange `trainingDataSetId`, `ACP_DSW_TRAINING_XDM_SCHEMA` och `tenantId`. Dessutom måste du ange `scoringDataSetId`, `tenantId` och `scoringResultsDataSetId ` för att kunna göra en bedömning.
+För att en modell ska kunna köra utbildning måste du ange `trainingDataSetId`, `ACP_DSW_TRAINING_XDM_SCHEMA` och `tenantId`. Dessutom måste du ange `scoringDataSetId`, `tenantId` och `scoringResultsDataSetId` för att kunna göra en bedömning.
 
 Om du vill hitta data- och schema-ID:n går du till fliken ![Data](../images/jupyterlab/create-recipe/dataset-tab.png) i anteckningsböckerna i det vänstra navigeringsfältet (under mappikonen). Tre olika datauppsättnings-ID måste anges. `scoringResultsDataSetId` används för att lagra modellbedömningsresultaten och ska vara en tom datamängd. Dessa datauppsättningar gjordes tidigare i steget [Obligatoriska resurser](#assets).
 

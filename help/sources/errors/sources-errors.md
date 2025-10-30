@@ -2,9 +2,9 @@
 title: Felmeddelanden för källor
 description: Lär dig mer om de felmeddelanden du kan stöta på när du använder Flow Service för källor.
 exl-id: cfba9780-4ab9-447b-8c60-c9f813107d11
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '3188'
+source-wordcount: '3057'
 ht-degree: 0%
 
 ---
@@ -105,16 +105,16 @@ Det här dokumentet innehåller en katalog med felmeddelanden, beskrivningar och
 | `1341-400` | Felaktig begäran | Angiven ODI Json är tom. Ange en giltig ODI Json och försök igen. |
 | `1342-400` | Felaktig begäran | Dls:folder-segmentet i odi.json saknar definitioner. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
 | `1343-400` | Felaktig begäran | Både dls:entityReferences och dls:partitionSpec i odi.json saknar definitioner. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
-| `1344-400` | Felaktig begäran | Definitionen för dls:partitionSpec i odi.json är ogiltig eftersom fler än en partitionSpecics hittades. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
-| `1345-400` | Felaktig begäran | Definitioner saknas i ett eller flera segment i sökvägar: dls:partitionSpec/dls:fileFormat, dls:partitionSpec/dls:partitionTemplate,&#39;dls:partitionSpec/dls:fileFormat/@type, dls:partitionSpec/dls:fileFormat/dls:csvDelimiters i odi.ji Sven. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
-| `1346-400` | Felaktig begäran | Definitionen &#39;@type&#39; i &#39;dls:fileFormat&#39; i &#39;odi.json&#39; är ogiltig. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
-| `1347-400` | Felaktig begäran | Definitionen dls:csvDelimiters i odi.json stöds inte. CsvDelimiters som stöds är: [,]. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
+| `1344-400` | Felaktig begäran | Definitionen för dls:partitionSpec i odi.json är ogiltig eftersom fler än en partitionSpecs hittades. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
+| `1345-400` | Felaktig begäran | Definitioner saknas i 1 eller flera segment i sökvägar: dls:partitionSpec/dls:fileFormat, dls:partitionSpec/dls:partitionTemplate,&#39;dls:partitionSpec/dls:fileFormat/@type&#39;, &#39;dls:partitionSpec/dls:fileFormat/dls:csvDelimiters&#39; i &#39;odi.json&#39;. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
+| `1346-400` | Felaktig begäran | Definitionen &#39;@type&#39; som angavs i &#39;dls:fileFormat&#39; i &#39;odi.json&#39; är ogiltig. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
+| `1347-400` | Felaktig begäran | Dls:csvDelimiters-definitionen i odi.json stöds inte. CsvDelimiters som stöds är: [,]. Ange lämpliga definitioner i &#39;odi.json&#39; och försök igen. |
 | `1348-400` | Felaktig begäran | Ett fel uppstod vid deserialisering av dls:entityReferences. Kontrollera att data har ett giltigt format och försök igen. |
 | `1349-400` | Felaktig begäran | De angivna filterparametrarna är ogiltiga. Ange giltiga filterparametrar och försök igen. |
 | `1350-400` | Felaktig begäran | Ingen operator har angetts för filter vid källan. Ange en giltig filterbegäran med lämplig operator och försök igen. |
 | `1351-400` | Felaktig begäran | Den angivna operatorn {operator} stöds inte för filter vid källan för den här kopplingen. Ange en giltig operator och försök igen. |
 | `1352-400` | Felaktig begäran | Den angivna operatorn {operator} kan inte mappas till någon systemspecifik operator som stöds för {ql}. Ange en giltig operator och försök igen. |
-| `1353-400` | Felaktig begäran | Filtret vid källan stöds ännu inte för {connectorType}-anslutningen. Kontrollera vilka anslutningar som stöds i dokumentationen: https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html?lang=sv-SE. |
+| `1353-400` | Felaktig begäran | Filtret vid källan stöds ännu inte för {connectorType}-anslutningen. Kontrollera vilka anslutningar som stöds i dokumentationen: https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html. |
 | `1354-400` | Felaktig begäran | Frågespråket {ql} stöds ännu inte för filter vid källan. Ange ett giltigt frågespråk och försök igen. |
 | `1355-400` | Felaktig begäran | Den angivna filtertypen är ogiltig. Den filtertyp som stöds är: PQL. Ange en giltig filtertyp och försök igen. |
 | `1356-400` | Felaktig begäran | Angivet filterformat är ogiltigt. Filterformatet som stöds är: pql/json. Ange ett giltigt filterformat och försök igen. |

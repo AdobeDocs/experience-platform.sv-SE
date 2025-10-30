@@ -2,7 +2,7 @@
 description: Den här sidan är ett exempel på det API-anrop som används för att skapa en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Skapa en målgruppsmall
 exl-id: 98d30002-d462-4008-9337-7de0cd608194
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 0%
@@ -261,7 +261,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | `httpMethod` | Sträng | Den metod som används i slutpunkten för att skapa, uppdatera, ta bort eller validera målgruppen i målgruppen via programmering. Till exempel: `POST`, `PUT`, `DELETE` |
 | `headers.header` | Sträng | Anger alla HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"Content-Type"` |
 | `headers.value` | Sträng | Anger värdet för HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"application/x-www-form-urlencoded"` |
-| `requestBody` | Sträng | Anger innehållet i meddelandetexten som ska skickas till din API. Vilka parametrar som ska läggas till i objektet `requestBody` beror på vilka fält som API:t godkänner. Mer information om vad du kan inkludera i meddelandetexten finns i [makrodokumentationen &#x200B;](../functionality/audience-metadata-management.md#macros) som stöds. |
+| `requestBody` | Sträng | Anger innehållet i meddelandetexten som ska skickas till din API. Vilka parametrar som ska läggas till i objektet `requestBody` beror på vilka fält som API:t godkänner. Mer information om vad du kan inkludera i meddelandetexten finns i [makrodokumentationen ](../functionality/audience-metadata-management.md#macros) som stöds. |
 | `responseFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexemplen](../functionality/audience-metadata-management.md#examples) i funktionsdokumentet för målgruppsmetadata. |
 | `responseFields.value` | Sträng | Ange värdet för eventuella svarsfält som API:t returnerar när det anropas. |
 | `responseErrorFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexemplen](../functionality/audience-metadata-management.md#examples) i funktionsdokumentet för målgruppsmetadata. |
@@ -273,7 +273,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om din nya målgruppsmall.
 

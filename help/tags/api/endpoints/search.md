@@ -2,7 +2,7 @@
 title: Sökslutpunkt
 description: Lär dig hur du anropar slutpunkten /search i Reactor API.
 exl-id: 14eb8d8a-3b42-42f3-be87-f39e16d616f4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '652'
 ht-degree: 0%
@@ -33,8 +33,9 @@ Alla frågor omfattar det aktuella företaget och tillgängliga egenskaper.
 >[!IMPORTANT]
 >
 >Sökfunktionen har följande kavattningar och undantag:
+>
 >* Meta är inte sökbart och returneras inte i sökresultaten.
->* Schemafält för delegater för tilläggspaket (åtgärder, villkor osv.) är sökbara som text, inte som en kapslad datastruktur.
+>* Schemafält för tilläggspaketdelegater (åtgärder, villkor osv.) är sökbara som text, inte som en kapslad datastruktur.
 >* Intervallfrågor stöder för närvarande bara heltal.
 
 Mer ingående information om hur du använder den här funktionen finns i [sökguiden](../guides/search.md).
@@ -45,7 +46,7 @@ Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.a
 
 ## Utför en sökning {#perform}
 
-Du kan göra en sökning genom att göra en POST.
+Du kan göra en sökning genom att göra en POST-begäran.
 
 **API-format**
 

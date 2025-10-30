@@ -2,7 +2,7 @@
 title: Google Data Layer Extension
 description: Läs mer om taggtillägget Google Client Data Layer i Adobe Experience Platform.
 exl-id: 7990351d-8669-432b-94a9-4f9db1c2b3fe
-source-git-commit: c61afdc2c3df98a0ef815d7cb034ba2907c52908
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -36,6 +36,7 @@ Standardnamnet för datalagret är Google standardnamn `dataLayer`.
 >[!NOTE]
 >
 >Ordet _event_ överläses när ett händelsedrivet datalager används i Adobe Experience Platform-taggar. _Händelser_ kan vara:
+>
 > - Adobe Experience Platform Tags-händelser (Bibliotek inläst och så vidare).
 > - JavaScript event.
 > - Data överfördes till datalagret med nyckelordet _event_.
@@ -44,7 +45,7 @@ Tillägget ger dig möjlighet att lyssna efter ändringar i datalagret.
 
 >[!NOTE]
 >
->Det är viktigt att du förstår hur nyckelordet _event_ används när data överförs till ett Google-datalager, på samma sätt som datalagret Adobe Client. Nyckelordet _event_ ändrar beteendet för Google datalager och därför det här tillägget.\
+>Det är viktigt att du förstår hur nyckelordet _event_ används när data överförs till ett Google-datalager, på samma sätt som Adobe klientdatalager. Nyckelordet _event_ ändrar beteendet för Google datalager och därför det här tillägget.\
 > Läs Google dokumentation eller gör en undersökning om du är osäker.
 
 ### Google Event Types

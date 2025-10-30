@@ -2,7 +2,7 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '2489'
 ht-degree: 0%
@@ -13,16 +13,16 @@ ht-degree: 0%
 
 ## Krav - Adobe Experience Platform koncept {#prerequisites}
 
-Om du vill veta mer om meddelandeformat, profilkonfiguration och transformeringsprocess på Adobe kan du bekanta dig med följande koncept för Experience Platform:
+Om du vill veta mer om meddelandeformat, profilkonfiguration och transformeringsprocess på Adobe-sidan kan du bekanta dig med följande koncept från Experience Platform:
 
 * **Experience Data Model (XDM)**. [XDM-översikt](../../../../xdm/home.md) och [Så här skapar du ett XDM-schema i Adobe Experience Platform](../../../../xdm/tutorials/create-schema-ui.md).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](../../../../xdm/ui/resources/classes.md).
 * **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
-* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen [Information om målgruppsmedlemskap](../../../../xdm/field-groups/profile/segmentation.md) för de tre olika värdena i fältet `status`.
+* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -39,7 +39,7 @@ På den här sidan behandlas meddelandeformatet och profilomvandlingen i data so
 
 Adobe Experience Platform exporterar data till ett stort antal destinationer, i olika dataformat. Några exempel på destinationstyper är annonsplattformar (Google), sociala nätverk (Facebook) och molnlagringsplatser (Amazon S3, Azure Event Hubs).
 
-Experience Platform kan justera meddelandeformatet för exporterade profiler så att de matchar det förväntade formatet på din sida. För att förstå den här anpassningen är följande koncept viktiga:
+Experience Platform kan justera meddelandeformatet för exporterade profiler så att det matchar det förväntade formatet på din sida. För att förstå den här anpassningen är följande koncept viktiga:
 
 * Källa (1) och mål (2) XDM-schema i Adobe Experience Platform
 * Det förväntade meddelandeformatet på partnersidan (3), och
@@ -55,7 +55,7 @@ Users who want to activate data to your destination need to map the fields in th
 
 -->
 
-**Source XDM-schema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform, i [mappningssteget](../../../ui/activate-segment-streaming-destinations.md#mapping) för aktiveringsmålarbetsflödet, mappar kunder fält från sitt XDM-schema till målschemat (2) för ditt mål.
+**Source XDM-schema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform mappar kunder fält från sitt XDM-schema till målschemat (2) i [mappningssteget](../../../ui/activate-segment-streaming-destinations.md#mapping) för målarbetsflödet för aktivering.
 
 **Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format och de attribut som destinationen kan tolka, kan du definiera profilattribut och identiteter i mål-XDM-schemat. Du kan göra detta i målkonfigurationen, i objekten [schemaConfig](../../functionality/destination-configuration/schema-configuration.md) och [identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md) .
 
@@ -92,9 +92,9 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 Med tanke på meddelandeformatet är motsvarande omformningar följande:
 
-| Attribut i partner-XDM-schema på Adobe | Omformning | Attribut i HTTP-meddelande på din sida |
+| Attribut i partner-XDM-schema på Adobe-sidan | Omformning | Attribut i HTTP-meddelande på din sida |
 |---------|----------|---------|
-| `_your_custom_schema.firstName` | ` attributes.first_name` | `first_name` |
+| `_your_custom_schema.firstName` | `attributes.first_name` | `first_name` |
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
 | `personalEmail.address` | `attributes.external_id` | `external_id` |
 
@@ -102,7 +102,7 @@ Med tanke på meddelandeformatet är motsvarande omformningar följande:
 
 ## Profilstruktur i Experience Platform {#profile-structure}
 
-För att förstå exemplen längre ned på sidan är det viktigt att du känner till strukturen för en profil i Experience Platform.
+Om du vill förstå exemplen ytterligare nedan på sidan är det viktigt att du känner till strukturen för en profil i Experience Platform.
 
 Profiler har tre avsnitt:
 
@@ -266,7 +266,7 @@ Profil 2:
 ### Målgruppsmedlemskap {#audience-membership}
 
 XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör.
-Läs dokumentationen om schemafältgruppen [Information om målgruppsmedlemskap](../../../../xdm/field-groups/profile/segmentation.md) för de tre olika värdena i fältet `status`.
+Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 **Indata**
 
@@ -380,7 +380,7 @@ Profil 2:
 
 ### Identiteter {#identities}
 
-Mer information om identiteter i Experience Platform finns i [Namnområdesöversikten för identitet](../../../../identity-service/features/namespaces.md).
+Mer information om identiteter i Experience Platform finns i [Namnområdesöversikt](../../../../identity-service/features/namespaces.md).
 
 **Indata**
 
@@ -861,7 +861,7 @@ Profil 2:
 
 När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen kan du gruppera de profiler som exporteras till ditt mål baserat på kriterier som målgrupps-ID, målgruppalias, målgruppsmedlemskap eller identitetsnamnutrymmen.
 
-I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns ovan, vilket visas i exemplen i följande avsnitt. Använd aggregeringsnycklar för att strukturera HTTP-meddelandet som exporterats utanför Experience Platform så att det matchar de format- och hastighetsbegränsningar som förväntas av ditt mål.
+I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns ovan, vilket visas i exemplen i följande avsnitt. Använd aggregeringsnycklar för att strukturera HTTP-meddelandet som exporteras från Experience Platform så att det matchar de format- och hastighetsbegränsningar som förväntas av ditt mål.
 
 #### Använd aggregeringsnyckeln för målgrupps-ID i mallen {#aggregation-key-segment-id}
 
@@ -1199,13 +1199,13 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 
 ### Referens: Kontext och funktioner som används i omformningsmallar {#reference}
 
-Kontexten som anges för mallen innehåller `input` (profilerna/data som exporteras i det här anropet) och `destination` (data om målet som Adobe skickar data till, giltigt för alla profiler).
+Den kontext som anges för mallen innehåller `input` (profilerna/data som exporteras i det här anropet) och `destination` (data om målet som Adobe skickar data till, giltigt för alla profiler).
 
 Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 
 | Funktion | Beskrivning | Exempel |
 |---------|----------|----------|
-| `input.profile` | Profilen, representerad som en [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |
+| `input.profile` | Profilen, representerad som en [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |  |
 | `hasSegments` | Den här funktionen tar en karta över ID:n för namnområdesmålgrupp som parameter. Funktionen returnerar `true` om det finns minst en publik på kartan (oavsett dess status), och i annat fall `false`. Du kan använda den här funktionen för att bestämma om du vill iterera över en karta med målgrupper eller inte. | `hasSegments(input.profile.segmentMembership)` |
 | `destination.namespaceSegmentAliases` | Mappa från målgrupps-ID:n i ett specifikt Adobe Experience Platform-namnområde till målgruppsalias i partnerns system. | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
 | `destination.namespaceSegmentNames` | Mappa från målgruppsnamn i specifika Adobe Experience Platform-namnutrymmen till målgruppsnamn i partnersystemet. | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
@@ -1220,11 +1220,11 @@ Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet kan du nu se hur data som exporteras från Experience Platform omformas. Läs sedan följande sidor för att lära dig mer om hur du skapar meddelandeomformningsmallar för ditt mål:
+När du har läst det här dokumentet vet du nu hur data som exporteras från Experience Platform omvandlas. Läs sedan följande sidor för att lära dig mer om hur du skapar meddelandeomformningsmallar för ditt mål:
 
 * [Skapa och testa en meddelandeomformningsmall](../../testing-api/streaming-destinations/create-template.md)
 * [API-åtgärder för återgivningsmall](../../testing-api/streaming-destinations/render-template-api.md)
-* [Omformningsfunktioner som stöds i Destinationen SDK](../destination-server/supported-functions.md)
+* [Omformningsfunktioner som stöds i Destination SDK](../destination-server/supported-functions.md)
 
 Mer information om andra målserverkomponenter finns i följande artiklar:
 

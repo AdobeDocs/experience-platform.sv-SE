@@ -5,7 +5,7 @@ title: Direktuppspelad matningsvalidering
 type: Tutorial
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 exl-id: 6e9ac943-6d73-44de-a13b-bef6041d3834
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 1%
@@ -50,6 +50,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 ### Valideringstäckning
 
 [!DNL Streaming Validation Service] omfattar validering inom följande områden:
+
 - Intervall
 - Närvaro
 - Enum

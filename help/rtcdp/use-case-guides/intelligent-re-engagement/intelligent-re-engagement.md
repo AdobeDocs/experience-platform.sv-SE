@@ -3,7 +3,7 @@ title: Intelligent återanvändning
 description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '3871'
 ht-degree: 1%
@@ -36,18 +36,18 @@ Ni kommer att skapa scheman, datauppsättningar och målgrupper när ni arbetar 
 
 När du är klar med implementeringen av användningsexemplet kommer du att använda följande Real-Time CDP- och Adobe Journey Optimizer-funktioner (listade i den ordning som du ska använda dem). Kontrollera att du har de [attributbaserade åtkomstkontrollsbehörigheterna](/help/access-control/home.md) som krävs för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
-* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html?lang=sv-SE) - Integrerar data mellan datakällor för att driva kampanjen. Dessa data används sedan för att skapa kampanjmålgrupper och ta fram personaliserade dataelement som används i e-postmeddelanden och webbkampanjpaneler (till exempel namn eller kontorelaterad information). CDP används också för att aktivera målgrupper via e-post och webben (via [!DNL Adobe Target]).
+* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html) - Integrerar data mellan datakällor för att driva kampanjen. Dessa data används sedan för att skapa kampanjmålgrupper och ta fram personaliserade dataelement som används i e-postmeddelanden och webbkampanjpaneler (till exempel namn eller kontorelaterad information). CDP används också för att aktivera målgrupper via e-post och webben (via [!DNL Adobe Target]).
    * [Scheman](/help/xdm/home.md)
    * [Profiler](/help/profile/home.md)
    * [Datauppsättningar](/help/catalog/datasets/overview.md)
    * [Målgrupper](/help/segmentation/home.md)
-   * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE)
+   * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
    * [Mål](/help/destinations/home.md)
 
-* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer-learn/tutorials/introduction-to-journey-optimizer/introduction.html?lang=sv-SE) - Hjälper dig att leverera sammankopplade, kontextuella och personaliserade upplevelser till dina kunder.
-   * [Händelse- eller målutlösare](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html?lang=sv-SE)
-   * [Publiker/händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html?lang=sv-SE)
-   * [Reseåtgärder](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer-learn/tutorials/introduction-to-journey-optimizer/introduction.html) - Hjälper dig att leverera sammankopplade, kontextuella och personaliserade upplevelser till dina kunder.
+   * [Händelse- eller målutlösare](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html)
+   * [Publiker/händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html)
+   * [Reseåtgärder](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
 
 ## Hur man uppnår användningsfallet {#achieve-use-case-instruction}
 
@@ -124,7 +124,7 @@ Kundattributschemat representeras av en [[!UICONTROL XDM Individual Profile]](/h
 
 +++
 
-+++Grupper för samtycke och inställningsfält (fältgrupp)
++++Fältgrupper för samtycke och inställning (fältgrupp)
 
 Fältgruppen [Consents and Preferences](/help/xdm/field-groups//profile/consents.md) innehåller ett enda objekttypsfält, samtycke, för att hämta information om samtycke och inställningar.
 
@@ -141,7 +141,7 @@ Fältgruppen [Consents and Preferences](/help/xdm/field-groups//profile/consents
 
 +++Profiltestinformation (fältgrupp)
 
-Med den här fältgruppen kan du testa din resa innan den publiceras med testprofiler. Mer information om hur du skapar testprofiler finns i självstudiekursen [Skapa testprofiler](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html?lang=sv-SE) och [testa självstudiekursen &#x200B;](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html?lang=sv-SE).
+Med den här fältgruppen kan du testa din resa innan den publiceras med testprofiler. Mer information om hur du skapar testprofiler finns i självstudiekursen [Skapa testprofiler](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html) och [testa självstudiekursen ](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html).
 
 +++
 
@@ -163,7 +163,7 @@ Klassen [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md)
 
 +++
 
-+++Slutanvändar-ID-information (fältgrupp)
++++Information om slutanvändar-ID (fältgrupp)
 
 Fältgruppen [Information om slutanvändar-ID](/help/xdm/field-groups/event/enduserids.md) används för att beskriva en persons identitetsinformation i flera Adobe-program.
 
@@ -251,7 +251,7 @@ Fältgruppen [Commerce Details](/help/xdm/field-groups/event/commerce-details.md
 
 +++
 
-+++Extern systemgranskningsinformation för Source (fältgrupp)
++++Extern systemgranskningsinformation för Source (fältgrupp) 
 
 Externa granskningsattribut för Source-system är en XDM-datatyp (Experience Data Model) som samlar in granskningsinformation om ett externt källsystem.
 
@@ -308,17 +308,17 @@ Mer information om hur du skapar en [datauppsättning](/help/catalog/datasets/ov
 
 >[!NOTE]
 >
->På samma sätt som när du skapar ett schema måste du aktivera datauppsättningen som ska inkluderas i kundprofilen i realtid. Mer information om hur du aktiverar datauppsättningen för användning i kundprofilen i realtid finns i självstudiekursen om [att föra in data i kundprofilen i realtid](https://experienceleague.adobe.com/docs/platform-learn/tutorials/profiles/bring-data-into-the-real-time-customer-profile.html?lang=sv-SE).
+>På samma sätt som när du skapar ett schema måste du aktivera datauppsättningen som ska inkluderas i kundprofilen i realtid. Mer information om hur du aktiverar datauppsättningen för användning i kundprofilen i realtid finns i självstudiekursen om [att föra in data i kundprofilen i realtid](https://experienceleague.adobe.com/docs/platform-learn/tutorials/profiles/bring-data-into-the-real-time-customer-profile.html).
 
 ### Samtycke- och datahantering {#privacy-consent}
 
 >[!IMPORTANT]
 >
->Ett juridiskt krav är att ge kunderna möjlighet att säga upp prenumerationen på information från ett varumärke och att se till att detta val respekteras. Läs mer om gällande lagstiftning i [Översikt över sekretesslagstiftning](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html?lang=sv-SE).
+>Ett juridiskt krav är att ge kunderna möjlighet att säga upp prenumerationen på information från ett varumärke och att se till att detta val respekteras. Läs mer om gällande lagstiftning i [Översikt över sekretesslagstiftning](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html).
 
 #### Samtyckesprinciper
 
-När du skapar en sökväg för återengagemang bör du överväga att lägga till följande [medgivandeprinciper](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html?lang=sv-SE):
+När du skapar en sökväg för återengagemang bör du överväga att lägga till följande [medgivandeprinciper](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html):
 
 * Om `consents.marketing.email.val = "Y"` kan du skicka e-post
 * Om `consents.marketing.sms.val = "Y"` så kan SMS
@@ -346,7 +346,7 @@ Det finns inga [dataanvändningsprinciper](/help/data-governance/policies/overvi
 
 Omengagemangsscenarierna använder målgrupper för att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från er kundbas. Publiker kan skapas på flera sätt i [!DNL Adobe Experience Platform].
 
-Mer information om hur du skapar en målgrupp finns i [användargränssnittsguiden för målgruppstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=sv-SE#create-audience).
+Mer information om hur du skapar en målgrupp finns i [användargränssnittsguiden för målgruppstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience).
 
 Mer information om hur du komponerar [publiker](/help/segmentation/home.md) direkt finns i [Användargränssnittsguiden för målgruppskomposition](/help/segmentation/ui/audience-composition.md).
 
@@ -358,7 +358,7 @@ Mer information om hur du bygger målgrupper med hjälp av Experience Platform-h
 
 Den här målgruppen har skapats som en förbättring av det klassiska&quot;Cart Abandonment&quot;-scenariot. Medan kundvagnsuppsägning vanligtvis fokuserar på ett kundvagnstillägg utan att man behöver göra ett senare inköp under en viss tidsperiod, letar denna målgrupp efter ett tidigare engagemang, särskilt de som har bläddrat efter en viss produkt men inte lagt till den i kundvagnen och inte haft någon uppföljningsaktivitet på er webbplats inom en viss tidsperiod. Den här målgruppen ser till att ert varumärke&quot;ligger överst&quot; för kunder som uppfyller detta inkluderingskriterier och kan även utnyttjas för kunder vars digitala egenskaper kan skilja sig från en traditionell e-handelsmodell.
 
-+++ Övergiven produktvy utan engagemang de senaste tre dagarna
++++Övergiven produktvy utan engagemang de senaste tre dagarna
 
 Följande händelse används för det övergivna produktbläddringsscenariot där användarna visade produkter online och inte deltog (webbplatsbesök, appbesök, onlineköp, offlineköp och tillägg i kundvagnshändelser) under de tre följande dagarna.
 
@@ -383,7 +383,7 @@ Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 * `Timestamp: > 4 days`
 +++
 
-+++Engagement streaming under den senaste dagen
++++Engagemangsströmning den senaste dagen
 
 Följande händelse används för det övergivna produktbläddringsscenariot där användarna har varit engagerade (webbplatsbesök, appbesök, onlineköp, offlineköp och tillägg i kundvagnshändelser) under den senaste dagen.
 
@@ -394,7 +394,7 @@ Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 +++
 
-+++Engagement batch de senaste tre dagarna
++++Engagemangsgrupp de senaste tre dagarna
 
 Följande händelse används för det övergivna produktbläddringsscenariot där användarna har varit engagerade (webbplatsbesök, appbesök, onlineköp, offlineköp och tillägg i kundvagnshändelser) de senaste tre dagarna.
 
@@ -414,7 +414,7 @@ Följande händelser används för det övergivna kundvagnsscenariot där använ
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `eventType: commerce.productListAdds`
-   * `Timestamp: >= 1 days before now AND <= 4 days before now `
+   * `Timestamp: >= 1 days before now AND <= 4 days before now`
 * `eventType: commerce.purchases`
    * `Timestamp: <= 4 days before now`
 * `eventType: commerce.productListRemovals`
@@ -436,7 +436,7 @@ Den här resan kräver inte att någon målgrupp skapas.
 >
 >[!DNL Adobe Journey Optimizer] omfattar inte allt som visas i diagrammen. Alla [betalda mediaannonser](/help/destinations/catalog/social/overview.md) skapas i [!UICONTROL Destinations].
 
-[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE) hjälper dig att leverera sammankopplade, kontextuella och personaliserade upplevelser till dina kunder. Kundresan är hela processen för en kunds interaktioner med varumärket. Varje användningsfallsresa kräver specifik information. Nedan finns de exakta data som behövs för varje resa.
+[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html) hjälper dig att leverera sammankopplade, kontextuella och personaliserade upplevelser till dina kunder. Kundresan är hela processen för en kunds interaktioner med varumärket. Varje användningsfallsresa kräver specifik information. Nedan finns de exakta data som behövs för varje resa.
 
 >[!BEGINTABS]
 
@@ -446,7 +446,7 @@ Det övergivna produktbläddringsscenariot avser övergiven produktbläddring p�
 
 +++Händelser
 
-Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guiden för allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html?lang=sv-SE).
+Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guiden för allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * Händelse 1: Produktvyer
    * Schema: Digitala kundtransaktioner
@@ -571,7 +571,7 @@ Det övergivna kundvagnsscenariot avser produkter som har placerats i kundvagnen
 
 +++Händelser
 
-Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guiden för allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html?lang=sv-SE).
+Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guiden för allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * Händelse 2: Lägg i kundvagnen
    * Schema: Digitala kundtransaktioner
@@ -704,7 +704,7 @@ Orderbekräftelsescenariot fokuserar på produktinköp som görs via webbplatsen
 
 +++Händelser
 
-Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guiden för allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html?lang=sv-SE).
+Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guiden för allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * Evenemang 4: Onlineköp
    * Schema: Digitala kundtransaktioner
@@ -755,7 +755,7 @@ Nyckellogiken för arbetsytan på resan kräver att du identifierar specifika h�
 
 >[!ENDTABS]
 
-Mer information om hur du skapar resor i [!DNL Adobe Journey Optimizer] finns i guiden [Kom igång med resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html?lang=sv-SE).
+Mer information om hur du skapar resor i [!DNL Adobe Journey Optimizer] finns i guiden [Kom igång med resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html).
 
 ### Konfigurera annonser för betalda medier i destinationer {#paid-media-ads}
 

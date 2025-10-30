@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1912'
 ht-degree: 0%
@@ -167,6 +167,7 @@ Du kan t.ex. framtvinga att e-postadressfältet alltid skickas till målet.
 >[!NOTE]
 >
 >Följande kombinationer av obligatoriska mappningar stöds för närvarande:
+>
 >* Du kan konfigurera ett obligatoriskt källfält och ett obligatoriskt målfält. I det här fallet kan användare inte redigera eller markera något av de två fälten och bara visa markeringen.
 >* Du kan bara konfigurera ett obligatoriskt målfält. I det här fallet kan användarna välja ett källfält som ska kopplas till målet.
 >
@@ -250,7 +251,7 @@ Om du vill konfigurera målet så att det stöder aktivering av [externt generer
 }
 ```
 
-Mer information om funktionen [&#x200B; finns i egenskapsbeskrivningarna i &#x200B;](#attributes-schema)tabellen`segmentNamespaceDenyList` ovan på den här sidan.
+Mer information om funktionen [ finns i egenskapsbeskrivningarna i ](#attributes-schema)tabellen`segmentNamespaceDenyList` ovan på den här sidan.
 
 ## Nästa steg {#next-steps}
 

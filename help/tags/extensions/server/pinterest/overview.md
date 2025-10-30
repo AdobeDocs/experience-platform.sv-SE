@@ -1,12 +1,12 @@
 ---
-keywords: tillägg för händelsevidarebefordran;pinterest;pinterest tillägg för händelsevidarebefordran
+keywords: händelsevidarebefordringstillägg;pinterest;pinterest-händelse-vidarebefordringstillägg
 title: Pinterest-tillägg för händelsevidarebefordring
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du importera händelser till Pinterest för dina verksamhetsbehov.
 last-substantial-update: 2023-04-27T00:00:00Z
 exl-id: 44f38a9b-0a28-4b51-bead-ee460eb8405e
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1412'
+source-wordcount: '1427'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Mer information om användningsfall som är specifika för [!DNL Pinterest] finn
 
 Du måste ha ett giltigt [!DNL Pinterest] [företagskonto](https://help.pinterest.com/en/business/article/get-a-business-account) för att kunna använda det här tillägget. Gå till registreringssidan [[!DNL Pinterest] för att registrera dig och skapa ett konto om du inte redan har ett.](https://www.pinterest.com/business/create/)
 
-Du behöver också ett [!DNL Pinterest]-utvecklarkonto, som måste kopplas till ditt [!DNL Pinterest]-företagskonto. Mer information om hur du associerar ditt utvecklarkonto med ditt företagskonto finns i [[!DNL Pinterest &#x200B;] utvecklarkontot](https://developers.pinterest.com/account-setup/).
+Du behöver också ett [!DNL Pinterest]-utvecklarkonto, som måste kopplas till ditt [!DNL Pinterest]-företagskonto. Mer information om hur du associerar ditt utvecklarkonto med ditt företagskonto finns i [[!DNL Pinterest ] utvecklarkontot](https://developers.pinterest.com/account-setup/).
 
 ### Samla nödvändig konfigurationsinformation {#configuration-details}
 
@@ -82,8 +82,8 @@ Följande händelsedata krävs för att skapa den nya regeln:
 
 | Fältnamn | Beskrivning | Exempel |
 | --- | --- | --- | 
-| [!UICONTROL Event Name] | Typ av användarhändelse. Det här kan vara vilken händelsetyp som helst, men om du vill utnyttja [!DNL Pinterest Analytics] rekommenderar vi att du använder [[!DNL Pinterest] händelsekoder](https://help.pinterest.com/en/business/article/add-event-codes) | * utcheckning <br> * add_to_cart <br> * page_visit <br> * registrering <br> * [användardefinierad händelse] |
-| [!UICONTROL Action Source] | Källan som anger var konverteringshändelsen inträffade. | * app_android <br> * app_ios <br> * web <br> * offline |
+| [!UICONTROL Event Name] | Typ av användarhändelse. Det här kan vara vilken händelsetyp som helst, men om du vill utnyttja [!DNL Pinterest Analytics] rekommenderar vi att du använder [[!DNL Pinterest] händelsekoder](https://help.pinterest.com/en/business/article/add-event-codes) | &amp;ast; utcheckning <br> &amp;ast; add_to_cart <br> &amp;ast; page_visit <br> &amp;ast; signup <br> &amp;ast; [Användardefinierad händelse] |
+| [!UICONTROL Action Source] | Källan som anger var konverteringshändelsen inträffade. | &amp;ast; app_android <br> &amp;ast; app_ios <br> &amp;ast; webb <br> &amp;ast; offline |
 | [!UICONTROL Event Time] | Detta avser händelsetiden. Standardtidsformatet som används är UNIX, i formatet `<seconds>.<miliseconds>` beroende på din lokala tidszon. Mer information finns i [[!DNL Pinterest] API](https://developers.pinterest.com/docs/api/v5/#operation/events/create). | 1433188255.500 anger 1433188255 sekunder och 500 millisekunder efter epok, eller måndag, 1 juni 2015, kl. 7:50:55 PM GMT. |
 | [!UICONTROL Event ID] | En unik id-sträng som identifierar den här händelsen och kan användas för att ta bort händelser som importerats via både konverterings-API:t och Pinterest-spårning. Utan detta räknas händelsens data sannolikt två gånger och kommer att rapportera måttlig uppblåsning. | ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad |
 | [!UICONTROL Event Properties] | Ett JSON-objekt som innehåller anpassade egenskaper för händelsen. Välj mellan att tillhandahålla rå JSON eller att använda en förenklad uppsättning indata för nyckelvärden. | { &quot;event_source_url&quot;: &quot;http://site.com&quot; } |

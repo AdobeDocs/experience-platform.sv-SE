@@ -2,7 +2,7 @@
 title: Sidindela svar i reaktors-API
 description: Lär dig hur du numrerar resultat när du visar resurser i Reactor API.
 exl-id: bccb6e78-4ac8-4786-b398-6e55109d99dd
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Sidindela svar i reaktors-API
 
-Svaren som returneras av Reaktors-API är numrerade. Standardsidstorleken är 25 element. Information om sidnumreringen rapporteras i avsnittet `meta.pagination `i API-svarsobjektet:
+Svaren som returneras av Reaktors-API är numrerade. Standardsidstorleken är 25 element. Information om sidnumreringen rapporteras i avsnittet `meta.pagination` i API-svarsobjektet:
 
 ```json
 "meta": {

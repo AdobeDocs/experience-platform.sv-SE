@@ -3,7 +3,7 @@ title: Skapa ett dataflöde för datakällor med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du använder API:t för Flow Service för att skapa ett dataflöde och importera data från din databas till Experience Platform.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1489'
 ht-degree: 0%
@@ -131,7 +131,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../xdm/api/schemas.md).
 
@@ -661,7 +661,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `flowSpec.id` | [Flödesspec-ID:t &#x200B;](#specs) som hämtades i föregående steg. |
+| `flowSpec.id` | [Flödesspec-ID:t ](#specs) som hämtades i föregående steg. |
 | `sourceConnectionIds` | [källanslutnings-ID](#source) har hämtats i ett tidigare steg. |
 | `targetConnectionIds` | [målanslutnings-ID](#target-connection) har hämtats i ett tidigare steg. |
 | `transformations.params.mappingId` | [Mappnings-ID](#mapping) hämtades i ett tidigare steg. |

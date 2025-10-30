@@ -2,7 +2,7 @@
 title: Infoga krypterade data i källanvändargränssnittet i Workspace
 description: Lär dig hur du importerar krypterade data i källans arbetsyta.
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: cad2cafdf39c718c3ba971eaa4e7f2318bd5f517
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1414'
 ht-degree: 0%
@@ -133,7 +133,7 @@ Autentisera med molnlagringskällan som du väljer. Under arbetsflödets dataurv
 
 Välj sedan en exempelfil från källdata. Eftersom dina data är krypterade behöver Experience Platform en exempelfil för att kunna skapa ett XDM-schema som kan mappas till dina källdata.
 
-![The &quot;Is this file encrypted?&quot; växla aktiverat och knappen Välj exempelfil markerad. &#x200B;](../../images/tutorials/edi/select_sample_file.png)
+![The &quot;Is this file encrypted?&quot; växlar aktiverat och knappen Välj exempelfil är markerad](../../images/tutorials/edi/select_sample_file.png).
 
 När du har valt exempelfilen konfigurerar du inställningarna för dina data, till exempel motsvarande dataformat, avgränsare och komprimeringstyp. Ge förhandsvisningsgränssnittet lite tid att rendera och välj sedan **[!UICONTROL Save]**.
 

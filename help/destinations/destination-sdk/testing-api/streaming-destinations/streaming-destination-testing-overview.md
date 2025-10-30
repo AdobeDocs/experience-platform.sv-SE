@@ -2,7 +2,7 @@
 description: Lär dig hur du använder API:t för måltestning för att testa målkonfigurationen för direktuppspelning innan du publicerar den.
 title: API-översikt för testning av direktuppspelningsmål
 exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
-source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 0%
@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # API-översikt för testning av direktuppspelningsmål
 
-Som en del av Destinationen SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. På den här sidan beskrivs hur du testar målkonfigurationen. Mer information om hur du skapar en meddelandeomformningsmall finns i [Skapa och testa en meddelandeomformningsmall](../../testing-api/streaming-destinations/create-template.md).
+Som en del av Destination SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. På den här sidan beskrivs hur du testar målkonfigurationen. Mer information om hur du skapar en meddelandeomformningsmall finns i [Skapa och testa en meddelandeomformningsmall](../../testing-api/streaming-destinations/create-template.md).
 
 Om du vill **testa om målet är korrekt konfigurerat och verifiera dataflödenas integritet till det konfigurerade målet** använder du *måltestningsverktyget*. Med det här verktyget kan du testa målkonfigurationen genom att skicka meddelanden till REST API-slutpunkten.
 
-Nedan visas hur testning av ditt mål passar in i arbetsflödet för [målkonfiguration](../../guides/configure-destination-instructions.md) i Destinationen SDK:
+Nedan visas hur du testar ditt mål passar in i arbetsflödet för [målkonfiguration](../../guides/configure-destination-instructions.md) i Destination SDK:
 
 ![Bild av var målteststeget passar in i målkonfigurationsarbetsflödet](../../assets/testing-api/test-destination-step.png)
 
@@ -25,10 +25,12 @@ Nedan visas hur testning av ditt mål passar in i arbetsflödet för [målkonfig
 Använd måttestningsverktyget för att testa målkonfigurationen genom att skicka meddelanden till partnerslutpunkten som du angav i [serverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md).
 
 Innan du använder verktyget bör du kontrollera att:
+
 * Konfigurera ditt mål genom att följa de steg som beskrivs i [arbetsflödet för målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) och
 * Upprätta en anslutning till ditt mål, vilket beskrivs i [Hämta målinstans-ID](../../testing-api/streaming-destinations/destination-testing-api.md#get-destination-instance-id).
 
 Med det här verktyget kan du göra följande när du har konfigurerat målet:
+
 * Testa om målet är korrekt konfigurerat;
 * Verifiera dataflödenas integritet till det konfigurerade målet.
 
@@ -40,10 +42,11 @@ Med det här verktyget kan du göra följande när du har konfigurerat målet:
 
 Du kan anropa API-slutpunkten för måltestning med eller utan att lägga till profiler på begäran.
 
-Om du inte lägger till några profiler i begäran, genererar Adobe dessa internt åt dig och lägger till dem i begäran. Om du vill generera profiler som ska användas i den här begäran, se [API-referens för generering av exempelprofiler](../../testing-api/streaming-destinations/sample-profile-generation-api.md). Du måste generera profiler baserade på XDM-källschemat, vilket visas i [API-referensen](../../testing-api/streaming-destinations/sample-profile-generation-api.md#generate-sample-profiles-source-schema). Observera att källschemat är [unionsschemat](../../../../profile/ui/union-schema.md) för sandlådan som du använder.
+Om du inte lägger till några profiler i begäran, genereras dessa internt av Adobe och läggs till i begäran. Om du vill generera profiler som ska användas i den här begäran, se [API-referens för generering av exempelprofiler](../../testing-api/streaming-destinations/sample-profile-generation-api.md). Du måste generera profiler baserade på XDM-källschemat, vilket visas i [API-referensen](../../testing-api/streaming-destinations/sample-profile-generation-api.md#generate-sample-profiles-source-schema). Observera att källschemat är [unionsschemat](../../../../profile/ui/union-schema.md) för sandlådan som du använder.
 
 Svaret innehåller resultatet av bearbetningen av målbegäran. Begäran innehåller tre huvudavsnitt:
-* Begäran som genererats av Adobe för destinationen.
+
+* Begäran som genererats av Adobe för målet.
 * Svaret som togs emot från ditt mål.
 * Listan över profiler som skickats i begäran, oavsett om profilerna [lades till av dig i begäran](../../testing-api/streaming-destinations/destination-testing-api.md#test-with-added-profiles) eller genererades av Adobe om [innehållet i måltestningsbegäran var tomt](../../testing-api/streaming-destinations/destination-testing-api.md#test-without-adding-profiles).
 
@@ -232,4 +235,4 @@ Beskrivningar av parametrarna för begäran och svar finns i [API-åtgärder fö
 
 ## Nästa steg
 
-När du har testat destinationen och bekräftat att den är korrekt konfigurerad kan du använda [API:t för målpublicering](../../publishing-api/create-publishing-request.md) för att skicka konfigurationen till Adobe för granskning.
+När du har testat destinationen och bekräftat att den är korrekt konfigurerad kan du skicka konfigurationen till Adobe för granskning med [API:t för målpublicering](../../publishing-api/create-publishing-request.md).

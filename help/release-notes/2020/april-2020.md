@@ -6,7 +6,7 @@ last-update: April 13, 2020
 author: ens71067
 keywords: Versionsinformation.
 exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
-source-git-commit: 104db777446b19fa9e3ea7538ae1dda6f51a00b1
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '972'
 ht-degree: 26%
@@ -18,9 +18,11 @@ ht-degree: 26%
 **Releasedatum: 8 april 2020**
 
 Nya funktioner i Adobe Experience Platform:
+
 * [[!DNL Intelligent Services]](#intelligent)
 
 Uppdateringar av befintliga funktioner:
+
 * [[!DNL Experience Data Model (XDM)]](#xdm)
 * [Dataförvaltning](#governance)
 * [[!DNL Destinations]](#destinations)

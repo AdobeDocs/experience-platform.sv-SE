@@ -4,9 +4,9 @@ title: API-slutpunkt för scheman
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
 role: Developer
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '2104'
+source-wordcount: '2088'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hämta en lista med scheman {#retrieve-list}
 
-Du kan hämta en lista över alla scheman för din organisation genom att göra en GET-förfrågan till slutpunkten `/config/schedules`.
+Du kan hämta en lista över alla scheman för din organisation genom att göra en GET-begäran till slutpunkten `/config/schedules`.
 
 **API-format**
 
@@ -110,14 +110,14 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den a
 | `children.type` | Typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
 | `children.properties` | Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
 | `children.properties.segments` | Om du använder `["*"]` säkerställs att alla segment inkluderas. |
-| `children.schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
+| `children.schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet innebär `0 0 1 * *` att schemat körs kl. 1.00 varje dag. |
 | `children.state` | En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
 +++
 
 ## Skapa ett nytt schema {#create}
 
-Du kan skapa ett nytt schema genom att göra en POST-förfrågan till slutpunkten `/config/schedules`.
+Du kan skapa ett nytt schema genom att göra en POST-begäran till slutpunkten `/config/schedules`.
 
 **API-format**
 
@@ -127,7 +127,7 @@ POST /config/schedules
 
 **Begäran**
 
-+++ En exempelbegäran om att skapa ett schema.
++++ En exempelbegäran om att skapa ett schema. 
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
@@ -156,7 +156,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 | `type` | **Krävs.** Den typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
 | `properties` | **Krävs.** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
 | `properties.segments` | **Krävs när `type` är lika med&quot;batch_segmentation&quot;.** Om du använder `["*"]` säkerställs att alla segment inkluderas. |
-| `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
+| `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet innebär `0 0 1 * *` att schemat körs kl. 1.00 varje dag. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
 | `state` | *Valfritt.* En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
 +++
@@ -195,7 +195,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt schema {#get}
 
-Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-förfrågan till slutpunkten `/config/schedules` och ange ID:t för det schema som du vill hämta i sökvägen till begäran.
+Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-begäran till slutpunkten `/config/schedules` och ange ID:t för det schema som du vill hämta i sökvägen för begäran.
 
 **API-format**
 
@@ -209,7 +209,7 @@ GET /config/schedules/{SCHEDULE_ID}
 
 **Begäran**
 
-+++ En exempelbegäran om att hämta ett schema.
++++ En exempelbegäran om att hämta ett schema. 
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b
@@ -257,7 +257,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | `type` | Typ av jobb som en sträng. De två typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
 | `properties.segments` | Om du använder `["*"]` säkerställs att alla segment inkluderas. |
-| `schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
+| `schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet innebär `0 0 1 * *` att schemat körs kl. 1.00 varje dag. |
 | `state` | En sträng som innehåller schematillståndet. De två lägen som stöds är `active` och `inactive`. Som standard är läget inställt på `inactive`. |
 
 +++
@@ -434,10 +434,10 @@ I följande tabell visas exempel på strängar för cron-uttryck och en förklar
 | Uttryck | Förklaring |
 | ---------- | ----------- |
 | `0 0 13 * * ?` | Evenemanget utlöses klockan 12.00 varje dag. |
-| `0 30 9 * * ? 2022` | Evenemanget utlöses varje dag kl. 9.30 2022. |
-| `0 * 18 * * ?` | Evenemanget utlöses varje minut, med början 18.00 och avslutning 18.59, varje dag. |
+| `0 30 9 * * ? 2022` | Evenemanget utlöses varje dag kl. 9:30AM år 2022. |
+| `0 * 18 * * ?` | Evenemanget utlöses varje minut, med början 18.00 och avslutning 18.00, varje dag.:59PM |
 | `0 0/10 17 * * ?` | Evenemanget utlöses var 10:e minut, med början 17:00 och avslutning 18:00, varje dag. |
-| `0 13,38 5 ? 6 WED` | Evenemanget utlöses kl. 5.13 och kl. 17.38 varje onsdag i juni. |
-| `0 30 12 ? * 4#3` | Evenemanget utlöses kl. 12.30 den tredje onsdagen varje månad. |
-| `0 30 12 ? * 6L` | Evenemanget utlöses kl. 12.30 sista fredagen varje månad. |
-| `0 45 11 ? * MON-THU` | Evenemanget utlöses kl. 11.45 varje måndag, tisdag, onsdag och torsdag. |
+| `0 13,38 5 ? 6 WED` | Evenemanget utlöses kl. 5:13AM och 5:38AM varje onsdag i juni. |
+| `0 30 12 ? * 4#3` | Evenemanget utlöses kl. 12:30PM den tredje onsdagen varje månad. |
+| `0 30 12 ? * 6L` | Evenemanget utlöses kl. 12:30PM sista fredagen i varje månad. |
+| `0 45 11 ? * MON-THU` | Evenemanget utlöses kl. 11:45AM varje måndag, tisdag, onsdag och torsdag. |

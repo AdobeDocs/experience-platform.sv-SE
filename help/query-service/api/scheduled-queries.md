@@ -5,9 +5,9 @@ title: Slutpunkt för schema
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 role: Developer
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 10c0c5c639226879b1ca25391fc4a1006cf40003
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1410'
+source-wordcount: '1409'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Frågor som skapats med ett personligt användarkonto misslyckas om användarens
 >
 >Viktigt att tänka på när du hanterar schemalagda frågor:<ul><li>Schemalagda frågor misslyckas om kontot (tekniskt eller användarens) som användes för att skapa dem förlorar åtkomst eller behörigheter.</li><li>Schemalagda frågor måste inaktiveras innan de tas bort via API:t eller användargränssnittet.</li><li>Schemaläggning i oändlighet utan slutdatum stöds inte. Ett slutdatum måste alltid anges.</li></ul>
 
-Detaljerad vägledning om kontokrav, behörighetsinställningar och hantering av schemalagda frågor finns i [dokumentationen om frågescheman](../ui/query-schedules.md#technical-account-user-requirements). Stegvisa instruktioner för hur du skapar och konfigurerar ett tekniskt konto finns i [Developer Console-konfigurationen](https://experienceleague.adobe.com/sv/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman) och [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/sv/docs/platform-learn/tutorial-comprehensive-technical/setup).
+Detaljerad vägledning om kontokrav, behörighetsinställningar och hantering av schemalagda frågor finns i [dokumentationen om frågescheman](../ui/query-schedules.md#technical-account-user-requirements). Stegvisa instruktioner för hur du skapar och konfigurerar ett tekniskt konto finns i [Developer Console-konfigurationen](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman) och [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup).
 
 ## Exempel på API-anrop
 
@@ -176,7 +176,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 | `query.sql` | SQL-frågan som ska köras enligt angivet schema. |
 | `query.name` | Namnet på den schemalagda frågan. |
 | `query.description` | En valfri beskrivning av den schemalagda frågan. |
-| `schedule.schedule` | Kronschemat för frågan. Se [Crontab.guru](https://crontab.guru/) för ett interaktivt sätt att skapa, validera och förstå cron-uttryck. I det här exemplet betyder &quot;30 * * *&quot; att frågan kommer att köras varje timme vid 30 minuters markering.<br><br>Du kan också använda följande kortkommandouttryck:<ul><li>`@once`: Frågan körs bara en gång.</li><li>`@hourly`: Frågan körs varje timme i början av timmen. Detta motsvarar cron-uttrycket `0 * * * *`.</li><li>`@daily`: Frågan körs en gång om dagen vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * *`.</li><li>`@weekly`: Frågan körs en gång i veckan, på söndag, vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * 0`.</li><li>`@monthly`: Frågan körs en gång i månaden, den första dagen i månaden, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 * *`.</li><li>`@yearly`: Frågan körs en gång per år, den 1 januari, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 1 *`. |
+| `schedule.schedule` | Kronschemat för frågan. Se [Crontab.guru](https://crontab.guru/) för ett interaktivt sätt att skapa, validera och förstå cron-uttryck. I det här exemplet betyder `30 * * * *` att frågan kommer att köras varje timme med 30 minuters-markeringen.<br><br>Du kan också använda följande kortkommandouttryck:<ul><li>`@once`: Frågan körs bara en gång.</li><li>`@hourly`: Frågan körs varje timme i början av timmen. Detta motsvarar cron-uttrycket `0 * * * *`.</li><li>`@daily`: Frågan körs en gång om dagen vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * *`.</li><li>`@weekly`: Frågan körs en gång i veckan, på söndag, vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * 0`.</li><li>`@monthly`: Frågan körs en gång i månaden, den första dagen i månaden, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 * *`.</li><li>`@yearly`: Frågan körs en gång per år, den 1 januari, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 1 *`. |
 | `schedule.startDate` | Startdatumet för den schemalagda frågan, skrivet som en UTC-tidsstämpel. |
 
 **Svar**

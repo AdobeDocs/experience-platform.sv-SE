@@ -4,7 +4,7 @@ feature: Attribution AI
 title: Indata och utdata i attribut-AI
 description: I följande dokument beskrivs de olika in- och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '2467'
 ht-degree: 0%
@@ -64,6 +64,7 @@ Experience event-datauppsättningar behöver inte uttryckligen ha Channel- och M
 >[!IMPORTANT]
 >
 > Den minsta mängd data som krävs för att Attribution AI ska fungera är följande:
+>
 > - Du måste tillhandahålla minst 3 månaders (90 dagar) data för att kunna köra en bra modell.
 > - Du behöver minst 1 000 konverteringar.
 
@@ -102,9 +103,10 @@ Attribution AI ger attribueringspoäng på den mest detaljerade nivån så att d
 
 >[!NOTE]
 >
-> Du kan bara se önskad rapportkolumn från indatauppsättningen i utdatamängden för bakgrundsmusik om något av följande stämmer:
-> - Rapporteringskolumnen inkluderas på konfigurationssidan antingen som en del av konfigurationen av kontaktyta eller konverteringsdefinition.
-> - Rapporteringskolumnen ingår i ytterligare spalter för spaltdata.
+>Du kan bara se önskad rapportkolumn från indatauppsättningen i utdatamängden för bakgrundsmusik om något av följande stämmer:
+>
+>- Rapporteringskolumnen inkluderas på konfigurationssidan antingen som en del av konfigurationen av kontaktyta eller konverteringsdefinition.
+>- Rapporteringskolumnen ingår i ytterligare spalter för spaltdata.
 
 I följande tabell visas schemafälten i utdata för råpoängsexempel:
 
@@ -137,7 +139,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | identity (Object) | Falskt | Innehåller information om användaren som används för att skapa modellen, till exempel `id` och `namespace`. |
 | id (String) | True | Identitets-ID för användaren, till exempel cookie-ID, Adobe Analytics-ID (AAID) eller Experience Cloud-ID (ECID, även kallat MCID eller besökar-ID) etc. <br> **Exempel:** 17348762725408656344688320891369597404 |
 | namespace (String) | True | Identitetsnamnutrymme som används för att skapa sökvägarna och därmed modellen. <br> **Exempel:** aaid |
-| touchPointsDetail (Object Array) | True | Listan med kontaktpunktsinformation som leder till konverteringen som sorteras av | förekomst av kontaktyta eller tidsstämpel. |
+| touchPointsDetail (Object Array) | True | Listan med kontaktpunktsinformation som leder till konverteringen som sorteras efter kontaktytpunktsförekomst eller tidsstämpel. |
 | touchpointName (String) | True | Namnet på den kontaktyta som konfigurerades under installationen. <br> **Exempel:** PAID_SEARCH_CLICK |
 | bakgrundsmusik (Object) | True | Pekpunktsbidrag till den här konverteringen som poäng. Mer information om poängen som skapas i det här objektet finns i avsnittet [aggregerade attribueringspoäng](#aggregated-attribution-scores). |
 | touchPoint (Object) | True | Kontaktpunktsmetadata. Mer information om bakgrundsmusik i det här objektet finns i avsnittet [aggregerade poäng](#aggregated-scores). |

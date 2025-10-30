@@ -2,9 +2,9 @@
 title: Mappningsfält för Adobe Analytics Source Connector
 description: Mappa Adobe Analytics-fält till XDM-fält med Analytics Source Connector.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 316879afe8c94657156c768cdc14d4710da9fd35
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '3914'
+source-wordcount: '3854'
 ht-degree: 0%
 
 ---
@@ -25,8 +25,8 @@ I följande tabell finns information om parametrar för direktuppspelningsmedia.
 | `videoaudioauthor` | `mediaReporting.sessionDetails.author` | string | Namnet på mediets författare. |
 | `videoaudioartist` | `mediaReporting.sessionDetails.artist` | string | Namnet på den albumartist eller grupp som utför musikinspelningen eller videon. |
 | `videoaudioalbum` | `mediaReporting.sessionDetails.album` | string | Namnet på det album som musikinspelningen eller videon tillhör. |
-| `videolength` | `mediaReporting.sessionDetails.length ` | heltal | Videons längd eller körningsmiljö. |
-| `videoshowtype` | `mediaReporting.sessionDetails.showType` | string |
+| `videolength` | `mediaReporting.sessionDetails.length` | heltal | Videons längd eller körningsmiljö. |
+| `videoshowtype` | `mediaReporting.sessionDetails.showType` | string |  |
 | `video` | `mediaReporting.sessionDetails.name` | string | Videons ID. |
 | `videoshow` | `mediaReporting.sessionDetails.show` | string | Namnet på programmet eller serien. Program-/serienamnet krävs bara om programmet ingår i en serie. |
 | `videostreamtype` | mediaReporting.sessionDetails.streamType | string | Typ av direktuppspelningsmedia som &quot;video&quot; eller &quot;ljud&quot;. |
@@ -34,12 +34,12 @@ I följande tabell finns information om parametrar för direktuppspelningsmedia.
 | `videoepisode` | `mediaReporting.sessionDetails.episode` | string | Antal avsnitt. |
 | `videogenre` | `mediaReporting.sessionDetails.genreList[]` | sträng[] | Videons genre. |
 | `videosessionid` | `mediaReporting.sessionDetails.ID` | string | En identifierare för en instans av en innehållsström som är unik för en enskild uppspelning. |
-| `videoplayername` | `mediaReporting.sessionDetails.playerName ` | string | Namnet på videospelaren. |
+| `videoplayername` | `mediaReporting.sessionDetails.playerName` | string | Namnet på videospelaren. |
 | `videochannel` | `mediaReporting.sessionDetails.channel` | string | Distributionskanalen som innehållet spelades upp från. |
 | `videocontenttype` | `mediaReporting.sessionDetails.contentType` | string | Den typ av strömleverans som används för innehållet. Den ställs automatiskt in på &quot;Video&quot; för alla videovyer. Rekommenderade värden är: VOD, Live, Linear, UGC, DVOD, Radio, Podcast, Audiobook och Song. |
 | `videonetwork` | `mediaReporting.sessionDetails.network` | string | Nätverks- eller kanalnamnet. |
 | `videofeedtype` | `mediaReporting.sessionDetails.feed` | string | Typen av feed. Detta kan antingen representera faktiska matningsrelaterade data som&quot;East HD&quot; eller&quot;SD&quot;, eller källan till matningen, t.ex. en URL. |
-| `videosegment` | `mediaReporting.sessionDetails.segment` | string |
+| `videosegment` | `mediaReporting.sessionDetails.segment` | string |  |
 | `videostart` | `mediaReporting.sessionDetails.isViewed` | boolesk | Ett booleskt värde som anger om videon har startats eller inte. Detta inträffar när användaren väljer uppspelningsknappen och kommer att räkna även om det finns pre-roll-annonser, buffring, fel osv. |
 | `videoplay` | `mediaReporting.sessionDetails.isPlayed` | boolesk | Ett booleskt värde som anger om den första bildrutan i mediet har startats. Om användaren hoppar under någon annons eller buffringstid är&quot;innehållsstart&quot; inte berättigad. |
 | `videotime` | `mediaReporting.sessionDetails.timePlayed` | heltal | Varaktigheten (i sekunder) för alla händelser för `type=PLAY` i huvudinnehållet. |
@@ -57,7 +57,7 @@ I följande tabell finns information om parametrar för direktuppspelningsmedia.
 | `videopausetime` | `mediaReporting.sessionDetails.pauseTime` | heltal | Den totala varaktighet (i sekunder) i vilken uppspelningen pausades av en användare. |
 | `videomvpd` | `mediaReporting.sessionDetails.mvpd` | string | En MVPD-identifierare som tillhandahålls via Adobe-autentisering. |
 | `videoauthorized` | `mediaReporting.sessionDetails.authorized` | string | Definierar att användaren har autentiserats via Adobe. |
-| `videodaypart` | `mediaReporting.sessionDetails.dayPart` | Definierar tiden på dagen då innehållet sändes eller spelades upp. |
+| `videodaypart` | `mediaReporting.sessionDetails.dayPart` | Definierar tiden på dagen då innehållet sändes eller spelades upp. |  |
 | `videoresume` | `mediaReporting.sessionDetails.hasResume` | boolesk | Ett booleskt värde som markerar varje uppspelning som återupptogs efter mer än 30 minuters buffert, paus eller en stillastående period. |
 | `videosegmentviews` | `mediaReporting.sessionDetails.hasSegmentView` | boolesk | Ett booleskt värde som anger att minst en bildruta har visats. Den här bildrutan behöver inte vara den första. |
 | `videoaudiolabel` | `mediaReporting.sessionDetails.label` | string | Namnet på postetiketten. |
@@ -133,7 +133,7 @@ I följande tabell finns information om kvalitetsparametrar.
 | --- | --- | --- | --- |
 | `videoqoebitrateaverage` | `mediaReporting.qoeDataDetails.bitrateAverage` | tal | Genomsnittlig bithastighet (i kbit/s, heltal). Det här måttet beräknas som ett vägt genomsnitt av alla bithastighetsvärden som är relaterade till uppspelningens varaktighet som inträffade under en uppspelningssession. |
 | `videoqoebitratechange` | `mediaReporting.qoeDataDetails.hasBitrateChangeImpactedStreams` | boolesk | Ett booleskt värde som anger antalet strömmar i vilka bithastighetsändringar inträffade. Det här måttet anges till true endast om minst en bithastighetsändringshändelse inträffade under en uppspelningssession. |
-| `videoqoebitratechangecountevar` | `mediaReporting.qoeDataDetails.bitrateChangeCount` | heltal |
+| `videoqoebitratechangecountevar` | `mediaReporting.qoeDataDetails.bitrateChangeCount` | heltal |  |
 | `videoqoebitrateaverageevar` | `mediaReporting.qoeDataDetails.bitrateAverageBucket` | string | Antalet bithastighetsändringar. Detta värde beräknas som summan av alla bithastighetsändringshändelser som inträffade under en uppspelningssession. |
 | `videoqoetimetostartevar` | `mediaReporting.qoeDataDetails.timeToStart` | heltal | Varaktigheten, mätt i sekunder, som passerat mellan videoinläsning och videostart. |
 | `videoqoedroppedframes` | `mediaReporting.qoeDataDetails.hasDroppedFrameImpactedStreams` | boolesk | Ett booleskt värde som anger antalet strömmar i vilka bildrutor släpptes. Det här måttet är bara true om minst en bildruta släpptes under en uppspelningssession. |
@@ -155,7 +155,7 @@ Läs det här avsnittet för information om inaktuella analysmappningsfält.
 
 ### Direktmappningsfält
 
-+++Välj för att visa en tabell med inaktuella direktmappningsfält
++++Välj det här alternativet om du vill visa en tabell med inaktuella direktmappningsfält
 
 | Datafeed | XDM-fält | XDM-typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -182,7 +182,7 @@ Läs det här avsnittet för information om inaktuella analysmappningsfält.
 | `m_zip` | `_experience.analytics.customDimensions.`<br/>`postalCode` | string | En variabel som används för att fylla i postkodsdimensionen. |
 | `accept_language` | `environment.browserDetails.acceptLanguage` | string | Visar alla godkända språk enligt HTTP-huvudet Accept-Language. |
 | `homepage` | `web.webPageDetails.isHomePage` | boolesk | Används inte längre. Anger om den aktuella URL:en är webbläsarens hemsida. |
-| `ipv6` | `environment.ipV6` | string |
+| `ipv6` | `environment.ipV6` | string |  |
 | `j_jscript` | `environment.browserDetails.javaScriptVersion` | string | Den version av JavaScript som stöds av webbläsaren. |
 | `user_agent` | `environment.browserDetails.userAgent` | string | Användaragentsträngen som skickas i HTTP-huvudet. |
 | `mobileappid` | `application.name` | string | Mobilapp-ID:t som lagras i följande format: `[AppName][BundleVersion]`. |
@@ -196,21 +196,21 @@ Läs det här avsnittet för information om inaktuella analysmappningsfält.
 | `mobilebeaconmajor` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.beaconMajor` | tal | Mobiltjänster är en viktig del. |
 | `mobilebeaconminor` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.beaconMinor` | tal | Mobiltjänster är mindre. |
 | `mobilebeaconuuid` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.proximityUUID` | string | Mobiltjänster är UUID. |
-| `mobileinstalls` | `application.firstLaunches` | Objekt | Detta utlöses första gången efter installation eller ominstallation | {id (sträng), value (number)} |
-| `mobileupgrades` | `application.upgrades` | Objekt | Rapporterar antalet appuppgraderingar. Utlösare vid första körningen efter uppgraderingen eller när som helst när versionsnumret ändras. | {id (sträng), value (number)} |
-| `mobilelaunches` | `application.launches` | Objekt | Antalet gånger som appen har startats. | {id (sträng), value (number)} |
-| `mobilecrashes` | `application.crashes` | Objekt |  | {id (sträng), value (number)} |
-| `mobilemessageclicks` | `directMarketing.clicks` | Objekt |  | {id (sträng), value (number)} |
-| `mobileplaceentry` | `placeContext.POIinteraction.poiEntries` | Objekt | | {id (sträng), value (number)} |
-| `mobileplaceexit` | `placeContext.POIinteraction.poiExits` | Objekt | | {id (sträng), value (number)} |
-| `videoqoetimetostart` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.timeToStart` | Objekt | Den tid det tar att starta videokvaliteten. | {id (sträng), value (number)} |
-| `videoqoedropbeforestart` | `media.mediaTimed.dropBeforeStarts` | Objekt | | {id (sträng), value (number)} |
-| `videoqoebuffercount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.buffers` | Objekt | Buffertantal för videokvalitet | {id (sträng), value (number)} |
-| `videoqoebuffertime` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bufferTime` | Objekt | Bufferttid för videokvalitet | {id (sträng), value (number)} |
-| `videoqoebitratechangecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateChanges` | Objekt | Antal ändringar av videokvalitet | {id (sträng), value (number)} |
-| `videoqoebitrateaverage` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateAverage` | Objekt | Genomsnittlig bithastighet för videokvalitet | {id (sträng), value (number)} |
-| `videoqoeerrorcount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.errors` | Objekt | Antal fel för videokvalitet | {id (sträng), value (number)} |
-| `videoqoedroppedframecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.droppedFrames` | Objekt | | {id (sträng), value (number)} |
+| `mobileinstalls` | `application.firstLaunches` | Objekt | Detta aktiveras vid den första körningen efter installation eller ominstallation av `{id (string), value (number)}` |
+| `mobileupgrades` | `application.upgrades` | Objekt | Rapporterar antalet appuppgraderingar. Utlösare vid första körningen efter uppgraderingen eller när som helst när versionsnumret ändras. | `{id (string), value (number)}` |
+| `mobilelaunches` | `application.launches` | Objekt | Antalet gånger som appen har startats.  `{id (string), value (number)}` |
+| `mobilecrashes` | `application.crashes` | Objekt | `{id (string), value (number)}` |
+| `mobilemessageclicks` | `directMarketing.clicks` | Objekt | `{id (string), value (number)}` |
+| `mobileplaceentry` | `placeContext.POIinteraction.poiEntries` | Objekt | `{id (string), value (number)}` |
+| `mobileplaceexit` | `placeContext.POIinteraction.poiExits` | Objekt | `{id (string), value (number)}` |
+| `videoqoetimetostart` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.timeToStart` | Objekt | Den tid det tar att starta videokvaliteten. `{id (string), value (number)}` |
+| `videoqoedropbeforestart` | `media.mediaTimed.dropBeforeStarts` | Objekt | `{id (string), value (number)}` |
+| `videoqoebuffercount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.buffers` | Objekt | Buffertantal för videokvalitet `{id (string), value (number)}` |
+| `videoqoebuffertime` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bufferTime` | Objekt | Bufferttid för videokvalitet `{id (string), value (number)}` |
+| `videoqoebitratechangecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateChanges` | Objekt | Antal ändringar av videokvalitet `{id (string), value (number)}` |
+| `videoqoebitrateaverage` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.bitrateAverage` | Objekt | Genomsnittlig bithastighet för videokvalitet `{id (string), value (number)}` |
+| `videoqoeerrorcount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.errors` | Objekt | Antal fel för videokvalitet `{id (string), value (number)}` |
+| `videoqoedroppedframecount` | `media.mediaTimed.primaryAssetViewDetails.`<br/>`qoe.droppedFrames` | Objekt | `{id (string), value (number)}` |
 
 {style="table-layout:auto"}
 
@@ -220,7 +220,7 @@ Läs det här avsnittet för information om inaktuella analysmappningsfält.
 
 Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver en direkt kopia från Adobe Analytics för att kunna genereras i XDM.
 
-+++Välj för att visa en tabell med borttagna genererade mappningsfält
++++Välj det här alternativet om du vill visa en tabell med inaktuella genererade mappningsfält
 
 | Datafeed | XDM-fält | XDM-typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -276,7 +276,7 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 
 Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
-+++Välj för att visa en tabell med inaktuella fält för delad mappning
++++Välj det här alternativet om du vill visa en tabell med inaktuella fält för delad mappning
 
 | Datafeed | XDM-fält | XDM-typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -295,7 +295,7 @@ Analysens källanslutning skickar förbearbetade data till en datauppsättning i
 
 Mer information om hur du utför dessa omformningar med hjälp av frågetjänsten finns i [Adobe-definierade funktioner](/help/query-service/sql/adobe-defined-functions.md) i användarhandboken för frågetjänsten.
 
-+++Välj för att visa en tabell med inaktuella avancerade mappningsfält
++++Välj det här alternativet om du vill visa en tabell med inaktuella avancerade mappningsfält
 
 | Datafeed | XDM-fält | XDM-typ | Beskrivning |
 | — | — | — | — ||

@@ -3,7 +3,7 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '801'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 
 >[!IMPORTANT]
 >
->Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
+>Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
 
 Använd de avancerade dataanslutningarna för företag för att leverera Adobe Real-Time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
 

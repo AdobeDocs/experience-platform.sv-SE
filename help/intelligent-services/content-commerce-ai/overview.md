@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över innehållstaggning
 description: Innehållstaggning är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
@@ -31,16 +31,19 @@ Innehåll är en viktig del av dessa upplevelser. För att ni bättre ska kunna 
 Den övergripande visionen av innehållstaggning är uppdelad i tre steg för att uppnå optimalt kundengagemang och maximera kunddrivna nyckeltal.
 
 **Steg 1: Förstå innehållet**
+
 - Extrahera intelligenta funktioner och metadata.
 - Ordna innehåll (tagga, kategorisera, gruppera, ta bort dubbletter).
 - Associera innehållsdata med resurser.
 
 **Steg 2: Förstå kunden**
+
 - Associera kundens handlande med innehållsfunktioner.
 - Få kundens preferenser och tillhörighet från innehåll och åtgärder.
 - Lägg till inställningar i kundens profil.
 
 **Steg 3: Aktivera upplevelseoptimering**
+
 - Använd kundens profil för att leverera förbättrade, personaliserade upplevelser, både i sessioner och för efterföljande upplevelser.
 - Använd innehållsfunktioner för att få insikter i kundernas beteenden som driver KPI:er.
 - Använd insikter om innehållet för att skapa, redigera och markera innehåll.

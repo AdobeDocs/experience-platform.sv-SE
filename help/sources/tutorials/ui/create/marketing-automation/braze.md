@@ -4,7 +4,7 @@ description: Lär dig hur du skapar ett dataflöde för ditt Braze-konto med hj�
 last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta
 exl-id: 6e94414a-176c-4810-80ff-02cf9e797756
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '971'
 ht-degree: 0%
@@ -86,7 +86,7 @@ När det nya beräknade fältet har lagts till väljer du **[!UICONTROL Map targ
 >
 >Hjärntidsstämplar anges inte i millisekunder utan i sekunder. För att tidsstämplarna i Experience Platform ska kunna visas korrekt måste du skapa beräkningsfält i millisekunder. En beräkning av &quot;time * 1000&quot; konverteras korrekt till millisekunder, vilket är lämpligt för mappning till ett tidsstämpelfält i Experience Platform.
 >
->![Skapar ett beräknat fält för tidsstämpel &#x200B;](../../../../images/tutorials/create/braze/create-calculated-field.png)
+>![Skapar ett beräknat fält för tidsstämpel](../../../../images/tutorials/create/braze/create-calculated-field.png)
 
 ![Mappningen utan fel.](../../../../images/tutorials/create/braze/completed_mapping.png)
 

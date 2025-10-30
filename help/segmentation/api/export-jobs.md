@@ -4,7 +4,7 @@ title: API-slutpunkt för segmentexportjobb
 description: Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten /export/job i Adobe Experience Platform Segmentation Service API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod.
 role: Developer
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1678'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hämta en lista med exportjobb {#retrieve-list}
 
-Du kan hämta en lista över alla exportjobb för din organisation genom att göra en GET-förfrågan till slutpunkten `/export/jobs`.
+Du kan hämta en lista över alla exportjobb för din organisation genom att göra en GET-begäran till slutpunkten `/export/jobs`.
 
 **API-format**
 
@@ -221,7 +221,7 @@ Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjo
 
 ## Skapa ett nytt exportjobb {#create}
 
-Du kan skapa ett nytt exportjobb genom att göra en POST-förfrågan till slutpunkten `/export/jobs`.
+Du kan skapa ett nytt exportjobb genom att göra en POST-begäran till slutpunkten `/export/jobs`.
 
 **API-format**
 
@@ -297,7 +297,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `filter.segmentQualificationTime` | Filtrera baserat på segmentets kvalificeringstid. Starttid och/eller sluttid kan anges. |
 | `filter.segmentQualificationTime.startTime` | Starttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på starttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i formatet [RFC 339](https://tools.ietf.org/html/rfc3339). |
 | `filter.segmentQualificationTime.endTime` | Sluttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på sluttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i formatet [RFC 339](https://tools.ietf.org/html/rfc3339). |
-| `filter.fromIngestTimestamp ` | Begränsar exporterade profiler till att endast omfatta de som har uppdaterats efter den här tidsstämpeln. Tidsstämpeln måste anges i formatet [RFC 339](https://tools.ietf.org/html/rfc3339). <ul><li>`fromIngestTimestamp` för **profiler**, om sådan finns: Inkluderar alla sammanfogade profiler där den sammanfogade, uppdaterade tidsstämpeln är större än den angivna tidsstämpeln. Stöder operanden `greater_than`.</li><li>`fromIngestTimestamp` för **händelser**: Alla händelser som har importerats efter den här tidsstämpeln exporteras, vilket motsvarar resultatet av den resulterande profilen. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li> |
+| `filter.fromIngestTimestamp` | Begränsar exporterade profiler till att endast omfatta de som har uppdaterats efter den här tidsstämpeln. Tidsstämpeln måste anges i formatet [RFC 339](https://tools.ietf.org/html/rfc3339). <ul><li>`fromIngestTimestamp` för **profiler**, om sådan finns: Inkluderar alla sammanfogade profiler där den sammanfogade, uppdaterade tidsstämpeln är större än den angivna tidsstämpeln. Stöder operanden `greater_than`.</li><li>`fromIngestTimestamp` för **händelser**: Alla händelser som har importerats efter den här tidsstämpeln exporteras, vilket motsvarar resultatet av den resulterande profilen. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li> |
 | `filter.emptyProfiles` | Ett booleskt värde som anger om tomma profiler ska filtreras. Profiler kan innehålla profilposter, ExperienceEvent-poster eller båda. Profiler utan profilposter och bara ExperienceEvent-poster kallas&quot;emptyProfiles&quot;. Om du vill exportera alla profiler i profilarkivet, inklusive &quot;emptyProfiles&quot;, anger du värdet `emptyProfiles` till `true`. Om `emptyProfiles` är inställt på `false` exporteras bara profiler med profilposter i arkivet. Om attributet `emptyProfiles` inte ingår exporteras som standard bara profiler som innehåller profilposter. |
 | `additionalFields.eventList` | Styr tidsseriens händelsefält som exporteras för underordnade eller associerade objekt genom att ange en eller flera av följande inställningar:<ul><li>`fields`: Kontrollera fälten som ska exporteras.</li><li>`filter`: Anger villkor som begränsar resultaten från associerade objekt. Förväntar ett minimivärde som krävs för export, vanligtvis ett datum.</li><li>`filter.fromIngestTimestamp`: Filtrerar tidsseriehändelser till händelser som har importerats efter den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li><li>`filter.toIngestTimestamp`: Filtrerar tidsstämpeln till de som har importerats före den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li></ul> |
 | `destination` | **(Obligatoriskt)** Information om exporterade data:<ul><li>`datasetId`: **(Obligatoriskt)** ID för datauppsättningen där data ska exporteras.</li><li>`segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard &quot;false&quot;. Värdet false exporterar alla segment-ID:n till ett enda batch-ID. Värdet true exporterar ett segment-ID till ett batch-ID. Observera att om värdet är &quot;true&quot; kan det påverka batchexportens prestanda.</li></ul> |
@@ -402,7 +402,7 @@ Om `destination.segmentPerBatch` hade angetts till `true` skulle `destination`-o
 
 ## Hämta ett specifikt exportjobb {#get}
 
-Du kan hämta detaljerad information om ett specifikt exportjobb genom att göra en GET-förfrågan till slutpunkten `/export/jobs` och ange ID:t för det exportjobb som du vill hämta i sökvägen för begäran.
+Du kan hämta detaljerad information om ett specifikt exportjobb genom att göra en GET-begäran till slutpunkten `/export/jobs` och ange ID:t för det exportjobb som du vill hämta i sökvägen för begäran.
 
 **API-format**
 

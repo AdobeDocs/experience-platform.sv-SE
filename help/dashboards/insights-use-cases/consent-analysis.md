@@ -2,7 +2,7 @@
 title: Analys och spårning av samtycke
 description: Lär dig hur du bygger en kontrollpanel för samtyckesanalys för att spåra hur användarens samtycke har utvecklats över tid.
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1805'
 ht-degree: 0%
@@ -130,7 +130,7 @@ Utför stegen nedan när widgetens disposition har fyllts i med data från den t
   ![Widgetdispositionen med tilläggsikonen och listrutan markerad.](../images/standard-dashboards/attributes-dropdown.png)
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL count_of_profiles]` och använd sedan ikonen + för att lägga till attributet `[!UICONTROL count_of_profiles]` på Y-axeln i listrutan.
 - Markera ikonen `...` (ellipser) i fältet [!UICONTROL Y-axis] och välj sedan sammanställningsfunktionen [!UICONTROL SUM] i listrutan.
-  ![Widgetens widget för godkännande av disposition av trender med datamodell, tabell och listrutan Y-axel och SUM-funktionen markerad. &#x200B;](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
+  ![Widgetens widget för godkännande av disposition av trender med datamodell, tabell och listrutemenyn och SUM-funktionen markerade.](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
 - Välj listrutan [!UICONTROL Marks] och ändra diagramtyp till [!UICONTROL Line].
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL segment_name]` och använd sedan ikonen + för att lägga till `segment_name` som en [!UICONTROL Filter] i listrutan. Dialogrutan [!UICONTROL Filter: Segment_name] visas. Välj målgrupper som skapats tidigare och som hör till samtycke. I det här exemplet väljer du **[!UICONTROL Users Consented to Calls]**, **[!UICONTROL Users Consented to SMS]** och **[!UICONTROL Users Consented to Email]** följt av **[!UICONTROL Apply]**.
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL segment_name]` och välj sedan +-ikonen för att lägga till `segment_name` som [!UICONTROL Color] i listrutan.

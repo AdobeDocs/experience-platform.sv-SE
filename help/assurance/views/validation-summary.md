@@ -2,9 +2,9 @@
 title: Vyn Valideringsredigerare
 description: Den här vägledningen innehåller information om valideringsredigeringsvyn i Adobe Experience Platform Assurance.
 exl-id: 09be531c-8dc3-48b8-814f-b7a06adf1da3
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '496'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ Med valideringsredigeraren kan du snabbt och enkelt hantera JavaScript-funktione
 
 ## Kom igång med valideringsredigeraren
 
-När [du har konfigurerat Assurance](../tutorials/implement-assurance.md) väljer du **[!UICONTROL Validation Editor]** i vyn **[!UICONTROL Home]**.
+När [du har konfigurerat Assurance](../tutorials/implement-assurance.md) väljer du **[!UICONTROL Home]** i vyn **[!UICONTROL Validation Editor]**.
 
 ![Validation-Editor-screen-shot](https://user-images.githubusercontent.com/6597105/198680074-f548a646-6f2f-4a65-82fd-0f1687d869bf.png)
 
@@ -57,7 +57,7 @@ Valideringsfunktionen förväntas returnera ett objekt som innehåller följande
 | :--- | :--- | :--- |
 | `message` | Sträng | Valideringsmeddelandet som ska visas i sammanfattningsresultatet. |
 | `events` | Array | En array med händelsehjälpmedel som ska rapporteras som matchade eller inte matchade. |
-| `links` | Array | En array med `ValidationResultLink` objekt som refererar till dokumentation och andra resurser `{( type: 'doc'|'product', url: String )}` |
+| `links` | Array | En array med `ValidationResultLink` objekt som refererar till dokumentation och andra resurser `{( type: 'doc'`&amp;vert;`'product', url: String )}` |
 | `result` | Sträng | Detta är valideringsresultatet och förväntas vara en av de uppräknade strängarna: &quot;matched&quot;, &quot;not matched&quot;, &quot;unknown&quot; |
 
 ## Visa valideringsresultat
@@ -76,4 +76,4 @@ Du kan lägga till `console.log()` i funktionen för att skriva ut objekt på ut
 
 Om ett fel inträffar i JavaScript kodredigerare visas felstatus tillsammans med orsaken.
 
-Mer information om valideringar finns på [Adobe Experience Platform Assurance-valideringar](https://github.com/adobe/griffon-validation-plugins) GitHub. Här finns exempel på valideringar som ägs av Adobe. Mer information om valideringar finns i [wiki](https://github.com/adobe/griffon-validation-plugins/wiki).
+Mer information om valideringar finns på [Adobe Experience Platform Assurance Validations](https://github.com/adobe/griffon-validation-plugins) GitHub. Här finns exempel på valideringar som ägs av Adobe. Mer information om valideringar finns i [wiki](https://github.com/adobe/griffon-validation-plugins/wiki).

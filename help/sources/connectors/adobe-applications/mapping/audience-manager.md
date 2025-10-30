@@ -1,17 +1,17 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Audience Manager-mappning;målgruppshanterarmappning
+keywords: Experience Platform;home;populära topics;Audience Manager mapping;målgruppshanterarmappning
 solution: Experience Platform
 title: Mappningsfält för Adobe Audience Manager Source Connector
 description: Lär dig hur du mappar Adobe Audience Manager-data (realtids-, onboardations- och profildata) till motsvarande XDM-fält (Experience Data Model) för Audience Manager-källkopplingen.
 exl-id: b800ba43-c308-4334-adce-3d554d50cefb
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 0%
 
 ---
 
-# Fältkopplingar i Audience Manager
+# Audience Manager fältkopplingar
 
 Tabellerna nedan innehåller mappningarna mellan fälten i Adobe Audience Manager-data (Realtime-, On-board- och Profile-data) och deras motsvarande XDM-fält.
 
@@ -27,7 +27,7 @@ Typ: Realtime-data
 | `requestIds[]` | `ExperienceEvent.endUserIds` - *Endast för namnutrymmen i endUserIds och endast första värdet.* |
 | `primaryDeviceId` | `ExperienceEvent.identityMap["CORE"]` |
 | `primaryDeviceId` | ExperienceEvent.endUserIds - *Endast för namnutrymmen som finns i endUserIds och endast det första värdet.* |
-| `trait[] ` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
+| `trait[]` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
 | `segments[]` | `ExperienceEvent.segmentMemberships["AAMSegments"]` |
 | `mergeRules[]` | `ExperienceEvent.profileStitch[]` |
 | `timestamps` | `ExperienceEvent.timeStamp` |

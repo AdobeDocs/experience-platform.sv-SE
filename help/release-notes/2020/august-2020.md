@@ -1,14 +1,14 @@
 ---
-title: Versionsinformation om Adobe Experience Platform från augusti 2020
+title: Versionsinformation om Adobe Experience Platform för augusti 2020
 description: Versionsinformation för augusti 2020 för Adobe Experience Platform.
 doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 exl-id: 9347147f-e830-4487-aa12-f56723abb3c8
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '576'
-ht-degree: 22%
+ht-degree: 23%
 
 ---
 
@@ -39,13 +39,13 @@ Mer information om [!DNL JupyterLab] finns i [[!DNL JupyterLab] användarhandbok
 
 I [Real-Time Customer Data Platform](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partner på ett smidigt sätt.
 
-**Nya mål**
+**Nya destinationer**
 
 Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-data. Mer information finns nedan:
 
 | Mål | Beskrivning |
 |--- | ---|
-| [!DNL Google Customer Match] | Med Google Customer Match kan du använda dina online- och offlinedata för att nå och återengagera dina kunder i olika egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping], Gmail och YouTube. <br><br> Gå till [!DNL Google Customer Match] [sidan &#x200B;](../../destinations/catalog/advertising/google-customer-match.md) i målkatalogen om du vill ha mer information om målet och hur du konfigurerar det i Real-Time CDP. |
+| [!DNL Google Customer Match] | Med Google Customer Match kan du använda dina online- och offlinedata för att nå och återengagera dina kunder i olika egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping], Gmail och YouTube. <br><br> Gå till [!DNL Google Customer Match] [sidan ](../../destinations/catalog/advertising/google-customer-match.md) i målkatalogen om du vill ha mer information om målet och hur du konfigurerar det i Real-Time CDP. |
 
 **Nya funktioner**
 

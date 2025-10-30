@@ -2,7 +2,7 @@
 title: Connect Relay till Experience Platform i användargränssnittet
 description: Lär dig hur du skapar en anpassad Relay Connector-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: f80855f5-0769-4253-b737-28c46e4dea6e
-source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '544'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Gränssnittet **[!UICONTROL Connect Relay Connector source]** visas. Använd gr�
 >
 >Den tillåtna filstorleken är upp till 1 GB.
 
-![Gränssnittet &#x200B;](../../../../images/tutorials/create/relay-connector/upload-data.jpg) för val av data
+![Gränssnittet ](../../../../images/tutorials/create/relay-connector/upload-data.jpg) för val av data
 
 När data har överförts kan du använda avsnittet [!UICONTROL Preview sample data] för att förhandsgranska data.
 
@@ -53,7 +53,7 @@ När data har överförts kan du använda avsnittet [!UICONTROL Preview sample d
 
 Använd sedan gränssnittet *[!UICONTROL Dataflow details]* för att ange ett **name** och en **valfri beskrivning** för dataflödet. Markera dessutom **[!UICONTROL Target dataset]** som du vill använda. Du kan antingen skapa en ny datauppsättning eller använda en befintlig datauppsättning.
 
-![Gränssnittet för dataflödesinformation. &#x200B;](../../../../images/tutorials/create/relay-connector/dataflow.jpg)
+![Gränssnittet för dataflödesinformation.](../../../../images/tutorials/create/relay-connector/dataflow.jpg)
 
 ### Mappning
 
@@ -81,5 +81,5 @@ Använd dessa värden för att konfigurera webkroken i **Relay-konsolen**. Detal
 
 ## Ytterligare resurser
 
-* [Skapa en ny anslutningsspecifikation med API:t för Flow Service &#x200B;](https://experienceleague.adobe.com/sv/docs/experience-platform/sources/sdk/streaming-sdk/create)
-* [Anslut till källan med användargränssnittet](https://experienceleague.adobe.com/sv/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)
+* [Skapa en ny anslutningsspecifikation med API:t för Flow Service ](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/create)
+* [Anslut till källan med användargränssnittet](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)

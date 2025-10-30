@@ -3,7 +3,7 @@ title: TikTok
 description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med Adobe realtidsintegrering med TikTok Ads Manager.
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1111'
 ht-degree: 1%
@@ -117,7 +117,7 @@ Nedan visas ett exempel på korrekt identitetsmappning när du exporterar målgr
 
 Välja källfält:
 
-* Välj en identifierare (till exempel:` Email_LC_SHA256`) som källidentitet som unikt identifierar en profil i Adobe Experience Platform och [!DNL TikTok Ads Manager].
+* Välj en identifierare (till exempel: `Email_LC_SHA256`) som källidentitet som unikt identifierar en profil i Adobe Experience Platform och [!DNL TikTok Ads Manager].
 
 Markera målfält:
 

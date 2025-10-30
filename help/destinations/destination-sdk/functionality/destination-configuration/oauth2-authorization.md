@@ -1,8 +1,8 @@
 ---
-description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destinationen SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
+description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destination SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 title: OAuth 2-auktorisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 7ba9971b44410e609c64f4dcf956a1976207353e
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '2181'
 ht-degree: 0%
@@ -12,13 +12,13 @@ ht-degree: 0%
 
 # OAuth 2-auktorisering
 
-Destinationen SDK har stöd för flera åtkomstmetoder till ditt mål. Detta är bland annat alternativet att autentisera till ditt mål med hjälp av [OAuth 2-auktoriseringsramverket](https://tools.ietf.org/html/rfc6749).
+Destination SDK har stöd för flera åtkomstmetoder till ditt mål. Detta är bland annat alternativet att autentisera till ditt mål med hjälp av [OAuth 2-auktoriseringsramverket](https://tools.ietf.org/html/rfc6749).
 
-Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destinationen SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
+Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destination SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destination SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -49,11 +49,12 @@ Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/
 >Stegen för att registrera en omdirigerings-/återanrops-URL för Adobe Experience Platform i ditt system krävs bara för [OAuth 2 med behörighetstypen Auktoriseringskod](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
 
 I slutet av det här steget bör du ha:
+
 * Ett klient-ID.
 * En klienthemlighet;
-* AdobeCallback-URL (för auktoriseringskodens medgivande).
+* Adobe återanrops-URL (för auktoriseringskodens beviljande).
 
-### Vad du behöver göra i Destinationen SDK {#to-do-in-destination-sdk}
+### Vad du behöver göra i Destination SDK {#to-do-in-destination-sdk}
 
 Om du vill konfigurera OAuth 2-auktorisering för ditt mål i Experience Platform måste du lägga till din OAuth 2-information i [målkonfigurationen](../../authoring-api/destination-configuration/create-destination-configuration.md), under parametern `customerAuthenticationConfigurations`. Se [kundautentisering](../../functionality/destination-configuration/customer-authentication.md) för detaljerade exempel. Specifika anvisningar om vilka fält du måste lägga till i konfigurationsmallen, beroende på din OAuth 2-auktoriseringstyp, finns längre ned på den här sidan.
 
@@ -79,6 +80,7 @@ Tabellen ovan visar de fält som används i OAuth 2-standardflöden. Förutom de
 Utdata innehåller alltid en åtkomsttoken som används av Experience Platform för att autentisera och upprätthålla behörigheten till ditt mål.
 
 Det system som Adobe har utformat för OAuth 2-auktorisering:
+
 * Stöder alla tre OAuth 2-stipendiaterna samtidigt som de redovisar eventuella variationer i dem, som extra datafält, icke-standard-API-anrop med mera.
 * Stöder åtkomsttoken med varierande livstidsvärden, oavsett om det är 90 dagar, 30 minuter eller något annat livstidsvärde som du anger.
 * Stöder OAuth 2-auktoriseringsflöden med eller utan uppdateringstoken.
@@ -130,7 +132,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 ## OAuth 2 med lösenordsbeviljande
 
 För OAuth 2-lösenordsbeviljande (läs [RFC-standardspecifikationerna](https://tools.ietf.org/html/rfc6749#section-4.3)) kräver Experience Platform användarens användarnamn och lösenord. I auktoriseringsflödet utbyter Experience Platform dessa autentiseringsuppgifter för en åtkomsttoken och, om så önskas, en uppdateringstoken.
-Adobe använder standardindata nedan för att förenkla destinationskonfigurationen, med möjlighet att åsidosätta värden:
+Adobe använder standardindata nedan för att förenkla målkonfigurationen, med möjlighet att åsidosätta värden:
 
 | OAuth 2-bidrag | Indata | Utdata |
 |---------|----------|---------|
@@ -140,7 +142,7 @@ Adobe använder standardindata nedan för att förenkla destinationskonfiguratio
 
 >[!NOTE]
 >
-> Du behöver inte lägga till några parametrar för `username` och `password` i konfigurationen nedan. När du lägger till `"grant": "OAUTH2_PASSWORD"` i målkonfigurationen kommer systemet att begära att användaren anger ett användarnamn och lösenord i användargränssnittet för Experience Platform när de autentiseras mot målet.
+> Du behöver inte lägga till några parametrar för `username` och `password` i konfigurationen nedan. När du lägger till `"grant": "OAUTH2_PASSWORD"` i målkonfigurationen kommer systemet att begära att användaren anger ett användarnamn och lösenord i användargränssnittet i Experience Platform när de autentiseras till ditt mål.
 
 Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du till följande rader i konfigurationen när du [skapar en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md):
 
@@ -214,7 +216,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 
 ## Anpassa din OAuth 2-konfiguration {#customize-configuration}
 
-De konfigurationer som beskrivs i avsnitten ovan beskriver OAuth 2-standardstipendier. Det system som Adobe har utformat ger dock flexibilitet så att du kan använda anpassade parametrar för alla variationer i OAuth 2-anslaget. Om du vill anpassa OAuth 2-standardinställningarna använder du parametrarna `authenticationDataFields`, som visas i exemplen nedan.
+De konfigurationer som beskrivs i avsnitten ovan beskriver OAuth 2-standardstipendier. Det system som utvecklats av Adobe ger dock flexibilitet så att du kan använda anpassade parametrar för alla variationer i OAuth 2-anslaget. Om du vill anpassa OAuth 2-standardinställningarna använder du parametrarna `authenticationDataFields`, som visas i exemplen nedan.
 
 ### Exempel 1: `authenticationDataFields` används för att hämta information från auktoriseringssvaret {#example-1}
 
@@ -366,7 +368,7 @@ Du kan använda följande parametrar i `authenticationDataFields` för att anpas
 | `authenticationDataFields.type` | Sträng | Definierar typen för det anpassade datafältet. <br> Godkända värden: `string`, `boolean`, `integer` |
 | `authenticationDataFields.isRequired` | Boolean | Anger om det anpassade datafältet krävs i auktoriseringsflödet. |
 | `authenticationDataFields.format` | Sträng | När du väljer `"format":"password"` krypterar Adobe värdet för auktoriseringsdatafältet. När det används med `"fieldType": "CUSTOMER"` döljs även indata i användargränssnittet när användaren skriver i fältet. |
-| `authenticationDataFields.fieldType` | Sträng | Anger om indata kommer från partnern (du) eller från användaren när de ställer in målet i Experience Platform. |
+| `authenticationDataFields.fieldType` | Sträng | Anger om indata kommer från partnern (du) eller från användaren när de ställer in ditt mål i Experience Platform. |
 | `authenticationDataFields.value` | Sträng. Boolean. Heltal | Värdet för det anpassade datafältet. Värdet matchar den valda typen från `authenticationDataFields.type`. |
 | `authenticationDataFields.authenticationResponsePath` | Sträng | Anger vilket fält från API-svarssökvägen som du refererar till. |
 
@@ -376,7 +378,7 @@ Du kan använda följande parametrar i `authenticationDataFields` för att anpas
 
 Adobe har utformat ett system som uppdaterar utgångna åtkomsttoken utan att användaren behöver logga in på din plattform igen. Systemet kan generera en ny token så att aktiveringen till destinationen kan fortsätta utan problem för kunden.
 
-Om du vill konfigurera uppdatering av åtkomsttoken kan du behöva konfigurera en mallad HTTP-begäran som tillåter att Adobe får en ny åtkomsttoken med hjälp av en uppdateringstoken. Om åtkomsttoken har upphört att gälla, tar Adobe den mallbaserade begäran som du har angett och lägger till de parametrar som du har angett. Använd parametern `accessTokenRequest` för att konfigurera en uppdateringsmekanism för åtkomsttoken.
+Om du vill konfigurera uppdatering av åtkomsttoken kan du behöva konfigurera en mallad HTTP-begäran som tillåter att Adobe får en ny åtkomsttoken med hjälp av en uppdateringstoken. Om åtkomsttoken har upphört att gälla, tar Adobe emot den mallbaserade begäran som du har angett och lägger till de parametrar som du har angett. Använd parametern `accessTokenRequest` för att konfigurera en uppdateringsmekanism för åtkomsttoken.
 
 
 ```json
@@ -475,11 +477,11 @@ Beroende på hur du anpassar din behörighet kan du behöva komma åt datafält 
 
 | Prefix | Beskrivning | Exempel |
 |---------|----------|---------|
-| authData | Få åtkomst till värden i alla partner- och kunddatafält. | ``{{ authData.accessToken }}`` |
-| response.body | HTTP-svarsbrödtext | ``{{ response.body.access_token }}`` |
-| response.status | HTTP-svarsstatus | ``{{ response.status }}`` |
-| response.headers | HTTP-svarsrubriker | ``{{ response.headers.server[0] }}`` |
-| userContext | Åtkomstinformation om aktuellt auktoriseringsförsök | <ul><li>`{{ userContext.sandboxName }} `</li><li>`{{ userContext.sandboxId }} `</li><li>`{{ userContext.imsOrgId }} `</li><li>`{{ userContext.client }} // the client executing the authorization attempt `</li></ul> |
+| authData | Få åtkomst till värden i alla partner- och kunddatafält. | `{{ authData.accessToken }}` |
+| response.body | HTTP-svarsbrödtext | `{{ response.body.access_token }}` |
+| response.status | HTTP-svarsstatus | `{{ response.status }}` |
+| response.headers | HTTP-svarsrubriker | `{{ response.headers.server[0] }}` |
+| userContext | Åtkomstinformation om aktuellt auktoriseringsförsök | <ul><li>`{{ userContext.sandboxName }}`</li><li>`{{ userContext.sandboxId }}`</li><li>`{{ userContext.imsOrgId }}`</li><li>`{{ userContext.client }} // the client executing the authorization attempt`</li></ul> |
 
 {style="table-layout:auto"}
 

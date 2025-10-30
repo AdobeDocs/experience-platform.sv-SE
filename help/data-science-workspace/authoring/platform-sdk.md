@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Modellredigering med Adobe Experience Platform SDK
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '508'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,7 @@ Nya [!DNL Experience Platform] SDK har stöd för följande åtgärder:
 | Mindre än (`<`) | `lt()` |
 | Mindre än eller lika med (`<=`) | `le()` |
 | Och (`&`) | `And()` |
-| Eller (`|`) | `Or()` |
+| Eller ( &amp;vert; ) | `Or()` |
 
 ## Filtrera efter markerade kolumner {#filter-by-selected-columns}
 

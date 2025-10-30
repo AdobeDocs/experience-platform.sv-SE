@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform för företag med flera regioner och varumärken
 description: Lär er hur ni ger era implementeringsteam de verktyg och insikter som behövs för att effektivt kunna navigera i Adobe Experience Platform knep.
-source-git-commit: e930b070f18e220cc1fa97bb0183520d495f33be
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '5325'
 ht-degree: 0%
@@ -17,7 +17,7 @@ Adobe Experience Platform ligger i framkanten när det gäller omvandlingslösni
 
 Experience Platform ger er möjlighet att representera strukturen och styra era affärsdata för skalbara, flexibla implementeringar. Implementering av plattformsapplikationer är en viktig resa som kräver strategisk planering och noggranna överväganden, särskilt om ni arbetar i globala, regionala och varumärkesspecifika domäner eller en kombination av alla dessa aspekter.
 
-Det här faktabladet fungerar som referens och innehåller en produktuppfattning och en uppsättning riktlinjer. Dess främsta mål är att ge er och era implementeringsteam de verktyg och insikter som behövs för att effektivt kunna navigera i Experience Platform knepigt. Genom att tillhandahålla ett strukturerat ramverk för utvärdering av specifika behov, överväganden och verkliga användningsområden, får du den kunskap som behövs för att utnyttja Experience Platform och plattformsbaserade tillämpningar fullt ut. När ni läser följande avsnitt kommer ni att hitta värdefulla insikter och rekommendationer för att effektivisera implementeringsprocessen och öka er organisations förmåga att leverera exceptionella upplevelser till er målgrupp, samtidigt som ni tillhandahåller styrning och kontroller för att upprätthålla sekretess och regelefterlevnad.
+Det här faktabladet fungerar som referens och innehåller en produktuppfattning och en uppsättning riktlinjer. Dess främsta mål är att ge er och era implementeringsteam de verktyg och insikter som behövs för att effektivt kunna navigera i Experience Platform knepigt. Genom att tillhandahålla ett strukturerat ramverk för utvärdering av specifika behov, överväganden och verkliga användningsområden, får du den kunskap som behövs för att utnyttja Experience Platform och plattformsbaserade tillämpningar fullt ut. När ni läser följande avsnitt hittar ni värdefulla insikter och rekommendationer för att effektivisera implementeringsprocessen och öka er organisations förmåga att leverera exceptionella upplevelser till er målgrupp, samtidigt som ni tillhandahåller styrning och kontroller för att upprätthålla sekretess och regelefterlevnad.
 
 ![CDP-enhetlig profil](./images/whitepaper/CDPoverview.png)
 
@@ -28,14 +28,17 @@ Om ni har ett flervarumärke, ett flerregionalt företag har ni antagligen unika
 När ni utforskar olika installationsalternativ måste ni förstå och tänka på vilka personligheter som kommer att interagera med Experience Platform och plattformsbaserade program. Att utforma upplevelsen utifrån deras roller och intressen säkerställer en lyckad implementering. Här är tre nyckelpersoner som du bör tänka på när du utforskar alternativen:
 
 **Mary, marknadsföraren:**
+
 - Fokus: Kundvärvning och personalisering av upplevelser i stor skala.
 - Mål: Skapa omfattande profiler och förbättra medieeffektiviteten.
 
 **Ted, teknikern**
+
 - Fokus: Organiserad datahantering.
 - Mål: Säkerställa regelefterlevnad, hantera vattentäta skott och betjäna olika affärsområden.
 
 **Dan, dataarkitekten**
+
 - Fokus: Noggrannhet och kvalitet för data.
 - Mål: Säkerställa datasekretess och förtroende, utforma scheman och datamodeller, hantera datakällor.
 
@@ -69,7 +72,7 @@ Du kan skapa flera sandlådor av alla typer, och för den här typen av företag
 
 ![CDP-Skapa en sandlåda](./images/whitepaper/Create-sandbox.png)
 
-I produktionssandlådan förväntar vi oss att ni ska importera era produktionsprofiler och upplevelsehändelsedata för att skapa en enhetlig profil för era marknadsföringsaktiviteter. Mer information om hur du kombinerar kända och anonyma data från flera företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser i alla kanaler och enheter i realtid finns i [Adobe Real-Time Customer Data Platform-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/home).
+I produktionssandlådan förväntar vi oss att ni ska importera era produktionsprofiler och upplevelsehändelsedata för att skapa en enhetlig profil för era marknadsföringsaktiviteter. Mer information om hur du kombinerar kända och anonyma data från flera företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser i alla kanaler och enheter i realtid finns i [Adobe Real-Time Customer Data Platform-dokumentationen](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/home).
 
 **Åtkomstkontroller**
 
@@ -77,13 +80,13 @@ Du kan definiera åtkomstkontroller med roller och behörigheter för att styra 
 
 Överväg en datatekniker som kanske inte behöver tillgång till alla Experience Platform-funktioner och plattformsbaserade programfunktioner. De ansvarar vanligtvis för att skapa datadefinitioner (scheman), konfigurera datakällor för att importera data och skapa datauppsättningar. Men de kanske inte är samma person som skapar och aktiverar målgrupper för personaliserade kundupplevelser. Skapa en roll för den här personen, lägg till lämpliga behörigheter och ge åtkomst endast till de funktioner som krävs. En marknadsförare skulle däremot inte skapa scheman och inhämta data utan istället fokusera på att skapa och aktivera målgrupper för att möjliggöra personaliserade kundupplevelser.
 
-Om du vill kan du lägga till detaljerade åtkomstkontroller för att begränsa åtkomsten till specifika fält i den enhetliga kundprofilen med attributbaserad åtkomstkontroll/åtkomstkontroll på fältnivå. Detta är styrningsmekanismer i Experience Platform som gör att du kan begränsa åtkomst till dataattribut baserat på fördefinierade etiketter. Med åtkomstkontroll på fältnivå kan personligt identifierbara data styras och åtkomsten begränsas i alla Experience Platform- och programarbetsflöden. Mer information om åtkomstkontrollsfunktioner finns i [åtkomstkontrollsdokumentationen](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home).
+Om du vill kan du lägga till detaljerade åtkomstkontroller för att begränsa åtkomsten till specifika fält i den enhetliga kundprofilen med attributbaserad åtkomstkontroll/åtkomstkontroll på fältnivå. Detta är styrningsmekanismer i Experience Platform som gör att du kan begränsa åtkomst till dataattribut baserat på fördefinierade etiketter. Med åtkomstkontroll på fältnivå kan personligt identifierbara data styras och åtkomsten begränsas i alla Experience Platform- och programarbetsflöden. Mer information om åtkomstkontrollsfunktioner finns i [åtkomstkontrollsdokumentationen](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home).
 
 ![CDP-åtkomstkontroller, konfigurera rollbehörigheter](./images/whitepaper/Access-Controls-Configure-RolePermissions.png)
 
 **Utvecklingslivscykel med utvecklingssandlådor**
 
-En utvecklingssandlåda fungerar på samma sätt som en produktionssandlåda i alla funktionella aspekter. Det skiljer sig genom att det kommer att finnas avtalsenliga garantimöjligheter som håller dig inom licensgränserna. Den är exklusiv för utveckling och testning med icke-produktionsprofiler, som stöder upp till 10 % av din licensierade profil (mäts kumulativt i alla godkända utvecklingssandlådor). Mer information och skyddsförslag finns i översiktsdokumentationen för [sandlådor](https://experienceleague.adobe.com/sv/docs/experience-platform/sandbox/home) och på sidan [produktbeskrivningar](https://helpx.adobe.com/se/legal/product-descriptions.html) för berättigandeinformation.
+En utvecklingssandlåda fungerar på samma sätt som en produktionssandlåda i alla funktionella aspekter. Det skiljer sig genom att det kommer att finnas avtalsenliga garantimöjligheter som håller dig inom licensgränserna. Den är exklusiv för utveckling och testning med icke-produktionsprofiler, som stöder upp till 10 % av din licensierade profil (mäts kumulativt i alla godkända utvecklingssandlådor). Mer information och skyddsförslag finns i översiktsdokumentationen för [sandlådor](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/home) och på sidan [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) för berättigandeinformation.
 
 Du kan ha flera utvecklingssandlådor (upp till 4 i det här företagsexemplet, eftersom vi använder en produktionssandlåda) för utvecklings- och testlivscykeln.
 
@@ -99,7 +102,7 @@ Med sandlådeverktygen kan du markera olika objekt och exportera dem till ett pa
 
 Du kan använda Experience Platform API:er för att automatisera sandlådedistributioner och konfigurationsåtgärder. API:er ger programmerbar kontroll för repetitiva uppgifter som export, import eller ändring av sandlådekonfigurationer, vilket ger flexibilitet om du föredrar automatiserade arbetsflöden.
 
-Mer information om sandlådeverktyg finns i [dokumentationen för sandlådeverktyg](https://experienceleague.adobe.com/sv/docs/experience-platform/sandbox/ui/sandbox-tooling).
+Mer information om sandlådeverktyg finns i [dokumentationen för sandlådeverktyg](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/ui/sandbox-tooling).
 
 | ![CDP-Skapa ett paket](./images/whitepaper/create-package.png) | ![CDP-List-paket](./images/whitepaper/list-packages.png) |
 | --- | --- |
@@ -226,7 +229,7 @@ Dessutom kan du använda Experience Platform Segment Match, en funktion i Platfo
 
 Med denna segmentdelningstjänst kan två eller flera användare utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 
-Mer information om funktionen för segmentmatchning finns i [dokumentationen för segmentmatchning](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/segment-match/overview).
+Mer information om funktionen för segmentmatchning finns i [dokumentationen för segmentmatchning](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/segment-match/overview).
 
 ### 3. En kombination av strategier för globala verksamheter, regionala och varumärkesspecifika
 
@@ -238,7 +241,7 @@ Med hänsyn till dessa krav kan Experience Platform konfigureras för att ge dig
 
 #### Så här fungerar det
 
-Vi börjar med att planera implementeringen, konfigurera den översta miljön och bestämmer hur många sandlådor, roller och behörigheter som krävs för att köra Experience Platform och plattformsbaserade program som är optimalt för detta företag.
+Vi börjar med att planera implementeringen, konfigurera din toppnivåmiljö och bestämma hur många sandlådor, roller och behörigheter som krävs för att köra Experience Platform och plattformsbaserade program som är optimalt för det här företaget.
 
 ##### Allmänna inställningar för det här företaget
 
@@ -285,23 +288,23 @@ Schema för enskild XDM-profil:
 ```
 \- PII
 \- Germany
-	\- name --> Label: "Germany"
-	\- email --> Label: "Germany"
-	\- birthdate --> Label: "Germany"
+    \- name --> Label: "Germany"
+    \- email --> Label: "Germany"
+    \- birthdate --> Label: "Germany"
 
 \- France
-	\- name --> Label: "France"
-	\- email --> Label: "France"
-	\- birthdate --> Label: "France"
+    \- name --> Label: "France"
+    \- email --> Label: "France"
+    \- birthdate --> Label: "France"
 
 \- Netherland
-	\- name --> Label: "Netherland", "Germany"
-	\- email --> Label: "Netherland", "Germany"
-	\- birthdate --> Label: "Netherland", "Germany"
+    \- name --> Label: "Netherland", "Germany"
+    \- email --> Label: "Netherland", "Germany"
+    \- birthdate --> Label: "Netherland", "Germany"
 
 \- Loyalty
-	\- member
-	\- registrationDate
+    \- member
+    \- registrationDate
 ```
 
 ###### Målgrupper: Använd attributbaserad åtkomstkontroll: Åtkomstkontroll på objektnivå för att styra åtkomsten till varumärkes-/landsspecifika målgrupper
@@ -358,7 +361,7 @@ I vissa scenarier kan du välja att distribuera Experience Platform-program och 
 
 ### Vad är ett företags-ID?
 
-- Ett företags-ID är Adobe implementering av Federated ID- och OAuth 2.0-protokollet.
+- Ett företags-ID är Adobe implementering av Federated ID- och OAuth 2.0-protokoll.
 
 - Ett företags-ID är en samling med alla program, användare och behörigheter som en organisation har behörighet till enligt sina Adobe-avtalsvillkor.
 
@@ -374,7 +377,7 @@ I vissa scenarier kan du välja att distribuera Experience Platform-program och 
 
 | Fördelar | Överväganden |
 | -------- | -------------- |
-| Nedan följer en lista över fördelarna med att ha flera organisations-ID:n: <ul><li>Flexibilitet att lagra data i särskilda globala regioner.</li><li>&#x200B; separata användarinloggningar per instans - d.v.s. helfödoämnen kan inte logga in på Audible. &#x200B;</li><li>Dedikerade API-slutpunkter som ger varje Market/BU möjlighet att skapa anpassade anslutningar efter behov i sina egna &#x200B;.</li><li>Varje affärsenhet skulle ha sina egna kundhanterade nycklar &#x200B;.</li><li>GDPR-begäranden kan göras per affärsenhet &#x200B;.</li><li>Helt isolerad lagring och beräkning mellan affärsenheter &#x200B;.</li><li>Justerar vissa prestandaresäkerhetsgarantier/begränsningar på organisationsnivå &#x200B;.</li><li>Mer flexibilitet med provisionering och mixning av SKU:er mellan olika affärsenheter. En organisation kan till exempel ha en annan SKU än Adobe Journey Optimizer jämfört med en annan.</li></ul> | Nedan följer några saker du bör tänka på när du har flera organisations-ID:n: <ul><li>Flera organisations-ID:n att hantera, jämfört med ett. &#x200B;</li><li>Flera olika instanser/miljöer att hantera (integreringar, datainläsningar och så vidare).</li><li>&#x200B; ECID är unika per organisation, vilket gör det svårt att matcha data mellan olika &#x200B;.</li><li>Skulle behöva migrera/återimplementera Analytics och Target per organisation - förlora global sammanslagning (om den används för närvarande). &#x200B;</li><li>Mer samordning krävs för att göra GDPR-förfrågningar &#x200B; olika affärsenheter.</li><li>Vissa Experience Platform-baserade programintegrationer lagrar metadata på organisationsnivå. Allt är inte&quot;sandlådor&quot;. &#x200B;</li><li>Organisations-ID är fäst till en region. Värdplatsen för Adobe AWS ligger för närvarande endast i USA. Adobe stöder inte migrering från en värdregion till en annan. &#x200B;</li><li>Edge är inte sandlådemedveten (för händelsevidarebefordran).</li></ul> |
+| Nedan följer en lista över fördelarna med att ha flera organisations-ID:n: <ul><li>Flexibilitet att lagra data i särskilda globala regioner.</li><li>&#x200B; separata användarinloggningar per instans, d.v.s. helfödoverk kan inte logga in på Audible. &#x200B;</li><li>Dedikerade API-slutpunkter som ger varje Market/BU möjlighet att skapa anpassade anslutningar efter behov i sina egna &#x200B;.</li><li>Varje affärsenhet skulle ha sina egna kundhanterade nycklar &#x200B;.</li><li>GDPR-begäranden kan göras per affärsenhet &#x200B;.</li><li>Helt isolerad lagring och beräkning mellan affärsenheter &#x200B;.</li><li>Justerar vissa prestandaresäkerhetsgarantier/begränsningar på organisationsnivå &#x200B;.</li><li>Mer flexibilitet med provisionering och mixning av SKU:er mellan olika affärsenheter. En organisation kan till exempel ha en annan SKU än Adobe Journey Optimizer jämfört med en annan.</li></ul> | Nedan följer några saker du bör tänka på när du har flera organisations-ID:n: <ul><li>Flera organisations-ID:n att hantera, jämfört med ett. &#x200B;</li><li>Flera olika instanser/miljöer att hantera (integreringar, datainläsningar och så vidare).</li><li>&#x200B; ECID är unika per organisation, vilket gör det svårt att matcha data mellan olika &#x200B;.</li><li>Skulle behöva migrera/återimplementera Analytics och Target per organisation - förlora global sammanslagning (om den används för närvarande). &#x200B;</li><li>Mer samordning krävs för att göra GDPR-förfrågningar &#x200B; olika affärsenheter.</li><li>Vissa Experience Platform-baserade programintegrationer lagrar metadata på organisationsnivå. Allt är inte&quot;sandlådor&quot;. &#x200B;</li><li>Organisations-ID är fäst till en region. Värdplatsen för Adobe AWS ligger för närvarande endast i USA. Adobe stöder inte migrering från en värdregion till en annan. &#x200B;</li><li>Edge är inte sandlådemedveten (för händelsevidarebefordran).</li></ul> |
 
 **ID för en organisation: Fördelar och överväganden**
 
@@ -431,7 +434,7 @@ Experience Platform ger ett robust ramverk för att centralisera, styra och akti
 
    - Du måste noggrant bedöma om **flera organisations-ID:n eller flera sandlådor** ska distribueras baserat på datastorlek, efterlevnad och driftbehov.
 
-   - **Organisations-ID** erbjuder fullständig isolering&#x200B;**, medan flersandlådeinställningar ger operativ flexibilitet i ett delat styrningsramverk**.
+   - **Organisations-ID** erbjuder fullständig isolering**, medan flersandlådeinställningar ger operativ flexibilitet i ett delat styrningsramverk**.
 
 ## Sluttankar
 

@@ -3,7 +3,7 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2025-10-08T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 6afb8d56b8af8e5b0450f769414d3afcac1d58eb
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1977'
 ht-degree: 1%
@@ -185,7 +185,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
 | Oktober 2025 | Stöd för ytterligare identitetsfält har lagts till | Ytterligare stöd för personliga identifierare som `firstName`, `lastName`, `street`, `city`, `state`, `zip` och `country` har lagts till. Genom att mappa dessa fält kan du förbättra målgruppsmatchningen. |
-| Februari 2025 | Lagt till kravet att lägga till **[!UICONTROL Amazon Ads Consent Signal]** i exportdataflöden och befordrade målet från betaversionen till allmänt tillgängligt. |
+| Februari 2025 | Lagt till kravet att lägga till **[!UICONTROL Amazon Ads Consent Signal]** i exportdataflöden och befordrade målet från betaversionen till allmänt tillgängligt. |  |
 | Maj 2024 | Funktioner och dokumentation | Mappningsalternativet har lagts till för att exportera parametern `countryCode` till Amazon Ads. Använd `countryCode` i [mappningssteget](#map) om du vill förbättra identitetsmatchningsfrekvensen med Amazon. |
 | Mars 2024 | Funktioner och dokumentation | Lagt till alternativet att exportera målgrupper som ska användas i [!DNL Amazon Marketing Cloud] (AMC). |
 | Maj 2023 | Funktioner och dokumentation | <ul><li>Stöd har lagts till för markering av reklamregion i [målanslutningsarbetsflödet](#destination-details).</li><li>Uppdaterad dokumentation som återspeglar tillägget av Advertiser Region. Mer information om hur du väljer rätt annonsregion finns i [Amazon-dokumentationen](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |

@@ -2,7 +2,7 @@
 title: Översikt över segmenttillägg
 description: Läs mer om Splunk-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 653b5897-493b-44f2-aeea-be492da2b108
-source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '958'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Översikt över segmenttillägg
 
-[Splunk](https://www.splunk.com) är en observerbarhetsplattform som tillhandahåller sökning, analys och visualisering för åtgärdbara insikter i dina data. Tillägget [Splunk &#x200B;](../../../ui/event-forwarding/overview.md) för händelsevidarebefordran[utnyttjar REST API:t för HTTP-händelseinsamlaren](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints) för att skicka händelser från Adobe Experience Platform Edge Network till [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector).
+[Splunk](https://www.splunk.com) är en observerbarhetsplattform som tillhandahåller sökning, analys och visualisering för åtgärdbara insikter i dina data. Tillägget [Splunk ](../../../ui/event-forwarding/overview.md) för händelsevidarebefordran[utnyttjar REST API:t för HTTP-händelseinsamlaren](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints) för att skicka händelser från Adobe Experience Platform Edge Network till [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector).
 
 Splunk använder lagertoken som autentiseringsmekanism för att kommunicera med Splunk Event Collector API.
 
@@ -61,7 +61,7 @@ Välj **Tillägg** i den vänstra navigeringen. Under **Installerad** väljer du
 
 ![Konfigurera knapp för det Splunk-tillägg som markeras i användargränssnittet](../../../images/extensions/server/splunk/configure.png)
 
-För **[!UICONTROL HTTP Event Collector URL]** anger du din Splunk-plattformsinstansadress och port. Ange ditt [!DNL Event Collector Token]-värde under **[!UICONTROL Access Token]**. När du är klar väljer du **[!UICONTROL Save]**.
+För **[!UICONTROL HTTP Event Collector URL]** anger du din Splunk-plattformsinstansadress och port. Ange ditt **[!UICONTROL Access Token]**-värde under [!DNL Event Collector Token]. När du är klar väljer du **[!UICONTROL Save]**.
 
 ![Konfigurationsalternativen är ifyllda i användargränssnittet](../../../images/extensions/server/splunk/input.png)
 

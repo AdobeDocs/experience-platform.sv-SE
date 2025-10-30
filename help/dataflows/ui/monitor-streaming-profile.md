@@ -2,7 +2,7 @@
 title: Inmatning av direktuppspelningsprofil för bildskärm
 description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka inmatning av direktuppspelningsprofiler
 exl-id: da7bb08d-2684-45a1-b666-7580f2383748
-source-git-commit: 75ccdfdff4ded0a13213089d1c7dcc4d8f14e0f8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1932'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 >[!NOTE]
 >
->Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+>Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 ## Övervakningsmått för inmatning av direktuppspelningsprofil {#streaming-profile-metrics}
 
@@ -91,7 +91,7 @@ Använd mättabellen för information som är specifik för dina dataflöden. Se
 | Begär genomströmning | Detta mått representerar antalet händelser som kommer in i matningssystemet per sekund. | Sandbox/Dataflow | Övervakning i realtid med datauppdatering var 60:e sekund. |
 | Bearbetningsflöde | Det här måttet visar antalet händelser som har importerats av systemet varje sekund. | Sandbox/Dataflow | Övervakning i realtid med datauppdatering var 60:e sekund. |
 | P95-fördröjning vid förtäring | Detta mått mäter den 95:e percentilfördröjningen från det ögonblick en händelse anländer till Experience Platform när den kan hämtas till profilbutiken. | Sandbox/Dataflow | Övervakning i realtid med datauppdatering var 60:e sekund. |
-| Maximal genomströmning | Det här måttet representerar maximalt antal inkommande begäranden per sekund som matas in i direktuppspelningsprofilen | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> |
+| Maximal genomströmning | Det här måttet representerar maximalt antal inkommande begäranden per sekund som matas in i direktuppspelningsprofilen | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> |  |
 | Insamlade poster | Det här måttet representerar det totala antalet poster som har importerats till profilarkivet under ett konfigurerat tidsfönster. | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> | <ul><li>Sandbox/Dataflow: Realtidsövervakning med datauppdatering var 60:e sekund.</li><li>Dataflödeskörning: Grupperad på 15 minuter.</li></ul> |
 | Misslyckade poster | Det här måttet visar det totala antalet poster som misslyckades med inmatningen i profilarkivet inom ett konfigurerat tidsfönster på grund av fel. | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> | <ul><li>Sandbox/Dataflow: Realtidsövervakning med datauppdatering var 60:e sekund.</li><li>Dataflödeskörning: Grupperad på 15 minuter.</li></ul> |
 | Överhoppade poster | Det här måttet representerar det totala antalet poster som släppts inom ett konfigurerat tidsfönster på grund av konfigurations- eller kapacitetsfel. | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> | <ul><li>Sandbox/Dataflow: Realtidsövervakning med datauppdatering var 60:e sekund.</li><li>Dataflödeskörning: Grupperad på 15 minuter.</li></ul> |

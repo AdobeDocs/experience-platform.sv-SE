@@ -4,9 +4,9 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: ec87cb1c8755f52233a5725aa3bb0c80a135d60c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '917'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du konfigurera olika komponenter i befintliga aktiveringsdataflöden till mål, som:
 
-* [Aktivera eller inaktivera &#x200B;](#enable-disable-dataflows) aktiveringsdataflöden
+* [Aktivera eller inaktivera ](#enable-disable-dataflows) aktiveringsdataflöden
 * [Lägg till ytterligare målgrupper](#add-audiences) i aktiveringsdataflöden
 * [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
 * [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)
@@ -71,6 +71,7 @@ Välj **[!UICONTROL Activate audiences]** i den högra listen. Den här åtgärd
 Välj steget **[!UICONTROL Scheduling]** i aktiveringsarbetsflödet för att redigera aktiveringsschemat och exportfrekvensen för ditt dataflöde. I det här steget kan du konfigurera hur ofta data exporteras till målet.
 
 I **[!UICONTROL Scheduling]**-steget i aktiveringsarbetsflödet kan du:
+
 * Justera exportfrekvensen.
 * Ange eller ändra start- och slutdatum för aktiveringsdataflödet, med mera.
 

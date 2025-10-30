@@ -2,14 +2,14 @@
 title: Adobe Client Data Layer Extension
 description: Läs mer om taggtillägget Adobe Client Data Layer i Adobe Experience Platform.
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '647'
 ht-degree: 0%
 
 ---
 
-# Tillägget Adobe Client Data Layer
+# Adobe Client Data Layer-tillägg
 
 Den här dokumentationen innehåller exempel och metodtips om hur du använder tillägget Adobe Client Data Layer.
 
@@ -18,7 +18,7 @@ If you would like to have more details on development consideration, [please rea
 
 ## Installation
 
-Om du vill installera tillägget går du till tilläggskatalogen i användargränssnittet för Experience Platform eller datainsamlingen och väljer Adobe Client Data Layer.
+Om du vill installera tillägget går du till tilläggskatalogen i Experience Platform användargränssnitt eller användargränssnittet för datainsamling och väljer Adobe klientdatalager.
 
 ![ACDL-tilläggsvy i katalog](./images/catalog.png)
 
@@ -51,12 +51,12 @@ Om du väljer det här alternativet avlyssnar händelseavlyssnaren alla ändring
 
 Följande exempel på push-händelser spåras av avlyssnaren:
 
-* ` adobeDataLayer.push({"data":"something"})`
-* ` adobeDataLayer.push({"event":"myevent","data":"something"})`
+* `adobeDataLayer.push({"data":"something"})`
+* `adobeDataLayer.push({"event":"myevent","data":"something"})`
 
 Följande exempel på push-händelse spåras inte av avlyssnaren:
 
-* ` adobeDataLayer.push({"event":"myevent"})`
+* `adobeDataLayer.push({"event":"myevent"})`
 
 ### Lyssna på alla händelser
 
@@ -64,8 +64,8 @@ Om du väljer det här alternativet avlyssnar händelseavlyssnaren alla händels
 
 Följande exempel på push-händelser spåras av avlyssnaren:
 
-* ` adobeDataLayer.push({"event":"myevent"})`
-* ` adobeDataLayer.push({"event":"myevent","data":"something"})`
+* `adobeDataLayer.push({"event":"myevent"})`
+* `adobeDataLayer.push({"event":"myevent","data":"something"})`
 
 Följande exempel på push-händelse spåras inte av avlyssnaren:
 
@@ -91,7 +91,7 @@ I följande avsnitt beskrivs de åtgärder som stöds av tillägget.
 
 ### Återställ datalager
 
-Tillägget ger dig ett sätt att återställa datalagrets längd, vilket kan hjälpa dig att behålla en begränsad storlek för ett enkelsidigt program (SPA).
+Tillägget ger dig ett sätt att återställa datalagrets längd, vilket kan hjälpa dig att behålla en begränsad storlek för ett ensidigt program (SPA).
 
 Det finns dock för närvarande ingen möjlighet att helt ta bort information som tidigare ställts in under push-metoderna.
 

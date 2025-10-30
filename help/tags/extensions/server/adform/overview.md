@@ -3,7 +3,8 @@ keywords: integrering av adform; adform;
 title: Integrering för oautentiserad återmarknadsföring
 description: Tack vare den här Adobe Experience Platform-integreringen kan du omdirigera användare baserat på ECID.
 last-substantial-update: 2025-03-26T00:00:00Z
-source-git-commit: 23da6e12b1f5bdc37240d7aa11a44e040b29e3f7
+exl-id: 37eb9453-fc3c-481e-94ea-54d9b1545631
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '726'
 ht-degree: 0%
@@ -16,14 +17,14 @@ Tillägget [[!DNL Adform]](https://www.adformhelp.com/hc/en-us/articles/29635608
 
 Till skillnad från traditionell spårning på klientsidan eliminerar det här tillägget behovet av cookies från tredje part genom att utnyttja ID:n från första part - närmare bestämt ECID (Experience Cloud ID) som synkroniseras med Adform. Detta möjliggör smidig återannonsering av målgrupper utan att JavaScript behöver driftsättas på klientsidan.
 
-This guide covers how to install, configure and deploy the extension to forward events from a brand&#39;s digital properties via Adobe&#39;s Edge Network to Adform to enable seamless retargeting of visitors.
+Den här guiden beskriver hur du installerar, konfigurerar och distribuerar tillägget för att vidarebefordra händelser från ett varumärkes digitala egendom via Adobe Edge Network till Adform för att möjliggöra en smidig omdirigering av besökare.
 
-## Offsite retargeting
+## Återmarknadsföring utanför webbplatsen
 
-Through offsite retargeting, you can re-engage potential customers who visited your website but didn&#39;t convert. Adform helps you reach these audiences across various platforms, reinforcing brand presence and increasing conversion opportunities. Use this integration to:
+Genom omdirigering på annan plats kan ni engagera potentiella kunder som besökt er webbplats men inte konverterat. Med Adobe kan ni nå dessa målgrupper på olika plattformar, stärka varumärkets närvaro och öka konverteringsmöjligheterna. Använd den här integreringen för att:
 
-* Re-engage unknown visitors without the use of third-party cookies.
-* Activate audiences directly on ECIDs without using third-party cookie-alternate identifiers or additional tags on your digital properties.
+* Engagera okända besökare på nytt utan att använda cookies från tredje part.
+* Aktivera målgrupper direkt på ECID:n utan att använda cookie-alternativa identifierare eller extra taggar från tredje part på era digitala egenskaper.
 
 Med Adform kan du
 
@@ -47,18 +48,18 @@ Innan du integrerar Adobe med Adobe måste du kontrollera att följande krav är
 2. **CDP- eller Anslutnings-SKU**: Du måste ha antingen Adobe Customer Data Platform (CDP) Prime eller Ultimate SKU, eller Connection SKU, för att kunna aktivera smidig kommunikation på både klient- och serversidan.
 
 3. **Adobe Experience Platform Edge Network-konfiguration**:
-   * Kontrollera att Edge Network har konfigurerats för att stödja händelsevidarebefordran i realtid för återmarknadsföring utanför webbplatsen. Mer information finns i guiden [Komma igång med händelsevidarebefordran](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/event-forwarding/getting-started).
+   * Kontrollera att Edge Network har konfigurerats för att stödja händelsevidarebefordran i realtid för återmarknadsföring utanför webbplatsen. Mer information finns i guiden [Komma igång med händelsevidarebefordran](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/getting-started).
    * Det här steget är avgörande för att effektivt kunna överföra data till Adforms slutpunkt på serversidan.
 
-Once these prerequisites are in place, you can continue to configure and deploy the [!DNL Adform] extension.
+När dessa krav är uppfyllda kan du fortsätta att konfigurera och distribuera tillägget [!DNL Adform].
 
-## Configure the [!DNL Adform] extension {#configure-adform-extension}
+## Konfigurera tillägget [!DNL Adform] {#configure-adform-extension}
 
-To configure the [!DNL Adform] extension, follow the steps outlined in the sections below.
+Om du vill konfigurera tillägget [!DNL Adform] följer du de steg som beskrivs i avsnitten nedan.
 
 ### Installera och konfigurera tillägget
 
-Navigate to the [!DNL Adform extension] in the event forwarding UI and enter the required values:
+Navigera till [!DNL Adform extension] i gränssnittet för vidarebefordring av händelser och ange de värden som krävs:
 
 | Indata | Beskrivning |
 | --- | --- |
@@ -81,7 +82,7 @@ Spara konfigurationen när du har angett dessa uppgifter.
 | `User Agent` | Hämtar information för målgruppsmatchning. |
 | `IP Address` | En avgörande faktor för korrekt målinriktning och återmarknadsföring. |
 
-**Recommended parameters:**
+**Rekommenderade parametrar:**
 
 | Parametrar | Beskrivning |
 | --- | --- |
@@ -105,14 +106,15 @@ Tillägget måste kopplas till en regel för att fungera korrekt. Om inga villko
 ## Validera och distribuera
 
 Kontrollera att tillägget är installerat och konfigurerat korrekt och att alla nödvändiga dataelement mappas, inklusive:
+
 * [ECID](/help/identity-service/features/ecid.md)
 * Sidnamn
 * Hänvisnings-URL
 * Användaragent
 * IP-adress
 
-Once you input all the required fields and finish testing, select **build** to deploy the extension.
+När du har angett alla obligatoriska fält och avslutat testningen väljer du **bygg** för att distribuera tillägget.
 
 ## Nästa steg
 
-You should now understand how Adform integrates with Adobe&#39;s server-side capablities, and can assess the feasibility of the integration within your existing infrastructure. For more information, refer to [Adform&#39;s official documentation](https://www.adformhelp.com/hc/en-us/articles/29635608709137-Use-the-Adform-S2S-Site-Tracking-Extension-With-Adobe-Experience-Cloud).
+Du bör nu förstå hur Adform kan integreras med Adobe serverfunktioner och bedöma om integreringen kan genomföras i din befintliga infrastruktur. Mer information finns i [Adforms officiella dokumentation](https://www.adformhelp.com/hc/en-us/articles/29635608709137-Use-the-Adform-S2S-Site-Tracking-Extension-With-Adobe-Experience-Cloud).

@@ -2,7 +2,7 @@
 title: Guide för konfiguration av länkningsregler för identitetsdiagram
 description: Lär dig mer om de olika implementeringstyperna som du kan konfigurera med Länkningsregler för identitetsdiagram.
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 6af5f87c9c32212568e84edbed9f043a766870be
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 1%
@@ -265,7 +265,7 @@ CRMIDhash: John, ECID: 111
 CRMIDhash: Jane, ECID: 111
 ```
 
-![Ett delat enhetsdiagram med hashade CRMID &#x200B;](../images/configs/intermediate/shared-device-hashed-crmid.png)
+![Ett delat enhetsdiagram med hashade CRMID ](../images/configs/intermediate/shared-device-hashed-crmid.png)
 
 >[!TAB Felaktiga data]
 
@@ -407,6 +407,7 @@ Läs det här avsnittet för mer avancerade implementeringar av [!DNL Identity G
 >[!NOTE]
 >
 >För att slutföra implementeringarna nedan måste du skapa anpassade namnutrymmen med identitetssymbolerna (skiftlägeskänsliga) för:
+>
 >* `CRMID`
 >* `loginID`
 

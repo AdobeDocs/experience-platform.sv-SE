@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 exl-id: 6fb92e35-922c-47ba-8cf4-44edd92acfa1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '720'
-ht-degree: 25%
+source-wordcount: '722'
+ht-degree: 26%
 
 ---
 
@@ -39,7 +39,7 @@ Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya mål**
+**Nya destinationer**
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
@@ -78,8 +78,8 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | ------- | ----------- |
 | Förbättringar av Adobe Audience Manager källanslutning | Nu kan du filtrera och markera enskilda förstahandssegment från Audience Manager som ska importeras till Experience Platform, samt filtrera bort egna egenskaper. Mer information finns i självstudiekursen [Skapa en Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). |
 | [!DNL Google BigQuery] förbättringar av källkopplingen | Du kan nu importera filer som är större än 10 GB i en flödeskörning med [!DNL BigQuery]-källkopplingen. Mer information finns i översikten för [[!DNL BigQuery] källkopplingen](../../sources/connectors/databases/bigquery.md). |
-| Stöd för komplexa datatyper för molnlagring | Du kan nu importera komplexa datatyper, till exempel arrayer i JSON-filer, när du använder en anslutning till en molnlagringskälla. Se självstudiekurserna om hur du skapar ett molnlagringsdataflöde [&#x200B; i gränssnittet &#x200B;](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) eller [med  [!DNL Flow Service] API](../../sources/tutorials/api/collect/cloud-storage.md) för mer information. |
+| Stöd för komplexa datatyper för molnlagring | Du kan nu importera komplexa datatyper, till exempel arrayer i JSON-filer, när du använder en anslutning till en molnlagringskälla. Se självstudiekurserna om hur du skapar ett molnlagringsdataflöde [ i gränssnittet ](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) eller [med  [!DNL Flow Service] API](../../sources/tutorials/api/collect/cloud-storage.md) för mer information. |
 | Stöd för huvudnyckelbaserad autentisering för tjänsten för källan [!DNL Microsoft Dynamics] | Du kan nu autentisera ditt [!DNL Dynamics]-konto med en tjänsthuvudnyckel som ett alternativ till lösenordsbaserad autentisering. Mer information finns i översikten för [[!DNL Dynamics] källkopplingen](../../sources/connectors/crm/ms-dynamics.md). |
-| Stöd för anpassade avgränsare i molnlagringskällor | Du kan nu ange en anpassad kolumnavgränsare, till exempel ett komma (`,`), en flik (`\t`) eller ett rör (`|`), för att samla in avgränsade filer i användargränssnittet. Mer information finns i självstudiekursen [Skapa ett dataflöde med en anslutning för molnlagringskälla](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) |
+| Stöd för anpassade avgränsare i molnlagringskällor | Nu kan du ange en anpassad kolumnavgränsare, till exempel ett komma (`,`), en flik (`\t`) eller ett rör (&amp;vert;), för att samla in avgränsade filer i användargränssnittet. Mer information finns i självstudiekursen [Skapa ett dataflöde med en anslutning för molnlagringskälla](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).

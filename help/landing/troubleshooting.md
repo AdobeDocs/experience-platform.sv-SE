@@ -9,7 +9,7 @@ type: Documentation
 role: Developer
 feature: API, Audiences, Data Ingestion, Datasets, Destinations, Privacy, Queries, Schemas, Sandboxes, Sources
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1817'
 ht-degree: 3%
@@ -62,7 +62,7 @@ Mer information om vilka frågeparametrar som är tillgängliga för en viss tj�
 
 ## Hur anger jag att ett JSON-fält ska uppdateras i en begäran från PATCH? {#how-do-i-indicate-a-json-field-to-update-in-a-patch-request}
 
-Många PATCH-åtgärder i [!DNL Experience Platform] API:er använder [&#x200B; JSON-pekarsträngar &#x200B;](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster med formatet [JSON Patch](https://tools.ietf.org/html/rfc6902). I guiden [Grundläggande API &#x200B;](api-fundamentals.md) finns detaljerad information om nödvändig syntax för dessa tekniker.
+Många PATCH-åtgärder i [!DNL Experience Platform] API:er använder [ JSON-pekarsträngar ](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster med formatet [JSON Patch](https://tools.ietf.org/html/rfc6902). I guiden [Grundläggande API ](api-fundamentals.md) finns detaljerad information om nödvändig syntax för dessa tekniker.
 
 ## Kan jag använda Postman för att ringa anrop till [!DNL Experience Platform] API:er? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
@@ -73,11 +73,15 @@ Många PATCH-åtgärder i [!DNL Experience Platform] API:er använder [&#x200B; 
 Beroende på om du använder gränssnittet eller API:t gäller följande systemkrav:
 
 **För gränssnittsbaserade åtgärder:**
+
 - En modern standardwebbläsare. Även om den senaste versionen av [!DNL Chrome] rekommenderas stöds även aktuella och tidigare större versioner av [!DNL Firefox], [!DNL Internet Explorer] och Safari.
+
    - Varje gång en ny större version släpps har [!DNL Experience Platform] stöd för den senaste versionen, medan stöd för den tredje senaste versionen tas bort.
+
 - Alla webbläsare måste ha cookies och JavaScript aktiverat.
 
 **För API- och utvecklarinteraktioner:**
+
 - En utvecklingsmiljö som ska utvecklas för integrering av REST, strömning och Webkrok.
 
 ## Fel och felsökning {#errors-and-troubleshooting}
@@ -201,6 +205,7 @@ Det här felmeddelandet visas när en POST-, PUT- eller PATCH-begäran har ett o
 ```
 
 Det här felmeddelandet visas i något av följande två fall:
+
 - När ett felaktigt eller felaktigt ID-huvud (`x-gw-ims-org-id`) skickas i en API-begäran. Kontrollera att rätt ID för din organisation finns med innan du försöker igen.
 - När ditt konto (som representeras av de angivna autentiseringsuppgifterna) inte är associerat med en produktprofil för Experience Platform. Följ stegen för att [generera autentiseringsuppgifter](./api-authentication.md#authentication-for-each-session) i självstudiekursen för Experience Platform API-autentisering för att lägga till Experience Platform i ditt konto och uppdatera autentiseringsuppgifterna i enlighet med detta.
 

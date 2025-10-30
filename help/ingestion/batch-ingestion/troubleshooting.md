@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;inmatade data;felsökning;faq;Inmatning;batchförtäring;batchförtäring;
+keywords: Experience Platform;hem;populära ämnen;inmatade data;felsökning;frågor;Inmatning;batchmatning;batchförtäring;
 solution: Experience Platform
 title: Felsökningsguide för batchinmatning
 description: Den här dokumentationen hjälper dig att besvara vanliga frågor om Adobe Experience Platform API:er för inmatning av batchdata.
 exl-id: 0a750d7e-a4ee-4a79-a697-b4b732478b2b
-source-git-commit: 37b241f15f297263cc7aa20f382c115a2d131c7e
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1426'
 ht-degree: 0%
@@ -272,4 +272,4 @@ Det finns två anledningar till att mätvärden kanske inte är tillgängliga i 
 | 200 | Batchen har godkänts för bearbetning och kommer att övergå till ett slutligt tillstånd, till exempel Aktiv eller Misslyckad. När batchen har skickats kan den övervakas med slutpunkten `GetBatch`. |
 | 400 | Felaktig begäran. Returneras om det finns några segment som saknas eller överlappar varandra i en grupp. |
 
-[large-file-upload]: batch_data_ingestion_developer_guide.md#how-to-ingest-large-parquet-files
+`[large-file-upload]: batch_data_ingestion_developer_guide.md#how-to-ingest-large-parquet-files`

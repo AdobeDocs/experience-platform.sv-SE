@@ -5,7 +5,7 @@ title: Frågar API-slutpunkt
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
 role: Developer
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '950'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Följande avsnitt går igenom anrop som du kan göra med slutpunkten `/queries` 
 
 ### Hämta en lista med frågor
 
-Du kan hämta en lista med alla frågor för din organisation genom att göra en GET-förfrågan till slutpunkten `/queries`.
+Du kan hämta en lista med alla frågor för din organisation genom att göra en GET-begäran till slutpunkten `/queries`.
 
 **API-format**
 
@@ -40,7 +40,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 | `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultat efter skapade i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
 | `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet den äldsta frågan först och fortsätter sedan att visa de senaste resultaten.<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. Grundläggande ISO-tidsstämplar har formatet `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skrivs som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30 am, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och anges med suffixet Z (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state` och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med) och `~` (innehåller). `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla frågor med det angivna ID:t. |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML escape-konverterade. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state` och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med) och `~` (innehåller). `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla frågor med det angivna ID:t. |
 | `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. `excludeSoftDeleted=false` kommer till exempel att **inkludera** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
 | `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Om värdet är false **inkluderar** icke-användardrivna frågor, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
 | `isPrevLink` | Frågeparametern `isPrevLink` används för sidnumrering. Resultaten av API-anropet sorteras med hjälp av deras `created`-tidsstämpel och egenskapen `orderby`. När du navigerar på resultatsidorna anges `isPrevLink` till true vid sidindelning bakåt. Den ändrar ordningen på frågan. Se länkarna &quot;next&quot; och &quot;prev&quot; som exempel. |
@@ -120,7 +120,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över frågor för den a
 
 ### Skapa en fråga
 
-Du kan skapa en ny fråga genom att göra en POST-förfrågan till slutpunkten `/queries`.
+Du kan skapa en ny fråga genom att göra en POST-begäran till slutpunkten `/queries`.
 
 **API-format**
 
@@ -227,7 +227,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 ### Hämta en fråga via ID
 
-Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries`-slutpunkten och ange frågans `id`-värde i begärandesökvägen.
+Du kan hämta detaljerad information om en viss fråga genom att göra en GET-begäran till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen för begäran.
 
 **API-format**
 
@@ -298,7 +298,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ### Avbryt eller mjuka borttagningar av en fråga
 
-Du kan begära att få ta bort eller avbryta en angiven fråga genom att göra en PATCH-begäran till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen för begäran.
+Du kan begära att få ta bort en angiven fråga eller att få den borttagen genom att göra en PATCH-begäran till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen för begäran.
 
 **API-format**
 
@@ -329,7 +329,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-c
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `op` | Den typ av åtgärd som ska utföras på resursen. Godkända värden är `cancel` och `soft_delete`. Om du vill avbryta frågan måste du ange parametern op med värdet `cancel `. Observera att mjuk borttagning gör att frågan inte returneras vid GET-begäranden, men att den inte tas bort från systemet. |
+| `op` | Den typ av åtgärd som ska utföras på resursen. Godkända värden är `cancel` och `soft_delete`. Om du vill avbryta frågan måste du ange parametern op med värdet `cancel`. Observera att en mjuk borttagningsåtgärd hindrar frågan från att returneras på GET-begäranden, men tar inte bort den från systemet. |
 
 **Svar**
 

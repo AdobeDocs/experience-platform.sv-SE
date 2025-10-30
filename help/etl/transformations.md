@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;etl;ETL;etl transformations;ETL transformations
+keywords: Experience Platform;home;populära topics;etl;ETL;etl transformations;ETL transformations
 solution: Experience Platform
 title: Exempel på ETL-omformningar
 description: I den här artikeln visas följande exempelomformningar som en utvecklare av Extract, Transform, Load (ETL) kan stöta på.
 exl-id: 8084f5fd-b621-4515-a329-5a06c137d11c
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '452'
 ht-degree: 0%
 
 ---
@@ -42,6 +42,7 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 ### Mappning
 
 Mappningskraven för CRM-data beskrivs i följande tabell och innehåller följande omformningar:
+
 - Identitetskolumner till `identityMap`-egenskaper
 - Födelsedatum (DOB) till år och månad
 - Strängar till dubbletter eller korta heltal.
@@ -284,9 +285,9 @@ Mappningskraven för arrayen med identiteter beskrivs i följande tabell:
 
 | Identitetsfält | identityMap-fält | Datatyp |
 | -------------- | ----------------- | --------- |
-| identiteter[0].id | identityMap[Email][{"id"}] | kopiera som sträng |
-| identiteter[1].id | identityMap[CRMID][{"id"}] | kopiera som sträng |
-| identiteter[2].id | identityMap[LOYALTYID][{"id"}] | kopiera som sträng |
+| `identities[0].id` | `identityMap[Email][{"id"}]` | kopiera som sträng |
+| `identities[1].id` | `identityMap[CRMID][{"id"}]` | kopiera som sträng |
+| `identities[2].id` | `identityMap[LOYALTYID][{"id"}]` | kopiera som sträng |
 
 ### Utdata-XDM
 

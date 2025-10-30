@@ -5,7 +5,7 @@ title: Skicka flera meddelanden i en enda HTTP-begäran
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till Adobe Experience Platform inom en enda HTTP-begäran med direktuppspelningsinmatning.
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: 31c00e69dd92f7c3232e09f02da36c60cd8cf486
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1483'
 ht-degree: 1%
@@ -219,6 +219,7 @@ Innan du fortsätter med den här självstudiekursen rekommenderar vi att du fö
 I följande exempel visas vad som händer när gruppen innehåller giltiga och ogiltiga meddelanden.
 
 Nyttolasten för begäran är en array med JSON-objekt som representerar händelsen i XDM-schemat. Observera att följande villkor måste vara uppfyllda för att meddelandet ska kunna valideras:
+
 - Fältet `imsOrgId` i meddelanderubriken måste matcha inletsdefinitionen. Om nyttolasten för begäran inte innehåller något `imsOrgId`-fält, kommer [!DNL Data Collection Core Service] (DCCS) att lägga till fältet automatiskt.
 - Meddelandets huvud ska referera till ett befintligt XDM-schema som skapats i användargränssnittet för [!DNL Experience Platform].
 - Fältet `datasetId` måste referera till en befintlig datauppsättning i [!DNL Experience Platform], och dess schema måste matcha schemat som anges i objektet `header` i varje meddelande som ingår i begärandetexten.

@@ -4,7 +4,7 @@ title: Användargränssnittshandbok för tidsbegränsningar för motverkad segme
 description: I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 hidefromtoc: true
 exl-id: 3a352d46-829f-4a58-b676-73c3147f792c
-source-git-commit: c7d71113ddcef6aca8b2637814b46e589a6b7fdf
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '352'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Före januari 2024-versionen refererade alla tidsbegränsningar på regelnivå, 
 
 Tidigare kunde en enskild händelse ha flera bifogade tidsbegränsningsregler. Med den här senaste uppdateringen kommer försök att lägga till en tidsbegränsning i en regel nu att resultera i ett **fel**.
 
-![Tidsbegränsningen på regelnivå är markerad. Det fel som sedan inträffar markeras också. &#x200B;](../images/ui/segment-refactoring/rule-time-constraint.png)
+![Tidsbegränsningen på regelnivå är markerad. Felet som sedan inträffar markeras också.](../images/ui/segment-refactoring/rule-time-constraint.png)
 
 Tidsbegränsningar kan nu bara tillämpas på arbetsytans eller kortets nivå.
 

@@ -2,7 +2,7 @@
 description: På den här sidan finns all information du behöver för att skicka in en produkterad destination för granskning när du har skrivit den med Destination SDK.
 title: Skicka en produkterad destination för granskning
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1045'
 ht-degree: 0%
@@ -263,6 +263,7 @@ Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI)
 Målkatalogen innehåller en logotyp för varje destinationskort. I e-postmeddelandet med ditt tävlingsbidrag inkluderar du en bild med logotypen för destinationen.
 
 Bildkraven är:
+
 * **Format**: `SVG`
 * **Storlek**: mindre än 2 MB
 

@@ -3,7 +3,7 @@ title: Snowflake Streaming Source Connector - översikt
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att importera strömmande data från din Snowflake-instans till Adobe Experience Platform
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1510'
 ht-degree: 0%
@@ -160,7 +160,7 @@ Mer information om roll- och behörighetshantering finns i [[!DNL Snowflake] API
 
 ## Konvertera Unix-tid till datumfält
 
-[!DNL Snowflake Streaming] tolkar och skriver ` DATE`-fält som antalet dagar sedan Unix-epoken (1970-01-01). Värdet `DATE` betyder till exempel 1 januari 1970, medan värdet 1 betyder 2 januari 1970. När du förbereder filen för att skapa mappningar i källan [!DNL Snowflake Streaming] måste du därför se till att kolumnen `DATE` representeras som ett heltal.
+[!DNL Snowflake Streaming] tolkar och skriver `DATE`-fält som antalet dagar sedan Unix-epoken (1970-01-01). Värdet `DATE` betyder till exempel 1 januari 1970, medan värdet 1 betyder 2 januari 1970. När du förbereder filen för att skapa mappningar i källan [!DNL Snowflake Streaming] måste du därför se till att kolumnen `DATE` representeras som ett heltal.
 
 Du kan använda [Data Prep-data och tidsfunktioner](../../../data-prep/functions.md#date-and-time-functions) för att konvertera Unix-tid till datumfält som kan importeras till Experience Platform. Exempel:
 

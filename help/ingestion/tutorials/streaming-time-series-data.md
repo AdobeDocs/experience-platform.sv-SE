@@ -5,7 +5,7 @@ title: Strömma data i tidsserier med API:er för strömmande inmatning
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1214'
 ht-degree: 0%
@@ -402,7 +402,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 | -------- | ----------- |
 | `{CONNECTION_ID}` | `inletId` för den tidigare skapade direktuppspelningsanslutningen. |
 | `xactionId` | En unik identifierare som genererats på serversidan för den post du just skickade. Detta ID hjälper Adobe att spåra postens livscykel via olika system och med felsökning. |
-| `receivedTimeMs`: En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |
+| `receivedTimeMs`: En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |  |
 | `syncValidation.status` | Eftersom frågeparametern `syncValidation=true` lades till visas det här värdet. Om valideringen har slutförts blir statusen `pass`. |
 
 ## Hämta data för den nyligen inmatade tidsserien

@@ -4,9 +4,9 @@ title: Twitter-tillägg för händelsevidarebefordran
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du importera händelser till Twitter efter dina affärsbehov.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: 54c240e5-6160-4654-ac5b-6afa8d99a765
-source-git-commit: 374c140a5db678adfa2e038b69478ad8c7f8dc95
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '999'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [[!DNL Twitter]](https://twitter.com/i/flow/login) är en onlinetjänst för sociala medier och sociala nätverk där användarna kan publicera och interagera med 280-teckenlånga meddelanden som kallas tweets. Användare kan interagera med Twitter via en webbläsare, mobil klientprogramvara eller programmatiskt via sina [API:er](https://developer.twitter.com/en/docs/twitter-api)
 
-Med tillägget [!DNL Twitter] API för webbkonverteringar [&#x200B; för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
+Med tillägget [!DNL Twitter] API för webbkonverteringar [ för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
 
 [!DNL Twitter] kräver [OAuth 1.0](https://developer.twitter.com/en/docs/authentication/oauth-1-0a) för autentisering med API:t [!DNL Twitter] [!DNL Web Conversions].
 
@@ -89,9 +89,9 @@ Efter markeringen visas ytterligare kontroller för att ytterligare konfigurera 
 
 | Fältnamn | Beskrivning | Exempel | Obligatoriskt |
 | --- | --- | --- | --- |
-| [!UICONTROL [!DNL Twitter] Click ID] | [!DNL Twitter] Klicka på ID som tolkat från klicknings-URL:en. | 26l6412g5p4iyj65a2oic2ayg2 | Krävs om ingen annan identifierare läggs till. |
-| [!UICONTROL Email] | En e-postadress hashas med SHA256. Texten måste skrivas med gemener och alla efterföljande eller inledande blanksteg måste tas bort innan hash-kodning. | eventforwarding@example.com | Krävs om ingen annan identifierare läggs till. |
-| [!UICONTROL Phone] | Telefonen fungerar som en identifierare som matchar konverteringshändelsen. Telefonnumret måste vara i E164-format [+][landskod][riktnummer][local phone number] innan hashning utförs. | +911234567875 | Krävs om ingen annan identifierare läggs till. |
+| [!UICONTROL [!DNL Twitter] Click ID] | [!DNL Twitter] Klicka på ID som tolkat från klicknings-URL:en. | `26l6412g5p4iyj65a2oic2ayg2` | Krävs om ingen annan identifierare läggs till. |
+| [!UICONTROL Email] | En e-postadress hashas med SHA256. Texten måste skrivas med gemener och alla efterföljande eller inledande blanksteg måste tas bort innan hash-kodning. | `eventforwarding@example.com` | Krävs om ingen annan identifierare läggs till. |
+| [!UICONTROL Phone] | Telefonen fungerar som en identifierare som matchar konverteringshändelsen. Telefonnumret måste vara i E164-format `[+][country code][area code][local phone number]` innan hashning utförs. | `+911234567875` | Krävs om ingen annan identifierare läggs till. |
 
 **[!UICONTROL Conversion Data]**
 

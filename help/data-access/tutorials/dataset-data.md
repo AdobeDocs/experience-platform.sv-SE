@@ -5,7 +5,7 @@ title: Visa datauppsättningsdata med API:t för dataåtkomst
 type: Tutorial
 description: Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. I det här dokumentet introduceras några av de unika funktionerna i API:t för dataåtkomst, som sidindelning och partiella hämtningar.
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '1365'
 ht-degree: 0%
@@ -428,7 +428,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{FILE_ID} ` | Filens identifierare. |
+| `{FILE_ID}` | Filens identifierare. |
 | `{FILE_NAME}` | Filnamnet (till exempel profiles.parquet) |
 
 **Begäran**

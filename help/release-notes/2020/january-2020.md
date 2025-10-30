@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 exl-id: e488a50c-2a87-4649-b3a4-f9d45cb12fcb
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
 source-wordcount: '887'
-ht-degree: 22%
+ht-degree: 23%
 
 ---
 
@@ -54,7 +54,7 @@ Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få ti
 | Nya API-slutpunkter | Bassökvägen för API:t [!DNL Privacy Service] har uppdaterats från `/data/privacy/gdpr` till `/data/core/privacy/jobs`. |
 | Ny obligatorisk `regulation`-egenskap | När du skapar nya jobb i [!DNL Privacy Service]-API:et måste en `regulation`-egenskap anges i nyttolasten för förfrågan för att ange vilken regel som jobbet ska spåras under. Godkända värden är `gdpr` och `ccpa`. |
 | Stöd för [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service] accepterar nu begäranden om åtkomst/borttagning från Adobe [!DNL Primetime Authentication], med `primetimeAuthentication` som produktvärde. |
-| Förbättringar av användargränssnittet i Privacy Service | Separata jobbspårningssidor för GDPR- och CCPA-regler. Ny **Regeltyp &#x200B;** listruta för att växla mellan spårningsdata för GDPR och CCPA. |
+| Förbättringar av användargränssnittet i Privacy Service | Separata jobbspårningssidor för GDPR- och CCPA-regler. Ny rullgardinsmeny för **Regeltyp** för att växla mellan spårningsdata för GDPR och CCPA. |
 
 **Kända fel**
 
@@ -80,8 +80,8 @@ Adobe Experience Platform kan importera data från externa källor samtidigt som
 
 | Kategori | Behörighet | Beskrivning |
 |--- | --- | ---|
-| Datainmatning | Hantera källor | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
-| Datainmatning | Visa källor | Skrivskyddad åtkomst till tillgängliga källor på fliken **[!UICONTROL Catalog]** och autentiserade källor på fliken **[!UICONTROL Browse]**. |
+| Datainhämtning | Hantera källor | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
+| Datainhämtning | Visa källor | Skrivskyddad åtkomst till tillgängliga källor på fliken **[!UICONTROL Catalog]** och autentiserade källor på fliken **[!UICONTROL Browse]**. |
 
 **Kända fel**
 

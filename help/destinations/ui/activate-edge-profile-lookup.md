@@ -3,9 +3,9 @@ title: Söka efter kantprofilattribut i realtid
 description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
 workflow-type: tm+mt
-source-wordcount: '1843'
+source-wordcount: '1839'
 ht-degree: 0%
 
 ---
@@ -54,14 +54,14 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 >
 >Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. -->
 
-    ![Experience Platform UI-bild som visar konfigurationsskärmen för datastream.](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
+![Experience Platform-gränssnittsbild som visar konfigurationsskärmen för dataströmmen.](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
 
 
 ## Steg 2: Konfigurera era målgrupper för edge-utvärdering {#audience-edge-evaluation}
 
 Om du vill söka efter profilattribut i kanten måste målgrupperna konfigureras för kantutvärdering.
 
-Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan om &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
+Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
@@ -125,8 +125,6 @@ När du har skapat en **[!UICONTROL Custom Personalization With Attributes]**-an
 
      ![Skärminspelning som visar hur du väljer ett XDM-attribut i mappningssteget](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-target-attribute.gif)
 
-
-
 När du är klar med mappningen av profilattribut väljer du **[!UICONTROL Next]**.
 
 På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta ditt val och börja skicka profildata till Edge Network.
@@ -167,7 +165,8 @@ Nästa steg är att konfigurera din personaliseringslösning för att hämta pro
 >[!IMPORTANT]
 >
 >Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du hämta profilattributen via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/getting-started/). Du måste dessutom hämta profilattributen via Edge Network API [interaktiv datainsamlingsslutpunkt](https://developer.adobe.com/data-collection-apis/docs/endpoints/interact/) för att API-anropen ska kunna autentiseras.
->&#x200B;><br>Om du inte uppfyller kraven ovan kommer personaliseringen endast att baseras på målgruppsmedlemskap och profilattributen kommer inte att vara tillgängliga för dig.
+>
+>Om du inte uppfyller kraven ovan kommer personaliseringen endast att baseras på målgruppsmedlemskap och profilattributen kommer inte att vara tillgängliga för dig.
 
 Datastream som du konfigurerade i [steg 1](#create-datastream) är nu klar att acceptera inkommande händelsedata och svara med edge-profilinformation.
 
