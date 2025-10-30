@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning
 description: Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: bc72f77b1b4a48126be9b49c5c663ff11e9054ea
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '1209'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,7 @@ Nu kan du överföra data med knappen **Lägg till data** och det kommer att imp
 
 ### Använd flödet [!UICONTROL Map CSV to XDM schema] {#map-flow}
 
-Om du vill använda [!UICONTROL Map CSV to XDM schema]-flödet följer du stegen i [Mappa en CSV-fil &#x200B;](../tutorials/map-csv/overview.md). När du har nått steget **[!UICONTROL Add data]** bör du notera fälten **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]**.
+Om du vill använda [!UICONTROL Map CSV to XDM schema]-flödet följer du stegen i [Mappa en CSV-fil ](../tutorials/map-csv/overview.md). När du har nått steget **[!UICONTROL Add data]** bör du notera fälten **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]**.
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
@@ -120,6 +120,106 @@ Med växlingsknappen **[!UICONTROL Partial ingestion]** kan du aktivera eller in
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
 Med **[!UICONTROL Error threshold]** kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är det här värdet 5 %.
+
+## Aktivera partiell inmatnings- och feldiagnostik för ett befintligt dataflöde
+
+Om ett dataflöde i Experience Platform skapades utan att partiellt intag eller feldiagnostik aktiverades, kan du fortfarande aktivera de här funktionerna utan att återskapa flödet. Genom att aktivera partiell inmatning och stabil feldiagnostik kan du förbättra tillförlitligheten och enkelheten i felsökningen i arbetsflödena för dataöverföring. Läs avsnitten nedan för att lära dig hur du aktiverar partiell import och feldiagnostik för ett befintligt dataflöde med API:t [!DNL Flow Service].
+
+Som standard har dataflöden inte partiellt intag eller feldiagnostik aktiverat. De här funktionerna är användbara när du vill identifiera och isolera problem vid dataöverföring. Med API:t [!DNL Flow Service] kan du hämta din aktuella dataflödeskonfiguration och tillämpa de nödvändiga ändringarna med en PATCH-begäran.
+
+Följ stegen nedan för att aktivera partiell import och feldiagnostik för ett befintligt dataflöde.
+
+### Hämta flödesinformation
+
+Om du vill hämta dina dataflödeskonfigurationer skickar du en GET-begäran till slutpunkten `/flows/{FLOW_ID}` och anger ID:t för dataflödet. Mer information om hur du hämtar dataflödesinformation finns i [Uppdatera dataflöden med hjälp av  [!DNL Flow Service] API](../../sources/tutorials/api/update-dataflows.md)-guiden.
+
+Spara värdet för fältet `etag` som returneras i svaret. Detta är nödvändigt för att uppdateringsbegäran ska vara konsekvent.
+
+### Uppdatera flödeskonfiguration
+
+Gör sedan en PATCH-begäran till `/flows/`-slutpunkten och ange ID:t för det dataflöde som du vill aktivera partiell import och feldiagnostik för.
+
+>[!IMPORTANT]
+>
+>- Inkludera det tidigare sparade `etag`-värdet i begärandehuvudet med hjälp av If-Match-nyckeln.
+>- Du kan ändra värdet för `partialIngestionPercent` så att det passar dina specifika behov.
+
+**API-format**
+
+```http
+PATCH /flows/{FLOW_ID}
+```
+
+**Begäran**
+
+```shell
+curl -X PATCH \
+    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}'
+    -H 'If-Match: "1a0037e4-0000-0200-0000-602e06f60000"' \
+    -d '[
+        {
+            "op": "add",
+            "path": "/options",
+            "value": {
+                "partialIngestionPercent": "10"
+            }
+        },
+        {
+            "op": "add",
+            "path": "/options/errorDiagnosticsEnabled",
+            "value": true
+        }
+    ]'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar dataflödets `id` och ett uppdaterat `etag`.
+
+```json
+{
+    "id": "2edc08ac-4df5-4fe6-936f-81a19ce92f5c",
+    "etag": "\"2c000802-0000-0200-0000-613976440000\""
+}
+```
+
+### Verifiera uppdateringen
+
+När PATCH är klart gör du en GET-begäran och hämtar dataflödet för att bekräfta att ändringarna har slutförts.
+
+**API-format**
+
+```http
+GET /flows/{FLOW_ID}
+```
+
+**Begäran**
+
+Följande begäran hämtar uppdaterad information om ditt flödes-ID.
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar dina dataflödesdetaljer, vilket bekräftar att partiellt intag och feldiagnostik nu är aktiverat i avsnittet `options`.
+
+```json
+"options": {
+    "partialIngestionPercent": 10,
+    "errorDiagnosticsEnabled": true
+}
+```
 
 ## Nästa steg {#next-steps}
 
