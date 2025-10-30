@@ -72,7 +72,7 @@ Du kan skapa flera sandlådor av alla typer, och för den här typen av företag
 
 ![CDP-Skapa en sandlåda](./images/whitepaper/Create-sandbox.png)
 
-I produktionssandlådan förväntar vi oss att ni ska importera era produktionsprofiler och upplevelsehändelsedata för att skapa en enhetlig profil för era marknadsföringsaktiviteter. Mer information om hur du kombinerar kända och anonyma data från flera företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser i alla kanaler och enheter i realtid finns i [Adobe Real-Time Customer Data Platform-dokumentationen](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/home).
+I produktionssandlådan förväntar vi oss att ni ska importera era produktionsprofiler och upplevelsehändelsedata för att skapa en enhetlig profil för era marknadsföringsaktiviteter. Mer information om hur du kombinerar kända och anonyma data från flera företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser i alla kanaler och enheter i realtid finns i [Adobe Real-Time Customer Data Platform-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/home).
 
 **Åtkomstkontroller**
 
@@ -80,13 +80,13 @@ Du kan definiera åtkomstkontroller med roller och behörigheter för att styra 
 
 Överväg en datatekniker som kanske inte behöver tillgång till alla Experience Platform-funktioner och plattformsbaserade programfunktioner. De ansvarar vanligtvis för att skapa datadefinitioner (scheman), konfigurera datakällor för att importera data och skapa datauppsättningar. Men de kanske inte är samma person som skapar och aktiverar målgrupper för personaliserade kundupplevelser. Skapa en roll för den här personen, lägg till lämpliga behörigheter och ge åtkomst endast till de funktioner som krävs. En marknadsförare skulle däremot inte skapa scheman och inhämta data utan istället fokusera på att skapa och aktivera målgrupper för att möjliggöra personaliserade kundupplevelser.
 
-Om du vill kan du lägga till detaljerade åtkomstkontroller för att begränsa åtkomsten till specifika fält i den enhetliga kundprofilen med attributbaserad åtkomstkontroll/åtkomstkontroll på fältnivå. Detta är styrningsmekanismer i Experience Platform som gör att du kan begränsa åtkomst till dataattribut baserat på fördefinierade etiketter. Med åtkomstkontroll på fältnivå kan personligt identifierbara data styras och åtkomsten begränsas i alla Experience Platform- och programarbetsflöden. Mer information om åtkomstkontrollsfunktioner finns i [åtkomstkontrollsdokumentationen](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home).
+Om du vill kan du lägga till detaljerade åtkomstkontroller för att begränsa åtkomsten till specifika fält i den enhetliga kundprofilen med attributbaserad åtkomstkontroll/åtkomstkontroll på fältnivå. Detta är styrningsmekanismer i Experience Platform som gör att du kan begränsa åtkomst till dataattribut baserat på fördefinierade etiketter. Med åtkomstkontroll på fältnivå kan personligt identifierbara data styras och åtkomsten begränsas i alla Experience Platform- och programarbetsflöden. Mer information om åtkomstkontrollsfunktioner finns i [åtkomstkontrollsdokumentationen](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home).
 
 ![CDP-åtkomstkontroller, konfigurera rollbehörigheter](./images/whitepaper/Access-Controls-Configure-RolePermissions.png)
 
 **Utvecklingslivscykel med utvecklingssandlådor**
 
-En utvecklingssandlåda fungerar på samma sätt som en produktionssandlåda i alla funktionella aspekter. Det skiljer sig genom att det kommer att finnas avtalsenliga garantimöjligheter som håller dig inom licensgränserna. Den är exklusiv för utveckling och testning med icke-produktionsprofiler, som stöder upp till 10 % av din licensierade profil (mäts kumulativt i alla godkända utvecklingssandlådor). Mer information och skyddsförslag finns i översiktsdokumentationen för [sandlådor](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/home) och på sidan [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) för berättigandeinformation.
+En utvecklingssandlåda fungerar på samma sätt som en produktionssandlåda i alla funktionella aspekter. Det skiljer sig genom att det kommer att finnas avtalsenliga garantimöjligheter som håller dig inom licensgränserna. Den är exklusiv för utveckling och testning med icke-produktionsprofiler, som stöder upp till 10 % av din licensierade profil (mäts kumulativt i alla godkända utvecklingssandlådor). Mer information och skyddsförslag finns i översiktsdokumentationen för [sandlådor](https://experienceleague.adobe.com/sv/docs/experience-platform/sandbox/home) och på sidan [produktbeskrivningar](https://helpx.adobe.com/se/legal/product-descriptions.html) för berättigandeinformation.
 
 Du kan ha flera utvecklingssandlådor (upp till 4 i det här företagsexemplet, eftersom vi använder en produktionssandlåda) för utvecklings- och testlivscykeln.
 
@@ -102,7 +102,7 @@ Med sandlådeverktygen kan du markera olika objekt och exportera dem till ett pa
 
 Du kan använda Experience Platform API:er för att automatisera sandlådedistributioner och konfigurationsåtgärder. API:er ger programmerbar kontroll för repetitiva uppgifter som export, import eller ändring av sandlådekonfigurationer, vilket ger flexibilitet om du föredrar automatiserade arbetsflöden.
 
-Mer information om sandlådeverktyg finns i [dokumentationen för sandlådeverktyg](https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/ui/sandbox-tooling).
+Mer information om sandlådeverktyg finns i [dokumentationen för sandlådeverktyg](https://experienceleague.adobe.com/sv/docs/experience-platform/sandbox/ui/sandbox-tooling).
 
 | ![CDP-Skapa ett paket](./images/whitepaper/create-package.png) | ![CDP-List-paket](./images/whitepaper/list-packages.png) |
 | --- | --- |
@@ -229,7 +229,7 @@ Dessutom kan du använda Experience Platform Segment Match, en funktion i Platfo
 
 Med denna segmentdelningstjänst kan två eller flera användare utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 
-Mer information om funktionen för segmentmatchning finns i [dokumentationen för segmentmatchning](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/segment-match/overview).
+Mer information om funktionen för segmentmatchning finns i [dokumentationen för segmentmatchning](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/segment-match/overview).
 
 ### En kombination av strategier för globala verksamheter, regionala och varumärkesspecifika
 
