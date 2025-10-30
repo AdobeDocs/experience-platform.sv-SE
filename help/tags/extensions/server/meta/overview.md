@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Med [[!DNL Meta Conversions API]](https://developers.facebook.com/docs/marketing-api/conversions-api/) kan du koppla marknadsföringsdata på serversidan till [!DNL Meta]-tekniker för att optimera er annonsinriktning, minska kostnaden per åtgärd och mäta resultat. Händelser är länkade till ett [[!DNL Meta Pixel]](https://developers.facebook.com/docs/meta-pixel/)-ID och bearbetas på ungefär samma sätt som händelser på klientsidan.
 
-Med tillägget [!DNL Meta Conversions API] kan du utnyttja API:ts funktioner i reglerna för [ vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL Meta] från Adobe Experience Platform Edge Network. Det här dokumentet beskriver hur du installerar tillägget och använder dess funktioner i en händelsevidarebefordring av [regeln](../../../ui/managing-resources/rules.md).
+Med tillägget [!DNL Meta Conversions API] kan du utnyttja API:ts funktioner i reglerna för [&#x200B; vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL Meta] från Adobe Experience Platform Edge Network. Det här dokumentet beskriver hur du installerar tillägget och använder dess funktioner i en händelsevidarebefordring av [regeln](../../../ui/managing-resources/rules.md).
 
 ## Demo
 
@@ -23,7 +23,7 @@ Följande video är avsedd att stödja din förståelse av [!DNL Meta Conversion
 
 ## Förhandskrav
 
-Vi rekommenderar starkt att du använder [!DNL Meta Pixel] och [!DNL Conversions API] för att dela och skicka samma händelser från klient- respektive serversidan, eftersom detta kan hjälpa till att återställa händelser som inte plockats upp av [!DNL Meta Pixel]. Innan du installerar tillägget [!DNL Conversions API] ska du läsa guiden för tillägget [[!DNL Meta Pixel] ](../../client/meta/overview.md) för steg om hur du integrerar det i implementeringar av taggar på klientsidan.
+Vi rekommenderar starkt att du använder [!DNL Meta Pixel] och [!DNL Conversions API] för att dela och skicka samma händelser från klient- respektive serversidan, eftersom detta kan hjälpa till att återställa händelser som inte plockats upp av [!DNL Meta Pixel]. Innan du installerar tillägget [!DNL Conversions API] ska du läsa guiden för tillägget [[!DNL Meta Pixel] &#x200B;](../../client/meta/overview.md) för steg om hur du integrerar det i implementeringar av taggar på klientsidan.
 
 >[!NOTE]
 >
@@ -93,7 +93,7 @@ Det visas kontroller som gör att du kan konfigurera händelsedata som ska skick
 
 | Konfig.avsnitt | Beskrivning |
 | --- | --- |
-| [!UICONTROL Server Event Parameters] | Allmän information om händelsen, inklusive tidpunkten då den inträffade och källåtgärden som utlöste den. Mer information om [!DNL Meta]standardhändelseparametrarna[ som accepteras av ](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event) finns i dokumentationen för [!DNL Conversions API]-utvecklaren.<br><br>Om du använder både [!DNL Meta Pixel] och [!DNL Conversions API] för att skicka händelser måste du ta med både en **[!UICONTROL Event Name]** (`event_name`) och **[!UICONTROL Event ID]** (`event_id`) för varje händelse, eftersom dessa värden används för [händelsededuplicering](#deduplication).<br><br>Du kan även välja att **[!UICONTROL Enable Limited Data Use]** ska hjälpa till att följa kundavanmälningarna. Mer information om den här funktionen finns i [!DNL Conversions API]-dokumentationen om [databearbetningsalternativ](https://developers.facebook.com/docs/marketing-apis/data-processing-options/). |
+| [!UICONTROL Server Event Parameters] | Allmän information om händelsen, inklusive tidpunkten då den inträffade och källåtgärden som utlöste den. Mer information om [!DNL Meta]standardhändelseparametrarna[&#x200B; som accepteras av &#x200B;](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event) finns i dokumentationen för [!DNL Conversions API]-utvecklaren.<br><br>Om du använder både [!DNL Meta Pixel] och [!DNL Conversions API] för att skicka händelser måste du ta med både en **[!UICONTROL Event Name]** (`event_name`) och **[!UICONTROL Event ID]** (`event_id`) för varje händelse, eftersom dessa värden används för [händelsededuplicering](#deduplication).<br><br>Du kan även välja att **[!UICONTROL Enable Limited Data Use]** ska hjälpa till att följa kundavanmälningarna. Mer information om den här funktionen finns i [!DNL Conversions API]-dokumentationen om [databearbetningsalternativ](https://developers.facebook.com/docs/marketing-apis/data-processing-options/). |
 | [!UICONTROL Customer Information Parameters] | Användar-ID-data som används för att tilldela händelsen till en kund. Vissa av dessa värden måste hashas innan de kan skickas till API:t.<br><br>För att säkerställa en bra gemensam API-anslutning och hög händelsematchningskvalitet (EMQ) rekommenderar vi att du skickar alla [accepterade kundinformationsparametrar](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) tillsammans med serverhändelser. Dessa parametrar bör också [prioriteras baserat på deras betydelse och påverkan på EMQ](https://www.facebook.com/business/help/765081237991954?id=818859032317965). |
 | [!UICONTROL Custom Data] | Ytterligare data som ska användas för annonsleveransoptimering, tillhandahålls i form av ett JSON-objekt. Mer information om godkända egenskaper för det här objektet finns i [[!DNL Conversions API] dokumentationen](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/custom-data).<br><br>Om du skickar en köphändelse måste du använda det här avsnittet för att ange de nödvändiga attributen `currency` och `value`. |
 | [!UICONTROL Test Event] | Det här alternativet används för att verifiera om konfigurationen gör att serverhändelser tas emot av [!DNL Meta] som förväntat. Om du vill använda den här funktionen markerar du kryssrutan **[!UICONTROL Send as Test Event]** och anger sedan en testhändelsekod i indata nedan. När regeln för vidarebefordran av händelser har distribuerats och du har konfigurerat tillägget och åtgärden korrekt, bör du se aktiviteter som visas i vyn **[!DNL Test Events]** i [!DNL Meta Events Manager]. |
@@ -161,7 +161,7 @@ Det tar några minuter innan den första installationsprocessen har slutförts o
 
 ![Bekräftelseskärmen för den första konfigurationen slutfördes](../../../images/extensions/server/meta/setup-complete.png)
 
-I dialogrutan **[!UICONTROL Add Code on Your Site]** kopierar du koden som har tillhandahållits med funktionen ![ Kopiera](/help/images/icons/copy.png) och klistrar in den i `<head>` på källwebbplatsen. Välj **[!UICONTROL Start Validation]** när den är implementerad
+I dialogrutan **[!UICONTROL Add Code on Your Site]** kopierar du koden som har tillhandahållits med funktionen ![&#x200B; Kopiera](/help/images/icons/copy.png) och klistrar in den i `<head>` på källwebbplatsen. Välj **[!UICONTROL Start Validation]** när den är implementerad
 
 ![Lägg till kod i webbplatsdialogrutan](../../../images/extensions/server/meta/add-code-on-your-site.png)
 

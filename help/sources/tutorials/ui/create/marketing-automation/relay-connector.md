@@ -43,7 +43,7 @@ Gränssnittet **[!UICONTROL Connect Relay Connector source]** visas. Använd gr�
 >
 >Den tillåtna filstorleken är upp till 1 GB.
 
-![Gränssnittet ](../../../../images/tutorials/create/relay-connector/upload-data.jpg) för val av data
+![Gränssnittet &#x200B;](../../../../images/tutorials/create/relay-connector/upload-data.jpg) för val av data
 
 När data har överförts kan du använda avsnittet [!UICONTROL Preview sample data] för att förhandsgranska data.
 
@@ -81,5 +81,5 @@ Använd dessa värden för att konfigurera webkroken i **Relay-konsolen**. Detal
 
 ## Ytterligare resurser
 
-* [Skapa en ny anslutningsspecifikation med API:t för Flow Service ](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/create)
+* [Skapa en ny anslutningsspecifikation med API:t för Flow Service &#x200B;](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/create)
 * [Anslut till källan med användargränssnittet](https://experienceleague.adobe.com/en/docs/experience-platform/sources/sdk/streaming-sdk/submit#test-your-source-using-the-ui)

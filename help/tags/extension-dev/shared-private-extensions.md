@@ -63,7 +63,7 @@ Ange sedan den mottagande organisationens ID och välj **[!UICONTROL Save]**.
 
 Du återgår till fliken [!UICONTROL Usage Authorizations] där du kan se tillägget i listan **[!UICONTROL Shared with other orgs]**. Statusen visar **Väntar på godkännande** tills den mottagande organisationen godkänner auktoriseringen, och då uppdateras den till **Godkänd**.
 
-![Fliken [!UICONTROL Usage Authorizations] som visar en lista över tillägg som delas med andra organ, och som markerar den nya auktoriseringen ](../images/shared-extensions/new-authorization.png)
+![Fliken [!UICONTROL Usage Authorizations] som visar en lista över tillägg som delas med andra organ, och som markerar den nya auktoriseringen &#x200B;](../images/shared-extensions/new-authorization.png)
 
 >[!TIP]
 >
@@ -71,7 +71,7 @@ Du återgår till fliken [!UICONTROL Usage Authorizations] där du kan se tillä
 
 När en auktorisering är aktiv visar det delade tillägget ett ***Delningsmärke*** i katalogen som anger att det delas med andra organisationer.
 
-![Fliken [!UICONTROL Catalog] som visar det delade tillägget med märket ](../images/shared-extensions/sharing-badge.png)
+![Fliken [!UICONTROL Catalog] som visar det delade tillägget med märket &#x200B;](../images/shared-extensions/sharing-badge.png)
 
 ## Auktorisera och hantera delade tillägg
 
@@ -99,7 +99,7 @@ Du återgår till fliken [!UICONTROL Usage Authorizations] där du kan se att ti
 
 När auktoriseringen har godkänts är tillägget tillgängligt i din katalog och kan installeras och användas som alla andra tillägg. Det delade tillägget visar ett ***Ta emot***-märke som anger att det är ett tillägg som delas med dig av en annan organisation.
 
-![Fliken [!UICONTROL Catalog] som visar det delade tillägget med märket &quot;Tar emot&quot; ](../images/shared-extensions/receiving-badge.png)
+![Fliken [!UICONTROL Catalog] som visar det delade tillägget med märket &quot;Tar emot&quot; &#x200B;](../images/shared-extensions/receiving-badge.png)
 
 ## Återkalla auktoriseringar
 

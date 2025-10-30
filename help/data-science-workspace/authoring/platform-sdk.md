@@ -161,7 +161,7 @@ Nya [!DNL Experience Platform] SDK har stöd för följande åtgärder:
 | Mindre än (`<`) | `lt()` |
 | Mindre än eller lika med (`<=`) | `le()` |
 | Och (`&`) | `And()` |
-| Eller ( &amp;vert; ) | `Or()` |
+| Eller ( &vert; ) | `Or()` |
 
 ## Filtrera efter markerade kolumner {#filter-by-selected-columns}
 

@@ -62,7 +62,7 @@ Mer information om vilka frågeparametrar som är tillgängliga för en viss tj�
 
 ## Hur anger jag att ett JSON-fält ska uppdateras i en begäran från PATCH? {#how-do-i-indicate-a-json-field-to-update-in-a-patch-request}
 
-Många PATCH-åtgärder i [!DNL Experience Platform] API:er använder [ JSON-pekarsträngar ](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster med formatet [JSON Patch](https://tools.ietf.org/html/rfc6902). I guiden [Grundläggande API ](api-fundamentals.md) finns detaljerad information om nödvändig syntax för dessa tekniker.
+Många PATCH-åtgärder i [!DNL Experience Platform] API:er använder [&#x200B; JSON-pekarsträngar &#x200B;](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster med formatet [JSON Patch](https://tools.ietf.org/html/rfc6902). I guiden [Grundläggande API &#x200B;](api-fundamentals.md) finns detaljerad information om nödvändig syntax för dessa tekniker.
 
 ## Kan jag använda Postman för att ringa anrop till [!DNL Experience Platform] API:er? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 

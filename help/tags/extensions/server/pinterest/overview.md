@@ -33,7 +33,7 @@ Mer information om användningsfall som är specifika för [!DNL Pinterest] finn
 
 Du måste ha ett giltigt [!DNL Pinterest] [företagskonto](https://help.pinterest.com/en/business/article/get-a-business-account) för att kunna använda det här tillägget. Gå till registreringssidan [[!DNL Pinterest] för att registrera dig och skapa ett konto om du inte redan har ett.](https://www.pinterest.com/business/create/)
 
-Du behöver också ett [!DNL Pinterest]-utvecklarkonto, som måste kopplas till ditt [!DNL Pinterest]-företagskonto. Mer information om hur du associerar ditt utvecklarkonto med ditt företagskonto finns i [[!DNL Pinterest ] utvecklarkontot](https://developers.pinterest.com/account-setup/).
+Du behöver också ett [!DNL Pinterest]-utvecklarkonto, som måste kopplas till ditt [!DNL Pinterest]-företagskonto. Mer information om hur du associerar ditt utvecklarkonto med ditt företagskonto finns i [[!DNL Pinterest &#x200B;] utvecklarkontot](https://developers.pinterest.com/account-setup/).
 
 ### Samla nödvändig konfigurationsinformation {#configuration-details}
 
@@ -82,8 +82,8 @@ Följande händelsedata krävs för att skapa den nya regeln:
 
 | Fältnamn | Beskrivning | Exempel |
 | --- | --- | --- | 
-| [!UICONTROL Event Name] | Typ av användarhändelse. Det här kan vara vilken händelsetyp som helst, men om du vill utnyttja [!DNL Pinterest Analytics] rekommenderar vi att du använder [[!DNL Pinterest] händelsekoder](https://help.pinterest.com/en/business/article/add-event-codes) | &amp;ast; utcheckning <br> &amp;ast; add_to_cart <br> &amp;ast; page_visit <br> &amp;ast; signup <br> &amp;ast; [Användardefinierad händelse] |
-| [!UICONTROL Action Source] | Källan som anger var konverteringshändelsen inträffade. | &amp;ast; app_android <br> &amp;ast; app_ios <br> &amp;ast; webb <br> &amp;ast; offline |
+| [!UICONTROL Event Name] | Typ av användarhändelse. Det här kan vara vilken händelsetyp som helst, men om du vill utnyttja [!DNL Pinterest Analytics] rekommenderar vi att du använder [[!DNL Pinterest] händelsekoder](https://help.pinterest.com/en/business/article/add-event-codes) | &ast; utcheckning <br> &ast; add_to_cart <br> &ast; page_visit <br> &ast; signup <br> &ast; [Användardefinierad händelse] |
+| [!UICONTROL Action Source] | Källan som anger var konverteringshändelsen inträffade. | &ast; app_android <br> &ast; app_ios <br> &ast; webb <br> &ast; offline |
 | [!UICONTROL Event Time] | Detta avser händelsetiden. Standardtidsformatet som används är UNIX, i formatet `<seconds>.<miliseconds>` beroende på din lokala tidszon. Mer information finns i [[!DNL Pinterest] API](https://developers.pinterest.com/docs/api/v5/#operation/events/create). | 1433188255.500 anger 1433188255 sekunder och 500 millisekunder efter epok, eller måndag, 1 juni 2015, kl. 7:50:55 PM GMT. |
 | [!UICONTROL Event ID] | En unik id-sträng som identifierar den här händelsen och kan användas för att ta bort händelser som importerats via både konverterings-API:t och Pinterest-spårning. Utan detta räknas händelsens data sannolikt två gånger och kommer att rapportera måttlig uppblåsning. | ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad |
 | [!UICONTROL Event Properties] | Ett JSON-objekt som innehåller anpassade egenskaper för händelsen. Välj mellan att tillhandahålla rå JSON eller att använda en förenklad uppsättning indata för nyckelvärden. | { &quot;event_source_url&quot;: &quot;http://site.com&quot; } |

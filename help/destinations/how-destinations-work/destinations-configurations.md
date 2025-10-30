@@ -17,7 +17,7 @@ När du tänker på exportbeteendet för Experience Platform-destinationer måst
 * På en andra nivå kan vissa inställningar anpassas på en målnivå av målutvecklaren när måldestinationer skapas med Destination SDK.
 * På en tredje nivå finns det konfigurationsinställningar som Real-Time CDP-användare kan ange i aktiveringsarbetsflödena.
 
-![Diagram som visar hur exporten mellan vanliga och konfigurerbara exportinställningar för destinationer fungerar ](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
+![Diagram som visar hur exporten mellan vanliga och konfigurerbara exportinställningar för destinationer fungerar &#x200B;](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
 
 Den här sidan beskriver eller länkar ut till alla vanliga och konfigurerbara exportinställningar för destinationer på de tre nivåer som beskrivs ovan.
 
@@ -46,7 +46,7 @@ För [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-
 
 ![Skärminspelning av identitetsvalet för målfältet i mappningssteget i aktiveringsarbetsflödet.](/help/destinations/assets/how-destinations-work/identity-mapping-example.gif)
 
-På samma sätt kan målutvecklaren för [filbaserade mål](/help/destinations/destination-types.md#file-based) avgöra vilka [filnamnstillägg ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) som ska vara tillgängliga för respektive mål, eller vilka [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) som ska vara tillgängliga, och användaren kan endast välja mellan dessa alternativ, vilket visas nedan:
+På samma sätt kan målutvecklaren för [filbaserade mål](/help/destinations/destination-types.md#file-based) avgöra vilka [filnamnstillägg &#x200B;](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) som ska vara tillgängliga för respektive mål, eller vilka [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) som ska vara tillgängliga, och användaren kan endast välja mellan dessa alternativ, vilket visas nedan:
 
 ![Skärminspelning av filformateringsalternativet vid anslutning till ett filbaserat mål.](/help/destinations/assets/how-destinations-work/file-formatting-options.gif)
 

@@ -45,7 +45,7 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 | Mål | Beskrivning |
 |--- | ---|
-| [!DNL Google Customer Match] | Med Google Customer Match kan du använda dina online- och offlinedata för att nå och återengagera dina kunder i olika egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping], Gmail och YouTube. <br><br> Gå till [!DNL Google Customer Match] [sidan ](../../destinations/catalog/advertising/google-customer-match.md) i målkatalogen om du vill ha mer information om målet och hur du konfigurerar det i Real-Time CDP. |
+| [!DNL Google Customer Match] | Med Google Customer Match kan du använda dina online- och offlinedata för att nå och återengagera dina kunder i olika egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping], Gmail och YouTube. <br><br> Gå till [!DNL Google Customer Match] [sidan &#x200B;](../../destinations/catalog/advertising/google-customer-match.md) i målkatalogen om du vill ha mer information om målet och hur du konfigurerar det i Real-Time CDP. |
 
 **Nya funktioner**
 

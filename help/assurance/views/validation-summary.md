@@ -57,7 +57,7 @@ Valideringsfunktionen förväntas returnera ett objekt som innehåller följande
 | :--- | :--- | :--- |
 | `message` | Sträng | Valideringsmeddelandet som ska visas i sammanfattningsresultatet. |
 | `events` | Array | En array med händelsehjälpmedel som ska rapporteras som matchade eller inte matchade. |
-| `links` | Array | En array med `ValidationResultLink` objekt som refererar till dokumentation och andra resurser `{( type: 'doc'`&amp;vert;`'product', url: String )}` |
+| `links` | Array | En array med `ValidationResultLink` objekt som refererar till dokumentation och andra resurser `{( type: 'doc'`&vert;`'product', url: String )}` |
 | `result` | Sträng | Detta är valideringsresultatet och förväntas vara en av de uppräknade strängarna: &quot;matched&quot;, &quot;not matched&quot;, &quot;unknown&quot; |
 
 ## Visa valideringsresultat

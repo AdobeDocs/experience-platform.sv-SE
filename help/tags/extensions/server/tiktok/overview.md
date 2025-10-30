@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # API-tilläggets [!DNL TikTok] för webbhändelser - översikt
 
-Händelse-API:t [!DNL TikTok] är ett säkert [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL TikTok] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från [!DNL Adobe Experience Platform Edge Network] till [!DNL TikTok] med hjälp av API-tillägget [!DNL TikTok] för webbhändelser.
+Händelse-API:t [!DNL TikTok] är ett säkert [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL TikTok] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från [!DNL Adobe Experience Platform Edge Network] till [!DNL TikTok] med hjälp av API-tillägget [!DNL TikTok] för webbhändelser.
 
 ## Krav för [!DNL TikTok] {#prerequisites}
 
@@ -27,7 +27,7 @@ Du måste vara inloggad på ditt företagskonto för att kunna konfigurera [!DNL
 3. Välj **[!UICONTROL Set Up Web Events]**.
 4. Välj **[!UICONTROL Partner Setup]** som anslutningsmetod.
 
-Mer information om hur du ställer in pixeln [ finns i guiden ](https://ads.tiktok.com/help/article/get-started-pixel)Kom igång med Pixel[!DNL TikTok] .
+Mer information om hur du ställer in pixeln [&#x200B; finns i guiden &#x200B;](https://ads.tiktok.com/help/article/get-started-pixel)Kom igång med Pixel[!DNL TikTok] .
 
 Du kan generera en åtkomsttoken när pixeln har skapats. Om du vill göra det går du till pixeln och väljer fliken **[!UICONTROL Settings]**. Välj **[!UICONTROL Generate Access Token]** under Händelse-API.
 
