@@ -2,9 +2,9 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 84817abfbd5023310c37427f426684929cd57fe6
 workflow-type: tm+mt
-source-wordcount: '3524'
+source-wordcount: '3539'
 ht-degree: 1%
 
 ---
@@ -40,7 +40,7 @@ Tabellen nedan visar [!DNL Adobe Real-Time Customer Data Platform] objekt som f�
 
 | Plattform | Objekt | Information |
 | --- | --- | --- |
-| Kunddataplattform | Källor | <ul><li>Källkontots autentiseringsuppgifter replikeras inte i målsandlådan av säkerhetsskäl och måste uppdateras manuellt.</li><li>Källdataflödet kopieras som standard i utkaststatus.</li></ul> |
+| Kunddataplattform | Källor | <ul><li>Källkontots autentiseringsuppgifter replikeras inte i målsandlådan av säkerhetsskäl och måste uppdateras manuellt.</li><li>Källdataflödet kopieras som standard i utkaststatus.</li></ul> **OBS!** För närvarande stöder sandlådeverktyg endast batchbaserade källdataflöden. Direktuppspelningsbaserade källdataflöden stöds inte. |
 | Kunddataplattform | Målgrupper | <ul><li>Endast typen **[!UICONTROL Customer Audience]** **[!UICONTROL Segmentation service]** stöds.</li><li>Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb.</li><li> Systemet väljer automatiskt standardsammanslagningsprincip i målsandlådan med samma XDM-klass när kopplingsprincipberoenden kontrolleras.</li><li>Om ett befintligt objekt med samma namn upptäcks när du importerar publiker kommer sandlådeverktygen alltid att återanvända det befintliga objektet för att undvika objektförökning.</li></ul> |
 | Kunddataplattform | Identiteter | <ul><li>Systemet deduplicerar Adobe standardnamnutrymmen för identiteter automatiskt när det skapas i målsandlådan.</li><li>Publiker kan bara kopieras när alla attribut i målgruppsreglerna är aktiverade i unionsschemat. De scheman som behövs måste först flyttas och aktiveras för en enhetlig profil.</li></ul> |
 | Kunddataplattform | Scheman/fältgrupper/datatyper | <ul><li>Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb.</li><li>Du kan importera scheman utan att alternativet för enhetlig profil är aktiverat. Kantfallet för schemarelationer inkluderas inte i paketet.</li><li>Om ett befintligt objekt med samma namn upptäcks när du importerar scheman/fältgrupper kommer sandlådeverktygen alltid att återanvända det befintliga objektet för att undvika objektförökning.</li></ul> |
@@ -70,7 +70,7 @@ Tabellen nedan visar [!DNL Adobe Journey Optimizer] objekt som för närvarande 
 | [!DNL Adobe Journey Optimizer] | Anpassade åtgärder |  | Anpassade åtgärder kan läggas till i ett paket oberoende av varandra. När en anpassad åtgärd har tilldelats en resa kan den inte längre redigeras. Om du vill uppdatera anpassade åtgärder bör du: <ul><li>flytta anpassade åtgärder innan en resa migreras</li><li>uppdateringskonfigurationer (till exempel begärandehuvuden, frågeparametrar och autentisering) för anpassade åtgärder efter migrering</li><li>migrera reseobjekt med de anpassade åtgärder du lade till under det första steget</li></ul> |
 | [!DNL Adobe Journey Optimizer] | Innehållsmall | | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
 | [!DNL Adobe Journey Optimizer] | Fragment | Alla kapslade fragment. | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
-| [!DNL Adobe Journey Optimizer] | Kampanjer | Följande objekt som används i kampanjen kopieras som beroende objekt: <ul><li>Kampanjer</li><li>Målgrupper</li><li>Scheman</li><li>Innehållsmallar</li><li>Fragment</li><li>Meddelande/innehåll</li><li>Kanalkonfiguration</li><li>Enhetliga beslutsobjekt</li><li>Experimentera med inställningar/varianter</li></ul> | <ul><li>Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox).</li><li>Systemet identifierar och återanvänder automatiskt ett befintligt kanalkonfigurationsobjekt i målsandlådan om det finns en identisk konfiguration. Om ingen matchande konfiguration hittas hoppas kanalkonfigurationen över under importen, och användare måste uppdatera kanalinställningarna manuellt i målsandlådan för den här resan.</li><li>Användare kan återanvända befintliga experiment och målgrupper i målsandlådan som beroende objekt för valda kampanjer.</li></ul> |
+| [!DNL Adobe Journey Optimizer] | Kampanjer | Följande objekt som används i kampanjen kopieras som beroende objekt: <ul><li>Kampanjer</li><li>Målgrupper</li><li>Scheman</li><li>Innehållsmallar</li><li>Fragment</li><li>Meddelande/innehåll</li><li>Kanalkonfiguration</li><li>Enhetliga beslutsobjekt</li><li>Experimentera med inställningar/varianter</li></ul> | <ul><li>Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox).</li><li>Systemet identifierar och återanvänder automatiskt ett befintligt kanalkonfigurationsobjekt i målsandlådan om det finns en identisk konfiguration. Om ingen matchande konfiguration hittas hoppas kanalkonfigurationen över under importen, och användare måste uppdatera kanalinställningarna manuellt i målsandlådan för den här resan.</li><li>Användare kan återanvända befintliga experiment och målgrupper i målsandlådan som beroende objekt för valda kampanjer.</li></ul> |
 | [!DNL Adobe Journey Optimizer] | Beslut | Följande objekt måste finnas i målsandlådan innan du kopierar beslutsobjekt: <ul><li>Profilattribut som används mellan beslutsobjekt</li><li>Fältgruppen med anpassade erbjudandeattribut</li><li>Scheman för datastreams som används för kontextattribut i regler, rankning eller appning.</li></ul> | <ul><li>Kopiering av rankningsformler som använder AI-modeller stöds för närvarande inte.</li><li>Beslutsobjekt (erbjudandeartiklar) inkluderas inte automatiskt. Om du vill vara säker på att de överförs lägger du till dem manuellt med alternativet **Lägg till i paket**.</li><li>Principer som använder en urvalsstrategi kräver att associerade beslutsartiklar läggs till manuellt under kopieringsprocessen. Principer som använder manuella eller reservbeslutsobjekt inkluderas automatiskt dessa objekt som direkta beroenden.</li><li>Beslutsobjekt måste kopieras först, innan andra relaterade objekt.</li></ul> |
 
 Profilattribut som används mellan beslutsobjekt,
@@ -158,7 +158,7 @@ Om du vill importera paketet till en mållandlåda går du till fliken Sandlådo
 
 Välj den **[!UICONTROL Package name]** som du vill importera till målsandlådan med hjälp av listrutan. Lägg till en **[!UICONTROL Job name]** som kommer att användas för framtida övervakning. Som standard inaktiveras den enhetliga profilen när paketets scheman importeras. Aktivera det här genom att växla **Aktivera scheman för profilen** och sedan välja **[!UICONTROL Next]**.
 
-![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen &#x200B;](../images/ui/sandbox-tooling/import-package-to-sandbox.png)
+![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen ](../images/ui/sandbox-tooling/import-package-to-sandbox.png)
 
 Sidan [!UICONTROL Package object and dependencies] innehåller en lista med alla resurser som ingår i det här paketet. Systemet identifierar automatiskt beroende objekt som krävs för att importera markerade överordnade objekt. Eventuella attribut som saknas visas högst upp på sidan. Välj **[!UICONTROL View details]** om du vill ha en mer detaljerad beskrivning.
 
@@ -225,7 +225,7 @@ Om du vill importera paketet till en målsandlåda går du till fliken [!UICONTR
 
 Använd listrutan och markera den fullständiga sandlådan med listrutan **[!UICONTROL Package name]**. Lägg till en **[!UICONTROL Job name]** som kommer att användas för framtida övervakning och en valfri **[!UICONTROL Job description]** och välj sedan **[!UICONTROL Next]**.
 
-![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen &#x200B;](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen ](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
 
 >[!NOTE]
 >
@@ -361,7 +361,7 @@ När du har identifierat de målobjekt som du vill uppdatera väljer du **[!UICO
 
 Följande video är avsedd att ge stöd för din förståelse av sandlådeverktyg och visar hur du skapar ett nytt paket, publicerar ett paket och importerar ett paket.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446087/?captions=swe&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## Nästa steg
 
