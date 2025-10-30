@@ -26,7 +26,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 >[!NOTE]
 >
->Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+>Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 ## Övervakningsmått för inmatning av direktuppspelningsprofil {#streaming-profile-metrics}
 

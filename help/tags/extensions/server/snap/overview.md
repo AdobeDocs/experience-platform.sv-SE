@@ -53,7 +53,7 @@ När du är klar väljer du **[!UICONTROL Save]**.
 
 ## Skapa dataelement {#create-data-elements}
 
-Om du vill skicka data till API-tillägget för [!DNL Snapchat]-konverteringar skapar du [dataelement](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element) för varje dataparameter. Följ de här stegen:
+Om du vill skicka data till API-tillägget för [!DNL Snapchat]-konverteringar skapar du [dataelement](https://experienceleague.adobe.com/sv/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element) för varje dataparameter. Följ de här stegen:
 
 1. Navigera till **[!UICONTROL Authoring]**>**[!UICONTROL Data Elements]** på egenskapens **[!UICONTROL Property Info]**-skärm och välj sedan **[!UICONTROL Add Data Element]**.
 
@@ -79,7 +79,7 @@ Mer information om hur du skapar dataelement finns i dokumentationen [Egenskaper
 
 ## Skapa regler för att skicka konverteringshändelser till Fäst {#create-snap-rules}
 
-[Regler](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule) används för att utlösa tillägg i Experience Platform. I det här avsnittet beskrivs hur du skapar regler i egenskapen för vidarebefordring av händelser för att skicka konverteringshändelser till Snap med tillägget för Conversions API.
+[Regler](https://experienceleague.adobe.com/sv/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule) används för att utlösa tillägg i Experience Platform. I det här avsnittet beskrivs hur du skapar regler i egenskapen för vidarebefordring av händelser för att skicka konverteringshändelser till Snap med tillägget för Conversions API.
 
 ### Skapa en ny regel
 

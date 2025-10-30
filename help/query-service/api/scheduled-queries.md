@@ -26,7 +26,7 @@ Frågor som skapats med ett personligt användarkonto misslyckas om användarens
 >
 >Viktigt att tänka på när du hanterar schemalagda frågor:<ul><li>Schemalagda frågor misslyckas om kontot (tekniskt eller användarens) som användes för att skapa dem förlorar åtkomst eller behörigheter.</li><li>Schemalagda frågor måste inaktiveras innan de tas bort via API:t eller användargränssnittet.</li><li>Schemaläggning i oändlighet utan slutdatum stöds inte. Ett slutdatum måste alltid anges.</li></ul>
 
-Detaljerad vägledning om kontokrav, behörighetsinställningar och hantering av schemalagda frågor finns i [dokumentationen om frågescheman](../ui/query-schedules.md#technical-account-user-requirements). Stegvisa instruktioner för hur du skapar och konfigurerar ett tekniskt konto finns i [Developer Console-konfigurationen](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman) och [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup).
+Detaljerad vägledning om kontokrav, behörighetsinställningar och hantering av schemalagda frågor finns i [dokumentationen om frågescheman](../ui/query-schedules.md#technical-account-user-requirements). Stegvisa instruktioner för hur du skapar och konfigurerar ett tekniskt konto finns i [Developer Console-konfigurationen](https://experienceleague.adobe.com/sv/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman) och [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/sv/docs/platform-learn/tutorial-comprehensive-technical/setup).
 
 ## Exempel på API-anrop
 

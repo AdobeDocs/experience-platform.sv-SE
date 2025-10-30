@@ -37,17 +37,17 @@ Fältgruppen tillhandahåller ett enskilt `_experience`-objekt till ett schema, 
 
 ## `customDimensions` {#custom-dimensions}
 
-`customDimensions` hämtar anpassade [dimensioner](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html) som spåras av Analytics.
+`customDimensions` hämtar anpassade [dimensioner](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html?lang=sv-SE) som spåras av Analytics.
 
 ![customDimensions-fält](../../images/field-groups/analytics-full-extension/customDimensions.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `eVars` | Objekt | Ett objekt som hämtar upp till 250 konverteringsvariabler ([eVars](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar.html)). Egenskaperna för det här objektet är `eVar1`-keyade för `eVar250` och accepterar bara strängar för deras datatyp. |
-| `hierarchies` | Objekt | Ett objekt som hämtar upp till fem anpassade hierarkivariabler ([hiers](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html)). Egenskaperna för det här objektet är nedtonade `hier1` till `hier5`, som i sin tur är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan under `values`.</li><li>`values`: En avgränsad lista med namn på hierarkinivåer, representerat som en sträng.</li></ul> |
-| `listProps` | Objekt | Ett objekt som hämtar upp till 75 [listproppar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html#list-props). Egenskaperna för det här objektet är nedtonade `prop1` till `prop75`, som i sin tur är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan under `values`.</li><li>`values`: En avgränsad lista med värden för propen, representerad som en sträng.</li></ul> |
-| `lists` | Objekt | Ett objekt som hämtar upp till tre [listor](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html). Egenskaperna för det här objektet är nedtonade `list1` till `list3`. Var och en av dessa egenskaper innehåller en enda `list`-matris med [[!UICONTROL Key Value Pair]](../../data-types/key-value-pair.md)-datatyper. |
-| `props` | Objekt | Ett objekt som hämtar upp till 75 [props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html). Egenskaperna för det här objektet är `prop1`-keyade för `prop75` och accepterar bara strängar för deras datatyp. |
+| `eVars` | Objekt | Ett objekt som hämtar upp till 250 konverteringsvariabler ([eVars](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar.html?lang=sv-SE)). Egenskaperna för det här objektet är `eVar1`-keyade för `eVar250` och accepterar bara strängar för deras datatyp. |
+| `hierarchies` | Objekt | Ett objekt som hämtar upp till fem anpassade hierarkivariabler ([hiers](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html?lang=sv-SE)). Egenskaperna för det här objektet är nedtonade `hier1` till `hier5`, som i sin tur är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan under `values`.</li><li>`values`: En avgränsad lista med namn på hierarkinivåer, representerat som en sträng.</li></ul> |
+| `listProps` | Objekt | Ett objekt som hämtar upp till 75 [listproppar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=sv-SE#list-props). Egenskaperna för det här objektet är nedtonade `prop1` till `prop75`, som i sin tur är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan under `values`.</li><li>`values`: En avgränsad lista med värden för propen, representerad som en sträng.</li></ul> |
+| `lists` | Objekt | Ett objekt som hämtar upp till tre [listor](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html?lang=sv-SE). Egenskaperna för det här objektet är nedtonade `list1` till `list3`. Var och en av dessa egenskaper innehåller en enda `list`-matris med [[!UICONTROL Key Value Pair]](../../data-types/key-value-pair.md)-datatyper. |
+| `props` | Objekt | Ett objekt som hämtar upp till 75 [props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=sv-SE). Egenskaperna för det här objektet är `prop1`-keyade för `prop75` och accepterar bara strängar för deras datatyp. |
 | `postalCode` | Sträng | Ett postnummer som kunden angett. |
 | `stateProvince` | Sträng | En klienttillhandahållen stat eller provinsplats. |
 
@@ -72,12 +72,12 @@ Fältgruppen tillhandahåller ett enskilt `_experience`-objekt till ett schema, 
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `browserIDStr` | Sträng | Adobe Analytics-identifieraren för den webbläsare som används (kallas även [webbläsartypdimension](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html)). |
-| `operatingSystemIDStr` | Sträng | Adobe Analytics-identifieraren för det operativsystem som används (kallas annars för [operativsystemtypsdimensionen](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html)). |
+| `browserIDStr` | Sträng | Adobe Analytics-identifieraren för den webbläsare som används (kallas även [webbläsartypdimension](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html?lang=sv-SE)). |
+| `operatingSystemIDStr` | Sträng | Adobe Analytics-identifieraren för det operativsystem som används (kallas annars för [operativsystemtypsdimensionen](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html?lang=sv-SE)). |
 
 ## Anpassade händelsefält {#events}
 
-Fältgruppen Analytics-tillägg innehåller tio objektfält som samlar in upp till 100 [anpassade händelsemått](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html) vardera, vilket ger totalt 1 000 för fältgruppen.
+Fältgruppen Analytics-tillägg innehåller tio objektfält som samlar in upp till 100 [anpassade händelsemått](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html?lang=sv-SE) vardera, vilket ger totalt 1 000 för fältgruppen.
 
 Varje händelseobjekt på den översta nivån innehåller de enskilda händelseobjekten för respektive intervall. `event101to200` innehåller t.ex. händelser som har sparats från `event101` till `event200`.
 

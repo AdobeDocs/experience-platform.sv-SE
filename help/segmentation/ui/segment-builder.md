@@ -131,7 +131,7 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 >id="platform_segmentation_segmentbuilder_externalaudiences"
 >title="Externa målgrupper"
 >abstract="Publiker som importeras via fliken Publiker visas nu automatiskt via Audience Portal. Detta inkluderar målgrupper som importerats från Audience Manager, Customer Journey Analytics, Segment Match och andra anpassade integreringar.<br/><br/>I slutet av september 2025 hämtas målgrupper exklusivt via Unified Search, och det tidigare arbetsflödet stöds inte längre. Segmentmatchning är bara tillgängligt för ett litet antal utvalda kunder medan vi överför tjänsten. Åtkomst för nya kunder med segmentmatchning kan fortfarande aktiveras på begäran innan tjänsten är helt indragen.<br/><br/>För pågående datasamarbete rekommenderar Adobe att man går över till Collaboration, som är den långsiktiga lösning som stöds."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
 
 >[!NOTE]
 >
@@ -386,7 +386,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="Uppdatera uppskattningar"
 >abstract="Du kan uppdatera uppskattningarna av din segmentdefinition så att du omedelbart ser en förhandsvisning av hur många profiler som skulle kvalificera sig för den föreslagna segmentdefinitionen. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=sv-SE#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"

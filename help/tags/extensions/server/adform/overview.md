@@ -48,7 +48,7 @@ Innan du integrerar Adobe med Adobe måste du kontrollera att följande krav är
 2. **CDP- eller Anslutnings-SKU**: Du måste ha antingen Adobe Customer Data Platform (CDP) Prime eller Ultimate SKU, eller Connection SKU, för att kunna aktivera smidig kommunikation på både klient- och serversidan.
 
 3. **Adobe Experience Platform Edge Network-konfiguration**:
-   * Kontrollera att Edge Network har konfigurerats för att stödja händelsevidarebefordran i realtid för återmarknadsföring utanför webbplatsen. Mer information finns i guiden [Komma igång med händelsevidarebefordran](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/getting-started).
+   * Kontrollera att Edge Network har konfigurerats för att stödja händelsevidarebefordran i realtid för återmarknadsföring utanför webbplatsen. Mer information finns i guiden [Komma igång med händelsevidarebefordran](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/event-forwarding/getting-started).
    * Det här steget är avgörande för att effektivt kunna överföra data till Adforms slutpunkt på serversidan.
 
 När dessa krav är uppfyllda kan du fortsätta att konfigurera och distribuera tillägget [!DNL Adform].
