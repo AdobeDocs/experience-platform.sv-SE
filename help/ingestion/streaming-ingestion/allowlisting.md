@@ -40,7 +40,7 @@ Funktionen IP-tillåtelselistning fungerar enligt följande:
 
 Följ stegen nedan om du vill aktivera IP-adresstillåtslista för din organisation:
 
-1. Hämta och fyll i formuläret [IP-adress som tillåtslista ](../images/assets/ip_allowlisting_aep.xlsx.zip).
+1. Hämta och fyll i formuläret [IP-adress som tillåtslista &#x200B;](../images/assets/ip_allowlisting_aep.xlsx.zip).
 2. Öppna en supportanmälan och arkivera ämnet som **AEP DCS &amp; Streaming Ingtake - IP Tillåtelselistning request**. Bifoga det ifyllda formuläret till den här biljetten.
 3. När du har skickat in din anmälan vidarebefordrar Adobe kundtjänst din förfrågan till konstruktören.
 4. Teknikerna möjliggör tillåtelselistning och bekräftar installationen.
