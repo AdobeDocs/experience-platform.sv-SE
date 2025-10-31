@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Mappningsfält för Marketo Engage Source
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
 source-wordcount: '1451'
 ht-degree: 4%
@@ -66,7 +66,7 @@ Läs dokumentationen om [XDM Experience Event-klassen](../../../../xdm/classes/e
 | primärAttributeValueId när activityTypeId är (7, 8, 9, 10, 11, 27) | 7, 8, 9, 10, 11, 27 | `directMarketing.mailingName` | `directMarketing.mailingName` |  |
 |  |  | `directMarketing.testVariantName` | `directMarketing.testVariantName` |  |
 | `attributes.Test Variant` |  | `directMarketing.testVariantID` | `directMarketing.testVariantID` |  |
-| `attributes.Subcategory` <ul><li><strong>activityTypeId = 8</strong><ul><li>1099 → MEDDELANDE BLOCKERAT</li><li>1003 → SPAM BLOCKED ON SOURCE</li><li>1004 → SPAM BLOCKED ON MESSAGE</li><li>2003 → OGILTIG E-POSTADRESS</li><li>2001 → E-POSTADRESSFEL</li><li>*` &rarr;`OKÄND ANLEDNING TILL BUNDET</li></ul></li><li><strong>activityTypeId = 27</strong><ul><li>3999 → MEDDELANDET GODKÄNDES INTE</li><li>3001 → MAILBOX FULL</li><li>3004 → TIMEOUT INTRÄFFADE</li><li>4003 → DNS-FEL</li><li>4002 → MEDDELANDET ÄR FÖR STORT</li><li>4006 → POLICYÖVERTRÄDELSE</li><li>4999 → ÖVERGÅNGSFEL</li><li>999 → FEL SVAR MOTTAGEN</li><li>*→ OKÄND ORSAK TILL SOFT BOUNCE</li></ul></li></ul> | 8, 27 | `directMarketing.emailBouncedCode` | `directMarketing.emailBouncedCode` |  |
+| `attributes.Subcategory` <ul><li><strong>activityTypeId = 8</strong><ul><li>1099 → MEDDELANDE BLOCKERAT</li><li>1003 → SPAM BLOCKED ON SOURCE</li><li>1004 → SPAM BLOCKED ON MESSAGE</li><li>2003 → OGILTIG E-POSTADRESS</li><li>2001 → E-POSTADRESSFEL</li><li> `&rarr;` OKÄND ANLEDNING TILL BUNDET</li></ul></li><li><strong>activityTypeId = 27</strong><ul><li>3999 → MEDDELANDET GODKÄNDES INTE</li><li>3001 → MAILBOX FULL</li><li>3004 → TIMEOUT INTRÄFFADE</li><li>4003 → DNS-FEL</li><li>4002 → MEDDELANDET ÄR FÖR STORT</li><li>4006 → POLICYÖVERTRÄDELSE</li><li>4999 → ÖVERGÅNGSFEL</li><li>999 → FEL SVAR MOTTAGEN</li><li> → OKÄND ANLEDNING TILL SOFT BOUNCE</li></ul></li></ul> | 8, 27 | `directMarketing.emailBouncedCode` | `directMarketing.emailBouncedCode` |  |
 | `attributes.Details` |  | `directMarketing.emailBouncedDetails` | `directMarketing.emailBouncedDetails` |  |
 | `attributes.Email` |  | `directMarketing.email` | `directMarketing.email` |  |
 | `attributes.Is Mobile Device` |  | `device.isMobileDevice` | `device.isMobileDevice` |  |
@@ -171,7 +171,7 @@ Läs översikten [XDM Business Campaign](../../../../xdm/classes/b2b/business-ca
 
 ## Programmedlemskap {#program-memberships}
 
-Läs översikten [XDM Business Campaign Members](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Campaign Member Details &#x200B;](../../../../xdm/field-groups/b2b-campaign-members/details.md).
+Läs översikten [XDM Business Campaign Members](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Campaign Member Details ](../../../../xdm/field-groups/b2b-campaign-members/details.md).
 
 | Source dataset | XDM-målfält | Anteckningar |
 | -------------- | --------------- | ----- |

@@ -9,7 +9,7 @@ type: Documentation
 role: Developer
 feature: API, Audiences, Data Ingestion, Datasets, Destinations, Privacy, Queries, Schemas, Sandboxes, Sources
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
 source-wordcount: '1817'
 ht-degree: 3%
@@ -62,7 +62,7 @@ Mer information om vilka frågeparametrar som är tillgängliga för en viss tj�
 
 ## Hur anger jag att ett JSON-fält ska uppdateras i en begäran från PATCH? {#how-do-i-indicate-a-json-field-to-update-in-a-patch-request}
 
-Många PATCH-åtgärder i [!DNL Experience Platform] API:er använder [&#x200B; JSON-pekarsträngar &#x200B;](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster med formatet [JSON Patch](https://tools.ietf.org/html/rfc6902). I guiden [Grundläggande API &#x200B;](api-fundamentals.md) finns detaljerad information om nödvändig syntax för dessa tekniker.
+Många PATCH-åtgärder i [!DNL Experience Platform] API:er använder [ JSON-pekarsträngar ](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster med formatet [JSON Patch](https://tools.ietf.org/html/rfc6902). I guiden [Grundläggande API ](api-fundamentals.md) finns detaljerad information om nödvändig syntax för dessa tekniker.
 
 ## Kan jag använda Postman för att ringa anrop till [!DNL Experience Platform] API:er? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
@@ -222,7 +222,7 @@ Nedan följer en lista över felsökningsguider och API-referensdokumentation f�
 | Adobe Experience Platform datastyrning | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |
 | Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service) | [[!DNL Identity Service] felsökningsguide](../identity-service/troubleshooting-guide.md) |
 | Adobe Experience Platform Query Service | [[!DNL Query Service API]](https://www.adobe.io/experience-platform-apis/references/query-service/) | [[!DNL Query Service] felsökningsguide](../query-service/troubleshooting-guide.md) |
-| Adobe Experience Platform Segmentering | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |
+| Adobe Experience Platform Segmentering | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |  |
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) |  |
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/) | [[!DNL XDM System] Vanliga frågor och felsökningsguide](../xdm/troubleshooting-guide.md) |
 | [!DNL Flow Service] ([!DNL Sources] och [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/) |  |

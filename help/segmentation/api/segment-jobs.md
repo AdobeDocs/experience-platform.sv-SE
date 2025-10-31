@@ -4,7 +4,7 @@ title: API-slutpunkt för segmentjobb
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 role: Developer
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
 source-wordcount: '1232'
 ht-degree: 0%
@@ -43,7 +43,7 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 | `start` | Anger startförskjutningen för de returnerade segmentjobben. | `start=1` |
 | `limit` | Anger antalet segmentjobb som returneras per sida. | `limit=20` |
 | `status` | Filtrerar resultaten baserat på status. Värdena som stöds är NEW, QUEUED, PROCESSING, SUCCEED, FAILED, CANCELING, CANCELING | `status=NEW` |
-| `sort` | Beställer returnerade segmentjobb. Har skrivits i formatet `[attributeName]:[desc|asc]`. `sort=creationTime:desc` |
+| `sort` | Beställer returnerade segmentjobb. | Har skrivits i formatet `[attributeName]:[desc\|asc]`. `sort=creationTime:desc` |
 | `property` | Filtrerar segmentjobb och hämtar exakta matchningar för angivet filter. Den kan skrivas i något av följande format: <ul><li>`[jsonObjectPath]==[value]` - filtrering på objektnyckeln</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` - filtrering i arrayen</li></ul> | `property=segments~segmentId==workInUS` |
 
 +++

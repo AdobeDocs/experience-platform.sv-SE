@@ -2,9 +2,9 @@
 title: Mappningsfält för Adobe Analytics Source Connector
 description: Mappa Adobe Analytics-fält till XDM-fält med Analytics Source Connector.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
 workflow-type: tm+mt
-source-wordcount: '3854'
+source-wordcount: '3838'
 ht-degree: 0%
 
 ---
@@ -197,7 +197,7 @@ Läs det här avsnittet för information om inaktuella analysmappningsfält.
 | `mobilebeaconminor` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.beaconMinor` | tal | Mobiltjänster är mindre. |
 | `mobilebeaconuuid` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.proximityUUID` | string | Mobiltjänster är UUID. |
 | `mobileinstalls` | `application.firstLaunches` | Objekt | Detta aktiveras vid den första körningen efter installation eller ominstallation av `{id (string), value (number)}` |
-| `mobileupgrades` | `application.upgrades` | Objekt | Rapporterar antalet appuppgraderingar. Utlösare vid första körningen efter uppgraderingen eller när som helst när versionsnumret ändras. | `{id (string), value (number)}` |
+| `mobileupgrades` | `application.upgrades` | Objekt | Rapporterar antalet appuppgraderingar. Utlösare vid första körningen efter uppgraderingen eller när som helst när versionsnumret ändras. `{id (string), value (number)}` |
 | `mobilelaunches` | `application.launches` | Objekt | Antalet gånger som appen har startats.  `{id (string), value (number)}` |
 | `mobilecrashes` | `application.crashes` | Objekt | `{id (string), value (number)}` |
 | `mobilemessageclicks` | `directMarketing.clicks` | Objekt | `{id (string), value (number)}` |
@@ -224,13 +224,13 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 
 | Datafeed | XDM-fält | XDM-typ | Beskrivning |
 | --- | --- | --- | --- |
-| `m_prop1`<br/>`[...]`<br/>`m_prop75` | `_experience.analytics.customDimensions`<br/>`.listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | Objekt | Anpassade analysprops, konfigurerade som listprops. Den innehåller en avgränsad lista med värden. | {} |
-| `m_hier1`<br/>`[...]`<br/>`m_hier5` | `_experience.analytics.customDimensions.`<br/>`hierarchies.hier1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`hierarchies.hier5` | Objekt | Används av hierarkivariabler. Den innehåller en avgränsad lista med värden. | {values (array), delimiter (string)} |
-| `m_mvvar1`<br/>`[...]`<br/>`m_mvvar3` | `_experience.analytics.customDimensions.`<br/>`lists.list1.list[]`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`lists.list3.list[]` | array | Listvariabler för anpassade analyser. Innehåller en avgränsad lista med värden. | {value (string), key (string)} |
+| `m_prop1`<br/>`[...]`<br/>`m_prop75` | `_experience.analytics.customDimensions`<br/>`.listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | Objekt | Anpassade analysprops, konfigurerade som listprops. Den innehåller en avgränsad lista med värden. `{}` |
+| `m_hier1`<br/>`[...]`<br/>`m_hier5` | `_experience.analytics.customDimensions.`<br/>`hierarchies.hier1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`hierarchies.hier5` | Objekt | Används av hierarkivariabler. Den innehåller en avgränsad lista med värden. `{values (array), delimiter (string)}` |
+| `m_mvvar1`<br/>`[...]`<br/>`m_mvvar3` | `_experience.analytics.customDimensions.`<br/>`lists.list1.list[]`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`lists.list3.list[]` | array | Listvariabler för anpassade analyser. Innehåller en avgränsad lista med värden.  `{value (string), key (string)}` |
 | `m_color` | `device.colorDepth` | heltal | ID för färgdjup, som baseras på värdet för kolumnen c_color. |
 | `m_cookies` | `environment.browserDetails.cookiesEnabled` | boolesk | En variabel som används i Cookie-supportdimensionen. |
-| `m_event_list` | `commerce.purchases`,<br/>`commerce.productViews`,<br/>`commerce.productListOpens`,<br/>`commerce.checkouts`,<br/>`commerce.productListAdds`,<br/>`commerce.productListRemovals`,<br/>`commerce.productListViews` | Objekt | Standardhändelser för e-handel utlöste träffen. | {id (sträng), value (number)} |
-| `m_event_list` | `_experience.analytics.event1to100.event1`<br/>`[...]`<br/>`_experience.analytics.event901to1000.event1000` | Objekt | Anpassade händelser som utlöses vid träffen. | {id (Object), value (Object)} |
+| `m_event_list` | `commerce.purchases`,<br/>`commerce.productViews`,<br/>`commerce.productListOpens`,<br/>`commerce.checkouts`,<br/>`commerce.productListAdds`,<br/>`commerce.productListRemovals`,<br/>`commerce.productListViews` | Objekt | Standardhändelser för e-handel utlöste träffen. `{id (string), value (number)}` |
+| `m_event_list` | `_experience.analytics.event1to100.event1`<br/>`[...]`<br/>`_experience.analytics.event901to1000.event1000` | Objekt | Anpassade händelser som utlöses vid träffen. `{id (Object), value (Object)}` |
 | `m_geo_country` | `placeContext.geo.countryCode` | string | Förkortning av det land där träffen kom från, vilket baseras på undersökningsperioden. |
 | `m_geo_latitude` | `placeContext.geo._schema.latitude` | tal | |
 | `m_geo_longitude` | `placeContext.geo._schema.longitude` | tal | |
