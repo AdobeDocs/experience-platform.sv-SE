@@ -114,7 +114,7 @@ Det här dokumentet innehåller en katalog med felmeddelanden, beskrivningar och
 | `1350-400` | Felaktig begäran | Ingen operator har angetts för filter vid källan. Ange en giltig filterbegäran med lämplig operator och försök igen. |
 | `1351-400` | Felaktig begäran | Den angivna operatorn {operator} stöds inte för filter vid källan för den här kopplingen. Ange en giltig operator och försök igen. |
 | `1352-400` | Felaktig begäran | Den angivna operatorn {operator} kan inte mappas till någon systemspecifik operator som stöds för {ql}. Ange en giltig operator och försök igen. |
-| `1353-400` | Felaktig begäran | Filtret vid källan stöds ännu inte för {connectorType}-anslutningen. Kontrollera vilka anslutningar som stöds i dokumentationen: https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html. |
+| `1353-400` | Felaktig begäran | Filtret vid källan stöds ännu inte för {connectorType}-anslutningen. Kontrollera vilka anslutningar som stöds i dokumentationen: https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html?lang=sv-SE. |
 | `1354-400` | Felaktig begäran | Frågespråket {ql} stöds ännu inte för filter vid källan. Ange ett giltigt frågespråk och försök igen. |
 | `1355-400` | Felaktig begäran | Den angivna filtertypen är ogiltig. Den filtertyp som stöds är: PQL. Ange en giltig filtertyp och försök igen. |
 | `1356-400` | Felaktig begäran | Angivet filterformat är ogiltigt. Filterformatet som stöds är: pql/json. Ange ett giltigt filterformat och försök igen. |
