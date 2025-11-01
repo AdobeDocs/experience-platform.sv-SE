@@ -2,7 +2,7 @@
 title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '1417'
 ht-degree: 1%
@@ -395,7 +395,7 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=file&object={OBJECT
 
 | Parameter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `{CONNECTION_SPEC_ID}` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
+| `{CONNECTION_SPEC_ID}` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |  |
 | `{OBJECT_TYPE}` | Den typ av objekt som du vill komma åt. | `file` |
 | `{OBJECT}` | Sökvägen till och namnet på det objekt som du vill komma åt. | `dlz-user-container/data8.csv` |
 | `{FILE_TYPE}` | Filtypen. | <ul><li>`delimited`</li><li>`json`</li><li>`parquet`</li></ul> |
@@ -517,7 +517,7 @@ curl -X GET \
 
 Ett lyckat svar returnerar strukturen för den efterfrågade filen, inklusive filnamn och datatyper, samt en `properties`-nyckel, som innehåller information om `fileType`, `compressionType` och `columnDelimiter`.
 
-+++Klicka på mig
++++Klicka här
 
 ```json
 {

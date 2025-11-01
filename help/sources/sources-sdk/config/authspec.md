@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera autentiseringsspecifikationer för självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '772'
 ht-degree: 0%
@@ -116,20 +116,20 @@ En OAuth2-uppdateringskod ger säker åtkomst till ett program genom att generer
 | --- | --- | --- |
 | `authSpec.name` | Visar namnet på autentiseringstypen som stöds. | `oAuth2-refresh-code` |
 | `authSpec.type` | Definierar den typ av autentisering som stöds av källan. | `oAuth2-refresh-code` |
-| `authSpec.spec` | Innehåller information om autentiseringens schema, datatyp och egenskaper. |
+| `authSpec.spec` | Innehåller information om autentiseringens schema, datatyp och egenskaper. |  |
 | `authSpec.spec.$schema` | Definierar det schema som används för autentiseringen. | `http://json-schema.org/draft-07/schema#` |
 | `authSpec.spec.type` | Definierar schemats datatyp. | `object` |
-| `authSpec.spec.properties` | Innehåller information om de autentiseringsuppgifter som används för autentiseringen. |
-| `authSpec.spec.properties.description` | Visar en kort beskrivning av autentiseringsuppgifterna. |
+| `authSpec.spec.properties` | Innehåller information om de autentiseringsuppgifter som används för autentiseringen. |  |
+| `authSpec.spec.properties.description` | Visar en kort beskrivning av autentiseringsuppgifterna. |  |
 | `authSpec.spec.properties.type` | Definierar autentiseringsuppgifternas datatyp. | `string` |
-| `authSpec.spec.properties.clientId` | Klient-ID som är associerat med ditt program. Klient-ID:t används tillsammans med din klienthemlighet för att hämta din åtkomsttoken. |
-| `authSpec.spec.properties.clientSecret` | Klienthemligheten som är kopplad till ditt program. Klienthemligheten används tillsammans med ditt klient-ID för att hämta din åtkomsttoken. |
-| `authSpec.spec.properties.accessToken` | Åtkomsttoken ger dig säker åtkomst till ditt program. |
-| `authSpec.spec.properties.refreshToken` | Uppdateringstoken används för att generera en ny åtkomsttoken när åtkomsttoken upphör att gälla. |
-| `authSpec.spec.properties.expirationDate` | Definierar förfallodatumet för åtkomsttoken. |
-| `authSpec.spec.properties.refreshTokenUrl` | Den URL som används för att hämta din uppdateringstoken. |
-| `authSpec.spec.properties.accessTokenUrl` | Den URL som används för att hämta din uppdateringstoken. |
-| `authSpec.spec.properties.requestParameterOverride` | Gör att du kan ange autentiseringsparametrar som ska åsidosättas vid autentisering. |
+| `authSpec.spec.properties.clientId` | Klient-ID som är associerat med ditt program. Klient-ID:t används tillsammans med din klienthemlighet för att hämta din åtkomsttoken. |  |
+| `authSpec.spec.properties.clientSecret` | Klienthemligheten som är kopplad till ditt program. Klienthemligheten används tillsammans med ditt klient-ID för att hämta din åtkomsttoken. |  |
+| `authSpec.spec.properties.accessToken` | Åtkomsttoken ger dig säker åtkomst till ditt program. |  |
+| `authSpec.spec.properties.refreshToken` | Uppdateringstoken används för att generera en ny åtkomsttoken när åtkomsttoken upphör att gälla. |  |
+| `authSpec.spec.properties.expirationDate` | Definierar förfallodatumet för åtkomsttoken. |  |
+| `authSpec.spec.properties.refreshTokenUrl` | Den URL som används för att hämta din uppdateringstoken. |  |
+| `authSpec.spec.properties.accessTokenUrl` | Den URL som används för att hämta din uppdateringstoken. |  |
+| `authSpec.spec.properties.requestParameterOverride` | Gör att du kan ange autentiseringsparametrar som ska åsidosättas vid autentisering. |  |
 | `authSpec.spec.required` | Visar de autentiseringsuppgifter som krävs för att autentisera. | `accessToken` |
 
 {style="table-layout:auto"}
@@ -173,13 +173,13 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
 | --- | --- | --- |
 | `authSpec.name` | Visar namnet på autentiseringstypen som stöds. | `Basic Authentication` |
 | `authSpec.type` | Definierar den typ av autentisering som stöds av källan. | `BasicAuthentication` |
-| `authSpec.spec` | Innehåller information om autentiseringens schema, datatyp och egenskaper. |
+| `authSpec.spec` | Innehåller information om autentiseringens schema, datatyp och egenskaper. |  |
 | `authSpec.spec.$schema` | Definierar det schema som används för autentiseringen. | `http://json-schema.org/draft-07/schema#` |
 | `authSpec.spec.type` | Definierar schemats datatyp. | `object` |
-| `authSpec.spec.description` | Visar ytterligare information som är specifik för din autentiseringstyp. |
-| `authSpec.spec.properties` | Innehåller information om de autentiseringsuppgifter som används för autentiseringen. |
-| `authSpec.spec.properties.username` | Det kontoanvändarnamn som är associerat med ditt program. |
-| `authSpec.spec.properties.password` | Kontolösenordet som är kopplat till programmet. |
+| `authSpec.spec.description` | Visar ytterligare information som är specifik för din autentiseringstyp. |  |
+| `authSpec.spec.properties` | Innehåller information om de autentiseringsuppgifter som används för autentiseringen. |  |
+| `authSpec.spec.properties.username` | Det kontoanvändarnamn som är associerat med ditt program. |  |
+| `authSpec.spec.properties.password` | Kontolösenordet som är kopplat till programmet. |  |
 | `authSpec.spec.required` | Anger de fält som krävs som obligatoriska värden som ska infogas i Experience Platform. | `username` |
 
 {style="table-layout:auto"}
@@ -282,7 +282,7 @@ GET /data?X-Auth-Key1={YOUR_AUTH_KEY1}&X-Auth-Key2={YOUR_AUTH_KEY2}
 
 Följande är ett exempel på en slutförd autentiseringsspecifikation som använder en [[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md)-källa.
 
-+++Visa exempelautentiseringsspecifikation
++++Visa exempel på autentiseringsspecifikation
 
 ```json
   "authSpec": [

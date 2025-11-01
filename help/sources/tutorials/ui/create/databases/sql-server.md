@@ -2,7 +2,7 @@
 title: Skapa en Microsoft SQL Server Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Microsoft SQL Server-källanslutning med Adobe Experience Platform gränssnitt.
 exl-id: aba4e317-1c59-4999-a525-dba15f8d4df9
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '445'
 ht-degree: 0%
@@ -30,7 +30,7 @@ För att kunna ansluta till [!DNL SQL Server] på [!DNL Experience Platform] må
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| Anslutningssträng | Anslutningssträngen som är associerad med ditt [!DNL Microsoft SQL Server]-konto. Ditt anslutningssträngsmönster beror på om du använder servernamn eller instansnamn för datakällan:<ul><li>Anslutningssträng med servernamn: `Data Source={SERVER_NAME};Initial Catalog={DATABASE};Integrated Security=False;User ID={USER_ID};Password={PASSWORD};`</li><li>Anslutningssträng med instansnamn:`Data Source={INSTANCE_NAME};Initial Catalog={DATABASE};Integrated Security=False;User ID={USER_ID};Password={PASSWORD};` | `Data Source=mssqlserver.database.windows.net;Initial Catalog=mssqlserver_e2e_db;Integrated Security=False;User ID=mssqluser;Password=mssqlpassword` |
+| Anslutningssträng | Anslutningssträngen som är associerad med ditt [!DNL Microsoft SQL Server]-konto. Ditt anslutningssträngsmönster beror på om du använder servernamn eller instansnamn för datakällan:<ul><li>Anslutningssträng med servernamn: `Data Source={SERVER_NAME};Initial Catalog={DATABASE};Integrated Security=False;User ID={USER_ID};Password={PASSWORD};`</li><li>Anslutningssträng med instansnamn:`Data Source={INSTANCE_NAME};Initial Catalog={DATABASE};Integrated Security=False;User ID={USER_ID};Password={PASSWORD};` <br> `Data Source=mssqlserver.database.windows.net;Initial Catalog=mssqlserver_e2e_db;Integrated Security=False;User ID=mssqluser;Password=mssqlpassword` </li></ul> |
 
 Mer information om hur du kommer igång finns i [det här [!DNL SQL Server] dokumentet](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server).
 

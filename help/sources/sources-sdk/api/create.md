@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en ny anslutningsspecifikation med API:t för Flow Service
 description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor.
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
-source-git-commit: f47b7f725475fc7f7fac6dd406975b46f257e390
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '773'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 En anslutningsspecifikation representerar strukturen för en källa. Den innehåller information om en källas autentiseringskrav, definierar hur källdata kan utforskas och inspekteras samt ger information om attributen för en viss källa. Med slutpunkten `/connectionSpecs` i API:t [!DNL Flow Service] kan du programmässigt hantera anslutningsspecifikationerna inom organisationen.
 
-I följande dokument beskrivs hur du skapar en anslutningsspecifikation med hjälp av API:t [!DNL Flow Service] och integrerar en ny källa med självbetjäningskällor (Batch SDK).
+Följande dokument innehåller steg om hur du skapar en anslutningsspecifikation med API:t [!DNL Flow Service] och integrerar en ny källa med självbetjäningskällor (Batch SDK).
 
 ## Komma igång
 
@@ -23,7 +23,7 @@ Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) fö
 
 ## Samla in artefakter
 
-Om du vill skapa en ny batchkälla med hjälp av självbetjäningskällor måste du först koordinera med Adobe, begära en privat Git-databas och anpassa dig till Adobe om källans etikett, beskrivning, kategori och ikon.
+Om du vill skapa en ny batchkälla med hjälp av självbetjäningskällor måste du först koordinera med Adobe, begära en privat Git-databas och anpassa dig till Adobe med information om källans etikett, beskrivning, kategori och ikon.
 
 När du har angett den måste du strukturera din privata Git-databas så här:
 
@@ -41,8 +41,8 @@ När du har angett den måste du strukturera din privata Git-databas så här:
 | {your_source} | Namnet på källan. Den här mappen bör innehålla alla artefakter som hör till källan i din privata Git-databas. | `mailchimp-members` |
 | {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. En lista över tillgängliga källkategorier som stöds av självbetjäningskällor (Batch SDK) är: <ul><li>Advertising</li><li>Analytics </li><li>Samtycke och inställningar</li><li>CRM</li><li>Nöjda kunder</li><li>Databas</li><li>e-Commerce</li><li>Marknadsföringsautomatisering</li><li>Betalningar</li><li>Protokoll</li></ul> **Obs!** Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera saken. | `mailchimp-members-category.txt` Ange källkategorin i filen, till exempel: `marketingAutomation`. |
 | {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Mailchimp Members] är en källa för automatiserad marknadsföring som du kan använda för att hämta [!DNL Mailchimp Members]-data till Experience Platform. |
-| {your_source}-icon.svg | Bilden som ska användas för att representera källan i katalogen för Experience Platform-källor. Den här ikonen måste vara en SVG-fil. |
-| {your_source}-label.txt | Källans namn så som det ska visas i katalogen Experience Platform sources. | Mailchimp-medlemmar |
+| {your_source}-icon.svg | Bilden som ska användas för att representera källan i Experience Platform källkatalog. Ikonen måste vara en SVG-fil. |  |
+| {your_source}-label.txt | Källans namn så som det ska visas i Experience Platform-källkatalogen. | Mailchimp-medlemmar |
 | {your_source}-connectionSpec.json | En JSON-fil som innehåller anslutningsspecifikationen för källan. Den här filen behövs inte från början eftersom du fyller i anslutningsspecifikationen när du slutför den här guiden. | `mailchimp-members-connectionSpec.json` |
 
 {style="table-layout:auto"}
@@ -452,7 +452,7 @@ I följande dokument finns instruktioner om hur du fyller i värdena för varje 
 * [Konfigurera din källspecifikation](../config/sourcespec.md)
 * [Konfigurera din specifikation för utforskande](../config/explorespec.md)
 
-Med din specifikationsinformation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-förfrågan till `/connectionSpecs`-slutpunkten för [!DNL Flow Service] API.
+Med din specifikationsinformation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-begäran till `/connectionSpecs`-slutpunkten för [!DNL Flow Service] API.
 
 **API-format**
 

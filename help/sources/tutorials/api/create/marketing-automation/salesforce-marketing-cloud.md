@@ -2,7 +2,7 @@
 title: Anslut Salesforce Marketing Cloud till Experience Platform med API:t för flödestjänst
 description: Lär dig hur du ansluter ditt Salesforce Marketing Cloud-konto till Experience Platform med API:er.
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 0c0a58df4beae499008e52c118b40bed86ff0596
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -101,7 +101,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `auth.params.host` |
+| `auth.params.host` |  |
 | `auth.params.clientId` | Klient-ID som är associerat med ditt [!DNL Salesforce Marketing Cloud]-program. |
 | `auth.params.clientSecret` | Klienthemligheten som är associerad med ditt [!DNL Salesforce Marketing Cloud]-program. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Salesforce Marketing Cloud]: `ea1c2a08-b722-11eb-8529-0242ac130003`. |
@@ -143,7 +143,7 @@ POST /connections
 
 Följande begäran skapar en basanslutning för [!DNL Salesforce Service Cloud] att ansluta till Experience Platform på AWS.
 
-+++Exempel på visningsbegäran
++++Visa exempel på förfrågan
 
 ```shell
 curl -X POST \

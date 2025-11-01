@@ -2,7 +2,7 @@
 title: Översikt över Cloud Connector-tillägg
 description: Lär dig mer om tillägget för händelsevidarebefordran i Cloud Connector i Adobe Experience Platform.
 exl-id: f3713652-ac32-4171-8dda-127c8c235849
-source-git-commit: e832694fed5dbb86b5ed544473d6a79e500a6222
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '1681'
 ht-degree: 2%
@@ -70,7 +70,7 @@ I följande tabell visas de fördefinierade rubrikerna. Du är inte begränsad t
 | [Acceptera-språk](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) | |
 | [Acceptera-dateTime](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept) | Överförd av en användaragent för att ange att den vill komma åt ett tidigare tillstånd för en ursprunglig resurs. Därför förmedlas rubriken `Accept-Datetime` i en HTTP-begäran som utfärdas mot en TimeGate för en ursprunglig resurs, och dess värde anger datum/tid för det önskade tidigare tillståndet för den ursprungliga resursen. |
 | Access-control-request-headers | Används av webbläsare vid utfärdande av en [preflight-begäran](https://developer.mozilla.org/en-US/docs/Glossary/preflight_request) för att tala om för servern vilka [HTTP-huvuden](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) klienten kan skicka när den faktiska begäran görs. |
-| access-control-request-method | Används av webbläsare vid utfärdande av en [preflight-begäran](https://developer.mozilla.org/en-US/docs/Glossary/preflight_request) för att tala om för servern vilken [HTTP-metod &#x200B;](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) som kommer att användas när den faktiska begäran görs. Det här huvudet är nödvändigt eftersom preflight-begäran alltid är en [OPTION](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) och inte använder samma metod som den faktiska begäran. |
+| access-control-request-method | Används av webbläsare vid utfärdande av en [preflight-begäran](https://developer.mozilla.org/en-US/docs/Glossary/preflight_request) för att tala om för servern vilken [HTTP-metod ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) som kommer att användas när den faktiska begäran görs. Det här huvudet är nödvändigt eftersom preflight-begäran alltid är en [OPTION](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) och inte använder samma metod som den faktiska begäran. |
 | Behörighet | Innehåller autentiseringsuppgifter för att autentisera en användaragent med en server. |
 | [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) | Direktiv om mekanismer för cachelagring i både förfrågningar och svar. |
 | [Anslutning](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection) | Kontrollerar om nätverksanslutningen förblir öppen när den aktuella transaktionen har slutförts. |
@@ -90,12 +90,12 @@ I följande tabell visas de fördefinierade rubrikerna. Du är inte begränsad t
 | [If-Unmodified-Since](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Unmodified-Since) | |
 | [Max-Forwards](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Unmodified-Since) | |
 | [Ursprung](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) | |
-| [Pragma](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma) | Implementeringsspecifikt huvud som kan ha olika effekter var som helst längs kedjan för begäran/svar. Används för bakåtkompatibilitet med HTTP/1.0-cacheminnen där Cache-Control-huvudet ännu inte finns. | |
-| [Proxyauktorisering](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization) |
-| [Intervall](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range) | Anger den del av ett dokument som servern ska returnera. | |
-| [Referent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) | Adressen till den föregående webbsidan från vilken en länk till den begärda sidan följdes. | |
+| [Pragma](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma) | Implementeringsspecifikt huvud som kan ha olika effekter var som helst längs kedjan för begäran/svar. Används för bakåtkompatibilitet med HTTP/1.0-cacheminnen där Cache-Control-huvudet ännu inte finns. |
+| [Proxyauktorisering](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization) |  |
+| [Intervall](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range) | Anger den del av ett dokument som servern ska returnera. |
+| [Referent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) | Adressen till den föregående webbsidan från vilken en länk till den begärda sidan följdes. |
 | TE | Anger de överföringskoder som användaragenten är villig att acceptera. (Du kan ringa `Accept-Transfer-Encoding`, vilket skulle vara mer intuitivt). |
-| Uppgradera | Det relevanta RFC-dokumentet för rubrikfältet [`Upgrade` är RFC 7230, avsnitt 6.7](https://tools.ietf.org/html/rfc7230#section-6.7). Standarden innehåller regler för uppgradering eller ändring till ett annat protokoll på den aktuella klient-, server- och transportprotokollanslutningen. Den här huvudstandarden tillåter till exempel en klient att ändra från HTTP 1.1 till HTTP 2.0, förutsatt att servern bestämmer sig för att bekräfta och implementera rubrikfältet `Upgrade`. Ingen part behöver acceptera villkoren som anges i rubrikfältet `Upgrade`. Den kan användas både i klient- och serverrubriker. Om rubrikfältet `Upgrade` anges MÅSTE avsändaren även skicka rubrikfältet `Connection` med alternativet `upgrade` angivet. | |
+| Uppgradera | Det relevanta RFC-dokumentet för rubrikfältet [`Upgrade` är RFC 7230, avsnitt 6.7](https://tools.ietf.org/html/rfc7230#section-6.7). Standarden innehåller regler för uppgradering eller ändring till ett annat protokoll på den aktuella klient-, server- och transportprotokollanslutningen. Den här huvudstandarden tillåter till exempel en klient att ändra från HTTP 1.1 till HTTP 2.0, förutsatt att servern bestämmer sig för att bekräfta och implementera rubrikfältet `Upgrade`. Ingen part behöver acceptera villkoren som anges i rubrikfältet `Upgrade`. Den kan användas både i klient- och serverrubriker. Om rubrikfältet `Upgrade` anges MÅSTE avsändaren även skicka rubrikfältet `Connection` med alternativet `upgrade` angivet. |
 | [Användaragent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) | Innehåller en karakteristisk sträng som gör att nätverksprotokollets peer-datorer kan identifiera programtyp, operativsystem, programvaruleverantör eller programvaruversion för den begärande programvaruanvändarens agent. |
 | [Via](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Via) | Läggs till av proxies, både framåt- och bakåt-proxies, och kan visas i begäranrubrikerna och svarshuvudena. |
 | [Varning](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Warning) | Allmän varningsinformation om möjliga problem. |
@@ -134,7 +134,7 @@ Certifikatet [!DNL mTLS] är en digital autentiseringsuppgift som bevisar identi
 
 Om du vill installera tillägget [skapar du en egenskap för vidarebefordring av händelser](../../../ui/event-forwarding/overview.md#properties) eller väljer en befintlig egenskap att redigera i stället.
 
-Välj **[!UICONTROL Extensions]** i den vänstra panelen. Välj **[!UICONTROL Adobe Cloud Connector]**-kortet på fliken **[!UICONTROL Catalog]** och välj sedan **[!UICONTROL Install]**.
+Välj **[!UICONTROL Extensions]** i den vänstra panelen. Välj **[!UICONTROL Catalog]**-kortet på fliken **[!UICONTROL Adobe Cloud Connector]** och välj sedan **[!UICONTROL Install]**.
 
 ![Tilläggskatalogen som visar installationen av [!DNL Adobe Cloud Connector] tilläggskort.](../../../images/extensions/server/cloud-connector/install-extension.png)
 
@@ -160,6 +160,6 @@ Din nya regel är nu klar. Välj **[!UICONTROL Save to Library]** och välj seda
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du konfigurerar mTLS-regler vid vidarebefordran av händelser. Mer information om hur du konfigurerar mTLS för en miljö finns i [guiden [!DNL mTLS] om säkerhet för transportlager &#x200B;](../cloud-connector/mtls.md).
+I den här guiden beskrivs hur du konfigurerar mTLS-regler vid vidarebefordran av händelser. Mer information om hur du konfigurerar mTLS för en miljö finns i [guiden [!DNL mTLS] om säkerhet för transportlager ](../cloud-connector/mtls.md).
 
 Mer information om funktioner för vidarebefordran av händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).

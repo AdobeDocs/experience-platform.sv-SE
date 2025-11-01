@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera källspecifikationer för självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '2090'
 ht-degree: 0%
@@ -229,36 +229,36 @@ I [bilagan](#source-spec) finns ett exempel på en fullständigt ifylld källspe
 
 | Egenskap | Beskrivning | Exempel |
 | --- | --- | --- |
-| `sourceSpec.attributes` | Innehåller information om källan som är specifik för gränssnittet eller API:t. |
-| `sourceSpec.attributes.uiAttributes` | Visar information om källan som är specifik för användargränssnittet. |
+| `sourceSpec.attributes` | Innehåller information om källan som är specifik för gränssnittet eller API:t. |  |
+| `sourceSpec.attributes.uiAttributes` | Visar information om källan som är specifik för användargränssnittet. |  |
 | `sourceSpec.attributes.uiAttributes.isBeta` | Ett booleskt attribut som anger om källan kräver mer feedback från kunderna för att lägga till dess funktioner. | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.category` | Definierar källans kategori. | <ul><li>`advertising`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.icon` | Definierar den ikon som används för återgivning av källan i Experience Platform användargränssnitt. | `mailchimp-icon.svg` |
-| `sourceSpec.attributes.uiAttributes.description` | Visar en kort beskrivning av källan. |
-| `sourceSpec.attributes.uiAttributes.label` | Visar den etikett som ska användas för återgivning av källan i Experience Platform-gränssnittet. |
-| `sourceSpec.attributes.spec.properties.urlParams` | Innehåller information om URL-resursens sökväg, metod och vilka frågeparametrar som stöds. |
+| `sourceSpec.attributes.uiAttributes.description` | Visar en kort beskrivning av källan. |  |
+| `sourceSpec.attributes.uiAttributes.label` | Visar den etikett som ska användas för återgivning av källan i Experience Platform-gränssnittet. |  |
+| `sourceSpec.attributes.spec.properties.urlParams` | Innehåller information om URL-resursens sökväg, metod och vilka frågeparametrar som stöds. |  |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.path` | Definierar resurssökvägen varifrån data ska hämtas. | `/3.0/reports/${campaignId}/email-activity` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.method` | Definierar den HTTP-metod som ska användas för att göra en begäran till resursen om att hämta data. | `GET`, `POST` |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.queryParams` | Definierar de frågeparametrar som stöds och som kan användas för att lägga till käll-URL:en när data hämtas. **Obs!** Alla användartillhandahållna parametervärden måste formateras som en platshållare. Till exempel: `${USER_PARAMETER}`. | `"queryParams" : {"key" : "value", "key1" : "value1"}` läggs till i käll-URL:en som: `/?key=value&key1=value1` |
 | `sourceSpec.attributes.spec.properties.spec.properties.headerParams` | Definierar rubriker som måste anges i HTTP-begäran till käll-URL:en när data hämtas. | `"headerParams" : {"Content-Type" : "application/json", "x-api-key" : "key"}` |
-| `sourceSpec.attributes.spec.properties.bodyParams` | Det här attributet kan konfigureras för att skicka HTTP-brödtext via en POST-begäran. |
+| `sourceSpec.attributes.spec.properties.bodyParams` | Det här attributet kan konfigureras för att skicka HTTP-brödtext via en POST-begäran. |  |
 | `sourceSpec.attributes.spec.properties.contentPath` | Definierar noden som innehåller listan med objekt som ska importeras till Experience Platform. Attributet ska följa giltig JSON-sökvägssyntax och peka på en viss array. | Visa avsnittet [ytterligare resurser](#content-path) för ett exempel på resursen som finns i en innehållssökväg. |
 | `sourceSpec.attributes.spec.properties.contentPath.path` | Sökvägen som pekar på samlingsposterna som ska importeras till Experience Platform. | `$.emails` |
 | `sourceSpec.attributes.spec.properties.contentPath.skipAttributes` | Med den här egenskapen kan du identifiera specifika objekt från den resurs som identifieras i innehållssökvägen som ska uteslutas från kapsling. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.keepAttributes` | Med den här egenskapen kan du uttryckligen ange de enskilda attribut som du vill behålla. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.contentPath.overrideWrapperAttribute` | Med den här egenskapen kan du åsidosätta värdet för attributnamnet som du angav i `contentPath`. | `email` |
-| `sourceSpec.attributes.spec.properties.explodeEntityPath` | Med den här egenskapen kan du förenkla två arrayer och omvandla resursdata till en Experience Platform-resurs. |
+| `sourceSpec.attributes.spec.properties.explodeEntityPath` | Med den här egenskapen kan du förenkla två arrayer och omvandla resursdata till en Experience Platform-resurs. |  |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.path` | Sökvägen som pekar på samlingsposterna som du vill förenkla. | `$.email.activity` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.skipAttributes` | Med den här egenskapen kan du identifiera specifika objekt från den resurs som identifieras i entitetssökvägen som ska uteslutas från inkapsling. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.keepAttributes` | Med den här egenskapen kan du uttryckligen ange de enskilda attribut som du vill behålla. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.overrideWrapperAttribute` | Med den här egenskapen kan du åsidosätta värdet för attributnamnet som du angav i `explodeEntityPath`. | `activity` |
-| `sourceSpec.attributes.spec.properties.paginationParams` | Definierar de parametrar eller fält som måste anges för att få en länk till nästa sida från användarens aktuella sidsvar, eller när en URL för nästa sida skapas. |
+| `sourceSpec.attributes.spec.properties.paginationParams` | Definierar de parametrar eller fält som måste anges för att få en länk till nästa sida från användarens aktuella sidsvar, eller när en URL för nästa sida skapas. |  |
 | `sourceSpec.attributes.spec.properties.paginationParams.type` | Visar vilken typ av sidnumrering som stöds för källan. | <ul><li>`OFFSET`: Med den här sidnumreringstypen kan du analysera resultaten genom att ange ett index från vilken den resulterande arrayen ska startas och en gräns för hur många resultat som returneras.</li><li>`POINTER`: Med den här sidnumreringstypen kan du använda en `pointer`-variabel för att peka på ett visst objekt som behöver skickas med en begäran. Sidnumreringen av pekartypen kräver en sökväg i nyttolasten som pekar på nästa sida.</li><li>`CONTINUATION_TOKEN`: Den här sidnumreringstypen gör att du kan lägga till din fråga eller rubrikparametrar med en fortsättningssymbol för att hämta återstående returdata från källan, som inte returnerades från början på grund av ett fördefinierat maxvärde.</li><li>`PAGE`: Med den här sidnumreringstypen kan du lägga till frågeparametern med en sidindelningsparameter för att gå igenom returdata för sidor, med början från sidan noll.</li><li>`NONE`: Den här sidnumreringstypen kan användas för källor som inte stöder någon av de tillgängliga sidnumreringstyperna. Sidnumreringstypen `NONE` returnerar hela svarsdata efter en begäran.</li></ul> |
 | `sourceSpec.attributes.spec.properties.paginationParams.limitName` | Namnet på den gräns genom vilken API:t kan ange antalet poster som ska hämtas på en sida. | `limit` eller `count` |
 | `sourceSpec.attributes.spec.properties.paginationParams.limitValue` | Antalet poster som ska hämtas på en sida. | `limit=10` eller `count=10` |
 | `sourceSpec.attributes.spec.properties.paginationParams.offSetName` | Förskjutningsattributets namn. Detta krävs om sidnumreringstypen är inställd på `offset`. | `offset` |
 | `sourceSpec.attributes.spec.properties.paginationParams.pointerPath` | Pekarens attributnamn. Detta kräver JSON-sökväg till attributet som pekar på nästa sida. Detta krävs om sidnumreringstypen är inställd på `pointer`. | `pointer` |
-| `sourceSpec.attributes.spec.properties.scheduleParams` | Innehåller parametrar som definierar schemaläggningsformat som stöds för källan. Schemaparametrarna innehåller `startTime` och `endTime`, som båda gör att du kan ange specifika tidsintervall för batchkörningar, vilket gör att poster som hämtats i en tidigare batchkörning inte hämtas igen. |
+| `sourceSpec.attributes.spec.properties.scheduleParams` | Innehåller parametrar som definierar schemaläggningsformat som stöds för källan. Schemaparametrarna innehåller `startTime` och `endTime`, som båda gör att du kan ange specifika tidsintervall för batchkörningar, vilket gör att poster som hämtats i en tidigare batchkörning inte hämtas igen. |  |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleStartParamName` | Definierar namnet på starttidsparametern | `since_last_changed` |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleEndParamName` | Definierar sluttidsparameterns namn | `before_last_changed` |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleStartParamFormat` | Definierar det format som stöds för `scheduleStartParamName`. | `yyyy-MM-ddTHH:mm:ssZ` |

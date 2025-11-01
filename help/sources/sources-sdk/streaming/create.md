@@ -3,9 +3,9 @@ title: Skapa en ny anslutningsspecifikation för Streaming SDK med API:t för Fl
 description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor.
 exl-id: ad8f6004-4e82-49b5-aede-413d72a1482d
 badge: Beta
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '744'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
+>Självbetjäning Källströmning SDK är en betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 En anslutningsspecifikation representerar strukturen för en källa. Den innehåller information om en källas autentiseringskrav, definierar hur källdata kan utforskas och inspekteras samt ger information om attributen för en viss källa. Med slutpunkten `/connectionSpecs` i API:t [!DNL Flow Service] kan du programmässigt hantera anslutningsspecifikationerna inom organisationen.
 
-Följande dokument innehåller steg om hur du skapar en anslutningsspecifikation med API:t [!DNL Flow Service] och integrerar en ny källa med självbetjäningskällor (Streaming SDK).
+I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t [!DNL Flow Service] och integrerar en ny källa med självbetjäningskällor (Streaming SDK).
 
 ## Komma igång
 
@@ -26,7 +26,7 @@ Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) fö
 
 ## Samla in artefakter
 
-Om du vill skapa en ny direktuppspelningskälla med hjälp av självbetjäningskällor måste du först koordinera med Adobe, begära en privat Git-databas och anpassa dig till Adobe om källans etikett, beskrivning, kategori och ikon.
+Om du vill skapa en ny direktuppspelningskälla med självbetjäningskällor måste du först koordinera med Adobe, begära en privat Git-databas och anpassa dig till Adobe med information om källans etikett, beskrivning, kategori och ikon.
 
 När du har angett den måste du strukturera din privata Git-databas så här:
 
@@ -44,8 +44,8 @@ När du har angett den måste du strukturera din privata Git-databas så här:
 | {your_source} | Namnet på källan. Den här mappen bör innehålla alla artefakter som hör till källan i din privata Git-databas. | `medallia` |
 | {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. **Obs!** Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera saken. | `medallia-category.txt` Ange källkategorin i filen, till exempel: `streaming`. |
 | {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Medallia] är en källa för automatiserad marknadsföring som du kan använda för att hämta [!DNL Medallia]-data till Experience Platform. |
-| {your_source}-icon.svg | Bilden som ska användas för att representera källan i katalogen för Experience Platform-källor. Den här ikonen måste vara en SVG-fil. |
-| {your_source}-label.txt | Källans namn så som det ska visas i katalogen Experience Platform sources. | Medallia |
+| {your_source}-icon.svg | Bilden som ska användas för att representera källan i Experience Platform källkatalog. Ikonen måste vara en SVG-fil. |  |
+| {your_source}-label.txt | Källans namn så som det ska visas i Experience Platform-källkatalogen. | Medallia |
 | {your_source}-connectionSpec.json | En JSON-fil som innehåller anslutningsspecifikationen för källan. Den här filen behövs inte från början eftersom du fyller i anslutningsspecifikationen när du slutför den här guiden. | `medallia-connectionSpec.json` |
 
 {style="table-layout:auto"}
@@ -72,7 +72,7 @@ När du har samlat in de nödvändiga artefakterna kopierar och klistrar du in m
   "attributes": {
     "category": "Streaming",
     "isSource": true,
-    "documentationLink": "https://docs.adobe.com/content/help/sv-SE/platform-learn/tutorials/data-ingestion/understanding-streaming-ingestion.html",
+    "documentationLink": "https://docs.adobe.com/content/help/en/platform-learn/tutorials/data-ingestion/understanding-streaming-ingestion.html",
     "uiAttributes": {
       "apiFeatures": {
         "updateSupported": false
@@ -144,7 +144,7 @@ Mer information om avsnitten i en anslutningsspecifikation finns i följande dok
 * [Konfigurera din källspecifikation](../config/sourcespec.md)
 * [Konfigurera din specifikation för utforskande](../config/explorespec.md)
 
-Med din specifikationsinformation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-förfrågan till `/connectionSpecs`-slutpunkten för [!DNL Flow Service] API.
+Med din specifikationsinformation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-begäran till `/connectionSpecs`-slutpunkten för [!DNL Flow Service] API.
 
 **API-format**
 
@@ -172,7 +172,7 @@ curl -X POST \
       "attributes": {
           "category": "Streaming",
           "isSource": true,
-          "documentationLink": "https://docs.adobe.com/content/help/sv-SE/platform-learn/tutorials/data-ingestion/understanding-streaming-ingestion.html",
+          "documentationLink": "https://docs.adobe.com/content/help/en/platform-learn/tutorials/data-ingestion/understanding-streaming-ingestion.html",
           "uiAttributes": {
             "apiFeatures": {
               "updateSupported": false
@@ -287,7 +287,7 @@ Ett lyckat svar returnerar den nyligen skapade anslutningsspecifikationen, inklu
       "attributes": {
         "category": "Streaming",
         "isSource": true,
-        "documentationLink": "https://docs.adobe.com/content/help/sv-SE/platform-learn/tutorials/data-ingestion/understanding-streaming-ingestion.html",
+        "documentationLink": "https://docs.adobe.com/content/help/en/platform-learn/tutorials/data-ingestion/understanding-streaming-ingestion.html",
         "uiAttributes": {
           "apiFeatures": {
             "updateSupported": false

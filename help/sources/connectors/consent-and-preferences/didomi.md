@@ -4,7 +4,7 @@ description: Lär dig hur du ansluter Didomi till Adobe Experience Platform med 
 last-substantial-update: 2025-07-29T00:00:00Z
 badge: Beta
 exl-id: c59bcfb8-e831-4a13-8b0e-4c6d538f1059
-source-git-commit: b0c2d5535bb4cdf7d00eaca43d65f744276494f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '893'
 ht-degree: 0%
@@ -82,7 +82,7 @@ För att säkerställa kompatibilitet med Experience Platform måste din webkrok
 | Fält | Beskrivning | Exempel |
 | --- | --- | --- | 
 | Klienthemlighet | Den hemliga nyckel som är kopplad till dina Adobe API-autentiseringsuppgifter. | `d8f3b2e1-4c9a-4a7f-9b2e-8f1c3d2a1b6e` |
-| API-nyckel | Den offentliga API-nyckel som används för att autentisera begäranden till Adobe-tjänster. |
+| API-nyckel | Den offentliga API-nyckel som används för att autentisera begäranden till Adobe-tjänster. |  |
 | Typ av bidrag | Den metod som används för att hämta en åtkomsttoken från auktoriseringsservern. Ange det här värdet till `client_credentials`. | `client_credentials` |
 | Omfång | Behörighetsomfattningarna definierar de specifika behörigheter eller åtkomstnivåer som ett program begär från API-providern. | `openid,AdobeID,read_organizations,additional_info.projectedProductContext,session` |
 | Autentiseringshuvud | De ytterligare rubriker som krävs för Adobe-tokenbegäran. | `{"Content-type": "application/x-www-form-urlencoded"}` |

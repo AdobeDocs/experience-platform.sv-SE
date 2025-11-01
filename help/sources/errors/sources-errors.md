@@ -2,7 +2,7 @@
 title: Felmeddelanden för källor
 description: Lär dig mer om de felmeddelanden du kan stöta på när du använder Flow Service för källor.
 exl-id: cfba9780-4ab9-447b-8c60-c9f813107d11
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '3057'
 ht-degree: 0%
@@ -24,8 +24,8 @@ Det här dokumentet innehåller en katalog med felmeddelanden, beskrivningar och
 | `1004-415` | Medietypen stöds inte | Angivet nyttolastformat stöds inte. Kontrollera din förfrågan och försök igen. |
 | `1005-500` | Internt fel | Ett internt fel har inträffat. Försök igen och kontakta kundsupport om problemet kvarstår. |
 | `1006-408` | Timeout för begäran | Ett fel uppstod när begäran bearbetades. Tidsgränsen för begäran har överskridits. Försök igen och kontakta kundsupport om problemet kvarstår. |
-| `1007-400` | Ogiltig rubrikparameter | En ogiltig huvudparameter: {headerName} har tagits emot. Kontrollera rubrikparametrarna och försök igen. |
-| `1008-401` | | Ogiltig auktoriseringstoken | Auktoriseringstoken har inte åtkomst till den här organisationen eller så finns inte organisationen. Kontrollera att organisationen finns eller kontakta administratören för att få åtkomst. |
+| `1007-400` | Ogiltig rubrikparameter | En ogiltig huvudparameter: `{headerName}` har tagits emot. Kontrollera rubrikparametrarna och försök igen. |
+| `1008-401` | Ogiltig auktoriseringstoken | Auktoriseringstoken har inte åtkomst till den här organisationen eller så finns inte organisationen. Kontrollera att organisationen finns eller kontakta administratören för att få åtkomst. |
 | `1009-403` | ID för IMS-organisation saknas eller är tomt | Organisations-ID-begärandehuvudet saknas eller är tomt. Uppdatera rubrikvärdet och försök igen. |
 | `1010-500` | Ogiltigt detaljmeddelande | Parametern i det detaljerade meddelandet har inte angetts korrekt. Kontrollera parametern i det detaljerade meddelandet och försök igen. |
 | `1011-503` | Tjänsten är inte tillgänglig | Tjänsten är inte tillgänglig för tillfället. Försök igen och kontakta kundsupport om problemet kvarstår. |
@@ -44,7 +44,7 @@ Det här dokumentet innehåller en katalog med felmeddelanden, beskrivningar och
 | `1104-504` | Tidsgräns för gateway | En gatewaytimeout har inträffat. Försök igen och kontakta kundsupport om problemet kvarstår. |
 | `1105-401` | Obehörig | Användaren är obehörig. {detailedMessage} |
 | `1106-403` | Förbjuden | Den begärda åtgärden är inte tillåten. {detailedMessage} |
-| `1107-412` | Förhandsvillkoret misslyckades | Villkoret som definieras av rubrikerna If-Unmodified-Since eller If-None-Match uppfylls inte. {detailedMessage} |
+| `1107-412` | Förhandsvillkoret misslyckades | Villkoret som definieras av rubrikerna If-Unmodified-Since eller If-None-Match uppfylls inte. `{detailedMessage}` |
 
 ## Krypteringsfel
 
@@ -114,7 +114,7 @@ Det här dokumentet innehåller en katalog med felmeddelanden, beskrivningar och
 | `1350-400` | Felaktig begäran | Ingen operator har angetts för filter vid källan. Ange en giltig filterbegäran med lämplig operator och försök igen. |
 | `1351-400` | Felaktig begäran | Den angivna operatorn {operator} stöds inte för filter vid källan för den här kopplingen. Ange en giltig operator och försök igen. |
 | `1352-400` | Felaktig begäran | Den angivna operatorn {operator} kan inte mappas till någon systemspecifik operator som stöds för {ql}. Ange en giltig operator och försök igen. |
-| `1353-400` | Felaktig begäran | Filtret vid källan stöds ännu inte för {connectorType}-anslutningen. Kontrollera vilka anslutningar som stöds i dokumentationen: https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html?lang=sv-SE. |
+| `1353-400` | Felaktig begäran | Filtret vid källan stöds ännu inte för {connectorType}-anslutningen. Kontrollera vilka anslutningar som stöds i dokumentationen: https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/filter.html. |
 | `1354-400` | Felaktig begäran | Frågespråket {ql} stöds ännu inte för filter vid källan. Ange ett giltigt frågespråk och försök igen. |
 | `1355-400` | Felaktig begäran | Den angivna filtertypen är ogiltig. Den filtertyp som stöds är: PQL. Ange en giltig filtertyp och försök igen. |
 | `1356-400` | Felaktig begäran | Angivet filterformat är ogiltigt. Filterformatet som stöds är: pql/json. Ange ett giltigt filterformat och försök igen. |

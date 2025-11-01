@@ -2,9 +2,9 @@
 title: Mappningsfält för Adobe Analytics Source Connector
 description: Mappa Adobe Analytics-fält till XDM-fält med Analytics Source Connector.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
-source-wordcount: '3838'
+source-wordcount: '3832'
 ht-degree: 0%
 
 ---
@@ -242,7 +242,7 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 | `m_page_type` | `web.webPageDetails.isErrorPage` | boolesk | En variabel som används för att fylla i dimensionen Sidor som inte hittades. Variabeln ska antingen vara tom eller innehålla ErrorPage. |
 | `m_pagename_no_url` | `web.webPageDetails.name` | tal | Namnet på sidan (om den har angetts). Om ingen sida anges lämnas värdet tom. |
 | `m_paid_search` | `search.isPaid` | boolesk | En flagga som anges om träffen matchar betalsökningsidentifiering. |
-| `m_product_list` | `productListItems[].items` | array | Produktlistan, som den skickas via variabeln products. | {SKU (sträng), quantity (heltal), priceTotal (tal)} |
+| `m_product_list` | `productListItems[].items` | array | Produktlistan, som den skickas via variabeln products. `{SKU (string), quantity (integer), priceTotal (number)}` |
 | `m_ref_type` | `web.webReferrer.type` | string | Ett numeriskt ID som representerar typen av referens för träffen.<br/>`1`: Inuti din webbplats<br/>`2`: Andra webbplatser<br/>`3`: Sökmotorer<br/>`4`: Hårddisk<br/>`5`: USENET<br/>`6`: Typed/Bookmarked (ingen referent)<br/>`7`: e-post<br/>`8`: Ingen JavaScript<br/>`9`: Sociala nätverk |
 | `m_search_engine` | `search.searchEngine` | string | Det numeriska ID som representerar sökmotorn som refererade besökaren till din webbplats. |
 | `post_currency` | `commerce.order.currencyCode` | string | Valutakoden som användes under transaktionen. |

@@ -3,7 +3,7 @@ title: Skapa en Microsoft SQL Server-basanslutning med API:t för flödestjänst
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en Microsoft SQL Server med API:t för Flow Service.
 exl-id: 00455a61-c8c1-42f4-a962-fc16f7370cbd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 0%
@@ -32,7 +32,7 @@ För att kunna ansluta till [!DNL Microsoft SQL Server] måste du ange följande
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
 | `connectionString` | Anslutningssträngen som är associerad med ditt [!DNL Microsoft SQL Server]-konto. Ditt anslutningssträngsmönster beror på om du använder servernamn eller instansnamn för datakällan:<ul><li>Anslutningssträng med servernamn: `Data Source={SERVER_NAME};Initial Catalog={DATABASE};Integrated Security=False;User ID={USER_ID};Password={PASSWORD};`</li><li>Anslutningssträng med instansnamn:`Data Source={INSTANCE_NAME};Initial Catalog={DATABASE};Integrated Security=False;User ID={USER_ID};Password={PASSWORD};` | `Data Source=mssqlserver.database.windows.net;Initial Catalog=mssqlserver_e2e_db;Integrated Security=False;User ID=mssqluser;Password=mssqlpassword` |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Microsoft SQL Server] är `1f372ff9-38a4-4492-96f5-b9a4e4bd00ec`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Microsoft SQL Server] är `1f372ff9-38a4-4492-96f5-b9a4e4bd00ec`. |  |
 
 Mer information om hur du hämtar en anslutningssträng finns i det här [[!DNL Microsoft SQL Server] dokumentet](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server).
 

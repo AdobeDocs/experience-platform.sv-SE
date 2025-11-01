@@ -1,13 +1,13 @@
 ---
 title: Skapa en anpassad Web SDK-version med NPM-paketet
 description: Skapa en anpassad Web SDK-version som bara innehåller de moduler du behöver.
-source-git-commit: 0f77023b07102ac2bc812034afacb1522ef209e5
+exl-id: 0ba5ae55-9ec0-41b6-9675-e76ade8ca4cd
+source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
 workflow-type: tm+mt
 source-wordcount: '509'
 ht-degree: 3%
 
 ---
-
 
 # Skapa en egen SDK-version för webben
 
@@ -40,7 +40,7 @@ Tabellen nedan visar relationen mellan Web SDK-moduler och de kommandon de inneh
 | Aktivitetsinsamlare | [`clickCollectionEnabled`](../commands/configure/clickcollectionenabled.md) | N/A | Medium |
 | Målgrupper | N/A | N/A | Liten |
 | Kontext | [`context`](../commands/configure/context.md) | N/A | Liten |
-| Regelmotor | `personalizationStorageEnabled` | | <ul><li>`evaluateRulesets`</li><li>[`subscribeRulesetItems`](../commands/subscriberulesetitems.md)</li></ul> | Medium |
+| Regelmotor | `personalizationStorageEnabled` | <ul><li>`evaluateRulesets`</li><li>[`subscribeRulesetItems`](../commands/subscriberulesetitems.md)</li></ul> | Medium |
 | Händelsemarkering | N/A | `createEventMergeId` | Liten |
 | Media Analytics Bridge | N/A | [`getMediaAnalyticsTracker`](../commands/getmediaanalyticstracker.md) | Stor |
 | Personalisering | <ul><li>[`prehidingStyle`](../commands/configure/prehidingstyle.md)</li><li>[`targetMigrationEnabled`](../commands/configure/targetmigrationenabled.md)</li><li>[`autoCollectPropositionInteractions`](../commands/configure/autocollectpropositioninteractions.md)</li></ul> | N/A | Stor |
@@ -71,4 +71,3 @@ Tabellen nedan visar relationen mellan Web SDK-moduler och de kommandon de inneh
 1. När du har bekräftat platsen genereras och sparas din anpassade version.
 
    ![Bild av en terminal som visar den sparade platsen för det anpassade bygget.](../assets/custom-build/saved.png)
-
