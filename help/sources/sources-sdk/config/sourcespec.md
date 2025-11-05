@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera källspecifikationer för självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
+source-git-commit: 2ff70ee6e4aa7fd723293e66000ccb161d61ab6a
 workflow-type: tm+mt
-source-wordcount: '2090'
+source-wordcount: '2107'
 ht-degree: 0%
 
 ---
@@ -231,6 +231,7 @@ I [bilagan](#source-spec) finns ett exempel på en fullständigt ifylld källspe
 | --- | --- | --- |
 | `sourceSpec.attributes` | Innehåller information om källan som är specifik för gränssnittet eller API:t. |  |
 | `sourceSpec.attributes.uiAttributes` | Visar information om källan som är specifik för användargränssnittet. |  |
+| `sourceSpec.attributes.uiAttributes.isPreview` | Ett booleskt attribut som anger om källan visas som en förhandsgranskning (inte för produktion/allmän tillgänglighet). | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.isBeta` | Ett booleskt attribut som anger om källan kräver mer feedback från kunderna för att lägga till dess funktioner. | <ul><li>`true`</li><li>`false`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.category` | Definierar källans kategori. | <ul><li>`advertising`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
 | `sourceSpec.attributes.uiAttributes.icon` | Definierar den ikon som används för återgivning av källan i Experience Platform användargränssnitt. | `mailchimp-icon.svg` |
