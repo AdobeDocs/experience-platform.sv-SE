@@ -5,9 +5,9 @@ title: Skapa webbscheman och datauppsättningar för Luma
 type: Tutorial
 description: I den här självstudiekursen får du tillgång till de förutsättningar och resurser som krävs för Lumas modell för benägenhet för demo.
 exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 219305a71c70a5bbec2fad591c166761e3aaa9ee
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ I den här självstudiekursen får du de krav och resurser som krävs för alla 
 
 ## Hämta resurserna {#assets}
 
-I följande självstudie används en anpassad Luma-modell för köpbenägenhet. [Ladda ned zip-mappen för nödvändiga resurser](https://experienceleague.adobe.com/docs/platform-learn/assets/DSW-course-sample-assets.zip) innan du fortsätter. Mappen innehåller:
+I följande självstudie används en anpassad Luma-modell för köpbenägenhet. [Ladda ned zip-mappen för nödvändiga resurser](../assets/DSW-course-sample-assets.7z) innan du fortsätter. Mappen innehåller:
 
 - Modell för inköpsbenägenhet
 - En anteckningsbok som används för att importera data till en utbildnings- och bedömningsdatauppsättning (en deluppsättning av Lumas webbdata)
@@ -49,15 +49,15 @@ I följande självstudie används en anpassad Luma-modell för köpbenägenhet. 
 
 ### Skapa Luma-webbdataramat och importera data
 
-För att kunna skapa en modell måste du ha en datauppsättning i Experience Platform som används för att utbilda och bedöma din modell. I följande videofilm från [Data Science Workspace-kursen](https://experienceleague.adobe.com/?lang=sv&recommended=ExperiencePlatform-U-1-2021.1.dsw) får du hjälp med att skapa Luma-schemat och inhämta data som används av inköpsbenägenhetsmodellen.
+För att kunna skapa en modell måste du ha en datauppsättning i Experience Platform som används för att utbilda och bedöma din modell. I följande videofilm från [Data Science Workspace-kursen](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) får du hjälp med att skapa Luma-schemat och inhämta data som används av inköpsbenägenhetsmodellen.
 
->[!VIDEO](https://video.tv.adobe.com/v/3447158?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/333312)
 
 ### Skapa datauppsättningar för kurser, poängsättning och poängsättning
 
 Om du vill köra den bärbara datorn för recept builder eller använda API:t för att utbilda och klassificera en modell måste du ange de datamängder och scheman som används för utbildning/poängsättning. I följande videofilm får du hjälp med att konfigurera datamängder för utbildning, poängsättning och poängsättning samt det poängresultatschema som används i Lumas modell för köpbenägenhet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3447425?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/333426)
 
 ## Nästa steg
 
