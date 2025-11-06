@@ -2,16 +2,16 @@
 title: Inmatning av direktuppspelningsprofil för bildskärm
 description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka inmatning av direktuppspelningsprofiler
 exl-id: da7bb08d-2684-45a1-b666-7580f2383748
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 450a59b406684b456a67df43fbf954edbae49ff7
 workflow-type: tm+mt
-source-wordcount: '1932'
+source-wordcount: '1835'
 ht-degree: 0%
 
 ---
 
 # Inmatning av direktuppspelningsprofil för bildskärm
 
-Du kan använda kontrollpanelen för övervakning i Adobe Experience Platform-användargränssnittet för att utföra övervakning i realtid av inhämtning av direktuppspelningsprofiler inom din organisation. Använd den här funktionen för att få större genomskinlighet i genomströmning, fördröjning och mätvärden för datakvalitet som är relaterade till strömningsdata. Använd dessutom den här funktionen för förebyggande avisering och hämtning av åtgärdbara insikter för att identifiera potentiella kapacitetsöverträdelser och problem med dataintrång.
+Du kan använda kontrollpanelen för övervakning i Adobe Experience Platform-användargränssnittet för att utföra övervakning i realtid av inhämtning av direktuppspelningsprofiler inom din organisation. Använd den här funktionen för att få bättre genomskinlighet i genomströmnings- och datakvalitetsmått som hör till era strömningsdata. Använd dessutom den här funktionen för förebyggande avisering och hämtning av åtgärdbara insikter för att identifiera potentiella kapacitetsöverträdelser och problem med dataintrång.
 
 Läs följande guide om du vill lära dig hur du använder kontrollpanelen för att spåra frekvenser och mätvärden för direktuppspelningsprofilsmatningsjobb i organisationen.
 
@@ -21,19 +21,19 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 * [Dataflöden](../home.md): Dataflöden representerar datajobb som överför information mellan Experience Platform. De är konfigurerade för olika tjänster för att underlätta flyttning av data från källkopplingar till måldatauppsättningar, samt till identitetstjänst, kundprofil i realtid och destinationer.
 * [Kundprofil i realtid](../../profile/home.md): Kundprofilen i realtid kombinerar data från flera källor - online, offline, CRM och tredje part - i en enda användbar vy av varje kund, vilket ger enhetliga och personaliserade upplevelser över alla kontaktytor.
-* [Direktuppspelningsuppläsning](../../ingestion/streaming-ingestion/overview.md): Med direktuppspelningsuppläsning för Experience Platform kan användarna skicka data från klient- och serverenheter till Experience Platform i realtid.Med Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att generera en kundprofil i realtid för var och en av era enskilda kunder. &#x200B;Direktuppspelning spelar en viktig roll när det gäller att skapa dessa profiler med så lite fördröjning som möjligt.
+* [Direktuppspelningsuppläsning](../../ingestion/streaming-ingestion/overview.md): Med direktuppspelningsuppläsning för Experience Platform kan användarna skicka data från klient- och serverenheter till Experience Platform i realtid.Med Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att generera en kundprofil i realtid för var och en av era enskilda kunder. .
 * [Kapacitet](../../landing/license-usage-and-guardrails/capacity.md): I Experience Platform kan du få reda på om din organisation har överskridit några av dina skyddsprofiler och du får information om hur du åtgärdar dessa problem.
 
 >[!NOTE]
 >
->Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+>Strömmande genomströmningskapacitet stöder upp till 1 500 inkommande händelser per sekund. Du kan köpa ytterligare strömningssegmentering för upp till 13 500 inkommande händelser per &#x200B;. Mer information finns i produktbeskrivningarna för [Real-Time CDP B2C Edition - Prime och Ultimate Packages](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 ## Övervakningsmått för inmatning av direktuppspelningsprofil {#streaming-profile-metrics}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_streaming_profile"
 >title="Inmatning av direktuppspelningsprofil för bildskärm"
->abstract="Kontrollpanelen för direktuppspelningsprofiler visar information om genomströmning, ingångsfrekvens och fördröjning. Använd den här instrumentpanelen för att visa, förstå och analysera databearbetningsstatistik. av era strömningsprofiler till Experience Platform."
+>abstract="Kontrollpanelen för direktuppspelningsprofiler visar information om genomströmning och ingångsfrekvens. Använd den här instrumentpanelen för att visa, förstå och analysera databearbetningsstatistik. av era strömningsprofiler till Experience Platform."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -90,7 +90,6 @@ Använd mättabellen för information som är specifik för dina dataflöden. Se
 | --- | --- | --- | --- |
 | Begär genomströmning | Detta mått representerar antalet händelser som kommer in i matningssystemet per sekund. | Sandbox/Dataflow | Övervakning i realtid med datauppdatering var 60:e sekund. |
 | Bearbetningsflöde | Det här måttet visar antalet händelser som har importerats av systemet varje sekund. | Sandbox/Dataflow | Övervakning i realtid med datauppdatering var 60:e sekund. |
-| P95-fördröjning vid förtäring | Detta mått mäter den 95:e percentilfördröjningen från det ögonblick en händelse anländer till Experience Platform när den kan hämtas till profilbutiken. | Sandbox/Dataflow | Övervakning i realtid med datauppdatering var 60:e sekund. |
 | Maximal genomströmning | Det här måttet representerar maximalt antal inkommande begäranden per sekund som matas in i direktuppspelningsprofilen | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> |  |
 | Insamlade poster | Det här måttet representerar det totala antalet poster som har importerats till profilarkivet under ett konfigurerat tidsfönster. | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> | <ul><li>Sandbox/Dataflow: Realtidsövervakning med datauppdatering var 60:e sekund.</li><li>Dataflödeskörning: Grupperad på 15 minuter.</li></ul> |
 | Misslyckade poster | Det här måttet visar det totala antalet poster som misslyckades med inmatningen i profilarkivet inom ett konfigurerat tidsfönster på grund av fel. | <ul><li>Sandbox/Dataflow</li><li>Dataflödeskörning</li></ul> | <ul><li>Sandbox/Dataflow: Realtidsövervakning med datauppdatering var 60:e sekund.</li><li>Dataflödeskörning: Grupperad på 15 minuter.</li></ul> |
@@ -105,7 +104,7 @@ Om du vill få åtkomst till kontrollpanelen för direktuppspelningsprofilinmatn
 
 ![Kontrollpanelen för inkommande direktuppspelningsprofiler.](../assets/ui/streaming-profiles/monitoring-dashboard.png)
 
-Mer information om måttkortet *[!UICONTROL Profile]* finns i panelens övre huvud. Använd den här skärmen för att visa information om inkapslade, misslyckade och hoppade över poster samt information om aktuell status för dataflöde och fördröjning för begäran.
+Mer information om måttkortet *[!UICONTROL Profile]* finns i panelens övre huvud. Använd den här visningen för att visa information om inkapslade, misslyckade och hoppade över poster samt information om aktuell status för flödebegäran.
 
 ![Profilkortet.](../assets/ui/streaming-profiles/profile-card.png)
 
@@ -119,7 +118,7 @@ Använd sedan gränssnittet för att visa detaljerad information om mätvärden 
 
 Du kan också konfigurera en egen tidsram manuellt med hjälp av kalendern.
 
-Du kan använda tre olika mätkategorier på kontrollpanelen för inmatning av direktuppspelningsprofiler: [!UICONTROL Throughput], [!UICONTROL Ingestion] och [!UICONTROL Latency].
+Du kan använda två olika mätkategorier på kontrollpanelen för inmatning av direktuppspelningsprofiler: [!UICONTROL Throughput] och [!UICONTROL Ingestion].
 
 >[!BEGINTABS]
 
@@ -142,12 +141,6 @@ Välj **[!UICONTROL Throughput]** om du vill visa information om mängden data s
 * **Insamlade poster**: Det totala antalet poster som har skapats under en given tidsperiod. Det här måttet representerar lyckade datainmatningsprocesser i din sandlåda.
 * **Poster hoppades över**: Det totala antalet poster som inte har importerats på grund av fel.
 * **Poster hoppades över**: Det totala antalet poster som ignorerades på grund av överträdelse av kapacitetsbegränsningar.
-
->[!TAB Svarstid]
-
-Välj **[!UICONTROL Latency]** om du vill visa information om hur lång tid det tar för Experience Platform att svara på en begäran eller slutföra en åtgärd inom en viss tidsperiod.
-
-![Kontrollpanelen med visningsinställningen &quot;latens&quot;.](../assets/ui/streaming-profiles/latency.png)
 
 >[!ENDTABS]
 
