@@ -49,7 +49,7 @@ I följande självstudie används en anpassad Luma-modell för köpbenägenhet. 
 
 ### Skapa Luma-webbdataramat och importera data
 
-För att kunna skapa en modell måste du ha en datauppsättning i Experience Platform som används för att utbilda och bedöma din modell. I följande videofilm från [Data Science Workspace-kursen](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) får du hjälp med att skapa Luma-schemat och inhämta data som används av inköpsbenägenhetsmodellen.
+För att kunna skapa en modell måste du ha en datauppsättning i Experience Platform som används för att utbilda och bedöma din modell. I följande videofilm från [Data Science Workspace-kursen](https://experienceleague.adobe.com/?lang=sv&recommended=ExperiencePlatform-U-1-2021.1.dsw) får du hjälp med att skapa Luma-schemat och inhämta data som används av inköpsbenägenhetsmodellen.
 
 >[!VIDEO](https://video.tv.adobe.com/v/333312)
 
