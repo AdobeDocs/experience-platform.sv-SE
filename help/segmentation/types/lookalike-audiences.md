@@ -3,18 +3,14 @@ solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: d978437479bedd0f943a6d68de78073f318cccb5
+source-git-commit: 03f8124f0fc750efa9b7bca0ff80de4c9263915d
 workflow-type: tm+mt
-source-wordcount: '2262'
+source-wordcount: '2250'
 ht-degree: 0%
 
 ---
 
 # Guide för lookalike-målgrupper
-
->[!AVAILABILITY]
->
->Insikter som liknar varandra och lookalike-målgrupper är bara tillgängliga i **B2C-utgåvan**.
 
 >[!IMPORTANT]
 >
@@ -128,7 +124,7 @@ I avsnittet för lookalike-målgrupper visas en lista med alla lookalike-målgru
 >id="platform_audiences_lookAlike_influentialFactors"
 >title="Influensafaktorer"
 >abstract="Inflytelserika faktorer är attribut, händelser och målgruppsmedlemskap som är viktiga när det gäller att förklara en profils likhet med medlemmarna i den grundläggande målgruppen. Dataanvändningsetiketter och dataprofiler kan användas för att utesluta vissa data från att betraktas som inflytelserika faktorer i lookalike-modeller."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html?lang=sv-SE#exclude" text="Uteslut data"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html#exclude" text="Uteslut data"
 
 I avsnittet Inflytelserika faktorer visas de 100 viktigaste faktorerna som påverkar den look-alike-modellen för den valda baspubliken. Dessa inflytelserika faktorer är profilattribut, upplevelsehändelser och målgruppsmedlemskap som är de viktigaste när det gäller att förklara likheter hos den grundläggande målgruppen. Genom att förstå de viktigaste inflytelserika faktorerna kan ni personalisera ert marknadsföringsinnehåll bättre för den här målgruppen och alla lookalike-målgrupper ni skapar utifrån den. Observera att inte alla inflytelserika faktorer som påverkar lookalike-modellen visas.
 

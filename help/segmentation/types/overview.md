@@ -2,9 +2,9 @@
 title: Målgruppstyper
 description: Lär dig mer om de olika typer av målgrupper du kan skapa på Adobe Experience Platform.
 exl-id: c95c6276-d1a4-4d92-95cf-60d895c3fe10
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 03f8124f0fc750efa9b7bca0ff80de4c9263915d
 workflow-type: tm+mt
-source-wordcount: '251'
+source-wordcount: '250'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ En målgrupp är en målgrupp som skapas med **kundens** profildata. Kundprofild
 
 Mer detaljerad information om målgrupper finns i [översikten över målgrupper](./people-audiences.md).
 
-## [!BADGE B2C Edition] Look-alike-målgrupp
+## Perfekta målgrupper
 
 En lookalike-målgrupp är en målgrupp som skapas genom att analysera en värdefull målgrupp med en lookalike-maskininlärningsmodell. Den lookalike-modellen kan skapa en målgrupp som matchar likhetströskeln för den analyserade värdefulla målgruppen.
 
@@ -39,4 +39,4 @@ Mer detaljerad information om potentiella målgrupper finns i [översikten över
 
 ## Nästa steg
 
-När du har läst den här översikten har du nu en bättre förståelse för de olika typerna of målgrupper som finns på Experience Platform. Om du vill veta mer om de olika utvärderingsmetoderna läser du översikten över [utvärderingsmetoden](../methods/overview.md).
+När du har läst den här översikten har du nu fått en bättre förståelse för de olika typer av målgrupper som finns på Experience Platform. Om du vill veta mer om de olika utvärderingsmetoderna läser du översikten över [utvärderingsmetoden](../methods/overview.md).
