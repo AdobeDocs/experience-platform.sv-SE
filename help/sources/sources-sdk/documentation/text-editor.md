@@ -25,7 +25,7 @@ I följande självstudie måste du ha installerat GitHub Desktop på din lokala 
 
 ## Anslut till GitHub och konfigurera din lokala redigeringsmiljö
 
-Det första steget i att konfigurera din lokala redigeringsmiljö är att navigera till [Adobe Experience Platform GitHub-databasen](https://github.com/AdobeDocs/experience-platform.en).
+Det första steget i att konfigurera din lokala redigeringsmiljö är att navigera till [Adobe Experience Platform GitHub-databasen](https://github.com/AdobeDocs/experience-platform.sv-SE).
 
 ![platform-repo](../assets/platform-repo.png)
 
@@ -97,6 +97,6 @@ Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteck
 
 ![create-pr](../assets/create-pr.png)
 
-Du kan bekräfta att pull-begäran har skickats genom att granska mottagarfliken i https://github.com/AdobeDocs/experience-platform.en.
+Du kan bekräfta att pull-begäran har skickats genom att granska mottagarfliken i https://github.com/AdobeDocs/experience-platform.sv-SE.
 
 ![confirm-pr](../assets/confirm-pr.png)

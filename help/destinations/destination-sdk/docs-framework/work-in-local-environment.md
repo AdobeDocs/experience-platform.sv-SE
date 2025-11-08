@@ -23,7 +23,7 @@ Instruktionerna på den här sidan visar hur du använder en textredigerare för
 
 ## Anslut till GitHub och konfigurera din lokala redigeringsmiljö {#set-up-environment}
 
-1. Navigera till `https://github.com/AdobeDocs/experience-platform.en` i webbläsaren
+1. Navigera till `https://github.com/AdobeDocs/experience-platform.sv-SE` i webbläsaren
 2. Om du vill [förgrena](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE#fork-the-repository) databasen klickar du på **Förgrening** enligt nedan. Detta skapar en kopia av Experience Platform-databasen i ditt eget GitHub-konto.
 
    ![Bläddra i Adobe dokumentationsarkiv](../assets/docs-framework/ssd-fork-repository.gif)
@@ -75,7 +75,7 @@ Instruktionerna på den här sidan visar hur du använder en textredigerare för
 
 1. Nu visas ett meddelande som uppmanar dig att signera Adobe Contributor License Agreement (CLA). Detta är ett obligatoriskt steg. När du har signerat CLA-avtalet uppdaterar du PR-sidan och skickar pull-begäran.
 
-1. Du kan bekräfta att pull-begäran har skickats genom att granska fliken **Pull-begäranden** i `https://github.com/AdobeDocs/experience-platform.en`.
+1. Du kan bekräfta att pull-begäran har skickats genom att granska fliken **Pull-begäranden** i `https://github.com/AdobeDocs/experience-platform.sv-SE`.
 
 ![PR lyckades](../assets/docs-framework/ssd-pr-successful.png)
 

@@ -96,7 +96,7 @@ CEE-schemat, liksom alla XDM ExperienceEvent-scheman, hämtar systemets tidsseri
 
 Precis som alla XDM-scheman är CEE-schemafältgruppen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-fältgruppen, och olika variationer kan vid behov inkluderas i flera scheman.
 
-Ett fullständigt exempel på fältgruppen finns i den [publika XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md). Dessutom kan du visa och kopiera följande [JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att få ett exempel på hur data kan struktureras så att de överensstämmer med CEE-schemat. Läs båda dessa exempel när du lär dig mer om de nyckelfält som beskrivs i avsnittet nedan för att avgöra hur du kan mappa dina egna data till schemat.
+Ett fullständigt exempel på fältgruppen finns i den [publika XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md). Dessutom kan du visa och kopiera följande [JSON-fil](https://github.com/AdobeDocs/experience-platform.sv-SE/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att få ett exempel på hur data kan struktureras så att de överensstämmer med CEE-schemat. Läs båda dessa exempel när du lär dig mer om de nyckelfält som beskrivs i avsnittet nedan för att avgöra hur du kan mappa dina egna data till schemat.
 
 ## Nyckelfält
 
@@ -355,7 +355,7 @@ Om du importerar data från en lokal CSV-fil kan du gå vidare till nästa avsni
 
 #### Mappa och importera data {#ingest}
 
-När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till Experience Platform. I självstudiekursen [Mappa en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-csv/overview.md) finns anvisningar om hur du utför detta i användargränssnittet. Du kan använda följande [exempel-JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att testa intagsprocessen innan du använder dina egna data.
+När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till Experience Platform. I självstudiekursen [Mappa en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-csv/overview.md) finns anvisningar om hur du utför detta i användargränssnittet. Du kan använda följande [exempel-JSON-fil](https://github.com/AdobeDocs/experience-platform.sv-SE/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att testa intagsprocessen innan du använder dina egna data.
 
 När en datauppsättning har fyllts i kan samma datauppsättning användas för att importera ytterligare datafiler.
 
