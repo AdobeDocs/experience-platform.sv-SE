@@ -2,9 +2,9 @@
 title: Uppdatera dataflöden med API:t för Flow Service
 description: Lär dig hur du skapar ett dataflöde, inklusive dess namn, beskrivning och schema, med API:t för Flow Service.
 exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 292fb89d457a86ee9f63cebd461abf1f2ecb9662
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: '684'
 ht-degree: 0%
 
 ---
@@ -177,7 +177,9 @@ Om du vill uppdatera ditt dataflödes körningsschema, namn och beskrivning utf�
 
 >[!IMPORTANT]
 >
->Huvudet `If-Match` krävs när en PATCH-begäran görs. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde.
+>* Huvudet `If-Match` krävs när en PATCH-begäran görs. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde.
+>
+>* Du kan inte uppdatera `startTime` för ett dataflöde om det ursprungligen schemalagda `startTime` redan har inträffat. Den här begränsningen gäller både aktiverade och inaktiverade dataflöden.
 
 **API-format**
 
@@ -191,29 +193,29 @@ Följande begäran uppdaterar ditt flödeskörningsschema samt dataflödets namn
 
 ```shell
 curl -X PATCH \
-    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-    -H 'If-Match: "1a0037e4-0000-0200-0000-602e06f60000"' \
-    -d '[
-            {
-                "op": "replace",
-                "path": "/scheduleParams/frequency",
-                "value": "day"
-            },
-            {
-                "op": "replace",
-                "path": "/name",
-                "value": "Database Dataflow Feb2021"
-            },
-            {
-                "op": "replace",
-                "path": "/description",
-                "value": "Database dataflow for testing update API"
-            }
-        ]'
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+  -H 'If-Match: "1a0037e4-0000-0200-0000-602e06f60000"' \
+  -d '[
+          {
+              "op": "replace",
+              "path": "/scheduleParams/frequency",
+              "value": "day"
+          },
+          {
+              "op": "replace",
+              "path": "/name",
+              "value": "Database Dataflow Feb2021"
+          },
+          {
+              "op": "replace",
+              "path": "/description",
+              "value": "Database dataflow for testing update API"
+          }
+      ]'
 ```
 
 | Egenskap | Beskrivning |
@@ -249,25 +251,25 @@ Följande begäran uppdaterar mappningsuppsättningen för ditt dataflöde.
 
 ```shell
 curl -X PATCH \
-    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-    -H 'If-Match: "50014cc8-0000-0200-0000-6036eb720000"' \
-    -d '[
-        {
-            "op": "replace",
-            "path": "/transformations/0",
-            "value": {
-                "name": "Mapping",
-                "params": {
-                    "mappingId": "c5f22f04e09f44498e528901546a83b1",
-                    "mappingVersion": 2
-                }
-            }
-        }
-    ]'
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+  -H 'If-Match: "50014cc8-0000-0200-0000-6036eb720000"' \
+  -d '[
+      {
+          "op": "replace",
+          "path": "/transformations/0",
+          "value": {
+              "name": "Mapping",
+              "params": {
+                  "mappingId": "c5f22f04e09f44498e528901546a83b1",
+                  "mappingVersion": 2
+              }
+          }
+      }
+  ]'
 ```
 
 | Egenskap | Beskrivning |
