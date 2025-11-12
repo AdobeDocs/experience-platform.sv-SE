@@ -25,7 +25,7 @@ Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Data Lan
 
 >[!NOTE]
 >
->Om du vill komma åt [!DNL Data Landing Zone] från [!DNL Azure Data Factory] måste du skapa en länkad tjänst för [!DNL Data Landing Zone] med hjälp av [ SAS-autentiseringsuppgifterna](../../tutorials/ui/create/cloud-storage/data-landing-zone.md#retrieve-your-data-landing-zone-credentials) som tillhandahålls av Experience Platform. När du har skapat den länkade tjänsten kan du utforska din [!DNL Data Landing Zone] genom att välja behållarsökvägen i stället för standardrotsökvägen.
+>Om du vill komma åt [!DNL Data Landing Zone] från [!DNL Azure Data Factory] måste du skapa en länkad tjänst för [!DNL Data Landing Zone] med hjälp av [&#x200B; SAS-autentiseringsuppgifterna](../../tutorials/ui/create/cloud-storage/data-landing-zone.md#retrieve-your-data-landing-zone-credentials) som tillhandahålls av Experience Platform. När du har skapat den länkade tjänsten kan du utforska din [!DNL Data Landing Zone] genom att välja behållarsökvägen i stället för standardrotsökvägen.
 
 ### Namnbegränsningar för filer och kataloger
 

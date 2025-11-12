@@ -64,4 +64,4 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL PathFacto
 
 * [Skapa en källanslutning och ett dataflöde för att hämta [!DNL PathFactory] data till Experience Platform med API:er](../../tutorials/api/create/marketing-automation/pathfactory.md).
 * [Anslut ditt [!DNL PathFactory] konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/pathfactory.md).
-* [Skapa ett dataflöde för en källanslutning med användargränssnittet ](../../tutorials/ui/dataflow/marketing-automation.md).
+* [Skapa ett dataflöde för en källanslutning med användargränssnittet &#x200B;](../../tutorials/ui/dataflow/marketing-automation.md).

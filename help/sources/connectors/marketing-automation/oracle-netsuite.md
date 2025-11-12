@@ -74,7 +74,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle Ne
 
 * [Skapa en källanslutning och ett dataflöde för att hämta [!DNL Oracle NetSuite Activities] data till Experience Platform med API:er](../../tutorials/api/create/marketing-automation/oracle-netsuite-activities.md).
 * [Anslut ditt [!DNL Oracle NetSuite Activities] konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md).
-* [Skapa ett dataflöde för en källanslutning med användargränssnittet ](../../tutorials/ui/dataflow/marketing-automation.md).
+* [Skapa ett dataflöde för en källanslutning med användargränssnittet &#x200B;](../../tutorials/ui/dataflow/marketing-automation.md).
 
 ## Anslut [!DNL Oracle NetSuite Entities] till Experience Platform {#oracle-netsuite-entities}
 
@@ -82,4 +82,4 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle Ne
 
 * [Skapa en källanslutning och ett dataflöde för att hämta [!DNL Oracle NetSuite Entities] data till Experience Platform med API:er](../../tutorials/api/create/marketing-automation/oracle-netsuite-entities.md).
 * [Anslut ditt [!DNL Oracle NetSuite Entities] konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md).
-* [Skapa ett dataflöde för en källanslutning med användargränssnittet ](../../tutorials/ui/dataflow/marketing-automation.md).
+* [Skapa ett dataflöde för en källanslutning med användargränssnittet &#x200B;](../../tutorials/ui/dataflow/marketing-automation.md).

@@ -45,5 +45,5 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Zendesk] 
 
 ## Anslut [!DNL Zendesk] till Experience Platform med användargränssnittet
 
-* [Skapa en  [!DNL Zendesk ]källanslutning i användargränssnittet](../../tutorials/ui/create/customer-success/zendesk.md)
+* [Skapa en  [!DNL Zendesk &#x200B;]källanslutning i användargränssnittet](../../tutorials/ui/create/customer-success/zendesk.md)
 * [Skapa ett dataflöde för en källanslutning till en lyckad kund i användargränssnittet](../../tutorials/ui/dataflow/customer-success.md)
