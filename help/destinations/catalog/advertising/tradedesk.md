@@ -3,9 +3,9 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 940128bf73f856d8459bee23905213651b44916e
 workflow-type: tm+mt
-source-wordcount: '1028'
+source-wordcount: '1093'
 ht-degree: 1%
 
 ---
@@ -17,19 +17,18 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Efter den [interna uppgraderingen](../../../release-notes/2025/july-2025.md#destinations) till måltjänsten från juli 2025 kan du uppleva en **minskning av antalet aktiverade profiler** i dataflödena till [!DNL The Trade Desk].
-> &#x200B;> Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
+> Efter den [interna uppgraderingen](../../../release-notes/2025/july-2025.md#destinations) till måltjänsten från juli 2025 kan du märka en **minskning av antalet aktiverade profiler** i dataflödena till [!DNL The Trade Desk].
+> Den här minskningen orsakas av förbättrad synlighet för övervakning. Profiler utan ECID räknas nu korrekt som utelämnade i aktiveringsmåtten. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
 >
 >**Vad har ändrats:**
 >
->* ECID-mappning (Experience Cloud ID) är nu **obligatoriskt** för alla profilaktiveringar.
->* Profiler utan ECID-mappning kommer att **tas bort** från befintliga aktiveringsdataflöden.
+>* Måltjänsten rapporterar nu korrekt när profiler utan ECID tas bort från aktiveringen.
+>* **Viktigt!** Profiler utan ECID har aldrig konverterats till [!DNL The Trade Desk] ens före uppgraderingen. Integreringen har alltid krävt ECID. Den här uppgraderingen åtgärdar ett fel som tidigare förhindrade att dessa fall syntes i mätvärdena.
 >
 >**Vad du behöver göra:**
 >
 >* Granska era målgruppsdata för att bekräfta att profilerna har giltiga ECID-värden.
->* Övervaka dina aktiveringsvärden för att verifiera förväntat antal profiler.
-
+>* Övervaka dina aktiveringsvärden för att verifiera förväntat antal profiler. Lägre antal ger korrekt rapportering, inte en förändring av målbeteendet.
 
 Använd den här målkopplingen för att skicka profildata till [!DNL The Trade Desk]. Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
 
@@ -84,7 +83,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/sv/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
+>Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
 
 ## Anslut till målet {#connect}
 
@@ -157,7 +156,7 @@ Exempel:
 
 >[!NOTE]
 > 
->Efter uppgraderingen [&#x200B; från &#x200B;](/help/release-notes/2025/july-2025.md#destinations)juli 2025 till måltjänsten har mappningen [!DNL ECID] framtvingats. Profiler som saknar [!DNL ECID] tas nu bort som förväntat, vilket kan leda till lägre antal aktiveringar jämfört med äldre beteenden.
+>Efter uppgraderingen [juli 2025](/help/release-notes/2025/july-2025.md#destinations) till måltjänsten rapporteras profiler som saknas [!DNL ECID] korrekt som utelämnade i aktiveringsmått. Detta har alltid varit integreringens beteende - profiler utan [!DNL ECID] har aldrig nåtts [!DNL The Trade Desk] - men dropparna visas nu korrekt i din dataflödesövervakning. Lägre antal aktiveringar ger korrekt rapportering, inte en förändring av målfunktionen.
 
 ## Exporterade data {#exported-data}
 
