@@ -3,9 +3,9 @@ title: Översikt över Source Connector med blandpanel
 description: Lär dig hur du ansluter Mixpanel till Adobe Experience Platform med API:er eller användargränssnittet.
 last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: 7eb605f6-8580-40b7-a9b3-96b9c3444f5d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Källor utnyttjar [API:t för export av händelser i panelen Mixpanel > Hämta](
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ## Autentisera ditt [!DNL Mixpanel]-konto
 

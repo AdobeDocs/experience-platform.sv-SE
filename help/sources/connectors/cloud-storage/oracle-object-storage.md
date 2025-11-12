@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Oracle Object Storage Source Connector - översikt
 description: Lär dig hur du ansluter Oracle Object Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 5e8b85c8-9f01-49a6-9556-7b9c7518fb4b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Lagringskällor i molnet kan överföra dina data till Experience Platform utan 
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns i dokumentet för [IP-adressen tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ## Namnbegränsningar för filer och kataloger
 

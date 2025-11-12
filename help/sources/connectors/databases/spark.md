@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Apache Spark på Azure HDInsights Source Connector - översikt
 description: Lär dig hur du ansluter Apache Spark på Azure HDInsights till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: c4a2a14e-5e16-44b7-b3f1-a98b7229f69e
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '271'
+source-wordcount: '257'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform tillåter att data hämtas från externa källor samti
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache Spark] på [!DNL Azure HDInsights] till [!DNL Experience Platform] med API:er eller användargränssnittet:
 

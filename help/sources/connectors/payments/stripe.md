@@ -2,9 +2,9 @@
 title: Stripe
 description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Adobe Experience Platform
 exl-id: 191d217e-036d-491a-b7dd-abcad74625ba
-source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '773'
 ht-degree: 0%
 
 ---
@@ -468,7 +468,7 @@ I [!DNL Stripe] representerar **priser** enhetskostnaden, valutan och den valfri
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ### Konfigurera behörigheter i Experience Platform
 
@@ -478,5 +478,5 @@ Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[
 
 När du har slutfört konfigurationen av din förutsättning kan du fortsätta ansluta och importera dina [!DNL Stripe]-data till Experience Platform. Läs följande guider om du vill veta hur du importerar [!DNL Stripe] betalningsdata till Experience Platform med API:er eller användargränssnittet:
 
-* [Infoga betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service &#x200B;](../../tutorials/api/create/payments/stripe.md).
+* [Infoga betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service ](../../tutorials/api/create/payments/stripe.md).
 * [Registrera betalningsdata från ditt Stripe-konto till Experience Platform via användargränssnittet](../../tutorials/ui/create/payments/stripe.md).

@@ -3,9 +3,9 @@ title: Oracle Eloqua Connector - översikt
 description: Lär dig hur du ansluter Oracle Eloqua till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2025-04-29T00:00:00Z
 exl-id: ebe16bff-4c89-4d45-9973-e5aa13b61a36
-source-git-commit: 7ff0709b62590bb80c1ed664368f28cdc4a950ea
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '268'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Experience Platform har stöd för inmatning av data från ett automatiseringssy
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle Eloqua] till Experience Platform med API:er eller användargränssnittet:
 

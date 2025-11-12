@@ -2,9 +2,9 @@
 title: Data Landing Zone Source
 description: Lär dig ansluta Data Landing Zone till Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '1362'
+source-wordcount: '1361'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 [!DNL Data Landing Zone] är ett [!DNL Azure Blob]-lagringsgränssnitt som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till Experience Platform. Du har åtkomst till en [!DNL Data Landing Zone]-behållare per sandlåda, och den totala datavolymen för alla behållare är begränsad till den totala datamängden som levereras med din Experience Platform-licens för produkter och tjänster. Alla Experience Platform-kunder etableras med en [!DNL Data Landing Zone]-behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
 
-[!DNL Data Landing Zone] har stöd för SAS-baserad autentisering och dess data skyddas med standardsäkerhetsmekanismer för lagring i [!DNL Azure Blob] vid vila och överföring. Med SAS-baserad autentisering kan du få säker åtkomst till din [!DNL Data Landing Zone]-behållare via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk. Experience Platform tillämpar en strikt 7-dagars förfallotid för alla filer och mappar som överförts till en [!DNL Data Landing Zone]-behållare. Alla filer och mappar tas bort efter sju dagar.
+[!DNL Data Landing Zone] har stöd för SAS-baserad autentisering och dess data skyddas med standardsäkerhetsmekanismer för lagring i [!DNL Azure Blob] vid vila och överföring. Med SAS-baserad autentisering kan du få säker åtkomst till din [!DNL Data Landing Zone]-behållare via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista eller inställningar för flera regioner för ditt nätverk. Experience Platform tillämpar en strikt 7-dagars förfallotid för alla filer och mappar som överförts till en [!DNL Data Landing Zone]-behållare. Alla filer och mappar tas bort efter sju dagar.
 
 ## Konfigurera din [!DNL Data Landing Zone]-källa för Experience Platform på Azure {#azure}
 
@@ -25,7 +25,7 @@ Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Data Lan
 
 >[!NOTE]
 >
->Om du vill komma åt [!DNL Data Landing Zone] från [!DNL Azure Data Factory] måste du skapa en länkad tjänst för [!DNL Data Landing Zone] med hjälp av [&#x200B; SAS-autentiseringsuppgifterna](../../tutorials/ui/create/cloud-storage/data-landing-zone.md#retrieve-your-data-landing-zone-credentials) som tillhandahålls av Experience Platform. När du har skapat den länkade tjänsten kan du utforska din [!DNL Data Landing Zone] genom att välja behållarsökvägen i stället för standardrotsökvägen.
+>Om du vill komma åt [!DNL Data Landing Zone] från [!DNL Azure Data Factory] måste du skapa en länkad tjänst för [!DNL Data Landing Zone] med hjälp av [ SAS-autentiseringsuppgifterna](../../tutorials/ui/create/cloud-storage/data-landing-zone.md#retrieve-your-data-landing-zone-credentials) som tillhandahålls av Experience Platform. När du har skapat den länkade tjänsten kan du utforska din [!DNL Data Landing Zone] genom att välja behållarsökvägen i stället för standardrotsökvägen.
 
 ### Namnbegränsningar för filer och kataloger
 
@@ -159,7 +159,7 @@ azcopy copy "%srcFilePath%" "%sasUri%" --overwrite=true --recursive=true
 
 >[!AVAILABILITY]
 >
->Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
 Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Data Landing Zone]-konto för Experience Platform på Amazon Web Services (AWS).
 

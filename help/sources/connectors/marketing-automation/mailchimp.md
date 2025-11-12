@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över Mailchimp Connector
 description: Lär dig hur du ansluter Mailchimp till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: eedb4fe0-3aae-4e93-bf13-c095171e2d11
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '214'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Experience Platform har stöd för inmatning av data från ett automatiseringssy
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mailchimp] till Experience Platform och hämtar antingen [!DNL Mailchimp Campaigns] - eller [!DNL Mailchimp Members]-data med API:er eller användargränssnittet:
 

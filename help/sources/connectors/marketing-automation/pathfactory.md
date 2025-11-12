@@ -3,9 +3,9 @@ title: PathFactory Source - översikt
 description: Lär dig hur du ansluter PathFactory till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2024-04-30T00:00:00Z
 exl-id: befb73c4-fd6a-4512-9124-d23a1c27e0e0
-source-git-commit: 40c3745920204983f5388de6cba1402d87eda71c
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '429'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Läs dokumentet nedan om du vill ha information om hur du kan konfigurera ditt [
 
 ## IP-adress tillåtelselista {#ip-allow-list}
 
-En lista med IP-adresser kan behöva läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ## Förhandskrav {#prerequisites}
 
@@ -64,4 +64,4 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL PathFacto
 
 * [Skapa en källanslutning och ett dataflöde för att hämta [!DNL PathFactory] data till Experience Platform med API:er](../../tutorials/api/create/marketing-automation/pathfactory.md).
 * [Anslut ditt [!DNL PathFactory] konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/pathfactory.md).
-* [Skapa ett dataflöde för en källanslutning med användargränssnittet &#x200B;](../../tutorials/ui/dataflow/marketing-automation.md).
+* [Skapa ett dataflöde för en källanslutning med användargränssnittet ](../../tutorials/ui/dataflow/marketing-automation.md).

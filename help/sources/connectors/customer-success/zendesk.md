@@ -3,9 +3,9 @@ title: Zendesk Source Connector - översikt
 description: Lär dig hur du ansluter Zendesk till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: 9f245783-949d-4f40-9cf3-8991b4b6d780
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '344'
+source-wordcount: '330'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Denna [källa](https://experienceleague.adobe.com/docs/experience-platform/sourc
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ## Autentisera ditt [!DNL Zendesk]-konto
 
@@ -45,5 +45,5 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Zendesk] 
 
 ## Anslut [!DNL Zendesk] till Experience Platform med användargränssnittet
 
-* [Skapa en  [!DNL Zendesk &#x200B;]källanslutning i användargränssnittet](../../tutorials/ui/create/customer-success/zendesk.md)
+* [Skapa en  [!DNL Zendesk ]källanslutning i användargränssnittet](../../tutorials/ui/create/customer-success/zendesk.md)
 * [Skapa ett dataflöde för en källanslutning till en lyckad kund i användargränssnittet](../../tutorials/ui/dataflow/customer-success.md)

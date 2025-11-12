@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;teradata;teradata-fördel
 title: Teradata Vantage Source Connector - översikt
 description: Lär dig hur du ansluter Teradata Vantage till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: f498a704-437a-4fc6-b50d-b6a1ce7ab264
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Teradata Vantage] till Experience Platform med API:er eller användargränssnittet:
 

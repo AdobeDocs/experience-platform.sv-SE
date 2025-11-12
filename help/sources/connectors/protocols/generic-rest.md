@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Allmän REST API Source Connector - översikt
 description: Lär dig hur du ansluter det allmänna REST API:t till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: e3449e33-7261-4aa2-bce9-5530eb4fcc68
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '218'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Med källan [!DNL Generic REST API] kan du hämta data från REST-baserade progr
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter en [!DNL Generic REST API]-källa till Experience Platform med API:er.
 

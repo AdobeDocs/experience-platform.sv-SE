@@ -3,9 +3,9 @@ title: Amazon Redshift Source Connector - översikt
 description: Lär dig hur du ansluter Amazon Redshift till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Amazon R
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform på Azure. Mer information finns i guiden [tillåtslista IP-adresser för att ansluta till Experience Platform på Azure](../../ip-address-allow-list.md).
 
 ## Konfigurera din [!DNL Amazon Redshift]-källa för Experience Platform på Amazon Web Services {#aws}
 

@@ -3,9 +3,9 @@ title: Skapa en Amazon Kinesis Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till en Amazon Kinesis-källa med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '759'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Amazon Kinesis]-k
 | ---------- | ----------- |
 | `accessKeyId` | Åtkomstnyckel-ID:t är hälften av åtkomstnyckelparet som används för att autentisera ditt [!DNL Kinesis]-konto för Experience Platform. |
 | `secretKey` | Den hemliga åtkomstnyckeln är den andra halvan av det åtkomstnyckelpar som används för att autentisera ditt [!DNL Kinesis]-konto för Experience Platform. |
-| `region` | Regionen för ditt [!DNL Kinesis]-konto. Mer information om regioner finns i guiden om att [lägga till IP-adresser i tillåtelselista](../../../../ip-address-allow-list.md). |
+| `region` | Regionen för ditt [!DNL Kinesis]-konto. Mer information om regioner finns i guiden om att [lägga till IP-adresser på din tillåtelselista](../../../../ip-address-allow-list.md). |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID [!DNL Kinesis] är: `86043421-563b-46ec-8e6c-e23184711bf6`. |
 
 Mer information om [!DNL Kinesis]-åtkomstnycklar och hur du genererar dem finns i den här [[!DNL AWS] handboken om hur du hanterar åtkomstnycklar för IAM-användare](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).

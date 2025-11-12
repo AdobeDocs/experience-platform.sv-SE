@@ -2,9 +2,9 @@
 title: Salesforce Service Cloud Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce Service Cloud till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 9bebbc00-55b3-4aec-9357-4127c05844e2
-source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '238'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform tillåter att data hämtas från externa källor samti
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista &#x200B;](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce Service Cloud] till [!DNL Experience Platform] med API:er eller användargränssnittet:
 

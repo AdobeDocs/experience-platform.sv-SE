@@ -4,9 +4,9 @@ description: Lär dig hur du ansluter SAP Commerce till Adobe Experience Platfor
 last-substantial-update: 2023-07-26T00:00:00Z
 badge: Beta
 exl-id: d2ddfec3-a421-48a7-b765-86ce9162f26f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '335'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Om [!DNL SAP Commerce] dessutom körs för att hämta kunddata anropas API:t [Ku
 
 ## IP-adress tillåtelselista {#ip-allow-list}
 
-En lista med IP-adresser kan behöva läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ## Förhandskrav {#prerequisites}
 
@@ -41,7 +41,7 @@ Innan du kan överföra dina [!DNL SAP Commerce]-data till Experience Platform m
    * Klienthemlighet
    * URL. URL-mönstret är följande: `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. Det här värdet används senare för att hämta värden för `region` och `tokenEndpoint` när du [skapar basanslutningen](../../tutorials/api/create/ecommerce/sap-commerce.md#base-connection) med API:t eller när du [ansluter ditt [!DNL SAP Commerce] konto](../../tutorials/ui/create/ecommerce/sap-commerce.md#connect-account) via Experience Platform-gränssnittet.
 
-+++Välj för att se ett exempel på tjänstnyckeln
++++Välj det här alternativet om du vill se ett exempel på tjänstnyckeln
 
 ```json
 { 

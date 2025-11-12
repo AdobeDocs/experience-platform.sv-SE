@@ -3,9 +3,9 @@ title: Oracle NetSuite Source - översikt
 description: Lär dig hur du ansluter Oracle NetSuite till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2024-01-30T00:00:00Z
 exl-id: 1dd30660-c990-4d3f-a64f-2a17e426f56d
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
 workflow-type: tm+mt
-source-wordcount: '738'
+source-wordcount: '722'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Visa följande tabell för mer information om de två [!DNL Oracle NetSuite]-kä
 
 ## IP-adress tillåtelselista {#ip-allow-list}
 
-En lista med IP-adresser kan behöva läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform. Mer information finns i guiden om att [tillåtslista IP-adresser för att ansluta till Experience Platform](../../ip-address-allow-list.md).
 
 ## Förhandskrav {#prerequisites}
 
@@ -74,7 +74,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle Ne
 
 * [Skapa en källanslutning och ett dataflöde för att hämta [!DNL Oracle NetSuite Activities] data till Experience Platform med API:er](../../tutorials/api/create/marketing-automation/oracle-netsuite-activities.md).
 * [Anslut ditt [!DNL Oracle NetSuite Activities] konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md).
-* [Skapa ett dataflöde för en källanslutning med användargränssnittet &#x200B;](../../tutorials/ui/dataflow/marketing-automation.md).
+* [Skapa ett dataflöde för en källanslutning med användargränssnittet ](../../tutorials/ui/dataflow/marketing-automation.md).
 
 ## Anslut [!DNL Oracle NetSuite Entities] till Experience Platform {#oracle-netsuite-entities}
 
@@ -82,4 +82,4 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle Ne
 
 * [Skapa en källanslutning och ett dataflöde för att hämta [!DNL Oracle NetSuite Entities] data till Experience Platform med API:er](../../tutorials/api/create/marketing-automation/oracle-netsuite-entities.md).
 * [Anslut ditt [!DNL Oracle NetSuite Entities] konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md).
-* [Skapa ett dataflöde för en källanslutning med användargränssnittet &#x200B;](../../tutorials/ui/dataflow/marketing-automation.md).
+* [Skapa ett dataflöde för en källanslutning med användargränssnittet ](../../tutorials/ui/dataflow/marketing-automation.md).
