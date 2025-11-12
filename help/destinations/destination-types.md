@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: d57af88cc9507e0164b044a7203c66fe9fd9240e
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '831'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 
 >[!IMPORTANT]
 >
->Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
+>Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
 
 Använd de avancerade dataanslutningarna för företag för att leverera Adobe Real-Time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
 
@@ -52,6 +52,12 @@ Avancerade företagsmål:
 * [HTTP API-mål](catalog/streaming/http-destination.md)
 * [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md)
 * [Azure Event Hubs](catalog/cloud-storage/azure-event-hubs.md)
+* [Snowflake Streaming](catalog/warehouses/snowflake.md)
+* [Snowflake Batch](catalog/warehouses/snowflake-batch.md)
+
+>[!NOTE]
+>
+>Snowflake destinationer är för närvarande bara tillgängliga för kunder i USA. Om du behöver åtkomst utanför USA kontaktar du Adobe kontoteam.
 
 ### Batchmål (filbaserade) {#file-based}
 
