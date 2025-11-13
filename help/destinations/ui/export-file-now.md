@@ -3,9 +3,9 @@ title: Exportera filer on demand till gruppmål med hjälp av Experience Platfor
 type: Tutorial
 description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av Experience Platform användargränssnitt.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: d3bd76f5b36b6a6afcb67fe923eb8e4f3d7a9415
+source-git-commit: 111f6d5093a0b66a683745b1da8d8909eb17f7eb
 workflow-type: tm+mt
-source-wordcount: '649'
+source-wordcount: '684'
 ht-degree: 0%
 
 ---
@@ -65,6 +65,7 @@ Tänk på följande när du använder kontrollen **[!UICONTROL Export file now]*
 * **[!UICONTROL Export file now]** fungerar bara för målgrupper vars schema i gruppaktiveringsdataflödet överlappar det aktuella datumet. Detta inkluderar målgrupper med scheman som inte har något slutdatum (exportfrekvens **[!UICONTROL Once]**) eller där slutdatumet ännu inte har passerats.
 * När du lägger till en målgrupp i ett befintligt dataflöde bör du vänta i minst **en timme** innan du använder kontrollen **[!UICONTROL Export file now]**.
 * Om du ändrar en målgrupps sammanfogningsprincip, eller om du skapar en målgrupp som använder en ny sammanfogningsprincip, väntar du 24 timmar tills kontrollen **[!UICONTROL Export file now]** används.
+* **[!UICONTROL Export file now]** använder endast data från schemalagda ögonblicksbildsexporter. Det hämtar inte data från API-utlösta exportjobb. Om du vill exportera de senaste data efter ett API-utlöst exportjobb, väntar du på att nästa schemalagda export ska köras.
 
 ## Felmeddelanden i användargränssnittet {#ui-error-messages}
 
