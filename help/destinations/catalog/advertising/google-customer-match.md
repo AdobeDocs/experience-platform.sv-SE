@@ -3,10 +3,10 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: a119418e8da7594a99116b4de65f60fdaa95ba8e
 workflow-type: tm+mt
-source-wordcount: '2413'
-ht-degree: 8%
+source-wordcount: '2719'
+ht-degree: 7%
 
 ---
 
@@ -15,12 +15,12 @@ ht-degree: 8%
 >[!IMPORTANT]
 >
 > Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html) och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de kompatibilitetskrav och medgivanderelaterade krav som definieras i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i EU ([EU User Consent Policy](https://www.google.com/about/company/user-consent-policy/)). Tvingande av dessa ändringar av medgivandekraven gäller från och med den 6 mars 2024.
-> &#x200B;><br/>
-> &#x200B;>För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
-> &#x200B;><br/>
-> &#x200B;>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
-> &#x200B;><br/>
-> &#x200B;>Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
+><br/>
+>För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
+><br/>
+>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+><br/>
+>Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
 Med [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) kan du använda dina online- och offlinedata för att nå och återengagera dina kunder via egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping] och [!DNL Gmail].
 
@@ -156,7 +156,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## Videoöversikt {#video-overview}
 
@@ -188,6 +188,12 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 >
 > * Marknadsföringsåtgärden **[!UICONTROL Combine with PII]** är markerad som standard för målet [!DNL Google Customer Match] och kan inte tas bort.
 
+### Autentisering och behörigheter {#authentication-permissions}
+
+När du ansluter ditt Google Ads-konto uppmanas du av Google att bevilja åtkomst till Adobe program. Du måste godkänna Google Ads API-behörigheten så att Adobe kan skapa och hantera dina kundlistor. Använd en Google Ads-användare med tillgång till Standard eller högre på det kundkonto som du tänker aktivera för. Om du använder ett MCC-konto (Manager Account) loggar du in med en användare på kundkontot och anger kundkonto-ID:t (inte MCC-ID:t).
+
+Om Google Ads-behörigheten inte beviljas under OAuth-flödet kan aktiveringar misslyckas senare med fel från Google Ads API. Mer information om hur du löser behörighetsrelaterade fel finns i [felsökningsavsnittet](#troubleshooting).
+
 ### Aktivera aviseringar {#enable-alerts}
 
 Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
@@ -218,7 +224,7 @@ Välja källfält:
 * Välj namnutrymmet `Email` som källidentitet om de e-postadresser du använder inte hashas.
 * Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser vid datahämtning till [!DNL Experience Platform], enligt [!DNL Google Customer Match] [e-posthashkraven](#hashing-requirements).
 * Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av telefonnummer som inte är hashas. [!DNL Experience Platform] hash-kodar telefonnumren så att de uppfyller kraven för [!DNL Google Customer Match].
-* Välj namnutrymmet `Phone_SHA256_E.164` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Experience Platform], enligt [!DNL Facebook] [krav för telefonnummerhashning](#phone-number-hashing-requirements).
+* Välj namnutrymmet `Phone_SHA256_E.164` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Experience Platform], enligt [!DNL Google Customer Match] [krav för telefonnummerhashning](#phone-number-hashing-requirements).
 * Välj namnutrymmet `IDFA` som källidentitet om dina data består av [!DNL Apple] enhets-ID:n.
 * Välj namnutrymmet `GAID` som källidentitet om dina data består av [!DNL Android] enhets-ID:n.
 * Välj namnutrymmet `Custom` som källidentitet om dina data består av andra typer av identifierare.
@@ -261,3 +267,26 @@ När du konfigurerar det här målet kan du få följande fel:
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
 Det här felet inträffar när kundkonton inte uppfyller [kraven](#google-account-prerequisites). Om du vill åtgärda det här problemet kontaktar du Google och kontrollerar att ditt konto är tillåtet och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1).
+
+### 500 Internt serverfel - Otillräckliga autentiseringsomfång {#insufficient-scopes}
+
+När du aktiverar målgrupper till det här målet kan du få följande fel:
+
+`{"message":"com.google.api.gax.rpc.PermissionDeniedException: io.grpc.StatusRuntimeException: PERMISSION_DENIED: Request had insufficient authentication scopes.","code":"500 INTERNAL_SERVER_ERROR"}`
+
+Det här felet inträffar när den Google OAuth-token som används för den här målanslutningen skapades utan det nödvändiga API-omfånget för Google Ads, eller när den inloggade användaren saknar tillräcklig behörighet för målkundskontot.
+
+Följ de här stegen för att åtgärda problemet:
+
+1. **Återskapa Google-autentiseringen** för det här målkontot och kontrollera att du godkänner de begärda Google Ads-behörigheterna:
+   * I Experience Platform går du till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**
+   * Hitta ditt Google kundmatchningskonto
+   * Välj **[!UICONTROL More actions]** ( ⋯) > **[!UICONTROL Edit]** > **[!UICONTROL Renew]**
+   * Slutför inloggnings- och godkännandeflödet för Google och godkänna alla begärda behörigheter
+2. Om du hanterar annonser via ett hanterarkonto (MCC) bekräftar du att du autentiserar med en användare som har [!DNL Standard] eller senare åtkomst till målkundkontot och att **[!UICONTROL Account ID]** som konfigurerats i målet är kundkonto-ID:t (inte MCC-ID:t).
+3. Kör aktiveringen igen.
+
+Om problemet kvarstår:
+
+* Kontrollera att ditt Google Ads-konto är tillåtslista för kundmatchning och uppfyller [principkraven](#google-account-prerequisites).
+* Kontrollera att användarens åtkomstnivå är [!DNL Standard] eller högre i Google Ads-kundkontot. Mer information finns i [dokumentationen för Google Ads](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&rd=1).
