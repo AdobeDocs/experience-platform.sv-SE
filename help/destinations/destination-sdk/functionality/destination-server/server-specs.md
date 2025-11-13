@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar målserverspecifikationer i Adobe Experience Platform Destination SDK via slutpunkten "/authoring/destination-servers".
 title: Serverspecifikationer för mål som skapats med Destination SDK
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 455886806d46a227eddb5ba060c15e1a00e13edf
 workflow-type: tm+mt
-source-wordcount: '2753'
+source-wordcount: '2775'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,7 @@ I exemplet nedan skapar en partner en Data Landing Zone-målserver med fältet `
          "templatingStrategy":"NONE",
          "value":"Your/hardcoded/path/here"
       },
-      "useCase": "Your use case"
+      "useCase": "dlz_destination"
    }
 }
 ```
@@ -252,7 +252,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL A
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_ADLS_GEN2` för [!DNL Azure Data Lake Storage] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Azure Data Lake Storage] för `FILE_BASED_ADLS_GEN2` mål. |
 | `fileBasedAdlsGen2Destination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sin [!DNL ADLS]-mappsökväg i Experience Platform-gränssnittet anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"abfs://<file_system>@<account_name>.dfs.core.windows.net/<path>/"`, anger du det här värdet till `NONE`.</li></ul> |
 | `fileBasedAdlsGen2Destination.path.value` | Sträng | Sökvägen till lagringsmappen [!DNL ADLS]. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `abfs://<file_system>@<account_name>.dfs.core.windows.net/<path>/`. |
 
@@ -284,7 +284,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL A
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_AZURE_BLOB` för [!DNL Azure Blob Storage] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Azure Blob Storage] för `FILE_BASED_AZURE_BLOB` mål. |
 | `fileBasedAzureBlobDestination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Azure Blob] [lagringskontots URI](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i Experience Platform-gränssnittet anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att kunna läsa värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "https://myaccount.blob.core.windows.net/"`, anger du det här värdet till `NONE`. |
 | `fileBasedAzureBlobDestination.path.value` | Sträng | Sökvägen till ditt [!DNL Azure Blob]-lagringsutrymme. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `https://myaccount.blob.core.windows.net/`. |
 | `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `container.value`.<ul><li>Om du vill att dina användare ska ange sitt eget [!DNL Azure Blob] [behållarnamn](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i Experience Platform-gränssnittet anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `container.value` för att kunna läsa värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat behållarnamn för integreringen, till exempel `"path.value: myContainer"`, anger du det här värdet till `NONE`. |
@@ -307,7 +307,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL D
          "templatingStrategy":"PEBBLE_V1",
          "value":"{{customerData.path}}"
       },
-      "useCase": "Your use case"
+      "useCase": "dlz_destination"
    }
 }
 ```
@@ -315,9 +315,10 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL D
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_DLZ` för [!DNL Data Landing Zone] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Data Landing Zone] för `FILE_BASED_DLZ` mål. |
 | `fileBasedDlzDestination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sitt eget [!DNL Data Landing Zone]-konto i Experience Platform-gränssnittet anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "https://myaccount.blob.core.windows.net/"`, anger du det här värdet till `NONE`. |
 | `fileBasedDlzDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
+| `fileBasedDlzDestination.useCase` | Sträng | *Krävs*. Ange det här till `"dlz_destination"`. Den här egenskapen identifierar målet som ett [!DNL Data Landing Zone]-mål. Den här egenskapen används bara när du skapar ett [!DNL Data Landing Zone]-mål. |
 
 {style="table-layout:auto"}
 
@@ -347,7 +348,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL G
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_GOOGLE_CLOUD` för [!DNL Google Cloud Storage] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Google Cloud Storage] för `FILE_BASED_GOOGLE_CLOUD` mål. |
 | `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `bucket.value`.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Google Cloud Storage]-bucket-namn i Experience Platform-gränssnittet anger du det här värdet som `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `bucket.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat pytsnamn för integreringen, till exempel `"bucket.value": "my-bucket"`, ska du ange det här värdet som `NONE`. |
 | `fileBasedGoogleCloudStorageDestination.bucket.value` | Sträng | Namnet på den [!DNL Google Cloud Storage]-bucket som ska användas av det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `"value": "my-bucket"`. |
 | `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sin egen [!DNL Google Cloud Storage]-bucket-sökväg i Experience Platform-gränssnittet anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "/path/to/my-bucket"`, anger du det här värdet till `NONE`.</li></ul> |
