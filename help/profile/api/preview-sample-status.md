@@ -4,9 +4,9 @@ title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgrans
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: d1eb9191c74add1ab21cd268327bab9a3255d182
+source-git-commit: bb2cfb479031f9e204006ba489281b389e6c6c04
 workflow-type: tm+mt
-source-wordcount: '2904'
+source-wordcount: '2306'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Profilantal och profiler efter namnområdesmått är också tillgängliga i avsn
 
 ## Visa senaste exempelstatus {#view-last-sample-status}
 
-Du kan utföra en GET-begäran till `/previewsamplestatus`-slutpunkten för att visa information om det senaste slutförda exempeljobbet som kördes för din organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler, eller det totala antalet profiler som din organisation har inom Experience Platform.
+Du kan visa information om det senaste slutförda exempeljobbet som kördes för din organisation genom att göra en GET-begäran till slutpunkten `/previewsamplestatus`. Den här rapporten innehåller det totala antalet profiler i exemplet, liksom antalet profiler, eller det totala antalet profiler som din organisation har inom Experience Platform.
 
 Profilantalet genereras efter sammanfogning av profilfragment för att skapa en enda profil för varje enskild kund. När profilfragment sammanfogas returnerar de med andra ord antalet &quot;1&quot;-profiler eftersom de alla är relaterade till samma individ.
 
@@ -60,6 +60,8 @@ GET /previewsamplestatus
 
 **Begäran**
 
++++ Ett exempel på en begäran om att visa den senaste samplingsstatusen.
+
 ```shell
 curl -X GET \
   https://platform.adobe.io/data/core/ups/previewsamplestatus \
@@ -69,9 +71,13 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
++++
+
 **Svar**
 
-Svaret innehåller information om det senaste slutförda exempeljobbet som kördes för organisationen.
+Ett lyckat svar returnerar HTTP-status 200 och innehåller information om det senaste slutförda samplingsjobbet som kördes för organisationen.
+
++++ Ett exempelsvar som innehåller den senaste samplingsstatusen.
 
 >[!NOTE]
 >
@@ -98,23 +104,25 @@ Svaret innehåller information om det senaste slutförda exempeljobbet som körd
 ```
 
 | Egenskap | Beskrivning |
-|---|---|
+| -------- | ----------- |
 | `numRowsToRead` | Det totala antalet sammanfogade profiler i exemplet. |
 | `sampleJobRunning` | Ett booleskt värde som returnerar `true` när ett provjobb pågår. Ger transparens i den fördröjning som uppstår när en gruppfil överförs till när den läggs till i profilarkivet. |
 | `docCount` | Totalt antal dokument i databasen. |
 | `totalFragmentCount` | Totalt antal profilfragment i profilarkivet. |
 | `lastSuccessfulBatchTimestamp` | Senaste lyckade tidsstämpel för batchimport. |
 | `streamingDriven` | *Det här fältet har tagits bort och innehåller ingen betydelse för svaret.* |
-| `totalRows` | Totalt antal sammanfogade profiler i Experience Platform, även kallat &#39;antal profiler&#39;. |
+| `totalRows` | Totalt antal sammanfogade profiler i Experience Platform, även kallat profilantal. |
 | `lastBatchId` | ID för senaste batchförbrukning. |
 | `status` | Status för senaste prov. |
 | `samplingRatio` | Förhållandet mellan de sammanfogade profiler som du har tagit prov på (`numRowsToRead`) och det totala antalet sammanfogade profiler (`totalRows`), uttryckt i procent i decimalformat. |
 | `mergeStrategy` | Sammanfogningsstrategi som används i exemplet. |
 | `lastSampledTimestamp` | Senaste lyckade exempeltidsstämpel. |
 
++++
+
 ## Visa profildistribution efter datauppsättning
 
-Om du vill visa profildistributionen efter datauppsättning kan du utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/dataset`.
+Du kan se hur profiler distribueras per datauppsättning genom att göra en GET-begäran till slutpunkten `/previewsamplestatus/report/dataset`.
 
 **API-format**
 
@@ -123,30 +131,39 @@ GET /previewsamplestatus/report/dataset
 GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 ```
 
-| Parameter | Beskrivning |
-|---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
+| Frågeparameter | Beskrivning | Exempel |
+| --------------- | ----------- | ------- |
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. | `date=2024-12-31` |
 
 **Begäran**
 
 I följande begäran används parametern `date` för att returnera den senaste rapporten för det angivna datumet.
 
++++ En exempelbegäran om att hämta profildistributionen efter datauppsättning.
+
 ```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/dataset?date=2020-08-01 \
+curl -X GET https://platform.adobe.io/data/core/ups/previewsamplestatus/report/dataset?date=2020-08-01 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-**Svar**
++++
 
-Svaret innehåller en `data`-matris som innehåller en lista med datauppsättningsobjekt. Svaret som visas har trunkerats så att tre datauppsättningar visas.
+**Svar**
 
 >[!NOTE]
 >
 >Om det finns flera rapporter för datumet returneras bara den senaste rapporten. Om det inte finns någon datauppsättningsrapport för det angivna datumet returneras HTTP-status 404 (Hittades inte).
+
+Ett lyckat svar returnerar HTTP-status 200 och innehåller en `data`-array som innehåller en lista med datauppsättningsobjekt.
+
++++ Ett exempelsvar som innehåller de senaste datauppsättningsobjekten.
+
+>[!NOTE]
+>
+>Följande svar har trunkerats så att tre datauppsättningar visas.
 
 ```json
 {
@@ -193,7 +210,7 @@ Svaret innehåller en `data`-matris som innehåller en lista med datauppsättnin
 ```
 
 | Egenskap | Beskrivning |
-|---|---|
+| -------- | ----------- |
 | `sampleCount` | Det totala antalet sammanfogade profiler i prov med detta datauppsättnings-ID. |
 | `samplePercentage` | `sampleCount` som en procentandel av det totala antalet sammanfogade profiler i prov (värdet `numRowsToRead` som returneras i den [senaste exempelstatusen](#view-last-sample-status)), uttryckt i decimalformat. |
 | `fullIDsCount` | Det totala antalet sammanfogade profiler med det här datauppsättnings-ID:t. |
@@ -204,6 +221,8 @@ Svaret innehåller en `data`-matris som innehåller en lista med datauppsättnin
 | `streamingIngestionEnabled` | Anger om datauppsättningen är aktiverad för direktuppspelningsinmatning. |
 | `createdUser` | Användar-ID för den användare som skapade datauppsättningen. |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran är den returnerade rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
+
++++
 
 ## Visa profildistribution efter ID-namnområde
 
@@ -222,26 +241,31 @@ GET /previewsamplestatus/report/namespace
 GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 ```
 
-| Parameter | Beskrivning |
-|---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
+| Frågeparameter | Beskrivning | Exempel |
+| --------------- | ----------- | ------- |
+| `date` | Anger datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: `YYYY-MM-DD`. | `date=2025-6-20` |
 
 **Begäran**
 
-Följande begäran anger ingen `date`-parameter och returnerar därför den senaste rapporten.
+Följande begäran anger ingen `date`-parameter och returnerar den senaste rapporten.
+
++++ Ett exempel på en begäran om att returnera den senaste rapporten för profildistribution efter namnutrymme. 
 
 ```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/namespace \
+curl -X GET https://platform.adobe.io/data/core/ups/previewsamplestatus/report/namespace \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
++++
+
 **Svar**
 
-Svaret innehåller en `data`-matris, med enskilda objekt som innehåller informationen för varje namnutrymme. Svaret som visas har trunkerats så att fyra namnutrymmen visas.
+Ett lyckat svar returnerar HTTP-status 200 och innehåller en `data`-array, där individuella objekt innehåller information för varje namnområde. Svaret som visas har trunkerats så att fyra namnutrymmen visas.
+
++++ Ett exempelsvar innehåller information om profilfördelningen per namnutrymme.
 
 ```json
 {
@@ -292,7 +316,7 @@ Svaret innehåller en `data`-matris, med enskilda objekt som innehåller informa
 ```
 
 | Egenskap | Beskrivning |
-|---|---|
+| -------- | ----------- |
 | `sampleCount` | Det totala antalet samkörda profiler i namnutrymmet. |
 | `samplePercentage` | `sampleCount` som en procentandel av de sammanfogade profilerna (värdet `numRowsToRead` som returnerades i den [senaste exempelstatusen](#view-last-sample-status)), uttryckt i decimalformat. |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran är den returnerade rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
@@ -302,294 +326,220 @@ Svaret innehåller en `data`-matris, med enskilda objekt som innehåller informa
 | `code` | `code` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med hjälp av [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md) och kallas även [!UICONTROL Identity symbol] i Experience Platform-gränssnittet. Mer information finns i [översikten över identitetsnamnet](../../identity-service/features/namespaces.md). |
 | `value` | Värdet `id` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med hjälp av [identitetstjänstens API](../../identity-service/api/list-namespaces.md). |
 
-## Generera överlappningsrapport för datauppsättning
++++
 
-Rapporten om överlappning av datauppsättningar ger synlighet i kompositionen för organisationens profilbutik genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, som att ange förfallodatum för vissa datauppsättningar.
+## Lista datauppsättningsstatistik {#dataset-stats}
 
-Du kan generera överlappningsrapporten för datauppsättningen genom att utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/dataset/overlap`.
-
-Stegvisa instruktioner om hur du genererar överlappningsrapporten för datauppsättningar med kommandoraden eller användargränssnittet i Postman finns i [generera självstudiekursen om överlappande datauppsättningar](../tutorials/dataset-overlap-report.md).
+Du kan generera en rapport som ger statistik om datauppsättningen genom att göra en GET-begäran till slutpunkten `/previewsamplestatus/report/dataset_stats`.
 
 **API-format**
 
 ```http
-GET /previewsamplestatus/report/dataset/overlap
-GET /previewsamplestatus/report/dataset/overlap?{QUERY_PARAMETERS}
-```
-
-| Parameter | Beskrivning |
-|---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
-
-**Begäran**
-
-I följande begäran används parametern `date` för att returnera den senaste rapporten för det angivna datumet.
-
-```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/dataset/overlap?date=2021-12-29 \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-```
-
-**Svar**
-
-En lyckad begäran returnerar HTTP-status 200 (OK) och datasetet överlappar rapporten.
-
-```json
-{
-    "data": {
-        "5d92921872831c163452edc8,5da7292579975918a851db57,5eb2cdc6fa3f9a18a7592a98": 123,
-        "5d92921872831c163452edc8,5eb2cdc6fa3f9a18a7592a98": 454412,
-        "5eeda0032af7bb19162172a7": 107
-    },
-    "reportTimestamp": "2021-12-29T19:55:31.147"
-}
-```
-
-| Egenskap | Beskrivning |
-|---|---|
-| `data` | Objektet `data` innehåller kommaavgränsade listor med datauppsättningar och deras respektive profilantal. |
-| `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran är den returnerade rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
-
-### Tolka överlappningsrapporten för datauppsättningen
-
-Resultatet av rapporten kan tolkas utifrån datauppsättningar och antal profiler i svaret. Titta på följande exempelrapportobjekt `data`:
-
-```json
-  "5d92921872831c163452edc8,5da7292579975918a851db57,5eb2cdc6fa3f9a18a7592a98": 123,
-  "5d92921872831c163452edc8,5eb2cdc6fa3f9a18a7592a98": 454412,
-  "5eeda0032af7bb19162172a7": 107
-```
-
-Den här rapporten innehåller följande information:
-
-* Det finns 123 profiler med data från följande datauppsättningar: `5d92921872831c163452edc8`, `5da7292579975918a851db57`, `5eb2cdc6fa3f9a18a7592a98`.
-* Det finns 454 412 profiler som består av data från dessa två datauppsättningar: `5d92921872831c163452edc8` och `5eb2cdc6fa3f9a18a7592a98`.
-* Det finns 107 profiler som endast består av data från datauppsättningen `5eeda0032af7bb19162172a7`.
-* Det finns totalt 454 642 profiler i organisationen.
-
-## Generera rapport över namnutrymmesöverlappning {#identity-overlap-report}
-
-Rapporten om överlappning av identitetsnamn ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de identitetsnamnutrymmen som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Detta omfattar både de standardnamnutrymmen för identiteter som finns i Adobe och de anpassade namnutrymmen för identiteter som definieras av din organisation.
-
-Du kan generera överlappningsrapporten för identitetsnamnrymden genom att utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/namespace/overlap`.
-
-**API-format**
-
-```http
-GET /previewsamplestatus/report/namespace/overlap
-GET /previewsamplestatus/report/namespace/overlap?{QUERY_PARAMETERS}
-```
-
-| Parameter | Beskrivning |
-|---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
-
-**Begäran**
-
-I följande begäran används parametern `date` för att returnera den senaste rapporten för det angivna datumet.
-
-```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/namespace/overlap?date=2021-12-29 \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-```
-
-**Svar**
-
-En lyckad begäran returnerar HTTP-status 200 (OK) och identitetsnamnutrymmets överlappningsrapport.
-
-```json
-{
-    "data": {
-        "Email,crmid,loyal": 2,
-        "ECID,Email,crmid": 7,
-        "ECID,Email,mobilenr": 12,
-        "AAID,ECID,loyal": 1,
-        "mobilenr": 25,
-        "AAID,ECID": 1508,
-        "ECID,crmid": 1,
-        "AAID,ECID,crmid": 2,
-        "Email,crmid": 328,
-        "CORE": 49,
-        "AAID": 446,
-        "crmid,loyal": 20988,
-        "Email": 10904,
-        "crmid": 249,
-        "ECID,Email": 74,
-        "Phone": 40,
-        "Email,Phone,loyal": 48,
-        "AAID,AVID,ECID": 85,
-        "Email,loyal": 1002,
-        "AAID,ECID,Email,Phone,crmid": 5,
-        "AAID,ECID,Email,crmid,loyal": 23,
-        "AAID,AVID,ECID,Email,crmid": 2,
-        "AVID": 3,
-        "AAID,ECID,Phone": 1,
-        "loyal": 43,
-        "ECID,Email,crmid,loyal": 6,
-        "AAID,ECID,Email,Phone,crmid,loyal": 1,
-        "AAID,ECID,Email": 2,
-        "AAID,ECID,Email,crmid": 142,
-        "AVID,ECID": 24,
-        "ECID": 6565
-    },
-    "reportTimestamp": "2021-12-29T16:55:03.624"
-}
-```
-
-| Egenskap | Beskrivning |
-|---|---|
-| `data` | Objektet `data` innehåller kommaavgränsade listor med unika kombinationer av ID-namnområdeskoder och deras respektive profilantal. |
-| Namnområdeskoder | `code` är ett kort formulär för varje namn på identitetsnamn. En mappning av varje `code` till dess `name` finns med hjälp av [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md). `code` kallas även [!UICONTROL Identity symbol] i Experience Platform-gränssnittet. Mer information finns i [översikten över identitetsnamnet](../../identity-service/features/namespaces.md). |
-| `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran är den returnerade rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
-
-### Tolka rapporten om namnutrymmesöverlappning
-
-Resultatet av rapporten kan tolkas utifrån identiteten och antalet profiler i svaret. Det numeriska värdet för varje rad visar hur många profiler som består av den exakta kombinationen av standard- och anpassade identitetsnamnutrymmen.
-
-Titta på följande utdrag från objektet `data`:
-
-```json
-  "AAID,ECID,Email,crmid": 142,
-  "AVID,ECID": 24,
-  "ECID": 6565
-```
-
-Den här rapporten innehåller följande information:
-
-* Det finns 142 profiler som består av `AAID`, `ECID` och `Email` standardidentiteter samt av ett anpassat `crmid`-identitetsnamnutrymme.
-* Det finns 24 profiler som består av `AAID` och `ECID` identitetsnamnutrymmen.
-* Det finns 6 565 profiler som bara innehåller en `ECID`-identitet.
-
-## Generera rapport över profiler som inte sammanställts
-
-Du kan få mer insyn i hur din organisations profilbutik är uppbyggd genom rapporten för icke sammansatta profiler. En &quot;sammanfogad&quot; profil är en profil som bara innehåller ett profilfragment. En okänd profil är en profil som är associerad med pseudonyma identitetsnamnutrymmen som `ECID` och `AAID`. Okända profiler är inaktiva, vilket innebär att de inte har lagt till nya händelser under den angivna tidsperioden. I rapporten för icke sammansatta profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
-
-Du kan generera rapporten för icke sammansatta profiler genom att utföra en GET-begäran till slutpunkten `/previewsamplestatus/report/unstitchedProfiles`.
-
-**API-format**
-
-```http
-GET /previewsamplestatus/report/unstitchedProfiles
+GET /previewsamplestatus/report/dataset_stats
 ```
 
 **Begäran**
 
-Följande begäran returnerar rapporten för profiler utan sammanfogning.
++++ En exempelbegäran för att generera rapporten för datauppsättningsstatistik.
 
 ```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/unstitchedProfiles \
+curl -X GET https://platform.adobe.io/data/core/ups/previewsamplestatus/report/dataset_stats \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
+
++++
 
 **Svar**
 
-En slutförd begäran returnerar HTTP-status 200 (OK) och rapporten för icke-sammansatta profiler.
+Ett lyckat svar returnerar HTTP-status 200 med information om datauppsättningens statistik.
+
++++ Ett exempelsvar som innehåller information om datauppsättningens statistik.
 
 >[!NOTE]
 >
->I den här guiden har rapporten trunkerats så att den bara innehåller `"120days"`- och `7days`-tidsperioder. Den fullständiga rapporten över icke sammansatta profiler innehåller en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
+>Följande svar har trunkerats så att tre datauppsättningar visas.
 
 ```json
 {
-  "data": {
-      "totalNumberOfProfiles": 63606,
-      "totalNumberOfEvents": 130977,
-      "unstitchedProfiles": {
-          "120days": {
-              "countOfProfiles": 1644,
-              "eventsAssociated": 26824,
-              "nsDistribution": {
-                  "Email": {
-                      "countOfProfiles": 18,
-                      "eventsAssociated": 95
-                  },
-                  "loyal": {
-                      "countOfProfiles": 26,
-                      "eventsAssociated": 71
-                  },
-                  "ECID": {
-                      "countOfProfiles": 1600,
-                      "eventsAssociated": 26658
-                  }
-              }
-          },
-          "7days": {
-              "countOfProfiles": 1782,
-              "eventsAssociated": 29151,
-              "nsDistribution": {
-                  "Email": {
-                      "countOfProfiles": 19,
-                      "eventsAssociated": 97
-                  },
-                  "ECID": {
-                      "countOfProfiles": 1734,
-                      "eventsAssociated": 28591
-                  },
-                  "loyal": {
-                      "countOfProfiles": 29,
-                      "eventsAssociated": 463
-                  }
-              }
-          }
-      }
-  },
-  "reportTimestamp": "2025-08-25T22:14:55.186"
+    "data": [
+        {
+            "120days": 4,
+            "14days": 4,
+            "30days": 4,
+            "365days": 4,
+            "60days": 4,
+            "7days": 4,
+            "90days": 4,
+            "datasetId": "{DATASET_ID}",
+            "datasetType": "ExperienceEvents",
+            "percentEvents": 0.0,
+            "percentProfiles": 0.0,
+            "profileFragments": 1,
+            "records": 4,
+            "totalProfiles": 1
+        },
+        {
+            "120days": 155435837,
+            "14days": 32888631,
+            "30days": 66496282,
+            "365days": 155435837,
+            "60days": 116433804,
+            "7days": 18202004,
+            "90days": 155435837,
+            "datasetId": "{DATASET_ID}",
+            "datasetType": "ExperienceEvents",
+            "percentEvents": 16.0,
+            "percentProfiles": 0.0,
+            "profileFragments": 5410745,
+            "records": 155435837,
+            "totalProfiles": 4524723
+        },
+        {
+            "120days": 0,
+            "14days": 0,
+            "30days": 0,
+            "365days": 0,
+            "60days": 0,
+            "7days": 0,
+            "90days": 0,
+            "datasetId": "{DATASET_ID}",
+            "datasetType": "Profiles",
+            "percentEvents": 0.0,
+            "percentProfiles": 0.0,
+            "profileFragments": 3589,
+            "records": 3589,
+            "totalProfiles": 3589
+        }
+    ],
+    "reportTimestamp": "2025-10-29T16:20:18.956"
 }
 ```
 
 | Egenskap | Beskrivning |
-|---|---|
-| `data` | Objektet `data` innehåller den information som returnerats för rapporten för icke-sammansatta profiler. |
-| `totalNumberOfProfiles` | Det totala antalet unika profiler i profilarkivet. Detta motsvarar antalet adresserbara målgrupper. Den innehåller både kända och osydda profiler. |
-| `totalNumberOfEvents` | Det totala antalet ExperienceEvents i profilarkivet. |
-| `unstitchedProfiles` | Ett objekt som innehåller en uppdelning av icke sammanfogade profiler efter tidsperiod. I rapporten för icke sammansatta profiler finns en beskrivning av profiler för tidsperioderna 7, 30, 60, 90 och 120 dagar. |
-| `countOfProfiles` | Antalet profiler som inte sammanfogats för tidsperioden eller antalet profiler som inte sammanfogats för namnutrymmet. |
-| `eventsAssociated` | Antalet ExperienceEvents för tidsintervallet eller antalet händelser för namnutrymmet. |
-| `nsDistribution` | Ett objekt som innehåller enskilda identitetsnamnutrymmen med distributionen av osydda profiler och händelser för varje namnutrymme. Obs! Om du lägger ihop summan `countOfProfiles` för varje identitetsnamnutrymme i `nsDistribution` -objektet blir lika med `countOfProfiles` för tidsperioden. Samma sak gäller för `eventsAssociated` per namnområde och det totala antalet `eventsAssociated` per tidsperiod. |
-| `reportTimestamp` | Rapportens tidsstämpel. |
+| -------- | ----------- |
+| `120days` | Antalet poster som kommer att finnas kvar i datauppsättningen efter att data har upphört att gälla i 120 dagar. |
+| `14days` | Antalet poster som kommer att finnas kvar i datauppsättningen efter att data har gått ut i 14 dagar. |
+| `30days` | Antalet poster som kommer att finnas kvar i datauppsättningen efter att data har upphört att gälla i 30 dagar. |
+| `365days` | Antalet poster som kommer att finnas kvar i datauppsättningen efter att data har upphört att gälla i 365 dagar. |
+| `60days` | Antalet poster som kommer att finnas kvar i datauppsättningen efter att data har upphört att gälla i 60 dagar. |
+| `7days` | Antalet poster som kommer att finnas kvar i datauppsättningen efter en dataförfallotid på 7 dagar. |
+| `90days` | Antalet poster som kommer att finnas kvar i datauppsättningen efter att data har upphört att gälla i 90 dagar. |
+| `datasetId` | Datauppsättningens ID. |
+| `datasetType` | Datamängdstypen. Värdet kan vara antingen `Profiles` eller `ExperienceEvents`. |
+| `percentEvents` | Procentandel av Experience Events-poster som finns i datauppsättningen. |
+| `percentProfiles` | Profilposter i procent som finns i datauppsättningen. |
+| `profileFragments` | Det totala antalet profilfragment som finns i datauppsättningen. |
+| `records` | Det totala antalet profilposter som har importerats till datauppsättningen. |
+| `totalProfiles` | Det totala antalet profiler som har importerats till datauppsättningen. |
 
-### Tolka rapporten över icke sammansatta profiler
++++
 
-Resultaten av rapporten ger insikt i hur många icke-sammansatta och inaktiva profiler din organisation har i sin profilbutik.
+## Hämta datauppsättningsstorlek {#character-count}
 
-Titta på följande utdrag från objektet `data`:
+Du kan använda den här slutpunkten för att hämta datauppsättningens storlek i byte vecka för vecka.
 
-```json
-  "7days": {
-    "countOfProfiles": 1782,
-    "eventsAssociated": 29151,
-    "nsDistribution": {
-      "Email": {
-        "countOfProfiles": 19,
-        "eventsAssociated": 97
-      },
-      "ECID": {
-        "countOfProfiles": 1734,
-        "eventsAssociated": 28591
-      },
-      "loyal": {
-        "countOfProfiles": 29,
-        "eventsAssociated": 463
-      }
-    }
-  }
+**API-format**
+
+```http
+GET /previewsamplestatus/report/character_count
 ```
 
-Den här rapporten innehåller följande information:
+**Begäran**
 
-* Det finns 1 782 profiler som bara innehåller ett profilfragment och som inte har några nya händelser de senaste sju dagarna.
-* Det finns 29 151 ExperienceEvents associerade med de 1 782 icke-sammansatta profilerna.
-* Det finns 1 734 osydda profiler som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
-* Det finns 28 591 händelser som är associerade med de 1 734 icke-sammansatta profilerna som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
++++En exempelbegäran om att generera räkningsrapporten för tecken.
+
+```shell
+curl -X GET https://platform.adobe.io/data/core/ups/previewsamplestatus/report/character_count \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med information om datauppsättningens storlek under veckorna.
+
++++ Ett exempelsvar som innehåller information om datauppsättningens storlek efter att data har gått ut.
+
+>[!NOTE]
+>
+>Följande svar har trunkerats så att tre datauppsättningar visas.
+
+```json
+{
+    "data": [
+        {
+            "datasetIds": [
+                {
+                    "datasetId": "67aba91a453f7d298cd2a643",
+                    "recordType": "keyvalue",
+                    "weeks": [
+                        {
+                            "size": 107773533894,
+                            "week": "2025-10-26"
+                        }
+                    ]
+                },
+                {
+                    "datasetId": "67aa6c867c3110298b017f0e",
+                    "recordType": "timeseries",
+                    "weeks": [
+                        {
+                            "size": 242902062440,
+                            "week": "2025-10-26"
+                        },
+                        {
+                            "size": 837539413062,
+                            "week": "2025-10-19"
+                        },
+                        {
+                            "size": 479253986484,
+                            "week": "2025-10-12"
+                        },
+                        {
+                            "size": 358911988990,
+                            "week": "2025-10-05"
+                        },
+                        {
+                            "size": 349701073042,
+                            "week": "2025-09-28"
+                        }
+                    ]
+                },
+                {
+                    "datasetId": "680c043667c0d7298c9ea275",
+                    "recordType": "keyvalue",
+                    "weeks": [
+                        {
+                            "size": 18392459832,
+                            "week": "2025-10-26"
+                        }
+                    ]
+                }
+            ],
+            "modelName": "_xdm.context.profile",
+            "reportTimestamp": "2025-10-30T00:28:30.069Z"
+        }
+    ],
+    "reportTimestamp": "2025-10-30T00:28:30.069Z"
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `datasetId` | Datauppsättningens ID. |
+| `recordType` | Datatypen i datauppsättningen. Posttypen påverkar värdet för variabeln `weeks`. Värden som stöds är `keyvalue` och `timeseries`. |
+| `weeks` | En array som innehåller storleksinformation om datauppsättningen. För datauppsättningar av posttyp `keyvalue` innehåller detta den senaste veckan samt den totala storleken på datauppsättningen i byte. För datauppsättningar av posttyp `timeseries` innehåller detta varje vecka från datauppsättningens inmatning till den senaste veckan och den totala storleken på datauppsättningen i byte för varje vecka. |
+| `modelName` | Namnet på datauppsättningens modell. Möjliga värden är `_xdm.context.profile` och `_xdm.context.experienceevent`. |
+| `reportTimestamp` | Datum och tid då rapporten skapades. |
+
++++
 
 ## Nästa steg
 
