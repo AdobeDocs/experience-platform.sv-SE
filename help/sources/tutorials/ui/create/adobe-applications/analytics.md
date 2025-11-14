@@ -2,9 +2,9 @@
 title: Anslut Adobe Analytics till Experience Platform
 description: Lär dig hur du kan skicka data från Adobe Analytics rapportprogramsvit till Experience Platform
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: d6a290b9891b3507d531a595a5428955c7e9ee90
+source-git-commit: d9dad6b5da413740559e6c8de7392bc2e169d5d9
 workflow-type: tm+mt
-source-wordcount: '2625'
+source-wordcount: '2731'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De har samma innebörd för alla kunder och är tillgängliga i källdata för analyser och i schemafältgrupper för analyser.
-* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=sv-SE).
+* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html).
 * **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är användardefinierade och betraktas inte som standardattribut eller anpassade attribut.
 
 ## Navigera i källkatalogen
@@ -269,6 +269,14 @@ Steg [!UICONTROL Review] visas, så att du kan granska det nya Analytics-datafl�
 
 ![Granskningsgränssnittet för arbetsflödet för inmatning.](../../../../images/tutorials/create/analytics/review.png)
 
+>[!TIP]
+>
+>Följ dessa metodtips för att undvika att överskrida licensrättigheterna och överbelasta din totala statistik över lagring och dataverighet:
+>
+>* Ställ in TTL (Time-To-Live) (Time-To-Live) för att optimera livscykelhanteringen och lagringseffektiviteten för data. Mer information finns i handboken om att [hantera lagring av Experience Event-datauppsättningar i datavjön med TTL](../../../../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md).
+>
+>* När du skapar ett datakälldataflöde för Analytics börjar du med att konfigurera kopplingen så att data bara importeras till datarjön. När du har bekräftat att dataflödet fungerar kan du aktivera profilinmatning för datauppsättningen. Detta fungerar bäst när rad- och kolumnfilter effektivt minskar datavolymen.
+
 ## Övervaka dataflödet {#monitor-your-dataflow}
 
 När dataflödet är klart kan du använda gränssnittet *[!UICONTROL Dataflows]* för att övervaka statusen för Analytics-dataflödet.
@@ -311,5 +319,5 @@ Följande video är tänkt att ge stöd för din förståelse av datainhämtning
 >
 > Användargränssnittet [!DNL Experience Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3430253?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
 
