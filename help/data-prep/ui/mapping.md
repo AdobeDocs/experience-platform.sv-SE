@@ -3,14 +3,19 @@ keywords: Experience Platform;home;populära topics;map csv;map csv file;map csv
 title: Användargränssnittshandbok för dataprep
 description: Lär dig hur du använder förinställningsfunktioner för data i Experience Platform-gränssnittet för att mappa CSV-filer till ett XDM-schema.
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: c9638cdca887f439c57f1dc01f93d63016869b29
+source-git-commit: 789d00912edd0ce8e2871b7e22445a043868ccf5
 workflow-type: tm+mt
-source-wordcount: '1405'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
 
-# Användargränssnittshandbok för dataprep
+# Användargränssnittshandbok för dataprep {#data-prep-ui-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_data_prep_import_mapping"
+>title="Ladda ned mall"
+>abstract="Hämta csv-mallen för att utföra mappningen offline."
 
 Läs den här vägledningen när du vill lära dig hur du använder [dataprep](../home.md)-mappningsfunktioner i Adobe Experience Platform-användargränssnittet för att mappa CSV-filer till ett [XDM-schema (Experience Data Model)](../../xdm/home.md).
 
