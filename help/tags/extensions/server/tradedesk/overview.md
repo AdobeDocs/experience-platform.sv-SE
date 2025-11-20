@@ -39,7 +39,7 @@ Välj **[!UICONTROL Extensions]** i den vänstra navigeringen. På fliken **[!UI
 
 På nästa skärm anger du [!UICONTROL Advertiser ID] och eventuellt [!UICONTROL Merchant ID]. Du kan klistra in ID:n direkt i dessa indata eller använda ett dataelement i stället. Dessa fungerar som standardvärden som används vid anrop av en händelse till [!DNL The Trade Desk]-API:t för realtidskonverteringar. Välj **[!UICONTROL Save]** när du är klar.
 
-Följ självstudiekursen [Skapa dataelement](https://experienceleague.adobe.com/en/docs/platform-learn/data-collection/tags/create-data-elements) om du vill lära dig hur du kan skapa dataelement och göra dem tillgängliga för tillägg i din taggegenskap.
+Följ självstudiekursen [Skapa dataelement](https://experienceleague.adobe.com/sv/docs/platform-learn/data-collection/tags/create-data-elements) om du vill lära dig hur du kan skapa dataelement och göra dem tillgängliga för tillägg i din taggegenskap.
 
 ![Konfigurationssidan för [!DNL The Trade Desk]-tillägget med fälten [!UICONTROL Advertiser ID] och [!UICONTROL Merchant ID] markerade.](../../../images/extensions/server/tradedesk/configure-extension.png)
 
