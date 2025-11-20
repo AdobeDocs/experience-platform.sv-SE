@@ -2,7 +2,7 @@
 title: The Trade Desk Real-Time Conversions API Extension Overview
 description: Läs mer om API-tillägget Trade Desk Real-Time Conversions för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 1ff32e2b-9ff8-4395-ae44-cba75a2da515
-source-git-commit: eb650da02ac69c5afbebfe6ba371cc19617f79d0
+source-git-commit: 8cf838b6f6794b52f80cb899945c066014e211c2
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 0%
@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # Översikt över tillägget [!DNL The Trade Desk Real-Time Conversions API]
 
-Du kan använda tillägget [[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) om du vill skicka data från Adobe Experience Platform Edge Network till [!DNL The Trade Desk] genom att använda API:ts funktioner i [reglerna för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
+Du kan använda tillägget [[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) för att skicka data från Adobe Experience Platform Edge Network till [!DNL The Trade Desk] genom att använda API:ts funktioner i [reglerna för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
 
-Med tillägget [!DNL The Trade Desk Real-Time Conversions API] kan du utnyttja API:ts funktioner i reglerna för [&#x200B; vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL The Trade Desk] från Adobe Experience Platform Edge Network.
+Med tillägget [!DNL The Trade Desk Real-Time Conversions API] kan du utnyttja API:ts funktioner i reglerna för [ vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL The Trade Desk] från Adobe Experience Platform Edge Network.
 
 Läs det här dokumentet för att lära dig hur du installerar tillägget och använder dess funktioner i en händelsevidarebefordring av [regeln](../../../ui/managing-resources/rules.md).
 
@@ -39,7 +39,7 @@ Välj **[!UICONTROL Extensions]** i den vänstra navigeringen. På fliken **[!UI
 
 På nästa skärm anger du [!UICONTROL Advertiser ID] och eventuellt [!UICONTROL Merchant ID]. Du kan klistra in ID:n direkt i dessa indata eller använda ett dataelement i stället. Dessa fungerar som standardvärden som används vid anrop av en händelse till [!DNL The Trade Desk]-API:t för realtidskonverteringar. Välj **[!UICONTROL Save]** när du är klar.
 
-Följ självstudiekursen [Skapa dataelement](https://experienceleague.adobe.com/sv/docs/platform-learn/data-collection/tags/create-data-elements) om du vill lära dig hur du kan skapa dataelement och göra dem tillgängliga för tillägg i din taggegenskap.
+Följ självstudiekursen [Skapa dataelement](https://experienceleague.adobe.com/en/docs/platform-learn/data-collection/tags/create-data-elements) om du vill lära dig hur du kan skapa dataelement och göra dem tillgängliga för tillägg i din taggegenskap.
 
 ![Konfigurationssidan för [!DNL The Trade Desk]-tillägget med fälten [!UICONTROL Advertiser ID] och [!UICONTROL Merchant ID] markerade.](../../../images/extensions/server/tradedesk/configure-extension.png)
 
@@ -84,7 +84,7 @@ Konfigurationsalternativen är uppdelade i tre huvudavsnitt enligt nedan:
 
 ![Avsnittet [!DNL Basic Request Properties] som visar exempeldata i fälten.](../../../images/extensions/server/tradedesk/configure-extension-basic-request-properties.png)
 
-Mer information om [request properties](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties) som accepteras av [!DNL The Trade Desk] Real-Time Conversions API finns i dokumentationen för [!DNL The Trade Desk]-utvecklaren.
+Mer information om [!DNL The Trade Desk]request properties[ som accepteras av ](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties) Real-Time Conversions API finns i dokumentationen för [!DNL The Trade Desk]-utvecklaren.
 
 **[!UICONTROL Object Request Parameters]**
 
@@ -93,7 +93,7 @@ Ett JSON-objekt som innehåller mer information. Du kan välja att använda en r
 
 ![Avsnittet [!DNL Object Request Parameters] som visar tillgängliga fält.](../../../images/extensions/server/tradedesk/configure-object-request-params.png)
 
-Mer information om [!UICONTROL Object Request Parameters] och deras egenskaper finns i dokumentationen för [Real-Time Conversions Event](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties-items) .
+Mer information om [ och deras egenskaper finns i dokumentationen för ](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties-items)Real-Time Conversions Event[!UICONTROL Object Request Parameters] .
 
 **[!UICONTROL Configuration Overrides]**
 
@@ -114,6 +114,6 @@ När du är nöjd med regeln väljer du **[!UICONTROL Save to Library]**. Public
 
 I den här guiden beskrivs hur du skickar händelsedata på serversidan till [!DNL The Trade Desk] med API-tillägget [!DNL The Trade Desk] Real-Time Conversions. Här rekommenderas att du utökar integreringen genom att skapa distinkta regler som skickar specifika konverteringshändelser beroende på vilket som är tillämpligt för varje kampanj. Mer information om funktioner för vidarebefordran av händelser i [!DNL Adobe Experience Platform] finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
 
-Mer information om hur du implementerar integrationen finns i [!DNL The Trade Desk]-dokumentationen om [de effektivaste strategierna för  [!DNL The Trade Desk] API:t för realtidskonverteringar](https://www.facebook.com/business/help/308855623839366?id=818859032317965).
+Mer information om hur du implementerar integrationen finns i [!DNL The Trade Desk]-dokumentationen om [de effektivaste strategierna för  [!DNL The Trade Desk] API:t för realtidskonverteringar](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi).
 
-Mer information om hur du felsöker implementeringen med verktyget för felsökning och övervakning av händelsevidarebefordran i Experience Platform finns i [Adobe Experience Platform Debugger-översikten](../../../../debugger/home.md) och [Övervaka aktiviteter i händelsevidarebefordran](../../../ui/event-forwarding/monitoring.md).
+Mer information om hur du felsöker implementeringen med verktyget för felsökning och övervakning av händelsevidarebefordran finns i [Adobe Experience Platform Debugger-översikten](../../../../debugger/home.md) och [Övervaka aktiviteter i händelsevidarebefordran](../../../ui/event-forwarding/monitoring.md).
