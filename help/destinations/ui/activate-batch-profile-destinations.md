@@ -63,7 +63,7 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-* **[!UICONTROL Segmentation Service]**: Målgrupper genererade inom Experience Platform av Segmenteringstjänsten. Se segmenteringsdokumentationen [](../../segmentation/ui/overview.md) för mer information.
+* **[!UICONTROL Segmentation Service]**: Målgrupper genererade inom Experience Platform av Segmenteringstjänsten. Se segmenteringsdokumentationen [&#128279;](../../segmentation/ui/overview.md) för mer information.
 * **[!UICONTROL Custom upload]**: Målgrupper genererade utanför Experience Platform och uppladdade i Experience Platform som CSV-filer. För att lära dig mer om externa målgrupper, se dokumentationen om [import av en målgrupp](../../segmentation/ui/audience-portal.md#import-audience). Att välja målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiverar automatiskt steget [Select enrichment attributs](#select-enrichment-attributes) .
 * Andra typer av målgrupper, som härstammar från andra Adobe-lösningar, såsom [!DNL Audience Manager].
 
@@ -541,7 +541,7 @@ Som en tillfällig lösning kan du antingen:
 
 >[!IMPORTANT]
 > 
->Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
+>Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg &#x200B;](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
 >
 >Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 

@@ -16,7 +16,7 @@ ht-degree: 0%
 >title="Ta bort oönskade eller utgångna kundposter och datauppsättningar"
 >abstract="<h2>Beskrivning</h2><p>Om du vill hantera livscykeln för dina Experience Platform-data utan att följa gällande regelverk kan du ta bort konsumentposter och schemalägga förfallodatum för datauppsättningar. Mer information om hur du skapar eller hanterar förfrågningar från registrerade personer finns i avsnittet om att uppfylla förfrågningar om personlig integritet.</p>"
 
-Med arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna markeras förfallotiden som slutförd.
+Med arbetsytan [[!UICONTROL Data Lifecycle] &#x200B;](./overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna markeras förfallotiden som slutförd.
 
 >[!WARNING]
 >

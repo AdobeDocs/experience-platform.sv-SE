@@ -52,7 +52,7 @@ Dialogrutan [!UICONTROL Create a schema] visas. I den här dialogrutan kan du v�
 
 ### [!BADGE Skapa scheman manuellt eller med ML-stöd i Beta]{type=Informative} {#manual-or-assisted}
 
-Om du vill lära dig hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en överförd fil kan du läsa [guiden ](../ui/ml-assisted-schema-creation.md) för att skapa schema med maskininlärningsstöd. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
+Om du vill lära dig hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en överförd fil kan du läsa [guiden &#x200B;](../ui/ml-assisted-schema-creation.md) för att skapa schema med maskininlärningsstöd. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
 
 ### Välja en basklass {#choose-a-class}
 
@@ -159,7 +159,7 @@ Schemat [!UICONTROL Loyalty Members] är avsett att samla in data som är relate
 Det kan dock finnas ett scenario där du vill inkludera ytterligare anpassade fält som inte täcks av standardfältgrupper för att uppnå dina användningsfall. Om du vill lägga till anpassade bonusfält har du två alternativ:
 
 1. Skapa en ny anpassad fältgrupp för att hämta dessa fält. Det här är den metod som kommer att beskrivas i den här självstudiekursen.
-1. Utöka standardfältgruppen [!UICONTROL Loyalty Details] med anpassade fält. Detta gör att [!UICONTROL Loyalty Details] konverteras till en anpassad fältgrupp och den ursprungliga standardfältgruppen kommer inte längre att vara tillgänglig. Mer information om hur du [!UICONTROL Schemas]lägger till anpassade fält i strukturen för standardfältgrupper[ finns i användargränssnittshandboken för ](../ui/resources/schemas.md#custom-fields-for-standard-groups).
+1. Utöka standardfältgruppen [!UICONTROL Loyalty Details] med anpassade fält. Detta gör att [!UICONTROL Loyalty Details] konverteras till en anpassad fältgrupp och den ursprungliga standardfältgruppen kommer inte längre att vara tillgänglig. Mer information om hur du [!UICONTROL Schemas]lägger till anpassade fält i strukturen för standardfältgrupper[&#x200B; finns i användargränssnittshandboken för &#x200B;](../ui/resources/schemas.md#custom-fields-for-standard-groups).
 
 Om du vill skapa en ny fältgrupp väljer du **[!UICONTROL Add]** i underavsnittet **[!UICONTROL Field groups]** som tidigare, men den här gången väljer du **[!UICONTROL Create New Field group]** i den övre delen av dialogrutan som visas. Du ombeds sedan ange ett visningsnamn och en beskrivning för den nya fältgruppen. I den här självstudiekursen ger du den nya fältgruppen namnet [!DNL Custom Loyalty Details] och väljer sedan **[!UICONTROL Add field groups]**.
 

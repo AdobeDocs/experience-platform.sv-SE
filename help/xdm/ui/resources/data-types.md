@@ -125,6 +125,6 @@ Arbetsytan uppdaterar datatypen för fältet från [!UICONTROL Object] till den 
 
 ## Nästa steg {#next-steps}
 
-I den här handboken beskrivs hur du skapar och redigerar datatyper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
+I den här handboken beskrivs hur du skapar och redigerar datatyper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
 
 Mer information om hur du hanterar datatyper med [!DNL Schema Registry]-API:t finns i [slutpunktshandboken för datatyper](../../api/data-types.md).

@@ -198,7 +198,7 @@ Följande avsnitt innehåller ytterligare information om kontomaterial.
 >title="Begränsningsöverträdelse"
 >abstract="Publiken bryter mot en begränsning. Läs det länkade dokumentet för mer information."
 
-När du använder kontomålgrupper måste målgruppen **** uppfylla följande begränsningar:
+När du använder kontomålgrupper måste målgruppen **&#x200B;**&#x200B;uppfylla följande begränsningar:
 
 - Det maximala djupet för kapslade behållare är **5**.
    - Det innebär att du **inte kan** ha fler än fem kapslade behållare när du skapar målgruppen.

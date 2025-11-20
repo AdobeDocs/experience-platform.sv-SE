@@ -18,10 +18,10 @@ Följande hemliga typer stöds för närvarande:
 | Hemlig typ | Beskrivning |
 | --- | --- |
 | [!UICONTROL Amazon OAuth 2] | Aktiverar säker autentisering med [!DNL Amazon] tjänster. Systemet lagrar token på ett säkert sätt och hanterar förnyelsen vid angivna intervall. |
-| [!UICONTROL Google OAuth 2] | Innehåller flera attribut som stöder autentiseringsspecifikationen [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) som kan användas i API:t [Google Ads ](https://developers.google.com/google-ads/api/docs/oauth/overview) och [API:t Pub/Sub](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
+| [!UICONTROL Google OAuth 2] | Innehåller flera attribut som stöder autentiseringsspecifikationen [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) som kan användas i API:t [Google Ads &#x200B;](https://developers.google.com/google-ads/api/docs/oauth/overview) och [API:t Pub/Sub](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL HTTP] | Innehåller två strängattribut för ett användarnamn respektive ett lösenord. |
 | [!UICONTROL [!DNL LinkedIn] OAuth 2] | Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
-| [!UICONTROL OAuth 2] | Innehåller flera attribut som stöder [klientautentiseringstypen ](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) för autentiseringsspecifikationen [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
+| [!UICONTROL OAuth 2] | Innehåller flera attribut som stöder [klientautentiseringstypen &#x200B;](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) för autentiseringsspecifikationen [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL OAuth 2 JWT] | Innehåller flera attribut som stöder JSON Web Token-profil (JWT) för [OAuth 2.0-auktoriseringsbidrag](https://datatracker.ietf.org/doc/html/rfc7523#section-2.1). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL Token] | En enda teckensträng som representerar ett autentiseringstokenvärde som är känt och begripligt för båda systemen. |
 
@@ -93,7 +93,7 @@ Om du vill skapa en HTTP-hemlighet väljer du **[!UICONTROL Simple HTTP]** i lis
 
 >[!NOTE]
 >
->När autentiseringsuppgifterna sparas kodas de med HTTP-autentiseringsschemat [&quot;Basic&quot; ](https://www.rfc-editor.org/rfc/rfc7617.html).
+>När autentiseringsuppgifterna sparas kodas de med HTTP-autentiseringsschemat [&quot;Basic&quot; &#x200B;](https://www.rfc-editor.org/rfc/rfc7617.html).
 
 ![HTTP-hemlighet](../../images/ui/event-forwarding/secrets/http-secret.png)
 

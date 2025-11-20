@@ -62,4 +62,4 @@ Om du har definierat en primär identitet för schemat kan du nu [aktivera schem
 
 I den här handboken beskrivs hur du definierar ett identitetsfält i användargränssnittet. När data importeras med det här schemat uppdateras dina kundidentitetsdiagram så att de återspeglar schemats identitetsfält. Se guiden för [identitetsdiagramvisningsprogrammet](../../../identity-service/features/identity-graph-viewer.md) om du vill veta mer om hur du utforskar organisationens privata diagram i användargränssnittet.
 
-Mer information om hur du definierar andra XDM-fälttyper i [ finns i översikten ](./overview.md#special)Definiera fält i användargränssnittet[!DNL Schema Editor].
+Mer information om hur du definierar andra XDM-fälttyper i [&#x200B; finns i översikten &#x200B;](./overview.md#special)Definiera fält i användargränssnittet[!DNL Schema Editor].

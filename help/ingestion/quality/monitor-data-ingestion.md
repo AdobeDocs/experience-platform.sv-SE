@@ -44,7 +44,7 @@ I det nedre diagrammet visas antalet lyckade bearbetade direktuppspelade händel
 
 >[!NOTE]
 >
->För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverat för [!DNL Profile]. Läs användarhandboken för [!DNL Profile]datauppsättningar[ om du vill lära dig hur du aktiverar direktuppspelningsdata för ](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+>För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverat för [!DNL Profile]. Läs användarhandboken för [!DNL Profile]datauppsättningar[&#x200B; om du vill lära dig hur du aktiverar direktuppspelningsdata för &#x200B;](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
 
 ![](../images/quality/monitor-data-flows/ingested-by-profile.png)
 

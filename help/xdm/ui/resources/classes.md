@@ -156,6 +156,6 @@ Mer information finns i guiden om [att skapa och redigera scheman](./schemas.md#
 
 ## Nästa steg {#next-steps}
 
-I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
+I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
 
 Om du vill lära dig hur du hanterar klasser med API:t för schemaregister läser du [klassernas slutpunktshandbok](../../api/classes.md).

@@ -131,12 +131,12 @@ I ett typiskt fall kan du ange att dina Experience Event-data ska upphöra att g
 
 +++ Svar
 
-- Identitetstjänsten [ första-i-och-ut-systemet ](../identity-service/guardrails.md) kan ta bort ECID:n från identitetsdiagrammet, som lagras i identitetstjänsten.
+- Identitetstjänsten [&#x200B; första-i-och-ut-systemet &#x200B;](../identity-service/guardrails.md) kan ta bort ECID:n från identitetsdiagrammet, som lagras i identitetstjänsten.
 - Om raderingsbeteendet resulterar i att en ECID-profil lagras i kundprofilen i realtid (profilarkivet), kommer pseudonym utgångsinformation att ta bort profilen från profilarkivet.
 
 +++
 
 ## Nästa steg
 
-När du har läst den här guiden kan du visa och skapa pseudonyma utgångsdatum för profildata. Mer information om datahantering för Experience Platform som helhet finns i [Handboken ](../landing/license-usage-and-guardrails/data-management-best-practices.md) om god praxis för tillstånd för datahanteringslicenser.
+När du har läst den här guiden kan du visa och skapa pseudonyma utgångsdatum för profildata. Mer information om datahantering för Experience Platform som helhet finns i [Handboken &#x200B;](../landing/license-usage-and-guardrails/data-management-best-practices.md) om god praxis för tillstånd för datahanteringslicenser.
 

@@ -34,7 +34,7 @@ I Experience Platform-gränssnittet väljer du **[!UICONTROL Profiles]** i den v
 
 På profilkontrollpanelen visas viktiga mätvärden för din organisations profildata.
 
-För att lära dig mer, besök profilens dashboardguide[](../../dashboards/guides/profiles.md).
+För att lära dig mer, besök profilens dashboardguide[&#128279;](../../dashboards/guides/profiles.md).
 
 ![Profilpanelen visas.](../../dashboards/images/profiles/dashboard-overview.png)
 
@@ -215,8 +215,8 @@ Från huvudmenyn **[!UICONTROL Profiles]** väljer du fliken **[!UICONTROL Compu
 
 ![Fliken Beräknade attribut är markerad.](../images/user-guide/computed-attributes.png)
 
-För mer information om beräknade attribut, vänligen läs översikten[ över ](../computed-attributes/overview.md)beräknade attribut. För mer information om hur du använder beräknade attribut i Experience Platform UI, vänligen läs guiden[ för ](../computed-attributes/ui.md)UI för beräknade attribut.
+För mer information om beräknade attribut, vänligen läs översikten[&#x200B; över &#x200B;](../computed-attributes/overview.md)beräknade attribut. För mer information om hur du använder beräknade attribut i Experience Platform UI, vänligen läs guiden[&#x200B; för &#x200B;](../computed-attributes/ui.md)UI för beräknade attribut.
 
 ## Nästa steg
 
-Genom att läsa denna guide vet du hur du kan se och hantera din organisations profildata med Experience Platform UI. För information om hur du arbetar med profildata med Experience Platform API:er, vänligen se Real-Time Customer Profile API-guiden[](../api/overview.md).
+Genom att läsa denna guide vet du hur du kan se och hantera din organisations profildata med Experience Platform UI. För information om hur du arbetar med profildata med Experience Platform API:er, vänligen se Real-Time Customer Profile API-guiden[&#128279;](../api/overview.md).

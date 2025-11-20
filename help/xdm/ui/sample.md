@@ -33,4 +33,4 @@ I den här guiden beskrivs hur du genererar en JSON-exempelfil från ett XDM-sch
 
 När du är redo att börja inhämta data, se självstudiekursen [Mappa en CSV-fil till XDM](../../ingestion/tutorials/map-csv/overview.md) för att lära dig hur du mappar en platt datafil (till exempel en CSV-fil) till ett XDM-schema och importerar den till Experience Platform. Du kan också upprätta en [källanslutning](../../sources/home.md) för att hämta data från en extern källa och mappa dem till XDM.
 
-Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] i gränssnittet finns i [[!UICONTROL Schemas] -arbetsytans översikt ](./overview.md).
+Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] i gränssnittet finns i [[!UICONTROL Schemas] -arbetsytans översikt &#x200B;](./overview.md).
