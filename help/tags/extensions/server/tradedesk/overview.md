@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Du kan använda tillägget [[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) för att skicka data från Adobe Experience Platform Edge Network till [!DNL The Trade Desk] genom att använda API:ts funktioner i [reglerna för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
 
-Med tillägget [!DNL The Trade Desk Real-Time Conversions API] kan du utnyttja API:ts funktioner i reglerna för [ vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL The Trade Desk] från Adobe Experience Platform Edge Network.
+Med tillägget [!DNL The Trade Desk Real-Time Conversions API] kan du utnyttja API:ts funktioner i reglerna för [&#x200B; vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) för att skicka data till [!DNL The Trade Desk] från Adobe Experience Platform Edge Network.
 
 Läs det här dokumentet för att lära dig hur du installerar tillägget och använder dess funktioner i en händelsevidarebefordring av [regeln](../../../ui/managing-resources/rules.md).
 
@@ -84,7 +84,7 @@ Konfigurationsalternativen är uppdelade i tre huvudavsnitt enligt nedan:
 
 ![Avsnittet [!DNL Basic Request Properties] som visar exempeldata i fälten.](../../../images/extensions/server/tradedesk/configure-extension-basic-request-properties.png)
 
-Mer information om [!DNL The Trade Desk]request properties[ som accepteras av ](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties) Real-Time Conversions API finns i dokumentationen för [!DNL The Trade Desk]-utvecklaren.
+Mer information om [!DNL The Trade Desk]request properties[&#x200B; som accepteras av &#x200B;](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties) Real-Time Conversions API finns i dokumentationen för [!DNL The Trade Desk]-utvecklaren.
 
 **[!UICONTROL Object Request Parameters]**
 
@@ -93,7 +93,7 @@ Ett JSON-objekt som innehåller mer information. Du kan välja att använda en r
 
 ![Avsnittet [!DNL Object Request Parameters] som visar tillgängliga fält.](../../../images/extensions/server/tradedesk/configure-object-request-params.png)
 
-Mer information om [ och deras egenskaper finns i dokumentationen för ](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties-items)Real-Time Conversions Event[!UICONTROL Object Request Parameters] .
+Mer information om [&#x200B; och deras egenskaper finns i dokumentationen för &#x200B;](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi#properties-items)Real-Time Conversions Event[!UICONTROL Object Request Parameters] .
 
 **[!UICONTROL Configuration Overrides]**
 
