@@ -73,10 +73,10 @@ Parametervärden sparas när du schemalägger en parametriserad fråga. Om du vi
 
 >[!TIP]
 >
->Frågetjänsten stöder förberedda satser med hjälp av parametriserade frågor. Mer information om SQL-syntaxen som ingår finns i [förberedda programsatser &#x200B;](../sql/prepared-statements.md).
+>Frågetjänsten stöder förberedda satser med hjälp av parametriserade frågor. Mer information om SQL-syntaxen som ingår finns i [förberedda programsatser ](../sql/prepared-statements.md).
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att parametrisera frågor i Adobe Experience Platform-gränssnittet och använda dem i schemalagda frågekörningar. Dokumentet visade också hur loggarna skulle kontrolleras för parametervärden som används i frågekörningar.
+By reading this document, you have learned how to parameterize queries in the Adobe Experience Platform UI and use them in scheduled query runs. Dokumentet visade också hur loggarna skulle kontrolleras för parametervärden som används i frågekörningar.
 
 Därefter rekommenderar vi att du läser guiden om [övervakning av schemalagda frågor](./monitor-queries.md) för att få en bättre förståelse för statusen för alla frågejobb via Experience Platform-gränssnittet.

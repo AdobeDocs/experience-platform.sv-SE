@@ -46,7 +46,7 @@ Välj sedan ikonen **[!UICONTROL Copy JSON]** (![Kopiera ikon](/help/images/icon
 
 Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemastrukturen. För schemat [!DNL Loyalty Members] som visas ovan genereras följande JSON:
 
-+++Välj för att expandera en exempelnyttolast för JSON
++++Välj för att expandera ett exempel på JSON-nyttolast
 
 ```json
 [
@@ -230,4 +230,4 @@ När du har kopierat export-JSON för schemat kan du använda det som nyttolast 
 
 ## Nästa steg
 
-Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i användargränssnittet för [!UICONTROL Schemas] finns i [[!UICONTROL Schemas] användargränssnittsöversikt &#x200B;](./overview.md).
+Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i användargränssnittet för [!UICONTROL Schemas] finns i [[!UICONTROL Schemas] användargränssnittsöversikt ](./overview.md).

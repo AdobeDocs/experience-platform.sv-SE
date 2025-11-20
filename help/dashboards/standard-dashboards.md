@@ -132,7 +132,7 @@ Du kan också skapa en egen punkt för att filtrera data efter. Välj **[!UICONT
 
 ### Widget-egenskaper
 
-Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet [!UICONTROL Widget title] på panelen [!UICONTROL Properties].
+Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet [!UICONTROL Properties] på panelen [!UICONTROL Widget title].
 
 ![Egenskapspanelen med egenskapsikonen och widgetens titelfält markerat.](./images/standard-dashboards/properties-panel.png)
 
@@ -182,4 +182,4 @@ Om du vill identifiera tillgängliga förkonfigurerade mått och visualiseringar
 
 Titta på följande video för att få en bättre förståelse för kontrollpaneler i Experience Platform:
 
->[!VIDEO](https://video.tv.adobe.com/v/3432450?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

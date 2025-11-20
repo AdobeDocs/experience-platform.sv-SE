@@ -19,7 +19,7 @@ Om du vill använda en spelningsbok väljer du **[!UICONTROL Playbooks]** i den 
 
 Använd sökfönstret och filtren som finns på sidan för att hitta och välja rätt spelbok för ditt användningsfall.
 
-Du kan till exempel filtrera spelböcker som du kan använda baserat på den fas i marknadsföringstratten som du vill ha som mål - konvertering, engagemang eller lojalitet. Du kan också filtrera de visade spelböckerna efter vilken bransch du befinner dig i eller vilka produktberättigande du har tillgång till - Adobe Journey Optimizer eller Real-Time CDP.
+Du kan till exempel filtrera spelböcker som du kan använda baserat på den scen i marknadsförings-funnel som du vill ha som mål - konvertering, engagemang eller lojalitet. Du kan också filtrera de visade spelböckerna efter vilken bransch du befinner dig i eller vilka produktberättigande du har tillgång till - Adobe Journey Optimizer eller Real-Time CDP.
 
 ![Filtrera spelböcker efter marknadsföringstratt, bransch eller produkt](/help/use-case-playbooks/assets/playbooks/ui-guide/filter-by-funnel-industry-product.gif)
 

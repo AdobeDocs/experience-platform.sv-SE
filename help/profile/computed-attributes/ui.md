@@ -47,7 +47,7 @@ Om du vill välja vilka fält som ska visas kan du välja ![ikonen för att konf
 | [!UICONTROL Created] | En tidsstämpel som visar det datum och den tidpunkt då det beräknade attributet skapades. |
 | [!UICONTROL Last modified] | En tidsstämpel som visar det datum och den tidpunkt då det beräknade attributet senast ändrades. |
 
-Du kan även filtrera de beräknade attribut som visas baserat på livscykelstatusen. Välj ikonen ![tratt](/help/images/icons/filter.png) .
+Du kan även filtrera de beräknade attribut som visas baserat på livscykelstatusen. Välj ikonen ![funnel](/help/images/icons/filter.png) .
 
 ![Filterikonen är markerad.](./images/ui/select-filter.png)
 

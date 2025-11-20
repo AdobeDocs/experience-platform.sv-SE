@@ -74,7 +74,7 @@ Den här etiketten används för att styra användningen av data om potentiella 
 | --- | --- |
 | **Tredje part** | Tredjepartsdata är data som tillhandahålls av en tredjepartsleverantör. En tredjepartsleverantör av data är en enhet som har ingått ett avtal med din organisation som tillåter dig att få tillgång till, använda, visa och överföra den tredje partens data i samverkan med Experience Platform. |
 | **Tredjepartsberikning** | Uppgifter som samlats in av en tredjepartsorganisation och som inte är direkt relaterade till den registrerade. Etiketten ska användas på tredjepartsdata som används för att berika förstahandsprofiler. |
-| **Prospektering från tredje part** | Uppgifter som samlats in av en tredjepartsorganisation och som inte är direkt relaterade till den registrerade. Etiketten bör tillämpas på data från tredje part som används som ett led i trattprospekteringen till nya nettokunder. |
+| **Prospektering från tredje part** | Uppgifter som samlats in av en tredjepartsorganisation och som inte är direkt relaterade till den registrerade. Etiketten bör tillämpas på data från tredje part som används som tillägg till funnel prospektering efter nya nettokunder. |
 
 ## Bilaga
 

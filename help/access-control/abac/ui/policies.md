@@ -142,7 +142,7 @@ Använd växlingsknappen **[!UICONTROL Auto-include]** på fliken **[!UICONTROL 
 
 Dialogrutan **[!UICONTROL Enable Auto-include]** visas och du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Enable]** för att slutföra konfigurationsinställningen.
 
-![Markering av [!UICONTROL Enable] i dialogrutan [!UICONTROL Enable Auto-include].](../../images/flac-ui/abac-policies-auto-include-enable.png)
+![Markering av [!UICONTROL Enable Auto-include] i dialogrutan [!UICONTROL Enable].](../../images/flac-ui/abac-policies-auto-include-enable.png)
 
 >[!SUCCESS]
 >
@@ -178,7 +178,7 @@ Om du vill ta bort en sandlåda markerar du ikonen **X** bredvid namnet på sand
 
 Dialogrutan **[!UICONTROL Remove]** visas och du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Confirm]** för att slutföra borttagningen.
 
-![Markering av [!UICONTROL Confirm] i dialogrutan [!UICONTROL Remove].](../../images/flac-ui/abac-policies-remove-sandbox.png)
+![Markering av [!UICONTROL Remove] i dialogrutan [!UICONTROL Confirm].](../../images/flac-ui/abac-policies-remove-sandbox.png)
 
 >[!SUCCESS]
 >
@@ -190,7 +190,7 @@ Dialogrutan **[!UICONTROL Remove]** visas och du uppmanas att bekräfta ditt val
 >id="platform_permissions_policies_about"
 >title="Vad är policyer?"
 >abstract="Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Alla organisationer har en standardprofil som du måste aktivera för att kunna styra åtkomsten till specifika objekt baserat på etiketter. Etiketter som används på resurser nekar åtkomst såvida inte användare tilldelas till en roll med en matchande etikett. Standardprofiler kan inte redigeras eller tas bort, men de kan aktiveras eller inaktiveras."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/labels" text="Hantera etiketter"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/labels" text="Hantera etiketter"
 
 Om du vill aktivera en befintlig princip väljer du den på fliken **[!UICONTROL Policies]**.
 

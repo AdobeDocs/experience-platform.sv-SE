@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om dina kontoprofiler, som de tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Account Profiles] i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
-Det här dokumentet innehåller en översikt över funktionerna på kontrollpanelen [!UICONTROL Account Profiles] och information om tillgängliga standardinsikter. Mer information om de tillgängliga funktionerna finns i [[!UICONTROL Account Profiles]-gränssnittshandboken &#x200B;](../../rtcdp/accounts/account-profile-ui-guide.md).
+Det här dokumentet innehåller en översikt över funktionerna på kontrollpanelen [!UICONTROL Account Profiles] och information om tillgängliga standardinsikter. Mer information om de tillgängliga funktionerna finns i [[!UICONTROL Account Profiles]-gränssnittshandboken ](../../rtcdp/accounts/account-profile-ui-guide.md).
 
 ## Komma igång
 
@@ -179,9 +179,9 @@ Om du vill visa en dialogruta som innehåller den specifika intäktssumman för 
 
 ![Widgeten Nya möjligheter per intäkt.](../images/account-profiles/new-opportunities-by-revenue.png)
 
-### Nya möjligheter efter status och fas {#opportunities-by-status-&-stage}
+### Nya möjligheter per status och fas {#opportunities-by-status-&-stage}
 
-Den här widgeten använder ett stapeldiagram för att illustrera antalet möjligheter som antingen är öppna eller stängda i alla stadier av marknadsförings-/säljprocessen. Widgeten använder färger för att särskilja affärsmöjligheterna. En färgkodad nyckel anger tillgängliga stadier för affärsmöjligheter.
+Den här widgeten använder ett stapeldiagram för att illustrera antalet möjligheter som antingen är öppna eller stängda i alla faser av funnel för marknadsföring/försäljning. Widgeten använder färger för att särskilja affärsmöjligheterna. En färgkodad nyckel anger tillgängliga stadier för affärsmöjligheter.
 
 ![Nya möjligheter per status och scen-widget.](../images/account-profiles/new-opportunities-by-status-&-stage.png)
 

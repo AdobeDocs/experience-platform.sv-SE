@@ -16,7 +16,7 @@ ht-degree: 0%
 >id="platform_permissions_users_about"
 >title="Vad är användare?"
 >abstract="Användare är de personer som har tillgång till Experience Platform. En enskild användares åtkomst till en organisations resurser hanteras via roller."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
 
 Om du vill visa användarinformation och roller som de är tilldelade till väljer du fliken **[!UICONTROL Users]**.
 
@@ -42,7 +42,7 @@ Välj fliken **[!UICONTROL Roles]** för att visa de roller som användaren är 
 
 Följande video är avsedd att ge stöd för din förståelse av utvecklares och API:s autentiseringsuppgifter.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446402/?learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 
 ## Nästa steg
 

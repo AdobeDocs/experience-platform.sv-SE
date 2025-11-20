@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;Enhetlig profil;Enhetlig;Profil;rtcp;aktivera profil;Aktivera profil;Unionsschema;UNIONSPROFIL;unionsprofil
-title: Användargränssnittshandbok för kundprofil i realtid
-description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
+keywords: Erfarenhetsplattform; profil; kundprofil i realtid; Felsökning; Application Programming Interface; enhetlig profil; Enhetlig profil; enhetlig; Profil; RTCP; aktivera profil; Aktivera profil; Unionschema; FACKLIG PROFIL; Facklig profil
+title: Realtids kundprofil UI-guide
+description: Real-Time Customer Profile skapar en helhetsbild av var och en av dina enskilda kunder, genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredjepartsdata. Detta dokument fungerar som en guide för att interagera med kundprofilen i realtid i användargränssnittet för Adobe Experience Platform.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
 source-git-commit: d2694170e2860bd32783ad3f1860b0397e847289
 workflow-type: tm+mt
@@ -10,16 +10,16 @@ ht-degree: 0%
 
 ---
 
-# Användargränssnittshandbok för [!DNL Real-Time Customer Profile]
+# [!DNL Real-Time Customer Profile] UI-guide
 
-[!DNL Real-Time Customer Profile] skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet fungerar som en guide för interaktion med [!DNL Real-Time Customer Profile]-data i Adobe Experience Platform användargränssnitt.
+[!DNL Real-Time Customer Profile] skapar en helhetsbild av varje kund och kombinerar data från flera kanaler, inklusive online, offline, CRM och tredjepartsdata. Detta dokument fungerar som en vägledning för att interagera med [!DNL Real-Time Customer Profile] data i Adobe Experience Platforms användargränssnitt (UI).
 
 ## Komma igång
 
-Den här gränssnittshandboken kräver förståelse för de olika [!DNL Experience Platform]-tjänsterna som används för att hantera [!DNL Real-Time Customer Profiles]. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
+Denna UI-guide kräver förståelse för de olika [!DNL Experience Platform] tjänster som ingår i hantering [!DNL Real-Time Customer Profiles]. Innan du läser denna guide eller arbetar i användargränssnittet, vänligen granska dokumentationen för följande tjänster:
 
-* [[!DNL Real-Time Customer Profile] översikt](../home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor när de hämtas till [!DNL Experience Platform].
+* [[!DNL Real-Time Customer Profile] översikt](../home.md): Tillhandahåller en enhetlig, realtidsprofil för konsumenter baserad på aggregerad data från flera källor.
+* [[!DNL Identity Service]](../../identity-service/home.md): Möjliggör [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor när de tas in i [!DNL Experience Platform].
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
 ## [!UICONTROL Overview]
@@ -34,9 +34,9 @@ I Experience Platform-gränssnittet väljer du **[!UICONTROL Profiles]** i den v
 
 På profilkontrollpanelen visas viktiga mätvärden för din organisations profildata.
 
-Mer information finns i [profilkontrollpanelsguiden](../../dashboards/guides/profiles.md).
+För att lära dig mer, besök profilens dashboardguide[](../../dashboards/guides/profiles.md).
 
-![Kontrollpanelen för profiler visas.](../../dashboards/images/profiles/dashboard-overview.png)
+![Profilpanelen visas.](../../dashboards/images/profiles/dashboard-overview.png)
 
 ## Fliken [!UICONTROL Browse]
 
@@ -70,9 +70,9 @@ Om du vill visa information om en av exempelprofilerna väljer du **[!UICONTROL 
 
 Mer information om sammanfogningsprinciper och deras roll i Experience Platform finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
 
-### Bläddra efter [!UICONTROL Identity] {#browse-identity}
+### Bläddra förbi [!UICONTROL Identity] {#browse-identity}
 
-På fliken **[!UICONTROL Browse]** kan du använda ett ID-namnutrymme för att söka efter en viss profil med hjälp av ett identitetsvärde. Om du bläddrar efter en identitet måste du ange en sammanfogningsprincip, ett identitetsnamnutrymme och ett identitetsvärde.
+På fliken **[!UICONTROL Browse]** kan du använda ett identitetsnamnutrymme för att slå upp en specifik profil via ett identitetsvärde. Att bläddra efter en identitet kräver att du anger en sammanslagningspolicy, ett identitetsnamnrymd och ett identitetsvärde.
 
 ![Väljaren för sammanfogningsprincip är markerad.](../images/user-guide/browse-by-merge-policy.png)
 
@@ -84,17 +84,17 @@ Använd sedan väljaren **[!UICONTROL Identity namespace]** för att öppna dial
 
 Du kan markera ett namnutrymme om du vill visa mer information eller välja ett namnutrymme genom att markera alternativknappen. Du kan sedan använda **[!UICONTROL Select]** för att fortsätta.
 
-![En dialogruta där du kan välja det identitetsnamnutrymme som ska filtreras visas.](../images/user-guide/select-identity-namespace.png)
+![En dialog där du kan välja identitetsnamnrymden att filtrera efter visas.](../images/user-guide/select-identity-namespace.png)
 
-När du har valt en [!UICONTROL Identity namespace] och återgår till fliken [!UICONTROL Browse] kan du ange en **[!UICONTROL Identity value]** som är relaterad till det markerade namnutrymmet.
+Efter att ha valt en [!UICONTROL Identity namespace] och återvänt till fliken [!UICONTROL Browse] kan du ange en **[!UICONTROL Identity value]** relaterad till namnrymden du valt.
 
 >[!NOTE]
 >
->Det här värdet är specifikt för en enskild kundprofil och måste vara en giltig post för det angivna namnutrymmet. Om du t.ex. väljer identitetsnamnet&quot;E-post&quot; krävs ett identitetsvärde i form av en giltig e-postadress.
+>Detta värde är specifikt för en individuell kundprofil och måste vara en giltig post för det angivna namnrymden. Till exempel skulle valet av identitetsnamnrymden &quot;Email&quot; kräva ett identitetsvärde i form av en giltig e-postadress.
 
-![Identitetsvärdet som du vill filtrera efter är markerat.](../images/user-guide/browse-identity.png)
+![Identitetsvärdet du vill filtrera efter markeras.](../images/user-guide/browse-identity.png)
 
-När ett värde har angetts väljer du **[!UICONTROL View]** och en enda profil som matchar värdet returneras. Välj **[!UICONTROL Profile ID]** om du vill visa en profil.
+När ett värde har matats in, välj **[!UICONTROL View]** och en enda profil som matchar värdet returneras. Välj för **[!UICONTROL Profile ID]** att se en profil.
 
 ![Profilen som matchar identitetsvärdet markeras.](../images/user-guide/filtered-identity-value.png)
 
@@ -111,25 +111,25 @@ Dessutom kan du visa annan information om profiler, till exempel dess [attribut]
 
 ### Fliken Detaljer {#profile-detail}
 
-Fliken **[!UICONTROL Details]** innehåller mer detaljerad information om den valda profilen och är indelad i fyra avsnitt: Kundprofilsinsikter, AI-insikter, anpassningsbara widgetar och automatiskt klassificerade widgetar.
+Fliken **[!UICONTROL Details]** ger mer detaljerad information om den valda profilen och är uppdelad i fyra sektioner: Kundprofilinsikter, AI-insiktswidgets, anpassningsbara widgets och automatiskt klassificerade widgets.
 
-![Sidan med profilinformation visas.](../images/user-guide/profile-details.png)
+![Profilens detaljsida visas.](../images/user-guide/profile-details.png)
 
-Dessutom kan du växla om de AI-genererade insikterna ska visas, visa information för nav jämfört med kant samt visa informationen i diagramvyn.
+Dessutom kan du växla om AI-genererade insikter visas, visa detaljer för hubben jämfört med edge, samt visa detaljerna i grafvyn.
 
-![De växlar som anges ovan (AI-genererade insikter, hubbdata eller Edge-data samt kort- eller diagramvyn) markeras.](../images/user-guide/profile-toggles.png)
+![De ovan nämnda växlarna (AI-genererade insikter, Hub- eller Edge-data samt kort- eller grafvy) är markerade.](../images/user-guide/profile-toggles.png)
 
-#### Kundprofilsinsikter {#customer-profile-insights}
+#### Kundprofilinsikter {#customer-profile-insights}
 
-I avsnittet **[!UICONTROL Customer profile insights]** visas en kort introduktion till profilens attribut. Detta inkluderar profil-ID, e-post, telefonnummer, kön, födelsedatum samt identiteten och målgruppsmedlemskap för profilen.
+Avsnittet **[!UICONTROL Customer profile insights]** visar en kort introduktion till profilens attribut. Detta inkluderar profil-ID, e-post, telefonnummer, kön, födelsedatum samt profilens identiteter och medlemskap i målgruppen.
 
-![Avsnittet med kundprofilsinsikter visas.](../images/user-guide/customer-profile-insights.png)
+![Avsnittet för kundprofilinsikter visas.](../images/user-guide/customer-profile-insights.png)
 
-#### AI insight-widgetar {#ai-insight-widgets}
+#### AI-insiktswidgets {#ai-insight-widgets}
 
-[!BADGE Alpha]{type=Informative} Den här funktionen finns i Alpha.
+[!BADGE Alpha]{type=Informative} : Denna funktion finns för närvarande i Alpha.
 
-Avsnittet **[!UICONTROL AI insight widgets]** visar widgetar som genereras av AI. Dessa widgetar ger snabba insikter om profilen, baserat på profildata som demografi (till exempel ålder, kön eller plats), användarbeteenden (till exempel inköpshistorik, webbplatsaktivitet eller engagemang i sociala medier) samt psykografi (till exempel intressen, preferenser eller livsstilar). Alla AI-widgetar använder data som **redan** finns i profilen.
+Sektionen **[!UICONTROL AI insight widgets]** visar widgets som genereras av AI. Dessa widgets ger snabba insikter om profilen, baserat på profildata inklusive demografi (såsom ålder, kön eller plats), användarbeteenden (såsom köphistorik, webbplatsaktivitet eller engagemang i sociala medier) samt psykologiska data (såsom intressen, preferenser eller livsstilsval). Alla AI-widgetar använder data som **redan** finns i profilen.
 
 ![AI-widgetar visas.](../images/user-guide/ai-insight-widgets.png)
 
@@ -139,9 +139,9 @@ I avsnittet **[!UICONTROL Customizable widgets]** visas widgetar som du kan anpa
 
 Standardfälten som visas kan också ändras på organisationsnivå för att visa de önskade profilattributen. Om du vill veta mer om hur du anpassar de här fälten, inklusive steg-för-steg-instruktioner om hur du lägger till och tar bort attribut och ändrar storlek på kontrollpaneler, kan du läsa [anpassningsguiden för profildetaljer](profile-customization.md).
 
-![Avsnittet med anpassningsbara widgetar visas.](../images/user-guide/customizable-widgets.png)
+![Avsnittet för anpassningsbara widgets visas.](../images/user-guide/customizable-widgets.png)
 
-Du kan också växla mellan att visa attributnamnen som visningsnamn och fältsökvägsnamn. Om du vill växla mellan dessa två skärmar väljer du alternativet **[!UICONTROL Show display names]**.
+Du kan också välja att växla mellan att se attributnamnen som deras visningsnamn och deras fältvägsnamn. Om du vill växla mellan dessa två skärmar väljer du alternativet **[!UICONTROL Show display names]**.
 
 ![Växlingen av visningsnamn är markerad.](../images/user-guide/show-display-names.png)
 
@@ -171,11 +171,11 @@ Om du vill visa de attribut som är tillgängliga på Edge väljer du **[!UICONT
 
 ![Dataplatsväljaren på fliken Attribut är markerad.](../images/user-guide/attributes-select.png)
 
-Mer information om kantprofiler finns i [dokumentationen för kantprofiler](../edge-profiles.md).
+För mer information om edgeprofiler, vänligen [läs edge-profilernas dokumentation](../edge-profiles.md).
 
-### Fliken Händelser {#events}
+### Fliken Evenemang {#events}
 
-Fliken **[!UICONTROL Events]** innehåller data från de 100 senaste ExperienceEvents som är associerade med kunden. Dessa data kan inkludera öppning av e-post, kundvagnsaktiviteter och sidvyer. Om du väljer **[!UICONTROL View all]** för en enskild händelse hämtas ytterligare fält och värden som en del av händelsen.
+Fliken **[!UICONTROL Events]** innehåller data från de 100 senaste ExperienceEvents kopplade till kunden. Denna data kan inkludera e-postöppningar, kundvagnsaktiviteter och sidvisningar. Att välja **[!UICONTROL View all]** för en enskild händelse ger ytterligare fält och värdefångar som en del av evenemanget.
 
 Händelser kan också visas som ett JSON-objekt genom att välja till **[!UICONTROL View JSON]**. Detta är praktiskt när du vill veta hur händelser spelas in i Experience Platform.
 
@@ -201,7 +201,7 @@ Mer information om sammanfogningsprinciper finns i [översikten över sammanfogn
 
 ![Fliken Kopplingsprofiler är markerad. Sammanslagningsprinciper som tillhör organisationen visas.](../images/user-guide/merge-policies.png)
 
-## Unionsschema {#union-schema}
+## Unionschema {#union-schema}
 
 På huvudmenyn **[!UICONTROL Profiles]** väljer du fliken **[!UICONTROL Union Schema]** för att visa tillgängliga unionsscheman för dina inkapslade data. Ett unionsschema är en sammanslagning av alla [!DNL Experience Data Model] (XDM)-fält under samma klass, vars scheman har aktiverats för användning i [!DNL Real-Time Customer Profile].
 
@@ -211,12 +211,12 @@ Mer information om unionsscheman finns i [gränssnittsguiden för unionsscheman]
 
 ## Beräknade attribut {#computed-attributes}
 
-På huvudmenyn **[!UICONTROL Profiles]** väljer du fliken **[!UICONTROL Computed attributes]** för att visa en lista över beräknade attribut som tillhör din organisation.
+Från huvudmenyn **[!UICONTROL Profiles]** väljer du fliken **[!UICONTROL Computed attributes]** för att visa en lista över beräknade attribut som tillhör din organisation.
 
 ![Fliken Beräknade attribut är markerad.](../images/user-guide/computed-attributes.png)
 
-Mer information om beräknade attribut finns i [översikten över beräknade attribut](../computed-attributes/overview.md). Mer information om hur du använder beräknade attribut i Experience Platform-gränssnittet finns i [användargränssnittshandboken för beräknade attribut](../computed-attributes/ui.md).
+För mer information om beräknade attribut, vänligen läs översikten[ över ](../computed-attributes/overview.md)beräknade attribut. För mer information om hur du använder beräknade attribut i Experience Platform UI, vänligen läs guiden[ för ](../computed-attributes/ui.md)UI för beräknade attribut.
 
 ## Nästa steg
 
-Genom att läsa den här guiden kan du visa och hantera din organisations profildata med hjälp av Experience Platform användargränssnitt. Mer information om hur du arbetar med profildata med Experience Platform API:er finns i [API-handboken för kundprofiler i realtid](../api/overview.md).
+Genom att läsa denna guide vet du hur du kan se och hantera din organisations profildata med Experience Platform UI. För information om hur du arbetar med profildata med Experience Platform API:er, vänligen se Real-Time Customer Profile API-guiden[](../api/overview.md).

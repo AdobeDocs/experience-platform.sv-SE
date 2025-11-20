@@ -51,7 +51,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >id="platform_sources_templates_accounttype"
 >title="Välj affärstyp"
 >abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-Time Customer Data Platform-prenumerationskonto."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE" text="Real-Time CDP - översikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP - översikt"
 
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
 
@@ -247,7 +247,7 @@ Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automati
 
 Börja publiceringsprocessen genom att gå igenom källarbetsflödet. När du har valt [!UICONTROL Update dataflow] dirigeras du till arbetsflödets *[!UICONTROL Add data]*-steg. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
-![Steget Lägg till data för ett dataflöde &#x200B;](../../images/tutorials/templates/continue-draft.png)
+![Steget Lägg till data för ett dataflöde ](../../images/tutorials/templates/continue-draft.png)
 
 Bekräfta sedan dataflödesinformationen och konfigurera inställningarna för feldiagnostik, partiell import och varningsmeddelanden. När du är klar väljer du **[!UICONTROL Next]**.
 

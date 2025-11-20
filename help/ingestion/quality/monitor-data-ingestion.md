@@ -24,7 +24,7 @@ Den här användarhandboken innehåller anvisningar om hur du övervakar data i 
 >title="Inmatningshastighet"
 >abstract="Antalet händelser som har bearbetats per sekund."
 >text="Learn more in the documentation"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html?lang=sv-SE" text="Övervaka dataflöden för källor i användargränssnittet"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html" text="Övervaka dataflöden för källor i användargränssnittet"
 
 >[!TIP]
 >
@@ -44,7 +44,7 @@ I det nedre diagrammet visas antalet lyckade bearbetade direktuppspelade händel
 
 >[!NOTE]
 >
->För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverat för [!DNL Profile]. Läs användarhandboken för [datauppsättningar](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile) om du vill lära dig hur du aktiverar direktuppspelningsdata för [!DNL Profile].
+>För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverat för [!DNL Profile]. Läs användarhandboken för [!DNL Profile]datauppsättningar[ om du vill lära dig hur du aktiverar direktuppspelningsdata för ](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
 
 ![](../images/quality/monitor-data-flows/ingested-by-profile.png)
 

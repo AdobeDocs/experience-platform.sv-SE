@@ -52,7 +52,7 @@ Genom anslutningen [!DNL LiveRamp - Distribution] kan de nu aktivera de inbyggda
 
 ## Anpassa målgrupper till LiveRamp {#onboarding}
 
-Innan du aktiverar målgrupper via anslutningen [!DNL LiveRamp - Distribution] använder du anslutningen [&#x200B; LiveRamp - Onboarding](liveramp-onboarding.md) för att exportera dina Experience Platform-målgrupper till LiveRamp.
+Innan du aktiverar målgrupper via anslutningen [!DNL LiveRamp - Distribution] använder du anslutningen [ LiveRamp - Onboarding](liveramp-onboarding.md) för att exportera dina Experience Platform-målgrupper till LiveRamp.
 
 När du har registrerat dina målgrupper på LiveRamp fortsätter du aktiveringsarbetsflödet från steget [Ansluta till målet](#connect) för att välja och konfigurera målplattformarna för dataaktivering.
 
@@ -433,7 +433,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 > 
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Anslutningen [!DNL LiveRamp - Distribution] aktiverar målgrupper som redan har anslutit till ditt LiveRamp-konto via anslutningen [&#x200B; LiveRamp - Onboarding](liveramp-onboarding.md).
+Anslutningen [!DNL LiveRamp - Distribution] aktiverar målgrupper som redan har anslutit till ditt LiveRamp-konto via anslutningen [ LiveRamp - Onboarding](liveramp-onboarding.md).
 
 Om du vill aktivera dina målgrupper måste du markera de **samma målgrupper** som du [tidigare har anslutit](liveramp-onboarding.md) till LiveRamp.
 
@@ -453,4 +453,4 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 ## Ytterligare resurser {#additional-resources}
 
-Mer information om hur du konfigurerar ditt [!DNL LiveRamp - Onboarding]-mål finns i [&#x200B; LiveRamp - Onboarding-dokumentationen](liveramp-onboarding.md).
+Mer information om hur du konfigurerar ditt [!DNL LiveRamp - Onboarding]-mål finns i [ LiveRamp - Onboarding-dokumentationen](liveramp-onboarding.md).

@@ -37,7 +37,7 @@ Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom identi
 >title="Information om dataflödeskörning"
 >abstract="På sidan med information om dataflödeskörning visas mer information om Identity-dataflödets körning, inklusive dess organisations-ID och dataflödes-ID."
 
-Om du vill komma åt kontrollpanelen **[!UICONTROL Identities]** väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen. Välj **[!UICONTROL Identities]**-kortet på sidan **[!UICONTROL Monitoring]**.
+Om du vill komma åt kontrollpanelen **[!UICONTROL Identities]** väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen. Välj **[!UICONTROL Monitoring]**-kortet på sidan **[!UICONTROL Identities]**.
 
 ![Identitetskortet. Information om antalet mottagna poster, antalet importerade poster och antalet lyckade åtgärder visas.](../assets/ui/monitor-identities/focus-card.png)
 

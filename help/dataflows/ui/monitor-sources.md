@@ -4,7 +4,7 @@ title: Övervaka inhämtning av data från sjön
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
 source-git-commit: 75970d41a316c97d98ebf6cefd3bfa0e58173030
 workflow-type: tm+mt
-source-wordcount: '1427'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ Om du vill inspektera ett dataflöde ytterligare väljer du filterikonen ![filte
 
 Därefter kommer du till ett gränssnitt som visar alla dataflödeskörningsiterationer för det dataflöde som du har valt.
 
-Körningar av dataflöde representerar en instans av körning av dataflöde. Om ett dataflöde till exempel är schemalagt att köras varje timme kl. 9.00, 10.00 och 11.00 har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
+Körningar av dataflöde representerar en instans av körning av dataflöde. Om ett dataflöde till exempel är schemalagt att köras varje timme kl. 9:00, 10:00 AM och 11:00 AM, har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
 
 Om du vill inspektera mätvärden för en viss dataflödeskörning väljer du filterikonen ![filter](/help/images/icons/filter-add.png) bredvid dataflödet.
 

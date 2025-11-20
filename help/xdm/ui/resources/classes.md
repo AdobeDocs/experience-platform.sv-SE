@@ -78,7 +78,7 @@ Välj **[!UICONTROL Manual]** i dialogrutan [!UICONTROL Create a schema] som vis
 
 ![Dialogrutan Skapa ett schema med arbetsflödesalternativen och välj markerad.](../../images/ui/resources/classes/manually-create-a-schema.png)
 
-Arbetsflödet för att skapa scheman visas. Välj **[!UICONTROL Other]** i avsnittet [!UICONTROL Schema details]. En lista över tillgängliga klasser visas. Välj **[!UICONTROL Create class]**.
+Arbetsflödet för att skapa scheman visas. Välj [!UICONTROL Schema details] i avsnittet **[!UICONTROL Other]**. En lista över tillgängliga klasser visas. Välj **[!UICONTROL Create class]**.
 
 ![Arbetsflödet [!UICONTROL Create schema] med [!UICONTROL Other] markerat i avsnittet [!UICONTROL Schema details].](../../images/ui/resources/classes/other-schema-details.png)
 
@@ -110,7 +110,7 @@ När du har ett schema som använder en anpassad klass som är öppen i Schemare
 >
 >Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan visa användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en fältgrupp](./field-groups.md#create) i stället.
 
-En **[!UICONTROL Untitled Field]**-platshållare visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Välj **[!UICONTROL Class]** under **[!UICONTROL Assign to]**.
+En **[!UICONTROL Untitled Field]**-platshållare visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Välj **[!UICONTROL Assign to]** under **[!UICONTROL Class]**.
 
 ![Ett namnlöst fält på arbetsytan i Schemaredigeraren med fältegenskapen Tilldela till [!UICONTROL Class] markerad och markerad.](../../images/ui/resources/classes/assign-to-class.png)
 
@@ -128,7 +128,7 @@ Om du tidigare har skapat scheman som använder den här klassen visas de nya f�
 >
 >När en anpassad klass har sparats och använts vid dataanvändningen kan endast additiva ändringar göras i den därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 
-Du kan redigera en klass via schemaarbetsflödet genom att redigera ett befintligt schema som utökar klassen eller genom att skapa ett schema manuellt. Det går inte att redigera en klass direkt. Välj en befintlig klass eller **[!UICONTROL Create a schema]** på fliken [!UICONTROL Browse] på arbetsytan [!UICONTROL Schemas].
+Du kan redigera en klass via schemaarbetsflödet genom att redigera ett befintligt schema som utökar klassen eller genom att skapa ett schema manuellt. Det går inte att redigera en klass direkt. Välj en befintlig klass eller [!UICONTROL Browse] på fliken [!UICONTROL Schemas] på arbetsytan **[!UICONTROL Create a schema]**.
 
 ![Schemaredigeraren med en befintlig klass och [!UICONTROL Create a schema] markerat.](../../images/ui/resources/classes/edit-class-options.png)
 
@@ -156,6 +156,6 @@ Mer information finns i guiden om [att skapa och redigera scheman](./schemas.md#
 
 ## Nästa steg {#next-steps}
 
-I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
+I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Om du vill lära dig hur du hanterar klasser med API:t för schemaregister läser du [klassernas slutpunktshandbok](../../api/classes.md).

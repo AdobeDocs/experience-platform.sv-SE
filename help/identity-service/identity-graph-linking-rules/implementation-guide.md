@@ -37,7 +37,7 @@ I det här avsnittet beskrivs nödvändiga steg som du måste slutföra innan du
 
 Du måste se till att det unika namnutrymmet med den högsta prioriteten alltid finns i alla kända profiler. Om du gör det kan identitetstjänsten identifiera rätt personidentifierare i ett visst diagram.
 
-+++Markera om du vill visa ett exempel på ett diagram utan ett namnutrymme för en identifierare
++++Välj det här alternativet om du vill visa ett exempel på ett diagram utan ett namnutrymme för en identifierare för en enda person
 
 Utan ett unikt namnutrymme som representerar dina personidentifierare kan det uppstå ett diagram som länkar till olika personidentifierare till samma ECID. I det här exemplet är både B2BCRM och B2CCRM kopplade till samma ECID samtidigt. I det här diagrammet visas att Tom med sitt B2C-inloggningskonto delade en enhet med sommaren med hjälp av sitt B2B-inloggningskonto. Systemet kommer dock att känna igen att detta är en profil (komprimering av diagram).
 
@@ -94,7 +94,7 @@ Under förimplementeringsprocessen måste du se till att de autentiserade hände
   "timestamp": "2024-09-24T15:02:32+00:00",
   "web": {
       "webPageDetails": {
-          "URL": "https://business.adobe.com/se/",
+          "URL": "https://business.adobe.com/",
           "name": "Adobe Business"
       }
   }
@@ -133,7 +133,7 @@ Du bör **inte** skicka en nyttolast enligt nedan:
   "timestamp": "2024-09-24T15:02:32+00:00",
   "web": {
       "webPageDetails": {
-          "URL": "https://business.adobe.com/se/",
+          "URL": "https://business.adobe.com/",
           "name": "Adobe Business"
       }
   }
@@ -169,7 +169,7 @@ I det här exemplet kan du anta att följande händelse skickades till Experienc
     "timestamp": "2024-09-24T15:02:32+00:00",
     "web": {
         "webPageDetails": {
-            "URL": "https://business.adobe.com/se/",
+            "URL": "https://business.adobe.com/",
             "name": "Adobe Business"
         }
     }

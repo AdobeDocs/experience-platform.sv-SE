@@ -35,7 +35,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 >title="Målgrupper"
 >abstract="Målgruppsvyn innehåller information om alla era målgrupper, med ytterligare information om deras aktiverings- och utvärderingsjobb."
 
-Om du vill komma åt kontrollpanelen **[!UICONTROL Audiences]** väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen. Välj **[!UICONTROL Audiences]**-kortet på sidan **[!UICONTROL Monitoring]**.
+Om du vill komma åt kontrollpanelen **[!UICONTROL Audiences]** väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen. Välj **[!UICONTROL Monitoring]**-kortet på sidan **[!UICONTROL Audiences]**.
 
 ![Publikkortet. Information om det senaste utvärderingsjobbet och det senaste exportjobbet visas.](../assets/ui/monitor-audiences/audience-card.png)
 
@@ -45,7 +45,7 @@ Instrumentpanelen innehåller mätvärden för både målgrupper och segmenterin
 
 >[!IMPORTANT]
 >
->För närvarande stöds bara målgrupper som har aktiverats för [gruppmål (filbaserade) &#x200B;](../../destinations/destination-types.md#file-based) för kontrollpanelen för målgrupper.
+>För närvarande stöds bara målgrupper som har aktiverats för [gruppmål (filbaserade) ](../../destinations/destination-types.md#file-based) för kontrollpanelen för målgrupper.
 
 ![Målgruppspanelen. Information om olika målgrupper i din organisation och sandlåda visas.](../assets/ui/monitor-audiences/audience-dashboard.png)
 

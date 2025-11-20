@@ -39,7 +39,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 >title="Information om dataflödeskörning"
 >abstract="På sidan Information om dataflödeskörning visas mer information om hur profildataflödet körs, inklusive dess organisations-ID och dataflödes-ID."
 
-Om du vill komma åt kontrollpanelen **[!UICONTROL Profiles]** väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen. Välj **[!UICONTROL Profiles]**-kortet på sidan **[!UICONTROL Monitoring]**.
+Om du vill komma åt kontrollpanelen **[!UICONTROL Profiles]** väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen. Välj **[!UICONTROL Monitoring]**-kortet på sidan **[!UICONTROL Profiles]**.
 
 ![Profilkortet. Information om antalet mottagna poster, antalet profilfragment som har skapats och uppdaterats samt antalet lyckade försök visas.](../assets/ui/monitor-profiles/focus-card.png)
 

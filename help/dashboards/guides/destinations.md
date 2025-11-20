@@ -13,13 +13,13 @@ ht-degree: 0%
 
 # Kontrollpanel för [!UICONTROL Destinations]
 
-Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations aktiva mål, som den tagits under en ögonblicksbild. I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för mål i användargränssnittet, och den innehåller mer information om mätvärdena som visas på kontrollpanelen.
+Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations aktiva mål, som den tagits under en ögonblicksbild. This guide outlines how to access and work with the destinations dashboard in the UI and provides more information regarding the metrics displayed in the dashboard.
 
-En översikt över destinationer och en katalog över alla tillgängliga destinationer inom Experience Platform finns i [måldokumentationen](../../destinations/home.md).
+For an overview of destinations, as well as a catalog of all available destinations within Experience Platform, please visit the [destinations documentation](../../destinations/home.md).
 
 ## [!UICONTROL Destinations] instrumentpanelsdata {#destinations-dashboard-data}
 
-På kontrollpanelen Destinationer visas en ögonblicksbild av de mål som din organisation har aktiverat i Experience Platform. Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för destinationer uppdateras inte i realtid.
+The Destinations dashboard displays a snapshot of the destinations that your organization has enabled within Experience Platform. The data in the snapshot shows the data exactly as it appears at the specific point in time when the snapshot was taken. In other words, the snapshot is not an approximation or sample of the data, and the destinations dashboard is not updating in real-time.
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL 
 
 >[!NOTE]
 >
->Om din organisation är ny för Experience Platform och ännu inte har aktiva mål visas inte kontrollpanelen Destinationer och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [!UICONTROL Catalog]. Mer information om fliken [!UICONTROL Catalog] finns i handboken om [[!UICONTROL Destinations]-arbetsytan &#x200B;](../../destinations/ui/destinations-workspace.md).
+>Om din organisation är ny för Experience Platform och ännu inte har aktiva mål visas inte kontrollpanelen Destinationer och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [!UICONTROL Catalog]. Mer information om fliken [!UICONTROL Catalog] finns i handboken om [[!UICONTROL Destinations]-arbetsytan ](../../destinations/ui/destinations-workspace.md).
 
 ![Översikt över destinationer för Experience Platform-gränssnittet med den senaste ögonblicksbilden markerad.](../images/destinations/snapshot-timestamp.png)
 
@@ -141,11 +141,11 @@ Mer information om hur du konfigurerar särskilda typer av destinationer finns i
 >title="Nyligen aktiverade målgrupper"
 >abstract="Den här widgeten innehåller en lista över de målgrupper som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar."
 
-Widgeten **[!UICONTROL Recently activated audiences]** innehåller en lista över de målgrupper som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar.
+The **[!UICONTROL Recently activated audiences]** widget provides a list of the audiences most recently mapped to a destination. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar.
 
-Det [!UICONTROL Updated]-datum som visas visar den senaste gången målgruppen aktiverades till målet och är exakt som den senaste ögonblicksbilden. Det innebär att om du aktiverar en målgrupp till målet kommer det uppdaterade datumet inte att ändras förrän nästa ögonblicksbild har tagits.
+The [!UICONTROL Updated] date shown displays the last time the audience was activated to the destination and is accurate to the last daily snapshot. In other words, if you activate an audience to the destination, the updated date will not change until after the next snapshot is taken.
 
-Om du väljer namnet på en målgrupp i listan som visas på widgeten kommer du till målgruppsinformationen. Du kan också välja **[!UICONTROL View All]** för att navigera till fliken [!UICONTROL Audiences] [!UICONTROL Browse] och sedan markera namnet på en målgrupp för att visa informationen.
+Om du väljer namnet på en målgrupp i listan som visas på widgeten kommer du till målgruppsinformationen. You can also select **[!UICONTROL View All]** to navigate to the [!UICONTROL Audiences] [!UICONTROL Browse] tab and then select the name of an audience to view its details.
 
 Mer information om hur du arbetar med målgrupper i Experience Platform finns i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
 
@@ -196,9 +196,9 @@ Widgeten **[!UICONTROL Audience size trend]** innehåller en [!UICONTROL Caption
 
 Widgeten **[!UICONTROL Unmapped audiences by identity]** visar de fem populäraste **omappade** målgrupperna, rankade efter fallande identitetsantal för ett visst mål och en viss identitet. Det markerar målgrupper som är mest fördelaktiga att mappa till det valda målkontot baserat på det valda ID:t.
 
-Listrutan Mål-ID filtrerar de tillgängliga målgrupperna. Filtrerings-ID:n som visas i listrutan ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan.
+The destination ID dropdown filters your available audiences. The filter IDs listed in the dropdown change depending on the destination account selected at the top of the overview page.
 
-Kolumnen Identiteter räknar antalet käll-ID:n inom målgruppen som kan mappas till det ID som valts i listrutan för widget-ID.
+The identities column counts the number of source IDs within the audience that could map to the ID chosen in the widget ID dropdown.
 
 ![De omappade målgrupperna efter identitetswidget.](../images/destinations/unmapped-audiences-by-identity.png)
 
@@ -245,15 +245,15 @@ Välj **[!UICONTROL Audiences]** om du vill navigera till fliken [!UICONTROL Bro
 >title="Hälsa för mappade målgrupper"
 >abstract="Den här widgeten innehåller en lista med upp till 20 mappade målgrupper vars totala antal profiler avviker med en faktor på minst en standardavvikelse från de 30 dagarnas genomsnittliga målgruppsstorlek som mappas till det målet. Den ger ett beräknat mått för spridning av målgruppsstorlekar från medelvärdet under de senaste 30 dagarna. Publiken sorteras från hög till låg."
 
-Widgeten innehåller en lista med upp till 20 mappade målgrupper vars totala antal profiler, per den senaste ögonblicksbilden, avviker med en faktor på minst en standardavvikelse från de 30 dagarnas genomsnittliga målgruppsstorlek som mappas till det målet.
+The widget provides a list of up to 20 mapped audiences whose total profile counts, as of the last daily snapshot, deviate by a factor of at least one standard deviation from the 30 days mean audience size mapped to that destination.
 
-Sammanfattningsvis ger det ett beräknat mått för spridning av målgruppsstorlekar från medelvärdet under de senaste 30 dagarna. Den jämför om dagens målgruppsstorlek ligger utanför den historiska standardavvikelse som har setts i data under de senaste 30 dagarna.
+In brief, it provides a calculated metric for the dispersion of audience sizes from the mean over the last 30 days. It compares whether today&#39;s audience size is outside of the historic standard deviation seen in the data over the past 30 days.
 
-Alla målgruppsstorlekar i systemet sorteras från hög till låg målgruppsstorlek, vilket anges i kolumnen [!UICONTROL LATEST SIZE].
+All audience sizes in the system are sorted from high to low audience size, as indicated in the [!UICONTROL LATEST SIZE] column.
 
-Om antalet mappade målgruppsprofiler ligger utanför en standardavvikelse från den genomsnittliga mappade profilstorleken under de senaste 30 dagarna, indikerar detta en avvikelse i systemet och bör undersökas.
+If your mapped audience profile count is outside one standard deviation from the average mapped profile size over the past 30 days, this indicates an anomaly in the system and it should be investigated.
 
-Om en målgrupp inom widgeten [!UICONTROL Mapped audience health] avviker med en bred marginal bör du referera till trenddiagrammet för målgruppsstorlek och hitta den avvikande målgruppen. Trenden kan ge ytterligare insikter om er målgrupps hälsa.
+Om en målgrupp inom widgeten [!UICONTROL Mapped audience health] avviker med en bred marginal bör du referera till trenddiagrammet för målgruppsstorlek och hitta den avvikande målgruppen. The trend can provide further insight into your audience&#39;s health.
 
 >[!NOTE]
 >
@@ -294,7 +294,7 @@ Widgeten [!UICONTROL Activated audiences across all destinations] visar det tota
 
 ![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
 
-Välj **[!UICONTROL Audiences]** för att navigera till fliken [!UICONTROL Browse] för mål. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Mer information om fliken [[!UICONTROL Browse] &#x200B;](../../destinations/ui/destinations-workspace.md#browse) finns i dokumentationen.
+Välj **[!UICONTROL Audiences]** för att navigera till fliken [!UICONTROL Browse] för mål. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Mer information om fliken [[!UICONTROL Browse] ](../../destinations/ui/destinations-workspace.md#browse) finns i dokumentationen.
 
 Se avsnittet med förutsättningar för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 

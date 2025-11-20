@@ -291,7 +291,7 @@ I följande tabell visas en översikt över de nya mätvärdena för bevarande o
 
 {style="table-layout:auto"}
 
-Om du vill agera utifrån insikterna från lagrings- och kvarhållningsstatistik kan du läsa [guiden &#x200B;](../../landing/license-usage-and-guardrails/data-management-best-practices.md) om bästa praxis för datahanteringslicenstillstånd. Använd det för att hantera vilka data ni ska importera och behålla, tillämpa filter och utgångsregler och kontrollera datatillväxten för att hålla er inom de tillåtna användningsgränserna.
+Om du vill agera utifrån insikterna från lagrings- och kvarhållningsstatistik kan du läsa [guiden ](../../landing/license-usage-and-guardrails/data-management-best-practices.md) om bästa praxis för datahanteringslicenstillstånd. Använd det för att hantera vilka data ni ska importera och behålla, tillämpa filter och utgångsregler och kontrollera datatillväxten för att hålla er inom de tillåtna användningsgränserna.
 
 ### Flytta till mappar {#move-to-folders}
 

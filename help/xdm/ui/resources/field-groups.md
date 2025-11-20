@@ -76,11 +76,11 @@ Om du vill lägga till fält i en anpassad fältgrupp börjar du med att markera
 
 En **[!UICONTROL Untitled Field]**-platshållare visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. I guiden om att [definiera fält i användargränssnittet](../fields/overview.md#define) finns mer information om hur du konfigurerar olika fälttyper.
 
-Välj alternativet **[!UICONTROL Field Group]** under **[!UICONTROL Assign to]** och använd sedan listrutan för att välja önskad fältgrupp från listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
+Välj alternativet **[!UICONTROL Assign to]** under **[!UICONTROL Field Group]** och använd sedan listrutan för att välja önskad fältgrupp från listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
 
 ![](../../images/ui/resources/field-groups/select-field-group.png)
 
-Välj alternativet **[!UICONTROL Field Group]** under **[!UICONTROL Assign to]** och använd sedan listrutan för att välja önskad fältgrupp från listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
+Välj alternativet **[!UICONTROL Assign to]** under **[!UICONTROL Field Group]** och använd sedan listrutan för att välja önskad fältgrupp från listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
 
 ![](../../images/ui/resources/field-groups/select-field-group.png)
 
@@ -92,6 +92,6 @@ Om samma fältgrupp redan används i andra scheman visas de nya fälten automati
 
 ## Nästa steg {#next-steps}
 
-I den här handboken beskrivs hur du skapar och redigerar fältgrupper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
+I den här handboken beskrivs hur du skapar och redigerar fältgrupper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Mer information om hur du hanterar fältgrupper med API:t [!DNL Schema Registry] finns i [handboken om fältgruppers slutpunkter](../../api/field-groups.md).
