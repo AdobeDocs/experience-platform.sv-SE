@@ -57,7 +57,7 @@ Mer information om hur du hanterar rollbehörigheter när de har skapats finns i
 
 Följande video är tänkt att ge stöd för din förståelse för att skapa en ny roll och hantera användare för den rollen.
 
->[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3475977/?captions=swe&learn=on)
 
 ## Duplicera en roll
 
