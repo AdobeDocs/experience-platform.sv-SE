@@ -27,7 +27,7 @@ Sandlådor är virtuella partitioner i en enda instans av Experience Platform. V
 >id="platform_sandboxes_sandboxtypes"
 >title="Sandlådetyp"
 >abstract="Sandlådetypen anger om det här är en produktions- eller utvecklingssandlåda. Produktionssandlådor innehåller livedata och utvecklingssandlådor som används för testning och utveckling."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="Skapa en sandlåda i användargränssnittet"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html?lang=sv-SE#create" text="Skapa en sandlåda i användargränssnittet"
 
 Det finns två typer av sandlådor i Experience Platform:
 

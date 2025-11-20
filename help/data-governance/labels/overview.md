@@ -44,7 +44,7 @@ Mer information om hur automatisk tillämpning fungerar i Experience Platform fi
 
 [!DNL Experience Platform] kan dela segment med Adobe Audience Manager. Alla dataexportkontroller som har tillämpats på Audience Manager-segment översätts till motsvarande etiketter och marknadsföringsåtgärder som identifieras av [!DNL Experience Platform] Data Governance.
 
-En referens om hur specifika dataexportkontroller mappar till dataanvändningsetiketter i [!DNL Experience Platform] finns i [Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep).
+En referens om hur specifika dataexportkontroller mappar till dataanvändningsetiketter i [!DNL Experience Platform] finns i [Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE#aam-data-export-control-in-aep).
 
 ## Hantera dataanvändningsetiketter i [!DNL Experience Platform] {#manage-labels}
 

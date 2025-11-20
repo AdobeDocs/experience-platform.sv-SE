@@ -16,7 +16,7 @@ ht-degree: 0%
 >id="platform_permissions_sandboxes_about"
 >title="Vad är sandlådor?"
 >abstract="Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till den sandlådan och påverkar inte andra sandlådor. Åtkomst till sandlådor hanteras via roller."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/sandbox/home" text="Översikt över sandlådor"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/sandbox/home" text="Översikt över sandlådor"
 
 Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser. Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Mer information om sandlådor finns i [Översikt över sandlådor](../../../sandboxes/home.md).
 

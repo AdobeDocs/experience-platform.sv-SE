@@ -65,7 +65,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 >id="platform_sources_mixpanel_timezone"
 >title="Ange en tidszon för blandpanelsinmatning"
 >abstract="Tidszonen måste vara densamma som tidszonsinställningen för profilen i Mixpanel, eftersom Experience Platform använder den angivna tidszonen för projektet för att importera relevanta data från Mixpanel. Mixpanel justerar sin tidszon så att den överensstämmer med projektets tidszon innan händelsen spelas in i ett datalager i Mixpanel."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html#project-id-and-timezone" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=sv-SE#project-id-and-timezone" text="Läs mer i dokumentationen"
 
 När källan har autentiserats anger du ditt projekt-ID och tidszon och väljer sedan **[!UICONTROL Select]**.
 

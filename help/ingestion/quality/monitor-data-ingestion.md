@@ -24,7 +24,7 @@ Den här användarhandboken innehåller anvisningar om hur du övervakar data i 
 >title="Inmatningshastighet"
 >abstract="Antalet händelser som har bearbetats per sekund."
 >text="Learn more in the documentation"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html" text="Övervaka dataflöden för källor i användargränssnittet"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html?lang=sv-SE" text="Övervaka dataflöden för källor i användargränssnittet"
 
 >[!TIP]
 >

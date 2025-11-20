@@ -94,7 +94,7 @@ Under förimplementeringsprocessen måste du se till att de autentiserade hände
   "timestamp": "2024-09-24T15:02:32+00:00",
   "web": {
       "webPageDetails": {
-          "URL": "https://business.adobe.com/",
+          "URL": "https://business.adobe.com/se/",
           "name": "Adobe Business"
       }
   }
@@ -133,7 +133,7 @@ Du bör **inte** skicka en nyttolast enligt nedan:
   "timestamp": "2024-09-24T15:02:32+00:00",
   "web": {
       "webPageDetails": {
-          "URL": "https://business.adobe.com/",
+          "URL": "https://business.adobe.com/se/",
           "name": "Adobe Business"
       }
   }
@@ -169,7 +169,7 @@ I det här exemplet kan du anta att följande händelse skickades till Experienc
     "timestamp": "2024-09-24T15:02:32+00:00",
     "web": {
         "webPageDetails": {
-            "URL": "https://business.adobe.com/",
+            "URL": "https://business.adobe.com/se/",
             "name": "Adobe Business"
         }
     }
