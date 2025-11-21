@@ -2,9 +2,9 @@
 title: Edge Segmenteringshandbok
 description: Lär dig hur du använder kantsegmentering för att utvärdera målgrupper i Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 1b69fa4ecadb1f6b8575358ca4a81549221430e1
+source-git-commit: d93bf7a3b7447a71fa3ead96e5c35ec9cd2dd99a
 workflow-type: tm+mt
-source-wordcount: '1133'
+source-wordcount: '1191'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,9 @@ Edge-segmentering är möjligheten att omedelbart utvärdera segmentdefinitioner
 >
 > Kantdata lagras på en edge-serverplats som ligger närmast den plats där de samlades in. Dessa data kan också lagras på en annan plats än den som anges som Adobe Experience Platform datacenter (eller huvudkontor).
 >
-> Dessutom kommer kantsegmenteringsmotorn endast att efterleva begäranden på kanten där det finns **en** primär markerad identitet, vilket är förenligt med icke-kantbaserade primära identiteter.
+> Kantsegmenteringsmotorn efterlever endast förfrågningar på kanten där det finns **en** primär markerad identitet, vilket är förenligt med icke-kantbaserade primära identiteter.
+>
+> Eftersom kantsegmentering är utformat för att bearbeta begäranden i stor skala läser edge-servrar dessutom in de metadata som krävs dynamiskt. Därför kan de allra första anropen få fördröjningen&quot;kallstart&quot; oavsett sandlådetyp. Under det här fönstret kan de första utvärderingsanropen resultera i en timeout. En kort förvarm explosion eller realistisk belastning hjälper till att eliminera falskt positiva testfel.
 
 ## Edge segmenteringsfrågetyper {#query-types}
 
@@ -36,12 +38,12 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | `workAddress.country.equals("US", false) and CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)) WHEN(today)])` | ![Ett exempel på en enskild händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/methods/edge/single-event-with-profile-attribute.png){zoomable="yes"} |
 | Segmentering | En segmentdefinition som innehåller en eller flera grupp- eller kantsegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. | `inSegment("a730ed3f-119c-415b-a4ac-27c396ae2dff") and inSegment("8fbbe169-2da6-4c9d-a332-b6a6ecf559b9")` | ![Ett exempel på ett segment av segment visas.](../images/methods/edge/segment-of-segments.png){zoomable="yes"} |
 
-Dessutom måste segmentdefinitionen **&#x200B;**&#x200B;vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
+Dessutom måste segmentdefinitionen **** vara knuten till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
 
 En segmentdefinition är **inte** berättigad till kantsegmentering i följande scenario:
 
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment`-händelse.
-   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **&#x200B;**&#x200B;för kantsegmentering.
+   - Om segmentdefinitionen i `inSegment`-händelsen bara är en profil aktiveras segmentdefinitionen **** för kantsegmentering.
 - I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 ## Skapa målgrupper {#create-audience}
