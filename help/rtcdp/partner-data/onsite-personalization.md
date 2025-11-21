@@ -91,7 +91,7 @@ Först måste du skapa ett namnutrymme för en partner-ID-identitet. Navigera ti
 
 ![Dialogrutan Skapa ID-namnområde med partner-ID markerad.](/help/rtcdp/assets/partner-data/onsite-personalization/create-identity-namespace.png)
 
-Läs mer om hur du [skapar ett namnområde för en partner-ID ](/help/rtcdp/partner-data/prospecting.md#create-partner-id-namespace).
+Läs mer om hur du [skapar ett namnområde för en partner-ID &#x200B;](/help/rtcdp/partner-data/prospecting.md#create-partner-id-namespace).
 
 #### Skapa ett schema
 
