@@ -3,9 +3,9 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 44a4d5c592e13cdd1d4d75787dee5e1763fae9a4
 workflow-type: tm+mt
-source-wordcount: '923'
+source-wordcount: '992'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 1%
 >
 >Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar **[!UICONTROL Custom Personalization]**-målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication).
 >
-><br>Du kan hämta profilattribut via [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
+><br>Du kan hämta profilattribut via [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
 >
 ><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på målgruppsmedlemskap.
 
@@ -40,6 +40,12 @@ Det här målet kräver någon av följande datainsamlingsmetoder, beroende på 
 * Använd [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) om du vill samla in data från din webbplats.
 * Använd [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) om du vill samla in data från ditt mobilprogram.
 * Använd [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) om du inte använder [Web SDK](/help/web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) eller om du vill anpassa användarupplevelsen baserat på profilattribut.
+
+>[!IMPORTANT]
+>
+>**Attributbaserade personaliseringskrav:** Om du vill anpassa baserat på profilattribut (inte bara målgruppsmedlemskap) måste du **** använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) med autentiserad integration på serversidan, oavsett om du också använder Web SDK eller Mobile SDK för datainsamling.
+>
+>Endast SDK och SDK för mobiler stöder endast personalisering baserat på medlemskap för målgrupper. Edge Network API är **obligatoriskt** för att säkert hämta profilattribut för personalisering.
 
 >[!IMPORTANT]
 >
@@ -69,7 +75,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 >id="platform_destinations_custom_personalization_datastream"
 >title="Om datastreams"
 >abstract="Det här alternativet avgör i vilket datainsamlingsdatastam som målgrupperna ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=sv-SE" text="Lär dig konfigurera ett datastream"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html" text="Lär dig konfigurera ett datastream"
 
 >[!IMPORTANT]
 > 
