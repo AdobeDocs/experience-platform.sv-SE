@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
+source-git-commit: 6d1b73c1557124f283558e1daeb3ddeaaec8e8a4
 workflow-type: tm+mt
-source-wordcount: '2752'
+source-wordcount: '3079'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 HTTP API-målet är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 
@@ -59,6 +59,7 @@ Om du vill använda HTTP API-målet för att exportera data från Experience Pla
 * HTTP-slutpunkten måste ha stöd för Experience Platform-profilschemat. Ingen omvandling till ett nyttolastschema från tredje part stöds i HTTP API-målet. Se avsnittet [exporterade data](#exported-data) för ett exempel på Experience Platform utdataschema.
 * HTTP-slutpunkten måste ha stöd för rubriker.
 * HTTP-slutpunkten måste svara inom 2 sekunder för att säkerställa korrekt databearbetning och undvika timeoutfel.
+* Om du tänker använda mTLS: TLS måste vara inaktiverat för din slutpunkt för datamottagning och endast mTLS aktiverat. Om du även använder OAuth 2-autentisering måste du ha en separat standard-HTTPS-slutpunkt för tokenhämtning. Mer information finns i avsnittet [mTLS-överväganden](#mtls-considerations).
 
 >[!TIP]
 >
@@ -68,9 +69,27 @@ Om du vill använda HTTP API-målet för att exportera data från Experience Pla
 
 Du kan använda [!DNL Mutual Transport Layer Security] ([!DNL mTLS]) för att förbättra säkerheten i utgående anslutningar till HTTP API-målanslutningar.
 
-[!DNL mTLS] är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. [!DNL mTLS] innehåller ytterligare ett steg jämfört med [!DNL TLS], där servern också frågar efter klientens certifikat och verifierar det i slutet.
+[!DNL mTLS] är ett protokoll för ömsesidig autentisering som ser till att båda parter delar information är de som de hävdar ska vara innan data delas. [!DNL mTLS] innehåller ytterligare ett steg jämfört med standarden [!DNL TLS], där servern också begär och verifierar klientens certifikat, medan klienten verifierar serverns certifikat.
 
-Om du vill använda [!DNL mTLS] med [!DNL HTTP API] mål måste [-protokoll vara inaktiverade för den serveradress som du angav på sidan &#x200B;](#destination-details)målinformation[!DNL TLS] och bara [!DNL mTLS] aktiverade. Om protokollet [!DNL TLS] 1.2 fortfarande är aktiverat på slutpunkten skickas inget certifikat för klientautentiseringen. Det innebär att om du vill använda [!DNL mTLS] med ditt [!DNL HTTP API]-mål måste den &quot;mottagande&quot; serverslutpunkten vara en [!DNL mTLS]-aktiverad anslutningsslutpunkt.
+### mTLS-överväganden {#mtls-considerations}
+
+mTLS-stöd för HTTP API-mål gäller **endast för den datamottagningsslutpunkt** där profilexporter skickas (fältet **[!UICONTROL HTTP Endpoint]** i [målinformationen](#destination-details)).
+
+**mTLS stöds inte för OAuth 2-autentiseringsslutpunkter:**
+
+* **[!UICONTROL Access Token URL]** som används i OAuth2-klientautentiseringsuppgifter eller OAuth 2-lösenordsautentisering stöder inte mTLS
+* Begäranden om hämtning och uppdatering av token skickas via vanliga HTTPS utan autentisering av klientcertifikat
+
+**Nödvändig arkitektur:** Om du behöver mTLS för att ta emot data och använda OAuth 2-autentisering måste du ha två separata slutpunkter:
+
+* **Autentiseringsslutpunkt:** Standard-HTTPS (utan mTLS) för tokenhantering
+* **Slutpunkt för datamottagning:** HTTPS med enbart mTLS aktiverat för profilexport
+
+Arkitekturen är för närvarande en plattformsbegränsning. Stöd för mTLS för slutpunkter för autentisering utvärderas för framtida versioner.
+
+### Konfigurera mTLS för dataexport {#configuring-mtls}
+
+Om du vill använda [!DNL mTLS] med [!DNL HTTP API] mål måste **[!UICONTROL HTTP Endpoint]**-protokollet (datamottagningsslutpunkten) som du konfigurerar på sidan [målinformation](#destination-details) ha [!DNL TLS] protokoll inaktiverade och endast [!DNL mTLS] aktiverat. Om protokollet [!DNL TLS] 1.2 fortfarande är aktiverat på slutpunkten skickas inget certifikat för klientautentiseringen. Det innebär att för att du ska kunna använda [!DNL mTLS] med ditt [!DNL HTTP API]-mål måste datamottagningsserverslutpunkten vara en [!DNL mTLS]-aktiverad anslutningsslutpunkt.
 
 ### Hämta och inspektera certifikatinformation {#certificate}
 
@@ -107,7 +126,7 @@ curl --location --request POST 'https://some-api.com/token' \
 --data-urlencode 'grant_type=client_credentials'
 ```
 
-* [OAuth 2.0-lösenord &#x200B;](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
+* [OAuth 2.0-lösenord ](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
 
 ## Anslut till målet {#connect-destination}
 
@@ -146,7 +165,11 @@ Om du väljer autentiseringstypen **[!UICONTROL OAuth 2 Password]** för att ans
 
 ![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med OAuth 2 med lösenordsautentisering.](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
 
-* **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
+>[!NOTE]
+>
+>**mTLS-begränsning:** [!UICONTROL Access Token URL] stöder inte mTLS. Om du tänker använda mTLS för slutpunkten för datamottagning måste din autentiseringsslutpunkt använda vanlig HTTPS. Mer information om den arkitektur som krävs finns i avsnittet [mTLS-överväganden](#mtls-considerations).
+
+* **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens. Den här slutpunkten måste använda standard-HTTPS och stöder inte mTLS.
 * **[!UICONTROL Client ID]**: Den [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
 * **[!UICONTROL Client Secret]**: Den [!DNL client secret] som ditt system tilldelar Adobe Experience Platform.
 * **[!UICONTROL Username]**: Användarnamnet för att komma åt HTTP-slutpunkten.
@@ -162,7 +185,11 @@ Om du väljer autentiseringstypen **[!UICONTROL OAuth 2 Client Credentials]** f�
 > 
 >När du använder [!UICONTROL OAuth 2 Client Credentials]-autentisering kan [!UICONTROL Access Token URL] ha högst en frågeparameter. Om du lägger till en [!UICONTROL Access Token URL] med fler frågeparametrar kan det leda till problem när du ansluter till slutpunkten.
 
-* **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
+>[!NOTE]
+>
+>**mTLS-begränsning:** [!UICONTROL Access Token URL] stöder inte mTLS. Om du tänker använda mTLS för slutpunkten för datamottagning måste din autentiseringsslutpunkt använda vanlig HTTPS. Mer information om den arkitektur som krävs finns i avsnittet [mTLS-överväganden](#mtls-considerations).
+
+* **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens. Den här slutpunkten måste använda standard-HTTPS och stöder inte mTLS.
 * **[!UICONTROL Client ID]**: Den [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
 * **[!UICONTROL Client Secret]**: Den [!DNL client secret] som ditt system tilldelar Adobe Experience Platform.
 * **[!UICONTROL Client Credentials Type]**: Välj den typ av OAuth2-klientautentiseringsuppgifter som stöds av din slutpunkt:
@@ -179,7 +206,7 @@ Om du väljer autentiseringstypen **[!UICONTROL OAuth 2 Client Credentials]** f�
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
 >title="HTTP-slutpunkt"
->abstract="URL:en för HTTP-slutpunkten dit du vill skicka profildata."
+>abstract="URL:en för HTTP-slutpunkten dit du vill skicka profildata. Detta är den slutpunkt för datamottagning som stöder mTLS om den är konfigurerad. Detta skiljer sig från OAuth 2 Access Token URL, som inte stöder mTLS."
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
@@ -203,7 +230,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Name]**: Ange ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Headers]**: Ange eventuella anpassade rubriker som du vill ska inkluderas i målanropen, enligt följande format: `header1:value1,header2:value2,...headerN:valueN`.
-* **[!UICONTROL HTTP Endpoint]**: URL:en för HTTP-slutpunkten dit du vill skicka profildata.
+* **[!UICONTROL HTTP Endpoint]**: URL:en för HTTP-slutpunkten dit du vill skicka profildata. Detta är slutpunkten för datamottagning. Om du använder mTLS måste TLS vara inaktiverat för den här slutpunkten och bara mTLS är aktiverat. Observera att detta skiljer sig från den OAuth 2-åtkomsttoken-URL som konfigurerats under autentiseringen.
 * **[!UICONTROL Query parameters]**: Om du vill kan du lägga till frågeparametrar till HTTP-slutpunkts-URL:en. Formatera de frågeparametrar som du använder så här: `parameter1=value&parameter2=value`.
 * **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de målgrupper som du exporterar. **Obs!**: Segmentnamn inkluderas bara för segment som är mappade till målet. Omappade segment som visas i exporten kommer inte att innehålla fältet `name`. Ett exempel på en dataexport med det här alternativet markerat finns i avsnittet [Exporterade data](#exported-data) längre fram.
 * **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när målgrupperna skapades och uppdaterades, samt UNIX-tidsstämpeln när målgrupperna mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i avsnittet [Exporterade data](#exported-data) längre fram.
@@ -253,7 +280,7 @@ Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre målgrup
 
 ![Ett exempel på ett måldataflöde för HTTP API.](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [&#x200B; Exporterade data &#x200B;](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 
