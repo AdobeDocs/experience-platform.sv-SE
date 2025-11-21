@@ -7,7 +7,7 @@ role: Developer
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '124'
-ht-degree: 33%
+ht-degree: 34%
 
 ---
 
@@ -38,4 +38,4 @@ ht-degree: 33%
 * [Behandling av sekretessförfrågningar i Data Lake](privacy.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/catalog/)
 * [Vanliga frågor och svar](catalog-faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

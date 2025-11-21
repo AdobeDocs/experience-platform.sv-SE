@@ -17,7 +17,7 @@ ht-degree: 23%
 
 - [Översikt över segmenteringstjänsten](home.md)
 - [Segmenteringsdatatyper](data-types.md)
-- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=sv-SE#segmentation-guardrails)
+- [Skyddsritningar för segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails)
 - Segmenterings-API {#api}
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
@@ -83,4 +83,4 @@ ht-degree: 23%
 - [Uppdatering av kvalificeringskriterier](./eligibility-criteria-update.md)
 - [Vanliga frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)
-- [Versionsinformation för plattform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

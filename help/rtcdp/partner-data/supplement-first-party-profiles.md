@@ -14,7 +14,7 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/se/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
+>* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Komplettera förstahandsprofiler med attribut från betrodda datapartners för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 
@@ -24,7 +24,7 @@ Komplettera förstahandsprofiler med attribut från betrodda datapartners för a
 
 De flesta varumärken, även de som är fullmatade med förstahandsdata, kan dra nytta av att effektivisera sina data och få en bättre förståelse för kunderna, deras beteenden, mönster och önskemål.
 
-Adobe Real-time Customer Data Platform kan hjälpa varumärken att på ett ansvarsfullt sätt komplettera sina egna data med värdefulla insikter, identifierare och attribut från en eller flera betrodda partners.
+Adobes kunddataplattform i realtid kan hjälpa varumärken att på ett ansvarsfullt sätt komplettera sina egna data med värdefulla insikter, identifierare och attribut från en eller flera betrodda partners.
 
 Adobe förstår att det inte finns någon strategi som passar alla och som möjliggör smidig interoperabilitet med data- och identitetspartners för att främja individanpassad och genomtänkt interaktion i alla faser av kundlivscykeln. Dessa funktioner stöds av ett betrott ramverk för datastyrning som ger en nyanserad kontroll över var och hur partnerdata används. Du kanske vill använda partnerinsikter för segmentering, men inte för personalisering.
 
@@ -41,13 +41,13 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 
 >[!WARNING]
 >
->De ytterligare attribut från partnern som hämtas in till Real-Time CDP påverkar din *totala datavolym*. Läs [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) om du vill ha mer information om den totala datavolymen.
+>De ytterligare attribut från partnern som hämtas in till Real-Time CDP påverkar din *totala datavolym*. Läs [Real-Time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) om du vill ha mer information om den totala datavolymen.
 
 ## Videogenomgång {#video-walkthrough}
 
 I videosjälvstudiekursen nedan får du en genomgång av hur du kan komplettera förstahandsmålgrupper med attribut från partners:
 
->[!VIDEO](https://video.tv.adobe.com/v/3452455/?learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3423075/?learn=on)
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 
@@ -102,7 +102,7 @@ I det här steget bör du också tänka på hur er datastyrningsmodell ändras n
 >Om du väljer att komplettera dina kundprofiler med en personbaserad identifierare från dataleverantören kan du skapa en ny identitetstyp av typen **[[!UICONTROL Partner ID]](/help/identity-service/features/namespaces.md)**.
 >
 >Läs mer om partner-ID i avsnittet [identitetstyper](/help/identity-service/features/namespaces.md).
->Läs om [hur du definierar identitetsfält](/help/xdm/ui/fields/identity.md) i användargränssnittet i Experience Platform.
+>Läs om [hur du definierar identitetsfält](/help/xdm/ui/fields/identity.md) i Experience Platform användargränssnitt.
 
 ### Exportera målgrupper som du vill ska berikas när du stänger av Personal Identified Information (PII) eller hashed-PII {#export-audiences}
 

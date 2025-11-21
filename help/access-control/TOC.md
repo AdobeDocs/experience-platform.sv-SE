@@ -8,7 +8,7 @@ role: Admin
 source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
 source-wordcount: '132'
-ht-degree: 44%
+ht-degree: 50%
 
 ---
 
@@ -31,13 +31,13 @@ ht-degree: 44%
    * Behörighetshanteraren {#permissions-manager}
       * [Översikt](abac/permission-manager/overview.md)
       * [Behörigheter](abac/permission-manager/permissions.md)
-   * Attributbaserad åtkomstkontroll-API {#abac-api}
+   * Attributbaserad API för åtkomstkontroll {#abac-api}
       * [Översikt](abac/api/overview.md)
       * [Komma igång](abac/api/getting-started.md)
       * [Roller](abac/api/roles.md)
       * [Policyer](abac/api/policies.md)
       * [Produkter](abac/api/products.md)
-* Användargränssnitt för åtkomstkontroll {#ui}
+* Gränssnitt för åtkomstkontroll {#ui}
    * [Översikt](ui/overview.md)
    * [Välj en produktprofil](ui/browse.md)
    * [Hantera behörigheter för en produktprofil](ui/permissions.md)
@@ -50,4 +50,4 @@ ht-degree: 44%
    * [Visa gällande policyer](api/effective-policies.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/access-control/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

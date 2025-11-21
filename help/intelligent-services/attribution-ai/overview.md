@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform;attribuering - översikt;populära ämnen;attribuering ai;Attribution ai
+keywords: Experience Platform;attribuering ai overview;populära ämnen;attribuering ai;Attribution ai
 feature: Attribution AI
-title: Översikt över Attribution AI
+title: AI-översikt för attribut
 description: Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor. Exempel på kontaktpunkter inkluderar visningar av visningsannonser, e-postsändningar, e-postöppningar och betalda sökklick.
 landing-page-description: Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 short-description: Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
@@ -15,15 +15,15 @@ ht-degree: 31%
 
 # Översikt över AI för attribuering
 
-Attribution AI, som en del av Intelligent Services, är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner i förhållande till angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonsutgifterna genom att förstå effekten av varje enskild kundinteraktion i varje fas av kundresan.
+Attribution AI, som en del av Intelligent Services, är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner i förhållande till angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonskostnader genom att förstå effekten av varje enskild kundinteraktion under varje fas av kundresan.
 
-## Förstå Attribution AI
+## Förstå attribut-AI
 
 Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor. Exempel på kontaktpunkter inkluderar visningar av visningsannonser, e-postsändningar, e-postöppningar och betalda sökklick.
 
-Utdata från Attribution AI kan delas upp i olika dimensioner och kan användas i olika faser av kundresan. Detta uppnås utan att man behöver översätta affärsbehoven till maskininlärningsproblem, plockalgoritmer, utbildning eller driftsättningsmodeller.
+AI-utdata för attribuering kan delas upp i olika dimensioner och kan användas i olika faser av kundresan. Detta uppnås utan att man behöver översätta affärsbehoven till maskininlärningsproblem, plockalgoritmer, utbildning eller driftsättningsmodeller.
 
-Data från Attribution AI kan komma från datakällor i Adobe (t.ex. [!DNL Analytics]) eller andra datakällor än Adobe.
+AI-data för attribuering kan komma från Adobe (t.ex. [!DNL Analytics]) eller andra datakällor än Adobe.
 
 Attribution AI har stöd för två kategorier med poäng, algoritmiska och regelbaserade. Algoritmiska poäng inkluderar inkrementella och påverkade poäng. Regelbaserade resultat inkluderar First Touch, Last Touch, Linear, U-shaped och Time-Decay.
 
@@ -33,12 +33,12 @@ Följande video har utformats för att ge stöd för din förståelse av Attribu
 
 ## Exempel på användningsområden
 
-Attribution AI kan användas som hjälp i följande exempel:
+Attribution AI kan användas för att hjälpa till med följande exempel på användningsområden:
 
 - **Verkställande rapportering**: Låt cheferna förstå den verkliga inkrementella effekten av marknadsföring, både som helhet och efter kanal, region, SKU osv.
 - **Budgetallokering**: Informera budgetallokeringsbeslut över marknadsföringskanalen.
 - **Kampanjoptimering**: I varje kanal kan du förstå vilka kampanjer, kreatörer och nyckelord som fungerar bättre för vilka SKU:er eller Geos. På så sätt kan ni titta på varje kanal så att marknadsföringsteamet kan optimera taktikerna.
-- **Fullständig attribuering**: Förstå marknadsföringens påverkan under hela kundresan. Exempel: kostnadsfri kontoregistrering till betalkonvertering och vidare.
+- **Fullständig attribuering med funnel**: Förstå marknadsföringens påverkan under hela kundresan. Exempel: kostnadsfri kontoregistrering till betalkonvertering och vidare.
 - **Partnerutvärderingar**: Utvärdera effektiviteten hos myndigheter och partners baserat på attribueringsresultat.
 
 ### Ytterligare funktioner

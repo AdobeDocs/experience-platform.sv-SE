@@ -5,7 +5,7 @@ exl-id: d345e145-fdb9-4ca3-88c2-9c2a247ea59a
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '440'
-ht-degree: 2%
+ht-degree: 12%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Med taggtillägget Audience Manager kan du integrera DIL-koden som används av Audience Manager med dina egenskaper i Adobe Experience Platform.
+Med taggtillägget Audience Manager kan du integrera den DIL-kod som används av Audience Manager med dina egenskaper i Adobe Experience Platform.
 
 Använd den här referensen för information om de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -29,15 +29,15 @@ Om Adobe Audience Manager-tillägget ännu inte är installerat öppnar du din e
 
 Om du vill konfigurera tillägget öppnar du fliken [!UICONTROL Extensions], håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
 
-### Inställningar för DIL
+### DIL-inställningar
 
-Konfigurera inställningarna för DIL. Följande konfigurationsalternativ är tillgängliga:
+Konfigurera dina DIL-inställningar. Följande konfigurationsalternativ är tillgängliga:
 
 ![](../../../images/ext-aam-config.png)
 
-#### DIL version
+#### DIL Version
 
-Visar Datans Integration Library (DIL) version.
+Visar Data Integration Library-versionen (DIL).
 
 Den här inställningen kan inte ändras.
 
@@ -51,17 +51,17 @@ Aktivera Regex om URL:en är ett reguljärt uttryck.
 
 #### Använd DIL Site Catalyst-modulen
 
-Modulen [SiteCatalyst](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_sc_init.html) fungerar med DIL för att skicka Analytics-taggelement till Audience Manager.
+[SiteCatalyst-modulen](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_sc_init.html) fungerar med DIL för att skicka Analytics-taggelement till Audience Manager.
 
 Använd kodredigeraren för att konfigurera filen siteCatalyst.init.
 
 Du kan också skapa en anteckning som innehåller information om den här konfigurationen.
 
-#### Använd modulen DIL Google Analytics
+#### Använd DIL Google Analytics-modulen
 
-Aktivera modulen [Google Analytics](https://experiencecloud.adobe.com/resources/help/en_US/aam/dil-google-universal-analytics.html).
+Aktivera [Google Analytics-modulen](https://experiencecloud.adobe.com/resources/help/en_US/aam/dil-google-universal-analytics.html).
 
-#### DIL.skapa initieringsegenskaper
+#### DIL.create Initialization Properties
 
 Lägg till initieringsegenskaper som används av [DIL.create](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html) och namnutrymmesunderegenskapen för [visitorService-objektet](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_visitor_service.html). Det finns två exempel på användning i kodkommentarerna i kodredigeraren.
 
@@ -73,7 +73,7 @@ Välj **[!UICONTROL Save]** när du har slutfört konfigurationen av tillägget.
 
 ## Åtgärdstyper för Adobe Audience Manager-tillägg
 
-I det här avsnittet beskrivs de åtgärdstyper som finns i tillägget Audience Manager.
+I det här avsnittet beskrivs de åtgärdstyper som finns i Audience Manager-tillägget.
 
 Tillägget Adobe Audience Manager innehåller följande åtgärder i delen Sedan i en regel:
 

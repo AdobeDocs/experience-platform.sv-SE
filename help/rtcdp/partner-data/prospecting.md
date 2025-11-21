@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/se/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
+>* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profilbas med profiler för potentiella kunder från datapartners och engagera dem i kundvärvningen eller nå nya kunder.
 
@@ -22,7 +22,7 @@ Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profil
 
 ## Varför ska man tänka på det här användningsexemplet? {#why-this-use-case}
 
-Varumärken står samtidigt inför utmaningar när det gäller att på ett ansvarsfullt sätt genomföra kundvärvningsärenden utan att vara beroende av cookies från tredje part, begränsade budgetar och högre krav på transparens och avkastning på annonskostnaderna.
+Varumärken står samtidigt inför utmaningar när det gäller att på ett ansvarsfullt sätt köra de mest avancerade användningsområdena för kundförvärv från funnel utan att vara beroende av cookies från tredje part, begränsade budgetar och större krav på transparens och avkastning på annonskostnaderna.
 
 Adobe Real-Time Customer Data Platform kan hjälpa varumärken att på ett säkert sätt övergå till att använda sina datahanteringsplattformar (DMP) till cookie-fria alternativ och göra detta på ett sätt som gör att självbetjäningssegmentering, målgruppsböjning och aktivering kan utvecklas till ett enda system. Utan att kompromissa med Adobe orubbliga fokus på ansvarsfull dataanvändning via en patenterad ramverk för datastyrning och samtycke.
 
@@ -44,7 +44,7 @@ Innan du utökar Real-Time CDP för att engagera och värva nya kunder måste du
 
 ![Kundprospektering använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/prospecting/prospecting-use-case-steps.png)
 
-1. Som **kund** licensierar du profiler för potentiella kunder från en eller flera **datapartner** för att hjälpa till att få högsta möjliga resultat när det gäller kundvärvningen.
+1. Som **kund** licensierar du profiler för potentiella kunder från en eller flera **datapartner** för att hjälpa dig att lyckas med kundvärvningen hos funnel.
 2. Som **kund** utökar du dina profildata och styrningsmodeller till att importera listan **partner** med profiler för potentiella kunder.
 3. Som **kund** läser du in profiler för potentiella kunder i Real-Time CDP och skapar principer för styrning för att säkerställa ansvarsfull användning.
 4. Som **kund** skapar du fokuserade målgrupper från listan med profiler för potentiella kunder.

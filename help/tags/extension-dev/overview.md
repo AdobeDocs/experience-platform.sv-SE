@@ -37,7 +37,7 @@ Du kan placera biblioteksmodulfiler var du vill i tilläggskatalogen, förutsatt
 
 ### Vyer
 
-En vy är en HTML-fil som kan läsas in i ett [`iframe`-element &#x200B;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) i taggprogrammet, särskilt via Experience Platform användargränssnitt och användargränssnittet för datainsamling. Vyn måste innehålla ett skript från tillägget och följa ett litet API för att kunna kommunicera med programmet.
+En vy är en HTML-fil som kan läsas in i ett [`iframe`-element ](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) i taggprogrammet, särskilt via Experience Platform användargränssnitt och användargränssnittet för datainsamling. Vyn måste innehålla ett skript från tillägget och följa ett litet API för att kunna kommunicera med programmet.
 
 Den viktigaste visningsfilen för alla tillägg är dess konfiguration. Mer information finns i avsnittet [tilläggskonfigurationer](#configuration).
 

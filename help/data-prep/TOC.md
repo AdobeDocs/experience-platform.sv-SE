@@ -7,7 +7,7 @@ role: Developer
 source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
 source-wordcount: '62'
-ht-degree: 56%
+ht-degree: 58%
 
 ---
 
@@ -16,15 +16,15 @@ ht-degree: 56%
 
 - [Översikt över datapreflight](home.md)
 - [Förinställningsfunktioner för data](functions.md)
-- Mappningstjänstens API {#api}
+- API för mappningstjänst {#api}
    - [Översikt](./api/overview.md)
    - [Komma igång](./api/getting-started.md)
    - [Funktioner](./api/functions.md)
    - [Mappningsuppsättning](./api/mapping-set.md)
-- Gränssnitt {#ui}
+- UI {#ui}
    - [Användargränssnittsguide för dataprep](./ui/mapping.md)
 - [Hantera dataformat](./data-handling.md)
 - [Mappningsuppsättningar](mapping-set.md)
 - [Direktuppspelningar](upserts.md)
 - [Felsökningsguide](troubleshooting-guide.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -15,23 +15,23 @@ ht-degree: 36%
 
 # Adobe Experience Platform Privacy Service {#privacy}
 
-* [Översikt över Privacy Servicen](./home.md)
+* [Privacy Service - översikt](./home.md)
 * [Hantera behörigheter för Privacy Service](./permissions.md)
 * [Privacy Service och Experience Cloud](./experience-cloud-apps.md)
 * [Identitetsdata för sekretessförfrågningar](./identity-data.md)
 * [Översikt över JS-bibliotek för sekretess](./js-library.md)
-* Privacy Service-API {#api}
+* PRIVACY SERVICE API {#api}
    * [Översikt](./api/overview.md)
-   * [Autentisera och få åtkomst till Privacy Services-API](./api/getting-started.md)
+   * [Autentisera och få tillgång till Privacy Service API](./api/getting-started.md)
    * [Sekretessjobb](./api/privacy-jobs.md)
    * [Godkännande](./api/consent.md)
    * [Innehåll](./api/content.md)
    * [Bilaga](./api/appendix.md)
-* Privacy Servicens användargränssnitt {#ui}
+* Privacy Service UI {#ui}
    * [Översikt](./ui/overview.md)
    * [Hantera sekretessjobb](./ui/user-guide.md)
 * [Prenumerera på sekretesshändelser](./privacy-events.md)
-* Integritetsregler {#regulations}
+* Integritetsbestämmelser {#regulations}
    * [Översikt](./regulations/overview.md)
    * [Vanliga frågor och svar](./regulations/faq.md)
    * [Terminologi](./regulations/terminology.md)

@@ -8,14 +8,14 @@ role: Developer
 source-git-commit: 0209c873438a3bda1b0df6434f49735c2d3e150b
 workflow-type: tm+mt
 source-wordcount: '67'
-ht-degree: 55%
+ht-degree: 56%
 
 ---
 
 
 # Adobe Experience Platform Assurance {#assurance}
 
-- [Säkerhet - översikt](./home.md)
+- [Assurance - översikt](./home.md)
 - [Användaråtkomst](./user-access.md)
 - Vyer {#view}
    - [Händelsetransaktioner](./views/event-transactions.md)
@@ -28,7 +28,7 @@ ht-degree: 55%
    - [Sammanfattning av validering](./views/validation-summary.md)
    - [Adobe Analytics](./views/adobe-analytics.md)
    - [Adobe Analytics Streaming Media](./views/adobe-analytics-streaming-media.md)
-- Tutorials {#tutorials}
-   - [Implementera försäkring](./tutorials/implement-assurance.md)
-   - [Använd försäkring](./tutorials/using-assurance.md)
+- Självstudiekurser {#tutorials}
+   - [Implementera Assurance](./tutorials/implement-assurance.md)
+   - [Använd Assurance](./tutorials/using-assurance.md)
 - [Felsökning](./troubleshooting.md)

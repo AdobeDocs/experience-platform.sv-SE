@@ -25,7 +25,7 @@ ht-degree: 50%
 * [Fliken Loggar](./logs.md)
 * [Fliken Nätverk](./network.md)
 * [Fliken Händelser](./events.md)
-* Granskarfliken {#auditor}
+* Fliken Granskare {#auditor}
    * [Översikt](./auditor/overview.md)
    * [Konsekvenskontroll för taggar](./auditor/tag-consistency.md)
    * [Tagga närvarotester](./auditor/tag-presence.md)
