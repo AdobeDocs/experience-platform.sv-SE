@@ -5,9 +5,9 @@ title: Uppdatera måldataflöden med API:t för Flow Service
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort målgrupper och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: 7f8fbbec8927dffb3c8456b2a1d908d27d4b03c2
 workflow-type: tm+mt
-source-wordcount: '2410'
+source-wordcount: '2471'
 ht-degree: 1%
 
 ---
@@ -749,6 +749,14 @@ De exporterade filerna innehåller målnamn, målgrupps-ID för Experience Platf
 ## Lägga till ett profilattribut i ett dataflöde {#add-profile-attribute}
 
 Om du vill lägga till ett profilattribut i måldataflödet utför du en PATCH-begäran till [!DNL Flow Service]-API:t och anger ditt flödes-ID, din version och det profilattribut som du vill lägga till.
+
+>[!IMPORTANT]
+>
+>**Målspecifika mappningskrav**
+>
+>Metoden `profileSelectors` som beskrivs i det här avsnittet fungerar för de flesta direktuppspelningsmål. Vissa mål för direktuppspelning, inklusive **Adobe Target**, kräver arbetsflödet för dataprep-mappning i stället.
+>
+>**Om dina profilattribut inte visas i Experience Platform UI efter ett lyckat API-svar (202)** måste du använda den mappningsuppsättningsmetod som beskrivs i [Aktivera målgrupper för gruppsmål](../api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping).
 
 **API-format**
 
