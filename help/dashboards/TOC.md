@@ -63,4 +63,4 @@ ht-degree: 25%
    * [Power BI](integrations/power-bi.md)
 * [Datamängder för frågeinstrumentpanelen](query.md)
 * [Visa SQL-insikter](view-sql.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

@@ -38,4 +38,4 @@ ht-degree: 52%
    * [Expertcenter](use-cases/center-of-excellence.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/sandbox)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

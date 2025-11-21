@@ -38,7 +38,7 @@ Widgeten [!UICONTROL Getting started with Real-Time Customer Profile] är uppdel
 >id="platform_home_metrics_totalProfiles"
 >title="Totalt antal profiler"
 >abstract="Det totala antalet profiler ni har inom Experience Platform. Antalet baseras på organisationens kopplingsprofil och inkluderar inte profilfragment. Antalet profiler uppdateras en gång var 24:e timme."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html#profile-count" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=sv-SE#profile-count" text="Läs mer i dokumentationen"
 
 Kontrollpanelen för mätvärden visar aktuell information om dina Experience Platform-data. Kontrollpanelen är uppdelad i två avsnitt:
 

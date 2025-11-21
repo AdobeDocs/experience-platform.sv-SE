@@ -65,4 +65,4 @@ ht-degree: 16%
    * [Schemalägg automatiserad utbildning och poängsättning för en tjänst (UI)](models-recipes/schedule-models-ui.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)

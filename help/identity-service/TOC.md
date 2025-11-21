@@ -47,4 +47,4 @@ ht-degree: 22%
 - [Definiera identitetsfält i användargränssnittet](label-identities.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
 - [Felsökningsguide](troubleshooting-guide.md)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
