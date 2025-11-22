@@ -126,7 +126,7 @@ curl --location --request POST 'https://some-api.com/token' \
 --data-urlencode 'grant_type=client_credentials'
 ```
 
-* [OAuth 2.0-lösenord ](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
+* [OAuth 2.0-lösenord &#x200B;](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
 
 ## Anslut till målet {#connect-destination}
 
@@ -280,7 +280,7 @@ Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre målgrup
 
 ![Ett exempel på ett måldataflöde för HTTP API.](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [&#x200B; Exporterade data &#x200B;](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 
