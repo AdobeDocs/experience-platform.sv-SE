@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 69a1ae08fefebb7fed54564ed06f42af523d2903
+source-git-commit: de161bcb29a0d4fc9b0c419506537b18255c79a4
 workflow-type: tm+mt
-source-wordcount: '2656'
+source-wordcount: '3005'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [&#x200B; september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före 1 november 2024*.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före 1 november 2024*.
 >
 >För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 september 2025.
 >
@@ -50,16 +50,16 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=sv-SE#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
+    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
     <td>Prime</td>
-    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=sv-SE#datasets"> Adobe Journey Optimizer</a>.</td>
+    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>.</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=sv-SE#datasets"> Adobe Journey Optimizer</a>.</td>
+    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>.</td>
   </tr>
   <tr>
     <td>Customer Journey Analytics</td>
@@ -78,7 +78,7 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
 
 I videon nedan finns en komplett förklaring av arbetsflödet som beskrivs på den här sidan, fördelar med att använda exportdatauppsättningsfunktionen samt några förslag på användningsområden.
 
->[!VIDEO](https://video.tv.adobe.com/v/3448822?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## Mål som stöds {#supported-destinations}
 
@@ -143,6 +143,10 @@ Använd kryssrutorna till vänster om datauppsättningsnamnen för att markera d
 
 ![Arbetsflöde för dataexport med steget Välj datauppsättningar där du kan välja vilka datauppsättningar som ska exporteras.](/help/destinations/assets/ui/export-datasets/select-datasets.png)
 
+>[!NOTE]
+>
+>Alla datauppsättningar som väljs här kommer att ha samma exportschema. Om du behöver olika exportscheman (t.ex. inkrementell export för vissa datauppsättningar och engångs fullständig export för andra) skapar du separata dataflöden för varje schematyp.
+
 ## Schemalägg datauppsättningsexport {#scheduling}
 
 >[!CONTEXTUALHELP]
@@ -160,6 +164,16 @@ Använd kryssrutorna till vänster om datauppsättningsnamnen för att markera d
 >title="Uppdatera slutdatumet för det här dataflödet"
 >abstract="På grund av de senaste uppdateringarna av det här målet krävs ett slutdatum för dataflödet. Adobe har angett ett standardslutdatum till 1 september 2025. Uppdatera till önskat slutdatum, annars avbryts dataexporten på standarddatumet."
 
+>[!IMPORTANT]
+>
+>**Schemat gäller för alla datauppsättningar i dataflödet**
+>
+>När du konfigurerar eller ändrar exportschemat gäller det **alla datauppsättningar** som för närvarande exporteras via det dataflöde du konfigurerar. Du kan inte ange olika scheman för enskilda datauppsättningar i samma dataflöde.
+>
+>Om du behöver olika exportscheman för olika datauppsättningar måste du skapa separata dataflöden (separata målanslutningar) för varje schematyp.
+>
+>**Exempel:** Om du har datauppsättning A-export stegvis och du lägger till datauppsättning B med ett helexportschema som är en gång, kommer datauppsättning A också att uppdateras till ett helexportschema som är en gång.
+
 Använd steget **[!UICONTROL Scheduling]** för att:
 
 * Ange ett startdatum och ett slutdatum samt en exportgräns för datauppsättningsexporter.
@@ -167,6 +181,10 @@ Använd steget **[!UICONTROL Scheduling]** för att:
 * Anpassa mappsökvägen på lagringsplatsen där datauppsättningar ska exporteras. Läs mer om hur du [redigerar sökvägen till exportmappen](#edit-folder-path).
 
 Använd kontrollen **[!UICONTROL Edit schedule]** på sidan om du vill redigera exportavslut och välja om du vill exportera fullständiga eller stegvisa filer.
+
+>[!WARNING]
+>
+>Om du ändrar schemat här uppdateras exportbeteendet för alla datauppsättningar i det här dataflödet. Om det här dataflödet innehåller flera datauppsättningar påverkas alla av den här ändringen.
 
 ![Redigera schemakontroll markerad i schemaläggningssteget.](/help/destinations/assets/ui/export-datasets/edit-schedule-control-highlight.png)
 
@@ -213,9 +231,18 @@ Du kan använda flera tillgängliga makron för att anpassa ett mappnamn. Dubbel
 
 ![Makromarkering markerat i modalt fönster för anpassad mapp.](/help/destinations/assets/ui/export-datasets/custom-folder-path-macros.png)
 
-När du har valt makron kan du se en förhandsvisning av mappstrukturen som kommer att skapas på lagringsplatsen. Den första nivån i mappstrukturen representerar **[!UICONTROL Folder path]** som du angav när du [anslöt till målet](/help/destinations/ui/connect-destination.md##set-up-connection-parameters) för att exportera datamängder.
+När du har valt makron kan du se en förhandsvisning av mappstrukturen som kommer att skapas på lagringsplatsen. Den första nivån i mappstrukturen representerar **[!UICONTROL Folder path]** som du angav när du [anslöt till målet](/help/destinations/ui/connect-destination.md#set-up-connection-parameters) för att exportera datamängder.
 
 ![Förhandsgranskning av mappsökväg markerad i ett modalt fönster för en anpassad mapp.](/help/destinations/assets/ui/export-datasets/custom-folder-path-preview.png)
+
+### Bästa tillvägagångssätt för att hantera flera datauppsättningar {#best-practices-multiple-datasets}
+
+Tänk på följande när du exporterar flera datauppsättningar:
+
+* **Samma schemakrav**: Gruppera datauppsättningar som behöver samma exportschema (frekvens, typ) i ett enda dataflöde för enklare hantering.
+* **Olika schemakrav**: Skapa separata dataflöden för datauppsättningar som kräver olika exportscheman eller exporttyper (inkrementellt eller fullständigt). Detta garanterar att alla datauppsättningar exporteras efter specifika behov.
+* **Granska innan du ändrar**: Innan du ändrar schemat för ett befintligt dataflöde bör du granska vilka datauppsättningar som redan exporteras via det dataflödet för att undvika oönskade ändringar av deras exportbeteende.
+* **Dokumentera konfigurationen**: Håll reda på vilka datauppsättningar som innehåller dataflöden, särskilt när du hanterar flera exportscheman för olika mål.
 
 ## Granska {#review}
 
@@ -239,7 +266,7 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 ### Exempeldatauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet &#x200B;](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json &#x200B;](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 
@@ -280,7 +307,7 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
 ## Exportberättiganden för datauppsättning {#licensing-entitlement}
 
-Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa Real-Time CDP produktbeskrivning [här](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa Real-Time CDP produktbeskrivning [här](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper Real-Time CDP Ultimate och Adobe Journey Optimizer Ultimate blir behörigheten för export av profiler den större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att man räknar ut det totala antalet licensierade profiler och multiplicerar med 500 kB för Real-Time CDP Prime eller 700 kB för Real-Time CDP Ultimate för att avgöra hur stor datavolym man har rätt till.
 
@@ -352,4 +379,10 @@ Nej, det är inte möjligt.
 
 +++Svar
 Försök utförs automatiskt för de flesta typer av systemfel.
++++
+
+**Kan jag ange olika exportscheman för olika datauppsättningar i samma dataflöde?**
+
++++Svar
+Nej, alla datauppsättningar i ett enda dataflöde har samma exportschema. Om du behöver olika exportscheman för olika datauppsättningar måste du skapa separata dataflöden (målanslutningar) för varje schematyp. Om du t.ex. vill att datauppsättning A ska exporteras stegvis varje dag och datauppsättning B ska exporteras som en heltidsexport, måste du skapa två separata dataflöden.
 +++
