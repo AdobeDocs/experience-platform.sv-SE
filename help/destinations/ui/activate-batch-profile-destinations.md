@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: ba41de0085b578ddb43fb61210a23dbbcc84a2f1
 workflow-type: tm+mt
-source-wordcount: '4506'
+source-wordcount: '4555'
 ht-degree: 1%
 
 ---
@@ -16,8 +16,8 @@ ht-degree: 1%
 >[!IMPORTANT]
 > 
 >* Om du vill aktivera målgrupper och aktivera [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
->* För att aktivera målgrupper utan att gå igenom [mappningssteget](#mapping) i arbetsflödet behöver **[!UICONTROL View Destinations]** du , **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]**, och **[!UICONTROL View Segments]** [åtkomstkontrollbehörigheter](/help/access-control/home.md#permissions).
->* För att exportera *identiteter* behöver **[!UICONTROL View Identity Graph]** [du åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Välj identitetsnamnrymd som markeras i arbetsflödet för att aktivera målgrupper till destinationer.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
+>* Om du vill aktivera målgrupper utan att gå igenom [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
+>* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 > 
 > Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
@@ -63,13 +63,13 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-* **[!UICONTROL Segmentation Service]**: Målgrupper genererade inom Experience Platform av Segmenteringstjänsten. Se segmenteringsdokumentationen [&#128279;](../../segmentation/ui/overview.md) för mer information.
-* **[!UICONTROL Custom upload]**: Målgrupper genererade utanför Experience Platform och uppladdade i Experience Platform som CSV-filer. För att lära dig mer om externa målgrupper, se dokumentationen om [import av en målgrupp](../../segmentation/ui/audience-portal.md#import-audience). Att välja målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiverar automatiskt steget [Select enrichment attributs](#select-enrichment-attributes) .
-* Andra typer av målgrupper, som härstammar från andra Adobe-lösningar, såsom [!DNL Audience Manager].
+* **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience). Om du väljer målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiveras steget [Välj anrikningsattribut](#select-enrichment-attributes) automatiskt.
+* Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
 >[!IMPORTANT]
 >
->När du aktiverar anpassade uppladdningspubliker till batchfilbaserade destinationer finns det en gräns på 10 sådana målgrupper som du kan aktivera i ett dataflöde.
+>När du aktiverar anpassade överförda målgrupper till batchfilbaserade mål finns det en gräns på 10 sådana målgrupper som du kan aktivera i ett dataflöde.
 
 ![Kryssrutor visas när du väljer en eller flera målgrupper att aktivera.](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
 
@@ -120,12 +120,12 @@ Om du vill redigera flera scheman samtidigt markerar du målgrupperna med kryssr
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
 >abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för målgruppen. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för målgruppen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för målgruppen och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för målgruppen sedan den första inkrementella filexporten."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=sv-SE#export-incremental-files" text="Exportera inkrementella filer"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="Exportera inkrementella filer"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
->title="Aktivera efter publikutvärdering"
->abstract="<p>Aktivering sker omedelbart efter att det dagliga segmenteringsjobbet är klart. Detta säkerställer att de mest uppdaterade profilerna exporteras.</p><p>Alternativet att exportera profiler efter målgruppsutvärdering är <i>inte</i> tillgängligt för export varje vecka och månad.</p>"
+>title="Aktivera efter målgruppsutvärdering"
+>abstract="<p>Aktiveringen körs omedelbart efter det dagliga segmenteringsjobbet. Detta garanterar att de senaste profilerna exporteras.</p><p>Alternativet att exportera profiler efter målgruppsutvärdering är <i>inte</i> tillgängligt för export varje vecka och månad.</p>"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_scheduled"
@@ -168,17 +168,17 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
    ![Bild som markerar alternativet för utvärdering av After segment i aktiveringsflödet för batchmål.](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
 Använd alternativet **[!UICONTROL Scheduled]** om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Med det här alternativet exporteras Experience Platform-profildata vid samma tidpunkt varje dag. De profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar.
 
-   ![Bilden markerar schemaläggningsalternativet i aktiveringsflödet för batchdestinationer och visar tidsväljaren.](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
+   ![Bilden markerar alternativet Schemalagd i aktiveringsflödet för batchmål och visar tidsväljaren.](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
+
+   När du mappar en målgrupp som har skapats inom de senaste 24 timmarna och utvärderats med [gruppsegmentering](../../segmentation/methods/batch-segmentation.md) anger du att ditt dagliga exportschema ska börja tidigast nästa dag. Detta garanterar att det dagliga batchutvärderingsjobbet körs först och att du exporterar fullständiga målgruppsdata.
+
+   När du konfigurerar exportscheman anger du starttiden minst **1 timme** efter att aktiveringsflödet har slutförts. Det kan ta upp till en timme att sprida sig genom systemet. Om du schemalägger att en export ska köras tidigare än 1 timme efter aktiveringen kan den schemalagda exporten gå förlorad.
+
+3. Använd väljaren **[!UICONTROL Date]** för att välja dag eller intervall när exporten ska ske. För daglig export är det bästa sättet att ställa in start- och slutdatum så att de motsvarar kampanjernas längd i era nedströmsplattformar.
 
    >[!IMPORTANT]
    >
-   >När du mappar en publik som skapats inom de senaste 24 timmarna och utvärderats genom [batchsegmentering](../../segmentation/methods/batch-segmentation.md), ställ in ditt dagliga exportschema så att det börjar tidigast följande dag. Detta säkerställer att det dagliga batchutvärderingsjobbet körs först och att du exporterar komplett publikdata.
-
-3. Använd **[!UICONTROL Date]** väljaren för att välja dag eller intervall då exporten ska ske. För dagliga exporter är bästa praxis att ställa in start- och slutdatum så att det stämmer överens med kampanjernas längd på dina nedströmsplattformar.
-
-   >[!IMPORTANT]
-   >
-   > När man väljer ett exportintervall räknas inte den sista dagen i intervallet in i exporten. Till exempel, om du väljer ett intervall mellan 4 och 11 januari, sker den sista filexporten den 10 januari.
+   > När du väljer ett exportintervall inkluderas inte den sista dagen i intervallet i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum 10 januari.
 
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
 
@@ -342,8 +342,8 @@ Avdupliceringsnycklar eliminerar möjligheten att ha flera poster med samma prof
 Det finns tre sätt att använda dedupliceringsnycklar i [!DNL Experience Platform]:
 
 * Använda ett enskilt identitetsnamnutrymme som [!UICONTROL deduplication key]
-* Att använda ett enda profilattribut från en [!DNL XDM] profil som en [!UICONTROL deduplication key]
-* Att använda en kombination av två profilattribut från en [!DNL XDM] profil som en sammansatt nyckel
+* Använda ett profilattribut från en [!DNL XDM]-profil som [!UICONTROL deduplication key]
+* Använda en kombination av två profilattribut från en [!DNL XDM]-profil som en sammansatt nyckel
 
 >[!IMPORTANT]
 >
@@ -466,11 +466,11 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 
 ### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
 
-När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
 
 #### Viktiga överväganden
 
-* **Deterministisk markering**: När flera profiler har identiska dedupliceringsnycklar och samma referenstidstämpel avgör dedupliceringslogiken vilken profil som ska exporteras genom att sortera värdena för andra markerade kolumner (exklusive komplexa typer som arrayer, kartor eller objekt). De sorterade värdena utvärderas i lexikografisk ordning och den första profilen väljs.
+* **Deterministisk markering**: När flera profiler har identiska dedupliceringsnycklar och samma referenstidstämpel avgör dedupliceringslogiken vilken profil som ska exporteras genom att sortera värdena för andra markerade kolumner (exklusive komplexa typer som arrayer, kartor eller objekt). De sorterade värdena utvärderas i lexikografisk ordning och den första profilen markeras.
 
 * **Exempelscenario**
 
@@ -541,7 +541,7 @@ Som en tillfällig lösning kan du antingen:
 
 >[!IMPORTANT]
 > 
->Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg &#x200B;](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
+>Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
 >
 >Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 
