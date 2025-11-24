@@ -1,14 +1,14 @@
 ---
 title: Demandbase-anslutning
 description: Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Annonsera till relevanta personas och roller i dina målgruppskonton via DemandBases B2B Demand Side Platform (DSP). Målgruppskonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led av marknadsförings- och säljprocessen.
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 last-substantial-update: 2024-09-30T00:00:00Z
 exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: cc05ca282cdfd012366e3deccddcae92a29fef1c
 workflow-type: tm+mt
-source-wordcount: '737'
-ht-degree: 14%
+source-wordcount: '785'
+ht-degree: 13%
 
 ---
 
@@ -24,7 +24,7 @@ Aktivera profiler för dina Demandbase-kampanjer för målgruppsanpassning, pers
 
 Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Annonsera till relevanta personas och roller i dina målgruppskonton via DemandBases B2B Demand Side Platform (DSP). Målgruppskonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led av marknadsförings- och säljprocessen.
 
-Använd till exempel Demandbase:s reklamtekniker DSP för att inrikta dig på specifika personer eller roller inom nyckelkonton för ledande generering av leads, eller skapa och utöka inköpsgrupper. Använd Demandbase-målet för att utforska andra användningsfall för att effektivt rikta in dina konton.
+Använd till exempel Demandbase:s reklamtekniker DSP för att inrikta dig på specifika personer eller roller inom nyckelkonton för ledande lead-generering för funnel, eller skapa och utöka köpgrupper. Använd Demandbase-målet för att utforska andra användningsfall för att effektivt rikta in dina konton.
 
 Med den här integreringen kan ni också personalisera webbplatsupplevelsen med kontosökning i realtid för att optimera engagemanget.
 
@@ -110,5 +110,7 @@ Dessa mappningar krävs för att målet ska fungera korrekt och måste konfigure
 
 ## Ytterligare kommentarer och viktiga bildtexter {#additional-notes}
 
-* Om en kontomålgrupp med samma namn aktiverades tidigare för Demandbase kan du inte aktivera den igen via ett annat dataflöde till Demandbase-målet.
-* Om du har exporterat målgrupper till Demandbase och exporterna är framgångsrika i Experience Platform, men inte alla data når Demandbase, kan du ha råkat ut för API-strypning på Demandbase-sidan. Nå ut till dem för klargöranden.
+* **Målgruppsnamn**: Om en kontomålgrupp med samma namn aktiverades tidigare i Demandbase kan du inte aktivera den igen via ett annat dataflöde till Demandbase-målet.
+* **Demandbase API-skyddsräcken**: Om du har exporterat målgrupper till Demandbase och exporterna har lyckats i Experience Platform, men inte alla data når Demandbase, kan du ha råkat ut för API-begränsning på Demandbase-sidan. Nå ut till dem för klargöranden.
+* **Listborttagning**: Kontolistor är unika, så du kan inte återskapa en ny lista med ett namn som redan används. När du tar bort konton från en lista är de inte längre tillgängliga, men de tas inte bort.
+* **Aktiveringstid**: Data som läses in i Demandbase behandlas över natten.
