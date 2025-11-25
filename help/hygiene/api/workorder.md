@@ -3,10 +3,10 @@ title: Spela in ta bort arbetsorder
 description: Lär dig hur du använder slutpunkten /workorder i API:t Data Hygiene för att hantera postborttagningsarbetsorder i Adobe Experience Platform. Den här guiden täcker kvoter, bearbetningstidslinjer och API-användning.
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 4f4b668c2b29228499dc28b2c6c54656e98aaeab
+source-git-commit: f1f37439bd4d77faf1015741e604eee7188c58d7
 workflow-type: tm+mt
-source-wordcount: '2104'
-ht-degree: 1%
+source-wordcount: '2440'
+ht-degree: 0%
 
 ---
 
@@ -300,6 +300,110 @@ I följande tabell beskrivs egenskaperna i svaret.
 >[!NOTE]
 >
 >Åtgärdsegenskapen för arbetsorder för att ta bort poster är för närvarande `identity-delete` i API-svar. Om API:t ändras till ett annat värde (till exempel `delete_identity`) uppdateras den här dokumentationen därefter.
+
+## Konvertera ID-listor till JSON för förfrågningar om postborttagning
+
+Om du vill skapa en postborttagningsarbetsorder från CSV-, TSV- eller TXT-filer som innehåller identifierare, kan du använda konverteringsskript för att skapa de JSON-nyttolaster som krävs för `/workorder`-slutpunkten. Detta är särskilt användbart när du arbetar med befintliga datafiler. Om du vill ha färdiga skript och utförliga instruktioner kan du gå till GitHub-databasen [csv-to-data-hygienen](https://github.com/perlmonger42/csv-to-data-hygiene).
+
+### Generera JSON-nyttolaster
+
+I följande grundläggande skript visas hur du kör konverteringsskript i Python eller Ruby:
+
+>[!BEGINTABS]
+
+>[!TAB Exempel på att köra Python-skript]
+
+```bash
+#!/usr/bin/env bash
+
+rm -rf ./output && mkdir output
+for NAME in UTF8 CSV TSV TXT XYZ big; do
+  ./csv-to-DI-payload.py sample/sample-$NAME.* \
+      --verbose \
+      --column 2 \
+      --namespace email \
+      --dataset-id 66f4161cc19b0f2aef3edf10 \
+      --description 'a simple sample' \
+      --output-dir output
+  echo Checking output/sample-$NAME-*.json against expect/sample-$NAME-*.json
+  diff <(cat output/sample-$NAME-*.json) <(cat expect/sample-$NAME-*.json) || echo Unexpected output in sample-$NAME-*.*
+done
+```
+
+>[!TAB Exempel på körning av Ruby-skript]
+
+```bash
+#!/usr/bin/env bash
+
+rm -rf ./output && mkdir output
+for NAME in UTF8 CSV TSV TXT XYZ big; do
+  ./csv-to-DI-payload.rb sample/sample-$NAME.* \
+      --verbose \
+      --column 2 \
+      --namespace email \
+      --dataset-id 66f4161cc19b0f2aef3edf10 \
+      --description 'a simple sample' \
+      --output-dir output
+  echo Checking output/sample-$NAME-*.json against expect/sample-$NAME-*.json
+  diff <(cat output/sample-$NAME-*.json) <(cat expect/sample-$NAME-*.json) || echo Unexpected output in sample-$NAME-*.*
+done
+```
+
+>[!ENDTABS]
+
+Tabellen nedan beskriver parametrarna i de grundläggande skripten.
+
+| Parameter | Beskrivning |
+| ---           | ---     |
+| `verbose` | Aktivera utförliga utdata. |
+| `column` | Indexnamnet (1-baserat) eller rubriknamnet för kolumnen som innehåller identitetsvärdena som ska tas bort. Standardvärdet är den första kolumnen om inget anges. |
+| `namespace` | Ett objekt med en `code`-egenskap som anger identitetsnamnutrymmet (till exempel &quot;email&quot;). |
+| `dataset-id` | Den unika identifieraren för den datauppsättning som är associerad med arbetsordern. Om begäran gäller alla datauppsättningar ställs fältet in på `ALL`. |
+| `description` | En beskrivning av postens arbetsorder för borttagning. |
+| `output-dir` | Katalogen där JSON-nyttolasten för utdata ska skrivas. |
+
+{style="table-layout:auto"}
+
+I exemplet nedan visas en JSON-nyttolast som konverterats från en CSV-, TSV- eller TXT-fil. Den innehåller poster som är associerade med det angivna namnutrymmet och används för att ta bort poster som identifieras av e-postadresser.
+
+```json
+{
+  "action": "delete_identity",
+  "datasetId": "66f4161cc19b0f2aef3edf10",
+  "displayName": "output/sample-big-001.json",
+  "description": "a simple sample",
+  "identities": [
+    {
+      "namespace": {
+        "code": "email"
+      },
+      "id": "1"
+    },
+    {
+      "namespace": {
+        "code": "email"
+      },
+      "id": "2"
+    }
+  ]
+}
+```
+
+I följande tabell beskrivs egenskaperna i JSON-nyttolasten.
+
+| Egenskap | Beskrivning |
+| ---          | ---     |
+| `action` | Den begärda åtgärden för postborttagning av arbetsorder. Automatiskt inställd på `delete_identity` av konverteringsskriptet. |
+| `datasetId` | Den unika identifieraren för datauppsättningen. |
+| `displayName` | En etikett som kan läsas av människor för den här posten tar bort arbetsorder. |
+| `description` | En beskrivning av postens arbetsorder för borttagning. |
+| `identities` | En array med objekt som var och en innehåller:<br><ul><li> `namespace`: Ett objekt med en `code`-egenskap som anger identitetsnamnutrymmet (till exempel &quot;email&quot;).</li><li> `id`: Det identitetsvärde som ska tas bort för det här namnområdet.</li></ul> |
+
+{style="table-layout:auto"}
+
+### Skicka genererade JSON-data till `/workorder`-slutpunkten
+
+Följ instruktionerna i avsnittet [Skapa en arbetsorder för borttagning av post](#create) om du vill skicka en begäran. Se till att använda den konverterade JSON-nyttolasten som begärandetext (`-d`) när du skickar `curl` POST-begäran till API-slutpunkten `/workorder`.
 
 ## Hämta information för en viss postborttagningsarbetsorder {#lookup}
 
