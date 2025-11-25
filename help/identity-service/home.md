@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: f791940300036159ceaad11ff725eecfaa8332f4
+source-git-commit: 8dc4393232f5e256f375d2104d4fe0eaffc1d716
 workflow-type: tm+mt
 source-wordcount: '1574'
 ht-degree: 0%
@@ -105,7 +105,7 @@ Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnu
 
 Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram.
 
->[!VIDEO](https://video.tv.adobe.com/v/3432348?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
 ## Förstå identitetstjänstens roll i Experience Platform infrastruktur
 
