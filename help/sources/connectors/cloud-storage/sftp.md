@@ -2,7 +2,7 @@
 title: SFTP Source Connector - översikt
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
+source-git-commit: 06db0d3023ebf26aa604880fb6b614e331b1b2ea
 workflow-type: tm+mt
 source-wordcount: '1205'
 ht-degree: 0%
@@ -93,7 +93,7 @@ The key's randomart image is:
 Kör sedan följande kommando när du anger sökvägen till den privata nyckeln för att koda den privata nyckeln i [!DNL Base64]:
 
 ```shell
-C:\Users\lucy> [convert]::ToBase64String((Get-Content -path "C:\Users\lucy\.ssh\id_rsa" -Encoding byte)) > C:\Users\lucy\.ssh\id_rsa_base64
+C:\Users\lucy> [convert]::ToBase64String((Get-Content "C:\Users\lucy\.ssh\id_rsa" -AsByteStream)) > "C:\Users\lucy\.ssh\id_rsa_base64"
 ```
 
 Ovanstående kommando sparar den [!DNL Base64]-kodade privata nyckeln i den sökväg du angav. Du kan sedan använda den privata nyckeln för att autentisera till [!DNL SFTP] och ansluta till Experience Platform.
