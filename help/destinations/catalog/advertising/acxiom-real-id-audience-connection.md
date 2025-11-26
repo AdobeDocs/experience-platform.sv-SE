@@ -114,7 +114,7 @@ För att [!DNL Acxiom Real ID Audience Connection]-målet ska kunna ta emot mål
 
 
 
-I kolumnen **[!UICONTROL Source Field]** anger du namnet på källattributet som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL  Select source field]** . Välj sedan **[!UICONTROL Next]**.
+I kolumnen **[!UICONTROL Source Field]** anger du namnet på källattributet som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL &#x200B; Select source field]** . Välj sedan **[!UICONTROL Next]**.
 ![Mappningsskärmen](../../assets/catalog/advertising/acxiom-real-id-audience-connection/real_id_mapping_screen.png)
 
 
