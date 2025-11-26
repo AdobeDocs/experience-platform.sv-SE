@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på det API-anrop som används för att ta bort en befintlig målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Ta bort en målkonfiguration
 exl-id: c7309ab7-1b8d-46d4-8017-fd4aa5918cdd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fda542e62c448788099d63951277278a146fdfc8
 workflow-type: tm+mt
-source-wordcount: '280'
+source-wordcount: '279'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-star
 
 ## Ta bort en målkonfiguration {#delete}
 
-Du kan ta bort en [befintlig](create-destination-configuration.md) målserverkonfiguration genom att göra en `DELETE`-begäran till `/authoring/destinations`-slutpunkten med `{INSTANCE_ID}` för målkonfigurationen som du vill ta bort.
+Du kan ta bort en [befintlig](create-destination-configuration.md) destinationskonfiguration genom att göra en `DELETE`-begäran till `/authoring/destinations`-slutpunkten med `{INSTANCE_ID}` för målkonfigurationen som du vill ta bort.
 
 >[!TIP]
 >
@@ -51,7 +51,7 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destinat
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 
