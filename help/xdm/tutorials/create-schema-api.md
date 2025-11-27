@@ -5,9 +5,9 @@ title: Skapa ett schema med API:t för schemaregister
 type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cc1c2edc8980c562e323357376c2594fd8ea482a
 workflow-type: tm+mt
-source-wordcount: '2570'
+source-wordcount: '2853'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform. [!DNL Schema Library] innehåller resurser som gjorts tillgängliga för dig av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
-I den här självstudien används [!DNL Schema Registry]-API:t för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [&#x200B; självstudiekursen för schemaredigeraren &#x200B;](create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
+I den här självstudien används [!DNL Schema Registry]-API:t för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [ självstudiekursen för schemaredigeraren ](create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
 
 >[!NOTE]
 >
@@ -221,7 +221,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 **Begäran**
 
-Denna begäran uppdaterar schemat för bonusmedlemmar så att fälten i fältgruppen [[!UICONTROL Demographic Details] &#x200B;](../field-groups/profile/demographic-details.md) (`profile-person-details`) inkluderas.
+Denna begäran uppdaterar schemat för bonusmedlemmar så att fälten i fältgruppen [[!UICONTROL Demographic Details] ](../field-groups/profile/demographic-details.md) (`profile-person-details`) inkluderas.
 
 Genom att lägga till fältgruppen `profile-person-details` hämtar schemat för lojalitetsmedlemmar nu demografisk information för lojalitetsprogrammedlemmar som förnamn, efternamn och födelsedag.
 
@@ -1114,7 +1114,7 @@ Om du utför en GET-begäran om att söka efter schemat nu, visar egenskapen `lo
 
 Scheman används för inhämtning av data till [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data har matats in infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den personen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform]-tjänster för att ge en sammansatt vy över varje enskild kund.
 
-Fält som vanligtvis markeras som Identitet är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
+Fält som vanligtvis markeras som Identitet är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
 
 Identitetsbeskrivare signalerar att `sourceProperty` för `sourceSchema` är en unik identifierare som ska betraktas som en identitet.
 
@@ -1151,7 +1151,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med hjälp av [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
+>Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med hjälp av [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilken xdm:namespace som används.
 
 **Svar**
 
@@ -1367,6 +1367,52 @@ Svaret är en filtrerad lista med scheman som endast innehåller de som uppfylle
   }
 }
 ```
+
+## Använd användargränssnittet för att validera ditt schema {#validate-in-ui}
+
+Använd användargränssnittet i Experience Platform för att verifiera att schemat som du skapade med API:t [!DNL Schema Registry] har rätt struktur, egenskaper och identitetskonfiguration. Följ de här stegen:
+
+### Hitta ditt schema
+
+Börja med att navigera till **[!UICONTROL Schemas]** > **[!UICONTROL Browse]**. Använd textinmatningsfältet för att söka efter schemanamnet (till exempel `Campaign Member`) och välj schemanamnet från tabellen.
+
+![Vyn Bläddra bland scheman med textinmatningsfältet markerat för att söka efter och välja ditt schema.](../images/tutorials/create-schema/schemas-browse.png)
+
+### Bekräfta schemastrukturen
+
+Schemats arbetsyta visar schemats fullständiga struktur. Verifiera att:
+
+* Alla standardfältgrupper som du har lagt till visas på arbetsytan.
+* Din anpassade fältgrupp visas i strukturen och utökas så att fälten visas.
+
+![Schemaarbetsytan som visar den fullständiga schemastrukturen med standardfältgrupper och anpassade fältgrupper utökade.](../images/tutorials/create-schema/schema-canvas.png)
+
+### Granska schemaegenskaper
+
+Välj sedan schemarotnoden för att öppna panelen **[!UICONTROL Schema properties]** och bekräfta nyckelmetadata:
+
+* Schema `$id`
+* Visningsnamn
+* Status för aktivering av profil
+
+`$id` ska matcha värdet som returneras i ditt API-svar.
+
+>[!NOTE]
+>
+>Den tilldelade klassen (**[!UICONTROL XDM Business Campaign Members]** i det här exemplet) visas på den vänstra **[!UICONTROL Composition]**-panelen.
+
+![Vyn Schemaredigeraren med schemaroten markerad och panelen Schemaegenskaper öppen för granskning av nyckelmetadata.](../images/tutorials/create-schema/review-schema-properties.png)
+
+### Validera identitetsfält
+
+Varje identitetsfält som läggs till i schemat visas i avsnittet **[!UICONTROL Identities]** på panelen **[!UICONTROL Composition]**. Markera ett identitetsfält om du vill visa dess egenskaper på den högra panelen. För varje identitetsfält:
+
+* Identitetens namnutrymme är korrekt.
+* Fältet markeras som primär identitet när det är tillämpligt.
+
+![Avsnittet Identiteter på dispositionspanelen med ett identitetsfält markerat och dess identitetsegenskaper visas på den högra panelen.](../images/tutorials/create-schema/identitiy-confirmation.png)
+
+Om strukturen, egenskaperna och identitetskonfigurationen matchar din API-konfiguration har du skapat och konfigurerat schemat via API:t [!DNL Schema Registry].
 
 ## Nästa steg
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Begränsningar för XDM-fälttyp
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 8ddedb5ff8c12b05cdf39fa8dc2b59258389e522
 workflow-type: tm+mt
 source-wordcount: '635'
 ht-degree: 0%
@@ -27,7 +27,7 @@ XDM byggs ovanpå JSON-schema och därför ärver XDM-fält en liknande syntax n
 
 >[!NOTE]
 >
->Mer information om JSON-schema och andra underliggande tekniker i Experience Platform API:er finns i [API-handboken &#x200B;](../../landing/api-fundamentals.md#json-schema).
+>Mer information om JSON-schema och andra underliggande tekniker i Experience Platform API:er finns i [API-handboken ](../../landing/api-fundamentals.md#json-schema).
 
 I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsammans med ett exempelvärde som överensstämmer med typen:
 
@@ -60,11 +60,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Long]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type": "integer",
   "maximum": 9007199254740991,
   "minimum": -9007199254740991
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>1478108935</code></td>
     </tr>
@@ -72,11 +72,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Integer]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type": "integer",
   "maximum": 2147483648,
   "minimum": -2147483648
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>24906290</code></td>
     </tr>
@@ -84,11 +84,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Short]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type": "integer",
-  "maximum": 32768,
+  "maximum": 32767,
   "minimum": -32768
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>15781</code></td>
     </tr>
@@ -96,11 +96,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Byte]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type": "integer",
   "maximum": 128,
   "minimum": -128
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>90</code></td>
     </tr>
@@ -108,10 +108,10 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Date]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type": "string",
   "format": "date"
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>"2019-05-15"</code></td>
     </tr>
@@ -119,10 +119,10 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL DateTime]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "type": "string",
   "format": "date-time"
-&rbrace;</pre>
+}</pre>
       </td>
       <td><code>"2019-05-15T20:20:39+00:00"</code></td>
     </tr>

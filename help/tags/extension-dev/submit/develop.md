@@ -2,9 +2,9 @@
 title: Utveckla ett tillägg
 description: Det här dokumentet innehåller en allmän översikt över tagghanteringsprocessen med länkar till ytterligare dokumentation för mer detaljerade processer.
 exl-id: fb2f7275-a5da-4a41-b915-822c71c02e5c
-source-git-commit: 36870fa5359b5382cb9f1e9a5220ce8311f0c45c
+source-git-commit: 3f5e432ef381c10d8197724783135637d01a120e
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '436'
 ht-degree: 10%
 
 ---
@@ -34,7 +34,7 @@ Med en plan på plats kan dessa guider hjälpa dig att förstå utvecklingsproce
 
 Det finns också ett antal nPM-verktyg som du kan använda för att utveckla tilläggspaket:
 
-* [Med verktyget för taggtillägg &#x200B;](https://www.npmjs.com/package/@adobe/reactor-scaffold) kan du enkelt skapa ett startprojekt på den lokala datorn.
+* [Med verktyget för taggtillägg ](https://www.npmjs.com/package/@adobe/reactor-scaffold) kan du enkelt skapa ett startprojekt på den lokala datorn.
 * [Tag Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) hjälper dig att validera dina tilläggsvyer och moduler på din lokala dator.
 * [Tag Extension Packager](https://www.npmjs.com/package/@adobe/reactor-packager) är ett kommandoradsverktyg som används för att paketera ett taggtillägg i en zip-fil.
 * [Tag Extension Uploader](https://www.npmjs.com/package/@adobe/reactor-uploader) är ett interaktivt kommandoradsverktyg som du kan använda för att ange autentiseringsuppgifter för ditt tekniska konto och överföra tilläggspaketet till taggar.
@@ -42,11 +42,7 @@ Det finns också ett antal nPM-verktyg som du kan använda för att utveckla til
 
 ## Exempel på tillägg
 
-Det finns exempeltillägg för GitHub som du kan granska eller använda som startprojekt:
-
-* [Hello World-exempeltillägg](https://github.com/adobe/reactor-helloworld-extension)
-* [Exempeltillägg för Typekit](https://github.com/jeffchasin/extension-typekit)
-* [Pinterest exempeltillägg](https://github.com/jeffchasin/extension-pinterest)
+Du kan granska eller använda exempeltillägg från GitHub, till exempel [Hello World-exempeltillägget](https://github.com/adobe/reactor-helloworld-extension), som startprojekt.
 
 ## Slack arbetsyta
 
