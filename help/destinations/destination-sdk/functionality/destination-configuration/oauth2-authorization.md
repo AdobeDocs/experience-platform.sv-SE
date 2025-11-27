@@ -2,9 +2,9 @@
 description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destination SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 title: OAuth 2-auktorisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 0cde918c693d06d735397aad721fd3cd5c4e760e
 workflow-type: tm+mt
-source-wordcount: '2181'
+source-wordcount: '2182'
 ht-degree: 0%
 
 ---
@@ -82,7 +82,7 @@ Utdata innehåller alltid en åtkomsttoken som används av Experience Platform f
 Det system som Adobe har utformat för OAuth 2-auktorisering:
 
 * Stöder alla tre OAuth 2-stipendiaterna samtidigt som de redovisar eventuella variationer i dem, som extra datafält, icke-standard-API-anrop med mera.
-* Stöder åtkomsttoken med varierande livstidsvärden, oavsett om det är 90 dagar, 30 minuter eller något annat livstidsvärde som du anger.
+* Stöder åtkomsttoken med varierande livstidsvärden. Adobe rekommenderar att du anger värdet för din token-livstid till minst 24 timmar.
 * Stöder OAuth 2-auktoriseringsflöden med eller utan uppdateringstoken.
 
 ## OAuth 2 med auktoriseringskod {#authorization-code}
