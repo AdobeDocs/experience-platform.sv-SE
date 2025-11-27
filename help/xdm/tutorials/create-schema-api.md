@@ -1114,7 +1114,7 @@ Om du utför en GET-begäran om att söka efter schemat nu, visar egenskapen `lo
 
 Scheman används för inhämtning av data till [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data har matats in infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den personen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform]-tjänster för att ge en sammansatt vy över varje enskild kund.
 
-Fält som vanligtvis markeras som Identitet är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
+Fält som vanligtvis markeras som Identitet är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
 
 Identitetsbeskrivare signalerar att `sourceProperty` för `sourceSchema` är en unik identifierare som ska betraktas som en identitet.
 
