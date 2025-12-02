@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: a4db84f5918e99b3c6dd63ff5a25063b89be2ba7
+source-git-commit: d537284b804214fa8a37febab5f78335a590e9f5
 workflow-type: tm+mt
-source-wordcount: '3484'
+source-wordcount: '3541'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,10 @@ En lista över enskilda körningar och deras specifika mått visas tillsammans m
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som hoppas över för aktivering baserat på saknade attribut och godkännandeöverträdelse.
 - **[!UICONTROL Identities failed]**: Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
 
+>[!NOTE]
+>
+>Summan för aktiverade, exkluderade och misslyckade identiteter representerar summan av alla enskilda dataflödeskörningar. Eftersom dataflödeskörningar har en TTL-gräns på 90 dagar, täcker dessa summor vanligtvis de senaste tre månaderna. När äldre dataflöden förfaller och tas bort från systemet kan du se en minskning av det totala antalet som visas.
+
 ![Dataflödet kör information för direktuppspelningsmål.](../assets/ui/monitor-destinations/dataflow-runs-stream.png)
 
 Varje enskild dataflödeskörning visar följande information:
@@ -137,7 +141,7 @@ Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter s
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=sv-SE#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -349,7 +353,7 @@ På sidan för dataflöden visas information om dataflödets körningar, inklusi
 När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](#segment-level-view) kan du filtrera dataflödet med följande alternativ:
 
 - **[!UICONTROL Dataflow runs with failed records]**: För den valda målgruppen listas alla dataflödeskörningar som misslyckades för aktivering med det här alternativet. Information om varför poster i ett visst dataflöde misslyckades finns på [informationssidan för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
-- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan &#x200B;](#dataflow-run-details-page) för dataflödeskörningen.
+- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan ](#dataflow-run-details-page) för dataflödeskörningen.
 - **[!UICONTROL Dataflow runs with activated records]**: För den valda målgruppen listas alla dataflödeskörningar som har poster som har aktiverats.
 
 ![Alternativknappar som visar hur du filtrerar dataflöden för målgrupper.](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
