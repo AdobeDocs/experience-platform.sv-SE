@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera Experience Platform-användare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: aa56c6bec3544c922521cc611036fd2989feb8b3
+source-git-commit: d4b6b83e37762f73f628b8922bf77f1739492eef
 workflow-type: tm+mt
-source-wordcount: '1999'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Adobe introducerade [!DNL Segment Match] 2021 för kunder att samarbeta och utbyta målgrupper. I början av 2025 introducerade Adobe [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/home), vilket är det mer långsiktiga sättet att hantera det här användningsfallet.
+>Adobe introducerade [!DNL Segment Match] 2021 för kunder att samarbeta och utbyta målgrupper. I början av 2025 introducerade Adobe [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/home), vilket är det mer långsiktiga sättet att hantera det här användningsfallet.
 >
->* För kunder i USA, Kanada, Australien och Nya Zeeland: Adobe rekommenderar Real-Time CDP Prime- och Ultimate-kunder att övergå från [!DNL Segment Match] till Real-Time CDP Collaboration. Läs [dokumentationen](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/home) och [snabbstartsguiden](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/quick-start-guide) för Real-Time CDP Collaboration och kontakta ditt Adobe-kontoteam om du vill veta mer.
+>* För kunder i USA, Kanada, Australien, Nya Zeeland och EMEA: Adobe rekommenderar Real-Time CDP Prime- och Ultimate-kunder att övergå från [!DNL Segment Match] till Real-Time CDP Collaboration. Läs [dokumentationen](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/home) och [snabbstartsguiden](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/quick-start-guide) för Real-Time CDP Collaboration och kontakta ditt Adobe-kontoteam om du vill veta mer.
 >* För kunder i alla andra områden: [!DNL Segment Match] rekommenderas tills Real-Time CDP Collaboration släpps i dessa länder under 2026.
 
 Adobe Experience Platform Segment Match är en segmentdelningstjänst som gör det möjligt för två eller flera Experience Platform-användare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt. [!DNL Segment Match] använder Experience Platform sekretessstandarder och personliga identifierare som hash-kodade e-postmeddelanden, hashade telefonnummer och enhetsidentifierare som IDFA och GAID.
@@ -51,7 +51,7 @@ Nedan följer en lista över namnutrymmen som stöds:
 
 | Namnutrymme | Beskrivning |
 | --------- | ----------- |
-| E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Experience Platform erbjuder två metoder som stöder hashning vid datainsamling, via [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=sv-SE#hashing-support) och via [data prep](../../../data-prep/functions.md#hashing). |
+| E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Experience Platform erbjuder två metoder som stöder hashning vid datainsamling, via [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support) och via [data prep](../../../data-prep/functions.md#hashing). |
 | Telefon (SHA256_E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas med formaten SHA256 och E.164. |
 | ECID | Ett namnutrymme som representerar ett Experience Cloud ID-värde (ECID). Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Mer information finns i [ECID-översikten](../../../identity-service/features/ecid.md). |
 | Apple IDFA (ID för annonsörer) | Ett namnutrymme som representerar Apple ID för annonsörer. Mer information finns i följande dokument om [intressebaserade annonser](https://support.apple.com/en-us/HT202074). |
