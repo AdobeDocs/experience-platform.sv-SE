@@ -105,7 +105,7 @@ Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnu
 
 Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram.
 
->[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3432348?captions=swe&quality=12&learn=on)
 
 ## Förstå identitetstjänstens roll i Experience Platform infrastruktur
 
