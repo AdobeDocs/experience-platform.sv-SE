@@ -58,13 +58,13 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 >id="platform_datasets_orchestratedCampaigns_toggle"
 >title="Samordnade kampanjer"
 >abstract="Aktivera det här alternativet om du vill tillåta att den valda datauppsättningen används i Adobe Journey Optimizer Orchestrated-kampanjer. Datauppsättningen måste använda ett relationsschema och endast en datauppsättning kan skapas per schema."
->additional-url="https://experienceleague.adobe.com/en/docs/journey-optimizer/using/campaigns/orchestrated-campaigns/data-configuration/schemas-datasets/manual-schema#enable" text="Aktivera datauppsättning för orkestrerade kampanjer"
+>additional-url="https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/campaigns/orchestrated-campaigns/data-configuration/schemas-datasets/manual-schema#enable" text="Aktivera datauppsättning för orkestrerade kampanjer"
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_enableforlookup_toggle"
 >title="Aktivera för sökning"
 >abstract="Aktivera den här datauppsättningen för sökning för att använda data i Journey Optimizer för personalisering, beslutsfattande och resesamordning."
->additional-url="https://experienceleague.adobe.com/en/docs/journey-optimizer/using/data-management/lookup-aep-data" text="Använd Adobe Experience Platform-data i Journey Optimizer"
+>additional-url="https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/data-management/lookup-aep-data" text="Använd Adobe Experience Platform-data i Journey Optimizer"
 
 I användargränssnittet för [!DNL Experience Platform] väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna kontrollpanelen för **[!UICONTROL Datasets]**. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 

@@ -15,7 +15,7 @@ Egenskapen `thirdPartyCookiesEnabled` är en boolesk egenskap som avgör om Web 
 
 Egenskapen `thirdPartyCookiesEnabled` styr också om [`CORE ID`](/help/collection/use-cases/identity/id-overview.md#tracking-coreid-web-sdk) kan begäras för [`getIdentity`](../getidentity.md) anrop.
 
-När det här alternativet är aktiverat använder SDK Adobe Audience Manager för att identifiera besökare. När det här alternativet är inaktiverat inaktiveras anropet till Audience Manager. Mer information finns i [Förstå anrop till Demdex-domänen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/demdex-calls.html) i användarhandboken för Audience Manager.
+När det här alternativet är aktiverat använder SDK Adobe Audience Manager för att identifiera besökare. När det här alternativet är inaktiverat inaktiveras anropet till Audience Manager. Mer information finns i [Förstå anrop till Demdex-domänen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/demdex-calls.html?lang=sv-SE) i användarhandboken för Audience Manager.
 
 Ange det booleska värdet `thirdPartyCookiesEnabled` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar Web SDK blir standardvärdet `true`. Ange det här värdet till `false` om du inte vill att Web SDK ska använda Audience Manager för att identifiera besökare.
 

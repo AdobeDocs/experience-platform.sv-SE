@@ -229,7 +229,7 @@ Målgruppsdefinitioner sprids till Edge Network på upp till en timme. Men om en
 ### Var kan jag se de aktiverade attributen i Adobe Target?
 
 +++Svar
-Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html).
+Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=sv-SE) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=sv-SE).
 +++
 
 ### Kan jag skapa ett mål utan ett datastream och sedan lägga till ett datastream till samma mål vid en senare tidpunkt?
@@ -265,7 +265,7 @@ Ja. [Datastyrnings- och sambandsprinciper](../data-governance/home.md) som skapa
 ### Är [!DNL Adobe Target] och [!DNL Custom Personalization] mål [!DNL HIPAA]-kompatibla?
 
 +++Svar
-[!DNL Adobe Target] är inte [!DNL HIPPA]-kompatibel med [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/solutions/industries/healthcare.html). Kunderna bör kontrollera med sina egna juridiska team vad gäller [!DNL HIPPA]-beredskap för anpassade optimeringskanaler innan de använder kantanpassning via [!DNL Adobe Target] eller [!DNL Custom Personalization]-destinationer.
+[!DNL Adobe Target] är inte [!DNL HIPPA]-kompatibel med [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/se/solutions/industries/healthcare.html). Kunderna bör kontrollera med sina egna juridiska team vad gäller [!DNL HIPPA]-beredskap för anpassade optimeringskanaler innan de använder kantanpassning via [!DNL Adobe Target] eller [!DNL Custom Personalization]-destinationer.
 
 För användningsfall där hantering av medgivandeprinciper måste tillämpas i stor skala måste kunderna köpa [!DNL Adobe Privacy & Security Shield]. [!DNL Adobe Privacy & Security Shield] funktioner säljs som en avancerad uppsättning funktioner och kan inte köpas separat.
 

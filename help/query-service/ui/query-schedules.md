@@ -25,8 +25,8 @@ Mer information om hur du konfigurerar tekniska konton och tilldelar de behörig
 
 Mer information om hur du skapar och konfigurerar ett tekniskt konto finns i:
 
-- [Developer Console-konfiguration](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman): Steg-för-steg-instruktioner för hur du konfigurerar Adobe Developer Console och hämtar OAuth-autentiseringsuppgifter.
-- [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup): En omfattande genomgång för att skapa och konfigurera ett tekniskt konto i Adobe Experience Platform.
+- [Developer Console-konfiguration](https://experienceleague.adobe.com/sv/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman): Steg-för-steg-instruktioner för hur du konfigurerar Adobe Developer Console och hämtar OAuth-autentiseringsuppgifter.
+- [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/sv/docs/platform-learn/tutorial-comprehensive-technical/setup): En omfattande genomgång för att skapa och konfigurera ett tekniskt konto i Adobe Experience Platform.
 
 Om du bara använder gränssnittet för frågetjänsten måste du se till att du har nödvändig behörighet eller koordinat med en administratör som hanterar tekniska konton. Alla schemalagda frågor läggs till i listan på fliken [!UICONTROL Scheduled queries], där du kan övervaka status, schemainformation och felmeddelanden för alla schemalagda frågejobb samt prenumerera på aviseringar. Mer information om övervakning och hantering av frågor finns i dokumentet [Övervaka schemalagda frågor](./monitor-queries.md).
 

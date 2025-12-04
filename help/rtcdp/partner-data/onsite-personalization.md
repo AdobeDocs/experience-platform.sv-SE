@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
+>Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/se/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Lär dig hur du kan använda partnerstödd igenkänning för att leverera personaliserade upplevelser till besökare på era webbegenskaper. Använd den här självstudiekursen för att förstå implementeringssekvensen för olika element i Experience Platform och andra Experience Cloud-lösningar för att visa en personaliserad upplevelse för autentiserade och oautentiserade besökare.
 
@@ -73,7 +73,7 @@ Se videosjälvstudiekursen nedan för en genomgång av hur ni personaliserar web
 1. Som **kund** licensierar du från **datapartnern** möjligheten att hämta insikter i realtid om annars anonyma webbplatsbesökare.
 2. Som **kund** distribuerar du bibliotek på klientsidan på dina egenskaper för att anropa **partner** API:er och du konfigurerar Web SDK eller Mobile SDK för att skicka partnerskickade signaler till Real-Time CDP.
 3. När du surfar på din webbplats eller i din app identifieras **besökaren** troligtvis av **partnern** som returnerar attribut tillsammans med ett ID.
-4. Real-Time CDP kör kantsegmentering för att utvärdera inkommande händelseträffar och kvarstår resultat mot [ECID-identifieraren](https://experienceleague.adobe.com/docs/id-service/using/home.html).
+4. Real-Time CDP kör kantsegmentering för att utvärdera inkommande händelseträffar och kvarstår resultat mot [ECID-identifieraren](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE).
 5. Adobe Target använder kantsegmenteringsutdata för att återge upplevelsen till **besökaren** för anpassning under sessionen.
 6. Händelsen bevaras i sin helhet för arbetsflöden längre fram i kedjan, som analys och återmarknadsföring.
 
@@ -157,7 +157,7 @@ Fyll i obligatoriska fält och välj **[!UICONTROL Save]**.
 
 ![Fyll i obligatoriska fält för den nya egenskapen.](/help/rtcdp/assets/partner-data/onsite-personalization/tag-property-fields.png)
 
-Få fullständig information om hur du [skapar en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html).
+Få fullständig information om hur du [skapar en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html?lang=sv-SE).
 
 Därefter måste du installera olika tillägg i egenskapen. Välj taggegenskapen och navigera till avsnittet [!UICONTROL Extensions].
 
@@ -175,7 +175,7 @@ Observera att den här självstudiekursen visar hur du kan instrumentera din web
 
 Gå ned till avsnittet **[!UICONTROL Datastreams]** på skärmen för att konfigurera Web SDK och ange information om den Experience Platform-sandlåda som du använder. Välj lämplig sandlåda och den datastam som skapades i föregående steg i nästa listruta. Du kan välja samma sandbox- och datastream-värden för alla andra miljöer. Ändra inte de andra inställningarna och välj **[!UICONTROL Save]**.
 
-Få fullständig information om [hur du installerar Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/tags-configuration/install-web-sdk.html).
+Få fullständig information om [hur du installerar Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/tags-configuration/install-web-sdk.html?lang=sv-SE).
 
 #### Installera ID-tjänsttillägg
 

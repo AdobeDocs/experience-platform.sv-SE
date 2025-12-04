@@ -61,7 +61,7 @@ Se tabellen nedan för att förstå när datainsamling sker och när cookies st�
 | `out` | `out` | Nej | Ja |
 | `out` | Ej angiven | Nej | Nej |
 
-Se [Adobe Experience Platform Web SDK-cookies](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk) för en lista över cookies som biblioteket anger.
+Se [Adobe Experience Platform Web SDK-cookies](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/cookies/web-sdk) för en lista över cookies som biblioteket anger.
 
 >[!NOTE]
 >
