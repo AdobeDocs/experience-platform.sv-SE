@@ -2,9 +2,9 @@
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: ae0c626eaad66f663c9d97137087b2cca24d747e
+source-git-commit: 5520e449b4cbe45eb9664ce3c913dd5d544e088c
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1603'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 >   - Med den här behörigheten kan du **visa** kapaciteten hemma.
 >- **Hantera sandlådor**
 >   - Med den här behörigheten kan du **redigera** dina kapacitetstilldelningar.
->   - Du **måste** dessutom tilldelas åtkomst till alla sandlådor som du vill redigera kapacitetsallokeringarna för.
+>   - Du **måste** dessutom tilldelas åtkomst till alla sandlådor för att kunna redigera **valfri** sandlådekapacitet.
 >
 >Mer information om behörigheter i Experience Platform finns i [åtkomstkontrollsöversikten](/help/access-control/home.md#permissions)
 >
@@ -58,7 +58,7 @@ Inom dessa tjänster spåras följande skyddsräcken:
    - Av dessa 500 direktuppspelade målgrupper är det maximala antalet kantmålgrupper 150
 - Den initiala kombinerade genomströmningen för direktuppspelning är 1 500 poster per sekund (rps)
    - Detta kombinerade strömmande dataflöde mäter de kombinerade topphändelserna för inkommande trafik per sekund för strömning till kundprofilen i realtid i era produktions- och utvecklingssandlådor.
-   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 Målgruppskapaciteten är på en **sandbox**-nivå. Det innebär att ni för varje sandlåda ni har i organisationen kan ha 500 direktuppspelade målgrupper, varav 150 av dessa kan vara gränspubliken.
 
@@ -175,7 +175,7 @@ Dessutom kan ni titta på era dataflöden och se om ni kan optimera er datastrat
 
 I följande video visas en översikt över kapacitet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475277/?captions=swe&learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
 
 ## Vanliga frågor och svar {#faq}
 

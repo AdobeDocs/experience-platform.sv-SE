@@ -2,7 +2,7 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig målserverkonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målserverkonfiguration
 exl-id: 579d2cc1-5110-4fba-9dcc-ff4b8d259827
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e1dd6ae9bf28014e8e84de85bdf67707744ea0ad
 workflow-type: tm+mt
 source-wordcount: '1103'
 ht-degree: 2%
@@ -105,7 +105,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målserverkonfigurationen.
 
@@ -213,7 +213,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målserverkonfigurationen.
 
@@ -238,7 +238,11 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
       "rootDirectory":{
          "templatingStrategy":"PEBBLE_V1",
          "value":"{{customerData.rootDirectory}}"
-      }, 
+      },
+      "hostName":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{{customerData.hostName}}"
+      },
       "port": 22,
       "encryptionMode" : "PGP"
    },
@@ -308,7 +312,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_SFTP` för [!DNL SFTP] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL SFTP] för `FILE_BASED_SFTP` mål. |
 | `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedSFTPDestination.rootDirectory.value` | Sträng | Mållagringens rotkatalog. |
 | `fileBasedSFTPDestination.hostName.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
@@ -321,7 +325,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målserverkonfigurationen.
 
@@ -414,7 +418,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_ADLS_GEN2` för [!DNL Azure Data Lake Storage] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Azure Data Lake Storage] för `FILE_BASED_ADLS_GEN2` mål. |
 | `fileBasedAdlsGen2Destination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedAdlsGen2Destination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
 | `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
@@ -423,7 +427,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målserverkonfigurationen.
 
@@ -520,7 +524,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_AZURE_BLOB` för [!DNL Azure Blob Storage] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Azure Blob Storage] för `FILE_BASED_AZURE_BLOB` mål. |
 | `fileBasedAzureBlobDestination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedAzureBlobDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
 | `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
@@ -531,7 +535,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målserverkonfigurationen.
 
@@ -557,7 +561,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
          "templatingStrategy":"PEBBLE_V1",
          "value":"{{customerData.path}}"
       },
-      "useCase": "Your use case"
+      "useCase": "dlz_destination"
    },
    "fileConfigurations": {
         "compression": {
@@ -625,7 +629,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_DLZ` för [!DNL Data Landing Zone] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Data Landing Zone] för `FILE_BASED_DLZ` mål. |
 | `fileBasedDlzDestination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedDlzDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
 | `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
@@ -634,7 +638,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målserverkonfigurationen.
 
@@ -731,7 +735,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_GOOGLE_CLOUD` för [!DNL Google Cloud Storage] mål. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till [!DNL Google Cloud Storage] för `FILE_BASED_GOOGLE_CLOUD` mål. |
 | `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedGoogleCloudStorageDestination.bucket.value` | Sträng | Namnet på den [!DNL Google Cloud Storage]-bucket som ska användas av det här målet. |
 | `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
@@ -742,7 +746,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målserverkonfigurationen.
 
