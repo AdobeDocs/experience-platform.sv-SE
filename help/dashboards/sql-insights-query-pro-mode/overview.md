@@ -2,9 +2,9 @@
 title: SQL Insights for Extended App Reporting
 description: Lär dig hur du använder SQL-frågor för att generera insikter för dina anpassade instrumentpaneler.
 exl-id: c60a9218-4ac0-4638-833b-bdbded36ddf5
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '1446'
+source-wordcount: '1445'
 ht-degree: 0%
 
 ---
@@ -121,7 +121,7 @@ Mer information om sortering, storleksändring av kolumner och sidnumreringsfunk
 
 ## Widget-egenskaper {#properties}
 
-Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet **[!UICONTROL Widget title]** på panelen [!UICONTROL Properties]. Du kan också byta namn på olika aspekter av diagrammet.
+Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet [!UICONTROL Properties] på panelen **[!UICONTROL Widget title]**. Du kan också byta namn på olika aspekter av diagrammet.
 
 >[!NOTE]
 >

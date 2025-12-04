@@ -3,7 +3,7 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Vanliga frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '1670'
 ht-degree: 0%
@@ -150,7 +150,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 ### Kan jag skapa flera Facebook-mål i Experience Platform-gränssnittet för separata Facebook-konton?
 
 +++Svar
-Ja. Ett Facebook-mål i Experience Platform är 1:1 till ett annonskonto i Facebook. Du kan skapa en separat Facebook-destination för varje Facebook-annonskonto i ditt företag. Följ självstudiekursen [för målanslutning](/help/destinations/ui/connect-destination.md) och anslut till ett separat Facebook-konto för varje nytt Facebook-mål i Experience Platform-gränssnittet. Det finns ingen gräns för hur många Facebook-annonskonton du kan ansluta till.
+Ja. Ett Facebook-mål i Experience Platform är :1 till ett annonskonto i Facebook. Du kan skapa en separat Facebook-destination för varje Facebook-annonskonto i ditt företag. Följ självstudiekursen [för målanslutning](/help/destinations/ui/connect-destination.md) och anslut till ett separat Facebook-konto för varje nytt Facebook-mål i Experience Platform-gränssnittet. Det finns ingen gräns för hur många Facebook-annonskonton du kan ansluta till.
 +++
 
 ## Google kundmatchning {#google-customer-match}
@@ -197,11 +197,11 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 ### Måste jag använda Experience Platform Web SDK för att skicka målgrupper och attribut till Adobe Target?
 
 +++Svar
-Nej, [Web SDK](../web-sdk/home.md) krävs inte för att aktivera målgrupper för [Adobe Target](catalog/personalization/adobe-target-connection.md).
+Nej, det krävs inte att Web SDK aktiverar målgrupper för [Adobe Target](catalog/personalization/adobe-target-connection.md).
 
-Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=sv-SE) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
+Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
 
-Om du vill använda [samma sida och nästa sida &#x200B;](ui/activate-edge-personalization-destinations.md) måste du antingen använda [Web SDK](../web-sdk/home.md) eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) . Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
+För [anpassning av hela och nästa sida](ui/activate-edge-personalization-destinations.md) måste du använda antingen Web SDK eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/). Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
 +++
 
 ### Finns det någon gräns för hur många attribut jag kan skicka från kunddataplattformen i realtid till Adobe Target eller en anpassad Personalization-destination?
@@ -223,13 +223,13 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 ### När jag har skapat en målgrupp i Experience Platform, hur lång tid tar det för den målgruppen att bli tillgänglig för användning av kantsegmentering?
 
 +++Svar
-Målgruppsdefinitioner sprids till [Edge Network](../web-sdk/home.md) på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som är kvalificerade för målgruppen missas.
+Målgruppsdefinitioner sprids till Edge Network på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som är kvalificerade för målgruppen missas.
 +++
 
 ### Var kan jag se de aktiverade attributen i Adobe Target?
 
 +++Svar
-Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=sv-SE) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=sv-SE).
+Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html).
 +++
 
 ### Kan jag skapa ett mål utan ett datastream och sedan lägga till ett datastream till samma mål vid en senare tidpunkt?
@@ -265,13 +265,13 @@ Ja. [Datastyrnings- och sambandsprinciper](../data-governance/home.md) som skapa
 ### Är [!DNL Adobe Target] och [!DNL Custom Personalization] mål [!DNL HIPAA]-kompatibla?
 
 +++Svar
-[!DNL Adobe Target] är inte [!DNL HIPPA]-kompatibel med [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/se/solutions/industries/healthcare.html). Kunderna bör kontrollera med sina egna juridiska team vad gäller [!DNL HIPPA]-beredskap för anpassade optimeringskanaler innan de använder kantanpassning via [!DNL Adobe Target] eller [!DNL Custom Personalization]-destinationer.
+[!DNL Adobe Target] är inte [!DNL HIPPA]-kompatibel med [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/solutions/industries/healthcare.html). Kunderna bör kontrollera med sina egna juridiska team vad gäller [!DNL HIPPA]-beredskap för anpassade optimeringskanaler innan de använder kantanpassning via [!DNL Adobe Target] eller [!DNL Custom Personalization]-destinationer.
 
 För användningsfall där hantering av medgivandeprinciper måste tillämpas i stor skala måste kunderna köpa [!DNL Adobe Privacy & Security Shield]. [!DNL Adobe Privacy & Security Shield] funktioner säljs som en avancerad uppsättning funktioner och kan inte köpas separat.
 
 Den här tjänsten innehåller kundhanterade nycklar och förhöjda tröskelvärden för hantering av kundens datalängd.
 
-Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten &#x200B;](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
+Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten ](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
 
 
 

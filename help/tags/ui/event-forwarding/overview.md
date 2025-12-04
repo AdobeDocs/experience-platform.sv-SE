@@ -3,7 +3,7 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Experience Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 88995c933bf067fe3d077d1be8b92b076e461707
 workflow-type: tm+mt
 source-wordcount: '1181'
 ht-degree: 6%
@@ -24,13 +24,13 @@ Med händelsevidarebefordran i Adobe Experience Platform kan du skicka insamlade
 
 Det här dokumentet innehåller en översikt över vidarebefordran av händelser i Experience Platform.
 
-![Vidarebefordran av händelser i datainsamlingens ekosystem.](../../../collection/images/home/event-forwarding.png)
+![Vidarebefordran av händelser i datainsamlingens ekosystem.](/help/collection/assets/event-forwarding.png)
 
 >[!NOTE]
 >
->Information om hur händelsevidarebefordran passar in i datainsamlingens ekosystem i Experience Platform finns i [datainsamlingsöversikten](../../../collection/home.md).
+>Information om hur händelsevidarebefordran passar in i datainsamlingens ekosystem i Experience Platform finns i [datainsamlingsöversikten](/help/collection/home.md).
 
-Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/web-sdk/home.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html?lang=sv-SE) ger följande fördelar:
+Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/collection/js/js-overview.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) ger följande fördelar:
 
 **Prestanda**:
 
@@ -89,7 +89,7 @@ Du kan visa ytterligare tillgängliga resurser om du vill veta mer om den här f
 
 ### Regler {#rules}
 
-Att skapa regler i egenskaper för händelsevidarebefordran fungerar på ungefär samma sätt som taggar, med den största skillnaden är att du inte kan välja händelser som regelkomponenter. I stället bearbetar en regel för vidarebefordran av händelser alla händelser som tas emot från [datastream](../../../datastreams/overview.md) och vidarebefordrar dessa händelser till mål om vissa villkor uppfylls.
+Att skapa regler i egenskaper för händelsevidarebefordran fungerar på ungefär samma sätt som taggar, med den största skillnaden är att du inte kan välja händelser som regelkomponenter. I stället bearbetar en regel för vidarebefordran av händelser alla händelser som tas emot från [datastream](/help/datastreams/overview.md) och vidarebefordrar dessa händelser till mål om vissa villkor uppfylls.
 
 Dessutom finns det en 30-sekunderstimeout som gäller för en enskild händelse när den bearbetas över alla regler (och därmed alla åtgärder) i en händelsevidarebefordringsegenskap. Det innebär att alla regler och alla åtgärder för en enskild händelse måste slutföras i den här tidsramen.
 

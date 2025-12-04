@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform september 2022
 description: Versionsinformationen för Adobe Experience Platform från september 2022.
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 217282135bcd750740f4d3f8c6e17a0b8f9578bd
 workflow-type: tm+mt
 source-wordcount: '2723'
-ht-degree: 20%
+ht-degree: 23%
 
 ---
 
@@ -37,7 +37,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika Experience Platform-användare i organisationen.
 
-Med attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till, känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla Experience Platform arbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla Experience Platform-arbetsflöden och -resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 | Funktion | Beskrivning |
 | --- | --- |
@@ -110,8 +110,8 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 | Integrering av vänster navigering i Experience Platform UI | Alla funktioner som tidigare var exklusiva för användargränssnittet för datainsamling (inklusive taggar, vidarebefordran av händelser och datastreams) är nu även tillgängliga via den vänstra navigeringen i Experience Platform, under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när du arbetar med datainsamlingsfunktioner i Experience Platform. |
 | Användarattribuering i taggar och händelsevidarebefordran | När [!UICONTROL Properties] listas i taggar och händelsevidarebefordran visas nu varje egenskap i listan när den senast uppdaterades och vilken användare som gjorde uppdateringen. |
 | [[!DNL Snap Conversions API] tillägg](https://exchange.adobe.com/apps/ec/108550) för händelsevidarebefordran | Du kan nu skicka data till [!DNL Snapchat Conversions API] med ett [vidarebefordringstillägg](../../tags/ui/event-forwarding/overview.md). Mer information om hur du autentiserar dig och använder API:et finns i [[!DNL Snapchat Marketing API] dokumentationen](https://marketingapi.snapchat.com/docs/conversion.html). |
-| [Klienttips för användaragent i Web SDK](/help/web-sdk/use-cases/client-hints.md) | Web SDK har nu stöd för [klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i strängen [!DNL User-Agent], men på ett mer sekretessbeständigt sätt. |
-| [Migrering sida vid sida för SDK på webben](../../web-sdk/home.md#migrating-to-web-sdk) | Du kan nu migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, som [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av migrering av SDK på webben, utan att du behöver migrera alla sidor samtidigt. |
+| [Klienttips för användaragent i Web SDK](/help/collection/use-cases/client-hints.md) | Web SDK har nu stöd för [klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i strängen [!DNL User-Agent], men på ett mer sekretessbeständigt sätt. |
+| Migrera sida vid sida för SDK på webben | Du kan nu migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, som [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av migrering av SDK på webben, utan att du behöver migrera alla sidor samtidigt. |
 | [[!DNL Adobe Journey Optimizer] stöd för datastreams](../../datastreams/overview.md#aep) | Adobe Experience Platform-tjänsten för datastreams stöder nu [!DNL Adobe Journey Optimizer]. Med det här alternativet kan du använda webb- och appbaserade inkommande kanaler i [!DNL Adobe Journey Optimizer]. |
 
 {style="table-layout:auto"}
@@ -130,11 +130,11 @@ Mer information om datainsamling i Experience Platform finns i [datainsamlingsö
 
 {style="table-layout:auto"}
 
-**Nya eller uppdaterade mål**
+**Nya eller uppdaterade destinationer**
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
-| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med kampanj](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html?lang=sv-SE). Observera att den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=sv-SE#release-8-4-1). |
+| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med kampanj](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). Observera att den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html#release-8-4-1). |
 | [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | Målet [!DNL Salesforce CRM] har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |
 
 {style="table-layout:auto"}
@@ -161,10 +161,10 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
-| Fältgrupp | [[!UICONTROL AJO Classification Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | Egenskaper för ett specifikt element som interagerades och som orsakade att proposition-händelsen utlöstes. |
-| Fältgrupp | [[!UICONTROL MediaAnalytics Interaction Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-media-analytics.schema.json) | Spåra medieinteraktioner över tid. |
-| Fältgrupp | [[!UICONTROL Media details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | Information om medieinformation spåras. |
-| Fältgrupp | [[!UICONTROL Adobe CJM ExperienceEvent - Surfaces]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | Beskriver ytor för Experience Events i Adobe Journey Optimizer. |
+| Fältgrupper | [[!UICONTROL AJO Classification Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | Egenskaper för ett specifikt element som interagerades och som orsakade att proposition-händelsen utlöstes. |
+| Fältgrupper | [[!UICONTROL MediaAnalytics Interaction Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-media-analytics.schema.json) | Spåra medieinteraktioner över tid. |
+| Fältgrupper | [[!UICONTROL Media details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | Information om medieinformation spåras. |
+| Fältgrupper | [[!UICONTROL Adobe CJM ExperienceEvent - Surfaces]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | Beskriver ytor för Experience Events i Adobe Journey Optimizer. |
 
 {style="table-layout:auto"}
 
@@ -173,12 +173,12 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
 | Beteende | [[!UICONTROL Time series]](https://github.com/adobe/xdm/blob/master/components/behaviors/time-series.schema.json) | <ul><li>Tillagda värden för `eventType`:<ul><li>`decisioning.propositionSend`</li><li>`decisioning.propositionDismiss`</li><li>`decisioning.propositionTrigger`</li><li>`media.downloaded`</li><li>`location.entry`</li><li>`location.exit`</li></ul></li><li>Värden för `eventType` har tagits bort:<ul><li>`decisioning.propositionDeliver`</li><li>`media.stateStart`</li><li>`media.stateEnd`</li></ul></li></ul> |
-| Fältgrupp | (Flera) | [Uppdaterade flera fältbeskrivningar](https://github.com/adobe/xdm/pull/1628/files) för alla Journey Orchestration-komponenter. |
-| Fältgrupp | (Flera) | [Titlarna för flera Adobe Workfront-komponenter har uppdaterats](https://github.com/adobe/xdm/pull/1634/files) för att vara konsekventa. |
-| Fältgrupp | [[!UICONTROL AJO Classification Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | Namnområdena för flera fält har uppdaterats till `xdm`. |
-| Fältgrupp | [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | Ett nytt fält har lagts till, `isReadSegmentTriggerStartEvent`. |
-| Fältgrupp | [[!UICONTROL Forecasted Weathers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/forecasted-weather.schema.json) | Fältet `xdm:uvIndex` har ändrats till en heltalstyp och namnutrymmet `xdm` har lagts till i flera fält där det saknades. |
-| Fältgrupp | [[!UICONTROL Media details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | `xdm:endUserIDs` och `xdm:implementationDetails` har tagits bort från fältgruppen. |
+| Fältgrupper | (Flera) | [Uppdaterade flera fältbeskrivningar](https://github.com/adobe/xdm/pull/1628/files) för alla Journey Orchestration-komponenter. |
+| Fältgrupper | (Flera) | [Titlarna för flera Adobe Workfront-komponenter har uppdaterats](https://github.com/adobe/xdm/pull/1634/files) för att vara konsekventa. |
+| Fältgrupper | [[!UICONTROL AJO Classification Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | Namnområdena för flera fält har uppdaterats till `xdm`. |
+| Fältgrupper | [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | Ett nytt fält har lagts till, `isReadSegmentTriggerStartEvent`. |
+| Fältgrupper | [[!UICONTROL Forecasted Weathers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/forecasted-weather.schema.json) | Fältet `xdm:uvIndex` har ändrats till en heltalstyp och namnutrymmet `xdm` har lagts till i flera fält där det saknades. |
+| Fältgrupper | [[!UICONTROL Media details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | `xdm:endUserIDs` och `xdm:implementationDetails` har tagits bort från fältgruppen. |
 | Datatyp | (Flera) | [Uppdaterade flera mediaegenskapsnamn](https://github.com/adobe/xdm/pull/1626/files) för flera datatyper, vilket ger enhetlighet. |
 | Datatyp | [[!UICONTROL Implementation details]](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json) | Okända namn för fladder har lagts till. |
 | Datatyp | [[!UICONTROL Point of interest details]](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-detail.schema.json) | Datatypen kan nu acceptera en lista med metadatanyckelvärdepar som är associerade med den aktuella punkten. |
@@ -190,7 +190,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [Systemöversikten över XDM](../../xdm/home.md).
 
 ## Identitetstjänst {#identity-service}
 

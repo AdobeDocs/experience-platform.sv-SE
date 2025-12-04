@@ -7,7 +7,7 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '1251'
 ht-degree: 4%
@@ -18,7 +18,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >  
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html?lang=sv-SE) för en konsoliderad referens av terminologiändringarna.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html) för en konsoliderad referens av terminologiändringarna.
 
 Mailchimp-tillägget [för händelsevidarebefordran](../../../ui/event-forwarding/overview.md) skickar händelser till Mailchimp Marketing API som kan utlösa e-postmeddelanden för marknadsföringskampanjer, resor eller transaktioner för Mailchimp.
 
@@ -105,7 +105,7 @@ Tillägget är nu installerat och konfigurerat för att användas i din egenskap
 
 När du använder det här tillägget i en [regel](../../../ui/managing-resources/rules.md) finns det flera datavärden som tillägget skickar till Mailchimp för varje händelse. För en typisk implementering kan du konfigurera [Adobe Experience Platform Web SDK-tillägget](../../client/web-sdk/overview.md) så att data skickas till [!DNL Experience Platform Edge Network] för att användas av tillägget i egenskapen för händelsevidarebefordran.
 
-De data som krävs för det här tillägget kan skickas från Web SDK som antingen XDM-data (med objektet [`xdm`](/help/web-sdk/commands/sendevent/xdm.md)) eller data som inte är XDM (med objektet [`data`](/help/web-sdk/commands/sendevent/data.md)).
+De data som krävs för det här tillägget kan skickas från Web SDK som antingen XDM-data (med objektet [`xdm`](/help/collection/js/commands/sendevent/xdm.md)) eller data som inte är XDM (med objektet [`data`](/help/collection/js/commands/sendevent/data.md)).
 
 Om en kund till exempel gör ett köp eller registrerar sig för en händelse på din webbplats, kan du skicka ett bekräftelsemeddelande via Mailchimp med det här tillägget. När du har skickat den obligatoriska informationen från Web SDK till Edge Network utlöser tillägget e-postmeddelandet med Mailchimp.
 

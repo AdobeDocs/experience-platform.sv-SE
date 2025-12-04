@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformationen för Adobe Experience Platform från april 2023.
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: 2e41a1716e057cd33e4635c11ba9c3cfc185418a
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '1983'
 ht-degree: 30%
@@ -52,7 +52,7 @@ Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och 
 | Funktion | Beskrivning |
 | --- | --- |
 | Uppdateringar av bakåtfyllnadsperiod för Adobe Analytics i icke-produktionssandlådor | Förifyllningsperioden för Adobe Analytics i icke-produktionssandlådor har reducerats till tre månader. Backfill för produktionssandlådor är desamma vid 13 månader. Den här ändringen gäller endast för nya flöden och påverkar inte befintliga flöden. Mer information finns i [Adobe Analytics-översikten](../../sources/connectors/adobe-applications/analytics.md). |
-| Ny mappningsfunktion som konverterar FPID-strängar till ECID | Använd funktionen `fpid_to_ecid` för att konvertera FPID-strängar till ECID för användning i Experience Platform- och Experience Cloud-program. Mer information finns i handboken [Dataförberedelser &#x200B;](../../data-prep/functions.md). |
+| Ny mappningsfunktion som konverterar FPID-strängar till ECID | Använd funktionen `fpid_to_ecid` för att konvertera FPID-strängar till ECID för användning i Experience Platform- och Experience Cloud-program. Mer information finns i handboken [Dataförberedelser ](../../data-prep/functions.md). |
 
 {style="table-layout:auto"}
 
@@ -67,9 +67,9 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 | Funktion | Beskrivning |
 | --- | --- |
 | IP-adressofuscation för datastreams | Nu kan du definiera IP-obfusionsalternativ på partiell eller fullständig datastream-nivå i [datastream-konfigurationens gränssnitt](../../datastreams/configure.md). <br><br>Inställningen för IP-obfusacering på datastream-nivå har företräde framför IP-ofuscation som har konfigurerats i Adobe Target och Audience Manager. <br><br>Data som skickas till Adobe Analytics påverkas inte av inställningen [!UICONTROL IP Obfuscation] på datastream-nivå. Adobe Analytics får för närvarande oantastade IP-adresser. För att Analytics ska kunna ta emot dolda IP-adresser måste du konfigurera IP-förfalskning separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner.<br><br> Mer information om IP-förfalskning och instruktioner om hur du konfigurerar det finns i [dokumentationen för datastream-konfigurationen](../../datastreams/configure.md#advanced-options). |
-| [Åsidosättningar av dataströmskonfiguration](../../datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Åsidosättning av datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av datastream-konfigurationen på [datastreams konfigurationssida](../../datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller med hjälp av Web SDK [taggtillägg](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).</li></ol> |
-| OAuth JWT Secret | Med [OAuth JWT-hemlighet](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=sv-SE) kan kunder använda Adobe- och Google Service-tokens för att ge stöd för server-till-server-interaktioner vid händelsevidarebefordran. |
-| [!DNL Pinterest Conversions API]-tillägg | Med tillägget [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html?lang=sv-SE) för vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL Pinterest] i form av händelser på serversidan med hjälp av [!DNL Pinterest Conversions API]. |
+| [Åsidosättningar av dataströmskonfiguration](../../datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Åsidosättning av datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av datastream-konfigurationen på [datastreams konfigurationssida](../../datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller med hjälp av Web SDK [taggtillägg](/help/tags/extensions/client/web-sdk/configure/configuration-overrides.md).</li></ol> |
+| OAuth JWT Secret | Med [OAuth JWT-hemlighet](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html) kan kunder använda Adobe- och Google Service-tokens för att ge stöd för server-till-server-interaktioner vid händelsevidarebefordran. |
+| [!DNL Pinterest Conversions API]-tillägg | Med tillägget [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) för vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL Pinterest] i form av händelser på serversidan med hjälp av [!DNL Pinterest Conversions API]. |
 
 {style="table-layout:auto"}
 
@@ -115,7 +115,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Växla visningsnamn | Schemaredigeraren har nu en funktion för att växla mellan de ursprungliga fältnamnen och de mer läsbara visningsnamnen.<br>![Schemaredigeraren med visningsnamnet växlat markerat.](../../xdm/images/ui/resources/schemas/display-name-toggle.png "Växla visningsnamn för Schemaredigeraren"){width="100" zoomable="yes"}<br>Tack vare den här flexibiliteten kan du identifiera och redigera dina scheman. Visningsnamnen för standardfältgrupper genereras av systemet men kan vid behov anpassas via användargränssnittet. Läs [visningsnamnet för att växla dokumentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html?lang=sv-SE#display-name-toggle) om du vill veta mer. |
+| Växla visningsnamn | Schemaredigeraren har nu en funktion för att växla mellan de ursprungliga fältnamnen och de mer läsbara visningsnamnen.<br>![Schemaredigeraren med visningsnamnet växlat markerat.](../../xdm/images/ui/resources/schemas/display-name-toggle.png "Växla visningsnamn för Schemaredigeraren"){width="100" zoomable="yes"}<br>Tack vare den här flexibiliteten kan du identifiera och redigera dina scheman. Visningsnamnen för standardfältgrupper genereras av systemet men kan vid behov anpassas via användargränssnittet. Läs [visningsnamnet för att växla dokumentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle) om du vill veta mer. |
 
 {style="table-layout:auto"}
 
@@ -134,7 +134,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Fältgrupp | [[!UICONTROL Adobe Unified Profile Service Account Union Extension]](https://github.com/adobe/xdm/pull/1696/files) | En fältgrupp för kontotillägg för kundprofil i realtid har lagts till som gör det möjligt för användare att lägga till segmentmedlemskap i en kontounion. |
 | Schema | [[!UICONTROL Computed Attributes System Schema]](https://github.com/adobe/xdm/pull/1696/files) | Fältgruppen Beräknade attribut som används av kundprofilen i realtid har uppdaterats till ett skrivskyddat globalt schema. |
 | Fältgrupp | Flera | Flera händelser har lagts till som fält för [[!UICONTROL Time-series Schema]](https://github.com/adobe/xdm/pull/1718/files). |
-| Fältgrupp | Profilens lojalitetsinformation | [Korrigerade titeln &#x200B;](https://github.com/adobe/xdm/pull/1717/files) för `xdm:upgradeDate` från &quot;Programnamn&quot; till &quot;Uppgraderingsdatum&quot;. |
+| Fältgrupp | Profilens lojalitetsinformation | [Korrigerade titeln ](https://github.com/adobe/xdm/pull/1717/files) för `xdm:upgradeDate` från &quot;Programnamn&quot; till &quot;Uppgraderingsdatum&quot;. |
 | Fältgrupp | Flera | Flera fält från [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1714/files) har uppdaterats för att ta bort den dubbla kapslade hierarkin. |
 
 {style="table-layout:auto"}

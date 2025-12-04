@@ -1,0 +1,36 @@
+---
+title: orgId
+description: Egenskapen orgId är en sträng som talar om för Adobe vilken organisation data skickas till.
+exl-id: 0e04e85a-800c-4927-a165-80a5a578f4c2
+source-git-commit: 2e39a7809049c199d4778a0e17eb9e0f3b1d9775
+workflow-type: tm+mt
+source-wordcount: '177'
+ht-degree: 0%
+
+---
+
+# `orgId`
+
+Egenskapen `orgId` är en sträng som talar om för Adobe vilken organisation data skickas till. **Den här egenskapen krävs för alla data som skickas med Web SDK.**
+
+Så här hittar du din `orgID`:
+
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
+1. Tryck **`[Ctrl]`** + **`[I]`** någonstans i Adobe Experience Cloud. Ett [!UICONTROL User Data Debugger]-fönster öppnas.
+1. Klicka på **[!UICONTROL Copy]** ![Kopiera](../../assets/copy.png) bredvid [!UICONTROL Current Org ID] eller klicka på fliken **[!UICONTROL Assigned Orgs]** för att visa andra organisation-ID som du har åtkomst till.
+1. När du är klar med att hitta den önskade informationen klickar du på **[!UICONTROL Close]**.
+
+Org-ID:n är alltid alfanumeriska strängar med 24 tecken och slutar alltid i `@AdobeOrg`.
+
+Ange strängen `orgId` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar Web SDK genereras ett konsolfel i Web SDK och data skickas inte till Adobe.
+
+```js
+alloy("configure", {
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
+});
+```
+
+## Ange Org-ID med hjälp av taggtillägget Web SDK
+
+Den här inställningen kan konfigureras i taggtillägget för Web SDK med [SDK instanskonfigurationsinställningar](/help/tags/extensions/client/web-sdk/configure/general.md). Fältet fylls i automatiskt baserat på organisationen som taggegenskapen skapades under.

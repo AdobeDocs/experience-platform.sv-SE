@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 7c2afd6d823ebb2db0fabb4cc16ef30bcbfeef13
+source-git-commit: 0b3f4ec51cac182b637c79b9fcb883e5f8f78d02
 workflow-type: tm+mt
-source-wordcount: '2957'
+source-wordcount: '2949'
 ht-degree: 1%
 
 ---
@@ -12,20 +12,20 @@ ht-degree: 1%
 
 # Versionsinformation om SDK-tillägg
 
-Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/web-sdk/release-notes.md).
+Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/collection/js/release-notes.md).
 
 ## Version 2.3.0 - 24 september 2025
 
 **Nya funktioner**
 
-- Stöd för att visa push-meddelanden har lagts till
-- Innehåller [version 2.30.0](../../../../web-sdk/release-notes.md#2-30-0) av Adobe Experience Platform Web SDK.
+- Stöd för att visa push-meddelanden har lagts till.
+- Innehåller [version 2.30.0](/help/collection/js/release-notes.md#2-30-0) av Adobe Experience Platform Web SDK.
 
 ## Version 2.32.0 - 4 september 2025
 
 **Nya funktioner**
 
-- Innehåller [version 2.29.0](../../../../web-sdk/release-notes.md#2-29-0) av Adobe Experience Platform Web SDK.
+- Innehåller [version 2.29.0](/help/collection/js/release-notes.md#2-29-0) av Adobe Experience Platform Web SDK.
 - Stöd för Adobe Advertising har lagts till som en ny anpassad byggkomponent. Konfigurera i tilläggskonfigurationen och i skicka händelseanrop.
 - Stöd för inspelning av push-prenumerationsinformation har lagts till i profilen. Detta görs genom en ny åtgärd,&quot;Push subscription details&quot;
 
@@ -36,13 +36,13 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 ## Version 2.31.1 - 31 juli 2025
 
 - Korrigerade ett problem som förhindrade att anpassade byggen kördes.
-- Innehåller [version 2.28.1](../../../../web-sdk/release-notes.md#2-28-1) av Adobe Experience Platform Web SDK.
+- Innehåller [version 2.28.1](/help/collection/js/release-notes.md#2-28-1) av Adobe Experience Platform Web SDK.
 
 ## Version 2.31.0 - 24 juli 2025
 
 **Nya funktioner**
 
-- Innehåller [version 2.28.0](../../../../web-sdk/release-notes.md#2-28-0) av Adobe Experience Platform Web SDK.
+- Innehåller [version 2.28.0](/help/collection/js/release-notes.md#2-28-0) av Adobe Experience Platform Web SDK.
 
 **Korrigeringar och förbättringar**
 
@@ -52,7 +52,7 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 
 **Kända fel**
 
-- Efter utgåvan av v2.31.0 identifierades ett problem med byggprocessen för [anpassade komponenter](/help/web-sdk/install/create-custom-build.md). Medan anpassade byggen fortsätter att fungera ingår alla komponenter för närvarande i bygget, vilket resulterar i ett paket i full storlek oavsett komponentval. En fix till detta problem håller på att utvecklas. Om du förlitar dig på anpassade komponenter för att minimera byggstorleken rekommenderar vi att du väntar på en framtida version.
+- Efter utgåvan av v2.31.0 identifierades ett problem med byggprocessen för [anpassade komponenter](/help/collection/js/install/create-custom-build.md). Medan anpassade byggen fortsätter att fungera ingår alla komponenter för närvarande i bygget, vilket resulterar i ett paket i full storlek oavsett komponentval. En fix till detta problem håller på att utvecklas. Om du förlitar dig på anpassade komponenter för att minimera byggstorleken rekommenderar vi att du väntar på en framtida version.
 
 ## Version 2.30.1 - 27 maj 2025
 
@@ -66,7 +66,7 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 
 - Du kan nu ange ett dataelement när du aktiverar cookies från tredje part.
 - Töm knappar har lagts till i kodfält.
-- Innehåller [version 2.27.0](../../../../web-sdk/release-notes.md#2-27-0) av Adobe Experience Platform Web SDK.
+- Innehåller [version 2.27.0](/help/collection/js/release-notes.md) av Adobe Experience Platform Web SDK.
 
 **Korrigeringar och förbättringar**
 
@@ -82,13 +82,13 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 
 **Nya funktioner**
 
-- Nu kan du skapa anpassade Web SDK-byggen och välja de komponenter du behöver från taggtilläggets användargränssnitt. Detta kan leda till mindre byggen genom att utesluta oanvända komponenter. Mer information finns i dokumentationen om att [skapa en anpassad SDK-version](web-sdk-extension-configuration.md#custom-build) för webben.
-- Innehåller [version 2.26.0](../../../../web-sdk/release-notes.md#2-26-0) av Adobe Experience Platform Web SDK.
+- Nu kan du skapa anpassade Web SDK-byggen och välja de komponenter du behöver från taggtilläggets användargränssnitt. Detta kan leda till mindre byggen genom att utesluta oanvända komponenter. Se [Anpassade byggkomponenter](configure/custom-build-components.md).
+- Innehåller [version 2.26.0](/help/collection/js/release-notes.md) av Adobe Experience Platform Web SDK.
 
 **Korrigeringar och förbättringar**
 
-- En smidig hantering av saknade dataelement har lagts till i [uppdateringsvariabelåtgärderna](action-types.md#update-variable). Tidigare visades ett felmeddelande när en åtgärd för uppdateringsvariabel redigerades med ett dataelement som saknas. Nu kan du välja ett annat dataelement och alla inställningar för åtgärden för att uppdatera variabel fortfarande tillämpas. Dataelement kan saknas om de tas bort eller om en taggegenskap dupliceras.
-- Stöd har lagts till för att öppna en ny flik med åtgärden [omdirigering med identitet](action-types.md#redirect-with-identity). När åtgärden används används nu attributet `target` för ankartaggen när webbläsaren omdirigeras.
+- En smidig hantering av saknade dataelement har lagts till i [uppdateringsvariabelåtgärderna](actions/update-variable.md). Tidigare visades ett felmeddelande när en åtgärd för uppdateringsvariabel redigerades med ett dataelement som saknas. Nu kan du välja ett annat dataelement och alla inställningar för åtgärden för att uppdatera variabel fortfarande tillämpas. Dataelement kan saknas om de tas bort eller om en taggegenskap dupliceras.
+- Stöd har lagts till för att öppna en ny flik med åtgärden [omdirigering med identitet](actions/redirect-with-identity.md). När åtgärden används används nu attributet `target` för ankartaggen när webbläsaren omdirigeras.
 - Ett problem har korrigerats där Adobe Audience Manager inte kunde inaktiveras vid åsidosättning av konfiguration.
 
 ## Version 2.28.0 - 23 januari 2025
@@ -102,14 +102,14 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 **Nya funktioner**
 
 - En ny funktion har lagts till för att växla mellan tekniska namn och visningsnamn i XDM-objektet.
-- Innehåller [version 2.25.0](../../../../web-sdk/release-notes.md#2-25-0) av Adobe Experience Platform Web SDK.
+- Innehåller [version 2.25.0](/help/collection/js/release-notes.md) av Adobe Experience Platform Web SDK.
 
 ## Version 2.27.0 - 31 oktober 2024
 
 **Nya funktioner**
 
-- [Datastream-åsidosättningar](../web-sdk/web-sdk-extension-configuration.md#datastream-overrides) innehåller nu inställningar för att inaktivera Experience Cloud-lösningar och Adobe Experience Platform-tjänster.
-- Du kan nu skapa [datastream-åsidosättningar](../web-sdk/web-sdk-extension-configuration.md) för mediesessioner.
+- [Konfigurationsåsidosättningar](configure/configuration-overrides.md) innehåller nu inställningar för att inaktivera Experience Cloud-lösningar och Adobe Experience Platform-tjänster.
+- Nu kan du skapa konfigurationsåsidosättningar för mediesessioner.
 
 Innehåller version 2.24.0 av Adobe Experience Platform Web SDK.
 
@@ -126,12 +126,12 @@ Innehåller version 2.23.0 av Adobe Experience Platform Web SDK.
 **Nya funktioner**
 
 - Övervakningspiken `triggered` har lagts till.
-- [Guidade händelser](action-types.md#instance), [Begär standardanpassning](action-types.md#personalization), [Prenumerera regeluppsättningsobjekt](event-types.md#subscribe-ruleset-items) och [utvärdera regeluppsättningar](action-types.md#evaluate-rulesets) är nu allmänt tillgängliga.
+- [Guidade händelser](actions/actions-overview.md), [Begär standardanpassning](configure/personalization.md), [Prenumerera regeluppsättningsobjekt](event-types.md#subscribe-ruleset-items) och [utvärdera regeluppsättningar](actions/evaluate-rulesets.md) är nu allmänt tillgängliga.
 
 **Korrigeringar och förbättringar**
 
 - Korrigerade ett problem där duplicerade variabeldataelement kunde skriva över varandra.
-- När du använder den guidade händelsen [Begär standardanpassning](action-types.md#personalization) aktiveras nu visuella personaliseringsbeslut automatiskt.
+- När du använder den guidade händelsen [Begär standardanpassning](configure/personalization.md) aktiveras nu visuella personaliseringsbeslut automatiskt.
 
 Innehåller version 2.2.0 av Adobe Experience Platform Web SDK.
 
@@ -159,15 +159,15 @@ Innehåller version 2.20.0 av Adobe Experience Platform Web SDK.
 
 **Nya funktioner**
 
-- Stöd för komponenten [`Streaming Media Collection`](web-sdk-extension-configuration.md#streaming-media) har lagts till i tilläggskonfigurationen.
-- [`Send Media Event`](action-types.md#send-media-event)-åtgärden för funktionen [!DNL Streaming Media Collection] har lagts till.
+- Stöd för komponenten [`Streaming Media Collection`](configure/streaming-media.md) har lagts till i tilläggskonfigurationen.
+- [`Send Media Event`](actions/send-media-event.md)-åtgärden för funktionen [!DNL Streaming Media Collection] har lagts till.
 - [`Media: Quality of Experience`](data-element-types.md#quality-experience)-dataelementet har lagts till för [!DNL Streaming Media Collection]-funktionen.
 
 Innehåller version 2.20.0 av Adobe Experience Platform Web SDK.
 
 **Korrigeringar och förbättringar**
 
-- Ett fel som uppstod vid sökning efter dataelement i åtgärden [Uppdatera variabel](action-types.md#update-variable) har korrigerats.
+- Ett fel som uppstod vid sökning efter dataelement i åtgärden [Uppdatera variabel](actions/update-variable.md) har korrigerats.
 - [!UICONTROL Media] händelsetyper har tagits bort från de händelsetyper som föreslås användas i åtgärden `sendEvent`.
 
 ## Version 2.2.0 - 3 maj 2024
@@ -226,7 +226,7 @@ Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 
 **Nya funktioner**
 
-- Stöd har lagts till för [åsidosättningar av datastream-ID:t &#x200B;](../../../../datastreams/overrides.md) per kommando.
+- Stöd har lagts till för [åsidosättningar av datastream-ID:t ](../../../../datastreams/overrides.md) per kommando.
 
 **Korrigeringar och förbättringar**
 
@@ -262,7 +262,7 @@ Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 **Nya funktioner**
 
 - (Beta) **[!UICONTROL Update variable]**-åtgärden och **[!UICONTROL Variable]**-dataelementet har lagts till.
-- Konfigurationen för callback-funktionen [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) har lagts till.
+- Konfigurationen för callback-funktionen [`onBeforeLinkClickSend`](/help/collection/js/commands/configure/onbeforelinkclicksend.md) har lagts till.
 
 **Korrigeringar och förbättringar**
 
@@ -385,10 +385,10 @@ Innehåller version 2.5.0 av Adobe Experience Platform Web SDK Library.
 
 Innehåller version 2.4.0 av Adobe Experience Platform Web SDK Library.
 
-- [&quot;Borttagning av dokument&quot;](/help/web-sdk/commands/sendevent/documentunloading.md) har lagts till i användargränssnittet för åtgärden Skicka händelse.
-- Stöd för ett `out`-alternativ har lagts till när [standardmedgivande](/help/web-sdk/commands/configure/defaultconsent.md) konfigureras, vilket innebär att alla händelser utesluts tills medgivande tas (det befintliga `pending`-alternativet köar händelser och skickar dem när medgivande tas emot).
+- Kryssrutan &#39;Ta bort dokument&#39; har lagts till i åtgärden [Skicka händelse](actions/send-event.md).
+- Stöd för ett `out`-alternativ har lagts till när [standardmedgivande](configure/consent.md) konfigureras, vilket innebär att alla händelser utesluts tills medgivande tas (det befintliga `pending`-alternativet köar händelser och skickar dem när medgivande tas emot).
 - Ett verktygstips har lagts till i standardfältet för samtycke.
-- Stöd för Adobe Consent 2.0-standarden har lagts till när kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) används.
+- Stöd för Adobe Consent 2.0-standarden har lagts till när åtgärden [`Set consent`](actions/set-consent.md) används.
 - Ett bättre fel visas nu i användargränssnittet för XDM-objektets dataelement om användarens åtkomsttoken är ogiltig eller felaktigt etablerad.
 - Korsfel (som inte påverkar tilläggsprogrammets funktion) som visades på webbläsarens utvecklarkonsol när ett XDM-objektdataelement visades har åtgärdats.
 
@@ -413,7 +413,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK Library.
 ## Version 2.1.0 - 5 augusti 2020
 
 - Brytningsändring: Ta bort åtgärden `syncIdentity` och stöd för att skicka dessa ID:n i åtgärden `sendEvent` i stället. Inaktivera alla befintliga regler med den här åtgärden innan du uppgraderar tillägget.
-- Uppdatera till allokering v. 2.1.0 ([Versionsinformation](/help/web-sdk/release-notes.md))
+- Uppdaterat till Alloy version 2.1.0.
 - Stöd för IAB 2.0-standard för samtycke i åtgärden `setConsent`.
 - Stöd för åsidosättande av datauppsättnings-ID:t i åtgärden `sendEvent`.
 - Lägg till ett nytt dataelement av typen `IdentityMap` som kan användas för att fylla i `identityMap`-posten i XDM-objektdataelementet som nu är aktiverat, och i åtgärden `setConsent`.

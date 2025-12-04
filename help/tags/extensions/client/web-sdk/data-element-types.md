@@ -1,18 +1,17 @@
 ---
-title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
-description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
+title: Dataelementtyper i Adobe Experience Platform Web SDK Extension
+description: Läs mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: e34a9ee5b1a09ff3391e5b0e981215fefbc157fc
+source-git-commit: 8cb8dcf7217440da98f6856293c530a66d4c3444
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '617'
 ht-degree: 0%
 
 ---
 
-
 # Dataelementtyper
 
-När du har angett dina [åtgärdstyper](action-types.md) i [Adobe Experience Platform Web SDK-taggtillägget](web-sdk-extension-configuration.md) måste du konfigurera dina dataelementtyper. Den här sidan beskriver de tillgängliga elementtyperna.
+När du har angett dina [åtgärdstyper](actions/actions-overview.md) i taggtillägget måste du konfigurera dina dataelementtyper. Den här sidan beskriver de tillgängliga elementtyperna.
 
 ## Identitetskarta {#identity-map}
 
@@ -34,9 +33,9 @@ I dataelementet [!UICONTROL Identity map] anger du följande information för va
 
 Du bör inte ange [!DNL ECID] när du skapar en identitetskarta. När du använder SDK genereras [!DNL ECID] automatiskt på servern och inkluderas i identitetskartan.
 
-Identitetsmappningsdataelementet används ofta tillsammans med dataelementtypen [[!UICONTROL XDM object] &#x200B;](#xdm-object) och åtgärdstypen [[!UICONTROL Set consent] &#x200B;](action-types.md#set-consent).
+Identitetsmappningsdataelementet används ofta med dataelementet [[!UICONTROL Variable]](#variable) och åtgärden [[!UICONTROL Set consent]](actions/set-consent.md).
 
-Läs mer om [Adobe Experience Platform identitetstjänst](../../../../identity-service/home.md).
+Läs mer om [Adobe Experience Platform Identity Service](/help/identity-service/home.md).
 
 ## XDM-objekt {#xdm-object}
 
@@ -59,7 +58,7 @@ Du kan skapa nyttolastobjekt med dataelementet **[!UICONTROL Variable]**. Både 
 
 ![Bild av tagggränssnitt som visar dataelementalternativen.](assets/variable-data-element.png)
 
-När du har skapat det här dataelementet kan du ändra det med åtgärden [Uppdatera variabel](./action-types.md#update-variable) . När det är klart kan du inkludera det här dataelementet i åtgärden [Skicka händelse](./action-types.md#send-event) för att skicka data till ett datastream.
+När du har skapat det här dataelementet kan du ändra det med åtgärden [Uppdatera variabel](actions/update-variable.md) . När det är klart kan du inkludera det här dataelementet i åtgärden [Skicka händelse](actions/send-event.md) för att skicka data till ett datastream.
 
 ## Media: Experience Quality {#quality-experience}
 

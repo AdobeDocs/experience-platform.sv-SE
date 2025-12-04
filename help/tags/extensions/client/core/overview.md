@@ -2,9 +2,9 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c76b64e76229db8f9da544a79aed903a134f7351
 workflow-type: tm+mt
-source-wordcount: '5437'
+source-wordcount: '5425'
 ht-degree: 1%
 
 ---
@@ -636,7 +636,7 @@ Den här åtgärden utlöser alla regler som använder en specifik [direktanrops
 
 ![Skärmbild av en direktanropsåtgärd för utlösare i användargränssnittet för datainsamling](../../../images/extensions/client/core/direct-call-action.png)
 
-Åtgärden mappar direkt till [`track`-metoden &#x200B;](../../../ui/client-side/satellite-object.md#track) i `satellite`-objektet, som kan nås av kod på klientsidan.
+Den här åtgärden mappar direkt till [`_satellite.track()`](/help/collection/tags/track.md).
 
 ## Dataelementtyper för kärntillägg
 

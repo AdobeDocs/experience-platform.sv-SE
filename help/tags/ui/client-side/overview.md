@@ -2,10 +2,10 @@
 title: Information om klientsidan
 description: Lär dig hur du hanterar taggåtgärder på klientsidan av ditt webb- eller mobilprogram.
 exl-id: 54c66066-93f7-4311-a255-0825055d0dec
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: c76b64e76229db8f9da544a79aed903a134f7351
 workflow-type: tm+mt
-source-wordcount: '194'
-ht-degree: 0%
+source-wordcount: '176'
+ht-degree: 25%
 
 ---
 
@@ -13,13 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Det här avsnittet innehåller information som är användbar när du hanterar taggåtgärder på klientsidan i Adobe Experience Platform.
-
-* [**Objektreferensen för taggen `_satellit`**](satellite-object.md)
-
-  Den här referensen dokumenterar objektet `_satellite` och de saker du kan göra med det.
 
 * [**Asynkron driftsättning av Experience Cloud JavaScript**](asynchronous-deployment.md)
 

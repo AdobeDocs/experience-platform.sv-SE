@@ -2,9 +2,9 @@
 title: Egenskaper
 description: Läs om hur tillägg, miljöer och bibliotek är organiserade och grupperade för din organisation i Adobe Experience Platform.
 exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1153'
 ht-degree: 4%
 
 ---
@@ -112,8 +112,8 @@ Följ instruktionerna för att skapa en webbegenskap.
    **Domäner:** Bas-URL:en för alla webbplatser som du planerar att distribuera den här egenskapen till
 
 1. (Avancerat) **[!UICONTROL Run rule components in sequence]** Markera den här kryssrutan om du vill att villkor och åtgärder ska vänta på att den föregående ska slutföras innan de körs
-1. (Avancerat) **[!UICONTROL Return an empty string for missing data elements:]** Om du refererar till ett dataelement som inte finns i ett bibliotek, returneras `undefined` normalt.  Markera den här kryssrutan om du vill att scenariot ska returnera en tom sträng i stället.
-1. (Avancerat) **[!UICONTROL Configure for extension development:]** Markera den här kryssrutan om du tänker installera utvecklingstillägg som utvecklas aktivt av ditt företag
+1. (Avancerat) **[!UICONTROL Return an empty string for missing data elements:]** Om du refererar till ett dataelement som inte finns i ett bibliotek, returneras `undefined` normalt. Aktivera den här kryssrutan om du vill att det scenariot ska returnera en tom sträng i stället.
+1. (Avancerat) **[!UICONTROL Configure for extension development:]** Aktivera den här kryssrutan om du tänker installera utvecklingstillägg som har utvecklats aktivt av ditt företag
 1. Välj **[!UICONTROL Save]**.
 
 ### För mobiler

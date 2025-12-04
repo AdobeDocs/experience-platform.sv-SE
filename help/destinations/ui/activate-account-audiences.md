@@ -2,12 +2,12 @@
 title: Aktivera målgrupper på konton för destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper för konton på destinationer
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ I den här artikeln förklaras det arbetsflöde som krävs för att exportera [k
 
 ## Mål som stöds {#supported-destinations}
 
-Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matching direktuppspelningsmål för &#x200B;](/help/destinations/catalog/social/linkedin-b2b.md) .
+Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matching direktuppspelningsmål för ](/help/destinations/catalog/social/linkedin-b2b.md) .
 
 ![Destinationer som stöder målgrupper.](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 

@@ -1,9 +1,9 @@
 ---
-title: Händelsetyper i Adobe Experience Platform Web SDK-tillägget
-description: Lär dig hur du använder händelsetyper från Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
+title: Händelsetyper i Adobe Experience Platform Web SDK Extension
+description: Läs om hur du använder händelsetyper som finns i Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 solution: Experience Platform
 exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
-source-git-commit: b37bf09e3ec16f29d6acee3bca71463fa2c876ce
+source-git-commit: f87e6a0e969aa0924656cdb2ea56aa79d2d7c841
 workflow-type: tm+mt
 source-wordcount: '1419'
 ht-degree: 0%
@@ -12,21 +12,21 @@ ht-degree: 0%
 
 # Händelsetyper
 
-Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. Dessa används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html?lang=sv-SE) och ska inte blandas ihop med fältet `eventType` i [`xdm` object](/help/web-sdk/commands/sendevent/xdm.md).
+Den här sidan beskriver de händelsetyper för Adobe Experience Platform som finns i taggtillägget Adobe Experience Platform Web SDK. Dessa används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) och ska inte blandas ihop med fältet `eventType` i [`xdm` object](/help/collection/js/commands/sendevent/xdm.md).
 
 ## Övervakningkrok utlöses {#monitoring-hook-triggered}
 
-Adobe Experience Platform Web SDK innehåller övervakningskopplingar som du kan använda för att övervaka olika systemhändelser. De här verktygen är användbara när du vill utveckla egna felsökningsverktyg och hämta Web SDK-loggar.
+Adobe Experience Platform Web SDK innehåller funktioner för övervakning av kopplingar som du kan använda för att övervaka olika systemhändelser. De här verktygen är användbara när du vill utveckla egna felsökningsverktyg och hämta webb-SDK-loggar.
 
-Fullständig information om vilka parametrar varje övervakningshändelse innehåller finns i [dokumentationen för Web SDK-övervakning av kopplingar](../../../../web-sdk/monitoring-hooks.md).
+Fullständig information om vilka parametrar varje övervakningshändelse innehåller finns i [dokumentationen för Web SDK-övervakning ](/help/collection/js/monitoring-hooks.md).
 
-![Taggar användargränssnittsbilden som visar typen för Övervakningshändelse &#x200B;](assets/monitoring-hook-triggered.png)
+![Taggar användargränssnittsbilden som visar typen för Övervakningshändelse ](assets/monitoring-hook-triggered.png)
 
-Web SDK-taggtillägget stöder följande övervakningskopplingar:
+SDK-taggtillägget för webben stöder följande övervakningskopplingar:
 
 * **[!UICONTROL onInstanceCreated]**: Den här övervakningshändelsen utlöses när du har skapat en ny Web SDK-instans.
-* **[!UICONTROL onInstanceConfigured]**: Den här övervakningshändelsen utlöses av Web SDK när kommandot [`configure`](../../../../web-sdk/commands/configure/overview.md) har lösts
-* **[!UICONTROL onBeforeCommand]**: Den här övervakningshändelsen utlöses av Web SDK innan något annat kommando körs. Du kan använda den här övervakningsfunktionen för att hämta konfigurationsalternativen för ett specifikt kommando.
+* **[!UICONTROL onInstanceConfigured]**: Den här övervakningshändelsen utlöses av Web SDK när kommandot [`configure`](/help/collection/js/commands/configure/overview.md) har lösts
+* **[!UICONTROL onBeforeCommand]**: Den här övervakningshändelsen aktiveras av Web SDK innan något annat kommando körs. Du kan använda den här övervakningsfunktionen för att hämta konfigurationsalternativen för ett specifikt kommando.
 * **[!UICONTROL onCommandResolved]**: Den här övervakningshändelsen utlöses innan kommandolöftet löses. Du kan använda den här funktionen för att se kommandoalternativen och resultatet.
 * **[!UICONTROL onCommandRejected]**: Den här övervakningshändelsen utlöses när ett kommandolöfte avvisas och innehåller information om felets orsak.
 * **[!UICONTROL onBeforeNetworkRequest]**: Den här övervakningshändelsen utlöses innan en nätverksbegäran körs.
@@ -34,17 +34,17 @@ Web SDK-taggtillägget stöder följande övervakningskopplingar:
 * **[!UICONTROL onNetworkError]**: Den här övervakningshändelsen utlöses när nätverksbegäran misslyckas.
 * **[!UICONTROL onBeforeLog]**: Den här övervakningshändelsen utlöses innan Web SDK loggar något till konsolen.
 * **[!UICONTROL onContentRendering]**: Den här övervakningshändelsen aktiveras av komponenten `personalization` och hjälper dig att felsöka återgivningen av personaliseringsinnehållet. Den här händelsen kan ha olika status:
-   * `rendering-started`: Anger att Web SDK håller på att återge förslag. Innan Web SDK börjar återge ett beslutsområde eller en vy kan du i objektet `data` se de förslag som ska återges av komponenten `personalization` och scopenamnet.
+   * `rendering-started`: Anger att Web SDK ska återge förslag. Innan Web SDK börjar återge ett beslutsområde eller en vy kan du i objektet `data` se de förslag som ska återges av komponenten `personalization` och scopenamnet.
    * `no-offers`: Anger att ingen nyttolast har tagits emot för de begärda parametrarna.
    * `rendering-failed`: Anger att Web SDK inte kunde återge ett förslag.
    * `rendering-succeeded`: Anger att återgivningen har slutförts för ett beslutsområde.
-   * `rendering-redirect`: Anger att Web SDK kommer att köra en omdirigeringsdisposition.
+   * `rendering-redirect`: Anger att Web SDK kommer att köra ett omdirigeringsförslag.
 * **[!UICONTROL onContentHiding]**: Den här övervakningshändelsen utlöses när ett fördolt format används eller tas bort.
 
 
 ## [!UICONTROL Send event complete]
 
-Vanligtvis har din egenskap en eller flera regler som använder [[!UICONTROL Send event]-åtgärden &#x200B;](action-types.md#send-event) för att skicka händelser till Adobe Experience Platform Edge Network. Varje gång en händelse skickas till Edge Network returneras ett svar med användbara data till webbläsaren. Utan händelsetypen [!UICONTROL Send event complete] har du inte åtkomst till dessa returnerade data.
+Vanligtvis har din egenskap en eller flera regler som använder åtgärden [[!UICONTROL Send event]](actions/send-event.md) för att skicka händelser till Adobe Experience Platform Edge Network. Varje gång en händelse skickas till Edge Network returneras ett svar med användbara data till webbläsaren. Utan händelsetypen [!UICONTROL Send event complete] har du inte åtkomst till dessa returnerade data.
 
 Om du vill komma åt returnerade data skapar du en separat regel och lägger sedan till en [!UICONTROL Send event complete]-händelse i regeln. Den här regeln aktiveras varje gång ett lyckat svar tas emot från servern som ett resultat av en [!UICONTROL Send event]-åtgärd.
 
@@ -113,7 +113,7 @@ Arrayen `propositions` kan se ut ungefär som i det här exemplet:
 ]
 ```
 
-När händelsen skickades markerades inte kryssrutan [!UICONTROL Render decisions], vilket innebar att SDK inte försökte återge något innehåll automatiskt. SDK hämtade dock fortfarande automatiskt det innehåll som kan återges automatiskt och skickade det till dig för manuell återgivning om du vill göra det. Observera att egenskapen `renderAttempted` har angetts till `false` för varje förslagsobjekt.
+När händelsen skickades markerades inte kryssrutan [!UICONTROL Render decisions], så SDK försökte inte att automatiskt återge något innehåll. SDK har dock fortfarande automatiskt hämtat det material som kan återges automatiskt och gett det till dig för manuell återgivning om du vill. Observera att egenskapen `renderAttempted` har angetts till `false` för varje förslagsobjekt.
 
 Om du i stället hade markerat kryssrutan [!UICONTROL Render decisions] när du skickade händelsen, skulle SDK ha försökt att återge alla förslag som är berättigade för automatisk återgivning. Därför skulle egenskapen `renderAttempted` för vart och ett av förslagsobjekten ha angetts till `true`. Du behöver inte återge dessa förslag manuellt i det här fallet.
 
@@ -123,7 +123,7 @@ Hittills har du bara tittat på innehåll som är kvalificerat för automatisk �
 
 ![img.png](assets/send-event-render-unchecked-with-scopes.png)
 
-I det här exemplet returneras och inkluderas i `propositions`-arrayen om det finns förslag på servern som matchar omfånget `salutation` eller `discount`. Observera att förslag som kvalificerar för automatisk återgivning kommer att fortsätta inkluderas i `propositions`-arrayen, oavsett hur du konfigurerar [!UICONTROL Render decisions] - eller [!UICONTROL Decision scopes]-fälten i [!UICONTROL Send event] -åtgärden. Arrayen `propositions` skulle i det här fallet se ut som i det här exemplet:
+I det här exemplet returneras och inkluderas i `salutation`-arrayen om det finns förslag på servern som matchar omfånget `discount` eller `propositions`. Observera att förslag som kvalificerar för automatisk återgivning kommer att fortsätta inkluderas i `propositions`-arrayen, oavsett hur du konfigurerar [!UICONTROL Render decisions] - eller [!UICONTROL Decision scopes]-fälten i [!UICONTROL Send event] -åtgärden. Arrayen `propositions` skulle i det här fallet se ut som i det här exemplet:
 
 ```json
 [
@@ -201,8 +201,8 @@ Nu kan du återge offertinnehåll när du vill. I det här exemplet är det för
 
 1. Extrahera utdrag från objektet `event`.
 1. Slinga igenom varje förslag och söker efter förslaget med omfånget `discount`.
-1. Om du hittar ett förslag går du igenom varje objekt i utkastet och letar efter det objekt som innehåller HTML. (Det är bättre att kontrollera än att anta.)
-1. Om du hittar ett objekt som innehåller innehåll från HTML söker du efter elementet `daily-special` på sidan och ersätter HTML med det anpassade innehållet.
+1. Om du hittar ett förslag går du igenom varje objekt i utkastet och letar efter det objekt som är HTML-innehåll. (Det är bättre att kontrollera än att anta.)
+1. Om du hittar ett objekt som innehåller HTML-innehåll söker du efter elementet `daily-special` på sidan och ersätter dess HTML med det anpassade innehållet.
 
 Din egen kod i [!UICONTROL Custom code]-åtgärden kan se ut så här:
 
@@ -245,7 +245,7 @@ if (discountHtml) {
 
 ### Åtkomst till Adobe Target svarstoken
 
-Personalization-innehåll som returneras från Adobe Target innehåller [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE), som är information om aktivitet, erbjudande, upplevelse, användarprofil, geoinformation med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i Adobe Target användargränssnitt.
+Personalization-innehåll som returneras från Adobe Target innehåller [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html), som är information om aktivitet, erbjudande, upplevelse, användarprofil, geoinformation med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i Adobe Target användargränssnitt.
 
 I åtgärden Anpassad kod, som är en regel för att hantera svarsdata, kan du komma åt personaliseringsförslag som returnerats från servern. Om du vill göra det skriver du följande egen kod:
 
@@ -253,13 +253,13 @@ I åtgärden Anpassad kod, som är en regel för att hantera svarsdata, kan du k
 var propositions = event.propositions;
 ```
 
-Om `event.propositions` finns är det en matris som innehåller objekt för personaliseringsförslag. Mer information om innehållet i `result.propositions` finns i [Återge anpassat innehåll manuellt](#manually-render-personalized-content).
+Om `event.propositions` finns är det en matris som innehåller objekt för personaliseringsförslag. Mer information om innehållet i [ finns i ](#manually-render-personalized-content)Återge anpassat innehåll manuellt`result.propositions`.
 
-Anta att du vill samla in alla aktivitetsnamn från alla utkast som automatiskt renderades av web SDK och överföra dem till en enda array. Du kan sedan skicka den enskilda arrayen till en tredje part. I det här fallet skriver du egen kod inuti [!UICONTROL Custom code]-åtgärden till:
+Anta att du vill samla in alla aktivitetsnamn från alla utkast som återges automatiskt av SDK på webben och överföra dem till en enda array. Du kan sedan skicka den enskilda arrayen till en tredje part. I det här fallet skriver du egen kod inuti [!UICONTROL Custom code]-åtgärden till:
 
 1. Extrahera utdrag från objektet `event`.
 1. Slinga igenom varje förslag.
-1. Avgör om SDK återgav förslaget.
+1. Kontrollera om SDK har återgett förslaget.
 1. I så fall gör du en slinga genom varje objekt i förslaget.
 1. Hämta aktivitetsnamnet från egenskapen `meta`, som är ett objekt som innehåller svarstoken.
 1. Placera aktivitetsnamnet i en array.

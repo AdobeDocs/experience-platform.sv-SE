@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '717'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 I steget **[!UICONTROL Mapping]** väljer du de profilattribut som du vill skicka till målmålet.
 
-1. Välj **[!UICONTROL Add new field]** på sidan **[!UICONTROL Select attributes]**.
+1. Välj **[!UICONTROL Select attributes]** på sidan **[!UICONTROL Add new field]**.
 
    ![Bild som markerar kontrollen Lägg till nytt fält i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
 

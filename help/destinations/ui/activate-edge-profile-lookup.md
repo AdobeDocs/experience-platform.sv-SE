@@ -3,9 +3,9 @@ title: Söka efter kantprofilattribut i realtid
 description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
 workflow-type: tm+mt
-source-wordcount: '1839'
+source-wordcount: '1838'
 ht-degree: 0%
 
 ---
@@ -61,7 +61,7 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 
 Om du vill söka efter profilattribut i kanten måste målgrupperna konfigureras för kantutvärdering.
 
-Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan om &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
+Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
@@ -105,7 +105,7 @@ När du har skapat en **[!UICONTROL Custom Personalization With Attributes]**-an
 
    ![Välj målsteg i aktiveringsarbetsflödet.](../assets/ui/activate-edge-personalization-destinations/select-destination.png)
 
-1. Välj målgrupper. Använd kryssrutorna till vänster om målgruppsnamnen för att välja de målgrupper som du vill aktivera för målet och välj sedan **[!UICONTROL Next]**.
+1. Välj målgrupper. Använd kryssrutorna till vänster om målgruppsnamnen för att markera de målgrupper som du vill aktivera för målet och välj sedan **[!UICONTROL Next]**.
 
    Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 

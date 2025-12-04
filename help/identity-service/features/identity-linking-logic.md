@@ -2,7 +2,7 @@
 title: Länkningslogik för identitetstjänst
 description: Läs om hur identitetstjänsten länkar olika identiteter för att skapa en heltäckande bild av en kund.
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: bbfc1d749fbe0e74489a48e0c962d9f51d19ccde
+source-git-commit: 5d08a6d90e53aa2f5b1fb72c36e19156e3ac5299
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 0%
@@ -102,7 +102,7 @@ Du har också implementerat WebSDK och importerat en WebSDK-datauppsättning (Ex
 | `t=3` | ECID:44675 | Visa hemsida |
 | `t=4` | ECID:44675, CRMID: 31260XYZ | Visa köphistorik |
 
-Den primära identiteten för varje händelse bestäms utifrån [hur du konfigurerar dataelementtyper](../../tags/extensions/client/web-sdk/data-element-types.md).
+Den primära identiteten för varje händelse bestäms utifrån [hur du konfigurerar dataelementtyper](/help/tags/extensions/client/web-sdk/data-element-types.md).
 
 >[!NOTE]
 >

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Direktuppspelning - översikt
 description: Direktuppspelning för Adobe Experience Platform ger användarna en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: f5ae9170b312d9f24c863a14b8cc2310fcaf1cb2
+source-git-commit: ea693cb4bb732c829d9a477cbd3dcb209da524f3
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 0%
@@ -33,13 +33,13 @@ Mer information finns i [Skapa en anslutningsguide för direktuppspelning](../tu
 
 När du är säker på att dina data är rena kan du aktivera dina datauppsättningar för [!DNL Real-Time Customer Profile] och [!DNL Identity Service].
 
-Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service] finns i [Konfigurera en datauppsättningsguide](../../profile/tutorials/dataset-configuration.md).
+Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service] finns i [Konfigurera en datauppsättningsguide](/help/profile/tutorials/dataset-configuration.md).
 
 ## Vilken fördröjning förväntas för direktuppspelning på Experience Platform?
 
 >[!IMPORTANT]
 >
->Garantier för direktuppspelning är bundna till det totala licensanvändningsberättigande som motsvarar hela organisationen. Dessutom är dataanvändningen i utvecklingssandlådor begränsad till 10 % av det totala antalet profiler. Mer information om berättigande för licensanvändning finns i [handboken om bästa praxis för datahantering](../../landing/license-usage-and-guardrails/data-management-best-practices.md). Läs [Översikt över kapacitet](../../landing/license-usage-and-guardrails/capacity.md) om du vill lära dig hur du ställer in gränser för ditt strömmande flöde.
+>Garantier för direktuppspelning är bundna till det totala licensanvändningsberättigande som motsvarar hela organisationen. Dessutom är dataanvändningen i utvecklingssandlådor begränsad till 10 % av det totala antalet profiler. Mer information om berättigande för licensanvändning finns i [handboken om bästa praxis för datahantering](/help/landing/license-usage-and-guardrails/data-management-best-practices.md). Läs [Översikt över kapacitet](../../landing/license-usage-and-guardrails/capacity.md) om du vill lära dig hur du ställer in gränser för ditt strömmande flöde.
 
 | Mål | Förväntad fördröjning |
 | --------- | ---------------- |
@@ -61,4 +61,4 @@ Tabellen nedan visar vägledning om gränsen per sekund för direktuppspelning v
 
 ## Adobe Experience Platform-tillägg
 
-Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. Tillägget [!DNL Experience Platform] innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Data Model] (XDM) för realtidsförtäring till [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform Extension](../../tags/extensions/client/web-sdk/overview.md).
+Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. Tillägget [!DNL Experience Platform] innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Data Model] (XDM) för realtidsförtäring till [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform Extension](/help/tags/extensions/client/web-sdk/overview.md).

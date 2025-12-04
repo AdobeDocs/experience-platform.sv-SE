@@ -2,9 +2,9 @@
 title: Edge-profiler
 description: Lär dig mer om kantprofiler, och relaterad terminologi, tillgängliga områden för kantprofiler samt tillgängliga tjänster för kantprofiler.
 exl-id: dcae267f-1d5a-4e90-b634-afd42b0d4edc
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Express Profile Service (XPS) hämtar profilerna i olika kanter. Den här tjäns
 
 ## Nästa steg
 
-När du har läst den här guiden bör du ha en grundläggande förståelse för kantprofiler, inklusive information om tillgängliga områden och tjänster för kantprofiler. Mer information om Adobe Experience Edge finns i översikten [Edge Network](../web-sdk/home.md#edge-network).
+När du har läst den här guiden bör du ha en grundläggande förståelse för kantprofiler, inklusive information om tillgängliga områden och tjänster för kantprofiler. Mer information om Adobe Experience Edge finns i [Översikt över datainsamling](/help/collection/home.md).
 
 ## Bilaga
 

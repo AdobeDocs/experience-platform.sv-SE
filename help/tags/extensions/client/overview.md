@@ -2,10 +2,10 @@
 title: Referens för taggtillägg
 description: Hitta dokumentation för taggtillägg i Adobe Experience Platform.
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: 3c3863aa61a7bbdb2df585b842e55f2d7291c727
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '472'
-ht-degree: 2%
+ht-degree: 12%
 
 ---
 
@@ -13,13 +13,13 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En lista över tillgängliga tillägg på serversidan finns i [referensen för tillägg för vidarebefordran](../server/overview.md) i stället.
 
 >[!NOTE]
 >
->Alla tilläggsnamn följt av en asterisk (*) länkar till tilläggets lista på Adobe Exchange, som innehåller installations- och användningsinstruktioner. Alla andra länkar pekar på tilläggets dokumentation på Adobe Experience League.
+>Alla tilläggsnamn följt av en asterisk (*) länkar till tilläggets lista på Adobe Exchange, som innehåller installations- och användningsinstruktioner. Alla andra länkar pekar på tilläggets dokumentation om Adobe Experience League.
 
 * [Tillgängliga hastighetsmått för webbplats](https://exchange.adobe.com/apps/ec/103053)*
 * [Activity Map Customizer](https://exchange.adobe.com/apps/ec/101531)*
@@ -34,7 +34,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Adobe Analytics Product String Builder](https://exchange.adobe.com/apps/ec/101461)*
 * [Adobe Analytics via Adobe Experience Platform Web SDK](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)*
 * [Adobe Audience Manager](./audience-manager/overview.md)
-* [Adobe-klientdatalager](./client-data-layer/overview.md)
+* [Adobe Client Data Layer](./client-data-layer/overview.md)
 * [Adobe ContextHub](./contexthub/overview.md)
 * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)*
 * [Adobe Experience Cloud ID-tjänst](./id-service/overview.md)
@@ -44,13 +44,13 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)*
 * [Adobe Media Analytics för ljud och video](./media-analytics/overview.md)
 * [Adobe Media Analytics (3.x SDK)](./media-analytics-3x/overview.md)
-* [Adobe sekretess](./privacy/overview.md)
+* [Adobe Integritet](./privacy/overview.md)
 * [Adobe Report Suite-väljare](https://exchange.adobe.com/apps/ec/100640)*
 * [Adobe Target](./target/overview.md)
 * [Adobe Target v2](./target-v2/overview.md)
 * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)*
 * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)*
-* [AEM tillgångsinsikter](https://exchange.adobe.com/apps/ec/103406)*
+* [AEM Asset Insights](https://exchange.adobe.com/apps/ec/103406)*
 * [Airbroms-JS-aviserare](https://exchange.adobe.com/apps/ec/103342)*
 * [Amplitud](https://exchange.adobe.com/apps/ec/108010)*
 * [Apollo QAX](https://exchange.adobe.com/apps/ec/105068)*
@@ -65,7 +65,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Cheetah Experiences](https://exchange.adobe.com/apps/ec/102759)*
 * [Klickbar](https://exchange.adobe.com/apps/ec/100082)*
 * [Plugin-program för vanlig analys](./plugins/overview.md)
-* [Vanliga SDK-plugin-program för webben](./web-sdk/web-sdk-plugins.md)
+* [Vanliga SDK-plugin-program för webben](web-sdk-plugins/web-sdk-plugins.md)
 * [Koncat](https://exchange.adobe.com/apps/ec/104690)*
 * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)*
 * [Hantering av cookie-samtycke av Usercentrics CMP v2](https://exchange.adobe.com/apps/ec/*107037)*
@@ -77,7 +77,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Decibel](https://exchange.adobe.com/apps/ec/100913)*
 * [Demandbase](https://exchange.adobe.com/apps/ec/101605)*
 * [Differentiell sekretess](https://exchange.adobe.com/apps/ec/104535)*
-* [Dynamic Media-visningsprogram](https://exchange.adobe.com/apps/ec/103048)*
+* [Dynamiska mediavisare](https://exchange.adobe.com/apps/ec/103048)*
 * [EDDL-hjälp](https://exchange.adobe.com/apps/ec/107691)*
 * [Flashtalk OneTag](https://exchange.adobe.com/apps/ec/101392)*
 * [ForeSee](https://exchange.adobe.com/apps/ec/100164)*
@@ -100,7 +100,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)*
 * [Pinterest Conversion Tracking](https://exchange.adobe.com/apps/ec/100523)*
 * [Pixelinläsare](https://exchange.adobe.com/apps/ec/100152)*
-* [Frågor och svar om webbplatsen &#x200B;](https://exchange.adobe.com/apps/ec/101569)*
+* [Frågor och svar om webbplatsen ](https://exchange.adobe.com/apps/ec/101569)*
 * [Quantum Metric](https://exchange.adobe.com/apps/ec/101535)*
 * [Lös kortskrift](https://exchange.adobe.com/apps/ec/108352)*
 * [Rokt](https://exchange.adobe.com/apps/ec/107591)*

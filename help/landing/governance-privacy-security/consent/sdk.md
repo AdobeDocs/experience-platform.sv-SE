@@ -4,7 +4,7 @@ description: Läs om hur man integrerar Adobe Experience Platform Web SDK för a
 role: Developer
 feature: Consent, Web SDK
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '1293'
 ht-degree: 0%
@@ -27,8 +27,8 @@ I den här självstudien förutsätts det att du redan har fastställt hur data 
 Den här guiden följer arbetsflödet för att konfigurera SDK med hjälp av taggtillägget i användargränssnittet. Om du inte vill använda tillägget och vill bädda in den fristående versionen av SDK direkt på din webbplats kan du läsa följande dokument i stället för den här handboken:
 
 * [Konfigurera ett datastream](/help/datastreams/overview.md)
-* [Installera SDK](/help/web-sdk/install/overview.md)
-* [Konfigurera SDK för medgivandekommandon](/help/web-sdk/commands/configure/defaultconsent.md)
+* [Installera SDK](/help/collection/js/install/overview.md)
+* [Konfigurera SDK för medgivandekommandon](/help/collection/js/commands/configure/defaultconsent.md)
 
 Installationsstegen i den här handboken kräver en fungerande förståelse för taggtillägg och hur de installeras i webbprogram. Mer information finns i följande dokumentation:
 
@@ -46,7 +46,7 @@ När du har skapat ett nytt datastam eller valt ett befintligt som ska redigeras
 
 | Datastream-fält | Värde |
 | --- | --- |
-| [!UICONTROL Sandbox] | Namnet på Experience Platform [sandbox](../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
+| [!UICONTROL Sandbox] | Namnet på Experience Platform [sandbox](/help/sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
 | [!UICONTROL Event Dataset] | En [!DNL XDM ExperienceEvent]-datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa en Experience Platform-datastream, men observera att data som skickas via händelser inte hanteras i arbetsflöden för efterföljande tillämpning. |
 | [!UICONTROL Profile Dataset] | Den [!DNL Profile]-aktiverade datauppsättningen med kundmedgivandefält som du skapade [tidigare](#prerequisites). |
 
@@ -92,7 +92,7 @@ När dataelementet har skapats går du tillbaka till konfigurationssidan för We
 
 ### Distribuera tillägget på webbplatsen
 
-När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer information om hur du distribuerar det uppdaterade biblioteksbygget finns i [publiceringshandboken](../../../tags/ui/publishing/overview.md) i taggdokumentationen.
+När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer information om hur du distribuerar det uppdaterade biblioteksbygget finns i [publiceringshandboken](/help/tags/ui/publishing/overview.md) i taggdokumentationen.
 
 ## Kommandon för att ändra samtycke {#commands}
 
@@ -101,7 +101,7 @@ När du har integrerat SDK-tillägget på webbplatsen kan du börja använda Exp
 Kommandot `setConsent` utför två åtgärder:
 
 1. Uppdaterar användarens profilattribut direkt i profilarkivet. Detta skickar inga data till datasjön.
-1. Skapar en [upplevelsehändelse](../../../xdm/classes/experienceevent.md) som registrerar ett tidsstämplat konto för medgivandeändringshändelsen. Dessa data skickas direkt till datasjön och kan användas för att hålla reda på ändringar av medgivandepreferenser över tiden.
+1. Skapar en [upplevelsehändelse](/help/xdm/classes/experienceevent.md) som registrerar ett tidsstämplat konto för medgivandeändringshändelsen. Dessa data skickas direkt till datasjön och kan användas för att hålla reda på ändringar av medgivandepreferenser över tiden.
 
 ### När `setConsent` ska anropas
 
@@ -112,7 +112,7 @@ Det finns två scenarier där `setConsent` ska anropas på din plats:
 
 ### Syntax för `setConsent`
 
-Kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) förväntar sig ett nyttolastobjekt som innehåller en enda arraytypsegenskap: `consent`. Arrayen `consent` måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten för Adobe-standarden.
+Kommandot [`setConsent`](/help/collection/js/commands/setconsent.md) förväntar sig ett nyttolastobjekt som innehåller en enda arraytypsegenskap: `consent`. Arrayen `consent` måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten för Adobe-standarden.
 
 De obligatoriska medgivandefälten för Adobe-standarden visas i följande exempel på `setConsent`-anrop:
 
@@ -195,9 +195,9 @@ var setConsent = function () {
 
 ## Hantera SDK-svar
 
-Alla [!DNL Experience Platform SDK]-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Mer information finns i [Kommandosvar](/help/web-sdk/commands/command-responses.md).
+Alla [!DNL Experience Platform SDK]-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Mer information finns i [Kommandosvar](/help/collection/js/commands/command-responses.md).
 
-När du har genomfört `setConsent` samtal med SDK kan du använda profilvisningsprogrammet i Experience Platform-användargränssnitt för att kontrollera om data landar i profilarkivet. Mer information finns i avsnittet [Bläddra bland profiler efter identitet](../../../profile/ui/user-guide.md#browse-identity).
+När du har genomfört `setConsent` samtal med SDK kan du använda profilvisningsprogrammet i Experience Platform-användargränssnitt för att kontrollera om data landar i profilarkivet. Mer information finns i avsnittet [Bläddra bland profiler efter identitet](/help/profile/ui/user-guide.md#browse-identity).
 
 ## Nästa steg
 

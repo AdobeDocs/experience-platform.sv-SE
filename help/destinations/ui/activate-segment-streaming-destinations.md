@@ -3,9 +3,9 @@ title: Aktivera målgruppsdata för direktuppspelningsmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att mappa dem till direktuppspelningsmål.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 595856842a3890426bb196218bd8be4e321ff8aa
+source-git-commit: 2eb890f06097f1b9766408aad3b6ab11d5d12f9f
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1098'
 ht-degree: 0%
 
 ---

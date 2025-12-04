@@ -3,9 +3,9 @@ keywords: Experience Platform;home;populära topics;data prep;data prep;streamin
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1363'
 ht-degree: 0%
 
 ---
@@ -271,8 +271,8 @@ Följande visar en lista med kända begränsningar som ska beaktas när direktup
 
 * Metoden för direktuppspelning av överföringar bör bara användas när partiella raduppdateringar skickas till [!DNL Real-Time Customer Profile]. Uppdateringar av partiella rader används **inte** av datavagn.
 * Metoden för att skicka direktuppspelning stöder inte uppdatering, ersättning och borttagning av identiteter. Nya identiteter skapas om de inte finns. Därför måste `identity`-åtgärden alltid anges för att skapa. Om en identitet redan finns är åtgärden no-op.
-* Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) och [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/).
+* Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md) eller [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/).
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till dina [!DNL Real-Time Customer Profile]-data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep]-funktioner finns i [[!DNL Data Prep] översikten](./home.md). Läs [[!DNL Data Prep] utvecklarhandboken](./api/overview.md) om du vill lära dig hur du använder mappningsuppsättningar i [!DNL Data Prep]-API:t.
+Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till dina [!DNL Real-Time Customer Profile]-data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep]-funktioner finns i [[!DNL Data Prep] översikten](./home.md). Läs [!DNL Data Prep]utvecklarhandboken[[!DNL Data Prep]  om du vill lära dig hur du använder mappningsuppsättningar i ](./api/overview.md)-API:t.

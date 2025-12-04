@@ -3,7 +3,7 @@ title: Återannonsering utanför webbplatsen av oautentiserade besökare
 description: Lär dig hur du omdirigerar oautentiserade användare genom att använda ID:n för potentiella kunder för att skapa ett beräknat attribut som kan användas för att skapa en publik med oautentiserade användare.
 feature: Use Cases, Customer Acquisition
 exl-id: cffa3873-d713-445a-a3e1-1edf1aa8eebb
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '1358'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/se/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
+>Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Lär dig hur du skapar en publik med oautentiserade besökare och omdirigerar dem med partnertillhandahållna varaktiga ID:n.
 
@@ -26,7 +26,7 @@ I och med att cookies från tredje part fasas ut måste digitala marknadsförare
 
 Trots en hög trafikvolym ser många varumärken en betydande nedgång under konverteringsfasen. Besökarna interagerar med innehåll och produktdemonstrationer, men lämnar dem utan att behöva registrera sig eller göra ett köp.
 
-Ni kan inte bara bygga målgrupper baserat på webbplatsengagemang för att personalisera marknadsföringsmeddelanden, ni kan också använda Adobe support för partner-ID:n för att återengagera besökare över betalmediematerial.
+Ni kan inte bara skapa målgrupper baserat på webbplatsengagemang för att personalisera marknadsföringsmeddelanden, ni kan också använda Adobe support för partner-ID:n för att återengagera besökare över betalmediematerial.
 
 ## Förutsättningar och planering {#prerequisites-and-planning}
 
@@ -36,22 +36,22 @@ När du planerar att återannonsera oautentiserade besökare bör du tänka på 
 
 För att implementera användningsexemplet använder du dessutom följande Real-Time CDP-funktioner och gränssnittselement. Se till att du har de nödvändiga attributbaserade behörigheterna för åtkomstkontroll i alla dessa områden eller be systemadministratören att ge dig de behörigheter som krävs.
 
-- [Målgrupper](../../segmentation/home.md)
-- [Beräknade attribut](../../profile/computed-attributes/overview.md)
-- [Mål &#x200B;](../../destinations/home.md)
-- [Webb-SDK](../../web-sdk/home.md)
+- [Målgrupper](/help/segmentation/home.md)
+- [Beräknade attribut](/help/profile/computed-attributes/overview.md)
+- [Mål](/help/destinations/home.md)
+- [Datainsamling](/help/collection/home.md)
 
 ## Hämta partnerdata till Real-Time CDP {#get-data-in}
 
 Om ni vill skapa en publik med oautentiserade besökare måste ni först få in era partnerdata i Real-Time CDP.
 
-Om du vill lära dig hur du bäst importerar data till Real-Time CDP med Web SDK läser du [avsnitten om datahantering och händelsedatainsamling](./onsite-personalization.md#data-management) i användningsexemplet om anpassning av webbplatser.
+Läs [avsnitten om datahantering och insamling av händelsedata](./onsite-personalization.md#data-management) i användningsexemplet om anpassning av webbplatser om du vill lära dig hur du bäst importerar data till Real-Time CDP med Web SDK.
 
 ## Förse partnern med ID:n {#bring-partner-ids-forward}
 
 När du har importerat partnertillhandahållna ID:n till en händelsedatamängd måste du hämta dessa data till profilposterna. Du kan göra detta genom att använda beräknade attribut.
 
-Med beräknade attribut kan du snabbt konvertera profilbeteendedata till aggregerade värden på profilnivå. Det innebär att du kan använda dessa uttryck, till exempel&quot;total köptid för livstid&quot; i profilen, så att du enkelt kan använda det beräknade attributet inom dina målgrupper. Mer information om beräknade attribut finns i [översikten över beräknade attribut](../../profile/computed-attributes/overview.md).
+Med beräknade attribut kan du snabbt konvertera profilbeteendedata till aggregerade värden på profilnivå. Det innebär att du kan använda dessa uttryck, till exempel&quot;total köptid för livstid&quot; i profilen, så att du enkelt kan använda det beräknade attributet inom dina målgrupper. Mer information om beräknade attribut finns i [översikten över beräknade attribut](/help/profile/computed-attributes/overview.md).
 
 Om du vill komma åt beräknade attribut väljer du **[!UICONTROL Profiles]** följt av **[!UICONTROL Computed attributes]** och **[!UICONTROL Create computed attribute]**.
 
@@ -63,11 +63,11 @@ Sidan **[!UICONTROL Create computed attribute]** visas. På den här sidan kan d
 
 >[!NOTE]
 >
->Mer information om hur du skapar beräknade attribut finns i [användargränssnittshandboken för beräknade attribut](../../profile/computed-attributes/ui.md).
+>Mer information om hur du skapar beräknade attribut finns i [användargränssnittshandboken för beräknade attribut](/help/profile/computed-attributes/ui.md).
 
 I det här fallet kan du skapa ett beräknat attribut som, om partner-ID:t finns, hämtar det senaste värdet för partner-ID:t inom de senaste 24 timmarna.
 
-Med hjälp av sökfältet kan du hitta och lägga till händelsen &quot;Partner-ID&quot; som [du skapade under användningsexemplet &#x200B;](#get-data-in) för anpassning på plats i den beräknade attributarbetsytan.
+Med hjälp av sökfältet kan du hitta och lägga till händelsen &quot;Partner-ID&quot; som [du skapade under användningsexemplet ](#get-data-in) för anpassning på plats i den beräknade attributarbetsytan.
 
 ![Fliken [!UICONTROL Events] och sökfältet är markerade.](../assets/offsite-retargeting/ca-add-partner-id.png)
 
@@ -97,11 +97,11 @@ Sidan Segment Builder visas. På den här sidan kan du använda komponenterna f�
 
 >[!NOTE]
 >
->Mer information om hur du använder segmentbyggaren finns i [gränssnittsguiden för segmentbyggaren](../../segmentation/ui/segment-builder.md).
+>Mer information om hur du använder segmentbyggaren finns i [gränssnittsguiden för segmentbyggaren](/help/segmentation/ui/segment-builder.md).
 
 För att kunna hitta de här besökarna måste du först lägga till en **[!UICONTROL Page View]**-händelse till din målgrupp. Välj fliken **[!UICONTROL Events]** under **[!UICONTROL Fields]**, dra och släpp sedan händelsen **[!UICONTROL Page View]** och lägg till den på arbetsytan för händelseavsnittet.
 
-![Fliken [!UICONTROL Events] i avsnittet [!UICONTROL Fields] är markerad när [!UICONTROL Page View]händelsen &#x200B;](../assets/offsite-retargeting/add-page-view.png) visas.
+![Fliken [!UICONTROL Events] i avsnittet [!UICONTROL Fields] är markerad när [!UICONTROL Page View]händelsen ](../assets/offsite-retargeting/add-page-view.png) visas.
 
 Välj den nyligen tillagda **[!UICONTROL Page View]**-händelsen. Ändra uppslagsperioden från **[!UICONTROL Any time]** till **[!UICONTROL This month]** och ändra händelseregeln så att den omfattar **minst 5**.
 
@@ -109,7 +109,7 @@ Välj den nyligen tillagda **[!UICONTROL Page View]**-händelsen. Ändra uppslag
 
 När du har lagt till händelsen måste du lägga till ett attribut. Eftersom du arbetar med oautentiserade besökare kan du lägga till det beräknade attributet som du nyss skapade. Det nya beräknade attributet gör att du kan länka partner-ID:n till en målgrupp.
 
-Om du vill lägga till det beräknade attributet väljer du **[!UICONTROL XDM Individual Profile]** under **[!UICONTROL Attributes]**, följt av **[organisationens klient-ID](../../xdm/api/getting-started.md#know-your-tenant-id).**, **[!UICONTROL SystemComputedAttributes]** och **[!UICONTROL PartnerID]**. Lägg till **[!UICONTROL Value]** av det beräknade attributet i attributavsnittet på arbetsytan.
+Om du vill lägga till det beräknade attributet väljer du **[!UICONTROL Attributes]** under **[!UICONTROL XDM Individual Profile]**, följt av **[organisationens klient-ID](/help/xdm/api/getting-started.md#know-your-tenant-id).**, **[!UICONTROL SystemComputedAttributes]** och **[!UICONTROL PartnerID]**. Lägg till **[!UICONTROL Value]** av det beräknade attributet i attributavsnittet på arbetsytan.
 
 ![Mappsökvägen för åtkomst av det beräknade attributet visas.](../assets/offsite-retargeting/access-computed-attribute.png)
 
@@ -135,7 +135,7 @@ När ni har skapat er målgrupp kan ni nu aktivera målgruppen för efterföljan
 >
 >Alla måltyper, inklusive filbaserade mål, stöder målgruppsaktivering med partner-ID:n.
 >
->Mer information om hur du aktiverar målgrupper till ett mål finns i [aktiveringsöversikten](../../destinations/ui/activation-overview.md).
+>Mer information om hur du aktiverar målgrupper till ett mål finns i [aktiveringsöversikten](/help/destinations/ui/activation-overview.md).
 
 Sidan **[!UICONTROL Activate destination]** visas. På den här sidan kan du välja vilket mål du vill aktivera målet till. Välj **[!UICONTROL Next]** när du har valt önskat mål.
 

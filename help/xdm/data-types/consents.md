@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;medgiv
 title: Datatypen Innehåll och inställningar
 description: Datatypen Godkänn för sekretess, Personalization och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '2291'
+source-wordcount: '2305'
 ht-degree: 0%
 
 ---
@@ -267,7 +267,7 @@ I självstudiekursen [Skapa ett schema i användargränssnittet](https://www.ado
 
 ## Hantera samtycke och ändringar av inställningar
 
-När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med [Adobe Experience Platform Web SDK](../../web-sdk/commands/setconsent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
+När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och omedelbart verkställas genom att man anger sitt samtycke i det datainsamlingsbibliotek som används. Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker. Se [`setConsent`](/help/collection/js/commands/setconsent.md) med hjälp av JavaScript-biblioteket eller åtgärden [[!UICONTROL Set consent]](/help/tags/extensions/client/web-sdk/actions/set-consent.md) med hjälp av taggtillägget.
 
 ## Bilaga {#appendix}
 

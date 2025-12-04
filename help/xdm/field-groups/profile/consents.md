@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Fältgrupp för innehåll och inställningar
 description: Läs mer om schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '889'
+source-wordcount: '906'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Eftersom den här fältgruppen bara är kompatibel med [!DNL XDM Individual Profile] kan den inte användas för [!DNL XDM ExperienceEvent]-scheman. Om du vill inkludera samtycke och inställningsdata i Experience Event-schemat lägger du till datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] &#x200B;](../../data-types/consents.md) i schemat med hjälp av en [anpassad fältgrupp](../../ui/resources/field-groups.md#create) i stället.
+>Eftersom den här fältgruppen bara är kompatibel med [!DNL XDM Individual Profile] kan den inte användas för [!DNL XDM ExperienceEvent]-scheman. Om du vill inkludera samtycke och inställningsdata i Experience Event-schemat lägger du till datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] ](../../data-types/consents.md) i schemat med hjälp av en [anpassad fältgrupp](../../ui/resources/field-groups.md#create) i stället.
 
 ## Fältgruppstruktur {#structure}
 
-Fältgruppen [!UICONTROL Consents and Preferences] tillhandahåller ett enskilt fält av objekttyp, `consents`, för att hämta information om samtycke och inställningar. Det här fältet utökar datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences], tar bort fältet `adID` och lägger till ett `idSpecific`-mappningsfält.](../../data-types/consents.md)
+Fältgruppen [!UICONTROL Consents and Preferences] tillhandahåller ett enskilt fält av objekttyp, `consents`, för att hämta information om samtycke och inställningar. Det här fältet utökar datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences], tar bort fältet ](../../data-types/consents.md) och lägger till ett `adID`-mappningsfält.`idSpecific`
 
 ![](../../images/field-groups/consent.png)
 
@@ -106,7 +106,7 @@ I följande JSON visas ett exempel på vilken typ av data som fältgruppen [!UIC
 >* Om kunden har valt att inte göra det på kanalnivå, ignoreras alla motsvarande samtycke eller inställningar i `idSpecific`.
 >* Om godkännande eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, respekteras motsvarande samtycke eller inställningar i `idSpecific`.
 
-Varje nyckel i objektet `idSpecific` representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om identitetsnamnutrymmen finns i [översikten över identitetsnamnrymden](../../../identity-service/features/namespaces.md) i dokumentationen för identitetstjänsten.
+Varje nyckel i objektet `idSpecific` representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om identitetsnamnutrymmen finns i [översikten över identitetsnamnrymden](/help/identity-service/features/namespaces.md) i dokumentationen för identitetstjänsten.
 
 Nycklarna för varje namnområdesobjekt representerar de unika identitetsvärden som kunden har angett inställningar för. Varje identitetsvärde kan innehålla en komplett uppsättning med innehåll och inställningar, formaterade på samma sätt som `consents`.
 
@@ -175,18 +175,18 @@ Det finns också ett samtycke som bara kan ges i avsnittet `idSpecific`: `adID`.
 
 Om du vill använda fältgruppen [!UICONTROL Consents and Preferences] för att importera medgivandedata från dina kunder måste du skapa en datauppsättning som baseras på ett schema som innehåller den fältgruppen.
 
-I självstudiekursen [Skapa ett schema i användargränssnittet](https://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar fältgrupper till fält. När du har skapat ett schema som innehåller ett fält med fältgruppen [!UICONTROL Consents and Preferences] kan du läsa avsnittet om att [skapa en datauppsättning](../../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följa stegen för att skapa en datauppsättning med ett befintligt schema.
+I självstudiekursen [Skapa ett schema i användargränssnittet](https://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar fältgrupper till fält. När du har skapat ett schema som innehåller ett fält med fältgruppen [!UICONTROL Consents and Preferences] kan du läsa avsnittet om att [skapa en datauppsättning](/help/catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följa stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
 >
 >Om du vill skicka medgivandedata till [!DNL Real-Time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller fältgruppen [!UICONTROL Consents and Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-Time Customer Profile]-krav för scheman och datauppsättningar.
 >
->Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../../rtcdp/profile/merge-policies.md).
+>Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](/help/rtcdp/profile/merge-policies.md).
 
 ## Hantera samtycke och ändringar av inställningar
 
-När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med [Adobe Experience Platform Web SDK](../../../web-sdk/commands/setconsent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida som de laddar.
+När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och omedelbart verkställas genom att man anger sitt samtycke i det datainsamlingsbibliotek som används. Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida som de läser in. Se [`setConsent`](/help/collection/js/commands/setconsent.md) med JavaScript-biblioteket eller åtgärden [[!UICONTROL Set consent]](/help/tags/extensions/client/web-sdk/actions/set-consent.md) med hjälp av taggtillägget Web SDK.
 
 ## Nästa steg
 
-Det här dokumentet innehåller strukturen och användningen av fältgruppen [!UICONTROL Consents and Preferences]. Mer information om andra fält som tillhandahålls av fältgruppen finns i dokumentet om datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] &#x200B;](../../data-types/consents.md).
+Det här dokumentet innehåller strukturen och användningen av fältgruppen [!UICONTROL Consents and Preferences]. Mer information om andra fält som tillhandahålls av fältgruppen finns i dokumentet om datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] ](../../data-types/consents.md).

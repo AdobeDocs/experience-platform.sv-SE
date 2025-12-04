@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsför
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '1586'
+source-wordcount: '1576'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Det här dokumentet innehåller information om användning och hastighetsgränse
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 ## Kom igång
 
@@ -109,7 +109,7 @@ Borttagning sker endast med data i identitetstjänsten och inte med kundprofilen
 Om du vill bevara dina autentiserade händelser mot CRMID rekommenderar vi att du ändrar dina primära ID:n från ECID till CRMID. Läs följande dokument för steg om hur du implementerar den här ändringen:
 
 * [Konfigurera identitetskarta för Experience Platform-taggar](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
-* [Identitetsdata i Experience Platform Web SDK](../web-sdk/identity/overview.md#using-identitymap)
+* [Identitetsdata i Experience Platform Web SDK](/help/collection/use-cases/identity/id-overview.md)
 
 ### Exempel på scenarier
 
@@ -137,19 +137,19 @@ I det här exemplet tar identitetstjänsten först bort den befintliga identitet
 * I följande diagram antas att det finns 50 identiteter i identitetsdiagrammet vid `timestamp=50`.
 * `(...)` betecknar de andra identiteter som redan är länkade i diagrammet.
 
-I det här exemplet importeras ECID:32110 och länkas till ett stort diagram vid `timestamp=51`, vilket överskrider gränsen på 50 identiteter.
+I det här exemplet är ECID :32110 inkapslat och länkat till ett stort diagram vid `timestamp=51`, vilket överskrider gränsen på 50 identiteter.
 
 ![](./images/guardrails/before-split.png)
 
 >[!TAB Borttagningsprocess]
 
-Därför tar identitetstjänsten bort den äldsta identiteten baserat på tidsstämpel och identitetstyp. I det här fallet tas ECID:35577 bara bort från identitetsdiagrammet.
+Därför tar identitetstjänsten bort den äldsta identiteten baserat på tidsstämpel och identitetstyp. I det här fallet tas ECID :35577 bara bort från identitetsdiagrammet.
 
 ![](./images/guardrails/during-split.png)
 
 >[!TAB Diagramutdata]
 
-Som ett resultat av att ECID:35577 togs bort kommer även kanterna som länkade CRMID:60013 och CRMID:25212 med det nu borttagna ECID:35577 att tas bort. Borttagningsprocessen gör att diagrammet delas upp i två mindre diagram.
+Som ett resultat av att ECID :35577 togs bort, tas även kanterna som länkade CRMID :60013 och CRMID :25212 med den nu borttagna ECID :35577 bort. Borttagningsprocessen gör att diagrammet delas upp i två mindre diagram.
 
 ![](./images/guardrails/after-split.png)
 
@@ -168,15 +168,15 @@ Som ett resultat av att ECID:35577 togs bort kommer även kanterna som länkade 
 
 På grund av borttagningslogiken kan vissa nav-identiteter också tas bort. Dessa navidentiteter refererar till noder som är länkade till flera individuella identiteter som annars skulle vara olänkade.
 
-I exemplet nedan importeras ECID:21011 och länkas till diagrammet vid `timestamp=51`, vilket överskrider gränsen på 50 identiteter.
+I exemplet nedan är ECID :21011 inkapslat och länkat till diagrammet vid `timestamp=51`, vilket överskrider gränsen på 50 identiteter.
 
 ![](./images/guardrails/hub-and-spoke-start.png)
 
 >[!TAB Borttagningsprocess]
 
-Därför tar identitetstjänsten endast bort den äldsta identiteten från identitetsdiagrammet, som i det här fallet är ECID:35577. Borttagningen av ECID:35577 leder också till att följande tas bort:
+Därför tar identitetstjänsten endast bort den äldsta identiteten från identitetsdiagrammet, som i det här fallet är ECID:35577. Borttagningen av ECID :35577 leder också till att följande tas bort:
 
-* Länken mellan CRMID: 60013 och det nu borttagna ECID:35577, vilket resulterar i ett delat diagram.
+* Länken mellan CRMID: 60013 och den nu borttagna ECID:t :35577, vilket resulterar i ett delat graf-scenario.
 * IDFA: 32110, IDFA: 02383 och de återstående identiteterna representerade av `(...)`. Dessa identiteter tas bort eftersom de inte är länkade till några andra identiteter separat och därför inte kan representeras i ett diagram.
 
 ![](./images/guardrails/hub-and-spoke-process.png)
@@ -199,7 +199,7 @@ Mer information om [!DNL Identity Service] finns i följande dokumentation:
 I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=sv-SE#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

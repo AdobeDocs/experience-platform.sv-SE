@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: cc89bf68011499e69f4ed8c7dc891ec02a34d361
+source-git-commit: c7bedcdb04d5c5483d0239a9fb99388d5e1e1fe5
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '834'
 ht-degree: 19%
 
 ---
@@ -50,7 +50,6 @@ ht-degree: 19%
 * Information på klientsidan {#client-side}
    * [Översikt](./ui/client-side/overview.md)
    * [Asynkron distribution](./ui/client-side/asynchronous-deployment.md)
-   * [Satellitobjektreferens](./ui/client-side/satellite-object.md)
    * [Distribuera JavaScript-taggar för att hantera kundgodkännande](./ui/client-side/consent.md)
    * [Stöd för CSP (Content Security Policy)](./ui/client-side/content-security-policy.md)
    * [Stöd för SRI (Subresource Integrity)](./ui/client-side/sri.md)
@@ -99,21 +98,46 @@ ht-degree: 19%
       * Adobe Experience Cloud ID-tjänst {#id-service}
          * [Översikt](./extensions/client/id-service/overview.md)
          * [Versionsinformation](./extensions/client/id-service/release-notes.md)
-      * Adobe Experience Platform Demo {#platform-demo}
-         * [Översikt](./extensions/client/platform-demo/overview.md)
-      * Webb-SDK för Adobe Experience Platform {#web-sdk}
-         * [Översikt](./extensions/client/web-sdk/overview.md)
-         * [Konfigurera SDK-taggtillägget för webben](./extensions/client/web-sdk/web-sdk-extension-configuration.md)
-         * [Händelsetyper](./extensions/client/web-sdk/event-types.md)
-         * [Åtgärdstyper](./extensions/client/web-sdk/action-types.md)
-         * [Dataelementtyper](./extensions/client/web-sdk/data-element-types.md)
-         * [Åtkomst till ECID](./extensions/client/web-sdk/accessing-the-ecid.md)
-         * [SDK-plugins för webben](./extensions/client/web-sdk/web-sdk-plugins.md)
-         * [Versionsinformation om SDK-tillägg](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
-         * [Versionsinformation om SDK-plugin-program för webben](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
       * Adobe Experience Manager resursinsikter {#asset-insights}
          * [Översikt](./extensions/client/asset-insights/overview.md)
          * [Versionsinformation](./extensions/client/asset-insights/release-notes.md)
+      * Adobe Experience Platform Demo {#platform-demo}
+         * [Översikt](./extensions/client/platform-demo/overview.md)
+      * Webb-SDK för Adobe Experience Platform {#web-sdk}
+         * [Översikt](extensions/client/web-sdk/overview.md)
+         * [Komma igång](extensions/client/web-sdk/getting-started.md)
+         * Konfigurera {#configure}
+            * [Översikt](extensions/client/web-sdk/configure/config-overview.md)
+            * [Anpassade byggkomponenter](extensions/client/web-sdk/configure/custom-build-components.md)
+            * [SDK, instans](extensions/client/web-sdk/configure/general.md)
+            * [Dataströmmar](extensions/client/web-sdk/configure/datastreams.md)
+            * [Godkännande](extensions/client/web-sdk/configure/consent.md)
+            * [Identitet](extensions/client/web-sdk/configure/identity.md)
+            * [Personalisering](extensions/client/web-sdk/configure/personalization.md)
+            * [Datainsamling](extensions/client/web-sdk/configure/data-collection.md)
+            * [Direktuppspelande media](extensions/client/web-sdk/configure/streaming-media.md)
+            * [Push-meddelanden](extensions/client/web-sdk/configure/push-notifications.md)
+            * [Advertising](extensions/client/web-sdk/configure/advertising.md)
+            * [Konfigurationsåsidosättningar](extensions/client/web-sdk/configure/configuration-overrides.md)
+            * [Avancerade inställningar](extensions/client/web-sdk/configure/advanced-settings.md)
+         * [Händelsetyper](extensions/client/web-sdk/event-types.md)
+         * Åtgärdstyper {#actions}
+            * [Översikt](extensions/client/web-sdk/actions/actions-overview.md)
+            * [Använd förslag](extensions/client/web-sdk/actions/apply-propositions.md)
+            * [Använd svar](extensions/client/web-sdk/actions/apply-response.md)
+            * [Utvärdera regeluppsättningar](extensions/client/web-sdk/actions/evaluate-rulesets.md)
+            * [Hämta spåraren för Media Analytics](extensions/client/web-sdk/actions/get-media-analytics-tracker.md)
+            * [Omdirigera med identitet](extensions/client/web-sdk/actions/redirect-with-identity.md)
+            * [Återställ ID för händelsesammanslagning](extensions/client/web-sdk/actions/reset-event-merge-id.md)
+            * [Skicka händelse](extensions/client/web-sdk/actions/send-event.md)
+            * [Skicka mediahändelse](extensions/client/web-sdk/actions/send-media-event.md)
+            * [Skicka push-prenumeration](extensions/client/web-sdk/actions/send-push-subscription.md)
+            * [Ange samtycke](extensions/client/web-sdk/actions/set-consent.md)
+            * [Uppdatera variabel](extensions/client/web-sdk/actions/update-variable.md)
+         * [Dataelementtyper](extensions/client/web-sdk/data-element-types.md)
+         * [Åtkomst till ECID](extensions/client/web-sdk/accessing-the-ecid.md)
+         * [Versionsinformation om SDK-tillägg](extensions/client/web-sdk/web-sdk-ext-release-notes.md)
+      * [Adobe Experience Platform Web SDK Plug-ins](extensions/client/web-sdk-plugins/web-sdk-plugins.md)
       * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)
       * Adobe Media Analytics för ljud och video {#media-analytics}
          * [Översikt](./extensions/client/media-analytics/overview.md)
@@ -344,5 +368,5 @@ ht-degree: 19%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 

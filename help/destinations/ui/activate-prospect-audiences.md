@@ -3,9 +3,9 @@ title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
+source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---

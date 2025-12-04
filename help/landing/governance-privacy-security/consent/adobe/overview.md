@@ -6,7 +6,7 @@ description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experi
 role: Developer
 feature: Consent
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
 source-wordcount: '1562'
 ht-degree: 0%
@@ -30,8 +30,8 @@ Handboken kräver en fungerande förståelse av de olika Experience Platform-tj�
 * [Experience Data Model (XDM)](/help/xdm/home.md): Det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata med.
 * [Adobe Experience Platform identitetstjänst](/help/identity-service/home.md): Lös den grundläggande utmaning som en fragmentering av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 * [Kundprofil i realtid](/help/profile/home.md): Använder [!DNL Identity Service]-funktioner för att skapa detaljerade kundprofiler från dina datauppsättningar i realtid. Kundprofilen i realtid hämtar data från datasjön och bevarar kundprofiler i sitt eget separata datalager.
-* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika Experience Platform-tjänster i kundens webbplats.
-   * [SDK-kommandon för samtycke](../../../../web-sdk/commands/setconsent.md): En översikt över SDK-kommandon som är relaterade till samtycke visas i den här handboken.
+* [Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika Experience Platform-tjänster i kundens webbplats.
+   * [SDK-kommandon för samtycke](/help/collection/js/commands/setconsent.md): En översikt över SDK-kommandon som är relaterade till samtycke visas i den här handboken.
 * [Adobe Experience Platform segmenteringstjänst](/help/segmentation/home.md): Gör att du kan dela in kundprofildata i realtid i grupper med individer som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
 
 ## Sammanfattning av godkännandebearbetningsflöde {#summary}
@@ -51,7 +51,7 @@ I den aktuella versionen av stöd för tillståndsbearbetning i Experience Platf
 
 >[!NOTE]
 >
->Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] &#x200B;](/help/xdm/data-types/consents.md).
+>Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] ](/help/xdm/data-types/consents.md).
 
 När systemet har konfigurerats tolkar Experience Platform Web SDK datainsamlingsvärdet för den aktuella användaren för att avgöra om data ska skickas till Adobe Experience Platform Edge Network, tas bort från klienten eller bevaras tills datainsamlingsbehörigheten är inställd på ja eller nej.
 
@@ -67,7 +67,7 @@ Den här dialogrutan bör göra det möjligt för kunden att välja om de vill a
 
 Data för kundgodkännande måste skickas till en [!DNL Profile]-aktiverad datauppsättning vars schema innehåller medgivandefält. Dessa fält måste ingå i samma schema och datauppsättning som du använder för att samla in attributinformation om enskilda kunder.
 
-Mer information om hur du lägger till de här obligatoriska fälten i en [!DNL Profile]-aktiverad datauppsättning innan du fortsätter med den här guiden finns i självstudiekursen [Konfigurera en datauppsättning för att hämta medgivandedata](./dataset.md).
+Mer information om hur du lägger till de här obligatoriska fälten i en [-aktiverad datauppsättning innan du fortsätter med den här guiden finns i självstudiekursen ](./dataset.md)Konfigurera en datauppsättning för att hämta medgivandedata[!DNL Profile].
 
 ## Uppdatera sammanfogningsprinciper för [!DNL Profile] så att de innehåller medgivandedata {#merge-policies}
 

@@ -3,7 +3,7 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 44a4d5c592e13cdd1d4d75787dee5e1763fae9a4
+source-git-commit: d252fc30d93fa4440c6ef47146830d0423e1839a
 workflow-type: tm+mt
 source-wordcount: '992'
 ht-degree: 1%
@@ -25,7 +25,7 @@ ht-degree: 1%
 >
 >Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar **[!UICONTROL Custom Personalization]**-målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication).
 >
-><br>Du kan hämta profilattribut via [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
+><br>Du kan hämta profilattribut via [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
 >
 ><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på målgruppsmedlemskap.
 
@@ -37,13 +37,13 @@ Konfigurera den här destinationen så att externa personaliseringsplattformar, 
 
 Det här målet kräver någon av följande datainsamlingsmetoder, beroende på implementeringen:
 
-* Använd [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) om du vill samla in data från din webbplats.
+* Använd [Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md) om du vill samla in data från din webbplats.
 * Använd [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) om du vill samla in data från ditt mobilprogram.
-* Använd [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) om du inte använder [Web SDK](/help/web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) eller om du vill anpassa användarupplevelsen baserat på profilattribut.
+* Använd [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) om du inte använder Web SDK eller Mobile SDK, eller om du vill anpassa användarupplevelsen baserat på profilattribut.
 
 >[!IMPORTANT]
 >
->**Attributbaserade personaliseringskrav:** Om du vill anpassa baserat på profilattribut (inte bara målgruppsmedlemskap) måste du **&#x200B;**&#x200B;använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) med autentiserad integration på serversidan, oavsett om du också använder Web SDK eller Mobile SDK för datainsamling.
+>**Attributbaserade personaliseringskrav:** Om du vill anpassa baserat på profilattribut (inte bara målgruppsmedlemskap) måste du **** använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) med autentiserad integration på serversidan, oavsett om du också använder Web SDK eller Mobile SDK för datainsamling.
 >
 >Endast SDK och SDK för mobiler stöder endast personalisering baserat på medlemskap för målgrupper. Edge Network API är **obligatoriskt** för att säkert hämta profilattribut för personalisering.
 
@@ -75,7 +75,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 >id="platform_destinations_custom_personalization_datastream"
 >title="Om datastreams"
 >abstract="Det här alternativet avgör i vilket datainsamlingsdatastam som målgrupperna ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=sv-SE" text="Lär dig konfigurera ett datastream"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html" text="Lär dig konfigurera ett datastream"
 
 >[!IMPORTANT]
 > 
@@ -108,7 +108,7 @@ Läs [Aktivera profiler och målgrupper för kantanpassning](../../ui/activate-e
 
 ## Exporterade data {#exported-data}
 
-Om du använder [taggar i Adobe Experience Platform](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [send event complete](../../../tags/extensions/client/web-sdk/event-types.md) och din anpassade kodsåtgärd har en `event.destinations`-variabel som du kan använda för att visa exporterade data.
+Om du använder [taggar i Adobe Experience Platform](/help/tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [send event complete](/help/tags/extensions/client/web-sdk/event-types.md) och din anpassade kodsåtgärd har en `event.destinations`-variabel som du kan använda för att visa exporterade data.
 
 Här är ett exempelvärde för variabeln `event.destinations`:
 
@@ -130,7 +130,7 @@ Här är ett exempelvärde för variabeln `event.destinations`:
 ]
 ```
 
-Om du inte använder [taggar](/help/tags/home.md) för att distribuera Experience Platform Web SDK kan du använda [kommandosvar](/help/web-sdk/commands/command-responses.md) för att se exporterade data.
+Om du inte använder [taggar](/help/tags/home.md) för att distribuera Experience Platform Web SDK kan du använda [kommandosvar](/help/collection/js/commands/command-responses.md) för att se exporterade data.
 
 JSON-svaret från Adobe Experience Platform kan analyseras för att hitta motsvarande integreringsalias för det program du integrerar med Adobe Experience Platform. Målgrupps-ID:n kan skickas till programmets kod som målparametrar. Nedan visas ett exempel på hur detta skulle se ut när det gäller målsvaret.
 

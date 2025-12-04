@@ -1,8 +1,8 @@
 ---
 title: Åtkomst till ECID
-description: Lär dig hur du får åtkomst till Experience Cloud-ID från Data Prep eller Taggar
+description: Lär dig hur du får åtkomst till Experience Cloud-id:t från Data Prep eller Taggar
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
-source-git-commit: e53ae6053a4b00e7e75242b95496c6795953005a
+source-git-commit: 19e85ef4dbaeb90712ad9cd6ad4cb9a1a6b0c6a5
 workflow-type: tm+mt
 source-wordcount: '279'
 ht-degree: 0%
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 [!DNL Experience Cloud Identity (ECID)] är en beständig identifierare som tilldelas en användare när de besöker din webbplats. Under vissa omständigheter kanske du föredrar att komma åt [!DNL ECID] (till exempel för att skicka det till en tredje part). Ett annat användningsfall är att ange [!DNL ECID] i ett anpassat XDM-fält, förutom att det finns i identitetskartan.
 
-Du kan komma åt ECID antingen via [Dataprep för datainsamling](../../../../datastreams/data-prep.md) (rekommenderas) eller via taggar.
+Du kan komma åt ECID antingen via [Dataprep för datainsamling](/help/datastreams/data-prep.md) (rekommenderas) eller via taggar.
 
 ## Åtkomst till ECID via Data Prep (föredragen metod) {#accessing-ecid-data-prep}
 
-Den här metoden använder [Data Prep för datainsamling](../../../../datastreams/data-prep.md) för att konfigurera en anpassad mappning för `ECID`.
+Den här metoden använder [Data Prep för datainsamling](/help/datastreams/data-prep.md) för att konfigurera en anpassad mappning för `ECID`.
 
-Mer information om hur du använder den här funktionen finns i dokumentationen för [Dataförberedelser för datainsamling](../../../../datastreams/data-prep.md).
+Mer information om hur du använder den här funktionen finns i dokumentationen för [Dataförberedelser för datainsamling](/help/datastreams/data-prep.md).
 
 Om du vill ställa in ECID i ett anpassat XDM-fält kan du göra detta genom att ställa in `source` på följande sökväg, utöver att ha det i identitetskartan:
 
@@ -36,7 +36,7 @@ Ange sedan målet till en XDM-sökväg där fältet är av typen `string`.
 
 Om du behöver komma åt [!DNL ECID] på klientsidan använder du taggarna enligt nedan.
 
-1. Kontrollera att din egenskap är konfigurerad med [regelkomponentsekvensering](../../../ui/managing-resources/rules.md#sequencing) aktiverad.
+1. Kontrollera att din egenskap är konfigurerad med [regelkomponentsekvensering](/help/tags/ui/managing-resources/rules.md#sequencing) aktiverad.
 1. Skapa en ny regel. Den här regeln ska endast användas för att hämta [!DNL ECID] utan några andra viktiga åtgärder.
 1. Lägg till en [!UICONTROL Library Loaded]-händelse i regeln.
 1. Lägg till en [!UICONTROL Custom Code]-åtgärd i regeln med följande kod (förutsatt att namnet som du har konfigurerat för SDK-instansen är `alloy` och att det inte redan finns ett dataelement med samma namn):

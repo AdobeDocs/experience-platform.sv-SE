@@ -2,7 +2,7 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 7df0d0c7eb97760190ac8b20d1b74472b87e8b6a
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Namnområdesprioriteten kan konfigureras med hjälp av användargränssnittet [f
 
 ## Användning av namnområdesprioritet
 
-För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
+För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
 
 ![Ett diagram över programomfånget för namnområdesprioritet.](../images/namespace-priority/application-scope.png "Ett diagram över programomfånget för namnområdesprioritet."){zoomable="yes"}
 
@@ -82,7 +82,7 @@ För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en vikti
    * Alla fält som markerats som primär identitet i ett XDM Experience Event Class-schema.
    * Standardinställningar för primär identitet i Adobe Analytics-källkopplingen (ECID eller AAID).
 * Å andra sidan bestämmer inte namnområdesprioriteten **den primära identiteten för profilposter**.
-   * För profilposter bör du fortsätta att definiera dina identitetsfält i schemat, inklusive den primära identiteten. Mer information finns i guiden [Definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md).
+   * För profilposter bör du fortsätta att definiera dina identitetsfält i schemat, inklusive den primära identiteten. Mer information finns i guiden [Definiera identitetsfält i användargränssnittet](/help/xdm/ui/fields/identity.md).
 
 >[!TIP]
 >
@@ -148,23 +148,23 @@ Funktioner för borttagning av datahygienpost på följande sätt för en viss i
 * Kundprofil i realtid: Tar bort alla profilfragment med angiven identitet som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioritet.**
 * Datasjön: Tar bort alla poster med den angivna identiteten som primär identitet. Till skillnad från kundprofil i realtid baseras den primära identiteten i datasjön på den primära identitet som anges i WebSDK (`primary=true`) eller ett fält som markerats som primär identitet
 
-Mer information finns i [Översikt över avancerad livscykelhantering](../../hygiene/home.md).
+Mer information finns i [Översikt över avancerad livscykelhantering](/help/hygiene/home.md).
 
 ### Beräknade attribut
 
-Om identitetsinställningarna är aktiverade kommer beräknade attribut att använda namnområdesprioritet för att lagra det beräknade attributvärdet. För en given händelse kommer identiteten med den högsta namnområdesprioriteten att ha värdet för det beräknade attributet skrivet mot den. Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
+Om identitetsinställningarna är aktiverade kommer beräknade attribut att använda namnområdesprioritet för att lagra det beräknade attributvärdet. För en given händelse kommer identiteten med den högsta namnområdesprioriteten att ha värdet för det beräknade attributet skrivet mot den. Mer information finns i användargränssnittshandboken för [beräknade attribut](/help/profile/computed-attributes/ui.md).
 
 ### Data Lake
 
-Inmatningen av data i sjön fortsätter att följa de primära identitetsinställningarna som konfigurerats på [Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map) och scheman.
+Inmatningen av data i sjön fortsätter att följa de primära identitetsinställningarna som konfigurerats på [Web SDK](/help/tags/extensions/client/web-sdk/data-element-types.md#identity-map) och scheman.
 
 Datasjön kommer inte att fastställa den primära identiteten baserat på namnområdesprioriteten. Adobe Customer Journey Analytics kommer till exempel att fortsätta använda värden i identitetskartan även efter det att namnområdesprioriteten har aktiverats (till exempel när en datauppsättning läggs till i en ny anslutning), eftersom Customer Journey Analytics använder data från datavjön.
 
 ### XDM-scheman (Experience Data Model)
 
-Alla scheman som inte är en XDM Experience Event, till exempel enskilda XDM-profiler, fortsätter att respektera alla [fält som du markerar som en identitet](../../xdm/ui/fields/identity.md).
+Alla scheman som inte är en XDM Experience Event, till exempel enskilda XDM-profiler, fortsätter att respektera alla [fält som du markerar som en identitet](/help/xdm/ui/fields/identity.md).
 
-Mer information om XDM-scheman finns i översikten [scheman](../../xdm/home.md).
+Mer information om XDM-scheman finns i översikten [scheman](/help/xdm/home.md).
 
 ### Intelligenta tjänster
 
@@ -175,7 +175,7 @@ När du väljer data måste du ange ett namnutrymme, som används för att avgö
 
 Den här konfigurationen resulterar endast i beräkning av bakgrundsmusik med hjälp av autentiserade händelser.
 
-Mer information finns i dokumenten om [Attribution AI](../../intelligent-services/attribution-ai/overview.md) och [Customer AI](../../intelligent-services/customer-ai/overview.md).
+Mer information finns i dokumenten om [Attribution AI](/help/intelligent-services/attribution-ai/overview.md) och [Customer AI](/help/intelligent-services/customer-ai/overview.md).
 
 ### Partnerbyggda destinationer
 
@@ -184,7 +184,7 @@ Uppdaterade resultat för identifiering av målgrupper för profiler som är kop
 * Målgruppskvalificering baseras endast på anonym aktivitet.
 * Inloggningar för flera profiler sker på kort tid.
 
-Mer information om partnerbyggda mål finns i [målöversikten](../../destinations/home.md#adobe-built-and-partner-built-destinations).
+Mer information om partnerbyggda mål finns i [målöversikten](/help/destinations/home.md#adobe-built-and-partner-built-destinations).
 
 ### Integritetstjänst
 
@@ -193,7 +193,7 @@ Mer information om partnerbyggda mål finns i [målöversikten](../../destinatio
 * Kundprofil i realtid: Tar bort alla profilfragment med angivet identitetsvärde som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioritet.**
 * Datasjön: Tar bort alla poster med den angivna identiteten som primär eller sekundär identitet.
 
-Mer information finns i [Översikt över sekretesstjänsten](../../privacy-service/home.md).
+Mer information finns i [Översikt över sekretesstjänsten](/help/privacy-service/home.md).
 
 ### Edge segmentering och Edge Network
 
@@ -204,17 +204,17 @@ I sammanhanget [!DNL Identity Graph Linking Rules] finns det två viktiga beteen
 
 #### Edge segmentering
 
-I en given händelse måste du se till att alla namnutrymmen som representerar en personentitet inkluderas i `identityMap` eftersom [identiteter som skickas som XDM-fält](../../xdm/ui/fields/identity.md) ignoreras och inte används för metadatalagring för segmentmedlemskap.
+I en given händelse måste du se till att alla namnutrymmen som representerar en personentitet inkluderas i `identityMap` eftersom [identiteter som skickas som XDM-fält](/help/xdm/ui/fields/identity.md) ignoreras och inte används för metadatalagring för segmentmedlemskap.
 
-* **Händelsetillämplighet**: Det här beteendet gäller endast för händelser som skickas direkt till Edge Network (till exempel WebSDK och Mobile SDK). Händelser som har importerats från [Experience Platform-hubben](../../landing/edge-and-hub-comparison.md), t.ex. de som har importerats med HTTP API-källan, andra strömningskällor och batchkällor, omfattas inte av den här begränsningen.
-* **Specifikation för Edge-segmentering**: Det här beteendet är specifikt för kantsegmentering. Segmentering av grupper och strömning är separata tjänster som utvärderas på navet och följer inte samma process. Läs [kantsegmenteringsguiden](../../segmentation/methods/edge-segmentation.md) om du vill ha mer information.
-* Mer information finns i [Adobe Experience Platform- och programarkitekturdiagrammen](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram) och [Edge Network- och navjämförelsesidorna](../../landing/edge-and-hub-comparison.md).
+* **Händelsetillämplighet**: Det här beteendet gäller endast för händelser som skickas direkt till Edge Network (till exempel WebSDK och Mobile SDK). Händelser som har importerats från [Experience Platform-hubben](/help/landing/edge-and-hub-comparison.md), t.ex. de som har importerats med HTTP API-källan, andra strömningskällor och batchkällor, omfattas inte av den här begränsningen.
+* **Specifikation för Edge-segmentering**: Det här beteendet är specifikt för kantsegmentering. Segmentering av grupper och strömning är separata tjänster som utvärderas på navet och följer inte samma process. Läs [kantsegmenteringsguiden](/help/segmentation/methods/edge-segmentation.md) om du vill ha mer information.
+* Mer information finns i [Adobe Experience Platform- och programarkitekturdiagrammen](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications#detailed-architecture-diagram) och [Edge Network- och navjämförelsesidorna](/help/landing/edge-and-hub-comparison.md).
 
 #### Edge Network-program
 
 För att program på Edge Network ska ha tillgång till Edge-profilen utan dröjsmål måste du se till att dina händelser innehåller `primary=true` i CRMID. Detta garanterar omedelbar tillgänglighet utan att vänta på att identitetsdiagrammet uppdateras från navet.
 
 * Program på Edge Network, t.ex. Adobe Target, Offer Decisioning och anpassade Personalization-destinationer, fortsätter att vara beroende av den primära identiteten i händelser för att komma åt profiler från Edge-profilen.
-* Mer information om Edge Network beteende finns i [Experience Platform Web SDK &amp; Edge Network-arkitekturdiagrammet](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment).
-* Läs dokumentationen om [dataelementtyper](../../tags/extensions/client/web-sdk/data-element-types.md) och [identitetsdata i Web SDK](../../web-sdk/identity/overview.md) om du vill ha mer information om hur du konfigurerar primär identitet på Web SDK.
+* Mer information om Edge Network beteende finns i [Experience Platform Web SDK &amp; Edge Network-arkitekturdiagrammet](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/deployment/websdk#experience-platform-webmobile-sdk-or-edge-network-server-api-deployment).
+* Läs dokumentationen om [dataelementtyper](/help/tags/extensions/client/web-sdk/data-element-types.md) och [identitetsdata i Web SDK](/help/collection/use-cases/identity/id-overview.md) om du vill ha mer information om hur du konfigurerar primär identitet på Web SDK.
 * Kontrollera att ECID finns med i upplevelsehändelsen. Om ECID saknas läggs det till i händelsens nyttolast med `primary=true`, vilket kan leda till oväntade resultat.

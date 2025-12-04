@@ -1,71 +1,42 @@
 ---
-keywords: Experience Platform;home;populära topics;data collection;launch;web sdk
 solution: Experience Platform
 title: Översikt över datainsamling
-description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
+description: Lär dig skicka data till Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: 3d51f01d314587510d900d335dc92fedb8ac31e8
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '287'
 ht-degree: 2%
 
 ---
 
 # Översikt över datainsamling
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata från källor på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra mål på några sekunder.
+Adobe Experience Platform har en programsvit som gör att ni kan samla in kundupplevelsedata från olika källor och skicka dem till Adobe Experience Platform Edge Network. Dessa data kan sedan berikas, omformas och distribueras till Adobe eller andra mål än Adobe.
 
-Datainsamling stöds för följande källor på klientsidan:
+Adobe har stöd för följande kodspråk med dedikerade bibliotek för datainsamling:
 
-* Webbaserade program
-* Inbyggda mobilappar
-* OTT-program (Over-the-top)
+* **JavaScript**: För webbplatser och webbaserade program
+* **Kotlin**: För Android-enheter
+* **Dra**: För iOS-enheter
+* **BrightStorScript**: För Roku-enheter
+* **Flutter**: För Android + iOS-program som använder Flutter
+* **React Native**: För Android + iOS-program som använder React Native
 
-Datainsamlingen fokuserar på att upptäcka och göra inkapslade datauppsättningar tillgängliga, vilket innefattar följande:
+Tagggränssnittet i Adobe Experience Platform Data Collection innehåller tilläggen Web SDK och Mobile SDK.
 
-* [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html?lang=sv-SE)
-* [Taggar](../tags/home.md)
-* [Dataströmmar](../datastreams/overview.md)
-* [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)
-* [Webb-SDK för Adobe Experience Platform](../web-sdk/home.md)
-* [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)
-* [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)
-* [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
-* [Experience Platform Assurance](../assurance/home.md)
+Om ingen av de ovan nämnda SDK:erna uppfyller ditt projekts behov kan du använda [Adobe Experience Platform Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) för att skicka data direkt till Adobe.
 
+## Datainsamlingsprocess
 
-Den här guiden ger en introduktion på hög nivå till datainsamling och hur den fungerar för att skicka data till Adobe Experience Cloud-produkter och andra program än Adobe via Experience Platform Edge Network.
+I stället för att installera och implementera separata individuella bibliotek för varje Adobe-produkt kan du implementera en av SDK:erna ovan eller taggtillägg för att samla alla önskade data i en enda nyttolast. Nyttolasten skickas till en [datastream](/help/datastreams/overview.md) i Adobe Experience Platform Edge Network.
 
-## Taggar, Web SDK och Mobile SDK
+![Datainsamlingsdiagram](assets/tags-sdks.png)
 
-Experience Platform Web SDK och Experience Platform Mobile SDK komprimerar och komprimerar alla Adobe produktbibliotek till ett enda utvecklingsverktyg för webb- och mobilplattformar. Dessa kan implementeras med råkod eller med [tags](../tags/home.md) via användargränssnittet för datainsamling eller Adobe Experience Platform-gränssnittet.
+Adobe Experience Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. När en datastream tar emot data distribueras dessa data till varje lösning som du har konfigurerat. Data skickas vidare i ett format som alla enskilda produkter förstår.
 
-Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar operationer till en enda ström från klientenheter till Experience Platform Edge Network.
+![Adobe-lösningsdiagram](assets/adobe-solutions.png)
 
-![Taggar, Web SDK, Mobile SDK](./images/home/tags-sdks.png)
+Du kan också använda [händelsevidarebefordran](/help/tags/ui/event-forwarding/overview.md) för att omvandla, förbättra och skicka data till andra mål än Adobe med låg fördröjning och utan implementeringskod på klientsidan.
 
-## Experience Platform Edge Network och datastreams {#edge}
-
-Experience Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med hjälp av taggar kan du konfigurera [datastreams](../datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, så att du kan aktivera de här produkterna på serversidan utan att ändra klientkoden.
-
-Dessutom är datastreams integrerade med flera Experience Platform-funktioner som säkerställer att känsliga data som du skickar hanteras på rätt sätt med hänsyn till organisationens policyer och rättsliga bestämmelser. Mer information finns i avsnittet [Hantera känsliga data](../datastreams/overview.md#sensitive) i datastreams-dokumentationen.
-
-![Datastreams och Adobe solutions](./images/home/adobe-solutions.png)
-
-## Vidarebefordran av händelser
-
-[Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md) kan utnyttja alla Experience Platform-datastream så att du kan omforma, berika och skicka data till alla icke-Adobe-mål med extrem låg latens och utan att lägga till någon tredjepartskod till klientenheten.
-
-![Vidarebefordran av händelser](./images/home/event-forwarding.png)
-
->[!NOTE]
->
->Vidarebefordran är en betalfunktion som ingår i Adobe Real-Time Customer Data Platform Connections, Prime eller Ultimate.
-
-## Nästa steg
-
-Det här dokumentet innehåller en översikt på hög nivå över hur datainsamling fungerar för att automatisera processen med att skicka insamlade kundupplevelsedata till Adobe-produkter och tredjepartsdestinationer.
-
-![Ramverk för datainsamling](./images/home/collection.png)
-
-Mer information om det allmänna arbetsflödet för att skicka händelsedata via Edge Network finns i översikten [från början till slut](./e2e.md).
+![Diagram för vidarebefordran av händelser](assets/event-forwarding.png)

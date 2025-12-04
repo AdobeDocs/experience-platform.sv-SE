@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 04b804b81b605040c74db040bc5118e0392ddd32
+source-git-commit: 8d3da7f33aefa822e24bd60168760d856a85865f
 workflow-type: tm+mt
-source-wordcount: '2089'
+source-wordcount: '2088'
 ht-degree: 0%
 
 ---
@@ -25,8 +25,8 @@ Mer information om hur du konfigurerar tekniska konton och tilldelar de behörig
 
 Mer information om hur du skapar och konfigurerar ett tekniskt konto finns i:
 
-- [Developer Console-konfiguration](https://experienceleague.adobe.com/sv/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman): Steg-för-steg-instruktioner för hur du konfigurerar Adobe Developer Console och hämtar OAuth-autentiseringsuppgifter.
-- [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/sv/docs/platform-learn/tutorial-comprehensive-technical/setup): En omfattande genomgång för att skapa och konfigurera ett tekniskt konto i Adobe Experience Platform.
+- [Developer Console-konfiguration](https://experienceleague.adobe.com/en/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman): Steg-för-steg-instruktioner för hur du konfigurerar Adobe Developer Console och hämtar OAuth-autentiseringsuppgifter.
+- [Teknisk kontokonfiguration från början till slut](https://experienceleague.adobe.com/en/docs/platform-learn/tutorial-comprehensive-technical/setup): En omfattande genomgång för att skapa och konfigurera ett tekniskt konto i Adobe Experience Platform.
 
 Om du bara använder gränssnittet för frågetjänsten måste du se till att du har nödvändig behörighet eller koordinat med en administratör som hanterar tekniska konton. Alla schemalagda frågor läggs till i listan på fliken [!UICONTROL Scheduled queries], där du kan övervaka status, schemainformation och felmeddelanden för alla schemalagda frågejobb samt prenumerera på aviseringar. Mer information om övervakning och hantering av frågor finns i dokumentet [Övervaka schemalagda frågor](./monitor-queries.md).
 
@@ -183,7 +183,7 @@ I guiden [Övervaka schemalagd fråga](./monitor-queries.md#inline-actions) finn
 
 Välj en **[!UICONTROL Query run ID]** i listan för att navigera till frågekörningsöversikten. En fullständig beskrivning av informationen som är tillgänglig i [frågekörningsöversikt](./monitor-queries.md#query-run-overview) finns i dokumentationen för övervakningsplanerade frågor.
 
-Om du vill övervaka schemalagda frågor med hjälp av API:t för frågetjänsten läser du [guiden &#x200B;](../api/runs-scheduled-queries.md) för schemalagda frågekörningsslutpunkter.
+Om du vill övervaka schemalagda frågor med hjälp av API:t för frågetjänsten läser du [guiden ](../api/runs-scheduled-queries.md) för schemalagda frågekörningsslutpunkter.
 
 ## Aktivera, inaktivera eller ta bort ett schema {#delete-schedule}
 

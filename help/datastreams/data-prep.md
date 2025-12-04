@@ -2,9 +2,9 @@
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
-source-wordcount: '1175'
+source-wordcount: '1166'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,9 @@ Det finns två användningsområden där Data Prep för datainsamling är använ
 
 ## Skicka ett befintligt datalager till Edge Network via WebSDK {#send-datalayer-via-websdk}
 
-Det befintliga datalagret måste skickas med objektet [`data`](/help/web-sdk/commands/sendevent/data.md) i kommandot `sendEvent`.
+Det befintliga datalagret måste skickas med objektet [`data`](/help/collection/js/commands/sendevent/data.md) i kommandot `sendEvent`.
 
-Om du använder taggar måste du använda fältet **[!UICONTROL Data]** för åtgärdstypen **[!UICONTROL Send Event]** enligt beskrivningen i [dokumentationen för SDK-taggtillägg för webben](/help/tags/extensions/client/web-sdk/action-types.md).
+Om du använder taggar måste du använda fältet **[!UICONTROL Data]** för åtgärdstypen [**[!UICONTROL Send Event]**](/help/tags/extensions/client/web-sdk/actions/send-event.md).
 
 Resten av guiden fokuserar på hur datalagret ska mappas till XDM-standarder när det har skickats av WebSDK.
 

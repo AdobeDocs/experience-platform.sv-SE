@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 8dc4393232f5e256f375d2104d4fe0eaffc1d716
+source-git-commit: d252fc30d93fa4440c6ef47146830d0423e1839a
 workflow-type: tm+mt
-source-wordcount: '1574'
+source-wordcount: '1580'
 ht-degree: 0%
 
 ---
@@ -105,7 +105,7 @@ Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnu
 
 Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram.
 
->[!VIDEO](https://video.tv.adobe.com/v/3432348?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
 ## Förstå identitetstjänstens roll i Experience Platform infrastruktur
 
@@ -113,7 +113,7 @@ Identitetstjänsten spelar en viktig roll inom Experience Platform. Några av de
 
 * [Scheman](../xdm/home.md): Inom ett givet schema gör de schemafält som har markerats som identitetsdiagram att identitetsdiagram kan skapas.
 * [Datauppsättningar](../catalog/datasets/overview.md): När en datauppsättning aktiveras för inmatning i kundprofilen i realtid, genereras identitetsdiagram från datauppsättningen, eftersom datauppsättningen har minst två fält som är markerade som identitet.
-* [Web SDK](../web-sdk/home.md): Web SDK skickar upplevelsehändelser till Adobe Experience Platform, och identitetstjänsten genererar ett diagram när det finns två eller flera identiteter i händelsen.
+* [Datainsamling](/help/collection/home.md): Datainsamlingsbibliotek (t.ex. Web SDK) skickar upplevelsehändelser till Adobe Experience Platform. Identitetstjänsten genererar ett diagram när det finns två eller flera identiteter i händelsen.
 * [Kundprofil i realtid](../profile/home.md): Innan attribut och händelser för en viss profil sammanfogas kan kundprofilen i realtid referera till identitetsdiagrammet. Mer information finns i guiden om [att förstå relationen mellan identitetstjänsten och kundprofilen i realtid](./identity-and-profile.md).
 * [Destinationer](../destinations/home.md): Destinationer kan skicka profilinformation till andra system baserat på ett identitetsnamnutrymme, t.ex. hashad e-post.
 * [Segmentmatchning](../segmentation/ui/segment-match/overview.md): Segmentmatchning matchar två profiler i två olika sandlådor som har samma ID-namnutrymme och identitetsvärde.

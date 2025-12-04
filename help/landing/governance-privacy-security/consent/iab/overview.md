@@ -6,7 +6,7 @@ description: Lär dig hur du konfigurerar dataåtgärder och scheman för att f�
 role: Developer
 feature: Consent
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
 workflow-type: tm+mt
 source-wordcount: '2509'
 ht-degree: 0%
@@ -42,8 +42,8 @@ Handboken kräver även en fungerande förståelse av följande Experience Platf
 * [Experience Data Model (XDM)](/help/xdm/home.md): Det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata med.
 * [Adobe Experience Platform identitetstjänst](/help/identity-service/home.md): Lös den grundläggande utmaning som en fragmentering av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 * [Kundprofil i realtid](/help/profile/home.md): Använder [!DNL Identity Service] för att skapa detaljerade kundprofiler från dina datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från datasjön och behåller kundprofiler i sitt eget separata datalager.
-* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika Experience Platform-tjänster i kundens webbplats.
-   * [SDK-kommandon för samtycke](../../../../web-sdk/commands/setconsent.md): En översikt över SDK-kommandon som är relaterade till samtycke visas i den här handboken.
+* [Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika Experience Platform-tjänster i kundens webbplats.
+   * [SDK-kommandon för samtycke](/help/collection/js/commands/setconsent.md): En översikt över SDK-kommandon som är relaterade till samtycke visas i den här handboken.
 * [Adobe Experience Platform segmenteringstjänst](/help/segmentation/home.md): Gör att du kan dela in [!DNL Real-Time Customer Profile]-data i grupper med individer som delar liknande egenskaper och svarar på liknande sätt som marknadsföringsstrategier.
 
 Förutom de Experience Platform-tjänster som anges ovan bör du även känna till [mål](/help/data-governance/home.md) och deras roll i Experience Platform ekosystem.
@@ -63,7 +63,7 @@ Med Experience Platform kan ni samla in data om kundens samtycke genom följande
 
 Förutom SDK-kommandon som utlöses av CMP-krokar för ändring av samtycke, kan data för samtycke även flöda in i Experience Platform via alla kundgenererade XDM-data som överförs direkt till en [!DNL Profile]-aktiverad datauppsättning.
 
-Alla segment som delas med Experience Platform av Adobe Audience Manager (via [!DNL Audience Manager]-källkopplingen eller på annat sätt) kan också innehålla data om samtycke om de lämpliga fälten har tillämpats på dessa segment via [!DNL Experience Cloud Identity Service]. Mer information om hur du samlar in medgivandedata i [!DNL Audience Manager] finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=sv-SE).
+Alla segment som delas med Experience Platform av Adobe Audience Manager (via [!DNL Audience Manager]-källkopplingen eller på annat sätt) kan också innehålla data om samtycke om de lämpliga fälten har tillämpats på dessa segment via [!DNL Experience Cloud Identity Service]. Mer information om hur du samlar in medgivandedata i [!DNL Audience Manager] finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html).
 
 ### Efterföljande av samtycke
 
@@ -128,7 +128,7 @@ När du har angett ett unikt namn för datastream väljer du växlingsknappen br
 | --- | --- |
 | [!UICONTROL Sandbox] | Namnet på Experience Platform [sandbox](/help/sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
 | [!UICONTROL Streaming Inlet] | En giltig strömningsanslutning för Experience Platform. Se självstudiekursen [Skapa en direktuppspelningsanslutning](/help/ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt direktuppspelningsinlopp. |
-| [!UICONTROL Event Dataset] | Markera datauppsättningen [!DNL XDM ExperienceEvent] som skapades i [föregående steg](#datasets). Om du inkluderade fältgruppen [[!UICONTROL IAB TCF 2.0 Consent] &#x200B;](/help/xdm/field-groups/event/iab.md) i datasetens schema kan du spåra händelser för ändring av samtycke över tiden med kommandot [`sendEvent`](#sendEvent) och lagra data i den här datauppsättningen. Kom ihåg att de medgivandevärden som lagras i den här datauppsättningen **inte** används i automatiska arbetsflöden för verkställighet. |
+| [!UICONTROL Event Dataset] | Markera datauppsättningen [!DNL XDM ExperienceEvent] som skapades i [föregående steg](#datasets). Om du inkluderade fältgruppen [[!UICONTROL IAB TCF 2.0 Consent] ](/help/xdm/field-groups/event/iab.md) i datasetens schema kan du spåra händelser för ändring av samtycke över tiden med kommandot [`sendEvent`](#sendEvent) och lagra data i den här datauppsättningen. Kom ihåg att de medgivandevärden som lagras i den här datauppsättningen **inte** används i automatiska arbetsflöden för verkställighet. |
 | [!UICONTROL Profile Dataset] | Markera datauppsättningen [!DNL XDM Individual Profile] som skapades i [föregående steg](#datasets). När du svarar på CMP-krokar för ändring av samtycke med kommandot [`setConsent`](#setConsent) lagras insamlade data i den här datauppsättningen. Eftersom den här datauppsättningen är profilaktiverad respekteras de medgivandevärden som lagras i den här datauppsättningen under automatiska arbetsflöden för verkställighet. |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
@@ -141,7 +141,7 @@ När du har skapat den dataström som beskrivs i föregående avsnitt kan du bö
 
 #### Använda CMP-krokar för ändring av samtycke {#setConsent}
 
-Många CMP-modeller har färdiga kopplingar som lyssnar på händelser om samtycke. När dessa händelser inträffar kan du använda kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) för att uppdatera kundens medgivandedata.
+Många CMP-modeller har färdiga kopplingar som lyssnar på händelser om samtycke. När dessa händelser inträffar kan du använda kommandot [`setConsent`](/help/collection/js/commands/setconsent.md) för att uppdatera kundens medgivandedata.
 
 Kommandot `setConsent` förväntar sig två argument:
 
@@ -224,7 +224,7 @@ alloy("sendEvent", {
 
 ### Hantera SDK-svar
 
-Många Web SDK-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Mer information finns i [Kommandosvar](/help/web-sdk/commands/command-responses.md).
+Många Web SDK-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Mer information finns i [Kommandosvar](/help/collection/js/commands/command-responses.md).
 
 ## Exportera segment {#export}
 
@@ -245,7 +245,7 @@ TCF 2.0 kräver också att datakällan måste kontrollera målets leverantörsbe
 
 >[!NOTE]
 >
->Alla segment som delas med Adobe Audience Manager innehåller samma TCF 2.0-medgivandevärden som deras Experience Platform-motsvarigheter. Eftersom [!DNL Audience Manager] delar samma leverantörs-ID som Experience Platform (565) krävs samma syften och leverantörsbehörighet. Mer information finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html?lang=sv-SE).
+>Alla segment som delas med Adobe Audience Manager innehåller samma TCF 2.0-medgivandevärden som deras Experience Platform-motsvarigheter. Eftersom [!DNL Audience Manager] delar samma leverantörs-ID som Experience Platform (565) krävs samma syften och leverantörsbehörighet. Mer information finns i dokumentet om [Adobe Audience Manager-plugin-programmet för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html).
 
 ## Testa implementeringen {#test-implementation}
 

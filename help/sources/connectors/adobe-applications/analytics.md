@@ -1,15 +1,15 @@
 ---
-title: Adobe Analytics Source Connector for Report-Suite Data
+title: Adobe Analytics källanslutning för rapportsvitens data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: d9dad6b5da413740559e6c8de7392bc2e169d5d9
+source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1345'
 ht-degree: 0%
 
 ---
 
-# Adobe Analytics källanslutning för rapportsuite-data
+# Adobe Analytics källanslutning för rapportsvitens data
 
 Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics-källkopplingen. Källkopplingen [!DNL Analytics] strömmar data som samlats in av [!DNL Analytics] till Experience Platform i realtid och konverterar SCDS-formaterade [!DNL Analytics]-data till [!DNL Experience Data Model] (XDM)-fält som ska användas av Experience Platform.
 
@@ -60,11 +60,11 @@ Den förväntade fördröjningen för Analytics Data på Experience Platform bes
 | Nya data till [!DNL Real-Time Customer Profile] (A4T **inte** aktiverat) | &lt; 2 minuter |
 | Nya data till [!DNL Real-Time Customer Profile] (A4T **är** aktiverat) | upp till 30 minuter |
 | Nya data till Data Lake | &lt; 2,25 timmar |
-| Nya data till Customer Journey Analytics utan [sammanfogning](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=sv-SE) | &lt; 3,75 timmar |
+| Nya data till Customer Journey Analytics utan [sammanfogning](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=en) | &lt; 3,75 timmar |
 | Nya data till Customer Journey Analytics med häftning | &lt; 7 timmar |
 | Bakgrundsfyllning av mindre än 10 miljarder händelser | &lt; 4 veckor |
 
-Mer information om latenser för Customer Journey Analytics finns i: [Customer Journey Analytics GuarDRAils](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=sv-SE).
+Mer information om latenser för Customer Journey Analytics finns i: [Customer Journey Analytics GuarDRAils](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=en).
 
 Analysens bakgrundsfyllning för produktionssandlådor är som standard 13 månader. För Analytics-data i icke-produktionssandlådor anges backfill till tre månader. Den gräns på 10 miljarder händelser som nämns i tabellen ovan är strikt relaterad till förväntad fördröjning.
 
@@ -87,9 +87,9 @@ Följande tabell innehåller mer information om identitetsfält i dina [!DNL Ana
 
 | Identitetsfält | Beskrivning |
 | --- | --- |
-| STÖD | AAID är den primära enhetsidentifieraren i Adobe Analytics och finns garanterat för varje händelse som skickas via källan [!DNL Analytics]. AAID kallas ibland *Legacy Analytics ID* eller `s_vi` cookie ID. Trots detta skapas ett AAID även om cookien `s_vi` inte finns. AAID representeras av kolumnerna `post_visid_high` och `post_visid_low` i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html?lang=sv-SE). För en given händelse innehåller AAID-fältet en enda identitet som kan vara någon av de olika typerna som beskrivs i [åtgärdsordningen för [!DNL Analytics] ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html?lang=sv-SE). **Obs!**: Inom en hel rapportserie kan ett AAID innehålla en blandning av typer för olika händelser. |
-| ECID | ECID (Experience Cloud-id) är ett separat enhetsidentifieringsfält som fylls i i Adobe Analytics när [!DNL Analytics] implementeras med Experience Cloud identitetstjänst. ECID kallas ibland även för MCID (Marketing Cloud ID). Om det finns ett ECID för en händelse kan AAID baseras på ECID, beroende på om [respitperioden](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html?lang=sv-SE) för Analytics har konfigurerats. ECID representeras av `mcvisid` i Analytics-dataflöden. Mer information om ECID finns i [Översikt över ECID](../../../identity-service/features/ecid.md). Mer information om hur ECID fungerar med [!DNL Analytics] finns i dokumentet [Analytics and Experience Cloud ID Requests](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html?lang=sv-SE). |
-| AACUSTOMID | AACUSTOMID är ett separat identifierarfält som fylls i i Adobe Analytics baserat på användningen av variabeln `s.VisitorID` i implementeringen av [!DNL Analytics]. AACUSTOMID representeras av kolumnen `cust_visid` i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html?lang=sv-SE). Om det finns ett AACUSTOMID kommer AAID att baseras på AACUSTOMID eftersom AACUSTOMID överför alla andra identifierare enligt [ordningen för åtgärder för [!DNL Analytics] ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html?lang=sv-SE). |
+| STÖD | AAID är den primära enhetsidentifieraren i Adobe Analytics och finns garanterat för varje händelse som skickas via källan [!DNL Analytics]. AAID kallas ibland *Legacy Analytics ID* eller `s_vi` cookie ID. Trots detta skapas ett AAID även om cookien `s_vi` inte finns. AAID representeras av kolumnerna `post_visid_high` och `post_visid_low` i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). För en given händelse innehåller AAID-fältet en enda identitet som kan vara någon av de olika typerna som beskrivs i [åtgärdsordningen för [!DNL Analytics] ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). **Obs!**: Inom en hel rapportserie kan ett AAID innehålla en blandning av typer för olika händelser. |
+| ECID | ECID (Experience Cloud-id) är ett separat enhetsidentifieringsfält som fylls i i Adobe Analytics när [!DNL Analytics] implementeras med Experience Cloud identitetstjänst. ECID kallas ibland även för MCID (Marketing Cloud ID). Om det finns ett ECID för en händelse kan AAID baseras på ECID, beroende på om [respitperioden](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) för Analytics har konfigurerats. ECID representeras av `mcvisid` i Analytics-dataflöden. Mer information om ECID finns i [Översikt över ECID](../../../identity-service/features/ecid.md). Mer information om hur ECID fungerar med [!DNL Analytics] finns i dokumentet [Analytics and Experience Cloud ID Requests](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html). |
+| AACUSTOMID | AACUSTOMID är ett separat identifierarfält som fylls i i Adobe Analytics baserat på användningen av variabeln `s.VisitorID` i implementeringen av [!DNL Analytics]. AACUSTOMID representeras av kolumnen `cust_visid` i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). Om det finns ett AACUSTOMID kommer AAID att baseras på AACUSTOMID eftersom AACUSTOMID överför alla andra identifierare enligt [ordningen för åtgärder för [!DNL Analytics] ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). |
 
 ### Så här behandlar källan [!DNL Analytics] identiteter
 
@@ -111,7 +111,7 @@ När identiteten eller identiteterna kopieras till `identityMap` ställs `endUse
 * Om det finns ett ECID är `endUserIDs._experience.mcid.namespace.code` inställt på ECID.
 * Om det finns ett AACUSTOMID är `endUserIDs._experience.aacustomid.namespace.code` inställt på &quot;AACUSTOMID&quot;.
 
-Om det finns ECID på identitetskartan markeras den som händelsens primära identitet. I det här fallet kan AAID baseras på ECID på grund av den [respitperiod för identitetstjänsten](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html?lang=sv-SE). I annat fall markeras AID som händelsens primära identitet. AACUSTOMID markeras aldrig som händelsens primära ID. Om det finns ett AACUSTOMID baseras emellertid AAID på AACUSTOMID på grund av Experience Cloud ordningsföljd.
+Om det finns ECID på identitetskartan markeras den som händelsens primära identitet. I det här fallet kan AAID baseras på ECID på grund av den [respitperiod för identitetstjänsten](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). I annat fall markeras AID som händelsens primära identitet. AACUSTOMID markeras aldrig som händelsens primära ID. Om det finns ett AACUSTOMID baseras emellertid AAID på AACUSTOMID på grund av Experience Cloud ordningsföljd.
 
 >[!NOTE]
 >

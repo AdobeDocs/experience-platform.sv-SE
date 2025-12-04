@@ -1,0 +1,63 @@
+---
+title: Delning av mobil-till-webb och domänövergripande ID
+description: Lär dig hur du behåller besökar-ID:n från mobil- till webbegenskaper och mellan domäner
+keywords: Identitet;mobil;id;sharing;domain;cross-domain;sdk;platform;
+exl-id: b9bb236f-52cf-4615-96d8-1137d957de8c
+source-git-commit: 217282135bcd750740f4d3f8c6e17a0b8f9578bd
+workflow-type: tm+mt
+source-wordcount: '460'
+ht-degree: 0%
+
+---
+
+# Delning av mobil-till-webb och domänövergripande ID
+
+## Översikt
+
+Adobe Experience Platform Web SDK har stöd för delning av besökar-ID, vilket gör att kunderna kan leverera personaliserade upplevelser på ett mer korrekt sätt, mellan mobilappar och mobilwebbinnehåll samt mellan domäner.
+
+## Användningsfall {#use-cases}
+
+### Leverera enhetlig personalisering mellan mobilappar och mobilwebbplatser
+
+Ett klädföretag vill personalisera sina kunders upplevelse utifrån deras intressen och hålla personaliseringen korrekt i en mobilapplikation som även läser in WebViews. Genom att använda funktionen för delning av mobil-till-webb-ID kan de se till att de mest korrekta erbjudandena presenteras för kunderna, med samma besökaridentifierare i appen och mobilwebbinnehållet, genom att skicka [!DNL ECID] till mobilwebbadressen.
+
+### Leverera enhetlig personalisering över domäner
+
+En återförsäljare med flera onlinebutiker vill personalisera shoppingupplevelsen över sina domäner utifrån kundernas intressen. Med SDK-funktionen för delning av domänövergripande ID kan återförsäljaren leverera korrekta erbjudanden baserat på kundernas intressen i alla sina domäner.
+
+### Förbättra rapporter om besöksaktivitet
+
+En teknikhandlare vill förbättra sin rapportering om besökaraktivitet med information om när besökarna flyttar från mobilappen till mobilwebbplatsen eller till andra domäner. Med SDK funktion för delning av domänövergripande ID kan marknadsföringsteamet spåra besökare korrekt över sina webbegenskaper och generera aktivitetsrapporter.
+
+## Förhandskrav {#prerequisites}
+
+Om du vill använda delning av mobil-till-webb och domänövergripande ID måste du använda [!DNL Web SDK] version 2.11.0 eller senare.
+
+För Edge Network mobilimplementeringar stöds den här funktionen i tillägget [Identitet för Edge Network](https://developer.adobe.com/client-sdks/documentation/identity-for-edge-network/) från och med version 1.1.0 (iOS och Android).
+
+Den här funktionen är även kompatibel med [!DNL VisitorAPI.js] version 1.7.0 eller senare.
+
+## Delning av mobil-till-webb-ID {#mobile-to-web}
+
+Använd `getUrlVariables`-API:t från tillägget [ Identitet för Edge Network](https://developer.adobe.com/client-sdks/documentation/identity-for-edge-network/api-reference/#geturlvariables) för att hämta identifierare som frågeparametrar och koppla dem till din URL när du öppnar [!DNL webViews].
+
+Ingen ytterligare konfiguration krävs för att Web SDK ska acceptera `ECID`-värden i frågesträngen.
+
+Frågesträngsparametern innehåller:
+
+* `MCID`: Experience Cloud-ID (`ECID`)
+* `MCORGID`: Experience Cloud `orgID` som måste matcha `orgID` som konfigurerats i [!DNL Web SDK].
+* `TS`: En tidsstämpelparameter som inte kan vara äldre än fem minuter.
+
+
+För delning av mobil-till-webb-ID används parametern `adobe_mc`. När parametern `adobe_mc` finns och är giltig läggs `ECID` från frågesträngen automatiskt till i identitetskartan i den första begäran som görs i Edge Network. Alla efterföljande Edge Network-interaktioner använder `ECID`.
+
+Mer information om hur du skickar besökar-ID:n från en mobilapp till en WebView finns i dokumentationen om [hantering av WebViews](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/app-implementation/web-views.html#implementation).
+
+## Implementera delning av domänöverskridande ID {#cross-domain-sharing}
+
+Se följande länkar beroende på hur du har konfigurerat Web SDK:
+
+* **JavaScript-bibliotek**: [`appendIdentityToUrl`](../../js/commands/appendidentitytourl.md), kommando
+* **Taggtillägg**: [Omdirigering med identitet](/help/tags/extensions/client/web-sdk/actions/redirect-with-identity.md) - åtgärd

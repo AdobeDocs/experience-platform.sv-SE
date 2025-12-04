@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 5d08a6d90e53aa2f5b1fb72c36e19156e3ac5299
 workflow-type: tm+mt
-source-wordcount: '1885'
+source-wordcount: '1883'
 ht-degree: 0%
 
 ---
@@ -39,11 +39,11 @@ Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-an
 >
 >Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i konfigurationsstegen som beskrivs i avsnitten nedan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3449797/?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 Titta på videon nedan om du vill få en kort översikt över hur du delar målgrupper och profilattribut med Adobe Target och anpassade destinationer för personalisering.
 
->[!VIDEO](https://video.tv.adobe.com/v/3447359/?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3419036/?quality=12&learn=on)
 
 ## Användningsfall {#use-cases}
 
@@ -89,7 +89,7 @@ Mer information om hur du konfigurerar ett dataflöde finns i anvisningarna i [E
 
 ### Skapa en [!DNL Active-On-Edge]-sammanslagningsprincip {#create-merge-policy}
 
-När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
+När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
 
 >[!IMPORTANT]
 >
@@ -134,7 +134,7 @@ När du är klar med kraven kan du nu välja vilket mål för kantanpassning som
 
 ## Välj målgrupper {#select-audiences}
 
-Använd kryssrutorna till vänster om målgruppsnamnen för att välja de målgrupper som du vill aktivera för målet och välj sedan **[!UICONTROL Next]**.
+Använd kryssrutorna till vänster om målgruppsnamnen för att markera de målgrupper som du vill aktivera för målet och välj sedan **[!UICONTROL Next]**.
 
 Om du vill välja vilka målgrupper du vill aktivera för målet använder du kryssrutorna till vänster om målgruppsnamnen och väljer sedan **[!UICONTROL Next]**.
 
@@ -150,7 +150,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Edge Network API genom att lägga till en integration på serversidan.
 >

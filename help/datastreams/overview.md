@@ -1,8 +1,8 @@
 ---
 title: Översikt över datastreams
-description: Lär dig hur datastreams hjälper dig att koppla samman din integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
+description: Läs om hur datastreams hjälper dig att koppla samman Experience Platform SDK-integreringen med Adobe-produkter och tredjepartsmål.
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
+source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
 workflow-type: tm+mt
 source-wordcount: '709'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Översikt över datastreams
 
-En datastream representerar serversideskonfigurationen för Adobe Experience Platform Web och Mobile SDK. Medan kommandot [`configure`](/help/web-sdk/commands/configure/overview.md) i SDK hanterar klientinställningar (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer.
+En datastream representerar serversideskonfigurationen för Adobe Experience Platform Web och Mobile SDK. Medan kommandot [`configure`](/help/collection/js/commands/configure/overview.md) i SDK hanterar klientinställningar (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer.
 
 När du skickar en begäran till Edge Network refererar `datastreamId` till datastream där data skickas. På så sätt kan du uppdatera konfigurationen på serversidan utan att ändra webbplatsens kod.
 
@@ -41,7 +41,7 @@ Alla data som överförs genom Edge Network utförs via säkra, krypterade anslu
 
 ### Dataförvaltning {#governance}
 
-Datastreams använder de inbyggda datastyrningsfunktionerna i Experience Platform för att förhindra att känsliga data skickas till icke-HIPAA-klara tjänster. Genom att etikettera specifika fält som innehåller känsliga data i dina datastream-scheman kan du få detaljkontroll över vilka datafält som kan användas för särskilda ändamål.
+Datastreams använder Experience Platform inbyggda funktioner för datastyrning för att förhindra att känsliga data skickas till icke-HIPAA-klara tjänster. Genom att etikettera specifika fält som innehåller känsliga data i dina datastream-scheman kan du få detaljkontroll över vilka datafält som kan användas för särskilda ändamål.
 
 I följande video visas en kort översikt över hur dataanvändningsbegränsningar konfigureras och används för datastreams i användargränssnittet:
 
@@ -59,7 +59,7 @@ Om ett schema används i en befintlig datastam med tjänster som inte är HIPAA-
 
 ### Granskningsloggar
 
-I Experience Platform kan datastream-aktiviteter övervakas i form av granskningsloggar. Granskningsloggarna anger **vem** utförde **vad**-åtgärden och **när**, tillsammans med andra kontextuella data som kan hjälpa dig att felsöka problem som rör datastreams för att hjälpa ditt företag att följa företagets policyer för datahantering och lagstadgade krav.
+I Experience Platform kan dataströmsaktiviteter övervakas i form av granskningsloggar. Granskningsloggarna anger **vem** utförde **vad**-åtgärden och **när**, tillsammans med andra kontextuella data som kan hjälpa dig att felsöka problem som rör datastreams för att hjälpa ditt företag att följa företagets policyer för datahantering och lagstadgade krav.
 
 Varje gång en användare skapar, uppdaterar eller tar bort ett dataflöde skapas en granskningslogg för att spela in åtgärden. Samma sak händer när en användare skapar, uppdaterar eller tar bort en mappning via [Dataprep för datainsamling](./data-prep.md). Oavsett om det var en datastream eller en mappning som uppdaterades, kategoriseras den resulterande granskningsloggen under resurstypen [!UICONTROL Datastreams].
 
