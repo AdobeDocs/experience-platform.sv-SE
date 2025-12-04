@@ -16,11 +16,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Eftersom den här fältgruppen bara är kompatibel med [!DNL XDM Individual Profile] kan den inte användas för [!DNL XDM ExperienceEvent]-scheman. Om du vill inkludera samtycke och inställningsdata i Experience Event-schemat lägger du till datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] ](../../data-types/consents.md) i schemat med hjälp av en [anpassad fältgrupp](../../ui/resources/field-groups.md#create) i stället.
+>Eftersom den här fältgruppen bara är kompatibel med [!DNL XDM Individual Profile] kan den inte användas för [!DNL XDM ExperienceEvent]-scheman. Om du vill inkludera samtycke och inställningsdata i Experience Event-schemat lägger du till datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] &#x200B;](../../data-types/consents.md) i schemat med hjälp av en [anpassad fältgrupp](../../ui/resources/field-groups.md#create) i stället.
 
 ## Fältgruppstruktur {#structure}
 
-Fältgruppen [!UICONTROL Consents and Preferences] tillhandahåller ett enskilt fält av objekttyp, `consents`, för att hämta information om samtycke och inställningar. Det här fältet utökar datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences], tar bort fältet ](../../data-types/consents.md) och lägger till ett `adID`-mappningsfält.`idSpecific`
+Fältgruppen [!UICONTROL Consents and Preferences] tillhandahåller ett enskilt fält av objekttyp, `consents`, för att hämta information om samtycke och inställningar. Det här fältet utökar datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences], tar bort fältet &#x200B;](../../data-types/consents.md) och lägger till ett `adID`-mappningsfält.`idSpecific`
 
 ![](../../images/field-groups/consent.png)
 
@@ -189,4 +189,4 @@ När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bö
 
 ## Nästa steg
 
-Det här dokumentet innehåller strukturen och användningen av fältgruppen [!UICONTROL Consents and Preferences]. Mer information om andra fält som tillhandahålls av fältgruppen finns i dokumentet om datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] ](../../data-types/consents.md).
+Det här dokumentet innehåller strukturen och användningen av fältgruppen [!UICONTROL Consents and Preferences]. Mer information om andra fält som tillhandahålls av fältgruppen finns i dokumentet om datatypen [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] &#x200B;](../../data-types/consents.md).

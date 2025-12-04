@@ -275,4 +275,4 @@ Följande visar en lista med kända begränsningar som ska beaktas när direktup
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till dina [!DNL Real-Time Customer Profile]-data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep]-funktioner finns i [[!DNL Data Prep] översikten](./home.md). Läs [!DNL Data Prep]utvecklarhandboken[[!DNL Data Prep]  om du vill lära dig hur du använder mappningsuppsättningar i ](./api/overview.md)-API:t.
+Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till dina [!DNL Real-Time Customer Profile]-data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep]-funktioner finns i [[!DNL Data Prep] översikten](./home.md). Läs [!DNL Data Prep]utvecklarhandboken[[!DNL Data Prep]  om du vill lära dig hur du använder mappningsuppsättningar i &#x200B;](./api/overview.md)-API:t.

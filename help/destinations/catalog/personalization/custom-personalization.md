@@ -25,7 +25,7 @@ ht-degree: 1%
 >
 >Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar **[!UICONTROL Custom Personalization]**-målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication).
 >
-><br>Du kan hämta profilattribut via [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
+><br>Du kan hämta profilattribut via [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
 >
 ><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på målgruppsmedlemskap.
 
@@ -43,7 +43,7 @@ Det här målet kräver någon av följande datainsamlingsmetoder, beroende på 
 
 >[!IMPORTANT]
 >
->**Attributbaserade personaliseringskrav:** Om du vill anpassa baserat på profilattribut (inte bara målgruppsmedlemskap) måste du **** använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) med autentiserad integration på serversidan, oavsett om du också använder Web SDK eller Mobile SDK för datainsamling.
+>**Attributbaserade personaliseringskrav:** Om du vill anpassa baserat på profilattribut (inte bara målgruppsmedlemskap) måste du **&#x200B;**&#x200B;använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) med autentiserad integration på serversidan, oavsett om du också använder Web SDK eller Mobile SDK för datainsamling.
 >
 >Endast SDK och SDK för mobiler stöder endast personalisering baserat på medlemskap för målgrupper. Edge Network API är **obligatoriskt** för att säkert hämta profilattribut för personalisering.
 

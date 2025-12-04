@@ -40,7 +40,7 @@ Den här funktionen är även kompatibel med [!DNL VisitorAPI.js] version 1.7.0 
 
 ## Delning av mobil-till-webb-ID {#mobile-to-web}
 
-Använd `getUrlVariables`-API:t från tillägget [ Identitet för Edge Network](https://developer.adobe.com/client-sdks/documentation/identity-for-edge-network/api-reference/#geturlvariables) för att hämta identifierare som frågeparametrar och koppla dem till din URL när du öppnar [!DNL webViews].
+Använd `getUrlVariables`-API:t från tillägget [&#x200B; Identitet för Edge Network](https://developer.adobe.com/client-sdks/documentation/identity-for-edge-network/api-reference/#geturlvariables) för att hämta identifierare som frågeparametrar och koppla dem till din URL när du öppnar [!DNL webViews].
 
 Ingen ytterligare konfiguration krävs för att Web SDK ska acceptera `ECID`-värden i frågesträngen.
 

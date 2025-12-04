@@ -51,7 +51,7 @@ I Adobe Target mappas varje beslutsomfattning till en mbox eller aktivitet. I Ad
 
 ## `personalization.surfaces`
 
-Egenskapen `surfaces` är en matris med [ yt-URI](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/channels/code-based-experience/configure-code-based-channel/code-based-surface#surface-uri)-strängar som manuellt definierar kanalen, enheten eller kontexten som personalisering begärs från. De gör det möjligt för er att skilja mellan olika digitala upplevelser, som domäner, appar eller enhetsplattform i ert flerkanalssystem. Som standard ligger biblioteket under standardytan från den aktuella sidan. Du kan använda den här egenskapen för att åsidosätta den automatiskt härledda ytan för den aktuella sidan.
+Egenskapen `surfaces` är en matris med [&#x200B; yt-URI](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/channels/code-based-experience/configure-code-based-channel/code-based-surface#surface-uri)-strängar som manuellt definierar kanalen, enheten eller kontexten som personalisering begärs från. De gör det möjligt för er att skilja mellan olika digitala upplevelser, som domäner, appar eller enhetsplattform i ert flerkanalssystem. Som standard ligger biblioteket under standardytan från den aktuella sidan. Du kan använda den här egenskapen för att åsidosätta den automatiskt härledda ytan för den aktuella sidan.
 
 Den här egenskapen är värdefull när ni vill använda personalisering över flera kanaler och måste skilja på hur personalisering fungerar mellan olika kanaler. Det gör att ni kan skapa distinkta erbjudanden för olika webbplatser inom samma Adobe Experience Platform-organisation.
 

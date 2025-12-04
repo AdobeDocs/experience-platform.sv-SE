@@ -18,9 +18,9 @@ Den här sidan beskriver de händelsetyper för Adobe Experience Platform som fi
 
 Adobe Experience Platform Web SDK innehåller funktioner för övervakning av kopplingar som du kan använda för att övervaka olika systemhändelser. De här verktygen är användbara när du vill utveckla egna felsökningsverktyg och hämta webb-SDK-loggar.
 
-Fullständig information om vilka parametrar varje övervakningshändelse innehåller finns i [dokumentationen för Web SDK-övervakning ](/help/collection/js/monitoring-hooks.md).
+Fullständig information om vilka parametrar varje övervakningshändelse innehåller finns i [dokumentationen för Web SDK-övervakning &#x200B;](/help/collection/js/monitoring-hooks.md).
 
-![Taggar användargränssnittsbilden som visar typen för Övervakningshändelse ](assets/monitoring-hook-triggered.png)
+![Taggar användargränssnittsbilden som visar typen för Övervakningshändelse &#x200B;](assets/monitoring-hook-triggered.png)
 
 SDK-taggtillägget för webben stöder följande övervakningskopplingar:
 
@@ -253,7 +253,7 @@ I åtgärden Anpassad kod, som är en regel för att hantera svarsdata, kan du k
 var propositions = event.propositions;
 ```
 
-Om `event.propositions` finns är det en matris som innehåller objekt för personaliseringsförslag. Mer information om innehållet i [ finns i ](#manually-render-personalized-content)Återge anpassat innehåll manuellt`result.propositions`.
+Om `event.propositions` finns är det en matris som innehåller objekt för personaliseringsförslag. Mer information om innehållet i [&#x200B; finns i &#x200B;](#manually-render-personalized-content)Återge anpassat innehåll manuellt`result.propositions`.
 
 Anta att du vill samla in alla aktivitetsnamn från alla utkast som återges automatiskt av SDK på webben och överföra dem till en enda array. Du kan sedan skicka den enskilda arrayen till en tredje part. I det här fallet skriver du egen kod inuti [!UICONTROL Custom code]-åtgärden till:
 

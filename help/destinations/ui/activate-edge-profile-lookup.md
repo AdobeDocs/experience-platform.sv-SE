@@ -61,7 +61,7 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 
 Om du vill söka efter profilattribut i kanten måste målgrupperna konfigureras för kantutvärdering.
 
-Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
+Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan om &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 

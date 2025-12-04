@@ -442,7 +442,7 @@ Mer information om hur du skapar resor i [!DNL Adobe Journey Optimizer] finns i 
 
 Vissa användare kanske inte har köpt din prenumeration ens efter att du har meddelat dem om det nya programmet. Efter att ha väntat i ett antal dagar (sju i det här exemplet) kan du bestämma dig för att visa betalda mediaannonser för dessa användare, för att uppmuntra dem att köpa din prenumeration.
 
-Använd målgruppsramverket i Real-Time CDP för annonser i betalda medier. Välj ett av många tillgängliga annonsdestinationer för att visa betalmediaannonser för dina kunder och aktivera den betalande mediepubliken som du [skapade tidigare](#create-audiences) till ett valfritt mål. Visa en översikt över tillgängliga [annonser](/help/destinations/catalog/advertising/overview.md) och [sociala ](/help/destinations/catalog/social/overview.md) mål.
+Använd målgruppsramverket i Real-Time CDP för annonser i betalda medier. Välj ett av många tillgängliga annonsdestinationer för att visa betalmediaannonser för dina kunder och aktivera den betalande mediepubliken som du [skapade tidigare](#create-audiences) till ett valfritt mål. Visa en översikt över tillgängliga [annonser](/help/destinations/catalog/advertising/overview.md) och [sociala &#x200B;](/help/destinations/catalog/social/overview.md) mål.
 
 Läs dokumentationen nedan om du vill lära dig hur du aktiverar data till mål (till exempel [Trade Desk](/help/destinations/catalog/advertising/tradedesk.md) eller [Google Customer Match](/help/destinations/catalog/advertising/google-customer-match.md)):
 

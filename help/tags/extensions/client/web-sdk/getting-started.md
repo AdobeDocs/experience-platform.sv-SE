@@ -36,7 +36,8 @@ Kontrollera dessutom att du har alla [behörigheter](/help/access-control/home.m
 
 ![Schema Canvas](assets/getting-started/schema-structure.png)
 
->[!NOTE]\
+>[!NOTE]
+>\
 >När scheman har sparats tillåts endast *additiva* ändringar. Mer information finns i [schemaevolutionen](/help/xdm/schema/composition.md#evolution).
 
 ## Skapa ett datastream {#datastream}

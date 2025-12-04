@@ -271,7 +271,7 @@ För användningsfall där hantering av medgivandeprinciper måste tillämpas i 
 
 Den här tjänsten innehåller kundhanterade nycklar och förhöjda tröskelvärden för hantering av kundens datalängd.
 
-Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten ](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
+Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten &#x200B;](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
 
 
 

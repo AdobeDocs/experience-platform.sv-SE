@@ -361,7 +361,7 @@ Konfigurera ytterligare hierarkier om du vill.
 
 #### Sidnamn
 
-Det här värdet refererar till namnet på en viss sida och motsvarar variabeln [`pageName` ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) i Analytics.
+Det här värdet refererar till namnet på en viss sida och motsvarar variabeln [`pageName` &#x200B;](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) i Analytics.
 
 >[!IMPORTANT]
 >

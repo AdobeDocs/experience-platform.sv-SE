@@ -37,4 +37,4 @@ alloy("configure", {
 
 ## Edge domain using the Web SDK tag extension
 
-Taggtillägget som motsvarar den här egenskapen är fältet **[!UICONTROL Edge domain]** under [ SDK instanskonfigurationsinställningar ](/help/tags/extensions/client/web-sdk/configure/general.md) när tillägget konfigureras.
+Taggtillägget som motsvarar den här egenskapen är fältet **[!UICONTROL Edge domain]** under [&#x200B; SDK instanskonfigurationsinställningar &#x200B;](/help/tags/extensions/client/web-sdk/configure/general.md) när tillägget konfigureras.

@@ -67,7 +67,7 @@ Sidan **[!UICONTROL Create computed attribute]** visas. På den här sidan kan d
 
 I det här fallet kan du skapa ett beräknat attribut som, om partner-ID:t finns, hämtar det senaste värdet för partner-ID:t inom de senaste 24 timmarna.
 
-Med hjälp av sökfältet kan du hitta och lägga till händelsen &quot;Partner-ID&quot; som [du skapade under användningsexemplet ](#get-data-in) för anpassning på plats i den beräknade attributarbetsytan.
+Med hjälp av sökfältet kan du hitta och lägga till händelsen &quot;Partner-ID&quot; som [du skapade under användningsexemplet &#x200B;](#get-data-in) för anpassning på plats i den beräknade attributarbetsytan.
 
 ![Fliken [!UICONTROL Events] och sökfältet är markerade.](../assets/offsite-retargeting/ca-add-partner-id.png)
 
@@ -101,7 +101,7 @@ Sidan Segment Builder visas. På den här sidan kan du använda komponenterna f�
 
 För att kunna hitta de här besökarna måste du först lägga till en **[!UICONTROL Page View]**-händelse till din målgrupp. Välj fliken **[!UICONTROL Events]** under **[!UICONTROL Fields]**, dra och släpp sedan händelsen **[!UICONTROL Page View]** och lägg till den på arbetsytan för händelseavsnittet.
 
-![Fliken [!UICONTROL Events] i avsnittet [!UICONTROL Fields] är markerad när [!UICONTROL Page View]händelsen ](../assets/offsite-retargeting/add-page-view.png) visas.
+![Fliken [!UICONTROL Events] i avsnittet [!UICONTROL Fields] är markerad när [!UICONTROL Page View]händelsen &#x200B;](../assets/offsite-retargeting/add-page-view.png) visas.
 
 Välj den nyligen tillagda **[!UICONTROL Page View]**-händelsen. Ändra uppslagsperioden från **[!UICONTROL Any time]** till **[!UICONTROL This month]** och ändra händelseregeln så att den omfattar **minst 5**.
 

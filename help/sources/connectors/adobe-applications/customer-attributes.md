@@ -25,7 +25,7 @@ Experience Platform har stöd för import av [!DNL Customer Attributes]-profilda
 
 ## Identiteter
 
-Den primära identiteten för en datauppsättning finns i den första kolumnen i CSV-filen för källdata. Källan [!DNL Customer Attributes] förutsätter att identiteten alltid är mappad till [`CORE` namespace ](../../../identity-service/features/namespaces.md), ett systemgenererat namnutrymme som stöds av [[!DNL Identity Service]](../../../identity-service/home.md).
+Den primära identiteten för en datauppsättning finns i den första kolumnen i CSV-filen för källdata. Källan [!DNL Customer Attributes] förutsätter att identiteten alltid är mappad till [`CORE` namespace &#x200B;](../../../identity-service/features/namespaces.md), ett systemgenererat namnutrymme som stöds av [[!DNL Identity Service]](../../../identity-service/home.md).
 
 Du kan inte välja ett befintligt namnområde för identiteten när du använder källan [!DNL Customer Attributes] eftersom [!DNL Customer Attributes] förutsätter att schemats primära identitet alltid finns i identitetskartan. [!DNL Customer Attributes] skapar sedan mappningen av käll-ID:t till identitetsmappningens UUID automatiskt.
 

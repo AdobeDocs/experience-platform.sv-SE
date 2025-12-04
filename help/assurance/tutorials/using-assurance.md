@@ -59,7 +59,7 @@ Innan du använder Quick Connect bör du kontrollera att appen har de SDK-versio
 
 **Implementering:**
 
-Ditt program måste implementera [`startSession` API ](https://developer.adobe.com/client-sdks/home/base/assurance/api-reference/#startsession-quick-connect) för att utlösa Assurance-anslutningen. Detta API-anrop ingår vanligtvis i en åtgärdsuppsättning eller aktiveras i din app.
+Ditt program måste implementera [`startSession` API &#x200B;](https://developer.adobe.com/client-sdks/home/base/assurance/api-reference/#startsession-quick-connect) för att utlösa Assurance-anslutningen. Detta API-anrop ingår vanligtvis i en åtgärdsuppsättning eller aktiveras i din app.
 
 #### Skapa en snabbanslutningssession
 

@@ -68,7 +68,7 @@ Kör kommandot `setConsent` när du anropar den konfigurerade instansen av Web S
 
 * **`consent[]`**: En array med `consent` objekt. Medgivandeobjektet formateras på olika sätt beroende på vilken standard och version du väljer. Se flikarna nedan för exempel på varje samtyckesobjekt, beroende på medgivandestandarden.
 * **`identityMap`**: Ett objekt som styr hur ett ECID genereras och vilka ID:n som godkännandeinformation är knuten till. Adobe rekommenderar att du inkluderar det här objektet när `setConsent` körs före andra kommandon, till exempel [`sendEvent`](sendevent/overview.md).
-* **`edgeConfigOverrides`**: Ett objekt som innehåller [datastream-konfiguration åsidosätter ](configure/edgeconfigoverrides.md).
+* **`edgeConfigOverrides`**: Ett objekt som innehåller [datastream-konfiguration åsidosätter &#x200B;](configure/edgeconfigoverrides.md).
 
 >[!BEGINTABS]
 

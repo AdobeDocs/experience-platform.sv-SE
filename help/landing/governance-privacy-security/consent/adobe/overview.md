@@ -51,7 +51,7 @@ I den aktuella versionen av stöd för tillståndsbearbetning i Experience Platf
 
 >[!NOTE]
 >
->Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] ](/help/xdm/data-types/consents.md).
+>Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] &#x200B;](/help/xdm/data-types/consents.md).
 
 När systemet har konfigurerats tolkar Experience Platform Web SDK datainsamlingsvärdet för den aktuella användaren för att avgöra om data ska skickas till Adobe Experience Platform Edge Network, tas bort från klienten eller bevaras tills datainsamlingsbehörigheten är inställd på ja eller nej.
 
@@ -67,7 +67,7 @@ Den här dialogrutan bör göra det möjligt för kunden att välja om de vill a
 
 Data för kundgodkännande måste skickas till en [!DNL Profile]-aktiverad datauppsättning vars schema innehåller medgivandefält. Dessa fält måste ingå i samma schema och datauppsättning som du använder för att samla in attributinformation om enskilda kunder.
 
-Mer information om hur du lägger till de här obligatoriska fälten i en [-aktiverad datauppsättning innan du fortsätter med den här guiden finns i självstudiekursen ](./dataset.md)Konfigurera en datauppsättning för att hämta medgivandedata[!DNL Profile].
+Mer information om hur du lägger till de här obligatoriska fälten i en [-aktiverad datauppsättning innan du fortsätter med den här guiden finns i självstudiekursen &#x200B;](./dataset.md)Konfigurera en datauppsättning för att hämta medgivandedata[!DNL Profile].
 
 ## Uppdatera sammanfogningsprinciper för [!DNL Profile] så att de innehåller medgivandedata {#merge-policies}
 
