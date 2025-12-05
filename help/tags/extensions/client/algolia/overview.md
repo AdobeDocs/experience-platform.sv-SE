@@ -2,9 +2,9 @@
 title: Översikt över tillägget Algolia-taggar
 description: Läs mer om tillägget Algolia-taggar i Adobe Experience Platform.
 exl-id: 8409bf8b-fae2-44cc-8466-9942f7d92613
-source-git-commit: 904200c5d3ef2be58582e4679109390e8d4aebc1
+source-git-commit: 6eee26df3841a7829625361fc726bf59a278f867
 workflow-type: tm+mt
-source-wordcount: '1802'
+source-wordcount: '1954'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ I konfigurationsvyn som visas måste du ange följande information:
 | [!UICONTROL Index Name] | [!UICONTROL Index Name] innehåller produkterna eller innehållet.  Det här indexet används som standard. |
 | [!UICONTROL User Token Data Element] | Det dataelement som returnerar användartoken. |
 | [!UICONTROL Authenticated User Token Data Element] | Ange det dataelement som returnerar den autentiserade användartoken. |
-| [!UICONTROL Currency] | Välj en valutatyp. Standardvärdet är `USD`. |
+| [!UICONTROL Currency Code] | Ange valutakoden i ISO-4217-format, t.ex. USD eller EUR. Det här fältet stöder dataelement. |
 
 ![](../../../images/extensions/client/algolia/configure.png)
 
@@ -67,9 +67,9 @@ Skapa en ny taggregel eller öppna en befintlig. Definiera villkoren enligt dina
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| [!UICONTROL Insight Library Version] | [!DNL Algolia] Insights-versionen. Standardvärdet är `2.13.0`. |
+| [!UICONTROL Insight Library Version] | [!DNL Algolia] Insights-versionen. Standardvärdet är `2.17.3`. |
 | [!UICONTROL User Opt Out Data Element] | Det dataelement som fångar användarens spårningspreferens. |
-| [!UICONTROL Use User Token Cookie] | Markera den här kryssrutan om du vill tillåta [!DNL Algolia] att generera en användartokencookie. Som standard är det här alternativet inställt på `false`. |
+| [!UICONTROL Use User Token Cookie] | Markera den här kryssrutan om du vill tillåta [!DNL Algolia] att generera en användartokencookie. Som standard är det här alternativet inställt på `true`. |
 
 ![](../../../images/extensions/client/algolia/load-insights.png)
 
@@ -80,19 +80,19 @@ Lägg till åtgärden **[!UICONTROL Click]** i taggregeln för att skicka klicka
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Event Name] | Händelsenamnet som kan användas för att ytterligare förfina den här klickhändelsen. |
-| [!UICONTROL Event Details Data Element] | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` (valfritt)</li><li>`position` (valfritt)</li></ul> |
-| [!UICONTROL Record ID Data Element] | Post-ID används som nyckel för händelsedata som lagras i webbläsarens lagring under en `click`-händelse. Som standard fungerar sidans URL som post-ID. Om du vill åsidosätta detta beteende använder du den här egenskapen för att tillhandahålla ett dataelement som returnerar post-ID som en sträng. |
+| [!UICONTROL Event Details Data Element] | Data Element returnerar händelseinformation i JSON-format, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` (valfritt)</li><li>`positions` (valfritt)</li><li>`price` (valfritt)</li><li>`quantity` (valfritt)</li><li>`discount` (valfritt)</li><li>`objectData` (valfritt)</li><li>`currency` (valfritt)</li></ul> |
+
 
 >[!NOTE]
 >
->Om både `queryID` och `position` ingår, klassificeras händelsen som **objekt-ID:n som klickats efter sökning**. Annars klassas den som en **klickad objekt-ID** -händelse.
->&#x200B;><br>
->&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+>Om både `queryID` och `positions` ingår, klassificeras händelsen som **objekt-ID:n som klickats efter sökning**. Annars klassas den som en **klickad objekt-ID** -händelse.
+><br>
+>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
 
 ![](../../../images/extensions/client/algolia/clicked.png)
 
 Mer information om händelsekategorierna finns i [Klickade objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids-after-search/)
-och [Handböcker för objekt-ID:n som klickats &#x200B;](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/) .
+och [Handböcker för objekt-ID:n som klickats ](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/) .
 
 ### Konverterad {#converted}
 
@@ -101,15 +101,13 @@ Lägg till åtgärden **[!UICONTROL Converted]** i taggregeln för att skicka ko
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Event Name] | Händelsenamnet som ska användas för att ytterligare förfina den här **convert**-händelsen. |
-| [!UICONTROL Event Details Data Element] | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` (valfritt)</li></ul> |
-| [!UICONTROL Disable Removal of Event Data] | Vid en konverteringshändelse tas händelsedata bort från lagringen. Om dessa data behövs för efterföljande konverteringshändelser kan du inaktivera borttagningsprocessen för att säkerställa att händelsedata förblir tillgängliga. |
-| [!UICONTROL Record ID Data Element] | Post-ID används som nyckel för att söka efter händelsedata som lagras i webbläsarlagringen. Sidans URL är standardpost-ID. Om du vill åsidosätta detta beteende använder du den här egenskapen för att tillhandahålla ett dataelement som returnerar post-ID som en sträng. |
+| [!UICONTROL Event Details Data Element] | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`queryID` (valfritt)</li><li>`recordID` (valfritt)</li></ul> |
 
 >[!NOTE]
 >
 >Om dataelementet innehåller `queryId` klassas händelsen som **Konverterad efter sökning**. Annars kommer den att klassas som en **Konverterad**-händelse.
->&#x200B;><br>
->&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+><br>
+>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
 
 ![](../../../images/extensions/client/algolia/converted.png)
 
@@ -121,17 +119,16 @@ Lägg till åtgärden **[!UICONTROL Added to Cart]** i taggregeln för att skick
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| [!UICONTROL Event Name] | Händelsenamnet som ska användas för att ytterligare förfina den här **convert**-händelsen. |
-| [!UICONTROL Event Details Data Element] | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` (valfritt)</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` (valfritt)</li></ul>. |
-| [!UICONTROL Currency] | Välj en valutatyp. Standardvärdet är `USD`. |
+| [!UICONTROL Event Name] | Händelsenamnet som ska användas för att ytterligare förfina den här **Lägg till i kundvagnen**. |
+| [!UICONTROL Event Details Data Element] | Data Element returnerar händelseinformation i JSON-format, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`</li><li>`price`</li><li>`quantity`</li><li>`discount` (valfritt)</li><li>`queryID` (valfritt)</li><li>`currency` (valfritt)</li></ul>. |
 
 >[!NOTE]
 >
 >Om dataelementet innehåller `queryId` kommer händelsen att klassas som **Added to cart object IDs after Search**. I annat fall kommer den att klassas som en **tillagd i cart-objekt-ID:n** .
->&#x200B;><br>
->&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
->&#x200B;><br>
->&#x200B;>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
+><br>
+>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
+><br>
+>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
 
 ![](../../../images/extensions/client/algolia/added-to-cart.png)
 
@@ -144,21 +141,18 @@ Lägg till åtgärden **[!UICONTROL Purchased]** i taggregeln för att skicka k�
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Event Name] | Händelsenamnet som ska användas för att ytterligare förfina den här **purchase**-händelsen. |
-| [!UICONTROL Event Details Data Element] | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`<ul><li>`queryID` (valfritt)</li><li>`price`</li><li>`quantity`</li><li>`discount`</li></ul></li><li>`queryID` (valfritt)</li></ul>. |
-| [!UICONTROL Currency] | Välj en valutatyp. Standardvärdet är `USD`. |
+| [!UICONTROL Event Details Data Element] | Data Element returnerar händelseinformation i JSON-format, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li><li>`objectData`</li><li>`price`</li><li>`quantity`</li><li>`discount` (valfritt)</li><li>`queryID` (valfritt)</li><li>`currency` (valfritt)</li></ul>. |
 
 >[!NOTE]
 >
->Om dataelementet innehåller `queryId` kommer händelsen att klassas som **Inköpta objekt-ID:n efter sökning**. Annars klassas den som en **Inköpt objekt-ID** -händelse.
->&#x200B;><br>
->&#x200B;>Om dataelementet inte innehåller någon `indexName` används **standardindexnamn** när händelsen skickas.
->&#x200B;><br>
->&#x200B;>Om standarddataelementen inte uppfyller dina krav kan ett anpassat dataelement skapas för att returnera den önskade händelseinformationen.
+>Åtgärden Inköpt hämtar händelsedata från webbläsarlagringen baserat på det köpta artikel-ID:t. Om något av de köpta objekten innehåller `queryID` i sina lagrade data kommer händelsen att klassas som **Inköpta objekt-ID:n efter sökning**. Annars kommer den att klassas som en **Inköpt objekt-ID** -händelse.
+><br>
+>Med den här metoden kan köphändelsen automatiskt inkludera alla relevanta kontexter (fråge-ID, indexnamn, pris, kvantitet, rabatt) från användarens tidigare interaktioner med artiklarna.
 
 ![](../../../images/extensions/client/algolia/purchased.png)
 
 Mer information om händelsekategorierna finns i [Inköpta objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids-after-search/)
-och [&#x200B; Inköpta objekt-ID:n &#x200B;](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/) .
+och [ Inköpta objekt-ID:n ](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/) .
 
 ### Visad {#viewed}
 
@@ -167,7 +161,7 @@ Lägg till åtgärden **[!UICONTROL Viewed]** i taggregeln för att skicka köpt
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Event Name] | Händelsenamnet som ska användas för att ytterligare förfina den här **vyn**-händelsen. |
-| [!UICONTROL Event Details Data Element] | Dataelementet returnerar händelseinformation, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li></ul> |
+| [!UICONTROL Event Details Data Element] | Data Element returnerar händelseinformation i JSON-format, inklusive: <ul><li>`indexName`</li><li>`objectIDs`</li></ul> |
 
 >[!NOTE]
 >
@@ -183,16 +177,35 @@ Mer information om händelsen view finns i guiden [Visade objekt-ID](https://www
 
 ### DataSet {#dataset}
 
-DataSet Data Element hämtar data som är associerade med HTML-element, som sedan används i [!DNL Algolia]-åtgärder.
+DataSet Data Element hämtar data som är associerade med HTML-element, som sedan används i [!DNL Algolia]-åtgärder. Det här dataelementet lagrar automatiskt hämtade händelsedata i webbläsarlagringen för senare användning (t.ex. vid konverterings- eller köphändelser).
+
+**Allmän konfiguration:**
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Hit Element Div/Class Name] | HTML-elementnamnet och/eller CSS-klassnamnet som innehåller datauppsättningsattributen inklusive `data-insights-object-id` och eventuellt `data-insights-query-id` och `data-insights-position` i HTML-elementet. |
 | [!UICONTROL Index Name Element Div/Class Name] | HTML-elementnamnet och/eller CSS-klassnamnet som har datauppsättningsattributen (`data-indexname`) i HTML-elementet. |
+
+**Commerce-konfiguration (valfritt):**
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| [!UICONTROL Price Data Element] | Dataelement som returnerar priset för artikeln. Om det anges inkluderas detta i de lagrade händelsedata för e-handelshändelser. |
+| [!UICONTROL Quantity Data Element] | Dataelement som returnerar kvantiteten för artikeln. Standardvärdet är 1 om inget anges. |
+| [!UICONTROL Discount Data Element] | Dataelement som returnerar artikelns decimalrabattvärde. |
+| [!UICONTROL Currency Code] | Valutakoden i ISO-4217-format. Om ingen valutakod anges används standardvalutan från tilläggskonfigurationen. |
+
+**Åsidosättningar (valfritt):**
+
+Med dessa fält kan du åsidosätta standardbeteendet för att hämta data från HTML-datauppsättningsattribut.
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| [!UICONTROL Record ID Data Element] | Åsidosätt standardmetoden för att använda sidans URL som post-ID. Post-ID används för att lagra och söka efter data som ska skickas till [!DNL Algolia] för den här produkten/sidan. |
 | [!UICONTROL Query ID Data Element] | Fråge-ID hämtas från datauppsättningen i HTML-elementet. Om du vill åsidosätta detta beteende använder du den här egenskapen för att tillhandahålla ett dataelement som returnerar fråge-ID som en sträng. |
 | [!UICONTROL Object IDs Data Element] | Objekt-ID:n hämtas från datauppsättningen i HTML-elementet. Om du vill åsidosätta det här beteendet använder du den här egenskapen för att tillhandahålla ett dataelement som returnerar objekt-ID:n som en array. |
 | [!UICONTROL Positions Data Element] | Positionerna hämtas från datauppsättningen i HTML-elementet. Om du vill åsidosätta det här beteendet använder du den här egenskapen för att tillhandahålla ett dataelement som returnerar positionerna som en array. |
-| [!UICONTROL Index Name Data Element] | Indexnamnet hämtas från datauppsättningen för HTML-elementet. Om du vill åsidosätta detta beteende använder du den här egenskapen för att ange ett dataelement som returnerar indexnamnet som en sträng. |
+| [!UICONTROL Index Name Data Element] | Indexnamnet hämtas från datauppsättningen i HTML-elementet. Om du vill åsidosätta detta beteende använder du den här egenskapen för att ange ett dataelement som returnerar indexnamnet som en sträng. |
 
 ![](../../../images/extensions/client/algolia/dataset.png)
 
@@ -204,7 +217,10 @@ Detta dataelement returnerar:
   queryID,
   indexName,
   objectIDs,
-  positions
+  positions,
+  objectData,  // Optional: commerce data if price is provided
+  currency,    // Optional: if provided
+  recordID
 }
 ```
 
@@ -241,42 +257,53 @@ Detta dataelement returnerar:
   timestamp,
   queryID,
   indexName,
-  objectIDs
+  objectIDs,
+  positions
 }
 ```
 
-Ett exempel på HTML som innehåller frågeparametrar.
+Ett exempel på HTML som innehåller frågeparametrar:
 
-```
+```html
 <a href="product.html?objectID=${hit.objectID}&queryID=${hit.__queryID}&indexName=${indexName}&position=${hit.position}">Read More</a>
 ```
 
 ### Lagring {#storage}
 
-Lagringsdataelementet hämtar data från sessionslagring för användning i [!DNL Algolia] åtgärder.
+Lagringsdataelementet hämtar data från webbläsarens sessionslagring för användning i [!DNL Algolia] åtgärder. Det här dataelementet kan även användas för att förstärka lagrade data med ytterligare e-handelsinformation.
 
-Det här dataelementet hämtar händelseinformation från sessionslagring. Ingen konfiguration krävs. Data läggs automatiskt till under *click*-händelseåtgärden och tas bort under *convert* -händelseåtgärden.
+Det här dataelementet hämtar händelseinformation som tidigare lagrats i sessionslager (vanligtvis av DataSet-dataelementet under klickningshändelser). Data tas automatiskt bort under konverteringshändelser om inte borttagningen uttryckligen inaktiveras.
+
+**Åsidosättningar (valfritt):**
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Record ID Data Element] | Post-ID används som nyckel för att söka efter händelsedata som lagras i webbläsarlagringen. Sidans URL är standardpost-ID. Om du vill åsidosätta detta beteende använder du den här egenskapen för att tillhandahålla ett dataelement som returnerar post-ID som en sträng. |
+| [!UICONTROL Price Data Element] | Dataelement som returnerar priset för artikeln. Om detta anges uppdateras de lagrade händelsedata med prisinformation. |
+| [!UICONTROL Quantity Data Element] | Dataelement som returnerar kvantiteten för artikeln. Om det anges uppdateras de lagrade händelsedata med kvantitetsinformation. |
+| [!UICONTROL Discount Data Element] | Dataelement som returnerar artikelns decimalrabattvärde. Om detta anges uppdateras de lagrade händelsedata med rabattinformation. |
+| [!UICONTROL Currency Code] | Ange valutakoden i ISO-4217-format. Om det anges uppdateras de lagrade händelsedata med valutainformation. |
 
 ![](../../../images/extensions/client/algolia/storage.png)
 
-Det här dataelementet returnerar det som lagras i sessionslagringen.
+Det här dataelementet returnerar det som lagras i sessionslagringen, inklusive utökade handelsdata:
 
 ```javascript
 {
   timestamp,
   queryID,
   indexName,
-  objectIDs
+  objectIDs,
+  positions,      // If available from original event
+  objectData,     // Optional: commerce data if price is provided
+  currency,       // Optional: if provided
+  recordID
 }
 ```
 
 ## Klickad eller konverterad efter sökning {#clicked-converted-after-search}
 
-Händelserna *som klickats efter sökning* eller *Konverterats efter sökning* kräver `queryId` och `position` krävs även för *klickade efter sökning*. De här egenskaperna är tillgängliga när flaggan `insights` aktiveras i parametrarna InstantSearch och/eller Autocomplete. Läs om följande resurser för att lära dig hur du konfigurerar insikter för din webbplats:
+Händelserna *som klickats efter sökning* eller *Konverterats efter sökning* kräver `queryID` och `positions` krävs även för *klickade efter sökning*. De här egenskaperna är tillgängliga när flaggan `insights` aktiveras i parametrarna InstantSearch och/eller Autocomplete. Läs om följande resurser för att lära dig hur du konfigurerar insikter för din webbplats:
 
 * [Ställa in insikter för Autocomplete](https://www.algolia.com/doc/ui-libraries/autocomplete/api-reference/autocomplete-js/autocomplete/#param-insights)
 * [Ställa in insikter på InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/events/js/#set-the-insights-option-to-true)
