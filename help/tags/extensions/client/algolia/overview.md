@@ -92,7 +92,7 @@ Lägg till åtgärden **[!UICONTROL Click]** i taggregeln för att skicka klicka
 ![](../../../images/extensions/client/algolia/clicked.png)
 
 Mer information om händelsekategorierna finns i [Klickade objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids-after-search/)
-och [Handböcker för objekt-ID:n som klickats ](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/) .
+och [Handböcker för objekt-ID:n som klickats &#x200B;](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/) .
 
 ### Konverterad {#converted}
 
@@ -152,7 +152,7 @@ Lägg till åtgärden **[!UICONTROL Purchased]** i taggregeln för att skicka k�
 ![](../../../images/extensions/client/algolia/purchased.png)
 
 Mer information om händelsekategorierna finns i [Inköpta objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids-after-search/)
-och [ Inköpta objekt-ID:n ](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/) .
+och [&#x200B; Inköpta objekt-ID:n &#x200B;](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/) .
 
 ### Visad {#viewed}
 
