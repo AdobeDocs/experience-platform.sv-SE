@@ -2,14 +2,16 @@
 title: Satellitobjektreferens
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: a36e5af39f904370c1e97a9ee1badad7a2eac32e
+source-git-commit: 05bf3a8c92aa221af153b4ce9949f0fdfc3c86ab
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '208'
 ht-degree: 0%
 
 ---
 
 # `_satellite` objektreferens
+
+_På de här sidorna beskrivs hur du använder `_satellite` -objektet, vilket gör att du kan hantera och anpassa tagglogiken med JavaScript. Mer information om hur du konfigurerar implementeringen i användargränssnittet för datainsamling finns i [Adobe Experience Platform Web SDK-taggtillägget](/help/tags/extensions/client/web-sdk/overview.md)._
 
 Objektet `_satellite` visar flera startpunkter som stöds och som hjälper dig att interagera med det taggbibliotek som publicerats på din plats. Alla taggdistributioner visar `_satellite` om loader-taggen implementeras korrekt. Det finns flera primära användningsområden för det här objektet:
 
@@ -26,16 +28,18 @@ Objektet `_satellite` visar flera startpunkter som stöds och som hjälper dig a
 ## Exempel på vanliga användningsområden
 
 ```js
-// Read and write a temporary data element value
-const region = _satellite.getVar('user_region');
-_satellite.setVar('promo_code', code);
+// Read and write a temporary data element value (guarded)
+if(window._satellite?.getVar && window._satellite?.setVar) {
+  const region = _satellite.getVar('user_region');
+  _satellite.setVar('promo_code', code);
+}
 
-// Local debugging
-_satellite.setDebug(true);
-_satellite.logger.log('Rule evaluated');
-
-// Manually trigger a rule configured in your tag property
+// Manually trigger a rule configured in your tag property (guarded)
 if (window._satellite?.track) {
   _satellite.track('cart_add', { sku: '123', qty: 2 });
 }
+
+// Local console debugging (guarding not needed)
+_satellite.setDebug(true);
+_satellite.logger.log('Rule evaluated');
 ```
