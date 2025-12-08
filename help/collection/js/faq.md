@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Web SDK FAQ
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
 source-wordcount: '1999'
 ht-degree: 1%
@@ -67,9 +67,9 @@ Adobe Experience Platform Web SDK kan också skicka data direkt till Adobe Exper
 
 **Tid till värde:** Adobe har arbetat hårt (och kommer att fortsätta) för att göra det så enkelt som möjligt att distribuera Web SDK via taggar och mappa klientdata till XDM. När detta arbete är klart kan alla andra Adobe-lösningar och Adobe Experience Platform-tjänster aktiveras och inaktiveras på serversidan. Om du t.ex. använder detta för Adobe Analytics och vill aktivera Target eller Experience Platform kan du enkelt aktivera en funktion för att växla mellan olika datastream-konfigurationer och aktivera de användningsexemplen.
 
-## Vad är [!DNL alloy.js]?
+## Vad är `alloy.js`?
 
-[!DNL alloy.js] är namnet på Web SDK JavaScript-biblioteket. Den refereras i SDK källkod och filnamn.
+`alloy.js` är namnet på Web SDK JavaScript-biblioteket. Den refereras i SDK källkod och filnamn.
 
 ## Behöver kunderna köpa Adobe Experience Platform för att kunna använda [!DNL Web SDK]?
 
@@ -78,7 +78,7 @@ Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience P
 * Kunder som *inte* har åtkomst till Experience Platform eller CDP i realtid och som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman och datastreams i användargränssnittet för datainsamlingen eller Experience Platform.
 * Kunder som har åtkomst till Experience Platform eller CDP i realtid och som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman, datamängder, identitetsnamnutrymmen och datastreams i användargränssnittet för datainsamlingen eller Experience Platform-gränssnittet.
 
-Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=sv-SE).
+Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html).
 
 ## Vem ska använda Web SDK?
 
@@ -144,7 +144,7 @@ Om du använder våra SDK:er och skickar XDM till Edge Network kan du med dessa 
 
 ## Vad är en CNAME- eller First Party-domän och varför spelar det någon roll?
 
-Mer information om CNAME finns i [Adobe-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/cname.html?lang=sv-SE)
+Mer information om CNAME finns i [Adobe-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/cname.html)
 
 ## Använder Adobe Experience Platform Web SDK cookies? Om så är fallet, vilka cookies använder den?
 

@@ -1,17 +1,17 @@
 ---
-title: Installera Web SDK med JavaScript-biblioteket
+title: Installera SDK JavaScript-biblioteket
 description: Referera till Web SDK-biblioteket med en fristående CDN-fil.
 exl-id: bacfe938-4326-48f6-a321-bd16970e77eb
-source-git-commit: 217282135bcd750740f4d3f8c6e17a0b8f9578bd
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
-source-wordcount: '212'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
 
-# Installera Web SDK med JavaScript-biblioteket
+# Installera SDK JavaScript-biblioteket
 
-Ett alternativ till att installera Web SDK utan [att använda taggtillägget](/help/tags/extensions/client/web-sdk/overview.md) är att referera till JavaScript-biblioteket som finns på ett CDN. Du kan referera till biblioteket direkt eller hämta det och lagra det i din egen infrastruktur. Det finns i miniformat och fullt format.
+Ett alternativ till att installera Web SDK utan [att använda taggtillägget](/help/tags/extensions/client/web-sdk/overview.md) är att referera till Web SDK JavaScript-biblioteket som finns på ett CDN. Du kan referera till biblioteket direkt eller hämta det och lagra det i din egen infrastruktur. Det finns i miniformat och fullt format.
 
 Webbbiblioteket SDK är tillgängligt med följande URL-struktur:
 

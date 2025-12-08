@@ -1,15 +1,15 @@
 ---
-title: Satellitobjektreferens
+title: Taggar översikt över JavaScript på klientsidan (_satellit)
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 05bf3a8c92aa221af153b4ce9949f0fdfc3c86ab
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# `_satellite` objektreferens
+# Taggar översikt över JavaScript på klientsidan (`_satellite`)
 
 _På de här sidorna beskrivs hur du använder `_satellite` -objektet, vilket gör att du kan hantera och anpassa tagglogiken med JavaScript. Mer information om hur du konfigurerar implementeringen i användargränssnittet för datainsamling finns i [Adobe Experience Platform Web SDK-taggtillägget](/help/tags/extensions/client/web-sdk/overview.md)._
 

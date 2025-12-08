@@ -6,10 +6,10 @@ breadcrumb-title: Datainsamling
 user-guide-description: Lär dig skicka data till Adobe Experience Platform.
 feature: Data Collection
 role: Developer
-source-git-commit: 3abe25a9c538bf4d1b439d48f624d8cad109a99e
+source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
 workflow-type: tm+mt
-source-wordcount: '135'
-ht-degree: 16%
+source-wordcount: '139'
+ht-degree: 15%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 16%
 + BrightScript {#brightscript}
    + [BrightScript - översikt](brightscript/brs-overview.md)
 + JavaScript {#js}
-   + [JavaScript - översikt](js/js-overview.md)
+   + [Web SDK JavaScript - översikt](js/js-overview.md)
    + [Versionsinformation](js/release-notes.md)
    + Installation {#install}
       + [Installationsöversikt](js/install/overview.md)
@@ -75,7 +75,7 @@ ht-degree: 16%
       + [Kommandosvar](js/commands/command-responses.md)
    + [Övervaka kopplingar](js/monitoring-hooks.md)
    + [Vanliga frågor och svar](js/faq.md)
-+ Taggar {#tags}
++ Taggar JavaScript på klientsidan {#tags}
    + [Översikt](tags/overview.md)
    + [buildInfo](tags/buildinfo.md)
    + [företag](tags/company.md)
