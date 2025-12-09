@@ -1,9 +1,9 @@
 ---
 title: setVar()
 description: Anger ett värde som du kan hämta senare med getVar().
-source-git-commit: 6f8bdfd09023ea48962a40a9539afe017bc108cc
+source-git-commit: 54c32803136bf37a13bb9ca14b1d1c7b09a2041c
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '208'
 ht-degree: 0%
 
 ---
@@ -67,3 +67,7 @@ _satellite.getVar('title'); // Blinding Light
 _satellite.getVar('category'); // Game
 _satellite.getVar('genre'); // Tower defense
 ```
+
+>[!NOTE]
+>
+>Undvik att använda punkter (`.`) när du anger variabelnamn med den här metoden. Metoden `getVar()` känner inte igen variabler som innehåller punkter som angetts med `setVar()`. `getVar()` _känner dock igen dataelement som använder punkter när de definieras i tagggränssnittet._
