@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM - systemöversikt
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '2440'
+source-wordcount: '2411'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,7 @@ Mindre identifierade profiler kan bara bestå av anonyma beteendesignaler, som w
 
 I takt med att profilen växer blir den ett robust arkiv för en persons personuppgifter, identifieringsinformation, kontaktuppgifter och kommunikationsinställningar.
 
-Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM Individual Profile]-referenshandboken &#x200B;](./classes/individual-profile.md).
+Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM Individual Profile]-referenshandboken ](./classes/individual-profile.md).
 
 ### [!UICONTROL XDM ExperienceEvent] {#xdm-experience-event}
 
@@ -89,7 +89,7 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 ![En infografik av kundresan visualiserad med upplevelsehändelser över tid.](images/overview/experience-event-journey.png)
 
-Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM ExperienceEvent]-referenshandboken &#x200B;](./classes/experienceevent.md).
+Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM ExperienceEvent]-referenshandboken ](./classes/experienceevent.md).
 
 ## XDM-scheman och Experience Platform-tjänster {#schemas-and-platform-services}
 
@@ -110,10 +110,6 @@ Mer information finns i [Katalogtjänstöversikt](../catalog/home.md). Mer infor
 >[!AVAILABILITY]
 >
 >Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
-
->[!NOTE]
->
->Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Funktionen är densamma, men bara terminologin har ändrats för tydlighetens skull.
 
 Data Mirror är en Adobe Experience Platform-funktion som möjliggör avancerad databassynkronisering med hjälp av relationsscheman. En fullständig översikt över Data Mirror funktioner och användningsexempel finns i [Data Mirror-översikten](./data-mirror/overview.md).
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '2916'
+source-wordcount: '2882'
 ht-degree: 0%
 
 ---
@@ -35,10 +35,6 @@ Med slutpunkten `/descriptors` i API:t [!DNL Schema Registry] kan du programmäs
 Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 Förutom standardbeskrivningar har [!DNL Schema Registry] stöd för beskrivningstyper för relationsscheman, till exempel **primärnyckel**, **version** och **tidsstämpel**. Dessa lägger in unika funktioner, styr versionshantering och definierar tidsseriefält på schemanivå. Om du inte är bekant med relationsscheman kan du gå igenom den tekniska referensen för [Data Mirror-översikten](../data-mirror/overview.md) och [relationsscheman](../schema/relational.md) innan du fortsätter.
-
->[!NOTE]
->
->Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Beskrivningsfunktionen och API-slutpunkterna ändras inte. Det är bara terminologin som har uppdaterats för tydlighet.
 
 >[!IMPORTANT]
 >

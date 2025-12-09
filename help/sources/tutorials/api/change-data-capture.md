@@ -2,9 +2,9 @@
 title: Aktivera registrering av ändringsdata för källanslutningar i API
 description: Lär dig hur du aktiverar registrering av ändringsdata för källanslutningar i API:t
 exl-id: 362f3811-7d1e-4f16-b45f-ce04f03798aa
-source-git-commit: 2ad0ffba128e8c51f173d24d4dd2404b9cbbb59a
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '1261'
+source-wordcount: '1234'
 ht-degree: 0%
 
 ---
@@ -29,10 +29,6 @@ Båda metoderna kräver att Data Mirror har relationsscheman för att bevara rel
 >[!AVAILABILITY]
 >
 >Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
-
->[!NOTE]
->
->Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Funktionerna och funktionerna för datainhämtning är desamma.
 
 >[!NOTE]
 >
@@ -113,7 +109,7 @@ Aktivera datainhämtning för molnlagringskällor genom att följa dessa steg:
 
 2. [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
 
-Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [&#x200B; Filbaserade källor &#x200B;](#file-based-sources) ovan.
+Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [ Filbaserade källor ](#file-based-sources) ovan.
 
 ## Databaskällor {#database-sources}
 

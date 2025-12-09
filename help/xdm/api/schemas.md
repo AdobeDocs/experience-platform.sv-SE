@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för scheman
 description: Med slutpunkten /schemas i API:t för schemaregister kan du programmässigt hantera XDM-scheman i ditt upplevelseprogram.
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: dc5ac5427e1eeef47434c3974235a1900d29b085
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '2122'
+source-wordcount: '2091'
 ht-degree: 0%
 
 ---
@@ -286,10 +286,6 @@ Om du vill lägga till ytterligare fält i ett schema kan du utföra en [PATCH-�
 >[!AVAILABILITY]
 >
 >Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
-
->[!NOTE]
->
->Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform API-dokumentationen. Funktionen är densamma - bara terminologin har ändrats för att vara tydlig.
 
 Skapa ett relationsschema genom att göra en POST-begäran till slutpunkten `/schemas`. Relationsscheman lagrar strukturerade relationsliknande data **utan**-klasser eller fältgrupper. Definiera fält direkt i schemat och identifiera schemat som relationellt med en logisk beteendetagg.
 

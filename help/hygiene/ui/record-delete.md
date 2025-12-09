@@ -2,16 +2,16 @@
 title: Begäranden om radering av post (UI-arbetsflöde)
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 83aed6a79d47ee4043a8303ec8f8c8c20482e12a
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '2383'
+source-wordcount: '2358'
 ht-degree: 0%
 
 ---
 
 # Registrera borttagningsbegäranden (UI-arbetsflöde) {#record-delete}
 
-Använd arbetsytan [[!UICONTROL Data Lifecycle] &#x200B;](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
+Använd arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
 
 >[!IMPORTANT]
 >
@@ -208,10 +208,6 @@ När begäran har skickats skapas en arbetsordning och visas på fliken [!UICONT
 ## Ta bort poster från datauppsättningar baserade på relationsscheman {#relational-record-delete}
 
 Om datauppsättningen som du tar bort från baseras på ett relationsschema bör du kontrollera följande för att se till att posterna tas bort på rätt sätt och inte hämtas igen på grund av avvikelser mellan Experience Platform och källsystemet.
-
->[!NOTE]
->
->Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Funktionerna och borttagningsbeteendet är desamma.
 
 ### Funktionen för borttagning av post
 

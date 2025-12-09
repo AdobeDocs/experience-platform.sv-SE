@@ -5,9 +5,9 @@ title: Data Mirror - översikt
 description: Läs om hur Data Mirror möjliggör inmatning av ändringar på radnivå från externa databaser till Adobe Experience Platform med hjälp av relationsscheman med tvingande unikhet, relationer och versionshantering.
 badge: Begränsad tillgänglighet
 exl-id: bb92c77a-6c7a-47df-885a-794cf55811dd
-source-git-commit: 57981d2e4306b2245ce0c1cdd9f696065c508a1d
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '1356'
+source-wordcount: '1334'
 ht-degree: 0%
 
 ---
@@ -17,10 +17,6 @@ ht-degree: 0%
 >[!AVAILABILITY]
 >
 >Data Mirror och relationsscheman är tillgängliga för Adobe Journey Optimizer **licensinnehavare för samordnade kampanjer**. De är också tillgängliga som en **begränsad version** för Customer Journey Analytics-användare, beroende på din licens och aktivering av funktioner. Kontakta din Adobe-representant för att få åtkomst.
-
->[!NOTE]
->
->Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen. Funktionen är densamma.
 
 Data Mirror är en Adobe Experience Platform-funktion som gör det möjligt att ändra på radnivå från externa databaser till datasjön med hjälp av relationsscheman. Den bevarar datarelationer, tillämpar unikt utseende och stöder versionshantering utan att kräva extraherings-, transformerings- och inläsningsprocesser (ETL) uppströms.
 

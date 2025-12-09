@@ -2,12 +2,12 @@
 keywords: Experience Platform;home;populära topics;relational schema;relational schemas;schema;schema;xdm;experience data model;
 solution: Experience Platform
 title: Relationsscheman
-description: Lär dig mer om relationsscheman (tidigare modellbaserade scheman) i Adobe Experience Platform, inklusive funktioner, obligatoriska fält, relationer och begränsningar.
+description: Läs om relationsscheman i Adobe Experience Platform, inklusive funktioner, obligatoriska fält, relationer och begränsningar.
 badge: Begränsad tillgänglighet
 exl-id: 397e5937-b892-4fd3-b90e-29ed9229dc69
-source-git-commit: 605c169c9de7a978e6d2f0bdc809371c82cd3280
+source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1280'
 ht-degree: 0%
 
 ---
@@ -24,10 +24,6 @@ Relationsscheman är ett flexibelt, kontrollerat modelleringsmönster för att r
 >
 >Överväganden om dataradering gäller för alla relationsschemaimplementeringar. Program som använder dessa scheman måste förstå hur borttagningar påverkar relaterade datauppsättningar, kompatibilitetskrav och processer i senare led. Planera för borttagningsscenarier och granska [vägledningen för datahygien](../../hygiene/ui/record-delete.md#relational-record-delete) innan implementeringen.
 
->[!NOTE]
->
->Relationsscheman kallades tidigare för modellbaserade scheman i tidigare versioner av Adobe Experience Platform-dokumentationen.
-
 Använd relationsscheman för att:
 
 * Säkerställ dataintegriteten med enkla eller sammansatta primärnycklar.
@@ -38,7 +34,7 @@ Använd relationsscheman för att:
 
 ## Hur relationsscheman skiljer sig från vanliga XDM-scheman
 
-XDM-standardscheman i Experience Platform följer en av tre databeteenden: Record, Time-series eller Ad-hoc. Mer information och definitioner finns i [XDM-databeteenden](https://experienceleague.adobe.com/sv/docs/experience-platform/xdm/home#data-behaviors).
+XDM-standardscheman i Experience Platform följer en av tre databeteenden: Record, Time-series eller Ad-hoc. Mer information och definitioner finns i [XDM-databeteenden](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/home#data-behaviors).
 
 I den traditionella modellen deltar scheman för inspelning och tidsserier i [fackscheman](../api/unions.md) (se även [gränssnittsguiden för unionsscheman](../../profile/ui/union-schema.md)). Dessa scheman utvecklas automatiskt när delade [fältgrupper](./composition.md#field-group) uppdateras och anpassade fält måste kapslas under ett innehavarnamnområde. Den här modellen är kraftfull och kan göra onboarding långsammare, skapa alltför komplexa scheman med oanvända fält och kräva ytterligare datamappning eller dataomvandling. Dessa faktorer ökar inlärningskurvan och den pågående underhållsinsatsen.
 
