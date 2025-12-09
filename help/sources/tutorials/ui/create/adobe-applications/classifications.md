@@ -63,4 +63,4 @@ Genom att följa den här självstudiekursen har du skapat en Statakoppling för
 
 * [Adobe Analytics Source Connector - översikt](../../../../connectors/adobe-applications/analytics.md)
 * [Skapa en Analytics-källanslutning för rapportsvitdata i användargränssnittet](./analytics.md)
-* [Om klassificeringar](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html)
+* [Om klassificeringar](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html?lang=sv-SE)
