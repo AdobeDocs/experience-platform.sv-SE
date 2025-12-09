@@ -77,7 +77,7 @@ Mindre identifierade profiler kan bara bestå av anonyma beteendesignaler, som w
 
 I takt med att profilen växer blir den ett robust arkiv för en persons personuppgifter, identifieringsinformation, kontaktuppgifter och kommunikationsinställningar.
 
-Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM Individual Profile]-referenshandboken ](./classes/individual-profile.md).
+Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM Individual Profile]-referenshandboken &#x200B;](./classes/individual-profile.md).
 
 ### [!UICONTROL XDM ExperienceEvent] {#xdm-experience-event}
 
@@ -89,7 +89,7 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 ![En infografik av kundresan visualiserad med upplevelsehändelser över tid.](images/overview/experience-event-journey.png)
 
-Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM ExperienceEvent]-referenshandboken ](./classes/experienceevent.md).
+Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM ExperienceEvent]-referenshandboken &#x200B;](./classes/experienceevent.md).
 
 ## XDM-scheman och Experience Platform-tjänster {#schemas-and-platform-services}
 

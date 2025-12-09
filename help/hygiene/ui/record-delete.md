@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Registrera borttagningsbegäranden (UI-arbetsflöde) {#record-delete}
 
-Använd arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
+Använd arbetsytan [[!UICONTROL Data Lifecycle] &#x200B;](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
 
 >[!IMPORTANT]
 >
