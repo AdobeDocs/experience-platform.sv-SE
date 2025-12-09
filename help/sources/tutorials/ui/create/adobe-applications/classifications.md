@@ -2,9 +2,9 @@
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra klassificeringsdata till Adobe Experience Platform.
 title: Skapa en Adobe Analytics Source-anslutning för klassificeringsdata i användargränssnittet
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dfc8a1d51e6dd25210a0b6f24dad4d0f00052414
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '508'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Under kategorin *Adobe-program* väljer du **[!UICONTROL Adobe Analytics]** och 
 
 ![Källkatalogen i Experience Platform-gränssnittet med Adobe Analytics-källan markerad.](../../../../images/tutorials/create/classifications/catalog.png)
 
-Välj sedan [!UICONTROL Classifications] och sedan de klassificeringsdatauppsättningar som du vill importera till Experience Platform.
+Välj sedan [!UICONTROL Classifications] och sedan de klassificeringsdatauppsättningar som du vill importera till Experience Platform. Du kan också använda sökfunktionen för att filtrera och välja för särskilda klassificeringar.
 
 Du kan välja upp till 30 olika klassificeringsdatauppsättningar att hämta till Experience Platform. Alla datauppsättningar som du väljer visas i den högra listen. När du är klar väljer du [!UICONTROL Next] för att fortsätta.
 
@@ -63,4 +63,4 @@ Genom att följa den här självstudiekursen har du skapat en Statakoppling för
 
 * [Adobe Analytics Source Connector - översikt](../../../../connectors/adobe-applications/analytics.md)
 * [Skapa en Analytics-källanslutning för rapportsvitdata i användargränssnittet](./analytics.md)
-* [Om klassificeringar](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html?lang=sv-SE)
+* [Om klassificeringar](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html)

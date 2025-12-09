@@ -2,9 +2,9 @@
 title: Anslut Adobe Analytics till Experience Platform
 description: Lär dig hur du kan skicka data från Adobe Analytics rapportprogramsvit till Experience Platform
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 789d00912edd0ce8e2871b7e22445a043868ccf5
+source-git-commit: dfc8a1d51e6dd25210a0b6f24dad4d0f00052414
 workflow-type: tm+mt
-source-wordcount: '2745'
+source-wordcount: '2754'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De har samma innebörd för alla kunder och är tillgängliga i källdata för analyser och i schemafältgrupper för analyser.
-* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=sv-SE).
+* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i Analytics. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [Analysdokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html).
 * **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är användardefinierade och betraktas inte som standardattribut eller anpassade attribut.
 
 ## Navigera i källkatalogen
@@ -55,7 +55,7 @@ Du kan importera rapportsviter från valfri region (USA, Storbritannien eller Si
 
 Flera ingående anslutningar kan göras för att överföra flera rapportsviter till samma sandlåda. Om rapportsviterna har olika scheman för variabler (t.ex. eVars eller events), bör de mappas till specifika fält i de anpassade fältgrupperna och datakonflikter undviks med [Dataprep](../../../../../data-prep/ui/mapping.md). Rapportsviter kan bara läggas till i en enda sandlåda.
 
-Välj **[!UICONTROL Report suite]** och använd sedan gränssnittet *[!UICONTROL Analytics source add data]* för att navigera i listan och identifiera den Analytics-rapportsvit som du vill importera till Experience Platform. Välj **[!UICONTROL Next]** om du vill fortsätta.
+Välj **[!UICONTROL Report suite]** och använd sedan gränssnittet *[!UICONTROL Analytics source add data]* för att navigera i listan och identifiera den Analytics-rapportsvit som du vill importera till Experience Platform. Du kan också söka efter en viss rapportserie. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 ![En analysrapportssvit har valts för konsumtion och knappen &quot;Nästa&quot; är markerad](../../../../images/tutorials/create/analytics/add-data.png)
 
@@ -117,7 +117,7 @@ Experience Platform identifierar automatiskt mappningen för eventuella namnkonf
 >id="platform_analytics_import_mapping"
 >title="Ladda ned mall"
 >abstract="Hämta csv-mallen för att utföra mappningen offline."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/data-prep/ui/mapping#import-mapping" text="Importera mappning"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-prep/ui/mapping#import-mapping" text="Importera mappning"
 
 Du kan använda funktionen Dataförinställning för att lägga till nya anpassade mappningar eller beräkningsfält för anpassade attribut. Välj **[!UICONTROL Custom]** om du vill lägga till anpassade mappningar.
 
@@ -325,5 +325,5 @@ Följande video är tänkt att ge stöd för din förståelse av datainhämtning
 >
 > Användargränssnittet [!DNL Experience Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3430253?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
 
