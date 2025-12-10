@@ -2,9 +2,9 @@
 title: Identitetsdata i webb-SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 66105ca19ff1c75f1185b08b70634b7d4a6fd639
 workflow-type: tm+mt
-source-wordcount: '1558'
+source-wordcount: '1559'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ SDK tilldelar och spårar [!DNL ECIDs] med hjälp av cookies, med flera tillgän
 När en ny användare kommer till din webbplats försöker [Adobe Experience Cloud Identity Service](/help/identity-service/home.md) att ange en cookie för enhetsidentifiering för den användaren.
 
 * För förstagångsbesökare genereras en [!DNL ECID] och returneras i det första svaret från Experience Platform Edge Network.
-* För återkommande besökare hämtas [!DNL ECID] från cookien `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` och läggs till i nyttolasten för begäran av Edge Network.
+* För återkommande besökare hämtas [!DNL ECID] från cookien [`kndctr_<orgId>_identity`](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk) och läggs till i nyttolasten för begäran av Edge Network.
 
-När cookie-filen som innehåller [!DNL ECID] har ställts in, kommer varje efterföljande begäran som skapas av Web SDK att innehålla en kodad [!DNL ECID] i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity`-cookien.
+När cookie-filen som innehåller [!DNL ECID] har ställts in, kommer varje efterföljande begäran som skapas av Web SDK att innehålla en kodad [!DNL ECID] i `kndctr_<orgId>_identity`-cookien.
 
 När du använder cookies för enhetsidentifiering har du två sätt att interagera med Edge Network:
 
@@ -35,7 +35,7 @@ Som förklaras i avsnitten nedan har den datainsamlingsmetod som du väljer att 
 
 ## Spåra CORE ID:n med Web SDK {#tracking-coreid-web-sdk}
 
-När du använder Google Chrome med cookies från tredje part aktiverade och det inte finns någon cookie för `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` går den första Edge Network-begäran igenom en `demdex.net`-domän, som ställer in en democookie. Den här cookien innehåller en [!DNL CORE ID]. Detta är ett unikt användar-ID, som skiljer sig från [!DNL ECID].
+När du använder Google Chrome med cookies från tredje part aktiverade och det inte finns någon cookie för `kndctr_<orgId>_identity` går den första Edge Network-begäran igenom en `demdex.net`-domän, som ställer in en democookie. Den här cookien innehåller en [!DNL CORE ID]. Detta är ett unikt användar-ID, som skiljer sig från [!DNL ECID].
 
 Beroende på implementeringen kan du vilja [komma åt  [!DNL CORE ID]](#retrieve-coreid).
 
@@ -55,7 +55,7 @@ När du använder datainsamling från tredje part begränsar vissa annonsblocker
 
 ### Effekter av livscykeln för cookies i Adobe Experience Cloud-program {#lifespans}
 
-Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på besökarantal i [Adobe Analytics](https://experienceleague.adobe.com/sv/docs/analytics) och [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/customer-journey-analytics). Slutanvändare kan även uppleva inkonsekventa personaliseringsupplevelser när [Adobe Target](https://experienceleague.adobe.com/sv/docs/target) eller [Offer Decisioning](https://experienceleague.adobe.com/sv/docs/target/using/integrate/ajo/offer-decision) används på webbplatsen.
+Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på besökarantal i [Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics) och [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/customer-journey-analytics). Slutanvändare kan även uppleva inkonsekventa personaliseringsupplevelser när [Adobe Target](https://experienceleague.adobe.com/en/docs/target) eller [Offer Decisioning](https://experienceleague.adobe.com/en/docs/target/using/integrate/ajo/offer-decision) används på webbplatsen.
 
 Tänk dig till exempel en situation där du har skapat en personaliseringsupplevelse som befordrar ett objekt till hemsidan om en användare har visat det tre gånger under de senaste sju dagarna.
 
@@ -70,7 +70,7 @@ Om du vill ta hänsyn till effekterna av cookie-livscykler enligt ovan kan du v�
 Beroende på ditt användningssätt kan du komma åt [!DNL ECID] på två sätt:
 
 * [Hämta  [!DNL ECID] via datainställning för datainsamling](#retrieve-ecid-data-prep): Det här är den rekommenderade metoden som du bör använda.
-* [Hämta  [!DNL ECID]  via `getIdentity()`-kommandot &#x200B;](#retrieve-ecid-getidentity): Använd bara den här metoden när du behöver [!DNL ECID]-informationen på klientsidan.
+* [Hämta  [!DNL ECID]  via `getIdentity()`-kommandot ](#retrieve-ecid-getidentity): Använd bara den här metoden när du behöver [!DNL ECID]-informationen på klientsidan.
 
 ### Hämta [!DNL ECID] via datapresten för datainsamling {#retrieve-ecid-data-prep}
 
@@ -124,7 +124,7 @@ alloy("getIdentity",{
 
 ## Använder `identityMap` {#using-identitymap}
 
-Med hjälp av ett XDM [`identityMap`-fält &#x200B;](/help/xdm/schema/composition.md#identityMap) kan du identifiera en enhet/användare med flera identiteter, ange deras autentiseringstillstånd och avgöra vilken identifierare som betraktas som den primära. Om ingen identifierare har angetts som `primary` blir standardvärdet `ECID`.
+Med hjälp av ett XDM [`identityMap`-fält ](/help/xdm/schema/composition.md#identityMap) kan du identifiera en enhet/användare med flera identiteter, ange deras autentiseringstillstånd och avgöra vilken identifierare som betraktas som den primära. Om ingen identifierare har angetts som `primary` blir standardvärdet `ECID`.
 
 `identityMap` fält uppdateras med kommandot `sentEvent`.
 
@@ -162,7 +162,7 @@ Varje identitetsobjekt i identitetsarrayen innehåller följande egenskaper:
 | `authenticatedState` | Sträng | **(Obligatoriskt)** Autentiseringstillståndet för ID:t. Möjliga värden är `ambiguous`, `authenticated` och `loggedOut`. |
 | `primary` | Boolean | Avgör om den här identiteten ska användas som ett primärt fragment i profilen. Som standard anges ECID som användarens primära identifierare. Om det utelämnas blir det här värdet som standard `false`. |
 
-Om du använder fältet `identityMap` för att identifiera enheter eller användare får du samma resultat som om du använder metoden [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=sv-SE) från metoden [!DNL ID Service API]. Mer information finns i [API-dokumentationen för ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=sv-SE).
+Om du använder fältet `identityMap` för att identifiera enheter eller användare får du samma resultat som om du använder metoden [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html) från metoden [!DNL ID Service API]. Mer information finns i [API-dokumentationen för ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html).
 
 ## Migrera från Visitor API till ECID {#migrating-visitor-api-ecid}
 
@@ -174,7 +174,7 @@ När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cook
 
 ### Uppdaterar egenskaper för migrering
 
-När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler vid migrering. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html?lang=sv-SE#getting-started-with-bulk-management) som Audience Manager har skapat.
+När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler vid migrering. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) som Audience Manager har skapat.
 
 ## Använd vid vidarebefordran av händelse
 
