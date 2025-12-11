@@ -134,7 +134,7 @@ Följande video är avsedd att ge stöd för din förståelse av ramverket för 
 
 >[!IMPORTANT]
 >
->Videoreferenserna använder etiketter på enskilda datauppsättningsfält. Det här arbetsflödet har tagits bort. [Etiketter måste nu tillämpas på schemafältnivån ](./e2e.md#labels). Begreppen i videon är fortfarande korrekta, men etikettarbetsflödet har ändrats.
+>Videoreferenserna använder etiketter på enskilda datauppsättningsfält. Det här arbetsflödet har tagits bort. [Etiketter måste nu tillämpas på schemafältnivån &#x200B;](./e2e.md#labels). Begreppen i videon är fortfarande korrekta, men etikettarbetsflödet har ändrats.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
