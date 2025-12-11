@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datastyrning - översikt
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 9b1630a4876c0bcd7331f8da264e4f19ce00b59a
 workflow-type: tm+mt
-source-wordcount: '1619'
+source-wordcount: '1656'
 ht-degree: 0%
 
 ---
@@ -17,8 +17,8 @@ ht-degree: 0%
 >id="platform_datagovernance_framework"
 >title="Datastyrningsskyldighet"
 >abstract="Kom ihåg att det är ditt enda ansvar att följa din organisations policyer för datastyrning och uppfylla dina lagstadgade krav. Experience Platform tillhandahåller datastyrningsverktyg som du kan använda för att hantera dina skyldigheter när det gäller dataanvändning. Använd lämpliga etiketter för dataanvändning innan du frågar eller bearbetar data. Läs dokumentationen om du vill veta mer om verktyg för datastyrning och metodtips."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE" text="Datastyrning - översikt"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=sv-SE" text="Översikt över etiketter för datastyrning"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html" text="Datastyrning - översikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html" text="Översikt över etiketter för datastyrning"
 
 En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dina dataåtgärder i [!DNL Experience Platform] är kompatibla med dataanvändningsprinciper.
 
@@ -131,6 +131,10 @@ I följande tabell beskrivs nyckeltermer för datastyrning och ramverket för da
 ## Ytterligare resurser
 
 Följande video är avsedd att ge stöd för din förståelse av ramverket för datastyrning.
+
+>[!IMPORTANT]
+>
+>Videoreferenserna använder etiketter på enskilda datauppsättningsfält. Det här arbetsflödet har tagits bort. [Etiketter måste nu tillämpas på schemafältnivån ](./e2e.md#labels). Begreppen i videon är fortfarande korrekta, men etikettarbetsflödet har ändrats.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
