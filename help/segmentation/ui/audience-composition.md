@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!BEGINSHADEBOX]
 
-Om du är Adobe Journey Optimizer-kund kan du läsa [kom igång med guiden &#x200B;](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html) för målgruppskomposition i Adobe Journey Optimizer-dokumentationen om du vill ha mer information om hur du arbetar med målgruppskomposition i det sammanhanget.
+Om du är Adobe Journey Optimizer-kund kan du läsa [kom igång med guiden &#x200B;](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html?lang=sv-SE) för målgruppskomposition i Adobe Journey Optimizer-dokumentationen om du vill ha mer information om hur du arbetar med målgruppskomposition i det sammanhanget.
 
 >[!ENDSHADEBOX]
 
