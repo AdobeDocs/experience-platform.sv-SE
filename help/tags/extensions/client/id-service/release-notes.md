@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Versionsinformation om Adobe Experience Cloud Identity Service-tillägget
 
-Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud Identity Service Tag-tillägget. Versionsinformation om Experience Cloud identitetstjänst finns i [identitetstjänstens dokumentation](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html).
+Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud Identity Service Tag-tillägget. Versionsinformation om Experience Cloud identitetstjänst finns i [identitetstjänstens dokumentation](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html?lang=sv-SE).
 
 ## 17 okt 2022
 

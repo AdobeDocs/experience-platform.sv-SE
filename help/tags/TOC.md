@@ -366,5 +366,5 @@ ht-degree: 19%
       * [Sökresurser](./api/guides/search.md)
       * [Hemligheter](./api/guides/secrets.md)
 * [Vanliga frågor och svar](./faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
 
