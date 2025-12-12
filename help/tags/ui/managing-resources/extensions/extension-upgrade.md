@@ -2,18 +2,14 @@
 title: Tillägg - uppgraderingar
 description: Lär dig hur tilläggsuppgraderingar paketeras och representeras i tilläggskatalogen.
 exl-id: 4a7e0c5c-4bd1-4fb8-8509-f88a0aa42ac4
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '620'
 ht-degree: 0%
 
 ---
 
 # Tillägg - uppgraderingar
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i tilläggskatalogen som uppgraderingar.
 

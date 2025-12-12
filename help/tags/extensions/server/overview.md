@@ -2,18 +2,14 @@
 title: Referens för tillägg för händelsevidarebefordran
 description: Hitta dokumentation för tillägg för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: 8896ffb78ae01bfe6d7974d781acea104a6356a9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '164'
-ht-degree: 0%
+source-wordcount: '119'
+ht-degree: 1%
 
 ---
 
 # Referens för tillägg för händelsevidarebefordran
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 <div id="recs-overview-body-1"></div>
 <div id="recs-overview-body-2"></div>
@@ -26,7 +22,7 @@ Här följer en lista med dokumentation för tillägg för vidarebefordran av h�
 
 >[!NOTE]
 >
->Alla tilläggsnamn följt av en asterisk (*) länkar till tilläggets lista på Adobe Exchange, som innehåller installations- och användningsinstruktioner. Alla andra länkar pekar på tilläggets dokumentation på Adobe Experience League.
+>Alla tilläggsnamn följt av en asterisk (*) länkar till tilläggets lista på Adobe Exchange, som innehåller installations- och användningsinstruktioner. Alla andra länkar pekar på tilläggets dokumentation om Adobe Experience League.
 
 * [Adobe Experience Platform Cloud Connector](./cloud-connector/overview.md)
 * [[!DNL AWS]](./aws/overview.md)

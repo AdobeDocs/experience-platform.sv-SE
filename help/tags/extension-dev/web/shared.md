@@ -2,18 +2,14 @@
 title: Delade moduler i webbtillägg
 description: Lär dig definiera delade biblioteksmoduler för webbtillägg i Adobe Experience Platform.
 exl-id: ec013a39-966c-43f3-bc36-31198990a17e
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '263'
+source-wordcount: '218'
 ht-degree: 0%
 
 ---
 
 # Delade moduler i webbtillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 En delad modul är en mekanism som du kan använda för att kommunicera med andra tillägg. Tillägg A kan till exempel läsa in en datadel asynkront och göra den tillgänglig för tillägg B via ett [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 

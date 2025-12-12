@@ -2,18 +2,14 @@
 title: Quickstart Guide
 description: Lär dig hur du snabbt kommer igång med taggar i Adobe Experience Platform.
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1518'
-ht-degree: 3%
+source-wordcount: '1473'
+ht-degree: 0%
 
 ---
 
 # Snabbstartguide
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Taggar är Adobe Experience Platform nästa generation av tagghanteringsteknik. Den är uppbyggd från grunden för att stödja ett öppet och hållbart ekosystem där alla kan bygga egna integreringar som Adobe-kunder kan driftsätta på sina webbplatser. Det är ett API-program först, så allt du kan göra via användargränssnittet kan du också göra programmatiskt via ett API.
 
@@ -27,7 +23,7 @@ Grundläggande arbetsflöde för taggar:
 6. Testa i utvecklingsmiljön.
 7. Marknadsför till produktion.
 
-## 1. Konfigurera grupper och användare
+## &#x200B;1. Konfigurera grupper och användare
 
 Taggar är helt integrerade med din Adobe ID. Användarbehörigheter hanteras via Admin Console med andra Adobe-produkter och -lösningar från [!DNL Creative Cloud], [!DNL Document Cloud] och Experience Cloud.
 
@@ -35,7 +31,7 @@ Taggar har ett rättighetsbaserat användarhanteringssystem. Detta innebär att 
 
 Detaljerade instruktioner om hur du skapar grupper och lägger till användare för taggar finns i [behörighetsguiden för datainsamling](../../collection/permissions.md).
 
-## 2. Logga in
+## &#x200B;2. Logga in
 
 När taggrättigheter har lagts till i din Adobe ID måste du logga in i Experience Platform användargränssnitt eller användargränssnittet för datainsamling. Du kan göra detta genom att navigera direkt till inloggningsskärmen för [Experience Cloud](https://experience.adobe.com/) och välja antingen **[!UICONTROL Data Collection]** eller **[!UICONTROL Experience Platform]**.
 
@@ -43,13 +39,13 @@ När taggrättigheter har lagts till i din Adobe ID måste du logga in i Experie
 >
 >Om du har ett enda konto med behörighet för flera organisationer kan du ändra organisationen genom att välja organisationens namn i kontrollfältet högst upp på skärmen och välja en annan organisation i listrutan.
 
-## 3. Skapa en egenskap
+## &#x200B;3. Skapa en egenskap
 
 När du har loggat in i användargränssnittet är det första du behöver göra att skapa en egenskap. En egenskap är i princip en behållare som du fyller med tillägg, regler, dataelement och bibliotek när du distribuerar taggar till webbplatsen. Många människor skapar en egenskap för varje webbplats (eller grupp med närbesläktade webbplatser) där de vill distribuera samma uppsättning taggar.
 
 Mer information om hur du skapar egenskaper finns i [Skapa en egenskap](../ui/administration/companies-and-properties.md).
 
-## 4. Installera tillägg
+## &#x200B;4. Installera tillägg
 
 Ett tillägg är en integrering som byggts av Adobe eller en Adobe-partner och som lägger till nya och oändliga alternativ för de taggar som du kan distribuera på dina webbplatser. Om du tänker på en tagg som ett operativsystem är tillägg de program som du installerar för att göra det du behöver.
 
@@ -57,7 +53,7 @@ Alla nya egenskaper levereras med [Core-tillägget](../extensions/client/core/ov
 
 Det som gör taggar i Experience Platform verkligt unika är att dessa tillägg kan byggas av alla. Behöver du släppa en Facebook-pixel för återmarknadsföring på din webbplats? Ta en titt på det tillägg som Facebook har byggt. Vill du ha samma sak för Twitter eller Linked In? Använd dessa tillägg. Behöver du göra en undersökning? Titta på Query Pro eller Foresee. Behöver du hantera sekretess och samtycke från dina slutanvändare för att få hjälp med [!DNL GDPR]? Titta på Evidon och Trust Arc. Vill du se detaljerad information om hur enskilda användare på din webbplats beter sig? Ta en titt på Clicktale. Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
 
-## 5. Skapa dataelement och regler
+## &#x200B;5. Skapa dataelement och regler
 
 **Dataelement** är pekare till den information som du vill samla in och skicka till olika platser på sidan:
 
@@ -71,7 +67,7 @@ När dataelementet har definierats kan du använda elementet var som helst i anv
 
 **Regler** är den logiska kärnan i implementeringen och styr vad, när, var och hur för alla taggar på din webbplats. Definiera en händelse, ange villkor och undantag och definiera sedan åtgärderna och ordningen. Publicera ändringarna för att se resultatet. Mer information finns i [Regler](../ui/managing-resources/rules.md).
 
-## 6. Testa i utvecklingsmiljön.
+## &#x200B;6. Testa i utvecklingsmiljön.
 
 ### Bibliotek och byggen
 
@@ -116,7 +112,7 @@ Publiceringsprocessen beskrivs i stegen nedan.
 1. Skapa ett bibliotek och tilldela det till den utvecklingsmiljö du skapade.
 1. Bygg upp ditt bibliotek.
 
-## 7. Främja produktionen
+## &#x200B;7. Främja produktionen
 
 När du har testat ditt bygge i utvecklingsmiljön måste du skapa din scen- och produktionsmiljö och placera de inbäddade koderna på de platser som behövs. Du kan återanvända befintliga värdar för detta ändamål.
 
@@ -136,4 +132,4 @@ Mer information om taggar finns i följande resurser:
 
 * **[Samhälle för datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**: Ställ frågor och svar, skicka idéer, rösta på andras idéer. Logga in med din Adobe ID.
 * **[Utvecklardokumentation](../api/overview.md)**: Bygg tillägg eller använd tagg-API:er genom att engagera utvecklarcommunityn för taggar
-* **[Översikt över självstudiekurser](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html?lang=sv-SE)**: I de här dokumenten introduceras taggar som händelsevidarebefordran och Mobile SDK i Android-appar.
+* **[Översikt över självstudiekurser](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**: I de här dokumenten introduceras taggar som händelsevidarebefordran och Mobile SDK i Android-appar.

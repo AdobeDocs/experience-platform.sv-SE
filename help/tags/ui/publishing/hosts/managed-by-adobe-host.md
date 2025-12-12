@@ -2,18 +2,14 @@
 title: Adobe-hanterade värdar - översikt
 description: Läs mer om standardvärdalternativet för distribution av kodbiblioteksbyggen i Adobe Experience Platform.
 exl-id: 9042c313-b0d3-4f6e-963d-0051d760fd16
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1174'
-ht-degree: 4%
+source-wordcount: '1129'
+ht-degree: 0%
 
 ---
 
 # Översikt över värdtjänster som hanteras av Adobe
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Adobe-hanterade värdar är standardvärdinställningen för distribution av dina taggbiblioteksbyggen i Adobe Experience Platform. När du skapar en ny egenskap via användargränssnittet i datainsamlingen skapas en Adobe-hanterad standardvärd åt dig.
 

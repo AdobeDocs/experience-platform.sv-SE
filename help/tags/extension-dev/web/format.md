@@ -2,18 +2,14 @@
 title: Biblioteksmoduler i webbtillägg
 description: Lär dig formatera biblioteksmoduler för webbtillägg i Adobe Experience Platform.
 exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
-source-git-commit: b3754c94843f32ba58aa1e020dface1179372de3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '327'
 ht-degree: 0%
 
 ---
 
 # Biblioteksmoduler i webbtillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 >[!IMPORTANT]
 >

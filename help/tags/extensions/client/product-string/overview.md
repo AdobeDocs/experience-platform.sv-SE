@@ -2,18 +2,14 @@
 title: Adobe Analytics produktsträngstillägg - översikt
 description: Läs mer om taggtillägget Adobe Analytics Product String i Adobe Experience Platform.
 exl-id: a49feb4e-f166-41d2-9f85-639f6ff8bb8f
-source-git-commit: 36ca1e63c043baa776f27b627cdbe493b2ced674
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
 
 # Översikt över Adobe Analytics produktsträngstillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Variabeln `products` spårar hur användare interagerar med produkter på din webbplats. Variabeln `products` kan till exempel spåra hur många gånger en produkt visas, läggs till i kundvagnen, checkas ut och köpts. Det kan också spåra hur effektiva marknadsföringskategorierna är på er webbplats.
 
@@ -27,7 +23,7 @@ Tillägget [!DNL Adobe Analytics Product String Builder] ställer automatiskt in
 Category;Product;Quantity;Price;eventN=X|eventN2=X2;eVarN=merch_category|eVarN2=merch_category2
 ```
 
-Fullständig dokumentation finns på [Produkter](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html?lang=sv-SE).
+Fullständig dokumentation finns på [Produkter](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html).
 
 ## Tilläggsanvisningar
 
@@ -82,7 +78,7 @@ Parametern `price` i produktsträngen [!DNL Adobe Analytics] måste återspegla 
 Om implementeringen använder anpassade händelser eller eVars-produkter för marknadsföring gör du så här:
 
 1. Markera den associerade **[!UICONTROL Add]**-knappen.
-1. Välj den händelse eller eVar som du vill ställa in i listrutan.
+1. Välj den händelse eller den eVar som du behöver ange i listrutan.
 1. Ange sökvägen till rätt datalagervariabel med samma syntax som beskrivs ovan.
 
 ### Åtgärdssekvens

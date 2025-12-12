@@ -2,18 +2,14 @@
 title: Stöd för CSP (Content Security Policy)
 description: Lär dig hur du hanterar begränsningar för CSP (Content Security Policy) när du integrerar webbplatsen med taggar i Adobe Experience Platform.
 exl-id: 9232961e-bc15-47e1-aa6d-3eb9b865ac23
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1076'
-ht-degree: 4%
+source-wordcount: '1031'
+ht-degree: 0%
 
 ---
 
 # Stöd för CSP (Content Security Policy)
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 En CSP (Content Security Policy) är en säkerhetsfunktion som hjälper till att förhindra serveröverskridande skriptattacker (XSS). Det här händer när webbläsaren tricks med att köra skadligt innehåll som verkar komma från en betrodd källa men som verkligen kommer från någon annan. Med CSP kan webbläsaren (för användaren) verifiera att skriptet verkligen kommer från en betrodd källa.
 

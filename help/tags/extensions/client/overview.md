@@ -2,18 +2,14 @@
 title: Referens för taggtillägg
 description: Hitta dokumentation för taggtillägg i Adobe Experience Platform.
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '472'
-ht-degree: 12%
+source-wordcount: '427'
+ht-degree: 3%
 
 ---
 
 # Referens för taggtillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En lista över tillgängliga tillägg på serversidan finns i [referensen för tillägg för vidarebefordran](../server/overview.md) i stället.
 
@@ -100,7 +96,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)*
 * [Pinterest Conversion Tracking](https://exchange.adobe.com/apps/ec/100523)*
 * [Pixelinläsare](https://exchange.adobe.com/apps/ec/100152)*
-* [Frågor och svar om webbplatsen &#x200B;](https://exchange.adobe.com/apps/ec/101569)*
+* [Frågor och svar om webbplatsen ](https://exchange.adobe.com/apps/ec/101569)*
 * [Quantum Metric](https://exchange.adobe.com/apps/ec/101535)*
 * [Lös kortskrift](https://exchange.adobe.com/apps/ec/108352)*
 * [Rokt](https://exchange.adobe.com/apps/ec/107591)*

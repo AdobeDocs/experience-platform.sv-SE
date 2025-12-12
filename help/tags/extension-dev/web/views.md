@@ -2,18 +2,14 @@
 title: Vyer i webbtillägg
 description: Lär dig hur du definierar vyer för biblioteksmoduler i Adobe Experience Platform webbtillägg.
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: 1bfa2e27e554dc899efc8a32900a926e787a58ac
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '2148'
-ht-degree: 2%
+source-wordcount: '2103'
+ht-degree: 0%
 
 ---
 
 # Vyer i webbtillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Varje händelse, villkor, åtgärd eller dataelementtyp kan innehålla en vy som gör att användaren kan ange inställningar. Tillägget kan också ha en [tilläggskonfigurationsvy](../configuration.md) på den översta nivån, som gör att användare kan ange globala inställningar för hela tillägget. Processen att skapa en vy är identisk för alla typer av vyer.
 
@@ -76,7 +72,7 @@ Metoden `init` anropas av taggar så snart vyn har lästs in i iframe. Det komme
 | `company` | Ett objekt som innehåller `orgId` (ditt 24-siffriga Adobe Experience Cloud-ID), `id` (ditt företags unika identifierare i Reactor API) och `tenantId` (den unika identifieraren för en organisation i Adobe Identity Management System). |
 | `schema` | Ett objekt i formatet [JSON Schema](https://json-schema.org/). Det här objektet kommer från [tilläggsmanifestet](../manifest.md) och kan vara användbart när du validerar formuläret. |
 | `apiEndpoints` | Ett objekt som innehåller `reactor` som innehåller en referens till webbadressen för Reactor API. |
-| `userConsentPermissions` | Ett objekt som innehåller godkännandeflaggor från Adobe [produktanvändningsdata](https://experienceleague.adobe.com/sv/docs/core-services/interface/features/account-preferences#product-usage-data). Använd flaggan som är lagrad i `globalDataCollectionAndUsage` för att förstå om ditt tillägg får samla in *alla* kunddata. |
+| `userConsentPermissions` | Ett objekt som innehåller godkännandeflaggor från Adobe [produktanvändningsdata](https://experienceleague.adobe.com/en/docs/core-services/interface/features/account-preferences#product-usage-data). Använd flaggan som är lagrad i `globalDataCollectionAndUsage` för att förstå om ditt tillägg får samla in *alla* kunddata. |
 | `preferredLanguages` | En array med språksträngar. |
 
 Vyn bör använda den här informationen för att återge och hantera formuläret. Det är troligt att du bara behöver hantera `info.settings`, men den andra informationen tillhandahålls om det är nödvändigt.

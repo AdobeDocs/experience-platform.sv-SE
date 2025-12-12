@@ -2,18 +2,14 @@
 title: Frigöra ett tillägg
 description: Lär dig hur du frigör ett taggtillägg privat eller offentligt i Adobe Experience Platform.
 exl-id: a5eb6902-4b0f-4717-a431-a290c50fb5a6
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '478'
-ht-degree: 9%
+source-wordcount: '433'
+ht-degree: 0%
 
 ---
 
 # Frigöra ett tillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 När testningen och dokumentationen är klara är tillägget klart för release. Det finns för närvarande två typer av releaser som du kan utföra:
 
@@ -38,8 +34,8 @@ Med `npx` kan du hämta och köra ett npm-paket utan att installera det på dato
 
 >[!NOTE]
 > Som standard förväntar sig releaser att Adobe I/O-autentiseringsuppgifter används för ett server-till-server-Oauth-flöde. De gamla `jwt-auth`-autentiseringsuppgifterna
-> &#x200B;> kan användas genom att köra `npx @adobe/reactor-releaser@v3.1.3` tills borttagningen är den 1 januari 2025. De parametrar som krävs
-> &#x200B;> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5).
+> kan användas genom att köra `npx @adobe/reactor-releaser@v3.1.3` tills borttagningen är den 1 januari 2025. De parametrar som krävs
+> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-releaser/tree/9ea66aa2c683fe7da0cca50ff5c9b9372f183bb5).
 
 Du behöver bara ange några få uppgifter i releasern. `clientId` och `clientSecret` kan hämtas från Adobe I/O-konsolen. Navigera till [integreringssidan](https://console.adobe.io/integrations) i I/O-konsolen. Välj rätt organisation i listrutan, hitta rätt integrering och välj **[!UICONTROL View]**.
 
@@ -55,4 +51,4 @@ Om du vill frigöra tillägget med privat tillgänglighet med API:t direkt kan d
 
 När du har slutfört den privata versionen kan du be Adobe att publicera den offentligt.  Tillägget blir då tillgängligt i den offentliga katalogen. Alla användare av datainsamlingen kan installera tillägget på alla egenskaper.
 
-Fyll i det [offentliga begärandeformuläret &#x200B;](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest) för att starta versionsprocessen.
+Fyll i det [offentliga begärandeformuläret ](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest) för att starta versionsprocessen.

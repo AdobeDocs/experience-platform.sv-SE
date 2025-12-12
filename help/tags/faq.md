@@ -2,28 +2,24 @@
 title: Felsökningsguide för taggar
 description: Få svar på vanliga frågor om taggar i Adobe Experience Platform.
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: 9701a14dc2915e0d6dcc6051c15d5113f305487f
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1032'
+source-wordcount: '987'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för taggar
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](./term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
-
 Det här dokumentet innehåller svar på vanliga frågor om taggar i Adobe Experience Platform.
 
 ## Vad är taggar?
 
-Taggar är nästa generation av tagghanteringsfunktioner från Adobe, som är inbyggda i Adobe Experience Platform. Taggar gör att klienter kan:
+Taggar är nästa generations tagghanteringsfunktioner från Adobe, som är inbyggda i Adobe Experience Platform. Taggar gör att klienter kan:
 
 - Distribuera webbprodukter på klientsidan med integreringar som kallas *extensions*
 - Leverera dynamiskt konfigurationer för att uppdatera klientimplementeringar i inbyggda mobilprogram
-- Inhämta, definiera, hantera och dela data konsekvent mellan marknadsförings- och annonsprodukter från andra leverantörer och från Adobe
+- Samla, definiera, hantera och utbyt data mellan marknadsförings- och annonsprodukter från andra leverantörer och från Adobe
 
 Taggar är ett avancerat kod- och konfigurationsleveranssystem som utvärderar villkor och utför åtgärder för att effektivt distribuera bibliotek och produkter på klientsidan. De har också en mycket skalbar metod för att hantera och bygga integreringar och har en robust uppsättning API:er för programmatisk interaktion.
 
@@ -33,11 +29,11 @@ Inga extra kostnader för taggar. De är tillgängliga för alla [!DNL Adobe Exp
 
 ## Jag hörde att det finns plugins nu. Vad handlar det om?
 
-Taggar är inbyggda i Adobe Experience Platform och kan utökas. Kunder, Adobe-partners, byråer och leverantörer av marknadsförings- eller annonseringsteknologier kan bygga ett taggtillägg som lägger till nya funktioner eller ändrar befintliga funktioner. Systemet gör att partners och kunder kan skapa, hantera och uppdatera sina egna integreringar. Detta är bara ett sätt som Adobe öppnar upp Adobe Experience Platform så att kunder och partners kan bygga produkter och företag på det. Detta hjälper alla att enklare koppla Adobe-tekniken till marknadsförings- och marknadsföringsteknologierna från andra leverantörer.
+Taggar är inbyggda i Adobe Experience Platform och kan utökas. Kunder, Adobe partners, byråer och leverantörer av marknadsförings- eller annonseringsteknologier kan bygga ett taggtillägg som lägger till nya funktioner eller ändrar befintliga funktioner. Systemet gör att partners och kunder kan skapa, hantera och uppdatera sina egna integreringar. Detta är bara ett sätt som Adobe öppnar upp för Adobe Experience Platform så att kunder och partners kan bygga produkter och företag på det. Detta hjälper alla att enklare koppla Adobe-teknik till marknadsförings- och annonseringstekniker från andra leverantörer.
 
 ## Kommer alla tillägg från tredje part att vara tillgängliga direkt?
 
-Det finns redan tillägg för lösningar från Adobe och ett stort och växande antal oberoende leverantörer och tekniker inom analys, marknadsföring, annonsering och medgivande. Vi fortsätter att samarbeta med våra partners för att utöka ekosystemet. Eftersom programtilläggen kan byggas, hanteras och uppdateras av teknikägarna behöver kunderna inte vänta på att Adobe ska konstruera dem.
+Det finns redan tillägg för Adobe-lösningar och ett stort och växande antal oberoende leverantörer och tekniker för analys, marknadsföring, annonsering och samtycke. Vi fortsätter att samarbeta med våra partners för att utöka ekosystemet. Eftersom programtilläggen kan byggas, hanteras och uppdateras av teknikägarna behöver kunderna inte vänta på att Adobe ska bygga dem.
 
 ## När kan kunder och partners bygga tillägg?
 
@@ -75,7 +71,7 @@ Taggar är utformade för att leverera och köra marknadsförings- och annonstek
 
 Se vilka webbläsare som stöds [här](./extension-dev/browsers.md).
 
-De flesta Adobe-kunder använder moderna webbplattformsfunktioner i sina webbläsare för att skapa bättre användarupplevelser, inklusive ensidiga applikationer och interaktiva Ajax-tunga webbplatser och sidor. När de flesta kunder övergår till mer moderna metoder med sina webbplatser kräver de en lösning som liknar taggar som möjliggör dessa strategier.
+De flesta av Adobe kunder utnyttjar de moderna funktionerna för webbplattformar i sina webbläsare för att skapa bättre användarupplevelser, inklusive ensidiga applikationer och interaktiva Ajax-tunga webbplatser och sidor. När de flesta kunder övergår till mer moderna metoder med sina webbplatser kräver de en lösning som liknar taggar som möjliggör dessa strategier.
 
 ## Fungerar taggar i inbyggda mobilappar?
 
@@ -93,4 +89,4 @@ Se guiden [Hantera behörigheter](../collection/permissions.md) för att lära d
 
 ## Vad händer om jag har andra frågor?
 
-Om du har andra frågor kan du fråga [Adobe Experience Platform Data Collection Community page](https://adobe.com/go/launchme) på Experience League eller gå med i [community-arbetsytan för Slack](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform) för utvecklare och tekniska implementeringsfrågor.
+Om du har andra frågor kan du ställa på [Adobe Experience Platform Data Collection community-sidan](https://adobe.com/go/launchme) på Experience League eller gå med i [community-arbetsytan för Slack](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform) för utvecklare och tekniska implementeringsfrågor.

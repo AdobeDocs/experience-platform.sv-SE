@@ -2,18 +2,14 @@
 title: Villkorstyper för Edge-tillägg
 description: Lär dig definiera en biblioteksmodul av typen condition för ett edge-tillägg i Adobe Experience Platform.
 exl-id: fe13420e-ffa7-49d6-92c4-965ebd9d7390
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '358'
 ht-degree: 0%
 
 ---
 
 # Villkorstyper för kanttillägg
-
->[!NOTE]
->
-> Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 I en taggregel utvärderas ett villkor efter att en händelse har inträffat. Alla villkor måste returnera true för att regeln ska kunna fortsätta bearbetningen. Villkorstyper tillhandahålls av tillägg och utvärderar om något är sant eller falskt, vilket returnerar ett booleskt värde.
 
@@ -29,7 +25,7 @@ I det här dokumentet beskrivs hur du definierar villkorstyper för ett kanttill
 
 Villkorstyperna består vanligtvis av följande:
 
-1. En vy som visas i användargränssnittet för Experience Platform och datainsamling där användarna kan ändra inställningarna för villkoret.
+1. En vy som visas i användargränssnittet för Experience Platform och datainsamling där användare kan ändra inställningarna för villkoret.
 2. En biblioteksmodul som skickas inom taggens körningsbibliotek för att tolka inställningarna och utvärdera ett villkor.
 
 Om du till exempel vill utvärdera om användaren finns på värden `example.com` kan din modul se ut så här.

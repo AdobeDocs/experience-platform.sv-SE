@@ -2,18 +2,14 @@
 title: YouTube Video Tracking Extension - översikt
 description: Läs mer om taggtillägget YouTube Video Tracking i Adobe Experience Platform.
 exl-id: 703f7b04-f72f-415f-80d6-45583fa661bc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '897'
-ht-degree: 6%
+source-wordcount: '852'
+ht-degree: 1%
 
 ---
 
 # Översikt över tillägget YouTube Video Tracking
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 **Förhandskrav**
 
@@ -98,9 +94,9 @@ Följande videotilläggsobjekt ska inkluderas.
 
 >[!TIP]
 > 
->För implementeringar där flera eVars eller props för varje videoelement inte kan användas, kan dataelementvärden sammanfogas i Experience Platform, parsas i klassificeringsrapporter med hjälp av verktyget Klassificeringsregelbyggaren, som förklaras i [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=sv-SE](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=sv-SE), och sedan tillämpas som ett segment i Analysis Workspace.
+>För implementeringar där flera eVars eller props för varje videoelement inte kan användas, kan dataelementvärden sammanfogas i Experience Platform, parsas i klassificeringsrapporter med hjälp av verktyget Klassificeringsregelbyggaren, som förklaras i [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html), och sedan tillämpas som ett segment i Analysis Workspace.
 
-Om du vill sammanfoga videoinformationsvärden skapar du ett nytt dataelement som kallas&quot;Videometadata&quot; och programmerar det så att det hämtas in alla videodataelement (som listas ovan) och sammanställer dem. Exempel:
+Om du vill sammanfoga videoinformationsvärden skapar du ett nytt dataelement som heter Video Meta Data och programmerar det så att det hämtas in alla videodataelement (som listas ovan) och sammanställer dem. Exempel:
 
 ```javascript
 var r = [];

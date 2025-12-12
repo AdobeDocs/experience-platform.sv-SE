@@ -2,18 +2,14 @@
 title: Versionsinformation för videospårningstillägget för BrightStor
 description: Den senaste versionsinformationen om taggtillägget BrightStor Video Tracking i Adobe Experience Platform.
 exl-id: 2e24a28f-b0c6-4aa5-a98f-3056024d312c
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '127'
-ht-degree: 0%
+source-wordcount: '82'
+ht-degree: 1%
 
 ---
 
 # Versionsinformation om tillägget BrightStor Video Tracking
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 6 juli 2020
 

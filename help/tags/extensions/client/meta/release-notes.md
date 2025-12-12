@@ -1,18 +1,14 @@
 ---
-title: Versionsinformation för tillägget Meta Pixel
+title: Versionsinformation för Meta Pixel Extension
 description: Den senaste versionsinformationen om tillägget Meta Pixel i Adobe Experience Platform.
-source-git-commit: 8e447324e324c9770dcfa348df92c429454b06d6
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '76'
 ht-degree: 0%
 
 ---
 
-# Versionskommentarer för Meta Pixel Extension
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+# Versionsinformation om Meta Pixel Extension
 
 ## 13 februari 2023
 

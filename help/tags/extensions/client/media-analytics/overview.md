@@ -2,18 +2,14 @@
 title: Adobe Media Analytics for Audio and Video Extension - översikt
 description: Läs om taggtillägget Adobe Media Analytics för ljud och video i Adobe Experience Platform.
 exl-id: 426cfd08-aead-4b35-824c-45494bca2fc8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '937'
-ht-degree: 5%
+source-wordcount: '892'
+ht-degree: 0%
 
 ---
 
 # Adobe Media Analytics for Audio and Video extension overview
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Använd den här dokumentationen för information om hur du installerar, konfigurerar och implementerar Adobe Media Analytics för ljud- och videotillägg (tillägget Media Analytics). Här finns alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel, tillsammans med exempel och länkar till exempel.
 
@@ -174,7 +170,7 @@ MA-tillägget visar de delade modulerna `get-instance` och `media-heartbeat` fö
    ...
    ```
 
-1. Använd Media Heartbeat-instansen och följ [dokumentationen för SDK JS &#x200B;](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html?lang=sv-SE) och [JS API &#x200B;](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
+1. Använd Media Heartbeat-instansen och följ [dokumentationen för SDK JS ](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html) och [JS API ](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
 
 >[!NOTE]
 >

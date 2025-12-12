@@ -2,18 +2,14 @@
 title: Tillägg
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
 exl-id: e911bedd-6c67-4339-91d7-839c8b00c153
-source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '471'
 ht-degree: 0%
 
 ---
 
 # Tillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Ett tillägg är en paketerad koduppsättning som utökar funktionerna som anges i taggar eller vidarebefordran av händelser.
 
@@ -37,7 +33,7 @@ Som standard har Adobe tillägg som stöder vanliga integreringar. Tillägg kan 
 
 ## Tilläggskatalog
 
-Använd tilläggskatalogen för att söka, konfigurera och driftsätta marknadsförings- och annonseringsteknik som byggts och underhålls av oberoende programvaruleverantörer samt tillägg för lösningar från Adobe.
+Använd tilläggskatalogen för att söka, konfigurera och driftsätta marknadsförings- och annonseringsteknik som byggts och underhålls av oberoende programvaruleverantörer samt tillägg för Adobe-lösningar.
 
 Sidan Tillägg innehåller tre vyer:
 
@@ -53,7 +49,7 @@ Sidan Tillägg innehåller tre vyer:
 
 Välj **[!UICONTROL Extensions]** om du vill visa alla installerade tillägg. Du kan också använda katalogen för att visa en lista över alla tillgängliga tillägg och vilka tillägg som har tillgängliga uppdateringar.
 
-Mer information om tillägg som ägs av Adobe finns i [Referens för tillägg](../../../extensions/client/overview.md).
+Mer information om Adobe-ägda tillägg finns i [Referens för tillägg](../../../extensions/client/overview.md).
 
 ## Lägg till ett nytt tillägg {#add-a-new-extension}
 
@@ -90,4 +86,4 @@ För musen över ett installerat tillägg och välj **[!UICONTROL Configure]**.
 >
 >Vissa tillägg kräver ingen konfiguration och har inga konfigurationsalternativ.
 
-Varje konfigurerbart tillägg har unika alternativ. Se [Referens för tillägg](../../../extensions/client/overview.md) om du vill ha information om vilka alternativ som är tillgängliga för varje tillägg i Adobe.
+Varje konfigurerbart tillägg har unika alternativ. Mer information om tillgängliga alternativ för varje Adobe-tillägg finns i [Referens för tillägg](../../../extensions/client/overview.md).

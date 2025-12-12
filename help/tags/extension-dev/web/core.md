@@ -2,18 +2,14 @@
 title: Core Library Modules for Web Extensions
 description: Lär dig mer om kärnbiblioteksmodulerna som du kan använda i dina webbtillägg.
 exl-id: 7fb63208-aed0-4add-b6da-8e4aea063d0a
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '250'
 ht-degree: 0%
 
 ---
 
 # Huvudbiblioteksmoduler för webbtillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Det här dokumentet innehåller en lista med de moduler i huvudbiblioteket som du kan använda i dina webbtillägg. Du kan komma åt dessa moduler med `require('@adobe/{MODULE}')`, där `{MODULE}` är namnet på kärnmodulen som du vill använda.
 

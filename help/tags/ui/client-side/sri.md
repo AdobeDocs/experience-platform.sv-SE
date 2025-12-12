@@ -2,18 +2,14 @@
 title: Stöd för SRI (Subresource Integrity)
 description: Läs om hur underresursintegritet (SRI) stöds i Adobe Experience Platform.
 exl-id: bd8bc3f7-9a85-44e2-ae07-f0664179b51c
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '549'
 ht-degree: 0%
 
 ---
 
 # Stöd för delresursintegritet (SRI)
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Det här dokumentet beskriver hur underresursintegritet (SRI) stöds i Adobe Experience Platform.
 
@@ -42,7 +38,7 @@ Nästa bästa säkerhetsalternativ för taggar är att implementera en skyddspro
 
 ## Integrera SRI i byggdistributionen
 
-Om du fortfarande vill använda SRI för dina biblioteksbyggen måste du använda självbetjäning. Om du använder värdtjänster som hanteras med Adobe finns det inget sätt att använda SRI utan att ha en viss tid där det nya bygginnehållet inte matchar attributet `integrity` för inbäddningskoden.
+Om du fortfarande vill använda SRI för dina biblioteksbyggen måste du använda självbetjäning. Om du använder Adobe-hanterade värdtjänster finns det inget sätt att använda SRI utan att ha tid där det nya bygginnehållet inte matchar attributet `integrity` för inbäddningskoden.
 
 Automatiseringen av uppdateringsprocessen för inbäddningskoden varierar i komplexitet beroende på webbplatsens struktur, men de allmänna stegen kan sammanfattas enligt följande:
 

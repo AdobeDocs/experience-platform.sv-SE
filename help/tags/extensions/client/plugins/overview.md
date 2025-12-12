@@ -2,18 +2,14 @@
 title: Översikt över Common Analytics-tillägg
 description: Läs mer om taggtillägget för Common Analytics i Adobe Experience Platform.
 exl-id: 9eeb4589-df90-4356-b927-b2c29c32370b
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '354'
 ht-degree: 0%
 
 ---
 
 # Översikt över tillägg för Common Analytics-plugin-program
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Använd den här referensen för information om hur du konfigurerar tillägget för Common Analytics-plugin-program och de alternativ som är tillgängliga när du använder det här tillägget för att förstärka tillägget [!DNL Adobe Analytics].
 
@@ -54,7 +50,7 @@ I den här åtgärden kan du välja varje plugin som du vill ta med i implemente
 
 ### Initiera plugin-program
 
-Dessa åtgärder initierar det specifika plugin-program som du tänker använda individuellt. Om du vill initiera alla plugin-program som du vill använda i egenskapen lägger du bara till motsvarande åtgärd i regeln och sparar regeln. Även om det är lite svårare att konfigurera tillägget på det här sättet ger det bättre kodeffektivitet. Adobe rekommenderar därför detta tillvägagångssätt.
+Dessa åtgärder initierar det specifika plugin-program som du tänker använda individuellt. Om du vill initiera alla plugin-program som du vill använda i egenskapen lägger du bara till motsvarande åtgärd i regeln och sparar regeln. Även om det är lite svårare att konfigurera tillägget på det här sättet ger det bättre kodeffektivitet. Därför rekommenderar Adobe den här metoden.
 
 ## Dataelement för tillägg till Common Analytics-plugin-program
 
@@ -71,4 +67,4 @@ Följande dataelement finns i tillägget Common Analytics-plugin-program, som an
 
 >[!NOTE]
 >
->Mer information om ovanstående plugin-program finns i [Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html?lang=sv-SE).
+>Mer information om ovanstående plugin-program finns i [Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).

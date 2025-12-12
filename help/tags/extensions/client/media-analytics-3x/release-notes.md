@@ -1,19 +1,15 @@
 ---
 title: Versionsinformation för Adobe Media Analytics (3.x SDK) för ljud- och videotillägg
-description: Den senaste versionsinformationen om Adobe Media Analytics (3.x SDK) för taggtillägget Audio och Video i Adobe Experience Platform.
+description: Den senaste versionsinformationen för Adobe Media Analytics (3.x SDK) för taggtillägget Audio och Video i Adobe Experience Platform.
 exl-id: 1ed0504d-d13c-4e7b-8eb1-78c54e62a523
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '175'
+source-wordcount: '130'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation för Adobe Media Analytics (3.x SDK) för ljud och video
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+# Versionsinformation om Adobe Media Analytics (3.x SDK) för ljud och video
 
 ## 5 april 2021
 
@@ -25,8 +21,8 @@ ht-degree: 0%
 
 ### Adobe Media Analytics (3.x SDK) for Audio and Video Extension 3.0.0
 
-* Figursättning runt Media SDK v3.0.0
+* Omslut Media SDK v3.0.0
 * Använder Media Collection API för att spåra media
 * Stöd för spårning av spelartillstånd
 
-[Adobe Media Analytics (3.x SDK) for Audio and Video Extension](./overview.md) innehåller huvudbiblioteket för JavaScript Media Analytics 3.x. Det här biblioteket innehåller funktioner för att spåra media till en tagghanterad webbplats eller ett taggigt projekt.
+[Adobe Media Analytics (3.x SDK) för ljud- och videotillägg](./overview.md) lägger till JavaScript-biblioteket Media Analytics 3.x. Det här biblioteket innehåller funktioner för att spåra media till en tagghanterad webbplats eller ett taggigt projekt.

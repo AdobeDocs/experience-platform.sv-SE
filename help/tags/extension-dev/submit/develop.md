@@ -2,18 +2,14 @@
 title: Utveckla ett tillägg
 description: Det här dokumentet innehåller en allmän översikt över tagghanteringsprocessen med länkar till ytterligare dokumentation för mer detaljerade processer.
 exl-id: fb2f7275-a5da-4a41-b915-822c71c02e5c
-source-git-commit: 3f5e432ef381c10d8197724783135637d01a120e
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '436'
-ht-degree: 10%
+source-wordcount: '391'
+ht-degree: 0%
 
 ---
 
 # Utveckla ett tillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Ett taggtillägg ska betraktas som en (liten) produkt med egna krav. Om du fastställer hur en Adobe Experience Platform-användare ska använda tillägget kan det hjälpa dig att sortera funktionaliteten efter vilka händelsetyper, villkorstyper, åtgärdstyper och dataelementtyper som tillägget ska innehålla.
 
@@ -34,7 +30,7 @@ Med en plan på plats kan dessa guider hjälpa dig att förstå utvecklingsproce
 
 Det finns också ett antal nPM-verktyg som du kan använda för att utveckla tilläggspaket:
 
-* [Med verktyget för taggtillägg &#x200B;](https://www.npmjs.com/package/@adobe/reactor-scaffold) kan du enkelt skapa ett startprojekt på den lokala datorn.
+* [Med verktyget för taggtillägg ](https://www.npmjs.com/package/@adobe/reactor-scaffold) kan du enkelt skapa ett startprojekt på den lokala datorn.
 * [Tag Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) hjälper dig att validera dina tilläggsvyer och moduler på din lokala dator.
 * [Tag Extension Packager](https://www.npmjs.com/package/@adobe/reactor-packager) är ett kommandoradsverktyg som används för att paketera ett taggtillägg i en zip-fil.
 * [Tag Extension Uploader](https://www.npmjs.com/package/@adobe/reactor-uploader) är ett interaktivt kommandoradsverktyg som du kan använda för att ange autentiseringsuppgifter för ditt tekniska konto och överföra tilläggspaketet till taggar.

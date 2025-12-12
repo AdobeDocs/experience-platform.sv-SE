@@ -2,18 +2,14 @@
 title: Adobe Target v2 Extension - översikt
 description: Läs mer om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
-source-git-commit: 5b88692117c984cd6331e7886d5bf0846309acee
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1347'
-ht-degree: 3%
+source-wordcount: '1298'
+ht-degree: 0%
 
 ---
 
 # Översikt över Adobe Target v2-tillägget
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Använd den här referensen för information om de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -49,13 +45,13 @@ Serverdomänen refererar till den domän som Target-begäranden skickas till. De
 
 #### GDPR-deltagande
 
-När detta är aktiverat tillhandahåller Adobe Target anmälningsfunktioner som kan stödja er strategi för samtyckeshantering. Med avanmälningsfunktionen kan kunderna styra hur och när Target-taggen aktiveras.  Mer information om Adobe-deltagande finns i [Sekretess och allmänna dataskyddsförordningen (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html?lang=sv-SE).
+När detta är aktiverat tillhandahåller Adobe Target anmälningsfunktioner som kan stödja er strategi för samtyckeshantering. Med avanmälningsfunktionen kan kunderna styra hur och när Target-taggen aktiveras.  Mer information om Adobe-deltagande finns i [Sekretess och allmänna dataskyddsförordningen (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html).
 
 #### Timeout (ms)
 
 Om svaret från Target inte tas emot inom den definierade perioden, går begäran ut och standardinnehållet visas. Ytterligare förfrågningar fortsätter att utföras under besökarens session. Standardvärdet är 3 000 ms, vilket kan vara ett annat värde än den timeout som konfigurerats i målanvändargränssnittet.
 
-Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=sv-SE).
+Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
 
 ## Åtgärdstyper för måltillägg
 
@@ -71,7 +67,7 @@ Ingen konfiguration behövs.
 
 ### Load Target med enhetsspecifik beslutsfattande
 
-Lägg till den här åtgärden i din taggregel där det är rimligt att läsa in Target med [enhetsbeslut](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html?lang=sv-SE) aktiverat i regelsammanhanget. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Load Target med enhetsspecifik beslutsåtgärd om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
+Lägg till den här åtgärden i din taggregel där det är rimligt att läsa in Target med [enhetsbeslut](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) aktiverat i regelsammanhanget. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Load Target med enhetsspecifik beslutsåtgärd om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
 
 >[!IMPORTANT]
 >
@@ -98,9 +94,9 @@ Den här åtgärdstypen gör att Target kan utlösa en begäran när sidan läse
 Du måste ange om brödtext ska kunna döljas för att undvika flimmer, och vilket format som ska användas när du döljer brödtextelementet. Följande alternativ är tillgängliga:
 
 * **Döljning av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
-* **Innehållet i dolt format:** Standardvärdet är body{opacity:0}. Värdet kan ändras till något annat, som body{display:none}.
+* **Format för dold brödtext:** Standardvärdet är body{opacity:0}. Det här värdet kan ändras till något annat, som brödtext {display:none}.
 
-Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html?lang=sv-SE).
+Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
 
 ### Utlösarvy
 
@@ -109,7 +105,7 @@ Mer information finns i [Målets onlinehjälpdokumentation](https://experiencele
 1. Ange det vynamn som måste utlösas.
 1. Ange om utlösaren för vyn ska tillskrivas ett intryck för rapportering genom att markera kryssrutan Sida. Om vyn är korrelerad till en komponent som återges på nytt och inte ger ett intryck av att rapportera, ska du inte markera kryssrutan Sida.
 
-Mer information om hur du utlöser en vy finns i [`triggerView()` hjälpdokumentationen &#x200B;](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html?lang=sv-SE).
+Mer information om hur du utlöser en vy finns i [`triggerView()` hjälpdokumentationen ](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html).
 
 ## Grundläggande Adobe Target-driftsättning
 
@@ -180,7 +176,7 @@ Det föregående dolda kodfragmentet är följande och kan minimeras. De konfigu
 }(window, document, "body {opacity: 0 !important}", 3000));
 ```
 
-Som standard döljs hela HTML BODY med fragmentet. I vissa fall kanske du bara vill dölja vissa element i HTML i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
+Som standard döljs hela HTML BODY av fragmentet. I vissa fall kanske du bara vill dölja vissa HTML-element i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
 
 Om du till exempel har två områden som identifieras av ID:n container-1 och container-2 kan formatet ersättas med följande:
 

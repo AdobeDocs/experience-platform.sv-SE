@@ -2,18 +2,14 @@
 title: TLS-information (Transport Layer Security)
 description: Information om vilka TLS-versioner och -ciphers som används
 exl-id: 04948cd8-6cf0-4159-a9d3-3130b97af106
-source-git-commit: 236c5a11f40490fc7ee536358fb146027fe64545
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '201'
-ht-degree: 15%
+source-wordcount: '156'
+ht-degree: 0%
 
 ---
 
 # TLS-information (Transport Layer Security)
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. En konsoliderad referens till de ändrade terminologin finns i dokumentet [Termuppdatering](../../term-updates.md).
 
 TLS (Transport Layer Security) är ett kryptografiskt protokoll som ger total säkerhet för data som skickas mellan program över Internet. Mer detaljerad information om TLS finns i dokumentationen om [TLS-grunder](https://www.internetsociety.org/deploy360/tls/basics/).
 

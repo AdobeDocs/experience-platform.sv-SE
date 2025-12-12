@@ -2,18 +2,14 @@
 title: Ladda upp och implementera kompletta tester för ett tillägg
 description: Lär dig hur du validerar, överför och testar tillägg i Adobe Experience Platform.
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '2344'
-ht-degree: 2%
+source-wordcount: '2299'
+ht-degree: 0%
 
 ---
 
 # Ladda upp och implementera testning från början till slut
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Om du vill testa taggtillägg i Adobe Experience Platform använder du taggens API och/eller kommandoradsverktygen för att överföra dina tilläggspaket. Använd sedan användargränssnittet i Experience Platform eller datainsamlingen för att installera tilläggspaketet i en egenskap och använda funktionerna i ett taggbibliotek och skapa det.
 
@@ -63,8 +59,8 @@ Med `npx` kan du hämta och köra ett npm-paket utan att installera det på dato
 
 >[!NOTE]
 > Som standard förväntas Adobe I/O-autentiseringsuppgifter för ett Oauth-flöde mellan servrar. De gamla `jwt-auth`-autentiseringsuppgifterna
-> &#x200B;> kan användas genom att köra `npx @adobe/reactor-uploader@v5.2.0` tills borttagningen är den 1 januari 2025. De parametrar som krävs
-> &#x200B;> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452).
+> kan användas genom att köra `npx @adobe/reactor-uploader@v5.2.0` tills borttagningen är den 1 januari 2025. De parametrar som krävs
+> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452).
 
 Överföraren kräver att du bara anger ett fåtal delar av informationen. `clientId` och `clientSecret` kan hämtas från Adobe I/O-konsolen. Navigera till [integreringssidan](https://console.adobe.io/integrations) i I/O-konsolen. Välj rätt organisation i listrutan, hitta rätt integrering och välj **[!UICONTROL View]**.
 

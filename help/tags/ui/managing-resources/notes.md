@@ -2,18 +2,14 @@
 title: Anteckningar
 description: Lär dig hur du lägger till textanteckningar i vissa taggresurser i Adobe Experience Platform.
 exl-id: 14d6b6a1-3bd0-4181-8181-e6b35c197a44
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '262'
 ht-degree: 0%
 
 ---
 
 # Anteckningar
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Anteckningar är textanteckningar som du kan lägga till i vissa taggresurser i Adobe Experience Platform. Anteckningar kan bifogas följande resurser:
 

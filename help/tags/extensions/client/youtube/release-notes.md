@@ -2,18 +2,14 @@
 title: Versionsinformation för YouTube Video Tracking Extension
 description: Den senaste versionsinformationen om taggtillägget YouTube Video Tracking i Adobe Experience Platform.
 exl-id: 5c680b1d-3970-42ed-9956-e78ead7b3662
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '93'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om tillägget YouTube Video Tracking
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 4 juni 2021
 

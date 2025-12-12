@@ -2,18 +2,14 @@
 title: Kopiera resurser
 description: Lär dig hur du skapar en ny taggresurs med inställningarna för en befintlig taggresurs i Adobe Experience Platform.
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: 319496975bcdbfd0a670cf8d36fb7e562b2ef2de
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '830'
-ht-degree: 5%
+source-wordcount: '785'
+ht-degree: 0%
 
 ---
 
 # Kopiera resurser
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Ibland kan det vara praktiskt att skapa en ny resurs med inställningarna för en befintlig resurs. I så fall kan du göra en kopia.
 

@@ -2,18 +2,14 @@
 title: Adobe Audience Manager Extension - översikt
 description: Lär dig om Adobe Audience Manager-taggtillägget i Adobe Experience Platform.
 exl-id: d345e145-fdb9-4ca3-88c2-9c2a247ea59a
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '440'
-ht-degree: 12%
+source-wordcount: '395'
+ht-degree: 3%
 
 ---
 
 # Översikt över Adobe Audience Manager-tillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Med taggtillägget Audience Manager kan du integrera den DIL-kod som används av Audience Manager med dina egenskaper i Adobe Experience Platform.
 

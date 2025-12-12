@@ -2,18 +2,14 @@
 title: Åtgärdstyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av åtgärdstyp för ett taggtillägg i en webbegenskap.
 exl-id: d4539132-a72c-40b0-84b6-50cbe3785d2d
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
 
 # Åtgärdstyper för webbtillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 När det gäller datainsamlingstaggar är en åtgärd en åtgärd som utförs efter att en regelhändelse har inträffat och alla villkor har utvärderats.
 

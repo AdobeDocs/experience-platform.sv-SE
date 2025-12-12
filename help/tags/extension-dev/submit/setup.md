@@ -1,27 +1,23 @@
 ---
-title: Organisationsinställningar för Experience Cloud
+title: Installation av Experience Cloud
 description: Lär dig hur du registrerar en Adobe Experience Cloud-organisation för att börja utveckla tillägg för Adobe Experience Platform.
 exl-id: ee36319d-5de8-462e-879b-311445cf334c
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
 
-# Inställningar för Experience Cloud-organisation
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+# Konfigurera Experience Cloud
 
 Om du vill utveckla taggtillägg i Adobe Experience Platform måste du registrera en Adobe Experience Cloud-organisation.
 
-Experience Cloud-kunder tilldelas en organisation när kontrakt undertecknas. Om du är en befintlig kund och redan har en registrerad organisation kan du hoppa över det här dokumentet och fortsätta med guiden om [att bevilja användaråtkomst för tilläggsutveckling](./access.md). Om du inte är kund i Experience Cloud kan du skapa en organisation genom att gå med i något av Adobe partnerprogrammen nedan.
+Experience Cloud-kunder tilldelas en organisation när kontrakt undertecknas. Om du är en befintlig kund och redan har en registrerad organisation kan du hoppa över det här dokumentet och fortsätta med guiden om [att bevilja användaråtkomst för tilläggsutveckling](./access.md). Om du inte är kund hos Experience Cloud kan du ha en organisation som skapats genom att gå med i något av Adobe partnerprogram som listas nedan.
 
 ## Exchange Partner Program
 
-Programmet är till för partners som har teknik som är kostnadsfri för Adobe och som kan integreras med Adobe för att ge mervärde åt våra gemensamma kunder. Det här programmet underhåller en [marknadsplats](https://www.adobeexchange.com/experiencecloud.html) där partners kan skapa listor som främjar deras integrering. Du kan se registreringsguiden [här](https://partners.adobe.com/exchangeprogram/experiencecloud/reg-guide.html) och du kan börja registrera dig [här](https://partners.adobe.com/exchangeprogram/experiencecloud/prereg.html).
+Programmet är till för partners som har teknik som är kostnadsfri för Adobe och som kan integreras med Adobe tekniker för att ge mervärde åt våra gemensamma kunder. Det här programmet underhåller en [marknadsplats](https://www.adobeexchange.com/experiencecloud.html) där partners kan skapa listor som främjar deras integrering. Du kan se registreringsguiden [här](https://partners.adobe.com/exchangeprogram/experiencecloud/reg-guide.html) och du kan börja registrera dig [här](https://partners.adobe.com/exchangeprogram/experiencecloud/prereg.html).
 
 Du måste vara medlem i det här programmet för att kunna skapa offentligt listade taggtillägg för Adobe Experience Platform som ska visas på marknadsplatsen.
 
@@ -31,7 +27,7 @@ Du måste vara medlem i det här programmet för att kunna skapa offentligt list
 
 ## Solution Partner Program (SPP)
 
-Detta program är avsett för konsultföretag som hjälper Adobe att få ut det mesta av sina investeringar och partners som säljer lösningar från Adobe. Om du vill ha en stegvis guide om hur du går med i Solution Partner Program går du till [Adobe Spark webbplats](https://spark.adobe.com/page/7PKZzIJJjkcDd/) eller om du vill ha mer information går du till [Solution Partner Program-webbplatsen](https://solutionpartners.adobe.com/home.html).
+Programmet är avsett för konsultföretag som hjälper Adobe kunder att få ut det mesta av sina investeringar och partners som säljer Adobe lösningar. Om du vill ha en stegvis guide om hur du går med i Solution Partner Program går du till [Adobe Spark-webbplatsen](https://spark.adobe.com/page/7PKZzIJJjkcDd/) eller om du vill ha mer information går du till [Solution Partner Program-webbplatsen](https://solutionpartners.adobe.com/home.html).
 
 >[!NOTE]
 >
@@ -43,7 +39,7 @@ Detta program är avsett för konsultföretag som hjälper Adobe att få ut det 
 
 När ditt företag är med i Exchange Partner-programmet kan du begära åtkomst till Adobe Solutions genom att logga in på [Exchange Partner Site](https://partners.adobe.com/exchangeprogram/experiencecloud) och följa stegen nedan.
 
-Om du har ett Experience Cloud-konto som kräver åtkomst till användargränssnittet för datainsamling och användargränssnittet för Experience Platform, se [behörighetsguiden för datainsamling](../../../collection/permissions.md).
+Om du har ett Experience Cloud-konto som kräver åtkomst till användargränssnittet för datainsamling och Experience Platform-gränssnittet läser du [behörighetsguiden för datainsamling](../../../collection/permissions.md).
 
 ## För oberoende utvecklare
 

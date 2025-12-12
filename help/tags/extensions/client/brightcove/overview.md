@@ -2,18 +2,14 @@
 title: Översikt över tillägget för videospårning i BrightStor
 description: Lär dig mer om taggtillägget BrightStor Video Tracking i Adobe Experience Platform.
 exl-id: d27eff21-2abf-4495-8382-08cab32742e0
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '853'
 ht-degree: 0%
 
 ---
 
 # Översikt över tillägget för videospårning i BrightStor
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## Krav
 
@@ -23,7 +19,7 @@ För varje taggegenskap i Adobe Experience Platform krävs följande tillägg so
 * Experience Cloud Visitor ID-tjänst
 * Kärntillägg har installerats
 
-Använd kodfragmentet&quot;In-Page embed code (Advanced)&quot; HTML på varje webbsida där en videospelare ska återges. HTML-utdraget &quot;In-Page Embed code (Advanced)&quot; finns i [dokumentationen för Brightcove](https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html#inpage). Följande länk innehåller mer information om [hur du genererar inbäddad kod för både förhandsgransknings- och publicerade videospelare](https://studio.support.brightcove.com/players/generating-player-embed-code.html).
+Använd kodfragmentet&quot;In-Page embed code (Advanced)&quot; i HTML för varje webbsida där en videospelare ska återges. HTML-utdraget &quot;In-Page Embed code (Advanced)&quot; finns i [dokumentationen för Brightcove](https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html#inpage). Följande länk innehåller mer information om [hur du genererar inbäddad kod för både förhandsgransknings- och publicerade videospelare](https://studio.support.brightcove.com/players/generating-player-embed-code.html).
 
 Tilläggsversion 1.1.0 stöder inbäddning av flera BrightStor-videor på en enda webbsida. Om det finns flera `id`-egenskaper i de avancerade inbäddningstaggarna kontrollerar du att de har unika värden. Till exempel `player1`, `player2` och så vidare.
 
@@ -100,7 +96,7 @@ Följande videotilläggsobjekt ska inkluderas:
 
 >[!TIP]
 >
->För dem som kanske inte vill tillhandahålla flera eVars eller props för varje videoelement sammanfogas datavärdesvärden som en alternativ metod. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Mer information finns i dokumentationen för verktyget [Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html?lang=sv-SE). Slutligen används de som ett segment i Analysis Workspace.
+>För dem som kanske inte vill tillhandahålla flera eVars eller props för varje videoelement sammanfogas datavärdesvärden som en alternativ metod. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Mer information finns i dokumentationen för verktyget [Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html). Slutligen används de som ett segment i Analysis Workspace.
 >
 >Det gör du genom att skapa ett nytt dataelement som kallas &quot;Video MetaData&quot; och programmera det för att hämta in alla videodataelement (som listas ovan) och sammanfoga dem.
 

@@ -2,18 +2,14 @@
 title: Testa inbäddningskoder med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Experience Platform Debugger för att lokalt testa olika inbäddningskoder för Adobe Experience Platform på din webbplats.
 exl-id: ae6183b9-0d25-49d0-b0e9-f8b5ba58ab33
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '490'
-ht-degree: 9%
+source-wordcount: '445'
+ht-degree: 0%
 
 ---
 
 # Testa inbäddningskoder med Adobe Experience Platform Debugger
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 När du gör ändringar i kodbiblioteksbyggen i Adobe Experience Platform bör du testa dessa ändringar innan du distribuerar bygget till din produktionsmiljö. Om du inte har någon dedikerad staging- eller utvecklingsmiljö för din webbplats kan du använda Adobe Experience Platform Debugger för att lokalt testa olika inbäddningskoder för din webbplats.
 

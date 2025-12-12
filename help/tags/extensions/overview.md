@@ -2,18 +2,14 @@
 title: Tillägg för vidarebefordran av taggar och händelser
 description: Dokumentation för tillägg för tagg- och händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 2433a64f-66f2-4c21-bdec-c6b8e1658b2b
-source-git-commit: ccfc46714069e8c29f1777dea5ba73e318c0a4a6
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '190'
 ht-degree: 0%
 
 ---
 
 # Tillägg för vidarebefordran av taggar och händelser
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Ett tillägg är en paketerad koduppsättning som utökar funktionerna som anges i taggar eller vidarebefordran av händelser. Om du installerar ett tillägg i ett bibliotek lägger tillägget till en uppsättning unika händelser, villkor och/eller åtgärder som kan användas i det bibliotekets [regelkonfigurationer](../ui/managing-resources/rules.md).
 
@@ -28,4 +24,4 @@ Dokumentation om hur du installerar och använder tillgängliga tillägg finns i
 
 Förutom tillägg som utvecklats av Adobe innehåller katalogen även tillägg som skapats av tredjepartsutvecklare.
 
-Adobe garanterar inte dessa tillägg från tredje part och därför är det författarnas ansvar att välja licens och supportprocess för tilläggen. Många utvecklare har valt att publicera källkoden för sina tilläggspaket i en offentlig GitHub-databas där användarna kan granska dem när det passar. Mer information finns i gruppen [Anslutningsutvecklare på GitHub](https://github.com/Connections-Developers).
+Adobe garanterar inte dessa tillägg från tredje part, och därför är det författarnas ansvar att välja licens och supportprocess för tilläggen. Många utvecklare har valt att publicera källkoden för sina tilläggspaket i en offentlig GitHub-databas där användarna kan granska dem när det passar. Mer information finns i gruppen [Anslutningsutvecklare på GitHub](https://github.com/Connections-Developers).

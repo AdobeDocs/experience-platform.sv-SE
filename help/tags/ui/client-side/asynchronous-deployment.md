@@ -2,10 +2,10 @@
 title: Asynkron distribution
 description: Lär dig hur du distribuerar taggbibliotek från Adobe Experience Platform asynkront på din webbplats.
 exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1046'
-ht-degree: 4%
+source-wordcount: '1001'
+ht-degree: 0%
 
 ---
 
@@ -15,10 +15,6 @@ ht-degree: 4%
 >id="platform_tags_asynchronous_deployment"
 >title="Asynkron distribution"
 >abstract="Om det här alternativet är aktiverat börjar webbläsaren att läsa in JavaScript-filen när den här skripttaggen tolkas, men i stället för att vänta på att biblioteket ska läsas in och köras fortsätter den att analysera och återge resten av dokumentet. Detta kan förbättra webbsidans prestanda men har viktiga konsekvenser när det gäller hur vissa regler körs. Mer information finns i dokumentationen."
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Prestanda och en icke-blockerande driftsättning av JavaScript-bibliotek som våra produkter kräver blir allt viktigare för Adobe Experience Cloud-användare. Verktyg som [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) rekommenderar användare att ändra sitt sätt att distribuera Adobe-bibliotek på sin webbplats. I den här artikeln beskrivs hur du använder Adobe JavaScript-bibliotek på ett asynkront sätt.
 

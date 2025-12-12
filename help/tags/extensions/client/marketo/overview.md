@@ -2,18 +2,14 @@
 title: Marketo Munchkin Extension - översikt
 description: Läs om taggtillägget Marketo Munchkin i Adobe Experience Platform.
 exl-id: 8efc5203-91fc-4e89-be8f-74bf1aeeee5f
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '162'
 ht-degree: 0%
 
 ---
 
-# Marketo Munchkin-tillägg - översikt
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+# Översikt över tillägget Marketo Munchkin
 
 Använd det här tillägget om du vill integrera JavaScript-spårningskoden [!DNL Marketo Munchkin] med din egenskap. [!DNL Marketo Munchkin] JavaScript gör det möjligt att spåra besök på slutanvändarsidor och navigerar till Marketo landningssidor och externa webbsidor.
 
@@ -31,7 +27,7 @@ I det här avsnittet beskrivs de åtgärdstyper som är tillgängliga i tillägg
 
 ![](../../../images/munchkin-Init.png)
 
-**Munchkin-ID: (obligatoriskt)** Munchkins konto-ID under Admin > Integration > Munchkin-menyn.
+**Munchkin-id: (obligatoriskt)** Munchkin konto-ID hittades under Admin > Integration > Munchkin-menyn.
 
 **Konfigurationer:** Alla konfigurerbara parametrar beskrivs [här](https://developers.marketo.com/javascript-api/lead-tracking/configuration/)
 

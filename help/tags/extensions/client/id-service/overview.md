@@ -2,18 +2,14 @@
 title: Adobe Experience Cloud Identity Service Extension - översikt
 description: Läs mer om taggtillägget Adobe Experience Cloud Identity Service i Adobe Experience Platform.
 exl-id: 9bfcb666-a3f1-46ad-8678-2c63738da2b2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '784'
-ht-degree: 5%
+source-wordcount: '739'
+ht-degree: 0%
 
 ---
 
 # Översikt över tillägget Adobe Experience Cloud Identity Service
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Använd den här referensen för information om hur du konfigurerar Adobe Experience Cloud ID-tillägget och de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 

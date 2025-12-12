@@ -1,25 +1,21 @@
 ---
-title: Versionsinformation om Marketo Munchkin-tillägget
+title: Versionsinformation om Marketo Munchkin Extension
 description: Den senaste versionsinformationen om taggtillägget Marketo Munchkin i Adobe Experience Platform.
 exl-id: 709265fc-f227-4995-8976-6170da60c89e
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '146'
+source-wordcount: '101'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Marketo Munchkin Extension
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
-
 ## 2 december 2020
 
 ### Marketo Munchkin Extension 1.3.0
 
-* Uppdaterad logotyp på Adobe Adobe A mot vit bakgrund
+* Uppdaterad logotyp till Adobe röda Adobe A i vit bakgrund
 * Borttagen Associate Lead-åtgärd som snart ska bli inaktuell
 
 ## 28 januari 2020

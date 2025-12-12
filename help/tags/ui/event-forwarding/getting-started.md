@@ -3,10 +3,10 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 7f3459f678c74ead1d733304702309522dd0018b
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '854'
-ht-degree: 6%
+source-wordcount: '809'
+ht-degree: 1%
 
 ---
 
@@ -15,10 +15,6 @@ ht-degree: 6%
 >[!NOTE]
 >
 >Vidarebefordran är en betalfunktion som ingår i Adobe Real-Time Customer Data Platform Connections, Prime eller Ultimate.
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste data skickas till Adobe Experience Platform Edge Network med ett eller flera av följande tre alternativ:
 
@@ -58,7 +54,7 @@ Mer information om scheman finns i [Systemhjälpen för Experience Data Model (X
 
 ## Skapa en egenskap för vidarebefordring av händelser
 
-Skapa en egenskap av typen **[!UICONTROL Edge]** på arbetsytan **[!UICONTROL Tags]**.
+Skapa en egenskap av typen **[!UICONTROL Tags]** på arbetsytan **[!UICONTROL Edge]**.
 
 1. Välj **[!UICONTROL New Property]**.
 

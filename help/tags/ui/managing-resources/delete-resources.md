@@ -2,18 +2,14 @@
 title: Ta bort resurser
 description: Lär dig hur du tar bort taggresurser i Adobe Experience Platform.
 exl-id: c8e26720-1976-48ec-8490-3d4ce587831e
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '512'
 ht-degree: 0%
 
 ---
 
 # Ta bort resurser
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Att ta bort en resurs är en permanent borttagning av den från Adobe Experience Platform. Om du vill ta bort en resurs från ett visst taggbibliotek, men ändå vill att resursen ska vara tillgänglig för användning i andra bibliotek, kan du läsa guiden om att [ta bort resurser från ett bibliotek](remove-resources-from-library.md).
 
@@ -73,7 +69,7 @@ Innan du kan ta bort en resurs måste du ta bort den från alla bibliotek där d
 #### Produktion
 
 1. Inaktivera resursen.
-1. Publish the disabled resource through to Production.
+1. Publicera den inaktiverade resursen till Production.
 1. Ta bort resursen.
 
 ## Ta bort en resurs

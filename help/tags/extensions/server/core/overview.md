@@ -3,18 +3,14 @@ title: Översikt över tillägget för vidarebefordring av kärnhändelser
 description: Läs mer om Core-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
-source-git-commit: 2ba02f94ff20281953d74b3213033e5f0a7fa111
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1707'
+source-wordcount: '1662'
 ht-degree: 0%
 
 ---
 
 # Översikt över tillägg för vidarebefordring av viktiga händelser
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Tillägget Core Event-Forwarding innehåller standardhändelser, standardvillkor och datatyper för händelsevidarebefordran i Adobe Experience Platform.
 
@@ -201,7 +197,7 @@ return getDataElementValue('section').concat(getDataElementValue('pName'));
 
 #### Sökväg
 
-En sökväg till ett nyckelvärdepar i en händelse som skickas till Adobe Experience Platform Edge Network kan refereras med datatypen Path.
+Du kan referera till en sökväg till ett nyckelvärdepar för en händelse som skickas till Adobe Experience Platform Edge Network med hjälp av datatypen Path.
 
 Om du vill referera till hela objektet för en händelse anger du `arc` som sökväg. Akronymen `arc` står för Adobe Resource Context och är den översta sökvägen för en händelse som skickas till Adobe Experience Platform Edge Network.
 

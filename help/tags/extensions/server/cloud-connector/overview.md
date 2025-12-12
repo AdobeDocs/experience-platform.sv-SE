@@ -2,18 +2,14 @@
 title: Översikt över Cloud Connector-tillägg
 description: Lär dig mer om tillägget för händelsevidarebefordran i Cloud Connector i Adobe Experience Platform.
 exl-id: f3713652-ac32-4171-8dda-127c8c235849
-source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1681'
-ht-degree: 2%
+source-wordcount: '1636'
+ht-degree: 0%
 
 ---
 
 # Översikt över tillägget Cloud Connector
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Med tillägget för händelsevidarebefordran i Cloud Connector kan du skapa anpassade HTTP-begäranden för att skicka data till ett mål eller hämta data från ett mål. Cloud Connector-tillägget fungerar som att ha Postman på Adobe Experience Platform Edge Network och kan användas för att skicka data till en slutpunkt som ännu inte har något dedikerat tillägg.
 
@@ -70,7 +66,7 @@ I följande tabell visas de fördefinierade rubrikerna. Du är inte begränsad t
 | [Acceptera-språk](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) | |
 | [Acceptera-dateTime](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept) | Överförd av en användaragent för att ange att den vill komma åt ett tidigare tillstånd för en ursprunglig resurs. Därför förmedlas rubriken `Accept-Datetime` i en HTTP-begäran som utfärdas mot en TimeGate för en ursprunglig resurs, och dess värde anger datum/tid för det önskade tidigare tillståndet för den ursprungliga resursen. |
 | Access-control-request-headers | Används av webbläsare vid utfärdande av en [preflight-begäran](https://developer.mozilla.org/en-US/docs/Glossary/preflight_request) för att tala om för servern vilka [HTTP-huvuden](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) klienten kan skicka när den faktiska begäran görs. |
-| access-control-request-method | Används av webbläsare vid utfärdande av en [preflight-begäran](https://developer.mozilla.org/en-US/docs/Glossary/preflight_request) för att tala om för servern vilken [HTTP-metod &#x200B;](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) som kommer att användas när den faktiska begäran görs. Det här huvudet är nödvändigt eftersom preflight-begäran alltid är en [OPTION](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) och inte använder samma metod som den faktiska begäran. |
+| access-control-request-method | Används av webbläsare vid utfärdande av en [preflight-begäran](https://developer.mozilla.org/en-US/docs/Glossary/preflight_request) för att tala om för servern vilken [HTTP-metod ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) som kommer att användas när den faktiska begäran görs. Det här huvudet är nödvändigt eftersom preflight-begäran alltid är en [OPTION](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) och inte använder samma metod som den faktiska begäran. |
 | Behörighet | Innehåller autentiseringsuppgifter för att autentisera en användaragent med en server. |
 | [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) | Direktiv om mekanismer för cachelagring i både förfrågningar och svar. |
 | [Anslutning](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection) | Kontrollerar om nätverksanslutningen förblir öppen när den aktuella transaktionen har slutförts. |
@@ -160,6 +156,6 @@ Din nya regel är nu klar. Välj **[!UICONTROL Save to Library]** och välj seda
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du konfigurerar mTLS-regler vid vidarebefordran av händelser. Mer information om hur du konfigurerar mTLS för en miljö finns i [guiden [!DNL mTLS] om säkerhet för transportlager &#x200B;](../cloud-connector/mtls.md).
+I den här guiden beskrivs hur du konfigurerar mTLS-regler vid vidarebefordran av händelser. Mer information om hur du konfigurerar mTLS för en miljö finns i [guiden [!DNL mTLS] om säkerhet för transportlager ](../cloud-connector/mtls.md).
 
 Mer information om funktioner för vidarebefordran av händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).

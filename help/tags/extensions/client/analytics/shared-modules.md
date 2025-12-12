@@ -2,24 +2,20 @@
 title: Delade moduler för Adobe Analytics-tillägget
 description: Lär dig mer om de delade biblioteksmodulerna i Adobe Analytics-taggtillägget i Adobe Experience Platform.
 exl-id: f1d7cb2b-0058-46f9-983c-079079e06057
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '380'
 ht-degree: 0%
 
 ---
 
 # Delade moduler för Adobe Analytics-tillägget
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
-
 [Adobe Analytics-tillägget](./overview.md) innehåller två olika [delade moduler](../../../extension-dev/web/shared.md) som du kan integrera i ditt upplevelseprogram. Dessa moduler beskrivs i avsnitten nedan.
 
 ## [!DNL get-tracker]
 
-Innan Adobe Analytics skickar några beacons måste spårningsobjektet initieras. Initieringsprocessen börjar med att läsa in [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=sv-SE), följt av att skapa ett spårarobjekt.
+Innan Adobe Analytics skickar några beacons måste spårningsobjektet initieras. Initieringsprocessen börjar med att läsa in [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html), följt av att skapa ett spårningsobjekt.
 
 Du kan komma åt spårningsobjektet efter att det har initierats fullständigt med den delade modulen `get-tracker` enligt följande:
 

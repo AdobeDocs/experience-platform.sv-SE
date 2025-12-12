@@ -2,18 +2,14 @@
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: a062305e3ed0eb4d127f93ff37efe15e41eaa601
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Adobe Target v2-tillägget
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## v0.20.3 (23 januari 2024)
 
@@ -34,7 +30,7 @@ ht-degree: 0%
 
 - Uppdaterat för stöd av `at.js` 2.11.0.
 - Stöd har lagts till för att ställa in anpassade Adobe Experience Platform sandboxId och sandboxName i targetGlobalSettings, som skickas till Delivery API för getOffer-/getOffers-anrop.
-- Korrigering av skugg-DOM för kedja:eq() i väljaren.
+- Korrigering av skugg-DOM för kedja av :eq() i väljaren.
 
 ## v0.19.3 (18 september 2023)
 
@@ -150,7 +146,7 @@ ht-degree: 0%
 ## v0.12.0 (10 oktober 2019)
 
 - Uppdaterade `at.js` till v2.2.
-- Förbättrade prestanda för integrering mellan Experience Cloud ID-bibliotek (ECID) v4.4 och `at.js` 2.2.
+- Förbättrade prestanda för integrering av Experience Cloud ID-bibliotek (ECID) v4.4 och `at.js` 2.2.
 - Tidigare gjorde ECID-biblioteket två blockerande anrop innan `at.js` kunde hämta upplevelser. Detta har reducerats till ett enda samtal, vilket avsevärt förbättrar prestandan.
 
 >[!NOTE]

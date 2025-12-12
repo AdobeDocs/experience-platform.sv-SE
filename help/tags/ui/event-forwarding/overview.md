@@ -3,10 +3,10 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Experience Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 88995c933bf067fe3d077d1be8b92b076e461707
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1181'
-ht-degree: 6%
+source-wordcount: '1144'
+ht-degree: 2%
 
 ---
 
@@ -16,11 +16,7 @@ ht-degree: 6%
 >
 >Vidarebefordran är en betalfunktion som ingår i Adobe Real-Time Customer Data Platform Connections, Prime eller Ultimate.
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
-
-Med händelsevidarebefordran i Adobe Experience Platform kan du skicka insamlade händelsedata till ett mål för bearbetning på serversidan. Vidarebefordran av händelser minskar webbsidans och appens vikt genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för vidarebefordran av händelser implementeras på liknande sätt som taggar, och kan omvandla och skicka data till nya destinationer, men i stället för att skicka dessa data från ett klientprogram som en webbläsare skickas de från Adobe servrar.
+Vidarebefordran av händelser i Adobe Experience Platform (tidigare Adobe Experience Platform Launch server-side) gör att du kan skicka insamlade händelsedata till ett mål för bearbetning på serversidan. Vidarebefordran av händelser minskar webbsidans och appens vikt genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för vidarebefordran av händelser implementeras på liknande sätt som taggar, och kan omvandla och skicka data till nya destinationer, men i stället för att skicka dessa data från ett klientprogram som en webbläsare skickas de från Adobe servrar.
 
 Det här dokumentet innehåller en översikt över vidarebefordran av händelser i Experience Platform.
 
@@ -30,7 +26,7 @@ Det här dokumentet innehåller en översikt över vidarebefordran av händelser
 >
 >Information om hur händelsevidarebefordran passar in i datainsamlingens ekosystem i Experience Platform finns i [datainsamlingsöversikten](/help/collection/home.md).
 
-Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/collection/js/js-overview.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html?lang=sv-SE) ger följande fördelar:
+Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/collection/js/js-overview.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) ger följande fördelar:
 
 **Prestanda**:
 

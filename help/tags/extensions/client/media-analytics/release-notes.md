@@ -1,19 +1,15 @@
 ---
-title: Versionsinformation för Adobe Media Analytics for Audio and Video Extension
-description: Den senaste versionsinformationen för taggtillägget Adobe Media Analytics for Audio and Video i Adobe Experience Platform.
+title: Versionsinformation för Adobe Media Analytics för ljud- och videotillägg
+description: Den senaste versionsinformationen för taggtillägget Adobe Media Analytics för ljud och video i Adobe Experience Platform.
 exl-id: 79d92f42-795f-4685-926f-ebe6f4125539
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Adobe Media Analytics för ljud och video
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 25 oktober 2019
 

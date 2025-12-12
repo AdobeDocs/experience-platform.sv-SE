@@ -2,18 +2,14 @@
 title: Åtgärdstyper för Edge Extensions
 description: Lär dig hur du definierar en biblioteksmodul av åtgärdstyp för ett taggtillägg i en edge-egenskap.
 exl-id: c0b058aa-f0fe-4fd8-a873-018482c3e4db
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '332'
 ht-degree: 0%
 
 ---
 
 # Åtgärdstyper för kanttillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 I en taggregel är en åtgärd en åtgärd som utförs efter att regelvillkoren har utvärderats. Åtgärdstyper tillhandahålls av tillägg, och deras effekter definieras helt av tilläggsförfattaren.
 

@@ -2,18 +2,14 @@
 title: Versionsinformation om Adobe Target Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Target i Adobe Experience Platform.
 exl-id: ba29f614-c3cd-4e0b-b043-2b1c17567def
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '578'
-ht-degree: 0%
+source-wordcount: '533'
+ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Target
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 16 september 2021
 
@@ -46,7 +42,7 @@ ht-degree: 0%
 ### Adobe Target Extension 0.11.0
 
 * Uppdaterat at.js till v1.8.
-* Förbättrade prestanda för integrering mellan Experience Cloud ID-bibliotek (ECID) v4.4 och at.js 1.8.
+* Förbättrade prestanda för integrering av Experience Cloud ID-bibliotek (ECID) v4.4 och at.js 1.8.
 * Tidigare gjorde ECID-biblioteket två blockerande anrop innan at.js kunde hämta upplevelser. Detta har reducerats till ett enda samtal, vilket avsevärt förbättrar prestandan.
 
 >[!NOTE]
@@ -143,7 +139,7 @@ ht-degree: 0%
 
 #### **Funktioner**
 
-* Listan Adobe Exchange har lagts till i extension.json
+* Adobe Exchange-listan har lagts till i extension.json
 * Tillagda kontroller för att se om Target är inaktiverat och om Authoring är aktiverat
 
 #### **Felkorrigeringar**

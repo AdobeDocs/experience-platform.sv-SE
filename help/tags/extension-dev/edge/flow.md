@@ -2,18 +2,14 @@
 title: Edge Extension Flow
 description: Lär dig hur komponenterna i ett kanttillägg i Adobe Experience Platform interagerar med varandra vid körning.
 exl-id: 99058e22-3e14-4ec6-858e-bb1c1fafdb7c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '280'
-ht-degree: 16%
+source-wordcount: '235'
+ht-degree: 0%
 
 ---
 
 # Edge-tilläggsflöde
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 I edge-tillägg har varje villkor, åtgärd och dataelementtyp både en vy som gör att användare kan ändra inställningar och en biblioteksmodul kan agera utifrån de användardefinierade inställningarna.
 
@@ -31,4 +27,4 @@ Regelbearbetningsflödet innehåller följande faser:
 1. När händelsebiblioteksmodulen fastställer att händelsen har inträffat anropar händelsbiblioteket `trigger`.
 1. Experience Platform skickar `settings` till regelns biblioteksmoduler av typen condition där villkoren sedan utvärderas.
 1. Varje villkorstyp returnerar om ett villkor utvärderas till true.
-1. Om alla villkor godkänns körs regelns åtgärder.
+1. Om alla villkor godkänns utförs regelns åtgärder.

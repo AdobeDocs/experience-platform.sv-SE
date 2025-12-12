@@ -2,20 +2,16 @@
 title: Implementera tredjepartsbibliotek
 description: Lär dig mer om de olika metoderna för att lagra bibliotek från tredje part i dina Adobe Experience Platform-taggtillägg.
 exl-id: d8eaf814-cce8-499d-9f02-b2ed3c5ee4d0
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1315'
+source-wordcount: '1270'
 ht-degree: 0%
 
 ---
 
 # Implementera bibliotek från tredje part
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
-
-Ett av de främsta syftena med taggtillägg i Adobe Experience Platform är att göra det möjligt att enkelt implementera befintlig marknadsföringsteknologi (bibliotek) på er webbplats. Genom att använda tillägg kan du implementera bibliotek från tredjepartsnätverk för innehållsleverans (CDN) utan att behöva redigera HTML för webbplatsen manuellt.
+Ett av de främsta syftena med taggtillägg i Adobe Experience Platform är att göra det möjligt att enkelt implementera befintlig marknadsföringsteknologi (bibliotek) på er webbplats. Genom att använda tillägg kan du implementera bibliotek från tredjepartsnätverk för innehållsleverans (CDN) utan att behöva redigera webbplatsens HTML manuellt.
 
 Det finns flera metoder för att hantera tredjepartsbibliotek (leverantörsbibliotek) inom tilläggen. I det här dokumentet finns en översikt över de olika implementeringsmetoderna, inklusive för- och nackdelar för varje implementering.
 
@@ -25,7 +21,7 @@ Det här dokumentet kräver en fungerande förståelse för tillägg i taggar, i
 
 ## Inläsningsprocess för baskod
 
-Förutom taggsammanhanget är det viktigt att förstå hur marknadsföringsteknologier normalt läses in på en webbplats. Tredjepartsbiblioteksleverantörer tillhandahåller ett kodfragment (som kallas baskod) som måste bäddas in i HTML på webbplatsen för att bibliotekets funktioner ska kunna läsas in.
+Förutom taggsammanhanget är det viktigt att förstå hur marknadsföringsteknologier normalt läses in på en webbplats. Tredjepartsbiblioteksleverantörer tillhandahåller ett kodfragment (som kallas baskod) som måste bäddas in i webbplatsens HTML för att bibliotekets funktioner ska kunna läsas in.
 
 I allmänhet utförs en del av följande process av baskoder för marknadsföringsteknologier när de läses in på din webbplats:
 
@@ -98,7 +94,7 @@ Följande metoder ingår:
    - [Inläsningsprocess för baskod](#base-code-loading-process)
       - [Exempel på baskod](#base-code-example)
    - [Alternativ för taggimplementering](#tags-implementation-options)
-      - [Läs in vid körning från leverantörsvärden {#vendor-host}](#load-at-runtime-from-the-vendor-host-vendor-host)
+      - [Läs in vid körning från leverantörsvärden](#load-at-runtime-from-the-vendor-host-vendor-host)
       - [Läs in vid körning från taggbiblioteksvärden](#load-at-runtime-from-the-tag-library-host)
       - [Bädda in biblioteket direkt](#embed-the-library-directly)
    - [Nästa steg](#next-steps)

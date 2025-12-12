@@ -2,18 +2,14 @@
 title: Adobe Target Extension - översikt
 description: Läs om taggtillägget för Adobe Target i Adobe Experience Platform.
 exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1126'
 ht-degree: 0%
 
 ---
 
 # Översikt över Adobe Target-tillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Använd den här referensen för information om de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -68,7 +64,7 @@ Avgör var Target ställer in cookies i webbläsarna.
 
 Om svaret från Target inte tas emot inom den definierade perioden, går begäran ut och standardinnehållet visas. Ytterligare förfrågningar fortsätter att utföras under besökarens session. Standardvärdet är 3 000 ms, vilket kan vara ett annat värde än den timeout som konfigurerats i målanvändargränssnittet.
 
-Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html?lang=sv-SE).
+Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
 
 #### Andra at.js-inställningar som är tillgängliga i målanvändargränssnittet
 
@@ -115,7 +111,7 @@ Följande alternativ är tillgängliga:
 * **Döljning av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
 * **Innehållet i dolt format:** Standardvärdet är `body{opacity:0}`. Värdet kan ändras till något annat, som `body{display:none}`.
 
-Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html?lang=sv-SE).
+Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
 
 ## Grundläggande Adobe Target-driftsättning
 
@@ -185,7 +181,7 @@ Det föregående dolda kodfragmentet är följande och kan minimeras. De konfigu
 }(window, document, "body {opacity: 0 !important}", 3000));
 ```
 
-Som standard döljs hela HTML BODY med fragmentet. I vissa fall kanske du bara vill dölja vissa element i HTML i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
+Som standard döljs hela HTML BODY av fragmentet. I vissa fall kanske du bara vill dölja vissa HTML-element i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
 
 Om du till exempel har två områden som identifieras av ID:n container-1 och container-2 kan formatet ersättas med följande:
 

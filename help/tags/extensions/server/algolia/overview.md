@@ -2,19 +2,15 @@
 title: Översikt över tillägget Algoliets händelsevidarebefordring
 description: Lär dig hur du konfigurerar och använder tillägget för händelsevidarebefordran i Algolia i Adobe Experience Platform. Vidarebefordra användarbeteendedata via API:t för insikter, konfigurera regler, mappa XDM-fält och verifiera händelseleverans.
 last-substantial-update: 2025-05-09T00:00:00Z
-source-git-commit: d1b641ed0b48357a2f4b78d6829ccab52e4889ca
+exl-id: 397c8761-9bff-4b85-9f3f-4cbbd782c139
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '970'
 ht-degree: 0%
 
 ---
 
-
 # Översikt över tillägget [!DNL Algolia] för händelsevidarebefordring {#overview}
-
->[!NOTE]
->
->Adobe Experience Platform Launch ingår nu i Adobe Experience Platform datainsamlingstekniker. Därför har terminologisk uppdatering gjorts i produktdokumentationen. En omfattande lista över de här ändringarna finns i [handboken om terminologisk uppdatering](../../../../tags/term-updates.md).
 
 Använd [!DNL Algolia] för att leverera snabba, relevanta och personaliserade sökupplevelser. Med AI-optimering kan ni förbättra sökresultaten och rekommendationerna så att användarna snabbt kan hitta de produkter, det innehåll eller den information de behöver.
 
@@ -49,8 +45,8 @@ Om du vill konfigurera tillägget [!DNL Algolia] för vidarebefordran av händel
 
 | Egenskap | Beskrivning |
 |----------|-------------|
-| **[!UICONTROL Application ID]** | Ange [!UICONTROL Application ID] som finns i Algoliet Dashboard under avsnittet [&#x200B; API-nycklar &#x200B;](https://www.algolia.com/account/api-keys/all). |
-| **[!UICONTROL Search API Key]** | Ange [!UICONTROL Search API Key] som finns i Algoliet Dashboard under avsnittet [&#x200B; API-nycklar &#x200B;](https://www.algolia.com/account/api-keys/all). |
+| **[!UICONTROL Application ID]** | Ange [!UICONTROL Application ID] som finns i Algoliet Dashboard under avsnittet [ API-nycklar ](https://www.algolia.com/account/api-keys/all). |
+| **[!UICONTROL Search API Key]** | Ange [!UICONTROL Search API Key] som finns i Algoliet Dashboard under avsnittet [ API-nycklar ](https://www.algolia.com/account/api-keys/all). |
 | **[!UICONTROL Index Name]** | Ange [!UICONTROL Index Name] som innehåller dina produkter eller ditt innehåll. Detta index används som standardvärde. |
 
 {style="table-layout:auto"}
@@ -171,5 +167,5 @@ Mer information om hur du felsöker implementeringen med verktyget för felsökn
 
 - [[!DNL Algolia] API-dokumentation för insikter](https://www.algolia.com/doc/rest-api/insights/)
 - [[!DNL Algolia] Händelsedokumentation](https://www.algolia.com/doc/guides/sending-events/getting-started/)
-- [[!DNL Adobe Experience Platform] Dokumentation för vidarebefordran av händelser](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html?lang=sv-SE)
+- [[!DNL Adobe Experience Platform] Dokumentation för vidarebefordran av händelser](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)
 - [[!DNL Algolia] Översikt över AI-funktioner](https://www.algolia.com/products/ai-search/)

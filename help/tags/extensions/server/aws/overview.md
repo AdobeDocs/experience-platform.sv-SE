@@ -3,22 +3,18 @@ title: AWS Extension - översikt
 description: Läs mer om AWS-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 826a96aa-2d64-4a8b-88cf-34a0b6c26df5
 last-substantial-update: 2022-11-23T00:00:00Z
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '715'
 ht-degree: 0%
 
 ---
 
 # Översikt över tillägget [!DNL AWS]
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
-
 [[!DNL Amazon Web Services] ([!DNL AWS])](https://aws.amazon.com/) är en molnbaserad datorplattform som erbjuder en mängd olika tjänster, till exempel distribuerad databehandling, databaslagring, innehållsleverans och SaaS-integrationstjänster (Software-as-a-service) för kundrelationshantering (CRM) och resursplanering (ERP).
 
-Tillägget [!DNL AWS] [Vidarebefordra &#x200B;](../../../ui/event-forwarding/overview.md) använder [[!DNL Amazon Kinesis Data Streams]](https://docs.aws.amazon.com/streams/latest/dev/introduction.html) för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL AWS] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
+Tillägget [!DNL AWS] [Vidarebefordra ](../../../ui/event-forwarding/overview.md) använder [[!DNL Amazon Kinesis Data Streams]](https://docs.aws.amazon.com/streams/latest/dev/introduction.html) för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL AWS] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
 
 ## Förhandskrav
 
@@ -26,7 +22,7 @@ Du måste ha ett [!DNL AWS]-konto med en befintlig [!DNL Kinesis]-dataström fö
 
 ## Installera tillägget {#install}
 
-Om du vill installera tillägget [!DNL AWS] går du till användargränssnittet för datainsamling eller användargränssnittet för Experience Platform och väljer **[!UICONTROL Event Forwarding]** i den vänstra navigeringen. Här väljer du en egenskap som tillägget ska läggas till i eller skapar en ny egenskap i stället.
+Om du vill installera tillägget [!DNL AWS] går du till användargränssnittet för datainsamlingen eller användargränssnittet för Experience Platform och väljer **[!UICONTROL Event Forwarding]** i den vänstra navigeringen. Här väljer du en egenskap som tillägget ska läggas till i eller skapar en ny egenskap i stället.
 
 När du har markerat eller skapat den önskade egenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen och väljer sedan fliken **[!UICONTROL Catalog]**. Sök efter kortet [!UICONTROL AWS] och välj sedan **[!UICONTROL Install]**.
 
@@ -76,4 +72,4 @@ Publicera slutligen en ny händelse som vidarebefordrar [build](../../../ui/publ
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du skickar data till [!DNL Kinesis Data Streams] med hjälp av tillägget [!DNL AWS] för vidarebefordran av händelser. Mer information om funktioner för att vidarebefordra händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
+I den här guiden beskrivs hur du skickar data till [!DNL Kinesis Data Streams] med hjälp av tillägget [!DNL AWS] för vidarebefordran av händelser. Mer information om funktioner för vidarebefordran av händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).

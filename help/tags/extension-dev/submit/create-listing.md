@@ -2,18 +2,14 @@
 title: Skapa en Exchange-lista för ett tillägg
 description: Lär dig hur du lägger till tillägget i den offentliga katalogen i Adobe Experience Platform.
 exl-id: 0395fc99-5e2b-46d6-a067-f8f167733e02
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1194'
-ht-degree: 3%
+source-wordcount: '1147'
+ht-degree: 0%
 
 ---
 
 # Skapa en utbyteslista för ett tillägg
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Adobe Experience Platform har en enda enhetlig katalog där användarna kan visa taggtillägg som är tillgängliga för installation. Katalogen är tillgänglig i produkten och innehåller tillägg av tre typer:
 
@@ -44,17 +40,16 @@ Om du redan har ett företagskonto, eller om du inte behöver en Exchange-lista 
 1. Logga in på [Exchange Partner-webbplatsen](https://partners.adobe.com/exchangeprogram/experiencecloud). När du är inloggad väljer du länken **App Manager** bredvid ditt namn.
 1. Välj fliken **Skapa nytt program** och välj sedan **Skapa ny app** för en anpassad lösning, eller välj en lämplig mall.
 1. Ange din listinformation. Mer information om App Manager finns i den fullständiga [artikeln](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024197931). Listinformation bör vara mycket tydlig med vad tillägget gör och varför det är användbart. Listan fungerar som ett marknadsföringsutrymme för din app. Befordra tillägget här med tydliga beskrivningar, länkar till landningssidor på webbplatsen, länkar till hjälpdokument eller e-postadresser till support osv. Även om utrymmet i tilläggsvyn är begränsat, ger Exchange-listan möjlighet att marknadsföra både ditt tillägg och ditt företag. Nedan följer förslag på hur du kan förbättra erbjudandet om tillägg:
-   - **Programikon** - Kontrollera att ikonen för Exchange-listan har rätt dimensioner, 512 x 512 för png eller 1:1-proportioner för jpg.
+   - **Programikon** - Kontrollera att ikonen för Exchange-listan har rätt dimensioner, 512 x 512 för png eller 1:1 proportioner för jpg.
 
      >[!NOTE]
      >
      >Detta är ett annat filformat än det som används i tilläggskoden. Tillägget i sig innehåller en SVG-fil som [ikon](../manifest.md).
 
    - **Aktuell bild** - Få uppmärksamhet genom att använda en bild som kan vara fristående och visa ditt varumärke och framhäva ditt program. Den bild som visas när någon delar en länk till din Exchange-lista eller publicerar om den på sociala medier. Det måste därför vara en modellbeteckning för ert varumärke.
-   - **Programutgivarens logotyp** - Det här är företagets logotyp, kontrollera att ikonen har rätt dimensioner på 1 280 x 720 eller 2 560 x 1 440 (16:9) i png- eller jpg-format.
+   - **Programutgivarens logotyp** - Det här är din företagslogotyp. Kontrollera att ikonen har rätt dimensioner på 1 280 x 720 eller 2 560 x 1 440 (16:9) i png- eller jpg-format.
    - **Konfigurationsanvisningar** - Informera kunder om hur du konfigurerar ditt Adobe Experience Platform-tillägg. Kontrollera att de förstår alla nödvändiga inställningar och nästa steg när [konfigurationsvyn](../configuration.md) visas omedelbart efter att du har installerat tillägget i en egenskap.
    - **Taggar** - På den första sidan där du redigerar din lista måste du ta med ordet&quot;Starta&quot; i fältet&quot;Anpassade taggar&quot;. Detta gör att din lista visas i sökningar efter taggar på Exchange Marketplace:
-
      ![](../images/getting-started/custom-tags.jpg)
    - **Sandlådor** - Din åtkomst till Adobe Solutions sker via ett sandlådekonto där du har tillgång till en fullt fungerande version av Adobe Experience Platform. Dessa sandlådekonton begärs när du skapar programlistan. I avsnittet **Anslutningar** markerar du de specifika anslutningar som gäller för det program du skapade (ditt taggtillägg). När du klickar på **Spara** genereras sandlådebegäran om det behövs.
 1. Skicka din lista. Adobe Exchange-teamet granskar din ansökan och ger feedback om det behövs uppdateringar. Om du markerar kryssrutan **publicera omedelbart** när du skickar din lista publiceras den direkt när den har godkänts. Om du vill publicera programmet vid ett senare tillfälle låter du kryssrutan vara avmarkerad. När din tilläggslista har godkänts visas en blå **Publicera**-knapp bredvid den på programlistsidan (tilläggssidan).

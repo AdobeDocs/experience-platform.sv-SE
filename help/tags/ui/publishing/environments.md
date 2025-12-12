@@ -2,18 +2,14 @@
 title: Miljöer
 description: Lär dig mer om taggmiljöerna och hur de fungerar i Adobe Experience Platform.
 exl-id: 0bf641c9-412e-4737-9b76-232d980385b2
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '1450'
+source-wordcount: '1405'
 ht-degree: 0%
 
 ---
 
 # Miljöer
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Taggmiljöer definierar flera viktiga aspekter av de biblioteksbyggen som du distribuerar på din webbplats eller i din app:
 
@@ -67,7 +63,7 @@ Om du använder en mobil egenskap får du separata instruktioner för hur du ins
 
 ## Mobilkonfiguration
 
-För mobila egenskaper kan du visa konfigurationsalternativen för en miljö genom att välja den i listan. Härifrån kan du ändra namnet på miljön. I mobilmiljöer kan för närvarande endast värdar som hanteras av Adobe användas.
+För mobila egenskaper kan du visa konfigurationsalternativen för en miljö genom att välja den i listan. Härifrån kan du ändra namnet på miljön. Mobilmiljöer kan för närvarande bara använda Adobe-hanterade värdar.
 
 ![](./images/environments/mobile-config.png)
 
@@ -79,7 +75,7 @@ Inställningarna från den tilldelade miljön avgör följande för webbegenskap
 
 * **Värd**: Den serverplats där du vill att din version ska distribueras.
 * **Arkivinställning**: Anger om systemet ska skapa en distributionsbar uppsättning filer eller låta dem komprimeras i ett arkivformat.
-* **Bädda in kod**: Den `<script>`-kod som ska bäddas in HTML på webbplatsens sidor, som används för att distribuera biblioteksbygget vid körning.
+* **Bädda in kod**: Den `<script>`-kod som ska bäddas in i HTML för webbplatssidorna, som används för att distribuera biblioteksbygget vid körning.
 
 På fliken [!UICONTROL Environments] väljer du en listad miljö för att visa dess konfigurationskontroller.
 
@@ -131,25 +127,25 @@ Mer information om den här inställningen finns i guiden om [asynkron distribut
 
 När webbläsaren läser en inbäddningskod med synkron distribution, hämtas taggbiblioteket och körs innan sidan läses in.
 
-Synkrona inbäddningskoder består av två `<script>`-taggar som måste placeras HTML på webbplatsen. En `<script>`-tagg måste placeras i dokumentet `<head>`, medan den andra måste placeras precis före den avslutande `</body>`-taggen.
+Synkrona inbäddningskoder består av två `<script>`-taggar som måste placeras inom webbplatsens HTML. En `<script>`-tagg måste placeras i dokumentet `<head>`, medan den andra måste placeras precis före den avslutande `</body>`-taggen.
 
 #### Bädda in koduppdateringar
 
 Eftersom inbäddningskoder genereras baserat på dina miljökonfigurationer, kommer vissa konfigurationsändringar automatiskt att uppdatera inbäddningskoden för miljön i fråga. Bland dessa ändringar finns:
 
-* Byta från en värddator som hanteras av Adobe till en SFTP-värd, eller vice versa.
+* Byta från en Adobe-hanterad värd till en SFTP-värd, eller vice versa.
 * Ändra arkivinställningen.
 * Uppdaterar sökvägsfältet om arkivinställningen är aktiverad.
 
 >[!WARNING]
 >
->När inbäddningskoden för en taggmiljö ändras måste du uppdatera inbäddningskoderna i HTML manuellt. För att undvika kostsamt underhåll bör du bara uppdatera inbäddningskoderna när det är absolut nödvändigt.
+>När inbäddningskoden för en taggmiljö ändras måste du uppdatera inbäddningskoderna i din HTML manuellt. För att undvika kostsamt underhåll bör du bara uppdatera inbäddningskoderna när det är absolut nödvändigt.
 
 ## Skapa en miljö
 
 Tre miljöer tilldelas automatiskt till en egenskap när egenskapen skapas: utveckling, staging och produktion. Detta räcker för att köra publiceringsarbetsflödet. Om du vill kan du dock lägga till ytterligare utvecklingsmiljöer, eftersom detta kan vara användbart för större team där flera utvecklare arbetar med olika projekt samtidigt.
 
-Välj **[!UICONTROL Add Environment]** på fliken [!UICONTROL Environments] för egenskapen.
+Välj [!UICONTROL Environments] på fliken **[!UICONTROL Add Environment]** för egenskapen.
 
 ![](./images/environments/create-new.png)
 

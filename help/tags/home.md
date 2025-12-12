@@ -2,20 +2,16 @@
 title: Översikt över taggar
 description: Taggar i Adobe Experience Platform är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
-source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '550'
 ht-degree: 1%
 
 ---
 
 # Översikt över taggar
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](./term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
-
-Taggar i Adobe Experience Platform är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
+Taggar i Adobe Experience Platform (tidigare Adobe Experience Platform Launch) är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 
 Med taggar kan alla skapa och underhålla egna integreringar, som kallas *extensions*. Dessa tillägg är tillgängliga för [!DNL Adobe Experience Cloud]-kunder i en appbutik så att de snabbt kan installera, konfigurera och distribuera sina taggar.
 

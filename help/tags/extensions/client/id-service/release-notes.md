@@ -2,20 +2,16 @@
 title: Versionsinformation för Adobe Experience Cloud Identity Service Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Experience Cloud Identity Service i Adobe Experience Platform.
 exl-id: f9bfbed7-1eec-4916-9235-a75b5e2efcf8
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Adobe Experience Cloud Identity Service-tillägget
 
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
-
-Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud Identity Service Tag-tillägget. Versionsinformation om Experience Cloud Identity Service finns i [Identity Service-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html?lang=sv-SE).
+Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud Identity Service Tag-tillägget. Versionsinformation om Experience Cloud identitetstjänst finns i [identitetstjänstens dokumentation](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html).
 
 ## 17 okt 2022
 
@@ -34,7 +30,7 @@ Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud 
 
 ## 10 okt 2021
 
-### Experience Cloud ID-tillägg 5.3.1
+### Experience Cloud ID Extension 5.3.1
 
 * Den här versionen innehåller den senaste versionen av Visitor 5.3.0, som har följande nya uppdateringar:
 
@@ -50,7 +46,7 @@ Det här dokumentet innehåller versionsinformation för Adobe Experience Cloud 
 
 ## 3 nov 2020
 
-### Experience Cloud ID-tillägg 5.2.1
+### Experience Cloud ID Extension 5.2.1
 
 * Den här korrigeringen innehåller en korrigering för att skriva cookies från en iFrame med attributet `SameSite=None` i webbläsaren Google Chrome.
 
@@ -70,7 +66,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ## 13 augusti 2020
 
-### Experience Cloud ID-tillägg 5.0.1
+### Experience Cloud ID Extension 5.0.1
 
 * Uppdaterar till korrigeringsfilen VisitorJS 5.0.1 med en korrigering för att lägga till d_cf-flaggan när IAB-medgivandesträngen har ändrats.
 
@@ -90,7 +86,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ## 22 januari 2020
 
-### Experience Cloud ID-tillägg 4.5.2
+### Experience Cloud ID Extension 4.5.2
 
 * Besökare.js har uppdaterats till 4.5.2
 * Besökaren 4.5.1 innehåller en felkorrigering för IAB-plugin för Option
@@ -98,7 +94,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ## 7 januari 2020
 
-### Experience Cloud ID-tillägg 4.4.2
+### Experience Cloud ID Extension 4.4.2
 
 * Besökare.js har uppdaterats till 4.4.2
 * Förbättringar av metoden `getVisitorValues` för att hämta värden snabbare
@@ -106,7 +102,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ## 19 september 2019
 
-### Experience Cloud ID-tillägg 4.4.1
+### Experience Cloud ID Extension 4.4.1
 
 * Besökare.js har uppdaterats till 4.4.1
 * Korrigerat ett fel för hämtning av förauktoriserade indata för godkännande
@@ -125,7 +121,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ## 13 maj 2019
 
-### Experience Cloud ID-tillägg 4.3.1
+### Experience Cloud ID Extension 4.3.1
 
 * Besökare.js har uppdaterats till 4.3
 * Lagt till dataelementtyp för ECID som en del av taggtillägget
@@ -136,7 +132,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ### Experience Cloud ID Extension 4.2.0
 
-* Besökare.js har uppdaterats till 4.2, vilket inkluderade stöd för plugin-programmet Audience Manager IAB TCF
+* Besökare.js har uppdaterats till 4.2, vilket inkluderar stöd för Audience Manager IAB TCF Plug-in
 
 ## 25 februari 2019
 
@@ -149,13 +145,13 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 ### Experience Cloud ID Extension 4.0.0
 
 * Besökare.js har uppdaterats till 4.0
-* Ett konfigurationsalternativ för det nya inbyggda Opt-In-objektet har lagts till. Inställningarna kan användas för att undertrycka cookie- och beacon-anrop från Adobe Solutions för att bättre stödja bestämmelser som GDPR
+* Ett konfigurationsalternativ för det nya inbyggda Opt-In-objektet har lagts till. Inställningarna kan användas för att undertrycka cookie- och beacon-anrop från Adobe Solutions för att bättre stödja regler som GDPR
 
   ![](../../../images/ext-mcid-opt-in.png)
 
 ## 20 mars 2018
 
-### Experience Cloud ID-tillägg 3.1.0
+### Experience Cloud ID Extension 3.1.0
 
 * Besökare.js har uppdaterats till 3.1
 * Lägger till två konfigurationsegenskaper: `resetBeforeVersion` och `serverState`

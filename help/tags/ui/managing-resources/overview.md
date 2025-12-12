@@ -2,18 +2,14 @@
 title: Hantera resurser
 description: Lär dig hur du hanterar olika resurser i Adobe Experience Platform, inklusive tillägg, dataelement och regler.
 exl-id: 3ec0078e-76a6-42ac-94cf-df9572b37b52
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
 workflow-type: tm+mt
-source-wordcount: '183'
+source-wordcount: '138'
 ht-degree: 0%
 
 ---
 
 # Hantera resurser
-
->[!NOTE]
->
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 När det gäller taggar i Experience Platform avser ordet&quot;resources&quot; något av följande:
 
