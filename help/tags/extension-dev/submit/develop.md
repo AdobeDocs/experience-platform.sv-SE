@@ -30,7 +30,7 @@ Med en plan på plats kan dessa guider hjälpa dig att förstå utvecklingsproce
 
 Det finns också ett antal nPM-verktyg som du kan använda för att utveckla tilläggspaket:
 
-* [Med verktyget för taggtillägg ](https://www.npmjs.com/package/@adobe/reactor-scaffold) kan du enkelt skapa ett startprojekt på den lokala datorn.
+* [Med verktyget för taggtillägg &#x200B;](https://www.npmjs.com/package/@adobe/reactor-scaffold) kan du enkelt skapa ett startprojekt på den lokala datorn.
 * [Tag Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) hjälper dig att validera dina tilläggsvyer och moduler på din lokala dator.
 * [Tag Extension Packager](https://www.npmjs.com/package/@adobe/reactor-packager) är ett kommandoradsverktyg som används för att paketera ett taggtillägg i en zip-fil.
 * [Tag Extension Uploader](https://www.npmjs.com/package/@adobe/reactor-uploader) är ett interaktivt kommandoradsverktyg som du kan använda för att ange autentiseringsuppgifter för ditt tekniska konto och överföra tilläggspaketet till taggar.

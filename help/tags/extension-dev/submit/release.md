@@ -51,4 +51,4 @@ Om du vill frigöra tillägget med privat tillgänglighet med API:t direkt kan d
 
 När du har slutfört den privata versionen kan du be Adobe att publicera den offentligt.  Tillägget blir då tillgängligt i den offentliga katalogen. Alla användare av datainsamlingen kan installera tillägget på alla egenskaper.
 
-Fyll i det [offentliga begärandeformuläret ](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest) för att starta versionsprocessen.
+Fyll i det [offentliga begärandeformuläret &#x200B;](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest) för att starta versionsprocessen.

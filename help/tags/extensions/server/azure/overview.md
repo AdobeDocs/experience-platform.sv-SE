@@ -14,7 +14,7 @@ ht-degree: 0%
 
 I [!DNL Microsoft Azure] är [[!DNL Event Hubs]](https://azure.microsoft.com/en-us/products/event-hubs/#overview) en mycket skalbar datainpressningstjänst i realtid som gör att du kan bearbeta och analysera den enorma mängd data som produceras av dina anslutna enheter och program. När data har samlats in i ett händelsehubb kan de omformas och lagras med hjälp av en realtidsanalysleverantör eller batch-/lagringsadaptrar.
 
-Tillägget [!DNL Microsoft Azure] [Vidarebefordra ](../../../ui/event-forwarding/overview.md) använder [!DNL Event Hubs] för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL Azure] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
+Tillägget [!DNL Microsoft Azure] [Vidarebefordra &#x200B;](../../../ui/event-forwarding/overview.md) använder [!DNL Event Hubs] för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL Azure] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
 
 ## Förhandskrav
 
@@ -44,7 +44,7 @@ Den högra panelen uppdateras och visar konfigurationsalternativ för hur data s
 
 | Indata | Beskrivning |
 | --- | --- |
-| [!UICONTROL Namespace] | Namnet på det [!DNL Event Hubs]-namnområde som du skapade när [händelsehubben ](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) konfigurerades. |
+| [!UICONTROL Namespace] | Namnet på det [!DNL Event Hubs]-namnområde som du skapade när [händelsehubben &#x200B;](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) konfigurerades. |
 | [!UICONTROL Name] | Namnet på händelsehubben. |
 | [!UICONTROL SAS Authorization Rule Name] | Namnet på auktoriseringsregeln för delad åtkomst för hela [!DNL Event Hubs]-namnområdet eller den specifika händelsehubbsinstansinstansen som du vill skicka data till. Mer information finns i bilagan om [att erhålla SAS-auktoriseringsvärden](#sas). |
 | [!UICONTROL SAS Access Key] | Den primära nyckeln för auktoriseringsregeln för delad åtkomst för hela [!DNL Event Hubs]-namnområdet eller den specifika händelsehubbsinstansinstansen som du vill skicka data till. Mer information finns i bilagan om [att erhålla SAS-auktoriseringsvärden](#sas). |
