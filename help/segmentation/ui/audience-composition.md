@@ -3,14 +3,20 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 65a3b5b904a9dfc6a2fbc09ab869e5642e088363
+source-git-commit: 66084e9847cca7ce6afd6a5b8c67689c9deef580
 workflow-type: tm+mt
-source-wordcount: '2258'
+source-wordcount: '2293'
 ht-degree: 0%
 
 ---
 
 # Användargränssnittsguide för målgruppskomposition
+
+>[!BEGINSHADEBOX]
+
+Om du är Adobe Journey Optimizer-kund kan du läsa [kom igång med guiden ](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/audience-orchestration/get-started-audience-orchestration.html) för målgruppskomposition i Adobe Journey Optimizer-dokumentationen om du vill ha mer information om hur du arbetar med målgruppskomposition i det sammanhanget.
+
+>[!ENDSHADEBOX]
 
 >[!AVAILABILITY]
 >
