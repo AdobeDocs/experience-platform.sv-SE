@@ -3,7 +3,7 @@ keywords: Experience Platform;frågetjänst;Frågetjänst;kapslade datastrukture
 title: Förenkla kapslade datastrukturer för användning med BI-verktyg
 description: Det här dokumentet förklarar hur du förenklar XDM-scheman för alla tabeller och vyer under en session när du använder BI-verktyg från tredje part med Query Service.
 exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fc98b111aa15cdeb64eacdc05cac33a00ee98d80
 workflow-type: tm+mt
 source-wordcount: '854'
 ht-degree: 0%
@@ -42,13 +42,13 @@ När du ansluter till frågetjänsten med den valda tredjepartsklienten lägger 
 
 Indata ska ha följande format:
 
-```terminal
+```bash
 {sandbox_name}:{all/ID/database_name}?FLATTEN
 ```
 
 En exempelanslutningssträng kan se ut så här:
 
-```terminal
+```bash
 prod:all?FLATTEN
 ```
 
@@ -62,13 +62,13 @@ Om ditt BI-verktyg inte stöder kapslade datastrukturer kan det vara svårt att 
 
 Följande värden representerar `commerce.order.priceTotal` (3018.0), `commerce.order.purchaseID` (c9b5aff9-25de-450b-98f4-4484a2170180) och `commerce.purchases.value`(1.0) i dåligt formaterade kapslade fält.
 
-```terminal
+```bash
 ("(3018.0,c9b5aff9-25de-450b-98f4-4484a2170180)","(1.0)")
 ```
 
 Genom att använda inställningen `FLATTEN` kan du komma åt separata fält i schemat eller hela avsnitt i den kapslade datastrukturen genom att använda punktnotation och deras ursprungliga sökvägsnamn. Ett exempel på det här formatet med fältgruppen `commerce` visas nedan.
 
-```terminal
+```bash
 commerce.order.priceTotal
 commerce.order.purchaseID
 commerce.purchases.value
