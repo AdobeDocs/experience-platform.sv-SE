@@ -3,10 +3,10 @@ keywords: Experience Platform;home;populära topics;access control;attribute-bas
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 14028928362d8396c30babfc2279135011dd7c6f
 workflow-type: tm+mt
-source-wordcount: '1874'
-ht-degree: 9%
+source-wordcount: '1929'
+ht-degree: 10%
 
 ---
 
@@ -24,7 +24,7 @@ Tack vare attributbaserad åtkomstkontroll kan administratören styra användarn
 
 Följande video är avsedd att ge stöd för din förståelse av attributbaserad åtkomstkontroll och visar hur du konfigurerar roller, resurser och principer.
 
->[!VIDEO](https://video.tv.adobe.com/v/3451833?learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
 
 ## Attributbaserad åtkomstkontrollterminologi
 
@@ -80,7 +80,7 @@ Mer information om åtkomstkontroll finns i [åtkomstkontrollsöversikten](../ho
 
 ### Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -141,3 +141,9 @@ Med attributbaserad åtkomstkontroll kan du:
 * Konfigurera användaråtkomst till specifika XDM-schemafält beroende på vilka behörighetsgrupper som används för roller som tilldelats användare.
 
 Mer information om XDM finns i [XDM-översikten](../../xdm/home.md).
+
+### Customer Journey Analytics (CJA)
+
+Customer Journey Analytics (CJA) åtkomstbehörigheter hanteras på programnivå i CJA. CJA använder sina egna attributbaserade åtkomstkontroller och ärver eller tillämpar inte de attributbaserade åtkomstkontroller som definierats i Adobe Experience Platform.
+
+Mer information om CJA åtkomstkontroll finns i dokumentationen för [CJA åtkomstkontroll](https://experienceleague.adobe.com/en/docs/analytics-platform/using/technotes/access-control).
