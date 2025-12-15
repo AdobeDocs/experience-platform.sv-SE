@@ -2,9 +2,9 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 1f3cf3cc57342a23dae2d69c883b5768ec2bba57
+source-git-commit: 163ff97da651ac3a68b5e37e8745b10440519e6f
 workflow-type: tm+mt
-source-wordcount: '2957'
+source-wordcount: '3390'
 ht-degree: 0%
 
 ---
@@ -101,6 +101,38 @@ Data kan importeras till ett eller flera system i Experience Platform, nämligen
 >
 >Åtkomsten till [!DNL data lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er får du av Adobe.
 
+Du måste också bestämma om du ska aktivera uppslagsdatauppsättningar för kundprofilen i realtid, förutom att använda dem för allmän sökning. Följ anvisningarna nedan för att undvika att överskrida licensgränserna.
+
+#### Profilaktivering för uppslagsdatauppsättningar {#profile-enablement-lookup-datasets}
+
+En uppslagsdatauppsättning är en datauppsättning som du aktiverar i Experience Platform så att program kan referera till den vid körning. Använd uppslagsdatauppsättningar för att lagra relativt statisk, keyinginformation som produktinformation, lagra metadata eller erbjudandekonfigurationer, i stället för datauppsättningar vars primära syfte är att bidra med profilattribut (till exempel namn, e-post eller lojalitetsnivå) eller upplevelsehändelser (till exempel sidvisningar eller köp).
+
+Experience Platform-program som [!DNL Journey Optimizer] och andra beslutsprogram använder dessa datauppsättningar för att hämta ytterligare fält baserat på en nyckel (till exempel produkt-ID eller lagrings-ID) och för att förbättra arbetsflödena för personalisering, beslut och samordning. Om du aktiverar uppslagsdatauppsättningar för kundprofil i realtid påverkas din profildatavolym, så använd följande vägledning för att hålla dig inom dina licensrättigheter.
+
+När du konfigurerar datauppsättningar för uppslagssyften bör du tänka på de två roller som en datauppsättning kan spela i Experience Platform:
+
+* **Sök efter datauppsättningar**: Tillåt att program hämtar referensdata, för tjänster som personalisering och beslutsfattande i [!DNL Journey Optimizer].
+* **Profilaktiverade datauppsättningar**: Contribute-attribut och händelser för enhetliga kundprofiler i kundprofilen i realtid. Dessa datamängder gör fälten tillgängliga för segmentering och aktivering.
+
+>[!IMPORTANT]
+>
+>Aktivera bara en sökdatauppsättning för kundprofil i realtid när du måste använda fält från den datauppsättningen i kundprofilen i realtid (t.ex. för målgruppsdefinitioner, aktivering eller segmentering av flera enheter). Om du aktiverar en sökdatauppsättning för kundprofil i realtid ökar din profildatavolym. Mer information finns i självstudiekursen om [segmentering av flera enheter](../../segmentation/tutorials/multi-entity-segmentation.md).
+
+**När datauppsättningar ska aktiveras för kundprofilen i realtid:**
+
+Aktivera en datauppsättning för kundprofil i realtid i följande fall:
+
+* Datauppsättningen innehåller kundattribut som du behöver för att kunna sammanställa i kundprofiler (till exempel lojalitetsnivå, inställningar, kontoinformation).
+* Datauppsättningen innehåller upplevelsehändelser som bidrar till kundbeteendeanalys och segmentering.
+* Datauppsättningen innehåller referens- eller anrikningsattribut (till exempel produkt-, butik- eller kontoattribut) som du måste använda i målgruppsdefinitioner, inklusive segmentering av flera enheter eller aktivering längre fram i kedjan.
+
+**När det INTE går att aktivera datauppsättningar för kundprofil i realtid:**
+
+Undvik att aktivera en datauppsättning för kundprofil i realtid i följande fall:
+
+* Datauppsättningen innehåller referensdata som produktkataloger, SKU-information, butiksplatser eller andra icke-kunddata, och du behöver inte dessa attribut i kundprofilen i realtid för segmentering eller aktivering, inklusive segmentering av flera enheter.
+* Datauppsättningen innehåller anrikningsdata som bara används i uppslag vid körning och som inte krävs som en del av kundidentiteten eller i målgruppsdefinitioner.
+
 ### Vilka data ska sparas?
 
 Du kan använda både dataöverföringsfilter och förfalloregler för att ta bort data som har blivit föråldrade för dina användningsfall. Vanligtvis förbrukar beteendedata (som analysdata) betydligt mer lagringsutrymme än postdata (som CRM-data). Många Experience Platform-användare har till exempel upp till 90 % av de profiler som enbart fylls i med beteendedata jämfört med postdata. Därför är det viktigt att du hanterar dina beteendedata för att säkerställa att licenserna efterlevs.
@@ -159,7 +191,7 @@ Använd funktionen för pseudonyma profiler för att automatiskt ta bort data so
 
 ### Användargränssnitt för datauppsättning - Upplev kvarhållande av händelsedatauppsättning {#data-retention}
 
-Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen [&#x200B; i användningsstatistik för licenser. &#x200B;](total-data-volume.md) Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
+Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen [ i användningsstatistik för licenser. ](total-data-volume.md) Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
 
 ### Utgångsdatum för profilupplevelsehändelser {#event-expirations}
 

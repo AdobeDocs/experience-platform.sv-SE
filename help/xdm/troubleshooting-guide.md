@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: fa856644a106469f0cafe7f8c0a61219dc7deac7
+source-git-commit: 8ba80a1cc4529f9d4693e3f7cbd7584193915410
 workflow-type: tm+mt
 source-wordcount: '2368'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) och XDM-system i Adobe Experience Platform, inklusive en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra Experience Platform-tjänster, se [Experience Platform felsökningsguide](../landing/troubleshooting.md).
 
-**[!DNL Experience Data Model] (XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, opererar [!DNL Experience Data Model] scheman som ska användas av [!DNL Experience Platform]-tjänster. **[!DNL Schema Registry]** innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]** i [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md).
+**[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, opererar [!DNL Experience Data Model] scheman som ska användas av [!DNL Experience Platform]-tjänster. **[!DNL Schema Registry]** innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]** i [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md).
 
 ## Vanliga frågor och svar
 
@@ -94,7 +94,7 @@ Det här avsnittet innehåller svar på vanliga frågor om hur du definierar och
 
 ### Hur definierar jag identiteter för mitt schema?
 
-I [!DNL Experience Platform] används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID och andra unika ID-fält.
+I [!DNL Experience Platform] används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID och andra unika ID-fält.
 
 Fält kan markeras som identiteter med antingen API:t eller användargränssnittet.
 
@@ -128,7 +128,7 @@ Scheman har aktiverats för användning i [[!DNL Real-Time Customer Profile]](..
 
 Gör en PATCH-begäran om att uppdatera schemat och lägga till attributet `meta:immutableTags` som en matris som innehåller värdet &quot;union&quot;. Om uppdateringen lyckas visas det uppdaterade schemat som nu innehåller unionstaggen.
 
-Mer information om hur du använder API:t för att aktivera ett schema för användning i [!DNL Real-Time Customer Profile] finns i dokumentet [&#x200B; union](./api/unions.md) i [!DNL Schema Registry]-utvecklarhandboken.
+Mer information om hur du använder API:t för att aktivera ett schema för användning i [!DNL Real-Time Customer Profile] finns i dokumentet [ union](./api/unions.md) i [!DNL Schema Registry]-utvecklarhandboken.
 
 ### Aktiverar ett befintligt schema för [!DNL Profile] med användargränssnittet
 
@@ -140,9 +140,9 @@ Mer information finns i avsnittet [Använd i kundprofil för realtid](./tutorial
 
 Schemat aktiveras inte automatiskt för kundprofil i realtid. Du måste uttryckligen aktivera datauppsättningen för profilen baserat på vilket schema som är aktiverat för profilen. Läs dokumentationen för att lära dig de [steg och krav som krävs för att aktivera en datauppsättning för användning i kundprofilen i realtid](../catalog/datasets/user-guide.md#enable-profile).
 
-### Kan jag ta bort profilaktiverade scheman?
+### Kan jag ta bort profilaktiverade scheman? {#delete-profile-enabled}
 
-Du kan inte ta bort ett schema efter att det har aktiverats för kundprofil i realtid. När ett schema har aktiverats för profilen kan det inte inaktiveras eller tas bort och fält kan inte tas bort från schemat. Därför är det viktigt att planera och verifiera schemakonfigurationen noggrant innan du aktiverar den för profil. Du kan dock ta bort en profilaktiverad datauppsättning. Information finns här: <https://experienceleague.adobe.com/sv/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
+Du kan inte ta bort ett schema efter att det har aktiverats för kundprofil i realtid. När ett schema har aktiverats för profilen kan det inte inaktiveras eller tas bort och fält kan inte tas bort från schemat. Därför är det viktigt att planera och verifiera schemakonfigurationen noggrant innan du aktiverar den för profil. Du kan dock ta bort en profilaktiverad datauppsättning. Information finns här: <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
 
 Om du inte längre vill att ett profilaktiverat schema ska användas rekommenderar vi att du byter namn på schemat så att det innehåller **Använd inte** eller **Inaktiv**.
 
