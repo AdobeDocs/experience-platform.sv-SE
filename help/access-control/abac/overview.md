@@ -146,4 +146,4 @@ Mer information om XDM finns i [XDM-översikten](../../xdm/home.md).
 
 Customer Journey Analytics (CJA) åtkomstbehörigheter hanteras på programnivå i CJA. CJA använder sina egna attributbaserade åtkomstkontroller och ärver eller tillämpar inte de attributbaserade åtkomstkontroller som definierats i Adobe Experience Platform.
 
-Mer information om CJA åtkomstkontroll finns i dokumentationen för [CJA åtkomstkontroll](https://experienceleague.adobe.com/en/docs/analytics-platform/using/technotes/access-control).
+Mer information om CJA åtkomstkontroll finns i dokumentationen för [CJA åtkomstkontroll](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/technotes/access-control).
