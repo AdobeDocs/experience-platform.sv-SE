@@ -24,7 +24,7 @@ Tack vare attributbaserad åtkomstkontroll kan administratören styra användarn
 
 Följande video är avsedd att ge stöd för din förståelse av attributbaserad åtkomstkontroll och visar hur du konfigurerar roller, resurser och principer.
 
->[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3451833?captions=swe&learn=on)
 
 ## Attributbaserad åtkomstkontrollterminologi
 
