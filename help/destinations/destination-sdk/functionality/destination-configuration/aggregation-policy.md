@@ -2,9 +2,9 @@
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: d5d7841cc8799e7f7d4b607bfb8adea63a7eb1db
+source-git-commit: 92d7abcbd642cea4e0fa041d2926ba8868f506e5
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1235'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,26 @@ I exempelkonfigurationen nedan visas en aggregeringskonfiguration för bästa in
    "aggregationType":"BEST_EFFORT",
    "bestEffortAggregation":{
       "maxUsersPerRequest":10,
-      "splitUserById":false
+      "splitUserById":false,
+      "aggregationKey":{
+         "includeSegmentId":true,
+         "includeSegmentStatus":true,
+         "includeIdentity":true,
+         "oneIdentityPerGroup":true,
+         "groups":[
+            {
+               "namespaces":[
+                  "IDFA",
+                  "GAID"
+               ]
+            },
+            {
+               "namespaces":[
+                  "EMAIL"
+               ]
+            }
+         ]
+      }
    }
 }
 ```
@@ -62,6 +81,12 @@ I exempelkonfigurationen nedan visas en aggregeringskonfiguration för bästa in
 | `aggregationType` | Sträng | Anger vilken typ av aggregeringsprincip som ditt mål ska använda. Aggregeringstyper som stöds: <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
 | `bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. <br><br>Det här värdet anger det maximala antalet profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Experience Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br><br> Om servern inte accepterar flera användare per begäran anger du det här värdet till `1`. |
 | `bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet ID-namnområde. |
+| `bestEffortAggregation.aggregationKey` | Objekt | *Valfritt*. Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. Den här parametern kan utelämnas eller anges till `null` om aggregering inte behövs. När det anges fungerar det identiskt med aggregeringsnyckeln i konfigurerbar aggregering. |
+| `bestEffortAggregation.aggregationKey.includeSegmentId` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter målgrupps-ID. |
+| `bestEffortAggregation.aggregationKey.includeSegmentStatus` | Boolean | Ange både den här parametern och `includeSegmentId` som `true` om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID och målgruppsstatus. |
+| `bestEffortAggregation.aggregationKey.includeIdentity` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter identitetsnamnområde. |
+| `bestEffortAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Ange den här parametern till `true` om du vill att de exporterade profilerna ska samlas i grupper som baseras på en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). Ange `false` om du vill använda parametern `groups` för att definiera egna namnutrymmesgrupper för identitet. |
+| `bestEffortAggregation.aggregationKey.groups` | Array | Använd den här parametern när `oneIdentityPerGroup` har värdet `false`. Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål med grupper av identitetsnamnutrymmen. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett anrop till ditt mål och e-postmeddelanden i ett annat genom att använda konfigurationen som visas i exemplet ovan. |
 
 {style="table-layout:auto"}
 
@@ -115,8 +140,8 @@ I exempelkonfigurationen nedan visas en konfigurerbar aggregeringskonfiguration.
 | `configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter målgrupps-ID. |
 | `configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Ange både den här parametern och `includeSegmentId` som `true` om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID och målgruppsstatus. |
 | `configurableAggregation.aggregationKey.includeIdentity` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter identitetsnamnområde. |
-| `configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Ange den här parametern till `true` om du vill att de exporterade profilerna ska samlas i grupper baserat på en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). |
-| `configurableAggregation.aggregationKey.groups` | Array | Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål med grupper av identitetsnamnutrymmen. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett anrop till ditt mål och e-postmeddelanden i ett annat genom att använda konfigurationen som visas i exemplet ovan. |
+| `configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Ange den här parametern till `true` om du vill att de exporterade profilerna ska samlas i grupper som baseras på en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). Ange `false` om du vill använda parametern `groups` för att definiera egna namnutrymmesgrupper för identitet. |
+| `configurableAggregation.aggregationKey.groups` | Array | Använd den här parametern när `oneIdentityPerGroup` har värdet `false`. Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål med grupper av identitetsnamnutrymmen. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett anrop till ditt mål och e-postmeddelanden i ett annat genom att använda konfigurationen som visas i exemplet ovan. |
 
 {style="table-layout:auto"}
 
