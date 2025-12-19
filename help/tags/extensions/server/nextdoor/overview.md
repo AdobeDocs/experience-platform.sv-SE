@@ -18,7 +18,7 @@ ht-degree: 1%
 
 Använd [[!DNL Nextdoor] konverterings-API-tillägget](https://help.nextdoor.com/s/article/About-the-Nextdoor-Conversion-API) för att skicka konverteringshändelser direkt till konverterings-API:t för [!DNL Nextdoor's]. Det här tillägget hjälper dig att spåra och mäta prestandan för dina [!DNL Nextdoor]-annonskampanjer genom att skicka konverteringsdata på serversidan.
 
-I den här handboken visas hur du installerar, konfigurerar och använder tillägget [!DNL Nextdoor] för konverterings-API i [regler](https://experienceleague.adobe.com/en/docs/experience-platform/tags/ui/rules) för vidarebefordran av händelser.
+I den här handboken visas hur du installerar, konfigurerar och använder tillägget [!DNL Nextdoor] för konverterings-API i [regler](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/ui/rules) för vidarebefordran av händelser.
 
 ## Förhandskrav {#prerequisites}
 
