@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida
 description: Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR).
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: acf1d4b9b2de6e0f674aca1f44b2504f3792327d
 workflow-type: tm+mt
 source-wordcount: '565'
 ht-degree: 0%
@@ -17,11 +17,11 @@ Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgrän
 
 >[!TIP]
 >
->Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=sv-SE)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=sv-SE)</li></ul>
+>Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
 
 ## Konfigurera GitHub-miljön
 
-Det första steget för att konfigurera GitHub-miljön är att navigera till [Adobe Experience Platform GitHub-databasen](https://github.com/AdobeDocs/experience-platform.sv-SE).
+Det första steget för att konfigurera GitHub-miljön är att navigera till [Adobe Experience Platform GitHub-databasen](https://github.com/AdobeDocs/experience-platform.en).
 
 ![platform-repo](../assets/platform-repo.png)
 
@@ -29,15 +29,15 @@ Välj sedan **Förgrening**.
 
 ![förgrening](../assets/fork.png)
 
-När gaffeln är klar väljer du **master** och anger ett namn för den nya grenen i listrutan som visas. Se till att du anger ett beskrivande namn för din gren eftersom det används för ditt arbete och välj sedan **Skapa gren**.
+När gaffeln är klar väljer du **main** och anger ett namn för den nya grenen i listrutan som visas. Se till att du anger ett beskrivande namn för din gren eftersom det används för ditt arbete och välj sedan **Skapa gren**.
 
 ![create-branch](../assets/create-branch.png)
 
-Navigera till [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.sv-SE/tree/main/help/sources/tutorials/api/create) i mappstrukturen för GitHub i den förankrade databasen och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny CRM-källa väljer du **crm**.
+Navigera till [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) i mappstrukturen för GitHub i den förankrade databasen och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny CRM-källa väljer du **crm**.
 
 >[!TIP]
 >
->Om du skapar dokumentation för användargränssnittet går du till [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.sv-SE/tree/main/help/sources/tutorials/ui/create) och väljer lämplig kategori för källan. Om du vill lägga till dina bilder går du till [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.sv-SE/tree/main/help/sources/images/tutorials/create) och lägger sedan till skärmbilderna i mappen `sdk`.
+>Om du skapar dokumentation för användargränssnittet går du till [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) och väljer lämplig kategori för källan. Om du vill lägga till dina bilder går du till [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) och lägger sedan till skärmbilderna i mappen `sdk`.
 
 ![crm](../assets/crm.png)
 
@@ -77,6 +77,6 @@ Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteck
 
 Nu visas ett meddelande som uppmanar dig att signera Adobe Contributor License Agreement (CLA). Detta är ett obligatoriskt steg. När du har signerat CLA-avtalet uppdaterar du PR-sidan och skickar pull-begäran.
 
-Du kan bekräfta att pull-begäran har skickats genom att granska mottagarfliken i https://github.com/AdobeDocs/experience-platform.sv-SE.
+Du kan bekräfta att pull-begäran har skickats genom att granska mottagarfliken i https://github.com/AdobeDocs/experience-platform.en.
 
 ![confirm-pr](../assets/confirm-pr.png)
