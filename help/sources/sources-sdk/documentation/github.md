@@ -17,11 +17,11 @@ Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgrän
 
 >[!TIP]
 >
->Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>Följande dokument från Adobe bidragsguide kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=sv-SE)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=sv-SE)</li></ul>
 
 ## Konfigurera GitHub-miljön
 
-Det första steget för att konfigurera GitHub-miljön är att navigera till [Adobe Experience Platform GitHub-databasen](https://github.com/AdobeDocs/experience-platform.en).
+Det första steget för att konfigurera GitHub-miljön är att navigera till [Adobe Experience Platform GitHub-databasen](https://github.com/AdobeDocs/experience-platform.sv-SE).
 
 ![platform-repo](../assets/platform-repo.png)
 
@@ -33,11 +33,11 @@ När gaffeln är klar väljer du **main** och anger ett namn för den nya grenen
 
 ![create-branch](../assets/create-branch.png)
 
-Navigera till [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) i mappstrukturen för GitHub i den förankrade databasen och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny CRM-källa väljer du **crm**.
+Navigera till [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.sv-SE/tree/main/help/sources/tutorials/api/create) i mappstrukturen för GitHub i den förankrade databasen och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny CRM-källa väljer du **crm**.
 
 >[!TIP]
 >
->Om du skapar dokumentation för användargränssnittet går du till [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) och väljer lämplig kategori för källan. Om du vill lägga till dina bilder går du till [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) och lägger sedan till skärmbilderna i mappen `sdk`.
+>Om du skapar dokumentation för användargränssnittet går du till [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.sv-SE/tree/main/help/sources/tutorials/ui/create) och väljer lämplig kategori för källan. Om du vill lägga till dina bilder går du till [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.sv-SE/tree/main/help/sources/images/tutorials/create) och lägger sedan till skärmbilderna i mappen `sdk`.
 
 ![crm](../assets/crm.png)
 
@@ -77,6 +77,6 @@ Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteck
 
 Nu visas ett meddelande som uppmanar dig att signera Adobe Contributor License Agreement (CLA). Detta är ett obligatoriskt steg. När du har signerat CLA-avtalet uppdaterar du PR-sidan och skickar pull-begäran.
 
-Du kan bekräfta att pull-begäran har skickats genom att granska mottagarfliken i https://github.com/AdobeDocs/experience-platform.en.
+Du kan bekräfta att pull-begäran har skickats genom att granska mottagarfliken i https://github.com/AdobeDocs/experience-platform.sv-SE.
 
 ![confirm-pr](../assets/confirm-pr.png)
