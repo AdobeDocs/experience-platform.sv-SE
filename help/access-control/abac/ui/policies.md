@@ -90,7 +90,7 @@ En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** om du vill ta bo
 >id="platform_permissions_policies_about"
 >title="Vad är policyer?"
 >abstract="Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Alla organisationer har en standardprofil som du måste aktivera för att kunna styra åtkomsten till specifika objekt baserat på etiketter. Etiketter som används på resurser nekar åtkomst såvida inte användare tilldelas till en roll med en matchande etikett. Profiler kan inte redigeras eller tas bort, men de kan aktiveras eller inaktiveras."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/labels" text="Hantera etiketter"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/labels" text="Hantera etiketter"
 
 Om du vill aktivera en befintlig princip väljer du den på fliken **[!UICONTROL Policies]** i **[!UICONTROL Permissions]**. Principens aktiveringsstatus visas under avsnittet **[!UICONTROL Status]**.
 
