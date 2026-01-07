@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett dataflöde för en OneTrust-integreringskälla med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till OneTrust Integration med API:t för Flow Service.
 exl-id: e224efe0-4756-4b8a-b446-a3e1066f2050
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: f9ca6b7683c64c36772d02c1a88c3ef18f961b92
 workflow-type: tm+mt
 source-wordcount: '1924'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen.
 >
 >Nyttolasten för JSON-svar nedan är dold av utrymmesskäl. Välj Klicka på mig för att se svarsnyttolasten.
 
-+++Klicka på mig
++++Klicka här
 
 ```json
 {
@@ -623,7 +623,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs.
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 
@@ -757,8 +757,13 @@ curl -X POST \
               "sourceType": "ATTRIBUTE",
               "source": "content.Purposes",
               "destination": "_exchangesandboxbravo.Purposes"
+          },
+          {
+              "sourceType": "ATTRIBUTE",
+              "source": "content.LinkToken",
+              "destination": "_exchangesandboxbravo.LinkToken",
+              "description": "Link Token"
           }
-
       ]
   }'
 ```
