@@ -1,213 +1,108 @@
 ---
 keywords: Experience Platform;home;populära topics;access control;attribute-based access control;ABAC
 title: Hantera åtkomstkontrollprinciper
-description: Det här dokumentet innehåller information om hur du hanterar åtkomstkontrollprinciper via gränssnittet Behörigheter i Adobe Experience Cloud.
+description: Hantera åtkomstkontrollprinciper via gränssnittet Behörigheter i Adobe Experience Cloud.
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
+source-git-commit: 2a26c8786adc412dc643c8a0c94b966e439e034b
 workflow-type: tm+mt
-source-wordcount: '648'
+source-wordcount: '725'
 ht-degree: 0%
 
 ---
 
 # Hantera åtkomstkontrollprinciper
 
-Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Åtkomstprinciper kan antingen vara lokala eller globala och kan åsidosätta andra principer. Adobe har en standardpolicy som kan aktiveras omedelbart eller när din organisation är redo att börja styra åtkomsten till specifika objekt baserat på etiketter. Standardprincipen använder etiketter som används på resurser för att neka åtkomst, såvida inte användarna har en roll med en matchande etikett.
+Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Adobe tillhandahåller en standardprincip som kan aktiveras omedelbart eller när din organisation är redo att börja styra åtkomsten till specifika objekt baserat på [etiketter](./labels.md){target="_blank"}. Standardprincipen, **[!UICONTROL Default-Label-Based-Access-Control-Policy]**, utnyttjar etiketter som används på resurser för att neka åtkomst, såvida inte användarna har en roll med en matchande etikett.
 
 >[!IMPORTANT]
 >
->Åtkomstprinciper får inte blandas ihop med dataanvändningsprinciper, som styr hur data används i Adobe Experience Platform i stället för vilka användare i organisationen har tillgång till dem. Mer information finns i guiden om att skapa [dataanvändningsprinciper](../../../data-governance/policies/create.md).
+>Åtkomstkontrollprinciper får inte blandas ihop med dataanvändningsprinciper, som styr hur data används i Adobe Experience Platform. Mer information finns i guiden om att skapa [dataanvändningsprinciper](../../../data-governance/policies/create.md){target="_blank"}.
 
-<!-- ## Create a new policy
+## Konfigurera sandlådor för en princip {#configure-policy}
 
-To create a new policy, select the **[!UICONTROL Policies]** tab in the sidebar and select **[!UICONTROL Create Policy]**.
-
-![flac-new-policy](../../images/flac-ui/flac-new-policy.png)
-
-The **[!UICONTROL Create a new policy]** dialog appears, prompting you to enter a name, and an optional description. When finished, select **[!UICONTROL Confirm]**.
-
-![flac-create-new-policy](../../images/flac-ui/flac-create-new-policy.png)
-
-Using the dropdown arrow select if you would like to **Permit access to** (![flac-permit-access-to](../../images/flac-ui/flac-permit-access-to.png)) a resource or **Deny access to** (![flac-deny-access-to](../../images/flac-ui/flac-deny-access-to.png)) a resource.
-
-Next, select the resource that you would like to include in the policy using the dropdown menu and search access type, read or write.
-
-![flac-flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown.png)
-
-Next, using the dropdown arrow select the condition you would like to apply to this policy, **The following being true** (![flac-policy-true](../../images/flac-ui/flac-policy-true.png)) or **The following being false** (![flac-policy-false](../../images/flac-ui/flac-policy-false.png)).
-
-Select the plus icon to **Add matches expression** or **Add expression group** for the resource. 
-
-![flac-policy-expression](../../images/flac-ui/flac-policy-expression.png)
-
-Using the dropdown, select the **Resource**.
-
-![flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown-1.png)
-
-Next, using the dropdown select the **Matches**.
-
-![flac-policy-matches-dropdown](../../images/flac-ui/flac-policy-matches-dropdown.png)
-
-Next, using the dropdown, select the type of label (**[!UICONTROL Core label]** or **[!UICONTROL Custom label]**) to match the label assigned to the User in roles.
-
-![flac-policy-user-dropdown](../../images/flac-ui/flac-policy-user-dropdown.png)
-
-Finally, select the **Sandbox** that you would like the policy conditions to apply to, using the dropdown menu.
-
-![flac-policy-sandboxes-dropdown](../../images/flac-ui/flac-policy-sandboxes-dropdown.png)
-
-Select **Add resource** to add more resources. Once finished, select **[!UICONTROL Save and exit]**.
-
-![flac-policy-save-and-exit](../../images/flac-ui/flac-policy-save-and-exit.png)
-
-The new policy is successfully created, and you are redirected to the **[!UICONTROL Policies]** tab, where you will see the newly created policy appear in the list. 
-
-![flac-policy-saved](../../images/flac-ui/flac-policy-saved.png)
-
-## Edit a policy
-
-To edit an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to edit.
-
-![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
-
-Next, select the ellipsis (`…`) next to the policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select edit from the dropdown.
-
-![flac-policy-edit](../../images/flac-ui/flac-policy-edit.png)
-
-The policy permissions screen appears. Make the updates then select **[!UICONTROL Save and exit]**.
-
-![flac-policy-save-and-exit](../../images/flac-ui/flac-policy-save-and-exit.png)
-
-The policy is successfully updated, and you are redirected to the **[!UICONTROL Policies]** tab.
-
-## Duplicate a policy
-
-To duplicate an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to edit.
-
-![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
-
-Next, select the ellipsis (`…`) next to a policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select duplicate from the dropdown.
-
-![flac-policy-duplicate](../../images/flac-ui/flac-policy-duplicate.png)
-
-The **[!UICONTROL Duplicate policy]** dialog appears, prompting you to confirm the duplication. 
-
-![flac-policy-duplicate-confirm](../../images/flac-ui/flac-duplicate-confirm.png)
-
-The new policy appears in the list as a copy of the original on the **[!UICONTROL Policies]** tab.
-
-![flac-role-duplicate-saved](../../images/flac-ui/flac-role-duplicate-saved.png)
-
-## Delete a policy
-
-To delete an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to delete.
-
-![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
-
-Next, select the ellipsis (`…`) next to a policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select delete from the dropdown.
-
-![flac-policy-delete](../../images/flac-ui/flac-policy-delete.png)
-
-The **[!UICONTROL Delete user policy]** dialog appears, prompting you to confirm the deletion. 
-
-![flac-policy-delete-confirm](../../images/flac-ui/flac-policy-delete-confirm.png)
-
-You are returned to the **[!UICONTROL policies]** tab and a confirmation of deletion pop over appears.
-
-![flac-policy-delete-confirmation](../../images/flac-ui/flac-policy-delete-confirmation.png) -->
-
-## Konfigurera princip för en sandlåda
-
->[!IMPORTANT]
->
->Som standard är funktionen [!UICONTROL Auto-include] aktiverad för alla kunder, vilket innebär att alla sandlådor läggs till i principen.
+Principer tillämpas på sandlådenivå för att styra vilka sandlådor som tillämpar etikettbaserad åtkomstkontroll. Som standard är funktionen **[!UICONTROL Auto-include]** aktiverad, vilket innebär att alla aktuella och framtida sandlådor läggs till automatiskt i principen. När **[!UICONTROL Auto-include]** är inaktiverat omfattas endast de sandlådor som du lägger till manuellt av principens åtkomstkontrollsregler.
 
 >[!NOTE]
 >
 >Principen **[!UICONTROL Default-Label-Based-Access-Control-Policy]** är för närvarande den enda som är tillgänglig för konfiguration.
 
-Om du vill visa sandlådor som är associerade med en princip väljer du principen på fliken **[!UICONTROL Policies]**.
+Navigera till **[!UICONTROL Permissions]** i [Adobe Experience Cloud](https://experience.adobe.com/){target="_blank"} om du vill börja konfigurera en princips sandlådor. Välj **[!UICONTROL Policies]** i den vänstra panelen och välj sedan **[!UICONTROL Default-Label-Based-Access-Control-Policy]** i listan.
 
-![Policysidan med en lista över befintliga profiler som är tillgängliga.](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
+![Arbetsytan Principer visar en lista över befintliga profiler.](../../images/ui/policies/policies-home.png){zoomable="yes"}
 
-Välj sedan profilen och sedan fliken **[!UICONTROL Sandboxes]**. En lista över sandlådor som är associerade med profilen visas.
+Arbetsytan för information för profilen visas. Välj fliken **[!UICONTROL Sandboxes]** om du vill visa listan över sandlådor som är associerade med principen och få åtkomst till konfigurationsalternativen för sandlådan.
 
-![Policysidan med en lista över befintliga profiler som är tillgängliga.](../../images/flac-ui/abac-policies-sandboxes-tab.png)
+![Principens sandlådearbetsyta med en lista över associerade sandlådor.](../../images/ui/policies/policy-sandbox.png){zoomable="yes"}
 
-### Lägg till princip i alla sandlådor
-
-Använd växlingsknappen **[!UICONTROL Auto-include]** på fliken **[!UICONTROL Sandboxes]** för att aktivera principen för alla sandlådor.
-
-![Fliken [!UICONTROL Sandboxes] som visar växlingsknappen [!UICONTROL Auto-include].](../../images/flac-ui/abac-policies-auto-include.png)
-
-Dialogrutan **[!UICONTROL Enable Auto-include]** visas och du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Enable]** för att slutföra konfigurationsinställningen.
-
-![Markering av [!UICONTROL Enable Auto-include] i dialogrutan [!UICONTROL Enable].](../../images/flac-ui/abac-policies-auto-include-enable.png)
-
->[!SUCCESS]
->
->Principen aktiveras för alla befintliga sandlådor och läggs automatiskt till i alla nya sandlådor när de blir tillgängliga.
-
-### Lägg till princip i valda sandlådor
+### Hantera automatisk inkludering {#manage-auto-include}
 
 >[!IMPORTANT]
 >
->Framtida sandlådor inkluderas inte som standard i principen om växeln [!UICONTROL Auto-include] är inaktiverad. Du måste hantera och lägga till sandlådor manuellt i profilen.
+>Som standard är **[!UICONTROL Auto-include]** aktiverad, vilket innebär att alla aktuella och framtida sandlådor läggs till automatiskt i principen.
 
-Använd växlingsknappen **[!UICONTROL Auto-include]** på fliken **[!UICONTROL Sandboxes]** för att inaktivera principen för alla sandlådor.
+Om du vill kontrollera vilka sandlådor som ingår i en profil kan du aktivera eller inaktivera funktionen **[!UICONTROL Auto-include]**. När du inaktiverar **[!UICONTROL Auto-include]** läggs framtida sandlådor inte automatiskt till i principen. Om du stänger av funktionen **tas inte** bort sandlådor som redan finns i principen.
 
-![Fliken [!UICONTROL Sandboxes] som visar växlingsknappen [!UICONTROL Auto-include].](../../images/flac-ui/abac-policies-auto-include.png)
+![Principens sandlådeflik med alternativet för att ta med automatiskt markerat och i läget &quot;av&quot;.](../../images/ui/policies/policy-auto-include.png){zoomable="yes"}
 
-På fliken **[!UICONTROL Sandboxes]** väljer du **[!UICONTROL Add Sandboxes]** för att välja sandlådor som den här principen ska gälla för.
+Om du vill aktivera **[!UICONTROL Auto-include]** igen använder du växlingsknappen för att aktivera den igen. Dialogrutan **[!UICONTROL Enable Auto-include]** visas och du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Enable]** för att slutföra konfigurationsinställningen.
 
-![Fliken [!UICONTROL Sandboxes] som visar en lista med sandlådor som har lagts till i principen.](../../images/flac-ui/abac-policies-sandboxes-tab-add.png)
-
-En lista över sandlådor visas. Markera den sandlåda som du vill lägga till i listan. Du kan också använda sökfältet för att söka efter sandlådan. Välj **[!UICONTROL Save]**.
-
-![Sidan [!UICONTROL Add Sandboxes] med en lista över befintliga sandlådor som är tillgängliga att lägga till i principen.](../../images/flac-ui/abac-policies-sandboxes-list.png)
-
->[!SUCCESS]
+>[!NOTE]
 >
->De markerade sandlådorna har lagts till i principen.
+>När du återaktiverar **[!UICONTROL Auto-include]** läggs alla sandlådor som du tidigare har tagit bort från principen till igen.
 
-### Ta bort sandlådor från en profil
+![Dialogrutan Aktivera automatisk inkludering med alternativet Aktivera markerat.](../../images/ui/policies/policy-enable-auto-include.png){zoomable="yes"}
 
-Om du vill ta bort en sandlåda markerar du ikonen **X** bredvid namnet på sandlådan.
+### Hantera sandlådor manuellt {#manually-manage-sandboxes}
 
-![Fliken [!UICONTROL Sandboxes] som visar en lista med sandlådor och markerar [!UICONTROL X] som ska tas bort.](../../images/flac-ui/abac-policies-remove-sandbox-x.png)
+När **[!UICONTROL Auto-include]**är inaktiverat kan du lägga till eller ta bort specifika sandlådor manuellt från profilen. Detta ger dig exakt kontroll över vilka sandlådor som tillämpar principens åtkomstkontrollsregler.
 
-Dialogrutan **[!UICONTROL Remove]** visas och du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Confirm]** för att slutföra borttagningen.
-
-![Markering av [!UICONTROL Remove] i dialogrutan [!UICONTROL Confirm].](../../images/flac-ui/abac-policies-remove-sandbox.png)
-
->[!SUCCESS]
+>[!NOTE]
 >
->Den valda sandlådan har tagits bort från principen.
+>Om du vill lägga till eller ta bort sandlådor manuellt måste **[!UICONTROL Auto-include]**-växlingen **vara inaktiverad**.
+
+**Så här lägger du till sandlådor:**
+
+Välj **[!UICONTROL Add Sandboxes]** från principens sandlådearbetsyta.
+
+![Principens arbetsyta med alternativet Lägg till sandlådor markerat.](../../images/ui/policies/policy-add-sandboxes.png){zoomable="yes"}
+
+Dialogrutan **[!UICONTROL Add Sandboxes]** visas och ditt bibliotek med tillgängliga sandlådor visas. Markera de sandlådor som du vill lägga till i profilen och välj sedan **[!UICONTROL Save]**.
+
+![Dialogrutan Lägg till sandlådor med en markerad sandlåda och alternativet Spara markerat.](../../images/ui/policies/policy-add-sandboxes-select.png){zoomable="yes"}
+
+>[!NOTE]
+>
+>Om alla tillgängliga sandlådor redan ingår i profilen visas meddelandet&quot;Du har inget i biblioteket&quot; i dialogrutan.
+
+**Så här tar du bort sandlådor:**
+
+Hitta den sandlåda som du vill ta bort från listan och välj ikonen **X** bredvid namnet.
+
+![Principens sandlådelista med ett &quot;x&quot; markerat för att ta bort en sandlåda.](../../images/ui/policies/policy-remove-sandbox.png){zoomable="yes"}
+
+En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** om du vill ta bort sandlådan från principen.
+
+![En bekräftelsedialogruta för en sandlåda med alternativet Bekräfta markerat.](../../images/ui/policies/policy-remove-sandbox-confirmation.png){zoomable="yes"}
 
 ## Aktivera en profil {#activate-policy}
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_about"
 >title="Vad är policyer?"
->abstract="Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Alla organisationer har en standardprofil som du måste aktivera för att kunna styra åtkomsten till specifika objekt baserat på etiketter. Etiketter som används på resurser nekar åtkomst såvida inte användare tilldelas till en roll med en matchande etikett. Standardprofiler kan inte redigeras eller tas bort, men de kan aktiveras eller inaktiveras."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/labels" text="Hantera etiketter"
+>abstract="Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Alla organisationer har en standardprofil som du måste aktivera för att kunna styra åtkomsten till specifika objekt baserat på etiketter. Etiketter som används på resurser nekar åtkomst såvida inte användare tilldelas till en roll med en matchande etikett. Profiler kan inte redigeras eller tas bort, men de kan aktiveras eller inaktiveras."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/labels" text="Hantera etiketter"
 
-Om du vill aktivera en befintlig princip väljer du den på fliken **[!UICONTROL Policies]**.
+Om du vill aktivera en befintlig princip väljer du den på fliken **[!UICONTROL Policies]** i **[!UICONTROL Permissions]**. Principens aktiveringsstatus visas under avsnittet **[!UICONTROL Status]**.
 
-![flac-policy-select](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
+![Arbetsytan för profiler med en profils status markerad.](../../images/ui/policies/policy-status.png){zoomable="yes"}
 
-Därefter markerar du ellipsen (`…`) bredvid ett profilnamn, och i en listruta visas kontroller för att redigera, aktivera, ta bort eller duplicera rollen. Välj Aktivera i listrutan.
+Arbetsytan Detaljer för profilen visas. Välj **[!UICONTROL Activate]**.
 
-![flac-policy-activate](../../images/abac-end-to-end-user-guide/abac-policies-activate.png)
+![Principens arbetsyta för detaljer med alternativet Aktivera markerat.](../../images/ui/policies/policy-activate.png){zoomable="yes"}
 
-Dialogrutan **[!UICONTROL Activate policy]** visas och du uppmanas att bekräfta aktiveringen.
+Dialogrutan **[!UICONTROL Activate Policy]** visas. Välj **[!UICONTROL Confirm]** för att slutföra aktiveringen av principen.
 
-![flac-policy-activate-confirm](../../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
-
-
-Du återgår till fliken **[!UICONTROL policies]** och en bekräftelse på att aktiveringen är aktiverad visas. Policystatusen visas som aktiv.
-
-![flash-policy-activated](../../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
+![Dialogrutan Aktivera princip med alternativet Bekräfta markerat.](../../images/ui/policies/policy-activate-confirm.png){zoomable="yes"}
 
 ## Nästa steg
 
