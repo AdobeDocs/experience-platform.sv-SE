@@ -4,9 +4,9 @@ title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 last-substantial-update: 2024-08-20T00:00:00Z
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: cc97efec5fba090378ceaf73441d0b4bd7fbf51f
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1078'
 ht-degree: 0%
 
 ---
@@ -87,7 +87,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ange ett namn som identifierar det här målet i framtiden.
 * **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Endpoint Instance]**: fråga din [!DNL Braze]-representant vilken slutpunktsinstans du ska använda.
+* **[!UICONTROL Endpoint Instance]**: alla [regionspecifika slutpunkter](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) som stöds av [!DNL Braze] kan väljas. Fråga din [!DNL Braze]-representant vilken slutpunktsinstans du ska använda.
 
 ### Aktivera aviseringar {#enable-alerts}
 
