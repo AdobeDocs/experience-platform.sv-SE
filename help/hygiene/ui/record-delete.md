@@ -2,16 +2,16 @@
 title: Begäranden om radering av post (UI-arbetsflöde)
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
+source-git-commit: 56ae47f511a7392286c4f85173dba30e93fc07d0
 workflow-type: tm+mt
-source-wordcount: '2358'
+source-wordcount: '2520'
 ht-degree: 0%
 
 ---
 
 # Registrera borttagningsbegäranden (UI-arbetsflöde) {#record-delete}
 
-Använd arbetsytan [[!UICONTROL Data Lifecycle] &#x200B;](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
+Använd arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) för att ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
 
 >[!IMPORTANT]
 >
@@ -19,7 +19,7 @@ Använd arbetsytan [[!UICONTROL Data Lifecycle] &#x200B;](./overview.md) för at
 
 ## Förhandskrav {#prerequisites}
 
-Att ta bort poster kräver en fungerande förståelse för hur identitetsfält fungerar i Experience Platform. Du måste känna till identitets namnutrymmesvärden för de entiteter vars poster du vill ta bort, beroende på vilken datamängd (eller vilka datamängder) du tar bort dem från.
+Att ta bort poster kräver en fungerande förståelse för hur identitetsfält fungerar i Experience Platform. Du måste känna till det primära ID-namnutrymmet och värdena för de entiteter vars poster du vill ta bort, beroende på vilken datamängd (eller vilka datamängder) du tar bort dem från.
 
 Mer information om identiteter i Experience Platform finns i följande dokumentation:
 
@@ -28,6 +28,14 @@ Mer information om identiteter i Experience Platform finns i följande dokumenta
 * [Kundprofil i realtid](../../profile/home.md): Använder identitetsdiagram för att tillhandahålla enhetliga konsumentprofiler baserade på aggregerade data från flera källor, som uppdateras i nära realtid.
 * [Experience Data Model (XDM)](../../xdm/home.md): Tillhandahåller standarddefinitioner och strukturer för Experience Platform-data genom användning av scheman. Alla Experience Platform-datauppsättningar följer ett specifikt XDM-schema, och schemat definierar vilka fält som är identiteter.
 * [Identitetsfält](../../xdm/ui/fields/identity.md): Lär dig hur ett identitetsfält definieras i ett XDM-schema.
+
+>[!IMPORTANT]
+>
+>Postborttagningar fungerar enbart på fältet **primär identitet** som definieras i datasetens schema. Följande begränsningar gäller:
+>
+>* **Sekundära identiteter genomsöks inte.** Om en datauppsättning innehåller flera identitetsfält används bara den primära identiteten för matchning. Det går inte att ange mål för eller ta bort poster baserat på icke-primära identiteter.
+>* **Poster utan en ifylld primär identitet hoppas över.** Om en post inte har några primära ID-metadata ifyllda, kan den inte tas bort.
+>* **Data som har importerats innan identitetskonfigurationen är inte giltiga.** Om det primära identitetsfältet lades till i ett schema efter dataöverföring, kan tidigare importerade poster inte tas bort via det här arbetsflödet.
 
 ## Skapa en förfrågan {#create-request}
 
@@ -53,13 +61,13 @@ Om du vill ta bort från en viss datauppsättning väljer du **[!UICONTROL Selec
 
 ![Dialogrutan [!UICONTROL Select dataset] med en datamängd markerad och [!UICONTROL Done] markerad.](../images/ui/record-delete/select-dataset.png)
 
-Om du vill ta bort från alla datauppsättningar väljer du **[!UICONTROL All datasets]**. Det här alternativet ökar åtgärdens omfattning och kräver att du anger alla relevanta identitetstyper.
+Om du vill ta bort från alla datauppsättningar väljer du **[!UICONTROL All datasets]**. Det här alternativet ökar åtgärdens omfattning och kräver att du anger den primära identitetstypen för varje datauppsättning som du vill ha som mål.
 
 ![Dialogrutan [!UICONTROL Select dataset] med alternativet [!UICONTROL All datasets] markerat.](../images/ui/record-delete/all-datasets.png)
 
 >[!WARNING]
 >
->Om du väljer **[!UICONTROL All datasets]** utökas åtgärden till alla datauppsättningar i organisationen. Varje datauppsättning kan ha en annan primär identitetstyp. Du måste ange **alla identitetstyper** som krävs för att säkerställa korrekt matchning.
+>Om du väljer **[!UICONTROL All datasets]** utökas åtgärden till alla datauppsättningar i organisationen. Varje datauppsättning kan ha en annan primär identitetstyp. Du måste ange **den primära identitetstypen för varje datamängd** för att säkerställa korrekt matchning.
 >
 >Om någon identitetstyp saknas kan vissa poster hoppas över under borttagningen. Detta kan göra bearbetningen långsam och leda till **partiella resultat**.
 
@@ -72,17 +80,21 @@ Varje datauppsättning i Experience Platform har bara stöd för en primär iden
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
->title="Namnutrymme för identitet"
->abstract="Ett identitetsnamnutrymme är ett attribut som kopplar en post till en konsumentprofil i Experience Platform. Identitetsnamnområdesfältet för en datauppsättning definieras av det schema som datauppsättningen baseras på. I den här kolumnen måste du ange typen (eller namnutrymmet) för postens ID-namnområde, till exempel `email` för e-postadresser och `ecid` för Experience Cloud ID. Mer information finns i användargränssnittshandboken för datalängd."
+>title="Namnutrymme för primär identitet"
+>abstract="Det primära identitetsnamnutrymmet är det attribut som unikt kopplar en post till en konsumentprofil i Experience Platform. Det primära identitetsfältet för en datauppsättning definieras av det schema som datauppsättningen baseras på. I den här kolumnen måste du ange det primära ID-namnutrymmet (till exempel `email` för e-postadresser eller `ecid` för Experience Cloud-ID:n) som matchar datasetens schema. Mer information finns i användargränssnittshandboken för datalängd."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
 >title="Primärt identitetsvärde"
 >abstract="I den här kolumnen måste du ange värdet för postens ID-namnutrymme, som måste motsvara identitetstypen som anges i den vänstra kolumnen. Om identitetsnamnområdestypen är `email` ska värdet vara postens e-postadress. Mer information finns i användargränssnittshandboken för datalängd."
 
-När du tar bort poster måste du ange identitetsinformation så att systemet kan avgöra vilka poster som ska tas bort. För datauppsättningar i Experience Platform tas poster bort baserat på fältet **identity namespace** som definieras av datasetens schema.
+När du tar bort poster måste du ange identitetsinformation så att systemet kan avgöra vilka poster som ska tas bort. För datauppsättningar i Experience Platform tas poster bort baserat på det **primära identitetsfältet** som definieras av datauppsättningens schema.
 
-Precis som alla identitetsfält i Experience Platform består ett identitetsnamnutrymme av två saker: **type** (kallas ibland för ett identitetsnamnutrymme) och **value**. Identitetstypen ger kontext om hur fältet identifierar en post (till exempel en e-postadress). Värdet representerar en posts specifika identitet för den typen (till exempel `jdoe@example.com` för identitetstypen `email`). Vanliga fält som används som identiteter är kontoinformation, enhets-ID och cookie-ID:n.
+>[!NOTE]
+>
+>Även om användargränssnittet tillåter dig att välja ett identitetsnamnutrymme, används endast den **primära identiteten** som är konfigurerad i datauppsättningens schema vid körning. Kontrollera att de identitetsvärden du anger motsvarar datauppsättningens primära identitetsfält.
+
+Precis som alla identitetsfält i Experience Platform består en primär identitet av två saker: **type** (identitetsnamnutrymmet) och **value**. Identitetstypen ger kontext om hur fältet identifierar en post (till exempel en e-postadress). Värdet representerar en posts specifika identitet för den typen (till exempel `jdoe@example.com` för identitetstypen `email`). Vanliga fält som används som primära identiteter är kontoinformation, enhets-ID och cookie-ID:n.
 
 >[!TIP]
 >
@@ -101,7 +113,7 @@ Om du vill överföra en JSON-fil kan du dra och släppa filen till det angivna 
 
 ![Arbetsflödet för att skapa en begäran med valda filer och dra och släpp-gränssnittet för överföring av JSON-filer är markerat.](../images/ui/record-delete/upload-json.png)
 
-JSON-filen måste formateras som en array med objekt, där varje objekt representerar en identitet.
+JSON-filen måste formateras som en array med objekt, där varje objekt representerar ett primärt identitetsvärde för måldatauppsättningen.
 
 ```json
 [
@@ -118,7 +130,7 @@ JSON-filen måste formateras som en array med objekt, där varje objekt represen
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `namespaceCode` | Identitetstypen. |
+| `namespaceCode` | Det primära ID-namnutrymmet för måldatauppsättningen. |
 | `value` | Det primära identitetsvärdet som anges av typen. |
 
 När filen har överförts kan du fortsätta att [skicka begäran](#submit).

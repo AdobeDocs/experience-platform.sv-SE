@@ -3,9 +3,9 @@ title: Spela in ta bort arbetsorder
 description: Lär dig hur du använder slutpunkten /workorder i API:t Data Hygiene för att hantera postborttagningsarbetsorder i Adobe Experience Platform. Den här guiden täcker kvoter, bearbetningstidslinjer och API-användning.
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: f1f37439bd4d77faf1015741e604eee7188c58d7
+source-git-commit: 1d923e6c4a344959176abb30a8757095c711a601
 workflow-type: tm+mt
-source-wordcount: '2440'
+source-wordcount: '2541'
 ht-degree: 0%
 
 ---
@@ -202,6 +202,14 @@ POST /workorder
 >[!NOTE]
 >
 >Du kan bara ta bort poster från datauppsättningar vars associerade XDM-schema definierar en primär identitet eller identitetskarta.
+
+>[!IMPORTANT]
+>
+>Posten för borttagning av arbetsorder fungerar exklusivt på fältet **primär identitet**. Följande begränsningar gäller:
+>
+>- **Sekundära identiteter genomsöks inte.** Om en datauppsättning innehåller flera identitetsfält används bara den primära identiteten för matchning. Det går inte att ange mål för eller ta bort poster baserat på icke-primära identiteter.
+>- **Poster utan en ifylld primär identitet hoppas över.** Om en post inte har några primära ID-metadata ifyllda, kan den inte tas bort.
+>- **Data som har importerats innan identitetskonfigurationen är inte giltiga.** Om det primära identitetsfältet lades till i ett schema efter dataöverföring, kan tidigare importerade poster inte tas bort via arbetsorder för postborttagning.
 
 >[!NOTE]
 >
