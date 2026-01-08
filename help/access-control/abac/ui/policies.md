@@ -54,7 +54,7 @@ Om du vill aktivera **[!UICONTROL Auto-include]** igen använder du växlingskna
 
 ### Hantera sandlådor manuellt {#manually-manage-sandboxes}
 
-När **[!UICONTROL Auto-include]**är inaktiverat kan du lägga till eller ta bort specifika sandlådor manuellt från profilen. Detta ger dig exakt kontroll över vilka sandlådor som tillämpar principens åtkomstkontrollsregler.
+När **[!UICONTROL Auto-include]**&#x200B;är inaktiverat kan du lägga till eller ta bort specifika sandlådor manuellt från profilen. Detta ger dig exakt kontroll över vilka sandlådor som tillämpar principens åtkomstkontrollsregler.
 
 >[!NOTE]
 >
