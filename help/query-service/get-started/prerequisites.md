@@ -21,7 +21,7 @@ Kontrollera att du har:
 - **Nödvändig behörighet**: Ditt användarkonto har åtkomst till frågetjänsten i Experience Platform. Om tjänsten inte är tillgänglig i användargränssnittet läser du [permissions-dokumentationen](../../access-control/home.md#permissions) och kontaktar systemadministratören.
 - **Inläsning av data**: Du har inhämtat data till Experience Platform.
 
-Om du behöver importera data kan du titta i självstudievideon [för datafrågor](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och få en översikt över hur du skapar datauppsättningar, schemamappning, inmatning och validering. Läs översiktsdokumentationen för [frågor](../../ingestion/home.md) om du vill ha mer information och länkar till andra utbildningsresurser.
+Om du behöver importera data kan du titta i självstudievideon [för datafrågor](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och få en översikt över hur du skapar datauppsättningar, schemamappning, inmatning och validering. Läs översiktsdokumentationen för [frågor](../../ingestion/home.md) om du vill ha mer information och länkar till andra utbildningsresurser.
 
 ## Snabbstartbanor
 
