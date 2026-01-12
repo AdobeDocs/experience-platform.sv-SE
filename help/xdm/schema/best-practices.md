@@ -217,7 +217,7 @@ Experience Platform innehåller flera färdiga XDM-schemafältgrupper för datai
 * Adobe Campaign
 * Adobe Target
 
-Du kan till exempel använda fältgruppen [[!UICONTROL Adobe Analytics ExperienceEvent Template] ](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) för att mappa [!DNL Analytics]-specifika fält till dina XDM-scheman. Beroende på vilka Adobe-program du arbetar med bör du använda dessa fältgrupper som tillhandahålls av Adobe i dina scheman.
+Du kan till exempel använda fältgruppen [[!UICONTROL Adobe Analytics ExperienceEvent Template] &#x200B;](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) för att mappa [!DNL Analytics]-specifika fält till dina XDM-scheman. Beroende på vilka Adobe-program du arbetar med bör du använda dessa fältgrupper som tillhandahålls av Adobe i dina scheman.
 
 ![Ett schemadiagram över [!UICONTROL Adobe Analytics ExperienceEvent Template].](../images/best-practices/analytics-field-group.png)
 
