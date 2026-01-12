@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 7521273c0ea4383b7141e9d7a82953257ff18c34
+source-git-commit: 7a763a978443c0a074e6368448320056759f72bb
 workflow-type: tm+mt
-source-wordcount: '3223'
+source-wordcount: '3429'
 ht-degree: 0%
 
 ---
@@ -83,10 +83,10 @@ Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det 
 
 | Kund-ID | Typ | Produkt-ID | Kvantitet | Tidsstämpel |
 | --- | --- | --- | --- | --- |
-| 1234567 | Lägg till | 275098 | 2 | 1 okt 10:32 |
-| 1234567 | Ta bort | 275098 | 1 | 1 okt 10:33 |
-| 1234567 | Lägg till | 486502 | 1 | 1 okt 10:41 |
-| 1234567 | Lägg till | 910482 | 5 | 3 okt 2:15 PM |
+| 1234567 | Lägg till | 275098 | 2 | 1 okt, 10:32 AM |
+| 1234567 | Ta bort | 275098 | 1 | 1 okt, 10:33 AM |
+| 1234567 | Lägg till | 486502 | 1 | 1 okt, 10:41 AM |
+| 1234567 | Lägg till | 910482 | 5 | 3 okt. 2:15 PM |
 
 {style="table-layout:auto"}
 
@@ -217,7 +217,7 @@ Experience Platform innehåller flera färdiga XDM-schemafältgrupper för datai
 * Adobe Campaign
 * Adobe Target
 
-Du kan till exempel använda fältgruppen [[!UICONTROL Adobe Analytics ExperienceEvent Template] &#x200B;](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) för att mappa [!DNL Analytics]-specifika fält till dina XDM-scheman. Beroende på vilka Adobe-program du arbetar med bör du använda dessa fältgrupper som tillhandahålls av Adobe i dina scheman.
+Du kan till exempel använda fältgruppen [[!UICONTROL Adobe Analytics ExperienceEvent Template] ](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) för att mappa [!DNL Analytics]-specifika fält till dina XDM-scheman. Beroende på vilka Adobe-program du arbetar med bör du använda dessa fältgrupper som tillhandahålls av Adobe i dina scheman.
 
 ![Ett schemadiagram över [!UICONTROL Adobe Analytics ExperienceEvent Template].](../images/best-practices/analytics-field-group.png)
 
@@ -231,35 +231,55 @@ För Adobe Analytics är ECID standardidentitet. Om ett ECID-värde inte anges a
 
 ## Datavalideringsfält {#data-validation-fields}
 
-När du importerar data till datavjön framtvingas datavalidering endast för begränsade fält. Om du vill validera ett visst fält under en gruppinmatning måste du markera fältet som begränsat i XDM-schemat. För att förhindra att felaktiga data importeras till Experience Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman.
+När du importerar data till datavjön framtvingas datavalidering endast för begränsade fält. Om du vill validera ett visst fält vid gruppinmatning måste du markera fältet som begränsat i XDM-schemat. För att förhindra att felaktiga data kommer in i Experience Platform definierar du dina valideringskrav när du skapar dina scheman.
 
 >[!IMPORTANT]
 >
 >Validering gäller inte för kapslade kolumner. Om fältformatet finns i en arraykolumn valideras inte data.
 
-Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemaredigeraren för att öppna sidofältet **[!UICONTROL Field properties]**. I dokumentationen om [typspecifika fältegenskaper](../ui/fields/overview.md#type-specific-properties) finns exakta beskrivningar av de tillgängliga fälten.
+Om du vill ange begränsningar för ett fält markerar du fältet i Schemaredigeraren för att öppna sidofältet **[!UICONTROL Field properties]**. I dokumentationen om [typspecifika fältegenskaper](../ui/fields/overview.md#type-specific-properties) finns exakta beskrivningar av de tillgängliga fälten.
 
 ![Schemaredigeraren med begränsningsfälten markerade i sidofältet [!UICONTROL Field properties].](../images/best-practices/data-validation-fields.png)
 
 ### Tips för att bevara dataintegriteten {#data-integrity-tips}
 
-Följande är en samling förslag som bevarar dataintegriteten när du skapar ett schema.
+Följande förslag hjälper dig att upprätthålla dataintegriteten när du skapar ett schema.
 
 * **Överväg primära identiteter**: För Adobe-produkter som SDK, SDK, Adobe Analytics och Adobe Journey Optimizer fungerar fältet `identityMap` ofta som primär identitet. Undvik att ange ytterligare fält som primära identiteter för det schemat.
 * **Kontrollera att `_id` inte används som en identitet**: Fältet `_id` i Experience Event-scheman kan inte användas som en identitet eftersom det är avsett för postidentitet.
 * **Ange längdbegränsningar**: Det är bäst att ange minsta och högsta längd för fält som markerats som identiteter. En varning utlöses om du försöker tilldela ett anpassat namnutrymme till ett identitetsfält utan att uppfylla begränsningarna för minsta och högsta längd. Dessa begränsningar bidrar till att upprätthålla enhetlighet och datakvalitet.
-* **Använd mönster för konsekventa värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda inställningen **[!UICONTROL Pattern]** för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.
+* **Använd mönster för konsekventa värden**: Om dina identitetsvärden följer ett specifikt mönster använder du inställningen **[!UICONTROL Pattern]** för att framtvinga begränsningar. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.
 * **Begränsa eVars i analysscheman**: Vanligtvis ska ett analysschema endast ha en eVar som är angiven som identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.
 * **Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer. Om du markerar ett icke-unikt fält som en identitet kan det orsaka oönskad profilkomprimering.
 * **Verifiera minsta stränglängd**: Alla strängfält måste vara minst ett tecken långa eftersom strängvärden aldrig får vara tomma. Null-värden för fält som inte är obligatoriska tillåts. Nya strängfält får som standard en minsta längd på ett.
+
+## Hantera profilaktiverade scheman {#managing-profile-enabled-schemas}
+
+I det här avsnittet beskrivs hur du hanterar scheman som redan har aktiverats för kundprofilen i realtid. När ett schema har aktiverats kan du inte inaktivera eller ta bort det. Du måste bestämma hur du ska förhindra ytterligare användning och hur du ska hantera datauppsättningar som du inte kan ta bort.
+
+När ett schema har aktiverats för profilen kan konfigurationen inte ångras. Om ett schema inte längre ska användas byter du namn på det för att förtydliga dess status och skapa ett ersättningsschema med rätt struktur och identitetskonfiguration. Detta förhindrar oavsiktlig återanvändning av det inaktuella schemat när användare skapar nya datauppsättningar eller konfigurerar arbetsflöden för hämtning.
+
+Systemdatauppsättningar visas ibland tillsammans med scheman som stöder kundprofiler i realtid. Du kan inte ta bort systemdatauppsättningar, även om det associerade schemat är inaktuellt. För att förhindra oavsiktlig användning byter du namn på det inaktuella profilaktiverade schemat och bekräftar att inga arbetsflöden för inmatning pekar på den systemdatauppsättning som finns kvar.
+
+Använd följande metodtips för att förhindra oavsiktlig återanvändning av inaktuella profilaktiverade scheman:
+
+* Använd en tydlig namnkonvention när du ersätter ett schema. Inkludera etiketter som &quot;Inaktuellt&quot;, &quot;Använd inte&quot; eller en versionstagg.
+* Stoppa inmatning av data i datauppsättningar baserat på det schema som du vill ta ur bruk.
+* Skapa ett nytt schema med rätt struktur, identitetskonfiguration och namnmönster.
+* Granska systemdatauppsättningar som inte kan tas bort och verifiera att inga arbetsflöden för inmatning refererar till dem.
+* Dokumentera ändringen internt så att andra användare förstår varför schemat är inaktuellt.
+
+>[!TIP]
+>
+>Mer information om profilaktiverade scheman och relaterade begränsningar finns i [XDM-felsökningsguiden](../troubleshooting-guide.md#delete-profile-enabled).
 
 ## Nästa steg
 
 Det här dokumentet innehåller allmänna riktlinjer och bästa praxis för utformning av din datamodell för Experience Platform. Sammanfattning:
 
-* Använd en uppifrån och ned-metod genom att sortera dina datatabeller i profil-, uppslags- och händelsekategorier innan du skapar dina scheman.
-* Det finns ofta flera strategier och alternativ när det gäller att utforma scheman för olika syften.
-* Datamodellen bör stödja era affärsanvändningsfall, som segmentering eller kundreseanalys.
-* Gör dina scheman så enkla som möjligt och lägg bara till nya fält när det är absolut nödvändigt.
+* Sortera datatabellerna i profil-, uppslags- och händelsekategorier innan du skapar dina scheman.
+* Utvärdera olika metoder när du utformar scheman för olika användningsområden.
+* Se till att datamodellen stöder era mål för segmentering eller kundresor.
+* Använd scheman så enkelt som möjligt. Lägg bara till nya fält när det behövs.
 
-När du är klar kan du gå till självstudiekursen [Skapa ett schema i användargränssnittet](../tutorials/create-schema-ui.md) för steg-instruktioner om hur du skapar ett schema, tilldelar lämplig klass för entiteten och lägger till fält som data ska mappas till.
+När du är klar kan du gå till självstudiekursen om att [skapa ett schema i användargränssnittet](../tutorials/create-schema-ui.md) för steg-instruktioner om schemaskapande, klasstilldelning och fältmappning.
