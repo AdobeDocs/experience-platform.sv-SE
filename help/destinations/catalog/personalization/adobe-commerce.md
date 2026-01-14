@@ -2,9 +2,9 @@
 title: Adobe Commerce målanslutning
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbinnehåll och kampanjer, anpassade till kundgrupper som byggts och hanteras inom Real-Time CDP.
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: fb8a17b8ea2ba1ddd64ceee7544f17058b43a943
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '668'
 ht-degree: 0%
 
 ---
@@ -22,12 +22,12 @@ Den här kontakten är tillgänglig i målkatalogen för kunder som har köpt Re
 Om du vill använda den här målanslutningen måste du ha åtkomst till:
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
-- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). Med tillgång till utvecklarkonsolen kan du visa tjänstkonto- och autentiseringsuppgifter-information som behövs för att [slutföra konfigurationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=sv-SE#configure-the-extension) av tillägget i Adobe Commerce.
-- [Adobe Commerce Cloud version 2.4.4 eller senare](https://business.adobe.com/se/products/magento/magento-commerce.html)
+- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). Med tillgång till utvecklarkonsolen kan du visa tjänstkonto- och autentiseringsuppgifter-information som behövs för att [slutföra konfigurationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension) av tillägget i Adobe Commerce.
+- [Adobe Commerce version 2.4.4 eller senare](https://business.adobe.com/products/commerce.html)
 
 I Experience Platform skapar du följande:
 
-- [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html?lang=sv-SE) om hur du skapar ett schema som innehåller Commerce-specifika fältgrupper.
+- [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html) om hur du skapar ett schema som innehåller Commerce-specifika fältgrupper.
 - [Datauppsättning](../../../catalog/datasets/user-guide.md#create). En datauppsättning är en lagrings- och hanteringskonstruktion för en datainsamling. Du skapar den här datauppsättningen från schemat som du skapade ovan.
 - [Datastream](../../../datastreams/overview.md#create). ID som gör att data kan flöda från Adobe Experience Platform till andra Adobe DX-produkter. Detta ID måste kopplas till en specifik webbplats i din specifika Adobe Commerce-instans. När du skapar den här dataströmmen anger du XDM-schemat som du skapade ovan.
 
@@ -41,7 +41,7 @@ När du har slutfört kraven ansluter du till målet [!DNL Commerce].
 
 Så här ansluter du till målet [!DNL Adobe Commerce]:
 
-1. Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [Experience Platform-gränssnittet](https://experience.adobe.com/platform/).
+1. Gå till [ > ](https://experience.adobe.com/platform/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 1. Välj **[!UICONTROL Personalization]**.
 1. Markera Adobe Commerce-målet för att markera det och välj sedan **[!UICONTROL Set up]**.
 1. Följ stegen som beskrivs i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
@@ -71,7 +71,7 @@ Läs [Aktivera profiler och målgrupper för att profilera mål för begäran](.
 
 ## Nästa steg i [!DNL Adobe Commerce]
 
-Nu när du har konfigurerat målet [!DNL Commerce] i Experience Platform måste du installera tillägget [!DNL Audience Activation] i [!DNL Commerce] och konfigurera [!DNL Commerce Admin] så att de Real-Time CDP-målgrupper du har skapat importeras. Mer information finns i [[!DNL Commerce] dokumentationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html?lang=sv-SE).
+Nu när du har konfigurerat målet [!DNL Commerce] i Experience Platform måste du installera tillägget [!DNL Audience Activation] i [!DNL Commerce] och konfigurera [!DNL Commerce Admin] så att de Real-Time CDP-målgrupper du har skapat importeras. Mer information finns i [[!DNL Commerce] dokumentationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html).
 
 ## Validera målgruppsaktivering i Commerce {#exported-data}
 
