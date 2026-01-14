@@ -2,9 +2,9 @@
 title: B2B-namnutrymmen och scheman
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
+source-git-commit: 5eeb0397ddc96a224919a776f94058ae3a539b69
 workflow-type: tm+mt
-source-wordcount: '1500'
+source-wordcount: '1538'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Du måste ha tillgång till [Adobe Real-Time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md) för att dina B2B-scheman ska vara kvalificerade i [kundprofilen i realtid](../../../../profile/home.md).
+>- Du måste ha tillgång till [Adobe Real-Time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md) för att dina B2B-scheman ska vara kvalificerade i [kundprofilen i realtid](../../../../profile/home.md).
+>
+>- Från och med januari 2026 har Real-Time CDP B2B edition inte längre stöd för **icke-standard**-relationer mellan B2B-enheter. Därför bör du uppdatera dina B2B-enheter så att de använder standardrelationerna som beskrivs i [B2B-namnutrymmen och schemaguiden](../../../../rtcdp/schemas/b2b.md).
 
 >[!NOTE]
 >
