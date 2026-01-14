@@ -41,7 +41,7 @@ När du har slutfört kraven ansluter du till målet [!DNL Commerce].
 
 Så här ansluter du till målet [!DNL Adobe Commerce]:
 
-1. Gå till [ > ](https://experience.adobe.com/platform/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+1. Gå till [&#x200B; > &#x200B;](https://experience.adobe.com/platform/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 1. Välj **[!UICONTROL Personalization]**.
 1. Markera Adobe Commerce-målet för att markera det och välj sedan **[!UICONTROL Set up]**.
 1. Följ stegen som beskrivs i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
