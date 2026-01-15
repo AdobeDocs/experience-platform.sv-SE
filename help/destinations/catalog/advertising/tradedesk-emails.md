@@ -3,9 +3,9 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: b9713d5155f89ee895d9fb623088eda77b931d89
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1140'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
@@ -101,6 +101,11 @@ Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skap
 När du ansluter till målet är det helt valfritt att ange en datastyrningsprincip. Mer information finns i Experience Platform [datastyrningsöversikt](/help/data-governance/policies/overview.md).
 
 ## Aktivera målgrupper till det här målet {#activate}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_required_mappings_ttdg"
+>title="Förkonfigurerade mappningsuppsättningar"
+>abstract="Vi har förkonfigurerat dessa fyra mappningsuppsättningar åt dig. När du aktiverar data till Trade Desk behöver inte nödvändigtvis alla fyra identiteterna finnas i profilerna för de profiler som är kvalificerade för de aktiverade målgrupperna, eftersom målplatsen fungerar med någon av de målidentiteter som visas här."
 
 >[!IMPORTANT]
 > 
@@ -145,7 +150,7 @@ Om du vill verifiera att data har exporterats korrekt från Experience Platform 
 
 1. Välj först fliken **[!UICONTROL Data]** och granska avsnittet **[!UICONTROL First-Party]**.
 2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]**, hittar du **[!UICONTROL Adobe 1PD Tile]**.
-3. Klicka på rutan&#x200B;**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
+3. Klicka på rutan**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
 4. Segment-ID:t för Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
 
 ## Dataanvändning och styrning {#data-usage-governance}
