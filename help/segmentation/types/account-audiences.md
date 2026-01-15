@@ -1,12 +1,12 @@
 ---
 title: Målgrupper
 description: Lär dig hur du skapar och använder kontomålgrupper för att rikta in kontoprofiler på efterföljande destinationer.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 1e508ec11b6d371524c87180a41e05ffbacc2798
+source-git-commit: 6cb5afb78502c34e0eba99af29d7a67119b7e05a
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1461'
 ht-degree: 0%
 
 ---
@@ -60,10 +60,6 @@ Välj **[!UICONTROL Create audience]** på sidan [!UICONTROL Browse] om du vill 
 Segmentbyggaren visas. Kontoattributen och målgrupperna visas i det vänstra navigeringsfältet. På fliken [!UICONTROL Attributes] kan du lägga till både Experience-Platform-skapade och anpassade attribut.
 
 ![Segmentbyggaren visas. Observera att bara attributen och målgrupperna visas.](../images/types/account/segment-builder.png)
-
-När du skapar kontomålgrupper bör du tänka på att händelser listas under **[!UICONTROL People]**, i stället för att vara deras egen flik, eftersom dessa attribut associeras med personer.
-
-![Platsen där händelser ska hittas, som finns i mappen [!UICONTROL People], markeras.](../images/types/account/attributes.png)
 
 Under fliken [!UICONTROL Audiences] kan du lägga till tidigare skapade personbaserade målgrupper som du kan bygga vidare på när du skapar en egen målgrupp.
 
@@ -198,7 +194,7 @@ Följande avsnitt innehåller ytterligare information om kontomaterial.
 >title="Begränsningsöverträdelse"
 >abstract="Publiken bryter mot en begränsning. Läs det länkade dokumentet för mer information."
 
-När du använder kontomålgrupper måste målgruppen **&#x200B;**&#x200B;uppfylla följande begränsningar:
+När du använder kontomålgrupper måste målgruppen **** uppfylla följande begränsningar:
 
 - Det maximala djupet för kapslade behållare är **5**.
    - Det innebär att du **inte kan** ha fler än fem kapslade behållare när du skapar målgruppen.
@@ -208,8 +204,8 @@ När du använder kontomålgrupper måste målgruppen **&#x200B;**&#x200B;uppfyl
    - En korsenhet är när du ändrar mellan olika enheter inom målgruppen. Du kan till exempel gå från ett konto till en person till en marknadsföringslista.
 - Det maximala antalet värden som kan kontrolleras för ett enskilt fält är **50**.
    - Om du till exempel har fältet&quot;Ortnamn&quot; kan du kontrollera det värdet mot 50 stadsnamn.
-- Kontomålgrupper **kan inte** använda sekventiella händelser.
 - Kontomålgrupper **kan inte** använda kartor.
+- Kontomålgrupper **kan inte** använda händelser.
 - Det maximala djupet för kapslade arrayer är **5**.
 - Det högsta antalet kapslade objekt är **10**.
 
