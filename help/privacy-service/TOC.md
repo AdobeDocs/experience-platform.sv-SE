@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Privacy Service
 user-guide-description: Hantera förfrågningar om kunddata för att följa juridiska integritetsregler som GDPR och CCPA.
 feature: Privacy
 role: User,Admin
-source-git-commit: 306f7fcd09f395895fde241b668c41a2479a8d2d
+source-git-commit: bc180437c42ab2eea946e1a4d6d9dbd77e0896c8
 workflow-type: tm+mt
-source-wordcount: '92'
-ht-degree: 36%
+source-wordcount: '94'
+ht-degree: 38%
 
 ---
 
@@ -26,6 +26,7 @@ ht-degree: 36%
    * [Sekretessjobb](./api/privacy-jobs.md)
    * [Godkännande](./api/consent.md)
    * [Innehåll](./api/content.md)
+   * [Felkoder](./api/error-codes.md)
    * [Bilaga](./api/appendix.md)
 * Privacy Service UI {#ui}
    * [Översikt](./ui/overview.md)
