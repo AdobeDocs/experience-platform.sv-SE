@@ -89,7 +89,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
@@ -150,7 +150,7 @@ Om du vill verifiera att data har exporterats korrekt från Experience Platform 
 
 1. Välj först fliken **[!UICONTROL Data]** och granska avsnittet **[!UICONTROL First-Party]**.
 2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]**, hittar du **[!UICONTROL Adobe 1PD Tile]**.
-3. Klicka på rutan&#x200B;**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
+3. Klicka på rutan**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
 4. Segment-ID:t för Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
 
 ## Dataanvändning och styrning {#data-usage-governance}
