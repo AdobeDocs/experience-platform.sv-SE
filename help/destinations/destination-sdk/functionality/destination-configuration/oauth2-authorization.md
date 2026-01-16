@@ -2,9 +2,9 @@
 description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destination SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 title: OAuth 2-auktorisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 0cde918c693d06d735397aad721fd3cd5c4e760e
+source-git-commit: 720f599810d119ac4997d24d400199d8efe087c2
 workflow-type: tm+mt
-source-wordcount: '2182'
+source-wordcount: '2273'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,10 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
       "refreshTokenUrl": "https://api.moviestar.com/OAuth/refresh_token",
       "clientId": "Experience-Platform-client-id",
       "clientSecret": "Experience-Platform-client-secret",
-      "scope": ["read", "write"]
+      "scope": ["read", "write"],
+      "options": {
+          "useBasicAuth": true 
+      }
     }
   ]
 //...
@@ -126,6 +129,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 | `clientId` | Sträng | Det klient-ID som systemet tilldelar till Adobe Experience Platform. |
 | `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar Adobe Experience Platform. |
 | `scope` | Lista över strängar | *Valfritt*. Ange omfattningen för vad åtkomsttoken tillåter Experience Platform att utföra på dina resurser. Exempel: &quot;read, write&quot;. |
+| `options.useBasicAuth` | Boolean | *Valfritt*. Ett booleskt värde som styr hur klientautentiseringsuppgifterna (klient-ID och klienthemlighet) skickas till OAuth-providerns tokenslutpunkt när en åtkomsttoken byts ut mot en auktoriseringskod. <ul><li>Om värdet är `false` eller odefinierat skickas autentiseringsuppgifterna som `client_id` - och `client_secret` -parametrar i POST-begärandetexten (standardbeteende).</li><li>Om den här parametern är inställd på `true` skickas autentiseringsuppgifterna i HTTP-huvudet `Authorization` med formatet Grundläggande autentisering: `Authorization: Basic base64(clientID:clientSecret)`.</li></ul> Ange `useBasicAuth` till `true` när din OAuth-leverantör kräver att klientautentiseringsuppgifter skickas i huvudet `Authorization` i stället för i begärandetexten. |
 
 {style="table-layout:auto"}
 
