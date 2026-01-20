@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: de95e9a51c979e9249ddf9ceb262fc521d2b38f4
+source-git-commit: acb8303673c3271794dcda87b149b473328a7a21
 workflow-type: tm+mt
-source-wordcount: '1007'
-ht-degree: 30%
+source-wordcount: '1150'
+ht-degree: 24%
 
 ---
 
@@ -21,56 +21,76 @@ ht-degree: 30%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
-**Releasedatum: oktober 2025**
+**Releasedatum: januari 2026**
 
-Nya funktioner och uppdateringar i Adobe Experience Platform:
+Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Aviseringar](#alerts)
-- [Mål &#x200B;](#destinations)
+- [Agent Orchestrator](#agent-orchestrator)
+- [Mål](#destinations)
+- [Kundprofil i realtid](#real-time-customer-profile)
+- [Scheman](#schemas)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
-## Aviseringar {#alerts}
+## Agent Orchestrator {#agent-orchestrator}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Experience Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Agent Orchestrator kan ni bygga och driftsätta AI-baserade agenter som kan automatisera arbetsflöden och interagera med kunder över flera kanaler.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Varning om felfrekvens för destinationen | En ny avisering har lagts till för mål: **Målets felfrekvens överskrider tröskelvärdet**. Den här varningen meddelar dig när antalet misslyckade poster under dataaktiveringen har överskridit det tillåtna tröskelvärdet, vilket gör att du snabbt kan åtgärda aktiveringsproblem. |
+| Trial motion for Agent Orchestrator | Agent Orchestrator erbjuder nu en testversion som gör att kunderna kan utforska och testa tjänsten innan de genomför ett fullständigt köp. Med detta alternativ kan man prova-på-före-du-köpa utvärdera Agent Orchestrator-funktioner, inklusive kunskaper och orkestreringsfunktioner, i sin egen miljö. Testversionen ger en praktisk erfarenhet av att bygga AI-baserade agenter och förstå hur de kan integreras i befintliga arbetsflöden. |
 
 {style="table-layout:auto"}
 
-Mer information om aviseringar finns i avsnittet [[!DNL Observability Insights] översikt](../observability/home.md).
+Mer information finns i [Agent Orchestrator-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator).
 
 ## Mål {#destinations}
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya eller uppdaterade destinationer**
-
-| Mål | Beskrivning |
-| --- | --- |
-| [!DNL AdForm] | Använd det här målet för att skicka Adobe Real-Time CDP-målgrupper till [!DNL AdForm] för aktivering baserat på Experience Cloud ID (ECID) och [!DNL AdForm]s ID Fusion. ID Fusion för [!DNL AdForm] är en ID-matchningstjänst som gör att du kan aktivera dina första målgrupper baserat på Experience Cloud ID (ECID). |
-| [!DNL Amazon Ads] | Vi har lagt till ytterligare stöd för personliga identifierare som `firstName`, `lastName`, `street`, `city`, `state`, `zip` och `country`. Genom att mappa dessa fält som målidentiteter kan ni förbättra målgruppernas matchningsfrekvens. |
-| [!DNL Snowflake Batch] (begränsad tillgänglighet) | Skapa en [!DNL Snowflake]-dataresurs live för att ta emot dagliga målgruppsuppdateringar direkt som delade tabeller till ditt konto. Den här integreringen är för närvarande tillgänglig för kundorganisationer som etablerats i VA7-regionen. |
-| [!DNL Snowflake Streaming] (begränsad tillgänglighet) | Skapa en [!DNL Snowflake]-dataresurs live för att ta emot uppdateringar för direktuppspelad målgrupp direkt som delade tabeller till ditt konto. Den här integreringen är för närvarande tillgänglig för kundorganisationer som etablerats i VA7-regionen. |
-
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för [!DNL AES256]-kryptering på serversidan i [!DNL Amazon S3] mål | [!DNL Amazon S3] mål har nu stöd för [!DNL AES256]-serversideskryptering vilket ger förbättrad säkerhet för exporterade data. Du kan konfigurera den här krypteringsmetoden när du konfigurerar eller uppdaterar [!DNL Amazon S3]-målanslutningar och ser till att dina data krypteras i vila med [!DNL AES256] -krypteringsalgoritmer som följer branschstandard. Mer information finns i [[!DNL Amazon] dokumentationen](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html). |
-| [Flera nya mål som stöder övervakning på målgruppsnivå](../dataflows/ui/monitor-destinations.md#audience-level-view) | Följande mål har nu stöd för övervakning på målgruppsnivå: <ul><li>[!DNL Airship Tags]</li><li>(API) [!DNL Salesforce Marketing Cloud]</li><li>[!DNL Marketo Engage]</li><li>[!DNL Microsoft Bing]</li><li>(V1) [!DNL Pega CDH Realtime Audience]</li><li>(V2) [!DNL Pega CDH Realtime Audience]</li><li>Kontoengagemang för [!DNL Salesforce Marketing Cloud]</li><li>[!DNL The Trade Desk]</li></ul> |
-| Åtgärda säkerhetsutkast för datauppsättningsexport | En korrigering har implementerats för datauppsättningens exportskyddsutkast. Tidigare behandlades vissa datauppsättningar som innehöll en tidsstämpelkolumn men _inte_ baserat på XDM Experience Events-schemat felaktigt som Experience Events-datauppsättningar, vilket begränsar exporten till ett 365-dagars uppslagsfönster. Det dokumenterade 365-dagars arbetsskyddsutkastet gäller nu enbart för Experience Events-datauppsättningar. Datamängder som använder något annat schema än XDM Experience Events-schemat styrs nu av 10 miljarder poster som skyddsprotokoll. Vissa kunder kan se ett ökat exportnummer för datauppsättningar som felaktigt föll under 365-dagars uppslagsfönstret. På så sätt kan du exportera datauppsättningar för prediktiva arbetsflöden som har ett långt uppslagsfönster. Mer information finns i [DATAuppsättningens exportskyddsutkast](../destinations/guardrails.md#dataset-exports). |
-| Förbättrad rapportering på målgruppsnivå för företagsdestinationer | Förbättrad rapporteringslogik på målgruppsnivå för företagsdestinationer. Efter den här versionen kommer kunderna att se mer korrekta målgruppsrapporteringsnummer som endast innehåller målgrupper som är relevanta för det valda målet. Denna övervakningsjustering säkerställer att rapporteringen endast omfattar målgrupper som kartlagts i dataflödet, vilket ger tydligare insikter i den faktiska dataaktiveringen. Detta påverkar inte mängden data som aktiveras - det är endast en övervakningsförbättring som förbättrar rapporteringsnoggrannheten. |
+| Skyddsgränsen för Adobe Target-destinationen har uppdaterats | Det maximala antalet målgrupper som kan mappas till ett enda Adobe Target-mål har ökats från 50 till 250. På så sätt anpassas Adobe Target till standardmålgruppsgränsen för andra destinationer, vilket ger större flexibilitet i arbetsflödena för målgruppsaktivering. Kunderna kan nu aktivera fler målgrupper för Adobe Target-destinationer utan att behöva skapa flera dataflöden. |
+
+{style="table-layout:auto"}
 
 Mer information finns i [översikten över destinationer](../destinations/home.md).
+
+## Kundprofil i realtid {#real-time-customer-profile}
+
+Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Tvingande strömningskapacitet | Experience Platform tillämpar nu strömningskapacitet för kundprofil och identitetstjänst i realtid. När kunderna överträffar sin avtalade strömningskapacitet kommer data att ställas i kö och behandlas på ett första-i-första-ut-sätt. Detta garanterar förutsägbara systemprestanda och förhindrar att kapacitetsöverträdelser påverkar dataöverföringskvaliteten. Viktigt: Direktuppspelning kommer inte att vara tillgängligt i datasjön när kapaciteten överskrids, detta gäller inte för kunder med Adobe Journey Optimizer-licenser och data som köas kommer att behandlas sekventiellt när kapaciteten blir tillgänglig. |
+| API-åtkomstborttagning för Real-Time CDP Prime | API-åtkomst för upplevelsehändelser är nu föråldrat för alla Real-Time CDP Prime-kunder. Den här ändringen påverkar möjligheten att fråga upplevelsehändelser direkt via API. Real-Time CDP Ultimate-kunder kan begära ett undantag genom en formell undantagsprocess för att aktivera API-åtkomst för upplevelsehändelser om det behövs för deras användningsfall. Den här borttagningen hjälper till att optimera systemprestanda och anpassas till bästa praxis för dataåtkomstmönster. |
+| Kör bildskärmsdataflöde | Nu kan du övervaka dataflödets förlopp och beredskap i Profil. |
+
+{style="table-layout:auto"}
+
+Mer information finns i [[!DNL Real-Time Customer Profile] översikten](../profile/home.md).
+
+## Scheman {#schemas}
+
+Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Scheman består av en basklass och noll eller flera schemafältgrupper.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Modernisering av schemalagret med sökning, filter, taggar och mappar | Sidan för att bläddra i scheman har moderniserats för att ge bättre funktioner för att ordna och identifiera scheman. De nya funktionerna är bland annat avancerade sök- och filtreringsalternativ, stöd för användargenererade taggar och mappar för att ordna scheman och textbundna åtgärder för att effektivisera arbetsflödena. Viktiga förbättringar är: uppdaterade kolumner (Namn, Klass, Datamängder, Identiteter, Relationer, Aktivera för profil, Beteende, Schematyp, Taggar, Skapad den, Senast ändrad), avancerade filter (Visa profiler, Schematyp, Klass, Har tagg, Skapad av, Ändringsdatum, Har primär identitet, Har relation, Primär identitetsnamnrymd), textbundna åtgärder (Redigera, Ta bort, Använd etiketter), Skapa datauppsättning för icke-relationella scheman, Hantera taggar, Flytta till mapp, Lägg till i paket, Kopiera JSON-struktur, Hämta exempelfil) och möjligheten att ordna scheman med hjälp av taggar och mappar. De här förbättringarna ger omfattande insyn i schemaresurser och möjliggör mer effektiv schemahantering på sandlådenivå. |
+
+Mer information finns i [[!DNL Schemas] översikten](../xdm/home.md).
 
 ## Segmenteringstjänst {#segmentation-service}
 
@@ -81,6 +101,7 @@ Mer information finns i [översikten över destinationer](../destinations/home.m
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Övervakning av strömningssegmentering | Realtidsövervakning för direktuppspelningssegmentering ger transparens vad gäller utvärderingsfrekvens, fördröjning och datakvalitetsstatistik på sandbox-, dataset- och målgruppsnivå. Detta stöder förebyggande varningar och åtgärdbara insikter som hjälper datatekniker att identifiera kapacitetsöverträdelser och problem med inmatning. Övervakningsmätningar inkluderar utvärderingshastighet, fördröjning av P95-intag samt mottagna, utvärderade, misslyckade och hoppade över poster. Funktioner för visa-för-data och visa-för-målgrupp ger omfattande insyn i nya profiler som är kvalificerade och diskvalificerade. |
+| TTL-uppdatering för extern målgrupp | Externa målgrupper (t.ex. CSV-överföringar) har nu stöd för en tvingad uppdateringsfunktion för TTL-inställningar (Time-to-Live). Med den här funktionen kan användare uppdatera TTL-förfallotiden manuellt för externa målgrupper, vilket ger större kontroll över hanteringen av målgruppens livscykler. Detta är särskilt användbart för målgrupper som måste stanna kvar efter den inledande TTL-perioden eller som behöver aktiveras på nytt utan att överföra data på nytt. |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../segmentation/home.md).
 
@@ -92,13 +113,8 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Källa | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [!DNL Talon.one]-källor för lojalitetsdata | Använd [!DNL Talon.One]-källorna för att importera grupper och strömma lojalitetsdata till Experience Platform. Kopplingen stöder strömning av profildata, transaktionsdata och lojalitetsdata, inklusive intjänade poäng, inlösta poäng, utgångna poäng samt skiktdata. |
-
-**Uppdaterade källor**
-
-| Källa | Beskrivning |
-| --- | --- |
-| Allmän tillgänglighet för källan [!DNL Google Ads] (endast API) | API-versionen av [!DNL Google Ads]-källan är nu i allmän tillgänglighet. API-dokumentationen har uppdaterats för att återspegla att den senaste versionen nu är `v21`, och Experience Platform stöder alla versioner v19 och senare. Användargränssnittsversionen finns kvar i betaversionen och stöder endast engångsbruk. Använd API-vägen om du vill använda inkrementell datainhämtning. |
-| Stöd för [!DNL Azure Event Hubs] virtuella nätverk | Adobe har nu uttryckligen stöd för virtuella nätverksanslutningar till Azure Event Hubs, vilket möjliggör dataöverföring över privata nätverk snarare än offentliga nätverk. Kunderna kan tillåtslista Experience Platform VNet för att dirigera Event Hubs-trafik privat via Azure privata stamnät, vilket ger förbättrad säkerhet och regelefterlevnad för arbetsflöden för dataöverföringar. |
+| [!DNL Oracle Eloqua] V2-källa | En ny [!DNL Oracle Eloqua]-källkoppling är nu tillgänglig och ersätter den inaktuella kopplingen. Den här uppdaterade anslutningen ger förbättrad funktionalitet och förbättrad tillförlitlighet vid inmatning av data från [!DNL Oracle Eloqua] till Experience Platform. Kunder som använder den befintliga anslutningen bör migrera till den nya implementeringen eftersom befintliga anslutningar inte längre fungerar. Den nya kopplingen stöder alla installations- och konfigurationssteg som behövs för att ansluta till [!DNL Oracle Eloqua] och data för automatiserad import. |
+| [!DNL Salesforce Marketing Cloud] V2-källa | En ny [!DNL Salesforce Marketing Cloud]-källkoppling är nu tillgänglig och ersätter den inaktuella kopplingen. Den här uppdaterade anslutningen ger bättre prestanda och ytterligare funktioner för inmatning av data från [!DNL Salesforce Marketing Cloud] till Experience Platform. Kunder som använder den befintliga kopplingen bör gå över till den nya implementeringen. Den nya kopplingen innehåller omfattande konfigurationsinstruktioner för anslutning till [!DNL Salesforce Marketing Cloud] och inmatning av automatiserade marknadsföringsdata. |
 
 Mer information finns i [översikten över källor](../sources/home.md).
+
