@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: acb8303673c3271794dcda87b149b473328a7a21
+source-git-commit: d401707e263f09ccd8575f02a71d7e74899e02db
 workflow-type: tm+mt
-source-wordcount: '1150'
-ht-degree: 24%
+source-wordcount: '1395'
+ht-degree: 20%
 
 ---
 
@@ -21,8 +21,8 @@ ht-degree: 24%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: januari 2026**
@@ -54,11 +54,24 @@ Mer information finns i [Agent Orchestrator-dokumentationen](https://experiencel
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
+**Nya eller uppdaterade destinationer**
+
+| Mål | Beskrivning |
+| --- | --- |
+| Kevel-destinationskontakt är nu tillgänglig | [[!DNL Kevel]](https://www.kevel.com/) innehåller den AI-aktiverade tekniken och expertvägledningen som hjälper innovativa handelsledare att starta, skala och lyckas inom detaljhandelsmedia. Retail Media Cloud för [!DNL Kevel] har funktioner för riktade, hänförliga och anpassningsbara annonseringsformat för annonsering på plats och utanför webbplatsen. |
+| Målkopplingen för Index Exchange är nu tillgänglig | [!DNL Index] är en global plattform för annonsleveranser som hjälper mediekonstruktörer att maximera värdet av sitt innehåll på alla skärmar. Med över 20 års branschledarskap knyter [!DNL Index] samman världens största varumärken med förstklassiga upplevelsemakare för att leverera högkvalitativa kundupplevelser. |
+| Regionala slutpunkter stöder Braze-anslutningar | Alla [regionspecifika slutpunkter](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) som stöds av [!DNL Braze] är nu tillgängliga för val under målkonfigurationsflödet. Fråga din [!DNL Braze]-representant vilken slutpunktsinstans du ska använda. |
+| Veckovis och månadsvis schemaläggningssupport för Liveramp Onboarding | Du kan nu konfigurera exportscheman varje vecka och månad för Liveramp Onboarding-målet. |
+| Stöd för AES256-kryptering för Amazon S3-destinationer | Nu kan du konfigurera AES256-kryptering för dina Amazon S3-exporter. |
+| Förbättrad aktiveringsupplevelse för The Trade Desk och Microsoft Bing-destinationer | Trade Desk och Microsoft Bing-destinationerna innehåller nu fördefinierade obligatoriska mappningar för en optimerad aktiveringsupplevelse. |
+
 **Ny eller uppdaterad funktionalitet**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Skyddsgränsen för Adobe Target-destinationen har uppdaterats | Det maximala antalet målgrupper som kan mappas till ett enda Adobe Target-mål har ökats från 50 till 250. På så sätt anpassas Adobe Target till standardmålgruppsgränsen för andra destinationer, vilket ger större flexibilitet i arbetsflödena för målgruppsaktivering. Kunderna kan nu aktivera fler målgrupper för Adobe Target-destinationer utan att behöva skapa flera dataflöden. |
+| Skyddsgränsen för Adobe Target-destinationen har uppdaterats | Det maximala antalet målgrupper som kan mappas till ett enda Adobe Target-mål har ökats från 50 till 250. På så sätt anpassas Adobe Target till standardmålgruppsgränsen för andra destinationer, vilket ger större flexibilitet i arbetsflödena för målgruppsaktivering. Nu kan du aktivera fler målgrupper för Adobe Target-destinationer utan att behöva skapa flera dataflöden. |
+| [Redigera mål](/help/destinations/ui/edit-destination.md) och [redigera marknadsföringsåtgärder](/help/destinations/ui/edit-activation.md#edit-marketing-actions) allmän tillgänglighet | Alternativet att redigera mål och marknadsföringsåtgärder är nu tillgängligt för alla användare. |
+| Växla visningsnamn för fält i mappningssteget | När du mappar schemafält till ett mål kan du nu växla mellan att visa det fullständiga XDM-fältnamnet och endast visa visningsnamnet. |
 
 {style="table-layout:auto"}
 
