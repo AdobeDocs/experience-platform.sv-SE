@@ -2,9 +2,9 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: d401707e263f09ccd8575f02a71d7e74899e02db
+source-git-commit: 26dabf21959fde0b6ce7111524a20e3f342aec75
 workflow-type: tm+mt
-source-wordcount: '1395'
+source-wordcount: '1389'
 ht-degree: 20%
 
 ---
@@ -21,8 +21,8 @@ ht-degree: 20%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: januari 2026**
@@ -86,7 +86,7 @@ Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom
 | Funktion | Beskrivning |
 | --- | --- |
 | Tvingande strömningskapacitet | Experience Platform tillämpar nu strömningskapacitet för kundprofil och identitetstjänst i realtid. När kunderna överträffar sin avtalade strömningskapacitet kommer data att ställas i kö och behandlas på ett första-i-första-ut-sätt. Detta garanterar förutsägbara systemprestanda och förhindrar att kapacitetsöverträdelser påverkar dataöverföringskvaliteten. Viktigt: Direktuppspelning kommer inte att vara tillgängligt i datasjön när kapaciteten överskrids, detta gäller inte för kunder med Adobe Journey Optimizer-licenser och data som köas kommer att behandlas sekventiellt när kapaciteten blir tillgänglig. |
-| API-åtkomstborttagning för Real-Time CDP Prime | API-åtkomst för upplevelsehändelser är nu föråldrat för alla Real-Time CDP Prime-kunder. Den här ändringen påverkar möjligheten att fråga upplevelsehändelser direkt via API. Real-Time CDP Ultimate-kunder kan begära ett undantag genom en formell undantagsprocess för att aktivera API-åtkomst för upplevelsehändelser om det behövs för deras användningsfall. Den här borttagningen hjälper till att optimera systemprestanda och anpassas till bästa praxis för dataåtkomstmönster. |
+| API-åtkomstborttagning för Real-Time CDP Prime | API-åtkomst för upplevelsehändelser är nu föråldrat för alla Real-Time CDP Prime-kunder. Den här ändringen påverkar möjligheten att fråga upplevelsehändelser direkt via API. Real-Time CDP Ultimate-kunder kan begära ett undantag genom en formell undantagsprocess för att aktivera API-åtkomst för upplevelsehändelser om det behövs för deras användningsfall. Med den här borttagningen kan Real-Time CDP integreras med licensieringsfunktionerna. |
 | Kör bildskärmsdataflöde | Nu kan du övervaka dataflödets förlopp och beredskap i Profil. |
 
 {style="table-layout:auto"}
