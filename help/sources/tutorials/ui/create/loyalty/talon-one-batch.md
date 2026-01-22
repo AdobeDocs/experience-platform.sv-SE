@@ -4,9 +4,9 @@ description: Lär dig hur du importerar batchdata från Talon.En till Adobe Expe
 badge: Beta
 hide: true
 hidefromtoc: true
-source-git-commit: 558a9d6ff3222acbf77edea0a82ef50725cd6203
+source-git-commit: d8b8143da3a67bba690229b1f8e88eb86f3fe804
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1420'
 ht-degree: 0%
 
 ---
@@ -144,3 +144,7 @@ När du har bekräftat att informationen är korrekt väljer du **[!UICONTROL Fi
 ## Övervaka dataflödet
 
 När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om hur mycket data som har intagits, hur bra de är och vilka fel som har uppstått. Mer information om hur du övervakar dataflöde finns i självstudiekursen [Övervaka konton och dataflöden i användargränssnittet](../../../../../dataflows/ui/monitor-sources.md).
+
+## Kända begränsningar
+
+När data mappas från schemat för [!DNL Talon.One] till Adobe Experience Platform går det för närvarande inte att hämta flera effekter av samma typ inom en enskild transaktion. Om en transaktion t.ex. innehåller flera `setDiscount` effekter (t.ex. rabatter från olika kampanjer) behålls endast en av dessa effekter under mappningen och de andra skrivs över.

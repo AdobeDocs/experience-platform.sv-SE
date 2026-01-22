@@ -4,9 +4,9 @@ description: Lär dig att strömma data från Talon.One till Adobe Experience Pl
 badge: Beta
 hide: true
 hidefromtoc: true
-source-git-commit: 558a9d6ff3222acbf77edea0a82ef50725cd6203
+source-git-commit: 554d86e2f07966ee08940a30fe06050570129e41
 workflow-type: tm+mt
-source-wordcount: '854'
+source-wordcount: '961'
 ht-degree: 0%
 
 ---
@@ -118,4 +118,8 @@ När anslutningen har skapats visas informationssidan för källor. På den här
 
 ## Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om hur mycket data som har intagits, hur bra de är och vilka fel som har uppstått. Mer information om hur du övervakar dataflöde finns i självstudiekursen [Övervaka konton och dataflöden i användargränssnittet](../../monitor-streaming.md)
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om hur mycket data som har intagits, hur bra de är och vilka fel som har uppstått. Mer information om hur du övervakar dataflöde finns i självstudiekursen [Övervaka konton och dataflöden i användargränssnittet](../../monitor-streaming.md).
+
+## Kända begränsningar
+
+För att säkerställa korrekt dataöverföring bör du skicka data från [!DNL Talon.One]s förmånspunkter ändrade, skiktuppgradering och meddelanden om nedgradering av skikt till anslutningsprogrammet. Eftersom meddelanden om ändrade förmånspunkter inte innehåller nivåinformation måste du skicka dessa meddelanden till en separat profildatauppsättning. Om du kombinerar punktändrade data med meddelanden om nivåuppgradering eller nedgradering i samma datauppsättning, kommer nivåinformationen att gå förlorad eller skrivas över med null-värden. Meddelanden om nivåuppgradering och nedgradering kan använda samma datauppsättning, eftersom båda innehåller nivåinformation. Efter inmatning uppdateras den sammanfogade profilen automatiskt med den senaste informationen om punkter och nivåer.
