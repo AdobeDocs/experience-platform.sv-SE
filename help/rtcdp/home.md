@@ -211,4 +211,4 @@ Klicka på länkarna nedan om du vill veta mer om Real-Time CDP användningsomr�
 </tr></table>
 
 <table style="table-layout:auto"><tr style="border: 0;"><td><img src="assets/do-not-localize/newsletter.png"></td><td>
-<b>Håll dig informerad, delta i communityn och höj din Adobe Real-Time CDP-upplevelse!</b><br/>Besök Real-Time Customer Data Platform community och diskutera funktionalitet med andra verksamma. <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP">Gå med i communityn idag!</a></td></tr></table>
+<b>Håll dig informerad, delta i communityn och höj din Adobe Real-Time CDP-upplevelse!</b><br/>Besök Real-Time Customer Data Platform community och diskutera funktionalitet med andra verksamma. <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP?profile.language=sv">Gå med i communityn idag!</a></td></tr></table>

@@ -136,7 +136,7 @@ v2.0.4
 
 * Data Element-stöd för olika fält har lagts till - Data Element-stöd har lagts till i följande händelser: Time on Page, Enters Viewport, Hover och Media Time Play. Dessutom följande villkor: &#39;Time on Site&#39; och &#39;Value Comparison&#39;
 * Lägger till stöd för standardbeteendet för Ctrl/Cmd + klick och mittersta musklickning när Länka fördröjning används
-* **Markerad länkfördröjning för klickhändelsen som &quot;stöds inte längre&quot;.** - mer information finns i [bloggen för datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403) för Adobe Experience Platform
+* **Markerad länkfördröjning för klickhändelsen som &quot;stöds inte längre&quot;.** - mer information finns i [bloggen för datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403?profile.language=sv) för Adobe Experience Platform
 
 ## 6 januari 2021
 

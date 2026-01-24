@@ -130,6 +130,6 @@ Mer information om olika lägen och alternativ som är tillgängliga under publi
 
 Mer information om taggar finns i följande resurser:
 
-* **[Samhälle för datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**: Ställ frågor och svar, skicka idéer, rösta på andras idéer. Logga in med din Adobe ID.
+* **[Samhälle för datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community?profile.language=sv)**: Ställ frågor och svar, skicka idéer, rösta på andras idéer. Logga in med din Adobe ID.
 * **[Utvecklardokumentation](../api/overview.md)**: Bygg tillägg eller använd tagg-API:er genom att engagera utvecklarcommunityn för taggar
 * **[Översikt över självstudiekurser](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html?lang=sv-SE)**: I de här dokumenten introduceras taggar som händelsevidarebefordran och Mobile SDK i Android-appar.
