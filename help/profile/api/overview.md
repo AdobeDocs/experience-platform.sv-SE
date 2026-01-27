@@ -4,9 +4,9 @@ title: API-guide för kundprofil i realtid
 description: Med Real-Time Customer Profile API kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82a9b405a1d36155c84cd27a005c7ec469164ef3
 workflow-type: tm+mt
-source-wordcount: '862'
+source-wordcount: '874'
 ht-degree: 1%
 
 ---
@@ -30,6 +30,10 @@ Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som ut
 Du kan skapa, visa, redigera och ta bort beräknade attribut med slutpunkten `ca/attributes/`. Mer information om hur du använder beräknade attribut finns i [översikten över beräknade attribut](../computed-attributes/overview.md). API-åtgärder finns i [API-slutpunktshandboken för beräknade attribut](../computed-attributes/api.md).
 
 ## Enheter ([!DNL Profile] åtkomst) {#entities}
+
+>[!NOTE]
+>
+>Du kan bara använda dessa slutpunkter om du har Real-Time CDP Ultimate.
 
 Via Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]-data med RESTful API:er eller användargränssnittet. Följ stegen som beskrivs i [enheternas slutpunktshandbok](entities.md) för att lära dig hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot; med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet för [!DNL Experience Platform] finns i [användarhandboken för profilen](../ui/user-guide.md).
 
