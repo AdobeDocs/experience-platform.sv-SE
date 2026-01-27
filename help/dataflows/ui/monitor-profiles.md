@@ -4,9 +4,9 @@ description: Med kundprofilen i realtid kan ni se en helhetsbild av varje enskil
 title: Övervaka dataflöden för profiler i användargränssnittet
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1d60afdf486642398a2d31302db339eb9cb45130
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1240'
 ht-degree: 0%
 
 ---
@@ -65,8 +65,6 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 
 Du kan välja filterikonen ![Filterikon](/help/images/icons/filter.png) bredvid källnamnet om du vill visa information om profilbearbetning för den valda källans dataflöden.
 
-![Filterikonen är markerad. Om du väljer den här ikonen kan du visa den valda källans dataflöden.](../assets/ui/monitor-profiles/sources-filter.png)
-
 Du kan också välja **[!UICONTROL Dataflows]** på växlingsknappen för att visa information om profilbearbetning för din organisations dataflöden de senaste 24 timmarna.
 
 ![Kontrollpanelen Profiler. Information om antalet profilposter som tagits emot per dataflöde visas.](../assets/ui/monitor-profiles/dataflows.png)
@@ -78,6 +76,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Dataflow]** | Dataflödets namn. |
 | **[!UICONTROL Dataset]** | Namnet på datauppsättningen som dataflödet infogas i. |
 | **[!UICONTROL Source name]** | Namnet på källan som dataflödet tillhör. |
+| **[!UICONTROL Data type]** | Den typ av data som tas emot från datauppsättningen. |
 | **[!UICONTROL Records received**] | Antalet poster som tagits emot från datasjön. |
 | **[!UICONTROL Records failed]** | Antalet poster som har importerats, men inte till [!DNL Profile] på grund av fel. |
 | **[!UICONTROL Profile fragments created]** | Antalet nya [!DNL Profile]-fragment som lagts till. |
@@ -88,7 +87,31 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 
 Välj filterikonen ![filter](/help/images/icons/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Profile]-dataflödeskörningen.
 
-![Filterikonen är markerad. Om du väljer den här ikonen kan du visa information om det valda dataflödet.](../assets/ui/monitor-profiles/dataflows-filter.png)
+En kontrollpanel med alla dataflödeskörningar visas. Den här instrumentpanelen innehåller mätvärden om dataflödet samt diagram som visar hur framgångsrik, profilfragment som skapats och profilfragment som uppdaterats.
+
+![Dataflödet kör en instrumentpanel. Information om dataflödeskörningar visas.](../assets/ui/monitor-profiles/dataflow-run.png)
+
+Följande mått är tillgängliga för den här instrumentpanelsvyn:
+
+>[!NOTE]
+>
+>När dataflödeskörningen är i läget **[!UICONTROL Processing]** kan du se information om beredskapen genom att se kontrollpunktsstatus i inmatningsprocessen.
+>
+>![Bubblan för beredskap för profilinmatning visas.](../assets/ui/monitor-profiles/profile-ingestion-readiness.png){zoomable="yes" width="300"}
+
+| Mått | Beskrivning |
+| ------ | ----------- |
+| **[!UICONTROL Dataflow run start]** | Den tidpunkt då dataflödet startades i UTC. |
+| **[!UICONTROL Data type]** | Den typ av data som tas emot av dataflödet. |
+| **[!UICONTROL Records received]** | Antalet poster som tagits emot från datasjön. |
+| **[!UICONTROL Records failed]** | Antalet poster som har importerats, men inte till [!DNL Profile] på grund av fel. |
+| **[!UICONTROL Profile fragments created]** | Antalet nya [!DNL Profile]-fragment som lagts till. |
+| **[!UICONTROL Profile fragments updated]** | Antalet befintliga [!DNL Profile] fragment har uppdaterats. |
+| **[!UICONTROL Total profile fragments]** | Det totala antalet poster som skrivits till [!DNL Profile], inklusive alla befintliga [!DNL Profile] fragment som uppdaterats och nya [!DNL Profile] fragment som skapats. |
+| **[!UICONTROL Processing time]** | Den tid det tog för dataflödet att bearbeta. |
+| **[!UICONTROL Status]** | Status för dataflödeskörningen. Möjliga värden är [!UICONTROL Success], [!UICONTROL Failed], [!UICONTROL Queued] och [!UICONTROL Processing]. |
+| **[!UICONTROL Ready for customer segmentation]** | En status som visar om de importerade posterna är klara att användas i kundsegmentering. Möjliga värden är [!UICONTROL Yes], [!UICONTROL Failed], [!UICONTROL Queued] och [!UICONTROL Processing]. Även om dataflödets **status** bearbetas kan du använda profilerna i kundsegmenteringen om värdet för det här fältet är Ja. |
+| **[!UICONTROL Ready for lookup]** | En status som visar om de kapslade posterna är klara att användas i Adobe Journey Optimizer-sökningen.  Möjliga värden är [!UICONTROL Yes], [!UICONTROL Failed], [!UICONTROL Queued] och [!UICONTROL Processing]. Även om dataflödets **status** bearbetas kan du använda profilerna i Journey Optimizer-sökningen om värdet för det här fältet är Ja. |
 
 På sidan [!UICONTROL Dataflow run details] visas mer information om [!DNL Profile]-dataflödets körning, inklusive dess organisations-ID och dataflödes-ID. På den här sidan visas även motsvarande felkod och felmeddelande från [!DNL Profile] om något fel skulle uppstå i importen.
 
