@@ -68,7 +68,7 @@ Använd fönstret **[!DNL Security Group Overview]** för att ange ett namn och 
 
 ![Översiktsfönstret för säkerhetsgruppen i Eloqua.](../../images/tutorials/create/eloqua/security-group-overview.png)
 
-![Urvalsfönstret för API:t ](../../images/tutorials/create/eloqua/consume-api.png)
+![Urvalsfönstret för API:t &#x200B;](../../images/tutorials/create/eloqua/consume-api.png)
 
 >[!NOTE]
 >
