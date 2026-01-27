@@ -2,9 +2,9 @@
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: 5520e449b4cbe45eb9664ce3c913dd5d544e088c
+source-git-commit: 8cef502f60a42de9c89c29923811215b3a8086c6
 workflow-type: tm+mt
-source-wordcount: '1603'
+source-wordcount: '1670'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ Inom dessa tjänster spåras följande skyddsräcken:
    - Av dessa 500 direktuppspelade målgrupper är det maximala antalet kantmålgrupper 150
 - Den initiala kombinerade genomströmningen för direktuppspelning är 1 500 poster per sekund (rps)
    - Detta kombinerade strömmande dataflöde mäter de kombinerade topphändelserna för inkommande trafik per sekund för strömning till kundprofilen i realtid i era produktions- och utvecklingssandlådor.
-   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 Målgruppskapaciteten är på en **sandbox**-nivå. Det innebär att ni för varje sandlåda ni har i organisationen kan ha 500 direktuppspelade målgrupper, varav 150 av dessa kan vara gränspubliken.
 
@@ -68,7 +68,17 @@ Experience Platform beräknar sandlådans genomströmning i 15 minuters rullande
 
 Om din användning når upp till 80 % och 90 % av den licensierade kapaciteten skickar Experience Platform ut ett varningsmeddelande som meddelar att du har nått den angivna kapaciteten. Du kan ändra inställningarna för att anpassa kapacitetsprocenten för att ta emot aviseringen eller ta bort aviseringen helt.
 
-Om din användning överstiger 100 % av den licensierade kapaciteten anses du bryta mot din kapacitet. I det här skedet kommer du att uppleva prestandatlatens och dina servicenivåmål (SLT) **inte** kommer att garanteras.
+Om du använder mer än 100 % av den licensierade kapaciteten anses du bryta mot din kapacitet. Om du bryter din kapacitet gäller följande begränsningar:
+
+>[!NOTE]
+>
+>Om du har tillgång till Adobe Journey Optimizer gäller följande begränsningar **inte**.
+
+- Händelsedata **kan** tas bort från personalisering för direktuppspelning om händelsehanteringskön överstiger 12 timmar
+- Borttagna händelsedata kommer **inte** att hämtas till profilen
+   - Du kan se när händelser togs bort
+   - Händelser kommer att finnas tillgängliga inom datarjön, enligt dina önskemål
+   - Du *kan* använda frågetjänsten för att direkt hämta in data igen, om det behövs
 
 ## Åtkomst {#access}
 
@@ -175,7 +185,7 @@ Dessutom kan ni titta på era dataflöden och se om ni kan optimera er datastrat
 
 I följande video visas en översikt över kapacitet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475277/?captions=swe&learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
 
 ## Vanliga frågor och svar {#faq}
 
