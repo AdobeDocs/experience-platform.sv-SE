@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 06b2108715ce368ff4ecf5c6c7dd3a327d9f61b1
+source-git-commit: ded7a095f95bd43a34e694fb0a6fd4b468b4e246
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1080'
 ht-degree: 7%
 
 ---
@@ -116,6 +116,7 @@ ht-degree: 7%
       - [Oracle NetSuite](connectors/marketing-automation/oracle-netsuite.md)
       - [PathFactory](connectors/marketing-automation/pathfactory.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
+      - [Salesforce Marketing Cloud (V2)](connectors/marketing-automation/sfmc.md)
    - Betalningar {#payments}
       - [Kvadratisk koppling](connectors/payments/square.md)
       - [Stripe Connector](connectors/payments/stripe.md)
@@ -331,6 +332,7 @@ ht-degree: 7%
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
          - [Relay Connector](tutorials/ui/create/marketing-automation/relay-connector.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
+         - [Salesforce Marketing Cloud (V2)](tutorials/ui/create/marketing-automation/sfmc.md)
       - Betalningar {#payments}
          - [Fyrkant](tutorials/ui/create/payments/square.md)
          - [Stripe](tutorials/ui/create/payments/stripe.md)
@@ -401,4 +403,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
