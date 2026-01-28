@@ -2,9 +2,9 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 26dabf21959fde0b6ce7111524a20e3f342aec75
+source-git-commit: 6fa71c48151e937f2e18d8b9761aad94eca85ade
 workflow-type: tm+mt
-source-wordcount: '1389'
+source-wordcount: '1316'
 ht-degree: 20%
 
 ---
@@ -21,8 +21,8 @@ ht-degree: 20%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: januari 2026**
@@ -113,7 +113,6 @@ Mer information finns i [[!DNL Schemas] översikten](../xdm/home.md).
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Övervakning av strömningssegmentering | Realtidsövervakning för direktuppspelningssegmentering ger transparens vad gäller utvärderingsfrekvens, fördröjning och datakvalitetsstatistik på sandbox-, dataset- och målgruppsnivå. Detta stöder förebyggande varningar och åtgärdbara insikter som hjälper datatekniker att identifiera kapacitetsöverträdelser och problem med inmatning. Övervakningsmätningar inkluderar utvärderingshastighet, fördröjning av P95-intag samt mottagna, utvärderade, misslyckade och hoppade över poster. Funktioner för visa-för-data och visa-för-målgrupp ger omfattande insyn i nya profiler som är kvalificerade och diskvalificerade. |
 | TTL-uppdatering för extern målgrupp | Externa målgrupper (t.ex. CSV-överföringar) har nu stöd för en tvingad uppdateringsfunktion för TTL-inställningar (Time-to-Live). Med den här funktionen kan användare uppdatera TTL-förfallotiden manuellt för externa målgrupper, vilket ger större kontroll över hanteringen av målgruppens livscykler. Detta är särskilt användbart för målgrupper som måste stanna kvar efter den inledande TTL-perioden eller som behöver aktiveras på nytt utan att överföra data på nytt. |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../segmentation/home.md).
