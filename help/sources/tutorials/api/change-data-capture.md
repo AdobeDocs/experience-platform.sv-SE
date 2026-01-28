@@ -113,7 +113,7 @@ Aktivera datainhämtning för molnlagringskällor genom att följa dessa steg:
 
 2. [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
 
-Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [ Filbaserade källor ](#file-based-sources) ovan.
+Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [&#x200B; Filbaserade källor &#x200B;](#file-based-sources) ovan.
 
 ## Databaskällor {#database-sources}
 
