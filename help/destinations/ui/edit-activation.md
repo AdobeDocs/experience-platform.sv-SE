@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du konfigurera olika komponenter i befintliga aktiveringsdataflöden till mål, som:
 
-* [Aktivera eller inaktivera ](#enable-disable-dataflows) aktiveringsdataflöden
+* [Aktivera eller inaktivera &#x200B;](#enable-disable-dataflows) aktiveringsdataflöden
 * [Lägg till ytterligare målgrupper](#add-audiences) i aktiveringsdataflöden
 * [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
 * [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)
