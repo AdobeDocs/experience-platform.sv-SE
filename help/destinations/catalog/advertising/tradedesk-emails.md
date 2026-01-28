@@ -81,6 +81,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
       * Perioden (`.`) tecken (ASCII-kod 46). Du kan till exempel normalisera &quot;jane.doe@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
      * Plustecknet (`+`) (ASCII-kod 43) och alla efterföljande tecken. Till exempel normalisera &quot;janedoe+home@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
   
+
 ## Normalisering av telefonnummer och krav på hashning {#phone-hashing}
 
 Det här behöver du veta om att överföra telefonnummer:
