@@ -118,7 +118,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >[!CONTEXTUALHELP]
 >id="platform_destinations_required_mappings_bing"
 >title="Förkonfigurerade mappningsuppsättningar"
->abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig. När du aktiverar data till Microsoft Bing måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet.
+>abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig. När du aktiverar data till Microsoft Bing måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet."
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 >[!IMPORTANT]

@@ -133,7 +133,7 @@ När du kartlägger målgrupper rekommenderar Adobe att du använder Experience 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_required_mappings_ttd"
 >title="Förkonfigurerade mappningsuppsättningar"
->abstract="Vi har förkonfigurerat dessa fyra mappningsuppsättningar åt dig. När du aktiverar data till The Trade Desk behöver de profiler som är kvalificerade för de aktiverade målgrupperna inte nödvändigtvis ha alla fyra identiteterna i profilerna, eftersom detta mål fungerar med någon av de målidentiteter som visas här.
+>abstract="Vi har förkonfigurerat dessa fyra mappningsuppsättningar åt dig. När du aktiverar data till The Trade Desk behöver de profiler som är kvalificerade för de aktiverade målgrupperna inte nödvändigtvis ha alla fyra identiteterna i profilerna, eftersom detta mål fungerar med någon av de målidentiteter som visas här."
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 Alla målidentiteter som beskrivs i avsnittet [identiteter som stöds](#supported-identities) måste mappas i mappningssteget i arbetsflödet för målgruppsaktivering. Detta inkluderar:
