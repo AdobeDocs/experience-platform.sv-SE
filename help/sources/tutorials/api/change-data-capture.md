@@ -2,14 +2,18 @@
 title: Aktivera registrering av ändringsdata för källanslutningar i API
 description: Lär dig hur du aktiverar registrering av ändringsdata för källanslutningar i API:t
 exl-id: 362f3811-7d1e-4f16-b45f-ce04f03798aa
-source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
+source-git-commit: bd28d5be932823b8bf9c98280f97694ff221d76d
 workflow-type: tm+mt
-source-wordcount: '1234'
+source-wordcount: '1291'
 ht-degree: 0%
 
 ---
 
 # Aktivera registrering av ändringsdata för källanslutningar i API
+
+>[!AVAILABILITY]
+>
+>Du kan nu använda registrering av ändringsdata för källorna [!DNL Amazon S3] och [!DNL Data Landing Zone] när du kör Adobe Experience Platform på Amazon Web Services (AWS) och är ansluten till ett VA6-datacenter. Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
 
 Använd datainhämtning från Adobe Experience Platform för att synkronisera käll- och målsystemen i nära realtid.
 
@@ -109,7 +113,7 @@ Aktivera datainhämtning för molnlagringskällor genom att följa dessa steg:
 
 2. [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
 
-Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [&#x200B; Filbaserade källor &#x200B;](#file-based-sources) ovan.
+Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [ Filbaserade källor ](#file-based-sources) ovan.
 
 ## Databaskällor {#database-sources}
 
