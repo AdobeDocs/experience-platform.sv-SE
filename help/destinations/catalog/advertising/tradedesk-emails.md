@@ -3,9 +3,9 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 036d784014e7cdb101f39f63f9d6e8bac01fdc97
+source-git-commit: 47d4078acc73736546d4cbb2d17b49bf8945743a
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1643'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->I och med lanseringen av EUID (European Unified ID) ser du nu två [!DNL The Trade Desk - CRM] mål i [målkatalogen](/help/destinations/catalog/overview.md).
+>Det finns två The Trade Desk - CRM-mål i [målkatalogen](/help/destinations/catalog/overview.md).
 >
->* Använd målet **[!DNL The Trade Desk - CRM (EU)]** om du hämtar data i EU.
+>* Om du hämtar data i EU använder du målet **[!DNL The Trade Desk - CRM (EU)]**.
 >* Använd målet **[!DNL The Trade Desk - CRM (NAMER & APAC)]** om du hämtar data i APAC- eller NAMER-regionerna.
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av *[!DNL Trade Desk]*-teamet. Kontakta din [!DNL Trade Desk]-representant om du har frågor eller uppdateringsfrågor.
@@ -25,19 +25,17 @@ ht-degree: 0%
 
 Förstå hur du kan aktivera profiler för ditt [!DNL Trade Desk]-konto för målgruppsanpassning och inaktivering baserat på CRM-data.
 
-Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
-
-[!DNL The Trade Desk(TTD)] hanterar inte direkt den överförda filen med e-postadresser och [!DNL The Trade Desk] lagrar inte heller dina ohashade e-postmeddelanden.
+Den här kopplingen skickar data till [!DNL The Trade Desk] för aktivering av förstahandsdata. [!DNL The Trade Desk] lagrar e-postmeddelanden och telefonnummer i Raw-format (ohashed).
 
 >[!TIP]
 >
->Använd [!DNL The Trade Desk] CRM-mål för CRM-datamappning, till exempel e-post eller hash-e-postadress. Använd det [andra målet för Trade Desk](/help/destinations/catalog/advertising/tradedesk.md) i Adobe Experience Platform-katalogen för cookies och mappningar av enhets-ID.
+>Använd målet [!DNL The Trade Desk - CRM] för att skicka CRM-data (till exempel e-post och telefonnummer) och andra identifierare för förstapartsdata som cookies och enhets-ID. Du kan fortsätta använda [Trade Desk-målet](/help/destinations/catalog/advertising/tradedesk.md) i Experience Platform-katalogen för cookies och enhets-ID-mappningar.
 
 ## Förhandskrav {#prerequisites}
 
 >[!IMPORTANT]
 >
->Innan du kan aktivera målgrupper för handelsavdelningen måste du kontakta din [!DNL Trade Desk]-kontoansvarige för att signera CRM-introduktionskontraktet. [!DNL The Trade Desk] aktiverar användning av UID2/EUID och delar annan information så att du kan konfigurera ditt mål.
+>Innan du kan aktivera målgrupper på The Trade Desk måste du kontakta din [!DNL Trade Desk]-kontoansvarige för att aktivera funktionen. Om du skickar e-post, telefonnummer och UID2/EUID måste du dela det signerade UID2/EUID-avtalet med [!DNL The Trade Desk].
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -47,16 +45,28 @@ Beroende på vilken typ av ID som du importerar till Adobe Experience Platform m
 
 [!DNL The Trade Desk] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
-Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet Krav för ID-matchning och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser.
+Adobe Experience Platform har stöd för både ohashade och hash-kodade e-postadresser och telefonnummer. Följ instruktionerna i avsnittet Krav för ID-matchning och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser.
 
-| Målidentitet | Beskrivning | Överväganden |
-|---|---|---|
-| E-post | E-postadresser (klartext) | Ange `email` som målidentitet när din källidentitet är ett e-postnamnområde eller attribut. |
-| Email_LC_SHA256 | E-postadresser måste hash-kodas med SHA256 och nedsänkt. Du kan inte ändra den här inställningen senare. | Ange `hashed_email` som målidentitet när din källidentitet är ett Email_LC_SHA256-namnutrymme eller -attribut. |
+| Målidentitet | Beskrivning |
+|---|---|
+| E-post | E-postadresser (klartext) |
+| Email_LC_SHA256 | E-postadresser måste hash-kodas med SHA256 och nedsänkt. Du kan inte ändra den här inställningen senare. |
+| Telefon (E.164) | Telefonnummer som måste normaliseras i E.164-format. E.164-formatet innehåller ett plustecken (+), en internationell landskod, en lokal områdeskod och ett telefonnummer. Till exempel: (+)(landskod)(riktnummer)(telefonnummer). Den här identifieraren är inte tillgänglig för Trade Desk - First-Party Data (EU). |
+| Telefon (SHA256_E.164) | Telefonnummer som redan har normaliserats till E.164-format och sedan hashas med SHA-256, med den resulterande hash Base64-kodade. Den här identifieraren är inte tillgänglig för Trade Desk - First-Party Data (EU). |
+| TDID | Cookie-ID i Trade Desk |
+| GAID | GOOGLE ADVERTISING ID |
+| IDFA | Apple ID för annonsörer |
+| UID2 | UID2-råvärdet |
+| UID2Token | Den krypterade UID2-token, även kallad reklamtoken. |
+| EUID | EU-id-råvärde |
+| EUIDToken | Den krypterade EUID-token, även kallad reklamtoken. |
+| RampID | RampID med 49 eller 70 tecken (tidigare IdentityLink eller IDL). Det här måste vara ett rampID från LiveRamp som mappas specifikt för The Trade Desk. |
+| netID | Användarens netID som en base64-kodad sträng med 70 tecken. Detta ID stöds endast i Europa. |
+| FirstID | Användarens First-id, en cookie från första part, som oftast används av utgivare i Frankrike. Detta ID stöds endast i Europa. |
 
 {style="table-layout:auto"}
 
-## Krav för e-posthashning {#hashing-requirements}
+## Krav för e-posthashning {#email-hashing}
 
 Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform eller använda obearbetade e-postadresser.
 
@@ -67,8 +77,49 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 * Ta bort inledande och avslutande blanksteg.
 * Konvertera alla ASCII-tecken till gemener.
 * Ta bort följande tecken från användarnamnsdelen i e-postadressen i `gmail.com`:
-   * Perioden (. (ASCII-kod 46). Till exempel normalisera `jane.doe@gmail.com` till `janedoe@gmail.com`.
-   * Plustecknet (+ (ASCII-kod 43)) och alla efterföljande tecken. Till exempel normalisera `janedoe+home@gmail.com` till `janedoe@gmail.com`.
+
+      * Perioden (`.`) tecken (ASCII-kod 46). Du kan till exempel normalisera &quot;jane.doe@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
+     * Plustecknet (`+`) (ASCII-kod 43) och alla efterföljande tecken. Till exempel normalisera &quot;janedoe+home@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
+  
+## Normalisering av telefonnummer och krav på hashning {#phone-hashing}
+
+Det här behöver du veta om att överföra telefonnummer:
+
+* Du måste normalisera telefonnummer innan du skickar dem i en begäran, oavsett om du skickar dem som hashas eller ohashas i en begäran.
+* Om du vill överföra normaliserade, hash-kodade och kodade data måste du skicka telefonnummer som Base64-kodade SHA-256-hashvärden för de normaliserade telefonnumren.
+
+Oavsett om du vill överföra telefonnummer i Raw-format eller hashas måste du normalisera dem.
+
+>[!IMPORTANT]
+>
+>Normalisering före hashning säkerställer att det genererade ID-värdet alltid är detsamma och att data kan matchas korrekt.
+
+Det här behöver du veta om normalisering av telefonnummer:
+
+* UID2 Operator godkänner telefonnummer i E.164-format, som är det internationella telefonnummerformatet som garanterar global unicitet.
+* E.164-telefonnummer kan innehålla högst 15 siffror.
+* Normaliserade E.164-telefonnummer använder följande syntax: `[+][country code][subscriber number including area code]` utan blanksteg, bindestreck, parenteser eller andra specialtecken. Här är några exempel:
+
+      * USA: 1 (234) 567-8901 normaliseras till +12345678901.
+     * Singapore: 65 1243 5678 normaliseras till +6512345678.
+     * Australien: mobiltelefonnummer 0491 570 006 normaliseras för att lägga till landskoden och ta bort inledande nolla: +61491570006.
+     * UK: Mobiltelefonnummer 07812 345678 normaliseras för att lägga till landskoden och ta bort inledande nolla: +447812345678.
+  
+Kontrollera att det normaliserade telefonnumret är UTF-8, inte något annat kodningssystem, till exempel UTF-16.
+
+Hash för ett telefonnummer är en Base64-kodad SHA-256-hash av ett normaliserat telefonnummer. Telefonnumret normaliseras först, hashas med SHA-256-algoritmen och sedan kodas de resulterande byten av hash-värdet med Base64-kodning. Observera att Base64-kodningen tillämpas på byte i hash-värdet, inte på den hex-kodade strängbeteckningen.
+I följande tabell visas ett exempel på ett enkelt telefonnummer för indata och resultatet när varje steg används för att få fram ett säkert, ogenomskinligt värde.
+
+| Typ | Exempel | Kommentarer och användning |
+|---|---|---|
+| Råtelefonnummer | 1 (234) 567-8901 | Det här är startpunkten. |
+| Normaliserat telefonnummer | +12345678901 | Normalisering är alltid det första steget. |
+| SHA-256-hash av normaliserat telefonnummer | 10e6f0b47054a83359477dcb35231db6de5c69fb1816e1a6b98e192de9e5b9ee | Denna 64-teckensträng är en hex-kodad representation av 32-byte SHA-256. |
+| Hex till Base64 SHA-256-kodning av normaliserat och hashad telefonnummer | EObwtHBUqDNZR33LNSMdtt5cafsYFuGMY4ZLenlue4 | Denna 44-teckensträng är en Base64-kodad representation av 32-byte SHA-256. SHA-256-hash är ett hexadecimalt värde. Du måste använda en Base64-kodare som tar ett hexadecimalt värde som indata. Använd den här kodningen för phone_hash-värden som skickas i begärandetexten. |
+
+>[!IMPORTANT]
+>
+>När du använder Base64-kodning måste du se till att använda en funktion som har ett hexadecimalt värde som indata. Om du använder en funktion som tar text som indata blir resultatet en längre sträng som inte är giltig i UID2.
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -89,7 +140,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
@@ -125,28 +176,34 @@ På sidan **[!UICONTROL Mapping]** måste du välja attribut eller identitetsnam
 
 Nedan visas ett exempel på korrekt identitetsmappning när målgrupper aktiveras till CRM-målet [!DNL The Trade Desk].
 
->[!IMPORTANT]
->
-> CRM-destinationen [!DNL The Trade Desk] accepterar inte oformaterade och streckade e-postadresser som identiteter i samma aktiveringsflöde. Skapa separata aktiveringsflöden för oformaterade och streckade e-postadresser.
+Välja käll- och målfält:
 
-Välja källfält:
+| Source | Målfält |
+|---|---|
+| E-post | e-post |
+| Email_LC_SHA256 | hashed_email |
+| Telefon (E.164) | telefon |
+| Telefon (SHA256_E.164) | hashed_phone |
+| TDID | tdid |
+| GAID | daid |
+| IDFA | idfa |
+| UID2 | uid2 |
+| UID2Token | uid2_token |
+| EUID | euid |
+| EUIDToken | euid_token |
+| RampID | idl |
+| ID5 | id5 |
+| netID | net_id |
+| FirstID | first_id |
 
-* Välj namnutrymmet eller attributet `Email` som källidentitet om du använder den oformaterade e-postadressen vid datahämtning.
-* Välj namnutrymmet eller attributet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser när data hämtas till Experience Platform.
-
-Markera målfält:
-
-* Ange `email` som målidentitet när källnamnområdet eller källattributet är `Email`.
-* Ange `hashed_email` som målidentitet när källnamnområdet eller källattributet är `Email_LC_SHA256`.
 
 ## Validera dataexport {#validate}
 
-Om du vill verifiera att data har exporterats korrekt från Experience Platform och till [!DNL The Trade Desk] kan du hitta målgrupperna under datarutan Adobe 1PD i [!DNL The Trade Desk] Data Management Platform (DMP). Så här söker du efter motsvarande ID i användargränssnittet för [!DNL Trade Desk]:
+Om du vill verifiera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk] kan du hitta målgrupperna på fliken Adobe 1PD i biblioteket [!DNL The Trade Desk] Advertiser Data and identity. Så här söker du efter motsvarande ID i användargränssnittet för [!DNL Trade Desk]:
 
-1. Välj först fliken **[!UICONTROL Data]** och granska avsnittet **[!UICONTROL First-Party]**.
-2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]**, hittar du **[!UICONTROL Adobe 1PD Tile]**.
-3. Klicka på rutan&#x200B;**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
-4. Segment-ID:t för Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
+1. Välj först fliken **[!UICONTROL Libraries]** och granska avsnittet **[!UICONTROL Advertiser data and identity]**.
+2. Klicka på **[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för [!DNL The Trade Desk].
+3. Segmentnamnet eller segment-ID från Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
