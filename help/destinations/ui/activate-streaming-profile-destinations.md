@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: 99bac2ea71003b678a25b3afc10a68d36472bfbc
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,15 @@ I steget **[!UICONTROL Mapping]** väljer du de profilattribut som du vill skick
 
    ![Bild som visar hur du väljer ett källfält i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
 
-1. På sidan **[!UICONTROL Select field]** markerar du de XDM-attribut som du vill skicka till målet och väljer sedan **[!UICONTROL Select]**.
+1. På sidan **[!UICONTROL Select source field]** markerar du de XDM-attribut som du vill skicka till målet och väljer sedan **[!UICONTROL Save]**.
 
-   ![Bild som visar ett urval XDM-fält som du kan välja som källfält.](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
+   ![Bild som visar ett urval XDM-fält som du kan välja som källfält.](../assets/ui/activate-streaming-profile-destinations/select-source-field-modal.png)
+
+   Använd växlingsknappen **[!UICONTROL Show only fields with data]** om du bara vill visa schemafält med värden. Som standard visas endast ifyllda schemafält.
+
+   Använd växlingsknappen **[!UICONTROL Show display names for fields]** för att visa egna namn för fält i stället för schemafältnamn.
+
+   ![Välj en sida för källfält som visar växlingen för visningsnamn.](../assets/ui/activate-batch-profile-destinations/show-display-names.gif)
 
 1. Om du vill lägga till fler fält upprepar du steg 1 till 3 och väljer sedan **[!UICONTROL Next]**.
 
