@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform januari 2026
 description: Versionsinformationen för Adobe Experience Platform i januari 2026.
-source-git-commit: 9a3fbe281195041cf7444c5b6ec185395ff5ad23
+source-git-commit: 54be4d5c309f60e6c3e2a96ab1fea700cc79a608
 workflow-type: tm+mt
-source-wordcount: '1118'
-ht-degree: 23%
+source-wordcount: '1231'
+ht-degree: 21%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 23%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 27 januari 2026**
@@ -45,7 +45,7 @@ Agent Orchestrator enables you to build and deploy AI-powered agents that can au
 
 {style="table-layout:auto"}
 
-For more information, see the [Agent Orchestrator documentation](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). -->
+For more information, see the [Agent Orchestrator documentation](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). -->
 
 ## Mål {#destinations}
 
@@ -55,14 +55,12 @@ For more information, see the [Agent Orchestrator documentation](https://experie
 
 | Mål | Beskrivning |
 | --- | --- |
-| Kevel-destinationskontakt är nu tillgänglig | Strömningsmålet [!DNL Kevel] för Adobe Experience Platform gör det möjligt för kunder att aktivera Adobe-målgrupper direkt i [!DNL Kevel]s API:er för UserDB och segmenthantering för att ge stöd för målanpassning i realtid vid annonsbeslut. [[!DNL Kevel]](https://www.kevel.com/) innehåller den AI-aktiverade tekniken och expertvägledningen som hjälper innovativa handelsledare att starta, skala och lyckas inom detaljhandelsmedia. Retail Media Cloud för [!DNL Kevel] har funktioner för riktade, hänförliga och anpassningsbara annonseringsformat för annonsering på plats och utanför webbplatsen. |
-| Målkopplingen för Index Exchange är nu tillgänglig | Använd den här målkopplingen om du vill exportera målgruppssegment från Adobe Experience Platform direkt till [!DNL Index Exchange]s programmatiska annonsplattform. [!DNL Index] är en global plattform för annonsleveranser som hjälper mediekonstruktörer att maximera värdet av sitt innehåll på alla skärmar. Med över 20 års branschledarskap knyter [!DNL Index] samman världens största varumärken med förstklassiga upplevelsemakare för att leverera högkvalitativa kundupplevelser. |
+| [Kevel-målanslutning](/help/destinations/catalog/advertising/kevel.md) är nu tillgänglig | Strömningsmålet [!DNL Kevel] för Adobe Experience Platform gör det möjligt för kunder att aktivera Adobe-målgrupper direkt i [!DNL Kevel]s API:er för UserDB och segmenthantering för att ge stöd för målanpassning i realtid vid annonsbeslut. [[!DNL Kevel]](https://www.kevel.com/) innehåller den AI-aktiverade tekniken och expertvägledningen som hjälper innovativa handelsledare att starta, skala och lyckas inom detaljhandelsmedia. Retail Media Cloud för [!DNL Kevel] har funktioner för riktade, hänförliga och anpassningsbara annonseringsformat för annonsering på plats och utanför webbplatsen. |
+| [Målet för indexutbyte](/help/destinations/catalog/advertising/index-exchange.md) är nu tillgängligt | Använd den här målkopplingen om du vill exportera målgruppssegment från Adobe Experience Platform direkt till [!DNL Index Exchange]s programmatiska annonsplattform. [!DNL Index] är en global plattform för annonsleveranser som hjälper mediekonstruktörer att maximera värdet av sitt innehåll på alla skärmar. Med över 20 års branschledarskap knyter [!DNL Index] samman världens största varumärken med förstklassiga upplevelsemakare för att leverera högkvalitativa kundupplevelser. |
 | Regionala slutpunkter stöder Braze-anslutningar | Alla [regionspecifika slutpunkter](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) som stöds av [!DNL Braze] är nu tillgängliga för val under målkonfigurationsflödet. Fråga din [!DNL Braze]-representant vilken slutpunktsinstans du ska använda. |
 | Stöd för schemaläggning varje vecka och månad för [Liveramp Onboarding](../../destinations/catalog/advertising/liveramp-onboarding.md#scheduling) | Du kan nu konfigurera exportscheman varje vecka och månad för Liveramp Onboarding-målet. <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. |
 | Förbättrad aktiveringsupplevelse för [Trade Desk](../../destinations/catalog/advertising/tradedesk.md)- och [Microsoft Bing](../../destinations/catalog/advertising/bing.md)-mål | Trade Desk och Microsoft Bing-destinationerna innehåller nu fördefinierade obligatoriska mappningar för en optimerad aktiveringsupplevelse.  <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. |
-
-<!-- |AES256 encryption support for [Amazon S3](../../destinations/catalog/cloud-storage/amazon-s3.md#destination-details) destinations | You can now configure AES256 encryption for your Amazon S3 exports. Two options are available: <br><br>**[!UICONTROL Default]**: If you don't have any custom policies applied on your buckets, data will be encrypted at rest when it lands in S3 with the AES256 algorithm. However, if you have custom policies applied, Experience Platform will respect those policies and Amazon S3 will continue to apply whichever custom encryption policies you have configured.<br><br>**[!UICONTROL SSE-S3/AES256]**: Experience Platform adds the `s3:x-amz-server-side-encryption": "AES256` header in the export and data will be encrypted at rest when it lands in S3 with the AES256 algorithm. | -->
-
+| Stöd för AES256-kryptering för [Amazon S3](../../destinations/catalog/cloud-storage/amazon-s3.md#destination-details) -mål | Nu kan du konfigurera AES256-kryptering för dina Amazon S3-exporter. Det finns två alternativ: <ul><li>**[!UICONTROL Default]**: Om du inte har tillämpat några anpassade principer på dina bucket, krypteras data i vila när de aktiveras i S3 med AES256-algoritmen. Om du har tillämpat anpassade profiler kommer Experience Platform att respektera dessa profiler och Amazon S3 kommer att fortsätta att tillämpa de anpassade krypteringsprofiler som du har konfigurerat.</li><li>**[!UICONTROL SSE-S3/AES256]**: Experience Platform lägger till `s3:x-amz-server-side-encryption": "AES256`-rubriken i exporten och data krypteras i vila när de aktiveras i S3 med AES256-algoritmen.</li></ul>  <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. |
 
 **Ny eller uppdaterad funktionalitet**
 
