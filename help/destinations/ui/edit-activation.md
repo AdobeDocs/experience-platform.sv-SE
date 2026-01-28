@@ -4,9 +4,9 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 5fae3fe6a3647ba416a26f4cdb9e5b6ce308e990
 workflow-type: tm+mt
-source-wordcount: '917'
+source-wordcount: '927'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du konfigurera olika komponenter i befintliga aktiveringsdataflöden till mål, som:
 
-* [Aktivera eller inaktivera &#x200B;](#enable-disable-dataflows) aktiveringsdataflöden
+* [Aktivera eller inaktivera ](#enable-disable-dataflows) aktiveringsdataflöden
 * [Lägg till ytterligare målgrupper](#add-audiences) i aktiveringsdataflöden
 * [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
 * [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)
@@ -111,11 +111,11 @@ Välj **[!UICONTROL Export datasets]** i den högra listen för att välja ytter
 
 ![Experience Platform UI-bild som visar körningsalternativet Exportera datauppsättningar.](../assets/ui/edit-activation/export-datasets.png)
 
-## [!BADGE Beta]{type=Informative} Redigera marknadsföringsåtgärder {#edit-marketing-actions}
+## Redigera marknadsföringsåtgärder {#edit-marketing-actions}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Den här funktionen finns för närvarande i **beta**. Kontakta din Adobe-representant om du vill få åtkomst till den.
+>Om du vill redigera marknadsföringsåtgärder behöver du behörigheterna **[!UICONTROL Activate Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Du kan lägga till eller ta bort marknadsföringsåtgärder som du ställer in när du ansluter till målet från början.
 
