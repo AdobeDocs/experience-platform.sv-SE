@@ -3,9 +3,9 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-Time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: b8540eb20838e7f2228d71bfc002392d07daffe4
 workflow-type: tm+mt
-source-wordcount: '1849'
+source-wordcount: '1872'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL LiveRamp - Onboarding]. |
-| Exportfrekvens | **[!UICONTROL Daily batch]** | När profiler uppdateras i Experience Platform baserat på målgruppsutvärdering uppdateras profilerna (identiteterna) en gång om dagen nedströms målplattformen. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+| Exportfrekvens | **[!UICONTROL Batch]** | När profiler uppdateras i Experience Platform baserat på målgruppsutvärdering uppdateras profilerna (identiteterna) och kan levereras nedströms till målplattformen på en daglig, veckovis eller månadsvis konferens. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
@@ -132,7 +132,7 @@ Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinat
 I steget [!UICONTROL Scheduling] skapar du ett exportschema för varje målgrupp, med inställningarna nedan.
 
 * **[!UICONTROL File export options]**: [!UICONTROL Export full files]. [Inkrementell filexport](../../ui/activate-batch-profile-destinations.md#export-incremental-files) stöds för närvarande inte för målet [!DNL LiveRamp].
-* **[!UICONTROL Frequency]**: [!UICONTROL Daily]
+* **[!UICONTROL Frequency]**: [!UICONTROL Daily], [!UICONTROL Weekly] eller [!UICONTROL Monthly]
 * **[!UICONTROL Date]**: Välj start- och sluttider för exporten.
 
 ![Experience Platform UI-skärmbild som visar steg för målgruppsplanering.](../../assets/catalog/advertising/liveramp-onboarding/liveramp_scheduling_screenshot.png)
@@ -255,6 +255,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
+| Februari 2025 | Funktioner och dokumentation | <ul><li> Stöd för månatliga leveransavslut varje vecka och månad. |
 | Mars 2024 | Funktioner och dokumentation | <ul><li>Stöd har lagts till för leveranser till Europa och Australien [!DNL LiveRamp] [!DNL SFTP] instanser.</li><li>Uppdaterad dokumentation som beskriver specifika konfigurationer för nyligen stödda regioner.</li><li>Ökade maximal filstorlek till 10 miljoner rader (från 5 miljoner tidigare).</li><li>Uppdaterad dokumentation för att återspegla ökad filstorlek.</li></ul> |
 | Juli 2023 | Inledande version | Ursprunglig målrelease och dokumentation publicerad. |
 
