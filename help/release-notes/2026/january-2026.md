@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform januari 2026
 description: Versionsinformationen för Adobe Experience Platform i januari 2026.
-source-git-commit: 436e65f22b8866fb9922afcf51811f537c05fc9f
+source-git-commit: 8ce256234be0917242f117ee7e9b806abe90888c
 workflow-type: tm+mt
-source-wordcount: '1272'
+source-wordcount: '1287'
 ht-degree: 20%
 
 ---
@@ -17,8 +17,8 @@ ht-degree: 20%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 27 januari 2026**
@@ -45,7 +45,7 @@ Agent Orchestrator enables you to build and deploy AI-powered agents that can au
 
 {style="table-layout:auto"}
 
-For more information, see the [Agent Orchestrator documentation](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). -->
+For more information, see the [Agent Orchestrator documentation](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator). -->
 
 ## Mål {#destinations}
 
@@ -59,7 +59,7 @@ For more information, see the [Agent Orchestrator documentation](https://experie
 | [Målkopplingen för Exchange](/help/destinations/catalog/advertising/index-exchange.md) är nu tillgänglig | Använd den här målkopplingen om du vill exportera målgruppssegment från Adobe Experience Platform direkt till [!DNL Index Exchange]s programmatiska annonsplattform. [!DNL Index] är en global plattform för annonsleveranser som hjälper mediekonstruktörer att maximera värdet av sitt innehåll på alla skärmar. Med över 20 års branschledarskap knyter [!DNL Index] samman världens största varumärken med förstklassiga upplevelsemakare för att leverera högkvalitativa kundupplevelser. |
 | Regionala slutpunkter stöder Braze-anslutningar | Alla [regionspecifika slutpunkter](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) som stöds av [!DNL Braze] är nu tillgängliga för val under målkonfigurationsflödet. Fråga din [!DNL Braze]-representant vilken slutpunktsinstans du ska använda. |
 | Stöd för schemaläggning varje vecka och månad för [Liveramp Onboarding](../../destinations/catalog/advertising/liveramp-onboarding.md#scheduling) | Du kan nu konfigurera exportscheman varje vecka och månad för Liveramp Onboarding-målet. <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. |
-| Förbättrad aktiveringsupplevelse för [Trade Desk](../../destinations/catalog/advertising/tradedesk.md)- och [Microsoft Bing](../../destinations/catalog/advertising/bing.md)-mål | Trade Desk och Microsoft Bing-destinationerna innehåller nu fördefinierade obligatoriska mappningar för en optimerad aktiveringsupplevelse.  <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. |
+| Förbättrad aktiveringsupplevelse för [Trade Desk](../../destinations/catalog/advertising/tradedesk.md)- och [Microsoft Bing](../../destinations/catalog/advertising/bing.md)-mål | Trade Desk och Microsoft Bing-destinationerna innehåller nu fördefinierade obligatoriska mappningar för en optimerad aktiveringsupplevelse.  <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. ![Bild som visar fördefinierade mappningar för Trade Desk](assets/january/mandatory-mappings-ttd.png) {width="150" align="center" zoomable="yes"} <br> ![Bild som visar fördefinierade mappningar för Microsoft Bing ](assets/january/mandatory-mappings-bing.png) {width="150" align="center" zoomable="yes"} |
 | Stöd för AES256-kryptering för [Amazon S3](../../destinations/catalog/cloud-storage/amazon-s3.md#destination-details) -mål | Nu kan du konfigurera AES256-kryptering för dina Amazon S3-exporter. Det finns två alternativ: <ul><li>**[!UICONTROL Default]**: Data krypteras i vila med den standardkrypteringsalgoritm som är inställd på din bucket.</li><li>**[!UICONTROL SSE-S3/AES256]**: Experience Platform lägger till `s3:x-amz-server-side-encryption": "AES256`-rubriken i exporten och data krypteras i vila med AES256-algoritmen när den körs i S3. **Det här alternativet har högre prioritet än någon standardkrypteringsalgoritm som är konfigurerad på din S3-bucket**.</li></ul> Den här versionen lanseras stegvis och är klar den 30 januari. |
 | Telefonnummeraktivering stöds för [Trade Desk - CRM](../../destinations/catalog/advertising/tradedesk-emails.md#phone-hashing)-anslutningen | Trade Desk - CRM-destinationen stöder nu aktivering av telefonnummer utöver e-postadresser. Du kan aktivera både ohashade telefonnummer i E.164-format och hashade telefonnummer (SHA256_E.164-format) till ditt Trade Desk-konto för målgruppsanpassning och inaktivering baserat på CRM-data. Telefonnummer måste normaliseras till E.164-format innan aktivering. |
 
