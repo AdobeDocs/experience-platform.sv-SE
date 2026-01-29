@@ -17,8 +17,8 @@ ht-degree: 19%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 27 januari 2026**
@@ -40,7 +40,7 @@ Med Agent Orchestrator kan ni bygga och driftsätta AI-baserade agenter som kan 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Adobe Experience Platform Agents användningsbundna testversion | **Utvalda kunder har nu kostnadsfri utvärderingsåtkomst till Adobe Experience Platform Agents**. Du kan använda testversionen för att utforska och interagera med agenter via AI Assistant-gränssnittet från Adobe Experience Platform Agent Orchestrator. Testversionen ger en praktisk upplevelse av AI-agenter som arbetar i kundens befintliga Experience Cloud-produkter och -miljöer, och låter team utvärdera värdet innan de genomför ett fullständigt köp. Adobe Experience Platform Agents vägleds av användarinmatningar och övervakning och respekterar befintliga åtkomstkontroller på produktnivå, vilket säkerställer att användarna bara kan utföra åtgärder eller visa data som de är auktoriserade för inom de underliggande Experience Cloud-programmen. Läs [Experience Platform Agents användningsbundna utvärderingsversion](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial) om du vill ha mer information om hur du kommer igång. |
+| Adobe Experience Platform Agents användningsbundna testversion | **Utvalda kunder har nu kostnadsfri utvärderingsåtkomst till Adobe Experience Platform Agents**. Du kan använda testversionen för att utforska och interagera med agenter via AI Assistant-gränssnittet från Adobe Experience Platform Agent Orchestrator. Testversionen ger en praktisk upplevelse av AI-agenter som arbetar i kundens befintliga Experience Cloud-produkter och -miljöer, och låter team utvärdera värdet innan de genomför ett fullständigt köp. Adobe Experience Platform Agents vägleds av användarinmatningar och övervakning och respekterar befintliga åtkomstkontroller på produktnivå, vilket säkerställer att användarna bara kan utföra åtgärder eller visa data som de är auktoriserade för inom de underliggande Experience Cloud-programmen. Läs [Experience Platform Agents användningsbundna utvärderingsversion](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/trial) om du vill ha mer information om hur du kommer igång. |
 
 {style="table-layout:auto"}
 
