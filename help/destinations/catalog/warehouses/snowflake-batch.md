@@ -4,9 +4,9 @@ description: Skapa en live-Snowflake-datadelning för att få dagliga målgrupps
 last-substantial-update: 2025-10-23T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 905c8853fadc08bb7e357f43f358844b560b3097
 workflow-type: tm+mt
-source-wordcount: '1659'
+source-wordcount: '1662'
 ht-degree: 0%
 
 ---
@@ -149,7 +149,8 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Snowflake Account ID]**: Ditt Snowflake-konto-ID. Använd följande konto-ID-format beroende på om ditt konto är länkat till en organisation:
    * Om ditt konto är länkat till en organisation:`OrganizationName.AccountName`.
    * Om ditt konto inte är länkat till en organisation:`AccountName`.
-* **[!UICONTROL Account acknowledgment]**: Växla på bekräftelsen för ditt konto-ID på Snowflake för att bekräfta att ditt konto-ID är korrekt och tillhör dig.
+* **[!UICONTROL Select Snowflake Region]**: Välj den region där din Snowflake-instans har etablerats. Mer information om vilka molnregioner som stöds finns i Snowflake [dokumentation](https://docs.snowflake.com/en/user-guide/intro-regions).
+* **[!UICONTROL Account acknowledgment]**: När du har angett **[!UICONTROL Snowflake Account ID]** väljer du **[!UICONTROL Yes]** i den här listrutan för att bekräfta att **[!UICONTROL Snowflake Account ID]** är korrekt och tillhör dig.
 
 >[!IMPORTANT]
 >
@@ -176,7 +177,7 @@ Du kan exportera identiteter och profilattribut till det här målet.
 
 ![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
 
-Du kan använda kontrollen [&#x200B; för &#x200B;](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
@@ -195,10 +196,6 @@ Den dynamiska tabellen innehåller följande kolumner:
 ![Skärmbild som visar Snowflake-gränssnittet med dynamiska tabelldata](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png)
 
 ## Kända begränsningar {#known-limitations}
-
-### Begränsning av standardprincip för sammanslagning {#default-merge-policy-restriction}
-
-För närvarande går det endast att exportera målgrupper som är mappade till standardsammanfogningsprincipen.
 
 ### Regional tillgänglighet {#regional-availability}
 
