@@ -3,9 +3,9 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: e145dc91fca471078cf94d84ce1012f659d70293
+source-git-commit: 138bfe721bb20fe3ba614a73ffffca3e00979acb
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1242'
 ht-degree: 0%
 
 ---
@@ -13,22 +13,6 @@ ht-degree: 0%
 # [!DNL The Trade Desk]-anslutning
 
 ## Översikt {#overview}
-
-
->[!IMPORTANT]
->
-> Efter den [interna uppgraderingen](../../../release-notes/2025/july-2025.md#destinations) till måltjänsten från juli 2025 kan du märka en **minskning av antalet aktiverade profiler** i dataflödena till [!DNL The Trade Desk].
-> Den här minskningen orsakas av förbättrad synlighet för övervakning. Profiler utan ECID räknas nu korrekt som utelämnade i aktiveringsmåtten. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
->
->**Vad har ändrats:**
->
->* Måltjänsten rapporterar nu korrekt när profiler utan ECID tas bort från aktiveringen.
->* **Viktigt!** Profiler utan ECID har aldrig konverterats till [!DNL The Trade Desk] ens före uppgraderingen. Integreringen har alltid krävt ECID. Den här uppgraderingen åtgärdar ett fel som tidigare förhindrade att dessa fall syntes i mätvärdena.
->
->**Vad du behöver göra:**
->
->* Granska era målgruppsdata för att bekräfta att profilerna har giltiga ECID-värden.
->* Övervaka dina aktiveringsvärden för att verifiera förväntat antal profiler. Lägre antal ger korrekt rapportering, inte en förändring av målbeteendet.
 
 Använd den här målkopplingen för att skicka profildata till [!DNL The Trade Desk]. Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
 
@@ -46,14 +30,14 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 
 Nedan visas de identiteter som stöds av målet [!DNL The Trade Desk]. Dessa identiteter kan användas för att aktivera målgrupper för [!DNL The Trade Desk].
 
-Alla identiteter i tabellen nedan är obligatoriska mappningar.
+Alla identiteter i tabellen nedan är förkonfigurerade och automatiskt mappade under aktiveringen. Du behöver inte konfigurera dessa mappningar manuellt i aktiveringsarbetsflödet.
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| [!DNL GAID] | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
-| [!DNL IDFA] | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
-| [!DNL ECID] | EXPERIENCE CLOUD ID | Den här identiteten är obligatorisk för att integreringen ska fungera korrekt, men den används inte för målgruppsaktivering. |
-| [!DNL Tradedesk] | [!DNL TDID] på plattformen [!DNL The Trade Desk] | Använd den här identiteten när du aktiverar målgrupper baserat på varumärkets egna ID. |
+| GAID | GOOGLE ADVERTISING ID | Aktiveras när det finns ett GAID i profilen. |
+| IDFA | Apple ID för annonsörer | Aktiveras när en IDFA finns i profilen. |
+| ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Läs följande dokument på [ECID](/help/identity-service/features/ecid.md) om du vill ha mer information. |
+| [!DNL Tradedesk] | [!DNL TDID] på plattformen [!DNL The Trade Desk] | Aktiveras när en profil har ett ECID och en ECID-to-Trade Desk ID-mappning finns i Experience Platform. |
 
 {style="table-layout:auto"}
 
@@ -81,9 +65,16 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## Förhandskrav {#prerequisites}
 
->[!IMPORTANT]
->
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/sv/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
+Förutsättningar beror på vilka identitetstyper du tänker använda för målgruppsaktivering:
+
+**Det finns inga krav för aktivering av mobilt ID**. Så länge du samlar in och hanterar ID:n (GAID och/eller IDFA) för dina kunder kan du börja aktivera målgrupper till [!DNL The Trade Desk].
+
+**För cookie-baserad målinriktning på[!DNL The Trade Desk]** kontrollerar du att det finns en mappning mellan ECID och [!DNL Trade Desk ID]. Gör så genom att följa stegen nedan:
+
+1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL The Trade Desk ID]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
+   * Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs dina befintliga ID-synkroniseringar automatiskt till Experience Platform.
+
+2. **Instrumentera dina webbsidor**: Implementera kod på dina webbsidor för att skapa mappningar mellan [!DNL The Trade Desk ID] och Adobe ECID. På så sätt kan Experience Platform koppla Trade Desk-ID:n till kundprofiler.
 
 ## Anslut till målet {#connect}
 
@@ -128,41 +119,43 @@ I steget [Målgruppsschema](../../ui/activate-segment-streaming-destinations.md#
 
 När du kartlägger målgrupper rekommenderar Adobe att du använder Experience Platform målgruppsnamn eller en kortare form av det för att underlätta användningen. Men målgrupps-ID:t eller målnamnet behöver inte matcha det i ditt Experience Platform-konto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
 
-### Obligatoriska mappningar {#mandatory-mappings}
+### Förkonfigurerade mappningar {#preconfigured-mappings}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_required_mappings_ttd"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat dessa fyra mappningsuppsättningar åt dig. När du aktiverar data till The Trade Desk behöver de profiler som är kvalificerade för de aktiverade målgrupperna inte nödvändigtvis ha alla fyra identiteterna i profilerna, eftersom detta mål fungerar med någon av de målidentiteter som visas här. <br> För cookie-baserad målinriktning baserat på Trade Desk ID behöver du ett ECID i profilen och en ID-synkroniseringsmappning mellan Trade Desk ID och ECID."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
-Alla målidentiteter som beskrivs i avsnittet [identiteter som stöds](#supported-identities) måste mappas i mappningssteget i arbetsflödet för målgruppsaktivering. Detta inkluderar:
+Följande identitetsmappningar är **förkonfigurerade och fyllda i automatiskt** för dig i arbetsflödet för målgruppsaktivering:
 
-* [!DNL GAID] (Google Advertising-id)
-* [!DNL IDFA] (Apple-id för annonsörer)
-* [!DNL ECID] (Experience Cloud-ID)
+* GAID (Google Advertising-id)
+* IDFA (Apple ID för annonsörer)
+* ECID (Experience Cloud-ID)
 * [!DNL The Trade Desk ID]
 
 ![Skärmbild med obligatoriska mappningar](../../assets/catalog/advertising/tradedesk/mandatory-mappings.png)
 
-Genom att mappa alla målidentiteter säkerställer du att aktiveringen kan dela upp och leverera profiler på rätt sätt med valfri identitet. Det innebär inte att alla identiteter måste finnas i varje profil.
+De här mappningarna är nedtonade och skrivskyddade. Du behöver inte konfigurera något i det här steget. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
-För att exporten till The Trade Desk ska lyckas måste en profil innehålla:
+Experience Platform kontrollerar automatiskt varje profil som tillhör målgrupper som är mappade i aktiveringsarbetsflödet för alla identitetstyper som stöds och aktiverar sedan profilen med hjälp av de identiteter som finns.
 
-* [!DNL ECID] och
-* minst en av: [!DNL GAID], [!DNL IDFA] eller [!DNL The Trade Desk ID]
+### Identitetskrav per aktiveringstyp
 
-Exempel:
+**Aktivering av mobilt ID (GAID/IDFA):** Profiler med bara GAID eller IDFA räcker för aktivering. Inga ytterligare identiteter eller krav krävs.
 
-* Endast [!DNL ECID]: exporteras inte
-* [!DNL ECID] + [!DNL The Trade Desk ID]: exporterad
-* [!DNL ECID] + [!DNL IDFA]: exporterad
-* [!DNL ECID] + [!DNL GAID]: exporterad
-* [!DNL IDFA] + [!DNL The Trade Desk ID] (no [!DNL ECID]): exporteras inte
+**Cookie-baserad målinriktning ([!DNL Trade Desk ID]):** Kräver båda:
 
->[!NOTE]
-> 
->Efter uppgraderingen [juli 2025](/help/release-notes/2025/july-2025.md#destinations) till måltjänsten rapporteras profiler som saknas [!DNL ECID] korrekt som utelämnade i aktiveringsmått. Detta har alltid varit integreringens beteende - profiler utan [!DNL ECID] har aldrig nåtts [!DNL The Trade Desk] - men dropparna visas nu korrekt i din dataflödesövervakning. Lägre antal aktiveringar ger korrekt rapportering, inte en förändring av målfunktionen.
+* ECID finns i profilen
+* En ID-synkroniseringsmappning mellan [!DNL Trade Desk ID] och ECID (konfigurerad enligt beskrivningen i avsnittet [Krav](#prerequisites))
+
+**Beteende för flera ID:n:** Om en profil innehåller flera identiteter som stöds aktiveras varje identitet separat för [!DNL The Trade Desk]. Detta ger maximal räckvidd och flexibilitet vid målgruppsaktivering.
+
+### Exempel på aktivering
+
+* **Mobile ID-profiler:** Profiler med GAID och/eller IDFA aktiveras med deras respektive reklam-ID. Om en profil innehåller både GAID och IDFA aktiveras varje ID separat.
+* **Cookie-baserad profil:** En profil med ECID och motsvarande [!DNL Trade Desk ID]-mappning aktiveras med Trade Desk ID för cookie-baserad målning.
+* **Endast ECID-profil:** En profil med endast ECID och ingen [!DNL Trade Desk ID]-mappning exporteras **inte**. ECID räcker inte till för aktivering.
 
 ## Exporterade data {#exported-data}
 

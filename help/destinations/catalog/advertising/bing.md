@@ -3,33 +3,16 @@ keywords: Reklam.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Advertising-nätverket, inklusive webbannonsering, sökannonsering och inbyggt webbmaterial.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: e75a5562820490bc56adaa1d21e4066fc649cc44
+source-git-commit: ec31c1d967be4764b22f735429e2f9437f31ed20
 workflow-type: tm+mt
-source-wordcount: '904'
-ht-degree: 1%
+source-wordcount: '918'
+ht-degree: 0%
 
 ---
 
 # [!DNL Microsoft Bing]-anslutning {#bing-destination}
 
 ## Översikt {#overview}
-
-
->[!IMPORTANT]
->
->Efter en intern uppgradering av måltjänsten från och med augusti 2025 kan du uppleva en **minskning av antalet aktiverade profiler** i dina dataflöden till [!DNL Microsoft Bing].
->
-> Den här släppningen orsakas av introduktionen av **ECID-mappningskravet** för alla aktiveringar till den här målplattformen. Mer information finns i avsnittet [obligatorisk mappning](#mandatory-mappings) på den här sidan.
->
->**Vad har ändrats:**
->
->* ECID-mappning (Experience Cloud ID) är nu **obligatoriskt** för alla profilaktiveringar.
->* Profiler utan ECID-mappning kommer att **tas bort** från befintliga aktiveringsdataflöden.
->
->**Vad du behöver göra:**
->
->* Granska era målgruppsdata för att bekräfta att profilerna har giltiga ECID-värden.
->* Övervaka dina aktiveringsvärden för att verifiera förväntat antal profiler.
 
 Använd målet [!DNL Microsoft Bing] för att skicka profildata till hela [!DNL Microsoft Advertising Network], inklusive [!DNL Display Advertising], [!DNL Search] och [!DNL Native].
 
@@ -45,10 +28,12 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 
 [!DNL Microsoft Bing] stöder aktivering av målgrupper baserat på de identiteter som visas i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
-| Identitet | Beskrivning |
-|---|---|
-| MAID | MICROSOFT ADVERTISING ID |
-| ECID | Experience Cloud ID. Den här identiteten är obligatorisk för att integreringen ska fungera korrekt, men den används inte för målgruppsaktivering. |
+Alla identiteter i tabellen nedan är förkonfigurerade och automatiskt mappade under aktiveringen. Du behöver inte konfigurera dessa mappningar manuellt.
+
+| Identitet | Beskrivning | Överväganden |
+|---|---|---|
+| MAID | MICROSOFT ADVERTISING ID | Aktiveras när ett Microsoft Advertising-ID finns i profilen. |
+| ECID | EXPERIENCE CLOUD ID | **Krävs.** Alla profiler måste ha ett ECID med motsvarande Microsoft Advertising ID-mappning för att kunna exporteras. |
 
 {style="table-layout:auto"}
 
@@ -78,9 +63,12 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## Förhandskrav {#prerequisites}
 
->[!IMPORTANT]
->
->Om du vill skapa ditt första mål med [!DNL Microsoft Bing] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=sv-SE) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Microsoft Bing]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Experience Platform.
+Målet [!DNL Microsoft Bing] kräver att följande inställningar fungerar korrekt:
+
+1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL Microsoft Bing]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
+   * Om du tidigare har konfigurerat [!DNL Microsoft Bing]-integreringar i Audience Manager överförs dina befintliga ID-synkroniseringar automatiskt till Experience Platform.
+
+2. **Kontrollera att det finns ett ECID för profilerna**: Alla profiler måste ha ett ECID för att kunna exporteras. ECID är **obligatoriskt** för det här målet.
 
 När du konfigurerar målet måste du ange följande information:
 
@@ -119,7 +107,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >id="platform_destinations_required_mappings_bing"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig. När du aktiverar data till Microsoft Bing måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 >[!IMPORTANT]
 > 
@@ -131,14 +119,24 @@ I steget [Målgruppsschema](../../ui/activate-segment-streaming-destinations.md#
 
 ![Gränssnittsbild som visar målgruppsfönstret med ett exempel på hur målgruppsnamnet mappas till Bing Mapping-ID.](../../assets/catalog/advertising/bing/mapping-id.png)
 
-### Obligatoriska mappningar {#mandatory-mappings}
+### Förkonfigurerade mappningar {#preconfigured-mappings}
 
-Alla målidentiteter som beskrivs i avsnittet [identiteter som stöds](#supported-identities) är obligatoriska och måste mappas under målgruppsaktiveringen. Detta inkluderar:
+Följande identitetsmappningar är **förkonfigurerade och fyllda i automatiskt** under målgruppsaktiveringen:
 
 * **MAID** (Microsoft Advertising ID)
 * **ECID** (Experience Cloud-ID)
 
-Om du inte kan mappa alla identiteter som krävs kan du inte slutföra aktiveringsarbetsflödet. Varje identitet har ett specifikt syfte i integreringen och alla krävs för att målet ska fungera korrekt.
+De här mappningarna är nedtonade och skrivskyddade. Du behöver inte konfigurera något i det här steget. Välj **[!UICONTROL Next]** om du vill fortsätta.
+
+>[!IMPORTANT]
+>
+>**ECID krävs för att exporten ska lyckas.** profiler utan ECID eller utan ID-synkroniseringsmappning mellan ECID och Microsoft Advertising ID exporteras inte.
+
+### Exempel på aktivering
+
+* **Profil med ECID och Microsoft Advertising ID-mappning:** Profilen har exporterats och aktiverats
+* **Profil med endast ECID (ingen mappning av Microsoft Advertising-id):** Profilen **exporteras inte**. Mappning av ID-synkronisering mellan ECID och MAID krävs.
+* **Profil utan ECID:** Profilen exporteras **inte**. ECID är obligatoriskt för denna destination.
 
 ## Exporterade data {#exported-data}
 
