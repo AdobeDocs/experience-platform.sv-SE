@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 6fa71c48151e937f2e18d8b9761aad94eca85ade
+source-git-commit: 76e8f0678c4634258170ca1161134dd1176c24e7
 workflow-type: tm+mt
-source-wordcount: '1316'
-ht-degree: 20%
+source-wordcount: '1110'
+ht-degree: 22%
 
 ---
 
@@ -21,8 +21,8 @@ ht-degree: 20%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: januari 2026**
@@ -32,7 +32,6 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 - [Agent Orchestrator](#agent-orchestrator)
 - [Mål](#destinations)
 - [Kundprofil i realtid](#real-time-customer-profile)
-- [Scheman](#schemas)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
@@ -92,18 +91,6 @@ Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom
 {style="table-layout:auto"}
 
 Mer information finns i [[!DNL Real-Time Customer Profile] översikten](../profile/home.md).
-
-## Scheman {#schemas}
-
-Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Scheman består av en basklass och noll eller flera schemafältgrupper.
-
-**Nya eller uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Modernisering av schemalagret med sökning, filter, taggar och mappar | Sidan för att bläddra i scheman har moderniserats för att ge bättre funktioner för att ordna och identifiera scheman. De nya funktionerna är bland annat avancerade sök- och filtreringsalternativ, stöd för användargenererade taggar och mappar för att ordna scheman och textbundna åtgärder för att effektivisera arbetsflödena. Viktiga förbättringar är: uppdaterade kolumner (Namn, Klass, Datamängder, Identiteter, Relationer, Aktivera för profil, Beteende, Schematyp, Taggar, Skapad den, Senast ändrad), avancerade filter (Visa profiler, Schematyp, Klass, Har tagg, Skapad av, Ändringsdatum, Har primär identitet, Har relation, Primär identitetsnamnrymd), textbundna åtgärder (Redigera, Ta bort, Använd etiketter), Skapa datauppsättning för icke-relationella scheman, Hantera taggar, Flytta till mapp, Lägg till i paket, Kopiera JSON-struktur, Hämta exempelfil) och möjligheten att ordna scheman med hjälp av taggar och mappar. De här förbättringarna ger omfattande insyn i schemaresurser och möjliggör mer effektiv schemahantering på sandlådenivå. |
-
-Mer information finns i [[!DNL Schemas] översikten](../xdm/home.md).
 
 ## Segmenteringstjänst {#segmentation-service}
 
