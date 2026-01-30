@@ -65,7 +65,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Målet [!DNL Microsoft Bing] kräver att följande inställningar fungerar korrekt:
 
-1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL Microsoft Bing]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
+1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL Microsoft Bing]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=sv-SE) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
    * Om du tidigare har konfigurerat [!DNL Microsoft Bing]-integreringar i Audience Manager överförs dina befintliga ID-synkroniseringar automatiskt till Experience Platform.
 
 2. **Kontrollera att det finns ett ECID för profilerna**: Alla profiler måste ha ett ECID för att kunna exporteras. ECID är **obligatoriskt** för det här målet.
@@ -107,7 +107,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >id="platform_destinations_required_mappings_bing"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig. När du aktiverar data till Microsoft Bing måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 >[!IMPORTANT]
 > 
