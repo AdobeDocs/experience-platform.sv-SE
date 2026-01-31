@@ -4,9 +4,9 @@ description: Lär dig hur du skapar metadata för en extern målgrupp med API:t.
 hide: true
 hidefromtoc: true
 exl-id: e841a5f6-f406-4e1d-9e8a-acb861ba6587
-source-git-commit: a3b82eb1efaf257723208504c90210850a44b4a4
+source-git-commit: ea7fd13675a95941be7267f1cf75056b224efcd3
 workflow-type: tm+mt
-source-wordcount: '246'
+source-wordcount: '264'
 ht-degree: 2%
 
 ---
@@ -61,7 +61,8 @@ curl -X POST https://platform.adobe.io/data/core/ais/audiences?createAudienceMet
  -H 'Accept: application/vnd.adobe.external.audiences+json; version=2'
  -d '{
     "name": "Sample audience name",
-    "description" "A sample description for the audience.",
+    "description": "A sample description for the audience.",
+    "audienceId": "4a815904-f2f9-4237-82fb-55605bcc2ad7",
     "namespace": "agora",
     "originName": "Agora_Collaboration"
  }'
@@ -71,6 +72,7 @@ curl -X POST https://platform.adobe.io/data/core/ais/audiences?createAudienceMet
 | -------- | ---- | ----------- |
 | `name` | Sträng | Namnet på publiken. |
 | `description` | Sträng | En valfri beskrivning för målgruppen. |
+| `audienceId` | Sträng | Ett externt genererat ID för målgruppen. |
 | `namespace` | Sträng | Namnutrymmet för målgruppen. |
 | `originName` | Sträng | Namnet på målgruppens ursprung. |
 
@@ -80,6 +82,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målgruppe
 
 ```json
 {
+    "id": "6bb1ee15-8f64-49fd-bce3-d5c2f22f1f14",
     "name": "Sample audience name",
     "audienceId": "4a815904-f2f9-4237-82fb-55605bcc2ad7"
 }
@@ -87,5 +90,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målgruppe
 
 | Egenskap | Typ | Beskrivning |
 | -------- | ---- | ----------- |
+| `id` | Sträng | Det systemgenererade ID:t för målgruppen. |
 | `name` | Sträng | Namnet på den målgrupp du skapade. |
-| `audienceId` | Sträng | ID:t för den målgrupp du skapade. |
+| `audienceId` | Sträng | Det externt angivna ID:t för målgruppen som du skapade. |

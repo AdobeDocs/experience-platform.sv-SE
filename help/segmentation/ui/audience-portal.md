@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 8fed1f034cd530bd84bf9d9b180d9db3c4ee0faf
+source-git-commit: 1a2536437ae8aa34dac13406dd4b36afa9585ae5
 workflow-type: tm+mt
-source-wordcount: '4434'
+source-wordcount: '4457'
 ht-degree: 0%
 
 ---
@@ -102,7 +102,7 @@ Du kan lägga till fler fält i målportalen genom att välja ![filterattributsi
 | ----- | ----------- |
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
-| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [&#x200B; 6&rbrace;AJO B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
+| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
 | [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för fältet är `Draft`, `Inactive` och `Published`. Mer information om livscykelstatus, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd, finns i avsnittet [livscykelstatus i Vanliga frågor om segmentering](../faq.md#lifecycle-status). |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge] och [!UICONTROL Not Scheduled]. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
@@ -119,7 +119,7 @@ Om nedbrytning är markerat visas ett stolpdiagram med procentandelen profiler s
 | Status | Beskrivning |
 | ------ | ----------- |
 | [!UICONTROL Realized] | Antalet profiler som **kvalificerat** för målgruppen under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
-| [!UICONTROL Existing] | Antalet profiler som **förblev** i publiken under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. Det här fältet är **beräknat** och visas inte i [`segmentMembership`-objektet &#x200B;](../../xdm/field-groups/profile/segmentation.md). |
+| [!UICONTROL Existing] | Antalet profiler som **förblev** i publiken under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. Det här fältet är **beräknat** och visas inte i [`segmentMembership`-objektet ](../../xdm/field-groups/profile/segmentation.md). |
 | [!UICONTROL Exiting] | Antalet profiler som **slutade** publiken under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
 
 När du har markerat de fält som du vill visa kan du även ändra storlek på de visade kolumnernas bredd. Du kan antingen göra detta genom att dra området mellan kolumnerna eller genom att markera ![pilikonen](/help/images/icons/chevron-down.png) för kolumnen som du vill ändra storlek på, följt av **[!UICONTROL Resize column]**.
@@ -138,7 +138,7 @@ Om du vill använda [!DNL Unified Search] lägger du till den term som du vill s
 
 ![Sökfältet är markerat.](../images/ui/audience-portal/browse-audience-search.png)
 
-Mer information om [!DNL Unified Search], inklusive funktioner som stöds, finns i [dokumentationen för enhetlig sökning](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html?lang=sv-SE).
+Mer information om [!DNL Unified Search], inklusive funktioner som stöds, finns i [dokumentationen för enhetlig sökning](https://experienceleague.adobe.com/docs/core-services/interface/services/search-experience-cloud.html).
 
 #### Taggar {#tags}
 
@@ -203,7 +203,7 @@ Listan med tillgängliga filter visas.
 
 | Filter | Beskrivning |
 | ------ | ----------- |
-| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/sv/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [&#x200B; 6&rbrace;AJO B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
+| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. Möjliga värden är [Segmenteringstjänsten](#segment-builder), [Anpassad överföring](#import-audience), [Målgruppskomposition](#audience-composition), [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home), [Målliknande målgrupper](../types/lookalike-audiences.md), [Federated målgruppskomposition](#fac), [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-overview/cja-overview), [Data Distiller](#data-distiller), [ 6}AJO B2B](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview) och [Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/destinations/experience-platform#audience-portal). |
 | [!UICONTROL Has any tag] | Gör att du kan filtrera efter taggar. Du kan välja mellan **[!UICONTROL Has any tag]** och **[!UICONTROL Has all tags]**. När **[!UICONTROL Has any tag]** har valts kommer de filtrerade målgrupperna att inkludera **alla** av de taggar som du har lagt till. När **[!UICONTROL Has all tags]** har valts måste de filtrerade målgrupperna innehålla **all** av de taggar du har lagt till. |
 | [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. De tillgängliga alternativen är [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive] och [!UICONTROL Published]. |
 | [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens (utvärderingsmetod). Tillgängliga alternativ är [!UICONTROL Batch], [!UICONTROL Streaming] och [!UICONTROL Edge] |
@@ -269,14 +269,14 @@ Om din målgrupp är inom sju dagar efter utgångsdatum kan du välja **[!UICONT
 
 ![Knappen [!UICONTROL Refresh data expiration] är markerad på sidan med målgruppsinformation.](../images/ui/audience-portal/refresh-data-expiration.png)
 
-Detta förlänger utgångsdatumet med 30 dagar och använder samma målgruppsmetadata. När knappen har tryckts ned kan du inte markera den förrän om 20 minuter.
+Detta utökar dataförfallotiden med det antal dagar som definierats för den initiala överföringen och använder samma målgruppsmetadata. Om utgångsdatumet inte har definierats tidigare förlängs utgångsdatumet med 30 dagar. När knappen har tryckts ned kan du inte markera den förrän om 20 minuter.
 
 Den här knappen kan **inte** markeras i följande situationer:
 
 - Det finns inga framgångsrika grupper för publiken
 - Den inledande uppdateringen misslyckades
 - Utgångsdatumet är längre än sju dagar
-- Publiken har inga data
+- Publiken har redan gått ut
 
 >[!TAB Segmenteringstjänst]
 

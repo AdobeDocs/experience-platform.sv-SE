@@ -1,12 +1,12 @@
 ---
 title: Arkitekturuppgraderingar till Real-Time CDP B2B edition
 description: Läs det här dokumentet om du vill veta mer om de omfattande uppgraderingarna av arkitekturen till Real-Time CDP B2B edition.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: d958a947-e195-4dd4-a04c-63ad82829728
-source-git-commit: 1a3be99ca3c270dda6e8dc559359cbe21bb8f4fb
+source-git-commit: da288d1a917df85b3c003bc6592fda7a6f1eafe7
 workflow-type: tm+mt
-source-wordcount: '1074'
-ht-degree: 0%
+source-wordcount: '1096'
+ht-degree: 1%
 
 ---
 
@@ -123,6 +123,10 @@ Ta bort begäranden för följande B2B-entiteter som använder API:t [!DNL Profi
 * Medlemmar i marknadsföringslista
 
 Läs [[!DNL Profile Access] API](../profile/api/entities.md) om du vill ha mer information.
+
+### Borttagning av segmentjobb-API
+
+I den nya arkitekturen stöds inte slutpunkten&quot;skapa ett segmentjobb&quot; och den flexibla målgruppsutvärderingen.
 
 ### Profilsökningar för konto och affärsmöjlighet
 
