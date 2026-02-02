@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 4faa15431fe069b5be964f0f8643a73633338a89
+source-git-commit: 5b36722e5c2ca0cc8a4fb8667ceb3dc4a3568b02
 workflow-type: tm+mt
-source-wordcount: '3550'
+source-wordcount: '3542'
 ht-degree: 0%
 
 ---
@@ -142,7 +142,7 @@ Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter s
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=sv-SE#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -354,7 +354,7 @@ På sidan för dataflöden visas information om dataflödets körningar, inklusi
 När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](#segment-level-view) kan du filtrera dataflödet med följande alternativ:
 
 - **[!UICONTROL Dataflow runs with failed records]**: För den valda målgruppen listas alla dataflödeskörningar som misslyckades för aktivering med det här alternativet. Information om varför poster i ett visst dataflöde misslyckades finns på [informationssidan för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
-- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan &#x200B;](#dataflow-run-details-page) för dataflödeskörningen.
+- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan ](#dataflow-run-details-page) för dataflödeskörningen.
 - **[!UICONTROL Dataflow runs with activated records]**: För den valda målgruppen listas alla dataflödeskörningar som har poster som har aktiverats.
 
 ![Alternativknappar som visar hur du filtrerar dataflöden för målgrupper.](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
@@ -371,7 +371,7 @@ På sidan med information om dataflödeskörning visas mer specifik information 
 - **[!UICONTROL IMS org ID]**: Organisationen som dataflödet tillhör.
 - **[!UICONTROL Last updated]**: Den tidpunkt då dataflödeskörningen senast uppdaterades.
 
-På informationssidan finns också en växlingsknapp för att växla mellan körningsfel och målgrupper i dataflöden. Det här alternativet är endast tillgängligt för dataflöden som körs på batchdestinationer och för [Google kundmatchningsmålet DV 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md).
+På informationssidan finns också en växlingsknapp för att växla mellan körningsfel och målgrupper i dataflöden. Det här alternativet är tillgängligt för de mål som listas i avsnittet [målgruppsvy](#segment-level-view).
 
 I dataflödets felvy visas en lista med poster som misslyckades och poster som hoppades över. Information om både misslyckade och överhoppade poster visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de poster som misslyckades i listan. Om du vill visa överhoppade poster väljer du alternativet **[!UICONTROL Records skipped]**.
 

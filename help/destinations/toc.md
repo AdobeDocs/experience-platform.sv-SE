@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 17bc44d4c7e21f6d8fe544b3052fed32453002b6
+source-git-commit: 5b36722e5c2ca0cc8a4fb8667ceb3dc4a3568b02
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1329'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 2%
    * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
    * [Målgruppens livscykel på direktuppspelningsmål](./how-destinations-work/audience-lifecycle-streaming-destinations.md)
 * API-självstudier {#api}
-   * [Aktivera data till filbaserade mål med API:t för Flow Service &#x200B;](/help/destinations/api/activate-segments-file-based-destinations.md)
+   * [Aktivera data till filbaserade mål med API:t för Flow Service ](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
    * [Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
@@ -33,7 +33,7 @@ ht-degree: 2%
    * [Ta bort destinationskonton](./api/delete-destination-account.md)
    * [Ta bort måldataflöden](./api/delete-destination-dataflow.md)
    * [Exportera datauppsättningar](/help/destinations/api/export-datasets.md)
-   * [Sortera och filtrera API-svar för mål](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=sv-SE#use-cases)
+   * [Sortera och filtrera API-svar för mål](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
    * [Skapa en ny målanslutning](./ui/connect-destination.md)
@@ -54,7 +54,7 @@ ht-degree: 2%
       * [Exportera arrayer, kartor och objekt](/help/destinations/ui/export-arrays-maps-objects.md)
       * [Utför omformningar av data som exporteras till molnlagringsmål](/help/destinations/ui/data-transformations-calculated-fields.md)
    * [Visa målinformation](./ui/destination-details-page.md)
-   * [(Beta) Redigera mål](./ui/edit-destination.md)
+   * [Redigera mål](./ui/edit-destination.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
    * [Ta bort destinationskonton](./ui/delete-destination-account.md)
    * [Redigera aktiveringsdataflöden](./ui/edit-activation.md)
@@ -71,7 +71,7 @@ ht-degree: 2%
       * [(Äldre) (V2) Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
       * [(Beta) Marketo Engage Person Sync-anslutning](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE)
+      * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising destinationer{#advertising}
       * [(Beta) Acxiom Audience Connection](./catalog/advertising/acxiom-audience-connection.md)
@@ -328,4 +328,4 @@ ht-degree: 2%
       * [Självbetjäningsmall för dokumentation](./destination-sdk/docs-framework/self-service-template.md)
       * [Bästa tillvägagångssätt](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [Vanliga frågor och svar](./destinations-faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
