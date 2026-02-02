@@ -61,7 +61,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 | Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
