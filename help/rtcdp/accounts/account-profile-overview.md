@@ -2,13 +2,13 @@
 keywords: rtcdp b2b;b2b;account;account profile;account profiles rtcdp;real-time customer data platform;
 title: Kontoprofiler i Real-Time CDP B2B edition
 description: Lär dig hur Adobe Real-Time Customer Data Platform B2B Edition gör det möjligt att sammanställa kontouppgifter från olika källor med hjälp av kontoprofiler.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: 67515fe0-975e-4ee1-b172-60bc93ba1010
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 769d83155ae70516a296b71baec37d797dd81f34
 workflow-type: tm+mt
-source-wordcount: '306'
-ht-degree: 7%
+source-wordcount: '339'
+ht-degree: 6%
 
 ---
 
@@ -25,6 +25,10 @@ Genom att sammanfoga kontouppgifter från olika källor kan ni börja se en komp
 ## Visningsprogram för kontoprofil
 
 Med Real-Time CDP, B2B edition kan du använda Experience Platform användargränssnitt för att visa kontoprofiler och söka efter specifika konton med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt. Mer information om hur du visar kontoprofiler i Experience Platform-gränssnittet finns i användargränssnittshandboken för [kontoprofiler](account-profile-ui-guide.md).
+
+>[!IMPORTANT]
+>
+>Kontoprofiler kräver att batchsegmenteringsutvärderingen är aktiverad för att visa data. Se till att gruppsegmentering är konfigurerad och schemalagd för att upprätthålla korrekt kontoprofilinformation. Mer information finns i [guiden för gruppsegmentering](../../segmentation/methods/batch-segmentation.md).
 
 ## Skapa och aktivera kontomålgrupper
 
