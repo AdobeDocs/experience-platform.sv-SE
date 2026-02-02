@@ -1,7 +1,8 @@
 ---
 title: Oracle Eloqua (V2) Source - översikt
 description: Lär dig ansluta Oracle Eloqua till Adobe Experience Platform.
-source-git-commit: 180754969d4ae8dbd1308dfc85dae73baf64f759
+last-substantial-update: 2025-02-02T00:00:00Z
+source-git-commit: 4d47eae91711596677335b03568add9f6fbade74
 workflow-type: tm+mt
 source-wordcount: '1824'
 ht-degree: 0%
@@ -68,7 +69,7 @@ Använd fönstret **[!DNL Security Group Overview]** för att ange ett namn och 
 
 ![Översiktsfönstret för säkerhetsgruppen i Eloqua.](../../images/tutorials/create/eloqua/security-group-overview.png)
 
-![Urvalsfönstret för API:t &#x200B;](../../images/tutorials/create/eloqua/consume-api.png)
+![Urvalsfönstret för API:t ](../../images/tutorials/create/eloqua/consume-api.png)
 
 >[!NOTE]
 >

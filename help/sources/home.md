@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: fac942a469f61461b5a14d9be5b9a39d921c6b25
+source-git-commit: 4d47eae91711596677335b03568add9f6fbade74
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1667'
 ht-degree: 1%
 
 ---
@@ -61,7 +61,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 | Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
@@ -240,11 +240,11 @@ Du kan använda följande källor för att importera automatiserade marknadsför
 | [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) | Direktuppspelning | Azure |
 | [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) | Grupp | Azure |
 | [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md) | Grupp | Azure |
-| [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) | Grupp | Azure |
+| [[!DNL Oracle Eloqua] (V2)](connectors/marketing-automation/eloqua.md) | Grupp | Azure |
 | [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) | Grupp | Azure |
 | [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) | Grupp | Azure |
 | [[!DNL Relay Connector]](tutorials/ui/create/marketing-automation/relay-connector.md) | Direktuppspelning | Azure |
-| [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) | Grupp | Azure, AWS |
+| [[!DNL Salesforce Marketing Cloud] (V2)](connectors/marketing-automation/sfmc.md) | Grupp | Azure |
 
 {style="table-layout:auto"}
 
