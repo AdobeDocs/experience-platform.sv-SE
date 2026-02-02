@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL Oracle Eloqua]-källan är nu föråldrad och är inte längre tillgänglig. Använd den nya [[!DNL Oracle Eloqua] (V2)-källan ](eloqua.md) som ny koppling för dina [!DNL Eloqua]-data.
+>[!DNL Oracle Eloqua]-källan är nu föråldrad och är inte längre tillgänglig. Använd den nya [[!DNL Oracle Eloqua] (V2)-källan &#x200B;](eloqua.md) som ny koppling för dina [!DNL Eloqua]-data.
 
 Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Experience Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
