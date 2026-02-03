@@ -3,9 +3,9 @@ title: Salesforce Marketing Cloud Source - översikt
 description: Lär dig hur du ansluter Salesforce Marketing Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
 last-substantial-update: 2025-05-17T00:00:00Z
-source-git-commit: 4d47eae91711596677335b03568add9f6fbade74
+source-git-commit: 7481a4c85f14847c13d20372dc7bd26c92a5c3d4
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '638'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL Oracle Salesforce Marketing Cloud]-källan är nu föråldrad och är inte längre tillgänglig. Använd den nya [[!DNL Salesforce Marketing Cloud] (V2)-källan &#x200B;](sfmc.md) som ny koppling för dina [!DNL Salesforce Marketing Cloud]-data.
+>[!DNL Oracle Salesforce Marketing Cloud]-källan är nu föråldrad och inte längre tillgänglig. Använd den nya [[!DNL Salesforce Marketing Cloud] (V2)-källan ](sfmc.md) som ny koppling för dina [!DNL Salesforce Marketing Cloud]-data.
 
 Med [!DNL Salesforce Marketing Cloud] kan ni hantera och automatisera kundengagemang för e-post, mobiler, sociala medier och annonser - allt från en enda plattform. Med verktyg som Email Studio, Journey Builder och Audience Builder kan ni skapa personaliserade kampanjer och kundresor som är skräddarsydda efter er målgrupp.
 
