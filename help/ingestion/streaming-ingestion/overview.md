@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Direktuppspelning - översikt
 description: Direktuppspelning för Adobe Experience Platform ger användarna en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: ea693cb4bb732c829d9a477cbd3dcb209da524f3
+source-git-commit: a77be4ef97540b929192fa6f367830f4a29e5af7
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '433'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och 
 
 | Mål | Förväntad fördröjning |
 | --------- | ---------------- |
-| Kundprofil i realtid | &lt; 15 minuter vid den 95:e percentilen |
+| Kundprofil i realtid | <ul><li>&lt; 15 minuter vid den 95:e percentilen för B2C-datainmatning.</li><li>&lt; 30 minuter vid den 95:e percentilen för B2B-datainmatning.</li></ul> |
 | Data Lake | &lt; 60 minuter |
 
 ## Begär per sekund (RPS) - vägledning om direktuppspelad inmatning
