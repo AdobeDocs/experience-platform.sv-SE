@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL Oracle Salesforce Marketing Cloud]-källan är nu föråldrad och inte längre tillgänglig. Använd den nya [[!DNL Salesforce Marketing Cloud] (V2)-källan ](sfmc.md) som ny koppling för dina [!DNL Salesforce Marketing Cloud]-data.
+>[!DNL Oracle Salesforce Marketing Cloud]-källan är nu föråldrad och inte längre tillgänglig. Använd den nya [[!DNL Salesforce Marketing Cloud] (V2)-källan &#x200B;](sfmc.md) som ny koppling för dina [!DNL Salesforce Marketing Cloud]-data.
 
 Med [!DNL Salesforce Marketing Cloud] kan ni hantera och automatisera kundengagemang för e-post, mobiler, sociala medier och annonser - allt från en enda plattform. Med verktyg som Email Studio, Journey Builder och Audience Builder kan ni skapa personaliserade kampanjer och kundresor som är skräddarsydda efter er målgrupp.
 
