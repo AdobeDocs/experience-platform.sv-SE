@@ -1,7 +1,8 @@
 ---
 title: Indexutbyte
 description: Anslut till Index Exchange (Index) och aktivera data så att målgruppssegmenten kan hanteras av avtal som skapas i Index-gränssnittet.
-source-git-commit: 4ecd3b60a6b45a94285785049fd4dee99d7c9bdf
+last-substantial-update: 2026-01-27T00:00:00Z
+source-git-commit: 04d01b2deafb1b8f1b0c256f31475bb75989a2c4
 workflow-type: tm+mt
 source-wordcount: '1083'
 ht-degree: 0%

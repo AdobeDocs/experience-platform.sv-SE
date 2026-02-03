@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform januari 2026
 description: Versionsinformationen för Adobe Experience Platform i januari 2026.
-source-git-commit: 76b2537b47c0f7bdf115afdec655a1de8460384c
+source-git-commit: a8eefb3330d0de21fbb8648593eb912c063529d7
 workflow-type: tm+mt
-source-wordcount: '1621'
-ht-degree: 21%
+source-wordcount: '1532'
+ht-degree: 22%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 21%
 >
 >- [Adobe Journey Optimizer](https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/whats-new/release-notes)
 >- [Adobe Journey Optimizer B2B](https://experienceleague.adobe.com/sv/docs/journey-optimizer-b2b/user/release-notes)
->- [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/releases/pre-release-notes)
->- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/e-release-notes)
+>- [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/releases/pre-release-notes)
+>- [Federerad målgruppssammansättning](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/e-release-notes)
 >- [Real-Time CDP Collaboration](https://experienceleague.adobe.com/sv/docs/real-time-cdp-collaboration/using/latest)
 
 **Releasedatum: 27 januari 2026**
@@ -40,7 +40,7 @@ Med Agent Orchestrator kan ni bygga och driftsätta AI-baserade agenter som kan 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Adobe Experience Platform Agents användningsbundna testversion | **Utvalda kunder har nu kostnadsfri utvärderingsåtkomst till Adobe Experience Platform Agents**. Du kan använda testversionen för att utforska och interagera med agenter via AI Assistant-gränssnittet från Adobe Experience Platform Agent Orchestrator. Testversionen ger en praktisk upplevelse av AI-agenter som arbetar i kundens befintliga Experience Cloud-produkter och -miljöer, och låter team utvärdera värdet innan de genomför ett fullständigt köp. Adobe Experience Platform Agents vägleds av användarinmatningar och övervakning och respekterar befintliga åtkomstkontroller på produktnivå, vilket säkerställer att användarna bara kan utföra åtgärder eller visa data som de är auktoriserade för inom de underliggande Experience Cloud-programmen. Läs [Experience Platform Agents användningsbundna utvärderingsversion](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/trial) om du vill ha mer information om hur du kommer igång. |
+| Adobe Experience Platform Agents användningsbundna testversion | **Utvalda kunder har nu kostnadsfri utvärderingsåtkomst till Adobe Experience Platform Agents**. Du kan använda testversionen för att utforska och interagera med agenter via AI Assistant-gränssnittet från Adobe Experience Platform Agent Orchestrator. Testversionen ger en praktisk upplevelse av AI-agenter som arbetar i kundens befintliga Experience Cloud-produkter och -miljöer, och låter team utvärdera värdet innan de genomför ett fullständigt köp. Adobe Experience Platform Agents vägleds av användarinmatningar och övervakning och respekterar befintliga åtkomstkontroller på produktnivå, vilket säkerställer att användarna bara kan utföra åtgärder eller visa data som de är auktoriserade för inom de underliggande Experience Cloud-programmen. Läs [Experience Platform Agents användningsbundna utvärderingsversion](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/trial) om du vill ha mer information om hur du kommer igång. |
 
 {style="table-layout:auto"}
 
@@ -58,11 +58,12 @@ Mer information finns i [Agent Orchestrator-dokumentationen](https://experiencel
 | [Målkopplingen för Exchange](/help/destinations/catalog/advertising/index-exchange.md) är nu tillgänglig | Använd den här målkopplingen om du vill exportera målgruppssegment från Adobe Experience Platform direkt till [!DNL Index Exchange]s programmatiska annonsplattform. [!DNL Index] är en global plattform för annonsleveranser som hjälper mediekonstruktörer att maximera värdet av sitt innehåll på alla skärmar. Med över 20 års branschledarskap knyter [!DNL Index] samman världens största varumärken med förstklassiga upplevelsemakare för att leverera högkvalitativa kundupplevelser. |
 | Regionala slutpunkter stöder Braze-anslutningar | Alla [regionspecifika slutpunkter](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) som stöds av [!DNL Braze] är nu tillgängliga för val under målkonfigurationsflödet. Fråga din [!DNL Braze]-representant vilken slutpunktsinstans du ska använda. |
 | Stöd för schemaläggning varje vecka och månad för [Liveramp Onboarding](../../destinations/catalog/advertising/liveramp-onboarding.md#scheduling) | Du kan nu konfigurera exportscheman varje vecka och månad för Liveramp Onboarding-målet. <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. |
-| Förbättrad aktiveringsupplevelse för [Trade Desk](../../destinations/catalog/advertising/tradedesk.md)- och [Microsoft Bing](../../destinations/catalog/advertising/bing.md)-mål | Trade Desk och Microsoft Bing-destinationerna innehåller nu fördefinierade obligatoriska mappningar för en optimerad aktiveringsupplevelse.  <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. ![Bild som visar fördefinierade mappningar för Trade Desk](assets/january/mandatory-mappings-ttd.png) {width="150" align="center" zoomable="yes"} <br> ![Bild som visar fördefinierade mappningar för Microsoft Bing &#x200B;](assets/january/mandatory-mappings-bing.png) {width="150" align="center" zoomable="yes"} |
-| Stöd för AES256-kryptering för [Amazon S3](../../destinations/catalog/cloud-storage/amazon-s3.md#destination-details) -mål | Nu kan du konfigurera AES256-kryptering för dina Amazon S3-exporter. Det finns två alternativ: <ul><li>**[!UICONTROL Default]**: Data krypteras i vila med den standardkrypteringsalgoritm som är inställd på din bucket.</li><li>**[!UICONTROL SSE-S3/AES256]**: Experience Platform lägger till `s3:x-amz-server-side-encryption": "AES256`-rubriken i exporten och data krypteras i vila med AES256-algoritmen när den körs i S3. **Det här alternativet har högre prioritet än någon standardkrypteringsalgoritm som är konfigurerad på din S3-bucket**.</li></ul> Den här versionen lanseras stegvis och är klar den 30 januari. |
+| Förbättrad aktiveringsupplevelse för [Trade Desk](../../destinations/catalog/advertising/tradedesk.md)- och [Microsoft Bing](../../destinations/catalog/advertising/bing.md)-mål | Trade Desk och Microsoft Bing-destinationerna innehåller nu fördefinierade obligatoriska mappningar för en optimerad aktiveringsupplevelse.  <br> Den här versionen lanseras gradvis och kommer att vara slutförd den 30 januari. ![Bild som visar fördefinierade mappningar för Trade Desk](assets/january/mandatory-mappings-ttd.png) {width="150" align="center" zoomable="yes"} <br> ![Bild som visar fördefinierade mappningar för Microsoft Bing ](assets/january/mandatory-mappings-bing.png) {width="150" align="center" zoomable="yes"} |
 | Telefonnummeraktivering stöds för [Trade Desk - CRM](../../destinations/catalog/advertising/tradedesk-emails.md#phone-hashing)-anslutningen | Trade Desk - CRM-destinationen stöder nu aktivering av telefonnummer utöver e-postadresser. Du kan aktivera både ohashade telefonnummer i E.164-format och hashade telefonnummer (SHA256_E.164-format) till ditt Trade Desk-konto för målgruppsanpassning och inaktivering baserat på CRM-data. Telefonnummer måste normaliseras till E.164-format innan aktivering. |
 | [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md) - måluppdateringar | Snowflake Batch-målet innehåller nu funktioner för regionval under målkonfigurationen. Nu kan du välja den specifika Snowflake-region där instansen är etablerad, vilket ger optimal dataöverföring och efterlevnad av regionala krav. Dessutom har standardbegränsningen för sammanfogningsprinciper tagits bort, vilket gör att du kan exportera målgrupper som är mappade till valfri sammanfogningsprincip. <br> Batchmålet [!DNL Snowflake] är för närvarande endast tillgängligt för Real-Time CDP-kunder som etablerats i Experience Platform VA7-regionen. |
 
+
+<!-- |AES256 encryption support for [Amazon S3](../../destinations/catalog/cloud-storage/amazon-s3.md#destination-details) destinations | You can now configure AES256 encryption for your Amazon S3 exports. Two options are available: <ul><li>**[!UICONTROL Default]**: Data will be encrypted at rest with the default encryption algorithm set on your bucket.</li><li>**[!UICONTROL SSE-S3/AES256]**: Experience Platform adds the `s3:x-amz-server-side-encryption": "AES256` header in the export and data will be encrypted at rest with the AES256 algorithm when it lands in S3. **This option takes precedence over any default encryption algorithm configured on your S3 bucket**.</li></ul> This release is being rolled out gradually and will be complete by January 30th.| -->
 
 **Ny eller uppdaterad funktionalitet**
 

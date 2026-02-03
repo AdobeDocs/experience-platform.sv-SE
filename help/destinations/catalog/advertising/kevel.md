@@ -1,7 +1,8 @@
 ---
 title: Kevel Connection
 description: Använd Kevel streaming-målet för att aktivera målgrupper direkt i Kevels API:er för UserDB och segmenthantering och ge stöd för målgruppsanpassning i realtid vid beslut.
-source-git-commit: d820485fd81efd08d8626f8476338558c4585c20
+last-substantial-update: 2026-01-27T00:00:00Z
+source-git-commit: 04d01b2deafb1b8f1b0c256f31475bb75989a2c4
 workflow-type: tm+mt
 source-wordcount: '1037'
 ht-degree: 1%
