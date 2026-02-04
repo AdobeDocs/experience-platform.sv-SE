@@ -5,9 +5,9 @@ title: Tvinga dataanvändningsprinciper med hjälp av API:t för principtjänste
 type: Tutorial
 description: När du har skapat dataanvändningsetiketter för dina data, och har skapat användningsprinciper för marknadsföringsåtgärder mot dessa etiketter, kan du använda principtjänstens API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 exl-id: 093db807-c49d-4086-a676-1426426b43fd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: c3e12c17967ad46bf2eb8bcbfd00a92317aec8a2
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1021'
 ht-degree: 0%
 
 ---
@@ -131,6 +131,10 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, användningse
 | `violatedPolicies` | En matris med en lista över principer som har överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testas mot den angivna `duleLabels`. |
 
 ## Utvärdera med datauppsättningar
+
+>[!WARNING]
+>
+>Slutpunkten `/constraints` för datauppsättningsbaserad utvärdering är föråldrad. Om du vill utvärdera principöverträdelse eller utföra flera utvärderingsjobb använder du [API för grupputvärdering (`/bulk-eval`)](../api/evaluation.md#evaluate-policies-in-bulk) i stället.
 
 Du kan utvärdera en dataanvändningsprincip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka etiketter kan samlas in. Detta görs genom att en POST-begäran görs till `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och datauppsättnings-ID:n tillhandahålls i begärandetexten, vilket visas i exemplet nedan.
 
