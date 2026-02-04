@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 054b34875a0eb2676bcb4a8a8a555b4465410d66
+source-git-commit: 1b836a86a6b55a4e80a7fd3a52160f3974e4c9a4
 workflow-type: tm+mt
-source-wordcount: '5355'
+source-wordcount: '5354'
 ht-degree: 0%
 
 ---
@@ -131,7 +131,7 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 >id="platform_segmentation_segmentbuilder_externalaudiences"
 >title="Externa målgrupper"
 >abstract="Publiker som importeras via fliken Publiker visas nu automatiskt via Audience Portal. Detta inkluderar målgrupper som importerats från Audience Manager, Customer Journey Analytics, Segment Match och andra anpassade integreringar.<br/><br/>I slutet av september 2025 hämtas målgrupper exklusivt via Unified Search, och det tidigare arbetsflödet stöds inte längre. Segmentmatchning är bara tillgängligt för ett litet antal utvalda kunder medan vi överför tjänsten. Åtkomst för nya kunder med segmentmatchning kan fortfarande aktiveras på begäran innan tjänsten är helt indragen.<br/><br/>För pågående datasamarbete rekommenderar Adobe att man går över till Collaboration, som är den långsiktiga lösning som stöds."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
 
 >[!NOTE]
 >
@@ -173,7 +173,7 @@ Om du väljer ett värde i den här listan med enum, visas värdet med en heldra
 
 ![En varning som visas om du infogar ett värde som inte ingår i uppräkningslistan.](../images/ui/segment-builder/enum-warning.png)
 
-Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Markera plusikonen ![plus &#x200B;](/help/images/icons/add-circle.png) för att visa povern **[!UICONTROL Add values in bulk]**.
+Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Markera plusikonen ![plus ](/help/images/icons/add-circle.png) för att visa povern **[!UICONTROL Add values in bulk]**.
 
 ![Plustecknet är markerat och visar den knapp som du kan välja för att komma åt bulköverföringen.](../images/ui/segment-builder/add-bulk-values.png)
 
@@ -189,34 +189,9 @@ Observera att högst 250 värden tillåts. Om du överskrider detta värde måst
 
 ![En varning som visar att du har nått det maximala antalet värden visas.](../images/ui/segment-builder/maximum-values.png)
 
-### Frågevalidering {#query-validation}
+### Målgruppsvalidering {#audience-validation}
 
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_cnfcomplexitycheck"
->title="Logikkomplexitet"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_chaincountcheck"
->title="Gräns för händelsesekvens"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_rewritescheck"
->title="Fråga om effektivitet"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_countaggregationcheck"
->title="Filtervarning för antal"
->abstract=""
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_segmentbuilder_arraydepthcheck"
->title="Varning för kapslade data"
->abstract=""
-
-Segment Builder analyserar och validerar automatiskt era målgruppsfrågor för att säkerställa att ni följer de bästa metoderna för målgruppsdefinition. Dessa bästa metoder kan anges i två kategorier: kritisk validering och prestandaoptimering.
+Segment Builder analyserar och validerar automatiskt er målgruppsdefinition för att säkerställa att ni följer de bästa metoderna för målgruppsdefinition. Dessa bästa metoder kan anges i två kategorier: kritisk validering och prestandaoptimering.
 
 Om en målgruppsdefinition bryter en viktig bästa praxis för validering kan du **inte** spara dina ändringar så att din sandlåda hålls stabil. Om en målgruppsdefinition bryter en bästa praxis för prestandaoptimering kan du spara dina ändringar, men vi rekommenderar *att du uppdaterar din målgruppsdefinition* för att undvika prestandaproblem.
 
@@ -227,6 +202,8 @@ Om en målgruppsdefinition bryter en viktig bästa praxis för validering kan du
 | Sammanlagt antal | Prestandaoptimering | Det finns mer än tre aggregeringsfunktioner i en publikdefinition. |
 | Kapslade data | Prestandaoptimering | Det finns mer än två nivåer av kapslade data (datatyperna array eller map) i en målgruppsdefinition. |
 | Målgruppsstorlek | Prestandaoptimering | Storleken på målgruppens kvalificering är större än 30 % av det totala antalet profiler i sandlådan. |
+
+Mer information om hur målgruppsvalidering fungerar finns i [publikens valideringsguide](/help/segmentation/validation.md).
 
 ### Lägga till målgrupper
 
@@ -425,7 +402,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="Uppdatera uppskattningar"
 >abstract="Du kan uppdatera uppskattningarna av din segmentdefinition så att du omedelbart ser en förhandsvisning av hur många profiler som skulle kvalificera sig för den föreslagna segmentdefinitionen. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=sv-SE#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
@@ -463,9 +440,9 @@ När du fortsätter att skapa din målgrupp kan du visa en sidnumrerad förhands
 >
 >Beräkningen baseras dessutom på när det senaste profilexempeljobbet kördes. Det innebär att om du använder en relativ datumfunktion som&quot;Idag&quot; eller&quot;Den här veckan&quot;, kommer uppskattningen att basera sina beräkningar på körtiden för det sista profilprovjobbet. Om till exempel den 24 januari i dag är den 24 januari och det sista profilprovjobbet kördes den 22 januari, kommer den relativa datumfunktionen i går att baseras på den 21 januari och inte den 23 januari.
 >
->Mer information om hur du genererar uppskattningar för segmentdefinitioner finns i [uppskattningsavsnittet &#x200B;](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa segmentdefinitioner.
+>Mer information om hur du genererar uppskattningar för segmentdefinitioner finns i [uppskattningsavsnittet ](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa segmentdefinitioner.
 
-Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas &#x200B;](/help/images/icons/folder-search.png) för att visa en lista över tillgängliga metoder för utvärdering av segmentdefinition.
+Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas ](/help/images/icons/folder-search.png) för att visa en lista över tillgängliga metoder för utvärdering av segmentdefinition.
 
 [!UICONTROL Evaluation method eligibility]-pekaren visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive bedömningsmetod finns i översikterna för [direktuppspelningssegmentering](../methods/streaming-segmentation.md#query-types) eller [kantsegmentering](../methods/edge-segmentation.md#query-types).
 
@@ -489,4 +466,4 @@ I Segment Builder finns ett omfattande arbetsflöde som gör att du kan isolera 
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [!DNL Segmentation Service]användarhandboken[[!DNL Segmentation Service]  om du vill veta mer om de andra delarna i användargränssnittet för &#x200B;](./overview.md).
+Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [!DNL Segmentation Service]användarhandboken[[!DNL Segmentation Service]  om du vill veta mer om de andra delarna i användargränssnittet för ](./overview.md).
