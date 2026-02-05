@@ -62,7 +62,7 @@ När du har de behörigheter som krävs kan du komma åt AI-assistenten genom at
 
 Titta på följande video och lär dig hur du konfigurerar åtkomst till AI Assistant för dina organisationer och användare.
 
->[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on)
 
 ## Nästa steg
 
