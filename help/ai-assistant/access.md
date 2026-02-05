@@ -2,9 +2,9 @@
 title: Access AI Assistant i Experience Platform
 description: Lär dig hur du får tillgång till AI Assistant i Experience Cloud-gränssnittet.
 exl-id: c4cdff25-512c-4b4c-be91-ad9360067a0a
-source-git-commit: 9010f430f432c5ead708c1cb01803abd7ffd86b3
+source-git-commit: 74e695e0fabc76716305d201d4c42021aa782517
 workflow-type: tm+mt
-source-wordcount: '599'
+source-wordcount: '593'
 ht-degree: 0%
 
 ---
@@ -46,13 +46,13 @@ Om din organisation har laglig rätt att använda AI Assistant och du fortfarand
 
 Åtkomst till AI Assistant styrs av följande parametrar:
 
-* **Kom åt programmet:** Du kan komma åt AI Assistant i Adobe Experience Platform, Adobe Real-Time CDP, Adobe Journey Optimizer och [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/ai-assistant).
+* **Kom åt programmet:** Du kan komma åt AI Assistant i Adobe Experience Platform, Adobe Real-Time CDP, Adobe Journey Optimizer och [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant).
 <!-- * **Contractual access:** Your company must agree to certain [!DNL GenAI]-related legal terms before your organization can use AI Assistant. Contact your organization's administrator or your Adobe Account Team if you are not able to access AI Assistant.  -->
 * **Behörigheter:** Använd [Behörighetsgränssnittet](../access-control/abac/ui/permissions.md) för att bevilja eller återkalla åtkomst till AI Assistant i organisationen. För att kunna använda AI Assistant måste en viss användare tillhöra en roll som har etablerats med behörigheterna **Aktivera AI-assistenten** och **Visa driftsinsikter** .
    * Som administratör kan du lägga till **Aktivera AI-assistenten** i en viss roll och lägga till en användare i den rollen, så att de kan komma åt AI-assistenten i organisationen. **Obs!**: Den här behörigheten ger den aktuella användaren åtkomst till AI Assistant, den ger inte användaren någon administrativ kapacitet att ge andra åtkomst till AI Assistant.
-   * Som administratör kan du lägga till **Visa driftsinsikter** i en viss roll och lägga till en användare i den rollen, så att de kan använda AI Assistants funktionsinsikter. Driftsinsikter är för närvarande i betaversion.
+   * Som administratör kan du lägga till **Visa driftsinsikter** i en viss roll och lägga till en användare i den rollen, så att de kan använda AI Assistants funktionsinsikter.
 
-Använd [behörighetsgränssnittet](../access-control/abac/ui/roles.md) för att bevilja behörigheter att använda AI-assistenten i Experience Platform och Journey Optimizer. Mer information om hur du får tillgång till AI Assistant i Customer Journey Analytics. Läs dokumentationen i [Customer Journey Analytics](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/ai-assistant).
+Använd [behörighetsgränssnittet](../access-control/abac/ui/roles.md) för att bevilja behörigheter att använda AI-assistenten i Experience Platform och Journey Optimizer. Mer information om hur du får tillgång till AI Assistant i Customer Journey Analytics. Läs dokumentationen i [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant).
 
 ![Behörighetsgränssnittssidan med behörigheterna Aktivera AI-assistenten och Visa driftsinsikter i en viss roll.](./images/access/access-permissions.png)
 
@@ -62,7 +62,7 @@ När du har de behörigheter som krävs kan du komma åt AI-assistenten genom at
 
 Titta på följande video och lär dig hur du konfigurerar åtkomst till AI Assistant för dina organisationer och användare.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
 
 ## Nästa steg
 
