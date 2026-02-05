@@ -4,9 +4,9 @@ title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgrans
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: bb2cfb479031f9e204006ba489281b389e6c6c04
+source-git-commit: 399b76f260732015f691fd199c977d6f7e772b01
 workflow-type: tm+mt
-source-wordcount: '2306'
+source-wordcount: '2119'
 ht-degree: 0%
 
 ---
@@ -434,110 +434,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om datauppsättningen
 | `profileFragments` | Det totala antalet profilfragment som finns i datauppsättningen. |
 | `records` | Det totala antalet profilposter som har importerats till datauppsättningen. |
 | `totalProfiles` | Det totala antalet profiler som har importerats till datauppsättningen. |
-
-+++
-
-## Hämta datauppsättningsstorlek {#character-count}
-
-Du kan använda den här slutpunkten för att hämta datauppsättningens storlek i byte vecka för vecka.
-
-**API-format**
-
-```http
-GET /previewsamplestatus/report/character_count
-```
-
-**Begäran**
-
-+++En exempelbegäran om att generera räkningsrapporten för tecken.
-
-```shell
-curl -X GET https://platform.adobe.io/data/core/ups/previewsamplestatus/report/character_count \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-```
-
-+++
-
-**Svar**
-
-Ett lyckat svar returnerar HTTP-status 200 med information om datauppsättningens storlek under veckorna.
-
-+++ Ett exempelsvar som innehåller information om datauppsättningens storlek efter att data har gått ut.
-
->[!NOTE]
->
->Följande svar har trunkerats så att tre datauppsättningar visas.
-
-```json
-{
-    "data": [
-        {
-            "datasetIds": [
-                {
-                    "datasetId": "67aba91a453f7d298cd2a643",
-                    "recordType": "keyvalue",
-                    "weeks": [
-                        {
-                            "size": 107773533894,
-                            "week": "2025-10-26"
-                        }
-                    ]
-                },
-                {
-                    "datasetId": "67aa6c867c3110298b017f0e",
-                    "recordType": "timeseries",
-                    "weeks": [
-                        {
-                            "size": 242902062440,
-                            "week": "2025-10-26"
-                        },
-                        {
-                            "size": 837539413062,
-                            "week": "2025-10-19"
-                        },
-                        {
-                            "size": 479253986484,
-                            "week": "2025-10-12"
-                        },
-                        {
-                            "size": 358911988990,
-                            "week": "2025-10-05"
-                        },
-                        {
-                            "size": 349701073042,
-                            "week": "2025-09-28"
-                        }
-                    ]
-                },
-                {
-                    "datasetId": "680c043667c0d7298c9ea275",
-                    "recordType": "keyvalue",
-                    "weeks": [
-                        {
-                            "size": 18392459832,
-                            "week": "2025-10-26"
-                        }
-                    ]
-                }
-            ],
-            "modelName": "_xdm.context.profile",
-            "reportTimestamp": "2025-10-30T00:28:30.069Z"
-        }
-    ],
-    "reportTimestamp": "2025-10-30T00:28:30.069Z"
-}
-```
-
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `datasetId` | Datauppsättningens ID. |
-| `recordType` | Datatypen i datauppsättningen. Posttypen påverkar värdet för variabeln `weeks`. Värden som stöds är `keyvalue` och `timeseries`. |
-| `weeks` | En array som innehåller storleksinformation om datauppsättningen. För datauppsättningar av posttyp `keyvalue` innehåller detta den senaste veckan samt den totala storleken på datauppsättningen i byte. För datauppsättningar av posttyp `timeseries` innehåller detta varje vecka från datauppsättningens inmatning till den senaste veckan och den totala storleken på datauppsättningen i byte för varje vecka. |
-| `modelName` | Namnet på datauppsättningens modell. Möjliga värden är `_xdm.context.profile` och `_xdm.context.experienceevent`. |
-| `reportTimestamp` | Datum och tid då rapporten skapades. |
 
 +++
 
