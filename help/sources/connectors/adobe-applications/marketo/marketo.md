@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage Connector
 description: Det här dokumentet innehåller en översikt över Marketo Engage källanslutning, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 659e873f9bccdbc0e52a1943a924dc70d3170e96
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '740'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Det här dokumentet innehåller en översikt över [!DNL Marketo Engage]-källko
 
 ## Konfigurera Adobe organisationsmappning
 
-Innan du kan skapa mappningsuppsättningar för [!DNL Marketo Engage] måste du först konfigurera Adobe organisationsmappning. Detaljerade anvisningar om hur du slutför detta finns i guiden [Konfigurera Adobe organisationsmappning för [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=sv-SE).
+Innan du kan skapa mappningsuppsättningar för [!DNL Marketo Engage] måste du först konfigurera Adobe organisationsmappning. Detaljerade anvisningar om hur du slutför detta finns i guiden [Konfigurera Adobe organisationsmappning för [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
 
 ## Autentisera din [!DNL Marketo Engage]-anslutning
 
@@ -74,12 +74,12 @@ I följande tabell visas den förväntade fördröjningen för att hämta [!DNL 
 
 | Mål | Förväntad svarstid |
 | ----------- | ---------------- |
-| [!DNL Real-Time Customer Profile] | &lt; 10 minuter |
+| [!DNL Real-Time Customer Profile] | &lt; 20 minuter |
 | Data Lake | &lt; 60 minuter |
 
 >[!NOTE]
 >
->Latenssiffrorna ovan representerar förväntningar på en 95-procentig konfidensnivå. Den faktiska latensen kan variera och i sällsynta fall sträcka sig över 50 %.
+>Latenssiffrorna ovan representerar förväntningar på en 95-procentig konfidensnivå. Den faktiska latensen kan variera och kan i vissa fall sträcka sig utanför dessa siffror.
 
 ## Nästa steg och ytterligare resurser
 
