@@ -211,7 +211,7 @@ Nej, det kan du inte. Detta är ett hårt skyddsräcke som utformats för att sk
 
 +++ Svar
 
-Dessa valideringar körs vid redigering av **&#x200B;**. Därför kommer era befintliga målgrupper att fortsätta att fungera som de är. Om du försöker redigera en befintlig målgrupp som bryter mot dessa regler måste du optimera den innan du kan spara ändringarna.
+Dessa valideringar körs vid redigering av ****. Därför kommer era befintliga målgrupper att fortsätta att fungera som de är. Om du försöker redigera en befintlig målgrupp som bryter mot dessa regler måste du optimera den innan du kan spara ändringarna.
 
 +++
 
