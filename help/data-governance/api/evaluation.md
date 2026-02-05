@@ -5,7 +5,7 @@ title: API-slutpunkter för principutvärdering
 description: När marknadsföringsåtgärder har skapats och principer har definierats, kan du använda API:t för principtjänsten för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 role: Developer
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-source-git-commit: 32e5b2ba04554ba8ed2a73009fae2ea3a3f5328a
+source-git-commit: f8995ff1e460038b0e254cb500a6d23badeaa991
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
@@ -125,7 +125,7 @@ Ett lyckat svar innehåller en `violatedPolicies`-matris, som innehåller inform
 
 >[!WARNING]
 >
->Slutpunkten `/constraints` för datauppsättningsbaserad utvärdering är föråldrad. Om du vill utvärdera principöverträdelse eller utföra flera utvärderingsjobb använder du [API för grupputvärdering (`/bulk-eval`)](#evaluate-policies-in-bulk) i stället.
+>Slutpunkten `/constraints` för datauppsättningsbaserad utvärdering är föråldrad. Om du vill utvärdera principöverträdelse eller utföra flera utvärderingsjobb använder du [API för grupputvärdering (`/bulk-eval`)](#bulk) i stället.
 
 Du kan utvärdera om det finns principfel baserat på en uppsättning med en eller flera datauppsättningar från vilka dataanvändningsetiketter kan samlas in. Detta görs genom att utföra en POST-begäran till `/constraints`-slutpunkten för en viss marknadsföringsåtgärd och tillhandahålla en lista med datauppsättnings-ID:n i begärandetexten.
 
