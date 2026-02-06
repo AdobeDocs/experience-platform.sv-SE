@@ -1,18 +1,18 @@
 ---
-title: Relaterade konton i Real-Time CDP B2B Edition
+title: Relaterade konton i Real-Time CDP B2B edition
 type: Documentation
-description: En översikt och mer information om kontofunktionen i Experience Platform Real-Time CDP B2B.
+description: Översikt och mer information om kontofunktionen i Experience Platform Real-Time CDP B2B.
 feature: Get Started, Profiles, B2B
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '427'
 ht-degree: 2%
 
 ---
 
-# Relaterade konton i Real-Time CDP B2B Edition
+# Relaterade konton i Real-Time CDP B2B edition
 
 ## Översikt {#overview}
 
@@ -30,15 +30,15 @@ B2B-företag har ofta sin kundinformation lagrad i flera system, där alla bara 
 
 Med relaterade konton visar [!DNL Real-Time CDP B2B] nu en lista över konton som liknar det konto du bläddrar i.
 
-![Skärm med relaterade konton i användargränssnittet för Experience Platform.](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
+![Skärm som visar relaterade konton i Experience Platform-gränssnittet.](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 
-Använd den här funktionen om du vill visa relaterade kontoprofiler för en kontoprofil i användargränssnittet i Experience Platform och sedan inkludera de relaterade kontona i segmentdefinitionerna för att bredda din räckvidd eller tillämpa bredare kriterier i dina målgrupper.
+Använd den här funktionen om du vill visa relaterade kontoprofiler för en kontoprofil i Experience Platform-användargränssnittet och sedan inkludera relaterade konton i dina segmentdefinitioner för att bredda din räckvidd eller tillämpa bredare kriterier i dina målgrupper.
 
 ## Aktivera tjänsten för relaterade konton {#enable}
 
 Om du vill aktivera tjänsten väljer du **[!UICONTROL Profiles]** i sidofältet följt av **[!UICONTROL Settings]**.
 
-![Användargränssnittet för Experience Platform markerar profiler och inställningar.](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
+![Experience Platform användargränssnitt markerar profiler och inställningar.](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
 
 Markera växlingsknappen bredvid [!UICONTROL Enable related accounts] för att aktivera tjänsten och välj sedan **[!UICONTROL Save]**.
 
@@ -58,7 +58,7 @@ Mer information om [profilanrikningsrelaterade kontojobb](/help/dataflows/ui/b2b
 
 ## Visa relaterade konton {#how-to-view}
 
-Du kan visa relaterade konton för ett konto som du surfar på i användargränssnittet för Experience Platform.
+Du kan visa relaterade konton för ett konto som du surfar på i Experience Platform användargränssnitt.
 
 Mer information om [hur du hittar relaterade konton i användargränssnittet](/help/rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab) finns i dokumentationen.
 

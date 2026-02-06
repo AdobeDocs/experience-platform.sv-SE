@@ -3,10 +3,11 @@ description: Använd kontrollpanelen [!UICONTROL Profile Enrichment] för att f�
 solution: Experience Platform
 title: Övervaka profilanrikningsjobb
 type: Tutorial
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 0e993f7d0791f5f6f9dce63eb3848609d892e788
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
@@ -60,7 +61,7 @@ Följande mått är tillgängliga för lead-till-konto-matchande profilberikande
 
 Kontrollpanelen [!UICONTROL Predictive lead and account scoring] visar grundläggande mått och daglig jobbkörningsstatus som är specifik för profilberikning för [Predictive lead and account scoring](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md) .
 
-![Profil för prediktiv lead- och kontopoängsättning &#x200B;](/help/dataflows/assets/ui/b2b/predictive-lead-and-account-scoring.png)
+![Profil för prediktiv lead- och kontopoängsättning ](/help/dataflows/assets/ui/b2b/predictive-lead-and-account-scoring.png)
 
 Följande mätvärden är tillgängliga för prediktiva lead- och kontopoängsprofiler:
 

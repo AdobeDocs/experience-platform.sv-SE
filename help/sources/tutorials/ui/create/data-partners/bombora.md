@@ -1,12 +1,10 @@
 ---
 title: Koppla Bombora-återgivning till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter Bombora Intent till Experience Platform
-badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
-badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions newtab=true"
 exl-id: 76a4fed5-b2d5-46d5-9245-b52792a7d323
-source-git-commit: a1af85c6b76cc7bded07ab4acaec9c3213a94397
+source-git-commit: 04af34d439ba76b0d0053ba9de45ca962458d3e8
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '933'
 ht-degree: 0%
 
 ---
@@ -57,7 +55,7 @@ Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange
 
 * **Åtkomstnyckel-ID**: Ditt [!DNL Bombora]-ID för åtkomstnyckel. Det här är en 61 tecken lång alfanumerisk sträng som krävs för att autentisera ditt konto för Experience Platform.
 * **Hemlig åtkomstnyckel**: Den hemliga [!DNL Bombora]-åtkomstnyckeln. Detta är en 40-siffrig, base-64-kodad sträng som krävs för att autentisera ditt konto för Experience Platform.
-* **Bucket name**: Your [!DNL Bombora] bucket from which data will be pulled from.
+* **Bucket-namn**: Din [!DNL Bombora]-bucket som data hämtas från.
 
 ![Det nya kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/bombora/new.png)
 
@@ -77,7 +75,7 @@ Använd sedan schemaläggningsgränssnittet för att konfigurera ett intag-schem
 
 * **Frekvens**: Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan schemalägga ditt [!DNL Bombora]-dataflöde att importera data varje vecka.
 * **Intervall**: Intervall representerar tidsintervallet mellan varje inmatningscykel. Det enda intervall som stöds för ett [!DNL Bombora]-dataflöde är 1. Det innebär att dataflödet kommer att importera data en gång i veckan, varje vecka.
-* **Starttid**: Starttiden bestämmer när dataflödets första körningstid inträffar. [!DNL Bombora] släpper data till Adobe en gång i veckan, på måndagar, klockan 12:00 UTC. Därför måste du ange starttiden för ditt intag efter 12:00 UTC. Dessutom måste du bekräfta tiden för inläsning med [!DNL Bombora] eftersom de kan ändra deras schema när filer släpps till Adobe.
+* **Starttid**: Starttiden bestämmer när dataflödets första körningstid inträffar. [!DNL Bombora] släpper data till Adobe en gång i veckan, på måndagar, klockan :00 UTC. Därför måste du ange starttid för ditt intag efter 12:00 UTC. Dessutom måste du bekräfta tiden för inläsning med [!DNL Bombora] eftersom de kan ändra deras schema när filer släpps till Adobe.
 
 Välj **[!UICONTROL Next]** när du har konfigurerat dataflödets schema för inmatning.
 

@@ -1,19 +1,18 @@
 ---
-title: Real-time Customer Data Platform Insights - datamodell B2B edition
-description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights Data Models (B2B edition) för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+title: Real-Time Customer Data Platform Insights - datamodell B2B edition
+description: Lär dig hur du använder SQL-frågor med Real-Time Customer Data Platform Insights Data Models (B2B edition) för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
+badgeB2B: null
 exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
-source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
+source-git-commit: a32064848809d1cad07f769f04d82c35df451e38
 workflow-type: tm+mt
-source-wordcount: '448'
+source-wordcount: '438'
 ht-degree: 0%
 
 ---
 
 # Real-Time CDP Insights datamodell B2B edition
 
-Real-Time CDP Insights-datamodellen för B2B edition visar de datamodeller och SQL som stöder insikterna för [kontoprofiler](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
+Real-Time CDP Insights-datamodellen för B2B edition visar de datamodeller och SQL som stöder insikterna för [kontoprofiler](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
 
 >[!AVAILABILITY]
 >
@@ -52,7 +51,7 @@ I diagrammet nedan visas de relevanta datafälten i varje datauppsättning, dera
 
 #### De nya kontona efter bransch {#accounts-by-industry}
 
-Logiken som används för insikten [!UICONTROL New accounts by industry] returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Mer information finns i [[!UICONTROL New accounts By Industry]-widgetens dokumentation &#x200B;](../guides/account-profiles.md#accounts-by-industry).
+Logiken som används för insikten [!UICONTROL New accounts by industry] returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Mer information finns i [[!UICONTROL New accounts By Industry]-widgetens dokumentation ](../guides/account-profiles.md#accounts-by-industry).
 
 >[!TIP]
 >
@@ -97,7 +96,7 @@ LIMIT 5000;
 
 #### De nya kontona efter typ av användningsfall {#accounts-by-type}
 
-Logiken som används för insikten [!UICONTROL New accounts by type] returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Mer information finns i [[!UICONTROL New accounts by type]-widgetens dokumentation &#x200B;](../guides/account-profiles.md#accounts-by-type).
+Logiken som används för insikten [!UICONTROL New accounts by type] returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Mer information finns i [[!UICONTROL New accounts by type]-widgetens dokumentation ](../guides/account-profiles.md#accounts-by-type).
 
 Den SQL som genererar insikten [!UICONTROL New accounts by type] visas i det infällbara avsnittet nedan.
 

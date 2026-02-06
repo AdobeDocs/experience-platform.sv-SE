@@ -1,12 +1,11 @@
 ---
 title: Kontoprofilsinsikter
 description: Upptäck den SQL som ger er insikter om er kontoprofil och använd dessa frågor för att generera anpassade insikter som ytterligare utforskar era kunder och deras kundupplevelser.
-badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: null
 exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
-source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
+source-git-commit: a32064848809d1cad07f769f04d82c35df451e38
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '745'
 ht-degree: 0%
 
 ---
@@ -27,7 +26,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur många kontoprofiler har lagts till under en viss period?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH accounts_by_mm_dd AS
@@ -53,7 +52,7 @@ Frågor som besvaras av den här insikten:
 
 - Vilka är de fem viktigaste branscherna som kontoprofilerna tillhör?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH rankedindustries AS
@@ -89,7 +88,7 @@ Frågor som besvaras av den här insikten:
 
 - Vad är antalet konton efter typ?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT t.account_type,
@@ -112,7 +111,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur många möjligheter har lagts till under en viss period?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT d.date_key,
@@ -135,7 +134,7 @@ Frågor som besvaras av den här insikten:
 
 - Vilken är den relativa storleken och antalet av de olika rollerna i en affärsmöjlighet?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT p.person_role,
@@ -157,7 +156,7 @@ Frågor som besvaras av den här insikten:
 
 - Vilka är de 20 främsta möjligheterna som rankas av deras intäkter (i USD)?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH ranked_opportunities AS
@@ -195,10 +194,10 @@ ORDER BY total_expected_revenue DESC limit 5000;
 
 Frågor som besvaras av den här insikten:
 
-- Vilka öppna möjligheter finns det och i vilket skede av försäljnings- eller marknadsföringstratten finns det?
-- Vilka stängda möjligheter finns det och i vilket skede av försäljnings- eller marknadsföringstratten är de?
+- Vilka öppna möjligheter finns det och i vilket skede av funnel försäljning eller marknadsföring är de?
+- Vilka stängda möjligheter finns det och i vilket skede av funnel försäljning eller marknadsföring är de?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH opportunities_by_isclosed AS
@@ -230,7 +229,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur många möjligheter har stängts eller slutförts?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH opportunities_by_iswon AS
@@ -259,7 +258,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur många möjligheter har stängts eller slutförts (vunnits) under en viss period?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH opportunities_won_counts AS
@@ -291,7 +290,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur distribueras konton baserat på om de har direkta eller indirekta kunder?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH LatestDate AS (SELECT MAX(inserted_date) AS max_inserted_date FROM adwh_b2b_account_person_association),
@@ -335,7 +334,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur många konton har olika typer av direkta eller indirekta kunder?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH customer_ranges AS (
@@ -409,7 +408,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur distribueras konton baserat på om de har associerade möjligheter?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH LatestDate AS (
@@ -459,7 +458,7 @@ Frågor som besvaras av den här insikten:
 
 - Hur många konton har olika typer av associerade affärsmöjligheter?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 WITH opportunity_ranges AS (

@@ -1,18 +1,18 @@
 ---
-title: Åtkomstkontroll i Real-time Customer Data Platform B2B Edition
-description: En översikt över åtkomstkontrollens roll i Adobe Real-time Customer Data Platform B2B Edition.
+title: Åtkomstkontroll i Real-Time Customer Data Platform B2B edition
+description: Översikt över åtkomstkontrollens roll i Adobe Real-Time Customer Data Platform B2B edition.
 feature: Access Control, Sandboxes
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '148'
-ht-degree: 0%
+source-wordcount: '146'
+ht-degree: 1%
 
 ---
 
-# Åtkomstkontroll i Adobe Real-time Customer Data Platform B2B Edition
+# Åtkomstkontroll i Adobe Real-Time Customer Data Platform B2B edition
 
-Åtkomstkontroll för Real-Time CDP B2B Edition administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console], vilket gör att du kan länka användare med behörigheter och sandlådor. Med den här funktionen kan administratörer ge eller begränsa åtkomst till vissa Real-Time CDP-funktioner, som B2B-gränssnitt, för definierade användaruppsättningar.
+Åtkomstkontroll för Real-Time CDP B2B edition administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console], vilket gör att du kan länka användare med behörigheter och sandlådor. Med den här funktionen kan administratörer ge eller begränsa åtkomst till vissa Real-Time CDP-funktioner, som B2B-gränssnitt, för definierade användaruppsättningar.
 
 Mer information om åtkomstkontroll finns i [åtkomstkontrollsöversikten](../../access-control/home.md) i [!DNL Experience Platform]-dokumentationen.
 

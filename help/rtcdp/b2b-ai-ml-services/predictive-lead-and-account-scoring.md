@@ -3,18 +3,18 @@ title: Prediktiv lead- och kontobedömning i Real-Time CDP B2B
 type: Documentation
 description: En översikt och mer information om den prediktiva lead- och kontopoängsfunktionen i Experience Platform CDP B2B.
 feature: Profiles, B2B
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: d3afbabb-005d-4537-831a-857c88043759
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '853'
 ht-degree: 0%
 
 ---
 
 # Prediktiv lead- och kontobedömning i Real-Time CDP B2B
 
-B2B-marknadsförarna står inför flera utmaningar i toppen av marknadsföringstratten. För att vara effektiv behöver B2B-marknadsförarna ett automatiskt sätt att kvalificera det stora antalet människor så att de kan fokusera på de värdefulla målen. Kvalificeringen bör anpassas till det slutliga försäljningsresultatet, inte bara marknadsföringskonverteringen.
+B2B-marknadsförarna står inför många utmaningar i toppklass när det gäller marknadsföring av funnel. För att vara effektiv behöver B2B-marknadsförarna ett automatiskt sätt att kvalificera det stora antalet människor så att de kan fokusera på de värdefulla målen. Kvalificeringen bör anpassas till det slutliga försäljningsresultatet, inte bara marknadsföringskonverteringen.
 
 Konton är de ultimata enheterna som köper produkter och tjänster från B2B. För att B2B-marknadsförarna ska kunna marknadsföra och sälja effektivt måste de känna till både individens och kontots sannolikhet att köpa.
 
@@ -52,7 +52,7 @@ Algoritmen tar hänsyn till följande attribut och indata:
 
 >[!NOTE]
 > 
->Algoritmen inspekterar bara fältet `sourceAccountKey.sourceKey` i fältgruppen Person:personComponents.
+>Algoritmen inspekterar bara fältet `sourceAccountKey.sourceKey` i fältgruppen Person :personComponents.
 
 * Kontoprofil
 
