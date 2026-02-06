@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Komma igång med Real-Time Customer Data Platform B2B edition
 description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-Time Customer Data Platform B2B edition.
 feature: Get Started, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
@@ -100,7 +100,7 @@ I arbetsytan [!UICONTROL Segments] i Experience Platform-gränssnittet väljer B
 
 >[!NOTE]
 > 
->I självstudiekursen [Aktivera en målgrupp till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) finns mer information om hur du slutför det här.
+>I självstudiekursen [Aktivera en målgrupp till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=sv-SE) finns mer information om hur du slutför det här.
 
 Bodea-marknadsföraren aktiverar publiken till ett mål, vilket gör att de kan överföra målgruppsdata från Experience Platform till sin automatiseringsplattform för marknadsföring. Läs [målkatalogen](../destinations/catalog/overview.md) om du vill ha mer information om tillgängliga mål.
 

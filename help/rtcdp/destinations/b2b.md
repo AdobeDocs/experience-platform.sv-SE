@@ -2,7 +2,7 @@
 title: Destinationer i Real-Time Customer Data Platform B2B edition
 description: Översikt över destinationernas roll i Adobe Real-Time Customer Data Platform B2B edition.
 feature: Destinations
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
@@ -27,4 +27,4 @@ Följande dokument innehåller mer information om hur du använder Marketo Engag
 
 - Mer information om vilka mål som är tillgängliga för Real-Time Customer Data Platform B2B edition finns i [målkatalogen](../../destinations/catalog/overview.md).
 - Mer information om vilka identiteter som kan exporteras till Marketo Engage finns i [Marketo Engage måldokumentation](../../destinations/catalog/adobe/marketo-engage.md).
-- Mer information om hur du ansluter till Marketo Engage-målet i Experience Platform-gränssnittet och exporterar data finns i [&#39;Överför ett Adobe Experience Platform-segment till en Marketo statiska lista&#39;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html).
+- Mer information om hur du ansluter till Marketo Engage-målet i Experience Platform-gränssnittet och exporterar data finns i [&#39;Överför ett Adobe Experience Platform-segment till en Marketo statiska lista&#39;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html?lang=sv-SE).

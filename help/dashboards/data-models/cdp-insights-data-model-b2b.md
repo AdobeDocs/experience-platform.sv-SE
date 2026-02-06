@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Real-Time CDP Insights datamodell B2B edition
 
-Real-Time CDP Insights-datamodellen för B2B edition visar de datamodeller och SQL som stöder insikterna för [kontoprofiler](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
+Real-Time CDP Insights-datamodellen för B2B edition visar de datamodeller och SQL som stöder insikterna för [kontoprofiler](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
 
 >[!AVAILABILITY]
 >
