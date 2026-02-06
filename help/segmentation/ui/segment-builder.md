@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 1b836a86a6b55a4e80a7fd3a52160f3974e4c9a4
+source-git-commit: 2341b02ecbd93965654bdbc38bbacadeae5be0ed
 workflow-type: tm+mt
-source-wordcount: '5354'
+source-wordcount: '6311'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,97 @@ Dessa byggstenar visas i avsnittet **[!UICONTROL Fields]** till vänster på arb
 På fliken **[!UICONTROL Attributes]** kan du bläddra bland [!DNL Profile]-attribut som tillhör klassen [!DNL XDM Individual Profile]. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. [Regelbyggararbetsytan](#rule-builder-canvas) beskrivs mer ingående senare i den här handboken.
 
 ![Attributavsnittet i segmentbyggarfälten är markerat.](../images/ui/segment-builder/attributes.png)
+
+De attribut du lägger till kan vara någon av följande datatyper:
+
+| Datatyp | Vanliga användningsfall |
+| --------- | ---------------- |
+| Sträng | Namn, e-postadresser, produktkategorier |
+| Numeriskt | Ålder, intäkter, produktkvantiteter, lojalitetspoäng |
+| Boolean | Inställningar, statusindikatorer, användarflaggor |
+| Enum | Fördefinierade listor som kön eller status |
+| Datum/tid | Inköpsdatum, besökstider, födelsedag |
+
+Du kan använda följande operatorer för respektive datatyp:
+
++++ Strängoperatorer
+
+| Operatör | Beskrivning | Exempel |
+| -------- | ----------- | ------- |
+| Lika med | Hitta en exakt matchning till det angivna värdet | E-post **är lika med** &quot;sample@example.com&quot; |
+| Inte lika med | Utesluter det angivna värdet | Status **är inte lika med** &quot;Avbruten&quot; |
+| Innehåller | Texten innehåller det angivna värdet | Produktnamnet **innehåller** &quot;iPhone&quot; |
+| Innehåller inte | Texten innehåller inte det angivna värdet | Beskrivningen **innehåller inte** &quot;utgått&quot; |
+| Börjar med | Texten börjar med det angivna värdet | Kund-ID **börjar med** &quot;PREM&quot; |
+| Slutar med | Texten avslutas med det angivna värdet | E-postadressen **avslutas med** @company.com |
+| Finns | Värdet finns | Mellannamn **finns** |
+| Finns inte | Värdet finns inte | Förmånsstatusen **finns inte** |
+
++++
+
++++ Numeriska operatorer
+
+| Operatör | Beskrivning | Exempel |
+| -------- | ----------- | ------- |
+| Lika med | Hitta en exakt matchning till det angivna värdet | Ålder **är lika med** 25 |
+| Inte lika med | Utesluter det angivna värdet | Antalet beställningar **är inte lika med** 0 |
+| Större än | Talet är **större** än det angivna värdet. Det här värdet är **exklusivt** av det angivna talet. | Årlig intäkt **större än** 50000 |
+| Större än eller lika med | Talet är **större** än det angivna värdet. Det här värdet är **inkluderande** av det angivna talet. | Ålder **större än eller lika med** 21 |
+| Mindre än | Talet är **mindre** än det angivna värdet. Det här värdet är **exklusivt** av det angivna talet. | Dagar sedan köp **mindre än** 30 |
+| Mindre än eller lika med | Talet är **mindre** än det angivna värdet. Det här värdet är **inkluderande** av det angivna talet. | Cart-värdet **är mindre än eller lika med** 100 |
+| Mellan | Talet är **mellan** angivna värden. Dessa värden är **inkluderade** av de angivna talen. | Ålder **mellan** 25 och 45 |
+| Finns | Värdet finns | Kreditpoäng **finns** |
+| Finns inte | Värdet finns inte | Kreditpoäng **finns inte** |
+
++++
+
++++ Booleska operatorer
+
+| Operatör | Beskrivning | Exempel |
+| -------- | ----------- | ------- |
+| Lika med | Det booleska värdet anges till det angivna värdet (True eller False) | E-postanmälan **är lika med True** |
+| Inte lika med | Det booleska värdet är **inte** inställt på det angivna värdet (True eller False) | Den installerade mobilappen **är inte lika med True** |
+
++++
+
++++ Uppräkningsoperatorer
+
+| Operatör | Beskrivning | Exempel |
+| -------- | ----------- | ------- |
+| Lika med | Värdet är lika med de angivna enum-värdena | Kön **är lika med** kvinna |
+| Inte lika med | Värdet är inte lika med det angivna enum-värdet | Orderstatus **är inte lika med** Avbruten |
+| Finns | Uppräkningsvärdet har angetts | Det önskade språket **finns** |
+| Finns inte | Uppräkningsvärdet har inte angetts | Det önskade språket **finns inte** |
+
++++
+
++++ Datum-/tidsoperatorer
+
+| Operatör | Beskrivning | Exempel |
+| -------- | ----------- | ------- |
+| Idag | Värdet inträffade idag. Du kan markera kryssrutan **Ignorera år** om du vill att jämförelsen ska ignorera året. | Födelsedatum **är** i dag |
+| Igår | Värdet inträffade i går. | Kundköp **är** igår |
+| Den här månaden | Värdet inträffade den här kalendermånaden. | Födelsemånaden **är** Den här månaden |
+| I år | Värdet inträffade det här kalenderåret. | Registreringsdatumet **är** Det här året |
+| Anpassat datum | Värdet inträffade på det angivna datumet. | Inköpsdatumet **är på** anpassat datum |
+| I sista | Värdet inträffade inom den senast valda tidsperioden. Födelsedagen **är** förra månaden |
+| Från (till) | Värdet inträffade inom två valda kalenderdatum. Den här tidsperioden är **inkluderande** av båda datumen. | Skapad **är** Från 20 april till 13 juli |
+| Under | Värdet inträffade inom den valda månaden eller det valda året. | Försäljningen **är** under mars |
+| Inom (+/-) | Värdet inträffade inom dagar, veckor, månader eller år från det valda datumet. Den här tidsperioden är **inkluderande** av båda datumen. | Det är **Inom** 3 dagar innan kundvagnen upphör |
+| Före | Värdet inträffade före det valda datumet. | Anslutningsdatumet för medlemskap är **före** 3 januari 2025 |
+| Efter | Värdet inträffade efter det valda datumet. | Inköpsdatumet är **efter** 14 mars 2024 |
+| Rullningsområde | Värdet inträffade mellan de två relativa datumen. | Senaste inköpsdatum är inom intervallet sju dagar sedan till tre dagar sedan. |
+| I nästa | Värdet inträffade inom nästa valda tidsperiod. | Det tar 2 dagar innan kundvagnen upphör |
+
+Mer detaljerad information om tids- och datumfunktioner finns i avsnittet [Tidsbegränsningar](#time-constraints).
+
++++
+
+#### Beräknade attribut {#computed-attributes}
+
+Beräknade attribut är fält som beräknas från andra attribut med hjälp av aggregeringar eller formler. Du kan använda beräknade attribut om du behöver aggregerade data som summor, antal eller medelvärden för flera händelser eller om du skapar ofta använda målgrupper som kräver komplexa beräkningar.
+
+Mer information om beräknade attribut, inklusive hur du skapar dem, vilka funktioner du kan använda i dem och hur du hanterar dem, finns i [översikten över beräknade attribut](/help/profile/computed-attributes/overview.md).
 
 ### Händelser
 
@@ -131,7 +222,7 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 >id="platform_segmentation_segmentbuilder_externalaudiences"
 >title="Externa målgrupper"
 >abstract="Publiker som importeras via fliken Publiker visas nu automatiskt via Audience Portal. Detta inkluderar målgrupper som importerats från Audience Manager, Customer Journey Analytics, Segment Match och andra anpassade integreringar.<br/><br/>I slutet av september 2025 hämtas målgrupper exklusivt via Unified Search, och det tidigare arbetsflödet stöds inte längre. Segmentmatchning är bara tillgängligt för ett litet antal utvalda kunder medan vi överför tjänsten. Åtkomst för nya kunder med segmentmatchning kan fortfarande aktiveras på begäran innan tjänsten är helt indragen.<br/><br/>För pågående datasamarbete rekommenderar Adobe att man går över till Collaboration, som är den långsiktiga lösning som stöds."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/audience-portal#list" text="Målgruppsportal"
 
 >[!NOTE]
 >
@@ -173,7 +264,7 @@ Om du väljer ett värde i den här listan med enum, visas värdet med en heldra
 
 ![En varning som visas om du infogar ett värde som inte ingår i uppräkningslistan.](../images/ui/segment-builder/enum-warning.png)
 
-Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Markera plusikonen ![plus &#x200B;](/help/images/icons/add-circle.png) för att visa povern **[!UICONTROL Add values in bulk]**.
+Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Markera plusikonen ![plus ](/help/images/icons/add-circle.png) för att visa povern **[!UICONTROL Add values in bulk]**.
 
 ![Plustecknet är markerat och visar den knapp som du kan välja för att komma åt bulköverföringen.](../images/ui/segment-builder/add-bulk-values.png)
 
@@ -356,7 +447,7 @@ Listan över tillgängliga tidsbegränsningar för den här åtgärden skiljer s
 
 ## Behållare {#containers}
 
-Segmentregler utvärderas i den ordning som de listas. Behållare ger kontroll över körningsordningen med hjälp av kapslade frågor.
+Publiken utvärderas i den ordning som de listas. Behållare ger kontroll över körningsordningen med hjälp av kapslade frågor.
 
 När du har lagt till minst en platta på regelbyggararbetsytan kan du börja lägga till behållare. Om du vill skapa en ny behållare markerar du ellipserna (..) i rutans övre högra hörn och väljer sedan **[!UICONTROL Add container]**.
 
@@ -375,6 +466,36 @@ När du har valt **[!UICONTROL Unwrap container]** tas den underordnade behålla
 >När du delar upp behållare ska du se till att logiken fortsätter att uppfylla den önskade segmentdefinitionen.
 
 ![Behållaren visas efter uppackning.](../images/ui/segment-builder/unwrapped-container.png)
+
+### Exempel {#container-examples}
+
+Du kan använda dina behållare i Segment Builder på tre olika sätt: för att gruppera regler med boolesk logik, för att styra om profiler som matchar behållarens villkor ska inkluderas eller exkluderas och för att definiera händelsesekvenser med tidsbegränsningar.
+
++++ Blandad boolesk logik
+
+I följande exempel blandas **både** OCH OR-logik i ett enskilt uttryck. Om du inte använder behållare kan du inte blanda både AND med OR-logik på en enda nivå.
+
+![En bild som visar hur du använder behållare för att blanda boolesk logik och använda inkluderings-/exkluderingslogik.](/help/segmentation/images/ui/segment-builder/mixed-boolean-container.png)
+
++++
+
++++ Händelsesekvens
+
+I följande exempel används behållare för att skapa händelsesekvensen.
+
+![En bild som visar hur händelser sekventieras med behållare.](/help/segmentation/images/ui/segment-builder/event-sequence-container.png)
+
++++
+
+### Bästa praxis {#container-best-practices}
+
+När du lägger till behållare till din målgrupp bör du tänka på följande:
+
+- Bygg upp era behållare stegvis och testa logiken med varje steg du lägger till
+   - Detta är särskilt viktigt om du använder&quot;Exkludera&quot;-logik, eftersom det kan ändra dina resultat avsevärt
+- Ge era behållare ett tydligt namn för att förstå vad de ska göra
+- Undvik för många kapslade behållarnivåer eftersom prestandan minskar
+- Se till att ordningen på behållarna är korrekt eftersom händelseordningen påverkar sekvensbehållarna i stor utsträckning
 
 ## Sammanfoga profiler
 
@@ -402,7 +523,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="Uppdatera uppskattningar"
 >abstract="Du kan uppdatera uppskattningarna av din segmentdefinition så att du omedelbart ser en förhandsvisning av hur många profiler som skulle kvalificera sig för den föreslagna segmentdefinitionen. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=sv-SE#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
@@ -440,9 +561,9 @@ När du fortsätter att skapa din målgrupp kan du visa en sidnumrerad förhands
 >
 >Beräkningen baseras dessutom på när det senaste profilexempeljobbet kördes. Det innebär att om du använder en relativ datumfunktion som&quot;Idag&quot; eller&quot;Den här veckan&quot;, kommer uppskattningen att basera sina beräkningar på körtiden för det sista profilprovjobbet. Om till exempel den 24 januari i dag är den 24 januari och det sista profilprovjobbet kördes den 22 januari, kommer den relativa datumfunktionen i går att baseras på den 21 januari och inte den 23 januari.
 >
->Mer information om hur du genererar uppskattningar för segmentdefinitioner finns i [uppskattningsavsnittet &#x200B;](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa segmentdefinitioner.
+>Mer information om hur du genererar uppskattningar för segmentdefinitioner finns i [uppskattningsavsnittet ](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa segmentdefinitioner.
 
-Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas &#x200B;](/help/images/icons/folder-search.png) för att visa en lista över tillgängliga metoder för utvärdering av segmentdefinition.
+Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas ](/help/images/icons/folder-search.png) för att visa en lista över tillgängliga metoder för utvärdering av segmentdefinition.
 
 [!UICONTROL Evaluation method eligibility]-pekaren visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive bedömningsmetod finns i översikterna för [direktuppspelningssegmentering](../methods/streaming-segmentation.md#query-types) eller [kantsegmentering](../methods/edge-segmentation.md#query-types).
 
@@ -461,9 +582,9 @@ Mer information om de olika utvärderingsmetoderna för segmentdefinitioner finn
 I Segment Builder finns ett omfattande arbetsflöde som gör att du kan isolera marknadsföringsbara målgrupper från [!DNL Real-Time Customer Profile]-data. När du har läst den här guiden bör du nu kunna:
 
 - Skapa segmentdefinitioner med en kombination av attribut, händelser och befintliga målgrupper som byggstenar.
-- Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmentreglerna körs.
+- Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning målgruppsregler körs.
 - Visa uppskattningar av er presumtiva målgrupp, så att ni kan justera era segmentdefinitioner efter behov.
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [!DNL Segmentation Service]användarhandboken[[!DNL Segmentation Service]  om du vill veta mer om de andra delarna i användargränssnittet för &#x200B;](./overview.md).
+Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [!DNL Segmentation Service]användarhandboken[[!DNL Segmentation Service]  om du vill veta mer om de andra delarna i användargränssnittet för ](./overview.md).
