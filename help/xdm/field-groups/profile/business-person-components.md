@@ -1,15 +1,20 @@
 ---
 title: XDM Business Person Components Schemafältgrupp
 description: Läs mer om schemafältgruppen XDM Business Person Components.
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 965b89f4-59f5-43f4-8778-3549e15b44d4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 3fafccef44823b80938db96a7751edbff5a2fd02
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
 
 # Schemafältgruppen [!UICONTROL XDM Business Person Components]
+
+>[!AVAILABILITY]
+>
+>Den här fältgruppen är endast tillgänglig för organisationer som har åtkomst till Real-Time CDP B2B edition.
 
 [!UICONTROL XDM Business Person Components] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som samlar in flera källposter för en person och andra attribut som krävs för personsegmentering.
 

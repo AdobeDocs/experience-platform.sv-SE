@@ -1,15 +1,20 @@
 ---
 title: Schemafältgrupp för XDM-affärspersonsinformation
 description: Läs mer om schemafältgruppen XDM Business Person Details.
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 3fafccef44823b80938db96a7751edbff5a2fd02
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '572'
 ht-degree: 0%
 
 ---
 
 # Schemafältgruppen [!UICONTROL XDM Business Person Details]
+
+>[!AVAILABILITY]
+>
+>Den här fältgruppen är endast tillgänglig för organisationer som har åtkomst till Real-Time CDP B2B edition.
 
 [!UICONTROL XDM Business Person Details] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som samlar in information om en enskild person i ett B2B-företag (business-to-business).
 
@@ -53,7 +58,7 @@ ht-degree: 0%
 | `workEmail` | [E-postadress](../../data-types/email-address.md) | Personens e-postadress till arbetet. |
 | `workPhone` | [Telefonnummer](../../data-types/phone-number.md) | Personens telefonnummer till arbetet. |
 | `identityMap` | Karta | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. Om du vill kunna använda det här fältet för [Kundprofil i realtid](../../../profile/home.md) ska du inte försöka uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Mer information om hur de används finns i avsnittet om identitetskartor i [grunderna i schemakomposition](../../schema/composition.md#identityMap). |
-| `isDeleted` | Boolean | Anger om den här personen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo-källkopplingen](../../../sources/connectors/adobe-applications/marketo/marketo.md) återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Genom att ställa in `isDeleted` på `true` kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar i datasjön. |
+| `isDeleted` | Boolean | Anger om personen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo-källkopplingen](../../../sources/connectors/adobe-applications/marketo/marketo.md) återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Genom att ställa in `isDeleted` på `true` kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar i datasjön. |
 | `organizations` | Array med strängar | En lista med organisationsnamn där personen arbetar. |
 
 {style="table-layout:auto"}

@@ -1,10 +1,11 @@
 ---
 title: Definiera en relation mellan två scheman i Real-Time Customer Data Platform B2B edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-Time Customer Data Platform B2B edition.
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: cb036262ff81d245fe436fc337b3911170c61425
 workflow-type: tm+mt
-source-wordcount: '1726'
+source-wordcount: '1729'
 ht-degree: 0%
 
 ---
@@ -55,7 +56,7 @@ Schemarelationer representeras av ett dedikerat fält i ett **källschema** som 
 
 För att en relation ska kunna upprättas måste referensschemat ha en definierad primär identitet. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Experience Platform.
 
-För att ta hänsyn till detta innehåller alla standardklasser B2B nyckelfält som överensstämmer med datatypen [[!UICONTROL B2B Source] &#x200B;](../data-types/b2b-source.md). Den här datatypen innehåller fält för en strängidentifierare för B2B-enheten tillsammans med annan sammanhangsberoende information om identifierarens källa. Ett av dessa fält, `sourceKey`, sammanfogar värdena för de andra fälten i datatypen för att skapa en helt unik identifierare för entiteten. Det här fältet ska alltid användas som primär identitet för B2B-entitetsscheman.
+För att ta hänsyn till detta innehåller alla standardklasser B2B nyckelfält som överensstämmer med datatypen [[!UICONTROL B2B Source] ](../data-types/b2b-source.md). Den här datatypen innehåller fält för en strängidentifierare för B2B-enheten tillsammans med annan sammanhangsberoende information om identifierarens källa. Ett av dessa fält, `sourceKey`, sammanfogar värdena för de andra fälten i datatypen för att skapa en helt unik identifierare för entiteten. Det här fältet ska alltid användas som primär identitet för B2B-entitetsscheman.
 
 ![fältet sourceKey](../images/tutorials/relationship-b2b/sourcekey.png)
 
