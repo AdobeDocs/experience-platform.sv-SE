@@ -2,9 +2,9 @@
 title: API-slutpunkt för externa målgrupper
 description: Lär dig hur du använder API:t för externa målgrupper för att skapa, uppdatera, aktivera och ta bort externa målgrupper från Adobe Experience Platform.
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: 0a37ef2f5fc08eb515c7c5056936fd904ea6d360
+source-git-commit: ff58324446f28cbdca369ecbb58d8261614ae684
 workflow-type: tm+mt
-source-wordcount: '2253'
+source-wordcount: '2340'
 ht-degree: 1%
 
 ---
@@ -12,6 +12,16 @@ ht-degree: 1%
 # Extern målgruppsslutpunkt
 
 Med externa målgrupper kan du överföra profildata från externa källor till Adobe Experience Platform. Du kan använda slutpunkten `/external-audience` i segmenteringstjänstens API för att importera en extern målgrupp till Experience Platform, visa information och uppdatera externa målgrupper samt ta bort externa målgrupper.
+
+## Guardrails
+
+Från och med mars-versionen kommer följande skyddsutkast att tillämpas när du använder slutpunkten för externa målgrupper:
+
+| Guardrail | Gräns | Begränsningstyp | Beskrivning |
+| --------- | ----- | ---------- | ----------- |
+| Antal målgruppsinmatningar per dag | 100 | Systemstyrt skyddsräcke | Högsta tillåtna antal målgruppsinmatningar per dag. Den här gränsen är per **sandbox**-nivå. |
+| Antal förslag per målgrupp | 10 | Systemstyrt skyddsräcke | Antalet inmatningar som kan utföras på en angiven målgrupp. |
+| Extern målgrupp | 10 GB | Prestandaskydd | Den rekommenderade totala storleken för den externa publiken är 10 GB. |
 
 ## Komma igång
 
