@@ -1,11 +1,11 @@
 ---
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
-exl-id: a1b52e9f-1c4d-4a2b-9d3e-5f6a7b8c9d0e
-source-git-commit: 3a45b3aadb08af98d6d379ecfc858474ea1e55db
+exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
+source-git-commit: 695b8486211c2fee03bc29243d65d5bbf6d561db
 workflow-type: tm+mt
-source-wordcount: '1052'
-ht-degree: 35%
+source-wordcount: '1050'
+ht-degree: 36%
 
 ---
 
@@ -79,7 +79,7 @@ Adobe Experience Platform Data Collection innehåller en uppsättning tekniker s
 
 {style="table-layout:auto"}
 
-Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/sv/docs/experience-platform/collection/home).
+Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home).
 
 ## Mål {#destinations}
 
@@ -107,7 +107,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | ------- | ----------- |
 | Schemalagerorganisation och sökning | Bläddringssidan för scheman innehåller nu förbättrad sökning och filtrering, infogade åtgärder och stöd för användardefinierade taggar och mappar. Dessa uppdateringar gör det enklare att hitta, ordna och hantera scheman över sandlådor samtidigt som manuell navigering och underhåll minskar. |
 
-Mer information finns i [[!DNL Schemas] översikt] (../xdm/home.md).
+Mer information finns i [[!DNL XDM] översikten](../xdm/home.md).
 
 ## Frågetjänst {#query-service}
 
