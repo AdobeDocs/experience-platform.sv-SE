@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 695b8486211c2fee03bc29243d65d5bbf6d561db
+source-git-commit: b8c257ad9ab4e7ee085687f6c03cf55d7fb83ef0
 workflow-type: tm+mt
-source-wordcount: '1050'
-ht-degree: 36%
+source-wordcount: '1022'
+ht-degree: 37%
 
 ---
 
@@ -79,7 +79,7 @@ Adobe Experience Platform Data Collection innehåller en uppsättning tekniker s
 
 {style="table-layout:auto"}
 
-Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/sv/docs/experience-platform/collection/home).
+Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home).
 
 ## Mål {#destinations}
 
@@ -89,7 +89,6 @@ Mer information finns i [dokumentationen för datainsamling](https://experiencel
 
 | Mål | Beskrivning |
 | --- | --- |
-| Kontomål för [!DNL ZoomInfo] | B2B CDP-användare kan nu aktivera kontonivådata till [!DNL ZoomInfo] via den nya målkopplingen för [!DNL ZoomInfo]-kontot. Konfigurera anslutningen för att börja skicka dina kontomålgrupper till [!DNL ZoomInfo]. |
 | [!DNL Snowflake] grupp är allmänt tillgänglig | Batchmålet [!DNL Snowflake] har flyttats till allmän tillgänglighet. Nu kan du visa kolumnen med sammanfogningspolicy-ID i dina exporterade data tillsammans med befintliga kolumner som tidsstämpel, mappningsattribut och målgruppsmedlemskap. |
 | Stöd för AES256-kryptering för [Amazon S3](../destinations/catalog/cloud-storage/amazon-s3.md#destination-details) -mål | Nu kan du konfigurera AES256-kryptering för dina Amazon S3-exporter. Välj mellan två alternativ: <ul><li>**[!UICONTROL Default]**: Experience Platform krypterar vilande data med den standardkrypteringsalgoritm som är inställd på bucket.</li><li>**[!UICONTROL SSE-S3/AES256]**: Experience Platform lägger till rubriken `s3:x-amz-server-side-encryption": "AES256` i exporten och krypterar vilande data med AES256-algoritmen när den körs i S3. **Det här alternativet har högre prioritet än någon standardkrypteringsalgoritm som du konfigurerar på din S3-bucket**.</li></ul> |
 
