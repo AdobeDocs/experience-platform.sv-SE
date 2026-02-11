@@ -249,7 +249,7 @@ Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 
 **Nya funktioner**
 
-- Stöd har lagts till för [åsidosättningar av datastream-ID:t ](../../../../datastreams/overrides.md) per kommando.
+- Stöd har lagts till för [åsidosättningar av datastream-ID:t &#x200B;](../../../../datastreams/overrides.md) per kommando.
 
 **Korrigeringar och förbättringar**
 
