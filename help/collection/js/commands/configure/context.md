@@ -97,7 +97,7 @@ Mer information finns i [Klienttips för användaragent](/help/collection/use-ca
 
 ### Referent för engångsanalys {#one-time-analytics-referrer}
 
-Nyckelordet `"oneTimeAnalyticsReferrer"` skickar endast ett referensvärde till Adobe Analytics vid det första icke-beslutande `sendEvent`-anropet för en sida. Det primära användningsområdet för det här kontextnyckelordet är att förhindra att dimensionen [Referer](https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referrer) i Adobe Analytics fylls av träffar som i första hand används i integreringar med Analytics och Target.
+Nyckelordet `"oneTimeAnalyticsReferrer"` skickar endast ett referensvärde till Adobe Analytics vid det första icke-beslutande `sendEvent`-anropet för en sida. Det primära användningsområdet för det här kontextnyckelordet är att förhindra att dimensionen [Referer](https://experienceleague.adobe.com/sv/docs/analytics/components/dimensions/referrer) i Adobe Analytics fylls av träffar som i första hand används i integreringar med Analytics och Target.
 
 Om ett angivet `sendEvent`-kommando använder en beslutshändelsetyp (`decisioning.propositionFetch`, `decisioning.propositionDisplay`, `decisioning.propositionInteract`), ignoreras det när den första `sendEvent` beräknas på en sida. Om referensvärdet ändras på sidan och ett annat `sendEvent` aktiveras, inkluderas det nya referensvärdet i nyttolasten. Detta villkor gör att funktionen kan användas med enkelsidiga program.
 
