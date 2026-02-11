@@ -1,9 +1,10 @@
 ---
 title: Konfigurationsinställningar för SDK-instanser
 description: Konfigurera allmänna inställningar för Web SDK-instansen.
-source-git-commit: 09799847c61d82ed5b7cd372d92aa436697d54f3
+exl-id: cc22b8b3-88c6-4030-91b4-60e14a3b0f42
+source-git-commit: 50881ef9498196f2de5519f050800334019a2586
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '261'
 ht-degree: 1%
 
 ---
@@ -32,4 +33,6 @@ ID:t för organisationen som du vill att data ska skickas till på Adobe. För d
 
 ## [!UICONTROL Edge domain]
 
-Domänen som tillägget skickar och tar emot data från. Standardvärdet för `edge.adobedc.net` fungerar, men i de flesta fall bör du använda en förstahandsdomän. Se det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/adobe-managed-cert) för instruktioner om hur du konfigurerar en förstahandsdomän som passar för datainsamling. Se även [`edgeDomain`](/help/collection/js/commands/configure/edgedomain.md) i dokumentationen för JavaScript-biblioteket för vägledning om hur du anger det här värdet.
+Domänen som tillägget skickar och tar emot data från. Som standard innehåller fältet `<COMPANYID>.data.adobedc.net`. Äldre implementeringar kan innehålla standardvärdet `edge.adobedc.net`, vilket också är giltigt.
+
+Adobe rekommenderar att du i de flesta fall använder en förstahandsdomän. Se det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert) för instruktioner om hur du konfigurerar en förstahandsdomän som passar för datainsamling. Se även [`edgeDomain`](/help/collection/js/commands/configure/edgedomain.md) i dokumentationen för JavaScript-biblioteket för vägledning om hur du anger det här värdet.

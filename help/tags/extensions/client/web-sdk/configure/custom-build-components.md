@@ -1,9 +1,10 @@
 ---
 title: Anpassade byggkomponenter
 description: Skapa en anpassad Web SDK-version som inaktiverar funktioner som minskar byggstorleken.
-source-git-commit: d6aea91d6989775ff5b6038b216ed2518f4a7d98
+exl-id: 853e0a6c-0953-4e08-9a7d-334aab022583
+source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
 workflow-type: tm+mt
-source-wordcount: '257'
+source-wordcount: '262'
 ht-degree: 1%
 
 ---
@@ -31,6 +32,7 @@ Adobe kan inaktivera följande byggkomponenter för Web SDK:
 | **[!UICONTROL Activity collector]** | Möjliggör automatisk länkinsamling och Activity Map tracking. | |
 | **[!UICONTROL Advertising]** | Möjliggör integrering av Adobe Advertising med Customer Journey Analytics. | |
 | **[!UICONTROL Audiences]** | Stöder integrering med Adobe Audience Manager, t.ex. ID-synk. | |
+| **[!UICONTROL Brand concierge]** | Möjliggör integrering med varumärkesprofilering. |
 | **[!UICONTROL Consent]** | Möjlighet att använda funktioner för samtycke. | [[!UICONTROL Set consent]](../actions/set-consent.md)-åtgärd |
 | **[!UICONTROL Event merge]** | Föråldrat. | [[!UICONTROL Event merge ID]](../data-element-types.md) dataelement (utgått) <br>[[!UICONTROL Reset event merge ID]](../actions/reset-event-merge-id.md)-åtgärd (utgått) |
 | **[!UICONTROL Media Analytics bridge]** | Stöder integrering med äldre Media Analytics. | [[!UICONTROL Get media analytics tracker]](../actions/get-media-analytics-tracker.md)-åtgärd |

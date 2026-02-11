@@ -2,9 +2,9 @@
 title: kontext
 description: Samla automatiskt in data om enheter, miljö eller plats.
 exl-id: 911cabec-2afb-4216-b413-80533f826b0e
-source-git-commit: c2564f1b9ff036a49c9fa4b9e9ffbdbc598a07a8
+source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '998'
 ht-degree: 1%
 
 ---
@@ -95,17 +95,28 @@ Om du använder enhetssökningar när [du konfigurerar ditt datastream](/help/da
 
 Mer information finns i [Klienttips för användaragent](/help/collection/use-cases/client-hints.md).
 
-Ange strängarrayen `context` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar SDK samlas all kontextinformation förutom `"highEntropyUserAgentHints"` in som standard. Ange den här egenskapen om du vill samla in klienttips med hög entropi, eller om du vill utelämna annan kontextinformation från datainsamlingen. Strängar kan inkluderas i vilken ordning som helst.
+### Referent för engångsanalys {#one-time-analytics-referrer}
 
->[!NOTE]
+Nyckelordet `"oneTimeAnalyticsReferrer"` skickar endast ett referensvärde till Adobe Analytics vid det första icke-beslutande `sendEvent`-anropet för en sida. Det primära användningsområdet för det här kontextnyckelordet är att förhindra att dimensionen [Referer](https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referrer) i Adobe Analytics fylls av träffar som i första hand används i integreringar med Analytics och Target.
+
+Om ett angivet `sendEvent`-kommando använder en beslutshändelsetyp (`decisioning.propositionFetch`, `decisioning.propositionDisplay`, `decisioning.propositionInteract`), ignoreras det när den första `sendEvent` beräknas på en sida. Om referensvärdet ändras på sidan och ett annat `sendEvent` aktiveras, inkluderas det nya referensvärdet i nyttolasten. Detta villkor gör att funktionen kan användas med enkelsidiga program.
+
+När ett duplicerat referensvärde upptäcks ställs `data.__adobe.analytics.referrer` in på en tom sträng (`""`) i biblioteket.
+Om du ställer in det här dataobjektfältet på en tom sträng raderas värdet när en träff kommer till Adobe Analytics eftersom dataobjektet skriver över ett XDM-objektmotsvarande fält. Det påverkar inte XDM-objektet, vilket innebär att data kan fortsätta att skickas till en Experience Platform-datauppsättning om du inkluderar flera tjänster i en datastream.
+
+## Implementering
+
+Ange strängarrayen `context` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar SDK samlas all kontextinformation förutom `"highEntropyUserAgentHints"` och `"oneTimeAnalyticsReferrer"` in som standard. Ange den här egenskapen om du vill samla in klienttips med hög entropi, eller om du vill utelämna annan kontextinformation från datainsamlingen. Strängar kan inkluderas i vilken ordning som helst.
+
+>[!TIP]
 >
->Om du vill samla in all kontextinformation, inklusive tips för hög entropi-klient, måste du ta med alla värden i `context`-arraysträngen. Standardvärdet `context` utelämnar `highEntropyUserAgentHints`, och om du anger egenskapen `context` samlar inga utelämnade värden in data.
+>Om du vill samla in all kontextinformation, inklusive tips för hög entropi-klient, måste du ta med alla värden i `context`-arraysträngen. Standardvärdet `context` utelämnar `"highEntropyUserAgentHints"` och `"oneTimeAnalyticsReferrer"`. Om du anger egenskapen `context` samlar inga utelämnade värden in data.
 
 ```js
 alloy("configure", {
   datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
   orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  context: ["web", "device", "environment", "placeContext", "highEntropyUserAgentHints"]
+  context: ["web", "device", "environment", "placeContext", "highEntropyUserAgentHints", "oneTimeAnalyticsReferrer"]
 });
 ```
 

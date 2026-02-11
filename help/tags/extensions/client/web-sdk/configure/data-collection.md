@@ -1,9 +1,10 @@
 ---
 title: Konfigurationsinställningar för datainsamling
 description: Konfigurera datainsamlingsinställningar i Web SDK-taggtillägget.
-source-git-commit: 46c8748e9ab972705b8283c174c285e571acb2ed
+exl-id: 88c34545-9a58-4d49-a939-36edaa9a46be
+source-git-commit: 9693f53cc1a31622d63fb93c0d51e1f5896c6524
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -119,3 +120,4 @@ Samla in besöksinformation automatiskt, vilket fyller i specifika XDM-fält åt
 * **[!UICONTROL Environment]**: Samlar in information om användarens webbläsare.
 * **[!UICONTROL Place context]**: Samlar in information om användarens plats.
 * **[!UICONTROL High entropy user-agent hints]**: Samlar in mer detaljerad information om användarens enhet.
+* **[!UICONTROL Send referrer to Adobe Analytics only once per page view]**: Förhindra att duplicerade referensdata skickas till Adobe Analytics.

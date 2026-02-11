@@ -5,16 +5,16 @@ description: Lär dig konfigurera en CSP för Experience Platform Web SDK
 seo-description: Learn how to configure a CSP for the Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;kontext;web;device;environment;web sdk settings;content security policy;
 exl-id: 661d0001-9e10-479e-84c1-80e58f0e9c0b
-source-git-commit: 217282135bcd750740f4d3f8c6e17a0b8f9578bd
+source-git-commit: 010192e91185c11d5454d4153913c06b90fe2122
 workflow-type: tm+mt
-source-wordcount: '339'
+source-wordcount: '341'
 ht-degree: 0%
 
 ---
 
 # Konfigurera en CSP
 
-En [CSP &#x200B;](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (Content Security Policy) används för att begränsa vilka resurser en webbläsare får använda. CSP kan även begränsa funktionerna för skript och formatresurser. Adobe Experience Platform Web SDK kräver ingen CSP, men om du lägger till en kan det minska attackytan för att förhindra skadliga attacker.
+En [CSP ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (Content Security Policy) används för att begränsa vilka resurser en webbläsare får använda. CSP kan även begränsa funktionerna för skript och formatresurser. Adobe Experience Platform Web SDK kräver ingen CSP, men om du lägger till en kan det minska attackytan för att förhindra skadliga attacker.
 
 CSP måste återspegla hur [!DNL Experience Platform Web SDK] distribueras och konfigureras. Följande CSP visar vilka ändringar som kan behövas för att SDK ska fungera korrekt. Ytterligare CSP-inställningar krävs troligen, beroende på din specifika miljö.
 
@@ -39,7 +39,7 @@ I exemplet ovan bör `EDGE-DOMAIN` ersättas med förstahandsdomänen. Den förs
 default-src 'nonce-SERVER-GENERATED-NONCE'
 ```
 
-Dessutom måste CSP nonce läggas till som ett attribut i skripttaggen [!DNL Experience Platform Web SDK] [base code](../js/install/library.md) . [!DNL Experience Platform Web SDK] kommer sedan att använda den funktionen en gång när du lägger till infogade skript eller formatkoder på sidan:
+Dessutom måste CSP nonce läggas till som ett attribut i Web SDK [base code](../js/install/base-code.md). I Web SDK används det sedan en gång när du lägger till infogade skript eller formattaggar på sidan:
 
 ```html
 <script nonce="SERVER-GENERATED-NONCE">

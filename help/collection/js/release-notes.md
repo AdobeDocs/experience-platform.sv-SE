@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Experience Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
+source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
 workflow-type: tm+mt
-source-wordcount: '2584'
+source-wordcount: '2673'
 ht-degree: 1%
 
 ---
@@ -15,6 +15,22 @@ ht-degree: 1%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Versionsinformationen om SDK-taggtillägg för webben](/help/tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.31.0 - 9 februari 2026
+
+**Nya funktioner**
+
+- Lagt till tillgängligheten för `"oneTimeAnalyticsReferrer"` till strängarrayen [`context`](commands/configure/context.md).
+- Komponenten Brand Concierge har lagts till.
+- `meta.queueTimeMillis` har lagts till i nätverksbegäran för att spela in tid mellan att händelsen skapades och att den skickades.
+- Möjlighet att behålla identitetskartan så att den kan fyllas i med efterföljande anrop.
+
+**Korrigeringar och förbättringar**
+
+- Attributen `aria-label` och `name` beaktas nu i den [automatiska länksamlingen](commands/configure/clickcollectionenabled.md).
+- Korrigerade ett möjligt konkurrensvillkor med integreringar av identitetskartor.
+- Ett problem har korrigerats där tidsstämpeln inte inkluderades i `streamingMedia`.
+- Ett problem där anpassade kodåtgärder bara kördes en gång har åtgärdats.
 
 ## Version 2.30.0 - 24 september 2025
 
@@ -139,7 +155,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 - Ett problem har korrigerats där aktivitetskartans länkinformation inte initierades när övervakarkroken `onInstanceConfigured` anropades.
 - Ett problem har korrigerats där cookies-mål inte hade angetts till rätt sökväg.
 - Ett kundproblem med att ringa har korrigerats.
-- Korrigerade ett problem där en ogiltig URL-kodning i parametern `adobe_mc` orsakade att [&#x200B; sendEvent](commands/sendevent/overview.md) anrop misslyckades.
+- Korrigerade ett problem där en ogiltig URL-kodning i parametern `adobe_mc` orsakade att [ sendEvent](commands/sendevent/overview.md) anrop misslyckades.
 
 ## Version 2.21.1 - 18 juli 2024
 
@@ -197,7 +213,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 **Nya funktioner**
 
-- Stöd har lagts till för [åsidosättningar av datastream-ID:t &#x200B;](/help/datastreams/overrides.md) per kommando.
+- Stöd har lagts till för [åsidosättningar av datastream-ID:t ](/help/datastreams/overrides.md) per kommando.
 
 **Korrigeringar och förbättringar**
 
@@ -208,7 +224,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 **Korrigeringar och förbättringar**
 
-- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=sv-SE).
+- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
 
 ## Version 2.16.0 - 25 april 2023
 
@@ -249,7 +265,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 **Nya funktioner**
 
 - Stöd för sidvis fullständig migrering har lagts till. Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js och SDK webbsidor.
-- Konfigurerbart stöd för [hög entropi-klienttips för användaragent &#x200B;](../use-cases/client-hints.md) har lagts till.
+- Konfigurerbart stöd för [hög entropi-klienttips för användaragent ](../use-cases/client-hints.md) har lagts till.
 - Stöd för kommandot [`applyResponse`](commands/applyresponse.md) har lagts till. Detta aktiverar hybridanpassning via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/).
 - QA-lägeslänkar fungerar nu på flera sidor.
 
@@ -346,7 +362,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 - Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
 - Stöd har lagts till för Adobe Consent 2.0-standarden för kommandot [`setConsent`](commands/setconsent.md).
 - Inställningarna för godkännande, när de tas emot, hashas och lagras i ett lokalt lager för en optimerad integrering mellan CMP, Experience Platform Web SDK och Experience Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
-- Två [övervakningskopplingar &#x200B;](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
+- Två [övervakningskopplingar ](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
 - Felkorrigering: Meddelandehändelser för interaktion i Personalization innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig programvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
 - Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.
 

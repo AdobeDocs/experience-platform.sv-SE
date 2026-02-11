@@ -6,10 +6,10 @@ breadcrumb-title: Datainsamling
 user-guide-description: Lär dig skicka data till Adobe Experience Platform.
 feature: Data Collection
 role: Developer
-source-git-commit: 7f932e9868e84cf8abdaa6cf0b2da5bac837234d
+source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
 workflow-type: tm+mt
-source-wordcount: '139'
-ht-degree: 15%
+source-wordcount: '142'
+ht-degree: 14%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 15%
    + [Versionsinformation](js/release-notes.md)
    + Installation {#install}
       + [Installationsöversikt](js/install/overview.md)
+      + [Baskod](js/install/base-code.md)
       + [Bibliotek](js/install/library.md)
       + [NPM](js/install/npm.md)
       + [Anpassad version](js/install/create-custom-build.md)
@@ -38,6 +39,7 @@ ht-degree: 15%
          + [clickCollection](js/commands/configure/clickcollection.md)
          + [clickCollectionEnabled](js/commands/configure/clickcollectionenabled.md)
          + [kontext](js/commands/configure/context.md)
+         + [konversation](js/commands/configure/conversation.md)
          + [datastreamId](js/commands/configure/datastreamid.md)
          + [debugEnabled](js/commands/configure/debugenabled.md)
          + [defaultConsent](js/commands/configure/defaultconsent.md)

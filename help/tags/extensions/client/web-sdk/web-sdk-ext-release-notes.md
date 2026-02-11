@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 0b3f4ec51cac182b637c79b9fcb883e5f8f78d02
+source-git-commit: 9693f53cc1a31622d63fb93c0d51e1f5896c6524
 workflow-type: tm+mt
-source-wordcount: '2949'
+source-wordcount: '3118'
 ht-degree: 1%
 
 ---
@@ -13,6 +13,29 @@ ht-degree: 1%
 # Versionsinformation om SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/collection/js/release-notes.md).
+
+## Version 2.34.0 - 9 februari 2026
+
+**Nya funktioner**
+
+- Innehåller [version 2.31.0](/help/collection/js/release-notes.md#2-31-0) av Adobe Experience Platform Web SDK.
+- [Baskodstöd](/help/collection/js/install/base-code.md) har lagts till för taggtillägget.
+- **[!UICONTROL Send referrer to Adobe Analytics only once per page view]** [context](configure/data-collection.md#context-settings) har lagts till i tilläggsinställningarna.
+- Komponenten Brand Concierge har lagts till.
+- Lagt till ett alternativ för att tillåta användning av en självvärdbaserad legeringsinstans med taggar.
+
+**Korrigeringar och förbättringar**
+
+- [Edge-standarddomänen](configure/general.md#edge-domain) har uppdaterats för att inkludera företags-ID som en underdomän.
+- Ett **[!UICONTROL No overrides]**-alternativ har lagts till i [Åsidosättningar av dataströmskonfiguration](configure/configuration-overrides.md).
+- Uppdateringsknappen har lagts till för att fylla i objekt på vissa inmatningsfält igen.
+- Unika instansnamn genereras nu automatiskt varje gång en instans skapas.
+- Korrigerade ett fel där `combinedValidator` genererade ett fel när värdet var `undefined` eller `null`.
+- Korrigerade ett fel som uppstod när en instans togs bort.
+- Ett problem har korrigerats där ett fel vid hämtning av scheman gjorde att XDM-objektets dataelement inte kunde användas.
+- Inställningarna för att spara i åtgärden [Skicka mediahändelse](actions/send-media-event.md) har korrigerats.
+- Ett problem har korrigerats där direktuppspelningsmediefält i konfigurationsvyn inte återställdes korrekt.
+- Felaktiga autopieringsvarningar för kapslade värden har korrigerats i XDM-objektredigeraren.
 
 ## Version 2.3.0 - 24 september 2025
 
@@ -226,7 +249,7 @@ Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 
 **Nya funktioner**
 
-- Stöd har lagts till för [åsidosättningar av datastream-ID:t &#x200B;](../../../../datastreams/overrides.md) per kommando.
+- Stöd har lagts till för [åsidosättningar av datastream-ID:t ](../../../../datastreams/overrides.md) per kommando.
 
 **Korrigeringar och förbättringar**
 

@@ -2,9 +2,9 @@
 title: clickCollectionEnabled
 description: Lär dig hur du konfigurerar Web SDK för att kontrollera om länkklicksdata samlas in automatiskt.
 exl-id: e91b5bc6-8880-4884-87f9-60ec8787027e
-source-git-commit: 364b9adc406f732ea5ba450730397c4ce1bf03cf
+source-git-commit: 4d251ff7323e83ac5c47b5817f81e8fde64cb7d9
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,21 @@ SDK spårar alla klick på `<a>`- och `<area>` HTML-element om det inte har någ
 1. Om måldomänen för länken skiljer sig från den aktuella `window.location.hostname` anges `xdm.web.webInteraction.type` till `"exit"` (om `clickCollection.exitLinkEnabled` är aktiverat).
 1. Om länken inte uppfyller kraven för antingen `"download"` eller `"exit"` ställs `xdm.web.webInteraction.type` in på `"other"`.
 
-I samtliga fall är `xdm.web.webInteraction.name` inställd på länktextetiketten och `xdm.web.webInteraction.URL` är inställd på länkens mål-URL. Om du även vill ange länknamnet till URL:en kan du åsidosätta det här XDM-fältet med hjälp av `filterClickDetails`-återanropet i `clickCollection`-objektet.
+I samtliga fall kontrollerar `xdm.web.webInteraction.name` det element som klickades och dess underordnade för det första icke-tomma värdet i följande ordning:
+
+1. `innerText` (återgår till `textContent`)
+1. Sammanfogade `nodeValue` från underordnade textnoder som stöds
+1. `alt`-attribut
+1. `title`-attribut
+1. `<input value="...">`-attribut
+1. `<img src="...">`-attribut
+1. `aria-label`-attribut
+1. `name`-attribut
+1. Tom sträng
+
+Fältet `xdm.web.webInteraction.URL` är inställt på länkens mål-URL. Om du även vill ange länknamnet till URL:en kan du åsidosätta det här XDM-fältet med hjälp av `filterClickDetails`-återanropet i `clickCollection`-objektet.
+
+## Implementering
 
 Ange det booleska värdet `clickCollectionEnabled` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar Web SDK blir standardvärdet `true`. Ange det här värdet till `false` om du föredrar att ställa in `xdm.web.webInteraction.type` och `xdm.web.webInteraction.value` manuellt.
 
