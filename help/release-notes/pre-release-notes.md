@@ -79,7 +79,7 @@ Adobe Experience Platform Data Collection innehåller en uppsättning tekniker s
 
 {style="table-layout:auto"}
 
-Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home).
+Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/sv/docs/experience-platform/collection/home).
 
 ## Mål {#destinations}
 
