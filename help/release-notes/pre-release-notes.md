@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: b8c257ad9ab4e7ee085687f6c03cf55d7fb83ef0
+source-git-commit: eceafa1852fc7c17660263d6ef7878a3e7bd0841
 workflow-type: tm+mt
-source-wordcount: '1022'
-ht-degree: 37%
+source-wordcount: '1086'
+ht-degree: 35%
 
 ---
 
@@ -79,7 +79,7 @@ Adobe Experience Platform Data Collection innehåller en uppsättning tekniker s
 
 {style="table-layout:auto"}
 
-Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/sv/docs/experience-platform/collection/home).
+Mer information finns i [dokumentationen för datainsamling](https://experienceleague.adobe.com/en/docs/experience-platform/collection/home).
 
 ## Mål {#destinations}
 
@@ -105,6 +105,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Schemalagerorganisation och sökning | Bläddringssidan för scheman innehåller nu förbättrad sökning och filtrering, infogade åtgärder och stöd för användardefinierade taggar och mappar. Dessa uppdateringar gör det enklare att hitta, ordna och hantera scheman över sandlådor samtidigt som manuell navigering och underhåll minskar. |
+| Begränsad redigering för scheman med datauppsättningar | Redigeringsåtgärder som leder till att ändringar bryts begränsas nu när en datauppsättning finns för ett schema. När en datauppsättning är associerad kan du inte längre byta namn på eller ta bort fält, ändra datatyper eller format för fält, ändra identitetsbeskrivare, hantera relaterade fält för att ta bort befintliga fält eller ändra den tilldelade klassen. Ytterligare ändringar och borttagning av fält stöds fortfarande. |
 
 Mer information finns i [[!DNL XDM] översikten](../xdm/home.md).
 

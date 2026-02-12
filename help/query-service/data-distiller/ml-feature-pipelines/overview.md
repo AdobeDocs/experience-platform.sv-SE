@@ -2,9 +2,9 @@
 title: AI/ML-rörledningar
 description: Lär dig hur du använder Data Distiller för att berika dina maskininlärningslinjer med funktioner som härleds från Adobe Experience Platform data. Omvandla rådata till funktioner och leverera funktionsdata för att utbilda eller poängsätta en modell som stöder era marknadsföringsexempel.
 exl-id: 3b452181-e254-4155-8bf5-0990533f202d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: eceafa1852fc7c17660263d6ef7878a3e7bd0841
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Data Distiller gör det möjligt för datavetare och datatekniker att berika sin
 
 >[!IMPORTANT]
 >
->Det här arbetsflödet kräver Data Distiller och en Adobe Experience Platform Intelligence-licens. Om du inte har någon av dessa produkter kan du kontakta din Adobe-representant.
+>Det här arbetsflödet kräver Data Distiller-licens. Om du inte har den här produkten kan du kontakta din Adobe-representant.
 
 ![En infografik som detaljerar AI-ML-funktionens pipeline.](../../images/data-distiller/ai-ml-feature-pipeline.png)
 
