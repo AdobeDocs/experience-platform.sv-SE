@@ -2,12 +2,12 @@
 keywords: IP-adress, IP-intervall, tillåtelselista-mål, tillåtelselista, direktuppspelningsmål för tillåtelselista
 title: IP-adress tillåtelselista för direktuppspelningsmål
 type: Documentation
-description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten, Amazon Kinesis eller Azure Event Hubs-instansen.
+description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten eller Amazon Kinesis-instansen.
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 851565b4c40452d102eff134533c9d44ea19ca76
+source-git-commit: 6d59d0555dda124acfd16483e11c2899ff5c846e
 workflow-type: tm+mt
-source-wordcount: '407'
-ht-degree: 0%
+source-wordcount: '425'
+ht-degree: 2%
 
 ---
 
@@ -22,9 +22,14 @@ ht-degree: 0%
 
 IP-intervallen som beskrivs på den här sidan gäller för följande mål:
 
-* [Avancerade företagsmål](../../destination-types.md#advanced-enterprise-destinations): [HTTP API-mål](./http-destination.md), [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [Avancerade företagsmål](../../destination-types.md#advanced-enterprise-destinations): [HTTP API-mål](./http-destination.md) och [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
 * [Målgrupper för direktuppspelad export](../../destination-types.md#streaming-destinations), till exempel [Pega CDH Realtime Audience](/help/destinations/catalog/personalization/pega-v2.md), API-baserade integreringar med [Salesforce Marketing Cloud](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md) och [Oracle Eloqua](/help/destinations/catalog/email-marketing/oracle-eloqua-api.md)
 * Offentliga eller privata mål som skapats via [Destination SDK](../../destination-sdk/getting-started.md)
+
+>[!IMPORTANT]
+>
+>IP-intervallen som dokumenteras på den här sidan stöds *inte* för [!DNL Azure Event Hubs] mål och API-baserade mål för direktuppspelning som lagras på Microsoft Azure.
+
 
 Utgående trafik från Experience Platform till dessa destinationer går alltid igenom de IP-adresser som anges på den här sidan.
 
