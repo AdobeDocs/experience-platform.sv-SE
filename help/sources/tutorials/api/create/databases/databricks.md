@@ -4,9 +4,9 @@ description: Lär dig hur du ansluter databaser till Experience Platform med API
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
+source-git-commit: 6a30e1983a6dcf8e1340281a9385eb8e73b927f6
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '553'
 ht-degree: 1%
 
 ---
@@ -46,6 +46,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta [!DNL Datab
 | `clusterId` | ID för ditt kluster i [!DNL Databricks]. Det här klustret måste redan vara ett befintligt kluster och bör vara ett interaktivt kluster. |
 | `accessToken` | Åtkomsttoken som autentiserar ditt [!DNL Databricks]-konto. Du kan generera din åtkomsttoken med arbetsytan [!DNL Databricks]. |
 | `database` | Namnet på databasen i deltasjön. |
+| `catalog` | Namnet på katalogen i deltasjön. Du behöver inte ange ett värde för en standardkatalog. |
 | `connectionSpec.Id` | Anslutningens spec-ID returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningens spec-ID för [!DNL Databricks] är `e9d7ec6b-0873-4e57-ad21-b3a7c65e310b`. |
 
 Mer information finns i [[!DNL Databricks] översikten](../../../../connectors/databases/databricks.md).

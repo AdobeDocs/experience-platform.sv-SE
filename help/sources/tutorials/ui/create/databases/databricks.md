@@ -4,9 +4,9 @@ description: Lär dig hur du ansluter databaser till Experience Platform via anv
 badgeUltimate: label="Ultimate" type="Positive"
 badgeBeta: label="Beta" type="Informative"
 exl-id: 877e22c0-cb77-45bb-88c9-54fdde2d6905
-source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
+source-git-commit: 6a30e1983a6dcf8e1340281a9385eb8e73b927f6
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '461'
 ht-degree: 2%
 
 ---
@@ -67,6 +67,7 @@ Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange
 * Kluster-ID
 * Åtkomsttoken
 * Databas
+* Katalog
 
 ![Det nya kontogränssnittet i källarbetsflödet med ett kontonamn och en valfri beskrivning har angetts.](../../../../images/tutorials/create/databricks/new.png)
 
