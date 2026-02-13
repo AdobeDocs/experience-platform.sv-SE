@@ -161,7 +161,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 - Ett problem har korrigerats där aktivitetskartans länkinformation inte initierades när övervakarkroken `onInstanceConfigured` anropades.
 - Ett problem har korrigerats där cookies-mål inte hade angetts till rätt sökväg.
 - Ett kundproblem med att ringa har korrigerats.
-- Korrigerade ett problem där en ogiltig URL-kodning i parametern `adobe_mc` orsakade att [ sendEvent](commands/sendevent/overview.md) anrop misslyckades.
+- Korrigerade ett problem där en ogiltig URL-kodning i parametern `adobe_mc` orsakade att [&#x200B; sendEvent](commands/sendevent/overview.md) anrop misslyckades.
 
 ## Version 2.21.1 - 18 juli 2024
 
@@ -219,7 +219,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 **Nya funktioner**
 
-- Stöd har lagts till för [åsidosättningar av datastream-ID:t ](/help/datastreams/overrides.md) per kommando.
+- Stöd har lagts till för [åsidosättningar av datastream-ID:t &#x200B;](/help/datastreams/overrides.md) per kommando.
 
 **Korrigeringar och förbättringar**
 
@@ -271,7 +271,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 **Nya funktioner**
 
 - Stöd för sidvis fullständig migrering har lagts till. Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js och SDK webbsidor.
-- Konfigurerbart stöd för [hög entropi-klienttips för användaragent ](../use-cases/client-hints.md) har lagts till.
+- Konfigurerbart stöd för [hög entropi-klienttips för användaragent &#x200B;](../use-cases/client-hints.md) har lagts till.
 - Stöd för kommandot [`applyResponse`](commands/applyresponse.md) har lagts till. Detta aktiverar hybridanpassning via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/).
 - QA-lägeslänkar fungerar nu på flera sidor.
 
@@ -368,7 +368,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 - Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
 - Stöd har lagts till för Adobe Consent 2.0-standarden för kommandot [`setConsent`](commands/setconsent.md).
 - Inställningarna för godkännande, när de tas emot, hashas och lagras i ett lokalt lager för en optimerad integrering mellan CMP, Experience Platform Web SDK och Experience Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
-- Två [övervakningskopplingar ](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
+- Två [övervakningskopplingar &#x200B;](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
 - Felkorrigering: Meddelandehändelser för interaktion i Personalization innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig programvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
 - Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.
 

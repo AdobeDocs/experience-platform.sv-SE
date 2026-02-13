@@ -103,7 +103,7 @@ Mer information finns i [Hantera visningshändelser](display-events.md).
 
 >[!TIP]
 >
->Om du använder [händelserna längst upp och längst ned ](top-bottom-page-events.md) implementeras det här anropet för att visa poster vanligtvis i det nedre `sendEvent` anropet.
+>Om du använder [händelserna längst upp och längst ned &#x200B;](top-bottom-page-events.md) implementeras det här anropet för att visa poster vanligtvis i det nedre `sendEvent` anropet.
 
 ## &#x200B;5. Återgivning
 
