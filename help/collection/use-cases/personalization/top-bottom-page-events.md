@@ -2,9 +2,9 @@
 title: Konfigurera de övre och nedre sidhändelserna i Web SDK
 description: I den här artikeln beskrivs hur du använder de övre och nedre delarna av sidhändelser i Web SDK.
 exl-id: 43c6d53a-6bf9-45f8-b001-d148adaff829
-source-git-commit: db7e6df1b1a0eb19518d9c6ccd6e6bb9131d5a3e
+source-git-commit: e150fa51953edbb0e21de962e066deedaf8bd2d7
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '790'
 ht-degree: 0%
 
 ---
@@ -117,7 +117,7 @@ alloy("sendEvent", {
 
 | Parameter | Obligatoriskt/valfritt | Beskrivning |
 |---|---|---|
-| `xdm._experience.decisioning.propositions` | Obligatoriskt | I det här avsnittet definieras de manuellt återgivna utdragen. Du måste inkludera förslaget `ID`, `scope` och `scopeDetails`. Mer information om hur du spelar in visningshändelser för manuellt återgivet innehåll finns i dokumentationen om hur du [återger personalisering manuellt](../personalization/rendering-personalization-content.md#manually). Manuellt återgivet personaliseringsinnehåll måste inkluderas i slutet av sidträffen. |
+| `xdm._experience.decisioning.propositions` | Obligatoriskt | I det här avsnittet definieras de manuellt återgivna utdragen. Du måste inkludera förslaget `ID`, `scope` och `scopeDetails`. Mer information finns i [Hantera visningshändelser](display-events.md). Manuellt återgivet personaliseringsinnehåll måste inkluderas i slutet av sidträffen. |
 | `xdm._experience.decisioning.propositionEventType` | Obligatoriskt | Ställ in den här parametern på `display: 1`. |
 | `xdm` | Valfritt | Använd det här avsnittet om du vill inkludera alla data som behövs för sidhändelseslutet längst ned. |
 

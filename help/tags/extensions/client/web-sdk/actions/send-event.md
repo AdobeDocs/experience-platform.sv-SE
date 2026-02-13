@@ -1,9 +1,10 @@
 ---
 title: Skicka händelse
 description: Skicka data till Adobe Experience Platform Edge Network.
-source-git-commit: d6aea91d6989775ff5b6038b216ed2518f4a7d98
+exl-id: 4ac7750e-48ab-4eb6-873d-bb2556dbf788
+source-git-commit: caaf5cad7276d6429fbbf35585fd4845de6ff60c
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '824'
 ht-degree: 0%
 
 ---
@@ -48,8 +49,8 @@ ht-degree: 0%
 ![Användargränssnittsbild för Experience Platform-taggar visar Personalization-inställningarna för åtgärdstypen Skicka händelse.](../assets/personalization-settings.png)
 
 * **[!UICONTROL Scopes]**: En matris med omfattningar som du uttryckligen vill begära från personalisering. Du kan ange omfattningarna manuellt eller ange ett dataelement. När du anger scope manuellt representerar varje fält ett omfång. Välj **[!UICONTROL Add scope]** om du vill lägga till fler scope i åtgärden.
-* **[!UICONTROL Surfaces]**: En array med ytor att fråga efter med händelsen. Mer information finns i [Skapa webbupplevelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html?lang=sv-SE) i Adobe Journey Optimizer-dokumentationen. När du anger ytor manuellt representerar varje fält en yta. Välj **[!UICONTROL Add surface]** om du vill lägga till fler ytor i åtgärden.
-* **Återge beslut om visuell personalisering:** En kryssruta som, när den är aktiverad, låter dig återge anpassat innehåll på sidan. Mer information finns i [Återge anpassat innehåll](/help/collection/use-cases/personalization/rendering-personalization-content.md#automatically-rendering-content).
+* **[!UICONTROL Surfaces]**: En array med ytor att fråga efter med händelsen. Mer information finns i [Skapa webbupplevelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) i Adobe Journey Optimizer-dokumentationen. När du anger ytor manuellt representerar varje fält en yta. Välj **[!UICONTROL Add surface]** om du vill lägga till fler ytor i åtgärden.
+* **Återge beslut om visuell personalisering:** En kryssruta som, när den är aktiverad, låter dig återge anpassat innehåll på sidan. Mer information finns i [Återge DOM-åtgärder automatiskt](/help/collection/use-cases/personalization/render-auto-pers-content.md).
 * **[!UICONTROL Request default personalization]**: Kontrollerar om det sidomfattande omfånget och standardytan har begärts. Som standard begärs den automatiskt under det första `sendEvent` anropet av sidinläsningen. JavaScript-biblioteket som motsvarar dessa alternativknappar är [`requestDefaultPersonalization`](/help/collection/js/commands/sendevent/personalization.md). Du kan välja mellan följande alternativ:
    * **[!UICONTROL Automatic]**: Standardbeteendet. Begär endast standardanpassning när den ännu inte har begärts.
    * **[!UICONTROL Enabled]**: Begär sidomfånget och standardytan explicit. Detta uppdaterar SPA-vycachen.

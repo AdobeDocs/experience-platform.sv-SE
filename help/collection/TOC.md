@@ -6,9 +6,9 @@ breadcrumb-title: Datainsamling
 user-guide-description: Lär dig skicka data till Adobe Experience Platform.
 feature: Data Collection
 role: Developer
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+source-git-commit: caaf5cad7276d6429fbbf35585fd4845de6ff60c
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '149'
 ht-degree: 14%
 
 ---
@@ -106,7 +106,9 @@ ht-degree: 14%
    + [Flera SDK-instanser](use-cases/multiple-instances.md)
    + Personalisering {#personalization}
       + [Översikt](use-cases/personalization/pers-overview.md)
-      + [Visa händelser](use-cases/personalization/display-events.md)
+      + [Återge DOM-åtgärder automatiskt](use-cases/personalization/render-auto-pers-content.md)
+      + [Återge HTML erbjudanden](use-cases/personalization/render-html-offers.md)
+      + [Återge förslag manuellt](use-cases/personalization/render-manual-propositions.md)
       + [Hantera flimmer](use-cases/personalization/manage-flicker.md)
-      + [Återge personaliserat innehåll](use-cases/personalization/rendering-personalization-content.md)
+      + [Visa händelser](use-cases/personalization/display-events.md)
       + [Sidhändelser uppifrån och ned](use-cases/personalization/top-bottom-page-events.md)

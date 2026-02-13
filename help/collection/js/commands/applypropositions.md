@@ -2,9 +2,9 @@
 title: applyPropositions
 description: Återge utkast som redan har återgetts med sendEvent.
 exl-id: 6b79f334-4ea6-4ba4-8640-d35b7f90df98
-source-git-commit: db7e6df1b1a0eb19518d9c6ccd6e6bb9131d5a3e
+source-git-commit: e150fa51953edbb0e21de962e066deedaf8bd2d7
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '287'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,10 @@ Det här kommandot stöder följande fält:
    * Omfång
    * Väljare
    * Åtgärdstyp
+
+>[!NOTE]
+>
+>Kommandot `applyPropositions` skickar inte automatiskt visningshändelser. Om inspelning visas kan du använda kommandot `sendEvent` enligt beskrivningen i [Hantera visningshändelser](/help/collection/use-cases/personalization/display-events.md).
 
 Kör kommandot `applyPropositions` när du anropar den konfigurerade instansen av Web SDK. Objektet som innehåller konfigurationsalternativ har stöd för följande fält:
 
