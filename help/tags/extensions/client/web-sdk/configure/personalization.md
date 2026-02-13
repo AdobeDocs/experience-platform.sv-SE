@@ -1,14 +1,20 @@
 ---
 title: Konfigurationsinställningar för Personalization
 description: Konfigurera personaliseringsinställningar i Web SDK-taggtillägget.
-source-git-commit: 9a617b6e97aec22a6726266f2628bd2c2a05da19
+exl-id: 24009a40-92ad-49d6-b768-49d64dccf4e0
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '463'
 ht-degree: 0%
 
 ---
 
-# Konfigurationsinställningar för Personalization
+# Konfigurationsinställningar för Personalization {#personalization}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_personalization"
+>title="Personalisering"
+>abstract="Avgör hur taggtillägget hanterar personaliserat innehåll."
 
 I det här konfigurationsavsnittet kan du bestämma hur du vill dölja vissa delar av sidan när anpassat innehåll läses in. När inställningarna är korrekt konfigurerade ser du till att besökarna ser rätt personaliserat innehåll.
 
@@ -26,7 +32,7 @@ Följande alternativ är tillgängliga:
 
 Använd det här alternativet om du vill tillåta Web SDK att läsa och skriva de gamla `mbox`- och `mboxEdgeCluster`-cookies som används av `at.js` 1.x- eller 2.x-biblioteken. Med den här inställningen kan besökarprofiler bevaras intakta när du förflyttar dig mellan sidor med hjälp av Web SDK eller `at.js` på samma webbplats. Om du inte har `at.js` implementerat någonstans på webbplatsen behöver du inte aktivera den här kryssrutan. JavaScript-biblioteket som motsvarar kryssrutan är [`targetMigrationEnabled`](/help/collection/js/commands/configure/targetmigrationenabled.md).
 
-När du aktiverar det här alternativet måste du även aktivera [`overrideMboxEdgeServer`](https://experienceleague.adobe.com/sv/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/targetglobalsettings#overridemboxedgeserver) i `targetGlobalSettings()`.
+När du aktiverar det här alternativet måste du även aktivera [`overrideMboxEdgeServer`](https://experienceleague.adobe.com/en/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/targetglobalsettings#overridemboxedgeserver) i `targetGlobalSettings()`.
 
 ## [!UICONTROL Prehiding style] {#prehiding-style}
 

@@ -1,14 +1,20 @@
 ---
 title: Åsidosättningsinställningar för dataströmskonfiguration
 description: Ändra konfigurationsinställningar när vissa villkor uppfylls.
-source-git-commit: 46e5d007b27eaa67c9ee49e35a711424de383d68
+exl-id: 68227148-3d74-4807-836c-14acd8a9c1dc
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '600'
 ht-degree: 2%
 
 ---
 
-# Åsidosättningsinställningar för dataströmskonfiguration
+# Åsidosättningsinställningar för dataströmskonfiguration {#config-overrides}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_overrides"
+>title="Åsidosättningar av dataströmskonfiguration"
+>abstract="Du kan välja att utlösa olika datastream-beteenden utan att behöva använda ett separat datastream. Om du anger åsidosättningar av dataströmskonfigurationer på klientsidan för en miljö i det här avsnittet åsidosätts alla dynamiska datastream-konfigurationer och regler på serversidan för den miljön."
 
 Med åsidosättningar av dataströmmar kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK. Med den här funktionen kan du villkorligt utlösa olika datastream-beteenden utan att skapa ett nytt datastream eller ändra befintliga inställningar.
 

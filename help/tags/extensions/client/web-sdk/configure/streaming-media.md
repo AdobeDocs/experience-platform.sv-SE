@@ -1,14 +1,20 @@
 ---
 title: Konfigurationsinställningar för direktuppspelande media
 description: Anpassa hur webbfilens SDK-taggtillägg samlar in strömmande mediedata.
-source-git-commit: 46e5d007b27eaa67c9ee49e35a711424de383d68
+exl-id: f486d729-b7ad-4720-8399-71495cb9c57e
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '310'
 ht-degree: 1%
 
 ---
 
-# Konfigurationsinställningar för direktuppspelande media
+# Konfigurationsinställningar för direktuppspelande media {#streaming-media}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_streamingmedia"
+>title="Direktuppspelande media"
+>abstract="Avgör hur direktuppspelningsmediedata samlas in under medieuppspelningssessioner."
 
 Funktionen för mediainsamling hjälper dig att samla in data relaterade till mediesessioner, till exempel medieuppspelningar, pauser, slutföranden och andra relaterade händelser. När de samlats in kan du skicka dessa data till Adobe Experience Platform eller Adobe Analytics för att generera rapporter. Den här funktionen är en heltäckande lösning för att spåra och förstå hur medieanvändningen fungerar på din webbplats.
 

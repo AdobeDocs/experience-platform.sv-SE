@@ -1,14 +1,20 @@
 ---
 title: Konfigurationsinställningar för dataström
 description: Konfigurera dataströmmen för att skicka data till med hjälp av webbfilens SDK-taggtillägg.
-source-git-commit: 46e5d007b27eaa67c9ee49e35a711424de383d68
+exl-id: 2d2504c6-b3f9-4e7b-aff4-a8d8d6c4e3dd
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '251'
 ht-degree: 1%
 
 ---
 
-# Konfigurationsinställningar för dataström
+# Konfigurationsinställningar för dataström {#datastreams}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_datastreams"
+>title="Dataströmmar"
+>abstract="Obligatoriskt. Anger den datastam i Edge Network som du vill skicka data till."
 
 I det här konfigurationsavsnittet kan du avgöra vilken [datastream](/help/datastreams/overview.md) som du vill skicka data till. **Ett datastream-ID krävs för alla data som skickas till Edge Network.**
 

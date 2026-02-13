@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: b1666521d135ac953dbde5b4ff64138a187e4b9e
+source-git-commit: d61deb73493200bc10ada4745f725bb656f3e802
 workflow-type: tm+mt
-source-wordcount: '827'
+source-wordcount: '826'
 ht-degree: 19%
 
 ---
@@ -108,7 +108,7 @@ ht-degree: 19%
          * [Komma igång](extensions/client/web-sdk/getting-started.md)
          * Konfigurera {#configure}
             * [Översikt](extensions/client/web-sdk/configure/config-overview.md)
-            * [Anpassade byggkomponenter](extensions/client/web-sdk/configure/custom-build-components.md)
+            * [Byggalternativ](extensions/client/web-sdk/configure/custom-build-components.md)
             * [SDK, instans](extensions/client/web-sdk/configure/general.md)
             * [Dataströmmar](extensions/client/web-sdk/configure/datastreams.md)
             * [Godkännande](extensions/client/web-sdk/configure/consent.md)
@@ -369,5 +369,5 @@ ht-degree: 19%
       * [Sökresurser](./api/guides/search.md)
       * [Hemligheter](./api/guides/secrets.md)
 * [Vanliga frågor och svar](./faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 

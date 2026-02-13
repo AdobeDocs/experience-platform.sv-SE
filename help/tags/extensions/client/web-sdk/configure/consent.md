@@ -1,14 +1,20 @@
 ---
 title: Inställningar för konfiguration av samtycke
 description: Konfigurera standardinställningar för samtycke och sekretess för taggtillägget.
-source-git-commit: 46e5d007b27eaa67c9ee49e35a711424de383d68
+exl-id: 93913a8b-0351-409d-b26a-8dc2ac0296c5
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '208'
 ht-degree: 1%
 
 ---
 
-# Inställningar för konfiguration av samtycke
+# Inställningar för konfiguration av samtycke {#consent}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_consent"
+>title="Godkännande"
+>abstract="Väljer standardnivån för samtycke som antas om ingen annan explicit medgivandeinställning anges."
 
 I avsnittet **[!UICONTROL Consent]** kan du välja standardnivån för samtycke som antas om ingen annan explicit medgivandeinställning anges. Standardmedgivandenivå sparas inte i användarprofiler.
 

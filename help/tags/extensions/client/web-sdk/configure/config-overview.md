@@ -1,14 +1,15 @@
 ---
 title: Översikt över konfigurationsinställningar
 description: Läs om tillgängliga alternativ när du konfigurerar taggtillägget för Web SDK.
-source-git-commit: 5f0203cfff3cb5c8b892142ff9b1c121925c3c46
+exl-id: 03f7bc0a-05c9-48ae-ae57-478db6d18f52
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 1%
 
 ---
 
-# Översikt över konfigurationsinställningar
+# Översikt över konfigurationsinställningar {#config-overview}
 
 Taggtillägget Adobe Experience Platform Web SDK innehåller flera alternativ som du kan anpassa. De här konfigurationsinställningarna motsvarar taggen [`configure`](/help/collection/js/commands/configure/overview.md) i JavaScript-biblioteket.
 

@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 9693f53cc1a31622d63fb93c0d51e1f5896c6524
+source-git-commit: 7dac63a5c2ca3897795b8849677ae606c8ea8c4b
 workflow-type: tm+mt
-source-wordcount: '3118'
+source-wordcount: '3165'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,17 @@ ht-degree: 1%
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [versionsinformationen för Experience Platform Web SDK](/help/collection/js/release-notes.md).
 
+## Version 2.34.1 - 11 februari 2026
+
+- Innehåller [version 2.31.1](/help/collection/js/release-notes.md) av Adobe Experience Platform Web SDK.
+- Ett problem har korrigerats där [Adobe Advertising konfigurationsinställningar](configure/advertising.md) inte kunde redigeras i [Skicka händelse](actions/send-event.md)-åtgärder.
+- En reserv har lagts till i `edge.adobedc.net` för konfigurationsinställningen [Edge-domän](configure/general.md) när `tenant-id` inte är tillgänglig.
+
 ## Version 2.34.0 - 9 februari 2026
 
 **Nya funktioner**
 
-- Innehåller [version 2.31.0](/help/collection/js/release-notes.md#2-31-0) av Adobe Experience Platform Web SDK.
+- Innehåller [version 2.31.0](/help/collection/js/release-notes.md) av Adobe Experience Platform Web SDK.
 - [Baskodstöd](/help/collection/js/install/base-code.md) har lagts till för taggtillägget.
 - **[!UICONTROL Send referrer to Adobe Analytics only once per page view]** [context](configure/data-collection.md#context-settings) har lagts till i tilläggsinställningarna.
 - Komponenten Brand Concierge har lagts till.
@@ -249,7 +255,7 @@ Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 
 **Nya funktioner**
 
-- Stöd har lagts till för [åsidosättningar av datastream-ID:t &#x200B;](../../../../datastreams/overrides.md) per kommando.
+- Stöd har lagts till för [åsidosättningar av datastream-ID:t ](../../../../datastreams/overrides.md) per kommando.
 
 **Korrigeringar och förbättringar**
 

@@ -1,15 +1,20 @@
 ---
-title: Anpassade byggkomponenter
+title: Byggalternativ
 description: Skapa en anpassad Web SDK-version som inaktiverar funktioner som minskar byggstorleken.
 exl-id: 853e0a6c-0953-4e08-9a7d-334aab022583
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '262'
+source-wordcount: '277'
 ht-degree: 1%
 
 ---
 
-# Anpassade byggkomponenter
+# Byggalternativ {#build-options}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_buildoptions"
+>title="Byggalternativ"
+>abstract="Ta med eller exkludera moduler från JavaScript bibliotek, minska biblioteksstorleken och förbättra prestandan."
 
 SDK-biblioteket för webben innehåller flera moduler för olika funktioner som personalisering, identitet, länkspårning med mera. Beroende på hur du använder dem kanske du bara behöver specifika funktioner i stället för hela biblioteket. Om du inaktiverar byggkomponenter kan du bara använda de moduler du behöver, vilket minskar biblioteksstorleken och förbättrar prestanda.
 

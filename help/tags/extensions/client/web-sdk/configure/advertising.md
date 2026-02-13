@@ -1,18 +1,24 @@
 ---
 title: Konfigurationsinställningar för Adobe Advertising
 description: Aktivera eller inaktivera funktioner för DSP (Demand-side Platform).
-source-git-commit: 526cb473a6288f367db9cb00c0277cce7543cd57
+exl-id: 594fd75d-bb13-4146-9105-1398e24c4c16
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '164'
+source-wordcount: '209'
 ht-degree: 1%
 
 ---
 
-# Konfigurationsinställningar för Adobe Advertising
+# Konfigurationsinställningar för Adobe Advertising {#advertising}
 
 >[!AVAILABILITY]
 >
 >Adobe Advertising för webben: SDK är för närvarande i **beta**. Funktionen och dokumentationen kan komma att ändras.
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_advertising"
+>title="Adobe Advertising"
+>abstract="Konfigurera inställningar för Adobe Advertising-integreringar. Observera att ingen annonskonfiguration behövs för att aktivera klickmätningar. Klienter med sökfunktioner, sociala medier och Commerce har inga ytterligare åtgärder som behöver vidtas. Användare av DSP (Demand-side Platform) måste dock konfigurera annonsörer i det här avsnittet för att kunna mäta genomskinliga konverteringar."
 
 I avsnittet **[!UICONTROL Adobe Advertising]** kan du aktivera eller inaktivera DSP-funktioner (Demand-side Platform) om de används i implementeringen. Du behöver bara ange det här fältet om implementeringen använder en DSP.
 

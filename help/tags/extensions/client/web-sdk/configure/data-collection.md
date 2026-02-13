@@ -2,14 +2,19 @@
 title: Konfigurationsinställningar för datainsamling
 description: Konfigurera datainsamlingsinställningar i Web SDK-taggtillägget.
 exl-id: 88c34545-9a58-4d49-a939-36edaa9a46be
-source-git-commit: 9693f53cc1a31622d63fb93c0d51e1f5896c6524
+source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '719'
 ht-degree: 0%
 
 ---
 
-# Konfigurationsinställningar för datainsamling
+# Konfigurationsinställningar för datainsamling {#data-collection}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_websdk_datacollection"
+>title="Datainsamling"
+>abstract="Bestäm vilka data som ska samlas in och hur dessa data samlas in över taggtillägget."
 
 I det här konfigurationsavsnittet kan du bestämma hur data samlas in över tillägget.
 
