@@ -3,7 +3,7 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Läs om hur du skyddar dig mot dataintrång i Adobe Experience Platform.
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: a862e532382472eadf29aee2568c550b1a71211a
+source-git-commit: b5b975308d28ae82ea4d811652681215bc2cfbdb
 workflow-type: tm+mt
 source-wordcount: '827'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Garantier är trösklar som ger vägledning för data- och systemanvändning, pr
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 I det här dokumentet finns riktlinjer för hur man skyddar mot dataintrång i Adobe Experience Platform.
 
@@ -49,7 +49,7 @@ I följande tabell visas skyddsutkast som du bör tänka på när du använder d
 
 | Typ av förtäring | Riktlinjer | Anteckningar |
 | --- | --- | --- |
-| Direktuppspelningskällor | <ul><li>Den maximala poststorleken är 1 MB och den rekommenderade storleken är 10 kB.</li><li>Direktuppspelningskällor har stöd för mellan 4000 och 5000 begäranden per sekund vid import till sjön. Detta gäller både för nyligen skapade källanslutningar utöver befintliga källanslutningar. **Obs!** Det kan ta upp till 30 minuter innan direktuppspelningsdata bearbetas fullständigt till datasjön.</li><li>Direktuppspelningskällor har stöd för högst 1 500 begäranden per sekund vid import av data till profil eller direktuppspelningssegmentering.</li></ul> | Direktuppspelningskällor som [!DNL Kafka], [!DNL Azure Event Hubs] och [!DNL Amazon Kinesis] använder inte DCCS-vägen ([!DNL Data Collection Core Service]) och kan ha olika genomströmningsbegränsningar. I [källÖversikt](../sources/home.md) finns en katalog med källor som du kan använda för datainmatning. |
+| Direktuppspelningskällor | <ul><li>Den maximala poststorleken är 1 MB och den rekommenderade storleken är 10 kB.</li><li>Direktuppspelningskällor har stöd för mellan 4000 och 5000 begäranden per sekund vid import till sjön. Detta gäller både för nyligen skapade källanslutningar utöver befintliga källanslutningar. **Obs!** Det kan ta upp till 60 minuter innan direktuppspelningsdata bearbetas fullständigt till sjön med data.</li><li>Direktuppspelningskällor har stöd för högst 1 500 begäranden per sekund vid import av data till profil eller direktuppspelningssegmentering.</li></ul> | Direktuppspelningskällor som [!DNL Kafka], [!DNL Azure Event Hubs] och [!DNL Amazon Kinesis] använder inte DCCS-vägen ([!DNL Data Collection Core Service]) och kan ha olika genomströmningsbegränsningar. I [källÖversikt](../sources/home.md) finns en katalog med källor som du kan använda för datainmatning. |
 
 {style="table-layout:auto"}
 
@@ -58,7 +58,7 @@ I följande tabell visas skyddsutkast som du bör tänka på när du använder d
 I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=sv-SE#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
