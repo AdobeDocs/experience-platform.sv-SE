@@ -40,7 +40,7 @@ alloy("sendEvent", {
 
 ## Skicka visningshändelser i efterföljande `sendEvent` samtal
 
-Att inkludera visningshändelser i ett senare `sendEvent`-anrop är användbart när du vill bifoga ytterligare sidinläsningsdata som inte är tillgängliga när du begär personalisering. Det används ofta vid implementering av [händelser för översta och nedersta sidan](/help/collection/use-cases/personalization/top-bottom-page-events.md). Korrekt implementering av visningshändelser på det här sättet hjälper till att undvika problem med [studsfrekvensen](https://experienceleague.adobe.com/en/docs/analytics/components/metrics/bounce-rate) i Adobe Analytics.
+Att inkludera visningshändelser i ett senare `sendEvent`-anrop är användbart när du vill bifoga ytterligare sidinläsningsdata som inte är tillgängliga när du begär personalisering. Det används ofta vid implementering av [händelser för översta och nedersta sidan](/help/collection/use-cases/personalization/top-bottom-page-events.md). Korrekt implementering av visningshändelser på det här sättet hjälper till att undvika problem med [studsfrekvensen](https://experienceleague.adobe.com/sv/docs/analytics/components/metrics/bounce-rate) i Adobe Analytics.
 
 1. På det första `sendEvent`-anropet (ofta överst på sidan) begär och återger du innehåll, men inaktiverar automatiska visningshändelser genom att ställa in `renderDecisions` på `true` och `personalization.sendDisplayEvent` på `false`:
 
