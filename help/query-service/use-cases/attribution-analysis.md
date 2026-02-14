@@ -22,7 +22,7 @@ SQL-exemplen i det här dokumentet är frågor som ofta används med Adobe Analy
 * [Attribution IQ - översikt](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=sv-SE)
 * [Guiden för Adobe Analytics-panelen Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html?lang=sv-SE).
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](../sql/adobe-defined-functions.md#window-functions). [Adobe Marketing och Commerce Term Glossary](https://business.adobe.com/glossary/index.html) kan också användas.
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](../sql/adobe-defined-functions.md#window-functions). [Adobe Marketing och Commerce Term Glossary](https://business.adobe.com/se/glossary/index.html) kan också användas.
 
 För vart och ett av följande användningsfall anges ett parametriserat SQL-frågeexempel som en mall som du kan anpassa. Ange parametrar där du ser `{ }` i de SQL-exempel som du är intresserad av att utvärdera.
 
