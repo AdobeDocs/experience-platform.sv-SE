@@ -2,8 +2,7 @@
 title: Köra och hantera översikt
 description: Inspektera, felsök och optimera era era Adobe Experience Platform-implementeringar med verktygen Kör och Kör. Få synlighet i schemalagda batchaktiveringar, identifiera konfigurationsproblem och förbättra systemets tillförlitlighet.
 hide: true
-hidefromtoc: true
-source-git-commit: 3696ebffc4bd1e588a04e5789ff0c7971e636b56
+source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
 workflow-type: tm+mt
 source-wordcount: '544'
 ht-degree: 0%
@@ -50,7 +49,7 @@ Så här kommer du åt verktygen Kör och Använd från Experience Platform-grä
    >
    >För närvarande är den enda tillgängliga funktionen [Jobbscheman](job-schedules.md).
 
-![Experience Platform-gränssnittet visar det vänstra navigeringsfältet Kör och använd.](assets/overview/run-and-operate.png)
+![Experience Platform-användargränssnittet visar det vänstra navigeringsfältet Kör och använd.](assets/overview/run-and-operate.png)
 
 ## Tillgängliga verktyg {#available-tools}
 

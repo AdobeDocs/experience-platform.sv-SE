@@ -4,10 +4,9 @@ solution: Experience Platform
 title: Visa information om jobbschema
 type: Tutorial
 hide: true
-hidefromtoc: true
-source-git-commit: 3696ebffc4bd1e588a04e5789ff0c7971e636b56
+source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
 workflow-type: tm+mt
-source-wordcount: '1758'
+source-wordcount: '1783'
 ht-degree: 0%
 
 ---
@@ -67,6 +66,8 @@ I tidslinjevyn används en vågrät och lodrät layout som hjälper dig förstå
 Med den här layouten kan du snabbt identifiera tidsförhållanden mellan dina dataredriefunktioner och efterföljande bearbetning. I idealfallet bör jobb uppströms (som datasjön och profilintag) slutföras till vänster om dessa vertikala markörer, vilket säkerställer att data är klara innan segmentering och aktivering börjar. Jobb som sträcker sig utanför dessa markörer anger potentiella timingproblem där processer längre fram i kedjan kan börja innan data är helt förberedda.
 
 ### Vilken vy ska jag använda? {#which-view}
+
+Använd tabellen nedan för att välja rätt vy för uppgiften. Använd den rekommenderade vyn för att navigera effektivt.
 
 | Jag måste... | Använd den här vyn |
 |--------------|---------------|

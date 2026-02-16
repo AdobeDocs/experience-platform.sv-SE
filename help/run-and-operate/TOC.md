@@ -3,12 +3,13 @@ product: adobe experience platform
 solution: Experience Platform
 audience: user
 user-guide-title: Handbok för att köra och använda
-user-guide-description: null
-role: Admin
-source-git-commit: b4f1ac5b0afa0afc6a40884e5e7d1bb0d3d4b435
+user-guide-description: Inspektera, felsök och optimera era era Adobe Experience Platform-implementeringar med verktygen Kör och Kör. Få synlighet i schemalagda batchaktiveringar, identifiera konfigurationsproblem och förbättra systemets tillförlitlighet.
+description: I det här dokumentet visas innehållsförteckningen för verktygen Kör och Kör i Adobe Experience Platform
+role: Admin, User
+source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
 workflow-type: tm+mt
-source-wordcount: '20'
-ht-degree: 5%
+source-wordcount: '63'
+ht-degree: 1%
 
 ---
 

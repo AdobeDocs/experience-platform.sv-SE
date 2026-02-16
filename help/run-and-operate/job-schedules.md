@@ -4,8 +4,7 @@ solution: Experience Platform
 title: Inspektera jobbscheman
 type: Tutorial
 hide: true
-hidefromtoc: true
-source-git-commit: 3696ebffc4bd1e588a04e5789ff0c7971e636b56
+source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 0%
@@ -45,7 +44,7 @@ Innan du använder [!UICONTROL Job Schedules] bör du känna till följande Expe
 
 Genom att förstå de här komponenterna kan du tolka jobbkörningsmönster och diagnostisera problem när de inträffar.
 
-## Om gränssnittet Jobbscheman {#understanding-interface}
+## Om gränssnittet för jobbscheman {#understanding-interface}
 
 Så här kommer du åt [!UICONTROL Job Schedules]:
 
