@@ -1,8 +1,7 @@
 ---
-title: Versionsinformation om Adobe Experience Platform januari 2026
-description: Versionsinformationen för Adobe Experience Platform i januari 2026.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fda9bb00dd77115c8085492cbf5883c0533588d8
+title: Versionsinformation om Adobe Experience Platform – februari 2026
+description: Versionsinformationen för Adobe Experience Platform från februari 2026.
+source-git-commit: afb1e0266b4c5485ba574f95aab3a56485d176b3
 workflow-type: tm+mt
 source-wordcount: '460'
 ht-degree: 52%
