@@ -1,21 +1,17 @@
 ---
 title: Snowflake Batch-anslutning
 description: Skapa en live-Snowflake-datadelning för att få dagliga målgruppsuppdateringar direkt som delade tabeller till ditt konto.
-last-substantial-update: 2025-10-23T00:00:00Z
+last-substantial-update: 2026-02-17T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 271700625e8cc1d2b5e737e89435c543caa86264
+source-git-commit: 89968d4e4c552b7c6b339a39f7a7224133446116
 workflow-type: tm+mt
-source-wordcount: '1662'
+source-wordcount: '1708'
 ht-degree: 0%
 
 ---
 
 # Snowflake Batch-anslutning {#snowflake-destination}
-
->[!AVAILABILITY]
->
->Den här målanslutningen är i begränsad tillgänglighet och endast tillgänglig för Real-Time CDP Ultimate-kunder som etablerats i [VA7-regionen](/help/landing/multi-cloud.md#azure-regions).
 
 ## Översikt {#overview}
 
@@ -51,7 +47,7 @@ När ett dataflöde körs för en målgrupp för första gången utförs en bak�
 
 Experience Platform tillhandahåller två typer av Snowflake-mål: [Snowflake Streaming](snowflake.md) och [Snowflake Batch](snowflake-batch.md).
 
-Båda destinationerna ger dig åtkomst till dina data i Snowflake på ett sätt där ingen kopia behövs, men det finns några rekommenderade metoder för användning för varje anslutning.
+Även om båda destinationerna ger dig tillgång till dina data i Snowflake utan att fysiskt kopiera dem till ditt konto, finns det några rekommenderade metoder för användning för varje anslutning.
 
 Tabellen nedan hjälper dig att avgöra vilken koppling som ska användas genom att beskriva de scenarier där varje datautdelningsmetod är lämpligast.
 
@@ -83,8 +79,13 @@ Innan du konfigurerar din Snowflake-anslutning måste du kontrollera att följan
 
 * Du har åtkomst till ett [!DNL Snowflake]-konto.
 * Ditt Snowflake-konto prenumererar på privata listor. Du eller någon på ditt företag som har kontoadministratörsbehörighet för Snowflake kan konfigurera detta.
+* Du kan Snowflake-kontots molnleverantör och region. Du måste ange båda när du ansluter till målet.
 
 Läs [[!DNL Snowflake] dokumentationen](https://docs.snowflake.com/en/collaboration/consumer-listings-access#access-a-private-listing) om du vill ha mer information om de behörigheter som krävs.
+
+>[!IMPORTANT]
+>
+>Den här destinationen stöder inte Snowflake-konton som finns bakom en brandvägg eller som använder [[!DNL Azure Private Link]](https://docs.snowflake.com/en/user-guide/privatelink-azure).
 
 ## Målgrupper {#supported-audiences}
 
@@ -137,7 +138,7 @@ Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destinati
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_snowflake_batch_accountid"
->title="Ange ditt konto-ID för Snowflake"
+>title="Ange din Snowflake-kontoidentifierare för datadelning"
 >abstract="Om ditt konto är länkat till en organisation använder du det här formatet: `OrganizationName.AccountName`<br><br> Om ditt konto inte är länkat till en organisation använder du det här formatet:`AccountName`"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
@@ -146,10 +147,10 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Snowflake Account ID]**: Ditt Snowflake-konto-ID. Använd följande konto-ID-format beroende på om ditt konto är länkat till en organisation:
-   * Om ditt konto är länkat till en organisation:`OrganizationName.AccountName`.
-   * Om ditt konto inte är länkat till en organisation:`AccountName`.
-* **[!UICONTROL Select Snowflake Region]**: Välj den region där din Snowflake-instans har etablerats. Mer information om vilka molnregioner som stöds finns i Snowflake [dokumentation](https://docs.snowflake.com/en/user-guide/intro-regions).
+* **[!UICONTROL Snowflake Account ID]**: Din [Snowflake-kontoidentifierare för datadelning](https://docs.snowflake.com/en/user-guide/admin-account-identifier#label-account-name-data-sharing). Använd följande format beroende på om ditt konto är länkat till en organisation:
+   * Om ditt konto är länkat till en organisation: ange organisationens namn och kontonamn avgränsade med en **punkt** (`.`). Om ditt organisationsnamn till exempel är ACME och ditt kontonamn är AsienRegion anger du `ACME.AsiaRegion`.
+   * Om ditt konto inte är länkat till en organisation: `AccountName`.
+* **[!UICONTROL Snowflake Region]**: Välj den region där din Snowflake-instans har etablerats. Mer information om vilka molnregioner som stöds finns i Snowflake [dokumentation](https://docs.snowflake.com/en/user-guide/intro-regions).
 * **[!UICONTROL Account acknowledgment]**: När du har angett **[!UICONTROL Snowflake Account ID]** väljer du **[!UICONTROL Yes]** i den här listrutan för att bekräfta att **[!UICONTROL Snowflake Account ID]** är korrekt och tillhör dig.
 
 >[!IMPORTANT]
@@ -177,7 +178,7 @@ Du kan exportera identiteter och profilattribut till det här målet.
 
 ![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
 
-Du kan använda kontrollen [&#x200B; för &#x200B;](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
@@ -189,17 +190,12 @@ Data läggs in i ditt Snowflake-konto via en dynamisk tabell. Kontrollera ditt S
 
 Den dynamiska tabellen innehåller följande kolumner:
 
-* **TS**: En tidsstämpelkolumn som representerar när varje rad senast uppdaterades
+* **TS**: En tidsstämpelkolumn som anger när varje rad från den delade tabellen senast uppdaterades
+* **Kopplingsprincip-ID**: ID:t för [sammanfogningsprincipen](../../../profile/merge-policies/overview.md) som målgruppen som aktiveras tillhör
 * **Mappningsattribut**: Alla mappningsattribut som du väljer under aktiveringsarbetsflödet representeras som en kolumnrubrik i Snowflake
 * **Målgruppsmedlemskap**: Medlemskap för alla målgrupper som är mappade till dataflödet anges via en `active` -post i motsvarande cell
 
-![Skärmbild som visar Snowflake-gränssnittet med dynamiska tabelldata](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png)
-
-## Kända begränsningar {#known-limitations}
-
-### Regional tillgänglighet {#regional-availability}
-
-Batchmålet [!DNL Snowflake] är för närvarande endast tillgängligt för Real-Time CDP-kunder som etablerats i Experience Platform VA7-regionen.
+![Skärmbild som visar Snowflake-gränssnittet med dynamiska tabelldata](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png) {align="center" zoomable="yes"}
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
