@@ -2,9 +2,9 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: b5d8a1c31705ffe72dadc4fff8626acb7081444a
 workflow-type: tm+mt
-source-wordcount: '2489'
+source-wordcount: '2488'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Om du vill veta mer om meddelandeformat, profilkonfiguration och transformerings
 * **Experience Data Model (XDM)**. [XDM-översikt](../../../../xdm/home.md) och [Så här skapar du ett XDM-schema i Adobe Experience Platform](../../../../xdm/tutorials/create-schema-ui.md).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](../../../../xdm/ui/resources/classes.md).
 * **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
-* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
+* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 >[!IMPORTANT]
 >
@@ -266,7 +266,7 @@ Profil 2:
 ### Målgruppsmedlemskap {#audience-membership}
 
 XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör.
-Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
+Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 **Indata**
 
@@ -1032,7 +1032,6 @@ Om du använder [konfigurerbar aggregering](../../functionality/destination-conf
 Möjliga värden är:
 
 * realiserad
-* befintlig
 * avslutad
 
 Lägg till raden nedan i mallen för att lägga till eller ta bort profiler från segment baserat på värdena ovan:
