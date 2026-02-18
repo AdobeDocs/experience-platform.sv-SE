@@ -571,7 +571,7 @@ Som en tillfällig lösning kan du antingen:
 
 >[!IMPORTANT]
 > 
->Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
+>Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg &#x200B;](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
 >
 >Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 
