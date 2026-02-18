@@ -4,9 +4,9 @@ description: Skapa en live-Snowflake-datadelning för att få dagliga målgrupps
 last-substantial-update: 2026-02-17T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: 89968d4e4c552b7c6b339a39f7a7224133446116
+source-git-commit: 2ad61b1b7e728429e047c4801b9a79e479a3aa18
 workflow-type: tm+mt
-source-wordcount: '1708'
+source-wordcount: '1735'
 ht-degree: 0%
 
 ---
@@ -153,6 +153,10 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Snowflake Region]**: Välj den region där din Snowflake-instans har etablerats. Mer information om vilka molnregioner som stöds finns i Snowflake [dokumentation](https://docs.snowflake.com/en/user-guide/intro-regions).
 * **[!UICONTROL Account acknowledgment]**: När du har angett **[!UICONTROL Snowflake Account ID]** väljer du **[!UICONTROL Yes]** i den här listrutan för att bekräfta att **[!UICONTROL Snowflake Account ID]** är korrekt och tillhör dig.
 
+>[!NOTE]
+>
+> **[!UICONTROL Snowflake Account ID]** och **[!UICONTROL Snowflake Region]** kan inte redigeras via arbetsflödet [Redigera mål](../../ui/edit-destination.md) när du har skapat målet. Om du vill använda andra konto- eller regionvärden [skapar du en ny målanslutning](../../ui/connect-destination.md).
+
 >[!IMPORTANT]
 >
 > Specialtecken som används i målnamnet och Experience Platform-sandlådans namn konverteras automatiskt till understreck (`_`) i Snowflake. Undvik förvirring genom att inte använda några specialtecken i mål- och sandlådans namn.
@@ -178,7 +182,7 @@ Du kan exportera identiteter och profilattribut till det här målet.
 
 ![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
 
-Du kan använda kontrollen [&#x200B; för &#x200B;](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
