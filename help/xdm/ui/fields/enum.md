@@ -40,7 +40,7 @@ Välj **[!UICONTROL Enums and Suggested Values]** och sedan **[!UICONTROL Enums]
 
 Under kolumnen **[!UICONTROL Value]** måste du ange det exakta värde som du vill begränsa fältet till. Du kan även ange en användarvänlig **[!UICONTROL Display Name]** för begränsningen, vilket påverkar hur värdet kommer att representeras i segmenteringen.
 
-Fortsätt att använda **[!UICONTROL Add row]** för att lägga till önskade begränsningar och valfria etiketter i uppräkningen, eller markera ikonen Ta bort (![Bild av ikonen Ta bort ](/help/images/icons/remove-circle.png)) bredvid en rad som du tidigare lagt till för att ta bort den. När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna på schemat.
+Fortsätt att använda **[!UICONTROL Add row]** för att lägga till önskade begränsningar och valfria etiketter i uppräkningen, eller markera ikonen Ta bort (![Bild av ikonen Ta bort &#x200B;](/help/images/icons/remove-circle.png)) bredvid en rad som du tidigare lagt till för att ta bort den. När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna på schemat.
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/enum-confirm.png)
 
@@ -64,7 +64,7 @@ När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringar
 
 ### Hantera föreslagna värden för standardfält
 
-Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class ](../../classes/experienceevent.md). Du kan skapa ytterligare föreslagna värden för ett standardfält, men du kan inte ändra eller ta bort föreslagna värden som inte har definierats av organisationen. När du visar ett standardfält i användargränssnittet visas de föreslagna värdena, men de är skrivskyddade.
+Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class &#x200B;](../../classes/experienceevent.md). Du kan skapa ytterligare föreslagna värden för ett standardfält, men du kan inte ändra eller ta bort föreslagna värden som inte har definierats av organisationen. När du visar ett standardfält i användargränssnittet visas de föreslagna värdena, men de är skrivskyddade.
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard.png)
 
