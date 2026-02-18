@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 99bac2ea71003b678a25b3afc10a68d36472bfbc
+source-git-commit: 8019f7426f6e6dd3faef131ada8e307c1d075556
 workflow-type: tm+mt
-source-wordcount: '4578'
+source-wordcount: '4783'
 ht-degree: 1%
 
 ---
@@ -120,7 +120,7 @@ Om du vill redigera flera scheman samtidigt markerar du målgrupperna med hjälp
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
 >abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för målgruppen. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för målgruppen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för målgruppen och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för målgruppen sedan den första inkrementella filexporten."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=sv-SE#export-incremental-files" text="Exportera inkrementella filer"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="Exportera inkrementella filer"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -181,6 +181,29 @@ Använd alternativet **[!UICONTROL Scheduled]** om du vill att aktiveringsjobbet
    > När du väljer ett exportintervall inkluderas inte den sista dagen i intervallet i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum 10 januari.
 
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
+
+### Om schemalagd export {#export-behavior}
+
+Schemalagda exporter omfattar ögonblicksbildsdata för målgruppen plus eventuella inkrementella profiler eller identitetsändringar som inträffar mellan det att ögonblicksbilden skapades och exporttiden. Detta skiljer sig från [on demand-export](export-file-now.md), som endast använder ögonblicksbildsdata.
+
+I följande tabell visas hur schemalagd export skiljer sig från on demand-export, särskilt när det gäller datavetenskap och avsedd användning:
+
+|  | Schemalagd export | Exportera filen nu |
+|--------|-------------------|-----------------|
+| **Datakälla** | Ögonblicksbild + inkrementella förändringar | Endast fixering |
+| **Profilattribut** | Aktuella värden vid export | Värden vid fixeringstid |
+
+Om profilerna uppdateras efter målgruppsutvärderingen kommer den schemalagda exporten att innehålla de uppdaterade attributvärdena även om målgruppsmedlemskapet fastställdes vid utvärderingen.
+
+**Exempel**: En målgrupp för profiler där RetailID är null kan exportera profiler med RetailID ifyllt om fältet uppdaterades *efter*-utvärderingen men *före* den schemalagda exporten.
+
+**Rekommendationer**
+
+* Konfigurera en [dedupliceringsnyckel](#deduplication-keys) för att förhindra dubblettposter
+* Använd export on demand för exakta ögonblicksbildsbaserade data
+* Justera batchimporten med utvärderingsplaner för att minimera avvikelser
+
+Information om export på begäran finns i dokumentationen om [export av filer på begäran](/help/destinations/ui/export-file-now.md#scheduled-vs-ondemand).
 
 ### Exportera inkrementella filer
 
@@ -338,7 +361,11 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](../../destina
 >title="Om dedupliceringsnycklar"
 >abstract="Eliminera flera poster med samma profil i exportfilerna genom att välja en dedupliceringsnyckel. Välj ett namnutrymme eller upp till två XDM-schemaattribut som en dedupliceringsnyckel. Om du inte väljer en dedupliceringsnyckel kan det leda till dubblettprofilposter i exportfilerna."
 
-En dedupliceringsnyckel är en användardefinierad primärnyckel som avgör identiteten som användarna vill att deras profiler ska dedupliceras med. &#x200B;
+>[!IMPORTANT]
+>
+>Konfigurera alltid en dedupliceringsnyckel för schemalagd export. Utan borttagning av dubbletter kan du se dubblerade rader eller segmentmedlemskap som står i konflikt med varandra för samma profil, eftersom schemalagd export bearbetar både ögonblicksbilder och inkrementella data.
+
+En dedupliceringsnyckel är en användardefinierad primärnyckel som anger hur profiler dedupliceras. När det finns flera poster för samma person säkerställer borttagning av dubbletter att endast den senaste posten exporteras.
 
 Avdupliceringsnycklar eliminerar möjligheten att ha flera poster med samma profil i en exportfil.
 
@@ -469,7 +496,7 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 
 ### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
 
-När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
 
 #### Viktiga överväganden
 
@@ -544,7 +571,7 @@ Som en tillfällig lösning kan du antingen:
 
 >[!IMPORTANT]
 > 
->Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg &#x200B;](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
+>Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
 >
 >Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 

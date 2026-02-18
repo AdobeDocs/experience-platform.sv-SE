@@ -3,9 +3,9 @@ title: Exportera filer on demand till gruppmål med hjälp av Experience Platfor
 type: Tutorial
 description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av Experience Platform användargränssnitt.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 111f6d5093a0b66a683745b1da8d8909eb17f7eb
+source-git-commit: c7e6de2db416592ca9340fefadd53709fe71b058
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '805'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,26 @@ ht-degree: 0%
 
 I den här artikeln beskrivs hur du använder användargränssnittet i Experience Platform för att exportera filer på begäran till batchmål som [molnlagring](/help/destinations/catalog/cloud-storage/overview.md) och [e-postmarknadsföring](/help/destinations/catalog/email-marketing/overview.md) .
 
-Kontrollen **[!UICONTROL Export file now]** gör att du kan exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen. Filexporten utlöses omedelbart och det senaste resultatet från Experience Platform segmentering hämtas.
+Kontrollen **[!UICONTROL Export file now]** gör att du kan exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen.
+
+Filexporten utlöses omedelbart och data från den senaste målgruppsutvärderingsögonblicksbilden används endast. Det omfattar inte profil- eller identitetsändringar som inträffar efter att en ögonblicksbild har skapats. I den schemalagda exporten däremot ingår både ögonblicksbildsdata och inkrementella ändringar mellan det att ögonblicksbilden skapas och exporttiden.
 
 Du kan också använda Experience Platform API:er för detta. Läs om hur du [aktiverar målgrupper på begäran till batchmål via API:t för ad hoc-aktivering](/help/destinations/api/ad-hoc-activation-api.md).
+
+## Schemalagd export kontra export på begäran {#scheduled-vs-ondemand}
+
+Vid export på begäran och vid schemalagd export används olika datakällor, vilket kan leda till skillnader i exporterade data. Se tabellen nedan för att förstå vad som exporteras i varje enskilt fall.
+
+|  | Exportera filen nu | Schemalagd export |
+|--------|-----------------|-------------------|
+| **Datakälla** | Endast fixering | Ögonblicksbild + inkrementella förändringar |
+| **Profilattribut** | Värden vid fixeringstid | Aktuella värden vid export |
+
+>[!NOTE]
+>
+>Schemalagda exporter kan visa andra profilantal eller attributvärden än on demand-exporter eftersom de innehåller profiluppdateringar som inträffar efter målgruppsutvärderingen.
+
+Mer information finns i [Om schemalagd export](/help/destinations/ui/activate-batch-profile-destinations.md#export-behavior).
 
 ## Förhandskrav {#prerequisites}
 
