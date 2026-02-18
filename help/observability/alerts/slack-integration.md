@@ -1,9 +1,9 @@
 ---
 title: Slack-integrering för kundmotstående varningar
 description: Lär dig ansluta Adobe I/O Events till Slack med Adobe App Builder.
-source-git-commit: 11f95eb16110155f8675ee5c83824b790a68f06a
+source-git-commit: c0fa0320b32e1bfe286d47a2e1af5ea1dcf74cb9
 workflow-type: tm+mt
-source-wordcount: '933'
+source-wordcount: '946'
 ht-degree: 0%
 
 ---
@@ -51,9 +51,13 @@ Initiera projektet när du har konfigurerat det mallade projektet.
    aio app init slack-webhook-proxy
    ```
 
-1. Markera `Organization` med piltangenterna och markera sedan `Project` som du skapade tidigare i Developer Console. Välj `Only Templates Supported By My Org` för de mallar som ska sökas igenom. Tryck sedan på **Enter** för att hoppa över mallar och installera ett fristående program.
+1. Markera `Organization` med piltangenterna och markera sedan `Project` som du skapade tidigare i Developer Console. Välj `Only Templates Supported By My Org` för de mallar som ska sökas igenom.
 
    ![Terminal som visar val av organisation och projekt och endast mallar som stöds av min organisation.](../images/alerts/slack-integration/terminal-organization-project.png)
+
+1. Tryck sedan på **Enter** för att hoppa över mallar och installera ett fristående program.
+
+   ![Terminal som visar val av organisation och projekt och endast mallar som stöds av min organisation.](../images/alerts/slack-integration/terminal-skip-templates.png)
 
 1. Ange de Adobe I/O App-funktioner som du vill aktivera för det här projektet. Använd piltangenterna för att rulla och välj `Actions: Deploy Runtime actions`.
 
