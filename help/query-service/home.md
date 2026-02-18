@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över frågetjänsten
 description: Läs mer om frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 161de7f9692cdd219d73a1a301f891cf9636a2e9
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '862'
 ht-degree: 0%
 
 ---
@@ -17,12 +17,12 @@ Adobe Experience Platform importerar data från en mängd olika källor. En stor
 
 Med Query Service kan ni koppla samman kundresan online-till-offline och förstå flerkanalsattribueringen för ert varumärke. I följande video visas hur ett upplevelseföretag kan använda frågetjänsten för att hantera viktiga användningsfall och hur frågetjänsten fungerar.
 
->[!VIDEO](https://video.tv.adobe.com/v/3464265?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/29795?quality=12&learn=on)
 
 ## Använda frågetjänsten {#usage}
 
 Om du vill analysera dina data skapar och kör du SQL-frågor med antingen användargränssnittet för frågetjänsten eller RESTful API.
-Med användargränssnittet för frågetjänsten kan du skriva, köra och schemalägga frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i organisationen. Du kan också testa dina frågor innan du kör dem på din bredare datauppsättning med Frågeredigeraren. En översikt över gränssnittsfunktionerna finns i [gränssnittshandboken för frågetjänsten](ui/overview.md).
+Med användargränssnittet för frågetjänsten kan du skriva, köra och schemalägga frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i organisationen. Du kan också testa dina frågor innan du kör dem på din bredare datauppsättning med Frågeredigeraren. Se [Användargränssnittsguiden för frågetjänst] (ui/overview.md) för en översikt över gränssnittsfunktionerna.
 
 RESTful API ger en liknande upplevelse. Du kan använda API:t för frågetjänsten för att skriva och köra frågor programmatiskt, skapa och spara mallar för frågor som du vill anpassa eller schemalägga frågor för automatiserad körning. Mer information om hur du använder API:t för frågetjänsten finns i [Utvecklarhandboken för frågetjänsten](api/getting-started.md).
 
@@ -34,11 +34,11 @@ Du rekommenderas att läsa följande dokument för att snabbt komma igång med a
 
 ## Frågetjänster och Experience Platform-tjänster {#experience-platform-services}
 
-Frågetjänsten samverkar och kan användas med flera Experience Platform-tjänster. För att få ut så mycket som möjligt av frågetjänstens funktioner bör du känna till dessa tjänster och hur de interagerar med frågetjänsten. Landningssidan för [Experience Platform-dokumentation](https://experienceleague.adobe.com/docs/experience-platform.html?lang=sv-SE) innehåller sammanfattningar och länkar till plattformens funktioner.
+Frågetjänsten samverkar och kan användas med flera Experience Platform-tjänster. För att få ut så mycket som möjligt av frågetjänstens funktioner bör du känna till dessa tjänster och hur de interagerar med frågetjänsten. Landningssidan för [Experience Platform-dokumentationen] (https://experienceleague.adobe.com/docs/experience-platform.html) innehåller sammanfattningar och länkar till plattformens funktioner.
 
 ### [!DNL Data Science Workspace] {#data-science-workspace}
 
-Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Datavetare kan använda [!DNL Data Science Workspace] för att skapa recept baserat på data från post- och tidsserier om kunder och deras aktiviteter. Dessa recept underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder. Du kan använda SQL i [!DNL Data Science Workspace] genom att integrera Query Service i [!DNL JupyterLab] för att utforska, omvandla och analysera Adobe Analytics-data. Läs [[!DNL Data Science Workspace] översikten](../data-science-workspace/home.md) och [Anslutningsguiden för Jupyter-anteckningsbok](./clients/jupyter-notebook.md) om du vill ha mer information om hur [!DNL Data Science Workspace] interagerar med frågetjänsten.
+Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Datavetare kan använda [IDNL Data Science Workspace] för att skapa recept baserat på data från register- och tidsserier om kunder och deras aktiviteter. Dessa recept underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder. Du kan använda SQL i [!DNL Data Science Workspace] genom att integrera Query Service i [!DNL JupyterLab] för att utforska, omvandla och analysera Adobe Analytics-data. Läs [[!DNL Data Science Workspace] översikten](../data-science-workspace/home.md) och [Anslutningsguiden för Jupyter-anteckningsbok](./clients/jupyter-notebook.md) om du vill ha mer information om hur [!DNL Data Science Workspace] interagerar med frågetjänsten.
 
 ### [!DNL Segmentation Service] {#segmentation}
 
@@ -54,7 +54,7 @@ Det här exemplet på [bläddring handlar om att använda Adobe [!DNL Analytics]
 
 ## Generera insikter med anpassade instrumentpaneler {#custom-dashboards}
 
-Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Med [!DNL Experience Platform's Query Service] kan du fråga om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden med [användardefinierade instrumentpaneler](../dashboards/standard-dashboards.md). Du kan till och med [anpassa dina egna Real-Time CDP-rapporter](../dashboards/data-models/cdp-insights-data-model-b2c.md) för dina marknadsförings- och KPI-användningsfall genom att använda SQL-frågor med Real-Time Customer Data Platform Insights-datamodeller.
+Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Med hjälp av frågetjänsten kan du ställa frågor om dessa datauppsättningar och besvara specifika affärsfrågor, vilket ger effektiva insikter. Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden med [användardefinierade instrumentpaneler](../dashboards/standard-dashboards.md). Du kan också [anpassa dina egna Real-Time CDP-rapporter](../dashboards/data-models/cdp-insights-data-model-b2c.md) för dina användningsfall för marknadsföring och KPI med hjälp av SQL-frågor med Real-Time Customer Data Platform Insights-datamodeller.
 
 ## Nästa steg och ytterligare resurser
 

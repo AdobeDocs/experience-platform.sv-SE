@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2026
 description: Versionsinformationen för Adobe Experience Platform från februari 2026.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7cb35f5b35878b655dc668c0b26e22a41d675161
+source-git-commit: a11c00c218ffbbd5618616f401613a604c35859a
 workflow-type: tm+mt
-source-wordcount: '460'
-ht-degree: 52%
+source-wordcount: '606'
+ht-degree: 53%
 
 ---
 
@@ -28,6 +28,7 @@ Nya funktioner och uppdateringar i Adobe Experience Platform:
 - [Aviseringar](#alerts)
 - [Mål](#destinations)
 - [Källor](#sources)
+- [Experience Data Model (XDM)](#xdm)
 
 ## Aviseringar {#alerts}
 
@@ -79,3 +80,14 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 {style="table-layout:auto"}
 
 Mer information finns i [översikten över källor](../../sources/home.md).
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Begränsad redigering för scheman med datauppsättningar | Redigeringsåtgärder som leder till att ändringar bryts begränsas nu när en datauppsättning finns för ett schema. När en datauppsättning är associerad kan du inte längre byta namn på eller ta bort fält, ändra datatyper eller format för fält, ändra identitetsbeskrivare, hantera relaterade fält för att ta bort befintliga fält eller ändra den tilldelade klassen. Ytterligare ändringar och borttagning av fält stöds fortfarande. |
+
+Mer information finns i [XDM-översikten](../../xdm/home.md).
+
