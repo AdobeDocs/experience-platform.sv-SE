@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 11ef8fe8b64a7c2bb698c62093aafe3fb11d3789
+source-git-commit: 67dec10b0d1343fffd522ee3e615ac2823894a67
 workflow-type: tm+mt
-source-wordcount: '1731'
+source-wordcount: '1755'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast antas att du har [anslutit till mål](/help/destinations/ui/connect-destination.md) korrekt.
 
@@ -76,7 +76,7 @@ Skyddskisserna nedan gäller aktivering via [gruppbaserade (filbaserade) mål](/
 | Aktiveringsfrekvens | En daglig hel export eller mer frekvent stegvis export var 3, 6, 8 eller 12: e timme. | Systemstyrt skyddsräcke | Läs avsnitten om [export av fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [export av stegvisa filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) om du vill ha mer information om frekvensökningarna för batchexport. |
 | Maximalt antal målgrupper som kan exporteras vid en given timme | 100 | Prestandaskydd | Rekommendationen är att lägga till högst 100 målgrupper i batchmåldataflöden. |
 | Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Systemstyrt skyddsräcke | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med ett nummer som anger att filen är en del av en större export, till exempel: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [schemaläggningsavsnittet](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) i självstudiekursen om aktivering av batchmål. |
-| Maximalt antal anpassade överförda målgrupper som ska aktiveras i ett dataflöde | 10 | Systemstyrt skyddsräcke | När du aktiverar [anpassade överförda målgrupper](/help/segmentation/ui/audience-portal.md#import-audience) till batchfilbaserade mål finns det en gräns på 10 sådana målgrupper som du kan aktivera i ett dataflöde. Läs mer om arbetsflödet för att [aktivera anpassade överförda målgrupper till batchfilbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences). |
+| Maximalt antal externa målgrupper (t.ex. FAC, anpassad uppladdning, målgruppskomposition) som kan aktiveras i ett dataflöde | 10 | Systemstyrt skyddsräcke | När du aktiverar externa målgrupper (t.ex. [Federated Audience Composition](/help/segmentation/ui/audience-portal.md#fac), [custom upload](/help/segmentation/ui/audience-portal.md#import-audience), [Audience Composition](/help/segmentation/ui/audience-portal.md#audience-composition)) till batchfilbaserade mål finns det en gräns på 10 sådana målgrupper som du kan aktivera i ett dataflöde. Mer information om de här målgruppstyperna finns i [Målgruppstyper och anpassning](/help/segmentation/ui/audience-portal.md#customize). Läs mer om arbetsflödet för att [aktivera externa målgrupper för batchfilbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences). |
 
 {style="table-layout:auto"}
 
@@ -196,7 +196,7 @@ Uppgifter om begränsningströsklar eller begränsningar för angivna destinatio
 I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=sv-SE#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
