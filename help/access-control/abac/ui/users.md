@@ -170,5 +170,5 @@ Nu vet du hur du visar information och roller för en användare, en användargr
 <!--
 The following video is intended to support your understanding of developer and API credentials.
 
->[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3446402/?captions=swe&learn=on)
 -->

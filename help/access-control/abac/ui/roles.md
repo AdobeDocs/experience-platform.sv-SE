@@ -61,7 +61,7 @@ Den nya rollen har skapats och du omdirigeras till sidan **[!UICONTROL Roles]** 
 
 <!-- The following video is intended to support your understanding of creating a new role and managing users for that role.
 
->[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on) -->
+>[!VIDEO](https://video.tv.adobe.com/v/3475977/?captions=swe&learn=on) -->
 
 ## Duplicera en roll
 
