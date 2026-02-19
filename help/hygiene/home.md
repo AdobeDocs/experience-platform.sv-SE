@@ -22,7 +22,7 @@ Adobe Experience Platform har en robust uppsättning verktyg för hantering av s
 >
 >Record deletes are meant to be used for data cleansing, removing anonymous data, or data minimization. They are **not** to be used for data subject rights requests (compliance) as pertaining to privacy regulations like the General Data Protection Regulation (GDPR). For all compliance use cases, use [Adobe Experience Platform Privacy Service](../privacy-service/home.md) instead. -->
 
-Dessa aktiviteter kan utföras med arbetsytan [[!UICONTROL Data Lifecycle] i användargränssnittet ](#ui) eller [API:t för datahygien](#api). När ett datatillverkarsjobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Mer information om hur varje jobbtyp visas i systemet finns i avsnittet [tidslinjer och genomskinlighet](#timelines-and-transparency).
+Dessa aktiviteter kan utföras med arbetsytan [[!UICONTROL Data Lifecycle] i användargränssnittet &#x200B;](#ui) eller [API:t för datahygien](#api). När ett datatillverkarsjobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Mer information om hur varje jobbtyp visas i systemet finns i avsnittet [tidslinjer och genomskinlighet](#timelines-and-transparency).
 
 >[!NOTE]
 >
@@ -56,7 +56,7 @@ Följande inträffar när en [förfallobegäran](./ui/dataset-expiration.md) fö
 | Datauppsättningen tas bort från profiltjänsten | 3 timmar | Från och med nu kommer åtgärder som batchsegmentering och direktuppspelningssegmentering, förhandsgranskning eller uppskattning, export och åtkomst till enheter inte längre att läsa data från den här datauppsättningen. Informationen i profiltjänsten är endast mjuk och tas bort tills processen är klar. Därefter tas den bort. |
 | Profilantal och målgrupper har uppdaterats | 48 timmar | När alla profiler som påverkas har uppdaterats uppdateras alla relaterade [målgrupper](../segmentation/home.md) så att deras nya storlek återspeglas. Beroende på vilken datauppsättning som har tagits bort och vilka attribut du segmenterar på, kan storleken på varje målgrupp öka eller minska på grund av borttagningen. Vid den här tidpunkten återspeglas eventuella ändringar i det totala antalet profiler i [instrumentpanelswidgetar](../dashboards/guides/profiles.md#profile-count-trend) och andra rapporter. |
 | Uppdaterade resor och destinationer | 50 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html) och [mål](../destinations/home.md) uppdateras enligt ändringar i relaterade segment. |
-| Borttagningen har slutförts | 15 dagar | Alla data som är relaterade till datauppsättningen tas bort från datasjön och profiltjänsten. Status [för datatilleriet ](./ui/browse.md#view-details) som tog bort datauppsättningen uppdateras för att återspegla detta. |
+| Borttagningen har slutförts | 15 dagar | Alla data som är relaterade till datauppsättningen tas bort från datasjön och profiltjänsten. Status [för datatilleriet &#x200B;](./ui/browse.md#view-details) som tog bort datauppsättningen uppdateras för att återspegla detta. |
 
 {style="table-layout:auto"}
 
