@@ -16,7 +16,7 @@ ht-degree: 0%
 >id="platform_permissions_users_about"
 >title="Vad är användare?"
 >abstract="Användare är de personer som har tillgång till Experience Platform. En enskild användares åtkomst till en organisations resurser hanteras via roller."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
 
 Användare är de personer som har tillgång till Adobe Experience Platform. En enskild användares åtkomst till en organisations resurser hanteras via [roller](./roles.md){target="_blank"}. En organisation kan också skapa [användargrupper](#user-groups) för att ge sömlös åtkomst till flera användares samtidigt. Användare hanteras i Admin Console och användare som är kopplade till Adobe Experience Platform produktkort visas som en del av användarlistan i Experience Platform.
 
@@ -170,5 +170,5 @@ Nu vet du hur du visar information och roller för en användare, en användargr
 <!--
 The following video is intended to support your understanding of developer and API credentials.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446402/?captions=swe&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 -->
