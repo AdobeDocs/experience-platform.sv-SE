@@ -66,7 +66,7 @@ Mer information om hur identitetsinformation kan hjälpa dig att leverera digita
 Det finns två sätt att skicka identitetsdata till Experience Platform:
 
 1. Lägga till identitetsbeskrivningar i enskilda fält, antingen via [Schemaredigerarens användargränssnitt](../ui/fields/identity.md) eller med [API:t för schemaregister](../api/descriptors.md#create)
-2. Använda ett [`identityMap`-fält ](#identityMap)
+2. Använda ett [`identityMap`-fält &#x200B;](#identityMap)
 
 #### `identityMap` {#identityMap}
 
@@ -163,7 +163,7 @@ Scheman består av följande formel:
 
 **Klass + schemafältgrupp&amp;stämpel;ast; = XDM-schema**
 
-&amp;ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
+&ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
 
 ### Klass {#class}
 
@@ -322,7 +322,7 @@ Om du vill granska strukturen för de två grundläggande XDM-klasserna och dera
 
 Om du vill börja komponera schemat med hjälp av användargränssnittet följer du med [schemaredigerarsjälvstudiekursen](../tutorials/create-schema-ui.md) för att skapa det schema för lojalitetsmedlemmar som omnämns i det här dokumentet.
 
-Börja med att läsa [!DNL Schema Registry]API-utvecklarhandboken [ för schemat när du vill börja använda ](../api/getting-started.md)-API:t. När du har läst utvecklarhandboken följer du de steg som beskrivs i självstudiekursen [Skapa ett schema med API:t för schemaregistret](../tutorials/create-schema-api.md).
+Börja med att läsa [!DNL Schema Registry]API-utvecklarhandboken [&#x200B; för schemat när du vill börja använda &#x200B;](../api/getting-started.md)-API:t. När du har läst utvecklarhandboken följer du de steg som beskrivs i självstudiekursen [Skapa ett schema med API:t för schemaregistret](../tutorials/create-schema-api.md).
 
 ## Bilaga
 
