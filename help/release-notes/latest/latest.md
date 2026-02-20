@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2026
 description: Versionsinformationen för Adobe Experience Platform från februari 2026.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a11c00c218ffbbd5618616f401613a604c35859a
+source-git-commit: 05c9a99132d1385f9ec043bb667a72304b17a9b5
 workflow-type: tm+mt
-source-wordcount: '606'
-ht-degree: 53%
+source-wordcount: '731'
+ht-degree: 52%
 
 ---
 
@@ -26,7 +26,8 @@ ht-degree: 53%
 Nya funktioner och uppdateringar i Adobe Experience Platform:
 
 - [Aviseringar](#alerts)
-- [Mål](#destinations)
+- [Mål ](#destinations)
+- [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 - [Experience Data Model (XDM)](#xdm)
 
@@ -66,6 +67,19 @@ Mer information finns i [[!DNL Observability Insights] översikten](../../observ
 {style="table-layout:auto"}
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
+
+## Segmenteringstjänst {#segmentation-service}
+
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Målgrupper kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Redigerbara API-målgrupper | Nu kan du redigera målgrupper som skapats med antingen segmenteringstjänstens API eller Audience Agent i Segment Builder. **Obs!** Publiker som innehåller tidsseriedata **kan för närvarande inte** redigeras med Segment Builder. |
+| Uppdatera utgångsdatum för externa målgruppsdata | Du kan använda Segmenteringstjänstens API för att förlänga utgångsdatumet för data för dina externa målgrupper. Mer information finns i [API-handboken för externa målgrupper](/help/segmentation/api/external-audiences.md#extend-data-expiration). |
+
+Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
 ## Källor {#sources}
 

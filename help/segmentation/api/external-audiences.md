@@ -2,9 +2,9 @@
 title: API-slutpunkt för externa målgrupper
 description: Lär dig hur du använder API:t för externa målgrupper för att skapa, uppdatera, aktivera och ta bort externa målgrupper från Adobe Experience Platform.
 exl-id: eaa83933-d301-48cb-8a4d-dfeba059bae1
-source-git-commit: ff58324446f28cbdca369ecbb58d8261614ae684
+source-git-commit: de18b8292f07c143d63d26a45ca541e50b2ed2f3
 workflow-type: tm+mt
-source-wordcount: '2340'
+source-wordcount: '2528'
 ht-degree: 1%
 
 ---
@@ -107,14 +107,14 @@ curl -X POST https://platform.adobe.io/data/core/ais/external-audience/ \
 | `name` | Sträng | Namnet på den externa publiken. |
 | `description` | Sträng | En valfri beskrivning för den externa målgruppen. |
 | `customAudienceId` | Sträng | En valfri identifierare för den externa målgruppen. |
-| `fields` | Array med objekt | Listan med fält och deras datatyper. När du skapar fältlistan kan du lägga till följande objekt: <ul><li>`name`: **Obligatoriskt** Namnet på fältet som är en del av den externa målgruppsspecifikationen.</li><li>`type`: **Obligatoriskt** Den typ av data som placeras i fältet. Värden som stöds är `string`, `number`, `long`, `integer`, `date` (`2025-05-13`), `datetime` (`2025-05-23T20:19:00+00:00`) och `boolean`.</li><li>`identityNs`: **Krävs för identitetsfält** Det namnutrymme som används av identitetsfältet. Värden som stöds innehåller alla giltiga namnutrymmen, till exempel `ECID` eller `email`.</li><li>`labels`: *Valfritt* En array med åtkomstkontrolletiketter för fältet. Mer information om tillgängliga etiketter för åtkomstkontroll finns i [etikettordlistan för dataanvändning](/help/data-governance/labels/reference.md). </li></ul> |
+| `fields` | Array med objekt | Listan med fält och deras datatyper. Du måste ha minst 1 fält och högst 41 fält i arrayen. Ett av fälten **måste** vara ett identitetsfält och innehålla `identityNs`. När du skapar fältlistan kan du lägga till följande objekt: <ul><li>`name`: **Obligatoriskt** Namnet på fältet som är en del av den externa målgruppsspecifikationen.</li><li>`type`: **Obligatoriskt** Den typ av data som placeras i fältet. Värden som stöds är `string`, `number`, `long`, `integer`, `date` (`2025-05-13`), `datetime` (`2025-05-23T20:19:00+00:00`) och `boolean`.</li><li>`identityNs`: **Krävs för identitetsfält** Det namnutrymme som används av identitetsfältet. Värden som stöds innehåller alla giltiga namnutrymmen, till exempel `ECID` eller `email`.</li><li>`labels`: *Valfritt* En array med åtkomstkontrolletiketter för fältet. Mer information om tillgängliga etiketter för åtkomstkontroll finns i [etikettordlistan för dataanvändning](/help/data-governance/labels/reference.md). </li></ul> |
 | `sourceSpec` | Objekt | Ett objekt som innehåller information om var den externa målgruppen finns. När du använder det här objektet **måste** innehålla följande information: <ul><li>`path`: **Obligatoriskt**: Platsen för den externa målgruppen eller mappen som innehåller den externa målgruppen i källan. Filsökvägen **får inte innehålla blanksteg**. Om sökvägen till exempel är `activation/sample-source/Example CSV File.csv` anger du sökvägen till `activation/sample-source/ExampleCSVFile.csv`. Du hittar sökvägen till källan i kolumnen **Source data** i dataflödesavsnittet.</li><li>`type`: **Obligatoriskt** Den typ av objekt som du hämtar från källan. Värdet kan vara `file` eller `folder`.</li><li>`sourceType`: *Valfritt* Den typ av källa som du hämtar från. För närvarande är det enda värdet som stöds `Cloud Storage`.</li><li>`cloudType`: **Obligatoriskt** Typen av molnlagring, baserat på källtypen. Värden som stöds är `S3`, `DLZ`, `GCS`, `Azure` och `SFTP`.</li><li>`baseConnectionId`: ID:t för basanslutningen och tillhandahålls av din källleverantör. Det här värdet är **obligatoriskt** om `cloudType`-värdet `S3`, `GCS` eller `SFTP` används. Annars behöver du **inte** ta med den här parametern. Mer information finns i översikten över [källanslutningar](../../sources/home.md).</li></ul> |
 | `ttlInDays` | Heltal | Datan upphör att gälla för den externa målgruppen, i dagar. Värdet kan anges från 1 till 90. Som standard är utgångsdatumet för data inställt på 30 dagar. |
 | `audienceType` | Sträng | Målgruppstypen för den externa målgruppen. För närvarande stöds bara `people`. |
 | `originName` | Sträng | **Obligatorisk** Målgruppens ursprung. Det är här som publiken kommer ifrån. För externa målgrupper bör du använda `CUSTOM_UPLOAD`. |
 | `namespace` | Sträng | Namnutrymmet för målgruppen. Som standard är det här värdet inställt på `CustomerAudienceUpload`. |
 | `labels` | Array med strängar | De etiketter för åtkomstkontroll som gäller för den externa målgruppen. Mer information om tillgängliga etiketter för åtkomstkontroll finns i [etikettordlistan för dataanvändning](/help/data-governance/labels/reference.md). |
-| `tags` | Array med strängar | De taggar som du vill använda för den externa målgruppen. Mer information om taggar finns i [handboken för hantering av taggar](/help/administrative-tags/ui/managing-tags.md). |
+| `tags` | Array med strängar | De taggar som du vill använda för den externa målgruppen. När du lägger till arrayen med taggar **måste** använda `tagId`. Mer information om taggar finns i [handboken för hantering av taggar](/help/administrative-tags/ui/managing-tags.md). |
 
 +++
 
@@ -624,6 +624,53 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över antalet inkommande
 | Egenskap | Typ | Beskrivning |
 | -------- | ---- | ----------- |
 | `runs` | Objekt | Ett objekt som innehåller listan med förtäring körs som tillhör målgruppen. Mer information om det här objektet finns i avsnittet [Hämta inmatningsstatus](#retrieve-ingestion-status). |
+
++++
+
+## Utöka utgångsdatum för externa användare {#extend-data-expiration}
+
+>[!NOTE]
+>
+>Om du vill använda följande slutpunkt måste du ha `audienceId` för din externa målgrupp. Du kan hämta `audienceId` från ett lyckat anrop till slutpunkten `GET /external-audiences/operations/{OPERATION_ID}`.
+
+Du kan utöka dataförfallotiden för en extern målgrupp genom att göra en POST-begäran till följande slutpunkt och samtidigt ange målar-ID.
+
+Utgångsdatumet för data förlängs med den ursprungliga varaktighet som angetts vid intag. Om ingen varaktighet har angetts används ett standardtillägg på 30 dagar. När du förlänger giltigheten för data hämtas data från det senast framgångsrika intaget.
+
+**API-format**
+
+```http
+/ais/external-audience/extend-ttl/{AUDIENCE_ID}
+```
+
+**Begäran**
+
+Följande begäran utökar dataförfallotiden för den angivna externa målgruppen.
+
++++ Ett exempel på en begäran om att förlänga utgångsdatum för data för en extern publik.
+
+```shell
+curl -x POST https://platform.adobe.io/data/core/ais/external-audience/extend-ttl/60ccea95-1435-4180-97a5-58af4aa285ab \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med information om målgruppen.
+
++++ Ett exempelsvar när du förlänger förfallotiden för data.
+
+```json
+{
+    "audienceId": "60ccea95-1435-4180-97a5-58af4aa285ab",
+    "name": "Sample external audience"
+}
+```
 
 +++
 
