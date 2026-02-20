@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Lär dig mer om XDM-scheman (Experience Data Model) och byggstenarna, principerna och de bästa sätten att komponera scheman i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 5b59d491834854829a89a240ccd612367cf558d4
+source-git-commit: 33b3534a2c3f9b5da54fa4f3897d1e107f7c1976
 workflow-type: tm+mt
-source-wordcount: '4291'
+source-wordcount: '4331'
 ht-degree: 0%
 
 ---
@@ -59,14 +59,14 @@ Scheman definierar strukturen för data som hämtas in till Experience Platform.
 
 Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. Vid datainförsel infogas data i dessa fält i [!UICONTROL Identity Graph] för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra Experience Platform-tjänster för att ge en sammanslagen vy över varje enskild kund.
 
-Fält som oftast markeras som [!UICONTROL Identity] är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de kan vara bra fält av typen [!UICONTROL Identity].
+Fält som oftast markeras som [!UICONTROL Identity] är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de kan vara bra fält av typen [!UICONTROL Identity].
 
 Mer information om hur identitetsinformation kan hjälpa dig att leverera digitala upplevelser till dina kunder finns i [Översikt över identitetstjänsten](../../identity-service/home.md). I dokumentet om god praxis för datamodellering finns [tips om hur du använder identiteter när du skapar ett schema](./best-practices.md#data-validation-fields).
 
 Det finns två sätt att skicka identitetsdata till Experience Platform:
 
 1. Lägga till identitetsbeskrivningar i enskilda fält, antingen via [Schemaredigerarens användargränssnitt](../ui/fields/identity.md) eller med [API:t för schemaregister](../api/descriptors.md#create)
-2. Använda ett [`identityMap`-fält &#x200B;](#identityMap)
+2. Använda ett [`identityMap`-fält ](#identityMap)
 
 #### `identityMap` {#identityMap}
 
@@ -123,7 +123,7 @@ Eftersom det är viktigt att bibehålla bakåtkompatibiliteten för att utveckla
 
 >[!NOTE]
 >
->Du kan bara göra en brytningsändring i ett schema om det ännu inte har använts för att importera data till Experience Platform och inte har aktiverats för användning i kundprofilen i realtid. När schemat har använts i Experience Platform måste det dock följa den additiva versionsprincipen.
+>Du kan bara göra en brytningsändring i ett schema om det ännu inte har använts för att importera data till Experience Platform och inte har aktiverats för användning i kundprofilen i realtid. När schemat har använts i Experience Platform måste det dock följa den additiva versionsprincipen. När en datauppsättning har skapats för schemat kommer reglerna för schemautveckling att tillämpas strikt av systemet för alla fält i schemat. Fälten går inte att redigera i alla XDM-scheman där de refereras.
 
 I följande tabell visas vilka ändringar som stöds vid redigering av scheman, fältgrupper och datatyper:
 
@@ -163,7 +163,7 @@ Scheman består av följande formel:
 
 **Klass + schemafältgrupp&amp;stämpel;ast; = XDM-schema**
 
-&ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
+&amp;ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
 
 ### Klass {#class}
 
@@ -322,7 +322,7 @@ Om du vill granska strukturen för de två grundläggande XDM-klasserna och dera
 
 Om du vill börja komponera schemat med hjälp av användargränssnittet följer du med [schemaredigerarsjälvstudiekursen](../tutorials/create-schema-ui.md) för att skapa det schema för lojalitetsmedlemmar som omnämns i det här dokumentet.
 
-Börja med att läsa [!DNL Schema Registry]API-utvecklarhandboken [&#x200B; för schemat när du vill börja använda &#x200B;](../api/getting-started.md)-API:t. När du har läst utvecklarhandboken följer du de steg som beskrivs i självstudiekursen [Skapa ett schema med API:t för schemaregistret](../tutorials/create-schema-api.md).
+Börja med att läsa [!DNL Schema Registry]API-utvecklarhandboken [ för schemat när du vill börja använda ](../api/getting-started.md)-API:t. När du har läst utvecklarhandboken följer du de steg som beskrivs i självstudiekursen [Skapa ett schema med API:t för schemaregistret](../tutorials/create-schema-api.md).
 
 ## Bilaga
 
