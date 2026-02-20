@@ -26,7 +26,7 @@ ht-degree: 52%
 Nya funktioner och uppdateringar i Adobe Experience Platform:
 
 - [Aviseringar](#alerts)
-- [Mål ](#destinations)
+- [Mål &#x200B;](#destinations)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 - [Experience Data Model (XDM)](#xdm)
