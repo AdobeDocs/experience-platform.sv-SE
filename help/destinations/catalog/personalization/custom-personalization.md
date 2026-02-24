@@ -3,9 +3,9 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: d252fc30d93fa4440c6ef47146830d0423e1839a
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '992'
+source-wordcount: '1126'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 1%
 >
 >Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar **[!UICONTROL Custom Personalization]**-målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication).
 >
-><br>Du kan hämta profilattribut via [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
+><br>Du kan hämta profilattribut via [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) genom att lägga till en integrering på serversidan som använder samma datastream som du redan använder för din webb- eller Mobile SDK-implementering.
 >
 ><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på målgruppsmedlemskap.
 
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 Konfigurera den här destinationen så att externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs på kundens webbplatser kan hämta målgruppsinformation från Adobe Experience Platform.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Det här målet kräver någon av följande datainsamlingsmetoder, beroende på implementeringen:
 
@@ -43,7 +43,7 @@ Det här målet kräver någon av följande datainsamlingsmetoder, beroende på 
 
 >[!IMPORTANT]
 >
->**Attributbaserade personaliseringskrav:** Om du vill anpassa baserat på profilattribut (inte bara målgruppsmedlemskap) måste du **&#x200B;**&#x200B;använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) med autentiserad integration på serversidan, oavsett om du också använder Web SDK eller Mobile SDK för datainsamling.
+>**Attributbaserade personaliseringskrav:** Om du vill anpassa baserat på profilattribut (inte bara målgruppsmedlemskap) måste du **** använda [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) med autentiserad integration på serversidan, oavsett om du också använder Web SDK eller Mobile SDK för datainsamling.
 >
 >Endast SDK och SDK för mobiler stöder endast personalisering baserat på medlemskap för målgrupper. Edge Network API är **obligatoriskt** för att säkert hämta profilattribut för personalisering.
 
@@ -57,10 +57,24 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -75,7 +89,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 >id="platform_destinations_custom_personalization_datastream"
 >title="Om datastreams"
 >abstract="Det här alternativet avgör i vilket datainsamlingsdatastam som målgrupperna ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=sv-SE" text="Lär dig konfigurera ett datastream"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html" text="Lär dig konfigurera ett datastream"
 
 >[!IMPORTANT]
 > 

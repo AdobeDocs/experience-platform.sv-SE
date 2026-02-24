@@ -3,9 +3,9 @@ title: Acxiom Audience Connection
 description: Använd  [!DNL Acxiom Audience Connection] målet om du vill förbättra målgrupper med  [!DNL Acxiom's Real ID] teknik och aktivera målgrupper på flera plattformar, till exempel  [!DNL Altice], [!DNL Ampersand], [!DNL Comcast] med flera.
 badge: label="Beta" type="Informative"
 exl-id: bac0f337-bfab-4779-acc8-f70239552666
-source-git-commit: 582b8b681163a0e40908cf36ba317954a32f73d0
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '1043'
 ht-degree: 3%
 
 ---
@@ -30,10 +30,10 @@ Använd den här målkopplingen om du är marknadsföringsproffs och vill skicka
 
 Marknadsföringsavdelningen på ett globalt varumärke för finansiella tjänster är till exempel intresserad av att värva kunder över flera kanaler via olika annonsplattformar. De kan använda [!DNL Acxiom Audience Connection]-målanslutningen för att skicka målgrupper från [!DNL Experience Platform] till [!DNL Acxiom], förbättra målgrupperna med [!DNL Acxiom's Real ID]-teknik och aktivera målgrupperna på flera plattformar, som [!DNL Altice], [!DNL Ampersand], [!DNL Comcast] med mera.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 * **Bekräfta användningsvillkoren:** Innan du kan konfigurera ett nytt [!DNL Acxiom Audience Connection]-mål måste du läsa och signera [!DNL Acxiom's] användningsvillkoren för avtalet. Du får länken till avtalet när den genomförda försäljningsordern är slutförd.
-* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/sv/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
+* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
 
 ## Destinationer som stöds {#supported-destinations}
 
@@ -46,6 +46,31 @@ Målet [!DNL Acxiom Audience Connection] stöder för närvarande målgruppsakti
 * [[!DNL LG Ads]](#lg-ads)
 * [!DNL Spectrum]
 * [!DNL Viant]
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Anslut till målet {#connect}
 
@@ -96,8 +121,8 @@ För att målplatsen [!DNL Acxiom Audience Connection] ska kunna ta emot målgru
 | E-post | Primär e-post Som standard används det här fältet som en dedupliceringsnyckel för att göra posterna unika | Nej | 10 | 255 |
 | Telefon | Telefonnummer till individ (riktnummer + nummer)<br> Det här fältet används som standard som en dedupliceringsnyckel för att göra posterna unika. | Nej | 11 | 10 |
 
-I kolumnen **[!UICONTROL Source Field]** anger du namnet på vart och ett av källattributen som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL &#x200B; Select source field]**.<br>
-![&#x200B; Mappningsskärm &#x200B;](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
+I kolumnen **[!UICONTROL Source Field]** anger du namnet på vart och ett av källattributen som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL  Select source field]**.<br>
+![ Mappningsskärm ](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
 
 När du har mappat alla fält väljer du **[!UICONTROL Next]**.
 
@@ -128,4 +153,4 @@ Genom att följa den här självstudiekursen har du aktiverat en målgrupp för 
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/sv/docs/experience-platform/data-governance/home).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home).

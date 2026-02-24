@@ -3,10 +3,10 @@ title: Gainsight PX Connection
 description: Använd Gainsight PX-destinationen för att skicka segmenteringsinformation till Gainsight PX-plattformen.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0ca0d34f-f866-4f59-80f8-60198fbb86be
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '856'
-ht-degree: 0%
+source-wordcount: '988'
+ht-degree: 1%
 
 ---
 
@@ -28,7 +28,7 @@ För att du bättre ska kunna förstå hur och när du ska använda målet *Gain
 
 Ett SaaS-företag vill engagera sina kunder via en guide i appen som konstruerats på Gainsight PX. En målgrupp som vill få detta engagemang har byggts på Adobe Experience Platform. Gainsight PX-destinationen tar emot målgruppen och gör den tillgänglig i Gainsight PX-miljön.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 * Kontakta supportteamet på [!DNL Gainsight] och begär aktivering av externa segmentfunktioner för din prenumeration.
 * Generera ett OAuth Secret-värde för din PX-prenumeration med knappen **[!UICONTROL Generate New Secret]** längst ned på [sidan Företagsinformation](https://app.aptrinsic.com/settings/subscription)
@@ -49,11 +49,25 @@ Gainsight PX stöder aktivering av de identiteter som beskrivs i tabellen nedan.
 I det här avsnittet beskrivs vilken typ av målgrupp du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
-|---|---|---|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
-| Anpassade överföringar | X | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -62,7 +76,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 |---|---|---|
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL Gainsight PX]. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutaren uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -89,7 +103,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Skärmen med målinformation i användargränssnittet i Experience Platform visar hur du fyller i fälten Namn och Beskrivning](../../assets/catalog/analytics/gainsight-px/destination_details.png)
+![Skärmen med målinformation i Experience Platform användargränssnitt visar hur du fyller i fälten Namn och Beskrivning](../../assets/catalog/analytics/gainsight-px/destination_details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.

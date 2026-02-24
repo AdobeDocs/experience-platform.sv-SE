@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
 description: Med SendGrid-målet kan du exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1475'
+source-wordcount: '1646'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnytt
 
 SendGrid använder API-bearer-token som en autentiseringsmekanism för att kommunicera med SendGrid API:t.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Följande objekt krävs innan du börjar konfigurera målet.
 
@@ -34,7 +34,7 @@ Följande objekt krävs innan du börjar konfigurera målet.
 
 ![](../../assets/catalog/email-marketing/sendgrid/01-api-key.jpg)
 
-Innan du aktiverar data till SendGrid-målet måste du ha ett [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=sv-SE), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform]. Se även avsnittet [limits](#limits) längre ned på den här sidan.
+Innan du aktiverar data till SendGrid-målet måste du ha ett [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform]. Se även avsnittet [limits](#limits) längre ned på den här sidan.
 
 >[!IMPORTANT]
 >
@@ -51,6 +51,31 @@ SendGrid stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs m
 | e-post | E-postadress | Observera att både oformaterad text och SHA256-hashade e-postadresser stöds av [!DNL Adobe Experience Platform]. Om källfältet för Experience-plattformen innehåller ohashade attribut ska du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen.<br/><br/> Observera att **SendGrid** inte har stöd för hash-kodade e-postadresser. Därför skickas endast oformaterade textdata utan omformning till målet. |
 
 {style="table-layout:auto"}
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -98,7 +123,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 ### Fyll i målinformation {#destination-details}
 
-När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Name]**: Det namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En valfri beskrivning som hjälper dig att identifiera det här målet i framtiden.

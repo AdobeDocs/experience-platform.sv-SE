@@ -2,9 +2,9 @@
 title: (V1) Pega CDH Realtime Audience connection
 description: Använd målplatsen Pega Customer Decision Hub Realtime Audience i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1214'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här versionen av Pega Customer Decision Hub Realtime Audience-destinationen stöder endast en Pega Customer Decision-applikation. Om du har konfigurerat flera Pega Customer Decision Hub-program måste du använda målanslutningen [(V2) Pega CDH Realtime Audience &#x200B;](./pega-v2.md).
+>Den här versionen av Pega Customer Decision Hub Realtime Audience-destinationen stöder endast en Pega Customer Decision-applikation. Om du har konfigurerat flera Pega Customer Decision Hub-program måste du använda målanslutningen [(V2) Pega CDH Realtime Audience ](./pega-v2.md).
 
 ## Översikt {#overview}
 
@@ -37,7 +37,7 @@ En marknadsförare vill utnyttja insikter från datavetenskapens modellbaserade 
 
 En marknadsförare vill optimera erbjudandena för kunder som prenumererar på eller avbeställer nyhetsbrev om pensionsavtal eller pensionsavtal. Företag inom finanssektorn kan importera flera CustomerID:n från sina egna CRM:er till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka profiler som kommer in i och lämnar målgrupperna till [!DNL Pega Customer Decision Hub] för NBA-beslut (next-best-action) i utgående kanaler.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du kan använda det här målet för att exportera data från Adobe Experience Platform måste du uppfylla följande krav i [!DNL Pega Customer Decision Hub]:
 
@@ -54,6 +54,31 @@ Innan du kan använda det här målet för att exportera data från Adobe Experi
 | *Kund-ID* | En vanlig användaridentifierare som unikt identifierar en profil i [!DNL Pega Customer Decision Hub] och Adobe Experience Platform |
 
 {style="table-layout:auto"}
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -86,7 +111,7 @@ Fyll i fälten nedan och välj **[!UICONTROL Connect to destination]**:
 
 När du har upprättat autentiseringsanslutningen till [!DNL Pega Customer Decision Hub] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH &#x200B;](../../assets/catalog/personalization/pega/pega-connect-destination.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH ](../../assets/catalog/personalization/pega/pega-connect-destination.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**.
 

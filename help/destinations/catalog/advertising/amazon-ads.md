@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2025-10-08T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1977'
+source-wordcount: '2168'
 ht-degree: 1%
 
 ---
@@ -42,7 +42,7 @@ Integrationen med [!DNL Amazon Marketing Cloud] (AMC) gör att [!DNL Amazon Ads]
 
 Tack vare den här integreringen med [!DNL Amazon Marketing Cloud] (AMC) kan annonsörer överföra egna kundlistor och använda [!DNL Amazon Marketing Cloud] SQL för att utföra överlappningsanalyser, undertryckanden, tillägg eller optimeringar till målgrupper med jämna mellanrum innan de skapar en aktiveringsklar målgrupp i Amazon DSP för målgruppsanpassning.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill använda [!DNL Amazon Ads]-anslutningen med Adobe Experience Platform måste användarna först ha tillgång till ett Amazon DSP Advertiser-konto eller en [!DNL Amazon Marketing Cloud]-instans. Om du vill etablera de här instanserna går du till följande sida på webbplatsen [!DNL Amazon Ads]:
 
@@ -64,6 +64,28 @@ Anslutningen *[!DNL Amazon Ads]* stöder aktivering av identiteter som beskrivs 
 | `state` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
 | `zip` | Användarens postnummer | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
 | `country` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+
+{style="table-layout:auto"}
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet. De två tabellerna nedan visar vilka målgrupper som den här kopplingen stöder, per _målgruppsursprung_ och _profiltyper som ingår i målgruppen_:
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 

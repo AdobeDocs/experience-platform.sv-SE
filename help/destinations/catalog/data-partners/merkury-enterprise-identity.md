@@ -3,9 +3,9 @@ title: Merkury Enterprise Identity Destination
 description: Lär dig hur du skapar en Merkury Enterprise Identity-målanslutning med Adobe Experience Platform-gränssnittet.
 last-substantial-update: 2024-07-20T00:00:00Z
 exl-id: a5452183-289c-49c3-9574-e09b0153dc00
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1593'
 ht-degree: 1%
 
 ---
@@ -42,12 +42,12 @@ Målet [!DNL Merkury Enterprise Identity] ger möjlighet att på ett säkert sä
 >
 >De här användningsexemplen körs genom en kombination av både mål- och källanslutningar. Kunden skulle börja med att exportera sina befintliga kundposter för anrikning med den här målkopplingen. [!DNL Merkury]-tjänsten skulle söka efter filen, hämta den, förfina den med data från [!DNL Merkury] och generera en fil. Kunden använder sedan motsvarande [!DNL Merkury] Source-anslutningskortet för att importera de hydratiserade kundprofilerna tillbaka till Adobe Real-Time CDP.
 
-## Förhandskrav
+## Förutsättningar
 
 >[!IMPORTANT]
 >
->* Om du vill ansluta till målet behöver du **Visa mål** och **Hantera mål**, **Aktivera mål**, **Visa profiler** och **Visa segment** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
->* Om du vill exportera *identiteter* behöver du **Visa identitetsdiagram** [[behörighet för åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions).\![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
+>* Om du vill ansluta till målet behöver du **Visa mål** och **Hantera mål**, **Aktivera mål**, **Visa profiler** och **Visa segment** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera *identiteter* behöver du **Visa identitetsdiagram** [[behörighet för åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions).\![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -62,16 +62,30 @@ Målet [!DNL Merkury Enterprise Identity] ger möjlighet att på ett säkert sä
 
 {style="table-layout:auto"}
 
-## Målgrupper
+## Målgrupper {#supported-audiences}
 
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-| **Målgrupp** | **Stöds** | **Beskrivning** |
-|---|---|---|
-| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [[segmenteringstjänsten]](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
-| Anpassade överföringar | x | Publiken [[importerad]](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens
 
@@ -79,8 +93,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | **Målgrupp** | **Stöds** | **Beskrivningens ursprung** |
 |---|---|---|      
-| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [[segmenteringstjänsten]](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
-| Anpassade överföringar | X | Publiken [[importerad]](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer. |
+| Segmenteringstjänst | Ja | Publiker som genererats via Experience Platform [[segmenteringstjänsten]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
+| Anpassade överföringar | Nej | Publiken [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -88,9 +102,9 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **Visa mål** och **Hantera och aktivera datamängdsmål** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
+>Om du vill ansluta till målet behöver du **Visa mål** och **Hantera och aktivera datamängdsmål** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen för [[destinationskonfiguration]](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/connect-destination). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen för [[destinationskonfiguration]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/connect-destination). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
 ### Autentisera till mål
 
@@ -136,7 +150,7 @@ Konton som redan har definierats med Merkury Enterprise Identity-målet visas i 
 
 ### Aktivera aviseringar
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/alerts).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/alerts).
 
 Välj **Nästa** när du är klar med informationen om målanslutningen.
 
@@ -147,7 +161,7 @@ Välj **Nästa** när du är klar med informationen om målanslutningen.
 >* Om du vill aktivera data måste du ha åtkomstkontrollsbehörigheterna **Visa mål**, **Aktivera mål**, **Visa profiler** och **Visa segment**. Läs översikten över åtkomstkontrollen eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera identiteter måste du ha åtkomstkontrollsbehörigheten **Visa identitetsdiagram**.
 
-Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Mappningsförslag
 
@@ -176,7 +190,7 @@ Kontrollera Amazon S3-lagringskassetten och se till att de exporterade filerna i
 
 ## Dataanvändning och styrning
 
-Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/sv/docs/experience-platform/data-governance/home).
+Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home).
 
 ## Nästa steg
 

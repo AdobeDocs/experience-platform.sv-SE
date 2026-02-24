@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;salesforce crm;salesforce crm destination
 title: Salesforce CRM-anslutning
 description: Med Salesforce CRM-destinationen kan du exportera dina kontodata och aktivera dem i Salesforce CRM för dina affärsbehov.
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: 27f2b28d924fbd85eefbea5a65d1ee9249bafa87
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2734'
+source-wordcount: '2905'
 ht-degree: 0%
 
 ---
@@ -29,11 +29,11 @@ När du [aktiverar segment](#activate) kan du välja mellan leads eller kontakte
 
 Som marknadsförare kan ni leverera personaliserade upplevelser till era användare, baserat på attribut från deras Adobe Experience Platform-profiler. Ni kan bygga målgrupper utifrån era offlinedata och skicka dessa målgrupper till Salesforce CRM för att uppdatera CRM-medlemskapet så snart som målgrupper och profiler uppdateras i Adobe Experience Platform.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till Salesforce CRM-målet måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till Salesforce CRM-målet måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 ### Förutsättningar i [!DNL Salesforce CRM] {#prerequisites-destination}
 
@@ -108,8 +108,8 @@ Observera objekten nedan innan du autentiserar till målet [!DNL Salesforce CRM]
 | `Password` | Lösenordet för ditt [!DNL Salesforce]-konto. | |
 | `Security Token` | Din [!DNL Salesforce]-säkerhetstoken som du senare lägger till i slutet av ditt [!DNL Salesforce]-lösenord för att skapa en sammanfogad sträng som ska användas som **[!UICONTROL Password]** vid [autentisering till målet](#authenticate).<br> Läs [!DNL Salesforce]-dokumentationen för att [återställa din säkerhetstoken](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&type=5) och lär dig hur du återskapar den från [!DNL Salesforce]-gränssnittet om du inte har säkerhetstoken. |  |
 | `Custom Domain` | Domänprefixet [!DNL Salesforce]. <br> Läs [[!DNL Salesforce] dokumentationen](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&type=5) om du vill veta hur du hämtar det här värdet från gränssnittet [!DNL Salesforce]. | Om din [!DNL Salesforce]-domän är <br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*,<br> du behöver `d5i000000isb4eak-dev-ed` som värde. |
-| `Client ID` | Din Salesforce `Consumer Key`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [[!DNL Salesforce]  finns i &#x200B;](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5)dokumentationen[!DNL Salesforce]. | |
-| `Client Secret` | Din Salesforce `Consumer Secret`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [[!DNL Salesforce]  finns i &#x200B;](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5)dokumentationen[!DNL Salesforce]. | |
+| `Client ID` | Din Salesforce `Consumer Key`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [[!DNL Salesforce]  finns i ](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5)dokumentationen[!DNL Salesforce]. | |
+| `Client Secret` | Din Salesforce `Consumer Secret`. <br> Mer information om hur du hämtar det här värdet från gränssnittet [[!DNL Salesforce]  finns i ](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&type=5)dokumentationen[!DNL Salesforce]. | |
 
 ### Guardrails {#guardrails}
 
@@ -128,6 +128,31 @@ Om din [!DNL Salesforce]-kontoadministratör har infört IP-begränsningar måst
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | `SalesforceId` | Identifieraren [!DNL Salesforce CRM] för de kontakt- eller lead-ID som du exporterar eller uppdaterar genom ditt segment. | Obligatoriskt |
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -248,12 +273,12 @@ När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL N
 
 När du utför steget [Schemalägg målgruppsexport](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa målgrupper som har aktiverats från Experience Platform till deras motsvarande anpassade fält i [!DNL Salesforce].
 
-Det gör du genom att markera varje segment och sedan ange det anpassade fältnamnet från [!DNL Salesforce] i fältet [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**. Mer information om hur du skapar anpassade fält i [&#x200B; finns i avsnittet  [!DNL Salesforce]](#prerequisites-custom-field)Skapa anpassade fält i[!DNL Salesforce].
+Det gör du genom att markera varje segment och sedan ange det anpassade fältnamnet från [!DNL Salesforce] i fältet [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**. Mer information om hur du skapar anpassade fält i [ finns i avsnittet  [!DNL Salesforce]](#prerequisites-custom-field)Skapa anpassade fält i[!DNL Salesforce].
 
 Om det anpassade fältet [!DNL Salesforce] till exempel är `crm_2_seg` anger du det här värdet i [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** för att fylla i målgrupper från Experience Platform i det här anpassade fältet.
 
 Ett exempel på ett anpassat fält från [!DNL Salesforce] visas nedan:
-![[!DNL Salesforce] Skärmbild i användargränssnittet med anpassat fält. &#x200B;](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
+![[!DNL Salesforce] Skärmbild i användargränssnittet med anpassat fält. ](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
 Ett exempel som anger platsen för [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** visas nedan:
 ![Exempel på skärmbild i Experience Platform UI som visar schemalagd målgruppsexport.](../../assets/catalog/crm/salesforce/schedule-segment-export.png)

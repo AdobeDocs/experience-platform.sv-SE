@@ -2,13 +2,13 @@
 title: Anpassa
 description: Adform är en ledande leverantör av programmatiska mediainköp och säljlösningar. Genom att ansluta Adform till Adobe Experience Platform kan du aktivera dina första målgrupper via Adform baserat på Experience Cloud ID (ECID).
 last-substantial-update: 2025-10-23T00:00:00Z
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+exl-id: b87fe57f-10e3-4c10-9156-f102244fbbe7
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '972'
-ht-degree: 0%
+source-wordcount: '1106'
+ht-degree: 1%
 
 ---
-
 
 # Anpassa anslutning {#adform}
 
@@ -28,16 +28,16 @@ För att du bättre ska förstå hur och när du ska använda Adform-målet finn
 
 Använd det här målet för att skicka Adobe Real-Time CDP-målgrupper till Adform för aktivering baserat på Experience Cloud ID (ECID) och Adforms ID Fusion. Adforms ID Fusion är Adforms ID-matchningstjänst som gör att du kan aktivera dina första målgrupper baserat på Experience Cloud ID (ECID).
 
-Ett vanligt fall är omdirigering av webbplatsbesökare till din webbplats eller app baserat på Experience Cloud-id (ECID). Allt du behöver göra är att skicka Experience Cloud ID (ECID) till Adform via de [Event Streaming](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [Adform Extensions på klientsidan](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/analytics/adform) som är tillgängliga. Efter det kan du dela målgrupper med Adobe via Adform-målet för aktivering - enbart baserat på Experience Cloud ID (ECID).
+Ett vanligt fall är omdirigering av webbplatsbesökare till din webbplats eller app baserat på Experience Cloud-id (ECID). Allt du behöver göra är att skicka Experience Cloud ID (ECID) till Adform via de [Event Streaming](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [Adform Extensions på klientsidan](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform) som är tillgängliga. Efter det kan du dela målgrupper med Adobe via Adform-målet för aktivering - enbart baserat på Experience Cloud ID (ECID).
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 * Du måste vara en befintlig Adobe-kund för att kunna använda den här destinationen.
 * Du måste ha autentiseringsuppgifterna för Adform Audience Base Data Connection.
    * Om du inte har autentiseringsuppgifter för Adform Audience Base Data Connection kontaktar du din Adobe-representant.
-* För att synkroniseringen ska fungera på rätt sätt måste du antingen ha en [händelsedirektuppspelning](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [klientanslutning](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/analytics/adform) från dina enheter till Adform Site Tracking.
+* För att synkroniseringen ska fungera på rätt sätt måste du antingen ha en [händelsedirektuppspelning](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [klientanslutning](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform) från dina enheter till Adform Site Tracking.
    * Om du inte har någon händelsedirektuppspelning eller klientanslutning från dina enheter till Adform Site Tracking kontaktar du din Adobe-representant.
-   * Adform innehåller Adobe Experience Cloud-tillägg för både [händelsedirektuppspelning](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) och [klientsidan](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/analytics/adform).
+   * Adform innehåller Adobe Experience Cloud-tillägg för både [händelsedirektuppspelning](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) och [klientsidan](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform).
 
 
 ## Identiteter som stöds {#supported-identities}
@@ -56,10 +56,24 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 

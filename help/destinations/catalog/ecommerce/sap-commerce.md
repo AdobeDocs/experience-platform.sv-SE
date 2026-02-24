@@ -3,9 +3,9 @@ title: SAP Commerce-anslutning
 description: Använd SAP Commerce-målkopplingen för att uppdatera kundposter i SAP-kontot.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2175'
+source-wordcount: '2309'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,13 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 [!DNL SAP Commerce]-kunder lagrar information om personer eller organisationsenheter som interagerar med ditt företag. Ditt team använder de kunder som finns i [!DNL SAP Commerce] för att skapa Experience Platform-målgrupper. När dessa målgrupper har skickats till [!DNL SAP Commerce] uppdateras deras information och varje kund tilldelas en egenskap med dess värde som målgruppsnamn som anger vilken målgrupp kunden tillhör.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I avsnitten nedan finns information om alla krav som du måste konfigurera i Experience Platform och [!DNL SAP Commerce]. Här finns också information som du måste samla in innan du kan arbeta med målet [!DNL SAP Commerce].
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL SAP Commerce] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL SAP Commerce] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -121,10 +121,24 @@ Detta mål stöder även aktivering av målgrupperna som beskrivs i tabellen ned
 
 | Målgruppstyp | Stöds | Beskrivning |
 | ------------- | --------- | ----------- |
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -289,7 +303,7 @@ Det gör du genom att markera varje segment och sedan ange namnet på den anpass
 >[!IMPORTANT]
 >
 > Använd inte den anpassade referensetiketten som värde.
-> &#x200B;>![Bild som anger att du inte ska använda det anpassade referensvärdet för mappning.](../../assets/catalog/ecommerce/sap-commerce/custom-reference-dont-use-label-for-mapping.png)
+>![Bild som anger att du inte ska använda det anpassade referensvärdet för mappning.](../../assets/catalog/ecommerce/sap-commerce/custom-reference-dont-use-label-for-mapping.png)
 
 Om den valda Experience Platform-målgruppen till exempel är `sap_audience1` och du vill att dess status ska uppdateras till den [!DNL SAP Subscription Billing] anpassade referensen `SAP_1` anger du det här värdet i fältet [!DNL SAP_Commerce] **[!UICONTROL Mapping ID]**.
 

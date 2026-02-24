@@ -3,9 +3,9 @@ title: HubSpot-anslutning
 description: Med HubSpot-målet kan du hantera kontaktposter i ditt HubSpot-konto.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1642'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,13 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 [!DNL HubSpot] kontakter lagrar information om de personer som interagerar med ditt företag. Ditt team använder de kontakter som finns i [!DNL HubSpot] för att skapa Experience Platform-målgrupper. När dessa målgrupper har skickats till [!DNL HubSpot] uppdateras deras information och varje kontakt tilldelas en egenskap med dess värde som målgruppsnamn som anger vilken målgrupp kontakten tillhör.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I avsnitten nedan finns information om eventuella krav som du måste ställa in i Experience Platform och [!DNL HubSpot] och om information som du måste samla in innan du kan arbeta med målet för [!DNL HubSpot].
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL HubSpot] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL HubSpot] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -51,8 +51,8 @@ Om du inte har någon privat app följer du dokumentationen för att [skapa en p
 >[!IMPORTANT]
 >
 > Det privata programmet bör tilldelas följande omfång:
-> &#x200B;> `crm.objects.contacts.write`, `crm.objects.contacts.read`
-> &#x200B;> `crm.schemas.contacts.write`, `crm.schemas.contacts.read`
+> `crm.objects.contacts.write`, `crm.objects.contacts.read`
+> `crm.schemas.contacts.write`, `crm.schemas.contacts.read`
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -78,11 +78,26 @@ Det här målet stöder aktivering av alla målgrupper som genereras via Experie
 
 Detta mål stöder även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
-| Målgruppstyp | Beskrivning |
-|---------|----------|
-| Anpassade överföringar | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 

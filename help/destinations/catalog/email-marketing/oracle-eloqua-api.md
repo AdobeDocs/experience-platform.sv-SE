@@ -3,9 +3,9 @@ title: (API) Oracle Eloqua-anslutning
 description: (API) Oracle Eloqua-destinationen gör att du kan exportera dina kontodata och aktivera dem i Oracle Eloqua för dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1967'
+source-wordcount: '2138'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Med [[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/) kan marknadsförare planera och köra kampanjer samtidigt som de levererar en personaliserad kundupplevelse för sina potentiella kunder. Tack vare integrerad hantering av leads och enkel kampanjframtagning kan marknadsförarna engagera rätt målgrupp vid rätt tidpunkt i köparens resa och på ett elegant sätt skala nå målgrupper över olika kanaler, inklusive e-post, webbannonsering, video och mobiler. Säljarna kan sluta fler avtal snabbare och öka avkastningen på marknadsföringen genom realtidsinsikter.
 
-This [!DNL Adobe Experience Platform] [destination](/help/destinations/home.md) leverages the [Update a contact](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) operation from the [!DNL Oracle Eloqua] REST API, which allows you to **update identities** within an audience into [!DNL Oracle Eloqua].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar åtgärden [Uppdatera en kontakt](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) från [!DNL Oracle Eloqua] REST API, som gör att du kan **uppdatera identiteter** inom en målgrupp till [!DNL Oracle Eloqua].
 
 [!DNL Oracle Eloqua] använder [Grundläggande autentisering](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html) för att kommunicera med REST API:t [!DNL Oracle Eloqua]. Instruktioner för autentisering till din [!DNL Oracle Eloqua]-instans finns längre ned i avsnittet [Autentisera till mål](#authenticate).
 
@@ -23,11 +23,11 @@ This [!DNL Adobe Experience Platform] [destination](/help/destinations/home.md) 
 
 Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad marknadsföringskampanj till en välstrukturerad publik med leads. Plattformens marknadsföringsteam kan uppdatera befintlig huvudinformation via Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till [!DNL Oracle Eloqua], som sedan kan användas för att skicka marknadsföringskampanjens e-post.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Before activating data to the [!DNL Oracle Eloqua] destination, you must have a [schema](/help/xdm/schema/composition.md), a [dataset](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE), and [segments](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) created in [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -70,6 +70,28 @@ Mer information finns i [Logga in på [!DNL Oracle Eloqua]](https://docs.oracle.
 | Målidentitet | Beskrivning | Obligatoriskt |
 |---|---|---|
 | `EloquaId` | Unik identifierare för kontakten. | Ja |
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -237,7 +259,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| April 2023 | Uppdatering av dokumentation | <ul><li>Vi uppdaterade avsnittet [use-cases](#use-cases) med ett tydligare exempel på när kunder skulle kunna dra nytta av det här målet.</li> <li>Vi uppdaterade avsnittet [mapping](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li> <li>Vi uppdaterade avsnittet [Anslut till målet](#connect) med ett exempel på hur du skapar det sammanfogade värdet för fältet **[!UICONTROL Username]** med hjälp av företagsnamnet [!DNL Oracle Eloqua] och användarnamnet för [!DNL Oracle Eloqua]. (PLATIR-28343)</li><li>Vi uppdaterade avsnitten [Samla [!DNL Oracle Eloqua] in](#gather-credentials) och [Fyll i målinformation](#destination-details) med vägledning om [!DNL Oracle Eloqua] **[!UICONTROL Pod]**-val. Värdet *&quot;Pod&quot;* används av målet för att skapa bas-URL:en för API-anropen. The [[!DNL Oracle Eloqua] prerequisites](#prerequisites-destination) section was also updated with guidance on assigning *&quot;Advanced Users - Marketing permissions&quot;* as a required *&quot;Security Groups&quot;* for your [!DNL Oracle Eloqua] instance.</li></ul> |
+| April 2023 | Uppdatering av dokumentation | <ul><li>Vi uppdaterade avsnittet [use-cases](#use-cases) med ett tydligare exempel på när kunder skulle kunna dra nytta av det här målet.</li> <li>Vi uppdaterade avsnittet [mapping](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li> <li>Vi uppdaterade avsnittet [Anslut till målet](#connect) med ett exempel på hur du skapar det sammanfogade värdet för fältet **[!UICONTROL Username]** med hjälp av företagsnamnet [!DNL Oracle Eloqua] och användarnamnet för [!DNL Oracle Eloqua]. (PLATIR-28343)</li><li>Vi uppdaterade avsnitten [Samla [!DNL Oracle Eloqua] in](#gather-credentials) och [Fyll i målinformation](#destination-details) med vägledning om [!DNL Oracle Eloqua] **[!UICONTROL Pod]**-val. Värdet *&quot;Pod&quot;* används av målet för att skapa bas-URL:en för API-anropen. Avsnittet [[!DNL Oracle Eloqua] Krav](#prerequisites-destination) uppdaterades också med vägledning om hur du tilldelar *&quot;Avancerade användare - marknadsföringsbehörigheter&quot;* som en obligatorisk *&quot;Säkerhetsgrupper&quot;* för din [!DNL Oracle Eloqua]-instans.</li></ul> |
 | Mars 2023 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
 
 {style="table-layout:auto"}

@@ -3,9 +3,9 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 47d4078acc73736546d4cbb2d17b49bf8945743a
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1643'
+source-wordcount: '1814'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Den här kopplingen skickar data till [!DNL The Trade Desk] för aktivering av f
 >
 >Använd målet [!DNL The Trade Desk - CRM] för att skicka CRM-data (till exempel e-post och telefonnummer) och andra identifierare för förstapartsdata som cookies och enhets-ID. Du kan fortsätta använda [Trade Desk-målet](/help/destinations/catalog/advertising/tradedesk.md) i Experience Platform-katalogen för cookies och enhets-ID-mappningar.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 >[!IMPORTANT]
 >
@@ -66,6 +66,31 @@ Adobe Experience Platform har stöd för både ohashade och hash-kodade e-postad
 
 {style="table-layout:auto"}
 
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
+
 ## Krav för e-posthashning {#email-hashing}
 
 Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform eller använda obearbetade e-postadresser.
@@ -81,7 +106,6 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
       * Perioden (`.`) tecken (ASCII-kod 46). Du kan till exempel normalisera &quot;jane.doe@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
      * Plustecknet (`+`) (ASCII-kod 43) och alla efterföljande tecken. Till exempel normalisera &quot;janedoe+home@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
   
-
 ## Normalisering av telefonnummer och krav på hashning {#phone-hashing}
 
 Det här behöver du veta om att överföra telefonnummer:
@@ -141,7 +165,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.

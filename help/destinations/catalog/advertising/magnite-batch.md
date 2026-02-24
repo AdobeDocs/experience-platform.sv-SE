@@ -1,11 +1,11 @@
 ---
 title: Magnite Batch Destination
-description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i grupp.
+description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i batch.
 last-substantial-update: 2024-11-18T00:00:00Z
 exl-id: 8cc3890f-84f8-49d1-a329-322c13f9e5af
-source-git-commit: 57e6dc4252c031d993592b963efc089f8427ce25
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1650'
+source-wordcount: '1782'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Du vill bara aktivera en målgrupp i en batch/dag på plattformen Magnite Stream
 
 Alla målgrupper som aktiveras via Magnite: Batch-destinationen levereras i batch/dag och kan sedan användas i Magnite Streaming-plattformen.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill använda [!DNL Magnite]-destinationerna i Adobe Experience Platform måste du först ha ett Magnite Streaming-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål. Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@magnite.com
 
@@ -72,10 +72,24 @@ Magnite: Målet för gruppen kan ta emot *alla* identitetskällor från Adobe CD
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -92,7 +106,7 @@ När målanvändningen har godkänts och Magnite Streaming har delat dina autent
 
 ### Autentisera till mål {#authenticate}
 
-Leta reda på Magnite: Batch-målet i Adobe Experience-katalogen. Klicka på knappen med ytterligare alternativ (\..) och konfigurera sedan målanslutningen/målinstansen.
+Leta rätt på Magnite: Batch-målet i Adobe Experience-katalogen. Klicka på knappen med ytterligare alternativ (\..) och konfigurera sedan målanslutningen/målinstansen.
 
 Om du redan har ett befintligt konto kan du hitta det genom att ändra kontotypsalternativet till &quot;Befintligt konto&quot;. Annars skapar du ett konto nedan:
 
@@ -153,7 +167,7 @@ I **[!UICONTROL Source field]** kan du välja attribut eller identitet för dina
 ![mappa önskade datafält till fältet device_id](../../assets/catalog/advertising/magnite/destination-batch-active-audience-field-mapping.png)
 
 I **[!UICONTROL Target field]**:
-![&#x200B; Välj lämplig målidentitet för enhetstyp &#x200B;](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [&#x200B; Identiteter som stöds &#x200B;](#supported-identities) .
+![ Välj lämplig målidentitet för enhetstyp ](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [ Identiteter som stöds ](#supported-identities) .
 I det här exemplet har vi valt **[!UICONTROL Target field]**: magnite_deviceId_CUSTOM eftersom **[!UICONTROL Source field]** definierades som en anpassad IdentityMap: DeviceID.
 
 >[!NOTE]

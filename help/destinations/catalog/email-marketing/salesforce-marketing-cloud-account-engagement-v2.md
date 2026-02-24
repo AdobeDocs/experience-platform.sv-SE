@@ -5,9 +5,9 @@ badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: cd792eb0-9e90-49e4-8c50-c65126e355c2
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1913'
 ht-degree: 1%
 
 ---
@@ -24,8 +24,8 @@ Det här målet använder [[!DNL Salesforce Import API v5]](https://developer.sa
 >[!IMPORTANT]
 > 
 > Det här är V2-versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md). Den här versionen ersätter den tidigare målversionen och finns för närvarande i Alpha-utgåvan.
-> &#x200B;> <br>
-> &#x200B;> Om du för närvarande använder den tidigare versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) måste du migrera till den här V2-versionen före **januari 2026**. Efter januari 2026 kommer Adobe att avveckla den tidigare versionen och den kommer inte längre att vara tillgänglig.
+> <br>
+> Om du för närvarande använder den tidigare versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) måste du migrera till den här V2-versionen före **januari 2026**. Efter januari 2026 kommer Adobe att avveckla den tidigare versionen och den kommer inte längre att vara tillgänglig.
 
 
 ## Användningsfall {#use-cases}
@@ -44,7 +44,7 @@ Du kan aktivera marknadsföringskampanjer i [!DNL Salesforce Marketing Cloud Acc
 
 Förbättra dina profiler för [!DNL Salesforce Marketing Cloud Account Engagement] potentiella kunder med omfattande kunddata från Adobe Experience Platform. Exportera omfattande profilattribut för att skapa mer detaljerade poster för potentiella kunder i [!DNL Salesforce Marketing Cloud Account Engagement] för förbättrad målinriktning och personalisering.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I avsnitten nedan finns information om eventuella krav som du måste konfigurera i Experience Platform och [!DNL Salesforce]. Här finns även information som du måste samla in innan du kan arbeta med målet för [!DNL (V2) Marketing Cloud Account Engagement].
 
@@ -83,6 +83,31 @@ Om en matchning hittas med någon av dessa identifierare uppdateras den befintli
 | `matchEmail` | E-postadress till den potentiella kunden | Minst en av dessa tre identiteter krävs |
 
 {style="table-layout:auto"}
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 

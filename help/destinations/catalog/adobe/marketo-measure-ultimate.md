@@ -3,10 +3,10 @@ title: Marketo Measure Ultimate
 description: Lär dig hur du ansluter och aktiverar data till Marketo Measure Ultimate-målet.
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '623'
-ht-degree: 0%
+source-wordcount: '794'
+ht-degree: 1%
 
 ---
 
@@ -26,13 +26,38 @@ För att du bättre ska förstå hur och när du ska använda Marketo Measure-de
 * Möjliggör B2B-attribueringsrapportering med flera CRM- och marknadsföringssystem.
 * Gör det enkelt att lägga in kontaktpunktsdata från tredje part offline.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Observera följande krav för Marketo Measure-destinationen:
 
 * Mappning av Experience Platform-sandlådor ska slutföras av administratören på inställningssidan för Marketo Measure. Utan sandlådemappning kan du inte slutföra arbetsflödet för att ansluta till målet och spara och aktivera data.
 * Endast datauppsättningar av B2B XDM-klasser kan exporteras (se t.ex. XDM Business Account och XDM Business Opportunity-klasserna). Du kan inte hämta flera datauppsättningar av samma B2B XDM-klass för en viss datakälla.
 * Varje datauppsättning kan bara inkluderas i ett dataflöde till Marketo Measure-målet.
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Nej | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Ja | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -78,7 +103,7 @@ Läs självstudiekursen [Exportera datauppsättningar](/help/destinations/ui/exp
 
 ## Validera dataexport {#exported-data}
 
-Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till ditt [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=sv-SE).
+Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till ditt [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

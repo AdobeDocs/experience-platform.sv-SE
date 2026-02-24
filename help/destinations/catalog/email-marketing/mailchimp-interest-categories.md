@@ -3,9 +3,9 @@ title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2218'
+source-wordcount: '2409'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,13 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 Försäljningsavdelningen på en webbplats för sportartiklar vill sända en e-postbaserad marknadsföringskampanj till en lista över kontakter som själva har identifierats som intresserade av fotboll. Listorna över kontakter delas upp som grupper i dataexporten som tas emot från webbplatsens utvecklingsteam och måste därför spåras. Teamet identifierar en befintlig [!DNL Mailchimp]-målgrupp och börjar bygga upp de Experience Platform-målgrupper i vilka kontakterna från varje lista läggs till. När de här målgrupperna har skickats till [!DNL Mailchimp Interest Categories] läggs de till i en grupp med målgruppsnamnet som kontakten tillhör om det inte finns några kontakter i den valda [!DNL Mailchimp]-målgruppen. Om det redan finns kontakter i målgruppen eller gruppen [!DNL Mailchimp] uppdateras deras information. När data har skickats över till [!DNL Mailchimp Interest Categories] kan säljarna välja och skicka marknadsföringskampanjens e-post till fotbollsintressegruppen inom [!DNL Mailchimp]-målgruppen.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I avsnitten nedan finns information om eventuella krav som du måste ställa in i Experience Platform och [!DNL Mailchimp] och om information som du måste samla in innan du kan arbeta med målet för [!DNL Mailchimp Interest Categories].
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Mailchimp Interest Categories] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Mailchimp Interest Categories] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 ### Krav för målet [!DNL Mailchimp Interest Categories] {#prerequisites-destination}
 
@@ -86,6 +86,28 @@ Se även [!DNL Mailchimp] [tariffgränser](https://mailchimp.com/developer/marke
 
 {style="table-layout:auto"}
 
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet. De två tabellerna nedan visar vilka målgrupper som den här kopplingen stöder, per _målgruppsursprung_ och _profiltyper som ingår i målgruppen_:
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
@@ -114,7 +136,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 | Fält | Beskrivning |
 | --- | --- |
 | **[!UICONTROL Username]** | Ditt [!DNL Mailchimp Interest Categories]-användarnamn. |
-| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel &#x200B;](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
+| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel ](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
 
 {style="table-layout:auto"}
 

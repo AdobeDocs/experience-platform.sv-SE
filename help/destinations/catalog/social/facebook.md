@@ -3,10 +3,10 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '2636'
-ht-degree: 0%
+source-wordcount: '2770'
+ht-degree: 1%
 
 ---
 
@@ -52,7 +52,7 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 | `last_name` | Efternamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name` | Förnamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga mellanslag. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name_initial` | Första namn | Godkänt format: Endast gemener, `a-z` tecken. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
-| `state` | Läge | Använd anSI-förkortningskoden [2 tecken &#x200B;](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `state` | Läge | Använd anSI-förkortningskoden [2 tecken ](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `city` | Ort | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga specialtecken, inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `zip` | Postnummer | Godkänt format: Gemener, inga mellanslag. För amerikanska postnummer ska du endast använda de första 5 siffrorna. Använd formatet `Area/District/Sector` för Storbritannien.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `country` | Land | Godkänt format: landskoder med två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) .  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
@@ -63,10 +63,24 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -157,7 +171,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera målgrupper.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >

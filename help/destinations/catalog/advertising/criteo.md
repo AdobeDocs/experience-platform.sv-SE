@@ -3,10 +3,10 @@ keywords: Reklam; villkor.
 title: Kriterieanslutning
 description: Criteo ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personanpassade för att nå kunder med rätt annons, vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '999'
-ht-degree: 10%
+source-wordcount: '1170'
+ht-degree: 9%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 10%
 
 Criteo ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personanpassade för att nå kunder med rätt annons, vid rätt tidpunkt.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 * Du måste ha ett administratörsanvändarkonto på [Criteo Management Center](https://marketing.criteo.com).
 * Du behöver ditt Criteo Advertiser ID (fråga din Criteo-kontakt om du inte har detta ID).
@@ -35,12 +35,37 @@ Criteo ger betrodd och slagkraftig annonsering för att ge alla konsumenter bät
 
 ## Identiteter som stöds {#supported-identities}
 
-Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv-SE#getting-started).
+Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 | Målidentitet | Beskrivning | Överväganden |
 | --- | --- | --- |
 | `email_sha256` | E-postadresser som hashas med SHA-256-algoritmen | Både oformaterad text och SHA-256-hashed-e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut ska du markera alternativet [!UICONTROL Apply transformation] så att Experience Platform automatiskt hash-kodar data vid aktiveringen. |
 | `gum_id` | Identifierare för cookie-filen [!DNL GUM] | [!DNL GUM IDs] tillåter klienter att upprätthålla en korrespondens mellan användaridentifieringssystemet och Criteos användaridentifiering ([!DNL UID]). Om identifierartypen är `gum_id` måste även ytterligare en parameter, [!DNL GUM Caller ID], tas med. Kontakta ditt kundkontoteam för att få information om rätt [!DNL GUM Caller ID] eller om du vill ha mer information om den här [!DNL GUM ID]-synkroniseringen, om det behövs. |
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -178,7 +203,7 @@ Innehållet i borttagningen av användarprofilen som togs emot av anslutningen [
 
 ## Dataanvändning och styrning {#data-usage}
 
-Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
+Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Ytterligare resurser
 

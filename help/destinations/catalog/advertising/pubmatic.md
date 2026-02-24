@@ -1,11 +1,11 @@
 ---
 title: PubMatic Connect
-description: PubMatic maximerar kundvärdet genom att leverera framtidens programstyrda digitala marknadsföringskedja. PubMatic Connect kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och hanteras.
+description: PubMatic maximerar kundvärdet genom att leverera framtidens programmatiska digitala marknadsföringsprogram för supply chain. PubMatic Connect kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och hanteras.
 last-substantial-update: 2025-02-12T00:00:00Z
 exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
-source-git-commit: 2041c06e660e24f63d4c44adc0e8f3082bb007ae
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1151'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Använd [!DNL PubMatic Connect] för att maximera kundens värde genom att leverera framtidens programbaserade leveranskedja för digital marknadsföring. [!DNL PubMatic Connect] kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och överförs.
+Använd [!DNL PubMatic Connect] för att maximera kundvärdet genom att leverera framtidens supply chain för programmatisk digital marknadsföring. [!DNL PubMatic Connect] kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och överförs.
 
 Det finns två tillgängliga mål som gör att du kan skicka målgruppsdata till PubMatic Connect-plattformen. De skiljer sig något när det gäller funktionalitet:
 
@@ -41,7 +41,7 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 Utgivare eller dataleverantörer vill skicka målgrupper från Adobe Experience Platform till [!DNL PubMatic Connect] för målanvändare på mobil-, webb- och CTV-plattformar med ett stort antal identifierare.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Tala med din kontohanterare för [!DNL PubMatic] för att kontrollera att ditt konto är korrekt konfigurerat och har stöd för introduktion av målgruppssegment. De ser också till att du har all information som behövs för att använda destinationen och för att ge dig support under installationen.
 
@@ -62,11 +62,25 @@ Tala med din kontohanterare för [!DNL PubMatic] för att kontrollera att ditt k
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
-| --------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 

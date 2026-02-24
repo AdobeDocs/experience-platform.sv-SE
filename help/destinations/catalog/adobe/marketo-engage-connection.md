@@ -2,9 +2,9 @@
 title: Marketo Engage Connection
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: e02b6c65-b59e-41ff-8d33-f8fecfd87773
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1873'
+source-wordcount: '1875'
 ht-degree: 0%
 
 ---
@@ -43,9 +43,9 @@ Marknadsföringsteamet vill aktivera en intressanta produktpublik för en ny kam
 
 De kan aktivera sina målgrupper i Marketo Engage och använda synkroniseringstypen **[!UICONTROL Audience and Profile]** i kombination med åtgärden **[!UICONTROL Update existing and create new persons]** för att se till att de har befintliga leads från Marketo som mål och skapa nya för de nya målgrupperna som exporteras från Real-Time CDP.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
-* Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i sin Marketo-instans och -partition.
+* Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i sin Marketo-instans och -partition.
 * Endast Marketo Engage-instanser i samma Adobe Real-Time CDP-organisation är tillgängliga när du konfigurerar det här målet.
 * Det är bara Marketo Engage-instanser som har sina användare hanterade i Adobe Admin Console som kan använda det här målet.
 
@@ -65,8 +65,8 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | ✓ | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> <br> |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> <br> |
 
 {style="table-layout:auto"}
 
@@ -145,8 +145,8 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
    * **[!UICONTROL Audience and profile]**: Välj det här alternativet när du vill lägga till målgruppsmedlemmar i Marketo-listor och hålla deras profilinformation aktuell.
    * **[!UICONTROL Profile only]**: Välj det här alternativet om du vill att Marketo lead-profiler ska vara uppdaterade med den senaste informationen från Experience Platform.
    * **[!UICONTROL Audience only]**: Välj det här alternativet om du vill lägga till målgruppsmedlemmar i Marketo-listor utan att uppdatera deras profilinformation.
-* **[!UICONTROL Partition]**: *Partitionsval är bara tillgängligt när du väljer **[!UICONTROL Profile only]**&#x200B;eller **[!UICONTROL Audience and profile]**&#x200B;synkroniseringstyper*. Välj ett partitions-ID för Marketo som är kopplat till den valda arbetsytan. På så sätt kan du ange vilken huvudpartition i Marketo som ska ta emot exporterade data. Om du inte väljer en viss partition skickas dina data till partitionen **[!UICONTROL Default]** i Marketo.
-* **[!UICONTROL Marketo deduplication field]**: Markera det Marketo-fält för borttagning av dubbletter som du vill använda när du uppdaterar befintliga Marketo-leads. Den här väljaren visar de fält som du har markerat som dedupliceringsfält i Marketo. Om du vill att ett visst fält från Marketo ska visas som ett dedupliceringsfält måste du markera fältet som ett [sökbart fält](https://experienceleague.adobe.com/sv/docs/marketo-developer/marketo/rest/lead-database/lead-database) i Marketo.
+* **[!UICONTROL Partition]**: *Partitionsval är bara tillgängligt när du väljer **[!UICONTROL Profile only]**eller **[!UICONTROL Audience and profile]**synkroniseringstyper*. Välj ett partitions-ID för Marketo som är kopplat till den valda arbetsytan. På så sätt kan du ange vilken huvudpartition i Marketo som ska ta emot exporterade data. Om du inte väljer en viss partition skickas dina data till partitionen **[!UICONTROL Default]** i Marketo.
+* **[!UICONTROL Marketo deduplication field]**: Markera det Marketo-fält för borttagning av dubbletter som du vill använda när du uppdaterar befintliga Marketo-leads. Den här väljaren visar de fält som du har markerat som dedupliceringsfält i Marketo. Om du vill att ett visst fält från Marketo ska visas som ett dedupliceringsfält måste du markera fältet som ett [sökbart fält](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/lead-database) i Marketo.
 
   >[!NOTE]
   >

@@ -2,9 +2,9 @@
 title: Snap Inc-anslutning
 description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar dina målgrupper från Experience Platform.
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1166'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 Med den här destinationen kan marknadsförare importera användarmålgrupper som skapats i Experience Platform till Snapchat Ads och använda dem för att rikta sina annonser.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill använda den här destinationen måste du ha ett Snapchat Ads-konto. I den här dokumentationen finns information om hur du skapar en:
 
@@ -65,11 +65,25 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
-| [!DNL Federated Audience Composition] | ✓ | Publiker som importerats till Experience Platform via [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/audiences). |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| [!DNL Federated Audience Composition] | Ja | Publiker som importerats till Experience Platform via [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/audiences). |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -133,14 +147,14 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ## Validera dataexport {#exported-data}
 
-När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** &#x200B;](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
+När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** ](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
 
 1. Logga in i [hanteraren för ögonblicksbilder](https://ads.snapchat.com/)
 2. Välj **Publiker** på menyn längst upp till vänster på skärmen. Du ser vilka målgrupper du har aktiverat i Adobe Experience Platform i målgruppsbiblioteket:
 
 ![Publiker](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den först som en tom publik. Detta beror på att Adobe Experience Platform inte exporterar medlemsdata till Snap Inc förrän målgruppen utvärderas. Mer information om hur målgrupper utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=sv-SE#evaluate-segments).
+Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den först som en tom publik. Detta beror på att Adobe Experience Platform inte exporterar medlemsdata till Snap Inc förrän målgruppen utvärderas. Mer information om hur målgrupper utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

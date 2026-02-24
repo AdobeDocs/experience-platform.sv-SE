@@ -3,10 +3,10 @@ keywords: Reklam.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Advertising-nätverket, inklusive webbannonsering, sökannonsering och inbyggt webbmaterial.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: ec31c1d967be4764b22f735429e2f9437f31ed20
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '918'
-ht-degree: 0%
+source-wordcount: '1052'
+ht-degree: 1%
 
 ---
 
@@ -43,10 +43,24 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -61,11 +75,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Målet [!DNL Microsoft Bing] kräver att följande inställningar fungerar korrekt:
 
-1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL Microsoft Bing]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=sv-SE) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
+1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL Microsoft Bing]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
    * Om du tidigare har konfigurerat [!DNL Microsoft Bing]-integreringar i Audience Manager överförs dina befintliga ID-synkroniseringar automatiskt till Experience Platform.
 
 2. **Kontrollera att det finns ett ECID för profilerna**: Alla profiler måste ha ett ECID för att kunna exporteras. ECID är **obligatoriskt** för det här målet.
@@ -107,7 +121,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >id="platform_destinations_required_mappings_bing"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig. När du aktiverar data till Microsoft Bing måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/bing#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 >[!IMPORTANT]
 > 

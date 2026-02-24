@@ -3,9 +3,9 @@ title: Moengage connection
 description: Moengage är en plattform för kundengagemang som driver kundcentrerade interaktioner mellan konsumenter och varumärken i realtid.
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1158'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Med Adobe är integreringen mycket enkel och intuitiv. Ta vilken Adobe-användar
 
 En marknadsförare vill rikta sig till ett användarsegment (inbyggt i Adobe Experience Platform) via [!DNL Moengage] kampanjer. De vill också personalisera kampanjinnehåll baserat på attribut från Adobe Experience Platform-profiler. Med den här integreringen uppdateras användare och attribut i MoEngage så snart segment och profiler uppdateras i Adobe Experience Platform.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du kan skicka dina Adobe Experience Platform-data till [!DNL Moengage] bör du tänka på följande krav:
 
@@ -43,6 +43,31 @@ Innan du kan skicka dina Adobe Experience Platform-data till [!DNL Moengage] bö
 | anonymous_id | En annan identifierare för en okänd användarprofil - det vill säga en profil som inte finns i systemet. | Den här identifieraren stöder strängtyp. Antingen user_id eller anonymous_id krävs |
 
 {style="table-layout:auto"}
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+
+{style="table-layout:auto"}
+
+
+
+Målgrupper som stöds av olika typer av målgruppsdata:
+
+| Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
+|--------------------|-----------|-------------|-----------|
+| [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
+| [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
+| [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+
+{style="table-layout:auto"}
+
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
