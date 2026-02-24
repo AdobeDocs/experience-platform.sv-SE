@@ -2,9 +2,9 @@
 title: Översikt över livscykelhantering av avancerade data
 description: Med Advanced Data Lifecycle Management kan ni hantera livscykeln för era data genom att uppdatera eller tömma inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: a1502e8f1515ff73840b2926f5be355032dd4bab
+source-git-commit: fc71e61fd33fe216f8cd326b9df048958c07077a
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '691'
 ht-degree: 0%
 
 ---
@@ -13,16 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
-<!-- Experience Platform's data lifecycle capabilities allow you to manage your stored data through the following:
-
-* Scheduling automated dataset expirations
-* Deleting individual records from one or all datasets
-
->[!IMPORTANT]
->
->Record deletes are meant to be used for data cleansing, removing anonymous data, or data minimization. They are **not** to be used for data subject rights requests (compliance) as pertaining to privacy regulations like the General Data Protection Regulation (GDPR). For all compliance use cases, use [Adobe Experience Platform Privacy Service](../privacy-service/home.md) instead. -->
-
-Dessa aktiviteter kan utföras med arbetsytan [[!UICONTROL Data Lifecycle] i användargränssnittet &#x200B;](#ui) eller [API:t för datahygien](#api). När ett datatillverkarsjobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Mer information om hur varje jobbtyp visas i systemet finns i avsnittet [tidslinjer och genomskinlighet](#timelines-and-transparency).
+Dessa aktiviteter kan utföras med arbetsytan [[!UICONTROL Data Lifecycle] i användargränssnittet ](#ui) eller [API:t för datahygien](#api). När ett datatillverkarsjobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Mer information om hur varje jobbtyp visas i systemet finns i avsnittet [tidslinjer och genomskinlighet](#timelines-and-transparency).
 
 >[!NOTE]
 >
@@ -55,32 +46,10 @@ Följande inträffar när en [förfallobegäran](./ui/dataset-expiration.md) fö
 | Datauppsättningen tas bort från datasjön | 1 timme | Datauppsättningen tas bort från [datauppsättningens lagersida](../catalog/datasets/user-guide.md) i användargränssnittet. Data i datasjön tas bara bort på ett mjukt sätt, och kommer att finnas kvar tills processen är slut, varefter de kommer att tas bort. |
 | Datauppsättningen tas bort från profiltjänsten | 3 timmar | Från och med nu kommer åtgärder som batchsegmentering och direktuppspelningssegmentering, förhandsgranskning eller uppskattning, export och åtkomst till enheter inte längre att läsa data från den här datauppsättningen. Informationen i profiltjänsten är endast mjuk och tas bort tills processen är klar. Därefter tas den bort. |
 | Profilantal och målgrupper har uppdaterats | 48 timmar | När alla profiler som påverkas har uppdaterats uppdateras alla relaterade [målgrupper](../segmentation/home.md) så att deras nya storlek återspeglas. Beroende på vilken datauppsättning som har tagits bort och vilka attribut du segmenterar på, kan storleken på varje målgrupp öka eller minska på grund av borttagningen. Vid den här tidpunkten återspeglas eventuella ändringar i det totala antalet profiler i [instrumentpanelswidgetar](../dashboards/guides/profiles.md#profile-count-trend) och andra rapporter. |
-| Uppdaterade resor och destinationer | 50 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html?lang=sv-SE), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html?lang=sv-SE) och [mål](../destinations/home.md) uppdateras enligt ändringar i relaterade segment. |
-| Borttagningen har slutförts | 15 dagar | Alla data som är relaterade till datauppsättningen tas bort från datasjön och profiltjänsten. Status [för datatilleriet &#x200B;](./ui/browse.md#view-details) som tog bort datauppsättningen uppdateras för att återspegla detta. |
+| Uppdaterade resor och destinationer | 50 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html) och [mål](../destinations/home.md) uppdateras enligt ändringar i relaterade segment. |
+| Borttagningen har slutförts | 15 dagar | Alla data som är relaterade till datauppsättningen tas bort från datasjön och profiltjänsten. Status [för datatilleriet ](./ui/browse.md#view-details) som tog bort datauppsättningen uppdateras för att återspegla detta. |
 
 {style="table-layout:auto"}
-
->[!IMPORTANT]
->
->Borttagningar av datauppsättningar i Amazon Web Services (AWS) kan fördröjas med ungefär tre timmar innan ändringarna tillämpas helt. Detta inkluderar upp till två timmar innan datauppsättningen flaggas för borttagning, följt av ytterligare en timme innan den tas bort helt från systemet. Borttagningsbegäranden för Experience Platform-instanser som använder Azure Data Lake resulterar däremot i omedelbara ändringar i alla affärsfunktioner.
->
->För AWS-användare kan fördröjningen påverka gruppsegmentering, direktuppspelningssegmentering, förhandsvisningar, uppskattningar, export och dataåtkomst. Denna fördröjning påverkar bara kunder som använder AWS eftersom Azure Data Lake-användare får omedelbara uppdateringar. För AWS-användare kan det ta upp till tre timmar för raderingsbegäranden att sprida sig fullt ut via alla system som påverkas. Justera dina förväntningar därefter.
-
-
-<!-- ### Record deletes {#record-delete-transparency}
-
-The following takes place when a [record delete request](./ui/record-delete.md) is created:
-
-| Stage | Time after request submission | Description |
-| --- | --- | --- |
-| Request is submitted | 0 hours | A data steward or privacy analyist submits a record delete request. The request is visible in the [!UICONTROL Data Lifecycle UI] after it has been submitted. |
-| Profile lookups updated | 3 hours | The change in profile counts caused by the deleted identity are reflected in [dashboard widgets](../dashboards/guides/profiles.md#profile-count-trend) and other reports. |
-| Segments updated | 24 hours | Once profiles are removed, all related [segments](../segmentation/home.md) are updated to reflect their new size. |
-| Journeys and destinations updated | 26 hours | [Journeys](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html?lang=sv-SE), [campaigns](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html?lang=sv-SE), and [destinations](../destinations/home.md) are updated according to changes in related segments. |
-| Records soft deleted in data lake | 7 days | The data is soft deleted from the data lake. |
-| Data vacuuming completed | 14 days | The [status of the lifecycle job](./ui/browse.md#view-details) updates to indicate that the job has completed, meaning that data vacuuming has been completed on the data lake and the relevant records have been hard deleted. |
-
-{style="table-layout:auto"} -->
 
 ## Nästa steg
 
