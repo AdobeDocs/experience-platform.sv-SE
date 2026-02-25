@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform-ordlista
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 0ff9adc8869528f9e13ee384b866b8dcc3d781bd
+source-git-commit: bdd0039249366ceabebe52694046ec01906ced3c
 workflow-type: tm+mt
-source-wordcount: '8169'
+source-wordcount: '8224'
 ht-degree: 0%
 
 ---
@@ -177,7 +177,7 @@ ht-degree: 0%
 
 **Dataanvändningsetiketter**: Med dataanvändningsetiketter kan du kategorisera data som speglar sekretessrelaterade överväganden och avtalsvillkor så att de överensstämmer med regler och företagspolicyer. Dataanvändningsetiketter som läggs till i en datauppsättning ärvs ned eller används för alla fält i den datauppsättningen. Dataanvändningsetiketter kan också användas direkt i fält.
 
-**Dataflöde**: Ett dataflöde är en virtuell pipeline med data som flödar in i Experience Platform från en källa och ut till mål.
+**Dataflöde**: Ett dataflöde är en virtuell pipeline med data som flödar in i Experience Platform från en källa och ut till mål. I målsammanhang är ett dataflöde synonymt med en [målinstans](#destination-instance). {#dataflow}
 
 **Dataflödeskörning**: Ett dataflöde är ett dataflöde som körs i Experience Platform baserat på ett användarspecificerat schema.
 
@@ -200,6 +200,8 @@ ht-degree: 0%
 **Målkategori**: En målkategori är en gruppering av mål som har liknande egenskaper.
 
 **Målkatalog**: En målkatalog är en lista över tillgängliga mål i Experience Platform.
+
+**Målinstans**: En målinstans är en enskild, konfigurerad anslutning till ett specifikt mål i Experience Platform som skapats med gränssnittet eller API:t. Den representerar en aktiveringsprocess från Experience Platform till en målslutpunkt. Kallas även [dataflöde](#dataflow). {#destination-instance}
 
 **Regler för direktanrop**: I kontexten för taggar är en regel för direktanrop en regel som körs när den anropas direkt från sidan, utan att händelsidentifierings- och söksystemen åsidosätts.
 
