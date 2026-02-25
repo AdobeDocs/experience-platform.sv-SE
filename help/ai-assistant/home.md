@@ -61,7 +61,7 @@ Produktkännedom avser begrepp och ämnen som beskrivs i Experience League dokum
 
 I följande video finns mer information om produktkännedom för AI Assistant:
 
->[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on)
 
 ### Driftsinsikter {#operational-insights}
 
@@ -90,7 +90,7 @@ När det gäller frågor om driftsinsikter kanske svaren inte speglar det aktuel
 
 I följande video finns mer information om AI Assistant-driftsinsikter:
 
->[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3444036?captions=swe&learn=on&enablevpops)
 
 ### Funktionsomfång {#feature-scope}
 
