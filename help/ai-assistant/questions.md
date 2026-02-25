@@ -2,9 +2,9 @@
 title: Frågeguide för AI Assistant
 description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant.
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: 7268895d0b1924f9d3e7cee24e549c79245ef099
+source-git-commit: ae4bc8b86e63bf950bc1d05a9c9e76ee4e541f9a
 workflow-type: tm+mt
-source-wordcount: '2105'
+source-wordcount: '2063'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ Följande exempelfrågor grupperas efter mål som du kan uppnå med AI Assistant
 | Utbildningsbegrepp och fortsatta arbetsflöden | <ul><li>Som nybörjare kan du använda AI Assistant för att lära dig Real-Time CDP- och Adobe Journey Optimizer-koncept och själv ta till vara produkter och funktioner som du inte känner till.</li><li>Som erfaren användare kan du använda AI Assistant för att lösa ett edge-fall som kan blockera ditt arbetsflöde. | <ul><li>Hur skapar jag en kontrollpanel i Journey Analytics?</li><li>Berätta några användningsfall för Real-Time CDP.</li></ul> |
 | Felsökning | Använd AI Assistant för att lära dig hur du felsöker grundläggande fel som kan uppstå i arbetsflödet. | <ul><li>Vad betyder det här felet {ERROR_MESSAGE}?</li><li>Varför kan jag inte ta bort målgruppen Luma: Email Audience?</li></ul> |
 | Sandlådehygien | Använd AI Assistant för att identifiera eventuella dubbletter eller oanvända objekt så att du effektivt kan underhålla sandlådan. | <ul><li>Kan ni visa mig målgrupper som är lika?</li><li>Finns det några scheman som inte har någon associerad datauppsättning?</li></ul> |
-| Värdeanalys | Använd AI Assistant för att identifiera dina mest använda dataobjekt och utvärdera eventuella prestandaindikatorer eller hitta de värdefullaste dataobjekten. | <ul><li>Hur många profiler finns i segmentdefinitionen&quot;Luma: Email Audience&quot;?</li><li>När aktiverades målgrupper för målgrupper i Experience Cloud?</li></ul> |
+| Värdeanalys | Använd AI Assistant för att identifiera dina mest använda dataobjekt och utvärdera eventuella prestandaindikatorer eller hitta de värdefullaste dataobjekten. | <ul><li>Hur många profiler finns i segmentdefinitionen&quot;Luma: Email Audience&quot;?</li><li>När aktiverades målgrupper på Experience Cloud målgrupper?</li></ul> |
 | Sök | Använd AI Assistant för att hitta Experience Platform-objekt som stöds, som målgrupper, datauppsättningar, destinationer, scheman och källor. | <ul><li>Visa en lista över målgrupper som innehåller&quot;Luma&quot; i namnet som skapades under det senaste kvartalet.</li><li>Vilka attribut finns i XDM-schemat&quot;Luma: Custom Actions&quot;?</li></ul> |
 | Effektanalys | Använd AI Assistant för att identifiera dataobjekt som har använts i vissa arbetsflöden, så att du kan bedöma effekten av eventuella ändringar. | <ul><li>Vilka målgrupper använder `homeAddress.city` i Luma: PersonProfiles-schemat?</li><li>Vilka datauppsättningar lagras profilattributet `consents.marketing.push.val` i?</li></ul> |
 
@@ -127,7 +127,7 @@ AI Assistant kan nu besvara frågor om specifika datamängdsmått som lagringsst
 
 Dessutom kan ni förmedla liknande avsikter via ett antal olika varianter till de fyra ovannämnda frågorna.
 
-+++Välj för att visa godkända varianter av frågor om datauppsättningens observerbarhet
++++Välj det här alternativet om du vill visa godkända variationer av frågor om datauppsättningens observerbarhet
 
 * Vilka är de fem viktigaste datauppsättningarna efter storlek?
 * Vilken datauppsättning har det största antalet rader?
@@ -154,7 +154,7 @@ Du kan också förfina dina frågor om datasynlighet med en kvalificerare för a
 * Datauppsättningar med de mest insamlade data de senaste (x) dagarna
 * Antal poster för en viss datauppsättning under de senaste (x) dagarna
 
-+++Välj för att visa godkända varianter av frågor om datauppsättningens observerbarhet
++++Välj det här alternativet om du vill visa godkända variationer av frågor om datauppsättningens observerbarhet
 
 * Hur många datauppsättningar har tagit emot batchar under de senaste (x) dagarna?
 * Vilka datauppsättningar har tagit emot batchar under de senaste (x) dagarna?
@@ -189,7 +189,7 @@ Du kan också förfina dina frågor om datasynlighet med en kvalificerare för a
 
 Nedan följer ett antal exempel på frågor som för närvarande inte stöds av AI Assistant.
 
-+++Välj för att visa exempel på frågor som inte stöds
++++Markera för att visa exempel på frågor som inte stöds
 
 ### Driftsinsikter
 
@@ -197,15 +197,13 @@ Nedan följer ett antal exempel på frågor som för närvarande inte stöds av 
 * Vilka segment finns den här profilen i {PROFILE_INFO/ATTRIBUTE_VALUE}?
 * Hur många profiler i datauppsättningen har ett e-postmeddelande?
 * Vilken datauppsättning utgör det maximala antalet profiler i den här sandlådan?
-* Vilken datauppsättning har det högsta antalet poster?
 * Hur många segment har tagits bort i {RELATIVE_DATE}?
-* Vilken av mina datauppsättningar har den största storleken?
 * Ge mig en profil i {AUDIENCE_NAME}.
 * Vad är det totala antalet profiler i min sandlåda?
 * Hur många identitetsnamnutrymmen är associerade med målgruppen {AUDIENCE_NAME}?
 * Visa mig en rapport över alla målgruppssegment som utvärderats idag
 * Hur många segment har överlappande profiler?
-* Hur många batchar som läses in i {DATASET_NAME}
+* Hur många batchar som läses in {DATASET_NAME}
 * Hur många aktiva erbjudanden har jag?
 * Hur många aktiva kampanjer har jag?
 * Varifrån kommer mina datakällor?

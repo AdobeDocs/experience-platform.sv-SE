@@ -2,7 +2,7 @@
 title: AI Assistant i Adobe Experience Platform - översikt
 description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-Time Customer Data Platform.
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: e90333d09585c8aa0ef176dcfc4717e86364fd54
+source-git-commit: ae4bc8b86e63bf950bc1d05a9c9e76ee4e541f9a
 workflow-type: tm+mt
 source-wordcount: '927'
 ht-degree: 9%
@@ -25,7 +25,7 @@ AI-assistenten i Adobe Experience Platform är en konversationsupplevelse som du
 >
 >Du måste godkänna ett [användaravtal](https://www.adobe.com/legal/licenses-terms/adobe-dx-gen-ai-user-guidelines.html) innan du kan använda AI-assistenten. Användaravtalet innehåller även det allmänna betaavtalet. Detta gör att du kan använda ytterligare AI Assistant-funktioner när de lanseras i en betapacitet.
 
-+++Välj för att visa användaravtalsgränssnittet
++++Välj om du vill visa användaravtalsgränssnittet
 
 ![Användaravtalets första sida.](./images/user-agreement-1.png)
 
@@ -61,7 +61,7 @@ Produktkännedom avser begrepp och ämnen som beskrivs i Experience League dokum
 
 I följande video finns mer information om produktkännedom för AI Assistant:
 
->[!VIDEO](https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
 
 ### Driftsinsikter {#operational-insights}
 
@@ -78,7 +78,7 @@ Du kan ställa frågor till AI Assistant om dina operativa insikter i följande 
 | Attribut | <ul><li>Sök attributnamn</li><li>Attribut - schemarelation</li><li>Attribut - datauppsättningsrelation</li><li>Attribut - målgruppsrelation</li><li>Attribut - målrelation</li></ul> | <ul><li>Klassen Attribute</li><li>Granskning</li><li>Föråldringsstatus</li><li>Etiketter</li><li>Värde lagrat i attribut</li></ul> |
 | Målgrupper | <ul><li>Antal målgrupper</li><li>Målgruppstyp (direktuppspelning eller batch)</li><li>Skapande-/ändringsdatum</li><li>Aktiveringsstatus</li><li>Profilantal</li><li>Duplicera målgrupper</li><li>Sök efter målgruppsdefinition</li><li>Målgrupp - målgruppsrelation</li><li>Målgrupp - attributrelation</li><li>Målgrupp - datauppsättningsrelation</li><li>Målgrupp - målrelation</li><li>Namnsökning</li><li>Sök namn och ID | <ul><li>Målgruppsöverlappningar</li><li>Målgruppsaktivering</li><li>Målgrupp - kampanjrelationer</li><li>Granskning</li><li>Skapa/ändra</li><li>Etiketter</li><li>Profilkvalificeringstrender</li></ul> |
 | Dataflöden | <ul><li>Antal dataflöden</li><li>Dataflödesstatus</li><li>Dataflöde - Datauppsättningsrelation</li><li>Dataflöd - källrelation</li></ul> | <ul><li>Skapande/ändring</li><li>Dataflödesbatchrelationer</li><li>Antal infogningsprofiler</li></ul> |
-| Datauppsättningar | <ul><li>Antal data</li><li>Aktivera profilstatus</li><li>Skapad/ändrad den</li><li>Datauppsättning - schemarelation</li><li>Datauppsättning - målgruppsrelation</li><li>Datauppsättning - attributrelation</li><li>Datauppsättning - dataflödesrelation</li><li>Namnsökning </li><li>Sök namn och ID</li></ul> | <ul><li>Granskning</li><li>Skapad av</li><li>Datauppsättning - batchrelation</li><li>Skapa/ändra datauppsättning</li><li>Datauppsättningsstorlek</li><li>Antal profiler</li><li>Antal rader</li><li>Värdesökning</li></ul> |
+| Datauppsättningar | <ul><li>Antal data</li><li>Aktivera profilstatus</li><li>Skapad/ändrad den</li><li>Datauppsättning - schemarelation</li><li>Datauppsättning - målgruppsrelation</li><li>Datauppsättning - attributrelation</li><li>Datauppsättning - dataflödesrelation</li><li>Datauppsättningsstorlek</li><li>Antal rader</li><li>Namnsökning </li><li>Sök namn och ID</li></ul> | <ul><li>Granskning</li><li>Skapad av</li><li>Datauppsättning - batchrelation</li><li>Skapa/ändra datauppsättning</li><li>Antal profiler</li><li>Värdesökning</li></ul> |
 | Mål | <ul><li>Konfigurerade destinationsantal</li><li>Mål - målgruppsrelation</li><li>Destinationsattributrelation</li></ul> | <ul><li>Kontoinställning</li><li>Autentiseringsinformation för konto</li><li>Unika profiler har aktiverats</li></ul> |
 | Resor | <ul><li>Antal</li><li>Namnsökning</li><li>Sök namn och ID</li><li>Resestatus</li><li>Utlöst status (målgrupp kontra händelse)</li><li>Skapande-/ändringsdatum</li><li>Återkommande frekvens</li></ul> | <ul><li>Attribut - reserelationer</li><li>Granskning</li><li>Skapande/ändring</li><li>Skapad av</li><li>Händelser</li><li>Resa - datauppsättning</li><li>Resa - schema</li><li>Erbjudanden</li><li>Profilkvalificeringstrender</li><li>Steg för händelser</li></ul> |
 | Scheman | <ul><li>Antal scheman</li><li>Skapad/ändrad den</li><li>Schema - attributrelation</li><li>Schema - datauppsättningsrelation</li><li>Schema - målgruppsrelation</li><li>Aktivera profilstatus</li><li>Namnsökning</li><li>Sök namn och ID</li></ul> | <ul><li>Granskning</li><li>Skapande/ändring</li><li>Skapad av</li><li>Fältgrupper</li><li>Identiteter</li><li>Identitetsnamnutrymmen</li><li>Etiketter</li><li>Antal profiler</li></ul> |
@@ -90,7 +90,7 @@ När det gäller frågor om driftsinsikter kanske svaren inte speglar det aktuel
 
 I följande video finns mer information om AI Assistant-driftsinsikter:
 
->[!VIDEO](https://video.tv.adobe.com/v/3444036?learn=on&enablevpops&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
 
 ### Funktionsomfång {#feature-scope}
 
