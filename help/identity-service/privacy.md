@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen
 title: Behandling av sekretessförfrågningar i identitetstjänsten
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: db781526fc7b9813b9982f45b8a5aa36175a1f34
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1006'
 ht-degree: 1%
 
 ---
@@ -44,7 +44,7 @@ Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Identi
 
 ### Använda API:et
 
-När du skapar jobbförfrågningar i API:t måste alla ID:n som anges i `userIDs` använda en specifik `namespace` och `type`. Ett giltigt [identitetsnamnutrymme](#namespaces) som känns igen av [!DNL Identity Service] måste anges för värdet `namespace`, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
+När du skapar jobbförfrågningar i API:t måste alla ID:n som anges i användar-ID:n använda ett specifikt namnutrymme och en specifik typ. Ett giltigt ID-namnutrymme som känns igen av identitetstjänsten måste anges för namnutrymmesvärdet. Använd `standard` för standardnamnutrymmen och använd `custom` för anpassade namnutrymmen.
 
 Dessutom måste matrisen `include` för nyttolasten för begäran innehålla produktvärden för de olika datalager som begäran görs till. När du gör förfrågningar till [!DNL Identity] måste arrayen innehålla värdet `Identity`.
 

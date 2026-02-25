@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i datasjön
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i datasjön.
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: db781526fc7b9813b9982f45b8a5aa36175a1f34
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1446'
 ht-degree: 0%
 
 ---
@@ -107,7 +107,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som skapas. För identitetsbeskrivare måste värdet vara &quot;xdm:descriptorIdentity&quot;. |
+| `@type` | Den typ av beskrivning som skapas. För identitetsbeskrivare måste värdet vara xdm:descriptorIdentity. |
 | `xdm:sourceSchema` | Unikt URI-ID för datauppsättningens XDM-schema. |
 | `xdm:sourceVersion` | Den version av XDM-schemat som har angetts i `xdm:sourceSchema`. |
 | `xdm:sourceProperty` | Sökvägen till det schemafält som beskrivningen tillämpas på. |
@@ -153,7 +153,9 @@ När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UI
 
 ### Använda API:et
 
-När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för datasjön måste använda `unregistered` för sitt `type`-värde och ett `namespace`-värde som matchar en av de [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datamängder.
+När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. Ett giltigt ID-namnutrymme som känns igen av identitetstjänsten måste anges för namnutrymmesvärdet. Använd `standard` för standardnamnutrymmen och använd `custom` för anpassade namnutrymmen.
+
+ID:n för datasjön måste använda `unregistered` för sitt `type`-värde och ett `namespace`-värde som matchar en av de [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datamängder.
 
 Dessutom måste matrisen `include` för nyttolasten för begäran innehålla produktvärden för de olika datalager som begäran görs till. När du gör förfrågningar till datasjön måste matrisen innehålla värdet `aepDataLake`.
 
@@ -181,12 +183,12 @@ curl -X POST \
           {
             "namespace": "email_label",
             "value": "ajones@acme.com",
-            "type": "unregistered"
+            "type": "custom"
           },
           {
             "namespace": "email_label",
             "value": "jdoe@example.com",
-            "type": "unregistered"
+            "type": "custom"
           }
         ]
       }

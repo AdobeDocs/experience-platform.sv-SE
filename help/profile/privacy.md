@@ -5,7 +5,7 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 6eaa384feb1b84e6081f03cb4de9687ad26f437d
+source-git-commit: db781526fc7b9813b9982f45b8a5aa36175a1f34
 workflow-type: tm+mt
 source-wordcount: '1746'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-T
 
 ### Använda API:et
 
-När du skapar jobbförfrågningar i API:t måste alla ID:n som anges i `userIDs` använda en specifik `namespace` och `type`. Ett giltigt [identitetsnamnutrymme](#namespaces) som känns igen av [!DNL Identity Service] måste anges för värdet `namespace`, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
+När du skapar jobbförfrågningar i API:t måste alla ID:n som anges i `userIDs` använda en specifik `namespace` och `type`. Ett giltigt [identitetsnamnområde](#namespaces) som identifieras av identitetstjänsten måste anges för namnutrymmesvärdet. Använd `standard` för standardnamnutrymmen och använd `custom` för anpassade namnutrymmen.
 
 >[!NOTE]
 >
@@ -67,7 +67,7 @@ Dessutom måste matrisen `include` för nyttolasten för begäran innehålla pro
 
 >[!NOTE]
 >
->Mer information om effekterna av att använda `ProfileService` och `identity` i arrayen `include` finns i avsnittet [profilförfrågningar och identitetsförfrågningar](#profile-v-identity) senare i det här dokumentet.
+>Mer information om effekterna av att använda [ och ](#profile-v-identity) i arrayen `ProfileService` finns i avsnittet `identity`profilförfrågningar och identitetsförfrågningar`include` senare i det här dokumentet.
 
 Följande begäran skapar ett nytt sekretessjobb för en enskild kunds data i [!DNL Profile]-butiken. Det finns två identitetsvärden för kunden i arrayen `userIDs`. Den ena använder standardnamnutrymmet för identitet `Email` och den andra använder ett anpassat namnutrymme för `Customer_ID`. Den innehåller också produktvärdet för [!DNL Profile] (`ProfileService`) i arrayen `include`:
 
