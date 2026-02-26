@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: API-handbok för Privacy Service
-description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
+title: Privacy Service API Guide Appendix
+description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service API.
 role: Developer
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: 644e85fe5c9b1a37f69c75755713e929736c2e89
+source-git-commit: 9b3fb0d545408369d96a3fc7c5c6e9c098af9933
 workflow-type: tm+mt
-source-wordcount: '496'
-ht-degree: 4%
+source-wordcount: '552'
+ht-degree: 3%
 
 ---
 
@@ -26,7 +26,7 @@ I följande tabell visas flera vanliga, fördefinierade identitetstyper som är 
 | --- | --- | --- |
 | E-post | `Email` | `6` |
 | Telefon | `Phone` | `7` |
-| ADOBE ADVERTISING CLOUD ID | `AdCloud` | `411` |
+| Adobe Advertising Cloud ID | `AdCloud` | `411` |
 | Adobe Audience Manager UUID | `CORE` | `0` |
 | ADOBE EXPERIENCE CLOUD ID | `ECID` | `4` |
 | ADOBE TARGET ID | `TNTID` | `9` |
@@ -42,7 +42,7 @@ I följande tabell visas flera vanliga, fördefinierade identitetstyper som är 
 
 Du kan hämta en lista med identitetsnamnutrymmen som används av din organisation genom att göra en GET-begäran till `idnamespace/identities`-slutpunkten i [!DNL Identity Service] API. Mer information finns i [Utvecklarhandboken för identitetstjänsten](../../identity-service/api/getting-started.md).
 
-## Namnutrymmeskvalificerare
+## Namnutrymmeskvalificerare {#namespace-qualifiers}
 
 När du anger ett `namespace`-värde i [!DNL Privacy Service] API måste en **namnutrymmeskvalificerare** inkluderas i en motsvarande `type`-parameter. Följande tabell visar de olika godkända namnutrymmeskvalificerarna.
 
@@ -58,28 +58,31 @@ När du anger ett `namespace`-värde i [!DNL Privacy Service] API måste en **na
 
 {style="table-layout:auto"}
 
-## Godkända produktvärden
+## Godkända produktvärden {#accepted-product-values}
 
-I följande tabell visas godkända värden för att ange en Adobe-produkt i attributet `include` för en jobbskapandebegäran.
+I det här avsnittet visas de produktidentifieringsvärden som accepteras i attributet `include` när Privacy Service-jobb skapas (API eller UI). Använd dessa värden i `include`-arrayen för din jobbförfrågan.
+
+I följande tabell visas vilka produkter som stöds, deras användargränssnitt och deras motsvarande kodvärden.
 
 >[!NOTE]
 >
->Värdena för produktlistan är skiftlägeskänsliga. Fallstudier rekommenderas men inte.
+>- Produktvärdena är inte skiftlägeskänsliga. Kamerafodral rekommenderas för enhetlighet.
+>- Endast produkterna ovan stöds i gränssnittet och API:t. Om en produkt inte har etablerats för din organisation kan den ignoreras eller orsaka ett valideringsfel - se ditt Adobe kontrakt eller dokumentationen för etablering för att bekräfta berättigandet.
 
-| Produkt | Värde som ska användas i attributet `include` |
-| --- | --- |
-| Adobe Advertising Cloud | `adCloud` |
-| Adobe Analytics | `analytics` |
-| Adobe Audience Manager | `audienceManager` |
-| Adobe Campaign | `campaign` |
-| Adobe Experience Platform (Data Lake) | `aepDataLake` |
-| Adobe Experience Platform (kundprofil i realtid) | `profileService` |
-| Adobe Pass-autentisering | `primetimeAuthentication` |
-| Adobe Target | `target` |
-| Kundattribut | `CRS` |
-| Kundresehantering | `cjm` |
-| Identitetstjänst | `identity` |
-| Marketo Engage | `marketo` |
-| Marketo Measure | `marketomeasure` |
+| Varumärkesnamn | Användargränssnittets visningsnamn | `include` värde |
+| ------------------------------------------------------ | -------------------------- | ---------------------------------------- |
+| Adobe Analytics | [!UICONTROL Analytics] | `analytics` |
+| Adobe Audience Manager | [!UICONTROL Audience Manager] | `audienceManager` |
+| Adobe Advertising | [!UICONTROL Ad Cloud] | `adCloud` |
+| Adobe Experience Platform (Profilbutik) | [!UICONTROL Profile] | `profileService` |
+| Adobe Experience Platform (Data Lake) | [!UICONTROL AEP Data Lake] | `aepDataLake` |
+| Adobe Campaign | [!UICONTROL Campaign] | `campaign` |
+| Adobe Target | [!UICONTROL Target] | `target` |
+| Kundattribut | [!UICONTROL Customer Attributes (CRS)] | `CRS` |
+| Adobe Journey Optimizer | [!UICONTROL Adobe Journey Optimizer] | `cjm` |
+| Marketo Engage | [!UICONTROL Marketo Engage / AJO B2B] | `marketo` |
+| Identitetstjänst | [!UICONTROL Identity] | `identity` |
+| Marketo Measure | [!UICONTROL Marketo Measure] | `marketomeasure` |
+| Adobe Commerce | [!UICONTROL Commerce (Personalization)] | `commerceMarketingData` |
 
 {style="table-layout:auto"}
