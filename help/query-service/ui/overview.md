@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 0553b8bc62d54c3ab98c60b16840ce730d9ed5c0
+source-git-commit: 1d2a8ef649c4454da7cf0949192b8b1eb3696e5a
 workflow-type: tm+mt
-source-wordcount: '2338'
+source-wordcount: '2409'
 ht-degree: 0%
 
 ---
@@ -187,6 +187,12 @@ Mer information om loggfilerna som genereras automatiskt av en frågetaghändels
 Fliken **[!UICONTROL Credentials]** visar både dina utgångsdatum och ej utgångsdatum. Mer information om hur du använder dessa autentiseringsuppgifter för att ansluta till externa klienter finns i [handboken för autentiseringsuppgifter](../clients/overview.md).
 
 ![Kontrollpanelen Frågor med fliken Autentiseringsuppgifter markerad.](../images/ui/overview/credentials.png)
+
+## Administrering {#admin}
+
+Använd fliken **[!UICONTROL Admin]** för att övervaka och hantera samtidiga frågeredigeringssessioner i hela organisationen. Den här funktionen är avsedd för administratörer och behövs inte för att skriva eller köra frågor.
+
+På fliken **[!UICONTROL Admin]** kan administratörer visa aktiva sessioner över sandlådor och avsluta inaktiva sessioner för att frigöra delad kapacitet. Den här åtgärden avbryter inte frågor som körs aktivt. Mer information och behörighetskrav finns i [Hantera frågetjänstens sessionshandbok](session-management.md).
 
 ## Nästa steg
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i Experience Platform användargränssnitt. Frågeredigeraren stöder utveckling av frågor för analys och datautforskning och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: bf9de8c5358f1ab90dd5d70b0607dcfba7d1e2f5
+source-git-commit: 1d2a8ef649c4454da7cf0949192b8b1eb3696e5a
 workflow-type: tm+mt
-source-wordcount: '3264'
+source-wordcount: '3341'
 ht-degree: 0%
 
 ---
@@ -312,7 +312,13 @@ I följande video visas hur du kör frågor i Adobe Experience Platform-gränssn
 >
 >Gränssnittet som visas i videon är inaktuellt, men logiken som används i arbetsflödet är densamma.
 
->[!VIDEO](https://video.tv.adobe.com/v/3470200?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
+
+## Övervaka och hantera samtidiga sessioner {#monitor-manage-sessions}
+
+Använd sessionshantering för att visa aktiva Query Editor-sessioner över sandlådor, identifiera inaktiva sessioner och avsluta dem för att frigöra delad kapacitet. Du kan inte avbryta sessioner som aktivt kör frågor. Den här funktionen är endast avsedd för administratörer och kräver **[!UICONTROL Manage Query Session]**-behörighet.
+
+Om du vill få åtkomst till sessionshantering väljer du fliken **[!UICONTROL Admin]** i arbetsytan för frågetjänsten. Stegvisa instruktioner för att visa sessionsinformation, tolka sessionsstatus och avsluta inaktiva sessioner finns i [Hantera frågetjänstsessioner](session-management.md).
 
 ## Nästa steg
 

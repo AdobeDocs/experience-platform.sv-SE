@@ -2,9 +2,9 @@
 title: Granska loggintegrering för frågetjänsten
 description: Granskningsloggar för frågetjänsten bevarar poster för olika användaråtgärder för att skapa en åtkomsthistorik för felsökningsproblem eller följa företagets policyer för datahantering och lagstadgade krav. Den här självstudiekursen ger en översikt över granskningsloggsfunktioner som är specifika för frågetjänsten.
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d3b73124795cfdeb5f8f1890105bf9c174711b36
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,11 @@ Granskningsloggsintegrationen i Adobe Experience Platform [!DNL Query Service] i
 
 Mer information om användargränssnittet för granskningsloggar finns i [översiktsdokumentet för granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md). Mer information om hur du anropar Experience Platform API:er finns i [API-handboken för granskningsloggar](../../landing/api-guide.md).
 
-## Förhandskrav
+>[!NOTE]
+>
+>Sessionsförflyttningsåtgärder loggas. Mer information om gränssnittsarbetsflöden finns i [Hantera frågetjänstsessioner](../ui/session-management.md).
+
+## Förutsättningar
 
 Du måste ha behörigheten [!DNL Data Governance] [!UICONTROL View User Activity Log] aktiverad för att kunna visa kontrollloggens kontrollpanel i Experience Platform UI. Behörigheten aktiveras via Adobe [Admin Console](https://adminconsole.adobe.com/). Kontakta organisationens administratör om du inte har administratörsbehörighet för att aktivera den här behörigheten. I åtkomstkontrollsdokumentationen finns [fullständiga instruktioner om hur du lägger till behörigheter via Admin Console](../../access-control/home.md).
 
@@ -31,7 +35,7 @@ Granskningsloggkategorierna som tillhandahålls av [!DNL Query Service] är föl
 
 ## Utför en [!DNL Query Service]-granskningslogg {#perform-an-audit-log}
 
-Om du vill utföra en granskning för [!DNL Query Service] aktiviteter väljer du **[!UICONTROL Audits]** i den vänstra navigeringen, följt av panelikonen (![En filterikon.](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
+Om du vill utföra en granskning för [!DNL Query Service] aktiviteter väljer du **[!UICONTROL Audits]** i den vänstra navigeringen, följt av funnel-ikonen (![En filterikon.](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
 
 ![Kontrollpanelen för Experience Platform UI-granskningsloggen med Granskningar i den vänstra navigeringen och filterkontrollerna markerade.](../images/audit-log/filter-controls.png)
 
@@ -64,7 +68,7 @@ Du kan använda informationspanelen för att hitta [!UICONTROL Asset ID] och [!U
 Värdet för [!UICONTROL Asset ID] ändras beroende på vilken kategori som används i granskningen.
 
 * När du använder kategorin [!UICONTROL Query] är [!UICONTROL Asset ID] sessions-ID **.**
-* När du använder kategorin [!UICONTROL Query template] är [!UICONTROL Asset ID] mall-ID:t **&#x200B;**&#x200B;och prefixet `[!UICONTROL templateID:]`.
+* När du använder kategorin [!UICONTROL Query template] är [!UICONTROL Asset ID] mall-ID:t **** och prefixet `[!UICONTROL templateID:]`.
 * När du använder kategorin [!UICONTROL Scheduled query] är [!UICONTROL Asset ID] **Schedule-ID** och prefixet med `[!UICONTROL scheduleID:]`.
 
 Värdet för [!UICONTROL Event status] ändras beroende på vilken kategori som används i granskningen.

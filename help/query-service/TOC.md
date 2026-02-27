@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: 8b33d9231aeebd454fd614a81b356a9e971b757c
+source-git-commit: d3b73124795cfdeb5f8f1890105bf9c174711b36
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '411'
 ht-degree: 14%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 14%
 - [Paket för frågetjänst](packaging.md)
 - [Skyddsutkast för frågetjänst](guardrails.md)
 - Kom igång {#get-started}
-   - [Förhandskrav](get-started/prerequisites.md)
+   - [Förutsättningar](get-started/prerequisites.md)
 - Data Distiller {#data-distiller}
    - [Översikt](data-distiller/overview.md)
    - [Licensanvändning](data-distiller/license-usage.md)
@@ -109,6 +109,7 @@ ht-degree: 14%
    - [Frågescheman](ui/query-schedules.md)
    - [Frågeloggar](ui/query-logs.md)
    - [Övervaka schemalagda frågor](ui/monitor-queries.md)
+   - [Hantera sessioner](ui/session-management.md)
    - [Handbok för autentiseringsuppgifter](ui/credentials.md)
    - [Migrera JWT till OAuth-autentiseringsuppgifter](ui/migrate-jwt-to-oauth.md)
    - [Generera utdata från frågeresultat](ui/create-datasets.md)
@@ -145,4 +146,4 @@ ht-degree: 14%
 - [Vanliga frågor och svar](troubleshooting-guide.md)
 - [IP-adress tillåtelselista](ip-address-allowlist.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

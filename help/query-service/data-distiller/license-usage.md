@@ -2,9 +2,9 @@
 title: Övervaka användning av batchfrågelicens
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om hur din organisation använder din Data Distiller-licens.
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: dce631923bd38f3237da3e1928e2203dc1a266ca
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '268'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Kontrollpanelen för licensanvändning innehåller detaljerade rapporter om organisationens användning av frågetjänstlicenser och användningsstatistik för varje köpt produkt. Om du vill veta mer om de tillgängliga mätvärdena som visas på kontrollpanelen går du till [handboken för kontrollpanelen för licensanvändning](../../dashboards/guides/license-usage.md#available-metrics).
 
-Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt, konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en viss sandlåda. Den information som visas här fångas in vid en daglig ögonblicksbild av din Experience Platform-instans.
+Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt, konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en viss sandlåda. Den information som visas här fångas in vid en daglig ögonblicksbild av din Experience Platform-instans. Administratörer kan övervaka och avsluta inaktiva frågetjänstsessioner för att frigöra kapacitet när inga ytterligare sessioner är tillgängliga och användarna blockeras på grund av inaktiva sessioner. Mer information finns i [Hantera frågetjänstsessioner](../ui/session-management.md).
 
 >[!NOTE]
 >
