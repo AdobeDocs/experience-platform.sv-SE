@@ -97,7 +97,7 @@ Om du vill slutföra varje steg i översikterna ovan kan du läsa igenom avsnitt
 
 Experience Data Model-resurser (XDM) hanteras på arbetsytan [!UICONTROL Schemas] i [!DNL Adobe Experience Platform]. Du kan visa och utforska kärnresurser som tillhandahålls av [!DNL Adobe] (till exempel fältgrupper) och skapa anpassade resurser och scheman för din organisation.
 
-Mer information om hur du skapar [scheman](/help/xdm/home.md) finns i självstudiekursen [Skapa schema.](/help/xdm/tutorials/create-schema-ui.md) och [Modellera dina kundupplevelsedata med XDM](https://experienceleague.adobe.com/docs/courses/using/experienceplatform-d-1-2021-1-xdm.html).
+Mer information om hur du skapar [scheman](/help/xdm/home.md) finns i självstudiekursen [Skapa schema.](/help/xdm/tutorials/create-schema-ui.md) och [Modellera dina kundupplevelsedata med XDM](https://experienceleague.adobe.com/docs/courses/using/experienceplatform-d-1-2021-1-xdm.html?lang=sv-SE).
 
 Det finns fyra schemadesigner som används för återanvändning. Varje schema kräver att specifika fält ställs in. Du måste aktivera schemat som ska inkluderas i kundprofilen i realtid. Mer information om hur du aktiverar schemat för användning i kundprofilen i realtid finns i [aktivera ett schema för kundprofil i realtid](/help/xdm/ui/resources/schemas.md#enable-a-schema-for-real-time-customer-profile).
 
