@@ -3,7 +3,7 @@ keywords: RTCDP;CDP;B2B edition;Real-Time Customer Data Platform;kunddataplattfo
 title: Real-Time CDP B2B edition - översikt
 description: Översikt över Real-Time Customer Data Platform B2B Edition-konto
 feature: Get Started, B2B
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
 source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
 workflow-type: tm+mt
