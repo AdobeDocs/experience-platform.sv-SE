@@ -2,9 +2,9 @@
 title: Anslutning för Demandbase-användare
 description: Använd den här destinationen för att aktivera era målgrupper och berika dem med tredjepartsdata från Demandbase för andra användningsfall i senare led i marknadsföring och försäljning.
 exl-id: 748f5518-7cc1-4d65-ab70-4a129d9e2066
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 1ceafcccf3f95e401fdce8e00b1755fafe004343
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1018'
 ht-degree: 1%
 
 ---
@@ -116,19 +116,19 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Obligatoriska mappningar {#mandatory-mappings}
 
-När du aktiverar målgrupper till målet [!DNL Demandbase People] måste du konfigurera följande obligatoriska fältmappning i mappningssteget:
+När du aktiverar målgrupper till målet [!DNL Demandbase People] måste du konfigurera följande obligatoriska fältmappningar i mappningssteget:
 
 | Source | Målfält | Beskrivning |
 |--------------|--------------|-------------|
 | `xdm: workEmail.address` | `Identity: email` | Personens e-postadress till arbetet |
+| `xdm: b2b.personKey.sourceKey` | `xdm: externalPersonId` | Unik identifierare för personen |
 
 ### Rekommenderade mappningar {#recommended-mappings}
 
-För optimal matchningsprecision kan du inkludera följande valfria mappningar i aktiveringsflödet, förutom den [obligatoriska mappningen](#mandatory-mappings) ovan.
+För optimal matchningsprecision kan du inkludera följande valfria mappningar i aktiveringsflödet, förutom de [obligatoriska mappningarna](#mandatory-mappings) ovan.
 
 | Source | Målfält | Beskrivning |
 |--------------|--------------|-------------|
-| `xdm: b2b.personKey.sourceKey` | `xdm: externalPersonId` | Unik identifierare för personen |
 | `xdm: person.name.lastName` | `xdm: lastName` | Personens efternamn |
 | `xdm: person.name.firstName` | `xdm: firstName` | Personens förnamn |
 
@@ -136,9 +136,9 @@ För optimal matchningsprecision kan du inkludera följande valfria mappningar i
 
 När du mappar fält till [!DNL Demandbase People] bör du tänka på följande matchande beteende:
 
-* **Primär matchning**: Om `externalPersonId` finns använder Demandbase den den som primär identifierare för personmatchning.
+* **Primär matchning**: Demandbase använder `externalPersonId` som primär identifierare för personmatchning.
 * **Reservmatchning**: Om `externalPersonId` inte är tillgängligt använder Demandbase fältet `email` för identifiering.
-* **Obligatoriskt jämfört med rekommenderat**: Endast `email` krävs av Demandbase, men Adobe rekommenderar att alla tillgängliga fält mappas från den rekommenderade mappningstabellen ovan för att förbättra matchningsnoggrannheten och kampanjprestanda.
+* **Rekommenderade fält**: Endast `email` och `externalPersonId` krävs, men Adobe rekommenderar att du mappar alla tillgängliga fält från den rekommenderade mappningstabellen ovan för att förbättra matchningskvaliteten och kampanjprestanda.
 
 ![Personmappningar för Demandbase](/help/destinations/assets/catalog/advertising/demandbase-people/demandbase-people-mapping.png)
 
