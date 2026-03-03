@@ -3,13 +3,13 @@ title: Förbättringar av målgruppssammansättning
 description: Läs om förbättringarna i Audience Composition med målgruppsberikning och snabbare aktivering.
 hide: true
 hidefromtoc: true
-source-git-commit: 42e639b403edbaf666d8bc21eb35b2b75530d6b0
+exl-id: 068a178e-ef50-45f1-bcce-c207ebcd5ef1
+source-git-commit: 2d16cc990ea15c1596aae92d8768cddc77a30efd
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
-
 
 # Förbättringar av målgruppssammansättning
 
@@ -26,15 +26,15 @@ Om du vill lägga till fler målgrupper i kompositionen markerar du det översta
 
 ![Målgruppsblocket är markerat, liksom knappen Bygg regel.](/help/segmentation/images/ui/composition-enhancements/select-build-rule.png)
 
-Linjalens arbetsyta visas. Nu kan du skapa filtervillkor för målgruppsberikning. Det här filtervillkoret **måste** innehålla ett attribut som finns i en array. Attributet som är en array beror på organisationens schemastruktur. När du har skapat filtervillkoren väljer du **[!UICONTROL Delivery]** på den högra panelen.
+Linjalens arbetsyta visas. Nu kan du skapa filtervillkor för målgruppsberikning. Det här filtervillkoret **måste** innehålla ett attribut som finns i en array. Attributet som är en array beror på organisationens schemastruktur. När du har skapat filtervillkoren väljer du **[!UICONTROL View enrichment]** på den högra panelen.
 
-![Regelbyggararbetsytan visar ett exempel på en målgrupp som kan ha berikande funktioner. Knappen Leverans är också markerad.](/help/segmentation/images/ui/composition-enhancements/view-delivery.png)
+![Regelbyggararbetsytan visar ett exempel på en målgrupp som kan ha berikande funktioner. Knappen Leverans är också markerad.](/help/segmentation/images/ui/composition-enhancements/view-enrichment.png)
 
-Välj den objektarray som du vill använda för berikning i listan till vänster. Om det bara finns en array i profilen markeras arrayen automatiskt. Välj **[!UICONTROL Save]** om du vill återgå till målgruppsdisposition.
+Välj objektarrayen samt de fält som du vill ska användas i anrikningen i listan till vänster. Om det bara finns en array i profilen markeras arrayen automatiskt. Välj **[!UICONTROL Save]** om du vill återgå till målgruppsdisposition.
 
 <!-- , as well as the fields you want to be used in the enrichment. -->
 
-![Schematrädet för anrikningsträdet visas.](/help/segmentation/images/ui/composition-enhancements/view-schema-tree.png)
+![Schematrädet för anrikningsträdet visas.](/help/segmentation/images/ui/composition-enhancements/enrichment-tree.png)
 
 Inom målgruppssammansättningen är ditt [!UICONTROL Audience]-block nu av typen [!UICONTROL Rule builder with enhancement]. Välj **[!UICONTROL Publish]** om du vill aktivera målgruppen med nästa dagliga batch.
 
