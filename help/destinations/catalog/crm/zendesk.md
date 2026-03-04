@@ -3,7 +3,7 @@ title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
 workflow-type: tm+mt
 source-wordcount: '1579'
 ht-degree: 1%
@@ -26,7 +26,7 @@ Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en s�
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Zendesk] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Zendesk] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -42,7 +42,7 @@ Observera objekten nedan innan du autentiserar till målet [!DNL Zendesk]:
 | --- | --- | --- |
 | `Bearer token` | Åtkomsttoken som du har skapat i ditt [!DNL Zendesk]-konto. <br> Följ dokumentationen för att [generera en [!DNL Zendesk] åtkomsttoken](https://developer.zendesk.com/documentation/sales-crm/first-call/#1-generate-an-access-token) om du inte har någon. | `a0b1c2d3e4...v20w21x22y23z` |
 
-## Guardrails {#guardrails}
+## Skyddsräcken {#guardrails}
 
 Sidan [Pris- och prisgränser](https://developer.zendesk.com/api-reference/sales-crm/rate-limits/#pricing) innehåller information om de [!DNL Zendesk] API-gränser som är kopplade till ditt konto. Du måste se till att dina data och din nyttolast är inom dessa begränsningar.
 
@@ -61,7 +61,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -185,7 +185,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Övervaka målgruppssammanfattningen och kontrollera att antalet profiler motsvarar antalet inom segmentet.
    ![Exempel på skärmbild i Experience Platform UI som visar segment.](../../assets/catalog/crm/zendesk/segment.png)
 
-1. Logga in på webbplatsen [!DNL Zendesk] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera om profilerna från målgruppen har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som har skapats med målgruppsstatus&#x200B;**[!UICONTROL Mapping ID]** och målgruppsstatus.
+1. Logga in på webbplatsen [!DNL Zendesk] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera om profilerna från målgruppen har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som har skapats med målgruppsstatus**[!UICONTROL Mapping ID]** och målgruppsstatus.
    ![Skärmbild från användargränssnittet i Zendesk som visar sidan Kontakter med de ytterligare fält som har skapats med målgruppens namn.](../../assets/catalog/crm/zendesk/contacts.png)
 
 1. Du kan även gå ned på en enskild **[!UICONTROL Person]**-sida och kontrollera avsnittet **[!UICONTROL Additional fields]** som visar målgruppsnamnet och målgruppsstatus.

@@ -4,7 +4,7 @@ title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler till er Experience Platform-målgrupp och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
 workflow-type: tm+mt
 source-wordcount: '1318'
 ht-degree: 0%
@@ -50,7 +50,7 @@ För att Experience Platform ska kunna komma åt [!DNL LINE]-resurser måste du 
 | --- | --- | --- |
 | `[!DNL Channel access token (long-lived)]` | Din [!DNL LINE Channel access token (long-lived)]. | `aaa2112XSMWqLXR7..........nyilFU=` |
 
-Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [[!DNL LINE] -konto via &#x200B;](https://developers.line.biz/en/docs/messaging-api/getting-started/)-utvecklarkonsolen finns i [!DNL LINE]dokumentationen[!DNL LINE].
+Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [[!DNL LINE] -konto via ](https://developers.line.biz/en/docs/messaging-api/getting-started/)-utvecklarkonsolen finns i [!DNL LINE]dokumentationen[!DNL LINE].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -68,7 +68,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -165,7 +165,7 @@ När dataexporten är klar från Experience Platform skapar [!DNL LINE]-målet e
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-1. Logga in på [!DNL LINE]Manager-konsolen[&#x200B; i &#x200B;](https://manager.line.biz/).
+1. Logga in på [!DNL LINE]Manager-konsolen[ i ](https://manager.line.biz/).
 
 1. Gå sedan till **[!UICONTROL Data Controls]** > **[!UICONTROL Audiences]** och kontrollera namnet som matchar den valda målgruppen i kolumnen **[!UICONTROL Audience name]**.
 
