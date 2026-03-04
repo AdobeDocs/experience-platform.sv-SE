@@ -3,12 +3,13 @@ title: Demandbase-anslutning
 description: Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Annonsera till relevanta personas och roller i dina målgruppskonton via DemandBases B2B Demand Side Platform (DSP). Målgruppskonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led av marknadsförings- och säljprocessen.
 last-substantial-update: 2024-09-30T00:00:00Z
 exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 5a03902df358d804cbafb401ffcef54eab240dfd
 workflow-type: tm+mt
 source-wordcount: '914'
 ht-degree: 11%
 
 ---
+
 
 # Demandbase-anslutning {#demandbase}
 
@@ -37,8 +38,6 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 {style="table-layout:auto"}
 
-
-
 Målgrupper som stöds av olika typer av målgruppsdata:
 
 | Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
@@ -49,7 +48,6 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
-
 
 ## Exportera typ och frekvens {#export-type-and-frequency}
 

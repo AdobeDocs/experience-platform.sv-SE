@@ -2,9 +2,9 @@
 title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 049112b29b593daa69a11302e828dc968d7abae3
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1308'
 ht-degree: 3%
 
 ---
@@ -114,6 +114,8 @@ Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet fö
 * [Advertising-destinationer - Google Ad Manager](./catalog/advertising/google-ad-manager.md)
 * [Advertising-destinationer - Google Ads](./catalog/advertising/google-ads-destination.md)
 * [Advertising-mål - Google Display &amp; Video 360](./catalog/advertising/google-dv360.md)
+* [Advertising Kontodestinationer - Bombora ABM Audience-anslutning](./catalog/advertising/bombora.md)
+* [Advertising-kontomål - Demandbase-anslutning](./catalog/advertising/demandbase.md)
 * [Lagringsmål i molnet](./catalog/cloud-storage/overview.md)
 * [E-postmarknadsföringsmål](./catalog/email-marketing/overview.md)
 * [Social destination](./catalog/social/overview.md)

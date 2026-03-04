@@ -1,19 +1,19 @@
 ---
-title: Bomboras anslutning
+title: Bombora ABM Audience connection
 description: Aktivera profiler för era Bombora-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på målgrupper.
 exl-id: a2f8e399-e192-4104-876a-fe60f8403143
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 049112b29b593daa69a11302e828dc968d7abae3
 workflow-type: tm+mt
-source-wordcount: '969'
-ht-degree: 1%
+source-wordcount: '1170'
+ht-degree: 0%
 
 ---
 
-# Bomboras anslutning {#bombora}
+# Bombora ABM Audience connection {#bombora}
 
 >[!AVAILABILITY]
 >
->Funktionen för att aktivera kontomålgrupper för Bomboras mål är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
+>Funktionen för att aktivera kontomålgrupper för Bombora ABM-målgrupper är tillgänglig för företag som köper [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b)- och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p)-utgåvorna av Real-Time Customer Data Platform.
 
 Aktivera profiler för era Bombora-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på [kontomålgrupper](/help/segmentation/types/account-audiences.md).
 
@@ -52,8 +52,6 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 {style="table-layout:auto"}
 
-
-
 Målgrupper som stöds av olika typer av målgruppsdata:
 
 | Typ av målgruppsdata | Stöds | Beskrivning | Användningsfall |
@@ -91,8 +89,9 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Om du vill exportera kontogrupper till Bombora behöver du följande information.
 
-1. Ett Bombora-konto.
+1. Ett Bombora-konto. Om du inte har något kan du begära ett Bombora-konto med hjälp av [aktiveringsformuläret för Bombora-målgrupper](https://customers.bombora.com/artcdp/audience-activation-request).
 2. Ett Bombora **[!UICONTROL client ID]** och **[!UICONTROL client secret]**.
+3. Data som skickas till Bombora måste komma från datauppsättningar som är **profilaktiverade**, så datauppsättningen inkluderas i profilen. Se till att dina datauppsättningar är [aktiverade för profilen](/help/catalog/datasets/enable-for-profile.md) innan du aktiverar målgrupper till det här målet.
 
 ## Anslut till målet {#connect}
 
@@ -135,8 +134,6 @@ Läs [Aktivera kontomålgrupper](/help/destinations/ui/activate-account-audience
 
 Bomboras mål kräver att du konfigurerar följande mappningar för att kunna aktivera data.
 
-
-
 | Source | Målfält | Beskrivning |
 |---------|----------|---------|
 | Valfritt värde | `Identity: primaryId` | Denna kartläggning är obligatorisk för Experience Platform att upprätta en anslutning till Bombora. Det här värdet exporteras inte till Bombora, men krävs för målkonfigurationen. Du kan välja vilket attribut som helst för källfältet. |
@@ -144,6 +141,17 @@ Bomboras mål kräver att du konfigurerar följande mappningar för att kunna ak
 
 ![Lägg till obligatoriska mappningar](../..//assets/catalog/advertising/bombora/mappings.png)
 
+## Funktionen Målgruppssynkronisering {#sync-behavior}
+
+Efter den första målgruppsaktiveringen synkas efterföljande uppdateringar av målgruppen i Experience Platform stegvis till Bombora. Följande beteenden gäller:
+
+* **Konto har lagts till för målgruppen**: När ett konto läggs till för målgruppen i Experience Platform läggs det automatiskt till för motsvarande målgrupp i Bombora.
+* **Kontot har tagits bort eller kvalificerar inte längre**: När ett konto inte längre kvalificerar sig för målgruppen eller tas bort från målgruppen i Experience Platform tas det bort från motsvarande målgrupp i Bombora.
+* **Konto eller profil borttagen**: När ett konto eller en profil tas bort från Experience Platform och det kontot inte längre är kvalificerat för målgruppen tas den bort från motsvarande målgrupp i Bombora.
+
+### Borttagning och frånkoppling av målgrupper {#deletion-disconnect}
+
+Om du tar bort en målgrupp i Experience Platform eller en målgrupp från ett aktiveringsdataflöde för Bombora tas målgruppen bort från ditt Bombora-konto.
 
 ## Ytterligare kommentarer och viktiga bildtexter {#additional-notes}
 

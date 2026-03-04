@@ -3,9 +3,9 @@ title: Aktivera målgrupper på konton för destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 044306709747c32c4ce265d03d3908bbae169edc
+source-git-commit: 049112b29b593daa69a11302e828dc968d7abae3
 workflow-type: tm+mt
-source-wordcount: '778'
+source-wordcount: '779'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ I den här artikeln förklaras det arbetsflöde som krävs för att exportera [k
 
 ## Mål som stöds {#supported-destinations}
 
-Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matching direktuppspelningsmål för &#x200B;](/help/destinations/catalog/social/linkedin-b2b.md) .
+Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Bombora](/help/destinations/catalog/advertising/bombora.md), [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matched Audiences ](/help/destinations/catalog/social/linkedin-b2b.md) -direktuppspelningsmål.
 
 ![Destinationer som stöder målgrupper.](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 
@@ -30,7 +30,7 @@ I videon nedan finns en översikt över hur du skapar och aktiverar kontomålgru
 
 >[!VIDEO](https://video.tv.adobe.com/v/338252/?learn=on)
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 * Du måste först importera [kontoprofiler](/help/rtcdp/accounts/account-profile-overview.md) och skapa [kontomålgrupper](/help/segmentation/types/account-audiences.md) innan du kan aktivera dem till underordnade mål.
 * Om du vill aktivera kontomålgrupper för destinationer måste du ha anslutit till en destination. Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda. Mer information finns i självstudiekursen [Ansluta till mål](./connect-destination.md).
