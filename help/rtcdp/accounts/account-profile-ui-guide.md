@@ -2,10 +2,10 @@
 keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningsprinciper;kundprofil i realtid
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du med Adobe Real-Time Customer Data Platform B2B edition samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 feature: Profiles, B2B
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
+source-git-commit: cf975ec6747438a034fcedb51a4b25b0acd46d2f
 workflow-type: tm+mt
 source-wordcount: '1608'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Fliken **[!UICONTROL Attributes]** visar all postinformation som hör till konto
 
 Förutom att du kan visa data i en lista kan du använda sökfältet för att söka efter specifika attribut eller visa postdata som JSON.
 
-![Fliken Attribut](images/b2b-account-attributes.png)
+![Fliken Attribut](images/account-profile-attributes.png)
 
 ## Fliken Personer {#people-tab}
 

@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 5db5d0763b1d1456ba184bd24e7ef4c3047e25d1
+source-git-commit: cf975ec6747438a034fcedb51a4b25b0acd46d2f
 workflow-type: tm+mt
-source-wordcount: '1924'
+source-wordcount: '2123'
 ht-degree: 0%
 
 ---
@@ -40,9 +40,9 @@ Mer information finns i [profilkontrollpanelsguiden](../../dashboards/guides/pro
 
 ## Fliken [!UICONTROL Browse]
 
-På fliken **[!UICONTROL Browse]** kan du visa dina profiler antingen i vyn **kort** eller i vyn **diagram** genom att välja växlingsknappen.
+På fliken **[!UICONTROL Browse]** kan du visa dina profiler antingen i vyn **card** eller i vyn **table** genom att välja växlingsknappen.
 
-![Växlingsknappen för kort- och diagramvyn är markerad.](../images/user-guide/change-browse-view.png)
+![Växlingsknappen för kort- och tabellvyn är markerad.](../images/user-guide/change-browse-view.png)
 
 Dessutom kan du bläddra bland dina profiler med hjälp av en sammanfogningsprincip eller leta upp specifika profiler med hjälp av ett identitetsnamnutrymme och värde.
 
@@ -111,11 +111,11 @@ Dessutom kan du visa annan information om profiler, till exempel dess [attribut]
 
 ### Fliken Detaljer {#profile-detail}
 
-Fliken **[!UICONTROL Details]** innehåller mer detaljerad information om den valda profilen och är indelad i fyra avsnitt: Kundprofilsinsikter, AI-insikter, anpassningsbara widgetar och automatiskt klassificerade widgetar.
+Fliken **[!UICONTROL Details]** innehåller mer detaljerad information om den valda profilen. Fliken Detaljer är indelad i olika avsnitt, beroende på om du arbetar i kort- eller diagramvyn. I kortvyn visas kundprofilsinsikter, AI-insikter-widgetar, anpassningsbara widgetar och automatiskt klassificerade widgetar medan avsnitten för profilattribut och upplevelsehändelser visas för diagramvyn.
 
 ![Sidan med profilinformation visas.](../images/user-guide/profile-details.png)
 
-Dessutom kan du växla om de AI-genererade insikterna ska visas, visa information för nav jämfört med kant samt visa informationen i diagramvyn.
+Dessutom kan du växla om de AI-genererade insikterna ska visas, visa information för nav jämfört med kant samt välja mellan kort- och diagramvyer.
 
 ![De växlar som anges ovan (AI-genererade insikter, hubbdata eller Edge-data samt kort- eller diagramvyn) markeras.](../images/user-guide/profile-toggles.png)
 
@@ -158,6 +158,24 @@ Dessa widgetar kombinerar både händelsedata (med Experience-händelsewidgeten)
 >Om det finns flera källfältsgrupper kommer widgetarna endast att använda **ett** av de tillgängliga alternativen.
 
 ![Avsnittet med automatiskt klassificerade widgetar visas.](../images/user-guide/auto-classified-widgets.png)
+
+#### Profilattribut {#profile-attributes}
+
+Avsnittet **[!UICONTROL Profile attributes]** visar en hierarkisk diagramrepresentation av profildata. I den här vyn representerar den centrala noden själva profilen, sekundära noder representerar fältgrupperna och de återstående noderna representerar egenskaper inom varje fältgrupp.
+
+I diagramvyn kan du dra och släppa noderna för att ordna om noden, komprimera och utöka noderna för att visa mer information om attributen, söka och filtrera efter attribut samt zooma in och ut för att bättre visa attributinformationen.
+
+![Diagramvyn för profilen visas med de olika noder som utgör profilen.](/help/profile/images/user-guide/profile-attribute-graph.png)
+
+#### Experience events {#experience-events}
+
+Avsnittet **[!UICONTROL Experience events]** visar en tidslinje med upplevelsehändelser som innehåller profilen.
+
+![Avsnittet Experience Events visas med en tidslinje med upplevelsehändelser som innehåller profilen.](/help/profile/images/user-guide/experience-event-graph.png)
+
+Om du väljer **[!UICONTROL View event]** kan du se de händelseattribut som är länkade till den valda händelsen. Dessa uppgifter omfattar sökväg, attribut, visningsnamn och värde.
+
+![Leveransen av händelseattribut visas med mer information om händelsen.](/help/profile/images/user-guide/event-attributes-graph.png)
 
 ### Fliken Attribut {#attributes}
 
