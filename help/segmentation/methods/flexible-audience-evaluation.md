@@ -20,7 +20,7 @@ ht-degree: 0%
 
 Med flexibel målgruppsutvärdering kan ni köra ett batchsegmenteringsjobb på begäran. Med flexibel målgruppsutvärdering kan ni köra ad hoc-kampanjer, just-in-time-kommunikation eller andra tidskänsliga aktiviteter.
 
-## Guardrails {#guardrails}
+## Skyddsräcken {#guardrails}
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_browse_flexibleaudienceevaluation"
@@ -326,7 +326,7 @@ När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätt
 
 I följande videofilm visas hur du får tillgång till och använder en flexibel målgruppsutvärdering i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/3453644?captions=swe&)
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## Vanliga frågor och svar {#faq}
 
