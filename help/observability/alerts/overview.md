@@ -97,7 +97,7 @@ Dessutom tillåter fliken [!UICONTROL Alerts] i användargränssnittet enskilda 
 
 Du kan använda en webkrok-proxy på [Adobe App Builder](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app) för att ta emot [Adobe I/O Events](https://developer.adobe.com/events/docs/guides/) från Experience Platform till din [!DNL Slack]. Proxyn hanterar Adobe handskakning för verifiering och förvandlar händelsenyttolaster till [!DNL Slack] meddelanden så att du kan ta emot kundtillvända aviseringar direkt till arbetsytan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3480183?learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3480199?captions=swe&learn=on)
 
 Mer information om hur du tar emot Experience Platform-meddelanden i [!DNL Slack] genom att integrera med en Adobe App Builder-webbkrosproxy finns i [övervaka Experience Platform-händelser i [!DNL Slack]](https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/monitoring/monitor-events-in-slack).
 
