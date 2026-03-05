@@ -4,9 +4,9 @@ title: Varningar - översikt
 description: Lär dig om varningar i Adobe Experience Platform, även hur strukturen för varningsregler definieras.
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: f33bcf982216d25e514992d5ebf978b5535abd77
+source-git-commit: bdddcdb19fe248af8f83d42bf885f07b9749a399
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '865'
 ht-degree: 2%
 
 ---
@@ -92,6 +92,14 @@ Med behörigheten Visa aviseringar kan du visa mottagna aviseringar genom att v�
 > Välj en avisering om du vill navigera till en relaterad kontrollpanel för mer detaljerad information om varför aviseringen har utlösts.
 
 Dessutom tillåter fliken [!UICONTROL Alerts] i användargränssnittet enskilda användare att prenumerera på specifika aviseringstyper och administratörer kan aktivera eller inaktivera aviseringsregler helt och hållet. Mer information om hur du hanterar aviseringar finns i [gränssnittshandboken](./ui.md).
+
+### Integrering med Slack {#slack-integration}
+
+Du kan använda en webkrok-proxy på [Adobe App Builder](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app) för att ta emot [Adobe I/O Events](https://developer.adobe.com/events/docs/guides/) från Experience Platform till din [!DNL Slack]. Proxyn hanterar Adobe handskakning för verifiering och förvandlar händelsenyttolaster till [!DNL Slack] meddelanden så att du kan ta emot kundtillvända aviseringar direkt till arbetsytan.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3480183?learn=on)
+
+Mer information om hur du tar emot Experience Platform-meddelanden i [!DNL Slack] genom att integrera med en Adobe App Builder-webbkrosproxy finns i [övervaka Experience Platform-händelser i [!DNL Slack]](https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/monitoring/monitor-events-in-slack).
 
 ## Nästa steg
 
