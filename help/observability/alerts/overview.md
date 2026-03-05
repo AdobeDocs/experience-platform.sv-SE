@@ -99,7 +99,7 @@ Du kan använda en webkrok-proxy på [Adobe App Builder](https://developer.adobe
 
 >[!VIDEO](https://video.tv.adobe.com/v/3480183?learn=on)
 
-Mer information om hur du tar emot Experience Platform-meddelanden i [!DNL Slack] genom att integrera med en Adobe App Builder-webbkrosproxy finns i [övervaka Experience Platform-händelser i [!DNL Slack]](https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/monitoring/monitor-events-in-slack).
+Mer information om hur du tar emot Experience Platform-meddelanden i [!DNL Slack] genom att integrera med en Adobe App Builder-webbkrosproxy finns i [övervaka Experience Platform-händelser i [!DNL Slack]](https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/monitoring/monitor-events-in-slack).
 
 ## Nästa steg
 
