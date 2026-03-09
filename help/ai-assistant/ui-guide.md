@@ -2,14 +2,28 @@
 title: AI Assistant i Adobe Experience Platform
 description: Lär dig hur du använder AI Assistant för att navigera bland och förstå koncept i Experience Platform och Real-Time Customer Data Platform, samt användningsinformation om dina objekt.
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 4fd40d66ecc2fe7604e157fcd230883c6c48d761
+source-git-commit: 8b0632efe10e280149d68facea44ea1f62267e3e
 workflow-type: tm+mt
-source-wordcount: '1693'
+source-wordcount: '1946'
 ht-degree: 0%
 
 ---
 
-# Användargränssnittshandbok för AI Assistant
+# AI Assistant UI Guide (äldre)
+
+>[!IMPORTANT]
+>
+>Det här dokumentet gäller för AI Assistant (äldre). Mer information om AI Assistant (Next-Gen) finns i [gränssnittsguiden för AI-assistenten](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/ai-assistant/ai-assistant-ui) i [AI-dokumentationen i Experience Cloud](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
+
+I följande tabell finns en jämförelse mellan AI Assistant (äldre) och AI Assistant (nästa generation):
+
+| Funktionsområde | AI Assistant (äldre) | AI Assistant (nästa generation) |
+| --- | --- | --- |
+| Användarupplevelse | AI Assistant (äldre) är endast tillgängligt på en panel på den högra listen. | AI Assistant (Next-Gen) finns både på den högra panelen och i en engagerande helskärmsupplevelse. |
+| Funktionens omfattning | Du kan använda AI Assistant (äldre) för både produktkunskap och driftsinsikter. | Du kan använda AI Assistant (Next-Gen) för produktkunskap, driftsinsikter samt avancerade agetiska färdigheter och körning av uppgifter i flera steg. |
+| Plattformsarkitektur | AI Assistant (äldre) är inte byggt på Agent Orchestrator-stacken. | AI Assistant (Next-Gen) drivs av [Adobe Experience Platform Agent Orchestrator](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator) vilket möjliggör utbyggbarhet och avancerad samordning mellan funktioner. |
+| Programtäckning | AI Assistant (äldre) är en programspecifik implementering. | Du kan använda AI Assistant (Next-Gen) för en enhetlig AI Assistant-upplevelse i alla Adobe Experience Cloud-program. |
+| Åtkomst och behörighetsmodell | Åtkomstmodell som omfattas av programmet och som anpassas efter enskilda produktgränser. | Alla användare har tillgång till AI Assistant (Next-Gen) och tillhörande Experience Platform-agenter. **Obs!**: <ul><li>**Adobe Experience Manager**: Din administratör måste ge dig behörighet att komma åt AI Assistant (Next-Gen) via [Adobe Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).</li><li>**Customer Journey Analytics**: Din administratör måste ge dig behörighet att komma åt AI Assistant via [Customer Journey Analytics Access Control](https://experienceleague.adobe.com/en/docs/analytics-platform/using/technotes/access-control?lang=en). På så sätt kan du ställa frågor om produktkunskap och datainsikter. |
 
 Läs den här guiden och lär dig hur du kan använda AI Assistant i Adobe Experience Platform-gränssnittet.
 
@@ -65,7 +79,7 @@ I det här exemplet returnerar AI Assistant ytterligare information om befintlig
 
 Du kan verifiera svar som AI Assistant skickat till dig genom att granska citat som finns i varje produktinformationssvar.
 
-+++Markera för att visa ett exempel på hur du visar källor
++++Välj det här alternativet om du vill visa ett exempel på hur du visar källor
 
 Om du vill visa citat och validera AI Assistants svar väljer du **[!UICONTROL Show sources]**.
 
@@ -81,7 +95,7 @@ AI Assistant uppdaterar gränssnittet och ger dig länkar till dokumentation som
 
 Du måste vara i en aktiv sandlåda för att AI Assistant ska kunna svara tillräckligt på en fråga om dina operativa insikter.
 
-+++Välj för att visa ett exempel på en fråga om driftsinsikter
++++Välj det här alternativet om du vill visa ett exempel på en fråga om driftsinsikter
 
 I exemplet nedan tillfrågas följande om AI Assistant: **Visa dataflöden som har skapats med Amazon S3-källan**.
 
@@ -107,7 +121,7 @@ Du kan även lägga till filter och ändringar i dina frågor och du kan instrue
 
 Du kan verifiera varje svar som rör frågor om driftsinsikter med hjälp av en SQL-fråga som AI Assistant tillhandahåller.
 
-+++Välj för att visa exempel på verifiering av svar på operativa insikter
++++Välj det här alternativet om du vill visa exempel på verifiering av svar på operativa insikter
 
 När du har fått ett svar på en fråga om driftsinsikter väljer du **[!UICONTROL Show sources]** och sedan **[!UICONTROL View source query]**.
 
@@ -123,7 +137,7 @@ När AI Assistant får en fråga om driftsinsikter kan du använda den för att 
 
 Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Rekommendationer som fylls i automatiskt finns tillgängliga för följande domäner: målgrupper, scheman, datamängder, resor, källor och destinationer.
 
-+++Markera för att visa ett exempel på automatisk komplettering
++++Välj det här alternativet om du vill visa ett exempel på automatisk komplettering
 
 Du kan använda Fyll i automatiskt genom att ta med plustecknet (**`+`**) i frågan. Du kan också välja plustecknet (**`+`**) längst ned i textrutan. Ett fönster visas med en lista över rekommenderade dataobjekt från sandlådan.
 
@@ -147,7 +161,7 @@ I exemplet nedan ombeds AI Assistant först att ange det totala antalet dataflö
 
 Du kan ändra ämnen med AI Assistant genom att återställa och starta en ny konversation.
 
-+++Välj för att visa ett exempel på hur du återställer konversationen
++++Välj det här alternativet om du vill visa ett exempel på hur du återställer konversationen
 
 Återställ genom att markera ellipserna (**`...`**) i AI Assistant-gränssnittet och sedan välja **[!UICONTROL Start new conversation]**. Detta informerar AI Assistant om att du avser att ändra ämnen och kan vara särskilt användbart vid felsökning av frågor som antingen är felaktiga eller refererar till felaktig information.
 
@@ -175,7 +189,7 @@ Välj sedan en kategori och välj en fråga i listan. Du kan använda den här f
 
 Du kan använda funktionen för automatisk komplettering av frågor i AI Assistant för att välja en fråga från en lista med rekommendationer från AI Assistant.
 
-+++Markera för att visa ett exempel på automatisk ifyllning av fråga
++++Markera för att visa exempel på automatisk ifyllning av fråga
 
 Om du vill visa panelen med förslag på frågor skriver du minst sju (7) tecken i indatarutan. Välj sedan den fråga som är relevant för dig på menyn som visas.
 
@@ -197,7 +211,7 @@ Platshållare markeras med blått. Markera platshållaren för att börja uppdat
 
 Du kan använda avsnittet med relaterade förslag i varje AI Assistant-svar för att fortsätta konversationen.
 
-+++Markera för att visa exempel på relaterade förslag
++++Välj det här alternativet om du vill visa exempel på relaterade förslag
 
 Relaterade förslag returneras med alla svar från AI Assistant. Om du vill fortsätta konversationen väljer du något av förslagen i avsnittet med relaterade förslag.
 

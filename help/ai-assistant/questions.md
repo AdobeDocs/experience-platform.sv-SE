@@ -1,32 +1,32 @@
 ---
-title: Frågeguide för AI Assistant
-description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant.
+title: Frågeguide för AI Assistant (äldre)
+description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant (äldre).
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: ae4bc8b86e63bf950bc1d05a9c9e76ee4e541f9a
+source-git-commit: 077c42f2190316a00168bbeca685c08677c2b13a
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '2086'
 ht-degree: 1%
 
 ---
 
-# Frågeguide för AI Assistant
+# Frågeguide för AI Assistant (äldre)
 
-I det här dokumentet finns en uppsättning exempelfrågor som du kan använda när du frågar AI Assistant.
+I det här dokumentet kan du läsa en uppsättning exempelfrågor som du kan använda när du frågar i AI Assistant (äldre).
 
-Du kan också använda det här dokumentet för att lära dig tips om [hur du formulerar dina frågor](#phrasing-your-questions) för att få optimala svar från AI Assistant.
+Du kan också använda det här dokumentet för att lära dig tips om [hur du formulerar dina frågor](#phrasing-your-questions) för att få optimala svar från AI Assistant (äldre).
 
 ## Målsättningsbaserade frågor {#objectives-questions}
 
-Följande exempelfrågor grupperas efter mål som du kan uppnå med AI Assistant:
+Följande exempelfrågor grupperas efter mål som du kan uppnå med AI Assistant (äldre):
 
 | Syfte | Beskrivning | Exempel |
 | --- | --- | --- |
-| Utbildningsbegrepp och fortsatta arbetsflöden | <ul><li>Som nybörjare kan du använda AI Assistant för att lära dig Real-Time CDP- och Adobe Journey Optimizer-koncept och själv ta till vara produkter och funktioner som du inte känner till.</li><li>Som erfaren användare kan du använda AI Assistant för att lösa ett edge-fall som kan blockera ditt arbetsflöde. | <ul><li>Hur skapar jag en kontrollpanel i Journey Analytics?</li><li>Berätta några användningsfall för Real-Time CDP.</li></ul> |
-| Felsökning | Använd AI Assistant för att lära dig hur du felsöker grundläggande fel som kan uppstå i arbetsflödet. | <ul><li>Vad betyder det här felet {ERROR_MESSAGE}?</li><li>Varför kan jag inte ta bort målgruppen Luma: Email Audience?</li></ul> |
-| Sandlådehygien | Använd AI Assistant för att identifiera eventuella dubbletter eller oanvända objekt så att du effektivt kan underhålla sandlådan. | <ul><li>Kan ni visa mig målgrupper som är lika?</li><li>Finns det några scheman som inte har någon associerad datauppsättning?</li></ul> |
-| Värdeanalys | Använd AI Assistant för att identifiera dina mest använda dataobjekt och utvärdera eventuella prestandaindikatorer eller hitta de värdefullaste dataobjekten. | <ul><li>Hur många profiler finns i segmentdefinitionen&quot;Luma: Email Audience&quot;?</li><li>När aktiverades målgrupper på Experience Cloud målgrupper?</li></ul> |
-| Sök | Använd AI Assistant för att hitta Experience Platform-objekt som stöds, som målgrupper, datauppsättningar, destinationer, scheman och källor. | <ul><li>Visa en lista över målgrupper som innehåller&quot;Luma&quot; i namnet som skapades under det senaste kvartalet.</li><li>Vilka attribut finns i XDM-schemat&quot;Luma: Custom Actions&quot;?</li></ul> |
-| Effektanalys | Använd AI Assistant för att identifiera dataobjekt som har använts i vissa arbetsflöden, så att du kan bedöma effekten av eventuella ändringar. | <ul><li>Vilka målgrupper använder `homeAddress.city` i Luma: PersonProfiles-schemat?</li><li>Vilka datauppsättningar lagras profilattributet `consents.marketing.push.val` i?</li></ul> |
+| Utbildningsbegrepp och fortsatta arbetsflöden | <ul><li>Som nybörjare kan du använda AI Assistant (äldre) för att lära dig Real-Time CDP- och Adobe Journey Optimizer-koncept och själv ta till vara produkter och funktioner som du inte känner till.</li><li>Som erfaren användare kan du använda AI Assistant (äldre) för att lösa ett edge-fall som kan blockera arbetsflödet. | <ul><li>Hur skapar jag en kontrollpanel i Journey Analytics?</li><li>Berätta några användningsfall för Real-Time CDP.</li></ul> |
+| Felsökning | Använd AI Assistant (äldre) för att lära dig hur du felsöker grundläggande fel som kan uppstå i arbetsflödet. | <ul><li>Vad betyder det här felet {ERROR_MESSAGE}?</li><li>Varför kan jag inte ta bort målgruppen Luma: Email Audience?</li></ul> |
+| Sandlådehygien | Använd AI Assistant (äldre) för att identifiera eventuella dubbletter eller oanvända objekt så att du effektivt kan underhålla sandlådan. | <ul><li>Kan ni visa mig målgrupper som är lika?</li><li>Finns det några scheman som inte har någon associerad datauppsättning?</li></ul> |
+| Värdeanalys | Använd AI Assistant (äldre) för att identifiera dina mest använda dataobjekt och utvärdera eventuella prestandaindikatorer eller hitta de värdefullaste dataobjekten. | <ul><li>Hur många profiler finns i segmentdefinitionen&quot;Luma: Email Audience&quot;?</li><li>När aktiverades målgrupper på Experience Cloud målgrupper?</li></ul> |
+| Sök | Använd AI Assistant (äldre) för att hitta Experience Platform-objekt som stöds, som målgrupper, datauppsättningar, mål, scheman och källor. | <ul><li>Visa en lista över målgrupper som innehåller&quot;Luma&quot; i namnet som skapades under det senaste kvartalet.</li><li>Vilka attribut finns i XDM-schemat&quot;Luma: Custom Actions&quot;?</li></ul> |
+| Effektanalys | Använd AI Assistant (äldre) för att identifiera dataobjekt som har använts i vissa arbetsflöden, så att du kan bedöma effekten av eventuella ändringar. | <ul><li>Vilka målgrupper använder `homeAddress.city` i Luma: PersonProfiles-schemat?</li><li>Vilka datauppsättningar lagras profilattributet `consents.marketing.push.val` i?</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -81,26 +81,26 @@ Följande frågor grupperas efter dataobjekt och klassificeras antingen som [ope
    * När ska jag använda en datatyp jämfört med en fältgrupp?
    * Vad är skillnaden mellan en identitet och en primär eller extern nyckel?
 * **Felsökning - produktkunskap (Real-Time CDP och Journey Optimizer)**
-   * Vad kan AI Assistant hjälpa till med?
+   * Vad kan AI Assistant (äldre) hjälpa till med?
    * Kan jag ta bort ett profilaktiverat schema efter att data har matats in?
    * Varför kan jag inte ta bort en publik?
    * Hur lång tid tar det för målgrupperna att utvärderas och resultaten blir tillgängliga för målinriktning?
 
 ## Tar hand om dina frågor {#phrasing-your-questions}
 
-Du måste ge AI Assistant tydliga och kontextuella uppgifter för att få ett så korrekt svar som möjligt. Se följande lista med tips om hur du ställer en tydlig fråga i sitt sammanhang:
+Du måste ge AI Assistant (äldre) en tydlig och sammanhangsberoende formulering för att få ett så korrekt svar som möjligt. Se följande lista med tips om hur du ställer en tydlig fråga i sitt sammanhang:
 
 * Ange din uppgift och/eller fråga kortfattat.
 * Undvik tvetydigt språk och alltför komplex syntax för att underlätta förståelsen.
-* Ange relevant sammanhang för dina uppgifter och/eller frågor eftersom kontexten kan hjälpa AI Assistant att generera mer relevanta svar.
+* Ange relevant sammanhang för din uppgift och/eller fråga eftersom kontext kan hjälpa AI Assistant (äldre) att generera mer relevanta svar.
 
-Läs tabellerna nedan för mer information om de effektivaste strategierna när du ställer frågor till AI Assistant.
+Läs tabellerna nedan för mer information om de effektivaste strategierna när du ställer frågor till AI Assistant (äldre).
 
-I följande tabeller beskrivs de effektivaste strategierna du kan följa när du använder AI Assistant:
+I följande tabeller beskrivs de effektivaste strategierna du kan följa när du använder AI Assistant (äldre):
 
 | Gör | Exempel |
 | --- | --- |
-| <ul><li>Var tydlig med objektet eller informationen som du vill hämta eller analysera.</li><li>Försök att ange dataobjektens namn inom citattecken. Om du bara känner till en del av objektnamnet kan du även ange det i frågan.</li><li>Använd [objekt som fylls i automatiskt](./ui-guide.md#use-auto-complete) för att hjälpa AI Assistant att förstå innehållet i din fråga bättre.</li></ul> | <ul><li>Vilka datauppsättningar använder schemat&quot;Luma - Loyalty&quot;?</li><li>Visa de aktiverade segmenten som har &quot;Luma&quot; i sina namn. Rangordna dem efter antal profiler.</li></ul> |
+| <ul><li>Var tydlig med objektet eller informationen som du vill hämta eller analysera.</li><li>Försök att ange dataobjektens namn inom citattecken. Om du bara känner till en del av objektnamnet kan du även ange det i frågan.</li><li>Använd [objekt som fylls i automatiskt](./ui-guide.md#use-auto-complete) för att hjälpa AI Assistant (äldre) att förstå frågans sammanhang bättre.</li></ul> | <ul><li>Vilka datauppsättningar använder schemat&quot;Luma - Loyalty&quot;?</li><li>Visa de aktiverade segmenten som har &quot;Luma&quot; i sina namn. Rangordna dem efter antal profiler.</li></ul> |
 | <ul><li>Undvik tvetydighet och använd tydligt språk</li><li>Använd exakt terminologi för att få bättre tydlighet i frågan.</li><li>När du ställer frågor om Adobe Experience Platform kan du försöka använda terminologi som är specifik för Experience Platform för att förbättra relevansen i svaren.</li></ul> | <ul><li>Hur många profiler har jag i&quot;ACME Audience&quot;.</li><li>Visa de fem främsta XDM-attributen som används i aktiverade målgrupper.</li></ul> |
 | <ul><li>Ange sammanhang eller ange ett villkor för att filtrera resultaten.</li><li>Använd ett filtervillkor i frågorna för att begränsa mängden data i svaret.</li></ul> | <ul><li>Visa målgrupper som inte har aktiverats och skapats för mer än sex månader sedan och som aldrig har ändrats.</li><li>Visa att målgrupper är aktiverade för&quot;ACME Destination&quot; och har fler än 10 000 profiler.</li></ul> |
 
@@ -118,7 +118,7 @@ I följande tabeller beskrivs de effektivaste strategierna du kan följa när du
 
 ## Datauppsättningssynlighet {#dataset-observability}
 
-AI Assistant kan nu besvara frågor om specifika datamängdsmått som lagringsstorlek och radantal.
+AI Assistant (äldre) kan nu besvara frågor om specifika datamängdsmått som lagringsstorlek och radantal.
 
 * Vilka är mina största datauppsättningar efter storlek?
 * Vilken är min största datauppsättning av rader?
@@ -187,7 +187,7 @@ Du kan också förfina dina frågor om datasynlighet med en kvalificerare för a
 
 ## Exempel på frågor som inte stöds {#unsupported-questions}
 
-Nedan följer ett antal exempel på frågor som för närvarande inte stöds av AI Assistant.
+Nedan följer ett antal exempel på frågor som för närvarande inte stöds av AI Assistant (äldre).
 
 +++Markera för att visa exempel på frågor som inte stöds
 
@@ -230,4 +230,4 @@ Nedan följer ett antal exempel på frågor som för närvarande inte stöds av 
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet får du nu en förståelse för hur du optimerar dina frågor för AI Assistant. Mer information om hur du använder funktionen under arbetsflöden finns i [gränssnittsguiden för AI-assistenten](ui-guide.md).
+Genom att läsa det här dokumentet får du nu en förståelse för hur du kan optimera dina frågor för AI Assistant (äldre). Mer information om hur du använder funktionen under arbetsflöden finns i [AI Assistant (äldre) gränssnittshandboken ](ui-guide.md).
