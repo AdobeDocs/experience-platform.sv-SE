@@ -230,4 +230,4 @@ Nedan följer ett antal exempel på frågor som för närvarande inte stöds av 
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet får du nu en förståelse för hur du kan optimera dina frågor för AI Assistant (äldre). Mer information om hur du använder funktionen under arbetsflöden finns i [AI Assistant (äldre) gränssnittshandboken ](ui-guide.md).
+Genom att läsa det här dokumentet får du nu en förståelse för hur du kan optimera dina frågor för AI Assistant (äldre). Mer information om hur du använder funktionen under arbetsflöden finns i [AI Assistant (äldre) gränssnittshandboken &#x200B;](ui-guide.md).
