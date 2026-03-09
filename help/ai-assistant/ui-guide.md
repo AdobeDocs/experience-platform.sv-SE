@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Det här dokumentet gäller för AI Assistant (äldre). Mer information om AI Assistant (Next-Gen) finns i [gränssnittsguiden för AI-assistenten](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/ai-assistant/ai-assistant-ui) i [AI-dokumentationen i Experience Cloud](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
+>Det här dokumentet gäller för AI Assistant (äldre). Mer information om AI Assistant (Next-Gen) finns i [gränssnittsguiden för AI-assistenten](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/ai-assistant/ai-assistant-ui) i [AI-dokumentationen i Experience Cloud](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
 
 I följande tabell finns en jämförelse mellan AI Assistant (äldre) och AI Assistant (nästa generation):
 
@@ -23,7 +23,7 @@ I följande tabell finns en jämförelse mellan AI Assistant (äldre) och AI Ass
 | Funktionens omfattning | Du kan använda AI Assistant (äldre) för både produktkunskap och driftsinsikter. | Du kan använda AI Assistant (Next-Gen) för produktkunskap, driftsinsikter samt avancerade agetiska färdigheter och körning av uppgifter i flera steg. |
 | Plattformsarkitektur | AI Assistant (äldre) är inte byggt på Agent Orchestrator-stacken. | AI Assistant (Next-Gen) drivs av [Adobe Experience Platform Agent Orchestrator](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator) vilket möjliggör utbyggbarhet och avancerad samordning mellan funktioner. |
 | Programtäckning | AI Assistant (äldre) är en programspecifik implementering. | Du kan använda AI Assistant (Next-Gen) för en enhetlig AI Assistant-upplevelse i alla Adobe Experience Cloud-program. |
-| Åtkomst och behörighetsmodell | Åtkomstmodell som omfattas av programmet och som anpassas efter enskilda produktgränser. | Alla användare har tillgång till AI Assistant (Next-Gen) och tillhörande Experience Platform-agenter. **Obs!**: <ul><li>**Adobe Experience Manager**: Din administratör måste ge dig behörighet att komma åt AI Assistant (Next-Gen) via [Adobe Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).</li><li>**Customer Journey Analytics**: Din administratör måste ge dig behörighet att komma åt AI Assistant via [Customer Journey Analytics Access Control](https://experienceleague.adobe.com/en/docs/analytics-platform/using/technotes/access-control?lang=en). På så sätt kan du ställa frågor om produktkunskap och datainsikter. |
+| Åtkomst och behörighetsmodell | Åtkomstmodell som omfattas av programmet och som anpassas efter enskilda produktgränser. | Alla användare har tillgång till AI Assistant (Next-Gen) och tillhörande Experience Platform-agenter. **Obs!**: <ul><li>**Adobe Experience Manager**: Din administratör måste ge dig behörighet att komma åt AI Assistant (Next-Gen) via [Adobe Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).</li><li>**Customer Journey Analytics**: Din administratör måste ge dig behörighet att komma åt AI Assistant via [Customer Journey Analytics Access Control](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/technotes/access-control?lang=en). På så sätt kan du ställa frågor om produktkunskap och datainsikter. |
 
 Läs den här guiden och lär dig hur du kan använda AI Assistant i Adobe Experience Platform-gränssnittet.
 
