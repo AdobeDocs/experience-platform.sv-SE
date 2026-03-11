@@ -3,9 +3,9 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut, anslutning
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 7b22c4b058b0068b96c26d0c4c7743d489451620
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
@@ -149,7 +149,7 @@ För identifierare som ska mappas till en kanal, d.v.s. en enhet, mappar du till
 
 >[!NOTE]
 >
->Använd det användarvänliga namnet som visas på kontrollpanelen [!DNL Airship] när du väljer målfältet för din attributmappning.
+>Använd det `attribute_id` som motsvarar attributet i kontrollpanelen [!DNL Airship] när du väljer målfältet för din attributmappning.
 
 **Mappa identitet**
 
