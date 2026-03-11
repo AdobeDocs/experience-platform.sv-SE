@@ -3,9 +3,9 @@ keywords: analysmål;analysmål
 title: Översikt över Analytics-mål
 description: Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 exl-id: d7a2351b-c2ce-4776-a2b7-f8bb5e73b45b
-source-git-commit: 767ebd1ef693f9484e11facc7e8b73d91f632956
+source-git-commit: 8b29e4c06300244a72addc7ae4807425a405b56f
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,6 @@ För närvarande stöder Adobe Experience Platform de analysmål som anges nedan
 * [Nielsen BSDK-tillägg](nielsen-bsdk.md)
 * [Nielsen IMA Handler Extension](nielsen-ima.md)
 * [Nielsen VideoJS Player Handler Extension](nielsen-videojs.md)
-* [Analysera.ly Analytics-tillägg](parsely.md)
 * [Quantum Metric-tillägg](quantum-metric.md)
 * [SessionCam-tillägg](sessioncam.md)
 * [TMMData-tillägg](tmmdata.md)
