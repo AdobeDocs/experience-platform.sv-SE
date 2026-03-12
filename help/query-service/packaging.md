@@ -2,7 +2,7 @@
 title: Paketering av frågetjänst
 description: I följande dokument beskrivs paketeringen av funktioner och produkter som är tillgängliga för Query Service och skillnaderna mellan ad hoc- och batchfrågor beskrivs.
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 33b3534a2c3f9b5da54fa4f3897d1e107f7c1976
+source-git-commit: 2117b7ad0f507b5a35595d702cb8a70e2e09f39d
 workflow-type: tm+mt
 source-wordcount: '990'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de 
 | Dataexportavdrag | Ditt totala exportberättigande beror på era plattformsbaserade programlicenser. Exempel: Real-Time CDP, AJO, CJA osv. | Ja - Ett ytterligare exporttillstånd ges för att tillåta export av härledda datauppsättningar som skapats med Data Distiller.<br>Din årliga dataexportförmån mäts i terabyte (TB) och beror på hur många datortimmar du har köpt. Mer information finns i produktbeskrivningen. |
 | Frågekörningsgränssnitt | <ul><li>Användargränssnitt för frågetjänst</li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL]-klientgränssnitt</li></ul> | <ul><li>Användargränssnitt för frågetjänst </li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL]-klientgränssnitt</li><li>REST API:er</li></ul> |
 | Frågeresultat returnerade via | Klientgränssnitt | Härledd datauppsättning lagrad i datasjön |
-| Resultatgräns | <ul><li>Användargränssnitt för frågetjänst - Antalet utdatarader kan [konfigureras med en användargränssnittsinställning &#x200B;](./ui/user-guide.md#result-count) på mellan 50 och 500 rader.</li><li>Tredjepartsklienter - 50 000</li><li>[!DNL PostgresSQL] klient - 50 000</li></ul> | CTAS- och ITAS-frågor genererar endast slutförda meddelanden eftersom frågans utdata lagras i härledda datauppsättningar. |
+| Resultatgräns | <ul><li>Användargränssnitt för frågetjänst - Antalet utdatarader kan [konfigureras med en användargränssnittsinställning ](./ui/user-guide.md#result-count) på mellan 50 och 1 000 rader.</li><li>Tredjepartsklienter - 50 000</li><li>[!DNL PostgresSQL] klient - 50 000</li></ul> | CTAS- och ITAS-frågor genererar endast slutförda meddelanden eftersom frågans utdata lagras i härledda datauppsättningar. |
 | Läs datauppsättningens kapacitet | Ja | Ja |
 | Skriva datauppsättningskapacitet | Nej | Ja |
 | Planeringskapacitet | Nej | Ja |

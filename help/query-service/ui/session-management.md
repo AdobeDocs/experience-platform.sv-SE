@@ -3,22 +3,24 @@ title: Hantera frågetjänstsessioner i Adobe Experience Platform
 description: Läs om hur administratörer kan visa, övervaka och avsluta aktiva Query Service-sessioner för att frigöra ledig kapacitet och upprätthålla tillförlitliga arbetsflöden för Data Distiller.
 keywords: Experience Platform;Query Service;sessioner;sessionshantering;Data Distiller;admin
 solution: Experience Platform
-source-git-commit: 1d2a8ef649c4454da7cf0949192b8b1eb3696e5a
+badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Informative"
+exl-id: f986177a-9a46-4fc6-927e-98b6b7dc8cfe
+source-git-commit: 2117b7ad0f507b5a35595d702cb8a70e2e09f39d
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '730'
 ht-degree: 0%
 
 ---
 
 # Hantera sessioner med frågetjänsten
 
+>[!AVAILABILITY]
+>
+>Sessionshantering för Query Service är för närvarande begränsad och är endast tillgänglig för organisationer med **Data Distiller** -berättiganden. Kontakta ditt Adobe-kontoteam om du vill begära åtkomst.
+
 Använd den här vägledningen när du vill hantera aktiva Query Service-sessioner från Adobe Experience Platform användargränssnitt. Sessionshantering hjälper administratörer att övervaka samtidiga frågeredigeringssessioner över sandlådor och frigöra kapacitet när användare lämnar sessioner öppna.
 
 ## Behörigheter krävs för sessionshantering {#permissions}
-
->[!AVAILABILITY]
->
->Sessionshantering är endast tillgänglig för organisationer med Data Distiller-berättiganden.
 
 >[!IMPORTANT]
 >
@@ -93,4 +95,3 @@ Använd följande resurser för att utöka din användning av Query Service och 
 
 * [Lär dig hur användare skapar och kör frågor i användarhandboken för Frågeredigeraren](user-guide.md)
 * [Övervaka schemalagda arbetsbelastningar med hjälp av dokumentation för övervakning av schemalagda frågor](monitor-queries.md)
-
