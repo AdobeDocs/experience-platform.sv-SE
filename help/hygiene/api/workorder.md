@@ -3,9 +3,9 @@ title: Spela in ta bort arbetsorder
 description: Lär dig hur du använder slutpunkten /workorder i API:t Data Hygiene för att hantera postborttagningsarbetsorder i Adobe Experience Platform. Den här guiden täcker kvoter, bearbetningstidslinjer och API-användning.
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 1d923e6c4a344959176abb30a8757095c711a601
+source-git-commit: 5ca3e4feae3096e41689610ac3afac7e93047149
 workflow-type: tm+mt
-source-wordcount: '2541'
+source-wordcount: '3316'
 ht-degree: 0%
 
 ---
@@ -32,27 +32,20 @@ Gränserna för att skicka in raderade arbetsorder gäller för dag- och månads
 
 ### Möjlighet att skicka in per produkt varje månad {#quota-limits}
 
-I följande tabell visas inskicksgränser för identifierare per produkt och berättigandenivå. För varje produkt är den månatliga övre gränsen det lägsta av två värden: ett fast identifierartak eller ett procentbaserat tröskelvärde som är knutet till den licensierade datavolymen.
+I följande tabell visas inskicksgränser för identifierare per produkt och berättigandenivå. För varje produkt är den månatliga övre gränsen det lägsta av två värden: ett fast identifierartak eller ett procentbaserat tröskelvärde som är knutet till den licensierade datavolymen. I praktiken har de flesta organisationer lägre månadsgränser baserat på den faktiska adresserbara målgruppen eller Adobe Customer Journey Analytics-radrättigheterna.
 
 | Produkt | Tillståndsbeskrivning | Månatligt tak (den som är mindre) |
 |----------|-------------------------|---------------------------------|
 | Real-Time CDP eller Adobe Journey Optimizer | Utan tillägg till sköld för skydd av privatlivet och säkerheten eller hälso- och sjukvårdsskölden | 2 000 000 identifierare eller 5 % av den adresserbara publiken |
 | Real-Time CDP eller Adobe Journey Optimizer | Med tillägget Privacy and Security Shield eller Healthcare Shield | 15 000 000 identifierare eller 10 % av den adresserbara publiken |
-| Customer Journey Analytics | Utan tillägg till sköld för skydd av privatlivet och säkerheten eller hälso- och sjukvårdsskölden | 2 000 000 identifierare eller 100 identifierare per miljon CJA-rader |
-| Customer Journey Analytics | Med tillägget Privacy and Security Shield eller Healthcare Shield | 15 000 000 identifierare eller 200 identifierare per miljon CJA-rader |
+| Customer Journey Analytics | Utan tillägg till sköld för skydd av privatlivet och säkerheten eller hälso- och sjukvårdsskölden | 2 000 000 identifierare eller 100 identifierare per miljon Customer Journey Analytics-rader |
+| Customer Journey Analytics | Med tillägget Privacy and Security Shield eller Healthcare Shield | 15 000 000 identifierare eller 200 identifierare per miljon Customer Journey Analytics-rader |
 
 >[!NOTE]
 >
->De flesta organisationer har lägre månadsgränser baserat på den faktiska adresserbara målgruppen eller CJA-radrättigheterna.
-
->[!NOTE]
->
->Kvoterna återställs den första dagen i varje kalendermånad. Oanvänd kvot för överföring av **inte**.
-
->[!NOTE]
->
->Kvotanvändningen baseras på din organisations licensierade månadsberättigande för **skickade identifierare**. Kvoterna styrs inte av systemgarantisystem, men kan övervakas och granskas.\
->Posten för borttagning av arbetsorderkapacitet är en **delad tjänst**. Det högsta antalet licenser som gäller för Real-Time CDP, Adobe Journey Optimizer, Customer Journey Analytics och eventuella tillägg till Shield.
+>- Kvoterna återställs den första dagen i varje kalendermånad. Oanvänd kvot för överföring av **inte**.
+>- Kvotanvändningen baseras på din organisations licensierade månadsberättigande för **skickade identifierare**. Kvoterna styrs inte av systemgarantisystem, men kan övervakas och granskas.
+>- Posten för borttagning av arbetsorderkapacitet är en **delad tjänst**. Det högsta antalet licenser som gäller för Real-Time CDP, Adobe Journey Optimizer, Customer Journey Analytics och eventuella tillägg till Shield.
 
 ### Bearbetar tidslinjer för identifieraröverföringar {#sla-processing-timelines}
 
@@ -131,7 +124,8 @@ Ett godkänt svar returnerar en numrerad lista över arbetsorder för radering a
       "targetServices": [
         "profile",
         "datalake",
-        "identity"
+        "identity",
+        "ajo"
       ],
       "status": "received",
       "createdBy": "a.stark@acme.com <a.stark@acme.com> BD8C3D631F41@acme.com",
@@ -168,10 +162,10 @@ I följande tabell beskrivs egenskaperna i svaret.
 | `createdAt` | Tidsstämpeln när arbetsordern skapades. |
 | `updatedAt` | Tidsstämpeln när arbetsordern senast uppdaterades. |
 | `operationCount` | Antalet åtgärder som ingår i arbetsordern. |
-| `targetServices` | Lista över måltjänster för arbetsordern. |
+| `targetServices` | Den uppsättning måltjänster som bearbetade borttagningen. Standardvärdet beror på organisationens rättigheter. För organisationer med Real-Time CDP eller Adobe Journey Optimizer är standardinställningen den fullständiga uppsättningen med tjänster som stöds (`["datalake", "identity", "profile", "ajo"]`). För organisationer som bara använder Customer Journey Analytics (utan ett realtidskundprofilberättigande) är det enda giltiga värdet [&quot;datalake&quot;]. |
 | `status` | Aktuell status för arbetsordern. Möjliga värden är: `received`,`validated`, `submitted`, `ingested`, `completed` och `failed`. |
 | `createdBy` | E-postadress och identifierare för den användare som skapade arbetsordern. |
-| `datasetId` | Den unika identifieraren för den datauppsättning som är associerad med arbetsordern. Om begäran gäller alla datauppsättningar ställs fältet in på ALL. |
+| `datasetId` | Datauppsättningen/datauppsättningarna som anges av arbetsordningen: ett enda datauppsättnings-ID, en kommaavgränsad lista med datauppsättnings-ID (multi-dataset) eller literalen `ALL`. När begäran använde läget för enbart profil är det här värdet `ALL`. |
 | `datasetName` | Namnet på datauppsättningen som är associerad med arbetsordern. |
 | `displayName` | En etikett som kan läsas av människor för arbetsordern. |
 | `description` | En beskrivning av arbetsorderns syfte. |
@@ -185,9 +179,9 @@ I följande tabell beskrivs egenskaperna i svaret.
 
 ## Skapa en post för borttagning av arbetsorder {#create}
 
-Om du vill ta bort poster som är associerade med en eller flera identiteter från en enskild datamängd eller alla datamängder, gör du en POST-begäran till `/workorder`-slutpunkten.
+Om du vill ta bort poster som är associerade med en eller flera identiteter från en enskild datauppsättning, flera datauppsättningar eller alla datauppsättningar, gör du en POST-begäran till `/workorder`-slutpunkten.
 
-Arbetsorder bearbetas asynkront och visas i arbetsorderlistan när de har skickats.
+Arbetsorder bearbetas asynkront och visas i arbetsorderlistan när de har skickats. Alternativ för flera datauppsättningar och enbart profiler (riktade tjänster) är i allmänhet tillgängliga för alla kunder från och med Experience Platform-utgåvan från mars 2026.
 
 >[!TIP]
 >
@@ -199,14 +193,11 @@ Arbetsorder bearbetas asynkront och visas i arbetsorderlistan när de har skicka
 POST /workorder
 ```
 
->[!NOTE]
->
->Du kan bara ta bort poster från datauppsättningar vars associerade XDM-schema definierar en primär identitet eller identitetskarta.
-
 >[!IMPORTANT]
 >
 >Posten för borttagning av arbetsorder fungerar exklusivt på fältet **primär identitet**. Följande begränsningar gäller:
 >
+>- **Datamängdsschemat måste definiera en primär identitet eller identitetskarta.** Du kan bara ta bort poster från datauppsättningar vars associerade XDM-schema definierar en primär identitet eller identitetskarta.
 >- **Sekundära identiteter genomsöks inte.** Om en datauppsättning innehåller flera identitetsfält används bara den primära identiteten för matchning. Det går inte att ange mål för eller ta bort poster baserat på icke-primära identiteter.
 >- **Poster utan en ifylld primär identitet hoppas över.** Om en post inte har några primära ID-metadata ifyllda, kan den inte tas bort.
 >- **Data som har importerats innan identitetskonfigurationen är inte giltiga.** Om det primära identitetsfältet lades till i ett schema efter dataöverföring, kan tidigare importerade poster inte tas bort via arbetsorder för postborttagning.
@@ -215,9 +206,23 @@ POST /workorder
 >
 >Om du försöker skapa en postborttagningsarbetsorder för en datauppsättning som redan har en aktiv förfallotid, returnerar begäran HTTP 400 (Ogiltig begäran). En aktiv förfallotid är en schemalagd borttagning som ännu inte har slutförts.
 
+### Identity-nyttolastformat (`namespacesIdentities` eller `identities`)
+
+Begärandetexten måste innehålla **exakt en** av följande.
+
+| Format | Egenskap | Form | När ska du använda |
+|--------|----------|-------|-------------|
+| **Rekommenderas** | `namespacesIdentities` | Array med objekt med `namespace` (till exempel `{ "code": "email" }`) och `ids` (en array med identitetssträngar). | Används för alla nyttolaster, oavsett om de är manuellt konstruerade eller kodgenererade. Detta är särskilt effektivt om du vill minska nyttolaststorleken när många identiteter delar samma namnutrymme. |
+| **Även accepterad** | `identities` | Array med objekt med `namespace` (till exempel `{ "code": "email" }`) och en enda `id` (sträng). | Godkänt för bakåtkompatibilitet. Detta är det format som skapas av konverteringsskripten [csv-to-data-Hyper](#convert-id-lists-to-json-for-record-delete-requests). Tjänsten normaliserar detta format internt, så att det resulterande beteendet är identiskt. |
+
+Om du skickar **båda egenskaperna**, **ingen egenskap** eller anger **en tom array** för den egenskap som du inkluderar, returnerar API **HTTP 400 (felaktig begäran)** med något av följande meddelanden:
+
+- **Båda egenskaperna har angetts:** `"Identities and NamespacesIdentities are not allowed at the same time"`
+- **Ingen angiven eller tom lista:** `"Identities are Empty for Delete Identity request."`
+
 **Begäran**
 
-Följande begäran tar bort alla poster som är associerade med angivna e-postadresser från en viss datauppsättning.
+Följande begäran tar bort alla poster som är associerade med angivna e-postadresser från en viss datauppsättning. Det använder det rekommenderade `namespacesIdentities`-formatet.
 
 ```shell
 curl -X POST \
@@ -237,7 +242,7 @@ curl -X POST \
             "namespace": {
               "code": "email"
             },
-            "IDs": [
+            "ids": [
               "alice.smith@acmecorp.com",
               "bob.jones@acmecorp.com",
               "charlie.brown@acmecorp.com"
@@ -254,8 +259,10 @@ I följande tabell beskrivs egenskaperna för att skapa en postborttagningsarbet
 | `displayName` | En etikett som kan läsas av människor för den här posten tar bort arbetsorder. |
 | `description` | En beskrivning av postens arbetsorder för borttagning. |
 | `action` | Den begärda åtgärden för postborttagning av arbetsorder. Använd `delete_identity` om du vill ta bort poster som är associerade med en viss identitet. |
-| `datasetId` | Den unika identifieraren för datauppsättningen. Använd datauppsättnings-ID:t för en specifik datauppsättning, eller `ALL` om du vill ange alla datauppsättningar som mål. Datauppsättningar måste ha en primär identitet eller identitetskarta. Om det finns en identitetskarta finns den som ett fält på den översta nivån med namnet `identityMap`.<br>Observera att en datauppsättningsrad kan ha många identiteter i sin identitetskarta, men bara en kan markeras som primär. `"primary": true` måste inkluderas för att `id` ska matcha en primär identitet. |
-| `namespacesIdentities` | En array med objekt som var och en innehåller:<br><ul><li> `namespace`: Ett objekt med en `code`-egenskap som anger identitetsnamnutrymmet (t.ex. &quot;email&quot;).</li><li> `IDs`: En array med identitetsvärden som ska tas bort för det här namnområdet.</li></ul>Identitetsnamnutrymmen ger kontext till identitetsdata. Du kan använda standardnamnutrymmen från Experience Platform eller skapa egna. Mer information finns i dokumentationen för [identitetsnamnrymden](../../identity-service/features/namespaces.md) och [API-specifikationen för identitetstjänsten](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
+| `datasetId` | Den unika identifieraren för datauppsättningen/datauppsättningarna. Värdet måste vara exakt ett av: literalen `ALL`, ett enskilt datauppsättnings-ID eller en kommaavgränsad lista med två eller flera datauppsättnings-ID:n (t.ex. `"id1,id2,id3"`). Du kan inte kombinera `ALL` med specifika ID:n. Enstaka datauppsättningsbegäranden fungerar som tidigare, multidatauppsättningsbegäranden tar bort identiteter från varje datamängd som listas, och `ALL` avser varje datamängd. Datauppsättningar måste ha en primär identitet eller identitetskarta. Om det finns en identitetskarta finns den som ett fält på den översta nivån med namnet `identityMap`.<br>**Obs!** En datauppsättningsrad kan ha många identiteter i sin identitetskarta, men bara en kan markeras som primär. `"primary": true` måste inkluderas för att `id` ska matcha en primär identitet.<br>När `targetServices` används för borttagning av endast profil måste `datasetId` vara `ALL`. |
+| `targetServices` | Valfritt. Anger vilka tjänster som ska bearbeta borttagningen. Standardvärdet beror på organisationens rättigheter. Organisationer med Real-Time CDP eller Adobe Journey Optimizer får som standard tillgång till alla tjänster som stöds (`["datalake", "identity", "profile", "ajo"]`). Organisationer med Customer Journey Analytics men utan ett realtidsberättigande för kundprofil kan bara använda [&quot;datalake&quot;]. Om du vill begränsa borttagningen till enbart profilrelaterade data och lämna datarutan orörd anger du det här till `["identity", "profile", "ajo"]` (i valfri ordning). Det här läget för endast profiler kräver ett Real-Time CDP- eller Adobe Journey Optimizer-berättigande och `datasetId` måste vara `ALL`. |
+| `identities` | **Använd exakt en av `identities` eller `namespacesIdentities`.** Array med objekt, var och en med `namespace` (objekt med `code`, t.ex. `"email"`) och `id` (en identitetssträng). Godkänt för bakåtkompatibilitet och framställt av konverteringsskripten. Tjänsten normaliserar det här formatet internt. Beteendet är identiskt. Se [Nyttolastformat för identitet](#identity-payload-format-identities-or-namespacesidentities) ovan. |
+| `namespacesIdentities` | **Använd exakt en av `identities` eller `namespacesIdentities`.** Array med objekt, var och en med `namespace` (objekt med `code`, t.ex. `"email"`) och `ids` (array med identitetssträngar). Rekommenderas för alla nyttolaster. Egenskapen `namespacesIdentities` är mer kompakt när många identiteter delar ett namnutrymme. Se [Nyttolastformat för identitet](#identity-payload-format-identities-or-namespacesidentities) ovan. Identitetsnamnutrymmen: [dokumentation för identitetsnamn](../../identity-service/features/namespaces.md), [API för identitetstjänst](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 **Svar**
 
@@ -273,7 +280,8 @@ Ett lyckat svar returnerar information om den nya postens arbetsorder för bortt
   "targetServices": [
     "profile",
     "datalake",
-    "identity"
+    "identity",
+    "ajo"
   ],
   "status": "received",
   "createdBy": "c.lannister@acme.com <c.lannister@acme.com> 7EAB61F3E5C34810A49A1AB3@acme.com",
@@ -298,20 +306,77 @@ I följande tabell beskrivs egenskaperna i svaret.
 | `targetServices` | En lista med måltjänster för postens radering av arbetsorder. |
 | `status` | Aktuell status för postens radera arbetsorder. |
 | `createdBy` | E-postadressen och identifieraren för den användare som skapade posten tar bort arbetsorder. |
-| `datasetId` | Den unika identifieraren för datauppsättningen. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
+| `datasetId` | Den unika identifieraren för datauppsättningen/datauppsättningarna. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. För förfrågningar om flera datauppsättningar återspeglar värdet den kommaavgränsade listan eller ett enda ID som har skickats. |
 | `datasetName` | Namnet på datauppsättningen för den här posten tar bort arbetsorder. |
 | `displayName` | En etikett som kan läsas av människor för arbetsorder för radering av poster. |
 | `description` | En beskrivning av postens arbetsorder för borttagning. |
 
 {style="table-layout:auto"}
 
+Svarets `targetServices`-värde motsvarar din begäran eller visar den fullständiga standarduppsättningen när den utelämnas (se svarstabellen ovan).
+
+### Flera datauppsättningar och endast profiler (API) {#multi-dataset-profile-only}
+
+Följande alternativ är bara tillgängliga via API:t och stöds inte i användargränssnittet för datahygien. De styr vilka datauppsättningar och vilka tjänster som bearbetar borttagningen, vilket möjliggör att flera datauppsättningar skickas och riktade serviceförfrågningar enbart för profiler.
+
+I följande tabell sammanfattas hur innehållet och beteendet i begäran ändras för varje alternativ.
+
+| Alternativ | Begär ändring av brödtext | Beteende |
+|--------|---------------------|----------|
+| **Flera datauppsättningar** | Använd en kommaavgränsad lista i `datasetId` (t.ex. `"id1,id2,id3"`). Ett ID eller `ALL` har inte ändrats. | Identiteter tas bort från de listade datauppsättningarna (eller från en datauppsättning, eller från alla datauppsättningar när `ALL`). |
+| **Endast profil (måltjänster)** | Lägg till `targetServices` med exakt `["identity", "profile", "ajo"]` (valfri ordning). `datasetId` krävs: `"ALL"`. | Endast identitet, profil och Adobe Journey Optimizer bearbetar borttagningen. Datasjön ändras inte. |
+
+#### Flerdatauppsättningsbegäranden
+
+Fältet `datasetId` delas upp på kommatecken: använd ett enda ID (samma beteende som tidigare), en kommaavgränsad lista med ID:n eller literalen `ALL`. Om du vill ta bort identiteter från flera specifika datauppsättningar i en arbetsordning anger du en kommaseparerad lista:
+
+```json
+"datasetId": "6707eb36eef4d42ab86d9fbe,6643f00c16ddf51767fcf780"
+```
+
+Identiteter tas sedan bort från alla de listade datauppsättningarna. Enstaka datauppsättningsbegäranden fungerar som de alltid gjorde. Använd `ALL` för att ange alla datauppsättningar som mål. Värdet måste vara exakt ett av: `ALL`, ett enskilt datauppsättnings-ID eller två eller flera datauppsättnings-ID:n avgränsade med kommatecken (ingen kombination av `ALL` med specifika ID:n).
+
+#### Endast profil (riktade tjänster)
+
+Om du bara vill ta bort identitets- och profilrelaterade data medan du lämnar datalänken orörd inkluderar du `targetServices` med exakt dessa tre värden i valfri ordning: `identity`, `profile` och `ajo`. Identitet, profil och AJO ingår uttryckligen; datasjön är exkluderad. I det här läget måste `datasetId` vara `ALL` (användningsfallet är fullständig profilborttagning, inte fragment per datauppsättning).
+
+I följande exempel skapas en arbetsordning som bara innehåller en profil:
+
+```shell
+curl -X POST \
+  "https://platform.adobe.io/data/core/hygiene/workorder" \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'x-sandbox-id: {SANDBOX_ID}' \
+  -d '{
+    "action": "delete_identity",
+    "datasetId": "ALL",
+    "displayName": "Profile-only delete for specified identity",
+    "description": "Delete identity, profile, and AJO data only; datalake unchanged.",
+    "targetServices": ["identity", "profile", "ajo"],
+    "namespacesIdentities": [
+      {
+        "namespace": { "code": "email" },
+        "ids": ["user@example.com"]
+      }
+    ]
+  }'
+```
+
+Slutförda svar på begäranden om flera datauppsättningar eller bara profiler följer samma form som andra svar på arbetsorder. Den returnerade `datasetId` och `targetServices` återspeglar värdena i begäran (eller hela standardlistan när `targetServices` utelämnas), så att du kan bekräfta vad som skickades.
+
 >[!NOTE]
 >
 >Åtgärdsegenskapen för arbetsorder för att ta bort poster är för närvarande `identity-delete` i API-svar. Om API:t ändras till ett annat värde (till exempel `delete_identity`) uppdateras den här dokumentationen därefter.
 
-## Konvertera ID-listor till JSON för förfrågningar om postborttagning
+## Konvertera ID-listor till JSON för begäranden om postborttagning (#convert-id-lists-to-json-for-record-delete-requests)
 
-Om du vill skapa en postborttagningsarbetsorder från CSV-, TSV- eller TXT-filer som innehåller identifierare, kan du använda konverteringsskript för att skapa de JSON-nyttolaster som krävs för `/workorder`-slutpunkten. Detta är särskilt användbart när du arbetar med befintliga datafiler. Om du vill ha färdiga skript och utförliga instruktioner kan du gå till GitHub-databasen [csv-to-data-hygienen](https://github.com/perlmonger42/csv-to-data-hygiene).
+Använd konverteringsskript för att skapa de JSON-nyttolaster som krävs för slutpunkten `/workorder` när dina identifierare finns i CSV-, TSV- eller TXT-filer. Detta är särskilt användbart när du arbetar med befintliga datafiler. Information om färdiga skript och instruktioner finns i GitHub-databasen [csv-to-data-health](https://github.com/perlmonger42/csv-to-data-hygiene).
+
+Skripten genererar formatet **`identities`** - en `id` per objekt med en `namespace`. API:t godkänner det här formatet som det är; du kan skicka den genererade JSON-filen direkt i POST-brödtexten till `/workorder` utan konvertering. Det rekommenderade formatet är **`namespacesIdentities`**. Se [Skapa en arbetsorder för borttagning av post](#create) och [Identitetsnyttolastformat](#identity-payload-format-identities-or-namespacesidentities).
 
 ### Generera JSON-nyttolaster
 
@@ -365,8 +430,8 @@ Tabellen nedan beskriver parametrarna i de grundläggande skripten.
 | ---           | ---     |
 | `verbose` | Aktivera utförliga utdata. |
 | `column` | Indexnamnet (1-baserat) eller rubriknamnet för kolumnen som innehåller identitetsvärdena som ska tas bort. Standardvärdet är den första kolumnen om inget anges. |
-| `namespace` | Ett objekt med en `code`-egenskap som anger identitetsnamnutrymmet (till exempel &quot;email&quot;). |
-| `dataset-id` | Den unika identifieraren för den datauppsättning som är associerad med arbetsordern. Om begäran gäller alla datauppsättningar ställs fältet in på `ALL`. |
+| `namespace` | Identitetsnamnområdeskoden som skickas till skriptet (till exempel `email`). Den genererade JSON använder detta i varje objekts `namespace.code`-egenskap. |
+| `dataset-id` | Den unika identifieraren för datauppsättningarna: ett enda ID, kommaseparerade ID:n för flera datauppsättningar eller `ALL` för alla datauppsättningar. |
 | `description` | En beskrivning av postens arbetsorder för borttagning. |
 | `output-dir` | Katalogen där JSON-nyttolasten för utdata ska skrivas. |
 
@@ -402,7 +467,7 @@ I följande tabell beskrivs egenskaperna i JSON-nyttolasten.
 | Egenskap | Beskrivning |
 | ---          | ---     |
 | `action` | Den begärda åtgärden för postborttagning av arbetsorder. Automatiskt inställd på `delete_identity` av konverteringsskriptet. |
-| `datasetId` | Den unika identifieraren för datauppsättningen. |
+| `datasetId` | Den unika identifieraren för datauppsättningarna: ett enda ID, kommaseparerade ID:n eller `ALL`. |
 | `displayName` | En etikett som kan läsas av människor för den här posten tar bort arbetsorder. |
 | `description` | En beskrivning av postens arbetsorder för borttagning. |
 | `identities` | En array med objekt som var och en innehåller:<br><ul><li> `namespace`: Ett objekt med en `code`-egenskap som anger identitetsnamnutrymmet (till exempel &quot;email&quot;).</li><li> `id`: Det identitetsvärde som ska tas bort för det här namnområdet.</li></ul> |
@@ -411,7 +476,7 @@ I följande tabell beskrivs egenskaperna i JSON-nyttolasten.
 
 ### Skicka genererade JSON-data till `/workorder`-slutpunkten
 
-Följ instruktionerna i avsnittet [Skapa en arbetsorder för borttagning av post](#create) om du vill skicka en begäran. Se till att använda den konverterade JSON-nyttolasten som begärandetext (`-d`) när du skickar `curl` POST-begäran till API-slutpunkten `/workorder`.
+Skriptutdata använder formatet `identities`, som API godkänner som det är. Använd den konverterade JSON-nyttolasten som begärandetext (`-d`) när du skickar din `curl` POST-begäran till `/workorder`-slutpunkten. Fullständiga alternativ för begäran och valideringsregler finns i [Skapa en arbetsordning för borttagning av post](#create).
 
 ## Hämta information för en viss postborttagningsarbetsorder {#lookup}
 
@@ -482,12 +547,12 @@ I följande tabell beskrivs egenskaperna i svaret.
 | `targetServices` | En lista över måltjänster som påverkas av den här posten tar bort arbetsorder. |
 | `status` | Aktuell status för postens radera arbetsorder. |
 | `createdBy` | E-postadressen och identifieraren för den användare som skapade posten tar bort arbetsorder. |
-| `datasetId` | Den unika identifieraren för den datauppsättning som är associerad med arbetsordern. |
+| `datasetId` | Den unika identifieraren för den eller de datauppsättningar som är associerade med arbetsordningen (ett ID, kommaseparerade ID:n eller `ALL`). |
 | `datasetName` | Namnet på datauppsättningen som är associerad med arbetsordern. |
 | `displayName` | En etikett som kan läsas av människor för arbetsorder för radering av poster. |
 | `description` | En beskrivning av postens arbetsorder för borttagning. |
 
-## Uppdatera en post, ta bort arbetsorder
+## Uppdatera en post, ta bort arbetsorder {#update}
 
 Uppdatera `name` och `description` för en postborttagning av arbetsorder genom att göra en PUT-begäran till slutpunkten `/workorder/{WORKORDER_ID}`.
 
@@ -590,7 +655,7 @@ Ett svar returnerar den uppdaterade arbetsorderbegäran.
 | `targetServices` | En lista över måltjänster som påverkas av den här posten tar bort arbetsorder. |
 | `status` | Aktuell status för postens radera arbetsorder. Möjliga värden är: `received`,`validated`, `submitted`, `ingested`, `completed` och `failed`. |
 | `createdBy` | E-postadressen och identifieraren för den användare som skapade posten tar bort arbetsorder. |
-| `datasetId` | Den unika identifieraren för den datauppsättning som är associerad med postens arbetsorder för borttagning. |
+| `datasetId` | Den unika identifieraren för den eller de datauppsättningar som är associerade med postens arbetsorder för borttagning (enskilt ID, kommaavgränsade ID:n eller `ALL`). |
 | `datasetName` | Namnet på den datauppsättning som är associerad med postens arbetsorder för borttagning. |
 | `displayName` | En etikett som kan läsas av människor för arbetsorder för radering av poster. |
 | `description` | En beskrivning av postens arbetsorder för borttagning. |
