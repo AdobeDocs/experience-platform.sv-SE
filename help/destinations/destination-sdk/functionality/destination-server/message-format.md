@@ -2,9 +2,9 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: b5d8a1c31705ffe72dadc4fff8626acb7081444a
+source-git-commit: 270facfd580b2dde09906bee1728e1be198680cf
 workflow-type: tm+mt
-source-wordcount: '2488'
+source-wordcount: '2512'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Om du vill veta mer om meddelandeformat, profilkonfiguration och transformerings
 * **Experience Data Model (XDM)**. [XDM-översikt](../../../../xdm/home.md) och [Så här skapar du ett XDM-schema i Adobe Experience Platform](../../../../xdm/tutorials/create-schema-ui.md).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](../../../../xdm/ui/resources/classes.md).
 * **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
-* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
+* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 >[!IMPORTANT]
 >
@@ -176,9 +176,9 @@ Adobe använder [dubbelmallar](https://pebbletemplates.io/), ett mallspråk som 
 
 Det här avsnittet innehåller flera exempel på hur dessa omformningar görs - från XDM-indataschemat, via mallen och från utdata i nyttolastformat som accepteras av målet. Exemplen nedan presenteras av ökad komplexitet, enligt följande:
 
-1. Exempel på enkla omformningar. Lär dig hur mallar fungerar med enkla omformningar för fälten [Profilattribut](#attributes), [Målgruppsmedlemskap](#segment-membership) och [Identitet](#identities).
+1. Exempel på enkla omformningar. Lär dig hur mallar fungerar med enkla omformningar för fälten [Profilattribut](#attributes), [Målgruppsmedlemskap](#audience-membership) och [Identitet](#identities).
 2. Exemplen på ökad komplexitet för mallar som kombinerar fälten ovan: [Skapa en mall som skickar målgrupper och identiteter](./message-format.md#segments-and-identities) och [Skapa en mall som skickar segment, identiteter och profilattribut](#segments-identities-attributes).
-3. Mallar som innehåller aggregeringsnyckeln. När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen grupperar Experience Platform de profiler som exporteras till ditt mål baserat på kriterier som målgrupps-ID, målgruppsstatus eller identitetsnamnutrymmen.
+3. Mallar som innehåller aggregeringsnyckeln. När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen grupperar Experience Platform de profiler som exporteras till ditt mål baserat på kriterier som målgrupps-ID, målgruppsnamn, målgruppsstatus eller identitetsnamnutrymmen.
 
 ### Profilattribut {#attributes}
 
@@ -266,7 +266,7 @@ Profil 2:
 ### Målgruppsmedlemskap {#audience-membership}
 
 XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör.
-Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
+Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 **Indata**
 
@@ -794,7 +794,8 @@ Profil 2:
                 {% endfor %}
                 ]
             }
-        }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
     ]
 }
 ```
@@ -838,7 +839,7 @@ Profil 2:
         {
             "attributes": {
                 "firstName": "Harry",
-                "birthDate": "1980/07/21"
+                "birthDate": "1980/07/31"
             },
             "identities": [
                 {
@@ -859,21 +860,21 @@ Profil 2:
 
 ### Inkludera aggregeringsnyckel i mallen för att få åtkomst till exporterade profiler grupperade efter olika villkor {#template-aggregation-key}
 
-När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen kan du gruppera de profiler som exporteras till ditt mål baserat på kriterier som målgrupps-ID, målgruppalias, målgruppsmedlemskap eller identitetsnamnutrymmen.
+När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen kan du gruppera de profiler som exporteras till ditt mål baserat på kriterier som målgrupps-ID, målgruppsnamn, målgruppalias, målgruppsmedlemskap eller identitetsnamnutrymmen.
 
 I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns ovan, vilket visas i exemplen i följande avsnitt. Använd aggregeringsnycklar för att strukturera HTTP-meddelandet som exporteras från Experience Platform så att det matchar de format- och hastighetsbegränsningar som förväntas av ditt mål.
 
 #### Använd aggregeringsnyckeln för målgrupps-ID i mallen {#aggregation-key-segment-id}
 
-Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och anger `includeSegmentId` som true grupperas profilerna i HTTP-meddelandena som exporteras till ditt mål efter målgrupps-ID. Se nedan hur du kan komma åt målgrupps-ID i mallen.
+Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och anger `includeSegmentId` som true grupperas profilerna i HTTP-meddelandena som exporteras till ditt mål efter målgrupps-ID. Se nedan hur du kan komma åt målgrupps-ID och målgruppsnamnutrymme i mallen.
 
 **Indata**
 
 Tänk på de fyra profilerna nedan, där:
 
-* de första två är en del av målgruppen med målgrupps-ID `788d8874-8007-4253-92b7-ee6b6c20c6f3`
-* den tredje profilen är en del av målgruppen med målgrupps-ID `8f812592-3f06-416b-bd50-e7831848a31a`
-* den fjärde profilen är en del av båda målgrupperna ovan.
+* de första två är en del av målgruppen med målgrupps-ID:t `788d8874-8007-4253-92b7-ee6b6c20c6f3` under namnutrymmet `ups`
+* den tredje profilen är en del av målgruppen med målgrupps-ID:t `8f812592-3f06-416b-bd50-e7831848a31a` under namnområdet `CustomerAudienceUpload`
+* den fjärde profilen är en del av båda målgrupperna ovan, var och en under sina respektive namnutrymmen.
 
 Profil 1:
 
@@ -925,7 +926,7 @@ Profil 3:
       }
    },
    "segmentMembership":{
-      "ups":{
+      "CustomerAudienceUpload":{
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
             "status":"realized"
@@ -946,12 +947,14 @@ Profil 4:
    },
    "segmentMembership":{
       "ups":{
-         "8f812592-3f06-416b-bd50-e7831848a31a":{
-            "lastQualificationTime":"2021-02-20T12:00:00Z",
-            "status":"realized"
-         },
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"realized"
+         }
+      },
+      "CustomerAudienceUpload":{
+         "8f812592-3f06-416b-bd50-e7831848a31a":{
+            "lastQualificationTime":"2021-02-20T12:00:00Z",
             "status":"realized"
          }
       }
@@ -965,11 +968,12 @@ Profil 4:
 >
 >För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
-Observera nedan hur `audienceId` används i mallen för att komma åt målgrupps-ID:n. I det här exemplet antas att du använder `audienceId` som målgruppsmedlemskap i din måltaxonomi. Du kan använda vilket annat fältnamn som helst, beroende på din egen taxonomi.
+Observera nedan hur `audienceId` och `audienceNamespace` används i mallen för att komma åt målgrupps-ID och namnutrymme. I det här exemplet antas att du använder `audienceId` som målgruppsmedlemskap i din måltaxonomi. Du kan använda vilket annat fältnamn som helst, beroende på din egen taxonomi.
 
 ```python
 {
     "audienceId": "{{ input.aggregationKey.segmentId }}",
+    "audienceNamespace": "{{ input.aggregationKey.segmentNamespace }}",
     "profiles": [
         {% for profile in input.profiles %}
         {
@@ -982,11 +986,12 @@ Observera nedan hur `audienceId` används i mallen för att komma åt målgrupps
 
 **Resultat**
 
-När profilerna exporteras till ditt mål delas de upp i två grupper utifrån deras målgrupps-ID.
+När profilerna exporteras till ditt mål delas de upp i två grupper utifrån deras målgrupps-ID och namnutrymme.
 
 ```json
 {
    "audienceId":"788d8874-8007-4253-92b7-ee6b6c20c6f3",
+   "audienceNamespace":"ups",
    "profiles":[
       {
          "firstName":"Hermione"
@@ -1004,6 +1009,7 @@ När profilerna exporteras till ditt mål delas de upp i två grupper utifrån d
 ```json
 {
    "audienceId":"8f812592-3f06-416b-bd50-e7831848a31a",
+   "audienceNamespace":"CustomerAudienceUpload",
    "profiles":[
       {
          "firstName":"Tom"
