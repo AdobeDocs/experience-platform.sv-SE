@@ -3,9 +3,9 @@ title: Flexibel guide för utvärdering av målgrupper
 description: Lär dig hur du använder flexibel målgruppsutvärdering för att köra batchsegmenteringsjobb på begäran.
 role: Developer, User
 exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
-source-git-commit: 7a0a98ea035892943a0e9a9a2b059701f6f1f612
+source-git-commit: 518afcfaabb9867452dc6ee94bef103ec167da78
 workflow-type: tm+mt
-source-wordcount: '1124'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,9 @@ Tänk på följande när du gör en flexibel utvärdering av målgruppen:
 
 - Du kan bara använda den flexibla målgruppsutvärderingen **två gånger** per dag och sandlåda. Den här gränsen återställs vid midnatt (UTC).
 - Du har **maximalt** av 50 flexibla målgruppsutvärderingar som körs per år per **produktion** sandlåda.
+   - Ett år definieras som ett år med början det datum då ditt Experience Platform-kontrakt tecknades för en flexibel målgruppsutvärdering. Om du till exempel började teckna avtal den 18 maj kommer antalet flexibla utvärderingstillfällen att återställas den 18 maj varje år.
 - Du har **maximalt** av 100 flexibla målgruppsutvärderingar som körs per år per **utvecklingssandlåda**.
+   - Ett år definieras som ett år med början det datum då ditt Experience Platform-kontrakt tecknades för en flexibel målgruppsutvärdering. Om du till exempel började teckna avtal den 18 maj kommer antalet flexibla utvärderingstillfällen att återställas den 18 maj varje år.
 - Alla målgrupper som **måste** har ursprunget till segmenteringstjänsten.
 - Alla målgrupper **måste** utvärderas med gruppsegmentering.
 - Alla målgrupper **måste** vara personbaserade.
@@ -326,7 +328,7 @@ När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätt
 
 I följande videofilm visas hur du får tillgång till och använder en flexibel målgruppsutvärdering i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/3453644?captions=swe&)
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## Vanliga frågor och svar {#faq}
 
