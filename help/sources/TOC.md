@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: fe5faaeb026fa10d185f43408b122104ecd42196
+source-git-commit: 2c7cc6d29eae13cd8caa387063ae9ab80ca65e1e
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1089'
 ht-degree: 7%
 
 ---
@@ -48,8 +48,8 @@ ht-degree: 7%
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
-      - [Azure Blob-koppling](connectors/cloud-storage/blob.md)
-      - [Azure Event Hubs-koppling](connectors/cloud-storage/eventhub.md)
+      - [Azure Blob Connector](connectors/cloud-storage/blob.md)
+      - [Azure Event Hubs-anslutning](connectors/cloud-storage/eventhub.md)
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
       - [Datallandningszon](connectors/cloud-storage/data-landing-zone.md)
       - [FTP-anslutning](connectors/cloud-storage/ftp.md)
@@ -77,7 +77,7 @@ ht-degree: 7%
       - [Azure Databricks-koppling](connectors/databases/databricks.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics Connector](connectors/databases/synapse-analytics.md)
-      - [Azure Table Storage-koppling](connectors/databases/ats.md)
+      - [Azure Table Storage Connector](connectors/databases/ats.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
       - [GreenPlum-kontakt](connectors/databases/greenplum.md)
       - [HP Vertica-koppling](connectors/databases/hp-vertica.md)
@@ -97,6 +97,8 @@ ht-degree: 7%
       - [Bomborametod](connectors/data-partners/bombora.md)
       - [Demandbase-metod](connectors/data-partners/demandbase.md)
       - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
+   - Datadelning {#data-sharing}
+      - [Deltashare](connectors/data-sharing/deltashare.md)
    - eCommerce {#ecommerce}
       - [SAP COMMERCE](connectors/ecommerce/sap-commerce.md)
       - [Förminska](connectors/ecommerce/shopify.md)
@@ -141,7 +143,7 @@ ht-degree: 7%
          - [Azure Blob](tutorials/api/create/cloud-storage/blob.md)
          - [Azure Data Lake Storage Gen2](tutorials/api/create/cloud-storage/adls-gen2.md)
          - [Azure Event Hubs](tutorials/api/create/cloud-storage/eventhub.md)
-         - [Azure-fillagring](tutorials/api/create/cloud-storage/azure-file-storage.md)
+         - [Azure fillagring](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [Datallandningszon](tutorials/api/create/cloud-storage/data-landing-zone.md)
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
          - [Google Cloud-lagring](tutorials/api/create/cloud-storage/google.md)
@@ -262,7 +264,7 @@ ht-degree: 7%
          - [Azure Data Lake Storage Gen2](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob](tutorials/ui/create/cloud-storage/blob.md)
          - [Azure Event Hubs](tutorials/ui/create/cloud-storage/eventhub.md)
-         - [Azure-fillagring](tutorials/ui/create/cloud-storage/azure-file-storage.md)
+         - [Azure fillagring](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [Datallandningszon](tutorials/ui/create/cloud-storage/data-landing-zone.md)
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud-lagring](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
@@ -310,6 +312,8 @@ ht-degree: 7%
          - [Bomborametod](tutorials/ui/create/data-partners/bombora.md)
          - [Demandbase-metod](tutorials/ui/create/data-partners/demandbase.md)
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
+      - Datadelning {#data-sharing}
+         - [Deltashare](tutorials/ui/create/data-sharing/deltashare.md)
       - eCommerce {#ecommerce}
          - [SAP COMMERCE](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
@@ -405,4 +409,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
