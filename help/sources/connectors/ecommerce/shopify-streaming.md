@@ -4,9 +4,9 @@ description: Lär dig hur du skapar en källanslutning och ett dataflöde för a
 badge: Beta
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: ae991913-68b5-4bbb-b8a5-e566d67a4c1a
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 4c7b23592a1784a5f2daa5518b512fa458a2c3ad
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '677'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Adobe Experience Platform har stöd för inmatning av data från direktuppspelningsprogram. Stöd för direktuppspelningsproviders är [!DNL Shopify].
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I följande avsnitt beskrivs de nödvändiga stegen som måste utföras innan källan [!DNL Shopify Streaming] används.
 
@@ -66,7 +66,7 @@ https://www.acme.com/?code=k6j2palgrbljja228ou8c20fmn7w41gz&hmac=68c9163f772eecb
 
 ### Hämta din åtkomsttoken
 
-Nu när du har ditt klient-ID, din klienthemlighet och din behörighetskod kan du hämta din åtkomsttoken. Om du vill hämta din åtkomsttoken gör du en POST-förfrågan till domänens `myshopify.com`-URL när du lägger till den här URL:en med [!DNL Shopify's] API-slutpunkt: `/admin/oauth/access_token`.
+Nu när du har ditt klient-ID, din klienthemlighet och din behörighetskod kan du hämta din åtkomsttoken. Om du vill hämta din åtkomsttoken gör du en POST-begäran till domänens `myshopify.com`-URL när du lägger till den här URL:en med [!DNL Shopify's] API-slutpunkt: `/admin/oauth/access_token`.
 
 **API-format**
 
@@ -117,7 +117,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \; request_method=POST' \
   -d '{
   "webhook": {
-    "address": "https://dcs.adobedc.net/collection/9d411a24aa3c0a3eded92bac6c64d0da986ee7a8212f87168c5fb42d9ddc3227",
+    "address": "https://dcs.adobedc.net/collection/114ae3c01f3ac77c704465f83d7d79be150fc39a5a794a214cd4ab65a5901340?x-adobe-flow-id=d9eb4a58-6a6b-4f11-9dba-6d1e0ed43bad",
     "topic": "orders/create",
     "format": "json"
   }
@@ -126,7 +126,7 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --- | --- | 
-| `webhook.address` | Den http-slutpunkt dit direktuppspelningsmeddelanden skickas. |
+| `webhook.address` | Den http-slutpunkt dit direktuppspelningsmeddelanden skickas. Mallen för webkroken är: `https://dcs.adobedc.net/collection/%7BINLET_ID%7D?{x-adobe-flow-id}={FLOW_ID}.` |
 | `webhook.topic` | Avsnittet om din webkroprenumeration. Mer information finns i [[!DNL Shopify] händelseguiden](https://shopify.dev/docs/api/admin-rest/2023-04/resources/webhook#event-topics) för webkrok. |
 | `webhook.format` | Dataformatet. |
 
@@ -138,7 +138,7 @@ Ett lyckat svar returnerar information på din webkrok, inklusive motsvarande `i
 {
   "webhook": {
     "id": 1091138715786,
-    "address": "https://dcs.adobedc.net/collection/9d411a24aa3c0a3eded92bac6c64d0da986ee7a8212f87168c5fb42d9ddc3227",
+    "address": "https://dcs.adobedc.net/collection/114ae3c01f3ac77c704465f83d7d79be150fc39a5a794a214cd4ab65a5901340?x-adobe-flow-id=d9eb4a58-6a6b-4f11-9dba-6d1e0ed43bad",
     "topic": "orders/create",
     "created_at": "2022-07-20T07:15:23-04:00",
     "updated_at": "2022-07-20T07:15:23-04:00",
