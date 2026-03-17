@@ -3,7 +3,8 @@ title: Använda Deltashare Source Connector i användargränssnittet
 description: Lär dig hur du använder Deltashare-källkopplingen i Experience Platform användargränssnitt.
 hide: true
 hidefromtoc: true
-source-git-commit: cb50e7b4175a34acd1cbf1ebe04fdfd1ab4694aa
+exl-id: 4e889401-08c1-4c81-85e7-49fe1328c65d
+source-git-commit: 1533e35032d6a0508588652b0e1ca4c6717d4acb
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 1%
@@ -22,4 +23,3 @@ Läs den här vägledningen när du vill lära dig hur du använder [!DNL Deltas
 **Obs!** När du har valt **Nästa** kan du inte ändra den valda schemastrukturen.
 
 Om du redan har markerat **Nästa** och flyttat förbi steget för val av schema, kan du inte längre uppdatera det valda schemat om du återgår till ett tidigare steg. Om du vill ändra schemat måste du starta om dataflödeskonfigurationsprocessen och börja från det första steget.
-

@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_tags_websdk_consent"
->title="Godkännande"
+>title="Samtycke"
 >abstract="Väljer standardnivån för samtycke som antas om ingen annan explicit medgivandeinställning anges."
 
 I avsnittet **[!UICONTROL Consent]** kan du välja standardnivån för samtycke som antas om ingen annan explicit medgivandeinställning anges. Standardmedgivandenivå sparas inte i användarprofiler.
