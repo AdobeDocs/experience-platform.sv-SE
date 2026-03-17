@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 73244fe6f7413fc66773789da2b5491a1ed49f15
+source-git-commit: 6142801c9008c10a3d1a0a11976a2c99fb6cee86
 workflow-type: tm+mt
-source-wordcount: '1678'
+source-wordcount: '1721'
 ht-degree: 1%
 
 ---
@@ -38,6 +38,10 @@ För partnerskapade och underhållna anslutningar innebär detta att problem med
 
 ## Källkatalog
 
+>[!NOTE]
+>
+>Inmatningsdataflöden i Source som misslyckas kontinuerligt i 30 dagar inaktiveras automatiskt. Använd [Övervaka instrumentpanel](/help/dataflows/ui/monitor-sources.md) för att granska dataflödet, identifiera varför det misslyckades (till exempel autentiseringsuppgifter, behörigheter, schema- eller mappningsändringar), tillämpa nödvändiga uppdateringar och aktivera dataflödet igen när det har lösts.
+
 I följande avsnitt finns en lista med alla tillgängliga källor i källkatalogen.
 
 ### Adobe-program {#adobe-applications}
@@ -61,7 +65,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html) eller kunder som har licensierat den fristående versionen av SKU:n för Advanced Enterprise Source Connectors.
+Följande källor är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html) eller kunder som har licensierat den fristående versionen av SKU:n för Advanced Enterprise Source Connectors.
 
 | Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
