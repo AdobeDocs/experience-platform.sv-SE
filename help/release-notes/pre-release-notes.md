@@ -31,7 +31,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 
 - [Hantering av avancerad datalivscykel](#advanced-data-lifecycle-management)
 - [Agent Orchestrator](#agent-orchestrator)
-- [Mål ](#destinations)
+- [Mål &#x200B;](#destinations)
 - [Frågetjänst](#query-service)
 - [Kundprofil i realtid](#profile)
 - [Kör och använd](#run-and-operate)
