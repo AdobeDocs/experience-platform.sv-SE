@@ -5,9 +5,9 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: e5a757fcd73fc743b570c6456a66907e4720e8b6
 workflow-type: tm+mt
-source-wordcount: '1617'
+source-wordcount: '1693'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t &#x200B;](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
+>När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t ](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
 >
 >Mer information finns i [Kör ad hoc-aktiveringsjobbet](#activation-job) nedan i den här självstudien.
 
@@ -44,7 +44,7 @@ Ett hotell förväntar sig ett infallsväder de kommande dagarna och teamet vill
 
 IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att exportera målgrupper on-demand, så att de kan testa sin anpassade integrering med Adobe Experience Platform och se till att allt fungerar som det ska.
 
-## Guardrails {#guardrails}
+## Skyddsräcken {#guardrails}
 
 Tänk på följande skyddsutkast när du använder API:t för ad hoc-aktivering.
 
@@ -139,6 +139,10 @@ När målgruppens exportjobb är klart kan du aktivera det.
 >[!IMPORTANT]
 >
 >Det är obligatoriskt att ta med huvudet `Accept: application/vnd.adobe.adhoc.activation+json; version=2` i din begäran för att kunna använda v2 av API:t för ad hoc-aktivering.
+
+För icke-segmenteringstjänstmålgrupper (till exempel [externa eller anpassade uppladdningsmålgrupper](../../segmentation/ui/audience-portal.md#import-audience)) måste du ange det målgrupps-ID som genereras av Experience Platform i din begäran, inte det externa målgrupps-ID:t. Du hittar det systemgenererade ID:t högst upp på [målgruppssammanfattningspanelen](../../segmentation/ui/audience-portal.md#audience-summary), som visas som **ID#** följt av ett UUID, när du öppnar sidan med målgruppsinformation i målgruppsgränssnittet.
+
+![Panelen Målgruppssammanfattning visar det systemgenererade ID-fältet som är markerat längst upp på panelen.](../assets/api/ad-hoc-activation/audience-summary-id.png)
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/core/activation/disflowprovider/adhocrun' \
@@ -251,4 +255,4 @@ När du använder API:t för ad hoc-aktivering kan du få felmeddelanden som är
 ## Relaterad information {#related-information}
 
 * [Anslut till gruppmål och aktivera data med API:t för Flow Service](/help/destinations/api/connect-activate-batch-destinations.md)
-* [(Beta) Exportera filer on demand till gruppmål med hjälp av Experience Platform användargränssnitt](/help/destinations/ui/export-file-now.md)
+* [Exportera filer on demand till gruppmål med hjälp av Experience Platform UI](/help/destinations/ui/export-file-now.md)
