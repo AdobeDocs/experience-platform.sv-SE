@@ -58,9 +58,9 @@ Annonsörer kan dela segment antingen med autentiserade förstapartidentifierare
 
 * Experience Cloud organisations-ID för Experience Platform-kontot. Du hittar ditt ID på din Adobe Real-Time Customer Data Platform-användarprofilsida (Real-Time CDP).
 
-* En [Real-Time CDP-källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
+* En [Real-Time CDP-källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
 
-* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [Real-Time CDP-källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, vilket förklaras nedan.
+* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [Real-Time CDP-källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, vilket förklaras nedan.
 
 ### Konfigurera ID-synkronisering för delning av cookies {#cookie-sync}
 
@@ -133,7 +133,7 @@ Om du vill ansluta till målet följer du instruktionerna för att [skapa en må
 
 Om du vill ansluta till målet anger du följande parameter i avsnittet [!UICONTROL Connection type] och väljer sedan **[!UICONTROL Connect to destination]**:
 
-* **[!UICONTROL Account or Advertiser Key]**: Den här [!UICONTROL Source Key] genereras när en [Real-Time CDP-källa skapas i DSP användargränssnitt](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
+* **[!UICONTROL Account or Advertiser Key]**: Den här [!UICONTROL Source Key] genereras när en [Real-Time CDP-källa skapas i DSP användargränssnitt](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
 
 ![Skärmbild av avsnittet Anslutningstyp som visar fältet Konto eller Advertiser-nyckel.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 
