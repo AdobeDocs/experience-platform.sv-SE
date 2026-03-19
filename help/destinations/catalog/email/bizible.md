@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Bizible] är den branschledande B2B-attribueringslösningen som ger dig oöverträffad insyn i dina data, så att du kan fatta smarta beslut som ökar tillväxten.
 
-[!DNL Bizible] är ett e-posttillägg i Adobe Experience Platform. Mer information om Bizible finns i [Marketing Attribution](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html) i Bizible overview-resurserna.
+[!DNL Bizible] är ett e-posttillägg i Adobe Experience Platform. Mer information om Bizible finns i [Marketing Attribution](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html?lang=sv-SE) i Bizible overview-resurserna.
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 

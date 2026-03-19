@@ -42,7 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Mer information om alternativen för tilläggskonfigurationen finns på [Adobe Analytics-tilläggssidan](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html) i taggdokumentationen.
+Mer information om alternativen för tilläggskonfigurationen finns på [Adobe Analytics-tilläggssidan](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html?lang=sv-SE) i taggdokumentationen.
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i guiden om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension).
 

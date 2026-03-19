@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Med Adobe Livefyre kan ni upptäcka, ordna och publicera ett konstant flöde av användargenererat innehåll på er webbplats för att skapa autentiska och personaliserade upplevelser.
 
-Adobe Livefyre är en social utbyggnad i Adobe Experience Platform. Mer information om Adobe Livefyre finns i [Handboken för Livefyre-implementering](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html).
+Adobe Livefyre är en social utbyggnad i Adobe Experience Platform. Mer information om Adobe Livefyre finns i [Handboken för Livefyre-implementering](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html?lang=sv-SE).
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 

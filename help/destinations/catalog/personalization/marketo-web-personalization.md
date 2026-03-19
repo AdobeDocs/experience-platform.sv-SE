@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Det här tillägget distribuerar skriptet för [!DNL Marketo's] Web Personalization- och ContentAI-program. [!DNL Marketo] Web Personalization identifierar och personaliserar unikt innehåll för webbbesökares egenskaper, till exempel bekräftelsegrafik för anonyma besökare och en mängd beteendeattribut i [!DNL Marketo] Engagement Platform för kända besökare. [!DNL Marketo] ContentAI innehåller funktioner för AI-baserade rekommendationer och personalisering för webb- och e-postkampanjer som är unika för B2B-kunder.
 
-[!DNL Marketo Web Personalization] är ett personaliseringstillägg i Adobe Experience Platform. Mer information om webbanpassning och innehålls-AI i Marketo finns i [Webböversikt för Personalization](https://experienceleague.adobe.com/docs/marketo/using/product-docs/web-personalization/understanding-web-personalization/web-personalization-overview.html).
+[!DNL Marketo Web Personalization] är ett personaliseringstillägg i Adobe Experience Platform. Mer information om webbanpassning och innehålls-AI i Marketo finns i [Webböversikt för Personalization](https://experienceleague.adobe.com/docs/marketo/using/product-docs/web-personalization/understanding-web-personalization/web-personalization-overview.html?lang=sv-SE).
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
