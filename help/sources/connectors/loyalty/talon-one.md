@@ -4,9 +4,10 @@ description: Läs om Talon.En källa på Adobe Experience Platform
 badge: Beta
 hide: true
 hidefromtoc: true
-source-git-commit: 558a9d6ff3222acbf77edea0a82ef50725cd6203
+exl-id: 92ed180a-6175-45e2-a831-0f40fd8606b0
+source-git-commit: 5ceef18d479854aa4b633e7e5e393a6698a05b2e
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '439'
 ht-degree: 1%
 
 ---
@@ -28,7 +29,7 @@ Du kan använda [!DNL Talon.One]-källorna i Adobe Experience Platform-källkata
 >
 >Förmånsdata avser slutanvändarnas lojalitetsprograminformation, t.ex. förmånspoäng, utnyttjade förmånspoäng, aktuell nivå, beviljade kuponger, hänvisningar och prestationer.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Ange värden för följande autentiseringsuppgifter för att autentisera och ansluta [!DNL Talon.One Batch Source Connector].
 
@@ -40,6 +41,28 @@ Ange värden för följande autentiseringsuppgifter för att autentisera och ans
 ## Mappning {#mapping}
 
 För att du lättare ska kunna mappa varje effektobjekt baserat på dess unika `effectType`-värde kan du använda dataprep `array_to_map` -funktionen. På så sätt kan du enkelt konvertera en osorterad array med effekter till nyckelvärdepar som passar dina behov. Se exemplet nedan för vägledning.
+
+Du kan också använda de standardiserade lojalitetsfältgrupper som Adobe tillhandahåller för att modellera dina lojalitetsprogramskoncept på ett konsekvent sätt.
+
+>[!BEGINTABS]
+
+>[!TAB Förmånsinformation]
+
+Detta är en standardfältgrupp för XDM för den enskilda XDM-profilen, som används för att beskriva en persons lojalitetsmedlemskapsstatus genom att hämta deras postattribut, i stället för händelsedata. Använd den här fältgruppen i dina profilscheman för att hämta:
+
+* **Vem** medlemmen är i programmet (`loyaltyID`, `program`, `status`, `tier`)
+* Deras **aktuella saldon och livstidssaldon** (`points`, `lifetimePoints`, `expiredPoints` osv.)
+* Nyckeldatum för **medlemskap** (`joinDate`, `upgradeDate`, `tierExpiryDate`)
+
+>[!TAB Information om förmånshändelse]
+
+Fältgruppen Information om förmånshändelse är utformad för att fånga upp lojalitetsaktivitet på händelsenivå, till exempel poäng som intjänats eller lösts in i en viss transaktion. Den här fältgruppen innehåller fält som `xdm:points`, `xdm:pointsRedeemed`, `xdm:pointsAsOfDate` och `xdm:program`. Använd den här fältgruppen på händelsenivå i dina Experience Event-scheman för att hämta:
+
+* **Rörelser per händelse** i poäng (vunna, inlösta, utgångna)
+* **Rabatter** som drivs av förmånskuponger eller hänvisningar
+* **Program-ID:n** och transaktions-ID:n för avstämning med lojalitetsprovidern.
+
+>[!ENDTABS]
 
 | Källa | Mål |
 | ---- | --- |

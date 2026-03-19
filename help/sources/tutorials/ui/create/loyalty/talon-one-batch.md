@@ -4,9 +4,10 @@ description: Lär dig hur du importerar batchdata från Talon.En till Adobe Expe
 badge: Beta
 hide: true
 hidefromtoc: true
-source-git-commit: d8b8143da3a67bba690229b1f8e88eb86f3fe804
+exl-id: 65a8ae42-0c0f-4bc5-b99e-52b02ab2130a
+source-git-commit: 9c4c4a3bce2329e65abf5e8cfcc2f20ec2799045
 workflow-type: tm+mt
-source-wordcount: '1420'
+source-wordcount: '1518'
 ht-degree: 0%
 
 ---
@@ -17,7 +18,9 @@ ht-degree: 0%
 >
 >Källan [!DNL Talon.One] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
 
-Läs den här självstudiekursen om du vill lära dig hur du importerar gruppdata från ditt [!DNL Talon.One]-konto till Adobe Experience Platform med hjälp av källarbetsytan i användargränssnittet.
+[!DNL Talon.One]-källan för batchdata tar emot händelser som registrerats för ett [!DNL Talon.One]-program. Ett vanligt användningsfall är att filtrera efter `talon_session_closed` för att ta emot slutförda transaktioner, inklusive förmånspoäng som erhållits eller lösts in, kuponger som lösts in, rabatter som beviljats osv. Mer information om API:t finns i [[!DNL Talon.One] API-referensen](https://docs.talon.one/management-api#tag/Customer-data/operation/getApplicationEventsWithoutTotalCount).
+
+Följ den här självstudien för att lära dig hur du importerar gruppdata från ditt [!DNL Talon.One]-konto till Adobe Experience Platform med hjälp av källarbetsytan i användargränssnittet.
 
 ## Komma igång
 
@@ -46,6 +49,10 @@ Om du vill importera data från [!DNL Talon.One] väljer du **[!UICONTROL Talon.
 
 ### Skapa ett nytt konto
 
+>[!TIP]
+>
+>Innan du skapar ett nytt konto bör du kontrollera [förutsättningarna](../../../../connectors/loyalty/talon-one.md#prerequisites) i översikten [!DNL Talon.One] för att ta reda på vilka autentiseringsuppgifter som krävs.
+
 Om du vill skapa ett nytt konto för källan [!DNL Talon.One] väljer du **[!UICONTROL New account]** och anger ett namn och en valfri beskrivning för kontot. Ange sedan din [!DNL Talon.One]-domän och din [!UICONTROL Talon.One Management API Key]. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
 
 ![Det nya kontosteget i källarbetsflödet.](../../../../images/tutorials/create/talon-one-batch/new.png)
@@ -57,6 +64,10 @@ Om du vill använda ett befintligt konto markerar du **[!UICONTROL Existing acco
 ## Markera data
 
 När du har autentiserat anger du värden för **applicationId** och **sessionType**. Under det här steget kan du använda förhandsvisningsfunktionerna för att kontrollera datastrukturen. När du är klar väljer du **[!UICONTROL Next]** för att fortsätta.
+
+>[!TIP]
+>
+>Välj händelsetypen `talon_session_closed` om du vill samla in slutförda transaktioner - inklusive intjänade eller inlösta förmånspoäng, inlösta kuponger och beviljade rabatter. Mer information om att filtrera händelser efter typ finns i frågeparametern [&quot;type&quot; i  [!DNL Talon.One] API-dokumentationen](https://docs.talon.one/management-api#tag/Customer-data/operation/getApplicationEventsWithoutTotalCount).
 
 ![Stegen för val av data och förhandsgranskning av källarbetsflödet.](../../../../images/tutorials/create/talon-one-batch/select-data.png)
 
