@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: efa50881315d986940f7cb3afcbfcc30ef67c3a7
+source-git-commit: 5cbf63cc0a149d54de63e3e1797cae4098498fe8
 workflow-type: tm+mt
-source-wordcount: '1411'
-ht-degree: 27%
+source-wordcount: '1322'
+ht-degree: 29%
 
 ---
 
@@ -31,7 +31,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 
 - [Hantering av avancerad datalivscykel](#advanced-data-lifecycle-management)
 - [Agent Orchestrator](#agent-orchestrator)
-- [Mål &#x200B;](#destinations)
+- [Mål ](#destinations)
 - [Frågetjänst](#query-service)
 - [Kundprofil i realtid](#profile)
 - [Kör och använd](#run-and-operate)
@@ -74,12 +74,10 @@ Mer information finns i [Agent Orchestrator-dokumentationen](https://experiencel
 
 | Mål | Beskrivning |
 | --- | --- |
-| [Stöd för Snowflake Streaming](../destinations/catalog/warehouses/snowflake.md) för flera regioner | Snowflake Streaming Connector är nu tillgänglig för kunder utanför USA:s VA7-region. Använd listruteväljaren för regionen för att välja i vilken Snowflake-region ditt konto finns. Dokumentationen har uppdaterats med den förväntade datastrukturen för Snowflake direktuppspelningstabeller. |
-| [Snowflake Streaming](../destinations/catalog/warehouses/snowflake.md) och [Snowflake Batch](../destinations/catalog/warehouses/snowflake-batch.md) regionväljare | Nu är det enklare att hitta regionen med den nya sökbara listrutan som kombinerar sök- och listruta i en enda kontroll. |
+| [Snowflake Batch](../destinations/catalog/warehouses/snowflake-batch.md) - regionväljare | Nu är det enklare att hitta regionen med den nya sökbara listrutan som kombinerar sök- och listruta i en enda kontroll. |
 | Exportera målgruppsmetadata till [Snowflake Batch](../destinations/catalog/warehouses/snowflake-batch.md)-mål | Filerna som exporteras till det här målet innehåller nu målgruppsmetadata. Den nya tabellstrukturen gäller för alla nya målanslutningar som ställs in framåt. Den gamla tabellstrukturen behålls i ytterligare tre månader innan den tas bort. |
 | [!DNL Adobe Advertising Cloud DSP]-anslutning | Den nya Adobe Advertising DSP-anslutningen har samma funktionalitet som den gamla anslutningen plus stöd för ytterligare identiteter. |
 | Externt målgruppsstöd för [Trade Desk CRM](../destinations/catalog/advertising/tradedesk-emails.md), [Villkor](../destinations/catalog/advertising/criteo.md) och [Pinterest](../destinations/catalog/advertising/pinterest.md) | Nu kan du aktivera målgrupper utanför segmenteringen för segmenteringstjänster för Trade Desk CRM, Criteo och Pinterest, inklusive anpassade uppladdningsmålgrupper (importerade från CSV), lookalike-målgrupper, federerade målgrupper och målgrupper skapade i andra Experience Platform-appar som Adobe Journey Optimizer. Mer information finns i avsnittet [målgrupper](../destinations/catalog/advertising/criteo.md#supported-audiences) som stöds på katalogsidan för varje mål. |
-| Målgruppsfiltrering i aktiveringsarbetsflödet | Du kan nu hitta och filtrera målgrupper i steget **[!UICONTROL Select audiences]** med samma upplevelse som sidan Publiker. Du kan till exempel filtrera utifrån målgruppens ursprung för att enkelt hitta den målgrupp du söker. |
 | Större gräns för anpassad överföring av målgrupper | Du kan nu aktivera upp till 20 anpassade uppladdningsmålgrupper per målinstans. Tidigare var gränsen 10. |
 | [Exportera filen nu](../destinations/ui/export-file-now.md) och [API för ad hoc-aktivering](../destinations/api/ad-hoc-activation-api.md) har stöd för externa målgrupper | Nu kan du använda Export file now (UI) och ad hoc-aktiverings-API:t med externa målgrupper (som anpassad överföring, lookalike, federerad och målgrupper från andra Experience Platform-program) när du aktiverar batchfilbaserade mål. |
 | HTTP API-mål med OAuth 2 och mTLS | Nu kan du skapa och autentisera HTTP API-mål som använder OAuth 2 när autentiseringsslutpunkten kräver gemensam TLS (mTLS). Token retrieval under målkonfigurationen har nu stöd för mTLS. |
@@ -181,5 +179,8 @@ Mer information finns i [översikten över källor](../sources/home.md).
 <!--
 
 | Data Engineering Agent | The following new and updated skills are available in the Data Engineering Agent:<br><br><ul><li><strong>Data onboarding:</strong> Follow step-by-step workflows and example prompts to connect sources, check data quality, enrich data semantically, and ingest data for B2C and B2B flows, with expected outputs and troubleshooting guidance in the docs.</li><li><strong>Data quality and validation:</strong> Validate data fields and datasets using two new skills (DataField and DataSet).</li><li><strong>Data collection:</strong> Get in-context guidance for complex Data Collection configurations and use conversational insights to explore lineage, dependencies, and relationships across your data collection objects.</li></ul> |
+
+| [Snowflake Streaming](../destinations/catalog/warehouses/snowflake.md) multiregion support | The Snowflake Streaming connector is now available to customers beyond the US VA7 region. Use the region dropdown selector to select which Snowflake region your account is in. The documentation has been updated with the expected data structure for Snowflake streaming tables. |
+| Audience filtering in activation workflow | You can now find and filter audiences in the **[!UICONTROL Select audiences]** step with the same experience as the Audiences page; for example, you can filter on audience origin to easily find the audience you are looking for. |
 
 -->
