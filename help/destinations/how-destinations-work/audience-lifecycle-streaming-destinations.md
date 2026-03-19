@@ -1,13 +1,13 @@
 ---
 title: Målgruppslivscykel i Experience Platform och direktuppspelningsmål
 description: Läs om hur målgruppsnamn och målmappningar från Experience Platform återspeglas i målplattformarna för direktuppspelning.
-source-git-commit: 6b4dfa714e078fb5b97900811aade081ffef0d78
+exl-id: 8a9a9e2f-d52f-41c9-ae27-9d2cd797bb85
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 1%
 
 ---
-
 
 # Målgruppens livscykel på direktuppspelningsmål
 
@@ -86,6 +86,6 @@ Följande mål för direktuppspelning stöder automatisk målgruppsborttagning n
 * [Twitter-anpassade målgrupper](../catalog/social/twitter.md)
 * [Yahoo DataX](../catalog/advertising/datax.md)
 
-### Destinationer som inte stöder målgruppsborttagning
+### Destinationer som inte stöder målgruppsborttagning {#no-removal-support}
 
 För mål som inte listas ovan tas mappningen endast bort när du tar bort en målgrupp från målet. Målgruppen på målplattformen är aktiv tills du tar bort den manuellt på partnerplattformen.

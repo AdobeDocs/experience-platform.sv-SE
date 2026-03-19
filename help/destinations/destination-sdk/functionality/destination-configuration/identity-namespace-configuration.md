@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar de målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '918'
 ht-degree: 0%
@@ -92,11 +92,11 @@ Kunder kan till exempel mappa ett [!DNL Experience Platform] [!DNL IDFA]-namnutr
 
 Läs mer om identiteter i översikten över [identitetsnamnområdet](../../../../identity-service/features/namespaces.md).
 
-## Mappningsöverväganden
+## Mappningsöverväganden {#mapping-considerations}
 
 Om kunderna väljer ett namnutrymme för källidentiteten och inte väljer någon målmappning, fylls målmappningen automatiskt i med ett attribut med samma namn.
 
-## Konfigurera hash för valfritt källfält
+## Konfigurera hash för valfritt källfält {#configure-optional-hashing}
 
 Experience Platform-kunder kan välja att importera data till Experience Platform i hash-format eller i vanlig text. Om målplattformen godkänner både hash-kodade och ohashade data kan du ge kunderna möjlighet att välja om Experience Platform ska hash-koda källfältets värden när de exporteras till destinationen.
 
@@ -122,7 +122,7 @@ Markera det här alternativet om du vill att Adobe Experience Platform automatis
 
 När du mappar ohash-kodade källattribut till målattribut som målet förväntar ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), kontrollerar du alternativet **Använd omformning** så att Adobe Experience Platform automatiskt hash-kodar källattributen vid aktiveringen.
 
-## Konfigurera hash för obligatoriskt källfält
+## Konfigurera hash för obligatoriskt källfält {#configure-mandatory-hashing}
 
 Om målet bara godtar hash-kodade data kan du konfigurera de exporterade attributen så att de hashas av Experience Platform automatiskt. Konfigurationen nedan kontrollerar automatiskt alternativet **Använd omformning** när identiteterna `Email` och `Phone` mappas.
 

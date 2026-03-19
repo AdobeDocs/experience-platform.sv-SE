@@ -3,9 +3,9 @@ keywords: Experience Platform;startsida;populära ämnen; larm;destinationer
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på aviseringar om destinationer i sitt sammanhang
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: 35429ec2dffacb9c0f2c60b608561988ea487606
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '935'
+source-wordcount: '931'
 ht-degree: 3%
 
 ---
@@ -18,7 +18,7 @@ Du kan prenumerera på varningar när du skapar ett dataflöde för att få varn
 
 Det här dokumentet innehåller anvisningar om hur du prenumererar på meddelanden om att ta emot aviseringar för dina måldataflöden.
 
-## Komma igång
+## Komma igång {#getting-started}
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
@@ -56,6 +56,8 @@ Aviseringar som är tillgängliga för måldataflöden beskrivs i tabellen nedan
 | Målflödet har körts | Den här varningen meddelar dig när en målgrupp har aktiverats på ett mål. |
 | Start för målflödeskörning | Den här varningen meddelar dig när en målflödeskörning börjar aktivera en målgrupp. |
 | Överhoppad aktiveringshastighet har överskridits | Den här varningen meddelar dig när aktiveringshastigheten har överskridit 1 % av det totala antalet aktiveringar. Identiteter hoppas över under aktivering om de saknar attribut eller har samtyckesöverträdelse. |
+
+{style="table-layout:auto"}
 
 ## Få aviseringar {#receiving-alerts}
 

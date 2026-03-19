@@ -4,9 +4,9 @@ description: Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälp
 hide: true
 hidefromtoc: true
 exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1460'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ En annonsör vill rikta sig till användare inom specifika målgrupper via Zeta 
 
 ## Förutsättningar {#prerequisites}
 
-### Krav för Zeta Marketing Platform
+### Krav för Zeta Marketing Platform {#zmp-prerequisites}
 
 * Innan du skapar en ny anslutning till Zeta Marketing Platform-målet måste du skapa en tom kundlista i ditt Zeta Marketing Platform-konto. Du måste välja en av dessa kundlistor som mål för att få den Adobe Experience Platform-publik som du tänker skicka. Du kan skapa en tom kundlista i ZMP genom att följa instruktionerna [här](https://knowledgebase.zetaglobal.com/kb/creating-audiences#CreatingAudiences-CreatingaCustomerList).
 * Även om Adobe Experience Platform tillåter aktivering av flera målgrupper till en viss ZMP-destinationsinstans, är det obligatoriskt att varje ZMP-destinationsinstans endast tar emot en Experience Platform-målinstans. Om du vill hantera flera målgrupper från Experience Platform skapar du ytterligare ZMP-målinstanser för varje målgrupp och väljer en annan kundlista i listrutan. Detta säkerställer att målgrupperna inte skrivs över. Mer information finns i [Fyll i målinformation](#destination-details).
@@ -48,6 +48,7 @@ En annonsör vill rikta sig till användare inom specifika målgrupper via Zeta 
 [!DNL Zeta Marketing Platform] stöder aktivering av anpassade användar-ID:n som beskrivs i tabellen nedan. Mer information finns i [identiteter](/help/identity-service/features/namespaces.md).
 
 >[!IMPORTANT]
+>
 > Målet för Zeta Marketing Platform kräver att du mappar ett namnområde för källidentiteten till ZMP `uid`-målidentiteten. Detta hjälper Zeta Marketing Platform att särskilja varje profil unikt.
 
 | Målidentitet | Beskrivning | Överväganden | Anteckningar |
@@ -69,6 +70,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 {style="table-layout:auto"}
 
 >[!NOTE]
+>
 > När enskilda medlemmar läggs till eller tas bort från Experience Platform-målgruppen skickas uppdateringar till ZMP för att säkerställa att målkundslistan synkroniseras i enlighet med detta.
 
 ## Exportera typ och frekvens {#export-type-frequency}
@@ -98,7 +100,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet måste du ha **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -127,14 +129,14 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera målgrupper till direktuppspelningsmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 

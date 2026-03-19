@@ -5,9 +5,9 @@ title: Ta bort ett måldataflöde med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort dataflöden till batchmål och direktuppspelningsmål med API:t för Flow Service.
 exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '563'
 ht-degree: 4%
 
 ---
@@ -35,7 +35,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+Om du vill anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -67,6 +67,8 @@ DELETE /flows/{FLOW_ID}
 | --------- | ----------- |
 | `{FLOW_ID}` | Det unika `id`-värdet för måldataflödet som du vill ta bort. |
 
+{style="table-layout:auto"}
+
 **Begäran**
 
 ```shell
@@ -90,6 +92,6 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 Genom att följa den här självstudiekursen har du använt API:t [!DNL Flow Service] för att ta bort ett befintligt dataflöde till ett mål.
 
-Anvisningar om hur du utför dessa åtgärder med användargränssnittet finns i självstudiekursen [Ta bort dataflöden i användargränssnittet](../ui/delete-destinations.md).
+Anvisningar om hur du utför de här åtgärderna med användargränssnittet finns i självstudiekursen [Ta bort dataflöden i användargränssnittet](../ui/delete-destinations.md).
 
 Du kan nu fortsätta och [ta bort målkonton](/help/destinations/api/delete-destination-account.md) med API:t [!DNL Flow Service].

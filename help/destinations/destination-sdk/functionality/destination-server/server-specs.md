@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar målserverspecifikationer i Adobe Experience Platform Destination SDK via slutpunkten "/authoring/destination-servers".
 title: Serverspecifikationer för mål som skapats med Destination SDK
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: 455886806d46a227eddb5ba060c15e1a00e13edf
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '2775'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Målserverparametrar har två konfigurerbara fält. Dessa alternativ avgör om d
 
 {style="table-layout:auto"}
 
-### När hårdkodade jämfört med mallsidesfält ska användas
+### När hårdkodade jämfört med mallsidesfält ska användas {#when-to-use-hard-coded-vs-templatized}
 
 Både hårdkodade och mallbaserade fält kan användas i Destination SDK, beroende på vilken typ av integrering du skapar.
 
@@ -288,7 +288,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL A
 | `fileBasedAzureBlobDestination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Azure Blob] [lagringskontots URI](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i Experience Platform-gränssnittet anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att kunna läsa värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "https://myaccount.blob.core.windows.net/"`, anger du det här värdet till `NONE`. |
 | `fileBasedAzureBlobDestination.path.value` | Sträng | Sökvägen till ditt [!DNL Azure Blob]-lagringsutrymme. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `https://myaccount.blob.core.windows.net/`. |
 | `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `container.value`.<ul><li>Om du vill att dina användare ska ange sitt eget [!DNL Azure Blob] [behållarnamn](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i Experience Platform-gränssnittet anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `container.value` för att kunna läsa värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat behållarnamn för integreringen, till exempel `"path.value: myContainer"`, anger du det här värdet till `NONE`. |
-| `fileBasedAzureBlobDestination.container.value` | Sträng | Namnet på Azure Blob Storage-behållaren som ska användas för det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `myContainer`. |
+| `fileBasedAzureBlobDestination.container.value` | Sträng | Namnet på den Azure-behållare för Blob Storage som ska användas för det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `myContainer`. |
 
 {style="table-layout:auto"}
 

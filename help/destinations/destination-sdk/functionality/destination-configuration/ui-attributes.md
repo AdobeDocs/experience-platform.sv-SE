@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar gränssnittsattribut, t.ex. dokumentationslänken, målkortskategorin och typ av målanslutning och frekvens, för mål som skapats med Destination SDK.
 title: Gränssnittsattribut
 exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '796'
 ht-degree: 0%
@@ -23,7 +23,7 @@ När [skapar ett mål](../../authoring-api/destination-configuration/create-dest
 * URL-adressen till måldokumentationssidan i [målkatalogen](../../../catalog/overview.md).
 * Den kategori där ditt mål visas i Experience Platform-gränssnittet.
 * Dataexportfrekvensen för destinationen.
-* Målanslutningstypen, t.ex. Amazon S3, Azure Blob.
+* Målanslutningstypen, till exempel Amazon S3, Azure Blob osv.
 * Den URL där du var värd för ikonen som ska visas på målkatalogkortet.
 
 Du kan konfigurera gränssnittsattribut via slutpunkten `/authoring/destinations`. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
@@ -47,6 +47,8 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
+
+{style="table-layout:auto"}
 
 ## parametrar som stöds {#supported-parameters}
 

@@ -3,7 +3,7 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '2770'
 ht-degree: 1%
@@ -20,15 +20,15 @@ Du kan använda det här målet för målgrupper över [!DNL Facebook's]-appfami
 
 ![Facebook-mål i Adobe Experience Platform-gränssnittet.](../../assets/catalog/social/facebook/catalog.png)
 
-## Användningsfall
+## Användningsfall {#use-cases}
 
 För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Facebook] finns det två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
 
-### Använd skiftläge 1
+### Använd skiftläge 1 {#use-case-1}
 
 En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till den sociala [!DNL Facebook]-plattformen, vilket optimerar deras annonsutgifter.
 
-### Använd skiftläge 2
+### Använd skiftläge 2 {#use-case-2}
 
 Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare som företaget har om dessa kunder är medlems-ID och e-postadresser.
 
@@ -52,7 +52,7 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 | `last_name` | Efternamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name` | Förnamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga mellanslag. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name_initial` | Första namn | Godkänt format: Endast gemener, `a-z` tecken. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
-| `state` | Läge | Använd anSI-förkortningskoden [2 tecken &#x200B;](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `state` | Läge | Använd anSI-förkortningskoden [2 tecken ](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `city` | Ort | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga specialtecken, inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `zip` | Postnummer | Godkänt format: Gemener, inga mellanslag. För amerikanska postnummer ska du endast använda de första 5 siffrorna. Använd formatet `Area/District/Sector` för Storbritannien.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `country` | Land | Godkänt format: landskoder med två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) .  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
@@ -164,14 +164,14 @@ Innan du kan använda namnområdet `Extern_ID` för att skicka data till [!DNL F
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera målgrupper.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -205,7 +205,7 @@ För att förhindra att en token upphör att gälla och detta orsakar avbrott i 
    ![Modalt fönster med alternativet Återanslut OAuth](/help/destinations/assets/catalog/social/facebook/reconnect-oauth-control.png)
 
 >[!SUCCESS]
-> 
+>
 >Dina autentiseringsuppgifter uppdateras och deras förfallotid återställs till 60 dagar.
 
 ### Fyll i målinformation {#destination-details}
@@ -250,7 +250,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >abstract="Annonsörer samlade in data direkt från sina kunder och partners."
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 

@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;Utanför;Utanför crm-mål
 title: Utdataanslutning
 description: Med Outreach-destinationen kan du exportera dina kontodata och aktivera dem inom ramarna för ditt företags behov.
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1808'
 ht-degree: 1%
 
 ---
@@ -28,13 +28,13 @@ Som marknadsförare kan ni leverera personaliserade upplevelser till era presumt
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Outreach] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Outreach] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Adobe dokumentation för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
 ### Förutsättningar {#prerequisites-destination}
 
-Observera följande krav i [!DNL Outreach] för att kunna exportera data från Experience Platform till ditt [!DNL Outreach]-konto:
+Observera följande krav i [!DNL Outreach] för att exportera data från Experience Platform till ditt [!DNL Outreach]-konto:
 
 #### Du måste ha ett Outlook-konto {#prerequisites-account}
 
@@ -61,7 +61,7 @@ Observera objekten nedan innan du autentiserar till CRM-målet [!DNL Outreach]:
 >
 > Etikettnamn är bara till för att underlätta identifiering. De används inte vid uppdatering av potentiella kunder.
 
-## Skyddsräcken
+## Skyddsräcken {#guardrails}
 
 API:t [!DNL Outreach] har en hastighetsgräns på 10 000 begäranden per timme och användare. Om du når den här gränsen får du ett `429`-svar med följande meddelande: `You have exceeded your permitted rate limit of 10,000; please try again at 2017-01-01T00:00:00.`.
 
@@ -116,7 +116,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 > Om du vill ansluta till målet måste du ha **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -159,7 +159,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -169,7 +169,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL Outreach] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL Outreach]:
 
-1. Klicka på [!UICONTROL Mapping] i steget **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
+1. Välj [!UICONTROL Mapping] i steget **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
    ![Experience Platform UI, bild som visar hur du lägger till ny mappning](../../assets/catalog/crm/outreach/add-new-mapping.png)
 
 1. Välj kategorin [!UICONTROL Select source field] i fönstret **[!UICONTROL Select identity namespace]** och lägg till de önskade mappningarna.

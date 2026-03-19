@@ -3,9 +3,9 @@ title: Söka efter kantprofilattribut i realtid
 description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1838'
+source-wordcount: '1836'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,8 @@ Användningsexempel för Edge-profilsökning beror på de specifika säkerhetsbe
 | [Anpassat anpassningsmål](../catalog/personalization/custom-personalization.md) via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) | Ja | 1500 |
 | [Anpassat anpassningsmål](../catalog/personalization/custom-personalization.md) via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) | Nej | 1500 |
 
+{style="table-layout:auto"}
+
 ## Steg 1: Skapa och konfigurera ett datastream {#create-datastream}
 
 Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastreams/configure.md#create-a-datastream) för att skapa ett nytt datastream med följande **[!UICONTROL Service]**-inställningar:
@@ -61,7 +63,7 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 
 Om du vill söka efter profilattribut i kanten måste målgrupperna konfigureras för kantutvärdering.
 
-Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan om &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
+Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
@@ -71,7 +73,7 @@ Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-p
 
 ## Steg 3: Skicka profilattributsdata till Edge Network{#configure-custom-personalization-connection}
 
-För att kunna slå upp edge-profiler, inklusive attribut och data om målgruppsmedlemskap i realtid, måste data göras tillgängliga på Edge Network. Därför måste du skapa en anslutning till ett **[!UICONTROL Custom Personalization With Attributes]**-mål och aktivera målgrupperna, inklusive de attribut som du vill söka efter kantprofilerna.
+För att kunna slå upp edge-profiler, inklusive attribut och målgruppsmedlemskapsdata, i realtid måste data vara tillgängliga på Edge Network. Därför måste du skapa en anslutning till ett **[!UICONTROL Custom Personalization With Attributes]**-mål och aktivera målgrupperna, inklusive de attribut som du vill söka efter kantprofilerna.
 
 +++ Konfigurera en anpassad Personalization med attributanslutning
 
@@ -88,7 +90,7 @@ När du konfigurerar det nya målet markerar du datastream som du skapade i [ste
 När du har skapat en **[!UICONTROL Custom Personalization With Attributes]**-anslutning kan du nu skicka profildata till Edge Network.
 
 >[!IMPORTANT]
-> 
+>
 > * Om du vill aktivera data och aktivera [mappningssteget](#mapping) för arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 > 
 > Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
@@ -204,6 +206,8 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | Ja. | Datastream-ID för datastream som du skapade i [steg 1](#create-datastream). |
 
+{style="table-layout:auto"}
+
 ### Svar {#response}
 
 Ett lyckat svar returnerar HTTP-statusen `200 OK`, med ett `Handle`-objekt som innehåller information som liknar exemplen på flikarna nedan, beroende på om profilen hittas på kanten eller inte.
@@ -283,6 +287,8 @@ Objektet `handle` innehåller den information som beskrivs i tabellen nedan.
 | `type` | `handle` objekt grupperas efter typ. Vid användning av sökningar efter kantprofil är typen för `handle`-objektet alltid `activation:pull`. |
 | `eventIndex` | Edge Network får evenemang från klienten i form av matriser. Ordningen på händelserna i arrayen bevaras under bearbetningen och återspeglas av detta index. Händelseindexeringen börjar med `0`. |
 
+{style="table-layout:auto"}
+
 >[!TAB Profilen finns inte på kanten]
 
 Om profilen inte finns på kanten kan du förvänta dig ett svar som liknar det nedan.
@@ -307,6 +313,8 @@ Objektet `handle` innehåller den information som beskrivs i tabellen nedan.
 | `payload` | När profilen inte finns på kanten är objektet `payload` tomt. |
 | `type` | `payload` objekt grupperas efter typ. Vid användning av sökningar efter kantprofil är typen för `payload`-objektet alltid `activation:pull`. |
 | `eventIndex` | Edge Network tar emot händelser från klienten i form av arrayer. Ordningen på händelserna i arrayen bevaras under bearbetningen och återspeglas av detta index. Händelseindexeringen börjar med `0`. |
+
+{style="table-layout:auto"}
 
 >[!ENDTABS]
 

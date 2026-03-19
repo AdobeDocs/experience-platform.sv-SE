@@ -2,11 +2,11 @@
 keywords: IP-adress, IP-intervall, tillåtelselista-mål, tillåtelselista, direktuppspelningsmål för tillåtelselista
 title: IP-adress tillåtelselista för direktuppspelningsmål
 type: Documentation
-description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten eller Amazon Kinesis-instansen.
+description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista, för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten eller Amazon Kinesis-instansen.
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 6d59d0555dda124acfd16483e11c2899ff5c846e
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '424'
 ht-degree: 2%
 
 ---

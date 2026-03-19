@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: d252fc30d93fa4440c6ef47146830d0423e1839a
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '3004'
+source-wordcount: '3003'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [&#x200B; september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före 1 november 2024*.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före 1 november 2024*.
 >
 >För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 september 2025.
 >
@@ -50,16 +50,16 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=sv-SE#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
+    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
   </tr>
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
     <td>Prime</td>
-    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=sv-SE#datasets"> Adobe Journey Optimizer</a>.</td>
+    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>.</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=sv-SE#datasets"> Adobe Journey Optimizer</a>.</td>
+    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a>.</td>
   </tr>
   <tr>
     <td>Customer Journey Analytics</td>
@@ -78,7 +78,7 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
 
 I videon nedan finns en komplett förklaring av arbetsflödet som beskrivs på den här sidan, fördelar med att använda exportdatauppsättningsfunktionen samt några förslag på användningsområden.
 
->[!VIDEO](https://video.tv.adobe.com/v/3448822?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## Mål som stöds {#supported-destinations}
 
@@ -102,9 +102,9 @@ Vissa filbaserade mål i Experience Platform-katalogen stöder både målgruppsa
 
 Det här dokumentet innehåller all information som behövs för att exportera datauppsättningar. Om du vill aktivera *målgrupper* för molnlagring eller e-postmarknadsföringsmål läser du [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md).
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
-Observera följande krav för att kunna exportera datauppsättningar:
+Observera följande krav för att exportera datauppsättningar:
 
 * Om du vill exportera datauppsättningar till molnlagringsmål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
 * Profildatauppsättningar måste aktiveras för användning i kundprofilen i realtid. [Läs mer](/help/ingestion/tutorials/ingest-batch-data.md#enable-for-profile) om hur du aktiverar det här alternativet.
@@ -208,7 +208,7 @@ Alternativet **[!UICONTROL Export incremental files]** är markerat som standard
 4. Välj **[!UICONTROL Save]** om du vill spara schemat och fortsätta till steget **[!UICONTROL Review]**.
 
 >[!NOTE]
-> 
+>
 >För datauppsättningsexporter har filnamnen en förinställning, standardformat, som inte kan ändras. Mer information och exempel på exporterade filer finns i avsnittet [Verifiera datauppsättningsexport](#verify).
 
 ## Redigera mappsökväg {#edit-folder-path}
@@ -257,8 +257,8 @@ När du exporterar datauppsättningar skapar Experience Platform en eller flera 
 Experience Platform skapar en mappstruktur på den lagringsplats du angav, där de exporterade datauppsättningsfilerna sparas. Standardmönstret för mappexport visas nedan, men du kan [anpassa mappstrukturen med dina favoritmakron](#edit-folder-path).
 
 >[!TIP]
-> 
->Den första nivån i den här mappstrukturen - `folder-name-you-provided` - representerar **[!UICONTROL Folder path]** som du angav när du [anslöt till målet](/help/destinations/ui/connect-destination.md##set-up-connection-parameters) för att exportera datauppsättningar.
+>
+>Den första nivån i den här mappstrukturen - `folder-name-you-provided` - representerar **[!UICONTROL Folder path]** som du angav när du [anslöt till målet](/help/destinations/ui/connect-destination.md#set-up-connection-parameters) för att exportera datauppsättningar.
 
 `folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
 
@@ -266,7 +266,7 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 ### Exempeldatauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet &#x200B;](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json &#x200B;](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 
@@ -290,7 +290,7 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
    ![Målsurfvyn med en målanslutning visas och resten suddig ut.](../assets/ui/export-datasets/browse-dataset-connections.png)
 
    >[!TIP]
-   > 
+   >
    >Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
 2. I kolumnen **[!UICONTROL Activation data]** väljer du datauppsättningskontrollen för att visa alla datauppsättningar som är mappade till det här exportdataflödet.
@@ -307,7 +307,7 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
 ## Exportberättiganden för datauppsättning {#licensing-entitlement}
 
-Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa Real-Time CDP produktbeskrivning [här](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa Real-Time CDP produktbeskrivning [här](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
 Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper Real-Time CDP Ultimate och Adobe Journey Optimizer Ultimate blir behörigheten för export av profiler den större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att man räknar ut det totala antalet licensierade profiler och multiplicerar med 500 kB för Real-Time CDP Prime eller 700 kB för Real-Time CDP Ultimate för att avgöra hur stor datavolym man har rätt till.
 
@@ -357,7 +357,7 @@ Manifestfilen har formatet .json.
 Det finns inget API tillgängligt för manifestfilen, men det innehåller en lista över filer som innehåller exporten.
 +++
 
-**Kan vi lägga till ytterligare information i manifestfilen (dvs. antal poster)? Om så är fallet, hur?**
+**Kan vi lägga till ytterligare information i manifestfilen (det vill säga antalet poster)? Om så är fallet, hur?**
 
 +++Svar
 Det finns ingen möjlighet att lägga till ytterligare information i manifestfilen. Antalet poster är tillgängligt via entiteten `flowRun` (kan frågas via API). Läs mer om övervakning av destinationer.

@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar inställningar för filexport för mål som skapats med Destination SDK.
 title: Batchkonfiguration
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: 8e7356bdc5692678e46a61b538d4b6748792a423
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1031'
 ht-degree: 0%
@@ -109,7 +109,7 @@ Värdena som du anger här visas i steget [Schemalägg målexport](../../../ui/a
 Använd konfigurationsmakron för filnamn för att definiera vad de exporterade filnamnen ska innehålla. Makrona i tabellen nedan beskriver element som finns i gränssnittet på skärmen [filnamnskonfiguration](../../../ui/activate-batch-profile-destinations.md#file-names).
 
 >[!TIP]
-> 
+>
 >Du bör alltid inkludera makrot `SEGMENT_ID` i de exporterade filnamnen. Segment-ID:n är unika, så om du tar med dem i filnamnet är det bästa sättet att se till att filnamnen också är unika.
 
 | Makro | Gränssnittsetikett | Beskrivning | Exempel |
@@ -129,7 +129,7 @@ Använd konfigurationsmakron för filnamn för att definiera vad de exporterade 
 
 {style="table-layout:auto"}
 
-### Exempel på filnamnskonfiguration
+### Exempel på filnamnskonfiguration {#file-name-configuration-example}
 
 I konfigurationsexemplet nedan visas korrespondensen mellan konfigurationen som används i API-anropet och alternativen som visas i användargränssnittet.
 

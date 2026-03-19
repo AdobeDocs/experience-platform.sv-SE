@@ -3,9 +3,9 @@ title: Merkury Enterprise Connections Destination
 description: Lär dig hur du skapar en Merkury Enterprise Connections-målanslutning med Adobe Experience Platform-gränssnittet.
 last-substantial-update: 2024-07-20T00:00:00Z
 exl-id: dffc6f4d-b756-4c13-96f3-b1cc57caacdb
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1498'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Merkury]-teamet. Kontakta din [!DNL Merkury]-kontorepresentant om du har frågor eller uppdateringsfrågor.
 
-## Översikt
+## Översikt {#overview}
 
 Använd destinationen [!DNL Merkury Enterprise Connections] för att leverera målgrupper till [!DNL Merkury] på ett säkert sätt. Med [!DNL Merkury] kan marknadsförarna enkelt matcha och leverera personbaserade målgrupper till mer än 80 premiumadresserbara TV-/CTV-anslutningar, utgivare och reklamtekniska anslutningar för [!DNL Merkury]. [!DNL Merkury] drivs av ett omfattande identitetsdiagram med vuxna kunder i USA som innehåller fler än 268 miljoner människor.
 
@@ -30,17 +30,17 @@ Följ stegen på den här dokumentationssidan för att skapa en [!DNL Merkury Co
 
 ![Målkortet för Merkury Enterprise Conections är markerat i Experience Platform målkatalog.](../../assets/catalog/data-partners/merkury-connections/media/image2.png)
 
-## Användningsfall
+## Användningsfall {#use-cases}
 
 * **Aktivering av digitala media**: Enkel matchning och leverans av målgruppsprofiler till mer än 50 premiumadresserbara utgivare och AD-Tech-anslutningar i [!DNL Merkury].
 * **Förbättra effektiviteten**: Förbättra er räckvidd för cookie-fria, adresserbara medier, förbättra effektiviteten i målinriktningen och avkastningen på Advertising-utgifter (ROAS).
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 >[!IMPORTANT]
 >
->* Om du vill ansluta till målet behöver du **Visa mål** och **Hantera mål**, **Aktivera mål**, **Visa profiler** och **Visa segment** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
->* Om du vill exportera *identiteter* behöver du **Visa identitetsdiagram** [[behörighet för åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions).\![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](../../assets/catalog/data-partners/merkury-connections/media/image3.png)
+>* Om du vill ansluta till målet behöver du **Visa mål** och **Hantera mål**, **Aktivera mål**, **Visa profiler** och **Visa segment** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera *identiteter* behöver du **Visa identitetsdiagram** [[behörighet för åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions).\![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](../../assets/catalog/data-partners/merkury-connections/media/image3.png)
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -55,7 +55,7 @@ Följ stegen på den här dokumentationssidan för att skapa en [!DNL Merkury Co
 
 {style="table-layout:auto"}
 
-## Målgrupper
+## Målgrupper {#supported-audiences}
 
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
@@ -80,26 +80,26 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 {style="table-layout:auto"}
 
 
-## Exportera typ och frekvens
+## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | **Objekt** | **Typ** | **Anteckningar** |
 |---|---|---|  
-| Exporttyp | **Profilbaserad** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i arbetsflödet för [[målaktivering]](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations#select-attributes). |
-| Frekvens | **Gruppera** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [[gruppfilsbaserade frekvensmål]](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/destination-types#file-based). |
+| Exporttyp | **Profilbaserad** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i arbetsflödet för [[målaktivering]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations#select-attributes). |
+| Frekvens | **Gruppera** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [[gruppfilsbaserade frekvensmål]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-types#file-based). |
 
 {style="table-layout:auto"}
 
-## Anslut till målet
+## Anslut till målet {#connect}
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **Visa mål** och **Hantera och aktivera datamängdsmål** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
+>Om du vill ansluta till målet behöver du **Visa mål** och **Hantera och aktivera datamängdsmål** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen för [[destinationskonfiguration]](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/connect-destination). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen för [[destinationskonfiguration]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/connect-destination). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
-### Autentisera till mål
+### Autentisera till mål {#authenticate}
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **Anslut till mål**.
 
@@ -116,7 +116,7 @@ Du måste ange giltiga värden för följande autentiseringsuppgifter för att f
 
 ![ny skärm för att skapa mål](../../assets/catalog/data-partners/merkury-connections/media/image4.png)
 
-### Fyll i målinformation
+### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -134,19 +134,19 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ![bild av CSV-alternativ](../../assets/catalog/data-partners/merkury-connections/media/image8.png)
 
-### Befintligt konto
+### Befintligt konto {#existing-account}
 
 Konton som redan har definierats med målet Merkury Enterprise Connections visas i en listruta. När du väljer det här alternativet visas information om kontot i den högra listen. Visa exemplet från gränssnittet när du navigerar till **Destinationer** > **Konton**:
 
 ![En skärmbild av destinationskontot på målkontosidan.](../../assets/catalog/data-partners/merkury-connections/media/image5.png)
 
-## Aktivera aviseringar
+## Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/alerts).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/alerts).
 
 Välj **Nästa** när du är klar med informationen om målanslutningen.
 
-## Aktivera målgrupper till det här målet
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
@@ -154,9 +154,9 @@ Välj **Nästa** när du är klar med informationen om målanslutningen.
 >* Om du vill exportera identiteter måste du ha åtkomstkontrollsbehörigheten **Visa identitetsdiagram**.
 
 
-Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
-## Mappningsförslag
+## Mappningsförslag {#mapping-suggestions}
 
 Korrekt bearbetning av filer på [!DNL Merkury]-sidan kräver namn- och adresselement. Även om det inte krävs alla element, kommer det att vara till hjälp att matchningen blir så framgångsrik som möjligt om alla delar anges.
 
@@ -177,14 +177,14 @@ Mappningsförslag ges i tabellen nedan som listar de attribut på målsidan som 
 
 {style="table-layout:auto"}
 
-## Validera dataexport
+## Validera dataexport {#validate-data-export}
 
 Kontrollera Amazon S3-lagringskassetten och se till att de exporterade filerna innehåller de förväntade profilpopulationerna för att kontrollera om data har exporterats utan fel.
 
-## Dataanvändning och styrning
+## Dataanvändning och styrning {#data-usage-governance}
 
-Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/sv/docs/experience-platform/data-governance/home).
+Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home).
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du skapat ett dataflöde för att exportera profildata från Experience Platform till din [!DNL Merkury] hanterade S3-plats. Därefter måste du kontakta din [!DNL Merkury]-representant med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.

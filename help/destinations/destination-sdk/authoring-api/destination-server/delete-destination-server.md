@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på det API-anrop som används för att ta bort en befintlig målserverkonfiguration via Adobe Experience Platform Destination SDK.
 title: Ta bort en målserverkonfiguration
 exl-id: 2322a2ce-220e-4590-a553-b15152412752
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '329'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ En detaljerad beskrivning av de funktioner som du kan ta bort via den här slutp
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Ta bort en målserverkonfiguration {#delete}
 
@@ -48,6 +48,8 @@ DELETE /authoring/destination-servers/{INSTANCE_ID}
 | --------- | ----------- |
 | `{INSTANCE_ID}` | `ID` för målserverkonfigurationen som du vill ta bort. |
 
+{style="table-layout:auto"}
+
 +++Begäran
 
 ```shell
@@ -58,7 +60,7 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destinat
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 

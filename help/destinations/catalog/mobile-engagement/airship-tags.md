@@ -3,16 +3,16 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1070'
 ht-degree: 1%
 
 ---
 
 # [!DNL Airship Tags]-anslutning {#airship-tags-destination}
 
-## Översikt
+## Översikt {#overview}
 
 [!DNL Airship] är den ledande kundinteraktionsplattformen, som hjälper dig att leverera meningsfulla, personaliserade flerkanalsmeddelanden till användarna i alla faser av kundlivscykeln.
 
@@ -25,7 +25,7 @@ Mer information om [!DNL Airship] finns i [Airship Docs](https://docs.airship.co
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Airship]-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på [support.airship.com](https://support.airship.com/).
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 Innan du kan skicka Adobe Experience Platform-målgrupper till [!DNL Airship] måste du:
 
@@ -33,7 +33,7 @@ Innan du kan skicka Adobe Experience Platform-målgrupper till [!DNL Airship] m�
 * Generera en innehavartoken för autentisering.
 
 >[!TIP]
-> 
+>
 >Skapa ett [!DNL Airship]-konto via [den här registreringslänken](https://go.airship.eu/accounts/register/plan/starter/) om du inte redan har det.
 
 ## Målgrupper {#supported-audiences}
@@ -72,7 +72,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Tagggrupper
+## Tagggrupper {#tag-groups}
 
 Målgrupper i Adobe Experience Platform liknar [taggar](https://docs.airship.com/guides/audience/tags/) i Airship, men implementeringen skiljer sig något. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment](../../../xdm/field-groups/profile/segmentation.md) till om en [!DNL Airship]-tagg finns eller inte. I en Experience Platform-publik där `xdm:status` ändras till `realized` läggs taggen till i [!DNL Airship]-kanalen eller namngivna användare som profilen mappas till. Om `xdm:status` ändras till `exited` tas taggen bort.
 
@@ -84,25 +84,25 @@ Om du vill aktivera den här integreringen skapar du en *tagggrupp* i [!DNL Airs
 
 Mer information om hur du skapar tagggruppen finns i [Hantera tagggrupper](https://docs.airship.com/tutorials/manage-project/messaging/tag-groups).
 
-## Generera innehavartoken
+## Generera innehavartoken {#generate-bearer-token}
 
 Gå till **[!UICONTROL Settings]** **[!UICONTROL APIs & Integrations]** på [kontrollpanelen för luftskepp](https://go.airship.com) och välj **[!UICONTROL Tokens]** på den vänstra menyn.
 
 Klicka på **[!UICONTROL Create Token]**.
 
-Ange ett användarvänligt namn för din token, t.ex. &quot;Adobe Tags Destination&quot;, och välj &quot;All Access&quot; för rollen.
+Ange ett användarvänligt namn för din token, till exempel&quot;Adobe Tags Destination&quot;, och välj&quot;All Access&quot; för rollen.
 
 Klicka på **[!UICONTROL Create Token]** och spara informationen som konfidentiell.
 
-## Användningsfall
+## Användningsfall {#use-cases}
 
 För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Airship Tags] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
-### Använd skiftläge 1
+### Använd skiftläge 1 {#use-case-1}
 
 Återförsäljare eller underhållningsplattformar kan skapa användarprofiler för sina lojalitetskunder och skicka dessa målgrupper till [!DNL Airship] för meddelandemålinriktning på mobilkampanjer.
 
-### Använd skiftläge 2
+### Använd skiftläge 2 {#use-case-2}
 
 Trigga personliga meddelanden i realtid när användare faller in i eller ut från en viss målgrupp inom Adobe Experience Platform.
 
@@ -111,7 +111,7 @@ En återförsäljare skapar t.ex. en varumärkesspecifik jeans-publik i Experien
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -139,18 +139,18 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Mappningsöverväganden {#mapping-considerations}
 
-[!DNL Airship]-taggar kan anges antingen på en kanal, som representerar en enhetsinstans, t.ex. iPhone, eller en namngiven användare, som mappar alla användarens enheter till en gemensam identifierare, t.ex. ett kund-ID. Om du har oformaterad e-postadress som primär identitet i ditt schema, markerar du e-postfältet i **[!UICONTROL Source Attributes]** och mappar till den [!DNL Airship] namngivna användaren i den högra kolumnen under **[!UICONTROL Target Identities]**, som visas nedan.
+[!DNL Airship]-taggar kan anges antingen på en kanal, som representerar en enhetsinstans, till exempel iPhone, eller en namngiven användare, som mappar alla användarens enheter till en gemensam identifierare, till exempel ett kund-ID. Om du har oformaterad e-postadress som primär identitet i ditt schema, markerar du e-postfältet i **[!UICONTROL Source Attributes]** och mappar till den [!DNL Airship] namngivna användaren i den högra kolumnen under **[!UICONTROL Target Identities]**, som visas nedan.
 
 ![Mappning av namngivna användare](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
 
-För identifierare som ska mappas till en kanal, d.v.s. en enhet, mappar du till lämplig kanal baserat på källan. Följande bilder visar hur du mappar ett Google Advertising ID till en [!DNL Airship] Android-kanal.
+För identifierare som ska mappas till en kanal, dvs. en enhet, mappas till rätt kanal baserat på källan. Följande bilder visar hur du mappar ett Google Advertising ID till en [!DNL Airship] Android-kanal.
 
 ![Anslut till flaggor för luftskepp](../../assets/catalog/mobile-engagement/airship-tags/select-source-identity.png)
 ![Ansluta till airship-taggar](../../assets/catalog/mobile-engagement/airship-tags/select-target-identity.png)

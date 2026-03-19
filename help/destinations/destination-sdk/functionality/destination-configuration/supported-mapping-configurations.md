@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar målet för de identitets- och attributmappningskonfigurationer som stöds.
 title: Mappningskonfigurationer som stöds
 exl-id: a477a3f2-a229-4b22-8588-ee58bd5436c6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '670'
 ht-degree: 0%
@@ -33,6 +33,8 @@ Destinationer för realtidsströmning som har byggts med Destination SDK stöder
 | --- | --- |
 | XDM-attribut | Eget attribut |
 | Namnutrymme för identitet | Namnutrymme för identitet |
+
+{style="table-layout:auto"}
 
 I konfigurationsexemplet nedan kan kunderna använda båda mappningarna i tabellen ovan.
 
@@ -87,6 +89,8 @@ Filbaserade mål som skapats med Destination SDK stöder mappningskonfiguratione
 | XDM-attribut | Attribut/anpassat attribut |
 | Namnutrymme för identitet | Attribut/anpassat attribut |
 | Namnutrymme för identitet | Namnutrymme för identitet |
+
+{style="table-layout:auto"}
 
 I konfigurationsexemplet nedan kan kunderna använda alla mappningar från tabellen ovan.
 

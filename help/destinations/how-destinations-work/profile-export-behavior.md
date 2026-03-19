@@ -1,10 +1,10 @@
 ---
 title: Beteende vid export av profiler
-description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
+description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-destinationer.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: 7502810ff329a31f2fdaf6797bc7672118555e6a
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2935'
+source-wordcount: '2931'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Det finns flera måltyper i Experience Platform, vilket visas i diagrammet nedan
 
 ![Typer av destinationsdiagram](/help/destinations/assets/how-destinations-work/types-of-destinations-v4.png)
 
-## Meddelandeaggregering i direktuppspelningsmål
+## Meddelandeaggregering i direktuppspelningsmål {#message-aggregation}
 
 Innan du börjar dyka upp specifik information per måltyp är det viktigt att förstå begreppet meddelandeaggregering för *direktuppspelningsmål*.
 
@@ -47,7 +47,7 @@ Aggingsprincipen kan konfigureras och målutvecklare kan bestämma hur aggregeri
 
 >[!IMPORTANT]
 >
-> Företagsmål är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Företagsmål är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 [Företagsmålen](/help/destinations/destination-types.md#advanced-enterprise-destinations) i Experience Platform är Amazon Kinesis, Azure Event Hubs och HTTP API.
 
@@ -59,7 +59,9 @@ Experience Platform optimerar beteendet för profilexport till företagets mål,
 
 I alla de fall som beskrivs ovan exporteras endast de profiler där relevanta uppdateringar har gjorts till ditt mål. Om en målgrupp som mappats till målflödet till exempel har hundra medlemmar och fem nya profiler kvalificerar sig för segmentet, kommer exporten till målplatsen att vara inkrementell och endast innehålla de fem nya profilerna.
 
-Observera att alla mappade attribut exporteras för en profil, oavsett var ändringarna finns. I exemplet ovan exporteras alltså alla mappade attribut för de fem nya profilerna även om attributen inte har ändrats.
+>[!NOTE]
+>
+>Alla mappade attribut exporteras för en profil, oavsett var ändringarna finns. I exemplet ovan exporteras alltså alla mappade attribut för de fem nya profilerna även om attributen inte har ändrats.
 
 ### Vad avgör en dataexport och vad som ingår i exporten {#enterprise-behavior}
 
@@ -106,7 +108,9 @@ Experience Platform optimerar beteendet för profilexport till ditt mål för di
 
 I alla de fall som beskrivs ovan exporteras endast de profiler där relevanta uppdateringar har gjorts till ditt mål. Om en målgrupp som mappats till målflödet till exempel har hundra medlemmar och fem nya profiler kvalificerar sig för segmentet, kommer exporten till målplatsen att vara inkrementell och endast innehålla de fem nya profilerna.
 
-Observera att alla mappade attribut exporteras för en profil, oavsett var ändringarna finns. I exemplet ovan exporteras alltså alla mappade attribut för de fem nya profilerna även om attributen inte har ändrats.
+>[!NOTE]
+>
+>Alla mappade attribut exporteras för en profil, oavsett var ändringarna finns. I exemplet ovan exporteras alltså alla mappade attribut för de fem nya profilerna även om attributen inte har ändrats.
 
 ### Vad avgör en dataexport och vad som ingår i exporten {#streaming-behavior}
 
@@ -171,7 +175,7 @@ I exportinställningen som visas nedan, där en användare exporterar stegvisa f
 
 >[!ENDSHADEBOX]
 
-### Vad avgör en dataexport och vad som ingår i exporten
+### Vad avgör en dataexport och vad som ingår i exporten {#file-based-export-details}
 
 Baserat på informationen i avsnittet ovan kan du sammanfatta beteendet för export av profiler till filbaserade mål enligt beskrivningen nedan:
 

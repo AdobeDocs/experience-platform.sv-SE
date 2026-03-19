@@ -3,7 +3,7 @@ title: Redigera mål
 type: Tutorial
 description: Lär dig hur du redigerar och uppdaterar befintliga destinationskonton i Adobe Experience Platform användargränssnitt
 exl-id: f3298836-668b-43fb-b4f3-85a650766f05
-source-git-commit: f91551c460c7d6fd4f98111210f29cf16ec5b565
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Lär dig hur du redigerar olika komponenter i en befintlig målanslutning, bland
 >
 > Redigeringsåtgärderna som beskrivs i den här självstudiekursen stöds även via API-åtgärder. Läs självstudiekursen om hur du [redigerar mål i API](/help/destinations/api/edit-destination.md) om du vill ha mer information.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill redigera målanslutningar måste du ha **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
@@ -28,7 +28,7 @@ Så här redigerar du olika komponenter i en befintlig målanslutning:
 
 1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]**.
 2. Välj önskat mål som du vill redigera.
-3. Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera målkontroll &#x200B;](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**&#x200B;för att redigera befintliga målanslutningar.
+3. Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera målkontroll ](/help/images/icons/edit.png)**[!UICONTROL Edit destination]**för att redigera befintliga målanslutningar.
 4. Redigera önskade inställningar i det modala fönstret. Välj **[!UICONTROL Save]** när du är klar.
 
 I redigeringsfönstret kan du uppdatera alla inställningar som du konfigurerade när du först anslöt till målet. Dessa inställningar skiljer sig åt beroende på vilken målplattform du uppdaterar.
@@ -49,7 +49,7 @@ Nedan visas några exempel på inställningar som du kan uppdatera för [Amazon 
 >
 >Inställningarna för målanslutningen har uppdaterats.
 
-## Andra redigeringsalternativ
+## Andra redigeringsalternativ {#other-editing-options}
 
 Genom att använda Experience Platform gränssnitt eller API:t för Flow Service kan du redigera olika målkonfigurationer, vilket beskrivs i länkarna nedan:
 
@@ -59,7 +59,7 @@ Genom att använda Experience Platform gränssnitt eller API:t för Flow Service
 | [Redigera konton](/help/destinations/ui/update-accounts.md) | [Redigera basanslutningskomponenter (autentiseringsparametrar och andra komponenter)](/help/destinations/api/edit-destination.md#patch-base-connection) |
 | [Redigera aktiveringsdataflöden](/help/destinations/ui/edit-activation.md) | [Uppdatera måldataflöden](/help/destinations/api/update-destination-dataflows.md) |
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du använt arbetsytan **[!UICONTROL destinations]** för att uppdatera befintliga målanslutningar.
 

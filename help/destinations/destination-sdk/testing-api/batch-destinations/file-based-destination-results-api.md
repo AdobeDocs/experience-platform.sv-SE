@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /testing/destinationInstance för att visa fullständig information om testresultaten. Denna API-slutpunkt returnerar samma resultat som du skulle få när du använde API:t för Flow Service för att övervaka dataflöden.
 title: Visa detaljerade aktiveringsresultat
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '545'
 ht-degree: 1%
 
 ---
@@ -25,9 +25,9 @@ Om du vill se mer detaljerad information om aktiveringsflödet kan du använda e
 
 ## Komma igång {#getting-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du kan använda slutpunkten `/testing/destinationInstance` måste du kontrollera att följande villkor uppfylls:
 
@@ -54,9 +54,13 @@ GET /authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}/results?flo
 | -------- | ----------- |
 | `{DESTINATION_INSTANCE_ID}` | ID:t för målinstansen som du genererar exempelprofiler för. I avsnittet [Krav](#prerequisites) finns mer information om hur du får detta ID. |
 
+{style="table-layout:auto"}
+
 | Frågesträngsparametrar | Beskrivning |
 | -------- | ----------- |
 | `flowRunIds` | ID för flödeskörning som motsvarar de aktiverade målgrupperna. Du kan hitta ID:n för flödeskörning i egenskapen `results` som returneras i svaret [på anropet till måltestningen](file-based-destination-testing-api.md). |
+
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -215,7 +219,7 @@ Svaret innehåller en fullständig beskrivning av aktiveringsflödet. Du kan få
 
 Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 När du har läst det här dokumentet vet du nu hur du testar din filbaserade destinationskonfiguration och ser alla detaljer om aktiveringsresultaten.
 

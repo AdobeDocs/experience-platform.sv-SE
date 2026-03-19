@@ -2,9 +2,9 @@
 description: På den här sidan visas ett exempel på det API-anrop som används för att ta bort en befintlig målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Ta bort en målgruppsmall
 exl-id: 6eb07e3c-3269-4368-9b11-04bd993cc4ab
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '287'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Ta bort en målgruppsmall {#delete}
 
@@ -43,6 +43,8 @@ DELETE /authoring/audience-templates/{INSTANCE_ID}
 | --------- | ----------- |
 | `{INSTANCE_ID}` | `ID` för målgruppsmallen som du vill ta bort. |
 
+{style="table-layout:auto"}
+
 +++Begäran
 
 ```shell
@@ -55,7 +57,7 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/audience
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 

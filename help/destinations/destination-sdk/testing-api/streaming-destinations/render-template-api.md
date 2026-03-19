@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att validera utdata till ditt direktuppspelningsmål, baserat på din meddelandeomvandlingsmall.
 title: Validera exporterad profilstruktur
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '792'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med
 
 ## Komma igång med åtgärder för återgivningsmall-API {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Återge exporterade profiler baserat på mallen för meddelandeomformning {#render-exported-data}
 

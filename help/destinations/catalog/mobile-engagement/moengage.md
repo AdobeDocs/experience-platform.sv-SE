@@ -3,9 +3,9 @@ title: Moengage connection
 description: Moengage är en plattform för kundengagemang som driver kundcentrerade interaktioner mellan konsumenter och varumärken i realtid.
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1158'
+source-wordcount: '1156'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Med Adobe är integreringen mycket enkel och intuitiv. Ta vilken Adobe-användar
 
 >[!IMPORTANT]
 >
->Den här målanslutningen och dokumentationssidan skapas och underhålls av *Moengage*-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *`https://help.moengage.com/hc/en-us`.*
+>Den här målanslutningen och dokumentationssidan skapas och underhålls av *Moengage*-teamet. Om du har frågor eller uppdateringsförfrågningar kontaktar du dem direkt på *`https://help.moengage.com/hc/en-us`.*
 
 ## Användningsfall {#use-cases}
 
@@ -83,7 +83,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -114,10 +114,10 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till det här målet.

@@ -4,9 +4,9 @@ title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: ea397360e5277bef478b2173bfb5e4be4ac1fab4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1614'
+source-wordcount: '1610'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,7 @@ Den här självstudiekursen kräver även att du har en fungerande förståelse 
 * [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera dataflödet med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera ditt dataflöde med API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
@@ -40,7 +40,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
+Om du vill anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -79,6 +79,8 @@ GET /flows/{FLOW_ID}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{FLOW_ID}` | Det unika `id`-värdet för måldataflödet som du vill hämta. |
+
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -233,6 +235,8 @@ curl -X PATCH \
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
+{style="table-layout:auto"}
+
 **Svar**
 
 Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt målanslutnings-ID.
@@ -272,6 +276,8 @@ curl -X PATCH \
 | `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
+
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -314,6 +320,8 @@ curl -X PATCH \
 | `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
+
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -392,6 +400,8 @@ curl -X PATCH \
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
+{style="table-layout:auto"}
+
 **Svar**
 
 Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt grundläggande anslutnings-ID.
@@ -433,6 +443,8 @@ curl -X PATCH \
 | `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
+
+{style="table-layout:auto"}
 
 **Svar**
 

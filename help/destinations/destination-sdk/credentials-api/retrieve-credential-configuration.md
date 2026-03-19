@@ -2,9 +2,9 @@
 description: På den här sidan visas ett exempel på API-anropet som används för att hämta en autentiseringskonfiguration via Adobe Experience Platform Destination SDK.
 title: Hämta en konfiguration för autentiseringsuppgifter
 exl-id: cec55073-6e2f-4412-a9dd-1aeb445279c0
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ När du använder ett globalt autentiseringssystem måste du ange `"authenticati
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta en konfiguration för autentiseringsuppgifter {#retrieve}
 
@@ -122,6 +122,8 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 | Parameter | Beskrivning |
 | -------- | ----------- |
 | `{INSTANCE_ID}` | ID:t för den autentiseringskonfiguration som du vill hämta. |
+
+{style="table-layout:auto"}
 
 +++
 

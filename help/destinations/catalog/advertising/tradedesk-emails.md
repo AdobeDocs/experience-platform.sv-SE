@@ -3,9 +3,9 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1814'
+source-wordcount: '1812'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,6 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
       * Perioden (`.`) tecken (ASCII-kod 46). Du kan till exempel normalisera &quot;jane.doe@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
      * Plustecknet (`+`) (ASCII-kod 43) och alla efterföljande tecken. Till exempel normalisera &quot;janedoe+home@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
   
-
 ## Normalisering av telefonnummer och krav på hashning {#phone-hashing}
 
 Det här behöver du veta om att överföra telefonnummer:
@@ -166,7 +165,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
@@ -180,7 +179,7 @@ När du ansluter till målet är det helt valfritt att ange en datastyrningsprin
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -222,13 +221,14 @@ Välja käll- och målfält:
 | netID | net_id |
 | FirstID | first_id |
 
+{style="table-layout:auto"}
 
 ## Validera dataexport {#validate}
 
 Om du vill verifiera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk] kan du hitta målgrupperna på fliken Adobe 1PD i biblioteket [!DNL The Trade Desk] Advertiser Data and identity. Så här söker du efter motsvarande ID i användargränssnittet för [!DNL Trade Desk]:
 
 1. Välj först fliken **[!UICONTROL Libraries]** och granska avsnittet **[!UICONTROL Advertiser data and identity]**.
-2. Klicka på **[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för [!DNL The Trade Desk].
+2. Välj **[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för [!DNL The Trade Desk].
 3. Segmentnamnet eller segment-ID från Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].
 
 ## Dataanvändning och styrning {#data-usage-governance}

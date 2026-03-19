@@ -2,9 +2,9 @@
 description: Den här sidan förklarar hur du använder slutpunkten /authoring/testing/template/render för att visualisera hur de mallsidiga kunddatafälten som definieras i målkonfigurationen skulle se ut.
 title: Validera mallsidiga kundfält
 exl-id: 8ed93f0c-3439-4d11-bb2f-d417a1e0b6a8
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '386'
 ht-degree: 1%
 
 ---
@@ -20,9 +20,9 @@ Slutpunkten genererar slumpmässiga värden för kunddatafälten och returnerar 
 
 ## Komma igång {#getting-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du kan använda slutpunkten `/template/render` måste du kontrollera att följande villkor uppfylls:
 
@@ -79,6 +79,8 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/t
 | -------- | ----------- |
 | `destinationId` | ID:t för den [målkonfiguration](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) som du testar. |
 | `templates` | De mallsidiga fältnamnen som definieras i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). |
+
+{style="table-layout:auto"}
 
 **Svar**
 

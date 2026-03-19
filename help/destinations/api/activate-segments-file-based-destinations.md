@@ -4,9 +4,9 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: ba2de112ba9f1fce35f847e9eb9396e65f2a9232
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '4976'
+source-wordcount: '4973'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] låter dig skapa målgrupper och generera målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till filbaserade mål i Experience Platform.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för filbaserade mål i Experience Platform.
 
 ### Nödvändiga behörigheter {#permissions}
 
@@ -67,7 +67,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values-headers}
 
-För att kunna ringa anrop till [!DNL Experience Platform] API:er måste du först slutföra [Experience Platform-autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+Om du vill ringa anrop till [!DNL Experience Platform] API:er måste du först slutföra [självstudiekursen för Experience Platform-autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -182,7 +182,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 +++
 
->[!TAB Azure Data Lake Gen 2 (ADLS Gen2)]
+>[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
 **Begäran**
 
@@ -488,7 +488,7 @@ Observera den markerade raden med textbundna kommentarer i exemplet [!DNL connec
 +++
 
 
->[!TAB Azure Data Lake Gen 2 (ADLS Gen2)]
+>[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
 +++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec] visar [!DNL auth spec]
 
@@ -703,7 +703,7 @@ Observera den markerade raden med textbundna kommentarer i exemplet [!DNL connec
 
 >[!ENDTABS]
 
-Med hjälp av egenskaperna som anges i autentiseringsspecifikationen (dvs. `authSpec` från svaret) kan du skapa en basanslutning med de nödvändiga autentiseringsuppgifterna, som är specifika för varje måltyp, vilket visas i exemplen nedan:
+Med hjälp av egenskaperna som anges i autentiseringsspecifikationen (det vill säga `authSpec` från svaret) kan du skapa en basanslutning med de nödvändiga autentiseringsuppgifterna, som är specifika för varje måltyp, vilket visas i exemplen nedan:
 
 >[!BEGINTABS]
 
@@ -799,7 +799,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de autentiseringsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate) på dokumentationssidan för Azure Blob Storage-målet.
+>Mer information om hur du får de autentiseringsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate) på dokumentationssidan för Azure Blob Storage-målet.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -841,7 +841,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
->[!TAB Azure Data Lake Gen 2 (ADLS Gen2)]
+>[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
 **Begäran**
 
@@ -849,7 +849,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du får de autentiseringsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate) på sidan med måldokumentation för Azure Data Lake Gen 2 (ADLS Gen2).
+>Mer information om hur du får de autentiseringsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/adls-gen2.md#authenticate) på måldokumentationssidan för Azure Data Lake Gen 2 (ADLS Gen2).
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1094,7 +1094,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDTABS]
 
-### Lägga till kryptering i exporterade filer
+### Lägga till kryptering i exporterade filer {#add-encryption}
 
 Du kan också lägga till kryptering till de exporterade filerna. Du måste lägga till objekt från objektet `encryption` för att kunna göra detta. Se exemplet nedan med obligatoriska parametrar markerade:
 
@@ -1617,7 +1617,7 @@ Observera de markerade raderna med textbundna kommentarer i exemplet [!DNL conne
 +++
 
 
->[!TAB Azure Data Lake Gen 2 (ADLS Gen2)]
+>[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
 +++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec] med målanslutningsparametrar
 
@@ -2582,7 +2582,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
->[!TAB Azure Data Lake Gen 2 (ADLS Gen2)]
+>[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
 **Begäran**
 
@@ -2590,7 +2590,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de nödvändiga målparametrarna finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på sidan för Azure [!DNL Data Lake Gen 2(ADLS Gen2)]-måldokumentation.
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på dokumentationssidan för Azure [!DNL Data Lake Gen 2(ADLS Gen2)].
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -3077,7 +3077,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
->[!TAB Azure Data Lake Gen 2 (ADLS Gen2)]
+>[!TAB Azure Data Lake Gen 2(ADLS Gen2)]
 
 **Begäran**
 
@@ -3273,7 +3273,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 Anteckna dataflödes-ID från svaret. Detta ID krävs i senare steg.
 
-### Lägga till målgrupper i exporten
+### Lägga till målgrupper i exporten {#add-audiences}
 
 I det här steget kan du även välja vilka målgrupper du vill exportera till målet. Utförlig information om det här steget och formatet för begäran om att lägga till en målgrupp i dataflödet finns i exemplen i avsnittet [Uppdatera ett måldataflöde](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById) i API-referensdokumentationen.
 
@@ -3292,7 +3292,7 @@ Om du till exempel vill få fram följande mappning som visas i användargränss
 
 ![Exempel på mappningssteg](/help/destinations/assets/api/file-based-segment-export/mapping-example.png)
 
-### Skapa ett inmatningsschema
+### Skapa ett inmatningsschema {#create-input-schema}
 
 Om du vill skapa ett indatabchema måste du först hämta ditt [unionsschema](/help/profile/ui/union-schema.md) och de identiteter som kan exporteras till målet. Det här är schemat med attribut och identiteter som du kan välja som källmappning.
 
@@ -3730,7 +3730,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 ID:t i svaret representerar den unika identifieraren för det indatabchema som du har skapat. Kopiera ID:t från svaret eftersom du kommer att återanvända det i ett senare steg.
 
-### Skapa ett utdataschema
+### Skapa ett utdataschema {#create-output-schema}
 
 Sedan måste du konfigurera utdataschemat för din export. Först måste du hitta och kontrollera ditt befintliga partnerschema.
 

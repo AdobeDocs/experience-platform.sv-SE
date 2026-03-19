@@ -5,9 +5,9 @@ title: Uppdatera måldataflöden med API:t för Flow Service
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort målgrupper och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 7f8fbbec8927dffb3c8456b2a1d908d27d4b03c2
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2471'
+source-wordcount: '2467'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ Den här självstudiekursen kräver även att du har en fungerande förståelse 
 * [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera dataflödet med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera ditt dataflöde med API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
@@ -37,7 +37,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
+Om du vill anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -68,6 +68,8 @@ GET /flows/{FLOW_ID}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{FLOW_ID}` | Det unika `id`-värdet för måldataflödet som du vill hämta. |
+
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -389,6 +391,8 @@ curl -X PATCH \
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
+{style="table-layout:auto"}
+
 **Svar**
 
 Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
@@ -499,13 +503,15 @@ curl -X PATCH \
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
 | `name` | **(Valfritt)**. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
-| `filenameTemplate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: **(Valfritt)**. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: **(Valfritt)**. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: **(Valfritt)**. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
-| `exportMode` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. |
+| `filenameTemplate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: **(Valfritt)**. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: **(Valfritt)**. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: **(Valfritt)**. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
+| `exportMode` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. |
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
-| `frequency` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE` eller `DAILY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
+| `frequency` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE` eller `DAILY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
 | `triggerType` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du väljer läget `"DAILY_FULL_EXPORT"` i `frequency`-väljaren. <br> obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` om du vill att aktiveringsjobbet ska köras omedelbart efter att Experience Platform batchsegmenteringsjobb har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Detta garanterar att Experience Platform-profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du också lägga till en `startTime` för att ange vid vilken tidpunkt i UTC som den dagliga exporten ska ske.</li></ul> |
-| `endDate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Gäller inte vid val av `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
-| `startTime` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
+| `endDate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> Gäller inte vid val av `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
+| `startTime` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
+
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -567,6 +573,7 @@ curl -X PATCH \
 | `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. Om du vill ta bort en målgrupp från ett dataflöde använder du åtgärden `remove`. |
 | `path` | Anger vilken befintlig målgrupp som ska tas bort från måldataflödet, baserat på indexvärdet för målgruppsväljaren. Om du vill hämta ordningen för målgrupper i ett dataflöde, ska du utföra ett GET-anrop till slutpunkten `/flows` och inspektera egenskapen `transformations.segmentSelectors`. Använd `"path":"/transformations/0/params/segmentSelectors/selectors/0"` om du vill ta bort den första målgruppen i dataflödet. |
 
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -796,6 +803,8 @@ curl -X PATCH \
 | `path` | Definierar den del av flödet som ska uppdateras. När du lägger till ett profilattribut i ett dataflöde använder du sökvägen som anges i exemplet. |
 | `value.path` | Värdet på profilattributet som du lägger till i dataflödet. |
 
+{style="table-layout:auto"}
+
 **Svar**
 
 Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
@@ -849,6 +858,7 @@ curl -X PATCH \
 | `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. Om du vill ta bort en målgrupp från ett dataflöde använder du åtgärden `remove`. |
 | `path` | Anger vilket befintligt profilattribut som ska tas bort från måldataflödet, baserat på indexvärdet för målväljaren. Om du vill hämta ordningen för profilattribut i ett dataflöde, ska du utföra ett GET-anrop till slutpunkten `/flows` och inspektera egenskapen `transformations.profileSelectors`. Använd `"path":"transformations/0/params/segmentSelectors/selectors/0/"` om du vill ta bort den första målgruppen i dataflödet. |
 
+{style="table-layout:auto"}
 
 **Svar**
 

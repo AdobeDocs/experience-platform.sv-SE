@@ -5,9 +5,9 @@ badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: cd792eb0-9e90-49e4-8c50-c65126e355c2
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1913'
+source-wordcount: '1912'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ Det här målet använder [[!DNL Salesforce Import API v5]](https://developer.sa
 
 
 >[!IMPORTANT]
-> 
+>
 > Det här är V2-versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md). Den här versionen ersätter den tidigare målversionen och finns för närvarande i Alpha-utgåvan.
 > <br>
 > Om du för närvarande använder den tidigare versionen av målet [Salesforce Marketing Cloud Account Engagement](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) måste du migrera till den här V2-versionen före **januari 2026**. Efter januari 2026 kommer Adobe att avveckla den tidigare versionen och den kommer inte längre att vara tillgänglig.
@@ -54,7 +54,7 @@ Innan du aktiverar data till målet [!DNL (V2) Marketing Cloud Account Engagemen
 
 ### Krav för [!DNL Salesforce Marketing Cloud Account Engagement] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Experience Platform till ditt [!DNL Marketing Cloud Account Engagement]-konto:
+Observera följande krav för att exportera data från Experience Platform till ditt [!DNL Marketing Cloud Account Engagement]-konto:
 
 #### Du måste ha ett [!DNL Marketing Cloud Account Engagement]-konto {#prerequisites-account}
 
@@ -163,7 +163,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -183,7 +183,7 @@ Salesforce Marketing Cloud Account Engagement-målet stöder de målattribut som
 |---------|----------|----------|
 | `salesforceId` | Sträng | Den potentiella kundens Salesforce-ID |
 | `salesforceOwnerId` | Heltal | Salesforce användar-ID för den potentiella kundens ägare |
-| `salutation` | Sträng | Den potentiella kundens hälsningsfras (t.ex. herr, fröken, dr) |
+| `salutation` | Sträng | Den potentiella kundens hälsningsfras (t.ex. herr, fröken, doktor) |
 | `score` | Heltal | Den potentiella kundens poäng i Kontoengagemang |
 | `source` | Sträng | Källan till posten för potentiell kund |
 | `state` | Sträng | Den potentiella kundens delstat/provins |

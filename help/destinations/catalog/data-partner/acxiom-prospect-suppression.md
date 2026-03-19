@@ -2,11 +2,11 @@
 title: Proportioner för Acxiom - undertryckning
 description: Exportera dina förstapartsmålgrupper till Acxiom-målet, så att Acxiom kan undertrycka kända eller konverterade kunder. Använd sedan källkopplingen för Acxiom för att importera och aktivera listor med potentiella kunder från Acxiom, med kända eller konverterade kunder borttagna.
 last-substantial-update: 2024-03-14T00:00:00Z
-badge: Beta
+badge: label="Beta" type="Informative"
 exl-id: d82e8cd3-970c-44af-99b0-ea154eb3655e
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1562'
+source-wordcount: '1559'
 ht-degree: 1%
 
 ---
@@ -92,7 +92,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
@@ -101,7 +101,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
-Om du vill komma åt din bucket på Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
+Du måste ange giltiga värden för följande autentiseringsuppgifter för att få åtkomst till din bucket på Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
 |---------------|----------------------------------------------------------------------------------------------------------|
@@ -109,13 +109,13 @@ Om du vill komma åt din bucket på Experience Platform måste du ange giltiga v
 | S3-hemlig nyckel | Det hemliga nyckel-ID:t för din bucket. Du kan hämta värdet från [!DNL Acxiom]-teamet. |
 | Buckennamn | Det här är din bucket där filer delas. Du kan hämta värdet från [!DNL Acxiom]-teamet. |
 
-### Nytt konto
+### Nytt konto {#new-account}
 
 Så här definierar du en ny plats för hanterad Acxiom S3:
 
 ![Nytt konto](../../assets/catalog/data-partner/acxiom/image-destination-new-account.png)
 
-### Befintligt konto
+### Befintligt konto {#existing-account}
 
 Konton som redan har definierats med målet [!DNL Acxiom Prospect Suppression] visas i en lista. När du väljer det här alternativet visas information om kontot i den högra listen. Visa exemplet från gränssnittet när du navigerar till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**:
 
@@ -154,7 +154,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 
 Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
-### Mappningsförslag
+### Mappningsförslag {#mapping-suggestions}
 
 Bearbetning kräver namn- och adresselement, men alla element krävs inte, förutsatt att så mycket som möjligt hjälper till med matchningen.  Mappningsförslag ges i tabellen nedan som listar de attribut på målsidan som används av Acxiom-bearbetning som kunder kan mappa profilattribut till.  Detta bör behandlas som förslag eftersom inte alla element är obligatoriska och källvärdena beror på kontots behov.
 
@@ -175,7 +175,7 @@ Bearbetning kräver namn- och adresselement, men alla element krävs inte, föru
 >
 >Ytterligare fält som inte anges ovan inkluderas i exporten, men ignoreras av Acxiom-bearbetningen.
 
-## Granska ditt dataflöde
+## Granska ditt dataflöde {#review-dataflow}
 
 Använd granskningssidan för att få en sammanfattning av dataflödet innan du skickar in det
 
@@ -185,7 +185,7 @@ Använd granskningssidan för att få en sammanfattning av dataflödet innan du 
 
 Kontrollera [!DNL Amazon S3 Storage]-pytsen och se till att de exporterade filerna innehåller de förväntade profilpopulationerna för att kontrollera om data har exporterats utan fel.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du skapat ett dataflöde för att exportera batchdata från Experience Platform till din [!DNL Acxiom] hanterade S3-plats. Du måste kontakta din Acxiom-representant med namnet på kontot, filnamnet och bucket-sökvägen så att bearbetningen kan konfigureras.
 

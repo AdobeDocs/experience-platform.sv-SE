@@ -4,7 +4,7 @@ title: Uppdatera destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att uppdatera målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '490'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Följ stegen nedan för att uppdatera anslutningsinformationen till befintliga m
 
 5. Välj **[!UICONTROL Save]** för att slutföra uppdateringen av kontoinformationen.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du använt arbetsytan **[!UICONTROL destinations]** för att uppdatera befintliga konton.
 

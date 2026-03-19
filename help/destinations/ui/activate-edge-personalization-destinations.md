@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 5d08a6d90e53aa2f5b1fb72c36e19156e3ac5299
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1883'
+source-wordcount: '1881'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Exempel på kantmål är [Adobe Target](../../destinations/catalog/personalizati
 >När [konfigurerar Adobe Target-anslutningen](../catalog/personalization/adobe-target-connection.md) *utan* med ett datastream-ID stöds inte de användningsfall som beskrivs i den här artikeln. Endast nästa sessionspersonalisering stöds i frånvaro av ett datastream.
 
 >[!IMPORTANT]
-> 
+>
 >* Om du vill aktivera data och aktivera [mappningssteget](#mapping) för arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >* Om du vill aktivera data utan att gå igenom [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
@@ -39,11 +39,11 @@ Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-an
 >
 >Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i konfigurationsstegen som beskrivs i avsnitten nedan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3449797/?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 Titta på videon nedan om du vill få en kort översikt över hur du delar målgrupper och profilattribut med Adobe Target och anpassade destinationer för personalisering.
 
->[!VIDEO](https://video.tv.adobe.com/v/3447359/?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3419036/?quality=12&learn=on)
 
 ## Användningsfall {#use-cases}
 
@@ -71,7 +71,7 @@ Följande dag kommer användaren tillbaka till samma kundwebbplats. De målgrupp
 
 Ett uthyrnings- och säljföretag vill personalisera sin hemsida med en banderoll utifrån målgruppskvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dessa målgrupper till Adobe Target som målinriktningskriterier för deras Target-erbjudande.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 ### Konfigurera ett datastream i användargränssnittet för datainsamling {#configure-datastream}
 
@@ -89,7 +89,7 @@ Mer information om hur du konfigurerar ett dataflöde finns i anvisningarna i [E
 
 ### Skapa en [!DNL Active-On-Edge]-sammanslagningsprincip {#create-merge-policy}
 
-När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
+När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
 
 >[!IMPORTANT]
 >
@@ -150,7 +150,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Edge Network API genom att lägga till en integration på serversidan.
 >
@@ -174,7 +174,7 @@ Om du vill lägga till målattribut markerar du kontrollen **[!UICONTROL Add new
 
 >[!NOTE]
 >
->Markeringen av målattribut gäller endast för aktiveringsarbetsflödet [Anpassad Personalization](../catalog/personalization/custom-personalization.md), för att ge stöd för fältmappning med egna namn på målplattformen.
+>Markeringen av målattribut gäller endast för aktiveringsarbetsflödet [Anpassad Personalization](../catalog/personalization/custom-personalization.md), vilket ger stöd för fältmappning med egna namn på målplattformen.
 
 ![Skärminspelning som visar hur du väljer ett XDM-attribut i mappningssteget](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-target-attribute.gif)
 

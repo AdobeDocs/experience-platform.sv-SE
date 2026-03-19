@@ -5,9 +5,9 @@ title: Anslut till gruppmål och aktivera data med API:t för Flow Service
 description: Stegvisa instruktioner om hur du använder API:t för Flow Service för att skapa ett batchmolnlagringsutrymme eller ett marknadsföringsmål för e-post i Experience Platform och aktivera data
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '3435'
+source-wordcount: '3431'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 # Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service
 
 >[!IMPORTANT]
-> 
+>
 >* Om du vill ansluta till ett mål behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
@@ -27,7 +27,7 @@ ht-degree: 0%
 I den här självstudien visas hur du använder API:t för Flow Service för att skapa ett filbaserat [mål för e-postmarknadsföring](../catalog/email-marketing/overview.md), skapa ett dataflöde för det nya målet och exportera data till det nya målet via CSV-filer.
 
 >[!TIP]
-> 
+>
 >Läs [den dedikerade API-självstudiekursen](/help/destinations/api/activate-segments-file-based-destinations.md) om du vill lära dig hur du aktiverar data till molnlagringsmål med API:t för Flow Service.
 
 I den här självstudien används målet [!DNL Adobe Campaign] i alla exempel, men stegen är identiska för filbaserade e-postmarknadsföringsmål.
@@ -44,7 +44,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] låter dig skapa målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till batchdestinationer i Experience Platform.
+I följande avsnitt finns ytterligare information som du behöver känna till för att aktivera data till batchdestinationer i Experience Platform.
 
 ### Samla in nödvändiga inloggningsuppgifter {#gather-required-credentials}
 
@@ -65,7 +65,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values-headers}
 
-För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+Om du vill anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -144,7 +144,7 @@ Därefter måste du ansluta till dina [!DNL Experience Platform]-data, så att d
 1. Först måste du ringa ett samtal för att auktorisera åtkomst till dina data i [!DNL Experience Platform] genom att konfigurera en basanslutning.
 2. Använd sedan basanslutnings-ID för att utföra ett annat anrop där du skapar en *källanslutning* som upprättar anslutningen till dina [!DNL Experience Platform]-data.
 
-### Auktorisera åtkomst till dina data i [!DNL Experience Platform]
+### Auktorisera åtkomst till dina data i [!DNL Experience Platform] {#authorize-access-experience-platform}
 
 **API-format**
 
@@ -551,7 +551,7 @@ Ett svar innehåller basanslutningsens unika identifierare (`id`). Lagra det hä
 [!DNL Adobe Experience Platform] exporterar data för marknadsföring via batch och molnlagring i form av [!DNL CSV]-filer. I det här steget kan du ange sökvägen till lagringsplatsen dit filerna ska exporteras.
 
 >[!IMPORTANT]
-> 
+>
 >[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
 >
 >Delade filnamn läggs till med ett nummer som anger att filen är en del av en större export, till exempel: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
@@ -1054,8 +1054,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
 | `frequency` | Obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE`, `DAILY`, `WEEKLY` eller `MONTHLY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
 | `triggerType` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du väljer läget `"DAILY_FULL_EXPORT"` i `frequency`-väljaren. <br> obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` om du vill att aktiveringsjobbet ska köras omedelbart efter att Experience Platform batchsegmenteringsjobb har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Detta garanterar att Experience Platform-profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du också lägga till en `startTime` för att ange vid vilken tidpunkt i UTC som den dagliga exporten ska ske.</li></ul> |
-| `endDate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Gäller inte vid val av `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
-| `startTime` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
+| `endDate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> Gäller inte vid val av `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
+| `startTime` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
 
 {style="table-layout:auto"}
 

@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att hämta information om en destinationspubliceringsbegäran via Adobe Experience Platform Destination SDK.
 title: Hämta en publiceringsbegäran för mål
 exl-id: fceef12d-a52c-4259-a91e-7af88b132800
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '835'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbeg
 
 ## Komma igång med API-åtgärder för målpublicering {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Lista målpubliceringsbegäranden {#retrieve-list}
 
@@ -76,7 +76,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Följande svar returnerar HTTP-status 200 med en lista över alla mål som skickats in för publicering som du har tillgång till, baserat på IMS-organisations-ID:t och namnet på den sandlåda som du använde. Ett `configId` motsvarar publiceringsbegäran för ett mål.
 
@@ -145,7 +145,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Om du skickade `DESTINATION_ID` i API-anropet returnerar svaret HTTP-status 200 med detaljerad information om den angivna målpubliceringsbegäran.
 
@@ -181,6 +181,6 @@ Om du skickade `DESTINATION_ID` i API-anropet returnerar svaret HTTP-status 200 
 
 >[!ENDTABS]
 
-## API-felhantering
+## API-felhantering {#error-handling}
 
 Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.

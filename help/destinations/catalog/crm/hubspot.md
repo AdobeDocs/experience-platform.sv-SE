@@ -3,9 +3,9 @@ title: HubSpot-anslutning
 description: Med HubSpot-målet kan du hantera kontaktposter i ditt HubSpot-konto.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1642'
+source-wordcount: '1638'
 ht-degree: 1%
 
 ---
@@ -30,13 +30,13 @@ I avsnitten nedan finns information om eventuella krav som du måste ställa in 
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL HubSpot] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL HubSpot] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
 ### Krav för målet [!DNL HubSpot] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Experience Platform till ditt [!DNL HubSpot]-konto:
+Observera följande krav för att exportera data från Experience Platform till ditt [!DNL HubSpot]-konto:
 
 #### Du måste ha ett [!DNL HubSpot]-konto {#prerequisites-account}
 
@@ -159,7 +159,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 
 Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL HubSpot]:
 
-#### Mappar identiteten `Email`
+#### Mappar identiteten `Email` {#map-email-identity}
 
 Identiteten `Email` är en obligatorisk mappning för det här målet. Följ stegen nedan för att mappa den:
 
@@ -177,7 +177,7 @@ Identiteten `Email` är en obligatorisk mappning för det här målet. Följ ste
 Ett exempel med identitetsmappning visas nedan:
 ![Exempel på skärmbild i Experience Platform UI med mappning av e-postidentitet.](../../assets/catalog/crm/hubspot/mapping-identities.png)
 
-#### Mappa **valfria** attribut
+#### Mappa **valfria** attribut {#mapping-optional-attributes}
 
 Om du vill lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL HubSpot]-konto upprepar du stegen nedan:
 
@@ -224,7 +224,7 @@ Ytterligare användbar information från dokumentationen för [!DNL HubSpot] fin
 * [Autentiseringsmetoder på HubSpot](https://developers.hubspot.com/docs/api/intro-to-auth)
 * [!DNL HubSpot] API-referenser för API:erna [Kontakter](https://developers.hubspot.com/docs/api/crm/contacts) och [Egenskaper](https://developers.hubspot.com/docs/api/crm/properties).
 
-### Changelog
+### Changelog {#changelog}
 
 I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdateringar för den här målanslutningen.
 

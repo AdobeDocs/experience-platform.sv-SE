@@ -2,7 +2,7 @@
 description: Konfigurera filformateringsalternativ för filbaserade mål
 title: Lär dig hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
 exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
-source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med Destination SDK kan du i stor utsträckning justera formaterings- och komprimeringsalternativen för de exporterade filerna så att de matchar eventuella senare krav i lagringsplatsen.
+Med Destination SDK kan du justera formaterings- och komprimeringsalternativen för de exporterade filerna i stor utsträckning, så att de matchar eventuella senare krav i lagringsplatsen.
 
 På den här sidan beskrivs hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen som beskrivs nedan bör du läsa sidan [Komma igång för Destination SDK](../../getting-started.md) för att få information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
+Innan du går vidare till stegen som beskrivs nedan bör du läsa sidan [Komma igång](../../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga autentiseringsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK.
 
 Adobe rekommenderar också att du läser och bekanta dig med följande dokumentation innan du fortsätter:
 
@@ -102,13 +102,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TIP]
 >
->**Verifiera användargränssnittet för Experience Platform**. När du konfigurerar filformateringsalternativen med de konfigurationer som visas i avsnitten nedan, bör du kontrollera hur dessa alternativ återges i användargränssnittet i Experience Platform.
+>**Verifiera Experience Platform-gränssnittet**. När du konfigurerar filformateringsalternativen med de konfigurationer som visas i avsnitten nedan, bör du kontrollera hur dessa alternativ återges i användargränssnittet i Experience Platform.
 
 När du har lagt till önskade filformateringsalternativ till målservern och filformateringskonfigurationen i föregående steg, kan du nu använda API-slutpunkten `/destinations` för att lägga till önskade fält som kunddatafält i målkonfigurationen.
 
 >[!IMPORTANT]
 >
->Det här steget är valfritt och avgör bara vilket av filformateringsalternativen som ska visas för användare i användargränssnittet i Experience Platform. Om du inte anger filformateringsalternativ som kunddatafält fortsätter filexporten med standardvärdena som konfigurerats i [server- och filkonfigurationen](#create-server-file-configuration).
+>Det här steget är valfritt och avgör bara vilket av filformateringsalternativen som ska visas för användare i Experience Platform användargränssnitt. Om du inte anger filformateringsalternativ som kunddatafält fortsätter filexporten med standardvärdena som konfigurerats i [server- och filkonfigurationen](#create-server-file-configuration).
 
 I det här steget kan du gruppera de visade alternativen i vilken ordning du vill, du kan skapa anpassade grupperingar, listrutefält och villkorliga grupperingar baserat på de valda filtyperna. Alla dessa inställningar visas i inspelningen och i avsnitten längre fram nedan.
 
@@ -118,7 +118,7 @@ I det här steget kan du gruppera de visade alternativen i vilken ordning du vil
 
 Den ordning i vilken du lägger till filformateringsalternativen som kunddatafält i målkonfigurationen återspeglas i användargränssnittet. Konfigurationen nedan återspeglas till exempel i användargränssnittet, där alternativen visas i ordningen **[!UICONTROL Delimiter]**, **[!UICONTROL Quote Character]**, **[!UICONTROL Escape Character]**, **[!UICONTROL Empty Value]**, **[!UICONTROL Null Value]**.
 
-![Bild som visar ordningen för filformateringsalternativ i användargränssnittet för Experience Platform.](../../assets/guides/batch/file-formatting-order.png)
+![Bild som visar ordningen för filformateringsalternativ i Experience Platform-gränssnittet.](../../assets/guides/batch/file-formatting-order.png)
 
 ```json
         {
@@ -487,7 +487,7 @@ Nedan visas den resulterande gränssnittsskärmen baserat på konfigurationen ov
 
 ![Skärminspelning som visar alternativet för villkorsstyrd filformatering för CSV-filer.](../../assets/guides/batch/conditional-file-formatting.gif)
 
-### Fullständig API-begäran som innehåller alla alternativ som visas ovan
+### Fullständig API-begäran som innehåller alla alternativ som visas ovan {#complete-api-request}
 
 API-begäran nedan kombinerar i en konfiguration alla alternativ som beskrivs i avsnitten ovan.
 
@@ -742,4 +742,4 @@ James,Smith,"","\"\""
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här artikeln kan du nu ange egna filformateringsalternativ för de exporterade filerna med hjälp av Destination SDK. Därefter kan ditt team använda [aktiveringsarbetsflödet för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) för att exportera data till målet.
+Genom att läsa den här artikeln kan du nu ange egna filformateringsalternativ för de exporterade filerna med Destination SDK. Därefter kan ditt team använda [aktiveringsarbetsflödet för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) för att exportera data till målet.

@@ -3,9 +3,9 @@ title: SAP Commerce-anslutning
 description: Använd SAP Commerce-målkopplingen för att uppdatera kundposter i SAP-kontot.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2309'
+source-wordcount: '2306'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,13 @@ I avsnitten nedan finns information om alla krav som du måste konfigurera i Exp
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL SAP Commerce] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL SAP Commerce] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
 ### Krav för målet [!DNL SAP Commerce] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Experience Platform till ditt [!DNL SAP Commerce]-konto:
+Observera följande krav för att exportera data från Experience Platform till ditt [!DNL SAP Commerce]-konto:
 
 #### Du måste ha ett [!DNL SAP Subscription Billing]-konto {#prerequisites-account}
 
@@ -99,7 +99,7 @@ Om du vill ansluta [!DNL SAP Commerce] till Experience Platform måste du ange v
 | Slutpunkt | Värdet `url` från tjänstnyckeln liknar värdet `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
 | Län | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om till exempel `url` är `https://eu10.revenue.cloud.sap/api` behöver du `eu10`. |
 
-## Guardrails {#guardrails}
+## Skyddsräcken {#guardrails}
 
 API-begäranden till [!DNL SAP Cloud Management service] omfattas av [hastighetsbegränsningar](https://help.sap.com/docs/btp/sap-business-technology-platform/account-administration-rate-limiting). När hastighetsgränsen har överskridits kommer du att stöta på en `HTTP 429 Too Many Requests`-svarsstatuskod.
 
@@ -195,7 +195,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -205,7 +205,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL SAP Commerce] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt Experience Platform-konto och deras motsvarande motsvarigheter från målmålet. Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL SAP Commerce]:
 
-#### Mappa `customerNumberSAP`-identiteten
+#### Mappa `customerNumberSAP`-identiteten {#map-customer-number-sap}
 
 Identiteten `customerNumberSAP` är en obligatorisk mappning för det här målet. Följ stegen nedan för att mappa den:
 
@@ -223,7 +223,7 @@ Identiteten `customerNumberSAP` är en obligatorisk mappning för det här måle
 Ett exempel med identitetsmappning visas nedan:
 ![Bild från Experience Platform UI som visar ett exempel på identitetsmappning för customerNumber.](../../assets/catalog/ecommerce/sap-commerce/mapping-identities.png)
 
-#### Mappningsattribut
+#### Mappningsattribut {#mapping-attributes}
 
 Om du vill lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL SAP Subscription Billing]-konto upprepar du stegen nedan:
 
@@ -238,7 +238,7 @@ Om du vill lägga till andra attribut som du vill uppdatera mellan XDM-profilsch
 >
 > Målfältsnamnen är skiftlägeskänsliga och ska matcha attributnamnen [!DNL SAP Subscription Billing]. Det enda undantaget för detta är `country` där du bör använda `countryCode` i stället. [!DNL SAP Subscription Billing] har stöd för landskoder med alfa 2 (ISO 3166). Värdet är skiftlägeskänsligt och måste vara mellan 0 och 3 tecken. Se därför till att du anger exakt som det definierats, annars skulle du stöta på fel: `The country code {} does not exist` eller `size must be between 0 and 3`.
 
-#### Mappa `mandatory`-attribut för den valda kundtypen
+#### Mappa `mandatory`-attribut för den valda kundtypen {#map-mandatory-attributes}
 
 Obligatoriska attributmappningar beror på **[!UICONTROL Type of Customer]** som du har valt. Om du vill mappa de obligatoriska attributen väljer du något av följande:
 
@@ -251,6 +251,8 @@ Obligatoriska attributmappningar beror på **[!UICONTROL Type of Customer]** som
 | `xdm: person.lastName` | `Attribute: lastName` | Ja |
 | `xdm: workAddress.countryCode` | `Attribute: countryCode` | Ja |
 
+{style="table-layout:auto"}
+
 >[!TAB Företagskund]
 
 | Source Field | Målfält | Obligatoriskt |
@@ -258,9 +260,11 @@ Obligatoriska attributmappningar beror på **[!UICONTROL Type of Customer]** som
 | `xdm: b2b.companyName` | `Attribute: company` | Ja |
 | `xdm: workAddress.countryCode` | `Attribute: countryCode` | Ja |
 
+{style="table-layout:auto"}
+
 >[!ENDTABS]
 
-#### Mappa ytterligare attribut
+#### Mappa ytterligare attribut {#mapping-additional-attributes}
 
 Du kan sedan lägga till ytterligare mappningar mellan XDM-profilschemat och [!DNL SAP Subscription Billing] [schema](https://api.sap.com/api/BusinessPartner_APIs/schema) -attributen för en kund enligt nedan:
 
@@ -274,6 +278,8 @@ Du kan sedan lägga till ytterligare mappningar mellan XDM-profilschemat och [!D
 | `xdm: workAddress.street1` | `Attribute: street` | Nej |
 | `xdm: workAddress.city` | `Attribute: city` | Nej |
 
+{style="table-layout:auto"}
+
 Ett exempel med både obligatoriska och valfria attributmappningar där kunden är en individ visas nedan:
 ![Bild från Experience Platform-gränssnitt som visar ett exempel med både obligatoriska och valfria attributmappningar där kunden är en individ.](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-individual.png)
 
@@ -283,6 +289,8 @@ Ett exempel med både obligatoriska och valfria attributmappningar där kunden �
 | --- | --- | --- |
 | `xdm: workAddress.street1` | `Attribute: street` | Nej |
 | `xdm: workAddress.city` | `Attribute: city` | Nej |
+
+{style="table-layout:auto"}
 
 Ett exempel med både obligatoriska och valfria attributmappningar där kunden är ett företag visas nedan:
 ![Bild från Experience Platform-gränssnitt som visar ett exempel med både obligatoriska och valfria attributmappningar där kunden är ett företag.](../../assets/catalog/ecommerce/sap-commerce/mapping-attributes-corporate.png)
@@ -345,7 +353,7 @@ Ytterligare användbar information från dokumentationen för [!DNL SAP] finns n
 
 * [Fakturering av SAP-prenumerationer](https://help.sap.com/docs/CLOUD_TO_CASH_OD/1216e7b79c984675b0a6f0005e351c74/e4b8badf7d124026991e4ab6b57d2a33.html)
 
-### Changelog
+### Changelog {#changelog}
 
 I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdateringar för den här målanslutningen.
 

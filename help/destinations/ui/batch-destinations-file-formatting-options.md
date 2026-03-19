@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 4dd6e8685ff5cc61342b20e971216416918b95da
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
@@ -12,12 +12,12 @@ ht-degree: 0%
 # Konfigurera filformateringsalternativ för filbaserade mål
 
 >[!IMPORTANT]
-> 
+>
 >Filformateringsalternativen som beskrivs i det här dokumentet är för närvarande bara tillgängliga för CSV-filer.
 
 Alternativet att konfigurera olika filformateringsalternativ för de exporterade filerna är tillgängligt när du [ansluter](/help/destinations/ui/connect-destination.md) till ett filbaserat mål, till exempel [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect), [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect) eller [SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect).
 
-Du kan konfigurera olika filformateringsalternativ för exporterade filer med hjälp av användargränssnittet i Experience Platform. Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kraven i filmottagningssystemet på din sida för att optimera läsningen och tolkningen av de filer som tas emot från Experience Platform.
+Du kan konfigurera olika filformateringsalternativ för exporterade filer med hjälp av användargränssnittet i Experience Platform. Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kraven i filmottagningssystemet på din sida, för att optimera läsningen och tolkningen av de filer som tas emot från Experience Platform.
 
 <!--
 * To configure file formatting options for exported files by using the Experience Platform UI, read this document.
@@ -51,15 +51,15 @@ Använd den här kontrollen om du vill ange en avgränsare för varje fält och 
 * Semikolon `(;)`
 * Flik `(\t)`
 
-#### Exempel
+#### Exempel {#delimiter-examples}
 
 Visa exemplen nedan för innehållet i de exporterade CSV-filerna med var och en av valen i användargränssnittet.
 
-* Exempelutdata med **[!UICONTROL Colon `(:)`]** markerat: `male:John:Doe`
-* Exempelutdata med **[!UICONTROL Comma `(,)`]** markerat: `male,John,Doe`
-* Exempelutdata med **[!UICONTROL Pipe `(|)`]** markerat: `male|John|Doe`
-* Exempelutdata med **[!UICONTROL Semicolon `(;)`]** markerat: `male;John;Doe`
-* Exempelutdata med **[!UICONTROL Tab `(\t)`]** markerat: `male \t John \t Doe`
+* Exempelutdata med [!UICONTROL Colon `(:)`] markerat: `male:John:Doe`
+* Exempelutdata med [!UICONTROL Comma `(,)`] markerat: `male,John,Doe`
+* Exempelutdata med [!UICONTROL Pipe `(|)`] markerat: `male|John|Doe`
+* Exempelutdata med [!UICONTROL Semicolon `(;)`] markerat: `male;John;Doe`
+* Exempelutdata med [!UICONTROL Tab `(\t)`] markerat: `male \t John \t Doe`
 
 ### Citattecken {#quote-character}
 
@@ -72,17 +72,17 @@ Använd det här alternativet om du vill ange om dubbla citattecken ska tas bort
 
 De tillgängliga alternativen är:
 
-* **[!UICONTROL Null Character (\0000)]**. Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade CSV-filer.
-* **[!UICONTROL Double Quotes (")]**. Använd det här alternativet när strängvärdena innehåller avgränsare eller dubbla citattecken. Med det här alternativet kan du behålla avgränsare eller dubbla citattecken i dina exporterade CSV-filer, så att du kan identifiera vilket värde som motsvarar vilket fält.
+* [!UICONTROL Null Character (\0000)]. Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade CSV-filer.
+* [!UICONTROL Double Quotes (")]. Använd det här alternativet när strängvärdena innehåller avgränsare eller dubbla citattecken. Med det här alternativet kan du behålla avgränsare eller dubbla citattecken i dina exporterade CSV-filer, så att du kan identifiera vilket värde som motsvarar vilket fält.
 
-#### Exempel
+#### Exempel {#quote-character-examples}
 
 Överväg indatavärdet `Anna,"Doe,John"`.
 
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
-* Exempelutdata med **[!UICONTROL Null Character (\0000)]** markerat: `Anna,Doe,John`
-* Exempelutdata med **[!UICONTROL Double Quotes (")]** markerat: `Anna,"Doe,John"`
+* Exempelutdata med [!UICONTROL Null Character (\0000)] markerat: `Anna,Doe,John`
+* Exempelutdata med [!UICONTROL Double Quotes (")] markerat: `Anna,"Doe,John"`
 
 ### Escape-tecken {#escape-character}
 
@@ -96,12 +96,12 @@ Använd det här alternativet om du vill ange ett enskilt tecken för att undvik
 * Snedstreck `(\)`
 * Enkelt citattecken `(')`
 
-#### Exempel
+#### Exempel {#escape-character-examples}
 
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
-* Exempelutdata med **[!UICONTROL Back slash `(\)`]** markerat: `"Test,\"John\",LastName"`
-* Exempelutdata med **[!UICONTROL Single quote `(')`]** markerat: `"Test,'"John'",LastName"`
+* Exempelutdata med [!UICONTROL Back slash `(\)`] markerat: `"Test,\"John\",LastName"`
+* Exempelutdata med [!UICONTROL Single quote `(')`] markerat: `"Test,'"John'",LastName"`
 
 ### Tomt värde {#empty-value-output}
 
@@ -112,17 +112,17 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 
 Använd den här kontrollen för att ange strängbeteckningen för ett tomt värde. Det här alternativet avgör hur tomma värden representeras i dina exporterade CSV-filer. Tillgängliga alternativ är:
 
-* **[!UICONTROL Null (null)]**
+* [!UICONTROL Null (null)]
 * **Tom sträng inom dubbla citattecken (&quot;&quot;&quot;)**
-* **[!UICONTROL Empty string]**
+* [!UICONTROL Empty string]
 
-#### Exempel
+#### Exempel {#empty-value-examples}
 
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
-* Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet omvandlar Experience Platform det tomma värdet till ett null-värde.
+* Exempelutdata med [!UICONTROL null] markerat: `male,NULL,TestLastName`. I det här fallet omvandlar Experience Platform det tomma värdet till ett null-värde.
 * Exempelutdata med **&quot;** valt: `male,"",TestLastName`. I det här fallet omvandlar Experience Platform det tomma värdet till ett par dubbla citattecken.
-* Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`. I det här fallet behåller Experience Platform det tomma värdet och exporterar det som det är (utan dubbla citattecken).
+* Exempelutdata med [!UICONTROL Empty string] markerat: `male,,TestLastName`. I det här fallet behåller Experience Platform det tomma värdet och exporterar det som det är (utan dubbla citattecken).
 
 >[!TIP]
 >
@@ -137,17 +137,17 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 
 Använd den här kontrollen för att ange strängbeteckningen för ett null-värde i de exporterade filerna. Det här alternativet avgör hur null-värden återges i dina exporterade CSV-filer. Tillgängliga alternativ är:
 
-* **[!UICONTROL Null (null)]**
+* [!UICONTROL Null (null)]
 * **Tom sträng inom dubbla citattecken (&quot;&quot;&quot;)**
-* **[!UICONTROL Empty string]**
+* [!UICONTROL Empty string]
 
-#### Exempel
+#### Exempel {#null-value-examples}
 
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
-* Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet sker ingen omformning och CSV-filen innehåller null-värdet.
+* Exempelutdata med [!UICONTROL null] markerat: `male,NULL,TestLastName`. I det här fallet sker ingen omformning och CSV-filen innehåller null-värdet.
 * Exempelutdata med **&quot;** valt: `male,"",TestLastName`. I det här fallet ersätter Experience Platform null-värdet med dubbla citattecken runt en tom sträng.
-* Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`. I det här fallet ersätter Experience Platform null-värdet med en tom sträng (utan dubbla citattecken).
+* Exempelutdata med [!UICONTROL Empty string] markerat: `male,,TestLastName`. I det här fallet ersätter Experience Platform null-värdet med en tom sträng (utan dubbla citattecken).
 
 ### Komprimeringsformat {#compression-format}
 
@@ -158,33 +158,33 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 
 Anger vilken komprimeringstyp som ska användas när data sparas i filen. Alternativen är GZIP och NONE. Det här alternativet avgör om du ska exportera komprimerade filer eller inte.
 
-### Kodning
+### Kodning {#encoding}
 
 *Visas inte på skärmbilden för användargränssnittet*. Anger kodning (teckenuppsättning) för sparade CSV-filer. Alternativen är UTF-8 eller UTF-16.
 
-### Char to escape quote
+### Char to escape quote {#char-to-escape-quote}
 
 *Visas inte på skärmbilden för användargränssnittet*. En flagga som anger om värden som innehåller citattecken alltid ska omslutas av citattecken.
 
 Standard är att undvika alla värden som innehåller ett citattecken.
 
-### Radavgränsare
+### Radavgränsare {#line-separator}
 
 *Visas inte på skärmbilden för användargränssnittet*. Definierar den radavgränsare som ska användas för att skriva. Maxlängden är 1 tecken.
 
-### Ignorera inledande blanksteg
+### Ignorera inledande blanksteg {#ignore-leading-whitespace}
 
 *Visas inte på skärmbilden för användargränssnittet*. En flagga som anger om inledande blanksteg från värden som exporteras ska hoppas över.
 
-Exempelutdata med **[!UICONTROL True]** markerat: `"male","John","TestLastName"`
-Exempelutdata med **[!UICONTROL False]** markerat: `" male","John","TestLastName"`
+Exempelutdata med [!UICONTROL True] markerat: `"male","John","TestLastName"`
+Exempelutdata med [!UICONTROL False] markerat: `" male","John","TestLastName"`
 
-### Ignorera avslutande blanksteg
+### Ignorera avslutande blanksteg {#ignore-trailing-whitespace}
 
 Visas inte på skärmbilden för användargränssnittet. En flagga som anger om efterföljande blanksteg från värden som exporteras ska hoppas över.
 
-Exempelutdata med **[!UICONTROL True]** markerat: `"male","John","TestLastName"`
-Exempelutdata med **[!UICONTROL False]** markerat: `"male ","John","TestLastName"`
+Exempelutdata med [!UICONTROL True] markerat: `"male","John","TestLastName"`
+Exempelutdata med [!UICONTROL False] markerat: `"male ","John","TestLastName"`
 
 ### Nästa steg {#next-steps}
 

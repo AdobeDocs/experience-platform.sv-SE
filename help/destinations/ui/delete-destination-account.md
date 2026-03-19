@@ -4,9 +4,9 @@ title: Ta bort destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: 9b39ba4b-19a4-48a8-a6f1-f860777cdb9e
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '294'
 ht-degree: 0%
 
 ---
@@ -45,8 +45,8 @@ Följ stegen nedan för att ta bort befintliga målkonton.
 
 ![Bekräfta borttagning av konto](../assets/ui/delete-accounts/confirm-account-deletion.png)
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 I den här självstudiekursen har du använt arbetsytan Mål för att ta bort befintliga konton.
 
-Anvisningar om hur du utför de här åtgärderna programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen [Ta bort anslutningar med API:t för Flow Service &#x200B;](../api/delete-destination-account.md)
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [ta bort anslutningar med API:t för Flow Service ](../api/delete-destination-account.md)

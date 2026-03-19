@@ -3,9 +3,9 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut, anslutning
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 7b22c4b058b0068b96c26d0c4c7743d489451620
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,7 @@ Gå till **[!UICONTROL Settings]** **[!UICONTROL APIs & Integrations]** på [kon
 
 Klicka på **[!UICONTROL Create Token]**.
 
-Ange ett användarvänligt namn för din token, t.ex. &quot;Adobe Attributes Destination&quot;, och välj &quot;All Access&quot; för rollen.
+Ange ett användarvänligt namn för din token, till exempel&quot;Adobe Attributes Destination&quot;, och välj&quot;All Access&quot; för rollen.
 
 Klicka på **[!UICONTROL Create Token]** och spara informationen som konfidentiell.
 
@@ -91,18 +91,18 @@ Klicka på **[!UICONTROL Create Token]** och spara informationen som konfidentie
 
 För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Airship Attributes] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
-### Använd skiftläge 1
+### Använd skiftläge 1 {#use-case-1}
 
 Utnyttja profildata som samlats in inom Adobe Experience Platform för att personalisera meddelandet och multimediematerialet i någon av [!DNL Airship]s kanaler. Använd till exempel profildata för [!DNL Experience Platform] för att ange platsattribut i [!DNL Airship]. På så sätt kan ett hotellmärke visa en bild för varje användares närmaste hotell.
 
-### Använd skiftläge 2
+### Använd skiftläge 2 {#use-case-2}
 
 Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship]-profiler och kombinera dem med prediktiva data från SDK eller [!DNL Airship]. En återförsäljare kan t.ex. skapa en målgrupp med lojalitetsstatus och platsdata (attribut från Experience Platform) och [!DNL Airship] förväntas ändra data för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV och har en hög sannolikhet för kurning.
 
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -130,7 +130,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -138,11 +138,11 @@ Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../
 
 ## Mappningsöverväganden {#mapping-considerations}
 
-[!DNL Airship]-attribut kan anges antingen på en kanal, som representerar en enhetsinstans, t.ex. iPhone, eller en namngiven användare, som mappar alla användarens enheter till en gemensam identifierare, t.ex. ett kund-ID. Om du har oformaterad e-postadress som primär identitet i ditt schema, markerar du e-postfältet i **[!UICONTROL Source Attributes]** och mappar till den [!DNL Airship] namngivna användaren i den högra kolumnen under **[!UICONTROL Target Identities]**, som visas nedan.
+[!DNL Airship]-attribut kan anges antingen på en kanal, som representerar en enhetsinstans, till exempel iPhone, eller en namngiven användare, som mappar alla användarens enheter till en gemensam identifierare, till exempel ett kund-ID. Om du har oformaterad e-postadress som primär identitet i ditt schema, markerar du e-postfältet i **[!UICONTROL Source Attributes]** och mappar till den [!DNL Airship] namngivna användaren i den högra kolumnen under **[!UICONTROL Target Identities]**, som visas nedan.
 
 ![Mappning av namngivna användare](../../assets/catalog/mobile-engagement/airship/mapping.png)
 
-För identifierare som ska mappas till en kanal, d.v.s. en enhet, mappar du till lämplig kanal baserat på källan. Följande bilder visar hur två mappningar skapas:
+För identifierare som ska mappas till en kanal, dvs. en enhet, mappas till rätt kanal baserat på källan. Följande bilder visar hur två mappningar skapas:
 
 * IDFA iOS Advertising ID till en [!DNL Airship] iOS-kanal
 * Adobe `fullName`-attribut till attributet [!DNL Airship] &quot;Fullständigt namn&quot;

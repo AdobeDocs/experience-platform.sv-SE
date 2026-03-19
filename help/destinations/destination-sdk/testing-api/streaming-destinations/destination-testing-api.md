@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att testa om ditt mål för direktuppspelning är korrekt konfigurerat och för att verifiera dataflödenas integritet till det konfigurerade målet.
 title: Testa strömningsmålet med exempelprofiler
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '607'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -26,13 +26,13 @@ Du kan använda [API:t för generering av exempelprofiler](sample-profile-genera
 
 >[!IMPORTANT]
 >
->* Om du vill använda detta API måste du ha en befintlig anslutning till målet i Experience Platform-gränssnittet. Läs [anslut till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=sv-SE) om du vill ha mer information.
->* När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när du [bläddrar i en anslutning till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=sv-SE).
->  &#x200B;>![Användargränssnittsbild för att hämta målinstans-ID &#x200B;](../../assets/testing-api/get-destination-instance-id.png)
+>* Om du vill använda det här API:t måste du ha en befintlig anslutning till målet i Experience Platform-gränssnittet. Läs [anslut till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html) om du vill ha mer information.
+>* När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när du [bläddrar i en anslutning till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html).
+>![Användargränssnittsbild för att hämta målinstans-ID ](../../assets/testing-api/get-destination-instance-id.png)
 
 ## Komma igång med API-åtgärder för måltestning {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Testa målkonfigurationen utan att lägga till profiler till samtalet {#test-without-adding-profiles}
 
@@ -324,6 +324,6 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med API-svaret från mål
 
 Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 När du har läst det här dokumentet vet du nu hur du testar målet. Nu kan du använda Adobe [självbetjäningsdokumentationsprocess](../../docs-framework/documentation-instructions.md) för att skapa en dokumentationssida för ditt mål.

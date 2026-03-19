@@ -3,9 +3,9 @@ title: Kevel Connection
 description: Använd Kevel streaming-målet för att aktivera målgrupper direkt i Kevels API:er för UserDB och segmenthantering och ge stöd för målgruppsanpassning i realtid vid beslut.
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 53ce2864-6a3b-4859-b14d-a03c2ce18884
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1168'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 Strömningsmålet [!DNL Kevel] för Adobe Experience Platform gör det möjligt för kunder att aktivera Adobe-målgrupper direkt i [!DNL Kevel]s API:er för UserDB och segmenthantering för att ge stöd för målanpassning i realtid vid annonsbeslut.
 
 >[!IMPORTANT]
-> 
+>
 >Om du har frågor eller vill begära en uppdatering om [!DNL Kevel]-målet eller dess dokumentation skickar du ett e-postmeddelande till [!DNL Kevel]-teamet på [support@kevel.com](mailto:support@kevel.com).
 
 ## Användningsfall {#use-cases}
@@ -50,7 +50,7 @@ Målet [!DNL Kevel] stöder aktivering för alla identiteter som programmet kan 
 
 {style="table-layout:auto"}
 
-### Stöd för anpassade identitetsnamnutrymmen
+### Stöd för anpassade identitetsnamnutrymmen {#custom-identity-namespaces}
 
 [!DNL Kevel]-målet **accepterar också anpassade namnutrymmen**, enligt definitionen i din Experience Platform-implementering.
 
@@ -60,7 +60,7 @@ Detta innebär:
 - Dessa namnutrymmen kan tilldelas till `kevel_user_key1`, `kevel_user_key2` eller `kevel_user_key3` på samma sätt som globala namnutrymmen.
 - [!DNL Kevel] genererar **en UserDB-post per instans av varje mappad identitet**, vilket möjliggör matchning i realtid vid annonsbeslut för varje identifierare som systemen skickar.
 
-### Beteende för identitetsmappning
+### Beteende för identitetsmappning {#identity-mapping-behavior}
 
 - Du kan mappa **upp till tre** Experience Platform-identitetsnamnutrymmen till [!DNL Kevel] tre identitetsplatser.
 - För varje aktiverad profil tar [!DNL Kevel] emot **en UserDB-post per instans av varje mappad identitet**.
@@ -105,7 +105,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 Följ standardarbetsflödet för Experience Platform [anslut ett mål](../../ui/connect-destination.md).
 
 >[!IMPORTANT]
-> 
+>
 >Du måste ha behörigheterna **Visa mål** och **Hantera mål**.
 
 ### Autentisera till mål {#authenticate}
@@ -126,10 +126,9 @@ Efter autentiseringen konfigurerar du:
 
 ![Målinformation för Kevel-mål](/help/destinations/assets/catalog/advertising/kevel-destination-details.png)
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
-Om du vill skicka målgrupper till [!DNL Kevel] följer du arbetsflödet i\
-[Aktivera profiler och segment för att direktuppspela segmentets exportmål](/help/destinations/ui/activate-segment-streaming-destinations.md).
+Om du vill skicka målgrupper till [!DNL Kevel] följer du arbetsflödet i [Aktivera målgrupper till direktuppspelningsmål](/help/destinations/ui/activate-segment-streaming-destinations.md).
 
 ### Inaktivera målgrupper {#deactivate}
 
@@ -155,7 +154,7 @@ Under aktiveringen markerar du de identitetsnamnutrymmen som du har konfigurerat
 
 När en profil kvalificerar sig för eller avslutar en målgrupp skickar Experience Platform en direktuppspelningsuppdatering till [!DNL Kevel].
 
-### Exempelnyttolast mottagen av [!DNL Kevel] UserDB
+### Exempelnyttolast mottagen av [!DNL Kevel] UserDB {#sample-payload}
 
 ```json
 PUT /udb/{networkId}/segments?userKey=ECID-12345
@@ -213,7 +212,7 @@ Nedan visas ett exempel på en exporterad profil som visar:
 }
 ```
 
-#### Så här tolkar [!DNL Kevel] den här profilen
+#### Så här tolkar [!DNL Kevel] den här profilen {#kevel-profile-interpretation}
 
 Med målkonfigurationen [!DNL Kevel] genererar varje mappad identitet en distinkt UserDB-post, vilket innebär att [!DNL Kevel] får:
 

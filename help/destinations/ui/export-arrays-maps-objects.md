@@ -3,7 +3,7 @@ title: Exportera arrayer, kartor och objekt från Real-Time CDP
 type: Tutorial
 description: Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till molnlagringsmål.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: f7ff10dd6489842adb8de49b3f8634c20d77cc71
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1062'
 ht-degree: 0%
@@ -34,7 +34,7 @@ Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till [
 
 Ta den här sidan som en praktisk plats där du kan hitta det du vill veta om hur du exporterar arrayer, kartor och andra objekttyper från Experience Platform.
 
-## Nedre linje längst fram
+## Nedre linje längst fram {#bottom-line}
 
 Hämta den viktigaste informationen om funktionerna i det här avsnittet och fortsätt till de andra avsnitten i dokumentet för detaljerad information.
 
@@ -69,7 +69,7 @@ organizations = [{
 
 Förutom arrayer kan du även exportera kartor och objekt från Experience Platform till önskat molnlagringsmål. Läs mer om [kartor](/help/xdm/ui/fields/map.md) och [objekt](/help/xdm/ui/fields/object.md) i Experience Platform.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 [Anslut](/help/destinations/ui/connect-destination.md) till önskat molnlagringsmål, gå igenom [aktiveringsstegen för molnlagringsmål](/help/destinations/ui/activate-batch-profile-destinations.md) och gå till [mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping). När du ansluter till det önskade molnmålet måste du aktivera alternativet **[!UICONTROL Export arrays, maps, objects]**. Mer information finns i avsnittet nedan.
 

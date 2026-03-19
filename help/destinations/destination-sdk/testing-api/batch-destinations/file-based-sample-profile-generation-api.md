@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /sample-profiles från Destination SDK för att generera exempelprofiler baserat på ett källschema. Du kan använda de här exempelprofilerna för att testa din filbaserade målkonfiguration.
 title: Generera exempelprofiler baserat på ett källschema
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '652'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ Exempelprofiler kan hjälpa dig att förstå JSON-strukturen för en profil. Des
 
 ## Komma igång {#getting-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du kan använda slutpunkten `/sample-profiles` måste du kontrollera att följande villkor uppfylls:
 
@@ -116,7 +116,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 När du har läst det här dokumentet vet du nu hur du genererar exempelprofiler baserat på källschemat som du konfigurerade i [aktiveringsflödet](../../../ui/activate-batch-profile-destinations.md) för ditt mål.
 

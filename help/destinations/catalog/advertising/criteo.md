@@ -3,9 +3,9 @@ keywords: Reklam; villkor.
 title: Kriterieanslutning
 description: Criteo ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personanpassade för att nå kunder med rätt annons, vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1168'
 ht-degree: 9%
 
 ---
@@ -35,7 +35,7 @@ Criteo ger betrodd och slagkraftig annonsering för att ge alla konsumenter bät
 
 ## Identiteter som stöds {#supported-identities}
 
-Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv-SE#getting-started).
+Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 | Målidentitet | Beskrivning | Överväganden |
 | --- | --- | --- |
@@ -80,23 +80,23 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 För att du bättre ska kunna förstå hur du använder målet [!DNL Criteo] finns det några mål som Adobe Experience Platform-kunder kan uppnå med [!DNL Criteo]:
 
-### Användningsfall 1: Hämta trafik
+### Användningsfall 1: Hämta trafik {#use-case-1}
 
 Visa upp er verksamhet med relevanta produkterbjudanden och flexibla kreatörer. Med intelligenta produktrekommendationer kommer era annonser automatiskt att innehålla de produkter som mest troligt kommer att utlösa besök och engagemang. Med flexibel målinriktning kan ni bygga målgrupper utifrån Criteos uppsättning av e-handelsdata eller från era egna listor över potentiella kunder och Adobe CDP-segment.
 
-### Använd fall 2: Öka konverteringen av webbplatser
+### Använd fall 2: Öka konverteringen av webbplatser {#use-case-2}
 
 När besökarna lämnar er webbplats bör du påminna dem om vad de missar med återannonser som ökar konverteringsgraden genom att visa specialerbjudanden och hyperrelevanta erbjudanden, vart de än går. Koppla samman er Adobe CDP-målgrupp för att återengagera befintliga kunder eller inrikta er på kunder som liknar era mest lojala kunder.
 
 ## Anslut till villkor {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md).
 
-### Autentisera till villkor
+### Autentisera till villkor {#authenticate}
 
 Så här ansluter du:
 
@@ -123,7 +123,7 @@ Fyll i följande anslutningsparametrar när du har autentiserat till målet.
 | --- | --- | --- |
 | Namn | Ett namn som hjälper dig att identifiera det här målet i framtiden. Det namn du väljer här blir namnet [!DNL Audience] i Criteo Management Center och kan inte ändras i ett senare skede. | Ja |
 | Beskrivning | En beskrivning som hjälper dig att identifiera det här målet i framtiden. | Nej |
-| Annonsörs-ID | ID för er organisations Criteo Advertiser. Kontakta er kontoansvarige för ditt kriterium för att få denna information. | Ja |
+| Annonsörs-ID | ID för er organisations Criteo Advertiser. Kontakta er kontohanterare för Villkor för att få denna information. | Ja |
 | Villkor [!DNL GUM caller ID] | [!DNL GUM Caller ID] i din organisation. Kontakta ditt kundkontoteam för att få information om rätt [!DNL GUM Caller ID] eller om du vill ha mer information om den här [!DNL GUM]-synkroniseringen, om det behövs. | Ja, när [!DNL GUM ID] anges som en identifierare |
 
 ### Aktivera aviseringar {#enable-alerts}
@@ -135,7 +135,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate-segments}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -203,9 +203,9 @@ Innehållet i borttagningen av användarprofilen som togs emot av anslutningen [
 
 ## Dataanvändning och styrning {#data-usage}
 
-Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
+Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
-## Ytterligare resurser
+## Ytterligare resurser {#additional-resources}
 
 * [Criteo Help Center](https://help.criteo.com/kb/en)
 * [Kriterieutvecklarportal](https://developers.criteo.com)

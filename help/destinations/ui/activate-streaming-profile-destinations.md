@@ -4,7 +4,7 @@ type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 99bac2ea71003b678a25b3afc10a68d36472bfbc
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 # Aktivera målgrupper för att direktuppspela exportmål för profiler
 
 >[!IMPORTANT]
-> 
+>
 > * Om du vill aktivera data och aktivera [mappningssteget](#mapping) för arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 > * Om du vill aktivera data utan att gå igenom [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 > 
@@ -31,7 +31,7 @@ Denna artikel gäller följande tre destinationer:
 * [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
 * [HTTP API-mål](/help/destinations/catalog/streaming/http-destination.md).
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
 
@@ -95,7 +95,7 @@ På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
-[Principutvärdering av samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte i exporter till de tre företagsmålen - Amazon Kinesis, Azure Event Hubs och HTTP API.
+[Principutvärdering av samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte vid export till de tre företagsmålen - Amazon Kinesis, Azure Event Hubs och HTTP API.
 
 Detta innebär att profiler som inte har samtyckt till att vara *som mål inkluderas* i exporten till dessa tre mål.
 

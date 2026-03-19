@@ -4,13 +4,13 @@ type: Tutorial
 hide: true
 hidefromtoc: true
 description: Lär dig hur du uppdaterar slutdatumet för datauppsättningsexportdataflöden med det aktuella slutdatumet den 1 maj 2025.
-source-git-commit: aeabbb56002f8640b79ff3a7e3dc532d01ebbadf
+exl-id: 3f8ff535-3c54-47ac-b297-32f8298881db
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '385'
 ht-degree: 0%
 
 ---
-
 
 # Uppdatera slutdatumet för datauppsättningsexportdataflöden (åtgärd krävs senast 1 maj 2025)
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Åtgärdsobjekten på den här sidan gäller om din organisation ställer in datauppsättningsexportdataflöden före versionen från september 2024 av Experience Platform.
 
-## Vad händer?
+## Vad händer? {#what-is-happening}
 
 I [september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört standardslutdatumet 1 maj 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*. Dessa dataflöden visar för närvarande ett meddelande som liknar det som visas nedan.
 
@@ -26,21 +26,21 @@ I [september 2024-utgåvan av Experience Platform](/help/release-notes/latest/la
 
 **Åtgärdsobjekt**: För något av dessa dataflöden måste du uppdatera slutdatumet manuellt innan det upphör att gälla, annars avbryts exporten. Använd användargränssnittet i Experience Platform för att identifiera vilka dataflöden som ska stoppas 1 maj 2025.
 
-## Varför meddelas jag?
+## Varför meddelas jag? {#why-notified}
 
 Din organisation har identifierats som att ha aktiva datauppsättningsexportdataflöden med slutdatumet 1 maj 2025.
 
-## Använd användargränssnittet för att uppdatera slutdatumet
+## Använd användargränssnittet för att uppdatera slutdatumet {#use-ui}
 
 Använd Experience Platform-gränssnittet för att identifiera dataflöden med slutdatumet 1 maj 2025 och uppdatera dem till ett framtida datum.
 
-### Hitta de dataflöden som behöver uppdateras
+### Hitta de dataflöden som behöver uppdateras {#find-dataflows}
 
 Navigera till **Destinationer > Bläddra** och leta efter datatypen **Datasets** i kolumnen **Datatyp**, som visas nedan. Välj önskade dataflöden för att inspektera dem.
 
 ![Datauppsättningsexportfält är markerade på fliken Bläddra.](/help/destinations/assets/ui/export-datasets/view-dataset-dataflows.png)
 
-### Uppdatera slutdatumet för dataflödena
+### Uppdatera slutdatumet för dataflödena {#update-end-date}
 
 Så här uppdaterar du slutdatumet för dataflöden:
 
@@ -54,8 +54,8 @@ Så här uppdaterar du slutdatumet för dataflöden:
 
 Mer information om schemaläggningssteget finns i självstudiekursen [för export av datauppsättningar](/help/destinations/api/export-datasets.md#scheduling).
 
-## Använd API:t för att uppdatera slutdatumet
+## Använd API:t för att uppdatera slutdatumet {#use-api}
 
-### Hitta de dataflöden som behöver uppdateras
+### Hitta de dataflöden som behöver uppdateras {#find-dataflows-api}
 
-### Uppdatera slutdatumet för dataflödena
+### Uppdatera slutdatumet för dataflödena {#update-end-date-api}

@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att generera en omformningsmall för testmeddelanden för ditt mål.
 title: Generera en omformningsmall för exempelmeddelanden
 exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '375'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med
 
 ## Komma igång med API-åtgärder för exempelmallar {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta exempelmall {#generate-sample-template}
 
@@ -39,6 +39,8 @@ GET authoring/testing/template/sample/{DESTINATION_ID}
 | Parameter | Beskrivning |
 | -------- | ----------- |
 | `{DESTINATION_ID}` | ID:t för målkonfigurationen som du genererar en meddelandetransformeringsmall för. |
+
+{style="table-layout:auto"}
 
 **Begäran**
 

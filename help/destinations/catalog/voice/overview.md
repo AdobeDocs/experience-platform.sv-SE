@@ -3,16 +3,16 @@ keywords: röstmål;Röstmål
 title: Översikt över kundens destinationer
 description: Röstplattformarna samlar in och samlar in data från olika källor, inklusive röstmeddelanden, samtalsdata och chattsamtal. Den sammanställda informationen kan filtreras och analyseras så att företag kan optimera sin webbplats så att den uppfyller deras behov.
 exl-id: f4e9ffea-5429-42ca-9075-562686ba3179
-source-git-commit: be2d4e5d1f204feefc7acb7cb4518044ab3f153a
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '138'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
 # Översikt över kundens destinationer {#voice-of-customer-destinations}
 
-## Översikt
+## Översikt {#overview}
 
 Röstplattformarna samlar in och samlar in data från olika källor, inklusive röstmeddelanden, samtalsdata och chattsamtal. Den sammanställda informationen kan filtreras och analyseras så att företag kan optimera sin webbplats så att den uppfyller deras behov.
 

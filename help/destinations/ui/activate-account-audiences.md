@@ -3,9 +3,9 @@ title: Aktivera målgrupper på konton för destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 049112b29b593daa69a11302e828dc968d7abae3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,11 @@ I den här artikeln förklaras det arbetsflöde som krävs för att exportera [k
 
 ## Mål som stöds {#supported-destinations}
 
-Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Bombora](/help/destinations/catalog/advertising/bombora.md), [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matched Audiences &#x200B;](/help/destinations/catalog/social/linkedin-b2b.md) -direktuppspelningsmål.
+Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Bombora](/help/destinations/catalog/advertising/bombora.md), [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matched Audiences ](/help/destinations/catalog/social/linkedin-b2b.md) -direktuppspelningsmål.
 
 ![Destinationer som stöder målgrupper.](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 
-## Videoöversikt
+## Videoöversikt {#video-overview}
 
 I videon nedan finns en översikt över hur du skapar och aktiverar kontomålgrupper och vilka användningsfall som stöds när du aktiverar kontomålgrupper.
 
@@ -69,17 +69,21 @@ Följ instruktionerna för att välja ett mål där du kan exportera datauppsät
 
 ## Välj era kontomålgrupper {#select-account-audiences}
 
-Använd kryssrutorna till vänster om målgruppsnamnen för att välja de målgrupper som du vill exportera till målet och välj sedan **[!UICONTROL Next]**. Observera att endast *kontomålar* visas i den här vyn och att inga andra målgruppstyper visas.
+Använd kryssrutorna till vänster om målgruppsnamnen för att välja de målgrupper som du vill exportera till målet och välj sedan **[!UICONTROL Next]**.
+
+>[!NOTE]
+>
+>Endast *kontomålgrupper* visas i den här vyn och inga andra målgruppstyper visas.
 
 ![Arbetsflöde för dataexport med steget Välj målgrupper där du kan välja vilka kontomålgrupper som ska exporteras.](/help/destinations/assets/ui/activate-account-audiences/select-account-audiences.png)
 
-## Schemaläggning och nästa steg
+## Schemaläggning och nästa steg {#scheduling-and-next-steps}
 
 För resten av aktiveringsarbetsflödet för att exportera kontomaterial, läs självstudiekursen om hur du aktiverar data till filbaserade mål. Fortsätt från [schemalägg målgruppsexportsteget](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling). Om du aktiverar kontomålgrupper till målet **[!UICONTROL (Companies) LinkedIn Matched Audiences]**, läs självstudiekursen om hur du aktiverar direktuppspelningsmål. Fortsätt från [mappningssteget](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping).
 
 >[!NOTE]
 >
->Observera, att i schemaläggningssteget när du exporterar kontomålgrupper till molnlagringsmål, kan du bara exportera [fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) _enligt ett dagligt schema_ i arbetsflödet för att aktivera kontomålgrupper. Export per timme stöds inte. Observera också att **[!UICONTROL After audience evaluation]** är den enda utvärderingstypen som stöds.
+>I schemaläggningssteget när du exporterar kontomålgrupper till molnlagringsmål kan du bara exportera [fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) _enligt ett dagligt schema_ i arbetsflödet för att aktivera kontomålgrupper. Export per timme stöds inte. **[!UICONTROL After audience evaluation]** är den enda utvärderingstypen som stöds.
 
 ## Viktiga hänvisningar och kända begränsningar {#important-callouts-known-limitations}
 
@@ -95,6 +99,8 @@ Observera att följande två mappningspar är obligatoriska för att det ska gå
 |---------|----------|
 | `accountName` | `companyName` |
 | `accountKey.sourceKey` | `primaryId` (markera det här fältet i vyn **[!UICONTROL Select Identity namespace]** när du väljer **[!UICONTROL Target Field]**). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper för kontot till mål.](/help/destinations/assets/ui/activate-account-audiences/identity-namespace-highlighted.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper för kontot till mål."){width="100" zoomable="yes"} |
+
+{style="table-layout:auto"}
 
 ### Tillämpning av datastyrning {#data-governance-enforcement}
 

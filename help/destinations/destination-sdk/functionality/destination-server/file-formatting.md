@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ för filbaserade mål som skapats med Adobe Experience Platform Destination SDK via slutpunkten "/destination-servers".
 title: Filformateringskonfiguration
 exl-id: 98fec559-9073-4517-a10e-34c2caf292d5
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1094'
+source-wordcount: '1092'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ## parametrar som stöds {#supported-parameters}
 
-Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kraven i målets filmottagningssystem för att optimera läsningen och tolkningen av de filer som tas emot från Experience Platform.
+Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kraven i mottagningssystemet för målfilen, så att de optimalt kan läsa och tolka de filer som tas emot från Experience Platform.
 
 >[!NOTE]
 >

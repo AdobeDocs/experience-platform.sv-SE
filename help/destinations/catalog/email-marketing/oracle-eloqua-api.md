@@ -3,9 +3,9 @@ title: (API) Oracle Eloqua-anslutning
 description: (API) Oracle Eloqua-destinationen gör att du kan exportera dina kontodata och aktivera dem i Oracle Eloqua för dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2138'
+source-wordcount: '2136'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad 
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -47,6 +47,8 @@ Observera objekten nedan innan du autentiserar till målet [!DNL Oracle Eloqua]:
 | `Username` | Användarnamnet för ditt [!DNL Oracle Eloqua]-konto. |
 | `Password` | Lösenordet för ditt [!DNL Oracle Eloqua]-konto. |
 | `Pod` | [!DNL Oracle Eloqua] har stöd för flera datacenter, där vart och ett har ett unikt domännamn. [!DNL Oracle Eloqua] refererar till dessa som&quot;pods&quot;, det finns för närvarande sju totalt - p01, p02, p03, p04, p06, p07 och p08. Om du vill ta reda på vilken POD du är på loggar du in på [!DNL Oracle Eloqua] och noterar URL:en i webbläsaren när du har loggat in. Om webbläsarens URL är `secure.p01.eloqua.com` är till exempel `pod` `p01`. Mer information finns på sidan [Bestämma POD](https://community.oracle.com/topliners/discussion/4470225/determining-your-pod-number-for-oracle-eloqua). |
+
+{style="table-layout:auto"}
 
 Mer information finns i [Logga in på [!DNL Oracle Eloqua]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/Administration/Tasks/SigningInToEloqua.htm#Signing).
 
@@ -70,6 +72,8 @@ Mer information finns i [Logga in på [!DNL Oracle Eloqua]](https://docs.oracle.
 | Målidentitet | Beskrivning | Obligatoriskt |
 |---|---|---|
 | `EloquaId` | Unik identifierare för kontakten. | Ja |
+
+{style="table-layout:auto"}
 
 ## Målgrupper {#supported-audiences}
 
@@ -156,7 +160,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -251,7 +255,7 @@ Mer information finns i [!DNL Oracle Eloqua]-dokumentationen:
 * [Oracle Eloqua Marketing Automation](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
 * [REST API for Oracle Eloqua Marketing Cloud Service](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
 
-### Changelog
+### Changelog {#changelog}
 
 I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdateringar för den här målanslutningen.
 

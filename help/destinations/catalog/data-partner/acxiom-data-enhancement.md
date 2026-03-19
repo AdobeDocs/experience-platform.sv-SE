@@ -2,11 +2,11 @@
 title: Dataförbättring i Acxiom
 description: Använd den här kopplingen för att aktivera egna Adobe-profiler i Real-Time CDP till Acxiom för att berika och använda data i alla marknadsföringskanaler. Du kan sedan använda Acxiom-källan för att importera profilerna med förbättrade data och arbeta med dem i Real-Time CDP.
 last-substantial-update: 2024-03-14T00:00:00Z
-badge: Beta
+badge: label="Beta" type="Informative"
 exl-id: 59edc43d-ae8e-4c3d-820c-b5be1c4483f9
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1436'
 ht-degree: 2%
 
 ---
@@ -99,7 +99,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
-Om du vill komma åt din bucket på Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
+Du måste ange giltiga värden för följande autentiseringsuppgifter för att få åtkomst till din bucket på Experience Platform:
 
 | Autentiseringsuppgifter | Beskrivning |
 |---------------|----------------------------------------------------------------------------------------------------------|
@@ -107,13 +107,13 @@ Om du vill komma åt din bucket på Experience Platform måste du ange giltiga v
 | S3-hemlig nyckel | Det hemliga nyckel-ID:t för din bucket. Du kan hämta värdet från [!DNL Acxiom]-teamet. |
 | Buckennamn | Det här är din bucket där filer delas. Du kan hämta värdet från [!DNL Acxiom]-teamet. |
 
-### Nytt konto
+### Nytt konto {#new-account}
 
 Så här definierar du en ny plats för hanterad Acxiom S3:
 
 ![Nytt konto](../../assets/catalog/data-partner/acxiom/image-destination-new-account.png)
 
-### Befintligt konto
+### Befintligt konto {#existing-account}
 
 Konton som redan har definierats med målet [!DNL Acxiom Data Enhancement] visas i en lista. När du väljer det här alternativet visas information om kontot i den högra listen. Visa exemplet från gränssnittet när du navigerar till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**;
 
@@ -152,7 +152,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 
 Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
-### Mappningsförslag
+### Mappningsförslag {#mapping-suggestions}
 
 För att filerna på Acxiom-sidan ska kunna bearbetas på rätt sätt krävs namn- och adresselement. Även om det inte krävs alla element, kommer det att vara till hjälp att matchningen blir så framgångsrik som möjligt om alla delar anges.
 
@@ -177,7 +177,7 @@ Mappningsförslag ges i tabellen nedan som listar de attribut på målsidan som 
 
 Kontrollera [!DNL Amazon S3 Storage]-pytsen och se till att de exporterade filerna innehåller de förväntade profilpopulationerna för att kontrollera om data har exporterats utan fel.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du skapat ett dataflöde för att exportera profildata från Experience Platform till din [!DNL Acxiom] hanterade S3-plats. Därefter kontaktar du din Acxiom-representant med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.
 

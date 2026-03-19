@@ -2,7 +2,7 @@
 description: Lär dig hur du använder API:t för måltestning för att testa omformningsmallen för målmeddelanden för direktuppspelning innan du publicerar målet.
 title: Skapa och testa en meddelandeomformningsmall
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Som en del av Destinationen SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. Den här sidan beskriver hur du skapar och testar en meddelandeomformningsmall. Mer information om hur du testar målet finns i [Testa målkonfigurationen](streaming-destination-testing-overview.md).
+Som en del av Destination SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. Den här sidan beskriver hur du skapar och testar en meddelandeomformningsmall. Mer information om hur du testar målet finns i [Testa målkonfigurationen](streaming-destination-testing-overview.md).
 
 Om du vill **skapa och testa en meddelandeomvandlingsmall** mellan målschemat i Adobe Experience Platform och det meddelandeformat som stöds av ditt mål använder du *mallutvecklingsverktyget* som beskrivs nedan.  Läs mer om dataomvandlingen mellan käll- och målschemat i [meddelandeformatdokumentet](../../functionality/destination-server/message-format.md#using-templating).
 
-Nedan visas hur du skapar och testar en meddelandetransformeringsmall passar in i [målkonfigurationsarbetsflödet](../../guides/configure-destination-instructions.md) i Destinationen SDK:
+Nedan visas hur du skapar och testar en meddelandetransformeringsmall passar in i [målkonfigurationsarbetsflödet](../../guides/configure-destination-instructions.md) i Destination SDK:
 
 ![Bild av var steget för att skapa mall passar in i arbetsflödet för målkonfigurationen](../../assets/testing-api/create-template-step.png)
 
@@ -54,7 +54,7 @@ Processen att hämta och testa mallen är iterativ. Upprepa stegen nedan tills d
 
 1. [Hämta först en exempelmall](../../testing-api/streaming-destinations/create-template.md#sample-template-api).
 2. Använd exempelmallen som utgångspunkt för att skapa ett eget utkast.
-3. Anropa [återgivningsmallens API-slutpunkt](../../testing-api/streaming-destinations/create-template.md#render-template-api) med din egen mall. Adobe genererar exempelprofiler baserat på ditt schema och returnerar resultatet eller eventuella fel som påträffats.
+3. Anropa [återgivningsmallens API-slutpunkt](../../testing-api/streaming-destinations/create-template.md#render-template-api) med din egen mall. Adobe genererar exempelprofiler baserat på ditt schema och returnerar resultatet eller eventuella påträffade fel.
 4. Jämför exporterade data med det dataformat som du förväntar dig av målet. Redigera mallen om det behövs.
 5. Upprepa den här processen tills de exporterade profilerna matchar målets förväntade dataformat.
 
@@ -167,6 +167,6 @@ Se API-referensen för exempel på anrop som du kan göra:
 
 Redigera mallen och anropa återgivningsmallens API-slutpunkt tills de exporterade profilerna matchar målets förväntade dataformat.
 
-## Lägg till mallen för escape-konverteringar i målserverkonfigurationen
+## Lägg till mallen för escape-konverteringar i målserverkonfigurationen {#add-template-to-server-config}
 
 När du är nöjd med mallen för meddelandetransformering lägger du till den i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md) i `httpTemplate.requestBody.value`.

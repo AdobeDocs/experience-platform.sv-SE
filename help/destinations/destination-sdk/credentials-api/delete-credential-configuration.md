@@ -2,9 +2,9 @@
 description: På den här sidan visas ett exempel på API-anropet som används för att ta bort en autentiseringskonfiguration i Adobe Experience Platform Destination SDK.
 title: Ta bort en autentiseringskonfiguration
 exl-id: a540e349-043c-4f04-8ca8-f650b9943492
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '416'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ När du använder ett globalt autentiseringssystem måste du ange `"authenticati
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Ta bort en autentiseringskonfiguration {#delete}
 
@@ -52,6 +52,8 @@ DELETE /authoring/credentials/{INSTANCE_ID}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{INSTANCE_ID}` | `ID` för den autentiseringskonfiguration som du vill ta bort. |
+
+{style="table-layout:auto"}
 
 Följande begäran tar bort en autentiseringskonfiguration som definieras av parametern `{INSTANCE_ID}`.
 

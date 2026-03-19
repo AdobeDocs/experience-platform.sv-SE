@@ -5,9 +5,9 @@ title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2203'
 ht-degree: 0%
 
 ---
@@ -15,14 +15,14 @@ ht-degree: 0%
 # Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till ett mål behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >
 >Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md) eller [Azure Event Hubs](../catalog/cloud-storage/azure-event-hubs.md)), skapa ett dataflöde till ditt nya skapade mål och aktivera data till ditt nya skapade mål.
+I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md) eller [Azure Event Hubs](../catalog/cloud-storage/azure-event-hubs.md)), skapa ett dataflöde till ditt nya skapade mål och aktivera data till det nya målet.
 
 I den här självstudien används målet [!DNL Amazon Kinesis] i alla exempel, men stegen är identiska för [!DNL Azure Event Hubs].
 
@@ -30,7 +30,7 @@ I den här självstudien används målet [!DNL Amazon Kinesis] i alla exempel, m
 
 Om du föredrar att använda användargränssnittet i Experience Platform för att ansluta till ett mål och aktivera data kan du läsa självstudiekurserna [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att direktuppspela målgruppsexport](../ui/activate-segment-streaming-destinations.md) .
 
-## Kom igång
+## Kom igång {#get-started}
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
@@ -38,9 +38,9 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] är arkivsystemet för dataplatser och datalinje inom Experience Platform.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för direktuppspelningsdestinationer i Experience Platform.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till direktuppspelningsmål i Experience Platform.
 
-### Samla in nödvändiga inloggningsuppgifter
+### Samla in nödvändiga inloggningsuppgifter {#gather-credentials}
 
 För att slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter tillgängliga, beroende på vilken typ av mål du ansluter och aktiverar målgrupper till.
 
@@ -53,7 +53,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values}
 
-För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
+Om du vill anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -129,7 +129,7 @@ Därefter måste du ansluta till dina Experience Platform-data, så att du kan e
 2. Med basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina Experience Platform-data.
 
 
-### Ge åtkomst till dina data i Experience Platform
+### Ge åtkomst till dina data i Experience Platform {#authorize-access-experience-platform}
 
 **API-format**
 
@@ -224,7 +224,7 @@ I det här steget skapar du en anslutning till det önskade direktuppspelningsm�
 1. Först måste du ringa för att auktorisera åtkomst till direktuppspelningsmålet genom att konfigurera en basanslutning.
 2. Med hjälp av basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en målanslutning, där du anger platsen i lagringskontot där exporterade data ska levereras samt formatet för de data som ska exporteras.
 
-### Auktorisera åtkomst till direktuppspelningsmålet
+### Auktorisera åtkomst till direktuppspelningsmålet {#authorize-access-streaming-destination}
 
 **API-format**
 
@@ -287,7 +287,7 @@ Ett svar innehåller basanslutningsens unika identifierare (`id`). Lagra det hä
 }
 ```
 
-### Ange lagringsplats och dataformat
+### Ange lagringsplats och dataformat {#specify-storage-location-data-format}
 
 **API-format**
 
@@ -344,7 +344,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 }
 ```
 
-## Skapa ett dataflöde
+## Skapa ett dataflöde {#create-data-flow}
 
 ![Översikt över målsteg 4](../assets/api/streaming-destination/step4.png)
 
@@ -482,11 +482,13 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
 | `name` | *Valfritt*. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
 
+{style="table-layout:auto"}
+
 **Svar**
 
 Håll utkik efter 202 OK-svar. Ingen svarstext returneras. Om du vill verifiera att begäran var korrekt går du till nästa steg, Validera dataflödet.
 
-## Validera dataflödet
+## Validera dataflödet {#validate-data-flow}
 
 ![Översikt över målsteg 6](../assets/api/streaming-destination/step6.png)
 
@@ -563,7 +565,7 @@ Det returnerade svaret ska i parametern `transformations` inkludera de målgrupp
 
 >[!IMPORTANT]
 >
-> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=sv-SE), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
+> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
 
 ```json
 {

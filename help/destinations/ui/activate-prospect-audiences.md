@@ -3,9 +3,9 @@ title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: 9f4ce2a3a8af72342683c859caa270662b161b7d
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '593'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj 
 
 ![Destinationer som stöder potentiella målgrupper.](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 * Du måste först importera [profiler för potentiella kunder](/help/profile/ui/prospect-profile.md) och skapa [målgrupper för potentiella kunder](/help/segmentation/types/prospect-audiences.md) innan du kan aktivera dem till underordnade mål.
 * Om du vill aktivera potentiella målgrupper för destinationer måste du ha anslutit till ett mål. Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda. Mer information finns i självstudiekursen [Ansluta till mål](./connect-destination.md).
@@ -63,11 +63,15 @@ Följ instruktionerna för att välja ett mål där du kan exportera datauppsät
 
 ## Välj era potentiella målgrupper {#select-prospect-audiences}
 
-Använd kryssrutorna till vänster om namnen på de potentiella målgrupperna för att välja de målgrupper som du vill exportera till målet och välj sedan **[!UICONTROL Next]**. Observera att endast de potentiella målgrupperna visas i den här vyn och att inga andra målgrupper visas.
+Använd kryssrutorna till vänster om namnen på de potentiella målgrupperna för att välja de målgrupper som du vill exportera till målet och välj sedan **[!UICONTROL Next]**.
+
+>[!NOTE]
+>
+>Endast de potentiella målgrupperna visas i den här vyn och inga andra målgrupper visas.
 
 ![Arbetsflöde för dataexport med steget Välj målgrupper där du kan välja vilka potentiella målgrupper som ska exporteras.](/help/destinations/assets/ui/activate-prospect-audiences/select-prospect-audiences.png)
 
-## Schemaläggning och nästa steg
+## Schemaläggning och nästa steg {#scheduling-and-next-steps}
 
 För resten av aktiveringsarbetsflödet för att exportera målgrupper med potentiella kunder, läs självstudiekursen om hur du aktiverar data till filbaserade mål. Fortsätt från [schemalägg målgruppsexportsteget](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
 

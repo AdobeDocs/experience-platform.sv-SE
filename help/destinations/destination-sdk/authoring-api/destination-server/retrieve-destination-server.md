@@ -2,9 +2,9 @@
 description: På den här sidan visas ett exempel på det API-anrop som används för att hämta en målserverkonfiguration via Adobe Experience Platform Destination SDK.
 title: Hämta en målserverkonfiguration
 exl-id: 1b375343-e793-4c91-856f-af66fe71822e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ En detaljerad beskrivning av de funktioner som används av målservrar finns i f
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta en målserverkonfiguration {#retrieve}
 
@@ -72,7 +72,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över målserverkonfigurationer som du har åtkomst till, baserat på namnet på [!DNL IMS Org ID] och sandlådan som du använde. En `instanceId` motsvarar en målserver. Exemplet nedan innehåller två målserverkonfigurationer.
 
@@ -169,9 +169,11 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 | -------- | ----------- |
 | `{INSTANCE_ID}` | ID:t för målserverkonfigurationen som du vill hämta. |
 
+{style="table-layout:auto"}
+
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med den konfiguration av målservern som motsvarar `{INSTANCE_ID}` som du angav.
 

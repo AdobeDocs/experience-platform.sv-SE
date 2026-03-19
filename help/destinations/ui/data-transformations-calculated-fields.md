@@ -3,7 +3,7 @@ title: Utför omformningar av data som exporteras till molnlagringsmål med ber�
 type: Tutorial
 description: Förstå hur du använder funktionen för beräknade fält för att utföra omformningar av data som exporteras till molnlagringsmål
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: bd9efc1bcf6058827cc5c603b9976c9e42c7ec9e
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1604'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 >id="platform_destinations_export_arrays_flat_files"
 >title="Lägg till beräknade fält"
 >abstract="<p>Använd kontrollen **Lägg till beräknat fält** för att utföra olika dataomvandlingar på data som exporteras till molnlagringsmål. Du kan till exempel tillämpa hash-kodning på data, sammanfoga arrayer i strängar och mycket mer."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=sv-SE#examples" text="Exempel"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="Exempel"
 
 >[!AVAILABILITY]
 >
@@ -27,11 +27,11 @@ Om du vill utföra olika omformningar av data som exporteras till molnlagringsm�
 * [Användargränssnittsguide och översikt](/help/data-prep/ui/mapping.md#calculated-fields)
 * [Förinställningsfunktioner för data](/help/data-prep/functions.md)
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Så här använder du beräknade fält för dataomvandlingar:
 
-1. [Anslut](/help/destinations/ui/connect-destination.md) till önskat molnlagringsmål. När du ansluter till det önskade molnmålet växlar du **[!UICONTROL Export arrays, maps, objects]** [alternativet av](/help/destinations/ui/export-arrays-maps-objects.md##export-arrays-maps-objects-toggle).
+1. [Anslut](/help/destinations/ui/connect-destination.md) till önskat molnlagringsmål. När du ansluter till det önskade molnmålet växlar du **[!UICONTROL Export arrays, maps, objects]** [alternativet av](/help/destinations/ui/export-arrays-maps-objects.md#export-arrays-maps-objects-toggle).
 2. Gå igenom [aktiveringsstegen för molnlagringsmål](/help/destinations/ui/activate-batch-profile-destinations.md) och gå till [mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
 
 ## Så här arbetar du med beräknade fält {#how-to-export-calculated-fields}

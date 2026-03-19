@@ -3,9 +3,9 @@ title: PubMatic Connect
 description: PubMatic maximerar kundvärdet genom att leverera framtidens programmatiska digitala marknadsföringsprogram för supply chain. PubMatic Connect kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och hanteras.
 last-substantial-update: 2025-02-12T00:00:00Z
 exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,9 @@ Det finns två tillgängliga mål som gör att du kan skicka målgruppsdata till
 
 2. PubMatic Connect (Custom Audience ID Mapping)
 
-   På den här platsen kan du välja att manuellt lägga till ett mappnings-ID under aktiveringsarbetsflödet. Använd det här målet när data ska skickas till befintliga målgrupper i PubMatic-plattformen eller om ett anpassat &#39;Source Audience ID&#39; krävs.
+   This destination will let you choose to manually add a mapping ID during the activation workflow. Use this destination when data should be sent to existing audiences in the PubMatic platform or if a custom &#39;Source Audience ID&#39; is required.
 
-![Visa sida vid sida om de två PubMatic-anslutningarna i målkatalogen.](/help/destinations/assets/catalog/advertising/pubmatic/two-pubmatic-connectors-side-by-side.png)
+![](/help/destinations/assets/catalog/advertising/pubmatic/two-pubmatic-connectors-side-by-side.png)
 
 >[!IMPORTANT]
 >
@@ -35,15 +35,15 @@ Det finns två tillgängliga mål som gör att du kan skicka målgruppsdata till
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL PubMatic Connect] finns det ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+[!DNL PubMatic Connect]
 
-### Rikta användarna mot mobiler, webben och CTV-plattformar {#targeting}
+### Targeting users on mobile, web, and CTV platforms {#targeting}
 
-Utgivare eller dataleverantörer vill skicka målgrupper från Adobe Experience Platform till [!DNL PubMatic Connect] för målanvändare på mobil-, webb- och CTV-plattformar med ett stort antal identifierare.
+[!DNL PubMatic Connect]
 
 ## Förutsättningar {#prerequisites}
 
-Tala med din kontohanterare för [!DNL PubMatic] för att kontrollera att ditt konto är korrekt konfigurerat och har stöd för introduktion av målgruppssegment. De ser också till att du har all information som behövs för att använda destinationen och för att ge dig support under installationen.
+[!DNL PubMatic] They will also make sure you have all the relevant details to use this destination and to provide you with support during the setup.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -64,7 +64,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | [!DNL Segmentation Service] [](/help/segmentation/ui/audience-portal.md#customize) Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -77,19 +77,19 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Collections of structured data stored in the Adobe Experience Platform Data Lake. | Reporting, data science workflows |
 
 {style="table-layout:auto"}
 
 
-## Exportera typ och frekvens {#export-type-frequency}
+## Export type and frequency {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
-| Objekt | Typ | Anteckningar |
+| Objekt | Typ | Notes |
 | ---------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i PubMatic Connect-målet. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på segmentutvärdering, skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Export type | **[!UICONTROL Segment export]** | You are exporting all members of a segment (audience) with the identifiers (name, phone number, or others) used in the PubMatic Connect destination. |
+| Export frequency | **[!UICONTROL Streaming]** | Streaming destinations are &quot;always on&quot; API-based connections. When a profile is updated in Experience Platform based on segment evaluation, the connector sends the update downstream to the destination platform. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -131,7 +131,7 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
@@ -139,7 +139,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >
 > - Om du vill exportera _identiteter_ måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](../../assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera målgrupper till direktuppspelningsmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
@@ -154,7 +154,7 @@ Markera målfält:
 
 ![Mappa attribut och identiteter](../..//assets/catalog/advertising/pubmatic/export-identities-to-destination.png)
 
-### Målgruppsplanering
+### Målgruppsplanering {#audience-scheduling}
 
 Om du använder målet PubMatic Connect (Custom Audience ID Mapping) måste du ange ett mappnings-ID för varje målgrupp som motsvarar &quot;Source Audience ID&quot; i PubMatic-plattformen.
 

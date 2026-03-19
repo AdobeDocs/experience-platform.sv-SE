@@ -2,9 +2,9 @@
 description: Den här sidan är ett exempel på det API-anrop som används för att hämta en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Hämta en målgruppsmall
 exl-id: 44f2d571-49c5-4112-b3ee-bc839f2b0874
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '421'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta en målgruppsmall {#retrieve}
 
@@ -67,7 +67,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över målgruppsmallar som du har åtkomst till, baserat på det [!DNL IMS Org ID]- och sandlådenamn som du använde. En `instanceId` motsvarar en målgruppsmall.
 
@@ -198,9 +198,11 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 | -------- | ----------- |
 | `{INSTANCE_ID}` | ID för målgruppsmallen som du vill hämta. |
 
+{style="table-layout:auto"}
+
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om målgruppsmallen som motsvarar `{INSTANCE_ID}` som anges i samtalet.
 

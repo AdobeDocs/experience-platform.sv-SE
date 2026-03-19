@@ -3,9 +3,9 @@ title: Pega Profile Connector
 description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofil-Designer för att importera profildata regelbundet från Amazon S3-lagring.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1255'
 ht-degree: 0%
 
 ---
@@ -22,15 +22,15 @@ Den här kopplingen hjälper till att ställa in den inledande exporten av profi
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av Pegasystems. Om du har frågor eller uppdateringsfrågor kontaktar du Pega direkt [här](mailto:support@pega.com).
 
-## Användningsfall
+## Användningsfall {#use-cases}
 
 För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Pega Profile Connector] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
-### Användningsfall 1
+### Användningsfall 1 {#use-case-1}
 
 En marknadsförare vill initialt konfigurera [!DNL Pega Customer Decision Hub] med profildata inlästa från Adobe Experience Platform. Detta är en inledande full belastning följt av deltasterna på schemalagd basis.
 
-### Användningsfall 2
+### Användningsfall 2 {#use-case-2}
 
 En marknadsförare vill ha aktuella profildata från Adobe Experience Platform i [!DNL Pega Customer Decision Hub] som förbättrar Pega-insikterna om kundprofiler kontinuerligt.
 
@@ -92,7 +92,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
@@ -107,7 +107,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 När du har upprättat autentiseringsanslutningen till [!DNL Amazon S3] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector &#x200B;](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector ](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -130,7 +130,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -147,7 +147,7 @@ För [!DNL Pega Profile Connector] mål skapar [!DNL Experience Platform] en `.c
 En import av profildata från S3 infogar data i [!DNL Pega Customer]-profildatalagret. Importerade kundprofildata kan valideras i [!DNL Pega Customer Profile Designer], vilket visas i följande bild.
 ![Bild av gränssnittsskärmen där du kan validera Adobe-profildata i Designer för kundprofil](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)
 
-I [!DNL Pega Customer Decision Hub] kan dataadministratörer konfigurera datajobb i [!DNL Customer Profile Designer] så att profildata importeras periodiskt från S3 enligt följande bild. Mer information om hur du konfigurerar datajobb att importera profildata från [&#x200B; finns i &#x200B;](#additional-resources)ytterligare resurser[!DNL Amazon S3].
+I [!DNL Pega Customer Decision Hub] kan dataadministratörer konfigurera datajobb i [!DNL Customer Profile Designer] så att profildata importeras periodiskt från S3 enligt följande bild. Mer information om hur du konfigurerar datajobb att importera profildata från [ finns i ](#additional-resources)ytterligare resurser[!DNL Amazon S3].
 ![Bild av gränssnittsskärmen för att konfigurera datajobb i kundprofilen Designer](../../assets/catalog/personalization/pega-profile/pega-profile-screen-image1.png)
 
 ## Ytterligare resurser {#additional-resources}

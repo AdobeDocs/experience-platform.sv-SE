@@ -1,11 +1,11 @@
 ---
 keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
-description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
+description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (till exempel DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 8d0cd63b6262170689ca5a6eb76350c4fc024566
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '289'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ För närvarande stöder Experience Platform de reklamdestinationer som anges ne
 
 Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
-### Anslutningar
+### Anslutningar {#connections}
 
 * [(Beta) Acxiom Audience Distribution](acxiom-audience-connection.md)
 * [(Beta) Acxiom Real ID Audience Connection](acxiom-real-id-audience-connection.md)
@@ -50,7 +50,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [(Beta) The Trade Desk CRM connection](tradedesk-emails.md)
 * [Yahoo/Verizon DataX](datax.md)
 
-### Tillägg
+### Tillägg {#extensions}
 
 * [Adobe Advertising Cloud-tillägg](adobe-advertising-cloud.md)
 * [Awin Advertising Conversion Tag extension](awin-conversiontag.md)

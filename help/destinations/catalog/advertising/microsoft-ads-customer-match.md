@@ -2,11 +2,11 @@
 keywords: annonsering, microsoft ads; kundmatchning;
 title: Microsoft Ads - anslutning för kundmatchning
 description: Använd destinationen Microsoft Ads Customer Match för att matcha kunder med e-postadresser och återengagera dem i Microsoft Advertising Network, inklusive sök- och målgruppsannonser.
-badge: Beta
+badge: label="Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: 4d405ffb-f600-463b-a215-44e806b6d139
-source-git-commit: 82f412676c89d7d14116be9328ab7fa438e10fc0
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1347'
 ht-degree: 0%
@@ -27,11 +27,11 @@ Använd målet [!DNL Microsoft Ads Customer Match] för att matcha kunder med e-
 
 För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Microsoft Ads Customer Match] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa med den här funktionen.
 
-### Använd skiftläge 1
+### Använd skiftläge 1 {#use-case-1}
 
 Ett e-handelsmärke vill nå befintliga kunder via [!DNL Microsoft Search] och [!DNL Microsoft Audience Network] för att anpassa erbjudanden baserat på deras tidigare köp och webbhistorik. Varumärket kan importera e-postadresser från sin egen CRM till Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till [!DNL Microsoft Ads Customer Match] för användning i sök- och målgruppsannonser, vilket optimerar deras annonsutgifter.
 
-### Använd skiftläge 2
+### Använd skiftläge 2 {#use-case-2}
 
 Ett teknikföretag lanserade en ny produkt. För att marknadsföra den nya produkten vill de öka medvetenheten bland kunder som tidigare köpt relaterade produkter. De överför e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Målgrupper skapas utifrån kunder som äger relaterade produkter. Dessa målgrupper skickas till [!DNL Microsoft Ads Customer Match], så att företaget kan inrikta sig på befintliga kunder och liknande kunder i hela [!DNL Microsoft Advertising Network].
 
@@ -96,7 +96,7 @@ När du konfigurerar målet måste du ange följande information:
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md).
@@ -146,7 +146,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* till mål måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 

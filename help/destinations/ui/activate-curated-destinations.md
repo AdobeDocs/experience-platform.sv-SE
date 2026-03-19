@@ -3,16 +3,16 @@ title: Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-i
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper från Adobe Experience Platform till anslutna TV- och ljuddestinationer samt andra integreringar med LiveRamp RampID.
 exl-id: 37e5bab9-588f-40b3-b65b-68f1a4b868f1
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
 
 # Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare
 
-Använd Adobe Real-Time CDP-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [[!DNL [LiveRamp RampID]]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
+Använd Adobe Real-Time CDP-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
 
 >[!IMPORTANT]
 >
@@ -62,7 +62,7 @@ När du har exporterat dina målgrupper aktiverar du dem med hjälp av målet [[
 
 Titta på videon nedan för att få en komplett förklaring av arbetsflödet som beskrivs på den här sidan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3452660?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3425367)
 
 ### Steg 1: Skicka dina målgrupper från Experience Platform till LiveRamp via målet [!DNL LiveRamp - Onboarding] {#onboarding}
 
@@ -72,7 +72,7 @@ Det gör du med målet **[!DNL LiveRamp - Onboarding]**.
 
 ![Experience Platform-gränssnittsbild som visar LiveRamp - Destinationskort för nyintroduktion](../assets/ui/activate-curated-destinations-liveramp/liveramp-onboarding-catalog.png)
 
-Läs [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-måldokumentationen om du vill lära dig hur du konfigurerar [!DNL LiveRamp - Onboarding]-målet och exporterar dina målgrupper från Experience Platform.
+Läs [!DNL LiveRamp - Onboarding]-måldokumentationen om du vill lära dig hur du konfigurerar [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-målet och exporterar dina målgrupper från Experience Platform.
 
 >[!IMPORTANT]
 >
@@ -93,7 +93,7 @@ Du aktiverar målgrupperna (exporterade i [steg 1](#onboarding)) med hjälp av m
 
 ![Experience Platform-gränssnittsbild som visar LiveRamp - distributionskortet](../assets/ui/activate-curated-destinations-liveramp/liveramp-distribution-catalog.png)
 
-Läs [[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md)-måldokumentationen om du vill lära dig hur du konfigurerar **[!DNL LiveRamp - Distribution]**-målet och aktiverar de målgrupper som du har exporterat i [steg 1](#onboarding).
+Läs **[!DNL LiveRamp - Distribution]**-måldokumentationen om du vill lära dig hur du konfigurerar [-målet och aktiverar de målgrupper som du har exporterat i ](#onboarding)steg 1[[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md).
 
 >[!IMPORTANT]
 >

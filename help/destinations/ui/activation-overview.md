@@ -4,7 +4,7 @@ title: Aktiveringsöversikt
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper i Adobe Experience Platform till olika typer av destinationer.
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '340'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 # Aktiveringsöversikt
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -24,7 +24,7 @@ Adobe Experience Platform har stöd för ett stort antal destinationer. Arbetsfl
 
 När du har [konfigurerat ditt mål](connect-destination.md) kan du aktivera målgrupper på flera sätt:
 
-### Aktivera målgrupper från målkatalogen
+### Aktivera målgrupper från målkatalogen {#activate-from-catalog}
 
 Mer information om hur du aktiverar målgrupper till ditt mål från målkatalogen finns i följande handböcker:
 
@@ -32,7 +32,7 @@ Mer information om hur du aktiverar målgrupper till ditt mål från målkatalog
 * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](activate-streaming-profile-destinations.md)
 * [Aktivera målgruppsdata för att batchprofilera exportmål](activate-batch-profile-destinations.md)
 
-### Aktivera målgrupper från sidan [!UICONTROL Browse]
+### Aktivera målgrupper från sidan [!UICONTROL Browse] {#activate-from-browse}
 
 Följ stegen nedan för att aktivera data till dina mål från sidan **[!UICONTROL Browse]**.
 

@@ -2,7 +2,7 @@
 description: Lär dig hur du använder API:t för måltestning för att testa målkonfigurationen för direktuppspelning innan du publicerar den.
 title: API-översikt för testning av direktuppspelningsmål
 exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 0%
@@ -233,6 +233,6 @@ Observera att innehållet i parametern `results.httpCalls` är specifikt för di
 
 Beskrivningar av parametrarna för begäran och svar finns i [API-åtgärder för måltestning](../../testing-api/streaming-destinations/destination-testing-api.md).
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 När du har testat destinationen och bekräftat att den är korrekt konfigurerad kan du skicka konfigurationen till Adobe för granskning med [API:t för målpublicering](../../publishing-api/create-publishing-request.md).

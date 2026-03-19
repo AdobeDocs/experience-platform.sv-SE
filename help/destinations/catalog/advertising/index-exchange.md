@@ -3,9 +3,9 @@ title: Indexutbyte
 description: Anslut till Index Exchange (Index) och aktivera data så att målgruppssegmenten kan hanteras av avtal som skapas i Index-gränssnittet.
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 6d2a8553-5e8c-4eeb-ac25-5e4c2bdc5758
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,9 @@ Målgruppssegment måste registreras hos [!DNL Index] med en extra process när 
 
 [!DNL Index] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
-Observera att [!DNL Index Exchange] mål bara stöder en identitetstyp per överföring. Du måste ange lämplig identifierartyp när du konfigurerar målinformationen (se avsnittet [&quot;Fyll i målinformation&quot;](#destination-details) nedan).
+>[!NOTE]
+>
+>[!DNL Index Exchange] mål stöder endast en identitetstyp per överföring. Du måste ange lämplig identifierartyp när du konfigurerar målinformationen (se avsnittet [&quot;Fyll i målinformation&quot;](#destination-details) nedan).
 
 Om du vill överföra flera identitetstyper skapar du separata instanser av målet [!DNL Index Exchange] för varje identitetstyp.
 
@@ -96,7 +98,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheten **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -112,7 +114,7 @@ Om du vill konfigurera information för målet fyller du i fälten nedan. En ast
 * [!UICONTROL Identifier Type]: Välj den identifierartyp som tillhandahålls av index och som matchar den identifierare som du skickar till [!DNL Index]. Se tabellen med identifierartyper som stöds nedan. Om du är osäker på vilken identifierartyp som ska användas kontaktar du [!DNL Index]-representanten. Om du vill skicka flera identifierartyper skapar du separata instanser av det här målet.
 * [!UICONTROL Account ID]: Ange ditt konto-ID för [!DNL Index]. Detta är inte detsamma som ditt utgivar-ID. Kontakta din [!DNL Index]-representant om du är osäker på vilket ID du ska använda.
 
-#### Identifierartyper som stöds
+#### Identifierartyper som stöds {#supported-identifier-types}
 
 | Identifierartyp | Beskrivning |
 |------------------ | ------------- |
@@ -131,10 +133,10 @@ Om du vill konfigurera information för målet fyller du i fälten nedan. En ast
 Du kan aktivera varningar för att få meddelanden om status för dataflödet till det här målet. Välj en eller flera aviseringar i listan om du vill prenumerera på statusmeddelanden för ditt dataflöde. Mer information finns i guiden om att [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 

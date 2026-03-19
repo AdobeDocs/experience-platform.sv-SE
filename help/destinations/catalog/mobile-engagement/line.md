@@ -4,9 +4,9 @@ title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler till er Experience Platform-målgrupp och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1318'
+source-wordcount: '1316'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Som marknadsförare kan ni inrikta er på användare i ett mål för mobilengage
 
 ### Krav för [!DNL LINE] {#prerequisites-destination}
 
-Observera följande krav i [!DNL LINE] för att kunna exportera data från Experience Platform till ditt [!DNL LINE]-konto:
+Observera följande krav i [!DNL LINE] för att exportera data från Experience Platform till ditt [!DNL LINE]-konto:
 
 #### Du måste ha ett [!DNL LINE]-konto {#prerequisites-account}
 
@@ -50,7 +50,7 @@ För att Experience Platform ska kunna komma åt [!DNL LINE]-resurser måste du 
 | --- | --- | --- |
 | `[!DNL Channel access token (long-lived)]` | Din [!DNL LINE Channel access token (long-lived)]. | `aaa2112XSMWqLXR7..........nyilFU=` |
 
-Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [[!DNL LINE] -konto via &#x200B;](https://developers.line.biz/en/docs/messaging-api/getting-started/)-utvecklarkonsolen finns i [!DNL LINE]dokumentationen[!DNL LINE].
+Mer information om hur du skapar en kanal eller lägger till en kanal till ditt befintliga [[!DNL LINE] -konto via ](https://developers.line.biz/en/docs/messaging-api/getting-started/)-utvecklarkonsolen finns i [!DNL LINE]dokumentationen[!DNL LINE].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -136,7 +136,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -153,6 +153,8 @@ Beroende på din källidentitet måste följande namnrymder för målidentitet m
 | ID för annonsörer (IFA) | `IDFA` eller `GAID` | `LineId` |
 | Användar-ID för RAD | `UserID` | `LineId` |
 
+{style="table-layout:auto"}
+
 Om dina mål-ID är *LINE-användar-ID:n* behöver du följande:
 ![Exempel på skärmbild i Experience Platform UI som visar målmappningen när LINE-användar-ID används för målidentiteter.](../../assets/catalog/mobile-engagement/line/mappings-userid.png)
 
@@ -165,7 +167,7 @@ När dataexporten är klar från Experience Platform skapar [!DNL LINE]-målet e
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-1. Logga in på [!DNL LINE]Manager-konsolen[&#x200B; i &#x200B;](https://manager.line.biz/).
+1. Logga in på [!DNL LINE]Manager-konsolen[ i ](https://manager.line.biz/).
 
 1. Gå sedan till **[!UICONTROL Data Controls]** > **[!UICONTROL Audiences]** och kontrollera namnet som matchar den valda målgruppen i kolumnen **[!UICONTROL Audience name]**.
 

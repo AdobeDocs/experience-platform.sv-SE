@@ -2,7 +2,7 @@
 description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destination SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 title: OAuth 2-auktorisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 720f599810d119ac4997d24d400199d8efe087c2
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '2273'
 ht-degree: 0%
@@ -133,7 +133,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 
 {style="table-layout:auto"}
 
-## OAuth 2 med lösenordsbeviljande
+## OAuth 2 med lösenordsbeviljande {#oauth2-password-grant}
 
 För OAuth 2-lösenordsbeviljande (läs [RFC-standardspecifikationerna](https://tools.ietf.org/html/rfc6749#section-4.3)) kräver Experience Platform användarens användarnamn och lösenord. I auktoriseringsflödet utbyter Experience Platform dessa autentiseringsuppgifter för en åtkomsttoken och, om så önskas, en uppdateringstoken.
 Adobe använder standardindata nedan för att förenkla målkonfigurationen, med möjlighet att åsidosätta värden:
@@ -176,7 +176,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 
 {style="table-layout:auto"}
 
-## OAuth 2 med klientautentiseringsuppgifter
+## OAuth 2 med klientautentiseringsuppgifter {#oauth2-client-credentials-grant}
 
 Du kan konfigurera en OAuth 2-klientautentiseringsuppgifter (läs [RFC-standardsspecifikationer](https://tools.ietf.org/html/rfc6749#section-4.4)) som stöder standardindata och standardutdata som listas nedan. Du kan anpassa värdena. Mer information finns i [Anpassa OAuth 2-konfigurationen](#customize-configuration).
 

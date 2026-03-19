@@ -5,9 +5,9 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: e5a757fcd73fc743b570c6456a66907e4720e8b6
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1693'
+source-wordcount: '1689'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t &#x200B;](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
+>När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t ](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
 >
 >Mer information finns i [Kör ad hoc-aktiveringsjobbet](#activation-job) nedan i den här självstudien.
 
@@ -32,15 +32,15 @@ Bilden nedan visar det kompletta arbetsflödet för att aktivera målgrupper via
 
 ## Användningsfall {#use-cases}
 
-### Försäljning eller kampanjer i Flash
+### Försäljning eller kampanjer i Flash {#flash-sales}
 
 En webbutik förbereder en begränsad försäljning och vill meddela kunderna med kort varsel. Genom Experience Platform ad hoc-aktiverings-API:t kan marknadsföringsteamet exportera målgrupper on-demand och snabbt skicka e-postreklam till kundbasen.
 
-### Aktuella event eller senaste nytt
+### Aktuella event eller senaste nytt {#current-events}
 
 Ett hotell förväntar sig ett infallsväder de kommande dagarna och teamet vill snabbt informera de ankommande gästerna så att de kan planera därefter. Marknadsföringsteamet kan använda Experience Platform ad hoc-aktiverings-API för att exportera målgrupper on-demand och meddela gästerna.
 
-### Integrationstestning
+### Integrationstestning {#integration-testing}
 
 IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att exportera målgrupper on-demand, så att de kan testa sin anpassade integrering med Adobe Experience Platform och se till att allt fungerar som det ska.
 
@@ -66,7 +66,7 @@ Innan du kan ringa anrop till Adobe Experience Platform API:er måste du kontrol
 
 ## Steg 2: Samla in inloggningsuppgifter {#credentials}
 
-För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
+Om du vill anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -138,7 +138,7 @@ När målgruppens exportjobb är klart kan du aktivera det.
 
 >[!IMPORTANT]
 >
->Det är obligatoriskt att ta med huvudet `Accept: application/vnd.adobe.adhoc.activation+json; version=2` i din begäran för att kunna använda v2 av API:t för ad hoc-aktivering.
+>Du måste inkludera rubriken `Accept: application/vnd.adobe.adhoc.activation+json; version=2` i din begäran om att använda v2 i API:t för ad hoc-aktivering.
 
 För icke-segmenteringstjänstmålgrupper (till exempel [externa eller anpassade uppladdningsmålgrupper](../../segmentation/ui/audience-portal.md#import-audience)) måste du ange det målgrupps-ID som genereras av Experience Platform i din begäran, inte det externa målgrupps-ID:t. Du hittar det systemgenererade ID:t högst upp på [målgruppssammanfattningspanelen](../../segmentation/ui/audience-portal.md#audience-summary), som visas som **ID#** följt av ett UUID, när du öppnar sidan med målgruppsinformation i målgruppsgränssnittet.
 

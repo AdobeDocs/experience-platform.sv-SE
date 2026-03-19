@@ -4,9 +4,9 @@ title: Qualtrics Automations
 description: Synkronisera upplevelser och användbara kunddata för att låsa upp personalisering i stor skala. Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience iD för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner.
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 3289ed4c-8542-4e22-a574-e49cc6527a24
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1283'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Använd aggregering av flera olika källor med driftsdata i Adobe Experience Pla
 
 >[!IMPORTANT]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av Qualtrics-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt genom att logga in på [Customer Success Hub](https://support-portal.qualtrics.com/).
+>Målanslutningen och dokumentationssidan skapas och underhålls av Qualtrics-teamet. Om du har frågor eller uppdateringsförfrågningar kontaktar du dem direkt genom att logga in på [Customer Success Hub](https://support-portal.qualtrics.com/).
 
 ## Användningsfall {#use-cases}
 
@@ -39,14 +39,14 @@ För att du bättre ska kunna förstå hur och när du ska använda målet *Qual
 
 **Resultat**: Med kontinuerlig feedback kan organisationen anpassa och förbättra introduktionsprocessen, vilket ger bättre engagemang och produktivitet bland nya medarbetare.
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 Innan du konfigurerar Qualtrics-målet i Adobe Experience Platform måste du kontrollera att följande krav är uppfyllda:
 
 * Du har ett Qualtrics-konto.
 * Du har fått den nödvändiga API-token från Qualtrics.
 
-### Hämta en API-token
+### Hämta en API-token {#obtaining-api-token}
 
 Nedan beskrivs de steg som krävs för att erhålla en API-token från Qualtrics.
 
@@ -105,7 +105,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -135,18 +135,18 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera målgrupper till direktuppspelningsmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
 Målet har ett öppet schema så du kan skicka egenskaper till variabler.
 
-#### Mappningsattribut
+#### Mappningsattribut {#map-attributes}
 
-Om du vill lägga till ett attribut i mappningen väljer du bara **anpassade attribut** när du lägger till en ny mappning. Du kan ange ett valfritt namn för attributet. Qualtrics uppmuntrar namnkonventionen *camelCase* för attributnamn (se skärmbilden nedan som exempel).
+Om du vill lägga till ett attribut i mappningen väljer du **anpassade attribut** när du lägger till en ny mappning. Du kan ange ett valfritt namn för attributet. Qualtrics uppmuntrar namnkonventionen *camelCase* för attributnamn (se skärmbilden nedan som exempel).
 
 ![Anpassat attribut](/help/destinations/assets/catalog/survey/qualtrics/custom-attribute.png)
 
@@ -154,7 +154,7 @@ Se skärmbilden nedan för ett exempel på möjliga attributmappningar.
 
 ![Exempelmappningar](/help/destinations/assets/catalog/survey/qualtrics/example-mappings.png)
 
-#### Mappa identiteter
+#### Mappa identiteter {#map-identities}
 
 Du måste välja ett identitetsnamnutrymme för det här målet. De två möjliga mappningarna av källfält till målfält är:
 

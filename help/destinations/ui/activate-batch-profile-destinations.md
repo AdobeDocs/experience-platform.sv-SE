@@ -3,7 +3,7 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 8019f7426f6e6dd3faef131ada8e307c1d075556
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '4783'
 ht-degree: 1%
@@ -14,18 +14,18 @@ ht-degree: 1%
 # Aktivera målgrupper för att batchprofilera exportmål
 
 >[!IMPORTANT]
-> 
+>
 >* Om du vill aktivera målgrupper och aktivera [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >* Om du vill aktivera målgrupper utan att gå igenom [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
-> 
+>
 > Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 ## Översikt {#overview}
 
 I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform till batchprofilfilsbaserade mål, som molnlagring och e-postmarknadsföringsmål.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill aktivera målgrupper till mål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
 
@@ -120,7 +120,7 @@ Om du vill redigera flera scheman samtidigt markerar du målgrupperna med hjälp
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
 >abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för målgruppen. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för målgruppen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för målgruppen och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för målgruppen sedan den första inkrementella filexporten."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=sv-SE#export-incremental-files" text="Exportera inkrementella filer"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="Exportera inkrementella filer"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -205,7 +205,7 @@ Om profilerna uppdateras efter målgruppsutvärderingen kommer den schemalagda e
 
 Information om export på begäran finns i dokumentationen om [export av filer på begäran](/help/destinations/ui/export-file-now.md#scheduled-vs-ondemand).
 
-### Exportera inkrementella filer
+### Exportera inkrementella filer {#export-incremental-files}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_something"
@@ -278,7 +278,7 @@ Om du vill redigera flera filnamn samtidigt markerar du målgrupperna med kryssr
 Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 
 >[!IMPORTANT]
-> 
+>
 >Om du inte markerar komponenten **[!UICONTROL Date and Time]** kommer filnamnen att vara statiska och den nya exporterade filen kommer att skriva över den tidigare filen på din lagringsplats vid varje export. När du kör ett återkommande importjobb från en lagringsplats till en e-postmarknadsföringsplattform rekommenderas detta.
 
 När du har konfigurerat alla dina målgrupper väljer du **[!UICONTROL Next]** för att fortsätta.
@@ -298,7 +298,7 @@ I det här steget måste du välja de profilattribut som du vill lägga till i f
 1. På sidan **[!UICONTROL Select source field]** markerar du de profilattribut och identiteter som du vill ta med i de exporterade filerna till målet och väljer sedan **[!UICONTROL Select]**.
 
    >[!TIP]
-   > 
+   >
    >Du kan använda sökfältet för att begränsa urvalet, vilket visas i bilden nedan.
 
    Använd växlingsknappen **[!UICONTROL Show only fields with data]** om du bara vill visa schemafält med värden. Som standard visas endast ifyllda schemafält.
@@ -496,9 +496,9 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 
 ### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
 
-När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
 
-#### Viktiga överväganden
+#### Viktiga överväganden {#key-considerations}
 
 * **Deterministisk markering**: När flera profiler har identiska dedupliceringsnycklar och samma referenstidstämpel avgör dedupliceringslogiken vilken profil som ska exporteras genom att sortera värdena för andra markerade kolumner (exklusive komplexa typer som arrayer, kartor eller objekt). De sorterade värdena utvärderas i lexikografisk ordning och den första profilen markeras.
 
@@ -535,7 +535,7 @@ Du kan använda kontrollen [Beräknade fält](/help/destinations/ui/data-transfo
 
 Den nya **[!UICONTROL Mapping]**-sidan har följande kända begränsningar:
 
-#### Målgruppsmedlemskapsattributet kan inte väljas via mappningsarbetsflödet
+#### Målgruppsmedlemskapsattributet kan inte väljas via mappningsarbetsflödet {#audience-membership-attribute-mapping}
 
 På grund av en känd begränsning kan du för närvarande inte använda fönstret **[!UICONTROL Select field]** för att lägga till `segmentMembership.seg_namespace.seg_id.status` i din filexport. I stället måste du klistra in värdet `xdm: segmentMembership.seg_namespace.seg_id.status` manuellt i schemafältet, vilket visas nedan.
 
@@ -556,7 +556,7 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg
 
 Läs mer om [profilexportbeteende för filbaserade mål](/help/destinations/how-destinations-work/profile-export-behavior.md#file-based-destinations).
 
-#### Identitetsnamnutrymmen kan för närvarande inte väljas för export
+#### Identitetsnamnutrymmen kan för närvarande inte väljas för export {#identity-namespaces-export-limitation}
 
 Det går inte att markera identitetsnamnutrymmen för export, vilket visas i bilden nedan. Om du väljer ett identitetsnamnutrymme för export genereras ett fel i steget **[!UICONTROL Review]**.
 
@@ -570,8 +570,8 @@ Som en tillfällig lösning kan du antingen:
 ## Välj profilattribut {#select-attributes}
 
 >[!IMPORTANT]
-> 
->Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg &#x200B;](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
+>
+>Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
 >
 >Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 
@@ -643,7 +643,7 @@ Välj **[!UICONTROL Next]** om du vill gå till steget [Granska](#review).
 ## Granska {#review}
 
 >[!NOTE]
-> 
+>
 >Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
 >
 >* Fälten används i målgruppsdefinitionen.

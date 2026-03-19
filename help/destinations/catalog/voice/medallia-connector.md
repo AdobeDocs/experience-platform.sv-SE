@@ -2,9 +2,9 @@
 title: Medieanslutning
 description: Aktivera profiler för riktade medieundersökningar och insamling av feedback för att bättre förstå kundernas behov och förväntningar.
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1269'
+source-wordcount: '1268'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,11 @@ Aktivera profiler för riktade medieundersökningar och insamling av feedback f�
 
 För att du bättre ska kunna förstå hur och när du ska använda mediedestinationen finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
-### Använd skiftläge 1
+### Använd skiftläge 1 {#use-case-1}
 
 Ett B2B-varumärke vill utvärdera och effektivisera sitt introduktionsprogram. De vill skicka personaliserade enkäter i realtid till kunder som just slutfört introduktionsprocessen.
 
-### Använd skiftläge 2
+### Använd skiftläge 2 {#use-case-2}
 
 En återförsäljare vill förstå kundernas preferenser bättre för orderhantering. De vill skicka en kort enfråge-SMS-enkät till kunder som har gjort online- och butiksköp den senaste månaden.
 
@@ -93,7 +93,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
@@ -128,7 +128,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -153,7 +153,7 @@ Vi rekommenderar starkt att du även mappar ytterligare anpassade målattribut f
 ![Bild som visar en exempelmappning för identiteter och attribut.](/help/destinations/assets/catalog/voice/medallia-destination-mapping.png)
 
 >[!IMPORTANT]
-> 
+>
 > Dela exakt **Attributnamn** för varje anpassat målattribut som du mappar med hjälp av **målfält** > **Välj anpassade attribut** > **Attributnamn** med Media-leveransteamet. Du kan ta en skärmbild av mappningssidan och dela den direkt.
 
 ## Exporterade data {#exported-data}

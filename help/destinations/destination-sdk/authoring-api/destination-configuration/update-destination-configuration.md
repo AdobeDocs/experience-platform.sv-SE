@@ -2,9 +2,9 @@
 description: På den här sidan visas ett exempel på det API-anrop som används för att uppdatera en befintlig målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målkonfiguration
 exl-id: d7f18689-9806-4f73-a63a-fa112569819c
-source-git-commit: 163c6f6bacfd6f0928b1053bd146a2d4fc4c74d0
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '371'
+source-wordcount: '369'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ En detaljerad beskrivning av funktionerna i en målkonfiguration finns i följan
 
 ## Komma igång med API-åtgärder för målkonfiguration {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Uppdatera en målkonfiguration {#update}
 
@@ -59,6 +59,8 @@ PUT /authoring/destinations/{INSTANCE_ID}
 | Parameter | Beskrivning |
 | -------- | ----------- |
 | `{INSTANCE_ID}` | ID:t för målkonfigurationen som du vill uppdatera. Information om hur du hämtar en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}` finns i [Hämta en målkonfiguration](retrieve-destination-configuration.md). |
+
+{style="table-layout:auto"}
 
 +++Begäran
 
@@ -199,7 +201,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade målkonfigurationen.
 
@@ -209,7 +211,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade m�
 
 Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 När du har läst det här dokumentet vet du nu hur du uppdaterar en målkonfiguration via API-slutpunkten för Destination SDK `/authoring/destinations`.
 

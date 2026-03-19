@@ -2,7 +2,7 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1309'
 ht-degree: 2%
@@ -25,19 +25,19 @@ Beroende på din API-konfiguration kan du behöva använda slutpunkten för hant
 
 Med stöd för målgruppsmetadata i Destination SDK kan du när du konfigurerar ditt Experience Platform-mål ge Experience Platform-användare ett av flera alternativ när de mappar och aktiverar målgrupper till ditt mål. Du kan styra vilka alternativ som är tillgängliga för användaren via parametrarna i avsnittet [konfiguration av målmetadata](../functionality/destination-configuration/audience-metadata-configuration.md) i målkonfigurationen.
 
-### Använd fall 1 - Du har ett API från tredje part och användarna behöver inte ange ID för indatamappning
+### Använd fall 1 - Du har ett API från tredje part och användarna behöver inte ange ID för indatamappning {#use-case-1}
 
 Om du har en API-slutpunkt för att skapa/uppdatera/ta bort målgrupper eller målgrupper kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att det matchar specifikationerna för målgruppen när du skapar/uppdaterar/tar bort slutpunkter. Experience Platform kan programmatiskt skapa/uppdatera/ta bort målgrupper och synkronisera metadata tillbaka till Experience Platform.
 
 När du aktiverar målgrupper till ditt mål i Experience Platform användargränssnitt behöver användarna inte fylla i ett fält för målgruppsmappning i aktiveringsarbetsflödet manuellt.
 
-### Användningsfall 2 - Användarna måste skapa en målgrupp i ditt mål först och måste ange ett manuellt ID för inmatningsmappning
+### Användningsfall 2 - Användarna måste skapa en målgrupp i ditt mål först och måste ange ett manuellt ID för inmatningsmappning {#use-case-2}
 
 Om målgrupper och andra metadata måste skapas manuellt av partners eller användare i målgruppen måste användarna manuellt fylla i ID-fältet för målgruppsmappning i aktiveringsarbetsflödet för att synkronisera målgruppsmetadata mellan målplatsen och Experience Platform.
 
 ![ID för indatamappning](../assets/functionality/input-mapping-id.png)
 
-### Använd fall 3 - Målet godkänner Experience Platform målgrupps-ID, användarna behöver inte ange något manuellt ID för inmatningsmappning
+### Använd fall 3 - Målet godkänner Experience Platform målgrupps-ID, användarna behöver inte ange något manuellt ID för inmatningsmappning {#use-case-3}
 
 Om målsystemet godkänner Experience Platform målgrupps-ID kan du konfigurera detta i din målgruppsmetadatamall. Användarna behöver inte fylla i ett målgruppsmappnings-ID när de aktiverar ett segment.
 
@@ -79,7 +79,7 @@ Lägg märke till hur URL:en, rubrikerna och förfrågantexterna skiljer sig åt
 
 Observera att i vissa exempel används makrofält som `{{authData.accessToken}}` eller `{{segment.name}}` i URL:en, och i andra exempel används de i rubrikerna eller i begärandetexten. Hur de används beror på era API-specifikationer för marknadsföring.
 
-+++Exempel på strömning 1
++++Exempel på direktuppspelning 1
 
 ```json
 {

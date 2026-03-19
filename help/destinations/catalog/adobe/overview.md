@@ -3,10 +3,10 @@ keywords: mål;Experience Cloud-lösningar; mål; mål; mål; mål; moln; annons
 title: Översikt över Adobe destinationer
 description: Hantera kundupplevelsen genom att koppla era data i Experience Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '231'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -22,7 +22,7 @@ För närvarande stöder Experience Platform de Adobe-mål som anges nedan.
 
 Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
-### Anslutningar
+### Anslutningar {#connections}
 
 * [Adobe Advertising Cloud DSP-anslutning](/help/destinations/catalog/advertising/adobe-advertising-cloud-connection.md)
 * [Adobe Campaign](../email-marketing/adobe-campaign.md)
@@ -32,7 +32,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Marketo Measure Ultimate-anslutning](/help/destinations/catalog/adobe/marketo-measure-ultimate.md)
 * [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition){target="_blank"}
 
-### Tillägg
+### Tillägg {#extensions}
 
 * [Adobe Advertising Cloud-tillägg](../advertising/adobe-advertising-cloud.md)
 * [Adobe Analytics-tillägg](../analytics/adobe-analytics.md)
@@ -45,8 +45,8 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Marketo Munchkin-tillägg](../email/marketo-munchkin.md)
 * [Marketo Web Personalization-tillägg](../personalization/marketo-web-personalization.md)
 
-## Experience Platform målgruppsdelning
+## Experience Platform målgruppsdelning {#audience-sharing}
 
 Använd Experience Platform målgruppsfunktion för att dela era Experience Platform-målgrupper med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i Audience Manager dokumentationsportal):
 
-* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE)
+* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)

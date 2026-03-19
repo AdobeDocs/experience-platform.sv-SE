@@ -3,9 +3,9 @@ title: Målanslutning för Magnite Real-Time
 description: Använd denna destination för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i realtid.
 last-substantial-update: 2024-11-18T00:00:00Z
 exl-id: 4e08a14b-6800-41e1-95a5-826a6241144d
-source-git-commit: 82ff222d22255b9c99de76111d25d4a3cf6f2d5c
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1410'
+source-wordcount: '1403'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,13 @@ Om du vill aktivera dina målgrupper till [!DNL Magnite Streaming] måste du:
 * Aktivera målgrupperna på målet [!DNL Magnite: Real-Time], vilket visas på den här sidan.
 * Aktivera samma målgrupp på Magnite: Batch-målet. Målet [!DNL Magnite: Batch] är en obligatorisk komponent. Om målgruppen inte aktiveras på gruppmålet [!DNL Magnite Streaming] kommer det att leda till en misslyckad integrering och dina målgrupper kommer inte att aktiveras.
 
-Obs! När du använder Real-Time-målet kommer [!DNL Magnite Streaming] att ta emot målgrupper i realtid, men Magnite kan bara lagra målgrupper i realtid tillfälligt på sin plattform, och de kommer att tas bort från systemet inom några dagar. Därför måste du, om du vill använda Magniten: Real-Time-målet, *även* använda Magniten: Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du även aktivera till Batch-målet.
+>[!NOTE]
+>
+>När du använder Real-Time-målet kommer [!DNL Magnite Streaming] att ta emot målgrupper i realtid, men Magnite kan bara lagra målgrupper i realtid tillfälligt på sin plattform, och de kommer att tas bort från systemet inom några dagar. Därför måste du, om du vill använda Magniten: Real-Time-målet, *även* använda Magniten: Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du även aktivera till Batch-målet.
 
 >[!IMPORTANT]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Magnite]-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på `adobe-tech@magnite.com`.
+>Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Magnite]-teamet. Om du har frågor eller uppdateringsförfrågningar kontaktar du dem direkt på `adobe-tech@magnite.com`.
 
 ## Användningsfall {#use-cases}
 
@@ -129,14 +131,14 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View destinations]**, **[!UICONTROL Activate destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera målgrupper till direktuppspelningsmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 När målanslutningen har skapats kan du fortsätta till målgruppsaktiveringsflödet. I följande avsnitt beskrivs hur du aktiverar målgrupper med hjälp av målet för realtid.
 
@@ -178,7 +180,7 @@ När era målgrupper har överförts kan ni validera att era målgrupper har ska
 
 * Målgrupper efter importen förväntas visas om [!DNL Magnite Streaming] inom några minuter och kan tillämpas på ett avtal. Du kan bekräfta detta genom att leta upp det segment-ID som delades under aktiveringsstegen i Adobe Experience Platform.
 
-## Aktivera samma målgrupper via målet [!DNL Magnite: Batch]
+## Aktivera samma målgrupper via målet [!DNL Magnite: Batch] {#activate-magnite-batch}
 
 Publiker som delas med [!DNL Magnite Streaming] med Real-Time-målet måste också delas med Magnite: Batch-målet. När segmentnamnen i användargränssnittet för [!DNL Magnite Streaming] är korrekt konfigurerade uppdateras de som används i Adobe Experience Platform-uppdateringen efter den dagliga uppdateringen.
 

@@ -1,12 +1,12 @@
 ---
 title: Pinterest målmigrering till nytt API. Kundåtgärd krävs.
-description: Pinterest har ersatt v4-annonserings-API:t som används av Pinterest-målet i Real-Time CDP. Förstå era åtgärdsobjekt för att smidigt gå över till det nya API:t utan avbrott i era Pinterest-kampanjer.
+description: Pinterest har ersatt v4-annonserings-API:t som används av Pinterest-målet i Real-Time CDP. Förstå vad ni gör för att smidigt gå över till det nya API:t utan avbrott i era Pinterest-kampanjer.
 hide: true
 hidefromtoc: true
 exl-id: c965235c-4208-4c28-9ac5-eb4c0061515d
-source-git-commit: e3341ec6f62844858ecda7dd4db70d085f0bf217
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '513'
 ht-degree: 0%
 
 ---
@@ -17,19 +17,19 @@ ht-degree: 0%
 >
 >Kundåtgärdsobjekten på den här sidan gäller dig om din organisation har konfigurerat dataflöden för att exportera data till Pinterest före 16 november 2023, det datum då det nya **[!UICONTROL Pinterest]**-målet, med det senaste Pinterest API:t, lades till i målkatalogen.
 
-## Vad händer?
+## Vad händer? {#what-is-happening}
 
 Pinterest har ersatt v4-annonserings-API:t som användes av [Pinterest-målet](/help/destinations/catalog/advertising/pinterest.md) i Real-Time CDP. Adobe har uppdaterat målet så att det använder API:t [v5 för annonsering](https://developers.pinterest.com/docs/getting-started/migration/). Läs den här sidan om du vill veta mer om vad du gör för att smidigt gå över till det nya API:t utan att störa era Pinterest-kampanjer.
 
-## Varför meddelas jag?
+## Varför meddelas jag? {#why-notified}
 
 Vi har identifierat att din organisation har aktiva dataflöden som aktiverar målgrupper för Pinterest.
 
-## Vad är planen?
+## Vad är planen? {#what-is-the-plan}
 
 Adobe har släppt ett nytt Pinterest-målkort som utnyttjar Pinterest API v5 och bevarar dina befintliga dataflöden i den nya anslutningen.
 
-## Behöver jag göra något för att mina aktiverade målgrupper ska fungera?
+## Behöver jag göra något för att mina aktiverade målgrupper ska fungera? {#action-required}
 
 Ja, före 18 januari 2024 måste du autentisera till det nya Pinterest-målet med ditt Pinterest-annonskonto i Real-Time CDP. Se de detaljerade instruktionerna nedan.
 
@@ -58,7 +58,7 @@ While no disruption to your campaigns is expected, remember to check in the Pint
 
 -->
 
-## Kan du dela vissa högnivåtidslinjer?
+## Kan du dela vissa högnivåtidslinjer? {#high-level-timelines}
 
 Ja, se nedan:
 

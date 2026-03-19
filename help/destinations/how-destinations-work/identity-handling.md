@@ -2,7 +2,7 @@
 title: Identitetshantering i arbetsflödet för målaktivering
 description: Läs om hur identitetsexport hanteras i aktiveringsarbetsflödet, beroende på måltyp
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '1134'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Som en tillfällig lösning kan du lägga till fler identiteter i exporten om de
 
 ## Exportera en identitet från en identitetskarta jämfört med att exportera en identitet som ett XDM-attribut - skillnaderna {#identity-map-or-attribute}
 
-Antalet exporterade poster kan skilja sig åt beroende på om du väljer att exportera identiteter från identitetskartan eller identiteter som har importerats som attribut till Experience Platform. [Sammanslagningsprinciper](/help/profile/merge-policies/overview.md) spelar också en viktig roll i antalet poster som exporteras när du väljer identiteter från identitetskartan.
+Antalet exporterade poster kan variera beroende på om du väljer för att exportera identiteter från identitetskartan eller identiteter som har importerats som attribut till Experience Platform. [Sammanslagningsprinciper](/help/profile/merge-policies/overview.md) spelar också en viktig roll i antalet poster som exporteras när du väljer identiteter från identitetskartan.
 
 Tänk dig till exempel att från två olika datauppsättningar har du följande profilfragment som kommer att sammanfogas i en enda kundprofil:
 
@@ -43,6 +43,7 @@ Tänk dig till exempel att från två olika datauppsättningar har du följande 
 |---------|----------|---------|--------|
 | email1, Loyalty ID1 | John | Doe | e-post 1 |
 
+{style="table-layout:auto"}
 
 **Profilfragment två**
 
@@ -50,11 +51,15 @@ Tänk dig till exempel att från två olika datauppsättningar har du följande 
 |---------|----------|---------|--------|
 | email2, Loyalty ID1 | John | Doe | e-post 2 |
 
+{style="table-layout:auto"}
+
 Den sammanfogade profilen ser ut så här:
 
 | Identitetskarta | Förnamn | Efternamn | E-postattribut |
 |---------|----------|---------|--------|
 | e-post 1, e-post2, Förmåns-ID1 | John | Doe | e-post 2 |
+
+{style="table-layout:auto"}
 
 Exportbeteendet varierar beroende på om du väljer `IdentityMap: Email` eller `xdm: personalEmail.address` för export.
 
@@ -66,7 +71,7 @@ Detta innebär att antalet poster som du exporterar beror på vilka sammanfognin
 
 ## API-baserade mål för direktuppspelning {#streaming-destinations}
 
-[API-baserade mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destination) som byggts med [Destination SDK](/help/destinations/destination-sdk/overview.md) (till exempel [!DNL Facebook], [!DNL Google Customer Match], [!DNL Pinterest], [!DNL Braze] med flera) stöder endast specifika ID:n för export. Mer information om de specifika identiteter som kan exporteras till varje mål finns i avsnittet *identiteter som stöds* på varje måldokumentationssida (se till exempel avsnittet [identiteter som stöds](/help/destinations/catalog/advertising/pinterest.md) på målsidan [!DNL Pinterest]).
+[API-baserade mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destination) som skapats med [Destination SDK](/help/destinations/destination-sdk/overview.md) (till exempel [!DNL Facebook], [!DNL Google Customer Match], [!DNL Pinterest], [!DNL Braze] med flera) stöder endast specifika ID:n för export. Mer information om de specifika identiteter som kan exporteras till varje mål finns i avsnittet *identiteter som stöds* på varje måldokumentationssida (se till exempel avsnittet [identiteter som stöds](/help/destinations/catalog/advertising/pinterest.md) på målsidan [!DNL Pinterest]).
 
 Observera dock att du kan använda data från antingen [privata diagram](/help/profile/merge-policies/overview.md#id-stitching) eller från attribut som identiteter. Det innebär att du kan mappa XDM-attribut till det identitetsfält som krävs för målet. Nedan visas ett exempel för [!DNL Pinterest]-målet, där XDM-attributet `personalEmail.address` mappas till den nödvändiga [!DNL Pinterest]-identiteten `pinterest_audience`.
 
@@ -78,7 +83,7 @@ Observera dock att du kan använda data från antingen [privata diagram](/help/p
 
 ### Advertising-destinationer som förlitar sig på cookie-integreringar från tredje part {#third-party-cookie-destinations}
 
-Advertising-mål som förlitar sig på cookies från tredje part (till exempel: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google DV360], [!DNL Bing], [!DNL The Trade Desk]) kräver inte att kunder väljer ID i aktiveringsarbetsflödet. När du konfigurerar ett aktiveringsarbetsflöde för dessa mål söker Experience Platform automatiskt upp identitetmatchningstabellen som skapats av [[!UICONTROL Experience Cloud ID service]](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=sv-SE) och exporterar alla identiteter som är tillgängliga för en profil och stöds av målet.
+Advertising-mål som förlitar sig på cookies från tredje part (till exempel: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google DV360], [!DNL Bing], [!DNL The Trade Desk]) kräver inte att kunder väljer ID i aktiveringsarbetsflödet. För dessa mål, när du konfigurerar ett aktiveringsarbetsflöde, söker Experience Platform automatiskt upp identitetsmatchningstabellen som skapats av [[!UICONTROL Experience Cloud ID service]](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) och exporterar alla identiteter som är tillgängliga för en profil och stöds av målet.
 
 Dessa mål kräver att en ID-synkronisering utförs via antingen [!UICONTROL Experience Cloud ID service] eller via [!UICONTROL Experience Platform Web SDK].
 
@@ -88,11 +93,11 @@ När du konfigurerar ett datastream enligt beskrivningen i den länkade dokument
 
 >[!NOTE]
 >
->De flesta av dessa reklamdestinationer stöds i Audience Manager (dessa destinationstyper kallas i Audience Manager som enhetsbaserade destinationer). Visa en [lista över alla enhetsbaserade mål som stöds i Audience Manager &#x200B;](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html?lang=sv-SE)). Endast ett fåtal är listade i Experience Platform. Mer information om datadelning mellan Experience Platform och Audience Manager finns i avsnittet [Aktivera datadelning från Experience Platform till Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE#enable-aep-to-aam-data). För närvarande finns det ingen plan för att stödja fler cookie-destinationer från tredje part.
+>De flesta av dessa reklamdestinationer stöds i Audience Manager (dessa destinationstyper kallas i Audience Manager som enhetsbaserade destinationer. Visa en [lista över alla enhetsbaserade mål som stöds i Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html)). Endast ett fåtal anges i Experience Platform. Mer information om datadelning mellan Experience Platform och Audience Manager finns i avsnittet [Aktivera datadelning från Experience Platform till Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#enable-aep-to-aam-data). För närvarande finns det ingen plan för att stödja fler cookie-destinationer från tredje part.
 
 ## Företagsmål {#enterprise-destinations}
 
-[Företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations) ([!DNL Amazon Kinesis], [!DNL Azure Event Hubs], HTTP API) kräver inga specifika ID:n i dataexporten eftersom dessa är utformade för företagsintegrering. Du kan dock exportera identiteter som XDM-attribut eller från identitetskartan om du vill. Visa ett [exempel på exporterade data till HTTP-målet &#x200B;](/help/destinations/catalog/streaming/http-destination.md#exported-data), som innehåller både `personalEmail.address` XDM-attributet och identiteterna `ECID` och `email_lc_sha256` (hash-e-postadress) från identitetskartan.
+[Företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations) ([!DNL Amazon Kinesis], [!DNL Azure Event Hubs], HTTP API) kräver inga specifika ID:n i dataexporten eftersom dessa är utformade för företagsintegrering. Du kan dock exportera identiteter som XDM-attribut eller från identitetskartan om du vill. Visa ett [exempel på exporterade data till HTTP-målet ](/help/destinations/catalog/streaming/http-destination.md#exported-data), som innehåller både `personalEmail.address` XDM-attributet och identiteterna `ECID` och `email_lc_sha256` (hash-e-postadress) från identitetskartan.
 
 ## Personalization destinationer {#personalization-destinations}
 

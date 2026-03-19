@@ -5,7 +5,7 @@ badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Informative"
 exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
 hide: true
 hidefromtoc: true
-source-git-commit: ef1b0b704d1299282995068a0de330d52884bb95
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '892'
 ht-degree: 1%
@@ -14,13 +14,13 @@ ht-degree: 1%
 
 # Målgruppsanalys
 
-Med målet [!UICONTROL Audience Analysis] kan du berika Adobe Experience Platform målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=sv-SE). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html?lang=sv-SE) -rapportering.
+Med målet [!UICONTROL Audience Analysis] kan du berika Adobe Experience Platform målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html) -rapportering.
 
 >[!AVAILABILITY]
 >
 >Den här destinationen är i en begränsad testfas. Om du är intresserad av att använda den här destinationen kontaktar du ditt Adobe-kontoteam.
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 Du måste ange följande innan du kan använda det här målet:
 
@@ -28,7 +28,7 @@ Du måste ange följande innan du kan använda det här målet:
 * Du måste vara etablerad för att kunna använda Customer Journey Analytics.
 * Du måste ha minst en målgrupp som skapats i Adobe Experience Platform.
 
-## Identiteter som stöds
+## Identiteter som stöds {#supported-identities}
 
 Målgruppsanalys stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md). Experience Cloud ID (ECID) används vanligtvis.
 
@@ -43,7 +43,7 @@ Målgruppsanalys stöder aktivering av identiteter som beskrivs i tabellen nedan
 
 {style="table-layout:auto"}
 
-## Målgrupper
+## Målgrupper {#supported-audiences}
 
 Följande typer av målgrupper stöds när du använder det här målet:
 
@@ -68,7 +68,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 {style="table-layout:auto"}
 
 
-## Exportera typ och frekvens
+## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
@@ -79,15 +79,15 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Konfigurera nytt mål
+## Konfigurera nytt mål {#configure-destination}
 
 >[!IMPORTANT]
-> 
+>
 >Om du vill skapa mål behöver du behörigheten **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Om du vill skapa det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md).
 
-### Destinationsinformation
+### Destinationsinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -96,7 +96,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Datastream ID]**: Det dataström-ID som du vill utöka med kvalificerade målgrupper. Du kan hämta detta ID i [Datastreams-hanteraren](/help/datastreams/overview.md).
 * **[!UICONTROL Integration alias]**: Integreringsalias.
 
-### Aviseringar
+### Aviseringar {#alerts}
 
 Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
@@ -104,7 +104,7 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
-### Styrningspolicy och verkställighetsåtgärder
+### Styrningspolicy och verkställighetsåtgärder {#governance-policy}
 
 I det här valfria avsnittet kan du definiera dina datastyrningsprinciper och se till att de data som används är kompatibla när målgrupper skickas och är aktiva.
 
@@ -113,7 +113,7 @@ Välj **[!UICONTROL Create]** när du är klar med valet av marknadsföringsåtg
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
-> 
+>
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 När målet har skapats kan du aktivera önskade målgrupper för målet.

@@ -2,9 +2,9 @@
 description: Lär dig formatera ett API-anrop för att skicka en begäran om målpublicering via Adobe Experience Platform Destination SDK.
 title: Skapa en publiceringsbegäran för destinationen
 exl-id: 913be9de-a699-4756-885d-b3761ec729cb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '447'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbeg
 
 ## Komma igång med API-åtgärder för målpublicering {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Skicka en målkonfiguration för publicering {#create}
 
@@ -71,16 +71,16 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar HTTP-status 201 med information om din målpubliceringsbegäran.
 
 +++
 
-## API-felhantering
+## API-felhantering {#error-handling}
 
 Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 När du har läst det här dokumentet vet du nu hur du skickar en publiceringsbegäran för ditt mål. Adobe Experience Platform-teamet granskar din publiceringsförfrågan och kommer tillbaka till dig inom fem arbetsdagar.

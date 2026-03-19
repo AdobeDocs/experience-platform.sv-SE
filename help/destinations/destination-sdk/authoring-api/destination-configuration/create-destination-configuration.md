@@ -2,9 +2,9 @@
 description: Lär dig hur du strukturerar ett API-anrop för att skapa en målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Skapa en målkonfiguration
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
-source-wordcount: '1213'
+source-wordcount: '1210'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 ## Komma igång med API-åtgärder för målkonfiguration {#get-started}
 
-Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Skapa en målkonfiguration {#create}
 
@@ -203,8 +203,8 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `customerDataFields.enum` | Sträng | Återger det anpassade fältet som en listruta och visar de alternativ som är tillgängliga för användaren. <br/><br/> Mer information om de här inställningarna finns i [Kunddatafält](../../functionality/destination-configuration/customer-data-fields.md). |
 | `customerDataFields.default` | Sträng | Definierar standardvärdet från en `enum`-lista. |
 | `customerDataFields.pattern` | Sträng | Tvingar fram ett mönster för det anpassade fältet, om det behövs. Använd reguljära uttryck för att framtvinga ett mönster. Om dina kund-ID till exempel inte innehåller siffror eller understreck anger du `^[A-Za-z]+$` i det här fältet. <br/><br/> Mer information om de här inställningarna finns i [Kunddatafält](../../functionality/destination-configuration/customer-data-fields.md). |
-| `uiAttributes.documentationLink` | Sträng | Refererar till dokumentationssidan i [målkatalogen](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=sv-SE#catalog) för ditt mål. Använd `https://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på målet. För ett mål som heter Moviestar använder du `https://www.adobe.com/go/destinations-moviestar-en`. Observera att den här länken fungerar först när Adobe har publicerat din destination och dokumentationen. <br/><br/> Mer information om de här inställningarna finns i [Gränssnittsattribut](../../functionality/destination-configuration/ui-attributes.md). ![Experience Platform-gränssnittsbild som visar dokumentationslänken.](../../assets/authoring-api/destination-configuration/documentation-url.png "Dokumentations-URL"){width="100" zoomable="yes"} |
-| `uiAttributes.category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=sv-SE#destination-categories). Använd ett av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. <br/><br/> Mer information om de här inställningarna finns i [Gränssnittsattribut](../../functionality/destination-configuration/ui-attributes.md). |
+| `uiAttributes.documentationLink` | Sträng | Refererar till dokumentationssidan i [målkatalogen](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html#catalog) för ditt mål. Använd `https://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på målet. För ett mål som heter Moviestar använder du `https://www.adobe.com/go/destinations-moviestar-en`. Observera att den här länken fungerar först när Adobe har publicerat din destination och dokumentationen. <br/><br/> Mer information om de här inställningarna finns i [Gränssnittsattribut](../../functionality/destination-configuration/ui-attributes.md). ![Experience Platform-gränssnittsbild som visar dokumentationslänken.](../../assets/authoring-api/destination-configuration/documentation-url.png "Dokumentations-URL"){width="100" zoomable="yes"} |
+| `uiAttributes.category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html#destination-categories). Använd ett av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. <br/><br/> Mer information om de här inställningarna finns i [Gränssnittsattribut](../../functionality/destination-configuration/ui-attributes.md). |
 | `uiAttributes.connectionType` | Sträng | Vilken typ av anslutning det är, beroende på målet. Värden som stöds: <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul> |
 | `uiAttributes.frequency` | Sträng | Hänvisar till den typ av dataexport som stöds av målet. Ange `Streaming` för API-baserade integreringar eller `Batch` när du exporterar filer till dina mål. |
 | `identityNamespaces.externalId.acceptsAttributes` | Boolean | Anger om kunder kan mappa standardprofilattribut till identiteten som du konfigurerar. |
@@ -221,7 +221,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `schemaConfig.profileFields` | Array | När du lägger till fördefinierade `profileFields` enligt konfigurationen ovan kan användare välja att mappa Experience Platform-attribut till de fördefinierade attributen på målsidan. |
 | `schemaConfig.profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |
 | `schemaConfig.segmentRequired` | Boolean | Använd alltid `segmentRequired:true`. |
-| `schemaConfig.identityRequired` | Boolean | Använd `true` om du vill att användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
+| `schemaConfig.identityRequired` | Boolean | Använd `true` om användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
 
 {style="table-layout:auto"}
 
@@ -233,11 +233,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målkonfig
 
 +++
 
-## API-felhantering
+## API-felhantering {#error-handling}
 
 Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för Experience Platform.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 När du har läst det här dokumentet vet du nu hur du skapar en ny destinationskonfiguration via API-slutpunkten för Destination SDK `/authoring/destinations`.
 
