@@ -62,7 +62,7 @@ När du har exporterat dina målgrupper aktiverar du dem med hjälp av målet [[
 
 Titta på videon nedan för att få en komplett förklaring av arbetsflödet som beskrivs på den här sidan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3425367)
+>[!VIDEO](https://video.tv.adobe.com/v/3452660?captions=swe)
 
 ### Steg 1: Skicka dina målgrupper från Experience Platform till LiveRamp via målet [!DNL LiveRamp - Onboarding] {#onboarding}
 
