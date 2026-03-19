@@ -57,7 +57,7 @@ Om du vill se exempel på hur [!DNL Pebble]-funktioner används i Destination SD
 
 ### Användningsfall {#date-use-case}
 
-Du vill ändra tidsstämpeln `lastQualificationTime` från standardvärdet för [ ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) som Experience Platform exporterar till ett annat värde som du föredrar.
+Du vill ändra tidsstämpeln `lastQualificationTime` från standardvärdet för [&#x200B; ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) som Experience Platform exporterar till ett annat värde som du föredrar.
 
 ### Exempel {#date-example}
 

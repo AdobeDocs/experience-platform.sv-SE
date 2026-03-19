@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Exp
 
 Så här installerar du tjänsttillägget [!DNL Experience Cloud] ID:
 
-Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

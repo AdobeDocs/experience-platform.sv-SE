@@ -20,7 +20,7 @@ Analysera okända besökare och konvertera dem till leads.
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
-![Tillägget D&amp;B Visitor Intelligence ](../../assets/catalog/personalization/dnb/catalog.png)
+![Tillägget D&amp;B Visitor Intelligence &#x200B;](../../assets/catalog/personalization/dnb/catalog.png)
 
 ## Förutsättningar {#prerequisites}
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget D&amp;B Visitor Intelligence:
 
-Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 
