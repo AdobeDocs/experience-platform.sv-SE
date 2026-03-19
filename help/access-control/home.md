@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-För att kunna konfigurera åtkomstkontroll för Experience Platform måste du ha system- eller produktadministratörsbehörighet för en organisation som har en Experience Platform-produkt. Minimirollen som kan bevilja eller återkalla behörigheter är en produktadministratör. Andra administratörsroller som kan hantera behörigheter är systemadministratörer (inga begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
+För att kunna konfigurera åtkomstkontroll för Experience Platform måste du ha system- eller produktadministratörsbehörighet för en organisation som har en Experience Platform-produkt. Minimirollen som kan bevilja eller återkalla behörigheter är en produktadministratör. Andra administratörsroller som kan hantera behörigheter är systemadministratörer (inga begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html).
 
 >[!NOTE]
 >
