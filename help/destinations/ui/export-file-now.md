@@ -3,7 +3,7 @@ title: Exportera filer on demand till gruppmål med hjälp av Experience Platfor
 type: Tutorial
 description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av Experience Platform användargränssnitt.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: c7e6de2db416592ca9340fefadd53709fe71b058
+source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 0%
@@ -14,10 +14,10 @@ ht-degree: 0%
 # Exportera filer on demand till gruppmål med hjälp av Experience Platform UI
 
 >[!IMPORTANT]
-> 
+>
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-## **[!UICONTROL Export file now]** översikt {#overview}
+## [!UICONTROL Export file now] översikt {#overview}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_activatenow"
@@ -47,7 +47,7 @@ Vid export på begäran och vid schemalagd export används olika datakällor, vi
 
 Mer information finns i [Om schemalagd export](/help/destinations/ui/activate-batch-profile-destinations.md#export-behavior).
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill exportera filer på begäran till gruppmål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
 
