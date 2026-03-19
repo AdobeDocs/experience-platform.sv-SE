@@ -2,13 +2,13 @@
 title: Köra och hantera översikt
 description: Inspektera, felsök och optimera era era Experience Platform-implementeringar med verktygen Kör och Kör. Få synlighet i schemalagda batchaktiveringar, identifiera konfigurationsproblem och förbättra systemets tillförlitlighet.
 hide: true
-source-git-commit: 4733fae23c5029f4bc2c405376b1a52212dc0440
+exl-id: 7f44cdf3-4db1-47f9-bcde-401f6dcfc551
+source-git-commit: a36f984e56f37e4769e54eab182a8c54e891e32f
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '676'
 ht-degree: 0%
 
 ---
-
 
 # Köra och hantera översikt
 
@@ -32,7 +32,7 @@ Med verktygen i [!UICONTROL Run and Operate] kan du:
 * **Marknadsföringsåtgärder**: Marknadsföringstekniker som inspekterar dataleveranser till marknadsföringsplattformar och löser aktiveringsproblem.
 * **Implementerare**: Användare som validerar implementeringens effektivitet, tillförlitlighet och felsöker tekniska problem.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Du behöver behörigheterna **[!UICONTROL View Job Schedules]** och **[!UICONTROL View Profile Management]** [åtkomstkontroll](/help/access-control/home.md#permissions) för att komma åt verktygen Kör och Kör.
 Sidan [!UICONTROL Job Schedules] innehåller en översikt över alla schemalagda batchbearbetningsjobb.
@@ -47,7 +47,7 @@ Så här kommer du åt verktygen Kör och Använd från Experience Platform-grä
 
    >[!NOTE]
    >
-   >För närvarande är den enda tillgängliga funktionen [Jobbscheman](job-schedules.md).
+   >För närvarande är de tillgängliga funktionerna [Jobbscheman](job-schedules.md) och [Hälsokontroller](health-checks.md).
 
 ![Experience Platform-användargränssnittet visar det vänstra navigeringsfältet Kör och använd.](assets/overview/run-and-operate.png)
 
@@ -78,12 +78,28 @@ Jobbscheman innehåller tre undersökningsnivåer:
 
 Ni kan också förstå beroenden mellan olika databehandlingsfaser, vilket hjälper er att säkerställa ett tillförlitligt dataflöde genom hela Experience Platform-arbetsflöden.
 
+### Hälsokontroller {#health-checks}
+
+>[!IMPORTANT]
+>
+>[!UICONTROL Health checks] är för närvarande tillgänglig som en begränsad version.
+
+Med [Hälsokontroller](health-checks.md) kan du proaktivt identifiera problem med schema- och identitetskonfigurationen innan de påverkar din affärsverksamhet. I nuläget utförs statiska hälsokontroller varje dag i alla dina scheman och identitetsnamnutrymmen, vilket avslöjar att bästa praxis saknas, felkonfigurationer och mönster som leder till fel längre fram i kedjan.
+
+Hälsokontrollerna utvärderar för närvarande fem grundläggande områden:
+
+* **[Verifiering av identitetsfält](health-checks.md#identity-field-validation)**: Verifiera att identitetsfält har rätt längd och mönsterbegränsningar.
+* **[Länkningsregler för identitetsdiagram](health-checks.md#identity-graph-linking-rules)**: Bekräfta att länkningsregler har konfigurerats för att förhindra att profiler komprimeras.
+* **[Konfiguration av identiteter för både människor och icke-människor](health-checks.md#people-non-people-identity)**: Verifiera korrekt identitetstypanvändning mellan schemaklasser.
+* **[Beskrivningar av anpassade identitetsnamnområden](health-checks.md#namespace-missing-description)**: Kontrollera att namnområdesmetadata är fullständiga.
+* **[Inaktuella identitetsnamnutrymmen](health-checks.md#deprecated-namespace)**: Identifiera föråldrade namnutrymmen för rensning.
+
 ## Nästa steg {#next-steps}
 
 Nu när du förstår syftet med och funktionerna i [!UICONTROL Run and Operate]-verktygen kan du fördjupa din kunskap genom att utforska följande resurser:
 
-* Lär dig mer om [batchimport](../ingestion/batch-ingestion/overview.md) för att förstå hur data importeras till Experience Platform
+* Lär dig hur du använder [hälsokontroller](health-checks.md) för att identifiera problem med schema- och identitetskonfigurationer
 * Lär dig hur du [kontrollerar jobbscheman](job-schedules.md) för din batchförbrukning och aktivering
+* Lär dig mer om [batchimport](../ingestion/batch-ingestion/overview.md) för att förstå hur data importeras till Experience Platform
 * Lär dig hur du [konfigurerar schemalagda aktiveringar](../destinations/ui/activate-batch-profile-destinations.md) för batchmål
 * Utforska [dataflödesövervakning](../dataflows/ui/monitor-destinations.md) för mål
-

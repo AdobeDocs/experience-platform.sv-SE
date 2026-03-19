@@ -6,9 +6,9 @@ user-guide-title: Handbok för att köra och använda
 user-guide-description: Inspektera, felsök och optimera era era Adobe Experience Platform-implementeringar med verktygen Kör och Kör. Få synlighet i schemalagda batchaktiveringar, identifiera konfigurationsproblem och förbättra systemets tillförlitlighet.
 description: I det här dokumentet visas innehållsförteckningen för verktygen Kör och Kör i Adobe Experience Platform
 role: Admin, User
-source-git-commit: edc3d4bd444a709f45128795e08ca78122dba4f3
+source-git-commit: a36f984e56f37e4769e54eab182a8c54e891e32f
 workflow-type: tm+mt
-source-wordcount: '63'
+source-wordcount: '65'
 ht-degree: 1%
 
 ---
@@ -21,4 +21,4 @@ ht-degree: 1%
    * [Granska jobbscheman](job-schedules.md)
    * [Visa jobbinformation](job-schedules-details.md)
    * [Identifiera antimönster](job-schedules-anti-patterns.md)
-
+* [Hälsokontroller](health-checks.md)
