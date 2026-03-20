@@ -4,7 +4,7 @@ description: Lär dig hur du skapar en källanslutning och ett dataflöde för a
 badge: Beta
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: ae991913-68b5-4bbb-b8a5-e566d67a4c1a
-source-git-commit: 6ab7c5c2e1f800c82d8906fba78fb897f8639877
+source-git-commit: 66b5b54cdb39a7865092b7e2efcf39046aa791cc
 workflow-type: tm+mt
 source-wordcount: '677'
 ht-degree: 0%
@@ -126,7 +126,7 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --- | --- | 
-| `webhook.address` | Den http-slutpunkt dit direktuppspelningsmeddelanden skickas. Mallen för webkroken är: `https://dcs.adobedc.net/collection/{INLET_ID}?{X_ADOBE_FLOW_ID}={FLOW_ID}.` |
+| `webhook.address` | Den http-slutpunkt dit direktuppspelningsmeddelanden skickas. Mallen för webkroken är: `https://dcs.adobedc.net/collection/{INLET_ID}?x-adobe-flow-id={FLOW_ID}.` |
 | `webhook.topic` | Avsnittet om din webkroprenumeration. Mer information finns i [[!DNL Shopify] händelseguiden](https://shopify.dev/docs/api/admin-rest/2023-04/resources/webhook#event-topics) för webkrok. |
 | `webhook.format` | Dataformatet. |
 
