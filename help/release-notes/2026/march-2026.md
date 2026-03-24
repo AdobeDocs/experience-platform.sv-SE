@@ -1,7 +1,6 @@
 ---
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: d7415a9deefac55b8583eb52a7c1f18caf5f3334
 workflow-type: tm+mt
 source-wordcount: '1020'

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 6142801c9008c10a3d1a0a11976a2c99fb6cee86
+source-git-commit: 3d0c216a9f8eb46a25221660253a80ce8e7a7eb0
 workflow-type: tm+mt
-source-wordcount: '1721'
+source-wordcount: '1724'
 ht-degree: 1%
 
 ---
@@ -65,7 +65,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 ### Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html) eller kunder som har licensierat den fristående versionen av SKU:n för Advanced Enterprise Source Connectors.
+Följande källor är bara tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html) eller kunder som har licensierat den fristående versionen av SKU:n för Advanced Enterprise Source Connectors.
 
 | Källa | Kategori | Inmatningstyp | Cloud |
 | --- | --- | --- | --- |
@@ -230,6 +230,7 @@ Du kan använda följande källor när du vill importera datamöjligheter till E
 | Källa | Inmatningstyp | Cloud |
 | --- | --- | --- |
 | [[!DNL Capillary Streaming Events]](connectors/loyalty/capillary.md) | Direktuppspelning | Azure |
+| [[!DNL Talon.One]](connectors/loyalty/talon-one.md) | Batch, direktuppspelning | Azure |
 
 {style="table-layout:auto"}
 

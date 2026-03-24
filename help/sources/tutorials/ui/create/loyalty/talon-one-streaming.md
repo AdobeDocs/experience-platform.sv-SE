@@ -2,9 +2,8 @@
 title: Strömma data från Talon.one till Experience Platform med användargränssnittet
 description: Lär dig att strömma data från Talon.One till Adobe Experience Platform med användargränssnittet. Den här guiden innehåller inställningar, dataurval och konfiguration av dataflöde.
 badge: Beta
-hide: true
-hidefromtoc: true
-source-git-commit: 554d86e2f07966ee08940a30fe06050570129e41
+exl-id: a92e17dd-123c-4e83-a851-3cf2861751e5
+source-git-commit: 3d0c216a9f8eb46a25221660253a80ce8e7a7eb0
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 0%
