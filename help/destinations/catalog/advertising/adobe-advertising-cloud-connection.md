@@ -1,20 +1,20 @@
 ---
 title: Adobe Advertising DSP
-description: Lär dig hur du delar autentiserade och oautentiserade förstahandsmålgrupper med Adobe Advertising Cloud Demand-Side Platform (DSP) med hjälp av flera identitetstyper.
+description: Lär dig hur du delar autentiserade och oautentiserade förstahandsmålgrupper med Adobe Advertising Demand-Side Platform (DSP) med hjälp av flera identitetstyper.
 feature: Destinations
-source-git-commit: 5513e95637c1016caeb6abe699e1807cc234ed40
+exl-id: 0ff80d38-993f-4609-bf2a-01a3e6cfe10b
+source-git-commit: 8d9cf177b306350d232ec8918376211a098f396f
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1491'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Advertising DSP
 
 ## Översikt {#overview}
 
-Med Adobe Advertising Cloud Demand-Side Platform (DSP) kan användare dela både autentiserade och oautentiserade förstapartsmålgrupper med ett DSP-konto eller en specifik annonsörer i ett konto.
+Adobe Advertising Demand-Side Platform-målet (DSP) gör det möjligt för användare att dela både autentiserade och oautentiserade förstapartsmålgrupper med ett DSP-konto eller en viss annonsörer inom ett konto.
 
 Med den här destinationen kan kunder dela förstapartsmålgrupper med något eller alla av dessa ID:n:
 
@@ -32,7 +32,7 @@ Den här anslutningen ersätter den [gamla Adobe Advertising Cloud DSP-anslutnin
 
 >[!IMPORTANT]
 >
->Den här sidan har skapats av Adobe Advertising [!DNL DSP]-teamet. Kontakta supporten för Advertising Cloud direkt på `adcloud_support@adobe.com` om du har frågor eller uppdateringsfrågor.
+>Den här sidan har skapats av Adobe Advertising [!DNL DSP]-teamet. Kontakta Advertising support direkt på `adcloud_support@adobe.com` om du har frågor eller uppdateringsfrågor.
 
 ## Användningsfall {#use-cases}
 
@@ -58,9 +58,9 @@ Annonsörer kan dela segment antingen med autentiserade förstapartidentifierare
 
 * Experience Cloud organisations-ID för Experience Platform-kontot. Du hittar ditt ID på din Adobe Real-Time Customer Data Platform-användarprofilsida (Real-Time CDP).
 
-* En [Real-Time CDP-källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
+* En [Real-Time CDP-källa i DSP](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
 
-* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [Real-Time CDP-källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, vilket förklaras nedan.
+* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [Real-Time CDP-källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda den i Experience Platform för att skapa en målanslutning till Advertising DSP-målet, vilket förklaras nedan.
 
 ### Konfigurera ID-synkronisering för delning av cookies {#cookie-sync}
 
@@ -76,13 +76,13 @@ Om du använder [!DNL Experience Platform]-taggar med [!DNL Experience Cloud ID 
 
 ## Identiteter som stöds {#supported-identities}
 
-Adobe Advertising Cloud DSP-målet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
+Adobe Advertising DSP-målet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 | Målidentitet | Beskrivning | Överväganden |
 | --------------- | ----------- | -------------- |
 | `email_lc_sha256` | E-postadresser som hashas med SHA256-algoritmen | Experience Platform har stöd för både oformaterad text och SHA256-hashade e-postadresser. När källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att Experience Platform automatiskt hash-kodar data vid aktiveringen. |
 | `ECID` | Första part-cookie för Experience Cloud | Krävs för att skapa cookie-baserade segment. |
-| `Everesttech cookie` | Tredjeparts-cookie för Adobe Advertising | Krävs för att skapa cookie-baserade segment. |
+| `adcloud` | Tredjeparts-cookie för Adobe Advertising | Krävs för att skapa cookie-baserade segment. |
 | `GAID` | [!DNL Android] enhets-ID | Krävs för [!DNL Android] enheter som mål. |
 | `IDFA` | [!DNL iOS] enhets-ID | Krävs för [!DNL iOS] enheter som mål. |
 
@@ -133,7 +133,7 @@ Om du vill ansluta till målet följer du instruktionerna för att [skapa en må
 
 Om du vill ansluta till målet anger du följande parameter i avsnittet [!UICONTROL Connection type] och väljer sedan **[!UICONTROL Connect to destination]**:
 
-* **[!UICONTROL Account or Advertiser Key]**: Den här [!UICONTROL Source Key] genereras när en [Real-Time CDP-källa skapas i DSP användargränssnitt](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=sv-SE). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
+* **[!UICONTROL Account or Advertiser Key]**: Den här [!UICONTROL Source Key] genereras när en [Real-Time CDP-källa skapas i DSP användargränssnitt](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
 
 ![Skärmbild av avsnittet Anslutningstyp som visar fältet Konto eller Advertiser-nyckel.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 
@@ -154,6 +154,12 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 
 ## Aktivera målgrupper till det här målet {#activate}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_required_mappings_adcloud_dsp"
+>title="Förkonfigurerade mappningsuppsättningar"
+>abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig: ECID och [!DNL adcloud] cookie. När du aktiverar data till Adobe Advertising DSP måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/adobe-advertising-cloud-connection#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+
 >[!IMPORTANT]
 >
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
@@ -163,21 +169,40 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ### Mappa attribut och identiteter {#map}
 
-Du kan välja vilka ID som ska skickas till Adobe Advertising DSP. Som standard väljs cookie-identifierarna för annonsören. Du kan också lägga till [!UICONTROL Hashed Email], [!UICONTROL IDFA] och [!UICONTROL GAID].
+Identitetsmappningarna för det här målet är delvis förkonfigurerade. Granska de förkonfigurerade mappningarna nedan och lägg till valfria identiteter som du vill inkludera.
 
-Instruktioner finns i [Mappa attribut och identiteter](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping).
+### Förkonfigurerade mappningar {#preconfigured-mappings}
+
+Följande identitetsmappningar är **förkonfigurerade och fyllda i automatiskt** under målgruppsaktiveringen:
+
+* **`ECID`** (Experience Cloud-ID)
+* **`adcloud`** (Adobe Advertising cookie från tredje part)
 
 ![Skärmbild av avsnittet för identitetsmappning som visar cookie-identifierare, hashed-e-post, IDFA och GAID-alternativ.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/identity-mapping.png)
 
+De här mappningarna är nedtonade och skrivskyddade. Du behöver inte konfigurera något i det här steget. Du kan också lägga till följande mappningar:
+
+* **`email_lc_sha256`** (hash-kodad e-post)
+* **IDFA** ([!DNL Apple iOS] enhets-ID)
+* **GAID** ([!DNL Android] enhets-ID)
+
+Välj **[!UICONTROL Next]** om du vill fortsätta.
+
+>[!IMPORTANT]
+>
+>**ECID krävs för att cookie-baserad export ska lyckas.** profiler utan ECID inkluderas inte i cookie-baserade segment. För autentiserade målgruppssegment som använder [!DNL RampID] eller [!DNL UID2.0] måste profilerna innehålla hash-kodade e-post-ID:n.
+
+Instruktioner finns i [Mappa attribut och identiteter](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping).
+
 ## Validera dataexport {#exported-data}
 
-Kontrollera följande om du vill verifiera att målgruppsdata delades med Advertising Cloud:
+Kontrollera följande om du vill verifiera att målgruppsdata delats med Adobe Advertising:
 
 * Dataflödet i [!DNL Real-Time CDP]-målet har slutförts.
 
 * I DSP är målgruppen tillgänglig när du skapar eller redigerar en målgrupp från **[!UICONTROL Audiences]** > **[!UICONTROL All Audiences]** eller från avsnittet **[!UICONTROL Audience Targeting]** i placeringsinställningarna. Publiken ska vara synlig på fliken [!UICONTROL Adobe Segments] under mappen [!UICONTROL Real-Time CDP].
 
-![Real-Time CDP målgrupper i DSP målgruppsinställningar](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
+![Skärmbild av DSP Audiences-gränssnittet som visar en Real-Time CDP-mapp med importerade målgruppssegment som listas under fliken Adobe-segment.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
