@@ -3,9 +3,9 @@ title: Google BigQuery Source Connector - översikt
 description: Lär dig hur du ansluter Google BigQuery till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: 1900a8c6a3f3119c8b9049b12f5660cc9fd181a2
+source-git-commit: 2136ace3e3c1157ac7bbfe56071af3dc9bc66fd6
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '841'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 0%
 >
 >Källan [!DNL Google BigQuery] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-Läs det här dokumentet för nödvändiga steg som du måste slutföra för att kunna ansluta ditt [!DNL Google BigQuery]-konto till Adobe Experience Platform på antingen Azure eller Amazon Web Services (AWS).
+Läs det här dokumentet om du behöver utföra nödvändiga åtgärder för att kunna ansluta ditt [!DNL Google BigQuery]-konto till Adobe Experience Platform på antingen Azure eller Amazon Web Services (AWS).
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I följande avsnitt finns information om den nödvändiga konfiguration som du måste slutföra innan du kan ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform.
 
@@ -28,7 +28,7 @@ Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du ka
 
 ### Autentisera till Experience Platform på Azure {#azure}
 
-Du måste ange följande autentiseringsuppgifter för att ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform på Azure.
+Du måste ange följande autentiseringsuppgifter för att kunna ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform på Azure.
 
 >[!BEGINTABS]
 
@@ -41,8 +41,18 @@ Ange lämpliga värden för följande autentiseringsuppgifter för att autentise
 | `project` | Projektet är organisationsenhet på basnivå för dina [!DNL Google Cloud]-resurser, inklusive [!DNL Google BigQuery]. |
 | `clientID` | Klient-ID är hälften av dina [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
 | `clientSecret` | Klienthemligheten är den andra halvan av dina [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
-| `refreshToken` | Med uppdateringstoken kan du hämta nya åtkomsttoken för ditt API. Åtkomsttoken har begränsad livslängd och kan förfalla under projektets gång. Du kan använda uppdateringstoken för att autentisera och begära efterföljande åtkomsttoken för ditt projekt vid behov. |
-| `largeResultsDataSetId` | (Valfritt) Det förskapade [!DNL Google BigQuery]-datauppsättnings-ID som krävs för att aktivera stöd för stora resultatuppsättningar. |
+| `refreshToken` | Med uppdateringstoken kan du hämta nya åtkomsttoken för ditt API. Åtkomsttoken har begränsad livslängd och kan förfalla under projektets gång. Du kan använda uppdateringstoken för att autentisera och begära efterföljande åtkomsttoken för ditt projekt vid behov. Kontrollera att din uppdateringstoken innehåller följande [!DNL Google] OAuth-scope: <ul><li>`https://www.googleapis.com/auth/bigquery`</li><li>`https://www.googleapis.com/auth/cloud-platform`</li></ul> Med dessa omfattningar kan Experience Platform skicka BigQuery-jobb och läsa data från det konfigurerade projektet. |
+| `largeResultsDataSetId` | (Valfritt) Det förskapade [!DNL Google BigQuery]-datauppsättnings-ID som krävs för att aktivera stöd för stora resultatuppsättningar.<ul><li>`largeResultsDataSetId` måste referera till en förskapad [!DNL BigQuery]-datauppsättning som används för att lagra tillfälliga tabeller för stora resultatuppsättningar.</li><li>Värdet får bara innehålla datauppsättnings-ID (till exempel `marketing_temp_results`), inte det projektkvalificerade namnet (använd inte `my-project.marketing_temp_results`).</li><li>Platsen (regionen) för datauppsättningen som anges i `largeResultsDataSetId` måste matcha platsen för de tabeller som efterfrågas.</li><li>Kontot som används av kopplingen måste ha behörighet att läsa och skriva temporära resultat i den här datauppsättningen. Tilldela minst rollen [!DNL BigQuery Data Editor] för datauppsättningen som anges i `largeResultsDataSetId`.</li></ul> |
+
+#### IAM-roller som krävs för identiteten [!DNL Google]
+
+Identiteten [!DNL Google] som används för att generera OAuth-autentiseringsuppgifterna (klient-ID, klienthemlighet och refreshToken) måste ha följande IAM-roller i målprojektet [!DNL Google Cloud]:
+
+- [!DNL BigQuery Job User]
+- [!DNL BigQuery Data Viewer]
+- [!DNL BigQuery Read Session User]
+
+Dessa roller ser till att Experience Platform kan skapa och köra [!DNL BigQuery]-jobb, läsa data från de konfigurerade tabellerna och använda lässessioner enligt anslutningsprogrammets krav. Se till att de här rollerna beviljas i samma projekt som innehåller de [!DNL BigQuery]-datauppsättningar som du tänker använda med källan.
 
 Detaljerade instruktioner om hur du genererar OAuth 2.0-autentiseringsuppgifter för [!DNL Google] API:er finns i följande [[!DNL Google] autentiseringsguide för OAuth 2.0](https://developers.google.com/identity/protocols/oauth2).
 
@@ -56,7 +66,7 @@ Om du vill autentisera med tjänstautentisering anger du lämpliga värden för 
 | --- | --- |
 | `projectId` | ID:t för [!DNL Google BigQuery] som du vill fråga mot. |
 | `keyFileContent` | Nyckelfilen som används för att autentisera tjänstkontot. Du kan hämta det här värdet från [[!DNL Google Cloud service accounts] instrumentpanelen](https://console.cloud.google.com). Nyckelfilens innehåll är i JSON-format. Du måste koda detta i [!DNL Base64] när du autentiserar till Experience Platform. |
-| `largeResultsDataSetId` | (Valfritt) Det förskapade [!DNL Google BigQuery]-datauppsättnings-ID som krävs för att aktivera stöd för stora resultatuppsättningar. |
+| `largeResultsDataSetId` | (Valfritt) Det förskapade [!DNL Google BigQuery]-datauppsättnings-ID som krävs för att aktivera stöd för stora resultatuppsättningar.<ul><li>`largeResultsDataSetId` måste referera till en förskapad [!DNL BigQuery]-datauppsättning som används för att lagra tillfälliga tabeller för stora resultatuppsättningar.</li><li>Värdet får bara innehålla datauppsättnings-ID (till exempel `marketing_temp_results`), inte det projektkvalificerade namnet (använd inte `my-project.marketing_temp_results`).</li><li>Platsen (regionen) för datauppsättningen som anges i `largeResultsDataSetId` måste matcha platsen för de tabeller som efterfrågas.</li><li>Kontot som används av kopplingen måste ha behörighet att läsa och skriva temporära resultat i den här datauppsättningen. Tilldela minst rollen [!DNL BigQuery Data Editor] för datauppsättningen som anges i `largeResultsDataSetId`.</li></ul> |
 
 Mer information om hur du använder tjänstkonton i [!DNL Google BigQuery] finns i handboken [Använda tjänstkonton i  [!DNL Google BigQuery]](https://cloud.google.com/bigquery/docs/use-service-accounts).
 
