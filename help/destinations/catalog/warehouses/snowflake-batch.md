@@ -4,9 +4,9 @@ description: Skapa en live-Snowflake-datadelning för att få dagliga målgrupps
 last-substantial-update: 2026-02-17T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: f6565f7820d6d6394d26b88fdde3d42a90dedd63
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1804'
 ht-degree: 0%
 
 ---
@@ -182,7 +182,7 @@ Du kan exportera identiteter och profilattribut till det här målet.
 
 ![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
 
-Du kan använda kontrollen [&#x200B; för &#x200B;](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
@@ -194,12 +194,19 @@ Data läggs in i ditt Snowflake-konto via en dynamisk tabell. Kontrollera ditt S
 
 Den dynamiska tabellen innehåller följande kolumner:
 
-* **TS**: En tidsstämpelkolumn som anger när varje rad från den delade tabellen senast uppdaterades
-* **Kopplingsprincip-ID**: ID:t för [sammanfogningsprincipen](../../../profile/merge-policies/overview.md) som målgruppen som aktiveras tillhör
-* **Mappningsattribut**: Alla mappningsattribut som du väljer under aktiveringsarbetsflödet representeras som en kolumnrubrik i Snowflake
-* **Målgruppsmedlemskap**: Medlemskap för alla målgrupper som är mappade till dataflödet anges via en `active` -post i motsvarande cell
+* **TS**: En tidsstämpel som anger när varje rad senast uppdaterades
+* **MERGE_POLICY_ID**: ID:t för [sammanfogningsprincipen](../../../profile/merge-policies/overview.md) som den aktiverade publiken tillhör
+* **AUDIENCE_ID**: Målgruppens ID
+* **AUDIENCE_NAME**: Namnet på målgruppen enligt konfigurationen i Experience Platform
+* **AUDIENCE_ORIGIN**: Målgruppens [ursprung](../../../segmentation/ui/audience-portal.md) (till exempel `Segmentation Service` eller `Custom upload`)
+* **AUDIENCE_STATUS**: Status för medlemskap för profilen i målgruppen (till exempel `active` eller `realized`)
+* **Mappningsattribut**: Alla mappningsattribut som väljs under aktiveringsarbetsflödet representeras som en kolumn
 
 ![Skärmbild som visar Snowflake-gränssnittet med dynamiska tabelldata](../../assets/catalog/cloud-storage/snowflake-batch/data-validation.png) {align="center" zoomable="yes"}
+
+>[!NOTE]
+>
+>Tabellstrukturen som beskrivs ovan gäller för målanslutningar som skapats efter Experience Platform-utgåvan från mars 2026. Under övergångsperioden använder nya kopplingar båda tabellstrukturerna, med den nya strukturen som prefix av `V2` (till exempel `V2_<table-name>`). Befintliga anslutningar fortsätter att använda den tidigare strukturen, där varje målgrupp representeras som en separat kolumn (till exempel `ups_<audience-id>` = `active`). Den tidigare strukturen kommer att bli inaktuell i slutet av juni 2026.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
