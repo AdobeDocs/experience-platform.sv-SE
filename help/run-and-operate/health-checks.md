@@ -172,7 +172,7 @@ När du väljer kortet **[!UICONTROL Deprecated Identity Namespace]** öppnas en
 
 ![Detaljpanel för inaktuell namnområdesinformation för identitet med beskrivning, påverkan och lista över namnområden som påverkas](assets/health-checks/deprecated-namespace-detail.png)
 
-Mer information finns i artikeln [Experience Cloud kunskapsbas om föråldrade namnutrymmen](https://experienceleague.adobe.com/en/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}.
+Mer information finns i artikeln [Experience Cloud kunskapsbas om föråldrade namnutrymmen](https://experienceleague.adobe.com/sv/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}.
 
 ## Nästa steg {#next-steps}
 
