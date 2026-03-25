@@ -1,12 +1,12 @@
 ---
 title: Snowflake Streaming-anslutning
 description: Skapa en datadelning live från Snowflake för att få uppdateringar direkt som delade tabeller till ditt konto.
-last-substantial-update: 2025-10-23T00:00:00Z
+last-substantial-update: 2026-03-24T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: f74680fa35490f0e8b2d371739ecf8ef3eed74c9
 workflow-type: tm+mt
-source-wordcount: '1547'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Det här målet använder en [!DNL Snowflake]-dataresurs, vilket innebär att in
 
 Första gången du delar data från en Adobe Snowflake-instans till din blir du ombedd att godkänna den privata listan från Adobe.
 
-![Skärmbild som visar Snowflake bekräftelseskärm för privat listning](../../assets/catalog/cloud-storage/snowflake/snowflake-accept-listing.png)
+![Skärmbild som visar Snowflake bekräftelseskärm för privat listning](../../assets/catalog/warehouses/snowflake/snowflake-accept-listing.png)
 
 ### Datalagring och TTL (Time-to-Live) {#ttl}
 
@@ -45,7 +45,7 @@ När ett dataflöde körs för en målgrupp för första gången utförs en bak�
 
 ## Direktuppspelning jämfört med batchdelning av data {#batch-vs-streaming}
 
-Experience Platform tillhandahåller två typer av Snowflake-mål: [Snowflake Streaming](snowflake.md) och [Snowflake Batch](snowflake-batch.md).
+[!DNL Adobe Experience Platform] innehåller två typer av [!DNL Snowflake] mål: [Snowflake Streaming](snowflake.md) och [Snowflake Batch](snowflake-batch.md).
 
 Tabellen nedan hjälper dig att avgöra vilket mål som ska användas genom att beskriva de scenarier där varje datadelningsmetod är lämpligast.
 
@@ -69,14 +69,15 @@ Direktuppspelning av data är idealiskt för scenarier där du behöver omedelba
 * **Effektivitet och nyans**: Aktivera ökad effektivitet och nyans i marknadsföringen genom att tillåta snabba svar på ändringar av användarbeteenden
 * **Optimering av kundresan i realtid**: Uppdatera kundupplevelsen direkt när segmentmedlemskapet eller profilattributen ändras
 
-Direktuppspelning av datadelning ger kontinuerliga uppdateringar baserat på segmentändringar, ändringar av identitetskartan eller attributändringar, vilket gör den lämplig för scenarier där fördröjning är viktig och omedelbara uppdateringar krävs.
+Direktuppspelning av datadelning ger kontinuerliga uppdateringar baserat på segmentändringar, ändringar av identitetskartan eller attributändringar, vilket gör den lämplig när låg fördröjning gäller.
 
 ## Förutsättningar {#prerequisites}
 
 Innan du konfigurerar din Snowflake-anslutning måste du kontrollera att följande krav uppfylls:
 
 * Du har åtkomst till ett [!DNL Snowflake]-konto.
-* Ditt Snowflake-konto prenumererar på privata listor. Du eller någon på ditt företag som har kontoadministratörsbehörighet för Snowflake kan konfigurera detta.
+* Ditt [!DNL Snowflake]-konto prenumererar på privata listor. Du eller någon i ditt företag som har kontoadministratörsbehörighet på [!DNL Snowflake] kan konfigurera detta.
+* Du känner till din [!DNL Snowflake]-kontoregion, som du väljer i en listruta när du ansluter till målet.
 
 Läs [[!DNL Snowflake] dokumentationen](https://docs.snowflake.com/en/collaboration/consumer-listings-access#access-a-private-listing) om du vill ha mer information om de behörigheter som krävs.
 
@@ -86,12 +87,10 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
+| [!DNL Segmentation Service] | Ja | Publiker som genererats via [!DNL Adobe Experience Platform] [segmenteringstjänsten](../../../segmentation/home.md). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till [!DNL Adobe Experience Platform] från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra [!DNL Adobe Experience Platform]-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
-
-
 
 Målgrupper som stöds av olika typer av målgruppsdata:
 
@@ -104,7 +103,6 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 {style="table-layout:auto"}
 
-
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
@@ -112,7 +110,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL Snowflake]. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil har uppdaterats i [!DNL Adobe Experience Platform] baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -128,18 +126,18 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
 
-![Exempelbild som visar hur du autentiserar till målet](../../assets/catalog/cloud-storage/snowflake/authenticate-destination.png)
+![Exempelbild som visar hur du autentiserar till målet](../../assets/catalog/warehouses/snowflake/authenticate-destination.png)
 
 ### Fyll i målinformation {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_snowflake_accountID"
 >title="Ange ditt konto-ID för Snowflake"
->abstract="Om ditt konto är länkat till en organisation använder du det här formatet: `OrganizationName.AccountName`<br><br> Om ditt konto inte är länkat till en organisation använder du det här formatet:`AccountName`"
+>abstract="Använd det här formatet om ditt konto är länkat till en organisation: `OrganizationName.AccountName`<br><br>Använd det här formatet om ditt konto inte är länkat till en organisation: `AccountName`"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Exempelbild som visar hur du fyller i information för ditt mål](../../assets/catalog/cloud-storage/snowflake/configure-destination-details.png)
+![Exempelbild som visar hur du fyller i information för ditt mål](../../assets/catalog/warehouses/snowflake/configure-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -148,9 +146,13 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
    * Om ditt konto inte är länkat till en organisation:`AccountName`.
 * **[!UICONTROL Account acknowledgment]**: Växla på bekräftelsen för ditt konto-ID på Snowflake för att bekräfta att ditt konto-ID är korrekt och tillhör dig.
 
+>[!NOTE]
+>
+> Det går inte att redigera **[!UICONTROL Snowflake Account ID]** via arbetsflödet [Redigera mål](../../ui/edit-destination.md) när du har skapat målet. Om du vill använda ett annat konto [skapar du en ny målanslutning](../../ui/connect-destination.md).
+
 >[!IMPORTANT]
 >
-> Specialtecken som används i målnamnet och Experience Platform-sandlådans namn konverteras automatiskt till understreck (`_`) i Snowflake. Undvik förvirring genom att inte använda några specialtecken i mål- och sandlådans namn.
+> Specialtecken som används i målnamnet och [!DNL Adobe Experience Platform]-sandlådans namn konverteras automatiskt till understreck (`_`) i [!DNL Snowflake]. Undvik förvirring genom att inte använda några specialtecken i mål- och sandlådans namn.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -171,23 +173,25 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 Snowflake-målet stöder mappning av profilattribut till anpassade attribut.
 
-![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake/mapping.png)
+![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/warehouses/snowflake/mapping.png)
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-Kontrollera ditt Snowflake-konto för att bekräfta att data exporterades korrekt.
+Data delas i ditt Snowflake-konto via en delad tabell. Kontrollera ditt Snowflake-konto för att bekräfta att data exporterades korrekt.
 
-## Kända begränsningar {#known-limitations}
+I följande exempel visas exempelrader från en delad tabell: i vissa kolumner lagras identiteter och segmentmedlemskap som JSON. Mappade profilattribut visas som separata strängkolumner.
 
-### Begränsning av standardprincip för sammanslagning {#default-merge-policy-restriction}
+![Exempel på Snowflake-kalkylbladsrader med kolumnerna IDENTITYMAP, SEGMENT_MEMBERSHIP och mappade attribut](../../assets/catalog/warehouses/snowflake/snowflake-streaming-exported-data.png) {align="center" zoomable="yes"}
 
-För närvarande går det endast att exportera målgrupper som är mappade till standardsammanfogningsprincipen.
+### Datastruktur {#data-structure}
 
-### Regional tillgänglighet {#regional-availability}
+På skärmbilden ovan visas följande kolumner:
 
-Målet för [!DNL Snowflake]-direktuppspelning är för närvarande bara tillgängligt för [!DNL Real-Time CDP]-kunder som har etablerats i Experience Platform VA7-regionen.
+* **IDENTITYMAP**: JSON-objekt för varje profilidentitetskarta.
+* **SEGMENT_MEMBERSHIP**: JSON-objekt för varje målgrupp som aktiveras på dataflödet. Värdet är `lastQualificationTime` och `status` (till exempel `realized` när profilen kvalificerar sig för segmentet).
+* **Mappningsattribut**: Alla mappningsattribut som du väljer under aktiveringsarbetsflödet representeras som en kolumnrubrik i [!DNL Snowflake].
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
