@@ -234,4 +234,4 @@ När du har kopierat export-JSON för schemat kan du använda det som nyttolast 
 
 ## Nästa steg
 
-Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i användargränssnittet för [!UICONTROL Schemas] finns i [[!UICONTROL Schemas] användargränssnittsöversikt ](./overview.md).
+Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i användargränssnittet för [!UICONTROL Schemas] finns i [[!UICONTROL Schemas] användargränssnittsöversikt &#x200B;](./overview.md).
