@@ -64,4 +64,4 @@ Du kan använda GitHub-webbgränssnittet eller den lokala miljön för att skapa
 
 ## Bästa praxis {#best-practices}
 
-Granska de [bästa sätten att skapa ](/help/destinations/destination-sdk/docs-framework/authoring-best-practices.md) innan och medan du skapar måldokumentationssidan. Läs även [handledningen för skrivande av Adobe-dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) om du vill ha mer skrivande tips som Adobe dokumentationsteam använder när de skapar dokumentation.
+Granska de [bästa sätten att skapa &#x200B;](/help/destinations/destination-sdk/docs-framework/authoring-best-practices.md) innan och medan du skapar måldokumentationssidan. Läs även [handledningen för skrivande av Adobe-dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) om du vill ha mer skrivande tips som Adobe dokumentationsteam använder när de skapar dokumentation.

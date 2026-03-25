@@ -18,7 +18,7 @@ Om du vill veta mer om meddelandeformat, profilkonfiguration och transformerings
 * **Experience Data Model (XDM)**. [XDM-översikt](../../../../xdm/home.md) och [Så här skapar du ett XDM-schema i Adobe Experience Platform](../../../../xdm/tutorials/create-schema-ui.md).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](../../../../xdm/ui/resources/classes.md).
 * **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i [!DNL Adobe Experience Platform]. Se `xdm:identityMap` i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
-* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
+* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
 
 >[!IMPORTANT]
 >
@@ -186,7 +186,7 @@ Information om hur du omformar profilattributen som exporteras till ditt mål fi
 
 >[!IMPORTANT]
 >
->En lista över alla tillgängliga profilattribut i [!DNL Adobe Experience Platform] finns i [ XDM-fältordlistan ](../../../../xdm/schema/field-dictionary.md).
+>En lista över alla tillgängliga profilattribut i [!DNL Adobe Experience Platform] finns i [&#x200B; XDM-fältordlistan &#x200B;](../../../../xdm/schema/field-dictionary.md).
 
 
 **Indata**
@@ -266,7 +266,7 @@ Profil 2:
 ### Målgruppsmedlemskap {#audience-membership}
 
 XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör.
-Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
+Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
 
 **Indata**
 

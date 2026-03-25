@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare
 
-Använd Adobe [!DNL Real-Time CDP]-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
+Använd Adobe [!DNL Real-Time CDP]-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [[!DNL [LiveRamp RampID]]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
 
 >[!IMPORTANT]
 >
@@ -93,7 +93,7 @@ Du aktiverar målgrupperna (exporterade i [steg 1](#onboarding)) med hjälp av m
 
 ![Experience Platform-gränssnittsbild som visar LiveRamp - distributionskortet](../assets/ui/activate-curated-destinations-liveramp/liveramp-distribution-catalog.png)
 
-Läs **[!DNL LiveRamp - Distribution]**-måldokumentationen om du vill lära dig hur du konfigurerar [-målet och aktiverar de målgrupper som du har exporterat i ](#onboarding)steg 1[[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md).
+Läs **[!DNL LiveRamp - Distribution]**-måldokumentationen om du vill lära dig hur du konfigurerar [-målet och aktiverar de målgrupper som du har exporterat i &#x200B;](#onboarding)steg 1[[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md).
 
 >[!IMPORTANT]
 >

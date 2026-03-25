@@ -89,7 +89,7 @@ Mer information om hur du konfigurerar ett dataflöde finns i anvisningarna i [E
 
 ### Skapa en [!DNL Active-On-Edge]-sammanslagningsprincip {#create-merge-policy}
 
-När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
+När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
 
 >[!IMPORTANT]
 >
@@ -150,7 +150,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Edge Network API genom att lägga till en integration på serversidan.
 >

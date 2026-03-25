@@ -107,7 +107,7 @@ I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras
 När du använder `PLATFORM_AUTHENTICATION` måste du ange parametern `authenticationId` för att länka målkonfigurationen till autentiseringskonfigurationen.
 
 1. Ange `destinationDelivery.authenticationRule` till `"PLATFORM_AUTHENTICATION"` i målkonfigurationen
-2. [Skapa autentiseringsuppgiften ](/help/destinations/destination-sdk/credentials-api/create-credential-configuration.md).
+2. [Skapa autentiseringsuppgiften &#x200B;](/help/destinations/destination-sdk/credentials-api/create-credential-configuration.md).
 3. Ställ in parametern `authenticationId` på autentiseringsuppgiftsobjektets `instanceId`-värde.
 
 **Exempelkonfiguration med PLATFORM_AUTHENTICATION:**
