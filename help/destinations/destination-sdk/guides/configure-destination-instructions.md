@@ -284,7 +284,7 @@ När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i f
 Som en del av processen för att testa målet måste du använda Experience Platform-gränssnittet för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en publikdokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
-* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
+* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE)
 
 ## Steg 7: Publicera destinationen {#publish-destination}
 

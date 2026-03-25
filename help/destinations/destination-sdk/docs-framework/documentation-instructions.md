@@ -24,8 +24,8 @@ I det här dokumentationsavsnittet ingår:
 
 * Stegvisa instruktioner för att skapa en dokumentationssida för det nya målet;
 * En mall som du kan fylla i för din destination;
-* [Allmänna instruktioner om hur du använder Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html);
-* [Specifika instruktioner för Adobe Markdown-aromen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions) (Adobe Markdown-aromen liknar den för vanlig Markdown).
+* [Allmänna instruktioner om hur du använder Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=sv-SE);
+* [Specifika instruktioner för Adobe Markdown-aromen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=sv-SE#custom-markdown-extensions) (Adobe Markdown-aromen liknar den för vanlig Markdown).
 * En [sida för bästa praxis](./authoring-best-practices.md) som hjälper dig att skapa en dokumentationssida för målsidan, som uppfyller Experience Platform kvalitetsstandarder för dokumentation.
 
 ## Förutsättningar {#prerequisites}
@@ -38,12 +38,12 @@ Om du vill skapa dokumentation för destinationen enligt instruktionerna i den h
 
 ## Instruktioner på hög nivå för att skapa dokumentation för ditt mål i [!DNL Adobe Experience Platform] {#high-level-instructions}
 
-Om du på en hög nivå vill skapa dokumentation för ditt mål måste du [skapa en gaffel](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) i dokumentationsdatabasen för [!DNL Adobe Experience Platform] och redigera den [tillhandahållna dokumentationsmallen](./self-service-template.md) i en ny gren. Använd mallen som tillhandahålls av Adobe för att skapa en ny målsida. Öppna en pull-begäran (PR) när du är klar. Instruktioner om hur du gör detta finns nedan, i [steg för att skapa din nya målsida](./documentation-instructions.md#steps-to-create-docs-page).
+Om du på en hög nivå vill skapa dokumentation för ditt mål måste du [skapa en gaffel](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=sv-SE#fork-the-repository) i dokumentationsdatabasen för [!DNL Adobe Experience Platform] och redigera den [tillhandahållna dokumentationsmallen](./self-service-template.md) i en ny gren. Använd mallen som tillhandahålls av Adobe för att skapa en ny målsida. Öppna en pull-begäran (PR) när du är klar. Instruktioner om hur du gör detta finns nedan, i [steg för att skapa din nya målsida](./documentation-instructions.md#steps-to-create-docs-page).
 
 <!--
 
 * In the table of contents (TOC.md) `/help/rtcdp/TOC.md`, add a link to your new destination page. Place it within the category where your destination resides in the Adobe Experience Platform user interface (for example: mobile, social, advertising). 
-* In the overview page for the respective category, add a link to your new destination page. For example, for cloud storage destinations, you would add a link to [this page](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-cat/cloud-storage/cloud-storage-destinations.html). 
+* In the overview page for the respective category, add a link to your new destination page. For example, for cloud storage destinations, you would add a link to [this page](https://docs.adobe.com/content/help/sv-SE/experience-platform/rtcdp/destinations/destinations-cat/cloud-storage/cloud-storage-destinations.html). 
 
 -->
 
@@ -64,4 +64,4 @@ Du kan använda GitHub-webbgränssnittet eller den lokala miljön för att skapa
 
 ## Bästa praxis {#best-practices}
 
-Granska de [bästa sätten att skapa &#x200B;](/help/destinations/destination-sdk/docs-framework/authoring-best-practices.md) innan och medan du skapar måldokumentationssidan. Läs även [handledningen för skrivande av Adobe-dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) om du vill ha mer skrivande tips som Adobe dokumentationsteam använder när de skapar dokumentation.
+Granska de [bästa sätten att skapa &#x200B;](/help/destinations/destination-sdk/docs-framework/authoring-best-practices.md) innan och medan du skapar måldokumentationssidan. Läs även [handledningen för skrivande av Adobe-dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=sv-SE) om du vill ha mer skrivande tips som Adobe dokumentationsteam använder när de skapar dokumentation.

@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Målgruppsanalys
 
-Med [!UICONTROL Audience Analysis]-målet kan du utöka [!DNL Adobe Experience Platform] målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html) -rapportering.
+Med [!UICONTROL Audience Analysis]-målet kan du utöka [!DNL Adobe Experience Platform] målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=sv-SE). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html?lang=sv-SE) -rapportering.
 
 >[!AVAILABILITY]
 >
