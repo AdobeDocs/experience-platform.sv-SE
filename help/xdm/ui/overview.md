@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över schemaanvändargränssnittet
 description: Den här översikten beskriver de viktigaste funktionerna på arbetsytan Scheman i Experience Platform.
 exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '343'
 ht-degree: 2%
 
 ---
@@ -26,6 +26,10 @@ Om du använder arbetsytan för första gången kan du börja med guiden [utfors
 Vi rekommenderar också att du följer självstudiekursen [för att skapa scheman](../tutorials/create-schema-ui.md) för att skapa ett exempelschema och få en genomgång av funktionerna i [!DNL Schema Editor] i processen.
 
 ## Skapa och hantera XDM-resurser
+
+>[!NOTE]
+>
+>XDM-åtgärder är tillgängliga från lagertabellen och resursinformationsvyn (**[!UICONTROL More]**). Fullständiga åtgärder gäller endast för anpassade (innehavardefinierade) resurser. Standardresurser har begränsade alternativ. Se [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](./explore.md#xdm-resource-actions).
 
 Arbetsytan [!UICONTROL Schemas] innehåller kraftfulla verktyg för att skapa och anpassa organisationens XDM-resurser. Läs följande dokumentation om du vill veta mer om hur du skapar och redigerar varje resurstyp i användargränssnittet:
 

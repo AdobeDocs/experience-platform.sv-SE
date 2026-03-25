@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i Experience Platform användargränssnitt.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 491588dab1388755176b5e00f9d8ae3e49b7f856
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '4635'
+source-wordcount: '4680'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Den här guiden ger en översikt över hur du skapar, redigerar och hanterar XDM
 >
 >Om du vill få en genomgång av schemaskapandet kan du följa med i självstudiekursen [för att skapa scheman](../../tutorials/create-schema-ui.md) och skapa ett fullständigt exempelschema och bekanta dig med de många funktionerna i [!DNL Schema Editor].
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för en översikt över hur scheman är uppbyggda.
 
@@ -79,7 +79,7 @@ Fortsätt sedan till [definiera primärnycklar](../fields/identity.md#define-a-i
 
 >[!NOTE]
 >
->När fältet [!UICONTROL Type] har sparats i sidofältet [!UICONTROL &#x200B; Schema properties] anger det att det är ett [!UICONTROL Relational]-schema. Detta visas även i sidofältet med detaljer i vyn för schemalager.
+>När fältet [!UICONTROL Type] har sparats i sidofältet [!UICONTROL  Schema properties] anger det att det är ett [!UICONTROL Relational]-schema. Detta visas även i sidofältet med detaljer i vyn för schemalager.
 >![Schemaredigerarens arbetsyta visar en tom relationsschemastruktur med relationstypen markerad.](../../images/ui/resources/schemas/relational-empty-canvas.png)
 
 ### Överföra en DDL-fil {#upload-ddl-file}
@@ -123,7 +123,7 @@ Om du väljer Standardschematyp på den nedrullningsbara menyn Välj schematyp v
 
 ### [!BADGE Skapa scheman manuellt eller med ML-stöd i Beta]{type=Informative} {#manual-or-assisted}
 
-Mer information om hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en csv-fil finns i [handboken &#x200B;](../ml-assisted-schema-creation.md) som hjälper dig att skapa scheman. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
+Mer information om hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en csv-fil finns i [handboken ](../ml-assisted-schema-creation.md) som hjälper dig att skapa scheman. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
 
 ### Manuell schemagenerering {#manual-creation}
 
@@ -178,6 +178,12 @@ Om du vill redigera ett befintligt schema väljer du fliken **[!UICONTROL Browse
 När du har valt ett schema visas [!DNL Schema Editor] med schemats struktur på arbetsytan. Du kan nu [lägga till fältgrupper](#add-field-groups) i schemat (eller [lägga till enskilda fält](#add-individual-fields) från dessa grupper), [redigera fältvisningsnamn](#display-names) eller [redigera befintliga anpassade fältgrupper](./field-groups.md#edit) om schemat använder några.
 
 ## Fler åtgärder {#more}
+
+>[!NOTE]
+>
+>XDM-åtgärder är tillgängliga från lagertabellen och resursinformationsvyn (**[!UICONTROL More]**). Fullständiga åtgärder gäller endast för anpassade (innehavardefinierade) resurser. Standardresurser har begränsade alternativ. Se [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](../explore.md#xdm-resource-actions).
+
+Följande beskriver rubrikåtgärder för Schemaredigeraren.
 
 I Schemaredigeraren kan du även utföra snabba åtgärder för att kopiera JSON-strukturen för schemat eller ta bort schemat om det inte har aktiverats för kundprofilen i realtid eller har associerade datauppsättningar. Välj [!UICONTROL More] högst upp i vyn om du vill visa en listruta med snabbåtgärder.
 
@@ -488,6 +494,6 @@ När du har bekräftat klassändringen återställs arbetsytan och alla disposit
 
 Det här dokumentet innehåller grunderna för att skapa och redigera scheman i Experience Platform användargränssnitt. Vi rekommenderar starkt att du går igenom självstudiekursen [för att skapa scheman](../../tutorials/create-schema-ui.md) för ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper för unika användningsfall.
 
-Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
+Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Mer information om hur du hanterar scheman i [!DNL Schema Registry] API finns i [schemas slutpunktshandbok](../../api/schemas.md).

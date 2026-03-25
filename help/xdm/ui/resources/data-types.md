@@ -5,9 +5,9 @@ title: Skapa och redigera datatyper med användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i Experience Platform användargränssnitt.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1371'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Adobe Experience Platform har många standarddatatyper som kan användas för et
 
 I den här självstudiekursen beskrivs stegen för hur du skapar och redigerar anpassade datatyper i Experience Platform användargränssnitt.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för hur datatyper bidrar till XDM-scheman.
 
@@ -46,6 +46,10 @@ Här har du följande alternativ:
 - [Skapa en ny datatyp](#create)
 - [Filtrera datatyper](#filter)
 - [Välj en befintlig datatyp att redigera](#edit)
+
+>[!NOTE]
+>
+>XDM-åtgärder är tillgängliga från lagertabellen och resursinformationsvyn (**[!UICONTROL More]**). Fullständiga åtgärder gäller endast för anpassade (innehavardefinierade) resurser. Standardresurser har begränsade alternativ. Se [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](../explore.md#xdm-resource-actions).
 
 ### Skapa en ny datatyp {#create}
 
@@ -125,6 +129,6 @@ Arbetsytan uppdaterar datatypen för fältet från [!UICONTROL Object] till den 
 
 ## Nästa steg {#next-steps}
 
-I den här handboken beskrivs hur du skapar och redigerar datatyper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
+I den här handboken beskrivs hur du skapar och redigerar datatyper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Mer information om hur du hanterar datatyper med [!DNL Schema Registry]-API:t finns i [slutpunktshandboken för datatyper](../../api/data-types.md).

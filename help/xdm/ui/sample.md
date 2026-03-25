@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Generera exempeldata för ett XDM-schema i användargränssnittet
 description: Lär dig hur du genererar JSON-exempeldata baserat på ett befintligt schema i Adobe Experience Platform användargränssnitt.
 exl-id: e60eedb2-2245-42cd-b574-43caf9e3426c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '395'
+source-wordcount: '449'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,10 @@ För att kunna importera data till Adobe Experience Platform måste dataformatet
 
 För alla scheman som du definierar i Experience Platform UI kan du generera ett JSON-exempelobjekt som följer schemats struktur. Det här objektet kan fungera som en mall för alla data som hämtas till datauppsättningar som använder det aktuella schemat.
 
+>[!NOTE]
+>
+>Om du inte kan hitta åtgärder som **Ta bort** eller **Kopiera JSON-struktur** kontrollerar du att du arbetar med en anpassad (klientdefinierad) resurs och använder den på tabellradens meny eller i detaljvyn (**[!UICONTROL More]**). Åtgärdens tillgänglighet beror också på behörigheter och användningsbegränsningar. Se [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](./explore.md#xdm-resource-actions).
+
 I Experience Platform-gränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen. Gå till fliken **[!UICONTROL Browse]** och leta reda på schemat som du vill generera exempeldata för. Välj det i listan och den högra uppdateringen av spåret för att visa information om schemat. Välj **[!UICONTROL Download sample file]** härifrån.
 
 ![Fliken Bläddra på arbetsytan Scheman med ett schema markerat och hämtningsexempelfilen markerad.](../images/ui/sample/sample-data.png)
@@ -33,4 +37,4 @@ I den här guiden beskrivs hur du genererar en JSON-exempelfil från ett XDM-sch
 
 När du är redo att börja inhämta data, se självstudiekursen [Mappa en CSV-fil till XDM](../../ingestion/tutorials/map-csv/overview.md) för att lära dig hur du mappar en platt datafil (till exempel en CSV-fil) till ett XDM-schema och importerar den till Experience Platform. Du kan också upprätta en [källanslutning](../../sources/home.md) för att hämta data från en extern källa och mappa dem till XDM.
 
-Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] i gränssnittet finns i [[!UICONTROL Schemas] -arbetsytans översikt &#x200B;](./overview.md).
+Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] i gränssnittet finns i [[!UICONTROL Schemas] -arbetsytans översikt ](./overview.md).

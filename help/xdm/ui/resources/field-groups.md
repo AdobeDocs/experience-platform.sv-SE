@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i Experience Platform användargränssnitt.
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '966'
+source-wordcount: '1004'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,11 @@ En fältgrupp definierar vilka klasser den är kompatibel med, baserat på betee
 
 Adobe Experience Platform erbjuder många standardfältgrupper som täcker ett brett urval av användningsområden för marknadsföring. Men du kan också skapa och redigera egna fältgrupper för att definiera ytterligare koncept som är relaterade till din verksamhet i dina XDM-scheman. Den här guiden ger en översikt över hur du skapar, redigerar och hanterar anpassade fältgrupper för din organisation i Experience Platform användargränssnitt.
 
-## Förhandskrav {#prerequisites}
+>[!NOTE]
+>
+>XDM-åtgärder är tillgängliga från lagertabellen och resursinformationsvyn (**[!UICONTROL More]**). Fullständiga åtgärder gäller endast för anpassade (innehavardefinierade) resurser. Standardresurser har begränsade alternativ. Se [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](../explore.md#xdm-resource-actions).
+
+## Förutsättningar {#prerequisites}
 
 Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för hur fältgrupper bidrar till XDM-scheman.
 
@@ -92,6 +96,6 @@ Om samma fältgrupp redan används i andra scheman visas de nya fälten automati
 
 ## Nästa steg {#next-steps}
 
-I den här handboken beskrivs hur du skapar och redigerar fältgrupper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
+I den här handboken beskrivs hur du skapar och redigerar fältgrupper med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Mer information om hur du hanterar fältgrupper med API:t [!DNL Schema Registry] finns i [handboken om fältgruppers slutpunkter](../../api/field-groups.md).

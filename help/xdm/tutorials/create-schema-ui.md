@@ -5,9 +5,9 @@ title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '4670'
+source-wordcount: '4740'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Dialogrutan [!UICONTROL Create a schema] visas. I den här dialogrutan kan du v�
 
 ### [!BADGE Skapa scheman manuellt eller med ML-stöd i Beta]{type=Informative} {#manual-or-assisted}
 
-Om du vill lära dig hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en överförd fil kan du läsa [guiden &#x200B;](../ui/ml-assisted-schema-creation.md) för att skapa schema med maskininlärningsstöd. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
+Om du vill lära dig hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en överförd fil kan du läsa [guiden ](../ui/ml-assisted-schema-creation.md) för att skapa schema med maskininlärningsstöd. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
 
 ### Välja en basklass {#choose-a-class}
 
@@ -159,7 +159,7 @@ Schemat [!UICONTROL Loyalty Members] är avsett att samla in data som är relate
 Det kan dock finnas ett scenario där du vill inkludera ytterligare anpassade fält som inte täcks av standardfältgrupper för att uppnå dina användningsfall. Om du vill lägga till anpassade bonusfält har du två alternativ:
 
 1. Skapa en ny anpassad fältgrupp för att hämta dessa fält. Det här är den metod som kommer att beskrivas i den här självstudiekursen.
-1. Utöka standardfältgruppen [!UICONTROL Loyalty Details] med anpassade fält. Detta gör att [!UICONTROL Loyalty Details] konverteras till en anpassad fältgrupp och den ursprungliga standardfältgruppen kommer inte längre att vara tillgänglig. Mer information om hur du [!UICONTROL Schemas]lägger till anpassade fält i strukturen för standardfältgrupper[&#x200B; finns i användargränssnittshandboken för &#x200B;](../ui/resources/schemas.md#custom-fields-for-standard-groups).
+1. Utöka standardfältgruppen [!UICONTROL Loyalty Details] med anpassade fält. Detta gör att [!UICONTROL Loyalty Details] konverteras till en anpassad fältgrupp och den ursprungliga standardfältgruppen kommer inte längre att vara tillgänglig. Mer information om hur du [!UICONTROL Schemas]lägger till anpassade fält i strukturen för standardfältgrupper[ finns i användargränssnittshandboken för ](../ui/resources/schemas.md#custom-fields-for-standard-groups).
 
 Om du vill skapa en ny fältgrupp väljer du **[!UICONTROL Add]** i underavsnittet **[!UICONTROL Field groups]** som tidigare, men den här gången väljer du **[!UICONTROL Create New Field group]** i den övre delen av dialogrutan som visas. Du ombeds sedan ange ett visningsnamn och en beskrivning för den nya fältgruppen. I den här självstudiekursen ger du den nya fältgruppen namnet [!DNL Custom Loyalty Details] och väljer sedan **[!UICONTROL Add field groups]**.
 
@@ -360,6 +360,10 @@ Välj **[!UICONTROL Enable]** för att bekräfta ditt val. Om du vill kan du ava
 
 ## Fler åtgärder {#more}
 
+>[!NOTE]
+>
+>När du arbetar med XDM-resurser är åtgärder tillgängliga både från lagertabellen (radmenyn) och från resursdetaljvyn (**[!UICONTROL More]**). Om du vill få tillgång till alla funktionsmakron, inklusive **Ta bort**, **Kopiera JSON-struktur** och **Lägg till i paket**, måste du välja en anpassad (klientdefinierad) resurs. Standardresurser (som tillhandahålls av Adobe) har begränsade åtgärder. En fullständig översikt över åtgärder, begränsningar och behörigheter finns i [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](../ui/explore.md#xdm-resource-actions).
+
 I Schemaredigeraren kan du också utföra snabba åtgärder för att kopiera JSON-strukturen för schemat eller ta bort schemat. Välj [!UICONTROL More] högst upp i vyn om du vill visa en listruta med snabbåtgärder.
 
 ![Schemaredigeraren med knappen Mer markerad och de nedrullningsbara alternativen visas.](../images/tutorials/create-schema/more-actions.png)
@@ -409,7 +413,7 @@ Schemat &quot;Förmånsmedlemmar&quot; är också tillgängligt för att visas o
 
 I följande video visas hur du skapar ett enkelt schema i användargränssnittet för [!DNL Experience Platform].
 
->[!VIDEO](https://video.tv.adobe.com/v/3430224?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
 
 Följande video är tänkt att förstärka din förståelse för att arbeta med fältgrupper och klasser.
 

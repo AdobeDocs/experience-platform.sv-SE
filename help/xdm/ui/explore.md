@@ -5,9 +5,9 @@ title: Utforska schemaresurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: ca90fd3f8615e21fb4c44104c2de7679db1e1025
 workflow-type: tm+mt
-source-wordcount: '1295'
+source-wordcount: '1965'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,81 @@ Resurserna som visas i sökresultaten ordnas först efter matchningar av titel o
 
 När du har hittat resursen som du vill utforska väljer du resursens namn i listan för att visa dess struktur på arbetsytan.
 
+## Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning {#xdm-resource-actions}
+
+Använd det här avsnittet när du behöver hantera eller ta bort XDM-resurser, eller när en åtgärd (till exempel ta bort) inte är tillgänglig och du behöver förstå varför.
+
+### Var du hittar åtgärder (textbunden eller detaljsida) {#where-to-find-actions}
+
+Om du vill utföra åtgärder som att ta bort, exportera eller kopiera en resurs använder du någon av följande startpunkter:
+
+På flikarna **[!UICONTROL Browse]**, **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]** finns hanteringsåtgärder på två platser:
+
+- **Inline i tabellen**: Varje resursrad innehåller en åtgärdsmeny (till exempel **[!UICONTROL …]**) som ger direktåtkomst till tillgängliga åtgärder.
+
+![Schemalagret visar infogade åtgärder som är tillgängliga från ellipsmenyn för varje resurs.](../images/ui/explore/xdm-schema-inventory-inline-actions-menu.png)
+
+- **Resursdetaljvy**: Om du vill komma åt fullständiga åtgärder i detaljvyn måste du välja en **anpassad (innehavardefinierad)**-resurs. Standardresurser (som tillhandahålls av Adobe) har begränsade åtgärder och visar inte alternativ som Ta bort, Kopiera JSON-struktur eller Lägg till i paket. Välj en anpassad resurs i lagret för att öppna dess detaljvy och använd sedan menyn **[!UICONTROL More]** i sidhuvudet för att få tillgång till samma tillgängliga åtgärder.
+
+![Resursdetaljvyhuvudet visar Mer-menyn med tillgängliga åtgärder som Ta bort, Kopiera JSON-struktur och Hämta exempelfil.](../images/ui/explore/more-actions.png)
+
+Dessa åtgärder är konsekventa över båda startpunkterna för de resurstyper som stöds (scheman, klasser, fältgrupper och datatyper).
+
+### Tillgängliga åtgärder {#available-actions}
+
+Beroende på resurstypen och dina behörigheter kan följande åtgärder vara tillgängliga:
+
+- **[!UICONTROL Delete]** - Ta bort en anpassad resurs permanent från organisationen (när begränsningarna tillåter det). Om borttagning blockeras, se [Begränsningar](#delete-constraints).
+- **[!UICONTROL Download sample file]** - Generera en exempeldatafil baserat på resursstrukturen. Steg för steg: [Generera XDM-exempeldata](./sample.md).
+- **[!UICONTROL Copy JSON structure]** - Kopiera resursdefinitionen i JSON-format för återanvändning, export eller inspektion. Steg för steg: [Exportera XDM-scheman](./export.md).
+- **[!UICONTROL Add to package]** - Inkludera resursen i ett sandlådepaket för export eller import över sandlådor. Steg för steg: [Exportera objekt till ett paket](../../sandboxes/ui/sandbox-tooling.md#export-objects).
+
+Följande gäller för olika resurstyper:
+
+- Alla åtgärder ovan kan vara tillgängliga för **anpassade (innehavardefinierade)**-scheman, klasser, fältgrupper och datatyper.
+- För klasser, fältgrupper och datatyper i **standard (Adobe-definierad)**:
+   - Endast **[!UICONTROL Download sample file]** är tillgängligt.
+   - **Delete**, **Kopiera JSON-struktur** och **Lägg till i paket** är inte tillgängliga.
+
+### Ta bort beteende {#delete-behavior}
+
+Använd åtgärden **[!UICONTROL Delete]** när du vill ta bort en anpassad resurs som inte längre behövs.
+
+>[!IMPORTANT]
+>
+> Om du tar bort en resurs permanent tas den bort från organisationen och kan inte ångras. Vissa resurser kan inte tas bort på grund av användning, behörigheter eller systembegränsningar.
+
+Så här tar du bort en resurs:
+
+1. Leta reda på resursen i tabellen eller öppna dess detaljvy.
+2. Välj åtgärdsmenyn (**[!UICONTROL …]** eller **[!UICONTROL More]**).
+3. Välj **[!UICONTROL Delete]**.
+4. Bekräfta åtgärden i dialogrutan genom att välja **[!UICONTROL Delete]** igen.
+
+Resursen tas bort permanent från organisationen när den har bekräftats.
+
+Om det inte går att ta bort en resurs visas alternativet inaktiverat med ett verktygstips som förklarar varför åtgärden inte kan utföras.
+
+![Schemalagret med ett inaktiverat verktygstips för att ta bort infogad åtgärd förklarar begränsningen.](../images/ui/explore/xdm-schema-inventory-disabled-delete-tooltip.png)
+
+### Begränsningar (datauppsättning, profil, RBAC, klientorganisation kontra global) {#delete-constraints}
+
+Om en åtgärd som **[!UICONTROL Delete]** inte är tillgänglig eller inaktiverad beror det vanligtvis på något av följande:
+
+- **Behörigheter (RBAC)**: Du måste ha den behörighet som krävs (till exempel **[!UICONTROL Manage Schemas]**) för att kunna utföra hanteringsåtgärder. Om behörigheter saknas visas funktionsmakron som inaktiverade med verktygstips. Mer information om hur behörigheter konfigureras finns i [översikt över användargränssnittet för åtkomstkontroll](../../access-control/ui/overview.md).
+
+- **Datauppsättningsassociation**: Det går inte att ta bort resurser som används av en eller flera datauppsättningar (till exempel scheman som är kopplade till datauppsättningar). Information om hur du identifierar och tar bort datauppsättningsberoenden finns i [Ta bort en datauppsättning](../../catalog/datasets/user-guide.md#delete).
+
+- **Profilaktivering**: Det går inte att ta bort scheman som har aktiverats för kundprofilen i realtid. Mer information om hur profilaktiveringen påverkar ditt schema finns i [Planering för kundprofilaktivering i realtid](../schema/profile-enablement-planning.md).
+
+- **Klientorganisationen kontra globala resurser**: Klientdefinierade (anpassade) resurser kan tas bort (beroende på begränsningar), medan standardklasser, fältgrupper och datatyper (som tillhandahålls av Adobe) inte kan tas bort.
+
+Dessa begränsningar återspeglas direkt i användargränssnittet. När en åtgärd inte är tillgänglig visas den som inaktiverad och innehåller ett verktygstips som förklarar den specifika begränsningen.
+
+Om du inte kan ta bort en resurs går du igenom villkoren ovan för att avgöra om du behöver uppdatera behörigheter, ta bort beroenden eller justera datamodellen.
+
+Ytterligare arbetsflöden för schemaredigering på arbetsytan finns i [Skapa och redigera scheman i gränssnittet](./resources/schemas.md).
+
 ## Utforska en XDM-resurs på arbetsytan {#explore}
 
 När du har valt en resurs öppnas dess struktur på arbetsytan.
@@ -73,7 +148,7 @@ Mer information finns i [Lägg till anpassade fält i standardfältgrupper](./re
 
 Vissa fältnamn har ett understreck som `_repo` och `_id`. Dessa representerar platshållare för fält som systemet automatiskt genererar och tilldelar när data hämtas.
 
-Därför bör de flesta av dessa fält uteslutas från datastrukturen vid import till Experience Platform. Det huvudsakliga undantaget för den här regeln är fältet [`_{TENANT_ID}` &#x200B;](../api/getting-started.md#know-your-tenant_id), som alla XDM-fält som skapats under din organisation måste namnges under.
+Därför bör de flesta av dessa fält uteslutas från datastrukturen vid import till Experience Platform. Det huvudsakliga undantaget för den här regeln är fältet [`_{TENANT_ID}` ](../api/getting-started.md#know-your-tenant_id), som alla XDM-fält som skapats under din organisation måste namnges under.
 
 ### Datatyper {#data-types}
 

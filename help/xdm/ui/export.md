@@ -4,9 +4,9 @@ title: Exportera XDM-scheman i användargränssnittet
 description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller organisation i Adobe Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '690'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,13 @@ För att tillgodose detta behov kan du med arbetsytan [!UICONTROL Schemas] i Ado
 >
 >Du kan också använda API:t för schemafält för att exportera andra resurser utöver scheman, inklusive klasser, schemafältgrupper och datatyper. Mer information finns i [exportslutpunktshandboken](../api/export.md).
 
-## Förhandskrav
+## Förutsättningar
 
 I Experience Platform UI kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se guiden [Komma igång med API:t för schemaregister](../api/getting-started.md) för viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
+
+>[!NOTE]
+>
+>Om du inte kan hitta åtgärder som **Ta bort** eller **Kopiera JSON-struktur** kontrollerar du att du arbetar med en anpassad (klientdefinierad) resurs och använder den på tabellradens meny eller i detaljvyn (**[!UICONTROL More]**). Åtgärdens tillgänglighet beror också på behörigheter och användningsbegränsningar. Se [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](./explore.md#xdm-resource-actions).
 
 ## Generera en exportnyttolast {#generate-export-payload}
 
@@ -230,4 +234,4 @@ När du har kopierat export-JSON för schemat kan du använda det som nyttolast 
 
 ## Nästa steg
 
-Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i användargränssnittet för [!UICONTROL Schemas] finns i [[!UICONTROL Schemas] användargränssnittsöversikt &#x200B;](./overview.md).
+Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i användargränssnittet för [!UICONTROL Schemas] finns i [[!UICONTROL Schemas] användargränssnittsöversikt ](./overview.md).

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig skapa och redigera klasser i Experience Platform användargränssnitt.
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: a05ee385694b028b513e2fa632079e665ba815bb
+source-git-commit: 67ae12b0a410d50c25f4e044b8430b70249670eb
 workflow-type: tm+mt
-source-wordcount: '1562'
+source-wordcount: '1600'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,11 @@ Adobe tillhandahåller flera standardklasser (&quot;core&quot;) för Experience 
 
 Det här dokumentet innehåller en översikt över hur du skapar, redigerar och hanterar anpassade klasser i Experience Platform-gränssnittet.
 
-## Förhandskrav {#prerequisites}
+>[!NOTE]
+>
+>XDM-åtgärder är tillgängliga från lagertabellen och resursinformationsvyn (**[!UICONTROL More]**). Fullständiga åtgärder gäller endast för anpassade (innehavardefinierade) resurser. Standardresurser har begränsade alternativ. Se [Hantera scheman, klasser, fältgrupper och datatyper: åtgärder och borttagning](../explore.md#xdm-resource-actions).
+
+## Förutsättningar {#prerequisites}
 
 Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser bidrar till XDM-scheman.
 
@@ -156,6 +160,6 @@ Mer information finns i guiden om [att skapa och redigera scheman](./schemas.md#
 
 ## Nästa steg {#next-steps}
 
-I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] &#x200B;](../overview.md).
+I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet i Experience Platform. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
 Om du vill lära dig hur du hanterar klasser med API:t för schemaregister läser du [klassernas slutpunktshandbok](../../api/classes.md).
