@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
 exl-id: 66b948fd-caa0-4e5e-83dd-3b15b77c09fa
-source-git-commit: 30b66420e9cee6b4d85cf41a31e9595d5a240fda
+source-git-commit: 4f4761024a658d284f3eacdc2230e868c6ee53fb
 workflow-type: tm+mt
-source-wordcount: '1369'
-ht-degree: 31%
+source-wordcount: '1747'
+ht-degree: 20%
 
 ---
 
@@ -36,7 +36,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 
 ## Hantering av avancerad datalivscykel {#advanced-data-lifecycle-management}
 
-Experience Platform har en rad funktioner för datahygien som gör att du kan hantera lagrade data genom att ta bort konsumentposter och datauppsättningar programmatiskt. Du kan hantera dina datalager effektivt med hjälp av arbetsytan Datalängd i användargränssnittet eller anrop till API:t för datahygien. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationspolicyer anser det nödvändigt.
+Experience Platform har en rad olika funktioner för datahygien som hjälper dig att hantera lagrade data genom att programmatiskt ta bort konsumentposter och datauppsättningar. Du kan hantera dina datalager effektivt med hjälp av arbetsytan Datalängd i användargränssnittet eller anrop till API:t för datahygien. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationspolicyer anser det nödvändigt.
 
 | Funktion | Beskrivning |
 | --- | --- |
@@ -48,13 +48,13 @@ Mer information finns i [översikt över livscykelhantering för avancerade data
 
 ## Agent Orchestrator {#agent-orchestrator}
 
-Med Agent Orchestrator kan ni bygga och driftsätta AI-baserade agenter som kan automatisera arbetsflöden och interagera med kunder över flera kanaler.
+Använd Agent Orchestrator för att bygga och driftsätta AI-baserade agenter som automatiserar arbetsflöden och interagerar med kunder i flera kanaler.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
+| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
 
 {style="table-layout:auto"}
 
@@ -66,7 +66,7 @@ En datastream representerar konfigurationen på serversidan när Adobe Experienc
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Allmän tillgänglighet för dynamiska datastream-konfigurationer | Dynamiska datastream-konfigurationer är nu allmänt tillgängliga. Med dynamiska datastream-konfigurationer kan du definiera användarkonfigurerbara regeluppsättningar för varje tjänst som är aktiverad för din datastream, vilket avgör vilken Experience Cloud-lösning som ska ta emot varje typ av data. Mer information finns i [guiden för dynamiska datastream-konfigurationer](../../datastreams/configure-dynamic-datastream.md). |
+| Allmän tillgänglighet för dynamiska datastream-konfigurationer | Dynamiska datastream-konfigurationer är nu allmänt tillgängliga. Med dynamiska datastream-konfigurationer kan du definiera användarkonfigurerbara regeluppsättningar för varje tjänst som är aktiverad för din datastream, som avgör vilken Experience Cloud-lösning som ska ta emot varje typ av data. Mer information finns i [guiden för dynamiska datastream-konfigurationer](../../datastreams/configure-dynamic-datastream.md). |
 
 {style="table-layout:auto"}
 
@@ -74,17 +74,20 @@ Mer information finns i [datastreams-översikten](../../datastreams/overview.md)
 
 ## Mål {#destinations}
 
-[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+[!DNL Destinations] är färdiga integreringar med målplattformar. Använd destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
 **Nya eller uppdaterade destinationer**
 
 | Mål | Beskrivning |
 | --- | --- |
+| [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md) - regionväljare | Nu är det enklare att hitta regionen med den nya sökbara listrutan som kombinerar sök- och listruta i en enda kontroll. Uppdateringen lanseras i slutet av mars. |
+| Ny tabellstruktur för [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md)-mål | Tabeller som delas med ditt Snowflake-konto har nu en ny struktur som innehåller separata kolumner för målgruppsnamn och målgruppernas ursprung. Den nya tabellstrukturen gäller för alla nya målanslutningar som ställs in framåt. För nya anslutningar som du skapar skapas båda tabellstrukturerna: den nya strukturen har prefixet V2 och den gamla strukturen behålls till slutet av juni 2026, varefter den kommer att bli inaktuell. Läs mer i avsnittet [Exporterade data](../../destinations/catalog/warehouses/snowflake-batch.md#exported-data) i dokumentationen för Snowflake Batch. Uppdateringen lanseras i slutet av mars. |
 | [Adobe Advertising DSP](../../destinations/catalog/advertising/adobe-advertising-cloud-connection.md)-anslutning | Den nya Adobe Advertising DSP-anslutningen har samma funktionalitet som den gamla anslutningen plus stöd för ytterligare identiteter. Med den nya kopplingen kan du också exportera cookie-baserade identiteter till Adobe Advertising DSP. |
 | [FreeWheel](../../destinations/catalog/advertising/freewheel.md)-anslutning | Skicka [!DNL Real-Time CDP] målgrupper till FreeWheel som dagliga batchfiler så att du kan rikta in dem i FreeWheel-erbjudanden och -kampanjer för CTV, video och displayen. Kontakta ditt Adobe-kontoteam för att få åtkomst. |
 | Stöd för externa målgrupper för [Trade Desk CRM](../../destinations/catalog/advertising/tradedesk-emails.md) och [Pinterest](../../destinations/catalog/advertising/pinterest.md) | Du kan nu aktivera målgrupper från ursprungsland till inte bara segmenteringstjänsten, till Trade Desk CRM, Criteo och Pinterest, inklusive anpassade uppladdningsmålgrupper (som importerats från CSV), lookalike-målgrupper, federerade målgrupper och målgrupper som skapats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer]. Uppdateringen lanseras i slutet av mars. Mer information finns i avsnittet [målgrupper](../../destinations/catalog/advertising/criteo.md#supported-audiences) som stöds på katalogsidan för varje mål. |
 | Ökad gräns för anpassad uppladdning av mottagare | Du kan nu aktivera upp till 20 anpassade uppladdningsmålgrupper per målinstans. Tidigare var gränsen 10. Mer information finns i [målskyddsjournalerna](../../destinations/guardrails.md#batch-file-based-activation). |
 | [Exportera filen nu](../../destinations/ui/export-file-now.md) och [API för ad hoc-aktivering](../../destinations/api/ad-hoc-activation-api.md) har stöd för externa målgrupper | Nu kan du använda Export file now (UI) och ad hoc-aktiverings-API:t med externa målgrupper (som anpassad överföring, lookalike, federerad och målgrupper från andra Experience Platform-program) när du aktiverar batchfilbaserade mål. Uppdateringen lanseras i slutet av mars. |
+| [HTTP API](../../destinations/catalog/streaming/http-destination.md) -mål med OAuth 2 och mTLS | Nu kan du skapa och autentisera HTTP API-mål som använder OAuth 2 när autentiseringsslutpunkten kräver gemensam TLS (mTLS). Token retrieval under målkonfigurationen har nu stöd för mTLS. Uppdateringen lanseras i slutet av mars. |
 
 {style="table-layout:auto"}
 
@@ -93,6 +96,7 @@ Mer information finns i [datastreams-översikten](../../datastreams/overview.md)
 | Korrigera | Beskrivning |
 | --- | --- |
 | Telefonnummer för [TikTok](../../destinations/catalog/social/tiktok.md)-anslutning visas | Ett problem har korrigerats där en felkonfiguration på målkortet innebar att identiteter som är avaktiverade av telefonnummer inte aktiverades för TikTok. Om du vill använda den här korrigeringen skapar du ett nytt aktiveringsflöde eller tar bort telefonnummermappningen från ditt befintliga flöde, sparar den och lägger sedan tillbaka den igen. |
+| [Verifiering av konto-ID för Snowflake Streaming](../../destinations/catalog/warehouses/snowflake.md) och [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md) | En validerare för reguljära uttryck har lagts till i steget för konto-ID. När du anger ditt ID valideras det nu för att säkerställa att organisations-ID och konto-ID har rätt format (avgränsat med en punkt). Uppdateringen lanseras i slutet av mars. |
 
 {style="table-layout:auto"}
 
@@ -110,33 +114,32 @@ Mer information finns i [XDM-översikten](../../xdm/home.md).
 
 ## Kundprofil i realtid {#real-time-customer-profile}
 
-Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med kundprofilen i realtid får ni en fullständig bild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Använd Profil för att konsolidera era kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Händelser | Du kan nu ange uppslagsperiod för händelser när du bläddrar bland dina profiler. Detta gör att du kan se de händelser som profilen är kopplad till under den angivna tidsperioden. Mer information finns i [Användargränssnittsguiden för profil](/help/profile/ui/user-guide.md#events). |
+| Händelser | Du kan nu ange uppslagsperiod för händelser när du bläddrar bland dina profiler. Detta gör att du kan se de händelser som profilen är kopplad till under den angivna tidsperioden. Mer information finns i [Användargränssnittsguiden för profil](../../profile/ui/user-guide.md#events). |
 
 {style="table-layout:auto"}
 
 Mer information finns i [[!DNL Real-Time Customer Profile] översikten](../../profile/home.md).
 
-<!-- 
-## Run and Operate {#run-and-operate}
+## Kör och använd {#run-and-operate}
 
-Inspect, troubleshoot, and optimize your Experience Platform implementations with the Run and Operate tools. Gain visibility into scheduled batch activations, identify configuration issues, and improve system reliability.
+Inspektera, felsök och optimera era era Experience Platform-implementeringar med verktygen Kör och Kör. Få synlighet i schemalagda batchaktiveringar, identifiera konfigurationsproblem och förbättra systemets tillförlitlighet.
 
-**New or updated features**
+**Nya eller uppdaterade funktioner**
 
-| Feature | Description |
+| Funktion | Beskrivning |
 | --- | --- |
-| [Job Schedules](../../run-and-operate/job-schedules.md) general availability | [!DNL Job Schedules] provides a unified view of all scheduled batch processing jobs across your data pipeline, from ingestion through destination activation. Inspect execution status, identify scheduling conflicts, and diagnose configuration issues before they impact your business operations. |
-| [Health Checks](../../run-and-operate/health-checks.md) general availability | Poor schema and identity configurations lead to significant downstream issues, including incorrect profile creation, failed segment qualification, and inaccurate activation. <br>Health checks shift your approach from reactive troubleshooting to proactive, preventative maintenance. Health checks are always-on scans of your schemas and identities used in your sandbox and provide a summary of issues that you can use to explore and troubleshoot. |
+| [Jobbscheman](../../run-and-operate/job-schedules.md) - allmän tillgänglighet | [!DNL Job Schedules] ger en enhetlig vy över alla schemalagda batchbearbetningsjobb i hela dataredjan, från inmatning till målaktivering. Kontrollera körningsstatus, identifiera schemaläggningskonflikter och diagnostisera konfigurationsproblem innan de påverkar din affärsverksamhet. |
+| [Hälsokontroller](../../run-and-operate/health-checks.md) allmän tillgänglighet | Dåliga schema- och identitetskonfigurationer leder till betydande problem längre fram i kedjan, bland annat felaktigt skapande av profiler, misslyckade segmentkvalificeringar och felaktig aktivering. <br>Hälsokontroller förändrar ditt tillvägagångssätt från reaktiv felsökning till proaktivt, förebyggande underhåll. Hälsokontroller är alltid inskannade av dina scheman och identiteter som används i din sandlåda och ger en sammanfattning av problem som du kan använda för att utforska och felsöka. |
 
 {style="table-layout:auto"}
 
-For more information, read the [Run and Operate overview](../run-and-operate/overview.md), [Inspect job schedules](../run-and-operate/job-schedules.md), and the [Platform UI guide](../landing/ui-guide.md). -->
+Mer information finns i översikten [Kör och använd](../../run-and-operate/overview.md), [Granska jobbscheman](../../run-and-operate/job-schedules.md) och [Plattformens gränssnittsguide](../../landing/ui-guide.md).
 
 ## Segmenteringstjänst {#segmentation-service}
 
@@ -146,14 +149,14 @@ For more information, read the [Run and Operate overview](../run-and-operate/ove
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Inmatningstyp | Nu kan du visa attributens insatstyp. På så sätt kan ni känna till informationens ursprung, så att ni kan skapa bättre målgrupper. Mer information om den här funktionen finns i [guiden för segmentbyggaren](/help/segmentation/ui/segment-builder.md). |
-| Sammanfattningsdata | Nu kan du visa sammanfattningsdata för dina attribut för konto- och personbaserade målgrupper. Mer information om den här funktionen finns i [Audience Builder-handboken](/help/rtcdp/segmentation/audience-builder.md) för kontot. Mer information om den här funktionen hos personbaserade målgrupper finns i [guiden för segmentbyggaren](/help/segmentation/ui/segment-builder.md). |
+| Inmatningstyp | Nu kan du visa attributens insatstyp. På så sätt kan ni känna till informationens ursprung, så att ni kan skapa bättre målgrupper. Mer information om den här funktionen finns i [guiden för segmentbyggaren](../../segmentation/ui/segment-builder.md). |
+| Sammanfattningsdata | Nu kan du visa sammanfattningsdata för dina attribut för konto- och personbaserade målgrupper. Mer information om den här funktionen finns i [Audience Builder-handboken](../../rtcdp/segmentation/audience-builder.md) för kontot. Mer information om den här funktionen hos personbaserade målgrupper finns i [guiden för segmentbyggaren](../../segmentation/ui/segment-builder.md). |
 
 Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
-## Källor
+## Källor {#sources}
 
-Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Använd de här källanslutningarna för att autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tidpunkter för intag och hantera dataöverföringshastighet.
 
 **Nya eller uppdaterade källor**
 
@@ -167,19 +170,3 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 {style="table-layout:auto"}
 
 Mer information finns i [översikten över källor](../../sources/home.md).
-
-<!--
-
-NOTE FOR VLAD, CRITEO WAS REMOVED FROM EXTERNAL AUDIENCE SUPPORT
-
-| Destination | Description |
-| --- | --- |
-| [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md) region selector | You can now find your region more easily with the new searchable dropdown, which combines search and dropdown into one control. |
-| New table structure for [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md) destinations | Tables shared into your Snowflake account now have a new structure which includes separate audience name and audience origin columns. The new table structure applies to all new destination connections set up moving forward. For any new connections that you set up, an old format and new format table are created. The old table structure will be kept for another three months before being deprecated. Read more in the [Exported data](../../destinations/catalog/warehouses/snowflake-batch.md#exported-data) section of the Snowflake Batch documentation. |
-| [HTTP API](../../destinations/catalog/streaming/http-destination.md) destinations with OAuth 2 and mTLS | You can now create and authenticate HTTP API destinations that use OAuth 2 when the authentication endpoint requires mutual TLS (mTLS); token retrieval during destination setup now supports mTLS. |
-
-| Fix | Description |
-| --- | --- |
-| [Snowflake Streaming](../../destinations/catalog/warehouses/snowflake.md) and [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md) account ID validation | A regular expression validator has been added to the Account ID step. When you enter your ID, it is now validated to ensure organization ID and account ID are in the correct format (separated by a dot). |
-
--->
