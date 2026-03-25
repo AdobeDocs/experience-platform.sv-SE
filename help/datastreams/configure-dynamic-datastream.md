@@ -1,28 +1,21 @@
 ---
 title: Skapa dynamiska dataströmskonfigurationer
 description: Lär dig hur du skapar dynamiska datastream-konfigurationer för att dirigera data till olika Experience Cloud-tjänster, baserat på regler.
-hide: true
-hidefromtoc: true
-badge: label="Beta" type="Informative"
 exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
-source-git-commit: 8ce5b6718861d01731b9aab9f81645f2aeb2970f
+source-git-commit: 30b66420e9cee6b4d85cf41a31e9595d5a240fda
 workflow-type: tm+mt
-source-wordcount: '1137'
-ht-degree: 0%
+source-wordcount: '1098'
+ht-degree: 1%
 
 ---
 
 # Skapa dynamiska dataströmskonfigurationer
 
->[!AVAILABILITY]
->
->* Alternativet att definiera dynamiska datastream-konfigurationer finns för närvarande i Beta och är tillgängligt för ett begränsat antal kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. Dokumentationen och funktionaliteten kan komma att ändras.
-
 Som standard skickar Experience Platform Edge Network alla händelser som når en datastream till alla Experience Cloud [tjänster](configure.md#add-services) som du har aktiverat för dina datastreams. Det här kanske inte alltid är det perfekta arbetsflödet för dig, beroende på hur du använder det.
 
 Dynamiska datastream-konfigurationer åtgärdar detta genom användarkonfigurerbara regeluppsättningar som du definierar för varje tjänst som är aktiverad för din datastream, som anger vilken Experience Cloud-lösning som ska ta emot varje typ av data.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill skapa en dynamisk konfiguration för din datastream måste du uppfylla två villkor:
 
@@ -31,7 +24,7 @@ Om du vill skapa en dynamisk konfiguration för din datastream måste du uppfyll
 
 När du har skapat ett datastam och lagt till en Experience Cloud-tjänst kan du [skapa en dynamisk konfiguration](#create-dynamic-configuration).
 
-## Guardrails {#guardrails}
+## Skyddsräcken {#guardrails}
 
 Dynamiska datastream-konfigurationer har specifika gränser och prestandabegränsningar för att säkerställa optimala systemprestanda och effektiv databehandling. Följande skyddsutkast gäller när dynamiska datastream-regler konfigureras:
 
@@ -65,7 +58,7 @@ När du har [skapat en datastream](configure.md) och [lagt till en tjänst](conf
 
    ![Bild av användargränssnittet för datastreams som visar de tjänster som lagts till i ett datastream.](assets/configure-dynamic-datastream/select-service.png)
 
-1. Välj **[!UICONTROL Save and Edit Dynamic Configuration]** på sidan **[!UICONTROL Configure]**.
+1. Välj **[!UICONTROL Configure]** på sidan **[!UICONTROL Save and Edit Dynamic Configuration]**.
 
    ![Bild av användargränssnittet för datastreams som visar konfigurationssidan för datastream.](assets/configure-dynamic-datastream/save-and-edit.png)
 

@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8c8b3b223c67dd6e9a00f9cf297f51fd09f3227f
+source-git-commit: 30b66420e9cee6b4d85cf41a31e9595d5a240fda
 workflow-type: tm+mt
-source-wordcount: '1266'
-ht-degree: 34%
+source-wordcount: '1369'
+ht-degree: 31%
 
 ---
 
@@ -27,6 +27,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 
 - [Hantering av avancerad datalivscykel](#advanced-data-lifecycle-management)
 - [Agent Orchestrator](#agent-orchestrator)
+- [Dataströmmar](#datastreams)
 - [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Kundprofil i realtid](#real-time-customer-profile)
@@ -53,11 +54,23 @@ Med Agent Orchestrator kan ni bygga och driftsätta AI-baserade agenter som kan 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
+| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
 
 {style="table-layout:auto"}
 
 Mer information finns i [dokumentationen om Agent Orchestrator](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator).
+
+## Dataströmmar {#datastreams}
+
+En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras och Adobe Experience Platform Edge Network Server API. Datastream-konfigurationskommandot i SDK:n hanterar alla tjänster som en klient interagerar med.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Allmän tillgänglighet för dynamiska datastream-konfigurationer | Dynamiska datastream-konfigurationer är nu allmänt tillgängliga. Med dynamiska datastream-konfigurationer kan du definiera användarkonfigurerbara regeluppsättningar för varje tjänst som är aktiverad för din datastream, vilket avgör vilken Experience Cloud-lösning som ska ta emot varje typ av data. Mer information finns i [guiden för dynamiska datastream-konfigurationer](../../datastreams/configure-dynamic-datastream.md). |
+
+{style="table-layout:auto"}
+
+Mer information finns i [datastreams-översikten](../../datastreams/overview.md).
 
 ## Mål {#destinations}
 
