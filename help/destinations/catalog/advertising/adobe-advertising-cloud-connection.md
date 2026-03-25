@@ -3,9 +3,9 @@ title: Adobe Advertising DSP
 description: Lär dig hur du delar autentiserade och oautentiserade förstahandsmålgrupper med Adobe Advertising Demand-Side Platform (DSP) med hjälp av flera identitetstyper.
 feature: Destinations
 exl-id: 0ff80d38-993f-4609-bf2a-01a3e6cfe10b
-source-git-commit: 8d9cf177b306350d232ec8918376211a098f396f
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1469'
 ht-degree: 0%
 
 ---
@@ -56,11 +56,11 @@ Annonsörer kan dela segment antingen med autentiserade förstapartidentifierare
 
       * Inkludera värdet `IDFA` i en IdentityMap-kolumn för varje IDFA.
 
-* Experience Cloud organisations-ID för Experience Platform-kontot. Du hittar ditt ID på din Adobe Real-Time Customer Data Platform-användarprofilsida (Real-Time CDP).
+* Experience Cloud organisations-ID för Experience Platform-kontot. Du kan hitta ditt ID på din profilsida för Adobe [!DNL Real-Time Customer Data Platform] ([!DNL Real-Time CDP]).
 
-* En [Real-Time CDP-källa i DSP](https://experienceleague.adobe.com/sv/docs/advertising/dsp/audiences/sources/source-manage) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
+* En [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
 
-* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [Real-Time CDP-källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/sv/docs/advertising/dsp/audiences/sources/source-manage). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda den i Experience Platform för att skapa en målanslutning till Advertising DSP-målet, vilket förklaras nedan.
+* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [[!DNL Real-Time CDP] källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda den i Experience Platform för att skapa en målanslutning till Advertising DSP-målet, vilket förklaras nedan.
 
 ### Konfigurera ID-synkronisering för delning av cookies {#cookie-sync}
 
@@ -72,7 +72,7 @@ Om du använder [!DNL Experience Platform Web SDK] aktiverar du synkronisering a
 
 **Aktivera synkronisering av tredjeparts-ID med[!DNL Experience Cloud ID Service]**
 
-Om du använder [!DNL Experience Platform]-taggar med [!DNL Experience Cloud ID Service] konfigurerar du synkroniseringen av tredjeparts-ID med [Experience Cloud ID-tjänsttillägget](/help/tags/extensions/client/id-service/overview.md). Detta gör att den matchande Adobe Advertising-cookie för det angivna ECID:t är tillgänglig när du aktiverar målgruppen från Real-Time CDP.
+Om du använder [!DNL Experience Platform]-taggar med [!DNL Experience Cloud ID Service] konfigurerar du synkroniseringen av tredjeparts-ID med [Experience Cloud ID-tjänsttillägget](/help/tags/extensions/client/id-service/overview.md). Detta gör att den matchande Adobe Advertising-cookien för angivet ECID är tillgänglig när du aktiverar målgruppen från [!DNL Real-Time CDP].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -95,7 +95,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -106,7 +106,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -133,7 +133,7 @@ Om du vill ansluta till målet följer du instruktionerna för att [skapa en må
 
 Om du vill ansluta till målet anger du följande parameter i avsnittet [!UICONTROL Connection type] och väljer sedan **[!UICONTROL Connect to destination]**:
 
-* **[!UICONTROL Account or Advertiser Key]**: Den här [!UICONTROL Source Key] genereras när en [Real-Time CDP-källa skapas i DSP användargränssnitt](https://experienceleague.adobe.com/sv/docs/advertising/dsp/audiences/sources/source-manage). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
+* **[!UICONTROL Account or Advertiser Key]**: [!UICONTROL Source Key] genereras när en [[!DNL Real-Time CDP] källa skapas i DSP-användargränssnittet](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
 
 ![Skärmbild av avsnittet Anslutningstyp som visar fältet Konto eller Advertiser-nyckel.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 
@@ -158,7 +158,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >id="platform_destinations_required_mappings_adcloud_dsp"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig: ECID och [!DNL adcloud] cookie. När du aktiverar data till Adobe Advertising DSP måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/adobe-advertising-cloud-connection#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/adobe-advertising-cloud-connection#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 >[!IMPORTANT]
 >
@@ -202,7 +202,7 @@ Kontrollera följande om du vill verifiera att målgruppsdata delats med Adobe A
 
 * I DSP är målgruppen tillgänglig när du skapar eller redigerar en målgrupp från **[!UICONTROL Audiences]** > **[!UICONTROL All Audiences]** eller från avsnittet **[!UICONTROL Audience Targeting]** i placeringsinställningarna. Publiken ska vara synlig på fliken [!UICONTROL Adobe Segments] under mappen [!UICONTROL Real-Time CDP].
 
-![Skärmbild av DSP Audiences-gränssnittet som visar en Real-Time CDP-mapp med importerade målgruppssegment som listas under fliken Adobe-segment.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
+![Skärmbild av DSP Audiences-gränssnittet som visar en [!DNL Real-Time CDP]-mapp med importerade målgruppssegment som listas under fliken Adobe-segment.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

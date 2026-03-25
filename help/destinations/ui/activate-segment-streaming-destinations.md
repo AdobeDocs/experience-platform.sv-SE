@@ -3,9 +3,9 @@ title: Aktivera målgruppsdata för direktuppspelningsmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att mappa dem till direktuppspelningsmål.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1124'
+source-wordcount: '1115'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform direktuppspelningsmål.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i [!DNL Adobe Experience Platform] direktuppspelningsmål.
 
 ## Förutsättningar {#prerequisites}
 
@@ -102,9 +102,9 @@ Vissa målgruppsmål för direktuppspelning kräver att du väljer källattribut
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
 >title="Använd omformning"
->abstract="Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
+>abstract="Markera det här alternativet om du vill att [!DNL Adobe Experience Platform] automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
 
-När du mappar ohash-kodade källattribut till målattribut som målet förväntar ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), kontrollerar du alternativet **Använd omformning** så att Adobe Experience Platform automatiskt hash-kodar källattributen vid aktiveringen.
+När du mappar ohash-kodade källattribut till målattribut som målet förväntar ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`) kontrollerar du alternativet **Använd omformning** så att [!DNL Adobe Experience Platform] automatiskt hash-kodar källattributen vid aktiveringen.
 
 ![Använd omformningskontroll markerat i steget Identitetsmappning.](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
@@ -172,5 +172,5 @@ For [!DNL Facebook Custom Audience], a successful activation means that a [!DNL 
 
 >[!TIP]
 >
->The integration between Adobe Experience Platform and [!DNL Facebook] supports historical audience backfills. All historical audience qualifications are sent to [!DNL Facebook] when you activate the audiences to the destination.
+>The integration between [!DNL Adobe Experience Platform] and [!DNL Facebook] supports historical audience backfills. All historical audience qualifications are sent to [!DNL Facebook] when you activate the audiences to the destination.
 -->
