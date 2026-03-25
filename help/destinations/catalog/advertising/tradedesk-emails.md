@@ -3,9 +3,9 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: b02e746ba0b8a75699510b37937cb57e7eaefcca
 workflow-type: tm+mt
-source-wordcount: '1797'
+source-wordcount: '1800'
 ht-degree: 0%
 
 ---
@@ -73,11 +73,9 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
-
-
 
 Målgrupper som stöds av olika typer av målgruppsdata:
 
@@ -106,7 +104,6 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
       * Perioden (`.`) tecken (ASCII-kod 46). Du kan till exempel normalisera &quot;jane.doe@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
      * Plustecknet (`+`) (ASCII-kod 43) och alla efterföljande tecken. Till exempel normalisera &quot;janedoe+home@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
   
-
 ## Normalisering av telefonnummer och krav på hashning {#phone-hashing}
 
 Det här behöver du veta om att överföra telefonnummer:
@@ -166,7 +163,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
