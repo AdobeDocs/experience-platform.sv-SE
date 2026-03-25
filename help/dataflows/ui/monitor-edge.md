@@ -19,7 +19,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 * [Datastreams](../../datastreams/overview.md): Med datastreams kan du ansluta Experience Platform Edge Network till din datamängd.
 * [Kapacitet](../../landing/license-usage-and-guardrails/capacity.md): I Experience Platform kan du få reda på om din organisation har överskridit några av dina skyddsprofiler och du får information om hur du åtgärdar dessa problem.
-* [Edge-segmentering](../../segmentation/methods/edge-segmentation.md): Edge-segmentering är möjligheten att omedelbart utvärdera segmentdefinitioner i Adobe Experience Platform [ vid kanten](../../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sidpersonalisering.
+* [Edge-segmentering](../../segmentation/methods/edge-segmentation.md): Edge-segmentering är möjligheten att omedelbart utvärdera segmentdefinitioner i Adobe Experience Platform [&#x200B; vid kanten](../../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sidpersonalisering.
 
 ## Åtkomst {#access}
 
