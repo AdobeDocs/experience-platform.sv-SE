@@ -1,11 +1,11 @@
 ---
 title: (API) Oracle Eloqua-anslutning
-description: (API) Oracle Eloqua-destinationen gör att du kan exportera dina kontodata och aktivera dem i Oracle Eloqua för dina affärsbehov.
+description: Använd (API) Oracle Eloqua-destinationen för att exportera dina kontodata och aktivera dem i Oracle Eloqua för dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2123'
+source-wordcount: '2118'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Med [[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/) kan marknadsförare planera och köra kampanjer samtidigt som de levererar en personaliserad kundupplevelse för sina potentiella kunder. Tack vare integrerad hantering av leads och enkel kampanjframtagning kan marknadsförarna engagera rätt målgrupp vid rätt tidpunkt i köparens resa och på ett elegant sätt skala nå målgrupper över olika kanaler, inklusive e-post, webbannonsering, video och mobiler. Säljarna kan sluta fler avtal snabbare och öka avkastningen på marknadsföringen genom realtidsinsikter.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar åtgärden [Uppdatera en kontakt](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) från [!DNL Oracle Eloqua] REST API, som gör att du kan **uppdatera identiteter** inom en målgrupp till [!DNL Oracle Eloqua].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar åtgärden [Uppdatera en kontakt](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) från [!DNL Oracle Eloqua] REST API:t för att **uppdatera identiteter** inom en målgrupp till [!DNL Oracle Eloqua].
 
 [!DNL Oracle Eloqua] använder [Grundläggande autentisering](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html) för att kommunicera med REST API:t [!DNL Oracle Eloqua]. Instruktioner för autentisering till din [!DNL Oracle Eloqua]-instans finns längre ned i avsnittet [Autentisera till mål](#authenticate).
 
@@ -27,7 +27,7 @@ Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad 
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -233,7 +233,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Övervaka målgruppssammanfattningen och kontrollera att antalet profiler motsvarar antalet inom segmentet.
    ![Exempel på skärmbild i Experience Platform UI som visar segment.](../../assets/catalog/email-marketing/oracle-eloqua-api/segment.png)
 
-1. Logga in på webbplatsen [!DNL Oracle Eloqua] och navigera sedan till sidan **[!UICONTROL Contacts Overview]** för att kontrollera om profilerna från målgruppen har lagts till. Om du vill visa målgruppens status går du ned till en **[!UICONTROL Contact Detail]**-sida och kontrollerar om kontaktfältet med det valda målgruppsnamnet som prefix har skapats.
+1. Gå till webbplatsen [!DNL Oracle Eloqua] och navigera sedan till sidan **[!UICONTROL Contacts Overview]** för att kontrollera om profilerna från målgruppen har lagts till. Om du vill visa målgruppens status går du ned till en **[!UICONTROL Contact Detail]**-sida och kontrollerar om kontaktfältet med det valda målgruppsnamnet som prefix har skapats.
 
 ![Oracle Eloqua UI, skärmbild som visar sidan Kontaktinformation med anpassat kontaktfält som skapats med målgruppens namn.](../../assets/catalog/email-marketing/oracle-eloqua-api/contact.png)
 

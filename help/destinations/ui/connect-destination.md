@@ -3,9 +3,9 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1233'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,7 @@ Vissa filbaserade mål stöder målgruppsaktivering för kända kunder, kontokun
 
 ### Aktivera destinationsaviseringar {#enable-alerts}
 
-1. (Valfritt) Välj de aviseringar om måldataflöde som du vill prenumerera på. Du kan prenumerera på varningar när du skapar ett dataflöde för att få varningsmeddelanden om status, om det lyckades eller om det inte gick att köra ditt flöde. De tillgängliga varningarna skiljer sig åt beroende på måltypen (filbaserad eller direktuppspelad) som du ansluter till. Läs [Prenumerera på destinationsaviseringar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesaviseringar.
+1. (Valfritt) Välj de aviseringar om måldataflöde som du vill prenumerera på. Prenumerera på varningar när du skapar ett dataflöde för att få varningsmeddelanden om status, slutförande eller fel i flödeskörningen. De tillgängliga varningarna skiljer sig åt beroende på måltypen (filbaserad eller direktuppspelad) som du ansluter till. Läs [Prenumerera på destinationsaviseringar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesaviseringar.
 
    ![Dialogrutan Konfigurera nytt mål med prenumerationsalternativen för destinationsaviseringar i sitt sammanhang markerad.](../assets/ui/connect-destinations/subscribe-to-alerts.png)
 
@@ -127,6 +127,6 @@ Vissa filbaserade mål stöder målgruppsaktivering för kända kunder, kontokun
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet i Experience Platform för att upprätta en anslutning till ett mål. Som en påminnelse varierar de tillgängliga och obligatoriska anslutningsparametrarna från mål till mål. Du bör även läsa måldokumentationssidan i [målkatalogen](/help/destinations/catalog/overview.md) för specifik information om nödvändiga indata och tillgängliga alternativ per måltyp.
+Nu vet du hur du använder användargränssnittet i Experience Platform för att upprätta en anslutning till ett mål. De tillgängliga och obligatoriska anslutningsparametrarna varierar från mål till mål. Gå till dokumentationssidan för målet i [målkatalogen](/help/destinations/catalog/overview.md) om du vill ha specifik information om nödvändiga indata och tillgängliga alternativ per måltyp.
 
-Därefter kan du fortsätta med att [aktivera målgrupper](/help/destinations/ui/activation-overview.md) eller [exportera datauppsättningar](/help/destinations/ui/export-datasets.md) till ditt mål.
+Fortsätt sedan till [aktivera målgrupper](/help/destinations/ui/activation-overview.md) eller [exportera datauppsättningar](/help/destinations/ui/export-datasets.md) till ditt mål.

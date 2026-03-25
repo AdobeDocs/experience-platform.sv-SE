@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att hämta information om en destinationspubliceringsbegäran via Adobe Experience Platform Destination SDK.
 title: Hämta en publiceringsbegäran för mål
 exl-id: fceef12d-a52c-4259-a91e-7af88b132800
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '835'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---

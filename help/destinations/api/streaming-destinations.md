@@ -5,9 +5,9 @@ title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2197'
+source-wordcount: '2192'
 ht-degree: 0%
 
 ---
@@ -565,7 +565,7 @@ Det returnerade svaret ska i parametern `transformations` inkludera de målgrupp
 
 >[!IMPORTANT]
 >
-> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=sv-SE), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
+> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
 
 ```json
 {
@@ -636,7 +636,7 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit Experience Platform till ett av dina önskade direktuppspelningsmål och konfigurerat ett dataflöde till respektive mål. Utgående data kan nu användas i målet för kundanalys eller andra dataåtgärder som du kanske vill utföra. Mer information finns på följande sidor:
+Du har anslutit Experience Platform till ett av dina önskade direktuppspelningsmål och konfigurerat ett dataflöde till respektive mål. Utgående data kan nu användas i målet för kundanalys eller andra dataåtgärder som du kanske vill utföra. Mer information finns på följande sidor:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)

@@ -3,9 +3,9 @@ title: SAP Commerce-anslutning
 description: Använd SAP Commerce-målkopplingen för att uppdatera kundposter i SAP-kontot.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2293'
+source-wordcount: '2289'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ I avsnitten nedan finns information om alla krav som du måste konfigurera i Exp
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL SAP Commerce] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL SAP Commerce] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -44,7 +44,7 @@ Om du vill exportera data från Experience Platform till ditt [!DNL SAP Commerce
 
 #### Generera en tjänstnyckel {#prerequisites-service-key}
 
-* Med tjänstnyckeln [!DNL SAP Commerce] kan du komma åt API:t för [!DNL SAP Subscription Billing] via Experience Platform. Se [!DNL SAP Commerce] [skapa en tjänstnyckel med klient-ID och klienthemlighet](https://help.sap.com/docs/CLOUD_TO_CASH_OD/1216e7b79c984675b0a6f0005e351c74/87c11a0f5dc3494eaf3baa355925c030.html#create-a-service-key-with-client-id-and-client-secret) för att skapa en tjänstnyckel. [!DNL SAP Commerce] kräver följande:
+* Tjänstnyckeln [!DNL SAP Commerce] ger åtkomst till API:t [!DNL SAP Subscription Billing] via Experience Platform. Se [!DNL SAP Commerce] [skapa en tjänstnyckel med klient-ID och klienthemlighet](https://help.sap.com/docs/CLOUD_TO_CASH_OD/1216e7b79c984675b0a6f0005e351c74/87c11a0f5dc3494eaf3baa355925c030.html#create-a-service-key-with-client-id-and-client-secret) för att skapa en tjänstnyckel. [!DNL SAP Commerce] kräver följande:
    * Klient-ID
    * Klienthemlighet
    * URL. URL-mönstret är följande: `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. Det här värdet används senare för att hämta värden för `Region` och `Endpoint`.
@@ -336,7 +336,7 @@ Baserat på bilden ovan där du har valt två målgrupper är mappningen följan
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-Logga in på kontot [!DNL SAP Subscription Billing] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera målgruppsstatus. Listan kan konfigureras för att visa kolumner för anpassade referenser och visa motsvarande målgruppsstatus.
+Gå till [!DNL SAP Subscription Billing]-kontot och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera målgruppsstatus. Listan kan konfigureras för att visa kolumner för anpassade referenser och visa motsvarande målgruppsstatus.
 ![Bild av SAP-prenumerationsfakturering som visar kundöversikten med kolumnrubriker som visar målgruppsnamnet och cellernas målgruppsstatus](../../assets/catalog/ecommerce/sap-commerce/customer-overview.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}

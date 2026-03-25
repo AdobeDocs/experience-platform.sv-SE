@@ -4,9 +4,9 @@ title: API-migreringsguide för molnlagringsmål
 description: Lär dig mer om förändringarna i arbetsflödet för att aktivera molnlagringsmål som en del av migreringen till de nya målkorten för molnlagring med ytterligare funktioner.
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1328'
+source-wordcount: '1322'
 ht-degree: 0%
 
 ---
@@ -661,7 +661,7 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
 
 ### Bakåtkompatibla ändringar som är gemensamma för [!DNL Amazon S3]-, [!DNL Azure Blob]- och SFTP-mål {#changes-all-destinations}
 
-Stegen för profilväljare på alla tre destinationerna ersätts med ett mappningssteg som gör att du kan byta namn på kolumnrubrikerna i de exporterade filerna om du vill. Se bilden sida vid sida nedan med det gamla attributväljarsteget till vänster och det nya mappningssteget till höger.
+Stegen för profilväljare på alla tre destinationerna ersätts av ett mappningssteg som du kan använda för att ändra namn på kolumnrubrikerna i de exporterade filerna, om du vill. Se bilden sida vid sida nedan med det gamla attributväljarsteget till vänster och det nya mappningssteget till höger.
 
 ![Översikt över migreringsguiden](/help/destinations/assets/api/api-migration-guide/old-and-new-mapping-step.png)
 
@@ -795,4 +795,4 @@ Observera att det inte påverkar ditt befintliga schema för export under eller 
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här sidan vet du nu om du behöver göra något för att förbereda migreringen av molnlagringsdestinationerna. Du vet också vilka dokumentationssidor som ska användas som referens när du konfigurerar API-baserade arbetsflöden för att exportera filer från Experience Platform till de molnlagringsmål du föredrar. Sedan kan du visa API-självstudiekursen för att [exportera data till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md).
+Du vet nu om du behöver göra något för att förbereda migreringen av molnlagringsdestinationerna. Du vet också vilka dokumentationssidor som ska användas som referens när du konfigurerar API-baserade arbetsflöden för att exportera filer från Experience Platform till de molnlagringsmål du föredrar. Sedan kan du visa API-självstudiekursen för att [exportera data till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md).

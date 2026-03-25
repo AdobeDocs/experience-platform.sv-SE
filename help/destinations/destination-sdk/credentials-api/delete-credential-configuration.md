@@ -2,9 +2,9 @@
 description: På den här sidan visas ett exempel på API-anropet som används för att ta bort en autentiseringskonfiguration i Adobe Experience Platform Destination SDK.
 title: Ta bort en autentiseringskonfiguration
 exl-id: a540e349-043c-4f04-8ca8-f650b9943492
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '415'
 ht-degree: 0%
 
 ---

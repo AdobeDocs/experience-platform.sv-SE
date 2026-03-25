@@ -4,9 +4,9 @@ description: Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälp
 hide: true
 hidefromtoc: true
 exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1434'
 ht-degree: 0%
 
 ---
@@ -75,7 +75,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|

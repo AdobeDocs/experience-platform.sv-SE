@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /testing/destinationInstance för att testa om ditt filbaserade mål är korrekt konfigurerat och för att verifiera dataflödenas integritet till det konfigurerade målet.
 title: Testa ditt filbaserade mål med exempelprofiler
 exl-id: 75f76aec-245b-4f07-8871-c64a710db9f6
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '828'
 ht-degree: 0%
 
 ---

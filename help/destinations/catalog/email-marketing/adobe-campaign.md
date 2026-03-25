@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '926'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activat
 
 ### Målattribut {#destination-attributes}
 
-När du aktiverar målgrupper till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Bästa praxis när du aktiverar målgrupper till e-postmarknadsföringsmål](overview.md#best-practices).
+När du aktiverar målgrupper till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Bästa tillvägagångssätt vid aktivering av målgrupper till e-postmarknadsföringsmål](overview.md#best-practices).
 
 ## Exporterade data {#exported-data}
 
@@ -122,10 +122,10 @@ För [!DNL Adobe Campaign] mål skapar [!DNL Experience Platform] en `.csv`-fil 
 >[!IMPORTANT]
 >
 >* Tänk på lagringsgränserna för [!DNL SFTP], lagringsgränserna för databasen och begränsningar för den aktiva profilen enligt ditt [!DNL Adobe Campaign]-kontrakt när du utför den här integreringen.
->* Du måste schemalägga, importera och mappa dina exporterade segment i [!DNL Adobe Campaign] med hjälp av [!DNL Campaign]-arbetsflöden. Se [Konfigurera en återkommande import](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html) i [!DNL Adobe Campaign Classic]-dokumentationen och [Om datahanteringsaktiviteter](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html?lang=sv-SE) i [!DNL Adobe Campaign Standard]-dokumentationen.
+>* Du måste schemalägga, importera och mappa dina exporterade segment i [!DNL Adobe Campaign] med hjälp av [!DNL Campaign]-arbetsflöden. Se [Konfigurera en återkommande import](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html) i [!DNL Adobe Campaign Classic]-dokumentationen och [Om datahanteringsaktiviteter](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html) i [!DNL Adobe Campaign Standard]-dokumentationen.
 >* Den metod som rekommenderas för att skicka data till [!DNL Adobe Campaign] är via [!DNL Amazon S3] eller [!DNL Azure Blob].
 
-När du har anslutit [!DNL Experience Platform] till ditt [!DNL Amazon S3]- eller [!DNL Azure Blob]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Adobe Campaign]. Mer information om hur du gör detta finns i följande [!DNL Adobe Campaign]-dokumentationssidor:
+När du har anslutit [!DNL Experience Platform] till ditt [!DNL Amazon S3]- eller [!DNL Azure Blob]-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Adobe Campaign]. Om du vill lära dig hur du gör detta kan du läsa följande [!DNL Adobe Campaign]-dokumentationssidor:
 
-* [Kom igång med import och export av data](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html?lang=sv-SE) och [Inläsning av data (fil)](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html?lang=sv-SE) i [!DNL Adobe Campaign Classic]-dokumentationen.
-* [Kom igång med processer och datahantering](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html?lang=sv-SE) och [Läs in fil](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html?lang=sv-SE) i [!DNL Adobe Campaign Standard]-dokumentationen.
+* [Kom igång med import och export av data](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html) och [Inläsning av data (fil)](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html) i [!DNL Adobe Campaign Classic]-dokumentationen.
+* [Kom igång med processer och datahantering](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html) och [Läs in fil](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html) i [!DNL Adobe Campaign Standard]-dokumentationen.

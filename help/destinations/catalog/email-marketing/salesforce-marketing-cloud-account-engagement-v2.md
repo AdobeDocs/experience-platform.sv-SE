@@ -5,16 +5,16 @@ badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: cd792eb0-9e90-49e4-8c50-c65126e355c2
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1878'
+source-wordcount: '1875'
 ht-degree: 1%
 
 ---
 
 # [!DNL (V2) Salesforce Marketing Cloud Account Engagement]-anslutning
 
-Med målet [[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) (tidigare kallat [!DNL Pardot]) kan du exportera dina [!DNL Adobe Experience Platform]-profildata till Salesforce automatiseringsplattform för B2B-marknadsföring.
+[[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) (tidigare kallat [!DNL Pardot])-målet exporterar dina [!DNL Adobe Experience Platform]-profildata till Salesforce automatiseringsplattform för B2B-marknadsföring.
 
 Den här integreringen möjliggör sömlös datasynkronisering mellan era kundprofiler i [!DNL Adobe Experience Platform] och era marknadsföringskampanjer i [!DNL Salesforce Marketing Cloud Account Engagement].
 
@@ -219,7 +219,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Navigera till en av de valda målgrupperna. Klicka på fliken **[!DNL Activation data]**.  Kolumnen **[!UICONTROL Mapping ID]** visar namnet på det anpassade fält som genereras på sidan [!DNL Marketing Cloud Account Engagement Prospects].
    ![Exempel på skärmbild i Experience Platform UI som visar mappnings-ID för ett markerat segment.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/selected-segment-mapping-id.png)
 
-1. Logga in på webbplatsen [[!DNL Salesforce]](https://login.salesforce.com/). Gå sedan till sidan **[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]** och kontrollera om potentiella kunder från målgruppen har lagts till/uppdaterats. Du kan även komma åt [[!DNL Account Engagement]](https://pi.pardot.com/) och få åtkomst till sidan **[!DNL Prospects]**.
+1. Gå till webbplatsen [[!DNL Salesforce]](https://login.salesforce.com/). Gå sedan till sidan **[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]** och kontrollera om potentiella kunder från målgruppen har lagts till/uppdaterats. Du kan även komma åt [[!DNL Account Engagement]](https://pi.pardot.com/) och få åtkomst till sidan **[!DNL Prospects]**.
    ![Salesforce UI, skärmbild som visar sidan Prospects.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/prospects.png)
 
 1. Om du vill kontrollera om potentiella kunder har uppdaterats väljer du en potentiell kund och kontrollerar om fältet för anpassad potentiell kund har uppdaterats med Experience Platform målgruppsstatus.

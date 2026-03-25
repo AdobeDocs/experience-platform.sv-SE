@@ -3,9 +3,9 @@ title: Merkury Enterprise Identity Destination
 description: Lär dig hur du skapar en Merkury Enterprise Identity-målanslutning med Adobe Experience Platform-gränssnittet.
 last-substantial-update: 2024-07-20T00:00:00Z
 exl-id: a5452183-289c-49c3-9574-e09b0153dc00
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1559'
 ht-degree: 1%
 
 ---
@@ -46,8 +46,8 @@ Målet [!DNL Merkury Enterprise Identity] ger möjlighet att på ett säkert sä
 
 >[!IMPORTANT]
 >
->* Om du vill ansluta till målet behöver du **Visa mål** och **Hantera mål**, **Aktivera mål**, **Visa profiler** och **Visa segment** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
->* Om du vill exportera *identiteter* behöver du **Visa identitetsdiagram** [[behörighet för åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions).\![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
+>* Om du vill ansluta till målet behöver du **Visa mål** och **Hantera mål**, **Aktivera mål**, **Visa profiler** och **Visa segment** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera *identiteter* behöver du **Visa identitetsdiagram** [[behörighet för åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions).\![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](../../assets/catalog/data-partners/merkury-identity/media/image3.png)
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -93,8 +93,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | **Målgrupp** | **Stöds** | **Beskrivningens ursprung** |
 |---|---|---|      
-| Segmenteringstjänst | Ja | Publiker som genererats via Experience Platform [[segmenteringstjänsten]](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
-| Anpassade överföringar | Nej | Publiken [[importerad]](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer. |
+| Segmenteringstjänst | Ja | Publiker som genererats via Experience Platform [[segmenteringstjänsten]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
+| Anpassade överföringar | Nej | Publiken [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -102,9 +102,9 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **Visa mål** och **Hantera och aktivera datamängdsmål** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
+>Om du vill ansluta till målet behöver du **Visa mål** och **Hantera och aktivera datamängdsmål** [[åtkomstkontrollbehörighet]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions). Läs [[översikt över åtkomstkontroll]](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/ui/overview) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen för [[destinationskonfiguration]](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/connect-destination). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen för [[destinationskonfiguration]](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/connect-destination). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
 ### Autentisera till mål {#authenticate}
 
@@ -150,7 +150,7 @@ Konton som redan har definierats med Merkury Enterprise Identity-målet visas i 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/alerts).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/alerts).
 
 Välj **Nästa** när du är klar med informationen om målanslutningen.
 
@@ -161,7 +161,7 @@ Välj **Nästa** när du är klar med informationen om målanslutningen.
 >* Om du vill aktivera data måste du ha åtkomstkontrollsbehörigheterna **Visa mål**, **Aktivera mål**, **Visa profiler** och **Visa segment**. Läs översikten över åtkomstkontrollen eller kontakta produktadministratören för att få den behörighet som krävs.
 >* Om du vill exportera identiteter måste du ha åtkomstkontrollsbehörigheten **Visa identitetsdiagram**.
 
-Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) om du vill ha instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Mappningsförslag {#mapping-suggestions}
 
@@ -190,8 +190,8 @@ Kontrollera Amazon S3-lagringskassetten och se till att de exporterade filerna i
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/sv/docs/experience-platform/data-governance/home).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home).
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att exportera profildata från Experience Platform till din [!DNL Merkury] hanterade S3-plats. Därefter måste du kontakta din [!DNL Merkury]-representant med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.
+Du har skapat ett dataflöde för att exportera profildata från Experience Platform till din [!DNL Merkury] hanterade S3-plats. Därefter måste du kontakta din [!DNL Merkury]-representant med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.

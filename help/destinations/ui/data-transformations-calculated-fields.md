@@ -3,9 +3,9 @@ title: Utför omformningar av data som exporteras till molnlagringsmål med ber�
 type: Tutorial
 description: Förstå hur du använder funktionen för beräknade fält för att utföra omformningar av data som exporteras till molnlagringsmål
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1604'
+source-wordcount: '1603'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >id="platform_destinations_export_arrays_flat_files"
 >title="Lägg till beräknade fält"
 >abstract="<p>Använd kontrollen **Lägg till beräknat fält** för att utföra olika dataomvandlingar på data som exporteras till molnlagringsmål. Du kan till exempel tillämpa hash-kodning på data, sammanfoga arrayer i strängar och mycket mer."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=sv-SE#examples" text="Exempel"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="Exempel"
 
 >[!AVAILABILITY]
 >
@@ -101,7 +101,7 @@ Funktionerna nedan, som är specifika för att hantera export av arrayer eller t
 
 ## Exempel på funktioner som används för att utföra dataomvandlingar {#examples}
 
-Se exempel och mer information i avsnitten nedan för några av funktionerna som listas ovan. För resten av funktionerna i listan finns mer information i [dokumentationen om allmänna funktioner i avsnittet Dataprep](/help/data-prep/functions.md).
+Se exempel och mer information i avsnitten nedan för några av funktionerna som listas ovan. För resten av funktionerna i listan, se [dokumentationen om allmänna funktioner i avsnittet Dataprep](/help/data-prep/functions.md).
 
 ### `array_to_string`-funktion för att exportera arrayer {#array-to-string-function-export-arrays}
 

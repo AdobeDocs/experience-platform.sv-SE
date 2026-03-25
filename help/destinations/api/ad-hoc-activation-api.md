@@ -5,9 +5,9 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1671'
+source-wordcount: '1670'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t &#x200B;](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
+>När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t ](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
 >
 >Mer information finns i [Kör ad hoc-aktiveringsjobbet](#activation-job) nedan i den här självstudien.
 

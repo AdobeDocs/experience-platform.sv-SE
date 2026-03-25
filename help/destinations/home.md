@@ -2,9 +2,9 @@
 title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1299'
+source-wordcount: '1298'
 ht-degree: 2%
 
 ---
@@ -34,7 +34,7 @@ En av de viktigaste funktionerna i Experience Platform är att inhämta era egna
 
 ## Kontroller {#controls}
 
-Med kontrollerna på [målarbetsytan](./ui/destinations-workspace.md) kan du:
+Använd kontrollerna på [målarbetsytan](./ui/destinations-workspace.md) för att:
 
 * Bläddra i katalogen med destinationsplattformar där du kan aktivera dina data;
 * Skapa, redigera, aktivera och inaktivera dataflöden till destinationerna i katalogen,

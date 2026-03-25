@@ -4,9 +4,9 @@ title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1604'
+source-wordcount: '1599'
 ht-degree: 2%
 
 ---
@@ -467,4 +467,4 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du lärt dig hur du uppdaterar olika komponenter i en målanslutning med API:t [!DNL Flow Service]. Mer information om mål finns i [målöversikten](../home.md).
+Du har lärt dig att uppdatera olika komponenter för en målanslutning med API:t [!DNL Flow Service]. Mer information om mål finns i [målöversikten](../home.md).

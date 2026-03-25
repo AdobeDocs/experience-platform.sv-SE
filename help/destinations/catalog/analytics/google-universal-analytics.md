@@ -3,7 +3,7 @@ keywords: Google Universal Analytics;Google Universal Analytics;Google Universal
 title: Google Universal Analytics-tillägg
 description: Google Universal Analytics-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 72576a0f-f2da-46d6-a722-33a0cf17f2c4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '438'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med [!DNL Google Universal Analytics] kan du mäta avkastningen på annonseringen samt spåra dina Flash-, video- och sociala nätverksplatser och applikationer.
+Använd [!DNL Google Universal Analytics] för att mäta avkastningen på annonseringen samt för att spåra webbplatser, videoklipp och sociala nätverk samt program.
 
 [!DNL Google Universal Analytics] är ett analystillägg i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.102829.google-universal-analytics.html).
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i [!D
 
 Så här installerar du tillägget [!DNL Google Universal Analytics]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

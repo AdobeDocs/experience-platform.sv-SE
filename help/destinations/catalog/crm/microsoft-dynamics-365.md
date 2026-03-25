@@ -1,12 +1,12 @@
 ---
 keywords: crm;CRM;crm destination;Microsoft Dynamics 365;Microsoft Dynamics 365 crm destination
 title: Microsoft Dynamics 365-anslutning
-description: Med Microsoft Dynamics 365-destinationen kan du exportera dina kontouppgifter och aktivera dem i Microsoft Dynamics 365 efter behov.
+description: Använd Microsoft Dynamics 365-destinationen för att exportera dina kontodata och aktivera dem i Microsoft Dynamics 365 efter behov.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2082'
+source-wordcount: '2076'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 [[!DNL Microsoft Dynamics 365]](https://dynamics.microsoft.com/en-us/) är en molnbaserad plattform för affärsprogram som kombinerar ERP (Enterprise Resource Planning) och CRM (Customer Relationship Management) med produktivitetsprogram och AI-verktyg, vilket ger smidigare och mer kontrollerade åtgärder, bättre tillväxtpotential och minskade kostnader.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Contact Entity Reference API]](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1), som gör att du kan uppdatera identiteter inom en målgrupp till [!DNL Dynamics 365].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Contact Entity Reference API]](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) för att uppdatera identiteter inom en målgrupp till [!DNL Dynamics 365].
 
 [!DNL Dynamics 365] använder OAuth 2 med auktoriseringsauktorisering som autentiseringsmekanism för att kommunicera med [!DNL Contact Entity Reference API]. Instruktioner för autentisering till din [!DNL Dynamics 365]-instans finns längre ned i avsnittet [Autentisera till mål](#authenticate).
 
@@ -29,7 +29,7 @@ Som marknadsförare kan du leverera personaliserade upplevelser till dina använ
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Dynamics 365] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Dynamics 365] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
 Se Adobe dokumentation för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -118,7 +118,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
@@ -196,7 +196,7 @@ Om du vill skicka målgruppsdata korrekt från [!DNL Adobe Experience Platform] 
      |---|---|---|
      | `contactid` | `contactid` | Ja |
 
-   * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet **[!UICONTROL Attribute name]**. I [[!DNL Dynamics 365] dokumentationen](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) finns en omfattande lista över attribut som stöds.
+   * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet **[!UICONTROL Attribute name]**. I [[!DNL Dynamics 365] dokumentationen](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) finns en omfattande lista med attribut som stöds.
      ![Experience Platform UI-skärmbild som visar målmappning för e-post.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]
@@ -245,7 +245,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Övervaka målgruppssammanfattningen och se till att antalet profiler motsvarar antalet som skapas inom målgruppen.
    ![Exempel på skärmbild i Experience Platform UI som visar målgrupp.](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
 
-1. Logga in på webbplatsen [!DNL Dynamics 365], gå till sidan [!DNL Customers] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Dynamics 365] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet **[!UICONTROL Mapping ID]** som angavs under steget [målgruppsplanering](#schedule-audience-export-example).
+1. Gå till webbplatsen [!DNL Dynamics 365], navigera till sidan [!DNL Customers] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Dynamics 365] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet **[!UICONTROL Mapping ID]** som angavs under steget [målgruppsplanering](#schedule-audience-export-example).
    ![Skärmbilden Dynamics 365 UI som visar sidan Kontakter med uppdaterade målgruppsstatusar.](../../assets/catalog/crm/microsoft-dynamics-365/contacts.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}

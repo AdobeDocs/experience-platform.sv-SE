@@ -4,9 +4,9 @@ title: Ta bort destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: 9b39ba4b-19a4-48a8-a6f1-f860777cdb9e
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '285'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Fliken **[!UICONTROL Accounts]** innehåller information om de anslutningar du har upprättat med olika mål. Se [Kontoöversikten](../ui/destinations-workspace.md#accounts) för all information du kan få om varje målkonto.
+Fliken **[!UICONTROL Accounts]** innehåller information om de anslutningar du har upprättat med olika mål. Se [Kontoöversikten](../ui/destinations-workspace.md#accounts) för all tillgänglig information för varje målkonto.
 
 I den här självstudiekursen beskrivs stegen för att ta bort destinationskonton som inte längre behövs med hjälp av användargränssnittet i Experience Platform.
 
@@ -29,7 +29,7 @@ I den här självstudiekursen beskrivs stegen för att ta bort destinationskonto
 
 Följ stegen nedan för att ta bort befintliga målkonton.
 
-1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa dina befintliga konton.
+1. Gå till [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa dina befintliga konton.
 
    ![Fliken Konton](../assets/ui/delete-accounts/accounts-tab.png)
 
@@ -47,6 +47,6 @@ Följ stegen nedan för att ta bort befintliga målkonton.
 
 ## Nästa steg {#next-steps}
 
-I den här självstudiekursen har du använt arbetsytan Mål för att ta bort befintliga konton.
+Du har använt målarbetsytan för att ta bort befintliga konton.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [ta bort anslutningar med API:t för Flow Service &#x200B;](../api/delete-destination-account.md)
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [ta bort anslutningar med API:t för Flow Service ](../api/delete-destination-account.md)

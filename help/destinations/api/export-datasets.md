@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '5178'
+source-wordcount: '5137'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [&#x200B; september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
 >
 >För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 september 2025.
 >
@@ -42,7 +42,7 @@ I den här artikeln förklaras det arbetsflöde som krävs för att använda [!D
 
 Vilka datauppsättningar du kan exportera beror på Experience Platform-programmet ([!DNL Real-Time CDP], [!DNL Adobe Journey Optimizer]), skiktet (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
 
-Se tabellen [på självstudiesidan](/help/destinations/ui/export-datasets.md#datasets-to-export) för att förstå vilka datauppsättningar du kan exportera.
+Se tabellen [på sidan för självstudiekursen](/help/destinations/ui/export-datasets.md#datasets-to-export) om du vill veta vilka datauppsättningar du kan exportera.
 
 ## Mål som stöds {#supported-destinations}
 
@@ -107,7 +107,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extr
 
 ### API-referensdokumentation {#api-reference-documentation}
 
-Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats &#x200B;](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
+Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats ](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
 
 ### Ordlista {#glossary}
 
@@ -129,7 +129,7 @@ Innan du startar arbetsflödet för att exportera en datauppsättning ska du ide
 
 {style="table-layout:auto"}
 
-Du behöver dessa ID:n för att skapa olika [!DNL Flow Service]-entiteter. Du måste också referera till delar av själva [!DNL Connection Spec] för att konfigurera vissa entiteter så att du kan hämta [!DNL Connection Spec] från [!DNL Flow Service APIs]. Se exemplen nedan om hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
+Du behöver dessa ID:n för att skapa olika [!DNL Flow Service]-entiteter. Du måste också referera till delar av själva [!DNL Connection Spec] för att ställa in vissa entiteter så att du kan hämta [!DNL Connection Spec] från [!DNL Flow Service APIs]. Se exemplen nedan om hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
 
 >[!BEGINTABS]
 
@@ -994,7 +994,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Inga autentiseringsuppgifter krävs för Data Landing Zone-målet. Mer information finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate) på dokumentationssidan för Data Landing Zone-målet.
+>Inga autentiseringsuppgifter krävs för Data Landing Zone-målet. Mer information finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate) på dokumentationssidan för datalängdszonens mål.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -1036,7 +1036,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du får de autentiseringsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#authenticate) på dokumentationssidan för Google Cloud-lagringsmålet.
+>Mer information om hur du får de inloggningsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#authenticate) på dokumentationssidan för Google Cloud-lagringsmålet.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1174,7 +1174,7 @@ Observera anslutnings-ID från svaret. Detta ID krävs i nästa steg när du ska
 
 ![Diagram som visar steg 4 i arbetsflödet för exportdatamängder](../assets/api/export-datasets/export-datasets-api-workflow-create-target-connection.png)
 
-Därefter måste du skapa en målanslutning som lagrar exportparametrarna för datauppsättningarna. Exportparametrar omfattar plats, filformat, komprimering och annan information. Mer information om vilka egenskaper som stöds för varje måltyp finns i `targetSpec`-egenskaperna i målets anslutningsspecifikation. Referera till flikarna nedan för `targetSpec`-egenskaperna för alla mål som stöds.
+Därefter måste du skapa en målanslutning som lagrar exportparametrarna för datauppsättningarna. Exportparametrar omfattar plats, filformat, komprimering och annan information. Se egenskaperna `targetSpec` i målets anslutningsspecifikation för att förstå vilka egenskaper som stöds för varje måltyp. Referera till flikarna nedan för `targetSpec`-egenskaperna för alla mål som stöds.
 
 >[!IMPORTANT]
 >
@@ -1631,7 +1631,7 @@ Genom att använda specifikationen ovan kan du skapa en målanslutningsbegäran 
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) på dokumentationssidan för [!DNL Amazon S3].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) på dokumentationssidan för [!DNL Amazon S3].
 >Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
@@ -1684,7 +1684,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) på dokumentationssidan för [!DNL Azure Blob Storage].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) på dokumentationssidan för [!DNL Azure Blob Storage].
 >Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 
@@ -1738,7 +1738,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på dokumentationssidan för Azure [!DNL Data Lake Gen 2(ADLS Gen2)].
+>Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på sidan för måldokumentation för Azure [!DNL Data Lake Gen 2(ADLS Gen2)].
 >Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
@@ -1790,7 +1790,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details) på dokumentationssidan för [!DNL Data Landing Zone].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details) på dokumentationssidan för [!DNL Data Landing Zone].
 >Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
@@ -1842,7 +1842,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för [!DNL Google Cloud Storage].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för [!DNL Google Cloud Storage].
 >Andra värden som stöds av `datasetFileType` finns i API-referensdokumentationen.
 
 
@@ -1994,7 +1994,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som du kan använda för att anpassa exporttider, frekvens, plats med mera för datauppsättningsexporter.
 
 | Parameter | Beskrivning |
 |---------|----------|
@@ -2063,7 +2063,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som du kan använda för att anpassa exporttider, frekvens, plats med mera för datauppsättningsexporter.
 
 | Parameter | Beskrivning |
 |---------|----------|
@@ -2133,7 +2133,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som du kan använda för att anpassa exporttider, frekvens, plats med mera för datauppsättningsexporter.
 
 | Parameter | Beskrivning |
 |---------|----------|
@@ -2203,7 +2203,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som du kan använda för att anpassa exporttider, frekvens, plats med mera för datauppsättningsexporter.
 
 | Parameter | Beskrivning |
 |---------|----------|
@@ -2272,7 +2272,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som du kan använda för att anpassa exporttider, frekvens, plats med mera för datauppsättningsexporter.
 
 | Parameter | Beskrivning |
 |---------|----------|
@@ -2342,7 +2342,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som du kan använda för att anpassa exporttider, frekvens, plats med mera för datauppsättningsexporter.
 
 | Parameter | Beskrivning |
 |---------|----------|
@@ -2463,7 +2463,7 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 ### Exempeldatauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet &#x200B;](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json &#x200B;](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 
@@ -2489,7 +2489,7 @@ Visa en [lista med vanliga frågor](/help/destinations/ui/export-datasets.md#faq
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit Experience Platform till en av dina favoritplatser för lagring i batchmolnet och konfigurerat ett dataflöde till respektive mål för att exportera datauppsättningar. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Du har anslutit Experience Platform till en av dina favoritlagringsplatser för batchmoln och konfigurerat ett dataflöde till respektive mål för att exportera datauppsättningar. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över målkatalog](../catalog/overview.md)

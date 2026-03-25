@@ -3,27 +3,27 @@ keywords: Experience Platform;startsida;populära ämnen; larm;destinationer
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på aviseringar om destinationer i sitt sammanhang
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '917'
+source-wordcount: '906'
 ht-degree: 3%
 
 ---
 
 # Prenumerera på aviseringar om destinationer i sitt sammanhang
 
-Med [!DNL Adobe Experience Platform] kan du prenumerera på händelsebaserade aviseringar om [!DNL Adobe Experience Platform] aktiviteter. Varningar minskar eller eliminerar behovet av att avfråga [[!DNL Observability Insights] API](../../observability/api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel har uppstått.
+Använd [!DNL Adobe Experience Platform] om du vill prenumerera på händelsebaserade aviseringar om [!DNL Adobe Experience Platform] aktiviteter. Varningar minskar eller eliminerar behovet av att avfråga [[!DNL Observability Insights] API](../../observability/api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel har uppstått.
 
 Du kan prenumerera på varningar när du skapar ett dataflöde för att få varningsmeddelanden om status, om det lyckades eller om det inte gick att köra ditt flöde.
 
-Det här dokumentet innehåller anvisningar om hur du prenumererar på meddelanden om att ta emot aviseringar för dina måldataflöden.
+Det här dokumentet innehåller anvisningar om hur du prenumererar på varningsmeddelanden för måldataflöden.
 
 ## Komma igång {#getting-started}
 
 Det här dokumentet kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
 * [Destinationer](../home.md): Förbyggda integreringar med målplattformar som möjliggör smidig aktivering av data från [!DNL Adobe Experience Platform]. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
-* [Observabilitet](../../observability/home.md): [!DNL Observability Insights] gör att du kan övervaka Experience Platform-aktiviteter med hjälp av statistik och händelsemeddelanden.
+* [Observabilitet](../../observability/home.md): Använd [!DNL Observability Insights] för att övervaka Experience Platform-aktiviteter med hjälp av statistik och händelsemeddelanden.
    * [Varningar](../../observability/alerts/overview.md): När en viss uppsättning villkor har nåtts i Experience Platform-åtgärderna (t.ex. ett eventuellt problem när systemet överskrider ett tröskelvärde) kan Experience Platform skicka varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
 
 ## Prenumerera på aviseringar i användargränssnittet {#subscribe-destination-alerts}
@@ -117,4 +117,4 @@ Ett popup-fönster visas med en lista över destinationsvarningar. Markera de av
 
 ## Nästa steg {#next-steps}
 
-Det här dokumentet innehåller en stegvis guide om hur du prenumererar på snabbmeddelanden för måldataflöden. Mer information finns i användargränssnittsguiden för [varningar](../../observability/alerts/ui.md).
+Du kan nu prenumerera på snabbmeddelanden för dina måldataflöden. Mer information finns i användargränssnittsguiden för [varningar](../../observability/alerts/ui.md).

@@ -2,7 +2,7 @@
 description: Lär dig hur du skapar indatafält i Experience Platform-gränssnittet som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
 title: Kunddatafält
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '1729'
 ht-degree: 0%
@@ -342,7 +342,7 @@ Ange parametern `destinationServerId` till ID:t för målservern som du skapade 
 
 ## Skapa kapslade kunddatafält {#nested-fields}
 
-Du kan skapa kapslade kunddatafält för komplexa integreringsmönster. På så sätt kan du kedja en serie markeringar för kunden.
+Du kan skapa kapslade kunddatafält för komplexa integreringsmönster. Använd dem för att kedja en serie markeringar åt kunden.
 
 Du kan t.ex. lägga till kapslade kunddatafält för att kräva att kunderna väljer en integreringstyp med målet, omedelbart följt av ett annat val. Den andra markeringen är ett kapslat fält inom integrationstypen.
 

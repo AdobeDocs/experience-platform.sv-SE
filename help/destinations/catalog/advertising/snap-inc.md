@@ -2,9 +2,9 @@
 title: Snap Inc-anslutning
 description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar dina målgrupper från Experience Platform.
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1139'
 ht-degree: 1%
 
 ---
@@ -147,14 +147,14 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 ## Validera dataexport {#exported-data}
 
-När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** &#x200B;](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
+När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** ](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
 
 1. Logga in i [hanteraren för ögonblicksbilder](https://ads.snapchat.com/)
 2. Välj **Publiker** på menyn längst upp till vänster på skärmen. Du ser vilka målgrupper du har aktiverat i [!DNL Adobe Experience Platform] i målgruppsbiblioteket:
 
 ![Publiker](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den först som en tom publik. Detta beror på att [!DNL Adobe Experience Platform] inte exporterar medlemsdata till Snap Inc förrän målgruppen utvärderas. Mer information om hur målgrupper utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=sv-SE#evaluate-segments).
+Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den först som en tom publik. Detta beror på att [!DNL Adobe Experience Platform] inte exporterar medlemsdata till Snap Inc förrän målgruppen utvärderas. Mer information om hur målgrupper utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

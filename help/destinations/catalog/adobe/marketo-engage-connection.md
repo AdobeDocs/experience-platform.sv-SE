@@ -1,10 +1,10 @@
 ---
 title: Marketo Engage Connection
-description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
+description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Använd det för att automatisera och hantera aktiviteter från CRM-lead-hantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: e02b6c65-b59e-41ff-8d33-f8fecfd87773
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1853'
+source-wordcount: '1851'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[!DNL Marketo Engage] är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
+[!DNL Marketo Engage] är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Använd det för att automatisera och hantera aktiviteter från CRM-lead-hantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 
 Använd det här målet för synkronisering i realtid av målgruppsdata och profilattribut mellan [!DNL Adobe Experience Platform] och Marketo Engage.
 
@@ -45,7 +45,7 @@ De kan aktivera sina målgrupper i Marketo Engage och använda synkroniseringsty
 
 ## Förutsättningar {#prerequisites}
 
-* Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i sin Marketo-instans och -partition.
+* Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i sin Marketo-instans och -partition.
 * Endast Marketo Engage-instanser i samma Adobe [!DNL Real-Time CDP]-organisation är tillgängliga när du konfigurerar det här målet.
 * Det är bara Marketo Engage-instanser som har sina användare hanterade i Adobe Admin Console som kan använda det här målet.
 
@@ -145,8 +145,8 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
    * **[!UICONTROL Audience and profile]**: Välj det här alternativet när du vill lägga till målgruppsmedlemmar i Marketo-listor och hålla deras profilinformation aktuell.
    * **[!UICONTROL Profile only]**: Välj det här alternativet om du vill att Marketo lead-profiler ska vara uppdaterade med den senaste informationen från Experience Platform.
    * **[!UICONTROL Audience only]**: Välj det här alternativet om du vill lägga till målgruppsmedlemmar i Marketo-listor utan att uppdatera deras profilinformation.
-* **[!UICONTROL Partition]**: *Partitionsval är bara tillgängligt när du väljer **[!UICONTROL Profile only]**&#x200B;eller **[!UICONTROL Audience and profile]**&#x200B;synkroniseringstyper*. Välj ett partitions-ID för Marketo som är kopplat till den valda arbetsytan. På så sätt kan du ange vilken huvudpartition i Marketo som ska ta emot exporterade data. Om du inte väljer en viss partition skickas dina data till partitionen **[!UICONTROL Default]** i Marketo.
-* **[!UICONTROL Marketo deduplication field]**: Markera det Marketo-fält för borttagning av dubbletter som du vill använda när du uppdaterar befintliga Marketo-leads. Den här väljaren visar de fält som du har markerat som dedupliceringsfält i Marketo. Om du vill att ett visst fält från Marketo ska visas som ett dedupliceringsfält måste du markera fältet som ett [sökbart fält](https://experienceleague.adobe.com/sv/docs/marketo-developer/marketo/rest/lead-database/lead-database) i Marketo.
+* **[!UICONTROL Partition]**: *Partitionsval är bara tillgängligt när du väljer **[!UICONTROL Profile only]**eller **[!UICONTROL Audience and profile]**synkroniseringstyper*. Välj ett partitions-ID för Marketo som är kopplat till den valda arbetsytan. Detta anger vilken huvudpartition i Marketo som ska ta emot exporterade data. Om du inte väljer en viss partition skickas dina data till partitionen **[!UICONTROL Default]** i Marketo.
+* **[!UICONTROL Marketo deduplication field]**: Markera det Marketo-fält för borttagning av dubbletter som du vill använda när du uppdaterar befintliga Marketo-leads. Den här väljaren visar de fält som du har markerat som dedupliceringsfält i Marketo. Om du vill att ett visst fält från Marketo ska visas som ett dedupliceringsfält måste du markera fältet som ett [sökbart fält](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/lead-database) i Marketo.
 
   >[!NOTE]
   >

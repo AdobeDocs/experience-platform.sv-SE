@@ -3,9 +3,9 @@ title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2395'
+source-wordcount: '2390'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ I avsnitten nedan finns information om eventuella krav som du måste ställa in 
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Mailchimp Interest Categories] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Mailchimp Interest Categories] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 ### Krav för målet [!DNL Mailchimp Interest Categories] {#prerequisites-destination}
 
@@ -136,7 +136,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 | Fält | Beskrivning |
 | --- | --- |
 | **[!UICONTROL Username]** | Ditt [!DNL Mailchimp Interest Categories]-användarnamn. |
-| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel &#x200B;](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
+| **[!UICONTROL Password]** | Din [!DNL Mailchimp] **API-nyckel**, som du har noterat i avsnittet [Samla [!DNL Mailchimp] inloggningsuppgifter](#gather-credentials).<br> Din API-nyckel har formen av `{KEY}-{DC}`, där delen `{KEY}` refererar till det värde som anges i avsnittet [[!DNL Mailchimp]  API-nyckel ](#gather-credentials) och delen `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange delen `{KEY}` eller hela formuläret.<br> Om din API-nyckel till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*<br> kan du ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värde. |
 
 {style="table-layout:auto"}
 
@@ -222,7 +222,7 @@ När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL N
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-* Logga in på ditt [[!DNL Mailchimp]](https://login.mailchimp.com/)-konto. Gå sedan till sidan **[!DNL Audience]**. Expandera sedan menyn **[!DNL Manage Contacts]** och välj **[!DNL Groups]**.
+* Gå till kontot [[!DNL Mailchimp]](https://login.mailchimp.com/). Gå sedan till sidan **[!DNL Audience]**. Expandera sedan menyn **[!DNL Manage Contacts]** och välj **[!DNL Groups]**.
 
 ![Skärmbild för Mailchimp-användargränssnitt som visar sidan Målgrupp.](../../assets/catalog/email-marketing/mailchimp-interest-categories/audience-groups.png)
 

@@ -5,9 +5,9 @@ title: Ta bort ett målkonto med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort ett målkonto med API:t för Flow Service.
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '743'
 ht-degree: 6%
 
 ---
@@ -152,7 +152,7 @@ A successful response returns the current details of your connection including i
 >Om du vill ta bort befintliga dataflöden kan du läsa sidorna nedan:
 >
 >* [Använd Experience Platform-gränssnittet](../ui/delete-destinations.md) för att ta bort befintliga dataflöden;
->* [Använd API:t för Flow Service &#x200B;](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
+>* [Använd API:t för Flow Service ](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
 
 När du har ett anslutnings-ID och har säkerställt att det inte finns några dataflöden till målkontot, kan du utföra en DELETE-begäran till [!DNL Flow Service]-API:t.
 
@@ -187,4 +187,4 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du använt API:t [!DNL Flow Service] för att ta bort befintliga målkonton. Mer information om hur du använder mål finns i [målöversikten](/help/destinations/home.md).
+Du har använt API:t [!DNL Flow Service] för att ta bort befintliga målkonton. Mer information om hur du använder mål finns i [målöversikten](/help/destinations/home.md).

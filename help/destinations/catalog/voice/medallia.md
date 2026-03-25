@@ -3,9 +3,9 @@ keywords: Medallia;media
 title: Medietillägg
 description: Medietillägget är en röst för kundens destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: c28cf31a-890c-4dcd-b936-5a030dc6e83e
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '448'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Distribuera [!DNL Medallia] snabbt och sömlöst på dina webbegenskaper. Tillägget gör det även möjligt att identifiera enkäthändelser, samla in kundfeedback i realtid via dataelement, använda det i regler för att anpassa kundens upplevelse och dela data med [!DNL Adobe Analytics].
+Distribuera [!DNL Medallia] snabbt och sömlöst på dina webbegenskaper. Tillägget identifierar också enkäthändelser, samlar in kundfeedback i realtid via dataelement, använder det i regler för att personalisera kundupplevelsen och delar data med [!DNL Adobe Analytics].
 
 [!DNL Medallia] är en röst för kundtillägget i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html).
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i [!D
 
 Så här installerar du tillägget [!DNL Medallia]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

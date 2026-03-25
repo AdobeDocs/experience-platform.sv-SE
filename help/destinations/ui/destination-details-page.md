@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ I användargränssnittet för [!DNL Adobe Experience Platform] kan du visa och �
 
 Följ stegen nedan för att visa mer information om ett befintligt mål. Du kan ta reda på mål-ID:t för ett mål, den användare som skapade målet, när det skapades och annan information.
 
-1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre huvudet för att visa dina befintliga mål.
+1. Gå till [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre huvudet för att visa dina befintliga mål.
 
    ![Bläddra bland mål](../assets/ui/details-page/browse-destinations.png)
 
@@ -55,7 +55,7 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 | Höger rälsartikel | Beskrivning |
 | --- | --- |
 | [!UICONTROL Activate audiences] | Välj den här kontrollen om du vill redigera vilka målgrupper som mappas till målet, uppdatera exportscheman eller lägga till och ta bort mappade attribut och identiteter. Mer information finns i guiderna om [aktivering av målgruppsdata till målgrupper som direktuppspelar målplatser](./activate-segment-streaming-destinations.md), [aktivering av målgruppsdata till gruppprofilbaserade mål](./activate-batch-profile-destinations.md) och [aktivering av målgruppsdata till direktuppspelande profilbaserade mål](./activate-streaming-profile-destinations.md). |
-| [!UICONTROL Delete] | Gör att du kan ta bort det här dataflödet och ta bort mappar för de målgrupper som tidigare aktiverats, om det finns några. |
+| [!UICONTROL Delete] | Tar bort det här dataflödet och mappar alla tidigare aktiverade målgrupper. |
 | [!UICONTROL Destination name] | Det här fältet kan redigeras för att uppdatera målets namn. |
 | [!UICONTROL Description] | Det här fältet kan redigeras för att uppdatera eller lägga till en valfri beskrivning till målet. |
 | [!UICONTROL Destination] | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [målkatalogen](../catalog/overview.md). |
@@ -83,7 +83,7 @@ Fliken [!UICONTROL Dataflow runs] innehåller mätdata om dataflödet som körs 
 >[!NOTE]
 >
 >* Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) och [Experience Cloud-målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md).
->* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [&#x200B; Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [HTTP API](/help/destinations/catalog/streaming/http-destination.md) uppskattas mätvärdena för utelämnade, misslyckade och aktiverade identiteter. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
+>* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [ Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [HTTP API](/help/destinations/catalog/streaming/http-destination.md) uppskattas mätvärdena för utelämnade, misslyckade och aktiverade identiteter. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
 
 ![Dataflödet kör vy](../assets/ui/details-page/dataflow-runs.png)
 
@@ -105,7 +105,7 @@ För dataflöde som körs till filbaserade mål beror **[!UICONTROL Processing d
 
 ![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett filbaserat mål.](../assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
-Mer information finns i avsnittet om [dataflöde som körs till batchbaserade (filbaserade) mål &#x200B;](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) i övervakningsdokumentationen.
+Mer information finns i avsnittet om [dataflöde som körs till batchbaserade (filbaserade) mål ](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) i övervakningsdokumentationen.
 
 ## [!UICONTROL Activation data] {#activation-data}
 
@@ -158,7 +158,7 @@ Om du vill redigera det befintliga aktiveringsschemat för flera målgrupper sam
 
 >[!NOTE]
 >
->Mer information om hur du utforskar informationssidan för en målgrupp finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md#audience-details).
+>Mer information om målgruppsinformationssidan finns i översikten [Målgruppsportalen](../../segmentation/ui/audience-portal.md#audience-details).
 
 ### Redigera filnamn för flera målgrupper som exporterats till gruppmål {#bulk-edit-file-names}
 

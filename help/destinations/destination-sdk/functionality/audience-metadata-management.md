@@ -2,9 +2,9 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1297'
+source-wordcount: '1270'
 ht-degree: 2%
 
 ---
@@ -546,20 +546,20 @@ För att skicka information som målgrupps-ID:n, åtkomsttoken, felmeddelanden m
 
 | Makro | Beskrivning |
 |--- |--- |
-| `{{segment.alias}}` | Ger åtkomst till målgruppsalias i Experience Platform. |
-| `{{segment.name}}` | Gör att du kan komma åt målgruppens namn i Experience Platform. |
-| `{{segment.id}}` | Ger åtkomst till målgrupps-ID i Experience Platform. |
-| `{{customerData.accountId}}` | Gör att du kan komma åt det konto-ID-fält som du har konfigurerat i målkonfigurationen. |
-| `{{oauth2ServiceAccessToken}}` | Gör att du dynamiskt kan generera en åtkomsttoken baserat på din OAuth 2-konfiguration. |
-| `{{authData.accessToken}}` | Gör att du kan skicka åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda token som inte upphör att gälla för att ansluta till ditt mål. Annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |
+| `{{segment.alias}}` | Kommer åt målgruppsalias i Experience Platform. |
+| `{{segment.name}}` | Kommer åt målgruppsnamnet i Experience Platform. |
+| `{{segment.id}}` | Kommer åt målgrupps-ID i Experience Platform. |
+| `{{customerData.accountId}}` | Öppnar fältet för konto-ID som du har konfigurerat i målkonfigurationen. |
+| `{{oauth2ServiceAccessToken}}` | Genererar en åtkomsttoken dynamiskt baserat på din OAuth 2-konfiguration. |
+| `{{authData.accessToken}}` | Skickar åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda token som inte upphör att gälla för att ansluta till ditt mål. Annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |
 | `{{body.segments[0].segment.id}}` | Returnerar den unika identifieraren för den skapade målgruppen som värdet för nyckeln `externalAudienceId`. |
 | `{{error.message}}` | Returnerar ett felmeddelande som kommer att visas för användare i Experience Platform-gränssnittet. |
-| `{{{segmentEnrichmentAttributes}}}` | Gör att du kan komma åt alla anrikningsattribut för en viss målgrupp.  Det här makrot stöds av händelserna `create`, `update` och `delete`. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{{segmentEnrichmentAttributes}}}` | Använder alla anrikningsattribut för en viss målgrupp.  Det här makrot stöds av händelserna `create`, `update` och `delete`. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
 | `{{destination.name}}` | Returnerar namnet på målet. |
 | `{{destination.sandboxName}}` | Returnerar namnet på den Experience Platform-sandlåda där målet är konfigurerat. |
 | `{{destination.id}}` | Returnerar ID:t för målkonfigurationen. |
 | `{{destination.imsOrgId}}` | Returnerar det IMS-Org-ID där målet är konfigurerat. |
-| `{{destination.enrichmentAttributes}}` | Gör att du kan komma åt alla anrikningsattribut för alla målgrupper som mappas till ett mål. Det här makrot stöds av händelserna `createDestination`, `updateDestination` och `deleteDestination`. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
-| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | Gör att du kan komma åt anrikningsattribut för specifika externa målgrupper mappade till ett mål. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{destination.enrichmentAttributes}}` | Använder alla anrikningsattribut för alla målgrupper som mappas till ett mål. Det här makrot stöds av händelserna `createDestination`, `updateDestination` och `deleteDestination`. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | Använder anrikningsattribut för specifika externa målgrupper som mappats till ett mål. Berikningsattribut är bara tillgängliga för [anpassade uppladdade målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
 
 {style="table-layout:auto"}

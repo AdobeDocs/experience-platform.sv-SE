@@ -4,9 +4,9 @@ title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2067'
+source-wordcount: '2061'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
-Med tjänsten [!DNL Kinesis Data Streams] från [!DNL Amazon Web Services] kan du samla in och bearbeta stora dataströmmar i realtid.
+Tjänsten [!DNL Kinesis Data Streams] av [!DNL Amazon Web Services] samlar in och bearbetar stora dataströmmar i realtid.
 
 Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis]-lagringsutrymme för att strömma data från [!DNL Adobe Experience Platform].
 
@@ -62,7 +62,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
@@ -206,7 +206,7 @@ Ta till exempel det här dataflödet som ett [!DNL Amazon Kinesis]-mål där tre
 
 ![Amazon Kinesis-måldataflöde](../../assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [&#x200B; Exporterade data &#x200B;](#exported-data) nedan), kan andra mappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som den målgrupp som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars** och även är medlem i segmenten **Basic Site Active och City - Dallas** så finns dessa två andra målgrupper också i `segmentMembership` -objektet för dataexporten, eftersom de mappas i dataflödet, om de har samma sammanslagningsprincip som för **Customer med DeLorean Cars** segment.
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra mappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som den målgrupp som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars** och även är medlem i segmenten **Basic Site Active och City - Dallas** så finns dessa två andra målgrupper också i `segmentMembership` -objektet för dataexporten, eftersom de mappas i dataflödet, om de har samma sammanslagningsprincip som för **Customer med DeLorean Cars** segment.
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 
@@ -322,6 +322,6 @@ Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience 
 
 >[!MORELIKETHIS]
 >
->* [Anslut till Amazon Kinesis och aktivera data med API:t för Flow Service &#x200B;](../../api/streaming-destinations.md)
+>* [Anslut till Amazon Kinesis och aktivera data med API:t för Flow Service ](../../api/streaming-destinations.md)
 >* [Azure Event Hubs-mål](./azure-event-hubs.md)
 >* [Måltyper och -kategorier](../../destination-types.md)

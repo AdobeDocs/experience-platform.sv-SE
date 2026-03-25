@@ -3,9 +3,9 @@ keywords: kickfire;Kickfire;kickfire extension;Kickfire Extension
 title: KickFire-tillägg
 description: KickFire-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: c2313474-05d5-4c06-8aa5-ed10e9e9226e
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '418'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med [!DNL KickFire's] IP-adressinformation och B2B-data kan du översätta IP-adresser till företag, identifiera anonyma webbbesökare och integrera kontodata i din tekniska stack - allt baserat på ett företags IP-adress.
+[!DNL KickFire's] IP-adressinformation och B2B-data med helmografi översätter IP-adresser till företag, identifierar anonyma webbbesökare och integrerar kontodata i din tekniska stack - allt baserat på ett företags IP-adress.
 
 [!DNL KickFire] är ett personaliseringstillägg i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktioner finns på [Kickfire-webbplatsen](https://www.kickfire.com/).
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i [!D
 
 Så här installerar du tillägget [!DNL KickFire]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

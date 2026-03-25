@@ -5,9 +5,9 @@ title: Uppdatera måldataflöden med API:t för Flow Service
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort målgrupper och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2459'
+source-wordcount: '2452'
 ht-degree: 1%
 
 ---
@@ -877,4 +877,4 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du lärt dig hur du uppdaterar olika komponenter i ett måldataflöde, som att lägga till eller ta bort målgrupper eller profilattribut med hjälp av [!DNL Flow Service] API. Mer information om mål finns i [målöversikten](../home.md).
+Du har lärt dig hur du uppdaterar olika komponenter i ett måldataflöde, som att lägga till eller ta bort målgrupper eller profilattribut med [!DNL Flow Service] API. Mer information om mål finns i [målöversikten](../home.md).

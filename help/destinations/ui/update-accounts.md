@@ -4,9 +4,9 @@ title: Uppdatera destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att uppdatera målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Fliken **[!UICONTROL Accounts]** innehåller information om de anslutningar du har upprättat med olika mål. Se [Kontoöversikten](../ui/destinations-workspace.md#accounts) för all information du kan få om varje målkonto.
+Fliken **[!UICONTROL Accounts]** innehåller information om de anslutningar du har upprättat med olika mål. Se [Kontoöversikten](../ui/destinations-workspace.md#accounts) för all tillgänglig information för varje målkonto.
 
 I den här självstudiekursen beskrivs stegen för att uppdatera information om destinationskonton med hjälp av användargränssnittet i Experience Platform.
 
@@ -29,7 +29,7 @@ För gruppmål kan du uppdatera åtkomsten eller den hemliga nyckeln, om något 
 
 Följ stegen nedan för att uppdatera anslutningsinformationen till befintliga mål.
 
-1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa dina befintliga konton.
+1. Gå till [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa dina befintliga konton.
 
    ![Fliken Konton](../assets/ui/update-accounts/accounts-tab.png)
 
@@ -63,6 +63,6 @@ Följ stegen nedan för att uppdatera anslutningsinformationen till befintliga m
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du använt arbetsytan **[!UICONTROL destinations]** för att uppdatera befintliga konton.
+Du har uppdaterat befintliga konton med arbetsytan **[!UICONTROL destinations]**.
 
 Mer information om mål finns i [målöversikten](../catalog/overview.md).

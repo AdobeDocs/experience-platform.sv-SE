@@ -2,9 +2,9 @@
 description: Destinationstjänsten i Adobe Experience Platform använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionaliteten. Se hur dessa komponenter tillsammans gör det möjligt för Experience Platform att ansluta till målpartners, skicka anpassade meddelanden och aktivera profildata i hela det digitala ekosystemet.
 title: Konfigurationsalternativ i Destination SDK
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '817'
 ht-degree: 0%
 
 ---
@@ -56,8 +56,8 @@ I dokumentationen nedan finns mer information om var och en av målkonfiguration
 
 ## Konfiguration av målgruppsmetadata {#audience-metadata-configuration}
 
-Med den här komponenten kan du konfigurera hur målgrupper skapas, uppdateras eller tas bort programmatiskt i ditt mål. För filbaserade mål kan du skapa ett meddelande när filerna har levererats till ditt mål. Du kan konfigurera den här funktionen via [målgruppsmallens slutpunkt](../metadata-api/create-audience-template.md).
+Använd den här komponenten för att konfigurera hur målgrupper skapas, uppdateras eller tas bort programmatiskt i ditt mål. För filbaserade mål använder du den för att skapa ett meddelande när filerna levereras till ditt mål. Du kan konfigurera den här funktionen via [målgruppsmallens slutpunkt](../metadata-api/create-audience-template.md).
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här artikeln får du nu en allmän översikt över funktionerna i Destination SDK och vilka sidor som ska läsas för mer information om specifika konfigurationer. Därefter kan du läsa guiderna som innehåller alla steg som krävs för att [konfigurera en direktuppspelning](../guides/configure-destination-instructions.md) eller ett [filbaserat mål](../guides/configure-file-based-destination-instructions.md) med Destination SDK.
+Du har nu en allmän översikt över funktionerna i Destination SDK och vilka sidor du ska läsa för mer information om specifika konfigurationer. Därefter kan du läsa guiderna som innehåller alla steg som krävs för att [konfigurera en direktuppspelning](../guides/configure-destination-instructions.md) eller ett [filbaserat mål](../guides/configure-file-based-destination-instructions.md) med Destination SDK.

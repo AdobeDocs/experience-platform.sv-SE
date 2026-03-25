@@ -4,9 +4,9 @@ description: Exportera dina förstapartsmålgrupper till Acxiom-målet, så att 
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: label="Beta" type="Informative"
 exl-id: d82e8cd3-970c-44af-99b0-ea154eb3655e
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1536'
+source-wordcount: '1531'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -187,7 +187,7 @@ Kontrollera [!DNL Amazon S3 Storage]-pytsen och se till att de exporterade filer
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att exportera batchdata från Experience Platform till din [!DNL Acxiom] hanterade S3-plats. Du måste kontakta din Acxiom-representant med namnet på kontot, filnamnet och bucket-sökvägen så att bearbetningen kan konfigureras.
+Du har skapat ett dataflöde för att exportera batchdata från Experience Platform till din [!DNL Acxiom] hanterade S3-plats. Du måste kontakta din Acxiom-representant med namnet på kontot, filnamnet och bucket-sökvägen så att bearbetningen kan konfigureras.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

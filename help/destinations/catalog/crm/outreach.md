@@ -1,11 +1,11 @@
 ---
 keywords: crm;CRM;crm destination;Utanför;Utanför crm-mål
 title: Utdataanslutning
-description: Med Outreach-destinationen kan du exportera dina kontodata och aktivera dem inom ramarna för ditt företags behov.
+description: Använd utdatadestinationen för att exportera dina kontodata och aktivera dem inom utdataområdet för dina affärsbehov.
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1792'
+source-wordcount: '1784'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 [[!DNL Outreach]](https://www.outreach.io/) är en plattform för Försäljningskörning med de flesta interaktionsdata för B2B-köpare i världen och betydande investeringar i egna AI-tekniker för att omvandla säljdata till intelligens. [!DNL Outreach] hjälper organisationer att automatisera säljengagemanget och agera på intäktsanalys för att förbättra deras effektivitet, förutsägbarhet och tillväxt.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) använder [Resurs-API:t för uppdatering av utdata](https://api.outreach.io/api/v2/docs#update-an-existing-resource), som gör att du kan uppdatera identiteter inom en målgrupp som motsvarar potentiella kunder i [!DNL Outreach].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) använder [Resurs-API:t för uppdatering av utdata](https://api.outreach.io/api/v2/docs#update-an-existing-resource) för att uppdatera identiteter inom en målgrupp som motsvarar potentiella kunder i [!DNL Outreach].
 
 [!DNL Outreach] använder OAuth 2 med auktoriseringsauktorisering som autentiseringsmekanism för att kommunicera med [!DNL Outreach] [!DNL Update Resource API]. Instruktioner för autentisering till din [!DNL Outreach]-instans finns längre ned i avsnittet [Autentisera till mål](#authenticate).
 
@@ -28,7 +28,7 @@ Som marknadsförare kan ni leverera personaliserade upplevelser till era potenti
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Outreach] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Outreach] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Adobe dokumentation för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -104,7 +104,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
@@ -185,7 +185,7 @@ Om du vill skicka målgruppsdata korrekt från [!DNL Adobe Experience Platform] 
      |---|---|---|
      | `Oid` | `OutreachId` | Ja |
 
-   * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet [!UICONTROL Attribute name]. Se [[!DNL Outreach] dokumentationen för den potentiella kunden](https://api.outreach.io/api/v2/docs#prospect) för en utförlig lista över attribut som stöds.
+   * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet [!UICONTROL Attribute name]. En omfattande lista över attribut som stöds finns i [[!DNL Outreach] dokumentationen för potentiell kund](https://api.outreach.io/api/v2/docs#prospect).
      ![Experience Platform UI-skärmbild som visar Target-mappning med LastName.](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
 
    * Beroende på vilka värden du vill uppdatera lägger du till följande mappning mellan XDM-profilschemat och [!DNL Outreach]-instansen:
@@ -209,7 +209,7 @@ Om du vill skicka målgruppsdata korrekt från [!DNL Adobe Experience Platform] 
   > * Det numeriska värdet *(`N`)* som används i [!UICONTROL Mapping ID] ska matcha det anpassade attributnyckelsuffixet med det numeriska värdet i [!DNL Outreach]. Exempel: *Eget fält `N` Etikett*.
   > * Du behöver bara ange det numeriska värdet, inte hela etiketten för anpassade fält.
   > * [!DNL Outreach] stöder maximalt 150 anpassade etikettfält.
-  > * Mer information finns i [[!DNL Outreach] dokumentationen för den potentiella kunden](https://api.outreach.io/api/v2/docs#prospect).
+  > * Mer information finns i [[!DNL Outreach] dokumentationen för potentiell kund](https://api.outreach.io/api/v2/docs#prospect).
 
    * Exempel:
 
@@ -235,7 +235,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Övervaka målgruppssammanfattningen och se till att antalet profiler motsvarar antalet som skapas inom segmentet.
    ![Experience Platform UI-skärmbild med segmentsammanfattning.](../../assets/catalog/crm/outreach/segment.png)
 
-1. Logga in på webbplatsen [!DNL Outreach], gå till sidan [!DNL Apps] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Outreach] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet [!UICONTROL Mapping ID] som angavs under steget [målgruppsplanering](#schedule-segment-export-example).
+1. Gå till webbplatsen [!DNL Outreach], navigera till sidan [!DNL Apps] > [!DNL Contacts] och kontrollera om profilerna från målgruppen har lagts till. Du kan se att varje målgruppsstatus i [!DNL Outreach] har uppdaterats med motsvarande målgruppsstatus från Experience Platform, baserat på värdet [!UICONTROL Mapping ID] som angavs under steget [målgruppsplanering](#schedule-segment-export-example).
 
 ![Skärmbild av gränssnittet som visar sidan Utanför potentiell kund med de uppdaterade målgruppsstatusarna visas.](../../assets/catalog/crm/outreach/outreach-prospect.png)
 

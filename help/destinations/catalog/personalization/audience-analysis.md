@@ -5,16 +5,16 @@ badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Informative"
 exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
 hide: true
 hidefromtoc: true
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '867'
 ht-degree: 1%
 
 ---
 
 # Målgruppsanalys
 
-Med [!UICONTROL Audience Analysis]-målet kan du utöka [!DNL Adobe Experience Platform] målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=sv-SE). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html?lang=sv-SE) -rapportering.
+Använd målet [!UICONTROL Audience Analysis] för att berika [!DNL Adobe Experience Platform] målgruppsdata till [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html). Du kan välja vilka målgrupper du vill inkludera i de resulterande berikade data. Målgruppskvalifikationer är sedan tillgängliga som dimensioner i [Analysis Workspace](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-workspace/home.html) -rapportering.
 
 >[!AVAILABILITY]
 >
@@ -106,7 +106,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 
 ### Styrningspolicy och verkställighetsåtgärder {#governance-policy}
 
-I det här valfria avsnittet kan du definiera dina datastyrningsprinciper och se till att de data som används är kompatibla när målgrupper skickas och är aktiva.
+Med det här valfria avsnittet kan du definiera dina datastyrningsprinciper och se till att de data som används är kompatibla när målgrupper skickas och är aktiva.
 
 Välj **[!UICONTROL Create]** när du är klar med valet av marknadsföringsåtgärder för målet.
 

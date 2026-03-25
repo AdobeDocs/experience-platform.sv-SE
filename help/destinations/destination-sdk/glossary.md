@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Destination SDK ordlista
 description: Förstå viktig terminologi när du skapar ett mål med Experience Platform Destination SDK.
 exl-id: d65f390a-a980-49b8-9570-840f03534553
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '669'
 ht-degree: 1%
 
 ---
@@ -44,6 +44,6 @@ I den här ordlistan finns definitioner av termer som används i Destination SDK
 
 **Mallspecifikationer och mallstrategier**: Mallspecifikationer är konfigurationer som används för att formatera HTTP-begäranden som skickas från [!DNL Adobe Experience Platform] till ett mål. De omvandlar profilattributfält från XDM-schemat till ett format som stöds av målplattformen. Om du använder ett mallspråk som liknar [!DNL Jinja] tillåter dessa specifikationer dynamiska dataomformningar baserade på specifika regler och indata. [Läs mer](/help/destinations/destination-sdk/functionality/destination-server/templating-specs.md).
 
-**Testar-API:t**: Med testnings-API:t kan du validera målkonfigurationerna innan du skickar en publiceringsbegäran. Den innehåller verktyg för att generera exempelprofiler och testa dataflödet, så att konfigurationen matchar målets krav. API:t har stöd för både direktuppspelning och filbaserade (batch-baserade) mål, vilket ger ett sätt att simulera data och felsöka potentiella problem i konfigurationsprocessen. Läs mer om testnings-API:t för [direktuppspelning](/help/destinations/destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md) och [filbaserade mål](/help/destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md).
+**Testar-API:t**: Använd testnings-API:t för att validera målkonfigurationerna innan du skickar en publiceringsbegäran. Den innehåller verktyg för att generera exempelprofiler och testa dataflödet, så att konfigurationen matchar målets krav. API:t har stöd för både direktuppspelning och filbaserade (batch-baserade) mål, vilket ger ett sätt att simulera data och felsöka potentiella problem i konfigurationsprocessen. Läs mer om testnings-API:t för [direktuppspelning](/help/destinations/destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md) och [filbaserade mål](/help/destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md).
 
 **Omformningsmall**: En omformningsmall anpassar dataformatet från Adobe XDM-schemat till målets förväntade format. [Läs mer](/help/destinations/destination-sdk/functionality/destination-server/message-format.md).

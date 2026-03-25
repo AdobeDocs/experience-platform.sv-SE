@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1312'
+source-wordcount: '1311'
 ht-degree: 2%
 
 ---
@@ -124,11 +124,11 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL LinkedIn Matched Audiences]-mål och aktivera målgrupper.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
->Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
+>Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i [självstudiekursen om målkonfiguration](../../ui/connect-destination.md).
 
 ### Autentisera till mål {#authenticate}
 

@@ -3,9 +3,9 @@ keywords: taggtillägg;taggtillägg;startmål;plattformstaggtillägg;plattformst
 title: Taggtillägg i Adobe Experience Platform
 description: Adobe Experience Platform erbjuder nästa generations tagghanteringsfunktioner från Adobe. Experience Platform ger er ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser.
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Extensions forward raw event data to several types of destinations. Think of ext
 
 ## Fördelar med att använda taggtillägg {#extensions-benefits}
 
-Experience Platform taggfunktioner är kostnadsfria för befintliga Experience Cloud-kunder. Systemet förenklar taggdistribution på din webbplats med lättanvända tillägg som du kan installera, konfigurera, uppdatera och ta bort. Taggar gör att det inte finns så mycket plats på webbplatsen och gör att du snabbt kan läsa in sidorna.
+Experience Platform taggfunktioner är kostnadsfria för befintliga Experience Cloud-kunder. Systemet förenklar taggdistribution på din webbplats med lättanvända tillägg som du kan installera, konfigurera, uppdatera och ta bort. Taggar gör att det inte finns något utrymme på webbplatsen och du kan snabbt läsa in dina sidor.
 
 Du kan inte aktivera målgrupper för taggtillägg, men du kan konfigurera regler så att endast händelsedata vidarebefordras i vissa situationer. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i reglerna i [taggdokumentationen](../../../tags/ui/managing-resources/rules.md).
 
@@ -62,7 +62,7 @@ Med tillägg kan ni tillgodose olika kundbehov. Exempel på användningsområden
 Tillägg kan delas in i följande kategorier i Experience Platform:
 
 - [Advertising](../advertising/overview.md)
-- [Analytics &#x200B;](../analytics/overview.md)
+- [Analytics ](../analytics/overview.md)
 - [Datahanteringsplattform](../data-management/overview.md)
 - [E-postmarknadsföringsmål](../email-marketing/overview.md)
 - [Personalisering](../personalization/overview.md)

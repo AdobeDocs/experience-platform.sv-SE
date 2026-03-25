@@ -3,9 +3,9 @@ title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2099'
+source-wordcount: '2096'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
@@ -73,7 +73,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
 * Så här [exporterar du datauppsättningar med Experience Platform användargränssnitt](/help/destinations/ui/export-datasets.md).
-* Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service &#x200B;](/help/destinations/api/export-datasets.md).
+* Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service ](/help/destinations/api/export-datasets.md).
 
 ## Filformat för exporterade data {#file-format}
 
@@ -85,7 +85,7 @@ När du exporterar *datauppsättningar* skapar Experience Platform en `.parquet`
 
 >[!AVAILABILITY]
 >
->Detta avsnitt gäller implementeringar av Experience Platform som körs på Microsoft Azure. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Microsoft Azure. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
 Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
 
@@ -173,7 +173,7 @@ POST /data/foundation/connectors/landingzone/credentials?type=dlz_destination&ac
 | Frågeparametrar | Beskrivning |
 | --- | --- |
 | `dlz_destination` | Typen `dlz_destination` gör att API:t kan skilja en målbehållare för en landningszon från andra typer av behållare som är tillgängliga för dig. |
-| `refresh` | Med åtgärden `refresh` kan du återställa dina autentiseringsuppgifter för landningszonen och automatiskt generera en ny `SASToken`. |
+| `refresh` | Åtgärden `refresh` återställer dina autentiseringsuppgifter för landningszonen och genererar automatiskt en ny `SASToken`. |
 
 {style="table-layout:auto"}
 
@@ -224,7 +224,7 @@ Med din [!DNL Data Landing Zone]-behållare ansluten till [!DNL Azure Storage Ex
 
 >[!AVAILABILITY]
 >
->Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
 Utför åtgärderna nedan för att hämta autentiseringsuppgifter till din [!DNL Data Landing Zone]-instans som har etablerats på AWS. Använd sedan en valfri klient för att ansluta till din [!DNL Data Landing Zone]-instans.
 
@@ -296,7 +296,7 @@ Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusi
 >
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
 ### Autentisera till mål {#authenticate}
 

@@ -3,7 +3,7 @@ title: Adobe Advertising DSP
 description: Lär dig hur du delar autentiserade och oautentiserade förstahandsmålgrupper med Adobe Advertising Demand-Side Platform (DSP) med hjälp av flera identitetstyper.
 feature: Destinations
 exl-id: 0ff80d38-993f-4609-bf2a-01a3e6cfe10b
-source-git-commit: ec1e0ca634ad41624bba91c704ad8be92a633634
+source-git-commit: 60a8296d20a254f6c431c6986f8b2704dced3516
 workflow-type: tm+mt
 source-wordcount: '1469'
 ht-degree: 0%
@@ -58,9 +58,9 @@ Annonsörer kan dela segment antingen med autentiserade förstapartidentifierare
 
 * Experience Cloud organisations-ID för Experience Platform-kontot. Du kan hitta ditt ID på din profilsida för Adobe [!DNL Real-Time Customer Data Platform] ([!DNL Real-Time CDP]).
 
-* En [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/sv/docs/advertising/dsp/audiences/sources/source-manage) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
+* En [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage) som tar emot målgrupper för kampanjaktivering. Ditt Adobe-kontoteam skapar källan med ditt Experience Cloud organisations-ID.
 
-* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [[!DNL Real-Time CDP] källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/sv/docs/advertising/dsp/audiences/sources/source-manage). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda den i Experience Platform för att skapa en målanslutning till Advertising DSP-målet, vilket förklaras nedan.
+* Källnyckeln för kontot eller annonsören [!DNL DSP], som genereras när en [[!DNL Real-Time CDP] källa skapas i  [!DNL DSP]](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage). Kontoteamet på [!DNL DSP] delar nyckeln med dig. Du kommer att använda den i Experience Platform för att skapa en målanslutning till Advertising DSP-målet, vilket förklaras nedan.
 
 ### Konfigurera ID-synkronisering för delning av cookies {#cookie-sync}
 
@@ -133,7 +133,7 @@ Om du vill ansluta till målet följer du instruktionerna för att [skapa en må
 
 Om du vill ansluta till målet anger du följande parameter i avsnittet [!UICONTROL Connection type] och väljer sedan **[!UICONTROL Connect to destination]**:
 
-* **[!UICONTROL Account or Advertiser Key]**: [!UICONTROL Source Key] genereras när en [[!DNL Real-Time CDP] källa skapas i DSP-användargränssnittet](https://experienceleague.adobe.com/sv/docs/advertising/dsp/audiences/sources/source-manage). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
+* **[!UICONTROL Account or Advertiser Key]**: [!UICONTROL Source Key] genereras när en [[!DNL Real-Time CDP] källa skapas i DSP-användargränssnittet](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage). Ditt Adobe-kontoteam delar nyckeln med dig när de har skapat källan.
 
 ![Skärmbild av avsnittet Anslutningstyp som visar fältet Konto eller Advertiser-nyckel.](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 
@@ -158,7 +158,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >id="platform_destinations_required_mappings_adcloud_dsp"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat de här två mappningsuppsättningarna åt dig: ECID och [!DNL adcloud] cookie. När du aktiverar data till Adobe Advertising DSP måste profilerna som är kvalificerade för de aktiverade målgrupperna ha minst en ECID-identitet kopplad till sin profil för att kunna exporteras till målet."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/adobe-advertising-cloud-connection#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/adobe-advertising-dsp-connection#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 >[!IMPORTANT]
 >

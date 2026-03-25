@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /sample-profiles från Destination SDK för att generera exempelprofiler baserat på ett källschema. Du kan använda de här exempelprofilerna för att testa din filbaserade målkonfiguration.
 title: Generera exempelprofiler baserat på ett källschema
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '651'
 ht-degree: 0%
 
 ---

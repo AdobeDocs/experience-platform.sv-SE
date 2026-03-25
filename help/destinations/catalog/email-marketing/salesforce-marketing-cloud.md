@@ -1,8 +1,8 @@
 ---
 title: Salesforce Marketing Cloud-anslutning
-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
+description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget och som ni kan använda för att skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/) är en digital marknadsföringssvit som tidigare kallades ExactTarget och som gör att du kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
+[[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/) är en digital marknadsföringssvit som tidigare kallades ExactTarget och som du kan använda för att skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 
 Om du vill skicka målgruppsdata till [!DNL Salesforce Marketing Cloud] måste du först [ansluta till målet](#connect-destination) i Experience Platform och sedan [konfigurera en dataimport](#import-data-into-salesforce) från lagringsplatsen till [!DNL Salesforce Marketing Cloud].
 
@@ -44,7 +44,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
@@ -118,7 +118,7 @@ Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activat
 
 ### Målattribut {#destination-attributes}
 
-När du aktiverar målgrupper till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Bästa praxis när du aktiverar målgrupper till e-postmarknadsföringsmål](overview.md#best-practices).
+När du aktiverar målgrupper till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Bästa tillvägagångssätt vid aktivering av målgrupper till e-postmarknadsföringsmål](overview.md#best-practices).
 
 ## Exporterade data {#exported-data}
 

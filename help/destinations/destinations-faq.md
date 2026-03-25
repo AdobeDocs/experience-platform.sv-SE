@@ -3,9 +3,9 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Vanliga frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1633'
+source-wordcount: '1632'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Det här dokumentet innehåller svar på vanliga frågor om [!DNL Adobe Experience Platform] mål. För frågor och felsökning som rör andra [!DNL Experience Platform]-tjänster, inklusive de som har påträffats i alla [!DNL Experience Platform] API:er, se [Experience Platform felsökningsguide](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om [!DNL Adobe Experience Platform] mål. Mer information om frågor och felsökning som rör andra [!DNL Experience Platform]-tjänster, inklusive de som har påträffats i alla [!DNL Experience Platform] API:er, finns i [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
 
 ## Vanliga frågor om destinationer {#general}
 
@@ -229,7 +229,7 @@ Målgruppsdefinitioner sprids till Edge Network på upp till en timme. Men om en
 ### Var kan jag se de aktiverade attributen i [!DNL Adobe Target]? {#target-activated-attributes-location}
 
 +++Svar
-Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=sv-SE) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=sv-SE).
+Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html).
 +++
 
 ### Kan jag skapa ett mål utan ett datastream och sedan lägga till ett datastream till samma mål vid en senare tidpunkt? {#destination-without-datastream}
@@ -271,7 +271,7 @@ För användningsfall där hantering av medgivandeprinciper måste tillämpas i 
 
 Den här tjänsten innehåller kundhanterade nycklar och förhöjda tröskelvärden för hantering av kundens datalängd.
 
-Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten &#x200B;](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
+Destinationerna [!DNL Adobe Target] och [!DNL Custom Personalization] är integrerade med [Experience Platform dataanvändningsetiketter](../data-governance/labels/overview.md) och [efterlevnadstjänsten ](../data-governance/enforcement/overview.md) för samtycke. De här funktionerna är tillgängliga för alla kunder.
 
 
 

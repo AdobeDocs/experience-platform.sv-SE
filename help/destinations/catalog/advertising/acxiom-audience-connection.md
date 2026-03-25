@@ -3,9 +3,9 @@ title: Acxiom Audience Connection
 description: Använd  [!DNL Acxiom Audience Connection] målet om du vill förbättra målgrupper med  [!DNL Acxiom's Real ID] teknik och aktivera målgrupper på flera plattformar, till exempel  [!DNL Altice], [!DNL Ampersand], [!DNL Comcast] med flera.
 badge: label="Beta" type="Informative"
 exl-id: bac0f337-bfab-4779-acc8-f70239552666
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1030'
 ht-degree: 3%
 
 ---
@@ -33,7 +33,7 @@ Marknadsföringsavdelningen på ett globalt varumärke för finansiella tjänste
 ## Förutsättningar {#prerequisites}
 
 * **Bekräfta användningsvillkoren:** Innan du kan konfigurera ett nytt [!DNL Acxiom Audience Connection]-mål måste du läsa och signera [!DNL Acxiom's] användningsvillkoren för avtalet. Du får länken till avtalet när den genomförda försäljningsordern är slutförd.
-* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/sv/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
+* **Lär känna ditt företags-ID från Adobe:** Ditt [!DNL Adobe] organisations-ID krävs för att slutföra ditt användaravtal. Läs avsnittet [!DNL Adobe's] *Organisationer i Experience Cloud* om du vill ha mer information om hur du [visar ditt företags-ID](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255).
 
 ## Destinationer som stöds {#supported-destinations}
 
@@ -122,7 +122,7 @@ För att målplatsen [!DNL Acxiom Audience Connection] ska kunna ta emot målgru
 | Telefon | Telefonnummer till individ (riktnummer + nummer)<br> Det här fältet används som standard som en dedupliceringsnyckel för att göra posterna unika. | Nej | 11 | 10 |
 
 I kolumnen **[!UICONTROL Source Field]** anger du namnet på vart och ett av källattributen som du vill mappa till motsvarande målfält, eller markerar pilikonen för att öppna skärmen **[!UICONTROL Select source field]**.<br>
-![&#x200B; Mappningsskärm &#x200B;](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
+![ Mappningsskärm ](../../assets/catalog/advertising/acxiom-audience-distribution/mapping_screen.png)
 
 När du har mappat alla fält väljer du **[!UICONTROL Next]**.
 
@@ -149,8 +149,8 @@ Du måste lämna följande information till din [!DNL Adobe]-representant:
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du aktiverat en målgrupp för den valda målplattformen. Kontakta sedan din representant för målplattformen för att börja konfigurera kampanjen.
+Du har aktiverat en målgrupp för den valda målplattformen. Kontakta sedan din representant för målplattformen för att börja konfigurera kampanjen.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/sv/docs/experience-platform/data-governance/home).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/home).

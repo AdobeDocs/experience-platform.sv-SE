@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '874'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Den här sidan beskriver hur du använder informationen i [Konfigurationsalterna
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen som visas nedan bör du läsa sidan [Komma igång](../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga inloggningsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK. Detta förutsätter att du har slutfört villkoren för partnerskap och behörighet och är redo att börja utveckla ditt mål.
+Innan du går vidare till stegen som visas nedan kan du läsa sidan [Komma igång](../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga autentiseringsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK. Detta förutsätter att du har slutfört villkoren för partnerskap och behörighet och är redo att börja utveckla ditt mål.
 
 ## Steg för hur du använder konfigurationsalternativen i Destination SDK för att konfigurera destinationen {#steps}
 
@@ -178,7 +178,7 @@ När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du
 
 ## Steg 4: Skapa konfiguration av målgruppsmetadata {#create-audience-metadata-configuration}
 
-För vissa destinationer kräver Destination SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Mer information om när du behöver konfigurera konfigurationen och hur du gör den finns i [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
+För vissa destinationer kräver Destination SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Mer information om när du behöver konfigurera den här konfigurationen och hur du gör det finns i [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
 
 Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 
@@ -273,7 +273,7 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 >
 >`CUSTOMER_AUTHENTICATION` är det vanligaste av de två autentiseringsreglerna och det är det som ska användas om du kräver att användarna tillhandahåller någon form av autentisering till ditt mål innan de kan konfigurera en anslutning och exportera data.
 
-Läs `"authenticationRule": "CUSTOMER_AUTHENTICATION"`OAuth 2-autentisering[&#x200B; om du valde &#x200B;](../functionality/destination-configuration/oauth2-authorization.md) i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
+Läs `"authenticationRule": "CUSTOMER_AUTHENTICATION"`OAuth 2-autentisering[ om du valde ](../functionality/destination-configuration/oauth2-authorization.md) i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
 
 Om du har valt `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md) och skicka autentiseringsuppgiftsobjektets ID i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication).
 
@@ -284,7 +284,7 @@ När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i f
 Som en del av processen för att testa målet måste du använda Experience Platform-gränssnittet för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en publikdokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
-* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE)
+* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 7: Publicera destinationen {#publish-destination}
 

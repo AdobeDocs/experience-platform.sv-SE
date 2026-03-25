@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig autentiseringskonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en konfiguration för autentiseringsuppgifter
 exl-id: ebff370c-9189-48df-871f-ed0e1cd535c8
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '607'
 ht-degree: 2%
 
 ---

@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '3020'
+source-wordcount: '3017'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 HTTP API-målet är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 
@@ -25,7 +25,7 @@ Om du vill skicka profildata till HTTP-slutpunkter måste du först [ansluta til
 
 ## Användningsfall {#use-cases}
 
-Med HTTP API-målet kan du exportera XDM-profildata och målgrupper till generiska HTTP-slutpunkter. Där kan du köra egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
+Använd HTTP API-målet för att exportera XDM-profildata och målgrupper till generiska HTTP-slutpunkter. Där kan du köra egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
 
 HTTP-slutpunkter kan antingen vara kundernas egna system eller tredjepartslösningar.
 
@@ -130,7 +130,7 @@ curl --location --request POST 'https://some-api.com/token' \
 --data-urlencode 'grant_type=client_credentials'
 ```
 
-* [OAuth 2.0-lösenord &#x200B;](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
+* [OAuth 2.0-lösenord ](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
 
 ## Anslut till målet {#connect-destination}
 
@@ -286,7 +286,7 @@ Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre målgrup
 
 ![Ett exempel på ett måldataflöde för HTTP API.](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [&#x200B; Exporterade data &#x200B;](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 

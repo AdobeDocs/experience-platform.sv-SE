@@ -1,11 +1,11 @@
 ---
 keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
-description: Med SendGrid-målet kan du exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
+description: Använd SendGrid-målet för att exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1933'
+source-wordcount: '1928'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [SendGrid](https://www.sendgrid.com) är en populär plattform för kundkommunikation för transaktioner och marknadsföring.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts), som gör att du kan exportera dina e-postprofiler från första part och aktivera dem inom en ny SendGrid-målgrupp för dina affärsbehov.
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts) för att exportera dina e-postprofiler från första part och aktivera dem inom en ny SendGrid-målgrupp för dina affärsbehov.
 
 SendGrid använder API-bearer-token som en autentiseringsmekanism för att kommunicera med SendGrid API:t.
 
@@ -27,14 +27,14 @@ Följande objekt krävs innan du börjar konfigurera målet.
 1. Du måste ha ett SendGrid-konto.
    * Gå till sidan [signup](https://signup.sendgrid.com/) för SendGrid om du vill registrera och skapa ett SendGrid-konto, om du inte redan har ett.
 1. När du har loggat in på SendGrid-portalen måste du också generera en API-token.
-1. Navigera till SendGrid-webbplatsen och gå till sidan **[!DNL Settings]** > **[!DNL API Keys]**. Du kan även läsa dokumentationen för [SendGrid](https://app.sendgrid.com/settings/api_keys) för att få tillgång till rätt avsnitt i SendGrid-appen.
+1. Navigera till SendGrid-webbplatsen och gå till sidan **[!DNL Settings]** > **[!DNL API Keys]**. Du kan även läsa [dokumentationen för SendGrid](https://app.sendgrid.com/settings/api_keys) för att få tillgång till rätt avsnitt i appen SendGrid.
 1. Klicka slutligen på knappen **[!DNL Create API Key]**.
    * Läs [dokumentationen för SendGrid](https://docs.sendgrid.com/ui/account-and-settings/api-keys#creating-an-api-key) om du behöver hjälp med vilka åtgärder som ska utföras.
    * Om du vill generera API-nyckeln programmatiskt läser du [dokumentationen för SendGrid](https://docs.sendgrid.com/api-reference/api-keys/create-api-keys).
 
 ![Inställningssidan för API-nycklar för SendGrid med knappen Skapa API-nyckel.](../../assets/catalog/email-marketing/sendgrid/01-api-key.jpg)
 
-Innan du aktiverar data till SendGrid-målet måste du ha ett [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=sv-SE), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform]. Se även avsnittet [limits](#limits) längre ned på den här sidan.
+Innan du aktiverar data till SendGrid-målet måste du ha ett [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform]. Se även avsnittet [limits](#limits) längre ned på den här sidan.
 
 >[!IMPORTANT]
 >
@@ -123,7 +123,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 ### Fyll i målinformation {#destination-details}
 
-När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Name]**: Det namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En valfri beskrivning som hjälper dig att identifiera det här målet i framtiden.

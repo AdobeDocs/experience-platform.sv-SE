@@ -2,9 +2,9 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att skapa en målserver via Adobe Experience Platform Destination SDK.
 title: Skapa en målserverkonfiguration
 exl-id: 5c6b6cf5-a9d9-4c8a-9fdc-f8a95ab2a971
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2038'
+source-wordcount: '2029'
 ht-degree: 1%
 
 ---
@@ -782,7 +782,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserver
 
 ### Skapa dynamiska målservrar för schema {#dynamic-schema-servers}
 
-Med dynamiska scheman kan du dynamiskt hämta de målattribut som stöds och generera scheman baserat på ditt eget API. Du måste konfigurera en målserver för dynamiska scheman innan du kan konfigurera schemat.
+Dynamiska scheman hämtar dynamiskt de målattribut som stöds och skapar scheman baserat på ditt eget API. Du måste konfigurera en målserver för dynamiska scheman innan du kan konfigurera schemat.
 
 På fliken nedan finns ett exempel på en målserver för mål som använder [dynamiska scheman](../../functionality/destination-configuration/schema-configuration.md#dynamic-schema-configuration).
 

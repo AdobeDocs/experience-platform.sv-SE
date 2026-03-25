@@ -3,9 +3,9 @@ title: Salesforce Marketing Cloud Account Engagement
 description: Lär dig hur du använder Salesforce Marketing Cloud Account Engagement-målet (tidigare Pardot) för att exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud Account Engagement för dina affärsbehov.
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1633'
+source-wordcount: '1630'
 ht-degree: 1%
 
 ---
@@ -30,11 +30,11 @@ Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad 
 
 ## Förutsättningar {#prerequisites}
 
-I avsnitten nedan finns information om eventuella krav som du måste konfigurera i Experience Platform och [!DNL Salesforce]. Här finns även information som du måste samla in innan du kan arbeta med målet för [!DNL Marketing Cloud Account Engagement].
+I avsnitten nedan finns information om krav som du måste konfigurera i Experience Platform och [!DNL Salesforce]. Här finns även information som du måste samla in innan du kan arbeta med målet för [!DNL Marketing Cloud Account Engagement].
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Marketing Cloud Account Engagement] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Marketing Cloud Account Engagement] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 ### Förutsättningar i [!DNL Marketing Cloud Account Engagement] {#prerequisites-destination}
 
@@ -197,7 +197,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Navigera till en av de valda målgrupperna. Klicka på fliken **[!DNL Activation data]**.  Kolumnen **[!UICONTROL Mapping ID]** visar namnet på det anpassade fält som genereras på sidan [!DNL Marketing Cloud Account Engagement Prospects].
    ![Exempel på skärmbild i Experience Platform UI som visar mappnings-ID för ett markerat segment.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
-1. Logga in på webbplatsen [[!DNL Salesforce]](https://login.salesforce.com/). Gå sedan till sidan **[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]** och kontrollera om potentiella kunder från målgruppen har lagts till/uppdaterats. Du kan även komma åt [[!DNL Salesforce Pardot]](https://pi.pardot.com/) och få åtkomst till sidan **[!DNL Prospects]**.
+1. Gå till webbplatsen [[!DNL Salesforce]](https://login.salesforce.com/). Gå sedan till sidan **[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]** och kontrollera om potentiella kunder från målgruppen har lagts till/uppdaterats. Du kan även komma åt [[!DNL Salesforce Pardot]](https://pi.pardot.com/) och få åtkomst till sidan **[!DNL Prospects]**.
    ![Salesforce UI, skärmbild som visar sidan Prospects.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
 
 1. Om du vill kontrollera om potentiella kunder har uppdaterats väljer du en potentiell kund och kontrollerar om fältet för anpassad potentiell kund har uppdaterats med Experience Platform målgruppsstatus.

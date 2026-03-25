@@ -4,9 +4,9 @@ description: Använd den här kopplingen för att aktivera egna Adobe-profiler i
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: label="Beta" type="Informative"
 exl-id: 59edc43d-ae8e-4c3d-820c-b5be1c4483f9
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1419'
+source-wordcount: '1413'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 ## Översikt {#overview}
 
-Använd [!DNL Acxiom Data Enhancement]-anslutningen för att förse dina kundprofiler med ytterligare beskrivande data, som kan användas i program för analys, segmentering och målinriktning. Med hundratals element tillgängliga kan ni segmentera och modellera data på ett bättre sätt, vilket resulterar i mer korrekt målinriktning och prediktiv modellering.
+Använd [!DNL Acxiom Data Enhancement]-anslutningen för att förse dina kundprofiler med ytterligare beskrivande data, som kan användas i program för analys, segmentering och målinriktning. Med hundratals tillgängliga element ger detta bättre segmentering och datamodellering, vilket ger mer korrekt målinriktning och prediktiv modellering.
 
 ![Marknadsföringsdiagram som exporterar förstahandsdata till Acxiom och sedan importerar berikade data tillbaka till Real-Time CDP](/help/destinations/assets/catalog/data-partner/acxiom/marketing-workflow-data-enhancement.png)
 
@@ -78,7 +78,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -179,7 +179,7 @@ Kontrollera [!DNL Amazon S3 Storage]-pytsen och se till att de exporterade filer
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att exportera profildata från Experience Platform till din [!DNL Acxiom] hanterade S3-plats. Därefter kontaktar du din Acxiom-representant med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.
+Du har skapat ett dataflöde för att exportera profildata från Experience Platform till din [!DNL Acxiom] hanterade S3-plats. Därefter kontaktar du din Acxiom-representant med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

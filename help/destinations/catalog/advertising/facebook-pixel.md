@@ -3,9 +3,9 @@ keywords: pixeltillägg för Facebook;tillägg för Facebook-pixlar;mål för Fa
 title: Pixeltillägg för Facebook
 description: Facebook Pixel-tillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 6a2c661f-1ad0-4d96-b1bb-bf8c158c8521
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '421'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[!DNL Facebook Pixel] är ett analysverktyg som gör att du kan mäta effekten av din annonsering genom att förstå vilka åtgärder andra personer vidtar på din webbplats.
+[!DNL Facebook Pixel] är ett analysverktyg som mäter hur effektiv annonseringen är genom att förstå vilka åtgärder andra personer vidtar på din webbplats.
 
 [!DNL Facebook Pixel] är ett annonstillägg i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktioner finns på [Facebook Pixel-webbplatsen](https://developers.facebook.com/docs/facebook-pixel/).
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i [!D
 
 Så här installerar du tillägget [!DNL Facebook Pixel]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

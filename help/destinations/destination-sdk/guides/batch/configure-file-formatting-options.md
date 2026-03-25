@@ -2,9 +2,9 @@
 description: Konfigurera filformateringsalternativ för filbaserade mål
 title: Lär dig hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
 exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med Destination SDK kan du i stor utsträckning justera formaterings- och komprimeringsalternativen för de exporterade filerna, så att de matchar eventuella krav som ställs i det efterföljande lagringsutrymmet.
+Använd Destination SDK för att i stor utsträckning justera formaterings- och komprimeringsalternativen för de exporterade filerna så att de matchar eventuella senare krav i lagringsplatsen.
 
 På den här sidan beskrivs hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen som beskrivs nedan bör du läsa sidan [Komma igång](../../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga autentiseringsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK.
+Innan du går vidare till stegen som beskrivs nedan kan du läsa sidan [Komma igång](../../getting-started.md) för Destination SDK om du vill ha information om hur du hämtar nödvändiga inloggningsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK.
 
 Adobe rekommenderar också att du läser och bekanta dig med följande dokumentation innan du fortsätter:
 
@@ -742,4 +742,4 @@ James,Smith,"","\"\""
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här artikeln kan du nu ange egna filformateringsalternativ för de exporterade filerna med Destination SDK. Därefter kan ditt team använda [aktiveringsarbetsflödet för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) för att exportera data till målet.
+Nu vet du hur du ställer in anpassade filformateringsalternativ för de exporterade filerna med Destination SDK. Därefter kan ditt team använda [aktiveringsarbetsflödet för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) för att exportera data till målet.

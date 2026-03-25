@@ -3,7 +3,7 @@ title: PubMatic Connect
 description: PubMatic maximerar kundvärdet genom att leverera framtidens programmatiska digitala marknadsföringsprogram för supply chain. PubMatic Connect kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och hanteras.
 last-substantial-update: 2025-02-12T00:00:00Z
 exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '1130'
 ht-degree: 0%
@@ -162,7 +162,7 @@ Om du använder målet PubMatic Connect (Custom Audience ID Mapping) måste du a
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-Med användargränssnittet i [!DNL PubMatic] kan du kontrollera om data har skickats korrekt och att segmenten är tillgängliga. Det kan ta upp till 24 timmar efter att data har skickats för att [!DNL PubMatic]-gränssnittet ska uppdateras.
+Använd användargränssnittet för [!DNL PubMatic] för att kontrollera om data har skickats korrekt och om segmenten är tillgängliga. Det kan ta upp till 24 timmar efter att data har skickats för att [!DNL PubMatic]-gränssnittet ska uppdateras.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

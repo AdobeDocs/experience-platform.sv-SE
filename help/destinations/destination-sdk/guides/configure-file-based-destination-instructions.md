@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett filbaserat mål
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '740'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Den här sidan beskriver hur du använder informationen i [Konfigurationsalterna
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen som visas nedan bör du läsa sidan [Komma igång](../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga inloggningsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK.
+Innan du går vidare till stegen som visas nedan kan du läsa sidan [Komma igång](../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga autentiseringsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK.
 
 ## Steg för hur du använder konfigurationsalternativen i Destination SDK för att konfigurera destinationen {#steps}
 
@@ -255,7 +255,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## Steg 3: Skapa konfiguration av målgruppsmetadata {#create-audience-metadata-configuration}
 
-För vissa destinationer kräver Destination SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Mer information om när du behöver konfigurera konfigurationen och hur du gör den finns i [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
+För vissa destinationer kräver Destination SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Mer information om när du behöver konfigurera den här konfigurationen och hur du gör det finns i [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
 
 Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 
@@ -422,7 +422,7 @@ När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i f
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa målgrupper, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en målgrupp - dokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
-* [Skapa en publik - videogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE)
+* [Skapa en publik - videogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 6: Publicera destinationen {#publish-destination}
 

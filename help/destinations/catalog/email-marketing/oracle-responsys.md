@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;Oracle-svarsmål
 title: Oracle Responsys-anslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oracle erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,7 @@ Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activat
 
 ### Målattribut {#destination-attributes}
 
-När du aktiverar målgrupper till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Bästa praxis när du aktiverar målgrupper till e-postmarknadsföringsmål](overview.md#best-practices).
+När du aktiverar målgrupper till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Bästa tillvägagångssätt vid aktivering av målgrupper till e-postmarknadsföringsmål](overview.md#best-practices).
 
 ## Exporterade data {#exported-data}
 

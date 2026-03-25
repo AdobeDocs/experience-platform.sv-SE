@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1303'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
@@ -76,7 +76,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
 * Så här [exporterar du datauppsättningar med Experience Platform användargränssnitt](/help/destinations/ui/export-datasets.md).
-* Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service &#x200B;](/help/destinations/api/export-datasets.md).
+* Så här [exporterar du datauppsättningar programmatiskt med API:t för Flow Service ](/help/destinations/api/export-datasets.md).
 
 ## Filformat för exporterade data {#file-format}
 

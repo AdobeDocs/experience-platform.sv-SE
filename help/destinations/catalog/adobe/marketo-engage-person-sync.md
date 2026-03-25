@@ -4,9 +4,9 @@ description: Använd Marketo Engage Person Sync-anslutningen för att strömma u
 last-substantial-update: 2025-01-14T00:00:00Z
 badgeBeta: label="Beta" type="Informative"
 exl-id: 2c909633-b169-4ec8-9f58-276395cb8df2
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1200'
+source-wordcount: '1196'
 ht-degree: 5%
 
 ---
@@ -55,7 +55,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 | -------------------- | :-------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Segmenteringstjänst | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
+| Segmenteringstjänst | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
 | Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
@@ -87,11 +87,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >
 >* Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 
-Om ditt företag har åtkomst till flera organisationer måste du se till att du använder samma organisation i både Marketo Engage och [!DNL Real-Time CDP], där du konfigurerar målanslutningen till Marketo.  Om du redan har konfigurerat ett mål kan du välja ett befintligt Marketo-konto som ska användas med den nya konfigurationen.  Om du inte gör det klickar du på uppmaningen Koppla till mål, där du kan ange namn, beskrivning och Marketo Munchkin ID för det önskade målet.  Du hittar ditt Munchkin-id för Marketo-instansen på menyn Admin->Munchkin.
+Om ditt företag har åtkomst till flera organisationer måste du se till att du använder samma organisation i både Marketo Engage och [!DNL Real-Time CDP], där du konfigurerar målanslutningen till Marketo.  Om du redan har konfigurerat ett mål kan du välja ett befintligt Marketo-konto som ska användas med den nya konfigurationen.  Om inte, klickar du på uppmaningen Koppla till mål för att ange namn, beskrivning och Marketo Munchkin ID för det önskade målet.  Du hittar ditt Munchkin-id för Marketo-instansen på menyn Admin->Munchkin.
 
 >[!IMPORTANT]
 >
->Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
+>Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
 
 ![Anslut till mål](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
@@ -102,7 +102,7 @@ Om ditt företag har åtkomst till flera organisationer måste du se till att du
 * **[!UICONTROL First searchable field]**: Fält som ska dedupliceras. Fältet måste finnas i varje lead-post för indata. Standardvärdet är e-post
 * **[!UICONTROL First searchable field]**: Ett sekundärt fält att deduplicera. Fältet måste finnas i varje lead-post för indata. Valfritt
 
-När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [huvudpartition](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster åt efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
+När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [huvudpartition](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster åt efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
 
 >[!IMPORTANT]
 >

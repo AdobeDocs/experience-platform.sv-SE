@@ -2,9 +2,9 @@
 description: Den här sidan är ett exempel på det API-anrop som används för att skapa en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Skapa en målgruppsmall
 exl-id: 98d30002-d462-4008-9337-7de0cd608194
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '617'
 ht-degree: 0%
 
 ---
@@ -261,7 +261,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | `httpMethod` | Sträng | Den metod som används i slutpunkten för att skapa, uppdatera, ta bort eller validera målgruppen i målgruppen via programmering. Till exempel: `POST`, `PUT`, `DELETE` |
 | `headers.header` | Sträng | Anger alla HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"Content-Type"` |
 | `headers.value` | Sträng | Anger värdet för HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"application/x-www-form-urlencoded"` |
-| `requestBody` | Sträng | Anger innehållet i meddelandetexten som ska skickas till din API. Vilka parametrar som ska läggas till i objektet `requestBody` beror på vilka fält som API:t godkänner. Mer information om vad du kan inkludera i meddelandetexten finns i [makrodokumentationen &#x200B;](../functionality/audience-metadata-management.md#macros) som stöds. |
+| `requestBody` | Sträng | Anger innehållet i meddelandetexten som ska skickas till din API. Vilka parametrar som ska läggas till i objektet `requestBody` beror på vilka fält som API:t godkänner. Information om vad du kan ta med i meddelandetexten finns i [makrodokumentationen ](../functionality/audience-metadata-management.md#macros) som stöds. |
 | `responseFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexemplen](../functionality/audience-metadata-management.md#configuration-examples) i funktionsdokumentet för målgruppsmetadata. |
 | `responseFields.value` | Sträng | Ange värdet för eventuella svarsfält som API:t returnerar när det anropas. |
 | `responseErrorFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexemplen](../functionality/audience-metadata-management.md#configuration-examples) i funktionsdokumentet för målgruppsmetadata. |

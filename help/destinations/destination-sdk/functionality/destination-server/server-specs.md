@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar målserverspecifikationer i Adobe Experience Platform Destination SDK via slutpunkten "/authoring/destination-servers".
 title: Serverspecifikationer för mål som skapats med Destination SDK
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2748'
+source-wordcount: '2745'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ När du [skapar](../../authoring-api/destination-server/create-destination-serve
 
 ## Hårdkodade jämfört med mallsidesfält {#templatized-fields}
 
-När du skapar en målserver med Destination SDK kan du definiera parametervärden för konfiguration antingen genom att hårdkoda dem i konfigurationen eller genom att använda mallfält. I mallbaserade fält kan du läsa användardefinierade värden från användargränssnittet i Experience Platform.
+När du skapar en målserver med Destination SDK kan du definiera parametervärden för konfiguration antingen genom att hårdkoda dem i konfigurationen eller genom att använda mallfält. Mallade fält läser värden från användargränssnittet i Experience Platform.
 
 Målserverparametrar har två konfigurerbara fält. Dessa alternativ avgör om du använder hårdkodade eller mallsidiga värden.
 
@@ -160,7 +160,7 @@ I exemplet nedan visas ett exempel på en målserverkonfiguration för ett mål 
 
 ## [!DNL Amazon S3] målserver {#s3-example}
 
-Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till din Amazon S3-lagring.
+Använd den här målservern för att exportera filer som innehåller [!DNL Adobe Experience Platform] data till ditt Amazon S3-lagringsutrymme.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett Amazon S3-mål.
 
@@ -194,7 +194,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett Amazon 
 
 ## [!DNL SFTP] målserver {#sftp-example}
 
-Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till [!DNL SFTP]-lagringsservern.
+Använd den här målservern för att exportera filer som innehåller [!DNL Adobe Experience Platform] data till din [!DNL SFTP]-lagringsserver.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-mål.
 
@@ -232,7 +232,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-m�
 
 ## [!DNL Azure Data Lake Storage] ([!DNL ADLS]) målserver {#adls-example}
 
-Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till ditt [!DNL Azure Data Lake Storage]-konto.
+Använd den här målservern för att exportera filer som innehåller [!DNL Adobe Experience Platform] data till ditt [!DNL Azure Data Lake Storage]-konto.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Azure Data Lake Storage]-mål.
 
@@ -260,7 +260,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL A
 
 ## [!DNL Azure Blob Storage] målserver {#blob-example}
 
-Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till [!DNL Azure Blob Storage]-behållaren.
+Använd den här målservern för att exportera filer som innehåller [!DNL Adobe Experience Platform] data till [!DNL Azure Blob Storage]-behållaren.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Azure Blob Storage]-mål.
 
@@ -294,7 +294,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL A
 
 ## [!DNL Data Landing Zone] ([!DNL DLZ]) målserver {#dlz-example}
 
-Med den här målservern kan du exportera filer som innehåller Experience Platform-data till ett [[!DNL Data Landing Zone]](../../../catalog/cloud-storage/data-landing-zone.md)-lagringsutrymme.
+Använd den här målservern för att exportera filer som innehåller Experience Platform-data till ett [[!DNL Data Landing Zone]](../../../catalog/cloud-storage/data-landing-zone.md)-lagringsutrymme.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Data Landing Zone] ([!DNL DLZ])-mål.
 
@@ -324,7 +324,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL D
 
 ## [!DNL Google Cloud Storage] målserver {#gcs-example}
 
-Med den här målservern kan du exportera filer som innehåller Experience Platform-data till ditt [!DNL Google Cloud Storage]-konto.
+Använd den här målservern för att exportera filer som innehåller Experience Platform-data till ditt [!DNL Google Cloud Storage]-konto.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Google Cloud Storage]-mål.
 

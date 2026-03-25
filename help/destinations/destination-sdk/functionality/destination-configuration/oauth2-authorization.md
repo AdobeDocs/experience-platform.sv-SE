@@ -2,9 +2,9 @@
 description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destination SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 title: OAuth 2-auktorisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2243'
+source-wordcount: '2234'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Som en del av den här konfigurationen i ditt system behöver du URL:erna för o
 
 >[!IMPORTANT]
 >
->Stegen för att registrera en omdirigerings-/återanrops-URL för [!DNL Adobe Experience Platform] i systemet krävs bara för anslagstypen [&#x200B; OAuth 2 med auktoriseringskoden &#x200B;](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
+>Stegen för att registrera en omdirigerings-/återanrops-URL för [!DNL Adobe Experience Platform] i systemet krävs bara för anslagstypen [ OAuth 2 med auktoriseringskoden ](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
 
 I slutet av det här steget bör du ha:
 
@@ -491,4 +491,4 @@ Beroende på hur du anpassar din behörighet kan du behöva komma åt datafält 
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här artikeln har du nu en förståelse för de OAuth 2-autentiseringsmönster som stöds av [!DNL Adobe Experience Platform] och vet hur du konfigurerar ditt mål med OAuth 2-auktoriseringsstöd. Sedan kan du konfigurera ditt mål som stöds av OAuth 2 med Destination SDK. Läs [Använd Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) för nästa steg.
+Du har nu en förståelse för de OAuth 2-autentiseringsmönster som stöds av [!DNL Adobe Experience Platform] och vet hur du konfigurerar ditt mål med OAuth 2-auktoriseringsstöd. Sedan kan du konfigurera ditt mål som stöds av OAuth 2 med Destination SDK. Läs [Använd Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) för nästa steg.

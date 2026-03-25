@@ -4,9 +4,9 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '915'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I [!DNL Adobe Experience Platform] kan du konfigurera olika komponenter i befintliga aktiveringsdataflöden till mål, som:
 
-* [Aktivera eller inaktivera &#x200B;](#enable-disable-dataflows) aktiveringsdataflöden
+* [Aktivera eller inaktivera ](#enable-disable-dataflows) aktiveringsdataflöden
 * [Lägg till ytterligare målgrupper](#add-audiences) i aktiveringsdataflöden
 * [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
 * [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)
@@ -28,7 +28,7 @@ I [!DNL Adobe Experience Platform] kan du konfigurera olika komponenter i befint
 
 Följ stegen nedan för att bläddra bland dina befintliga aktiveringsdataflöden och identifiera det som du vill redigera.
 
-1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i den övre rubriken om du vill visa befintliga måldataflöden.
+1. Gå till [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i den övre rubriken om du vill visa befintliga måldataflöden.
 
    ![Bläddra bland mål](../assets/ui/edit-activation/browse-destinations.png)
 
@@ -68,7 +68,7 @@ Välj **[!UICONTROL Activate audiences]** i den högra listen. Den här åtgärd
 
 ![Experience Platform-gränssnittsbild som visar körningsalternativet Aktivera målgruppsdataflöde.](../assets/ui/edit-activation/activate-audiences.png)
 
-Välj steget **[!UICONTROL Scheduling]** i aktiveringsarbetsflödet för att redigera aktiveringsschemat och exportfrekvensen för ditt dataflöde. I det här steget kan du konfigurera hur ofta data exporteras till målet.
+Välj steget **[!UICONTROL Scheduling]** i aktiveringsarbetsflödet för att redigera aktiveringsschemat och exportfrekvensen för ditt dataflöde. Använd det här steget för att konfigurera hur ofta data exporteras till målet.
 
 I **[!UICONTROL Scheduling]**-steget i aktiveringsarbetsflödet kan du:
 
@@ -87,7 +87,7 @@ Välj **[!UICONTROL Activate audiences]** i den högra listen. Den här åtgärd
 
 ![Experience Platform-gränssnittsbild som visar körningsalternativet Aktivera målgruppsdataflöde.](../assets/ui/edit-activation/activate-audiences.png)
 
-Välj steget **[!UICONTROL Mapping]** i aktiveringsarbetsflödet om du vill redigera mappade attribut och identiteter för aktiveringsdataflödet. På så sätt kan du justera vilka profilattribut och identiteter som ska exporteras till målet.
+Välj steget **[!UICONTROL Mapping]** i aktiveringsarbetsflödet om du vill redigera mappade attribut och identiteter för aktiveringsdataflödet. Använd det här steget om du vill justera vilka profilattribut och identiteter som ska exporteras till målet.
 
 I **[!UICONTROL Mapping]**-steget i aktiveringsarbetsflödet kan du:
 
@@ -142,6 +142,6 @@ Använd fälten **[!UICONTROL Destination name]** och **[!UICONTROL Description]
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du använt arbetsytan **[!UICONTROL destinations]** för att uppdatera befintliga måldataflöden.
+Du har uppdaterat måldataflödena med arbetsytan **[!UICONTROL destinations]**.
 
 Mer information om mål finns i [målöversikten](../catalog/overview.md).

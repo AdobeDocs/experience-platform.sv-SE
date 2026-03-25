@@ -4,9 +4,9 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '4966'
+source-wordcount: '4933'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 Handboken kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): Med [!DNL Adobe Experience Platform Segmentation Service] kan du skapa målgrupper och generera målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] skapar målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för filbaserade mål i Experience Platform.
@@ -110,7 +110,7 @@ Innan du startar arbetsflödet för att exportera profiler, ska du identifiera a
 
 {style="table-layout:auto"}
 
-Du behöver dessa ID:n för att skapa olika flödestjänstentiteter i nästa steg i den här självstudien. Du måste också referera till delar av själva anslutningsspecifikationen för att konfigurera vissa entiteter så att du kan hämta anslutningsspecifikationen från API:er för Flow Service. Se exemplen nedan om hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
+Du behöver dessa ID:n för att skapa olika flödestjänstentiteter i nästa steg i den här självstudien. Du måste också referera till delar av själva anslutningsspecifikationen för att konfigurera vissa enheter så att du kan hämta anslutningsspecifikationen från API:er för Flow Service. Se exemplen nedan om hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
 
 >[!BEGINTABS]
 
@@ -902,7 +902,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Inga autentiseringsuppgifter krävs för Data Landing Zone-målet. Mer information finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate) på dokumentationssidan för Data Landing Zone-målet.
+>Inga autentiseringsuppgifter krävs för Data Landing Zone-målet. Mer information finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/data-landing-zone.md#authenticate) på dokumentationssidan för datalängdszonens mål.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -940,7 +940,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du får de autentiseringsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#authenticate) på dokumentationssidan för Google Cloud-lagringsmålet.
+>Mer information om hur du får de inloggningsuppgifter som krävs finns i avsnittet [Autentisera till mål](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#authenticate) på dokumentationssidan för Google Cloud-lagringsmålet.
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -1202,7 +1202,7 @@ Observera anslutnings-ID från svaret. Detta ID krävs i nästa steg när du ska
 
 Därefter måste du skapa en målanslutning. [Målanslutningar](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagrar exportparametrarna för de exporterade målgrupperna. Exportparametrar omfattar exportplats, filformat, komprimering och annan information. För CSV-filer kan du till exempel välja flera exportalternativ. Få omfattande information om alla CSV-exportalternativ som stöds på sidan [filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
-Mer information om vilka egenskaper som stöds för varje måltyp finns i `targetSpec`-egenskaperna i målets `connection spec` . Referera till flikarna nedan för `targetSpec`-egenskaperna för alla mål som stöds.
+Se `targetSpec`-egenskaperna i målets `connection spec` för att förstå vilka egenskaper som stöds för varje måltyp. Referera till flikarna nedan för `targetSpec`-egenskaperna för alla mål som stöds.
 
 >[!BEGINTABS]
 
@@ -2402,7 +2402,7 @@ Genom att använda specifikationen ovan kan du skapa en målanslutningsbegäran 
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) på dokumentationssidan för [!DNL Amazon S3].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) på dokumentationssidan för [!DNL Amazon S3].
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2438,7 +2438,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Utförlig information om tillgängliga CSV-alternativ för filexport finns på [sidan med filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>Utförlig information om tillgängliga CSV-alternativ för filexport finns på sidan [filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2496,7 +2496,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) på dokumentationssidan för [!DNL Azure Blob Storage].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/azure-blob.md#destination-details) på dokumentationssidan för [!DNL Azure Blob Storage].
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2532,7 +2532,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Utförlig information om tillgängliga CSV-alternativ för filexport finns på [sidan med filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>Utförlig information om tillgängliga CSV-alternativ för filexport finns på sidan [filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2590,7 +2590,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på dokumentationssidan för Azure [!DNL Data Lake Gen 2(ADLS Gen2)].
+>Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/adls-gen2.md#destination-details) på sidan för måldokumentation för Azure [!DNL Data Lake Gen 2(ADLS Gen2)].
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2625,7 +2625,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Utförlig information om tillgängliga CSV-alternativ för filexport finns på [sidan med filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>Utförlig information om tillgängliga CSV-alternativ för filexport finns på sidan [filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2683,7 +2683,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details) på dokumentationssidan för [!DNL Data Landing Zone].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/data-landing-zone.md#destination-details) på dokumentationssidan för [!DNL Data Landing Zone].
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2718,7 +2718,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Utförlig information om tillgängliga CSV-alternativ för filexport finns på [sidan med filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>Utförlig information om tillgängliga CSV-alternativ för filexport finns på sidan [filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2776,7 +2776,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Mer information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för [!DNL Google Cloud Storage].
+>Information om hur du hämtar de målparametrar som krävs finns i avsnittet [fyll i målinformation](/help/destinations/catalog/cloud-storage/google-cloud-storage.md#destination-details) på dokumentationssidan för [!DNL Google Cloud Storage].
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2812,7 +2812,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Utförlig information om tillgängliga CSV-alternativ för filexport finns på [sidan med filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>Utförlig information om tillgängliga CSV-alternativ för filexport finns på sidan [filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -2905,7 +2905,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!TIP]
 >
->Utförlig information om tillgängliga CSV-alternativ för filexport finns på [sidan med filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
+>Utförlig information om tillgängliga CSV-alternativ för filexport finns på sidan [filformateringskonfigurationer](/help/destinations/ui/batch-destinations-file-formatting-options.md) .
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -4879,7 +4879,7 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit Experience Platform till en av dina favoritplatser för molnlagring och konfigurerat ett dataflöde till respektive mål för att exportera målgrupper. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Du har anslutit Experience Platform till en av dina favoritplatser för molnlagring och konfigurerat ett dataflöde till respektive mål för att exportera målgrupper. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)

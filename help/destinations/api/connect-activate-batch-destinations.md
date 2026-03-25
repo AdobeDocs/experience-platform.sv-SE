@@ -5,9 +5,9 @@ title: Anslut till gruppmål och aktivera data med API:t för Flow Service
 description: Stegvisa instruktioner om hur du använder API:t för Flow Service för att skapa ett batchmolnlagringsutrymme eller ett marknadsföringsmål för e-post i Experience Platform och aktivera data
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '3423'
+source-wordcount: '3413'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Om du föredrar att använda Experience Platform användargränssnitt för att a
 Handboken kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): Med [!DNL Adobe Experience Platform Segmentation Service] kan du skapa målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] skapar målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att aktivera data till batchdestinationer i Experience Platform.
@@ -1257,7 +1257,7 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit Experience Platform till ett av dina favoritfilbaserade mål för e-postmarknadsföring och konfigurerat ett dataflöde till respektive mål för att exportera datafiler. Utgående data kan nu användas i målet för e-postkampanjer, riktad reklam och många andra användningsfall. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Du har anslutit Experience Platform till ett av dina favoritfilbaserade mål för e-postmarknadsföring och konfigurerat ett dataflöde till respektive mål för att exportera datafiler. Utgående data kan nu användas i målet för e-postkampanjer, riktad reklam och många andra användningsfall. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)

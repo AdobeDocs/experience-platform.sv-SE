@@ -1,11 +1,11 @@
 ---
 keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
+description: Google Customer Match använder era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '2818'
+source-wordcount: '2812'
 ht-degree: 7%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 7%
 ><br/>
 >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, för att fortsätta använda de befintliga [!DNL Real-Time CDP] Google-målsättningarna utan avbrott.
 
-Med [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) kan du använda dina online- och offlinedata för att nå och återengagera dina kunder via egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping] och [!DNL Gmail].
+[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) använder dina online- och offlinedata för att nå och återengagera dina kunder i Google egna och driftsatta egenskaper, som [!DNL Search], [!DNL Shopping] och [!DNL Gmail].
 
 >[!TIP]
 >
@@ -170,7 +170,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe) -->
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
 ## Videoöversikt {#video-overview}
 
@@ -227,7 +227,7 @@ I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL App ID] n�
 
 ![Fältet Google-program-ID för kundmatchning är markerat i segmentschemagrycket i aktiveringsarbetsflödet.](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-Mer information om hur du hittar [!DNL App ID] finns i [Google officiella dokumentation](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid) eller frågar din Google-representant.
+Mer information om hur du hittar [!DNL App ID] finns i [Google officiella dokumentation](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid) eller frågar en Google-representant.
 
 ### Mappningsexempel: aktiverar målgruppsdata i [!DNL Google Customer Match] {#example-gcm}
 

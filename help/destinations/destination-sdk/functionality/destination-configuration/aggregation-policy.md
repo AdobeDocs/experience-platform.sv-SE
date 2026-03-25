@@ -2,16 +2,16 @@
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1233'
+source-wordcount: '1225'
 ht-degree: 0%
 
 ---
 
 # Samlingsprincip
 
-För att vara så effektiv som möjligt när du exporterar data till API-slutpunkten kan du använda olika inställningar för att samla exporterade profiler i större eller mindre grupper, gruppera dem efter identitet och andra användningsfall. På så sätt kan du skräddarsy dataexport till eventuella begränsningar för API-slutpunkten (hastighetsbegränsning, antal identiteter per API-anrop osv.).
+För att vara så effektiv som möjligt när du exporterar data till API-slutpunkten kan du använda olika inställningar för att samla exporterade profiler i större eller mindre grupper, gruppera dem efter identitet och andra användningsfall. På så sätt kan du skräddarsy dataexport till eventuella efterföljande begränsningar för API-slutpunkten (hastighetsbegränsning, antal identiteter per API-anrop osv.).
 
 Använd konfigurerbar aggregering för att fördjupa dig i inställningarna från Destination SDK eller använd aggregering av bästa möjliga ansträngning för att instruera Destination SDK att batchköra API-anropen så mycket som möjligt.
 
@@ -26,7 +26,7 @@ Du kan konfigurera inställningar för aggregeringsprincip via slutpunkten `/aut
 
 I den här artikeln beskrivs alla aggregeringsprincipinställningar som stöds och som du kan använda för ditt mål.
 
-När du har läst igenom det här dokumentet kan du läsa dokumentationen för [med mallar](../../functionality/destination-server/message-format.md#using-templating) och exempel för [aggregeringsnycklar](../../functionality/destination-server/message-format.md#template-aggregation-key) för att förstå hur du inkluderar aggregeringsregeln i mallen för meddelandetransformering baserat på den valda aggregeringsregeln.
+När du har läst igenom det här dokumentet kan du läsa dokumentationen om [att använda mallar](../../functionality/destination-server/message-format.md#using-templating) och [exempel på aggregeringsnycklar](../../functionality/destination-server/message-format.md#template-aggregation-key) för att förstå hur du inkluderar aggregeringsregeln i din meddelandetransformeringsmall baserat på den valda aggregeringsregeln.
 
 >[!IMPORTANT]
 >
@@ -81,7 +81,7 @@ I exempelkonfigurationen nedan visas en aggregeringskonfiguration för bästa in
 | `aggregationType` | Sträng | Anger vilken typ av aggregeringsprincip som ditt mål ska använda. Aggregeringstyper som stöds: <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
 | `bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. <br><br>Det här värdet anger det maximala antalet profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Experience Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br><br> Om servern inte accepterar flera användare per begäran anger du det här värdet till `1`. |
 | `bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet ID-namnområde. |
-| `bestEffortAggregation.aggregationKey` | Objekt | *Valfritt*. Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. Den här parametern kan utelämnas eller anges till `null` om aggregering inte behövs. När det anges fungerar det identiskt med aggregeringsnyckeln i konfigurerbar aggregering. |
+| `bestEffortAggregation.aggregationKey` | Objekt | *Valfritt*. Sammanställer de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. Den här parametern kan utelämnas eller anges till `null` om aggregering inte behövs. När det anges fungerar det identiskt med aggregeringsnyckeln i konfigurerbar aggregering. |
 | `bestEffortAggregation.aggregationKey.includeSegmentId` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter målgrupps-ID. |
 | `bestEffortAggregation.aggregationKey.includeSegmentStatus` | Boolean | Ange både den här parametern och `includeSegmentId` som `true` om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID och målgruppsstatus. |
 | `bestEffortAggregation.aggregationKey.includeIdentity` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter identitetsnamnområde. |
@@ -96,7 +96,7 @@ I exempelkonfigurationen nedan visas en aggregeringskonfiguration för bästa in
 
 ## Konfigurerbar aggregering {#configurable-aggregation}
 
-Konfigurerbar aggregering fungerar bäst om du hellre vill ta med stora grupper, med tusentals profiler på samma samtal. Med det här alternativet kan du också sammanfoga de exporterade profilerna baserat på komplexa sammanställningsregler.
+Konfigurerbar aggregering fungerar bäst om du hellre vill ta med stora grupper, med tusentals profiler på samma samtal. Det här alternativet stöder även sammanställning av de exporterade profilerna baserat på komplexa sammanställningsregler.
 
 I exempelkonfigurationen nedan visas en konfigurerbar aggregeringskonfiguration. Ett exempel på bästa möjliga ansträngningsaggregering finns i avsnittet [bästa ansträngningsaggregering](#best-effort-aggregation). De parametrar som är tillämpliga på konfigurerbar aggregering beskrivs i tabellen nedan.
 
@@ -136,7 +136,7 @@ I exempelkonfigurationen nedan visas en konfigurerbar aggregeringskonfiguration.
 | `configurableAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet ID-namnområde. |
 | `configurableAggregation.maxBatchAgeInSecs` | Heltal | Den här parametern används tillsammans med `maxNumEventsInBatch` och avgör hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <ul><li>Minsta värde (sekunder): 301</li><li>Högsta värde (sekunder): 3 600</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3 600 sekunder ELLER tills det finns 1 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
 | `configurableAggregation.maxNumEventsInBatch` | Heltal | Den här parametern används tillsammans med `maxBatchAgeInSecs` och avgör hur många kvalificerade profiler som ska aggregeras i ett API-anrop. <ul><li>Minsta värde: 1 000</li><li>Högsta värde: 10 000</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3 600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
-| `configurableAggregation.aggregationKey` | – | Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. |
+| `configurableAggregation.aggregationKey` | – | Sammanställer de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. |
 | `configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter målgrupps-ID. |
 | `configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Ange både den här parametern och `includeSegmentId` som `true` om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID och målgruppsstatus. |
 | `configurableAggregation.aggregationKey.includeIdentity` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter identitetsnamnområde. |

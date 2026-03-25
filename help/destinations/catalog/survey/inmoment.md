@@ -3,9 +3,9 @@ keywords: InMoment;instund;Instund;starta integration
 title: InMoment-tillägg
 description: Tillägget InMoment är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 61f32bc1-97a6-45ff-a962-990a2e522735
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med taggtillägget [!DNL InMoment] kan du snabbt och enkelt aktivera online-feedback via Digital Intercept-produkten. I appen kan spärrar konfigureras och hanteras via CXI Cloud Admin, vilket ger CX-hanterare mer kontroll över deras program.
+Med taggtillägget [!DNL InMoment] kan du snabbt och enkelt ge feedback online via Digital Intercept-produkten. I appen kan spärrar konfigureras och hanteras via CXI Cloud Admin, vilket ger CX-hanterare mer kontroll över deras program.
 
 [!DNL InMoment] är ett undersökningstillägg i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100847.html).
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i [!D
 
 Så här installerar du tillägget [!DNL InMoment]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

@@ -4,9 +4,9 @@ title: Ta bort mål
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '394'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Det finns två sätt att ta bort mål från [!DNL Experience Platform] [!DNL UI]
 
 Följ stegen nedan för att ta bort ett mål från fliken [!UICONTROL Browse].
 
-1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Om du vill visa dina befintliga mål väljer du **[!UICONTROL Browse]** i det övre huvudet.
+1. Gå till [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre huvudet för att visa dina befintliga mål.
 
    ![Bläddra bland mål](../assets/ui/delete-destinations/browse-destinations.png)
 
@@ -43,11 +43,11 @@ Följ stegen nedan för att ta bort ett mål från fliken [!UICONTROL Browse].
 
    ![Bekräfta borttagning av mål](../assets/ui/delete-destinations/delete-destinations-confirm.png)
 
-## Ta bort mål från sidan med målinformation{#delete-destination-details-page}
+## Ta bort mål från sidan med målinformation {#delete-destination-details-page}
 
 Följ stegen nedan för att ta bort ett mål från sidan med målinformation.
 
-1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Om du vill visa dina befintliga mål väljer du **[!UICONTROL Browse]** i det övre huvudet.
+1. Gå till [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre huvudet för att visa dina befintliga mål.
 
    ![Bläddra bland mål](../assets/ui/delete-destinations/browse-destinations.png)
 
@@ -75,6 +75,6 @@ Följ stegen nedan för att ta bort ett mål från sidan med målinformation.
 
    ![Ta bort målbekräftelse](..//assets/ui/delete-destinations/delete-destinations-delete.png)
 
-   >[!NOTE]
-   >
-   >Beroende på serverinläsningen kan det ta några minuter för [!DNL Experience Platform] att ta bort målet.
+>[!NOTE]
+>
+>Beroende på serverinläsningen kan det ta några minuter för [!DNL Experience Platform] att ta bort målet.

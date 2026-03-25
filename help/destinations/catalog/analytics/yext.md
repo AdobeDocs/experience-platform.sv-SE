@@ -3,7 +3,7 @@ keywords: Spårning av konvertering av text;yext;yext;yext conversion tracking
 title: Yext Conversion Tracking-tillägg
 description: Tillägget Yext Conversion Tracking är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 786ea14c-25a3-40ac-906d-6a8f7de04f41
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
 source-wordcount: '436'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med [!DNL Yext Conversion Tracking]-tillägget kan du mäta konverteringar som kan tillskrivas din användning av Yext-produkter.
+Använd tillägget [!DNL Yext Conversion Tracking] för att mäta konverteringar som kan tillskrivas din användning av Yext-produkter.
 
 [!DNL Yext Conversion Tracking] är ett analystillägg i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103174.yext-conversion-tracking.html).
 
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i [!D
 
 Så här installerar du tillägget [!DNL Yext Conversion Tracking]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

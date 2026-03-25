@@ -1,18 +1,18 @@
 ---
 title: HubSpot-anslutning
-description: Med HubSpot-målet kan du hantera kontaktposter i ditt HubSpot-konto.
+description: Använd HubSpot-målet för att hantera kontaktposter i ditt HubSpot-konto.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1619'
 ht-degree: 1%
 
 ---
 
 # [!DNL HubSpot]-anslutning
 
-[[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser du behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundtjänst. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform.
+[[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser du behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundtjänst. Använd det för att koppla samman data, team och kunder på en och samma CRM-plattform.
 
 Det här [!DNL Adobe Experience Platform] [målet](/help/destinations/home.md) använder [[!DNL HubSpot] kontakt-API](https://developers.hubspot.com/docs/api/crm/contacts) för att uppdatera kontakter inom [!DNL HubSpot] från en befintlig Experience Platform-målgrupp efter aktivering.
 
@@ -26,11 +26,11 @@ För att du bättre ska förstå hur och när du ska använda målet [!DNL HubSp
 
 ## Förutsättningar {#prerequisites}
 
-I avsnitten nedan finns information om eventuella krav som du måste ställa in i Experience Platform och [!DNL HubSpot] och om information som du måste samla in innan du kan arbeta med målet för [!DNL HubSpot].
+I avsnitten nedan finns information om krav som du måste konfigurera i Experience Platform och [!DNL HubSpot]. Här finns även information som du måste samla in innan du kan arbeta med målet för [!DNL HubSpot].
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL HubSpot] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL HubSpot] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -101,7 +101,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+I tabellen nedan finns information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
@@ -207,7 +207,7 @@ Välj **[!UICONTROL Next]** när du är klar med mappningarna för målanslutnin
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-1. Logga in på webbplatsen [!DNL HubSpot] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera målgruppsstatus. Den här listan kan konfigureras för att visa kolumner för anpassade egenskaper som har skapats med målgruppens namn och deras värde är målgruppsstatus.
+1. Gå till webbplatsen [!DNL HubSpot] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera målgruppsstatus. Den här listan kan konfigureras för att visa kolumner för anpassade egenskaper som har skapats med målgruppens namn och deras värde är målgruppsstatus.
    ![HubSpot UI, skärmbild som visar sidan Kontakter med kolumnrubriker som visar målgruppsnamnet och cellernas målgruppsstatus](../../assets/catalog/crm/hubspot/contacts.png)
 
 1. Du kan även gå ned på en enskild **[!UICONTROL Person]**-sida och navigera till egenskaperna som visar målgruppens namn och målgruppens status.

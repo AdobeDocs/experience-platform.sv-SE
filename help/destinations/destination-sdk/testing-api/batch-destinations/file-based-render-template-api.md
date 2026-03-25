@@ -2,9 +2,9 @@
 description: Den här sidan förklarar hur du använder slutpunkten /authoring/testing/template/render för att visualisera hur de mallsidiga kunddatafälten som definieras i målkonfigurationen skulle se ut.
 title: Validera mallsidiga kundfält
 exl-id: 8ed93f0c-3439-4d11-bb2f-d417a1e0b6a8
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '385'
 ht-degree: 1%
 
 ---
