@@ -2,9 +2,9 @@
 description: Lär dig hur du skapar indatafält i Experience Platform-gränssnittet som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
 title: Kunddatafält
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1730'
+source-wordcount: '1729'
 ht-degree: 0%
 
 ---

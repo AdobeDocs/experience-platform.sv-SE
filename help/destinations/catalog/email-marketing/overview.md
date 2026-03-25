@@ -4,9 +4,9 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer. Lär dig vilka ESP:er som stöds som Experience Platform-mål.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '371'
 ht-degree: 1%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe Experience Platform kan integreras med ESP:er genom att ni kan aktivera målgrupper för e-postmarknadsföringsmål.
+Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. [!DNL Adobe Experience Platform] kan integreras med ESP:er genom att du kan aktivera målgrupper för e-postmarknadsföringsmål.
 
 ## E-postmarknadsföringsmål som stöds {#supported-destinations}
 
-Adobe Experience Platform har stöd för följande e-postmarknadsföringsmål:
+[!DNL Adobe Experience Platform] har stöd för följande e-postmarknadsföringsmål:
 
 * [Adobe Campaign](adobe-campaign.md)
 * [Adobe Campaign Managed Cloud Services](adobe-campaign-managed-services.md)

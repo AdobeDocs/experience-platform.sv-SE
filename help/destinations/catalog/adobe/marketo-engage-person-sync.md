@@ -4,9 +4,9 @@ description: Använd Marketo Engage Person Sync-anslutningen för att strömma u
 last-substantial-update: 2025-01-14T00:00:00Z
 badgeBeta: label="Beta" type="Informative"
 exl-id: 2c909633-b169-4ec8-9f58-276395cb8df2
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1223'
+source-wordcount: '1200'
 ht-degree: 5%
 
 ---
@@ -41,7 +41,7 @@ Använd Marketo Engage Person Sync-kopplingen för att strömma uppdateringar fr
 
 | Målidentitet | Beskrivning |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| E-post | Ett namnutrymme som representerar en e-postadress. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
+| E-post | Ett namnutrymme som representerar en e-postadress. Den här typen av namnutrymme är ofta kopplad till en person och identifierar därför den personen i olika kanaler. |
 
 {style="table-layout:auto"}
 
@@ -55,8 +55,8 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 | -------------------- | :-------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Segmenteringstjänst | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/sv/docs/experience-platform/segmentation/home). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Segmenteringstjänst | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -67,7 +67,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -87,11 +87,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >
 >* Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 
-Om ditt företag har tillgång till flera organisationer måste du använda samma organisation i både Marketo Engage och Real-Time CDP, där du konfigurerar målanslutningen till Marketo.  Om du redan har konfigurerat ett mål kan du välja ett befintligt Marketo-konto som ska användas med den nya konfigurationen.  Om du inte gör det klickar du på uppmaningen Koppla till mål, där du kan ange namn, beskrivning och Marketo Munchkin ID för det önskade målet.  Du hittar ditt Munchkin-id för Marketo-instansen på menyn Admin->Munchkin.
+Om ditt företag har åtkomst till flera organisationer måste du se till att du använder samma organisation i både Marketo Engage och [!DNL Real-Time CDP], där du konfigurerar målanslutningen till Marketo.  Om du redan har konfigurerat ett mål kan du välja ett befintligt Marketo-konto som ska användas med den nya konfigurationen.  Om du inte gör det klickar du på uppmaningen Koppla till mål, där du kan ange namn, beskrivning och Marketo Munchkin ID för det önskade målet.  Du hittar ditt Munchkin-id för Marketo-instansen på menyn Admin->Munchkin.
 
 >[!IMPORTANT]
 >
->Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
+>Användaren som ställer in målet måste ha behörigheten [Redigera person](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database) i Marketo-instansen och partitionen.
 
 ![Anslut till mål](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
@@ -102,7 +102,7 @@ Om ditt företag har tillgång till flera organisationer måste du använda samm
 * **[!UICONTROL First searchable field]**: Fält som ska dedupliceras. Fältet måste finnas i varje lead-post för indata. Standardvärdet är e-post
 * **[!UICONTROL First searchable field]**: Ett sekundärt fält att deduplicera. Fältet måste finnas i varje lead-post för indata. Valfritt
 
-När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [huvudpartition](https://experienceleague.adobe.com/sv/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster åt efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
+När du har valt instansen måste du också välja den Lead-partition som du vill att konfigurationen ska integreras med. En [huvudpartition](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions) är ett koncept i Marketo Engage som används för att skilja lead-poster åt efter affärsproblem, till exempel ett varumärke eller en försäljningsregion. Om din Marketo-prenumeration inte har funktionen Arbetsytor och partitioner, eller om inga ytterligare partitioner har skapats i din prenumeration, är endast standardpartitionen tillgänglig. En enskild konfiguration kan bara uppdatera lead-poster som finns i den konfigurerade partitionen.
 
 >[!IMPORTANT]
 >
@@ -134,7 +134,7 @@ I steget Aktivera målgrupper kan du välja vilka målgrupper som ska vara synli
 
 ## Fältmappning {#field-mapping}
 
-För att ändringar av ett visst personattribut ska kunna skickas till Marketo Engage måste fältet mappas från ett Real-Time CDP-fält till Marketo Field.
+För att ändringar av ett visst personattribut ska kunna skickas till Marketo Engage måste fältet mappas från ett [!DNL Real-Time CDP]-fält till Marketo-fält.
 
 ![Fältmappning](../../assets/catalog/adobe/marketo-engage-person-sync/field-mapping.png)
 
@@ -158,7 +158,7 @@ Experience Platform datatyper och Marketo datatyper kan mappas på följande sä
 
 {style="table-layout:auto"}
 
-I vissa fall är det önskvärt att integreringar kan tillåta att värdet för ett fält anges om det inte finns något, samtidigt som integreringar inte kan uppdatera fält som redan har ett värde.  Om du behöver förhindra att målkopplingen skriver över befintliga värden i din Marketo Engage-instans kan du konfigurera fält så att de blockerar uppdateringar i avsnittet Admin->Fälthantering i din Marketo-instans och växla Adobe Experience Platform-källtypen.
+I vissa fall är det önskvärt att integreringar kan tillåta att värdet för ett fält anges om det inte finns något, samtidigt som integreringar inte kan uppdatera fält som redan har ett värde.  Om du behöver förhindra att målkopplingen skriver över befintliga värden i din Marketo Engage-instans kan du konfigurera fält så att de blockerar uppdateringar i avsnittet Admin->Fälthantering i din Marketo-instans och växla [!DNL Adobe Experience Platform]-källtypen.
 
 ![Blockera fältuppdateringar](../../assets/catalog/adobe/marketo-engage-person-sync/block-field-updates.png)
 
@@ -166,4 +166,4 @@ I vissa fall är det önskvärt att integreringar kan tillåta att värdet för 
 
 ## Dataanvändning och -styrning {#data-usage-and-governance}
 
-Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform framtvingar datastyrning finns i [översikten över datastyrning](/help/data-governance/home.md).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [översikten över datastyrning](/help/data-governance/home.md).

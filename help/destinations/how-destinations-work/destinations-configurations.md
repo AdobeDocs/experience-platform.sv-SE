@@ -2,9 +2,9 @@
 title: Konfigurerbara och gemensamma exportinställningar för destinationer
 description: Lär dig vilka exportinställningar i destinationer som kan konfigureras på en målnivå och som är fasta och inte kan redigeras.
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '828'
 ht-degree: 0%
 
 ---
@@ -13,19 +13,19 @@ ht-degree: 0%
 
 När du tänker på exportbeteendet för Experience Platform-destinationer måste du överväga tre olika nivåer för vilka konfigurationer fungerar.
 
-* På en första nivå är vissa av inställningarna som rör profilexportbeteende och konfigurationsinställningar gemensamma för alla mål som tillhör en måltyp. De här inställningarna hänvisar till vad som utlöser en målexport och vad som ingår i en export och kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
+* På en första nivå är vissa av inställningarna som rör profilexportbeteende och konfigurationsinställningar gemensamma för alla mål som tillhör en måltyp. De här inställningarna hänvisar till vad som utlöser en målexport och vad som ingår i en export och kan inte redigeras av målutvecklare eller [!DNL Real-Time CDP]-användare.
 * På en andra nivå kan vissa inställningar anpassas på en målnivå av målutvecklaren när måldestinationer skapas med Destination SDK.
-* På en tredje nivå finns det konfigurationsinställningar som Real-Time CDP-användare kan ange i aktiveringsarbetsflödena.
+* På en tredje nivå finns det konfigurationsinställningar som [!DNL Real-Time CDP] användare kan ange i aktiveringsarbetsflödena.
 
-![Diagram som visar hur exporten mellan vanliga och konfigurerbara exportinställningar för destinationer fungerar &#x200B;](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
+![Diagram som visar hur exporten mellan vanliga och konfigurerbara exportinställningar för destinationer fungerar ](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
 
 Den här sidan beskriver eller länkar ut till alla vanliga och konfigurerbara exportinställningar för destinationer på de tre nivåer som beskrivs ovan.
 
 ## Gemensamma exportinställningar för olika måltyper {#common-settings-across-destination-types}
 
-Destinationsexportbeteendet är konsekvent mellan mål som tillhör en måltyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Målexporter utlöses av meddelanden om att måltjänsten får från [den överordnade kundprofiltjänsten](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=sv-SE#adobe-experience-platform-%26-applications-detailed-architecture-diagram) i realtid.
+Destinationsexportbeteendet är konsekvent mellan mål som tillhör en måltyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Målexporter utlöses av meddelanden om att måltjänsten får från [den överordnade kundprofiltjänsten](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram) i realtid.
 
-Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om de [vanligaste exportbeteendemönstren per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). Dessa inställningar kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
+Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om de [vanligaste exportbeteendemönstren per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). De här inställningarna kan inte redigeras av målutvecklare eller [!DNL Real-Time CDP] användare.
 
 ## Anpassningsbara exportinställningar per målutvecklare {#customizable-settings-by-destination-developers}
 
@@ -46,7 +46,7 @@ För [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-
 
 ![Skärminspelning av identitetsvalet för målfältet i mappningssteget i aktiveringsarbetsflödet.](/help/destinations/assets/how-destinations-work/identity-mapping-example.gif)
 
-På samma sätt kan målutvecklaren för [filbaserade mål](/help/destinations/destination-types.md#file-based) avgöra vilka [filnamnstillägg &#x200B;](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) som ska vara tillgängliga för respektive mål, eller vilka [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) som ska vara tillgängliga, och användaren kan endast välja mellan dessa alternativ, vilket visas nedan:
+På samma sätt kan målutvecklaren för [filbaserade mål](/help/destinations/destination-types.md#file-based) avgöra vilka [filnamnstillägg ](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names) som ska vara tillgängliga för respektive mål, eller vilka [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) som ska vara tillgängliga, och användaren kan endast välja mellan dessa alternativ, vilket visas nedan:
 
 ![Skärminspelning av filformateringsalternativet vid anslutning till ett filbaserat mål.](/help/destinations/assets/how-destinations-work/file-formatting-options.gif)
 

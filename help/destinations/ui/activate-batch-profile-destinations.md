@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '4783'
+source-wordcount: '4769'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform till batchprofilfilsbaserade mål, som molnlagring och e-postmarknadsföringsmål.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i [!DNL Adobe Experience Platform] till batchprofilfilsbaserade mål, som molnlagring och e-postmarknadsföringsmål.
 
 ## Förutsättningar {#prerequisites}
 
@@ -120,7 +120,7 @@ Om du vill redigera flera scheman samtidigt markerar du målgrupperna med hjälp
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
 >abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för målgruppen. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för målgruppen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för målgruppen och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för målgruppen sedan den första inkrementella filexporten."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=sv-SE#export-incremental-files" text="Exportera inkrementella filer"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="Exportera inkrementella filer"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -496,7 +496,7 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 
 ### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
 
-När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
 
 #### Viktiga överväganden {#key-considerations}
 
@@ -571,9 +571,9 @@ Som en tillfällig lösning kan du antingen:
 
 >[!IMPORTANT]
 >
->Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg &#x200B;](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
+>Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
 >
->Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
+>Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen [!DNL Adobe Campaign], Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 
 För profilbaserade mål måste du välja de profilattribut som du vill skicka till målmålet.
 
@@ -593,7 +593,7 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
 >[!NOTE]
 >
-> Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från schemat: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.seg_namespace.seg_id.status`.
+> [!DNL Adobe Experience Platform] förifyller markeringen med fyra rekommenderade, ofta använda attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.seg_namespace.seg_id.status`.
 
 ![Bild som visar förfyllda rekommenderade attribut i mappningssteget i målgruppsaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
 
@@ -649,7 +649,7 @@ Välj **[!UICONTROL Next]** om du vill gå till steget [Granska](#review).
 >* Fälten används i målgruppsdefinitionen.
 >* Fälten konfigureras som projicerade attribut för målmålet.
 >
-> Om till exempel fältet `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
+> Om till exempel fältet `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i [!DNL Adobe Experience Platform]](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
 På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta ditt val och börja skicka data till målet.
 
@@ -680,7 +680,7 @@ Om du är nöjd med ditt val och inga principöverträdelser har identifierats, 
 
 ## Verifiera målgruppsaktivering {#verify}
 
-När du exporterar målgrupper till molnlagringsmål skapar Adobe Experience Platform en `.csv`-, `.json`- eller `.parquet`-fil på den angivna lagringsplatsen. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet visas nedan, men du kan [redigera komponenterna för filnamnet](#configure-file-names):
+När du exporterar målgrupper till molnlagringsmål skapar [!DNL Adobe Experience Platform] en `.csv`-, `.json`- eller `.parquet`-fil på den lagringsplats som du angav. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet visas nedan, men du kan [redigera komponenterna för filnamnet](#configure-file-names):
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
 Om du till exempel har valt en daglig exportfrekvens kan filerna som du får tre dagar i följd se ut så här:

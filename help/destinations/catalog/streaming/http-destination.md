@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '3039'
+source-wordcount: '3020'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 HTTP API-målet är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 
@@ -36,7 +36,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -49,7 +49,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -130,7 +130,7 @@ curl --location --request POST 'https://some-api.com/token' \
 --data-urlencode 'grant_type=client_credentials'
 ```
 
-* [OAuth 2.0-lösenord &#x200B;](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
+* [OAuth 2.0-lösenord ](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
 
 ## Anslut till målet {#connect-destination}
 
@@ -174,8 +174,8 @@ Om du väljer autentiseringstypen **[!UICONTROL OAuth 2 Password]** för att ans
 >**mTLS-begränsning:** mTLS stöds inte med OAuth 2-lösenordsautentisering. Mer information finns i avsnittet [mTLS-överväganden](#mtls-considerations).
 
 * **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
-* **[!UICONTROL Client ID]**: Den [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
-* **[!UICONTROL Client Secret]**: Den [!DNL client secret] som ditt system tilldelar Adobe Experience Platform.
+* **[!UICONTROL Client ID]**: Det [!DNL client ID] som systemet tilldelar [!DNL Adobe Experience Platform].
+* **[!UICONTROL Client Secret]**: Det [!DNL client secret] som systemet tilldelar [!DNL Adobe Experience Platform].
 * **[!UICONTROL Username]**: Användarnamnet för att komma åt HTTP-slutpunkten.
 * **[!UICONTROL Password]**: Lösenordet för att komma åt HTTP-slutpunkten.
 
@@ -194,8 +194,8 @@ Om du väljer autentiseringstypen **[!UICONTROL OAuth 2 Client Credentials]** f�
 >**mTLS-begränsning:** mTLS stöds inte med autentisering av klientautentiseringsuppgifter för OAuth 2. Mer information finns i avsnittet [mTLS-överväganden](#mtls-considerations).
 
 * **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
-* **[!UICONTROL Client ID]**: Den [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
-* **[!UICONTROL Client Secret]**: Den [!DNL client secret] som ditt system tilldelar Adobe Experience Platform.
+* **[!UICONTROL Client ID]**: Det [!DNL client ID] som systemet tilldelar [!DNL Adobe Experience Platform].
+* **[!UICONTROL Client Secret]**: Det [!DNL client secret] som systemet tilldelar [!DNL Adobe Experience Platform].
 * **[!UICONTROL Client Credentials Type]**: Välj den typ av OAuth2-klientautentiseringsuppgifter som stöds av din slutpunkt:
    * **[!UICONTROL Body Form Encoded]**: I det här fallet inkluderas [!DNL client ID] och [!DNL client secret] *i texten för den begäran* som skickas till ditt mål. Se till exempel avsnittet [Autentiseringstyper som stöds](#supported-authentication-types).
    * **[!UICONTROL Basic Authorization]**: I det här fallet inkluderas [!DNL client ID] och [!DNL client secret] *i en `Authorization` header* efter att base64-kodats och skickats till målet. Se till exempel avsnittet [Autentiseringstyper som stöds](#supported-authentication-types).
@@ -286,7 +286,7 @@ Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre målgrup
 
 ![Ett exempel på ett måldataflöde för HTTP API.](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [&#x200B; Exporterade data &#x200B;](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar ett av de *tre mappade segmenten*. I dataexporten, i objektet `segmentMembership` (se avsnittet [ Exporterade data ](#exported-data) nedan), kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som målgruppen som utlöste exporten. Om en profil kvalificerar sig för **kunden med DeLorean Cars**-segmentet men även är medlem i **Bevakade&quot;Tillbaka till framtiden&quot;**- och **Science fiction-fans** -segmenten, kommer dessa två målgrupper också att finnas i `segmentMembership`-objektet för dataexporten, även om de inte mappas i dataflödet, om dessa delar samma sammanslagning policy med segmentet **Customer with DeLorean Cars** .
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 

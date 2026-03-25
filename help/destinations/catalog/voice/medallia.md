@@ -3,9 +3,9 @@ keywords: Medallia;media
 title: Medietillägg
 description: Medietillägget är en röst för kundens destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: c28cf31a-890c-4dcd-b936-5a030dc6e83e
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '450'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Distribuera [!DNL Medallia] snabbt och sömlöst på dina webbegenskaper. Tillägget gör det även möjligt att identifiera enkäthändelser, samla in kundfeedback i realtid via dataelement, använda det i regler för att personalisera kundupplevelsen och dela data med Adobe Analytics.
+Distribuera [!DNL Medallia] snabbt och sömlöst på dina webbegenskaper. Tillägget gör det även möjligt att identifiera enkäthändelser, samla in kundfeedback i realtid via dataelement, använda det i regler för att anpassa kundens upplevelse och dela data med [!DNL Adobe Analytics].
 
-[!DNL Medallia] är en röst för kundtillägget i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html).
+[!DNL Medallia] är en röst för kundtillägget i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html).
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
@@ -26,13 +26,13 @@ Det här målet är ett taggtillägg. Mer information om hur taggtillägg funger
 
 Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Experience Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i [!DNL Adobe Experience Platform]. Taggar erbjuds [!DNL Adobe Experience Cloud] kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
 Så här installerar du tillägget [!DNL Medallia]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

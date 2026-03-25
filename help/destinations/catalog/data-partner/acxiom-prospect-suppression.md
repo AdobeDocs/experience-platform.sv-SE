@@ -4,9 +4,9 @@ description: Exportera dina förstapartsmålgrupper till Acxiom-målet, så att 
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: label="Beta" type="Informative"
 exl-id: d82e8cd3-970c-44af-99b0-ea154eb3655e
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1536'
 ht-degree: 1%
 
 ---
@@ -19,19 +19,19 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Använd [!DNL Acxiom Prospect-Suppression] för att leverera de mest produktiva målgrupperna för potentiella kunder. Denna koppling exporterar data från Real-Time Customer Data Platform och kör dem på ett säkert sätt via en prisbelönt hygien- och identitetsupplösning som producerar en datafil som ska användas som en undertryckningslista. Detta matchas mot databasen [!DNL Acxiom Global] som gör att listor med potentiella kunder kan anpassas för import. Använd sedan [[!DNL Acxiom Prospecting Data Import]](/help/sources/connectors/data-partners/acxiom-prospecting-data-import.md)-källkopplingen för att skapa listor med potentiella kunder från Acxiom tillbaka till Real-Time CDP, där dina kända eller konverterade kunder tas bort.
+Använd [!DNL Acxiom Prospect-Suppression] för att leverera de mest produktiva målgrupperna för potentiella kunder. Den här kopplingen exporterar data från första part från [!DNL Real-Time Customer Data Platform] på ett säkert sätt och kör den via en prisbelönt hygien- och identitetsupplösning som producerar en datafil som ska användas som en undertryckningslista. Detta matchas mot databasen [!DNL Acxiom Global] som gör att listor med potentiella kunder kan anpassas för import. Använd sedan [[!DNL Acxiom Prospecting Data Import]](/help/sources/connectors/data-partners/acxiom-prospecting-data-import.md)-källkopplingen för att skapa listor med potentiella kunder från Acxiom tillbaka till [!DNL Real-Time CDP], med dina kända eller konverterade kunder borttagna.
 
 ![Marknadsföringsdiagram för export av förstahandsdata till Acxiom och sedan import av data för potentiella kunder tillbaka till Real-Time CDP](/help/destinations/assets/catalog/data-partner/acxiom/marketing-workflow.png)
 
 Acxiom erbjuder branschens mest framgångsrika målgrupper med över 12 000 globala dataattribut som är särskilt inriktade på att leverera personaliserade upplevelser. Utnyttja obegränsade kombinationer av högkvalitativa data för att skapa och distribuera målgrupper för specifika kampanjbehov.
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Acxiom Prospect-Suppression]-målanslutning och ett dataflöde med Adobe Experience Platform-användargränssnittet. Den här kopplingen används för att leverera data till tjänsten för potentiella kunder i Acxiom med Amazon S3 som utgångspunkt. Kontakta din kontorepresentant för Acxiom när du har börjat exportera filer till Amazon S3-släpppunkten.
+Den här självstudien innehåller steg för att skapa en [!DNL Acxiom Prospect-Suppression]-målanslutning och ett dataflöde med användargränssnittet i [!DNL Adobe Experience Platform]. Den här kontakten levererar data till den potentiella Acxiom-tjänsten med Amazon S3 som utgångspunkt. Kontakta din kontorepresentant för Acxiom när du har börjat exportera filer till Amazon S3-släpppunkten.
 
 ![Målkatalogen med Acxiom-målet markerat.](../../assets/catalog/data-partner/acxiom/image-destination-catalog.png)
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Acxiom Prospect-Suppression] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Acxiom Prospect-Suppression] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Skapa en undertryckningslista för datauppsättningar för prospektering {#create-suppression-list}
 
@@ -43,7 +43,7 @@ Användningsexemplet körs genom en kombination av både mål- och källanslutni
 
 Du börjar först med att exportera dina befintliga kundprofiler med den här målkopplingen som ska användas som en undertryckningsfil. Detta säkerställer att inga befintliga kundposter inkluderas.
 
-Acxioms tjänst skulle söka efter filen, hämta den och använda den tillsammans med andra urvalskriterier och generera en potentiell fil. Du använder sedan motsvarande [[!DNL Acxiom Prospecting Data Import]](/help/sources/connectors/data-partners/acxiom-prospecting-data-import.md)-källanslutning för att importera profiler för potentiella kunder till Adobe Real-Time CDP.
+Acxioms tjänst skulle söka efter filen, hämta den och använda den tillsammans med andra urvalskriterier och generera en potentiell fil. Du använder sedan motsvarande [[!DNL Acxiom Prospecting Data Import]](/help/sources/connectors/data-partners/acxiom-prospecting-data-import.md)-källanslutning för att importera profiler för potentiella kunder till Adobe [!DNL Real-Time CDP].
 
 ## Förutsättningar {#prerequisites}
 
@@ -59,7 +59,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -73,7 +73,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 

@@ -4,18 +4,18 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 5fae3fe6a3647ba416a26f4cdb9e5b6ce308e990
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '922'
 ht-degree: 0%
 
 ---
 
 # Redigera aktiveringsdataflöden {#edit-activation-flows}
 
-I Adobe Experience Platform kan du konfigurera olika komponenter i befintliga aktiveringsdataflöden till mål, som:
+I [!DNL Adobe Experience Platform] kan du konfigurera olika komponenter i befintliga aktiveringsdataflöden till mål, som:
 
-* [Aktivera eller inaktivera &#x200B;](#enable-disable-dataflows) aktiveringsdataflöden
+* [Aktivera eller inaktivera ](#enable-disable-dataflows) aktiveringsdataflöden
 * [Lägg till ytterligare målgrupper](#add-audiences) i aktiveringsdataflöden
 * [Redigera mappade attribut och identiteter](#edit-mapped-attributes)
 * [Redigera aktiveringsschema och exportfrekvens](#edit-schedule-frequency)

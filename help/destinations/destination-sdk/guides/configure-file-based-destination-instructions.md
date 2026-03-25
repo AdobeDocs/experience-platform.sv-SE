@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett filbaserat mål
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '742'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativen i Destinations SDK](../functionality/configuration-options.md) och i andra Destination SDK-funktioner och API-referensdokument för att konfigurera ett [filbaserat mål](../../destination-types.md#file-based). Stegen beskrivs i sekventiell ordning nedan.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du går vidare till stegen som visas nedan bör du läsa sidan [Komma igång](../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga inloggningsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK.
 
@@ -408,21 +408,21 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 
    * [Amazon S3-autentisering](../functionality/destination-configuration/customer-authentication.md#s3)
    * [Azure Blob](../functionality/destination-configuration/customer-authentication.md#blob)
-   * [Azure Data Lake-lagring](../functionality/destination-configuration/customer-authentication.md#adls)
+   * [Azure Data Lake Storage](../functionality/destination-configuration/customer-authentication.md#adls)
    * [Google Cloud-lagring](../functionality/destination-configuration/customer-authentication.md#gcs)
-   * [SFTP-autentisering med SSH-nyckel](../functionality/destination-configuration/customer-authentication.md#sftp-ssh)
-   * [SFTP-autentisering med lösenord](../functionality/destination-configuration/customer-authentication.md#sftp-password)
+   * [SFTP-autentisering med SSH-nyckel](../functionality/destination-configuration/customer-authentication.md#sftp-ssh-key-auth)
+   * [SFTP-autentisering med lösenord](../functionality/destination-configuration/customer-authentication.md#sftp-password-auth)
 
 * Om du har valt `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md) och skicka autentiseringsuppgiftsobjektets ID i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication).
 
 ## Steg 5: Testa destinationen {#test-destination}
 
-När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda [måltestningsverktyget](../testing-api/batch-destinations/file-based-destination-testing-overview.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
+När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda [måltestningsverktyget](../testing-api/batch-destinations/file-based-destination-testing-overview.md) för att testa integrationen mellan [!DNL Adobe Experience Platform] och ditt mål.
 
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa målgrupper, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en målgrupp - dokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
-* [Skapa en publik - videogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE)
+* [Skapa en publik - videogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 6: Publicera destinationen {#publish-destination}
 

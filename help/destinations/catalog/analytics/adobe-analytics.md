@@ -3,20 +3,20 @@ keywords: Analystillägg;analystillägg;målanalys
 title: Adobe Analytics-tillägg
 description: Adobe Analytics-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 95b6e079-09a6-4262-bd01-11f155286aa9
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '441'
 ht-degree: 0%
 
 ---
 
-# Adobe Analytics-tillägg
+# [!DNL Adobe Analytics]-tillägg
 
 ## Översikt {#overview}
 
-Adobe Analytics är en branschledande lösning som ger er möjlighet att förstå era kunder som människor och styra verksamheten med kundanalys.
+[!DNL Adobe Analytics] är en branschledande lösning som gör att du kan förstå dina kunder som människor och styra din verksamhet med kundanalys.
 
-Adobe Analytics är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns i [Översikt över Adobe Analytics-tillägget](/help/tags/extensions/client/analytics/overview.md) i dokumentationen för taggar.
+[!DNL Adobe Analytics] är ett analystillägg i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktioner finns i [Översikt över Adobe Analytics-tillägget](/help/tags/extensions/client/analytics/overview.md) i dokumentationen för taggar.
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
@@ -26,13 +26,13 @@ Det här målet är ett taggtillägg. Mer information om hur taggtillägg funger
 
 Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Experience Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till användargränssnittet för datainsamling och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i Experience Platform. Taggar erbjuds [!DNL Adobe Experience Cloud] kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till användargränssnittet för datainsamling och be dem ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du Adobe Analytics-tillägget:
+Så här installerar du tillägget [!DNL Adobe Analytics]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 
@@ -42,7 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Mer information om alternativen för tilläggskonfigurationen finns på [Adobe Analytics-tilläggssidan](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html?lang=sv-SE) i taggdokumentationen.
+Mer information om alternativen för tilläggskonfigurationen finns på [Adobe Analytics-tilläggssidan](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html) i taggdokumentationen.
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i guiden om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension).
 

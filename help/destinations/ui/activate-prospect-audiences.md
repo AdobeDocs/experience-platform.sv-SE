@@ -3,9 +3,9 @@ title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta Adobe om du vill ha mer information.
+>Den här funktionen är tillgänglig för kunder som har köpt Prime- och Ultimate-paketet [!DNL Real-Time CDP]. Kontakta Adobe om du vill ha mer information.
 
-I den här artikeln förklaras det arbetsflöde som krävs för att exportera [potentiella målgrupper](/help/segmentation/types/prospect-audiences.md) från Adobe Experience Platform till det önskade målet.
+I den här artikeln förklaras det arbetsflöde som krävs för att exportera [potentiella målgrupper](/help/segmentation/types/prospect-audiences.md) från [!DNL Adobe Experience Platform] till önskat mål.
 
 ## Mål som stöds {#supported-destinations}
 
@@ -77,7 +77,7 @@ För resten av aktiveringsarbetsflödet för att exportera målgrupper med poten
 
 >[!NOTE]
 >
->Observera att i schemaläggningssteget kan du bara [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) i arbetsflödet för att aktivera potentiella målgrupper. Inkrementell filexport stöds inte.
+>Observera att i schemaläggningssteget kan du bara [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) med arbetsflödet för att aktivera potentiella målgrupper. Inkrementell filexport stöds inte.
 
 <!--
 
@@ -87,8 +87,8 @@ Note that we will need to add links to other destination types here as more dest
 
 ## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
 
-Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
+Utforska fler användningsfall som har aktiverats via partnerdatastöd i [!DNL Real-Time CDP]:
 
 * [Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
-* Använd datastöd från tredje part i Real-Time CDP för att [utöka din profilbas med profiler för potentiella kunder från datapartner och engagera med dem för att förvärva eller nå nya kunder](/help/rtcdp/partner-data/prospecting.md).
+* Använd datastöd från tredje part i [!DNL Real-Time CDP] för att [utöka din profilbas med profiler för potentiella kunder från datapartner och engagera med dem för att förvärva eller nå nya kunder](/help/rtcdp/partner-data/prospecting.md).
 * [Utnyttja partnerstödd igenkänning för personalisering av webbplatsupplevelser](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera eller ha en tidigare historik med varumärket.

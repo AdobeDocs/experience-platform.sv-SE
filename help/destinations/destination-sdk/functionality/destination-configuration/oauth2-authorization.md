@@ -2,9 +2,9 @@
 description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destination SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 title: OAuth 2-auktorisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2273'
+source-wordcount: '2243'
 ht-degree: 0%
 
 ---
@@ -33,9 +33,9 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ### Förutsättningar i systemet {#prerequisites}
 
-Som ett första steg måste du skapa en app i ditt system för Adobe Experience Platform, eller på annat sätt registrera Experience Platform i ditt system. Målet är att generera ett klient-ID och en klienthemlighet som behövs för att autentisera Experience Platform mot målet.
+Som ett första steg måste du skapa en app i ditt system för [!DNL Adobe Experience Platform] eller på annat sätt registrera Experience Platform i ditt system. Målet är att generera ett klient-ID och en klienthemlighet som behövs för att autentisera Experience Platform mot målet.
 
-Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/återanrops-URL:erna för Adobe Experience Platform OAuth 2, som du kan hämta från listan nedan.
+Som en del av den här konfigurationen i ditt system behöver du URL:erna för omdirigering/återanrop för [!DNL Adobe Experience Platform] OAuth 2, som du kan hämta från listan nedan.
 
 * `https://platform-va7.adobe.io/data/core/activation/oauth/api/v1/callback`
 * `https://platform-nld2.adobe.io/data/core/activation/oauth/api/v1/callback`
@@ -46,7 +46,7 @@ Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/
 
 >[!IMPORTANT]
 >
->Stegen för att registrera en omdirigerings-/återanrops-URL för Adobe Experience Platform i ditt system krävs bara för [OAuth 2 med behörighetstypen Auktoriseringskod](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
+>Stegen för att registrera en omdirigerings-/återanrops-URL för [!DNL Adobe Experience Platform] i systemet krävs bara för anslagstypen [ OAuth 2 med auktoriseringskoden ](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
 
 I slutet av det här steget bör du ha:
 
@@ -126,8 +126,8 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 | `accessTokenUrl` | Sträng | URL:en på din sida, som utfärdar åtkomsttoken och, om du vill, uppdaterar token. |
 | `authorizationUrl` | Sträng | URL:en till din auktoriseringsserver, där du omdirigerar användaren till ditt program. |
 | `refreshTokenUrl` | Sträng | *Valfritt.* URL:en på din sida, som utfärdar uppdateringstoken. Ofta är `refreshTokenUrl` samma som `accessTokenUrl`. |
-| `clientId` | Sträng | Det klient-ID som systemet tilldelar till Adobe Experience Platform. |
-| `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar Adobe Experience Platform. |
+| `clientId` | Sträng | Klient-ID som systemet tilldelar [!DNL Adobe Experience Platform]. |
+| `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar [!DNL Adobe Experience Platform]. |
 | `scope` | Lista över strängar | *Valfritt*. Ange omfattningen för vad åtkomsttoken tillåter Experience Platform att utföra på dina resurser. Exempel: &quot;read, write&quot;. |
 | `options.useBasicAuth` | Boolean | *Valfritt*. Ett booleskt värde som styr hur klientautentiseringsuppgifterna (klient-ID och klienthemlighet) skickas till OAuth-providerns tokenslutpunkt när en åtkomsttoken byts ut mot en auktoriseringskod. <ul><li>Om värdet är `false` eller odefinierat skickas autentiseringsuppgifterna som `client_id` - och `client_secret` -parametrar i POST-begärandetexten (standardbeteende).</li><li>Om den här parametern är inställd på `true` skickas autentiseringsuppgifterna i HTTP-huvudet `Authorization` med formatet Grundläggande autentisering: `Authorization: Basic base64(clientID:clientSecret)`.</li></ul> Ange `useBasicAuth` till `true` när din OAuth-leverantör kräver att klientautentiseringsuppgifter skickas i huvudet `Authorization` i stället för i begärandetexten. |
 
@@ -170,8 +170,8 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 | `authType` | Sträng | Använd &quot;OAUTH2&quot;. |
 | `grant` | Sträng | Använd&quot;OAUTH2_PASSWORD&quot;. |
 | `accessTokenUrl` | Sträng | URL:en på din sida, som utfärdar åtkomsttoken och, om du vill, uppdaterar token. |
-| `clientId` | Sträng | Det klient-ID som systemet tilldelar till Adobe Experience Platform. |
-| `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar Adobe Experience Platform. |
+| `clientId` | Sträng | Klient-ID som systemet tilldelar [!DNL Adobe Experience Platform]. |
+| `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar [!DNL Adobe Experience Platform]. |
 | `scope` | Lista över strängar | *Valfritt*. Ange omfattningen för vad åtkomsttoken tillåter Experience Platform att utföra på dina resurser. Exempel: &quot;read, write&quot;. |
 
 {style="table-layout:auto"}
@@ -212,8 +212,8 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 | `grant` | Sträng | Använd&quot;OAUTH2_CLIENT_CREDENTIALS&quot;. |
 | `accessTokenUrl` | Sträng | URL:en till din auktoriseringsserver, som utfärdar en åtkomsttoken och en valfri uppdateringstoken. |
 | `refreshTokenUrl` | Sträng | *Valfritt.* URL:en på din sida, som utfärdar uppdateringstoken. Ofta är `refreshTokenUrl` samma som `accessTokenUrl`. |
-| `clientId` | Sträng | Det klient-ID som systemet tilldelar till Adobe Experience Platform. |
-| `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar Adobe Experience Platform. |
+| `clientId` | Sträng | Klient-ID som systemet tilldelar [!DNL Adobe Experience Platform]. |
+| `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar [!DNL Adobe Experience Platform]. |
 | `scope` | Lista över strängar | *Valfritt*. Ange omfattningen för vad åtkomsttoken tillåter Experience Platform att utföra på dina resurser. Exempel: &quot;read, write&quot;. |
 
 {style="table-layout:auto"}
@@ -491,4 +491,4 @@ Beroende på hur du anpassar din behörighet kan du behöva komma åt datafält 
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här artikeln får du nu en förståelse för de OAuth 2-autentiseringsmönster som stöds av Adobe Experience Platform och veta hur du konfigurerar ditt mål med OAuth 2-auktoriseringsstöd. Sedan kan du konfigurera ditt mål som stöds av OAuth 2 med Destination SDK. Läs [Använd Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) för nästa steg.
+Genom att läsa den här artikeln har du nu en förståelse för de OAuth 2-autentiseringsmönster som stöds av [!DNL Adobe Experience Platform] och vet hur du konfigurerar ditt mål med OAuth 2-auktoriseringsstöd. Sedan kan du konfigurera ditt mål som stöds av OAuth 2 med Destination SDK. Läs [Använd Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) för nästa steg.

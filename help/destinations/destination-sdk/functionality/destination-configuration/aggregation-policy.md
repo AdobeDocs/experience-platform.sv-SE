@@ -2,16 +2,16 @@
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: 92d7abcbd642cea4e0fa041d2926ba8868f506e5
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1235'
+source-wordcount: '1233'
 ht-degree: 0%
 
 ---
 
 # Samlingsprincip
 
-För att vara så effektiv som möjligt när du exporterar data till API-slutpunkten kan du använda olika inställningar för att samla exporterade profiler i större eller mindre grupper, gruppera dem efter identitet och andra användningsfall. På så sätt kan du skräddarsy dataexport till eventuella efterföljande begränsningar för API-slutpunkten (hastighetsbegränsning, antal identiteter per API-anrop osv.).
+För att vara så effektiv som möjligt när du exporterar data till API-slutpunkten kan du använda olika inställningar för att samla exporterade profiler i större eller mindre grupper, gruppera dem efter identitet och andra användningsfall. På så sätt kan du skräddarsy dataexport till eventuella begränsningar för API-slutpunkten (hastighetsbegränsning, antal identiteter per API-anrop osv.).
 
 Använd konfigurerbar aggregering för att fördjupa dig i inställningarna från Destination SDK eller använd aggregering av bästa möjliga ansträngning för att instruera Destination SDK att batchköra API-anropen så mycket som möjligt.
 

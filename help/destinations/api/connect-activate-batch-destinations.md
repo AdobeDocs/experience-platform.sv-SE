@@ -5,9 +5,9 @@ title: Anslut till gruppmål och aktivera data med API:t för Flow Service
 description: Stegvisa instruktioner om hur du använder API:t för Flow Service för att skapa ett batchmolnlagringsutrymme eller ett marknadsföringsmål för e-post i Experience Platform och aktivera data
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '3431'
+source-wordcount: '3423'
 ht-degree: 0%
 
 ---
@@ -38,10 +38,10 @@ Om du föredrar att använda Experience Platform användargränssnitt för att a
 
 ## Komma igång {#get-started}
 
-Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Handboken kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] låter dig skapa målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): Med [!DNL Adobe Experience Platform Segmentation Service] kan du skapa målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att aktivera data till batchdestinationer i Experience Platform.
@@ -531,7 +531,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `name` | Ange ett namn för basanslutningen till batchmålet. |
 | `description` | Du kan också ange en beskrivning för basanslutningen. |
 | `connectionSpec.id` | Använd anslutningsspec-ID:t för det önskade batchmålet. Du fick detta ID i steget [Hämta listan över tillgängliga mål](#get-the-list-of-available-destinations). |
-| `auth.specname` | Anger målets autentiseringsformat. Om du vill ta reda på specName för ditt mål ska du utföra ett [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec) och ange anslutningsspecifikationen för det önskade målet. Leta efter parametern `authSpec.name` i svaret. <br> För Adobe Campaign-mål kan du till exempel använda något av `S3`, `SFTP with Password` eller `SFTP with SSH Key`. |
+| `auth.specname` | Anger målets autentiseringsformat. Om du vill ta reda på specName för ditt mål ska du utföra ett [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec) och ange anslutningsspecifikationen för det önskade målet. Leta efter parametern `authSpec.name` i svaret. <br> För [!DNL Adobe Campaign] mål kan du till exempel använda något av `S3`, `SFTP with Password` eller `SFTP with SSH Key`. |
 | `params` | Beroende på vilket mål du ansluter till måste du ange olika obligatoriska autentiseringsparametrar. För Amazon S3-anslutningar måste du ange ditt åtkomst-ID och din hemliga nyckel till din Amazon S3-lagringsplats. <br> Utför ett [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec) för att ta reda på vilka parametrar som krävs för ditt mål. Detta anger anslutningsspecifikationen för det önskade målet. Leta efter parametern `authSpec.spec.required` i svaret. |
 
 {style="table-layout:auto"}
@@ -934,7 +934,7 @@ curl -X POST \
 | --------- | ----------- |
 | `name` | Ange ett namn för dataflödet som du skapar. |
 | `description` | Du kan också ange en beskrivning för dataflödet. |
-| `flowSpec.Id` | Använd flödets spec-ID för det batchmål som du vill ansluta till. Om du vill hämta flödets spec-ID utför du en GET-åtgärd på slutpunkten `flowspecs`, vilket visas i [API-referensdokumentationen för flödesspecifikationer](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). I svaret söker du efter `upsTo` och kopierar motsvarande ID för batchmålet som du vill ansluta till. För Adobe Campaign söker du till exempel efter `upsToCampaign` och kopierar parametern `id`. |
+| `flowSpec.Id` | Använd flödets spec-ID för det batchmål som du vill ansluta till. Om du vill hämta flödets spec-ID utför du en GET-åtgärd på slutpunkten `flowspecs`, vilket visas i [API-referensdokumentationen för flödesspecifikationer](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). I svaret söker du efter `upsTo` och kopierar motsvarande ID för batchmålet som du vill ansluta till. För [!DNL Adobe Campaign] kan du till exempel leta efter `upsToCampaign` och kopiera parametern `id`. |
 | `sourceConnectionIds` | Använd det källanslutnings-ID som du fick i steget [Anslut till dina Experience Platform-data](#connect-to-your-experience-platform-data). |
 | `targetConnectionIds` | Använd det målanslutnings-ID som du fick i steget [Anslut till batchmålet](#connect-to-batch-destination). |
 | `transformations` | I nästa steg ska du fylla i det här avsnittet med målgrupper och profilattribut som ska aktiveras. |
@@ -965,7 +965,7 @@ Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet och `etag`
 
 När du har skapat alla anslutningar och dataflöden kan du nu aktivera dina profildata till målplattformen. I det här steget väljer du vilka målgrupper och vilka profilattribut som ska exporteras till målet.
 
-Du kan också bestämma filnamnsformatet för de exporterade filerna och vilka attribut som ska användas som [dedupliceringstangenter](../ui/activate-batch-profile-destinations.md#mandatory-keys) eller [obligatoriska attribut](../ui/activate-batch-profile-destinations.md#mandatory-attributes). I det här steget kan du även bestämma vilket schema som ska användas för att skicka data till målet.
+Du kan också bestämma filnamnsformatet för de exporterade filerna och vilka attribut som ska användas som [dedupliceringstangenter](../ui/activate-batch-profile-destinations.md#mandatory-attributes) eller [obligatoriska attribut](../ui/activate-batch-profile-destinations.md#mandatory-attributes). I det här steget kan du även bestämma vilket schema som ska användas för att skicka data till målet.
 
 Om du vill aktivera målgrupper till ditt nya mål måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera målgrupper och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikationen](https://tools.ietf.org/html/rfc6902).
 
@@ -1049,7 +1049,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
 | `name` | *Valfritt*. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
-| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
+| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names) i självstudiekursen om aktivering av gruppmål. |
 | `exportMode` | Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. |
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
 | `frequency` | Obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE`, `DAILY`, `WEEKLY` eller `MONTHLY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |

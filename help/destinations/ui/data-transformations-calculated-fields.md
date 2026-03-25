@@ -3,7 +3,7 @@ title: Utför omformningar av data som exporteras till molnlagringsmål med ber�
 type: Tutorial
 description: Förstå hur du använder funktionen för beräknade fält för att utföra omformningar av data som exporteras till molnlagringsmål
 exl-id: 1e14f964-4c03-4d0c-be8d-c3dcb48a335a
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
 source-wordcount: '1604'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 >id="platform_destinations_export_arrays_flat_files"
 >title="Lägg till beräknade fält"
 >abstract="<p>Använd kontrollen **Lägg till beräknat fält** för att utföra olika dataomvandlingar på data som exporteras till molnlagringsmål. Du kan till exempel tillämpa hash-kodning på data, sammanfoga arrayer i strängar och mycket mer."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html?lang=sv-SE#examples" text="Exempel"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/data-transformations-calculated-fields.html#examples" text="Exempel"
 
 >[!AVAILABILITY]
 >
@@ -118,7 +118,7 @@ Du kan t.ex. kombinera följande XDM-fält nedan som visas på mappningsskärmbi
 
 I det här fallet ser utdatafilen ut så här nedan. Observera hur elementen i arrayen sammanfogas till en enda sträng med tecknet `_`.
 
-```
+```csv
 First_Name,Last_Name,Personal_Email,Organization
 John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':456,'orgName':'Superstar Inc','founded':2004,'latestInteraction':1692921600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
 ```
@@ -133,7 +133,7 @@ Om du fortsätter med arrayobjektet `organizations` ovan kan du skriva en funkti
 
 I det här fallet ser utdatafilen ut så här nedan. Observera hur de två elementen i arrayen som uppfyller villkoret sammanfogas till en enda sträng med tecknet `_`.
 
-```
+```csv
 John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
 ```
 
@@ -147,7 +147,7 @@ Om du fortsätter med arrayobjektet `organizations` ovan kan du skriva en funkti
 
 I det här fallet ser utdatafilen ut så här nedan. Observera hur arrayens tre element omformas och sammanfogas till en enda sträng med tecknet `_`.
 
-```
+```csv
 John,Doe,johndoe@acme.org,ACME INC_SUPERSTAR INC_ENERGY CORP
 ```
 
@@ -159,7 +159,7 @@ Använd funktionen `iif` för att exportera element i en array under vissa villk
 
 I det här fallet ser utdatafilen ut så här nedan. I det här fallet är det första elementet i matrisen Marketing, så personen är medlem i marknadsföringsavdelningen.
 
-```
+```csv
 `First_Name,Last_Name, Personal_Email, Is_Member_Of_Marketing_Dept
 John,Doe, johndoe@acme.org, "isMarketing"
 ```
@@ -174,7 +174,7 @@ Om du fortsätter med arrayobjektet `organizations` ovan kan du skriva en funkti
 
 I det här fallet ser utdatafilen ut så här nedan. Observera hur arrayens tre element sammanfogas till en enda sträng med tecknet `_` och 2023 också läggs till i slutet av strängen.
 
-```
+```csv
 `First_Name,Last_Name,Personal_Email,Organization_Member_2023
 John,Doe, johndoe@acme.org,"Marketing_Sales_Finance_2023"
 ```
@@ -202,7 +202,7 @@ Du kan till exempel kombinera följande XDM-fält nedan så som visas på mappni
 
 I det här fallet ser utdatafilen ut så här nedan. Observera hur det första icke-null `true`-värdet i arrayen exporteras i filen.
 
-```
+```csv
 First_Name,Last_Name,hasPromotion
 John,Doe,true
 ```
@@ -220,7 +220,7 @@ Du kan t.ex. kombinera följande XDM-fält nedan så som visas på mappningsskä
 
 I det här fallet ser utdatafilen ut så här nedan. Observera hur den andra kolumnen anger antalet element i arrayen, vilket motsvarar antalet separata inköp som kunden gör.
 
-```
+```csv
 `Personal_Email,Times_Purchased
 johndoe@acme.org,"5"
 ```
@@ -237,7 +237,7 @@ Du kan komma åt ett index för en array och exportera ett enskilt objekt från 
 
 I det här fallet ser utdatafilen ut så här nedan och exporterar första gången som kunden har gjort ett köp:
 
-```
+```csv
 `Personal_Email,First_Purchase
 johndoe@acme.org,"1538097126"
 ```
@@ -250,7 +250,7 @@ Använd funktionerna `first` och `last` för att exportera det första eller sis
 
 I det här fallet ser utdatafilen ut så här nedan och exporterar den första och sista gången kunden har gjort ett köp:
 
-```
+```csv
 `Personal_Email,First_Purchase, Last_Purchase
 johndoe@acme.org,"1538097126","1664327526"
 ```

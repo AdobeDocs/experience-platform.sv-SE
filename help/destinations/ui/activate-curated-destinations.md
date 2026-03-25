@@ -3,22 +3,22 @@ title: Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-i
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper från Adobe Experience Platform till anslutna TV- och ljuddestinationer samt andra integreringar med LiveRamp RampID.
 exl-id: 37e5bab9-588f-40b3-b65b-68f1a4b868f1
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '648'
 ht-degree: 0%
 
 ---
 
 # Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare
 
-Använd Adobe Real-Time CDP-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [[!DNL [LiveRamp RampID]]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
+Använd Adobe [!DNL Real-Time CDP]-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
 
 >[!IMPORTANT]
 >
 >Du behöver inte importera eller på något sätt arbeta med LiveRamp-ID:n i Experience Platform-gränssnittet.
 >
-> Du kan exportera identiteter från Real-Time CDP, till exempel PII-baserade identifierare, kända identifierare och anpassade ID:n, enligt beskrivningen i den officiella [LiveRamp-dokumentationen](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers). Dessa identiteter matchas sedan med [!DNL LiveRamp RampIDs] längre fram i aktiveringsprocessen.
+> Du kan exportera identiteter från [!DNL Real-Time CDP], till exempel PII-baserade identifierare, kända identifierare och anpassade ID:n, enligt beskrivningen i den officiella [LiveRamp-dokumentationen](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers). Dessa identiteter matchas sedan med [!DNL LiveRamp RampIDs] längre fram i aktiveringsprocessen.
 
 
 * [[!DNL 4C Insights]](#insights)
@@ -42,7 +42,7 @@ Använd Adobe Real-Time CDP-integreringen med [!DNL LiveRamp] för att aktivera 
 * [[!DNL Teads]](#teads)
 * [[!DNL WB Discovery]](#wb-discovery)
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper från Real-Time CDP till de mål som anges ovan, direkt från Real-Time CDP användargränssnitt.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper från [!DNL Real-Time CDP] till de mål som anges ovan, direkt från användargränssnittet i [!DNL Real-Time CDP].
 
 ## Aktiveringsarbetsflöde {#workflow}
 
@@ -50,19 +50,19 @@ Du aktiverar målgrupper till anslutna TV- och ljuddestinationer genom att gå i
 
 ![Bild som visar arbetsflödet för aktivering av målgrupper från Real-Time CDP till kuraterade mål via LiveRamp.](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png){width="1920" zoomable="yes"}
 
-Först exporterar du dina målgrupper från Real-Time CDP till målet [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) som CSV-filer.
+Först exporterar du dina målgrupper från [!DNL Real-Time CDP] till [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-målet som CSV-filer.
 
 När du har exporterat dina målgrupper aktiverar du dem med hjälp av målet [[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md).
 
 >[!TIP]
 >
->Med den här processen kan du aktivera dina målgrupper till mål som [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku), [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney) med flera, direkt från användargränssnittet i Real-Time CDP, utan att behöva logga in på ditt [!DNL LiveRamp]-konto för aktivering.
+>Med den här processen kan du aktivera dina målgrupper till mål som [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku), [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney) med flera, direkt från användargränssnittet i [!DNL Real-Time CDP], utan att behöva logga in på ditt [!DNL LiveRamp]-konto för aktivering.
 
 ### Videosjälvstudiekurs {#video}
 
 Titta på videon nedan för att få en komplett förklaring av arbetsflödet som beskrivs på den här sidan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3452660?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3425367)
 
 ### Steg 1: Skicka dina målgrupper från Experience Platform till LiveRamp via målet [!DNL LiveRamp - Onboarding] {#onboarding}
 
@@ -93,7 +93,7 @@ Du aktiverar målgrupperna (exporterade i [steg 1](#onboarding)) med hjälp av m
 
 ![Experience Platform-gränssnittsbild som visar LiveRamp - distributionskortet](../assets/ui/activate-curated-destinations-liveramp/liveramp-distribution-catalog.png)
 
-Läs **[!DNL LiveRamp - Distribution]**-måldokumentationen om du vill lära dig hur du konfigurerar [-målet och aktiverar de målgrupper som du har exporterat i &#x200B;](#onboarding)steg 1[[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md).
+Läs **[!DNL LiveRamp - Distribution]**-måldokumentationen om du vill lära dig hur du konfigurerar [-målet och aktiverar de målgrupper som du har exporterat i ](#onboarding)steg 1[[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md).
 
 >[!IMPORTANT]
 >

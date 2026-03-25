@@ -4,9 +4,9 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '4973'
+source-wordcount: '4966'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Använd de förbättrade funktionerna för filexport för att få tillgång till förbättrade anpassningsfunktioner när du exporterar filer från Experience Platform:
 
-* Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
+* Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names).
 * Möjlighet att ange anpassade filhuvuden i de exporterade filerna via det [förbättrade mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
 * Möjlighet att välja [filtypen](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) för den exporterade filen.
 * [Möjlighet att anpassa formateringen för exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
@@ -29,7 +29,7 @@ Den här funktionen stöds av de sex molnlagringskorten som anges nedan:
 * [[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
 * [[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
 
-I den här artikeln förklaras det arbetsflöde som krävs för att använda [API:t för Flow Service](https://developer.adobe.com/experience-platform-apis/references/destinations/) för att exportera kvalificerade profiler från Adobe Experience Platform till en av de molnlagringsplatser som är länkade ovan.
+I den här artikeln förklaras det arbetsflöde som krävs för att använda [API:t för Flow Service](https://developer.adobe.com/experience-platform-apis/references/destinations/) för att exportera kvalificerade profiler från [!DNL Adobe Experience Platform] till en av de molnlagringsplatser som är länkade ovan.
 
 >[!TIP]
 >
@@ -47,10 +47,10 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/segment-export-overview.png)
 
-Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Handboken kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] låter dig skapa målgrupper och generera målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): Med [!DNL Adobe Experience Platform Segmentation Service] kan du skapa målgrupper och generera målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för filbaserade mål i Experience Platform.
@@ -3489,7 +3489,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/i
 
 +++ Visa tillgängliga identiteter som ska användas i indatabchemat
 
-Svaret returnerar de identiteter som du kan använda när du skapar indatarammet. Observera att det här svaret returnerar både [standard](/help/identity-service/features/namespaces.md#standard)- och [anpassade](/help/identity-service/features/namespaces.md#manage-namespaces)-identitetsnamnutrymmen som du har konfigurerat i Experience Platform.
+Svaret returnerar de identiteter som du kan använda när du skapar indatarammet. Observera att det här svaret returnerar både [standard](/help/identity-service/features/namespaces.md#standard)- och [anpassade](/help/identity-service/features/namespaces.md#create-namespaces)-identitetsnamnutrymmen som du har konfigurerat i Experience Platform.
 
 ```json
 [

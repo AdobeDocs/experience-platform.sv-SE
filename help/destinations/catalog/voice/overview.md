@@ -3,9 +3,9 @@ keywords: röstmål;Röstmål
 title: Översikt över kundens destinationer
 description: Röstplattformarna samlar in och samlar in data från olika källor, inklusive röstmeddelanden, samtalsdata och chattsamtal. Den sammanställda informationen kan filtreras och analyseras så att företag kan optimera sin webbplats så att den uppfyller deras behov.
 exl-id: f4e9ffea-5429-42ca-9075-562686ba3179
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '135'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ Röstplattformarna samlar in och samlar in data från olika källor, inklusive r
 
 ## Supported Voice of the Customer Destines {#supported-destinations}
 
-För närvarande stöder Adobe Experience Platform Voice för de kunddestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+För närvarande stöder [!DNL Adobe Experience Platform] rösterna för de kundmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 ### Anslutningar {#connections}
 

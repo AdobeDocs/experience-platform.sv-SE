@@ -2,9 +2,9 @@
 description: Lär dig formatera ett API-anrop för att skicka en begäran om målpublicering via Adobe Experience Platform Destination SDK.
 title: Skapa en publiceringsbegäran för destinationen
 exl-id: 913be9de-a699-4756-885d-b3761ec729cb
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '444'
 ht-degree: 0%
 
 ---
@@ -83,4 +83,4 @@ Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna f�
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du skickar en publiceringsbegäran för ditt mål. Adobe Experience Platform-teamet granskar din publiceringsförfrågan och kommer tillbaka till dig inom fem arbetsdagar.
+När du har läst det här dokumentet vet du nu hur du skickar en publiceringsbegäran för ditt mål. [!DNL Adobe Experience Platform]-teamet granskar din publiceringsförfrågan och kommer tillbaka till dig inom fem arbetsdagar.

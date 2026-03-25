@@ -2,9 +2,9 @@
 title: Algoliet
 description: Använd den här kopplingen för att aktivera målgrupper för Algoliet för personalisering och användning i sökningar och rekommendationer. Du kan sedan använda källkopplingen för användarprofilen i Algoliet för att importera profilerna till Real-Time CDP för att skapa avancerade målgrupper.
 exl-id: 116a051a-1b47-4789-826e-c8f0fee60def
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1112'
 ht-degree: 1%
 
 ---
@@ -17,27 +17,27 @@ ht-degree: 1%
 >
 >Målanslutnings- och dokumentationssidan för [!DNL Algolia] skapas och underhålls av Algolia Integration Services-teamet. Om du har frågor eller uppdateringsfrågor kan du kontakta dem på [adobe-algolia-solutions@algolia.com](mailto:adobe-algolia-solutions@algolia.com).
 
-Använd målanslutningen [!DNL Algolia] för att skicka Adobe Experience Platform-målgrupper till Algolia för personlig sökning och rekommendationer. Innan du kan använda målkopplingen [!DNL Algolia] måste du först konfigurera källkopplingen för [[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md). Under självstudiekursen för konfiguration av källanslutning skapar du användaridentiteten för Algoliet-användartoken. Den här identiteten krävs för mappning när du konfigurerar målkopplingen.
+Använd målanslutningen [!DNL Algolia] för att skicka [!DNL Adobe Experience Platform] målgrupper till Algolia för personlig sökning och rekommendationer. Innan du kan använda målkopplingen [!DNL Algolia] måste du först konfigurera källkopplingen för [[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md). Under självstudiekursen för konfiguration av källanslutning skapar du användaridentiteten för Algoliet-användartoken. Den här identiteten krävs för mappning när du konfigurerar målkopplingen.
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Algolia]-målanslutning och ett dataflöde med Adobe Experience Platform-användargränssnittet.
+Den här självstudien innehåller steg för att skapa en [!DNL Algolia]-målanslutning och ett dataflöde med användargränssnittet i [!DNL Adobe Experience Platform].
 
 ![Målkatalogen med målet Algolia.](../../assets/catalog/personalization/algolia/catalog.png)
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Algolia] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Algolia] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Enhetlig Personalization {#personalization-consistency}
 
 Använd den här målkopplingen för att leverera en konsekvent personalisering på hela webbplatsen från hemsidan till sökningen.
 
-Som marknadsförare kanske du vill skapa en rik målgrupp i Adobe Experience Platform från flera datakällor, inklusive Algolia. Du kan använda målkopplingen [!DNL Algolia] för att dela målgrupper för målgruppsstrategier, vilket leder till en ökad kampanjpersonalisering och konvertering.
+Som marknadsförare kanske du vill skapa en rik målgrupp i [!DNL Adobe Experience Platform] från flera användardatakällor, inklusive Algolia. Du kan använda målkopplingen [!DNL Algolia] för att dela målgrupper för målgruppsstrategier, vilket leder till en ökad kampanjpersonalisering och konvertering.
 
 Om du vill implementera det här användningsfallet måste du använda både [[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)-källan och [!DNL Algolia]-målanslutningarna.
 
-Du börjar med att importera dina befintliga [!DNL Algolia]-användarprofiler till Adobe Experience Platform Real-Time CDP och andra källor för att börja skapa avancerade målgrupper med källkopplingen. Marknadsförarna skulle kunna skapa målgrupper med hjälp av profildata som kan skickas till Algoliet för söknings- och rekommendationspersonalisering.
+Du börjar med att importera dina befintliga [!DNL Algolia]-användarprofiler till [!DNL Adobe Experience Platform] [!DNL Real-Time CDP] och andra källor för att börja skapa avancerade målgrupper med källkopplingen. Marknadsförarna skulle kunna skapa målgrupper med hjälp av profildata som kan skickas till Algoliet för söknings- och rekommendationspersonalisering.
 
-Använd sedan motsvarande [[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)-källanslutning för att importera och förstärka kundprofiler tillbaka till Real-Time CDP.
+Använd sedan motsvarande [[!DNL Algolia User Profiles]](/help/sources/connectors/data-partners/algolia-user-profiles.md)-källanslutning för att importera och förstärka kundprofiler tillbaka till [!DNL Real-Time CDP].
 
 ## Förutsättningar {#prerequisites}
 
@@ -48,7 +48,7 @@ Använd sedan motsvarande [[!DNL Algolia User Profiles]](/help/sources/connector
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Algolia] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/sv/docs/experience-platform/identity/features/namespaces).
+[!DNL Algolia] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/namespaces).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---------|---------|----------|
@@ -63,7 +63,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|---------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -76,7 +76,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -133,9 +133,9 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >[!IMPORTANT]
 >
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
->* Om du vill exportera identiteter måste du ha behörigheten [Visa identitetsdiagram &#x200B;](https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/home#permissions).
+>* Om du vill exportera identiteter måste du ha behörigheten [Visa identitetsdiagram ](https://experienceleague.adobe.com/en/docs/experience-platform/access-control/home#permissions).
 
-Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations) för instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#mapping-attributes-identities}
 
@@ -145,13 +145,13 @@ Under [!UICONTROL Mapping step] måste du mappa källidentiteten AlgoliaUserToke
 
 ## Validera dataexport {#exported-data}
 
-Kontrollera [!DNL Algolia]-instrumentpanelen och navigera till **[!UICONTROL Advanced Personalization]** och klicka på **[!UICONTROL User Inspector]** för att kontrollera om målgrupperna har exporterats till användarprofilerna. Hitta en användarprofil som är associerad med den exporterade Adobe Experience Platform-målgruppen och sök efter den i Användarpanelen. Du ser målgrupps-ID i segmentavsnittet.
+Kontrollera [!DNL Algolia]-instrumentpanelen och navigera till **[!UICONTROL Advanced Personalization]** och klicka på **[!UICONTROL User Inspector]** för att kontrollera om målgrupperna har exporterats till användarprofilerna. Hitta en användarprofil som är associerad med den exporterade [!DNL Adobe Experience Platform]-målgruppen och sök efter den i användarpanelen. Du ser målgrupps-ID i segmentavsnittet.
 
 ![Algoliet User Inspector](../../assets/catalog/personalization/algolia/verify-segment-user-profile.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Ytterligare resurser {#additional-resources}
 

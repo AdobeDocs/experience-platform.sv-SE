@@ -3,10 +3,10 @@ keywords: sociala medier;sociala mål;Livefyre;facebook;Facebook
 title: Översikt över sociala mål
 description: Med sociala destinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: c5da8dae-c1ff-45a8-b769-037d7bb7947a
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 0%
+source-wordcount: '103'
+ht-degree: 4%
 
 ---
 
@@ -18,7 +18,7 @@ Med sociala destinationer kan ni aktivera profiler för era kampanjer för målg
 
 ## Sociala destinationer som stöds {#supported-destinations}
 
-Adobe Experience Platform har för närvarande stöd för följande sociala mål:
+[!DNL Adobe Experience Platform] har för närvarande stöd för följande sociala mål:
 
 * [[!DNL Facebook]-anslutning](facebook.md)
 * [[!DNL LinkedIn Matched Audiences]-anslutning](linkedin.md)

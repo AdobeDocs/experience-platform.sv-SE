@@ -3,9 +3,9 @@ keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
 description: Adobe Experience Platform kan leverera dina målgrupper som datafiler till dina Amazon S3-, AWS Kinesis-, Azure Event Hubs- eller SFTP-molnlagringsplatser.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '457'
 ht-degree: 1%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Adobe Experience Platform kan leverera era målgrupper som datafiler till era molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV-filer för [!DNL Amazon S3], [!DNL Azure Blob], [!DNL Azure Data Lake Storage Gen2], [!DNL Data Landing Zone], [!DNL Google Cloud Storage] och SFTP. För [!DNL Amazon Kinesis]- och [!DNL Azure Event Hubs]-mål direktuppspelas data från Experience Platform i [!DNL JSON]-format.
+[!DNL Adobe Experience Platform] kan leverera dina målgrupper som datafiler till dina molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV-filer för [!DNL Amazon S3], [!DNL Azure Blob], [!DNL Azure Data Lake Storage Gen2], [!DNL Data Landing Zone], [!DNL Google Cloud Storage] och SFTP. För [!DNL Amazon Kinesis]- och [!DNL Azure Event Hubs]-mål direktuppspelas data från Experience Platform i [!DNL JSON]-format.
 
 ![Adobe molnlagringsmål](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
 
 ## Molnlagringsmål som stöds {#supported-destinations}
 
-Adobe Experience Platform stöder dataexport till följande molnlagringsmål:
+[!DNL Adobe Experience Platform] stöder dataexport till följande molnlagringsmål:
 
 * [Amazon Kinesis-anslutning](amazon-kinesis.md)
 * [Amazon S3-anslutning](amazon-s3.md)
-* [Azure Blob-anslutning](azure-blob.md)
+* [Azure Blob Connection](azure-blob.md)
 * [Azure Data Lake Storage Gen2](adls-gen2.md)
 * [Azure Event Hubs-anslutning](azure-event-hubs.md)
 * [Datallandningszon](data-landing-zone.md)

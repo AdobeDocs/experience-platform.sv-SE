@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '589'
 ht-degree: 0%
 
 ---
@@ -13,17 +13,17 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
+På den här sidan beskrivs hur du autentiserar och börjar använda [!DNL Adobe Experience Platform] Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 
 ## Terminologi {#terminology}
 
-I den här handboken används Experience Platform-specifika begrepp, som organisation och sandlådor. I [Experience Platform-ordlistan](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html?lang=sv-SE) finns definitioner av dessa termer. Läs [Destination SDK-ordlistan](/help/destinations/destination-sdk/glossary.md) för termer som är direkt relaterade till den här funktionen.
+I den här handboken används Experience Platform-specifika begrepp, som organisation och sandlådor. I [Experience Platform-ordlistan](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) finns definitioner av dessa termer. Läs [Destination SDK-ordlistan](/help/destinations/destination-sdk/glossary.md) för termer som är direkt relaterade till den här funktionen.
 
 ## Hämta nödvändiga autentiseringsuppgifter {#obtain-authentication-credentials}
 
 Destination SDK använder [Adobe I/O](https://www.adobe.io/)-gatewayen för autentisering. Om du vill göra API-anrop till Destination SDK-slutpunkter måste du ange vissa rubriker i dina API-anrop. Arbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](https://developer.adobe.com/console).
 
-Följ [Experience Platform-självstudiekursen](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html?lang=sv-SE) för att anropa Destination SDK API-slutpunkter. Starta självstudiekursen från steget [Skapa en API-nyckel, ett organisations-ID och en klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html?lang=sv-SE#api-ims-secret). Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK API-anrop, vilket visas nedan:
+Följ [Experience Platform-självstudiekursen](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html) för att anropa Destination SDK API-slutpunkter. Starta självstudiekursen från steget [Skapa en API-nyckel, ett organisations-ID och en klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret). Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK API-anrop, vilket visas nedan:
 
 * `x-api-key: {API_KEY}`, även kallat klient-ID
 * `x-gw-ims-org-id: {ORG_ID}`, även kallat organisations-ID

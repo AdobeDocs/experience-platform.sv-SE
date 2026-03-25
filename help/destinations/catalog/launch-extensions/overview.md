@@ -3,16 +3,16 @@ keywords: taggtillägg;taggtillägg;startmål;plattformstaggtillägg;plattformst
 title: Taggtillägg i Adobe Experience Platform
 description: Adobe Experience Platform erbjuder nästa generations tagghanteringsfunktioner från Adobe. Experience Platform ger er ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser.
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---
 
-# Tagga tillägg i Adobe Experience Platform
+# Tagga tillägg i [!DNL Adobe Experience Platform]
 
-Adobe Experience Platform erbjuder nästa generations tagghanteringsfunktioner från Adobe. Experience Platform ger er ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde.
+[!DNL Adobe Experience Platform] innehåller nästa generations tagghanteringsfunktioner från Adobe. Experience Platform ger er ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser. Taggar erbjuds [!DNL Adobe Experience Cloud] kunder som en inkluderad, värdeskapande funktion.
 
 En introduktion till taggar finns i resurserna nedan:
 
@@ -62,7 +62,7 @@ Med tillägg kan ni tillgodose olika kundbehov. Exempel på användningsområden
 Tillägg kan delas in i följande kategorier i Experience Platform:
 
 - [Advertising](../advertising/overview.md)
-- [Analytics &#x200B;](../analytics/overview.md)
+- [Analytics ](../analytics/overview.md)
 - [Datahanteringsplattform](../data-management/overview.md)
 - [E-postmarknadsföringsmål](../email-marketing/overview.md)
 - [Personalisering](../personalization/overview.md)

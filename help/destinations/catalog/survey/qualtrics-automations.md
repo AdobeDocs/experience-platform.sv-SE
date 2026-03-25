@@ -4,9 +4,9 @@ title: Qualtrics Automations
 description: Synkronisera upplevelser och användbara kunddata för att låsa upp personalisering i stor skala. Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience iD för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner.
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 3289ed4c-8542-4e22-a574-e49cc6527a24
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1283'
+source-wordcount: '1259'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Synkronisera upplevelser och användbara kunddata för att låsa upp personalisering i stor skala.
 
-Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience iD för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner.
+Använd aggregeringen av flera källor med driftsdata i [!DNL Adobe Experience Platform] som indata i Qualtrics Experience iD för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga gapet när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner.
 
 >[!IMPORTANT]
 >
@@ -25,23 +25,23 @@ Använd aggregering av flera olika källor med driftsdata i Adobe Experience Pla
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet *Qualtrics Automations* finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet *Qualtrics Automations* finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Använd skiftläge 1 {#use-case-1}
 
-**Scenario**: Ett företag vill mäta kundnöjdheten över olika digitala kontaktytor, till exempel deras webbplats och mobilapp. De använder Adobe Experience Platform för att starta undersökningar baserade på användarinteraktioner, som att slutföra ett köp eller besöka en viss webbsida.
+**Scenario**: Ett företag vill mäta kundnöjdheten över olika digitala kontaktytor, till exempel deras webbplats och mobilapp. De använder [!DNL Adobe Experience Platform] för att utlösa undersökningar baserade på användarinteraktioner, som att slutföra ett köp eller besöka en viss webbsida.
 
 **Resultat**: Genom att samla in realtidsfeedback kan företaget göra datadrivna förbättringar av sin kundupplevelse, vilket leder till ökad nöjdhet och lojalitet.
 
 ### Använd skiftläge 2 {#use-case-2}
 
-**Scenario**: En organisation har som mål att förbättra sin process för nyanställda. De använder Adobe Experience Platform för att samla in feedback från nyanställda genom enkäter. Undersökningar utlöses automatiskt efter en fördefinierad introduktionsperiod.
+**Scenario**: En organisation har som mål att förbättra sin process för nyanställda. De använder [!DNL Adobe Experience Platform] för att samla in feedback från nya medarbetare via undersökningar om kvaltrik. Undersökningar utlöses automatiskt efter en fördefinierad introduktionsperiod.
 
 **Resultat**: Med kontinuerlig feedback kan organisationen anpassa och förbättra introduktionsprocessen, vilket ger bättre engagemang och produktivitet bland nya medarbetare.
 
 ## Förutsättningar {#prerequisites}
 
-Innan du konfigurerar Qualtrics-målet i Adobe Experience Platform måste du kontrollera att följande krav är uppfyllda:
+Innan du konfigurerar Qualtrics-målet i [!DNL Adobe Experience Platform] måste du kontrollera att följande krav är uppfyllda:
 
 * Du har ett Qualtrics-konto.
 * Du har fått den nödvändiga API-token från Qualtrics.
@@ -73,7 +73,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -205,7 +205,7 @@ Som tidigare nämnts använder det här målet ett öppet schema, så alla egens
 
 Om du vill verifiera att data har importerats i SQL går du till arbetsflödet som innehåller din **JSON Event** därifrån och går till **Kör historik** där du bör se hur ditt arbetsflöde fungerar. Varje arbetsflöde har statusen **Slutfört** eller **Misslyckat**. Om du väljer en viss körning visas mer information om den, så att du kan felsöka om du stöter på några problem.
 
-Om det inte finns några synliga körningar i **körningshistorik** innebär det att arbetsflödet inte har utlösts än, vilket kan tyda på ett problem. Kontrollera att arbetsflödet är aktiverat och att **URL** i målet i Adobe Experience Platform är korrekt. Arbetsflödeskörningar sker inte direkt, så du kan behöva vänta en kort stund innan det är klart.
+Om det inte finns några synliga körningar i **körningshistorik** innebär det att arbetsflödet inte har utlösts än, vilket kan tyda på ett problem. Kontrollera att arbetsflödet är aktiverat och att **URL** i målet i [!DNL Adobe Experience Platform] är korrekt. Arbetsflödeskörningar sker inte direkt, så du kan behöva vänta en kort stund innan det är klart.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

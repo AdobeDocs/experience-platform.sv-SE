@@ -3,9 +3,9 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1052'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 [!DNL Airship] är den ledande kundinteraktionsplattformen, som hjälper dig att leverera meningsfulla, personaliserade flerkanalsmeddelanden till användarna i alla faser av kundlivscykeln.
 
-Den här integreringen överför målgruppsdata från Adobe Experience Platform till [!DNL Airship] som [taggar](https://docs.airship.com/guides/audience/tags/) för målinriktning eller utlösande åtgärder.
+Den här integreringen skickar [!DNL Adobe Experience Platform] målgruppsdata till [!DNL Airship] som [taggar](https://docs.airship.com/guides/audience/tags/) för målinriktning eller utlösande.
 
 Mer information om [!DNL Airship] finns i [Airship Docs](https://docs.airship.com).
 
@@ -27,7 +27,7 @@ Mer information om [!DNL Airship] finns i [Airship Docs](https://docs.airship.co
 
 ## Förutsättningar {#prerequisites}
 
-Innan du kan skicka Adobe Experience Platform-målgrupper till [!DNL Airship] måste du:
+Innan du kan skicka dina [!DNL Adobe Experience Platform] målgrupper till [!DNL Airship] måste du:
 
 * Skapa en tagggrupp i ditt [!DNL Airship]-projekt.
 * Generera en innehavartoken för autentisering.
@@ -43,7 +43,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -56,7 +56,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -96,7 +96,7 @@ Klicka på **[!UICONTROL Create Token]** och spara informationen som konfidentie
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Airship Tags] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Airship Tags] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Använd skiftläge 1 {#use-case-1}
 
@@ -104,7 +104,7 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 ### Använd skiftläge 2 {#use-case-2}
 
-Trigga personliga meddelanden i realtid när användare faller in i eller ut från en viss målgrupp inom Adobe Experience Platform.
+Utlös personliga meddelanden i realtid när användare faller in i eller ut från specifika målgrupper inom [!DNL Adobe Experience Platform].
 
 En återförsäljare skapar t.ex. en varumärkesspecifik jeans-publik i Experience Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sin jeans för ett visst varumärke.
 

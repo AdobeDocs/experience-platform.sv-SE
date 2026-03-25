@@ -3,9 +3,9 @@ keywords: Katalog;katalog
 title: Översikt över målkatalog
 description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '137'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Bläddra i katalogen för att fastställa vilka målplattformar som är bäst f�
 
 ## Målkategorier {#destination-categories}
 
-Du kan aktivera dina data till olika målkategorier i Adobe Experience Platform. Länkarna nedan ger mer information om varje målkategori:
+Du kan aktivera dina data till olika målkategorier i [!DNL Adobe Experience Platform]. Länkarna nedan ger mer information om varje målkategori:
 
 - [Adobe [!UICONTROL destinations] - översikt](adobe/overview.md)
 - [[!UICONTROL Advertising] [!UICONTROL destinations] - översikt](advertising/overview.md)

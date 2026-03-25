@@ -3,9 +3,9 @@ title: Kevel Connection
 description: Använd Kevel streaming-målet för att aktivera målgrupper direkt i Kevels API:er för UserDB och segmenthantering och ge stöd för målgruppsanpassning i realtid vid beslut.
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 53ce2864-6a3b-4859-b14d-a03c2ce18884
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1159'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 [[!DNL Kevel]](https://www.kevel.com/) innehåller den AI-aktiverade tekniken och expertvägledningen som hjälper innovativa handelsledare att starta, skala och lyckas inom detaljhandelsmedia. Retail Media Cloud för [!DNL Kevel] har funktioner för riktade, hänförliga och anpassningsbara annonseringsformat för annonsering på plats och utanför webbplatsen.
 
-Strömningsmålet [!DNL Kevel] för Adobe Experience Platform gör det möjligt för kunder att aktivera Adobe-målgrupper direkt i [!DNL Kevel]s API:er för UserDB och segmenthantering för att ge stöd för målanpassning i realtid vid annonsbeslut.
+[!DNL Kevel]-direktuppspelningsmålet för [!DNL Adobe Experience Platform] gör det möjligt för kunder att aktivera Adobe-målgrupper direkt i [!DNL Kevel]s API:er för UserDB och segmenthantering för att ge stöd för realtidsmål vid annonsbeslut.
 
 >[!IMPORTANT]
 >
@@ -73,7 +73,7 @@ Detta innebär:
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------|-----------|---------------------------------------------------------- |
 | Segmenteringstjänst | Ja | Adobe Profilmålgrupper utvärderade med segmenteringsmotorn. |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 

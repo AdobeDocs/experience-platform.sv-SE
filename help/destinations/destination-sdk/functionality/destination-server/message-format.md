@@ -2,23 +2,23 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: 270facfd580b2dde09906bee1728e1be198680cf
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2512'
+source-wordcount: '2470'
 ht-degree: 0%
 
 ---
 
 # Meddelandeformat
 
-## Krav - Adobe Experience Platform koncept {#prerequisites}
+## Förutsättningar - [!DNL Adobe Experience Platform] koncept {#prerequisites}
 
 Om du vill veta mer om meddelandeformat, profilkonfiguration och transformeringsprocess på Adobe-sidan kan du bekanta dig med följande koncept från Experience Platform:
 
 * **Experience Data Model (XDM)**. [XDM-översikt](../../../../xdm/home.md) och [Så här skapar du ett XDM-schema i Adobe Experience Platform](../../../../xdm/tutorials/create-schema-ui.md).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](../../../../xdm/ui/resources/classes.md).
-* **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
-* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
+* **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i [!DNL Adobe Experience Platform]. Se `xdm:identityMap` i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
+* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 >[!IMPORTANT]
 >
@@ -35,13 +35,13 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ## Översikt {#overview}
 
-På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
+Den här sidan behandlar meddelandeformatet och profilomformningen i data som exporteras från [!DNL Adobe Experience Platform] till mål.
 
-Adobe Experience Platform exporterar data till ett stort antal destinationer, i olika dataformat. Några exempel på destinationstyper är annonsplattformar (Google), sociala nätverk (Facebook) och molnlagringsplatser (Amazon S3, Azure Event Hubs).
+[!DNL Adobe Experience Platform] exporterar data till ett stort antal destinationer, i olika dataformat. Några exempel på destinationstyper är annonsplattformar (Google), sociala nätverk (Facebook) och molnlagringsplatser (Amazon S3, Azure Event Hubs).
 
 Experience Platform kan justera meddelandeformatet för exporterade profiler så att det matchar det förväntade formatet på din sida. För att förstå den här anpassningen är följande koncept viktiga:
 
-* Källa (1) och mål (2) XDM-schema i Adobe Experience Platform
+* Källans (1) och målets (2) XDM-schema i [!DNL Adobe Experience Platform]
 * Det förväntade meddelandeformatet på partnersidan (3), och
 * Omformningslagret mellan XDM-schema och det förväntade meddelandeformatet, som du kan definiera genom att skapa en [meddelandeomformningsmall](#using-templating).
 
@@ -67,11 +67,11 @@ Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur en profilko
 
 ## Komma igång - omforma tre grundläggande attribut {#getting-started}
 
-För att demonstrera profilomvandlingsprocessen använder exemplet nedan tre vanliga profilattribut i Adobe Experience Platform: **förnamn**, **efternamn** och **e-postadress**.
+För att demonstrera profilomvandlingsprocessen använder exemplet nedan tre vanliga profilattribut i [!DNL Adobe Experience Platform]: **förnamn**, **efternamn** och **e-postadress**.
 
 >[!NOTE]
 >
->Kunden mappar attributen från XDM-källschemat till XDM-partnerschemat i Adobe Experience Platform-gränssnittet i **Mapping**-steget i [aktivera målarbetsflödet](../../../ui/activate-segment-streaming-destinations.md#mapping).
+>Kunden mappar attributen från XDM-källschemat till XDM-partnerschemat i [!DNL Adobe Experience Platform]-gränssnittet i **Mapping**-steget i [aktivera målarbetsflödet](../../../ui/activate-segment-streaming-destinations.md#mapping).
 
 Anta att din plattform kan ta emot ett meddelandeformat som:
 
@@ -186,7 +186,7 @@ Information om hur du omformar profilattributen som exporteras till ditt mål fi
 
 >[!IMPORTANT]
 >
->En lista över alla tillgängliga profilattribut i Adobe Experience Platform finns i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
+>En lista över alla tillgängliga profilattribut i [!DNL Adobe Experience Platform] finns i [ XDM-fältordlistan ](../../../../xdm/schema/field-dictionary.md).
 
 
 **Indata**
@@ -266,7 +266,7 @@ Profil 2:
 ### Målgruppsmedlemskap {#audience-membership}
 
 XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör.
-Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[&#x200B; för de tre olika värdena i fältet &#x200B;](../../../../xdm/field-groups/profile/segmentation.md).
+Läs dokumentationen om schemafältgruppen `status`Information om målgruppsmedlemskap[ för de tre olika värdena i fältet ](../../../../xdm/field-groups/profile/segmentation.md).
 
 **Indata**
 
@@ -609,7 +609,7 @@ Profil 2:
 
 **Resultat**
 
-`json` nedan representerar data som exporteras från Adobe Experience Platform.
+`json` nedan representerar data som exporterats från [!DNL Adobe Experience Platform].
 
 ```json
 {
@@ -802,7 +802,7 @@ Profil 2:
 
 **Resultat**
 
-`json` nedan representerar data som exporteras från Adobe Experience Platform.
+`json` nedan representerar data som exporterats från [!DNL Adobe Experience Platform].
 
 ```json
 {
@@ -1212,13 +1212,13 @@ Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 |---------|----------|----------|
 | `input.profile` | Profilen, representerad som en [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |  |
 | `hasSegments` | Den här funktionen tar en karta över ID:n för namnområdesmålgrupp som parameter. Funktionen returnerar `true` om det finns minst en publik på kartan (oavsett dess status), och i annat fall `false`. Du kan använda den här funktionen för att bestämma om du vill iterera över en karta med målgrupper eller inte. | `hasSegments(input.profile.segmentMembership)` |
-| `destination.namespaceSegmentAliases` | Mappa från målgrupps-ID:n i ett specifikt Adobe Experience Platform-namnområde till målgruppsalias i partnerns system. | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
-| `destination.namespaceSegmentNames` | Mappa från målgruppsnamn i specifika Adobe Experience Platform-namnutrymmen till målgruppsnamn i partnersystemet. | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
+| `destination.namespaceSegmentAliases` | Mappa från målgrupps-ID:n i ett specifikt [!DNL Adobe Experience Platform]-namnområde till målgruppsalias i partnerns system. | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
+| `destination.namespaceSegmentNames` | Mappa från målgruppsnamn i specifika [!DNL Adobe Experience Platform]-namnutrymmen till målgruppsnamn i partnerns system. | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
 | `destination.namespaceSegmentTimestamps` | Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`: returnerar den tid då segmentet med ID `seg-id-1`, från namnområdet `ups`, skapades i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID `seg-id-1` från namnområdet `ups` uppdaterades i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID `seg-id-1`, från namnområdet `ups`, aktiverades till målet i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`: returnerar den tid då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
 | `addedSegments(mapOfNamespacedSegmentIds)` | Returnerar endast de målgrupper som har statusen `realized`, i alla namnutrymmen. | `addedSegments(input.profile.segmentMembership)` |
 | `removedSegments(mapOfNamespacedSegmentIds)` | Returnerar endast de målgrupper som har statusen `exited`, i alla namnutrymmen. | `removedSegments(input.profile.segmentMembership)` |
-| `destination.segmentAliases` | **Föråldrad. Ersatt av`destination.namespaceSegmentAliases`** <br><br> Mappa från målgrupps-ID:n i Adobe Experience Platform-namnområdet till målgruppsalias i partnerns system. | `destination.segmentAliases["seg-id-1"]` |
-| `destination.segmentNames` | **Föråldrad. Ersatt av`destination.namespaceSegmentNames`** <br><br> Mappa från målgruppsnamn i Adobe Experience Platform-namnområdet till målgruppsnamn i partnerns system. | `destination.segmentNames["seg-name-1"]` |
+| `destination.segmentAliases` | **Föråldrad. Ersatt av`destination.namespaceSegmentAliases`** <br><br> Mappa från målgrupps-ID:n i namnområdet [!DNL Adobe Experience Platform] till målgruppsalias i partnerns system. | `destination.segmentAliases["seg-id-1"]` |
+| `destination.segmentNames` | **Föråldrad. Ersatt av`destination.namespaceSegmentNames`** <br><br> Mappa från målgruppsnamn i namnområdet [!DNL Adobe Experience Platform] till målgruppsnamn i partnerns system. | `destination.segmentNames["seg-name-1"]` |
 | `destination.segmentTimestamps` | **Föråldrad. Ersatt av`destination.namespaceSegmentTimestamps`** <br><br> Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` skapades, i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID `seg-id-1` uppdaterades, i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID `seg-id-1` aktiverades till målet, i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`: returnerar den tid då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
 
 {style="table-layout:auto"}

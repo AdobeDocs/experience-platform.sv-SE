@@ -2,9 +2,9 @@
 title: (V2) Audience-anslutning för Pega CDH Realtime
 description: Använd målplatsen Pega Customer Decision Hub Realtime Audience i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
 exl-id: cbb998f9-c268-4d65-87d8-fab56c0844dc
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1143'
 ht-degree: 1%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Använd målet (V2) [!DNL Pega CDH Realtime Audience] i Adobe Experience Platform för att skicka profilattribut och målgruppsmedlemskapsdata till [!DNL Pega Customer Decision Hub] för nästa beslut om bästa åtgärd.
+Använd målet (V2) [!DNL Pega CDH Realtime Audience] i [!DNL Adobe Experience Platform] för att skicka profilattribut och data om målgruppsmedlemskap till [!DNL Pega Customer Decision Hub] för nästa beslut om bästa åtgärd.
 
-Profilmedlemskap från Adobe Experience Platform kan, när det läses in till [!DNL Pega Customer Decision Hub], användas som prediktor i adaptiva modeller och hjälpa till att leverera rätt kontextuella data och beteendedata för beslutsfattande i nästa steg.
+Profilmedlemskap från [!DNL Adobe Experience Platform], när det läses in till [!DNL Pega Customer Decision Hub], kan användas som prediktor i adaptiva modeller och hjälpa till att leverera rätt kontextuella data och beteendedata för nästa bästa åtgärd-beslut.
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ Profilmedlemskap från Adobe Experience Platform kan, när det läses in till [!
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Customer Decision Hub] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Customer Decision Hub] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Telekommunikation {#telecommunications}
 
@@ -31,11 +31,11 @@ En marknadsförare vill utnyttja insikter från datavetenskapens modellbaserade 
 
 ### Finansiella tjänster {#financial-services}
 
-En marknadsförare vill optimera erbjudandena för kunder som prenumererar på eller avbeställer nyhetsbrev om pensionsavtal eller pensionsavtal. Företag inom finanssektorn kan importera flera kund-ID:n från sina egna CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka profiler som kommer in i och lämnar målgrupperna till [!DNL Pega Customer Decision Hub] för NBA-beslut (next-best-action) i utgående kanaler.
+En marknadsförare vill optimera erbjudandena för kunder som prenumererar på eller avbeställer nyhetsbrev om pensionsavtal eller pensionsavtal. Företag inom finanssektorn kan importera flera kund-ID:n från sina egna CRM till [!DNL Adobe Experience Platform], bygga målgrupper utifrån sina egna offlinedata och skicka profiler som kommer in i och lämnar målgrupperna till [!DNL Pega Customer Decision Hub] för NBA-beslut (next-best-action) i utgående kanaler.
 
 ## Förutsättningar {#prerequisites}
 
-Innan du kan använda det här målet för att exportera data från Adobe Experience Platform måste du uppfylla följande krav i [!DNL Pega Customer Decision Hub]:
+Innan du kan använda det här målet för att exportera data från [!DNL Adobe Experience Platform] måste du uppfylla följande krav i [!DNL Pega Customer Decision Hub]:
 
 * Konfigurera integrationskomponenten [Adobe Experience Platform Profile och Audience Membership](https://docs.pega.com/bundle/components/page/customer-decision-hub/components/adobe-membership-component.html) i din [!DNL Pega Customer Decision Hub]-instans.
 * Konfigurera OAuth 2.0 [klientregistrering med typen Klientautentiseringsuppgifter](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html) i din [!DNL Pega Customer Decision Hub]-instans.
@@ -47,7 +47,7 @@ Innan du kan använda det här målet för att exportera data från Adobe Experi
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| `CustomerID` | Kund-ID | En vanlig användaridentifierare som unikt identifierar en profil i [!DNL Pega Customer Decision Hub] och Adobe Experience Platform. |
+| `CustomerID` | Kund-ID | En vanlig användaridentifierare som unikt identifierar en profil i [!DNL Pega Customer Decision Hub] och [!DNL Adobe Experience Platform]. |
 
 {style="table-layout:auto"}
 
@@ -58,7 +58,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -71,7 +71,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -107,7 +107,7 @@ Fyll i fälten nedan och välj **[!UICONTROL Connect to destination]**:
 
 När du har upprättat autentiseringsanslutningen till [!DNL Pega Customer Decision Hub] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH &#x200B;](../../assets/catalog/personalization/pega/pega-connect-destination-v2.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega CDH ](../../assets/catalog/personalization/pega/pega-connect-destination-v2.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**.
 
@@ -133,7 +133,7 @@ I steget [!UICONTROL Mapping] väljer du en unik identifierare från ditt unions
 
 Nedan visas ett exempel på korrekt identitetsmappning när profiler exporteras till [!DNL Pega Customer Decision Hub].
 
-* Välj en källidentitet som unikt identifierar en profil i Adobe Experience Platform och [!DNL Pega Customer Decision Hub]. Till exempel: `CustomerID`.
+* Välj en källidentitet som unikt identifierar en profil i [!DNL Adobe Experience Platform] och [!DNL Pega Customer Decision Hub]. Till exempel: `CustomerID`.
 * Välj de målprofilattribut som du vill mappa de valda källprofilattributen till.
 
 ![Identitetsmappning](../../assets/catalog/personalization/pega/pega-source-destination-mapping.png)

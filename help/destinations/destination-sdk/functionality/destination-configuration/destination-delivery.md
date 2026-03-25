@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar leveransinställningar för mål som skapats med Destination SDK för att ange var exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas.
 title: Destinationsleverans
 exl-id: ade77b6b-4b62-4b17-a155-ef90a723a4ad
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '640'
 ht-degree: 0%
 
 ---
@@ -107,7 +107,7 @@ I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras
 När du använder `PLATFORM_AUTHENTICATION` måste du ange parametern `authenticationId` för att länka målkonfigurationen till autentiseringskonfigurationen.
 
 1. Ange `destinationDelivery.authenticationRule` till `"PLATFORM_AUTHENTICATION"` i målkonfigurationen
-2. [Skapa autentiseringsuppgiften &#x200B;](/help/destinations/destination-sdk/credentials-api/create-credential-configuration.md).
+2. [Skapa autentiseringsuppgiften ](/help/destinations/destination-sdk/credentials-api/create-credential-configuration.md).
 3. Ställ in parametern `authenticationId` på autentiseringsuppgiftsobjektets `instanceId`-värde.
 
 **Exempelkonfiguration med PLATFORM_AUTHENTICATION:**

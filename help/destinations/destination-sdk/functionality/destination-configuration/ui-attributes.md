@@ -2,16 +2,16 @@
 description: Lär dig hur du konfigurerar gränssnittsattribut, t.ex. dokumentationslänken, målkortskategorin och typ av målanslutning och frekvens, för mål som skapats med Destination SDK.
 title: Gränssnittsattribut
 exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
 
 # Gränssnittsattribut
 
-Gränssnittsattribut definierar de visuella element som Adobe ska visa för ditt målkort i Adobe Experience Platform användargränssnitt, till exempel en logotyp, en länk till dokumentationssidan, en målbeskrivning samt dess kategori och typ.
+Gränssnittsattribut definierar de visuella element som ska visas för målkortet i användargränssnittet för [!DNL Adobe Experience Platform], till exempel en logotyp, en länk till dokumentationssidan, en målbeskrivning samt dess kategori och typ.
 
 Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
@@ -64,7 +64,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ### `documentationLink` {#documentation-link}
 
-`documentationLink` är en strängparameter som refererar till dokumentationssidan i [målkatalogen](../../../catalog/overview.md) för ditt mål. Alla produktioner i Adobe Experience Platform måste ha en motsvarande dokumentationssida. [Lär dig hur du skapar en måldokumentationssida](../../docs-framework/documentation-instructions.md) för ditt mål. Observera att detta inte krävs för privata/anpassade destinationer.
+`documentationLink` är en strängparameter som refererar till dokumentationssidan i [målkatalogen](../../../catalog/overview.md) för ditt mål. Alla producerade mål i [!DNL Adobe Experience Platform] måste ha en motsvarande dokumentationssida. [Lär dig hur du skapar en måldokumentationssida](../../docs-framework/documentation-instructions.md) för ditt mål. Observera att detta inte krävs för privata/anpassade destinationer.
 
 Använd följande format: `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på målet. För ett mål som heter Moviestar använder du `http://www.adobe.com/go/destinations-moviestar-en`.
 
@@ -78,7 +78,7 @@ Användarna kan se och besöka din dokumentationslänk från målkatalogsidan i 
 
 ### `category` {#category}
 
-`category` är en strängparameter som refererar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](../../../destination-types.md). Använd ett av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`.
+`category` är en strängparameter som refererar till den kategori som tilldelats ditt mål i [!DNL Adobe Experience Platform]. Mer information finns i [Målkategorier](../../../destination-types.md). Använd ett av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`.
 
 Användarna kan se listan över målkategorier till vänster på skärmen i målkatalogen, som visas i bilden nedan.
 

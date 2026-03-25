@@ -3,9 +3,9 @@ keywords: analysmål;analysmål
 title: Översikt över Analytics-mål
 description: Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 exl-id: d7a2351b-c2ce-4776-a2b7-f8bb5e73b45b
-source-git-commit: 8b29e4c06300244a72addc7ae4807425a405b56f
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '173'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Analysdestinationer spårar hur besökare interagerar med innehåll på er webbp
 
 ## Analysmål som stöds {#supported-destinations}
 
-För närvarande stöder Adobe Experience Platform de analysmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+För närvarande stöder [!DNL Adobe Experience Platform] de analysmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 * [Anpassa tillägg för webbplatsspårning](adform.md)
 * [Adobe Analytics-tillägg](adobe-analytics.md)

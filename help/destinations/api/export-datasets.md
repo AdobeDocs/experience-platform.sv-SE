@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '5203'
+source-wordcount: '5178'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta Adobe om du vill ha mer information.
+>* Den här funktionaliteten är tillgänglig för kunder som har köpt [!DNL Real-Time CDP] Prime- och Ultimate-paketet, [!DNL Adobe Journey Optimizer] eller Customer Journey Analytics. Kontakta Adobe om du vill ha mer information.
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [&#x200B; september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före versionen från september 2024*.
 >
 >För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 september 2025.
 >
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 -->
 
-I den här artikeln förklaras det arbetsflöde som krävs för att använda [!DNL Flow Service API] för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den önskade molnlagringsplatsen, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage].
+I den här artikeln förklaras det arbetsflöde som krävs för att använda [!DNL Flow Service API] för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från [!DNL Adobe Experience Platform] till den önskade molnlagringsplatsen, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage].
 
 >[!TIP]
 >
@@ -40,7 +40,7 @@ I den här artikeln förklaras det arbetsflöde som krävs för att använda [!D
 
 ## Tillgängliga datauppsättningar för export {#datasets-to-export}
 
-Vilka datauppsättningar du kan exportera beror på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), skiktet (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
+Vilka datauppsättningar du kan exportera beror på Experience Platform-programmet ([!DNL Real-Time CDP], [!DNL Adobe Journey Optimizer]), skiktet (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
 
 Se tabellen [på självstudiesidan](/help/destinations/ui/export-datasets.md#datasets-to-export) för att förstå vilka datauppsättningar du kan exportera.
 
@@ -68,9 +68,9 @@ Observera följande krav för att exportera datauppsättningar:
 
 ![Översikt - stegen för att skapa ett mål och exportera datauppsättningar](../assets/api/export-datasets/export-datasets-api-workflow-get-started.png)
 
-Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Handboken kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
-* [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md): Alla data som har importerats till Adobe Experience Platform lagras i [!DNL Data Lake] som datauppsättningar. En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Datauppsättningar innehåller också metadata som beskriver olika aspekter av de data som lagras.
+* [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md): Alla data som har importerats till [!DNL Adobe Experience Platform] lagras i [!DNL Data Lake] som datauppsättningar. En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Datauppsättningar innehåller också metadata som beskriver olika aspekter av de data som lagras.
    * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du måste känna till för att kunna exportera datauppsättningar till molnlagringsmål i Experience Platform.
@@ -107,7 +107,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extr
 
 ### API-referensdokumentation {#api-reference-documentation}
 
-Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats &#x200B;](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
+Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se dokumentationen för [[!DNL Flow Service] - Destinations API på Adobe Developer webbplats ](https://developer.adobe.com/experience-platform-apis/references/destinations/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
 
 ### Ordlista {#glossary}
 
@@ -2281,7 +2281,7 @@ Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `schedul
 | `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
 | `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
 | `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
-| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> <span></span></li><li><code></code> <span>`exportTime=YYYYMMDDHHMM`</span></li><li><code></code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
 
 {style="table-layout:auto"}
 
@@ -2463,7 +2463,7 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 ### Exempeldatauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet &#x200B;](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json &#x200B;](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 

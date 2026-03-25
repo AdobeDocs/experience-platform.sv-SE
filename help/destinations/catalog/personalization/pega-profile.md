@@ -3,9 +3,9 @@ title: Pega Profile Connector
 description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofil-Designer för att importera profildata regelbundet från Amazon S3-lagring.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1255'
+source-wordcount: '1225'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Använd [!DNL Pega Profile Connector] i Adobe Experience Platform för att skapa en utgående liveanslutning till din [!DNL Amazon Web Services] (AWS) S3-lagring för att regelbundet exportera profildata till CSV-filer från Adobe Experience Platform till dina egna S3-bucket. I [!DNL Pega Customer Decision Hub] kan du schemalägga datajobb för import av profildata från S3-lagring för att uppdatera profilen [!DNL Pega Customer Decision Hub].
+Använd [!DNL Pega Profile Connector] i [!DNL Adobe Experience Platform] för att skapa en utgående liveanslutning till din [!DNL Amazon Web Services] (AWS) S3-lagring för att regelbundet exportera profildata till CSV-filer från [!DNL Adobe Experience Platform] till dina egna S3-bucket. I [!DNL Pega Customer Decision Hub] kan du schemalägga datajobb för import av profildata från S3-lagring för att uppdatera profilen [!DNL Pega Customer Decision Hub].
 
 Den här kopplingen hjälper till att ställa in den inledande exporten av profildata och hjälper även till att synkronisera nya profiler regelbundet till [!DNL Pega Customer Decision Hub].  Med uppdaterade data i Kundbeslutshubben får du en bättre och uppdaterad bild av kundbasen för nästa beslut om bästa möjliga åtgärd.
 
@@ -24,19 +24,19 @@ Den här kopplingen hjälper till att ställa in den inledande exporten av profi
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Pega Profile Connector] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Pega Profile Connector] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Användningsfall 1 {#use-case-1}
 
-En marknadsförare vill initialt konfigurera [!DNL Pega Customer Decision Hub] med profildata inlästa från Adobe Experience Platform. Detta är en inledande full belastning följt av deltasterna på schemalagd basis.
+En marknadsförare vill initialt konfigurera [!DNL Pega Customer Decision Hub] med profildata inlästa från [!DNL Adobe Experience Platform]. Detta är en inledande full belastning följt av deltasterna på schemalagd basis.
 
 ### Användningsfall 2 {#use-case-2}
 
-En marknadsförare vill ha aktuella profildata från Adobe Experience Platform i [!DNL Pega Customer Decision Hub] som förbättrar Pega-insikterna om kundprofiler kontinuerligt.
+En marknadsförare vill ha aktuella profildata från [!DNL Adobe Experience Platform] som är tillgängliga i [!DNL Pega Customer Decision Hub] och som förbättrar Pega-insikterna om kundprofiler kontinuerligt.
 
 ## Förutsättningar {#prerequisites}
 
-Innan du kan använda det här målet för att exportera data från Adobe Experience Platform och importera profiler till [!DNL Pega Customer Decision Hub] måste du uppfylla följande krav:
+Innan du kan använda det här målet för att exportera data från [!DNL Adobe Experience Platform] och importera profiler till [!DNL Pega Customer Decision Hub] måste du uppfylla följande krav:
 
 * Konfigurera [!DNL Amazon S3]-bucket och mappsökvägen som ska användas för export och import av datafiler.
 * Konfigurera åtkomstnyckeln [!DNL Amazon S3] och den hemliga nyckeln [!DNL Amazon S3]: Generera ett [!DNL Amazon S3]-par i `access key - secret access key` för att ge Experience Platform åtkomst till ditt [!DNL Amazon S3]-konto.
@@ -49,7 +49,7 @@ Innan du kan använda det här målet för att exportera data från Adobe Experi
 
 | Målidentitet | Beskrivning |
 |---|---|
-| *Kund-ID* | En vanlig användaridentifierare som unikt identifierar en profil i [!DNL Pega Customer Decision Hub] och Adobe Experience Platform |
+| *Kund-ID* | En vanlig användaridentifierare som unikt identifierar en profil i [!DNL Pega Customer Decision Hub] och [!DNL Adobe Experience Platform] |
 
 {style="table-layout:auto"}
 
@@ -60,7 +60,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -73,7 +73,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -101,13 +101,13 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
-* **[!DNL Amazon S3]åtkomstnyckel** och **[!DNL Amazon S3]hemlig nyckel**: Generera ett [!DNL Amazon S3]-par i `access key - secret access key` för att ge Adobe Experience Platform åtkomst till ditt [!DNL Amazon S3]-konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!DNL Amazon S3]åtkomstnyckel** och **[!DNL Amazon S3]hemlig nyckel**: Generera ett [!DNL Amazon S3]-par i `access key - secret access key` för att ge [!DNL Adobe Experience Platform] åtkomst till ditt [!DNL Amazon S3]-konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 ### Fyll i målinformation {#destination-details}
 
 När du har upprättat autentiseringsanslutningen till [!DNL Amazon S3] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector &#x200B;](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector ](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -147,7 +147,7 @@ För [!DNL Pega Profile Connector] mål skapar [!DNL Experience Platform] en `.c
 En import av profildata från S3 infogar data i [!DNL Pega Customer]-profildatalagret. Importerade kundprofildata kan valideras i [!DNL Pega Customer Profile Designer], vilket visas i följande bild.
 ![Bild av gränssnittsskärmen där du kan validera Adobe-profildata i Designer för kundprofil](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)
 
-I [!DNL Pega Customer Decision Hub] kan dataadministratörer konfigurera datajobb i [!DNL Customer Profile Designer] så att profildata importeras periodiskt från S3 enligt följande bild. Mer information om hur du konfigurerar datajobb att importera profildata från [&#x200B; finns i &#x200B;](#additional-resources)ytterligare resurser[!DNL Amazon S3].
+I [!DNL Pega Customer Decision Hub] kan dataadministratörer konfigurera datajobb i [!DNL Customer Profile Designer] så att profildata importeras periodiskt från S3 enligt följande bild. Mer information om hur du konfigurerar datajobb att importera profildata från [ finns i ](#additional-resources)ytterligare resurser[!DNL Amazon S3].
 ![Bild av gränssnittsskärmen för att konfigurera datajobb i kundprofilen Designer](../../assets/catalog/personalization/pega-profile/pega-profile-screen-image1.png)
 
 ## Ytterligare resurser {#additional-resources}

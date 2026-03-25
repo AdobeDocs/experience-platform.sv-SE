@@ -2,9 +2,9 @@
 description: Experience Platform Destination SDK använder mallar för att konvertera data som exporteras från Experience Platform till det format som krävs för målplatsen.
 title: Omformningsfunktioner som stöds i Destination SDK
 exl-id: 36f761c7-9d76-41fe-b05f-d4cad655ddd2
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '548'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ I taggavsnittet [!DNL Pebble] stöder Destination SDK endast:
 >Användningen av `for` skiljer sig åt när du itererar genom elementen *array* eller *map* i en mall. När du itererar genom en array kan du hämta elementet direkt. När du itererar genom en karta får du varje mappningspost, som har ett nyckelvärdepar.
 >
 > * Ett exempel på ett arrayelement kan vara om du tänker på identiteterna i ett [identityMap](message-format.md#identities) -namnutrymme, där du kan iterera genom element som `identityMap.gaid`, `identityMap.email` eller liknande.
-> * Ett exempel på ett kartelement kan vara [segmentMembership](message-format.md#segment-membership).
+> * Ett exempel på ett kartelement kan vara [segmentMembership](message-format.md#audience-membership).
 
 I filteravsnittet [!DNL Pebble] stöder Destination SDK alla funktioner. Ett exempel nedan visar hur funktionen `date` kan användas i Destination SDK.
 
@@ -53,11 +53,11 @@ I avsnittet [!DNL Pebble]-funktioner har Adobe *inte* stöd för funktionen [ran
 
 ## Exempel på hur funktionen `date` används {#date-function}
 
-Om du vill se exempel på hur [!DNL Pebble]-funktioner används i Destination SDK kan du läsa nedan om hur datumfunktionen ([link in Pebble documentation](https://pebbletemplates.io/wiki/filter/date/)) används för att omforma formatet för en tidsstämpel.
+Om du vill se exempel på hur [!DNL Pebble]-funktioner används i Destination SDK kan du läsa nedan hur datumfunktionen ([link in Pebble documentation](https://pebbletemplates.io/wiki/filter/date/)) omformar formatet för en tidsstämpel.
 
 ### Användningsfall {#date-use-case}
 
-Du vill ändra tidsstämpeln `lastQualificationTime` från standardvärdet för [&#x200B; ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) som Experience Platform exporterar till ett annat värde som du föredrar.
+Du vill ändra tidsstämpeln `lastQualificationTime` från standardvärdet för [ ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) som Experience Platform exporterar till ett annat värde som du föredrar.
 
 ### Exempel {#date-example}
 

@@ -5,9 +5,9 @@ title: Ta bort ett måldataflöde med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort dataflöden till batchmål och direktuppspelningsmål med API:t för Flow Service.
 exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '557'
 ht-degree: 4%
 
 ---
@@ -22,9 +22,9 @@ I den här självstudien beskrivs stegen för att ta bort dataflöden till både
 
 Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du inte har något giltigt flöde-ID väljer du önskat mål i [målkatalogen](../catalog/overview.md) och följer instruktionerna som beskrivs för att [ansluta till målet](../ui/connect-destination.md) och [aktivera data](../ui/activation-overview.md) innan du provar den här självstudiekursen.
 
-Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
+Den här självstudien kräver även att du har en fungerande förståelse för följande komponenter i [!DNL Adobe Experience Platform]:
 
-* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från [!DNL Adobe Experience Platform]. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ta bort ett dataflöde med API:t [!DNL Flow Service].

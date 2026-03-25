@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar inställningar för filexport för mål som skapats med Destination SDK.
 title: Batchkonfiguration
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1028'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ Värdena som du anger här visas i steget [Schemalägg målexport](../../../ui/a
 
 ## Filnamnskonfiguration {#file-name-configuration}
 
-Använd konfigurationsmakron för filnamn för att definiera vad de exporterade filnamnen ska innehålla. Makrona i tabellen nedan beskriver element som finns i gränssnittet på skärmen [filnamnskonfiguration](../../../ui/activate-batch-profile-destinations.md#file-names).
+Använd konfigurationsmakron för filnamn för att definiera vad de exporterade filnamnen ska innehålla. Makrona i tabellen nedan beskriver element som finns i gränssnittet på skärmen [filnamnskonfiguration](../../../ui/activate-batch-profile-destinations.md#configure-file-names).
 
 >[!TIP]
 >
@@ -119,7 +119,7 @@ Använd konfigurationsmakron för filnamn för att definiera vad de exporterade 
 | `SEGMENT_NAME` | [!UICONTROL Segment Name] | Användardefinierat publiknamn | VIP subscriber |
 | `DESTINATION_INSTANCE_ID` | [!UICONTROL Destination ID] | Unikt, Experience Platform-genererat ID för målinstansen | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
 | `DESTINATION_INSTANCE_NAME` | [!UICONTROL Destination Name] | Användardefinierat namn för målinstansen. | Mål för My 2022 Advertising |
-| `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | Namn på kundorganisationen i Adobe Experience Platform. | Organisationsnamn |
+| `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | Namn på kundorganisationen i [!DNL Adobe Experience Platform]. | Organisationsnamn |
 | `SANDBOX_NAME` | [!UICONTROL Sandbox Name] | Namn på den sandlåda som används av kunden. | prod |
 | `DATETIME` / `TIMESTAMP` | [!UICONTROL Date and time] | `DATETIME` och `TIMESTAMP` definierar båda när filen skapades, men i olika format. <br><br><ul><li>`DATETIME` har följande format: YYYMMDD_HMMSS.</li><li>`TIMESTAMP` använder det 10-siffriga Unix-formatet. </li></ul> `DATETIME` och `TIMESTAMP` kan inte användas samtidigt. | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
 | `CUSTOM_TEXT` | [!UICONTROL Custom text] | Användardefinierad egen text som ska inkluderas i filnamnet. Kan inte användas i `defaultFilename`. | Min_egen_text |

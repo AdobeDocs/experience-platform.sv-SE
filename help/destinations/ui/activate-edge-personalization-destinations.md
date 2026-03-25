@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1881'
+source-wordcount: '1854'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Adobe Experience Platform använder [kantsegmentering](../../segmentation/methods/edge-segmentation.md) tillsammans med [kantmål](/help/destinations/destination-types.md#edge-personalization-destinations) för att göra det möjligt för kunder att skapa och inrikta sig på målgrupper i stor skala i realtid. Den här funktionen hjälper er att konfigurera användningen av personalisering på samma sida och nästa sida.
+[!DNL Adobe Experience Platform] använder [kantsegmentering](../../segmentation/methods/edge-segmentation.md) tillsammans med [kantmål](/help/destinations/destination-types.md#edge-personalization-destinations) för att göra det möjligt för kunder att skapa och inrikta sig på målgrupper i stor skala i realtid. Den här funktionen hjälper er att konfigurera användningen av personalisering på samma sida och nästa sida.
 
-Exempel på kantmål är [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md)- och [anpassade personaliseringsanslutningar](../../destinations/catalog/personalization/custom-personalization.md).
+Exempel på kantmål är [[!DNL Adobe Target]](../../destinations/catalog/personalization/adobe-target-connection.md)- och [anpassade personaliseringsanslutningar](../../destinations/catalog/personalization/custom-personalization.md).
 
 >[!NOTE]
 >
->När [konfigurerar Adobe Target-anslutningen](../catalog/personalization/adobe-target-connection.md) *utan* med ett datastream-ID stöds inte de användningsfall som beskrivs i den här artikeln. Endast nästa sessionspersonalisering stöds i frånvaro av ett datastream.
+>När [konfigurerar  [!DNL Adobe Target] anslutningen](../catalog/personalization/adobe-target-connection.md) *utan* med ett datastream-ID stöds inte de användningsfall som beskrivs i den här artikeln. Endast nästa sessionspersonalisering stöds i frånvaro av ett datastream.
 
 >[!IMPORTANT]
 >
@@ -31,27 +31,27 @@ Exempel på kantmål är [Adobe Target](../../destinations/catalog/personalizati
 > 
 > Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper för Adobe Experience Platform edge-mål. När de används tillsammans med [kantsegmentering](../../segmentation/methods/edge-segmentation.md) och den valfria [profilattributsmappningen](#mapping) aktiverar dessa mål personalisering på samma sida och nästa sida på dina webb- och mobilegenskaper.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper för [!DNL Adobe Experience Platform]-kantmål. När de används tillsammans med [kantsegmentering](../../segmentation/methods/edge-segmentation.md) och den valfria [profilattributsmappningen](#mapping) aktiverar dessa mål personalisering på samma sida och nästa sida på dina webb- och mobilegenskaper.
 
-Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-anslutningen för kantanpassning.
+Titta på videon nedan om du vill få en kort översikt över hur du konfigurerar [!DNL Adobe Target]-anslutningen för kantanpassning.
 
 >[!NOTE]
 >
 >Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i konfigurationsstegen som beskrivs i avsnitten nedan.
 
->[!VIDEO](https://video.tv.adobe.com/v/3449797/?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
-Titta på videon nedan om du vill få en kort översikt över hur du delar målgrupper och profilattribut med Adobe Target och anpassade destinationer för personalisering.
+Titta på videon nedan om du vill få en kort översikt över hur du delar målgrupper och profilattribut till [!DNL Adobe Target] och anpassade anpassningsmål.
 
->[!VIDEO](https://video.tv.adobe.com/v/3447359/?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3419036/?quality=12&learn=on)
 
 ## Användningsfall {#use-cases}
 
-Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), samt egna system (till exempel intern CMS) för att skapa en djupare personaliseringsupplevelse via [anpassade Personalization](../catalog/personalization/custom-personalization.md) -destinationer. Allt detta samtidigt som man drar nytta av Experience Platform Edge Network funktioner för datainsamling och segmentering.
+Använd personaliseringslösningar från Adobe, till exempel [!DNL Adobe Target], eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), samt egna system (till exempel intern CMS) för att skapa en djupare personaliseringsupplevelse via [anpassade Personalization](../catalog/personalization/custom-personalization.md) -destinationer. Allt detta samtidigt som man drar nytta av Experience Platform Edge Network funktioner för datainsamling och segmentering.
 
 De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
 
-För att aktivera dessa användningsfall behöver kunderna ett snabbt och smidigt sätt att hämta både målgrupps- och profilattributinformation från Experience Platform och skicka informationen till antingen [Adobe Target](../catalog/personalization/adobe-target-connection.md)- eller [anpassade Personalization](../catalog/personalization/custom-personalization.md)-anslutningar i Experience Platform-gränssnittet.
+För att aktivera dessa användningsfall behöver kunderna ett snabbt och smidigt sätt att hämta både målgrupps- och profilattributinformation från Experience Platform och skicka informationen till antingen [[!DNL Adobe Target]](../catalog/personalization/adobe-target-connection.md)- eller [anpassade Personalization](../catalog/personalization/custom-personalization.md)-anslutningar i Experience Platform användargränssnitt.
 
 ### Personalisering på samma sida {#same-page}
 
@@ -69,7 +69,7 @@ Följande dag kommer användaren tillbaka till samma kundwebbplats. De målgrupp
 
 ### Anpassa en banner för hemsidor {#home-page-banner}
 
-Ett uthyrnings- och säljföretag vill personalisera sin hemsida med en banderoll utifrån målgruppskvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dessa målgrupper till Adobe Target som målinriktningskriterier för deras Target-erbjudande.
+Ett uthyrnings- och säljföretag vill anpassa sin hemsida med en banderoll baserat på målgruppskvalifikationer i [!DNL Adobe Experience Platform]. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dessa målgrupper till [!DNL Adobe Target] som målinriktningskriterier för deras Target-erbjudande.
 
 ## Förutsättningar {#prerequisites}
 
@@ -81,7 +81,7 @@ När du konfigurerar datastream ska du under **[!UICONTROL Adobe Experience Plat
 
 >[!TIP]
 >
->Från och med versionen från april 2024 behöver du inte markera kryssrutan Edge Segmentation när du [konfigurerar anslutningen till Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md). I det här fallet är [nästa sessionspersonalisering](#next-session) det enda tillgängliga användningsexemplet för personalisering.
+>Från och med versionen från april 2024 behöver du inte markera kryssrutan Edge Segmentation när du [konfigurerar anslutningen till  [!DNL Adobe Target]](/help/destinations/catalog/personalization/adobe-target-connection.md). I det här fallet är [nästa sessionspersonalisering](#next-session) det enda tillgängliga användningsexemplet för personalisering.
 
 ![Dataströmskonfiguration med Edge Segmentering och Personalization Destinations markerade!](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
@@ -89,7 +89,7 @@ Mer information om hur du konfigurerar ett dataflöde finns i anvisningarna i [E
 
 ### Skapa en [!DNL Active-On-Edge]-sammanslagningsprincip {#create-merge-policy}
 
-När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
+När du har skapat målanslutningen måste du skapa en [!DNL Active-On-Edge]-sammanfogningsprincip. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för användning av personalisering i realtid och på nästa sida.
 
 >[!IMPORTANT]
 >
@@ -111,7 +111,7 @@ Följ självstudiekursen [för att skapa en målanslutning](../ui/connect-destin
 
 Beroende på vilket mål du konfigurerar kan du läsa följande artiklar för att få information om målspecifika krav och relaterad information:
 
-* [Adobe Target](../catalog/personalization/adobe-target-connection.md#parameters)
+* [[!DNL Adobe Target]-anslutning](../catalog/personalization/adobe-target-connection.md#parameters)
 * [Anpassad personaliseringsanslutning](../catalog/personalization/custom-personalization.md#parameters)
 
 ## Välj mål {#select-destination}
@@ -150,7 +150,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data kräver målet **[!UICONTROL Custom Personalization]** att du använder [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) när du konfigurerar målet för attributbaserad personalisering. Alla Edge Network API-anrop måste göras i en [autentiserad kontext](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication/).
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Edge Network API genom att lägga till en integration på serversidan.
 >

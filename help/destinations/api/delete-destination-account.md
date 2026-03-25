@@ -5,16 +5,16 @@ title: Ta bort ett målkonto med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort ett målkonto med API:t för Flow Service.
 exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '758'
-ht-degree: 9%
+source-wordcount: '749'
+ht-degree: 6%
 
 ---
 
 # Ta bort ett målkonto med API:t för Flow Service
 
-[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från [!DNL Adobe Experience Platform]. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 Innan du aktiverar data måste du ansluta till målet genom att först konfigurera ett målkonto. I den här självstudiekursen beskrivs stegen för att ta bort målkonton som inte längre behövs med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -26,9 +26,9 @@ Innan du aktiverar data måste du ansluta till målet genom att först konfigure
 
 Den här självstudiekursen kräver att du har ett giltigt anslutnings-ID. Anslutnings-ID representerar kontoanslutningen till målet. Om du inte har något giltigt anslutnings-ID väljer du önskat mål i [målkatalogen](../catalog/overview.md) och följer instruktionerna som beskrivs för att [ansluta till målet](../ui/connect-destination.md) innan du försöker med den här självstudien.
 
-Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
+Den här självstudien kräver även att du har en fungerande förståelse för följande komponenter i [!DNL Adobe Experience Platform]:
 
-* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från [!DNL Adobe Experience Platform]. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Experience Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ta bort ett målkonto med API:t [!DNL Flow Service].
@@ -152,7 +152,7 @@ A successful response returns the current details of your connection including i
 >Om du vill ta bort befintliga dataflöden kan du läsa sidorna nedan:
 >
 >* [Använd Experience Platform-gränssnittet](../ui/delete-destinations.md) för att ta bort befintliga dataflöden;
->* [Använd API:t för Flow Service &#x200B;](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
+>* [Använd API:t för Flow Service ](delete-destination-dataflow.md) för att ta bort befintliga dataflöden.
 
 När du har ett anslutnings-ID och har säkerställt att det inte finns några dataflöden till målkontot, kan du utföra en DELETE-begäran till [!DNL Flow Service]-API:t.
 

@@ -2,10 +2,10 @@
 title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 049112b29b593daa69a11302e828dc968d7abae3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1308'
-ht-degree: 3%
+source-wordcount: '1299'
+ht-degree: 2%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 ![Målöversiktsbanderoll.](./assets/overview/destinations-overview-banner.png)
 
-**[!DNL Destinations]** är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+**[!DNL Destinations]** är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från [!DNL Adobe Experience Platform]. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 <div id="recs-overview-body-1"></div>
 <div id="recs-overview-body-2"></div>
@@ -55,7 +55,7 @@ För partnerskapade och underhållna anslutningar innebär detta att problem med
 
 ## Destinationer och åtkomstkontroller {#access-controls}
 
-Målfunktionerna i Experience Platform fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Om du vill ha information om de enskilda behörigheterna går du till [åtkomstkontrollen i Adobe Experience Platform](../access-control/home.md) och rullar ned till tabellen längst ned på sidan.
+Målfunktionerna i Experience Platform fungerar med [!DNL Adobe Experience Platform] åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Om du vill ha information om de enskilda behörigheterna går du till [åtkomstkontrollen i Adobe Experience Platform](../access-control/home.md) och rullar ned till tabellen längst ned på sidan.
 
 Följande tabell visar vilka behörigheter och behörighetskombinationer som krävs för att utföra vissa åtgärder på mål.
 
@@ -78,7 +78,7 @@ Mer information om åtkomstkontroller finns i användarhandboken för [Åtkomstk
 
 ### Attributbaserad åtkomstkontroll för mål {#attribute-based-access}
 
-Med attributbaserad åtkomstkontroll i Adobe Experience Platform kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut.
+Attributbaserad åtkomstkontroll i [!DNL Adobe Experience Platform] gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut.
 
 Med attributbaserad åtkomstkontroll kan du tillämpa mappningskonfigurationer på fält som du har behörighet till. Dessutom kan du inte exportera data till ett mål om du inte har tillgång till alla fält i datauppsättningen.
 

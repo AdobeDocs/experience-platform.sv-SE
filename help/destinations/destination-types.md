@@ -3,22 +3,22 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: d57af88cc9507e0164b044a7203c66fe9fd9240e
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '831'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
 
 # Måltyper och -kategorier
 
-Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av Adobe Experience Platform-mål.
+Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av [!DNL Adobe Experience Platform] mål.
 
 ## Måltyper {#destination-types}
 
-I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, datauppsättningsexport och tillägg. Det finns flera typer av anslutningsmål, så att du kan exportera data till API-baserade mål, sociala mål, CRM-plattformar och många andra.
+I [!DNL Adobe Experience Platform] skiljer vi mellan olika måltyper - anslutningar, datauppsättningsexport och tillägg. Det finns flera typer av anslutningsmål, så att du kan exportera data till API-baserade mål, sociala mål, CRM-plattformar och många andra.
 
-Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose deras specifika exportanvändningsfall.
+Slutligen kan anslutningar också särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som [!DNL Real-Time CDP] Ultimate-kunder kan skapa för att tillgodose sina specifika exportanvändningsfall.
 
 >[!BEGINSHADEBOX]
 
@@ -28,7 +28,7 @@ Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som
 
 ## Anslutningar {#connections}
 
-**[!UICONTROL Profile Export]**, **[!UICONTROL Streaming Audience Export]** och **[!DNL Edge Personalization]** mål i Adobe Experience Platform samlar in händelsedata och kombinerar dem med andra datakällor för att skapa [kundprofilen i realtid](../profile/home.md), tillämpa segmentering och exportera målgrupper och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]**, **[!UICONTROL Streaming Audience Export]** och **[!DNL Edge Personalization]** mål i [!DNL Adobe Experience Platform] samlar in händelsedata, kombinerar dem med andra datakällor för att bilda [Real-Time Customer Profile](../profile/home.md), tillämpar segmentering och exporterar målgrupper och kvalificerade profiler till mål.
 
 ## Profilexportdestinationer {#profile-export}
 
@@ -41,9 +41,9 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 
 >[!IMPORTANT]
 >
->Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
+>Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
 
-Använd de avancerade dataanslutningarna för företag för att leverera Adobe Real-Time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
+Använd de avancerade måldataanslutningarna för företag för att leverera Adobe [!DNL Real-Time Customer Data Platform]-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
 
 Dessa mål tar emot målgrupps- och profildata som dataströmmar från Experience Platform.
 
@@ -118,7 +118,7 @@ Som marknadsförare kan du använda en kombination av anslutningar och tillägg 
 
 Anslutningar är användbara när det är nödvändigt att utnyttja en fullständig centraliserad kundprofil eller en kundpublik för aktivering. Använd till exempel anslutningar om du kopplar beteendedata från ett analyssystem med överförda CRM-data för att kvalificera en användare för en viss målgrupp innan du levererar ett anpassat meddelande till den användaren.
 
-Tillägg är användbara när händelsedata används för att utlösa en åtgärd eller för att utföra segmentering i en extern miljö. Om beteendedata till exempel behöver vidarebefordras till ett externt system utan att kopplas till andra datakällor i filen för en viss användare.
+Tillägg är användbara när händelsedata utlöser en åtgärd eller utför segmentering i en extern miljö. Om beteendedata till exempel behöver vidarebefordras till ett externt system utan att kopplas till andra datakällor i filen för en viss användare.
 
 ## Målkategorier {#categories}
 

@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '3003'
+source-wordcount: '2968'
 ht-degree: 0%
 
 ---
@@ -14,23 +14,23 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta Adobe om du vill ha mer information.
+>Den här funktionaliteten är tillgänglig för kunder som har köpt [!DNL Real-Time CDP] Prime- eller Ultimate-paketet, [!DNL Adobe Journey Optimizer] eller Customer Journey Analytics. Kontakta Adobe om du vill ha mer information.
 
 >[!IMPORTANT]
 >
->**Åtgärdsobjekt**: I [&#x200B; september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före 1 november 2024*.
+>**Åtgärdsobjekt**: I [ september 2024-utgåvan av Experience Platform](/help/release-notes/latest/latest.md#destinations) introducerades alternativet att ange ett `endTime`-datum för datauppsättningsdataflöden för export. Adobe har också infört ett standardslutdatum som är 1 september 2025 för alla datauppsättningsexportdataflöden som skapats *före 1 november 2024*.
 >
 >För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars avbryts exporten på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som kommer att stoppas den 1 september 2025.
 >
 >Mer information om hur du redigerar slutdatumet för ett datauppsättningsexportdataflöde finns i avsnittet [Schemaläggning](#scheduling).
 
-I den här artikeln förklaras det arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats som du föredrar, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage] med hjälp av Experience Platform användargränssnitt.
+I den här artikeln förklaras det arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från [!DNL Adobe Experience Platform] till den molnlagringsplats som du föredrar, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage] med hjälp av Experience Platform-gränssnittet.
 
 Du kan också använda Experience Platform API:er för att exportera datauppsättningar. Mer information finns i [API-självstudiekursen för exportdatamängder](/help/destinations/api/export-datasets.md).
 
 ## Tillgängliga datauppsättningar för export {#datasets-to-export}
 
-Vilka datauppsättningar du kan exportera varierar beroende på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), skiktet (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
+Vilka datauppsättningar du kan exportera varierar beroende på Experience Platform-programmet ([!DNL Real-Time CDP], [!DNL Adobe Journey Optimizer]), skiktet (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
 
 Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera beroende på ditt program, produktnivå och eventuella köpta tillägg:
 
@@ -44,22 +44,22 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
 </thead>
 <tbody>
   <tr>
-    <td rowspan="2">Real-Time CDP</td>
+    <td rowspan="2">[!DNL Real-Time CDP]</td>
     <td>Prime</td>
     <td>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=sv-SE#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
+    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i Experience Platform-gränssnittet efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html#profile-attribute-datasets">Systemgenererad data för ögonblicksbild av profil</a>.</li></td>
   </tr>
   <tr>
-    <td rowspan="2">Adobe Journey Optimizer</td>
+    <td rowspan="2">[!DNL Adobe Journey Optimizer]</td>
     <td>Prime</td>
-    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=sv-SE#datasets"> Adobe Journey Optimizer</a>.</td>
+    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> [!DNL Adobe Journey Optimizer]</a>.</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=sv-SE#datasets"> Adobe Journey Optimizer</a>.</td>
+    <td>Mer information finns i dokumentationen för <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> [!DNL Adobe Journey Optimizer]</a>.</td>
   </tr>
   <tr>
     <td>Customer Journey Analytics</td>
@@ -78,7 +78,7 @@ Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera
 
 I videon nedan finns en komplett förklaring av arbetsflödet som beskrivs på den här sidan, fördelar med att använda exportdatauppsättningsfunktionen samt några förslag på användningsområden.
 
->[!VIDEO](https://video.tv.adobe.com/v/3448822?captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## Mål som stöds {#supported-destinations}
 
@@ -266,7 +266,7 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 ### Exempeldatauppsättningsfiler {#sample-files}
 
-De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet &#x200B;](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json &#x200B;](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel på filen [.parquet ](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json ](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
 #### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
 
@@ -307,9 +307,9 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
 ## Exportberättiganden för datauppsättning {#licensing-entitlement}
 
-Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa Real-Time CDP produktbeskrivning [här](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa produktbeskrivningen [!DNL Real-Time CDP] [här](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
-Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper Real-Time CDP Ultimate och Adobe Journey Optimizer Ultimate blir behörigheten för export av profiler den större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att man räknar ut det totala antalet licensierade profiler och multiplicerar med 500 kB för Real-Time CDP Prime eller 700 kB för Real-Time CDP Ultimate för att avgöra hur stor datavolym man har rätt till.
+Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper [!DNL Real-Time CDP] Ultimate och [!DNL Adobe Journey Optimizer] Ultimate blir behörigheten för export av profiler det större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att du tar ditt totala antal licensierade profiler och multiplicerar med 500 kB för [!DNL Real-Time CDP] Prime eller 700 kB för [!DNL Real-Time CDP] Ultimate för att avgöra hur stor datavolym du är berättigad till.
 
 Om du å andra sidan har köpt tillägg som Data Distiller, representerar dataexportgränsen som du är berättigad till summan av produktnivån och tillägget.
 
@@ -323,7 +323,7 @@ Tänk på följande begränsningar för den allmänna tillgänglighetsreleasen f
 * Det går för närvarande inte att anpassa exporterade filnamn.
 * Gränssnittet blockerar för närvarande inte dig från att ta bort en datauppsättning som exporteras till ett mål. Ta inte bort datauppsättningar som exporteras till destinationer. [Ta bort datauppsättningen](#remove-dataset) från ett måldataflöde innan du tar bort den.
 * Övervakningsmåtten för datauppsättningsexport är för närvarande blandade med siffrorna för profilexporter, så de återspeglar inte de verkliga exportnumren.
-* Data med en tidsstämpel som är äldre än 365 dagar exkluderas från datauppsättningsexporter. Mer information finns i [skyddsutkast för schemalagda datauppsättningsexporter](/help/destinations/guardrails.md#guardrails-for-scheduled-dataset-exports)
+* Data med en tidsstämpel som är äldre än 365 dagar exkluderas från datauppsättningsexporter. Mer information finns i [skyddsutkast för schemalagda datauppsättningsexporter](/help/destinations/guardrails.md#scheduled-dataset-exports)
 
 ## Vanliga frågor {#faq}
 

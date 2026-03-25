@@ -2,16 +2,16 @@
 description: Destinationstjänsten i Adobe Experience Platform använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionaliteten. Se hur dessa komponenter tillsammans gör det möjligt för Experience Platform att ansluta till målpartners, skicka anpassade meddelanden och aktivera profildata i hela det digitala ekosystemet.
 title: Konfigurationsalternativ i Destination SDK
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '821'
 ht-degree: 0%
 
 ---
 
 # Konfigurationsalternativ i Destination SDK
 
-Destinationstjänsten i Adobe Experience Platform använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionaliteten.
+Måltjänsten i [!DNL Adobe Experience Platform] använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionerna.
 
 Tillsammans gör dessa komponenter det möjligt för Experience Platform att ansluta till målplattformar, skicka anpassade meddelanden, exportera anpassade filer och aktivera profildata i hela det digitala ekosystemet.
 
@@ -38,7 +38,7 @@ För filbaserade mål innehåller den här konfigurationen även de filformat oc
 
 ## Målkonfiguration {#destination-configuration}
 
-Den här konfigurationsslutpunkten innehåller grundläggande och avancerad information om målet. Här anger du t.ex. vilka identitetstyper som ditt mål kan hantera, det önskade formatet för exporterade filer (för filbaserade mål) och olika gränssnittsattribut för målkortet i Adobe Experience Platform-användargränssnittet.
+Den här konfigurationsslutpunkten innehåller grundläggande och avancerad information om målet. Här anger du t.ex. de identitetstyper som målet kan hantera, det önskade formatet för exporterade filer (för filbaserade mål) och olika gränssnittsattribut för målkortet i användargränssnittet för [!DNL Adobe Experience Platform].
 
 I dokumentationen nedan finns mer information om var och en av målkonfigurationskomponenterna. Du kan konfigurera de funktioner som beskrivs nedan via [målslutpunkten](../authoring-api/destination-configuration/create-destination-configuration.md).
 
@@ -56,7 +56,7 @@ I dokumentationen nedan finns mer information om var och en av målkonfiguration
 
 ## Konfiguration av målgruppsmetadata {#audience-metadata-configuration}
 
-Med den här komponenten kan du konfigurera hur målgrupper skapas, uppdateras eller tas bort programmatiskt i ditt mål. För filbaserade mål gör det möjligt att konfigurera ett meddelande så snart filerna har levererats till ditt mål. Du kan konfigurera den här funktionen via [målgruppsmallens slutpunkt](../metadata-api/create-audience-template.md).
+Med den här komponenten kan du konfigurera hur målgrupper skapas, uppdateras eller tas bort programmatiskt i ditt mål. För filbaserade mål kan du skapa ett meddelande när filerna har levererats till ditt mål. Du kan konfigurera den här funktionen via [målgruppsmallens slutpunkt](../metadata-api/create-audience-template.md).
 
 ## Nästa steg {#next-steps}
 

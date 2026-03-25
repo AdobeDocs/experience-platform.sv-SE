@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar de målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '912'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ När du konfigurerar identitetsnamnutrymmen för målet kan du finjustera den m�
 
 * Användare kan mappa XDM-attribut till identitetsnamnutrymmen.
 * Tillåter användare att mappa [standardnamnutrymmen för identiteter](../../../../identity-service/features/namespaces.md#standard) till dina egna namnutrymmen för identiteter.
-* Tillåter användare att mappa [anpassade identitetsnamnutrymmen](../../../../identity-service/features/namespaces.md#manage-namespaces) till dina egna identitetsnamnutrymmen.
+* Tillåter användare att mappa [anpassade identitetsnamnutrymmen](../../../../identity-service/features/namespaces.md#create-namespaces) till dina egna identitetsnamnutrymmen.
 
 Mer information om var den här komponenten passar in i en integrering som skapats med Destination SDK finns i diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller i guiden om hur du [använder Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
@@ -118,9 +118,9 @@ Med konfigurationen nedan aktiveras det valfria alternativet [Använd omformning
    }
 ```
 
-Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält.
+Markera det här alternativet om du vill att [!DNL Adobe Experience Platform] automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält.
 
-När du mappar ohash-kodade källattribut till målattribut som målet förväntar ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), kontrollerar du alternativet **Använd omformning** så att Adobe Experience Platform automatiskt hash-kodar källattributen vid aktiveringen.
+När du mappar ohash-kodade källattribut till målattribut som målet förväntar ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`) kontrollerar du alternativet **Använd omformning** så att [!DNL Adobe Experience Platform] automatiskt hash-kodar källattributen vid aktiveringen.
 
 ## Konfigurera hash för obligatoriskt källfält {#configure-mandatory-hashing}
 

@@ -3,16 +3,16 @@ title: Söka efter kantprofilattribut i realtid
 description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1833'
 ht-degree: 0%
 
 ---
 
 # Söka efter profilattribut i kanten i realtid
 
-Adobe Experience Platform använder [Real-Time Customer Profile](../../profile/home.md) som enda källa till sanning för alla profildata. För snabb datahämtning i realtid används [edge-profiler](../../profile/edge-profiles.md), som är enkla profiler som distribueras i hela [Edge Network](../../collection/home.md#edge). Detta möjliggör snabb personalisering i realtid.
+[!DNL Adobe Experience Platform] använder [Real-Time-kundprofilen](../../profile/home.md) som en enda källa till sanning för alla profildata. För snabb datahämtning i realtid används [edge-profiler](../../profile/edge-profiles.md), som är enkla profiler som distribueras i hela [Edge Network](../../collection/home.md). Detta möjliggör snabb personalisering i realtid.
 
 ## Användningsfall {#use-cases}
 
@@ -63,7 +63,7 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 
 Om du vill söka efter profilattribut i kanten måste målgrupperna konfigureras för kantutvärdering.
 
-Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan om &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
+Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
@@ -112,7 +112,7 @@ När du har skapat en **[!UICONTROL Custom Personalization With Attributes]**-an
    Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
    * **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
-   * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/overview.md#import-audience).
+   * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Experience Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
    * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
      ![Välj målgruppssteg i aktiveringsarbetsflödet med flera målgrupper markerade.](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)

@@ -3,9 +3,9 @@ keywords: D&B Visitor Intelligence;D&B;besökarintelligenstillägg
 title: D&B Visitor Intelligence-tillägg
 description: Tillägget D&B Visitor Intelligence är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: e06833d9-51d7-4b0c-a9ce-28e0fadc2b62
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '409'
 ht-degree: 0%
 
 ---
@@ -16,23 +16,23 @@ ht-degree: 0%
 
 Analysera okända besökare och konvertera dem till leads.
 
-[!DNL D&B Visitor Intelligence] är ett personaliseringstillägg i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på webbplatsen [D&amp;B](https://www.dnb.com/).
+[!DNL D&B Visitor Intelligence] är ett personaliseringstillägg i [!DNL Adobe Experience Platform]. Mer information om tilläggsfunktionerna finns på webbplatsen [D&amp;B](https://www.dnb.com/).
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
-![Tillägget D&amp;B Visitor Intelligence &#x200B;](../../assets/catalog/personalization/dnb/catalog.png)
+![Tillägget D&amp;B Visitor Intelligence ](../../assets/catalog/personalization/dnb/catalog.png)
 
 ## Förutsättningar {#prerequisites}
 
 Det här tillägget är tillgängligt i katalogen [!DNL Destinations] för alla kunder som har köpt Experience Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i [!DNL Adobe Experience Platform]. Taggar erbjuds [!DNL Adobe Experience Cloud] kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
 Så här installerar du tillägget D&amp;B Visitor Intelligence:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

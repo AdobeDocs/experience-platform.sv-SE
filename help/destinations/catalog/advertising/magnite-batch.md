@@ -3,9 +3,9 @@ title: Magnite Batch Destination
 description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i batch.
 last-substantial-update: 2024-11-18T00:00:00Z
 exl-id: 8cc3890f-84f8-49d1-a329-322c13f9e5af
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1779'
+source-wordcount: '1756'
 ht-degree: 0%
 
 ---
@@ -16,16 +16,16 @@ ht-degree: 0%
 
 Det här dokumentet beskriver Magnite: Batch-målet och innehåller exempel på användningsområden som hjälper dig att bättre förstå hur du aktiverar och exporterar målgrupper till det.
 
-Adobe Real-Time CDP-målgrupper kan levereras till plattformen Magnite Streaming på två sätt - de kan levereras en gång per dag eller kan levereras i realtid:
+Adobe [!DNL Real-Time CDP]-målgrupper kan levereras till plattformen Magnite Streaming på två sätt - de kan levereras en gång per dag eller levereras i realtid:
 
 1. Om du bara vill och/eller behöver leverera målgrupper en gång per dag kan du använda Magnite: Batch-målet, som levererar målgrupper till Magnite Streaming via en daglig batchfilleverans av S3. Dessa gruppmålgrupper lagras oändligt i Magnite-plattformen, till skillnad från målgrupper i realtid, som bara lagras i ett par dagar.
 
 2. Om du vill eller behöver leverera målgrupper oftare måste du använda målet [Magnite Real-Time](/help/destinations/catalog/advertising/magnite-streaming.md). När du använder Real-Time Target tar Magnite Streaming emot målgrupper i realtid, men Magnite kan bara lagra målgrupper i realtid tillfälligt på sin plattform, och de tas bort från systemet inom några dagar. Om du vill använda Magnite-målet i realtid *måste du* därför använda Magnite: Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du även aktivera till Batch-målet.
 
-Sammanfattning: Om du bara vill leverera Adobe Real-Time CDP-målgrupper en gång om dagen använder du Magnite: Endast gruppdestinationen, och målgrupperna levereras en gång om dagen. Om du vill leverera Adobe Real-Time CDP-målgrupper i realtid använder du *båda* Magnite: Batch-målet och Magnite Real-Time-målet. Mer information får du om du kontaktar Magnite: Streaming.
+Sammanfattning: Om du bara vill leverera Adobe [!DNL Real-Time CDP]-målgrupper en gång om dagen använder du Magnite: Endast gruppmålet och målgrupperna levereras en gång om dagen. Om du vill leverera Adobe [!DNL Real-Time CDP]-målgrupper i realtid använder du *båda* Magnite: Batch-målet och Magnite Real-Time-målet. Mer information får du om du kontaktar Magnite: Streaming.
 
 
-Nedan finns mer information om Magnite: Batch-mål, hur du ansluter till den och hur du aktiverar Adobe Real-Time CDP-målgrupper.
+Fortsätt läsa nedan om du vill ha mer information om Magnite: Batch-mål, hur du ansluter till den och hur du aktiverar Adobe [!DNL Real-Time CDP]-målgrupper till den.
 Mer information om Real-Time-målet finns på [den här dokumentationssidan](magnite-streaming.md) i stället.
 
 >[!IMPORTANT]
@@ -34,7 +34,7 @@ Mer information om Real-Time-målet finns på [den här dokumentationssidan](mag
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda Magnite: Batch-målet finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska kunna förstå hur och när du ska använda Magnite: Batch-målet finns det exempel på användningsområden som [!DNL Adobe Experience Platform] kunder kan lösa med det här målet.
 
 ### Använd skiftläge 1 {#use-case-1}
 
@@ -50,7 +50,7 @@ Alla målgrupper som aktiveras via Magnite: Batch-destinationen levereras i batc
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill använda [!DNL Magnite]-destinationerna i Adobe Experience Platform måste du först ha ett Magnite Streaming-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål. Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@magnite.com
+Om du vill använda [!DNL Magnite]-destinationerna i [!DNL Adobe Experience Platform] måste du först ha ett Magnite Streaming-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål. Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@magnite.com
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -73,7 +73,7 @@ Magnite: Målet för gruppen kan ta emot *alla* identitetskällor från Adobe CD
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -167,7 +167,7 @@ I **[!UICONTROL Source field]** kan du välja attribut eller identitet för dina
 ![mappa önskade datafält till fältet device_id](../../assets/catalog/advertising/magnite/destination-batch-active-audience-field-mapping.png)
 
 I **[!UICONTROL Target field]**:
-![&#x200B; Välj lämplig målidentitet för enhetstyp &#x200B;](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [&#x200B; Identiteter som stöds &#x200B;](#supported-identities) .
+![ Välj lämplig målidentitet för enhetstyp ](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [ Identiteter som stöds ](#supported-identities) .
 I det här exemplet har vi valt **[!UICONTROL Target field]**: magnite_deviceId_CUSTOM eftersom **[!UICONTROL Source field]** definierades som en anpassad IdentityMap: DeviceID.
 
 >[!NOTE]
@@ -189,7 +189,7 @@ På skärmen&quot;Konfigurera ett filnamn och exportschema för varje målgrupp&
 
 När era målgrupper har överförts kan ni validera att era målgrupper har skapats och överförts korrekt.
 
-* Magnite: Batch-målet levererar S3-filer till Magnite Streaming varje dag. Efter leverans och förtäring förväntas målgrupper/segment visas i Magnite Streaming och kan tillämpas på ett avtal. Du kan bekräfta detta genom att söka efter det segment-ID eller segmentnamn som delades under aktiveringsstegen i Adobe Experience Platform.
+* Magnite: Batch-målet levererar S3-filer till Magnite Streaming varje dag. Efter leverans och förtäring förväntas målgrupper/segment visas i Magnite Streaming och kan tillämpas på ett avtal. Du kan bekräfta detta genom att söka efter det segment-ID eller segmentnamn som delades under aktiveringsstegen i [!DNL Adobe Experience Platform].
 
 >[!NOTE]
 >

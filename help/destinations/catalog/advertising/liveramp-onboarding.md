@@ -3,22 +3,22 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-Time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2006'
+source-wordcount: '1988'
 ht-degree: 0%
 
 ---
 
 # [!DNL LiveRamp - Onboarding]-anslutning {#liveramp-onboarding}
 
-Använd anslutningen [!DNL LiveRamp - Onboarding] för att inkludera målgrupper från Adobe Real-Time Customer Data Platform i [!DNL LiveRamp Connect].
+Använd anslutningen [!DNL LiveRamp - Onboarding] för att inkludera målgrupper från Adobe [!DNL Real-Time Customer Data Platform] till [!DNL LiveRamp Connect].
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL LiveRamp - Onboarding] finns det ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska förstå hur och när du ska använda målet [!DNL LiveRamp - Onboarding] finns det ett exempel på användning som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
-Som marknadsförare vill jag skicka målgrupper från Adobe Experience Platform till inbyggda identiteter till [!DNL LiveRamp Connect] så att jag kan inrikta mig på användare på mobiler, öppna webben, sociala medier och [!DNL CTV] -plattformar med hjälp av identifieraren [!DNL Ramp ID].
+Som marknadsförare vill jag skicka målgrupper från [!DNL Adobe Experience Platform] till inbyggda identiteter till [!DNL LiveRamp Connect] så att jag kan inrikta mig på användare på mobiler, öppna webben, sociala medier och [!DNL CTV] plattformar med hjälp av identifieraren [!DNL Ramp ID] .
 
 ## Förutsättningar {#prerequisites}
 
@@ -39,7 +39,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -52,7 +52,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -123,7 +123,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Region]**: Geografiskt område för din instans av LiveRamp SFTP-lagringen.
-* **[!UICONTROL Folder path]**: Sökvägen till undermappen [!DNL LiveRamp] `uploads` som ska vara värd för de exporterade filerna. Prefixet `uploads` läggs automatiskt till i mappsökvägen. [!DNL LiveRamp] rekommenderar att du skapar en dedikerad undermapp för leveranser från Adobe Real-Time CDP för att hålla filerna åtskilda från andra befintliga feeds och för att säkerställa att all automatisering går smidigt.
+* **[!UICONTROL Folder path]**: Sökvägen till undermappen [!DNL LiveRamp] `uploads` som ska vara värd för de exporterade filerna. Prefixet `uploads` läggs automatiskt till i mappsökvägen. [!DNL LiveRamp] rekommenderar att du skapar en dedikerad undermapp för leveranser från Adobe [!DNL Real-Time CDP] för att hålla filerna åtskilda från andra befintliga feeds och för att säkerställa att all automatisering går smidigt.
    * Om du till exempel vill exportera dina filer till `uploads/my_export_folder` skriver du `my_export_folder` i fältet **[!UICONTROL Folder path]**.
 * **[!UICONTROL Compression format]**: Välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Tillgängliga alternativ är **[!UICONTROL GZIP]** eller **[!UICONTROL None]**.
 

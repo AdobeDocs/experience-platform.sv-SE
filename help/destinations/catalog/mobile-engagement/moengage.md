@@ -3,9 +3,9 @@ title: Moengage connection
 description: Moengage är en plattform för kundengagemang som driver kundcentrerade interaktioner mellan konsumenter och varumärken i realtid.
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1156'
+source-wordcount: '1132'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,13 @@ Med Adobe är integreringen mycket enkel och intuitiv. Ta vilken Adobe-användar
 
 ## Användningsfall {#use-cases}
 
-En marknadsförare vill rikta sig till ett användarsegment (inbyggt i Adobe Experience Platform) via [!DNL Moengage] kampanjer. De vill också personalisera kampanjinnehåll baserat på attribut från Adobe Experience Platform-profiler. Med den här integreringen uppdateras användare och attribut i MoEngage så snart segment och profiler uppdateras i Adobe Experience Platform.
+En marknadsförare vill inrikta sig på ett användarsegment (inbyggt [!DNL Adobe Experience Platform]) via [!DNL Moengage] kampanjer. De vill också anpassa kampanjinnehåll baserat på attribut från [!DNL Adobe Experience Platform]-profiler. Med den här integreringen uppdateras användare och attribut i MoEngage så snart segment och profiler uppdateras i [!DNL Adobe Experience Platform].
 
 ## Förutsättningar {#prerequisites}
 
-Innan du kan skicka dina Adobe Experience Platform-data till [!DNL Moengage] bör du tänka på följande krav:
+Innan du kan skicka dina [!DNL Adobe Experience Platform]-data till [!DNL Moengage] bör du tänka på följande krav:
 
-* Om du vill använda MoEngage-målet med Adobe Experience Platform måste användarna först ha tillgång till sitt [!DNL Moengage]-konto. Gå till följande sida för att registrera dig eller logga in på ditt MoEngage-konto: https://app.moengage.com
+* Om du vill använda MoEngage-målet med [!DNL Adobe Experience Platform] måste användarna först ha tillgång till sitt [!DNL Moengage]-konto. Gå till följande sida för att registrera dig eller logga in på ditt MoEngage-konto: https://app.moengage.com
 
 
 ## Identiteter som stöds {#supported-identities}
@@ -51,7 +51,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -64,7 +64,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -171,7 +171,7 @@ Upprepa föregående steg om du vill lägga till fler mappningar.
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-Gå till användarprofilen i ditt [!DNL Moengage]-konto för att kontrollera om data har exporterats till målet [!DNL Moengage]. Här bör du hitta ett användarattribut med namnet `AEPSegments`, som skapas automatiskt och de andra anpassade attributen som har mappats i tidigare steg i Adobe Experience Platform.
+Gå till användarprofilen i ditt [!DNL Moengage]-konto för att kontrollera om data har exporterats till målet [!DNL Moengage]. Här bör du hitta ett användarattribut med namnet `AEPSegments`, som skapas automatiskt och de andra anpassade attributen som har mappats i de tidigare stegen i [!DNL Adobe Experience Platform].
 
 `AEPSegments` är ett matristypsattribut i [!DNL Moengage]. Här listas alla Adobe målgruppsnamn som användaren är kopplad till i Experience Platform.
 

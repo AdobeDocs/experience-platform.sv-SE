@@ -3,9 +3,9 @@ title: Målanslutning för Magnite Real-Time
 description: Använd denna destination för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i realtid.
 last-substantial-update: 2024-11-18T00:00:00Z
 exl-id: 4e08a14b-6800-41e1-95a5-826a6241144d
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1403'
+source-wordcount: '1379'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Destinationerna [!DNL Magnite: Real-Time] och [Magnite: Batch](/help/destinations/catalog/advertising/magnite-batch.md) i Adobe Experience Platform hjälper dig att mappa och exportera målgrupper för målinriktning och aktivering på plattformen Magnite Streaming.
+Destinationerna [!DNL Magnite: Real-Time] och [Magnite: Batch](/help/destinations/catalog/advertising/magnite-batch.md) i [!DNL Adobe Experience Platform] hjälper dig att mappa och exportera målgrupper för målinriktning och aktivering på plattformen Magnite Streaming.
 
 Att aktivera målgrupper för plattformen [!DNL Magnite Streaming] är en tvåstegsprocess som kräver att du använder både Magnite: Real-Time och Magnite: Batch-mål.
 
@@ -33,15 +33,15 @@ Om du vill aktivera dina målgrupper till [!DNL Magnite Streaming] måste du:
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Magnite: Real-Time] finns det ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska förstå hur och när du ska använda målet [!DNL Magnite: Real-Time] finns det ett exempel på användning som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Aktivering och målinriktning {#activation-and-targeting}
 
-Tack vare integreringen med Magnite kan kunderna skicka sina CDP-målgrupper från Adobe Experience Platform till Magnite för annonsriktad marknadsföring. Målgrupper kan väljas i Magnite för både positiv målinriktning och negativ målinriktning (undertryckning).
+Tack vare den här integreringen med Magnite kan kunderna skicka sina CDP-målgrupper från [!DNL Adobe Experience Platform] till Magnite för annonsriktad marknadsföring. Målgrupper kan väljas i Magnite för både positiv målinriktning och negativ målinriktning (undertryckning).
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill använda [!DNL Magnite]-destinationerna i Adobe Experience Platform måste du först ha ett [!DNL Magnite Streaming]-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål.
+Om du vill använda [!DNL Magnite]-destinationerna i [!DNL Adobe Experience Platform] måste du först ha ett [!DNL Magnite Streaming]-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål.
 Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@magnite.com
 
 ## Identiteter som stöds {#supported-identities}
@@ -61,7 +61,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -178,11 +178,11 @@ När era målgrupper har överförts kan ni validera att era målgrupper har ska
 
 -->
 
-* Målgrupper efter importen förväntas visas om [!DNL Magnite Streaming] inom några minuter och kan tillämpas på ett avtal. Du kan bekräfta detta genom att leta upp det segment-ID som delades under aktiveringsstegen i Adobe Experience Platform.
+* Målgrupper efter importen förväntas visas om [!DNL Magnite Streaming] inom några minuter och kan tillämpas på ett avtal. Du kan bekräfta detta genom att leta upp det segment-ID som delades under aktiveringsstegen i [!DNL Adobe Experience Platform].
 
 ## Aktivera samma målgrupper via målet [!DNL Magnite: Batch] {#activate-magnite-batch}
 
-Publiker som delas med [!DNL Magnite Streaming] med Real-Time-målet måste också delas med Magnite: Batch-målet. När segmentnamnen i användargränssnittet för [!DNL Magnite Streaming] är korrekt konfigurerade uppdateras de som används i Adobe Experience Platform-uppdateringen efter den dagliga uppdateringen.
+Publiker som delas med [!DNL Magnite Streaming] med Real-Time-målet måste också delas med Magnite: Batch-målet. När segmentnamnen i användargränssnittet för [!DNL Magnite Streaming] är korrekt konfigurerade uppdateras de som används i den [!DNL Adobe Experience Platform]-postdagliga uppdateringen.
 
 Slutligen, om ett batchmål inte har konfigurerats för din integrering, ställer du in det nu via Magnite: Batch-måldokumentet.
 

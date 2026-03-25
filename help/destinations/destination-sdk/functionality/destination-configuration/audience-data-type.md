@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar målgruppstypen för mål som skapats med Destination SDK.
 title: Konfigurera målgruppsdatatyp
 exl-id: c56fb0f9-adb2-4fb2-ab06-c0398d828600
-source-git-commit: 5d84ea1baa96c288d9d37606122e0a41880478b9
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '732'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Granska målgruppsdatatyperna nedan för att lära dig mer om skillnaderna mella
 | [Målgrupper](../../../../segmentation/types/people-audiences.md) | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](../../../../segmentation/types/account-audiences.md) | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](../../../../segmentation/types/prospect-audiences.md) | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](../../../../catalog/datasets/overview.md) | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](../../../../catalog/datasets/overview.md) | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 Vilken målgruppsdatatyp som stöds beror på vilken typ av mål du skapar.
 Se tabellen nedan för att förstå vilka måltyper som stöder vilka målgruppsdatatyper.

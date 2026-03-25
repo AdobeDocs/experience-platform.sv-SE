@@ -2,9 +2,9 @@
 description: Konfigurera filformateringsalternativ för filbaserade mål
 title: Lär dig hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
 exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '902'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med Destination SDK kan du justera formaterings- och komprimeringsalternativen för de exporterade filerna i stor utsträckning, så att de matchar eventuella senare krav i lagringsplatsen.
+Med Destination SDK kan du i stor utsträckning justera formaterings- och komprimeringsalternativen för de exporterade filerna, så att de matchar eventuella krav som ställs i det efterföljande lagringsutrymmet.
 
 På den här sidan beskrivs hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
 
@@ -718,7 +718,7 @@ Ett lyckat svar returnerar målkonfigurationen, inklusive den unika identifierar
 En viss kombination av filformateringsalternativ kan leda till oönskade filexportresultat.
 Adobe rekommenderar att du inte väljer följande kombination av CSV-alternativ:
 
-```
+```properties
 nullValue -> ""
 quote -> "
 emptyValue -> ""

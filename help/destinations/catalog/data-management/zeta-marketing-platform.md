@@ -4,9 +4,9 @@ description: Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälp
 hide: true
 hidefromtoc: true
 exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1436'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälper er att anskaffa, utöka och behålla kunder på ett effektivare sätt, med hjälp av intelligens (egna data och AI). Mer information finns i [Zeta Global](https://zetaglobal.com/).
 
-Med Zeta Marketing Platform-kontakten i Adobe Experience Platform kan ni smidigt synkronisera era målgrupper från Experience Platform till ZMP.
+Med Zeta Marketing Platform-kopplingen i [!DNL Adobe Experience Platform] kan du sömlöst synkronisera dina målgrupper från Experience Platform till ZMP.
 
 >[!IMPORTANT]
 >
@@ -37,8 +37,8 @@ En annonsör vill rikta sig till användare inom specifika målgrupper via Zeta 
 
 ### Krav för Zeta Marketing Platform {#zmp-prerequisites}
 
-* Innan du skapar en ny anslutning till Zeta Marketing Platform-målet måste du skapa en tom kundlista i ditt Zeta Marketing Platform-konto. Du måste välja en av dessa kundlistor som mål för att få den Adobe Experience Platform-publik som du tänker skicka. Du kan skapa en tom kundlista i ZMP genom att följa instruktionerna [här](https://knowledgebase.zetaglobal.com/kb/creating-audiences#CreatingAudiences-CreatingaCustomerList).
-* Även om Adobe Experience Platform tillåter aktivering av flera målgrupper till en viss ZMP-destinationsinstans, är det obligatoriskt att varje ZMP-destinationsinstans endast tar emot en Experience Platform-målinstans. Om du vill hantera flera målgrupper från Experience Platform skapar du ytterligare ZMP-målinstanser för varje målgrupp och väljer en annan kundlista i listrutan. Detta säkerställer att målgrupperna inte skrivs över. Mer information finns i [Fyll i målinformation](#destination-details).
+* Innan du skapar en ny anslutning till Zeta Marketing Platform-målet måste du skapa en tom kundlista i ditt Zeta Marketing Platform-konto. Du måste välja en av de här kundlistorna som det avsedda målet att ta emot den [!DNL Adobe Experience Platform]-målgrupp som du tänker skicka. Du kan skapa en tom kundlista i ZMP genom att följa instruktionerna [här](https://knowledgebase.zetaglobal.com/kb/creating-audiences#CreatingAudiences-CreatingaCustomerList).
+* Även om [!DNL Adobe Experience Platform] tillåter aktivering av flera målgrupper till en viss ZMP-målinstans är det obligatoriskt att varje ZMP-målinstans endast tar emot en Experience Platform-målinstans. Om du vill hantera flera målgrupper från Experience Platform skapar du ytterligare ZMP-målinstanser för varje målgrupp och väljer en annan kundlista i listrutan. Detta säkerställer att målgrupperna inte skrivs över. Mer information finns i [Fyll i målinformation](#destination-details).
 * Använd följande autentiseringsuppgifter för att konfigurera målet:
    * Användarnamn: **api**
    * Lösenord: Din ZMP REST API-nyckel. Du hittar din REST API-nyckel genom att logga in på ditt ZMP-konto och navigera till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns i [ZMP-dokumentationen](https://knowledgebase.zetaglobal.com/kb/integrations).
@@ -65,7 +65,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -92,7 +92,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -144,7 +144,7 @@ Nedan visas ett exempel på korrekt identitetsmappning när profiler exporteras 
 
 Välja källfält:
 
-* Välj ett namnområde för källidentitet (anpassat eller standard, till exempel `Email`) som unikt identifierar en profil i Adobe Experience Platform och [!DNL Zeta Marketing Platform].
+* Välj ett namnutrymme för källidentitet (anpassat eller standard, till exempel `Email`) som unikt identifierar en profil i [!DNL Adobe Experience Platform] och [!DNL Zeta Marketing Platform].
 * Välj eventuella XDM-källprofilattribut som behöver exporteras till och uppdateras i [!DNL Zeta Marketing Platform].
 
 Markera målfält:

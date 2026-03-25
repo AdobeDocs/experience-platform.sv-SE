@@ -4,9 +4,9 @@ title: API-migreringsguide för molnlagringsmål
 description: Lär dig mer om förändringarna i arbetsflödet för att aktivera molnlagringsmål som en del av migreringen till de nya målkorten för molnlagring med ytterligare funktioner.
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1328'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* Funktionerna som beskrivs på den här sidan är tillgängliga för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketen. Kontakta Adobe om du vill ha mer information.
+>* De funktioner som beskrivs på den här sidan är tillgängliga för kunder som har köpt Prime- och Ultimate-paketen [!DNL Real-Time CDP]. Kontakta Adobe om du vill ha mer information.
 
 ## Migreringskontext {#migration-context}
 
 Från och med [oktober 2022](/help/release-notes/2022/october-2022.md#new-or-updated-destinations) kan du använda de nya filexportfunktionerna för att få tillgång till förbättrade anpassningsfunktioner när du exporterar filer från Experience Platform:
 
-* Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
+* Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names).
 * Möjlighet att ange anpassade filhuvuden i de exporterade filerna via det [nya mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
 * Möjlighet att välja [filtypen](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) för den exporterade filen.
 * Möjlighet att [anpassa formateringen för exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
@@ -46,7 +46,7 @@ Observera att du för närvarande kan se två målkort sida vid sida av de tre d
 
 ![Bild av de två Amazon S3-målkorten i en sida vid sida-vy.](../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
 
-Dessa mål med utökad funktionalitet erbjöds ursprungligen som betaversion, men *Adobe flyttar nu alla Real-Time CDP-kunder till de nya molnlagringsmålen*. För kunder som redan använder [!DNL Amazon S3], [!DNL Azure Blob] eller SFTP innebär detta att befintliga dataflöden migreras till de nya korten. Läs vidare om du vill ha mer information om de specifika ändringarna som ingår i migreringen.
+Dessa mål med utökad funktionalitet erbjöds ursprungligen som betaversion, men *Adobe flyttar nu alla [!DNL Real-Time CDP]-kunder till de nya molnlagringsmålen*. För kunder som redan använder [!DNL Amazon S3], [!DNL Azure Blob] eller SFTP innebär detta att befintliga dataflöden migreras till de nya korten. Läs vidare om du vill ha mer information om de specifika ändringarna som ingår i migreringen.
 
 ## Vem den här sidan gäller för {#who-this-applies-to}
 
@@ -60,13 +60,6 @@ Om du t.ex. använder ett skript för att filtrera måldata till målet [!DNL Am
 
 I det här avsnittet finns relevant API-självstudiekurs och referensdokumentation för den utökade funktionaliteten för att exportera data till molnlagringsmål.
 
-<!--
-
-TBD if we keep this link but will likely remove it
-
-[Legacy API tutorial to export data to cloud storage destinations](/help/destinations/api/connect-activate-batch-destinations.md) (outdated, do not use anymore)
-
--->
 * [API-självstudiekurs för att exportera målgrupper till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md)
 * [Referensdokumentation för API:t för destinationsflödestjänsten](https://developer.adobe.com/experience-platform-apis/references/destinations/)
 
@@ -668,7 +661,7 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
 
 ### Bakåtkompatibla ändringar som är gemensamma för [!DNL Amazon S3]-, [!DNL Azure Blob]- och SFTP-mål {#changes-all-destinations}
 
-Stegen för profilväljare på alla tre destinationerna ersätts av ett mappningssteg som gör att du kan byta namn på kolumnrubrikerna i de exporterade filerna om du vill. Se bilden sida vid sida nedan med det gamla attributväljarsteget till vänster och det nya mappningssteget till höger.
+Stegen för profilväljare på alla tre destinationerna ersätts med ett mappningssteg som gör att du kan byta namn på kolumnrubrikerna i de exporterade filerna om du vill. Se bilden sida vid sida nedan med det gamla attributväljarsteget till vänster och det nya mappningssteget till höger.
 
 ![Översikt över migreringsguiden](/help/destinations/assets/api/api-migration-guide/old-and-new-mapping-step.png)
 

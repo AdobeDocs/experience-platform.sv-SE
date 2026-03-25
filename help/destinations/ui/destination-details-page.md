@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1222'
+source-wordcount: '1219'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I Adobe Experience Platform användargränssnitt kan du visa och övervaka attributen och aktiviteterna för dina mål. Dessa uppgifter omfattar målets namn och ID, kontroller för att aktivera eller inaktivera destinationer och mycket annat. Detaljerna innehåller även mått för aktiverade profilposter, aktiverade identiteter, misslyckade och exkluderade identiteter samt en historik över dataflöden.
+I användargränssnittet för [!DNL Adobe Experience Platform] kan du visa och övervaka attributen och aktiviteterna för dina mål. Dessa uppgifter omfattar målets namn och ID, kontroller för att aktivera eller inaktivera destinationer och mycket annat. Detaljerna innehåller även mått för aktiverade profilposter, aktiverade identiteter, misslyckade och exkluderade identiteter samt en historik över dataflöden.
 
 >[!NOTE]
 >
@@ -83,7 +83,7 @@ Fliken [!UICONTROL Dataflow runs] innehåller mätdata om dataflödet som körs 
 >[!NOTE]
 >
 >* Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) och [Experience Cloud-målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md).
->* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [&#x200B; Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [HTTP API](/help/destinations/catalog/streaming/http-destination.md) uppskattas mätvärdena för utelämnade, misslyckade och aktiverade identiteter. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
+>* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [ Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [HTTP API](/help/destinations/catalog/streaming/http-destination.md) uppskattas mätvärdena för utelämnade, misslyckade och aktiverade identiteter. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
 
 ![Dataflödet kör vy](../assets/ui/details-page/dataflow-runs.png)
 
@@ -105,7 +105,7 @@ För dataflöde som körs till filbaserade mål beror **[!UICONTROL Processing d
 
 ![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett filbaserat mål.](../assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
-Mer information finns i avsnittet om [dataflöde som körs till batchbaserade (filbaserade) mål &#x200B;](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) i övervakningsdokumentationen.
+Mer information finns i avsnittet om [dataflöde som körs till batchbaserade (filbaserade) mål ](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) i övervakningsdokumentationen.
 
 ## [!UICONTROL Activation data] {#activation-data}
 
@@ -158,7 +158,7 @@ Om du vill redigera det befintliga aktiveringsschemat för flera målgrupper sam
 
 >[!NOTE]
 >
->Mer information om hur du utforskar informationssidan för en målgrupp finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md#segment-details).
+>Mer information om hur du utforskar informationssidan för en målgrupp finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md#audience-details).
 
 ### Redigera filnamn för flera målgrupper som exporterats till gruppmål {#bulk-edit-file-names}
 

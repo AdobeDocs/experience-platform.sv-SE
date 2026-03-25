@@ -3,10 +3,10 @@ keywords: Undersökningsdestinationer;undersökning;förutse;instund;webbinfång
 title: Översikt över undersökningsmål
 description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe Experience Platform.
 exl-id: 0358a73b-9f4a-4362-a7ed-e49ece6e5f02
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '101'
-ht-degree: 0%
+source-wordcount: '98'
+ht-degree: 1%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe Experience Platform.
+Undersökningsplattformar identifierar enkäthändelser, samlar in kundfeedback i realtid via dataelement och delar data med [!DNL Adobe Experience Platform].
 
 ## Målgrupper som stöds {#supported-destinations}
 

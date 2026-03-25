@@ -3,9 +3,9 @@ title: Aktivera målgrupper på konton för destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Funktionen för att aktivera kontomålgrupper för mål är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
+>Funktionen för att aktivera målgrupper för konton är tillgänglig för företag som köper [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b)- och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p)-utgåvorna av [!DNL Real-Time Customer Data Platform].
 
-I den här artikeln förklaras det arbetsflöde som krävs för att exportera [kontomålgrupper](/help/segmentation/types/account-audiences.md) från Adobe Experience Platform till det önskade målet.
+I den här artikeln förklaras det arbetsflöde som krävs för att exportera [kontominnen](/help/segmentation/types/account-audiences.md) från [!DNL Adobe Experience Platform] till det önskade målet.
 
 ## Mål som stöds {#supported-destinations}
 
-Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Bombora](/help/destinations/catalog/advertising/bombora.md), [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matched Audiences &#x200B;](/help/destinations/catalog/social/linkedin-b2b.md) -direktuppspelningsmål.
+Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Bombora](/help/destinations/catalog/advertising/bombora.md), [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matched Audiences ](/help/destinations/catalog/social/linkedin-b2b.md) -direktuppspelningsmål.
 
 ![Destinationer som stöder målgrupper.](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 
@@ -108,4 +108,4 @@ Samtycke krävs på person- eller profilnivå för *kund- och potentiell publik*
 
 ![Granskningssteget i arbetsflödet för aktivering av målgrupper med efterlevnadskontrollen för samtycke är nedtonat.](/help/destinations/assets/ui/activate-account-audiences/consent-checks-greyed-out.png)
 
-Andra mekanismer för datastyrning i Real-Time CDP, t.ex. [policykontroller för dataanvändning](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) och [attributbaserad åtkomstkontroll](/help/destinations/home.md#attribute-based-access), stöds.
+Andra datastyrningsmekanismer i [!DNL Real-Time CDP], t.ex. [dataanvändningsprincipkontroller](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) och [attributbaserad åtkomstkontroll](/help/destinations/home.md#attribute-based-access), stöds.

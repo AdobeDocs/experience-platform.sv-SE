@@ -2,9 +2,9 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1309'
+source-wordcount: '1297'
 ht-degree: 2%
 
 ---
@@ -60,13 +60,13 @@ Tabellen nedan beskriver de händelser som stöds av metadatamallar för målgru
 
 | Mallavsnitt | Beskrivning |
 |--- |--- |
-| `create` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att programmässigt skapa segment/målgrupper på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
-| `update` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att programmässigt uppdatera segment/målgrupper på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
+| `create` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att skapa segment/målgrupper programmatiskt på din plattform och synkronisera informationen tillbaka till [!DNL Adobe Experience Platform]. |
+| `update` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att uppdatera segment/målgrupper i din plattform och synkronisera informationen tillbaka till [!DNL Adobe Experience Platform]. |
 | `delete` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att programmässigt ta bort segment/målgrupper på din plattform. |
 | `validate` | Kör valideringar för fält i mallkonfigurationen innan du anropar partner-API:t. Du kan till exempel validera att användarens konto-ID är korrekt angivet. |
 | `notify` | Gäller endast för filbaserade mål. Inkluderar alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att meddela dig om filexporter lyckades. |
-| `createDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att skapa ett programmatiskt dataflöde på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
-| `updateDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att uppdatera ett dataflöde i din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
+| `createDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att skapa ett dataflöde på din plattform och synkronisera informationen tillbaka till [!DNL Adobe Experience Platform]. |
+| `updateDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att uppdatera ett dataflöde i din plattform och synkronisera informationen tillbaka till [!DNL Adobe Experience Platform]. |
 | `deleteDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att programmässigt ta bort ett dataflöde från din plattform. |
 
 {style="table-layout:auto"}

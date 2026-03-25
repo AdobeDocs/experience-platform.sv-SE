@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 560200a6553a1aae66c608eef7901b3248c886b4
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativen i Destinations SDK](../functionality/configuration-options.md) och i andra Destination SDK-funktioner och API-referensdokument för att konfigurera ett [direktuppspelningsmål](../../destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du går vidare till stegen som visas nedan bör du läsa sidan [Komma igång](../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga inloggningsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK. Detta förutsätter att du har slutfört villkoren för partnerskap och behörighet och är redo att börja utveckla ditt mål.
 
@@ -273,18 +273,18 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 >
 >`CUSTOMER_AUTHENTICATION` är det vanligaste av de två autentiseringsreglerna och det är det som ska användas om du kräver att användarna tillhandahåller någon form av autentisering till ditt mål innan de kan konfigurera en anslutning och exportera data.
 
-Läs `"authenticationRule": "CUSTOMER_AUTHENTICATION"`OAuth 2-autentisering[&#x200B; om du valde &#x200B;](../functionality/destination-configuration/oauth2-authorization.md) i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
+Läs `"authenticationRule": "CUSTOMER_AUTHENTICATION"`OAuth 2-autentisering[ om du valde ](../functionality/destination-configuration/oauth2-authorization.md) i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2.
 
 Om du har valt `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en [autentiseringskonfiguration](../credentials-api/create-credential-configuration.md) och skicka autentiseringsuppgiftsobjektets ID i parametern `authenticationId` i konfigurationen för [målleverans](/help/destinations/destination-sdk/functionality/destination-configuration/destination-delivery.md#platform-authentication).
 
 ## Steg 6: Testa destinationen {#test-destination}
 
-När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda [måltestningsverktyget](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
+När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda [måltestningsverktyget](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) för att testa integrationen mellan [!DNL Adobe Experience Platform] och ditt mål.
 
 Som en del av processen för att testa målet måste du använda Experience Platform-gränssnittet för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en publikdokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
-* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE)
+* [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 7: Publicera destinationen {#publish-destination}
 

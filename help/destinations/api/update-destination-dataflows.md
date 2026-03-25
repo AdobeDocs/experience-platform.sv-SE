@@ -5,9 +5,9 @@ title: Uppdatera måldataflöden med API:t för Flow Service
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort målgrupper och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2467'
+source-wordcount: '2459'
 ht-degree: 1%
 
 ---
@@ -24,9 +24,9 @@ Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du int
 >
 > I den här självstudien används termerna *flow* och *dataflow* omväxlande. I den här självstudiekursen har de samma betydelse.
 
-Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
+Den här självstudien kräver även att du har en fungerande förståelse för följande komponenter i [!DNL Adobe Experience Platform]:
 
-* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från [!DNL Adobe Experience Platform]. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera ditt dataflöde med API:t [!DNL Flow Service].
@@ -503,7 +503,7 @@ curl -X PATCH \
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
 | `name` | **(Valfritt)**. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
-| `filenameTemplate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: **(Valfritt)**. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: **(Valfritt)**. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: **(Valfritt)**. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
+| `filenameTemplate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: **(Valfritt)**. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: **(Valfritt)**. Välj något av dessa två alternativ för filerna så att de innehåller den tidpunkt då de genereras av Experience Platform.</li><li>`custom-text`: **(Valfritt)**. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#configure-file-names) i självstudiekursen om aktivering av gruppmål. |
 | `exportMode` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. |
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
 | `frequency` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för gruppfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE` eller `DAILY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
@@ -761,7 +761,7 @@ Om du vill lägga till ett profilattribut i måldataflödet utför du en PATCH-b
 >
 >**Målspecifika mappningskrav**
 >
->Metoden `profileSelectors` som beskrivs i det här avsnittet fungerar för de flesta direktuppspelningsmål. Vissa mål för direktuppspelning, inklusive **Adobe Target**, kräver arbetsflödet för dataprep-mappning i stället.
+>Metoden `profileSelectors` som beskrivs i det här avsnittet fungerar för de flesta direktuppspelningsmål. Vissa mål för direktuppspelning, inklusive **[!DNL Adobe Target]**, kräver i stället arbetsflödet för datapresentationsuppsättningen.
 >
 >**Om dina profilattribut inte visas i Experience Platform UI efter ett lyckat API-svar (202)** måste du använda den mappningsuppsättningsmetod som beskrivs i [Aktivera målgrupper för gruppsmål](../api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping).
 

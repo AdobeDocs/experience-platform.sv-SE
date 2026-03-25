@@ -5,9 +5,9 @@ title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2203'
+source-wordcount: '2197'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 >
 >Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md) eller [Azure Event Hubs](../catalog/cloud-storage/azure-event-hubs.md)), skapa ett dataflöde till ditt nya skapade mål och aktivera data till det nya målet.
+I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina [!DNL Adobe Experience Platform]-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md) eller [Azure Event Hubs](../catalog/cloud-storage/azure-event-hubs.md)), skapa ett dataflöde till ditt nya skapade mål och aktivera data till ditt nya skapade mål.
 
 I den här självstudien används målet [!DNL Amazon Kinesis] i alla exempel, men stegen är identiska för [!DNL Azure Event Hubs].
 
@@ -32,7 +32,7 @@ Om du föredrar att använda användargränssnittet i Experience Platform för a
 
 ## Kom igång {#get-started}
 
-Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Handboken kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] är arkivsystemet för dataplatser och datalinje inom Experience Platform.
@@ -565,7 +565,7 @@ Det returnerade svaret ska i parametern `transformations` inkludera de målgrupp
 
 >[!IMPORTANT]
 >
-> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=sv-SE), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
+> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
 
 ```json
 {

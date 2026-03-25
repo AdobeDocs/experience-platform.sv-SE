@@ -3,9 +3,9 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2770'
+source-wordcount: '2734'
 ht-degree: 1%
 
 ---
@@ -22,17 +22,17 @@ Du kan använda det här målet för målgrupper över [!DNL Facebook's]-appfami
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Facebook] finns det två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
+För att du bättre ska förstå hur och när du ska använda målet [!DNL Facebook] finns det två exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa med den här funktionen.
 
 ### Använd skiftläge 1 {#use-case-1}
 
-En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till den sociala [!DNL Facebook]-plattformen, vilket optimerar deras annonsutgifter.
+En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till [!DNL Adobe Experience Platform], bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till den sociala [!DNL Facebook]-plattformen, vilket optimerar deras annonsutgifter.
 
 ### Använd skiftläge 2 {#use-case-2}
 
 Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare som företaget har om dessa kunder är medlems-ID och e-postadresser.
 
-För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe Experience Platform med e-postadresserna som identifierare.
+Om de vill rikta in sig på olika sociala medier kan de lägga in kunddata från sina CRM i [!DNL Adobe Experience Platform] med e-postadresserna som identifierare.
 
 Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgrupper som de kan rikta sig till via målet [!DNL Facebook].
 
@@ -44,15 +44,15 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 |---|---|---|
 | `GAID` | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | `IDFA` | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
-| `phone_sha256` | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
-| `email_lc_sha256` | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| `phone_sha256` | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av [!DNL Adobe Experience Platform]. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| `email_lc_sha256` | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hash-adresser stöds av [!DNL Adobe Experience Platform]. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | `extern_id` | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 | `gender` | Kön | Godkända värden: <ul><li>`m` för man</li><li>`f` för hona</li></ul> Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `date_of_birth` | Födelsedatum | Godkänt format: `yyyy-MM-DD`. <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `last_name` | Efternamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name` | Förnamn | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga mellanslag. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `first_name_initial` | Första namn | Godkänt format: Endast gemener, `a-z` tecken. Använd UTF-8-kodning för specialtecken.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
-| `state` | Läge | Använd anSI-förkortningskoden [2 tecken &#x200B;](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
+| `state` | Läge | Använd anSI-förkortningskoden [2 tecken ](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) i gemener. För lägen som inte är amerikanska ska du använda gemener, inga skiljetecken, inga specialtecken och inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `city` | Ort | Godkänt format: Gemener, endast `a-z` tecken, ingen interpunktion, inga specialtecken, inga mellanslag.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `zip` | Postnummer | Godkänt format: Gemener, inga mellanslag. För amerikanska postnummer ska du endast använda de första 5 siffrorna. Använd formatet `Area/District/Sector` för Storbritannien.  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
 | `country` | Land | Godkänt format: landskoder med två bokstäver i formatet [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) .  <br>Experience Platform **kraschar automatiskt** det här värdet innan det skickas till Facebook. Den här automatiska hashningen krävs för att uppfylla Facebooks säkerhets- och sekretesskrav. Ange **inte** förhash-värden för det här fältet, eftersom det gör att matchningsprocessen misslyckas. |
@@ -64,7 +64,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -77,7 +77,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -99,11 +99,11 @@ Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera 
 
 * Ditt [!DNL Facebook]-användarkonto måste ha fullständig åtkomst till [!DNL Facebook Business Account] som äger det annonskonto som du använder.
 * Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för annonskontot som du tänker använda.
-* Affärskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
+* Affärskontot **[!DNL Adobe Experience Cloud]** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
 
   >[!IMPORTANT]
   >
-  > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för integreringen av [!DNL Adobe Experience Platform].
+  > När du konfigurerar behörigheterna för [!DNL Adobe Experience Cloud] måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för integreringen av [!DNL Adobe Experience Platform].
 
 * Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]&business_id=206617933627973`, där `accountID` är din [!DNL Facebook Ad Account ID]. Kontrollera att avsnittet `business_id=206617933627973` finns i URL:en när du signerar användarvillkoren.
 
@@ -115,7 +115,7 @@ Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera 
 
 [!DNL Facebook] kräver att ingen personligt identifierbar information (PII) skickas i klartext. Därför kan målgrupper som är aktiverade för [!DNL Facebook] inaktiveras för *hashed*-identifierare, som e-postadresser eller telefonnummer.
 
-Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
+Beroende på vilken typ av ID som du importerar till [!DNL Adobe Experience Platform] måste du följa deras motsvarande krav.
 
 ## Maximera målgruppernas matchningsfrekvens {#match-rates}
 
@@ -136,7 +136,7 @@ Det finns två metoder för att aktivera telefonnummer i [!DNL Facebook]:
 
 ## Krav för e-posthashning {#email-hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser som är tydliga i Experience Platform, och få [!DNL Experience Platform] hash-kodade adresser när de aktiveras.
+Du kan hash-koda e-postadresser innan du importerar dem till [!DNL Adobe Experience Platform], eller använda e-postadresser som är tydliga i Experience Platform, och låta [!DNL Experience Platform] hash-koda dem när de aktiveras.
 
 Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](/help/ingestion/streaming-ingestion/overview.md).
 
@@ -171,7 +171,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera målgrupper.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475117/?quality=12&learn=on&captions=swe)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
@@ -295,7 +295,7 @@ För [!DNL Facebook] innebär en lyckad aktivering att en anpassad [!DNL Faceboo
 
 >[!TIP]
 >
->Integrationen mellan Adobe Experience Platform och [!DNL Facebook] har stöd för tidigare målgruppsåsidosättningar. Alla historiska målgruppskvalifikationer skickas till [!DNL Facebook] när du aktiverar målgrupperna till målet.
+>Integrationen mellan [!DNL Adobe Experience Platform] och [!DNL Facebook] har stöd för historiska målgruppsåsidosättningar. Alla historiska målgruppskvalifikationer skickas till [!DNL Facebook] när du aktiverar målgrupperna till målet.
 
 ## Felsökning {#troubleshooting}
 

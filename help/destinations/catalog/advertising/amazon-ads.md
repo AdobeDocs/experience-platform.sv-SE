@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2025-10-08T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2164'
+source-wordcount: '2128'
 ht-degree: 1%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 1%
 
 [!DNL Amazon Ads] erbjuder en rad alternativ som hjälper dig att nå dina annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer.
 
-Integreringen av [!DNL Amazon Ads] med Adobe Experience Platform ger körklar integrering med [!DNL Amazon Ads]-produkter, inklusive Amazon DSP (ADSP) och Amazon Marketing Cloud (AMC).
+Integrationen [!DNL Amazon Ads] med [!DNL Adobe Experience Platform] ger körklar integrering med [!DNL Amazon Ads]-produkter, inklusive Amazon DSP (ADSP) och Amazon Marketing Cloud (AMC).
 
-Med målplatsen [!DNL Amazon Ads] i Adobe Experience Platform kan användare definiera annonsörgrupper för målinriktning och aktivering i Amazon DSP.  Dessutom kan användare överföra sina data till [!DNL Amazon Marketing Cloud] för att förstå målgruppens prestanda, annonsörens tillhandahållna dimensioner, medlemskap i Amazon-segment eller andra signaler som är tillgängliga i AMC. När annonsörer har överförts till AMC kan användare använda [!DNL Amazon Marketing Cloud] för att ändra, förbättra eller lägga till i målgruppsmedlemmar med hjälp av Amazon-signaler inifrån [!DNL Amazon Marketing Cloud].
+Med [!DNL Amazon Ads]-målet i [!DNL Adobe Experience Platform] kan användare definiera annonsörernas målgrupper för målinriktning och aktivering i Amazon DSP.  Dessutom kan användare överföra sina data till [!DNL Amazon Marketing Cloud] för att förstå målgruppens prestanda, annonsörens tillhandahållna dimensioner, medlemskap i Amazon-segment eller andra signaler som är tillgängliga i AMC. När annonsörer har överförts till AMC kan användare använda [!DNL Amazon Marketing Cloud] för att ändra, förbättra eller lägga till i målgruppsmedlemmar med hjälp av Amazon-signaler inifrån [!DNL Amazon Marketing Cloud].
 
-AMC sammanför unika signaler från olika Amazon-ägda och styrda kanaler, som omfattar alla medier, inklusive visning, video, direktuppspelad TV, ljud och sponsrade annonser. Användare kan skicka kuraterade segment från Adobe Experience Platform till AMC för att förbättra inlärningen, som målgruppernas marknadsgrupper, livsstilskohorter och varumärkesinteraktionsmönster. Augmenterade segment kan sedan användas för att optimera medieaktiveringar i Amazon DSP.
+AMC sammanför unika signaler från olika Amazon-ägda och styrda kanaler, som omfattar alla medier, inklusive visning, video, direktuppspelad TV, ljud och sponsrade annonser. Användare kan skicka kuraterade segment från [!DNL Adobe Experience Platform] till AMC för att förbättra inlärningen, till exempel målgruppernas marknadsgrupper, livsstilskohorter och varumärkesinteraktionsmönster. Augmenterade segment kan sedan användas för att optimera medieaktiveringar i Amazon DSP.
 
 >[!IMPORTANT]
 >
@@ -28,15 +28,15 @@ AMC sammanför unika signaler från olika Amazon-ägda och styrda kanaler, som o
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet *[!DNL Amazon Ads]* finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet *[!DNL Amazon Ads]* finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Aktivering och målinriktning {#activation-and-targeting}
 
-Tack vare den här integreringen med Amazon DSP kan [!DNL Amazon Ads]-annonsörer skicka CDP-målgrupper från Adobe Experience Platform till Amazon DSP för att skapa marknadsföringsmålgrupper för annonsering. Målgrupper kan väljas inom Amazon DSP för positiv målinriktning och negativ målinriktning (undertryckning).
+Tack vare den här integreringen med Amazon DSP kan [!DNL Amazon Ads]-annonsörer skicka CDP-målgrupper från [!DNL Adobe Experience Platform] till Amazon DSP för att skapa marknadsföringsmålgrupper för annonsering. Målgrupper kan väljas inom Amazon DSP för positiv målinriktning och negativ målinriktning (undertryckning).
 
 ### Analyser och mätningar {#analytics-and-measurement}
 
-Integrationen med [!DNL Amazon Marketing Cloud] (AMC) gör att [!DNL Amazon Ads] annonsörer kan skicka CDP-segment från Adobe Experience Platform-formulär till AMC. Annonsörer kan sedan ansluta sig till CDP-indata med [!DNL Amazon Ads]-signaler och utföra anpassade analyser på ämnen som mediapåverkan, målgruppssegment och kundresor i sekretessformat. En annonsör kan t.ex. ladda upp en lista över sina befintliga kunder för att förstå hur den samlade marknadsföringskampanjen fungerar, eller aggregerad statistik över konverteringshändelser på Amazon, som att visa en produktinformationssida, lägga en produkt i en kundvagn eller köpa en produkt.
+Integrationen med [!DNL Amazon Marketing Cloud] (AMC) gör att [!DNL Amazon Ads] annonsörer kan skicka CDP-segment från [!DNL Adobe Experience Platform]-formulär till AMC. Annonsörer kan sedan ansluta sig till CDP-indata med [!DNL Amazon Ads]-signaler och utföra anpassade analyser på ämnen som mediapåverkan, målgruppssegment och kundresor i sekretessformat. En annonsör kan t.ex. ladda upp en lista över sina befintliga kunder för att förstå hur den samlade marknadsföringskampanjen fungerar, eller aggregerad statistik över konverteringshändelser på Amazon, som att visa en produktinformationssida, lägga en produkt i en kundvagn eller köpa en produkt.
 
 ### Advertising-optimering {#advertising-optimization}
 
@@ -44,7 +44,7 @@ Tack vare den här integreringen med [!DNL Amazon Marketing Cloud] (AMC) kan ann
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill använda [!DNL Amazon Ads]-anslutningen med Adobe Experience Platform måste användarna först ha tillgång till ett Amazon DSP Advertiser-konto eller en [!DNL Amazon Marketing Cloud]-instans. Om du vill etablera de här instanserna går du till följande sida på webbplatsen [!DNL Amazon Ads]:
+Om du vill använda anslutningen [!DNL Amazon Ads] med [!DNL Adobe Experience Platform] måste användarna först ha tillgång till ett Amazon DSP Advertiser-konto eller en [!DNL Amazon Marketing Cloud]-instans. Om du vill etablera de här instanserna går du till följande sida på webbplatsen [!DNL Amazon Ads]:
 
 * [Kom igång med Amazon DSP](https://advertising.amazon.com/solutions/products/amazon-dsp)
 * [Kom igång med Amazon Marketing Cloud](https://advertising.amazon.com/solutions/products/amazon-marketing-cloud)
@@ -55,8 +55,8 @@ Anslutningen *[!DNL Amazon Ads]* stöder aktivering av identiteter som beskrivs 
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av [!DNL Adobe Experience Platform]. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hash-adresser stöds av [!DNL Adobe Experience Platform]. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | `firstName` | Användarens förnamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
 | `lastName` | Användarens efternamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
 | `street` | Användarens gatuminivå | Endast SHA256-hash-indata stöds. Normalisera före hashning. Aktivera **inte**-omvandling på Adobe-sidan. |
@@ -74,7 +74,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -112,7 +112,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
-Du dirigeras till [!DNL Amazon Ads]-anslutningsgränssnittet där du först väljer de annonserarkonton som du vill ansluta till. När du ansluter omdirigeras du tillbaka till Adobe Experience Platform med en ny anslutning som medföljer ID:t för det Advertiser-konto du har valt. Välj lämpligt Advertiser-konto på målkonfigurationsskärmen för att fortsätta.
+Du dirigeras till [!DNL Amazon Ads]-anslutningsgränssnittet där du först väljer de annonserarkonton som du vill ansluta till. Vid anslutningen omdirigeras du tillbaka till [!DNL Adobe Experience Platform] med en ny anslutning, som tillhandahålls med ID:t för det Advertiser-konto som du har valt. Välj lämpligt Advertiser-konto på målkonfigurationsskärmen för att fortsätta.
 
 ### Fyll i målinformation {#destination-details}
 

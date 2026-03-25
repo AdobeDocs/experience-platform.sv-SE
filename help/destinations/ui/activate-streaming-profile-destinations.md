@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '759'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform för att direktuppspela profilbaserade mål (kallas även [företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations)).
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i [!DNL Adobe Experience Platform] för att direktuppspela profilbaserade mål (kallas även [företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations)).
 
 Denna artikel gäller följande tre destinationer:
 

@@ -4,9 +4,9 @@ title: Ta bort mål
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I Adobe Experience Platform användargränssnitt kan du ta bort befintliga anslutningar till mål.
+I användargränssnittet [!DNL Adobe Experience Platform] kan du ta bort befintliga anslutningar till mål.
 
 Om du tar bort ett mål tas alla befintliga dataflöden till det målet bort. Alla målgrupper som aktiveras för de mål som du tar bort mappas inte innan dataflödet tas bort.
 

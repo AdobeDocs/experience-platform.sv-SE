@@ -4,9 +4,9 @@ description: Pinterest har ersatt v4-annonserings-API:t som används av Pinteres
 hide: true
 hidefromtoc: true
 exl-id: c965235c-4208-4c28-9ac5-eb4c0061515d
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '507'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Vad händer? {#what-is-happening}
 
-Pinterest har ersatt v4-annonserings-API:t som användes av [Pinterest-målet](/help/destinations/catalog/advertising/pinterest.md) i Real-Time CDP. Adobe har uppdaterat målet så att det använder API:t [v5 för annonsering](https://developers.pinterest.com/docs/getting-started/migration/). Läs den här sidan om du vill veta mer om vad du gör för att smidigt gå över till det nya API:t utan att störa era Pinterest-kampanjer.
+Pinterest har ersatt v4-annonserings-API:t som användes av [Pinterest-målet](/help/destinations/catalog/advertising/pinterest.md) i [!DNL Real-Time CDP]. Adobe har uppdaterat målet så att det använder API:t [v5 för annonsering](https://developers.pinterest.com/docs/getting-started/migration/). Läs den här sidan om du vill veta mer om vad du gör för att smidigt gå över till det nya API:t utan att störa era Pinterest-kampanjer.
 
 ## Varför meddelas jag? {#why-notified}
 
@@ -31,7 +31,7 @@ Adobe har släppt ett nytt Pinterest-målkort som utnyttjar Pinterest API v5 och
 
 ## Behöver jag göra något för att mina aktiverade målgrupper ska fungera? {#action-required}
 
-Ja, före 18 januari 2024 måste du autentisera till det nya Pinterest-målet med ditt Pinterest-annonskonto i Real-Time CDP. Se de detaljerade instruktionerna nedan.
+Ja, före 18 januari 2024 måste du autentisera till det nya Pinterest-målet med ditt Pinterest-annonskonto i [!DNL Real-Time CDP]. Se de detaljerade instruktionerna nedan.
 
 ### Återautentisera till Pinterest {#reauthenticate}
 
@@ -87,7 +87,7 @@ Ja, se nedan:
 
 -->
 
-**Efter 18 januari 2024**: <span class="preview">Pinterest har inaktiverat åtkomst till API:t för V4-annonsering. Alla Real-Time CDP-kunder som inte har uppgraderat till den nya destinationen kommer nu att upptäcka att dataflödena till Pinterest-destinationen inte fungerar. [Återautentisera till Pinterest](#reauthenticate) och [aktivera dataflödena](#disable-old-enable-new-flows) till det uppgraderade målet om du vill återuppta dina kampanjer till Pinterest.</span>
+**Efter 18 januari 2024**: <span class="preview">Pinterest har inaktiverat åtkomst till API:t för V4-annonsering. Alla [!DNL Real-Time CDP]-kunder som inte har uppgraderat till det nya målet kommer nu att få problem med sina dataflöden till Pinterest-målet. [Återautentisera till Pinterest](#reauthenticate) och [aktivera dataflödena](#disable-old-enable-new-flows) till det uppgraderade målet om du vill återuppta dina kampanjer till Pinterest.</span>
 
 <!--
 

@@ -3,9 +3,9 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1376'
+source-wordcount: '1359'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Använd den här målkopplingen för att skicka profildata till [!DNL The Trade Desk]. Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
+Använd den här målkopplingen för att skicka profildata till [!DNL The Trade Desk]. Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan [!DNL Adobe Experience Platform] och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
 
 [!DNL The Trade Desk] är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 
@@ -28,7 +28,7 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 
 [!DNL The Trade Desk] stöder aktivering av målgrupper baserat på de identiteter som visas i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
-Nedan visas de identiteter som stöds av målet [!DNL The Trade Desk]. Dessa identiteter kan användas för att aktivera målgrupper för [!DNL The Trade Desk].
+Nedan visas de identiteter som stöds av målet [!DNL The Trade Desk]. Använd de här identiteterna för att aktivera målgrupper för [!DNL The Trade Desk].
 
 Alla identiteter i tabellen nedan är förkonfigurerade och automatiskt mappade under aktiveringen. Du behöver inte konfigurera dessa mappningar manuellt i aktiveringsarbetsflödet.
 
@@ -36,7 +36,7 @@ Alla identiteter i tabellen nedan är förkonfigurerade och automatiskt mappade 
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | Aktiveras när det finns ett GAID i profilen. |
 | IDFA | Apple ID för annonsörer | Aktiveras när en IDFA finns i profilen. |
-| ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Läs följande dokument på [ECID](/help/identity-service/features/ecid.md) om du vill ha mer information. |
+| ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnområde kan också refereras till av följande alias: Adobe Marketing Cloud ID, [!DNL Adobe Experience Cloud] ID, [!DNL Adobe Experience Platform] ID. Läs följande dokument på [ECID](/help/identity-service/features/ecid.md) om du vill ha mer information. |
 | [!DNL Tradedesk] | [!DNL TDID] på plattformen [!DNL The Trade Desk] | Aktiveras när en profil har ett ECID och en ECID-to-Trade Desk ID-mappning finns i Experience Platform. |
 
 {style="table-layout:auto"}
@@ -48,7 +48,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -61,7 +61,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,7 @@ Förutsättningar beror på vilka identitetstyper du tänker använda för målg
 
 **För cookie-baserad målinriktning på[!DNL The Trade Desk]** kontrollerar du att det finns en mappning mellan ECID och [!DNL Trade Desk ID]. Gör så genom att följa stegen nedan:
 
-1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL The Trade Desk ID]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/sv/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
+1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL The Trade Desk ID]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
    * Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs dina befintliga ID-synkroniseringar automatiskt till Experience Platform.
 
 2. **Instrumentera dina webbsidor**: Implementera kod på dina webbsidor för att skapa mappningar mellan [!DNL The Trade Desk ID] och Adobe ECID. På så sätt kan Experience Platform koppla Trade Desk-ID:n till kundprofiler.
@@ -139,7 +139,7 @@ När du kartlägger målgrupper rekommenderar Adobe att du använder Experience 
 >id="platform_destinations_required_mappings_ttd"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat dessa fyra mappningsuppsättningar åt dig. När du aktiverar data till The Trade Desk behöver de profiler som är kvalificerade för de aktiverade målgrupperna inte nödvändigtvis ha alla fyra identiteterna i profilerna, eftersom detta mål fungerar med någon av de målidentiteter som visas här. <br> För cookie-baserad målinriktning baserat på Trade Desk ID behöver du ett ECID i profilen och en ID-synkroniseringsmappning mellan Trade Desk ID och ECID."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 Följande identitetsmappningar är **förkonfigurerade och fyllda i automatiskt** för dig i arbetsflödet för målgruppsaktivering:
 

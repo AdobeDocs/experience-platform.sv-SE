@@ -3,14 +3,14 @@ title: Exportera arrayer, kartor och objekt från Real-Time CDP
 type: Tutorial
 description: Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till molnlagringsmål.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1062'
+source-wordcount: '1056'
 ht-degree: 0%
 
 ---
 
-# Exportera arrayer, kartor och objekt från Real-Time CDP {#export-arrays-cloud-storage}
+# Exportera arrayer, kartor och objekt från [!DNL Real-Time CDP] {#export-arrays-cloud-storage}
 
 >[!AVAILABILITY]
 >
@@ -19,12 +19,12 @@ ht-degree: 0%
 >Dessutom kan du exportera mappningsfält till följande mål: [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md).
 
 
-Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md). Dessutom kan du exportera mappningsfält till [företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations) och begränsade [kantanpassningsmål](/help/destinations/destination-types.md#edge-personalization-destinations). Läs det här dokumentet om du vill veta mer om exportarbetsflödet, vilka användningsfall som den här funktionen har aktiverat och kända begränsningar. Se tabellen nedan för att förstå vilka funktioner som är tillgängliga per måltyp.
+Lär dig hur du exporterar arrayer, kartor och objekt från [!DNL Real-Time CDP] till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md). Dessutom kan du exportera mappningsfält till [företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations) och begränsade [kantanpassningsmål](/help/destinations/destination-types.md#edge-personalization-destinations). Läs det här dokumentet om du vill veta mer om exportarbetsflödet, vilka användningsfall som den här funktionen har aktiverat och kända begränsningar. Se tabellen nedan för att förstå vilka funktioner som är tillgängliga per måltyp.
 
 | Typ av mål | Möjlighet att exportera arrayer, kartor och andra anpassade objekt |
 |---|---|
 | Adobe-skapade molnlagringsmål (Amazon S3, Azure Blob, Azure Data Lake Storage Gen2, Data Landing Zone, Google Cloud Storage, SFTP) | Ja, med Aktivera export av arrayer, kartor och objekt aktiverat när du konfigurerar en målanslutning. |
-| Filbaserade mål för e-postmarknadsföring (Adobe Campaign, Oracle Eloqua, Oracle Responsys, Salesforce Marketing Cloud) | Nej |
+| Filbaserade mål för e-postmarknadsföring ([!DNL Adobe Campaign], Oracle Eloqua, Oracle Responsys, Salesforce Marketing Cloud) | Nej |
 | Befintliga anpassade partnerbyggda molnlagringsmål (anpassade filbaserade mål byggda via Destination SDK) | Nej |
 | Företagsmål (Amazon Kinesis, Azure Event Hubs, HTTP API) | Delvis. Du kan markera och exportera mappningsobjekt i mappningssteget i aktiveringsarbetsflödet. |
 | Direktuppspelningsmål (t.ex. Facebook, Braze, Google Customer Match) | Nej |
@@ -48,7 +48,7 @@ I Experience Platform kan du använda [XDM-scheman](/help/xdm/home.md) för att 
 
 Andra fälttyper i Experience Platform är arrayfält. Läs mer om att [hantera matrisfält i Experience Platform-gränssnittet](/help/xdm/ui/fields/array.md). Nu kan du exportera arrayobjekt som exemplet nedan.
 
-```
+```js
 organizations = [{
   id: 123,
   orgName: "Acme Inc",

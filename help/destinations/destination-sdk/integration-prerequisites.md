@@ -2,9 +2,9 @@
 description: För att kunna använda Destination SDK måste partnerföretaget uppfylla de krav som anges i det här dokumentet.
 title: Krav för integrering
 exl-id: 031af9f1-ce18-4056-bd53-199ce8b56be5
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '199'
+source-wordcount: '196'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Om du vill använda Destination SDK måste du uppfylla de tekniska kraven och vi
 
 ## Tekniska krav/API-krav för direktuppspelningsmål {#streaming-prerequisites}
 
-1. Du har en REST API-slutpunkt som Adobe Experience Platform kan använda för att leverera följande typer av data till:
+1. Du har en REST API-slutpunkt för [!DNL Adobe Experience Platform] som kan leverera följande typer av data till:
    * information om målgruppsmedlemskap,
    * Profilidentitetsinformation.
    * (Valfritt) Ytterligare attribut för profilberikning.
@@ -24,10 +24,10 @@ Om du vill använda Destination SDK måste du uppfylla de tekniska kraven och vi
 
 ## Tekniska krav för gruppmål {#batch-prerequisites}
 
-1. Du har en målplats på [!DNL Amazon S3], [!DNL Azure Blob], [!DNL Azure Data Lake Storage], [!DNL SFTP], [!DNL Google Cloud] eller en privat [!DNL Data Landing Zone], där du kan ta emot filer som exporterats utanför Experience Platform.
+1. Du har en målplats på [!DNL Amazon S3], [!DNL Azure Blob], [!DNL Azure Data Lake Storage], [!DNL SFTP], [!DNL Google Cloud] eller en privat [!DNL Data Landing Zone], där du kan ta emot filer som exporterats från Experience Platform.
 2. Målplattformen kan importera filer i det format som konfigurerats via [filformateringsalternativen](functionality/destination-server/file-formatting.md) i Destination SDK för gruppmål.
 3. (Valfritt) Du har en målgrupp som skapar/hämtar/uppdaterar/tar bort ([!DNL CRUD]) API eller API-slutpunkt för programmatisk metadatahantering.
 
 ## Partnerskapskrav {#partnership-prerequisites}
 
-Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som vill använda Destination SDK läser du Partnerskapskraven för ISV och SI i [åtkomstavsnittet](overview.md#get-access).
+Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som vill använda Destination SDK, läser du Partnerskapskraven för ISV och SI i [åtkomstavsnittet](overview.md#get-access).

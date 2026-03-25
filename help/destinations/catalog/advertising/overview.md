@@ -3,9 +3,9 @@ keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (till exempel DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '286'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Koppla Adobe Experience Platform till reklamplattformar som DSP (Demand-Side Plattforms), SSP (Supply-Side Plattforms) och nätverk för att dela kända och pseudonyma målgrupper med dessa plattformar.
+Anslut [!DNL Adobe Experience Platform] till annonsnätverk som efterfrågeplattformar (DSP), plattformar på utbudssidan (SSP) och nätverk för att dela kända och pseudonyma målgrupper med dessa plattformar.
 
 När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till målplattformen, där de mappas till ett ID som är känt av målplattformen.
 

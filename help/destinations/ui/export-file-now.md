@@ -3,9 +3,9 @@ title: Exportera filer on demand till gruppmål med hjälp av Experience Platfor
 type: Tutorial
 description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av Experience Platform användargränssnitt.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '804'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 I den här artikeln beskrivs hur du använder användargränssnittet i Experience Platform för att exportera filer på begäran till batchmål som [molnlagring](/help/destinations/catalog/cloud-storage/overview.md) och [e-postmarknadsföring](/help/destinations/catalog/email-marketing/overview.md) .
 
-Kontrollen **[!UICONTROL Export file now]** gör att du kan exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen.
+Med kontrollen **[!UICONTROL Export file now]** kan du exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen.
 
 Filexporten utlöses omedelbart och data från den senaste målgruppsutvärderingsögonblicksbilden används endast. Det omfattar inte profil- eller identitetsändringar som inträffar efter att en ögonblicksbild har skapats. I den schemalagda exporten däremot ingår både ögonblicksbildsdata och inkrementella ändringar mellan det att ögonblicksbilden skapas och exporttiden.
 

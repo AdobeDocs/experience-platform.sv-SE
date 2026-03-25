@@ -2,9 +2,9 @@
 description: På den här sidan finns all information du behöver för att skicka in en produkterad destination för granskning när du har skrivit den med Destination SDK.
 title: Skicka en produkterad destination för granskning
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1045'
+source-wordcount: '1039'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 Innan destinationen kan publiceras till [Experience Platform målkatalog](/help/destinations/catalog/overview.md) måste du förse Adobe med viss information om destinationen och testningen du utförde för att säkerställa att användarna får bästa möjliga upplevelse när de aktiverar data till din plattform.
 
-På den här sidan visas all information du behöver ange när du skickar eller uppdaterar ett mål som du har skapat med Adobe Experience Platform Destination SDK. Om du vill skicka ett mål i Adobe Experience Platform skickar du ett e-postmeddelande till <aepdestsdk@adobe.com> som innehåller:
+På den här sidan visas all information du behöver ange när du skickar eller uppdaterar ett mål som du har skapat med [!DNL Adobe Experience Platform] Destination SDK. Om du vill skicka ett mål i [!DNL Adobe Experience Platform] skickar du ett e-postmeddelande till <aepdestsdk@adobe.com> som innehåller:
 
 * En beskrivning av de användningsfall som målet löser. Detta är endast nödvändigt om du skickar in en ny målkonfiguration.
 * En beskrivning av anledningen till att du skickat in destinationen. Detta är endast nödvändigt om du uppdaterar en befintlig målkonfiguration.

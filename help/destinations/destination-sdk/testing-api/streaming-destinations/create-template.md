@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att testa omformningsmallen för målmeddelanden för direktuppspelning innan du publicerar målet.
 title: Skapa och testa en meddelandeomformningsmall
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '937'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Som en del av Destination SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. Den här sidan beskriver hur du skapar och testar en meddelandeomformningsmall. Mer information om hur du testar målet finns i [Testa målkonfigurationen](streaming-destination-testing-overview.md).
 
-Om du vill **skapa och testa en meddelandeomvandlingsmall** mellan målschemat i Adobe Experience Platform och det meddelandeformat som stöds av ditt mål använder du *mallutvecklingsverktyget* som beskrivs nedan.  Läs mer om dataomvandlingen mellan käll- och målschemat i [meddelandeformatdokumentet](../../functionality/destination-server/message-format.md#using-templating).
+Om du vill **skapa och testa en meddelandeomformningsmall** mellan målschemat i [!DNL Adobe Experience Platform] och det meddelandeformat som stöds av ditt mål använder du *mallutvecklingsverktyget* som beskrivs nedan.  Läs mer om dataomvandlingen mellan käll- och målschemat i [meddelandeformatdokumentet](../../functionality/destination-server/message-format.md#using-templating).
 
 Nedan visas hur du skapar och testar en meddelandetransformeringsmall passar in i [målkonfigurationsarbetsflödet](../../guides/configure-destination-instructions.md) i Destination SDK:
 
@@ -24,11 +24,11 @@ Nedan visas hur du skapar och testar en meddelandetransformeringsmall passar in 
 
 ## Varför du måste skapa och testa en meddelandeomformningsmall {#why-create-message-transformation-template}
 
-Ett av de första stegen i att skapa destinationen i Destination SDK är att tänka på hur dataformatet för målgruppsmedlemskap, identiteter och profilattribut ändras när de exporteras från Adobe Experience Platform till destinationen. Hitta information om omvandlingen mellan Adobe XDM-schemat och målschemat i [meddelandeformatdokumentet](../../functionality/destination-server/message-format.md#using-templating).
+Ett av de första stegen i att skapa ditt mål i Destination SDK är att tänka på hur dataformatet för målgruppsmedlemskap, identiteter och profilattribut ändras när de exporteras från [!DNL Adobe Experience Platform] till ditt mål. Hitta information om omvandlingen mellan Adobe XDM-schemat och målschemat i [meddelandeformatdokumentet](../../functionality/destination-server/message-format.md#using-templating).
 
 För att omvandlingen ska lyckas måste du skapa en omformningsmall som liknar det här exemplet: [Skapa en mall som skickar segment, identiteter och profilattribut](../../functionality/destination-server/message-format.md#segments-identities-attributes).
 
-Adobe har ett mallverktyg som gör att du kan skapa och testa meddelandemallen som omformar data från Adobe XDM-formatet till det format som stöds av målet. Verktyget har två API-slutpunkter som du kan använda:
+Adobe har ett mallverktyg som du kan använda för att skapa och testa meddelandemallen som omformar data från Adobe XDM-formatet till det format som kan användas i ditt mål. Verktyget har två API-slutpunkter som du kan använda:
 
 * Använd *exempelmallens API* för att hämta en exempelmall.
 * Använd *återgivningsmallens API* för att återge exempelmallen så att du kan jämföra resultatet med målets förväntade dataformat. När du har jämfört exporterade data med det dataformat som förväntas av målet kan du redigera mallen. På så sätt matchar de exporterade data som du genererar det dataformat som förväntas av målet.
@@ -158,12 +158,12 @@ Du kan använda ett onlineverktyg för teckenigenkänning. I demonstrationen ova
 
 ## Återge mall-API {#render-template-api}
 
-När du har skapat en meddelandeomformningsmall med [exempelmallens API](create-template.md#sample-template-api) kan du [återge mallen](render-template-api.md) och generera exporterade data baserat på den. På så sätt kan du verifiera om de profiler som Adobe Experience Platform skulle exportera till ditt mål matchar målets förväntade format.
+När du har skapat en meddelandeomformningsmall med [exempelmallens API](create-template.md#sample-template-api) kan du [återge mallen](render-template-api.md) och generera exporterade data baserat på den. Detta gör att du kan verifiera om de profiler som [!DNL Adobe Experience Platform] skulle exportera till ditt mål matchar målets förväntade format.
 
 Se API-referensen för exempel på anrop som du kan göra:
 
-* [Återge en mall utan profiler som skickats i brödtexten](render-template-api.md#multiple-profiles-no-body)
-* [Återge en mall med profiler som skickats i brödtexten](render-template-api.md#multiple-profiles-with-body)
+* [Återge en mall utan profiler som skickats i brödtexten](render-template-api.md#best-effort)
+* [Återge en mall med profiler som skickats i brödtexten](render-template-api.md#configurable-aggregation)
 
 Redigera mallen och anropa återgivningsmallens API-slutpunkt tills de exporterade profilerna matchar målets förväntade dataformat.
 

@@ -2,16 +2,16 @@
 description: Lär dig hur du konfigurerar målserverspecifikationer i Adobe Experience Platform Destination SDK via slutpunkten "/authoring/destination-servers".
 title: Serverspecifikationer för mål som skapats med Destination SDK
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '2775'
+source-wordcount: '2748'
 ht-degree: 0%
 
 ---
 
 # Serverspecifikationer för mål som skapats med Destination SDK
 
-Målserverns specifikationer definierar vilken typ av målplattform som ska ta emot data från Adobe Experience Platform och kommunikationsparametrarna mellan Experience Platform och ditt mål. Till exempel:
+Målserverns specifikationer definierar vilken typ av målplattform som ska ta emot data från [!DNL Adobe Experience Platform] och kommunikationsparametrarna mellan Experience Platform och ditt mål. Till exempel:
 
 * En [målserverspecifikation för direktuppspelning](#streaming-example) definierar HTTP-serverslutpunkten som tar emot HTTP-meddelanden från Experience Platform. Om du vill lära dig att konfigurera hur HTTP-anrop till slutpunkten formateras läser du sidan [Mallating specs](templating-specs.md) .
 * En [Amazon S3](#s3-example)-målserverspecifikation definierar namnet på [!DNL S3]-bucket och sökvägen dit Experience Platform ska exportera filerna.
@@ -19,7 +19,7 @@ Målserverns specifikationer definierar vilken typ av målplattform som ska ta e
 
 Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
-* [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-server-template-configuratiom)
+* [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-server-template-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration)
 
 Du kan konfigurera målserverspecifikationerna via slutpunkten `/authoring/destination-servers`. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
@@ -65,7 +65,7 @@ Både hårdkodade och mallbaserade fält kan användas i Destination SDK, beroen
 
 När användare [ansluter till ditt mål](../../../ui/connect-destination.md) i Experience Platform-gränssnittet kanske du vill hantera målanslutningsprocessen utan indata.
 
-Det gör du genom att hårdkoda anslutningsparametrarna för målplattformen i serverspecifikationen. När du använder hårdkodade parametervärden i målserverkonfigurationen hanteras anslutningen mellan Adobe Experience Platform och målplattformen utan indata från användaren.
+Det gör du genom att hårdkoda anslutningsparametrarna för målplattformen i serverspecifikationen. När du använder hårdkodade parametervärden i målserverkonfigurationen hanteras anslutningen mellan [!DNL Adobe Experience Platform] och målplattformen utan indata från användaren.
 
 I exemplet nedan skapar en partner en Data Landing Zone-målserver med fältet `path.value` som hårdkodas.
 
@@ -130,7 +130,7 @@ Detta innebär att användare som går igenom självstudiekursen [för målanslu
 
 ## Målserver för realtid (direktuppspelning) {#streaming-example}
 
-Med den här målservertypen kan du exportera data från Adobe Experience Platform till målet via HTTP-begäranden. Serverkonfigurationen innehåller information om servern som tar emot meddelandena (servern på din sida).
+Med den här målservertypen kan du exportera data från [!DNL Adobe Experience Platform] till målet via HTTP-begäranden. Serverkonfigurationen innehåller information om servern som tar emot meddelandena (servern på din sida).
 
 Den här processen levererar användardata som en serie HTTP-meddelanden till målplattformen. Parametrarna nedan utgör mallen för specifikationer för HTTP-servern.
 
@@ -160,7 +160,7 @@ I exemplet nedan visas ett exempel på en målserverkonfiguration för ett mål 
 
 ## [!DNL Amazon S3] målserver {#s3-example}
 
-Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till din Amazon S3-lagring.
+Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till din Amazon S3-lagring.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett Amazon S3-mål.
 
@@ -194,7 +194,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett Amazon 
 
 ## [!DNL SFTP] målserver {#sftp-example}
 
-Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till lagringsservern [!DNL SFTP].
+Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till [!DNL SFTP]-lagringsservern.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-mål.
 
@@ -232,7 +232,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-m�
 
 ## [!DNL Azure Data Lake Storage] ([!DNL ADLS]) målserver {#adls-example}
 
-Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till ditt [!DNL Azure Data Lake Storage]-konto.
+Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till ditt [!DNL Azure Data Lake Storage]-konto.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Azure Data Lake Storage]-mål.
 
@@ -260,7 +260,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL A
 
 ## [!DNL Azure Blob Storage] målserver {#blob-example}
 
-Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till [!DNL Azure Blob Storage]-behållaren.
+Med den här målservern kan du exportera filer som innehåller [!DNL Adobe Experience Platform] data till [!DNL Azure Blob Storage]-behållaren.
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Azure Blob Storage]-mål.
 

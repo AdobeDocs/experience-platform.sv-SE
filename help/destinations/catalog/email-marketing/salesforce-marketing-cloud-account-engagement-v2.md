@@ -5,18 +5,18 @@ badge: label="Alpha" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: cd792eb0-9e90-49e4-8c50-c65126e355c2
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1912'
+source-wordcount: '1878'
 ht-degree: 1%
 
 ---
 
 # [!DNL (V2) Salesforce Marketing Cloud Account Engagement]-anslutning
 
-Med målet [[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) (tidigare kallat [!DNL Pardot]) kan du exportera dina Adobe Experience Platform-profildata till Salesforce automatiseringsplattform för B2B-marknadsföring.
+Med målet [[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) (tidigare kallat [!DNL Pardot]) kan du exportera dina [!DNL Adobe Experience Platform]-profildata till Salesforce automatiseringsplattform för B2B-marknadsföring.
 
-Den här integreringen möjliggör smidig datasynkronisering mellan kundprofiler i Adobe Experience Platform och marknadsföringskampanjer i [!DNL Salesforce Marketing Cloud Account Engagement].
+Den här integreringen möjliggör sömlös datasynkronisering mellan era kundprofiler i [!DNL Adobe Experience Platform] och era marknadsföringskampanjer i [!DNL Salesforce Marketing Cloud Account Engagement].
 
 Det här målet använder [[!DNL Salesforce Import API v5]](https://developer.salesforce.com/docs/marketing/pardot/guide/import-v5.html) för att bearbeta batchdataexporter på ett effektivt sätt.
 
@@ -30,19 +30,19 @@ Det här målet använder [[!DNL Salesforce Import API v5]](https://developer.sa
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL (V2) Marketing Cloud Account Engagement] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL (V2) Marketing Cloud Account Engagement] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Leadhantering inom B2B {#use-case-lead-management}
 
-Synkronisera lead-data från Adobe Experience Platform till [!DNL Salesforce Marketing Cloud Account Engagement] för omfattande leadorientering och poängsättning. Marknadsföringsteamet kan skapa omfattande målgruppsprofiler i Experience Platform och exportera dem till [!DNL Salesforce Marketing Cloud Account Engagement] för automatiserade B2B-marknadsföringskampanjer.
+Synkronisera lead-data från [!DNL Adobe Experience Platform] till [!DNL Salesforce Marketing Cloud Account Engagement] för omfattande lead-moderering och poängsättning. Marknadsföringsteamet kan skapa omfattande målgruppsprofiler i Experience Platform och exportera dem till [!DNL Salesforce Marketing Cloud Account Engagement] för automatiserade B2B-marknadsföringskampanjer.
 
 ### Campaign-automatisering {#use-case-campaign-automation}
 
-Du kan aktivera marknadsföringskampanjer i [!DNL Salesforce Marketing Cloud Account Engagement] genom att använda målgrupper som du har definierat i Adobe Experience Platform. När du har exporterat dina målgrupper till [!DNL Salesforce] kan du använda dem för att köra e-postkampanjer och hantera dina leads via näring, poängsättning och kampanjsegmentering.
+Du kan aktivera marknadsföringskampanjer i [!DNL Salesforce Marketing Cloud Account Engagement] genom att använda målgrupper som du definierar i [!DNL Adobe Experience Platform]. När du har exporterat dina målgrupper till [!DNL Salesforce] kan du använda dem för att köra e-postkampanjer och hantera dina leads via näring, poängsättning och kampanjsegmentering.
 
 ### Profilberikning {#use-case-profile-enrichment}
 
-Förbättra dina profiler för [!DNL Salesforce Marketing Cloud Account Engagement] potentiella kunder med omfattande kunddata från Adobe Experience Platform. Exportera omfattande profilattribut för att skapa mer detaljerade poster för potentiella kunder i [!DNL Salesforce Marketing Cloud Account Engagement] för förbättrad målinriktning och personalisering.
+Förbättra dina profiler för [!DNL Salesforce Marketing Cloud Account Engagement] potentiella kunder med omfattande kunddata från [!DNL Adobe Experience Platform]. Exportera omfattande profilattribut för att skapa mer detaljerade poster för potentiella kunder i [!DNL Salesforce Marketing Cloud Account Engagement] för förbättrad målinriktning och personalisering.
 
 ## Förutsättningar {#prerequisites}
 
@@ -74,7 +74,7 @@ Skriv ned objekten nedan innan du autentiserar till målet [!DNL (V2) Marketing 
 
 [!DNL (V2) Marketing Cloud Account Engagement] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
-Om en matchning hittas med någon av dessa identifierare uppdateras den befintliga posten för kontoengagemang med data från Adobe Experience Platform. Om ingen matchning hittas skapas en ny post för potentiell kund i Kontoengagemang.
+Om en matchning hittas med någon av dessa identifierare kommer den befintliga posten för kontoengagemang att uppdateras med data från [!DNL Adobe Experience Platform]. Om ingen matchning hittas skapas en ny post för potentiell kund i Kontoengagemang.
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
@@ -91,7 +91,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Ja | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -104,7 +104,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
@@ -138,7 +138,7 @@ Du omdirigeras till inloggningssidan för [!DNL Salesforce]. Ange autentiserings
 
 ![Salesforce inloggningssida](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/salesforce-auth.png "Salesforce inloggningssida.")
 
-Välj sedan **[!UICONTROL Allow]** för att ge **Adobe Experience Platform**-appen behörighet att komma åt ditt [!DNL Salesforce Marketing Cloud Account Engagement]-konto. *Du behöver bara göra detta en gång*.
+Välj sedan **[!UICONTROL Allow]** för att ge **[!DNL Adobe Experience Platform]**-appen behörighet att komma åt ditt [!DNL Salesforce Marketing Cloud Account Engagement]-konto. *Du behöver bara göra detta en gång*.
 
 ![Bekräftelsepopup för skärmavbild i Salesforce App för att ge Experience Platform-appen åtkomst till Marketing Cloud Account Engagement.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement-v2/allow-app.png)
 
@@ -171,7 +171,7 @@ Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinat
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL (V2) Marketing Cloud Account Engagement] måste du mappa XDM-schemafälten (Experience Data Model) till motsvarande fält i målet.
+Om du vill skicka målgruppsdata från [!DNL Adobe Experience Platform] till målet [!DNL (V2) Marketing Cloud Account Engagement] måste du mappa XDM-schemafälten (Experience Data Model) till motsvarande fält i målet.
 
 Se [Salesforce Prospect API v5-dokumentationen](https://developer.salesforce.com/docs/marketing/pardot/guide/prospect-v5.html) för en fullständig lista över fält som stöds. Observera att [anpassade fält](https://developer.salesforce.com/docs/marketing/pardot/guide/custom-field-v5.html) inte stöds i Alpha-versionen.
 

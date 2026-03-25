@@ -3,16 +3,16 @@ keywords: Experience Platform;startsida;populära ämnen; larm;destinationer
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på aviseringar om destinationer i sitt sammanhang
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '931'
+source-wordcount: '917'
 ht-degree: 3%
 
 ---
 
 # Prenumerera på aviseringar om destinationer i sitt sammanhang
 
-Med Adobe Experience Platform kan du prenumerera på händelsebaserade aviseringar om Adobe Experience Platform-aktiviteter. Varningar minskar eller eliminerar behovet av att avfråga [[!DNL Observability Insights] API](../../observability/api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel har uppstått.
+Med [!DNL Adobe Experience Platform] kan du prenumerera på händelsebaserade aviseringar om [!DNL Adobe Experience Platform] aktiviteter. Varningar minskar eller eliminerar behovet av att avfråga [[!DNL Observability Insights] API](../../observability/api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel har uppstått.
 
 Du kan prenumerera på varningar när du skapar ett dataflöde för att få varningsmeddelanden om status, om det lyckades eller om det inte gick att köra ditt flöde.
 
@@ -20,9 +20,9 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på meddeland
 
 ## Komma igång {#getting-started}
 
-Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Det här dokumentet kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
-* [Destinationer](../home.md): Förbyggda integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+* [Destinationer](../home.md): Förbyggda integreringar med målplattformar som möjliggör smidig aktivering av data från [!DNL Adobe Experience Platform]. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 * [Observabilitet](../../observability/home.md): [!DNL Observability Insights] gör att du kan övervaka Experience Platform-aktiviteter med hjälp av statistik och händelsemeddelanden.
    * [Varningar](../../observability/alerts/overview.md): När en viss uppsättning villkor har nåtts i Experience Platform-åtgärderna (t.ex. ett eventuellt problem när systemet överskrider ett tröskelvärde) kan Experience Platform skicka varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
 

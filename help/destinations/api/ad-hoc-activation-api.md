@@ -5,9 +5,9 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1671'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t &#x200B;](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
+>När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t ](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
 >
 >Mer information finns i [Kör ad hoc-aktiveringsjobbet](#activation-job) nedan i den här självstudien.
 
@@ -42,7 +42,7 @@ Ett hotell förväntar sig ett infallsväder de kommande dagarna och teamet vill
 
 ### Integrationstestning {#integration-testing}
 
-IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att exportera målgrupper on-demand, så att de kan testa sin anpassade integrering med Adobe Experience Platform och se till att allt fungerar som det ska.
+IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att exportera målgrupper on-demand, så att de kan testa sin anpassade integrering med [!DNL Adobe Experience Platform] och se till att allt fungerar som det ska.
 
 ## Skyddsräcken {#guardrails}
 
@@ -54,14 +54,14 @@ Tänk på följande skyddsutkast när du använder API:t för ad hoc-aktivering.
 
 ## Segmentering {#segmentation-considerations}
 
-Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e timme. API:t för ad hoc-aktivering körs baserat på de senaste segmenteringsresultaten.
+[!DNL Adobe Experience Platform] kör schemalagda segmenteringsjobb en gång var 24:e timme. API:t för ad hoc-aktivering körs baserat på de senaste segmenteringsresultaten.
 
 ## Steg 1: Förutsättningar {#prerequisites}
 
-Innan du kan ringa anrop till Adobe Experience Platform API:er måste du kontrollera att du uppfyller följande krav:
+Innan du kan ringa anrop till [!DNL Adobe Experience Platform] API:er måste du kontrollera att du uppfyller följande krav:
 
-* Du har ett organisationskonto med tillgång till Adobe Experience Platform.
-* Ditt Experience Platform-konto har rollerna `developer` och `user` aktiverade för Adobe Experience Platform API-produktprofilen. Kontakta din [Admin Console](../../access-control/home.md)-administratör om du vill aktivera de här rollerna för ditt konto.
+* Du har ett organisationskonto med åtkomst till [!DNL Adobe Experience Platform].
+* Ditt Experience Platform-konto har rollerna `developer` och `user` aktiverade för API-produktprofilen [!DNL Adobe Experience Platform]. Kontakta din [Admin Console](../../access-control/home.md)-administratör om du vill aktivera de här rollerna för ditt konto.
 * Du har en Adobe ID. Om du inte har någon Adobe ID går du till [Adobe Developer Console](https://developer.adobe.com/console) och skapar ett nytt konto.
 
 ## Steg 2: Samla in inloggningsuppgifter {#credentials}
@@ -107,7 +107,7 @@ Följ instruktionerna som beskrivs [här](../../segmentation/api/export-jobs.md#
 
 I svaret söker du efter den första posten som innehåller schemaegenskapen nedan.
 
-```
+```json
 "schema":{
    "name":"_xdm.context.profile"
 }
@@ -120,7 +120,7 @@ Målgruppens exportjobb-ID finns i egenskapen `id`, vilket visas nedan.
 
 ## Steg 5: Kör ad hoc-aktiveringsjobbet {#activation-job}
 
-Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e timme. API:t för ad hoc-aktivering körs baserat på de senaste segmenteringsresultaten.
+[!DNL Adobe Experience Platform] kör schemalagda segmenteringsjobb en gång var 24:e timme. API:t för ad hoc-aktivering körs baserat på de senaste segmenteringsresultaten.
 
 >[!IMPORTANT]
 >

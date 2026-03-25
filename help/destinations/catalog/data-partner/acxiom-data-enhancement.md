@@ -4,9 +4,9 @@ description: Använd den här kopplingen för att aktivera egna Adobe-profiler i
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: label="Beta" type="Informative"
 exl-id: 59edc43d-ae8e-4c3d-820c-b5be1c4483f9
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1419'
 ht-degree: 2%
 
 ---
@@ -19,17 +19,17 @@ ht-degree: 2%
 
 ## Översikt {#overview}
 
-Använd [!DNL Acxiom Data Enhancement]-anslutningen för att förse dina kundprofiler med ytterligare beskrivande data, som kan användas i program för analys, segmentering och målinriktning. Med hundratals tillgängliga element kan ni segmentera och modellera data bättre, vilket resulterar i mer korrekt målinriktning och prediktiv modellering.
+Använd [!DNL Acxiom Data Enhancement]-anslutningen för att förse dina kundprofiler med ytterligare beskrivande data, som kan användas i program för analys, segmentering och målinriktning. Med hundratals element tillgängliga kan ni segmentera och modellera data på ett bättre sätt, vilket resulterar i mer korrekt målinriktning och prediktiv modellering.
 
 ![Marknadsföringsdiagram som exporterar förstahandsdata till Acxiom och sedan importerar berikade data tillbaka till Real-Time CDP](/help/destinations/assets/catalog/data-partner/acxiom/marketing-workflow-data-enhancement.png)
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Acxiom Data Enhancement]-målanslutning och ett dataflöde med Adobe Experience Platform-användargränssnittet. Den här kopplingen används för att leverera data till Acxiom-förbättringstjänsten med Amazon S3 som utgångspunkt.
+Den här självstudien innehåller steg för att skapa en [!DNL Acxiom Data Enhancement]-målanslutning och ett dataflöde med användargränssnittet i [!DNL Adobe Experience Platform]. Denna koppling levererar data till Acxiom-förbättringstjänsten med Amazon S3 som släpppunkt.
 
 ![Målkatalogen med Acxiom-målet markerat.](../../assets/catalog/data-partner/acxiom/image-destination-enhancement-catalog.png)
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Acxiom Data Enhancement] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Acxiom Data Enhancement] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa genom att använda det här målet.
 
 ### Förbättra kunddata {#enhance-customer-data}
 
@@ -41,7 +41,7 @@ Användningsexemplet körs genom en kombination av både mål- och källanslutni
 
 Du börjar med att exportera dina befintliga kundposter för anrikning med den här målkopplingen. Acxioms tjänst skulle söka efter filen, hämta den, berika den med data från Acxiom och generera en fil.
 
-Kunden använder sedan motsvarande [Acxiom-källkort](/help/sources/connectors/data-partners/acxiom-data-ingestion.md) för att importera de hydrerade kundprofilerna tillbaka till Adobe Real-Time CDP.
+Kunden använder sedan motsvarande [Acxiom-källkort](/help/sources/connectors/data-partners/acxiom-data-ingestion.md) för att importera de hydrerade kundprofilerna tillbaka till Adobe [!DNL Real-Time CDP].
 
 ## Förutsättningar {#prerequisites}
 
@@ -57,7 +57,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | Ja | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
-| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som genererats i andra Experience Platform-appar som Adobe Journey Optimizer, </li><li> med mera. </li></ul> |
+| Alla andra målgrupper kommer | Nej | Den här kategorin omfattar alla målgrupper som kommer utanför målgrupper som genereras via [!DNL Segmentation Service]. Läs om de [olika målgruppernas ursprung](/help/segmentation/ui/audience-portal.md#customize). Några exempel är: <ul><li> anpassade uppladdningsgrupper [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer,</li><li> lookalike-målgrupper, </li><li> federerade målgrupper, </li><li> målgrupper som har genererats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer], </li><li> med mera. </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -71,7 +71,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 | [Målgrupper](/help/segmentation/types/people-audiences.md) | Ja | Baserat på kundprofiler kan ni inrikta er på specifika grupper av människor för marknadsföringskampanjer. | Ofta köpare, övergivna varukorgar |
 | [Kontomålgrupper](/help/segmentation/types/account-audiences.md) | Nej | Rikta er till individer inom specifika organisationer för kontobaserade marknadsföringsstrategier. | B2B-marknadsföring |
 | [Prospektera målgrupper](/help/segmentation/types/prospect-audiences.md) | Nej | Rikta er till individer som ännu inte är kunder men som delar egenskaper med er målgrupp. | Prospektera med data från tredje part |
-| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data som lagras i Adobe Experience Platform Data Lake. | Arbetsflöden för rapportering, datavetenskap |
+| [Datauppsättningsexport](/help/catalog/datasets/overview.md) | Nej | Samlingar med strukturerade data lagrade i datasjön [!DNL Adobe Experience Platform]. | Arbetsflöden för rapportering, datavetenskap |
 
 {style="table-layout:auto"}
 
