@@ -2,11 +2,11 @@
 title: Audience Builder i Real-Time Customer Data Platform
 description: Lär dig hur du använder Audience Builder i Real-Time Customer Data Platform för att skapa målgrupper.
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: 5998adf98aa7250864983d7e4e629921633e1a1c
+source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
 workflow-type: tm+mt
-source-wordcount: '955'
+source-wordcount: '1079'
 ht-degree: 0%
 
 ---
@@ -40,10 +40,6 @@ Du kan välja ![inställningsikonen](../../images/icons/settings.png) om du vill
 
 ![Inställningsikonerna är markerade i Audience Builder.](../assets/segmentation/audience-builder/select-settings.png){zoomable="yes"}
 
->[!NOTE]
->
->Avsnittet **[!UICONTROL Field options]** är för närvarande i betaversion och är endast tillgängligt för vissa kunder. Kontakta Adobe kundtjänst om du vill ha mer information.
-
 Avsnittet [!UICONTROL Settings] visas. I det här avsnittet kan du uppdatera vilka fält som visas samt relationen mellan fälten.
 
 För **[!UICONTROL Field options]** kan du antingen bara visa fält som innehåller data eller det fullständiga XDM-schemat.
@@ -58,9 +54,17 @@ På fliken [!UICONTROL Attributes] kan du bläddra bland kontoattribut som tillh
 
 ![Fliken Attribut visas i Audience Builder](../assets/segmentation/audience-builder/attributes.png)
 
-När du väljer ett attribut kan du se sammanfattningsdata genom att välja [informationsikonen](../../images/icons/info.png). Sammanfattningsdata innehåller information om till exempel de översta värdena, en förklaring av vad fältet är samt procentandelen konton som innehåller värden för det här attributet.
+När du väljer ett attribut kan du se sammanfattningsdata genom att välja [informationsikonen](../../images/icons/info.png). Sammanfattningsdata innehåller information om till exempel de översta värdena, en förklaring av vad fältet är, antalet poster för värdena samt procentandelen konton som innehåller värden för det här attributet.
+
+Avsnittet **[!UICONTROL Populated]** visar antalet poster där attributet är ifyllt jämfört med det totala antalet tillgängliga poster samt procentandelen konton som har ett värde för det här fältet.
+
+Avsnittet **[!UICONTROL Top values]** visar de vanligaste värdena för attributet och innehåller detaljer som värdet, antalet poster som har värdet samt den procentandel av det totala antalet poster som värdet representerar.
 
 ![En portfölj som visar en fullt ifylld version av sammanfattningsdata för ett attribut.](../assets/segmentation/audience-builder/full-summary-data.png){width="300"}
+
+Du kan också se hur data distribueras med värdena minimum, medel (medel) och maximum.
+
+![En pover som visar statistik för ett attribut, inklusive minimum-, medel- och maximum-värden.](../assets/segmentation/audience-builder/statistics.png)
 
 Om ett attribut är fyllt av mindre än 25 % av kontona visas i stället ![datavisningsikonen](../../images/icons/data-notice.png). Samma sammanfattningsdata kommer att visas för attributet, oavsett.
 
@@ -72,7 +76,11 @@ Om ett attribut är fyllt av mindre än 25 % av kontona visas i stället ![datav
 >
 >Sammanfattningsdata uppdateras **dagligen**.
 
-En mer detaljerad guide om Audience Builder finns i användarhandboken för [Audience Builder](../../segmentation/ui/segment-builder.md){target="_blank"}.
+Dessutom har attributet **[!UICONTROL Ingestion Type]**. Injektionstypen talar om datas ursprung och kan vara något av följande värden: **[!UICONTROL Batch]**, **[!UICONTROL Streaming/Edge]** eller **[!UICONTROL No Data Ingested]**.
+
+![Inmatningstypen för attributet visas.](/help/rtcdp/assets/segmentation/audience-builder/ingestion-type.png)
+
+En mer detaljerad guide om attribut i Audience Builder finns i användarhandboken för [Audience Builder](../../segmentation/ui/segment-builder.md){target="_blank"}.
 
 ### Målgrupper {#audiences}
 

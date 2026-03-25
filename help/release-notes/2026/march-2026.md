@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
-source-git-commit: d7415a9deefac55b8583eb52a7c1f18caf5f3334
+source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
 workflow-type: tm+mt
-source-wordcount: '1020'
+source-wordcount: '1161'
 ht-degree: 35%
 
 ---
@@ -28,6 +28,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 - [Agent Orchestrator](#agent-orchestrator)
 - [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
+- [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
 ## Hantering av avancerad datalivscykel {#advanced-data-lifecycle-management}
@@ -50,7 +51,7 @@ Med Agent Orchestrator kan ni bygga och driftsätta AI-baserade agenter som kan 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
+| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
 
 {style="table-layout:auto"}
 
@@ -107,6 +108,19 @@ Inspect, troubleshoot, and optimize your Experience Platform implementations wit
 {style="table-layout:auto"}
 
 For more information, read the [Run and Operate overview](../run-and-operate/overview.md), [Inspect job schedules](../run-and-operate/job-schedules.md), and the [Platform UI guide](../landing/ui-guide.md). -->
+
+## Segmenteringstjänst {#segmentation-service}
+
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Målgrupper kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Inmatningstyp | Nu kan du visa attributens insatstyp. På så sätt kan ni känna till informationens ursprung, så att ni kan skapa bättre målgrupper. Mer information om den här funktionen finns i [guiden för segmentbyggaren](/help/segmentation/ui/segment-builder.md). |
+| Sammanfattningsdata | Nu kan du visa sammanfattningsdata för dina attribut för konto- och personbaserade målgrupper. Mer information om den här funktionen finns i [Audience Builder-handboken](/help/rtcdp/segmentation/audience-builder.md) för kontot. Mer information om den här funktionen hos personbaserade målgrupper finns i [guiden för segmentbyggaren](/help/segmentation/ui/segment-builder.md). |
+
+Mer information finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
 ## Källor
 
