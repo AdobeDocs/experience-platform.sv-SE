@@ -4,8 +4,8 @@ description: Lär dig hur du använder hälsokontroller i Adobe Experience Platf
 solution: Experience Platform
 type: Documentation
 role: Admin, User
-hide: true
-source-git-commit: ab2420b898dc38d19187cee627b5c44e7fb44a6c
+exl-id: b35aef7c-54f4-4758-9b36-a981510ae21b
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
 source-wordcount: '1590'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Hälsokontroller
 
-Hälsokontroller skannar in dina scheman och identiteter som används i din sandlåda och ger en sammanfattning av problem som du kan använda för att utforska och felsöka med [!UICONTROL AI Assistant]. I framtiden kan fler objekt skannas för en mer omfattande rapport.
+Hälsokontroller skannar in dina scheman och identiteter som används i din sandlåda och ger en sammanfattning av problem som du kan använda för att utforska och felsöka med AI Assistant. I framtiden kan fler objekt skannas för en mer omfattande rapport.
 
 Dåliga schema- och identitetskonfigurationer leder till betydande problem längre fram i kedjan, bland annat felaktigt skapande av profiler, misslyckade segmentkvalificeringar och felaktig aktivering. Dessa problem är svåra att upptäcka och kräver ofta specialiserad expertis för att diagnostisera. Hälsokontroller förändrar ditt tillvägagångssätt från reaktiv felsökning till förebyggande, förebyggande underhåll.
 
@@ -22,7 +22,7 @@ Med hälsokontroller kan du
 
 * **Identifiera konfigurationsproblem tidigt**: Identifiera bästa praxis, felkonfigurationer och mönster som saknas och som leder till ineffektivitet i personalisering, aktivering med mera.
 * **Få guidad korrigering**: Få tydlig vägledning om vad varje problem är och vad du ska göra åt det.
-* **Övervaka kontinuerligt**: I det här ögonblicket körs hälsokontroller automatiskt varje dag så att du kan fånga upp problem innan de blir kritiska fel. Schemat kan ändras i framtida versioner.
+* **Övervaka kontinuerligt**: För närvarande utförs hälsokontroller automatiskt varje dag så att du kan fånga upp problem innan de blir allvarliga fel. Schemat kan ändras i framtida versioner.
 
 ## Förutsättningar {#prerequisites}
 
@@ -72,14 +72,14 @@ Skanningar för att säkerställa att identitetsfält har begränsningar för mi
 | Detalj | Beskrivning |
 | --- | --- |
 | **Utgåva** | Fält som markerats som identiteter saknar minimi-/maximilängd eller mönstervalidering. |
-| **Effekt** | Utan validering kan skräpinärden ange [!UICONTROL Identity Service]. Värden som &quot;0&quot;, &quot;Gäst&quot; eller ett hölje som inte matchar (till exempel &quot;xyz123&quot; jämfört med &quot;XYZ123&quot;) äventyrar integriteten hos den profil som sätts ihop under segmentering och aktivering. |
+| **Effekt** | Utan validering kan skräpinärden ange [!DNL Identity Service]. Värden som &quot;0&quot;, &quot;Gäst&quot; eller ett hölje som inte matchar (till exempel &quot;xyz123&quot; jämfört med &quot;XYZ123&quot;) äventyrar integriteten hos den profil som sätts ihop under segmentering och aktivering. |
 | **Reparation** | Ange minsta/högsta längd och mönsterbegränsningar för anpassade fält som är markerade som identiteter. Använd reguljära uttryck för att tillämpa regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. |
 
 När du väljer kortet **[!UICONTROL Identity Field Validation]** öppnas en detaljpanel till höger. Panelen visar:
 
 * **[!UICONTROL Description]**: Inläsningar för att säkerställa att identitetsfält har min/max-längder och regex-mönsterregler för dataintegritet. Visar scheman och fält som påverkas.
 * **[!UICONTROL Impact]**: Om identitetsfält i scheman inte har min/max-längder och mönstervalideringar angivna kan det leda till inkonsekventa data, vilket kan äventyra dataintegriteten och datakvaliteten.
-* **[!UICONTROL General areas of impact]**: Identifierare med låg kvalitet i [!UICONTROL Identity Service], otillförlitlig sammanfogning.
+* **[!UICONTROL General areas of impact]**: Identifierare med låg kvalitet i [!DNL Identity Service], otillförlitlig sammanfogning.
 * **[!UICONTROL Experience League Documentation]**: En länk till bästa praxis för datamodellering.
 * **[!UICONTROL Affected Schemas]**: En lista med berörda scheman, där var och en har en utökare för att visa mer information och en länk för att öppna schemat.
 
@@ -122,7 +122,7 @@ Validerar korrekt användning av identitetstyper för personer och icke-personer
 När du väljer kortet **[!UICONTROL People & Non-People Identity Config]** öppnas en detaljpanel till höger. Panelen visar:
 
 * **[!UICONTROL Description]**: Verifierar korrekt användning av identitetstyper över schemaklasser. Visar felkonfigurerade scheman och markerar fel tilldelningar.
-* **[!UICONTROL Impact]**: Om en icke-personentitet tilldelas en personidentitet ökar detta antalet profiler och gör dessa data oanvändbara som en sökning. Om en personenhet ges en icke-personidentitet är uppgifterna inte tillgängliga för direktuppspelning eller kantsegmentering.
+* **[!UICONTROL Impact]**: Om en icke-personentitet ges en personidentitet ökar detta antalet profiler och gör dessa data oanvändbara som en sökning. Om en personenhet ges en icke-personidentitet är uppgifterna inte tillgängliga för direktuppspelning eller kantsegmentering.
 * **[!UICONTROL General areas of impact]**: Ofullständiga identitetsdiagram, uppblåst profilantal, felaktig sökningsanvändning.
 * **[!UICONTROL Affected Schemas]**: En lista med scheman med problem. Expandera en schemarad för att visa sökväg, identitetsnamn och schematyp för varje felkonfiguration. Använd länkikonen för att öppna schemat.
 
@@ -172,7 +172,7 @@ När du väljer kortet **[!UICONTROL Deprecated Identity Namespace]** öppnas en
 
 ![Detaljpanel för inaktuell namnområdesinformation för identitet med beskrivning, påverkan och lista över namnområden som påverkas](assets/health-checks/deprecated-namespace-detail.png)
 
-Mer information finns i artikeln [Experience Cloud kunskapsbas om föråldrade namnutrymmen](https://experienceleague.adobe.com/sv/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}.
+Mer information finns i artikeln [Experience Cloud kunskapsbas om föråldrade namnutrymmen](https://experienceleague.adobe.com/en/docs/experience-cloud-kcs/kbarticles/ka-18155){target="_blank"}.
 
 ## Nästa steg {#next-steps}
 

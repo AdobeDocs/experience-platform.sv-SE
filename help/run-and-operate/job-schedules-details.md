@@ -3,25 +3,24 @@ description: Lär dig hur du visar detaljerad information om datauppsättningar 
 solution: Experience Platform
 title: Visa information om jobbschema
 type: Tutorial
-hide: true
-source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
+exl-id: e568bfc3-f0e1-4305-94e7-070928459a87
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
-source-wordcount: '1783'
+source-wordcount: '1778'
 ht-degree: 0%
 
 ---
 
-
 # Visa information om jobbschema
 
->[!AVAILABILITY]
+>[!IMPORTANT]
 >
->[!UICONTROL Job schedules] är för närvarande tillgängligt som en begränsad version och endast för följande Real-Time CDP-jobb:
+>[!UICONTROL Job schedules] är för närvarande bara tillgängligt för följande Real-Time CDP-jobb:
 >
 > * Intag av batchdata i sjö
 > * Inmatning av gruppprofil
-> * Grupputleverans
-> * Aktivering av batchmål.
+> * Gruppsegmentering
+> * Aktivera batchmål
 
 När du felsöker jobbfel eller undersöker prestandaproblem behöver du detaljerad information om specifika datauppsättningar och deras jobb. Med gränssnittet [Jobbscheman](job-schedules.md) kan du gå nedåt från tidslinjevyn till enskilda datauppsättningar och jobb för att förstå körningshistorik, tidsinställning och status.
 
@@ -33,11 +32,11 @@ Använd den här detaljerade vyn för att:
 * Identifiera vilka specifika batchar som orsakar pipelineproblem
 * Samla information som behövs för felsökning med Adobe Support
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du visar jobbinformation bör du:
 
-* Har åtkomst till [!UICONTROL Job Schedules] med behörigheterna **[!UICONTROL View Job Schedules]** och **[!UICONTROL View Profile Management]** [åtkomstkontroll](/help/access-control/home.md#permissions).
+* Har åtkomst till **[!UICONTROL Job Schedules]** med behörigheterna **[!UICONTROL View Job Schedules]** och **[!UICONTROL View Profile Management]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 * Lär dig mer om gränssnittet [Jobbscheman](job-schedules.md#understanding-interface) och tidslinjevyn.
 * Förstå de olika [jobbtyperna](job-schedules.md#job-schedules-details) (sjöintag, profilinmatning, segmentering, aktivering).
 

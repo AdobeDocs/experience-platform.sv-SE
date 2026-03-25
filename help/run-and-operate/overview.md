@@ -1,20 +1,18 @@
 ---
 title: Köra och hantera översikt
 description: Inspektera, felsök och optimera era era Experience Platform-implementeringar med verktygen Kör och Kör. Få synlighet i schemalagda batchaktiveringar, identifiera konfigurationsproblem och förbättra systemets tillförlitlighet.
-hide: true
+solution: Experience Platform
+type: Documentation
+role: Admin, User
 exl-id: 7f44cdf3-4db1-47f9-bcde-401f6dcfc551
-source-git-commit: a36f984e56f37e4769e54eab182a8c54e891e32f
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '636'
 ht-degree: 0%
 
 ---
 
 # Köra och hantera översikt
-
->[!AVAILABILITY]
->
->Funktionerna Kör och Använd finns för närvarande i en begränsad version.
 
 När batchjobb misslyckas eller levererar ofullständiga data måste du snabbt förstå vad som orsakade problemet. Orsaken kan vara problem med datatillgänglighet, felaktig timing, konfigurationsproblem eller begränsningar av systemkapacitet. Utan tydlig synlighet kan du tillbringa timmar med att undersöka flera system innan du hittar svaret.
 
@@ -30,13 +28,11 @@ Med verktygen i [!UICONTROL Run and Operate] kan du:
 
 * **Data- och IT-team**: Systemadministratörer och datatekniker som upprätthåller tillförlitliga dataredningar och felsöker tekniska problem.
 * **Marknadsföringsåtgärder**: Marknadsföringstekniker som inspekterar dataleveranser till marknadsföringsplattformar och löser aktiveringsproblem.
-* **Implementerare**: Användare som validerar implementeringens effektivitet, tillförlitlighet och felsöker tekniska problem.
+* **Implementerare**: Användare som validerar implementeringens effektivitet och tillförlitlighet och som felsöker tekniska problem.
 
 ## Förutsättningar {#prerequisites}
 
-Du behöver behörigheterna **[!UICONTROL View Job Schedules]** och **[!UICONTROL View Profile Management]** [åtkomstkontroll](/help/access-control/home.md#permissions) för att komma åt verktygen Kör och Kör.
-Sidan [!UICONTROL Job Schedules] innehåller en översikt över alla schemalagda batchbearbetningsjobb.
-Kontakta systemadministratören för att kontrollera att du har rätt behörigheter.
+Du behöver behörigheterna **[!UICONTROL View Job Schedules]** och **[!UICONTROL View Profile Management]** [åtkomstkontroll](/help/access-control/home.md#permissions) för att komma åt verktygen Kör och Kör. Kontakta systemadministratören för att kontrollera att du har rätt behörigheter.
 
 ## Komma igång {#getting-started}
 
@@ -44,10 +40,6 @@ Så här kommer du åt verktygen Kör och Använd från Experience Platform-grä
 
 1. Logga in på ditt Experience Platform-konto och välj **[!UICONTROL Run and Operate]** i den vänstra navigeringen.
 2. Välj det verktyg som passar dina inspektions- eller felsökningsbehov.
-
-   >[!NOTE]
-   >
-   >För närvarande är de tillgängliga funktionerna [Jobbscheman](job-schedules.md) och [Hälsokontroller](health-checks.md).
 
 ![Experience Platform-användargränssnittet visar det vänstra navigeringsfältet Kör och använd.](assets/overview/run-and-operate.png)
 
@@ -63,8 +55,8 @@ Följande verktyg hjälper dig att inspektera och optimera dataåtgärderna.
 >
 > * Intag av batchdata i sjö
 > * Inmatning av gruppprofil
-> * Grupputleverans
-> * Aktivering av batchmål.
+> * Gruppsegmentering
+> * Aktivera batchmål
 
 Med [Jobbscheman](job-schedules.md) kan du inspektera alla schemalagda batchåtgärder i organisationen, per sandlåda, inklusive inhämtning av data från sjön, profilinmatning, segmentering och målaktivering. Visa jobbkörningsstatus, resultatmått och körningshistorik för att identifiera mönster och diagnostisera konfigurationsproblem som påverkar tillförlitligheten.
 
@@ -80,18 +72,14 @@ Ni kan också förstå beroenden mellan olika databehandlingsfaser, vilket hjäl
 
 ### Hälsokontroller {#health-checks}
 
->[!IMPORTANT]
->
->[!UICONTROL Health checks] är för närvarande tillgänglig som en begränsad version.
-
-Med [Hälsokontroller](health-checks.md) kan du proaktivt identifiera problem med schema- och identitetskonfigurationen innan de påverkar din affärsverksamhet. I nuläget utförs statiska hälsokontroller varje dag i alla dina scheman och identitetsnamnutrymmen, vilket avslöjar att bästa praxis saknas, felkonfigurationer och mönster som leder till fel längre fram i kedjan.
+Med [Hälsokontroller](health-checks.md) kan du proaktivt identifiera problem med schema- och identitetskonfigurationen innan de påverkar din affärsverksamhet. För närvarande utförs statiska hälsokontroller varje dag i alla dina scheman och identitetsnamnutrymmen, vilket avslöjar att det saknas bästa praxis, felkonfigurationer och mönster som leder till fel i senare led.
 
 Hälsokontrollerna utvärderar för närvarande fem grundläggande områden:
 
 * **[Verifiering av identitetsfält](health-checks.md#identity-field-validation)**: Verifiera att identitetsfält har rätt längd och mönsterbegränsningar.
 * **[Länkningsregler för identitetsdiagram](health-checks.md#identity-graph-linking-rules)**: Bekräfta att länkningsregler har konfigurerats för att förhindra att profiler komprimeras.
 * **[Konfiguration av identiteter för både människor och icke-människor](health-checks.md#people-non-people-identity)**: Verifiera korrekt identitetstypanvändning mellan schemaklasser.
-* **[Beskrivningar av anpassade identitetsnamnområden](health-checks.md#namespace-missing-description)**: Kontrollera att namnområdesmetadata är fullständiga.
+* **[Beskrivning av anpassat ID-namnområde](health-checks.md#namespace-missing-description)**: Kontrollera att namnområdesmetadata är fullständiga.
 * **[Inaktuella identitetsnamnutrymmen](health-checks.md#deprecated-namespace)**: Identifiera föråldrade namnutrymmen för rensning.
 
 ## Nästa steg {#next-steps}

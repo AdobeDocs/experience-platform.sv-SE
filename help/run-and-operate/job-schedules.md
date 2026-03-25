@@ -3,31 +3,30 @@ description: Lär dig hur du inspekterar och felsöker schemalagda batchbearbetn
 solution: Experience Platform
 title: Inspektera jobbscheman
 type: Tutorial
-hide: true
-source-git-commit: 436ce6843e96b76dac0595ff5ab8a6067fb521ea
+exl-id: ce855b19-66ab-4d3d-924e-fb9928676aa2
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
-source-wordcount: '828'
+source-wordcount: '824'
 ht-degree: 0%
 
 ---
 
-
 # Granska jobbscheman
 
->[!AVAILABILITY]
+>[!IMPORTANT]
 >
->[!UICONTROL Job schedules] är för närvarande tillgängligt som en begränsad version och endast för följande Real-Time CDP-jobb:
+>[!UICONTROL Job schedules] är för närvarande bara tillgängligt för följande Real-Time CDP-jobb:
 >
 > * Intag av batchdata i sjö
 > * Inmatning av gruppprofil
-> * Grupputleverans
-> * Aktivering av batchmål.
+> * Gruppsegmentering
+> * Aktivera batchmål
 
 [!UICONTROL Job Schedules] ger en enhetlig vy över alla schemalagda batchbearbetningsjobb i hela dataredjan, från inmatning till målaktivering. Kontrollera körningsstatus, identifiera schemaläggningskonflikter och diagnostisera konfigurationsproblem innan de påverkar din affärsverksamhet.
 
 Använd Jobbscheman för att undersöka fel, optimera jobbtiming och förstå beroenden mellan inmatning av data i sjön, profilbearbetning, segmentering och målaktivering. Mer information om hur du löser vanliga konfigurationsproblem finns i dokumentationen om [identifiering av antimönster för jobbscheman](job-schedules-anti-patterns.md).
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Om du vill komma åt [!UICONTROL Job Schedules] behöver du behörigheterna **[!UICONTROL View Job Schedules]** och **[!UICONTROL View Profile Management]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 
@@ -107,7 +106,6 @@ När du granskar dina jobbscheman kan du se mönster som indikerar konfiguration
 Dessa mönster kan leda till jobbfel, ofullständig databehandling och dålig systemprestanda. Mer information om hur du identifierar och löser dessa problem finns i dokumentationen om [identifiering av mönster för jobbalbum](job-schedules-anti-patterns.md).
 
 När du behöver undersöka specifika datauppsättningar eller jobbkörningar kan du fördjupa dig i detaljerade vyer för att se körningshistorik, felmeddelanden, prestandamätningar och beroenden. Mer information om hur du visar detaljerade data finns i dokumentationen om [att visa jobbinformation](job-schedules-details.md).
-
 
 ## Nästa steg {#next-steps}
 

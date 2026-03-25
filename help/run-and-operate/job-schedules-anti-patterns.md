@@ -3,29 +3,28 @@ description: Lär dig hur du identifierar och åtgärdar vanliga mönster för s
 solution: Experience Platform
 title: Identifiera kantmönster i jobbschemat
 type: Tutorial
-hide: true
-source-git-commit: 9d170fec9b80f0f2e17fc39e8f573cbad515f823
+exl-id: f94e3ef3-2252-46f5-8075-45b5483d9d83
+source-git-commit: 41abc542b11dcd9c295d29cdfad68720ad50129d
 workflow-type: tm+mt
-source-wordcount: '986'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
 
-
 # Identifiera kantmönster för jobbschema
 
->[!AVAILABILITY]
+>[!IMPORTANT]
 >
->[!UICONTROL Job schedules] är för närvarande tillgängligt som en begränsad version och endast för följande Real-Time CDP-jobb:
+>[!UICONTROL Job schedules] är för närvarande bara tillgängligt för följande Real-Time CDP-jobb:
 >
 > * Intag av batchdata i sjö
 > * Inmatning av gruppprofil
-> * Grupputleverans
-> * Aktivering av batchmål.
+> * Gruppsegmentering
+> * Aktivera batchmål
 
 Tidslinjevyn [Jobbscheman](job-schedules.md) hjälper dig att identifiera vanliga konfigurationsproblem som kan påverka dataredningens prestanda och tillförlitlighet negativt. Dessa antimönster leder ofta till jobbfel, inkonsekvenser i data eller försämrade systemprestanda. Genom att hitta dessa mönster tidigt kan du konfigurera om dina jobb för att undvika problem innan de påverkar din verksamhet.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du identifierar antimönster bör du:
 
@@ -43,11 +42,11 @@ Innan du identifierar antimönster bör du:
 
 ## Schemaöverlappning {#schedule-overlap-pattern}
 
-**Inslagsallvarlighetsgrad**: Hög | **Primär utgåva**: Resurskonflikt
+**Konsekvensallvarlighetsgrad**: Hög | **Primärt problem**: Resurskonflikter
 
 **Vad du ska söka efter**: Flera jobb har schemalagts att köras samtidigt eller i nära följd, särskilt när resursintensiva jobb överlappar varandra.
 
-I det här exemplet kan du se batchbearbetningsjobb som körs samtidigt som ett schemalagt segmenteringsjobb. Detta skapar resurskonflikter eftersom båda åtgärderna kräver betydande processorkraft och minne.
+Ett vanligt exempel är batchingationsjobb som körs samtidigt som ett schemalagt segmenteringsjobb. Detta skapar resurskonflikter eftersom båda åtgärderna kräver betydande processorkraft och minne.
 
 **Varför detta är problematiskt**:
 
@@ -64,11 +63,11 @@ I det här exemplet kan du se batchbearbetningsjobb som körs samtidigt som ett 
 
 ## Schemalagd jobbdensitet {#scheduled-density}
 
-**Inslagsallvarlighetsgrad**: Hög | **Primär fråga**: Flaskhalsar i pipeline
+**Inslagsallvarlighetsgrad**: Hög | **Primär utgåva**: flaskhalsar i pipeline
 
 **Vad du ska leta efter**: För många datauppsättningar med flera grupper schemalagda inom samma timme, särskilt när dessa grupper ligger nära varandra och schemaläggs nära kritiska bearbetningsfönster som starttider för segmentering.
 
-I det här mönstret ser du:
+Det här mönstret innehåller vanligtvis:
 
 * Flera datamängder som kör flera batchar per dag
 * ETL-jobb (intag av data i sjön och intag av profiler) klustrade inom samma timme
@@ -80,14 +79,14 @@ I det här mönstret ser du:
 * **Försenad profiltillgänglighet**: Profilinmatningsjobb som körs för nära starttiderna för segmentering kanske inte slutförs i tid, vilket resulterar i ofullständiga eller inaktuella målgruppsutvärderingar.
 * **Oförutsebar segmentering**: Om det fortfarande körs uppströms ingessionsjobb när segmenteringen börjar, riskerar du att utvärdera målgrupper mot ofullständiga data, vilket leder till felaktigt målgruppsmedlemskap.
 * **Överlappande fel**: En enstaka fördröjd batch i ett tätt skiktat schema kan orsaka en dominoeffekt, vilket försenar alla efterföljande batchar och efterföljande processer.
-* **Resursbegränsning**: Det kan vara svårt att allokera tillräckligt med resurser vid bearbetning av för många samtidiga förtäringsjobb, vilket leder till långsammare bearbetningstider eller fel.
+* **Resursstam**: Det kan vara svårt att allokera tillräckligt med resurser när för många samtidiga överföringsjobb bearbetas, vilket kan leda till långsammare bearbetningstider eller fel.
 
 **Så här åtgärdar du det**:
 
 * **Konsolidera batchar**: Minska batchfrekvensen genom att kombinera flera små batchar i färre, större batchar per datauppsättning.
 * **Distribuera jämnt**: Sprid över intag-jobb under dagen i stället för att gruppera dem på specifika timmar.
 * **Lägg till bufferttid**: Se till att det finns minst 1-2 timmars buffert mellan slutförande av profilinmatning och start av segmentering.
-* **Granska krav**: Utvärdera om alla datauppsättningar verkligen behöver flera dagliga batchar - många fall fungerar med mindre frekventa uppdateringar.
+* **Granska krav**: Utvärdera om alla datauppsättningar verkligen behöver flera dagliga batchar. Många användningsområden fungerar med färre uppdateringar.
 
 ## Överdrivna batchar per datamängd {#excessive-batches-per-dataset}
 
@@ -95,7 +94,7 @@ I det här mönstret ser du:
 
 **Vad du ska leta efter**: En enskild datauppsättning med ett stort antal enskilda batchjobb som schemaläggs under dagen, vilket skapar en lång vertikal hög med jobb på tidslinjen.
 
-I det här mönstret visas en datauppsättningsrad med många enskilda batchbearbetningsjobb som schemaläggs med täta intervall, ibland dussintals batchar per dag för en enskild datauppsättning.
+Det här mönstret innehåller en enda datauppsättning med många enskilda batchbearbetningsjobb som schemaläggs med täta intervall, ibland dussintals batchar per dag.
 
 **Varför detta är problematiskt**:
 
