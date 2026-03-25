@@ -2,16 +2,16 @@
 title: Konfigurera åsidosättningar av dataström
 description: Lär dig hur du konfigurerar åsidosättningar av datastream i användargränssnittet för datastreams och aktiverar dem via Web SDK eller Mobile SDK.
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1045'
+source-wordcount: '1043'
 ht-degree: 0%
 
 ---
 
 # Konfigurera åsidosättningar av dataström
 
-Med åsidosättningar av dataströmmar kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK eller Mobile SDK.
+Använd åsidosättningar av datastream för att definiera ytterligare konfigurationer för dina datastreams, som skickas till Edge Network via Web SDK eller Mobile SDK.
 
 Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena, utan att skapa ett datastream eller ändra befintliga inställningar.
 
@@ -20,7 +20,7 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 1. Först måste du definiera åsidosättningen av din datastream-konfiguration på [datastream-konfigurationssidan](configure.md).
 2. Sedan måste du skicka åsidosättningarna till Edge Network på något av följande sätt:
    * Via kommandona `sendEvent` eller `configure` [Web SDK](#send-overrides).
-   * Via SDK-taggtillägget [Web &#x200B;](../tags/extensions/client/web-sdk/configure/configuration-overrides.md).
+   * Via SDK-taggtillägget [Web ](../tags/extensions/client/web-sdk/configure/configuration-overrides.md).
    * Genom Mobile SDK [sendEvent](#send-overrides)-API:t eller genom att använda [Rules](#send-overrides).
 
 I den här artikeln förklaras den kompletta processen för åsidosättning av datastream-konfigurationen för alla typer av åsidosättningar som stöds.
@@ -51,7 +51,7 @@ I stället för att skicka data till en standarddatastream kan företaget använ
 
 ## Konfigurera åsidosättningar av datastream i användargränssnittet för datastreams {#configure-overrides}
 
-Åsidosättningar av dataströmskonfigurationer gör att du kan ändra följande datastream-konfigurationer:
+Med åsidosättningar av dataströmskonfigurationer kan du ändra följande datastream-konfigurationer:
 
 * Experience Platform händelsedatamängder
 * Adobe Target egenskapstoken
@@ -74,7 +74,7 @@ Nu bör du konfigurera Adobe Target datastream-åsidosättningar. Nu kan du [ski
 
 Om du vill konfigurera datastream-åsidosättningar för ett Adobe Analytics-datastream måste du först skapa ett [Adobe Analytics](configure.md#analytics)-datastream. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med tjänsten [Adobe Analytics](configure.md#analytics).
 
-När du har skapat datastream redigerar du [Adobe Analytics](configure.md#target)-tjänsten som du har lagt till och använder **[!UICONTROL Report Suite Overrides]** -avsnittet för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan.
+När du har skapat datastream redigerar du [Adobe Analytics](configure.md#analytics)-tjänsten som du har lagt till och använder **[!UICONTROL Report Suite Overrides]** -avsnittet för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan.
 
 Välj **[!UICONTROL Show Batch Mode]** om du vill aktivera gruppredigering av rapportsvitens åsidosättningar. Du kan kopiera och klistra in en lista över åsidosättningar av rapportsviter och ange en rapportsvit per rad.
 

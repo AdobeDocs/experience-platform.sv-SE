@@ -2,9 +2,9 @@
 title: Översikt över datastreams
 description: Läs om hur datastreams hjälper dig att koppla samman Experience Platform SDK-integreringen med Adobe-produkter och tredjepartsmål.
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '706'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 En datastream representerar serversideskonfigurationen för Adobe Experience Platform Web och Mobile SDK. Medan kommandot [`configure`](/help/collection/js/commands/configure/overview.md) i SDK hanterar klientinställningar (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer.
 
-När du skickar en begäran till Edge Network refererar `datastreamId` till datastream där data skickas. På så sätt kan du uppdatera konfigurationen på serversidan utan att ändra webbplatsens kod.
+När du skickar en begäran till Edge Network refererar `datastreamId` till datastream där data skickas. Du kan uppdatera konfigurationen på serversidan utan att ändra webbplatsens kod.
 
 Du kan skapa och hantera datastölar genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen i användargränssnittet för Adobe Experience Platform eller datainsamling.
 

@@ -2,9 +2,9 @@
 title: Skapa dynamiska dataströmskonfigurationer
 description: Lär dig hur du skapar dynamiska datastream-konfigurationer för att dirigera data till olika Experience Cloud-tjänster, baserat på regler.
 exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
-source-git-commit: 30b66420e9cee6b4d85cf41a31e9595d5a240fda
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1092'
 ht-degree: 1%
 
 ---
@@ -52,29 +52,29 @@ När du har [skapat en datastream](configure.md) och [lagt till en tjänst](conf
 
 1. Gå till sidan **[!UICONTROL Data Collection]** > **[!UICONTROL Datastreams]** och markera datastream som du skapade.
 
-   ![Bild av användargränssnittet för datastreams med listan över datastreams.](assets/configure-dynamic-datastream/select-datastream.png)
+   ![Datastreams-användargränssnitt som visar listan med datastreams.](assets/configure-dynamic-datastream/select-datastream.png)
 
 1. Välj alternativet **[!UICONTROL Edit]** för den tjänst som du vill definiera en dynamisk konfiguration för.
 
-   ![Bild av användargränssnittet för datastreams som visar de tjänster som lagts till i ett datastream.](assets/configure-dynamic-datastream/select-service.png)
+   ![Användargränssnittet Datastreams visar de tjänster som lagts till i ett datastream.](assets/configure-dynamic-datastream/select-service.png)
 
 1. Välj **[!UICONTROL Configure]** på sidan **[!UICONTROL Save and Edit Dynamic Configuration]**.
 
-   ![Bild av användargränssnittet för datastreams som visar konfigurationssidan för datastream.](assets/configure-dynamic-datastream/save-and-edit.png)
+   ![Datastreams-användargränssnittet visar konfigurationssidan för datastream.](assets/configure-dynamic-datastream/save-and-edit.png)
 
 1. Välj **[!UICONTROL Add Dynamic Configuration]**.
 
-   ![Bild av användargränssnittet för datastreams som visar den dynamiska konfigurationen inget meddelande tillagt.](assets/configure-dynamic-datastream/add-dynamic-config.png)
+   ![Användargränssnittet Datastreams visar den dynamiska konfigurationssidan innan några regler läggs till.](assets/configure-dynamic-datastream/add-dynamic-config.png)
 
 1. Dra och släpp de objekt du vill skapa regeln med på den högra sidan av fönstret från panelen **[!UICONTROL Resources]**. Du kan kombinera flera resurser för att skapa komplexa regler.
 
    Använd alternativen för varje resurs, till exempel **[!UICONTROL equals]**, **[!UICONTROL does not equal]**, **[!UICONTROL exists]** och mer, för att finjustera reglerna.
 
-   ![Bild av användargränssnittet för datastreams som visar den dynamiska konfigurationsregeln.](assets/configure-dynamic-datastream/drag-resources.png)
+   ![Användargränssnittet Datastreams visar den dynamiska konfigurationsregelbyggaren med resurser som dras.](assets/configure-dynamic-datastream/drag-resources.png)
 
-1. I avsnittet **[!UICONTROL Configuration]** växlar du de tjänster som du vill aktivera eller inaktivera för varje regel, beroende på om du vill att data ska skickas till varje tjänst. Om du stänger av omkopplaren inaktiveras tjänstens routning och *inga data* skickas till den överordnade tjänsten.
+1. I avsnittet **[!UICONTROL Configuration]** växlar du de tjänster som du vill aktivera eller inaktivera för varje regel, beroende på om du vill att data ska skickas till varje tjänst. Om du stänger av omkopplaren inaktiveras tjänstens routning och *inga data* skickas till den underordnade tjänsten.
 
-   ![Bild av användargränssnittet för datastreams som visar den dynamiska konfigurationsregeln.](assets/configure-dynamic-datastream/enable-service.png)
+   ![Användargränssnittet Datastreams visar den dynamiska konfigurationsregeln med tjänstväxlar.](assets/configure-dynamic-datastream/enable-service.png)
 
 1. När du är klar med konfigurationen av reglerna väljer du **[!UICONTROL Save]**.
 
@@ -135,9 +135,9 @@ Ta till exempel den komplexa regel som visas i bilden nedan.
 
 Du kan bryta ned den här regeln i följande enkla regler:
 
-![Plattformens gränssnittsbild visar en komplex regel.](assets/configure-dynamic-datastream/simple-rule-1.png)
+![Plattformens gränssnittsbild visar den första förenklade regeln.](assets/configure-dynamic-datastream/simple-rule-1.png)
 
-![Plattformens gränssnittsbild visar en komplex regel.](assets/configure-dynamic-datastream/simple-rule-2.png)
+![Bilden av användargränssnittet för plattformen visar den andra förenklade regeln.](assets/configure-dynamic-datastream/simple-rule-2.png)
 
 **Undvik komplexa regler**. Enklare regler ger snabbare utvärdering och bättre underhåll.
 

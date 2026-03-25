@@ -2,9 +2,9 @@
 title: Konfigurera objektidentifiering för datastreams
 description: Lär dig hur du konfigurerar identifieringen av robotar för datastreams för att särskilja mänsklig och icke-mänsklig trafik.
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: 5f599b8572c4cebcdfb9ab85027211da4d8a020c
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1382'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Denna robotbedömning hjälper de lösningar som tar emot begäran att identifie
 >
 >Punktavkänning tar inte bort några robotförfrågningar. Det uppdaterar bara XDM-schemat med robotpoängen och vidarebefordrar händelsen till [datastream-tjänsten](configure.md) som du konfigurerade.
 >
->Adobe lösningar kan hantera båda poängen på olika sätt. Adobe Analytics använder till exempel sin egen [robotfiltreringstjänst](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html?lang=sv-SE) och använder inte poängen som angetts av Edge Network. De två tjänsterna använder samma [IAB-robotlista](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), så robotpoängen är identiska.
+>Adobe lösningar kan hantera båda poängen på olika sätt. Adobe Analytics använder till exempel sin egen [robotfiltreringstjänst](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html) och använder inte poängen som angetts av Edge Network. De två tjänsterna använder samma [IAB-robotlista](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), så robotpoängen är identiska.
 
 ## Tekniska överväganden {#technical-considerations}
 
@@ -43,7 +43,7 @@ Innan du aktiverar identifieringen av robotar i dina datastreams finns det någr
 * Autentiserade begäranden som skickas till `server.adobedc.net` utvärderas inte för robottrafik eftersom autentiserad trafik betraktas som tillförlitlig.
 * Det kan ta upp till 15 minuter att sprida regler för punktidentifiering i hela Edge Network efter att de har skapats.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 För att robotidentifiering ska fungera på datastream måste du lägga till fältgruppen **[!UICONTROL Bot Detection Information]** i ditt schema. Mer information om hur du lägger till fältgrupper i ett schema finns i [XDM-schemats](../xdm/ui/resources/schemas.md#add-field-groups)-dokumentation.
 
@@ -65,12 +65,12 @@ Sidan **[!UICONTROL Bot Detection Rules]** visas.
 
 På sidan Regler för punktidentifiering kan du konfigurera robotidentifiering med följande funktioner:
 
-* Använder [[!DNL [IAB/ABC International Spiders and Bots List]]](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/).
+* Använder listan [IAB/ABC International Spiders and Bots ](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/).
 * Skapa egna identifieringsregler för robotar.
 
 ### Använd listan IAB/ABC International Spiders and Bots {#iab-list}
 
-Listan [IAB/ABC International Spiders and Bots &#x200B;](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) är en tredjeparts lista över internetspindlar och -bottnar som följer branschstandard. I den här listan kan du identifiera automatiserad trafik, som crawlningar för sökmotorer, övervakningsverktyg och annan icke-mänsklig trafik som du kanske inte vill ta med i dina analysräkningar.
+Listan [IAB/ABC International Spiders and Bots ](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) är en tredjeparts lista över internetspindlar och -bottnar som följer branschstandard. I den här listan kan du identifiera automatiserad trafik, som crawlningar för sökmotorer, övervakningsverktyg och annan icke-mänsklig trafik som du kanske inte vill ta med i dina analysräkningar.
 
 Så här konfigurerar du din datastream att använda listan IAB/ABC International Spiders and Bots:
 
@@ -81,7 +81,7 @@ Så här konfigurerar du din datastream att använda listan IAB/ABC Internationa
 
 ### Skapa identifieringsregler för robotar {#rules}
 
-Förutom att använda listan [IAB/ABC International Spiders and Bots &#x200B;](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) kan du definiera egna robotidentifieringsregler för varje datastream.
+Förutom att använda listan [IAB/ABC International Spiders and Bots ](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) kan du definiera egna robotidentifieringsregler för varje datastream.
 
 Du kan skapa identifieringsregler för robotar baserat på **IP-adresser** och **IP-adressintervall**.
 
@@ -119,7 +119,7 @@ Följ stegen nedan för att skapa en regel för identifiering av robotar:
 
    >[!TIP]
    >
-   >IP-villkoren baseras på en logisk `OR`-åtgärd. En begäran markeras som om den kommer från en robot om den matchar något av de IP-villkor som du har definierat.
+   >IP-villkoren baseras på en logisk `OR`-åtgärd. En begäran markeras som om den matchar något av de IP-villkor som du har definierat.
 
 4. Om du vill lägga till rubrikvillkor i regeln väljer du **[!UICONTROL Add header conditions group]** och sedan de rubriker som du vill att regeln ska använda.
 

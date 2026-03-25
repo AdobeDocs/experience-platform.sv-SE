@@ -2,16 +2,16 @@
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
 workflow-type: tm+mt
-source-wordcount: '1166'
+source-wordcount: '1167'
 ht-degree: 0%
 
 ---
 
 # Dataförberedelse för datainsamling
 
-Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När du konfigurerar en [datastream](./overview.md) som har aktiverats av Experience Platform kan du använda funktionen Data Prep för att mappa dina källdata till XDM när du skickar dem till Experience Platform Edge Network.
+Data Prep är en Adobe Experience Platform-tjänst som du kan använda för att mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När du konfigurerar en [datastream](./overview.md) som har aktiverats av Experience Platform kan du använda funktionen Data Prep för att mappa dina källdata till XDM när du skickar dem till Experience Platform Edge Network.
 
 Alla data som skickas från en webbsida måste landas i Experience Platform som XDM. Det finns tre sätt att översätta data från ett datalager på sidan till den XDM som accepteras av Experience Platform:
 
@@ -158,7 +158,7 @@ Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i
 
 >[!NOTE]
 >
-> Använd ett JSON-exempelobjekt som representerar alla datalagerelement som kan användas på alla sidor. Alla sidor använder till exempel inte lagerelement för kundvagnsdata. Men elementen i kundvagnsdatalagret bör inkluderas i det här JSON-exempelobjektet.
+>Använd ett JSON-exempelobjekt som representerar alla datalagerelement som kan användas på alla sidor. Alla sidor använder till exempel inte lagerelement för kundvagnsdata. Men elementen i kundvagnsdatalagret bör inkluderas i det här JSON-exempelobjektet.
 
 ## [!UICONTROL Mapping]
 
