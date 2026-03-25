@@ -2,9 +2,9 @@
 title: Konfigurationsinställningar för Brand Concierge
 description: Konfigurera sessionsbeständighet och tidsgränser för direktuppspelning för Brand Concierge-chatt.
 exl-id: d5c0bdf7-563d-4e0e-9b1b-71e2fa783e29
-source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '190'
 ht-degree: 1%
 
 ---
@@ -37,3 +37,7 @@ En kryssruta som återger Brand Concierge-sessioner på olika sidor läses in me
 ## [!UICONTROL Stream timeout (seconds)]
 
 Maximal tid, i sekunder, för att vänta på konversationsströmavbrott innan ett timeout-fel utlöses. Standardvärdet är `10` sekunder.
+
+## [!UICONTROL Collect sources]
+
+En kryssruta som samlar in källor om en användare navigerade till sidan från en länk i en Brand Concierge-konversation. Avmarkerad som standard. Om den är aktiverad söker biblioteket efter frågesträngsparametern `adobe_brand_concierge_source` och fyller i dess värde i `xdm.channel.referringSource`.

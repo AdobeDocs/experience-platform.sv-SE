@@ -1,9 +1,10 @@
 ---
 title: konversation
 description: Konfigurera inställningar för Brand Concierge-chatt.
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+exl-id: 0f64c7f1-2c28-4c67-af05-dc9ee688fdc0
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '111'
+source-wordcount: '127'
 ht-degree: 2%
 
 ---
@@ -20,6 +21,7 @@ Objektet `conversation` innehåller konfigurationsalternativ för Brand Concierg
 
 | Egenskap | Typ | Beskrivning |
 | --- | --- | --- |
+| **`collectSources`** | `boolean` | Avgör om Web SDK läser frågesträngsparametern `adobe_brand_concierge_source` och inkluderar den i `xdm.channel.referringSource`. Standardvärdet är `false`. |
 | **`stickyConversationSession`** | `boolean` | Avgör om Web SDK anger en sessionscookie för att bevara Brand Concierge chattsessioner över sidinläsningar. Standardvärdet är `false`. Om det utelämnas eller anges till `false` startar Brand Concierge-chatten en ny session vid varje sidinläsning. |
 
 ## Exempel
@@ -29,6 +31,7 @@ alloy("configure", {
   datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
   orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
   conversation: {
+    collectSources: true
     stickyConversationSession: true
   }
 });

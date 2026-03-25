@@ -4,24 +4,24 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: debugger;experience Platform Debugger tillägg;chrome;tillägg;versionsinformation
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: c4048b83c916f4b3b4b5acb3cccb957b65ee25c8
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '864'
-ht-degree: 91%
+source-wordcount: '846'
+ht-degree: 89%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Debugger
 
-## Version 1.6.4 - 6 maj 2025
+## Version 1.6.5 - 24 mars 2026
 
-### Åtgärder och förbättringar
+* Korrigerade ett problem som förhindrade att händelser från AppMeasurement skickades i aktiva Assurance-sessioner.
+
+## Version 1.6.4 - 6 maj 2025
 
 * Ett problem där inloggningen inte var tillgänglig har korrigerats.
 
 ## Version 1.6.3 - 30 april 2025
-
-### Åtgärder och förbättringar
 
 * Ett problem har korrigerats där felsökaren skulle förhindra DTM- och Tags-funktioner.
 * Ett problem har korrigerats där Analytics Post-Procsed Hits inte skulle visas i loggarna.
@@ -29,24 +29,15 @@ ht-degree: 91%
 
 ## Version 1.6.2 - 1 oktober 2024
 
-### Åtgärder och förbättringar
-
 * Ett problem där felsökaren var för känslig för alla CSP-fel har korrigerats
 
 ## Version 1.6.1 – 25 juli 2024
-
-### Åtgärder och förbättringar
 
 * Ett problem har åtgärdats som gjorde att användare inte kunde lägga till nya inbäddningskoder för taggar på sidor utan dem.
 
 ## Version 1.6.0 – 11 juli 2024
 
-### Nya funktioner
-
 * Tillåt användare att välja att inte ta del av/ta del av teknisk och personlig datainsamling.
-
-### Åtgärder och förbättringar
-
 * Åtgärda Firefox skriptinjektion och länk till sekretesspolicy.
 * Hämta saknade Analytics-förfrågningar.
 * Åtgärda krascher på sidor med många komplexa konsolmeddelanden.
@@ -54,19 +45,12 @@ ht-degree: 91%
 
 ## Version 1.5.4 – 19 december 2023
 
-### Åtgärder och förbättringar
-
 * Ett problem har åtgärdats där inställningar inte behölls.
 * Ett problem har åtgärdats som orsakade att felsökaren kraschade när man visade efterbearbetade träffar i Analytics.
 
 ## Version 1.5.3 – 6 december 2023
 
-### Nya funktioner
-
 * Lade till ett lås på den aktiva fliken när inställningen Felsökning öppnades.
-
-### Åtgärder och förbättringar
-
 * Ett problem har åtgärdats där Analytics-förfrågningar saknades i privata domäner.
 * Ett problem har åtgärdats där Activity Map-data saknades i tabellen för Analytics-förfrågningar.
 * Ett problem har åtgärdats där visning av Target Trace skulle orsaka en krasch.
@@ -76,13 +60,9 @@ ht-degree: 91%
 
 (Endast Firefox)
 
-### Åtgärder och förbättringar
-
 * Filernas ordning har uppdaterats.
 
 ## Version 1.5.1 – 2 november 2023
-
-### Åtgärder och förbättringar
 
 * Ett problem har åtgärdats där Analytics-händelser skulle ignoreras eller dupliceras.
 * Ett problem har åtgärdats där den maximala lagringsstorleken för tillstånd överskreds.
@@ -90,12 +70,7 @@ ht-degree: 91%
 
 ## Version 1.5.0 – 19 oktober 2023
 
-### Nya funktioner
-
 * Visa länkar till egenskaper, miljö och regler i sammanfattning av taggar och loggar.
-
-### Åtgärder och förbättringar
-
 * Ett problem har åtgärdats där sammanfattad data för taggar inte skickades.
 * Ett problem har åtgärdats där Assurance-sessioner gav ett CORS-fel
 * Ett problem har åtgärdats som orsakade att Target Trace inte kunde visas.

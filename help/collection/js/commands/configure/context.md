@@ -2,10 +2,10 @@
 title: kontext
 description: Samla automatiskt in data om enheter, miljö eller plats.
 exl-id: 911cabec-2afb-4216-b413-80533f826b0e
-source-git-commit: 0a45b688243b17766143b950994f0837dc0d0b48
+source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
 workflow-type: tm+mt
-source-wordcount: '998'
-ht-degree: 1%
+source-wordcount: '1017'
+ht-degree: 2%
 
 ---
 
@@ -58,6 +58,7 @@ Nyckelordet `"placeContext"` samlar in information om användarens plats.
 | Statsprovins | Slutanvändarens landskod. | `xdm.placeContext.geo.stateProvince` | `CA` |
 | Latitude | Slutanvändarens latitud. | `xdm.placeContext.geo._schema.latitude` | `37.3307447` |
 | Longitud | Slutanvändarens longitud. | `xdm.placeContext.geo._schema.longitude` | `-121.8945965` |
+| IANA-tidszon | Slutanvändarens IANA-tidszon. Ingår i biblioteksversion 2.32.0 eller senare. | `xdm.placeContext.ianaTimezone` | `America/Denver` |
 
 ### Tidsstämpel
 
@@ -97,7 +98,7 @@ Mer information finns i [Klienttips för användaragent](/help/collection/use-ca
 
 ### Referent för engångsanalys {#one-time-analytics-referrer}
 
-Nyckelordet `"oneTimeAnalyticsReferrer"` skickar endast ett referensvärde till Adobe Analytics vid det första icke-beslutande `sendEvent`-anropet för en sida. Det primära användningsområdet för det här kontextnyckelordet är att förhindra att dimensionen [Referer](https://experienceleague.adobe.com/sv/docs/analytics/components/dimensions/referrer) i Adobe Analytics fylls av träffar som i första hand används i integreringar med Analytics och Target.
+Nyckelordet `"oneTimeAnalyticsReferrer"` skickar endast ett referensvärde till Adobe Analytics vid det första icke-beslutande `sendEvent`-anropet för en sida. Det primära användningsområdet för det här kontextnyckelordet är att förhindra att dimensionen [Referer](https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referrer) i Adobe Analytics fylls av träffar som i första hand används i integreringar med Analytics och Target.
 
 Om ett angivet `sendEvent`-kommando använder en beslutshändelsetyp (`decisioning.propositionFetch`, `decisioning.propositionDisplay`, `decisioning.propositionInteract`), ignoreras det när den första `sendEvent` beräknas på en sida. Om referensvärdet ändras på sidan och ett annat `sendEvent` aktiveras, inkluderas det nya referensvärdet i nyttolasten. Detta villkor gör att funktionen kan användas med enkelsidiga program.
 
