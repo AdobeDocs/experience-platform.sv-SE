@@ -2,9 +2,9 @@
 title: Licenshantering och kapacitet
 description: Läs mer om licensanvändningen och kapacitetsbegränsningarna i Adobe Experience Platform.
 exl-id: 38dad2f1-bd0f-4cc3-a3a6-5105ea866ea4
-source-git-commit: 8cef502f60a42de9c89c29923811215b3a8086c6
+source-git-commit: 1a7a074a455542bb1438b2cbf199d79229142389
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '2072'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Mer information om skyddsutkast i Experience Platform finns i [Real-Time CDP sky
 >[!CONTEXTUALHELP]
 >id="platform_capacity_streamingthroughput"
 >title="Strömmande genomströmning"
->abstract="Värdet för direktuppspelningsgenomströmning mäter de kombinerade topphändelserna för inkommande trafik per sekund för direktuppspelning till profiltjänsten, i alla dina produktions- och utvecklingssandlådor."
+>abstract="Värdet för direktuppspelningsgenomströmning mäter de kombinerade topphändelserna för inkommande trafik per sekund för direktuppspelning i profilen, i alla dina produktions- och utvecklingssandlådor."
 
 >[!CONTEXTUALHELP]
 >id="platform_capacity_streamingaudiences"
@@ -51,14 +51,16 @@ För närvarande stöder Capacity följande tjänster:
 
 - Direktuppspelningssegmentering
 - Direktinmatning
+- Edge segmentering
 
 Inom dessa tjänster spåras följande skyddsräcken:
 
 - Det högsta antalet direktuppspelade målgrupper är 500
-   - Av dessa 500 direktuppspelade målgrupper är det maximala antalet kantmålgrupper 150
+- Maximalt antal kantmålgrupper är 150
 - Den initiala kombinerade genomströmningen för direktuppspelning är 1 500 poster per sekund (rps)
    - Detta kombinerade strömmande dataflöde mäter de kombinerade topphändelserna för inkommande trafik per sekund för strömning till kundprofilen i realtid i era produktions- och utvecklingssandlådor.
-   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+   - Du kan köpa ytterligare stöd för direktuppspelningssegmentering på upp till 13 500 poster per sekund. Mer information om hur du köper ytterligare berättiganden finns i [Real-Time CDP produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+- Den kombinerade genomströmningen för kantsegmentering är 1 500 poster per sekund (rps)
 
 Målgruppskapaciteten är på en **sandbox**-nivå. Det innebär att ni för varje sandlåda ni har i organisationen kan ha 500 direktuppspelade målgrupper, varav 150 av dessa kan vara gränspubliken.
 
@@ -88,7 +90,7 @@ Välj **[!UICONTROL License usage]** följt av **[!UICONTROL Capacity]** om du v
 
 Sidan Kapacitetsöversikt visas med information om bland annat en historik över aviseringar och information om din organisations kapacitet.
 
-![Översiktssidan för kapacitet visas i sin helhet, med varningshistorik och kapacitetsinformation.](/help/landing/images/capacity/capacity-overview.png) {zoomable="yes" width="80%"}
+![Översiktssidan för kapacitet visas, med information om varningshistorik och kapacitetsdetaljer.](/help/landing/images/capacity/capacity-overview.png) {zoomable="yes" width="80%"}
 
 ### Aviseringshistorik {#alert-history}
 
@@ -106,17 +108,15 @@ Om du vill visa en fullständig historik över aviseringar för din organisation
 
 ![Den fullständiga aviseringshistoriken visas för en organisation.](/help/landing/images/capacity/full-alert-history.png)
 
-### Kapacitetsinformation {#capacity-details}
+### Strömningskapacitet {#streaming-capacities}
 
-Avsnittet Kapacitetsinformation innehåller information om organisationens kapacitet. I det här avsnittet kan du filtrera efter sandlåda och ändra uppslagsperioden.
+I avsnittet Streaming capabilities finns information om din organisations strömningskapacitet. I det här avsnittet visas kapacitetsinformation om direktuppspelad genomströmning och målgrupper. Du kan filtrera informationen per sandlåda och ändra uppslagsperioden.
 
 ![Sandlådeväljaren och datumväljaren för uppslagsperioden markeras.](/help/landing/images/capacity/filter-sandbox-and-date.png)
 
-För närvarande visas kapacitetsinformation om strömmande dataflöde, direktuppspelande målgrupper och edge-målgrupper.
-
 #### Strömmande genomströmning {#streaming-throughput}
 
-I avsnittet för direktuppspelning visas information om direktuppspelningsflödet i organisationens sandlådor. Värdet för direktuppspelningsgenomströmning mäter de kombinerade topphändelserna för inkommande trafik per sekund för direktuppspelning till profiltjänsten.
+Avsnittet **[!UICONTROL Streaming throughput]** visar information om strömmande dataflöde i organisationens sandlådor. Värdet för direktuppspelningsgenomströmning mäter de kombinerade topphändelserna för inkommande trafik per sekund för direktuppspelning i profilen.
 
 ![Avsnittet för direktuppspelad dataflöde på sidan med kapacitetsinformation visas.](/help/landing/images/capacity/streaming-throughput-section.png)
 
@@ -153,11 +153,52 @@ Allokeringssidan visas. På den här sidan kan du ange din kapacitet för dina o
 
 När du har uppdaterat kapacitetsallokeringarna väljer du **[!UICONTROL Save]** för att slutföra uppdateringarna. Observera att det kan ta upp till 10 minuter innan ändringarna återspeglas i organisationen.
 
-#### Antal målgrupper {#audience-count}
+#### Antal direktuppspelade målgrupper {#streaming-audience-count}
 
-I avsnitten **[!UICONTROL Streaming audience count]** och **[!UICONTROL Edge audience count]** visas antalet målgrupper för direktuppspelning och kant i sandlådan samt det maximala antalet målgrupper för direktuppspelning och kant som tillåts i sandlådan.
+Avsnittet **[!UICONTROL Streaming audience count]** visar antalet direktuppspelade målgrupper i sandlådan samt det maximala antalet direktuppspelade målgrupper som tillåts i sandlådan.
 
 ![Avsnitten för antal målgrupper visas.](/help/landing/images/capacity/audience-count.png)
+
+| Kolumnnamn | Beskrivning |
+| ----------- | ----------- |
+| Sandbox | Namnet på sandlådan. |
+| Tjänster | Tjänsten som används för sandlådan. |
+| Användning | Antalet direktuppspelade målgrupper i sandlådan. |
+| Kapacitet | Det maximala antalet direktuppspelade målgrupper som tillåts i sandlådan. |
+
+### Edge {#edge-capacities}
+
+Avsnittet **[!UICONTROL Edge capacities]** innehåller information om organisationens kanttskapacitet. I det här avsnittet visas kapacitetsinformation om kantsegmenteringens genomströmning och målgrupper. Du kan ändra uppslagsperioden för organisationens kanttskapacitet.
+
+![Avsnittet Edge-kapacitet visas. Här visas information inklusive kantssegmenteringens genomströmning och antalet målgrupper.](/help/landing/images/capacity/edge-capacities.png)
+
+#### Edge segmenteringsflöde {#edge-streaming-throughput}
+
+Avsnittet **[!UICONTROL Edge segmentation throughput]** visar information om kantsegmenteringens genomströmning i din organisations och organisationens sandlådor. Kantsegmenteringens genomströmningsvärde mäter de kombinerade topphändelserna för inkommande trafik per sekund för edge-intag i profil.
+
+![Avsnittet Edge segmenteringsgenomflöde visas. Detta visar information om kantsegmenteringens genomströmning i din organisation och dess sandlådor.](/help/landing/images/capacity/edge-segmentation-throughput.png)
+
+| Kolumnnamn | Beskrivning |
+| ----------- | ----------- |
+| Organisation | Organisationens namn. De tillgängliga sandlådorna för organisationen listas under organisationens namn. |
+| Användning av RPS (högsta) | Högsta dataflöde i sandlådan inom den valda uppslagsperioden. |
+| Kapacitet RPS | Maximal toppgenomströmning för organisationen. |
+| Överträdelse | Om en överträdelse har inträffat, typen av överträdelse för kantsegmenteringens genomströmning. |
+| Rekommenderade åtgärder | En kolumn som beskriver den rekommenderade åtgärden för att åtgärda överträdelsen. |
+
+Du kan välja en organisation för att få en mer detaljerad bild av organisationens edge-segmenteringsflöde.
+
+![Organisationen är markerad.](/help/landing/images/capacity/select-organization.png)
+
+Sidan **[!UICONTROL Edge Segmentation Throughput]** visas. Du kan se ett diagram som visar flödet för begäran jämfört med kapacitetsgränsen. På den här sidan kan du justera uppslagsperioden för det visade diagrammet.
+
+![Sidan Edge Segmentation Thoutput visas. Detta visar ett diagram som detaljerar genomflödet jämfört med kapacitetsgränsen.](/help/landing/images/capacity/edge-segmentation-throughput-details.png)
+
+#### Edge antal målgrupper {#edge-audience-count}
+
+Avsnittet **[!UICONTROL Edge audience count]** visar antalet kantmålgrupper inom varje sandlåda samt det maximala antalet kantmålgrupper som tillåts inom sandlådan.
+
+![Avsnittet Antal Edge-målgrupper visas. Detta visar information om antalet målgrupper i kanterna.](/help/landing/images/capacity/edge-audience-count.png)
 
 | Kolumnnamn | Beskrivning |
 | ----------- | ----------- |
@@ -166,9 +207,9 @@ I avsnitten **[!UICONTROL Streaming audience count]** och **[!UICONTROL Edge aud
 | Användning | Antalet målgrupper av den listade typen i sandlådan. |
 | Kapacitet | Det maximala antalet målgrupper av den listade typen som tillåts i sandlådan. |
 
-## Bästa praxis för direktuppspelning {#suggestions}
+## Bästa praxis för direktuppspelning {#streaming-throughput-suggestions}
 
-Du kan lösa dina dataströmningsfel genom att följa någon av följande rekommendationer:
+Du kan åtgärda dina dataflödesfel genom att följa någon av följande rekommendationer:
 
 1. Öka den tilldelade kapaciteten för sandlådan.
 2. Identifiera dataflöden med högt dataflöde i [övervakningsinstrumentpanelen](/help/dataflows/ui/monitor-streaming-profile.md) och tillämpa strypning eller filtrering mot dessa dataflöden vid behov.
@@ -181,11 +222,19 @@ Dessutom kan ni titta på era dataflöden och se om ni kan optimera er datastrat
 | Konvertering från batch till direktuppspelning | Batcharbetsbelastningar som konverteras till strömning kan öka genomströmningen avsevärt, vilket påverkar prestanda och resursallokering. Du kan till exempel utföra en gruppprofilsuppdatering efter en händelse utan hastighetsbegränsningar. | Direktuppspelningsstrategier är inte nödvändiga för gruppanvändning när bearbetning med låg fördröjning inte krävs. | Utvärdera kraven för användningsfall. För utgående batchmarknadsföring bör du överväga att använda [batchingång](/help/ingestion/batch-ingestion/overview.md) i stället för direktuppspelning för att hantera datainmatningen mer effektivt. |
 | Onödig datainmatning | Inmatning av data som inte behövs för personalisering ökar genomströmningen utan att något mervärde läggs till, vilket slösar med resurser. Om du till exempel samlar in all analystrafik i profiler, oavsett relevans. | För mycket data som inte är relevanta skapar brus, vilket gör det svårare att identifiera viktiga datapunkter. Det kan också orsaka friktion när man definierar och hanterar målgrupper och profiler. | Importera endast data som behövs för dina användningsfall. Se till att du filtrerar bort onödiga data.<ul><li>**Adobe Analytics**: Använd [radnivåfiltrering](/help/sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-real-time-customer-profile) för att optimera dataanvändningen.</li><li>**Källor**: Använd [[!DNL Flow Service] API:t för att filtrera radnivådata](/help/sources/tutorials/api/filter.md) för källor som stöds, som [!DNL Snowflake] och [!DNL Google BigQuery].</li></li>**Edge datastream**: Konfigurera [dynamiska datastreams](/help/datastreams/configure-dynamic-datastream.md) för filtrering på radnivå av trafik som kommer in från WebSDK.</li></ul> |
 
+## Edge segmenteringsgenomströmning, god praxis {#edge-best-practices}
+
+Du kan lösa dina fel i kantssegmenteringens genomströmning genom att anta någon av följande rekommendationer:
+
+1. Identifiera dataströmmar med högt dataflöde i [övervakningsinstrumentpanelen](/help/dataflows/ui/monitor-edge.md) och tillämpa strypning eller filtrering mot dessa dataströmmar vid behov.
+2. Optimera ditt intag genom att använda batchintag för att få lägre latenstid.
+3. Kontakta Adobe kundtjänst om problemet kvarstår.
+
 ## Videoöversikt {#video}
 
 I följande video visas en översikt över kapacitet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475277/?captions=swe&learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
 
 ## Vanliga frågor och svar {#faq}
 

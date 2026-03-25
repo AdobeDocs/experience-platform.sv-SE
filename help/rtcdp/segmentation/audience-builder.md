@@ -2,9 +2,9 @@
 title: Audience Builder i Real-Time Customer Data Platform
 description: Lär dig hur du använder Audience Builder i Real-Time Customer Data Platform för att skapa målgrupper.
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
+source-git-commit: 809f80c721d6eedf5ee88dbb1cf4bf7e5a413614
 workflow-type: tm+mt
 source-wordcount: '1079'
 ht-degree: 0%
@@ -64,7 +64,7 @@ Avsnittet **[!UICONTROL Top values]** visar de vanligaste värdena för attribut
 
 Du kan också se hur data distribueras med värdena minimum, medel (medel) och maximum.
 
-![En pover som visar statistik för ett attribut, inklusive minimum-, medel- och maximum-värden.](../assets/segmentation/audience-builder/statistics.png)
+![En pover som visar statistik för ett attribut, inklusive minimum-, medel- och maximum-värden.](../assets/segmentation/audience-builder/statistics.png){width="300"}
 
 Om ett attribut är fyllt av mindre än 25 % av kontona visas i stället ![datavisningsikonen](../../images/icons/data-notice.png). Samma sammanfattningsdata kommer att visas för attributet, oavsett.
 
@@ -78,7 +78,7 @@ Om ett attribut är fyllt av mindre än 25 % av kontona visas i stället ![datav
 
 Dessutom har attributet **[!UICONTROL Ingestion Type]**. Injektionstypen talar om datas ursprung och kan vara något av följande värden: **[!UICONTROL Batch]**, **[!UICONTROL Streaming/Edge]** eller **[!UICONTROL No Data Ingested]**.
 
-![Inmatningstypen för attributet visas.](/help/rtcdp/assets/segmentation/audience-builder/ingestion-type.png)
+![Inmatningstypen för attributet visas.](/help/rtcdp/assets/segmentation/audience-builder/ingestion-type.png){width="300"}
 
 En mer detaljerad guide om attribut i Audience Builder finns i användarhandboken för [Audience Builder](../../segmentation/ui/segment-builder.md){target="_blank"}.
 
