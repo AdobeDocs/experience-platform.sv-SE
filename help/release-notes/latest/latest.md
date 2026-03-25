@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8c55aebcb65327394ffbdf59db1d2a203182ed18
+source-git-commit: 8c8b3b223c67dd6e9a00f9cf297f51fd09f3227f
 workflow-type: tm+mt
-source-wordcount: '1161'
-ht-degree: 35%
+source-wordcount: '1266'
+ht-degree: 34%
 
 ---
 
@@ -29,6 +29,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 - [Agent Orchestrator](#agent-orchestrator)
 - [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
+- [Kundprofil i realtid](#real-time-customer-profile)
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
@@ -52,7 +53,7 @@ Med Agent Orchestrator kan ni bygga och driftsätta AI-baserade agenter som kan 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
+| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
 
 {style="table-layout:auto"}
 
@@ -93,6 +94,20 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | XDM-entitetsåtgärder och borttagningsstöd | Få åtkomst till åtgärder för scheman, klasser, fältgrupper och datatyper direkt från inline-tabellmenyer och rubrikmenyer för detaljsidor. Om du har de behörigheter som krävs kan du även ta bort organisationens enheter när de inte används av datauppsättningar och inte är aktiverade för profil. Mer information finns i [gränssnittshandboken för XDM](../../xdm/ui/explore.md). |
 
 Mer information finns i [XDM-översikten](../../xdm/home.md).
+
+## Kundprofil i realtid {#real-time-customer-profile}
+
+Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Händelser | Du kan nu ange uppslagsperiod för händelser när du bläddrar bland dina profiler. Detta gör att du kan se de händelser som profilen är kopplad till under den angivna tidsperioden. Mer information finns i [Användargränssnittsguiden för profil](/help/profile/ui/user-guide.md#events). |
+
+{style="table-layout:auto"}
+
+Mer information finns i [[!DNL Real-Time Customer Profile] översikten](../../profile/home.md).
 
 <!-- 
 ## Run and Operate {#run-and-operate}

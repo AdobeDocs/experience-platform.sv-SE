@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: cf975ec6747438a034fcedb51a4b25b0acd46d2f
+source-git-commit: faeb53bfc4eba815eb1d9d00c464da4dc1a3b016
 workflow-type: tm+mt
-source-wordcount: '2123'
+source-wordcount: '2177'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,7 @@ I diagramvyn kan du dra och släppa noderna för att ordna om noden, komprimera 
 
 #### Experience events {#experience-events}
 
-Avsnittet **[!UICONTROL Experience events]** visar en tidslinje med upplevelsehändelser som innehåller profilen.
+Avsnittet **[!UICONTROL Experience events]** visar en tidslinje med upplevelsehändelser som innehåller profilen. Som standard visas upplevelsehändelser under de senaste 48 timmarna i det här avsnittet. Du kan dock ange datumintervall i upp till 30 dagar.
 
 ![Avsnittet Experience Events visas med en tidslinje med upplevelsehändelser som innehåller profilen.](/help/profile/images/user-guide/experience-event-graph.png)
 
@@ -193,7 +193,11 @@ Mer information om kantprofiler finns i [dokumentationen för kantprofiler](../e
 
 ### Fliken Händelser {#events}
 
-Fliken **[!UICONTROL Events]** innehåller data från de 100 senaste ExperienceEvents som är associerade med kunden. Dessa data kan inkludera öppning av e-post, kundvagnsaktiviteter och sidvyer. Om du väljer **[!UICONTROL View all]** för en enskild händelse hämtas ytterligare fält och värden som en del av händelsen.
+>[!NOTE]
+>
+>Visningen av händelserna kan fördröjas med upp till 15 minuter.
+
+Som standard innehåller fliken **[!UICONTROL Events]** data från de senaste 48 timmarna med de 100 senaste ExperienceEvents som är associerade med kunden. Dessa data kan inkludera öppning av e-post, kundvagnsaktiviteter och sidvyer. Du kan också ange datumintervall i upp till 30 dagar. Om du väljer **[!UICONTROL View all]** för en enskild händelse hämtas ytterligare fält och värden som en del av händelsen.
 
 Händelser kan också visas som ett JSON-objekt genom att välja till **[!UICONTROL View JSON]**. Detta är praktiskt när du vill veta hur händelser spelas in i Experience Platform.
 
