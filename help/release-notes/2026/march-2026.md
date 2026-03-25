@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
 exl-id: 66b948fd-caa0-4e5e-83dd-3b15b77c09fa
-source-git-commit: 4f4761024a658d284f3eacdc2230e868c6ee53fb
+source-git-commit: 381d1f952067cece9f9a9618a00bbed304214906
 workflow-type: tm+mt
 source-wordcount: '1747'
 ht-degree: 20%
@@ -54,7 +54,7 @@ Använd Agent Orchestrator för att bygga och driftsätta AI-baserade agenter so
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
+| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
 
 {style="table-layout:auto"}
 
@@ -82,7 +82,7 @@ Mer information finns i [datastreams-översikten](../../datastreams/overview.md)
 | --- | --- |
 | [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md) - regionväljare | Nu är det enklare att hitta regionen med den nya sökbara listrutan som kombinerar sök- och listruta i en enda kontroll. Uppdateringen lanseras i slutet av mars. |
 | Ny tabellstruktur för [Snowflake Batch](../../destinations/catalog/warehouses/snowflake-batch.md)-mål | Tabeller som delas med ditt Snowflake-konto har nu en ny struktur som innehåller separata kolumner för målgruppsnamn och målgruppernas ursprung. Den nya tabellstrukturen gäller för alla nya målanslutningar som ställs in framåt. För nya anslutningar som du skapar skapas båda tabellstrukturerna: den nya strukturen har prefixet V2 och den gamla strukturen behålls till slutet av juni 2026, varefter den kommer att bli inaktuell. Läs mer i avsnittet [Exporterade data](../../destinations/catalog/warehouses/snowflake-batch.md#exported-data) i dokumentationen för Snowflake Batch. Uppdateringen lanseras i slutet av mars. |
-| [Adobe Advertising DSP](../../destinations/catalog/advertising/adobe-advertising-cloud-connection.md)-anslutning | Den nya Adobe Advertising DSP-anslutningen har samma funktionalitet som den gamla anslutningen plus stöd för ytterligare identiteter. Med den nya kopplingen kan du också exportera cookie-baserade identiteter till Adobe Advertising DSP. |
+| [Adobe Advertising DSP](../../destinations/catalog/advertising/adobe-advertising-dsp-connection.md)-anslutning | Den nya Adobe Advertising DSP-anslutningen har samma funktionalitet som den gamla anslutningen plus stöd för ytterligare identiteter. Med den nya kopplingen kan du också exportera cookie-baserade identiteter till Adobe Advertising DSP. |
 | [FreeWheel](../../destinations/catalog/advertising/freewheel.md)-anslutning | Skicka [!DNL Real-Time CDP] målgrupper till FreeWheel som dagliga batchfiler så att du kan rikta in dem i FreeWheel-erbjudanden och -kampanjer för CTV, video och displayen. Kontakta ditt Adobe-kontoteam för att få åtkomst. |
 | Stöd för externa målgrupper för [Trade Desk CRM](../../destinations/catalog/advertising/tradedesk-emails.md) och [Pinterest](../../destinations/catalog/advertising/pinterest.md) | Du kan nu aktivera målgrupper från ursprungsland till inte bara segmenteringstjänsten, till Trade Desk CRM, Criteo och Pinterest, inklusive anpassade uppladdningsmålgrupper (som importerats från CSV), lookalike-målgrupper, federerade målgrupper och målgrupper som skapats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer]. Uppdateringen lanseras i slutet av mars. Mer information finns i avsnittet [målgrupper](../../destinations/catalog/advertising/criteo.md#supported-audiences) som stöds på katalogsidan för varje mål. |
 | Ökad gräns för anpassad uppladdning av mottagare | Du kan nu aktivera upp till 20 anpassade uppladdningsmålgrupper per målinstans. Tidigare var gränsen 10. Mer information finns i [målskyddsjournalerna](../../destinations/guardrails.md#batch-file-based-activation). |

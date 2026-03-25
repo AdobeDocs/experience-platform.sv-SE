@@ -2,9 +2,9 @@
 title: Målgruppslivscykel i Experience Platform och direktuppspelningsmål
 description: Läs om hur målgruppsnamn och målmappningar från Experience Platform återspeglas i målplattformarna för direktuppspelning.
 exl-id: 8a9a9e2f-d52f-41c9-ae27-9d2cd797bb85
-source-git-commit: 2dd4ae4146f7c1c5228e22d24ff2ba31010adedb
+source-git-commit: 381d1f952067cece9f9a9618a00bbed304214906
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '466'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Följande mål för direktuppspelning stöder automatisk uppdatering av målgrup
 
 * [Acxiom Audience Connection](../catalog/advertising/acxiom-audience-connection.md)
 * [Adobe Campaign Managed Cloud](../catalog/email-marketing/adobe-campaign-managed-services.md)
-* [Advertising Cloud DSP](../catalog/advertising/adobe-advertising-cloud-connection.md)
+* [Adobe Advertising DSP](../catalog/advertising/adobe-advertising-dsp-connection.md)
 * [Bombora](../catalog/advertising/bombora.md)
 * [Criteo](../catalog/advertising/criteo.md)
 * [Demandbase](../catalog/advertising/demandbase.md)
@@ -67,7 +67,7 @@ Följande mål för direktuppspelning stöder automatisk målgruppsborttagning n
 * [(API) Oracle Eloqua](../catalog/email-marketing/oracle-eloqua-api.md)
 * [(Företag) LinkedIn Matched Audience](../catalog/social/linkedin-b2b.md)
 * [(Äldre) (V2) Marketo Engage](../catalog/adobe/marketo-engage.md)
-* [Adobe Advertising Cloud DSP](../catalog/advertising/adobe-advertising-cloud-connection.md)
+* [Adobe Advertising DSP](../catalog/advertising/adobe-advertising-dsp-connection.md)
 * [Målgrupper för Bombora-konto](../catalog/advertising/bombora.md)
 * [Criteo](../catalog/advertising/criteo.md)
 * [Experience Cloud-målgrupper](../catalog/adobe/experience-cloud-audiences.md)

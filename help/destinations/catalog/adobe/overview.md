@@ -3,9 +3,9 @@ keywords: mål;Experience Cloud-lösningar; mål; mål; mål; mål; moln; annons
 title: Översikt över Adobe destinationer
 description: Hantera kundupplevelsen genom att koppla era data i Experience Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 2bbd36db21363b20575db6a5fc5ecce8b9a31224
 workflow-type: tm+mt
-source-wordcount: '225'
+source-wordcount: '224'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 
 ### Anslutningar {#connections}
 
-* [Adobe Advertising Cloud DSP-anslutning](/help/destinations/catalog/advertising/adobe-advertising-cloud-connection.md)
+* [Adobe Advertising DSP](/help/destinations/catalog/advertising/adobe-advertising-dsp-connection.md)
 * [Adobe Campaign](../email-marketing/adobe-campaign.md)
 * [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)
 * [(Beta) Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
@@ -49,4 +49,4 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 
 Använd Experience Platform målgruppsfunktion för att dela era Experience Platform-målgrupper med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i Audience Manager dokumentationsportal):
 
-* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE)
+* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
