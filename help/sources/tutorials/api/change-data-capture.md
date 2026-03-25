@@ -2,9 +2,9 @@
 title: Aktivera registrering av ändringsdata för källanslutningar i API
 description: Lär dig hur du aktiverar registrering av ändringsdata för källanslutningar i API:t
 exl-id: 362f3811-7d1e-4f16-b45f-ce04f03798aa
-source-git-commit: bd28d5be932823b8bf9c98280f97694ff221d76d
+source-git-commit: 74743d7dc93e2ba291481ad11e923d28088c4903
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1294'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Du kan nu använda registrering av ändringsdata för källorna [!DNL Amazon S3] och [!DNL Data Landing Zone] när du kör Adobe Experience Platform på Amazon Web Services (AWS) och är ansluten till ett VA6-datacenter. Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
+>* Inhämtning av ändringsdata stöds för följande källor: [!DNL Amazon S3], [!DNL Data Landing Zone], [!DNL Marketo Engage], [!DNL Microsoft Dynamics] och [!DNL Salesforce].
+>
+>* Du kan även aktivera registrering av ändringsdata för [!DNL Amazon S3]- och [!DNL Data Landing Zone]-källor när du använder Adobe Experience Platform på Amazon Web Services (AWS) i ett VA6-datacenter. Observera att Experience Platform på AWS för närvarande är tillgängligt för en begränsad publik. Mer information om infrastrukturstöd finns i [Experience Platform översikt över flera moln](../../../landing/multi-cloud.md).
 
 Använd datainhämtning från Adobe Experience Platform för att synkronisera käll- och målsystemen i nära realtid.
 
@@ -113,7 +115,7 @@ Aktivera datainhämtning för molnlagringskällor genom att följa dessa steg:
 
 2. [Skapa en källanslutning för ett molnlagringsutrymme](../api/collect/cloud-storage.md#create-a-source-connection).
 
-Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [&#x200B; Filbaserade källor &#x200B;](#file-based-sources) ovan.
+Alla molnlagringskällor använder samma `_change_request_type`-kolumnformat som beskrivs i avsnittet [ Filbaserade källor ](#file-based-sources) ovan.
 
 ## Databaskällor {#database-sources}
 
