@@ -36,7 +36,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 **Begäran**
 
 Följande begäran skapar en ny målserverkonfiguration, konfigurerad med parametrarna som anges i nyttolasten.
-Nyttolasten nedan innehåller en allmän [!DNL Data Landing Zone]-konfiguration med anpassade [ CSV-filformateringsparametrar](../../functionality/destination-server/file-formatting.md) som användare kan definiera i Experience Platform-gränssnittet.
+Nyttolasten nedan innehåller en allmän [!DNL Data Landing Zone]-konfiguration med anpassade [&#x200B; CSV-filformateringsparametrar](../../functionality/destination-server/file-formatting.md) som användare kan definiera i Experience Platform-gränssnittet.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \

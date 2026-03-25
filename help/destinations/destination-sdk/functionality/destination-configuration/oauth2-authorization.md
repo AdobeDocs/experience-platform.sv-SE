@@ -46,7 +46,7 @@ Som en del av den här konfigurationen i ditt system behöver du URL:erna för o
 
 >[!IMPORTANT]
 >
->Stegen för att registrera en omdirigerings-/återanrops-URL för [!DNL Adobe Experience Platform] i systemet krävs bara för anslagstypen [ OAuth 2 med auktoriseringskoden ](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
+>Stegen för att registrera en omdirigerings-/återanrops-URL för [!DNL Adobe Experience Platform] i systemet krävs bara för anslagstypen [&#x200B; OAuth 2 med auktoriseringskoden &#x200B;](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
 
 I slutet av det här steget bör du ha:
 

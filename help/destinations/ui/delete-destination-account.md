@@ -49,4 +49,4 @@ Följ stegen nedan för att ta bort befintliga målkonton.
 
 Du har använt målarbetsytan för att ta bort befintliga konton.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [ta bort anslutningar med API:t för Flow Service ](../api/delete-destination-account.md)
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [ta bort anslutningar med API:t för Flow Service &#x200B;](../api/delete-destination-account.md)
