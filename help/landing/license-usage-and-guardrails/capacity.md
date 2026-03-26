@@ -234,7 +234,7 @@ Du kan lösa dina fel i kantssegmenteringens genomströmning genom att anta någ
 
 I följande video visas en översikt över kapacitet.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475272/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3475277/?captions=swe&learn=on&enablevpops)
 
 ## Vanliga frågor och svar {#faq}
 
